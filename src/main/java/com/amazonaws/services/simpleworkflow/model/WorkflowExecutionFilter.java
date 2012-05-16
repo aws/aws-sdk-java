@@ -16,8 +16,7 @@ package com.amazonaws.services.simpleworkflow.model;
 
 /**
  * <p>
- * Used to filter the workflow executions in visibility APIs by their
- * <code>workflowId</code> .
+ * Used to filter the workflow executions in visibility APIs by their <code>workflowId</code> .
  * 
  * </p>
  */

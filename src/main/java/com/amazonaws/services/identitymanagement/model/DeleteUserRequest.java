@@ -18,8 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteUser(DeleteUserRequest) DeleteUser operation}.
  * <p>
- * Deletes the specified user. The user must not belong to any groups,
- * have any keys or signing certificates, or have any attached policies.
+ * Deletes the specified user. The user must not belong to any groups, have any keys or signing certificates, or have any attached policies.
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteUser(DeleteUserRequest)

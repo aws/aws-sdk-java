@@ -16,8 +16,7 @@ package com.amazonaws.services.securitytoken.model;
 
 /**
  * <p>
- * Contains the result of a successful invocation of the
- * GetFederationToken action.
+ * Contains the result of a successful invocation of the GetFederationToken action.
  * </p>
  */
 public class GetFederationTokenResult {

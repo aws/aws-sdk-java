@@ -18,13 +18,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#updateConfigurationTemplate(UpdateConfigurationTemplateRequest) UpdateConfigurationTemplate operation}.
  * <p>
- * Updates the specified configuration template to have the specified
- * properties or configuration option values.
+ * Updates the specified configuration template to have the specified properties or configuration option values.
  * </p>
  * <p>
- * <b>NOTE:</b> If a property (for example, ApplicationName) is not
- * provided, its value remains unchanged. To clear such properties,
- * specify an empty string.
+ * <b>NOTE:</b> If a property (for example, ApplicationName) is not provided, its value remains unchanged. To clear such properties, specify an empty
+ * string.
  * </p>
  * <p>
  * Related Topics

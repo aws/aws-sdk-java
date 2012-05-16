@@ -18,20 +18,15 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeInstances(DescribeInstancesRequest) DescribeInstances operation}.
  * <p>
- * The DescribeInstances operation returns information about instances
- * that you own.
+ * The DescribeInstances operation returns information about instances that you own.
  * </p>
  * <p>
- * If you specify one or more instance IDs, Amazon EC2 returns
- * information for those instances. If you do not specify instance IDs,
- * Amazon EC2 returns information for all relevant instances. If you
- * specify an invalid instance ID, a fault is returned. If you specify an
- * instance that you do not own, it will not be included in the returned
- * results.
+ * If you specify one or more instance IDs, Amazon EC2 returns information for those instances. If you do not specify instance IDs, Amazon EC2 returns
+ * information for all relevant instances. If you specify an invalid instance ID, a fault is returned. If you specify an instance that you do not own, it
+ * will not be included in the returned results.
  * </p>
  * <p>
- * Recently terminated instances might appear in the returned results.
- * This interval is usually less than one hour.
+ * Recently terminated instances might appear in the returned results. This interval is usually less than one hour.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeInstances(DescribeInstancesRequest)

@@ -18,9 +18,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeDhcpOptions(DescribeDhcpOptionsRequest) DescribeDhcpOptions operation}.
  * <p>
- * Gives you information about one or more sets of DHCP options. You can
- * specify one or more DHCP options set IDs, or no IDs (to describe all
- * your sets of DHCP options). The returned information consists of:
+ * Gives you information about one or more sets of DHCP options. You can specify one or more DHCP options set IDs, or no IDs (to describe all your sets
+ * of DHCP options). The returned information consists of:
  * </p>
  * 
  * <ul>

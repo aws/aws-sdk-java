@@ -18,14 +18,24 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.simpleemail.AmazonSimpleEmailService#sendEmail(SendEmailRequest) SendEmail operation}.
  * <p>
- * Composes an email message based on input data, and then immediately
- * queues the message for sending.
+ * Composes an email message based on input data, and then immediately queues the message for sending.
  * </p>
  * <p>
- * <b>IMPORTANT:</b>If you have not yet requested production access to
- * Amazon SES, then you will only be able to send email to and from
- * verified email addresses. For more information, go to the Amazon SES
- * Developer Guide.
+ * <b>IMPORTANT:</b>If you have not yet requested production access to Amazon SES, then you will only be able to send email to and from verified email
+ * addresses and domains. For more information, go to the Amazon SES Developer Guide.
+ * </p>
+ * <p>
+ * The total size of the message cannot exceed 10 MB.
+ * </p>
+ * <p>
+ * Amazon SES has a limit on the total number of recipients per message: The combined number of To:, CC: and BCC: email addresses cannot exceed 50. If
+ * you need to send an email message to a larger audience, you can divide your recipient list into groups of 50 or fewer, and then call Amazon SES
+ * repeatedly to send the message to each group.
+ * </p>
+ * <p>
+ * For every message that you send, the total number of recipients (To:, CC: and BCC:) is counted against your <i>sending quota</i> - the maximum number
+ * of emails you can send in a 24-hour period. For information about your sending quota, go to the "Managing Your Sending Activity" section of the<a
+ * href="http://docs.amazonwebservices.com/ses/latest/DeveloperGuide"> Amazon SES Developer Guide </a> .
  * </p>
  *
  * @see com.amazonaws.services.simpleemail.AmazonSimpleEmailService#sendEmail(SendEmailRequest)
@@ -33,13 +43,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class SendEmailRequest extends AmazonWebServiceRequest {
 
     /**
-     * The sender's email address.
+     * The identity's email address.
      */
     private String source;
 
     /**
-     * The destination for this email, composed of To:, From:, and CC:
-     * fields.
+     * The destination for this email, composed of To:, CC:, and BCC: fields.
      */
     private Destination destination;
 
@@ -74,9 +83,9 @@ public class SendEmailRequest extends AmazonWebServiceRequest {
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param source The sender's email address.
+     * @param source The identity's email address.
      * @param destination The destination for this email, composed of To:,
-     * From:, and CC: fields.
+     * CC:, and BCC: fields.
      * @param message The message to be sent.
      */
     public SendEmailRequest(String source, Destination destination, Message message) {
@@ -88,29 +97,29 @@ public class SendEmailRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * The sender's email address.
+     * The identity's email address.
      *
-     * @return The sender's email address.
+     * @return The identity's email address.
      */
     public String getSource() {
         return source;
     }
     
     /**
-     * The sender's email address.
+     * The identity's email address.
      *
-     * @param source The sender's email address.
+     * @param source The identity's email address.
      */
     public void setSource(String source) {
         this.source = source;
     }
     
     /**
-     * The sender's email address.
+     * The identity's email address.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param source The sender's email address.
+     * @param source The identity's email address.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -122,35 +131,29 @@ public class SendEmailRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * The destination for this email, composed of To:, From:, and CC:
-     * fields.
+     * The destination for this email, composed of To:, CC:, and BCC: fields.
      *
-     * @return The destination for this email, composed of To:, From:, and CC:
-     *         fields.
+     * @return The destination for this email, composed of To:, CC:, and BCC: fields.
      */
     public Destination getDestination() {
         return destination;
     }
     
     /**
-     * The destination for this email, composed of To:, From:, and CC:
-     * fields.
+     * The destination for this email, composed of To:, CC:, and BCC: fields.
      *
-     * @param destination The destination for this email, composed of To:, From:, and CC:
-     *         fields.
+     * @param destination The destination for this email, composed of To:, CC:, and BCC: fields.
      */
     public void setDestination(Destination destination) {
         this.destination = destination;
     }
     
     /**
-     * The destination for this email, composed of To:, From:, and CC:
-     * fields.
+     * The destination for this email, composed of To:, CC:, and BCC: fields.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param destination The destination for this email, composed of To:, From:, and CC:
-     *         fields.
+     * @param destination The destination for this email, composed of To:, CC:, and BCC: fields.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

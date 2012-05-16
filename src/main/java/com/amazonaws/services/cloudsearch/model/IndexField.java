@@ -16,10 +16,8 @@ package com.amazonaws.services.cloudsearch.model;
 
 /**
  * <p>
- * Defines a field in the index, including its name, type, and the source
- * of its data. The <code>IndexFieldType</code> indicates which of the
- * options will be present. It is invalid to specify options for a type
- * other than the <code>IndexFieldType</code> .
+ * Defines a field in the index, including its name, type, and the source of its data. The <code>IndexFieldType</code> indicates which of the options
+ * will be present. It is invalid to specify options for a type other than the <code>IndexFieldType</code> .
  * </p>
  */
 public class IndexField {

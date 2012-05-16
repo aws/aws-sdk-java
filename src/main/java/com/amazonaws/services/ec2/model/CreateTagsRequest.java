@@ -18,9 +18,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#createTags(CreateTagsRequest) CreateTags operation}.
  * <p>
- * Adds or overwrites tags for the specified resources. Each resource
- * can have a maximum of 10 tags. Each tag consists of a key-value pair.
- * Tag keys must be unique per resource.
+ * Adds or overwrites tags for the specified resources. Each resource can have a maximum of 10 tags. Each tag consists of a key-value pair. Tag keys
+ * must be unique per resource.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createTags(CreateTagsRequest)

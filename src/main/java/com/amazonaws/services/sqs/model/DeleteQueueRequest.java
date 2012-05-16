@@ -18,13 +18,10 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sqs.AmazonSQS#deleteQueue(DeleteQueueRequest) DeleteQueue operation}.
  * <p>
- * This action unconditionally deletes the queue specified by the queue
- * URL. Use this operation WITH CARE! The queue is deleted even if it is
- * NOT empty.
+ * This action unconditionally deletes the queue specified by the queue URL. Use this operation WITH CARE! The queue is deleted even if it is NOT empty.
  * </p>
  * <p>
- * Once a queue has been deleted, the queue name is unavailable for use
- * with new queues for 60 seconds.
+ * Once a queue has been deleted, the queue name is unavailable for use with new queues for 60 seconds.
  * </p>
  *
  * @see com.amazonaws.services.sqs.AmazonSQS#deleteQueue(DeleteQueueRequest)

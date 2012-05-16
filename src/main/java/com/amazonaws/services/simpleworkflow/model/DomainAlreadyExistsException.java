@@ -18,8 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * Returned if the specified domain already exists. You will get this
- * fault even if the existing domain is in deprecated status.
+ * Returned if the specified domain already exists. You will get this fault even if the existing domain is in deprecated status.
  * </p>
  */        
 public class DomainAlreadyExistsException extends AmazonServiceException {

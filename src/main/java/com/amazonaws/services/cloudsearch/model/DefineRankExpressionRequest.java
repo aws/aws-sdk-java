@@ -18,10 +18,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.cloudsearch.AmazonCloudSearch#defineRankExpression(DefineRankExpressionRequest) DefineRankExpression operation}.
  * <p>
- * Configures a <code>RankExpression</code> for the search domain. Used
- * to create new rank expressions and modify existing ones. If the
- * expression exists, the new configuration replaces the old one. You can
- * configure a maximum of 50 rank expressions.
+ * Configures a <code>RankExpression</code> for the search domain. Used to create new rank expressions and modify existing ones. If the expression
+ * exists, the new configuration replaces the old one. You can configure a maximum of 50 rank expressions.
  * </p>
  *
  * @see com.amazonaws.services.cloudsearch.AmazonCloudSearch#defineRankExpression(DefineRankExpressionRequest)

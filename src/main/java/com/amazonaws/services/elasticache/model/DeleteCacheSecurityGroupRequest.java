@@ -21,8 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Deletes a Cache Security Group.
  * </p>
  * <p>
- * <b>NOTE:</b>The specified Cache Security Group must not be associated
- * with any Cache Clusters.
+ * <b>NOTE:</b>The specified Cache Security Group must not be associated with any Cache Clusters.
  * </p>
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#deleteCacheSecurityGroup(DeleteCacheSecurityGroupRequest)

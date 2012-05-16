@@ -18,8 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * <i>DBSubnetGroupName</i> is already used by an existing
- * DBSubnetGroup.
+ * <i>DBSubnetGroupName</i> is already used by an existing DBSubnetGroup.
  * </p>
  */        
 public class DBSubnetGroupAlreadyExistsException extends AmazonServiceException {

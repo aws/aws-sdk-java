@@ -16,18 +16,32 @@ package com.amazonaws.services.cloudfront.model;
 
 /**
  * <p>
- * Configuration for access logging for a distribution.
+ * A complex type that controls whether access logs are written for the distribution.
  * </p>
  */
 public class LoggingConfig {
 
     /**
-     * The bucket to receive access logs.
+     * Specifies whether you want CloudFront to save access logs to an Amazon
+     * S3 bucket. If you do not want to enable logging when you create a
+     * distribution or if you want to disable logging for an existing
+     * distribution, specify false for Enabled, and specify empty Bucket and
+     * Prefix elements. If you specify false for Enabled but you specify
+     * values for Bucket and Prefix, the values are automatically deleted.
+     */
+    private Boolean enabled;
+
+    /**
+     * The Amazon S3 bucket to store the access logs in, for example,
+     * myawslogbucket.s3.amazonaws.com.
      */
     private String bucket;
 
     /**
-     * The prefix to use for stored access log files.
+     * An optional string that you want CloudFront to prefix to the access
+     * log filenames for this distribution, for example, myprefix/. If you
+     * want to enable logging, but you do not want to specify a prefix, you
+     * still must include an empty Prefix element in the Logging element.
      */
     private String prefix;
 
@@ -42,8 +56,13 @@ public class LoggingConfig {
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param bucket The bucket to receive access logs.
-     * @param prefix The prefix to use for stored access log files.
+     * @param bucket The Amazon S3 bucket to store the access logs in, for
+     * example, myawslogbucket.s3.amazonaws.com.
+     * @param prefix An optional string that you want CloudFront to prefix to
+     * the access log filenames for this distribution, for example,
+     * myprefix/. If you want to enable logging, but you do not want to
+     * specify a prefix, you still must include an empty Prefix element in
+     * the Logging element.
      */
     public LoggingConfig(String bucket, String prefix) {
         this.bucket = bucket;
@@ -53,29 +72,118 @@ public class LoggingConfig {
     
     
     /**
-     * The bucket to receive access logs.
+     * Specifies whether you want CloudFront to save access logs to an Amazon
+     * S3 bucket. If you do not want to enable logging when you create a
+     * distribution or if you want to disable logging for an existing
+     * distribution, specify false for Enabled, and specify empty Bucket and
+     * Prefix elements. If you specify false for Enabled but you specify
+     * values for Bucket and Prefix, the values are automatically deleted.
      *
-     * @return The bucket to receive access logs.
+     * @return Specifies whether you want CloudFront to save access logs to an Amazon
+     *         S3 bucket. If you do not want to enable logging when you create a
+     *         distribution or if you want to disable logging for an existing
+     *         distribution, specify false for Enabled, and specify empty Bucket and
+     *         Prefix elements. If you specify false for Enabled but you specify
+     *         values for Bucket and Prefix, the values are automatically deleted.
+     */
+    public Boolean isEnabled() {
+        return enabled;
+    }
+    
+    /**
+     * Specifies whether you want CloudFront to save access logs to an Amazon
+     * S3 bucket. If you do not want to enable logging when you create a
+     * distribution or if you want to disable logging for an existing
+     * distribution, specify false for Enabled, and specify empty Bucket and
+     * Prefix elements. If you specify false for Enabled but you specify
+     * values for Bucket and Prefix, the values are automatically deleted.
+     *
+     * @param enabled Specifies whether you want CloudFront to save access logs to an Amazon
+     *         S3 bucket. If you do not want to enable logging when you create a
+     *         distribution or if you want to disable logging for an existing
+     *         distribution, specify false for Enabled, and specify empty Bucket and
+     *         Prefix elements. If you specify false for Enabled but you specify
+     *         values for Bucket and Prefix, the values are automatically deleted.
+     */
+    public void setEnabled(Boolean enabled) {
+        this.enabled = enabled;
+    }
+    
+    /**
+     * Specifies whether you want CloudFront to save access logs to an Amazon
+     * S3 bucket. If you do not want to enable logging when you create a
+     * distribution or if you want to disable logging for an existing
+     * distribution, specify false for Enabled, and specify empty Bucket and
+     * Prefix elements. If you specify false for Enabled but you specify
+     * values for Bucket and Prefix, the values are automatically deleted.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param enabled Specifies whether you want CloudFront to save access logs to an Amazon
+     *         S3 bucket. If you do not want to enable logging when you create a
+     *         distribution or if you want to disable logging for an existing
+     *         distribution, specify false for Enabled, and specify empty Bucket and
+     *         Prefix elements. If you specify false for Enabled but you specify
+     *         values for Bucket and Prefix, the values are automatically deleted.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public LoggingConfig withEnabled(Boolean enabled) {
+        this.enabled = enabled;
+        return this;
+    }
+    
+    
+    /**
+     * Specifies whether you want CloudFront to save access logs to an Amazon
+     * S3 bucket. If you do not want to enable logging when you create a
+     * distribution or if you want to disable logging for an existing
+     * distribution, specify false for Enabled, and specify empty Bucket and
+     * Prefix elements. If you specify false for Enabled but you specify
+     * values for Bucket and Prefix, the values are automatically deleted.
+     *
+     * @return Specifies whether you want CloudFront to save access logs to an Amazon
+     *         S3 bucket. If you do not want to enable logging when you create a
+     *         distribution or if you want to disable logging for an existing
+     *         distribution, specify false for Enabled, and specify empty Bucket and
+     *         Prefix elements. If you specify false for Enabled but you specify
+     *         values for Bucket and Prefix, the values are automatically deleted.
+     */
+    public Boolean getEnabled() {
+        return enabled;
+    }
+    
+    /**
+     * The Amazon S3 bucket to store the access logs in, for example,
+     * myawslogbucket.s3.amazonaws.com.
+     *
+     * @return The Amazon S3 bucket to store the access logs in, for example,
+     *         myawslogbucket.s3.amazonaws.com.
      */
     public String getBucket() {
         return bucket;
     }
     
     /**
-     * The bucket to receive access logs.
+     * The Amazon S3 bucket to store the access logs in, for example,
+     * myawslogbucket.s3.amazonaws.com.
      *
-     * @param bucket The bucket to receive access logs.
+     * @param bucket The Amazon S3 bucket to store the access logs in, for example,
+     *         myawslogbucket.s3.amazonaws.com.
      */
     public void setBucket(String bucket) {
         this.bucket = bucket;
     }
     
     /**
-     * The bucket to receive access logs.
+     * The Amazon S3 bucket to store the access logs in, for example,
+     * myawslogbucket.s3.amazonaws.com.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param bucket The bucket to receive access logs.
+     * @param bucket The Amazon S3 bucket to store the access logs in, for example,
+     *         myawslogbucket.s3.amazonaws.com.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -87,29 +195,47 @@ public class LoggingConfig {
     
     
     /**
-     * The prefix to use for stored access log files.
+     * An optional string that you want CloudFront to prefix to the access
+     * log filenames for this distribution, for example, myprefix/. If you
+     * want to enable logging, but you do not want to specify a prefix, you
+     * still must include an empty Prefix element in the Logging element.
      *
-     * @return The prefix to use for stored access log files.
+     * @return An optional string that you want CloudFront to prefix to the access
+     *         log filenames for this distribution, for example, myprefix/. If you
+     *         want to enable logging, but you do not want to specify a prefix, you
+     *         still must include an empty Prefix element in the Logging element.
      */
     public String getPrefix() {
         return prefix;
     }
     
     /**
-     * The prefix to use for stored access log files.
+     * An optional string that you want CloudFront to prefix to the access
+     * log filenames for this distribution, for example, myprefix/. If you
+     * want to enable logging, but you do not want to specify a prefix, you
+     * still must include an empty Prefix element in the Logging element.
      *
-     * @param prefix The prefix to use for stored access log files.
+     * @param prefix An optional string that you want CloudFront to prefix to the access
+     *         log filenames for this distribution, for example, myprefix/. If you
+     *         want to enable logging, but you do not want to specify a prefix, you
+     *         still must include an empty Prefix element in the Logging element.
      */
     public void setPrefix(String prefix) {
         this.prefix = prefix;
     }
     
     /**
-     * The prefix to use for stored access log files.
+     * An optional string that you want CloudFront to prefix to the access
+     * log filenames for this distribution, for example, myprefix/. If you
+     * want to enable logging, but you do not want to specify a prefix, you
+     * still must include an empty Prefix element in the Logging element.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param prefix The prefix to use for stored access log files.
+     * @param prefix An optional string that you want CloudFront to prefix to the access
+     *         log filenames for this distribution, for example, myprefix/. If you
+     *         want to enable logging, but you do not want to specify a prefix, you
+     *         still must include an empty Prefix element in the Logging element.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -132,6 +258,7 @@ public class LoggingConfig {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (enabled != null) sb.append("Enabled: " + enabled + ", ");
         if (bucket != null) sb.append("Bucket: " + bucket + ", ");
         if (prefix != null) sb.append("Prefix: " + prefix + ", ");
         sb.append("}");
@@ -143,6 +270,7 @@ public class LoggingConfig {
         final int prime = 31;
         int hashCode = 1;
         
+        hashCode = prime * hashCode + ((isEnabled() == null) ? 0 : isEnabled().hashCode()); 
         hashCode = prime * hashCode + ((getBucket() == null) ? 0 : getBucket().hashCode()); 
         hashCode = prime * hashCode + ((getPrefix() == null) ? 0 : getPrefix().hashCode()); 
         return hashCode;
@@ -156,6 +284,8 @@ public class LoggingConfig {
         if (obj instanceof LoggingConfig == false) return false;
         LoggingConfig other = (LoggingConfig)obj;
         
+        if (other.isEnabled() == null ^ this.isEnabled() == null) return false;
+        if (other.isEnabled() != null && other.isEnabled().equals(this.isEnabled()) == false) return false; 
         if (other.getBucket() == null ^ this.getBucket() == null) return false;
         if (other.getBucket() != null && other.getBucket().equals(this.getBucket()) == false) return false; 
         if (other.getPrefix() == null ^ this.getPrefix() == null) return false;

@@ -44,8 +44,8 @@ public class InvalidationBatchStaxUnmarshaller implements Unmarshaller<Invalidat
             if (xmlEvent.isEndDocument()) return invalidationBatch;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
-                if (context.testExpression("Path", targetDepth)) {
-                    invalidationBatch.getPaths().add(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("Paths", targetDepth)) {
+                    invalidationBatch.setPaths(PathsStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
                 if (context.testExpression("CallerReference", targetDepth)) {

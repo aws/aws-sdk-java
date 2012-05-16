@@ -37,14 +37,14 @@ import com.amazonaws.util.XMLWriter;
 public class ListStreamingDistributionsRequestMarshaller implements Marshaller<Request<ListStreamingDistributionsRequest>, ListStreamingDistributionsRequest> {
 
     public Request<ListStreamingDistributionsRequest> marshall(ListStreamingDistributionsRequest listStreamingDistributionsRequest) {
-        if (listStreamingDistributionsRequest == null) { 
+        if (listStreamingDistributionsRequest == null) {
             throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
         Request<ListStreamingDistributionsRequest> request = new DefaultRequest<ListStreamingDistributionsRequest>(listStreamingDistributionsRequest, "AmazonCloudFront");
         request.setHttpMethod(HttpMethodName.GET);
 
-        String uriResourcePath = "2012-03-15/streaming-distribution?Marker={Marker}&MaxItems={MaxItems}"; 
+        String uriResourcePath = "2012-05-05/streaming-distribution?Marker={Marker}&MaxItems={MaxItems}"; 
         uriResourcePath = uriResourcePath.replace("{Marker}", getString(listStreamingDistributionsRequest.getMarker())); 
         uriResourcePath = uriResourcePath.replace("{MaxItems}", getString(listStreamingDistributionsRequest.getMaxItems())); 
 

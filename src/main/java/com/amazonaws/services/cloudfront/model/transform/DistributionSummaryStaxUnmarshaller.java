@@ -60,16 +60,20 @@ public class DistributionSummaryStaxUnmarshaller implements Unmarshaller<Distrib
                     distributionSummary.setDomainName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
-                if (context.testExpression("S3Origin", targetDepth)) {
-                    distributionSummary.setS3Origin(S3OriginStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("Aliases", targetDepth)) {
+                    distributionSummary.setAliases(AliasesStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
-                if (context.testExpression("CustomOrigin", targetDepth)) {
-                    distributionSummary.setCustomOrigin(CustomOriginStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("Origins", targetDepth)) {
+                    distributionSummary.setOrigins(OriginsStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
-                if (context.testExpression("CNAME", targetDepth)) {
-                    distributionSummary.getCNAME().add(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("DefaultCacheBehavior", targetDepth)) {
+                    distributionSummary.setDefaultCacheBehavior(DefaultCacheBehaviorStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("CacheBehaviors", targetDepth)) {
+                    distributionSummary.setCacheBehaviors(CacheBehaviorsStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
                 if (context.testExpression("Comment", targetDepth)) {
@@ -78,14 +82,6 @@ public class DistributionSummaryStaxUnmarshaller implements Unmarshaller<Distrib
                 }
                 if (context.testExpression("Enabled", targetDepth)) {
                     distributionSummary.setEnabled(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-                if (context.testExpression("TrustedSigners", targetDepth)) {
-                    distributionSummary.setTrustedSigners(TrustedSignersStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-                if (context.testExpression("CachingBehavior", targetDepth)) {
-                    distributionSummary.setCachingBehavior(CachingBehaviorStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

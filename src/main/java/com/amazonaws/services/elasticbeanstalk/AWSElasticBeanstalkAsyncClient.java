@@ -34,23 +34,17 @@ import com.amazonaws.services.elasticbeanstalk.model.*;
  * Callers must use the Future object to determine when the service call has actually
  * completed.
  * AWS Elastic Beanstalk <p>
- * This is the AWS Elastic Beanstalk API Reference. This guide provides
- * detailed information about AWS Elastic Beanstalk actions, data types,
+ * This is the AWS Elastic Beanstalk API Reference. This guide provides detailed information about AWS Elastic Beanstalk actions, data types,
  * parameters, and errors.
  * </p>
  * <p>
- * AWS Elastic Beanstalk is a tool that makes it easy for you to create,
- * deploy, and manage scalable, fault-tolerant applications running on
- * Amazon Web Services cloud resources.
+ * AWS Elastic Beanstalk is a tool that makes it easy for you to create, deploy, and manage scalable, fault-tolerant applications running on Amazon Web
+ * Services cloud resources.
  * </p>
  * <p>
- * For more information about this product, go to the <a
- * href="http://aws.amazon.com/elasticbeanstalk/"> AWS Elastic Beanstalk
- * </a> details page. The location of the lastest AWS Elastic Beanstalk
- * WSDL is <a
- * icbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl">
- * sticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl
- * </a> .
+ * For more information about this product, go to the <a href="http://aws.amazon.com/elasticbeanstalk/"> AWS Elastic Beanstalk </a> details page. The
+ * location of the lastest AWS Elastic Beanstalk WSDL is <a href="http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl">
+ * http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl </a> .
  * </p>
  * <p>
  * <b>Endpoints</b>

@@ -18,8 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sqs.AmazonSQS#getQueueUrl(GetQueueUrlRequest) GetQueueUrl operation}.
  * <p>
- * The <code>GetQueueUrl</code> action returns the URL of an existing
- * queue.
+ * The <code>GetQueueUrl</code> action returns the URL of an existing queue.
  * </p>
  *
  * @see com.amazonaws.services.sqs.AmazonSQS#getQueueUrl(GetQueueUrlRequest)

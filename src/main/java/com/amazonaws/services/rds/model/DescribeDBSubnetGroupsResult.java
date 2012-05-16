@@ -16,8 +16,7 @@ package com.amazonaws.services.rds.model;
 
 /**
  * <p>
- * Contains the result of a successful invocation of the
- * DescribeDBSubnetGroups action.
+ * Contains the result of a successful invocation of the DescribeDBSubnetGroups action.
  * </p>
  */
 public class DescribeDBSubnetGroupsResult {

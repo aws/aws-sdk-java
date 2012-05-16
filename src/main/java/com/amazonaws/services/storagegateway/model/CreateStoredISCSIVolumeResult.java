@@ -26,7 +26,7 @@ package com.amazonaws.services.storagegateway.model;
  * 
  * </ul>
  */
-public class CreateStoredISCSIVolumeResult {
+public class CreateStorediSCSIVolumeResult {
 
     /**
      * The Amazon Resource Name (ARN) of the configured volume.
@@ -87,7 +87,7 @@ public class CreateStoredISCSIVolumeResult {
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public CreateStoredISCSIVolumeResult withVolumeARN(String volumeARN) {
+    public CreateStorediSCSIVolumeResult withVolumeARN(String volumeARN) {
         this.volumeARN = volumeARN;
         return this;
     }
@@ -121,7 +121,7 @@ public class CreateStoredISCSIVolumeResult {
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public CreateStoredISCSIVolumeResult withVolumeSizeInBytes(Long volumeSizeInBytes) {
+    public CreateStorediSCSIVolumeResult withVolumeSizeInBytes(Long volumeSizeInBytes) {
         this.volumeSizeInBytes = volumeSizeInBytes;
         return this;
     }
@@ -170,7 +170,7 @@ public class CreateStoredISCSIVolumeResult {
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public CreateStoredISCSIVolumeResult withTargetARN(String targetARN) {
+    public CreateStorediSCSIVolumeResult withTargetARN(String targetARN) {
         this.targetARN = targetARN;
         return this;
     }
@@ -211,8 +211,8 @@ public class CreateStoredISCSIVolumeResult {
         if (this == obj) return true;
         if (obj == null) return false;
     
-        if (obj instanceof CreateStoredISCSIVolumeResult == false) return false;
-        CreateStoredISCSIVolumeResult other = (CreateStoredISCSIVolumeResult)obj;
+        if (obj instanceof CreateStorediSCSIVolumeResult == false) return false;
+        CreateStorediSCSIVolumeResult other = (CreateStorediSCSIVolumeResult)obj;
         
         if (other.getVolumeARN() == null ^ this.getVolumeARN() == null) return false;
         if (other.getVolumeARN() != null && other.getVolumeARN().equals(this.getVolumeARN()) == false) return false; 

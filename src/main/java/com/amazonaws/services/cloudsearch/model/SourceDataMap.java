@@ -16,8 +16,7 @@ package com.amazonaws.services.cloudsearch.model;
 
 /**
  * <p>
- * Specifies how to map source attribute values to custom values when
- * populating an <code>IndexField</code> .
+ * Specifies how to map source attribute values to custom values when populating an <code>IndexField</code> .
  * </p>
  */
 public class SourceDataMap {

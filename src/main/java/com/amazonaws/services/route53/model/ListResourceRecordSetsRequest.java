@@ -18,57 +18,41 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.route53.AmazonRoute53#listResourceRecordSets(ListResourceRecordSetsRequest) ListResourceRecordSets operation}.
  * <p>
- * Imagine all the resource record sets in a zone listed out in front of
- * you. Imagine them sorted lexicographically first by DNS name (with the
- * labels reversed, like "com.amazon.www" for example), and secondarily,
- * lexicographically by record type. This operation retrieves at most
- * MaxItems resource record sets from this list, in order, starting at a
- * position specified by the Name and Type arguments:
+ * Imagine all the resource record sets in a zone listed out in front of you. Imagine them sorted lexicographically first by DNS name (with the labels
+ * reversed, like "com.amazon.www" for example), and secondarily, lexicographically by record type. This operation retrieves at most MaxItems resource
+ * record sets from this list, in order, starting at a position specified by the Name and Type arguments:
  * </p>
  * 
  * <ul>
- * <li>If both Name and Type are omitted, this means start the results
- * at the first RRSET in the HostedZone.</li>
- * <li>If Name is specified but Type is omitted, this means start the
- * results at the first RRSET in the list whose name is greater than or
- * equal to Name. </li>
- * <li>If both Name and Type are specified, this means start the results
- * at the first RRSET in the list whose name is greater than or equal to
- * Name and whose type is greater than or equal to Type.</li>
+ * <li>If both Name and Type are omitted, this means start the results at the first RRSET in the HostedZone.</li>
+ * <li>If Name is specified but Type is omitted, this means start the results at the first RRSET in the list whose name is greater than or equal to
+ * Name. </li>
+ * <li>If both Name and Type are specified, this means start the results at the first RRSET in the list whose name is greater than or equal to Name and
+ * whose type is greater than or equal to Type.</li>
  * <li>It is an error to specify the Type but not the Name.</li>
  * 
  * </ul>
  * <p>
- * Use ListResourceRecordSets to retrieve a single known record set by
- * specifying the record set's name and type, and setting MaxItems = 1
+ * Use ListResourceRecordSets to retrieve a single known record set by specifying the record set's name and type, and setting MaxItems = 1
  * </p>
  * <p>
- * To retrieve all the records in a HostedZone, first pause any processes
- * making calls to ChangeResourceRecordSets. Initially call
- * ListResourceRecordSets without a Name and Type to get the first page
- * of record sets. For subsequent calls, set Name and Type to the
- * NextName and NextType values returned by the previous response.
+ * To retrieve all the records in a HostedZone, first pause any processes making calls to ChangeResourceRecordSets. Initially call ListResourceRecordSets
+ * without a Name and Type to get the first page of record sets. For subsequent calls, set Name and Type to the NextName and NextType values returned by
+ * the previous response.
  * </p>
  * <p>
- * In the presence of concurrent ChangeResourceRecordSets calls, there is
- * no consistency of results across calls to ListResourceRecordSets. The
- * only way to get a consistent multi-page snapshot of all RRSETs in a
- * zone is to stop making changes while pagination is in progress.
+ * In the presence of concurrent ChangeResourceRecordSets calls, there is no consistency of results across calls to ListResourceRecordSets. The only way
+ * to get a consistent multi-page snapshot of all RRSETs in a zone is to stop making changes while pagination is in progress.
  * </p>
  * <p>
- * However, the results from ListResourceRecordSets are consistent within
- * a page. If MakeChange calls are taking place concurrently, the result
- * of each one will either be completely visible in your results or not
- * at all. You will not see partial changes, or changes that do not
- * ultimately succeed. (This follows from the fact that MakeChange is
- * atomic)
+ * However, the results from ListResourceRecordSets are consistent within a page. If MakeChange calls are taking place concurrently, the result of each
+ * one will either be completely visible in your results or not at all. You will not see partial changes, or changes that do not ultimately succeed.
+ * (This follows from the fact that MakeChange is atomic)
  * </p>
  * <p>
- * The results from ListResourceRecordSets are strongly consistent with
- * ChangeResourceRecordSets. To be precise, if a single process makes a
- * call to ChangeResourceRecordSets and receives a successful response,
- * the effects of that change will be visible in a subsequent call to
- * ListResourceRecordSets by that process.
+ * The results from ListResourceRecordSets are strongly consistent with ChangeResourceRecordSets. To be precise, if a single process makes a call to
+ * ChangeResourceRecordSets and receives a successful response, the effects of that change will be visible in a subsequent call to ListResourceRecordSets
+ * by that process.
  * </p>
  *
  * @see com.amazonaws.services.route53.AmazonRoute53#listResourceRecordSets(ListResourceRecordSetsRequest)

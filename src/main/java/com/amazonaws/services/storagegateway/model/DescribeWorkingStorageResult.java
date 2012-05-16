@@ -22,8 +22,7 @@ package com.amazonaws.services.storagegateway.model;
  * <ul>
  * <li> DescribeWorkingStorageOutput$DiskIds </li>
  * <li> GatewayARN </li>
- * <li> DescribeWorkingStorageOutput$WorkingStorageAllocatedInBytes
- * </li>
+ * <li> DescribeWorkingStorageOutput$WorkingStorageAllocatedInBytes </li>
  * <li> DescribeWorkingStorageOutput$WorkingStorageUsedInBytes </li>
  * 
  * </ul>

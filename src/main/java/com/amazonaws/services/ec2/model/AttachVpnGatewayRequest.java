@@ -18,10 +18,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#attachVpnGateway(AttachVpnGatewayRequest) AttachVpnGateway operation}.
  * <p>
- * Attaches a VPN gateway to a VPC. This is the last step required to
- * get your VPC fully connected to your data center before launching
- * instances in it. For more information, go to Process for Using Amazon
- * VPC in the Amazon Virtual Private Cloud Developer Guide.
+ * Attaches a VPN gateway to a VPC. This is the last step required to get your VPC fully connected to your data center before launching instances in it.
+ * For more information, go to Process for Using Amazon VPC in the Amazon Virtual Private Cloud Developer Guide.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#attachVpnGateway(AttachVpnGatewayRequest)

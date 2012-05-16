@@ -18,22 +18,16 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeVpnGateways(DescribeVpnGatewaysRequest) DescribeVpnGateways operation}.
  * <p>
- * Gives you information about your VPN gateways. You can filter the
- * results to return information only about VPN gateways that match
- * criteria you specify.
+ * Gives you information about your VPN gateways. You can filter the results to return information only about VPN gateways that match criteria you
+ * specify.
  * </p>
  * <p>
- * For example, you could ask to get information about a particular VPN
- * gateway (or all) only if the gateway's state is pending or available.
- * You can specify multiple filters (e.g., the VPN gateway is in a
- * particular Availability Zone and the gateway's state is pending or
- * available).
+ * For example, you could ask to get information about a particular VPN gateway (or all) only if the gateway's state is pending or available. You can
+ * specify multiple filters (e.g., the VPN gateway is in a particular Availability Zone and the gateway's state is pending or available).
  * </p>
  * <p>
- * The result includes information for a particular VPN gateway only if
- * the gateway matches all your filters. If there's no match, no special
- * message is returned; the response is simply empty. The following table
- * shows the available filters.
+ * The result includes information for a particular VPN gateway only if the gateway matches all your filters. If there's no match, no special message is
+ * returned; the response is simply empty. The following table shows the available filters.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeVpnGateways(DescribeVpnGatewaysRequest)

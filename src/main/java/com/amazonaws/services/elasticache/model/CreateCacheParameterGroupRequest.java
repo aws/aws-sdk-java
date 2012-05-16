@@ -18,8 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticache.AmazonElastiCache#createCacheParameterGroup(CreateCacheParameterGroupRequest) CreateCacheParameterGroup operation}.
  * <p>
- * Creates a new Cache Parameter Group. Cache Parameter groups control
- * the parameters for a Cache Cluster.
+ * Creates a new Cache Parameter Group. Cache Parameter groups control the parameters for a Cache Cluster.
  * </p>
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#createCacheParameterGroup(CreateCacheParameterGroupRequest)

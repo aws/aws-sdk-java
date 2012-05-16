@@ -18,8 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The account specified does not have the appropriate bucket
- * permissions.
+ * The account specified does not have the appropriate bucket permissions.
  * </p>
  */        
 public class BucketPermissionException extends AmazonServiceException {

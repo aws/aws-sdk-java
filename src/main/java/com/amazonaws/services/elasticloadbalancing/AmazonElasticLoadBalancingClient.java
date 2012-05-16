@@ -43,12 +43,9 @@ import com.amazonaws.services.elasticloadbalancing.model.transform.*;
  * completes.
  * <p>
  * Elastic Load Balancing <p>
- * Elastic Load Balancing is a cost-effective and easy to use web
- * service to help you improve availability and scalability of your
- * application. It makes it easy for you to distribute application loads
- * between two or more EC2 instances. Elastic Load Balancing enables
- * availability through redundancy and supports traffic growth of your
- * application.
+ * Elastic Load Balancing is a cost-effective and easy to use web service to help you improve availability and scalability of your application. It makes
+ * it easy for you to distribute application loads between two or more EC2 instances. Elastic Load Balancing enables availability through redundancy and
+ * supports traffic growth of your application.
  * </p>
  */
 public class AmazonElasticLoadBalancingClient extends AmazonWebServiceClient implements AmazonElasticLoadBalancing {

@@ -18,8 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeAddresses(DescribeAddressesRequest) DescribeAddresses operation}.
  * <p>
- * The DescribeAddresses operation lists elastic IP addresses assigned
- * to your account.
+ * The DescribeAddresses operation lists elastic IP addresses assigned to your account.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeAddresses(DescribeAddressesRequest)

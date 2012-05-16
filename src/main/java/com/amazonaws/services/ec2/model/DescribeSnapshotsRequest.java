@@ -18,11 +18,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeSnapshots(DescribeSnapshotsRequest) DescribeSnapshots operation}.
  * <p>
- * Returns information about the Amazon EBS snapshots available to you.
- * Snapshots available to you include public snapshots available for any
- * AWS account to launch, private snapshots you own, and private
- * snapshots owned by another AWS account but for which you've been given
- * explicit create volume permissions.
+ * Returns information about the Amazon EBS snapshots available to you. Snapshots available to you include public snapshots available for any AWS
+ * account to launch, private snapshots you own, and private snapshots owned by another AWS account but for which you've been given explicit create
+ * volume permissions.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeSnapshots(DescribeSnapshotsRequest)

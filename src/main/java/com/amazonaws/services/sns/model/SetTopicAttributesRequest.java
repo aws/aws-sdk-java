@@ -18,8 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#setTopicAttributes(SetTopicAttributesRequest) SetTopicAttributes operation}.
  * <p>
- * The SetTopicAttributes action allows a topic owner to set an attribute
- * of the topic to a new value.
+ * The SetTopicAttributes action allows a topic owner to set an attribute of the topic to a new value.
  * </p>
  *
  * @see com.amazonaws.services.sns.AmazonSNS#setTopicAttributes(SetTopicAttributesRequest)

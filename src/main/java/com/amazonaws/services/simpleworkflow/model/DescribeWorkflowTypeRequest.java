@@ -18,9 +18,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#describeWorkflowType(DescribeWorkflowTypeRequest) DescribeWorkflowType operation}.
  * <p>
- * Returns information about the specified <i>workflow type</i> . This
- * includes configuration settings specified when the type was registered
- * and other information such as creation date, current status, etc.
+ * Returns information about the specified <i>workflow type</i> . This includes configuration settings specified when the type was registered and other
+ * information such as creation date, current status, etc.
  * </p>
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#describeWorkflowType(DescribeWorkflowTypeRequest)

@@ -18,10 +18,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeKeyPairs(DescribeKeyPairsRequest) DescribeKeyPairs operation}.
  * <p>
- * The DescribeKeyPairs operation returns information about key pairs
- * available to you. If you specify key pairs, information about those
- * key pairs is returned. Otherwise, information for all registered key
- * pairs is returned.
+ * The DescribeKeyPairs operation returns information about key pairs available to you. If you specify key pairs, information about those key pairs is
+ * returned. Otherwise, information for all registered key pairs is returned.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeKeyPairs(DescribeKeyPairsRequest)

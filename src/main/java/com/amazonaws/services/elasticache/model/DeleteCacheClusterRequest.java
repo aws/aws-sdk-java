@@ -18,11 +18,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticache.AmazonElastiCache#deleteCacheCluster(DeleteCacheClusterRequest) DeleteCacheCluster operation}.
  * <p>
- * Deletes a previously provisioned Cache Cluster. A successful response
- * from the web service indicates the request was received correctly.
- * This action cannot be canceled or reverted. DeleteCacheCluster deletes
- * all associated Cache Nodes, node endpoints and the Cache Cluster
- * itself.
+ * Deletes a previously provisioned Cache Cluster. A successful response from the web service indicates the request was received correctly. This action
+ * cannot be canceled or reverted. DeleteCacheCluster deletes all associated Cache Nodes, node endpoints and the Cache Cluster itself.
  * </p>
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#deleteCacheCluster(DeleteCacheClusterRequest)

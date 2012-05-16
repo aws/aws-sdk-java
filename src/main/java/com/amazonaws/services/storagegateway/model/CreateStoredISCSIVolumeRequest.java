@@ -16,25 +16,21 @@ package com.amazonaws.services.storagegateway.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Container for the parameters to the {@link com.amazonaws.services.storagegateway.AWSStorageGateway#createStorediSCSIVolume(CreateStoredISCSIVolumeRequest) CreateStorediSCSIVolume operation}.
+ * Container for the parameters to the {@link com.amazonaws.services.storagegateway.AWSStorageGateway#createStorediSCSIVolume(CreateStorediSCSIVolumeRequest) CreateStorediSCSIVolume operation}.
  * <p>
- * This operation creates a volume on a specified gateway. The size of
- * the volume is inferred from the disk size. You can choose to preserve
- * existing data on the disk, create volume from an existing snapshot, or
- * create an empty volume. If you choose to create an empty gateway
- * volume, then any existing data on the disk is erased.
+ * This operation creates a volume on a specified gateway. The size of the volume is inferred from the disk size. You can choose to preserve existing
+ * data on the disk, create volume from an existing snapshot, or create an empty volume. If you choose to create an empty gateway volume, then any
+ * existing data on the disk is erased.
  * </p>
  * <p>
- * In the request you must specify the gateway and the disk information
- * on which you are creating the volume. In response, AWS Storage Gateway
- * creates the volume and returns volume information such as the volume
- * ARN, size and the iSCSI target ARN that initiators can use to connect
- * to the volume target.
+ * In the request you must specify the gateway and the disk information on which you are creating the volume. In response, AWS Storage Gateway creates
+ * the volume and returns volume information such as the volume ARN, size and the iSCSI target ARN that initiators can use to connect to the volume
+ * target.
  * </p>
  *
- * @see com.amazonaws.services.storagegateway.AWSStorageGateway#createStorediSCSIVolume(CreateStoredISCSIVolumeRequest)
+ * @see com.amazonaws.services.storagegateway.AWSStorageGateway#createStorediSCSIVolume(CreateStorediSCSIVolumeRequest)
  */
-public class CreateStoredISCSIVolumeRequest extends AmazonWebServiceRequest {
+public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest {
 
     /**
      * The Amazon Resource Name (ARN) of the gateway. Use the
@@ -156,7 +152,7 @@ public class CreateStoredISCSIVolumeRequest extends AmazonWebServiceRequest {
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public CreateStoredISCSIVolumeRequest withGatewayARN(String gatewayARN) {
+    public CreateStorediSCSIVolumeRequest withGatewayARN(String gatewayARN) {
         this.gatewayARN = gatewayARN;
         return this;
     }
@@ -211,7 +207,7 @@ public class CreateStoredISCSIVolumeRequest extends AmazonWebServiceRequest {
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public CreateStoredISCSIVolumeRequest withDiskId(String diskId) {
+    public CreateStorediSCSIVolumeRequest withDiskId(String diskId) {
         this.diskId = diskId;
         return this;
     }
@@ -296,7 +292,7 @@ public class CreateStoredISCSIVolumeRequest extends AmazonWebServiceRequest {
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public CreateStoredISCSIVolumeRequest withSnapshotId(String snapshotId) {
+    public CreateStorediSCSIVolumeRequest withSnapshotId(String snapshotId) {
         this.snapshotId = snapshotId;
         return this;
     }
@@ -342,7 +338,7 @@ public class CreateStoredISCSIVolumeRequest extends AmazonWebServiceRequest {
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public CreateStoredISCSIVolumeRequest withPreserveExistingData(Boolean preserveExistingData) {
+    public CreateStorediSCSIVolumeRequest withPreserveExistingData(Boolean preserveExistingData) {
         this.preserveExistingData = preserveExistingData;
         return this;
     }
@@ -449,7 +445,7 @@ public class CreateStoredISCSIVolumeRequest extends AmazonWebServiceRequest {
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public CreateStoredISCSIVolumeRequest withTargetName(String targetName) {
+    public CreateStorediSCSIVolumeRequest withTargetName(String targetName) {
         this.targetName = targetName;
         return this;
     }
@@ -516,7 +512,7 @@ public class CreateStoredISCSIVolumeRequest extends AmazonWebServiceRequest {
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public CreateStoredISCSIVolumeRequest withNetworkInterfaceId(String networkInterfaceId) {
+    public CreateStorediSCSIVolumeRequest withNetworkInterfaceId(String networkInterfaceId) {
         this.networkInterfaceId = networkInterfaceId;
         return this;
     }
@@ -563,8 +559,8 @@ public class CreateStoredISCSIVolumeRequest extends AmazonWebServiceRequest {
         if (this == obj) return true;
         if (obj == null) return false;
     
-        if (obj instanceof CreateStoredISCSIVolumeRequest == false) return false;
-        CreateStoredISCSIVolumeRequest other = (CreateStoredISCSIVolumeRequest)obj;
+        if (obj instanceof CreateStorediSCSIVolumeRequest == false) return false;
+        CreateStorediSCSIVolumeRequest other = (CreateStorediSCSIVolumeRequest)obj;
         
         if (other.getGatewayARN() == null ^ this.getGatewayARN() == null) return false;
         if (other.getGatewayARN() != null && other.getGatewayARN().equals(this.getGatewayARN()) == false) return false; 

@@ -18,12 +18,10 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#deleteDBParameterGroup(DeleteDBParameterGroupRequest) DeleteDBParameterGroup operation}.
  * <p>
- * Deletes a specified DBParameterGroup. The DBParameterGroup cannot be
- * associated with any RDS instances to be deleted.
+ * Deletes a specified DBParameterGroup. The DBParameterGroup cannot be associated with any RDS instances to be deleted.
  * </p>
  * <p>
- * <b>NOTE:</b> The specified DB Parameter Group cannot be associated
- * with any DB Instances.
+ * <b>NOTE:</b> The specified DB Parameter Group cannot be associated with any DB Instances.
  * </p>
  *
  * @see com.amazonaws.services.rds.AmazonRDS#deleteDBParameterGroup(DeleteDBParameterGroupRequest)

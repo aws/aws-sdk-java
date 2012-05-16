@@ -18,9 +18,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.simpledb.AmazonSimpleDB#domainMetadata(DomainMetadataRequest) DomainMetadata operation}.
  * <p>
- * Returns information about the domain, including when the domain was
- * created, the number of items and attributes in the domain, and the
- * size of the attribute names and values.
+ * Returns information about the domain, including when the domain was created, the number of items and attributes in the domain, and the size of the
+ * attribute names and values.
  * </p>
  *
  * @see com.amazonaws.services.simpledb.AmazonSimpleDB#domainMetadata(DomainMetadataRequest)

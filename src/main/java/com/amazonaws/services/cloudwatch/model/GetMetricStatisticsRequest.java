@@ -21,30 +21,21 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Gets statistics for the specified metric.
  * </p>
  * <p>
- * <b>NOTE:</b> The maximum number of data points returned from a single
- * GetMetricStatistics request is 1,440. If a request is made that
- * generates more than 1,440 data points, Amazon CloudWatch returns an
- * error. In such a case, alter the request by narrowing the specified
- * time range or increasing the specified period. Alternatively, make
- * multiple requests across adjacent time ranges.
+ * <b>NOTE:</b> The maximum number of data points returned from a single GetMetricStatistics request is 1,440. If a request is made that generates more
+ * than 1,440 data points, Amazon CloudWatch returns an error. In such a case, alter the request by narrowing the specified time range or increasing the
+ * specified period. Alternatively, make multiple requests across adjacent time ranges.
  * </p>
  * <p>
- * Amazon CloudWatch aggregates data points based on the length of the
- * <code>period</code> that you specify. For example, if you request
- * statistics with a one-minute granularity, Amazon CloudWatch aggregates
- * data points with time stamps that fall within the same one-minute
- * period. In such a case, the data points queried can greatly outnumber
- * the data points returned.
+ * Amazon CloudWatch aggregates data points based on the length of the <code>period</code> that you specify. For example, if you request statistics with
+ * a one-minute granularity, Amazon CloudWatch aggregates data points with time stamps that fall within the same one-minute period. In such a case, the
+ * data points queried can greatly outnumber the data points returned.
  * </p>
  * <p>
- * <b>NOTE:</b> The maximum number of data points that can be queried is
- * 50,850; whereas the maximum number of data points returned is 1,440.
+ * <b>NOTE:</b> The maximum number of data points that can be queried is 50,850; whereas the maximum number of data points returned is 1,440.
  * </p>
  * <p>
- * The following examples show various statistics allowed by the data
- * point query maximum of 50,850 when you call
- * <code>GetMetricStatistics</code> on Amazon EC2 instances with detailed
- * (one-minute) monitoring enabled:
+ * The following examples show various statistics allowed by the data point query maximum of 50,850 when you call <code>GetMetricStatistics</code> on
+ * Amazon EC2 instances with detailed (one-minute) monitoring enabled:
  * </p>
  * 
  * <ul>

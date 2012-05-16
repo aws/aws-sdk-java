@@ -18,9 +18,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#deleteInternetGateway(DeleteInternetGatewayRequest) DeleteInternetGateway operation}.
  * <p>
- * Deletes an Internet gateway from your AWS account. The gateway must
- * not be attached to a VPC. For more information about your VPC and
- * Internet gateway, go to Amazon Virtual Private Cloud User Guide.
+ * Deletes an Internet gateway from your AWS account. The gateway must not be attached to a VPC. For more information about your VPC and Internet
+ * gateway, go to Amazon Virtual Private Cloud User Guide.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#deleteInternetGateway(DeleteInternetGatewayRequest)

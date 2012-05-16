@@ -18,25 +18,20 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#terminateWorkflowExecution(TerminateWorkflowExecutionRequest) TerminateWorkflowExecution operation}.
  * <p>
- * Records a <code>WorkflowExecutionTerminated</code> event and forces
- * closure of the workflow execution identified by the given domain,
- * runId, and workflowId. The child policy, registered with the workflow
- * type or specified when starting this execution, is applied to any open
- * child workflow executions of this workflow execution.
+ * Records a <code>WorkflowExecutionTerminated</code> event and forces closure of the workflow execution identified by the given domain, runId, and
+ * workflowId. The child policy, registered with the workflow type or specified when starting this execution, is applied to any open child workflow
+ * executions of this workflow execution.
  * </p>
  * <p>
- * <b>IMPORTANT:</b> If the identified workflow execution was in
- * progress, it is terminated immediately.
+ * <b>IMPORTANT:</b> If the identified workflow execution was in progress, it is terminated immediately.
  * </p>
  * <p>
- * <b>NOTE:</b> If a runId is not specified, then the
- * WorkflowExecutionTerminated event is recorded in the history of the
- * current open workflow with the matching workflowId in the domain.
+ * <b>NOTE:</b> If a runId is not specified, then the WorkflowExecutionTerminated event is recorded in the history of the current open workflow with the
+ * matching workflowId in the domain.
  * </p>
  * <p>
- * <b>NOTE:</b> You should consider using RequestCancelWorkflowExecution
- * action instead because it allows the workflow to gracefully close
- * while TerminateWorkflowExecution does not.
+ * <b>NOTE:</b> You should consider using RequestCancelWorkflowExecution action instead because it allows the workflow to gracefully close while
+ * TerminateWorkflowExecution does not.
  * </p>
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#terminateWorkflowExecution(TerminateWorkflowExecutionRequest)

@@ -18,8 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * You have exceeded the maximum number of allowable InProgress
- * invalidation batch requests, or invalidation objects.
+ * You have exceeded the maximum number of allowable InProgress invalidation batch requests, or invalidation objects.
  * </p>
  */        
 public class TooManyInvalidationsInProgressException extends AmazonServiceException {

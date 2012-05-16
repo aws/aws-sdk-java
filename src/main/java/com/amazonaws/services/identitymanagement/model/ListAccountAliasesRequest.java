@@ -18,15 +18,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listAccountAliases(ListAccountAliasesRequest) ListAccountAliases operation}.
  * <p>
- * Lists the account aliases associated with the account. For information
- * about using an AWS account alias, see <a
- * ://docs.amazonwebservices.com/IAM/latest/UserGuide/AccountAlias.html">
- * Using an Alias for Your AWS Account ID </a> in <i>Using AWS Identity
+ * Lists the account aliases associated with the account. For information about using an AWS account alias, see <a
+ * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/AccountAlias.html"> Using an Alias for Your AWS Account ID </a> in <i>Using AWS Identity
  * and Access Management</i> .
  * </p>
  * <p>
- * You can paginate the results using the <code>MaxItems</code> and
- * <code>Marker</code> parameters.
+ * You can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters.
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listAccountAliases(ListAccountAliasesRequest)

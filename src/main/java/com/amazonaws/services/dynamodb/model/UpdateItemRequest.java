@@ -21,9 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Edits an existing item's attributes.
  * </p>
  * <p>
- * You can perform a conditional update (insert a new attribute
- * name-value pair if it doesn't exist, or replace an existing name-value
- * pair if it has certain expected attribute values).
+ * You can perform a conditional update (insert a new attribute name-value pair if it doesn't exist, or replace an existing name-value pair if it has
+ * certain expected attribute values).
  * </p>
  *
  * @see com.amazonaws.services.dynamodb.AmazonDynamoDB#updateItem(UpdateItemRequest)

@@ -16,9 +16,8 @@ package com.amazonaws.services.dynamodb.model;
 
 /**
  * <p>
- * This structure is a Union of PutRequest and DeleteRequest. It can
- * contain exactly one of <code>PutRequest</code> or
- * <code>DeleteRequest</code> . Never Both. This is enforced in the code.
+ * This structure is a Union of PutRequest and DeleteRequest. It can contain exactly one of <code>PutRequest</code> or <code>DeleteRequest</code> . Never
+ * Both. This is enforced in the code.
  * </p>
  */
 public class WriteRequest {

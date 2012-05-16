@@ -18,23 +18,16 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#registerImage(RegisterImageRequest) RegisterImage operation}.
  * <p>
- * The RegisterImage operation registers an AMI with Amazon EC2. Images
- * must be registered before they can be launched. For more information,
- * see RunInstances.
+ * The RegisterImage operation registers an AMI with Amazon EC2. Images must be registered before they can be launched. For more information, see
+ * RunInstances.
  * </p>
  * <p>
- * Each AMI is associated with an unique ID which is provided by the
- * Amazon EC2 service through the RegisterImage operation. During
- * registration, Amazon EC2 retrieves the specified image manifest from
- * Amazon S3 and verifies that the image is owned by the user registering
- * the image.
+ * Each AMI is associated with an unique ID which is provided by the Amazon EC2 service through the RegisterImage operation. During registration, Amazon
+ * EC2 retrieves the specified image manifest from Amazon S3 and verifies that the image is owned by the user registering the image.
  * </p>
  * <p>
- * The image manifest is retrieved once and stored within the Amazon
- * EC2. Any modifications to an image in Amazon S3 invalidates this
- * registration. If you make changes to an image, deregister the previous
- * image and register the new image. For more information, see
- * DeregisterImage.
+ * The image manifest is retrieved once and stored within the Amazon EC2. Any modifications to an image in Amazon S3 invalidates this registration. If
+ * you make changes to an image, deregister the previous image and register the new image. For more information, see DeregisterImage.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#registerImage(RegisterImageRequest)

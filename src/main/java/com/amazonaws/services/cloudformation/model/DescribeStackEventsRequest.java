@@ -18,17 +18,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.cloudformation.AmazonCloudFormation#describeStackEvents(DescribeStackEventsRequest) DescribeStackEvents operation}.
  * <p>
- * Returns all the stack related events for the AWS account. If
- * <code>StackName</code> is specified, returns events related to all the
- * stacks with the given name. If <code>StackName</code> is not
- * specified, returns all the events for the account. For more
- * information about a stack's event history, go to the <a
- * http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">
- * AWS CloudFormation User Guide </a> .
+ * Returns all the stack related events for the AWS account. If <code>StackName</code> is specified, returns events related to all the stacks with the
+ * given name. If <code>StackName</code> is not specified, returns all the events for the account. For more information about a stack's event history, go
+ * to the <a href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide"> AWS CloudFormation User Guide </a> .
  * </p>
  * <p>
- * <b>NOTE:</b>Events are returned, even if the stack never existed or
- * has been successfully deleted.
+ * <b>NOTE:</b>Events are returned, even if the stack never existed or has been successfully deleted.
  * </p>
  *
  * @see com.amazonaws.services.cloudformation.AmazonCloudFormation#describeStackEvents(DescribeStackEventsRequest)

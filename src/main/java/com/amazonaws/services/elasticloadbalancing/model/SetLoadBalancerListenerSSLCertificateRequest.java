@@ -18,9 +18,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#setLoadBalancerListenerSSLCertificate(SetLoadBalancerListenerSSLCertificateRequest) SetLoadBalancerListenerSSLCertificate operation}.
  * <p>
- * Sets the certificate that terminates the specified listener's SSL
- * connections. The specified certificate replaces any prior certificate
- * that was used on the same LoadBalancer and port.
+ * Sets the certificate that terminates the specified listener's SSL connections. The specified certificate replaces any prior certificate that was used
+ * on the same LoadBalancer and port.
  * </p>
  *
  * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#setLoadBalancerListenerSSLCertificate(SetLoadBalancerListenerSSLCertificateRequest)

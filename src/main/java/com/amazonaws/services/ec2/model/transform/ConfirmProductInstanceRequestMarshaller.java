@@ -38,7 +38,7 @@ public class ConfirmProductInstanceRequestMarshaller implements Marshaller<Reque
 
         Request<ConfirmProductInstanceRequest> request = new DefaultRequest<ConfirmProductInstanceRequest>(confirmProductInstanceRequest, "AmazonEC2");
         request.addParameter("Action", "ConfirmProductInstance");
-        request.addParameter("Version", "2012-03-01");
+        request.addParameter("Version", "2012-04-01");
 
         if (confirmProductInstanceRequest.getProductCode() != null) {
             request.addParameter("ProductCode", StringUtils.fromString(confirmProductInstanceRequest.getProductCode()));

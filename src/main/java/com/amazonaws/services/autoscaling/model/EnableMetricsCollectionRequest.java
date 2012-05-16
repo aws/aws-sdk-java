@@ -18,15 +18,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.autoscaling.AmazonAutoScaling#enableMetricsCollection(EnableMetricsCollectionRequest) EnableMetricsCollection operation}.
  * <p>
- * Enables monitoring of group metrics for the Auto Scaling group
- * specified in <code>AutoScalingGroupName</code> .
- * You can specify the list of enabled metrics with the
- * <code>Metrics</code> parameter.
+ * Enables monitoring of group metrics for the Auto Scaling group specified in <code>AutoScalingGroupName</code> .
+ * You can specify the list of enabled metrics with the <code>Metrics</code> parameter.
  * </p>
  * <p>
- * Auto scaling metrics collection can be turned on only if the
- * <code>InstanceMonitoring</code> flag, in the Auto Scaling group's
- * launch configuration, is set to <code>True</code> .
+ * Auto scaling metrics collection can be turned on only if the <code>InstanceMonitoring</code> flag, in the Auto Scaling group's launch configuration,
+ * is set to <code>True</code> .
  * 
  * </p>
  *

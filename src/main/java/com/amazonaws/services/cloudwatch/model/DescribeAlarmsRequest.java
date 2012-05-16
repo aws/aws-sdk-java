@@ -18,10 +18,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.cloudwatch.AmazonCloudWatch#describeAlarms(DescribeAlarmsRequest) DescribeAlarms operation}.
  * <p>
- * Retrieves alarms with the specified names. If no name is specified,
- * all alarms for the user are returned. Alarms can be retrieved by using
- * only a prefix for the alarm name, the alarm state, or a prefix for any
- * action.
+ * Retrieves alarms with the specified names. If no name is specified, all alarms for the user are returned. Alarms can be retrieved by using only a
+ * prefix for the alarm name, the alarm state, or a prefix for any action.
  * </p>
  *
  * @see com.amazonaws.services.cloudwatch.AmazonCloudWatch#describeAlarms(DescribeAlarmsRequest)

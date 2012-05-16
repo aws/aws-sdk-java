@@ -18,10 +18,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#createLoadBalancerListeners(CreateLoadBalancerListenersRequest) CreateLoadBalancerListeners operation}.
  * <p>
- * Creates one or more listeners on a LoadBalancer for the specified
- * port. If a listener with the given port does not already exist, it
- * will be created; otherwise, the properties of the new listener must
- * match the properties of the existing listener.
+ * Creates one or more listeners on a LoadBalancer for the specified port. If a listener with the given port does not already exist, it will be created;
+ * otherwise, the properties of the new listener must match the properties of the existing listener.
  * </p>
  *
  * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#createLoadBalancerListeners(CreateLoadBalancerListenersRequest)

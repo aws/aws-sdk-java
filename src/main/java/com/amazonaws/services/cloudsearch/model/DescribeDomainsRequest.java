@@ -18,8 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.cloudsearch.AmazonCloudSearch#describeDomains(DescribeDomainsRequest) DescribeDomains operation}.
  * <p>
- * Gets information about the search domains owned by this account. Can
- * be limited to specific domains. Shows all domains by default.
+ * Gets information about the search domains owned by this account. Can be limited to specific domains. Shows all domains by default.
  * </p>
  *
  * @see com.amazonaws.services.cloudsearch.AmazonCloudSearch#describeDomains(DescribeDomainsRequest)

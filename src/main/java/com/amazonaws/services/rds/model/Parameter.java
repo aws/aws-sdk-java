@@ -16,12 +16,10 @@ package com.amazonaws.services.rds.model;
 
 /**
  * <p>
- * This data type is used as a request parameter in the
- * ModifyDBParameterGroup and ResetDBParameterGroup actions.
+ * This data type is used as a request parameter in the ModifyDBParameterGroup and ResetDBParameterGroup actions.
  * </p>
  * <p>
- * This data type is used as a response element in the
- * DescribeEngineDefaultParameters and DescribeDBParameters actions.
+ * This data type is used as a response element in the DescribeEngineDefaultParameters and DescribeDBParameters actions.
  * </p>
  */
 public class Parameter {

@@ -18,10 +18,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.storagegateway.AWSStorageGateway#updateChapCredentials(UpdateChapCredentialsRequest) UpdateChapCredentials operation}.
  * <p>
- * This operation updates the Challenge-Handshake Authentication Protocol
- * (CHAP) credentials for a specified iSCSI target. By default, a gateway
- * does not have CHAP enabled; however, for added security, you might use
- * it.
+ * This operation updates the Challenge-Handshake Authentication Protocol (CHAP) credentials for a specified iSCSI target. By default, a gateway does not
+ * have CHAP enabled; however, for added security, you might use it.
  * </p>
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#updateChapCredentials(UpdateChapCredentialsRequest)

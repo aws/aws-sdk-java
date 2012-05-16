@@ -21,16 +21,13 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Updates the name and/or the path of the specified user.
  * </p>
  * <p>
- * <b>IMPORTANT:</b> You should understand the implications of changing a
- * user's path or name. For more information, see Renaming Users and
- * Groups in Using AWS Identity and Access Management.
+ * <b>IMPORTANT:</b> You should understand the implications of changing a user's path or name. For more information, see Renaming Users and Groups in
+ * Using AWS Identity and Access Management.
  * </p>
  * <p>
- * <b>NOTE:</b>To change a user name the requester must have appropriate
- * permissions on both the source object and the target object. For
- * example, to change Bob to Robert, the entity making the request must
- * have permission on Bob and Robert, or must have permission on all (*).
- * For more information about permissions, see Permissions and Policies.
+ * <b>NOTE:</b>To change a user name the requester must have appropriate permissions on both the source object and the target object. For example, to
+ * change Bob to Robert, the entity making the request must have permission on Bob and Robert, or must have permission on all (*). For more information
+ * about permissions, see Permissions and Policies.
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#updateUser(UpdateUserRequest)

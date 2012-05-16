@@ -18,8 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * Indicates that the customer already owns the maximum allowed number of
- * subscriptions.
+ * Indicates that the customer already owns the maximum allowed number of subscriptions.
  * </p>
  */        
 public class SubscriptionLimitExceededException extends AmazonServiceException {

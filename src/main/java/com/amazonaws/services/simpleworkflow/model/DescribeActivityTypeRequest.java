@@ -18,9 +18,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#describeActivityType(DescribeActivityTypeRequest) DescribeActivityType operation}.
  * <p>
- * Returns information about the specified activity type. This includes
- * configuration settings provided at registration time as well as other
- * general information about the type.
+ * Returns information about the specified activity type. This includes configuration settings provided at registration time as well as other general
+ * information about the type.
  * </p>
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#describeActivityType(DescribeActivityTypeRequest)

@@ -18,12 +18,10 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.cloudformation.AmazonCloudFormation#describeStackResource(DescribeStackResourceRequest) DescribeStackResource operation}.
  * <p>
- * Returns a description of the specified resource in the specified
- * stack.
+ * Returns a description of the specified resource in the specified stack.
  * </p>
  * <p>
- * For deleted stacks, DescribeStackResource returns resource information
- * for up to 90 days after the stack has been deleted.
+ * For deleted stacks, DescribeStackResource returns resource information for up to 90 days after the stack has been deleted.
  * </p>
  *
  * @see com.amazonaws.services.cloudformation.AmazonCloudFormation#describeStackResource(DescribeStackResourceRequest)

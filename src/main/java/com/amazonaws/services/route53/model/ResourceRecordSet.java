@@ -16,8 +16,7 @@ package com.amazonaws.services.route53.model;
 
 /**
  * <p>
- * A complex type that contains information about the current resource
- * record set.
+ * A complex type that contains information about the current resource record set.
  * </p>
  */
 public class ResourceRecordSet {

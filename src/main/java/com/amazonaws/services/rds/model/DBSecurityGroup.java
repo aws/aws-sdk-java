@@ -16,8 +16,7 @@ package com.amazonaws.services.rds.model;
 
 /**
  * <p>
- * Contains the result of a successful invocation of the following
- * actions:
+ * Contains the result of a successful invocation of the following actions:
  * </p>
  * 
  * <ul>
@@ -28,8 +27,7 @@ package com.amazonaws.services.rds.model;
  * 
  * </ul>
  * <p>
- * This data type is used as a response element in the
- * DescribeDBSecurityGroups action.
+ * This data type is used as a response element in the DescribeDBSecurityGroups action.
  * </p>
  */
 public class DBSecurityGroup {

@@ -16,8 +16,7 @@ package com.amazonaws.services.rds.model;
 
 /**
  * <p>
- * This data type is used as a response element in the
- * DescribeReservedDBInstancesOfferings action.
+ * This data type is used as a response element in the DescribeReservedDBInstancesOfferings action.
  * </p>
  */
 public class ReservedDBInstancesOffering {

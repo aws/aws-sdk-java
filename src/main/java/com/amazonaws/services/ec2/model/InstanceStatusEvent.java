@@ -16,8 +16,7 @@ package com.amazonaws.services.ec2.model;
 
 /**
  * <p>
- * Represents an event that affects the status of an Amazon EC2
- * instance.
+ * Represents an event that affects the status of an Amazon EC2 instance.
  * </p>
  */
 public class InstanceStatusEvent {

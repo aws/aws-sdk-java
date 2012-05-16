@@ -18,15 +18,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.simpledb.AmazonSimpleDB#deleteDomain(DeleteDomainRequest) DeleteDomain operation}.
  * <p>
- * The <code>DeleteDomain</code> operation deletes a domain. Any items
- * (and their attributes) in the domain are deleted as well. The
- * <code>DeleteDomain</code> operation might take 10 or more seconds to
- * complete.
+ * The <code>DeleteDomain</code> operation deletes a domain. Any items (and their attributes) in the domain are deleted as well. The
+ * <code>DeleteDomain</code> operation might take 10 or more seconds to complete.
  * </p>
  * <p>
- * <b>NOTE:</b> Running DeleteDomain on a domain that does not exist or
- * running the function multiple times using the same domain name will
- * not result in an error response.
+ * <b>NOTE:</b> Running DeleteDomain on a domain that does not exist or running the function multiple times using the same domain name will not result in
+ * an error response.
  * </p>
  *
  * @see com.amazonaws.services.simpledb.AmazonSimpleDB#deleteDomain(DeleteDomainRequest)

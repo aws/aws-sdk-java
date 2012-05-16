@@ -48,12 +48,8 @@ public class SignerStaxUnmarshaller implements Unmarshaller<Signer, StaxUnmarsha
                     signer.setAwsAccountNumber(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
-                if (context.testExpression("Self", targetDepth)) {
-                    signer.setSelf(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-                if (context.testExpression("KeyPairId", targetDepth)) {
-                    signer.getKeyPairIds().add(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("KeyPairIds", targetDepth)) {
+                    signer.setKeyPairIds(KeyPairIdsStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

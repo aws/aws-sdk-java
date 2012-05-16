@@ -18,8 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * Request would result in user exceeding the allowed amount of storage
- * available across all DB Instances.
+ * Request would result in user exceeding the allowed amount of storage available across all DB Instances.
  * </p>
  */        
 public class StorageQuotaExceededException extends AmazonServiceException {

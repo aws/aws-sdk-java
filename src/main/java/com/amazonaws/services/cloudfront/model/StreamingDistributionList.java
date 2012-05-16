@@ -47,9 +47,16 @@ public class StreamingDistributionList {
     private Boolean isTruncated;
 
     /**
-     * An XML structure containing a summary of the streaming distribution.
+     * The number of streaming distributions that were created by the current
+     * AWS account.
      */
-    private java.util.List<StreamingDistributionSummary> streamingDistributionSummaries;
+    private Integer quantity;
+
+    /**
+     * A complex type that contains one StreamingDistributionSummary element
+     * for each distribution that was created by the current AWS account.
+     */
+    private java.util.List<StreamingDistributionSummary> items;
 
     /**
      * Default constructor for a new StreamingDistributionList object.  Callers should use the
@@ -239,69 +246,117 @@ public class StreamingDistributionList {
     }
     
     /**
-     * An XML structure containing a summary of the streaming distribution.
+     * The number of streaming distributions that were created by the current
+     * AWS account.
      *
-     * @return An XML structure containing a summary of the streaming distribution.
+     * @return The number of streaming distributions that were created by the current
+     *         AWS account.
      */
-    public java.util.List<StreamingDistributionSummary> getStreamingDistributionSummaries() {
-        
-        if (streamingDistributionSummaries == null) {
-            streamingDistributionSummaries = new java.util.ArrayList<StreamingDistributionSummary>();
-        }
-        return streamingDistributionSummaries;
+    public Integer getQuantity() {
+        return quantity;
     }
     
     /**
-     * An XML structure containing a summary of the streaming distribution.
+     * The number of streaming distributions that were created by the current
+     * AWS account.
      *
-     * @param streamingDistributionSummaries An XML structure containing a summary of the streaming distribution.
+     * @param quantity The number of streaming distributions that were created by the current
+     *         AWS account.
      */
-    public void setStreamingDistributionSummaries(java.util.Collection<StreamingDistributionSummary> streamingDistributionSummaries) {
-        if (streamingDistributionSummaries == null) {
-            this.streamingDistributionSummaries = null;
-            return;
-        }
-
-        java.util.List<StreamingDistributionSummary> streamingDistributionSummariesCopy = new java.util.ArrayList<StreamingDistributionSummary>(streamingDistributionSummaries.size());
-        streamingDistributionSummariesCopy.addAll(streamingDistributionSummaries);
-        this.streamingDistributionSummaries = streamingDistributionSummariesCopy;
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
     }
     
     /**
-     * An XML structure containing a summary of the streaming distribution.
+     * The number of streaming distributions that were created by the current
+     * AWS account.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param streamingDistributionSummaries An XML structure containing a summary of the streaming distribution.
+     * @param quantity The number of streaming distributions that were created by the current
+     *         AWS account.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public StreamingDistributionList withStreamingDistributionSummaries(StreamingDistributionSummary... streamingDistributionSummaries) {
-        if (getStreamingDistributionSummaries() == null) setStreamingDistributionSummaries(new java.util.ArrayList<StreamingDistributionSummary>(streamingDistributionSummaries.length));
-        for (StreamingDistributionSummary value : streamingDistributionSummaries) {
-            getStreamingDistributionSummaries().add(value);
+    public StreamingDistributionList withQuantity(Integer quantity) {
+        this.quantity = quantity;
+        return this;
+    }
+    
+    
+    /**
+     * A complex type that contains one StreamingDistributionSummary element
+     * for each distribution that was created by the current AWS account.
+     *
+     * @return A complex type that contains one StreamingDistributionSummary element
+     *         for each distribution that was created by the current AWS account.
+     */
+    public java.util.List<StreamingDistributionSummary> getItems() {
+        
+        if (items == null) {
+            items = new java.util.ArrayList<StreamingDistributionSummary>();
+        }
+        return items;
+    }
+    
+    /**
+     * A complex type that contains one StreamingDistributionSummary element
+     * for each distribution that was created by the current AWS account.
+     *
+     * @param items A complex type that contains one StreamingDistributionSummary element
+     *         for each distribution that was created by the current AWS account.
+     */
+    public void setItems(java.util.Collection<StreamingDistributionSummary> items) {
+        if (items == null) {
+            this.items = null;
+            return;
+        }
+
+        java.util.List<StreamingDistributionSummary> itemsCopy = new java.util.ArrayList<StreamingDistributionSummary>(items.size());
+        itemsCopy.addAll(items);
+        this.items = itemsCopy;
+    }
+    
+    /**
+     * A complex type that contains one StreamingDistributionSummary element
+     * for each distribution that was created by the current AWS account.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param items A complex type that contains one StreamingDistributionSummary element
+     *         for each distribution that was created by the current AWS account.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public StreamingDistributionList withItems(StreamingDistributionSummary... items) {
+        if (getItems() == null) setItems(new java.util.ArrayList<StreamingDistributionSummary>(items.length));
+        for (StreamingDistributionSummary value : items) {
+            getItems().add(value);
         }
         return this;
     }
     
     /**
-     * An XML structure containing a summary of the streaming distribution.
+     * A complex type that contains one StreamingDistributionSummary element
+     * for each distribution that was created by the current AWS account.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param streamingDistributionSummaries An XML structure containing a summary of the streaming distribution.
+     * @param items A complex type that contains one StreamingDistributionSummary element
+     *         for each distribution that was created by the current AWS account.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public StreamingDistributionList withStreamingDistributionSummaries(java.util.Collection<StreamingDistributionSummary> streamingDistributionSummaries) {
-        if (streamingDistributionSummaries == null) {
-            this.streamingDistributionSummaries = null;
+    public StreamingDistributionList withItems(java.util.Collection<StreamingDistributionSummary> items) {
+        if (items == null) {
+            this.items = null;
         } else {
-            java.util.List<StreamingDistributionSummary> streamingDistributionSummariesCopy = new java.util.ArrayList<StreamingDistributionSummary>(streamingDistributionSummaries.size());
-            streamingDistributionSummariesCopy.addAll(streamingDistributionSummaries);
-            this.streamingDistributionSummaries = streamingDistributionSummariesCopy;
+            java.util.List<StreamingDistributionSummary> itemsCopy = new java.util.ArrayList<StreamingDistributionSummary>(items.size());
+            itemsCopy.addAll(items);
+            this.items = itemsCopy;
         }
 
         return this;
@@ -323,7 +378,8 @@ public class StreamingDistributionList {
         if (nextMarker != null) sb.append("NextMarker: " + nextMarker + ", ");
         if (maxItems != null) sb.append("MaxItems: " + maxItems + ", ");
         if (isTruncated != null) sb.append("IsTruncated: " + isTruncated + ", ");
-        if (streamingDistributionSummaries != null) sb.append("StreamingDistributionSummaries: " + streamingDistributionSummaries + ", ");
+        if (quantity != null) sb.append("Quantity: " + quantity + ", ");
+        if (items != null) sb.append("Items: " + items + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -337,7 +393,8 @@ public class StreamingDistributionList {
         hashCode = prime * hashCode + ((getNextMarker() == null) ? 0 : getNextMarker().hashCode()); 
         hashCode = prime * hashCode + ((getMaxItems() == null) ? 0 : getMaxItems().hashCode()); 
         hashCode = prime * hashCode + ((isTruncated() == null) ? 0 : isTruncated().hashCode()); 
-        hashCode = prime * hashCode + ((getStreamingDistributionSummaries() == null) ? 0 : getStreamingDistributionSummaries().hashCode()); 
+        hashCode = prime * hashCode + ((getQuantity() == null) ? 0 : getQuantity().hashCode()); 
+        hashCode = prime * hashCode + ((getItems() == null) ? 0 : getItems().hashCode()); 
         return hashCode;
     }
     
@@ -357,8 +414,10 @@ public class StreamingDistributionList {
         if (other.getMaxItems() != null && other.getMaxItems().equals(this.getMaxItems()) == false) return false; 
         if (other.isTruncated() == null ^ this.isTruncated() == null) return false;
         if (other.isTruncated() != null && other.isTruncated().equals(this.isTruncated()) == false) return false; 
-        if (other.getStreamingDistributionSummaries() == null ^ this.getStreamingDistributionSummaries() == null) return false;
-        if (other.getStreamingDistributionSummaries() != null && other.getStreamingDistributionSummaries().equals(this.getStreamingDistributionSummaries()) == false) return false; 
+        if (other.getQuantity() == null ^ this.getQuantity() == null) return false;
+        if (other.getQuantity() != null && other.getQuantity().equals(this.getQuantity()) == false) return false; 
+        if (other.getItems() == null ^ this.getItems() == null) return false;
+        if (other.getItems() != null && other.getItems().equals(this.getItems()) == false) return false; 
         return true;
     }
     

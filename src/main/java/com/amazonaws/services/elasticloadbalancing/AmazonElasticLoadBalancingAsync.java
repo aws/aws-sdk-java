@@ -24,12 +24,9 @@ import com.amazonaws.services.elasticloadbalancing.model.*;
  * Interface for accessing AmazonElasticLoadBalancing asynchronously,
  * using Java Futures.
  * Elastic Load Balancing <p>
- * Elastic Load Balancing is a cost-effective and easy to use web
- * service to help you improve availability and scalability of your
- * application. It makes it easy for you to distribute application loads
- * between two or more EC2 instances. Elastic Load Balancing enables
- * availability through redundancy and supports traffic growth of your
- * application.
+ * Elastic Load Balancing is a cost-effective and easy to use web service to help you improve availability and scalability of your application. It makes
+ * it easy for you to distribute application loads between two or more EC2 instances. Elastic Load Balancing enables availability through redundancy and
+ * supports traffic growth of your application.
  * </p> 
  */       
 public interface AmazonElasticLoadBalancingAsync extends AmazonElasticLoadBalancing {

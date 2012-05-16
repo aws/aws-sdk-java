@@ -16,8 +16,7 @@ package com.amazonaws.services.rds.model;
 
 /**
  * <p>
- * Contains the result of a successful invocation of the following
- * actions:
+ * Contains the result of a successful invocation of the following actions:
  * </p>
  * 
  * <ul>
@@ -26,8 +25,7 @@ package com.amazonaws.services.rds.model;
  * 
  * </ul>
  * <p>
- * This data type is used as a response element in the
- * DescribeDBSnapshots action.
+ * This data type is used as a response element in the DescribeDBSnapshots action.
  * </p>
  */
 public class DBSnapshot {

@@ -16,8 +16,7 @@ package com.amazonaws.services.ec2.model;
 
 /**
  * <p>
- * An AWS user ID identifiying an AWS account, and the name of a
- * security group within that account.
+ * An AWS user ID identifiying an AWS account, and the name of a security group within that account.
  * </p>
  */
 public class UserIdGroupPair {

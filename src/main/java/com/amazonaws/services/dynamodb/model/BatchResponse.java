@@ -16,8 +16,7 @@ package com.amazonaws.services.dynamodb.model;
 
 /**
  * <p>
- * The item attributes from a response in a specific table, along with
- * the read resources consumed on the table during the request.
+ * The item attributes from a response in a specific table, along with the read resources consumed on the table during the request.
  * </p>
  */
 public class BatchResponse {

@@ -18,14 +18,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#registerActivityType(RegisterActivityTypeRequest) RegisterActivityType operation}.
  * <p>
- * Registers a new <i>activity type</i> along with its configuration
- * settings in the specified domain.
+ * Registers a new <i>activity type</i> along with its configuration settings in the specified domain.
  * </p>
  * <p>
- * <b>IMPORTANT:</b> A TypeAlreadyExists fault is returned if the type
- * already exists in the domain. You cannot change any configuration
- * settings of the type after its registration, and it must be registered
- * as a new version.
+ * <b>IMPORTANT:</b> A TypeAlreadyExists fault is returned if the type already exists in the domain. You cannot change any configuration settings of the
+ * type after its registration, and it must be registered as a new version.
  * </p>
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#registerActivityType(RegisterActivityTypeRequest)

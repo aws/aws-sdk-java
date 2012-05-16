@@ -16,8 +16,7 @@ package com.amazonaws.services.ec2.model;
 
 /**
  * <p>
- * A software license that can be associated with an Amazon EC2 instance
- * when launched (ex. a Microsoft Windows license).
+ * A software license that can be associated with an Amazon EC2 instance when launched (ex. a Microsoft Windows license).
  * </p>
  */
 public class License {

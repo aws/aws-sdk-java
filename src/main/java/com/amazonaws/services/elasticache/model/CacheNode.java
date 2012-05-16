@@ -16,8 +16,7 @@ package com.amazonaws.services.elasticache.model;
 
 /**
  * <p>
- * A Cache Cluster is made up of one or more Cache Nodes. Each Cache
- * Node is an separate endpoint servicing the memcached protocol.
+ * A Cache Cluster is made up of one or more Cache Nodes. Each Cache Node is an separate endpoint servicing the memcached protocol.
  * </p>
  */
 public class CacheNode {

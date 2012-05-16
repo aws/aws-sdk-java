@@ -18,15 +18,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.dynamodb.AmazonDynamoDB#putItem(PutItemRequest) PutItem operation}.
  * <p>
- * Creates a new item, or replaces an old item with a new item (including
- * all the attributes).
+ * Creates a new item, or replaces an old item with a new item (including all the attributes).
  * </p>
  * <p>
- * If an item already exists in the specified table with the same primary
- * key, the new item completely replaces the existing item. You can
- * perform a conditional put (insert a new item if one with the specified
- * primary key doesn't exist), or replace an existing item if it has
- * certain attribute values.
+ * If an item already exists in the specified table with the same primary key, the new item completely replaces the existing item. You can perform a
+ * conditional put (insert a new item if one with the specified primary key doesn't exist), or replace an existing item if it has certain attribute
+ * values.
  * </p>
  *
  * @see com.amazonaws.services.dynamodb.AmazonDynamoDB#putItem(PutItemRequest)

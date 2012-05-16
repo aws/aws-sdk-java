@@ -18,10 +18,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.cloudsearch.AmazonCloudSearch#updateDefaultSearchField(UpdateDefaultSearchFieldRequest) UpdateDefaultSearchField operation}.
  * <p>
- * Configures the default search field for the search domain. The default
- * search field is used when a search request does not specify which
- * fields to search. By default, it is configured to include the contents
- * of all of the domain's text fields.
+ * Configures the default search field for the search domain. The default search field is used when a search request does not specify which fields to
+ * search. By default, it is configured to include the contents of all of the domain's text fields.
  * </p>
  *
  * @see com.amazonaws.services.cloudsearch.AmazonCloudSearch#updateDefaultSearchField(UpdateDefaultSearchFieldRequest)

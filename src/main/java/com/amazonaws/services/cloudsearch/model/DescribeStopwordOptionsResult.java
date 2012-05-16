@@ -16,8 +16,7 @@ package com.amazonaws.services.cloudsearch.model;
 
 /**
  * <p>
- * A response message that contains the stopword options for a search
- * domain.
+ * A response message that contains the stopword options for a search domain.
  * </p>
  */
 public class DescribeStopwordOptionsResult {

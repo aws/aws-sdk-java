@@ -18,10 +18,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#createAccountAlias(CreateAccountAliasRequest) CreateAccountAlias operation}.
  * <p>
- * This action creates an alias for your AWS account. For information
- * about using an AWS account alias, see <a
- * ://docs.amazonwebservices.com/IAM/latest/UserGuide/AccountAlias.html">
- * Using an Alias for Your AWS Account ID </a> in <i>Using AWS Identity
+ * This action creates an alias for your AWS account. For information about using an AWS account alias, see <a
+ * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/AccountAlias.html"> Using an Alias for Your AWS Account ID </a> in <i>Using AWS Identity
  * and Access Management</i> .
  * </p>
  *

@@ -18,8 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The request was rejected because it specified an invalid type
- * definition.
+ * The request was rejected because it specified an invalid type definition.
  * </p>
  */        
 public class InvalidTypeException extends AmazonServiceException {

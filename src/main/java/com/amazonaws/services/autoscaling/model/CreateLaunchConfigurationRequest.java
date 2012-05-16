@@ -18,21 +18,16 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.autoscaling.AmazonAutoScaling#createLaunchConfiguration(CreateLaunchConfigurationRequest) CreateLaunchConfiguration operation}.
  * <p>
- * Creates a new launch configuration. The launch configuration name
- * must be unique within the scope of the client's AWS account. The
- * maximum limit of launch configurations, which by default is 100, must
- * not yet have been met; otherwise, the call will fail. When created,
- * the new launch configuration is available for immediate use.
+ * Creates a new launch configuration. The launch configuration name must be unique within the scope of the client's AWS account. The maximum limit of
+ * launch configurations, which by default is 100, must not yet have been met; otherwise, the call will fail. When created, the new launch configuration
+ * is available for immediate use.
  * </p>
  * <p>
- * You can create a launch configuration with Amazon EC2 security groups
- * or with Amazon VPC security groups. However, you can't use Amazon EC2
- * security groups together with Amazon VPC security groups, or vice
- * versa.
+ * You can create a launch configuration with Amazon EC2 security groups or with Amazon VPC security groups. However, you can't use Amazon EC2 security
+ * groups together with Amazon VPC security groups, or vice versa.
  * </p>
  * <p>
- * <b>NOTE:</b> At this time, Auto Scaling launch configurations don't
- * support compressed (e.g. zipped) user data files.
+ * <b>NOTE:</b> At this time, Auto Scaling launch configurations don't support compressed (e.g. zipped) user data files.
  * </p>
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#createLaunchConfiguration(CreateLaunchConfigurationRequest)

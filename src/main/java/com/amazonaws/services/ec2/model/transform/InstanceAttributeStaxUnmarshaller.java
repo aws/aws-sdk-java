@@ -82,6 +82,10 @@ public class InstanceAttributeStaxUnmarshaller implements Unmarshaller<InstanceA
                     instanceAttribute.getBlockDeviceMappings().add(InstanceBlockDeviceMappingStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("productCodes/item", targetDepth)) {
+                    instanceAttribute.getProductCodes().add(ProductCodeStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return instanceAttribute;

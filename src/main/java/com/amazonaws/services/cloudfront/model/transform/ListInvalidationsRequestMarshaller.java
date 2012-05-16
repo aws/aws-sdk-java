@@ -37,14 +37,14 @@ import com.amazonaws.util.XMLWriter;
 public class ListInvalidationsRequestMarshaller implements Marshaller<Request<ListInvalidationsRequest>, ListInvalidationsRequest> {
 
     public Request<ListInvalidationsRequest> marshall(ListInvalidationsRequest listInvalidationsRequest) {
-        if (listInvalidationsRequest == null) { 
+        if (listInvalidationsRequest == null) {
             throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
         Request<ListInvalidationsRequest> request = new DefaultRequest<ListInvalidationsRequest>(listInvalidationsRequest, "AmazonCloudFront");
         request.setHttpMethod(HttpMethodName.GET);
 
-        String uriResourcePath = "2012-03-15/distribution/{DistributionId}/invalidation?Marker={Marker}&MaxItems={MaxItems}"; 
+        String uriResourcePath = "2012-05-05/distribution/{DistributionId}/invalidation?Marker={Marker}&MaxItems={MaxItems}"; 
         uriResourcePath = uriResourcePath.replace("{DistributionId}", getString(listInvalidationsRequest.getDistributionId())); 
         uriResourcePath = uriResourcePath.replace("{Marker}", getString(listInvalidationsRequest.getMarker())); 
         uriResourcePath = uriResourcePath.replace("{MaxItems}", getString(listInvalidationsRequest.getMaxItems())); 

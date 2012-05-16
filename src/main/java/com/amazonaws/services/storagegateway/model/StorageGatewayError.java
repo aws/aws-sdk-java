@@ -16,11 +16,8 @@ package com.amazonaws.services.storagegateway.model;
 
 /**
  * <p>
- * Provides additional information about an error that was returned by
- * the service as an InvalidGatewayRequestException or
- * InternalServiceError. See the <code>errorCode</code> and
- * <code>errorDetails</code> members for more information about the
- * error.
+ * Provides additional information about an error that was returned by the service as an InvalidGatewayRequestException or InternalServiceError. See the
+ * <code>errorCode</code> and <code>errorDetails</code> members for more information about the error.
  * </p>
  */
 public class StorageGatewayError {

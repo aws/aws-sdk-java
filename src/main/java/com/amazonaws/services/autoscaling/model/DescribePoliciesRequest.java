@@ -18,10 +18,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.autoscaling.AmazonAutoScaling#describePolicies(DescribePoliciesRequest) DescribePolicies operation}.
  * <p>
- * Returns descriptions of what each policy does. This action supports
- * pagination. If the response includes a token, there are more records
- * available. To get the additional records, repeat the request with the
- * response token as the <code>NextToken</code> parameter.
+ * Returns descriptions of what each policy does. This action supports pagination. If the response includes a token, there are more records available.
+ * To get the additional records, repeat the request with the response token as the <code>NextToken</code> parameter.
  * </p>
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#describePolicies(DescribePoliciesRequest)

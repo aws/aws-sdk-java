@@ -18,8 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * Your manifest file contained buckets from multiple regions. A job is
- * restricted to buckets from one region. Please correct and resubmit.
+ * Your manifest file contained buckets from multiple regions. A job is restricted to buckets from one region. Please correct and resubmit.
  * </p>
  */        
 public class MultipleRegionsException extends AmazonServiceException {

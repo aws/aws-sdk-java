@@ -21,14 +21,10 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Creates a new DB Parameter Group.
  * </p>
  * <p>
- * A DB Parameter Group is initially created with the default parameters
- * for the database engine used by the DB Instance. To provide custom
- * values for any of the parameters, you must modify the group after
- * creating it using <i>ModifyDBParameterGroup</i> . Once you've created
- * a DB Parameter Group, you need to associate it with your DB Instance
- * using <i>ModifyDBInstance</i> . When you associate a new DB Parameter
- * Group with a running DB Instance, you need to reboot the DB Instance
- * for the new DB Parameter Group and associated settings to take effect.
+ * A DB Parameter Group is initially created with the default parameters for the database engine used by the DB Instance. To provide custom values for
+ * any of the parameters, you must modify the group after creating it using <i>ModifyDBParameterGroup</i> . Once you've created a DB Parameter Group, you
+ * need to associate it with your DB Instance using <i>ModifyDBInstance</i> . When you associate a new DB Parameter Group with a running DB Instance, you
+ * need to reboot the DB Instance for the new DB Parameter Group and associated settings to take effect.
  * </p>
  *
  * @see com.amazonaws.services.rds.AmazonRDS#createDBParameterGroup(CreateDBParameterGroupRequest)

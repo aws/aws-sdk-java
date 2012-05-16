@@ -16,8 +16,7 @@ package com.amazonaws.services.sqs.model;
 
 /**
  * <p>
- * Encloses a message ID for successfully enqueued message of a
- * SendMessageBatchRequest.
+ * Encloses a message ID for successfully enqueued message of a SendMessageBatchRequest.
  * </p>
  */
 public class SendMessageBatchResultEntry {

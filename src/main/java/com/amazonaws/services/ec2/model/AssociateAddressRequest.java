@@ -18,14 +18,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#associateAddress(AssociateAddressRequest) AssociateAddress operation}.
  * <p>
- * The AssociateAddress operation associates an elastic IP address with
- * an instance.
+ * The AssociateAddress operation associates an elastic IP address with an instance.
  * </p>
  * <p>
- * If the IP address is currently assigned to another instance, the IP
- * address is assigned to the new instance. This is an idempotent
- * operation. If you enter it more than once, Amazon EC2 does not return
- * an error.
+ * If the IP address is currently assigned to another instance, the IP address is assigned to the new instance. This is an idempotent operation. If you
+ * enter it more than once, Amazon EC2 does not return an error.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#associateAddress(AssociateAddressRequest)

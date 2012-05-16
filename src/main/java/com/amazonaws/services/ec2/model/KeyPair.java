@@ -19,8 +19,7 @@ package com.amazonaws.services.ec2.model;
  * Describes an Amazon EC2 key pair, including the private key material.
  * </p>
  * <p>
- * The public key portion is stored by Amazon EC2 and the private key is
- * returned only once, in this type, when the key is initially created.
+ * The public key portion is stored by Amazon EC2 and the private key is returned only once, in this type, when the key is initially created.
  * </p>
  */
 public class KeyPair {

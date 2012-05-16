@@ -26,14 +26,14 @@ import org.codehaus.jackson.JsonToken;
 import static org.codehaus.jackson.JsonToken.*;
 
 /**
- * Create Stored I S C S I Volume Result JSON Unmarshaller
+ * Create Storedi S C S I Volume Result JSON Unmarshaller
  */
-public class CreateStoredISCSIVolumeResultJsonUnmarshaller implements Unmarshaller<CreateStoredISCSIVolumeResult, JsonUnmarshallerContext> {
+public class CreateStorediSCSIVolumeResultJsonUnmarshaller implements Unmarshaller<CreateStorediSCSIVolumeResult, JsonUnmarshallerContext> {
 
     
 
-    public CreateStoredISCSIVolumeResult unmarshall(JsonUnmarshallerContext context) throws Exception {
-        CreateStoredISCSIVolumeResult createStoredISCSIVolumeResult = new CreateStoredISCSIVolumeResult();
+    public CreateStorediSCSIVolumeResult unmarshall(JsonUnmarshallerContext context) throws Exception {
+        CreateStorediSCSIVolumeResult createStorediSCSIVolumeResult = new CreateStorediSCSIVolumeResult();
 
         
         
@@ -49,15 +49,15 @@ public class CreateStoredISCSIVolumeResultJsonUnmarshaller implements Unmarshall
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("VolumeARN", targetDepth)) {
                     context.nextToken();
-                    createStoredISCSIVolumeResult.setVolumeARN(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    createStorediSCSIVolumeResult.setVolumeARN(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("VolumeSizeInBytes", targetDepth)) {
                     context.nextToken();
-                    createStoredISCSIVolumeResult.setVolumeSizeInBytes(LongJsonUnmarshaller.getInstance().unmarshall(context));
+                    createStorediSCSIVolumeResult.setVolumeSizeInBytes(LongJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("TargetARN", targetDepth)) {
                     context.nextToken();
-                    createStoredISCSIVolumeResult.setTargetARN(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    createStorediSCSIVolumeResult.setTargetARN(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getCurrentDepth() <= originalDepth) break;
@@ -65,12 +65,12 @@ public class CreateStoredISCSIVolumeResultJsonUnmarshaller implements Unmarshall
             token = context.nextToken();
         }
         
-        return createStoredISCSIVolumeResult;
+        return createStorediSCSIVolumeResult;
     }
 
-    private static CreateStoredISCSIVolumeResultJsonUnmarshaller instance;
-    public static CreateStoredISCSIVolumeResultJsonUnmarshaller getInstance() {
-        if (instance == null) instance = new CreateStoredISCSIVolumeResultJsonUnmarshaller();
+    private static CreateStorediSCSIVolumeResultJsonUnmarshaller instance;
+    public static CreateStorediSCSIVolumeResultJsonUnmarshaller getInstance() {
+        if (instance == null) instance = new CreateStorediSCSIVolumeResultJsonUnmarshaller();
         return instance;
     }
 }

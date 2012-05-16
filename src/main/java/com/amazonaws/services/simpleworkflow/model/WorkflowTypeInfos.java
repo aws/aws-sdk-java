@@ -16,8 +16,7 @@ package com.amazonaws.services.simpleworkflow.model;
 
 /**
  * <p>
- * Contains a paginated list of information structures about workflow
- * types.
+ * Contains a paginated list of information structures about workflow types.
  * </p>
  */
 public class WorkflowTypeInfos {

@@ -21,16 +21,13 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Adds a new table to your account.
  * </p>
  * <p>
- * The table name must be unique among those associated with the AWS
- * Account issuing the request, and the AWS Region that receives the
- * request (e.g. <code>us-east-1</code> ).
+ * The table name must be unique among those associated with the AWS Account issuing the request, and the AWS Region that receives the request (e.g.
+ * <code>us-east-1</code> ).
  * </p>
  * <p>
- * The <code>CreateTable</code> operation triggers an asynchronous
- * workflow to begin creating the table. Amazon DynamoDB immediately
- * returns the state of the table ( <code>CREATING</code> ) until the
- * table is in the <code>ACTIVE</code> state. Once the table is in the
- * <code>ACTIVE</code> state, you can perform data plane operations.
+ * The <code>CreateTable</code> operation triggers an asynchronous workflow to begin creating the table. Amazon DynamoDB immediately returns the state of
+ * the table ( <code>CREATING</code> ) until the table is in the <code>ACTIVE</code> state. Once the table is in the <code>ACTIVE</code> state, you can
+ * perform data plane operations.
  * </p>
  *
  * @see com.amazonaws.services.dynamodb.AmazonDynamoDB#createTable(CreateTableRequest)

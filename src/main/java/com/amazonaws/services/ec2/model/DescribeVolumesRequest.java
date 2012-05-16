@@ -18,9 +18,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeVolumes(DescribeVolumesRequest) DescribeVolumes operation}.
  * <p>
- * Describes the status of the indicated volume or, in lieu of any
- * specified, all volumes belonging to the caller. Volumes that have been
- * deleted are not described.
+ * Describes the status of the indicated volume or, in lieu of any specified, all volumes belonging to the caller. Volumes that have been deleted are
+ * not described.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeVolumes(DescribeVolumesRequest)

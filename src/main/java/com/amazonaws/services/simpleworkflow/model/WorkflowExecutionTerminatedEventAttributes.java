@@ -16,8 +16,7 @@ package com.amazonaws.services.simpleworkflow.model;
 
 /**
  * <p>
- * Provides details of the <code>WorkflowExecutionTerminated</code>
- * event.
+ * Provides details of the <code>WorkflowExecutionTerminated</code> event.
  * </p>
  */
 public class WorkflowExecutionTerminatedEventAttributes {

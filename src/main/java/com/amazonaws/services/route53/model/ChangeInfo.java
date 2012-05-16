@@ -16,12 +16,10 @@ package com.amazonaws.services.route53.model;
 
 /**
  * <p>
- * A complex type that describes change information about changes made to
- * your hosted zone.
+ * A complex type that describes change information about changes made to your hosted zone.
  * </p>
  * <p>
- * This element contains an ID that you use when performing a GetChange
- * action to get detailed information about the change.
+ * This element contains an ID that you use when performing a GetChange action to get detailed information about the change.
  * </p>
  */
 public class ChangeInfo {

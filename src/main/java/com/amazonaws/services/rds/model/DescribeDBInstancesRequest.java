@@ -18,8 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#describeDBInstances(DescribeDBInstancesRequest) DescribeDBInstances operation}.
  * <p>
- * Returns information about provisioned RDS instances. This API
- * supports pagination.
+ * Returns information about provisioned RDS instances. This API supports pagination.
  * </p>
  *
  * @see com.amazonaws.services.rds.AmazonRDS#describeDBInstances(DescribeDBInstancesRequest)

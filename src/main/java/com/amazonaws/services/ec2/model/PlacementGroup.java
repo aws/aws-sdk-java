@@ -16,10 +16,8 @@ package com.amazonaws.services.ec2.model;
 
 /**
  * <p>
- * Represents a placement group into which multiple Amazon EC2 instances
- * can be launched. A placement group ensures that Amazon EC2 instances
- * are physically located close enough to support HPC features, such as
- * higher IO network connections between instances in the group.
+ * Represents a placement group into which multiple Amazon EC2 instances can be launched. A placement group ensures that Amazon EC2 instances are
+ * physically located close enough to support HPC features, such as higher IO network connections between instances in the group.
  * </p>
  */
 public class PlacementGroup {

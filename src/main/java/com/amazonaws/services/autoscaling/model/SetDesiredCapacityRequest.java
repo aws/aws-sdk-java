@@ -18,36 +18,25 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.autoscaling.AmazonAutoScaling#setDesiredCapacity(SetDesiredCapacityRequest) SetDesiredCapacity operation}.
  * <p>
- * Adjusts the desired size of the AutoScalingGroup by initiating
- * scaling activities. When reducing the size of the group, it is not
- * possible to define which Amazon EC2 instances will be terminated. This
- * applies to any Auto Scaling decisions that might result in terminating
- * instances.
+ * Adjusts the desired size of the AutoScalingGroup by initiating scaling activities. When reducing the size of the group, it is not possible to define
+ * which Amazon EC2 instances will be terminated. This applies to any Auto Scaling decisions that might result in terminating instances.
  * </p>
  * <p>
  * There are two common use cases for <code>SetDesiredCapacity</code> :
- * one for users of the Auto Scaling triggering system, and
- * another for developers who write their own triggering systems. Both
- * use cases relate to the concept of cooldown.
+ * one for users of the Auto Scaling triggering system, and another for developers who write their own triggering systems. Both use cases
+ * relate to the concept of cooldown.
  * </p>
  * <p>
- * In the first case, if you use the Auto Scaling triggering system,
- * <code>SetDesiredCapacity</code> changes the size of your Auto Scaling
- * group without regard to the cooldown period. This could be useful, for
- * example, if Auto Scaling did something unexpected for some reason. If
- * your cooldown period is 10 minutes, Auto Scaling would normally reject
- * requests to change the size of the group for that entire 10-minute
- * period. The <code>SetDesiredCapacity</code> command allows you to
- * circumvent this restriction and change the size of the group before
- * the end of the cooldown period.
+ * In the first case, if you use the Auto Scaling triggering system, <code>SetDesiredCapacity</code> changes the size of your Auto Scaling group without
+ * regard to the cooldown period. This could be useful, for example, if Auto Scaling did something unexpected for some reason. If your cooldown period is
+ * 10 minutes, Auto Scaling would normally reject requests to change the size of the group for that entire 10-minute period. The
+ * <code>SetDesiredCapacity</code> command allows you to circumvent this restriction and change the size of the group before the end of the cooldown
+ * period.
  * </p>
  * <p>
- * In the second case, if you write your own triggering system, you can
- * use <code>SetDesiredCapacity</code> to control the size of your Auto
- * Scaling group. If you want the same cooldown functionality that Auto
- * Scaling offers, you can configure <code>SetDesiredCapacity</code> to
- * honor cooldown by setting the <code>HonorCooldown</code> parameter to
- * <code>true</code> .
+ * In the second case, if you write your own triggering system, you can use <code>SetDesiredCapacity</code> to control the size of your Auto Scaling
+ * group. If you want the same cooldown functionality that Auto Scaling offers, you can configure <code>SetDesiredCapacity</code> to honor cooldown by
+ * setting the <code>HonorCooldown</code> parameter to <code>true</code> .
  * 
  * </p>
  *

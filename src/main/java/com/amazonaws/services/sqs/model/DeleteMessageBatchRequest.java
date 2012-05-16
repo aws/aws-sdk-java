@@ -18,9 +18,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sqs.AmazonSQS#deleteMessageBatch(DeleteMessageBatchRequest) DeleteMessageBatch operation}.
  * <p>
- * This is a batch version of DeleteMessage. It takes multiple receipt
- * handles and deletes each one of the messages. The result of the delete
- * operation on each message is reported individually in the response.
+ * This is a batch version of DeleteMessage. It takes multiple receipt handles and deletes each one of the messages. The result of the delete operation
+ * on each message is reported individually in the response.
  * </p>
  *
  * @see com.amazonaws.services.sqs.AmazonSQS#deleteMessageBatch(DeleteMessageBatchRequest)

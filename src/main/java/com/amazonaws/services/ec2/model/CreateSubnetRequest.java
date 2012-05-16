@@ -18,21 +18,15 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#createSubnet(CreateSubnetRequest) CreateSubnet operation}.
  * <p>
- * Creates a subnet in an existing VPC. You can create up to 20 subnets
- * in a VPC. If you add more than one subnet to a VPC, they're set up in
- * a star topology with a logical router in the middle. When you create
- * each subnet, you provide the VPC ID and the CIDR block you want for
- * the subnet. Once you create a subnet, you can't change its CIDR block.
- * The subnet's CIDR block can be the same as the VPC's CIDR block
- * (assuming you want only a single subnet in the VPC), or a subset of
- * the VPC's CIDR block. If you create more than one subnet in a VPC, the
- * subnets' CIDR blocks must not overlap. The smallest subnet (and VPC)
- * you can create uses a <code>/28</code> netmask (16 IP addresses), and
- * the largest uses a <code>/18</code> netmask (16,384 IP addresses).
+ * Creates a subnet in an existing VPC. You can create up to 20 subnets in a VPC. If you add more than one subnet to a VPC, they're set up in a star
+ * topology with a logical router in the middle. When you create each subnet, you provide the VPC ID and the CIDR block you want for the subnet. Once you
+ * create a subnet, you can't change its CIDR block. The subnet's CIDR block can be the same as the VPC's CIDR block (assuming you want only a single
+ * subnet in the VPC), or a subset of the VPC's CIDR block. If you create more than one subnet in a VPC, the subnets' CIDR blocks must not overlap. The
+ * smallest subnet (and VPC) you can create uses a <code>/28</code> netmask (16 IP addresses), and the largest uses a <code>/18</code> netmask (16,384 IP
+ * addresses).
  * </p>
  * <p>
- * <b>IMPORTANT:</b> AWS reserves both the first four and the last IP
- * address in each subnet's CIDR block. They're not available for use.
+ * <b>IMPORTANT:</b> AWS reserves both the first four and the last IP address in each subnet's CIDR block. They're not available for use.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createSubnet(CreateSubnetRequest)

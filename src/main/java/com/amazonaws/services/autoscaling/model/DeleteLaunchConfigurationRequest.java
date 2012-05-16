@@ -21,9 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Deletes the specified LaunchConfiguration.
  * </p>
  * <p>
- * The specified launch configuration must not be attached to an Auto
- * Scaling group. When this call completes, the launch configuration is
- * no longer available for use.
+ * The specified launch configuration must not be attached to an Auto Scaling group. When this call completes, the launch configuration is no longer
+ * available for use.
  * </p>
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#deleteLaunchConfiguration(DeleteLaunchConfigurationRequest)

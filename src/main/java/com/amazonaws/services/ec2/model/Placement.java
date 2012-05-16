@@ -16,8 +16,7 @@ package com.amazonaws.services.ec2.model;
 
 /**
  * <p>
- * Describes where an Amazon EC2 instance is running within an Amazon
- * EC2 region.
+ * Describes where an Amazon EC2 instance is running within an Amazon EC2 region.
  * </p>
  */
 public class Placement {
@@ -38,7 +37,9 @@ public class Placement {
     /**
      * The allowed tenancy of instances launched into the VPC. A value of
      * default means instances can be launched with any tenancy; a value of
-     * dedicated means instances must be launched with tenancy as dedicated.
+     * dedicated means all instances launched into the VPC will be launched
+     * as dedicated tenancy regardless of the tenancy assigned to the
+     * instance at launch.
      */
     private String tenancy;
 
@@ -151,11 +152,15 @@ public class Placement {
     /**
      * The allowed tenancy of instances launched into the VPC. A value of
      * default means instances can be launched with any tenancy; a value of
-     * dedicated means instances must be launched with tenancy as dedicated.
+     * dedicated means all instances launched into the VPC will be launched
+     * as dedicated tenancy regardless of the tenancy assigned to the
+     * instance at launch.
      *
      * @return The allowed tenancy of instances launched into the VPC. A value of
      *         default means instances can be launched with any tenancy; a value of
-     *         dedicated means instances must be launched with tenancy as dedicated.
+     *         dedicated means all instances launched into the VPC will be launched
+     *         as dedicated tenancy regardless of the tenancy assigned to the
+     *         instance at launch.
      */
     public String getTenancy() {
         return tenancy;
@@ -164,11 +169,15 @@ public class Placement {
     /**
      * The allowed tenancy of instances launched into the VPC. A value of
      * default means instances can be launched with any tenancy; a value of
-     * dedicated means instances must be launched with tenancy as dedicated.
+     * dedicated means all instances launched into the VPC will be launched
+     * as dedicated tenancy regardless of the tenancy assigned to the
+     * instance at launch.
      *
      * @param tenancy The allowed tenancy of instances launched into the VPC. A value of
      *         default means instances can be launched with any tenancy; a value of
-     *         dedicated means instances must be launched with tenancy as dedicated.
+     *         dedicated means all instances launched into the VPC will be launched
+     *         as dedicated tenancy regardless of the tenancy assigned to the
+     *         instance at launch.
      */
     public void setTenancy(String tenancy) {
         this.tenancy = tenancy;
@@ -177,13 +186,17 @@ public class Placement {
     /**
      * The allowed tenancy of instances launched into the VPC. A value of
      * default means instances can be launched with any tenancy; a value of
-     * dedicated means instances must be launched with tenancy as dedicated.
+     * dedicated means all instances launched into the VPC will be launched
+     * as dedicated tenancy regardless of the tenancy assigned to the
+     * instance at launch.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param tenancy The allowed tenancy of instances launched into the VPC. A value of
      *         default means instances can be launched with any tenancy; a value of
-     *         dedicated means instances must be launched with tenancy as dedicated.
+     *         dedicated means all instances launched into the VPC will be launched
+     *         as dedicated tenancy regardless of the tenancy assigned to the
+     *         instance at launch.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

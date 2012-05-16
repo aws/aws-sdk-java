@@ -18,9 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The AWS Access Key ID specified in the request did not match the
- * manifest's accessKeyId value. The manifest and the request
- * authentication must use the same AWS Access Key ID.
+ * The AWS Access Key ID specified in the request did not match the manifest's accessKeyId value. The manifest and the request authentication must use
+ * the same AWS Access Key ID.
  * </p>
  */        
 public class InvalidAccessKeyIdException extends AmazonServiceException {

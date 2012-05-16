@@ -18,9 +18,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.cloudformation.AmazonCloudFormation#estimateTemplateCost(EstimateTemplateCostRequest) EstimateTemplateCost operation}.
  * <p>
- * Returns the estimated monthly cost of a template. The return value is
- * an AWS Simply Monthly Calculator URL with a query string that
- * describes the resources required to run the template.
+ * Returns the estimated monthly cost of a template. The return value is an AWS Simply Monthly Calculator URL with a query string that describes the
+ * resources required to run the template.
  * </p>
  *
  * @see com.amazonaws.services.cloudformation.AmazonCloudFormation#estimateTemplateCost(EstimateTemplateCostRequest)

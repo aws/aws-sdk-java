@@ -18,19 +18,14 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.securitytoken.AWSSecurityTokenService#getSessionToken(GetSessionTokenRequest) GetSessionToken operation}.
  * <p>
- * The GetSessionToken action returns a set of temporary credentials for
- * an AWS account or IAM user. The credentials consist of an Access Key
- * ID, a Secret Access Key, and a security token. These credentials are
- * valid for the specified duration only. The session duration for IAM
- * users can be between one and 36 hours, with a default of 12 hours. The
- * session duration for AWS account owners is restricted to one hour.
+ * The GetSessionToken action returns a set of temporary credentials for an AWS account or IAM user. The credentials consist of an Access Key ID, a
+ * Secret Access Key, and a security token. These credentials are valid for the specified duration only. The session duration for IAM users can be
+ * between one and 36 hours, with a default of 12 hours. The session duration for AWS account owners is restricted to one hour.
  * </p>
  * <p>
- * For more information about using GetSessionToken to create temporary
- * credentials, go to <a
- * mazonwebservices.com/IAM/latest/UserGuide/CreatingSessionTokens.html">
- * Creating Temporary Credentials to Enable Access for IAM Users </a> in
- * <i>Using IAM</i> .
+ * For more information about using GetSessionToken to create temporary credentials, go to <a
+ * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/CreatingSessionTokens.html"> Creating Temporary Credentials to Enable Access for IAM
+ * Users </a> in <i>Using IAM</i> .
  * </p>
  *
  * @see com.amazonaws.services.securitytoken.AWSSecurityTokenService#getSessionToken(GetSessionTokenRequest)

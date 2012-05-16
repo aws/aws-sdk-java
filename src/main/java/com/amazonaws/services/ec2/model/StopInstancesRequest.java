@@ -18,19 +18,14 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#stopInstances(StopInstancesRequest) StopInstances operation}.
  * <p>
- * Stops an instance that uses an Amazon EBS volume as its root device.
- * Instances that use Amazon EBS volumes as their root devices can be
- * quickly stopped and started. When an instance is stopped, the compute
- * resources are released and you are not billed for hourly instance
- * usage. However, your root partition Amazon EBS volume remains,
- * continues to persist your data, and you are charged for Amazon EBS
- * volume usage. You can restart your instance at any time.
+ * Stops an instance that uses an Amazon EBS volume as its root device. Instances that use Amazon EBS volumes as their root devices can be quickly
+ * stopped and started. When an instance is stopped, the compute resources are released and you are not billed for hourly instance usage. However, your
+ * root partition Amazon EBS volume remains, continues to persist your data, and you are charged for Amazon EBS volume usage. You can restart your
+ * instance at any time.
  * </p>
  * <p>
- * <b>NOTE:</b> Before stopping an instance, make sure it is in a state
- * from which it can be restarted. Stopping an instance does not preserve
- * data stored in RAM. Performing this operation on an instance that uses
- * an instance store as its root device returns an error.
+ * <b>NOTE:</b> Before stopping an instance, make sure it is in a state from which it can be restarted. Stopping an instance does not preserve data
+ * stored in RAM. Performing this operation on an instance that uses an instance store as its root device returns an error.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#stopInstances(StopInstancesRequest)

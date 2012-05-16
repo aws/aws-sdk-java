@@ -16,8 +16,7 @@ package com.amazonaws.services.storagegateway.model;
 
 /**
  * <p>
- * A JSON object containing the UpdateSnapshotScheduleOutput$VolumeARN of
- * the updated storage volume.
+ * A JSON object containing the UpdateSnapshotScheduleOutput$VolumeARN of the updated storage volume.
  * </p>
  */
 public class UpdateSnapshotScheduleResult {

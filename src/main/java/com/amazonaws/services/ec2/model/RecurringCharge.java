@@ -16,8 +16,7 @@ package com.amazonaws.services.ec2.model;
 
 /**
  * <p>
- * Represents a usage charge for Amazon EC2 resources that repeats on a
- * schedule.
+ * Represents a usage charge for Amazon EC2 resources that repeats on a schedule.
  * </p>
  */
 public class RecurringCharge {

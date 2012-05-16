@@ -16,8 +16,7 @@ package com.amazonaws.services.cloudsearch.model;
 
 /**
  * <p>
- * The status of an option, including when it was last updated and
- * whether it is actively in use for searches.
+ * The status of an option, including when it was last updated and whether it is actively in use for searches.
  * </p>
  */
 public class OptionStatus {

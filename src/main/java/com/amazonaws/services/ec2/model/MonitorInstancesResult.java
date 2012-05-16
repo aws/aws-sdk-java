@@ -16,9 +16,8 @@ package com.amazonaws.services.ec2.model;
 
 /**
  * <p>
- * The result of enabling monitoring on a set of Amazon EC2 instances.
- * Contains the updated monitoring status for each instance specified in
- * the request.
+ * The result of enabling monitoring on a set of Amazon EC2 instances. Contains the updated monitoring status for each instance specified in the
+ * request.
  * </p>
  */
 public class MonitorInstancesResult {

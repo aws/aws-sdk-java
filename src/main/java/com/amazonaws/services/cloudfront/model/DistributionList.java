@@ -47,9 +47,16 @@ public class DistributionList {
     private Boolean isTruncated;
 
     /**
-     * An XML structure containing a summary of the distribution.
+     * The number of distributions that were created by the current AWS
+     * account.
      */
-    private java.util.List<DistributionSummary> distributionSummaries;
+    private Integer quantity;
+
+    /**
+     * A complex type that contains one DistributionSummary element for each
+     * distribution that was created by the current AWS account.
+     */
+    private java.util.List<DistributionSummary> items;
 
     /**
      * Default constructor for a new DistributionList object.  Callers should use the
@@ -239,69 +246,117 @@ public class DistributionList {
     }
     
     /**
-     * An XML structure containing a summary of the distribution.
+     * The number of distributions that were created by the current AWS
+     * account.
      *
-     * @return An XML structure containing a summary of the distribution.
+     * @return The number of distributions that were created by the current AWS
+     *         account.
      */
-    public java.util.List<DistributionSummary> getDistributionSummaries() {
-        
-        if (distributionSummaries == null) {
-            distributionSummaries = new java.util.ArrayList<DistributionSummary>();
-        }
-        return distributionSummaries;
+    public Integer getQuantity() {
+        return quantity;
     }
     
     /**
-     * An XML structure containing a summary of the distribution.
+     * The number of distributions that were created by the current AWS
+     * account.
      *
-     * @param distributionSummaries An XML structure containing a summary of the distribution.
+     * @param quantity The number of distributions that were created by the current AWS
+     *         account.
      */
-    public void setDistributionSummaries(java.util.Collection<DistributionSummary> distributionSummaries) {
-        if (distributionSummaries == null) {
-            this.distributionSummaries = null;
-            return;
-        }
-
-        java.util.List<DistributionSummary> distributionSummariesCopy = new java.util.ArrayList<DistributionSummary>(distributionSummaries.size());
-        distributionSummariesCopy.addAll(distributionSummaries);
-        this.distributionSummaries = distributionSummariesCopy;
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
     }
     
     /**
-     * An XML structure containing a summary of the distribution.
+     * The number of distributions that were created by the current AWS
+     * account.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param distributionSummaries An XML structure containing a summary of the distribution.
+     * @param quantity The number of distributions that were created by the current AWS
+     *         account.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public DistributionList withDistributionSummaries(DistributionSummary... distributionSummaries) {
-        if (getDistributionSummaries() == null) setDistributionSummaries(new java.util.ArrayList<DistributionSummary>(distributionSummaries.length));
-        for (DistributionSummary value : distributionSummaries) {
-            getDistributionSummaries().add(value);
+    public DistributionList withQuantity(Integer quantity) {
+        this.quantity = quantity;
+        return this;
+    }
+    
+    
+    /**
+     * A complex type that contains one DistributionSummary element for each
+     * distribution that was created by the current AWS account.
+     *
+     * @return A complex type that contains one DistributionSummary element for each
+     *         distribution that was created by the current AWS account.
+     */
+    public java.util.List<DistributionSummary> getItems() {
+        
+        if (items == null) {
+            items = new java.util.ArrayList<DistributionSummary>();
+        }
+        return items;
+    }
+    
+    /**
+     * A complex type that contains one DistributionSummary element for each
+     * distribution that was created by the current AWS account.
+     *
+     * @param items A complex type that contains one DistributionSummary element for each
+     *         distribution that was created by the current AWS account.
+     */
+    public void setItems(java.util.Collection<DistributionSummary> items) {
+        if (items == null) {
+            this.items = null;
+            return;
+        }
+
+        java.util.List<DistributionSummary> itemsCopy = new java.util.ArrayList<DistributionSummary>(items.size());
+        itemsCopy.addAll(items);
+        this.items = itemsCopy;
+    }
+    
+    /**
+     * A complex type that contains one DistributionSummary element for each
+     * distribution that was created by the current AWS account.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param items A complex type that contains one DistributionSummary element for each
+     *         distribution that was created by the current AWS account.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public DistributionList withItems(DistributionSummary... items) {
+        if (getItems() == null) setItems(new java.util.ArrayList<DistributionSummary>(items.length));
+        for (DistributionSummary value : items) {
+            getItems().add(value);
         }
         return this;
     }
     
     /**
-     * An XML structure containing a summary of the distribution.
+     * A complex type that contains one DistributionSummary element for each
+     * distribution that was created by the current AWS account.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param distributionSummaries An XML structure containing a summary of the distribution.
+     * @param items A complex type that contains one DistributionSummary element for each
+     *         distribution that was created by the current AWS account.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public DistributionList withDistributionSummaries(java.util.Collection<DistributionSummary> distributionSummaries) {
-        if (distributionSummaries == null) {
-            this.distributionSummaries = null;
+    public DistributionList withItems(java.util.Collection<DistributionSummary> items) {
+        if (items == null) {
+            this.items = null;
         } else {
-            java.util.List<DistributionSummary> distributionSummariesCopy = new java.util.ArrayList<DistributionSummary>(distributionSummaries.size());
-            distributionSummariesCopy.addAll(distributionSummaries);
-            this.distributionSummaries = distributionSummariesCopy;
+            java.util.List<DistributionSummary> itemsCopy = new java.util.ArrayList<DistributionSummary>(items.size());
+            itemsCopy.addAll(items);
+            this.items = itemsCopy;
         }
 
         return this;
@@ -323,7 +378,8 @@ public class DistributionList {
         if (nextMarker != null) sb.append("NextMarker: " + nextMarker + ", ");
         if (maxItems != null) sb.append("MaxItems: " + maxItems + ", ");
         if (isTruncated != null) sb.append("IsTruncated: " + isTruncated + ", ");
-        if (distributionSummaries != null) sb.append("DistributionSummaries: " + distributionSummaries + ", ");
+        if (quantity != null) sb.append("Quantity: " + quantity + ", ");
+        if (items != null) sb.append("Items: " + items + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -337,7 +393,8 @@ public class DistributionList {
         hashCode = prime * hashCode + ((getNextMarker() == null) ? 0 : getNextMarker().hashCode()); 
         hashCode = prime * hashCode + ((getMaxItems() == null) ? 0 : getMaxItems().hashCode()); 
         hashCode = prime * hashCode + ((isTruncated() == null) ? 0 : isTruncated().hashCode()); 
-        hashCode = prime * hashCode + ((getDistributionSummaries() == null) ? 0 : getDistributionSummaries().hashCode()); 
+        hashCode = prime * hashCode + ((getQuantity() == null) ? 0 : getQuantity().hashCode()); 
+        hashCode = prime * hashCode + ((getItems() == null) ? 0 : getItems().hashCode()); 
         return hashCode;
     }
     
@@ -357,8 +414,10 @@ public class DistributionList {
         if (other.getMaxItems() != null && other.getMaxItems().equals(this.getMaxItems()) == false) return false; 
         if (other.isTruncated() == null ^ this.isTruncated() == null) return false;
         if (other.isTruncated() != null && other.isTruncated().equals(this.isTruncated()) == false) return false; 
-        if (other.getDistributionSummaries() == null ^ this.getDistributionSummaries() == null) return false;
-        if (other.getDistributionSummaries() != null && other.getDistributionSummaries().equals(this.getDistributionSummaries()) == false) return false; 
+        if (other.getQuantity() == null ^ this.getQuantity() == null) return false;
+        if (other.getQuantity() != null && other.getQuantity().equals(this.getQuantity()) == false) return false; 
+        if (other.getItems() == null ^ this.getItems() == null) return false;
+        if (other.getItems() != null && other.getItems().equals(this.getItems()) == false) return false; 
         return true;
     }
     

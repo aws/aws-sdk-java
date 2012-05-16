@@ -18,24 +18,17 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#uploadSigningCertificate(UploadSigningCertificateRequest) UploadSigningCertificate operation}.
  * <p>
- * Uploads an X.509 signing certificate and associates it with the
- * specified user. Some AWS services use X.509 signing certificates to
- * validate requests that are signed with a corresponding private key.
- * When you upload the certificate, its default status is
- * <code>Active</code> .
+ * Uploads an X.509 signing certificate and associates it with the specified user. Some AWS services use X.509 signing certificates to validate requests
+ * that are signed with a corresponding private key. When you upload the certificate, its default status is <code>Active</code> .
  * </p>
  * <p>
- * If the <code>UserName</code> field is not specified, the user name is
- * determined implicitly based on the AWS Access Key ID used to sign the
- * request. Because this action works for access keys under the AWS
- * account, this API can be used to manage root credentials even if the
- * AWS account has no associated users.
+ * If the <code>UserName</code> field is not specified, the user name is determined implicitly based on the AWS Access Key ID used to sign the request.
+ * Because this action works for access keys under the AWS account, this API can be used to manage root credentials even if the AWS account has no
+ * associated users.
  * </p>
  * <p>
- * <b>NOTE:</b>Because the body of a X.509 certificate can be large, you
- * should use POST rather than GET when calling UploadSigningCertificate.
- * For more information, see Making Query Requests in Using AWS Identity
- * and Access Management.
+ * <b>NOTE:</b>Because the body of a X.509 certificate can be large, you should use POST rather than GET when calling UploadSigningCertificate. For more
+ * information, see Making Query Requests in Using AWS Identity and Access Management.
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#uploadSigningCertificate(UploadSigningCertificateRequest)

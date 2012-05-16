@@ -18,10 +18,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#createNetworkAcl(CreateNetworkAclRequest) CreateNetworkAcl operation}.
  * <p>
- * Creates a new network ACL in a VPC. Network ACLs provide an optional
- * layer of security (on top of security groups) for the instances in
- * your VPC. For more information about network ACLs, go to Network ACLs
- * in the Amazon Virtual Private Cloud User Guide.
+ * Creates a new network ACL in a VPC. Network ACLs provide an optional layer of security (on top of security groups) for the instances in your VPC. For
+ * more information about network ACLs, go to Network ACLs in the Amazon Virtual Private Cloud User Guide.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createNetworkAcl(CreateNetworkAclRequest)

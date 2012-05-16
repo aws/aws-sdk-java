@@ -18,10 +18,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#deleteNetworkAcl(DeleteNetworkAclRequest) DeleteNetworkAcl operation}.
  * <p>
- * Deletes a network ACL from a VPC. The ACL must not have any subnets
- * associated with it. You can't delete the default network ACL. For more
- * information about network ACLs, go to Network ACLs in the Amazon
- * Virtual Private Cloud User Guide.
+ * Deletes a network ACL from a VPC. The ACL must not have any subnets associated with it. You can't delete the default network ACL. For more
+ * information about network ACLs, go to Network ACLs in the Amazon Virtual Private Cloud User Guide.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#deleteNetworkAcl(DeleteNetworkAclRequest)

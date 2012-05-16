@@ -16,8 +16,7 @@ package com.amazonaws.services.ec2.model;
 
 /**
  * <p>
- * Specifies how an instance's block devices should be mapped on a
- * running instance.
+ * Specifies how an instance's block devices should be mapped on a running instance.
  * </p>
  */
 public class InstanceBlockDeviceMappingSpecification {

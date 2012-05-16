@@ -26,14 +26,14 @@ import org.codehaus.jackson.JsonToken;
 import static org.codehaus.jackson.JsonToken.*;
 
 /**
- * Describe Stored I S C S I Volumes Result JSON Unmarshaller
+ * Describe Storedi S C S I Volumes Result JSON Unmarshaller
  */
-public class DescribeStoredISCSIVolumesResultJsonUnmarshaller implements Unmarshaller<DescribeStoredISCSIVolumesResult, JsonUnmarshallerContext> {
+public class DescribeStorediSCSIVolumesResultJsonUnmarshaller implements Unmarshaller<DescribeStorediSCSIVolumesResult, JsonUnmarshallerContext> {
 
     
 
-    public DescribeStoredISCSIVolumesResult unmarshall(JsonUnmarshallerContext context) throws Exception {
-        DescribeStoredISCSIVolumesResult describeStoredISCSIVolumesResult = new DescribeStoredISCSIVolumesResult();
+    public DescribeStorediSCSIVolumesResult unmarshall(JsonUnmarshallerContext context) throws Exception {
+        DescribeStorediSCSIVolumesResult describeStorediSCSIVolumesResult = new DescribeStorediSCSIVolumesResult();
 
         
         
@@ -48,7 +48,7 @@ public class DescribeStoredISCSIVolumesResultJsonUnmarshaller implements Unmarsh
 
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("StorediSCSIVolumes", targetDepth)) {
-                    describeStoredISCSIVolumesResult.setStoredISCSIVolumes(new ListUnmarshaller<StoredISCSIVolume>(StoredISCSIVolumeJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeStorediSCSIVolumesResult.setStorediSCSIVolumes(new ListUnmarshaller<StorediSCSIVolume>(StorediSCSIVolumeJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getCurrentDepth() <= originalDepth) break;
@@ -56,12 +56,12 @@ public class DescribeStoredISCSIVolumesResultJsonUnmarshaller implements Unmarsh
             token = context.nextToken();
         }
         
-        return describeStoredISCSIVolumesResult;
+        return describeStorediSCSIVolumesResult;
     }
 
-    private static DescribeStoredISCSIVolumesResultJsonUnmarshaller instance;
-    public static DescribeStoredISCSIVolumesResultJsonUnmarshaller getInstance() {
-        if (instance == null) instance = new DescribeStoredISCSIVolumesResultJsonUnmarshaller();
+    private static DescribeStorediSCSIVolumesResultJsonUnmarshaller instance;
+    public static DescribeStorediSCSIVolumesResultJsonUnmarshaller getInstance() {
+        if (instance == null) instance = new DescribeStorediSCSIVolumesResultJsonUnmarshaller();
         return instance;
     }
 }

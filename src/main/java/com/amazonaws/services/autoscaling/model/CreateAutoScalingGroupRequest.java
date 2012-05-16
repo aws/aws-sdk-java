@@ -18,14 +18,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.autoscaling.AmazonAutoScaling#createAutoScalingGroup(CreateAutoScalingGroupRequest) CreateAutoScalingGroup operation}.
  * <p>
- * Creates a new Auto Scaling group with the specified name and other
- * attributes. When the creation request is completed, the Auto Scaling
- * group is ready to be used in other calls.
+ * Creates a new Auto Scaling group with the specified name and other attributes. When the creation request is completed, the Auto Scaling group is
+ * ready to be used in other calls.
  * </p>
  * <p>
- * <b>NOTE:</b> The Auto Scaling group name must be unique within the
- * scope of your AWS account, and under the quota of Auto Scaling groups
- * allowed for your account.
+ * <b>NOTE:</b> The Auto Scaling group name must be unique within the scope of your AWS account, and under the quota of Auto Scaling groups allowed for
+ * your account.
  * </p>
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#createAutoScalingGroup(CreateAutoScalingGroupRequest)

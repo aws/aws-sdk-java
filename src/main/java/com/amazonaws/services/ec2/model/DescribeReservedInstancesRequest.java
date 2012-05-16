@@ -18,8 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeReservedInstances(DescribeReservedInstancesRequest) DescribeReservedInstances operation}.
  * <p>
- * The DescribeReservedInstances operation describes Reserved Instances
- * that were purchased for use with your account.
+ * The DescribeReservedInstances operation describes Reserved Instances that were purchased for use with your account.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeReservedInstances(DescribeReservedInstancesRequest)

@@ -18,14 +18,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#requestEnvironmentInfo(RequestEnvironmentInfoRequest) RequestEnvironmentInfo operation}.
  * <p>
- * Initiates a request to compile the specified type of information of
- * the deployed environment.
+ * Initiates a request to compile the specified type of information of the deployed environment.
  * </p>
  * <p>
- * Setting the <code>InfoType</code> to <code>tail</code> compiles the
- * last lines from the application server log files of every Amazon EC2
- * instance in your environment. Use RetrieveEnvironmentInfo to access
- * the compiled information.
+ * Setting the <code>InfoType</code> to <code>tail</code> compiles the last lines from the application server log files of every Amazon EC2 instance in
+ * your environment. Use RetrieveEnvironmentInfo to access the compiled information.
  * </p>
  * <p>
  * Related Topics

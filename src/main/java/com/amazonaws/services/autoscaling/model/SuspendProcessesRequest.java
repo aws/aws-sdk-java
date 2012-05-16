@@ -18,17 +18,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.autoscaling.AmazonAutoScaling#suspendProcesses(SuspendProcessesRequest) SuspendProcesses operation}.
  * <p>
- * Suspends Auto Scaling processes for an Auto Scaling group. To suspend
- * specific process types, specify them by name with the
- * <code>ScalingProcesses.member.N</code> parameter. To suspend all
- * process types, omit the <code>ScalingProcesses.member.N</code>
- * parameter.
+ * Suspends Auto Scaling processes for an Auto Scaling group. To suspend specific process types, specify them by name with the
+ * <code>ScalingProcesses.member.N</code> parameter. To suspend all process types, omit the <code>ScalingProcesses.member.N</code> parameter.
  * </p>
  * <p>
- * <b>IMPORTANT:</b> Suspending either of the two primary process types,
- * Launch or Terminate, can prevent other process types from functioning
- * properly. For more information about processes and their dependencies,
- * see ProcessType.
+ * <b>IMPORTANT:</b> Suspending either of the two primary process types, Launch or Terminate, can prevent other process types from functioning properly.
+ * For more information about processes and their dependencies, see ProcessType.
  * </p>
  * <p>
  * To resume processes that have been suspended, use ResumeProcesses.

@@ -16,8 +16,7 @@ package com.amazonaws.services.cloudsearch.model;
 
 /**
  * <p>
- * A response message that contains the status of updated synonym
- * options.
+ * A response message that contains the status of updated synonym options.
  * </p>
  */
 public class UpdateSynonymOptionsResult {

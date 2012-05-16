@@ -16,8 +16,7 @@ package com.amazonaws.services.simpleworkflow.model;
 
 /**
  * <p>
- * Provide details of the <code>ChildWorkflowExecutionCanceled</code>
- * event.
+ * Provide details of the <code>ChildWorkflowExecutionCanceled</code> event.
  * </p>
  */
 public class ChildWorkflowExecutionCanceledEventAttributes {

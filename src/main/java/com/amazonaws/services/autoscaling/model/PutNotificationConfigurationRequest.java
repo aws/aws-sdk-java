@@ -18,13 +18,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.autoscaling.AmazonAutoScaling#putNotificationConfiguration(PutNotificationConfigurationRequest) PutNotificationConfiguration operation}.
  * <p>
- * Configures an Auto Scaling group to send notifications when specified
- * events take place. Subscribers to this topic can have messages for
- * events delivered to an endpoint such as a web server or email address.
+ * Configures an Auto Scaling group to send notifications when specified events take place. Subscribers to this topic can have messages for events
+ * delivered to an endpoint such as a web server or email address.
  * </p>
  * <p>
- * A new <code>PutNotificationConfiguration</code> overwrites an
- * existing configuration.
+ * A new <code>PutNotificationConfiguration</code> overwrites an existing configuration.
  * </p>
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#putNotificationConfiguration(PutNotificationConfigurationRequest)

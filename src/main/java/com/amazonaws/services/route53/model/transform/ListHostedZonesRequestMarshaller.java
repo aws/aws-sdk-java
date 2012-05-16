@@ -37,7 +37,7 @@ import com.amazonaws.util.XMLWriter;
 public class ListHostedZonesRequestMarshaller implements Marshaller<Request<ListHostedZonesRequest>, ListHostedZonesRequest> {
 
     public Request<ListHostedZonesRequest> marshall(ListHostedZonesRequest listHostedZonesRequest) {
-        if (listHostedZonesRequest == null) { 
+        if (listHostedZonesRequest == null) {
             throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 

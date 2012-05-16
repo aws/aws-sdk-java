@@ -16,10 +16,8 @@ package com.amazonaws.services.cloudsearch.model;
 
 /**
  * <p>
- * Identifies the source data for an index field. An optional data
- * transformation can be applied to the source data when populating the
- * index field. By default, the value of the source attribute is copied
- * to the index field.
+ * Identifies the source data for an index field. An optional data transformation can be applied to the source data when populating the index field. By
+ * default, the value of the source attribute is copied to the index field.
  * </p>
  */
 public class SourceAttribute {

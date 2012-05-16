@@ -18,12 +18,9 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * Route 53 allows some duplicate domain names, but there is a maximum
- * number of duplicate names. This error indicates that you have reached
- * that maximum. If you want to create another hosted zone with the same
- * name and Route 53 generates this error, you can request an increase to
- * the limit on the <a href="http://aws.amazon.com/route53-request/">
- * Contact Us </a> page.
+ * Route 53 allows some duplicate domain names, but there is a maximum number of duplicate names. This error indicates that you have reached that
+ * maximum. If you want to create another hosted zone with the same name and Route 53 generates this error, you can request an increase to the limit on
+ * the <a href="http://aws.amazon.com/route53-request/"> Contact Us </a> page.
  * </p>
  */        
 public class DelegationSetNotAvailableException extends AmazonServiceException {

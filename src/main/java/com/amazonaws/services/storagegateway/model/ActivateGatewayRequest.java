@@ -18,17 +18,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.storagegateway.AWSStorageGateway#activateGateway(ActivateGatewayRequest) ActivateGateway operation}.
  * <p>
- * This operation activates the gateway you previously deployed on your
- * VMware host. For more information, see DownloadAndDeploy. In the
- * activation process you specify information such as the region you want
- * to use for storing snapshots, the time zone for scheduled snapshots
- * and the gateway schedule window, an activation key, and a name for
- * your gateway. The activation process also associates your gateway with
- * your account.
+ * This operation activates the gateway you previously deployed on your VMware host. For more information, see DownloadAndDeploy. In the activation
+ * process you specify information such as the region you want to use for storing snapshots, the time zone for scheduled snapshots and the gateway
+ * schedule window, an activation key, and a name for your gateway. The activation process also associates your gateway with your account.
  * </p>
  * <p>
- * <b>NOTE:</b>You must power on the gateway VM before you can activate
- * your gateway.
+ * <b>NOTE:</b>You must power on the gateway VM before you can activate your gateway.
  * </p>
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#activateGateway(ActivateGatewayRequest)
@@ -37,9 +32,11 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest {
 
     /**
      * Your gateway activation key. You can obtain the activation key by
-     * sending a GET request to the gateway IP. The redirect URL returned in
-     * the response provides you the activation key for your gateway.
-     * <p>Length: Minimum length of 1. Maximum length of 50.
+     * sending an HTTP GET request with redirects enabled to the gateway IP
+     * address. The redirect URL returned in the response provides you the
+     * activation key for your gateway in the query string parameter
+     * <code>activationKey</code>. <p>Length: Minimum length of 1. Maximum
+     * length of 50.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 50<br/>
@@ -69,8 +66,13 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest {
     private String gatewayTimezone;
 
     /**
-     * One of the <a>Regions</a> values that indicates the region where you
-     * want to store the snapshot backups.
+     * A value that indicates the region your gateway is activated in, and
+     * where your snapshots are stored. For more information about available
+     * regions and endpoints for AWS Storage Gateway, see <a
+     * .amazonwebservices.com/general/latest/gr/rande.html#sg_region">Regions
+     * and Endpoints</a> in the <b>Amazon Web Services Glossary</b>.
+     * <p><i>Valid Values</i>: "us-east-1", "us-west-1", "us-west-2",
+     * "eu-west-1", "ap-northeast-1", "ap-southest-1", "sa-east-1"
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 25<br/>
@@ -79,17 +81,21 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest {
 
     /**
      * Your gateway activation key. You can obtain the activation key by
-     * sending a GET request to the gateway IP. The redirect URL returned in
-     * the response provides you the activation key for your gateway.
-     * <p>Length: Minimum length of 1. Maximum length of 50.
+     * sending an HTTP GET request with redirects enabled to the gateway IP
+     * address. The redirect URL returned in the response provides you the
+     * activation key for your gateway in the query string parameter
+     * <code>activationKey</code>. <p>Length: Minimum length of 1. Maximum
+     * length of 50.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 50<br/>
      *
      * @return Your gateway activation key. You can obtain the activation key by
-     *         sending a GET request to the gateway IP. The redirect URL returned in
-     *         the response provides you the activation key for your gateway.
-     *         <p>Length: Minimum length of 1. Maximum length of 50.
+     *         sending an HTTP GET request with redirects enabled to the gateway IP
+     *         address. The redirect URL returned in the response provides you the
+     *         activation key for your gateway in the query string parameter
+     *         <code>activationKey</code>. <p>Length: Minimum length of 1. Maximum
+     *         length of 50.
      */
     public String getActivationKey() {
         return activationKey;
@@ -97,17 +103,21 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest {
     
     /**
      * Your gateway activation key. You can obtain the activation key by
-     * sending a GET request to the gateway IP. The redirect URL returned in
-     * the response provides you the activation key for your gateway.
-     * <p>Length: Minimum length of 1. Maximum length of 50.
+     * sending an HTTP GET request with redirects enabled to the gateway IP
+     * address. The redirect URL returned in the response provides you the
+     * activation key for your gateway in the query string parameter
+     * <code>activationKey</code>. <p>Length: Minimum length of 1. Maximum
+     * length of 50.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 50<br/>
      *
      * @param activationKey Your gateway activation key. You can obtain the activation key by
-     *         sending a GET request to the gateway IP. The redirect URL returned in
-     *         the response provides you the activation key for your gateway.
-     *         <p>Length: Minimum length of 1. Maximum length of 50.
+     *         sending an HTTP GET request with redirects enabled to the gateway IP
+     *         address. The redirect URL returned in the response provides you the
+     *         activation key for your gateway in the query string parameter
+     *         <code>activationKey</code>. <p>Length: Minimum length of 1. Maximum
+     *         length of 50.
      */
     public void setActivationKey(String activationKey) {
         this.activationKey = activationKey;
@@ -115,9 +125,11 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest {
     
     /**
      * Your gateway activation key. You can obtain the activation key by
-     * sending a GET request to the gateway IP. The redirect URL returned in
-     * the response provides you the activation key for your gateway.
-     * <p>Length: Minimum length of 1. Maximum length of 50.
+     * sending an HTTP GET request with redirects enabled to the gateway IP
+     * address. The redirect URL returned in the response provides you the
+     * activation key for your gateway in the query string parameter
+     * <code>activationKey</code>. <p>Length: Minimum length of 1. Maximum
+     * length of 50.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -125,9 +137,11 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest {
      * <b>Length: </b>1 - 50<br/>
      *
      * @param activationKey Your gateway activation key. You can obtain the activation key by
-     *         sending a GET request to the gateway IP. The redirect URL returned in
-     *         the response provides you the activation key for your gateway.
-     *         <p>Length: Minimum length of 1. Maximum length of 50.
+     *         sending an HTTP GET request with redirects enabled to the gateway IP
+     *         address. The redirect URL returned in the response provides you the
+     *         activation key for your gateway in the query string parameter
+     *         <code>activationKey</code>. <p>Length: Minimum length of 1. Maximum
+     *         length of 50.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -306,44 +320,74 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * One of the <a>Regions</a> values that indicates the region where you
-     * want to store the snapshot backups.
+     * A value that indicates the region your gateway is activated in, and
+     * where your snapshots are stored. For more information about available
+     * regions and endpoints for AWS Storage Gateway, see <a
+     * .amazonwebservices.com/general/latest/gr/rande.html#sg_region">Regions
+     * and Endpoints</a> in the <b>Amazon Web Services Glossary</b>.
+     * <p><i>Valid Values</i>: "us-east-1", "us-west-1", "us-west-2",
+     * "eu-west-1", "ap-northeast-1", "ap-southest-1", "sa-east-1"
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 25<br/>
      *
-     * @return One of the <a>Regions</a> values that indicates the region where you
-     *         want to store the snapshot backups.
+     * @return A value that indicates the region your gateway is activated in, and
+     *         where your snapshots are stored. For more information about available
+     *         regions and endpoints for AWS Storage Gateway, see <a
+     *         .amazonwebservices.com/general/latest/gr/rande.html#sg_region">Regions
+     *         and Endpoints</a> in the <b>Amazon Web Services Glossary</b>.
+     *         <p><i>Valid Values</i>: "us-east-1", "us-west-1", "us-west-2",
+     *         "eu-west-1", "ap-northeast-1", "ap-southest-1", "sa-east-1"
      */
     public String getGatewayRegion() {
         return gatewayRegion;
     }
     
     /**
-     * One of the <a>Regions</a> values that indicates the region where you
-     * want to store the snapshot backups.
+     * A value that indicates the region your gateway is activated in, and
+     * where your snapshots are stored. For more information about available
+     * regions and endpoints for AWS Storage Gateway, see <a
+     * .amazonwebservices.com/general/latest/gr/rande.html#sg_region">Regions
+     * and Endpoints</a> in the <b>Amazon Web Services Glossary</b>.
+     * <p><i>Valid Values</i>: "us-east-1", "us-west-1", "us-west-2",
+     * "eu-west-1", "ap-northeast-1", "ap-southest-1", "sa-east-1"
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 25<br/>
      *
-     * @param gatewayRegion One of the <a>Regions</a> values that indicates the region where you
-     *         want to store the snapshot backups.
+     * @param gatewayRegion A value that indicates the region your gateway is activated in, and
+     *         where your snapshots are stored. For more information about available
+     *         regions and endpoints for AWS Storage Gateway, see <a
+     *         .amazonwebservices.com/general/latest/gr/rande.html#sg_region">Regions
+     *         and Endpoints</a> in the <b>Amazon Web Services Glossary</b>.
+     *         <p><i>Valid Values</i>: "us-east-1", "us-west-1", "us-west-2",
+     *         "eu-west-1", "ap-northeast-1", "ap-southest-1", "sa-east-1"
      */
     public void setGatewayRegion(String gatewayRegion) {
         this.gatewayRegion = gatewayRegion;
     }
     
     /**
-     * One of the <a>Regions</a> values that indicates the region where you
-     * want to store the snapshot backups.
+     * A value that indicates the region your gateway is activated in, and
+     * where your snapshots are stored. For more information about available
+     * regions and endpoints for AWS Storage Gateway, see <a
+     * .amazonwebservices.com/general/latest/gr/rande.html#sg_region">Regions
+     * and Endpoints</a> in the <b>Amazon Web Services Glossary</b>.
+     * <p><i>Valid Values</i>: "us-east-1", "us-west-1", "us-west-2",
+     * "eu-west-1", "ap-northeast-1", "ap-southest-1", "sa-east-1"
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 25<br/>
      *
-     * @param gatewayRegion One of the <a>Regions</a> values that indicates the region where you
-     *         want to store the snapshot backups.
+     * @param gatewayRegion A value that indicates the region your gateway is activated in, and
+     *         where your snapshots are stored. For more information about available
+     *         regions and endpoints for AWS Storage Gateway, see <a
+     *         .amazonwebservices.com/general/latest/gr/rande.html#sg_region">Regions
+     *         and Endpoints</a> in the <b>Amazon Web Services Glossary</b>.
+     *         <p><i>Valid Values</i>: "us-east-1", "us-west-1", "us-west-2",
+     *         "eu-west-1", "ap-northeast-1", "ap-southest-1", "sa-east-1"
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

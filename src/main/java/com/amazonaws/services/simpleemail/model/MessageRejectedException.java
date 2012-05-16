@@ -18,9 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * Indicates that the action failed, and the message could not be sent.
- * Check the error stack for more information about what caused the
- * error.
+ * Indicates that the action failed, and the message could not be sent. Check the error stack for more information about what caused the error.
  * </p>
  */        
 public class MessageRejectedException extends AmazonServiceException {

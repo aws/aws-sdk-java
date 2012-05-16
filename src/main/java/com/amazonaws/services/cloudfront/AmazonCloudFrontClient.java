@@ -146,9 +146,12 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
         exceptionUnmarshallers.add(new InvalidArgumentExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyStreamingDistributionsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyTrustedSignersExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TooManyOriginsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidRequiredProtocolExceptionUnmarshaller());
         exceptionUnmarshallers.add(new IllegalUpdateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyCloudFrontOriginAccessIdentitiesExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new NoSuchOriginExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new TooManyCacheBehaviorsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new NoSuchDistributionExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DistributionAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new CloudFrontOriginAccessIdentityAlreadyExistsExceptionUnmarshaller());
@@ -162,6 +165,7 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
         exceptionUnmarshallers.add(new MissingBodyExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyDistributionCNAMEsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new NoSuchCloudFrontOriginAccessIdentityExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InconsistentQuantitiesExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidOriginAccessIdentityExceptionUnmarshaller());
         exceptionUnmarshallers.add(new NoSuchStreamingDistributionExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TooManyStreamingDistributionCNAMEsExceptionUnmarshaller());
@@ -180,18 +184,125 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
     
     /**
      * <p>
-     * Delete an origin access identity.
+     * Update an origin access identity.
      * </p>
      *
-     * @param deleteCloudFrontOriginAccessIdentityRequest Container for the
+     * @param updateCloudFrontOriginAccessIdentityRequest Container for the
      *           necessary parameters to execute the
-     *           DeleteCloudFrontOriginAccessIdentity service method on
+     *           UpdateCloudFrontOriginAccessIdentity service method on
      *           AmazonCloudFront.
      * 
+     * @return The response from the UpdateCloudFrontOriginAccessIdentity
+     *         service method, as returned by AmazonCloudFront.
+     * 
      * @throws InvalidIfMatchVersionException
-     * @throws CloudFrontOriginAccessIdentityInUseException
+     * @throws IllegalUpdateException
+     * @throws MissingBodyException
      * @throws NoSuchCloudFrontOriginAccessIdentityException
      * @throws PreconditionFailedException
+     * @throws AccessDeniedException
+     * @throws InvalidArgumentException
+     * @throws InconsistentQuantitiesException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudFront indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public UpdateCloudFrontOriginAccessIdentityResult updateCloudFrontOriginAccessIdentity(UpdateCloudFrontOriginAccessIdentityRequest updateCloudFrontOriginAccessIdentityRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<UpdateCloudFrontOriginAccessIdentityRequest> request = new UpdateCloudFrontOriginAccessIdentityRequestMarshaller().marshall(updateCloudFrontOriginAccessIdentityRequest);
+        return invoke(request, new UpdateCloudFrontOriginAccessIdentityResultStaxUnmarshaller());
+    }
+    
+    /**
+     * <p>
+     * List distributions.
+     * </p>
+     *
+     * @param listDistributionsRequest Container for the necessary parameters
+     *           to execute the ListDistributions service method on AmazonCloudFront.
+     * 
+     * @return The response from the ListDistributions service method, as
+     *         returned by AmazonCloudFront.
+     * 
+     * @throws InvalidArgumentException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudFront indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ListDistributionsResult listDistributions(ListDistributionsRequest listDistributionsRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<ListDistributionsRequest> request = new ListDistributionsRequestMarshaller().marshall(listDistributionsRequest);
+        return invoke(request, new ListDistributionsResultStaxUnmarshaller());
+    }
+    
+    /**
+     * <p>
+     * Update a distribution.
+     * </p>
+     *
+     * @param updateDistributionRequest Container for the necessary
+     *           parameters to execute the UpdateDistribution service method on
+     *           AmazonCloudFront.
+     * 
+     * @return The response from the UpdateDistribution service method, as
+     *         returned by AmazonCloudFront.
+     * 
+     * @throws InvalidDefaultRootObjectException
+     * @throws InvalidIfMatchVersionException
+     * @throws IllegalUpdateException
+     * @throws MissingBodyException
+     * @throws TooManyDistributionCNAMEsException
+     * @throws NoSuchOriginException
+     * @throws PreconditionFailedException
+     * @throws InconsistentQuantitiesException
+     * @throws CNAMEAlreadyExistsException
+     * @throws InvalidArgumentException
+     * @throws InvalidOriginAccessIdentityException
+     * @throws TrustedSignerDoesNotExistException
+     * @throws TooManyCacheBehaviorsException
+     * @throws TooManyTrustedSignersException
+     * @throws NoSuchDistributionException
+     * @throws AccessDeniedException
+     * @throws TooManyOriginsException
+     * @throws InvalidRequiredProtocolException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudFront indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public UpdateDistributionResult updateDistribution(UpdateDistributionRequest updateDistributionRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<UpdateDistributionRequest> request = new UpdateDistributionRequestMarshaller().marshall(updateDistributionRequest);
+        return invoke(request, new UpdateDistributionResultStaxUnmarshaller());
+    }
+    
+    /**
+     * <p>
+     * Get the configuration information about a distribution.
+     * </p>
+     *
+     * @param getDistributionConfigRequest Container for the necessary
+     *           parameters to execute the GetDistributionConfig service method on
+     *           AmazonCloudFront.
+     * 
+     * @return The response from the GetDistributionConfig service method, as
+     *         returned by AmazonCloudFront.
+     * 
+     * @throws NoSuchDistributionException
      * @throws AccessDeniedException
      *
      * @throws AmazonClientException
@@ -202,10 +313,10 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *             If an error response is returned by AmazonCloudFront indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public void deleteCloudFrontOriginAccessIdentity(DeleteCloudFrontOriginAccessIdentityRequest deleteCloudFrontOriginAccessIdentityRequest) 
+    public GetDistributionConfigResult getDistributionConfig(GetDistributionConfigRequest getDistributionConfigRequest) 
             throws AmazonServiceException, AmazonClientException {
-        Request<DeleteCloudFrontOriginAccessIdentityRequest> request = new DeleteCloudFrontOriginAccessIdentityRequestMarshaller().marshall(deleteCloudFrontOriginAccessIdentityRequest);
-        invoke(request, null);
+        Request<GetDistributionConfigRequest> request = new GetDistributionConfigRequestMarshaller().marshall(getDistributionConfigRequest);
+        return invoke(request, new GetDistributionConfigResultStaxUnmarshaller());
     }
     
     /**
@@ -239,6 +350,206 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
     
     /**
      * <p>
+     * Get the information about an origin access identity.
+     * </p>
+     *
+     * @param getCloudFrontOriginAccessIdentityRequest Container for the
+     *           necessary parameters to execute the GetCloudFrontOriginAccessIdentity
+     *           service method on AmazonCloudFront.
+     * 
+     * @return The response from the GetCloudFrontOriginAccessIdentity
+     *         service method, as returned by AmazonCloudFront.
+     * 
+     * @throws NoSuchCloudFrontOriginAccessIdentityException
+     * @throws AccessDeniedException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudFront indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public GetCloudFrontOriginAccessIdentityResult getCloudFrontOriginAccessIdentity(GetCloudFrontOriginAccessIdentityRequest getCloudFrontOriginAccessIdentityRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<GetCloudFrontOriginAccessIdentityRequest> request = new GetCloudFrontOriginAccessIdentityRequestMarshaller().marshall(getCloudFrontOriginAccessIdentityRequest);
+        return invoke(request, new GetCloudFrontOriginAccessIdentityResultStaxUnmarshaller());
+    }
+    
+    /**
+     * <p>
+     * Delete an origin access identity.
+     * </p>
+     *
+     * @param deleteCloudFrontOriginAccessIdentityRequest Container for the
+     *           necessary parameters to execute the
+     *           DeleteCloudFrontOriginAccessIdentity service method on
+     *           AmazonCloudFront.
+     * 
+     * @throws InvalidIfMatchVersionException
+     * @throws CloudFrontOriginAccessIdentityInUseException
+     * @throws NoSuchCloudFrontOriginAccessIdentityException
+     * @throws PreconditionFailedException
+     * @throws AccessDeniedException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudFront indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void deleteCloudFrontOriginAccessIdentity(DeleteCloudFrontOriginAccessIdentityRequest deleteCloudFrontOriginAccessIdentityRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<DeleteCloudFrontOriginAccessIdentityRequest> request = new DeleteCloudFrontOriginAccessIdentityRequestMarshaller().marshall(deleteCloudFrontOriginAccessIdentityRequest);
+        invoke(request, null);
+    }
+    
+    /**
+     * <p>
+     * List streaming distributions.
+     * </p>
+     *
+     * @param listStreamingDistributionsRequest Container for the necessary
+     *           parameters to execute the ListStreamingDistributions service method on
+     *           AmazonCloudFront.
+     * 
+     * @return The response from the ListStreamingDistributions service
+     *         method, as returned by AmazonCloudFront.
+     * 
+     * @throws InvalidArgumentException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudFront indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ListStreamingDistributionsResult listStreamingDistributions(ListStreamingDistributionsRequest listStreamingDistributionsRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<ListStreamingDistributionsRequest> request = new ListStreamingDistributionsRequestMarshaller().marshall(listStreamingDistributionsRequest);
+        return invoke(request, new ListStreamingDistributionsResultStaxUnmarshaller());
+    }
+    
+    /**
+     * <p>
+     * Update a streaming distribution.
+     * </p>
+     *
+     * @param updateStreamingDistributionRequest Container for the necessary
+     *           parameters to execute the UpdateStreamingDistribution service method
+     *           on AmazonCloudFront.
+     * 
+     * @return The response from the UpdateStreamingDistribution service
+     *         method, as returned by AmazonCloudFront.
+     * 
+     * @throws InvalidIfMatchVersionException
+     * @throws IllegalUpdateException
+     * @throws MissingBodyException
+     * @throws PreconditionFailedException
+     * @throws CNAMEAlreadyExistsException
+     * @throws InvalidArgumentException
+     * @throws InconsistentQuantitiesException
+     * @throws InvalidOriginAccessIdentityException
+     * @throws TrustedSignerDoesNotExistException
+     * @throws TooManyTrustedSignersException
+     * @throws NoSuchStreamingDistributionException
+     * @throws TooManyStreamingDistributionCNAMEsException
+     * @throws AccessDeniedException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudFront indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public UpdateStreamingDistributionResult updateStreamingDistribution(UpdateStreamingDistributionRequest updateStreamingDistributionRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<UpdateStreamingDistributionRequest> request = new UpdateStreamingDistributionRequestMarshaller().marshall(updateStreamingDistributionRequest);
+        return invoke(request, new UpdateStreamingDistributionResultStaxUnmarshaller());
+    }
+    
+    /**
+     * <p>
+     * Create a new invalidation.
+     * </p>
+     *
+     * @param createInvalidationRequest Container for the necessary
+     *           parameters to execute the CreateInvalidation service method on
+     *           AmazonCloudFront.
+     * 
+     * @return The response from the CreateInvalidation service method, as
+     *         returned by AmazonCloudFront.
+     * 
+     * @throws TooManyInvalidationsInProgressException
+     * @throws MissingBodyException
+     * @throws NoSuchDistributionException
+     * @throws BatchTooLargeException
+     * @throws AccessDeniedException
+     * @throws InvalidArgumentException
+     * @throws InconsistentQuantitiesException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudFront indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public CreateInvalidationResult createInvalidation(CreateInvalidationRequest createInvalidationRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<CreateInvalidationRequest> request = new CreateInvalidationRequestMarshaller().marshall(createInvalidationRequest);
+        return invoke(request, new CreateInvalidationResultStaxUnmarshaller());
+    }
+    
+    /**
+     * <p>
+     * Create a new streaming distribution.
+     * </p>
+     *
+     * @param createStreamingDistributionRequest Container for the necessary
+     *           parameters to execute the CreateStreamingDistribution service method
+     *           on AmazonCloudFront.
+     * 
+     * @return The response from the CreateStreamingDistribution service
+     *         method, as returned by AmazonCloudFront.
+     * 
+     * @throws TooManyTrustedSignersException
+     * @throws MissingBodyException
+     * @throws TooManyStreamingDistributionCNAMEsException
+     * @throws StreamingDistributionAlreadyExistsException
+     * @throws CNAMEAlreadyExistsException
+     * @throws AccessDeniedException
+     * @throws TooManyStreamingDistributionsException
+     * @throws InvalidArgumentException
+     * @throws InconsistentQuantitiesException
+     * @throws InvalidOriginAccessIdentityException
+     * @throws TrustedSignerDoesNotExistException
+     * @throws InvalidOriginException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudFront indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public CreateStreamingDistributionResult createStreamingDistribution(CreateStreamingDistributionRequest createStreamingDistributionRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<CreateStreamingDistributionRequest> request = new CreateStreamingDistributionRequestMarshaller().marshall(createStreamingDistributionRequest);
+        return invoke(request, new CreateStreamingDistributionResultStaxUnmarshaller());
+    }
+    
+    /**
+     * <p>
      * Get the information about an invalidation.
      * </p>
      *
@@ -264,282 +575,6 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
             throws AmazonServiceException, AmazonClientException {
         Request<GetInvalidationRequest> request = new GetInvalidationRequestMarshaller().marshall(getInvalidationRequest);
         return invoke(request, new GetInvalidationResultStaxUnmarshaller());
-    }
-    
-    /**
-     * <p>
-     * Delete a streaming distribution.
-     * </p>
-     *
-     * @param deleteStreamingDistributionRequest Container for the necessary
-     *           parameters to execute the DeleteStreamingDistribution service method
-     *           on AmazonCloudFront.
-     * 
-     * @throws InvalidIfMatchVersionException
-     * @throws NoSuchStreamingDistributionException
-     * @throws StreamingDistributionNotDisabledException
-     * @throws PreconditionFailedException
-     * @throws AccessDeniedException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCloudFront indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void deleteStreamingDistribution(DeleteStreamingDistributionRequest deleteStreamingDistributionRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DeleteStreamingDistributionRequest> request = new DeleteStreamingDistributionRequestMarshaller().marshall(deleteStreamingDistributionRequest);
-        invoke(request, null);
-    }
-    
-    /**
-     * <p>
-     * Create a new streaming distribution.
-     * </p>
-     *
-     * @param createStreamingDistributionRequest Container for the necessary
-     *           parameters to execute the CreateStreamingDistribution service method
-     *           on AmazonCloudFront.
-     * 
-     * @return The response from the CreateStreamingDistribution service
-     *         method, as returned by AmazonCloudFront.
-     * 
-     * @throws TooManyTrustedSignersException
-     * @throws MissingBodyException
-     * @throws TooManyStreamingDistributionCNAMEsException
-     * @throws StreamingDistributionAlreadyExistsException
-     * @throws CNAMEAlreadyExistsException
-     * @throws AccessDeniedException
-     * @throws TooManyStreamingDistributionsException
-     * @throws InvalidArgumentException
-     * @throws InvalidOriginAccessIdentityException
-     * @throws TrustedSignerDoesNotExistException
-     * @throws InvalidOriginException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCloudFront indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public CreateStreamingDistributionResult createStreamingDistribution(CreateStreamingDistributionRequest createStreamingDistributionRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<CreateStreamingDistributionRequest> request = new CreateStreamingDistributionRequestMarshaller().marshall(createStreamingDistributionRequest);
-        return invoke(request, new CreateStreamingDistributionResultStaxUnmarshaller());
-    }
-    
-    /**
-     * <p>
-     * Create a new distribution.
-     * </p>
-     *
-     * @param createDistributionRequest Container for the necessary
-     *           parameters to execute the CreateDistribution service method on
-     *           AmazonCloudFront.
-     * 
-     * @return The response from the CreateDistribution service method, as
-     *         returned by AmazonCloudFront.
-     * 
-     * @throws InvalidDefaultRootObjectException
-     * @throws MissingBodyException
-     * @throws TooManyDistributionCNAMEsException
-     * @throws TooManyDistributionsException
-     * @throws CNAMEAlreadyExistsException
-     * @throws InvalidArgumentException
-     * @throws InvalidOriginAccessIdentityException
-     * @throws TrustedSignerDoesNotExistException
-     * @throws InvalidOriginException
-     * @throws TooManyTrustedSignersException
-     * @throws AccessDeniedException
-     * @throws DistributionAlreadyExistsException
-     * @throws InvalidRequiredProtocolException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCloudFront indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public CreateDistributionResult createDistribution(CreateDistributionRequest createDistributionRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<CreateDistributionRequest> request = new CreateDistributionRequestMarshaller().marshall(createDistributionRequest);
-        return invoke(request, new CreateDistributionResultStaxUnmarshaller());
-    }
-    
-    /**
-     * <p>
-     * Delete a distribution.
-     * </p>
-     *
-     * @param deleteDistributionRequest Container for the necessary
-     *           parameters to execute the DeleteDistribution service method on
-     *           AmazonCloudFront.
-     * 
-     * @throws InvalidIfMatchVersionException
-     * @throws NoSuchDistributionException
-     * @throws DistributionNotDisabledException
-     * @throws PreconditionFailedException
-     * @throws AccessDeniedException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCloudFront indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void deleteDistribution(DeleteDistributionRequest deleteDistributionRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DeleteDistributionRequest> request = new DeleteDistributionRequestMarshaller().marshall(deleteDistributionRequest);
-        invoke(request, null);
-    }
-    
-    /**
-     * <p>
-     * Update a distribution.
-     * </p>
-     *
-     * @param updateDistributionRequest Container for the necessary
-     *           parameters to execute the UpdateDistribution service method on
-     *           AmazonCloudFront.
-     * 
-     * @return The response from the UpdateDistribution service method, as
-     *         returned by AmazonCloudFront.
-     * 
-     * @throws InvalidDefaultRootObjectException
-     * @throws InvalidIfMatchVersionException
-     * @throws IllegalUpdateException
-     * @throws MissingBodyException
-     * @throws TooManyDistributionCNAMEsException
-     * @throws PreconditionFailedException
-     * @throws CNAMEAlreadyExistsException
-     * @throws InvalidArgumentException
-     * @throws InvalidOriginAccessIdentityException
-     * @throws TrustedSignerDoesNotExistException
-     * @throws TooManyTrustedSignersException
-     * @throws NoSuchDistributionException
-     * @throws AccessDeniedException
-     * @throws InvalidRequiredProtocolException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCloudFront indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public UpdateDistributionResult updateDistribution(UpdateDistributionRequest updateDistributionRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<UpdateDistributionRequest> request = new UpdateDistributionRequestMarshaller().marshall(updateDistributionRequest);
-        return invoke(request, new UpdateDistributionResultStaxUnmarshaller());
-    }
-    
-    /**
-     * <p>
-     * Update a streaming distribution.
-     * </p>
-     *
-     * @param updateStreamingDistributionRequest Container for the necessary
-     *           parameters to execute the UpdateStreamingDistribution service method
-     *           on AmazonCloudFront.
-     * 
-     * @return The response from the UpdateStreamingDistribution service
-     *         method, as returned by AmazonCloudFront.
-     * 
-     * @throws TooManyTrustedSignersException
-     * @throws InvalidIfMatchVersionException
-     * @throws IllegalUpdateException
-     * @throws MissingBodyException
-     * @throws NoSuchStreamingDistributionException
-     * @throws TooManyStreamingDistributionCNAMEsException
-     * @throws PreconditionFailedException
-     * @throws AccessDeniedException
-     * @throws CNAMEAlreadyExistsException
-     * @throws InvalidArgumentException
-     * @throws InvalidOriginAccessIdentityException
-     * @throws TrustedSignerDoesNotExistException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCloudFront indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public UpdateStreamingDistributionResult updateStreamingDistribution(UpdateStreamingDistributionRequest updateStreamingDistributionRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<UpdateStreamingDistributionRequest> request = new UpdateStreamingDistributionRequestMarshaller().marshall(updateStreamingDistributionRequest);
-        return invoke(request, new UpdateStreamingDistributionResultStaxUnmarshaller());
-    }
-    
-    /**
-     * <p>
-     * Create a new origin access identity.
-     * </p>
-     *
-     * @param createCloudFrontOriginAccessIdentityRequest Container for the
-     *           necessary parameters to execute the
-     *           CreateCloudFrontOriginAccessIdentity service method on
-     *           AmazonCloudFront.
-     * 
-     * @return The response from the CreateCloudFrontOriginAccessIdentity
-     *         service method, as returned by AmazonCloudFront.
-     * 
-     * @throws TooManyCloudFrontOriginAccessIdentitiesException
-     * @throws MissingBodyException
-     * @throws InvalidArgumentException
-     * @throws CloudFrontOriginAccessIdentityAlreadyExistsException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCloudFront indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public CreateCloudFrontOriginAccessIdentityResult createCloudFrontOriginAccessIdentity(CreateCloudFrontOriginAccessIdentityRequest createCloudFrontOriginAccessIdentityRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<CreateCloudFrontOriginAccessIdentityRequest> request = new CreateCloudFrontOriginAccessIdentityRequestMarshaller().marshall(createCloudFrontOriginAccessIdentityRequest);
-        return invoke(request, new CreateCloudFrontOriginAccessIdentityResultStaxUnmarshaller());
-    }
-    
-    /**
-     * <p>
-     * Get the information about a distribution.
-     * </p>
-     *
-     * @param getDistributionRequest Container for the necessary parameters
-     *           to execute the GetDistribution service method on AmazonCloudFront.
-     * 
-     * @return The response from the GetDistribution service method, as
-     *         returned by AmazonCloudFront.
-     * 
-     * @throws NoSuchDistributionException
-     * @throws AccessDeniedException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCloudFront indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public GetDistributionResult getDistribution(GetDistributionRequest getDistributionRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<GetDistributionRequest> request = new GetDistributionRequestMarshaller().marshall(getDistributionRequest);
-        return invoke(request, new GetDistributionResultStaxUnmarshaller());
     }
     
     /**
@@ -574,6 +609,35 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
     
     /**
      * <p>
+     * Delete a streaming distribution.
+     * </p>
+     *
+     * @param deleteStreamingDistributionRequest Container for the necessary
+     *           parameters to execute the DeleteStreamingDistribution service method
+     *           on AmazonCloudFront.
+     * 
+     * @throws InvalidIfMatchVersionException
+     * @throws NoSuchStreamingDistributionException
+     * @throws StreamingDistributionNotDisabledException
+     * @throws PreconditionFailedException
+     * @throws AccessDeniedException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudFront indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void deleteStreamingDistribution(DeleteStreamingDistributionRequest deleteStreamingDistributionRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<DeleteStreamingDistributionRequest> request = new DeleteStreamingDistributionRequestMarshaller().marshall(deleteStreamingDistributionRequest);
+        invoke(request, null);
+    }
+    
+    /**
+     * <p>
      * Get the information about a streaming distribution.
      * </p>
      *
@@ -603,16 +667,22 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
     
     /**
      * <p>
-     * List distributions.
+     * Create a new origin access identity.
      * </p>
      *
-     * @param listDistributionsRequest Container for the necessary parameters
-     *           to execute the ListDistributions service method on AmazonCloudFront.
+     * @param createCloudFrontOriginAccessIdentityRequest Container for the
+     *           necessary parameters to execute the
+     *           CreateCloudFrontOriginAccessIdentity service method on
+     *           AmazonCloudFront.
      * 
-     * @return The response from the ListDistributions service method, as
-     *         returned by AmazonCloudFront.
+     * @return The response from the CreateCloudFrontOriginAccessIdentity
+     *         service method, as returned by AmazonCloudFront.
      * 
+     * @throws TooManyCloudFrontOriginAccessIdentitiesException
+     * @throws MissingBodyException
      * @throws InvalidArgumentException
+     * @throws InconsistentQuantitiesException
+     * @throws CloudFrontOriginAccessIdentityAlreadyExistsException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -622,32 +692,26 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *             If an error response is returned by AmazonCloudFront indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public ListDistributionsResult listDistributions(ListDistributionsRequest listDistributionsRequest) 
+    public CreateCloudFrontOriginAccessIdentityResult createCloudFrontOriginAccessIdentity(CreateCloudFrontOriginAccessIdentityRequest createCloudFrontOriginAccessIdentityRequest) 
             throws AmazonServiceException, AmazonClientException {
-        Request<ListDistributionsRequest> request = new ListDistributionsRequestMarshaller().marshall(listDistributionsRequest);
-        return invoke(request, new ListDistributionsResultStaxUnmarshaller());
+        Request<CreateCloudFrontOriginAccessIdentityRequest> request = new CreateCloudFrontOriginAccessIdentityRequestMarshaller().marshall(createCloudFrontOriginAccessIdentityRequest);
+        return invoke(request, new CreateCloudFrontOriginAccessIdentityResultStaxUnmarshaller());
     }
     
     /**
      * <p>
-     * Update an origin access identity.
+     * Delete a distribution.
      * </p>
      *
-     * @param updateCloudFrontOriginAccessIdentityRequest Container for the
-     *           necessary parameters to execute the
-     *           UpdateCloudFrontOriginAccessIdentity service method on
+     * @param deleteDistributionRequest Container for the necessary
+     *           parameters to execute the DeleteDistribution service method on
      *           AmazonCloudFront.
-     * 
-     * @return The response from the UpdateCloudFrontOriginAccessIdentity
-     *         service method, as returned by AmazonCloudFront.
      * 
      * @throws InvalidIfMatchVersionException
-     * @throws IllegalUpdateException
-     * @throws MissingBodyException
-     * @throws NoSuchCloudFrontOriginAccessIdentityException
+     * @throws NoSuchDistributionException
+     * @throws DistributionNotDisabledException
      * @throws PreconditionFailedException
      * @throws AccessDeniedException
-     * @throws InvalidArgumentException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -657,87 +721,68 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *             If an error response is returned by AmazonCloudFront indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public UpdateCloudFrontOriginAccessIdentityResult updateCloudFrontOriginAccessIdentity(UpdateCloudFrontOriginAccessIdentityRequest updateCloudFrontOriginAccessIdentityRequest) 
+    public void deleteDistribution(DeleteDistributionRequest deleteDistributionRequest) 
             throws AmazonServiceException, AmazonClientException {
-        Request<UpdateCloudFrontOriginAccessIdentityRequest> request = new UpdateCloudFrontOriginAccessIdentityRequestMarshaller().marshall(updateCloudFrontOriginAccessIdentityRequest);
-        return invoke(request, new UpdateCloudFrontOriginAccessIdentityResultStaxUnmarshaller());
+        Request<DeleteDistributionRequest> request = new DeleteDistributionRequestMarshaller().marshall(deleteDistributionRequest);
+        invoke(request, null);
     }
     
     /**
      * <p>
-     * Get the configuration information about a distribution.
+     * Create a new distribution.
      * </p>
      *
-     * @param getDistributionConfigRequest Container for the necessary
-     *           parameters to execute the GetDistributionConfig service method on
+     * @param createDistributionRequest Container for the necessary
+     *           parameters to execute the CreateDistribution service method on
      *           AmazonCloudFront.
      * 
-     * @return The response from the GetDistributionConfig service method, as
+     * @return The response from the CreateDistribution service method, as
      *         returned by AmazonCloudFront.
      * 
-     * @throws NoSuchDistributionException
-     * @throws AccessDeniedException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCloudFront indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public GetDistributionConfigResult getDistributionConfig(GetDistributionConfigRequest getDistributionConfigRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<GetDistributionConfigRequest> request = new GetDistributionConfigRequestMarshaller().marshall(getDistributionConfigRequest);
-        return invoke(request, new GetDistributionConfigResultStaxUnmarshaller());
-    }
-    
-    /**
-     * <p>
-     * Get the information about an origin access identity.
-     * </p>
-     *
-     * @param getCloudFrontOriginAccessIdentityRequest Container for the
-     *           necessary parameters to execute the GetCloudFrontOriginAccessIdentity
-     *           service method on AmazonCloudFront.
-     * 
-     * @return The response from the GetCloudFrontOriginAccessIdentity
-     *         service method, as returned by AmazonCloudFront.
-     * 
-     * @throws NoSuchCloudFrontOriginAccessIdentityException
-     * @throws AccessDeniedException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCloudFront indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public GetCloudFrontOriginAccessIdentityResult getCloudFrontOriginAccessIdentity(GetCloudFrontOriginAccessIdentityRequest getCloudFrontOriginAccessIdentityRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<GetCloudFrontOriginAccessIdentityRequest> request = new GetCloudFrontOriginAccessIdentityRequestMarshaller().marshall(getCloudFrontOriginAccessIdentityRequest);
-        return invoke(request, new GetCloudFrontOriginAccessIdentityResultStaxUnmarshaller());
-    }
-    
-    /**
-     * <p>
-     * Create a new invalidation.
-     * </p>
-     *
-     * @param createInvalidationRequest Container for the necessary
-     *           parameters to execute the CreateInvalidation service method on
-     *           AmazonCloudFront.
-     * 
-     * @return The response from the CreateInvalidation service method, as
-     *         returned by AmazonCloudFront.
-     * 
-     * @throws TooManyInvalidationsInProgressException
+     * @throws InvalidDefaultRootObjectException
      * @throws MissingBodyException
-     * @throws NoSuchDistributionException
-     * @throws BatchTooLargeException
+     * @throws TooManyDistributionCNAMEsException
+     * @throws TooManyDistributionsException
+     * @throws NoSuchOriginException
+     * @throws InconsistentQuantitiesException
+     * @throws CNAMEAlreadyExistsException
+     * @throws InvalidArgumentException
+     * @throws InvalidOriginAccessIdentityException
+     * @throws TrustedSignerDoesNotExistException
+     * @throws InvalidOriginException
+     * @throws TooManyCacheBehaviorsException
+     * @throws TooManyTrustedSignersException
      * @throws AccessDeniedException
+     * @throws TooManyOriginsException
+     * @throws DistributionAlreadyExistsException
+     * @throws InvalidRequiredProtocolException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudFront indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public CreateDistributionResult createDistribution(CreateDistributionRequest createDistributionRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<CreateDistributionRequest> request = new CreateDistributionRequestMarshaller().marshall(createDistributionRequest);
+        return invoke(request, new CreateDistributionResultStaxUnmarshaller());
+    }
+    
+    /**
+     * <p>
+     * List invalidation batches.
+     * </p>
+     *
+     * @param listInvalidationsRequest Container for the necessary parameters
+     *           to execute the ListInvalidations service method on AmazonCloudFront.
+     * 
+     * @return The response from the ListInvalidations service method, as
+     *         returned by AmazonCloudFront.
+     * 
+     * @throws NoSuchDistributionException
      * @throws InvalidArgumentException
      *
      * @throws AmazonClientException
@@ -748,10 +793,38 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
      *             If an error response is returned by AmazonCloudFront indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public CreateInvalidationResult createInvalidation(CreateInvalidationRequest createInvalidationRequest) 
+    public ListInvalidationsResult listInvalidations(ListInvalidationsRequest listInvalidationsRequest) 
             throws AmazonServiceException, AmazonClientException {
-        Request<CreateInvalidationRequest> request = new CreateInvalidationRequestMarshaller().marshall(createInvalidationRequest);
-        return invoke(request, new CreateInvalidationResultStaxUnmarshaller());
+        Request<ListInvalidationsRequest> request = new ListInvalidationsRequestMarshaller().marshall(listInvalidationsRequest);
+        return invoke(request, new ListInvalidationsResultStaxUnmarshaller());
+    }
+    
+    /**
+     * <p>
+     * Get the information about a distribution.
+     * </p>
+     *
+     * @param getDistributionRequest Container for the necessary parameters
+     *           to execute the GetDistribution service method on AmazonCloudFront.
+     * 
+     * @return The response from the GetDistribution service method, as
+     *         returned by AmazonCloudFront.
+     * 
+     * @throws NoSuchDistributionException
+     * @throws AccessDeniedException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudFront indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public GetDistributionResult getDistribution(GetDistributionRequest getDistributionRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<GetDistributionRequest> request = new GetDistributionRequestMarshaller().marshall(getDistributionRequest);
+        return invoke(request, new GetDistributionResultStaxUnmarshaller());
     }
     
     /**
@@ -781,62 +854,6 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
             throws AmazonServiceException, AmazonClientException {
         Request<ListCloudFrontOriginAccessIdentitiesRequest> request = new ListCloudFrontOriginAccessIdentitiesRequestMarshaller().marshall(listCloudFrontOriginAccessIdentitiesRequest);
         return invoke(request, new ListCloudFrontOriginAccessIdentitiesResultStaxUnmarshaller());
-    }
-    
-    /**
-     * <p>
-     * List streaming distributions.
-     * </p>
-     *
-     * @param listStreamingDistributionsRequest Container for the necessary
-     *           parameters to execute the ListStreamingDistributions service method on
-     *           AmazonCloudFront.
-     * 
-     * @return The response from the ListStreamingDistributions service
-     *         method, as returned by AmazonCloudFront.
-     * 
-     * @throws InvalidArgumentException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCloudFront indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public ListStreamingDistributionsResult listStreamingDistributions(ListStreamingDistributionsRequest listStreamingDistributionsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<ListStreamingDistributionsRequest> request = new ListStreamingDistributionsRequestMarshaller().marshall(listStreamingDistributionsRequest);
-        return invoke(request, new ListStreamingDistributionsResultStaxUnmarshaller());
-    }
-    
-    /**
-     * <p>
-     * List invalidation batches.
-     * </p>
-     *
-     * @param listInvalidationsRequest Container for the necessary parameters
-     *           to execute the ListInvalidations service method on AmazonCloudFront.
-     * 
-     * @return The response from the ListInvalidations service method, as
-     *         returned by AmazonCloudFront.
-     * 
-     * @throws NoSuchDistributionException
-     * @throws InvalidArgumentException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCloudFront indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public ListInvalidationsResult listInvalidations(ListInvalidationsRequest listInvalidationsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<ListInvalidationsRequest> request = new ListInvalidationsRequestMarshaller().marshall(listInvalidationsRequest);
-        return invoke(request, new ListInvalidationsResultStaxUnmarshaller());
     }
     
 

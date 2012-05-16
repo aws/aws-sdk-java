@@ -16,9 +16,8 @@ package com.amazonaws.services.cloudwatch.model;
 
 /**
  * <p>
- * The <code>Metric</code> data type contains information about a
- * specific metric. If you call ListMetrics, Amazon CloudWatch returns
- * information contained by this data type.
+ * The <code>Metric</code> data type contains information about a specific metric. If you call ListMetrics, Amazon CloudWatch returns information
+ * contained by this data type.
  * </p>
  */
 public class Metric {

@@ -16,17 +16,15 @@ package com.amazonaws.services.storagegateway.model;
 import com.amazonaws.AmazonWebServiceRequest;
 
 /**
- * Container for the parameters to the {@link com.amazonaws.services.storagegateway.AWSStorageGateway#describeStorediSCSIVolumes(DescribeStoredISCSIVolumesRequest) DescribeStorediSCSIVolumes operation}.
+ * Container for the parameters to the {@link com.amazonaws.services.storagegateway.AWSStorageGateway#describeStorediSCSIVolumes(DescribeStorediSCSIVolumesRequest) DescribeStorediSCSIVolumes operation}.
  * <p>
- * This operation returns description of the gateway volumes specified in
- * the request. The list of gateway volumes in the request must be from
- * one gateway. In the response Amazon Storage Gateway returns volume
- * information sorted by volume ARNs.
+ * This operation returns description of the gateway volumes specified in the request. The list of gateway volumes in the request must be from one
+ * gateway. In the response Amazon Storage Gateway returns volume information sorted by volume ARNs.
  * </p>
  *
- * @see com.amazonaws.services.storagegateway.AWSStorageGateway#describeStorediSCSIVolumes(DescribeStoredISCSIVolumesRequest)
+ * @see com.amazonaws.services.storagegateway.AWSStorageGateway#describeStorediSCSIVolumes(DescribeStorediSCSIVolumesRequest)
  */
-public class DescribeStoredISCSIVolumesRequest extends AmazonWebServiceRequest {
+public class DescribeStorediSCSIVolumesRequest extends AmazonWebServiceRequest {
 
     /**
      * An array of strings where each string represents the Amazon Resource
@@ -93,7 +91,7 @@ public class DescribeStoredISCSIVolumesRequest extends AmazonWebServiceRequest {
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public DescribeStoredISCSIVolumesRequest withVolumeARNs(String... volumeARNs) {
+    public DescribeStorediSCSIVolumesRequest withVolumeARNs(String... volumeARNs) {
         if (getVolumeARNs() == null) setVolumeARNs(new java.util.ArrayList<String>(volumeARNs.length));
         for (String value : volumeARNs) {
             getVolumeARNs().add(value);
@@ -117,7 +115,7 @@ public class DescribeStoredISCSIVolumesRequest extends AmazonWebServiceRequest {
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public DescribeStoredISCSIVolumesRequest withVolumeARNs(java.util.Collection<String> volumeARNs) {
+    public DescribeStorediSCSIVolumesRequest withVolumeARNs(java.util.Collection<String> volumeARNs) {
         if (volumeARNs == null) {
             this.volumeARNs = null;
         } else {
@@ -160,8 +158,8 @@ public class DescribeStoredISCSIVolumesRequest extends AmazonWebServiceRequest {
         if (this == obj) return true;
         if (obj == null) return false;
     
-        if (obj instanceof DescribeStoredISCSIVolumesRequest == false) return false;
-        DescribeStoredISCSIVolumesRequest other = (DescribeStoredISCSIVolumesRequest)obj;
+        if (obj instanceof DescribeStorediSCSIVolumesRequest == false) return false;
+        DescribeStorediSCSIVolumesRequest other = (DescribeStorediSCSIVolumesRequest)obj;
         
         if (other.getVolumeARNs() == null ^ this.getVolumeARNs() == null) return false;
         if (other.getVolumeARNs() != null && other.getVolumeARNs().equals(this.getVolumeARNs()) == false) return false; 

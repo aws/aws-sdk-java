@@ -18,16 +18,13 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#respondDecisionTaskCompleted(RespondDecisionTaskCompletedRequest) RespondDecisionTaskCompleted operation}.
  * <p>
- * Used by deciders to tell the service that the DecisionTask identified
- * by the <code>taskToken</code> has successfully completed. The
- * <code>decisions</code> argument specifies the list of decisions made
- * while processing the task.
+ * Used by deciders to tell the service that the DecisionTask identified by the <code>taskToken</code> has successfully completed. The
+ * <code>decisions</code> argument specifies the list of decisions made while processing the task.
  * </p>
  * <p>
  * A
- * <code>DecisionTaskCompleted</code> event is added
- * to the workflow history. The <code>executionContext</code> specified
- * is attached to the event in the workflow execution history.
+ * <code>DecisionTaskCompleted</code> event is added to the workflow history. The <code>executionContext</code> specified is attached
+ * to the event in the workflow execution history.
  * </p>
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#respondDecisionTaskCompleted(RespondDecisionTaskCompletedRequest)

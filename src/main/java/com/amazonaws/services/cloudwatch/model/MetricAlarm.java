@@ -16,8 +16,7 @@ package com.amazonaws.services.cloudwatch.model;
 
 /**
  * <p>
- * The MetricAlarm data type represents an alarm. You can use
- * PutMetricAlarm to create or update an alarm.
+ * The MetricAlarm data type represents an alarm. You can use PutMetricAlarm to create or update an alarm.
  * </p>
  */
 public class MetricAlarm {

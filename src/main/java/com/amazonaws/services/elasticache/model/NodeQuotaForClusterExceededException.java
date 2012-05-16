@@ -18,8 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * Request would result in user exceeding the allowed number of Cache
- * Nodes in a single Cache Cluster.
+ * Request would result in user exceeding the allowed number of Cache Nodes in a single Cache Cluster.
  * </p>
  */        
 public class NodeQuotaForClusterExceededException extends AmazonServiceException {

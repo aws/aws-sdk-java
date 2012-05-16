@@ -18,8 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The JOBID was missing, not found, or not associated with the AWS
- * account.
+ * The JOBID was missing, not found, or not associated with the AWS account.
  * </p>
  */        
 public class InvalidJobIdException extends AmazonServiceException {

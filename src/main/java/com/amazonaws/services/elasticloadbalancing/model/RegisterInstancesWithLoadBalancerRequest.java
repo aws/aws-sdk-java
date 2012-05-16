@@ -21,22 +21,17 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Adds new instances to the LoadBalancer.
  * </p>
  * <p>
- * Once the instance is registered, it starts receiving traffic and
- * requests from the LoadBalancer. Any instance that is not in any of the
- * Availability Zones registered for the LoadBalancer will be moved to
- * the <i>OutOfService</i> state. It will move to the <i>InService</i>
- * state when the Availability Zone is added to the LoadBalancer.
+ * Once the instance is registered, it starts receiving traffic and requests from the LoadBalancer. Any instance that is not in any of the Availability
+ * Zones registered for the LoadBalancer will be moved to the <i>OutOfService</i> state. It will move to the <i>InService</i> state when the Availability
+ * Zone is added to the LoadBalancer.
  * </p>
  * <p>
- * <b>NOTE:</b> In order for this call to be successful, the client must
- * have created the LoadBalancer. The client must provide the same
- * account credentials as those that were used to create the
- * LoadBalancer.
+ * <b>NOTE:</b> In order for this call to be successful, the client must have created the LoadBalancer. The client must provide the same account
+ * credentials as those that were used to create the LoadBalancer.
  * </p>
  * <p>
- * <b>NOTE:</b> Completion of this API does not guarantee that operation
- * has completed. Rather, it means that the request has been registered
- * and the changes will happen shortly.
+ * <b>NOTE:</b> Completion of this API does not guarantee that operation has completed. Rather, it means that the request has been registered and the
+ * changes will happen shortly.
  * </p>
  *
  * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#registerInstancesWithLoadBalancer(RegisterInstancesWithLoadBalancerRequest)

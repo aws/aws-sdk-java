@@ -18,21 +18,15 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#pollForActivityTask(PollForActivityTaskRequest) PollForActivityTask operation}.
  * <p>
- * Used by workers to get an ActivityTask from the specified activity
- * <code>taskList</code> .
- * This initiates a long poll, where the service holds the HTTP
- * connection open and responds as soon as a task becomes available. The
- * maximum time the service holds on to the request before responding is
- * 60 seconds. If no task is available within 60 seconds, the poll will
- * return an empty result. An empty result, in this context, means that
- * an ActivityTask is returned, but that the value of taskToken is an
- * empty string. If a task is returned, the worker should use its type to
- * identify and process it correctly.
+ * Used by workers to get an ActivityTask from the specified activity <code>taskList</code> .
+ * This initiates a long poll, where the service holds the HTTP connection open and responds as soon as a task becomes available. The maximum time the
+ * service holds on to the request before responding is 60 seconds. If no task is available within 60 seconds, the poll will return an empty result. An
+ * empty result, in this context, means that an ActivityTask is returned, but that the value of taskToken is an empty string. If a task is returned, the
+ * worker should use its type to identify and process it correctly.
  * </p>
  * <p>
- * <b>IMPORTANT:</b> Workers should set their client side socket timeout
- * to at least 70 seconds (10 seconds higher than the maximum time
- * service may hold the poll request).
+ * <b>IMPORTANT:</b> Workers should set their client side socket timeout to at least 70 seconds (10 seconds higher than the maximum time service may hold
+ * the poll request).
  * </p>
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#pollForActivityTask(PollForActivityTaskRequest)

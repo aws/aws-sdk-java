@@ -18,14 +18,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#getWorkflowExecutionHistory(GetWorkflowExecutionHistoryRequest) GetWorkflowExecutionHistory operation}.
  * <p>
- * Returns the history of the specified workflow execution. The results
- * may be split into multiple pages. To retrieve subsequent pages, make
- * the call again using the <code>nextPageToken</code> returned by the
- * initial call.
+ * Returns the history of the specified workflow execution. The results may be split into multiple pages. To retrieve subsequent pages, make the call
+ * again using the <code>nextPageToken</code> returned by the initial call.
  * </p>
  * <p>
- * <b>NOTE:</b> This operation is eventually consistent. The results are
- * best effort and may not exactly reflect recent updates and changes.
+ * <b>NOTE:</b> This operation is eventually consistent. The results are best effort and may not exactly reflect recent updates and changes.
  * </p>
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#getWorkflowExecutionHistory(GetWorkflowExecutionHistoryRequest)

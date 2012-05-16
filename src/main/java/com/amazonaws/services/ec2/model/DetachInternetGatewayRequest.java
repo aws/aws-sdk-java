@@ -18,15 +18,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#detachInternetGateway(DetachInternetGatewayRequest) DetachInternetGateway operation}.
  * <p>
- * Detaches an Internet gateway from a VPC, disabling connectivity
- * between the Internet and the VPC. The VPC must not contain any running
- * instances with elastic IP addresses. For more information about your
- * VPC and Internet gateway, go to Amazon Virtual Private Cloud User
- * Guide.
+ * Detaches an Internet gateway from a VPC, disabling connectivity between the Internet and the VPC. The VPC must not contain any running instances with
+ * elastic IP addresses. For more information about your VPC and Internet gateway, go to Amazon Virtual Private Cloud User Guide.
  * </p>
  * <p>
- * For more information about Amazon Virtual Private Cloud and Internet
- * gateways, go to the Amazon Virtual Private Cloud User Guide.
+ * For more information about Amazon Virtual Private Cloud and Internet gateways, go to the Amazon Virtual Private Cloud User Guide.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#detachInternetGateway(DetachInternetGatewayRequest)

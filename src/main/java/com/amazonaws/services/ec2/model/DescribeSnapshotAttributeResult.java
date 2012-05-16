@@ -33,6 +33,8 @@ public class DescribeSnapshotAttributeResult {
      */
     private java.util.List<CreateVolumePermission> createVolumePermissions;
 
+    private java.util.List<ProductCode> productCodes;
+
     /**
      * The ID of the snapshot whose attribute is being described.
      *
@@ -153,6 +155,75 @@ public class DescribeSnapshotAttributeResult {
     }
     
     /**
+     * Returns the value of the ProductCodes property for this object.
+     *
+     * @return The value of the ProductCodes property for this object.
+     */
+    public java.util.List<ProductCode> getProductCodes() {
+        
+        if (productCodes == null) {
+            productCodes = new java.util.ArrayList<ProductCode>();
+        }
+        return productCodes;
+    }
+    
+    /**
+     * Sets the value of the ProductCodes property for this object.
+     *
+     * @param productCodes The new value for the ProductCodes property for this object.
+     */
+    public void setProductCodes(java.util.Collection<ProductCode> productCodes) {
+        if (productCodes == null) {
+            this.productCodes = null;
+            return;
+        }
+
+        java.util.List<ProductCode> productCodesCopy = new java.util.ArrayList<ProductCode>(productCodes.size());
+        productCodesCopy.addAll(productCodes);
+        this.productCodes = productCodesCopy;
+    }
+    
+    /**
+     * Sets the value of the ProductCodes property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param productCodes The new value for the ProductCodes property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public DescribeSnapshotAttributeResult withProductCodes(ProductCode... productCodes) {
+        if (getProductCodes() == null) setProductCodes(new java.util.ArrayList<ProductCode>(productCodes.length));
+        for (ProductCode value : productCodes) {
+            getProductCodes().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * Sets the value of the ProductCodes property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param productCodes The new value for the ProductCodes property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public DescribeSnapshotAttributeResult withProductCodes(java.util.Collection<ProductCode> productCodes) {
+        if (productCodes == null) {
+            this.productCodes = null;
+        } else {
+            java.util.List<ProductCode> productCodesCopy = new java.util.ArrayList<ProductCode>(productCodes.size());
+            productCodesCopy.addAll(productCodes);
+            this.productCodes = productCodesCopy;
+        }
+
+        return this;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -166,6 +237,7 @@ public class DescribeSnapshotAttributeResult {
         sb.append("{");
         if (snapshotId != null) sb.append("SnapshotId: " + snapshotId + ", ");
         if (createVolumePermissions != null) sb.append("CreateVolumePermissions: " + createVolumePermissions + ", ");
+        if (productCodes != null) sb.append("ProductCodes: " + productCodes + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -177,6 +249,7 @@ public class DescribeSnapshotAttributeResult {
         
         hashCode = prime * hashCode + ((getSnapshotId() == null) ? 0 : getSnapshotId().hashCode()); 
         hashCode = prime * hashCode + ((getCreateVolumePermissions() == null) ? 0 : getCreateVolumePermissions().hashCode()); 
+        hashCode = prime * hashCode + ((getProductCodes() == null) ? 0 : getProductCodes().hashCode()); 
         return hashCode;
     }
     
@@ -192,6 +265,8 @@ public class DescribeSnapshotAttributeResult {
         if (other.getSnapshotId() != null && other.getSnapshotId().equals(this.getSnapshotId()) == false) return false; 
         if (other.getCreateVolumePermissions() == null ^ this.getCreateVolumePermissions() == null) return false;
         if (other.getCreateVolumePermissions() != null && other.getCreateVolumePermissions().equals(this.getCreateVolumePermissions()) == false) return false; 
+        if (other.getProductCodes() == null ^ this.getProductCodes() == null) return false;
+        if (other.getProductCodes() != null && other.getProductCodes().equals(this.getProductCodes()) == false) return false; 
         return true;
     }
     

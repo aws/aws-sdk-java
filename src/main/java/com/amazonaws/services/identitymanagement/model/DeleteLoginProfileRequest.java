@@ -18,16 +18,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteLoginProfile(DeleteLoginProfileRequest) DeleteLoginProfile operation}.
  * <p>
- * Deletes the password for the specified user, which terminates the
- * user's ability to access AWS services through the AWS Management
- * Console.
+ * Deletes the password for the specified user, which terminates the user's ability to access AWS services through the AWS Management Console.
  * </p>
  * <p>
- * <b>IMPORTANT:</b>Deleting a user's password does not prevent a user
- * from accessing IAM through the command line interface or the API. To
- * prevent all user access you must also either make the access key
- * inactive or delete it. For more information about making keys
- * inactive or deleting them, see UpdateAccessKey and DeleteAccessKey.
+ * <b>IMPORTANT:</b>Deleting a user's password does not prevent a user from accessing IAM through the command line interface or the API. To prevent all
+ * user access you must also either make the access key inactive or delete it. For more information about making keys inactive or deleting them, see
+ * UpdateAccessKey and DeleteAccessKey.
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteLoginProfile(DeleteLoginProfileRequest)

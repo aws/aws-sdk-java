@@ -21,19 +21,12 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Gives you information about your VPN connections.
  * </p>
  * <p>
- * <b>IMPORTANT:</b> We strongly recommend you use HTTPS when calling
- * this operation because the response contains sensitive cryptographic
- * information for configuring your customer gateway. You can filter the
- * results to return information only about VPN connections that match
- * criteria you specify. For example, you could ask to get information
- * about a particular VPN connection (or all) only if the VPN's state is
- * pending or available. You can specify multiple filters (e.g., the VPN
- * connection is associated with a particular VPN gateway, and the
- * gateway's state is pending or available). The result includes
- * information for a particular VPN connection only if the VPN connection
- * matches all your filters. If there's no match, no special message is
- * returned; the response is simply empty. The following table shows the
- * available filters.
+ * <b>IMPORTANT:</b> We strongly recommend you use HTTPS when calling this operation because the response contains sensitive cryptographic information
+ * for configuring your customer gateway. You can filter the results to return information only about VPN connections that match criteria you specify.
+ * For example, you could ask to get information about a particular VPN connection (or all) only if the VPN's state is pending or available. You can
+ * specify multiple filters (e.g., the VPN connection is associated with a particular VPN gateway, and the gateway's state is pending or available). The
+ * result includes information for a particular VPN connection only if the VPN connection matches all your filters. If there's no match, no special
+ * message is returned; the response is simply empty. The following table shows the available filters.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeVpnConnections(DescribeVpnConnectionsRequest)

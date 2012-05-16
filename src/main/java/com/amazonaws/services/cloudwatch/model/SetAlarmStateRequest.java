@@ -18,11 +18,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.cloudwatch.AmazonCloudWatch#setAlarmState(SetAlarmStateRequest) SetAlarmState operation}.
  * <p>
- * Temporarily sets the state of an alarm. When the updated
- * <code>StateValue</code> differs from the previous value, the action
- * configured for the appropriate state is invoked. This is not a
- * permanent change. The next periodic alarm check (in about a minute)
- * will set the alarm to its actual state.
+ * Temporarily sets the state of an alarm. When the updated <code>StateValue</code> differs from the previous value, the action configured for the
+ * appropriate state is invoked. This is not a permanent change. The next periodic alarm check (in about a minute) will set the alarm to its actual
+ * state.
  * </p>
  *
  * @see com.amazonaws.services.cloudwatch.AmazonCloudWatch#setAlarmState(SetAlarmStateRequest)

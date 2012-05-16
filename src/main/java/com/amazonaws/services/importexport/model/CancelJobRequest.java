@@ -18,8 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.importexport.AmazonImportExport#cancelJob(CancelJobRequest) CancelJob operation}.
  * <p>
- * This operation cancels a specified job. Only the job owner can cancel
- * it. The operation fails if the job has already started or is complete.
+ * This operation cancels a specified job. Only the job owner can cancel it. The operation fails if the job has already started or is complete.
  * </p>
  *
  * @see com.amazonaws.services.importexport.AmazonImportExport#cancelJob(CancelJobRequest)

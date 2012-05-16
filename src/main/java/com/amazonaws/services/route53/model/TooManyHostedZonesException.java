@@ -18,10 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * This error indicates that you've reached the maximum number of hosted
- * zones that can be created for the current AWS account. You can request
- * an increase to the limit on the <a
- * href="http://aws.amazon.com/route53-request/"> Contact Us </a> page.
+ * This error indicates that you've reached the maximum number of hosted zones that can be created for the current AWS account. You can request an
+ * increase to the limit on the <a href="http://aws.amazon.com/route53-request/"> Contact Us </a> page.
  * </p>
  */        
 public class TooManyHostedZonesException extends AmazonServiceException {

@@ -37,14 +37,14 @@ import com.amazonaws.util.XMLWriter;
 public class GetStreamingDistributionConfigRequestMarshaller implements Marshaller<Request<GetStreamingDistributionConfigRequest>, GetStreamingDistributionConfigRequest> {
 
     public Request<GetStreamingDistributionConfigRequest> marshall(GetStreamingDistributionConfigRequest getStreamingDistributionConfigRequest) {
-        if (getStreamingDistributionConfigRequest == null) { 
+        if (getStreamingDistributionConfigRequest == null) {
             throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
         Request<GetStreamingDistributionConfigRequest> request = new DefaultRequest<GetStreamingDistributionConfigRequest>(getStreamingDistributionConfigRequest, "AmazonCloudFront");
         request.setHttpMethod(HttpMethodName.GET);
 
-        String uriResourcePath = "2012-03-15/streaming-distribution/{Id}/config"; 
+        String uriResourcePath = "2012-05-05/streaming-distribution/{Id}/config"; 
         uriResourcePath = uriResourcePath.replace("{Id}", getString(getStreamingDistributionConfigRequest.getId())); 
 
         if (uriResourcePath.contains("?")) {

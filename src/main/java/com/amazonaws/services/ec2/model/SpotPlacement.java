@@ -16,8 +16,7 @@ package com.amazonaws.services.ec2.model;
 
 /**
  * <p>
- * Describes where an Amazon EC2 instance is running within an Amazon
- * EC2 region.
+ * Describes where an Amazon EC2 instance is running within an Amazon EC2 region.
  * </p>
  */
 public class SpotPlacement {

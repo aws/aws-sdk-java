@@ -18,8 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The request was rejected because it referenced an entity that does not
- * exist. The error message describes the entity.
+ * The request was rejected because it referenced an entity that does not exist. The error message describes the entity.
  * </p>
  */        
 public class NoSuchEntityException extends AmazonServiceException {

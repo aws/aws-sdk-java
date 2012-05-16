@@ -37,17 +37,17 @@ import com.amazonaws.util.XMLWriter;
 public class DeleteDistributionRequestMarshaller implements Marshaller<Request<DeleteDistributionRequest>, DeleteDistributionRequest> {
 
     public Request<DeleteDistributionRequest> marshall(DeleteDistributionRequest deleteDistributionRequest) {
-        if (deleteDistributionRequest == null) { 
+        if (deleteDistributionRequest == null) {
             throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
         Request<DeleteDistributionRequest> request = new DefaultRequest<DeleteDistributionRequest>(deleteDistributionRequest, "AmazonCloudFront");
         request.setHttpMethod(HttpMethodName.DELETE);
-        if (deleteDistributionRequest.getIfMatch() != null) 
+        if (deleteDistributionRequest.getIfMatch() != null)
         	request.addHeader("If-Match", deleteDistributionRequest.getIfMatch());
         
 
-        String uriResourcePath = "2012-03-15/distribution/{Id}"; 
+        String uriResourcePath = "2012-05-05/distribution/{Id}"; 
         uriResourcePath = uriResourcePath.replace("{Id}", getString(deleteDistributionRequest.getId())); 
 
         if (uriResourcePath.contains("?")) {

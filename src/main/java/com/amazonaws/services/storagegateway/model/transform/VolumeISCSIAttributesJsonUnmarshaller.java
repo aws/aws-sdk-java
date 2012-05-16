@@ -26,14 +26,14 @@ import org.codehaus.jackson.JsonToken;
 import static org.codehaus.jackson.JsonToken.*;
 
 /**
- * Volume I S C S I Attributes JSON Unmarshaller
+ * Volumei S C S I Attributes JSON Unmarshaller
  */
-public class VolumeISCSIAttributesJsonUnmarshaller implements Unmarshaller<VolumeISCSIAttributes, JsonUnmarshallerContext> {
+public class VolumeiSCSIAttributesJsonUnmarshaller implements Unmarshaller<VolumeiSCSIAttributes, JsonUnmarshallerContext> {
 
     
 
-    public VolumeISCSIAttributes unmarshall(JsonUnmarshallerContext context) throws Exception {
-        VolumeISCSIAttributes volumeISCSIAttributes = new VolumeISCSIAttributes();
+    public VolumeiSCSIAttributes unmarshall(JsonUnmarshallerContext context) throws Exception {
+        VolumeiSCSIAttributes volumeiSCSIAttributes = new VolumeiSCSIAttributes();
 
         
         
@@ -49,23 +49,23 @@ public class VolumeISCSIAttributesJsonUnmarshaller implements Unmarshaller<Volum
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TargetARN", targetDepth)) {
                     context.nextToken();
-                    volumeISCSIAttributes.setTargetARN(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    volumeiSCSIAttributes.setTargetARN(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("NetworkInterfaceId", targetDepth)) {
                     context.nextToken();
-                    volumeISCSIAttributes.setNetworkInterfaceId(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    volumeiSCSIAttributes.setNetworkInterfaceId(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("NetworkInterfacePort", targetDepth)) {
                     context.nextToken();
-                    volumeISCSIAttributes.setNetworkInterfacePort(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
+                    volumeiSCSIAttributes.setNetworkInterfacePort(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("LunNumber", targetDepth)) {
                     context.nextToken();
-                    volumeISCSIAttributes.setLunNumber(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
+                    volumeiSCSIAttributes.setLunNumber(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ChapEnabled", targetDepth)) {
                     context.nextToken();
-                    volumeISCSIAttributes.setChapEnabled(BooleanJsonUnmarshaller.getInstance().unmarshall(context));
+                    volumeiSCSIAttributes.setChapEnabled(BooleanJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getCurrentDepth() <= originalDepth) break;
@@ -73,12 +73,12 @@ public class VolumeISCSIAttributesJsonUnmarshaller implements Unmarshaller<Volum
             token = context.nextToken();
         }
         
-        return volumeISCSIAttributes;
+        return volumeiSCSIAttributes;
     }
 
-    private static VolumeISCSIAttributesJsonUnmarshaller instance;
-    public static VolumeISCSIAttributesJsonUnmarshaller getInstance() {
-        if (instance == null) instance = new VolumeISCSIAttributesJsonUnmarshaller();
+    private static VolumeiSCSIAttributesJsonUnmarshaller instance;
+    public static VolumeiSCSIAttributesJsonUnmarshaller getInstance() {
+        if (instance == null) instance = new VolumeiSCSIAttributesJsonUnmarshaller();
         return instance;
     }
 }

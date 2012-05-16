@@ -37,14 +37,14 @@ import com.amazonaws.util.XMLWriter;
 public class ListCloudFrontOriginAccessIdentitiesRequestMarshaller implements Marshaller<Request<ListCloudFrontOriginAccessIdentitiesRequest>, ListCloudFrontOriginAccessIdentitiesRequest> {
 
     public Request<ListCloudFrontOriginAccessIdentitiesRequest> marshall(ListCloudFrontOriginAccessIdentitiesRequest listCloudFrontOriginAccessIdentitiesRequest) {
-        if (listCloudFrontOriginAccessIdentitiesRequest == null) { 
+        if (listCloudFrontOriginAccessIdentitiesRequest == null) {
             throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
         Request<ListCloudFrontOriginAccessIdentitiesRequest> request = new DefaultRequest<ListCloudFrontOriginAccessIdentitiesRequest>(listCloudFrontOriginAccessIdentitiesRequest, "AmazonCloudFront");
         request.setHttpMethod(HttpMethodName.GET);
 
-        String uriResourcePath = "2012-03-15/origin-access-identity/cloudfront?Marker={Marker}&MaxItems={MaxItems}"; 
+        String uriResourcePath = "2012-05-05/origin-access-identity/cloudfront?Marker={Marker}&MaxItems={MaxItems}"; 
         uriResourcePath = uriResourcePath.replace("{Marker}", getString(listCloudFrontOriginAccessIdentitiesRequest.getMarker())); 
         uriResourcePath = uriResourcePath.replace("{MaxItems}", getString(listCloudFrontOriginAccessIdentitiesRequest.getMaxItems())); 
 

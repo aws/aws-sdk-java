@@ -26,6 +26,8 @@ public class DescribeVolumeAttributeResult {
      */
     private Boolean autoEnableIO;
 
+    private java.util.List<ProductCode> productCodes;
+
     /**
      * Returns the value of the VolumeId property for this object.
      *
@@ -104,6 +106,75 @@ public class DescribeVolumeAttributeResult {
     }
     
     /**
+     * Returns the value of the ProductCodes property for this object.
+     *
+     * @return The value of the ProductCodes property for this object.
+     */
+    public java.util.List<ProductCode> getProductCodes() {
+        
+        if (productCodes == null) {
+            productCodes = new java.util.ArrayList<ProductCode>();
+        }
+        return productCodes;
+    }
+    
+    /**
+     * Sets the value of the ProductCodes property for this object.
+     *
+     * @param productCodes The new value for the ProductCodes property for this object.
+     */
+    public void setProductCodes(java.util.Collection<ProductCode> productCodes) {
+        if (productCodes == null) {
+            this.productCodes = null;
+            return;
+        }
+
+        java.util.List<ProductCode> productCodesCopy = new java.util.ArrayList<ProductCode>(productCodes.size());
+        productCodesCopy.addAll(productCodes);
+        this.productCodes = productCodesCopy;
+    }
+    
+    /**
+     * Sets the value of the ProductCodes property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param productCodes The new value for the ProductCodes property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public DescribeVolumeAttributeResult withProductCodes(ProductCode... productCodes) {
+        if (getProductCodes() == null) setProductCodes(new java.util.ArrayList<ProductCode>(productCodes.length));
+        for (ProductCode value : productCodes) {
+            getProductCodes().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * Sets the value of the ProductCodes property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param productCodes The new value for the ProductCodes property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public DescribeVolumeAttributeResult withProductCodes(java.util.Collection<ProductCode> productCodes) {
+        if (productCodes == null) {
+            this.productCodes = null;
+        } else {
+            java.util.List<ProductCode> productCodesCopy = new java.util.ArrayList<ProductCode>(productCodes.size());
+            productCodesCopy.addAll(productCodes);
+            this.productCodes = productCodesCopy;
+        }
+
+        return this;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -117,6 +188,7 @@ public class DescribeVolumeAttributeResult {
         sb.append("{");
         if (volumeId != null) sb.append("VolumeId: " + volumeId + ", ");
         if (autoEnableIO != null) sb.append("AutoEnableIO: " + autoEnableIO + ", ");
+        if (productCodes != null) sb.append("ProductCodes: " + productCodes + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -128,6 +200,7 @@ public class DescribeVolumeAttributeResult {
         
         hashCode = prime * hashCode + ((getVolumeId() == null) ? 0 : getVolumeId().hashCode()); 
         hashCode = prime * hashCode + ((isAutoEnableIO() == null) ? 0 : isAutoEnableIO().hashCode()); 
+        hashCode = prime * hashCode + ((getProductCodes() == null) ? 0 : getProductCodes().hashCode()); 
         return hashCode;
     }
     
@@ -143,6 +216,8 @@ public class DescribeVolumeAttributeResult {
         if (other.getVolumeId() != null && other.getVolumeId().equals(this.getVolumeId()) == false) return false; 
         if (other.isAutoEnableIO() == null ^ this.isAutoEnableIO() == null) return false;
         if (other.isAutoEnableIO() != null && other.isAutoEnableIO().equals(this.isAutoEnableIO()) == false) return false; 
+        if (other.getProductCodes() == null ^ this.getProductCodes() == null) return false;
+        if (other.getProductCodes() != null && other.getProductCodes().equals(this.getProductCodes()) == false) return false; 
         return true;
     }
     

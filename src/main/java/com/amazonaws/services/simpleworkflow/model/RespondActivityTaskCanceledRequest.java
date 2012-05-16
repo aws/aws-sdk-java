@@ -18,19 +18,15 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#respondActivityTaskCanceled(RespondActivityTaskCanceledRequest) RespondActivityTaskCanceled operation}.
  * <p>
- * Used by workers to tell the service that the ActivityTask identified
- * by the <code>taskToken</code> was successfully canceled. Additional
- * <code>details</code> can be optionally provided using the
- * <code>details</code> argument.
+ * Used by workers to tell the service that the ActivityTask identified by the <code>taskToken</code> was successfully canceled. Additional
+ * <code>details</code> can be optionally provided using the <code>details</code> argument.
  * </p>
  * <p>
- * These <code>details</code> (if provided) appear in the
- * <code>ActivityTaskCanceled</code> event added to the workflow history.
+ * These <code>details</code> (if provided) appear in the <code>ActivityTaskCanceled</code> event added to the workflow history.
  * </p>
  * <p>
- * <b>IMPORTANT:</b> Only use this operation if the canceled flag of a
- * RecordActivityTaskHeartbeat request returns true and if the activity
- * can be safely undone or abandoned.
+ * <b>IMPORTANT:</b> Only use this operation if the canceled flag of a RecordActivityTaskHeartbeat request returns true and if the activity can be safely
+ * undone or abandoned.
  * </p>
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#respondActivityTaskCanceled(RespondActivityTaskCanceledRequest)

@@ -18,12 +18,10 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.dynamodb.AmazonDynamoDB#batchWriteItem(BatchWriteItemRequest) BatchWriteItem operation}.
  * <p>
- * Allows to execute a batch of Put and/or Delete Requests for many
- * tables in a single call. A total of 25 requests are allowed.
+ * Allows to execute a batch of Put and/or Delete Requests for many tables in a single call. A total of 25 requests are allowed.
  * </p>
  * <p>
- * There are no transaction guarantees provided by this API. It does not
- * allow conditional puts nor does it support return values.
+ * There are no transaction guarantees provided by this API. It does not allow conditional puts nor does it support return values.
  * </p>
  *
  * @see com.amazonaws.services.dynamodb.AmazonDynamoDB#batchWriteItem(BatchWriteItemRequest)

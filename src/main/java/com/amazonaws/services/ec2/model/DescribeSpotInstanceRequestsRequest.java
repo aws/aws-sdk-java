@@ -18,40 +18,27 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeSpotInstanceRequests(DescribeSpotInstanceRequestsRequest) DescribeSpotInstanceRequests operation}.
  * <p>
- * Describes Spot Instance requests. Spot Instances are instances that
- * Amazon EC2 starts on your behalf when the maximum price that you
- * specify exceeds the current Spot Price. Amazon EC2 periodically sets
- * the Spot Price based on available Spot Instance capacity and current
- * spot instance requests. For conceptual information about Spot
- * Instances, refer to the <a
- * "http://docs.amazonwebservices.com/AWSEC2/2010-08-31/DeveloperGuide/">
- * Amazon Elastic Compute Cloud Developer Guide </a> or <a
- * href="http://docs.amazonwebservices.com/AWSEC2/2010-08-31/UserGuide/">
- * Amazon Elastic Compute Cloud User Guide </a> .
+ * Describes Spot Instance requests. Spot Instances are instances that Amazon EC2 starts on your behalf when the maximum price that you specify exceeds
+ * the current Spot Price. Amazon EC2 periodically sets the Spot Price based on available Spot Instance capacity and current spot instance requests. For
+ * conceptual information about Spot Instances, refer to the <a href="http://docs.amazonwebservices.com/AWSEC2/2010-08-31/DeveloperGuide/"> Amazon
+ * Elastic Compute Cloud Developer Guide </a> or <a href="http://docs.amazonwebservices.com/AWSEC2/2010-08-31/UserGuide/"> Amazon Elastic Compute Cloud
+ * User Guide </a> .
  * </p>
  * <p>
- * You can filter the results to return information only about Spot
- * Instance requests that match criteria you specify. For example, you
- * could get information about requests where the Spot Price you
- * specified is a certain value (you can't use greater than or less than
- * comparison, but you can use <code>*</code> and <code>?</code>
- * wildcards). You can specify multiple values for a filter. A Spot
- * Instance request must match at least one of the specified values for
- * it to be included in the results.
+ * You can filter the results to return information only about Spot Instance requests that match criteria you specify. For example, you could get
+ * information about requests where the Spot Price you specified is a certain value (you can't use greater than or less than comparison, but you can use
+ * <code>*</code> and <code>?</code> wildcards). You can specify multiple values for a filter. A Spot Instance request must match at least one of the
+ * specified values for it to be included in the results.
  * </p>
  * <p>
- * You can specify multiple filters (e.g., the Spot Price is equal to a
- * particular value, and the instance type is <code>m1.small</code> ).
- * The result includes information for a particular request only if it
- * matches all your filters. If there's no match, no special message is
- * returned; the response is simply empty.
+ * You can specify multiple filters (e.g., the Spot Price is equal to a particular value, and the instance type is <code>m1.small</code> ). The result
+ * includes information for a particular request only if it matches all your filters. If there's no match, no special message is returned; the response
+ * is simply empty.
  * </p>
  * <p>
- * You can use wildcards with the filter values: an asterisk matches
- * zero or more characters, and <code>?</code> matches exactly one
- * character. You can escape special characters using a backslash before
- * the character. For example, a value of <code>\*amazon\?\\</code>
- * searches for the literal string <code>*amazon?\</code> .
+ * You can use wildcards with the filter values: an asterisk matches zero or more characters, and <code>?</code> matches exactly one character. You can
+ * escape special characters using a backslash before the character. For example, a value of <code>\*amazon\?\\</code> searches for the literal string
+ * <code>*amazon?\</code> .
  * 
  * </p>
  *

@@ -18,15 +18,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#modifyDBParameterGroup(ModifyDBParameterGroupRequest) ModifyDBParameterGroup operation}.
  * <p>
- * Modifies the parameters of a DBParameterGroup. To modify more than
- * one parameter submit a list of the following: ParameterName,
- * ParameterValue, and ApplyMethod. A maximum of 20 parameters can be
- * modified in a single request.
+ * Modifies the parameters of a DBParameterGroup. To modify more than one parameter submit a list of the following: ParameterName, ParameterValue, and
+ * ApplyMethod. A maximum of 20 parameters can be modified in a single request.
  * </p>
  * <p>
- * <b>NOTE:</b> The apply-immediate method can only be used for dynamic
- * parameters; the pending-reboot method can be used for either dynamic
- * or static parameters.
+ * <b>NOTE:</b> The apply-immediate method can only be used for dynamic parameters; the pending-reboot method can be used for either dynamic or static
+ * parameters.
  * </p>
  *
  * @see com.amazonaws.services.rds.AmazonRDS#modifyDBParameterGroup(ModifyDBParameterGroupRequest)

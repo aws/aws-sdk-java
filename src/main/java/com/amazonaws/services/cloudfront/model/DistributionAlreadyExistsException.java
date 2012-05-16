@@ -18,8 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The caller reference you attempted to create the distribution with is
- * associated with another distribution.
+ * The caller reference you attempted to create the distribution with is associated with another distribution.
  * </p>
  */        
 public class DistributionAlreadyExistsException extends AmazonServiceException {

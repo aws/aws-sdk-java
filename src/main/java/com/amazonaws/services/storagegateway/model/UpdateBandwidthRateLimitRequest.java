@@ -18,20 +18,15 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.storagegateway.AWSStorageGateway#updateBandwidthRateLimit(UpdateBandwidthRateLimitRequest) UpdateBandwidthRateLimit operation}.
  * <p>
- * This operation updates the bandwidth rate limits of a gateway. You can
- * update both the upload and download bandwidth rate limit or specify
- * only one of the two. If you don't set a bandwidth rate limit, the
- * existing rate limit remains.
+ * This operation updates the bandwidth rate limits of a gateway. You can update both the upload and download bandwidth rate limit or specify only one of
+ * the two. If you don't set a bandwidth rate limit, the existing rate limit remains.
  * </p>
  * <p>
- * By default, a gateway's bandwidth rate limits are not set. If you
- * don't set any limit, the gateway does not have any limitations on its
- * bandwidth usage and could potentially use the maximum available
- * bandwidth.
+ * By default, a gateway's bandwidth rate limits are not set. If you don't set any limit, the gateway does not have any limitations on its bandwidth
+ * usage and could potentially use the maximum available bandwidth.
  * </p>
  * <p>
- * To specify which gateway to update, use the Amazon Resource Name (ARN)
- * of the gateway in your request.
+ * To specify which gateway to update, use the Amazon Resource Name (ARN) of the gateway in your request.
  * </p>
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#updateBandwidthRateLimit(UpdateBandwidthRateLimitRequest)

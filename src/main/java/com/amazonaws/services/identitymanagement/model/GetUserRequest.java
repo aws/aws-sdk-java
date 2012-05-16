@@ -18,12 +18,10 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getUser(GetUserRequest) GetUser operation}.
  * <p>
- * Retrieves information about the specified user, including the user's
- * path, GUID, and ARN.
+ * Retrieves information about the specified user, including the user's path, GUID, and ARN.
  * </p>
  * <p>
- * If you do not specify a user name, IAM determines the user name
- * implicitly based on the AWS Access Key ID signing the request.
+ * If you do not specify a user name, IAM determines the user name implicitly based on the AWS Access Key ID signing the request.
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getUser(GetUserRequest)

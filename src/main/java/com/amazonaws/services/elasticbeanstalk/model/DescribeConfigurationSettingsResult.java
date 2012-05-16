@@ -16,8 +16,7 @@ package com.amazonaws.services.elasticbeanstalk.model;
 
 /**
  * <p>
- * The results from a request to change the configuration settings of an
- * environment.
+ * The results from a request to change the configuration settings of an environment.
  * </p>
  */
 public class DescribeConfigurationSettingsResult {

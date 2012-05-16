@@ -18,11 +18,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#rebootInstances(RebootInstancesRequest) RebootInstances operation}.
  * <p>
- * The RebootInstances operation requests a reboot of one or more
- * instances. This operation is asynchronous; it only queues a request to
- * reboot the specified instance(s). The operation will succeed if the
- * instances are valid and belong to the user. Requests to reboot
- * terminated instances are ignored.
+ * The RebootInstances operation requests a reboot of one or more instances. This operation is asynchronous; it only queues a request to reboot the
+ * specified instance(s). The operation will succeed if the instances are valid and belong to the user. Requests to reboot terminated instances are
+ * ignored.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#rebootInstances(RebootInstancesRequest)

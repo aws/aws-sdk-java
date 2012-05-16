@@ -18,15 +18,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#detachLoadBalancerFromSubnets(DetachLoadBalancerFromSubnetsRequest) DetachLoadBalancerFromSubnets operation}.
  * <p>
- * Removes subnets from the set of configured subnets in the VPC for the
- * LoadBalancer.
+ * Removes subnets from the set of configured subnets in the VPC for the LoadBalancer.
  * </p>
  * <p>
- * After a subnet is removed all of the EndPoints registered with the
- * LoadBalancer that are in the removed subnet will go into the
- * <i>OutOfService</i> state. When a subnet is removed, the LoadBalancer
- * will balance the traffic among the remaining routable subnets for the
- * LoadBalancer.
+ * After a subnet is removed all of the EndPoints registered with the LoadBalancer that are in the removed subnet will go into the <i>OutOfService</i>
+ * state. When a subnet is removed, the LoadBalancer will balance the traffic among the remaining routable subnets for the LoadBalancer.
  * </p>
  *
  * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#detachLoadBalancerFromSubnets(DetachLoadBalancerFromSubnetsRequest)

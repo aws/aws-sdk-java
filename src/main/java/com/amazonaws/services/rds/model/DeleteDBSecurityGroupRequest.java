@@ -21,8 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Deletes a DB Security Group.
  * </p>
  * <p>
- * <b>NOTE:</b>The specified DB Security Group must not be associated
- * with any DB Instances.
+ * <b>NOTE:</b>The specified DB Security Group must not be associated with any DB Instances.
  * </p>
  *
  * @see com.amazonaws.services.rds.AmazonRDS#deleteDBSecurityGroup(DeleteDBSecurityGroupRequest)

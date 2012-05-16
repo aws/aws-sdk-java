@@ -18,8 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * <i>DBParameterGroupName</i> does not refer to an existing DB
- * Parameter Group.
+ * <i>DBParameterGroupName</i> does not refer to an existing DB Parameter Group.
  * </p>
  */        
 public class DBParameterGroupNotFoundException extends AmazonServiceException {

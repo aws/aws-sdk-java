@@ -18,10 +18,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.storagegateway.AWSStorageGateway#describeWorkingStorage(DescribeWorkingStorageRequest) DescribeWorkingStorage operation}.
  * <p>
- * This operation returns information about the working storage of a
- * gateway. The response includes disk IDs that are configured as working
- * storage, and it includes the amount of working storage allocated and
- * used.
+ * This operation returns information about the working storage of a gateway. The response includes disk IDs that are configured as working storage, and
+ * it includes the amount of working storage allocated and used.
  * </p>
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#describeWorkingStorage(DescribeWorkingStorageRequest)

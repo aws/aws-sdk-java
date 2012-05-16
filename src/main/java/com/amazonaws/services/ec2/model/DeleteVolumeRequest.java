@@ -18,8 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#deleteVolume(DeleteVolumeRequest) DeleteVolume operation}.
  * <p>
- * Deletes a previously created volume. Once successfully deleted, a
- * new volume can be created with the same name.
+ * Deletes a previously created volume. Once successfully deleted, a new volume can be created with the same name.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#deleteVolume(DeleteVolumeRequest)

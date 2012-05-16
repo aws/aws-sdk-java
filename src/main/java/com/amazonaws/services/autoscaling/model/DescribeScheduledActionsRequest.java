@@ -18,9 +18,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.autoscaling.AmazonAutoScaling#describeScheduledActions(DescribeScheduledActionsRequest) DescribeScheduledActions operation}.
  * <p>
- * Lists all the actions scheduled for your Auto Scaling group that
- * haven't been executed. To see a list of actions already executed, see
- * the activity record returned in DescribeScalingActivities.
+ * Lists all the actions scheduled for your Auto Scaling group that haven't been executed. To see a list of actions already executed, see the activity
+ * record returned in DescribeScalingActivities.
  * </p>
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#describeScheduledActions(DescribeScheduledActionsRequest)

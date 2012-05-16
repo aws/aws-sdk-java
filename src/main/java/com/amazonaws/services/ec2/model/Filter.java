@@ -16,17 +16,13 @@ package com.amazonaws.services.ec2.model;
 
 /**
  * <p>
- * A filter used to limit results when describing tags. Multiple values
- * can be specified per filter. A tag must match at least one of the
- * specified values for it to be returned from an operation.
+ * A filter used to limit results when describing tags. Multiple values can be specified per filter. A tag must match at least one of the specified
+ * values for it to be returned from an operation.
  * </p>
  * <p>
- * Wildcards can be included in filter values; <code>*</code> specifies
- * that zero or more characters must match, and <code>?</code> specifies
- * that exactly one character must match. Use a backslash to escape
- * special characters. For example, a filter value of
- * <code>\*amazon\?\\</code> specifies the literal string
- * <code>*amazon?\</code> .
+ * Wildcards can be included in filter values; <code>*</code> specifies that zero or more characters must match, and <code>?</code> specifies that
+ * exactly one character must match. Use a backslash to escape special characters. For example, a filter value of <code>\*amazon\?\\</code> specifies
+ * the literal string <code>*amazon?\</code> .
  * 
  * </p>
  */

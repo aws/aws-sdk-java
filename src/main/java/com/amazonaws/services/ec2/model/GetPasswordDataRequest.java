@@ -18,14 +18,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#getPasswordData(GetPasswordDataRequest) GetPasswordData operation}.
  * <p>
- * Retrieves the encrypted administrator password for the instances
- * running Windows.
+ * Retrieves the encrypted administrator password for the instances running Windows.
  * </p>
  * <p>
- * <b>NOTE:</b> The Windows password is only generated the first time an
- * AMI is launched. It is not generated for rebundled AMIs or after the
- * password is changed on an instance. The password is encrypted using
- * the key pair that you provided.
+ * <b>NOTE:</b> The Windows password is only generated the first time an AMI is launched. It is not generated for rebundled AMIs or after the password is
+ * changed on an instance. The password is encrypted using the key pair that you provided.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#getPasswordData(GetPasswordDataRequest)

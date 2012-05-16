@@ -18,29 +18,21 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#createVirtualMFADevice(CreateVirtualMFADeviceRequest) CreateVirtualMFADevice operation}.
  * <p>
- * Creates a new virtual MFA device for the AWS account. After creating
- * the virtual MFA, use <a
- * azonwebservices.com/IAM/latest/APIReference/API_EnableMFADevice.html">
- * EnableMFADevice </a> to attach the MFA device to an IAM user. For more
- * information about creating and working with virtual MFA devices, go to
- * <a
- * ebservices.com/IAM/latest/UserGuide/index.html?Using_VirtualMFA.html">
- * Using a Virtual MFA Device </a> in <i>Using AWS Identity and Access
- * Management</i> .
+ * Creates a new virtual MFA device for the AWS account. After creating the virtual MFA, use <a
+ * href="http://docs.amazonwebservices.com/IAM/latest/APIReference/API_EnableMFADevice.html"> EnableMFADevice </a> to attach the MFA device to an IAM
+ * user. For more information about creating and working with virtual MFA devices, go to <a
+ * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_VirtualMFA.html"> Using a Virtual MFA Device </a> in <i>Using AWS
+ * Identity and Access Management</i> .
  * </p>
  * <p>
- * For information about limits on the number of MFA devices you can
- * create, see <a
- * vices.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html">
- * Limitations on Entities </a> in <i>Using AWS Identity and Access
- * Management</i> .
+ * For information about limits on the number of MFA devices you can create, see <a
+ * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html"> Limitations on Entities </a> in <i>Using AWS
+ * Identity and Access Management</i> .
  * </p>
  * <p>
- * <b>IMPORTANT:</b>The seed information contained in the QR code and the
- * Base32 string should be treated like any other secret access
- * information, such as your AWS access keys or your passwords. After you
- * provision your virtual device, you should ensure that the information
- * is destroyed following secure procedures.
+ * <b>IMPORTANT:</b>The seed information contained in the QR code and the Base32 string should be treated like any other secret access information, such
+ * as your AWS access keys or your passwords. After you provision your virtual device, you should ensure that the information is destroyed following
+ * secure procedures.
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#createVirtualMFADevice(CreateVirtualMFADeviceRequest)

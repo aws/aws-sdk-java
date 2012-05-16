@@ -18,14 +18,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#describeDBSubnetGroups(DescribeDBSubnetGroupsRequest) DescribeDBSubnetGroups operation}.
  * <p>
- * Returns a list of DBSubnetGroup descriptions. If a DBSubnetGroupName
- * is specified, the list will contain only the descriptions of the
- * specified DBSubnetGroup.
+ * Returns a list of DBSubnetGroup descriptions. If a DBSubnetGroupName is specified, the list will contain only the descriptions of the specified
+ * DBSubnetGroup.
  * </p>
  * <p>
- * For an overview of CIDR ranges, go to the <a
- * href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">
- * Wikipedia Tutorial </a> .
+ * For an overview of CIDR ranges, go to the <a href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing"> Wikipedia Tutorial </a> .
  * </p>
  *
  * @see com.amazonaws.services.rds.AmazonRDS#describeDBSubnetGroups(DescribeDBSubnetGroupsRequest)

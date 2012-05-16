@@ -16,8 +16,7 @@ package com.amazonaws.services.ec2.model;
 
 /**
  * <p>
- * An Amazon EC2 security group, describing how EC2 instances in this
- * group can receive network traffic.
+ * An Amazon EC2 security group, describing how EC2 instances in this group can receive network traffic.
  * </p>
  */
 public class SecurityGroup {

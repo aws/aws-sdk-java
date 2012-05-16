@@ -18,13 +18,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.autoscaling.AmazonAutoScaling#deleteAutoScalingGroup(DeleteAutoScalingGroupRequest) DeleteAutoScalingGroup operation}.
  * <p>
- * Deletes the specified Auto Scaling group if the group has no
- * instances and no scaling activities in progress.
+ * Deletes the specified Auto Scaling group if the group has no instances and no scaling activities in progress.
  * </p>
  * <p>
- * <b>NOTE:</b> To remove all instances before calling
- * DeleteAutoScalingGroup, you can call UpdateAutoScalingGroup to set the
- * minimum and maximum size of the AutoScalingGroup to zero.
+ * <b>NOTE:</b> To remove all instances before calling DeleteAutoScalingGroup, you can call UpdateAutoScalingGroup to set the minimum and maximum size of
+ * the AutoScalingGroup to zero.
  * </p>
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#deleteAutoScalingGroup(DeleteAutoScalingGroupRequest)

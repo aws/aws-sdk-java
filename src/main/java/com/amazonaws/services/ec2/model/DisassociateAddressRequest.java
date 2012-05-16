@@ -18,10 +18,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#disassociateAddress(DisassociateAddressRequest) DisassociateAddress operation}.
  * <p>
- * The DisassociateAddress operation disassociates the specified elastic
- * IP address from the instance to which it is assigned. This is an
- * idempotent operation. If you enter it more than once, Amazon EC2 does
- * not return an error.
+ * The DisassociateAddress operation disassociates the specified elastic IP address from the instance to which it is assigned. This is an idempotent
+ * operation. If you enter it more than once, Amazon EC2 does not return an error.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#disassociateAddress(DisassociateAddressRequest)

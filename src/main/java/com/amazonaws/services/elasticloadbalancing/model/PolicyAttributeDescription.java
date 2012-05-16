@@ -16,9 +16,7 @@ package com.amazonaws.services.elasticloadbalancing.model;
 
 /**
  * <p>
- * The <code>PolicyAttributeDescription</code> data type. This data type
- * is used to describe the attributes and values associated with a
- * policy.
+ * The <code>PolicyAttributeDescription</code> data type. This data type is used to describe the attributes and values associated with a policy.
  * </p>
  */
 public class PolicyAttributeDescription {

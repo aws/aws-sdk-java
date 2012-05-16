@@ -18,14 +18,10 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticache.AmazonElastiCache#rebootCacheCluster(RebootCacheClusterRequest) RebootCacheCluster operation}.
  * <p>
- * Reboots some (or all) of the cache cluster nodes within a previously
- * provisioned ElastiCache cluster. This API results in the application
- * of modified CacheParameterGroup parameters to the cache cluster. This
- * action is taken as soon as possible, and results in a momentary outage
- * to the cache cluster during which the cache cluster status is set to
- * rebooting. During that momentary outage, the contents of the cache
- * (for each cache cluster node being rebooted) are lost. A CacheCluster
- * event is created when the reboot is completed.
+ * Reboots some (or all) of the cache cluster nodes within a previously provisioned ElastiCache cluster. This API results in the application of modified
+ * CacheParameterGroup parameters to the cache cluster. This action is taken as soon as possible, and results in a momentary outage to the cache cluster
+ * during which the cache cluster status is set to rebooting. During that momentary outage, the contents of the cache (for each cache cluster node being
+ * rebooted) are lost. A CacheCluster event is created when the reboot is completed.
  * </p>
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#rebootCacheCluster(RebootCacheClusterRequest)

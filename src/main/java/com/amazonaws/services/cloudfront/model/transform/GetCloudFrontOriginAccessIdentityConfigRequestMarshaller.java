@@ -37,14 +37,14 @@ import com.amazonaws.util.XMLWriter;
 public class GetCloudFrontOriginAccessIdentityConfigRequestMarshaller implements Marshaller<Request<GetCloudFrontOriginAccessIdentityConfigRequest>, GetCloudFrontOriginAccessIdentityConfigRequest> {
 
     public Request<GetCloudFrontOriginAccessIdentityConfigRequest> marshall(GetCloudFrontOriginAccessIdentityConfigRequest getCloudFrontOriginAccessIdentityConfigRequest) {
-        if (getCloudFrontOriginAccessIdentityConfigRequest == null) { 
+        if (getCloudFrontOriginAccessIdentityConfigRequest == null) {
             throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
         Request<GetCloudFrontOriginAccessIdentityConfigRequest> request = new DefaultRequest<GetCloudFrontOriginAccessIdentityConfigRequest>(getCloudFrontOriginAccessIdentityConfigRequest, "AmazonCloudFront");
         request.setHttpMethod(HttpMethodName.GET);
 
-        String uriResourcePath = "2012-03-15/origin-access-identity/cloudfront/{Id}/config"; 
+        String uriResourcePath = "2012-05-05/origin-access-identity/cloudfront/{Id}/config"; 
         uriResourcePath = uriResourcePath.replace("{Id}", getString(getCloudFrontOriginAccessIdentityConfigRequest.getId())); 
 
         if (uriResourcePath.contains("?")) {

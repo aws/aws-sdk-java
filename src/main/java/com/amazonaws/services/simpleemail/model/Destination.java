@@ -16,8 +16,7 @@ package com.amazonaws.services.simpleemail.model;
 
 /**
  * <p>
- * Represents the destination of the message, consisting of To:, CC:, and
- * BCC: fields.
+ * Represents the destination of the message, consisting of To:, CC:, and BCC: fields.
  * </p>
  */
 public class Destination {

@@ -21,16 +21,12 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Lists the Auto Scaling group tags.
  * </p>
  * <p>
- * You can use filters to limit results when describing tags. For
- * example, you can query for tags of a particular Auto Scaling group.
- * You can specify multiple values for a filter. A tag must match at
- * least one of the specified values for it to be included in the
- * results.
+ * You can use filters to limit results when describing tags. For example, you can query for tags of a particular Auto Scaling group. You can specify
+ * multiple values for a filter. A tag must match at least one of the specified values for it to be included in the results.
  * </p>
  * <p>
- * You can also specify multiple filters. The result includes
- * information for a particular tag only if it matches all your filters.
- * If there's no match, no special message is returned.
+ * You can also specify multiple filters. The result includes information for a particular tag only if it matches all your filters. If there's no match,
+ * no special message is returned.
  * </p>
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#describeTags(DescribeTagsRequest)

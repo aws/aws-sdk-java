@@ -37,7 +37,7 @@ import com.amazonaws.util.XMLWriter;
 public class GetChangeRequestMarshaller implements Marshaller<Request<GetChangeRequest>, GetChangeRequest> {
 
     public Request<GetChangeRequest> marshall(GetChangeRequest getChangeRequest) {
-        if (getChangeRequest == null) { 
+        if (getChangeRequest == null) {
             throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 

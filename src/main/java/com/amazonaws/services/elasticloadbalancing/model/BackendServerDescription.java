@@ -16,9 +16,7 @@ package com.amazonaws.services.elasticloadbalancing.model;
 
 /**
  * <p>
- * This data type is used as a response element in the
- * DescribeLoadBalancers action to describe the configuration of the
- * back-end server.
+ * This data type is used as a response element in the DescribeLoadBalancers action to describe the configuration of the back-end server.
  * </p>
  */
 public class BackendServerDescription {

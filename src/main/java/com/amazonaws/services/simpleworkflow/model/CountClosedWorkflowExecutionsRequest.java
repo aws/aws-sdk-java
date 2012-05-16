@@ -18,12 +18,10 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#countClosedWorkflowExecutions(CountClosedWorkflowExecutionsRequest) CountClosedWorkflowExecutions operation}.
  * <p>
- * Returns the number of closed workflow executions within the given
- * domain that meet the specified filtering criteria.
+ * Returns the number of closed workflow executions within the given domain that meet the specified filtering criteria.
  * </p>
  * <p>
- * <b>NOTE:</b> This operation is eventually consistent. The results are
- * best effort and may not exactly reflect recent updates and changes.
+ * <b>NOTE:</b> This operation is eventually consistent. The results are best effort and may not exactly reflect recent updates and changes.
  * </p>
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#countClosedWorkflowExecutions(CountClosedWorkflowExecutionsRequest)

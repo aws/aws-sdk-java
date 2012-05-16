@@ -18,8 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#modifyDBSubnetGroup(ModifyDBSubnetGroupRequest) ModifyDBSubnetGroup operation}.
  * <p>
- * Modifies an existing DB subnet group. DB subnet groups must contain
- * at least one subnet in each AZ in the region.
+ * Modifies an existing DB subnet group. DB subnet groups must contain at least one subnet in each AZ in the region.
  * </p>
  *
  * @see com.amazonaws.services.rds.AmazonRDS#modifyDBSubnetGroup(ModifyDBSubnetGroupRequest)

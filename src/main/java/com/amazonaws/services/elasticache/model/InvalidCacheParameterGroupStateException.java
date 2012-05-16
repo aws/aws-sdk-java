@@ -18,8 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The state of the Cache Parameter Group does not allow for the
- * requested action to occur.
+ * The state of the Cache Parameter Group does not allow for the requested action to occur.
  * </p>
  */        
 public class InvalidCacheParameterGroupStateException extends AmazonServiceException {

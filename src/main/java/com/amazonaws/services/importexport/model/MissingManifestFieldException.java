@@ -18,8 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * One or more required fields were missing from the manifest file.
- * Please correct and resubmit.
+ * One or more required fields were missing from the manifest file. Please correct and resubmit.
  * </p>
  */        
 public class MissingManifestFieldException extends AmazonServiceException {

@@ -21,8 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Lists the groups that have the specified path prefix.
  * </p>
  * <p>
- * You can paginate the results using the <code>MaxItems</code> and
- * <code>Marker</code> parameters.
+ * You can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters.
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listGroups(ListGroupsRequest)

@@ -18,25 +18,21 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sqs.AmazonSQS#addPermission(AddPermissionRequest) AddPermission operation}.
  * <p>
- * The AddPermission action adds a permission to a queue for a specific
- * <a
- * .com/AWSSimpleQueueService/latest/APIReference/Glossary.html#d0e3892">
- * principal </a> . This allows for sharing access to the queue.
+ * The AddPermission action adds a permission to a queue for a specific <a
+ * href="http://docs.amazonwebservices.com/AWSSimpleQueueService/latest/APIReference/Glossary.html#d0e3892"> principal </a> . This allows for sharing
+ * access to the queue.
  * </p>
  * <p>
- * When you create a queue, you have full control access rights for the
- * queue. Only you (as owner of the queue) can grant or deny permissions
- * to the queue. For more information about these permissions, see <a
- * om/AWSSimpleQueueService/latest/SQSDeveloperGuide/?acp-overview.html">
- * Shared Queues </a> in the Amazon SQS Developer Guide.
+ * When you create a queue, you have full control access rights for the queue. Only you (as owner of the queue) can grant or deny permissions to the
+ * queue. For more information about these permissions, see <a
+ * href="http://docs.amazonwebservices.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/?acp-overview.html"> Shared Queues </a> in the Amazon SQS
+ * Developer Guide.
  * </p>
  * <p>
- * <code>AddPermission</code> writes an SQS-generated policy. If you
- * want to write your own policy, use SetQueueAttributes to upload your
- * policy. For more information about writing your own policy, see <a
- * mpleQueueService/latest/SQSDeveloperGuide/?AccessPolicyLanguage.html">
- * Appendix: The Access Policy Language </a> in the Amazon SQS Developer
- * Guide.
+ * <code>AddPermission</code> writes an SQS-generated policy. If you want to write your own policy, use SetQueueAttributes to upload your policy. For
+ * more information about writing your own policy, see <a
+ * href="http://docs.amazonwebservices.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/?AccessPolicyLanguage.html"> Appendix: The Access Policy
+ * Language </a> in the Amazon SQS Developer Guide.
  * </p>
  *
  * @see com.amazonaws.services.sqs.AmazonSQS#addPermission(AddPermissionRequest)

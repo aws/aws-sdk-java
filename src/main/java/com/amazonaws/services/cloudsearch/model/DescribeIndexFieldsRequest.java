@@ -18,9 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.cloudsearch.AmazonCloudSearch#describeIndexFields(DescribeIndexFieldsRequest) DescribeIndexFields operation}.
  * <p>
- * Gets information about the index fields configured for the search
- * domain. Can be limited to specific fields by name. Shows all fields by
- * default.
+ * Gets information about the index fields configured for the search domain. Can be limited to specific fields by name. Shows all fields by default.
  * </p>
  *
  * @see com.amazonaws.services.cloudsearch.AmazonCloudSearch#describeIndexFields(DescribeIndexFieldsRequest)

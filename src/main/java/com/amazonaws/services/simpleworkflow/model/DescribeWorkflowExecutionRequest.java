@@ -18,12 +18,10 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#describeWorkflowExecution(DescribeWorkflowExecutionRequest) DescribeWorkflowExecution operation}.
  * <p>
- * Returns information about the specified workflow execution including
- * its type and some statistics.
+ * Returns information about the specified workflow execution including its type and some statistics.
  * </p>
  * <p>
- * <b>NOTE:</b> This operation is eventually consistent. The results are
- * best effort and may not exactly reflect recent updates and changes.
+ * <b>NOTE:</b> This operation is eventually consistent. The results are best effort and may not exactly reflect recent updates and changes.
  * </p>
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#describeWorkflowExecution(DescribeWorkflowExecutionRequest)

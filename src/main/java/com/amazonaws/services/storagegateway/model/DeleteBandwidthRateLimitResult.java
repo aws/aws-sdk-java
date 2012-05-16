@@ -16,8 +16,7 @@ package com.amazonaws.services.storagegateway.model;
 
 /**
  * <p>
- * A JSON object containing the GatewayARN of the gateway whose bandwidth
- * rate information was deleted.
+ * A JSON object containing the GatewayARN of the gateway whose bandwidth rate information was deleted.
  * </p>
  */
 public class DeleteBandwidthRateLimitResult {

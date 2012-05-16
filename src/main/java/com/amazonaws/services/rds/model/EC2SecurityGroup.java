@@ -16,8 +16,7 @@ package com.amazonaws.services.rds.model;
 
 /**
  * <p>
- * This data type is used as a response element in the following
- * actions:
+ * This data type is used as a response element in the following actions:
  * </p>
  * 
  * <ul>

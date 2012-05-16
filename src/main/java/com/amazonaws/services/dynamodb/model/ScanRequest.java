@@ -18,8 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.dynamodb.AmazonDynamoDB#scan(ScanRequest) Scan operation}.
  * <p>
- * Retrieves one or more items and its attributes by performing a full
- * scan of a table.
+ * Retrieves one or more items and its attributes by performing a full scan of a table.
  * </p>
  * <p>
  * Provide a <code>ScanFilter</code> to get more specific results.

@@ -16,8 +16,7 @@ package com.amazonaws.services.elasticbeanstalk.model;
 
 /**
  * <p>
- * Result message wrapping a single description of an application
- * version.
+ * Result message wrapping a single description of an application version.
  * </p>
  */
 public class UpdateApplicationVersionResult {

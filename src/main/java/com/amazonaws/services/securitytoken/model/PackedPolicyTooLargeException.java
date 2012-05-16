@@ -18,9 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The request was rejected because the policy document was too large.
- * The error message describes how big the policy document is, in packed
- * form, as a percentage of what the API allows.
+ * The request was rejected because the policy document was too large. The error message describes how big the policy document is, in packed form, as a
+ * percentage of what the API allows.
  * </p>
  */        
 public class PackedPolicyTooLargeException extends AmazonServiceException {

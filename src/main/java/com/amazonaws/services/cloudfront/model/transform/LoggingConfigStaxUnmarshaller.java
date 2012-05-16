@@ -44,6 +44,10 @@ public class LoggingConfigStaxUnmarshaller implements Unmarshaller<LoggingConfig
             if (xmlEvent.isEndDocument()) return loggingConfig;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
+                if (context.testExpression("Enabled", targetDepth)) {
+                    loggingConfig.setEnabled(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
                 if (context.testExpression("Bucket", targetDepth)) {
                     loggingConfig.setBucket(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

@@ -34,39 +34,26 @@ import com.amazonaws.services.storagegateway.model.*;
  * Callers must use the Future object to determine when the service call has actually
  * completed.
  * AWS Storage Gateway Service <p>
- * AWS Storage Gateway is a service that connects an on-premises software
- * appliance with cloud-based storage to provide seamless and secure
- * integration between an organization's on-premises IT environment and
- * AWS's storage infrastructure. The service enables you to securely
- * upload data to the AWS cloud for cost effective backup and rapid
- * disaster recovery.
+ * AWS Storage Gateway is a service that connects an on-premises software appliance with cloud-based storage to provide seamless and secure integration
+ * between an organization's on-premises IT environment and AWS's storage infrastructure. The service enables you to securely upload data to the AWS
+ * cloud for cost effective backup and rapid disaster recovery.
  * </p>
  * <p>
- * Use the following links to get started using the <i>AWS Storage
- * Gateway Service API Reference</i> :
+ * Use the following links to get started using the <i>AWS Storage Gateway Service API Reference</i> :
  * </p>
  * 
  * <ul>
- * <li> <a
- * .amazonwebservices.com/storagegateway/latest/api/API_Operations.html">
- * Actions </a> : An alphabetical list of all AWS Storage Gateway
- * actions.</li>
- * <li> <a
- * mazonwebservices.com/storagegateway/latest/api/CommonParameters.html">
- * Common Parameters </a> : Parameters that all Query actions can
- * use.</li>
- * <li> <a
- * cs.amazonwebservices.com/storagegateway/latest/api/CommonErrors.html">
- * Common Errors </a> : Client and server errors that all actions can
- * return.</li>
- * <li> <a
- * //docs.amazonwebservices.com/general/latest/gr/index.html?rande.html">
- * Regions and Endpoints </a> : Itemized regions and endpoints for all
- * AWS products.</li>
- * <li> <a
- * s-east-1.amazonaws.com/doc/2010-03-31/SimpleNotificationService.wsdl">
- * WSDL Location </a> :
- * east-1.amazonaws.com/doc/2012-04-15/AWSStorageGatewayService.wsdl</li>
+ * <li> <a href="http://docs.amazonwebservices.com/storagegateway/latest/userguide/AWSStorageGatewayHTTPRequestsHeaders.html"> AWS Storage Gateway
+ * Required Request Headers </a> : Describes the required headers that you must send with every POST request to AWS Storage Gateway.</li>
+ * <li> <a href="http://docs.amazonwebservices.com/storagegateway/latest/userguide/AWSStorageGatewaySigningRequests.html"> Signing Requests </a> : AWS
+ * Storage Gateway requires that you authenticate every request you send; this topic describes how sign such a request.</li>
+ * <li> <a href="http://docs.amazonwebservices.com/storagegateway/latest/userguide/APIErrorResponses.html"> Error Responses </a> : Provides reference
+ * information about AWS Storage Gateway errors.</li>
+ * <li> <a href="http://docs.amazonwebservices.com/storagegateway/latest/userguide/AWSStorageGatewayAPIOperations.html"> Operations in AWS Storage
+ * Gateway </a> : Contains detailed descriptions of all AWS Storage Gateway operations, their request parameters, response elements, possible errors, and
+ * examples of requests and responses.</li>
+ * <li> <a href="http://docs.amazonwebservices.com/general/latest/gr/index.html?rande.html"> AWS Storage Gateway Regions and Endpoints </a> : Provides a
+ * list of each of the regions and endpoints available for use with AWS Storage Gateway. </li>
  * 
  * </ul> 
  */       
@@ -344,10 +331,11 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * In the CreateSnapshot request you identify the volume by providing
      * it's Amazon Resource Name (ARN). You must also provide description for
      * the snapshot. When AWS Storage Gateway takes the snapshot of specified
-     * volume, the snapshot and description appears in the Amazon EC2
-     * console. In response, AWS Storage Gateway returns you a snapshot ID.
-     * You can use this snapshot ID to check the snapshot progress or later
-     * use it when you want to create a volume from a snapshot.
+     * volume, the snapshot and description appears in the AWS Storage
+     * Gateway Console. In response, AWS Storage Gateway returns you a
+     * snapshot ID. You can use this snapshot ID to check the snapshot
+     * progress or later use it when you want to create a volume from a
+     * snapshot.
      * </p>
      * <p>
      * <b>NOTE:</b>To list or delete a snapshot, you must use the Amazon EC2
@@ -504,7 +492,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * to the volume target.
      * </p>
      *
-     * @param createStoredISCSIVolumeRequest Container for the necessary
+     * @param createStorediSCSIVolumeRequest Container for the necessary
      *           parameters to execute the CreateStorediSCSIVolume operation on
      *           AWSStorageGateway.
      * 
@@ -520,11 +508,11 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      *             If an error response is returned by AWSStorageGateway indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<CreateStoredISCSIVolumeResult> createStorediSCSIVolumeAsync(final CreateStoredISCSIVolumeRequest createStoredISCSIVolumeRequest) 
+    public Future<CreateStorediSCSIVolumeResult> createStorediSCSIVolumeAsync(final CreateStorediSCSIVolumeRequest createStorediSCSIVolumeRequest) 
             throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<CreateStoredISCSIVolumeResult>() {
-            public CreateStoredISCSIVolumeResult call() throws Exception {
-                return createStorediSCSIVolume(createStoredISCSIVolumeRequest);
+        return executorService.submit(new Callable<CreateStorediSCSIVolumeResult>() {
+            public CreateStorediSCSIVolumeResult call() throws Exception {
+                return createStorediSCSIVolume(createStorediSCSIVolumeRequest);
 		    }
 		});
     }
@@ -646,7 +634,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * <p>
      * The default snapshot schedule for volume is once every 24 hours,
      * starting at the creation time of the volume. You can use this API to
-     * change the snaphot schedule configured for the volume.
+     * change the shapshot schedule configured for the volume.
      * </p>
      * <p>
      * In the request you must identify the gateway volume whose snapshot
@@ -826,7 +814,7 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * information sorted by volume ARNs.
      * </p>
      *
-     * @param describeStoredISCSIVolumesRequest Container for the necessary
+     * @param describeStorediSCSIVolumesRequest Container for the necessary
      *           parameters to execute the DescribeStorediSCSIVolumes operation on
      *           AWSStorageGateway.
      * 
@@ -842,11 +830,11 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      *             If an error response is returned by AWSStorageGateway indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<DescribeStoredISCSIVolumesResult> describeStorediSCSIVolumesAsync(final DescribeStoredISCSIVolumesRequest describeStoredISCSIVolumesRequest) 
+    public Future<DescribeStorediSCSIVolumesResult> describeStorediSCSIVolumesAsync(final DescribeStorediSCSIVolumesRequest describeStorediSCSIVolumesRequest) 
             throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DescribeStoredISCSIVolumesResult>() {
-            public DescribeStoredISCSIVolumesResult call() throws Exception {
-                return describeStorediSCSIVolumes(describeStoredISCSIVolumesRequest);
+        return executorService.submit(new Callable<DescribeStorediSCSIVolumesResult>() {
+            public DescribeStorediSCSIVolumesResult call() throws Exception {
+                return describeStorediSCSIVolumes(describeStorediSCSIVolumesRequest);
 		    }
 		});
     }
@@ -1044,6 +1032,14 @@ public class AWSStorageGatewayAsyncClient extends AWSStorageGatewayClient
      * response immediately. However, it might take some time for the update
      * to complete. You can call DescribeGatewayInformation to verify the
      * gateway is in the STATE_RUNNING state.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>A software update forces a system restart of your gateway.
+     * You can minimize the chance of any disruption to your applications by
+     * increasing your iSCSI Initiators' timeouts. For more information about
+     * increasing iSCSI Initiator timeouts for Windows and Linux, see
+     * Customizing Your Windows iSCSI Settings and Customizing Your Linux
+     * iSCSI Settings, respectively.
      * </p>
      *
      * @param updateGatewaySoftwareNowRequest Container for the necessary

@@ -18,8 +18,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.simpleemail.AmazonSimpleEmailService#deleteVerifiedEmailAddress(DeleteVerifiedEmailAddressRequest) DeleteVerifiedEmailAddress operation}.
  * <p>
- * Deletes the specified email address from the list of verified
- * addresses.
+ * Deletes the specified email address from the list of verified addresses.
+ * </p>
+ * <p>
+ * <b>IMPORTANT:</b>The DeleteVerifiedEmailAddress action is deprecated as of the May 15, 2012 release of Domain Verification. The DeleteIdentity action
+ * is now preferred.
  * </p>
  *
  * @see com.amazonaws.services.simpleemail.AmazonSimpleEmailService#deleteVerifiedEmailAddress(DeleteVerifiedEmailAddressRequest)
@@ -27,34 +30,34 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DeleteVerifiedEmailAddressRequest extends AmazonWebServiceRequest {
 
     /**
-     * An email address to be removed from the list of verified addreses.
+     * An email address to be removed from the list of verified addresses.
      */
     private String emailAddress;
 
     /**
-     * An email address to be removed from the list of verified addreses.
+     * An email address to be removed from the list of verified addresses.
      *
-     * @return An email address to be removed from the list of verified addreses.
+     * @return An email address to be removed from the list of verified addresses.
      */
     public String getEmailAddress() {
         return emailAddress;
     }
     
     /**
-     * An email address to be removed from the list of verified addreses.
+     * An email address to be removed from the list of verified addresses.
      *
-     * @param emailAddress An email address to be removed from the list of verified addreses.
+     * @param emailAddress An email address to be removed from the list of verified addresses.
      */
     public void setEmailAddress(String emailAddress) {
         this.emailAddress = emailAddress;
     }
     
     /**
-     * An email address to be removed from the list of verified addreses.
+     * An email address to be removed from the list of verified addresses.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param emailAddress An email address to be removed from the list of verified addreses.
+     * @param emailAddress An email address to be removed from the list of verified addresses.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

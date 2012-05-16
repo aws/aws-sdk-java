@@ -18,8 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * Processing your request would cause you to exceed the maximum number
- * of distributions allowed.
+ * Processing your request would cause you to exceed the maximum number of distributions allowed.
  * </p>
  */        
 public class TooManyDistributionsException extends AmazonServiceException {

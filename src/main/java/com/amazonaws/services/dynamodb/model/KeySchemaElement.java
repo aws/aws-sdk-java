@@ -16,8 +16,7 @@ package com.amazonaws.services.dynamodb.model;
 
 /**
  * <p>
- * <code>KeySchemaElement</code> is the primary key (hash or
- * hash-and-range) structure for the table.
+ * <code>KeySchemaElement</code> is the primary key (hash or hash-and-range) structure for the table.
  * </p>
  */
 public class KeySchemaElement {

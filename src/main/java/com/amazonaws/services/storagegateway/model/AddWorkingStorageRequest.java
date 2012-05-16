@@ -18,13 +18,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.storagegateway.AWSStorageGateway#addWorkingStorage(AddWorkingStorageRequest) AddWorkingStorage operation}.
  * <p>
- * This operation configures one or more gateway local disks as working
- * storage.
+ * This operation configures one or more gateway local disks as working storage.
  * </p>
  * <p>
- * In the request, you specify the gateway Amazon Resource Name (ARN) to
- * which you want to add working storage, and one or more disk IDs that
- * you want to configure as working storage.
+ * In the request, you specify the gateway Amazon Resource Name (ARN) to which you want to add working storage, and one or more disk IDs that you want to
+ * configure as working storage.
  * </p>
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#addWorkingStorage(AddWorkingStorageRequest)

@@ -18,34 +18,25 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticache.AmazonElastiCache#describeCacheClusters(DescribeCacheClustersRequest) DescribeCacheClusters operation}.
  * <p>
- * Returns information about all provisioned Cache Clusters if no Cache
- * Cluster identifier is specified, or about a specific Cache Cluster if
- * a Cache Cluster identifier is supplied.
+ * Returns information about all provisioned Cache Clusters if no Cache Cluster identifier is specified, or about a specific Cache Cluster if a Cache
+ * Cluster identifier is supplied.
  * </p>
  * <p>
- * Cluster information will be returned by default. An optional
- * <i>ShowDetails</i> flag can be used to retrieve detailed information
- * about the Cache Nodes associated with the Cache Cluster. Details
- * include the DNS address and port for the Cache Node endpoint.
+ * Cluster information will be returned by default. An optional <i>ShowDetails</i> flag can be used to retrieve detailed information about the Cache
+ * Nodes associated with the Cache Cluster. Details include the DNS address and port for the Cache Node endpoint.
  * </p>
  * <p>
- * If the cluster is in the CREATING state, only cluster level
- * information will be displayed until all of the nodes are successfully
- * provisioned.
+ * If the cluster is in the CREATING state, only cluster level information will be displayed until all of the nodes are successfully provisioned.
  * </p>
  * <p>
- * If the cluster is in the DELETING state, only cluster level
- * information will be displayed.
+ * If the cluster is in the DELETING state, only cluster level information will be displayed.
  * </p>
  * <p>
- * While adding Cache Nodes, node endpoint information and creation time
- * for the additional nodes will not be displayed until they are
- * completely provisioned. The cluster lifecycle tells the customer when
- * new nodes are AVAILABLE.
+ * While adding Cache Nodes, node endpoint information and creation time for the additional nodes will not be displayed until they are completely
+ * provisioned. The cluster lifecycle tells the customer when new nodes are AVAILABLE.
  * </p>
  * <p>
- * While removing existing Cache Nodes from an cluster, endpoint
- * information for the removed nodes will not be displayed.
+ * While removing existing Cache Nodes from an cluster, endpoint information for the removed nodes will not be displayed.
  * </p>
  * <p>
  * DescribeCacheClusters supports pagination.

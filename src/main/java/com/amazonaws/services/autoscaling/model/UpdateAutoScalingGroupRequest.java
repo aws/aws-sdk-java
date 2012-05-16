@@ -21,23 +21,17 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Updates the configuration for the specified AutoScalingGroup.
  * </p>
  * <p>
- * <b>NOTE:</b> To update an Auto Scaling group with a launch
- * configuration that has the InstanceMonitoring flag set to False, you
- * must first ensure that collection of group metrics is disabled.
- * Otherwise, calls to UpdateAutoScalingGroup will fail. If you have
- * previously enabled group metrics collection, you can disable
- * collection of all group metrics by calling DisableMetricsCollection.
+ * <b>NOTE:</b> To update an Auto Scaling group with a launch configuration that has the InstanceMonitoring flag set to False, you must first ensure that
+ * collection of group metrics is disabled. Otherwise, calls to UpdateAutoScalingGroup will fail. If you have previously enabled group metrics
+ * collection, you can disable collection of all group metrics by calling DisableMetricsCollection.
  * </p>
  * <p>
- * The new settings are registered upon the completion of this call. Any
- * launch configuration settings take effect on any triggers after this
- * call returns. Triggers that are currently in progress aren't affected.
+ * The new settings are registered upon the completion of this call. Any launch configuration settings take effect on any triggers after this call
+ * returns. Triggers that are currently in progress aren't affected.
  * </p>
  * <p>
- * <b>NOTE:</b> If the new values are specified for the MinSize or
- * MaxSize parameters, then there will be an implicit call to
- * SetDesiredCapacity to set the group to the new MaxSize. All optional
- * parameters are left unchanged if not passed in the request.
+ * <b>NOTE:</b> If the new values are specified for the MinSize or MaxSize parameters, then there will be an implicit call to SetDesiredCapacity to set
+ * the group to the new MaxSize. All optional parameters are left unchanged if not passed in the request.
  * </p>
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#updateAutoScalingGroup(UpdateAutoScalingGroupRequest)

@@ -18,20 +18,16 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.storagegateway.AWSStorageGateway#listGateways(ListGatewaysRequest) ListGateways operation}.
  * <p>
- * This operation lists gateways owned by an AWS account in a region
- * specified in the request. The returned list is ordered by gateway
- * Amazon Resource Name (ARN).
+ * This operation lists gateways owned by an AWS account in a region specified in the request. The returned list is ordered by gateway Amazon Resource
+ * Name (ARN).
  * </p>
  * <p>
- * By default, the operation returns a maximum of 100 gateways. This
- * operation supports pagination that allows you to optionally reduce the
- * number of gateways returned in a response.
+ * By default, the operation returns a maximum of 100 gateways. This operation supports pagination that allows you to optionally reduce the number of
+ * gateways returned in a response.
  * </p>
  * <p>
- * If you have more gateways than are returned in a response-that is, the
- * response returns only a truncated list of your gateways-the response
- * contains a marker that you can specify in your next request to fetch
- * the next page of gateways.
+ * If you have more gateways than are returned in a response-that is, the response returns only a truncated list of your gateways-the response contains a
+ * marker that you can specify in your next request to fetch the next page of gateways.
  * </p>
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#listGateways(ListGatewaysRequest)

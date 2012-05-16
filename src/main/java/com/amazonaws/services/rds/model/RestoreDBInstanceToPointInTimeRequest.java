@@ -18,12 +18,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#restoreDBInstanceToPointInTime(RestoreDBInstanceToPointInTimeRequest) RestoreDBInstanceToPointInTime operation}.
  * <p>
- * Restores a DB Instance to an arbitrary point-in-time. Users can
- * restore to any point in time before the latestRestorableTime for up to
- * backupRetentionPeriod days. The target database is created from the
- * source database with the same configuration as the original database
- * except that the DB instance is created with the default DB security
- * group.
+ * Restores a DB Instance to an arbitrary point-in-time. Users can restore to any point in time before the latestRestorableTime for up to
+ * backupRetentionPeriod days. The target database is created from the source database with the same configuration as the original database except that
+ * the DB instance is created with the default DB security group.
  * </p>
  *
  * @see com.amazonaws.services.rds.AmazonRDS#restoreDBInstanceToPointInTime(RestoreDBInstanceToPointInTimeRequest)

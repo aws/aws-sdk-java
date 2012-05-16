@@ -18,11 +18,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#createImage(CreateImageRequest) CreateImage operation}.
  * <p>
- * Creates an Amazon EBS-backed AMI from a "running" or "stopped"
- * instance. AMIs that use an Amazon EBS root device boot faster than
- * AMIs that use instance stores. They can be up to 1 TiB in size, use
- * storage that persists on instance failure, and can be stopped and
- * started.
+ * Creates an Amazon EBS-backed AMI from a "running" or "stopped" instance. AMIs that use an Amazon EBS root device boot faster than AMIs that use
+ * instance stores. They can be up to 1 TiB in size, use storage that persists on instance failure, and can be stopped and started.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createImage(CreateImageRequest)

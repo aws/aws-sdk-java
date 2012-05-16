@@ -16,8 +16,7 @@ package com.amazonaws.services.elasticache.model;
 
 /**
  * <p>
- * An endpoint completely specifies enough information to connect to a
- * Cache Node.
+ * An endpoint completely specifies enough information to connect to a Cache Node.
  * </p>
  */
 public class Endpoint {

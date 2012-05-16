@@ -18,32 +18,21 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticmapreduce.AmazonElasticMapReduce#setTerminationProtection(SetTerminationProtectionRequest) SetTerminationProtection operation}.
  * <p>
- * SetTerminationProtection locks a job flow so the Amazon EC2 instances
- * in the cluster cannot be terminated by user intervention, an API call,
- * or in the event of a job-flow error. The cluster still terminates upon
- * successful completion of the job flow. Calling
- * SetTerminationProtection on a job flow is analogous to calling the
- * Amazon EC2 DisableAPITermination API on all of the EC2 instances in a
- * cluster.
+ * SetTerminationProtection locks a job flow so the Amazon EC2 instances in the cluster cannot be terminated by user intervention, an API call, or in
+ * the event of a job-flow error. The cluster still terminates upon successful completion of the job flow. Calling SetTerminationProtection on a job flow
+ * is analogous to calling the Amazon EC2 DisableAPITermination API on all of the EC2 instances in a cluster.
  * </p>
  * <p>
- * SetTerminationProtection is used to prevent accidental termination of
- * a job flow and to ensure that in the event of an error, the instances
- * will persist so you can recover any data stored in their ephemeral
- * instance storage.
+ * SetTerminationProtection is used to prevent accidental termination of a job flow and to ensure that in the event of an error, the instances will
+ * persist so you can recover any data stored in their ephemeral instance storage.
  * </p>
  * <p>
- * To terminate a job flow that has been locked by setting
- * SetTerminationProtection to <code>true</code> ,
- * you must first unlock the job flow by a subsequent call to
- * SetTerminationProtection in which you set the value to
- * <code>false</code> .
+ * To terminate a job flow that has been locked by setting SetTerminationProtection to <code>true</code> ,
+ * you must first unlock the job flow by a subsequent call to SetTerminationProtection in which you set the value to <code>false</code> .
  * </p>
  * <p>
- * For more information, go to <a
- * cMapReduce/latest/DeveloperGuide/UsingEMR_TerminationProtection.html">
- * Protecting a Job Flow from Termination </a> in the <i>Amazon Elastic
- * MapReduce Developer's Guide.</i>
+ * For more information, go to <a href="http://docs.amazonwebservices.com/ElasticMapReduce/latest/DeveloperGuide/UsingEMR_TerminationProtection.html">
+ * Protecting a Job Flow from Termination </a> in the <i>Amazon Elastic MapReduce Developer's Guide.</i>
  * </p>
  *
  * @see com.amazonaws.services.elasticmapreduce.AmazonElasticMapReduce#setTerminationProtection(SetTerminationProtectionRequest)

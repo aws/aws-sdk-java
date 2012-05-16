@@ -18,8 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * Some value specified in the request is invalid or the XML document is
- * malformed.
+ * Some value specified in the request is invalid or the XML document is malformed.
  * </p>
  */        
 public class InvalidInputException extends AmazonServiceException {

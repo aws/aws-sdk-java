@@ -18,8 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The specified EC2 Security Group is already authorized for the
- * specified Cache Security Group.
+ * The specified EC2 Security Group is already authorized for the specified Cache Security Group.
  * </p>
  */        
 public class AuthorizationAlreadyExistsException extends AmazonServiceException {

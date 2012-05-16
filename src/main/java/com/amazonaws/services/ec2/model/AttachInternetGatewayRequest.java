@@ -18,9 +18,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#attachInternetGateway(AttachInternetGatewayRequest) AttachInternetGateway operation}.
  * <p>
- * Attaches an Internet gateway to a VPC, enabling connectivity between
- * the Internet and the VPC. For more information about your VPC and
- * Internet gateway, go to the Amazon Virtual Private Cloud User Guide.
+ * Attaches an Internet gateway to a VPC, enabling connectivity between the Internet and the VPC. For more information about your VPC and Internet
+ * gateway, go to the Amazon Virtual Private Cloud User Guide.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#attachInternetGateway(AttachInternetGatewayRequest)

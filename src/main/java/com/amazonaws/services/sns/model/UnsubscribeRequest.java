@@ -18,14 +18,10 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#unsubscribe(UnsubscribeRequest) Unsubscribe operation}.
  * <p>
- * The Unsubscribe action deletes a subscription. If the subscription
- * requires authentication for deletion, only the owner of the
- * subscription or the its topic's owner can unsubscribe, and an AWS
- * signature is required. If the Unsubscribe call does not require
- * authentication and the requester is not the subscription owner, a
- * final cancellation message is delivered to the endpoint, so that the
- * endpoint owner can easily resubscribe to the topic if the Unsubscribe
- * request was unintended.
+ * The Unsubscribe action deletes a subscription. If the subscription requires authentication for deletion, only the owner of the subscription or the its
+ * topic's owner can unsubscribe, and an AWS signature is required. If the Unsubscribe call does not require authentication and the requester is not the
+ * subscription owner, a final cancellation message is delivered to the endpoint, so that the endpoint owner can easily resubscribe to the topic if the
+ * Unsubscribe request was unintended.
  * </p>
  *
  * @see com.amazonaws.services.sns.AmazonSNS#unsubscribe(UnsubscribeRequest)

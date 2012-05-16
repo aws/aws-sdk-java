@@ -21,8 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Deletes a DBSnapshot.
  * </p>
  * <p>
- * <b>NOTE:</b>The DBSnapshot must be in the available state to be
- * deleted.
+ * <b>NOTE:</b>The DBSnapshot must be in the available state to be deleted.
  * </p>
  *
  * @see com.amazonaws.services.rds.AmazonRDS#deleteDBSnapshot(DeleteDBSnapshotRequest)

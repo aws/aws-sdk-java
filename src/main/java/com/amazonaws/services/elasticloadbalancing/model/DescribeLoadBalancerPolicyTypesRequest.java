@@ -18,11 +18,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#describeLoadBalancerPolicyTypes(DescribeLoadBalancerPolicyTypesRequest) DescribeLoadBalancerPolicyTypes operation}.
  * <p>
- * Returns meta-information on the specified LoadBalancer policies
- * defined by the Elastic Load Balancing service. The policy types that
- * are returned from this action can be used in a
- * CreateLoadBalancerPolicy action to instantiate specific policy
- * configurations that will be applied to an Elastic LoadBalancer.
+ * Returns meta-information on the specified LoadBalancer policies defined by the Elastic Load Balancing service. The policy types that are returned
+ * from this action can be used in a CreateLoadBalancerPolicy action to instantiate specific policy configurations that will be applied to an Elastic
+ * LoadBalancer.
  * </p>
  *
  * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#describeLoadBalancerPolicyTypes(DescribeLoadBalancerPolicyTypesRequest)

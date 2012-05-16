@@ -18,8 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * Specified CIDRIP or EC2 security group is not authorized for the
- * specified DB Security Group.
+ * Specified CIDRIP or EC2 security group is not authorized for the specified DB Security Group.
  * </p>
  */        
 public class AuthorizationNotFoundException extends AmazonServiceException {

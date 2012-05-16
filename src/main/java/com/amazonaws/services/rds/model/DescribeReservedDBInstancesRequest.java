@@ -18,8 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#describeReservedDBInstances(DescribeReservedDBInstancesRequest) DescribeReservedDBInstances operation}.
  * <p>
- * Returns information about reserved DB Instances for this account, or
- * about a specified reserved DB Instance.
+ * Returns information about reserved DB Instances for this account, or about a specified reserved DB Instance.
  * </p>
  *
  * @see com.amazonaws.services.rds.AmazonRDS#describeReservedDBInstances(DescribeReservedDBInstancesRequest)

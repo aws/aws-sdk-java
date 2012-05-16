@@ -16,8 +16,7 @@ package com.amazonaws.services.elasticloadbalancing.model;
 
 /**
  * <p>
- * Contains the result of a successful invocation of
- * DescribeLoadBalancers.
+ * Contains the result of a successful invocation of DescribeLoadBalancers.
  * </p>
  */
 public class LoadBalancerDescription {

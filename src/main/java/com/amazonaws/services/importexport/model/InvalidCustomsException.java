@@ -18,8 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * One or more customs parameters was invalid. Please correct and
- * resubmit.
+ * One or more customs parameters was invalid. Please correct and resubmit.
  * </p>
  */        
 public class InvalidCustomsException extends AmazonServiceException {

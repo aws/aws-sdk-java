@@ -18,8 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#resetImageAttribute(ResetImageAttributeRequest) ResetImageAttribute operation}.
  * <p>
- * The ResetImageAttribute operation resets an attribute of an AMI to
- * its default value.
+ * The ResetImageAttribute operation resets an attribute of an AMI to its default value.
  * </p>
  * <p>
  * <b>NOTE:</b> The productCodes attribute cannot be reset.

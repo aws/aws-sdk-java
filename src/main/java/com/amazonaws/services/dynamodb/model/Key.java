@@ -16,9 +16,8 @@ package com.amazonaws.services.dynamodb.model;
 
 /**
  * <p>
- * The primary key that uniquely identifies each item in a table. A
- * primary key can be a one attribute (hash) primary key or a two
- * attribute (hash-and-range) primary key.
+ * The primary key that uniquely identifies each item in a table. A primary key can be a one attribute (hash) primary key or a two attribute
+ * (hash-and-range) primary key.
  * </p>
  */
 public class Key {

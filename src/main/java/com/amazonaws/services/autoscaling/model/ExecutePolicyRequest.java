@@ -18,8 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.autoscaling.AmazonAutoScaling#executePolicy(ExecutePolicyRequest) ExecutePolicy operation}.
  * <p>
- * Runs the policy you create for your Auto Scaling group in
- * PutScalingPolicy.
+ * Runs the policy you create for your Auto Scaling group in PutScalingPolicy.
  * </p>
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#executePolicy(ExecutePolicyRequest)

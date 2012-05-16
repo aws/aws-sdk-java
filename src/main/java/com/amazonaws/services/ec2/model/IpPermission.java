@@ -16,8 +16,7 @@ package com.amazonaws.services.ec2.model;
 
 /**
  * <p>
- * An IP permission describing allowed incoming IP traffic to an Amazon
- * EC2 security group.
+ * An IP permission describing allowed incoming IP traffic to an Amazon EC2 security group.
  * </p>
  */
 public class IpPermission {

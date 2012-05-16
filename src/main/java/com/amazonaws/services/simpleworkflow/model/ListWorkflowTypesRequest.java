@@ -18,9 +18,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#listWorkflowTypes(ListWorkflowTypesRequest) ListWorkflowTypes operation}.
  * <p>
- * Returns information about workflow types in the specified domain. The
- * results may be split into multiple pages that can be retrieved by
- * making the call repeatedly.
+ * Returns information about workflow types in the specified domain. The results may be split into multiple pages that can be retrieved by making the
+ * call repeatedly.
  * </p>
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#listWorkflowTypes(ListWorkflowTypesRequest)

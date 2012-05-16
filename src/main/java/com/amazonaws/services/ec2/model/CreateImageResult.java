@@ -16,8 +16,7 @@ package com.amazonaws.services.ec2.model;
 
 /**
  * <p>
- * The result of creating a new EC2 image. Contains the ID of the new
- * image.
+ * The result of creating a new EC2 image. Contains the ID of the new image.
  * </p>
  */
 public class CreateImageResult {

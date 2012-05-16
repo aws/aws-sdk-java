@@ -18,14 +18,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeAvailabilityZones(DescribeAvailabilityZonesRequest) DescribeAvailabilityZones operation}.
  * <p>
- * The DescribeAvailabilityZones operation describes availability zones
- * that are currently available to the account and their states.
+ * The DescribeAvailabilityZones operation describes availability zones that are currently available to the account and their states.
  * </p>
  * <p>
- * Availability zones are not the same across accounts. The availability
- * zone <code>us-east-1a</code> for account A is not necessarily the same
- * as <code>us-east-1a</code> for account B. Zone assignments are mapped
- * independently for each account.
+ * Availability zones are not the same across accounts. The availability zone <code>us-east-1a</code> for account A is not necessarily the same as
+ * <code>us-east-1a</code> for account B. Zone assignments are mapped independently for each account.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeAvailabilityZones(DescribeAvailabilityZonesRequest)

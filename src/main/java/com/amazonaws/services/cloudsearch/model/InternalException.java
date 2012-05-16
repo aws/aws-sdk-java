@@ -18,9 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * An internal error occurred while processing the request. If this
- * problem persists, report an issue from the <a
- * href="http://status.aws.amazon.com/"> Service Health Dashboard </a> .
+ * An internal error occurred while processing the request. If this problem persists, report an issue from the <a href="http://status.aws.amazon.com/">
+ * Service Health Dashboard </a> .
  * </p>
  */        
 public class InternalException extends AmazonServiceException {

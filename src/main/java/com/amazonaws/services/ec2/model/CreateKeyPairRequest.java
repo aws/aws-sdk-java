@@ -18,9 +18,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#createKeyPair(CreateKeyPairRequest) CreateKeyPair operation}.
  * <p>
- * The CreateKeyPair operation creates a new 2048 bit RSA key pair and
- * returns a unique ID that can be used to reference this key pair when
- * launching new instances. For more information, see RunInstances.
+ * The CreateKeyPair operation creates a new 2048 bit RSA key pair and returns a unique ID that can be used to reference this key pair when launching
+ * new instances. For more information, see RunInstances.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createKeyPair(CreateKeyPairRequest)

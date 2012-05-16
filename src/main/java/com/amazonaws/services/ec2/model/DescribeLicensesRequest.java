@@ -18,9 +18,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeLicenses(DescribeLicensesRequest) DescribeLicenses operation}.
  * <p>
- * Provides details of a user's registered licenses. Zero or more IDs
- * may be specified on the call. When one or more license IDs are
- * specified, only data for the specified IDs are returned.
+ * Provides details of a user's registered licenses. Zero or more IDs may be specified on the call. When one or more license IDs are specified, only
+ * data for the specified IDs are returned.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeLicenses(DescribeLicensesRequest)

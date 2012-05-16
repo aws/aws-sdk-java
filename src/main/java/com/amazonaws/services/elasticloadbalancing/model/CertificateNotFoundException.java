@@ -18,8 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The specified SSL ID does not refer to a valid SSL certificate in the
- * AWS Identity and Access Management Service.
+ * The specified SSL ID does not refer to a valid SSL certificate in the AWS Identity and Access Management Service.
  * </p>
  */        
 public class CertificateNotFoundException extends AmazonServiceException {

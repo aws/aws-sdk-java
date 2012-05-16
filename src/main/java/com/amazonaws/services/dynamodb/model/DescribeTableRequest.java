@@ -18,12 +18,10 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.dynamodb.AmazonDynamoDB#describeTable(DescribeTableRequest) DescribeTable operation}.
  * <p>
- * Retrieves information about the table, including the current status of
- * the table, the primary key schema and when the table was created.
+ * Retrieves information about the table, including the current status of the table, the primary key schema and when the table was created.
  * </p>
  * <p>
- * If the table does not exist, Amazon DynamoDB returns a
- * <code>ResourceNotFoundException</code> .
+ * If the table does not exist, Amazon DynamoDB returns a <code>ResourceNotFoundException</code> .
  * </p>
  *
  * @see com.amazonaws.services.dynamodb.AmazonDynamoDB#describeTable(DescribeTableRequest)

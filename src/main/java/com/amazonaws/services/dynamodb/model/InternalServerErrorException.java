@@ -18,8 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * This exception is thrown when the service has a problem when trying to
- * process the request.
+ * This exception is thrown when the service has a problem when trying to process the request.
  * </p>
  */        
 public class InternalServerErrorException extends AmazonServiceException {

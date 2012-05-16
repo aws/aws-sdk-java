@@ -18,8 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.cloudformation.AmazonCloudFormation#describeStacks(DescribeStacksRequest) DescribeStacks operation}.
  * <p>
- * Returns the description for the specified stack; if no stack name was
- * specified, then it returns the description for all the stacks created.
+ * Returns the description for the specified stack; if no stack name was specified, then it returns the description for all the stacks created.
  * </p>
  *
  * @see com.amazonaws.services.cloudformation.AmazonCloudFormation#describeStacks(DescribeStacksRequest)

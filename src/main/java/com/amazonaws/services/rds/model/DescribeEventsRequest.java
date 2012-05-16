@@ -18,11 +18,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#describeEvents(DescribeEventsRequest) DescribeEvents operation}.
  * <p>
- * Returns events related to DB Instances, DB Security Groups, DB
- * Snapshots and DB Parameter Groups for the past 14 days. Events
- * specific to a particular DB Instance, DB Security Group, database
- * snapshot or DB Parameter Group can be obtained by providing the name
- * as a parameter. By default, the past hour of events are returned.
+ * Returns events related to DB Instances, DB Security Groups, DB Snapshots and DB Parameter Groups for the past 14 days. Events specific to a
+ * particular DB Instance, DB Security Group, database snapshot or DB Parameter Group can be obtained by providing the name as a parameter. By default,
+ * the past hour of events are returned.
  * </p>
  *
  * @see com.amazonaws.services.rds.AmazonRDS#describeEvents(DescribeEventsRequest)

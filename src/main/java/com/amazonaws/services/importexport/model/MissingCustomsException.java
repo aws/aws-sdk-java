@@ -18,8 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * One or more required customs parameters was missing from the
- * manifest.
+ * One or more required customs parameters was missing from the manifest.
  * </p>
  */        
 public class MissingCustomsException extends AmazonServiceException {

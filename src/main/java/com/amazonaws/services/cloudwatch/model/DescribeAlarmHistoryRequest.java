@@ -18,13 +18,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.cloudwatch.AmazonCloudWatch#describeAlarmHistory(DescribeAlarmHistoryRequest) DescribeAlarmHistory operation}.
  * <p>
- * Retrieves history for the specified alarm. Filter alarms by date
- * range or item type. If an alarm name is not specified, Amazon
- * CloudWatch returns histories for all of the owner's alarms.
+ * Retrieves history for the specified alarm. Filter alarms by date range or item type. If an alarm name is not specified, Amazon CloudWatch returns
+ * histories for all of the owner's alarms.
  * </p>
  * <p>
- * <b>NOTE:</b> Amazon CloudWatch retains the history of an alarm for two
- * weeks, whether or not you delete the alarm.
+ * <b>NOTE:</b> Amazon CloudWatch retains the history of an alarm for two weeks, whether or not you delete the alarm.
  * </p>
  *
  * @see com.amazonaws.services.cloudwatch.AmazonCloudWatch#describeAlarmHistory(DescribeAlarmHistoryRequest)

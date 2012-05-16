@@ -60,8 +60,12 @@ public class DistributionListStaxUnmarshaller implements Unmarshaller<Distributi
                     distributionList.setIsTruncated(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
-                if (context.testExpression("DistributionSummary", targetDepth)) {
-                    distributionList.getDistributionSummaries().add(DistributionSummaryStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("Quantity", targetDepth)) {
+                    distributionList.setQuantity(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("Items/DistributionSummary", targetDepth)) {
+                    distributionList.getItems().add(DistributionSummaryStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

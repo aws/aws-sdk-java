@@ -18,14 +18,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#describeDBSecurityGroups(DescribeDBSecurityGroupsRequest) DescribeDBSecurityGroups operation}.
  * <p>
- * Returns a list of DBSecurityGroup descriptions. If a
- * DBSecurityGroupName is specified, the list will contain only the
- * descriptions of the specified DBSecurityGroup.
+ * Returns a list of DBSecurityGroup descriptions. If a DBSecurityGroupName is specified, the list will contain only the descriptions of the specified
+ * DBSecurityGroup.
  * </p>
  * <p>
- * For an overview of CIDR ranges, go to the <a
- * href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">
- * Wikipedia Tutorial </a> .
+ * For an overview of CIDR ranges, go to the <a href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing"> Wikipedia Tutorial </a> .
  * </p>
  *
  * @see com.amazonaws.services.rds.AmazonRDS#describeDBSecurityGroups(DescribeDBSecurityGroupsRequest)

@@ -18,14 +18,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#detachVpnGateway(DetachVpnGatewayRequest) DetachVpnGateway operation}.
  * <p>
- * Detaches a VPN gateway from a VPC. You do this if you're planning to
- * turn off the VPC and not use it anymore. You can confirm a VPN gateway
- * has been completely detached from a VPC by describing the VPN gateway
- * (any attachments to the VPN gateway are also described).
+ * Detaches a VPN gateway from a VPC. You do this if you're planning to turn off the VPC and not use it anymore. You can confirm a VPN gateway has been
+ * completely detached from a VPC by describing the VPN gateway (any attachments to the VPN gateway are also described).
  * </p>
  * <p>
- * You must wait for the attachment's state to switch to detached before
- * you can delete the VPC or attach a different VPC to the VPN gateway.
+ * You must wait for the attachment's state to switch to detached before you can delete the VPC or attach a different VPC to the VPN gateway.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#detachVpnGateway(DetachVpnGatewayRequest)

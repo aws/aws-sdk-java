@@ -44,8 +44,8 @@ public class S3OriginStaxUnmarshaller implements Unmarshaller<S3Origin, StaxUnma
             if (xmlEvent.isEndDocument()) return s3Origin;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
-                if (context.testExpression("DNSName", targetDepth)) {
-                    s3Origin.setDNSName(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("DomainName", targetDepth)) {
+                    s3Origin.setDomainName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
                 if (context.testExpression("OriginAccessIdentity", targetDepth)) {

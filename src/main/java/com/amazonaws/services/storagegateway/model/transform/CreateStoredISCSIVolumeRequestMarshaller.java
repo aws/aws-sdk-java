@@ -35,16 +35,16 @@ import com.amazonaws.util.json.*;
 import static com.amazonaws.http.HttpMethodName.POST;
 
 /**
- * Create Stored I S C S I Volume Request Marshaller
+ * Create Storedi S C S I Volume Request Marshaller
  */
-public class CreateStoredISCSIVolumeRequestMarshaller implements Marshaller<Request<CreateStoredISCSIVolumeRequest>, CreateStoredISCSIVolumeRequest> {
+public class CreateStorediSCSIVolumeRequestMarshaller implements Marshaller<Request<CreateStorediSCSIVolumeRequest>, CreateStorediSCSIVolumeRequest> {
 
-    public Request<CreateStoredISCSIVolumeRequest> marshall(CreateStoredISCSIVolumeRequest createStoredISCSIVolumeRequest) {
-		if (createStoredISCSIVolumeRequest == null) {
+    public Request<CreateStorediSCSIVolumeRequest> marshall(CreateStorediSCSIVolumeRequest createStorediSCSIVolumeRequest) {
+		if (createStorediSCSIVolumeRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
 
-        Request<CreateStoredISCSIVolumeRequest> request = new DefaultRequest<CreateStoredISCSIVolumeRequest>(createStoredISCSIVolumeRequest, "AWSStorageGateway");
+        Request<CreateStorediSCSIVolumeRequest> request = new DefaultRequest<CreateStorediSCSIVolumeRequest>(createStorediSCSIVolumeRequest, "AWSStorageGateway");
         String target = "StorageGateway_20120430.CreateStorediSCSIVolume";
         request.addHeader("X-Amz-Target", target);
         request.addHeader("Content-Type", "application/x-amz-json-1.1");
@@ -55,23 +55,23 @@ public class CreateStoredISCSIVolumeRequestMarshaller implements Marshaller<Requ
         	JSONWriter jsonWriter = new JSONWriter(stringWriter);
         	jsonWriter.object();
 	        
-            if (createStoredISCSIVolumeRequest.getGatewayARN() != null) {
-                jsonWriter.key("GatewayARN").value(createStoredISCSIVolumeRequest.getGatewayARN());
+            if (createStorediSCSIVolumeRequest.getGatewayARN() != null) {
+                jsonWriter.key("GatewayARN").value(createStorediSCSIVolumeRequest.getGatewayARN());
             }
-            if (createStoredISCSIVolumeRequest.getDiskId() != null) {
-                jsonWriter.key("DiskId").value(createStoredISCSIVolumeRequest.getDiskId());
+            if (createStorediSCSIVolumeRequest.getDiskId() != null) {
+                jsonWriter.key("DiskId").value(createStorediSCSIVolumeRequest.getDiskId());
             }
-            if (createStoredISCSIVolumeRequest.getSnapshotId() != null) {
-                jsonWriter.key("SnapshotId").value(createStoredISCSIVolumeRequest.getSnapshotId());
+            if (createStorediSCSIVolumeRequest.getSnapshotId() != null) {
+                jsonWriter.key("SnapshotId").value(createStorediSCSIVolumeRequest.getSnapshotId());
             }
-            if (createStoredISCSIVolumeRequest.isPreserveExistingData() != null) {
-                jsonWriter.key("PreserveExistingData").value(createStoredISCSIVolumeRequest.isPreserveExistingData());
+            if (createStorediSCSIVolumeRequest.isPreserveExistingData() != null) {
+                jsonWriter.key("PreserveExistingData").value(createStorediSCSIVolumeRequest.isPreserveExistingData());
             }
-            if (createStoredISCSIVolumeRequest.getTargetName() != null) {
-                jsonWriter.key("TargetName").value(createStoredISCSIVolumeRequest.getTargetName());
+            if (createStorediSCSIVolumeRequest.getTargetName() != null) {
+                jsonWriter.key("TargetName").value(createStorediSCSIVolumeRequest.getTargetName());
             }
-            if (createStoredISCSIVolumeRequest.getNetworkInterfaceId() != null) {
-                jsonWriter.key("NetworkInterfaceId").value(createStoredISCSIVolumeRequest.getNetworkInterfaceId());
+            if (createStorediSCSIVolumeRequest.getNetworkInterfaceId() != null) {
+                jsonWriter.key("NetworkInterfaceId").value(createStorediSCSIVolumeRequest.getNetworkInterfaceId());
             }
 
     	    jsonWriter.endObject();

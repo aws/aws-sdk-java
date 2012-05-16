@@ -16,8 +16,7 @@ package com.amazonaws.services.identitymanagement.model;
 
 /**
  * <p>
- * The <code>VirtualMFADevice</code> data type contains information about
- * a virtual MFA device.
+ * The <code>VirtualMFADevice</code> data type contains information about a virtual MFA device.
  * </p>
  */
 public class VirtualMFADevice {

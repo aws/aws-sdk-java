@@ -19,13 +19,11 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the {@link com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#deprecateActivityType(DeprecateActivityTypeRequest) DeprecateActivityType operation}.
  * <p>
  * Deprecates the specified <i>activity type</i> .
- * After an activity type has been deprecated, you cannot create new
- * tasks of that activity type. Tasks of this type that were scheduled
- * before the type was deprecated will continue to run.
+ * After an activity type has been deprecated, you cannot create new tasks of that activity type. Tasks of this type that were scheduled before the
+ * type was deprecated will continue to run.
  * </p>
  * <p>
- * <b>NOTE:</b> This operation is eventually consistent. The results are
- * best effort and may not exactly reflect recent updates and changes.
+ * <b>NOTE:</b> This operation is eventually consistent. The results are best effort and may not exactly reflect recent updates and changes.
  * </p>
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#deprecateActivityType(DeprecateActivityTypeRequest)

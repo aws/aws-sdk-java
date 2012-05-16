@@ -16,18 +16,14 @@ package com.amazonaws.services.route53.model;
 
 /**
  * <p>
- * <i>Alias resource record sets only:</i> Information about the domain
- * to which you are redirecting traffic.
+ * <i>Alias resource record sets only:</i> Information about the domain to which you are redirecting traffic.
  * </p>
  * <p>
- * <b>NOTE:</b>Currently, Route 53 supports aliases only for Elastic Load
- * Balancing.
+ * <b>NOTE:</b>Currently, Route 53 supports aliases only for Elastic Load Balancing.
  * </p>
  * <p>
- * For more information and an example, see <a
- * bservices.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">
- * Creating Alias Resource Record Sets for Elastic Load Balancing </a>
- * in the <i>Amazon Route 53 Developer Guide</i>
+ * For more information and an example, see <a href="http://docs.amazonwebservices.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html"> Creating
+ * Alias Resource Record Sets for Elastic Load Balancing </a> in the <i>Amazon Route 53 Developer Guide</i>
  * </p>
  * <p>
  * .

@@ -19,7 +19,7 @@ package com.amazonaws.services.storagegateway.model;
  * Lists iSCSI information about a volume.
  * </p>
  */
-public class VolumeISCSIAttributes {
+public class VolumeiSCSIAttributes {
 
     /**
      * The Amazon Resource Name (ARN) of the volume target. <p><i>Valid
@@ -106,7 +106,7 @@ public class VolumeISCSIAttributes {
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public VolumeISCSIAttributes withTargetARN(String targetARN) {
+    public VolumeiSCSIAttributes withTargetARN(String targetARN) {
         this.targetARN = targetARN;
         return this;
     }
@@ -149,7 +149,7 @@ public class VolumeISCSIAttributes {
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public VolumeISCSIAttributes withNetworkInterfaceId(String networkInterfaceId) {
+    public VolumeiSCSIAttributes withNetworkInterfaceId(String networkInterfaceId) {
         this.networkInterfaceId = networkInterfaceId;
         return this;
     }
@@ -183,7 +183,7 @@ public class VolumeISCSIAttributes {
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public VolumeISCSIAttributes withNetworkInterfacePort(Integer networkInterfacePort) {
+    public VolumeiSCSIAttributes withNetworkInterfacePort(Integer networkInterfacePort) {
         this.networkInterfacePort = networkInterfacePort;
         return this;
     }
@@ -226,7 +226,7 @@ public class VolumeISCSIAttributes {
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public VolumeISCSIAttributes withLunNumber(Integer lunNumber) {
+    public VolumeiSCSIAttributes withLunNumber(Integer lunNumber) {
         this.lunNumber = lunNumber;
         return this;
     }
@@ -260,7 +260,7 @@ public class VolumeISCSIAttributes {
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public VolumeISCSIAttributes withChapEnabled(Boolean chapEnabled) {
+    public VolumeiSCSIAttributes withChapEnabled(Boolean chapEnabled) {
         this.chapEnabled = chapEnabled;
         return this;
     }
@@ -314,8 +314,8 @@ public class VolumeISCSIAttributes {
         if (this == obj) return true;
         if (obj == null) return false;
     
-        if (obj instanceof VolumeISCSIAttributes == false) return false;
-        VolumeISCSIAttributes other = (VolumeISCSIAttributes)obj;
+        if (obj instanceof VolumeiSCSIAttributes == false) return false;
+        VolumeiSCSIAttributes other = (VolumeiSCSIAttributes)obj;
         
         if (other.getTargetARN() == null ^ this.getTargetARN() == null) return false;
         if (other.getTargetARN() != null && other.getTargetARN().equals(this.getTargetARN()) == false) return false; 

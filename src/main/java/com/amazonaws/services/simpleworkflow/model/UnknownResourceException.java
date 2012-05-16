@@ -18,10 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * Returned when the named resource cannot be found with in the scope of
- * this operation (region or domain). This could happen if the named
- * resource was never created or is no longer available for this
- * operation.
+ * Returned when the named resource cannot be found with in the scope of this operation (region or domain). This could happen if the named resource was
+ * never created or is no longer available for this operation.
  * </p>
  */        
 public class UnknownResourceException extends AmazonServiceException {

@@ -18,22 +18,16 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#requestCancelWorkflowExecution(RequestCancelWorkflowExecutionRequest) RequestCancelWorkflowExecution operation}.
  * <p>
- * Records a <code>WorkflowExecutionCancelRequested</code> event in the
- * currently running workflow execution identified by the given domain,
- * workflowId, and runId. This logically requests the cancellation of the
- * workflow execution as a whole. It is up to the decider to take
- * appropriate actions when it receives an execution history with this
- * event.
+ * Records a <code>WorkflowExecutionCancelRequested</code> event in the currently running workflow execution identified by the given domain, workflowId,
+ * and runId. This logically requests the cancellation of the workflow execution as a whole. It is up to the decider to take appropriate actions when it
+ * receives an execution history with this event.
  * </p>
  * <p>
- * <b>NOTE:</b> If the runId is not specified, the
- * WorkflowExecutionCancelRequested event is recorded in the history of
- * the current open workflow execution with the specified workflowId in
- * the domain.
+ * <b>NOTE:</b> If the runId is not specified, the WorkflowExecutionCancelRequested event is recorded in the history of the current open workflow
+ * execution with the specified workflowId in the domain.
  * </p>
  * <p>
- * <b>NOTE:</b> Because this action allows the workflow to properly clean
- * up and gracefully close, it should be used instead of
+ * <b>NOTE:</b> Because this action allows the workflow to properly clean up and gracefully close, it should be used instead of
  * TerminateWorkflowExecution when possible.
  * </p>
  *

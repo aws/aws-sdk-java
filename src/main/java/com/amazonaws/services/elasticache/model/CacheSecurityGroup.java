@@ -16,8 +16,7 @@ package com.amazonaws.services.elasticache.model;
 
 /**
  * <p>
- * Defines a set of EC2 Security groups that are allowed to access a
- * Cache Cluster.
+ * Defines a set of EC2 Security groups that are allowed to access a Cache Cluster.
  * </p>
  */
 public class CacheSecurityGroup {

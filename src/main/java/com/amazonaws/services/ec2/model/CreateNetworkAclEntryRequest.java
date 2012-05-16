@@ -18,26 +18,19 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#createNetworkAclEntry(CreateNetworkAclEntryRequest) CreateNetworkAclEntry operation}.
  * <p>
- * Creates an entry (i.e., rule) in a network ACL with a rule number you
- * specify. Each network ACL has a set of numbered ingress rules and a
- * separate set of numbered egress rules. When determining whether a
- * packet should be allowed in or out of a subnet associated with the
- * ACL, Amazon VPC processes the entries in the ACL according to the rule
- * numbers, in ascending order.
+ * Creates an entry (i.e., rule) in a network ACL with a rule number you specify. Each network ACL has a set of numbered ingress rules and a separate
+ * set of numbered egress rules. When determining whether a packet should be allowed in or out of a subnet associated with the ACL, Amazon VPC processes
+ * the entries in the ACL according to the rule numbers, in ascending order.
  * </p>
  * <p>
- * <b>Important:</b> We recommend that you leave room between the rules
- * (e.g., 100, 110, 120, etc.), and not number them sequentially (101,
- * 102, 103, etc.). This allows you to easily add a new rule between
- * existing ones without having to renumber the rules.
+ * <b>Important:</b> We recommend that you leave room between the rules (e.g., 100, 110, 120, etc.), and not number them sequentially (101, 102, 103,
+ * etc.). This allows you to easily add a new rule between existing ones without having to renumber the rules.
  * </p>
  * <p>
- * After you add an entry, you can't modify it; you must either replace
- * it, or create a new entry and delete the old one.
+ * After you add an entry, you can't modify it; you must either replace it, or create a new entry and delete the old one.
  * </p>
  * <p>
- * For more information about network ACLs, go to Network ACLs in the
- * Amazon Virtual Private Cloud User Guide.
+ * For more information about network ACLs, go to Network ACLs in the Amazon Virtual Private Cloud User Guide.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createNetworkAclEntry(CreateNetworkAclEntryRequest)

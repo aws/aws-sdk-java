@@ -18,11 +18,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#cancelBundleTask(CancelBundleTaskRequest) CancelBundleTask operation}.
  * <p>
- * CancelBundleTask operation cancels a pending or in-progress bundling
- * task. This is an asynchronous call and it make take a while for the
- * task to be canceled. If a task is canceled while it is storing items,
- * there may be parts of the incomplete AMI stored in S3. It is up to the
- * caller to clean up these parts from S3.
+ * CancelBundleTask operation cancels a pending or in-progress bundling task. This is an asynchronous call and it make take a while for the task to be
+ * canceled. If a task is canceled while it is storing items, there may be parts of the incomplete AMI stored in S3. It is up to the caller to clean up
+ * these parts from S3.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#cancelBundleTask(CancelBundleTaskRequest)

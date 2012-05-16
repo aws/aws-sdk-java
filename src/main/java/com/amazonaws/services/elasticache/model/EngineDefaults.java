@@ -16,8 +16,7 @@ package com.amazonaws.services.elasticache.model;
 
 /**
  * <p>
- * The default Parameters and CacheNodeTypeSpecificParameters for a
- * CacheParameterGroupFamily.
+ * The default Parameters and CacheNodeTypeSpecificParameters for a CacheParameterGroupFamily.
  * </p>
  */
 public class EngineDefaults {

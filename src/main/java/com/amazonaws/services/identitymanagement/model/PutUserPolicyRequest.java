@@ -18,23 +18,18 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#putUserPolicy(PutUserPolicyRequest) PutUserPolicy operation}.
  * <p>
- * Adds (or updates) a policy document associated with the specified
- * user. For information about policies, refer to <a
- * ebservices.com/IAM/latest/UserGuide/index.html?PoliciesOverview.html">
- * Overview of Policies </a> in <i>Using AWS Identity and Access
- * Management</i> .
+ * Adds (or updates) a policy document associated with the specified user. For information about policies, refer to <a
+ * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?PoliciesOverview.html"> Overview of Policies </a> in <i>Using AWS Identity
+ * and Access Management</i> .
  * </p>
  * <p>
- * For information about limits on the number of policies you can
- * associate with a user, see <a
- * vices.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html">
- * Limitations on IAM Entities </a> in <i>Using AWS Identity and Access
- * Management</i> .
+ * For information about limits on the number of policies you can associate with a user, see <a
+ * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html"> Limitations on IAM Entities </a> in <i>Using AWS
+ * Identity and Access Management</i> .
  * </p>
  * <p>
- * <b>NOTE:</b>Because policy documents can be large, you should use POST
- * rather than GET when calling PutUserPolicy. For more information, see
- * Making Query Requests in Using AWS Identity and Access Management.
+ * <b>NOTE:</b>Because policy documents can be large, you should use POST rather than GET when calling PutUserPolicy. For more information, see Making
+ * Query Requests in Using AWS Identity and Access Management.
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#putUserPolicy(PutUserPolicyRequest)

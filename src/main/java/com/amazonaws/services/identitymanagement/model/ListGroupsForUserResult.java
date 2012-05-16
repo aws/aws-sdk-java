@@ -16,8 +16,7 @@ package com.amazonaws.services.identitymanagement.model;
 
 /**
  * <p>
- * Contains the result of a successful invocation of the
- * ListGroupsForUser action.
+ * Contains the result of a successful invocation of the ListGroupsForUser action.
  * </p>
  */
 public class ListGroupsForUserResult {

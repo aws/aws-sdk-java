@@ -18,20 +18,16 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#revokeSecurityGroupIngress(RevokeSecurityGroupIngressRequest) RevokeSecurityGroupIngress operation}.
  * <p>
- * The RevokeSecurityGroupIngress operation revokes permissions from a
- * security group. The permissions used to revoke must be specified using
- * the same values used to grant the permissions.
+ * The RevokeSecurityGroupIngress operation revokes permissions from a security group. The permissions used to revoke must be specified using the same
+ * values used to grant the permissions.
  * </p>
  * <p>
- * Permissions are specified by IP protocol (TCP, UDP, or ICMP), the
- * source of the request (by IP range or an Amazon EC2 user-group pair),
- * the source and destination port ranges (for TCP and UDP), and the ICMP
- * codes and types (for ICMP).
+ * Permissions are specified by IP protocol (TCP, UDP, or ICMP), the source of the request (by IP range or an Amazon EC2 user-group pair), the source
+ * and destination port ranges (for TCP and UDP), and the ICMP codes and types (for ICMP).
  * </p>
  * <p>
- * Permission changes are quickly propagated to instances within the
- * security group. However, depending on the number of instances in the
- * group, a small delay might occur.
+ * Permission changes are quickly propagated to instances within the security group. However, depending on the number of instances in the group, a small
+ * delay might occur.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#revokeSecurityGroupIngress(RevokeSecurityGroupIngressRequest)

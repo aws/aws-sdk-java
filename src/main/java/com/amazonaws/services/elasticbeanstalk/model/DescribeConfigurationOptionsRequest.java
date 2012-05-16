@@ -18,11 +18,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#describeConfigurationOptions(DescribeConfigurationOptionsRequest) DescribeConfigurationOptions operation}.
  * <p>
- * Describes the configuration options that are used in a particular
- * configuration template or environment, or that a specified solution
- * stack defines. The description includes the values the options, their
- * default values, and an indication of the required action on a running
- * environment if an option value is changed.
+ * Describes the configuration options that are used in a particular configuration template or environment, or that a specified solution stack defines.
+ * The description includes the values the options, their default values, and an indication of the required action on a running environment if an option
+ * value is changed.
  * </p>
  *
  * @see com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#describeConfigurationOptions(DescribeConfigurationOptionsRequest)

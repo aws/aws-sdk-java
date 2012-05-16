@@ -18,8 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * This exception is thrown when the level of provisioned throughput
- * defined for the table is exceeded.
+ * This exception is thrown when the level of provisioned throughput defined for the table is exceeded.
  * </p>
  */        
 public class ProvisionedThroughputExceededException extends AmazonServiceException {

@@ -16,8 +16,7 @@ package com.amazonaws.services.cloudwatch.model;
 
 /**
  * <p>
- * The <code>Datapoint</code> data type encapsulates the statistical
- * data that Amazon CloudWatch computes from metric data.
+ * The <code>Datapoint</code> data type encapsulates the statistical data that Amazon CloudWatch computes from metric data.
  * </p>
  */
 public class Datapoint {

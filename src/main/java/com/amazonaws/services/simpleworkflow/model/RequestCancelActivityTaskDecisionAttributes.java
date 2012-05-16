@@ -16,8 +16,7 @@ package com.amazonaws.services.simpleworkflow.model;
 
 /**
  * <p>
- * Provides details of the <code>RequestCancelActivityTask</code>
- * decision.
+ * Provides details of the <code>RequestCancelActivityTask</code> decision.
  * </p>
  */
 public class RequestCancelActivityTaskDecisionAttributes {

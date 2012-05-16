@@ -18,8 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * Indicates that a request parameter does not comply with the associated
- * constraints.
+ * Indicates that a request parameter does not comply with the associated constraints.
  * </p>
  */        
 public class InvalidParameterException extends AmazonServiceException {

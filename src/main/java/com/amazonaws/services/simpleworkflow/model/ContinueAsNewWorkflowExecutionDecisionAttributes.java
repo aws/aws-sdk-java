@@ -16,8 +16,7 @@ package com.amazonaws.services.simpleworkflow.model;
 
 /**
  * <p>
- * Provides details of the <code>ContinueAsNewWorkflowExecution</code>
- * decision.
+ * Provides details of the <code>ContinueAsNewWorkflowExecution</code> decision.
  * </p>
  */
 public class ContinueAsNewWorkflowExecutionDecisionAttributes {

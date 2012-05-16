@@ -16,8 +16,7 @@ package com.amazonaws.services.elasticache.model;
 
 /**
  * <p>
- * This data type is used as a response element in the
- * DescribeReservedCacheNodesOfferings action.
+ * This data type is used as a response element in the DescribeReservedCacheNodesOfferings action.
  * </p>
  */
 public class ReservedCacheNodesOffering {

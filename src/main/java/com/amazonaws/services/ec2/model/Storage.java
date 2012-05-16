@@ -16,8 +16,7 @@ package com.amazonaws.services.ec2.model;
 
 /**
  * <p>
- * Describes the storage destination for a BundleTask when bundling a
- * Windows instance.
+ * Describes the storage destination for a BundleTask when bundling a Windows instance.
  * </p>
  */
 public class Storage {

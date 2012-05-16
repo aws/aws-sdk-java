@@ -60,8 +60,12 @@ public class InvalidationListStaxUnmarshaller implements Unmarshaller<Invalidati
                     invalidationList.setIsTruncated(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
-                if (context.testExpression("InvalidationSummary", targetDepth)) {
-                    invalidationList.getInvalidationSummaries().add(InvalidationSummaryStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("Quantity", targetDepth)) {
+                    invalidationList.setQuantity(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("Items/InvalidationSummary", targetDepth)) {
+                    invalidationList.getItems().add(InvalidationSummaryStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

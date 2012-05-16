@@ -16,8 +16,7 @@ package com.amazonaws.services.elasticache.model;
 
 /**
  * <p>
- * Contains the result of a successful invocation of the
- * DescribeReservedCacheNodesOfferings action.
+ * Contains the result of a successful invocation of the DescribeReservedCacheNodesOfferings action.
  * </p>
  */
 public class DescribeReservedCacheNodesOfferingsResult {

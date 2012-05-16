@@ -37,7 +37,7 @@ import com.amazonaws.util.XMLWriter;
 public class ChangeResourceRecordSetsRequestMarshaller implements Marshaller<Request<ChangeResourceRecordSetsRequest>, ChangeResourceRecordSetsRequest> {
 
     public Request<ChangeResourceRecordSetsRequest> marshall(ChangeResourceRecordSetsRequest changeResourceRecordSetsRequest) {
-        if (changeResourceRecordSetsRequest == null) { 
+        if (changeResourceRecordSetsRequest == null) {
             throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
@@ -78,18 +78,18 @@ public class ChangeResourceRecordSetsRequestMarshaller implements Marshaller<Req
                 }
 
                 if (changeBatchChangeBatch != null) {
-                    java.util.List<Change> changesList = changeBatchChangeBatch.getChanges();
-                    if (changesList != null && changesList.size() > 0) {
-                        int changesListIndex = 1;
+                    java.util.List<Change> changeBatchChangeBatchchangesList = changeBatchChangeBatch.getChanges();
+                    if (changeBatchChangeBatchchangesList != null && changeBatchChangeBatchchangesList.size() > 0) {
+                        int changeBatchChangeBatchchangesListIndex = 1;
                         xmlWriter.startElement("Changes");
-                        for (Change changesListValue : changesList) {
+                        for (Change changeBatchChangeBatchchangesListValue : changeBatchChangeBatchchangesList) {
 
                         xmlWriter.startElement("Change");
-                            if (changesListValue.getAction() != null) {
-                                xmlWriter.startElement("Action").value(changesListValue.getAction()).endElement();
+                            if (changeBatchChangeBatchchangesListValue.getAction() != null) {
+                                xmlWriter.startElement("Action").value(changeBatchChangeBatchchangesListValue.getAction()).endElement();
                             }
-                            if (changesListValue != null) {
-                                ResourceRecordSet resourceRecordSetResourceRecordSet = changesListValue.getResourceRecordSet();
+                            if (changeBatchChangeBatchchangesListValue != null) {
+                                ResourceRecordSet resourceRecordSetResourceRecordSet = changeBatchChangeBatchchangesListValue.getResourceRecordSet();
                                 if (resourceRecordSetResourceRecordSet != null) {
                                     xmlWriter.startElement("ResourceRecordSet");
                                     if (resourceRecordSetResourceRecordSet.getName() != null) {
@@ -112,20 +112,20 @@ public class ChangeResourceRecordSetsRequestMarshaller implements Marshaller<Req
                                     }
 
                                     if (resourceRecordSetResourceRecordSet != null) {
-                                        java.util.List<ResourceRecord> resourceRecordsList = resourceRecordSetResourceRecordSet.getResourceRecords();
-                                        if (resourceRecordsList != null && resourceRecordsList.size() > 0) {
-                                            int resourceRecordsListIndex = 1;
+                                        java.util.List<ResourceRecord> resourceRecordSetResourceRecordSetresourceRecordsList = resourceRecordSetResourceRecordSet.getResourceRecords();
+                                        if (resourceRecordSetResourceRecordSetresourceRecordsList != null && resourceRecordSetResourceRecordSetresourceRecordsList.size() > 0) {
+                                            int resourceRecordSetResourceRecordSetresourceRecordsListIndex = 1;
                                             xmlWriter.startElement("ResourceRecords");
-                                            for (ResourceRecord resourceRecordsListValue : resourceRecordsList) {
+                                            for (ResourceRecord resourceRecordSetResourceRecordSetresourceRecordsListValue : resourceRecordSetResourceRecordSetresourceRecordsList) {
 
                                             xmlWriter.startElement("ResourceRecord");
-                                                if (resourceRecordsListValue.getValue() != null) {
-                                                    xmlWriter.startElement("Value").value(resourceRecordsListValue.getValue()).endElement();
+                                                if (resourceRecordSetResourceRecordSetresourceRecordsListValue.getValue() != null) {
+                                                    xmlWriter.startElement("Value").value(resourceRecordSetResourceRecordSetresourceRecordsListValue.getValue()).endElement();
                                                 }
                                             xmlWriter.endElement();
 
 
-                                                resourceRecordsListIndex++;
+                                                resourceRecordSetResourceRecordSetresourceRecordsListIndex++;
                                             }
                                             xmlWriter.endElement();
                                         }
@@ -149,7 +149,7 @@ public class ChangeResourceRecordSetsRequestMarshaller implements Marshaller<Req
                         xmlWriter.endElement();
 
 
-                            changesListIndex++;
+                            changeBatchChangeBatchchangesListIndex++;
                         }
                         xmlWriter.endElement();
                     }

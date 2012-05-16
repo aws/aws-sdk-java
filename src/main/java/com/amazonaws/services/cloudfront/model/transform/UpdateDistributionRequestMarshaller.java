@@ -37,17 +37,17 @@ import com.amazonaws.util.XMLWriter;
 public class UpdateDistributionRequestMarshaller implements Marshaller<Request<UpdateDistributionRequest>, UpdateDistributionRequest> {
 
     public Request<UpdateDistributionRequest> marshall(UpdateDistributionRequest updateDistributionRequest) {
-        if (updateDistributionRequest == null) { 
+        if (updateDistributionRequest == null) {
             throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
         Request<UpdateDistributionRequest> request = new DefaultRequest<UpdateDistributionRequest>(updateDistributionRequest, "AmazonCloudFront");
         request.setHttpMethod(HttpMethodName.PUT);
-        if (updateDistributionRequest.getIfMatch() != null) 
+        if (updateDistributionRequest.getIfMatch() != null)
         	request.addHeader("If-Match", updateDistributionRequest.getIfMatch());
         
 
-        String uriResourcePath = "2012-03-15/distribution/{Id}/config"; 
+        String uriResourcePath = "2012-05-05/distribution/{Id}/config"; 
         uriResourcePath = uriResourcePath.replace("{Id}", getString(updateDistributionRequest.getId())); 
 
         if (uriResourcePath.contains("?")) {
@@ -68,126 +68,38 @@ public class UpdateDistributionRequestMarshaller implements Marshaller<Request<U
 
         
             StringWriter stringWriter = new StringWriter();
-            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2012-03-15/");
+            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2012-05-05/");
 
                     if (updateDistributionRequest != null) {
             DistributionConfig distributionConfigDistributionConfig = updateDistributionRequest.getDistributionConfig();
             if (distributionConfigDistributionConfig != null) {
                 xmlWriter.startElement("DistributionConfig");
-                if (distributionConfigDistributionConfig != null) {
-                    S3Origin s3OriginS3Origin = distributionConfigDistributionConfig.getS3Origin();
-                    if (s3OriginS3Origin != null) {
-                        xmlWriter.startElement("S3Origin");
-                        if (s3OriginS3Origin.getDNSName() != null) {
-                            xmlWriter.startElement("DNSName").value(s3OriginS3Origin.getDNSName()).endElement();
-                        }
-                        if (s3OriginS3Origin.getOriginAccessIdentity() != null) {
-                            xmlWriter.startElement("OriginAccessIdentity").value(s3OriginS3Origin.getOriginAccessIdentity()).endElement();
-                        }
-                        xmlWriter.endElement();
-                    }
-                }
-                if (distributionConfigDistributionConfig != null) {
-                    CustomOrigin customOriginCustomOrigin = distributionConfigDistributionConfig.getCustomOrigin();
-                    if (customOriginCustomOrigin != null) {
-                        xmlWriter.startElement("CustomOrigin");
-                        if (customOriginCustomOrigin.getDNSName() != null) {
-                            xmlWriter.startElement("DNSName").value(customOriginCustomOrigin.getDNSName()).endElement();
-                        }
-                        if (customOriginCustomOrigin.getHTTPPort() != null) {
-                            xmlWriter.startElement("HTTPPort").value(customOriginCustomOrigin.getHTTPPort()).endElement();
-                        }
-                        if (customOriginCustomOrigin.getHTTPSPort() != null) {
-                            xmlWriter.startElement("HTTPSPort").value(customOriginCustomOrigin.getHTTPSPort()).endElement();
-                        }
-                        if (customOriginCustomOrigin.getOriginProtocolPolicy() != null) {
-                            xmlWriter.startElement("OriginProtocolPolicy").value(customOriginCustomOrigin.getOriginProtocolPolicy()).endElement();
-                        }
-                        xmlWriter.endElement();
-                    }
-                }
                 if (distributionConfigDistributionConfig.getCallerReference() != null) {
                     xmlWriter.startElement("CallerReference").value(distributionConfigDistributionConfig.getCallerReference()).endElement();
                 }
-
                 if (distributionConfigDistributionConfig != null) {
-                    java.util.List<String> cNAMEList = distributionConfigDistributionConfig.getCNAME();
-                    if (cNAMEList != null && cNAMEList.size() > 0) {
-                        int cNAMEListIndex = 1;
-                        for (String cNAMEListValue : cNAMEList) {
-
-                        xmlWriter.startElement("CNAME");
-                            xmlWriter.value(cNAMEListValue);
-                        xmlWriter.endElement();
-
-
-                            cNAMEListIndex++;
-                        }
-                    }
-                }
-                if (distributionConfigDistributionConfig.getComment() != null) {
-                    xmlWriter.startElement("Comment").value(distributionConfigDistributionConfig.getComment()).endElement();
-                }
-                if (distributionConfigDistributionConfig.isEnabled() != null) {
-                    xmlWriter.startElement("Enabled").value(distributionConfigDistributionConfig.isEnabled()).endElement();
-                }
-                if (distributionConfigDistributionConfig != null) {
-                    LoggingConfig loggingConfigLogging = distributionConfigDistributionConfig.getLogging();
-                    if (loggingConfigLogging != null) {
-                        xmlWriter.startElement("Logging");
-                        if (loggingConfigLogging.getBucket() != null) {
-                            xmlWriter.startElement("Bucket").value(loggingConfigLogging.getBucket()).endElement();
-                        }
-                        if (loggingConfigLogging.getPrefix() != null) {
-                            xmlWriter.startElement("Prefix").value(loggingConfigLogging.getPrefix()).endElement();
-                        }
-                        xmlWriter.endElement();
-                    }
-                }
-                if (distributionConfigDistributionConfig != null) {
-                    TrustedSigners trustedSignersTrustedSigners = distributionConfigDistributionConfig.getTrustedSigners();
-                    if (trustedSignersTrustedSigners != null) {
-                        xmlWriter.startElement("TrustedSigners");
-                        if (trustedSignersTrustedSigners.getSelf() != null) {
-                            xmlWriter.startElement("Self").value(trustedSignersTrustedSigners.getSelf()).endElement();
+                    Aliases aliasesAliases = distributionConfigDistributionConfig.getAliases();
+                    if (aliasesAliases != null) {
+                        xmlWriter.startElement("Aliases");
+                        if (aliasesAliases.getQuantity() != null) {
+                            xmlWriter.startElement("Quantity").value(aliasesAliases.getQuantity()).endElement();
                         }
 
-                        if (trustedSignersTrustedSigners != null) {
-                            java.util.List<String> awsAccountNumbersList = trustedSignersTrustedSigners.getAwsAccountNumbers();
-                            if (awsAccountNumbersList != null && awsAccountNumbersList.size() > 0) {
-                                int awsAccountNumbersListIndex = 1;
-                                for (String awsAccountNumbersListValue : awsAccountNumbersList) {
+                        if (aliasesAliases != null) {
+                            java.util.List<String> aliasesAliasesitemsList = aliasesAliases.getItems();
+                            if (aliasesAliasesitemsList != null && aliasesAliasesitemsList.size() > 0) {
+                                int aliasesAliasesitemsListIndex = 1;
+                                xmlWriter.startElement("Items");
+                                for (String aliasesAliasesitemsListValue : aliasesAliasesitemsList) {
 
-                                xmlWriter.startElement("AwsAccountNumber");
-                                    xmlWriter.value(awsAccountNumbersListValue);
+                                xmlWriter.startElement("CNAME");
+                                    xmlWriter.value(aliasesAliasesitemsListValue);
                                 xmlWriter.endElement();
 
 
-                                    awsAccountNumbersListIndex++;
+                                    aliasesAliasesitemsListIndex++;
                                 }
-                            }
-                        }
-                        xmlWriter.endElement();
-                    }
-                }
-                if (distributionConfigDistributionConfig != null) {
-                    RequiredProtocols requiredProtocolsRequiredProtocols = distributionConfigDistributionConfig.getRequiredProtocols();
-                    if (requiredProtocolsRequiredProtocols != null) {
-                        xmlWriter.startElement("RequiredProtocols");
-
-                        if (requiredProtocolsRequiredProtocols != null) {
-                            java.util.List<String> protocolsList = requiredProtocolsRequiredProtocols.getProtocols();
-                            if (protocolsList != null && protocolsList.size() > 0) {
-                                int protocolsListIndex = 1;
-                                for (String protocolsListValue : protocolsList) {
-
-                                xmlWriter.startElement("Protocol");
-                                    xmlWriter.value(protocolsListValue);
                                 xmlWriter.endElement();
-
-
-                                    protocolsListIndex++;
-                                }
                             }
                         }
                         xmlWriter.endElement();
@@ -197,14 +109,222 @@ public class UpdateDistributionRequestMarshaller implements Marshaller<Request<U
                     xmlWriter.startElement("DefaultRootObject").value(distributionConfigDistributionConfig.getDefaultRootObject()).endElement();
                 }
                 if (distributionConfigDistributionConfig != null) {
-                    CachingBehavior cachingBehaviorCachingBehavior = distributionConfigDistributionConfig.getCachingBehavior();
-                    if (cachingBehaviorCachingBehavior != null) {
-                        xmlWriter.startElement("CachingBehavior");
-                        if (cachingBehaviorCachingBehavior.getMinTTL() != null) {
-                            xmlWriter.startElement("MinTTL").value(cachingBehaviorCachingBehavior.getMinTTL()).endElement();
+                    Origins originsOrigins = distributionConfigDistributionConfig.getOrigins();
+                    if (originsOrigins != null) {
+                        xmlWriter.startElement("Origins");
+                        if (originsOrigins.getQuantity() != null) {
+                            xmlWriter.startElement("Quantity").value(originsOrigins.getQuantity()).endElement();
+                        }
+
+                        if (originsOrigins != null) {
+                            java.util.List<Origin> originsOriginsitemsList = originsOrigins.getItems();
+                            if (originsOriginsitemsList != null && originsOriginsitemsList.size() > 0) {
+                                int originsOriginsitemsListIndex = 1;
+                                xmlWriter.startElement("Items");
+                                for (Origin originsOriginsitemsListValue : originsOriginsitemsList) {
+
+                                xmlWriter.startElement("Origin");
+                                    if (originsOriginsitemsListValue.getId() != null) {
+                                        xmlWriter.startElement("Id").value(originsOriginsitemsListValue.getId()).endElement();
+                                    }
+                                    if (originsOriginsitemsListValue.getDomainName() != null) {
+                                        xmlWriter.startElement("DomainName").value(originsOriginsitemsListValue.getDomainName()).endElement();
+                                    }
+                                    if (originsOriginsitemsListValue != null) {
+                                        S3OriginConfig s3OriginConfigS3OriginConfig = originsOriginsitemsListValue.getS3OriginConfig();
+                                        if (s3OriginConfigS3OriginConfig != null) {
+                                            xmlWriter.startElement("S3OriginConfig");
+                                            if (s3OriginConfigS3OriginConfig.getOriginAccessIdentity() != null) {
+                                                xmlWriter.startElement("OriginAccessIdentity").value(s3OriginConfigS3OriginConfig.getOriginAccessIdentity()).endElement();
+                                            }
+                                            xmlWriter.endElement();
+                                        }
+                                    }
+                                    if (originsOriginsitemsListValue != null) {
+                                        CustomOriginConfig customOriginConfigCustomOriginConfig = originsOriginsitemsListValue.getCustomOriginConfig();
+                                        if (customOriginConfigCustomOriginConfig != null) {
+                                            xmlWriter.startElement("CustomOriginConfig");
+                                            if (customOriginConfigCustomOriginConfig.getHTTPPort() != null) {
+                                                xmlWriter.startElement("HTTPPort").value(customOriginConfigCustomOriginConfig.getHTTPPort()).endElement();
+                                            }
+                                            if (customOriginConfigCustomOriginConfig.getHTTPSPort() != null) {
+                                                xmlWriter.startElement("HTTPSPort").value(customOriginConfigCustomOriginConfig.getHTTPSPort()).endElement();
+                                            }
+                                            if (customOriginConfigCustomOriginConfig.getOriginProtocolPolicy() != null) {
+                                                xmlWriter.startElement("OriginProtocolPolicy").value(customOriginConfigCustomOriginConfig.getOriginProtocolPolicy()).endElement();
+                                            }
+                                            xmlWriter.endElement();
+                                        }
+                                    }
+                                xmlWriter.endElement();
+
+
+                                    originsOriginsitemsListIndex++;
+                                }
+                                xmlWriter.endElement();
+                            }
                         }
                         xmlWriter.endElement();
                     }
+                }
+                if (distributionConfigDistributionConfig != null) {
+                    DefaultCacheBehavior defaultCacheBehaviorDefaultCacheBehavior = distributionConfigDistributionConfig.getDefaultCacheBehavior();
+                    if (defaultCacheBehaviorDefaultCacheBehavior != null) {
+                        xmlWriter.startElement("DefaultCacheBehavior");
+                        if (defaultCacheBehaviorDefaultCacheBehavior.getTargetOriginId() != null) {
+                            xmlWriter.startElement("TargetOriginId").value(defaultCacheBehaviorDefaultCacheBehavior.getTargetOriginId()).endElement();
+                        }
+                        if (defaultCacheBehaviorDefaultCacheBehavior != null) {
+                            ForwardedValues forwardedValuesForwardedValues = defaultCacheBehaviorDefaultCacheBehavior.getForwardedValues();
+                            if (forwardedValuesForwardedValues != null) {
+                                xmlWriter.startElement("ForwardedValues");
+                                if (forwardedValuesForwardedValues.isQueryString() != null) {
+                                    xmlWriter.startElement("QueryString").value(forwardedValuesForwardedValues.isQueryString()).endElement();
+                                }
+                                xmlWriter.endElement();
+                            }
+                        }
+                        if (defaultCacheBehaviorDefaultCacheBehavior != null) {
+                            TrustedSigners trustedSignersTrustedSigners = defaultCacheBehaviorDefaultCacheBehavior.getTrustedSigners();
+                            if (trustedSignersTrustedSigners != null) {
+                                xmlWriter.startElement("TrustedSigners");
+                                if (trustedSignersTrustedSigners.isEnabled() != null) {
+                                    xmlWriter.startElement("Enabled").value(trustedSignersTrustedSigners.isEnabled()).endElement();
+                                }
+                                if (trustedSignersTrustedSigners.getQuantity() != null) {
+                                    xmlWriter.startElement("Quantity").value(trustedSignersTrustedSigners.getQuantity()).endElement();
+                                }
+
+                                if (trustedSignersTrustedSigners != null) {
+                                    java.util.List<String> trustedSignersTrustedSignersitemsList = trustedSignersTrustedSigners.getItems();
+                                    if (trustedSignersTrustedSignersitemsList != null && trustedSignersTrustedSignersitemsList.size() > 0) {
+                                        int trustedSignersTrustedSignersitemsListIndex = 1;
+                                        xmlWriter.startElement("Items");
+                                        for (String trustedSignersTrustedSignersitemsListValue : trustedSignersTrustedSignersitemsList) {
+
+                                        xmlWriter.startElement("AwsAccountNumber");
+                                            xmlWriter.value(trustedSignersTrustedSignersitemsListValue);
+                                        xmlWriter.endElement();
+
+
+                                            trustedSignersTrustedSignersitemsListIndex++;
+                                        }
+                                        xmlWriter.endElement();
+                                    }
+                                }
+                                xmlWriter.endElement();
+                            }
+                        }
+                        if (defaultCacheBehaviorDefaultCacheBehavior.getViewerProtocolPolicy() != null) {
+                            xmlWriter.startElement("ViewerProtocolPolicy").value(defaultCacheBehaviorDefaultCacheBehavior.getViewerProtocolPolicy()).endElement();
+                        }
+                        if (defaultCacheBehaviorDefaultCacheBehavior.getMinTTL() != null) {
+                            xmlWriter.startElement("MinTTL").value(defaultCacheBehaviorDefaultCacheBehavior.getMinTTL()).endElement();
+                        }
+                        xmlWriter.endElement();
+                    }
+                }
+                if (distributionConfigDistributionConfig != null) {
+                    CacheBehaviors cacheBehaviorsCacheBehaviors = distributionConfigDistributionConfig.getCacheBehaviors();
+                    if (cacheBehaviorsCacheBehaviors != null) {
+                        xmlWriter.startElement("CacheBehaviors");
+                        if (cacheBehaviorsCacheBehaviors.getQuantity() != null) {
+                            xmlWriter.startElement("Quantity").value(cacheBehaviorsCacheBehaviors.getQuantity()).endElement();
+                        }
+
+                        if (cacheBehaviorsCacheBehaviors != null) {
+                            java.util.List<CacheBehavior> cacheBehaviorsCacheBehaviorsitemsList = cacheBehaviorsCacheBehaviors.getItems();
+                            if (cacheBehaviorsCacheBehaviorsitemsList != null && cacheBehaviorsCacheBehaviorsitemsList.size() > 0) {
+                                int cacheBehaviorsCacheBehaviorsitemsListIndex = 1;
+                                xmlWriter.startElement("Items");
+                                for (CacheBehavior cacheBehaviorsCacheBehaviorsitemsListValue : cacheBehaviorsCacheBehaviorsitemsList) {
+
+                                xmlWriter.startElement("CacheBehavior");
+                                    if (cacheBehaviorsCacheBehaviorsitemsListValue.getPathPattern() != null) {
+                                        xmlWriter.startElement("PathPattern").value(cacheBehaviorsCacheBehaviorsitemsListValue.getPathPattern()).endElement();
+                                    }
+                                    if (cacheBehaviorsCacheBehaviorsitemsListValue.getTargetOriginId() != null) {
+                                        xmlWriter.startElement("TargetOriginId").value(cacheBehaviorsCacheBehaviorsitemsListValue.getTargetOriginId()).endElement();
+                                    }
+                                    if (cacheBehaviorsCacheBehaviorsitemsListValue != null) {
+                                        ForwardedValues forwardedValuesForwardedValues = cacheBehaviorsCacheBehaviorsitemsListValue.getForwardedValues();
+                                        if (forwardedValuesForwardedValues != null) {
+                                            xmlWriter.startElement("ForwardedValues");
+                                            if (forwardedValuesForwardedValues.isQueryString() != null) {
+                                                xmlWriter.startElement("QueryString").value(forwardedValuesForwardedValues.isQueryString()).endElement();
+                                            }
+                                            xmlWriter.endElement();
+                                        }
+                                    }
+                                    if (cacheBehaviorsCacheBehaviorsitemsListValue != null) {
+                                        TrustedSigners trustedSignersTrustedSigners = cacheBehaviorsCacheBehaviorsitemsListValue.getTrustedSigners();
+                                        if (trustedSignersTrustedSigners != null) {
+                                            xmlWriter.startElement("TrustedSigners");
+                                            if (trustedSignersTrustedSigners.isEnabled() != null) {
+                                                xmlWriter.startElement("Enabled").value(trustedSignersTrustedSigners.isEnabled()).endElement();
+                                            }
+                                            if (trustedSignersTrustedSigners.getQuantity() != null) {
+                                                xmlWriter.startElement("Quantity").value(trustedSignersTrustedSigners.getQuantity()).endElement();
+                                            }
+
+                                            if (trustedSignersTrustedSigners != null) {
+                                                java.util.List<String> trustedSignersTrustedSignersitemsList = trustedSignersTrustedSigners.getItems();
+                                                if (trustedSignersTrustedSignersitemsList != null && trustedSignersTrustedSignersitemsList.size() > 0) {
+                                                    int trustedSignersTrustedSignersitemsListIndex = 1;
+                                                    xmlWriter.startElement("Items");
+                                                    for (String trustedSignersTrustedSignersitemsListValue : trustedSignersTrustedSignersitemsList) {
+
+                                                    xmlWriter.startElement("AwsAccountNumber");
+                                                        xmlWriter.value(trustedSignersTrustedSignersitemsListValue);
+                                                    xmlWriter.endElement();
+
+
+                                                        trustedSignersTrustedSignersitemsListIndex++;
+                                                    }
+                                                    xmlWriter.endElement();
+                                                }
+                                            }
+                                            xmlWriter.endElement();
+                                        }
+                                    }
+                                    if (cacheBehaviorsCacheBehaviorsitemsListValue.getViewerProtocolPolicy() != null) {
+                                        xmlWriter.startElement("ViewerProtocolPolicy").value(cacheBehaviorsCacheBehaviorsitemsListValue.getViewerProtocolPolicy()).endElement();
+                                    }
+                                    if (cacheBehaviorsCacheBehaviorsitemsListValue.getMinTTL() != null) {
+                                        xmlWriter.startElement("MinTTL").value(cacheBehaviorsCacheBehaviorsitemsListValue.getMinTTL()).endElement();
+                                    }
+                                xmlWriter.endElement();
+
+
+                                    cacheBehaviorsCacheBehaviorsitemsListIndex++;
+                                }
+                                xmlWriter.endElement();
+                            }
+                        }
+                        xmlWriter.endElement();
+                    }
+                }
+                if (distributionConfigDistributionConfig.getComment() != null) {
+                    xmlWriter.startElement("Comment").value(distributionConfigDistributionConfig.getComment()).endElement();
+                }
+                if (distributionConfigDistributionConfig != null) {
+                    LoggingConfig loggingConfigLogging = distributionConfigDistributionConfig.getLogging();
+                    if (loggingConfigLogging != null) {
+                        xmlWriter.startElement("Logging");
+                        if (loggingConfigLogging.isEnabled() != null) {
+                            xmlWriter.startElement("Enabled").value(loggingConfigLogging.isEnabled()).endElement();
+                        }
+                        if (loggingConfigLogging.getBucket() != null) {
+                            xmlWriter.startElement("Bucket").value(loggingConfigLogging.getBucket()).endElement();
+                        }
+                        if (loggingConfigLogging.getPrefix() != null) {
+                            xmlWriter.startElement("Prefix").value(loggingConfigLogging.getPrefix()).endElement();
+                        }
+                        xmlWriter.endElement();
+                    }
+                }
+                if (distributionConfigDistributionConfig.isEnabled() != null) {
+                    xmlWriter.startElement("Enabled").value(distributionConfigDistributionConfig.isEnabled()).endElement();
                 }
                 xmlWriter.endElement();
             }

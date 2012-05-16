@@ -18,8 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeRegions(DescribeRegionsRequest) DescribeRegions operation}.
  * <p>
- * The DescribeRegions operation describes regions zones that are
- * currently available to the account.
+ * The DescribeRegions operation describes regions zones that are currently available to the account.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeRegions(DescribeRegionsRequest)

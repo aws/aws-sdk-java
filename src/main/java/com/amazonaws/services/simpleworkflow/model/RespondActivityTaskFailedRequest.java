@@ -18,13 +18,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#respondActivityTaskFailed(RespondActivityTaskFailedRequest) RespondActivityTaskFailed operation}.
  * <p>
- * Used by workers to tell the service that the ActivityTask identified
- * by the <code>taskToken</code> has failed with <code>reason</code> (if
+ * Used by workers to tell the service that the ActivityTask identified by the <code>taskToken</code> has failed with <code>reason</code> (if
  * specified).
  * </p>
  * <p>
- * The <code>reason</code> and <code>details</code> appear in the
- * <code>ActivityTaskFailed</code> event added to the workflow history.
+ * The <code>reason</code> and <code>details</code> appear in the <code>ActivityTaskFailed</code> event added to the workflow history.
  * </p>
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#respondActivityTaskFailed(RespondActivityTaskFailedRequest)

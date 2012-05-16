@@ -16,8 +16,7 @@ package com.amazonaws.services.cloudsearch.model;
 
 /**
  * <p>
- * A response message that contains the status of updated stemming
- * options.
+ * A response message that contains the status of updated stemming options.
  * </p>
  */
 public class UpdateStemmingOptionsResult {

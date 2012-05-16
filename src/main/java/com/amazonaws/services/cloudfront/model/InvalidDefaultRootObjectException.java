@@ -18,8 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The default root object file name is too big or contains an invalid
- * character.
+ * The default root object file name is too big or contains an invalid character.
  * </p>
  */        
 public class InvalidDefaultRootObjectException extends AmazonServiceException {

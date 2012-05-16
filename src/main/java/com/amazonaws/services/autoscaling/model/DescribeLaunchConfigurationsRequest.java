@@ -18,12 +18,10 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.autoscaling.AmazonAutoScaling#describeLaunchConfigurations(DescribeLaunchConfigurationsRequest) DescribeLaunchConfigurations operation}.
  * <p>
- * Returns a full description of the launch configurations, or the
- * specified launch configurations, if they exist.
+ * Returns a full description of the launch configurations, or the specified launch configurations, if they exist.
  * </p>
  * <p>
- * If no name is specified, then the full details of all launch
- * configurations are returned.
+ * If no name is specified, then the full details of all launch configurations are returned.
  * </p>
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#describeLaunchConfigurations(DescribeLaunchConfigurationsRequest)

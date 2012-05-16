@@ -21,14 +21,10 @@ import com.amazonaws.AmazonWebServiceRequest;
  * The CreateSecurityGroup operation creates a new security group.
  * </p>
  * <p>
- * Every instance is launched in a security group. If no security group
- * is specified during launch, the instances are launched in the default
- * security group. Instances within the same security group have
- * unrestricted network access to each other. Instances will reject
- * network access attempts from other instances in a different security
- * group. As the owner of instances you can grant or revoke specific
- * permissions using the AuthorizeSecurityGroupIngress and
- * RevokeSecurityGroupIngress operations.
+ * Every instance is launched in a security group. If no security group is specified during launch, the instances are launched in the default security
+ * group. Instances within the same security group have unrestricted network access to each other. Instances will reject network access attempts from
+ * other instances in a different security group. As the owner of instances you can grant or revoke specific permissions using the
+ * AuthorizeSecurityGroupIngress and RevokeSecurityGroupIngress operations.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createSecurityGroup(CreateSecurityGroupRequest)

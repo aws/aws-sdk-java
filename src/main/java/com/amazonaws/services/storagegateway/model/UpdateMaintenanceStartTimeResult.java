@@ -16,8 +16,7 @@ package com.amazonaws.services.storagegateway.model;
 
 /**
  * <p>
- * A JSON object containing the GatewayARN of the gateway whose
- * maintenance start time is updated.
+ * A JSON object containing the GatewayARN of the gateway whose maintenance start time is updated.
  * </p>
  */
 public class UpdateMaintenanceStartTimeResult {

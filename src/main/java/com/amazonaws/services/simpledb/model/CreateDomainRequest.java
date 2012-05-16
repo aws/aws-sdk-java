@@ -18,22 +18,17 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.simpledb.AmazonSimpleDB#createDomain(CreateDomainRequest) CreateDomain operation}.
  * <p>
- * The <code>CreateDomain</code> operation creates a new domain. The
- * domain name should be unique among the domains associated with the
- * Access Key ID provided in the request. The <code>CreateDomain</code>
- * operation may take 10 or more seconds to complete.
+ * The <code>CreateDomain</code> operation creates a new domain. The domain name should be unique among the domains associated with the Access Key ID
+ * provided in the request. The <code>CreateDomain</code> operation may take 10 or more seconds to complete.
  * </p>
  * <p>
- * <b>NOTE:</b> CreateDomain is an idempotent operation; running it
- * multiple times using the same domain name will not result in an error
- * response.
+ * <b>NOTE:</b> CreateDomain is an idempotent operation; running it multiple times using the same domain name will not result in an error response.
  * </p>
  * <p>
  * The client can create up to 100 domains per account.
  * </p>
  * <p>
- * If the client requires additional domains, go to <a
- * href="http://aws.amazon.com/contact-us/simpledb-limit-request/">
+ * If the client requires additional domains, go to <a href="http://aws.amazon.com/contact-us/simpledb-limit-request/">
  * http://aws.amazon.com/contact-us/simpledb-limit-request/ </a> .
  * </p>
  *

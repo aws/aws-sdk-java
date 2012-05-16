@@ -18,15 +18,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#createRoute(CreateRouteRequest) CreateRoute operation}.
  * <p>
- * Creates a new route in a route table within a VPC. The route's target
- * can be either a gateway attached to the VPC or a NAT instance in the
- * VPC.
+ * Creates a new route in a route table within a VPC. The route's target can be either a gateway attached to the VPC or a NAT instance in the VPC.
  * </p>
  * <p>
- * When determining how to route traffic, we use the route with the most
- * specific match. For example, let's say the traffic is destined for
- * <code>192.0.2.3</code> , and the route table includes the following
- * two routes:
+ * When determining how to route traffic, we use the route with the most specific match. For example, let's say the traffic is destined for
+ * <code>192.0.2.3</code> , and the route table includes the following two routes:
  * </p>
  * 
  * <ul>
@@ -35,14 +31,12 @@ import com.amazonaws.AmazonWebServiceRequest;
  * 
  * </ul>
  * <p>
- * Both routes apply to the traffic destined for <code>192.0.2.3</code>
- * . However, the second route in the list is more specific, so we use
- * that route to determine where to target the traffic.
+ * Both routes apply to the traffic destined for <code>192.0.2.3</code> . However, the second route in the list is more specific, so we use that route
+ * to determine where to target the traffic.
  * </p>
  * <p>
- * For more information about route tables, go to <a
- * azonwebservices.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">
- * Route Tables </a> in the Amazon Virtual Private Cloud User Guide.
+ * For more information about route tables, go to <a href="http://docs.amazonwebservices.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html"> Route
+ * Tables </a> in the Amazon Virtual Private Cloud User Guide.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createRoute(CreateRouteRequest)

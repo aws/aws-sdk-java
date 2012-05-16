@@ -26,14 +26,14 @@ import org.codehaus.jackson.JsonToken;
 import static org.codehaus.jackson.JsonToken.*;
 
 /**
- * Stored I S C S I Volume JSON Unmarshaller
+ * Storedi S C S I Volume JSON Unmarshaller
  */
-public class StoredISCSIVolumeJsonUnmarshaller implements Unmarshaller<StoredISCSIVolume, JsonUnmarshallerContext> {
+public class StorediSCSIVolumeJsonUnmarshaller implements Unmarshaller<StorediSCSIVolume, JsonUnmarshallerContext> {
 
     
 
-    public StoredISCSIVolume unmarshall(JsonUnmarshallerContext context) throws Exception {
-        StoredISCSIVolume storedISCSIVolume = new StoredISCSIVolume();
+    public StorediSCSIVolume unmarshall(JsonUnmarshallerContext context) throws Exception {
+        StorediSCSIVolume storediSCSIVolume = new StorediSCSIVolume();
 
         
         
@@ -49,43 +49,43 @@ public class StoredISCSIVolumeJsonUnmarshaller implements Unmarshaller<StoredISC
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("VolumeARN", targetDepth)) {
                     context.nextToken();
-                    storedISCSIVolume.setVolumeARN(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    storediSCSIVolume.setVolumeARN(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("VolumeId", targetDepth)) {
                     context.nextToken();
-                    storedISCSIVolume.setVolumeId(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    storediSCSIVolume.setVolumeId(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("VolumeType", targetDepth)) {
                     context.nextToken();
-                    storedISCSIVolume.setVolumeType(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    storediSCSIVolume.setVolumeType(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("VolumeStatus", targetDepth)) {
                     context.nextToken();
-                    storedISCSIVolume.setVolumeStatus(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    storediSCSIVolume.setVolumeStatus(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("VolumeSizeInBytes", targetDepth)) {
                     context.nextToken();
-                    storedISCSIVolume.setVolumeSizeInBytes(LongJsonUnmarshaller.getInstance().unmarshall(context));
+                    storediSCSIVolume.setVolumeSizeInBytes(LongJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("VolumeProgress", targetDepth)) {
                     context.nextToken();
-                    storedISCSIVolume.setVolumeProgress(DoubleJsonUnmarshaller.getInstance().unmarshall(context));
+                    storediSCSIVolume.setVolumeProgress(DoubleJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("VolumeDiskId", targetDepth)) {
                     context.nextToken();
-                    storedISCSIVolume.setVolumeDiskId(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    storediSCSIVolume.setVolumeDiskId(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SourceSnapshotId", targetDepth)) {
                     context.nextToken();
-                    storedISCSIVolume.setSourceSnapshotId(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                    storediSCSIVolume.setSourceSnapshotId(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("PreservedExistingData", targetDepth)) {
                     context.nextToken();
-                    storedISCSIVolume.setPreservedExistingData(BooleanJsonUnmarshaller.getInstance().unmarshall(context));
+                    storediSCSIVolume.setPreservedExistingData(BooleanJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("VolumeiSCSIAttributes", targetDepth)) {
                     context.nextToken();
-                    storedISCSIVolume.setVolumeISCSIAttributes(VolumeISCSIAttributesJsonUnmarshaller.getInstance().unmarshall(context));
+                    storediSCSIVolume.setVolumeiSCSIAttributes(VolumeiSCSIAttributesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getCurrentDepth() <= originalDepth) break;
@@ -93,12 +93,12 @@ public class StoredISCSIVolumeJsonUnmarshaller implements Unmarshaller<StoredISC
             token = context.nextToken();
         }
         
-        return storedISCSIVolume;
+        return storediSCSIVolume;
     }
 
-    private static StoredISCSIVolumeJsonUnmarshaller instance;
-    public static StoredISCSIVolumeJsonUnmarshaller getInstance() {
-        if (instance == null) instance = new StoredISCSIVolumeJsonUnmarshaller();
+    private static StorediSCSIVolumeJsonUnmarshaller instance;
+    public static StorediSCSIVolumeJsonUnmarshaller getInstance() {
+        if (instance == null) instance = new StorediSCSIVolumeJsonUnmarshaller();
         return instance;
     }
 }

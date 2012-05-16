@@ -18,11 +18,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.importexport.AmazonImportExport#updateJob(UpdateJobRequest) UpdateJob operation}.
  * <p>
- * You use this operation to change the parameters specified in the
- * original manifest file by supplying a new manifest file. The manifest
- * file attached to this request replaces the original manifest file. You
- * can only use the operation after a CreateJob request but before the
- * data transfer starts and you can only use it on jobs you own.
+ * You use this operation to change the parameters specified in the original manifest file by supplying a new manifest file. The manifest file attached
+ * to this request replaces the original manifest file. You can only use the operation after a CreateJob request but before the data transfer starts and
+ * you can only use it on jobs you own.
  * </p>
  *
  * @see com.amazonaws.services.importexport.AmazonImportExport#updateJob(UpdateJobRequest)

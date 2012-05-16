@@ -18,8 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#activateLicense(ActivateLicenseRequest) ActivateLicense operation}.
  * <p>
- * Activates a specific number of licenses for a 90-day period.
- * Activations can be done against a specific license ID.
+ * Activates a specific number of licenses for a 90-day period. Activations can be done against a specific license ID.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#activateLicense(ActivateLicenseRequest)

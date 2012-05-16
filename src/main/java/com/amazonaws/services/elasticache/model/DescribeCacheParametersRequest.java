@@ -18,8 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticache.AmazonElastiCache#describeCacheParameters(DescribeCacheParametersRequest) DescribeCacheParameters operation}.
  * <p>
- * Returns the detailed parameter list for a particular
- * CacheParameterGroup.
+ * Returns the detailed parameter list for a particular CacheParameterGroup.
  * </p>
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#describeCacheParameters(DescribeCacheParametersRequest)

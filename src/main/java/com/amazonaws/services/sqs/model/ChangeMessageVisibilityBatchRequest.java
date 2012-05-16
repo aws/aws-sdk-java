@@ -18,10 +18,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sqs.AmazonSQS#changeMessageVisibilityBatch(ChangeMessageVisibilityBatchRequest) ChangeMessageVisibilityBatch operation}.
  * <p>
- * This is a batch version of ChangeMessageVisibility. It takes multiple
- * receipt handles and performs the operation on each of the them. The
- * result of the operation on each message is reported individually in
- * the response.
+ * This is a batch version of ChangeMessageVisibility. It takes multiple receipt handles and performs the operation on each of the them. The result of
+ * the operation on each message is reported individually in the response.
  * </p>
  *
  * @see com.amazonaws.services.sqs.AmazonSQS#changeMessageVisibilityBatch(ChangeMessageVisibilityBatchRequest)

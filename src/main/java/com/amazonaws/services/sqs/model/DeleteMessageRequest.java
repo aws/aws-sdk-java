@@ -18,10 +18,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sqs.AmazonSQS#deleteMessage(DeleteMessageRequest) DeleteMessage operation}.
  * <p>
- * The <code>DeleteMessage</code> action unconditionally removes the
- * specified message from the specified queue. Even if the message is
- * locked by another reader due to the visibility timeout setting, it is
- * still deleted from the queue.
+ * The <code>DeleteMessage</code> action unconditionally removes the specified message from the specified queue. Even if the message is locked by another
+ * reader due to the visibility timeout setting, it is still deleted from the queue.
  * </p>
  *
  * @see com.amazonaws.services.sqs.AmazonSQS#deleteMessage(DeleteMessageRequest)

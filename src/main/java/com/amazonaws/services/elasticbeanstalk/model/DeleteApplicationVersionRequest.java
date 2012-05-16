@@ -21,8 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Deletes the specified version from the specified application.
  * </p>
  * <p>
- * <b>NOTE:</b>You cannot delete an application version that is
- * associated with a running environment.
+ * <b>NOTE:</b>You cannot delete an application version that is associated with a running environment.
  * </p>
  *
  * @see com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#deleteApplicationVersion(DeleteApplicationVersionRequest)

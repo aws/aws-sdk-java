@@ -18,12 +18,10 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#deleteApplication(DeleteApplicationRequest) DeleteApplication operation}.
  * <p>
- * Deletes the specified application along with all associated versions
- * and configurations.
+ * Deletes the specified application along with all associated versions and configurations.
  * </p>
  * <p>
- * <b>NOTE:</b>You cannot delete an application that has a running
- * environment.
+ * <b>NOTE:</b>You cannot delete an application that has a running environment.
  * </p>
  *
  * @see com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#deleteApplication(DeleteApplicationRequest)

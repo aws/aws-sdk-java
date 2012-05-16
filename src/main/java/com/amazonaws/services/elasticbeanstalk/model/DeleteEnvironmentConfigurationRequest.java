@@ -18,17 +18,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#deleteEnvironmentConfiguration(DeleteEnvironmentConfigurationRequest) DeleteEnvironmentConfiguration operation}.
  * <p>
- * Deletes the draft configuration associated with the running
- * environment.
+ * Deletes the draft configuration associated with the running environment.
  * </p>
  * <p>
- * Updating a running environment with any configuration changes creates
- * a draft configuration set. You can get the draft configuration using
- * DescribeConfigurationSettings while the update is in progress or if
- * the update fails. The <code>DeploymentStatus</code> for the draft
- * configuration indicates whether the deployment is in process or has
- * failed. The draft configuration remains in existence until it is
- * deleted with this action.
+ * Updating a running environment with any configuration changes creates a draft configuration set. You can get the draft configuration using
+ * DescribeConfigurationSettings while the update is in progress or if the update fails. The <code>DeploymentStatus</code> for the draft configuration
+ * indicates whether the deployment is in process or has failed. The draft configuration remains in existence until it is deleted with this action.
  * </p>
  *
  * @see com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#deleteEnvironmentConfiguration(DeleteEnvironmentConfigurationRequest)

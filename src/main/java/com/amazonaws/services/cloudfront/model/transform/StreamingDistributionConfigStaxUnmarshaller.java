@@ -44,24 +44,20 @@ public class StreamingDistributionConfigStaxUnmarshaller implements Unmarshaller
             if (xmlEvent.isEndDocument()) return streamingDistributionConfig;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
-                if (context.testExpression("S3Origin", targetDepth)) {
-                    streamingDistributionConfig.setS3Origin(S3OriginStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
                 if (context.testExpression("CallerReference", targetDepth)) {
                     streamingDistributionConfig.setCallerReference(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
-                if (context.testExpression("CNAME", targetDepth)) {
-                    streamingDistributionConfig.getCNAME().add(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("S3Origin", targetDepth)) {
+                    streamingDistributionConfig.setS3Origin(S3OriginStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("Aliases", targetDepth)) {
+                    streamingDistributionConfig.setAliases(AliasesStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
                 if (context.testExpression("Comment", targetDepth)) {
                     streamingDistributionConfig.setComment(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-                if (context.testExpression("Enabled", targetDepth)) {
-                    streamingDistributionConfig.setEnabled(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
                 if (context.testExpression("Logging", targetDepth)) {
@@ -70,6 +66,10 @@ public class StreamingDistributionConfigStaxUnmarshaller implements Unmarshaller
                 }
                 if (context.testExpression("TrustedSigners", targetDepth)) {
                     streamingDistributionConfig.setTrustedSigners(TrustedSignersStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("Enabled", targetDepth)) {
+                    streamingDistributionConfig.setEnabled(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

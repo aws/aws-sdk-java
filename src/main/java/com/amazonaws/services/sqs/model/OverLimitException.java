@@ -18,11 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The operation that you requested would violate a limit. For example,
- * ReceiveMessage returns this error if the maximum number of messages
- * inflight has already been reached. AddPermission returns this error if
- * the maximum number of permissions for the queue has already been
- * reached.
+ * The operation that you requested would violate a limit. For example, ReceiveMessage returns this error if the maximum number of messages inflight has
+ * already been reached. AddPermission returns this error if the maximum number of permissions for the queue has already been reached.
  * </p>
  */        
 public class OverLimitException extends AmazonServiceException {

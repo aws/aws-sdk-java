@@ -16,8 +16,7 @@ package com.amazonaws.services.rds.model;
 
 /**
  * <p>
- * This data type is used as a response element in the action
- * DescribeDBEngineVersions.
+ * This data type is used as a response element in the action DescribeDBEngineVersions.
  * </p>
  */
 public class DBEngineVersion {

@@ -18,12 +18,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#deleteDBInstance(DeleteDBInstanceRequest) DeleteDBInstance operation}.
  * <p>
- * The DeleteDBInstance API deletes a previously provisioned RDS
- * instance. A successful response from the web service indicates the
- * request was received correctly. If a final DBSnapshot is requested the
- * status of the RDS instance will be "deleting" until the DBSnapshot is
- * created. DescribeDBInstance is used to monitor the status of this
- * operation. This cannot be canceled or reverted once submitted.
+ * The DeleteDBInstance API deletes a previously provisioned RDS instance. A successful response from the web service indicates the request was received
+ * correctly. If a final DBSnapshot is requested the status of the RDS instance will be "deleting" until the DBSnapshot is created. DescribeDBInstance is
+ * used to monitor the status of this operation. This cannot be canceled or reverted once submitted.
  * </p>
  *
  * @see com.amazonaws.services.rds.AmazonRDS#deleteDBInstance(DeleteDBInstanceRequest)

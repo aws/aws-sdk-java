@@ -18,11 +18,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeReservedInstancesOfferings(DescribeReservedInstancesOfferingsRequest) DescribeReservedInstancesOfferings operation}.
  * <p>
- * The DescribeReservedInstancesOfferings operation describes Reserved
- * Instance offerings that are available for purchase. With Amazon EC2
- * Reserved Instances, you purchase the right to launch Amazon EC2
- * instances for a period of time (without getting insufficient capacity
- * errors) and pay a lower usage rate for the actual time used.
+ * The DescribeReservedInstancesOfferings operation describes Reserved Instance offerings that are available for purchase. With Amazon EC2 Reserved
+ * Instances, you purchase the right to launch Amazon EC2 instances for a period of time (without getting insufficient capacity errors) and pay a lower
+ * usage rate for the actual time used.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeReservedInstancesOfferings(DescribeReservedInstancesOfferingsRequest)

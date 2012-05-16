@@ -18,8 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * Returned when the specified activity or workflow type was already
- * deprecated.
+ * Returned when the specified activity or workflow type was already deprecated.
  * </p>
  */        
 public class TypeDeprecatedException extends AmazonServiceException {

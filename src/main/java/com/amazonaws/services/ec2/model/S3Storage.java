@@ -16,8 +16,7 @@ package com.amazonaws.services.ec2.model;
 
 /**
  * <p>
- * Describes the S3 storage destination for a BundleTask when bundling a
- * Windows instance.
+ * Describes the S3 storage destination for a BundleTask when bundling a Windows instance.
  * </p>
  */
 public class S3Storage {

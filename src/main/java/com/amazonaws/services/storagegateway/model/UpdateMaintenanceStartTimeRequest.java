@@ -18,9 +18,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.storagegateway.AWSStorageGateway#updateMaintenanceStartTime(UpdateMaintenanceStartTimeRequest) UpdateMaintenanceStartTime operation}.
  * <p>
- * This operation updates a gateway's weekly maintenance start time
- * information, including day and time of the week. The maintenance time
- * is the time in your gateway's time zone.
+ * This operation updates a gateway's weekly maintenance start time information, including day and time of the week. The maintenance time is the time in
+ * your gateway's time zone.
  * </p>
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#updateMaintenanceStartTime(UpdateMaintenanceStartTimeRequest)

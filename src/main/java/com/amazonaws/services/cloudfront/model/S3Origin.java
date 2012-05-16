@@ -16,7 +16,7 @@ package com.amazonaws.services.cloudfront.model;
 
 /**
  * <p>
- * Your S3 origin bucket.
+ * A complex type that contains information about the Amazon S3 bucket from which you want CloudFront to get your media files for distribution.
  * </p>
  */
 public class S3Origin {
@@ -24,7 +24,7 @@ public class S3Origin {
     /**
      * The DNS name of the S3 origin.
      */
-    private String dNSName;
+    private String domainName;
 
     /**
      * Your S3 origin's origin access identity.
@@ -42,10 +42,10 @@ public class S3Origin {
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param dNSName The DNS name of the S3 origin.
+     * @param domainName The DNS name of the S3 origin.
      */
-    public S3Origin(String dNSName) {
-        this.dNSName = dNSName;
+    public S3Origin(String domainName) {
+        this.domainName = domainName;
     }
 
     
@@ -55,11 +55,11 @@ public class S3Origin {
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param dNSName The DNS name of the S3 origin.
+     * @param domainName The DNS name of the S3 origin.
      * @param originAccessIdentity Your S3 origin's origin access identity.
      */
-    public S3Origin(String dNSName, String originAccessIdentity) {
-        this.dNSName = dNSName;
+    public S3Origin(String domainName, String originAccessIdentity) {
+        this.domainName = domainName;
         this.originAccessIdentity = originAccessIdentity;
     }
 
@@ -70,17 +70,17 @@ public class S3Origin {
      *
      * @return The DNS name of the S3 origin.
      */
-    public String getDNSName() {
-        return dNSName;
+    public String getDomainName() {
+        return domainName;
     }
     
     /**
      * The DNS name of the S3 origin.
      *
-     * @param dNSName The DNS name of the S3 origin.
+     * @param domainName The DNS name of the S3 origin.
      */
-    public void setDNSName(String dNSName) {
-        this.dNSName = dNSName;
+    public void setDomainName(String domainName) {
+        this.domainName = domainName;
     }
     
     /**
@@ -88,13 +88,13 @@ public class S3Origin {
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dNSName The DNS name of the S3 origin.
+     * @param domainName The DNS name of the S3 origin.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public S3Origin withDNSName(String dNSName) {
-        this.dNSName = dNSName;
+    public S3Origin withDomainName(String domainName) {
+        this.domainName = domainName;
         return this;
     }
     
@@ -145,7 +145,7 @@ public class S3Origin {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (dNSName != null) sb.append("DNSName: " + dNSName + ", ");
+        if (domainName != null) sb.append("DomainName: " + domainName + ", ");
         if (originAccessIdentity != null) sb.append("OriginAccessIdentity: " + originAccessIdentity + ", ");
         sb.append("}");
         return sb.toString();
@@ -156,7 +156,7 @@ public class S3Origin {
         final int prime = 31;
         int hashCode = 1;
         
-        hashCode = prime * hashCode + ((getDNSName() == null) ? 0 : getDNSName().hashCode()); 
+        hashCode = prime * hashCode + ((getDomainName() == null) ? 0 : getDomainName().hashCode()); 
         hashCode = prime * hashCode + ((getOriginAccessIdentity() == null) ? 0 : getOriginAccessIdentity().hashCode()); 
         return hashCode;
     }
@@ -169,8 +169,8 @@ public class S3Origin {
         if (obj instanceof S3Origin == false) return false;
         S3Origin other = (S3Origin)obj;
         
-        if (other.getDNSName() == null ^ this.getDNSName() == null) return false;
-        if (other.getDNSName() != null && other.getDNSName().equals(this.getDNSName()) == false) return false; 
+        if (other.getDomainName() == null ^ this.getDomainName() == null) return false;
+        if (other.getDomainName() != null && other.getDomainName().equals(this.getDomainName()) == false) return false; 
         if (other.getOriginAccessIdentity() == null ^ this.getOriginAccessIdentity() == null) return false;
         if (other.getOriginAccessIdentity() != null && other.getOriginAccessIdentity().equals(this.getOriginAccessIdentity()) == false) return false; 
         return true;

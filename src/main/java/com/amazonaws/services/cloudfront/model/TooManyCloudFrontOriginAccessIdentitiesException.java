@@ -18,8 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * Processing your request would cause you to exceed the maximum number
- * of origin access identities allowed.
+ * Processing your request would cause you to exceed the maximum number of origin access identities allowed.
  * </p>
  */        
 public class TooManyCloudFrontOriginAccessIdentitiesException extends AmazonServiceException {

@@ -16,8 +16,7 @@ package com.amazonaws.services.storagegateway.model;
 
 /**
  * <p>
- * A JSON object containing the GatewayARN of the gateway that was shut
- * down.
+ * A JSON object containing the GatewayARN of the gateway that was shut down.
  * </p>
  */
 public class ShutdownGatewayResult {

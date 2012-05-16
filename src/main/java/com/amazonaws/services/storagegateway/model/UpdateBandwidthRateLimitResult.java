@@ -16,8 +16,7 @@ package com.amazonaws.services.storagegateway.model;
 
 /**
  * <p>
- * A JSON object containing the GatewayARN of the gateway whose throttle
- * information was updated.
+ * A JSON object containing the GatewayARN of the gateway whose throttle information was updated.
  * </p>
  */
 public class UpdateBandwidthRateLimitResult {

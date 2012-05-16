@@ -18,14 +18,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeSecurityGroups(DescribeSecurityGroupsRequest) DescribeSecurityGroups operation}.
  * <p>
- * The DescribeSecurityGroups operation returns information about
- * security groups that you own.
+ * The DescribeSecurityGroups operation returns information about security groups that you own.
  * </p>
  * <p>
- * If you specify security group names, information about those security
- * group is returned. Otherwise, information for all security group is
- * returned. If you specify a group that does not exist, a fault is
- * returned.
+ * If you specify security group names, information about those security group is returned. Otherwise, information for all security group is returned.
+ * If you specify a group that does not exist, a fault is returned.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeSecurityGroups(DescribeSecurityGroupsRequest)

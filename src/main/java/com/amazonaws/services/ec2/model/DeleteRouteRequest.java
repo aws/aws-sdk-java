@@ -18,10 +18,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#deleteRoute(DeleteRouteRequest) DeleteRoute operation}.
  * <p>
- * Deletes a route from a route table in a VPC. For more information
- * about route tables, go to <a
- * azonwebservices.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html">
- * Route Tables </a> in the Amazon Virtual Private Cloud User Guide.
+ * Deletes a route from a route table in a VPC. For more information about route tables, go to <a
+ * href="http://docs.amazonwebservices.com/AmazonVPC/latest/UserGuide/VPC_Route_Tables.html"> Route Tables </a> in the Amazon Virtual Private Cloud User
+ * Guide.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#deleteRoute(DeleteRouteRequest)

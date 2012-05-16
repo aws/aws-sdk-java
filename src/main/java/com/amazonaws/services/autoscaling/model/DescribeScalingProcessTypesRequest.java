@@ -18,8 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.autoscaling.AmazonAutoScaling#describeScalingProcessTypes(DescribeScalingProcessTypesRequest) DescribeScalingProcessTypes operation}.
  * <p>
- * Returns scaling process types for use in the ResumeProcesses and
- * SuspendProcesses actions.
+ * Returns scaling process types for use in the ResumeProcesses and SuspendProcesses actions.
  * </p>
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#describeScalingProcessTypes(DescribeScalingProcessTypesRequest)

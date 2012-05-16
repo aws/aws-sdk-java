@@ -16,12 +16,10 @@ package com.amazonaws.services.identitymanagement.model;
 
 /**
  * <p>
- * The SigningCertificate data type contains information about an X.509
- * signing certificate.
+ * The SigningCertificate data type contains information about an X.509 signing certificate.
  * </p>
  * <p>
- * This data type is used as a response element in the actions
- * UploadSigningCertificate and ListSigningCertificates.
+ * This data type is used as a response element in the actions UploadSigningCertificate and ListSigningCertificates.
  * </p>
  */
 public class SigningCertificate {

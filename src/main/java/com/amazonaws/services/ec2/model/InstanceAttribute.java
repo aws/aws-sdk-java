@@ -70,6 +70,8 @@ public class InstanceAttribute {
      */
     private java.util.List<InstanceBlockDeviceMapping> blockDeviceMappings;
 
+    private java.util.List<ProductCode> productCodes;
+
     /**
      * The ID of the associated instance.
      *
@@ -449,6 +451,75 @@ public class InstanceAttribute {
     }
     
     /**
+     * Returns the value of the ProductCodes property for this object.
+     *
+     * @return The value of the ProductCodes property for this object.
+     */
+    public java.util.List<ProductCode> getProductCodes() {
+        
+        if (productCodes == null) {
+            productCodes = new java.util.ArrayList<ProductCode>();
+        }
+        return productCodes;
+    }
+    
+    /**
+     * Sets the value of the ProductCodes property for this object.
+     *
+     * @param productCodes The new value for the ProductCodes property for this object.
+     */
+    public void setProductCodes(java.util.Collection<ProductCode> productCodes) {
+        if (productCodes == null) {
+            this.productCodes = null;
+            return;
+        }
+
+        java.util.List<ProductCode> productCodesCopy = new java.util.ArrayList<ProductCode>(productCodes.size());
+        productCodesCopy.addAll(productCodes);
+        this.productCodes = productCodesCopy;
+    }
+    
+    /**
+     * Sets the value of the ProductCodes property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param productCodes The new value for the ProductCodes property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public InstanceAttribute withProductCodes(ProductCode... productCodes) {
+        if (getProductCodes() == null) setProductCodes(new java.util.ArrayList<ProductCode>(productCodes.length));
+        for (ProductCode value : productCodes) {
+            getProductCodes().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * Sets the value of the ProductCodes property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param productCodes The new value for the ProductCodes property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public InstanceAttribute withProductCodes(java.util.Collection<ProductCode> productCodes) {
+        if (productCodes == null) {
+            this.productCodes = null;
+        } else {
+            java.util.List<ProductCode> productCodesCopy = new java.util.ArrayList<ProductCode>(productCodes.size());
+            productCodesCopy.addAll(productCodes);
+            this.productCodes = productCodesCopy;
+        }
+
+        return this;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -469,6 +540,7 @@ public class InstanceAttribute {
         if (instanceInitiatedShutdownBehavior != null) sb.append("InstanceInitiatedShutdownBehavior: " + instanceInitiatedShutdownBehavior + ", ");
         if (rootDeviceName != null) sb.append("RootDeviceName: " + rootDeviceName + ", ");
         if (blockDeviceMappings != null) sb.append("BlockDeviceMappings: " + blockDeviceMappings + ", ");
+        if (productCodes != null) sb.append("ProductCodes: " + productCodes + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -487,6 +559,7 @@ public class InstanceAttribute {
         hashCode = prime * hashCode + ((getInstanceInitiatedShutdownBehavior() == null) ? 0 : getInstanceInitiatedShutdownBehavior().hashCode()); 
         hashCode = prime * hashCode + ((getRootDeviceName() == null) ? 0 : getRootDeviceName().hashCode()); 
         hashCode = prime * hashCode + ((getBlockDeviceMappings() == null) ? 0 : getBlockDeviceMappings().hashCode()); 
+        hashCode = prime * hashCode + ((getProductCodes() == null) ? 0 : getProductCodes().hashCode()); 
         return hashCode;
     }
     
@@ -516,6 +589,8 @@ public class InstanceAttribute {
         if (other.getRootDeviceName() != null && other.getRootDeviceName().equals(this.getRootDeviceName()) == false) return false; 
         if (other.getBlockDeviceMappings() == null ^ this.getBlockDeviceMappings() == null) return false;
         if (other.getBlockDeviceMappings() != null && other.getBlockDeviceMappings().equals(this.getBlockDeviceMappings()) == false) return false; 
+        if (other.getProductCodes() == null ^ this.getProductCodes() == null) return false;
+        if (other.getProductCodes() != null && other.getProductCodes().equals(this.getProductCodes()) == false) return false; 
         return true;
     }
     

@@ -18,8 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#setSubscriptionAttributes(SetSubscriptionAttributesRequest) SetSubscriptionAttributes operation}.
  * <p>
- * The SetSubscriptionAttributes action allows a subscription owner to
- * set an attribute of the topic to a new value.
+ * The SetSubscriptionAttributes action allows a subscription owner to set an attribute of the topic to a new value.
  * </p>
  *
  * @see com.amazonaws.services.sns.AmazonSNS#setSubscriptionAttributes(SetSubscriptionAttributesRequest)

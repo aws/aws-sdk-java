@@ -18,19 +18,15 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.simpledb.AmazonSimpleDB#getAttributes(GetAttributesRequest) GetAttributes operation}.
  * <p>
- * Returns all of the attributes associated with the specified item.
- * Optionally, the attributes returned can be limited to one or more
- * attributes by specifying an attribute name parameter.
+ * Returns all of the attributes associated with the specified item. Optionally, the attributes returned can be limited to one or more attributes by
+ * specifying an attribute name parameter.
  * </p>
  * <p>
- * If the item does not exist on the replica that was accessed for this
- * operation, an empty set is returned. The system does not return an
- * error as it cannot guarantee the item does not exist on other
- * replicas.
+ * If the item does not exist on the replica that was accessed for this operation, an empty set is returned. The system does not return an error as it
+ * cannot guarantee the item does not exist on other replicas.
  * </p>
  * <p>
- * <b>NOTE:</b> If GetAttributes is called without being passed any
- * attribute names, all the attributes for the item are returned.
+ * <b>NOTE:</b> If GetAttributes is called without being passed any attribute names, all the attributes for the item are returned.
  * </p>
  *
  * @see com.amazonaws.services.simpledb.AmazonSimpleDB#getAttributes(GetAttributesRequest)

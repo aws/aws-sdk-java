@@ -16,8 +16,7 @@ package com.amazonaws.services.storagegateway.model;
 
 /**
  * <p>
- * A JSON object containing the GatewayARN of the gateway for which
- * working storage was configured.
+ * A JSON object containing the GatewayARN of the gateway for which working storage was configured.
  * </p>
  */
 public class AddWorkingStorageResult {

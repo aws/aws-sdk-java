@@ -21,9 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Deletes the data feed for Spot Instances.
  * </p>
  * <p>
- * For conceptual information about Spot Instances, refer to the Amazon
- * Elastic Compute Cloud Developer Guide or Amazon Elastic Compute Cloud
- * User Guide .
+ * For conceptual information about Spot Instances, refer to the Amazon Elastic Compute Cloud Developer Guide or Amazon Elastic Compute Cloud User Guide
+ * .
  * 
  * </p>
  *

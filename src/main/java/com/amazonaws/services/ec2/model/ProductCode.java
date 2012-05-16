@@ -26,6 +26,8 @@ public class ProductCode {
      */
     private String productCodeId;
 
+    private String productCodeType;
+
     /**
      * The unique ID of an AWS DevPay product code.
      *
@@ -61,6 +63,40 @@ public class ProductCode {
     
     
     /**
+     * Returns the value of the ProductCodeType property for this object.
+     *
+     * @return The value of the ProductCodeType property for this object.
+     */
+    public String getProductCodeType() {
+        return productCodeType;
+    }
+    
+    /**
+     * Sets the value of the ProductCodeType property for this object.
+     *
+     * @param productCodeType The new value for the ProductCodeType property for this object.
+     */
+    public void setProductCodeType(String productCodeType) {
+        this.productCodeType = productCodeType;
+    }
+    
+    /**
+     * Sets the value of the ProductCodeType property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param productCodeType The new value for the ProductCodeType property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public ProductCode withProductCodeType(String productCodeType) {
+        this.productCodeType = productCodeType;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -73,6 +109,7 @@ public class ProductCode {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (productCodeId != null) sb.append("ProductCodeId: " + productCodeId + ", ");
+        if (productCodeType != null) sb.append("ProductCodeType: " + productCodeType + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -83,6 +120,7 @@ public class ProductCode {
         int hashCode = 1;
         
         hashCode = prime * hashCode + ((getProductCodeId() == null) ? 0 : getProductCodeId().hashCode()); 
+        hashCode = prime * hashCode + ((getProductCodeType() == null) ? 0 : getProductCodeType().hashCode()); 
         return hashCode;
     }
     
@@ -96,6 +134,8 @@ public class ProductCode {
         
         if (other.getProductCodeId() == null ^ this.getProductCodeId() == null) return false;
         if (other.getProductCodeId() != null && other.getProductCodeId().equals(this.getProductCodeId()) == false) return false; 
+        if (other.getProductCodeType() == null ^ this.getProductCodeType() == null) return false;
+        if (other.getProductCodeType() != null && other.getProductCodeType().equals(this.getProductCodeType()) == false) return false; 
         return true;
     }
     

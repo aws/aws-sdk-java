@@ -18,11 +18,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#createLoadBalancerPolicy(CreateLoadBalancerPolicyRequest) CreateLoadBalancerPolicy operation}.
  * <p>
- * Creates a new policy that contains the necessary attributes depending
- * on the policy type. Policies are settings that are saved for your
- * Elastic LoadBalancer and that can be applied to the front-end
- * listener, or the back-end application server, depending on your policy
- * type.
+ * Creates a new policy that contains the necessary attributes depending on the policy type. Policies are settings that are saved for your Elastic
+ * LoadBalancer and that can be applied to the front-end listener, or the back-end application server, depending on your policy type.
  * </p>
  *
  * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#createLoadBalancerPolicy(CreateLoadBalancerPolicyRequest)

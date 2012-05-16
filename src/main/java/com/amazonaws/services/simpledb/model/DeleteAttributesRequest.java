@@ -18,25 +18,18 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.simpledb.AmazonSimpleDB#deleteAttributes(DeleteAttributesRequest) DeleteAttributes operation}.
  * <p>
- * Deletes one or more attributes associated with an item. If all
- * attributes of the item are deleted, the item is deleted.
+ * Deletes one or more attributes associated with an item. If all attributes of the item are deleted, the item is deleted.
  * </p>
  * <p>
- * <b>NOTE:</b> If DeleteAttributes is called without being passed any
- * attributes or values specified, all the attributes for the item are
- * deleted.
+ * <b>NOTE:</b> If DeleteAttributes is called without being passed any attributes or values specified, all the attributes for the item are deleted.
  * </p>
  * <p>
- * <code>DeleteAttributes</code> is an idempotent operation; running it
- * multiple times on the same item or attribute does not result in an
- * error response.
+ * <code>DeleteAttributes</code> is an idempotent operation; running it multiple times on the same item or attribute does not result in an error
+ * response.
  * </p>
  * <p>
- * Because Amazon SimpleDB makes multiple copies of item data and uses
- * an eventual consistency update model, performing a GetAttributes or
- * Select operation (read) immediately after a
- * <code>DeleteAttributes</code> or PutAttributes operation (write) might
- * not return updated item data.
+ * Because Amazon SimpleDB makes multiple copies of item data and uses an eventual consistency update model, performing a GetAttributes or Select
+ * operation (read) immediately after a <code>DeleteAttributes</code> or PutAttributes operation (write) might not return updated item data.
  * </p>
  *
  * @see com.amazonaws.services.simpledb.AmazonSimpleDB#deleteAttributes(DeleteAttributesRequest)

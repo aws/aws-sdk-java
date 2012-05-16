@@ -25,10 +25,10 @@ public class AdjustedRangeInputStream extends InputStream {
     private InputStream decryptedContents;
     private long virtualAvailable;
     private boolean closed;
-    
+
     /**
      * Creates a new DecryptedContentsInputStream object.
-     * 
+     *
      * @param objectContents
      *      The input stream containing the object contents retrieved from S3
      * @param rangeBeginning
@@ -43,7 +43,7 @@ public class AdjustedRangeInputStream extends InputStream {
         this.closed = false;
         initializeForRead(rangeBeginning, rangeEnd);
     }
-    
+
     /**
      * Skip to the start location of the range of bytes desired by the user.
      */
@@ -56,7 +56,7 @@ public class AdjustedRangeInputStream extends InputStream {
             numBytesToSkip = (int)rangeBeginning;
         } else {
             int offsetIntoBlock = (int)(rangeBeginning % JceEncryptionConstants.SYMMETRIC_CIPHER_BLOCK_SIZE);
-            numBytesToSkip = JceEncryptionConstants.SYMMETRIC_CIPHER_BLOCK_SIZE + (int)offsetIntoBlock;
+            numBytesToSkip = JceEncryptionConstants.SYMMETRIC_CIPHER_BLOCK_SIZE + offsetIntoBlock;
         }
         if(numBytesToSkip != 0) {
             // Skip to the left-most desired byte.  The read() method is used instead of the skip() method
@@ -78,30 +78,30 @@ public class AdjustedRangeInputStream extends InputStream {
     public int read() throws IOException {
         int result = 0;
         // If there are no more available bytes, mark that we are at the end of the stream.
-        if (this.virtualAvailable <= 0) { 
+        if (this.virtualAvailable <= 0) {
             result = -1;
         } else {
             // Otherwise, read a byte.
             result = this.decryptedContents.read();
         }
-        
+
         // If we have not reached the end of the stream, decrement the number of available bytes.
         if (result != -1) {
             this.virtualAvailable--;
         } else {
             // If we are at the end of the stream, close it.
-            super.close();
+            close();
             this.virtualAvailable = 0;
         }
         return result;
     }
-    
+
     /* (non-Javadoc)
      * @see java.io.InputStream#read(byte[], int, int)
      */
     @Override
     public int read(byte[] buffer, int offset, int length) throws IOException {
-        int numBytesRead;        
+        int numBytesRead;
         // If no more bytes are available, do not read any bytes into the buffer
         if(this.virtualAvailable <= 0) {
             numBytesRead = -1;
@@ -112,21 +112,21 @@ public class AdjustedRangeInputStream extends InputStream {
                 // If the number of available bytes is greater than the maximum value of a 32 bit int, then
                 // read as many bytes as an int can.
                 length = (this.virtualAvailable < Integer.MAX_VALUE) ? (int)this.virtualAvailable : Integer.MAX_VALUE;
-            }            
+            }
             // Read bytes into the buffer.
-            numBytesRead = super.read(buffer, offset, length);
-        }        
+            numBytesRead = this.decryptedContents.read(buffer, offset, length);
+        }
         // If we were able to read bytes, decrement the number of bytes available to be read.
         if(numBytesRead != -1) {
             this.virtualAvailable -= numBytesRead;
         } else {
             // If we've reached the end of the stream, close it
-            super.close();
+            close();
             this.virtualAvailable = 0;
         }
         return numBytesRead;
     }
-    
+
     /* (non-Javadoc)
      * @see java.io.InputStream#available()
      */
@@ -141,7 +141,7 @@ public class AdjustedRangeInputStream extends InputStream {
             return (int)this.virtualAvailable;
         }
     }
-    
+
     /* (non-Javadoc)
      * @see java.io.InputStream#close()
      */

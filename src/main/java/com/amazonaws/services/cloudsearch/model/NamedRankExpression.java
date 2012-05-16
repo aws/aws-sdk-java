@@ -16,8 +16,7 @@ package com.amazonaws.services.cloudsearch.model;
 
 /**
  * <p>
- * A named expression that can be evaluated at search time and used for
- * ranking or thresholding in a search query.
+ * A named expression that can be evaluated at search time and used for ranking or thresholding in a search query.
  * </p>
  */
 public class NamedRankExpression {

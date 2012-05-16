@@ -44,48 +44,40 @@ public class DistributionConfigStaxUnmarshaller implements Unmarshaller<Distribu
             if (xmlEvent.isEndDocument()) return distributionConfig;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
-                if (context.testExpression("S3Origin", targetDepth)) {
-                    distributionConfig.setS3Origin(S3OriginStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-                if (context.testExpression("CustomOrigin", targetDepth)) {
-                    distributionConfig.setCustomOrigin(CustomOriginStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
                 if (context.testExpression("CallerReference", targetDepth)) {
                     distributionConfig.setCallerReference(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
-                if (context.testExpression("CNAME", targetDepth)) {
-                    distributionConfig.getCNAME().add(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-                if (context.testExpression("Comment", targetDepth)) {
-                    distributionConfig.setComment(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-                if (context.testExpression("Enabled", targetDepth)) {
-                    distributionConfig.setEnabled(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-                if (context.testExpression("Logging", targetDepth)) {
-                    distributionConfig.setLogging(LoggingConfigStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-                if (context.testExpression("TrustedSigners", targetDepth)) {
-                    distributionConfig.setTrustedSigners(TrustedSignersStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-                if (context.testExpression("RequiredProtocols", targetDepth)) {
-                    distributionConfig.setRequiredProtocols(RequiredProtocolsStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("Aliases", targetDepth)) {
+                    distributionConfig.setAliases(AliasesStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
                 if (context.testExpression("DefaultRootObject", targetDepth)) {
                     distributionConfig.setDefaultRootObject(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
-                if (context.testExpression("CachingBehavior", targetDepth)) {
-                    distributionConfig.setCachingBehavior(CachingBehaviorStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("Origins", targetDepth)) {
+                    distributionConfig.setOrigins(OriginsStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("DefaultCacheBehavior", targetDepth)) {
+                    distributionConfig.setDefaultCacheBehavior(DefaultCacheBehaviorStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("CacheBehaviors", targetDepth)) {
+                    distributionConfig.setCacheBehaviors(CacheBehaviorsStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("Comment", targetDepth)) {
+                    distributionConfig.setComment(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("Logging", targetDepth)) {
+                    distributionConfig.setLogging(LoggingConfigStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("Enabled", targetDepth)) {
+                    distributionConfig.setEnabled(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

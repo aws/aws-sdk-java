@@ -18,14 +18,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.dynamodb.AmazonDynamoDB#query(QueryRequest) Query operation}.
  * <p>
- * Gets the values of one or more items and its attributes by primary key
- * (composite primary key, only).
+ * Gets the values of one or more items and its attributes by primary key (composite primary key, only).
  * </p>
  * <p>
- * Narrow the scope of the query using comparison operators on the
- * <code>RangeKeyValue</code> of the composite key. Use the
- * <code>ScanIndexForward</code> parameter to get results in forward or
- * reverse order by range key.
+ * Narrow the scope of the query using comparison operators on the <code>RangeKeyValue</code> of the composite key. Use the <code>ScanIndexForward</code>
+ * parameter to get results in forward or reverse order by range key.
  * </p>
  *
  * @see com.amazonaws.services.dynamodb.AmazonDynamoDB#query(QueryRequest)

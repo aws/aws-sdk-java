@@ -16,8 +16,7 @@ package com.amazonaws.services.ec2.model;
 
 /**
  * <p>
- * The result of calling the RunInstancesResult, contains the new
- * reservation created by Amazon EC2.
+ * The result of calling the RunInstancesResult, contains the new reservation created by Amazon EC2.
  * </p>
  */
 public class RunInstancesResult {

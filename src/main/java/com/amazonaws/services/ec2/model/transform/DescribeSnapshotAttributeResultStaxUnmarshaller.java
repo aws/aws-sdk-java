@@ -54,6 +54,10 @@ public class DescribeSnapshotAttributeResultStaxUnmarshaller implements Unmarsha
                     describeSnapshotAttributeResult.getCreateVolumePermissions().add(CreateVolumePermissionStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("productCodes/item", targetDepth)) {
+                    describeSnapshotAttributeResult.getProductCodes().add(ProductCodeStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return describeSnapshotAttributeResult;

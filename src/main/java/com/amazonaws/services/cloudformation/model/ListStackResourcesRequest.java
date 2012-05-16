@@ -21,8 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Returns descriptions of all resources of the specified stack.
  * </p>
  * <p>
- * For deleted stacks, ListStackResources returns resource information
- * for up to 90 days after the stack has been deleted.
+ * For deleted stacks, ListStackResources returns resource information for up to 90 days after the stack has been deleted.
  * </p>
  *
  * @see com.amazonaws.services.cloudformation.AmazonCloudFormation#listStackResources(ListStackResourcesRequest)

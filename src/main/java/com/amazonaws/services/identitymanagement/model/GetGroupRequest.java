@@ -18,9 +18,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getGroup(GetGroupRequest) GetGroup operation}.
  * <p>
- * Returns a list of users that are in the specified group. You can
- * paginate the results using the <code>MaxItems</code> and
- * <code>Marker</code> parameters.
+ * Returns a list of users that are in the specified group. You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
+ * parameters.
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getGroup(GetGroupRequest)

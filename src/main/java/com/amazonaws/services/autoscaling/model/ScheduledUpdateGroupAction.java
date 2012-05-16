@@ -16,8 +16,7 @@ package com.amazonaws.services.autoscaling.model;
 
 /**
  * <p>
- * This data type stores information about a scheduled update to an Auto
- * Scaling group.
+ * This data type stores information about a scheduled update to an Auto Scaling group.
  * </p>
  */
 public class ScheduledUpdateGroupAction {

@@ -16,12 +16,10 @@ package com.amazonaws.services.identitymanagement.model;
 
 /**
  * <p>
- * The AccessKey data type contains information about an AWS access key,
- * without its secret key.
+ * The AccessKey data type contains information about an AWS access key, without its secret key.
  * </p>
  * <p>
- * This data type is used as a response element in the action
- * ListAccessKeys.
+ * This data type is used as a response element in the action ListAccessKeys.
  * </p>
  */
 public class AccessKeyMetadata {

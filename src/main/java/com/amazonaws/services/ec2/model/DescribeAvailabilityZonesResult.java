@@ -16,8 +16,7 @@ package com.amazonaws.services.ec2.model;
 
 /**
  * <p>
- * The result of describing the Amazon EC2 availability zones in the
- * current region.
+ * The result of describing the Amazon EC2 availability zones in the current region.
  * </p>
  */
 public class DescribeAvailabilityZonesResult {

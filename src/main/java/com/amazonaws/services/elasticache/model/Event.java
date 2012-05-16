@@ -16,8 +16,7 @@ package com.amazonaws.services.elasticache.model;
 
 /**
  * <p>
- * An event represents something interesting that has happened in the
- * system.
+ * An event represents something interesting that has happened in the system.
  * </p>
  */
 public class Event {

@@ -16,8 +16,7 @@ package com.amazonaws.services.ec2.model;
 
 /**
  * <p>
- * The result of describing the purchased Reserved Instances for your
- * account.
+ * The result of describing the purchased Reserved Instances for your account.
  * </p>
  */
 public class DescribeReservedInstancesResult {

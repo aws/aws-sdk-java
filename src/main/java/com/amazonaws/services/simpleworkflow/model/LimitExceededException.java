@@ -18,9 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * Returned by any operation if a system imposed limitation has been
- * reached. To address this fault you should either clean up unused
- * resources or increase the limit by contacting AWS.
+ * Returned by any operation if a system imposed limitation has been reached. To address this fault you should either clean up unused resources or
+ * increase the limit by contacting AWS.
  * </p>
  */        
 public class LimitExceededException extends AmazonServiceException {

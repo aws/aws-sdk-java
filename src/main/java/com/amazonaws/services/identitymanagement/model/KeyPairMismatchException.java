@@ -18,8 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The request was rejected because the public key certificate and the
- * private key do not match.
+ * The request was rejected because the public key certificate and the private key do not match.
  * </p>
  */        
 public class KeyPairMismatchException extends AmazonServiceException {

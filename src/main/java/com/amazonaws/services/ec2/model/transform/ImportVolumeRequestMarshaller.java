@@ -38,7 +38,7 @@ public class ImportVolumeRequestMarshaller implements Marshaller<Request<ImportV
 
         Request<ImportVolumeRequest> request = new DefaultRequest<ImportVolumeRequest>(importVolumeRequest, "AmazonEC2");
         request.addParameter("Action", "ImportVolume");
-        request.addParameter("Version", "2012-03-01");
+        request.addParameter("Version", "2012-04-01");
 
         if (importVolumeRequest.getAvailabilityZone() != null) {
             request.addParameter("AvailabilityZone", StringUtils.fromString(importVolumeRequest.getAvailabilityZone()));

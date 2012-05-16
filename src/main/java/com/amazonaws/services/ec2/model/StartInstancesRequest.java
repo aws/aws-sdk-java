@@ -18,17 +18,13 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#startInstances(StartInstancesRequest) StartInstances operation}.
  * <p>
- * Starts an instance that uses an Amazon EBS volume as its root device.
- * Instances that use Amazon EBS volumes as their root devices can be
- * quickly stopped and started. When an instance is stopped, the compute
- * resources are released and you are not billed for hourly instance
- * usage. However, your root partition Amazon EBS volume remains,
- * continues to persist your data, and you are charged for Amazon EBS
- * volume usage. You can restart your instance at any time.
+ * Starts an instance that uses an Amazon EBS volume as its root device. Instances that use Amazon EBS volumes as their root devices can be quickly
+ * stopped and started. When an instance is stopped, the compute resources are released and you are not billed for hourly instance usage. However, your
+ * root partition Amazon EBS volume remains, continues to persist your data, and you are charged for Amazon EBS volume usage. You can restart your
+ * instance at any time.
  * </p>
  * <p>
- * <b>NOTE:</b> Performing this operation on an instance that uses an
- * instance store as its root device returns an error.
+ * <b>NOTE:</b> Performing this operation on an instance that uses an instance store as its root device returns an error.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#startInstances(StartInstancesRequest)

@@ -16,8 +16,7 @@ package com.amazonaws.services.ec2.model;
 
 /**
  * <p>
- * Specifies how an EBS volume should be mapped as part of a block
- * device mapping specification when launching a new instance.
+ * Specifies how an EBS volume should be mapped as part of a block device mapping specification when launching a new instance.
  * </p>
  */
 public class EbsInstanceBlockDeviceSpecification {

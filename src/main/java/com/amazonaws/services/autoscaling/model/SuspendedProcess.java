@@ -16,8 +16,7 @@ package com.amazonaws.services.autoscaling.model;
 
 /**
  * <p>
- * An Auto Scaling process that has been suspended. For more
- * information, see ProcessType.
+ * An Auto Scaling process that has been suspended. For more information, see ProcessType.
  * </p>
  */
 public class SuspendedProcess {

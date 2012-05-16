@@ -16,8 +16,7 @@ package com.amazonaws.services.storagegateway.model;
 
 /**
  * <p>
- * Describes a gateway; contains one data member, the GatewayARN of this
- * gateway.
+ * Describes a gateway; contains one data member, the GatewayARN of this gateway.
  * </p>
  */
 public class GatewayInfo {

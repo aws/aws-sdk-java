@@ -21,28 +21,20 @@ import com.amazonaws.AmazonWebServiceRequest;
  * This operation initiates a snapshot of a volume.
  * </p>
  * <p>
- * AWS Storage Gateway provides the ability to back up point-in-time
- * snapshots of your data to Amazon Simple Storage (S3) for durable
- * off-site recovery, as well as import the data to an Amazon Elastic
- * Block Store (EBS) volume in Amazon Elastic Compute Cloud (EC2). You
- * can take snapshots of your gateway volume on a scheduled or ad-hoc
- * basis. This API enables you to take ad-hoc snapshot. For more
- * information, see Working With Snapshots in the AWS Storage Gateway
- * Console.
+ * AWS Storage Gateway provides the ability to back up point-in-time snapshots of your data to Amazon Simple Storage (S3) for durable off-site recovery,
+ * as well as import the data to an Amazon Elastic Block Store (EBS) volume in Amazon Elastic Compute Cloud (EC2). You can take snapshots of your gateway
+ * volume on a scheduled or ad-hoc basis. This API enables you to take ad-hoc snapshot. For more information, see Working With Snapshots in the AWS
+ * Storage Gateway Console.
  * </p>
  * <p>
- * In the CreateSnapshot request you identify the volume by providing
- * it's Amazon Resource Name (ARN). You must also provide description for
- * the snapshot. When AWS Storage Gateway takes the snapshot of specified
- * volume, the snapshot and description appears in the Amazon EC2
- * console. In response, AWS Storage Gateway returns you a snapshot ID.
- * You can use this snapshot ID to check the snapshot progress or later
- * use it when you want to create a volume from a snapshot.
+ * In the CreateSnapshot request you identify the volume by providing it's Amazon Resource Name (ARN). You must also provide description for the
+ * snapshot. When AWS Storage Gateway takes the snapshot of specified volume, the snapshot and description appears in the AWS Storage Gateway Console. In
+ * response, AWS Storage Gateway returns you a snapshot ID. You can use this snapshot ID to check the snapshot progress or later use it when you want to
+ * create a volume from a snapshot.
  * </p>
  * <p>
- * <b>NOTE:</b>To list or delete a snapshot, you must use the Amazon EC2
- * API. For more information, go to DeleteSnapshot and DescribeSnapshots
- * in the Amazon Elastic Compute Cloud API Reference.
+ * <b>NOTE:</b>To list or delete a snapshot, you must use the Amazon EC2 API. For more information, go to DeleteSnapshot and DescribeSnapshots in the
+ * Amazon Elastic Compute Cloud API Reference.
  * </p>
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#createSnapshot(CreateSnapshotRequest)
@@ -59,8 +51,8 @@ public class CreateSnapshotRequest extends AmazonWebServiceRequest {
     private String volumeARN;
 
     /**
-     * Textual description of the snapshot that appears in the Amazon EC2
-     * console, Elastic Block Store snapshots panel in the
+     * Textual description of the snapshot that appears in the AWS Storage
+     * Gateway Console, Elastic Block Store snapshots panel in the
      * <code>Description</code> field, and in the AWS Storage Gateway
      * snapshot Details pane, <code>Description</code> field. <p>Length:
      * Minimum length of 1. Maximum length of 255.
@@ -120,8 +112,8 @@ public class CreateSnapshotRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * Textual description of the snapshot that appears in the Amazon EC2
-     * console, Elastic Block Store snapshots panel in the
+     * Textual description of the snapshot that appears in the AWS Storage
+     * Gateway Console, Elastic Block Store snapshots panel in the
      * <code>Description</code> field, and in the AWS Storage Gateway
      * snapshot Details pane, <code>Description</code> field. <p>Length:
      * Minimum length of 1. Maximum length of 255.
@@ -129,8 +121,8 @@ public class CreateSnapshotRequest extends AmazonWebServiceRequest {
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      *
-     * @return Textual description of the snapshot that appears in the Amazon EC2
-     *         console, Elastic Block Store snapshots panel in the
+     * @return Textual description of the snapshot that appears in the AWS Storage
+     *         Gateway Console, Elastic Block Store snapshots panel in the
      *         <code>Description</code> field, and in the AWS Storage Gateway
      *         snapshot Details pane, <code>Description</code> field. <p>Length:
      *         Minimum length of 1. Maximum length of 255.
@@ -140,8 +132,8 @@ public class CreateSnapshotRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * Textual description of the snapshot that appears in the Amazon EC2
-     * console, Elastic Block Store snapshots panel in the
+     * Textual description of the snapshot that appears in the AWS Storage
+     * Gateway Console, Elastic Block Store snapshots panel in the
      * <code>Description</code> field, and in the AWS Storage Gateway
      * snapshot Details pane, <code>Description</code> field. <p>Length:
      * Minimum length of 1. Maximum length of 255.
@@ -149,8 +141,8 @@ public class CreateSnapshotRequest extends AmazonWebServiceRequest {
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      *
-     * @param snapshotDescription Textual description of the snapshot that appears in the Amazon EC2
-     *         console, Elastic Block Store snapshots panel in the
+     * @param snapshotDescription Textual description of the snapshot that appears in the AWS Storage
+     *         Gateway Console, Elastic Block Store snapshots panel in the
      *         <code>Description</code> field, and in the AWS Storage Gateway
      *         snapshot Details pane, <code>Description</code> field. <p>Length:
      *         Minimum length of 1. Maximum length of 255.
@@ -160,8 +152,8 @@ public class CreateSnapshotRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * Textual description of the snapshot that appears in the Amazon EC2
-     * console, Elastic Block Store snapshots panel in the
+     * Textual description of the snapshot that appears in the AWS Storage
+     * Gateway Console, Elastic Block Store snapshots panel in the
      * <code>Description</code> field, and in the AWS Storage Gateway
      * snapshot Details pane, <code>Description</code> field. <p>Length:
      * Minimum length of 1. Maximum length of 255.
@@ -171,8 +163,8 @@ public class CreateSnapshotRequest extends AmazonWebServiceRequest {
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      *
-     * @param snapshotDescription Textual description of the snapshot that appears in the Amazon EC2
-     *         console, Elastic Block Store snapshots panel in the
+     * @param snapshotDescription Textual description of the snapshot that appears in the AWS Storage
+     *         Gateway Console, Elastic Block Store snapshots panel in the
      *         <code>Description</code> field, and in the AWS Storage Gateway
      *         snapshot Details pane, <code>Description</code> field. <p>Length:
      *         Minimum length of 1. Maximum length of 255.

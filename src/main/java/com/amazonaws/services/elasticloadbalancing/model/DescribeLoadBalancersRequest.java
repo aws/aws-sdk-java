@@ -18,16 +18,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#describeLoadBalancers(DescribeLoadBalancersRequest) DescribeLoadBalancers operation}.
  * <p>
- * Returns detailed configuration information for the specified
- * LoadBalancers. If no LoadBalancers are specified, the operation
- * returns configuration information for all LoadBalancers created by the
- * caller.
+ * Returns detailed configuration information for the specified LoadBalancers. If no LoadBalancers are specified, the operation returns configuration
+ * information for all LoadBalancers created by the caller.
  * </p>
  * <p>
- * <b>NOTE:</b> The client must have created the specified input
- * LoadBalancers in order to retrieve this information; the client must
- * provide the same account credentials as those that were used to create
- * the LoadBalancer.
+ * <b>NOTE:</b> The client must have created the specified input LoadBalancers in order to retrieve this information; the client must provide the same
+ * account credentials as those that were used to create the LoadBalancer.
  * </p>
  *
  * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#describeLoadBalancers(DescribeLoadBalancersRequest)

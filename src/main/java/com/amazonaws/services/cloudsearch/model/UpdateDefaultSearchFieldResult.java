@@ -16,8 +16,7 @@ package com.amazonaws.services.cloudsearch.model;
 
 /**
  * <p>
- * A response message that contains the status of an updated default
- * search field.
+ * A response message that contains the status of an updated default search field.
  * </p>
  */
 public class UpdateDefaultSearchFieldResult {

@@ -16,8 +16,7 @@ package com.amazonaws.services.simpleworkflow.model;
 
 /**
  * <p>
- * Provides details of the <code>ActivityTaskCancelRequested</code>
- * event.
+ * Provides details of the <code>ActivityTaskCancelRequested</code> event.
  * </p>
  */
 public class ActivityTaskCancelRequestedEventAttributes {

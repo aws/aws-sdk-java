@@ -18,8 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * DB Subnet Group does not cover all availability zones after it is
- * created because users' change.
+ * DB Subnet Group does not cover all availability zones after it is created because users' change.
  * </p>
  */        
 public class InvalidVPCNetworkStateException extends AmazonServiceException {

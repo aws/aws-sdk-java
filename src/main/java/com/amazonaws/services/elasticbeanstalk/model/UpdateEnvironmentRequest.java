@@ -18,21 +18,16 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#updateEnvironment(UpdateEnvironmentRequest) UpdateEnvironment operation}.
  * <p>
- * Updates the environment description, deploys a new application
- * version, updates the configuration settings to an entirely new
- * configuration template, or updates select configuration option values
- * in the running environment.
+ * Updates the environment description, deploys a new application version, updates the configuration settings to an entirely new configuration template,
+ * or updates select configuration option values in the running environment.
  * </p>
  * <p>
- * Attempting to update both the release and configuration is not
- * allowed and AWS Elastic Beanstalk returns an
- * <code>InvalidParameterCombination</code> error.
+ * Attempting to update both the release and configuration is not allowed and AWS Elastic Beanstalk returns an <code>InvalidParameterCombination</code>
+ * error.
  * </p>
  * <p>
- * When updating the configuration settings to a new template or
- * individual settings, a draft configuration is created and
- * DescribeConfigurationSettings for this environment returns two setting
- * descriptions with different <code>DeploymentStatus</code> values.
+ * When updating the configuration settings to a new template or individual settings, a draft configuration is created and DescribeConfigurationSettings
+ * for this environment returns two setting descriptions with different <code>DeploymentStatus</code> values.
  * </p>
  *
  * @see com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#updateEnvironment(UpdateEnvironmentRequest)

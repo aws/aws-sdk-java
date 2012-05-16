@@ -16,8 +16,7 @@ package com.amazonaws.services.cloudsearch.model;
 
 /**
  * <p>
- * A response message that contains the status of updated access
- * policies.
+ * A response message that contains the status of updated access policies.
  * </p>
  */
 public class UpdateServiceAccessPoliciesResult {

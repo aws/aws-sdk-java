@@ -37,7 +37,7 @@ import com.amazonaws.util.XMLWriter;
 public class ListResourceRecordSetsRequestMarshaller implements Marshaller<Request<ListResourceRecordSetsRequest>, ListResourceRecordSetsRequest> {
 
     public Request<ListResourceRecordSetsRequest> marshall(ListResourceRecordSetsRequest listResourceRecordSetsRequest) {
-        if (listResourceRecordSetsRequest == null) { 
+        if (listResourceRecordSetsRequest == null) {
             throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 

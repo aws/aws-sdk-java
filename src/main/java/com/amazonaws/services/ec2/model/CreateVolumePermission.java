@@ -16,8 +16,7 @@ package com.amazonaws.services.ec2.model;
 
 /**
  * <p>
- * Describes a permission allowing either a user or group to create a
- * new EBS volume from a snapshot.
+ * Describes a permission allowing either a user or group to create a new EBS volume from a snapshot.
  * </p>
  */
 public class CreateVolumePermission {

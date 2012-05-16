@@ -18,9 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.cloudsearch.AmazonCloudSearch#updateServiceAccessPolicies(UpdateServiceAccessPoliciesRequest) UpdateServiceAccessPolicies operation}.
  * <p>
- * Configures the policies that control access to the domain's document
- * and search services. The maximum size of an access policy document is
- * 100KB.
+ * Configures the policies that control access to the domain's document and search services. The maximum size of an access policy document is 100KB.
  * </p>
  *
  * @see com.amazonaws.services.cloudsearch.AmazonCloudSearch#updateServiceAccessPolicies(UpdateServiceAccessPoliciesRequest)

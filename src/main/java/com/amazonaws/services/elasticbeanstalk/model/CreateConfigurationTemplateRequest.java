@@ -18,9 +18,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#createConfigurationTemplate(CreateConfigurationTemplateRequest) CreateConfigurationTemplate operation}.
  * <p>
- * Creates a configuration template. Templates are associated with a
- * specific application and are used to deploy different versions of the
- * application with the same configuration settings.
+ * Creates a configuration template. Templates are associated with a specific application and are used to deploy different versions of the application
+ * with the same configuration settings.
  * </p>
  * <p>
  * Related Topics

@@ -18,12 +18,10 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.simpleemail.AmazonSimpleEmailService#getSendStatistics(GetSendStatisticsRequest) GetSendStatistics operation}.
  * <p>
- * Returns the user's sending statistics. The result is a list of data
- * points, representing the last two weeks of sending activity.
+ * Returns the user's sending statistics. The result is a list of data points, representing the last two weeks of sending activity.
  * </p>
  * <p>
- * Each data point in the list contains statistics for a 15-minute
- * interval.
+ * Each data point in the list contains statistics for a 15-minute interval.
  * </p>
  *
  * @see com.amazonaws.services.simpleemail.AmazonSimpleEmailService#getSendStatistics(GetSendStatisticsRequest)

@@ -18,10 +18,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticache.AmazonElastiCache#resetCacheParameterGroup(ResetCacheParameterGroupRequest) ResetCacheParameterGroup operation}.
  * <p>
- * Modifies the parameters of a CacheParameterGroup to the engine or
- * system default value. To reset specific parameters submit a list of
- * the parameter names. To reset the entire CacheParameterGroup, specify
- * the CacheParameterGroup name and ResetAllParameters parameters.
+ * Modifies the parameters of a CacheParameterGroup to the engine or system default value. To reset specific parameters submit a list of the parameter
+ * names. To reset the entire CacheParameterGroup, specify the CacheParameterGroup name and ResetAllParameters parameters.
  * </p>
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#resetCacheParameterGroup(ResetCacheParameterGroupRequest)

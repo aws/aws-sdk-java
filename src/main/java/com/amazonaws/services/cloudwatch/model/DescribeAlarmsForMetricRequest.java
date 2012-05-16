@@ -18,8 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.cloudwatch.AmazonCloudWatch#describeAlarmsForMetric(DescribeAlarmsForMetricRequest) DescribeAlarmsForMetric operation}.
  * <p>
- * Retrieves all alarms for a single metric. Specify a statistic,
- * period, or unit to filter the set of alarms further.
+ * Retrieves all alarms for a single metric. Specify a statistic, period, or unit to filter the set of alarms further.
  * </p>
  *
  * @see com.amazonaws.services.cloudwatch.AmazonCloudWatch#describeAlarmsForMetric(DescribeAlarmsForMetricRequest)

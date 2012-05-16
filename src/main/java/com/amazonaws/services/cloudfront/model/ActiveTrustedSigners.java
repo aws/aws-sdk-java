@@ -16,10 +16,8 @@ package com.amazonaws.services.cloudfront.model;
 
 /**
  * <p>
- * CloudFront automatically adds this element to the response only if
- * you've set up the distribution to serve private content with signed
- * URLs. The element lists the key pair IDs that CloudFront is aware of
- * for each trusted signer.
+ * A complex type that lists the AWS accounts, if any, that you included in the TrustedSigners complex type for the default cache behavior or for any of
+ * the other cache behaviors for this distribution. These are accounts that you want to allow to create signed URLs for private content.
  * </p>
  */
 public class ActiveTrustedSigners {
@@ -27,7 +25,22 @@ public class ActiveTrustedSigners {
     /**
      * Each active trusted signer.
      */
-    private java.util.List<Signer> signers;
+    private Boolean enabled;
+
+    /**
+     * The number of unique trusted signers included in all cache behaviors.
+     * For example, if three cache behaviors all list the same three AWS
+     * accounts, the value of Quantity for ActiveTrustedSigners will be 3.
+     */
+    private Integer quantity;
+
+    /**
+     * A complex type that contains one Signer complex type for each unique
+     * trusted signer that is specified in the TrustedSigners complex type,
+     * including trusted signers in the default cache behavior and in all of
+     * the other cache behaviors.
+     */
+    private java.util.List<Signer> items;
 
     /**
      * Default constructor for a new ActiveTrustedSigners object.  Callers should use the
@@ -40,10 +53,13 @@ public class ActiveTrustedSigners {
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param signers Each active trusted signer.
+     * @param items A complex type that contains one Signer complex type for
+     * each unique trusted signer that is specified in the TrustedSigners
+     * complex type, including trusted signers in the default cache behavior
+     * and in all of the other cache behaviors.
      */
-    public ActiveTrustedSigners(java.util.List<Signer> signers) {
-        this.signers = signers;
+    public ActiveTrustedSigners(java.util.List<Signer> items) {
+        this.items = items;
     }
 
     
@@ -53,28 +69,17 @@ public class ActiveTrustedSigners {
      *
      * @return Each active trusted signer.
      */
-    public java.util.List<Signer> getSigners() {
-        
-        if (signers == null) {
-            signers = new java.util.ArrayList<Signer>();
-        }
-        return signers;
+    public Boolean isEnabled() {
+        return enabled;
     }
     
     /**
      * Each active trusted signer.
      *
-     * @param signers Each active trusted signer.
+     * @param enabled Each active trusted signer.
      */
-    public void setSigners(java.util.Collection<Signer> signers) {
-        if (signers == null) {
-            this.signers = null;
-            return;
-        }
-
-        java.util.List<Signer> signersCopy = new java.util.ArrayList<Signer>(signers.size());
-        signersCopy.addAll(signers);
-        this.signers = signersCopy;
+    public void setEnabled(Boolean enabled) {
+        this.enabled = enabled;
     }
     
     /**
@@ -82,36 +87,160 @@ public class ActiveTrustedSigners {
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param signers Each active trusted signer.
+     * @param enabled Each active trusted signer.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public ActiveTrustedSigners withSigners(Signer... signers) {
-        if (getSigners() == null) setSigners(new java.util.ArrayList<Signer>(signers.length));
-        for (Signer value : signers) {
-            getSigners().add(value);
+    public ActiveTrustedSigners withEnabled(Boolean enabled) {
+        this.enabled = enabled;
+        return this;
+    }
+    
+    
+    /**
+     * Each active trusted signer.
+     *
+     * @return Each active trusted signer.
+     */
+    public Boolean getEnabled() {
+        return enabled;
+    }
+    
+    /**
+     * The number of unique trusted signers included in all cache behaviors.
+     * For example, if three cache behaviors all list the same three AWS
+     * accounts, the value of Quantity for ActiveTrustedSigners will be 3.
+     *
+     * @return The number of unique trusted signers included in all cache behaviors.
+     *         For example, if three cache behaviors all list the same three AWS
+     *         accounts, the value of Quantity for ActiveTrustedSigners will be 3.
+     */
+    public Integer getQuantity() {
+        return quantity;
+    }
+    
+    /**
+     * The number of unique trusted signers included in all cache behaviors.
+     * For example, if three cache behaviors all list the same three AWS
+     * accounts, the value of Quantity for ActiveTrustedSigners will be 3.
+     *
+     * @param quantity The number of unique trusted signers included in all cache behaviors.
+     *         For example, if three cache behaviors all list the same three AWS
+     *         accounts, the value of Quantity for ActiveTrustedSigners will be 3.
+     */
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
+    }
+    
+    /**
+     * The number of unique trusted signers included in all cache behaviors.
+     * For example, if three cache behaviors all list the same three AWS
+     * accounts, the value of Quantity for ActiveTrustedSigners will be 3.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param quantity The number of unique trusted signers included in all cache behaviors.
+     *         For example, if three cache behaviors all list the same three AWS
+     *         accounts, the value of Quantity for ActiveTrustedSigners will be 3.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public ActiveTrustedSigners withQuantity(Integer quantity) {
+        this.quantity = quantity;
+        return this;
+    }
+    
+    
+    /**
+     * A complex type that contains one Signer complex type for each unique
+     * trusted signer that is specified in the TrustedSigners complex type,
+     * including trusted signers in the default cache behavior and in all of
+     * the other cache behaviors.
+     *
+     * @return A complex type that contains one Signer complex type for each unique
+     *         trusted signer that is specified in the TrustedSigners complex type,
+     *         including trusted signers in the default cache behavior and in all of
+     *         the other cache behaviors.
+     */
+    public java.util.List<Signer> getItems() {
+        
+        if (items == null) {
+            items = new java.util.ArrayList<Signer>();
+        }
+        return items;
+    }
+    
+    /**
+     * A complex type that contains one Signer complex type for each unique
+     * trusted signer that is specified in the TrustedSigners complex type,
+     * including trusted signers in the default cache behavior and in all of
+     * the other cache behaviors.
+     *
+     * @param items A complex type that contains one Signer complex type for each unique
+     *         trusted signer that is specified in the TrustedSigners complex type,
+     *         including trusted signers in the default cache behavior and in all of
+     *         the other cache behaviors.
+     */
+    public void setItems(java.util.Collection<Signer> items) {
+        if (items == null) {
+            this.items = null;
+            return;
+        }
+
+        java.util.List<Signer> itemsCopy = new java.util.ArrayList<Signer>(items.size());
+        itemsCopy.addAll(items);
+        this.items = itemsCopy;
+    }
+    
+    /**
+     * A complex type that contains one Signer complex type for each unique
+     * trusted signer that is specified in the TrustedSigners complex type,
+     * including trusted signers in the default cache behavior and in all of
+     * the other cache behaviors.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param items A complex type that contains one Signer complex type for each unique
+     *         trusted signer that is specified in the TrustedSigners complex type,
+     *         including trusted signers in the default cache behavior and in all of
+     *         the other cache behaviors.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public ActiveTrustedSigners withItems(Signer... items) {
+        if (getItems() == null) setItems(new java.util.ArrayList<Signer>(items.length));
+        for (Signer value : items) {
+            getItems().add(value);
         }
         return this;
     }
     
     /**
-     * Each active trusted signer.
+     * A complex type that contains one Signer complex type for each unique
+     * trusted signer that is specified in the TrustedSigners complex type,
+     * including trusted signers in the default cache behavior and in all of
+     * the other cache behaviors.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param signers Each active trusted signer.
+     * @param items A complex type that contains one Signer complex type for each unique
+     *         trusted signer that is specified in the TrustedSigners complex type,
+     *         including trusted signers in the default cache behavior and in all of
+     *         the other cache behaviors.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public ActiveTrustedSigners withSigners(java.util.Collection<Signer> signers) {
-        if (signers == null) {
-            this.signers = null;
+    public ActiveTrustedSigners withItems(java.util.Collection<Signer> items) {
+        if (items == null) {
+            this.items = null;
         } else {
-            java.util.List<Signer> signersCopy = new java.util.ArrayList<Signer>(signers.size());
-            signersCopy.addAll(signers);
-            this.signers = signersCopy;
+            java.util.List<Signer> itemsCopy = new java.util.ArrayList<Signer>(items.size());
+            itemsCopy.addAll(items);
+            this.items = itemsCopy;
         }
 
         return this;
@@ -129,7 +258,9 @@ public class ActiveTrustedSigners {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (signers != null) sb.append("Signers: " + signers + ", ");
+        if (enabled != null) sb.append("Enabled: " + enabled + ", ");
+        if (quantity != null) sb.append("Quantity: " + quantity + ", ");
+        if (items != null) sb.append("Items: " + items + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -139,7 +270,9 @@ public class ActiveTrustedSigners {
         final int prime = 31;
         int hashCode = 1;
         
-        hashCode = prime * hashCode + ((getSigners() == null) ? 0 : getSigners().hashCode()); 
+        hashCode = prime * hashCode + ((isEnabled() == null) ? 0 : isEnabled().hashCode()); 
+        hashCode = prime * hashCode + ((getQuantity() == null) ? 0 : getQuantity().hashCode()); 
+        hashCode = prime * hashCode + ((getItems() == null) ? 0 : getItems().hashCode()); 
         return hashCode;
     }
     
@@ -151,8 +284,12 @@ public class ActiveTrustedSigners {
         if (obj instanceof ActiveTrustedSigners == false) return false;
         ActiveTrustedSigners other = (ActiveTrustedSigners)obj;
         
-        if (other.getSigners() == null ^ this.getSigners() == null) return false;
-        if (other.getSigners() != null && other.getSigners().equals(this.getSigners()) == false) return false; 
+        if (other.isEnabled() == null ^ this.isEnabled() == null) return false;
+        if (other.isEnabled() != null && other.isEnabled().equals(this.isEnabled()) == false) return false; 
+        if (other.getQuantity() == null ^ this.getQuantity() == null) return false;
+        if (other.getQuantity() != null && other.getQuantity().equals(this.getQuantity()) == false) return false; 
+        if (other.getItems() == null ^ this.getItems() == null) return false;
+        if (other.getItems() != null && other.getItems().equals(this.getItems()) == false) return false; 
         return true;
     }
     

@@ -33,6 +33,9 @@ public class ResetInstanceAttributeRequest extends AmazonWebServiceRequest {
     /**
      * The name of the attribute being reset. <p> Available attribute names:
      * <code>kernel</code>, <code>ramdisk</code>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>instanceType, kernel, ramdisk, userData, disableApiTermination, instanceInitiatedShutdownBehavior, rootDeviceName, blockDeviceMapping, productCodes, sourceDestCheck, groupSet
      */
     private String attribute;
 
@@ -58,6 +61,21 @@ public class ResetInstanceAttributeRequest extends AmazonWebServiceRequest {
     }
 
     
+    
+    /**
+     * Constructs a new ResetInstanceAttributeRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param instanceId The ID of the Amazon EC2 instance whose attribute is
+     * being reset.
+     * @param attribute The name of the attribute being reset. <p> Available
+     * attribute names: <code>kernel</code>, <code>ramdisk</code>
+     */
+    public ResetInstanceAttributeRequest(String instanceId, InstanceAttributeName attribute) {
+        this.instanceId = instanceId;
+        this.attribute = attribute.toString();
+    }
     
     /**
      * The ID of the Amazon EC2 instance whose attribute is being reset.
@@ -96,9 +114,14 @@ public class ResetInstanceAttributeRequest extends AmazonWebServiceRequest {
     /**
      * The name of the attribute being reset. <p> Available attribute names:
      * <code>kernel</code>, <code>ramdisk</code>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>instanceType, kernel, ramdisk, userData, disableApiTermination, instanceInitiatedShutdownBehavior, rootDeviceName, blockDeviceMapping, productCodes, sourceDestCheck, groupSet
      *
      * @return The name of the attribute being reset. <p> Available attribute names:
      *         <code>kernel</code>, <code>ramdisk</code>
+     *
+     * @see InstanceAttributeName
      */
     public String getAttribute() {
         return attribute;
@@ -107,9 +130,14 @@ public class ResetInstanceAttributeRequest extends AmazonWebServiceRequest {
     /**
      * The name of the attribute being reset. <p> Available attribute names:
      * <code>kernel</code>, <code>ramdisk</code>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>instanceType, kernel, ramdisk, userData, disableApiTermination, instanceInitiatedShutdownBehavior, rootDeviceName, blockDeviceMapping, productCodes, sourceDestCheck, groupSet
      *
      * @param attribute The name of the attribute being reset. <p> Available attribute names:
      *         <code>kernel</code>, <code>ramdisk</code>
+     *
+     * @see InstanceAttributeName
      */
     public void setAttribute(String attribute) {
         this.attribute = attribute;
@@ -120,18 +148,61 @@ public class ResetInstanceAttributeRequest extends AmazonWebServiceRequest {
      * <code>kernel</code>, <code>ramdisk</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>instanceType, kernel, ramdisk, userData, disableApiTermination, instanceInitiatedShutdownBehavior, rootDeviceName, blockDeviceMapping, productCodes, sourceDestCheck, groupSet
      *
      * @param attribute The name of the attribute being reset. <p> Available attribute names:
      *         <code>kernel</code>, <code>ramdisk</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
+     *
+     * @see InstanceAttributeName
      */
     public ResetInstanceAttributeRequest withAttribute(String attribute) {
         this.attribute = attribute;
         return this;
     }
     
+    
+    /**
+     * The name of the attribute being reset. <p> Available attribute names:
+     * <code>kernel</code>, <code>ramdisk</code>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>instanceType, kernel, ramdisk, userData, disableApiTermination, instanceInitiatedShutdownBehavior, rootDeviceName, blockDeviceMapping, productCodes, sourceDestCheck, groupSet
+     *
+     * @param attribute The name of the attribute being reset. <p> Available attribute names:
+     *         <code>kernel</code>, <code>ramdisk</code>
+     *
+     * @see InstanceAttributeName
+     */
+    public void setAttribute(InstanceAttributeName attribute) {
+        this.attribute = attribute.toString();
+    }
+    
+    /**
+     * The name of the attribute being reset. <p> Available attribute names:
+     * <code>kernel</code>, <code>ramdisk</code>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>instanceType, kernel, ramdisk, userData, disableApiTermination, instanceInitiatedShutdownBehavior, rootDeviceName, blockDeviceMapping, productCodes, sourceDestCheck, groupSet
+     *
+     * @param attribute The name of the attribute being reset. <p> Available attribute names:
+     *         <code>kernel</code>, <code>ramdisk</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see InstanceAttributeName
+     */
+    public ResetInstanceAttributeRequest withAttribute(InstanceAttributeName attribute) {
+        this.attribute = attribute.toString();
+        return this;
+    }
     
     /**
      * Returns a string representation of this object; useful for testing and

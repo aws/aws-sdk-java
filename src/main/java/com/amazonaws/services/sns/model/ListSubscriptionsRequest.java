@@ -18,11 +18,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#listSubscriptions(ListSubscriptionsRequest) ListSubscriptions operation}.
  * <p>
- * The ListSubscriptions action returns a list of the requester's
- * subscriptions. Each call returns a limited list of subscriptions, up
- * to 100. If there are more subscriptions, a NextToken is also returned.
- * Use the NextToken parameter in a new ListSubscriptions call to get
- * further results.
+ * The ListSubscriptions action returns a list of the requester's subscriptions. Each call returns a limited list of subscriptions, up to 100. If there
+ * are more subscriptions, a NextToken is also returned. Use the NextToken parameter in a new ListSubscriptions call to get further results.
  * </p>
  *
  * @see com.amazonaws.services.sns.AmazonSNS#listSubscriptions(ListSubscriptionsRequest)

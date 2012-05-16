@@ -16,8 +16,7 @@ package com.amazonaws.services.cloudfront.model;
 
 /**
  * <p>
- * A summary of the information for an Amazon CloudFront streaming
- * distribution.
+ * A summary of the information for an Amazon CloudFront streaming distribution.
  * </p>
  */
 public class StreamingDistributionSummary {
@@ -46,14 +45,34 @@ public class StreamingDistributionSummary {
     private String domainName;
 
     /**
-     * Your S3 origin bucket.
+     * A complex type that contains information about the Amazon S3 bucket
+     * from which you want CloudFront to get your media files for
+     * distribution.
      */
     private S3Origin s3Origin;
 
     /**
-     * The CNAMEs associated with this distribution.
+     * A complex type that contains information about CNAMEs (alternate
+     * domain names), if any, for this streaming distribution.
      */
-    private java.util.List<String> cNAME;
+    private Aliases aliases;
+
+    /**
+     * A complex type that specifies the AWS accounts, if any, that you want
+     * to allow to create signed URLs for private content. If you want to
+     * require signed URLs in requests for objects in the target origin that
+     * match the PathPattern for this cache behavior, specify true for
+     * Enabled, and specify the applicable values for Quantity and Items. For
+     * more information, go to Using a Signed URL to Serve Private Content in
+     * the Amazon CloudFront Developer Guide. If you don't want to require
+     * signed URLs in requests for objects that match PathPattern, specify
+     * false for Enabled and 0 for Quantity. Omit Items. To add, change, or
+     * remove one or more trusted signers, change Enabled to true (if it's
+     * currently false), change Quantity as applicable, and specify all of
+     * the trusted signers that you want to include in the updated
+     * distribution.
+     */
+    private TrustedSigners trustedSigners;
 
     /**
      * The comment originally specified when this distribution was created.
@@ -65,11 +84,6 @@ public class StreamingDistributionSummary {
      * content.
      */
     private Boolean enabled;
-
-    /**
-     * The trusted signers of the URL.
-     */
-    private TrustedSigners trustedSigners;
 
     /**
      * Default constructor for a new StreamingDistributionSummary object.  Callers should use the
@@ -232,29 +246,41 @@ public class StreamingDistributionSummary {
     
     
     /**
-     * Your S3 origin bucket.
+     * A complex type that contains information about the Amazon S3 bucket
+     * from which you want CloudFront to get your media files for
+     * distribution.
      *
-     * @return Your S3 origin bucket.
+     * @return A complex type that contains information about the Amazon S3 bucket
+     *         from which you want CloudFront to get your media files for
+     *         distribution.
      */
     public S3Origin getS3Origin() {
         return s3Origin;
     }
     
     /**
-     * Your S3 origin bucket.
+     * A complex type that contains information about the Amazon S3 bucket
+     * from which you want CloudFront to get your media files for
+     * distribution.
      *
-     * @param s3Origin Your S3 origin bucket.
+     * @param s3Origin A complex type that contains information about the Amazon S3 bucket
+     *         from which you want CloudFront to get your media files for
+     *         distribution.
      */
     public void setS3Origin(S3Origin s3Origin) {
         this.s3Origin = s3Origin;
     }
     
     /**
-     * Your S3 origin bucket.
+     * A complex type that contains information about the Amazon S3 bucket
+     * from which you want CloudFront to get your media files for
+     * distribution.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param s3Origin Your S3 origin bucket.
+     * @param s3Origin A complex type that contains information about the Amazon S3 bucket
+     *         from which you want CloudFront to get your media files for
+     *         distribution.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -266,73 +292,150 @@ public class StreamingDistributionSummary {
     
     
     /**
-     * The CNAMEs associated with this distribution.
+     * A complex type that contains information about CNAMEs (alternate
+     * domain names), if any, for this streaming distribution.
      *
-     * @return The CNAMEs associated with this distribution.
+     * @return A complex type that contains information about CNAMEs (alternate
+     *         domain names), if any, for this streaming distribution.
      */
-    public java.util.List<String> getCNAME() {
-        
-        if (cNAME == null) {
-            cNAME = new java.util.ArrayList<String>();
-        }
-        return cNAME;
+    public Aliases getAliases() {
+        return aliases;
     }
     
     /**
-     * The CNAMEs associated with this distribution.
+     * A complex type that contains information about CNAMEs (alternate
+     * domain names), if any, for this streaming distribution.
      *
-     * @param cNAME The CNAMEs associated with this distribution.
+     * @param aliases A complex type that contains information about CNAMEs (alternate
+     *         domain names), if any, for this streaming distribution.
      */
-    public void setCNAME(java.util.Collection<String> cNAME) {
-        if (cNAME == null) {
-            this.cNAME = null;
-            return;
-        }
-
-        java.util.List<String> cNAMECopy = new java.util.ArrayList<String>(cNAME.size());
-        cNAMECopy.addAll(cNAME);
-        this.cNAME = cNAMECopy;
+    public void setAliases(Aliases aliases) {
+        this.aliases = aliases;
     }
     
     /**
-     * The CNAMEs associated with this distribution.
+     * A complex type that contains information about CNAMEs (alternate
+     * domain names), if any, for this streaming distribution.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cNAME The CNAMEs associated with this distribution.
+     * @param aliases A complex type that contains information about CNAMEs (alternate
+     *         domain names), if any, for this streaming distribution.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public StreamingDistributionSummary withCNAME(String... cNAME) {
-        if (getCNAME() == null) setCNAME(new java.util.ArrayList<String>(cNAME.length));
-        for (String value : cNAME) {
-            getCNAME().add(value);
-        }
+    public StreamingDistributionSummary withAliases(Aliases aliases) {
+        this.aliases = aliases;
         return this;
     }
     
+    
     /**
-     * The CNAMEs associated with this distribution.
+     * A complex type that specifies the AWS accounts, if any, that you want
+     * to allow to create signed URLs for private content. If you want to
+     * require signed URLs in requests for objects in the target origin that
+     * match the PathPattern for this cache behavior, specify true for
+     * Enabled, and specify the applicable values for Quantity and Items. For
+     * more information, go to Using a Signed URL to Serve Private Content in
+     * the Amazon CloudFront Developer Guide. If you don't want to require
+     * signed URLs in requests for objects that match PathPattern, specify
+     * false for Enabled and 0 for Quantity. Omit Items. To add, change, or
+     * remove one or more trusted signers, change Enabled to true (if it's
+     * currently false), change Quantity as applicable, and specify all of
+     * the trusted signers that you want to include in the updated
+     * distribution.
+     *
+     * @return A complex type that specifies the AWS accounts, if any, that you want
+     *         to allow to create signed URLs for private content. If you want to
+     *         require signed URLs in requests for objects in the target origin that
+     *         match the PathPattern for this cache behavior, specify true for
+     *         Enabled, and specify the applicable values for Quantity and Items. For
+     *         more information, go to Using a Signed URL to Serve Private Content in
+     *         the Amazon CloudFront Developer Guide. If you don't want to require
+     *         signed URLs in requests for objects that match PathPattern, specify
+     *         false for Enabled and 0 for Quantity. Omit Items. To add, change, or
+     *         remove one or more trusted signers, change Enabled to true (if it's
+     *         currently false), change Quantity as applicable, and specify all of
+     *         the trusted signers that you want to include in the updated
+     *         distribution.
+     */
+    public TrustedSigners getTrustedSigners() {
+        return trustedSigners;
+    }
+    
+    /**
+     * A complex type that specifies the AWS accounts, if any, that you want
+     * to allow to create signed URLs for private content. If you want to
+     * require signed URLs in requests for objects in the target origin that
+     * match the PathPattern for this cache behavior, specify true for
+     * Enabled, and specify the applicable values for Quantity and Items. For
+     * more information, go to Using a Signed URL to Serve Private Content in
+     * the Amazon CloudFront Developer Guide. If you don't want to require
+     * signed URLs in requests for objects that match PathPattern, specify
+     * false for Enabled and 0 for Quantity. Omit Items. To add, change, or
+     * remove one or more trusted signers, change Enabled to true (if it's
+     * currently false), change Quantity as applicable, and specify all of
+     * the trusted signers that you want to include in the updated
+     * distribution.
+     *
+     * @param trustedSigners A complex type that specifies the AWS accounts, if any, that you want
+     *         to allow to create signed URLs for private content. If you want to
+     *         require signed URLs in requests for objects in the target origin that
+     *         match the PathPattern for this cache behavior, specify true for
+     *         Enabled, and specify the applicable values for Quantity and Items. For
+     *         more information, go to Using a Signed URL to Serve Private Content in
+     *         the Amazon CloudFront Developer Guide. If you don't want to require
+     *         signed URLs in requests for objects that match PathPattern, specify
+     *         false for Enabled and 0 for Quantity. Omit Items. To add, change, or
+     *         remove one or more trusted signers, change Enabled to true (if it's
+     *         currently false), change Quantity as applicable, and specify all of
+     *         the trusted signers that you want to include in the updated
+     *         distribution.
+     */
+    public void setTrustedSigners(TrustedSigners trustedSigners) {
+        this.trustedSigners = trustedSigners;
+    }
+    
+    /**
+     * A complex type that specifies the AWS accounts, if any, that you want
+     * to allow to create signed URLs for private content. If you want to
+     * require signed URLs in requests for objects in the target origin that
+     * match the PathPattern for this cache behavior, specify true for
+     * Enabled, and specify the applicable values for Quantity and Items. For
+     * more information, go to Using a Signed URL to Serve Private Content in
+     * the Amazon CloudFront Developer Guide. If you don't want to require
+     * signed URLs in requests for objects that match PathPattern, specify
+     * false for Enabled and 0 for Quantity. Omit Items. To add, change, or
+     * remove one or more trusted signers, change Enabled to true (if it's
+     * currently false), change Quantity as applicable, and specify all of
+     * the trusted signers that you want to include in the updated
+     * distribution.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param cNAME The CNAMEs associated with this distribution.
+     * @param trustedSigners A complex type that specifies the AWS accounts, if any, that you want
+     *         to allow to create signed URLs for private content. If you want to
+     *         require signed URLs in requests for objects in the target origin that
+     *         match the PathPattern for this cache behavior, specify true for
+     *         Enabled, and specify the applicable values for Quantity and Items. For
+     *         more information, go to Using a Signed URL to Serve Private Content in
+     *         the Amazon CloudFront Developer Guide. If you don't want to require
+     *         signed URLs in requests for objects that match PathPattern, specify
+     *         false for Enabled and 0 for Quantity. Omit Items. To add, change, or
+     *         remove one or more trusted signers, change Enabled to true (if it's
+     *         currently false), change Quantity as applicable, and specify all of
+     *         the trusted signers that you want to include in the updated
+     *         distribution.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public StreamingDistributionSummary withCNAME(java.util.Collection<String> cNAME) {
-        if (cNAME == null) {
-            this.cNAME = null;
-        } else {
-            java.util.List<String> cNAMECopy = new java.util.ArrayList<String>(cNAME.size());
-            cNAMECopy.addAll(cNAME);
-            this.cNAME = cNAMECopy;
-        }
-
+    public StreamingDistributionSummary withTrustedSigners(TrustedSigners trustedSigners) {
+        this.trustedSigners = trustedSigners;
         return this;
     }
+    
     
     /**
      * The comment originally specified when this distribution was created.
@@ -420,40 +523,6 @@ public class StreamingDistributionSummary {
     }
     
     /**
-     * The trusted signers of the URL.
-     *
-     * @return The trusted signers of the URL.
-     */
-    public TrustedSigners getTrustedSigners() {
-        return trustedSigners;
-    }
-    
-    /**
-     * The trusted signers of the URL.
-     *
-     * @param trustedSigners The trusted signers of the URL.
-     */
-    public void setTrustedSigners(TrustedSigners trustedSigners) {
-        this.trustedSigners = trustedSigners;
-    }
-    
-    /**
-     * The trusted signers of the URL.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param trustedSigners The trusted signers of the URL.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     */
-    public StreamingDistributionSummary withTrustedSigners(TrustedSigners trustedSigners) {
-        this.trustedSigners = trustedSigners;
-        return this;
-    }
-    
-    
-    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -470,10 +539,10 @@ public class StreamingDistributionSummary {
         if (lastModifiedTime != null) sb.append("LastModifiedTime: " + lastModifiedTime + ", ");
         if (domainName != null) sb.append("DomainName: " + domainName + ", ");
         if (s3Origin != null) sb.append("S3Origin: " + s3Origin + ", ");
-        if (cNAME != null) sb.append("CNAME: " + cNAME + ", ");
+        if (aliases != null) sb.append("Aliases: " + aliases + ", ");
+        if (trustedSigners != null) sb.append("TrustedSigners: " + trustedSigners + ", ");
         if (comment != null) sb.append("Comment: " + comment + ", ");
         if (enabled != null) sb.append("Enabled: " + enabled + ", ");
-        if (trustedSigners != null) sb.append("TrustedSigners: " + trustedSigners + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -488,10 +557,10 @@ public class StreamingDistributionSummary {
         hashCode = prime * hashCode + ((getLastModifiedTime() == null) ? 0 : getLastModifiedTime().hashCode()); 
         hashCode = prime * hashCode + ((getDomainName() == null) ? 0 : getDomainName().hashCode()); 
         hashCode = prime * hashCode + ((getS3Origin() == null) ? 0 : getS3Origin().hashCode()); 
-        hashCode = prime * hashCode + ((getCNAME() == null) ? 0 : getCNAME().hashCode()); 
+        hashCode = prime * hashCode + ((getAliases() == null) ? 0 : getAliases().hashCode()); 
+        hashCode = prime * hashCode + ((getTrustedSigners() == null) ? 0 : getTrustedSigners().hashCode()); 
         hashCode = prime * hashCode + ((getComment() == null) ? 0 : getComment().hashCode()); 
         hashCode = prime * hashCode + ((isEnabled() == null) ? 0 : isEnabled().hashCode()); 
-        hashCode = prime * hashCode + ((getTrustedSigners() == null) ? 0 : getTrustedSigners().hashCode()); 
         return hashCode;
     }
     
@@ -513,14 +582,14 @@ public class StreamingDistributionSummary {
         if (other.getDomainName() != null && other.getDomainName().equals(this.getDomainName()) == false) return false; 
         if (other.getS3Origin() == null ^ this.getS3Origin() == null) return false;
         if (other.getS3Origin() != null && other.getS3Origin().equals(this.getS3Origin()) == false) return false; 
-        if (other.getCNAME() == null ^ this.getCNAME() == null) return false;
-        if (other.getCNAME() != null && other.getCNAME().equals(this.getCNAME()) == false) return false; 
+        if (other.getAliases() == null ^ this.getAliases() == null) return false;
+        if (other.getAliases() != null && other.getAliases().equals(this.getAliases()) == false) return false; 
+        if (other.getTrustedSigners() == null ^ this.getTrustedSigners() == null) return false;
+        if (other.getTrustedSigners() != null && other.getTrustedSigners().equals(this.getTrustedSigners()) == false) return false; 
         if (other.getComment() == null ^ this.getComment() == null) return false;
         if (other.getComment() != null && other.getComment().equals(this.getComment()) == false) return false; 
         if (other.isEnabled() == null ^ this.isEnabled() == null) return false;
         if (other.isEnabled() != null && other.isEnabled().equals(this.isEnabled()) == false) return false; 
-        if (other.getTrustedSigners() == null ^ this.getTrustedSigners() == null) return false;
-        if (other.getTrustedSigners() != null && other.getTrustedSigners().equals(this.getTrustedSigners()) == false) return false; 
         return true;
     }
     

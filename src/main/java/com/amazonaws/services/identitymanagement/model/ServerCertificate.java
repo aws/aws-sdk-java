@@ -16,12 +16,10 @@ package com.amazonaws.services.identitymanagement.model;
 
 /**
  * <p>
- * The ServerCertificate data type contains information about a server
- * certificate.
+ * The ServerCertificate data type contains information about a server certificate.
  * </p>
  * <p>
- * This data type is used as a response element in the action
- * GetServerCertificate.
+ * This data type is used as a response element in the action GetServerCertificate.
  * </p>
  */
 public class ServerCertificate {

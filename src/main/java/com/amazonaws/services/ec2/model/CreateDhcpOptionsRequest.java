@@ -18,13 +18,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#createDhcpOptions(CreateDhcpOptionsRequest) CreateDhcpOptions operation}.
  * <p>
- * Creates a set of DHCP options that you can then associate with one or
- * more VPCs, causing all existing and new instances that you launch in
- * those VPCs to use the set of DHCP options. The following table lists
- * the individual DHCP options you can specify. For more information
- * about the options, go to <a
- * href="http://www.ietf.org/rfc/rfc2132.txt">
- * http://www.ietf.org/rfc/rfc2132.txt </a>
+ * Creates a set of DHCP options that you can then associate with one or more VPCs, causing all existing and new instances that you launch in those VPCs
+ * to use the set of DHCP options. The following table lists the individual DHCP options you can specify. For more information about the options, go to
+ * <a href="http://www.ietf.org/rfc/rfc2132.txt"> http://www.ietf.org/rfc/rfc2132.txt </a>
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createDhcpOptions(CreateDhcpOptionsRequest)

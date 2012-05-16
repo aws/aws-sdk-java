@@ -18,14 +18,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#getConsoleOutput(GetConsoleOutputRequest) GetConsoleOutput operation}.
  * <p>
- * The GetConsoleOutput operation retrieves console output for the
- * specified instance.
+ * The GetConsoleOutput operation retrieves console output for the specified instance.
  * </p>
  * <p>
- * Instance console output is buffered and posted shortly after instance
- * boot, reboot, and termination. Amazon EC2 preserves the most recent 64
- * KB output which will be available for at least one hour after the most
- * recent post.
+ * Instance console output is buffered and posted shortly after instance boot, reboot, and termination. Amazon EC2 preserves the most recent 64 KB
+ * output which will be available for at least one hour after the most recent post.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#getConsoleOutput(GetConsoleOutputRequest)

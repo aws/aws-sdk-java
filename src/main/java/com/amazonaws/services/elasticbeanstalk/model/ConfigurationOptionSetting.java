@@ -16,8 +16,7 @@ package com.amazonaws.services.elasticbeanstalk.model;
 
 /**
  * <p>
- * A specification identifying an individual configuration option along
- * with its current value.
+ * A specification identifying an individual configuration option along with its current value.
  * </p>
  */
 public class ConfigurationOptionSetting {

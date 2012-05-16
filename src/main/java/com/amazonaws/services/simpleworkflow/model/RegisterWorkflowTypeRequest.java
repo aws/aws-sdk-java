@@ -18,14 +18,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#registerWorkflowType(RegisterWorkflowTypeRequest) RegisterWorkflowType operation}.
  * <p>
- * Registers a new <i>workflow type</i> and its configuration settings
- * in the specified domain.
+ * Registers a new <i>workflow type</i> and its configuration settings in the specified domain.
  * </p>
  * <p>
- * <b>IMPORTANT:</b> If the type already exists, then a TypeAlreadyExists
- * fault is returned. You cannot change the configuration settings of a
- * workflow type once it is registered and it must be registered as a new
- * version.
+ * <b>IMPORTANT:</b> If the type already exists, then a TypeAlreadyExists fault is returned. You cannot change the configuration settings of a workflow
+ * type once it is registered and it must be registered as a new version.
  * </p>
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#registerWorkflowType(RegisterWorkflowTypeRequest)

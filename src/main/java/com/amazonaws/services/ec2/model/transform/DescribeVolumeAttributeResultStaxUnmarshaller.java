@@ -54,6 +54,10 @@ public class DescribeVolumeAttributeResultStaxUnmarshaller implements Unmarshall
                     describeVolumeAttributeResult.setAutoEnableIO(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("productCodes/item", targetDepth)) {
+                    describeVolumeAttributeResult.getProductCodes().add(ProductCodeStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return describeVolumeAttributeResult;

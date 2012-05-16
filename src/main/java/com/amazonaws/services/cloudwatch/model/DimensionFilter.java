@@ -16,8 +16,7 @@ package com.amazonaws.services.cloudwatch.model;
 
 /**
  * <p>
- * The <code>DimensionFilter</code> data type is used to filter
- * ListMetrics results.
+ * The <code>DimensionFilter</code> data type is used to filter ListMetrics results.
  * </p>
  */
 public class DimensionFilter {

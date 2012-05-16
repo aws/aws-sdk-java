@@ -37,6 +37,9 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest {
      * <code>disableApiTermination</code>,
      * <code>instanceInitiatedShutdownBehavior</code>,
      * <code>rootDevice</code>, <code>blockDeviceMapping</code>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>instanceType, kernel, ramdisk, userData, disableApiTermination, instanceInitiatedShutdownBehavior, rootDeviceName, blockDeviceMapping, productCodes, sourceDestCheck, groupSet
      */
     private String attribute;
 
@@ -121,6 +124,25 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest {
     
     
     /**
+     * Constructs a new ModifyInstanceAttributeRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param instanceId The ID of the instance whose attribute is being
+     * modified.
+     * @param attribute The name of the attribute being modified. <p>
+     * Available attribute names: <code>instanceType</code>,
+     * <code>kernel</code>, <code>ramdisk</code>, <code>userData</code>,
+     * <code>disableApiTermination</code>,
+     * <code>instanceInitiatedShutdownBehavior</code>,
+     * <code>rootDevice</code>, <code>blockDeviceMapping</code>
+     */
+    public ModifyInstanceAttributeRequest(String instanceId, InstanceAttributeName attribute) {
+        this.instanceId = instanceId;
+        this.attribute = attribute.toString();
+    }
+    
+    /**
      * The ID of the instance whose attribute is being modified.
      *
      * @return The ID of the instance whose attribute is being modified.
@@ -161,6 +183,9 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest {
      * <code>disableApiTermination</code>,
      * <code>instanceInitiatedShutdownBehavior</code>,
      * <code>rootDevice</code>, <code>blockDeviceMapping</code>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>instanceType, kernel, ramdisk, userData, disableApiTermination, instanceInitiatedShutdownBehavior, rootDeviceName, blockDeviceMapping, productCodes, sourceDestCheck, groupSet
      *
      * @return The name of the attribute being modified. <p> Available attribute
      *         names: <code>instanceType</code>, <code>kernel</code>,
@@ -168,6 +193,8 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest {
      *         <code>disableApiTermination</code>,
      *         <code>instanceInitiatedShutdownBehavior</code>,
      *         <code>rootDevice</code>, <code>blockDeviceMapping</code>
+     *
+     * @see InstanceAttributeName
      */
     public String getAttribute() {
         return attribute;
@@ -180,6 +207,9 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest {
      * <code>disableApiTermination</code>,
      * <code>instanceInitiatedShutdownBehavior</code>,
      * <code>rootDevice</code>, <code>blockDeviceMapping</code>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>instanceType, kernel, ramdisk, userData, disableApiTermination, instanceInitiatedShutdownBehavior, rootDeviceName, blockDeviceMapping, productCodes, sourceDestCheck, groupSet
      *
      * @param attribute The name of the attribute being modified. <p> Available attribute
      *         names: <code>instanceType</code>, <code>kernel</code>,
@@ -187,6 +217,8 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest {
      *         <code>disableApiTermination</code>,
      *         <code>instanceInitiatedShutdownBehavior</code>,
      *         <code>rootDevice</code>, <code>blockDeviceMapping</code>
+     *
+     * @see InstanceAttributeName
      */
     public void setAttribute(String attribute) {
         this.attribute = attribute;
@@ -201,6 +233,9 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest {
      * <code>rootDevice</code>, <code>blockDeviceMapping</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>instanceType, kernel, ramdisk, userData, disableApiTermination, instanceInitiatedShutdownBehavior, rootDeviceName, blockDeviceMapping, productCodes, sourceDestCheck, groupSet
      *
      * @param attribute The name of the attribute being modified. <p> Available attribute
      *         names: <code>instanceType</code>, <code>kernel</code>,
@@ -211,12 +246,68 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest {
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
+     *
+     * @see InstanceAttributeName
      */
     public ModifyInstanceAttributeRequest withAttribute(String attribute) {
         this.attribute = attribute;
         return this;
     }
     
+    
+    /**
+     * The name of the attribute being modified. <p> Available attribute
+     * names: <code>instanceType</code>, <code>kernel</code>,
+     * <code>ramdisk</code>, <code>userData</code>,
+     * <code>disableApiTermination</code>,
+     * <code>instanceInitiatedShutdownBehavior</code>,
+     * <code>rootDevice</code>, <code>blockDeviceMapping</code>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>instanceType, kernel, ramdisk, userData, disableApiTermination, instanceInitiatedShutdownBehavior, rootDeviceName, blockDeviceMapping, productCodes, sourceDestCheck, groupSet
+     *
+     * @param attribute The name of the attribute being modified. <p> Available attribute
+     *         names: <code>instanceType</code>, <code>kernel</code>,
+     *         <code>ramdisk</code>, <code>userData</code>,
+     *         <code>disableApiTermination</code>,
+     *         <code>instanceInitiatedShutdownBehavior</code>,
+     *         <code>rootDevice</code>, <code>blockDeviceMapping</code>
+     *
+     * @see InstanceAttributeName
+     */
+    public void setAttribute(InstanceAttributeName attribute) {
+        this.attribute = attribute.toString();
+    }
+    
+    /**
+     * The name of the attribute being modified. <p> Available attribute
+     * names: <code>instanceType</code>, <code>kernel</code>,
+     * <code>ramdisk</code>, <code>userData</code>,
+     * <code>disableApiTermination</code>,
+     * <code>instanceInitiatedShutdownBehavior</code>,
+     * <code>rootDevice</code>, <code>blockDeviceMapping</code>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>instanceType, kernel, ramdisk, userData, disableApiTermination, instanceInitiatedShutdownBehavior, rootDeviceName, blockDeviceMapping, productCodes, sourceDestCheck, groupSet
+     *
+     * @param attribute The name of the attribute being modified. <p> Available attribute
+     *         names: <code>instanceType</code>, <code>kernel</code>,
+     *         <code>ramdisk</code>, <code>userData</code>,
+     *         <code>disableApiTermination</code>,
+     *         <code>instanceInitiatedShutdownBehavior</code>,
+     *         <code>rootDevice</code>, <code>blockDeviceMapping</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see InstanceAttributeName
+     */
+    public ModifyInstanceAttributeRequest withAttribute(InstanceAttributeName attribute) {
+        this.attribute = attribute.toString();
+        return this;
+    }
     
     /**
      * The new value of the instance attribute being modified. <p> Only valid

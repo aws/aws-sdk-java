@@ -21,15 +21,12 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Cancels one or more Spot Instance requests.
  * </p>
  * <p>
- * Spot Instances are instances that Amazon EC2 starts on your behalf
- * when the maximum price that you specify exceeds the current Spot
- * Price. Amazon EC2 periodically sets the Spot Price based on available
- * Spot Instance capacity and current spot instance requests.
+ * Spot Instances are instances that Amazon EC2 starts on your behalf when the maximum price that you specify exceeds the current Spot Price. Amazon EC2
+ * periodically sets the Spot Price based on available Spot Instance capacity and current spot instance requests.
  * </p>
  * <p>
- * For conceptual information about Spot Instances, refer to the Amazon
- * Elastic Compute Cloud Developer Guide or Amazon Elastic Compute Cloud
- * User Guide .
+ * For conceptual information about Spot Instances, refer to the Amazon Elastic Compute Cloud Developer Guide or Amazon Elastic Compute Cloud User Guide
+ * .
  * 
  * </p>
  *

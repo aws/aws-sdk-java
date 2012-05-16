@@ -16,10 +16,8 @@ package com.amazonaws.services.cloudwatch.model;
 
 /**
  * <p>
- * The <code>AlarmHistoryItem</code> data type contains descriptive
- * information about the history of a specific alarm. If you call
- * DescribeAlarmHistory, Amazon CloudWatch returns this data type as part
- * of the DescribeAlarmHistoryResult data type.
+ * The <code>AlarmHistoryItem</code> data type contains descriptive information about the history of a specific alarm. If you call DescribeAlarmHistory,
+ * Amazon CloudWatch returns this data type as part of the DescribeAlarmHistoryResult data type.
  * </p>
  */
 public class AlarmHistoryItem {

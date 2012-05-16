@@ -18,20 +18,15 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#signalWorkflowExecution(SignalWorkflowExecutionRequest) SignalWorkflowExecution operation}.
  * <p>
- * Records a <code>WorkflowExecutionSignaled</code> event in the
- * workflow execution history and creates a decision task for the
- * workflow execution identified by the given domain, workflowId and
- * runId. The event is recorded with the specified user defined
- * signalName and input (if provided).
+ * Records a <code>WorkflowExecutionSignaled</code> event in the workflow execution history and creates a decision task for the workflow execution
+ * identified by the given domain, workflowId and runId. The event is recorded with the specified user defined signalName and input (if provided).
  * </p>
  * <p>
- * <b>NOTE:</b> If a runId is not specified, then the
- * WorkflowExecutionSignaled event is recorded in the history of the
- * current open workflow with the matching workflowId in the domain.
+ * <b>NOTE:</b> If a runId is not specified, then the WorkflowExecutionSignaled event is recorded in the history of the current open workflow with the
+ * matching workflowId in the domain.
  * </p>
  * <p>
- * <b>NOTE:</b> If the specified workflow execution is not open, this
- * method fails with UnknownResource.
+ * <b>NOTE:</b> If the specified workflow execution is not open, this method fails with UnknownResource.
  * </p>
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#signalWorkflowExecution(SignalWorkflowExecutionRequest)

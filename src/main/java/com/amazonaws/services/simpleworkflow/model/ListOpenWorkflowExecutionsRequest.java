@@ -18,14 +18,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#listOpenWorkflowExecutions(ListOpenWorkflowExecutionsRequest) ListOpenWorkflowExecutions operation}.
  * <p>
- * Returns a list of open workflow executions in the specified domain
- * that meet the filtering criteria. The results may be split into
- * multiple pages. To retrieve subsequent pages, make the call again
- * using the nextPageToken returned by the initial call.
+ * Returns a list of open workflow executions in the specified domain that meet the filtering criteria. The results may be split into multiple pages. To
+ * retrieve subsequent pages, make the call again using the nextPageToken returned by the initial call.
  * </p>
  * <p>
- * <b>NOTE:</b> This operation is eventually consistent. The results are
- * best effort and may not exactly reflect recent updates and changes.
+ * <b>NOTE:</b> This operation is eventually consistent. The results are best effort and may not exactly reflect recent updates and changes.
  * </p>
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#listOpenWorkflowExecutions(ListOpenWorkflowExecutionsRequest)

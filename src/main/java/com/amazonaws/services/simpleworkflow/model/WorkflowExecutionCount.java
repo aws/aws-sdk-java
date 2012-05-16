@@ -16,8 +16,7 @@ package com.amazonaws.services.simpleworkflow.model;
 
 /**
  * <p>
- * Contains the count of workflow executions returned from
- * CountOpenWorkflowExecutions or CountClosedWorkflowExecutions
+ * Contains the count of workflow executions returned from CountOpenWorkflowExecutions or CountClosedWorkflowExecutions
  * </p>
  */
 public class WorkflowExecutionCount {

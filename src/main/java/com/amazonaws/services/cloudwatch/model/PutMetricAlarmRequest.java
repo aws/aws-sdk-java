@@ -18,19 +18,15 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.cloudwatch.AmazonCloudWatch#putMetricAlarm(PutMetricAlarmRequest) PutMetricAlarm operation}.
  * <p>
- * Creates or updates an alarm and associates it with the specified
- * Amazon CloudWatch metric. Optionally, this operation can associate one
- * or more Amazon Simple Notification Service resources with the alarm.
+ * Creates or updates an alarm and associates it with the specified Amazon CloudWatch metric. Optionally, this operation can associate one or more
+ * Amazon Simple Notification Service resources with the alarm.
  * </p>
  * <p>
- * When this operation creates an alarm, the alarm state is immediately
- * set to <code>INSUFFICIENT_DATA</code> . The alarm is evaluated and
- * its <code>StateValue</code> is set appropriately. Any actions
- * associated with the <code>StateValue</code> is then executed.
+ * When this operation creates an alarm, the alarm state is immediately set to <code>INSUFFICIENT_DATA</code> . The alarm is evaluated and its
+ * <code>StateValue</code> is set appropriately. Any actions associated with the <code>StateValue</code> is then executed.
  * </p>
  * <p>
- * <b>NOTE:</b> When updating an existing alarm, its StateValue is left
- * unchanged.
+ * <b>NOTE:</b> When updating an existing alarm, its StateValue is left unchanged.
  * </p>
  *
  * @see com.amazonaws.services.cloudwatch.AmazonCloudWatch#putMetricAlarm(PutMetricAlarmRequest)

@@ -18,8 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#createDBSnapshot(CreateDBSnapshotRequest) CreateDBSnapshot operation}.
  * <p>
- * Creates a DBSnapshot. The source DBInstance must be in "available"
- * state.
+ * Creates a DBSnapshot. The source DBInstance must be in "available" state.
  * </p>
  *
  * @see com.amazonaws.services.rds.AmazonRDS#createDBSnapshot(CreateDBSnapshotRequest)

@@ -64,8 +64,12 @@ public class StreamingDistributionSummaryStaxUnmarshaller implements Unmarshalle
                     streamingDistributionSummary.setS3Origin(S3OriginStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
-                if (context.testExpression("CNAME", targetDepth)) {
-                    streamingDistributionSummary.getCNAME().add(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("Aliases", targetDepth)) {
+                    streamingDistributionSummary.setAliases(AliasesStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("TrustedSigners", targetDepth)) {
+                    streamingDistributionSummary.setTrustedSigners(TrustedSignersStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
                 if (context.testExpression("Comment", targetDepth)) {
@@ -74,10 +78,6 @@ public class StreamingDistributionSummaryStaxUnmarshaller implements Unmarshalle
                 }
                 if (context.testExpression("Enabled", targetDepth)) {
                     streamingDistributionSummary.setEnabled(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-                if (context.testExpression("TrustedSigners", targetDepth)) {
-                    streamingDistributionSummary.setTrustedSigners(TrustedSignersStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

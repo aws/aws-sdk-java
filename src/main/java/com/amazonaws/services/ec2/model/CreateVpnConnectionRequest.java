@@ -18,26 +18,18 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#createVpnConnection(CreateVpnConnectionRequest) CreateVpnConnection operation}.
  * <p>
- * Creates a new VPN connection between an existing VPN gateway and
- * customer gateway. The only supported connection type is ipsec.1.
+ * Creates a new VPN connection between an existing VPN gateway and customer gateway. The only supported connection type is ipsec.1.
  * </p>
  * <p>
- * The response includes information that you need to configure your
- * customer gateway, in XML format. We recommend you use the command line
- * version of this operation ( <code>ec2-create-vpn-connection</code> ),
- * which takes an <code>-f</code> option (for format) and returns
- * configuration information formatted as expected by the vendor you
- * specified, or in a generic, human readable format. For information
- * about the command, go to <code>ec2-create-vpn-connection</code> in the
- * Amazon Virtual Private Cloud Command Line Reference.
+ * The response includes information that you need to configure your customer gateway, in XML format. We recommend you use the command line version of
+ * this operation ( <code>ec2-create-vpn-connection</code> ), which takes an <code>-f</code> option (for format) and returns configuration information
+ * formatted as expected by the vendor you specified, or in a generic, human readable format. For information about the command, go to
+ * <code>ec2-create-vpn-connection</code> in the Amazon Virtual Private Cloud Command Line Reference.
  * </p>
  * <p>
- * <b>IMPORTANT:</b> We strongly recommend you use HTTPS when calling
- * this operation because the response contains sensitive cryptographic
- * information for configuring your customer gateway. If you decide to
- * shut down your VPN connection for any reason and then create a new
- * one, you must re-configure your customer gateway with the new
- * information returned from this call.
+ * <b>IMPORTANT:</b> We strongly recommend you use HTTPS when calling this operation because the response contains sensitive cryptographic information
+ * for configuring your customer gateway. If you decide to shut down your VPN connection for any reason and then create a new one, you must re-configure
+ * your customer gateway with the new information returned from this call.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createVpnConnection(CreateVpnConnectionRequest)

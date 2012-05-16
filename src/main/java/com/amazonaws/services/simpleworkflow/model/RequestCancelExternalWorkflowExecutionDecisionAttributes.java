@@ -16,8 +16,7 @@ package com.amazonaws.services.simpleworkflow.model;
 
 /**
  * <p>
- * Provides details of the
- * <code>RequestCancelExternalWorkflowExecution</code> decision.
+ * Provides details of the <code>RequestCancelExternalWorkflowExecution</code> decision.
  * </p>
  */
 public class RequestCancelExternalWorkflowExecutionDecisionAttributes {

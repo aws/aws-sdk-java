@@ -44,8 +44,16 @@ public class ActiveTrustedSignersStaxUnmarshaller implements Unmarshaller<Active
             if (xmlEvent.isEndDocument()) return activeTrustedSigners;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
-                if (context.testExpression("Signer", targetDepth)) {
-                    activeTrustedSigners.getSigners().add(SignerStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("Enabled", targetDepth)) {
+                    activeTrustedSigners.setEnabled(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("Quantity", targetDepth)) {
+                    activeTrustedSigners.setQuantity(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("Items/Signer", targetDepth)) {
+                    activeTrustedSigners.getItems().add(SignerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

@@ -18,15 +18,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteSigningCertificate(DeleteSigningCertificateRequest) DeleteSigningCertificate operation}.
  * <p>
- * Deletes the specified signing certificate associated with the
- * specified user.
+ * Deletes the specified signing certificate associated with the specified user.
  * </p>
  * <p>
- * If you do not specify a user name, IAM determines the user name
- * implicitly based on the AWS Access Key ID signing the request. Because
- * this action works for access keys under the AWS account, you can use
- * this API to manage root credentials even if the AWS account has no
- * associated users.
+ * If you do not specify a user name, IAM determines the user name implicitly based on the AWS Access Key ID signing the request. Because this action
+ * works for access keys under the AWS account, you can use this API to manage root credentials even if the AWS account has no associated users.
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteSigningCertificate(DeleteSigningCertificateRequest)

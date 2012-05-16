@@ -16,8 +16,7 @@ package com.amazonaws.services.storagegateway.model;
 
 /**
  * <p>
- * A JSON object containing the DeleteVolumeOutput$VolumeARN of the
- * storage volume that was deleted
+ * A JSON object containing the DeleteVolumeOutput$VolumeARN of the storage volume that was deleted
  * </p>
  */
 public class DeleteVolumeResult {

@@ -21,10 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Deletes a table and all of its items.
  * </p>
  * <p>
- * If the table is in the <code>ACTIVE</code> state, you can delete it.
- * If a table is in <code>CREATING</code> or <code>UPDATING</code> states
- * then Amazon DynamoDB returns a <code>ResourceInUseException</code> .
- * If the specified table does not exist, Amazon DynamoDB returns a
+ * If the table is in the <code>ACTIVE</code> state, you can delete it. If a table is in <code>CREATING</code> or <code>UPDATING</code> states then
+ * Amazon DynamoDB returns a <code>ResourceInUseException</code> . If the specified table does not exist, Amazon DynamoDB returns a
  * <code>ResourceNotFoundException</code> .
  * </p>
  *

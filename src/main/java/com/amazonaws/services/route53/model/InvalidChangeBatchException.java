@@ -18,11 +18,9 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * This error contains a list of one or more error messages. Each error
- * message indicates one error in the change batch. For more information,
- * see <a
- * latest/APIReference/API_ChangeResourceRecordSets.html#example_Errors">
- * Example InvalidChangeBatch Errors </a> .
+ * This error contains a list of one or more error messages. Each error message indicates one error in the change batch. For more information, see <a
+ * href="http://docs.amazonwebservices.com/Route53/latest/APIReference/API_ChangeResourceRecordSets.html#example_Errors"> Example InvalidChangeBatch
+ * Errors </a> .
  * </p>
  */        
 public class InvalidChangeBatchException extends AmazonServiceException {

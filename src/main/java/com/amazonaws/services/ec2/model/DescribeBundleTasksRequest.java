@@ -18,10 +18,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeBundleTasks(DescribeBundleTasksRequest) DescribeBundleTasks operation}.
  * <p>
- * The DescribeBundleTasks operation describes in-progress and recent
- * bundle tasks. Complete and failed tasks are removed from the list a
- * short time after completion. If no bundle ids are given, all bundle
- * tasks are returned.
+ * The DescribeBundleTasks operation describes in-progress and recent bundle tasks. Complete and failed tasks are removed from the list a short time
+ * after completion. If no bundle ids are given, all bundle tasks are returned.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeBundleTasks(DescribeBundleTasksRequest)

@@ -16,8 +16,7 @@ package com.amazonaws.services.ec2.model;
 
 /**
  * <p>
- * The result of calling the StartInstances operation. Contains details
- * on how the specified instances are changing state.
+ * The result of calling the StartInstances operation. Contains details on how the specified instances are changing state.
  * </p>
  */
 public class StartInstancesResult {

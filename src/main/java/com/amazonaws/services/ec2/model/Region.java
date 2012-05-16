@@ -16,8 +16,7 @@ package com.amazonaws.services.ec2.model;
 
 /**
  * <p>
- * Represents an Amazon EC2 region. EC2 regions are completely isolated
- * from each other.
+ * Represents an Amazon EC2 region. EC2 regions are completely isolated from each other.
  * </p>
  */
 public class Region {

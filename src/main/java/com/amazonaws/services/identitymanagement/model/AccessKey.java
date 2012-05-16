@@ -19,8 +19,7 @@ package com.amazonaws.services.identitymanagement.model;
  * The AccessKey data type contains information about an AWS access key.
  * </p>
  * <p>
- * This data type is used as a response element in the actions
- * CreateAccessKey and ListAccessKeys.
+ * This data type is used as a response element in the actions CreateAccessKey and ListAccessKeys.
  * </p>
  */
 public class AccessKey {

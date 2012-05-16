@@ -16,8 +16,7 @@ package com.amazonaws.services.storagegateway.model;
 
 /**
  * <p>
- * A JSON object containing the GatewayARN of the gateway that was
- * restarted.
+ * A JSON object containing the GatewayARN of the gateway that was restarted.
  * </p>
  */
 public class StartGatewayResult {

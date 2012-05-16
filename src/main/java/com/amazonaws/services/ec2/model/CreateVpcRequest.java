@@ -18,16 +18,13 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#createVpc(CreateVpcRequest) CreateVpc operation}.
  * <p>
- * Creates a VPC with the CIDR block you specify. The smallest VPC you
- * can create uses a <code>/28</code> netmask (16 IP addresses), and the
- * largest uses a <code>/18</code> netmask (16,384 IP addresses). To help
- * you decide how big to make your VPC, go to the topic about creating
- * VPCs in the Amazon Virtual Private Cloud Developer Guide.
+ * Creates a VPC with the CIDR block you specify. The smallest VPC you can create uses a <code>/28</code> netmask (16 IP addresses), and the largest
+ * uses a <code>/18</code> netmask (16,384 IP addresses). To help you decide how big to make your VPC, go to the topic about creating VPCs in the Amazon
+ * Virtual Private Cloud Developer Guide.
  * </p>
  * <p>
- * By default, each instance you launch in the VPC has the default DHCP
- * options (the standard EC2 host name, no domain name, no DNS server, no
- * NTP server, and no NetBIOS server or node type).
+ * By default, each instance you launch in the VPC has the default DHCP options (the standard EC2 host name, no domain name, no DNS server, no NTP
+ * server, and no NetBIOS server or node type).
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createVpc(CreateVpcRequest)

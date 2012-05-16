@@ -18,8 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The specified CIDRIP or EC2 security group is already authorized for
- * the specified DB security group.
+ * The specified CIDRIP or EC2 security group is already authorized for the specified DB security group.
  * </p>
  */        
 public class AuthorizationAlreadyExistsException extends AmazonServiceException {

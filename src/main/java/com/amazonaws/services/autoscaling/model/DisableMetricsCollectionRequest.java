@@ -18,10 +18,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.autoscaling.AmazonAutoScaling#disableMetricsCollection(DisableMetricsCollectionRequest) DisableMetricsCollection operation}.
  * <p>
- * Disables monitoring of group metrics for the Auto Scaling group
- * specified in <code>AutoScalingGroupName</code> .
- * You can specify the list of affected metrics with the
- * <code>Metrics</code> parameter.
+ * Disables monitoring of group metrics for the Auto Scaling group specified in <code>AutoScalingGroupName</code> .
+ * You can specify the list of affected metrics with the <code>Metrics</code> parameter.
  * </p>
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#disableMetricsCollection(DisableMetricsCollectionRequest)

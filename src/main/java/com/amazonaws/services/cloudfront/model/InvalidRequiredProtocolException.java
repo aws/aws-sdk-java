@@ -18,9 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * This operation requires the HTTPS protocol. Ensure that you specify
- * the HTTPS protocol in your request, or omit the RequiredProtocols
- * element from your distribution configuration.
+ * This operation requires the HTTPS protocol. Ensure that you specify the HTTPS protocol in your request, or omit the RequiredProtocols element from
+ * your distribution configuration.
  * </p>
  */        
 public class InvalidRequiredProtocolException extends AmazonServiceException {

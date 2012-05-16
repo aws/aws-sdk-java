@@ -18,8 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.autoscaling.AmazonAutoScaling#describeMetricCollectionTypes(DescribeMetricCollectionTypesRequest) DescribeMetricCollectionTypes operation}.
  * <p>
- * Returns a list of metrics and a corresponding list of granularities
- * for each metric.
+ * Returns a list of metrics and a corresponding list of granularities for each metric.
  * </p>
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#describeMetricCollectionTypes(DescribeMetricCollectionTypesRequest)

@@ -21,8 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Deletes a virtual MFA device.
  * </p>
  * <p>
- * <b>NOTE:</b>You must deactivate a user's virtual MFA device before you
- * can delete it. For information about deactivating MFA devices, see
+ * <b>NOTE:</b>You must deactivate a user's virtual MFA device before you can delete it. For information about deactivating MFA devices, see
  * DeactivateMFADevice.
  * </p>
  *

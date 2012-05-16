@@ -18,26 +18,19 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeRouteTables(DescribeRouteTablesRequest) DescribeRouteTables operation}.
  * <p>
- * Gives you information about your route tables. You can filter the
- * results to return information only about tables that match criteria
- * you specify. For example, you could get information only about a table
- * associated with a particular subnet. You can specify multiple values
- * for the filter. The table must match at least one of the specified
- * values for it to be included in the results.
+ * Gives you information about your route tables. You can filter the results to return information only about tables that match criteria you specify.
+ * For example, you could get information only about a table associated with a particular subnet. You can specify multiple values for the filter. The
+ * table must match at least one of the specified values for it to be included in the results.
  * </p>
  * <p>
- * You can specify multiple filters (e.g., the table has a particular
- * route, and is associated with a particular subnet). The result
- * includes information for a particular table only if it matches all
- * your filters. If there's no match, no special message is returned; the
- * response is simply empty.
+ * You can specify multiple filters (e.g., the table has a particular route, and is associated with a particular subnet). The result includes
+ * information for a particular table only if it matches all your filters. If there's no match, no special message is returned; the response is simply
+ * empty.
  * </p>
  * <p>
- * You can use wildcards with the filter values: an asterisk matches
- * zero or more characters, and <code>?</code> matches exactly one
- * character. You can escape special characters using a backslash before
- * the character. For example, a value of <code>\*amazon\?\\</code>
- * searches for the literal string <code>*amazon?\</code> .
+ * You can use wildcards with the filter values: an asterisk matches zero or more characters, and <code>?</code> matches exactly one character. You can
+ * escape special characters using a backslash before the character. For example, a value of <code>\*amazon\?\\</code> searches for the literal string
+ * <code>*amazon?\</code> .
  * 
  * </p>
  *

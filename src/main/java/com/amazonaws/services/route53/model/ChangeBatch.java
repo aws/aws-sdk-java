@@ -16,8 +16,7 @@ package com.amazonaws.services.route53.model;
 
 /**
  * <p>
- * A complex type that contains an optional comment and the changes that
- * you want to make with a change batch request.
+ * A complex type that contains an optional comment and the changes that you want to make with a change batch request.
  * </p>
  */
 public class ChangeBatch {

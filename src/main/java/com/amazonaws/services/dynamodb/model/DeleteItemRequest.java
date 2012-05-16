@@ -21,8 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Deletes a single item in a table by primary key.
  * </p>
  * <p>
- * You can perform a conditional delete operation that deletes the item
- * if it exists, or if it has an expected attribute value.
+ * You can perform a conditional delete operation that deletes the item if it exists, or if it has an expected attribute value.
  * </p>
  *
  * @see com.amazonaws.services.dynamodb.AmazonDynamoDB#deleteItem(DeleteItemRequest)

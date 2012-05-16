@@ -18,12 +18,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#rebootDBInstance(RebootDBInstanceRequest) RebootDBInstance operation}.
  * <p>
- * Reboots a previously provisioned RDS instance. This API results in
- * the application of modified DBParameterGroup parameters with
- * ApplyStatus of pending-reboot to the RDS instance. This action is
- * taken as soon as possible, and results in a momentary outage to the
- * RDS instance during which the RDS instance status is set to rebooting.
- * A DBInstance event is created when the reboot is completed.
+ * Reboots a previously provisioned RDS instance. This API results in the application of modified DBParameterGroup parameters with ApplyStatus of
+ * pending-reboot to the RDS instance. This action is taken as soon as possible, and results in a momentary outage to the RDS instance during which the
+ * RDS instance status is set to rebooting. A DBInstance event is created when the reboot is completed.
  * </p>
  *
  * @see com.amazonaws.services.rds.AmazonRDS#rebootDBInstance(RebootDBInstanceRequest)

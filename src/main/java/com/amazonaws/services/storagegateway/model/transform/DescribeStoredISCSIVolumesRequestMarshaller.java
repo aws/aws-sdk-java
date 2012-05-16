@@ -35,16 +35,16 @@ import com.amazonaws.util.json.*;
 import static com.amazonaws.http.HttpMethodName.POST;
 
 /**
- * Describe Stored I S C S I Volumes Request Marshaller
+ * Describe Storedi S C S I Volumes Request Marshaller
  */
-public class DescribeStoredISCSIVolumesRequestMarshaller implements Marshaller<Request<DescribeStoredISCSIVolumesRequest>, DescribeStoredISCSIVolumesRequest> {
+public class DescribeStorediSCSIVolumesRequestMarshaller implements Marshaller<Request<DescribeStorediSCSIVolumesRequest>, DescribeStorediSCSIVolumesRequest> {
 
-    public Request<DescribeStoredISCSIVolumesRequest> marshall(DescribeStoredISCSIVolumesRequest describeStoredISCSIVolumesRequest) {
-		if (describeStoredISCSIVolumesRequest == null) {
+    public Request<DescribeStorediSCSIVolumesRequest> marshall(DescribeStorediSCSIVolumesRequest describeStorediSCSIVolumesRequest) {
+		if (describeStorediSCSIVolumesRequest == null) {
 		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
 		}
 
-        Request<DescribeStoredISCSIVolumesRequest> request = new DefaultRequest<DescribeStoredISCSIVolumesRequest>(describeStoredISCSIVolumesRequest, "AWSStorageGateway");
+        Request<DescribeStorediSCSIVolumesRequest> request = new DefaultRequest<DescribeStorediSCSIVolumesRequest>(describeStorediSCSIVolumesRequest, "AWSStorageGateway");
         String target = "StorageGateway_20120430.DescribeStorediSCSIVolumes";
         request.addHeader("X-Amz-Target", target);
         request.addHeader("Content-Type", "application/x-amz-json-1.1");
@@ -56,7 +56,7 @@ public class DescribeStoredISCSIVolumesRequestMarshaller implements Marshaller<R
         	jsonWriter.object();
 	        
 
-            java.util.List<String> volumeARNsList = describeStoredISCSIVolumesRequest.getVolumeARNs();
+            java.util.List<String> volumeARNsList = describeStorediSCSIVolumesRequest.getVolumeARNs();
             if (volumeARNsList != null && volumeARNsList.size() > 0) {
                 jsonWriter.key("VolumeARNs").array();
                 for (String volumeARNsListValue : volumeARNsList) {

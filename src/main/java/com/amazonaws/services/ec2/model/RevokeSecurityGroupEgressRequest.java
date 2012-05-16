@@ -18,26 +18,19 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#revokeSecurityGroupEgress(RevokeSecurityGroupEgressRequest) RevokeSecurityGroupEgress operation}.
  * <p>
- * This action applies only to security groups in a VPC. It doesn't work
- * with EC2 security groups. For information about Amazon Virtual Private
- * Cloud and VPC security groups, go to the Amazon Virtual Private Cloud
- * User Guide.
+ * This action applies only to security groups in a VPC. It doesn't work with EC2 security groups. For information about Amazon Virtual Private Cloud
+ * and VPC security groups, go to the Amazon Virtual Private Cloud User Guide.
  * </p>
  * <p>
- * The action removes one or more egress rules from a VPC security
- * group. The values that you specify in the revoke request (e.g., ports,
- * etc.) must match the existing rule's values in order for the rule to
- * be revoked.
+ * The action removes one or more egress rules from a VPC security group. The values that you specify in the revoke request (e.g., ports, etc.) must
+ * match the existing rule's values in order for the rule to be revoked.
  * </p>
  * <p>
- * Each rule consists of the protocol, and the CIDR range or destination
- * security group. For the TCP and UDP protocols, you must also specify
- * the destination port or range of ports. For the ICMP protocol, you
- * must also specify the ICMP type and code.
+ * Each rule consists of the protocol, and the CIDR range or destination security group. For the TCP and UDP protocols, you must also specify the
+ * destination port or range of ports. For the ICMP protocol, you must also specify the ICMP type and code.
  * </p>
  * <p>
- * Rule changes are propagated to instances within the security group as
- * quickly as possible. However, a small delay might occur.
+ * Rule changes are propagated to instances within the security group as quickly as possible. However, a small delay might occur.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#revokeSecurityGroupEgress(RevokeSecurityGroupEgressRequest)

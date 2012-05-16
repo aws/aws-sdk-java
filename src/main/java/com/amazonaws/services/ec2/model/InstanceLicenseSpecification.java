@@ -16,9 +16,8 @@ package com.amazonaws.services.ec2.model;
 
 /**
  * <p>
- * Part of a request to launch Amazon EC2 instances, specifying which
- * license pool to use if a license should be attached to the new Amazon
- * EC2 instance.
+ * Part of a request to launch Amazon EC2 instances, specifying which license pool to use if a license should be attached to the new Amazon EC2
+ * instance.
  * </p>
  */
 public class InstanceLicenseSpecification {

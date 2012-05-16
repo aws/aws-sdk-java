@@ -18,12 +18,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#confirmSubscription(ConfirmSubscriptionRequest) ConfirmSubscription operation}.
  * <p>
- * The ConfirmSubscription action verifies an endpoint owner's intent to
- * receive messages by validating the token sent to the endpoint by an
- * earlier Subscribe action. If the token is valid, the action creates a
- * new subscription and returns its Amazon Resource Name (ARN). This call
- * requires an AWS signature only when the AuthenticateOnUnsubscribe flag
- * is set to "true".
+ * The ConfirmSubscription action verifies an endpoint owner's intent to receive messages by validating the token sent to the endpoint by an earlier
+ * Subscribe action. If the token is valid, the action creates a new subscription and returns its Amazon Resource Name (ARN). This call requires an AWS
+ * signature only when the AuthenticateOnUnsubscribe flag is set to "true".
  * </p>
  *
  * @see com.amazonaws.services.sns.AmazonSNS#confirmSubscription(ConfirmSubscriptionRequest)

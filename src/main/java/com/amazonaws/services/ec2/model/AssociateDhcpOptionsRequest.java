@@ -18,15 +18,10 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#associateDhcpOptions(AssociateDhcpOptionsRequest) AssociateDhcpOptions operation}.
  * <p>
- * Associates a set of DHCP options (that you've previously created)
- * with the specified VPC. Or, associates the default DHCP options with
- * the VPC. The default set consists of the standard EC2 host name, no
- * domain name, no DNS server, no NTP server, and no NetBIOS server or
- * node type. After you associate the options with the VPC, any existing
- * instances and all new instances that you launch in that VPC use the
- * options. For more information about the supported DHCP options and
- * using them with Amazon VPC, go to Using DHCP Options in the Amazon
- * Virtual Private Cloud Developer Guide.
+ * Associates a set of DHCP options (that you've previously created) with the specified VPC. Or, associates the default DHCP options with the VPC. The
+ * default set consists of the standard EC2 host name, no domain name, no DNS server, no NTP server, and no NetBIOS server or node type. After you
+ * associate the options with the VPC, any existing instances and all new instances that you launch in that VPC use the options. For more information
+ * about the supported DHCP options and using them with Amazon VPC, go to Using DHCP Options in the Amazon Virtual Private Cloud Developer Guide.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#associateDhcpOptions(AssociateDhcpOptionsRequest)

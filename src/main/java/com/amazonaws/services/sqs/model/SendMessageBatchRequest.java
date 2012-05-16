@@ -18,9 +18,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sqs.AmazonSQS#sendMessageBatch(SendMessageBatchRequest) SendMessageBatch operation}.
  * <p>
- * This is a batch version of SendMessage. It takes multiple messages and
- * adds each of them to the queue. The result of each add operation is
- * reported individually in the response.
+ * This is a batch version of SendMessage. It takes multiple messages and adds each of them to the queue. The result of each add operation is reported
+ * individually in the response.
  * </p>
  *
  * @see com.amazonaws.services.sqs.AmazonSQS#sendMessageBatch(SendMessageBatchRequest)

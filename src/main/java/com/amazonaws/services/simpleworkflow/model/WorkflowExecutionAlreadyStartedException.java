@@ -18,8 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * Returned by StartWorkflowExecution when an open execution with the
- * same workflowId is already running in the specified domain.
+ * Returned by StartWorkflowExecution when an open execution with the same workflowId is already running in the specified domain.
  * </p>
  */        
 public class WorkflowExecutionAlreadyStartedException extends AmazonServiceException {

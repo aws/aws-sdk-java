@@ -18,20 +18,16 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#authorizeSecurityGroupIngress(AuthorizeSecurityGroupIngressRequest) AuthorizeSecurityGroupIngress operation}.
  * <p>
- * The AuthorizeSecurityGroupIngress operation adds permissions to a
- * security group.
+ * The AuthorizeSecurityGroupIngress operation adds permissions to a security group.
  * </p>
  * <p>
- * Permissions are specified by the IP protocol (TCP, UDP or ICMP), the
- * source of the request (by IP range or an Amazon EC2 user-group pair),
- * the source and destination port ranges (for TCP and UDP), and the ICMP
- * codes and types (for ICMP). When authorizing ICMP, <code>-1</code> can
- * be used as a wildcard in the type and code fields.
+ * Permissions are specified by the IP protocol (TCP, UDP or ICMP), the source of the request (by IP range or an Amazon EC2 user-group pair), the source
+ * and destination port ranges (for TCP and UDP), and the ICMP codes and types (for ICMP). When authorizing ICMP, <code>-1</code> can be used as a
+ * wildcard in the type and code fields.
  * </p>
  * <p>
- * Permission changes are propagated to instances within the security
- * group as quickly as possible. However, depending on the number of
- * instances, a small delay might occur.
+ * Permission changes are propagated to instances within the security group as quickly as possible. However, depending on the number of instances, a
+ * small delay might occur.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#authorizeSecurityGroupIngress(AuthorizeSecurityGroupIngressRequest)

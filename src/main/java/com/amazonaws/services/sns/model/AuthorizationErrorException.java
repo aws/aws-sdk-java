@@ -18,8 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * Indicates that the user has been denied access to the requested
- * resource.
+ * Indicates that the user has been denied access to the requested resource.
  * </p>
  */        
 public class AuthorizationErrorException extends AmazonServiceException {

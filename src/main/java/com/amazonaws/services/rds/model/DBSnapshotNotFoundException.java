@@ -18,8 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * <i>DBSnapshotIdentifier</i> does not refer to an existing DB
- * Snapshot.
+ * <i>DBSnapshotIdentifier</i> does not refer to an existing DB Snapshot.
  * </p>
  */        
 public class DBSnapshotNotFoundException extends AmazonServiceException {

@@ -16,10 +16,8 @@ package com.amazonaws.services.simpleworkflow.model;
 
 /**
  * <p>
- * The configuration settings for a workflow execution including timeout
- * values, tasklist etc. These configuration settings are determined from
- * the defaults specified when registering the workflow type and those
- * specified when starting the workflow execution.
+ * The configuration settings for a workflow execution including timeout values, tasklist etc. These configuration settings are determined from the
+ * defaults specified when registering the workflow type and those specified when starting the workflow execution.
  * </p>
  */
 public class WorkflowExecutionConfiguration {

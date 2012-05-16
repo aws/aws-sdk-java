@@ -18,11 +18,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#publish(PublishRequest) Publish operation}.
  * <p>
- * The Publish action sends a message to all of a topic's subscribed
- * endpoints. When a messageId is returned, the message has been saved
- * and Amazon SNS will attempt to deliver it to the topic's subscribers
- * shortly. The format of the outgoing message to each subscribed
- * endpoint depends on the notification protocol selected.
+ * The Publish action sends a message to all of a topic's subscribed endpoints. When a messageId is returned, the message has been saved and Amazon SNS
+ * will attempt to deliver it to the topic's subscribers shortly. The format of the outgoing message to each subscribed endpoint depends on the
+ * notification protocol selected.
  * </p>
  *
  * @see com.amazonaws.services.sns.AmazonSNS#publish(PublishRequest)

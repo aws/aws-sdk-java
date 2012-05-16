@@ -18,8 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The request was rejected because it attempted to create a resource
- * that already exists.
+ * The request was rejected because it attempted to create a resource that already exists.
  * </p>
  */        
 public class EntityAlreadyExistsException extends AmazonServiceException {

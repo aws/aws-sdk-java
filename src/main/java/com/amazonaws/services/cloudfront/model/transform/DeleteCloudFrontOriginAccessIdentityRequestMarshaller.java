@@ -37,17 +37,17 @@ import com.amazonaws.util.XMLWriter;
 public class DeleteCloudFrontOriginAccessIdentityRequestMarshaller implements Marshaller<Request<DeleteCloudFrontOriginAccessIdentityRequest>, DeleteCloudFrontOriginAccessIdentityRequest> {
 
     public Request<DeleteCloudFrontOriginAccessIdentityRequest> marshall(DeleteCloudFrontOriginAccessIdentityRequest deleteCloudFrontOriginAccessIdentityRequest) {
-        if (deleteCloudFrontOriginAccessIdentityRequest == null) { 
+        if (deleteCloudFrontOriginAccessIdentityRequest == null) {
             throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
         Request<DeleteCloudFrontOriginAccessIdentityRequest> request = new DefaultRequest<DeleteCloudFrontOriginAccessIdentityRequest>(deleteCloudFrontOriginAccessIdentityRequest, "AmazonCloudFront");
         request.setHttpMethod(HttpMethodName.DELETE);
-        if (deleteCloudFrontOriginAccessIdentityRequest.getIfMatch() != null) 
+        if (deleteCloudFrontOriginAccessIdentityRequest.getIfMatch() != null)
         	request.addHeader("If-Match", deleteCloudFrontOriginAccessIdentityRequest.getIfMatch());
         
 
-        String uriResourcePath = "2012-03-15/origin-access-identity/cloudfront/{Id}"; 
+        String uriResourcePath = "2012-05-05/origin-access-identity/cloudfront/{Id}"; 
         uriResourcePath = uriResourcePath.replace("{Id}", getString(deleteCloudFrontOriginAccessIdentityRequest.getId())); 
 
         if (uriResourcePath.contains("?")) {

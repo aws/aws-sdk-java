@@ -16,8 +16,7 @@ package com.amazonaws.services.simpleworkflow.model;
 
 /**
  * <p>
- * Provides details of the
- * <code>RequestCancelExternalWorkflowExecutionFailed</code> event.
+ * Provides details of the <code>RequestCancelExternalWorkflowExecutionFailed</code> event.
  * </p>
  */
 public class RequestCancelExternalWorkflowExecutionFailedEventAttributes {

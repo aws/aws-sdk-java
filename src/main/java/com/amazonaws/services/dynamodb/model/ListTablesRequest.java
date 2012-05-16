@@ -18,8 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.dynamodb.AmazonDynamoDB#listTables(ListTablesRequest) ListTables operation}.
  * <p>
- * Retrieves a paginated list of table names created by the AWS Account
- * of the caller in the AWS Region (e.g. <code>us-east-1</code> ).
+ * Retrieves a paginated list of table names created by the AWS Account of the caller in the AWS Region (e.g. <code>us-east-1</code> ).
  * </p>
  *
  * @see com.amazonaws.services.dynamodb.AmazonDynamoDB#listTables(ListTablesRequest)

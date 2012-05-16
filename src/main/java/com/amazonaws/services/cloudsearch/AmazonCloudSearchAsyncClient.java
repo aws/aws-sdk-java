@@ -34,10 +34,8 @@ import com.amazonaws.services.cloudsearch.model.*;
  * Callers must use the Future object to determine when the service call has actually
  * completed.
  * Amazon CloudSearch Configuration Service <p>
- * You use the Configuration Service to create, configure, and manage
- * search domains. Amazon CloudSearch configuration requests are
- * submitted to <code>cloudsearch.us-east-1.amazonaws.com</code> using
- * the AWS Query protocol.
+ * You use the Configuration Service to create, configure, and manage search domains. Amazon CloudSearch configuration requests are submitted to
+ * <code>cloudsearch.us-east-1.amazonaws.com</code> using the AWS Query protocol.
  * </p> 
  */       
 public class AmazonCloudSearchAsyncClient extends AmazonCloudSearchClient

@@ -16,8 +16,7 @@ package com.amazonaws.services.ec2.model;
 
 /**
  * <p>
- * The result of purchasing a Reserved Instances offering. Contains the
- * new, unique ID of the Reserved Instances purchased for your account.
+ * The result of purchasing a Reserved Instances offering. Contains the new, unique ID of the Reserved Instances purchased for your account.
  * </p>
  */
 public class PurchaseReservedInstancesOfferingResult {

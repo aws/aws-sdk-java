@@ -38,7 +38,7 @@ public class ModifyImageAttributeRequestMarshaller implements Marshaller<Request
 
         Request<ModifyImageAttributeRequest> request = new DefaultRequest<ModifyImageAttributeRequest>(modifyImageAttributeRequest, "AmazonEC2");
         request.addParameter("Action", "ModifyImageAttribute");
-        request.addParameter("Version", "2012-03-01");
+        request.addParameter("Version", "2012-04-01");
 
         if (modifyImageAttributeRequest.getImageId() != null) {
             request.addParameter("ImageId", StringUtils.fromString(modifyImageAttributeRequest.getImageId()));

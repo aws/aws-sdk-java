@@ -16,8 +16,7 @@ package com.amazonaws.services.simpleworkflow.model;
 
 /**
  * <p>
- * Provides details of the <code>ChildWorkflowExecutionFailed</code>
- * event.
+ * Provides details of the <code>ChildWorkflowExecutionFailed</code> event.
  * </p>
  */
 public class ChildWorkflowExecutionFailedEventAttributes {

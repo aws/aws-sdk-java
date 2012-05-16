@@ -24,12 +24,10 @@ import com.amazonaws.services.dynamodb.model.*;
  * Interface for accessing AmazonDynamoDB asynchronously,
  * using Java Futures.
  * <p>
- * Amazon DynamoDB is a fast, highly scalable, highly available,
- * cost-effective non-relational database service.
+ * Amazon DynamoDB is a fast, highly scalable, highly available, cost-effective non-relational database service.
  * </p>
  * <p>
- * Amazon DynamoDB removes traditional scalability limitations on data
- * storage while maintaining low latency and predictable performance.
+ * Amazon DynamoDB removes traditional scalability limitations on data storage while maintaining low latency and predictable performance.
  * </p> 
  */       
 public interface AmazonDynamoDBAsync extends AmazonDynamoDB {

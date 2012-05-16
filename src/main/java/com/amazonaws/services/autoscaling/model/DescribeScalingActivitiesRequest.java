@@ -21,16 +21,12 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Returns the scaling activities for the specified Auto Scaling group.
  * </p>
  * <p>
- * If the specified <code>ActivityIds</code> list is empty, all the
- * activities from the past six weeks are returned. Activities are sorted
- * by completion time. Activities still in progress appear first on the
- * list.
+ * If the specified <code>ActivityIds</code> list is empty, all the activities from the past six weeks are returned. Activities are sorted by completion
+ * time. Activities still in progress appear first on the list.
  * </p>
  * <p>
- * This action supports pagination. If the response includes a token,
- * there are more records available. To get the additional records,
- * repeat the request with the response token as the
- * <code>NextToken</code> parameter.
+ * This action supports pagination. If the response includes a token, there are more records available. To get the additional records, repeat the
+ * request with the response token as the <code>NextToken</code> parameter.
  * </p>
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#describeScalingActivities(DescribeScalingActivitiesRequest)

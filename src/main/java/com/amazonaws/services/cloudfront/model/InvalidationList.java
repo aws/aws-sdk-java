@@ -47,10 +47,16 @@ public class InvalidationList {
     private Boolean isTruncated;
 
     /**
-     * A complex type that lists the Invalidation ID and the status of that
-     * request.
+     * The number of invalidation batches that were created by the current
+     * AWS account.
      */
-    private java.util.List<InvalidationSummary> invalidationSummaries;
+    private Integer quantity;
+
+    /**
+     * A complex type that contains one InvalidationSummary element for each
+     * invalidation batch that was created by the current AWS account.
+     */
+    private java.util.List<InvalidationSummary> items;
 
     /**
      * Default constructor for a new InvalidationList object.  Callers should use the
@@ -240,77 +246,117 @@ public class InvalidationList {
     }
     
     /**
-     * A complex type that lists the Invalidation ID and the status of that
-     * request.
+     * The number of invalidation batches that were created by the current
+     * AWS account.
      *
-     * @return A complex type that lists the Invalidation ID and the status of that
-     *         request.
+     * @return The number of invalidation batches that were created by the current
+     *         AWS account.
      */
-    public java.util.List<InvalidationSummary> getInvalidationSummaries() {
-        
-        if (invalidationSummaries == null) {
-            invalidationSummaries = new java.util.ArrayList<InvalidationSummary>();
-        }
-        return invalidationSummaries;
+    public Integer getQuantity() {
+        return quantity;
     }
     
     /**
-     * A complex type that lists the Invalidation ID and the status of that
-     * request.
+     * The number of invalidation batches that were created by the current
+     * AWS account.
      *
-     * @param invalidationSummaries A complex type that lists the Invalidation ID and the status of that
-     *         request.
+     * @param quantity The number of invalidation batches that were created by the current
+     *         AWS account.
      */
-    public void setInvalidationSummaries(java.util.Collection<InvalidationSummary> invalidationSummaries) {
-        if (invalidationSummaries == null) {
-            this.invalidationSummaries = null;
-            return;
-        }
-
-        java.util.List<InvalidationSummary> invalidationSummariesCopy = new java.util.ArrayList<InvalidationSummary>(invalidationSummaries.size());
-        invalidationSummariesCopy.addAll(invalidationSummaries);
-        this.invalidationSummaries = invalidationSummariesCopy;
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
     }
     
     /**
-     * A complex type that lists the Invalidation ID and the status of that
-     * request.
+     * The number of invalidation batches that were created by the current
+     * AWS account.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param invalidationSummaries A complex type that lists the Invalidation ID and the status of that
-     *         request.
+     * @param quantity The number of invalidation batches that were created by the current
+     *         AWS account.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public InvalidationList withInvalidationSummaries(InvalidationSummary... invalidationSummaries) {
-        if (getInvalidationSummaries() == null) setInvalidationSummaries(new java.util.ArrayList<InvalidationSummary>(invalidationSummaries.length));
-        for (InvalidationSummary value : invalidationSummaries) {
-            getInvalidationSummaries().add(value);
+    public InvalidationList withQuantity(Integer quantity) {
+        this.quantity = quantity;
+        return this;
+    }
+    
+    
+    /**
+     * A complex type that contains one InvalidationSummary element for each
+     * invalidation batch that was created by the current AWS account.
+     *
+     * @return A complex type that contains one InvalidationSummary element for each
+     *         invalidation batch that was created by the current AWS account.
+     */
+    public java.util.List<InvalidationSummary> getItems() {
+        
+        if (items == null) {
+            items = new java.util.ArrayList<InvalidationSummary>();
+        }
+        return items;
+    }
+    
+    /**
+     * A complex type that contains one InvalidationSummary element for each
+     * invalidation batch that was created by the current AWS account.
+     *
+     * @param items A complex type that contains one InvalidationSummary element for each
+     *         invalidation batch that was created by the current AWS account.
+     */
+    public void setItems(java.util.Collection<InvalidationSummary> items) {
+        if (items == null) {
+            this.items = null;
+            return;
+        }
+
+        java.util.List<InvalidationSummary> itemsCopy = new java.util.ArrayList<InvalidationSummary>(items.size());
+        itemsCopy.addAll(items);
+        this.items = itemsCopy;
+    }
+    
+    /**
+     * A complex type that contains one InvalidationSummary element for each
+     * invalidation batch that was created by the current AWS account.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param items A complex type that contains one InvalidationSummary element for each
+     *         invalidation batch that was created by the current AWS account.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public InvalidationList withItems(InvalidationSummary... items) {
+        if (getItems() == null) setItems(new java.util.ArrayList<InvalidationSummary>(items.length));
+        for (InvalidationSummary value : items) {
+            getItems().add(value);
         }
         return this;
     }
     
     /**
-     * A complex type that lists the Invalidation ID and the status of that
-     * request.
+     * A complex type that contains one InvalidationSummary element for each
+     * invalidation batch that was created by the current AWS account.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param invalidationSummaries A complex type that lists the Invalidation ID and the status of that
-     *         request.
+     * @param items A complex type that contains one InvalidationSummary element for each
+     *         invalidation batch that was created by the current AWS account.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public InvalidationList withInvalidationSummaries(java.util.Collection<InvalidationSummary> invalidationSummaries) {
-        if (invalidationSummaries == null) {
-            this.invalidationSummaries = null;
+    public InvalidationList withItems(java.util.Collection<InvalidationSummary> items) {
+        if (items == null) {
+            this.items = null;
         } else {
-            java.util.List<InvalidationSummary> invalidationSummariesCopy = new java.util.ArrayList<InvalidationSummary>(invalidationSummaries.size());
-            invalidationSummariesCopy.addAll(invalidationSummaries);
-            this.invalidationSummaries = invalidationSummariesCopy;
+            java.util.List<InvalidationSummary> itemsCopy = new java.util.ArrayList<InvalidationSummary>(items.size());
+            itemsCopy.addAll(items);
+            this.items = itemsCopy;
         }
 
         return this;
@@ -332,7 +378,8 @@ public class InvalidationList {
         if (nextMarker != null) sb.append("NextMarker: " + nextMarker + ", ");
         if (maxItems != null) sb.append("MaxItems: " + maxItems + ", ");
         if (isTruncated != null) sb.append("IsTruncated: " + isTruncated + ", ");
-        if (invalidationSummaries != null) sb.append("InvalidationSummaries: " + invalidationSummaries + ", ");
+        if (quantity != null) sb.append("Quantity: " + quantity + ", ");
+        if (items != null) sb.append("Items: " + items + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -346,7 +393,8 @@ public class InvalidationList {
         hashCode = prime * hashCode + ((getNextMarker() == null) ? 0 : getNextMarker().hashCode()); 
         hashCode = prime * hashCode + ((getMaxItems() == null) ? 0 : getMaxItems().hashCode()); 
         hashCode = prime * hashCode + ((isTruncated() == null) ? 0 : isTruncated().hashCode()); 
-        hashCode = prime * hashCode + ((getInvalidationSummaries() == null) ? 0 : getInvalidationSummaries().hashCode()); 
+        hashCode = prime * hashCode + ((getQuantity() == null) ? 0 : getQuantity().hashCode()); 
+        hashCode = prime * hashCode + ((getItems() == null) ? 0 : getItems().hashCode()); 
         return hashCode;
     }
     
@@ -366,8 +414,10 @@ public class InvalidationList {
         if (other.getMaxItems() != null && other.getMaxItems().equals(this.getMaxItems()) == false) return false; 
         if (other.isTruncated() == null ^ this.isTruncated() == null) return false;
         if (other.isTruncated() != null && other.isTruncated().equals(this.isTruncated()) == false) return false; 
-        if (other.getInvalidationSummaries() == null ^ this.getInvalidationSummaries() == null) return false;
-        if (other.getInvalidationSummaries() != null && other.getInvalidationSummaries().equals(this.getInvalidationSummaries()) == false) return false; 
+        if (other.getQuantity() == null ^ this.getQuantity() == null) return false;
+        if (other.getQuantity() != null && other.getQuantity().equals(this.getQuantity()) == false) return false; 
+        if (other.getItems() == null ^ this.getItems() == null) return false;
+        if (other.getItems() != null && other.getItems().equals(this.getItems()) == false) return false; 
         return true;
     }
     

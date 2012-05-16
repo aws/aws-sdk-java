@@ -44,12 +44,16 @@ public class TrustedSignersStaxUnmarshaller implements Unmarshaller<TrustedSigne
             if (xmlEvent.isEndDocument()) return trustedSigners;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
-                if (context.testExpression("Self", targetDepth)) {
-                    trustedSigners.setSelf(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("Enabled", targetDepth)) {
+                    trustedSigners.setEnabled(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
-                if (context.testExpression("AwsAccountNumber", targetDepth)) {
-                    trustedSigners.getAwsAccountNumbers().add(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("Quantity", targetDepth)) {
+                    trustedSigners.setQuantity(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("Items/AwsAccountNumber", targetDepth)) {
+                    trustedSigners.getItems().add(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

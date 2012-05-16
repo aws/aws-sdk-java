@@ -18,9 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The hosted zone you are trying to create already exists. Route 53
- * returns this error when a hosted zone has already been created with
- * the specified <code>CallerReference</code> .
+ * The hosted zone you are trying to create already exists. Route 53 returns this error when a hosted zone has already been created with the specified
+ * <code>CallerReference</code> .
  * </p>
  */        
 public class HostedZoneAlreadyExistsException extends AmazonServiceException {

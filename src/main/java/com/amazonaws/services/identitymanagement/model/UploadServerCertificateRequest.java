@@ -18,23 +18,17 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#uploadServerCertificate(UploadServerCertificateRequest) UploadServerCertificate operation}.
  * <p>
- * Uploads a server certificate entity for the AWS account. The server
- * certificate entity includes a public key certificate, a private key,
- * and an optional certificate chain, which should all be PEM-encoded.
+ * Uploads a server certificate entity for the AWS account. The server certificate entity includes a public key certificate, a private key, and an
+ * optional certificate chain, which should all be PEM-encoded.
  * </p>
  * <p>
- * For information about the number of server certificates you can
- * upload, see <a
- * vices.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html">
- * Limitations on IAM Entities </a> in <i>Using AWS Identity and Access
- * Management</i> .
+ * For information about the number of server certificates you can upload, see <a
+ * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html"> Limitations on IAM Entities </a> in <i>Using AWS
+ * Identity and Access Management</i> .
  * </p>
  * <p>
- * <b>NOTE:</b>Because the body of the public key certificate, private
- * key, and the certificate chain can be large, you should use POST
- * rather than GET when calling UploadServerCertificate. For more
- * information, see Making Query Requests in Using AWS Identity and
- * Access Management.
+ * <b>NOTE:</b>Because the body of the public key certificate, private key, and the certificate chain can be large, you should use POST rather than GET
+ * when calling UploadServerCertificate. For more information, see Making Query Requests in Using AWS Identity and Access Management.
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#uploadServerCertificate(UploadServerCertificateRequest)

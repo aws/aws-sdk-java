@@ -19,8 +19,7 @@ import com.amazonaws.AmazonServiceException;
 /**
  * <p>
  * A
- * <code>Listener</code> already exists for the given
- * <code>LoadBalancerName</code> and <code>LoadBalancerPort</code> ,
+ * <code>Listener</code> already exists for the given <code>LoadBalancerName</code> and <code>LoadBalancerPort</code> ,
  * but with a different <code>InstancePort</code> ,
  * <code>Protocol</code> ,
  * or <code>SSLCertificateId</code> .

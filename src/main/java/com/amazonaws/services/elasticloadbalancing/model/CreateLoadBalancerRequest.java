@@ -21,25 +21,18 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Creates a new LoadBalancer.
  * </p>
  * <p>
- * After the call has completed successfully, a new LoadBalancer is
- * created; however, it will not be usable until at least one instance
- * has been registered. When the LoadBalancer creation is completed, the
- * client can check whether or not it is usable by using the
- * DescribeInstanceHealth API. The LoadBalancer is usable as soon as any
- * registered instance is <i>InService</i> .
+ * After the call has completed successfully, a new LoadBalancer is created; however, it will not be usable until at least one instance has been
+ * registered. When the LoadBalancer creation is completed, the client can check whether or not it is usable by using the DescribeInstanceHealth API. The
+ * LoadBalancer is usable as soon as any registered instance is <i>InService</i> .
  * 
  * </p>
  * <p>
- * <b>NOTE:</b> Currently, the client's quota of LoadBalancers is limited
- * to ten per Region.
+ * <b>NOTE:</b> Currently, the client's quota of LoadBalancers is limited to ten per Region.
  * </p>
  * <p>
- * <b>NOTE:</b> LoadBalancer DNS names vary depending on the Region
- * they're created in. For LoadBalancers created in the United States,
- * the DNS name ends with: us-east-1.elb.amazonaws.com (for the US
- * Standard Region) us-west-1.elb.amazonaws.com (for the Northern
- * California Region) For LoadBalancers created in the EU (Ireland)
- * Region, the DNS name ends with: eu-west-1.elb.amazonaws.com
+ * <b>NOTE:</b> LoadBalancer DNS names vary depending on the Region they're created in. For LoadBalancers created in the United States, the DNS name ends
+ * with: us-east-1.elb.amazonaws.com (for the US Standard Region) us-west-1.elb.amazonaws.com (for the Northern California Region) For LoadBalancers
+ * created in the EU (Ireland) Region, the DNS name ends with: eu-west-1.elb.amazonaws.com
  * </p>
  *
  * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#createLoadBalancer(CreateLoadBalancerRequest)

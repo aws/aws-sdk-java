@@ -16,8 +16,7 @@ package com.amazonaws.services.elasticbeanstalk.model;
 
 /**
  * <p>
- * Describes the AWS resources in use by this environment. This data is
- * not live data.
+ * Describes the AWS resources in use by this environment. This data is not live data.
  * </p>
  */
 public class EnvironmentResourcesDescription {

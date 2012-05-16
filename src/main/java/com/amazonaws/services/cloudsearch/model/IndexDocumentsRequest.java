@@ -18,11 +18,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.cloudsearch.AmazonCloudSearch#indexDocuments(IndexDocumentsRequest) IndexDocuments operation}.
  * <p>
- * Tells the search domain to start indexing its documents using the
- * latest text processing options and <code>IndexFields</code> . This
- * operation must be invoked to make options whose OptionStatus has
- * <code>OptionState</code> of <code>RequiresIndexDocuments</code>
- * visible in search results.
+ * Tells the search domain to start indexing its documents using the latest text processing options and <code>IndexFields</code> . This operation must
+ * be invoked to make options whose OptionStatus has <code>OptionState</code> of <code>RequiresIndexDocuments</code> visible in search results.
  * </p>
  *
  * @see com.amazonaws.services.cloudsearch.AmazonCloudSearch#indexDocuments(IndexDocumentsRequest)

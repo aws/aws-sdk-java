@@ -18,15 +18,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.autoscaling.AmazonAutoScaling#describeAutoScalingInstances(DescribeAutoScalingInstancesRequest) DescribeAutoScalingInstances operation}.
  * <p>
- * Returns a description of each Auto Scaling instance in the
- * <code>InstanceIds</code> list. If a list is not provided, the service
- * returns the full details of all instances up to a maximum of 50. By
- * default, the service returns a list of 20 items.
+ * Returns a description of each Auto Scaling instance in the <code>InstanceIds</code> list. If a list is not provided, the service returns the full
+ * details of all instances up to a maximum of 50. By default, the service returns a list of 20 items.
  * </p>
  * <p>
- * This action supports pagination by returning a token if there are
- * more pages to retrieve. To get the next page, call this action again
- * with the returned token as the <code>NextToken</code> parameter.
+ * This action supports pagination by returning a token if there are more pages to retrieve. To get the next page, call this action again with the
+ * returned token as the <code>NextToken</code> parameter.
  * </p>
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#describeAutoScalingInstances(DescribeAutoScalingInstancesRequest)

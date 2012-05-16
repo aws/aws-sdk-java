@@ -18,12 +18,10 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listGroupPolicies(ListGroupPoliciesRequest) ListGroupPolicies operation}.
  * <p>
- * Lists the names of the policies associated with the specified group.
- * If there are none, the action returns an empty list.
+ * Lists the names of the policies associated with the specified group. If there are none, the action returns an empty list.
  * </p>
  * <p>
- * You can paginate the results using the <code>MaxItems</code> and
- * <code>Marker</code> parameters.
+ * You can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters.
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listGroupPolicies(ListGroupPoliciesRequest)

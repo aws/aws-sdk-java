@@ -18,8 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.autoscaling.AmazonAutoScaling#describeAutoScalingNotificationTypes(DescribeAutoScalingNotificationTypesRequest) DescribeAutoScalingNotificationTypes operation}.
  * <p>
- * Returns a list of all notification types that are supported by Auto
- * Scaling.
+ * Returns a list of all notification types that are supported by Auto Scaling.
  * </p>
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#describeAutoScalingNotificationTypes(DescribeAutoScalingNotificationTypesRequest)

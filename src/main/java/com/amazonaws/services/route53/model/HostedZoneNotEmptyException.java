@@ -18,9 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The hosted zone contains resource record sets in addition to the
- * default NS and SOA resource record sets. Before you can delete the
- * hosted zone, you must delete the additional resource record sets.
+ * The hosted zone contains resource record sets in addition to the default NS and SOA resource record sets. Before you can delete the hosted zone, you
+ * must delete the additional resource record sets.
  * </p>
  */        
 public class HostedZoneNotEmptyException extends AmazonServiceException {

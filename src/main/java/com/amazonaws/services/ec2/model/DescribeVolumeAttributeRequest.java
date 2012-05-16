@@ -63,8 +63,13 @@ public class DescribeVolumeAttributeRequest extends AmazonWebServiceRequest {
     
     /**
      * Returns the value of the Attribute property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>autoEnableIO, productCodes
      *
      * @return The value of the Attribute property for this object.
+     *
+     * @see VolumeAttributeName
      */
     public String getAttribute() {
         return attribute;
@@ -72,8 +77,13 @@ public class DescribeVolumeAttributeRequest extends AmazonWebServiceRequest {
     
     /**
      * Sets the value of the Attribute property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>autoEnableIO, productCodes
      *
      * @param attribute The new value for the Attribute property for this object.
+     *
+     * @see VolumeAttributeName
      */
     public void setAttribute(String attribute) {
         this.attribute = attribute;
@@ -83,17 +93,56 @@ public class DescribeVolumeAttributeRequest extends AmazonWebServiceRequest {
      * Sets the value of the Attribute property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>autoEnableIO, productCodes
      *
      * @param attribute The new value for the Attribute property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
+     *
+     * @see VolumeAttributeName
      */
     public DescribeVolumeAttributeRequest withAttribute(String attribute) {
         this.attribute = attribute;
         return this;
     }
     
+    
+    /**
+     * Sets the value of the Attribute property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>autoEnableIO, productCodes
+     *
+     * @param attribute The new value for the Attribute property for this object.
+     *
+     * @see VolumeAttributeName
+     */
+    public void setAttribute(VolumeAttributeName attribute) {
+        this.attribute = attribute.toString();
+    }
+    
+    /**
+     * Sets the value of the Attribute property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>autoEnableIO, productCodes
+     *
+     * @param attribute The new value for the Attribute property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see VolumeAttributeName
+     */
+    public DescribeVolumeAttributeRequest withAttribute(VolumeAttributeName attribute) {
+        this.attribute = attribute.toString();
+        return this;
+    }
     
     /**
      * Returns a string representation of this object; useful for testing and

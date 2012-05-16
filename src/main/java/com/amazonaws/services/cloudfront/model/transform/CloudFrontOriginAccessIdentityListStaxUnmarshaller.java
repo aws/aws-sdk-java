@@ -60,8 +60,12 @@ public class CloudFrontOriginAccessIdentityListStaxUnmarshaller implements Unmar
                     cloudFrontOriginAccessIdentityList.setIsTruncated(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
-                if (context.testExpression("CloudFrontOriginAccessIdentitySummary", targetDepth)) {
-                    cloudFrontOriginAccessIdentityList.getCloudFrontOriginAccessIdentitySummaries().add(CloudFrontOriginAccessIdentitySummaryStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("Quantity", targetDepth)) {
+                    cloudFrontOriginAccessIdentityList.setQuantity(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("Items/CloudFrontOriginAccessIdentitySummary", targetDepth)) {
+                    cloudFrontOriginAccessIdentityList.getItems().add(CloudFrontOriginAccessIdentitySummaryStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

@@ -16,12 +16,10 @@ package com.amazonaws.services.ec2.model;
 
 /**
  * <p>
- * Describes an Amazon EC2 key pair. This is a summary of the key pair
- * data, and will not contain the actual private key material.
+ * Describes an Amazon EC2 key pair. This is a summary of the key pair data, and will not contain the actual private key material.
  * </p>
  * <p>
- * The private key material is only available when initially creating
- * the key pair.
+ * The private key material is only available when initially creating the key pair.
  * </p>
  */
 public class KeyPairInfo {

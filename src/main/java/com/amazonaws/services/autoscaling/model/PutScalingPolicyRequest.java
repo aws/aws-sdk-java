@@ -18,10 +18,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.autoscaling.AmazonAutoScaling#putScalingPolicy(PutScalingPolicyRequest) PutScalingPolicy operation}.
  * <p>
- * Creates or updates a policy for an Auto Scaling group. To update an
- * existing policy, use the existing policy name and set the parameter(s)
- * you want to change. Any existing parameter not changed in an update to
- * an existing policy is not changed in this update request.
+ * Creates or updates a policy for an Auto Scaling group. To update an existing policy, use the existing policy name and set the parameter(s) you want
+ * to change. Any existing parameter not changed in an update to an existing policy is not changed in this update request.
  * </p>
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#putScalingPolicy(PutScalingPolicyRequest)

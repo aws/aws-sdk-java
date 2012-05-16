@@ -16,8 +16,7 @@ package com.amazonaws.services.cloudsearch.model;
 
 /**
  * <p>
- * The value of the <code>DefaultSearchField</code> configured for this
- * search domain and its current status.
+ * The value of the <code>DefaultSearchField</code> configured for this search domain and its current status.
  * </p>
  */
 public class DefaultSearchFieldStatus {

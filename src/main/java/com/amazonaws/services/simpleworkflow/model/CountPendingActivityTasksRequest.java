@@ -18,10 +18,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#countPendingActivityTasks(CountPendingActivityTasksRequest) CountPendingActivityTasks operation}.
  * <p>
- * Returns the estimated number of activity tasks in the specified task
- * list. The count returned is an approximation and is not guaranteed to
- * be exact. If you specify a task list that no activity task was ever
- * scheduled in then 0 will be returned.
+ * Returns the estimated number of activity tasks in the specified task list. The count returned is an approximation and is not guaranteed to be exact.
+ * If you specify a task list that no activity task was ever scheduled in then 0 will be returned.
  * </p>
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#countPendingActivityTasks(CountPendingActivityTasksRequest)

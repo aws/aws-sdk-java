@@ -16,8 +16,7 @@ package com.amazonaws.services.elasticache.model;
 
 /**
  * <p>
- * Contains values that will be applied to the Cache Cluster in the
- * future.
+ * Contains values that will be applied to the Cache Cluster in the future.
  * </p>
  */
 public class PendingModifiedValues {

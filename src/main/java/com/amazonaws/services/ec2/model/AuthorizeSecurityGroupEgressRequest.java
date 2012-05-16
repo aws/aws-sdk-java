@@ -18,31 +18,23 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#authorizeSecurityGroupEgress(AuthorizeSecurityGroupEgressRequest) AuthorizeSecurityGroupEgress operation}.
  * <p>
- * This action applies only to security groups in a VPC; it's not
- * supported for EC2 security groups. For information about Amazon
- * Virtual Private Cloud and VPC security groups, go to the Amazon
- * Virtual Private Cloud User Guide.
+ * This action applies only to security groups in a VPC; it's not supported for EC2 security groups. For information about Amazon Virtual Private Cloud
+ * and VPC security groups, go to the Amazon Virtual Private Cloud User Guide.
  * </p>
  * <p>
- * The action adds one or more egress rules to a VPC security group.
- * Specifically, this permits instances in a security group to send
- * traffic to either one or more destination CIDR IP address ranges, or
- * to one or more destination security groups in the same VPC.
+ * The action adds one or more egress rules to a VPC security group. Specifically, this permits instances in a security group to send traffic to either
+ * one or more destination CIDR IP address ranges, or to one or more destination security groups in the same VPC.
  * </p>
  * <p>
- * Each rule consists of the protocol (e.g., TCP), plus either a CIDR
- * range, or a source group. For the TCP and UDP protocols, you must also
- * specify the destination port or port range. For the ICMP protocol, you
- * must also specify the ICMP type and code. You can use <code>-1</code>
- * as a wildcard for the ICMP type or code.
+ * Each rule consists of the protocol (e.g., TCP), plus either a CIDR range, or a source group. For the TCP and UDP protocols, you must also specify the
+ * destination port or port range. For the ICMP protocol, you must also specify the ICMP type and code. You can use <code>-1</code> as a wildcard for the
+ * ICMP type or code.
  * </p>
  * <p>
- * Rule changes are propagated to instances within the security group as
- * quickly as possible. However, a small delay might occur.
+ * Rule changes are propagated to instances within the security group as quickly as possible. However, a small delay might occur.
  * </p>
  * <p>
- * <b>Important:</b> For VPC security groups: You can have up to 50
- * rules total per group (covering both ingress and egress).
+ * <b>Important:</b> For VPC security groups: You can have up to 50 rules total per group (covering both ingress and egress).
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#authorizeSecurityGroupEgress(AuthorizeSecurityGroupEgressRequest)

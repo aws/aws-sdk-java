@@ -16,8 +16,7 @@ package com.amazonaws.services.sqs.model;
 
 /**
  * <p>
- * Contains the details of a single SQS message along with a
- * <code>Id</code> .
+ * Contains the details of a single SQS message along with a <code>Id</code> .
  * </p>
  */
 public class SendMessageBatchRequestEntry {

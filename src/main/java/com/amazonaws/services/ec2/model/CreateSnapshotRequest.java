@@ -18,17 +18,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#createSnapshot(CreateSnapshotRequest) CreateSnapshot operation}.
  * <p>
- * Create a snapshot of the volume identified by volume ID. A volume
- * does not have to be detached at the time the snapshot is taken.
+ * Create a snapshot of the volume identified by volume ID. A volume does not have to be detached at the time the snapshot is taken.
  * </p>
  * <p>
- * <b>NOTE:</b> Snapshot creation requires that the system is in a
- * consistent state. For instance, this means that if taking a snapshot
- * of a database, the tables must be read-only locked to ensure that the
- * snapshot will not contain a corrupted version of the database.
- * Therefore, be careful when using this API to ensure that the system
- * remains in the consistent state until the create snapshot status has
- * returned.
+ * <b>NOTE:</b> Snapshot creation requires that the system is in a consistent state. For instance, this means that if taking a snapshot of a database,
+ * the tables must be read-only locked to ensure that the snapshot will not contain a corrupted version of the database. Therefore, be careful when
+ * using this API to ensure that the system remains in the consistent state until the create snapshot status has returned.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createSnapshot(CreateSnapshotRequest)

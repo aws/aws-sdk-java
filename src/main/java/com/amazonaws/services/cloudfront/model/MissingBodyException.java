@@ -18,8 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * This operation requires a body. Ensure that the body is present and
- * the Content-Type header is set.
+ * This operation requires a body. Ensure that the body is present and the Content-Type header is set.
  * </p>
  */        
 public class MissingBodyException extends AmazonServiceException {

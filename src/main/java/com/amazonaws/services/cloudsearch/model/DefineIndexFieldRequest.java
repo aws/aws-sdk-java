@@ -18,10 +18,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.cloudsearch.AmazonCloudSearch#defineIndexField(DefineIndexFieldRequest) DefineIndexField operation}.
  * <p>
- * Configures an <code>IndexField</code> for the search domain. Used to
- * create new fields and modify existing ones. If the field exists, the
- * new configuration replaces the old one. You can configure a maximum of
- * 200 index fields.
+ * Configures an <code>IndexField</code> for the search domain. Used to create new fields and modify existing ones. If the field exists, the new
+ * configuration replaces the old one. You can configure a maximum of 200 index fields.
  * </p>
  *
  * @see com.amazonaws.services.cloudsearch.AmazonCloudSearch#defineIndexField(DefineIndexFieldRequest)

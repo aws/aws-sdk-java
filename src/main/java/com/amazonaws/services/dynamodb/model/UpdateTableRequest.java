@@ -21,8 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Updates the provisioned throughput for the given table.
  * </p>
  * <p>
- * Setting the throughput for a table helps you manage performance and is
- * part of the Provisioned Throughput feature of Amazon DynamoDB.
+ * Setting the throughput for a table helps you manage performance and is part of the Provisioned Throughput feature of Amazon DynamoDB.
  * </p>
  *
  * @see com.amazonaws.services.dynamodb.AmazonDynamoDB#updateTable(UpdateTableRequest)

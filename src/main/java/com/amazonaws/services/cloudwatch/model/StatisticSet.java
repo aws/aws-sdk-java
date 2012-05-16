@@ -16,9 +16,8 @@ package com.amazonaws.services.cloudwatch.model;
 
 /**
  * <p>
- * The <code>StatisticSet</code> data type describes the
- * <code>StatisticValues</code> component of MetricDatum, and represents
- * a set of statistics that describes a specific metric.
+ * The <code>StatisticSet</code> data type describes the <code>StatisticValues</code> component of MetricDatum, and represents a set of statistics that
+ * describes a specific metric.
  * </p>
  */
 public class StatisticSet {

@@ -18,8 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#retrieveEnvironmentInfo(RetrieveEnvironmentInfoRequest) RetrieveEnvironmentInfo operation}.
  * <p>
- * Retrieves the compiled information from a RequestEnvironmentInfo
- * request.
+ * Retrieves the compiled information from a RequestEnvironmentInfo request.
  * </p>
  * <p>
  * Related Topics

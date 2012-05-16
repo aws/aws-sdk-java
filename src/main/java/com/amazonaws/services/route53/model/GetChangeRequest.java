@@ -18,17 +18,14 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.route53.AmazonRoute53#getChange(GetChangeRequest) GetChange operation}.
  * <p>
- * This action returns the current status of a change batch request. The
- * status is one of the following values:
+ * This action returns the current status of a change batch request. The status is one of the following values:
  * </p>
  * <p>
- * - <code>PENDING</code> indicates that the changes in this request have
- * not replicated to all Route 53 DNS servers. This is the initial status
- * of all change batch requests.
+ * - <code>PENDING</code> indicates that the changes in this request have not replicated to all Route 53 DNS servers. This is the initial status of all
+ * change batch requests.
  * </p>
  * <p>
- * - <code>INSYNC</code> indicates that the changes have replicated to
- * all Amazon Route 53 DNS servers.
+ * - <code>INSYNC</code> indicates that the changes have replicated to all Amazon Route 53 DNS servers.
  * </p>
  *
  * @see com.amazonaws.services.route53.AmazonRoute53#getChange(GetChangeRequest)

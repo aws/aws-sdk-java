@@ -16,8 +16,7 @@ package com.amazonaws.services.sqs.model;
 
 /**
  * <p>
- * Encloses a receipt handle and an entry id for each message in
- * ChangeMessageVisibilityBatchRequest.
+ * Encloses a receipt handle and an entry id for each message in ChangeMessageVisibilityBatchRequest.
  * </p>
  */
 public class ChangeMessageVisibilityBatchRequestEntry {

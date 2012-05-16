@@ -25,7 +25,7 @@ public class RawMessage {
      * The raw data of the message. The client must ensure that the message
      * format complies with Internet email standards regarding email header
      * fields, MIME types, MIME encoding, and base64 encoding (if necessary).
-     * <p>For more information, go to the <a
+     * <p>For more information, go to the<a
      * f="http://docs.amazonwebservices.com/ses/latest/DeveloperGuide">Amazon
      * SES Developer Guide</a>.
      */
@@ -45,7 +45,7 @@ public class RawMessage {
      * @param data The raw data of the message. The client must ensure that
      * the message format complies with Internet email standards regarding
      * email header fields, MIME types, MIME encoding, and base64 encoding
-     * (if necessary). <p>For more information, go to the <a
+     * (if necessary). <p>For more information, go to the<a
      * f="http://docs.amazonwebservices.com/ses/latest/DeveloperGuide">Amazon
      * SES Developer Guide</a>.
      */
@@ -59,14 +59,14 @@ public class RawMessage {
      * The raw data of the message. The client must ensure that the message
      * format complies with Internet email standards regarding email header
      * fields, MIME types, MIME encoding, and base64 encoding (if necessary).
-     * <p>For more information, go to the <a
+     * <p>For more information, go to the<a
      * f="http://docs.amazonwebservices.com/ses/latest/DeveloperGuide">Amazon
      * SES Developer Guide</a>.
      *
      * @return The raw data of the message. The client must ensure that the message
      *         format complies with Internet email standards regarding email header
      *         fields, MIME types, MIME encoding, and base64 encoding (if necessary).
-     *         <p>For more information, go to the <a
+     *         <p>For more information, go to the<a
      *         f="http://docs.amazonwebservices.com/ses/latest/DeveloperGuide">Amazon
      *         SES Developer Guide</a>.
      */
@@ -78,14 +78,14 @@ public class RawMessage {
      * The raw data of the message. The client must ensure that the message
      * format complies with Internet email standards regarding email header
      * fields, MIME types, MIME encoding, and base64 encoding (if necessary).
-     * <p>For more information, go to the <a
+     * <p>For more information, go to the<a
      * f="http://docs.amazonwebservices.com/ses/latest/DeveloperGuide">Amazon
      * SES Developer Guide</a>.
      *
      * @param data The raw data of the message. The client must ensure that the message
      *         format complies with Internet email standards regarding email header
      *         fields, MIME types, MIME encoding, and base64 encoding (if necessary).
-     *         <p>For more information, go to the <a
+     *         <p>For more information, go to the<a
      *         f="http://docs.amazonwebservices.com/ses/latest/DeveloperGuide">Amazon
      *         SES Developer Guide</a>.
      */
@@ -97,7 +97,7 @@ public class RawMessage {
      * The raw data of the message. The client must ensure that the message
      * format complies with Internet email standards regarding email header
      * fields, MIME types, MIME encoding, and base64 encoding (if necessary).
-     * <p>For more information, go to the <a
+     * <p>For more information, go to the<a
      * f="http://docs.amazonwebservices.com/ses/latest/DeveloperGuide">Amazon
      * SES Developer Guide</a>.
      * <p>
@@ -106,7 +106,7 @@ public class RawMessage {
      * @param data The raw data of the message. The client must ensure that the message
      *         format complies with Internet email standards regarding email header
      *         fields, MIME types, MIME encoding, and base64 encoding (if necessary).
-     *         <p>For more information, go to the <a
+     *         <p>For more information, go to the<a
      *         f="http://docs.amazonwebservices.com/ses/latest/DeveloperGuide">Amazon
      *         SES Developer Guide</a>.
      *

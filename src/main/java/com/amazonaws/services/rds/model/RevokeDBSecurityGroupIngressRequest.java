@@ -18,11 +18,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#revokeDBSecurityGroupIngress(RevokeDBSecurityGroupIngressRequest) RevokeDBSecurityGroupIngress operation}.
  * <p>
- * Revokes ingress from a DBSecurityGroup for previously authorized IP
- * ranges or EC2 or VPC Security Groups. Required parameters for this API
- * are one of CIDRIP, EC2SecurityGroupId for VPC, or
- * (EC2SecurityGroupOwnerId and either EC2SecurityGroupName or
- * EC2SecurityGroupId).
+ * Revokes ingress from a DBSecurityGroup for previously authorized IP ranges or EC2 or VPC Security Groups. Required parameters for this API are one of
+ * CIDRIP, EC2SecurityGroupId for VPC, or (EC2SecurityGroupOwnerId and either EC2SecurityGroupName or EC2SecurityGroupId).
  * </p>
  *
  * @see com.amazonaws.services.rds.AmazonRDS#revokeDBSecurityGroupIngress(RevokeDBSecurityGroupIngressRequest)

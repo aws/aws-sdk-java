@@ -18,9 +18,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sqs.AmazonSQS#removePermission(RemovePermissionRequest) RemovePermission operation}.
  * <p>
- * The <code>RemovePermission</code> action revokes any permissions in
- * the queue policy that matches the specified <code>Label</code>
- * parameter. Only the owner of the queue can remove permissions.
+ * The <code>RemovePermission</code> action revokes any permissions in the queue policy that matches the specified <code>Label</code> parameter. Only the
+ * owner of the queue can remove permissions.
  * </p>
  *
  * @see com.amazonaws.services.sqs.AmazonSQS#removePermission(RemovePermissionRequest)

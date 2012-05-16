@@ -18,26 +18,18 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.securitytoken.AWSSecurityTokenService#getFederationToken(GetFederationTokenRequest) GetFederationToken operation}.
  * <p>
- * The GetFederationToken action returns a set of temporary credentials
- * for a federated user with the user name and policy specified in the
- * request. The credentials consist of an Access Key ID, a Secret Access
- * Key, and a security token. The credentials are valid for the specified
- * duration, between one and 36 hours.
+ * The GetFederationToken action returns a set of temporary credentials for a federated user with the user name and policy specified in the request. The
+ * credentials consist of an Access Key ID, a Secret Access Key, and a security token. The credentials are valid for the specified duration, between one
+ * and 36 hours.
  * </p>
  * <p>
- * The federated user who holds these credentials has any permissions
- * allowed by the intersection of the specified policy and any resource
- * or user policies that apply to the caller of the GetFederationToken
- * API, and any resource policies that apply to the federated user's
- * Amazon Resource Name (ARN). For more information about how token
- * permissions work, see <a
- * ocs.amazonwebservices.com/IAM/latest/UserGuide/TokenPermissions.html">
- * Controlling Permissions in Temporary Credentials </a> in <i>Using AWS
- * Identity and Access Management</i> . For information about using
- * GetFederationToken to create temporary credentials, see <a
- * cs.amazonwebservices.com/IAM/latest/UserGuide/CreatingFedTokens.html">
- * Creating Temporary Credentials to Enable Access for Federated Users
- * </a> in <i>Using AWS Identity and Access Management</i> .
+ * The federated user who holds these credentials has any permissions allowed by the intersection of the specified policy and any resource or user
+ * policies that apply to the caller of the GetFederationToken API, and any resource policies that apply to the federated user's Amazon Resource Name
+ * (ARN). For more information about how token permissions work, see <a
+ * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/TokenPermissions.html"> Controlling Permissions in Temporary Credentials </a> in <i>Using
+ * AWS Identity and Access Management</i> . For information about using GetFederationToken to create temporary credentials, see <a
+ * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/CreatingFedTokens.html"> Creating Temporary Credentials to Enable Access for Federated
+ * Users </a> in <i>Using AWS Identity and Access Management</i> .
  * </p>
  *
  * @see com.amazonaws.services.securitytoken.AWSSecurityTokenService#getFederationToken(GetFederationTokenRequest)

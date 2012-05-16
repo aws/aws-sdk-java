@@ -18,17 +18,14 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listVirtualMFADevices(ListVirtualMFADevicesRequest) ListVirtualMFADevices operation}.
  * <p>
- * Lists the virtual MFA devices under the AWS account by assignment
- * status. If you do not specify an assignment status, the action returns
- * a list of all virtual MFA devices. Assignment status can be
- * <code>Assigned</code> ,
+ * Lists the virtual MFA devices under the AWS account by assignment status. If you do not specify an assignment status, the action returns a list of
+ * all virtual MFA devices. Assignment status can be <code>Assigned</code> ,
  * 
  * <code>Unassigned</code> , or <code>Any</code> .
  * 
  * </p>
  * <p>
- * You can paginate the results using the <code>MaxItems</code> and
- * <code>Marker</code> parameters.
+ * You can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters.
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listVirtualMFADevices(ListVirtualMFADevicesRequest)

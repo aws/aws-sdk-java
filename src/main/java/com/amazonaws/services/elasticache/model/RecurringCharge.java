@@ -16,9 +16,7 @@ package com.amazonaws.services.elasticache.model;
 
 /**
  * <p>
- * This data type is used as a response element in the
- * DescribeReservedCacheNodes and DescribeReservedCacheNodesOfferings
- * actions.
+ * This data type is used as a response element in the DescribeReservedCacheNodes and DescribeReservedCacheNodesOfferings actions.
  * </p>
  */
 public class RecurringCharge {

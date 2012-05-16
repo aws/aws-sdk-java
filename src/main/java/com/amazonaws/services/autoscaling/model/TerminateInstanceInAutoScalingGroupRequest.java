@@ -18,12 +18,10 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.autoscaling.AmazonAutoScaling#terminateInstanceInAutoScalingGroup(TerminateInstanceInAutoScalingGroupRequest) TerminateInstanceInAutoScalingGroup operation}.
  * <p>
- * Terminates the specified instance. Optionally, the desired group size
- * can be adjusted.
+ * Terminates the specified instance. Optionally, the desired group size can be adjusted.
  * </p>
  * <p>
- * <b>NOTE:</b> This call simply registers a termination request. The
- * termination of the instance cannot happen immediately.
+ * <b>NOTE:</b> This call simply registers a termination request. The termination of the instance cannot happen immediately.
  * </p>
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#terminateInstanceInAutoScalingGroup(TerminateInstanceInAutoScalingGroupRequest)

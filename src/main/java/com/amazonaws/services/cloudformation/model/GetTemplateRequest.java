@@ -18,16 +18,13 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.cloudformation.AmazonCloudFormation#getTemplate(GetTemplateRequest) GetTemplate operation}.
  * <p>
- * Returns the template body for a specified stack name. You can get the
- * template for running or deleted stacks.
+ * Returns the template body for a specified stack name. You can get the template for running or deleted stacks.
  * </p>
  * <p>
- * For deleted stacks, GetTemplate returns the template for up to 90 days
- * after the stack has been deleted.
+ * For deleted stacks, GetTemplate returns the template for up to 90 days after the stack has been deleted.
  * </p>
  * <p>
- * <b>NOTE:</b> If the template does not exist, a ValidationError is
- * returned.
+ * <b>NOTE:</b> If the template does not exist, a ValidationError is returned.
  * </p>
  *
  * @see com.amazonaws.services.cloudformation.AmazonCloudFormation#getTemplate(GetTemplateRequest)

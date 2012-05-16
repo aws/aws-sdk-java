@@ -18,27 +18,18 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#createCustomerGateway(CreateCustomerGatewayRequest) CreateCustomerGateway operation}.
  * <p>
- * Provides information to AWS about your customer gateway device. The
- * customer gateway is the appliance at your end of the VPN connection
- * (compared to the VPN gateway, which is the device at the AWS side of
- * the VPN connection). You can have a single active customer gateway per
- * AWS account (active means that you've created a VPN connection to use
- * with the customer gateway). AWS might delete any customer gateway that
- * you create with this operation if you leave it inactive for an
- * extended period of time.
+ * Provides information to AWS about your customer gateway device. The customer gateway is the appliance at your end of the VPN connection (compared to
+ * the VPN gateway, which is the device at the AWS side of the VPN connection). You can have a single active customer gateway per AWS account (active
+ * means that you've created a VPN connection to use with the customer gateway). AWS might delete any customer gateway that you create with this
+ * operation if you leave it inactive for an extended period of time.
  * </p>
  * <p>
- * You must provide the Internet-routable IP address of the customer
- * gateway's external interface. The IP address must be static.
+ * You must provide the Internet-routable IP address of the customer gateway's external interface. The IP address must be static.
  * </p>
  * <p>
- * You must also provide the device's Border Gateway Protocol (BGP)
- * Autonomous System Number (ASN). You can use an existing ASN assigned
- * to your network. If you don't have an ASN already, you can use a
- * private ASN (in the 64512 - 65534 range). For more information about
- * ASNs, go to <a
- * href="http://en.wikipedia.org/wiki/Autonomous_system_%28Internet%29">
- * http://en.wikipedia.org/wiki/Autonomous_system_%28Internet%29 </a> .
+ * You must also provide the device's Border Gateway Protocol (BGP) Autonomous System Number (ASN). You can use an existing ASN assigned to your
+ * network. If you don't have an ASN already, you can use a private ASN (in the 64512 - 65534 range). For more information about ASNs, go to <a
+ * href="http://en.wikipedia.org/wiki/Autonomous_system_%28Internet%29"> http://en.wikipedia.org/wiki/Autonomous_system_%28Internet%29 </a> .
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createCustomerGateway(CreateCustomerGatewayRequest)

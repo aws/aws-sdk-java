@@ -18,8 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * Indicates that the customer already owns the maximum allowed number of
- * topics.
+ * Indicates that the customer already owns the maximum allowed number of topics.
  * </p>
  */        
 public class TopicLimitExceededException extends AmazonServiceException {

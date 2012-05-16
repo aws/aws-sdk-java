@@ -16,8 +16,7 @@ package com.amazonaws.services.rds.model;
 
 /**
  * <p>
- * Contains the result of a successful invocation of the
- * DescribeDBEngineVersions action.
+ * Contains the result of a successful invocation of the DescribeDBEngineVersions action.
  * </p>
  */
 public class DescribeDBEngineVersionsResult {

@@ -18,20 +18,16 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#respondActivityTaskCompleted(RespondActivityTaskCompletedRequest) RespondActivityTaskCompleted operation}.
  * <p>
- * Used by workers to tell the service that the ActivityTask identified
- * by the <code>taskToken</code> completed successfully with a
- * <code>result</code> (if provided).
+ * Used by workers to tell the service that the ActivityTask identified by the <code>taskToken</code> completed successfully with a <code>result</code>
+ * (if provided).
  * </p>
  * <p>
- * The <code>result</code> appears in the
- * <code>ActivityTaskCompleted</code> event in the workflow history.
+ * The <code>result</code> appears in the <code>ActivityTaskCompleted</code> event in the workflow history.
  * </p>
  * <p>
- * <b>IMPORTANT:</b> If the requested task does not complete
- * successfully, use RespondActivityTaskFailed instead. If the worker
- * finds that the task is canceled through the canceled flag returned by
- * RecordActivityTaskHeartbeat, it should cancel the task, clean up and
- * then call RespondActivityTaskCanceled.
+ * <b>IMPORTANT:</b> If the requested task does not complete successfully, use RespondActivityTaskFailed instead. If the worker finds that the task is
+ * canceled through the canceled flag returned by RecordActivityTaskHeartbeat, it should cancel the task, clean up and then call
+ * RespondActivityTaskCanceled.
  * </p>
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#respondActivityTaskCompleted(RespondActivityTaskCompletedRequest)

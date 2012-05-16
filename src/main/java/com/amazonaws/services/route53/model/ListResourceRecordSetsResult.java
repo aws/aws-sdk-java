@@ -16,9 +16,7 @@ package com.amazonaws.services.route53.model;
 
 /**
  * <p>
- * A complex type that contains information about the resource record
- * sets that are returned by the request and information about the
- * response.
+ * A complex type that contains information about the resource record sets that are returned by the request and information about the response.
  * </p>
  */
 public class ListResourceRecordSetsResult {

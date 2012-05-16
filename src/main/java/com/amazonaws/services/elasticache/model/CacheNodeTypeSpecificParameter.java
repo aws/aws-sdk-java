@@ -16,8 +16,7 @@ package com.amazonaws.services.elasticache.model;
 
 /**
  * <p>
- * A parameter that has a different value for each Cache Node Type it is
- * applied to.
+ * A parameter that has a different value for each Cache Node Type it is applied to.
  * </p>
  */
 public class CacheNodeTypeSpecificParameter {

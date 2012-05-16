@@ -18,15 +18,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.dynamodb.AmazonDynamoDB#getItem(GetItemRequest) GetItem operation}.
  * <p>
- * Retrieves a set of Attributes for an item that matches the primary
- * key.
+ * Retrieves a set of Attributes for an item that matches the primary key.
  * </p>
  * <p>
- * The <code>GetItem</code> operation provides an eventually-consistent
- * read by default. If eventually-consistent reads are not acceptable for
- * your application, use <code>ConsistentRead</code> . Although this
- * operation might take longer than a standard read, it always returns
- * the last updated value.
+ * The <code>GetItem</code> operation provides an eventually-consistent read by default. If eventually-consistent reads are not acceptable for your
+ * application, use <code>ConsistentRead</code> . Although this operation might take longer than a standard read, it always returns the last updated
+ * value.
  * </p>
  *
  * @see com.amazonaws.services.dynamodb.AmazonDynamoDB#getItem(GetItemRequest)

@@ -18,8 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * <i>CacheParameterGroupName</i> does not refer to an existing Cache
- * Parameter Group.
+ * <i>CacheParameterGroupName</i> does not refer to an existing Cache Parameter Group.
  * </p>
  */        
 public class CacheParameterGroupNotFoundException extends AmazonServiceException {

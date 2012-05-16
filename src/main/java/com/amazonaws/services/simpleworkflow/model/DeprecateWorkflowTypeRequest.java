@@ -18,15 +18,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#deprecateWorkflowType(DeprecateWorkflowTypeRequest) DeprecateWorkflowType operation}.
  * <p>
- * Deprecates the specified <i>workflow type</i> . After a workflow type
- * has been deprecated, you cannot create new executions of that type.
- * Executions that were started before the type was deprecated will
- * continue to run. A deprecated workflow type may still be used when
- * calling visibility actions.
+ * Deprecates the specified <i>workflow type</i> . After a workflow type has been deprecated, you cannot create new executions of that type. Executions
+ * that were started before the type was deprecated will continue to run. A deprecated workflow type may still be used when calling visibility actions.
  * </p>
  * <p>
- * <b>NOTE:</b> This operation is eventually consistent. The results are
- * best effort and may not exactly reflect recent updates and changes.
+ * <b>NOTE:</b> This operation is eventually consistent. The results are best effort and may not exactly reflect recent updates and changes.
  * </p>
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#deprecateWorkflowType(DeprecateWorkflowTypeRequest)

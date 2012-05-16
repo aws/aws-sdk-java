@@ -16,111 +16,62 @@ package com.amazonaws.services.simpleworkflow.model;
 
 /**
  * <p>
- * Event within a workflow execution. A history event can be one of
- * these types:
+ * Event within a workflow execution. A history event can be one of these types:
  * </p>
  * 
  * <ul>
- * <li> <b>WorkflowExecutionStarted</b> : The workflow execution was
- * started. </li>
- * <li> <b>WorkflowExecutionCompleted</b> : The workflow execution was
- * closed due to successful completion. </li>
- * <li> <b>WorkflowExecutionFailed</b> : The workflow execution closed
- * due to a failure. </li>
- * <li> <b>WorkflowExecutionTimedOut</b> : The workflow execution was
- * closed because a time out was exceeded. </li>
- * <li> <b>WorkflowExecutionCanceled</b> : The workflow execution was
- * successfully canceled and closed. </li>
- * <li> <b>WorkflowExecutionTerminated</b> : The workflow execution was
- * terminated. </li>
- * <li> <b>WorkflowExecutionContinuedAsNew</b> : The workflow execution
- * was closed and a new execution of the same type was created with the
- * same workflowId. </li>
- * <li> <b>WorkflowExecutionCancelRequested</b> : A request to cancel
- * this workflow execution was made. </li>
- * <li> <b>DecisionTaskScheduled</b> : A decision task was scheduled for
- * the workflow execution. </li>
- * <li> <b>DecisionTaskStarted</b> : The decision task was dispatched to
- * a decider. </li>
- * <li> <b>DecisionTaskCompleted</b> : The decider successfully
- * completed a decision task by calling RespondDecisionTaskCompleted.
- * </li>
+ * <li> <b>WorkflowExecutionStarted</b> : The workflow execution was started. </li>
+ * <li> <b>WorkflowExecutionCompleted</b> : The workflow execution was closed due to successful completion. </li>
+ * <li> <b>WorkflowExecutionFailed</b> : The workflow execution closed due to a failure. </li>
+ * <li> <b>WorkflowExecutionTimedOut</b> : The workflow execution was closed because a time out was exceeded. </li>
+ * <li> <b>WorkflowExecutionCanceled</b> : The workflow execution was successfully canceled and closed. </li>
+ * <li> <b>WorkflowExecutionTerminated</b> : The workflow execution was terminated. </li>
+ * <li> <b>WorkflowExecutionContinuedAsNew</b> : The workflow execution was closed and a new execution of the same type was created with the same
+ * workflowId. </li>
+ * <li> <b>WorkflowExecutionCancelRequested</b> : A request to cancel this workflow execution was made. </li>
+ * <li> <b>DecisionTaskScheduled</b> : A decision task was scheduled for the workflow execution. </li>
+ * <li> <b>DecisionTaskStarted</b> : The decision task was dispatched to a decider. </li>
+ * <li> <b>DecisionTaskCompleted</b> : The decider successfully completed a decision task by calling RespondDecisionTaskCompleted. </li>
  * <li> <b>DecisionTaskTimedOut</b> : The decision task timed out. </li>
- * <li> <b>ActivityTaskScheduled</b> : An activity task was scheduled
- * for execution. </li>
- * <li> <b>ScheduleActivityTaskFailed</b> : Failed to process
- * ScheduleActivityTask decision. This happens when the decision is not
- * configured properly, for example the activity type specified is not
- * registered. </li>
- * <li> <b>ActivityTaskStarted</b> : The scheduled activity task was
- * dispatched to a worker. </li>
- * <li> <b>ActivityTaskCompleted</b> : An activity worker successfully
- * completed an activity task by calling RespondActivityTaskCompleted.
- * </li>
- * <li> <b>ActivityTaskFailed</b> : An activity worker failed an
- * activity task by calling RespondActivityTaskFailed. </li>
+ * <li> <b>ActivityTaskScheduled</b> : An activity task was scheduled for execution. </li>
+ * <li> <b>ScheduleActivityTaskFailed</b> : Failed to process ScheduleActivityTask decision. This happens when the decision is not configured properly,
+ * for example the activity type specified is not registered. </li>
+ * <li> <b>ActivityTaskStarted</b> : The scheduled activity task was dispatched to a worker. </li>
+ * <li> <b>ActivityTaskCompleted</b> : An activity worker successfully completed an activity task by calling RespondActivityTaskCompleted. </li>
+ * <li> <b>ActivityTaskFailed</b> : An activity worker failed an activity task by calling RespondActivityTaskFailed. </li>
  * <li> <b>ActivityTaskTimedOut</b> : The activity task timed out. </li>
- * <li> <b>ActivityTaskCanceled</b> : The activity task was successfully
- * canceled. </li>
- * <li> <b>ActivityTaskCancelRequested</b> : A
- * <code>RequestCancelActivityTask</code> decision was received by the
- * system. </li>
- * <li> <b>RequestCancelActivityTaskFailed</b> : Failed to process
- * RequestCancelActivityTask decision. This happens when the decision is
- * not configured properly. </li>
- * <li> <b>WorkflowExecutionSignaled</b> : An external signal was
- * received for the workflow execution. </li>
- * <li> <b>MarkerRecorded</b> : A marker was recorded in the workflow
- * history as the result of a <code>RecordMarker</code> decision. </li>
- * <li> <b>TimerStarted</b> : A timer was started for the workflow
- * execution due to a <code>StartTimer</code> decision. </li>
- * <li> <b>StartTimerFailed</b> : Failed to process StartTimer decision.
- * This happens when the decision is not configured properly, for example
- * a timer already exists with the specified timer Id. </li>
- * <li> <b>TimerFired</b> : A timer, previously started for this
- * workflow execution, fired. </li>
- * <li> <b>TimerCanceled</b> : A timer, previously started for this
- * workflow execution, was successfully canceled. </li>
- * <li> <b>CancelTimerFailed</b> : Failed to process CancelTimer
- * decision. This happens when the decision is not configured properly,
- * for example no timer exists with the specified timer Id. </li>
- * <li> <b>StartChildWorkflowExecutionInitiated</b> : A request was made
- * to start a child workflow execution. </li>
- * <li> <b>StartChildWorkflowExecutionFailed</b> : Failed to process
- * StartChildWorkflowExecution decision. This happens when the decision
- * is not configured properly, for example the workflow type specified is
- * not registered. </li>
- * <li> <b>ChildWorkflowExecutionStarted</b> : A child workflow
- * execution was successfully started. </li>
- * <li> <b>ChildWorkflowExecutionCompleted</b> : A child workflow
- * execution, started by this workflow execution, completed successfully
- * and was closed. </li>
- * <li> <b>ChildWorkflowExecutionFailed</b> : A child workflow
- * execution, started by this workflow execution, failed to complete
- * successfully and was closed. </li>
- * <li> <b>ChildWorkflowExecutionTimedOut</b> : A child workflow
- * execution, started by this workflow execution, timed out and was
+ * <li> <b>ActivityTaskCanceled</b> : The activity task was successfully canceled. </li>
+ * <li> <b>ActivityTaskCancelRequested</b> : A <code>RequestCancelActivityTask</code> decision was received by the system. </li>
+ * <li> <b>RequestCancelActivityTaskFailed</b> : Failed to process RequestCancelActivityTask decision. This happens when the decision is not configured
+ * properly. </li>
+ * <li> <b>WorkflowExecutionSignaled</b> : An external signal was received for the workflow execution. </li>
+ * <li> <b>MarkerRecorded</b> : A marker was recorded in the workflow history as the result of a <code>RecordMarker</code> decision. </li>
+ * <li> <b>TimerStarted</b> : A timer was started for the workflow execution due to a <code>StartTimer</code> decision. </li>
+ * <li> <b>StartTimerFailed</b> : Failed to process StartTimer decision. This happens when the decision is not configured properly, for example a timer
+ * already exists with the specified timer Id. </li>
+ * <li> <b>TimerFired</b> : A timer, previously started for this workflow execution, fired. </li>
+ * <li> <b>TimerCanceled</b> : A timer, previously started for this workflow execution, was successfully canceled. </li>
+ * <li> <b>CancelTimerFailed</b> : Failed to process CancelTimer decision. This happens when the decision is not configured properly, for example no
+ * timer exists with the specified timer Id. </li>
+ * <li> <b>StartChildWorkflowExecutionInitiated</b> : A request was made to start a child workflow execution. </li>
+ * <li> <b>StartChildWorkflowExecutionFailed</b> : Failed to process StartChildWorkflowExecution decision. This happens when the decision is not
+ * configured properly, for example the workflow type specified is not registered. </li>
+ * <li> <b>ChildWorkflowExecutionStarted</b> : A child workflow execution was successfully started. </li>
+ * <li> <b>ChildWorkflowExecutionCompleted</b> : A child workflow execution, started by this workflow execution, completed successfully and was closed.
+ * </li>
+ * <li> <b>ChildWorkflowExecutionFailed</b> : A child workflow execution, started by this workflow execution, failed to complete successfully and was
  * closed. </li>
- * <li> <b>ChildWorkflowExecutionCanceled</b> : A child workflow
- * execution, started by this workflow execution, was canceled and
- * closed. </li>
- * <li> <b>ChildWorkflowExecutionTerminated</b> : A child workflow
- * execution, started by this workflow execution, was terminated. </li>
- * <li> <b>SignalExternalWorkflowExecutionInitiated</b> : A request to
- * signal an external workflow was made. </li>
- * <li> <b>ExternalWorkflowExecutionSignaled</b> : A signal, requested
- * by this workflow execution, was successfully delivered to the target
- * external workflow execution. </li>
- * <li> <b>SignalExternalWorkflowExecutionFailed</b> : The request to
- * signal an external workflow execution failed. </li>
- * <li> <b>RequestCancelExternalWorkflowExecutionInitiated</b> : A
- * request was made to request the cancellation of an external workflow
+ * <li> <b>ChildWorkflowExecutionTimedOut</b> : A child workflow execution, started by this workflow execution, timed out and was closed. </li>
+ * <li> <b>ChildWorkflowExecutionCanceled</b> : A child workflow execution, started by this workflow execution, was canceled and closed. </li>
+ * <li> <b>ChildWorkflowExecutionTerminated</b> : A child workflow execution, started by this workflow execution, was terminated. </li>
+ * <li> <b>SignalExternalWorkflowExecutionInitiated</b> : A request to signal an external workflow was made. </li>
+ * <li> <b>ExternalWorkflowExecutionSignaled</b> : A signal, requested by this workflow execution, was successfully delivered to the target external
+ * workflow execution. </li>
+ * <li> <b>SignalExternalWorkflowExecutionFailed</b> : The request to signal an external workflow execution failed. </li>
+ * <li> <b>RequestCancelExternalWorkflowExecutionInitiated</b> : A request was made to request the cancellation of an external workflow execution. </li>
+ * <li> <b>ExternalWorkflowExecutionCancelRequested</b> : Request to cancel an external workflow execution was successfully delivered to the target
  * execution. </li>
- * <li> <b>ExternalWorkflowExecutionCancelRequested</b> : Request to
- * cancel an external workflow execution was successfully delivered to
- * the target execution. </li>
- * <li> <b>RequestCancelExternalWorkflowExecutionFailed</b> : Request to
- * cancel an external workflow execution failed. </li>
+ * <li> <b>RequestCancelExternalWorkflowExecutionFailed</b> : Request to cancel an external workflow execution failed. </li>
  * 
  * </ul>
  */

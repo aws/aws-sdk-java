@@ -33,6 +33,9 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest {
     /**
      * The name of the attribute being modified. <p> Available attribute
      * names: <code>createVolumePermission</code>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>productCodes, createVolumePermission
      */
     private String attribute;
 
@@ -89,6 +92,24 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest {
     
     
     /**
+     * Constructs a new ModifySnapshotAttributeRequest object.
+     * Callers should use the setter or fluent setter (with...) methods to
+     * initialize any additional object members.
+     * 
+     * @param snapshotId The ID of the EBS snapshot whose attributes are
+     * being modified.
+     * @param attribute The name of the attribute being modified. <p>
+     * Available attribute names: <code>createVolumePermission</code>
+     * @param operationType The operation to perform on the attribute. <p>
+     * Available operation names: <code>add</code>, <code>remove</code>
+     */
+    public ModifySnapshotAttributeRequest(String snapshotId, SnapshotAttributeName attribute, String operationType) {
+        this.snapshotId = snapshotId;
+        this.attribute = attribute.toString();
+        this.operationType = operationType;
+    }
+    
+    /**
      * The ID of the EBS snapshot whose attributes are being modified.
      *
      * @return The ID of the EBS snapshot whose attributes are being modified.
@@ -125,9 +146,14 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest {
     /**
      * The name of the attribute being modified. <p> Available attribute
      * names: <code>createVolumePermission</code>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>productCodes, createVolumePermission
      *
      * @return The name of the attribute being modified. <p> Available attribute
      *         names: <code>createVolumePermission</code>
+     *
+     * @see SnapshotAttributeName
      */
     public String getAttribute() {
         return attribute;
@@ -136,9 +162,14 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest {
     /**
      * The name of the attribute being modified. <p> Available attribute
      * names: <code>createVolumePermission</code>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>productCodes, createVolumePermission
      *
      * @param attribute The name of the attribute being modified. <p> Available attribute
      *         names: <code>createVolumePermission</code>
+     *
+     * @see SnapshotAttributeName
      */
     public void setAttribute(String attribute) {
         this.attribute = attribute;
@@ -149,18 +180,61 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest {
      * names: <code>createVolumePermission</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>productCodes, createVolumePermission
      *
      * @param attribute The name of the attribute being modified. <p> Available attribute
      *         names: <code>createVolumePermission</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
+     *
+     * @see SnapshotAttributeName
      */
     public ModifySnapshotAttributeRequest withAttribute(String attribute) {
         this.attribute = attribute;
         return this;
     }
     
+    
+    /**
+     * The name of the attribute being modified. <p> Available attribute
+     * names: <code>createVolumePermission</code>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>productCodes, createVolumePermission
+     *
+     * @param attribute The name of the attribute being modified. <p> Available attribute
+     *         names: <code>createVolumePermission</code>
+     *
+     * @see SnapshotAttributeName
+     */
+    public void setAttribute(SnapshotAttributeName attribute) {
+        this.attribute = attribute.toString();
+    }
+    
+    /**
+     * The name of the attribute being modified. <p> Available attribute
+     * names: <code>createVolumePermission</code>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>productCodes, createVolumePermission
+     *
+     * @param attribute The name of the attribute being modified. <p> Available attribute
+     *         names: <code>createVolumePermission</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see SnapshotAttributeName
+     */
+    public ModifySnapshotAttributeRequest withAttribute(SnapshotAttributeName attribute) {
+        this.attribute = attribute.toString();
+        return this;
+    }
     
     /**
      * The operation to perform on the attribute. <p> Available operation

@@ -21,21 +21,16 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Deletes the specified LoadBalancer.
  * </p>
  * <p>
- * If attempting to recreate the LoadBalancer, the client must
- * reconfigure all the settings. The DNS name associated with a deleted
- * LoadBalancer will no longer be usable. Once deleted, the name and
- * associated DNS record of the LoadBalancer no longer exist and traffic
- * sent to any of its IP addresses will no longer be delivered to client
- * instances. The client will not receive the same DNS name even if a new
- * LoadBalancer with same LoadBalancerName is created.
+ * If attempting to recreate the LoadBalancer, the client must reconfigure all the settings. The DNS name associated with a deleted LoadBalancer will no
+ * longer be usable. Once deleted, the name and associated DNS record of the LoadBalancer no longer exist and traffic sent to any of its IP addresses
+ * will no longer be delivered to client instances. The client will not receive the same DNS name even if a new LoadBalancer with same LoadBalancerName
+ * is created.
  * </p>
  * <p>
- * To successfully call this API, the client must provide the same
- * account credentials as were used to create the LoadBalancer.
+ * To successfully call this API, the client must provide the same account credentials as were used to create the LoadBalancer.
  * </p>
  * <p>
- * <b>NOTE:</b> By design, if the LoadBalancer does not exist or has
- * already been deleted, DeleteLoadBalancer still succeeds.
+ * <b>NOTE:</b> By design, if the LoadBalancer does not exist or has already been deleted, DeleteLoadBalancer still succeeds.
  * </p>
  *
  * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#deleteLoadBalancer(DeleteLoadBalancerRequest)

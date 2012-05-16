@@ -18,8 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#startWorkflowExecution(StartWorkflowExecutionRequest) StartWorkflowExecution operation}.
  * <p>
- * Starts an execution of the workflow type in the specified domain
- * using the provided <code>workflowId</code> and input data.
+ * Starts an execution of the workflow type in the specified domain using the provided <code>workflowId</code> and input data.
  * </p>
  * <p>
  * This action returns the newly started workflow execution.

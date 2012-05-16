@@ -18,9 +18,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticache.AmazonElastiCache#modifyCacheCluster(ModifyCacheClusterRequest) ModifyCacheCluster operation}.
  * <p>
- * Modifies the Cache Cluster settings. You can change one or more Cache
- * Cluster configuration parameters by specifying the parameters and the
- * new values in the request.
+ * Modifies the Cache Cluster settings. You can change one or more Cache Cluster configuration parameters by specifying the parameters and the new
+ * values in the request.
  * </p>
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#modifyCacheCluster(ModifyCacheClusterRequest)

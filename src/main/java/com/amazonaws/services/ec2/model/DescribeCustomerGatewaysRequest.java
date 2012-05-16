@@ -18,18 +18,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeCustomerGateways(DescribeCustomerGatewaysRequest) DescribeCustomerGateways operation}.
  * <p>
- * Gives you information about your customer gateways. You can filter
- * the results to return information only about customer gateways that
- * match criteria you specify. For example, you could ask to get
- * information about a particular customer gateway (or all) only if the
- * gateway's state is pending or available. You can specify multiple
- * filters (e.g., the customer gateway has a particular IP address for
- * the Internet-routable external interface, and the gateway's state is
- * pending or available). The result includes information for a
- * particular customer gateway only if the gateway matches all your
- * filters. If there's no match, no special message is returned; the
- * response is simply empty. The following table shows the available
- * filters.
+ * Gives you information about your customer gateways. You can filter the results to return information only about customer gateways that match criteria
+ * you specify. For example, you could ask to get information about a particular customer gateway (or all) only if the gateway's state is pending or
+ * available. You can specify multiple filters (e.g., the customer gateway has a particular IP address for the Internet-routable external interface, and
+ * the gateway's state is pending or available). The result includes information for a particular customer gateway only if the gateway matches all your
+ * filters. If there's no match, no special message is returned; the response is simply empty. The following table shows the available filters.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeCustomerGateways(DescribeCustomerGatewaysRequest)

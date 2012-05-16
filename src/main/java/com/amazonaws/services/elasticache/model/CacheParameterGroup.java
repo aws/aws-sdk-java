@@ -16,8 +16,7 @@ package com.amazonaws.services.elasticache.model;
 
 /**
  * <p>
- * Contains a set of parameters and their values which can be applied to
- * a Cache Cluster.
+ * Contains a set of parameters and their values which can be applied to a Cache Cluster.
  * </p>
  */
 public class CacheParameterGroup {

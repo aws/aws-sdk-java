@@ -60,8 +60,12 @@ public class StreamingDistributionListStaxUnmarshaller implements Unmarshaller<S
                     streamingDistributionList.setIsTruncated(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
-                if (context.testExpression("StreamingDistributionSummary", targetDepth)) {
-                    streamingDistributionList.getStreamingDistributionSummaries().add(StreamingDistributionSummaryStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("Quantity", targetDepth)) {
+                    streamingDistributionList.setQuantity(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("Items/StreamingDistributionSummary", targetDepth)) {
+                    streamingDistributionList.getItems().add(StreamingDistributionSummaryStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

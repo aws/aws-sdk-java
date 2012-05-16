@@ -16,8 +16,7 @@ package com.amazonaws.services.storagegateway.model;
 
 /**
  * <p>
- * A JSON object containing a
- * DescribeChapCredentialsOutput$ChapCredentials.
+ * A JSON object containing a DescribeChapCredentialsOutput$ChapCredentials.
  * </p>
  */
 public class DescribeChapCredentialsResult {

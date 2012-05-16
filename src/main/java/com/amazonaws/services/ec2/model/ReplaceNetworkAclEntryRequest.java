@@ -18,9 +18,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#replaceNetworkAclEntry(ReplaceNetworkAclEntryRequest) ReplaceNetworkAclEntry operation}.
  * <p>
- * Replaces an entry (i.e., rule) in a network ACL. For more information
- * about network ACLs, go to Network ACLs in the Amazon Virtual Private
- * Cloud User Guide.
+ * Replaces an entry (i.e., rule) in a network ACL. For more information about network ACLs, go to Network ACLs in the Amazon Virtual Private Cloud User
+ * Guide.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#replaceNetworkAclEntry(ReplaceNetworkAclEntryRequest)

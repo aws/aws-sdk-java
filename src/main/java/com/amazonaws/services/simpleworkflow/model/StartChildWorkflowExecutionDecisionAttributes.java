@@ -16,8 +16,7 @@ package com.amazonaws.services.simpleworkflow.model;
 
 /**
  * <p>
- * Provides details of the <code>StartChildWorkflowExecution</code>
- * decision.
+ * Provides details of the <code>StartChildWorkflowExecution</code> decision.
  * </p>
  */
 public class StartChildWorkflowExecutionDecisionAttributes {

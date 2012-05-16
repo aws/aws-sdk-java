@@ -16,11 +16,10 @@ package com.amazonaws.services.storagegateway.model;
 
 /**
  * <p>
- * A JSON object containing a list of
- * DescribeStorediSCSIVolumesOutput$StorediSCSIVolumes.
+ * A JSON object containing a list of DescribeStorediSCSIVolumesOutput$StorediSCSIVolumes.
  * </p>
  */
-public class DescribeStoredISCSIVolumesResult {
+public class DescribeStorediSCSIVolumesResult {
 
     /**
      * Describes a single unit of output from
@@ -59,7 +58,7 @@ public class DescribeStoredISCSIVolumesResult {
      * describing the type of the volume. Currently, on STORED volumes are
      * supported. </li> </ul>
      */
-    private java.util.List<StoredISCSIVolume> storedISCSIVolumes;
+    private java.util.List<StorediSCSIVolume> storediSCSIVolumes;
 
     /**
      * Describes a single unit of output from
@@ -134,12 +133,12 @@ public class DescribeStoredISCSIVolumesResult {
      *         describing the type of the volume. Currently, on STORED volumes are
      *         supported. </li> </ul>
      */
-    public java.util.List<StoredISCSIVolume> getStoredISCSIVolumes() {
+    public java.util.List<StorediSCSIVolume> getStorediSCSIVolumes() {
         
-        if (storedISCSIVolumes == null) {
-            storedISCSIVolumes = new java.util.ArrayList<StoredISCSIVolume>();
+        if (storediSCSIVolumes == null) {
+            storediSCSIVolumes = new java.util.ArrayList<StorediSCSIVolume>();
         }
-        return storedISCSIVolumes;
+        return storediSCSIVolumes;
     }
     
     /**
@@ -179,7 +178,7 @@ public class DescribeStoredISCSIVolumesResult {
      * describing the type of the volume. Currently, on STORED volumes are
      * supported. </li> </ul>
      *
-     * @param storedISCSIVolumes Describes a single unit of output from
+     * @param storediSCSIVolumes Describes a single unit of output from
      *         <a>DescribeStorediSCSIVolumes</a>. The following fields are returned:
      *         <ul> <li> <p><b>ChapEnabled</b>: Indicates whether mutual CHAP is
      *         enabled for the iSCSI target. </li> <li>
@@ -215,15 +214,15 @@ public class DescribeStoredISCSIVolumesResult {
      *         describing the type of the volume. Currently, on STORED volumes are
      *         supported. </li> </ul>
      */
-    public void setStoredISCSIVolumes(java.util.Collection<StoredISCSIVolume> storedISCSIVolumes) {
-        if (storedISCSIVolumes == null) {
-            this.storedISCSIVolumes = null;
+    public void setStorediSCSIVolumes(java.util.Collection<StorediSCSIVolume> storediSCSIVolumes) {
+        if (storediSCSIVolumes == null) {
+            this.storediSCSIVolumes = null;
             return;
         }
 
-        java.util.List<StoredISCSIVolume> storedISCSIVolumesCopy = new java.util.ArrayList<StoredISCSIVolume>(storedISCSIVolumes.size());
-        storedISCSIVolumesCopy.addAll(storedISCSIVolumes);
-        this.storedISCSIVolumes = storedISCSIVolumesCopy;
+        java.util.List<StorediSCSIVolume> storediSCSIVolumesCopy = new java.util.ArrayList<StorediSCSIVolume>(storediSCSIVolumes.size());
+        storediSCSIVolumesCopy.addAll(storediSCSIVolumes);
+        this.storediSCSIVolumes = storediSCSIVolumesCopy;
     }
     
     /**
@@ -265,7 +264,7 @@ public class DescribeStoredISCSIVolumesResult {
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param storedISCSIVolumes Describes a single unit of output from
+     * @param storediSCSIVolumes Describes a single unit of output from
      *         <a>DescribeStorediSCSIVolumes</a>. The following fields are returned:
      *         <ul> <li> <p><b>ChapEnabled</b>: Indicates whether mutual CHAP is
      *         enabled for the iSCSI target. </li> <li>
@@ -304,10 +303,10 @@ public class DescribeStoredISCSIVolumesResult {
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public DescribeStoredISCSIVolumesResult withStoredISCSIVolumes(StoredISCSIVolume... storedISCSIVolumes) {
-        if (getStoredISCSIVolumes() == null) setStoredISCSIVolumes(new java.util.ArrayList<StoredISCSIVolume>(storedISCSIVolumes.length));
-        for (StoredISCSIVolume value : storedISCSIVolumes) {
-            getStoredISCSIVolumes().add(value);
+    public DescribeStorediSCSIVolumesResult withStorediSCSIVolumes(StorediSCSIVolume... storediSCSIVolumes) {
+        if (getStorediSCSIVolumes() == null) setStorediSCSIVolumes(new java.util.ArrayList<StorediSCSIVolume>(storediSCSIVolumes.length));
+        for (StorediSCSIVolume value : storediSCSIVolumes) {
+            getStorediSCSIVolumes().add(value);
         }
         return this;
     }
@@ -351,7 +350,7 @@ public class DescribeStoredISCSIVolumesResult {
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param storedISCSIVolumes Describes a single unit of output from
+     * @param storediSCSIVolumes Describes a single unit of output from
      *         <a>DescribeStorediSCSIVolumes</a>. The following fields are returned:
      *         <ul> <li> <p><b>ChapEnabled</b>: Indicates whether mutual CHAP is
      *         enabled for the iSCSI target. </li> <li>
@@ -390,13 +389,13 @@ public class DescribeStoredISCSIVolumesResult {
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public DescribeStoredISCSIVolumesResult withStoredISCSIVolumes(java.util.Collection<StoredISCSIVolume> storedISCSIVolumes) {
-        if (storedISCSIVolumes == null) {
-            this.storedISCSIVolumes = null;
+    public DescribeStorediSCSIVolumesResult withStorediSCSIVolumes(java.util.Collection<StorediSCSIVolume> storediSCSIVolumes) {
+        if (storediSCSIVolumes == null) {
+            this.storediSCSIVolumes = null;
         } else {
-            java.util.List<StoredISCSIVolume> storedISCSIVolumesCopy = new java.util.ArrayList<StoredISCSIVolume>(storedISCSIVolumes.size());
-            storedISCSIVolumesCopy.addAll(storedISCSIVolumes);
-            this.storedISCSIVolumes = storedISCSIVolumesCopy;
+            java.util.List<StorediSCSIVolume> storediSCSIVolumesCopy = new java.util.ArrayList<StorediSCSIVolume>(storediSCSIVolumes.size());
+            storediSCSIVolumesCopy.addAll(storediSCSIVolumes);
+            this.storediSCSIVolumes = storediSCSIVolumesCopy;
         }
 
         return this;
@@ -414,7 +413,7 @@ public class DescribeStoredISCSIVolumesResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (storedISCSIVolumes != null) sb.append("StoredISCSIVolumes: " + storedISCSIVolumes + ", ");
+        if (storediSCSIVolumes != null) sb.append("StorediSCSIVolumes: " + storediSCSIVolumes + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -424,7 +423,7 @@ public class DescribeStoredISCSIVolumesResult {
         final int prime = 31;
         int hashCode = 1;
         
-        hashCode = prime * hashCode + ((getStoredISCSIVolumes() == null) ? 0 : getStoredISCSIVolumes().hashCode()); 
+        hashCode = prime * hashCode + ((getStorediSCSIVolumes() == null) ? 0 : getStorediSCSIVolumes().hashCode()); 
         return hashCode;
     }
     
@@ -433,11 +432,11 @@ public class DescribeStoredISCSIVolumesResult {
         if (this == obj) return true;
         if (obj == null) return false;
     
-        if (obj instanceof DescribeStoredISCSIVolumesResult == false) return false;
-        DescribeStoredISCSIVolumesResult other = (DescribeStoredISCSIVolumesResult)obj;
+        if (obj instanceof DescribeStorediSCSIVolumesResult == false) return false;
+        DescribeStorediSCSIVolumesResult other = (DescribeStorediSCSIVolumesResult)obj;
         
-        if (other.getStoredISCSIVolumes() == null ^ this.getStoredISCSIVolumes() == null) return false;
-        if (other.getStoredISCSIVolumes() != null && other.getStoredISCSIVolumes().equals(this.getStoredISCSIVolumes()) == false) return false; 
+        if (other.getStorediSCSIVolumes() == null ^ this.getStorediSCSIVolumes() == null) return false;
+        if (other.getStorediSCSIVolumes() != null && other.getStorediSCSIVolumes().equals(this.getStorediSCSIVolumes()) == false) return false; 
         return true;
     }
     

@@ -18,12 +18,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#listActivityTypes(ListActivityTypesRequest) ListActivityTypes operation}.
  * <p>
- * Returns information about all activities registered in the specified
- * domain that match the specified name and registration status. The
- * result includes information like creation date, current status of the
- * activity, etc. The results may be split into multiple pages. To
- * retrieve subsequent pages, make the call again using the
- * <code>nextPageToken</code> returned by the initial call.
+ * Returns information about all activities registered in the specified domain that match the specified name and registration status. The result
+ * includes information like creation date, current status of the activity, etc. The results may be split into multiple pages. To retrieve subsequent
+ * pages, make the call again using the <code>nextPageToken</code> returned by the initial call.
  * </p>
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#listActivityTypes(ListActivityTypesRequest)

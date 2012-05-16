@@ -18,8 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * A Cache Parameter Group with the name specified in
- * <i>CacheParameterGroupName</i> already exists.
+ * A Cache Parameter Group with the name specified in <i>CacheParameterGroupName</i> already exists.
  * </p>
  */        
 public class CacheParameterGroupAlreadyExistsException extends AmazonServiceException {

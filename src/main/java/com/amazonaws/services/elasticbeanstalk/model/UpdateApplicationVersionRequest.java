@@ -18,13 +18,10 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#updateApplicationVersion(UpdateApplicationVersionRequest) UpdateApplicationVersion operation}.
  * <p>
- * Updates the specified application version to have the specified
- * properties.
+ * Updates the specified application version to have the specified properties.
  * </p>
  * <p>
- * <b>NOTE:</b> If a property (for example, description) is not provided,
- * the value remains unchanged. To clear properties, specify an empty
- * string.
+ * <b>NOTE:</b> If a property (for example, description) is not provided, the value remains unchanged. To clear properties, specify an empty string.
  * </p>
  *
  * @see com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#updateApplicationVersion(UpdateApplicationVersionRequest)

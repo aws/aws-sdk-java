@@ -21,12 +21,8 @@ package com.amazonaws.services.storagegateway.model;
  * 
  * <ul>
  * <li> GatewayARN </li>
- * <li>
- * DescribeBandwidthRateLimitOutput$AverageDownloadRateLimitInBitsPerSec
- * </li>
- * <li>
- * DescribeBandwidthRateLimitOutput$AverageDownloadRateLimitInBitsPerSec
- * </li>
+ * <li> DescribeBandwidthRateLimitOutput$AverageDownloadRateLimitInBitsPerSec </li>
+ * <li> DescribeBandwidthRateLimitOutput$AverageDownloadRateLimitInBitsPerSec </li>
  * 
  * </ul>
  */

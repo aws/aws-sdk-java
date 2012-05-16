@@ -16,8 +16,7 @@ package com.amazonaws.services.identitymanagement.model;
 
 /**
  * <p>
- * Contains the result of a successful invocation of the CreateAccessKey
- * action.
+ * Contains the result of a successful invocation of the CreateAccessKey action.
  * </p>
  */
 public class CreateAccessKeyResult {

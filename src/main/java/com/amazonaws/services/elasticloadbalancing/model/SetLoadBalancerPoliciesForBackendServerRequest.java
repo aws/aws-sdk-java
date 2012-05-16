@@ -18,12 +18,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#setLoadBalancerPoliciesForBackendServer(SetLoadBalancerPoliciesForBackendServerRequest) SetLoadBalancerPoliciesForBackendServer operation}.
  * <p>
- * Replaces the current set of policies associated with a port on which
- * the back-end server is listening with a new set of policies. After the
- * policies have been created using CreateLoadBalancerPolicy, they can be
- * applied here as a list. At this time, only the back-end server
- * authentication policy type can be applied to the back-end ports; this
- * policy type is composed of multiple public key policies.
+ * Replaces the current set of policies associated with a port on which the back-end server is listening with a new set of policies. After the policies
+ * have been created using CreateLoadBalancerPolicy, they can be applied here as a list. At this time, only the back-end server authentication policy
+ * type can be applied to the back-end ports; this policy type is composed of multiple public key policies.
  * </p>
  *
  * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#setLoadBalancerPoliciesForBackendServer(SetLoadBalancerPoliciesForBackendServerRequest)

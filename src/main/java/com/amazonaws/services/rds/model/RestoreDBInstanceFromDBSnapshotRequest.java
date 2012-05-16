@@ -18,10 +18,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#restoreDBInstanceFromDBSnapshot(RestoreDBInstanceFromDBSnapshotRequest) RestoreDBInstanceFromDBSnapshot operation}.
  * <p>
- * Creates a new DB Instance from a DB snapshot. The target database is
- * created from the source database restore point with the same
- * configuration as the original source database, except that the new RDS
- * instance is created with the default security group.
+ * Creates a new DB Instance from a DB snapshot. The target database is created from the source database restore point with the same configuration as
+ * the original source database, except that the new RDS instance is created with the default security group.
  * </p>
  *
  * @see com.amazonaws.services.rds.AmazonRDS#restoreDBInstanceFromDBSnapshot(RestoreDBInstanceFromDBSnapshotRequest)

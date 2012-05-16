@@ -16,8 +16,7 @@ package com.amazonaws.services.cloudwatch.model;
 
 /**
  * <p>
- * The <code>Dimension</code> data type further expands on the identity
- * of a metric using a Name, Value pair.
+ * The <code>Dimension</code> data type further expands on the identity of a metric using a Name, Value pair.
  * </p>
  */
 public class Dimension {

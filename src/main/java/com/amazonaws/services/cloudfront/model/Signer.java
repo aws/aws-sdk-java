@@ -15,15 +15,26 @@
 package com.amazonaws.services.cloudfront.model;
 
 /**
- * Signer
+ * <p>
+ * A complex type that lists the AWS accounts that were included in the TrustedSigners complex type, as well as their active CloudFront key pair IDs, if
+ * any.
+ * </p>
  */
 public class Signer {
 
+    /**
+     * Specifies an AWS account that can create signed URLs. Values: self,
+     * which indicates that the AWS account that was used to create the
+     * distribution can created signed URLs, or an AWS account number. Omit
+     * the dashes in the account number.
+     */
     private String awsAccountNumber;
 
-    private String self;
-
-    private java.util.List<String> keyPairIds;
+    /**
+     * A complex type that lists the active CloudFront key pairs, if any,
+     * that are associated with AwsAccountNumber.
+     */
+    private KeyPairIds keyPairIds;
 
     /**
      * Default constructor for a new Signer object.  Callers should use the
@@ -32,29 +43,47 @@ public class Signer {
     public Signer() {}
     
     /**
-     * Returns the value of the AwsAccountNumber property for this object.
+     * Specifies an AWS account that can create signed URLs. Values: self,
+     * which indicates that the AWS account that was used to create the
+     * distribution can created signed URLs, or an AWS account number. Omit
+     * the dashes in the account number.
      *
-     * @return The value of the AwsAccountNumber property for this object.
+     * @return Specifies an AWS account that can create signed URLs. Values: self,
+     *         which indicates that the AWS account that was used to create the
+     *         distribution can created signed URLs, or an AWS account number. Omit
+     *         the dashes in the account number.
      */
     public String getAwsAccountNumber() {
         return awsAccountNumber;
     }
     
     /**
-     * Sets the value of the AwsAccountNumber property for this object.
+     * Specifies an AWS account that can create signed URLs. Values: self,
+     * which indicates that the AWS account that was used to create the
+     * distribution can created signed URLs, or an AWS account number. Omit
+     * the dashes in the account number.
      *
-     * @param awsAccountNumber The new value for the AwsAccountNumber property for this object.
+     * @param awsAccountNumber Specifies an AWS account that can create signed URLs. Values: self,
+     *         which indicates that the AWS account that was used to create the
+     *         distribution can created signed URLs, or an AWS account number. Omit
+     *         the dashes in the account number.
      */
     public void setAwsAccountNumber(String awsAccountNumber) {
         this.awsAccountNumber = awsAccountNumber;
     }
     
     /**
-     * Sets the value of the AwsAccountNumber property for this object.
+     * Specifies an AWS account that can create signed URLs. Values: self,
+     * which indicates that the AWS account that was used to create the
+     * distribution can created signed URLs, or an AWS account number. Omit
+     * the dashes in the account number.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param awsAccountNumber The new value for the AwsAccountNumber property for this object.
+     * @param awsAccountNumber Specifies an AWS account that can create signed URLs. Values: self,
+     *         which indicates that the AWS account that was used to create the
+     *         distribution can created signed URLs, or an AWS account number. Omit
+     *         the dashes in the account number.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -66,107 +95,44 @@ public class Signer {
     
     
     /**
-     * Returns the value of the Self property for this object.
+     * A complex type that lists the active CloudFront key pairs, if any,
+     * that are associated with AwsAccountNumber.
      *
-     * @return The value of the Self property for this object.
+     * @return A complex type that lists the active CloudFront key pairs, if any,
+     *         that are associated with AwsAccountNumber.
      */
-    public String getSelf() {
-        return self;
-    }
-    
-    /**
-     * Sets the value of the Self property for this object.
-     *
-     * @param self The new value for the Self property for this object.
-     */
-    public void setSelf(String self) {
-        this.self = self;
-    }
-    
-    /**
-     * Sets the value of the Self property for this object.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param self The new value for the Self property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     */
-    public Signer withSelf(String self) {
-        this.self = self;
-        return this;
-    }
-    
-    
-    /**
-     * Returns the value of the KeyPairIds property for this object.
-     *
-     * @return The value of the KeyPairIds property for this object.
-     */
-    public java.util.List<String> getKeyPairIds() {
-        
-        if (keyPairIds == null) {
-            keyPairIds = new java.util.ArrayList<String>();
-        }
+    public KeyPairIds getKeyPairIds() {
         return keyPairIds;
     }
     
     /**
-     * Sets the value of the KeyPairIds property for this object.
+     * A complex type that lists the active CloudFront key pairs, if any,
+     * that are associated with AwsAccountNumber.
      *
-     * @param keyPairIds The new value for the KeyPairIds property for this object.
+     * @param keyPairIds A complex type that lists the active CloudFront key pairs, if any,
+     *         that are associated with AwsAccountNumber.
      */
-    public void setKeyPairIds(java.util.Collection<String> keyPairIds) {
-        if (keyPairIds == null) {
-            this.keyPairIds = null;
-            return;
-        }
-
-        java.util.List<String> keyPairIdsCopy = new java.util.ArrayList<String>(keyPairIds.size());
-        keyPairIdsCopy.addAll(keyPairIds);
-        this.keyPairIds = keyPairIdsCopy;
+    public void setKeyPairIds(KeyPairIds keyPairIds) {
+        this.keyPairIds = keyPairIds;
     }
     
     /**
-     * Sets the value of the KeyPairIds property for this object.
+     * A complex type that lists the active CloudFront key pairs, if any,
+     * that are associated with AwsAccountNumber.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param keyPairIds The new value for the KeyPairIds property for this object.
+     * @param keyPairIds A complex type that lists the active CloudFront key pairs, if any,
+     *         that are associated with AwsAccountNumber.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public Signer withKeyPairIds(String... keyPairIds) {
-        if (getKeyPairIds() == null) setKeyPairIds(new java.util.ArrayList<String>(keyPairIds.length));
-        for (String value : keyPairIds) {
-            getKeyPairIds().add(value);
-        }
+    public Signer withKeyPairIds(KeyPairIds keyPairIds) {
+        this.keyPairIds = keyPairIds;
         return this;
     }
     
-    /**
-     * Sets the value of the KeyPairIds property for this object.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param keyPairIds The new value for the KeyPairIds property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     */
-    public Signer withKeyPairIds(java.util.Collection<String> keyPairIds) {
-        if (keyPairIds == null) {
-            this.keyPairIds = null;
-        } else {
-            java.util.List<String> keyPairIdsCopy = new java.util.ArrayList<String>(keyPairIds.size());
-            keyPairIdsCopy.addAll(keyPairIds);
-            this.keyPairIds = keyPairIdsCopy;
-        }
-
-        return this;
-    }
     
     /**
      * Returns a string representation of this object; useful for testing and
@@ -181,7 +147,6 @@ public class Signer {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (awsAccountNumber != null) sb.append("AwsAccountNumber: " + awsAccountNumber + ", ");
-        if (self != null) sb.append("Self: " + self + ", ");
         if (keyPairIds != null) sb.append("KeyPairIds: " + keyPairIds + ", ");
         sb.append("}");
         return sb.toString();
@@ -193,7 +158,6 @@ public class Signer {
         int hashCode = 1;
         
         hashCode = prime * hashCode + ((getAwsAccountNumber() == null) ? 0 : getAwsAccountNumber().hashCode()); 
-        hashCode = prime * hashCode + ((getSelf() == null) ? 0 : getSelf().hashCode()); 
         hashCode = prime * hashCode + ((getKeyPairIds() == null) ? 0 : getKeyPairIds().hashCode()); 
         return hashCode;
     }
@@ -208,8 +172,6 @@ public class Signer {
         
         if (other.getAwsAccountNumber() == null ^ this.getAwsAccountNumber() == null) return false;
         if (other.getAwsAccountNumber() != null && other.getAwsAccountNumber().equals(this.getAwsAccountNumber()) == false) return false; 
-        if (other.getSelf() == null ^ this.getSelf() == null) return false;
-        if (other.getSelf() != null && other.getSelf().equals(this.getSelf()) == false) return false; 
         if (other.getKeyPairIds() == null ^ this.getKeyPairIds() == null) return false;
         if (other.getKeyPairIds() != null && other.getKeyPairIds().equals(this.getKeyPairIds()) == false) return false; 
         return true;

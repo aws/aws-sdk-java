@@ -16,8 +16,7 @@ package com.amazonaws.services.ec2.model;
 
 /**
  * <p>
- * Specifies the details of a how an EC2 EBS volume is attached to an
- * instance.
+ * Specifies the details of a how an EC2 EBS volume is attached to an instance.
  * </p>
  */
 public class VolumeAttachment {

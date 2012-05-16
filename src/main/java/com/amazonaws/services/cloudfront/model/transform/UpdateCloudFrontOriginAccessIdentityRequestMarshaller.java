@@ -37,17 +37,17 @@ import com.amazonaws.util.XMLWriter;
 public class UpdateCloudFrontOriginAccessIdentityRequestMarshaller implements Marshaller<Request<UpdateCloudFrontOriginAccessIdentityRequest>, UpdateCloudFrontOriginAccessIdentityRequest> {
 
     public Request<UpdateCloudFrontOriginAccessIdentityRequest> marshall(UpdateCloudFrontOriginAccessIdentityRequest updateCloudFrontOriginAccessIdentityRequest) {
-        if (updateCloudFrontOriginAccessIdentityRequest == null) { 
+        if (updateCloudFrontOriginAccessIdentityRequest == null) {
             throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
         Request<UpdateCloudFrontOriginAccessIdentityRequest> request = new DefaultRequest<UpdateCloudFrontOriginAccessIdentityRequest>(updateCloudFrontOriginAccessIdentityRequest, "AmazonCloudFront");
         request.setHttpMethod(HttpMethodName.PUT);
-        if (updateCloudFrontOriginAccessIdentityRequest.getIfMatch() != null) 
+        if (updateCloudFrontOriginAccessIdentityRequest.getIfMatch() != null)
         	request.addHeader("If-Match", updateCloudFrontOriginAccessIdentityRequest.getIfMatch());
         
 
-        String uriResourcePath = "2012-03-15/origin-access-identity/cloudfront/{Id}/config"; 
+        String uriResourcePath = "2012-05-05/origin-access-identity/cloudfront/{Id}/config"; 
         uriResourcePath = uriResourcePath.replace("{Id}", getString(updateCloudFrontOriginAccessIdentityRequest.getId())); 
 
         if (uriResourcePath.contains("?")) {
@@ -68,7 +68,7 @@ public class UpdateCloudFrontOriginAccessIdentityRequestMarshaller implements Ma
 
         
             StringWriter stringWriter = new StringWriter();
-            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2012-03-15/");
+            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2012-05-05/");
 
                     if (updateCloudFrontOriginAccessIdentityRequest != null) {
             CloudFrontOriginAccessIdentityConfig cloudFrontOriginAccessIdentityConfigCloudFrontOriginAccessIdentityConfig = updateCloudFrontOriginAccessIdentityRequest.getCloudFrontOriginAccessIdentityConfig();

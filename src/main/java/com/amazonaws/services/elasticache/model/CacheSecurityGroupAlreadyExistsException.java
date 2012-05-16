@@ -18,8 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * A Cache Security Group with the name specified in
- * <i>CacheSecurityGroupName</i> already exists.
+ * A Cache Security Group with the name specified in <i>CacheSecurityGroupName</i> already exists.
  * </p>
  */        
 public class CacheSecurityGroupAlreadyExistsException extends AmazonServiceException {

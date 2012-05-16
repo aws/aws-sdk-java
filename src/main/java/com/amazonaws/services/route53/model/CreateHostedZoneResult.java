@@ -16,8 +16,7 @@ package com.amazonaws.services.route53.model;
 
 /**
  * <p>
- * A complex type containing the response information for the new hosted
- * zone.
+ * A complex type containing the response information for the new hosted zone.
  * </p>
  */
 public class CreateHostedZoneResult {

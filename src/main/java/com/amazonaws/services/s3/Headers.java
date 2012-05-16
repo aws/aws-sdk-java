@@ -71,10 +71,10 @@ public interface Headers {
 
     /** Header describing what class of storage a user wants */
     public static final String STORAGE_CLASS = "x-amz-storage-class";
-    
+
     /** Header for optional server-side encryption algorithm */
     public static final String SERVER_SIDE_ENCRYPTION = "x-amz-server-side-encryption";
-    
+
     /** Header for optional object expiration */
     public static final String EXPIRATION = "x-amz-expiration";
 
@@ -92,10 +92,10 @@ public interface Headers {
 
     /** Range header for the get object request */
     public static final String RANGE = "Range";
-    
+
     /**Range header for the copy part request */
     public static final String COPY_PART_RANGE = "x-amz-copy-source-range";
-    
+
     /** Modified since constraint header for the get object request */
     public static final String GET_OBJECT_IF_MODIFIED_SINCE = "If-Modified-Since";
 
@@ -110,13 +110,19 @@ public interface Headers {
 
     /** Encrypted symmetric key header that is used in the envelope encryption mechanism */
     public static final String CRYPTO_KEY = "x-amz-key";
-    
+
     /** Initialization vector (IV) header that is used in the symmetric and envelope encryption mechanisms */
     public static final String CRYPTO_IV = "x-amz-iv";
 
-    /** JSON-encoded description of encryption materials used during encryption */ 
+    /** JSON-encoded description of encryption materials used during encryption */
     public static final String MATERIALS_DESCRIPTION = "x-amz-matdesc";
-    
+
     /** Instruction file header to be placed in the metadata of instruction files */
     public static final String CRYPTO_INSTRUCTION_FILE = "x-amz-crypto-instr-file";
+
+    /** Header for the original, unencrypted size of an encrypted object */
+    public static final String UNENCRYPTED_CONTENT_LENGTH = "x-amz-unencrypted-content-length";
+
+    /** Header for the optional original unencrypted Content MD5 of an encrypted object */
+    public static final String UNENCRYPTED_CONTENT_MD5 = "x-amz-unencrypted-content-md5";
 }

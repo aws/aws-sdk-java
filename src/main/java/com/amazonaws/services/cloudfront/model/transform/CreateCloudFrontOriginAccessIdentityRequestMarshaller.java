@@ -37,14 +37,14 @@ import com.amazonaws.util.XMLWriter;
 public class CreateCloudFrontOriginAccessIdentityRequestMarshaller implements Marshaller<Request<CreateCloudFrontOriginAccessIdentityRequest>, CreateCloudFrontOriginAccessIdentityRequest> {
 
     public Request<CreateCloudFrontOriginAccessIdentityRequest> marshall(CreateCloudFrontOriginAccessIdentityRequest createCloudFrontOriginAccessIdentityRequest) {
-        if (createCloudFrontOriginAccessIdentityRequest == null) { 
+        if (createCloudFrontOriginAccessIdentityRequest == null) {
             throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
         Request<CreateCloudFrontOriginAccessIdentityRequest> request = new DefaultRequest<CreateCloudFrontOriginAccessIdentityRequest>(createCloudFrontOriginAccessIdentityRequest, "AmazonCloudFront");
         request.setHttpMethod(HttpMethodName.POST);
 
-        String uriResourcePath = "2012-03-15/origin-access-identity/cloudfront"; 
+        String uriResourcePath = "2012-05-05/origin-access-identity/cloudfront"; 
 
         if (uriResourcePath.contains("?")) {
             String queryString = uriResourcePath.substring(uriResourcePath.indexOf("?") + 1);
@@ -64,7 +64,7 @@ public class CreateCloudFrontOriginAccessIdentityRequestMarshaller implements Ma
 
         
             StringWriter stringWriter = new StringWriter();
-            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2012-03-15/");
+            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2012-05-05/");
 
                     if (createCloudFrontOriginAccessIdentityRequest != null) {
             CloudFrontOriginAccessIdentityConfig cloudFrontOriginAccessIdentityConfigCloudFrontOriginAccessIdentityConfig = createCloudFrontOriginAccessIdentityRequest.getCloudFrontOriginAccessIdentityConfig();

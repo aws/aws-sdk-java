@@ -18,8 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#deregisterImage(DeregisterImageRequest) DeregisterImage operation}.
  * <p>
- * The DeregisterImage operation deregisters an AMI. Once deregistered,
- * instances of the AMI can no longer be launched.
+ * The DeregisterImage operation deregisters an AMI. Once deregistered, instances of the AMI can no longer be launched.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#deregisterImage(DeregisterImageRequest)

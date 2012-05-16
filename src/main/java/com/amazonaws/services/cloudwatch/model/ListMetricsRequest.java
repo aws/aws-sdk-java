@@ -18,19 +18,16 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.cloudwatch.AmazonCloudWatch#listMetrics(ListMetricsRequest) ListMetrics operation}.
  * <p>
- * Returns a list of valid metrics stored for the AWS account owner.
- * Returned metrics can be used with <code>GetMetricStatistics</code> to
- * obtain statistical data for a given metric.
+ * Returns a list of valid metrics stored for the AWS account owner. Returned metrics can be used with <code>GetMetricStatistics</code> to obtain
+ * statistical data for a given metric.
  * </p>
  * <p>
- * <b>NOTE:</b> Up to 500 results are returned for any one call. To
- * retrieve further results, use returned NextToken values with
- * subsequent ListMetrics operations.
+ * <b>NOTE:</b> Up to 500 results are returned for any one call. To retrieve further results, use returned NextToken values with subsequent ListMetrics
+ * operations.
  * </p>
  * <p>
- * <b>NOTE:</b> If you create a metric with the PutMetricData action,
- * allow up to fifteen minutes for the metric to appear in calls to the
- * ListMetrics action.
+ * <b>NOTE:</b> If you create a metric with the PutMetricData action, allow up to fifteen minutes for the metric to appear in calls to the ListMetrics
+ * action.
  * </p>
  *
  * @see com.amazonaws.services.cloudwatch.AmazonCloudWatch#listMetrics(ListMetricsRequest)

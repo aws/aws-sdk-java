@@ -16,8 +16,7 @@ package com.amazonaws.services.cloudsearch.model;
 
 /**
  * <p>
- * A response message that contains the default search field for a search
- * domain.
+ * A response message that contains the default search field for a search domain.
  * </p>
  */
 public class DescribeDefaultSearchFieldResult {

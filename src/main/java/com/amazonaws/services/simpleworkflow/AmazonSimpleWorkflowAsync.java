@@ -24,15 +24,12 @@ import com.amazonaws.services.simpleworkflow.model.*;
  * Interface for accessing AmazonSimpleWorkflow asynchronously,
  * using Java Futures.
  * Amazon Simple Workflow Service <p>
- * The Amazon Simple Workflow Service API Reference is intended for
- * programmers who need detailed information about the Amazon SWF actions
- * and data types.
+ * The Amazon Simple Workflow Service API Reference is intended for programmers who need detailed information about the Amazon SWF actions and data
+ * types.
  * </p>
  * <p>
- * For an broader overview of the Amazon SWF programming model, please
- * go to the <a
- * ="http://docs.amazonwebservices.com/amazonswf/latest/developerguide/">
- * Amazon SWF Developer Guide </a> .
+ * For an broader overview of the Amazon SWF programming model, please go to the <a
+ * href="http://docs.amazonwebservices.com/amazonswf/latest/developerguide/"> Amazon SWF Developer Guide </a> .
  * </p>
  * <p>
  * This section provides an overview of Amazon SWF actions.
@@ -41,8 +38,7 @@ import com.amazonaws.services.simpleworkflow.model.*;
  * <b>Action Categories</b>
  * </p>
  * <p>
- * The Amazon SWF actions can be grouped into the following major
- * categories.
+ * The Amazon SWF actions can be grouped into the following major categories.
  * </p>
  * 
  * <ul>
@@ -99,10 +95,8 @@ import com.amazonaws.services.simpleworkflow.model.*;
  * 
  * </ul>
  * <p>
- * Activity workers use the PollForActivityTask to get new activity
- * tasks. After a worker receives an activity task from Amazon SWF, it
- * performs the task and responds using RespondActivityTaskCompleted if
- * successful or RespondActivityTaskFailed if unsuccessful.
+ * Activity workers use the PollForActivityTask to get new activity tasks. After a worker receives an activity task from Amazon SWF, it performs the task
+ * and responds using RespondActivityTaskCompleted if successful or RespondActivityTaskFailed if unsuccessful.
  * </p>
  * <p>
  * <b>Actions related to Deciders</b>
@@ -123,11 +117,8 @@ import com.amazonaws.services.simpleworkflow.model.*;
  * 
  * </ul>
  * <p>
- * Deciders use PollForDecisionTask to get decision tasks. After a
- * decider receives a decision task from Amazon SWF, it examines its
- * workflow execution history and decides what to do next. It calls
- * RespondDecisionTaskCompletedto complete the decision task and provide
- * zero or more next decisions.
+ * Deciders use PollForDecisionTask to get decision tasks. After a decider receives a decision task from Amazon SWF, it examines its workflow execution
+ * history and decides what to do next. It calls RespondDecisionTaskCompletedto complete the decision task and provide zero or more next decisions.
  * </p>
  * <p>
  * <b>Actions related to Workflow Executions</b>
@@ -159,9 +150,8 @@ import com.amazonaws.services.simpleworkflow.model.*;
  * <b>Actions related to Administration</b>
  * </p>
  * <p>
- * Although you can perform administrative tasks from the Amazon SWF
- * console, you can use the actions in this section to automate functions
- * or build your own administrative tools.
+ * Although you can perform administrative tasks from the Amazon SWF console, you can use the actions in this section to automate functions or build your
+ * own administrative tools.
  * </p>
  * <p>
  * <b>Activity Management</b>
@@ -227,9 +217,8 @@ import com.amazonaws.services.simpleworkflow.model.*;
  * <b>Visibility Actions</b>
  * </p>
  * <p>
- * Although you can perform visibility actions from the Amazon SWF
- * console, you can use the actions in this section to build your own
- * console or administrative tools.
+ * Although you can perform visibility actions from the Amazon SWF console, you can use the actions in this section to build your own console or
+ * administrative tools.
  * </p>
  * 
  * <ul>

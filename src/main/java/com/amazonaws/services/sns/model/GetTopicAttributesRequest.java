@@ -18,9 +18,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#getTopicAttributes(GetTopicAttributesRequest) GetTopicAttributes operation}.
  * <p>
- * The GetTopicAttribtues action returns all of the properties of a topic
- * customers have created. Topic properties returned might differ based
- * on the authorization of the user.
+ * The GetTopicAttribtues action returns all of the properties of a topic customers have created. Topic properties returned might differ based on the
+ * authorization of the user.
  * </p>
  *
  * @see com.amazonaws.services.sns.AmazonSNS#getTopicAttributes(GetTopicAttributesRequest)

@@ -37,17 +37,17 @@ import com.amazonaws.util.XMLWriter;
 public class DeleteStreamingDistributionRequestMarshaller implements Marshaller<Request<DeleteStreamingDistributionRequest>, DeleteStreamingDistributionRequest> {
 
     public Request<DeleteStreamingDistributionRequest> marshall(DeleteStreamingDistributionRequest deleteStreamingDistributionRequest) {
-        if (deleteStreamingDistributionRequest == null) { 
+        if (deleteStreamingDistributionRequest == null) {
             throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
         Request<DeleteStreamingDistributionRequest> request = new DefaultRequest<DeleteStreamingDistributionRequest>(deleteStreamingDistributionRequest, "AmazonCloudFront");
         request.setHttpMethod(HttpMethodName.DELETE);
-        if (deleteStreamingDistributionRequest.getIfMatch() != null) 
+        if (deleteStreamingDistributionRequest.getIfMatch() != null)
         	request.addHeader("If-Match", deleteStreamingDistributionRequest.getIfMatch());
         
 
-        String uriResourcePath = "2012-03-15/streaming-distribution/{Id}"; 
+        String uriResourcePath = "2012-05-05/streaming-distribution/{Id}"; 
         uriResourcePath = uriResourcePath.replace("{Id}", getString(deleteStreamingDistributionRequest.getId())); 
 
         if (uriResourcePath.contains("?")) {

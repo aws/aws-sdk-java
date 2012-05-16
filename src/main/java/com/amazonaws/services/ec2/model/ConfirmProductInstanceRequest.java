@@ -18,15 +18,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#confirmProductInstance(ConfirmProductInstanceRequest) ConfirmProductInstance operation}.
  * <p>
- * The ConfirmProductInstance operation returns true if the specified
- * product code is attached to the specified instance. The operation
- * returns false if the product code is not attached to the instance.
+ * The ConfirmProductInstance operation returns true if the specified product code is attached to the specified instance. The operation returns false if
+ * the product code is not attached to the instance.
  * </p>
  * <p>
- * The ConfirmProductInstance operation can only be executed by the
- * owner of the AMI. This feature is useful when an AMI owner is
- * providing support and wants to verify whether a user's instance is
- * eligible.
+ * The ConfirmProductInstance operation can only be executed by the owner of the AMI. This feature is useful when an AMI owner is providing support and
+ * wants to verify whether a user's instance is eligible.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#confirmProductInstance(ConfirmProductInstanceRequest)

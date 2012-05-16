@@ -18,8 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * Your request contains more trusted signers than are allowed per
- * distribution.
+ * Your request contains more trusted signers than are allowed per distribution.
  * </p>
  */        
 public class TooManyTrustedSignersException extends AmazonServiceException {

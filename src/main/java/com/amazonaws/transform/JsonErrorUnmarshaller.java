@@ -45,9 +45,7 @@ public class JsonErrorUnmarshaller extends AbstractErrorUnmarshaller<JSONObject>
         if (json.has("__type")) {
             String type = json.getString("__type");
             int separator = type.lastIndexOf("#");
-            if (separator > 0) {
-                return type.substring(separator + 1);
-            }
+            return type.substring(separator + 1);
         }
 
         return null;

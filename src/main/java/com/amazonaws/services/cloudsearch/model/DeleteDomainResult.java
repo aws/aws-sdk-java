@@ -16,8 +16,7 @@ package com.amazonaws.services.cloudsearch.model;
 
 /**
  * <p>
- * A response message that contains the status of a newly deleted domain,
- * or no status if the domain has already been completely deleted.
+ * A response message that contains the status of a newly deleted domain, or no status if the domain has already been completely deleted.
  * </p>
  */
 public class DeleteDomainResult {

@@ -18,12 +18,10 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#deregisterInstancesFromLoadBalancer(DeregisterInstancesFromLoadBalancerRequest) DeregisterInstancesFromLoadBalancer operation}.
  * <p>
- * Deregisters instances from the LoadBalancer. Once the instance is
- * deregistered, it will stop receiving traffic from the LoadBalancer.
+ * Deregisters instances from the LoadBalancer. Once the instance is deregistered, it will stop receiving traffic from the LoadBalancer.
  * </p>
  * <p>
- * In order to successfully call this API, the same account credentials
- * as those used to create the LoadBalancer must be provided.
+ * In order to successfully call this API, the same account credentials as those used to create the LoadBalancer must be provided.
  * </p>
  *
  * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#deregisterInstancesFromLoadBalancer(DeregisterInstancesFromLoadBalancerRequest)

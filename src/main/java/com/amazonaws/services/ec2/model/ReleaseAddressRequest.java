@@ -18,22 +18,16 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#releaseAddress(ReleaseAddressRequest) ReleaseAddress operation}.
  * <p>
- * The ReleaseAddress operation releases an elastic IP address
- * associated with your account.
+ * The ReleaseAddress operation releases an elastic IP address associated with your account.
  * </p>
  * <p>
- * <b>NOTE:</b> Releasing an IP address automatically disassociates it
- * from any instance with which it is associated. For more information,
- * see DisassociateAddress.
+ * <b>NOTE:</b> Releasing an IP address automatically disassociates it from any instance with which it is associated. For more information, see
+ * DisassociateAddress.
  * </p>
  * <p>
- * <b>IMPORTANT:</b> After releasing an elastic IP address, it is
- * released to the IP address pool and might no longer be available to
- * your account. Make sure to update your DNS records and any servers or
- * devices that communicate with the address. If you run this operation
- * on an elastic IP address that is already released, the address might
- * be assigned to another account which will cause Amazon EC2 to return
- * an error.
+ * <b>IMPORTANT:</b> After releasing an elastic IP address, it is released to the IP address pool and might no longer be available to your account. Make
+ * sure to update your DNS records and any servers or devices that communicate with the address. If you run this operation on an elastic IP address that
+ * is already released, the address might be assigned to another account which will cause Amazon EC2 to return an error.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#releaseAddress(ReleaseAddressRequest)

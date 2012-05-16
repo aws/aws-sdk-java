@@ -18,9 +18,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#enableMFADevice(EnableMFADeviceRequest) EnableMFADevice operation}.
  * <p>
- * Enables the specified MFA device and associates it with the specified
- * user name. When enabled, the MFA device is required for every
- * subsequent login by the user name associated with the device.
+ * Enables the specified MFA device and associates it with the specified user name. When enabled, the MFA device is required for every subsequent login
+ * by the user name associated with the device.
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#enableMFADevice(EnableMFADeviceRequest)

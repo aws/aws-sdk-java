@@ -18,23 +18,16 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sqs.AmazonSQS#createQueue(CreateQueueRequest) CreateQueue operation}.
  * <p>
- * The <code>CreateQueue</code> action creates a new queue, or returns
- * the URL of an existing one. When you request <code>CreateQueue</code>
- * , you provide a name for the queue. To successfully create a new
- * queue, you must provide a name that is unique within the scope of your
- * own queues.
+ * The <code>CreateQueue</code> action creates a new queue, or returns the URL of an existing one. When you request <code>CreateQueue</code> , you
+ * provide a name for the queue. To successfully create a new queue, you must provide a name that is unique within the scope of your own queues.
  * </p>
  * <p>
- * You may pass one or more attributes in the request. If you do not
- * provide a value for any attribute, the queue will have the default
- * value for that attribute. Permitted attributes are the same that can
- * be set using SetQueueAttributes.
+ * You may pass one or more attributes in the request. If you do not provide a value for any attribute, the queue will have the default value for that
+ * attribute. Permitted attributes are the same that can be set using SetQueueAttributes.
  * </p>
  * <p>
- * If you provide the name of an existing queue, a new queue isn't
- * created. If the values of attributes provided with the request match
- * up with those on the existing queue, the queue URL is returned.
- * Otherwise, a <code>QueueNameExists</code> error is returned.
+ * If you provide the name of an existing queue, a new queue isn't created. If the values of attributes provided with the request match up with those on
+ * the existing queue, the queue URL is returned. Otherwise, a <code>QueueNameExists</code> error is returned.
  * </p>
  *
  * @see com.amazonaws.services.sqs.AmazonSQS#createQueue(CreateQueueRequest)

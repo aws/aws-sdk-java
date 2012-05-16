@@ -18,20 +18,15 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeVpcs(DescribeVpcsRequest) DescribeVpcs operation}.
  * <p>
- * Gives you information about your VPCs. You can filter the results to
- * return information only about VPCs that match criteria you specify.
+ * Gives you information about your VPCs. You can filter the results to return information only about VPCs that match criteria you specify.
  * </p>
  * <p>
- * For example, you could ask to get information about a particular VPC
- * or VPCs (or all your VPCs) only if the VPC's state is available. You
- * can specify multiple filters (e.g., the VPC uses one of several sets
- * of DHCP options, and the VPC's state is available). The result
- * includes information for a particular VPC only if the VPC matches all
- * your filters.
+ * For example, you could ask to get information about a particular VPC or VPCs (or all your VPCs) only if the VPC's state is available. You can specify
+ * multiple filters (e.g., the VPC uses one of several sets of DHCP options, and the VPC's state is available). The result includes information for a
+ * particular VPC only if the VPC matches all your filters.
  * </p>
  * <p>
- * If there's no match, no special message is returned; the response is
- * simply empty. The following table shows the available filters.
+ * If there's no match, no special message is returned; the response is simply empty. The following table shows the available filters.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeVpcs(DescribeVpcsRequest)

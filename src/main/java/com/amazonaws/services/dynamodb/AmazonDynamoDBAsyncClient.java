@@ -34,12 +34,10 @@ import com.amazonaws.services.dynamodb.model.*;
  * Callers must use the Future object to determine when the service call has actually
  * completed.
  * <p>
- * Amazon DynamoDB is a fast, highly scalable, highly available,
- * cost-effective non-relational database service.
+ * Amazon DynamoDB is a fast, highly scalable, highly available, cost-effective non-relational database service.
  * </p>
  * <p>
- * Amazon DynamoDB removes traditional scalability limitations on data
- * storage while maintaining low latency and predictable performance.
+ * Amazon DynamoDB removes traditional scalability limitations on data storage while maintaining low latency and predictable performance.
  * </p> 
  */       
 public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient

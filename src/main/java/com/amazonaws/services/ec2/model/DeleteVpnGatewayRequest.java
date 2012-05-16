@@ -18,12 +18,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#deleteVpnGateway(DeleteVpnGatewayRequest) DeleteVpnGateway operation}.
  * <p>
- * Deletes a VPN gateway. Use this when you want to delete a VPC and all
- * its associated components because you no longer need them. We
- * recommend that before you delete a VPN gateway, you detach it from the
- * VPC and delete the VPN connection. Note that you don't need to delete
- * the VPN gateway if you just want to delete and re-create the VPN
- * connection between your VPC and data center.
+ * Deletes a VPN gateway. Use this when you want to delete a VPC and all its associated components because you no longer need them. We recommend that
+ * before you delete a VPN gateway, you detach it from the VPC and delete the VPN connection. Note that you don't need to delete the VPN gateway if you
+ * just want to delete and re-create the VPN connection between your VPC and data center.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#deleteVpnGateway(DeleteVpnGatewayRequest)

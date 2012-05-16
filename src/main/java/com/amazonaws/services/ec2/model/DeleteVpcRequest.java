@@ -18,11 +18,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#deleteVpc(DeleteVpcRequest) DeleteVpc operation}.
  * <p>
- * Deletes a VPC. You must detach or delete all gateways or other
- * objects that are dependent on the VPC first. For example, you must
- * terminate all running instances, delete all VPC security groups
- * (except the default), delete all the route tables (except the
- * default), etc.
+ * Deletes a VPC. You must detach or delete all gateways or other objects that are dependent on the VPC first. For example, you must terminate all
+ * running instances, delete all VPC security groups (except the default), delete all the route tables (except the default), etc.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#deleteVpc(DeleteVpcRequest)

@@ -19,7 +19,7 @@ package com.amazonaws.services.storagegateway.model;
  * Describes an iSCSI stored volume.
  * </p>
  */
-public class StoredISCSIVolume {
+public class StorediSCSIVolume {
 
     /**
      * The Amazon Resource Name (ARN) of the storage volume. <p><i>Valid
@@ -66,7 +66,7 @@ public class StoredISCSIVolume {
      * Represents the percentage complete if the volume is restoring or
      * bootstrapping that represents the percent of data transferred. This
      * field does not appear in the response if the stored volume is not
-     * restoring or boostrapping.
+     * restoring or bootstrapping.
      */
     private Double volumeProgress;
 
@@ -100,7 +100,7 @@ public class StoredISCSIVolume {
      * An <a>VolumeiSCSIAttributes</a> object that represents a collection of
      * iSCSI attributes for one stored volume.
      */
-    private VolumeISCSIAttributes volumeISCSIAttributes;
+    private VolumeiSCSIAttributes volumeiSCSIAttributes;
 
     /**
      * The Amazon Resource Name (ARN) of the storage volume. <p><i>Valid
@@ -151,7 +151,7 @@ public class StoredISCSIVolume {
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public StoredISCSIVolume withVolumeARN(String volumeARN) {
+    public StorediSCSIVolume withVolumeARN(String volumeARN) {
         this.volumeARN = volumeARN;
         return this;
     }
@@ -194,7 +194,7 @@ public class StoredISCSIVolume {
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public StoredISCSIVolume withVolumeId(String volumeId) {
+    public StorediSCSIVolume withVolumeId(String volumeId) {
         this.volumeId = volumeId;
         return this;
     }
@@ -249,7 +249,7 @@ public class StoredISCSIVolume {
      *
      * @see VolumeType
      */
-    public StoredISCSIVolume withVolumeType(String volumeType) {
+    public StorediSCSIVolume withVolumeType(String volumeType) {
         this.volumeType = volumeType;
         return this;
     }
@@ -288,7 +288,7 @@ public class StoredISCSIVolume {
      *
      * @see VolumeType
      */
-    public StoredISCSIVolume withVolumeType(VolumeType volumeType) {
+    public StorediSCSIVolume withVolumeType(VolumeType volumeType) {
         this.volumeType = volumeType.toString();
         return this;
     }
@@ -342,7 +342,7 @@ public class StoredISCSIVolume {
      *
      * @see VolumeStatus
      */
-    public StoredISCSIVolume withVolumeStatus(String volumeStatus) {
+    public StorediSCSIVolume withVolumeStatus(String volumeStatus) {
         this.volumeStatus = volumeStatus;
         return this;
     }
@@ -381,7 +381,7 @@ public class StoredISCSIVolume {
      *
      * @see VolumeStatus
      */
-    public StoredISCSIVolume withVolumeStatus(VolumeStatus volumeStatus) {
+    public StorediSCSIVolume withVolumeStatus(VolumeStatus volumeStatus) {
         this.volumeStatus = volumeStatus.toString();
         return this;
     }
@@ -414,7 +414,7 @@ public class StoredISCSIVolume {
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public StoredISCSIVolume withVolumeSizeInBytes(Long volumeSizeInBytes) {
+    public StorediSCSIVolume withVolumeSizeInBytes(Long volumeSizeInBytes) {
         this.volumeSizeInBytes = volumeSizeInBytes;
         return this;
     }
@@ -424,12 +424,12 @@ public class StoredISCSIVolume {
      * Represents the percentage complete if the volume is restoring or
      * bootstrapping that represents the percent of data transferred. This
      * field does not appear in the response if the stored volume is not
-     * restoring or boostrapping.
+     * restoring or bootstrapping.
      *
      * @return Represents the percentage complete if the volume is restoring or
      *         bootstrapping that represents the percent of data transferred. This
      *         field does not appear in the response if the stored volume is not
-     *         restoring or boostrapping.
+     *         restoring or bootstrapping.
      */
     public Double getVolumeProgress() {
         return volumeProgress;
@@ -439,12 +439,12 @@ public class StoredISCSIVolume {
      * Represents the percentage complete if the volume is restoring or
      * bootstrapping that represents the percent of data transferred. This
      * field does not appear in the response if the stored volume is not
-     * restoring or boostrapping.
+     * restoring or bootstrapping.
      *
      * @param volumeProgress Represents the percentage complete if the volume is restoring or
      *         bootstrapping that represents the percent of data transferred. This
      *         field does not appear in the response if the stored volume is not
-     *         restoring or boostrapping.
+     *         restoring or bootstrapping.
      */
     public void setVolumeProgress(Double volumeProgress) {
         this.volumeProgress = volumeProgress;
@@ -454,19 +454,19 @@ public class StoredISCSIVolume {
      * Represents the percentage complete if the volume is restoring or
      * bootstrapping that represents the percent of data transferred. This
      * field does not appear in the response if the stored volume is not
-     * restoring or boostrapping.
+     * restoring or bootstrapping.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param volumeProgress Represents the percentage complete if the volume is restoring or
      *         bootstrapping that represents the percent of data transferred. This
      *         field does not appear in the response if the stored volume is not
-     *         restoring or boostrapping.
+     *         restoring or bootstrapping.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public StoredISCSIVolume withVolumeProgress(Double volumeProgress) {
+    public StorediSCSIVolume withVolumeProgress(Double volumeProgress) {
         this.volumeProgress = volumeProgress;
         return this;
     }
@@ -515,7 +515,7 @@ public class StoredISCSIVolume {
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public StoredISCSIVolume withVolumeDiskId(String volumeDiskId) {
+    public StorediSCSIVolume withVolumeDiskId(String volumeDiskId) {
         this.volumeDiskId = volumeDiskId;
         return this;
     }
@@ -570,7 +570,7 @@ public class StoredISCSIVolume {
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public StoredISCSIVolume withSourceSnapshotId(String sourceSnapshotId) {
+    public StorediSCSIVolume withSourceSnapshotId(String sourceSnapshotId) {
         this.sourceSnapshotId = sourceSnapshotId;
         return this;
     }
@@ -616,7 +616,7 @@ public class StoredISCSIVolume {
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public StoredISCSIVolume withPreservedExistingData(Boolean preservedExistingData) {
+    public StorediSCSIVolume withPreservedExistingData(Boolean preservedExistingData) {
         this.preservedExistingData = preservedExistingData;
         return this;
     }
@@ -642,19 +642,19 @@ public class StoredISCSIVolume {
      * @return An <a>VolumeiSCSIAttributes</a> object that represents a collection of
      *         iSCSI attributes for one stored volume.
      */
-    public VolumeISCSIAttributes getVolumeISCSIAttributes() {
-        return volumeISCSIAttributes;
+    public VolumeiSCSIAttributes getVolumeiSCSIAttributes() {
+        return volumeiSCSIAttributes;
     }
     
     /**
      * An <a>VolumeiSCSIAttributes</a> object that represents a collection of
      * iSCSI attributes for one stored volume.
      *
-     * @param volumeISCSIAttributes An <a>VolumeiSCSIAttributes</a> object that represents a collection of
+     * @param volumeiSCSIAttributes An <a>VolumeiSCSIAttributes</a> object that represents a collection of
      *         iSCSI attributes for one stored volume.
      */
-    public void setVolumeISCSIAttributes(VolumeISCSIAttributes volumeISCSIAttributes) {
-        this.volumeISCSIAttributes = volumeISCSIAttributes;
+    public void setVolumeiSCSIAttributes(VolumeiSCSIAttributes volumeiSCSIAttributes) {
+        this.volumeiSCSIAttributes = volumeiSCSIAttributes;
     }
     
     /**
@@ -663,14 +663,14 @@ public class StoredISCSIVolume {
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param volumeISCSIAttributes An <a>VolumeiSCSIAttributes</a> object that represents a collection of
+     * @param volumeiSCSIAttributes An <a>VolumeiSCSIAttributes</a> object that represents a collection of
      *         iSCSI attributes for one stored volume.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public StoredISCSIVolume withVolumeISCSIAttributes(VolumeISCSIAttributes volumeISCSIAttributes) {
-        this.volumeISCSIAttributes = volumeISCSIAttributes;
+    public StorediSCSIVolume withVolumeiSCSIAttributes(VolumeiSCSIAttributes volumeiSCSIAttributes) {
+        this.volumeiSCSIAttributes = volumeiSCSIAttributes;
         return this;
     }
     
@@ -696,7 +696,7 @@ public class StoredISCSIVolume {
         if (volumeDiskId != null) sb.append("VolumeDiskId: " + volumeDiskId + ", ");
         if (sourceSnapshotId != null) sb.append("SourceSnapshotId: " + sourceSnapshotId + ", ");
         if (preservedExistingData != null) sb.append("PreservedExistingData: " + preservedExistingData + ", ");
-        if (volumeISCSIAttributes != null) sb.append("VolumeISCSIAttributes: " + volumeISCSIAttributes + ", ");
+        if (volumeiSCSIAttributes != null) sb.append("VolumeiSCSIAttributes: " + volumeiSCSIAttributes + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -715,7 +715,7 @@ public class StoredISCSIVolume {
         hashCode = prime * hashCode + ((getVolumeDiskId() == null) ? 0 : getVolumeDiskId().hashCode()); 
         hashCode = prime * hashCode + ((getSourceSnapshotId() == null) ? 0 : getSourceSnapshotId().hashCode()); 
         hashCode = prime * hashCode + ((isPreservedExistingData() == null) ? 0 : isPreservedExistingData().hashCode()); 
-        hashCode = prime * hashCode + ((getVolumeISCSIAttributes() == null) ? 0 : getVolumeISCSIAttributes().hashCode()); 
+        hashCode = prime * hashCode + ((getVolumeiSCSIAttributes() == null) ? 0 : getVolumeiSCSIAttributes().hashCode()); 
         return hashCode;
     }
     
@@ -724,8 +724,8 @@ public class StoredISCSIVolume {
         if (this == obj) return true;
         if (obj == null) return false;
     
-        if (obj instanceof StoredISCSIVolume == false) return false;
-        StoredISCSIVolume other = (StoredISCSIVolume)obj;
+        if (obj instanceof StorediSCSIVolume == false) return false;
+        StorediSCSIVolume other = (StorediSCSIVolume)obj;
         
         if (other.getVolumeARN() == null ^ this.getVolumeARN() == null) return false;
         if (other.getVolumeARN() != null && other.getVolumeARN().equals(this.getVolumeARN()) == false) return false; 
@@ -745,8 +745,8 @@ public class StoredISCSIVolume {
         if (other.getSourceSnapshotId() != null && other.getSourceSnapshotId().equals(this.getSourceSnapshotId()) == false) return false; 
         if (other.isPreservedExistingData() == null ^ this.isPreservedExistingData() == null) return false;
         if (other.isPreservedExistingData() != null && other.isPreservedExistingData().equals(this.isPreservedExistingData()) == false) return false; 
-        if (other.getVolumeISCSIAttributes() == null ^ this.getVolumeISCSIAttributes() == null) return false;
-        if (other.getVolumeISCSIAttributes() != null && other.getVolumeISCSIAttributes().equals(this.getVolumeISCSIAttributes()) == false) return false; 
+        if (other.getVolumeiSCSIAttributes() == null ^ this.getVolumeiSCSIAttributes() == null) return false;
+        if (other.getVolumeiSCSIAttributes() != null && other.getVolumeiSCSIAttributes().equals(this.getVolumeiSCSIAttributes()) == false) return false; 
         return true;
     }
     

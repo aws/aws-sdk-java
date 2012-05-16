@@ -18,17 +18,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.storagegateway.AWSStorageGateway#deleteGateway(DeleteGatewayRequest) DeleteGateway operation}.
  * <p>
- * This operation deletes a gateway. To specify which gateway to delete,
- * use the Amazon Resource Name (ARN) of the gateway in your request. The
- * operation deletes the gateway; however, it does not delete the gateway
- * virtual machine (VM) from your host computer.
+ * This operation deletes a gateway. To specify which gateway to delete, use the Amazon Resource Name (ARN) of the gateway in your request. The operation
+ * deletes the gateway; however, it does not delete the gateway virtual machine (VM) from your host computer.
  * </p>
  * <p>
- * After you delete a gateway, you cannot reactivate it. Completed
- * snapshots of the gateway volumes are not deleted upon deleting the
- * gateway, however, pending snapshots will not complete. After you
- * delete a gateway, your next step is to remove it from your
- * environment.
+ * After you delete a gateway, you cannot reactivate it. Completed snapshots of the gateway volumes are not deleted upon deleting the gateway, however,
+ * pending snapshots will not complete. After you delete a gateway, your next step is to remove it from your environment.
  * </p>
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#deleteGateway(DeleteGatewayRequest)

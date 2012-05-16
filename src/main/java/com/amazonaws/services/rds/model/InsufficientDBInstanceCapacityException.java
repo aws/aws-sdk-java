@@ -18,8 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * Specified DB Instance class is not available in the specified
- * Availability Zone.
+ * Specified DB Instance class is not available in the specified Availability Zone.
  * </p>
  */        
 public class InsufficientDBInstanceCapacityException extends AmazonServiceException {

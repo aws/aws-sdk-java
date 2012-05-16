@@ -18,8 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The request was rejected because the policy document was malformed.
- * The error message describes the specific error.
+ * The request was rejected because the policy document was malformed. The error message describes the specific error.
  * </p>
  */        
 public class MalformedPolicyDocumentException extends AmazonServiceException {

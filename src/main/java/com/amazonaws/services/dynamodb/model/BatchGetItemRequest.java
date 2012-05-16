@@ -18,24 +18,17 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.dynamodb.AmazonDynamoDB#batchGetItem(BatchGetItemRequest) BatchGetItem operation}.
  * <p>
- * Retrieves the attributes for multiple items from multiple tables using
- * their primary keys.
+ * Retrieves the attributes for multiple items from multiple tables using their primary keys.
  * </p>
  * <p>
- * The maximum number of item attributes that can be retrieved for a
- * single operation is 100. Also, the number of items retrieved is
- * constrained by a 1 MB the size limit. If the response size limit is
- * exceeded or a partial result is returned due to an internal processing
- * failure, Amazon DynamoDB returns an <code>UnprocessedKeys</code> value
- * so you can retry the operation starting with the next item to get.
+ * The maximum number of item attributes that can be retrieved for a single operation is 100. Also, the number of items retrieved is constrained by a 1
+ * MB the size limit. If the response size limit is exceeded or a partial result is returned due to an internal processing failure, Amazon DynamoDB
+ * returns an <code>UnprocessedKeys</code> value so you can retry the operation starting with the next item to get.
  * </p>
  * <p>
- * Amazon DynamoDB automatically adjusts the number of items returned per
- * page to enforce this limit. For example, even if you ask to retrieve
- * 100 items, but each individual item is 50k in size, the system returns
- * 20 items and an appropriate <code>UnprocessedKeys</code> value so you
- * can get the next page of results. If necessary, your application needs
- * its own logic to assemble the pages of results into one set.
+ * Amazon DynamoDB automatically adjusts the number of items returned per page to enforce this limit. For example, even if you ask to retrieve 100 items,
+ * but each individual item is 50k in size, the system returns 20 items and an appropriate <code>UnprocessedKeys</code> value so you can get the next
+ * page of results. If necessary, your application needs its own logic to assemble the pages of results into one set.
  * </p>
  *
  * @see com.amazonaws.services.dynamodb.AmazonDynamoDB#batchGetItem(BatchGetItemRequest)

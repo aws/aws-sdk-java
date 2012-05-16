@@ -18,14 +18,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#deleteCustomerGateway(DeleteCustomerGatewayRequest) DeleteCustomerGateway operation}.
  * <p>
- * Deletes a customer gateway. You must delete the VPN connection before
- * deleting the customer gateway.
+ * Deletes a customer gateway. You must delete the VPN connection before deleting the customer gateway.
  * </p>
  * <p>
- * You can have a single active customer gateway per AWS account (active
- * means that you've created a VPN connection with that customer
- * gateway). AWS might delete any customer gateway you leave inactive for
- * an extended period of time.
+ * You can have a single active customer gateway per AWS account (active means that you've created a VPN connection with that customer gateway). AWS
+ * might delete any customer gateway you leave inactive for an extended period of time.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#deleteCustomerGateway(DeleteCustomerGatewayRequest)

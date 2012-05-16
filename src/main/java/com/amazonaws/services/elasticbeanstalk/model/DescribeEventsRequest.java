@@ -18,12 +18,10 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#describeEvents(DescribeEventsRequest) DescribeEvents operation}.
  * <p>
- * Returns list of event descriptions matching criteria up to the last 6
- * weeks.
+ * Returns list of event descriptions matching criteria up to the last 6 weeks.
  * </p>
  * <p>
- * <b>NOTE:</b> This action returns the most recent 1,000 events from the
- * specified NextToken.
+ * <b>NOTE:</b> This action returns the most recent 1,000 events from the specified NextToken.
  * </p>
  *
  * @see com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#describeEvents(DescribeEventsRequest)

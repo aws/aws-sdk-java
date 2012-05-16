@@ -16,8 +16,7 @@ package com.amazonaws.services.securitytoken.model;
 
 /**
  * <p>
- * Contains the result of a successful invocation of the GetSessionToken
- * action.
+ * Contains the result of a successful invocation of the GetSessionToken action.
  * </p>
  */
 public class GetSessionTokenResult {

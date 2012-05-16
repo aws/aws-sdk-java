@@ -18,13 +18,10 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#validateConfigurationSettings(ValidateConfigurationSettingsRequest) ValidateConfigurationSettings operation}.
  * <p>
- * Takes a set of configuration settings and either a configuration
- * template or environment, and determines whether those values are
- * valid.
+ * Takes a set of configuration settings and either a configuration template or environment, and determines whether those values are valid.
  * </p>
  * <p>
- * This action returns a list of messages indicating any errors or
- * warnings associated with the selection of option values.
+ * This action returns a list of messages indicating any errors or warnings associated with the selection of option values.
  * </p>
  *
  * @see com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#validateConfigurationSettings(ValidateConfigurationSettingsRequest)

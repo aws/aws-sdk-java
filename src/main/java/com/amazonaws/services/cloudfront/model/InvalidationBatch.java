@@ -30,7 +30,7 @@ public class InvalidationBatch {
      * not URL encode any other characters in the path, or CloudFront will
      * not invalidate the old version of the updated object.
      */
-    private java.util.List<String> paths;
+    private Paths paths;
 
     /**
      * A unique name that ensures the request can't be replayed. If the
@@ -75,7 +75,7 @@ public class InvalidationBatch {
      * the content of any Path is different from the original request,
      * CloudFront returns an InvalidationBatchAlreadyExists error.
      */
-    public InvalidationBatch(java.util.List<String> paths, String callerReference) {
+    public InvalidationBatch(Paths paths, String callerReference) {
         this.paths = paths;
         this.callerReference = callerReference;
     }
@@ -121,11 +121,7 @@ public class InvalidationBatch {
      *         not URL encode any other characters in the path, or CloudFront will
      *         not invalidate the old version of the updated object.
      */
-    public java.util.List<String> getPaths() {
-        
-        if (paths == null) {
-            paths = new java.util.ArrayList<String>();
-        }
+    public Paths getPaths() {
         return paths;
     }
     
@@ -146,15 +142,8 @@ public class InvalidationBatch {
      *         not URL encode any other characters in the path, or CloudFront will
      *         not invalidate the old version of the updated object.
      */
-    public void setPaths(java.util.Collection<String> paths) {
-        if (paths == null) {
-            this.paths = null;
-            return;
-        }
-
-        java.util.List<String> pathsCopy = new java.util.ArrayList<String>(paths.size());
-        pathsCopy.addAll(paths);
-        this.paths = pathsCopy;
+    public void setPaths(Paths paths) {
+        this.paths = paths;
     }
     
     /**
@@ -179,47 +168,11 @@ public class InvalidationBatch {
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public InvalidationBatch withPaths(String... paths) {
-        if (getPaths() == null) setPaths(new java.util.ArrayList<String>(paths.length));
-        for (String value : paths) {
-            getPaths().add(value);
-        }
+    public InvalidationBatch withPaths(Paths paths) {
+        this.paths = paths;
         return this;
     }
     
-    /**
-     * The path of the object to invalidate. The path is relative to the
-     * distribution and must begin with a slash (/). You must enclose each
-     * invalidation object with the Path element tags. If the path includes
-     * non-ASCII characters or unsafe characters as defined in RFC 1783
-     * (http://www.ietf.org/rfc/rfc1738.txt), URL encode those characters. Do
-     * not URL encode any other characters in the path, or CloudFront will
-     * not invalidate the old version of the updated object.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param paths The path of the object to invalidate. The path is relative to the
-     *         distribution and must begin with a slash (/). You must enclose each
-     *         invalidation object with the Path element tags. If the path includes
-     *         non-ASCII characters or unsafe characters as defined in RFC 1783
-     *         (http://www.ietf.org/rfc/rfc1738.txt), URL encode those characters. Do
-     *         not URL encode any other characters in the path, or CloudFront will
-     *         not invalidate the old version of the updated object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     */
-    public InvalidationBatch withPaths(java.util.Collection<String> paths) {
-        if (paths == null) {
-            this.paths = null;
-        } else {
-            java.util.List<String> pathsCopy = new java.util.ArrayList<String>(paths.size());
-            pathsCopy.addAll(paths);
-            this.paths = pathsCopy;
-        }
-
-        return this;
-    }
     
     /**
      * A unique name that ensures the request can't be replayed. If the

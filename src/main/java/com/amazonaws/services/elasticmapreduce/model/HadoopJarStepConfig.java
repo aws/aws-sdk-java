@@ -16,9 +16,8 @@ package com.amazonaws.services.elasticmapreduce.model;
 
 /**
  * <p>
- * A job flow step consisting of a JAR file whose main function will be
- * executed. The main function submits a job for Hadoop to execute and
- * waits for the job to finish or fail.
+ * A job flow step consisting of a JAR file whose main function will be executed. The main function submits a job for Hadoop to execute and waits for the
+ * job to finish or fail.
  * </p>
  */
 public class HadoopJarStepConfig {

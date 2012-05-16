@@ -3,39 +3,26 @@
  * Synchronous and asynchronous client classes for accessing AWSStorageGateway.
  *
  * AWS Storage Gateway Service <p>
- * AWS Storage Gateway is a service that connects an on-premises software
- * appliance with cloud-based storage to provide seamless and secure
- * integration between an organization's on-premises IT environment and
- * AWS's storage infrastructure. The service enables you to securely
- * upload data to the AWS cloud for cost effective backup and rapid
- * disaster recovery.
+ * AWS Storage Gateway is a service that connects an on-premises software appliance with cloud-based storage to provide seamless and secure integration
+ * between an organization's on-premises IT environment and AWS's storage infrastructure. The service enables you to securely upload data to the AWS
+ * cloud for cost effective backup and rapid disaster recovery.
  * </p>
  * <p>
- * Use the following links to get started using the <i>AWS Storage
- * Gateway Service API Reference</i> :
+ * Use the following links to get started using the <i>AWS Storage Gateway Service API Reference</i> :
  * </p>
  * 
  * <ul>
- * <li> <a
- * .amazonwebservices.com/storagegateway/latest/api/API_Operations.html">
- * Actions </a> : An alphabetical list of all AWS Storage Gateway
- * actions.</li>
- * <li> <a
- * mazonwebservices.com/storagegateway/latest/api/CommonParameters.html">
- * Common Parameters </a> : Parameters that all Query actions can
- * use.</li>
- * <li> <a
- * cs.amazonwebservices.com/storagegateway/latest/api/CommonErrors.html">
- * Common Errors </a> : Client and server errors that all actions can
- * return.</li>
- * <li> <a
- * //docs.amazonwebservices.com/general/latest/gr/index.html?rande.html">
- * Regions and Endpoints </a> : Itemized regions and endpoints for all
- * AWS products.</li>
- * <li> <a
- * s-east-1.amazonaws.com/doc/2010-03-31/SimpleNotificationService.wsdl">
- * WSDL Location </a> :
- * east-1.amazonaws.com/doc/2012-04-15/AWSStorageGatewayService.wsdl</li>
+ * <li> <a href="http://docs.amazonwebservices.com/storagegateway/latest/userguide/AWSStorageGatewayHTTPRequestsHeaders.html"> AWS Storage Gateway
+ * Required Request Headers </a> : Describes the required headers that you must send with every POST request to AWS Storage Gateway.</li>
+ * <li> <a href="http://docs.amazonwebservices.com/storagegateway/latest/userguide/AWSStorageGatewaySigningRequests.html"> Signing Requests </a> : AWS
+ * Storage Gateway requires that you authenticate every request you send; this topic describes how sign such a request.</li>
+ * <li> <a href="http://docs.amazonwebservices.com/storagegateway/latest/userguide/APIErrorResponses.html"> Error Responses </a> : Provides reference
+ * information about AWS Storage Gateway errors.</li>
+ * <li> <a href="http://docs.amazonwebservices.com/storagegateway/latest/userguide/AWSStorageGatewayAPIOperations.html"> Operations in AWS Storage
+ * Gateway </a> : Contains detailed descriptions of all AWS Storage Gateway operations, their request parameters, response elements, possible errors, and
+ * examples of requests and responses.</li>
+ * <li> <a href="http://docs.amazonwebservices.com/general/latest/gr/index.html?rande.html"> AWS Storage Gateway Regions and Endpoints </a> : Provides a
+ * list of each of the regions and endpoints available for use with AWS Storage Gateway. </li>
  * 
  * </ul>
  */

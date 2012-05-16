@@ -18,8 +18,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeImageAttribute(DescribeImageAttributeRequest) DescribeImageAttribute operation}.
  * <p>
- * The DescribeImageAttribute operation returns information about an
- * attribute of an AMI. Only one attribute can be specified per call.
+ * The DescribeImageAttribute operation returns information about an attribute of an AMI. Only one attribute can be specified per call.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeImageAttribute(DescribeImageAttributeRequest)

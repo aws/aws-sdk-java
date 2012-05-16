@@ -25,8 +25,7 @@ package com.amazonaws.services.storagegateway.model;
  * <li> DescribeGatewayInformationOutput$GatewayNetworkInterfaces </li>
  * <li> DescribeGatewayInformationOutput$GatewayState </li>
  * <li> DescribeGatewayInformationOutput$GatewayTimezone </li>
- * <li> DescribeGatewayInformationOutput$NextUpdateAvailabilityDate
- * </li>
+ * <li> DescribeGatewayInformationOutput$NextUpdateAvailabilityDate </li>
  * 
  * </ul>
  */

@@ -18,34 +18,22 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#pollForDecisionTask(PollForDecisionTaskRequest) PollForDecisionTask operation}.
  * <p>
- * Used by deciders to get a DecisionTask from the specified decision
- * <code>taskList</code> .
- * A decision task may be returned for any open workflow
- * execution that is using the specified task list. The task includes a
- * paginated view of the history of the workflow execution. The decider
- * should use the workflow type and the history to determine how to
- * properly handle the task.
+ * Used by deciders to get a DecisionTask from the specified decision <code>taskList</code> .
+ * A decision task may be returned for any open workflow execution that is using the specified task list. The task includes a paginated view of
+ * the history of the workflow execution. The decider should use the workflow type and the history to determine how to properly handle the task.
  * </p>
  * <p>
- * This action initiates a long poll, where the service holds the HTTP
- * connection open and responds as soon a task becomes available. If no
- * decision task is available in the specified task list before the
- * timeout of 60 seconds expires, an empty result is returned. An empty
- * result, in this context, means that a DecisionTask is returned, but
- * that the value of taskToken is an empty string.
+ * This action initiates a long poll, where the service holds the HTTP connection open and responds as soon a task becomes available. If no decision
+ * task is available in the specified task list before the timeout of 60 seconds expires, an empty result is returned. An empty result, in this context,
+ * means that a DecisionTask is returned, but that the value of taskToken is an empty string.
  * </p>
  * <p>
- * <b>IMPORTANT:</b> Deciders should set their client side socket timeout
- * to at least 70 seconds (10 seconds higher than the timeout).
+ * <b>IMPORTANT:</b> Deciders should set their client side socket timeout to at least 70 seconds (10 seconds higher than the timeout).
  * </p>
  * <p>
- * <b>IMPORTANT:</b> Because the number of workflow history events for a
- * single workflow execution might be very large, the result returned
- * might be split up across a number of pages. To retrieve subsequent
- * pages, make additional calls to PollForDecisionTask using the
- * nextPageToken returned by the initial call. Note that you do not call
- * GetWorkflowExecutionHistory with this nextPageToken. Instead, call
- * PollForDecisionTask again.
+ * <b>IMPORTANT:</b> Because the number of workflow history events for a single workflow execution might be very large, the result returned might be
+ * split up across a number of pages. To retrieve subsequent pages, make additional calls to PollForDecisionTask using the nextPageToken returned by the
+ * initial call. Note that you do not call GetWorkflowExecutionHistory with this nextPageToken. Instead, call PollForDecisionTask again.
  * </p>
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#pollForDecisionTask(PollForDecisionTaskRequest)

@@ -18,8 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The request was rejected because it attempted to reference a resource
- * that does not exist.
+ * The request was rejected because it attempted to reference a resource that does not exist.
  * </p>
  */        
 public class ResourceNotFoundException extends AmazonServiceException {

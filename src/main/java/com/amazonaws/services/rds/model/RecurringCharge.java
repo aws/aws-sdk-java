@@ -16,9 +16,7 @@ package com.amazonaws.services.rds.model;
 
 /**
  * <p>
- * This data type is used as a response element in the
- * DescribeReservedDBInstances and DescribeReservedDBInstancesOfferings
- * actions.
+ * This data type is used as a response element in the DescribeReservedDBInstances and DescribeReservedDBInstancesOfferings actions.
  * </p>
  */
 public class RecurringCharge {

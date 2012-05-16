@@ -18,8 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The web service attempted to create a bucket in an Amazon S3 account
- * that already has 100 buckets.
+ * The web service attempted to create a bucket in an Amazon S3 account that already has 100 buckets.
  * </p>
  */        
 public class TooManyBucketsException extends AmazonServiceException {

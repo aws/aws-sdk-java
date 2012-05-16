@@ -18,9 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * A queue already exists with this name. SQS returns this error only if
- * the request includes attributes whose values differ from those of the
- * existing queue.
+ * A queue already exists with this name. SQS returns this error only if the request includes attributes whose values differ from those of the existing
+ * queue.
  * </p>
  */        
 public class QueueNameExistsException extends AmazonServiceException {

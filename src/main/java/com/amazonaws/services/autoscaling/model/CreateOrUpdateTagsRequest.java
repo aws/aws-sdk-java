@@ -21,10 +21,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Creates new tags or updates existing tags for an Auto Scaling group.
  * </p>
  * <p>
- * <b>NOTE:</b> A tag's definition is composed of a resource ID, resource
- * type, key and value, and the propagate flag. Value and the propagate
- * flag are optional parameters. See the Request Parameters for more
- * information.
+ * <b>NOTE:</b> A tag's definition is composed of a resource ID, resource type, key and value, and the propagate flag. Value and the propagate flag are
+ * optional parameters. See the Request Parameters for more information.
  * </p>
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#createOrUpdateTags(CreateOrUpdateTagsRequest)

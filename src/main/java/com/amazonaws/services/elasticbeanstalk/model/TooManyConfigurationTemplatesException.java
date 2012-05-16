@@ -18,8 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The caller has exceeded the limit on the number of configuration
- * templates associated with their account.
+ * The caller has exceeded the limit on the number of configuration templates associated with their account.
  * </p>
  */        
 public class TooManyConfigurationTemplatesException extends AmazonServiceException {

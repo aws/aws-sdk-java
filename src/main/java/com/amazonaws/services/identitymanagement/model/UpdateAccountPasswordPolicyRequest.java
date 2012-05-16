@@ -18,10 +18,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#updateAccountPasswordPolicy(UpdateAccountPasswordPolicyRequest) UpdateAccountPasswordPolicy operation}.
  * <p>
- * Updates the password policy settings for the account. For more
- * information about using a password policy, go to <a
- * ervices.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">
- * Managing an IAM Password Policy </a> .
+ * Updates the password policy settings for the account. For more information about using a password policy, go to <a
+ * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html"> Managing an IAM Password Policy </a> .
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#updateAccountPasswordPolicy(UpdateAccountPasswordPolicyRequest)

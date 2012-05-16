@@ -18,14 +18,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listMFADevices(ListMFADevicesRequest) ListMFADevices operation}.
  * <p>
- * Lists the MFA devices. If the request includes the user name, then
- * this action lists all the MFA devices associated with the specified
- * user name. If you do not specify a user name, IAM determines the user
- * name implicitly based on the AWS Access Key ID signing the request.
+ * Lists the MFA devices. If the request includes the user name, then this action lists all the MFA devices associated with the specified user name. If
+ * you do not specify a user name, IAM determines the user name implicitly based on the AWS Access Key ID signing the request.
  * </p>
  * <p>
- * You can paginate the results using the <code>MaxItems</code> and
- * <code>Marker</code> parameters.
+ * You can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters.
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listMFADevices(ListMFADevicesRequest)

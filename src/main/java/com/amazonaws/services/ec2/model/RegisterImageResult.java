@@ -16,8 +16,7 @@ package com.amazonaws.services.ec2.model;
 
 /**
  * <p>
- * The result of registering a new Amazon Machine Image (AMI). Contains
- * the ID of the new image.
+ * The result of registering a new Amazon Machine Image (AMI). Contains the ID of the new image.
  * </p>
  */
 public class RegisterImageResult {

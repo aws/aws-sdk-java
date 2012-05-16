@@ -18,13 +18,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.cloudformation.AmazonCloudFormation#createStack(CreateStackRequest) CreateStack operation}.
  * <p>
- * Creates a stack as specified in the template. After the call
- * completes successfully, the stack creation starts. You can check the
- * status of the stack via the DescribeStacks API.
+ * Creates a stack as specified in the template. After the call completes successfully, the stack creation starts. You can check the status of the stack
+ * via the DescribeStacks API.
  * </p>
  * <p>
- * <b>NOTE:</b> Currently, the limit for stacks is 20 stacks per account
- * per region.
+ * <b>NOTE:</b> Currently, the limit for stacks is 20 stacks per account per region.
  * </p>
  *
  * @see com.amazonaws.services.cloudformation.AmazonCloudFormation#createStack(CreateStackRequest)

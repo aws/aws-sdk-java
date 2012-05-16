@@ -18,8 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * This exception is thrown when the resource which is being attempted to
- * be changed is in use.
+ * This exception is thrown when the resource which is being attempted to be changed is in use.
  * </p>
  */        
 public class ResourceNotFoundException extends AmazonServiceException {

@@ -18,13 +18,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#terminateInstances(TerminateInstancesRequest) TerminateInstances operation}.
  * <p>
- * The TerminateInstances operation shuts down one or more instances.
- * This operation is idempotent; if you terminate an instance more than
- * once, each call will succeed.
+ * The TerminateInstances operation shuts down one or more instances. This operation is idempotent; if you terminate an instance more than once, each
+ * call will succeed.
  * </p>
  * <p>
- * Terminated instances will remain visible after termination
- * (approximately one hour).
+ * Terminated instances will remain visible after termination (approximately one hour).
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#terminateInstances(TerminateInstancesRequest)

@@ -18,15 +18,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sqs.AmazonSQS#receiveMessage(ReceiveMessageRequest) ReceiveMessage operation}.
  * <p>
- * Retrieves one or more messages from the specified queue, including the
- * message body and message ID of each message. Messages returned by this
- * action stay in the queue until you delete them. However, once a
- * message is returned to a
- * <code>ReceiveMessage</code> request, it is not
- * returned on subsequent <code>ReceiveMessage</code> requests for the
- * duration of the <code>VisibilityTimeout</code> . If you do not specify
- * a <code>VisibilityTimeout</code> in the request, the overall
- * visibility timeout for the queue is used for the returned messages.
+ * Retrieves one or more messages from the specified queue, including the message body and message ID of each message. Messages returned by this action
+ * stay in the queue until you delete them. However, once a message is returned to a
+ * <code>ReceiveMessage</code> request, it is not returned on subsequent <code>ReceiveMessage</code> requests for the duration of the
+ * <code>VisibilityTimeout</code> . If you do not specify a <code>VisibilityTimeout</code> in the request, the overall visibility timeout for the queue
+ * is used for the returned messages.
  * </p>
  *
  * @see com.amazonaws.services.sqs.AmazonSQS#receiveMessage(ReceiveMessageRequest)

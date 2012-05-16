@@ -18,9 +18,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#deactivateLicense(DeactivateLicenseRequest) DeactivateLicense operation}.
  * <p>
- * Deactivates a specific number of licenses. Deactivations can be done
- * against a specific license ID after they have persisted for at least a
- * 90-day period.
+ * Deactivates a specific number of licenses. Deactivations can be done against a specific license ID after they have persisted for at least a 90-day
+ * period.
  * </p>
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#deactivateLicense(DeactivateLicenseRequest)

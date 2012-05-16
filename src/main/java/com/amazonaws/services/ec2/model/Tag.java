@@ -16,9 +16,8 @@ package com.amazonaws.services.ec2.model;
 
 /**
  * <p>
- * Represents metadata to associate with Amazon EC2 resources. Each tag
- * consists of a user-defined key and value. Use tags to categorize EC2
- * resources, such as by purpose, owner, or environment.
+ * Represents metadata to associate with Amazon EC2 resources. Each tag consists of a user-defined key and value. Use tags to categorize EC2 resources,
+ * such as by purpose, owner, or environment.
  * </p>
  */
 public class Tag {

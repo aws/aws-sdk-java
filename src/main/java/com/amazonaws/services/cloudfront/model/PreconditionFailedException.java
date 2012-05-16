@@ -18,8 +18,7 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The precondition given in one or more of the request-header fields
- * evaluated to false.
+ * The precondition given in one or more of the request-header fields evaluated to false.
  * </p>
  */        
 public class PreconditionFailedException extends AmazonServiceException {

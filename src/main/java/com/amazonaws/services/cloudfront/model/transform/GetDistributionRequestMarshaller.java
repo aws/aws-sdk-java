@@ -37,14 +37,14 @@ import com.amazonaws.util.XMLWriter;
 public class GetDistributionRequestMarshaller implements Marshaller<Request<GetDistributionRequest>, GetDistributionRequest> {
 
     public Request<GetDistributionRequest> marshall(GetDistributionRequest getDistributionRequest) {
-        if (getDistributionRequest == null) { 
+        if (getDistributionRequest == null) {
             throw new AmazonClientException("Invalid argument passed to marshall(...)");
         }
 
         Request<GetDistributionRequest> request = new DefaultRequest<GetDistributionRequest>(getDistributionRequest, "AmazonCloudFront");
         request.setHttpMethod(HttpMethodName.GET);
 
-        String uriResourcePath = "2012-03-15/distribution/{Id}"; 
+        String uriResourcePath = "2012-05-05/distribution/{Id}"; 
         uriResourcePath = uriResourcePath.replace("{Id}", getString(getDistributionRequest.getId())); 
 
         if (uriResourcePath.contains("?")) {
