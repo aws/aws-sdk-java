@@ -18,6 +18,7 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
+import java.util.concurrent.ThreadFactory;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
@@ -46,7 +47,16 @@ import com.amazonaws.services.dynamodb.model.*;
 public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient
         implements AmazonDynamoDBAsync { 
 
-    /**
+    private static final ThreadFactory NAMED_THREAD_FACTORY = new ThreadFactory() {
+		public Thread newThread(final Runnable runnable) {
+			final Thread thread = new Thread(runnable);
+			// Name the thread to indicate that it belongs to Amazon DynamoDB
+			thread.setName(String.format("%s-%d", AmazonDynamoDBAsyncClient.class.getName(), thread.getId()));
+			return thread;
+		}
+	};
+		
+	/**
      * Executor service for executing asynchronous requests.
      */
     private ExecutorService executorService;
@@ -67,7 +77,7 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient
      *                       when authenticating with AWS services.
      */                                      
     public AmazonDynamoDBAsyncClient(AWSCredentials awsCredentials) {
-        this(awsCredentials, Executors.newCachedThreadPool());
+        this(awsCredentials, Executors.newCachedThreadPool(NAMED_THREAD_FACTORY));
     }
 
     /**
@@ -134,7 +144,7 @@ public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient
      *            to authenticate requests with AWS services.
      */                                      
     public AmazonDynamoDBAsyncClient(AWSCredentialsProvider awsCredentialsProvider) {
-        this(awsCredentialsProvider, Executors.newCachedThreadPool());
+        this(awsCredentialsProvider, Executors.newCachedThreadPool(NAMED_THREAD_FACTORY));
     }
     
     /**
