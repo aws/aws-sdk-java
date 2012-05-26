@@ -266,7 +266,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
      * Constructs a new Amazon S3 client using the specified AWS credentials
      * provider to access Amazon S3.
      *
-     * @param awsCredentialsProvider
+     * @param credentialsProvider
      *            The AWS credentials provider which will provide credentials
      *            to authenticate requests with AWS services.
      */
@@ -278,7 +278,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
      * Constructs a new Amazon S3 client using the specified AWS credentials and
      * client configuration to access Amazon S3.
      *
-     * @param awsCredentialsProvider
+     * @param credentialsProvider
      *            The AWS credentials provider which will provide credentials
      *            to authenticate requests with AWS services.
      * @param clientConfiguration
@@ -1819,11 +1819,17 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                     new Date(System.currentTimeMillis() + 1000 * 60 * 15));
         }
 
+
         HttpMethodName httpMethod = HttpMethodName.valueOf(generatePresignedUrlRequest.getMethod().toString());
         Request<GeneratePresignedUrlRequest> request = createRequest(bucketName, key, generatePresignedUrlRequest, httpMethod);
         for (Entry<String, String> entry : generatePresignedUrlRequest.getRequestParameters().entrySet()) {
             request.addParameter(entry.getKey(), entry.getValue());
         }
+
+        if (generatePresignedUrlRequest.getContentType() != null) {
+            request.addHeader("content-type", generatePresignedUrlRequest.getContentType());
+        }
+
 
         addResponseHeaderParameters(request, generatePresignedUrlRequest.getResponseHeaders());
 
