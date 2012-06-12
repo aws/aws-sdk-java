@@ -292,6 +292,27 @@ public interface AmazonEC2 {
             throws AmazonServiceException, AmazonClientException;
 
     /**
+     *
+     * @param createInstanceExportTaskRequest Container for the necessary
+     *           parameters to execute the CreateInstanceExportTask service method on
+     *           AmazonEC2.
+     * 
+     * @return The response from the CreateInstanceExportTask service method,
+     *         as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public CreateInstanceExportTaskResult createInstanceExportTask(CreateInstanceExportTaskRequest createInstanceExportTaskRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
      * <p>
      * This action applies only to security groups in a VPC; it's not
      * supported for EC2 security groups. For information about Amazon
@@ -1368,6 +1389,27 @@ public interface AmazonEC2 {
      *             either a problem with the data in the request, or a server side issue.
      */
     public void createNetworkAclEntry(CreateNetworkAclEntryRequest createNetworkAclEntryRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     *
+     * @param describeExportTasksRequest Container for the necessary
+     *           parameters to execute the DescribeExportTasks service method on
+     *           AmazonEC2.
+     * 
+     * @return The response from the DescribeExportTasks service method, as
+     *         returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeExportTasksResult describeExportTasks(DescribeExportTasksRequest describeExportTasksRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -2558,6 +2600,23 @@ public interface AmazonEC2 {
      *             either a problem with the data in the request, or a server side issue.
      */
     public DescribeCustomerGatewaysResult describeCustomerGateways(DescribeCustomerGatewaysRequest describeCustomerGatewaysRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     *
+     * @param cancelExportTaskRequest Container for the necessary parameters
+     *           to execute the CancelExportTask service method on AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void cancelExportTask(CancelExportTaskRequest cancelExportTaskRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -4232,6 +4291,22 @@ public interface AmazonEC2 {
      *             either a problem with the data in the request, or a server side issue.
      */
     public DescribeVpcsResult describeVpcs() throws AmazonServiceException, AmazonClientException;
+    
+    /**
+     * 
+     * @return The response from the DescribeExportTasks service method, as
+     *         returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeExportTasksResult describeExportTasks() throws AmazonServiceException, AmazonClientException;
     
     /**
      * <p>

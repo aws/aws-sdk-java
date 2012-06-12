@@ -70,7 +70,7 @@ public class Activity {
      * Contains the current status of the activity.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Allowed Values: </b>WaitingForSpotInstanceRequestId, WaitingForSpotInstanceId, WaitingForInstanceId, PreInService, InProgress, Successful, Failed, Cancelled
      */
     private String statusCode;
 
@@ -347,9 +347,11 @@ public class Activity {
      * Contains the current status of the activity.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Allowed Values: </b>WaitingForSpotInstanceRequestId, WaitingForSpotInstanceId, WaitingForInstanceId, PreInService, InProgress, Successful, Failed, Cancelled
      *
      * @return Contains the current status of the activity.
+     *
+     * @see ScalingActivityStatusCode
      */
     public String getStatusCode() {
         return statusCode;
@@ -359,9 +361,11 @@ public class Activity {
      * Contains the current status of the activity.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Allowed Values: </b>WaitingForSpotInstanceRequestId, WaitingForSpotInstanceId, WaitingForInstanceId, PreInService, InProgress, Successful, Failed, Cancelled
      *
      * @param statusCode Contains the current status of the activity.
+     *
+     * @see ScalingActivityStatusCode
      */
     public void setStatusCode(String statusCode) {
         this.statusCode = statusCode;
@@ -373,18 +377,54 @@ public class Activity {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Allowed Values: </b>WaitingForSpotInstanceRequestId, WaitingForSpotInstanceId, WaitingForInstanceId, PreInService, InProgress, Successful, Failed, Cancelled
      *
      * @param statusCode Contains the current status of the activity.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
+     *
+     * @see ScalingActivityStatusCode
      */
     public Activity withStatusCode(String statusCode) {
         this.statusCode = statusCode;
         return this;
     }
     
+    
+    /**
+     * Contains the current status of the activity.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>WaitingForSpotInstanceRequestId, WaitingForSpotInstanceId, WaitingForInstanceId, PreInService, InProgress, Successful, Failed, Cancelled
+     *
+     * @param statusCode Contains the current status of the activity.
+     *
+     * @see ScalingActivityStatusCode
+     */
+    public void setStatusCode(ScalingActivityStatusCode statusCode) {
+        this.statusCode = statusCode.toString();
+    }
+    
+    /**
+     * Contains the current status of the activity.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>WaitingForSpotInstanceRequestId, WaitingForSpotInstanceId, WaitingForInstanceId, PreInService, InProgress, Successful, Failed, Cancelled
+     *
+     * @param statusCode Contains the current status of the activity.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see ScalingActivityStatusCode
+     */
+    public Activity withStatusCode(ScalingActivityStatusCode statusCode) {
+        this.statusCode = statusCode.toString();
+        return this;
+    }
     
     /**
      * Contains a friendly, more verbose description of the activity status.

@@ -38,7 +38,7 @@ public class DeleteTagsRequestMarshaller implements Marshaller<Request<DeleteTag
 
         Request<DeleteTagsRequest> request = new DefaultRequest<DeleteTagsRequest>(deleteTagsRequest, "AmazonEC2");
         request.addParameter("Action", "DeleteTags");
-        request.addParameter("Version", "2012-04-01");
+        request.addParameter("Version", "2012-06-01");
 
 
         java.util.List<String> resourcesList = deleteTagsRequest.getResources();

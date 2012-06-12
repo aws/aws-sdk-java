@@ -38,7 +38,7 @@ public class PurchaseReservedDBInstancesOfferingRequestMarshaller implements Mar
 
         Request<PurchaseReservedDBInstancesOfferingRequest> request = new DefaultRequest<PurchaseReservedDBInstancesOfferingRequest>(purchaseReservedDBInstancesOfferingRequest, "AmazonRDS");
         request.addParameter("Action", "PurchaseReservedDBInstancesOffering");
-        request.addParameter("Version", "2012-01-15");
+        request.addParameter("Version", "2012-04-23");
 
         if (purchaseReservedDBInstancesOfferingRequest.getReservedDBInstancesOfferingId() != null) {
             request.addParameter("ReservedDBInstancesOfferingId", StringUtils.fromString(purchaseReservedDBInstancesOfferingRequest.getReservedDBInstancesOfferingId()));

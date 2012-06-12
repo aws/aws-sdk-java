@@ -23,8 +23,8 @@ public class Filter {
 
     /**
      * The name of the filter. Valid Name values are:
-     * <code>auto-scaling-group</code>, <code>key</code>, <code>value</code>,
-     * and <code>propagate-at-launch</code>.
+     * <code>"auto-scaling-group"</code>, <code>"key"</code>,
+     * <code>"value"</code>, and <code>"propagate-at-launch"</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
@@ -38,15 +38,15 @@ public class Filter {
 
     /**
      * The name of the filter. Valid Name values are:
-     * <code>auto-scaling-group</code>, <code>key</code>, <code>value</code>,
-     * and <code>propagate-at-launch</code>.
+     * <code>"auto-scaling-group"</code>, <code>"key"</code>,
+     * <code>"value"</code>, and <code>"propagate-at-launch"</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @return The name of the filter. Valid Name values are:
-     *         <code>auto-scaling-group</code>, <code>key</code>, <code>value</code>,
-     *         and <code>propagate-at-launch</code>.
+     *         <code>"auto-scaling-group"</code>, <code>"key"</code>,
+     *         <code>"value"</code>, and <code>"propagate-at-launch"</code>.
      */
     public String getName() {
         return name;
@@ -54,15 +54,15 @@ public class Filter {
     
     /**
      * The name of the filter. Valid Name values are:
-     * <code>auto-scaling-group</code>, <code>key</code>, <code>value</code>,
-     * and <code>propagate-at-launch</code>.
+     * <code>"auto-scaling-group"</code>, <code>"key"</code>,
+     * <code>"value"</code>, and <code>"propagate-at-launch"</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param name The name of the filter. Valid Name values are:
-     *         <code>auto-scaling-group</code>, <code>key</code>, <code>value</code>,
-     *         and <code>propagate-at-launch</code>.
+     *         <code>"auto-scaling-group"</code>, <code>"key"</code>,
+     *         <code>"value"</code>, and <code>"propagate-at-launch"</code>.
      */
     public void setName(String name) {
         this.name = name;
@@ -70,8 +70,8 @@ public class Filter {
     
     /**
      * The name of the filter. Valid Name values are:
-     * <code>auto-scaling-group</code>, <code>key</code>, <code>value</code>,
-     * and <code>propagate-at-launch</code>.
+     * <code>"auto-scaling-group"</code>, <code>"key"</code>,
+     * <code>"value"</code>, and <code>"propagate-at-launch"</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -79,8 +79,8 @@ public class Filter {
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param name The name of the filter. Valid Name values are:
-     *         <code>auto-scaling-group</code>, <code>key</code>, <code>value</code>,
-     *         and <code>propagate-at-launch</code>.
+     *         <code>"auto-scaling-group"</code>, <code>"key"</code>,
+     *         <code>"value"</code>, and <code>"propagate-at-launch"</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

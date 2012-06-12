@@ -30,8 +30,11 @@ import com.amazonaws.AmazonWebServiceRequest;
  * returns. Triggers that are currently in progress aren't affected.
  * </p>
  * <p>
- * <b>NOTE:</b> If the new values are specified for the MinSize or MaxSize parameters, then there will be an implicit call to SetDesiredCapacity to set
- * the group to the new MaxSize. All optional parameters are left unchanged if not passed in the request.
+ * <b>NOTE:</b> If a new value is specified for MinSize without specifying the value for DesiredCapacity, and if the new MinSize is larger than the
+ * current size of the Auto Scaling Group, there will be an implicit call to SetDesiredCapacity to set the group to the new MinSize. If a new value is
+ * specified for MaxSize without specifying the value for DesiredCapacity, and the new MaxSize is smaller than the current size of the Auto Scaling
+ * Group, there will be an implicit call to SetDesiredCapacity to set the group to the new MaxSize. All other optional parameters are left unchanged if
+ * not passed in the request.
  * </p>
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#updateAutoScalingGroup(UpdateAutoScalingGroupRequest)

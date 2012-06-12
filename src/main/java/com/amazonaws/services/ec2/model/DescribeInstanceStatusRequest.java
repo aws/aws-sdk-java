@@ -91,6 +91,8 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest {
      */
     private Integer maxResults;
 
+    private Boolean includeAllInstances;
+
     /**
      * The list of instance IDs. If not specified, all instances are
      * described.
@@ -306,6 +308,49 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest {
     
     
     /**
+     * Returns the value of the IncludeAllInstances property for this object.
+     *
+     * @return The value of the IncludeAllInstances property for this object.
+     */
+    public Boolean isIncludeAllInstances() {
+        return includeAllInstances;
+    }
+    
+    /**
+     * Sets the value of the IncludeAllInstances property for this object.
+     *
+     * @param includeAllInstances The new value for the IncludeAllInstances property for this object.
+     */
+    public void setIncludeAllInstances(Boolean includeAllInstances) {
+        this.includeAllInstances = includeAllInstances;
+    }
+    
+    /**
+     * Sets the value of the IncludeAllInstances property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param includeAllInstances The new value for the IncludeAllInstances property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public DescribeInstanceStatusRequest withIncludeAllInstances(Boolean includeAllInstances) {
+        this.includeAllInstances = includeAllInstances;
+        return this;
+    }
+    
+    
+    /**
+     * Returns the value of the IncludeAllInstances property for this object.
+     *
+     * @return The value of the IncludeAllInstances property for this object.
+     */
+    public Boolean getIncludeAllInstances() {
+        return includeAllInstances;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -321,6 +366,7 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest {
         if (filters != null) sb.append("Filters: " + filters + ", ");
         if (nextToken != null) sb.append("NextToken: " + nextToken + ", ");
         if (maxResults != null) sb.append("MaxResults: " + maxResults + ", ");
+        if (includeAllInstances != null) sb.append("IncludeAllInstances: " + includeAllInstances + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -334,6 +380,7 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest {
         hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode()); 
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode()); 
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode()); 
+        hashCode = prime * hashCode + ((isIncludeAllInstances() == null) ? 0 : isIncludeAllInstances().hashCode()); 
         return hashCode;
     }
     
@@ -353,6 +400,8 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest {
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false) return false; 
         if (other.getMaxResults() == null ^ this.getMaxResults() == null) return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false) return false; 
+        if (other.isIncludeAllInstances() == null ^ this.isIncludeAllInstances() == null) return false;
+        if (other.isIncludeAllInstances() != null && other.isIncludeAllInstances().equals(this.isIncludeAllInstances()) == false) return false; 
         return true;
     }
     

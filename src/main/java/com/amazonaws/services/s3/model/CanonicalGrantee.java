@@ -34,7 +34,14 @@ package com.amazonaws.services.s3.model;
 public class CanonicalGrantee implements Grantee {
     private String id = null;
     private String displayName = null;
-
+        
+    /* (non-Javadoc)
+     * @see com.amazonaws.services.s3.model.Grantee#getTypeIdentifier()
+     */
+    public String getTypeIdentifier() {
+        return "id";
+    }
+    
     /**
      * Constructs a new {@link CanonicalGrantee} object 
      * with the given canonical ID.

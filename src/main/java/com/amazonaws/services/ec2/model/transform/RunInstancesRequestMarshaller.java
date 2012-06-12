@@ -38,7 +38,7 @@ public class RunInstancesRequestMarshaller implements Marshaller<Request<RunInst
 
         Request<RunInstancesRequest> request = new DefaultRequest<RunInstancesRequest>(runInstancesRequest, "AmazonEC2");
         request.addParameter("Action", "RunInstances");
-        request.addParameter("Version", "2012-04-01");
+        request.addParameter("Version", "2012-06-01");
 
         if (runInstancesRequest.getImageId() != null) {
             request.addParameter("ImageId", StringUtils.fromString(runInstancesRequest.getImageId()));
@@ -199,6 +199,15 @@ public class RunInstancesRequestMarshaller implements Marshaller<Request<RunInst
             }
 
             networkInterfacesListIndex++;
+        }
+        IamInstanceProfileSpecification iamInstanceProfileSpecificationIamInstanceProfile = runInstancesRequest.getIamInstanceProfile();
+        if (iamInstanceProfileSpecificationIamInstanceProfile != null) {
+            if (iamInstanceProfileSpecificationIamInstanceProfile.getArn() != null) {
+                request.addParameter("IamInstanceProfile.Arn", StringUtils.fromString(iamInstanceProfileSpecificationIamInstanceProfile.getArn()));
+            }
+            if (iamInstanceProfileSpecificationIamInstanceProfile.getName() != null) {
+                request.addParameter("IamInstanceProfile.Name", StringUtils.fromString(iamInstanceProfileSpecificationIamInstanceProfile.getName()));
+            }
         }
 
 

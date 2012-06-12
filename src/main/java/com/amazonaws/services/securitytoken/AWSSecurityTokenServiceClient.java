@@ -74,11 +74,55 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
      */
     protected final List<Unmarshaller<AmazonServiceException, Node>> exceptionUnmarshallers
             = new ArrayList<Unmarshaller<AmazonServiceException, Node>>();
-    
+
     
     /** AWS signer for authenticating requests. */
     private AWS4Signer signer;
 
+
+    /**
+     * Constructs a new client to invoke service methods on
+     * AWSSecurityTokenService.  A credentials provider chain will be used
+     * that searches for credentials in this order:
+     * <ul>
+     *  <li> Environment Variables - AWS_ACCESS_KEY_ID and AWS_SECRET_KEY </li>
+     *  <li> Java System Properties - aws.accessKeyId and aws.secretKey </li>
+     *  <li> Instance profile credentials delivered through the Amazon EC2 metadata service </li>
+     * </ul>
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and will not
+     * return until the service call completes.
+     *
+     * @see DefaultAWSCredentialsProvider
+     */
+    public AWSSecurityTokenServiceClient() {
+        this(new DefaultAWSCredentialsProviderChain(), new ClientConfiguration());
+    }
+
+    /**
+     * Constructs a new client to invoke service methods on
+     * AWSSecurityTokenService.  A credentials provider chain will be used
+     * that searches for credentials in this order:
+     * <ul>
+     *  <li> Environment Variables - AWS_ACCESS_KEY_ID and AWS_SECRET_KEY </li>
+     *  <li> Java System Properties - aws.accessKeyId and aws.secretKey </li>
+     *  <li> Instance profile credentials delivered through the Amazon EC2 metadata service </li>
+     * </ul>
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and will not
+     * return until the service call completes.
+     *
+     * @param clientConfiguration The client configuration options controlling how this
+     *                       client connects to AWSSecurityTokenService
+     *                       (ex: proxy settings, retry counts, etc.).
+     *
+     * @see DefaultAWSCredentialsProvider
+     */
+    public AWSSecurityTokenServiceClient(ClientConfiguration clientConfiguration) {
+        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);
+    }
 
     /**
      * Constructs a new client to invoke service methods on
@@ -115,7 +159,7 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
         init();
     }
-    
+
     /**
      * Constructs a new client to invoke service methods on
      * AWSSecurityTokenService using the specified AWS account credentials provider.
@@ -124,7 +168,7 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
      * All service calls made using this new client object are blocking, and will not
      * return until the service call completes.
      *
-     * @param awsCredentialsProvider 
+     * @param awsCredentialsProvider
      *            The AWS credentials provider which will provide credentials
      *            to authenticate requests with AWS services.
      */
@@ -141,7 +185,7 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
      * All service calls made using this new client object are blocking, and will not
      * return until the service call completes.
      *
-     * @param awsCredentialsProvider 
+     * @param awsCredentialsProvider
      *            The AWS credentials provider which will provide credentials
      *            to authenticate requests with AWS services.
      * @param clientConfiguration The client configuration options controlling how this
@@ -154,7 +198,7 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
         init();
     }
 
-    private void init() { 
+    private void init() {
         exceptionUnmarshallers.add(new PackedPolicyTooLargeExceptionUnmarshaller());
         exceptionUnmarshallers.add(new MalformedPolicyDocumentExceptionUnmarshaller());
         
@@ -170,7 +214,7 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
 		requestHandlers.addAll(chainFactory.newRequestHandlerChain(
                 "/com/amazonaws/services/securitytoken/request.handlers"));
     }
-    
+
     
     /**
      * <p>
@@ -293,11 +337,11 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
     }
     
     /**
-     * Overrides the default endpoint for this client and explicitly provides 
+     * Overrides the default endpoint for this client and explicitly provides
      * an AWS region ID and AWS service name to use when the client calculates a signature
      * for requests.  In almost all cases, this region ID and service name
      * are automatically determined from the endpoint, and callers should use the simpler
-     * one-argument form of setEndpoint instead of this method.   
+     * one-argument form of setEndpoint instead of this method.
      * <p>
      * <b>This method is not threadsafe. Endpoints should be configured when the
      * client is created and before any service requests are made. Changing it
@@ -310,20 +354,20 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
      * {@link ClientConfiguration} will be used, which by default is HTTPS.
      * <p>
      * For more information on using AWS regions with the AWS SDK for Java, and
-     * a complete list of all available endpoints for all AWS services, see: 
+     * a complete list of all available endpoints for all AWS services, see:
      * <a href="http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912">
      * http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912</a>
-     * 
+     *
      * @param endpoint
      *            The endpoint (ex: "ec2.amazonaws.com") or a full URL,
      *            including the protocol (ex: "https://ec2.amazonaws.com") of
      *            the region specific AWS endpoint this client will communicate
      *            with.
-     * @param serviceName 
+     * @param serviceName
      *            The name of the AWS service to use when signing requests.
-     * @param regionId 
+     * @param regionId
      *            The ID of the region in which this service resides.
-     *      
+     *
      * @throws IllegalArgumentException
      *             If any problems are detected with the specified endpoint.
      */
@@ -360,7 +404,7 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
             request.addParameter(entry.getKey(), entry.getValue());
         }
 
-        AWSCredentials credentials = awsCredentialsProvider.getCredentials(); 
+        AWSCredentials credentials = awsCredentialsProvider.getCredentials();
         AmazonWebServiceRequest originalRequest = request.getOriginalRequest();
         if (originalRequest != null && originalRequest.getRequestCredentials() != null) {
         	credentials = originalRequest.getRequestCredentials();
@@ -372,7 +416,7 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
         
         StaxResponseHandler<X> responseHandler = new StaxResponseHandler<X>(unmarshaller);
         DefaultErrorResponseHandler errorResponseHandler = new DefaultErrorResponseHandler(exceptionUnmarshallers);
-        
+
         return (X)client.execute(request, responseHandler, errorResponseHandler, executionContext);
     }
 }

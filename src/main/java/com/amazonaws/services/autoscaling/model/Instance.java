@@ -43,8 +43,7 @@ public class Instance {
      * Contains a description of the current <i>lifecycle</i> state.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 32<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Allowed Values: </b>Pending, Quarantined, InService, Terminating, Terminated
      */
     private String lifecycleState;
 
@@ -162,10 +161,11 @@ public class Instance {
      * Contains a description of the current <i>lifecycle</i> state.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 32<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Allowed Values: </b>Pending, Quarantined, InService, Terminating, Terminated
      *
      * @return Contains a description of the current <i>lifecycle</i> state.
+     *
+     * @see LifecycleState
      */
     public String getLifecycleState() {
         return lifecycleState;
@@ -175,10 +175,11 @@ public class Instance {
      * Contains a description of the current <i>lifecycle</i> state.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 32<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Allowed Values: </b>Pending, Quarantined, InService, Terminating, Terminated
      *
      * @param lifecycleState Contains a description of the current <i>lifecycle</i> state.
+     *
+     * @see LifecycleState
      */
     public void setLifecycleState(String lifecycleState) {
         this.lifecycleState = lifecycleState;
@@ -190,19 +191,54 @@ public class Instance {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 32<br/>
-     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     * <b>Allowed Values: </b>Pending, Quarantined, InService, Terminating, Terminated
      *
      * @param lifecycleState Contains a description of the current <i>lifecycle</i> state.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
+     *
+     * @see LifecycleState
      */
     public Instance withLifecycleState(String lifecycleState) {
         this.lifecycleState = lifecycleState;
         return this;
     }
     
+    
+    /**
+     * Contains a description of the current <i>lifecycle</i> state.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>Pending, Quarantined, InService, Terminating, Terminated
+     *
+     * @param lifecycleState Contains a description of the current <i>lifecycle</i> state.
+     *
+     * @see LifecycleState
+     */
+    public void setLifecycleState(LifecycleState lifecycleState) {
+        this.lifecycleState = lifecycleState.toString();
+    }
+    
+    /**
+     * Contains a description of the current <i>lifecycle</i> state.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>Pending, Quarantined, InService, Terminating, Terminated
+     *
+     * @param lifecycleState Contains a description of the current <i>lifecycle</i> state.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see LifecycleState
+     */
+    public Instance withLifecycleState(LifecycleState lifecycleState) {
+        this.lifecycleState = lifecycleState.toString();
+        return this;
+    }
     
     /**
      * The instance's health status.

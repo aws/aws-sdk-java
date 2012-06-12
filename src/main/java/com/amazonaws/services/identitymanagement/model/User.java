@@ -41,7 +41,7 @@ package com.amazonaws.services.identitymanagement.model;
 public class User {
 
     /**
-     * Path to the user name. For more information about paths, see <a
+     * Path to the user. For more information about paths, see <a
      * ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      * Identity and Access Management</i>.
@@ -102,8 +102,7 @@ public class User {
      * Callers should use the setter or fluent setter (with...) methods to
      * initialize any additional object members.
      * 
-     * @param path Path to the user name. For more information about paths,
-     * see <a
+     * @param path Path to the user. For more information about paths, see <a
      * ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      * Identity and Access Management</i>.
@@ -131,7 +130,7 @@ public class User {
     
     
     /**
-     * Path to the user name. For more information about paths, see <a
+     * Path to the user. For more information about paths, see <a
      * ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      * Identity and Access Management</i>.
@@ -140,7 +139,7 @@ public class User {
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>(\u002F)|(\u002F[\u0021-\u007F]+\u002F)<br/>
      *
-     * @return Path to the user name. For more information about paths, see <a
+     * @return Path to the user. For more information about paths, see <a
      *         ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i>.
@@ -150,7 +149,7 @@ public class User {
     }
     
     /**
-     * Path to the user name. For more information about paths, see <a
+     * Path to the user. For more information about paths, see <a
      * ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      * Identity and Access Management</i>.
@@ -159,7 +158,7 @@ public class User {
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>(\u002F)|(\u002F[\u0021-\u007F]+\u002F)<br/>
      *
-     * @param path Path to the user name. For more information about paths, see <a
+     * @param path Path to the user. For more information about paths, see <a
      *         ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i>.
@@ -169,7 +168,7 @@ public class User {
     }
     
     /**
-     * Path to the user name. For more information about paths, see <a
+     * Path to the user. For more information about paths, see <a
      * ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      * Identity and Access Management</i>.
@@ -180,7 +179,7 @@ public class User {
      * <b>Length: </b>1 - 512<br/>
      * <b>Pattern: </b>(\u002F)|(\u002F[\u0021-\u007F]+\u002F)<br/>
      *
-     * @param path Path to the user name. For more information about paths, see <a
+     * @param path Path to the user. For more information about paths, see <a
      *         ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i>.

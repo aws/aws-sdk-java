@@ -194,6 +194,8 @@ public class Instance {
 
     private java.util.List<InstanceNetworkInterface> networkInterfaces;
 
+    private IamInstanceProfile iamInstanceProfile;
+
     /**
      * Unique ID of the instance launched.
      *
@@ -1806,6 +1808,40 @@ public class Instance {
     }
     
     /**
+     * Returns the value of the IamInstanceProfile property for this object.
+     *
+     * @return The value of the IamInstanceProfile property for this object.
+     */
+    public IamInstanceProfile getIamInstanceProfile() {
+        return iamInstanceProfile;
+    }
+    
+    /**
+     * Sets the value of the IamInstanceProfile property for this object.
+     *
+     * @param iamInstanceProfile The new value for the IamInstanceProfile property for this object.
+     */
+    public void setIamInstanceProfile(IamInstanceProfile iamInstanceProfile) {
+        this.iamInstanceProfile = iamInstanceProfile;
+    }
+    
+    /**
+     * Sets the value of the IamInstanceProfile property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param iamInstanceProfile The new value for the IamInstanceProfile property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public Instance withIamInstanceProfile(IamInstanceProfile iamInstanceProfile) {
+        this.iamInstanceProfile = iamInstanceProfile;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -1852,6 +1888,7 @@ public class Instance {
         if (sourceDestCheck != null) sb.append("SourceDestCheck: " + sourceDestCheck + ", ");
         if (hypervisor != null) sb.append("Hypervisor: " + hypervisor + ", ");
         if (networkInterfaces != null) sb.append("NetworkInterfaces: " + networkInterfaces + ", ");
+        if (iamInstanceProfile != null) sb.append("IamInstanceProfile: " + iamInstanceProfile + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -1896,6 +1933,7 @@ public class Instance {
         hashCode = prime * hashCode + ((isSourceDestCheck() == null) ? 0 : isSourceDestCheck().hashCode()); 
         hashCode = prime * hashCode + ((getHypervisor() == null) ? 0 : getHypervisor().hashCode()); 
         hashCode = prime * hashCode + ((getNetworkInterfaces() == null) ? 0 : getNetworkInterfaces().hashCode()); 
+        hashCode = prime * hashCode + ((getIamInstanceProfile() == null) ? 0 : getIamInstanceProfile().hashCode()); 
         return hashCode;
     }
     
@@ -1977,6 +2015,8 @@ public class Instance {
         if (other.getHypervisor() != null && other.getHypervisor().equals(this.getHypervisor()) == false) return false; 
         if (other.getNetworkInterfaces() == null ^ this.getNetworkInterfaces() == null) return false;
         if (other.getNetworkInterfaces() != null && other.getNetworkInterfaces().equals(this.getNetworkInterfaces()) == false) return false; 
+        if (other.getIamInstanceProfile() == null ^ this.getIamInstanceProfile() == null) return false;
+        if (other.getIamInstanceProfile() != null && other.getIamInstanceProfile().equals(this.getIamInstanceProfile()) == false) return false; 
         return true;
     }
     

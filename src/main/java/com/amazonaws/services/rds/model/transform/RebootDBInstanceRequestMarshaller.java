@@ -38,10 +38,13 @@ public class RebootDBInstanceRequestMarshaller implements Marshaller<Request<Reb
 
         Request<RebootDBInstanceRequest> request = new DefaultRequest<RebootDBInstanceRequest>(rebootDBInstanceRequest, "AmazonRDS");
         request.addParameter("Action", "RebootDBInstance");
-        request.addParameter("Version", "2012-01-15");
+        request.addParameter("Version", "2012-04-23");
 
         if (rebootDBInstanceRequest.getDBInstanceIdentifier() != null) {
             request.addParameter("DBInstanceIdentifier", StringUtils.fromString(rebootDBInstanceRequest.getDBInstanceIdentifier()));
+        }
+        if (rebootDBInstanceRequest.isForceFailover() != null) {
+            request.addParameter("ForceFailover", StringUtils.fromBoolean(rebootDBInstanceRequest.isForceFailover()));
         }
 
 

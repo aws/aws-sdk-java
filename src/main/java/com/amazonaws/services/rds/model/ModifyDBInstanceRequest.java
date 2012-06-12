@@ -28,11 +28,12 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
 
     /**
      * The DB Instance identifier. This value is stored as a lowercase
-     * string. <p>Constraints: <ul> <li>Must be the identifier for an
-     * existing DB Instance</li> <li>Must contain from 1 to 63 alphanumeric
-     * characters or hyphens</li> <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-     * </ul> <p>Example: <copy>mydbinstance</copy>
+     * string. For a SQL Server DB Instance, this value cannot be changed.
+     * <p>Constraints: <ul> <li>Must be the identifier for an existing DB
+     * Instance</li> <li>Must contain from 1 to 63 alphanumeric characters or
+     * hyphens</li> <li>First character must be a letter</li> <li>Cannot end
+     * with a hyphen or contain two consecutive hyphens</li> </ul>
+     * <p>Example: <copy>mydbinstance</copy>
      */
     private String dBInstanceIdentifier;
 
@@ -45,22 +46,25 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
      * supplied must be at least 10% greater than the current value. Values
      * that are not at least 10% greater than the existing value are rounded
      * up so that they are 10% greater than the current value. <p>Type:
-     * Integer <p><b>MySQL</b> <p>Default: Uses existing setting <p>Valid
+     * Integer <p><b>Oracle</b> <p>Default: Uses existing setting <p>Valid
      * Values: 10-1024 <p>Constraints: Value supplied must be at least 10%
      * greater than the current value. Values that are not at least 10%
      * greater than the existing value are rounded up so that they are 10%
-     * greater than the current value.
+     * greater than the current value. <p><b>SQL Server</b> <p>Cannot be
+     * modified.
      */
     private Integer allocatedStorage;
 
     /**
-     * The new compute and memory capacity of the DB Instance. <p> Passing a
-     * value for this parameter causes an outage during the change and is
+     * The new compute and memory capacity of the DB Instance. To determine
+     * the instance classes that are available for a particular DB engine,
+     * use the <a>DescribeOrderableDBInstanceOptions</a> action. <p> Passing
+     * a value for this parameter causes an outage during the change and is
      * applied during the next maintenance window, unless the
      * <code>ApplyImmediately</code> parameter is specified as
      * <code>true</code> for this request. <p>Default: Uses existing setting
-     * <p>Valid Values: <code>db.m1.small | db.m1.large | db.m1.xlarge |
-     * db.m2.xlarge | db.m2.2xlarge | db.m2.4xlarge</code>
+     * <p>Valid Values: <code>db.t1.micro | db.m1.small | db.m1.large |
+     * db.m1.xlarge | db.m2.xlarge | db.m2.2xlarge | db.m2.4xlarge</code>
      */
     private String dBInstanceClass;
 
@@ -91,10 +95,12 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
      * request and the completion of the request, the
      * <code>MasterUserPassword</code> element exists in the
      * <code>PendingModifiedValues</code> element of the operation response.
-     * <p>Default: Uses existing setting <p>Constraints: Must be 4 to 41
-     * alphanumeric characters (engine specific) <note> Amazon RDS APIs never
-     * return the password, so this API provides a way to regain access to a
-     * master instance user if the password is lost. </note>
+     * <p>Default: Uses existing setting <p>Constraints: Must be 8 to 41
+     * alphanumeric characters (MySQL), 8 to 30 alphanumeric characters
+     * (Oracle), or 8 to 128 alphanumeric characters (SQL Server). <note>
+     * Amazon RDS API actions never return the password, so this action
+     * provides a way to regain access to a master instance user if the
+     * password is lost. </note>
      */
     private String masterUserPassword;
 
@@ -170,6 +176,12 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
     private Boolean autoMinorVersionUpgrade;
 
     /**
+     * Indicates that the DB Instance should be associated with the specified
+     * option group.
+     */
+    private String optionGroupName;
+
+    /**
      * Default constructor for a new ModifyDBInstanceRequest object.  Callers should use the
      * setter or fluent setter (with...) methods to initialize this object after creating it.
      */
@@ -181,10 +193,11 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
      * initialize any additional object members.
      * 
      * @param dBInstanceIdentifier The DB Instance identifier. This value is
-     * stored as a lowercase string. <p>Constraints: <ul> <li>Must be the
-     * identifier for an existing DB Instance</li> <li>Must contain from 1 to
-     * 63 alphanumeric characters or hyphens</li> <li>First character must be
-     * a letter</li> <li>Cannot end with a hyphen or contain two consecutive
+     * stored as a lowercase string. For a SQL Server DB Instance, this value
+     * cannot be changed. <p>Constraints: <ul> <li>Must be the identifier for
+     * an existing DB Instance</li> <li>Must contain from 1 to 63
+     * alphanumeric characters or hyphens</li> <li>First character must be a
+     * letter</li> <li>Cannot end with a hyphen or contain two consecutive
      * hyphens</li> </ul> <p>Example: <copy>mydbinstance</copy>
      */
     public ModifyDBInstanceRequest(String dBInstanceIdentifier) {
@@ -195,18 +208,20 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
     
     /**
      * The DB Instance identifier. This value is stored as a lowercase
-     * string. <p>Constraints: <ul> <li>Must be the identifier for an
-     * existing DB Instance</li> <li>Must contain from 1 to 63 alphanumeric
-     * characters or hyphens</li> <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-     * </ul> <p>Example: <copy>mydbinstance</copy>
+     * string. For a SQL Server DB Instance, this value cannot be changed.
+     * <p>Constraints: <ul> <li>Must be the identifier for an existing DB
+     * Instance</li> <li>Must contain from 1 to 63 alphanumeric characters or
+     * hyphens</li> <li>First character must be a letter</li> <li>Cannot end
+     * with a hyphen or contain two consecutive hyphens</li> </ul>
+     * <p>Example: <copy>mydbinstance</copy>
      *
      * @return The DB Instance identifier. This value is stored as a lowercase
-     *         string. <p>Constraints: <ul> <li>Must be the identifier for an
-     *         existing DB Instance</li> <li>Must contain from 1 to 63 alphanumeric
-     *         characters or hyphens</li> <li>First character must be a letter</li>
-     *         <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-     *         </ul> <p>Example: <copy>mydbinstance</copy>
+     *         string. For a SQL Server DB Instance, this value cannot be changed.
+     *         <p>Constraints: <ul> <li>Must be the identifier for an existing DB
+     *         Instance</li> <li>Must contain from 1 to 63 alphanumeric characters or
+     *         hyphens</li> <li>First character must be a letter</li> <li>Cannot end
+     *         with a hyphen or contain two consecutive hyphens</li> </ul>
+     *         <p>Example: <copy>mydbinstance</copy>
      */
     public String getDBInstanceIdentifier() {
         return dBInstanceIdentifier;
@@ -214,18 +229,20 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
     
     /**
      * The DB Instance identifier. This value is stored as a lowercase
-     * string. <p>Constraints: <ul> <li>Must be the identifier for an
-     * existing DB Instance</li> <li>Must contain from 1 to 63 alphanumeric
-     * characters or hyphens</li> <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-     * </ul> <p>Example: <copy>mydbinstance</copy>
+     * string. For a SQL Server DB Instance, this value cannot be changed.
+     * <p>Constraints: <ul> <li>Must be the identifier for an existing DB
+     * Instance</li> <li>Must contain from 1 to 63 alphanumeric characters or
+     * hyphens</li> <li>First character must be a letter</li> <li>Cannot end
+     * with a hyphen or contain two consecutive hyphens</li> </ul>
+     * <p>Example: <copy>mydbinstance</copy>
      *
      * @param dBInstanceIdentifier The DB Instance identifier. This value is stored as a lowercase
-     *         string. <p>Constraints: <ul> <li>Must be the identifier for an
-     *         existing DB Instance</li> <li>Must contain from 1 to 63 alphanumeric
-     *         characters or hyphens</li> <li>First character must be a letter</li>
-     *         <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-     *         </ul> <p>Example: <copy>mydbinstance</copy>
+     *         string. For a SQL Server DB Instance, this value cannot be changed.
+     *         <p>Constraints: <ul> <li>Must be the identifier for an existing DB
+     *         Instance</li> <li>Must contain from 1 to 63 alphanumeric characters or
+     *         hyphens</li> <li>First character must be a letter</li> <li>Cannot end
+     *         with a hyphen or contain two consecutive hyphens</li> </ul>
+     *         <p>Example: <copy>mydbinstance</copy>
      */
     public void setDBInstanceIdentifier(String dBInstanceIdentifier) {
         this.dBInstanceIdentifier = dBInstanceIdentifier;
@@ -233,20 +250,22 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
     
     /**
      * The DB Instance identifier. This value is stored as a lowercase
-     * string. <p>Constraints: <ul> <li>Must be the identifier for an
-     * existing DB Instance</li> <li>Must contain from 1 to 63 alphanumeric
-     * characters or hyphens</li> <li>First character must be a letter</li>
-     * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-     * </ul> <p>Example: <copy>mydbinstance</copy>
+     * string. For a SQL Server DB Instance, this value cannot be changed.
+     * <p>Constraints: <ul> <li>Must be the identifier for an existing DB
+     * Instance</li> <li>Must contain from 1 to 63 alphanumeric characters or
+     * hyphens</li> <li>First character must be a letter</li> <li>Cannot end
+     * with a hyphen or contain two consecutive hyphens</li> </ul>
+     * <p>Example: <copy>mydbinstance</copy>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dBInstanceIdentifier The DB Instance identifier. This value is stored as a lowercase
-     *         string. <p>Constraints: <ul> <li>Must be the identifier for an
-     *         existing DB Instance</li> <li>Must contain from 1 to 63 alphanumeric
-     *         characters or hyphens</li> <li>First character must be a letter</li>
-     *         <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-     *         </ul> <p>Example: <copy>mydbinstance</copy>
+     *         string. For a SQL Server DB Instance, this value cannot be changed.
+     *         <p>Constraints: <ul> <li>Must be the identifier for an existing DB
+     *         Instance</li> <li>Must contain from 1 to 63 alphanumeric characters or
+     *         hyphens</li> <li>First character must be a letter</li> <li>Cannot end
+     *         with a hyphen or contain two consecutive hyphens</li> </ul>
+     *         <p>Example: <copy>mydbinstance</copy>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -266,11 +285,12 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
      * supplied must be at least 10% greater than the current value. Values
      * that are not at least 10% greater than the existing value are rounded
      * up so that they are 10% greater than the current value. <p>Type:
-     * Integer <p><b>MySQL</b> <p>Default: Uses existing setting <p>Valid
+     * Integer <p><b>Oracle</b> <p>Default: Uses existing setting <p>Valid
      * Values: 10-1024 <p>Constraints: Value supplied must be at least 10%
      * greater than the current value. Values that are not at least 10%
      * greater than the existing value are rounded up so that they are 10%
-     * greater than the current value.
+     * greater than the current value. <p><b>SQL Server</b> <p>Cannot be
+     * modified.
      *
      * @return The new storage capacity of the RDS instance. <p> This change does not
      *         result in an outage and is applied during the next maintenance window
@@ -280,11 +300,12 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
      *         supplied must be at least 10% greater than the current value. Values
      *         that are not at least 10% greater than the existing value are rounded
      *         up so that they are 10% greater than the current value. <p>Type:
-     *         Integer <p><b>MySQL</b> <p>Default: Uses existing setting <p>Valid
+     *         Integer <p><b>Oracle</b> <p>Default: Uses existing setting <p>Valid
      *         Values: 10-1024 <p>Constraints: Value supplied must be at least 10%
      *         greater than the current value. Values that are not at least 10%
      *         greater than the existing value are rounded up so that they are 10%
-     *         greater than the current value.
+     *         greater than the current value. <p><b>SQL Server</b> <p>Cannot be
+     *         modified.
      */
     public Integer getAllocatedStorage() {
         return allocatedStorage;
@@ -299,11 +320,12 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
      * supplied must be at least 10% greater than the current value. Values
      * that are not at least 10% greater than the existing value are rounded
      * up so that they are 10% greater than the current value. <p>Type:
-     * Integer <p><b>MySQL</b> <p>Default: Uses existing setting <p>Valid
+     * Integer <p><b>Oracle</b> <p>Default: Uses existing setting <p>Valid
      * Values: 10-1024 <p>Constraints: Value supplied must be at least 10%
      * greater than the current value. Values that are not at least 10%
      * greater than the existing value are rounded up so that they are 10%
-     * greater than the current value.
+     * greater than the current value. <p><b>SQL Server</b> <p>Cannot be
+     * modified.
      *
      * @param allocatedStorage The new storage capacity of the RDS instance. <p> This change does not
      *         result in an outage and is applied during the next maintenance window
@@ -313,11 +335,12 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
      *         supplied must be at least 10% greater than the current value. Values
      *         that are not at least 10% greater than the existing value are rounded
      *         up so that they are 10% greater than the current value. <p>Type:
-     *         Integer <p><b>MySQL</b> <p>Default: Uses existing setting <p>Valid
+     *         Integer <p><b>Oracle</b> <p>Default: Uses existing setting <p>Valid
      *         Values: 10-1024 <p>Constraints: Value supplied must be at least 10%
      *         greater than the current value. Values that are not at least 10%
      *         greater than the existing value are rounded up so that they are 10%
-     *         greater than the current value.
+     *         greater than the current value. <p><b>SQL Server</b> <p>Cannot be
+     *         modified.
      */
     public void setAllocatedStorage(Integer allocatedStorage) {
         this.allocatedStorage = allocatedStorage;
@@ -332,11 +355,12 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
      * supplied must be at least 10% greater than the current value. Values
      * that are not at least 10% greater than the existing value are rounded
      * up so that they are 10% greater than the current value. <p>Type:
-     * Integer <p><b>MySQL</b> <p>Default: Uses existing setting <p>Valid
+     * Integer <p><b>Oracle</b> <p>Default: Uses existing setting <p>Valid
      * Values: 10-1024 <p>Constraints: Value supplied must be at least 10%
      * greater than the current value. Values that are not at least 10%
      * greater than the existing value are rounded up so that they are 10%
-     * greater than the current value.
+     * greater than the current value. <p><b>SQL Server</b> <p>Cannot be
+     * modified.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -348,11 +372,12 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
      *         supplied must be at least 10% greater than the current value. Values
      *         that are not at least 10% greater than the existing value are rounded
      *         up so that they are 10% greater than the current value. <p>Type:
-     *         Integer <p><b>MySQL</b> <p>Default: Uses existing setting <p>Valid
+     *         Integer <p><b>Oracle</b> <p>Default: Uses existing setting <p>Valid
      *         Values: 10-1024 <p>Constraints: Value supplied must be at least 10%
      *         greater than the current value. Values that are not at least 10%
      *         greater than the existing value are rounded up so that they are 10%
-     *         greater than the current value.
+     *         greater than the current value. <p><b>SQL Server</b> <p>Cannot be
+     *         modified.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -364,65 +389,77 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * The new compute and memory capacity of the DB Instance. <p> Passing a
-     * value for this parameter causes an outage during the change and is
+     * The new compute and memory capacity of the DB Instance. To determine
+     * the instance classes that are available for a particular DB engine,
+     * use the <a>DescribeOrderableDBInstanceOptions</a> action. <p> Passing
+     * a value for this parameter causes an outage during the change and is
      * applied during the next maintenance window, unless the
      * <code>ApplyImmediately</code> parameter is specified as
      * <code>true</code> for this request. <p>Default: Uses existing setting
-     * <p>Valid Values: <code>db.m1.small | db.m1.large | db.m1.xlarge |
-     * db.m2.xlarge | db.m2.2xlarge | db.m2.4xlarge</code>
+     * <p>Valid Values: <code>db.t1.micro | db.m1.small | db.m1.large |
+     * db.m1.xlarge | db.m2.xlarge | db.m2.2xlarge | db.m2.4xlarge</code>
      *
-     * @return The new compute and memory capacity of the DB Instance. <p> Passing a
-     *         value for this parameter causes an outage during the change and is
+     * @return The new compute and memory capacity of the DB Instance. To determine
+     *         the instance classes that are available for a particular DB engine,
+     *         use the <a>DescribeOrderableDBInstanceOptions</a> action. <p> Passing
+     *         a value for this parameter causes an outage during the change and is
      *         applied during the next maintenance window, unless the
      *         <code>ApplyImmediately</code> parameter is specified as
      *         <code>true</code> for this request. <p>Default: Uses existing setting
-     *         <p>Valid Values: <code>db.m1.small | db.m1.large | db.m1.xlarge |
-     *         db.m2.xlarge | db.m2.2xlarge | db.m2.4xlarge</code>
+     *         <p>Valid Values: <code>db.t1.micro | db.m1.small | db.m1.large |
+     *         db.m1.xlarge | db.m2.xlarge | db.m2.2xlarge | db.m2.4xlarge</code>
      */
     public String getDBInstanceClass() {
         return dBInstanceClass;
     }
     
     /**
-     * The new compute and memory capacity of the DB Instance. <p> Passing a
-     * value for this parameter causes an outage during the change and is
+     * The new compute and memory capacity of the DB Instance. To determine
+     * the instance classes that are available for a particular DB engine,
+     * use the <a>DescribeOrderableDBInstanceOptions</a> action. <p> Passing
+     * a value for this parameter causes an outage during the change and is
      * applied during the next maintenance window, unless the
      * <code>ApplyImmediately</code> parameter is specified as
      * <code>true</code> for this request. <p>Default: Uses existing setting
-     * <p>Valid Values: <code>db.m1.small | db.m1.large | db.m1.xlarge |
-     * db.m2.xlarge | db.m2.2xlarge | db.m2.4xlarge</code>
+     * <p>Valid Values: <code>db.t1.micro | db.m1.small | db.m1.large |
+     * db.m1.xlarge | db.m2.xlarge | db.m2.2xlarge | db.m2.4xlarge</code>
      *
-     * @param dBInstanceClass The new compute and memory capacity of the DB Instance. <p> Passing a
-     *         value for this parameter causes an outage during the change and is
+     * @param dBInstanceClass The new compute and memory capacity of the DB Instance. To determine
+     *         the instance classes that are available for a particular DB engine,
+     *         use the <a>DescribeOrderableDBInstanceOptions</a> action. <p> Passing
+     *         a value for this parameter causes an outage during the change and is
      *         applied during the next maintenance window, unless the
      *         <code>ApplyImmediately</code> parameter is specified as
      *         <code>true</code> for this request. <p>Default: Uses existing setting
-     *         <p>Valid Values: <code>db.m1.small | db.m1.large | db.m1.xlarge |
-     *         db.m2.xlarge | db.m2.2xlarge | db.m2.4xlarge</code>
+     *         <p>Valid Values: <code>db.t1.micro | db.m1.small | db.m1.large |
+     *         db.m1.xlarge | db.m2.xlarge | db.m2.2xlarge | db.m2.4xlarge</code>
      */
     public void setDBInstanceClass(String dBInstanceClass) {
         this.dBInstanceClass = dBInstanceClass;
     }
     
     /**
-     * The new compute and memory capacity of the DB Instance. <p> Passing a
-     * value for this parameter causes an outage during the change and is
+     * The new compute and memory capacity of the DB Instance. To determine
+     * the instance classes that are available for a particular DB engine,
+     * use the <a>DescribeOrderableDBInstanceOptions</a> action. <p> Passing
+     * a value for this parameter causes an outage during the change and is
      * applied during the next maintenance window, unless the
      * <code>ApplyImmediately</code> parameter is specified as
      * <code>true</code> for this request. <p>Default: Uses existing setting
-     * <p>Valid Values: <code>db.m1.small | db.m1.large | db.m1.xlarge |
-     * db.m2.xlarge | db.m2.2xlarge | db.m2.4xlarge</code>
+     * <p>Valid Values: <code>db.t1.micro | db.m1.small | db.m1.large |
+     * db.m1.xlarge | db.m2.xlarge | db.m2.2xlarge | db.m2.4xlarge</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBInstanceClass The new compute and memory capacity of the DB Instance. <p> Passing a
-     *         value for this parameter causes an outage during the change and is
+     * @param dBInstanceClass The new compute and memory capacity of the DB Instance. To determine
+     *         the instance classes that are available for a particular DB engine,
+     *         use the <a>DescribeOrderableDBInstanceOptions</a> action. <p> Passing
+     *         a value for this parameter causes an outage during the change and is
      *         applied during the next maintenance window, unless the
      *         <code>ApplyImmediately</code> parameter is specified as
      *         <code>true</code> for this request. <p>Default: Uses existing setting
-     *         <p>Valid Values: <code>db.m1.small | db.m1.large | db.m1.xlarge |
-     *         db.m2.xlarge | db.m2.2xlarge | db.m2.4xlarge</code>
+     *         <p>Valid Values: <code>db.t1.micro | db.m1.small | db.m1.large |
+     *         db.m1.xlarge | db.m2.xlarge | db.m2.2xlarge | db.m2.4xlarge</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -639,20 +676,24 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
      * request and the completion of the request, the
      * <code>MasterUserPassword</code> element exists in the
      * <code>PendingModifiedValues</code> element of the operation response.
-     * <p>Default: Uses existing setting <p>Constraints: Must be 4 to 41
-     * alphanumeric characters (engine specific) <note> Amazon RDS APIs never
-     * return the password, so this API provides a way to regain access to a
-     * master instance user if the password is lost. </note>
+     * <p>Default: Uses existing setting <p>Constraints: Must be 8 to 41
+     * alphanumeric characters (MySQL), 8 to 30 alphanumeric characters
+     * (Oracle), or 8 to 128 alphanumeric characters (SQL Server). <note>
+     * Amazon RDS API actions never return the password, so this action
+     * provides a way to regain access to a master instance user if the
+     * password is lost. </note>
      *
      * @return The new password for the DB Instance master user. This change is
      *         asynchronously applied as soon as possible. Between the time of the
      *         request and the completion of the request, the
      *         <code>MasterUserPassword</code> element exists in the
      *         <code>PendingModifiedValues</code> element of the operation response.
-     *         <p>Default: Uses existing setting <p>Constraints: Must be 4 to 41
-     *         alphanumeric characters (engine specific) <note> Amazon RDS APIs never
-     *         return the password, so this API provides a way to regain access to a
-     *         master instance user if the password is lost. </note>
+     *         <p>Default: Uses existing setting <p>Constraints: Must be 8 to 41
+     *         alphanumeric characters (MySQL), 8 to 30 alphanumeric characters
+     *         (Oracle), or 8 to 128 alphanumeric characters (SQL Server). <note>
+     *         Amazon RDS API actions never return the password, so this action
+     *         provides a way to regain access to a master instance user if the
+     *         password is lost. </note>
      */
     public String getMasterUserPassword() {
         return masterUserPassword;
@@ -664,20 +705,24 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
      * request and the completion of the request, the
      * <code>MasterUserPassword</code> element exists in the
      * <code>PendingModifiedValues</code> element of the operation response.
-     * <p>Default: Uses existing setting <p>Constraints: Must be 4 to 41
-     * alphanumeric characters (engine specific) <note> Amazon RDS APIs never
-     * return the password, so this API provides a way to regain access to a
-     * master instance user if the password is lost. </note>
+     * <p>Default: Uses existing setting <p>Constraints: Must be 8 to 41
+     * alphanumeric characters (MySQL), 8 to 30 alphanumeric characters
+     * (Oracle), or 8 to 128 alphanumeric characters (SQL Server). <note>
+     * Amazon RDS API actions never return the password, so this action
+     * provides a way to regain access to a master instance user if the
+     * password is lost. </note>
      *
      * @param masterUserPassword The new password for the DB Instance master user. This change is
      *         asynchronously applied as soon as possible. Between the time of the
      *         request and the completion of the request, the
      *         <code>MasterUserPassword</code> element exists in the
      *         <code>PendingModifiedValues</code> element of the operation response.
-     *         <p>Default: Uses existing setting <p>Constraints: Must be 4 to 41
-     *         alphanumeric characters (engine specific) <note> Amazon RDS APIs never
-     *         return the password, so this API provides a way to regain access to a
-     *         master instance user if the password is lost. </note>
+     *         <p>Default: Uses existing setting <p>Constraints: Must be 8 to 41
+     *         alphanumeric characters (MySQL), 8 to 30 alphanumeric characters
+     *         (Oracle), or 8 to 128 alphanumeric characters (SQL Server). <note>
+     *         Amazon RDS API actions never return the password, so this action
+     *         provides a way to regain access to a master instance user if the
+     *         password is lost. </note>
      */
     public void setMasterUserPassword(String masterUserPassword) {
         this.masterUserPassword = masterUserPassword;
@@ -689,10 +734,12 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
      * request and the completion of the request, the
      * <code>MasterUserPassword</code> element exists in the
      * <code>PendingModifiedValues</code> element of the operation response.
-     * <p>Default: Uses existing setting <p>Constraints: Must be 4 to 41
-     * alphanumeric characters (engine specific) <note> Amazon RDS APIs never
-     * return the password, so this API provides a way to regain access to a
-     * master instance user if the password is lost. </note>
+     * <p>Default: Uses existing setting <p>Constraints: Must be 8 to 41
+     * alphanumeric characters (MySQL), 8 to 30 alphanumeric characters
+     * (Oracle), or 8 to 128 alphanumeric characters (SQL Server). <note>
+     * Amazon RDS API actions never return the password, so this action
+     * provides a way to regain access to a master instance user if the
+     * password is lost. </note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -701,10 +748,12 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
      *         request and the completion of the request, the
      *         <code>MasterUserPassword</code> element exists in the
      *         <code>PendingModifiedValues</code> element of the operation response.
-     *         <p>Default: Uses existing setting <p>Constraints: Must be 4 to 41
-     *         alphanumeric characters (engine specific) <note> Amazon RDS APIs never
-     *         return the password, so this API provides a way to regain access to a
-     *         master instance user if the password is lost. </note>
+     *         <p>Default: Uses existing setting <p>Constraints: Must be 8 to 41
+     *         alphanumeric characters (MySQL), 8 to 30 alphanumeric characters
+     *         (Oracle), or 8 to 128 alphanumeric characters (SQL Server). <note>
+     *         Amazon RDS API actions never return the password, so this action
+     *         provides a way to regain access to a master instance user if the
+     *         password is lost. </note>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -1211,6 +1260,46 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
     }
     
     /**
+     * Indicates that the DB Instance should be associated with the specified
+     * option group.
+     *
+     * @return Indicates that the DB Instance should be associated with the specified
+     *         option group.
+     */
+    public String getOptionGroupName() {
+        return optionGroupName;
+    }
+    
+    /**
+     * Indicates that the DB Instance should be associated with the specified
+     * option group.
+     *
+     * @param optionGroupName Indicates that the DB Instance should be associated with the specified
+     *         option group.
+     */
+    public void setOptionGroupName(String optionGroupName) {
+        this.optionGroupName = optionGroupName;
+    }
+    
+    /**
+     * Indicates that the DB Instance should be associated with the specified
+     * option group.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param optionGroupName Indicates that the DB Instance should be associated with the specified
+     *         option group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public ModifyDBInstanceRequest withOptionGroupName(String optionGroupName) {
+        this.optionGroupName = optionGroupName;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -1236,6 +1325,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
         if (engineVersion != null) sb.append("EngineVersion: " + engineVersion + ", ");
         if (allowMajorVersionUpgrade != null) sb.append("AllowMajorVersionUpgrade: " + allowMajorVersionUpgrade + ", ");
         if (autoMinorVersionUpgrade != null) sb.append("AutoMinorVersionUpgrade: " + autoMinorVersionUpgrade + ", ");
+        if (optionGroupName != null) sb.append("OptionGroupName: " + optionGroupName + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -1259,6 +1349,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
         hashCode = prime * hashCode + ((getEngineVersion() == null) ? 0 : getEngineVersion().hashCode()); 
         hashCode = prime * hashCode + ((isAllowMajorVersionUpgrade() == null) ? 0 : isAllowMajorVersionUpgrade().hashCode()); 
         hashCode = prime * hashCode + ((isAutoMinorVersionUpgrade() == null) ? 0 : isAutoMinorVersionUpgrade().hashCode()); 
+        hashCode = prime * hashCode + ((getOptionGroupName() == null) ? 0 : getOptionGroupName().hashCode()); 
         return hashCode;
     }
     
@@ -1298,6 +1389,8 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
         if (other.isAllowMajorVersionUpgrade() != null && other.isAllowMajorVersionUpgrade().equals(this.isAllowMajorVersionUpgrade()) == false) return false; 
         if (other.isAutoMinorVersionUpgrade() == null ^ this.isAutoMinorVersionUpgrade() == null) return false;
         if (other.isAutoMinorVersionUpgrade() != null && other.isAutoMinorVersionUpgrade().equals(this.isAutoMinorVersionUpgrade()) == false) return false; 
+        if (other.getOptionGroupName() == null ^ this.getOptionGroupName() == null) return false;
+        if (other.getOptionGroupName() != null && other.getOptionGroupName().equals(this.getOptionGroupName()) == false) return false; 
         return true;
     }
     

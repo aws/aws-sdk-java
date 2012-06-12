@@ -267,6 +267,26 @@ public interface AmazonEC2Async extends AmazonEC2 {
             throws AmazonServiceException, AmazonClientException;
 
     /**
+     *
+     * @param createInstanceExportTaskRequest Container for the necessary
+     *           parameters to execute the CreateInstanceExportTask operation on
+     *           AmazonEC2.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreateInstanceExportTask service method, as returned by AmazonEC2.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<CreateInstanceExportTaskResult> createInstanceExportTaskAsync(CreateInstanceExportTaskRequest createInstanceExportTaskRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
      * <p>
      * This action applies only to security groups in a VPC; it's not
      * supported for EC2 security groups. For information about Amazon
@@ -1354,6 +1374,25 @@ public interface AmazonEC2Async extends AmazonEC2 {
      *             either a problem with the data in the request, or a server side issue.
      */
     public Future<Void> createNetworkAclEntryAsync(CreateNetworkAclEntryRequest createNetworkAclEntryRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     *
+     * @param describeExportTasksRequest Container for the necessary
+     *           parameters to execute the DescribeExportTasks operation on AmazonEC2.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeExportTasks service method, as returned by AmazonEC2.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeExportTasksResult> describeExportTasksAsync(DescribeExportTasksRequest describeExportTasksRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -2536,6 +2575,25 @@ public interface AmazonEC2Async extends AmazonEC2 {
      *             either a problem with the data in the request, or a server side issue.
      */
     public Future<DescribeCustomerGatewaysResult> describeCustomerGatewaysAsync(DescribeCustomerGatewaysRequest describeCustomerGatewaysRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     *
+     * @param cancelExportTaskRequest Container for the necessary parameters
+     *           to execute the CancelExportTask operation on AmazonEC2.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CancelExportTask service method, as returned by AmazonEC2.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> cancelExportTaskAsync(CancelExportTaskRequest cancelExportTaskRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**

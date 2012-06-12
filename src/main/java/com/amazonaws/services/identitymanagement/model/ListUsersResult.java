@@ -22,7 +22,7 @@ package com.amazonaws.services.identitymanagement.model;
 public class ListUsersResult {
 
     /**
-     * A list of user names.
+     * A list of users.
      */
     private java.util.List<User> users;
 
@@ -46,9 +46,9 @@ public class ListUsersResult {
     private String marker;
 
     /**
-     * A list of user names.
+     * A list of users.
      *
-     * @return A list of user names.
+     * @return A list of users.
      */
     public java.util.List<User> getUsers() {
         
@@ -59,9 +59,9 @@ public class ListUsersResult {
     }
     
     /**
-     * A list of user names.
+     * A list of users.
      *
-     * @param users A list of user names.
+     * @param users A list of users.
      */
     public void setUsers(java.util.Collection<User> users) {
         if (users == null) {
@@ -75,11 +75,11 @@ public class ListUsersResult {
     }
     
     /**
-     * A list of user names.
+     * A list of users.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param users A list of user names.
+     * @param users A list of users.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -93,11 +93,11 @@ public class ListUsersResult {
     }
     
     /**
-     * A list of user names.
+     * A list of users.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param users A list of user names.
+     * @param users A list of users.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

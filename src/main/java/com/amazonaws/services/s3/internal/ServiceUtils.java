@@ -224,7 +224,7 @@ public class ServiceUtils {
         if ( parentDirectory != null && !parentDirectory.exists() ) {
             parentDirectory.mkdirs();
         }
-        
+
         OutputStream outputStream = null;
         try {
             outputStream = new BufferedOutputStream(new FileOutputStream(destinationFile));
@@ -246,20 +246,22 @@ public class ServiceUtils {
             try {s3Object.getObjectContent().close();} catch (Exception e) {}
         }
 
+        byte[] clientSideHash = null;
+        byte[] serverSideHash = null;
         try {
             // Multipart Uploads don't have an MD5 calculated on the service side
             if (ServiceUtils.isMultipartUploadETag(s3Object.getObjectMetadata().getETag()) == false) {
-                byte[] clientSideHash = Md5Utils.computeMD5Hash(new FileInputStream(destinationFile));
-                byte[] serverSideHash = BinaryUtils.fromHex(s3Object.getObjectMetadata().getETag());
-
-                if (!Arrays.equals(clientSideHash, serverSideHash)) {
-                    throw new AmazonClientException("Unable to verify integrity of data download.  " +
-                            "Client calculated content hash didn't match hash calculated by Amazon S3.  " +
-                            "The data stored in '" + destinationFile.getAbsolutePath() + "' may be corrupt.");
-                }
+                clientSideHash = Md5Utils.computeMD5Hash(new FileInputStream(destinationFile));
+                serverSideHash = BinaryUtils.fromHex(s3Object.getObjectMetadata().getETag());
             }
         } catch (Exception e) {
             log.warn("Unable to calculate MD5 hash to validate download: " + e.getMessage(), e);
+        }
+
+        if (clientSideHash != null && serverSideHash != null && !Arrays.equals(clientSideHash, serverSideHash)) {
+            throw new AmazonClientException("Unable to verify integrity of data download.  " +
+                    "Client calculated content hash didn't match hash calculated by Amazon S3.  " +
+                    "The data stored in '" + destinationFile.getAbsolutePath() + "' may be corrupt.");
         }
     }
 }

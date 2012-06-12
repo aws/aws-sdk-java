@@ -113,6 +113,25 @@ public class LaunchConfiguration {
     private InstanceMonitoring instanceMonitoring;
 
     /**
+     * Specifies the bid price for the Spot Instance.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 255<br/>
+     */
+    private String spotPrice;
+
+    /**
+     * Provides the name or the full ARN of the instance profile associated
+     * with the IAM role for the instance. The instance profile is the
+     * container for the IAM role.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 1600<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     */
+    private String iamInstanceProfile;
+
+    /**
      * Provides the creation date and time for this launch configuration.
      */
     private java.util.Date createdTime;
@@ -686,6 +705,107 @@ public class LaunchConfiguration {
     
     
     /**
+     * Specifies the bid price for the Spot Instance.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 255<br/>
+     *
+     * @return Specifies the bid price for the Spot Instance.
+     */
+    public String getSpotPrice() {
+        return spotPrice;
+    }
+    
+    /**
+     * Specifies the bid price for the Spot Instance.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 255<br/>
+     *
+     * @param spotPrice Specifies the bid price for the Spot Instance.
+     */
+    public void setSpotPrice(String spotPrice) {
+        this.spotPrice = spotPrice;
+    }
+    
+    /**
+     * Specifies the bid price for the Spot Instance.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 255<br/>
+     *
+     * @param spotPrice Specifies the bid price for the Spot Instance.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public LaunchConfiguration withSpotPrice(String spotPrice) {
+        this.spotPrice = spotPrice;
+        return this;
+    }
+    
+    
+    /**
+     * Provides the name or the full ARN of the instance profile associated
+     * with the IAM role for the instance. The instance profile is the
+     * container for the IAM role.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 1600<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     *
+     * @return Provides the name or the full ARN of the instance profile associated
+     *         with the IAM role for the instance. The instance profile is the
+     *         container for the IAM role.
+     */
+    public String getIamInstanceProfile() {
+        return iamInstanceProfile;
+    }
+    
+    /**
+     * Provides the name or the full ARN of the instance profile associated
+     * with the IAM role for the instance. The instance profile is the
+     * container for the IAM role.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 1600<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     *
+     * @param iamInstanceProfile Provides the name or the full ARN of the instance profile associated
+     *         with the IAM role for the instance. The instance profile is the
+     *         container for the IAM role.
+     */
+    public void setIamInstanceProfile(String iamInstanceProfile) {
+        this.iamInstanceProfile = iamInstanceProfile;
+    }
+    
+    /**
+     * Provides the name or the full ARN of the instance profile associated
+     * with the IAM role for the instance. The instance profile is the
+     * container for the IAM role.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 1600<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     *
+     * @param iamInstanceProfile Provides the name or the full ARN of the instance profile associated
+     *         with the IAM role for the instance. The instance profile is the
+     *         container for the IAM role.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public LaunchConfiguration withIamInstanceProfile(String iamInstanceProfile) {
+        this.iamInstanceProfile = iamInstanceProfile;
+        return this;
+    }
+    
+    
+    /**
      * Provides the creation date and time for this launch configuration.
      *
      * @return Provides the creation date and time for this launch configuration.
@@ -742,6 +862,8 @@ public class LaunchConfiguration {
         if (ramdiskId != null) sb.append("RamdiskId: " + ramdiskId + ", ");
         if (blockDeviceMappings != null) sb.append("BlockDeviceMappings: " + blockDeviceMappings + ", ");
         if (instanceMonitoring != null) sb.append("InstanceMonitoring: " + instanceMonitoring + ", ");
+        if (spotPrice != null) sb.append("SpotPrice: " + spotPrice + ", ");
+        if (iamInstanceProfile != null) sb.append("IamInstanceProfile: " + iamInstanceProfile + ", ");
         if (createdTime != null) sb.append("CreatedTime: " + createdTime + ", ");
         sb.append("}");
         return sb.toString();
@@ -763,6 +885,8 @@ public class LaunchConfiguration {
         hashCode = prime * hashCode + ((getRamdiskId() == null) ? 0 : getRamdiskId().hashCode()); 
         hashCode = prime * hashCode + ((getBlockDeviceMappings() == null) ? 0 : getBlockDeviceMappings().hashCode()); 
         hashCode = prime * hashCode + ((getInstanceMonitoring() == null) ? 0 : getInstanceMonitoring().hashCode()); 
+        hashCode = prime * hashCode + ((getSpotPrice() == null) ? 0 : getSpotPrice().hashCode()); 
+        hashCode = prime * hashCode + ((getIamInstanceProfile() == null) ? 0 : getIamInstanceProfile().hashCode()); 
         hashCode = prime * hashCode + ((getCreatedTime() == null) ? 0 : getCreatedTime().hashCode()); 
         return hashCode;
     }
@@ -797,6 +921,10 @@ public class LaunchConfiguration {
         if (other.getBlockDeviceMappings() != null && other.getBlockDeviceMappings().equals(this.getBlockDeviceMappings()) == false) return false; 
         if (other.getInstanceMonitoring() == null ^ this.getInstanceMonitoring() == null) return false;
         if (other.getInstanceMonitoring() != null && other.getInstanceMonitoring().equals(this.getInstanceMonitoring()) == false) return false; 
+        if (other.getSpotPrice() == null ^ this.getSpotPrice() == null) return false;
+        if (other.getSpotPrice() != null && other.getSpotPrice().equals(this.getSpotPrice()) == false) return false; 
+        if (other.getIamInstanceProfile() == null ^ this.getIamInstanceProfile() == null) return false;
+        if (other.getIamInstanceProfile() != null && other.getIamInstanceProfile().equals(this.getIamInstanceProfile()) == false) return false; 
         if (other.getCreatedTime() == null ^ this.getCreatedTime() == null) return false;
         if (other.getCreatedTime() != null && other.getCreatedTime().equals(this.getCreatedTime()) == false) return false; 
         return true;

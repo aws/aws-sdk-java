@@ -54,6 +54,10 @@ public class InstanceStatusDetailsStaxUnmarshaller implements Unmarshaller<Insta
                     instanceStatusDetails.setStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("impairedSince", targetDepth)) {
+                    instanceStatusDetails.setImpairedSince(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return instanceStatusDetails;

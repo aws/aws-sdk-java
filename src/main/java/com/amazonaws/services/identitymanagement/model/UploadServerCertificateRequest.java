@@ -28,7 +28,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  * <p>
  * <b>NOTE:</b>Because the body of the public key certificate, private key, and the certificate chain can be large, you should use POST rather than GET
- * when calling UploadServerCertificate. For more information, see Making Query Requests in Using AWS Identity and Access Management.
+ * when calling UploadServerCertificate. For information about setting up signatures and authorization through the API, go to Signing AWS API Requests in
+ * the AWS General Reference. For general information about using the Query API with IAM, go to Making Query Requests in Using IAM.
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#uploadServerCertificate(UploadServerCertificateRequest)

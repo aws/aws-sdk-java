@@ -28,8 +28,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Identity and Access Management</i> .
  * </p>
  * <p>
- * <b>NOTE:</b>Because policy documents can be large, you should use POST rather than GET when calling PutUserPolicy. For more information, see Making
- * Query Requests in Using AWS Identity and Access Management.
+ * <b>NOTE:</b>Because policy documents can be large, you should use POST rather than GET when calling PutUserPolicy. For information about setting up
+ * signatures and authorization through the API, go to Signing AWS API Requests in the AWS General Reference. For general information about using the
+ * Query API with IAM, go to Making Query Requests in Using IAM.
  * </p>
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#putUserPolicy(PutUserPolicyRequest)

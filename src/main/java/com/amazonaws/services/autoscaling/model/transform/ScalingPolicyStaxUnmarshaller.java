@@ -74,6 +74,10 @@ public class ScalingPolicyStaxUnmarshaller implements Unmarshaller<ScalingPolicy
                     scalingPolicy.getAlarms().add(AlarmStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("MinAdjustmentStep", targetDepth)) {
+                    scalingPolicy.setMinAdjustmentStep(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return scalingPolicy;

@@ -38,7 +38,7 @@ public class CreateSpotDatafeedSubscriptionRequestMarshaller implements Marshall
 
         Request<CreateSpotDatafeedSubscriptionRequest> request = new DefaultRequest<CreateSpotDatafeedSubscriptionRequest>(createSpotDatafeedSubscriptionRequest, "AmazonEC2");
         request.addParameter("Action", "CreateSpotDatafeedSubscription");
-        request.addParameter("Version", "2012-04-01");
+        request.addParameter("Version", "2012-06-01");
 
         if (createSpotDatafeedSubscriptionRequest.getBucket() != null) {
             request.addParameter("Bucket", StringUtils.fromString(createSpotDatafeedSubscriptionRequest.getBucket()));

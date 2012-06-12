@@ -38,7 +38,7 @@ public class DescribeVpnGatewaysRequestMarshaller implements Marshaller<Request<
 
         Request<DescribeVpnGatewaysRequest> request = new DefaultRequest<DescribeVpnGatewaysRequest>(describeVpnGatewaysRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeVpnGateways");
-        request.addParameter("Version", "2012-04-01");
+        request.addParameter("Version", "2012-06-01");
 
 
         java.util.List<String> vpnGatewayIdsList = describeVpnGatewaysRequest.getVpnGatewayIds();

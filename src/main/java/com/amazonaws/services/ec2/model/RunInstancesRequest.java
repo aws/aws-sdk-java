@@ -177,6 +177,8 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
 
     private java.util.List<InstanceNetworkInterfaceSpecification> networkInterfaces;
 
+    private IamInstanceProfileSpecification iamInstanceProfile;
+
     /**
      * Default constructor for a new RunInstancesRequest object.  Callers should use the
      * setter or fluent setter (with...) methods to initialize this object after creating it.
@@ -1289,6 +1291,40 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
     }
     
     /**
+     * Returns the value of the IamInstanceProfile property for this object.
+     *
+     * @return The value of the IamInstanceProfile property for this object.
+     */
+    public IamInstanceProfileSpecification getIamInstanceProfile() {
+        return iamInstanceProfile;
+    }
+    
+    /**
+     * Sets the value of the IamInstanceProfile property for this object.
+     *
+     * @param iamInstanceProfile The new value for the IamInstanceProfile property for this object.
+     */
+    public void setIamInstanceProfile(IamInstanceProfileSpecification iamInstanceProfile) {
+        this.iamInstanceProfile = iamInstanceProfile;
+    }
+    
+    /**
+     * Sets the value of the IamInstanceProfile property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param iamInstanceProfile The new value for the IamInstanceProfile property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public RunInstancesRequest withIamInstanceProfile(IamInstanceProfileSpecification iamInstanceProfile) {
+        this.iamInstanceProfile = iamInstanceProfile;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -1322,6 +1358,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
         if (clientToken != null) sb.append("ClientToken: " + clientToken + ", ");
         if (additionalInfo != null) sb.append("AdditionalInfo: " + additionalInfo + ", ");
         if (networkInterfaces != null) sb.append("NetworkInterfaces: " + networkInterfaces + ", ");
+        if (iamInstanceProfile != null) sb.append("IamInstanceProfile: " + iamInstanceProfile + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -1353,6 +1390,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode()); 
         hashCode = prime * hashCode + ((getAdditionalInfo() == null) ? 0 : getAdditionalInfo().hashCode()); 
         hashCode = prime * hashCode + ((getNetworkInterfaces() == null) ? 0 : getNetworkInterfaces().hashCode()); 
+        hashCode = prime * hashCode + ((getIamInstanceProfile() == null) ? 0 : getIamInstanceProfile().hashCode()); 
         return hashCode;
     }
     
@@ -1408,6 +1446,8 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
         if (other.getAdditionalInfo() != null && other.getAdditionalInfo().equals(this.getAdditionalInfo()) == false) return false; 
         if (other.getNetworkInterfaces() == null ^ this.getNetworkInterfaces() == null) return false;
         if (other.getNetworkInterfaces() != null && other.getNetworkInterfaces().equals(this.getNetworkInterfaces()) == false) return false; 
+        if (other.getIamInstanceProfile() == null ^ this.getIamInstanceProfile() == null) return false;
+        if (other.getIamInstanceProfile() != null && other.getIamInstanceProfile().equals(this.getIamInstanceProfile()) == false) return false; 
         return true;
     }
     

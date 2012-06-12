@@ -38,7 +38,7 @@ public class AuthorizeSecurityGroupIngressRequestMarshaller implements Marshalle
 
         Request<AuthorizeSecurityGroupIngressRequest> request = new DefaultRequest<AuthorizeSecurityGroupIngressRequest>(authorizeSecurityGroupIngressRequest, "AmazonEC2");
         request.addParameter("Action", "AuthorizeSecurityGroupIngress");
-        request.addParameter("Version", "2012-04-01");
+        request.addParameter("Version", "2012-06-01");
 
         if (authorizeSecurityGroupIngressRequest.getGroupName() != null) {
             request.addParameter("GroupName", StringUtils.fromString(authorizeSecurityGroupIngressRequest.getGroupName()));

@@ -62,15 +62,45 @@ public class Grant {
         return permission;
     }
 
+    /* (non-Javadoc)
+     * @see java.lang.Object#hashCode()
+     */
+    @Override
     public int hashCode() {
-        return (grantee + ":" + permission.toString()).hashCode();
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((grantee == null) ? 0 : grantee.hashCode());
+        result = prime * result + ((permission == null) ? 0 : permission.hashCode());
+        return result;
     }
 
+    /* (non-Javadoc)
+     * @see java.lang.Object#equals(java.lang.Object)
+     */
+    @Override
     public boolean equals(Object obj) {
-        return (obj instanceof Grant
-            && this.getGrantee().getIdentifier().equals(((Grant)obj).getGrantee().getIdentifier())
-            && this.getPermission().equals(((Grant)obj).getPermission())
-            );
+        if ( this == obj )
+            return true;
+        if ( obj == null )
+            return false;
+        if ( getClass() != obj.getClass() )
+            return false;
+        Grant other = (Grant) obj;
+        if ( grantee == null ) {
+            if ( other.grantee != null )
+                return false;
+        } else if ( !grantee.equals(other.grantee) )
+            return false;
+        if ( permission != other.permission )
+            return false;
+        return true;
     }
 
+    /* (non-Javadoc)
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        return "Grant [grantee=" + grantee + ", permission=" + permission + "]";
+    }
 }

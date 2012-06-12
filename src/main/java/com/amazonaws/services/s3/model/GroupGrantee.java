@@ -51,6 +51,13 @@ public enum GroupGrantee implements Grantee {
      */
     LogDelivery("http://acs.amazonaws.com/groups/s3/LogDelivery");
 
+    /* (non-Javadoc)
+     * @see com.amazonaws.services.s3.model.Grantee#getTypeIdentifier()
+     */
+    @Override
+    public String getTypeIdentifier() {
+        return "uri";
+    }
 
     private String groupUri;
     

@@ -104,6 +104,12 @@ public class CreateLaunchConfigurationRequestMarshaller implements Marshaller<Re
                 request.addParameter("InstanceMonitoring.Enabled", StringUtils.fromBoolean(instanceMonitoringInstanceMonitoring.isEnabled()));
             }
         }
+        if (createLaunchConfigurationRequest.getSpotPrice() != null) {
+            request.addParameter("SpotPrice", StringUtils.fromString(createLaunchConfigurationRequest.getSpotPrice()));
+        }
+        if (createLaunchConfigurationRequest.getIamInstanceProfile() != null) {
+            request.addParameter("IamInstanceProfile", StringUtils.fromString(createLaunchConfigurationRequest.getIamInstanceProfile()));
+        }
 
 
         return request;

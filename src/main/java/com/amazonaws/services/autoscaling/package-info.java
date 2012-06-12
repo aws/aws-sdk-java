@@ -3,9 +3,9 @@
  * Synchronous and asynchronous client classes for accessing AmazonAutoScaling.
  *
  * Auto Scaling <p>
- * This is the <i>Auto Scaling API Reference</i> . This guide provides detailed information about Auto Scaling actions, data types, parameters, and
- * errors. For detailed information about Auto Scaling features and their associated API calls, go to the <a
- * href="http://docs.amazonwebservices.com/AutoScaling/latest/DeveloperGuide/"> Auto Scaling Developer Guide </a> .
+ * This guide provides detailed information about Auto Scaling actions, data types, parameters, and errors. For detailed information about Auto Scaling
+ * features and their associated API calls, go to the <a href="http://docs.amazonwebservices.com/AutoScaling/latest/DeveloperGuide/"> Auto Scaling
+ * Developer Guide </a> .
  * </p>
  * <p>
  * Auto Scaling is a web service designed to automatically launch or terminate Amazon Elastic Compute Cloud (Amazon EC2) instances based on user-defined

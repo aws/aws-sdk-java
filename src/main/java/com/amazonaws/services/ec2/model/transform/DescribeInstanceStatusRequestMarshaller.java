@@ -38,7 +38,7 @@ public class DescribeInstanceStatusRequestMarshaller implements Marshaller<Reque
 
         Request<DescribeInstanceStatusRequest> request = new DefaultRequest<DescribeInstanceStatusRequest>(describeInstanceStatusRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeInstanceStatus");
-        request.addParameter("Version", "2012-04-01");
+        request.addParameter("Version", "2012-06-01");
 
 
         java.util.List<String> instanceIdsList = describeInstanceStatusRequest.getInstanceIds();
@@ -81,6 +81,9 @@ public class DescribeInstanceStatusRequestMarshaller implements Marshaller<Reque
         }
         if (describeInstanceStatusRequest.getMaxResults() != null) {
             request.addParameter("MaxResults", StringUtils.fromInteger(describeInstanceStatusRequest.getMaxResults()));
+        }
+        if (describeInstanceStatusRequest.isIncludeAllInstances() != null) {
+            request.addParameter("IncludeAllInstances", StringUtils.fromBoolean(describeInstanceStatusRequest.isIncludeAllInstances()));
         }
 
 

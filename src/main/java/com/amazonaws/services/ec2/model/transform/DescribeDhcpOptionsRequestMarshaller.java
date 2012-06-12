@@ -38,7 +38,7 @@ public class DescribeDhcpOptionsRequestMarshaller implements Marshaller<Request<
 
         Request<DescribeDhcpOptionsRequest> request = new DefaultRequest<DescribeDhcpOptionsRequest>(describeDhcpOptionsRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeDhcpOptions");
-        request.addParameter("Version", "2012-04-01");
+        request.addParameter("Version", "2012-06-01");
 
 
         java.util.List<String> dhcpOptionsIdsList = describeDhcpOptionsRequest.getDhcpOptionsIds();

@@ -38,7 +38,7 @@ public class CreateDhcpOptionsRequestMarshaller implements Marshaller<Request<Cr
 
         Request<CreateDhcpOptionsRequest> request = new DefaultRequest<CreateDhcpOptionsRequest>(createDhcpOptionsRequest, "AmazonEC2");
         request.addParameter("Action", "CreateDhcpOptions");
-        request.addParameter("Version", "2012-04-01");
+        request.addParameter("Version", "2012-06-01");
 
 
         java.util.List<DhcpConfiguration> dhcpConfigurationsList = createDhcpOptionsRequest.getDhcpConfigurations();

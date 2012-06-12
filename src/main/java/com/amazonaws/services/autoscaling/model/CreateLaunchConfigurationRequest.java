@@ -144,6 +144,34 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
     private InstanceMonitoring instanceMonitoring;
 
     /**
+     * The maximum hourly price for any Spot Instance launched to fulfill the
+     * request. Spot Instances are launched when the maximum price you
+     * specify exceeds the current Spot price. For more information on
+     * launching Spot Instances, go to <a
+     * .amazonwebservices.com/AWSEC2/latest/UserGuide/US-SpotInstances.html">
+     * Using Auto Scaling to Launch Spot Instances</a> in the <i>Auto Scaling
+     * Developer Guide</i>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 255<br/>
+     */
+    private String spotPrice;
+
+    /**
+     * The name or the ARN of the instance profile associated with the IAM
+     * role for the instance. For information on launching EC2 instances with
+     * an IAM role, go to <a
+     * ices.com/AutoScaling/latest/DeveloperGuide/us-iam-role.html">Launching
+     * Auto Scaling Instances With an IAM Role</a> in the <i>Auto Scaling
+     * Developer Guide</i>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 1600<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     */
+    private String iamInstanceProfile;
+
+    /**
      * The name of the launch configuration to create.
      * <p>
      * <b>Constraints:</b><br/>
@@ -856,6 +884,161 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
     
     
     /**
+     * The maximum hourly price for any Spot Instance launched to fulfill the
+     * request. Spot Instances are launched when the maximum price you
+     * specify exceeds the current Spot price. For more information on
+     * launching Spot Instances, go to <a
+     * .amazonwebservices.com/AWSEC2/latest/UserGuide/US-SpotInstances.html">
+     * Using Auto Scaling to Launch Spot Instances</a> in the <i>Auto Scaling
+     * Developer Guide</i>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 255<br/>
+     *
+     * @return The maximum hourly price for any Spot Instance launched to fulfill the
+     *         request. Spot Instances are launched when the maximum price you
+     *         specify exceeds the current Spot price. For more information on
+     *         launching Spot Instances, go to <a
+     *         .amazonwebservices.com/AWSEC2/latest/UserGuide/US-SpotInstances.html">
+     *         Using Auto Scaling to Launch Spot Instances</a> in the <i>Auto Scaling
+     *         Developer Guide</i>.
+     */
+    public String getSpotPrice() {
+        return spotPrice;
+    }
+    
+    /**
+     * The maximum hourly price for any Spot Instance launched to fulfill the
+     * request. Spot Instances are launched when the maximum price you
+     * specify exceeds the current Spot price. For more information on
+     * launching Spot Instances, go to <a
+     * .amazonwebservices.com/AWSEC2/latest/UserGuide/US-SpotInstances.html">
+     * Using Auto Scaling to Launch Spot Instances</a> in the <i>Auto Scaling
+     * Developer Guide</i>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 255<br/>
+     *
+     * @param spotPrice The maximum hourly price for any Spot Instance launched to fulfill the
+     *         request. Spot Instances are launched when the maximum price you
+     *         specify exceeds the current Spot price. For more information on
+     *         launching Spot Instances, go to <a
+     *         .amazonwebservices.com/AWSEC2/latest/UserGuide/US-SpotInstances.html">
+     *         Using Auto Scaling to Launch Spot Instances</a> in the <i>Auto Scaling
+     *         Developer Guide</i>.
+     */
+    public void setSpotPrice(String spotPrice) {
+        this.spotPrice = spotPrice;
+    }
+    
+    /**
+     * The maximum hourly price for any Spot Instance launched to fulfill the
+     * request. Spot Instances are launched when the maximum price you
+     * specify exceeds the current Spot price. For more information on
+     * launching Spot Instances, go to <a
+     * .amazonwebservices.com/AWSEC2/latest/UserGuide/US-SpotInstances.html">
+     * Using Auto Scaling to Launch Spot Instances</a> in the <i>Auto Scaling
+     * Developer Guide</i>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 255<br/>
+     *
+     * @param spotPrice The maximum hourly price for any Spot Instance launched to fulfill the
+     *         request. Spot Instances are launched when the maximum price you
+     *         specify exceeds the current Spot price. For more information on
+     *         launching Spot Instances, go to <a
+     *         .amazonwebservices.com/AWSEC2/latest/UserGuide/US-SpotInstances.html">
+     *         Using Auto Scaling to Launch Spot Instances</a> in the <i>Auto Scaling
+     *         Developer Guide</i>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public CreateLaunchConfigurationRequest withSpotPrice(String spotPrice) {
+        this.spotPrice = spotPrice;
+        return this;
+    }
+    
+    
+    /**
+     * The name or the ARN of the instance profile associated with the IAM
+     * role for the instance. For information on launching EC2 instances with
+     * an IAM role, go to <a
+     * ices.com/AutoScaling/latest/DeveloperGuide/us-iam-role.html">Launching
+     * Auto Scaling Instances With an IAM Role</a> in the <i>Auto Scaling
+     * Developer Guide</i>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 1600<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     *
+     * @return The name or the ARN of the instance profile associated with the IAM
+     *         role for the instance. For information on launching EC2 instances with
+     *         an IAM role, go to <a
+     *         ices.com/AutoScaling/latest/DeveloperGuide/us-iam-role.html">Launching
+     *         Auto Scaling Instances With an IAM Role</a> in the <i>Auto Scaling
+     *         Developer Guide</i>.
+     */
+    public String getIamInstanceProfile() {
+        return iamInstanceProfile;
+    }
+    
+    /**
+     * The name or the ARN of the instance profile associated with the IAM
+     * role for the instance. For information on launching EC2 instances with
+     * an IAM role, go to <a
+     * ices.com/AutoScaling/latest/DeveloperGuide/us-iam-role.html">Launching
+     * Auto Scaling Instances With an IAM Role</a> in the <i>Auto Scaling
+     * Developer Guide</i>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 1600<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     *
+     * @param iamInstanceProfile The name or the ARN of the instance profile associated with the IAM
+     *         role for the instance. For information on launching EC2 instances with
+     *         an IAM role, go to <a
+     *         ices.com/AutoScaling/latest/DeveloperGuide/us-iam-role.html">Launching
+     *         Auto Scaling Instances With an IAM Role</a> in the <i>Auto Scaling
+     *         Developer Guide</i>.
+     */
+    public void setIamInstanceProfile(String iamInstanceProfile) {
+        this.iamInstanceProfile = iamInstanceProfile;
+    }
+    
+    /**
+     * The name or the ARN of the instance profile associated with the IAM
+     * role for the instance. For information on launching EC2 instances with
+     * an IAM role, go to <a
+     * ices.com/AutoScaling/latest/DeveloperGuide/us-iam-role.html">Launching
+     * Auto Scaling Instances With an IAM Role</a> in the <i>Auto Scaling
+     * Developer Guide</i>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 1600<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     *
+     * @param iamInstanceProfile The name or the ARN of the instance profile associated with the IAM
+     *         role for the instance. For information on launching EC2 instances with
+     *         an IAM role, go to <a
+     *         ices.com/AutoScaling/latest/DeveloperGuide/us-iam-role.html">Launching
+     *         Auto Scaling Instances With an IAM Role</a> in the <i>Auto Scaling
+     *         Developer Guide</i>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public CreateLaunchConfigurationRequest withIamInstanceProfile(String iamInstanceProfile) {
+        this.iamInstanceProfile = iamInstanceProfile;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -877,6 +1060,8 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
         if (ramdiskId != null) sb.append("RamdiskId: " + ramdiskId + ", ");
         if (blockDeviceMappings != null) sb.append("BlockDeviceMappings: " + blockDeviceMappings + ", ");
         if (instanceMonitoring != null) sb.append("InstanceMonitoring: " + instanceMonitoring + ", ");
+        if (spotPrice != null) sb.append("SpotPrice: " + spotPrice + ", ");
+        if (iamInstanceProfile != null) sb.append("IamInstanceProfile: " + iamInstanceProfile + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -896,6 +1081,8 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
         hashCode = prime * hashCode + ((getRamdiskId() == null) ? 0 : getRamdiskId().hashCode()); 
         hashCode = prime * hashCode + ((getBlockDeviceMappings() == null) ? 0 : getBlockDeviceMappings().hashCode()); 
         hashCode = prime * hashCode + ((getInstanceMonitoring() == null) ? 0 : getInstanceMonitoring().hashCode()); 
+        hashCode = prime * hashCode + ((getSpotPrice() == null) ? 0 : getSpotPrice().hashCode()); 
+        hashCode = prime * hashCode + ((getIamInstanceProfile() == null) ? 0 : getIamInstanceProfile().hashCode()); 
         return hashCode;
     }
     
@@ -927,6 +1114,10 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
         if (other.getBlockDeviceMappings() != null && other.getBlockDeviceMappings().equals(this.getBlockDeviceMappings()) == false) return false; 
         if (other.getInstanceMonitoring() == null ^ this.getInstanceMonitoring() == null) return false;
         if (other.getInstanceMonitoring() != null && other.getInstanceMonitoring().equals(this.getInstanceMonitoring()) == false) return false; 
+        if (other.getSpotPrice() == null ^ this.getSpotPrice() == null) return false;
+        if (other.getSpotPrice() != null && other.getSpotPrice().equals(this.getSpotPrice()) == false) return false; 
+        if (other.getIamInstanceProfile() == null ^ this.getIamInstanceProfile() == null) return false;
+        if (other.getIamInstanceProfile() != null && other.getIamInstanceProfile().equals(this.getIamInstanceProfile()) == false) return false; 
         return true;
     }
     

@@ -23,6 +23,8 @@ public class InstanceStatusDetails {
 
     private String status;
 
+    private java.util.Date impairedSince;
+
     /**
      * Returns the value of the Name property for this object.
      *
@@ -92,6 +94,40 @@ public class InstanceStatusDetails {
     
     
     /**
+     * Returns the value of the ImpairedSince property for this object.
+     *
+     * @return The value of the ImpairedSince property for this object.
+     */
+    public java.util.Date getImpairedSince() {
+        return impairedSince;
+    }
+    
+    /**
+     * Sets the value of the ImpairedSince property for this object.
+     *
+     * @param impairedSince The new value for the ImpairedSince property for this object.
+     */
+    public void setImpairedSince(java.util.Date impairedSince) {
+        this.impairedSince = impairedSince;
+    }
+    
+    /**
+     * Sets the value of the ImpairedSince property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param impairedSince The new value for the ImpairedSince property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public InstanceStatusDetails withImpairedSince(java.util.Date impairedSince) {
+        this.impairedSince = impairedSince;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -105,6 +141,7 @@ public class InstanceStatusDetails {
         sb.append("{");
         if (name != null) sb.append("Name: " + name + ", ");
         if (status != null) sb.append("Status: " + status + ", ");
+        if (impairedSince != null) sb.append("ImpairedSince: " + impairedSince + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -116,6 +153,7 @@ public class InstanceStatusDetails {
         
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode()); 
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode()); 
+        hashCode = prime * hashCode + ((getImpairedSince() == null) ? 0 : getImpairedSince().hashCode()); 
         return hashCode;
     }
     
@@ -131,6 +169,8 @@ public class InstanceStatusDetails {
         if (other.getName() != null && other.getName().equals(this.getName()) == false) return false; 
         if (other.getStatus() == null ^ this.getStatus() == null) return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false) return false; 
+        if (other.getImpairedSince() == null ^ this.getImpairedSince() == null) return false;
+        if (other.getImpairedSince() != null && other.getImpairedSince().equals(this.getImpairedSince()) == false) return false; 
         return true;
     }
     

@@ -38,7 +38,7 @@ public class DeleteNetworkInterfaceRequestMarshaller implements Marshaller<Reque
 
         Request<DeleteNetworkInterfaceRequest> request = new DefaultRequest<DeleteNetworkInterfaceRequest>(deleteNetworkInterfaceRequest, "AmazonEC2");
         request.addParameter("Action", "DeleteNetworkInterface");
-        request.addParameter("Version", "2012-04-01");
+        request.addParameter("Version", "2012-06-01");
 
         if (deleteNetworkInterfaceRequest.getNetworkInterfaceId() != null) {
             request.addParameter("NetworkInterfaceId", StringUtils.fromString(deleteNetworkInterfaceRequest.getNetworkInterfaceId()));

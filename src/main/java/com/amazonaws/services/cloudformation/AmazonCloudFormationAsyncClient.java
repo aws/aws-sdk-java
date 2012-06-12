@@ -13,7 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.cloudformation;
-            
+
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -24,6 +24,7 @@ import com.amazonaws.AmazonServiceException;
 import com.amazonaws.ClientConfiguration;
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSCredentialsProvider;
+import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
 
 import com.amazonaws.services.cloudformation.model.*;
 
@@ -65,31 +66,75 @@ import com.amazonaws.services.cloudformation.model.*;
  * <p>
  * Amazon CloudFormation makes use of other AWS products. If you need additional technical information about a specific AWS product, you can find the
  * product's technical documentation at <a href="http://aws.amazon.com/documentation/"> http://aws.amazon.com/documentation/ </a> .
- * </p> 
- */       
+ * </p>
+ */
 public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
-        implements AmazonCloudFormationAsync { 
+        implements AmazonCloudFormationAsync {
 
     /**
      * Executor service for executing asynchronous requests.
      */
     private ExecutorService executorService;
 
-    
+
     /**
-     * Constructs a new asynchronous client to invoke service methods on 
+     * Constructs a new asynchronous client to invoke service methods on
+     * AmazonCloudFormation.  A credentials provider chain will be used
+     * that searches for credentials in this order:
+     * <ul>
+     *  <li> Environment Variables - AWS_ACCESS_KEY_ID and AWS_SECRET_KEY </li>
+     *  <li> Java System Properties - aws.accessKeyId and aws.secretKey </li>
+     *  <li> Instance profile credentials delivered through the Amazon EC2 metadata service </li>
+     * </ul>
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and will not
+     * return until the service call completes.
+     *
+     * @see DefaultAWSCredentialsProvider
+     */
+    public AmazonCloudFormationAsyncClient() {
+        this(new DefaultAWSCredentialsProviderChain());
+    }
+
+    /**
+     * Constructs a new asynchronous client to invoke service methods on
+     * AmazonCloudFormation.  A credentials provider chain will be used
+     * that searches for credentials in this order:
+     * <ul>
+     *  <li> Environment Variables - AWS_ACCESS_KEY_ID and AWS_SECRET_KEY </li>
+     *  <li> Java System Properties - aws.accessKeyId and aws.secretKey </li>
+     *  <li> Instance profile credentials delivered through the Amazon EC2 metadata service </li>
+     * </ul>
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and will not
+     * return until the service call completes.
+     *
+     * @param clientConfiguration The client configuration options controlling how this
+     *                       client connects to AmazonCloudFormation
+     *                       (ex: proxy settings, retry counts, etc.).
+     *
+     * @see DefaultAWSCredentialsProvider
+     */
+    public AmazonCloudFormationAsyncClient(ClientConfiguration clientConfiguration) {
+        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration, Executors.newCachedThreadPool());
+    }
+
+    /**
+     * Constructs a new asynchronous client to invoke service methods on
      * AmazonCloudFormation using the specified AWS account credentials.
-     * Default client settings will be used, and a default cached thread pool will be 
+     * Default client settings will be used, and a default cached thread pool will be
      * created for executing the asynchronous tasks.
      *
      * <p>
      * All calls made using this new client object are non-blocking, and will immediately
      * return a Java Future object that the caller can later check to see if the service
      * call has actually completed.
-     * 
+     *
      * @param awsCredentials The AWS credentials (access key ID and secret key) to use
      *                       when authenticating with AWS services.
-     */                                      
+     */
     public AmazonCloudFormationAsyncClient(AWSCredentials awsCredentials) {
         this(awsCredentials, Executors.newCachedThreadPool());
     }
@@ -98,13 +143,13 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
      * Constructs a new asynchronous client to invoke service methods on
      * AmazonCloudFormation using the specified AWS account credentials
      * and executor service.  Default client settings will be used.
-     * 
-     * <p> 
+     *
+     * <p>
      * All calls made using this new client object are non-blocking, and will immediately
      * return a Java Future object that the caller can later check to see if the service
      * call has actually completed.
-     * 
-     * @param awsCredentials 
+     *
+     * @param awsCredentials
      *            The AWS credentials (access key ID and secret key) to use
      *            when authenticating with AWS services.
      * @param executorService
@@ -115,18 +160,18 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
         super(awsCredentials);
         this.executorService = executorService;
     }
-     
+
     /**
      * Constructs a new asynchronous client to invoke service methods on
      * AmazonCloudFormation using the specified AWS account credentials,
      * executor service, and client configuration options.
-     * 
-     * <p> 
+     *
+     * <p>
      * All calls made using this new client object are non-blocking, and will immediately
      * return a Java Future object that the caller can later check to see if the service
      * call has actually completed.
-     * 
-     * @param awsCredentials 
+     *
+     * @param awsCredentials
      *            The AWS credentials (access key ID and secret key) to use
      *            when authenticating with AWS services.
      * @param clientConfiguration
@@ -143,35 +188,35 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
     }
 
     /**
-     * Constructs a new asynchronous client to invoke service methods on 
+     * Constructs a new asynchronous client to invoke service methods on
      * AmazonCloudFormation using the specified AWS account credentials provider.
-     * Default client settings will be used, and a default cached thread pool will be 
+     * Default client settings will be used, and a default cached thread pool will be
      * created for executing the asynchronous tasks.
      *
      * <p>
      * All calls made using this new client object are non-blocking, and will immediately
      * return a Java Future object that the caller can later check to see if the service
      * call has actually completed.
-     * 
-     * @param awsCredentialsProvider 
+     *
+     * @param awsCredentialsProvider
      *            The AWS credentials provider which will provide credentials
      *            to authenticate requests with AWS services.
-     */                                      
+     */
     public AmazonCloudFormationAsyncClient(AWSCredentialsProvider awsCredentialsProvider) {
         this(awsCredentialsProvider, Executors.newCachedThreadPool());
     }
-    
+
     /**
      * Constructs a new asynchronous client to invoke service methods on
      * AmazonCloudFormation using the specified AWS account credentials provider
      * and executor service.  Default client settings will be used.
-     * 
-     * <p> 
+     *
+     * <p>
      * All calls made using this new client object are non-blocking, and will immediately
      * return a Java Future object that the caller can later check to see if the service
      * call has actually completed.
-     * 
-     * @param awsCredentialsProvider 
+     *
+     * @param awsCredentialsProvider
      *            The AWS credentials provider which will provide credentials
      *            to authenticate requests with AWS services.
      * @param executorService
@@ -186,13 +231,13 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
      * Constructs a new asynchronous client to invoke service methods on
      * AmazonCloudFormation using the specified AWS account credentials
      * provider, executor service, and client configuration options.
-     * 
-     * <p> 
+     *
+     * <p>
      * All calls made using this new client object are non-blocking, and will immediately
      * return a Java Future object that the caller can later check to see if the service
      * call has actually completed.
-     * 
-     * @param awsCredentialsProvider 
+     *
+     * @param awsCredentialsProvider
      *            The AWS credentials provider which will provide credentials
      *            to authenticate requests with AWS services.
      * @param clientConfiguration
@@ -202,7 +247,7 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
      *            The executor service by which all asynchronous requests will
      *            be executed.
      */
-    public AmazonCloudFormationAsyncClient(AWSCredentialsProvider awsCredentialsProvider, 
+    public AmazonCloudFormationAsyncClient(AWSCredentialsProvider awsCredentialsProvider,
                 ClientConfiguration clientConfiguration, ExecutorService executorService) {
         super(awsCredentialsProvider, clientConfiguration);
         this.executorService = executorService;
@@ -212,14 +257,14 @@ public class AmazonCloudFormationAsyncClient extends AmazonCloudFormationClient
     /**
      * Returns the executor service used by this async client to execute
      * requests.
-     *   
+     *
      * @return The executor service used by this async client to execute
      *         requests.
      */
     public ExecutorService getExecutorService() {
         return executorService;
     }
-    
+
     /**
      * Shuts down the client, releasing all managed resources. This includes
      * forcibly terminating all pending asynchronous service calls. Clients who

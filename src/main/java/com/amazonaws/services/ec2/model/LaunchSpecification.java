@@ -93,6 +93,8 @@ public class LaunchSpecification {
 
     private java.util.List<InstanceNetworkInterfaceSpecification> networkInterfaces;
 
+    private IamInstanceProfileSpecification iamInstanceProfile;
+
     /**
      * The AMI ID.
      *
@@ -818,6 +820,40 @@ public class LaunchSpecification {
     }
     
     /**
+     * Returns the value of the IamInstanceProfile property for this object.
+     *
+     * @return The value of the IamInstanceProfile property for this object.
+     */
+    public IamInstanceProfileSpecification getIamInstanceProfile() {
+        return iamInstanceProfile;
+    }
+    
+    /**
+     * Sets the value of the IamInstanceProfile property for this object.
+     *
+     * @param iamInstanceProfile The new value for the IamInstanceProfile property for this object.
+     */
+    public void setIamInstanceProfile(IamInstanceProfileSpecification iamInstanceProfile) {
+        this.iamInstanceProfile = iamInstanceProfile;
+    }
+    
+    /**
+     * Sets the value of the IamInstanceProfile property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param iamInstanceProfile The new value for the IamInstanceProfile property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public LaunchSpecification withIamInstanceProfile(IamInstanceProfileSpecification iamInstanceProfile) {
+        this.iamInstanceProfile = iamInstanceProfile;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -843,6 +879,7 @@ public class LaunchSpecification {
         if (monitoringEnabled != null) sb.append("MonitoringEnabled: " + monitoringEnabled + ", ");
         if (subnetId != null) sb.append("SubnetId: " + subnetId + ", ");
         if (networkInterfaces != null) sb.append("NetworkInterfaces: " + networkInterfaces + ", ");
+        if (iamInstanceProfile != null) sb.append("IamInstanceProfile: " + iamInstanceProfile + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -866,6 +903,7 @@ public class LaunchSpecification {
         hashCode = prime * hashCode + ((isMonitoringEnabled() == null) ? 0 : isMonitoringEnabled().hashCode()); 
         hashCode = prime * hashCode + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode()); 
         hashCode = prime * hashCode + ((getNetworkInterfaces() == null) ? 0 : getNetworkInterfaces().hashCode()); 
+        hashCode = prime * hashCode + ((getIamInstanceProfile() == null) ? 0 : getIamInstanceProfile().hashCode()); 
         return hashCode;
     }
     
@@ -905,6 +943,8 @@ public class LaunchSpecification {
         if (other.getSubnetId() != null && other.getSubnetId().equals(this.getSubnetId()) == false) return false; 
         if (other.getNetworkInterfaces() == null ^ this.getNetworkInterfaces() == null) return false;
         if (other.getNetworkInterfaces() != null && other.getNetworkInterfaces().equals(this.getNetworkInterfaces()) == false) return false; 
+        if (other.getIamInstanceProfile() == null ^ this.getIamInstanceProfile() == null) return false;
+        if (other.getIamInstanceProfile() != null && other.getIamInstanceProfile().equals(this.getIamInstanceProfile()) == false) return false; 
         return true;
     }
     

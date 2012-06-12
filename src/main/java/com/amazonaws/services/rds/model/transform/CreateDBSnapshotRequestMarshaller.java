@@ -38,7 +38,7 @@ public class CreateDBSnapshotRequestMarshaller implements Marshaller<Request<Cre
 
         Request<CreateDBSnapshotRequest> request = new DefaultRequest<CreateDBSnapshotRequest>(createDBSnapshotRequest, "AmazonRDS");
         request.addParameter("Action", "CreateDBSnapshot");
-        request.addParameter("Version", "2012-01-15");
+        request.addParameter("Version", "2012-04-23");
 
         if (createDBSnapshotRequest.getDBSnapshotIdentifier() != null) {
             request.addParameter("DBSnapshotIdentifier", StringUtils.fromString(createDBSnapshotRequest.getDBSnapshotIdentifier()));

@@ -33,17 +33,19 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
      * contain 1 to 64 alphanumeric characters</li> <li>Cannot be a word
      * reserved by the specified database engine</li> </ul> <p>Type: String
      * <p><b>Oracle</b> <p> The Oracle System ID (SID) of the created DB
-     * Instance. <p>Default: <code>ORACL</code> <p>Constraints: <ul>
-     * <li>Cannot be longer than 8 characters</li> </ul>
+     * Instance. <p>Default: <code>ORCL</code> <p>Constraints: <ul>
+     * <li>Cannot be longer than 8 characters</li> </ul> <p><b>SQL Server</b>
+     * <p>Not applicable. Must be null.
      */
     private String dBName;
 
     /**
      * The DB Instance identifier. This parameter is stored as a lowercase
      * string. <p>Constraints: <ul> <li>Must contain from 1 to 63
-     * alphanumeric characters or hyphens.</li> <li>First character must be a
-     * letter.</li> <li>Cannot end with a hyphen or contain two consecutive
-     * hyphens.</li> </ul> <p>Example: <code>mydbinstance</code>
+     * alphanumeric characters or hyphens (1 to 15 for SQL Server).</li>
+     * <li>First character must be a letter.</li> <li>Cannot end with a
+     * hyphen or contain two consecutive hyphens.</li> </ul> <p>Example:
+     * <code>mydbinstance</code>
      */
     private String dBInstanceIdentifier;
 
@@ -51,21 +53,28 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
      * The amount of storage (in gigabytes) to be initially allocated for the
      * database instance. <p><b>MySQL</b> <p> Constraints: Must be an integer
      * from 5 to 1024. <p> Type: Integer <p><b>Oracle</b> <p> Constraints:
-     * Must be an integer from 10 to 1024.
+     * Must be an integer from 10 to 1024. <p><b>SQL Server</b> <p>
+     * Constraints: Must be an integer from 200 to 1024 (Standard Edition and
+     * Enterprise Edition) or from 30 to 1024 (Express Edition and Web
+     * Edition)
      */
     private Integer allocatedStorage;
 
     /**
-     * The compute and memory capacity of the DB Instance. <p> Valid Values:
-     * <code>db.m1.small | db.m1.large | db.m1.xlarge | db.m2.xlarge
-     * |db.m2.2xlarge | db.m2.4xlarge</code>
+     * The compute and memory capacity of the DB Instance. To determine the
+     * instance classes that are available for a particular DB engine, use
+     * the <a>DescribeOrderableDBInstanceOptions</a> action. <p> Valid
+     * Values: <code>db.t1.micro | db.m1.small | db.m1.large | db.m1.xlarge |
+     * db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge</code>
      */
     private String dBInstanceClass;
 
     /**
      * The name of the database engine to be used for this instance. <p>
      * Valid Values: <code>MySQL</code> | <code>oracle-se1</code> |
-     * <code>oracle-se</code> | <code>oracle-ee</code>
+     * <code>oracle-se</code> | <code>oracle-ee</code> |
+     * <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
+     * <code>sqlserver-ex</code> | <code>sqlserver-web</code>
      */
     private String engine;
 
@@ -77,14 +86,19 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
      * <p><b>Oracle</b> <p>Constraints: <ul> <li>Must be 1 to 30 alphanumeric
      * characters.</li> <li>First character must be a letter.</li> <li>Cannot
      * be a reserved word for the chosen database engine.</li> </ul>
+     * <p><b>SQL Server</b> <p>Constraints: <ul> <li>Must be 1 to 128
+     * alphanumeric characters.</li> <li>First character must be a
+     * letter.</li> <li>Cannot be a reserved word for the chosen database
+     * engine.</li> </ul>
      */
     private String masterUsername;
 
     /**
-     * The password for the master DB Instance user. <p><b>MySQL</b> <p>
-     * Constraints: Cannot contain more than 41 alphanumeric characters.
-     * <p>Type: String <p><b>Oracle</b> <p> Constraints: Cannot contain more
-     * than 30 alphanumeric characters.
+     * The password for the master database user. <p><b>MySQL</b> <p>
+     * Constraints: Must contain from 8 to 41 alphanumeric characters.
+     * <p>Type: String <p><b>Oracle</b> <p> Constraints: Must contain from 8
+     * to 30 alphanumeric characters. <p><b>SQL Server</b> <p> Constraints:
+     * Must contain from 8 to 128 alphanumeric characters.
      */
     private String masterUserPassword;
 
@@ -168,21 +182,25 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
      * The port number on which the database accepts connections.
      * <p><b>MySQL</b> <p> Default: <code>3306</code> <p> Valid Values:
      * <code>1150-65535</code> <p>Type: Integer <p><b>Oracle</b> <p> Default:
-     * <code>1521</code> <p> Valid Values: <code>1150-65535</code>
+     * <code>1521</code> <p> Valid Values: <code>1150-65535</code> <p><b>SQL
+     * Server</b> <p> Default: <code>1433</code> <p> Valid Values:
+     * <code>1150-65535</code> except for <code>1434</code> and
+     * <code>3389</code>.
      */
     private Integer port;
 
     /**
-     * Specifies if the DB Instance is a Multi-AZ deployment. You cannot set
-     * the AvailabilityZone parameter if the MultiAZ parameter is set to
-     * true.
+     * Specifies if the DB Instance is a Multi-AZ deployment. For Microsoft
+     * SQL Server, must be set to false. You cannot set the AvailabilityZone
+     * parameter if the MultiAZ parameter is set to true.
      */
     private Boolean multiAZ;
 
     /**
      * The version number of the database engine to use. <p><b>MySQL</b>
      * <p>Example: <code>5.1.42</code> <p>Type: String <p><b>Oracle</b>
-     * <p>Example: <code>11.2.0.2.v2</code>
+     * <p>Example: <code>11.2.0.2.v2</code> <p>Type: String <p><b>SQL
+     * Server</b> <p>Example: <code>10.50.2789.0.v1</code>
      */
     private String engineVersion;
 
@@ -201,6 +219,18 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
     private String licenseModel;
 
     /**
+     * Indicates that the DB Instance should be associated with the specified
+     * option group.
+     */
+    private String optionGroupName;
+
+    /**
+     * For supported engines, indicates that the DB Instance should be
+     * associated with the specified CharacterSet.
+     */
+    private String characterSetName;
+
+    /**
      * Default constructor for a new CreateDBInstanceRequest object.  Callers should use the
      * setter or fluent setter (with...) methods to initialize this object after creating it.
      */
@@ -213,21 +243,29 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
      * 
      * @param dBInstanceIdentifier The DB Instance identifier. This parameter
      * is stored as a lowercase string. <p>Constraints: <ul> <li>Must contain
-     * from 1 to 63 alphanumeric characters or hyphens.</li> <li>First
-     * character must be a letter.</li> <li>Cannot end with a hyphen or
-     * contain two consecutive hyphens.</li> </ul> <p>Example:
-     * <code>mydbinstance</code>
+     * from 1 to 63 alphanumeric characters or hyphens (1 to 15 for SQL
+     * Server).</li> <li>First character must be a letter.</li> <li>Cannot
+     * end with a hyphen or contain two consecutive hyphens.</li> </ul>
+     * <p>Example: <code>mydbinstance</code>
      * @param allocatedStorage The amount of storage (in gigabytes) to be
      * initially allocated for the database instance. <p><b>MySQL</b> <p>
      * Constraints: Must be an integer from 5 to 1024. <p> Type: Integer
      * <p><b>Oracle</b> <p> Constraints: Must be an integer from 10 to 1024.
+     * <p><b>SQL Server</b> <p> Constraints: Must be an integer from 200 to
+     * 1024 (Standard Edition and Enterprise Edition) or from 30 to 1024
+     * (Express Edition and Web Edition)
      * @param dBInstanceClass The compute and memory capacity of the DB
-     * Instance. <p> Valid Values: <code>db.m1.small | db.m1.large |
-     * db.m1.xlarge | db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge</code>
+     * Instance. To determine the instance classes that are available for a
+     * particular DB engine, use the
+     * <a>DescribeOrderableDBInstanceOptions</a> action. <p> Valid Values:
+     * <code>db.t1.micro | db.m1.small | db.m1.large | db.m1.xlarge |
+     * db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge</code>
      * @param engine The name of the database engine to be used for this
      * instance. <p> Valid Values: <code>MySQL</code> |
      * <code>oracle-se1</code> | <code>oracle-se</code> |
-     * <code>oracle-ee</code>
+     * <code>oracle-ee</code> | <code>sqlserver-ee</code> |
+     * <code>sqlserver-se</code> | <code>sqlserver-ex</code> |
+     * <code>sqlserver-web</code>
      * @param masterUsername The name of master user for the client DB
      * Instance. <p><b>MySQL</b> <p>Constraints: <ul> <li>Must be 1 to 16
      * alphanumeric characters.</li> <li>First character must be a
@@ -235,11 +273,16 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
      * engine.</li> </ul> <p>Type: String <p><b>Oracle</b> <p>Constraints:
      * <ul> <li>Must be 1 to 30 alphanumeric characters.</li> <li>First
      * character must be a letter.</li> <li>Cannot be a reserved word for the
-     * chosen database engine.</li> </ul>
-     * @param masterUserPassword The password for the master DB Instance
-     * user. <p><b>MySQL</b> <p> Constraints: Cannot contain more than 41
+     * chosen database engine.</li> </ul> <p><b>SQL Server</b>
+     * <p>Constraints: <ul> <li>Must be 1 to 128 alphanumeric
+     * characters.</li> <li>First character must be a letter.</li> <li>Cannot
+     * be a reserved word for the chosen database engine.</li> </ul>
+     * @param masterUserPassword The password for the master database user.
+     * <p><b>MySQL</b> <p> Constraints: Must contain from 8 to 41
      * alphanumeric characters. <p>Type: String <p><b>Oracle</b> <p>
-     * Constraints: Cannot contain more than 30 alphanumeric characters.
+     * Constraints: Must contain from 8 to 30 alphanumeric characters.
+     * <p><b>SQL Server</b> <p> Constraints: Must contain from 8 to 128
+     * alphanumeric characters.
      */
     public CreateDBInstanceRequest(String dBInstanceIdentifier, Integer allocatedStorage, String dBInstanceClass, String engine, String masterUsername, String masterUserPassword) {
         this.dBInstanceIdentifier = dBInstanceIdentifier;
@@ -260,8 +303,9 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
      * contain 1 to 64 alphanumeric characters</li> <li>Cannot be a word
      * reserved by the specified database engine</li> </ul> <p>Type: String
      * <p><b>Oracle</b> <p> The Oracle System ID (SID) of the created DB
-     * Instance. <p>Default: <code>ORACL</code> <p>Constraints: <ul>
-     * <li>Cannot be longer than 8 characters</li> </ul>
+     * Instance. <p>Default: <code>ORCL</code> <p>Constraints: <ul>
+     * <li>Cannot be longer than 8 characters</li> </ul> <p><b>SQL Server</b>
+     * <p>Not applicable. Must be null.
      *
      * @return The meaning of this parameter differs according to the database engine
      *         you use. <p><b>MySQL</b> <p>The name of the database to create when
@@ -270,8 +314,9 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
      *         contain 1 to 64 alphanumeric characters</li> <li>Cannot be a word
      *         reserved by the specified database engine</li> </ul> <p>Type: String
      *         <p><b>Oracle</b> <p> The Oracle System ID (SID) of the created DB
-     *         Instance. <p>Default: <code>ORACL</code> <p>Constraints: <ul>
-     *         <li>Cannot be longer than 8 characters</li> </ul>
+     *         Instance. <p>Default: <code>ORCL</code> <p>Constraints: <ul>
+     *         <li>Cannot be longer than 8 characters</li> </ul> <p><b>SQL Server</b>
+     *         <p>Not applicable. Must be null.
      */
     public String getDBName() {
         return dBName;
@@ -285,8 +330,9 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
      * contain 1 to 64 alphanumeric characters</li> <li>Cannot be a word
      * reserved by the specified database engine</li> </ul> <p>Type: String
      * <p><b>Oracle</b> <p> The Oracle System ID (SID) of the created DB
-     * Instance. <p>Default: <code>ORACL</code> <p>Constraints: <ul>
-     * <li>Cannot be longer than 8 characters</li> </ul>
+     * Instance. <p>Default: <code>ORCL</code> <p>Constraints: <ul>
+     * <li>Cannot be longer than 8 characters</li> </ul> <p><b>SQL Server</b>
+     * <p>Not applicable. Must be null.
      *
      * @param dBName The meaning of this parameter differs according to the database engine
      *         you use. <p><b>MySQL</b> <p>The name of the database to create when
@@ -295,8 +341,9 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
      *         contain 1 to 64 alphanumeric characters</li> <li>Cannot be a word
      *         reserved by the specified database engine</li> </ul> <p>Type: String
      *         <p><b>Oracle</b> <p> The Oracle System ID (SID) of the created DB
-     *         Instance. <p>Default: <code>ORACL</code> <p>Constraints: <ul>
-     *         <li>Cannot be longer than 8 characters</li> </ul>
+     *         Instance. <p>Default: <code>ORCL</code> <p>Constraints: <ul>
+     *         <li>Cannot be longer than 8 characters</li> </ul> <p><b>SQL Server</b>
+     *         <p>Not applicable. Must be null.
      */
     public void setDBName(String dBName) {
         this.dBName = dBName;
@@ -310,8 +357,9 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
      * contain 1 to 64 alphanumeric characters</li> <li>Cannot be a word
      * reserved by the specified database engine</li> </ul> <p>Type: String
      * <p><b>Oracle</b> <p> The Oracle System ID (SID) of the created DB
-     * Instance. <p>Default: <code>ORACL</code> <p>Constraints: <ul>
-     * <li>Cannot be longer than 8 characters</li> </ul>
+     * Instance. <p>Default: <code>ORCL</code> <p>Constraints: <ul>
+     * <li>Cannot be longer than 8 characters</li> </ul> <p><b>SQL Server</b>
+     * <p>Not applicable. Must be null.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -322,8 +370,9 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
      *         contain 1 to 64 alphanumeric characters</li> <li>Cannot be a word
      *         reserved by the specified database engine</li> </ul> <p>Type: String
      *         <p><b>Oracle</b> <p> The Oracle System ID (SID) of the created DB
-     *         Instance. <p>Default: <code>ORACL</code> <p>Constraints: <ul>
-     *         <li>Cannot be longer than 8 characters</li> </ul>
+     *         Instance. <p>Default: <code>ORCL</code> <p>Constraints: <ul>
+     *         <li>Cannot be longer than 8 characters</li> </ul> <p><b>SQL Server</b>
+     *         <p>Not applicable. Must be null.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -337,15 +386,17 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
     /**
      * The DB Instance identifier. This parameter is stored as a lowercase
      * string. <p>Constraints: <ul> <li>Must contain from 1 to 63
-     * alphanumeric characters or hyphens.</li> <li>First character must be a
-     * letter.</li> <li>Cannot end with a hyphen or contain two consecutive
-     * hyphens.</li> </ul> <p>Example: <code>mydbinstance</code>
+     * alphanumeric characters or hyphens (1 to 15 for SQL Server).</li>
+     * <li>First character must be a letter.</li> <li>Cannot end with a
+     * hyphen or contain two consecutive hyphens.</li> </ul> <p>Example:
+     * <code>mydbinstance</code>
      *
      * @return The DB Instance identifier. This parameter is stored as a lowercase
      *         string. <p>Constraints: <ul> <li>Must contain from 1 to 63
-     *         alphanumeric characters or hyphens.</li> <li>First character must be a
-     *         letter.</li> <li>Cannot end with a hyphen or contain two consecutive
-     *         hyphens.</li> </ul> <p>Example: <code>mydbinstance</code>
+     *         alphanumeric characters or hyphens (1 to 15 for SQL Server).</li>
+     *         <li>First character must be a letter.</li> <li>Cannot end with a
+     *         hyphen or contain two consecutive hyphens.</li> </ul> <p>Example:
+     *         <code>mydbinstance</code>
      */
     public String getDBInstanceIdentifier() {
         return dBInstanceIdentifier;
@@ -354,15 +405,17 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
     /**
      * The DB Instance identifier. This parameter is stored as a lowercase
      * string. <p>Constraints: <ul> <li>Must contain from 1 to 63
-     * alphanumeric characters or hyphens.</li> <li>First character must be a
-     * letter.</li> <li>Cannot end with a hyphen or contain two consecutive
-     * hyphens.</li> </ul> <p>Example: <code>mydbinstance</code>
+     * alphanumeric characters or hyphens (1 to 15 for SQL Server).</li>
+     * <li>First character must be a letter.</li> <li>Cannot end with a
+     * hyphen or contain two consecutive hyphens.</li> </ul> <p>Example:
+     * <code>mydbinstance</code>
      *
      * @param dBInstanceIdentifier The DB Instance identifier. This parameter is stored as a lowercase
      *         string. <p>Constraints: <ul> <li>Must contain from 1 to 63
-     *         alphanumeric characters or hyphens.</li> <li>First character must be a
-     *         letter.</li> <li>Cannot end with a hyphen or contain two consecutive
-     *         hyphens.</li> </ul> <p>Example: <code>mydbinstance</code>
+     *         alphanumeric characters or hyphens (1 to 15 for SQL Server).</li>
+     *         <li>First character must be a letter.</li> <li>Cannot end with a
+     *         hyphen or contain two consecutive hyphens.</li> </ul> <p>Example:
+     *         <code>mydbinstance</code>
      */
     public void setDBInstanceIdentifier(String dBInstanceIdentifier) {
         this.dBInstanceIdentifier = dBInstanceIdentifier;
@@ -371,17 +424,19 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
     /**
      * The DB Instance identifier. This parameter is stored as a lowercase
      * string. <p>Constraints: <ul> <li>Must contain from 1 to 63
-     * alphanumeric characters or hyphens.</li> <li>First character must be a
-     * letter.</li> <li>Cannot end with a hyphen or contain two consecutive
-     * hyphens.</li> </ul> <p>Example: <code>mydbinstance</code>
+     * alphanumeric characters or hyphens (1 to 15 for SQL Server).</li>
+     * <li>First character must be a letter.</li> <li>Cannot end with a
+     * hyphen or contain two consecutive hyphens.</li> </ul> <p>Example:
+     * <code>mydbinstance</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dBInstanceIdentifier The DB Instance identifier. This parameter is stored as a lowercase
      *         string. <p>Constraints: <ul> <li>Must contain from 1 to 63
-     *         alphanumeric characters or hyphens.</li> <li>First character must be a
-     *         letter.</li> <li>Cannot end with a hyphen or contain two consecutive
-     *         hyphens.</li> </ul> <p>Example: <code>mydbinstance</code>
+     *         alphanumeric characters or hyphens (1 to 15 for SQL Server).</li>
+     *         <li>First character must be a letter.</li> <li>Cannot end with a
+     *         hyphen or contain two consecutive hyphens.</li> </ul> <p>Example:
+     *         <code>mydbinstance</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -396,12 +451,18 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
      * The amount of storage (in gigabytes) to be initially allocated for the
      * database instance. <p><b>MySQL</b> <p> Constraints: Must be an integer
      * from 5 to 1024. <p> Type: Integer <p><b>Oracle</b> <p> Constraints:
-     * Must be an integer from 10 to 1024.
+     * Must be an integer from 10 to 1024. <p><b>SQL Server</b> <p>
+     * Constraints: Must be an integer from 200 to 1024 (Standard Edition and
+     * Enterprise Edition) or from 30 to 1024 (Express Edition and Web
+     * Edition)
      *
      * @return The amount of storage (in gigabytes) to be initially allocated for the
      *         database instance. <p><b>MySQL</b> <p> Constraints: Must be an integer
      *         from 5 to 1024. <p> Type: Integer <p><b>Oracle</b> <p> Constraints:
-     *         Must be an integer from 10 to 1024.
+     *         Must be an integer from 10 to 1024. <p><b>SQL Server</b> <p>
+     *         Constraints: Must be an integer from 200 to 1024 (Standard Edition and
+     *         Enterprise Edition) or from 30 to 1024 (Express Edition and Web
+     *         Edition)
      */
     public Integer getAllocatedStorage() {
         return allocatedStorage;
@@ -411,12 +472,18 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
      * The amount of storage (in gigabytes) to be initially allocated for the
      * database instance. <p><b>MySQL</b> <p> Constraints: Must be an integer
      * from 5 to 1024. <p> Type: Integer <p><b>Oracle</b> <p> Constraints:
-     * Must be an integer from 10 to 1024.
+     * Must be an integer from 10 to 1024. <p><b>SQL Server</b> <p>
+     * Constraints: Must be an integer from 200 to 1024 (Standard Edition and
+     * Enterprise Edition) or from 30 to 1024 (Express Edition and Web
+     * Edition)
      *
      * @param allocatedStorage The amount of storage (in gigabytes) to be initially allocated for the
      *         database instance. <p><b>MySQL</b> <p> Constraints: Must be an integer
      *         from 5 to 1024. <p> Type: Integer <p><b>Oracle</b> <p> Constraints:
-     *         Must be an integer from 10 to 1024.
+     *         Must be an integer from 10 to 1024. <p><b>SQL Server</b> <p>
+     *         Constraints: Must be an integer from 200 to 1024 (Standard Edition and
+     *         Enterprise Edition) or from 30 to 1024 (Express Edition and Web
+     *         Edition)
      */
     public void setAllocatedStorage(Integer allocatedStorage) {
         this.allocatedStorage = allocatedStorage;
@@ -426,14 +493,20 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
      * The amount of storage (in gigabytes) to be initially allocated for the
      * database instance. <p><b>MySQL</b> <p> Constraints: Must be an integer
      * from 5 to 1024. <p> Type: Integer <p><b>Oracle</b> <p> Constraints:
-     * Must be an integer from 10 to 1024.
+     * Must be an integer from 10 to 1024. <p><b>SQL Server</b> <p>
+     * Constraints: Must be an integer from 200 to 1024 (Standard Edition and
+     * Enterprise Edition) or from 30 to 1024 (Express Edition and Web
+     * Edition)
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param allocatedStorage The amount of storage (in gigabytes) to be initially allocated for the
      *         database instance. <p><b>MySQL</b> <p> Constraints: Must be an integer
      *         from 5 to 1024. <p> Type: Integer <p><b>Oracle</b> <p> Constraints:
-     *         Must be an integer from 10 to 1024.
+     *         Must be an integer from 10 to 1024. <p><b>SQL Server</b> <p>
+     *         Constraints: Must be an integer from 200 to 1024 (Standard Edition and
+     *         Enterprise Edition) or from 30 to 1024 (Express Edition and Web
+     *         Edition)
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -445,41 +518,53 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * The compute and memory capacity of the DB Instance. <p> Valid Values:
-     * <code>db.m1.small | db.m1.large | db.m1.xlarge | db.m2.xlarge
-     * |db.m2.2xlarge | db.m2.4xlarge</code>
+     * The compute and memory capacity of the DB Instance. To determine the
+     * instance classes that are available for a particular DB engine, use
+     * the <a>DescribeOrderableDBInstanceOptions</a> action. <p> Valid
+     * Values: <code>db.t1.micro | db.m1.small | db.m1.large | db.m1.xlarge |
+     * db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge</code>
      *
-     * @return The compute and memory capacity of the DB Instance. <p> Valid Values:
-     *         <code>db.m1.small | db.m1.large | db.m1.xlarge | db.m2.xlarge
-     *         |db.m2.2xlarge | db.m2.4xlarge</code>
+     * @return The compute and memory capacity of the DB Instance. To determine the
+     *         instance classes that are available for a particular DB engine, use
+     *         the <a>DescribeOrderableDBInstanceOptions</a> action. <p> Valid
+     *         Values: <code>db.t1.micro | db.m1.small | db.m1.large | db.m1.xlarge |
+     *         db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge</code>
      */
     public String getDBInstanceClass() {
         return dBInstanceClass;
     }
     
     /**
-     * The compute and memory capacity of the DB Instance. <p> Valid Values:
-     * <code>db.m1.small | db.m1.large | db.m1.xlarge | db.m2.xlarge
-     * |db.m2.2xlarge | db.m2.4xlarge</code>
+     * The compute and memory capacity of the DB Instance. To determine the
+     * instance classes that are available for a particular DB engine, use
+     * the <a>DescribeOrderableDBInstanceOptions</a> action. <p> Valid
+     * Values: <code>db.t1.micro | db.m1.small | db.m1.large | db.m1.xlarge |
+     * db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge</code>
      *
-     * @param dBInstanceClass The compute and memory capacity of the DB Instance. <p> Valid Values:
-     *         <code>db.m1.small | db.m1.large | db.m1.xlarge | db.m2.xlarge
-     *         |db.m2.2xlarge | db.m2.4xlarge</code>
+     * @param dBInstanceClass The compute and memory capacity of the DB Instance. To determine the
+     *         instance classes that are available for a particular DB engine, use
+     *         the <a>DescribeOrderableDBInstanceOptions</a> action. <p> Valid
+     *         Values: <code>db.t1.micro | db.m1.small | db.m1.large | db.m1.xlarge |
+     *         db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge</code>
      */
     public void setDBInstanceClass(String dBInstanceClass) {
         this.dBInstanceClass = dBInstanceClass;
     }
     
     /**
-     * The compute and memory capacity of the DB Instance. <p> Valid Values:
-     * <code>db.m1.small | db.m1.large | db.m1.xlarge | db.m2.xlarge
-     * |db.m2.2xlarge | db.m2.4xlarge</code>
+     * The compute and memory capacity of the DB Instance. To determine the
+     * instance classes that are available for a particular DB engine, use
+     * the <a>DescribeOrderableDBInstanceOptions</a> action. <p> Valid
+     * Values: <code>db.t1.micro | db.m1.small | db.m1.large | db.m1.xlarge |
+     * db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBInstanceClass The compute and memory capacity of the DB Instance. <p> Valid Values:
-     *         <code>db.m1.small | db.m1.large | db.m1.xlarge | db.m2.xlarge
-     *         |db.m2.2xlarge | db.m2.4xlarge</code>
+     * @param dBInstanceClass The compute and memory capacity of the DB Instance. To determine the
+     *         instance classes that are available for a particular DB engine, use
+     *         the <a>DescribeOrderableDBInstanceOptions</a> action. <p> Valid
+     *         Values: <code>db.t1.micro | db.m1.small | db.m1.large | db.m1.xlarge |
+     *         db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -493,11 +578,15 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
     /**
      * The name of the database engine to be used for this instance. <p>
      * Valid Values: <code>MySQL</code> | <code>oracle-se1</code> |
-     * <code>oracle-se</code> | <code>oracle-ee</code>
+     * <code>oracle-se</code> | <code>oracle-ee</code> |
+     * <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
+     * <code>sqlserver-ex</code> | <code>sqlserver-web</code>
      *
      * @return The name of the database engine to be used for this instance. <p>
      *         Valid Values: <code>MySQL</code> | <code>oracle-se1</code> |
-     *         <code>oracle-se</code> | <code>oracle-ee</code>
+     *         <code>oracle-se</code> | <code>oracle-ee</code> |
+     *         <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
+     *         <code>sqlserver-ex</code> | <code>sqlserver-web</code>
      */
     public String getEngine() {
         return engine;
@@ -506,11 +595,15 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
     /**
      * The name of the database engine to be used for this instance. <p>
      * Valid Values: <code>MySQL</code> | <code>oracle-se1</code> |
-     * <code>oracle-se</code> | <code>oracle-ee</code>
+     * <code>oracle-se</code> | <code>oracle-ee</code> |
+     * <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
+     * <code>sqlserver-ex</code> | <code>sqlserver-web</code>
      *
      * @param engine The name of the database engine to be used for this instance. <p>
      *         Valid Values: <code>MySQL</code> | <code>oracle-se1</code> |
-     *         <code>oracle-se</code> | <code>oracle-ee</code>
+     *         <code>oracle-se</code> | <code>oracle-ee</code> |
+     *         <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
+     *         <code>sqlserver-ex</code> | <code>sqlserver-web</code>
      */
     public void setEngine(String engine) {
         this.engine = engine;
@@ -519,13 +612,17 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
     /**
      * The name of the database engine to be used for this instance. <p>
      * Valid Values: <code>MySQL</code> | <code>oracle-se1</code> |
-     * <code>oracle-se</code> | <code>oracle-ee</code>
+     * <code>oracle-se</code> | <code>oracle-ee</code> |
+     * <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
+     * <code>sqlserver-ex</code> | <code>sqlserver-web</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param engine The name of the database engine to be used for this instance. <p>
      *         Valid Values: <code>MySQL</code> | <code>oracle-se1</code> |
-     *         <code>oracle-se</code> | <code>oracle-ee</code>
+     *         <code>oracle-se</code> | <code>oracle-ee</code> |
+     *         <code>sqlserver-ee</code> | <code>sqlserver-se</code> |
+     *         <code>sqlserver-ex</code> | <code>sqlserver-web</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -544,6 +641,10 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
      * <p><b>Oracle</b> <p>Constraints: <ul> <li>Must be 1 to 30 alphanumeric
      * characters.</li> <li>First character must be a letter.</li> <li>Cannot
      * be a reserved word for the chosen database engine.</li> </ul>
+     * <p><b>SQL Server</b> <p>Constraints: <ul> <li>Must be 1 to 128
+     * alphanumeric characters.</li> <li>First character must be a
+     * letter.</li> <li>Cannot be a reserved word for the chosen database
+     * engine.</li> </ul>
      *
      * @return The name of master user for the client DB Instance. <p><b>MySQL</b>
      *         <p>Constraints: <ul> <li>Must be 1 to 16 alphanumeric characters.</li>
@@ -552,6 +653,10 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
      *         <p><b>Oracle</b> <p>Constraints: <ul> <li>Must be 1 to 30 alphanumeric
      *         characters.</li> <li>First character must be a letter.</li> <li>Cannot
      *         be a reserved word for the chosen database engine.</li> </ul>
+     *         <p><b>SQL Server</b> <p>Constraints: <ul> <li>Must be 1 to 128
+     *         alphanumeric characters.</li> <li>First character must be a
+     *         letter.</li> <li>Cannot be a reserved word for the chosen database
+     *         engine.</li> </ul>
      */
     public String getMasterUsername() {
         return masterUsername;
@@ -565,6 +670,10 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
      * <p><b>Oracle</b> <p>Constraints: <ul> <li>Must be 1 to 30 alphanumeric
      * characters.</li> <li>First character must be a letter.</li> <li>Cannot
      * be a reserved word for the chosen database engine.</li> </ul>
+     * <p><b>SQL Server</b> <p>Constraints: <ul> <li>Must be 1 to 128
+     * alphanumeric characters.</li> <li>First character must be a
+     * letter.</li> <li>Cannot be a reserved word for the chosen database
+     * engine.</li> </ul>
      *
      * @param masterUsername The name of master user for the client DB Instance. <p><b>MySQL</b>
      *         <p>Constraints: <ul> <li>Must be 1 to 16 alphanumeric characters.</li>
@@ -573,6 +682,10 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
      *         <p><b>Oracle</b> <p>Constraints: <ul> <li>Must be 1 to 30 alphanumeric
      *         characters.</li> <li>First character must be a letter.</li> <li>Cannot
      *         be a reserved word for the chosen database engine.</li> </ul>
+     *         <p><b>SQL Server</b> <p>Constraints: <ul> <li>Must be 1 to 128
+     *         alphanumeric characters.</li> <li>First character must be a
+     *         letter.</li> <li>Cannot be a reserved word for the chosen database
+     *         engine.</li> </ul>
      */
     public void setMasterUsername(String masterUsername) {
         this.masterUsername = masterUsername;
@@ -586,6 +699,10 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
      * <p><b>Oracle</b> <p>Constraints: <ul> <li>Must be 1 to 30 alphanumeric
      * characters.</li> <li>First character must be a letter.</li> <li>Cannot
      * be a reserved word for the chosen database engine.</li> </ul>
+     * <p><b>SQL Server</b> <p>Constraints: <ul> <li>Must be 1 to 128
+     * alphanumeric characters.</li> <li>First character must be a
+     * letter.</li> <li>Cannot be a reserved word for the chosen database
+     * engine.</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -596,6 +713,10 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
      *         <p><b>Oracle</b> <p>Constraints: <ul> <li>Must be 1 to 30 alphanumeric
      *         characters.</li> <li>First character must be a letter.</li> <li>Cannot
      *         be a reserved word for the chosen database engine.</li> </ul>
+     *         <p><b>SQL Server</b> <p>Constraints: <ul> <li>Must be 1 to 128
+     *         alphanumeric characters.</li> <li>First character must be a
+     *         letter.</li> <li>Cannot be a reserved word for the chosen database
+     *         engine.</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -607,47 +728,53 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * The password for the master DB Instance user. <p><b>MySQL</b> <p>
-     * Constraints: Cannot contain more than 41 alphanumeric characters.
-     * <p>Type: String <p><b>Oracle</b> <p> Constraints: Cannot contain more
-     * than 30 alphanumeric characters.
+     * The password for the master database user. <p><b>MySQL</b> <p>
+     * Constraints: Must contain from 8 to 41 alphanumeric characters.
+     * <p>Type: String <p><b>Oracle</b> <p> Constraints: Must contain from 8
+     * to 30 alphanumeric characters. <p><b>SQL Server</b> <p> Constraints:
+     * Must contain from 8 to 128 alphanumeric characters.
      *
-     * @return The password for the master DB Instance user. <p><b>MySQL</b> <p>
-     *         Constraints: Cannot contain more than 41 alphanumeric characters.
-     *         <p>Type: String <p><b>Oracle</b> <p> Constraints: Cannot contain more
-     *         than 30 alphanumeric characters.
+     * @return The password for the master database user. <p><b>MySQL</b> <p>
+     *         Constraints: Must contain from 8 to 41 alphanumeric characters.
+     *         <p>Type: String <p><b>Oracle</b> <p> Constraints: Must contain from 8
+     *         to 30 alphanumeric characters. <p><b>SQL Server</b> <p> Constraints:
+     *         Must contain from 8 to 128 alphanumeric characters.
      */
     public String getMasterUserPassword() {
         return masterUserPassword;
     }
     
     /**
-     * The password for the master DB Instance user. <p><b>MySQL</b> <p>
-     * Constraints: Cannot contain more than 41 alphanumeric characters.
-     * <p>Type: String <p><b>Oracle</b> <p> Constraints: Cannot contain more
-     * than 30 alphanumeric characters.
+     * The password for the master database user. <p><b>MySQL</b> <p>
+     * Constraints: Must contain from 8 to 41 alphanumeric characters.
+     * <p>Type: String <p><b>Oracle</b> <p> Constraints: Must contain from 8
+     * to 30 alphanumeric characters. <p><b>SQL Server</b> <p> Constraints:
+     * Must contain from 8 to 128 alphanumeric characters.
      *
-     * @param masterUserPassword The password for the master DB Instance user. <p><b>MySQL</b> <p>
-     *         Constraints: Cannot contain more than 41 alphanumeric characters.
-     *         <p>Type: String <p><b>Oracle</b> <p> Constraints: Cannot contain more
-     *         than 30 alphanumeric characters.
+     * @param masterUserPassword The password for the master database user. <p><b>MySQL</b> <p>
+     *         Constraints: Must contain from 8 to 41 alphanumeric characters.
+     *         <p>Type: String <p><b>Oracle</b> <p> Constraints: Must contain from 8
+     *         to 30 alphanumeric characters. <p><b>SQL Server</b> <p> Constraints:
+     *         Must contain from 8 to 128 alphanumeric characters.
      */
     public void setMasterUserPassword(String masterUserPassword) {
         this.masterUserPassword = masterUserPassword;
     }
     
     /**
-     * The password for the master DB Instance user. <p><b>MySQL</b> <p>
-     * Constraints: Cannot contain more than 41 alphanumeric characters.
-     * <p>Type: String <p><b>Oracle</b> <p> Constraints: Cannot contain more
-     * than 30 alphanumeric characters.
+     * The password for the master database user. <p><b>MySQL</b> <p>
+     * Constraints: Must contain from 8 to 41 alphanumeric characters.
+     * <p>Type: String <p><b>Oracle</b> <p> Constraints: Must contain from 8
+     * to 30 alphanumeric characters. <p><b>SQL Server</b> <p> Constraints:
+     * Must contain from 8 to 128 alphanumeric characters.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param masterUserPassword The password for the master DB Instance user. <p><b>MySQL</b> <p>
-     *         Constraints: Cannot contain more than 41 alphanumeric characters.
-     *         <p>Type: String <p><b>Oracle</b> <p> Constraints: Cannot contain more
-     *         than 30 alphanumeric characters.
+     * @param masterUserPassword The password for the master database user. <p><b>MySQL</b> <p>
+     *         Constraints: Must contain from 8 to 41 alphanumeric characters.
+     *         <p>Type: String <p><b>Oracle</b> <p> Constraints: Must contain from 8
+     *         to 30 alphanumeric characters. <p><b>SQL Server</b> <p> Constraints:
+     *         Must contain from 8 to 128 alphanumeric characters.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -1183,12 +1310,18 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
      * The port number on which the database accepts connections.
      * <p><b>MySQL</b> <p> Default: <code>3306</code> <p> Valid Values:
      * <code>1150-65535</code> <p>Type: Integer <p><b>Oracle</b> <p> Default:
-     * <code>1521</code> <p> Valid Values: <code>1150-65535</code>
+     * <code>1521</code> <p> Valid Values: <code>1150-65535</code> <p><b>SQL
+     * Server</b> <p> Default: <code>1433</code> <p> Valid Values:
+     * <code>1150-65535</code> except for <code>1434</code> and
+     * <code>3389</code>.
      *
      * @return The port number on which the database accepts connections.
      *         <p><b>MySQL</b> <p> Default: <code>3306</code> <p> Valid Values:
      *         <code>1150-65535</code> <p>Type: Integer <p><b>Oracle</b> <p> Default:
-     *         <code>1521</code> <p> Valid Values: <code>1150-65535</code>
+     *         <code>1521</code> <p> Valid Values: <code>1150-65535</code> <p><b>SQL
+     *         Server</b> <p> Default: <code>1433</code> <p> Valid Values:
+     *         <code>1150-65535</code> except for <code>1434</code> and
+     *         <code>3389</code>.
      */
     public Integer getPort() {
         return port;
@@ -1198,12 +1331,18 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
      * The port number on which the database accepts connections.
      * <p><b>MySQL</b> <p> Default: <code>3306</code> <p> Valid Values:
      * <code>1150-65535</code> <p>Type: Integer <p><b>Oracle</b> <p> Default:
-     * <code>1521</code> <p> Valid Values: <code>1150-65535</code>
+     * <code>1521</code> <p> Valid Values: <code>1150-65535</code> <p><b>SQL
+     * Server</b> <p> Default: <code>1433</code> <p> Valid Values:
+     * <code>1150-65535</code> except for <code>1434</code> and
+     * <code>3389</code>.
      *
      * @param port The port number on which the database accepts connections.
      *         <p><b>MySQL</b> <p> Default: <code>3306</code> <p> Valid Values:
      *         <code>1150-65535</code> <p>Type: Integer <p><b>Oracle</b> <p> Default:
-     *         <code>1521</code> <p> Valid Values: <code>1150-65535</code>
+     *         <code>1521</code> <p> Valid Values: <code>1150-65535</code> <p><b>SQL
+     *         Server</b> <p> Default: <code>1433</code> <p> Valid Values:
+     *         <code>1150-65535</code> except for <code>1434</code> and
+     *         <code>3389</code>.
      */
     public void setPort(Integer port) {
         this.port = port;
@@ -1213,14 +1352,20 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
      * The port number on which the database accepts connections.
      * <p><b>MySQL</b> <p> Default: <code>3306</code> <p> Valid Values:
      * <code>1150-65535</code> <p>Type: Integer <p><b>Oracle</b> <p> Default:
-     * <code>1521</code> <p> Valid Values: <code>1150-65535</code>
+     * <code>1521</code> <p> Valid Values: <code>1150-65535</code> <p><b>SQL
+     * Server</b> <p> Default: <code>1433</code> <p> Valid Values:
+     * <code>1150-65535</code> except for <code>1434</code> and
+     * <code>3389</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param port The port number on which the database accepts connections.
      *         <p><b>MySQL</b> <p> Default: <code>3306</code> <p> Valid Values:
      *         <code>1150-65535</code> <p>Type: Integer <p><b>Oracle</b> <p> Default:
-     *         <code>1521</code> <p> Valid Values: <code>1150-65535</code>
+     *         <code>1521</code> <p> Valid Values: <code>1150-65535</code> <p><b>SQL
+     *         Server</b> <p> Default: <code>1433</code> <p> Valid Values:
+     *         <code>1150-65535</code> except for <code>1434</code> and
+     *         <code>3389</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -1232,41 +1377,41 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * Specifies if the DB Instance is a Multi-AZ deployment. You cannot set
-     * the AvailabilityZone parameter if the MultiAZ parameter is set to
-     * true.
+     * Specifies if the DB Instance is a Multi-AZ deployment. For Microsoft
+     * SQL Server, must be set to false. You cannot set the AvailabilityZone
+     * parameter if the MultiAZ parameter is set to true.
      *
-     * @return Specifies if the DB Instance is a Multi-AZ deployment. You cannot set
-     *         the AvailabilityZone parameter if the MultiAZ parameter is set to
-     *         true.
+     * @return Specifies if the DB Instance is a Multi-AZ deployment. For Microsoft
+     *         SQL Server, must be set to false. You cannot set the AvailabilityZone
+     *         parameter if the MultiAZ parameter is set to true.
      */
     public Boolean isMultiAZ() {
         return multiAZ;
     }
     
     /**
-     * Specifies if the DB Instance is a Multi-AZ deployment. You cannot set
-     * the AvailabilityZone parameter if the MultiAZ parameter is set to
-     * true.
+     * Specifies if the DB Instance is a Multi-AZ deployment. For Microsoft
+     * SQL Server, must be set to false. You cannot set the AvailabilityZone
+     * parameter if the MultiAZ parameter is set to true.
      *
-     * @param multiAZ Specifies if the DB Instance is a Multi-AZ deployment. You cannot set
-     *         the AvailabilityZone parameter if the MultiAZ parameter is set to
-     *         true.
+     * @param multiAZ Specifies if the DB Instance is a Multi-AZ deployment. For Microsoft
+     *         SQL Server, must be set to false. You cannot set the AvailabilityZone
+     *         parameter if the MultiAZ parameter is set to true.
      */
     public void setMultiAZ(Boolean multiAZ) {
         this.multiAZ = multiAZ;
     }
     
     /**
-     * Specifies if the DB Instance is a Multi-AZ deployment. You cannot set
-     * the AvailabilityZone parameter if the MultiAZ parameter is set to
-     * true.
+     * Specifies if the DB Instance is a Multi-AZ deployment. For Microsoft
+     * SQL Server, must be set to false. You cannot set the AvailabilityZone
+     * parameter if the MultiAZ parameter is set to true.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param multiAZ Specifies if the DB Instance is a Multi-AZ deployment. You cannot set
-     *         the AvailabilityZone parameter if the MultiAZ parameter is set to
-     *         true.
+     * @param multiAZ Specifies if the DB Instance is a Multi-AZ deployment. For Microsoft
+     *         SQL Server, must be set to false. You cannot set the AvailabilityZone
+     *         parameter if the MultiAZ parameter is set to true.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -1278,13 +1423,13 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * Specifies if the DB Instance is a Multi-AZ deployment. You cannot set
-     * the AvailabilityZone parameter if the MultiAZ parameter is set to
-     * true.
+     * Specifies if the DB Instance is a Multi-AZ deployment. For Microsoft
+     * SQL Server, must be set to false. You cannot set the AvailabilityZone
+     * parameter if the MultiAZ parameter is set to true.
      *
-     * @return Specifies if the DB Instance is a Multi-AZ deployment. You cannot set
-     *         the AvailabilityZone parameter if the MultiAZ parameter is set to
-     *         true.
+     * @return Specifies if the DB Instance is a Multi-AZ deployment. For Microsoft
+     *         SQL Server, must be set to false. You cannot set the AvailabilityZone
+     *         parameter if the MultiAZ parameter is set to true.
      */
     public Boolean getMultiAZ() {
         return multiAZ;
@@ -1293,11 +1438,13 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
     /**
      * The version number of the database engine to use. <p><b>MySQL</b>
      * <p>Example: <code>5.1.42</code> <p>Type: String <p><b>Oracle</b>
-     * <p>Example: <code>11.2.0.2.v2</code>
+     * <p>Example: <code>11.2.0.2.v2</code> <p>Type: String <p><b>SQL
+     * Server</b> <p>Example: <code>10.50.2789.0.v1</code>
      *
      * @return The version number of the database engine to use. <p><b>MySQL</b>
      *         <p>Example: <code>5.1.42</code> <p>Type: String <p><b>Oracle</b>
-     *         <p>Example: <code>11.2.0.2.v2</code>
+     *         <p>Example: <code>11.2.0.2.v2</code> <p>Type: String <p><b>SQL
+     *         Server</b> <p>Example: <code>10.50.2789.0.v1</code>
      */
     public String getEngineVersion() {
         return engineVersion;
@@ -1306,11 +1453,13 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
     /**
      * The version number of the database engine to use. <p><b>MySQL</b>
      * <p>Example: <code>5.1.42</code> <p>Type: String <p><b>Oracle</b>
-     * <p>Example: <code>11.2.0.2.v2</code>
+     * <p>Example: <code>11.2.0.2.v2</code> <p>Type: String <p><b>SQL
+     * Server</b> <p>Example: <code>10.50.2789.0.v1</code>
      *
      * @param engineVersion The version number of the database engine to use. <p><b>MySQL</b>
      *         <p>Example: <code>5.1.42</code> <p>Type: String <p><b>Oracle</b>
-     *         <p>Example: <code>11.2.0.2.v2</code>
+     *         <p>Example: <code>11.2.0.2.v2</code> <p>Type: String <p><b>SQL
+     *         Server</b> <p>Example: <code>10.50.2789.0.v1</code>
      */
     public void setEngineVersion(String engineVersion) {
         this.engineVersion = engineVersion;
@@ -1319,13 +1468,15 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
     /**
      * The version number of the database engine to use. <p><b>MySQL</b>
      * <p>Example: <code>5.1.42</code> <p>Type: String <p><b>Oracle</b>
-     * <p>Example: <code>11.2.0.2.v2</code>
+     * <p>Example: <code>11.2.0.2.v2</code> <p>Type: String <p><b>SQL
+     * Server</b> <p>Example: <code>10.50.2789.0.v1</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param engineVersion The version number of the database engine to use. <p><b>MySQL</b>
      *         <p>Example: <code>5.1.42</code> <p>Type: String <p><b>Oracle</b>
-     *         <p>Example: <code>11.2.0.2.v2</code>
+     *         <p>Example: <code>11.2.0.2.v2</code> <p>Type: String <p><b>SQL
+     *         Server</b> <p>Example: <code>10.50.2789.0.v1</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -1442,6 +1593,86 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
     
     
     /**
+     * Indicates that the DB Instance should be associated with the specified
+     * option group.
+     *
+     * @return Indicates that the DB Instance should be associated with the specified
+     *         option group.
+     */
+    public String getOptionGroupName() {
+        return optionGroupName;
+    }
+    
+    /**
+     * Indicates that the DB Instance should be associated with the specified
+     * option group.
+     *
+     * @param optionGroupName Indicates that the DB Instance should be associated with the specified
+     *         option group.
+     */
+    public void setOptionGroupName(String optionGroupName) {
+        this.optionGroupName = optionGroupName;
+    }
+    
+    /**
+     * Indicates that the DB Instance should be associated with the specified
+     * option group.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param optionGroupName Indicates that the DB Instance should be associated with the specified
+     *         option group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public CreateDBInstanceRequest withOptionGroupName(String optionGroupName) {
+        this.optionGroupName = optionGroupName;
+        return this;
+    }
+    
+    
+    /**
+     * For supported engines, indicates that the DB Instance should be
+     * associated with the specified CharacterSet.
+     *
+     * @return For supported engines, indicates that the DB Instance should be
+     *         associated with the specified CharacterSet.
+     */
+    public String getCharacterSetName() {
+        return characterSetName;
+    }
+    
+    /**
+     * For supported engines, indicates that the DB Instance should be
+     * associated with the specified CharacterSet.
+     *
+     * @param characterSetName For supported engines, indicates that the DB Instance should be
+     *         associated with the specified CharacterSet.
+     */
+    public void setCharacterSetName(String characterSetName) {
+        this.characterSetName = characterSetName;
+    }
+    
+    /**
+     * For supported engines, indicates that the DB Instance should be
+     * associated with the specified CharacterSet.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param characterSetName For supported engines, indicates that the DB Instance should be
+     *         associated with the specified CharacterSet.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public CreateDBInstanceRequest withCharacterSetName(String characterSetName) {
+        this.characterSetName = characterSetName;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -1472,6 +1703,8 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
         if (engineVersion != null) sb.append("EngineVersion: " + engineVersion + ", ");
         if (autoMinorVersionUpgrade != null) sb.append("AutoMinorVersionUpgrade: " + autoMinorVersionUpgrade + ", ");
         if (licenseModel != null) sb.append("LicenseModel: " + licenseModel + ", ");
+        if (optionGroupName != null) sb.append("OptionGroupName: " + optionGroupName + ", ");
+        if (characterSetName != null) sb.append("CharacterSetName: " + characterSetName + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -1500,6 +1733,8 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
         hashCode = prime * hashCode + ((getEngineVersion() == null) ? 0 : getEngineVersion().hashCode()); 
         hashCode = prime * hashCode + ((isAutoMinorVersionUpgrade() == null) ? 0 : isAutoMinorVersionUpgrade().hashCode()); 
         hashCode = prime * hashCode + ((getLicenseModel() == null) ? 0 : getLicenseModel().hashCode()); 
+        hashCode = prime * hashCode + ((getOptionGroupName() == null) ? 0 : getOptionGroupName().hashCode()); 
+        hashCode = prime * hashCode + ((getCharacterSetName() == null) ? 0 : getCharacterSetName().hashCode()); 
         return hashCode;
     }
     
@@ -1549,6 +1784,10 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
         if (other.isAutoMinorVersionUpgrade() != null && other.isAutoMinorVersionUpgrade().equals(this.isAutoMinorVersionUpgrade()) == false) return false; 
         if (other.getLicenseModel() == null ^ this.getLicenseModel() == null) return false;
         if (other.getLicenseModel() != null && other.getLicenseModel().equals(this.getLicenseModel()) == false) return false; 
+        if (other.getOptionGroupName() == null ^ this.getOptionGroupName() == null) return false;
+        if (other.getOptionGroupName() != null && other.getOptionGroupName().equals(this.getOptionGroupName()) == false) return false; 
+        if (other.getCharacterSetName() == null ^ this.getCharacterSetName() == null) return false;
+        if (other.getCharacterSetName() != null && other.getCharacterSetName().equals(this.getCharacterSetName()) == false) return false; 
         return true;
     }
     

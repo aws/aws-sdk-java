@@ -15,56 +15,83 @@
 package com.amazonaws.services.identitymanagement.model;
 
 /**
- * Password Policy
+ * <p>
+ * The PasswordPolicy data type contains information about the account password policy.
+ * </p>
+ * <p>
+ * This data type is used as a response element in the action GetAccountPasswordPolicy.
+ * </p>
  */
 public class PasswordPolicy {
 
+    /**
+     * Minimum length to require for IAM user passwords.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Range: </b>6 - 128<br/>
+     */
     private Integer minimumPasswordLength;
 
+    /**
+     * Specifies whether to require symbols for IAM user passwords.
+     */
     private Boolean requireSymbols;
 
+    /**
+     * Specifies whether to require numbers for IAM user passwords.
+     */
     private Boolean requireNumbers;
 
+    /**
+     * Specifies whether to require uppercase characters for IAM user
+     * passwords.
+     */
     private Boolean requireUppercaseCharacters;
 
+    /**
+     * Specifies whether to require lowercase characters for IAM user
+     * passwords.
+     */
     private Boolean requireLowercaseCharacters;
 
+    /**
+     * Specifies whether to allow IAM users to change their own password.
+     */
     private Boolean allowUsersToChangePassword;
 
     /**
-     * Returns the value of the MinimumPasswordLength property for this
-     * object.
+     * Minimum length to require for IAM user passwords.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>6 - 128<br/>
      *
-     * @return The value of the MinimumPasswordLength property for this object.
+     * @return Minimum length to require for IAM user passwords.
      */
     public Integer getMinimumPasswordLength() {
         return minimumPasswordLength;
     }
     
     /**
-     * Sets the value of the MinimumPasswordLength property for this object.
+     * Minimum length to require for IAM user passwords.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>6 - 128<br/>
      *
-     * @param minimumPasswordLength The new value for the MinimumPasswordLength property for this object.
+     * @param minimumPasswordLength Minimum length to require for IAM user passwords.
      */
     public void setMinimumPasswordLength(Integer minimumPasswordLength) {
         this.minimumPasswordLength = minimumPasswordLength;
     }
     
     /**
-     * Sets the value of the MinimumPasswordLength property for this object.
+     * Minimum length to require for IAM user passwords.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>6 - 128<br/>
      *
-     * @param minimumPasswordLength The new value for the MinimumPasswordLength property for this object.
+     * @param minimumPasswordLength Minimum length to require for IAM user passwords.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -76,29 +103,29 @@ public class PasswordPolicy {
     
     
     /**
-     * Returns the value of the RequireSymbols property for this object.
+     * Specifies whether to require symbols for IAM user passwords.
      *
-     * @return The value of the RequireSymbols property for this object.
+     * @return Specifies whether to require symbols for IAM user passwords.
      */
     public Boolean isRequireSymbols() {
         return requireSymbols;
     }
     
     /**
-     * Sets the value of the RequireSymbols property for this object.
+     * Specifies whether to require symbols for IAM user passwords.
      *
-     * @param requireSymbols The new value for the RequireSymbols property for this object.
+     * @param requireSymbols Specifies whether to require symbols for IAM user passwords.
      */
     public void setRequireSymbols(Boolean requireSymbols) {
         this.requireSymbols = requireSymbols;
     }
     
     /**
-     * Sets the value of the RequireSymbols property for this object.
+     * Specifies whether to require symbols for IAM user passwords.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param requireSymbols The new value for the RequireSymbols property for this object.
+     * @param requireSymbols Specifies whether to require symbols for IAM user passwords.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -110,38 +137,38 @@ public class PasswordPolicy {
     
     
     /**
-     * Returns the value of the RequireSymbols property for this object.
+     * Specifies whether to require symbols for IAM user passwords.
      *
-     * @return The value of the RequireSymbols property for this object.
+     * @return Specifies whether to require symbols for IAM user passwords.
      */
     public Boolean getRequireSymbols() {
         return requireSymbols;
     }
     
     /**
-     * Returns the value of the RequireNumbers property for this object.
+     * Specifies whether to require numbers for IAM user passwords.
      *
-     * @return The value of the RequireNumbers property for this object.
+     * @return Specifies whether to require numbers for IAM user passwords.
      */
     public Boolean isRequireNumbers() {
         return requireNumbers;
     }
     
     /**
-     * Sets the value of the RequireNumbers property for this object.
+     * Specifies whether to require numbers for IAM user passwords.
      *
-     * @param requireNumbers The new value for the RequireNumbers property for this object.
+     * @param requireNumbers Specifies whether to require numbers for IAM user passwords.
      */
     public void setRequireNumbers(Boolean requireNumbers) {
         this.requireNumbers = requireNumbers;
     }
     
     /**
-     * Sets the value of the RequireNumbers property for this object.
+     * Specifies whether to require numbers for IAM user passwords.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param requireNumbers The new value for the RequireNumbers property for this object.
+     * @param requireNumbers Specifies whether to require numbers for IAM user passwords.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -153,43 +180,44 @@ public class PasswordPolicy {
     
     
     /**
-     * Returns the value of the RequireNumbers property for this object.
+     * Specifies whether to require numbers for IAM user passwords.
      *
-     * @return The value of the RequireNumbers property for this object.
+     * @return Specifies whether to require numbers for IAM user passwords.
      */
     public Boolean getRequireNumbers() {
         return requireNumbers;
     }
     
     /**
-     * Returns the value of the RequireUppercaseCharacters property for this
-     * object.
+     * Specifies whether to require uppercase characters for IAM user
+     * passwords.
      *
-     * @return The value of the RequireUppercaseCharacters property for this object.
+     * @return Specifies whether to require uppercase characters for IAM user
+     *         passwords.
      */
     public Boolean isRequireUppercaseCharacters() {
         return requireUppercaseCharacters;
     }
     
     /**
-     * Sets the value of the RequireUppercaseCharacters property for this
-     * object.
+     * Specifies whether to require uppercase characters for IAM user
+     * passwords.
      *
-     * @param requireUppercaseCharacters The new value for the RequireUppercaseCharacters property for this
-     *         object.
+     * @param requireUppercaseCharacters Specifies whether to require uppercase characters for IAM user
+     *         passwords.
      */
     public void setRequireUppercaseCharacters(Boolean requireUppercaseCharacters) {
         this.requireUppercaseCharacters = requireUppercaseCharacters;
     }
     
     /**
-     * Sets the value of the RequireUppercaseCharacters property for this
-     * object.
+     * Specifies whether to require uppercase characters for IAM user
+     * passwords.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param requireUppercaseCharacters The new value for the RequireUppercaseCharacters property for this
-     *         object.
+     * @param requireUppercaseCharacters Specifies whether to require uppercase characters for IAM user
+     *         passwords.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -201,44 +229,46 @@ public class PasswordPolicy {
     
     
     /**
-     * Returns the value of the RequireUppercaseCharacters property for this
-     * object.
+     * Specifies whether to require uppercase characters for IAM user
+     * passwords.
      *
-     * @return The value of the RequireUppercaseCharacters property for this object.
+     * @return Specifies whether to require uppercase characters for IAM user
+     *         passwords.
      */
     public Boolean getRequireUppercaseCharacters() {
         return requireUppercaseCharacters;
     }
     
     /**
-     * Returns the value of the RequireLowercaseCharacters property for this
-     * object.
+     * Specifies whether to require lowercase characters for IAM user
+     * passwords.
      *
-     * @return The value of the RequireLowercaseCharacters property for this object.
+     * @return Specifies whether to require lowercase characters for IAM user
+     *         passwords.
      */
     public Boolean isRequireLowercaseCharacters() {
         return requireLowercaseCharacters;
     }
     
     /**
-     * Sets the value of the RequireLowercaseCharacters property for this
-     * object.
+     * Specifies whether to require lowercase characters for IAM user
+     * passwords.
      *
-     * @param requireLowercaseCharacters The new value for the RequireLowercaseCharacters property for this
-     *         object.
+     * @param requireLowercaseCharacters Specifies whether to require lowercase characters for IAM user
+     *         passwords.
      */
     public void setRequireLowercaseCharacters(Boolean requireLowercaseCharacters) {
         this.requireLowercaseCharacters = requireLowercaseCharacters;
     }
     
     /**
-     * Sets the value of the RequireLowercaseCharacters property for this
-     * object.
+     * Specifies whether to require lowercase characters for IAM user
+     * passwords.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param requireLowercaseCharacters The new value for the RequireLowercaseCharacters property for this
-     *         object.
+     * @param requireLowercaseCharacters Specifies whether to require lowercase characters for IAM user
+     *         passwords.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -250,44 +280,40 @@ public class PasswordPolicy {
     
     
     /**
-     * Returns the value of the RequireLowercaseCharacters property for this
-     * object.
+     * Specifies whether to require lowercase characters for IAM user
+     * passwords.
      *
-     * @return The value of the RequireLowercaseCharacters property for this object.
+     * @return Specifies whether to require lowercase characters for IAM user
+     *         passwords.
      */
     public Boolean getRequireLowercaseCharacters() {
         return requireLowercaseCharacters;
     }
     
     /**
-     * Returns the value of the AllowUsersToChangePassword property for this
-     * object.
+     * Specifies whether to allow IAM users to change their own password.
      *
-     * @return The value of the AllowUsersToChangePassword property for this object.
+     * @return Specifies whether to allow IAM users to change their own password.
      */
     public Boolean isAllowUsersToChangePassword() {
         return allowUsersToChangePassword;
     }
     
     /**
-     * Sets the value of the AllowUsersToChangePassword property for this
-     * object.
+     * Specifies whether to allow IAM users to change their own password.
      *
-     * @param allowUsersToChangePassword The new value for the AllowUsersToChangePassword property for this
-     *         object.
+     * @param allowUsersToChangePassword Specifies whether to allow IAM users to change their own password.
      */
     public void setAllowUsersToChangePassword(Boolean allowUsersToChangePassword) {
         this.allowUsersToChangePassword = allowUsersToChangePassword;
     }
     
     /**
-     * Sets the value of the AllowUsersToChangePassword property for this
-     * object.
+     * Specifies whether to allow IAM users to change their own password.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param allowUsersToChangePassword The new value for the AllowUsersToChangePassword property for this
-     *         object.
+     * @param allowUsersToChangePassword Specifies whether to allow IAM users to change their own password.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -299,10 +325,9 @@ public class PasswordPolicy {
     
     
     /**
-     * Returns the value of the AllowUsersToChangePassword property for this
-     * object.
+     * Specifies whether to allow IAM users to change their own password.
      *
-     * @return The value of the AllowUsersToChangePassword property for this object.
+     * @return Specifies whether to allow IAM users to change their own password.
      */
     public Boolean getAllowUsersToChangePassword() {
         return allowUsersToChangePassword;

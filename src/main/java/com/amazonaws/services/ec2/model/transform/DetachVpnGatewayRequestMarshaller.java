@@ -38,7 +38,7 @@ public class DetachVpnGatewayRequestMarshaller implements Marshaller<Request<Det
 
         Request<DetachVpnGatewayRequest> request = new DefaultRequest<DetachVpnGatewayRequest>(detachVpnGatewayRequest, "AmazonEC2");
         request.addParameter("Action", "DetachVpnGateway");
-        request.addParameter("Version", "2012-04-01");
+        request.addParameter("Version", "2012-06-01");
 
         if (detachVpnGatewayRequest.getVpnGatewayId() != null) {
             request.addParameter("VpnGatewayId", StringUtils.fromString(detachVpnGatewayRequest.getVpnGatewayId()));

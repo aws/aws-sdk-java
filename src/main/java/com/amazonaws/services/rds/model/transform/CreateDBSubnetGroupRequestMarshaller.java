@@ -38,7 +38,7 @@ public class CreateDBSubnetGroupRequestMarshaller implements Marshaller<Request<
 
         Request<CreateDBSubnetGroupRequest> request = new DefaultRequest<CreateDBSubnetGroupRequest>(createDBSubnetGroupRequest, "AmazonRDS");
         request.addParameter("Action", "CreateDBSubnetGroup");
-        request.addParameter("Version", "2012-01-15");
+        request.addParameter("Version", "2012-04-23");
 
         if (createDBSubnetGroupRequest.getDBSubnetGroupName() != null) {
             request.addParameter("DBSubnetGroupName", StringUtils.fromString(createDBSubnetGroupRequest.getDBSubnetGroupName()));

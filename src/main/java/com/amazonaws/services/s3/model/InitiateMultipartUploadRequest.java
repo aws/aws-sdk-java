@@ -52,11 +52,16 @@ public class InitiateMultipartUploadRequest extends AmazonWebServiceRequest {
     private CannedAccessControlList cannedACL;
 
     /**
+     * An optional access control list to apply to the new upload. If specified,
+     * cannedAcl will be ignored.
+     */
+    private AccessControlList accessControlList;    
+    
+    /**
      * The optional storage class to use when storing this upload's data in S3.
      * If not specified, the default storage class is used.
      */
     private StorageClass storageClass;
-
 
     /**
      * Constructs a request to initiate a new multipart upload in the specified
@@ -227,6 +232,38 @@ public class InitiateMultipartUploadRequest extends AmazonWebServiceRequest {
      */
     public InitiateMultipartUploadRequest withCannedACL(CannedAccessControlList acl) {
         this.cannedACL = acl;
+        return this;
+    }
+    
+    /**
+     * Returns the optional access control list for the new upload. If
+     * specified, cannedAcl will be ignored.
+     */
+    public AccessControlList getAccessControlList() {
+        return accessControlList;
+    }
+    
+    /**
+     * Sets the optional access control list for the new upload. If specified,
+     * cannedAcl will be ignored.
+     * 
+     * @param accessControlList
+     *            The access control list for the new upload.
+     */
+    public void setAccessControlList(AccessControlList accessControlList) {
+        this.accessControlList = accessControlList;
+    }
+    
+    /**
+     * Sets the optional access control list for the new upload. If specified,
+     * cannedAcl will be ignored. Returns this {@link InitiateMultipartUploadRequest},
+     * enabling additional method calls to be chained together.
+     * 
+     * @param accessControlList
+     *            The access control list for the new upload.
+     */
+    public InitiateMultipartUploadRequest withAccessControlList(AccessControlList accessControlList) {
+        setAccessControlList(accessControlList);
         return this;
     }
 

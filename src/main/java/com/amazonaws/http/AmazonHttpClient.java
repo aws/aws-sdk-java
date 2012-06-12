@@ -293,7 +293,7 @@ public class AmazonHttpClient {
                     }
                 }
             } catch (IOException ioe) {
-                log.warn("Unable to execute HTTP request: " + ioe.getMessage());
+                log.warn("Unable to execute HTTP request: " + ioe.getMessage(), ioe);
 
                 if (!shouldRetry(httpRequest, ioe, retryCount)) {
                     throw new AmazonClientException("Unable to execute HTTP request: " + ioe.getMessage(), ioe);

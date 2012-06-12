@@ -38,7 +38,7 @@ public class DescribeSpotInstanceRequestsRequestMarshaller implements Marshaller
 
         Request<DescribeSpotInstanceRequestsRequest> request = new DefaultRequest<DescribeSpotInstanceRequestsRequest>(describeSpotInstanceRequestsRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeSpotInstanceRequests");
-        request.addParameter("Version", "2012-04-01");
+        request.addParameter("Version", "2012-06-01");
 
 
         java.util.List<String> spotInstanceRequestIdsList = describeSpotInstanceRequestsRequest.getSpotInstanceRequestIds();

@@ -51,7 +51,7 @@ public class ScalingPolicy {
      * Specifies whether the <code>ScalingAdjustment</code> is an absolute
      * number or a percentage of the current capacity. Valid values are
      * <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
-     * <code>PercentOfCapacity</code>.
+     * <code>PercentChangeInCapacity</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
@@ -78,6 +78,12 @@ public class ScalingPolicy {
      * A list of CloudWatch Alarms related to the policy.
      */
     private java.util.List<Alarm> alarms;
+
+    /**
+     * Changes the <code>DesiredCapacity</code> of the Auto Scaling group by
+     * at least the specified value.
+     */
+    private Integer minAdjustmentStep;
 
     /**
      * The name of the Auto Scaling group associated with this scaling
@@ -227,7 +233,7 @@ public class ScalingPolicy {
      * Specifies whether the <code>ScalingAdjustment</code> is an absolute
      * number or a percentage of the current capacity. Valid values are
      * <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
-     * <code>PercentOfCapacity</code>.
+     * <code>PercentChangeInCapacity</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
@@ -236,7 +242,7 @@ public class ScalingPolicy {
      * @return Specifies whether the <code>ScalingAdjustment</code> is an absolute
      *         number or a percentage of the current capacity. Valid values are
      *         <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
-     *         <code>PercentOfCapacity</code>.
+     *         <code>PercentChangeInCapacity</code>.
      */
     public String getAdjustmentType() {
         return adjustmentType;
@@ -246,7 +252,7 @@ public class ScalingPolicy {
      * Specifies whether the <code>ScalingAdjustment</code> is an absolute
      * number or a percentage of the current capacity. Valid values are
      * <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
-     * <code>PercentOfCapacity</code>.
+     * <code>PercentChangeInCapacity</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
@@ -255,7 +261,7 @@ public class ScalingPolicy {
      * @param adjustmentType Specifies whether the <code>ScalingAdjustment</code> is an absolute
      *         number or a percentage of the current capacity. Valid values are
      *         <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
-     *         <code>PercentOfCapacity</code>.
+     *         <code>PercentChangeInCapacity</code>.
      */
     public void setAdjustmentType(String adjustmentType) {
         this.adjustmentType = adjustmentType;
@@ -265,7 +271,7 @@ public class ScalingPolicy {
      * Specifies whether the <code>ScalingAdjustment</code> is an absolute
      * number or a percentage of the current capacity. Valid values are
      * <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
-     * <code>PercentOfCapacity</code>.
+     * <code>PercentChangeInCapacity</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -276,7 +282,7 @@ public class ScalingPolicy {
      * @param adjustmentType Specifies whether the <code>ScalingAdjustment</code> is an absolute
      *         number or a percentage of the current capacity. Valid values are
      *         <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
-     *         <code>PercentOfCapacity</code>.
+     *         <code>PercentChangeInCapacity</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -443,6 +449,46 @@ public class ScalingPolicy {
     }
     
     /**
+     * Changes the <code>DesiredCapacity</code> of the Auto Scaling group by
+     * at least the specified value.
+     *
+     * @return Changes the <code>DesiredCapacity</code> of the Auto Scaling group by
+     *         at least the specified value.
+     */
+    public Integer getMinAdjustmentStep() {
+        return minAdjustmentStep;
+    }
+    
+    /**
+     * Changes the <code>DesiredCapacity</code> of the Auto Scaling group by
+     * at least the specified value.
+     *
+     * @param minAdjustmentStep Changes the <code>DesiredCapacity</code> of the Auto Scaling group by
+     *         at least the specified value.
+     */
+    public void setMinAdjustmentStep(Integer minAdjustmentStep) {
+        this.minAdjustmentStep = minAdjustmentStep;
+    }
+    
+    /**
+     * Changes the <code>DesiredCapacity</code> of the Auto Scaling group by
+     * at least the specified value.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param minAdjustmentStep Changes the <code>DesiredCapacity</code> of the Auto Scaling group by
+     *         at least the specified value.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public ScalingPolicy withMinAdjustmentStep(Integer minAdjustmentStep) {
+        this.minAdjustmentStep = minAdjustmentStep;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -461,6 +507,7 @@ public class ScalingPolicy {
         if (cooldown != null) sb.append("Cooldown: " + cooldown + ", ");
         if (policyARN != null) sb.append("PolicyARN: " + policyARN + ", ");
         if (alarms != null) sb.append("Alarms: " + alarms + ", ");
+        if (minAdjustmentStep != null) sb.append("MinAdjustmentStep: " + minAdjustmentStep + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -477,6 +524,7 @@ public class ScalingPolicy {
         hashCode = prime * hashCode + ((getCooldown() == null) ? 0 : getCooldown().hashCode()); 
         hashCode = prime * hashCode + ((getPolicyARN() == null) ? 0 : getPolicyARN().hashCode()); 
         hashCode = prime * hashCode + ((getAlarms() == null) ? 0 : getAlarms().hashCode()); 
+        hashCode = prime * hashCode + ((getMinAdjustmentStep() == null) ? 0 : getMinAdjustmentStep().hashCode()); 
         return hashCode;
     }
     
@@ -502,6 +550,8 @@ public class ScalingPolicy {
         if (other.getPolicyARN() != null && other.getPolicyARN().equals(this.getPolicyARN()) == false) return false; 
         if (other.getAlarms() == null ^ this.getAlarms() == null) return false;
         if (other.getAlarms() != null && other.getAlarms().equals(this.getAlarms()) == false) return false; 
+        if (other.getMinAdjustmentStep() == null ^ this.getMinAdjustmentStep() == null) return false;
+        if (other.getMinAdjustmentStep() != null && other.getMinAdjustmentStep().equals(this.getMinAdjustmentStep()) == false) return false; 
         return true;
     }
     

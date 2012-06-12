@@ -73,6 +73,10 @@ public class BucketNameUtils {
         if ( bucketName.contains("-.") ||
              bucketName.contains(".-") )
             throw new IllegalArgumentException("Bucket name should not contain dashes next to periods");
+
+        if ( bucketName.contains(":") ||
+             bucketName.contains(":;") )
+            throw new IllegalArgumentException("Bucket name should not contain colons or semicolons");
     }
 
     /**
@@ -100,7 +104,7 @@ public class BucketNameUtils {
 
     /**
      * Convience method that allows the DNS rules to be altered for different SDKs.
-     */    
+     */
     public boolean isDNSBucketName(String bucketName) {
         return isValidV2BucketName( bucketName );
     }

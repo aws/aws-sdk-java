@@ -46,6 +46,14 @@ class RepeatableInputStreamRequestEntity extends BasicHttpEntity {
     /** Shared logger for more debugging information */
     private static final Log log = LogFactory.getLog(AmazonHttpClient.class);
 
+    /**
+     * Record the original exception if we do attempt a retry, so that if the
+     * retry fails, we can report the original exception. Otherwise, we're most
+     * likely masking the real exception with an error about not being able to
+     * reset far enough back in the input stream.
+     */
+    private IOException originalException;
+
 
     /**
      * Creates a new RepeatableInputStreamRequestEntity using the information
@@ -115,15 +123,25 @@ class RepeatableInputStreamRequestEntity extends BasicHttpEntity {
      * Resets the underlying InputStream if this isn't the first attempt to
      * write out the request, otherwise simply delegates to
      * InputStreamRequestEntity to write out the data.
+     * <p>
+     * If an error is encountered the first time we try to write the request
+     * entity, we remember the original exception, and report that as the root
+     * cause if we continue to encounter errors, rather than masking the
+     * original error.
      *
      * @see org.apache.commons.httpclient.methods.RequestEntity#writeRequest(java.io.OutputStream)
      */
     @Override
     public void writeTo(OutputStream output) throws IOException {
-        if (!firstAttempt && isRepeatable()) content.reset();
+        try {
+            if (!firstAttempt && isRepeatable()) content.reset();
 
-        firstAttempt = false;
-        inputStreamRequestEntity.writeTo(output);
+            firstAttempt = false;
+            inputStreamRequestEntity.writeTo(output);
+        } catch (IOException ioe) {
+            if (originalException == null) originalException = ioe;
+            throw originalException;
+        }
     }
 
 }

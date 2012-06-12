@@ -47,7 +47,7 @@ public class GeneratePresignedUrlRequest extends AmazonWebServiceRequest {
     /** The key of the object involved in this request */
     private String key;
 
-    /** The optional content-type (for PUT and POST) */
+    /** The optional Content-Type header that will be sent when the presigned URL is accessed */
     private String contentType;
 
     /**
@@ -362,6 +362,4 @@ public class GeneratePresignedUrlRequest extends AmazonWebServiceRequest {
         setContentType(contentType);
         return this;
     }
-
-
 }

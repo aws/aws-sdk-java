@@ -20,7 +20,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Reboots a previously provisioned RDS instance. This API results in the application of modified DBParameterGroup parameters with ApplyStatus of
  * pending-reboot to the RDS instance. This action is taken as soon as possible, and results in a momentary outage to the RDS instance during which the
- * RDS instance status is set to rebooting. A DBInstance event is created when the reboot is completed.
+ * RDS instance status is set to rebooting. If the RDS instance is configured for MultiAZ, it is possible that the reboot will be conducted through a
+ * failover. A DBInstance event is created when the reboot is completed.
  * </p>
  *
  * @see com.amazonaws.services.rds.AmazonRDS#rebootDBInstance(RebootDBInstanceRequest)
@@ -35,6 +36,13 @@ public class RebootDBInstanceRequest extends AmazonWebServiceRequest {
      * hyphens</li> </ul>
      */
     private String dBInstanceIdentifier;
+
+    /**
+     * When <code>true</code>, the reboot will be conducted through a MultiAZ
+     * failover. <p>Constraint: You cannot specify <code>true</code> if the
+     * instance is not configured for MultiAZ.
+     */
+    private Boolean forceFailover;
 
     /**
      * Default constructor for a new RebootDBInstanceRequest object.  Callers should use the
@@ -118,6 +126,65 @@ public class RebootDBInstanceRequest extends AmazonWebServiceRequest {
     
     
     /**
+     * When <code>true</code>, the reboot will be conducted through a MultiAZ
+     * failover. <p>Constraint: You cannot specify <code>true</code> if the
+     * instance is not configured for MultiAZ.
+     *
+     * @return When <code>true</code>, the reboot will be conducted through a MultiAZ
+     *         failover. <p>Constraint: You cannot specify <code>true</code> if the
+     *         instance is not configured for MultiAZ.
+     */
+    public Boolean isForceFailover() {
+        return forceFailover;
+    }
+    
+    /**
+     * When <code>true</code>, the reboot will be conducted through a MultiAZ
+     * failover. <p>Constraint: You cannot specify <code>true</code> if the
+     * instance is not configured for MultiAZ.
+     *
+     * @param forceFailover When <code>true</code>, the reboot will be conducted through a MultiAZ
+     *         failover. <p>Constraint: You cannot specify <code>true</code> if the
+     *         instance is not configured for MultiAZ.
+     */
+    public void setForceFailover(Boolean forceFailover) {
+        this.forceFailover = forceFailover;
+    }
+    
+    /**
+     * When <code>true</code>, the reboot will be conducted through a MultiAZ
+     * failover. <p>Constraint: You cannot specify <code>true</code> if the
+     * instance is not configured for MultiAZ.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param forceFailover When <code>true</code>, the reboot will be conducted through a MultiAZ
+     *         failover. <p>Constraint: You cannot specify <code>true</code> if the
+     *         instance is not configured for MultiAZ.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public RebootDBInstanceRequest withForceFailover(Boolean forceFailover) {
+        this.forceFailover = forceFailover;
+        return this;
+    }
+    
+    
+    /**
+     * When <code>true</code>, the reboot will be conducted through a MultiAZ
+     * failover. <p>Constraint: You cannot specify <code>true</code> if the
+     * instance is not configured for MultiAZ.
+     *
+     * @return When <code>true</code>, the reboot will be conducted through a MultiAZ
+     *         failover. <p>Constraint: You cannot specify <code>true</code> if the
+     *         instance is not configured for MultiAZ.
+     */
+    public Boolean getForceFailover() {
+        return forceFailover;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -130,6 +197,7 @@ public class RebootDBInstanceRequest extends AmazonWebServiceRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (dBInstanceIdentifier != null) sb.append("DBInstanceIdentifier: " + dBInstanceIdentifier + ", ");
+        if (forceFailover != null) sb.append("ForceFailover: " + forceFailover + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -140,6 +208,7 @@ public class RebootDBInstanceRequest extends AmazonWebServiceRequest {
         int hashCode = 1;
         
         hashCode = prime * hashCode + ((getDBInstanceIdentifier() == null) ? 0 : getDBInstanceIdentifier().hashCode()); 
+        hashCode = prime * hashCode + ((isForceFailover() == null) ? 0 : isForceFailover().hashCode()); 
         return hashCode;
     }
     
@@ -153,6 +222,8 @@ public class RebootDBInstanceRequest extends AmazonWebServiceRequest {
         
         if (other.getDBInstanceIdentifier() == null ^ this.getDBInstanceIdentifier() == null) return false;
         if (other.getDBInstanceIdentifier() != null && other.getDBInstanceIdentifier().equals(this.getDBInstanceIdentifier()) == false) return false; 
+        if (other.isForceFailover() == null ^ this.isForceFailover() == null) return false;
+        if (other.isForceFailover() != null && other.isForceFailover().equals(this.isForceFailover()) == false) return false; 
         return true;
     }
     

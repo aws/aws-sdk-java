@@ -86,6 +86,12 @@ public class CopyObjectRequest extends AmazonWebServiceRequest {
 
     /** Optional field specifying the ACL for the new object */
     private CannedAccessControlList cannedACL;
+    
+    /**
+     * An optional access control list to apply to the new object. If specified,
+     * cannedAcl will be ignored.
+     */
+    private AccessControlList accessControlList;
 
     /**
      * Optional list of ETag values that constrain the copy request to only be
@@ -578,6 +584,38 @@ public class CopyObjectRequest extends AmazonWebServiceRequest {
      */
     public CopyObjectRequest withCannedAccessControlList(CannedAccessControlList cannedACL) {
         setCannedAccessControlList(cannedACL);
+        return this;
+    }
+    
+    /**
+     * Returns the optional access control list for the new object. If
+     * specified, cannedAcl will be ignored.
+     */
+    public AccessControlList getAccessControlList() {
+        return accessControlList;
+    }
+    
+    /**
+     * Sets the optional access control list for the new object. If specified,
+     * cannedAcl will be ignored.
+     * 
+     * @param accessControlList
+     *            The access control list for the new object.
+     */
+    public void setAccessControlList(AccessControlList accessControlList) {
+        this.accessControlList = accessControlList;
+    }
+    
+    /**
+     * Sets the optional access control list for the new object. If specified,
+     * cannedAcl will be ignored. Returns this {@link CopyObjectRequest},
+     * enabling additional method calls to be chained together.
+     * 
+     * @param accessControlList
+     *            The access control list for the new object.
+     */
+    public CopyObjectRequest withAccessControlList(AccessControlList accessControlList) {
+        setAccessControlList(accessControlList);
         return this;
     }
 

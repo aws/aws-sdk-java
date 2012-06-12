@@ -38,7 +38,7 @@ public class RestoreDBInstanceFromDBSnapshotRequestMarshaller implements Marshal
 
         Request<RestoreDBInstanceFromDBSnapshotRequest> request = new DefaultRequest<RestoreDBInstanceFromDBSnapshotRequest>(restoreDBInstanceFromDBSnapshotRequest, "AmazonRDS");
         request.addParameter("Action", "RestoreDBInstanceFromDBSnapshot");
-        request.addParameter("Version", "2012-01-15");
+        request.addParameter("Version", "2012-04-23");
 
         if (restoreDBInstanceFromDBSnapshotRequest.getDBInstanceIdentifier() != null) {
             request.addParameter("DBInstanceIdentifier", StringUtils.fromString(restoreDBInstanceFromDBSnapshotRequest.getDBInstanceIdentifier()));
@@ -72,6 +72,9 @@ public class RestoreDBInstanceFromDBSnapshotRequestMarshaller implements Marshal
         }
         if (restoreDBInstanceFromDBSnapshotRequest.getEngine() != null) {
             request.addParameter("Engine", StringUtils.fromString(restoreDBInstanceFromDBSnapshotRequest.getEngine()));
+        }
+        if (restoreDBInstanceFromDBSnapshotRequest.getOptionGroupName() != null) {
+            request.addParameter("OptionGroupName", StringUtils.fromString(restoreDBInstanceFromDBSnapshotRequest.getOptionGroupName()));
         }
 
 

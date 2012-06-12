@@ -90,6 +90,14 @@ public class LaunchConfigurationStaxUnmarshaller implements Unmarshaller<LaunchC
                     launchConfiguration.setInstanceMonitoring(InstanceMonitoringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("SpotPrice", targetDepth)) {
+                    launchConfiguration.setSpotPrice(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("IamInstanceProfile", targetDepth)) {
+                    launchConfiguration.setIamInstanceProfile(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
                 if (context.testExpression("CreatedTime", targetDepth)) {
                     launchConfiguration.setCreatedTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

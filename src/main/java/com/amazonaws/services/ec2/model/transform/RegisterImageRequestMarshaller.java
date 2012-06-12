@@ -38,7 +38,7 @@ public class RegisterImageRequestMarshaller implements Marshaller<Request<Regist
 
         Request<RegisterImageRequest> request = new DefaultRequest<RegisterImageRequest>(registerImageRequest, "AmazonEC2");
         request.addParameter("Action", "RegisterImage");
-        request.addParameter("Version", "2012-04-01");
+        request.addParameter("Version", "2012-06-01");
 
         if (registerImageRequest.getImageLocation() != null) {
             request.addParameter("ImageLocation", StringUtils.fromString(registerImageRequest.getImageLocation()));

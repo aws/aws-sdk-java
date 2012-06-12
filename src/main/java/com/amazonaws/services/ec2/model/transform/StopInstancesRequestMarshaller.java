@@ -38,7 +38,7 @@ public class StopInstancesRequestMarshaller implements Marshaller<Request<StopIn
 
         Request<StopInstancesRequest> request = new DefaultRequest<StopInstancesRequest>(stopInstancesRequest, "AmazonEC2");
         request.addParameter("Action", "StopInstances");
-        request.addParameter("Version", "2012-04-01");
+        request.addParameter("Version", "2012-06-01");
 
 
         java.util.List<String> instanceIdsList = stopInstancesRequest.getInstanceIds();

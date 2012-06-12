@@ -38,7 +38,7 @@ public class DescribeReservedDBInstancesOfferingsRequestMarshaller implements Ma
 
         Request<DescribeReservedDBInstancesOfferingsRequest> request = new DefaultRequest<DescribeReservedDBInstancesOfferingsRequest>(describeReservedDBInstancesOfferingsRequest, "AmazonRDS");
         request.addParameter("Action", "DescribeReservedDBInstancesOfferings");
-        request.addParameter("Version", "2012-01-15");
+        request.addParameter("Version", "2012-04-23");
 
         if (describeReservedDBInstancesOfferingsRequest.getReservedDBInstancesOfferingId() != null) {
             request.addParameter("ReservedDBInstancesOfferingId", StringUtils.fromString(describeReservedDBInstancesOfferingsRequest.getReservedDBInstancesOfferingId()));

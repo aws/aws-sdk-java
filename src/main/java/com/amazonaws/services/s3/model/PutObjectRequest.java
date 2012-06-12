@@ -119,10 +119,16 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
 
     /**
      * An optional pre-configured access control policy to use for the new
-     * object.
+     * object.  Ignored in favor of accessControlList, if present.
      */
     private CannedAccessControlList cannedAcl;
-
+    
+    /**
+     * An optional access control list to apply to the new object. If specified,
+     * cannedAcl will be ignored.
+     */
+    private AccessControlList accessControlList;
+   
     /**
      * The optional Amazon S3 storage class to use when storing the new object.
      * If not specified, the default, standard storage class will be used.
@@ -598,6 +604,38 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
      */
     public PutObjectRequest withCannedAcl(CannedAccessControlList cannedAcl) {
         setCannedAcl(cannedAcl);
+        return this;
+    }
+    
+    /**
+     * Returns the optional access control list for the new object. If
+     * specified, cannedAcl will be ignored.
+     */
+    public AccessControlList getAccessControlList() {
+        return accessControlList;
+    }
+    
+    /**
+     * Sets the optional access control list for the new object. If specified,
+     * cannedAcl will be ignored.
+     * 
+     * @param accessControlList
+     *            The access control list for the new object.
+     */
+    public void setAccessControlList(AccessControlList accessControlList) {
+        this.accessControlList = accessControlList;
+    }
+    
+    /**
+     * Sets the optional access control list for the new object. If specified,
+     * cannedAcl will be ignored. Returns this {@link PutObjectRequest},
+     * enabling additional method calls to be chained together.
+     * 
+     * @param accessControlList
+     *            The access control list for the new object.
+     */
+    public PutObjectRequest withAccessControlList(AccessControlList accessControlList) {
+        setAccessControlList(accessControlList);
         return this;
     }
 

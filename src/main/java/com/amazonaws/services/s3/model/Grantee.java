@@ -25,6 +25,12 @@ package com.amazonaws.services.s3.model;
 public interface Grantee {
 
     /**
+     * Returns the identifier for the type of this grant, to be used when
+     * specifying grants in the header of a request.
+     */
+    public String getTypeIdentifier();
+    
+    /**
      * Sets the identifier for this grantee. The meaning of the identifier is
      * specific to each implementation of the {@link Grantee}.
      *

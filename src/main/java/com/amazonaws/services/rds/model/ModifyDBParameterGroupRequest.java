@@ -22,7 +22,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * ApplyMethod. A maximum of 20 parameters can be modified in a single request.
  * </p>
  * <p>
- * <b>NOTE:</b> The apply-immediate method can only be used for dynamic parameters; the pending-reboot method can be used for either dynamic or static
+ * <b>NOTE:</b> The apply-immediate method can be used only for dynamic parameters; the pending-reboot method can be used with MySQL and Oracle DB
+ * Instances for either dynamic or static parameters. For Microsoft SQL Server DB Instances, the pending-reboot method can be used only for static
  * parameters.
  * </p>
  *

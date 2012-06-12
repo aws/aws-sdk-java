@@ -65,6 +65,13 @@ public class DescribeDBEngineVersionsRequest extends AmazonWebServiceRequest {
     private Boolean defaultOnly;
 
     /**
+     * If this parameter is specified, and if the requested engine supports
+     * the CharacterSetName parameter for CreateDBInstance, the response
+     * includes a list of supported character sets for each engine version.
+     */
+    private Boolean listSupportedCharacterSets;
+
+    /**
      * Default constructor for a new DescribeDBEngineVersionsRequest object.  Callers should use the
      * setter or fluent setter (with...) methods to initialize this object after creating it.
      */
@@ -340,6 +347,65 @@ public class DescribeDBEngineVersionsRequest extends AmazonWebServiceRequest {
     }
     
     /**
+     * If this parameter is specified, and if the requested engine supports
+     * the CharacterSetName parameter for CreateDBInstance, the response
+     * includes a list of supported character sets for each engine version.
+     *
+     * @return If this parameter is specified, and if the requested engine supports
+     *         the CharacterSetName parameter for CreateDBInstance, the response
+     *         includes a list of supported character sets for each engine version.
+     */
+    public Boolean isListSupportedCharacterSets() {
+        return listSupportedCharacterSets;
+    }
+    
+    /**
+     * If this parameter is specified, and if the requested engine supports
+     * the CharacterSetName parameter for CreateDBInstance, the response
+     * includes a list of supported character sets for each engine version.
+     *
+     * @param listSupportedCharacterSets If this parameter is specified, and if the requested engine supports
+     *         the CharacterSetName parameter for CreateDBInstance, the response
+     *         includes a list of supported character sets for each engine version.
+     */
+    public void setListSupportedCharacterSets(Boolean listSupportedCharacterSets) {
+        this.listSupportedCharacterSets = listSupportedCharacterSets;
+    }
+    
+    /**
+     * If this parameter is specified, and if the requested engine supports
+     * the CharacterSetName parameter for CreateDBInstance, the response
+     * includes a list of supported character sets for each engine version.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param listSupportedCharacterSets If this parameter is specified, and if the requested engine supports
+     *         the CharacterSetName parameter for CreateDBInstance, the response
+     *         includes a list of supported character sets for each engine version.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public DescribeDBEngineVersionsRequest withListSupportedCharacterSets(Boolean listSupportedCharacterSets) {
+        this.listSupportedCharacterSets = listSupportedCharacterSets;
+        return this;
+    }
+    
+    
+    /**
+     * If this parameter is specified, and if the requested engine supports
+     * the CharacterSetName parameter for CreateDBInstance, the response
+     * includes a list of supported character sets for each engine version.
+     *
+     * @return If this parameter is specified, and if the requested engine supports
+     *         the CharacterSetName parameter for CreateDBInstance, the response
+     *         includes a list of supported character sets for each engine version.
+     */
+    public Boolean getListSupportedCharacterSets() {
+        return listSupportedCharacterSets;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -357,6 +423,7 @@ public class DescribeDBEngineVersionsRequest extends AmazonWebServiceRequest {
         if (maxRecords != null) sb.append("MaxRecords: " + maxRecords + ", ");
         if (marker != null) sb.append("Marker: " + marker + ", ");
         if (defaultOnly != null) sb.append("DefaultOnly: " + defaultOnly + ", ");
+        if (listSupportedCharacterSets != null) sb.append("ListSupportedCharacterSets: " + listSupportedCharacterSets + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -372,6 +439,7 @@ public class DescribeDBEngineVersionsRequest extends AmazonWebServiceRequest {
         hashCode = prime * hashCode + ((getMaxRecords() == null) ? 0 : getMaxRecords().hashCode()); 
         hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode()); 
         hashCode = prime * hashCode + ((isDefaultOnly() == null) ? 0 : isDefaultOnly().hashCode()); 
+        hashCode = prime * hashCode + ((isListSupportedCharacterSets() == null) ? 0 : isListSupportedCharacterSets().hashCode()); 
         return hashCode;
     }
     
@@ -395,6 +463,8 @@ public class DescribeDBEngineVersionsRequest extends AmazonWebServiceRequest {
         if (other.getMarker() != null && other.getMarker().equals(this.getMarker()) == false) return false; 
         if (other.isDefaultOnly() == null ^ this.isDefaultOnly() == null) return false;
         if (other.isDefaultOnly() != null && other.isDefaultOnly().equals(this.isDefaultOnly()) == false) return false; 
+        if (other.isListSupportedCharacterSets() == null ^ this.isListSupportedCharacterSets() == null) return false;
+        if (other.isListSupportedCharacterSets() != null && other.isListSupportedCharacterSets().equals(this.isListSupportedCharacterSets()) == false) return false; 
         return true;
     }
     

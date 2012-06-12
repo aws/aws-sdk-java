@@ -72,6 +72,17 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest {
     private Integer cooldown;
 
     /**
+     * Used with <code>AdjustmentType</code> with the value
+     * <code>PercentChangeInCapacity</code>, the scaling policy changes the
+     * <code>DesiredCapacity</code> of the Auto Scaling group by at least the
+     * specified value. <p> You will get a <code>ValidationError</code> if
+     * you use <code>MinAdjustmentStep</code> on a policy with an
+     * <code>AdjustmentType</code> other than
+     * <code>PercentChangeInCapacity</code>.
+     */
+    private Integer minAdjustmentStep;
+
+    /**
      * The name or ARN of the Auto Scaling group.
      * <p>
      * <b>Constraints:</b><br/>
@@ -326,6 +337,76 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest {
     
     
     /**
+     * Used with <code>AdjustmentType</code> with the value
+     * <code>PercentChangeInCapacity</code>, the scaling policy changes the
+     * <code>DesiredCapacity</code> of the Auto Scaling group by at least the
+     * specified value. <p> You will get a <code>ValidationError</code> if
+     * you use <code>MinAdjustmentStep</code> on a policy with an
+     * <code>AdjustmentType</code> other than
+     * <code>PercentChangeInCapacity</code>.
+     *
+     * @return Used with <code>AdjustmentType</code> with the value
+     *         <code>PercentChangeInCapacity</code>, the scaling policy changes the
+     *         <code>DesiredCapacity</code> of the Auto Scaling group by at least the
+     *         specified value. <p> You will get a <code>ValidationError</code> if
+     *         you use <code>MinAdjustmentStep</code> on a policy with an
+     *         <code>AdjustmentType</code> other than
+     *         <code>PercentChangeInCapacity</code>.
+     */
+    public Integer getMinAdjustmentStep() {
+        return minAdjustmentStep;
+    }
+    
+    /**
+     * Used with <code>AdjustmentType</code> with the value
+     * <code>PercentChangeInCapacity</code>, the scaling policy changes the
+     * <code>DesiredCapacity</code> of the Auto Scaling group by at least the
+     * specified value. <p> You will get a <code>ValidationError</code> if
+     * you use <code>MinAdjustmentStep</code> on a policy with an
+     * <code>AdjustmentType</code> other than
+     * <code>PercentChangeInCapacity</code>.
+     *
+     * @param minAdjustmentStep Used with <code>AdjustmentType</code> with the value
+     *         <code>PercentChangeInCapacity</code>, the scaling policy changes the
+     *         <code>DesiredCapacity</code> of the Auto Scaling group by at least the
+     *         specified value. <p> You will get a <code>ValidationError</code> if
+     *         you use <code>MinAdjustmentStep</code> on a policy with an
+     *         <code>AdjustmentType</code> other than
+     *         <code>PercentChangeInCapacity</code>.
+     */
+    public void setMinAdjustmentStep(Integer minAdjustmentStep) {
+        this.minAdjustmentStep = minAdjustmentStep;
+    }
+    
+    /**
+     * Used with <code>AdjustmentType</code> with the value
+     * <code>PercentChangeInCapacity</code>, the scaling policy changes the
+     * <code>DesiredCapacity</code> of the Auto Scaling group by at least the
+     * specified value. <p> You will get a <code>ValidationError</code> if
+     * you use <code>MinAdjustmentStep</code> on a policy with an
+     * <code>AdjustmentType</code> other than
+     * <code>PercentChangeInCapacity</code>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param minAdjustmentStep Used with <code>AdjustmentType</code> with the value
+     *         <code>PercentChangeInCapacity</code>, the scaling policy changes the
+     *         <code>DesiredCapacity</code> of the Auto Scaling group by at least the
+     *         specified value. <p> You will get a <code>ValidationError</code> if
+     *         you use <code>MinAdjustmentStep</code> on a policy with an
+     *         <code>AdjustmentType</code> other than
+     *         <code>PercentChangeInCapacity</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public PutScalingPolicyRequest withMinAdjustmentStep(Integer minAdjustmentStep) {
+        this.minAdjustmentStep = minAdjustmentStep;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -342,6 +423,7 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest {
         if (scalingAdjustment != null) sb.append("ScalingAdjustment: " + scalingAdjustment + ", ");
         if (adjustmentType != null) sb.append("AdjustmentType: " + adjustmentType + ", ");
         if (cooldown != null) sb.append("Cooldown: " + cooldown + ", ");
+        if (minAdjustmentStep != null) sb.append("MinAdjustmentStep: " + minAdjustmentStep + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -356,6 +438,7 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest {
         hashCode = prime * hashCode + ((getScalingAdjustment() == null) ? 0 : getScalingAdjustment().hashCode()); 
         hashCode = prime * hashCode + ((getAdjustmentType() == null) ? 0 : getAdjustmentType().hashCode()); 
         hashCode = prime * hashCode + ((getCooldown() == null) ? 0 : getCooldown().hashCode()); 
+        hashCode = prime * hashCode + ((getMinAdjustmentStep() == null) ? 0 : getMinAdjustmentStep().hashCode()); 
         return hashCode;
     }
     
@@ -377,6 +460,8 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest {
         if (other.getAdjustmentType() != null && other.getAdjustmentType().equals(this.getAdjustmentType()) == false) return false; 
         if (other.getCooldown() == null ^ this.getCooldown() == null) return false;
         if (other.getCooldown() != null && other.getCooldown().equals(this.getCooldown()) == false) return false; 
+        if (other.getMinAdjustmentStep() == null ^ this.getMinAdjustmentStep() == null) return false;
+        if (other.getMinAdjustmentStep() != null && other.getMinAdjustmentStep().equals(this.getMinAdjustmentStep()) == false) return false; 
         return true;
     }
     

@@ -55,6 +55,9 @@ public class PutScalingPolicyRequestMarshaller implements Marshaller<Request<Put
         if (putScalingPolicyRequest.getCooldown() != null) {
             request.addParameter("Cooldown", StringUtils.fromInteger(putScalingPolicyRequest.getCooldown()));
         }
+        if (putScalingPolicyRequest.getMinAdjustmentStep() != null) {
+            request.addParameter("MinAdjustmentStep", StringUtils.fromInteger(putScalingPolicyRequest.getMinAdjustmentStep()));
+        }
 
 
         return request;

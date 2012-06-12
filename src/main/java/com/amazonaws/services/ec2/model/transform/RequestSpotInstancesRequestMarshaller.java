@@ -38,7 +38,7 @@ public class RequestSpotInstancesRequestMarshaller implements Marshaller<Request
 
         Request<RequestSpotInstancesRequest> request = new DefaultRequest<RequestSpotInstancesRequest>(requestSpotInstancesRequest, "AmazonEC2");
         request.addParameter("Action", "RequestSpotInstances");
-        request.addParameter("Version", "2012-04-01");
+        request.addParameter("Version", "2012-06-01");
 
         if (requestSpotInstancesRequest.getSpotPrice() != null) {
             request.addParameter("SpotPrice", StringUtils.fromString(requestSpotInstancesRequest.getSpotPrice()));
@@ -198,6 +198,15 @@ public class RequestSpotInstancesRequestMarshaller implements Marshaller<Request
                 }
 
                 networkInterfacesListIndex++;
+            }
+            IamInstanceProfileSpecification iamInstanceProfileSpecificationIamInstanceProfile = launchSpecificationLaunchSpecification.getIamInstanceProfile();
+            if (iamInstanceProfileSpecificationIamInstanceProfile != null) {
+                if (iamInstanceProfileSpecificationIamInstanceProfile.getArn() != null) {
+                    request.addParameter("LaunchSpecification.IamInstanceProfile.Arn", StringUtils.fromString(iamInstanceProfileSpecificationIamInstanceProfile.getArn()));
+                }
+                if (iamInstanceProfileSpecificationIamInstanceProfile.getName() != null) {
+                    request.addParameter("LaunchSpecification.IamInstanceProfile.Name", StringUtils.fromString(iamInstanceProfileSpecificationIamInstanceProfile.getName()));
+                }
             }
         }
 

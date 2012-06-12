@@ -15,36 +15,55 @@
 package com.amazonaws.services.identitymanagement.model;
 
 /**
- * Get Account Password Policy Result
+ * <p>
+ * Contains the result of a successful invocation of the GetAccountPasswordPolicy action.
+ * </p>
  */
 public class GetAccountPasswordPolicyResult {
 
+    /**
+     * The PasswordPolicy data type contains information about the account
+     * password policy. <p> This data type is used as a response element in
+     * the action <a>GetAccountPasswordPolicy</a>.
+     */
     private PasswordPolicy passwordPolicy;
 
     /**
-     * Returns the value of the PasswordPolicy property for this object.
+     * The PasswordPolicy data type contains information about the account
+     * password policy. <p> This data type is used as a response element in
+     * the action <a>GetAccountPasswordPolicy</a>.
      *
-     * @return The value of the PasswordPolicy property for this object.
+     * @return The PasswordPolicy data type contains information about the account
+     *         password policy. <p> This data type is used as a response element in
+     *         the action <a>GetAccountPasswordPolicy</a>.
      */
     public PasswordPolicy getPasswordPolicy() {
         return passwordPolicy;
     }
     
     /**
-     * Sets the value of the PasswordPolicy property for this object.
+     * The PasswordPolicy data type contains information about the account
+     * password policy. <p> This data type is used as a response element in
+     * the action <a>GetAccountPasswordPolicy</a>.
      *
-     * @param passwordPolicy The new value for the PasswordPolicy property for this object.
+     * @param passwordPolicy The PasswordPolicy data type contains information about the account
+     *         password policy. <p> This data type is used as a response element in
+     *         the action <a>GetAccountPasswordPolicy</a>.
      */
     public void setPasswordPolicy(PasswordPolicy passwordPolicy) {
         this.passwordPolicy = passwordPolicy;
     }
     
     /**
-     * Sets the value of the PasswordPolicy property for this object.
+     * The PasswordPolicy data type contains information about the account
+     * password policy. <p> This data type is used as a response element in
+     * the action <a>GetAccountPasswordPolicy</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param passwordPolicy The new value for the PasswordPolicy property for this object.
+     * @param passwordPolicy The PasswordPolicy data type contains information about the account
+     *         password policy. <p> This data type is used as a response element in
+     *         the action <a>GetAccountPasswordPolicy</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

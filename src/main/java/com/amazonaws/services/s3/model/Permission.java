@@ -29,14 +29,14 @@ public enum Permission {
      * convenience.
      * </p>
      */
-    FullControl("FULL_CONTROL"),
+    FullControl("FULL_CONTROL", "x-amz-grant-full-control"),
 
     /**
      * Grants permission to list the bucket when applied to a bucket.
      * Grants permission to read object data
      * and/or metadata when applied to an object.
      */
-    Read("READ"),
+    Read("READ", "x-amz-grant-read"),
 
     /**
      * Grants permission to create, overwrite, and
@@ -45,7 +45,7 @@ public enum Permission {
      * This permission is not supported for objects.
      * </p>
      */
-    Write("WRITE"),
+    Write("WRITE", "x-amz-grant-write"),
 
     /**
      * Grants permission to read the ACL for the applicable bucket or object.
@@ -53,7 +53,7 @@ public enum Permission {
      * The owner of a bucket or object always implicitly has this permission.
      * </p>
      */
-    ReadAcp("READ_ACP"),
+    ReadAcp("READ_ACP", "x-amz-grant-read-acp"),
 
     /**
      * Gives permission to overwrite the ACP for the applicable bucket or
@@ -66,12 +66,21 @@ public enum Permission {
      * the grant recipient can make any changes to the ACP.
      * </p>
      */
-    WriteAcp("WRITE_ACP");
+    WriteAcp("WRITE_ACP", "x-amz-grant-write-acp");
     
     private String permissionString;
+    private String headerName;
     
-    private Permission(String permissionString) {
+    private Permission(String permissionString, String headerName) {
         this.permissionString = permissionString;
+        this.headerName = headerName;
+    }
+
+    /**
+     * Returns the name of the header used to grant this permission.
+     */
+    public String getHeaderName() {
+        return headerName;
     }
 
     /**

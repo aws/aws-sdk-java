@@ -45,8 +45,8 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
 
     /**
      * The compute and memory capacity of the Amazon RDS DB instance.
-     * <p>Valid Values: <code>db.m1.small | db.m1.large | db.m1.xlarge |
-     * db.m2.2xlarge | db.m2.4xlarge</code>
+     * <p>Valid Values: <code>db.t1.micro | db.m1.small | db.m1.large |
+     * db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge</code>
      */
     private String dBInstanceClass;
 
@@ -104,6 +104,8 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      * source <p>Example: <code>oracle-ee</code>
      */
     private String engine;
+
+    private String optionGroupName;
 
     /**
      * Default constructor for a new RestoreDBInstanceFromDBSnapshotRequest object.  Callers should use the
@@ -247,12 +249,12 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     
     /**
      * The compute and memory capacity of the Amazon RDS DB instance.
-     * <p>Valid Values: <code>db.m1.small | db.m1.large | db.m1.xlarge |
-     * db.m2.2xlarge | db.m2.4xlarge</code>
+     * <p>Valid Values: <code>db.t1.micro | db.m1.small | db.m1.large |
+     * db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge</code>
      *
      * @return The compute and memory capacity of the Amazon RDS DB instance.
-     *         <p>Valid Values: <code>db.m1.small | db.m1.large | db.m1.xlarge |
-     *         db.m2.2xlarge | db.m2.4xlarge</code>
+     *         <p>Valid Values: <code>db.t1.micro | db.m1.small | db.m1.large |
+     *         db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge</code>
      */
     public String getDBInstanceClass() {
         return dBInstanceClass;
@@ -260,12 +262,12 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     
     /**
      * The compute and memory capacity of the Amazon RDS DB instance.
-     * <p>Valid Values: <code>db.m1.small | db.m1.large | db.m1.xlarge |
-     * db.m2.2xlarge | db.m2.4xlarge</code>
+     * <p>Valid Values: <code>db.t1.micro | db.m1.small | db.m1.large |
+     * db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge</code>
      *
      * @param dBInstanceClass The compute and memory capacity of the Amazon RDS DB instance.
-     *         <p>Valid Values: <code>db.m1.small | db.m1.large | db.m1.xlarge |
-     *         db.m2.2xlarge | db.m2.4xlarge</code>
+     *         <p>Valid Values: <code>db.t1.micro | db.m1.small | db.m1.large |
+     *         db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge</code>
      */
     public void setDBInstanceClass(String dBInstanceClass) {
         this.dBInstanceClass = dBInstanceClass;
@@ -273,14 +275,14 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     
     /**
      * The compute and memory capacity of the Amazon RDS DB instance.
-     * <p>Valid Values: <code>db.m1.small | db.m1.large | db.m1.xlarge |
-     * db.m2.2xlarge | db.m2.4xlarge</code>
+     * <p>Valid Values: <code>db.t1.micro | db.m1.small | db.m1.large |
+     * db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dBInstanceClass The compute and memory capacity of the Amazon RDS DB instance.
-     *         <p>Valid Values: <code>db.m1.small | db.m1.large | db.m1.xlarge |
-     *         db.m2.2xlarge | db.m2.4xlarge</code>
+     *         <p>Valid Values: <code>db.t1.micro | db.m1.small | db.m1.large |
+     *         db.m1.xlarge | db.m2.2xlarge | db.m2.4xlarge</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -678,6 +680,40 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     
     
     /**
+     * Returns the value of the OptionGroupName property for this object.
+     *
+     * @return The value of the OptionGroupName property for this object.
+     */
+    public String getOptionGroupName() {
+        return optionGroupName;
+    }
+    
+    /**
+     * Sets the value of the OptionGroupName property for this object.
+     *
+     * @param optionGroupName The new value for the OptionGroupName property for this object.
+     */
+    public void setOptionGroupName(String optionGroupName) {
+        this.optionGroupName = optionGroupName;
+    }
+    
+    /**
+     * Sets the value of the OptionGroupName property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param optionGroupName The new value for the OptionGroupName property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public RestoreDBInstanceFromDBSnapshotRequest withOptionGroupName(String optionGroupName) {
+        this.optionGroupName = optionGroupName;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -700,6 +736,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
         if (licenseModel != null) sb.append("LicenseModel: " + licenseModel + ", ");
         if (dBName != null) sb.append("DBName: " + dBName + ", ");
         if (engine != null) sb.append("Engine: " + engine + ", ");
+        if (optionGroupName != null) sb.append("OptionGroupName: " + optionGroupName + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -720,6 +757,7 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getLicenseModel() == null) ? 0 : getLicenseModel().hashCode()); 
         hashCode = prime * hashCode + ((getDBName() == null) ? 0 : getDBName().hashCode()); 
         hashCode = prime * hashCode + ((getEngine() == null) ? 0 : getEngine().hashCode()); 
+        hashCode = prime * hashCode + ((getOptionGroupName() == null) ? 0 : getOptionGroupName().hashCode()); 
         return hashCode;
     }
     
@@ -753,6 +791,8 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
         if (other.getDBName() != null && other.getDBName().equals(this.getDBName()) == false) return false; 
         if (other.getEngine() == null ^ this.getEngine() == null) return false;
         if (other.getEngine() != null && other.getEngine().equals(this.getEngine()) == false) return false; 
+        if (other.getOptionGroupName() == null ^ this.getOptionGroupName() == null) return false;
+        if (other.getOptionGroupName() != null && other.getOptionGroupName().equals(this.getOptionGroupName()) == false) return false; 
         return true;
     }
     

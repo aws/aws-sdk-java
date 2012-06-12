@@ -21,9 +21,9 @@ import com.amazonaws.services.autoscaling.model.*;
 /**
  * Interface for accessing AmazonAutoScaling.
  * Auto Scaling <p>
- * This is the <i>Auto Scaling API Reference</i> . This guide provides detailed information about Auto Scaling actions, data types, parameters, and
- * errors. For detailed information about Auto Scaling features and their associated API calls, go to the <a
- * href="http://docs.amazonwebservices.com/AutoScaling/latest/DeveloperGuide/"> Auto Scaling Developer Guide </a> .
+ * This guide provides detailed information about Auto Scaling actions, data types, parameters, and errors. For detailed information about Auto Scaling
+ * features and their associated API calls, go to the <a href="http://docs.amazonwebservices.com/AutoScaling/latest/DeveloperGuide/"> Auto Scaling
+ * Developer Guide </a> .
  * </p>
  * <p>
  * Auto Scaling is a web service designed to automatically launch or terminate Amazon Elastic Compute Cloud (Amazon EC2) instances based on user-defined
@@ -771,10 +771,15 @@ public interface AmazonAutoScaling {
      * call returns. Triggers that are currently in progress aren't affected.
      * </p>
      * <p>
-     * <b>NOTE:</b> If the new values are specified for the MinSize or
-     * MaxSize parameters, then there will be an implicit call to
-     * SetDesiredCapacity to set the group to the new MaxSize. All optional
-     * parameters are left unchanged if not passed in the request.
+     * <b>NOTE:</b> If a new value is specified for MinSize without
+     * specifying the value for DesiredCapacity, and if the new MinSize is
+     * larger than the current size of the Auto Scaling Group, there will be
+     * an implicit call to SetDesiredCapacity to set the group to the new
+     * MinSize. If a new value is specified for MaxSize without specifying
+     * the value for DesiredCapacity, and the new MaxSize is smaller than the
+     * current size of the Auto Scaling Group, there will be an implicit call
+     * to SetDesiredCapacity to set the group to the new MaxSize. All other
+     * optional parameters are left unchanged if not passed in the request.
      * </p>
      *
      * @param updateAutoScalingGroupRequest Container for the necessary

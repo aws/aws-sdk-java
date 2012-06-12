@@ -38,7 +38,7 @@ public class DescribeDBSnapshotsRequestMarshaller implements Marshaller<Request<
 
         Request<DescribeDBSnapshotsRequest> request = new DefaultRequest<DescribeDBSnapshotsRequest>(describeDBSnapshotsRequest, "AmazonRDS");
         request.addParameter("Action", "DescribeDBSnapshots");
-        request.addParameter("Version", "2012-01-15");
+        request.addParameter("Version", "2012-04-23");
 
         if (describeDBSnapshotsRequest.getDBInstanceIdentifier() != null) {
             request.addParameter("DBInstanceIdentifier", StringUtils.fromString(describeDBSnapshotsRequest.getDBInstanceIdentifier()));

@@ -67,11 +67,55 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      */
     protected final List<Unmarshaller<AmazonServiceException, Node>> exceptionUnmarshallers
             = new ArrayList<Unmarshaller<AmazonServiceException, Node>>();
-    
+
     
     /** AWS signer for authenticating requests. */
     private QueryStringSigner signer;
 
+
+    /**
+     * Constructs a new client to invoke service methods on
+     * AmazonEC2.  A credentials provider chain will be used
+     * that searches for credentials in this order:
+     * <ul>
+     *  <li> Environment Variables - AWS_ACCESS_KEY_ID and AWS_SECRET_KEY </li>
+     *  <li> Java System Properties - aws.accessKeyId and aws.secretKey </li>
+     *  <li> Instance profile credentials delivered through the Amazon EC2 metadata service </li>
+     * </ul>
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and will not
+     * return until the service call completes.
+     *
+     * @see DefaultAWSCredentialsProvider
+     */
+    public AmazonEC2Client() {
+        this(new DefaultAWSCredentialsProviderChain(), new ClientConfiguration());
+    }
+
+    /**
+     * Constructs a new client to invoke service methods on
+     * AmazonEC2.  A credentials provider chain will be used
+     * that searches for credentials in this order:
+     * <ul>
+     *  <li> Environment Variables - AWS_ACCESS_KEY_ID and AWS_SECRET_KEY </li>
+     *  <li> Java System Properties - aws.accessKeyId and aws.secretKey </li>
+     *  <li> Instance profile credentials delivered through the Amazon EC2 metadata service </li>
+     * </ul>
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and will not
+     * return until the service call completes.
+     *
+     * @param clientConfiguration The client configuration options controlling how this
+     *                       client connects to AmazonEC2
+     *                       (ex: proxy settings, retry counts, etc.).
+     *
+     * @see DefaultAWSCredentialsProvider
+     */
+    public AmazonEC2Client(ClientConfiguration clientConfiguration) {
+        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);
+    }
 
     /**
      * Constructs a new client to invoke service methods on
@@ -108,7 +152,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
         init();
     }
-    
+
     /**
      * Constructs a new client to invoke service methods on
      * AmazonEC2 using the specified AWS account credentials provider.
@@ -117,7 +161,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * All service calls made using this new client object are blocking, and will not
      * return until the service call completes.
      *
-     * @param awsCredentialsProvider 
+     * @param awsCredentialsProvider
      *            The AWS credentials provider which will provide credentials
      *            to authenticate requests with AWS services.
      */
@@ -134,7 +178,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      * All service calls made using this new client object are blocking, and will not
      * return until the service call completes.
      *
-     * @param awsCredentialsProvider 
+     * @param awsCredentialsProvider
      *            The AWS credentials provider which will provide credentials
      *            to authenticate requests with AWS services.
      * @param clientConfiguration The client configuration options controlling how this
@@ -147,7 +191,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         init();
     }
 
-    private void init() { 
+    private void init() {
         
         exceptionUnmarshallers.add(new LegacyErrorUnmarshaller());
         setEndpoint("ec2.amazonaws.com");
@@ -159,7 +203,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 		requestHandlers.addAll(chainFactory.newRequestHandlerChain(
                 "/com/amazonaws/services/ec2/request.handlers"));
     }
-    
+
     
     /**
      * <p>
@@ -415,6 +459,30 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             throws AmazonServiceException, AmazonClientException {
         Request<DeleteSecurityGroupRequest> request = new DeleteSecurityGroupRequestMarshaller().marshall(deleteSecurityGroupRequest);
         invoke(request, null);
+    }
+    
+    /**
+     *
+     * @param createInstanceExportTaskRequest Container for the necessary
+     *           parameters to execute the CreateInstanceExportTask service method on
+     *           AmazonEC2.
+     * 
+     * @return The response from the CreateInstanceExportTask service method,
+     *         as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public CreateInstanceExportTaskResult createInstanceExportTask(CreateInstanceExportTaskRequest createInstanceExportTaskRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<CreateInstanceExportTaskRequest> request = new CreateInstanceExportTaskRequestMarshaller().marshall(createInstanceExportTaskRequest);
+        return invoke(request, new CreateInstanceExportTaskResultStaxUnmarshaller());
     }
     
     /**
@@ -1611,6 +1679,30 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             throws AmazonServiceException, AmazonClientException {
         Request<CreateNetworkAclEntryRequest> request = new CreateNetworkAclEntryRequestMarshaller().marshall(createNetworkAclEntryRequest);
         invoke(request, null);
+    }
+    
+    /**
+     *
+     * @param describeExportTasksRequest Container for the necessary
+     *           parameters to execute the DescribeExportTasks service method on
+     *           AmazonEC2.
+     * 
+     * @return The response from the DescribeExportTasks service method, as
+     *         returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeExportTasksResult describeExportTasks(DescribeExportTasksRequest describeExportTasksRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<DescribeExportTasksRequest> request = new DescribeExportTasksRequestMarshaller().marshall(describeExportTasksRequest);
+        return invoke(request, new DescribeExportTasksResultStaxUnmarshaller());
     }
     
     /**
@@ -2912,6 +3004,26 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             throws AmazonServiceException, AmazonClientException {
         Request<DescribeCustomerGatewaysRequest> request = new DescribeCustomerGatewaysRequestMarshaller().marshall(describeCustomerGatewaysRequest);
         return invoke(request, new DescribeCustomerGatewaysResultStaxUnmarshaller());
+    }
+    
+    /**
+     *
+     * @param cancelExportTaskRequest Container for the necessary parameters
+     *           to execute the CancelExportTask service method on AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void cancelExportTask(CancelExportTaskRequest cancelExportTaskRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<CancelExportTaskRequest> request = new CancelExportTaskRequestMarshaller().marshall(cancelExportTaskRequest);
+        invoke(request, null);
     }
     
     /**
@@ -4757,6 +4869,24 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     }
     
     /**
+     * 
+     * @return The response from the DescribeExportTasks service method, as
+     *         returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeExportTasksResult describeExportTasks() throws AmazonServiceException, AmazonClientException {
+        return describeExportTasks(new DescribeExportTasksRequest());
+    }
+    
+    /**
      * <p>
      * Describes the status of the indicated volume or, in lieu of any
      * specified, all volumes belonging to the caller. Volumes that have been
@@ -5662,7 +5792,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             request.addParameter(entry.getKey(), entry.getValue());
         }
 
-        AWSCredentials credentials = awsCredentialsProvider.getCredentials(); 
+        AWSCredentials credentials = awsCredentialsProvider.getCredentials();
         AmazonWebServiceRequest originalRequest = request.getOriginalRequest();
         if (originalRequest != null && originalRequest.getRequestCredentials() != null) {
         	credentials = originalRequest.getRequestCredentials();
@@ -5674,7 +5804,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         
         StaxResponseHandler<X> responseHandler = new StaxResponseHandler<X>(unmarshaller);
         DefaultErrorResponseHandler errorResponseHandler = new DefaultErrorResponseHandler(exceptionUnmarshallers);
-        
+
         return (X)client.execute(request, responseHandler, errorResponseHandler, executionContext);
     }
 }

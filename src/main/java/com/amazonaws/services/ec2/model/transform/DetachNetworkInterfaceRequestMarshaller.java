@@ -38,7 +38,7 @@ public class DetachNetworkInterfaceRequestMarshaller implements Marshaller<Reque
 
         Request<DetachNetworkInterfaceRequest> request = new DefaultRequest<DetachNetworkInterfaceRequest>(detachNetworkInterfaceRequest, "AmazonEC2");
         request.addParameter("Action", "DetachNetworkInterface");
-        request.addParameter("Version", "2012-04-01");
+        request.addParameter("Version", "2012-06-01");
 
         if (detachNetworkInterfaceRequest.getAttachmentId() != null) {
             request.addParameter("AttachmentId", StringUtils.fromString(detachNetworkInterfaceRequest.getAttachmentId()));

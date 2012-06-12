@@ -68,11 +68,55 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      */
     protected final List<Unmarshaller<AmazonServiceException, Node>> exceptionUnmarshallers
             = new ArrayList<Unmarshaller<AmazonServiceException, Node>>();
-    
+
     
     /** AWS signer for authenticating requests. */
     private AWS4Signer signer;
 
+
+    /**
+     * Constructs a new client to invoke service methods on
+     * AmazonIdentityManagement.  A credentials provider chain will be used
+     * that searches for credentials in this order:
+     * <ul>
+     *  <li> Environment Variables - AWS_ACCESS_KEY_ID and AWS_SECRET_KEY </li>
+     *  <li> Java System Properties - aws.accessKeyId and aws.secretKey </li>
+     *  <li> Instance profile credentials delivered through the Amazon EC2 metadata service </li>
+     * </ul>
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and will not
+     * return until the service call completes.
+     *
+     * @see DefaultAWSCredentialsProvider
+     */
+    public AmazonIdentityManagementClient() {
+        this(new DefaultAWSCredentialsProviderChain(), new ClientConfiguration());
+    }
+
+    /**
+     * Constructs a new client to invoke service methods on
+     * AmazonIdentityManagement.  A credentials provider chain will be used
+     * that searches for credentials in this order:
+     * <ul>
+     *  <li> Environment Variables - AWS_ACCESS_KEY_ID and AWS_SECRET_KEY </li>
+     *  <li> Java System Properties - aws.accessKeyId and aws.secretKey </li>
+     *  <li> Instance profile credentials delivered through the Amazon EC2 metadata service </li>
+     * </ul>
+     *
+     * <p>
+     * All service calls made using this new client object are blocking, and will not
+     * return until the service call completes.
+     *
+     * @param clientConfiguration The client configuration options controlling how this
+     *                       client connects to AmazonIdentityManagement
+     *                       (ex: proxy settings, retry counts, etc.).
+     *
+     * @see DefaultAWSCredentialsProvider
+     */
+    public AmazonIdentityManagementClient(ClientConfiguration clientConfiguration) {
+        this(new DefaultAWSCredentialsProviderChain(), clientConfiguration);
+    }
 
     /**
      * Constructs a new client to invoke service methods on
@@ -109,7 +153,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
         init();
     }
-    
+
     /**
      * Constructs a new client to invoke service methods on
      * AmazonIdentityManagement using the specified AWS account credentials provider.
@@ -118,7 +162,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * All service calls made using this new client object are blocking, and will not
      * return until the service call completes.
      *
-     * @param awsCredentialsProvider 
+     * @param awsCredentialsProvider
      *            The AWS credentials provider which will provide credentials
      *            to authenticate requests with AWS services.
      */
@@ -135,7 +179,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * All service calls made using this new client object are blocking, and will not
      * return until the service call completes.
      *
-     * @param awsCredentialsProvider 
+     * @param awsCredentialsProvider
      *            The AWS credentials provider which will provide credentials
      *            to authenticate requests with AWS services.
      * @param clientConfiguration The client configuration options controlling how this
@@ -148,7 +192,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         init();
     }
 
-    private void init() { 
+    private void init() {
         exceptionUnmarshallers.add(new DuplicateCertificateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidUserTypeExceptionUnmarshaller());
         exceptionUnmarshallers.add(new EntityAlreadyExistsExceptionUnmarshaller());
@@ -175,7 +219,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
 		requestHandlers.addAll(chainFactory.newRequestHandlerChain(
                 "/com/amazonaws/services/identitymanagement/request.handlers"));
     }
-    
+
     
     /**
      * <p>
@@ -341,8 +385,11 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * </p>
      * <p>
      * <b>NOTE:</b>Because policy documents can be large, you should use POST
-     * rather than GET when calling PutUserPolicy. For more information, see
-     * Making Query Requests in Using AWS Identity and Access Management.
+     * rather than GET when calling PutUserPolicy. For information about
+     * setting up signatures and authorization through the API, go to Signing
+     * AWS API Requests in the AWS General Reference. For general information
+     * about using the Query API with IAM, go to Making Query Requests in
+     * Using IAM.
      * </p>
      *
      * @param putUserPolicyRequest Container for the necessary parameters to
@@ -508,6 +555,51 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
     
     /**
      * <p>
+     * Adds (or updates) a policy document associated with the specified
+     * role. For information about policies, go to <a
+     * ebservices.com/IAM/latest/UserGuide/index.html?PoliciesOverview.html">
+     * Overview of Policies </a> in <i>Using AWS Identity and Access
+     * Management</i> .
+     * </p>
+     * <p>
+     * For information about limits on the policies you can associate with a
+     * role, see <a
+     * vices.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html">
+     * Limitations on IAM Entities </a> in <i>Using AWS Identity and Access
+     * Management</i> .
+     * </p>
+     * <p>
+     * <b>NOTE:</b>Because policy documents can be large, you should use POST
+     * rather than GET when calling PutRolePolicy. For information about
+     * setting up signatures and authorization through the API, go to Signing
+     * AWS API Requests in the AWS General Reference. For general information
+     * about using the Query API with IAM, go to Making Query Requests in
+     * Using IAM.
+     * </p>
+     *
+     * @param putRolePolicyRequest Container for the necessary parameters to
+     *           execute the PutRolePolicy service method on AmazonIdentityManagement.
+     * 
+     * @throws MalformedPolicyDocumentException
+     * @throws NoSuchEntityException
+     * @throws LimitExceededException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void putRolePolicy(PutRolePolicyRequest putRolePolicyRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<PutRolePolicyRequest> request = new PutRolePolicyRequestMarshaller().marshall(putRolePolicyRequest);
+        invoke(request, null);
+    }
+    
+    /**
+     * <p>
      * Changes the status of the specified signing certificate from active to
      * disabled, or vice versa. This action can be used to disable a user's
      * signing certificate as part of a certificate rotation work flow.
@@ -574,6 +666,37 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
     
     /**
      * <p>
+     * Lists the users that have the specified path prefix. If there are
+     * none, the action returns an empty list.
+     * </p>
+     * <p>
+     * You can paginate the results using the <code>MaxItems</code> and
+     * <code>Marker</code> parameters.
+     * </p>
+     *
+     * @param listUsersRequest Container for the necessary parameters to
+     *           execute the ListUsers service method on AmazonIdentityManagement.
+     * 
+     * @return The response from the ListUsers service method, as returned by
+     *         AmazonIdentityManagement.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ListUsersResult listUsers(ListUsersRequest listUsersRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<ListUsersRequest> request = new ListUsersRequestMarshaller().marshall(listUsersRequest);
+        return invoke(request, new ListUsersResultStaxUnmarshaller());
+    }
+    
+    /**
+     * <p>
      * Updates the name and/or the path of the specified group.
      * </p>
      * <p>
@@ -608,37 +731,6 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             throws AmazonServiceException, AmazonClientException {
         Request<UpdateGroupRequest> request = new UpdateGroupRequestMarshaller().marshall(updateGroupRequest);
         invoke(request, null);
-    }
-    
-    /**
-     * <p>
-     * Lists the users that have the specified path prefix. If there are
-     * none, the action returns an empty list.
-     * </p>
-     * <p>
-     * You can paginate the results using the <code>MaxItems</code> and
-     * <code>Marker</code> parameters.
-     * </p>
-     *
-     * @param listUsersRequest Container for the necessary parameters to
-     *           execute the ListUsers service method on AmazonIdentityManagement.
-     * 
-     * @return The response from the ListUsers service method, as returned by
-     *         AmazonIdentityManagement.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonIdentityManagement indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public ListUsersResult listUsers(ListUsersRequest listUsersRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<ListUsersRequest> request = new ListUsersRequestMarshaller().marshall(listUsersRequest);
-        return invoke(request, new ListUsersResultStaxUnmarshaller());
     }
     
     /**
@@ -778,9 +870,11 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * <p>
      * <b>NOTE:</b>Because the body of the public key certificate, private
      * key, and the certificate chain can be large, you should use POST
-     * rather than GET when calling UploadServerCertificate. For more
-     * information, see Making Query Requests in Using AWS Identity and
-     * Access Management.
+     * rather than GET when calling UploadServerCertificate. For information
+     * about setting up signatures and authorization through the API, go to
+     * Signing AWS API Requests in the AWS General Reference. For general
+     * information about using the Query API with IAM, go to Making Query
+     * Requests in Using IAM.
      * </p>
      *
      * @param uploadServerCertificateRequest Container for the necessary
@@ -948,6 +1042,40 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
     public void removeUserFromGroup(RemoveUserFromGroupRequest removeUserFromGroupRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<RemoveUserFromGroupRequest> request = new RemoveUserFromGroupRequestMarshaller().marshall(removeUserFromGroupRequest);
+        invoke(request, null);
+    }
+    
+    /**
+     * <p>
+     * Deletes the specified role. The role must not have any policies
+     * attached. For more information about roles, go to <a
+     * ocs.amazonwebservices.com/IAM/latest/UserGuide/WorkingWithRoles.html">
+     * Working with Roles </a> .
+     * </p>
+     * <p>
+     * <b>IMPORTANT:</b>Make sure you do not have any Amazon EC2 instances
+     * running with the role you are about to delete. Deleting a role or
+     * instance profile that is associated with a running instance will break
+     * any applications running on the instance.
+     * </p>
+     *
+     * @param deleteRoleRequest Container for the necessary parameters to
+     *           execute the DeleteRole service method on AmazonIdentityManagement.
+     * 
+     * @throws NoSuchEntityException
+     * @throws DeleteConflictException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void deleteRole(DeleteRoleRequest deleteRoleRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<DeleteRoleRequest> request = new DeleteRoleRequestMarshaller().marshall(deleteRoleRequest);
         invoke(request, null);
     }
     
@@ -1186,6 +1314,41 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
     
     /**
      * <p>
+     * Lists the instance profiles that have the specified path prefix. If
+     * there are none, the action returns an empty list. For more information
+     * about instance profiles, go to <a
+     * mazonwebservices.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">
+     * About Instance Profiles </a> .
+     * </p>
+     * <p>
+     * You can paginate the results using the <code>MaxItems</code> and
+     * <code>Marker</code> parameters.
+     * </p>
+     *
+     * @param listInstanceProfilesRequest Container for the necessary
+     *           parameters to execute the ListInstanceProfiles service method on
+     *           AmazonIdentityManagement.
+     * 
+     * @return The response from the ListInstanceProfiles service method, as
+     *         returned by AmazonIdentityManagement.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ListInstanceProfilesResult listInstanceProfiles(ListInstanceProfilesRequest listInstanceProfilesRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<ListInstanceProfilesRequest> request = new ListInstanceProfilesRequestMarshaller().marshall(listInstanceProfilesRequest);
+        return invoke(request, new ListInstanceProfilesResultStaxUnmarshaller());
+    }
+    
+    /**
+     * <p>
      * Changes the status of the specified access key from Active to
      * Inactive, or vice versa. This action can be used to disable a user's
      * key as part of a key rotation work flow.
@@ -1341,6 +1504,77 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
     
     /**
      * <p>
+     * Retrieves information about the specified role, including the role's
+     * path, GUID, ARN, and the policy granting permission to EC2 to assume
+     * the role. For more information about ARNs, go to ARNs. For more
+     * information about roles, go to <a
+     * ocs.amazonwebservices.com/IAM/latest/UserGuide/WorkingWithRoles.html">
+     * Working with Roles </a> .
+     * </p>
+     * <p>
+     * The returned policy is URL-encoded according to RFC 3986. For more
+     * information about RFC 3986, go to <a
+     * href="http://www.faqs.org/rfcs/rfc3986.html">
+     * http://www.faqs.org/rfcs/rfc3986.html </a> .
+     * </p>
+     *
+     * @param getRoleRequest Container for the necessary parameters to
+     *           execute the GetRole service method on AmazonIdentityManagement.
+     * 
+     * @return The response from the GetRole service method, as returned by
+     *         AmazonIdentityManagement.
+     * 
+     * @throws NoSuchEntityException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public GetRoleResult getRole(GetRoleRequest getRoleRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<GetRoleRequest> request = new GetRoleRequestMarshaller().marshall(getRoleRequest);
+        return invoke(request, new GetRoleResultStaxUnmarshaller());
+    }
+    
+    /**
+     * <p>
+     * Lists the names of the policies associated with the specified role. If
+     * there are none, the action returns an empty list.
+     * </p>
+     * <p>
+     * You can paginate the results using the <code>MaxItems</code> and
+     * <code>Marker</code> parameters.
+     * </p>
+     *
+     * @param listRolePoliciesRequest Container for the necessary parameters
+     *           to execute the ListRolePolicies service method on
+     *           AmazonIdentityManagement.
+     * 
+     * @return The response from the ListRolePolicies service method, as
+     *         returned by AmazonIdentityManagement.
+     * 
+     * @throws NoSuchEntityException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ListRolePoliciesResult listRolePolicies(ListRolePoliciesRequest listRolePoliciesRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<ListRolePoliciesRequest> request = new ListRolePoliciesRequestMarshaller().marshall(listRolePoliciesRequest);
+        return invoke(request, new ListRolePoliciesResultStaxUnmarshaller());
+    }
+    
+    /**
+     * <p>
      * Returns information about the signing certificates associated with the
      * specified user. If there are none, the action returns an empty list.
      * </p>
@@ -1398,8 +1632,10 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * <p>
      * <b>NOTE:</b>Because the body of a X.509 certificate can be large, you
      * should use POST rather than GET when calling UploadSigningCertificate.
-     * For more information, see Making Query Requests in Using AWS Identity
-     * and Access Management.
+     * For information about setting up signatures and authorization through
+     * the API, go to Signing AWS API Requests in the AWS General Reference.
+     * For general information about using the Query API with IAM, go to
+     * Making Query Requests in Using IAM.
      * </p>
      *
      * @param uploadSigningCertificateRequest Container for the necessary
@@ -1428,6 +1664,87 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             throws AmazonServiceException, AmazonClientException {
         Request<UploadSigningCertificateRequest> request = new UploadSigningCertificateRequestMarshaller().marshall(uploadSigningCertificateRequest);
         return invoke(request, new UploadSigningCertificateResultStaxUnmarshaller());
+    }
+    
+    /**
+     * <p>
+     * Deletes the specified instance profile. The instance profile must not
+     * have an associated role.
+     * </p>
+     * <p>
+     * <b>IMPORTANT:</b>Make sure you do not have any Amazon EC2 instances
+     * running with the instance profile you are about to delete. Deleting a
+     * role or instance profile that is associated with a running instance
+     * will break any applications running on the instance.
+     * </p>
+     * <p>
+     * For more information about instance profiles, go to <a
+     * mazonwebservices.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">
+     * About Instance Profiles </a> .
+     * </p>
+     *
+     * @param deleteInstanceProfileRequest Container for the necessary
+     *           parameters to execute the DeleteInstanceProfile service method on
+     *           AmazonIdentityManagement.
+     * 
+     * @throws NoSuchEntityException
+     * @throws DeleteConflictException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void deleteInstanceProfile(DeleteInstanceProfileRequest deleteInstanceProfileRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<DeleteInstanceProfileRequest> request = new DeleteInstanceProfileRequestMarshaller().marshall(deleteInstanceProfileRequest);
+        invoke(request, null);
+    }
+    
+    /**
+     * <p>
+     * Creates a new role for your AWS account. For more information about
+     * roles, go to <a
+     * ocs.amazonwebservices.com/IAM/latest/UserGuide/WorkingWithRoles.html">
+     * Working with Roles </a> . For information about limitations on role
+     * names and the number of roles you can create, go to <a
+     * vices.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html">
+     * Limitations on IAM Entities </a> in <i>Using AWS Identity and Access
+     * Management</i> .
+     * </p>
+     * <p>
+     * The policy grants permission to an EC2 instance to assume the role.
+     * The policy is URL-encoded according to RFC 3986. For more information
+     * about RFC 3986, go to <a href="http://www.faqs.org/rfcs/rfc3986.html">
+     * http://www.faqs.org/rfcs/rfc3986.html </a> . Currently, only EC2
+     * instances can assume roles.
+     * </p>
+     *
+     * @param createRoleRequest Container for the necessary parameters to
+     *           execute the CreateRole service method on AmazonIdentityManagement.
+     * 
+     * @return The response from the CreateRole service method, as returned
+     *         by AmazonIdentityManagement.
+     * 
+     * @throws MalformedPolicyDocumentException
+     * @throws LimitExceededException
+     * @throws EntityAlreadyExistsException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public CreateRoleResult createRole(CreateRoleRequest createRoleRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<CreateRoleRequest> request = new CreateRoleRequestMarshaller().marshall(createRoleRequest);
+        return invoke(request, new CreateRoleResultStaxUnmarshaller());
     }
     
     /**
@@ -1567,8 +1884,11 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * </p>
      * <p>
      * <b>NOTE:</b>Because policy documents can be large, you should use POST
-     * rather than GET when calling PutGroupPolicy. For more information, see
-     * Making Query Requests in Using AWS Identity and Access Management.
+     * rather than GET when calling PutGroupPolicy. For information about
+     * setting up signatures and authorization through the API, go to Signing
+     * AWS API Requests in the AWS General Reference. For general information
+     * about using the Query API with IAM, go to Making Query Requests in
+     * Using IAM.
      * </p>
      *
      * @param putGroupPolicyRequest Container for the necessary parameters to
@@ -1736,6 +2056,39 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
     
     /**
      * <p>
+     * Adds the specified role to the specified instance profile. For more
+     * information about roles, go to <a
+     * ocs.amazonwebservices.com/IAM/latest/UserGuide/WorkingWithRoles.html">
+     * Working with Roles </a> . For more information about instance
+     * profiles, go to <a
+     * mazonwebservices.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">
+     * About Instance Profiles </a> .
+     * </p>
+     *
+     * @param addRoleToInstanceProfileRequest Container for the necessary
+     *           parameters to execute the AddRoleToInstanceProfile service method on
+     *           AmazonIdentityManagement.
+     * 
+     * @throws NoSuchEntityException
+     * @throws LimitExceededException
+     * @throws EntityAlreadyExistsException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void addRoleToInstanceProfile(AddRoleToInstanceProfileRequest addRoleToInstanceProfileRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<AddRoleToInstanceProfileRequest> request = new AddRoleToInstanceProfileRequestMarshaller().marshall(addRoleToInstanceProfileRequest);
+        invoke(request, null);
+    }
+    
+    /**
+     * <p>
      * Retrieves the specified policy document for the specified group. The
      * returned policy is URL-encoded according to RFC 3986. For more
      * information about RFC 3986, go to <a
@@ -1763,6 +2116,78 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             throws AmazonServiceException, AmazonClientException {
         Request<GetGroupPolicyRequest> request = new GetGroupPolicyRequestMarshaller().marshall(getGroupPolicyRequest);
         return invoke(request, new GetGroupPolicyResultStaxUnmarshaller());
+    }
+    
+    /**
+     * <p>
+     * Retrieves the specified policy document for the specified role. For
+     * more information about roles, go to <a
+     * ocs.amazonwebservices.com/IAM/latest/UserGuide/WorkingWithRoles.html">
+     * Working with Roles </a> .
+     * </p>
+     * <p>
+     * The returned policy is URL-encoded according to RFC 3986. For more
+     * information about RFC 3986, go to <a
+     * href="http://www.faqs.org/rfcs/rfc3986.html">
+     * http://www.faqs.org/rfcs/rfc3986.html </a> .
+     * </p>
+     *
+     * @param getRolePolicyRequest Container for the necessary parameters to
+     *           execute the GetRolePolicy service method on AmazonIdentityManagement.
+     * 
+     * @return The response from the GetRolePolicy service method, as
+     *         returned by AmazonIdentityManagement.
+     * 
+     * @throws NoSuchEntityException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public GetRolePolicyResult getRolePolicy(GetRolePolicyRequest getRolePolicyRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<GetRolePolicyRequest> request = new GetRolePolicyRequestMarshaller().marshall(getRolePolicyRequest);
+        return invoke(request, new GetRolePolicyResultStaxUnmarshaller());
+    }
+    
+    /**
+     * <p>
+     * Lists the instance profiles that have the specified associated role.
+     * If there are none, the action returns an empty list. For more
+     * information about instance profiles, go to <a
+     * mazonwebservices.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">
+     * About Instance Profiles </a> .
+     * </p>
+     * <p>
+     * You can paginate the results using the <code>MaxItems</code> and
+     * <code>Marker</code> parameters.
+     * </p>
+     *
+     * @param listInstanceProfilesForRoleRequest Container for the necessary
+     *           parameters to execute the ListInstanceProfilesForRole service method
+     *           on AmazonIdentityManagement.
+     * 
+     * @return The response from the ListInstanceProfilesForRole service
+     *         method, as returned by AmazonIdentityManagement.
+     * 
+     * @throws NoSuchEntityException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ListInstanceProfilesForRoleResult listInstanceProfilesForRole(ListInstanceProfilesForRoleRequest listInstanceProfilesForRoleRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<ListInstanceProfilesForRoleRequest> request = new ListInstanceProfilesForRoleRequestMarshaller().marshall(listInstanceProfilesForRoleRequest);
+        return invoke(request, new ListInstanceProfilesForRoleResultStaxUnmarshaller());
     }
     
     /**
@@ -1800,6 +2225,70 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             throws AmazonServiceException, AmazonClientException {
         Request<ListVirtualMFADevicesRequest> request = new ListVirtualMFADevicesRequestMarshaller().marshall(listVirtualMFADevicesRequest);
         return invoke(request, new ListVirtualMFADevicesResultStaxUnmarshaller());
+    }
+    
+    /**
+     * <p>
+     * Deletes the specified policy associated with the specified role.
+     * </p>
+     *
+     * @param deleteRolePolicyRequest Container for the necessary parameters
+     *           to execute the DeleteRolePolicy service method on
+     *           AmazonIdentityManagement.
+     * 
+     * @throws NoSuchEntityException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void deleteRolePolicy(DeleteRolePolicyRequest deleteRolePolicyRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<DeleteRolePolicyRequest> request = new DeleteRolePolicyRequestMarshaller().marshall(deleteRolePolicyRequest);
+        invoke(request, null);
+    }
+    
+    /**
+     * <p>
+     * Creates a new instance profile. For information about instance
+     * profiles, go to <a
+     * mazonwebservices.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">
+     * About Instance Profiles </a> .
+     * </p>
+     * <p>
+     * For information about the number of instance profiles you can create,
+     * see <a
+     * vices.com/IAM/latest/UserGuide/index.html?LimitationsOnEntities.html">
+     * Limitations on IAM Entities </a> in <i>Using AWS Identity and Access
+     * Management</i> .
+     * </p>
+     *
+     * @param createInstanceProfileRequest Container for the necessary
+     *           parameters to execute the CreateInstanceProfile service method on
+     *           AmazonIdentityManagement.
+     * 
+     * @return The response from the CreateInstanceProfile service method, as
+     *         returned by AmazonIdentityManagement.
+     * 
+     * @throws LimitExceededException
+     * @throws EntityAlreadyExistsException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public CreateInstanceProfileResult createInstanceProfile(CreateInstanceProfileRequest createInstanceProfileRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<CreateInstanceProfileRequest> request = new CreateInstanceProfileRequestMarshaller().marshall(createInstanceProfileRequest);
+        return invoke(request, new CreateInstanceProfileResultStaxUnmarshaller());
     }
     
     /**
@@ -1871,6 +2360,46 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
     
     /**
      * <p>
+     * Removes the specified role from the specified instance profile.
+     * </p>
+     * <p>
+     * <b>IMPORTANT:</b>Make sure you do not have any Amazon EC2 instances
+     * running with the role you are about to remove from the instance
+     * profile. Removing a role from an instance profile that is associated
+     * with a running instance will break any applications running on the
+     * instance.
+     * </p>
+     * <p>
+     * For more information about roles, go to <a
+     * ocs.amazonwebservices.com/IAM/latest/UserGuide/WorkingWithRoles.html">
+     * Working with Roles </a> . For more information about instance
+     * profiles, go to <a
+     * mazonwebservices.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">
+     * About Instance Profiles </a> .
+     * </p>
+     *
+     * @param removeRoleFromInstanceProfileRequest Container for the
+     *           necessary parameters to execute the RemoveRoleFromInstanceProfile
+     *           service method on AmazonIdentityManagement.
+     * 
+     * @throws NoSuchEntityException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void removeRoleFromInstanceProfile(RemoveRoleFromInstanceProfileRequest removeRoleFromInstanceProfileRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<RemoveRoleFromInstanceProfileRequest> request = new RemoveRoleFromInstanceProfileRequestMarshaller().marshall(removeRoleFromInstanceProfileRequest);
+        invoke(request, null);
+    }
+    
+    /**
+     * <p>
      * Updates the password policy settings for the account. For more
      * information about using a password policy, go to <a
      * ervices.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">
@@ -1896,6 +2425,111 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             throws AmazonServiceException, AmazonClientException {
         Request<UpdateAccountPasswordPolicyRequest> request = new UpdateAccountPasswordPolicyRequestMarshaller().marshall(updateAccountPasswordPolicyRequest);
         invoke(request, null);
+    }
+    
+    /**
+     * <p>
+     * Updates the policy that grants an entity permission to assume a role.
+     * Currently, only an Amazon EC2 instance can assume a role. For more
+     * information about roles, go to <a
+     * ocs.amazonwebservices.com/IAM/latest/UserGuide/WorkingWithRoles.html">
+     * Working with Roles </a> .
+     * </p>
+     *
+     * @param updateAssumeRolePolicyRequest Container for the necessary
+     *           parameters to execute the UpdateAssumeRolePolicy service method on
+     *           AmazonIdentityManagement.
+     * 
+     * @throws MalformedPolicyDocumentException
+     * @throws NoSuchEntityException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void updateAssumeRolePolicy(UpdateAssumeRolePolicyRequest updateAssumeRolePolicyRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<UpdateAssumeRolePolicyRequest> request = new UpdateAssumeRolePolicyRequestMarshaller().marshall(updateAssumeRolePolicyRequest);
+        invoke(request, null);
+    }
+    
+    /**
+     * <p>
+     * Retrieves information about the specified instance profile, including
+     * the instance profile's path, GUID, ARN, and role. For more information
+     * about instance profiles, go to <a
+     * mazonwebservices.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">
+     * About Instance Profiles </a> . For more information about ARNs, go to
+     * <a
+     * ces.com/IAM/latest/UserGuide/Using_Identifiers.html#Identifiers_ARNs">
+     * ARNs </a> .
+     * </p>
+     *
+     * @param getInstanceProfileRequest Container for the necessary
+     *           parameters to execute the GetInstanceProfile service method on
+     *           AmazonIdentityManagement.
+     * 
+     * @return The response from the GetInstanceProfile service method, as
+     *         returned by AmazonIdentityManagement.
+     * 
+     * @throws NoSuchEntityException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public GetInstanceProfileResult getInstanceProfile(GetInstanceProfileRequest getInstanceProfileRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<GetInstanceProfileRequest> request = new GetInstanceProfileRequestMarshaller().marshall(getInstanceProfileRequest);
+        return invoke(request, new GetInstanceProfileResultStaxUnmarshaller());
+    }
+    
+    /**
+     * <p>
+     * Lists the roles that have the specified path prefix. If there are
+     * none, the action returns an empty list. For more information about
+     * roles, go to <a
+     * ocs.amazonwebservices.com/IAM/latest/UserGuide/WorkingWithRoles.html">
+     * Working with Roles </a> .
+     * </p>
+     * <p>
+     * You can paginate the results using the <code>MaxItems</code> and
+     * <code>Marker</code> parameters.
+     * </p>
+     * <p>
+     * The returned policy is URL-encoded according to RFC 3986. For more
+     * information about RFC 3986, go to <a
+     * href="http://www.faqs.org/rfcs/rfc3986.html">
+     * http://www.faqs.org/rfcs/rfc3986.html </a> .
+     * </p>
+     *
+     * @param listRolesRequest Container for the necessary parameters to
+     *           execute the ListRoles service method on AmazonIdentityManagement.
+     * 
+     * @return The response from the ListRoles service method, as returned by
+     *         AmazonIdentityManagement.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ListRolesResult listRoles(ListRolesRequest listRolesRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<ListRolesRequest> request = new ListRolesRequestMarshaller().marshall(listRolesRequest);
+        return invoke(request, new ListRolesResultStaxUnmarshaller());
     }
     
     /**
@@ -2163,6 +2797,35 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
     
     /**
      * <p>
+     * Lists the instance profiles that have the specified path prefix. If
+     * there are none, the action returns an empty list. For more information
+     * about instance profiles, go to <a
+     * mazonwebservices.com/IAM/latest/UserGuide/AboutInstanceProfiles.html">
+     * About Instance Profiles </a> .
+     * </p>
+     * <p>
+     * You can paginate the results using the <code>MaxItems</code> and
+     * <code>Marker</code> parameters.
+     * </p>
+     * 
+     * @return The response from the ListInstanceProfiles service method, as
+     *         returned by AmazonIdentityManagement.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ListInstanceProfilesResult listInstanceProfiles() throws AmazonServiceException, AmazonClientException {
+        return listInstanceProfiles(new ListInstanceProfilesRequest());
+    }
+    
+    /**
+     * <p>
      * Lists the account aliases associated with the account. For information
      * about using an AWS account alias, see <a
      * ://docs.amazonwebservices.com/IAM/latest/UserGuide/AccountAlias.html">
@@ -2297,6 +2960,41 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
     
     /**
      * <p>
+     * Lists the roles that have the specified path prefix. If there are
+     * none, the action returns an empty list. For more information about
+     * roles, go to <a
+     * ocs.amazonwebservices.com/IAM/latest/UserGuide/WorkingWithRoles.html">
+     * Working with Roles </a> .
+     * </p>
+     * <p>
+     * You can paginate the results using the <code>MaxItems</code> and
+     * <code>Marker</code> parameters.
+     * </p>
+     * <p>
+     * The returned policy is URL-encoded according to RFC 3986. For more
+     * information about RFC 3986, go to <a
+     * href="http://www.faqs.org/rfcs/rfc3986.html">
+     * http://www.faqs.org/rfcs/rfc3986.html </a> .
+     * </p>
+     * 
+     * @return The response from the ListRoles service method, as returned by
+     *         AmazonIdentityManagement.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonIdentityManagement indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ListRolesResult listRoles() throws AmazonServiceException, AmazonClientException {
+        return listRoles(new ListRolesRequest());
+    }
+    
+    /**
+     * <p>
      * Retrieves account level information about account entity usage and IAM
      * quotas.
      * </p>
@@ -2349,11 +3047,11 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
     }
     
     /**
-     * Overrides the default endpoint for this client and explicitly provides 
+     * Overrides the default endpoint for this client and explicitly provides
      * an AWS region ID and AWS service name to use when the client calculates a signature
      * for requests.  In almost all cases, this region ID and service name
      * are automatically determined from the endpoint, and callers should use the simpler
-     * one-argument form of setEndpoint instead of this method.   
+     * one-argument form of setEndpoint instead of this method.
      * <p>
      * <b>This method is not threadsafe. Endpoints should be configured when the
      * client is created and before any service requests are made. Changing it
@@ -2366,20 +3064,20 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
      * {@link ClientConfiguration} will be used, which by default is HTTPS.
      * <p>
      * For more information on using AWS regions with the AWS SDK for Java, and
-     * a complete list of all available endpoints for all AWS services, see: 
+     * a complete list of all available endpoints for all AWS services, see:
      * <a href="http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912">
      * http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912</a>
-     * 
+     *
      * @param endpoint
      *            The endpoint (ex: "ec2.amazonaws.com") or a full URL,
      *            including the protocol (ex: "https://ec2.amazonaws.com") of
      *            the region specific AWS endpoint this client will communicate
      *            with.
-     * @param serviceName 
+     * @param serviceName
      *            The name of the AWS service to use when signing requests.
-     * @param regionId 
+     * @param regionId
      *            The ID of the region in which this service resides.
-     *      
+     *
      * @throws IllegalArgumentException
      *             If any problems are detected with the specified endpoint.
      */
@@ -2416,7 +3114,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
             request.addParameter(entry.getKey(), entry.getValue());
         }
 
-        AWSCredentials credentials = awsCredentialsProvider.getCredentials(); 
+        AWSCredentials credentials = awsCredentialsProvider.getCredentials();
         AmazonWebServiceRequest originalRequest = request.getOriginalRequest();
         if (originalRequest != null && originalRequest.getRequestCredentials() != null) {
         	credentials = originalRequest.getRequestCredentials();
@@ -2428,7 +3126,7 @@ public class AmazonIdentityManagementClient extends AmazonWebServiceClient imple
         
         StaxResponseHandler<X> responseHandler = new StaxResponseHandler<X>(unmarshaller);
         DefaultErrorResponseHandler errorResponseHandler = new DefaultErrorResponseHandler(exceptionUnmarshallers);
-        
+
         return (X)client.execute(request, responseHandler, errorResponseHandler, executionContext);
     }
 }
