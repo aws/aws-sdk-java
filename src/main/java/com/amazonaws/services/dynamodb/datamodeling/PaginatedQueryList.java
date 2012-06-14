@@ -30,7 +30,7 @@ import com.amazonaws.services.dynamodb.model.QueryResult;
  * This is an unmodifiable list, so callers should not invoke any operations
  * that modify this list, otherwise they will throw an
  * UnsupportedOperationException.
- * 
+ *
  * @param <T>
  *            The type of objects held in this list.
  * @see PaginatedList
@@ -53,12 +53,22 @@ public class PaginatedQueryList<T> extends PaginatedList<T> {
         allResults.addAll(mapper.marshallIntoObjects(clazz, queryResult.getItems()));
     }
 
-    @Override    
+    public PaginatedQueryList(DynamoDBMapper mapper, Class<T> clazz, AmazonDynamoDB dynamo,
+            QueryRequest queryRequest, QueryResult queryResult, TypeDispatcher<T> dispatcher) {
+        super(mapper, clazz, dynamo);
+
+        this.queryRequest = queryRequest;
+        this.queryResult  = queryResult;
+
+        allResults.addAll(mapper.marshallIntoObjects(clazz, queryResult.getItems(), dispatcher));
+    }
+
+    @Override
     protected boolean atEndOfResults() {
         return queryResult.getLastEvaluatedKey() == null;
     }
 
-    @Override    
+    @Override
     protected synchronized List<T> fetchNextPage() {
         queryRequest.setExclusiveStartKey(queryResult.getLastEvaluatedKey());
         queryResult = dynamo.query(DynamoDBMapper.applyUserAgent(queryRequest));

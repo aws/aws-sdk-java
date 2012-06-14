@@ -58,49 +58,49 @@ import com.amazonaws.util.VersionInfoUtils;
  * <p>
  * To use, annotate domain classes with the annotations found in the
  * com.amazonaws.services.dynamodb.datamodeling package. A minimal example:
- * 
+ *
  * <pre>
  * &#064;DynamoDBTable(tableName = &quot;TestTable&quot;)
  * public class TestClass {
- * 
+ *
  *     private Long key;
  *     private double rangeKey;
  *     private Long version;
- * 
+ *
  *     private Set&lt;Integer&gt; integerSetAttribute;
- * 
+ *
  *     &#064;DynamoDBHashKey
  *     public Long getKey() {
  *         return key;
  *     }
- * 
+ *
  *     public void setKey(Long key) {
  *         this.key = key;
  *     }
- * 
+ *
  *     &#064;DynamoDBRangeKey
  *     public double getRangeKey() {
  *         return rangeKey;
  *     }
- * 
+ *
  *     public void setRangeKey(double rangeKey) {
  *         this.rangeKey = rangeKey;
  *     }
- * 
+ *
  *     &#064;DynamoDBAttribute(attributeName = &quot;integerSetAttribute&quot;)
  *     public Set&lt;Integer&gt; getIntegerAttribute() {
  *         return integerSetAttribute;
  *     }
- * 
+ *
  *     public void setIntegerAttribute(Set&lt;Integer&gt; integerAttribute) {
  *         this.integerSetAttribute = integerAttribute;
  *     }
- * 
+ *
  *     &#064;DynamoDBVersionAttribute
  *     public Long getVersion() {
  *         return version;
  *     }
- * 
+ *
  *     public void setVersion(Long version) {
  *         this.version = version;
  *     }
@@ -109,7 +109,7 @@ import com.amazonaws.util.VersionInfoUtils;
  * <p>
  * Save instances of annotated classes to DynamoDB, retrieve them, and delete
  * them using the {@link DynamoDBMapper} class, as in the following example.
- * 
+ *
  * <pre>
  * DynamoDBMapper mapper = new DynamoDBMapper(dynamoDBClient);
  * Long hashKey = 105L;
@@ -129,7 +129,7 @@ import com.amazonaws.util.VersionInfoUtils;
  * <p>
  * This class is thread-safe and can be shared between threads. It's also very
  * lightweight, so it doesn't need to be.
- * 
+ *
  * @see DynamoDBTable
  * @see DynamoDBHashKey
  * @see DynamoDBRangeKey
@@ -150,7 +150,7 @@ public class DynamoDBMapper {
      * User agent for requests made using the {@link DynamoDBMapper}.
      */
     private static final String USER_AGENT = DynamoDBMapper.class.getName() + "/" + VersionInfoUtils.getVersion();
-    
+
     /**
      * Constructs a new mapper with the service object given, using the default
      * configuration.
@@ -223,8 +223,32 @@ public class DynamoDBMapper {
      *            construction.
      */
     public <T extends Object> T load(Class<T> clazz, Object hashKey, Object rangeKey, DynamoDBMapperConfig config) {
+        return load(clazz, hashKey, rangeKey, config, null);
+    }
+
+    /**
+     * Returns an object with the given hash key, or null if no such object
+     * exists.
+     *
+     * @param clazz
+     *            The class to load, corresponding to a DynamoDB table.
+     * @param hashKey
+     *            The key of the object.
+     * @param rangeKey
+     *            The range key of the object, or null for tables without a
+     *            range key.
+     * @param config
+     *            Configuration for the service call to retrieve the object from
+     *            DynamoDB. This configuration overrides the default given at
+     *            construction.
+     * @param dispatcher
+     *            Determines the object type of the result using the item's
+     *            attributes.
+     */
+    public <T extends Object> T load(Class<T> clazz, Object hashKey, Object rangeKey, DynamoDBMapperConfig config,
+            TypeDispatcher<T> dispatcher) {
         config = mergeConfig(config);
-        
+
         String tableName = getTableName(clazz, config);
 
         // Fill in the hash key element in the service request
@@ -250,7 +274,21 @@ public class DynamoDBMapper {
             return null;
         }
 
-        return marshallIntoObject(clazz, itemAttributes);
+        Class<? extends T> resultClass = resultClass(dispatcher, itemAttributes, clazz);
+
+        return marshallIntoObject(resultClass, itemAttributes);
+    }
+
+    private <T> Class<? extends T> resultClass(TypeDispatcher<T> dispatcher, Map<String, AttributeValue> itemAttributes,
+            Class<T> fallback) {
+
+        if (dispatcher == null) {
+            return fallback;
+        }
+
+        Class<? extends T> clazz = dispatcher.dispatch(itemAttributes);
+
+        return clazz != null ? clazz : fallback;
     }
 
     private <T> String getTableName(Class<T> clazz, DynamoDBMapperConfig config) {
@@ -305,16 +343,26 @@ public class DynamoDBMapper {
 
         return toReturn;
     }
-    
+
     /**
      * Marshalls the list of item attributes into objects of type clazz
-     * 
+     *
      * @see DynamoDBMapper#marshallIntoObject(Class, Map)
      */
     public <T> List<T> marshallIntoObjects(Class<T> clazz, List<Map<String, AttributeValue>> itemAttributes) {
+        return marshallIntoObjects(clazz, itemAttributes, null);
+    }
+
+    /**
+     * Marshalls the list of item attributes into objects of type clazz
+     *
+     * @see DynamoDBMapper#marshallIntoObject(Class, Map)
+     */
+    public <T> List<T> marshallIntoObjects(Class<T> clazz, List<Map<String, AttributeValue>> itemAttributes,
+            TypeDispatcher<T> dispatcher) {
         List<T> result = new ArrayList<T>();
         for (Map<String, AttributeValue> item : itemAttributes) {
-            result.add(marshallIntoObject(clazz, item));
+            result.add(marshallIntoObject(resultClass(dispatcher, item, clazz), item));
         }
         return result;
     }
@@ -379,7 +427,7 @@ public class DynamoDBMapper {
      */
     public <T extends Object> void save(T object, DynamoDBMapperConfig config) {
         config = mergeConfig(config);
-        
+
         @SuppressWarnings("unchecked")
         Class<? extends T> clazz = (Class<? extends T>) object.getClass();
         String tableName = getTableName(clazz, config);
@@ -474,7 +522,7 @@ public class DynamoDBMapper {
             // Skip any key methods, since they are handled separately
             if ( method.equals(hashKeyGetter) || method.equals(rangeKeyGetter) )
                 continue;
-            
+
             nonKeyAttributePresent = true;
 
             Object getterResult = safeInvoke(method, object);
@@ -541,7 +589,7 @@ public class DynamoDBMapper {
             update.apply();
         }
     }
-    
+
     /**
      * Edge case to deal with the problem reported here:
      * https://forums.aws.amazon.com/thread.jspa?threadID=86798&tstart=25
@@ -559,13 +607,13 @@ public class DynamoDBMapper {
         String hashKeyAttributeName = reflector.getAttributeName(hashKeyGetter);
         attributes.put(hashKeyAttributeName, objectKey.getHashKeyElement());
         expectedValues.put(hashKeyAttributeName, new ExpectedAttributeValue().withExists(false));
-        
+
         if (rangeKeyGetter != null) {
             String rangeKeyAttributeName = reflector.getAttributeName(rangeKeyGetter);
             attributes.put(rangeKeyAttributeName, objectKey.getRangeKeyElement());
             expectedValues.put(rangeKeyAttributeName, new ExpectedAttributeValue().withExists(false));
         }
-        
+
         db.putItem(applyUserAgent(new PutItemRequest().withTableName(tableName).withItem(attributes)
                 .withExpected(expectedValues)));
     }
@@ -579,7 +627,7 @@ public class DynamoDBMapper {
 
     /**
      * Deletes the given object from its DynamoDB table.
-     * 
+     *
      * @param config
      *            Config override object. If {@link SaveBehavior#CLOBBER} is
      *            supplied, version fields will not be considered when deleting
@@ -587,7 +635,7 @@ public class DynamoDBMapper {
      */
     public void delete(Object object, DynamoDBMapperConfig config) {
         config = mergeConfig(config);
-        
+
         Class<?> clazz = object.getClass();
 
         String tableName = getTableName(clazz, config);
@@ -602,13 +650,13 @@ public class DynamoDBMapper {
         }
 
         Key objectKey = new Key().withHashKeyElement(hashKeyElement).withRangeKeyElement(rangeKeyElement);
-        
+
         /*
          * If there is a version field, make sure we assert its value. If the
          * version field is null (only should happen in unusual circumstances),
          * pretend it doesn't have a version field after all.
          */
-        Map<String, ExpectedAttributeValue> expectedValues = new HashMap<String, ExpectedAttributeValue>();               
+        Map<String, ExpectedAttributeValue> expectedValues = new HashMap<String, ExpectedAttributeValue>();
         if ( config.getSaveBehavior() != SaveBehavior.CLOBBER ) {
             for ( Method method : reflector.getRelevantGetters(clazz) ) {
 
@@ -626,64 +674,64 @@ public class DynamoDBMapper {
                 }
             }
         }
-        
+
         db.deleteItem(applyUserAgent(new DeleteItemRequest().withKey(objectKey).withTableName(tableName).withExpected(expectedValues)));
     }
-    
+
     /**
      * Deletes the objects given using one or more calls to the
      * {@link AmazonDynamoDB#batchWriteItem(BatchWriteItemRequest)} API.
-     * 
+     *
      * @see DynamoDBMapper#batchWrite(List, List, DynamoDBMapperConfig)
      */
     public void batchDelete(List<? extends Object> objectsToDelete) {
         batchWrite(Collections.emptyList(), objectsToDelete, this.config);
     }
-    
+
     /**
      * Deletes the objects given using one or more calls to the
      * {@link AmazonDynamoDB#batchWriteItem(BatchWriteItemRequest)} API.
-     * 
+     *
      * @see DynamoDBMapper#batchWrite(List, List, DynamoDBMapperConfig)
      */
     public void batchDelete(Object... objectsToDelete) {
         batchWrite(Collections.emptyList(), Arrays.asList(objectsToDelete), this.config);
     }
-    
+
     /**
      * Saves the objects given using one or more calls to the
      * {@link AmazonDynamoDB#batchWriteItem(BatchWriteItemRequest)} API.
-     * 
+     *
      * @see DynamoDBMapper#batchWrite(List, List, DynamoDBMapperConfig)
      */
     public void batchSave(List<? extends Object> objectsToSave) {
         batchWrite(objectsToSave, Collections.emptyList(), this.config);
     }
-    
+
     /**
      * Saves the objects given using one or more calls to the
      * {@link AmazonDynamoDB#batchWriteItem(BatchWriteItemRequest)} API.
-     * 
+     *
      * @see DynamoDBMapper#batchWrite(List, List, DynamoDBMapperConfig)
      */
     public void batchSave(Object... objectsToSave) {
         batchWrite(Arrays.asList(objectsToSave), Collections.emptyList(), this.config);
     }
-    
+
     /**
      * Saves and deletes the objects given using one or more calls to the
      * {@link AmazonDynamoDB#batchWriteItem(BatchWriteItemRequest)} API.
-     * 
+     *
      * @see DynamoDBMapper#batchWrite(List, List, DynamoDBMapperConfig)
      */
     public void batchWrite(List<? extends Object> objectsToWrite, List<? extends Object> objectsToDelete) {
         batchWrite(objectsToWrite, objectsToDelete, this.config);
     }
-    
+
     /**
      * Saves and deletes the objects given using one or more calls to the
      * {@link AmazonDynamoDB#batchWriteItem(BatchWriteItemRequest)} API.
-     * 
+     *
      * @param objectsToWrite
      *            A list of objects to save to DynamoDB. No version checks are
      *            performed, as required by the
@@ -702,7 +750,7 @@ public class DynamoDBMapper {
      */
     public void batchWrite(List<? extends Object> objectsToWrite, List<? extends Object> objectsToDelete, DynamoDBMapperConfig config) {
         config = mergeConfig(config);
-        
+
         HashMap<String, List<WriteRequest>> requestItems = new HashMap<String, List<WriteRequest>>();
 
         List<ValueUpdate> inMemoryUpdates = new LinkedList<ValueUpdate>();
@@ -722,9 +770,9 @@ public class DynamoDBMapper {
                     currentValue = getAutoGeneratedKeyAttributeValue(method, getterResult);
                     inMemoryUpdates.add(new ValueUpdate(method, currentValue, toWrite));
                 } else {
-                    currentValue = getSimpleAttributeValue(method, getterResult);                    
+                    currentValue = getSimpleAttributeValue(method, getterResult);
                 }
-                
+
                 if ( currentValue != null ) {
                     attributeValues.put(attributeName, currentValue);
                 }
@@ -761,8 +809,8 @@ public class DynamoDBMapper {
             requestItems.get(tableName).add(
                     new WriteRequest().withDeleteRequest(new DeleteRequest().withKey(objectKey)));
         }
-        
-        // Break into chunks of 25 items and make service requests to DynamoDB        
+
+        // Break into chunks of 25 items and make service requests to DynamoDB
         while ( !requestItems.isEmpty() ) {
             HashMap<String, List<WriteRequest>> batch = new HashMap<String, List<WriteRequest>>();
             int i = 0;
@@ -776,14 +824,14 @@ public class DynamoDBMapper {
                     batch.get(tableRequest.getKey()).add(writeRequest);
                     writeRequestIter.remove();
                 }
-                
+
                 // If we've processed all the write requests for this table,
                 // remove it from the parent iterator.
                 if ( !writeRequestIter.hasNext() ) {
                     tableIter.remove();
                 }
             }
-            
+
             BatchWriteItemResult result = db.batchWriteItem(new BatchWriteItemRequest().withRequestItems(batch));
 
             // add any unprocessed items back into the list to process
@@ -794,13 +842,13 @@ public class DynamoDBMapper {
                 requestItems.get(unprocessedItem.getKey()).addAll(unprocessedItem.getValue());
             }
         }
-        
+
         // Once the entire batch is processed, update assigned keys in memory
         for ( ValueUpdate update : inMemoryUpdates ) {
             update.apply();
         }
     }
-    
+
     /**
      * Swallows the checked exceptions around Method.invoke and repackages them
      * as {@link DynamoDBMappingException}
@@ -819,16 +867,16 @@ public class DynamoDBMapper {
 
     private final class ValueUpdate {
 
-        private Method method;
-        private AttributeValue newValue;
-        private Object target;
+        private final Method method;
+        private final AttributeValue newValue;
+        private final Object target;
 
         public ValueUpdate(Method method, AttributeValue newValue, Object target) {
             this.method = method;
             this.newValue = newValue;
             this.target = target;
         }
-        
+
         public void apply() {
             setValue(target, method, newValue);
         }
@@ -873,13 +921,13 @@ public class DynamoDBMapper {
     /**
      * Scans through an AWS DynamoDB table and returns the matching results as
      * an unmodifiable list of instantiated objects, using the default configuration.
-     * 
+     *
      * @see DynamoDBMapper#scan(Class, DynamoDBScanExpression, DynamoDBMapperConfig)
      */
     public <T> PaginatedScanList<T> scan(Class<T> clazz, DynamoDBScanExpression scanExpression) {
         return scan(clazz, scanExpression, config);
     }
-    
+
     /**
      * Scans through an AWS DynamoDB table and returns the matching results as
      * an unmodifiable list of instantiated objects. The table to scan is
@@ -894,7 +942,7 @@ public class DynamoDBMapper {
      * <p>
      * The unmodifiable list returned is lazily loaded when possible, so calls
      * to DynamoDB will be made only as needed.
-     * 
+     *
      * @param <T>
      *            The type of the objects being returned.
      * @param clazz
@@ -911,26 +959,63 @@ public class DynamoDBMapper {
      * @see PaginatedScanList
      */
     public <T> PaginatedScanList<T> scan(Class<T> clazz, DynamoDBScanExpression scanExpression, DynamoDBMapperConfig config) {
+        return scan(clazz, scanExpression, config, null);
+    }
+
+    /**
+     * Scans through an AWS DynamoDB table and returns the matching results as
+     * an unmodifiable list of instantiated objects. The table to scan is
+     * determined by looking at the annotations on the specified class, which
+     * declares where to store the object data in AWS DynamoDB, and the scan
+     * expression parameter allows the caller to filter results and control how
+     * the scan is executed.
+     * <p>
+     * Callers should be aware that the returned list is unmodifiable, and any
+     * attempts to modify the list will result in an
+     * UnsupportedOperationException.
+     * <p>
+     * The unmodifiable list returned is lazily loaded when possible, so calls
+     * to DynamoDB will be made only as needed.
+     *
+     * @param <T>
+     *            The type of the objects being returned.
+     * @param clazz
+     *            The class annotated with DynamoDB annotations describing how
+     *            to store the object data in AWS DynamoDB.
+     * @param scanExpression
+     *            Details on how to run the scan, including any filters to apply
+     *            to limit results.
+     * @param config
+     *            The configuration to use for this scan, which overrides the
+     *            default provided at object construction.
+     * @param dispatcher
+     *            Determines the object type of the result using the item's
+     *            attributes.
+     * @return An unmodifiable list of the objects constructed from the results
+     *         of the scan operation.
+     * @see PaginatedScanList
+     */
+    public <T> PaginatedScanList<T> scan(Class<T> clazz, DynamoDBScanExpression scanExpression, DynamoDBMapperConfig config, TypeDispatcher<T> dispatcher) {
         config = mergeConfig(config);
-        
+
         ScanRequest scanRequest = createScanRequestFromExpression(clazz, scanExpression, config);
 
         ScanResult scanResult = db.scan(applyUserAgent(scanRequest));
-        return new PaginatedScanList<T>(this, clazz, db, scanRequest, scanResult);
+        return new PaginatedScanList<T>(this, clazz, db, scanRequest, scanResult, dispatcher);
     }
 
     /**
      * Queries an AWS DynamoDB table and returns the matching results as an
      * unmodifiable list of instantiated objects, using the default
      * configuration.
-     * 
+     *
      * @see DynamoDBMapper#query(Class, DynamoDBQueryExpression,
      *      DynamoDBMapperConfig)
      */
     public <T> PaginatedQueryList<T> query(Class<T> clazz, DynamoDBQueryExpression queryExpression) {
         return query(clazz, queryExpression, config);
     }
-    
+
     /**
      * Queries an AWS DynamoDB table and returns the matching results as an
      * unmodifiable list of instantiated objects. The table to query is
@@ -959,35 +1044,73 @@ public class DynamoDBMapper {
      *            default provided at object construction.
      * @return An unmodifiable list of the objects constructed from the results
      *         of the query operation.
-     *         
-     * @see PaginatedQueryList        
+     *
+     * @see PaginatedQueryList
      */
     public <T> PaginatedQueryList<T> query(Class<T> clazz, DynamoDBQueryExpression queryExpression, DynamoDBMapperConfig config) {
+        return query(clazz, queryExpression, config, null);
+    }
+
+    /**
+     * Queries an AWS DynamoDB table and returns the matching results as an
+     * unmodifiable list of instantiated objects. The table to query is
+     * determined by looking at the annotations on the specified class, which
+     * declares where to store the object data in AWS DynamoDB, and the query
+     * expression parameter allows the caller to filter results and control how
+     * the query is executed.
+     * <p>
+     * Callers should be aware that the returned list is unmodifiable, and any
+     * attempts to modify the list will result in an
+     * UnsupportedOperationException.
+     * <p>
+     * The unmodifiable list returned is lazily loaded when possible, so calls
+     * to DynamoDB will be made only as needed.
+     *
+     * @param <T>
+     *            The type of the objects being returned.
+     * @param clazz
+     *            The class annotated with DynamoDB annotations describing how
+     *            to store the object data in AWS DynamoDB.
+     * @param queryExpression
+     *            Details on how to run the query, including any filters to
+     *            apply to limit the results.
+     * @param config
+     *            The configuration to use for this query, which overrides the
+     *            default provided at object construction.
+     * @param dispatcher
+     *            Determines the object type of the result using the item's
+     *            attributes.
+     * @return An unmodifiable list of the objects constructed from the results
+     *         of the query operation.
+     *
+     * @see PaginatedQueryList
+     */
+    public <T> PaginatedQueryList<T> query(Class<T> clazz, DynamoDBQueryExpression queryExpression, DynamoDBMapperConfig config, TypeDispatcher<T> dispatcher) {
         config = mergeConfig(config);
-        
+
         QueryRequest queryRequest = createQueryRequestFromExpression(clazz, queryExpression, config);
 
         QueryResult queryResult = db.query(applyUserAgent(queryRequest));
-        return new PaginatedQueryList<T>(this, clazz, db, queryRequest, queryResult);
+        return new PaginatedQueryList<T>(this, clazz, db, queryRequest, queryResult, dispatcher);
     }
 
     /**
      * Evaluates the specified scan expression and returns the count of matching
      * items, without returning any of the actual item data, using the default configuration.
-     * 
+     *
      * @see DynamoDBMapper#count(Class, DynamoDBScanExpression, DynamoDBMapperConfig)
      */
     public int count(Class<?> clazz, DynamoDBScanExpression scanExpression) {
         return count(clazz, scanExpression, config);
     }
-    
+
     /**
      * Evaluates the specified scan expression and returns the count of matching
      * items, without returning any of the actual item data.
      * <p>
      * This operation will scan your entire table, and can therefore be very
      * expensive. Use with caution.
-     * 
+     *
      * @param clazz
      *            The class mapped to a DynamoDB table.
      * @param scanExpression
@@ -1000,7 +1123,7 @@ public class DynamoDBMapper {
      */
     public int count(Class<?> clazz, DynamoDBScanExpression scanExpression, DynamoDBMapperConfig config) {
         config = mergeConfig(config);
-        
+
         ScanRequest scanRequest = createScanRequestFromExpression(clazz, scanExpression, config);
         scanRequest.setCount(true);
 
@@ -1020,17 +1143,17 @@ public class DynamoDBMapper {
     /**
      * Evaluates the specified query expression and returns the count of matching
      * items, without returning any of the actual item data, using the default configuration.
-     * 
+     *
      * @see DynamoDBMapper#count(Class, DynamoDBQueryExpression, DynamoDBMapperConfig)
      */
     public int count(Class<?> clazz, DynamoDBQueryExpression queryExpression) {
         return count(clazz, queryExpression, config);
     }
-    
+
     /**
      * Evaluates the specified query expression and returns the count of
      * matching items, without returning any of the actual item data.
-     * 
+     *
      * @param clazz
      *            The class mapped to a DynamoDB table.
      * @param scanExpression
@@ -1041,7 +1164,7 @@ public class DynamoDBMapper {
      * @return The count of matching items, without returning any of the actual
      *         item data.
      */
-    public int count(Class<?> clazz, DynamoDBQueryExpression queryExpression, DynamoDBMapperConfig config) {        
+    public int count(Class<?> clazz, DynamoDBQueryExpression queryExpression, DynamoDBMapperConfig config) {
         config = mergeConfig(config);
 
         QueryRequest queryRequest = createQueryRequestFromExpression(clazz, queryExpression, config);
@@ -1087,7 +1210,7 @@ public class DynamoDBMapper {
 
         return queryRequest;
     }
-    
+
     static <X extends AmazonWebServiceRequest> X applyUserAgent(X request) {
         request.getRequestClientOptions().addClientMarker(USER_AGENT);
         return request;

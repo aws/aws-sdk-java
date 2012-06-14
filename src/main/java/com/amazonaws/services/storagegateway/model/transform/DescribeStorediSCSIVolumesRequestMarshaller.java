@@ -35,7 +35,7 @@ import com.amazonaws.util.json.*;
 import static com.amazonaws.http.HttpMethodName.POST;
 
 /**
- * Describe Storedi S C S I Volumes Request Marshaller
+ * Describe Stored i S C S I Volumes Request Marshaller
  */
 public class DescribeStorediSCSIVolumesRequestMarshaller implements Marshaller<Request<DescribeStorediSCSIVolumesRequest>, DescribeStorediSCSIVolumesRequest> {
 
