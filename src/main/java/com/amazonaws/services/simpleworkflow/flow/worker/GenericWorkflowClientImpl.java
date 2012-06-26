@@ -38,6 +38,7 @@ import com.amazonaws.services.simpleworkflow.flow.generic.GenericWorkflowClient;
 import com.amazonaws.services.simpleworkflow.flow.generic.SignalExternalWorkflowParameters;
 import com.amazonaws.services.simpleworkflow.flow.generic.StartChildWorkflowExecutionParameters;
 import com.amazonaws.services.simpleworkflow.flow.generic.StartChildWorkflowReply;
+import com.amazonaws.services.simpleworkflow.model.ChildPolicy;
 import com.amazonaws.services.simpleworkflow.model.ChildWorkflowExecutionCanceledEventAttributes;
 import com.amazonaws.services.simpleworkflow.model.ChildWorkflowExecutionCompletedEventAttributes;
 import com.amazonaws.services.simpleworkflow.model.ChildWorkflowExecutionFailedEventAttributes;
@@ -143,6 +144,10 @@ class GenericWorkflowClientImpl implements GenericWorkflowClient {
         List<String> tagList = parameters.getTagList();
         if (tagList != null) {
             attributes.setTagList(tagList);
+        }
+        ChildPolicy childPolicy = parameters.getChildPolicy();
+        if (childPolicy != null) {
+            attributes.setChildPolicy(childPolicy);
         }
         String taskList = parameters.getTaskList();
         if (taskList != null && !taskList.isEmpty()) {

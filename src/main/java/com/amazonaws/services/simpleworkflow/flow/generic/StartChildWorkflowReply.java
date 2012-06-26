@@ -17,6 +17,10 @@ package com.amazonaws.services.simpleworkflow.flow.generic;
 import com.amazonaws.services.simpleworkflow.flow.core.Promise;
 
 
+/**
+ * This interface is for internal use only and may be changed or removed without prior notice.
+ *
+ */
 public interface StartChildWorkflowReply {
 
     public String getRunId();

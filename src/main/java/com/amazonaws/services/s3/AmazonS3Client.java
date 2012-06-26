@@ -246,16 +246,17 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         this(new AWSCredentialsProviderChain(
                 new EnvironmentVariableCredentialsProvider(),
                 new SystemPropertiesCredentialsProvider(),
-                new InstanceProfileCredentialsProvider(),
-                new AnonymousCredentialsProvider()));
-    }
+                new InstanceProfileCredentialsProvider()) {
 
-    private static class AnonymousCredentialsProvider implements AWSCredentialsProvider {
-        public AWSCredentials getCredentials() {
-            return null;
-        }
+            public AWSCredentials getCredentials() {
+                try {
+                    return super.getCredentials();
+                } catch (AmazonClientException ace) {}
 
-        public void refresh() {}
+                log.debug("No credentials available; falling back to anonymous access");
+                return null;
+            }
+        });
     }
 
     /**
@@ -567,7 +568,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         bucketNameUtils.validateBucketName(bucketName);
 
         Request<CreateBucketRequest> request = createRequest(bucketName, null, createBucketRequest, HttpMethodName.PUT);
-        
+
         if ( createBucketRequest.getAccessControlList() != null ) {
             addAclHeaders(request, createBucketRequest.getAccessControlList());
         } else if ( createBucketRequest.getCannedAcl() != null ) {

@@ -57,6 +57,7 @@
                 <path refid="aws.java.sdk.classpath" />
             	<path location="${classes.dir}" />
             </classpath>
+        	<arg line="${main-args}"/>
         	<jvmarg value="-javaagent:${aspectj.weaver}" />
         </java>
     </target>

@@ -61,11 +61,20 @@ public final class AsyncTaskInfo {
                         Promise<?>[] elements = andPromise.getValues();
                         StringBuilder description = new StringBuilder();
                         description.append("PromiseCollection[");
+                        boolean first = true;
                         for (int j = 0; j < elements.length; j++) {
                             Promise<?> e = elements[j];
+                            if (e == null) {
+                                continue;
+                            }
+                            if (first) {
+                                first = false;
+                            } else {
+                                description.append(" ");
+                            }
+                            description.append(j);
                             String d = e.getDescription();
                             if (d != null) {
-                                description.append(j);
                                 description.append(":\"");
                                 description.append(d);
                                 description.append("\"");
@@ -75,7 +84,8 @@ public final class AsyncTaskInfo {
                         waitingOnArguments.put(i + 1, description.toString());
                     }
                     else {
-                        waitingOnArguments.put(i + 1, promise.getDescription());
+                        String quotedDescription = promise.getDescription() == null ? null : "\"" + promise.getDescription() + "\"";
+                        waitingOnArguments.put(i + 1,  quotedDescription);
                     }
                 }
             }
@@ -93,9 +103,8 @@ public final class AsyncTaskInfo {
                     result.append(pair.getKey());
                     String description = pair.getValue();
                     if (description != null) {
-                        result.append(":\"");
+                        result.append(":");
                         result.append(description);
-                        result.append("\"");
                     }
                 }
             }

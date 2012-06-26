@@ -22,6 +22,7 @@ import com.amazonaws.services.simpleworkflow.flow.ActivityExecutionContext;
 import com.amazonaws.services.simpleworkflow.flow.ActivityFailureException;
 import com.amazonaws.services.simpleworkflow.flow.DataConverter;
 import com.amazonaws.services.simpleworkflow.flow.DataConverterException;
+import com.amazonaws.services.simpleworkflow.flow.common.WorkflowExecutionUtils;
 import com.amazonaws.services.simpleworkflow.flow.generic.ActivityImplementationBase;
 import com.amazonaws.services.simpleworkflow.flow.worker.ActivityTypeExecutionOptions;
 import com.amazonaws.services.simpleworkflow.flow.worker.ActivityTypeRegistrationOptions;
@@ -95,7 +96,7 @@ class POJOActivityImplementation extends ActivityImplementationBase {
             throw (CancellationException)exception;
         }
         
-        String reason = exception.getMessage();
+        String reason = WorkflowExecutionUtils.truncateReason(exception.getMessage());
         String details = null;
         try {
             details = converter.toData(exception);

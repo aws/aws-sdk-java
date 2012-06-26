@@ -19,7 +19,7 @@ public abstract class TryFinally extends TryCatchFinally {
 	public TryFinally(Promise<?>... waitFor) {
 	    // The reason this() is not called here is to pass correct value of the skipStackLines.
 	    // While this() passes the same value it also adds its own line into the stack trace.
-	    super(null, null, 7, null);
+	    super(null, null, 7, waitFor);
 	}
 
 	public TryFinally(boolean daemon, Promise<?>... waitFor) {

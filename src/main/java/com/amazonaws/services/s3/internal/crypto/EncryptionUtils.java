@@ -44,12 +44,14 @@ import com.amazonaws.services.s3.internal.RepeatableFileInputStream;
 import com.amazonaws.services.s3.model.DeleteObjectRequest;
 import com.amazonaws.services.s3.model.EncryptionMaterials;
 import com.amazonaws.services.s3.model.EncryptionMaterialsAccessor;
+import com.amazonaws.services.s3.model.EncryptionMaterialsProvider;
 import com.amazonaws.services.s3.model.GetObjectRequest;
 import com.amazonaws.services.s3.model.InitiateMultipartUploadRequest;
 import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.amazonaws.services.s3.model.S3Object;
 import com.amazonaws.services.s3.model.S3ObjectInputStream;
+import com.amazonaws.services.s3.model.StaticEncryptionMaterialsProvider;
 import com.amazonaws.services.s3.model.UploadPartRequest;
 import com.amazonaws.util.json.JSONException;
 import com.amazonaws.util.json.JSONObject;
@@ -126,12 +128,18 @@ public class EncryptionUtils {
      * @return
      *      The instruction that will be used to encrypt an object.
      */
+    @Deprecated
     public static EncryptionInstruction generateInstruction(EncryptionMaterials materials, Provider cryptoProvider) {
+      return generateInstruction(new StaticEncryptionMaterialsProvider(materials), cryptoProvider);
+    }
+
+    public static EncryptionInstruction generateInstruction(EncryptionMaterialsProvider materialsProvider, Provider cryptoProvider) {
         // Generate a one-time use symmetric key and initialize a cipher to encrypt object data
         SecretKey envelopeSymmetricKey = generateOneTimeUseSymmetricKey();
         Cipher symmetricCipher = createSymmetricCipher(envelopeSymmetricKey, Cipher.ENCRYPT_MODE, cryptoProvider, null);
 
         // Encrypt the envelope symmetric key
+        EncryptionMaterials materials = materialsProvider.getEncryptionMaterials();
         byte[] encryptedEnvelopeSymmetricKey = getEncryptedSymmetricKey(envelopeSymmetricKey, materials, cryptoProvider);
 
         // Return a new instruction with the appropriate fields.
@@ -151,7 +159,25 @@ public class EncryptionUtils {
      * @return
      *      A non-null instruction object containing encryption information
      */
+    @Deprecated
     public static EncryptionInstruction buildInstructionFromInstructionFile(S3Object instructionFile, EncryptionMaterials materials, Provider cryptoProvider) {
+        return buildInstructionFromInstructionFile(instructionFile, new StaticEncryptionMaterialsProvider(materials), cryptoProvider);
+    }
+
+    /**
+     * Builds an instruction object from the contents of an instruction file.
+     *
+     * @param instructionFile
+     *      A non-null instruction file retrieved from S3 that contains encryption information
+     * @param materialsProvider
+     *      The non-null encryption materials provider to be used to encrypt and decrypt data.
+     * @param cryptoProvider
+     *      The crypto provider whose encryption implementation will be used to encrypt and decrypt data.  Null is ok and uses the
+     *      preferred provider from Security.getProviders().
+     * @return
+     *      A non-null instruction object containing encryption information
+     */
+    public static EncryptionInstruction buildInstructionFromInstructionFile(S3Object instructionFile, EncryptionMaterialsProvider materialsProvider, Provider cryptoProvider) {
         JSONObject instructionJSON = parseJSONInstruction(instructionFile);
         try {
             // Get fields from instruction object
@@ -171,18 +197,14 @@ public class EncryptionUtils {
                                       instructionFile.getKey(), instructionFile.getBucketName()));
             }
 
-            // If the original encryption materials that encrypted the object are not the same as the current
-            // encryption materials, then try to retrieve the original encryption materials.
-            if (!materialsDescription.equals(materials.getMaterialsDescription())) {
-                materials = retrieveOriginalMaterials(materialsDescription, materials.getAccessor());
-                // If we're unable to retrieve the original encryption materials, we can't decrypt the object, so
-                // throw an exception.
-                if (materials == null) {
-                    throw new AmazonClientException(
-                            String.format("Unable to retrieve the encryption materials that originally " +
-                                    "encrypted object corresponding to instruction file '%s' in bucket '%s'.",
-                                    instructionFile.getKey(), instructionFile.getBucketName()));
-                }
+            EncryptionMaterials materials = retrieveOriginalMaterials(materialsDescription, materialsProvider);
+            // If we're unable to retrieve the original encryption materials, we can't decrypt the object, so
+            // throw an exception.
+            if (materials == null) {
+                throw new AmazonClientException(
+                        String.format("Unable to retrieve the encryption materials that originally " +
+                                "encrypted object corresponding to instruction file '%s' in bucket '%s'.",
+                                instructionFile.getKey(), instructionFile.getBucketName()));
             }
 
             // Decrypt the symmetric key and create the symmetric cipher
@@ -212,7 +234,29 @@ public class EncryptionUtils {
      *      if encryption information is missing in the metadata, or the encryption
      *      materials used to encrypt the object are not available via the materials Accessor
      */
+    @Deprecated
     public static EncryptionInstruction buildInstructionFromObjectMetadata(S3Object object, EncryptionMaterials materials, Provider cryptoProvider) {
+      return buildInstructionFromObjectMetadata(object, new StaticEncryptionMaterialsProvider(materials), cryptoProvider);
+    }
+
+    /**
+     * Builds an instruction object from the object metadata.
+     *
+     * @param object
+     *      A non-null object that contains encryption information in its headers
+     * @param materialsProvider
+     *      The non-null encryption materials provider to be used to encrypt and decrypt data.
+     * @param cryptoProvider
+     *      The crypto provider whose encryption implementation will be used to encrypt and decrypt data.  Null is ok and uses the
+     *      preferred provider from Security.getProviders().
+     * @return
+     *      A non-null instruction object containing encryption information
+     *
+     * @throws AmazonClientException
+     *      if encryption information is missing in the metadata, or the encryption
+     *      materials used to encrypt the object are not available via the materials Accessor
+     */
+    public static EncryptionInstruction buildInstructionFromObjectMetadata(S3Object object, EncryptionMaterialsProvider materialsProvider, Provider cryptoProvider) {
         ObjectMetadata metadata = object.getObjectMetadata();
 
         // Get encryption info from metadata.
@@ -228,18 +272,14 @@ public class EncryptionUtils {
                                   object.getKey(), object.getBucketName()));
         }
 
-        // If the original encryption materials that encrypted the object are not the same as the current
-        // encryption materials, then try to retrieve the original encryption materials.
-        if (!materialsDescription.equals(materials.getMaterialsDescription())) {
-            materials = retrieveOriginalMaterials(materialsDescription, materials.getAccessor());
-            // If we're unable to retrieve the original encryption materials, we can't decrypt the object, so
-            // throw an exception.
-            if (materials == null) {
-                throw new AmazonClientException(
-                        String.format("Unable to retrieve the encryption materials that originally " +
-                                "encrypted file '%s' in bucket '%s'.",
-                                object.getKey(), object.getBucketName()));
-            }
+        EncryptionMaterials materials = retrieveOriginalMaterials(materialsDescription, materialsProvider);
+        // If we're unable to retrieve the original encryption materials, we can't decrypt the object, so
+        // throw an exception.
+        if (materials == null) {
+            throw new AmazonClientException(
+                    String.format("Unable to retrieve the encryption materials that originally " +
+                            "encrypted file '%s' in bucket '%s'.",
+                            object.getKey(), object.getBucketName()));
         }
 
         // Decrypt the symmetric key and create the symmetric cipher

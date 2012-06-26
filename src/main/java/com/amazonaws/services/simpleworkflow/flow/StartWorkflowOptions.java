@@ -16,13 +16,29 @@ package com.amazonaws.services.simpleworkflow.flow;
 
 import java.util.List;
 
+import com.amazonaws.services.simpleworkflow.model.ChildPolicy;
+
 public class StartWorkflowOptions {
-	Long executionStartToCloseTimeoutSeconds;
-	Long taskStartToCloseTimeoutSeconds;
-    private List<String> tagList;
-	String taskList;
 	
-	public Long getExecutionStartToCloseTimeoutSeconds() {
+    private Long executionStartToCloseTimeoutSeconds;
+	
+    private Long taskStartToCloseTimeoutSeconds;
+    
+    private List<String> tagList;
+	
+    private String taskList;
+	
+    private ChildPolicy childPolicy;
+    
+    public ChildPolicy getChildPolicy() {
+        return childPolicy;
+    }
+    
+    public void setChildPolicy(ChildPolicy childPolicy) {
+        this.childPolicy = childPolicy;
+    }
+    
+    public Long getExecutionStartToCloseTimeoutSeconds() {
 		return executionStartToCloseTimeoutSeconds;
 	}
 	

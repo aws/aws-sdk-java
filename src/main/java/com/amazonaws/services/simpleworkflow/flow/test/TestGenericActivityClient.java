@@ -75,6 +75,12 @@ public class TestGenericActivityClient implements GenericActivityClient {
         public WorkflowExecution getWorkflowExecution() {
             return workflowExecution;
         }
+
+        @Override
+        public String getDomain() {
+            return "dummyTestDomain";
+        }
+        
     }
 
     /**

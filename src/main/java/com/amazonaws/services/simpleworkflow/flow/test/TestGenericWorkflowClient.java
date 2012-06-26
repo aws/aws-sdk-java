@@ -26,7 +26,6 @@ import com.amazonaws.services.simpleworkflow.flow.DecisionContextProviderImpl;
 import com.amazonaws.services.simpleworkflow.flow.SignalExternalWorkflowException;
 import com.amazonaws.services.simpleworkflow.flow.StartChildWorkflowFailedException;
 import com.amazonaws.services.simpleworkflow.flow.WorkflowClock;
-import com.amazonaws.services.simpleworkflow.flow.WorkflowContext;
 import com.amazonaws.services.simpleworkflow.flow.WorkflowException;
 import com.amazonaws.services.simpleworkflow.flow.common.FlowConstants;
 import com.amazonaws.services.simpleworkflow.flow.core.Functor;
@@ -70,52 +69,6 @@ public class TestGenericWorkflowClient implements GenericWorkflowClient {
         public Promise<String> getResult() {
             return result;
         }
-    }
-
-    private static final class TestWorkflowContext implements WorkflowContext {
-
-        private TryCatchFinally encosingTryCatch;
-
-        private final StartChildWorkflowExecutionParameters parameters;
-
-        private final WorkflowExecution childExecution;
-
-        private ContinueAsNewWorkflowExecutionParameters continueParameters;
-
-        private TestWorkflowContext(StartChildWorkflowExecutionParameters parameters, WorkflowExecution childExecution) {
-            this.parameters = parameters;
-            this.childExecution = childExecution;
-        }
-
-        public void setEncosingTryCatch(TryCatchFinally encosingTryCatch) {
-            this.encosingTryCatch = encosingTryCatch;
-        }
-
-        @Override
-        public void setContinueAsNewOnCompletion(ContinueAsNewWorkflowExecutionParameters continueParameters) {
-            this.continueParameters = continueParameters;
-        }
-
-        @Override
-        public boolean isCancelRequested() {
-            return encosingTryCatch.isCancelRequested();
-        }
-
-        @Override
-        public WorkflowType getWorkflowType() {
-            return parameters.getWorkflowType();
-        }
-
-        @Override
-        public WorkflowExecution getWorkflowExecution() {
-            return childExecution;
-        }
-
-        @Override
-        public ContinueAsNewWorkflowExecutionParameters getContinueAsNewOnCompletion() {
-            return continueParameters;
-        }
-
     }
 
     private final class ChildWorkflowTryCatchFinally extends TryCatchFinally {
@@ -178,7 +131,6 @@ public class TestGenericWorkflowClient implements GenericWorkflowClient {
                 continueAsNew.set(childContext.getWorkflowContext().getContinueAsNewOnCompletion());
                 if (continueAsNew.get() == null && executeResult.isReady()) {
                     result.set(executeResult.get());
-                    return;
                 }
             }
             else {
@@ -189,7 +141,7 @@ public class TestGenericWorkflowClient implements GenericWorkflowClient {
 
         public void signalRecieved(final String signalName, final String details) {
             if (getState() != State.TRYING) {
-                throw new SignalExternalWorkflowException(0, childExecution, "Completed");
+                throw new SignalExternalWorkflowException(0, childExecution, "UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION");
             }
             new Task(this) {
 
@@ -288,14 +240,19 @@ public class TestGenericWorkflowClient implements GenericWorkflowClient {
                 String cause = StartChildWorkflowExecutionFailedCause.WORKFLOW_TYPE_DOES_NOT_EXIST.toString();
                 throw new StartChildWorkflowFailedException(0, childExecution, workflowType, cause);
             }
-            TestWorkflowContext workfowContext = new TestWorkflowContext(parameters, childExecution);
+            TestWorkflowContext workflowContext = new TestWorkflowContext();
+            workflowContext.setWorkflowExecution(childExecution);
+            workflowContext.setWorkflowType(parameters.getWorkflowType());
+            workflowContext.setParentWorkflowExecution(parentDecisionContext.getWorkflowContext().getWorkflowExecution());
+            workflowContext.setTagList(parameters.getTagList());
+            workflowContext.setTaskList(parameters.getTaskList());
             DecisionContext context = new TestDecisionContext(activityClient, TestGenericWorkflowClient.this, workflowClock,
-                    workfowContext);
+                    workflowContext);
             //this, parameters, childExecution, workflowClock, activityClient);
             final WorkflowDefinition childWorkflowDefinition = factory.getWorkflowDefinition(context);
             final ChildWorkflowTryCatchFinally tryCatch = new ChildWorkflowTryCatchFinally(parameters, childExecution,
                     childWorkflowDefinition, context, result);
-            workfowContext.setEncosingTryCatch(tryCatch);
+            workflowContext.setRootTryCatch(tryCatch);
             ChildWorkflowTryCatchFinally currentRun = workflowExecutions.get(workflowId);
             if (currentRun != null) {
                 String cause = StartChildWorkflowExecutionFailedCause.WORKFLOW_ALREADY_RUNNING.toString();
@@ -348,7 +305,6 @@ public class TestGenericWorkflowClient implements GenericWorkflowClient {
                     taskStartToClose = previousParameters.getTaskStartToCloseTimeoutSeconds();
                 }
                 nextParameters.setTaskStartToCloseTimeoutSeconds(taskStartToClose);
-                workflowExecutions.remove(workflowId);
                 Settable<StartChildWorkflowReply> reply = new Settable<StartChildWorkflowReply>();
                 startChildWorkflow(nextParameters, reply, result);
             }
@@ -386,7 +342,7 @@ public class TestGenericWorkflowClient implements GenericWorkflowClient {
         signaledExecution.setRunId(signalParameters.getRunId());
         final ChildWorkflowTryCatchFinally childTryCatch = workflowExecutions.get(signalParameters.getWorkflowId());
         if (childTryCatch == null) {
-            throw new SignalExternalWorkflowException(0, signaledExecution, "Unknown Execution");
+            throw new SignalExternalWorkflowException(0, signaledExecution, "UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION");
         }
         String openExecutionRunId = childTryCatch.getWorkflowExecution().getRunId();
         if (signalParameters.getRunId() != null && !openExecutionRunId.equals(signalParameters.getRunId())) {

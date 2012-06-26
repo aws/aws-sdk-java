@@ -28,6 +28,10 @@ import com.amazonaws.services.simpleworkflow.flow.generic.ActivityImplementation
 import com.amazonaws.services.simpleworkflow.model.ActivityTask;
 import com.amazonaws.services.simpleworkflow.model.WorkflowExecution;
 
+/**
+ * This class is for internal use only and may be changed or removed without prior notice.
+ *
+ */
 public class ActivityTaskPoller extends SynchronousActivityTaskPoller {
 
     private static final Log log = LogFactory.getLog(ActivityTaskPoller.class);
@@ -121,7 +125,7 @@ public class ActivityTaskPoller extends SynchronousActivityTaskPoller {
 
         RuntimeException e2 = new RuntimeException(
                 "Failure taskId=\"" + task.getStartedEventId() + "\" workflowExecutionRunId=\"" + execution.getRunId()
-                        + "\" workflowExecutionId=\"" + execution.getWorkflowId(), failure);
+                        + "\" workflowExecutionId=\"" + execution.getWorkflowId() + "\"", failure);
         return e2;
     }
 

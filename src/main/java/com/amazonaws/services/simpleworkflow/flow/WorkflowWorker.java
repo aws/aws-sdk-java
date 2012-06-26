@@ -239,4 +239,14 @@ public class WorkflowWorker implements WorkerBase {
         factoryFactory.setDataConverter(converter);
     }
 
+    @Override
+    public void setDisableTypeRegistrationOnStart(boolean disableTypeRegistrationOnStart) {
+        genericWorker.setDisableTypeRegistrationOnStart(disableTypeRegistrationOnStart);
+    }
+
+    @Override
+    public boolean isDisableTypeRegistrationOnStart() {
+        return genericWorker.isDisableTypeRegistrationOnStart();
+    }
+
 }

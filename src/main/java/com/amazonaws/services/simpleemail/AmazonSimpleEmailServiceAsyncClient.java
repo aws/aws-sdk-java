@@ -257,34 +257,6 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
             
     /**
      * <p>
-     * Returns the user's current sending limits.
-     * </p>
-     *
-     * @param getSendQuotaRequest Container for the necessary parameters to
-     *           execute the GetSendQuota operation on AmazonSimpleEmailService.
-     * 
-     * @return A Java Future object containing the response from the
-     *         GetSendQuota service method, as returned by AmazonSimpleEmailService.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSimpleEmailService indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<GetSendQuotaResult> getSendQuotaAsync(final GetSendQuotaRequest getSendQuotaRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<GetSendQuotaResult>() {
-            public GetSendQuotaResult call() throws Exception {
-                return getSendQuota(getSendQuotaRequest);
-		    }
-		});
-    }
-    
-    /**
-     * <p>
      * Deletes the specified identity (email address or domain) from the list
      * of verified identities.
      * </p>
@@ -417,69 +389,19 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
     
     /**
      * <p>
-     * Composes an email message based on input data, and then immediately
-     * queues the message for sending.
-     * </p>
-     * <p>
-     * <b>IMPORTANT:</b>If you have not yet requested production access to
-     * Amazon SES, then you will only be able to send email to and from
-     * verified email addresses and domains. For more information, go to the
-     * Amazon SES Developer Guide.
-     * </p>
-     * <p>
-     * The total size of the message cannot exceed 10 MB.
-     * </p>
-     * <p>
-     * Amazon SES has a limit on the total number of recipients per message:
-     * The combined number of To:, CC: and BCC: email addresses cannot exceed
-     * 50. If you need to send an email message to a larger audience, you can
-     * divide your recipient list into groups of 50 or fewer, and then call
-     * Amazon SES repeatedly to send the message to each group.
-     * </p>
-     * <p>
-     * For every message that you send, the total number of recipients (To:,
-     * CC: and BCC:) is counted against your <i>sending quota</i> - the
-     * maximum number of emails you can send in a 24-hour period. For
-     * information about your sending quota, go to the "Managing Your Sending
-     * Activity" section of the<a
+     * Given a list of verified identities (email addresses and/or domains),
+     * returns a structure describing identity notification attributes. For
+     * more information about feedback notification, see the <a
      * href="http://docs.amazonwebservices.com/ses/latest/DeveloperGuide">
      * Amazon SES Developer Guide </a> .
      * </p>
      *
-     * @param sendEmailRequest Container for the necessary parameters to
-     *           execute the SendEmail operation on AmazonSimpleEmailService.
+     * @param getIdentityNotificationAttributesRequest Container for the
+     *           necessary parameters to execute the GetIdentityNotificationAttributes
+     *           operation on AmazonSimpleEmailService.
      * 
      * @return A Java Future object containing the response from the
-     *         SendEmail service method, as returned by AmazonSimpleEmailService.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSimpleEmailService indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<SendEmailResult> sendEmailAsync(final SendEmailRequest sendEmailRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<SendEmailResult>() {
-            public SendEmailResult call() throws Exception {
-                return sendEmail(sendEmailRequest);
-		    }
-		});
-    }
-    
-    /**
-     * <p>
-     * Verifies a domain.
-     * </p>
-     *
-     * @param verifyDomainIdentityRequest Container for the necessary
-     *           parameters to execute the VerifyDomainIdentity operation on
-     *           AmazonSimpleEmailService.
-     * 
-     * @return A Java Future object containing the response from the
-     *         VerifyDomainIdentity service method, as returned by
+     *         GetIdentityNotificationAttributes service method, as returned by
      *         AmazonSimpleEmailService.
      *
      * @throws AmazonClientException
@@ -490,48 +412,11 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
      *             If an error response is returned by AmazonSimpleEmailService indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<VerifyDomainIdentityResult> verifyDomainIdentityAsync(final VerifyDomainIdentityRequest verifyDomainIdentityRequest) 
+    public Future<GetIdentityNotificationAttributesResult> getIdentityNotificationAttributesAsync(final GetIdentityNotificationAttributesRequest getIdentityNotificationAttributesRequest) 
             throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<VerifyDomainIdentityResult>() {
-            public VerifyDomainIdentityResult call() throws Exception {
-                return verifyDomainIdentity(verifyDomainIdentityRequest);
-		    }
-		});
-    }
-    
-    /**
-     * <p>
-     * Deletes the specified email address from the list of verified
-     * addresses.
-     * </p>
-     * <p>
-     * <b>IMPORTANT:</b>The DeleteVerifiedEmailAddress action is deprecated
-     * as of the May 15, 2012 release of Domain Verification. The
-     * DeleteIdentity action is now preferred.
-     * </p>
-     *
-     * @param deleteVerifiedEmailAddressRequest Container for the necessary
-     *           parameters to execute the DeleteVerifiedEmailAddress operation on
-     *           AmazonSimpleEmailService.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DeleteVerifiedEmailAddress service method, as returned by
-     *         AmazonSimpleEmailService.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSimpleEmailService indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> deleteVerifiedEmailAddressAsync(final DeleteVerifiedEmailAddressRequest deleteVerifiedEmailAddressRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-                deleteVerifiedEmailAddress(deleteVerifiedEmailAddressRequest);
-                return null;
+        return executorService.submit(new Callable<GetIdentityNotificationAttributesResult>() {
+            public GetIdentityNotificationAttributesResult call() throws Exception {
+                return getIdentityNotificationAttributes(getIdentityNotificationAttributesRequest);
 		    }
 		});
     }
@@ -689,6 +574,228 @@ public class AmazonSimpleEmailServiceAsyncClient extends AmazonSimpleEmailServic
         return executorService.submit(new Callable<GetIdentityVerificationAttributesResult>() {
             public GetIdentityVerificationAttributesResult call() throws Exception {
                 return getIdentityVerificationAttributes(getIdentityVerificationAttributesRequest);
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Returns the user's current sending limits.
+     * </p>
+     *
+     * @param getSendQuotaRequest Container for the necessary parameters to
+     *           execute the GetSendQuota operation on AmazonSimpleEmailService.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetSendQuota service method, as returned by AmazonSimpleEmailService.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonSimpleEmailService indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetSendQuotaResult> getSendQuotaAsync(final GetSendQuotaRequest getSendQuotaRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<GetSendQuotaResult>() {
+            public GetSendQuotaResult call() throws Exception {
+                return getSendQuota(getSendQuotaRequest);
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Given an identity (email address or domain), enables or disables
+     * whether Amazon SES forwards feedback notifications as email. Feedback
+     * forwarding may only be disabled when both complaint and bounce topics
+     * are set. For more information about feedback notification, see the <a
+     * href="http://docs.amazonwebservices.com/ses/latest/DeveloperGuide">
+     * Amazon SES Developer Guide </a> .
+     * </p>
+     *
+     * @param setIdentityFeedbackForwardingEnabledRequest Container for the
+     *           necessary parameters to execute the
+     *           SetIdentityFeedbackForwardingEnabled operation on
+     *           AmazonSimpleEmailService.
+     * 
+     * @return A Java Future object containing the response from the
+     *         SetIdentityFeedbackForwardingEnabled service method, as returned by
+     *         AmazonSimpleEmailService.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonSimpleEmailService indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<SetIdentityFeedbackForwardingEnabledResult> setIdentityFeedbackForwardingEnabledAsync(final SetIdentityFeedbackForwardingEnabledRequest setIdentityFeedbackForwardingEnabledRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<SetIdentityFeedbackForwardingEnabledResult>() {
+            public SetIdentityFeedbackForwardingEnabledResult call() throws Exception {
+                return setIdentityFeedbackForwardingEnabled(setIdentityFeedbackForwardingEnabledRequest);
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Composes an email message based on input data, and then immediately
+     * queues the message for sending.
+     * </p>
+     * <p>
+     * <b>IMPORTANT:</b>If you have not yet requested production access to
+     * Amazon SES, then you will only be able to send email to and from
+     * verified email addresses and domains. For more information, go to the
+     * Amazon SES Developer Guide.
+     * </p>
+     * <p>
+     * The total size of the message cannot exceed 10 MB.
+     * </p>
+     * <p>
+     * Amazon SES has a limit on the total number of recipients per message:
+     * The combined number of To:, CC: and BCC: email addresses cannot exceed
+     * 50. If you need to send an email message to a larger audience, you can
+     * divide your recipient list into groups of 50 or fewer, and then call
+     * Amazon SES repeatedly to send the message to each group.
+     * </p>
+     * <p>
+     * For every message that you send, the total number of recipients (To:,
+     * CC: and BCC:) is counted against your <i>sending quota</i> - the
+     * maximum number of emails you can send in a 24-hour period. For
+     * information about your sending quota, go to the "Managing Your Sending
+     * Activity" section of the<a
+     * href="http://docs.amazonwebservices.com/ses/latest/DeveloperGuide">
+     * Amazon SES Developer Guide </a> .
+     * </p>
+     *
+     * @param sendEmailRequest Container for the necessary parameters to
+     *           execute the SendEmail operation on AmazonSimpleEmailService.
+     * 
+     * @return A Java Future object containing the response from the
+     *         SendEmail service method, as returned by AmazonSimpleEmailService.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonSimpleEmailService indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<SendEmailResult> sendEmailAsync(final SendEmailRequest sendEmailRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<SendEmailResult>() {
+            public SendEmailResult call() throws Exception {
+                return sendEmail(sendEmailRequest);
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Verifies a domain.
+     * </p>
+     *
+     * @param verifyDomainIdentityRequest Container for the necessary
+     *           parameters to execute the VerifyDomainIdentity operation on
+     *           AmazonSimpleEmailService.
+     * 
+     * @return A Java Future object containing the response from the
+     *         VerifyDomainIdentity service method, as returned by
+     *         AmazonSimpleEmailService.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonSimpleEmailService indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<VerifyDomainIdentityResult> verifyDomainIdentityAsync(final VerifyDomainIdentityRequest verifyDomainIdentityRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<VerifyDomainIdentityResult>() {
+            public VerifyDomainIdentityResult call() throws Exception {
+                return verifyDomainIdentity(verifyDomainIdentityRequest);
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Given an identity (email address or domain), sets the Amazon SNS topic
+     * to which Amazon SES will publish bounce and complaint notifications
+     * for emails sent with that identity as the <code>Source</code> .
+     * Publishing to topics may only be disabled when feedback
+     * forwarding is enabled. For more information about feedback
+     * notification, see the <a
+     * href="http://docs.amazonwebservices.com/ses/latest/DeveloperGuide">
+     * Amazon SES Developer Guide </a> .
+     * </p>
+     *
+     * @param setIdentityNotificationTopicRequest Container for the necessary
+     *           parameters to execute the SetIdentityNotificationTopic operation on
+     *           AmazonSimpleEmailService.
+     * 
+     * @return A Java Future object containing the response from the
+     *         SetIdentityNotificationTopic service method, as returned by
+     *         AmazonSimpleEmailService.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonSimpleEmailService indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<SetIdentityNotificationTopicResult> setIdentityNotificationTopicAsync(final SetIdentityNotificationTopicRequest setIdentityNotificationTopicRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<SetIdentityNotificationTopicResult>() {
+            public SetIdentityNotificationTopicResult call() throws Exception {
+                return setIdentityNotificationTopic(setIdentityNotificationTopicRequest);
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Deletes the specified email address from the list of verified
+     * addresses.
+     * </p>
+     * <p>
+     * <b>IMPORTANT:</b>The DeleteVerifiedEmailAddress action is deprecated
+     * as of the May 15, 2012 release of Domain Verification. The
+     * DeleteIdentity action is now preferred.
+     * </p>
+     *
+     * @param deleteVerifiedEmailAddressRequest Container for the necessary
+     *           parameters to execute the DeleteVerifiedEmailAddress operation on
+     *           AmazonSimpleEmailService.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeleteVerifiedEmailAddress service method, as returned by
+     *         AmazonSimpleEmailService.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonSimpleEmailService indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> deleteVerifiedEmailAddressAsync(final DeleteVerifiedEmailAddressRequest deleteVerifiedEmailAddressRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                deleteVerifiedEmailAddress(deleteVerifiedEmailAddressRequest);
+                return null;
 		    }
 		});
     }

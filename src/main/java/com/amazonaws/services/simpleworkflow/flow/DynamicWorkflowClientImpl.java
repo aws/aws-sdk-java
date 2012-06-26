@@ -181,8 +181,8 @@ public class DynamicWorkflowClientImpl implements DynamicWorkflowClient {
             protected void doTry() throws Throwable {
                 StartChildWorkflowExecutionParameters parameters = new StartChildWorkflowExecutionParameters();
                 parameters.setWorkflowType(workflowType);
-                String converterdArguments = dataConverter.toData(arguments);
-                parameters.setInput(converterdArguments);
+                String convertedArguments = dataConverter.toData(arguments);
+                parameters.setInput(convertedArguments);
                 parameters.setWorkflowId(workflowExecution.getWorkflowId());
                 final StartChildWorkflowExecutionParameters startParameters = parameters.createStartChildWorkflowExecutionParametersFromOptions(
                         schedulingOptions, startOptionsOverride);

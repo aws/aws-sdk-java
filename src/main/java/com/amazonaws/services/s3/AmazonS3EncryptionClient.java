@@ -45,6 +45,7 @@ import com.amazonaws.services.s3.model.CryptoConfiguration;
 import com.amazonaws.services.s3.model.CryptoStorageMode;
 import com.amazonaws.services.s3.model.DeleteObjectRequest;
 import com.amazonaws.services.s3.model.EncryptionMaterials;
+import com.amazonaws.services.s3.model.EncryptionMaterialsProvider;
 import com.amazonaws.services.s3.model.GetObjectRequest;
 import com.amazonaws.services.s3.model.GroupGrantee;
 import com.amazonaws.services.s3.model.InitiateMultipartUploadRequest;
@@ -54,6 +55,7 @@ import com.amazonaws.services.s3.model.Permission;
 import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.amazonaws.services.s3.model.PutObjectResult;
 import com.amazonaws.services.s3.model.S3Object;
+import com.amazonaws.services.s3.model.StaticEncryptionMaterialsProvider;
 import com.amazonaws.services.s3.model.UploadPartRequest;
 import com.amazonaws.services.s3.model.UploadPartResult;
 
@@ -64,7 +66,7 @@ import com.amazonaws.services.s3.model.UploadPartResult;
  */
 public class AmazonS3EncryptionClient extends AmazonS3Client {
 
-    private EncryptionMaterials encryptionMaterials;
+    private EncryptionMaterialsProvider encryptionMaterialsProvider;
     private CryptoConfiguration cryptoConfig;
 
     /** Shared logger for encryption client events */
@@ -101,10 +103,42 @@ public class AmazonS3EncryptionClient extends AmazonS3Client {
      * </p>
      *
      * @param encryptionMaterials
-     *      The encryption materials to be used to encrypt and decrypt data.
+     *            The encryption materials to be used to encrypt and decrypt data.
      */
     public AmazonS3EncryptionClient(EncryptionMaterials encryptionMaterials) {
-        this(null, encryptionMaterials, new ClientConfiguration(), new CryptoConfiguration());
+      this(new StaticEncryptionMaterialsProvider(encryptionMaterials));
+    }
+
+    /**
+     * <p>
+     * Constructs a new Amazon S3 Encryption client that will make <b>anonymous</b>
+     * requests to Amazon S3.  If {@link #getObject(String, String)} is called,
+     * the object contents will be decrypted with the encryption materials provided.
+     * </p>
+     * <p>
+     * Only a subset of the Amazon S3 API will work with anonymous
+     * <i>(i.e. unsigned)</i> requests, but this can prove useful in some situations.
+     * For example:
+     * <ul>
+     *  <li>If an Amazon S3 bucket has {@link Permission#Read} permission for the
+     *  {@link GroupGrantee#AllUsers} group, anonymous clients can call
+     *  {@link #listObjects(String)} to see what objects are stored in a bucket.</li>
+     *  <li>If an object has {@link Permission#Read} permission for the
+     *  {@link GroupGrantee#AllUsers} group, anonymous clients can call
+     *  {@link #getObject(String, String)} and
+     *  {@link #getObjectMetadata(String, String)} to pull object content and
+     *  metadata.</li>
+     *  <li>If a bucket has {@link Permission#Write} permission for the
+     *  {@link GroupGrantee#AllUsers} group, anonymous clients can upload objects
+     *  to the bucket.</li>
+     * </ul>
+     * </p>
+     *
+     * @param encryptionMaterialsProvider
+     *            A provider for the encryption materials to be used to encrypt and decrypt data.
+     */
+    public AmazonS3EncryptionClient(EncryptionMaterialsProvider encryptionMaterialsProvider) {
+        this(null, encryptionMaterialsProvider, new ClientConfiguration(), new CryptoConfiguration());
     }
 
     /**
@@ -135,12 +169,49 @@ public class AmazonS3EncryptionClient extends AmazonS3Client {
      * </p>
      *
      * @param encryptionMaterials
-     *      	  The encryption materials to be used to encrypt and decrypt data.
+     *      	    The encryption materials to be used to encrypt and decrypt data.
      * @param cryptoConfig
-     * 			  The crypto configuration whose parameters will be used to encrypt and decrypt data.
+     * 			      The crypto configuration whose parameters will be used to encrypt and decrypt data.
      */
     public AmazonS3EncryptionClient(EncryptionMaterials encryptionMaterials, CryptoConfiguration cryptoConfig) {
-        this(null, encryptionMaterials, new ClientConfiguration(), cryptoConfig);
+        this(new StaticEncryptionMaterialsProvider(encryptionMaterials), cryptoConfig);
+    }
+
+    /**
+     * <p>
+     * Constructs a new Amazon S3 Encryption client that will make <b>anonymous</b>
+     * requests to Amazon S3.  If {@link #getObject(String, String)} is called,
+     * the object contents will be decrypted with the encryption materials provided.
+     * The encryption implementation of the provided crypto provider will be
+     * used to encrypt and decrypt data.
+     * </p>
+     * <p>
+     * Only a subset of the Amazon S3 API will work with anonymous
+     * <i>(i.e. unsigned)</i> requests, but this can prove useful in some situations.
+     * For example:
+     * <ul>
+     *  <li>If an Amazon S3 bucket has {@link Permission#Read} permission for the
+     *  {@link GroupGrantee#AllUsers} group, anonymous clients can call
+     *  {@link #listObjects(String)} to see what objects are stored in a bucket.</li>
+     *  <li>If an object has {@link Permission#Read} permission for the
+     *  {@link GroupGrantee#AllUsers} group, anonymous clients can call
+     *  {@link #getObject(String, String)} and
+     *  {@link #getObjectMetadata(String, String)} to pull object content and
+     *  metadata.</li>
+     *  <li>If a bucket has {@link Permission#Write} permission for the
+     *  {@link GroupGrantee#AllUsers} group, anonymous clients can upload objects
+     *  to the bucket.</li>
+     * </ul>
+     * </p>
+     *
+     * @param encryptionMaterialsProvider
+     *            A provider for the encryption materials to be used to encrypt and decrypt data.
+     * @param cryptoConfig
+     *            The crypto configuration whose parameters will be used to encrypt and decrypt data.
+     */
+    public AmazonS3EncryptionClient(EncryptionMaterialsProvider encryptionMaterialsProvider,
+            CryptoConfiguration cryptoConfig) {
+        this(null, encryptionMaterialsProvider, new ClientConfiguration(), cryptoConfig);
     }
 
     /**
@@ -157,7 +228,24 @@ public class AmazonS3EncryptionClient extends AmazonS3Client {
      *            The encryption materials to be used to encrypt and decrypt data.
      */
     public AmazonS3EncryptionClient(AWSCredentials credentials, EncryptionMaterials encryptionMaterials) {
-        this(credentials, encryptionMaterials, new ClientConfiguration(), new CryptoConfiguration());
+        this(credentials, new StaticEncryptionMaterialsProvider(encryptionMaterials));
+    }
+
+    /**
+     * <p>
+     * Constructs a new Amazon S3 Encryption client using the specified AWS credentials to
+     * access Amazon S3.  Object contents will be encrypted and decrypted with the encryption
+     * materials provided.
+     * </p>
+     *
+     * @param credentials
+     *            The AWS credentials to use when making requests to Amazon S3
+     *            with this client.
+     * @param encryptionMaterialsProvider
+     *            A provider for the encryption materials to be used to encrypt and decrypt data.
+     */
+    public AmazonS3EncryptionClient(AWSCredentials credentials, EncryptionMaterialsProvider encryptionMaterialsProvider) {
+        this(credentials, encryptionMaterialsProvider, new ClientConfiguration(), new CryptoConfiguration());
     }
 
     /**
@@ -176,8 +264,30 @@ public class AmazonS3EncryptionClient extends AmazonS3Client {
      * @param cryptoConfig
      *            The crypto configuration whose parameters will be used to encrypt and decrypt data.
      */
-    public AmazonS3EncryptionClient(AWSCredentials credentials, EncryptionMaterials encryptionMaterials, CryptoConfiguration cryptoConfig) {
-        this(credentials, encryptionMaterials, new ClientConfiguration(), cryptoConfig);
+    public AmazonS3EncryptionClient(AWSCredentials credentials, EncryptionMaterials encryptionMaterials,
+            CryptoConfiguration cryptoConfig) {
+        this(credentials, new StaticEncryptionMaterialsProvider(encryptionMaterials), cryptoConfig);
+    }
+
+    /**
+     * <p>
+     * Constructs a new Amazon S3 Encryption client using the specified AWS credentials to
+     * access Amazon S3.  Object contents will be encrypted and decrypted with the encryption
+     * materials provided.  The encryption implementation of the provided crypto provider will
+     * be used to encrypt and decrypt data.
+     * </p>
+     *
+     * @param credentials
+     *            The AWS credentials to use when making requests to Amazon S3
+     *            with this client.
+     * @param encryptionMaterialsProvider
+     *            A provider for the encryption materials to be used to encrypt and decrypt data.
+     * @param cryptoConfig
+     *            The crypto configuration whose parameters will be used to encrypt and decrypt data.
+     */
+    public AmazonS3EncryptionClient(AWSCredentials credentials,
+            EncryptionMaterialsProvider encryptionMaterialsProvider, CryptoConfiguration cryptoConfig) {
+        this(credentials, encryptionMaterialsProvider, new ClientConfiguration(), cryptoConfig);
     }
 
     /**
@@ -203,10 +313,18 @@ public class AmazonS3EncryptionClient extends AmazonS3Client {
      */
     public AmazonS3EncryptionClient(AWSCredentials credentials, EncryptionMaterials encryptionMaterials,
             ClientConfiguration clientConfig, CryptoConfiguration cryptoConfig) {
+        this(credentials, new StaticEncryptionMaterialsProvider(encryptionMaterials), clientConfig, cryptoConfig);
+    }
+            
+
+    public AmazonS3EncryptionClient(AWSCredentials credentials,
+            EncryptionMaterialsProvider encryptionMaterialsProvider,
+            ClientConfiguration clientConfig, CryptoConfiguration cryptoConfig) {
         super(credentials, clientConfig);
-        assertParameterNotNull(encryptionMaterials, "EncryptionMaterials parameter must not be null.");
+        assertParameterNotNull(encryptionMaterialsProvider,
+                               "EncryptionMaterialsProvider parameter must not be null.");
         assertParameterNotNull(cryptoConfig, "CryptoConfiguration parameter must not be null.");
-        this.encryptionMaterials = encryptionMaterials;
+        this.encryptionMaterialsProvider = encryptionMaterialsProvider;
         this.cryptoConfig = cryptoConfig;
     }
 
@@ -341,6 +459,8 @@ public class AmazonS3EncryptionClient extends AmazonS3Client {
 	        		Cipher.ENCRYPT_MODE, cryptoConfig.getCryptoProvider(),
 	        		encryptedUploadContext.getFirstInitializationVector());
 
+          EncryptionMaterials encryptionMaterials = encryptionMaterialsProvider.getEncryptionMaterials();
+
 	        // Encrypt the envelope symmetric key
 	        byte[] encryptedEnvelopeSymmetricKey = EncryptionUtils.getEncryptedSymmetricKey(encryptedUploadContext.getEnvelopeEncryptionKey(), encryptionMaterials, cryptoConfig.getCryptoProvider());
 			EncryptionInstruction instruction = new EncryptionInstruction(encryptionMaterials.getMaterialsDescription(), encryptedEnvelopeSymmetricKey, encryptedUploadContext.getEnvelopeEncryptionKey(), symmetricCipher);
@@ -366,6 +486,7 @@ public class AmazonS3EncryptionClient extends AmazonS3Client {
         Cipher symmetricCipher = EncryptionUtils.createSymmetricCipher(envelopeSymmetricKey, Cipher.ENCRYPT_MODE, cryptoConfig.getCryptoProvider(), null);
 
 		if (cryptoConfig.getStorageMode() == CryptoStorageMode.ObjectMetadata) {
+      EncryptionMaterials encryptionMaterials = encryptionMaterialsProvider.getEncryptionMaterials();
 			// Encrypt the envelope symmetric key
 			byte[] encryptedEnvelopeSymmetricKey = EncryptionUtils.getEncryptedSymmetricKey(envelopeSymmetricKey, encryptionMaterials, cryptoConfig.getCryptoProvider());
 
@@ -476,7 +597,7 @@ public class AmazonS3EncryptionClient extends AmazonS3Client {
     private PutObjectResult putObjectUsingMetadata(PutObjectRequest putObjectRequest)
     throws AmazonClientException, AmazonServiceException {
         // Create instruction
-        EncryptionInstruction instruction = EncryptionUtils.generateInstruction(this.encryptionMaterials, this.cryptoConfig.getCryptoProvider());
+        EncryptionInstruction instruction = EncryptionUtils.generateInstruction(this.encryptionMaterialsProvider, this.cryptoConfig.getCryptoProvider());
 
         // Encrypt the object data with the instruction
         PutObjectRequest encryptedObjectRequest = EncryptionUtils.encryptRequestUsingInstruction(putObjectRequest, instruction);
@@ -507,7 +628,7 @@ public class AmazonS3EncryptionClient extends AmazonS3Client {
     private PutObjectResult putObjectUsingInstructionFile(PutObjectRequest putObjectRequest)
     throws AmazonClientException, AmazonServiceException {
         // Create instruction
-        EncryptionInstruction instruction = EncryptionUtils.generateInstruction(this.encryptionMaterials, this.cryptoConfig.getCryptoProvider());
+        EncryptionInstruction instruction = EncryptionUtils.generateInstruction(this.encryptionMaterialsProvider, this.cryptoConfig.getCryptoProvider());
 
         // Encrypt the object data with the instruction
         PutObjectRequest encryptedObjectRequest = EncryptionUtils.encryptRequestUsingInstruction(putObjectRequest, instruction);
@@ -533,7 +654,7 @@ public class AmazonS3EncryptionClient extends AmazonS3Client {
      */
     private S3Object decryptObjectUsingMetadata(S3Object object) {
         // Create an instruction object from the object headers
-        EncryptionInstruction instruction = EncryptionUtils.buildInstructionFromObjectMetadata( object, this.encryptionMaterials, this.cryptoConfig.getCryptoProvider() );
+        EncryptionInstruction instruction = EncryptionUtils.buildInstructionFromObjectMetadata( object, this.encryptionMaterialsProvider, this.cryptoConfig.getCryptoProvider() );
         
         // Decrypt the object file with the instruction
         return EncryptionUtils.decryptObjectUsingInstruction(object, instruction);
@@ -551,7 +672,7 @@ public class AmazonS3EncryptionClient extends AmazonS3Client {
      */
     private S3Object decryptObjectUsingInstructionFile(S3Object object, S3Object instructionFile) {
         // Create an instruction object from the retrieved instruction file
-        EncryptionInstruction instruction = EncryptionUtils.buildInstructionFromInstructionFile(instructionFile, this.encryptionMaterials, this.cryptoConfig.getCryptoProvider());
+        EncryptionInstruction instruction = EncryptionUtils.buildInstructionFromInstructionFile(instructionFile, this.encryptionMaterialsProvider, this.cryptoConfig.getCryptoProvider());
 
         // Decrypt the object file with the instruction
         return EncryptionUtils.decryptObjectUsingInstruction(object, instruction);

@@ -18,18 +18,37 @@ import java.util.List;
 
 import com.amazonaws.services.simpleworkflow.flow.StartWorkflowOptions;
 import com.amazonaws.services.simpleworkflow.flow.common.FlowConstants;
+import com.amazonaws.services.simpleworkflow.model.ChildPolicy;
 
 
 public class ContinueAsNewWorkflowExecutionParameters {
+    private String workflowTypeVersion;
     private long executionStartToCloseTimeoutSeconds = FlowConstants.USE_REGISTERED_DEFAULTS;
     private String input;
     private List<String> tagList;
     private String taskList;
     private long taskStartToCloseTimeoutSeconds = FlowConstants.USE_REGISTERED_DEFAULTS;
+    private ChildPolicy childPolicy;
     
     public ContinueAsNewWorkflowExecutionParameters() {
     }
     
+    public String getWorkflowTypeVersion() {
+        return workflowTypeVersion;
+    }
+    
+    public void setWorkflowTypeVersion(String workflowTypeVersion) {
+        this.workflowTypeVersion = workflowTypeVersion;
+    }
+    
+    public ChildPolicy getChildPolicy() {
+        return childPolicy;
+    }
+    
+    public void setChildPolicy(ChildPolicy childPolicy) {
+        this.childPolicy = childPolicy;
+    }
+
     public long getExecutionStartToCloseTimeoutSeconds() {
         return executionStartToCloseTimeoutSeconds;
     }
@@ -119,6 +138,11 @@ public class ContinueAsNewWorkflowExecutionParameters {
             if (taskList != null && !taskList.isEmpty()) { 
                 continueAsNewWorkflowExecutionParameters.setTaskList(taskList);
             }
+            
+            ChildPolicy childPolicy = options.getChildPolicy();
+            if (childPolicy != null) {
+                continueAsNewWorkflowExecutionParameters.setChildPolicy(childPolicy);
+            }
         }
         
         if (optionsOverride != null) {    
@@ -141,6 +165,11 @@ public class ContinueAsNewWorkflowExecutionParameters {
             if (taskList != null && !taskList.isEmpty()) { 
                 continueAsNewWorkflowExecutionParameters.setTaskList(taskList);
             }
+            
+            ChildPolicy childPolicy = optionsOverride.getChildPolicy();
+            if (childPolicy != null) {
+                continueAsNewWorkflowExecutionParameters.setChildPolicy(childPolicy);
+            }
         }
         
         return continueAsNewWorkflowExecutionParameters;
@@ -161,11 +190,13 @@ public class ContinueAsNewWorkflowExecutionParameters {
     
     public ContinueAsNewWorkflowExecutionParameters clone() {
         ContinueAsNewWorkflowExecutionParameters result = new ContinueAsNewWorkflowExecutionParameters();
+        result.setWorkflowTypeVersion(workflowTypeVersion);
         result.setExecutionStartToCloseTimeoutSeconds(executionStartToCloseTimeoutSeconds);
         result.setInput(input);
         result.setTagList(tagList);
         result.setTaskList(taskList);
         result.setTaskStartToCloseTimeoutSeconds(taskStartToCloseTimeoutSeconds);
+        result.setChildPolicy(childPolicy);
         return result;
     }
 

@@ -17,6 +17,7 @@ package com.amazonaws.services.simpleworkflow.flow;
 import java.util.concurrent.CancellationException;
 
 import com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow;
+import com.amazonaws.services.simpleworkflow.flow.common.WorkflowExecutionUtils;
 import com.amazonaws.services.simpleworkflow.model.ActivityTaskStatus;
 import com.amazonaws.services.simpleworkflow.model.RecordActivityTaskHeartbeatRequest;
 import com.amazonaws.services.simpleworkflow.model.RespondActivityTaskCanceledRequest;
@@ -50,7 +51,7 @@ class ManualActivityCompletionClientImpl extends ManualActivityCompletionClient 
     public void fail(Throwable failure) {
         RespondActivityTaskFailedRequest request = new RespondActivityTaskFailedRequest();
         String convertedFailure = dataConverter.toData(failure);
-        request.setReason(failure.getMessage());
+        request.setReason(WorkflowExecutionUtils.truncateReason(failure.getMessage()));
         request.setDetails(convertedFailure);
         request.setTaskToken(taskToken);
         service.respondActivityTaskFailed(request);

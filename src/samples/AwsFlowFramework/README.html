@@ -106,6 +106,8 @@ These samples demonstrate how to use AWS Flow Framework. The following samples a
 <li>PeriodicWorkflow – shows how to create a workflow that periodically executes an activity. The workflow can run for extended periods and hence it uses the continue as new execution feature.</li>
 <li>SplitMerge – the workflow in this sample processes a large data set by splitting it up into smaller data sets. The sample calculates the average of a large set of numbers stored in a file in S3. The smaller data sets are assigned to workers and the results of processing are merged to produce the final result.</li>
 <li>Deployment – the workflow in this sample shows deployment of interdependent components.</li>
+<li>Cron – the workflow in this sample starts an activity periodically based on a cron schedule.</li>
+<li>CronWithRetry – this is an enhanced version of the Cron sample that uses the exponential retry feature to retry the activity if it fails.</li>
 </ul>
 <h2>Prerequisites</h2>
 <ul>
@@ -193,6 +195,32 @@ The sample has three executables. You should run each in a separate terminal/con
 Run: ant -f build.xml -Dmain-class="com.amazonaws.services.simpleworkflow.flow.examples.fileprocessing.ActivityHost" run<br/> 
 Run: ant -f build.xml -Dmain-class="com.amazonaws.services.simpleworkflow.flow.examples.fileprocessing.WorkflowHost" run <br/>
 Run: ant -f build.xml -Dmain-class="com.amazonaws.services.simpleworkflow.flow.examples.fileprocessing.WorkflowExecutionStarter" run<br/> 
+<br/>
+Cron Sample:<br/>
+The sample has three executables. You should run each in a separate terminal/console. From the samples folder,<br/>
+Run: ant -f build.xml -Dmain-class="com.amazonaws.services.simpleworkflow.flow.examples.cron.ActivityHost" run<br/> 
+Run: ant -f build.xml -Dmain-class="com.amazonaws.services.simpleworkflow.flow.examples.cron.WorkflowHost" run <br/>
+Run: ant -f build.xml -Dmain-class="com.amazonaws.services.simpleworkflow.flow.examples.cron.CronWorkflowExecutionStarter" -Dmain-args="\"*/10 * * * * *\" PST 60" run<br/>
+
+The workflow starter takes 3 command line arguments that must be specified:
+<ol>
+	<li>CRON_PATTERN: specifies the pattern used to determine the cron schedule for the periodic activity task. The above command specifies the pattern */10 * * * * * to run the task every 10 seconds.</li>
+	<li>TIME_ZONE: specifies the time zone to use for time calculations. The above command specifies PST (Pacific Standard Time).</li>	
+	<li>CONTINUE_AS_NEW_AFTER_SECONDS: specifies the duration, in seconds, after which the current execution should be closed and continued as a new execution. The above command specifies 60 seconds.</li>	  
+</ol>    
+<br/>
+Cron With Retry Sample:<br/>
+The sample has three executables. You should run each in a separate terminal/console. From the samples folder,<br/>
+Run: ant -f build.xml -Dmain-class="com.amazonaws.services.simpleworkflow.flow.examples.cronwithretry.ActivityHost" run<br/> 
+Run: ant -f build.xml -Dmain-class="com.amazonaws.services.simpleworkflow.flow.examples.cronwithretry.WorkflowHost" run <br/>
+Run: ant -f build.xml -Dmain-class="com.amazonaws.services.simpleworkflow.flow.examples.cronwithretry.CronWorkflowExecutionStarter" -Dmain-args="\"*/10 * * * * *\" PST 60" run<br/>
+
+The workflow starter takes 3 command line arguments that must be specified:
+<ol>
+	<li>CRON_PATTERN: specifies the pattern used to determine the cron schedule for the periodic activity task. The above command specifies the pattern */10 * * * * * to run the task every 10 seconds.</li>
+	<li>TIME_ZONE: specifies the time zone to use for time calculations. The above command specifies PST (Pacific Standard Time).</li>	
+	<li>CONTINUE_AS_NEW_AFTER_SECONDS: specifies the duration, in seconds, after which the current execution should be closed and continued as a new execution. The above command specifies 60 seconds.</li>	  
+</ol>    
 <br/>
 </li>  
 </ol>

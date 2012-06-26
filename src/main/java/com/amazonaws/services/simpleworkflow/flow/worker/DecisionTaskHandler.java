@@ -24,13 +24,12 @@ import com.amazonaws.services.simpleworkflow.model.DecisionTask;
 import com.amazonaws.services.simpleworkflow.model.RespondDecisionTaskCompletedRequest;
 
 /**
- * Base class for workflow task handlers. Extend this class to implement custom
- * deciders that can be executed using a
- * {@link WorkflowTaskPollingExecutorService}.
+ * This class is for internal use only and may be changed or removed without prior notice.
+ * 
+ * Base class for workflow task handlers. 
  * 
  * @author fateev, suskin
  * 
- * @see WorkflowTaskPollingExecutorService
  */
 public abstract class DecisionTaskHandler {
 

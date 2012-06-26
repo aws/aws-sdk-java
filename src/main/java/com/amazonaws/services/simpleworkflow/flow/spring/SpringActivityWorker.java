@@ -279,6 +279,16 @@ public class SpringActivityWorker implements WorkerBase, SmartLifecycle {
     public void setDisableAutoStartup(boolean disableAutoStartup) {
         this.disableAutoStartup = disableAutoStartup;
     }
+    
+    @Override
+    public void setDisableTypeRegistrationOnStart(boolean disableTypeRegistrationOnStart) {
+        genericWorker.setDisableTypeRegistrationOnStart(disableTypeRegistrationOnStart);
+    }
+
+    @Override
+    public boolean isDisableTypeRegistrationOnStart() {
+        return genericWorker.isDisableTypeRegistrationOnStart();
+    }
 
     @Override
     public void stop(Runnable callback) {
@@ -290,6 +300,5 @@ public class SpringActivityWorker implements WorkerBase, SmartLifecycle {
     public String toString() {
         return this.getClass().getSimpleName() + "[genericWorker=" + genericWorker + ", factory=" + factory + "]";
     }
-
 
 }

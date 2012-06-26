@@ -16,7 +16,9 @@ package com.amazonaws.services.simpleworkflow.flow.interceptors;
 
 
 public interface Decorator {
+    
     public <V> V decorate(Class<V> interfaces, V object);
     
     public <V> V decorate(Class<?>[] interfaces, V object);
+    
 }

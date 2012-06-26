@@ -21,6 +21,8 @@ import java.util.concurrent.CancellationException;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
+import com.amazonaws.AmazonServiceException;
+import com.amazonaws.AmazonServiceException.ErrorType;
 import com.amazonaws.services.simpleworkflow.flow.DecisionContext;
 import com.amazonaws.services.simpleworkflow.flow.WorkflowException;
 import com.amazonaws.services.simpleworkflow.flow.core.AsyncScope;
@@ -444,10 +446,11 @@ class AsyncDecider {
                         concurrentToDecision = false;
                     }
                     else if (eventType == EventType.DecisionTaskStarted) {
+                        decisionsHelper.handleDecisionTaskStartedEvent();
+
                         if (!eventsIterator.isNextDecisionTimedOut()) {
                             long replayCurrentTimeMilliseconds = event.getEventTimestamp().getTime();
                             workflowClock.setReplayCurrentTimeMilliseconds(replayCurrentTimeMilliseconds);
-                            decisionsHelper.handleDecisionTaskStartedEvent();
                             break;
                         }
                     }
@@ -467,11 +470,18 @@ class AsyncDecider {
                     }
                 }
                 int size = decisionStartToCompletionEvents.size() + decisionStartToCompletionEvents.size();
+                // Reorder events to correspond to the order that decider sees them. 
+                // The main difference is that events that were added during decision task execution 
+                // should be processed after events that correspond to the decisions. 
+                // Otherwise the replay is going to break.
                 reordered = new ArrayList<HistoryEvent>(size);
+                // First are events that correspond to the previous task decisions
                 if (lastDecisionIndex >= 0) {
                     reordered.addAll(decisionCompletionToStartEvents.subList(0, lastDecisionIndex + 1));
                 }
+                // Second are events that were added during previous task execution
                 reordered.addAll(decisionStartToCompletionEvents);
+                // The last are events that were added after previous task completion
                 if (decisionCompletionToStartEvents.size() > lastDecisionIndex + 1) {
                     reordered.addAll(decisionCompletionToStartEvents.subList(lastDecisionIndex + 1,
                             decisionCompletionToStartEvents.size()));
@@ -491,6 +501,19 @@ class AsyncDecider {
             if (unhandledDecision) {
                 unhandledDecision = false;
                 completeWorkflow();
+            }
+        }
+        catch (AmazonServiceException e) {
+            // We don't want to fail workflow on service exceptions like 500 or throttling
+            // Throwing from here drops decision task which is OK as it is rescheduled after its StartToClose timeout.
+            if (e.getErrorType() == ErrorType.Client && !"ThrottlingException".equals(e.getErrorCode())) {
+                if (log.isErrorEnabled()) {
+                    log.error("Failing workflow " + workflowContext.getWorkflowExecution(), e);
+                }
+                decisionsHelper.failWorkflowDueToUnexpectedError(e);
+            }
+            else {
+                throw e;
             }
         }
         catch (Throwable e) {
@@ -545,17 +568,23 @@ class AsyncDecider {
     }
 
     public List<AsyncTaskInfo> getAsynchronousThreadDump() {
-        if (workflowAsyncScope == null) {
-            throw new IllegalStateException("workflow hasn't started yet");
-        }
+        checkAsynchronousThreadDumpState();
         return workflowAsyncScope.getAsynchronousThreadDump();
     }
 
     public String getAsynchronousThreadDumpAsString() {
+        checkAsynchronousThreadDumpState();
+        return workflowAsyncScope.getAsynchronousThreadDumpAsString();
+    }
+
+    private void checkAsynchronousThreadDumpState() {
         if (workflowAsyncScope == null) {
             throw new IllegalStateException("workflow hasn't started yet");
         }
-        return workflowAsyncScope.getAsynchronousThreadDumpAsString();
+        if (decisionsHelper.isWorkflowFailed()) {
+            throw new IllegalStateException("Cannot get AsynchronousThreadDump of a failed workflow",
+                    decisionsHelper.getWorkflowFailureCause());
+        }
     }
 
     public DecisionsHelper getDecisionsHelper() {

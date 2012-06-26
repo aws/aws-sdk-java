@@ -17,6 +17,8 @@ package com.amazonaws.services.simpleworkflow.flow.worker;
 import java.util.concurrent.atomic.AtomicLong;
 
 /**
+ * This class is for internal use only and may be changed or removed without prior notice.
+ * 
  * Used to throttle code execution in presence of failures using exponential
  * backoff logic. The formula used to calculate the next sleep interval is:
  * 

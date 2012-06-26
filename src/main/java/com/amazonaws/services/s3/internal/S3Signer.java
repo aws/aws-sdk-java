@@ -83,7 +83,7 @@ public class S3Signer extends AbstractAWSSigner {
     }
 
     public void sign(Request<?> request, AWSCredentials credentials) throws AmazonClientException {
-        if (credentials == null) {
+        if (credentials == null || credentials.getAWSSecretKey() == null) {
             log.debug("Canonical string will not be signed, as no AWS Secret Key was provided");
             return;
         }
@@ -92,7 +92,7 @@ public class S3Signer extends AbstractAWSSigner {
         if ( sanitizedCredentials instanceof AWSSessionCredentials ) {
         	addSessionCredentials(request, (AWSSessionCredentials) sanitizedCredentials);
         }
-        
+
         request.addHeader(Headers.DATE, ServiceUtils.formatRfc822Date(new Date()));
         String canonicalString = RestUtils.makeS3CanonicalString(
                 httpVerb, resourcePath, request, null);

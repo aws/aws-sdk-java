@@ -133,6 +133,8 @@ public abstract class GenericWorker implements WorkerBase {
 
     private long pollBackoffMaximumInterval = 60000;
 
+    private boolean disableTypeRegitrationOnStart;
+
     private boolean disableServiceShutdownOnStop;
 
     private ThreadPoolExecutor pollExecutor;
@@ -337,6 +339,16 @@ public abstract class GenericWorker implements WorkerBase {
     }
 
     @Override
+    public void setDisableTypeRegistrationOnStart(boolean disableTypeRegistrationOnStart) {
+        this.disableTypeRegitrationOnStart = disableTypeRegistrationOnStart;
+    }
+
+    @Override
+    public boolean isDisableTypeRegistrationOnStart() {
+        return disableTypeRegitrationOnStart;
+    }
+
+    @Override
     public void start() {
         if (log.isInfoEnabled()) {
             log.info("start: " + toString());
@@ -351,7 +363,9 @@ public abstract class GenericWorker implements WorkerBase {
             registerDomain();
         }
 
-        registerTypesToPoll();
+        if (!disableTypeRegitrationOnStart) {
+            registerTypesToPoll();
+        }
 
         if (maximumPollRatePerSecond > 0.0) {
             pollRateThrottler = new Throttler("pollRateThrottler " + taskListToPoll, maximumPollRatePerSecond,

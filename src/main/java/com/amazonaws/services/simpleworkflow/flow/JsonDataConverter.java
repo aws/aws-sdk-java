@@ -18,10 +18,11 @@ import java.io.IOException;
 
 import org.codehaus.jackson.JsonGenerationException;
 import org.codehaus.jackson.JsonParseException;
-import org.codehaus.jackson.map.DeserializationConfig.Feature;
 import org.codehaus.jackson.map.JsonMappingException;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.map.ObjectMapper.DefaultTyping;
+import org.codehaus.jackson.map.SerializationConfig;
+import org.codehaus.jackson.map.DeserializationConfig;
 
 /**
  * Implements conversion through Jackson JSON processor. Consult its
@@ -48,9 +49,9 @@ public class JsonDataConverter extends DataConverter {
      */
     public JsonDataConverter() {
         this(new ObjectMapper());
-        // ignoring unknown properties makes us more robust to changes
-        // in the schema
-        mapper.configure(Feature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        // ignoring unknown properties makes us more robust to changes in the schema
+        mapper.configure(DeserializationConfig.Feature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        mapper.configure(SerializationConfig.Feature.FAIL_ON_EMPTY_BEANS, false);
 
         // This will allow including type information all non-final types.  This allows correct 
         // serialization/deserialization of generic collections, for example List<MyType>. 
@@ -83,10 +84,10 @@ public class JsonDataConverter extends DataConverter {
     }
 
     private void throwDataConverterException(Throwable e, Object value) {
-        if (value instanceof Throwable && e.getCause() == null) {
-            e.initCause((Throwable) value);
+        if (value == null) {
+            throw new DataConverterException("Failure serializing null value", e);
         }
-        throw new DataConverterException(e);
+        throw new DataConverterException("Failure serializing \"" + value + "\" of type \"" + value.getClass() + "\"", e);
     }
 
     @Override

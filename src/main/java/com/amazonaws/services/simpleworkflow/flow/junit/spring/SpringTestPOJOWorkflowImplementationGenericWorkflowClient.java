@@ -34,6 +34,10 @@ import com.amazonaws.services.simpleworkflow.flow.test.TestGenericWorkflowClient
 import com.amazonaws.services.simpleworkflow.model.WorkflowExecution;
 import com.amazonaws.services.simpleworkflow.model.WorkflowType;
 
+/**
+ * This class is for internal use only and may be changed or removed without prior notice.
+ *
+ */
 public class SpringTestPOJOWorkflowImplementationGenericWorkflowClient implements GenericWorkflowClient {
 
     private final TestGenericWorkflowClient genericClient;

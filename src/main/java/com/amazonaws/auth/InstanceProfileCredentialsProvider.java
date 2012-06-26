@@ -30,8 +30,8 @@ import com.amazonaws.util.json.JSONObject;
  */
 public class InstanceProfileCredentialsProvider implements AWSCredentialsProvider {
 
-    private AWSCredentials credentials;
-    private Date credentialsExpiration;
+    protected AWSCredentials credentials;
+    protected Date credentialsExpiration;
 
     public AWSCredentials getCredentials() {
         if (needsToLoadCredentials()) loadCredentials();
@@ -43,12 +43,12 @@ public class InstanceProfileCredentialsProvider implements AWSCredentialsProvide
         loadCredentials();
     }
 
-    private boolean needsToLoadCredentials() {
+    protected boolean needsToLoadCredentials() {
         if (credentials == null) return true;
 
         if (credentialsExpiration != null) {
             int thresholdInMilliseconds = 1000 * 60 * 5;
-            boolean withinExpirationThreshold = System.currentTimeMillis() - credentialsExpiration.getTime() < thresholdInMilliseconds;
+            boolean withinExpirationThreshold = credentialsExpiration.getTime() - System.currentTimeMillis() < thresholdInMilliseconds;
             if (withinExpirationThreshold) return true;
         }
 

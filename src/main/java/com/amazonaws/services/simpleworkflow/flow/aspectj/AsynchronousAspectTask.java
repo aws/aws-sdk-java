@@ -20,6 +20,10 @@ import com.amazonaws.services.simpleworkflow.flow.core.Promise;
 import com.amazonaws.services.simpleworkflow.flow.core.Settable;
 import com.amazonaws.services.simpleworkflow.flow.core.Task;
 
+/**
+ * This class is for internal use only and may be changed or removed without prior notice.
+ *
+ */
 class AsynchronousAspectTask extends Task {
     
     ProceedingJoinPoint pjp;

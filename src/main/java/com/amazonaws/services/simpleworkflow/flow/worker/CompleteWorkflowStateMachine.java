@@ -18,6 +18,10 @@ import com.amazonaws.services.simpleworkflow.model.Decision;
 import com.amazonaws.services.simpleworkflow.model.HistoryEvent;
 
 
+/**
+ * This class is for internal use only and may be changed or removed without prior notice.
+ *
+ */
 public class CompleteWorkflowStateMachine implements DecisionStateMachine {
 
     private Decision decision;

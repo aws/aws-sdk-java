@@ -26,6 +26,7 @@ import org.apache.commons.logging.LogFactory;
 import com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow;
 import com.amazonaws.services.simpleworkflow.flow.ActivityExecutionContext;
 import com.amazonaws.services.simpleworkflow.flow.ActivityFailureException;
+import com.amazonaws.services.simpleworkflow.flow.common.WorkflowExecutionUtils;
 import com.amazonaws.services.simpleworkflow.flow.generic.ActivityImplementation;
 import com.amazonaws.services.simpleworkflow.flow.generic.ActivityImplementationFactory;
 import com.amazonaws.services.simpleworkflow.model.ActivityTask;
@@ -37,6 +38,10 @@ import com.amazonaws.services.simpleworkflow.model.RespondActivityTaskFailedRequ
 import com.amazonaws.services.simpleworkflow.model.TaskList;
 import com.amazonaws.services.simpleworkflow.model.UnknownResourceException;
 
+/**
+ * This class is for internal use only and may be changed or removed without prior notice.
+ *
+ */
 public class SynchronousActivityTaskPoller implements TaskPoller {
 
     private static final Log log = LogFactory.getLog(SynchronousActivityTaskPoller.class);
@@ -187,7 +192,7 @@ public class SynchronousActivityTaskPoller implements TaskPoller {
         String output = null;
         ActivityType activityType = task.getActivityType();
         try {
-            ActivityExecutionContext context = new ActivityExecutionContextImpl(service, task);
+            ActivityExecutionContext context = new ActivityExecutionContextImpl(service, domain, task);
             ActivityImplementation activityImplementation = activityImplementationFactory.getActivityImplementation(activityType);
             if (activityImplementation == null) {
                 throw new ActivityFailureException("Unknown activity type: " + activityType);
@@ -241,7 +246,7 @@ public class SynchronousActivityTaskPoller implements TaskPoller {
     protected void respondActivityTaskFailed(String taskToken, String reason, String details) {
         RespondActivityTaskFailedRequest failedResponse = new RespondActivityTaskFailedRequest();
         failedResponse.setTaskToken(taskToken);
-        failedResponse.setReason(reason);
+        failedResponse.setReason(WorkflowExecutionUtils.truncateReason(reason));
         failedResponse.setDetails(details);
         service.respondActivityTaskFailed(failedResponse);
     }

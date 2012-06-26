@@ -19,6 +19,10 @@ import java.lang.reflect.Method;
 import com.amazonaws.services.simpleworkflow.model.PredefinedDuration;
 
 
+/**
+ * This class is for internal use only and may be changed or removed without prior notice.
+ *
+ */
 public final class FlowHelpers {
     
     public static String secondsToDuration(Long seconds) {
@@ -29,6 +33,15 @@ public final class FlowHelpers {
         }
         
         return Long.toString(seconds);
+    }
+    
+    
+    public static long durationToSeconds(String duration) {
+        if (duration == null || duration.equals(PredefinedDuration.NONE.toString())) {
+            return FlowConstants.NONE;
+        } else {
+            return Long.parseLong(duration);
+        }
     }
     
     public static Object[] validateInput(Method method, Object[] args) {

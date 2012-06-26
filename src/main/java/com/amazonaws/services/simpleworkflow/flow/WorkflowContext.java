@@ -14,21 +14,36 @@
  */
 package com.amazonaws.services.simpleworkflow.flow;
 
+import java.util.List;
+
 import com.amazonaws.services.simpleworkflow.flow.generic.ContinueAsNewWorkflowExecutionParameters;
+import com.amazonaws.services.simpleworkflow.model.ChildPolicy;
 import com.amazonaws.services.simpleworkflow.model.WorkflowExecution;
 import com.amazonaws.services.simpleworkflow.model.WorkflowType;
 
 
 public interface WorkflowContext {
 
-    public WorkflowExecution getWorkflowExecution();
+    WorkflowExecution getWorkflowExecution();
     
-    public WorkflowType getWorkflowType();
+    WorkflowExecution getParentWorkflowExecution();
     
-    public boolean isCancelRequested();
+    WorkflowType getWorkflowType();
     
-    public ContinueAsNewWorkflowExecutionParameters getContinueAsNewOnCompletion();
+    boolean isCancelRequested();
     
-    public void setContinueAsNewOnCompletion(ContinueAsNewWorkflowExecutionParameters continueParameters);
+    ContinueAsNewWorkflowExecutionParameters getContinueAsNewOnCompletion();
+    
+    void setContinueAsNewOnCompletion(ContinueAsNewWorkflowExecutionParameters continueParameters);
+
+    List<String> getTagList();
+
+    ChildPolicy getChildPolicy();
+
+    String getContinuedExecutionRunId();
+
+    long getExecutionStartToCloseTimeout();
+
+    String getTaskList();
     
 }

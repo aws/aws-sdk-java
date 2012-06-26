@@ -229,6 +229,16 @@ public class ActivityWorker implements WorkerBase {
     }
 
     @Override
+    public void setDisableTypeRegistrationOnStart(boolean disableTypeRegistrationOnStart) {
+        genericWorker.setDisableTypeRegistrationOnStart(disableTypeRegistrationOnStart);
+    }
+
+    @Override
+    public boolean isDisableTypeRegistrationOnStart() {
+        return genericWorker.isDisableTypeRegistrationOnStart();
+    }
+    
+    @Override
     public void registerTypesToPoll() {
         genericWorker.registerTypesToPoll();
     }

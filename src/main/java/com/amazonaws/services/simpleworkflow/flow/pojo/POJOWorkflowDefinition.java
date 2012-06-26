@@ -21,6 +21,7 @@ import java.util.concurrent.CancellationException;
 import java.util.concurrent.atomic.AtomicReference;
 
 import com.amazonaws.services.simpleworkflow.flow.*;
+import com.amazonaws.services.simpleworkflow.flow.common.WorkflowExecutionUtils;
 import com.amazonaws.services.simpleworkflow.flow.core.*;
 import com.amazonaws.services.simpleworkflow.flow.generic.*;
 
@@ -160,7 +161,7 @@ public class POJOWorkflowDefinition extends WorkflowDefinition {
         if (exception instanceof WorkflowException) {
             throw (WorkflowException)exception;
         }
-        String reason = exception.getMessage();
+        String reason = WorkflowExecutionUtils.truncateReason(exception.getMessage());
         String details = null;
         try {
             details = c.toData(exception);

@@ -17,6 +17,10 @@ package com.amazonaws.services.simpleworkflow.flow.worker;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
+/**
+ * This class is for internal use only and may be changed or removed without prior notice.
+ *
+ */
 public class SynchronousRetrier {
     
     private static final Log log = LogFactory.getLog(SynchronousRetrier.class);

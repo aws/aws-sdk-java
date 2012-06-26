@@ -35,6 +35,7 @@ import com.amazonaws.services.simpleworkflow.model.ActivityTaskScheduledEventAtt
 import com.amazonaws.services.simpleworkflow.model.ActivityTaskTimedOutEventAttributes;
 import com.amazonaws.services.simpleworkflow.model.CancelTimerFailedEventAttributes;
 import com.amazonaws.services.simpleworkflow.model.CancelWorkflowExecutionDecisionAttributes;
+import com.amazonaws.services.simpleworkflow.model.ChildPolicy;
 import com.amazonaws.services.simpleworkflow.model.ChildWorkflowExecutionStartedEventAttributes;
 import com.amazonaws.services.simpleworkflow.model.CompleteWorkflowExecutionDecisionAttributes;
 import com.amazonaws.services.simpleworkflow.model.ContinueAsNewWorkflowExecutionDecisionAttributes;
@@ -70,7 +71,7 @@ class DecisionsHelper {
     static final String FORCE_IMMEDIATE_DECISION_TIMER = "FORCE_IMMEDIATE_DECISION";
 
     private final DecisionTask task;
-    
+
     private long idCounter;
 
     private final Map<Long, String> activitySchedulingEventIdToActivityId = new HashMap<Long, String>();
@@ -84,7 +85,7 @@ class DecisionsHelper {
     private final Map<DecisionId, DecisionStateMachine> decisions = new LinkedHashMap<DecisionId, DecisionStateMachine>(100,
             0.75f, true);
 
-    private boolean workflowFailed;
+    private Throwable workflowFailureCause;
 
     private String workflowContextData;
 
@@ -312,6 +313,11 @@ class DecisionsHelper {
 
     void continueAsNewWorkflowExecution(ContinueAsNewWorkflowExecutionParameters continueParameters) {
         ContinueAsNewWorkflowExecutionDecisionAttributes attributes = new ContinueAsNewWorkflowExecutionDecisionAttributes();
+        attributes.setWorkflowTypeVersion(continueParameters.getWorkflowTypeVersion());
+        ChildPolicy childPolicy = continueParameters.getChildPolicy();
+        if (childPolicy != null) {
+            attributes.setChildPolicy(childPolicy);
+        }
         attributes.setInput(continueParameters.getInput());
         attributes.setExecutionStartToCloseTimeout(FlowHelpers.secondsToDuration(continueParameters.getExecutionStartToCloseTimeoutSeconds()));
         attributes.setTaskStartToCloseTimeout(FlowHelpers.secondsToDuration(continueParameters.getTaskStartToCloseTimeoutSeconds()));
@@ -339,7 +345,7 @@ class DecisionsHelper {
         decision.setDecisionType(DecisionType.FailWorkflowExecution.toString());
         DecisionId decisionId = new DecisionId(DecisionTarget.SELF, null);
         addDecision(decisionId, new CompleteWorkflowStateMachine(decisionId, decision));
-        workflowFailed = true;
+        workflowFailureCause = e;
     }
 
     void failWorkflowDueToUnexpectedError(Throwable e) {
@@ -445,16 +451,20 @@ class DecisionsHelper {
             if (result.getDecision() == null) {
                 result = null;
             }
-        }    
+        }
         return result;
     }
-    
+
     public String toString() {
         return WorkflowExecutionUtils.prettyPrintDecisions(getDecisions());
     }
 
     boolean isWorkflowFailed() {
-        return workflowFailed;
+        return workflowFailureCause != null;
+    }
+
+    public Throwable getWorkflowFailureCause() {
+        return workflowFailureCause;
     }
 
     String getWorkflowContextData() {

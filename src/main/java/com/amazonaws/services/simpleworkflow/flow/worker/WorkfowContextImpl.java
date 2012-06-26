@@ -14,10 +14,16 @@
  */
 package com.amazonaws.services.simpleworkflow.flow.worker;
 
+import java.util.List;
+
 import com.amazonaws.services.simpleworkflow.flow.WorkflowContext;
+import com.amazonaws.services.simpleworkflow.flow.common.FlowHelpers;
 import com.amazonaws.services.simpleworkflow.flow.generic.ContinueAsNewWorkflowExecutionParameters;
+import com.amazonaws.services.simpleworkflow.model.ChildPolicy;
 import com.amazonaws.services.simpleworkflow.model.DecisionTask;
+import com.amazonaws.services.simpleworkflow.model.HistoryEvent;
 import com.amazonaws.services.simpleworkflow.model.WorkflowExecution;
+import com.amazonaws.services.simpleworkflow.model.WorkflowExecutionStartedEventAttributes;
 import com.amazonaws.services.simpleworkflow.model.WorkflowType;
 
 
@@ -58,6 +64,49 @@ class WorkfowContextImpl implements WorkflowContext {
     @Override
     public void setContinueAsNewOnCompletion(ContinueAsNewWorkflowExecutionParameters continueParameters) {
         this.continueAsNewOnCompletion = continueParameters;
+    }
+
+    @Override
+    public WorkflowExecution getParentWorkflowExecution() {
+        WorkflowExecutionStartedEventAttributes attributes = getWorkflowStartedEventAttributes();
+        return attributes.getParentWorkflowExecution();
+    }
+
+    @Override
+    public List<String> getTagList() {
+        WorkflowExecutionStartedEventAttributes attributes = getWorkflowStartedEventAttributes();
+        return attributes.getTagList();
+    }
+
+    @Override
+    public ChildPolicy getChildPolicy() {
+        WorkflowExecutionStartedEventAttributes attributes = getWorkflowStartedEventAttributes();
+        return ChildPolicy.fromValue(attributes.getChildPolicy());
+    }
+    
+    @Override
+    public String getContinuedExecutionRunId() {
+        WorkflowExecutionStartedEventAttributes attributes = getWorkflowStartedEventAttributes();
+        return attributes.getContinuedExecutionRunId();
+    }
+    
+    @Override
+    public long getExecutionStartToCloseTimeout() {
+        WorkflowExecutionStartedEventAttributes attributes = getWorkflowStartedEventAttributes();
+        String result = attributes.getExecutionStartToCloseTimeout();
+        return FlowHelpers.durationToSeconds(result);
+    }
+    
+    @Override
+    public String getTaskList() {
+        WorkflowExecutionStartedEventAttributes attributes = getWorkflowStartedEventAttributes();
+        return attributes.getTaskList().getName();
+    }
+    
+    private WorkflowExecutionStartedEventAttributes getWorkflowStartedEventAttributes() {
+        HistoryEvent firstHistoryEvent = decisionTask.getEvents().get(0);
+        WorkflowExecutionStartedEventAttributes attributes = firstHistoryEvent.getWorkflowExecutionStartedEventAttributes();
+        return attributes;
     }
 
 }

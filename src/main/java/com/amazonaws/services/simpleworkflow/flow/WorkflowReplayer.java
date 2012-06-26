@@ -68,13 +68,20 @@ public class WorkflowReplayer<T> {
     private abstract class DecisionTaskIterator implements Iterator<DecisionTask> {
 
         private DecisionTask next;
+        
+        private boolean initialized;
 
         protected void initNext() {
+            initialized = true;
             next = getNextHistoryTask(null);
         }
 
         @Override
         public boolean hasNext() {
+            if (!initialized) {
+                initNext();
+            }
+            
             if (next == null) {
                 return false;
             }
@@ -149,7 +156,6 @@ public class WorkflowReplayer<T> {
             this.service = service;
             this.domain = domain;
             this.workflowExecution = workflowExecution;
-            initNext();
         }
 
         protected DecisionTask getNextHistoryTask(String nextPageToken) {
@@ -180,7 +186,6 @@ public class WorkflowReplayer<T> {
         public HistoryIterableDecisionTaskIterator(WorkflowExecution workflowExecution, Iterable<HistoryEvent> history) {
             this.workflowExecution = workflowExecution;
             this.history = history;
-            initNext();
         }
 
         @Override

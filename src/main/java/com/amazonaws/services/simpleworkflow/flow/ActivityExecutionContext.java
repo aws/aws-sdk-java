@@ -77,5 +77,9 @@ public abstract class ActivityExecutionContext {
      *         used by the invoked activity worker.
      */
     public abstract AmazonSimpleWorkflow getService();
-
+    
+    public String getDomain() {
+        // Throwing implementation is provided to not break existing subclasses
+        throw new UnsupportedOperationException();
+    }
 }

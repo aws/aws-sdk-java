@@ -83,10 +83,8 @@ public abstract class WorkflowClientFactoryBase<T> implements WorkflowClientFact
 
     @Override
     public T getClient() {
-        if (genericClient == null) {
-            genericClient = decisionContextProvider.getDecisionContext().getWorkflowClient();
-        }
-        String workflowId = genericClient.generateUniqueId();
+    	GenericWorkflowClient client = getGenericClientToUse();
+        String workflowId = client.generateUniqueId();
         WorkflowExecution execution = new WorkflowExecution().withWorkflowId(workflowId);
         return getClient(execution, startWorkflowOptions, dataConverter);
     }
@@ -112,11 +110,19 @@ public abstract class WorkflowClientFactoryBase<T> implements WorkflowClientFact
 
     @Override
     public T getClient(WorkflowExecution execution, StartWorkflowOptions options, DataConverter dataConverter) {
-        if (genericClient == null) {
-            genericClient = decisionContextProvider.getDecisionContext().getWorkflowClient();
-        }
-        return createClientInstance(execution, options, dataConverter, genericClient);
+        GenericWorkflowClient client = getGenericClientToUse();
+		return createClientInstance(execution, options, dataConverter, client);
     }
+
+	private GenericWorkflowClient getGenericClientToUse() {
+		GenericWorkflowClient result;
+        if (genericClient == null) {
+            result = decisionContextProvider.getDecisionContext().getWorkflowClient();
+        } else {
+        	result = genericClient;
+        }
+        return result;
+	}
 
     protected abstract T createClientInstance(WorkflowExecution execution, StartWorkflowOptions options,
             DataConverter dataConverter, GenericWorkflowClient genericClient);

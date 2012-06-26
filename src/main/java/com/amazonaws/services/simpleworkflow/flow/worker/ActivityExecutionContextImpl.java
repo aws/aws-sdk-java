@@ -33,9 +33,11 @@ import com.amazonaws.services.simpleworkflow.model.WorkflowExecution;
  */
 class ActivityExecutionContextImpl extends ActivityExecutionContext {
 
-    private final ActivityTask task;
-
     private final AmazonSimpleWorkflow service;
+
+    private final String domain;
+    
+    private final ActivityTask task;
 
     /**
      * Create an ActivityExecutionContextImpl with the given attributes.
@@ -49,7 +51,8 @@ class ActivityExecutionContextImpl extends ActivityExecutionContext {
      * 
      * @see ActivityExecutionContext
      */
-    public ActivityExecutionContextImpl(AmazonSimpleWorkflow service, ActivityTask task) {
+    public ActivityExecutionContextImpl(AmazonSimpleWorkflow service, String domain, ActivityTask task) {
+        this.domain = domain;
         this.service = service;
         this.task = task;
     }
@@ -96,6 +99,11 @@ class ActivityExecutionContextImpl extends ActivityExecutionContext {
     @Override
     public WorkflowExecution getWorkflowExecution() {
         return task.getWorkflowExecution();
+    }
+
+    @Override
+    public String getDomain() {
+        return domain;
     }
 
 }
