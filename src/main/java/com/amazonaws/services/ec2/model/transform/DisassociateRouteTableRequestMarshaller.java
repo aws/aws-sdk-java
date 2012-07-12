@@ -38,7 +38,7 @@ public class DisassociateRouteTableRequestMarshaller implements Marshaller<Reque
 
         Request<DisassociateRouteTableRequest> request = new DefaultRequest<DisassociateRouteTableRequest>(disassociateRouteTableRequest, "AmazonEC2");
         request.addParameter("Action", "DisassociateRouteTable");
-        request.addParameter("Version", "2012-06-01");
+        request.addParameter("Version", "2012-06-15");
 
         if (disassociateRouteTableRequest.getAssociationId() != null) {
             request.addParameter("AssociationId", StringUtils.fromString(disassociateRouteTableRequest.getAssociationId()));

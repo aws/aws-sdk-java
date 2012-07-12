@@ -46,6 +46,7 @@ public class AttributeValueJsonUnmarshaller implements Unmarshaller<AttributeVal
         while (true) {
             if (token == null) break;
 
+            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("S", targetDepth)) {
                     context.nextToken();
@@ -64,6 +65,8 @@ public class AttributeValueJsonUnmarshaller implements Unmarshaller<AttributeVal
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getCurrentDepth() <= originalDepth) break;
             }
+            
+
             token = context.nextToken();
         }
         

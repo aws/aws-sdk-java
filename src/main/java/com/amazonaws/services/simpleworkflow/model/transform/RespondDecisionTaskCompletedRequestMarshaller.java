@@ -26,18 +26,19 @@ import java.util.List;
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
+import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.simpleworkflow.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
-import static com.amazonaws.http.HttpMethodName.POST;
-
 /**
  * Respond Decision Task Completed Request Marshaller
  */
 public class RespondDecisionTaskCompletedRequestMarshaller implements Marshaller<Request<RespondDecisionTaskCompletedRequest>, RespondDecisionTaskCompletedRequest> {
+
+    
 
     public Request<RespondDecisionTaskCompletedRequest> marshall(RespondDecisionTaskCompletedRequest respondDecisionTaskCompletedRequest) {
 		if (respondDecisionTaskCompletedRequest == null) {
@@ -48,20 +49,49 @@ public class RespondDecisionTaskCompletedRequestMarshaller implements Marshaller
         String target = "SimpleWorkflowService.RespondDecisionTaskCompleted";
         request.addHeader("X-Amz-Target", target);
         request.addHeader("Content-Type", "application/x-amz-json-1.0");
-        request.setHttpMethod(POST);
 
+        
+        request.setHttpMethod(HttpMethodName.POST);
+
+
+        String uriResourcePath = ""; 
+
+        if (uriResourcePath.contains("?")) {
+            String queryString = uriResourcePath.substring(uriResourcePath.indexOf("?") + 1);
+            uriResourcePath    = uriResourcePath.substring(0, uriResourcePath.indexOf("?"));
+
+            for (String s : queryString.split("[;&]")) {
+                String[] nameValuePair = s.split("=");
+                if (nameValuePair.length == 2) {
+                    request.addParameter(nameValuePair[0], nameValuePair[1]);
+                } else {
+                    request.addParameter(s, null);
+                }
+            }
+        }
+
+        request.setResourcePath(uriResourcePath);
+
+
+        
         try {
         	StringWriter stringWriter = new StringWriter();
         	JSONWriter jsonWriter = new JSONWriter(stringWriter);
+
+        	
+            
         	jsonWriter.object();
-	        
+        	
             if (respondDecisionTaskCompletedRequest.getTaskToken() != null) {
                 jsonWriter.key("taskToken").value(respondDecisionTaskCompletedRequest.getTaskToken());
             }
 
             java.util.List<Decision> decisionsList = respondDecisionTaskCompletedRequest.getDecisions();
             if (decisionsList != null && decisionsList.size() > 0) {
-                jsonWriter.key("decisions").array();
+
+                jsonWriter.key("decisions");
+                jsonWriter.array();
+
                 for (Decision decisionsListValue : decisionsList) {
                     jsonWriter.object();
                     if (decisionsListValue.getDecisionType() != null) {
@@ -69,10 +99,16 @@ public class RespondDecisionTaskCompletedRequestMarshaller implements Marshaller
                     }
                     ScheduleActivityTaskDecisionAttributes scheduleActivityTaskDecisionAttributes = decisionsListValue.getScheduleActivityTaskDecisionAttributes();
                     if (scheduleActivityTaskDecisionAttributes != null) {
-                        jsonWriter.key("scheduleActivityTaskDecisionAttributes").object();
+
+                        jsonWriter.key("scheduleActivityTaskDecisionAttributes");
+                        jsonWriter.object();
+
                         ActivityType activityType = scheduleActivityTaskDecisionAttributes.getActivityType();
                         if (activityType != null) {
-                            jsonWriter.key("activityType").object();
+
+                            jsonWriter.key("activityType");
+                            jsonWriter.object();
+
                             if (activityType.getName() != null) {
                                 jsonWriter.key("name").value(activityType.getName());
                             }
@@ -95,7 +131,10 @@ public class RespondDecisionTaskCompletedRequestMarshaller implements Marshaller
                         }
                         TaskList taskList = scheduleActivityTaskDecisionAttributes.getTaskList();
                         if (taskList != null) {
-                            jsonWriter.key("taskList").object();
+
+                            jsonWriter.key("taskList");
+                            jsonWriter.object();
+
                             if (taskList.getName() != null) {
                                 jsonWriter.key("name").value(taskList.getName());
                             }
@@ -114,7 +153,10 @@ public class RespondDecisionTaskCompletedRequestMarshaller implements Marshaller
                     }
                     RequestCancelActivityTaskDecisionAttributes requestCancelActivityTaskDecisionAttributes = decisionsListValue.getRequestCancelActivityTaskDecisionAttributes();
                     if (requestCancelActivityTaskDecisionAttributes != null) {
-                        jsonWriter.key("requestCancelActivityTaskDecisionAttributes").object();
+
+                        jsonWriter.key("requestCancelActivityTaskDecisionAttributes");
+                        jsonWriter.object();
+
                         if (requestCancelActivityTaskDecisionAttributes.getActivityId() != null) {
                             jsonWriter.key("activityId").value(requestCancelActivityTaskDecisionAttributes.getActivityId());
                         }
@@ -122,7 +164,10 @@ public class RespondDecisionTaskCompletedRequestMarshaller implements Marshaller
                     }
                     CompleteWorkflowExecutionDecisionAttributes completeWorkflowExecutionDecisionAttributes = decisionsListValue.getCompleteWorkflowExecutionDecisionAttributes();
                     if (completeWorkflowExecutionDecisionAttributes != null) {
-                        jsonWriter.key("completeWorkflowExecutionDecisionAttributes").object();
+
+                        jsonWriter.key("completeWorkflowExecutionDecisionAttributes");
+                        jsonWriter.object();
+
                         if (completeWorkflowExecutionDecisionAttributes.getResult() != null) {
                             jsonWriter.key("result").value(completeWorkflowExecutionDecisionAttributes.getResult());
                         }
@@ -130,7 +175,10 @@ public class RespondDecisionTaskCompletedRequestMarshaller implements Marshaller
                     }
                     FailWorkflowExecutionDecisionAttributes failWorkflowExecutionDecisionAttributes = decisionsListValue.getFailWorkflowExecutionDecisionAttributes();
                     if (failWorkflowExecutionDecisionAttributes != null) {
-                        jsonWriter.key("failWorkflowExecutionDecisionAttributes").object();
+
+                        jsonWriter.key("failWorkflowExecutionDecisionAttributes");
+                        jsonWriter.object();
+
                         if (failWorkflowExecutionDecisionAttributes.getReason() != null) {
                             jsonWriter.key("reason").value(failWorkflowExecutionDecisionAttributes.getReason());
                         }
@@ -141,7 +189,10 @@ public class RespondDecisionTaskCompletedRequestMarshaller implements Marshaller
                     }
                     CancelWorkflowExecutionDecisionAttributes cancelWorkflowExecutionDecisionAttributes = decisionsListValue.getCancelWorkflowExecutionDecisionAttributes();
                     if (cancelWorkflowExecutionDecisionAttributes != null) {
-                        jsonWriter.key("cancelWorkflowExecutionDecisionAttributes").object();
+
+                        jsonWriter.key("cancelWorkflowExecutionDecisionAttributes");
+                        jsonWriter.object();
+
                         if (cancelWorkflowExecutionDecisionAttributes.getDetails() != null) {
                             jsonWriter.key("details").value(cancelWorkflowExecutionDecisionAttributes.getDetails());
                         }
@@ -149,7 +200,10 @@ public class RespondDecisionTaskCompletedRequestMarshaller implements Marshaller
                     }
                     ContinueAsNewWorkflowExecutionDecisionAttributes continueAsNewWorkflowExecutionDecisionAttributes = decisionsListValue.getContinueAsNewWorkflowExecutionDecisionAttributes();
                     if (continueAsNewWorkflowExecutionDecisionAttributes != null) {
-                        jsonWriter.key("continueAsNewWorkflowExecutionDecisionAttributes").object();
+
+                        jsonWriter.key("continueAsNewWorkflowExecutionDecisionAttributes");
+                        jsonWriter.object();
+
                         if (continueAsNewWorkflowExecutionDecisionAttributes.getInput() != null) {
                             jsonWriter.key("input").value(continueAsNewWorkflowExecutionDecisionAttributes.getInput());
                         }
@@ -158,7 +212,10 @@ public class RespondDecisionTaskCompletedRequestMarshaller implements Marshaller
                         }
                         TaskList taskList = continueAsNewWorkflowExecutionDecisionAttributes.getTaskList();
                         if (taskList != null) {
-                            jsonWriter.key("taskList").object();
+
+                            jsonWriter.key("taskList");
+                            jsonWriter.object();
+
                             if (taskList.getName() != null) {
                                 jsonWriter.key("name").value(taskList.getName());
                             }
@@ -173,7 +230,10 @@ public class RespondDecisionTaskCompletedRequestMarshaller implements Marshaller
 
                         java.util.List<String> tagListList = continueAsNewWorkflowExecutionDecisionAttributes.getTagList();
                         if (tagListList != null && tagListList.size() > 0) {
-                            jsonWriter.key("tagList").array();
+
+                            jsonWriter.key("tagList");
+                            jsonWriter.array();
+
                             for (String tagListListValue : tagListList) {
                                 jsonWriter.value(tagListListValue);
                             }
@@ -186,7 +246,10 @@ public class RespondDecisionTaskCompletedRequestMarshaller implements Marshaller
                     }
                     RecordMarkerDecisionAttributes recordMarkerDecisionAttributes = decisionsListValue.getRecordMarkerDecisionAttributes();
                     if (recordMarkerDecisionAttributes != null) {
-                        jsonWriter.key("recordMarkerDecisionAttributes").object();
+
+                        jsonWriter.key("recordMarkerDecisionAttributes");
+                        jsonWriter.object();
+
                         if (recordMarkerDecisionAttributes.getMarkerName() != null) {
                             jsonWriter.key("markerName").value(recordMarkerDecisionAttributes.getMarkerName());
                         }
@@ -197,7 +260,10 @@ public class RespondDecisionTaskCompletedRequestMarshaller implements Marshaller
                     }
                     StartTimerDecisionAttributes startTimerDecisionAttributes = decisionsListValue.getStartTimerDecisionAttributes();
                     if (startTimerDecisionAttributes != null) {
-                        jsonWriter.key("startTimerDecisionAttributes").object();
+
+                        jsonWriter.key("startTimerDecisionAttributes");
+                        jsonWriter.object();
+
                         if (startTimerDecisionAttributes.getTimerId() != null) {
                             jsonWriter.key("timerId").value(startTimerDecisionAttributes.getTimerId());
                         }
@@ -211,7 +277,10 @@ public class RespondDecisionTaskCompletedRequestMarshaller implements Marshaller
                     }
                     CancelTimerDecisionAttributes cancelTimerDecisionAttributes = decisionsListValue.getCancelTimerDecisionAttributes();
                     if (cancelTimerDecisionAttributes != null) {
-                        jsonWriter.key("cancelTimerDecisionAttributes").object();
+
+                        jsonWriter.key("cancelTimerDecisionAttributes");
+                        jsonWriter.object();
+
                         if (cancelTimerDecisionAttributes.getTimerId() != null) {
                             jsonWriter.key("timerId").value(cancelTimerDecisionAttributes.getTimerId());
                         }
@@ -219,7 +288,10 @@ public class RespondDecisionTaskCompletedRequestMarshaller implements Marshaller
                     }
                     SignalExternalWorkflowExecutionDecisionAttributes signalExternalWorkflowExecutionDecisionAttributes = decisionsListValue.getSignalExternalWorkflowExecutionDecisionAttributes();
                     if (signalExternalWorkflowExecutionDecisionAttributes != null) {
-                        jsonWriter.key("signalExternalWorkflowExecutionDecisionAttributes").object();
+
+                        jsonWriter.key("signalExternalWorkflowExecutionDecisionAttributes");
+                        jsonWriter.object();
+
                         if (signalExternalWorkflowExecutionDecisionAttributes.getWorkflowId() != null) {
                             jsonWriter.key("workflowId").value(signalExternalWorkflowExecutionDecisionAttributes.getWorkflowId());
                         }
@@ -239,7 +311,10 @@ public class RespondDecisionTaskCompletedRequestMarshaller implements Marshaller
                     }
                     RequestCancelExternalWorkflowExecutionDecisionAttributes requestCancelExternalWorkflowExecutionDecisionAttributes = decisionsListValue.getRequestCancelExternalWorkflowExecutionDecisionAttributes();
                     if (requestCancelExternalWorkflowExecutionDecisionAttributes != null) {
-                        jsonWriter.key("requestCancelExternalWorkflowExecutionDecisionAttributes").object();
+
+                        jsonWriter.key("requestCancelExternalWorkflowExecutionDecisionAttributes");
+                        jsonWriter.object();
+
                         if (requestCancelExternalWorkflowExecutionDecisionAttributes.getWorkflowId() != null) {
                             jsonWriter.key("workflowId").value(requestCancelExternalWorkflowExecutionDecisionAttributes.getWorkflowId());
                         }
@@ -253,10 +328,16 @@ public class RespondDecisionTaskCompletedRequestMarshaller implements Marshaller
                     }
                     StartChildWorkflowExecutionDecisionAttributes startChildWorkflowExecutionDecisionAttributes = decisionsListValue.getStartChildWorkflowExecutionDecisionAttributes();
                     if (startChildWorkflowExecutionDecisionAttributes != null) {
-                        jsonWriter.key("startChildWorkflowExecutionDecisionAttributes").object();
+
+                        jsonWriter.key("startChildWorkflowExecutionDecisionAttributes");
+                        jsonWriter.object();
+
                         WorkflowType workflowType = startChildWorkflowExecutionDecisionAttributes.getWorkflowType();
                         if (workflowType != null) {
-                            jsonWriter.key("workflowType").object();
+
+                            jsonWriter.key("workflowType");
+                            jsonWriter.object();
+
                             if (workflowType.getName() != null) {
                                 jsonWriter.key("name").value(workflowType.getName());
                             }
@@ -279,7 +360,10 @@ public class RespondDecisionTaskCompletedRequestMarshaller implements Marshaller
                         }
                         TaskList taskList = startChildWorkflowExecutionDecisionAttributes.getTaskList();
                         if (taskList != null) {
-                            jsonWriter.key("taskList").object();
+
+                            jsonWriter.key("taskList");
+                            jsonWriter.object();
+
                             if (taskList.getName() != null) {
                                 jsonWriter.key("name").value(taskList.getName());
                             }
@@ -294,7 +378,10 @@ public class RespondDecisionTaskCompletedRequestMarshaller implements Marshaller
 
                         java.util.List<String> tagListList = startChildWorkflowExecutionDecisionAttributes.getTagList();
                         if (tagListList != null && tagListList.size() > 0) {
-                            jsonWriter.key("tagList").array();
+
+                            jsonWriter.key("tagList");
+                            jsonWriter.array();
+
                             for (String tagListListValue : tagListList) {
                                 jsonWriter.value(tagListListValue);
                             }
@@ -311,14 +398,22 @@ public class RespondDecisionTaskCompletedRequestMarshaller implements Marshaller
             }
 
     	    jsonWriter.endObject();
+        	
 
     	    String snippet = stringWriter.toString();
     	    byte[] content = snippet.getBytes("UTF-8");
         	request.setContent(new StringInputStream(snippet));
 	        request.addHeader("Content-Length", Integer.toString(content.length));
-            return request;
         } catch(Throwable t) {
           throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
+        
+
+        return request;
+    }
+
+    private String getString(String s) {
+        if (s == null) return "";
+        return s;
     }
 }

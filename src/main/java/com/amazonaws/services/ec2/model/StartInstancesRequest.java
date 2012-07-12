@@ -36,6 +36,8 @@ public class StartInstancesRequest extends AmazonWebServiceRequest {
      */
     private java.util.List<String> instanceIds;
 
+    private String additionalInfo;
+
     /**
      * Default constructor for a new StartInstancesRequest object.  Callers should use the
      * setter or fluent setter (with...) methods to initialize this object after creating it.
@@ -125,6 +127,40 @@ public class StartInstancesRequest extends AmazonWebServiceRequest {
     }
     
     /**
+     * Returns the value of the AdditionalInfo property for this object.
+     *
+     * @return The value of the AdditionalInfo property for this object.
+     */
+    public String getAdditionalInfo() {
+        return additionalInfo;
+    }
+    
+    /**
+     * Sets the value of the AdditionalInfo property for this object.
+     *
+     * @param additionalInfo The new value for the AdditionalInfo property for this object.
+     */
+    public void setAdditionalInfo(String additionalInfo) {
+        this.additionalInfo = additionalInfo;
+    }
+    
+    /**
+     * Sets the value of the AdditionalInfo property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param additionalInfo The new value for the AdditionalInfo property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public StartInstancesRequest withAdditionalInfo(String additionalInfo) {
+        this.additionalInfo = additionalInfo;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -137,6 +173,7 @@ public class StartInstancesRequest extends AmazonWebServiceRequest {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (instanceIds != null) sb.append("InstanceIds: " + instanceIds + ", ");
+        if (additionalInfo != null) sb.append("AdditionalInfo: " + additionalInfo + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -147,6 +184,7 @@ public class StartInstancesRequest extends AmazonWebServiceRequest {
         int hashCode = 1;
         
         hashCode = prime * hashCode + ((getInstanceIds() == null) ? 0 : getInstanceIds().hashCode()); 
+        hashCode = prime * hashCode + ((getAdditionalInfo() == null) ? 0 : getAdditionalInfo().hashCode()); 
         return hashCode;
     }
     
@@ -160,6 +198,8 @@ public class StartInstancesRequest extends AmazonWebServiceRequest {
         
         if (other.getInstanceIds() == null ^ this.getInstanceIds() == null) return false;
         if (other.getInstanceIds() != null && other.getInstanceIds().equals(this.getInstanceIds()) == false) return false; 
+        if (other.getAdditionalInfo() == null ^ this.getAdditionalInfo() == null) return false;
+        if (other.getAdditionalInfo() != null && other.getAdditionalInfo().equals(this.getAdditionalInfo()) == false) return false; 
         return true;
     }
     

@@ -46,6 +46,7 @@ public class NetworkInterfaceJsonUnmarshaller implements Unmarshaller<NetworkInt
         while (true) {
             if (token == null) break;
 
+            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Ipv4Address", targetDepth)) {
                     context.nextToken();
@@ -62,6 +63,8 @@ public class NetworkInterfaceJsonUnmarshaller implements Unmarshaller<NetworkInt
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getCurrentDepth() <= originalDepth) break;
             }
+            
+
             token = context.nextToken();
         }
         

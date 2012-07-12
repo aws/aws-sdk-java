@@ -46,6 +46,7 @@ public class DomainDetailJsonUnmarshaller implements Unmarshaller<DomainDetail, 
         while (true) {
             if (token == null) break;
 
+            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("domainInfo", targetDepth)) {
                     context.nextToken();
@@ -58,6 +59,8 @@ public class DomainDetailJsonUnmarshaller implements Unmarshaller<DomainDetail, 
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getCurrentDepth() <= originalDepth) break;
             }
+            
+
             token = context.nextToken();
         }
         

@@ -38,7 +38,7 @@ public class DetachLoadBalancerFromSubnetsRequestMarshaller implements Marshalle
 
         Request<DetachLoadBalancerFromSubnetsRequest> request = new DefaultRequest<DetachLoadBalancerFromSubnetsRequest>(detachLoadBalancerFromSubnetsRequest, "AmazonElasticLoadBalancing");
         request.addParameter("Action", "DetachLoadBalancerFromSubnets");
-        request.addParameter("Version", "2011-11-15");
+        request.addParameter("Version", "2012-06-01");
 
         if (detachLoadBalancerFromSubnetsRequest.getLoadBalancerName() != null) {
             request.addParameter("LoadBalancerName", StringUtils.fromString(detachLoadBalancerFromSubnetsRequest.getLoadBalancerName()));

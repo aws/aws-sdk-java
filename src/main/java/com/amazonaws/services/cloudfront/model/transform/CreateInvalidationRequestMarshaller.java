@@ -67,6 +67,7 @@ public class CreateInvalidationRequestMarshaller implements Marshaller<Request<C
             StringWriter stringWriter = new StringWriter();
             XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2012-05-05/");
 
+            
                     if (createInvalidationRequest != null) {
             InvalidationBatch invalidationBatchInvalidationBatch = createInvalidationRequest.getInvalidationBatch();
             if (invalidationBatchInvalidationBatch != null) {

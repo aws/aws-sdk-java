@@ -31,6 +31,10 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest {
 
     private java.util.List<String> groups;
 
+    private java.util.List<PrivateIpAddressSpecification> privateIpAddresses;
+
+    private Integer secondaryPrivateIpAddressCount;
+
     /**
      * Returns the value of the SubnetId property for this object.
      *
@@ -203,6 +207,115 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest {
     }
     
     /**
+     * Returns the value of the PrivateIpAddresses property for this object.
+     *
+     * @return The value of the PrivateIpAddresses property for this object.
+     */
+    public java.util.List<PrivateIpAddressSpecification> getPrivateIpAddresses() {
+        
+        if (privateIpAddresses == null) {
+            privateIpAddresses = new java.util.ArrayList<PrivateIpAddressSpecification>();
+        }
+        return privateIpAddresses;
+    }
+    
+    /**
+     * Sets the value of the PrivateIpAddresses property for this object.
+     *
+     * @param privateIpAddresses The new value for the PrivateIpAddresses property for this object.
+     */
+    public void setPrivateIpAddresses(java.util.Collection<PrivateIpAddressSpecification> privateIpAddresses) {
+        if (privateIpAddresses == null) {
+            this.privateIpAddresses = null;
+            return;
+        }
+
+        java.util.List<PrivateIpAddressSpecification> privateIpAddressesCopy = new java.util.ArrayList<PrivateIpAddressSpecification>(privateIpAddresses.size());
+        privateIpAddressesCopy.addAll(privateIpAddresses);
+        this.privateIpAddresses = privateIpAddressesCopy;
+    }
+    
+    /**
+     * Sets the value of the PrivateIpAddresses property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param privateIpAddresses The new value for the PrivateIpAddresses property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public CreateNetworkInterfaceRequest withPrivateIpAddresses(PrivateIpAddressSpecification... privateIpAddresses) {
+        if (getPrivateIpAddresses() == null) setPrivateIpAddresses(new java.util.ArrayList<PrivateIpAddressSpecification>(privateIpAddresses.length));
+        for (PrivateIpAddressSpecification value : privateIpAddresses) {
+            getPrivateIpAddresses().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * Sets the value of the PrivateIpAddresses property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param privateIpAddresses The new value for the PrivateIpAddresses property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public CreateNetworkInterfaceRequest withPrivateIpAddresses(java.util.Collection<PrivateIpAddressSpecification> privateIpAddresses) {
+        if (privateIpAddresses == null) {
+            this.privateIpAddresses = null;
+        } else {
+            java.util.List<PrivateIpAddressSpecification> privateIpAddressesCopy = new java.util.ArrayList<PrivateIpAddressSpecification>(privateIpAddresses.size());
+            privateIpAddressesCopy.addAll(privateIpAddresses);
+            this.privateIpAddresses = privateIpAddressesCopy;
+        }
+
+        return this;
+    }
+    
+    /**
+     * Returns the value of the SecondaryPrivateIpAddressCount property for
+     * this object.
+     *
+     * @return The value of the SecondaryPrivateIpAddressCount property for this
+     *         object.
+     */
+    public Integer getSecondaryPrivateIpAddressCount() {
+        return secondaryPrivateIpAddressCount;
+    }
+    
+    /**
+     * Sets the value of the SecondaryPrivateIpAddressCount property for this
+     * object.
+     *
+     * @param secondaryPrivateIpAddressCount The new value for the SecondaryPrivateIpAddressCount property for this
+     *         object.
+     */
+    public void setSecondaryPrivateIpAddressCount(Integer secondaryPrivateIpAddressCount) {
+        this.secondaryPrivateIpAddressCount = secondaryPrivateIpAddressCount;
+    }
+    
+    /**
+     * Sets the value of the SecondaryPrivateIpAddressCount property for this
+     * object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param secondaryPrivateIpAddressCount The new value for the SecondaryPrivateIpAddressCount property for this
+     *         object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public CreateNetworkInterfaceRequest withSecondaryPrivateIpAddressCount(Integer secondaryPrivateIpAddressCount) {
+        this.secondaryPrivateIpAddressCount = secondaryPrivateIpAddressCount;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -218,6 +331,8 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest {
         if (description != null) sb.append("Description: " + description + ", ");
         if (privateIpAddress != null) sb.append("PrivateIpAddress: " + privateIpAddress + ", ");
         if (groups != null) sb.append("Groups: " + groups + ", ");
+        if (privateIpAddresses != null) sb.append("PrivateIpAddresses: " + privateIpAddresses + ", ");
+        if (secondaryPrivateIpAddressCount != null) sb.append("SecondaryPrivateIpAddressCount: " + secondaryPrivateIpAddressCount + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -231,6 +346,8 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest {
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode()); 
         hashCode = prime * hashCode + ((getPrivateIpAddress() == null) ? 0 : getPrivateIpAddress().hashCode()); 
         hashCode = prime * hashCode + ((getGroups() == null) ? 0 : getGroups().hashCode()); 
+        hashCode = prime * hashCode + ((getPrivateIpAddresses() == null) ? 0 : getPrivateIpAddresses().hashCode()); 
+        hashCode = prime * hashCode + ((getSecondaryPrivateIpAddressCount() == null) ? 0 : getSecondaryPrivateIpAddressCount().hashCode()); 
         return hashCode;
     }
     
@@ -250,6 +367,10 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest {
         if (other.getPrivateIpAddress() != null && other.getPrivateIpAddress().equals(this.getPrivateIpAddress()) == false) return false; 
         if (other.getGroups() == null ^ this.getGroups() == null) return false;
         if (other.getGroups() != null && other.getGroups().equals(this.getGroups()) == false) return false; 
+        if (other.getPrivateIpAddresses() == null ^ this.getPrivateIpAddresses() == null) return false;
+        if (other.getPrivateIpAddresses() != null && other.getPrivateIpAddresses().equals(this.getPrivateIpAddresses()) == false) return false; 
+        if (other.getSecondaryPrivateIpAddressCount() == null ^ this.getSecondaryPrivateIpAddressCount() == null) return false;
+        if (other.getSecondaryPrivateIpAddressCount() != null && other.getSecondaryPrivateIpAddressCount().equals(this.getSecondaryPrivateIpAddressCount()) == false) return false; 
         return true;
     }
     

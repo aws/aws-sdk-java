@@ -46,6 +46,7 @@ public class KeySchemaElementJsonUnmarshaller implements Unmarshaller<KeySchemaE
         while (true) {
             if (token == null) break;
 
+            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AttributeName", targetDepth)) {
                     context.nextToken();
@@ -58,6 +59,8 @@ public class KeySchemaElementJsonUnmarshaller implements Unmarshaller<KeySchemaE
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getCurrentDepth() <= originalDepth) break;
             }
+            
+
             token = context.nextToken();
         }
         

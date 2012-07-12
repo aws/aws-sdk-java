@@ -46,6 +46,7 @@ public class ActivityTypeConfigurationJsonUnmarshaller implements Unmarshaller<A
         while (true) {
             if (token == null) break;
 
+            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("defaultTaskStartToCloseTimeout", targetDepth)) {
                     context.nextToken();
@@ -70,6 +71,8 @@ public class ActivityTypeConfigurationJsonUnmarshaller implements Unmarshaller<A
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getCurrentDepth() <= originalDepth) break;
             }
+            
+
             token = context.nextToken();
         }
         

@@ -57,9 +57,6 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
     /** Provider for AWS credentials. */
     private AWSCredentialsProvider awsCredentialsProvider;
 
-    /** Long-term credentials used to obtain the session credentials provider */
-    private AWSCredentials longTermCredentials;
-
     private static final Log log = LogFactory.getLog(AmazonDynamoDB.class);
 
     /**
@@ -69,7 +66,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
 
     
     /** AWS signer for authenticating requests. */
-    private AWS3Signer signer;
+    private AWS4Signer signer;
 
 
     /**
@@ -121,17 +118,6 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * AmazonDynamoDB using the specified AWS account credentials.
      * 
      * <p>
-     * If AWS session credentials are passed in, then those credentials will be used to
-     * authenticate requests.  Otherwise, if AWS long-term credentials are passed in, then
-     * session management will be handled automatically by the SDK.  Callers are encouraged
-     * to use long-term credentials and let the SDK handle starting and renewing sessions.
-     * <p>
-     * Automatically managed sessions will be shared among all clients that use
-     * the same credentials and service endpoint. To opt out of this behavior,
-     * explicitly provide an instance of {@link AWSCredentialsProvider} that
-     * returns {@link AWSSessionCredentials}.
-     * 
-     * <p>
      * All service calls made using this new client object are blocking, and will not
      * return until the service call completes.
      *
@@ -148,17 +134,6 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * and client configuration options.
      * 
      * <p>
-     * If AWS session credentials are passed in, then those credentials will be used to
-     * authenticate requests.  Otherwise, if AWS long-term credentials are passed in, then
-     * session management will be handled automatically by the SDK.  Callers are encouraged
-     * to use long-term credentials and let the SDK handle starting and renewing sessions.
-     * <p>
-     * Automatically managed sessions will be shared among all clients that use
-     * the same credentials and service endpoint. To opt out of this behavior,
-     * explicitly provide an instance of {@link AWSCredentialsProvider} that
-     * returns {@link AWSSessionCredentials}.
-     * 
-     * <p>
      * All service calls made using this new client object are blocking, and will not
      * return until the service call completes.
      *
@@ -171,12 +146,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
     public AmazonDynamoDBClient(AWSCredentials awsCredentials, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         
-        if (awsCredentials instanceof AWSSessionCredentials ||
-            awsCredentials instanceof NoSessionSupportCredentials) {
-            this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
-        } else {
-            this.longTermCredentials = awsCredentials;
-        }
+        this.awsCredentialsProvider = new StaticCredentialsProvider(awsCredentials);
         
         init();
     }
@@ -184,17 +154,6 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
     /**
      * Constructs a new client to invoke service methods on
      * AmazonDynamoDB using the specified AWS account credentials provider.
-     * 
-     * <p>
-     * If AWS session credentials are passed in, then those credentials will be used to
-     * authenticate requests.  Otherwise, if AWS long-term credentials are passed in, then
-     * session management will be handled automatically by the SDK.  Callers are encouraged
-     * to use long-term credentials and let the SDK handle starting and renewing sessions.
-     * <p>
-     * Automatically managed sessions will be shared among all clients that use
-     * the same credentials and service endpoint. To opt out of this behavior,
-     * explicitly provide an instance of {@link AWSCredentialsProvider} that
-     * returns {@link AWSSessionCredentials}.
      * 
      * <p>
      * All service calls made using this new client object are blocking, and will not
@@ -214,17 +173,6 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * provider and client configuration options.
      * 
      * <p>
-     * If AWS session credentials are passed in, then those credentials will be used to
-     * authenticate requests.  Otherwise, if AWS long-term credentials are passed in, then
-     * session management will be handled automatically by the SDK.  Callers are encouraged
-     * to use long-term credentials and let the SDK handle starting and renewing sessions.
-     * <p>
-     * Automatically managed sessions will be shared among all clients that use
-     * the same credentials and service endpoint. To opt out of this behavior,
-     * explicitly provide an instance of {@link AWSCredentialsProvider} that
-     * returns {@link AWSSessionCredentials}.
-     * 
-     * <p>
      * All service calls made using this new client object are blocking, and will not
      * return until the service call completes.
      *
@@ -238,12 +186,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
     public AmazonDynamoDBClient(AWSCredentialsProvider awsCredentialsProvider, ClientConfiguration clientConfiguration) {
         super(clientConfiguration);
         
-        if (awsCredentialsProvider.getCredentials() instanceof AWSSessionCredentials ||
-            awsCredentialsProvider.getCredentials() instanceof NoSessionSupportCredentials) {
-            this.awsCredentialsProvider = awsCredentialsProvider;
-        } else {
-            this.longTermCredentials = awsCredentialsProvider.getCredentials();
-        }
+        this.awsCredentialsProvider = awsCredentialsProvider;
         
         init();
     }
@@ -261,7 +204,9 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
         exceptionUnmarshallers.add(new JsonErrorUnmarshaller());
         setEndpoint("dynamodb.us-east-1.amazonaws.com/");
 
-        signer = new AWS3Signer();
+        signer = new AWS4Signer();
+        
+        signer.setServiceName("dynamodb");
         
 
         HandlerChainFactory chainFactory = new HandlerChainFactory();
@@ -846,19 +791,46 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
     }
     
     /**
-     * Setting the endpoint will also change the session credentials provider,
-     * if it's being automatically managed.
+     * Overrides the default endpoint for this client and explicitly provides
+     * an AWS region ID and AWS service name to use when the client calculates a signature
+     * for requests.  In almost all cases, this region ID and service name
+     * are automatically determined from the endpoint, and callers should use the simpler
+     * one-argument form of setEndpoint instead of this method.
+     * <p>
+     * <b>This method is not threadsafe. Endpoints should be configured when the
+     * client is created and before any service requests are made. Changing it
+     * afterwards creates inevitable race conditions for any service requests in
+     * transit.</b>
+     * <p>
+     * Callers can pass in just the endpoint (ex: "ec2.amazonaws.com") or a full
+     * URL, including the protocol (ex: "https://ec2.amazonaws.com"). If the
+     * protocol is not specified here, the default protocol from this client's
+     * {@link ClientConfiguration} will be used, which by default is HTTPS.
+     * <p>
+     * For more information on using AWS regions with the AWS SDK for Java, and
+     * a complete list of all available endpoints for all AWS services, see:
+     * <a href="http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912">
+     * http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912</a>
+     *
+     * @param endpoint
+     *            The endpoint (ex: "ec2.amazonaws.com") or a full URL,
+     *            including the protocol (ex: "https://ec2.amazonaws.com") of
+     *            the region specific AWS endpoint this client will communicate
+     *            with.
+     * @param serviceName
+     *            The name of the AWS service to use when signing requests.
+     * @param regionId
+     *            The ID of the region in which this service resides.
+     *
+     * @throws IllegalArgumentException
+     *             If any problems are detected with the specified endpoint.
      */
-    @Override
-    public void setEndpoint(String endpoint) throws IllegalArgumentException {
-        super.setEndpoint(endpoint);
-
-        if ( this.longTermCredentials != null ) {
-            this.awsCredentialsProvider = SessionCredentialsProviderFactory.getSessionCredentialsProvider(
-                    this.longTermCredentials, endpoint, clientConfiguration);
-        }
+    public void setEndpoint(String endpoint, String serviceName, String regionId) throws IllegalArgumentException {
+        setEndpoint(endpoint);
+        signer.setServiceName(serviceName);
+        signer.setRegionName(regionId);
     }
-
+    
 
     /**
      * Returns additional metadata for a previously executed successful, request, typically used for

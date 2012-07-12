@@ -46,6 +46,7 @@ public class WorkflowExecutionContinuedAsNewEventAttributesJsonUnmarshaller impl
         while (true) {
             if (token == null) break;
 
+            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("input", targetDepth)) {
                     context.nextToken();
@@ -85,6 +86,8 @@ public class WorkflowExecutionContinuedAsNewEventAttributesJsonUnmarshaller impl
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getCurrentDepth() <= originalDepth) break;
             }
+            
+
             token = context.nextToken();
         }
         

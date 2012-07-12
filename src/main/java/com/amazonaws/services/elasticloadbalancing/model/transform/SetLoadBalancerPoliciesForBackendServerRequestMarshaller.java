@@ -38,7 +38,7 @@ public class SetLoadBalancerPoliciesForBackendServerRequestMarshaller implements
 
         Request<SetLoadBalancerPoliciesForBackendServerRequest> request = new DefaultRequest<SetLoadBalancerPoliciesForBackendServerRequest>(setLoadBalancerPoliciesForBackendServerRequest, "AmazonElasticLoadBalancing");
         request.addParameter("Action", "SetLoadBalancerPoliciesForBackendServer");
-        request.addParameter("Version", "2011-11-15");
+        request.addParameter("Version", "2012-06-01");
 
         if (setLoadBalancerPoliciesForBackendServerRequest.getLoadBalancerName() != null) {
             request.addParameter("LoadBalancerName", StringUtils.fromString(setLoadBalancerPoliciesForBackendServerRequest.getLoadBalancerName()));

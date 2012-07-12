@@ -120,7 +120,7 @@ public class JsonUnmarshallerContext {
 	}
 
 	public boolean isStartOfDocument() {
-		return jsonParser.getCurrentToken() == null;
+		return jsonParser == null || jsonParser.getCurrentToken() == null;
 	}
 
 	/**

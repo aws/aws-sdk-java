@@ -46,6 +46,7 @@ public class ActivityTaskCanceledEventAttributesJsonUnmarshaller implements Unma
         while (true) {
             if (token == null) break;
 
+            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("details", targetDepth)) {
                     context.nextToken();
@@ -66,6 +67,8 @@ public class ActivityTaskCanceledEventAttributesJsonUnmarshaller implements Unma
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getCurrentDepth() <= originalDepth) break;
             }
+            
+
             token = context.nextToken();
         }
         

@@ -44,7 +44,7 @@ public class UpdateCloudFrontOriginAccessIdentityRequestMarshaller implements Ma
         Request<UpdateCloudFrontOriginAccessIdentityRequest> request = new DefaultRequest<UpdateCloudFrontOriginAccessIdentityRequest>(updateCloudFrontOriginAccessIdentityRequest, "AmazonCloudFront");
         request.setHttpMethod(HttpMethodName.PUT);
         if (updateCloudFrontOriginAccessIdentityRequest.getIfMatch() != null)
-        	request.addHeader("If-Match", updateCloudFrontOriginAccessIdentityRequest.getIfMatch());
+        	request.addHeader("If-Match", StringUtils.fromString(updateCloudFrontOriginAccessIdentityRequest.getIfMatch()));
         
 
         String uriResourcePath = "2012-05-05/origin-access-identity/cloudfront/{Id}/config"; 
@@ -70,6 +70,7 @@ public class UpdateCloudFrontOriginAccessIdentityRequestMarshaller implements Ma
             StringWriter stringWriter = new StringWriter();
             XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2012-05-05/");
 
+            
                     if (updateCloudFrontOriginAccessIdentityRequest != null) {
             CloudFrontOriginAccessIdentityConfig cloudFrontOriginAccessIdentityConfigCloudFrontOriginAccessIdentityConfig = updateCloudFrontOriginAccessIdentityRequest.getCloudFrontOriginAccessIdentityConfig();
             if (cloudFrontOriginAccessIdentityConfigCloudFrontOriginAccessIdentityConfig != null) {

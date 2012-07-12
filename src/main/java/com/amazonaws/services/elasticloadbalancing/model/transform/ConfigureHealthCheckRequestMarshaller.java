@@ -38,7 +38,7 @@ public class ConfigureHealthCheckRequestMarshaller implements Marshaller<Request
 
         Request<ConfigureHealthCheckRequest> request = new DefaultRequest<ConfigureHealthCheckRequest>(configureHealthCheckRequest, "AmazonElasticLoadBalancing");
         request.addParameter("Action", "ConfigureHealthCheck");
-        request.addParameter("Version", "2011-11-15");
+        request.addParameter("Version", "2012-06-01");
 
         if (configureHealthCheckRequest.getLoadBalancerName() != null) {
             request.addParameter("LoadBalancerName", StringUtils.fromString(configureHealthCheckRequest.getLoadBalancerName()));

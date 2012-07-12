@@ -78,7 +78,12 @@ public class JsonResponseHandler<T> implements HttpResponseHandler<AmazonWebServ
      */
     public AmazonWebServiceResponse<T> handle(HttpResponse response) throws Exception {
         log.trace("Parsing service response JSON");
-        JsonParser jsonParser = jsonFactory.createJsonParser(response.getContent());
+
+        JsonParser jsonParser = null;
+        if (!needsConnectionLeftOpen) {
+        	jsonParser = jsonFactory.createJsonParser(response.getContent());
+        }
+
         try {
             AmazonWebServiceResponse<T> awsResponse = new AmazonWebServiceResponse<T>();
             JsonUnmarshallerContext unmarshallerContext = new JsonUnmarshallerContext(jsonParser, response);

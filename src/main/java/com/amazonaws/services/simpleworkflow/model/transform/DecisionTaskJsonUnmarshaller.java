@@ -46,6 +46,7 @@ public class DecisionTaskJsonUnmarshaller implements Unmarshaller<DecisionTask, 
         while (true) {
             if (token == null) break;
 
+            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("taskToken", targetDepth)) {
                     context.nextToken();
@@ -77,6 +78,8 @@ public class DecisionTaskJsonUnmarshaller implements Unmarshaller<DecisionTask, 
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getCurrentDepth() <= originalDepth) break;
             }
+            
+
             token = context.nextToken();
         }
         

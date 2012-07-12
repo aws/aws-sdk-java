@@ -44,7 +44,7 @@ public class DeleteCloudFrontOriginAccessIdentityRequestMarshaller implements Ma
         Request<DeleteCloudFrontOriginAccessIdentityRequest> request = new DefaultRequest<DeleteCloudFrontOriginAccessIdentityRequest>(deleteCloudFrontOriginAccessIdentityRequest, "AmazonCloudFront");
         request.setHttpMethod(HttpMethodName.DELETE);
         if (deleteCloudFrontOriginAccessIdentityRequest.getIfMatch() != null)
-        	request.addHeader("If-Match", deleteCloudFrontOriginAccessIdentityRequest.getIfMatch());
+        	request.addHeader("If-Match", StringUtils.fromString(deleteCloudFrontOriginAccessIdentityRequest.getIfMatch()));
         
 
         String uriResourcePath = "2012-05-05/origin-access-identity/cloudfront/{Id}"; 

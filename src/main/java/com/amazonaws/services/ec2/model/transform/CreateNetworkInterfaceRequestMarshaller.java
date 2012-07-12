@@ -38,7 +38,7 @@ public class CreateNetworkInterfaceRequestMarshaller implements Marshaller<Reque
 
         Request<CreateNetworkInterfaceRequest> request = new DefaultRequest<CreateNetworkInterfaceRequest>(createNetworkInterfaceRequest, "AmazonEC2");
         request.addParameter("Action", "CreateNetworkInterface");
-        request.addParameter("Version", "2012-06-01");
+        request.addParameter("Version", "2012-06-15");
 
         if (createNetworkInterfaceRequest.getSubnetId() != null) {
             request.addParameter("SubnetId", StringUtils.fromString(createNetworkInterfaceRequest.getSubnetId()));
@@ -59,6 +59,26 @@ public class CreateNetworkInterfaceRequestMarshaller implements Marshaller<Reque
             }
 
             groupsListIndex++;
+        }
+
+        java.util.List<PrivateIpAddressSpecification> privateIpAddressesList = createNetworkInterfaceRequest.getPrivateIpAddresses();
+        int privateIpAddressesListIndex = 1;
+
+        for (PrivateIpAddressSpecification privateIpAddressesListValue : privateIpAddressesList) {
+            PrivateIpAddressSpecification privateIpAddressSpecificationMember = privateIpAddressesListValue;
+            if (privateIpAddressSpecificationMember != null) {
+                if (privateIpAddressSpecificationMember.getPrivateIpAddress() != null) {
+                    request.addParameter("PrivateIpAddresses." + privateIpAddressesListIndex + ".PrivateIpAddress", StringUtils.fromString(privateIpAddressSpecificationMember.getPrivateIpAddress()));
+                }
+                if (privateIpAddressSpecificationMember.isPrimary() != null) {
+                    request.addParameter("PrivateIpAddresses." + privateIpAddressesListIndex + ".Primary", StringUtils.fromBoolean(privateIpAddressSpecificationMember.isPrimary()));
+                }
+            }
+
+            privateIpAddressesListIndex++;
+        }
+        if (createNetworkInterfaceRequest.getSecondaryPrivateIpAddressCount() != null) {
+            request.addParameter("SecondaryPrivateIpAddressCount", StringUtils.fromInteger(createNetworkInterfaceRequest.getSecondaryPrivateIpAddressCount()));
         }
 
 

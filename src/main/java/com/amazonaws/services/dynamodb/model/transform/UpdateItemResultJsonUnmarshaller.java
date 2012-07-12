@@ -46,6 +46,7 @@ public class UpdateItemResultJsonUnmarshaller implements Unmarshaller<UpdateItem
         while (true) {
             if (token == null) break;
 
+            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Attributes", targetDepth)) {
                     updateItemResult.setAttributes(new MapUnmarshaller<String,AttributeValue>(StringJsonUnmarshaller.getInstance(), AttributeValueJsonUnmarshaller.getInstance()).unmarshall(context));
@@ -57,6 +58,8 @@ public class UpdateItemResultJsonUnmarshaller implements Unmarshaller<UpdateItem
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getCurrentDepth() <= originalDepth) break;
             }
+            
+
             token = context.nextToken();
         }
         

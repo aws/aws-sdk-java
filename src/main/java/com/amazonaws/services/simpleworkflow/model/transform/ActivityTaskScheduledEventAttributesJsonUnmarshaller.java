@@ -46,6 +46,7 @@ public class ActivityTaskScheduledEventAttributesJsonUnmarshaller implements Unm
         while (true) {
             if (token == null) break;
 
+            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("activityType", targetDepth)) {
                     context.nextToken();
@@ -90,6 +91,8 @@ public class ActivityTaskScheduledEventAttributesJsonUnmarshaller implements Unm
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getCurrentDepth() <= originalDepth) break;
             }
+            
+
             token = context.nextToken();
         }
         

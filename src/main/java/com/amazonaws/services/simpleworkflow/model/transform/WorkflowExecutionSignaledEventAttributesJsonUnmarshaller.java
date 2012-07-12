@@ -46,6 +46,7 @@ public class WorkflowExecutionSignaledEventAttributesJsonUnmarshaller implements
         while (true) {
             if (token == null) break;
 
+            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("signalName", targetDepth)) {
                     context.nextToken();
@@ -66,6 +67,8 @@ public class WorkflowExecutionSignaledEventAttributesJsonUnmarshaller implements
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getCurrentDepth() <= originalDepth) break;
             }
+            
+
             token = context.nextToken();
         }
         

@@ -46,6 +46,7 @@ public class WorkflowTypeInfosJsonUnmarshaller implements Unmarshaller<WorkflowT
         while (true) {
             if (token == null) break;
 
+            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("typeInfos", targetDepth)) {
                     workflowTypeInfos.setTypeInfos(new ListUnmarshaller<WorkflowTypeInfo>(WorkflowTypeInfoJsonUnmarshaller.getInstance()).unmarshall(context));
@@ -57,6 +58,8 @@ public class WorkflowTypeInfosJsonUnmarshaller implements Unmarshaller<WorkflowT
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getCurrentDepth() <= originalDepth) break;
             }
+            
+
             token = context.nextToken();
         }
         

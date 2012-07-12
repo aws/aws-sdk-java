@@ -46,6 +46,7 @@ public class MarkerRecordedEventAttributesJsonUnmarshaller implements Unmarshall
         while (true) {
             if (token == null) break;
 
+            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("markerName", targetDepth)) {
                     context.nextToken();
@@ -62,6 +63,8 @@ public class MarkerRecordedEventAttributesJsonUnmarshaller implements Unmarshall
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getCurrentDepth() <= originalDepth) break;
             }
+            
+
             token = context.nextToken();
         }
         

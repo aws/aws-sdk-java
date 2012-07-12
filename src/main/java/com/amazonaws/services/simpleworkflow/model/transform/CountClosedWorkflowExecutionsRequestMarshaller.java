@@ -26,18 +26,19 @@ import java.util.List;
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
+import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.simpleworkflow.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
-import static com.amazonaws.http.HttpMethodName.POST;
-
 /**
  * Count Closed Workflow Executions Request Marshaller
  */
 public class CountClosedWorkflowExecutionsRequestMarshaller implements Marshaller<Request<CountClosedWorkflowExecutionsRequest>, CountClosedWorkflowExecutionsRequest> {
+
+    
 
     public Request<CountClosedWorkflowExecutionsRequest> marshall(CountClosedWorkflowExecutionsRequest countClosedWorkflowExecutionsRequest) {
 		if (countClosedWorkflowExecutionsRequest == null) {
@@ -48,19 +49,48 @@ public class CountClosedWorkflowExecutionsRequestMarshaller implements Marshalle
         String target = "SimpleWorkflowService.CountClosedWorkflowExecutions";
         request.addHeader("X-Amz-Target", target);
         request.addHeader("Content-Type", "application/x-amz-json-1.0");
-        request.setHttpMethod(POST);
 
+        
+        request.setHttpMethod(HttpMethodName.POST);
+
+
+        String uriResourcePath = ""; 
+
+        if (uriResourcePath.contains("?")) {
+            String queryString = uriResourcePath.substring(uriResourcePath.indexOf("?") + 1);
+            uriResourcePath    = uriResourcePath.substring(0, uriResourcePath.indexOf("?"));
+
+            for (String s : queryString.split("[;&]")) {
+                String[] nameValuePair = s.split("=");
+                if (nameValuePair.length == 2) {
+                    request.addParameter(nameValuePair[0], nameValuePair[1]);
+                } else {
+                    request.addParameter(s, null);
+                }
+            }
+        }
+
+        request.setResourcePath(uriResourcePath);
+
+
+        
         try {
         	StringWriter stringWriter = new StringWriter();
         	JSONWriter jsonWriter = new JSONWriter(stringWriter);
+
+        	
+            
         	jsonWriter.object();
-	        
+        	
             if (countClosedWorkflowExecutionsRequest.getDomain() != null) {
                 jsonWriter.key("domain").value(countClosedWorkflowExecutionsRequest.getDomain());
             }
             ExecutionTimeFilter startTimeFilter = countClosedWorkflowExecutionsRequest.getStartTimeFilter();
             if (startTimeFilter != null) {
-                jsonWriter.key("startTimeFilter").object();
+
+                jsonWriter.key("startTimeFilter");
+                jsonWriter.object();
+
                 if (startTimeFilter.getOldestDate() != null) {
                     jsonWriter.key("oldestDate").value(startTimeFilter.getOldestDate());
                 }
@@ -71,7 +101,10 @@ public class CountClosedWorkflowExecutionsRequestMarshaller implements Marshalle
             }
             ExecutionTimeFilter closeTimeFilter = countClosedWorkflowExecutionsRequest.getCloseTimeFilter();
             if (closeTimeFilter != null) {
-                jsonWriter.key("closeTimeFilter").object();
+
+                jsonWriter.key("closeTimeFilter");
+                jsonWriter.object();
+
                 if (closeTimeFilter.getOldestDate() != null) {
                     jsonWriter.key("oldestDate").value(closeTimeFilter.getOldestDate());
                 }
@@ -82,7 +115,10 @@ public class CountClosedWorkflowExecutionsRequestMarshaller implements Marshalle
             }
             WorkflowExecutionFilter executionFilter = countClosedWorkflowExecutionsRequest.getExecutionFilter();
             if (executionFilter != null) {
-                jsonWriter.key("executionFilter").object();
+
+                jsonWriter.key("executionFilter");
+                jsonWriter.object();
+
                 if (executionFilter.getWorkflowId() != null) {
                     jsonWriter.key("workflowId").value(executionFilter.getWorkflowId());
                 }
@@ -90,7 +126,10 @@ public class CountClosedWorkflowExecutionsRequestMarshaller implements Marshalle
             }
             WorkflowTypeFilter typeFilter = countClosedWorkflowExecutionsRequest.getTypeFilter();
             if (typeFilter != null) {
-                jsonWriter.key("typeFilter").object();
+
+                jsonWriter.key("typeFilter");
+                jsonWriter.object();
+
                 if (typeFilter.getName() != null) {
                     jsonWriter.key("name").value(typeFilter.getName());
                 }
@@ -101,7 +140,10 @@ public class CountClosedWorkflowExecutionsRequestMarshaller implements Marshalle
             }
             TagFilter tagFilter = countClosedWorkflowExecutionsRequest.getTagFilter();
             if (tagFilter != null) {
-                jsonWriter.key("tagFilter").object();
+
+                jsonWriter.key("tagFilter");
+                jsonWriter.object();
+
                 if (tagFilter.getTag() != null) {
                     jsonWriter.key("tag").value(tagFilter.getTag());
                 }
@@ -109,7 +151,10 @@ public class CountClosedWorkflowExecutionsRequestMarshaller implements Marshalle
             }
             CloseStatusFilter closeStatusFilter = countClosedWorkflowExecutionsRequest.getCloseStatusFilter();
             if (closeStatusFilter != null) {
-                jsonWriter.key("closeStatusFilter").object();
+
+                jsonWriter.key("closeStatusFilter");
+                jsonWriter.object();
+
                 if (closeStatusFilter.getStatus() != null) {
                     jsonWriter.key("status").value(closeStatusFilter.getStatus());
                 }
@@ -117,14 +162,22 @@ public class CountClosedWorkflowExecutionsRequestMarshaller implements Marshalle
             }
 
     	    jsonWriter.endObject();
+        	
 
     	    String snippet = stringWriter.toString();
     	    byte[] content = snippet.getBytes("UTF-8");
         	request.setContent(new StringInputStream(snippet));
 	        request.addHeader("Content-Length", Integer.toString(content.length));
-            return request;
         } catch(Throwable t) {
           throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
+        
+
+        return request;
+    }
+
+    private String getString(String s) {
+        if (s == null) return "";
+        return s;
     }
 }

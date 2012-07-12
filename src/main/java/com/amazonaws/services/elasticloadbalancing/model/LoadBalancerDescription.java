@@ -114,6 +114,16 @@ public class LoadBalancerDescription {
     private java.util.Date createdTime;
 
     /**
+     * Specifies the type of a load balancer. If it is
+     * <i>internet-facing</i>, the load balancer has a publicly resolvable
+     * DNS name that resolves to public IP addresses. If it is
+     * <i>internal</i>, the load balancer has a publicly resolvable DNS name
+     * that resolves to private IP addresses. This option is only available
+     * for load balancers attached to a VPC.
+     */
+    private String scheme;
+
+    /**
      * Default constructor for a new LoadBalancerDescription object.  Callers should use the
      * setter or fluent setter (with...) methods to initialize this object after creating it.
      */
@@ -946,6 +956,70 @@ public class LoadBalancerDescription {
     
     
     /**
+     * Specifies the type of a load balancer. If it is
+     * <i>internet-facing</i>, the load balancer has a publicly resolvable
+     * DNS name that resolves to public IP addresses. If it is
+     * <i>internal</i>, the load balancer has a publicly resolvable DNS name
+     * that resolves to private IP addresses. This option is only available
+     * for load balancers attached to a VPC.
+     *
+     * @return Specifies the type of a load balancer. If it is
+     *         <i>internet-facing</i>, the load balancer has a publicly resolvable
+     *         DNS name that resolves to public IP addresses. If it is
+     *         <i>internal</i>, the load balancer has a publicly resolvable DNS name
+     *         that resolves to private IP addresses. This option is only available
+     *         for load balancers attached to a VPC.
+     */
+    public String getScheme() {
+        return scheme;
+    }
+    
+    /**
+     * Specifies the type of a load balancer. If it is
+     * <i>internet-facing</i>, the load balancer has a publicly resolvable
+     * DNS name that resolves to public IP addresses. If it is
+     * <i>internal</i>, the load balancer has a publicly resolvable DNS name
+     * that resolves to private IP addresses. This option is only available
+     * for load balancers attached to a VPC.
+     *
+     * @param scheme Specifies the type of a load balancer. If it is
+     *         <i>internet-facing</i>, the load balancer has a publicly resolvable
+     *         DNS name that resolves to public IP addresses. If it is
+     *         <i>internal</i>, the load balancer has a publicly resolvable DNS name
+     *         that resolves to private IP addresses. This option is only available
+     *         for load balancers attached to a VPC.
+     */
+    public void setScheme(String scheme) {
+        this.scheme = scheme;
+    }
+    
+    /**
+     * Specifies the type of a load balancer. If it is
+     * <i>internet-facing</i>, the load balancer has a publicly resolvable
+     * DNS name that resolves to public IP addresses. If it is
+     * <i>internal</i>, the load balancer has a publicly resolvable DNS name
+     * that resolves to private IP addresses. This option is only available
+     * for load balancers attached to a VPC.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param scheme Specifies the type of a load balancer. If it is
+     *         <i>internet-facing</i>, the load balancer has a publicly resolvable
+     *         DNS name that resolves to public IP addresses. If it is
+     *         <i>internal</i>, the load balancer has a publicly resolvable DNS name
+     *         that resolves to private IP addresses. This option is only available
+     *         for load balancers attached to a VPC.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public LoadBalancerDescription withScheme(String scheme) {
+        this.scheme = scheme;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -972,6 +1046,7 @@ public class LoadBalancerDescription {
         if (sourceSecurityGroup != null) sb.append("SourceSecurityGroup: " + sourceSecurityGroup + ", ");
         if (securityGroups != null) sb.append("SecurityGroups: " + securityGroups + ", ");
         if (createdTime != null) sb.append("CreatedTime: " + createdTime + ", ");
+        if (scheme != null) sb.append("Scheme: " + scheme + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -996,6 +1071,7 @@ public class LoadBalancerDescription {
         hashCode = prime * hashCode + ((getSourceSecurityGroup() == null) ? 0 : getSourceSecurityGroup().hashCode()); 
         hashCode = prime * hashCode + ((getSecurityGroups() == null) ? 0 : getSecurityGroups().hashCode()); 
         hashCode = prime * hashCode + ((getCreatedTime() == null) ? 0 : getCreatedTime().hashCode()); 
+        hashCode = prime * hashCode + ((getScheme() == null) ? 0 : getScheme().hashCode()); 
         return hashCode;
     }
     
@@ -1037,6 +1113,8 @@ public class LoadBalancerDescription {
         if (other.getSecurityGroups() != null && other.getSecurityGroups().equals(this.getSecurityGroups()) == false) return false; 
         if (other.getCreatedTime() == null ^ this.getCreatedTime() == null) return false;
         if (other.getCreatedTime() != null && other.getCreatedTime().equals(this.getCreatedTime()) == false) return false; 
+        if (other.getScheme() == null ^ this.getScheme() == null) return false;
+        if (other.getScheme() != null && other.getScheme().equals(this.getScheme()) == false) return false; 
         return true;
     }
     

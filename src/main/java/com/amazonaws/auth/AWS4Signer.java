@@ -89,7 +89,9 @@ public class AWS4Signer extends AbstractAWSSigner {
         String dateTime  = dateTimeFormat.format(date);
         String dateStamp = dateStampFormat.format(date);
 
+        String contentSha256 = BinaryUtils.toHex(hash(getBinaryRequestPayload(request)));
         request.addHeader("X-Amz-Date", dateTime);
+		request.addHeader("x-amz-content-sha256", contentSha256);
 
         String canonicalRequest =
             request.getHttpMethod().toString() + "\n" +
@@ -97,7 +99,7 @@ public class AWS4Signer extends AbstractAWSSigner {
             getCanonicalizedQueryString(request) + "\n" +
             getCanonicalizedHeaderString(request) + "\n" +
             getSignedHeadersString(request) + "\n" +
-            BinaryUtils.toHex(hash(getRequestPayload(request)));
+            contentSha256;
 
         log.debug("AWS4 Canonical Request: '\"" + canonicalRequest + "\"");
 
@@ -119,8 +121,6 @@ public class AWS4Signer extends AbstractAWSSigner {
 
         byte[] signature = sign(stringToSign.getBytes(), kSigning, SigningAlgorithm.HmacSHA256);
 
-        String signatureAlgorithmHeader =
-            "Algorithm=" + ALGORITHM;
         String credentialsAuthorizationHeader =
             "Credential=" + signingCredentials;
         String signedHeadersAuthorizationHeader =

@@ -67,6 +67,7 @@ public class CreateHostedZoneRequestMarshaller implements Marshaller<Request<Cre
             XMLWriter xmlWriter = new XMLWriter(stringWriter, "https://route53.amazonaws.com/doc/2012-02-29/");
 
             
+            
             xmlWriter.startElement("CreateHostedZoneRequest");
                     if (createHostedZoneRequest.getName() != null) {
             xmlWriter.startElement("Name").value(createHostedZoneRequest.getName()).endElement();

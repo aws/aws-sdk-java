@@ -46,6 +46,7 @@ public class BatchWriteResponseJsonUnmarshaller implements Unmarshaller<BatchWri
         while (true) {
             if (token == null) break;
 
+            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ConsumedCapacityUnits", targetDepth)) {
                     context.nextToken();
@@ -54,6 +55,8 @@ public class BatchWriteResponseJsonUnmarshaller implements Unmarshaller<BatchWri
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getCurrentDepth() <= originalDepth) break;
             }
+            
+
             token = context.nextToken();
         }
         

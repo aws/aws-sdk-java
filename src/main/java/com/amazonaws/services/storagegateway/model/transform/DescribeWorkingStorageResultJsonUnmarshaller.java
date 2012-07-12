@@ -46,6 +46,7 @@ public class DescribeWorkingStorageResultJsonUnmarshaller implements Unmarshalle
         while (true) {
             if (token == null) break;
 
+            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("GatewayARN", targetDepth)) {
                     context.nextToken();
@@ -65,6 +66,8 @@ public class DescribeWorkingStorageResultJsonUnmarshaller implements Unmarshalle
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getCurrentDepth() <= originalDepth) break;
             }
+            
+
             token = context.nextToken();
         }
         

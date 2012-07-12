@@ -46,6 +46,7 @@ public class BatchWriteItemResultJsonUnmarshaller implements Unmarshaller<BatchW
         while (true) {
             if (token == null) break;
 
+            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Responses", targetDepth)) {
                     batchWriteItemResult.setResponses(new MapUnmarshaller<String,BatchWriteResponse>(StringJsonUnmarshaller.getInstance(), BatchWriteResponseJsonUnmarshaller.getInstance()).unmarshall(context));
@@ -56,6 +57,8 @@ public class BatchWriteItemResultJsonUnmarshaller implements Unmarshaller<BatchW
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getCurrentDepth() <= originalDepth) break;
             }
+            
+
             token = context.nextToken();
         }
         

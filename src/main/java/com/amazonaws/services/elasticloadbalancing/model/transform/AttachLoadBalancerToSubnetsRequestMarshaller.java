@@ -38,7 +38,7 @@ public class AttachLoadBalancerToSubnetsRequestMarshaller implements Marshaller<
 
         Request<AttachLoadBalancerToSubnetsRequest> request = new DefaultRequest<AttachLoadBalancerToSubnetsRequest>(attachLoadBalancerToSubnetsRequest, "AmazonElasticLoadBalancing");
         request.addParameter("Action", "AttachLoadBalancerToSubnets");
-        request.addParameter("Version", "2011-11-15");
+        request.addParameter("Version", "2012-06-01");
 
         if (attachLoadBalancerToSubnetsRequest.getLoadBalancerName() != null) {
             request.addParameter("LoadBalancerName", StringUtils.fromString(attachLoadBalancerToSubnetsRequest.getLoadBalancerName()));

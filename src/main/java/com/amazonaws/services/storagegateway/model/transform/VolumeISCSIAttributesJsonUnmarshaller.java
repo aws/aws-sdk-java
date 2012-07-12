@@ -46,6 +46,7 @@ public class VolumeiSCSIAttributesJsonUnmarshaller implements Unmarshaller<Volum
         while (true) {
             if (token == null) break;
 
+            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TargetARN", targetDepth)) {
                     context.nextToken();
@@ -70,6 +71,8 @@ public class VolumeiSCSIAttributesJsonUnmarshaller implements Unmarshaller<Volum
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getCurrentDepth() <= originalDepth) break;
             }
+            
+
             token = context.nextToken();
         }
         

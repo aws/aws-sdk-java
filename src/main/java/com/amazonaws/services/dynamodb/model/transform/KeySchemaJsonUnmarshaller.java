@@ -46,6 +46,7 @@ public class KeySchemaJsonUnmarshaller implements Unmarshaller<KeySchema, JsonUn
         while (true) {
             if (token == null) break;
 
+            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("HashKeyElement", targetDepth)) {
                     context.nextToken();
@@ -58,6 +59,8 @@ public class KeySchemaJsonUnmarshaller implements Unmarshaller<KeySchema, JsonUn
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getCurrentDepth() <= originalDepth) break;
             }
+            
+
             token = context.nextToken();
         }
         

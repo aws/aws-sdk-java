@@ -44,7 +44,7 @@ public class DeleteDistributionRequestMarshaller implements Marshaller<Request<D
         Request<DeleteDistributionRequest> request = new DefaultRequest<DeleteDistributionRequest>(deleteDistributionRequest, "AmazonCloudFront");
         request.setHttpMethod(HttpMethodName.DELETE);
         if (deleteDistributionRequest.getIfMatch() != null)
-        	request.addHeader("If-Match", deleteDistributionRequest.getIfMatch());
+        	request.addHeader("If-Match", StringUtils.fromString(deleteDistributionRequest.getIfMatch()));
         
 
         String uriResourcePath = "2012-05-05/distribution/{Id}"; 

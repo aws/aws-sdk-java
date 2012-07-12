@@ -74,6 +74,14 @@ public class InstanceNetworkInterfaceSpecificationStaxUnmarshaller implements Un
                     instanceNetworkInterfaceSpecification.setDeleteOnTermination(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("privateIpAddressesSet/item", targetDepth)) {
+                    instanceNetworkInterfaceSpecification.getPrivateIpAddresses().add(PrivateIpAddressSpecificationStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("secondaryPrivateIpAddressCount", targetDepth)) {
+                    instanceNetworkInterfaceSpecification.setSecondaryPrivateIpAddressCount(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return instanceNetworkInterfaceSpecification;

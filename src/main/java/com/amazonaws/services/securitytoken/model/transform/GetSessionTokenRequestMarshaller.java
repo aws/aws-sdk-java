@@ -43,6 +43,12 @@ public class GetSessionTokenRequestMarshaller implements Marshaller<Request<GetS
         if (getSessionTokenRequest.getDurationSeconds() != null) {
             request.addParameter("DurationSeconds", StringUtils.fromInteger(getSessionTokenRequest.getDurationSeconds()));
         }
+        if (getSessionTokenRequest.getSerialNumber() != null) {
+            request.addParameter("SerialNumber", StringUtils.fromString(getSessionTokenRequest.getSerialNumber()));
+        }
+        if (getSessionTokenRequest.getTokenCode() != null) {
+            request.addParameter("TokenCode", StringUtils.fromString(getSessionTokenRequest.getTokenCode()));
+        }
 
 
         return request;

@@ -46,6 +46,7 @@ public class ChildWorkflowExecutionCanceledEventAttributesJsonUnmarshaller imple
         while (true) {
             if (token == null) break;
 
+            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("workflowExecution", targetDepth)) {
                     context.nextToken();
@@ -70,6 +71,8 @@ public class ChildWorkflowExecutionCanceledEventAttributesJsonUnmarshaller imple
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getCurrentDepth() <= originalDepth) break;
             }
+            
+
             token = context.nextToken();
         }
         

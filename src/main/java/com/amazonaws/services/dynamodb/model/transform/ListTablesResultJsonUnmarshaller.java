@@ -46,6 +46,7 @@ public class ListTablesResultJsonUnmarshaller implements Unmarshaller<ListTables
         while (true) {
             if (token == null) break;
 
+            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TableNames", targetDepth)) {
                     listTablesResult.setTableNames(new ListUnmarshaller<String>(StringJsonUnmarshaller.getInstance()).unmarshall(context));
@@ -57,6 +58,8 @@ public class ListTablesResultJsonUnmarshaller implements Unmarshaller<ListTables
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getCurrentDepth() <= originalDepth) break;
             }
+            
+
             token = context.nextToken();
         }
         

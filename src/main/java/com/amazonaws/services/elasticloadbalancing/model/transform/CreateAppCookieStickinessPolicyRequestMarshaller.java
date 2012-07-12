@@ -38,7 +38,7 @@ public class CreateAppCookieStickinessPolicyRequestMarshaller implements Marshal
 
         Request<CreateAppCookieStickinessPolicyRequest> request = new DefaultRequest<CreateAppCookieStickinessPolicyRequest>(createAppCookieStickinessPolicyRequest, "AmazonElasticLoadBalancing");
         request.addParameter("Action", "CreateAppCookieStickinessPolicy");
-        request.addParameter("Version", "2011-11-15");
+        request.addParameter("Version", "2012-06-01");
 
         if (createAppCookieStickinessPolicyRequest.getLoadBalancerName() != null) {
             request.addParameter("LoadBalancerName", StringUtils.fromString(createAppCookieStickinessPolicyRequest.getLoadBalancerName()));

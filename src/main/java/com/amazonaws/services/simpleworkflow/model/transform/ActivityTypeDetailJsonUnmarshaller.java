@@ -46,6 +46,7 @@ public class ActivityTypeDetailJsonUnmarshaller implements Unmarshaller<Activity
         while (true) {
             if (token == null) break;
 
+            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("typeInfo", targetDepth)) {
                     context.nextToken();
@@ -58,6 +59,8 @@ public class ActivityTypeDetailJsonUnmarshaller implements Unmarshaller<Activity
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getCurrentDepth() <= originalDepth) break;
             }
+            
+
             token = context.nextToken();
         }
         

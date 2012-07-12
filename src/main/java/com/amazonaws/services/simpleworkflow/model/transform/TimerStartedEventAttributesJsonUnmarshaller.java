@@ -46,6 +46,7 @@ public class TimerStartedEventAttributesJsonUnmarshaller implements Unmarshaller
         while (true) {
             if (token == null) break;
 
+            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("timerId", targetDepth)) {
                     context.nextToken();
@@ -66,6 +67,8 @@ public class TimerStartedEventAttributesJsonUnmarshaller implements Unmarshaller
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getCurrentDepth() <= originalDepth) break;
             }
+            
+
             token = context.nextToken();
         }
         

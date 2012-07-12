@@ -46,6 +46,7 @@ public class ListGatewaysResultJsonUnmarshaller implements Unmarshaller<ListGate
         while (true) {
             if (token == null) break;
 
+            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Gateways", targetDepth)) {
                     listGatewaysResult.setGateways(new ListUnmarshaller<GatewayInfo>(GatewayInfoJsonUnmarshaller.getInstance()).unmarshall(context));
@@ -57,6 +58,8 @@ public class ListGatewaysResultJsonUnmarshaller implements Unmarshaller<ListGate
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getCurrentDepth() <= originalDepth) break;
             }
+            
+
             token = context.nextToken();
         }
         

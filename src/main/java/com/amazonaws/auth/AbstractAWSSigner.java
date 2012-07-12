@@ -14,6 +14,7 @@
  */
 package com.amazonaws.auth;
 
+import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 import java.net.URI;
@@ -114,6 +115,27 @@ public abstract class AbstractAWSSigner implements Signer {
     }
 
     /**
+     * Hashes the binary data using the SHA-256 algorithm.
+     *
+     * @param data
+     *            The binary data to hash.
+     *
+     * @return The hashed bytes from the specified data.
+     *
+     * @throws AmazonClientException
+     *             If the hash cannot be computed.
+     */
+    protected byte[] hash(byte[] data) throws AmazonClientException {
+        try {
+            MessageDigest md = MessageDigest.getInstance("SHA-256");
+            md.update(data);
+            return md.digest();
+        } catch (Exception e) {
+            throw new AmazonClientException("Unable to compute hash while signing request: " + e.getMessage(), e);
+        }
+    }
+
+    /**
      * Examines the specified query string parameters and returns a
      * canonicalized form.
      * <p>
@@ -157,37 +179,87 @@ public abstract class AbstractAWSSigner implements Signer {
         else return this.getCanonicalizedQueryString(request.getParameters());
     }
 
-    protected String getRequestPayload(Request<?> request) {
+	/**
+	 * Returns the request's payload as binary data.
+	 *
+	 * @param request
+	 *            The request
+	 * @return The data from the request's payload, as binary data.
+	 */
+    protected byte[] getBinaryRequestPayload(Request<?> request) {
         if (HttpUtils.usePayloadForQueryParameters(request)) {
             String encodedParameters = HttpUtils.encodeParameters(request);
-            if (encodedParameters == null) return "";
-            return encodedParameters;
+            if (encodedParameters == null) return new byte[0];
+            try {
+				return encodedParameters.getBytes(DEFAULT_ENCODING);
+			} catch (UnsupportedEncodingException e) {
+				throw new AmazonClientException("Unable to encode string into bytes");
+			}
         }
 
-        return getRequestPayloadWithoutQueryParams(request);
+        return getBinaryRequestPayloadWithoutQueryParams(request);
     }
 
+	/**
+	 * Returns the request's payload as a String.
+	 *
+	 * @param request
+	 *            The request
+	 * @return The data from the request's payload, as a string.
+	 */
+    protected String getRequestPayload(Request<?> request) {
+    	return newString(getBinaryRequestPayload(request));
+    }
+   
+	/**
+	 * Returns the request's payload contents as a String, without processing
+	 * any query string params (i.e. no form encoding for query params).
+	 *
+	 * @param request
+	 *            The request
+	 * @return the request's payload contents as a String, not including any
+	 *         form encoding of query string params.
+	 */
     protected String getRequestPayloadWithoutQueryParams(Request<?> request) {
+    	return newString(getBinaryRequestPayloadWithoutQueryParams(request));
+    }
+
+	/**
+	 * Returns the request's payload contents as binary data, without processing
+	 * any query string params (i.e. no form encoding for query params).
+	 *
+	 * @param request
+	 *            The request
+	 * @return The request's payload contents as binary data, not including any
+	 *         form encoding of query string params.
+	 */
+    protected byte[] getBinaryRequestPayloadWithoutQueryParams(Request<?> request) {
         try {
             InputStream content = request.getContent();
-            if (content == null) return "";
+            if (content == null) return new byte[0];
 
             if (content instanceof StringInputStream) {
-                return ((StringInputStream)content).getString();
+                return ((StringInputStream)content).getString().getBytes(DEFAULT_ENCODING);
             }
 
             if (!content.markSupported()) {
                 throw new AmazonClientException("Unable to read request payload to sign request.");
             }
 
-            StringBuilder sb = new StringBuilder();
             content.mark(-1);
-            int b;
-            while ((b = content.read()) > -1) {
-                sb.append((char)b);
+            ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+            byte[] buffer = new byte[1024 * 5];
+            while (true) {
+            	int bytesRead = content.read(buffer);
+            	if (bytesRead == -1) break;
+
+            	byteArrayOutputStream.write(buffer, 0, bytesRead);
             }
+
+            byteArrayOutputStream.close();
             content.reset();
-            return sb.toString();
+
+            return byteArrayOutputStream.toByteArray();
         } catch (Exception e) {
             throw new AmazonClientException("Unable to read request payload to sign request: " + e.getMessage(), e);
         }
@@ -251,6 +323,21 @@ public abstract class AbstractAWSSigner implements Signer {
         return new BasicAWSCredentials(accessKeyId, secretKey);
     }
 
+    /**
+     * Safely converts a UTF-8 encoded byte array into a String.
+     * 
+     * @param bytes UTF-8 encoded binary character data.
+     * 
+     * @return The converted String object.
+     */
+    protected String newString(byte[] bytes) {
+		try {
+			return new String(bytes, "UTF-8");
+		} catch (UnsupportedEncodingException e) {
+			throw new AmazonClientException("Unable to encode bytes to String", e);
+		}
+    }
+    
     /**
      * Adds session credentials to the request given.
      *

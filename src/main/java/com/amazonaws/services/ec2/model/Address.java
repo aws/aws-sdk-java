@@ -41,6 +41,8 @@ public class Address {
 
     private String networkInterfaceOwnerId;
 
+    private String privateIpAddress;
+
     /**
      * 
      *
@@ -334,6 +336,40 @@ public class Address {
     
     
     /**
+     * Returns the value of the PrivateIpAddress property for this object.
+     *
+     * @return The value of the PrivateIpAddress property for this object.
+     */
+    public String getPrivateIpAddress() {
+        return privateIpAddress;
+    }
+    
+    /**
+     * Sets the value of the PrivateIpAddress property for this object.
+     *
+     * @param privateIpAddress The new value for the PrivateIpAddress property for this object.
+     */
+    public void setPrivateIpAddress(String privateIpAddress) {
+        this.privateIpAddress = privateIpAddress;
+    }
+    
+    /**
+     * Sets the value of the PrivateIpAddress property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param privateIpAddress The new value for the PrivateIpAddress property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public Address withPrivateIpAddress(String privateIpAddress) {
+        this.privateIpAddress = privateIpAddress;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -352,6 +388,7 @@ public class Address {
         if (domain != null) sb.append("Domain: " + domain + ", ");
         if (networkInterfaceId != null) sb.append("NetworkInterfaceId: " + networkInterfaceId + ", ");
         if (networkInterfaceOwnerId != null) sb.append("NetworkInterfaceOwnerId: " + networkInterfaceOwnerId + ", ");
+        if (privateIpAddress != null) sb.append("PrivateIpAddress: " + privateIpAddress + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -368,6 +405,7 @@ public class Address {
         hashCode = prime * hashCode + ((getDomain() == null) ? 0 : getDomain().hashCode()); 
         hashCode = prime * hashCode + ((getNetworkInterfaceId() == null) ? 0 : getNetworkInterfaceId().hashCode()); 
         hashCode = prime * hashCode + ((getNetworkInterfaceOwnerId() == null) ? 0 : getNetworkInterfaceOwnerId().hashCode()); 
+        hashCode = prime * hashCode + ((getPrivateIpAddress() == null) ? 0 : getPrivateIpAddress().hashCode()); 
         return hashCode;
     }
     
@@ -393,6 +431,8 @@ public class Address {
         if (other.getNetworkInterfaceId() != null && other.getNetworkInterfaceId().equals(this.getNetworkInterfaceId()) == false) return false; 
         if (other.getNetworkInterfaceOwnerId() == null ^ this.getNetworkInterfaceOwnerId() == null) return false;
         if (other.getNetworkInterfaceOwnerId() != null && other.getNetworkInterfaceOwnerId().equals(this.getNetworkInterfaceOwnerId()) == false) return false; 
+        if (other.getPrivateIpAddress() == null ^ this.getPrivateIpAddress() == null) return false;
+        if (other.getPrivateIpAddress() != null && other.getPrivateIpAddress().equals(this.getPrivateIpAddress()) == false) return false; 
         return true;
     }
     

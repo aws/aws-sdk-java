@@ -38,7 +38,7 @@ public class StartInstancesRequestMarshaller implements Marshaller<Request<Start
 
         Request<StartInstancesRequest> request = new DefaultRequest<StartInstancesRequest>(startInstancesRequest, "AmazonEC2");
         request.addParameter("Action", "StartInstances");
-        request.addParameter("Version", "2012-06-01");
+        request.addParameter("Version", "2012-06-15");
 
 
         java.util.List<String> instanceIdsList = startInstancesRequest.getInstanceIds();
@@ -50,6 +50,9 @@ public class StartInstancesRequestMarshaller implements Marshaller<Request<Start
             }
 
             instanceIdsListIndex++;
+        }
+        if (startInstancesRequest.getAdditionalInfo() != null) {
+            request.addParameter("AdditionalInfo", StringUtils.fromString(startInstancesRequest.getAdditionalInfo()));
         }
 
 

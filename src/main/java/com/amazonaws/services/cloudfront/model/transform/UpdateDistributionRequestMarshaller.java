@@ -44,7 +44,7 @@ public class UpdateDistributionRequestMarshaller implements Marshaller<Request<U
         Request<UpdateDistributionRequest> request = new DefaultRequest<UpdateDistributionRequest>(updateDistributionRequest, "AmazonCloudFront");
         request.setHttpMethod(HttpMethodName.PUT);
         if (updateDistributionRequest.getIfMatch() != null)
-        	request.addHeader("If-Match", updateDistributionRequest.getIfMatch());
+        	request.addHeader("If-Match", StringUtils.fromString(updateDistributionRequest.getIfMatch()));
         
 
         String uriResourcePath = "2012-05-05/distribution/{Id}/config"; 
@@ -70,6 +70,7 @@ public class UpdateDistributionRequestMarshaller implements Marshaller<Request<U
             StringWriter stringWriter = new StringWriter();
             XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2012-05-05/");
 
+            
                     if (updateDistributionRequest != null) {
             DistributionConfig distributionConfigDistributionConfig = updateDistributionRequest.getDistributionConfig();
             if (distributionConfigDistributionConfig != null) {

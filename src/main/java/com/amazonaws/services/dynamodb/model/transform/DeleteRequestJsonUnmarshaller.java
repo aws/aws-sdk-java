@@ -46,6 +46,7 @@ public class DeleteRequestJsonUnmarshaller implements Unmarshaller<DeleteRequest
         while (true) {
             if (token == null) break;
 
+            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Key", targetDepth)) {
                     context.nextToken();
@@ -54,6 +55,8 @@ public class DeleteRequestJsonUnmarshaller implements Unmarshaller<DeleteRequest
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getCurrentDepth() <= originalDepth) break;
             }
+            
+
             token = context.nextToken();
         }
         

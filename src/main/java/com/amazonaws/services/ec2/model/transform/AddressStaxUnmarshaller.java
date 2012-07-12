@@ -74,6 +74,10 @@ public class AddressStaxUnmarshaller implements Unmarshaller<Address, StaxUnmars
                     address.setNetworkInterfaceOwnerId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("privateIpAddress", targetDepth)) {
+                    address.setPrivateIpAddress(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return address;

@@ -38,7 +38,7 @@ public class CreateVolumeRequestMarshaller implements Marshaller<Request<CreateV
 
         Request<CreateVolumeRequest> request = new DefaultRequest<CreateVolumeRequest>(createVolumeRequest, "AmazonEC2");
         request.addParameter("Action", "CreateVolume");
-        request.addParameter("Version", "2012-06-01");
+        request.addParameter("Version", "2012-06-15");
 
         if (createVolumeRequest.getSize() != null) {
             request.addParameter("Size", StringUtils.fromInteger(createVolumeRequest.getSize()));

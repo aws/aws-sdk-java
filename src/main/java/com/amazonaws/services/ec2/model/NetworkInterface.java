@@ -53,6 +53,8 @@ public class NetworkInterface {
 
     private java.util.List<Tag> tagSet;
 
+    private java.util.List<NetworkInterfacePrivateIpAddress> privateIpAddresses;
+
     /**
      * Returns the value of the NetworkInterfaceId property for this object.
      *
@@ -720,6 +722,75 @@ public class NetworkInterface {
     }
     
     /**
+     * Returns the value of the PrivateIpAddresses property for this object.
+     *
+     * @return The value of the PrivateIpAddresses property for this object.
+     */
+    public java.util.List<NetworkInterfacePrivateIpAddress> getPrivateIpAddresses() {
+        
+        if (privateIpAddresses == null) {
+            privateIpAddresses = new java.util.ArrayList<NetworkInterfacePrivateIpAddress>();
+        }
+        return privateIpAddresses;
+    }
+    
+    /**
+     * Sets the value of the PrivateIpAddresses property for this object.
+     *
+     * @param privateIpAddresses The new value for the PrivateIpAddresses property for this object.
+     */
+    public void setPrivateIpAddresses(java.util.Collection<NetworkInterfacePrivateIpAddress> privateIpAddresses) {
+        if (privateIpAddresses == null) {
+            this.privateIpAddresses = null;
+            return;
+        }
+
+        java.util.List<NetworkInterfacePrivateIpAddress> privateIpAddressesCopy = new java.util.ArrayList<NetworkInterfacePrivateIpAddress>(privateIpAddresses.size());
+        privateIpAddressesCopy.addAll(privateIpAddresses);
+        this.privateIpAddresses = privateIpAddressesCopy;
+    }
+    
+    /**
+     * Sets the value of the PrivateIpAddresses property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param privateIpAddresses The new value for the PrivateIpAddresses property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public NetworkInterface withPrivateIpAddresses(NetworkInterfacePrivateIpAddress... privateIpAddresses) {
+        if (getPrivateIpAddresses() == null) setPrivateIpAddresses(new java.util.ArrayList<NetworkInterfacePrivateIpAddress>(privateIpAddresses.length));
+        for (NetworkInterfacePrivateIpAddress value : privateIpAddresses) {
+            getPrivateIpAddresses().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * Sets the value of the PrivateIpAddresses property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param privateIpAddresses The new value for the PrivateIpAddresses property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public NetworkInterface withPrivateIpAddresses(java.util.Collection<NetworkInterfacePrivateIpAddress> privateIpAddresses) {
+        if (privateIpAddresses == null) {
+            this.privateIpAddresses = null;
+        } else {
+            java.util.List<NetworkInterfacePrivateIpAddress> privateIpAddressesCopy = new java.util.ArrayList<NetworkInterfacePrivateIpAddress>(privateIpAddresses.size());
+            privateIpAddressesCopy.addAll(privateIpAddresses);
+            this.privateIpAddresses = privateIpAddressesCopy;
+        }
+
+        return this;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -748,6 +819,7 @@ public class NetworkInterface {
         if (attachment != null) sb.append("Attachment: " + attachment + ", ");
         if (association != null) sb.append("Association: " + association + ", ");
         if (tagSet != null) sb.append("TagSet: " + tagSet + ", ");
+        if (privateIpAddresses != null) sb.append("PrivateIpAddresses: " + privateIpAddresses + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -774,6 +846,7 @@ public class NetworkInterface {
         hashCode = prime * hashCode + ((getAttachment() == null) ? 0 : getAttachment().hashCode()); 
         hashCode = prime * hashCode + ((getAssociation() == null) ? 0 : getAssociation().hashCode()); 
         hashCode = prime * hashCode + ((getTagSet() == null) ? 0 : getTagSet().hashCode()); 
+        hashCode = prime * hashCode + ((getPrivateIpAddresses() == null) ? 0 : getPrivateIpAddresses().hashCode()); 
         return hashCode;
     }
     
@@ -819,6 +892,8 @@ public class NetworkInterface {
         if (other.getAssociation() != null && other.getAssociation().equals(this.getAssociation()) == false) return false; 
         if (other.getTagSet() == null ^ this.getTagSet() == null) return false;
         if (other.getTagSet() != null && other.getTagSet().equals(this.getTagSet()) == false) return false; 
+        if (other.getPrivateIpAddresses() == null ^ this.getPrivateIpAddresses() == null) return false;
+        if (other.getPrivateIpAddresses() != null && other.getPrivateIpAddresses().equals(this.getPrivateIpAddresses()) == false) return false; 
         return true;
     }
     

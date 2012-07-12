@@ -66,6 +66,7 @@ public class CreateCloudFrontOriginAccessIdentityRequestMarshaller implements Ma
             StringWriter stringWriter = new StringWriter();
             XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2012-05-05/");
 
+            
                     if (createCloudFrontOriginAccessIdentityRequest != null) {
             CloudFrontOriginAccessIdentityConfig cloudFrontOriginAccessIdentityConfigCloudFrontOriginAccessIdentityConfig = createCloudFrontOriginAccessIdentityRequest.getCloudFrontOriginAccessIdentityConfig();
             if (cloudFrontOriginAccessIdentityConfigCloudFrontOriginAccessIdentityConfig != null) {

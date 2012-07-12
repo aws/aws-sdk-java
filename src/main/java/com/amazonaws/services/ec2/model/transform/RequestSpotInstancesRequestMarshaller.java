@@ -38,7 +38,7 @@ public class RequestSpotInstancesRequestMarshaller implements Marshaller<Request
 
         Request<RequestSpotInstancesRequest> request = new DefaultRequest<RequestSpotInstancesRequest>(requestSpotInstancesRequest, "AmazonEC2");
         request.addParameter("Action", "RequestSpotInstances");
-        request.addParameter("Version", "2012-06-01");
+        request.addParameter("Version", "2012-06-15");
 
         if (requestSpotInstancesRequest.getSpotPrice() != null) {
             request.addParameter("SpotPrice", StringUtils.fromString(requestSpotInstancesRequest.getSpotPrice()));
@@ -194,6 +194,26 @@ public class RequestSpotInstancesRequestMarshaller implements Marshaller<Request
                     }
                     if (instanceNetworkInterfaceSpecificationMember.isDeleteOnTermination() != null) {
                         request.addParameter("LaunchSpecification.NetworkInterfaceSet." + networkInterfacesListIndex + ".DeleteOnTermination", StringUtils.fromBoolean(instanceNetworkInterfaceSpecificationMember.isDeleteOnTermination()));
+                    }
+
+                    java.util.List<PrivateIpAddressSpecification> privateIpAddressesList = instanceNetworkInterfaceSpecificationMember.getPrivateIpAddresses();
+                    int privateIpAddressesListIndex = 1;
+
+                    for (PrivateIpAddressSpecification privateIpAddressesListValue : privateIpAddressesList) {
+                        PrivateIpAddressSpecification privateIpAddressSpecificationMember = privateIpAddressesListValue;
+                        if (privateIpAddressSpecificationMember != null) {
+                            if (privateIpAddressSpecificationMember.getPrivateIpAddress() != null) {
+                                request.addParameter("LaunchSpecification.NetworkInterfaceSet." + networkInterfacesListIndex + ".PrivateIpAddresses." + privateIpAddressesListIndex + ".PrivateIpAddress", StringUtils.fromString(privateIpAddressSpecificationMember.getPrivateIpAddress()));
+                            }
+                            if (privateIpAddressSpecificationMember.isPrimary() != null) {
+                                request.addParameter("LaunchSpecification.NetworkInterfaceSet." + networkInterfacesListIndex + ".PrivateIpAddresses." + privateIpAddressesListIndex + ".Primary", StringUtils.fromBoolean(privateIpAddressSpecificationMember.isPrimary()));
+                            }
+                        }
+
+                        privateIpAddressesListIndex++;
+                    }
+                    if (instanceNetworkInterfaceSpecificationMember.getSecondaryPrivateIpAddressCount() != null) {
+                        request.addParameter("LaunchSpecification.NetworkInterfaceSet." + networkInterfacesListIndex + ".SecondaryPrivateIpAddressCount", StringUtils.fromInteger(instanceNetworkInterfaceSpecificationMember.getSecondaryPrivateIpAddressCount()));
                     }
                 }
 

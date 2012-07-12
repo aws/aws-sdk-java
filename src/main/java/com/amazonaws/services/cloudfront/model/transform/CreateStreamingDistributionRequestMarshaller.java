@@ -66,6 +66,7 @@ public class CreateStreamingDistributionRequestMarshaller implements Marshaller<
             StringWriter stringWriter = new StringWriter();
             XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2012-05-05/");
 
+            
                     if (createStreamingDistributionRequest != null) {
             StreamingDistributionConfig streamingDistributionConfigStreamingDistributionConfig = createStreamingDistributionRequest.getStreamingDistributionConfig();
             if (streamingDistributionConfigStreamingDistributionConfig != null) {

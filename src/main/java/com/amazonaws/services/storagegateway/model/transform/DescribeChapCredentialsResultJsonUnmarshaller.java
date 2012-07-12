@@ -46,6 +46,7 @@ public class DescribeChapCredentialsResultJsonUnmarshaller implements Unmarshall
         while (true) {
             if (token == null) break;
 
+            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("ChapCredentials", targetDepth)) {
                     describeChapCredentialsResult.setChapCredentials(new ListUnmarshaller<ChapInfo>(ChapInfoJsonUnmarshaller.getInstance()).unmarshall(context));
@@ -53,6 +54,8 @@ public class DescribeChapCredentialsResultJsonUnmarshaller implements Unmarshall
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getCurrentDepth() <= originalDepth) break;
             }
+            
+
             token = context.nextToken();
         }
         

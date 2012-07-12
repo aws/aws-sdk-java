@@ -19,8 +19,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the {@link com.amazonaws.services.securitytoken.AWSSecurityTokenService#getFederationToken(GetFederationTokenRequest) GetFederationToken operation}.
  * <p>
  * The GetFederationToken action returns a set of temporary credentials for a federated user with the user name and policy specified in the request. The
- * credentials consist of an Access Key ID, a Secret Access Key, and a security token. The credentials are valid for the specified duration, between one
- * and 36 hours.
+ * credentials consist of an Access Key ID, a Secret Access Key, and a security token. Credentials created by IAM users are valid for the specified
+ * duration, between one and 36 hours; credentials created using account credentials last one hour.
  * </p>
  * <p>
  * The federated user who holds these credentials has any permissions allowed by the intersection of the specified policy and any resource or user

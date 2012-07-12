@@ -38,7 +38,7 @@ public class ApplySecurityGroupsToLoadBalancerRequestMarshaller implements Marsh
 
         Request<ApplySecurityGroupsToLoadBalancerRequest> request = new DefaultRequest<ApplySecurityGroupsToLoadBalancerRequest>(applySecurityGroupsToLoadBalancerRequest, "AmazonElasticLoadBalancing");
         request.addParameter("Action", "ApplySecurityGroupsToLoadBalancer");
-        request.addParameter("Version", "2011-11-15");
+        request.addParameter("Version", "2012-06-01");
 
         if (applySecurityGroupsToLoadBalancerRequest.getLoadBalancerName() != null) {
             request.addParameter("LoadBalancerName", StringUtils.fromString(applySecurityGroupsToLoadBalancerRequest.getLoadBalancerName()));

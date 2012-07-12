@@ -66,6 +66,7 @@ public class CreateDistributionRequestMarshaller implements Marshaller<Request<C
             StringWriter stringWriter = new StringWriter();
             XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2012-05-05/");
 
+            
                     if (createDistributionRequest != null) {
             DistributionConfig distributionConfigDistributionConfig = createDistributionRequest.getDistributionConfig();
             if (distributionConfigDistributionConfig != null) {

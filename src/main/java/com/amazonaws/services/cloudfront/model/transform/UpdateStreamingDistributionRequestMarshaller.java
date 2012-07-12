@@ -44,7 +44,7 @@ public class UpdateStreamingDistributionRequestMarshaller implements Marshaller<
         Request<UpdateStreamingDistributionRequest> request = new DefaultRequest<UpdateStreamingDistributionRequest>(updateStreamingDistributionRequest, "AmazonCloudFront");
         request.setHttpMethod(HttpMethodName.PUT);
         if (updateStreamingDistributionRequest.getIfMatch() != null)
-        	request.addHeader("If-Match", updateStreamingDistributionRequest.getIfMatch());
+        	request.addHeader("If-Match", StringUtils.fromString(updateStreamingDistributionRequest.getIfMatch()));
         
 
         String uriResourcePath = "2012-05-05/streaming-distribution/{Id}/config"; 
@@ -70,6 +70,7 @@ public class UpdateStreamingDistributionRequestMarshaller implements Marshaller<
             StringWriter stringWriter = new StringWriter();
             XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2012-05-05/");
 
+            
                     if (updateStreamingDistributionRequest != null) {
             StreamingDistributionConfig streamingDistributionConfigStreamingDistributionConfig = updateStreamingDistributionRequest.getStreamingDistributionConfig();
             if (streamingDistributionConfigStreamingDistributionConfig != null) {

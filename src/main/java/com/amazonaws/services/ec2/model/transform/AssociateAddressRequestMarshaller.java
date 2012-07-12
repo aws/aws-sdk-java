@@ -38,7 +38,7 @@ public class AssociateAddressRequestMarshaller implements Marshaller<Request<Ass
 
         Request<AssociateAddressRequest> request = new DefaultRequest<AssociateAddressRequest>(associateAddressRequest, "AmazonEC2");
         request.addParameter("Action", "AssociateAddress");
-        request.addParameter("Version", "2012-06-01");
+        request.addParameter("Version", "2012-06-15");
 
         if (associateAddressRequest.getInstanceId() != null) {
             request.addParameter("InstanceId", StringUtils.fromString(associateAddressRequest.getInstanceId()));
@@ -51,6 +51,12 @@ public class AssociateAddressRequestMarshaller implements Marshaller<Request<Ass
         }
         if (associateAddressRequest.getNetworkInterfaceId() != null) {
             request.addParameter("NetworkInterfaceId", StringUtils.fromString(associateAddressRequest.getNetworkInterfaceId()));
+        }
+        if (associateAddressRequest.getPrivateIpAddress() != null) {
+            request.addParameter("PrivateIpAddress", StringUtils.fromString(associateAddressRequest.getPrivateIpAddress()));
+        }
+        if (associateAddressRequest.isAllowReassociation() != null) {
+            request.addParameter("AllowReassociation", StringUtils.fromBoolean(associateAddressRequest.isAllowReassociation()));
         }
 
 

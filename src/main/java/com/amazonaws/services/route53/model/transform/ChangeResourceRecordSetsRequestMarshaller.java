@@ -68,6 +68,7 @@ public class ChangeResourceRecordSetsRequestMarshaller implements Marshaller<Req
             XMLWriter xmlWriter = new XMLWriter(stringWriter, "https://route53.amazonaws.com/doc/2012-02-29/");
 
             
+            
             xmlWriter.startElement("ChangeResourceRecordSetsRequest");
                     if (changeResourceRecordSetsRequest != null) {
             ChangeBatch changeBatchChangeBatch = changeResourceRecordSetsRequest.getChangeBatch();

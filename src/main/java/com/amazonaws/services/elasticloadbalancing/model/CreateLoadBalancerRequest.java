@@ -71,6 +71,16 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest {
     private java.util.List<String> securityGroups;
 
     /**
+     * The type of a LoadBalancer. This option is only available for
+     * LoadBalancers attached to a Amazon VPC. By default, Elastic Load
+     * Balancer creates an internet-facing load balancer with publicly
+     * resolvable DNS name that resolves to public IP addresses. Specify the
+     * value <i>internal</i> for this option to create an internal load
+     * balancer with a DNS name that resolves to private IP addresses.
+     */
+    private String scheme;
+
+    /**
      * Default constructor for a new CreateLoadBalancerRequest object.  Callers should use the
      * setter or fluent setter (with...) methods to initialize this object after creating it.
      */
@@ -470,6 +480,70 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest {
     }
     
     /**
+     * The type of a LoadBalancer. This option is only available for
+     * LoadBalancers attached to a Amazon VPC. By default, Elastic Load
+     * Balancer creates an internet-facing load balancer with publicly
+     * resolvable DNS name that resolves to public IP addresses. Specify the
+     * value <i>internal</i> for this option to create an internal load
+     * balancer with a DNS name that resolves to private IP addresses.
+     *
+     * @return The type of a LoadBalancer. This option is only available for
+     *         LoadBalancers attached to a Amazon VPC. By default, Elastic Load
+     *         Balancer creates an internet-facing load balancer with publicly
+     *         resolvable DNS name that resolves to public IP addresses. Specify the
+     *         value <i>internal</i> for this option to create an internal load
+     *         balancer with a DNS name that resolves to private IP addresses.
+     */
+    public String getScheme() {
+        return scheme;
+    }
+    
+    /**
+     * The type of a LoadBalancer. This option is only available for
+     * LoadBalancers attached to a Amazon VPC. By default, Elastic Load
+     * Balancer creates an internet-facing load balancer with publicly
+     * resolvable DNS name that resolves to public IP addresses. Specify the
+     * value <i>internal</i> for this option to create an internal load
+     * balancer with a DNS name that resolves to private IP addresses.
+     *
+     * @param scheme The type of a LoadBalancer. This option is only available for
+     *         LoadBalancers attached to a Amazon VPC. By default, Elastic Load
+     *         Balancer creates an internet-facing load balancer with publicly
+     *         resolvable DNS name that resolves to public IP addresses. Specify the
+     *         value <i>internal</i> for this option to create an internal load
+     *         balancer with a DNS name that resolves to private IP addresses.
+     */
+    public void setScheme(String scheme) {
+        this.scheme = scheme;
+    }
+    
+    /**
+     * The type of a LoadBalancer. This option is only available for
+     * LoadBalancers attached to a Amazon VPC. By default, Elastic Load
+     * Balancer creates an internet-facing load balancer with publicly
+     * resolvable DNS name that resolves to public IP addresses. Specify the
+     * value <i>internal</i> for this option to create an internal load
+     * balancer with a DNS name that resolves to private IP addresses.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param scheme The type of a LoadBalancer. This option is only available for
+     *         LoadBalancers attached to a Amazon VPC. By default, Elastic Load
+     *         Balancer creates an internet-facing load balancer with publicly
+     *         resolvable DNS name that resolves to public IP addresses. Specify the
+     *         value <i>internal</i> for this option to create an internal load
+     *         balancer with a DNS name that resolves to private IP addresses.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public CreateLoadBalancerRequest withScheme(String scheme) {
+        this.scheme = scheme;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -486,6 +560,7 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest {
         if (availabilityZones != null) sb.append("AvailabilityZones: " + availabilityZones + ", ");
         if (subnets != null) sb.append("Subnets: " + subnets + ", ");
         if (securityGroups != null) sb.append("SecurityGroups: " + securityGroups + ", ");
+        if (scheme != null) sb.append("Scheme: " + scheme + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -500,6 +575,7 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest {
         hashCode = prime * hashCode + ((getAvailabilityZones() == null) ? 0 : getAvailabilityZones().hashCode()); 
         hashCode = prime * hashCode + ((getSubnets() == null) ? 0 : getSubnets().hashCode()); 
         hashCode = prime * hashCode + ((getSecurityGroups() == null) ? 0 : getSecurityGroups().hashCode()); 
+        hashCode = prime * hashCode + ((getScheme() == null) ? 0 : getScheme().hashCode()); 
         return hashCode;
     }
     
@@ -521,6 +597,8 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest {
         if (other.getSubnets() != null && other.getSubnets().equals(this.getSubnets()) == false) return false; 
         if (other.getSecurityGroups() == null ^ this.getSecurityGroups() == null) return false;
         if (other.getSecurityGroups() != null && other.getSecurityGroups().equals(this.getSecurityGroups()) == false) return false; 
+        if (other.getScheme() == null ^ this.getScheme() == null) return false;
+        if (other.getScheme() != null && other.getScheme().equals(this.getScheme()) == false) return false; 
         return true;
     }
     

@@ -1733,6 +1733,33 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
     }
     
     /**
+     *
+     * @param unassignPrivateIpAddressesRequest Container for the necessary
+     *           parameters to execute the UnassignPrivateIpAddresses operation on
+     *           AmazonEC2.
+     * 
+     * @return A Java Future object containing the response from the
+     *         UnassignPrivateIpAddresses service method, as returned by AmazonEC2.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> unassignPrivateIpAddressesAsync(final UnassignPrivateIpAddressesRequest unassignPrivateIpAddressesRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                unassignPrivateIpAddresses(unassignPrivateIpAddressesRequest);
+                return null;
+		    }
+		});
+    }
+    
+    /**
      * <p>
      * Deactivates a specific number of licenses. Deactivations can be done
      * against a specific license ID after they have persisted for at least a
@@ -4492,6 +4519,33 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client
         return executorService.submit(new Callable<DescribeReservedInstancesOfferingsResult>() {
             public DescribeReservedInstancesOfferingsResult call() throws Exception {
                 return describeReservedInstancesOfferings(describeReservedInstancesOfferingsRequest);
+		    }
+		});
+    }
+    
+    /**
+     *
+     * @param assignPrivateIpAddressesRequest Container for the necessary
+     *           parameters to execute the AssignPrivateIpAddresses operation on
+     *           AmazonEC2.
+     * 
+     * @return A Java Future object containing the response from the
+     *         AssignPrivateIpAddresses service method, as returned by AmazonEC2.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> assignPrivateIpAddressesAsync(final AssignPrivateIpAddressesRequest assignPrivateIpAddressesRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                assignPrivateIpAddresses(assignPrivateIpAddressesRequest);
+                return null;
 		    }
 		});
     }

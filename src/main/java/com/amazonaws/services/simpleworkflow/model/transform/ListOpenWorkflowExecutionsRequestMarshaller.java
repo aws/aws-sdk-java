@@ -26,18 +26,19 @@ import java.util.List;
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
 import com.amazonaws.DefaultRequest;
+import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.services.simpleworkflow.model.*;
 import com.amazonaws.transform.Marshaller;
 import com.amazonaws.util.StringUtils;
 import com.amazonaws.util.StringInputStream;
 import com.amazonaws.util.json.*;
 
-import static com.amazonaws.http.HttpMethodName.POST;
-
 /**
  * List Open Workflow Executions Request Marshaller
  */
 public class ListOpenWorkflowExecutionsRequestMarshaller implements Marshaller<Request<ListOpenWorkflowExecutionsRequest>, ListOpenWorkflowExecutionsRequest> {
+
+    
 
     public Request<ListOpenWorkflowExecutionsRequest> marshall(ListOpenWorkflowExecutionsRequest listOpenWorkflowExecutionsRequest) {
 		if (listOpenWorkflowExecutionsRequest == null) {
@@ -48,19 +49,48 @@ public class ListOpenWorkflowExecutionsRequestMarshaller implements Marshaller<R
         String target = "SimpleWorkflowService.ListOpenWorkflowExecutions";
         request.addHeader("X-Amz-Target", target);
         request.addHeader("Content-Type", "application/x-amz-json-1.0");
-        request.setHttpMethod(POST);
 
+        
+        request.setHttpMethod(HttpMethodName.POST);
+
+
+        String uriResourcePath = ""; 
+
+        if (uriResourcePath.contains("?")) {
+            String queryString = uriResourcePath.substring(uriResourcePath.indexOf("?") + 1);
+            uriResourcePath    = uriResourcePath.substring(0, uriResourcePath.indexOf("?"));
+
+            for (String s : queryString.split("[;&]")) {
+                String[] nameValuePair = s.split("=");
+                if (nameValuePair.length == 2) {
+                    request.addParameter(nameValuePair[0], nameValuePair[1]);
+                } else {
+                    request.addParameter(s, null);
+                }
+            }
+        }
+
+        request.setResourcePath(uriResourcePath);
+
+
+        
         try {
         	StringWriter stringWriter = new StringWriter();
         	JSONWriter jsonWriter = new JSONWriter(stringWriter);
+
+        	
+            
         	jsonWriter.object();
-	        
+        	
             if (listOpenWorkflowExecutionsRequest.getDomain() != null) {
                 jsonWriter.key("domain").value(listOpenWorkflowExecutionsRequest.getDomain());
             }
             ExecutionTimeFilter startTimeFilter = listOpenWorkflowExecutionsRequest.getStartTimeFilter();
             if (startTimeFilter != null) {
-                jsonWriter.key("startTimeFilter").object();
+
+                jsonWriter.key("startTimeFilter");
+                jsonWriter.object();
+
                 if (startTimeFilter.getOldestDate() != null) {
                     jsonWriter.key("oldestDate").value(startTimeFilter.getOldestDate());
                 }
@@ -71,7 +101,10 @@ public class ListOpenWorkflowExecutionsRequestMarshaller implements Marshaller<R
             }
             WorkflowTypeFilter typeFilter = listOpenWorkflowExecutionsRequest.getTypeFilter();
             if (typeFilter != null) {
-                jsonWriter.key("typeFilter").object();
+
+                jsonWriter.key("typeFilter");
+                jsonWriter.object();
+
                 if (typeFilter.getName() != null) {
                     jsonWriter.key("name").value(typeFilter.getName());
                 }
@@ -82,7 +115,10 @@ public class ListOpenWorkflowExecutionsRequestMarshaller implements Marshaller<R
             }
             TagFilter tagFilter = listOpenWorkflowExecutionsRequest.getTagFilter();
             if (tagFilter != null) {
-                jsonWriter.key("tagFilter").object();
+
+                jsonWriter.key("tagFilter");
+                jsonWriter.object();
+
                 if (tagFilter.getTag() != null) {
                     jsonWriter.key("tag").value(tagFilter.getTag());
                 }
@@ -99,7 +135,10 @@ public class ListOpenWorkflowExecutionsRequestMarshaller implements Marshaller<R
             }
             WorkflowExecutionFilter executionFilter = listOpenWorkflowExecutionsRequest.getExecutionFilter();
             if (executionFilter != null) {
-                jsonWriter.key("executionFilter").object();
+
+                jsonWriter.key("executionFilter");
+                jsonWriter.object();
+
                 if (executionFilter.getWorkflowId() != null) {
                     jsonWriter.key("workflowId").value(executionFilter.getWorkflowId());
                 }
@@ -107,14 +146,22 @@ public class ListOpenWorkflowExecutionsRequestMarshaller implements Marshaller<R
             }
 
     	    jsonWriter.endObject();
+        	
 
     	    String snippet = stringWriter.toString();
     	    byte[] content = snippet.getBytes("UTF-8");
         	request.setContent(new StringInputStream(snippet));
 	        request.addHeader("Content-Length", Integer.toString(content.length));
-            return request;
         } catch(Throwable t) {
           throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }
+        
+
+        return request;
+    }
+
+    private String getString(String s) {
+        if (s == null) return "";
+        return s;
     }
 }

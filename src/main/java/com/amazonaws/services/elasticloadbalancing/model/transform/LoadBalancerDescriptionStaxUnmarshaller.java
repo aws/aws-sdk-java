@@ -106,6 +106,10 @@ public class LoadBalancerDescriptionStaxUnmarshaller implements Unmarshaller<Loa
                     loadBalancerDescription.setCreatedTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("Scheme", targetDepth)) {
+                    loadBalancerDescription.setScheme(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return loadBalancerDescription;

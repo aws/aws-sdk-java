@@ -46,6 +46,7 @@ public class RunJsonUnmarshaller implements Unmarshaller<Run, JsonUnmarshallerCo
         while (true) {
             if (token == null) break;
 
+            
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("runId", targetDepth)) {
                     context.nextToken();
@@ -54,6 +55,8 @@ public class RunJsonUnmarshaller implements Unmarshaller<Run, JsonUnmarshallerCo
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getCurrentDepth() <= originalDepth) break;
             }
+            
+
             token = context.nextToken();
         }
         
