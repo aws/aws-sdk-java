@@ -19,7 +19,7 @@ package com.amazonaws.services.simpleemail.model;
  * An empty element. Receiving this element indicates that the request completed successfully.
  * </p>
  */
-public class SetIdentityNotificationTopicResult {
+public class SetIdentityDkimEnabledResult {
 
     /**
      * Returns a string representation of this object; useful for testing and
@@ -50,8 +50,8 @@ public class SetIdentityNotificationTopicResult {
         if (this == obj) return true;
         if (obj == null) return false;
     
-        if (obj instanceof SetIdentityNotificationTopicResult == false) return false;
-        SetIdentityNotificationTopicResult other = (SetIdentityNotificationTopicResult)obj;
+        if (obj instanceof SetIdentityDkimEnabledResult == false) return false;
+        SetIdentityDkimEnabledResult other = (SetIdentityDkimEnabledResult)obj;
         
         return true;
     }

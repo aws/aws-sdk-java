@@ -25,7 +25,7 @@ import com.amazonaws.services.simpleemail.model.*;
  * Getting Started Guide and the Amazon SES Developer Guide.
  * </p>
  * <p>
- * For specific details on how to construct a service request, please consult the<a href="http://docs.amazonwebservices.com/ses/latest/DeveloperGuide">
+ * For specific details on how to construct a service request, please consult the <a href="http://docs.amazonwebservices.com/ses/latest/DeveloperGuide">
  * Amazon SES Developer Guide </a> .
  * </p>
  * <p>
@@ -197,6 +197,94 @@ public interface AmazonSimpleEmailService {
 
     /**
      * <p>
+     * Returns a set of DNS records, or <i>tokens</i> , that must be
+     * published in the domain name's DNS to complete the DKIM verification
+     * process. These tokens are DNS <code>CNAME</code> records that point to
+     * DKIM public keys hosted by Amazon SES. To complete the DKIM
+     * verification process, these tokens must be published in the domain's
+     * DNS. The tokens must remain published in order for Easy DKIM signing
+     * to function correctly.
+     * </p>
+     * <p>
+     * After the tokens are added to the domain's DNS, Amazon SES will be
+     * able to DKIM-sign email originating from that domain. To enable or
+     * disable Easy DKIM signing for a domain, use the
+     * <code>SetIdentityDkimEnabled</code> action.
+     * </p>
+     * <p>
+     * For more information about Easy DKIM, go to the <a
+     * href="http://docs.amazonwebservices.com/ses/latest/DeveloperGuide">
+     * Amazon SES Developer Guide </a> .
+     * </p>
+     *
+     * @param verifyDomainDkimRequest Container for the necessary parameters
+     *           to execute the VerifyDomainDkim service method on
+     *           AmazonSimpleEmailService.
+     * 
+     * @return The response from the VerifyDomainDkim service method, as
+     *         returned by AmazonSimpleEmailService.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonSimpleEmailService indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public VerifyDomainDkimResult verifyDomainDkim(VerifyDomainDkimRequest verifyDomainDkimRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Returns the DNS records, or <i>tokens</i> , that must be present in
+     * order for Easy DKIM to sign outgoing email messages.
+     * </p>
+     * <p>
+     * This action takes a list of verified identities as input. It then
+     * returns the following information for each identity:
+     * </p>
+     * 
+     * <ul>
+     * <li>Whether Easy DKIM signing is enabled or disabled.</li>
+     * <li>The set of tokens that are required for Easy DKIM signing. These
+     * tokens must be published in the domain name's DNS records in order for
+     * DKIM verification to complete, and must remain published in order for
+     * Easy DKIM signing to operate correctly. (This information is only
+     * returned for domain name identities, not for email addresses.)</li>
+     * <li>Whether Amazon SES has successfully verified the DKIM tokens
+     * published in the domain name's DNS. (This information is only returned
+     * for domain name identities, not for email addresses.)</li>
+     * 
+     * </ul>
+     * <p>
+     * For more information about Easy DKIM signing, go to the <a
+     * href="http://docs.amazonwebservices.com/ses/latest/DeveloperGuide">
+     * Amazon SES Developer Guide </a> .
+     * </p>
+     *
+     * @param getIdentityDkimAttributesRequest Container for the necessary
+     *           parameters to execute the GetIdentityDkimAttributes service method on
+     *           AmazonSimpleEmailService.
+     * 
+     * @return The response from the GetIdentityDkimAttributes service
+     *         method, as returned by AmazonSimpleEmailService.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonSimpleEmailService indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public GetIdentityDkimAttributesResult getIdentityDkimAttributes(GetIdentityDkimAttributesRequest getIdentityDkimAttributesRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
      * Verifies an email address. This action causes a confirmation email
      * message to be sent to the specified address.
      * </p>
@@ -328,6 +416,51 @@ public interface AmazonSimpleEmailService {
 
     /**
      * <p>
+     * Enables or disables Easy DKIM signing of email sent from an identity:
+     * </p>
+     * 
+     * <ul>
+     * <li>If Easy DKIM signing is enabled for a domain name identity (e.g.,
+     * <code>example.com</code> ), then Amazon SES will DKIM-sign all email
+     * sent by addresses under that domain name (e.g.,
+     * <code>user@example.com</code> ).</li>
+     * <li>If Easy DKIM signing is enabled for an email address, then Amazon
+     * SES will DKIM-sign all email sent by that email address.</li>
+     * 
+     * </ul>
+     * <p>
+     * For email addresses (e.g., <code>user@example.com</code> ), you can
+     * only enable Easy DKIM signing if the corresponding domain (e.g.,
+     * <code>example.com</code> ) has been set up for Easy DKIM using the AWS
+     * Console or the <code>VerifyDomainDkim</code> action.
+     * </p>
+     * <p>
+     * For more information about Easy DKIM signing, go to the <a
+     * href="http://docs.amazonwebservices.com/ses/latest/DeveloperGuide">
+     * Amazon SES Developer Guide </a> .
+     * </p>
+     *
+     * @param setIdentityDkimEnabledRequest Container for the necessary
+     *           parameters to execute the SetIdentityDkimEnabled service method on
+     *           AmazonSimpleEmailService.
+     * 
+     * @return The response from the SetIdentityDkimEnabled service method,
+     *         as returned by AmazonSimpleEmailService.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonSimpleEmailService indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public SetIdentityDkimEnabledResult setIdentityDkimEnabled(SetIdentityDkimEnabledRequest setIdentityDkimEnabledRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
      * Returns the user's current sending limits.
      * </p>
      *
@@ -377,6 +510,30 @@ public interface AmazonSimpleEmailService {
      *             either a problem with the data in the request, or a server side issue.
      */
     public SetIdentityFeedbackForwardingEnabledResult setIdentityFeedbackForwardingEnabled(SetIdentityFeedbackForwardingEnabledRequest setIdentityFeedbackForwardingEnabledRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Verifies a domain.
+     * </p>
+     *
+     * @param verifyDomainIdentityRequest Container for the necessary
+     *           parameters to execute the VerifyDomainIdentity service method on
+     *           AmazonSimpleEmailService.
+     * 
+     * @return The response from the VerifyDomainIdentity service method, as
+     *         returned by AmazonSimpleEmailService.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonSimpleEmailService indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public VerifyDomainIdentityResult verifyDomainIdentity(VerifyDomainIdentityRequest verifyDomainIdentityRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -431,15 +588,18 @@ public interface AmazonSimpleEmailService {
 
     /**
      * <p>
-     * Verifies a domain.
+     * Deletes the specified email address from the list of verified
+     * addresses.
+     * </p>
+     * <p>
+     * <b>IMPORTANT:</b>The DeleteVerifiedEmailAddress action is deprecated
+     * as of the May 15, 2012 release of Domain Verification. The
+     * DeleteIdentity action is now preferred.
      * </p>
      *
-     * @param verifyDomainIdentityRequest Container for the necessary
-     *           parameters to execute the VerifyDomainIdentity service method on
+     * @param deleteVerifiedEmailAddressRequest Container for the necessary
+     *           parameters to execute the DeleteVerifiedEmailAddress service method on
      *           AmazonSimpleEmailService.
-     * 
-     * @return The response from the VerifyDomainIdentity service method, as
-     *         returned by AmazonSimpleEmailService.
      * 
      *
      * @throws AmazonClientException
@@ -450,7 +610,7 @@ public interface AmazonSimpleEmailService {
      *             If an error response is returned by AmazonSimpleEmailService indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public VerifyDomainIdentityResult verifyDomainIdentity(VerifyDomainIdentityRequest verifyDomainIdentityRequest) 
+    public void deleteVerifiedEmailAddress(DeleteVerifiedEmailAddressRequest deleteVerifiedEmailAddressRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -482,33 +642,6 @@ public interface AmazonSimpleEmailService {
      *             either a problem with the data in the request, or a server side issue.
      */
     public SetIdentityNotificationTopicResult setIdentityNotificationTopic(SetIdentityNotificationTopicRequest setIdentityNotificationTopicRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Deletes the specified email address from the list of verified
-     * addresses.
-     * </p>
-     * <p>
-     * <b>IMPORTANT:</b>The DeleteVerifiedEmailAddress action is deprecated
-     * as of the May 15, 2012 release of Domain Verification. The
-     * DeleteIdentity action is now preferred.
-     * </p>
-     *
-     * @param deleteVerifiedEmailAddressRequest Container for the necessary
-     *           parameters to execute the DeleteVerifiedEmailAddress service method on
-     *           AmazonSimpleEmailService.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonSimpleEmailService indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void deleteVerifiedEmailAddress(DeleteVerifiedEmailAddressRequest deleteVerifiedEmailAddressRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**

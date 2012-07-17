@@ -22,41 +22,41 @@ package com.amazonaws.services.simpleemail.model;
 public class VerifyDomainIdentityResult {
 
     /**
-     * A value that must be entered into a TXT record in the DNS settings for
-     * the domain, in order to complete domain verification.
+     * A TXT record that must be placed in the DNS settings for the domain,
+     * in order to complete domain verification.
      */
     private String verificationToken;
 
     /**
-     * A value that must be entered into a TXT record in the DNS settings for
-     * the domain, in order to complete domain verification.
+     * A TXT record that must be placed in the DNS settings for the domain,
+     * in order to complete domain verification.
      *
-     * @return A value that must be entered into a TXT record in the DNS settings for
-     *         the domain, in order to complete domain verification.
+     * @return A TXT record that must be placed in the DNS settings for the domain,
+     *         in order to complete domain verification.
      */
     public String getVerificationToken() {
         return verificationToken;
     }
     
     /**
-     * A value that must be entered into a TXT record in the DNS settings for
-     * the domain, in order to complete domain verification.
+     * A TXT record that must be placed in the DNS settings for the domain,
+     * in order to complete domain verification.
      *
-     * @param verificationToken A value that must be entered into a TXT record in the DNS settings for
-     *         the domain, in order to complete domain verification.
+     * @param verificationToken A TXT record that must be placed in the DNS settings for the domain,
+     *         in order to complete domain verification.
      */
     public void setVerificationToken(String verificationToken) {
         this.verificationToken = verificationToken;
     }
     
     /**
-     * A value that must be entered into a TXT record in the DNS settings for
-     * the domain, in order to complete domain verification.
+     * A TXT record that must be placed in the DNS settings for the domain,
+     * in order to complete domain verification.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param verificationToken A value that must be entered into a TXT record in the DNS settings for
-     *         the domain, in order to complete domain verification.
+     * @param verificationToken A TXT record that must be placed in the DNS settings for the domain,
+     *         in order to complete domain verification.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

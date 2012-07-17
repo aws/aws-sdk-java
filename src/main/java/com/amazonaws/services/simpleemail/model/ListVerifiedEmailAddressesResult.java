@@ -21,13 +21,15 @@ package com.amazonaws.services.simpleemail.model;
  */
 public class ListVerifiedEmailAddressesResult {
 
+    /**
+     * A list of email addresses that have been verified.
+     */
     private java.util.List<String> verifiedEmailAddresses;
 
     /**
-     * Returns the value of the VerifiedEmailAddresses property for this
-     * object.
+     * A list of email addresses that have been verified.
      *
-     * @return The value of the VerifiedEmailAddresses property for this object.
+     * @return A list of email addresses that have been verified.
      */
     public java.util.List<String> getVerifiedEmailAddresses() {
         
@@ -38,9 +40,9 @@ public class ListVerifiedEmailAddressesResult {
     }
     
     /**
-     * Sets the value of the VerifiedEmailAddresses property for this object.
+     * A list of email addresses that have been verified.
      *
-     * @param verifiedEmailAddresses The new value for the VerifiedEmailAddresses property for this object.
+     * @param verifiedEmailAddresses A list of email addresses that have been verified.
      */
     public void setVerifiedEmailAddresses(java.util.Collection<String> verifiedEmailAddresses) {
         if (verifiedEmailAddresses == null) {
@@ -54,11 +56,11 @@ public class ListVerifiedEmailAddressesResult {
     }
     
     /**
-     * Sets the value of the VerifiedEmailAddresses property for this object.
+     * A list of email addresses that have been verified.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param verifiedEmailAddresses The new value for the VerifiedEmailAddresses property for this object.
+     * @param verifiedEmailAddresses A list of email addresses that have been verified.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -72,11 +74,11 @@ public class ListVerifiedEmailAddressesResult {
     }
     
     /**
-     * Sets the value of the VerifiedEmailAddresses property for this object.
+     * A list of email addresses that have been verified.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param verifiedEmailAddresses The new value for the VerifiedEmailAddresses property for this object.
+     * @param verifiedEmailAddresses A list of email addresses that have been verified.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

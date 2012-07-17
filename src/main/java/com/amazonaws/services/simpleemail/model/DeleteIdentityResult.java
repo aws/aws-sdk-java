@@ -16,7 +16,7 @@ package com.amazonaws.services.simpleemail.model;
 
 /**
  * <p>
- * An empty element.
+ * An empty element. Receiving this element indicates that the request completed successfully.
  * </p>
  */
 public class DeleteIdentityResult {

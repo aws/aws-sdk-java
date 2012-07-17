@@ -13,28 +13,47 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.simpleemail.model;
+import com.amazonaws.AmazonWebServiceRequest;
 
 /**
+ * Container for the parameters to the {@link com.amazonaws.services.simpleemail.AmazonSimpleEmailService#getIdentityDkimAttributes(GetIdentityDkimAttributesRequest) GetIdentityDkimAttributes operation}.
  * <p>
- * Represents a list of all verified identities for the AWS Account.
+ * Returns the DNS records, or <i>tokens</i> , that must be present in order for Easy DKIM to sign outgoing email messages.
  * </p>
+ * <p>
+ * This action takes a list of verified identities as input. It then returns the following information for each identity:
+ * </p>
+ * 
+ * <ul>
+ * <li>Whether Easy DKIM signing is enabled or disabled.</li>
+ * <li>The set of tokens that are required for Easy DKIM signing. These tokens must be published in the domain name's DNS records in order for DKIM
+ * verification to complete, and must remain published in order for Easy DKIM signing to operate correctly. (This information is only returned for
+ * domain name identities, not for email addresses.)</li>
+ * <li>Whether Amazon SES has successfully verified the DKIM tokens published in the domain name's DNS. (This information is only returned for domain
+ * name identities, not for email addresses.)</li>
+ * 
+ * </ul>
+ * <p>
+ * For more information about Easy DKIM signing, go to the <a href="http://docs.amazonwebservices.com/ses/latest/DeveloperGuide"> Amazon SES Developer
+ * Guide </a> .
+ * </p>
+ *
+ * @see com.amazonaws.services.simpleemail.AmazonSimpleEmailService#getIdentityDkimAttributes(GetIdentityDkimAttributesRequest)
  */
-public class ListIdentitiesResult {
+public class GetIdentityDkimAttributesRequest extends AmazonWebServiceRequest {
 
     /**
-     * A list of identities.
+     * A list of one or more verified identities - email addresses, domains,
+     * or both.
      */
     private java.util.List<String> identities;
 
     /**
-     * The token used for pagination.
-     */
-    private String nextToken;
-
-    /**
-     * A list of identities.
+     * A list of one or more verified identities - email addresses, domains,
+     * or both.
      *
-     * @return A list of identities.
+     * @return A list of one or more verified identities - email addresses, domains,
+     *         or both.
      */
     public java.util.List<String> getIdentities() {
         
@@ -45,9 +64,11 @@ public class ListIdentitiesResult {
     }
     
     /**
-     * A list of identities.
+     * A list of one or more verified identities - email addresses, domains,
+     * or both.
      *
-     * @param identities A list of identities.
+     * @param identities A list of one or more verified identities - email addresses, domains,
+     *         or both.
      */
     public void setIdentities(java.util.Collection<String> identities) {
         if (identities == null) {
@@ -61,16 +82,18 @@ public class ListIdentitiesResult {
     }
     
     /**
-     * A list of identities.
+     * A list of one or more verified identities - email addresses, domains,
+     * or both.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param identities A list of identities.
+     * @param identities A list of one or more verified identities - email addresses, domains,
+     *         or both.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public ListIdentitiesResult withIdentities(String... identities) {
+    public GetIdentityDkimAttributesRequest withIdentities(String... identities) {
         if (getIdentities() == null) setIdentities(new java.util.ArrayList<String>(identities.length));
         for (String value : identities) {
             getIdentities().add(value);
@@ -79,16 +102,18 @@ public class ListIdentitiesResult {
     }
     
     /**
-     * A list of identities.
+     * A list of one or more verified identities - email addresses, domains,
+     * or both.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param identities A list of identities.
+     * @param identities A list of one or more verified identities - email addresses, domains,
+     *         or both.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public ListIdentitiesResult withIdentities(java.util.Collection<String> identities) {
+    public GetIdentityDkimAttributesRequest withIdentities(java.util.Collection<String> identities) {
         if (identities == null) {
             this.identities = null;
         } else {
@@ -99,40 +124,6 @@ public class ListIdentitiesResult {
 
         return this;
     }
-    
-    /**
-     * The token used for pagination.
-     *
-     * @return The token used for pagination.
-     */
-    public String getNextToken() {
-        return nextToken;
-    }
-    
-    /**
-     * The token used for pagination.
-     *
-     * @param nextToken The token used for pagination.
-     */
-    public void setNextToken(String nextToken) {
-        this.nextToken = nextToken;
-    }
-    
-    /**
-     * The token used for pagination.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param nextToken The token used for pagination.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     */
-    public ListIdentitiesResult withNextToken(String nextToken) {
-        this.nextToken = nextToken;
-        return this;
-    }
-    
     
     /**
      * Returns a string representation of this object; useful for testing and
@@ -147,7 +138,6 @@ public class ListIdentitiesResult {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (identities != null) sb.append("Identities: " + identities + ", ");
-        if (nextToken != null) sb.append("NextToken: " + nextToken + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -158,7 +148,6 @@ public class ListIdentitiesResult {
         int hashCode = 1;
         
         hashCode = prime * hashCode + ((getIdentities() == null) ? 0 : getIdentities().hashCode()); 
-        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode()); 
         return hashCode;
     }
     
@@ -167,13 +156,11 @@ public class ListIdentitiesResult {
         if (this == obj) return true;
         if (obj == null) return false;
     
-        if (obj instanceof ListIdentitiesResult == false) return false;
-        ListIdentitiesResult other = (ListIdentitiesResult)obj;
+        if (obj instanceof GetIdentityDkimAttributesRequest == false) return false;
+        GetIdentityDkimAttributesRequest other = (GetIdentityDkimAttributesRequest)obj;
         
         if (other.getIdentities() == null ^ this.getIdentities() == null) return false;
         if (other.getIdentities() != null && other.getIdentities().equals(this.getIdentities()) == false) return false; 
-        if (other.getNextToken() == null ^ this.getNextToken() == null) return false;
-        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false) return false; 
         return true;
     }
     

@@ -7,7 +7,7 @@
  * Getting Started Guide and the Amazon SES Developer Guide.
  * </p>
  * <p>
- * For specific details on how to construct a service request, please consult the<a href="http://docs.amazonwebservices.com/ses/latest/DeveloperGuide">
+ * For specific details on how to construct a service request, please consult the <a href="http://docs.amazonwebservices.com/ses/latest/DeveloperGuide">
  * Amazon SES Developer Guide </a> .
  * </p>
  * <p>
