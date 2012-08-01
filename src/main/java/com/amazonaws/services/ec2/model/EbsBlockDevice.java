@@ -37,6 +37,10 @@ public class EbsBlockDevice {
      */
     private Boolean deleteOnTermination;
 
+    private String volumeType;
+
+    private Integer iops;
+
     /**
      * The ID of the snapshot from which the volume will be created.
      *
@@ -157,6 +161,123 @@ public class EbsBlockDevice {
     }
     
     /**
+     * Returns the value of the VolumeType property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>standard, io1
+     *
+     * @return The value of the VolumeType property for this object.
+     *
+     * @see VolumeType
+     */
+    public String getVolumeType() {
+        return volumeType;
+    }
+    
+    /**
+     * Sets the value of the VolumeType property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>standard, io1
+     *
+     * @param volumeType The new value for the VolumeType property for this object.
+     *
+     * @see VolumeType
+     */
+    public void setVolumeType(String volumeType) {
+        this.volumeType = volumeType;
+    }
+    
+    /**
+     * Sets the value of the VolumeType property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>standard, io1
+     *
+     * @param volumeType The new value for the VolumeType property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see VolumeType
+     */
+    public EbsBlockDevice withVolumeType(String volumeType) {
+        this.volumeType = volumeType;
+        return this;
+    }
+    
+    
+    /**
+     * Sets the value of the VolumeType property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>standard, io1
+     *
+     * @param volumeType The new value for the VolumeType property for this object.
+     *
+     * @see VolumeType
+     */
+    public void setVolumeType(VolumeType volumeType) {
+        this.volumeType = volumeType.toString();
+    }
+    
+    /**
+     * Sets the value of the VolumeType property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>standard, io1
+     *
+     * @param volumeType The new value for the VolumeType property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see VolumeType
+     */
+    public EbsBlockDevice withVolumeType(VolumeType volumeType) {
+        this.volumeType = volumeType.toString();
+        return this;
+    }
+    
+    /**
+     * Returns the value of the Iops property for this object.
+     *
+     * @return The value of the Iops property for this object.
+     */
+    public Integer getIops() {
+        return iops;
+    }
+    
+    /**
+     * Sets the value of the Iops property for this object.
+     *
+     * @param iops The new value for the Iops property for this object.
+     */
+    public void setIops(Integer iops) {
+        this.iops = iops;
+    }
+    
+    /**
+     * Sets the value of the Iops property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param iops The new value for the Iops property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public EbsBlockDevice withIops(Integer iops) {
+        this.iops = iops;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -171,6 +292,8 @@ public class EbsBlockDevice {
         if (snapshotId != null) sb.append("SnapshotId: " + snapshotId + ", ");
         if (volumeSize != null) sb.append("VolumeSize: " + volumeSize + ", ");
         if (deleteOnTermination != null) sb.append("DeleteOnTermination: " + deleteOnTermination + ", ");
+        if (volumeType != null) sb.append("VolumeType: " + volumeType + ", ");
+        if (iops != null) sb.append("Iops: " + iops + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -183,6 +306,8 @@ public class EbsBlockDevice {
         hashCode = prime * hashCode + ((getSnapshotId() == null) ? 0 : getSnapshotId().hashCode()); 
         hashCode = prime * hashCode + ((getVolumeSize() == null) ? 0 : getVolumeSize().hashCode()); 
         hashCode = prime * hashCode + ((isDeleteOnTermination() == null) ? 0 : isDeleteOnTermination().hashCode()); 
+        hashCode = prime * hashCode + ((getVolumeType() == null) ? 0 : getVolumeType().hashCode()); 
+        hashCode = prime * hashCode + ((getIops() == null) ? 0 : getIops().hashCode()); 
         return hashCode;
     }
     
@@ -200,6 +325,10 @@ public class EbsBlockDevice {
         if (other.getVolumeSize() != null && other.getVolumeSize().equals(this.getVolumeSize()) == false) return false; 
         if (other.isDeleteOnTermination() == null ^ this.isDeleteOnTermination() == null) return false;
         if (other.isDeleteOnTermination() != null && other.isDeleteOnTermination().equals(this.isDeleteOnTermination()) == false) return false; 
+        if (other.getVolumeType() == null ^ this.getVolumeType() == null) return false;
+        if (other.getVolumeType() != null && other.getVolumeType().equals(this.getVolumeType()) == false) return false; 
+        if (other.getIops() == null ^ this.getIops() == null) return false;
+        if (other.getIops() != null && other.getIops().equals(this.getIops()) == false) return false; 
         return true;
     }
     

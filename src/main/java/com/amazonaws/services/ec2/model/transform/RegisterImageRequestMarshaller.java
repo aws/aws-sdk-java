@@ -38,7 +38,7 @@ public class RegisterImageRequestMarshaller implements Marshaller<Request<Regist
 
         Request<RegisterImageRequest> request = new DefaultRequest<RegisterImageRequest>(registerImageRequest, "AmazonEC2");
         request.addParameter("Action", "RegisterImage");
-        request.addParameter("Version", "2012-06-15");
+        request.addParameter("Version", "2012-07-20");
 
         if (registerImageRequest.getImageLocation() != null) {
             request.addParameter("ImageLocation", StringUtils.fromString(registerImageRequest.getImageLocation()));
@@ -84,6 +84,12 @@ public class RegisterImageRequestMarshaller implements Marshaller<Request<Regist
                     }
                     if (ebsBlockDeviceEbs.isDeleteOnTermination() != null) {
                         request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.DeleteOnTermination", StringUtils.fromBoolean(ebsBlockDeviceEbs.isDeleteOnTermination()));
+                    }
+                    if (ebsBlockDeviceEbs.getVolumeType() != null) {
+                        request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.VolumeType", StringUtils.fromString(ebsBlockDeviceEbs.getVolumeType()));
+                    }
+                    if (ebsBlockDeviceEbs.getIops() != null) {
+                        request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.Iops", StringUtils.fromInteger(ebsBlockDeviceEbs.getIops()));
                     }
                 }
                 if (blockDeviceMappingMember.getNoDevice() != null) {

@@ -38,7 +38,7 @@ public class RequestSpotInstancesRequestMarshaller implements Marshaller<Request
 
         Request<RequestSpotInstancesRequest> request = new DefaultRequest<RequestSpotInstancesRequest>(requestSpotInstancesRequest, "AmazonEC2");
         request.addParameter("Action", "RequestSpotInstances");
-        request.addParameter("Version", "2012-06-15");
+        request.addParameter("Version", "2012-07-20");
 
         if (requestSpotInstancesRequest.getSpotPrice() != null) {
             request.addParameter("SpotPrice", StringUtils.fromString(requestSpotInstancesRequest.getSpotPrice()));
@@ -145,6 +145,12 @@ public class RequestSpotInstancesRequestMarshaller implements Marshaller<Request
                         if (ebsBlockDeviceEbs.isDeleteOnTermination() != null) {
                             request.addParameter("LaunchSpecification.BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.DeleteOnTermination", StringUtils.fromBoolean(ebsBlockDeviceEbs.isDeleteOnTermination()));
                         }
+                        if (ebsBlockDeviceEbs.getVolumeType() != null) {
+                            request.addParameter("LaunchSpecification.BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.VolumeType", StringUtils.fromString(ebsBlockDeviceEbs.getVolumeType()));
+                        }
+                        if (ebsBlockDeviceEbs.getIops() != null) {
+                            request.addParameter("LaunchSpecification.BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.Iops", StringUtils.fromInteger(ebsBlockDeviceEbs.getIops()));
+                        }
                     }
                     if (blockDeviceMappingMember.getNoDevice() != null) {
                         request.addParameter("LaunchSpecification.BlockDeviceMapping." + blockDeviceMappingsListIndex + ".NoDevice", StringUtils.fromString(blockDeviceMappingMember.getNoDevice()));
@@ -227,6 +233,9 @@ public class RequestSpotInstancesRequestMarshaller implements Marshaller<Request
                 if (iamInstanceProfileSpecificationIamInstanceProfile.getName() != null) {
                     request.addParameter("LaunchSpecification.IamInstanceProfile.Name", StringUtils.fromString(iamInstanceProfileSpecificationIamInstanceProfile.getName()));
                 }
+            }
+            if (launchSpecificationLaunchSpecification.isEbsOptimized() != null) {
+                request.addParameter("LaunchSpecification.EbsOptimized", StringUtils.fromBoolean(launchSpecificationLaunchSpecification.isEbsOptimized()));
             }
         }
 

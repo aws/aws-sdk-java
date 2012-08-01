@@ -64,6 +64,10 @@ public class Volume {
      */
     private java.util.List<Tag> tags;
 
+    private String volumeType;
+
+    private Integer iops;
+
     /**
      * The unique ID of this volume.
      *
@@ -456,6 +460,123 @@ public class Volume {
     }
     
     /**
+     * Returns the value of the VolumeType property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>standard, io1
+     *
+     * @return The value of the VolumeType property for this object.
+     *
+     * @see VolumeType
+     */
+    public String getVolumeType() {
+        return volumeType;
+    }
+    
+    /**
+     * Sets the value of the VolumeType property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>standard, io1
+     *
+     * @param volumeType The new value for the VolumeType property for this object.
+     *
+     * @see VolumeType
+     */
+    public void setVolumeType(String volumeType) {
+        this.volumeType = volumeType;
+    }
+    
+    /**
+     * Sets the value of the VolumeType property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>standard, io1
+     *
+     * @param volumeType The new value for the VolumeType property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see VolumeType
+     */
+    public Volume withVolumeType(String volumeType) {
+        this.volumeType = volumeType;
+        return this;
+    }
+    
+    
+    /**
+     * Sets the value of the VolumeType property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>standard, io1
+     *
+     * @param volumeType The new value for the VolumeType property for this object.
+     *
+     * @see VolumeType
+     */
+    public void setVolumeType(VolumeType volumeType) {
+        this.volumeType = volumeType.toString();
+    }
+    
+    /**
+     * Sets the value of the VolumeType property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>standard, io1
+     *
+     * @param volumeType The new value for the VolumeType property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see VolumeType
+     */
+    public Volume withVolumeType(VolumeType volumeType) {
+        this.volumeType = volumeType.toString();
+        return this;
+    }
+    
+    /**
+     * Returns the value of the Iops property for this object.
+     *
+     * @return The value of the Iops property for this object.
+     */
+    public Integer getIops() {
+        return iops;
+    }
+    
+    /**
+     * Sets the value of the Iops property for this object.
+     *
+     * @param iops The new value for the Iops property for this object.
+     */
+    public void setIops(Integer iops) {
+        this.iops = iops;
+    }
+    
+    /**
+     * Sets the value of the Iops property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param iops The new value for the Iops property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public Volume withIops(Integer iops) {
+        this.iops = iops;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -475,6 +596,8 @@ public class Volume {
         if (createTime != null) sb.append("CreateTime: " + createTime + ", ");
         if (attachments != null) sb.append("Attachments: " + attachments + ", ");
         if (tags != null) sb.append("Tags: " + tags + ", ");
+        if (volumeType != null) sb.append("VolumeType: " + volumeType + ", ");
+        if (iops != null) sb.append("Iops: " + iops + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -492,6 +615,8 @@ public class Volume {
         hashCode = prime * hashCode + ((getCreateTime() == null) ? 0 : getCreateTime().hashCode()); 
         hashCode = prime * hashCode + ((getAttachments() == null) ? 0 : getAttachments().hashCode()); 
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode()); 
+        hashCode = prime * hashCode + ((getVolumeType() == null) ? 0 : getVolumeType().hashCode()); 
+        hashCode = prime * hashCode + ((getIops() == null) ? 0 : getIops().hashCode()); 
         return hashCode;
     }
     
@@ -519,6 +644,10 @@ public class Volume {
         if (other.getAttachments() != null && other.getAttachments().equals(this.getAttachments()) == false) return false; 
         if (other.getTags() == null ^ this.getTags() == null) return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false) return false; 
+        if (other.getVolumeType() == null ^ this.getVolumeType() == null) return false;
+        if (other.getVolumeType() != null && other.getVolumeType().equals(this.getVolumeType()) == false) return false; 
+        if (other.getIops() == null ^ this.getIops() == null) return false;
+        if (other.getIops() != null && other.getIops().equals(this.getIops()) == false) return false; 
         return true;
     }
     

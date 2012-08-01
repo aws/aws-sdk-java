@@ -106,6 +106,10 @@ public class LaunchSpecificationStaxUnmarshaller implements Unmarshaller<LaunchS
                     launchSpecification.setIamInstanceProfile(IamInstanceProfileSpecificationStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("ebsOptimized", targetDepth)) {
+                    launchSpecification.setEbsOptimized(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return launchSpecification;

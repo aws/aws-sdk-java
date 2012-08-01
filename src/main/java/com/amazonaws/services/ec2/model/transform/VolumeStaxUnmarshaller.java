@@ -78,6 +78,14 @@ public class VolumeStaxUnmarshaller implements Unmarshaller<Volume, StaxUnmarsha
                     volume.getTags().add(TagStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("volumeType", targetDepth)) {
+                    volume.setVolumeType(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("iops", targetDepth)) {
+                    volume.setIops(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return volume;

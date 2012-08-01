@@ -29,7 +29,8 @@ public enum InstanceAttributeName {
     BlockDeviceMapping("blockDeviceMapping"),
     ProductCodes("productCodes"),
     SourceDestCheck("sourceDestCheck"),
-    GroupSet("groupSet");
+    GroupSet("groupSet"),
+    EbsOptimized("ebsOptimized");
 
     private String value;
 
@@ -75,6 +76,8 @@ public enum InstanceAttributeName {
             return InstanceAttributeName.SourceDestCheck;
         } else if ("groupSet".equals(value)) {
             return InstanceAttributeName.GroupSet;
+        } else if ("ebsOptimized".equals(value)) {
+            return InstanceAttributeName.EbsOptimized;
         } else {
             throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
         }

@@ -73,6 +73,11 @@ public class InstanceAttribute {
     private java.util.List<ProductCode> productCodes;
 
     /**
+     * Boolean value
+     */
+    private Boolean ebsOptimized;
+
+    /**
      * The ID of the associated instance.
      *
      * @return The ID of the associated instance.
@@ -520,6 +525,49 @@ public class InstanceAttribute {
     }
     
     /**
+     * Boolean value
+     *
+     * @return Boolean value
+     */
+    public Boolean isEbsOptimized() {
+        return ebsOptimized;
+    }
+    
+    /**
+     * Boolean value
+     *
+     * @param ebsOptimized Boolean value
+     */
+    public void setEbsOptimized(Boolean ebsOptimized) {
+        this.ebsOptimized = ebsOptimized;
+    }
+    
+    /**
+     * Boolean value
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param ebsOptimized Boolean value
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public InstanceAttribute withEbsOptimized(Boolean ebsOptimized) {
+        this.ebsOptimized = ebsOptimized;
+        return this;
+    }
+    
+    
+    /**
+     * Boolean value
+     *
+     * @return Boolean value
+     */
+    public Boolean getEbsOptimized() {
+        return ebsOptimized;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -541,6 +589,7 @@ public class InstanceAttribute {
         if (rootDeviceName != null) sb.append("RootDeviceName: " + rootDeviceName + ", ");
         if (blockDeviceMappings != null) sb.append("BlockDeviceMappings: " + blockDeviceMappings + ", ");
         if (productCodes != null) sb.append("ProductCodes: " + productCodes + ", ");
+        if (ebsOptimized != null) sb.append("EbsOptimized: " + ebsOptimized + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -560,6 +609,7 @@ public class InstanceAttribute {
         hashCode = prime * hashCode + ((getRootDeviceName() == null) ? 0 : getRootDeviceName().hashCode()); 
         hashCode = prime * hashCode + ((getBlockDeviceMappings() == null) ? 0 : getBlockDeviceMappings().hashCode()); 
         hashCode = prime * hashCode + ((getProductCodes() == null) ? 0 : getProductCodes().hashCode()); 
+        hashCode = prime * hashCode + ((isEbsOptimized() == null) ? 0 : isEbsOptimized().hashCode()); 
         return hashCode;
     }
     
@@ -591,6 +641,8 @@ public class InstanceAttribute {
         if (other.getBlockDeviceMappings() != null && other.getBlockDeviceMappings().equals(this.getBlockDeviceMappings()) == false) return false; 
         if (other.getProductCodes() == null ^ this.getProductCodes() == null) return false;
         if (other.getProductCodes() != null && other.getProductCodes().equals(this.getProductCodes()) == false) return false; 
+        if (other.isEbsOptimized() == null ^ this.isEbsOptimized() == null) return false;
+        if (other.isEbsOptimized() != null && other.isEbsOptimized().equals(this.isEbsOptimized()) == false) return false; 
         return true;
     }
     

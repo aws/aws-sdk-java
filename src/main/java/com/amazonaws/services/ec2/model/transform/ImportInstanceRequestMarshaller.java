@@ -38,7 +38,7 @@ public class ImportInstanceRequestMarshaller implements Marshaller<Request<Impor
 
         Request<ImportInstanceRequest> request = new DefaultRequest<ImportInstanceRequest>(importInstanceRequest, "AmazonEC2");
         request.addParameter("Action", "ImportInstance");
-        request.addParameter("Version", "2012-06-15");
+        request.addParameter("Version", "2012-07-20");
 
         if (importInstanceRequest.getDescription() != null) {
             request.addParameter("Description", StringUtils.fromString(importInstanceRequest.getDescription()));
@@ -103,6 +103,12 @@ public class ImportInstanceRequestMarshaller implements Marshaller<Request<Impor
                         }
                         if (ebsBlockDeviceEbs.isDeleteOnTermination() != null) {
                             request.addParameter("LaunchSpecification.BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.DeleteOnTermination", StringUtils.fromBoolean(ebsBlockDeviceEbs.isDeleteOnTermination()));
+                        }
+                        if (ebsBlockDeviceEbs.getVolumeType() != null) {
+                            request.addParameter("LaunchSpecification.BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.VolumeType", StringUtils.fromString(ebsBlockDeviceEbs.getVolumeType()));
+                        }
+                        if (ebsBlockDeviceEbs.getIops() != null) {
+                            request.addParameter("LaunchSpecification.BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.Iops", StringUtils.fromInteger(ebsBlockDeviceEbs.getIops()));
                         }
                     }
                     if (blockDeviceMappingMember.getNoDevice() != null) {

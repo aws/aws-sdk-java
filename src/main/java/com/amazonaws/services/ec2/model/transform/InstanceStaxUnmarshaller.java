@@ -190,6 +190,10 @@ public class InstanceStaxUnmarshaller implements Unmarshaller<Instance, StaxUnma
                     instance.setIamInstanceProfile(IamInstanceProfileStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("ebsOptimized", targetDepth)) {
+                    instance.setEbsOptimized(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return instance;

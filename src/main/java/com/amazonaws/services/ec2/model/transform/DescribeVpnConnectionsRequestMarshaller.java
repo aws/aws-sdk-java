@@ -38,7 +38,7 @@ public class DescribeVpnConnectionsRequestMarshaller implements Marshaller<Reque
 
         Request<DescribeVpnConnectionsRequest> request = new DefaultRequest<DescribeVpnConnectionsRequest>(describeVpnConnectionsRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeVpnConnections");
-        request.addParameter("Version", "2012-06-15");
+        request.addParameter("Version", "2012-07-20");
 
 
         java.util.List<String> vpnConnectionIdsList = describeVpnConnectionsRequest.getVpnConnectionIds();

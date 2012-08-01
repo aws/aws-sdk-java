@@ -38,7 +38,7 @@ public class DescribeExportTasksRequestMarshaller implements Marshaller<Request<
 
         Request<DescribeExportTasksRequest> request = new DefaultRequest<DescribeExportTasksRequest>(describeExportTasksRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeExportTasks");
-        request.addParameter("Version", "2012-06-15");
+        request.addParameter("Version", "2012-07-20");
 
 
         java.util.List<String> exportTaskIdsList = describeExportTasksRequest.getExportTaskIds();

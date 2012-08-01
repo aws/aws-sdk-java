@@ -38,7 +38,7 @@ public class CreateImageRequestMarshaller implements Marshaller<Request<CreateIm
 
         Request<CreateImageRequest> request = new DefaultRequest<CreateImageRequest>(createImageRequest, "AmazonEC2");
         request.addParameter("Action", "CreateImage");
-        request.addParameter("Version", "2012-06-15");
+        request.addParameter("Version", "2012-07-20");
 
         if (createImageRequest.getInstanceId() != null) {
             request.addParameter("InstanceId", StringUtils.fromString(createImageRequest.getInstanceId()));
@@ -51,6 +51,44 @@ public class CreateImageRequestMarshaller implements Marshaller<Request<CreateIm
         }
         if (createImageRequest.isNoReboot() != null) {
             request.addParameter("NoReboot", StringUtils.fromBoolean(createImageRequest.isNoReboot()));
+        }
+
+        java.util.List<BlockDeviceMapping> blockDeviceMappingsList = createImageRequest.getBlockDeviceMappings();
+        int blockDeviceMappingsListIndex = 1;
+
+        for (BlockDeviceMapping blockDeviceMappingsListValue : blockDeviceMappingsList) {
+            BlockDeviceMapping blockDeviceMappingMember = blockDeviceMappingsListValue;
+            if (blockDeviceMappingMember != null) {
+                if (blockDeviceMappingMember.getVirtualName() != null) {
+                    request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".VirtualName", StringUtils.fromString(blockDeviceMappingMember.getVirtualName()));
+                }
+                if (blockDeviceMappingMember.getDeviceName() != null) {
+                    request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".DeviceName", StringUtils.fromString(blockDeviceMappingMember.getDeviceName()));
+                }
+                EbsBlockDevice ebsBlockDeviceEbs = blockDeviceMappingMember.getEbs();
+                if (ebsBlockDeviceEbs != null) {
+                    if (ebsBlockDeviceEbs.getSnapshotId() != null) {
+                        request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.SnapshotId", StringUtils.fromString(ebsBlockDeviceEbs.getSnapshotId()));
+                    }
+                    if (ebsBlockDeviceEbs.getVolumeSize() != null) {
+                        request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.VolumeSize", StringUtils.fromInteger(ebsBlockDeviceEbs.getVolumeSize()));
+                    }
+                    if (ebsBlockDeviceEbs.isDeleteOnTermination() != null) {
+                        request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.DeleteOnTermination", StringUtils.fromBoolean(ebsBlockDeviceEbs.isDeleteOnTermination()));
+                    }
+                    if (ebsBlockDeviceEbs.getVolumeType() != null) {
+                        request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.VolumeType", StringUtils.fromString(ebsBlockDeviceEbs.getVolumeType()));
+                    }
+                    if (ebsBlockDeviceEbs.getIops() != null) {
+                        request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.Iops", StringUtils.fromInteger(ebsBlockDeviceEbs.getIops()));
+                    }
+                }
+                if (blockDeviceMappingMember.getNoDevice() != null) {
+                    request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".NoDevice", StringUtils.fromString(blockDeviceMappingMember.getNoDevice()));
+                }
+            }
+
+            blockDeviceMappingsListIndex++;
         }
 
 

@@ -35,7 +35,7 @@ public class ResetInstanceAttributeRequest extends AmazonWebServiceRequest {
      * <code>kernel</code>, <code>ramdisk</code>
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>instanceType, kernel, ramdisk, userData, disableApiTermination, instanceInitiatedShutdownBehavior, rootDeviceName, blockDeviceMapping, productCodes, sourceDestCheck, groupSet
+     * <b>Allowed Values: </b>instanceType, kernel, ramdisk, userData, disableApiTermination, instanceInitiatedShutdownBehavior, rootDeviceName, blockDeviceMapping, productCodes, sourceDestCheck, groupSet, ebsOptimized
      */
     private String attribute;
 
@@ -116,7 +116,7 @@ public class ResetInstanceAttributeRequest extends AmazonWebServiceRequest {
      * <code>kernel</code>, <code>ramdisk</code>
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>instanceType, kernel, ramdisk, userData, disableApiTermination, instanceInitiatedShutdownBehavior, rootDeviceName, blockDeviceMapping, productCodes, sourceDestCheck, groupSet
+     * <b>Allowed Values: </b>instanceType, kernel, ramdisk, userData, disableApiTermination, instanceInitiatedShutdownBehavior, rootDeviceName, blockDeviceMapping, productCodes, sourceDestCheck, groupSet, ebsOptimized
      *
      * @return The name of the attribute being reset. <p> Available attribute names:
      *         <code>kernel</code>, <code>ramdisk</code>
@@ -132,7 +132,7 @@ public class ResetInstanceAttributeRequest extends AmazonWebServiceRequest {
      * <code>kernel</code>, <code>ramdisk</code>
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>instanceType, kernel, ramdisk, userData, disableApiTermination, instanceInitiatedShutdownBehavior, rootDeviceName, blockDeviceMapping, productCodes, sourceDestCheck, groupSet
+     * <b>Allowed Values: </b>instanceType, kernel, ramdisk, userData, disableApiTermination, instanceInitiatedShutdownBehavior, rootDeviceName, blockDeviceMapping, productCodes, sourceDestCheck, groupSet, ebsOptimized
      *
      * @param attribute The name of the attribute being reset. <p> Available attribute names:
      *         <code>kernel</code>, <code>ramdisk</code>
@@ -150,7 +150,7 @@ public class ResetInstanceAttributeRequest extends AmazonWebServiceRequest {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>instanceType, kernel, ramdisk, userData, disableApiTermination, instanceInitiatedShutdownBehavior, rootDeviceName, blockDeviceMapping, productCodes, sourceDestCheck, groupSet
+     * <b>Allowed Values: </b>instanceType, kernel, ramdisk, userData, disableApiTermination, instanceInitiatedShutdownBehavior, rootDeviceName, blockDeviceMapping, productCodes, sourceDestCheck, groupSet, ebsOptimized
      *
      * @param attribute The name of the attribute being reset. <p> Available attribute names:
      *         <code>kernel</code>, <code>ramdisk</code>
@@ -171,7 +171,7 @@ public class ResetInstanceAttributeRequest extends AmazonWebServiceRequest {
      * <code>kernel</code>, <code>ramdisk</code>
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>instanceType, kernel, ramdisk, userData, disableApiTermination, instanceInitiatedShutdownBehavior, rootDeviceName, blockDeviceMapping, productCodes, sourceDestCheck, groupSet
+     * <b>Allowed Values: </b>instanceType, kernel, ramdisk, userData, disableApiTermination, instanceInitiatedShutdownBehavior, rootDeviceName, blockDeviceMapping, productCodes, sourceDestCheck, groupSet, ebsOptimized
      *
      * @param attribute The name of the attribute being reset. <p> Available attribute names:
      *         <code>kernel</code>, <code>ramdisk</code>
@@ -189,7 +189,7 @@ public class ResetInstanceAttributeRequest extends AmazonWebServiceRequest {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>instanceType, kernel, ramdisk, userData, disableApiTermination, instanceInitiatedShutdownBehavior, rootDeviceName, blockDeviceMapping, productCodes, sourceDestCheck, groupSet
+     * <b>Allowed Values: </b>instanceType, kernel, ramdisk, userData, disableApiTermination, instanceInitiatedShutdownBehavior, rootDeviceName, blockDeviceMapping, productCodes, sourceDestCheck, groupSet, ebsOptimized
      *
      * @param attribute The name of the attribute being reset. <p> Available attribute names:
      *         <code>kernel</code>, <code>ramdisk</code>

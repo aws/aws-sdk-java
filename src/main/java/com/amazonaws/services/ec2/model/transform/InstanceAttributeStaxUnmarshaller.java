@@ -86,6 +86,10 @@ public class InstanceAttributeStaxUnmarshaller implements Unmarshaller<InstanceA
                     instanceAttribute.getProductCodes().add(ProductCodeStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("ebsOptimized/value", targetDepth)) {
+                    instanceAttribute.setEbsOptimized(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return instanceAttribute;

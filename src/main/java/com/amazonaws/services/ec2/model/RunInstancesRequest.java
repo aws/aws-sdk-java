@@ -99,7 +99,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
      * Specifies the instance type for the launched instances.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, c1.medium, c1.xlarge, cc1.4xlarge, cc2.8xlarge, cg1.4xlarge
+     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, c1.medium, c1.xlarge, hi1.4xlarge, cc1.4xlarge, cc2.8xlarge, cg1.4xlarge
      */
     private String instanceType;
 
@@ -178,6 +178,8 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
     private java.util.List<InstanceNetworkInterfaceSpecification> networkInterfaces;
 
     private IamInstanceProfileSpecification iamInstanceProfile;
+
+    private Boolean ebsOptimized;
 
     /**
      * Default constructor for a new RunInstancesRequest object.  Callers should use the
@@ -585,7 +587,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
      * Specifies the instance type for the launched instances.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, c1.medium, c1.xlarge, cc1.4xlarge, cc2.8xlarge, cg1.4xlarge
+     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, c1.medium, c1.xlarge, hi1.4xlarge, cc1.4xlarge, cc2.8xlarge, cg1.4xlarge
      *
      * @return Specifies the instance type for the launched instances.
      *
@@ -599,7 +601,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
      * Specifies the instance type for the launched instances.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, c1.medium, c1.xlarge, cc1.4xlarge, cc2.8xlarge, cg1.4xlarge
+     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, c1.medium, c1.xlarge, hi1.4xlarge, cc1.4xlarge, cc2.8xlarge, cg1.4xlarge
      *
      * @param instanceType Specifies the instance type for the launched instances.
      *
@@ -615,7 +617,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, c1.medium, c1.xlarge, cc1.4xlarge, cc2.8xlarge, cg1.4xlarge
+     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, c1.medium, c1.xlarge, hi1.4xlarge, cc1.4xlarge, cc2.8xlarge, cg1.4xlarge
      *
      * @param instanceType Specifies the instance type for the launched instances.
      *
@@ -634,7 +636,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
      * Specifies the instance type for the launched instances.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, c1.medium, c1.xlarge, cc1.4xlarge, cc2.8xlarge, cg1.4xlarge
+     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, c1.medium, c1.xlarge, hi1.4xlarge, cc1.4xlarge, cc2.8xlarge, cg1.4xlarge
      *
      * @param instanceType Specifies the instance type for the launched instances.
      *
@@ -650,7 +652,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, c1.medium, c1.xlarge, cc1.4xlarge, cc2.8xlarge, cg1.4xlarge
+     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, c1.medium, c1.xlarge, hi1.4xlarge, cc1.4xlarge, cc2.8xlarge, cg1.4xlarge
      *
      * @param instanceType Specifies the instance type for the launched instances.
      *
@@ -1325,6 +1327,49 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
     
     
     /**
+     * Returns the value of the EbsOptimized property for this object.
+     *
+     * @return The value of the EbsOptimized property for this object.
+     */
+    public Boolean isEbsOptimized() {
+        return ebsOptimized;
+    }
+    
+    /**
+     * Sets the value of the EbsOptimized property for this object.
+     *
+     * @param ebsOptimized The new value for the EbsOptimized property for this object.
+     */
+    public void setEbsOptimized(Boolean ebsOptimized) {
+        this.ebsOptimized = ebsOptimized;
+    }
+    
+    /**
+     * Sets the value of the EbsOptimized property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param ebsOptimized The new value for the EbsOptimized property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public RunInstancesRequest withEbsOptimized(Boolean ebsOptimized) {
+        this.ebsOptimized = ebsOptimized;
+        return this;
+    }
+    
+    
+    /**
+     * Returns the value of the EbsOptimized property for this object.
+     *
+     * @return The value of the EbsOptimized property for this object.
+     */
+    public Boolean getEbsOptimized() {
+        return ebsOptimized;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -1359,6 +1404,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
         if (additionalInfo != null) sb.append("AdditionalInfo: " + additionalInfo + ", ");
         if (networkInterfaces != null) sb.append("NetworkInterfaces: " + networkInterfaces + ", ");
         if (iamInstanceProfile != null) sb.append("IamInstanceProfile: " + iamInstanceProfile + ", ");
+        if (ebsOptimized != null) sb.append("EbsOptimized: " + ebsOptimized + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -1391,6 +1437,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
         hashCode = prime * hashCode + ((getAdditionalInfo() == null) ? 0 : getAdditionalInfo().hashCode()); 
         hashCode = prime * hashCode + ((getNetworkInterfaces() == null) ? 0 : getNetworkInterfaces().hashCode()); 
         hashCode = prime * hashCode + ((getIamInstanceProfile() == null) ? 0 : getIamInstanceProfile().hashCode()); 
+        hashCode = prime * hashCode + ((isEbsOptimized() == null) ? 0 : isEbsOptimized().hashCode()); 
         return hashCode;
     }
     
@@ -1448,6 +1495,8 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
         if (other.getNetworkInterfaces() != null && other.getNetworkInterfaces().equals(this.getNetworkInterfaces()) == false) return false; 
         if (other.getIamInstanceProfile() == null ^ this.getIamInstanceProfile() == null) return false;
         if (other.getIamInstanceProfile() != null && other.getIamInstanceProfile().equals(this.getIamInstanceProfile()) == false) return false; 
+        if (other.isEbsOptimized() == null ^ this.isEbsOptimized() == null) return false;
+        if (other.isEbsOptimized() != null && other.isEbsOptimized().equals(this.isEbsOptimized()) == false) return false; 
         return true;
     }
     

@@ -58,6 +58,14 @@ public class EbsBlockDeviceStaxUnmarshaller implements Unmarshaller<EbsBlockDevi
                     ebsBlockDevice.setDeleteOnTermination(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("volumeType", targetDepth)) {
+                    ebsBlockDevice.setVolumeType(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("iops", targetDepth)) {
+                    ebsBlockDevice.setIops(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return ebsBlockDevice;

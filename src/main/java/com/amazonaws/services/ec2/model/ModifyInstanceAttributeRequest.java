@@ -39,7 +39,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest {
      * <code>rootDevice</code>, <code>blockDeviceMapping</code>
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>instanceType, kernel, ramdisk, userData, disableApiTermination, instanceInitiatedShutdownBehavior, rootDeviceName, blockDeviceMapping, productCodes, sourceDestCheck, groupSet
+     * <b>Allowed Values: </b>instanceType, kernel, ramdisk, userData, disableApiTermination, instanceInitiatedShutdownBehavior, rootDeviceName, blockDeviceMapping, productCodes, sourceDestCheck, groupSet, ebsOptimized
      */
     private String attribute;
 
@@ -95,6 +95,11 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest {
     private String instanceInitiatedShutdownBehavior;
 
     private java.util.List<String> groups;
+
+    /**
+     * Boolean value
+     */
+    private Boolean ebsOptimized;
 
     /**
      * Default constructor for a new ModifyInstanceAttributeRequest object.  Callers should use the
@@ -185,7 +190,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest {
      * <code>rootDevice</code>, <code>blockDeviceMapping</code>
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>instanceType, kernel, ramdisk, userData, disableApiTermination, instanceInitiatedShutdownBehavior, rootDeviceName, blockDeviceMapping, productCodes, sourceDestCheck, groupSet
+     * <b>Allowed Values: </b>instanceType, kernel, ramdisk, userData, disableApiTermination, instanceInitiatedShutdownBehavior, rootDeviceName, blockDeviceMapping, productCodes, sourceDestCheck, groupSet, ebsOptimized
      *
      * @return The name of the attribute being modified. <p> Available attribute
      *         names: <code>instanceType</code>, <code>kernel</code>,
@@ -209,7 +214,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest {
      * <code>rootDevice</code>, <code>blockDeviceMapping</code>
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>instanceType, kernel, ramdisk, userData, disableApiTermination, instanceInitiatedShutdownBehavior, rootDeviceName, blockDeviceMapping, productCodes, sourceDestCheck, groupSet
+     * <b>Allowed Values: </b>instanceType, kernel, ramdisk, userData, disableApiTermination, instanceInitiatedShutdownBehavior, rootDeviceName, blockDeviceMapping, productCodes, sourceDestCheck, groupSet, ebsOptimized
      *
      * @param attribute The name of the attribute being modified. <p> Available attribute
      *         names: <code>instanceType</code>, <code>kernel</code>,
@@ -235,7 +240,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>instanceType, kernel, ramdisk, userData, disableApiTermination, instanceInitiatedShutdownBehavior, rootDeviceName, blockDeviceMapping, productCodes, sourceDestCheck, groupSet
+     * <b>Allowed Values: </b>instanceType, kernel, ramdisk, userData, disableApiTermination, instanceInitiatedShutdownBehavior, rootDeviceName, blockDeviceMapping, productCodes, sourceDestCheck, groupSet, ebsOptimized
      *
      * @param attribute The name of the attribute being modified. <p> Available attribute
      *         names: <code>instanceType</code>, <code>kernel</code>,
@@ -264,7 +269,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest {
      * <code>rootDevice</code>, <code>blockDeviceMapping</code>
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>instanceType, kernel, ramdisk, userData, disableApiTermination, instanceInitiatedShutdownBehavior, rootDeviceName, blockDeviceMapping, productCodes, sourceDestCheck, groupSet
+     * <b>Allowed Values: </b>instanceType, kernel, ramdisk, userData, disableApiTermination, instanceInitiatedShutdownBehavior, rootDeviceName, blockDeviceMapping, productCodes, sourceDestCheck, groupSet, ebsOptimized
      *
      * @param attribute The name of the attribute being modified. <p> Available attribute
      *         names: <code>instanceType</code>, <code>kernel</code>,
@@ -290,7 +295,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>instanceType, kernel, ramdisk, userData, disableApiTermination, instanceInitiatedShutdownBehavior, rootDeviceName, blockDeviceMapping, productCodes, sourceDestCheck, groupSet
+     * <b>Allowed Values: </b>instanceType, kernel, ramdisk, userData, disableApiTermination, instanceInitiatedShutdownBehavior, rootDeviceName, blockDeviceMapping, productCodes, sourceDestCheck, groupSet, ebsOptimized
      *
      * @param attribute The name of the attribute being modified. <p> Available attribute
      *         names: <code>instanceType</code>, <code>kernel</code>,
@@ -778,6 +783,49 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest {
     }
     
     /**
+     * Boolean value
+     *
+     * @return Boolean value
+     */
+    public Boolean isEbsOptimized() {
+        return ebsOptimized;
+    }
+    
+    /**
+     * Boolean value
+     *
+     * @param ebsOptimized Boolean value
+     */
+    public void setEbsOptimized(Boolean ebsOptimized) {
+        this.ebsOptimized = ebsOptimized;
+    }
+    
+    /**
+     * Boolean value
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param ebsOptimized Boolean value
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public ModifyInstanceAttributeRequest withEbsOptimized(Boolean ebsOptimized) {
+        this.ebsOptimized = ebsOptimized;
+        return this;
+    }
+    
+    
+    /**
+     * Boolean value
+     *
+     * @return Boolean value
+     */
+    public Boolean getEbsOptimized() {
+        return ebsOptimized;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -801,6 +849,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest {
         if (userData != null) sb.append("UserData: " + userData + ", ");
         if (instanceInitiatedShutdownBehavior != null) sb.append("InstanceInitiatedShutdownBehavior: " + instanceInitiatedShutdownBehavior + ", ");
         if (groups != null) sb.append("Groups: " + groups + ", ");
+        if (ebsOptimized != null) sb.append("EbsOptimized: " + ebsOptimized + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -822,6 +871,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest {
         hashCode = prime * hashCode + ((getUserData() == null) ? 0 : getUserData().hashCode()); 
         hashCode = prime * hashCode + ((getInstanceInitiatedShutdownBehavior() == null) ? 0 : getInstanceInitiatedShutdownBehavior().hashCode()); 
         hashCode = prime * hashCode + ((getGroups() == null) ? 0 : getGroups().hashCode()); 
+        hashCode = prime * hashCode + ((isEbsOptimized() == null) ? 0 : isEbsOptimized().hashCode()); 
         return hashCode;
     }
     
@@ -857,6 +907,8 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest {
         if (other.getInstanceInitiatedShutdownBehavior() != null && other.getInstanceInitiatedShutdownBehavior().equals(this.getInstanceInitiatedShutdownBehavior()) == false) return false; 
         if (other.getGroups() == null ^ this.getGroups() == null) return false;
         if (other.getGroups() != null && other.getGroups().equals(this.getGroups()) == false) return false; 
+        if (other.isEbsOptimized() == null ^ this.isEbsOptimized() == null) return false;
+        if (other.isEbsOptimized() != null && other.isEbsOptimized().equals(this.isEbsOptimized()) == false) return false; 
         return true;
     }
     

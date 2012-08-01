@@ -38,7 +38,7 @@ public class RunInstancesRequestMarshaller implements Marshaller<Request<RunInst
 
         Request<RunInstancesRequest> request = new DefaultRequest<RunInstancesRequest>(runInstancesRequest, "AmazonEC2");
         request.addParameter("Action", "RunInstances");
-        request.addParameter("Version", "2012-06-15");
+        request.addParameter("Version", "2012-07-20");
 
         if (runInstancesRequest.getImageId() != null) {
             request.addParameter("ImageId", StringUtils.fromString(runInstancesRequest.getImageId()));
@@ -124,6 +124,12 @@ public class RunInstancesRequestMarshaller implements Marshaller<Request<RunInst
                     }
                     if (ebsBlockDeviceEbs.isDeleteOnTermination() != null) {
                         request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.DeleteOnTermination", StringUtils.fromBoolean(ebsBlockDeviceEbs.isDeleteOnTermination()));
+                    }
+                    if (ebsBlockDeviceEbs.getVolumeType() != null) {
+                        request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.VolumeType", StringUtils.fromString(ebsBlockDeviceEbs.getVolumeType()));
+                    }
+                    if (ebsBlockDeviceEbs.getIops() != null) {
+                        request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.Iops", StringUtils.fromInteger(ebsBlockDeviceEbs.getIops()));
                     }
                 }
                 if (blockDeviceMappingMember.getNoDevice() != null) {
@@ -228,6 +234,9 @@ public class RunInstancesRequestMarshaller implements Marshaller<Request<RunInst
             if (iamInstanceProfileSpecificationIamInstanceProfile.getName() != null) {
                 request.addParameter("IamInstanceProfile.Name", StringUtils.fromString(iamInstanceProfileSpecificationIamInstanceProfile.getName()));
             }
+        }
+        if (runInstancesRequest.isEbsOptimized() != null) {
+            request.addParameter("EbsOptimized", StringUtils.fromBoolean(runInstancesRequest.isEbsOptimized()));
         }
 
 

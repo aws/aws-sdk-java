@@ -38,7 +38,7 @@ public class ModifyInstanceAttributeRequestMarshaller implements Marshaller<Requ
 
         Request<ModifyInstanceAttributeRequest> request = new DefaultRequest<ModifyInstanceAttributeRequest>(modifyInstanceAttributeRequest, "AmazonEC2");
         request.addParameter("Action", "ModifyInstanceAttribute");
-        request.addParameter("Version", "2012-06-15");
+        request.addParameter("Version", "2012-07-20");
 
         if (modifyInstanceAttributeRequest.getInstanceId() != null) {
             request.addParameter("InstanceId", StringUtils.fromString(modifyInstanceAttributeRequest.getInstanceId()));
@@ -109,6 +109,9 @@ public class ModifyInstanceAttributeRequestMarshaller implements Marshaller<Requ
             }
 
             groupsListIndex++;
+        }
+        if (modifyInstanceAttributeRequest.isEbsOptimized() != null) {
+            request.addParameter("EbsOptimized.Value", StringUtils.fromBoolean(modifyInstanceAttributeRequest.isEbsOptimized()));
         }
 
 
