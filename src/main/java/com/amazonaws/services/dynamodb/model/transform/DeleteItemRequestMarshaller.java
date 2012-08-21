@@ -103,6 +103,9 @@ public class DeleteItemRequestMarshaller implements Marshaller<Request<DeleteIte
                     if (hashKeyElement.getN() != null) {
                         jsonWriter.key("N").value(hashKeyElement.getN());
                     }
+                    if (hashKeyElement.getB() != null) {
+                        jsonWriter.key("B").value(hashKeyElement.getB());
+                    }
 
                     java.util.List<String> sSList = hashKeyElement.getSS();
                     if (sSList != null && sSList.size() > 0) {
@@ -127,6 +130,18 @@ public class DeleteItemRequestMarshaller implements Marshaller<Request<DeleteIte
                         }
                         jsonWriter.endArray();
                     }
+
+                    java.util.List<java.nio.ByteBuffer> bSList = hashKeyElement.getBS();
+                    if (bSList != null && bSList.size() > 0) {
+
+                        jsonWriter.key("BS");
+                        jsonWriter.array();
+
+                        for (java.nio.ByteBuffer bSListValue : bSList) {
+                            jsonWriter.value(bSListValue);
+                        }
+                        jsonWriter.endArray();
+                    }
                     jsonWriter.endObject();
                 }
                 AttributeValue rangeKeyElement = key.getRangeKeyElement();
@@ -140,6 +155,9 @@ public class DeleteItemRequestMarshaller implements Marshaller<Request<DeleteIte
                     }
                     if (rangeKeyElement.getN() != null) {
                         jsonWriter.key("N").value(rangeKeyElement.getN());
+                    }
+                    if (rangeKeyElement.getB() != null) {
+                        jsonWriter.key("B").value(rangeKeyElement.getB());
                     }
 
                     java.util.List<String> sSList = rangeKeyElement.getSS();
@@ -162,6 +180,18 @@ public class DeleteItemRequestMarshaller implements Marshaller<Request<DeleteIte
 
                         for (String nSListValue : nSList) {
                             jsonWriter.value(nSListValue);
+                        }
+                        jsonWriter.endArray();
+                    }
+
+                    java.util.List<java.nio.ByteBuffer> bSList = rangeKeyElement.getBS();
+                    if (bSList != null && bSList.size() > 0) {
+
+                        jsonWriter.key("BS");
+                        jsonWriter.array();
+
+                        for (java.nio.ByteBuffer bSListValue : bSList) {
+                            jsonWriter.value(bSListValue);
                         }
                         jsonWriter.endArray();
                     }
@@ -189,6 +219,9 @@ public class DeleteItemRequestMarshaller implements Marshaller<Request<DeleteIte
                             if (value.getN() != null) {
                                 jsonWriter.key("N").value(value.getN());
                             }
+                            if (value.getB() != null) {
+                                jsonWriter.key("B").value(value.getB());
+                            }
 
                             java.util.List<String> sSList = value.getSS();
                             if (sSList != null && sSList.size() > 0) {
@@ -210,6 +243,18 @@ public class DeleteItemRequestMarshaller implements Marshaller<Request<DeleteIte
 
                                 for (String nSListValue : nSList) {
                                     jsonWriter.value(nSListValue);
+                                }
+                                jsonWriter.endArray();
+                            }
+
+                            java.util.List<java.nio.ByteBuffer> bSList = value.getBS();
+                            if (bSList != null && bSList.size() > 0) {
+
+                                jsonWriter.key("BS");
+                                jsonWriter.array();
+
+                                for (java.nio.ByteBuffer bSListValue : bSList) {
+                                    jsonWriter.value(bSListValue);
                                 }
                                 jsonWriter.endArray();
                             }

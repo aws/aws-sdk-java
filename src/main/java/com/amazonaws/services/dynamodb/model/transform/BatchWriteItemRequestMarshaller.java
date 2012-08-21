@@ -113,6 +113,9 @@ public class BatchWriteItemRequestMarshaller implements Marshaller<Request<Batch
                                                 if (itemListValue.getValue().getN() != null) {
                                                     jsonWriter.key("N").value(itemListValue.getValue().getN());
                                                 }
+                                                if (itemListValue.getValue().getB() != null) {
+                                                    jsonWriter.key("B").value(itemListValue.getValue().getB());
+                                                }
 
                                                 java.util.List<String> sSList = itemListValue.getValue().getSS();
                                                 if (sSList != null && sSList.size() > 0) {
@@ -134,6 +137,18 @@ public class BatchWriteItemRequestMarshaller implements Marshaller<Request<Batch
 
                                                     for (String nSListValue : nSList) {
                                                         jsonWriter.value(nSListValue);
+                                                    }
+                                                    jsonWriter.endArray();
+                                                }
+
+                                                java.util.List<java.nio.ByteBuffer> bSList = itemListValue.getValue().getBS();
+                                                if (bSList != null && bSList.size() > 0) {
+
+                                                    jsonWriter.key("BS");
+                                                    jsonWriter.array();
+
+                                                    for (java.nio.ByteBuffer bSListValue : bSList) {
+                                                        jsonWriter.value(bSListValue);
                                                     }
                                                     jsonWriter.endArray();
                                                 }
@@ -168,6 +183,9 @@ public class BatchWriteItemRequestMarshaller implements Marshaller<Request<Batch
                                             if (hashKeyElement.getN() != null) {
                                                 jsonWriter.key("N").value(hashKeyElement.getN());
                                             }
+                                            if (hashKeyElement.getB() != null) {
+                                                jsonWriter.key("B").value(hashKeyElement.getB());
+                                            }
 
                                             java.util.List<String> sSList = hashKeyElement.getSS();
                                             if (sSList != null && sSList.size() > 0) {
@@ -192,6 +210,18 @@ public class BatchWriteItemRequestMarshaller implements Marshaller<Request<Batch
                                                 }
                                                 jsonWriter.endArray();
                                             }
+
+                                            java.util.List<java.nio.ByteBuffer> bSList = hashKeyElement.getBS();
+                                            if (bSList != null && bSList.size() > 0) {
+
+                                                jsonWriter.key("BS");
+                                                jsonWriter.array();
+
+                                                for (java.nio.ByteBuffer bSListValue : bSList) {
+                                                    jsonWriter.value(bSListValue);
+                                                }
+                                                jsonWriter.endArray();
+                                            }
                                             jsonWriter.endObject();
                                         }
                                         AttributeValue rangeKeyElement = key.getRangeKeyElement();
@@ -205,6 +235,9 @@ public class BatchWriteItemRequestMarshaller implements Marshaller<Request<Batch
                                             }
                                             if (rangeKeyElement.getN() != null) {
                                                 jsonWriter.key("N").value(rangeKeyElement.getN());
+                                            }
+                                            if (rangeKeyElement.getB() != null) {
+                                                jsonWriter.key("B").value(rangeKeyElement.getB());
                                             }
 
                                             java.util.List<String> sSList = rangeKeyElement.getSS();
@@ -227,6 +260,18 @@ public class BatchWriteItemRequestMarshaller implements Marshaller<Request<Batch
 
                                                 for (String nSListValue : nSList) {
                                                     jsonWriter.value(nSListValue);
+                                                }
+                                                jsonWriter.endArray();
+                                            }
+
+                                            java.util.List<java.nio.ByteBuffer> bSList = rangeKeyElement.getBS();
+                                            if (bSList != null && bSList.size() > 0) {
+
+                                                jsonWriter.key("BS");
+                                                jsonWriter.array();
+
+                                                for (java.nio.ByteBuffer bSListValue : bSList) {
+                                                    jsonWriter.value(bSListValue);
                                                 }
                                                 jsonWriter.endArray();
                                             }

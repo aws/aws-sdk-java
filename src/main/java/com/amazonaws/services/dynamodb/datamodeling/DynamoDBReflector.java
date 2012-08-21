@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.dynamodb.datamodeling;
 
+import java.lang.reflect.Array;
 import java.lang.reflect.Method;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
@@ -32,6 +33,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
+
+import java.nio.ByteBuffer;
 
 import com.amazonaws.services.dynamodb.model.AttributeValue;
 import com.amazonaws.util.DateUtils;
@@ -199,7 +202,11 @@ public class DynamoDBReflector {
                         isCollection = true;
                         Type genericType = setter.getGenericParameterTypes()[0];
                         if ( genericType instanceof ParameterizedType ) {
-                            paramType = (Class<?>) ((ParameterizedType) genericType).getActualTypeArguments()[0];
+                        	if (((ParameterizedType) genericType).getActualTypeArguments()[0].toString().equals("byte[]")) {
+                        		paramType = byte[].class;
+                        	} else {
+                        		 paramType = (Class<?>) ((ParameterizedType) genericType).getActualTypeArguments()[0];
+                        	}
                         }
                     } else if ( Collection.class.isAssignableFrom(paramType) ) {
                         throw new DynamoDBMappingException("Only java.util.Set collection types are permitted for "
@@ -423,7 +430,7 @@ public class DynamoDBReflector {
                             };
                         } else {
                             unmarshaller = new SUnmarshaller() {
-
+                              
                                 @Override
                                 public Object unmarshall(AttributeValue value) throws ParseException {
                                     Calendar cal = GregorianCalendar.getInstance();
@@ -432,13 +439,72 @@ public class DynamoDBReflector {
                                 }
                             };
                         }
+                    } else if (ByteBuffer.class.isAssignableFrom(paramType)) {
+                    	  if ( isCollection ) {
+                    		  unmarshaller = new BSUnmarshaller() {
+
+                                  @Override
+                                  public Object unmarshall(AttributeValue value) throws ParseException {
+                                	 Set<ByteBuffer> argument = new HashSet<ByteBuffer>();
+                                	 for (ByteBuffer b : value.getBS()) {
+                                	 argument.add(b);
+                                	 }
+                                     return argument;
+                                  }
+                              };
+                    	  } else {
+                    		  unmarshaller = new BUnmarshaller() {
+                    			  
+                                  @Override
+                                  public Object unmarshall(AttributeValue value) throws ParseException {
+                                      return value.getB();
+                                  }
+                              };
+                    	  }
+                    } else if (byte[].class.isAssignableFrom(paramType)) {
+                    	 if ( isCollection ) {
+                   		  unmarshaller = new BSUnmarshaller() {
+
+                                 @Override
+                                 public Object unmarshall(AttributeValue value) throws ParseException {
+                               	 Set<byte[]> argument = new HashSet<byte[]>();
+                               	 for (ByteBuffer b : value.getBS()) {
+                               		 byte[] bytes = null;
+                               		if (b.hasArray()) {
+                               			bytes = b.array();
+                               		} else {
+                               			bytes = new byte[b.limit()];
+                               			b.get(bytes, 0, bytes.length);
+                               		}
+                               		argument.add(bytes);
+                               	 }
+                                    return argument;
+                                 }
+                             };
+                   	  } else {
+                   		  unmarshaller = new BUnmarshaller() {
+                   			  
+                                 @Override
+                                 public Object unmarshall(AttributeValue value) throws ParseException {
+                                	 ByteBuffer byteBuffer = value.getB();
+                                	 byte[] bytes = null;
+                                	 if (byteBuffer.hasArray()) {
+                                			bytes = byteBuffer.array();
+                                		} else {
+                                			bytes = new byte[byteBuffer.limit()];
+                                			byteBuffer.get(bytes, 0, bytes.length);
+                                		}
+                                     return bytes;
+                                 }
+                             };
+                   	  }
                     }
 
                     /*
                      * After checking all other supported types, enforce a
                      * String match
                      */
-                    else if ( !String.class.isAssignableFrom(paramType) ) {
+                    else if ( !String.class.isAssignableFrom(paramType) ) {                	 
                         throw new DynamoDBMappingException("Expected a String, but was " + paramType);
                     } else {
                         if ( isCollection ) {
@@ -539,7 +605,11 @@ public class DynamoDBReflector {
                     if ( Set.class.isAssignableFrom(returnType) ) {
                         Type genericType = getter.getGenericReturnType();
                         if ( genericType instanceof ParameterizedType ) {
+                        	if (((ParameterizedType) genericType).getActualTypeArguments()[0].toString().equals("byte[]")) {
+                        		returnType = byte[].class;
+                        	} else {
                             returnType = (Class<?>) ((ParameterizedType) genericType).getActualTypeArguments()[0];
+                        	}
                         }
 
                         if ( Date.class.isAssignableFrom(returnType) ) {
@@ -595,6 +665,30 @@ public class DynamoDBReflector {
                                     return new AttributeValue().withNS(attributes);
                                 }
                             };
+                        } else if (ByteBuffer.class.isAssignableFrom(returnType)) {
+                        	 marshaller = new ArgumentMarshaller() {
+
+                                 @Override
+                                 public AttributeValue marshall(Object obj) {
+                                     List<ByteBuffer> attributes = new ArrayList<ByteBuffer>();
+                                     for ( Object o : (Set<?>) obj ) {
+                                         attributes.add((ByteBuffer) o);
+                                     }
+                                     return new AttributeValue().withBS(attributes);
+                                 }
+                             };
+                        } else if (byte[].class.isAssignableFrom(returnType)) { 
+                        	 marshaller = new ArgumentMarshaller() {
+
+                                 @Override
+                                 public AttributeValue marshall(Object obj) {
+                                     List<ByteBuffer> attributes = new ArrayList<ByteBuffer>();
+                                     for ( Object o : (Set<?>) obj ) {
+                                         attributes.add(ByteBuffer.wrap((byte[])o));
+                                     }
+                                     return new AttributeValue().withBS(attributes);
+                                 }
+                             };
                         } else {
                             marshaller = new ArgumentMarshaller() {
 
@@ -660,6 +754,22 @@ public class DynamoDBReflector {
                                     return new AttributeValue().withS(String.valueOf(obj));
                                 }
                             };
+                        } else if ( returnType == ByteBuffer.class ) {
+                        	marshaller = new ArgumentMarshaller() {
+
+                                @Override
+                                public AttributeValue marshall(Object obj) {
+                                    return new AttributeValue().withB((ByteBuffer)obj);
+                                }
+                            };
+                        } else if ( returnType == byte[].class) {
+                        	 marshaller = new ArgumentMarshaller() {
+
+                                 @Override
+                                 public AttributeValue marshall(Object obj) {
+                                     return new AttributeValue().withB(ByteBuffer.wrap((byte[])obj));
+                                 }
+                             };
                         } else {
                             throw new DynamoDBMappingException("Unsupported type: " + returnType + " for " + getter);
                         }
@@ -902,5 +1012,5 @@ public class DynamoDBReflector {
 
         return autoGeneratedKeyGetterCache.get(getter);
     }
-
+    
 }

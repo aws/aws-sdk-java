@@ -20,7 +20,8 @@ package com.amazonaws.services.dynamodb.model;
 public enum ScalarAttributeType {
     
     S("S"),
-    N("N");
+    N("N"),
+    B("B");
 
     private String value;
 
@@ -48,6 +49,8 @@ public enum ScalarAttributeType {
             return ScalarAttributeType.S;
         } else if ("N".equals(value)) {
             return ScalarAttributeType.N;
+        } else if ("B".equals(value)) {
+            return ScalarAttributeType.B;
         } else {
             throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
         }

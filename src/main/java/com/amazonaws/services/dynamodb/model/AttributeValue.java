@@ -18,8 +18,10 @@ package com.amazonaws.services.dynamodb.model;
  * <p>
  * AttributeValue can be <code>String</code> ,
  * <code>Number</code> ,
+ * <code>Binary</code> ,
  * <code>StringSet</code> ,
- * <code>NumberSet</code> .
+ * <code>NumberSet</code> ,
+ * <code>BinarySet</code> .
  * </p>
  */
 public class AttributeValue {
@@ -39,6 +41,11 @@ public class AttributeValue {
     private String n;
 
     /**
+     * Binary attributes are sequences of unsigned bytes.
+     */
+    private java.nio.ByteBuffer b;
+
+    /**
      * A set of strings.
      */
     private java.util.List<String> sS;
@@ -47,6 +54,11 @@ public class AttributeValue {
      * A set of numbers.
      */
     private java.util.List<String> nS;
+
+    /**
+     * A set of binary attributes.
+     */
+    private java.util.List<java.nio.ByteBuffer> bS;
 
     /**
      * Default constructor for a new AttributeValue object.  Callers should use the
@@ -171,6 +183,40 @@ public class AttributeValue {
      */
     public AttributeValue withN(String n) {
         this.n = n;
+        return this;
+    }
+    
+    
+    /**
+     * Binary attributes are sequences of unsigned bytes.
+     *
+     * @return Binary attributes are sequences of unsigned bytes.
+     */
+    public java.nio.ByteBuffer getB() {
+        return b;
+    }
+    
+    /**
+     * Binary attributes are sequences of unsigned bytes.
+     *
+     * @param b Binary attributes are sequences of unsigned bytes.
+     */
+    public void setB(java.nio.ByteBuffer b) {
+        this.b = b;
+    }
+    
+    /**
+     * Binary attributes are sequences of unsigned bytes.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param b Binary attributes are sequences of unsigned bytes.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public AttributeValue withB(java.nio.ByteBuffer b) {
+        this.b = b;
         return this;
     }
     
@@ -308,6 +354,72 @@ public class AttributeValue {
     }
     
     /**
+     * A set of binary attributes.
+     *
+     * @return A set of binary attributes.
+     */
+    public java.util.List<java.nio.ByteBuffer> getBS() {
+        
+        return bS;
+    }
+    
+    /**
+     * A set of binary attributes.
+     *
+     * @param bS A set of binary attributes.
+     */
+    public void setBS(java.util.Collection<java.nio.ByteBuffer> bS) {
+        if (bS == null) {
+            this.bS = null;
+            return;
+        }
+
+        java.util.List<java.nio.ByteBuffer> bSCopy = new java.util.ArrayList<java.nio.ByteBuffer>(bS.size());
+        bSCopy.addAll(bS);
+        this.bS = bSCopy;
+    }
+    
+    /**
+     * A set of binary attributes.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param bS A set of binary attributes.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public AttributeValue withBS(java.nio.ByteBuffer... bS) {
+        if (getBS() == null) setBS(new java.util.ArrayList<java.nio.ByteBuffer>(bS.length));
+        for (java.nio.ByteBuffer value : bS) {
+            getBS().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * A set of binary attributes.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param bS A set of binary attributes.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public AttributeValue withBS(java.util.Collection<java.nio.ByteBuffer> bS) {
+        if (bS == null) {
+            this.bS = null;
+        } else {
+            java.util.List<java.nio.ByteBuffer> bSCopy = new java.util.ArrayList<java.nio.ByteBuffer>(bS.size());
+            bSCopy.addAll(bS);
+            this.bS = bSCopy;
+        }
+
+        return this;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -321,8 +433,10 @@ public class AttributeValue {
         sb.append("{");
         if (s != null) sb.append("S: " + s + ", ");
         if (n != null) sb.append("N: " + n + ", ");
+        if (b != null) sb.append("B: " + b + ", ");
         if (sS != null) sb.append("SS: " + sS + ", ");
         if (nS != null) sb.append("NS: " + nS + ", ");
+        if (bS != null) sb.append("BS: " + bS + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -334,8 +448,10 @@ public class AttributeValue {
         
         hashCode = prime * hashCode + ((getS() == null) ? 0 : getS().hashCode()); 
         hashCode = prime * hashCode + ((getN() == null) ? 0 : getN().hashCode()); 
+        hashCode = prime * hashCode + ((getB() == null) ? 0 : getB().hashCode()); 
         hashCode = prime * hashCode + ((getSS() == null) ? 0 : getSS().hashCode()); 
         hashCode = prime * hashCode + ((getNS() == null) ? 0 : getNS().hashCode()); 
+        hashCode = prime * hashCode + ((getBS() == null) ? 0 : getBS().hashCode()); 
         return hashCode;
     }
     
@@ -351,10 +467,14 @@ public class AttributeValue {
         if (other.getS() != null && other.getS().equals(this.getS()) == false) return false; 
         if (other.getN() == null ^ this.getN() == null) return false;
         if (other.getN() != null && other.getN().equals(this.getN()) == false) return false; 
+        if (other.getB() == null ^ this.getB() == null) return false;
+        if (other.getB() != null && other.getB().equals(this.getB()) == false) return false; 
         if (other.getSS() == null ^ this.getSS() == null) return false;
         if (other.getSS() != null && other.getSS().equals(this.getSS()) == false) return false; 
         if (other.getNS() == null ^ this.getNS() == null) return false;
         if (other.getNS() != null && other.getNS().equals(this.getNS()) == false) return false; 
+        if (other.getBS() == null ^ this.getBS() == null) return false;
+        if (other.getBS() != null && other.getBS().equals(this.getBS()) == false) return false; 
         return true;
     }
     

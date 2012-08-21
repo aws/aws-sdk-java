@@ -88,7 +88,7 @@ public class ArchiveTransferManager {
     /**
      * Constructs a new ArchiveTransferManager, using the specified AWS credentials provider
      * and client configuration.
-     *  
+     *
 	 * @param credentialsProvider
 	 *            The AWS credentials provider used to authenticate requests.
 	 * @param clientConfiguration
@@ -100,17 +100,43 @@ public class ArchiveTransferManager {
 
 	/**
 	 * Constructs a new ArchiveTransferManager, using the specified Amazon
+	 * Glacier client and AWS credentials provider.
+	 *
+	 * @param glacier
+	 *            The client for working with Amazon Glacier.
+	 * @param credentialsProvider
+	 *            The AWS credentials provider used to authenticate requests.
+	 */
+    public ArchiveTransferManager(AmazonGlacierClient glacier, AWSCredentialsProvider credentialsProvider) {
+    	this(glacier, credentialsProvider, new ClientConfiguration());
+    }
+
+	/**
+	 * Constructs a new ArchiveTransferManager, using the specified Amazon
+	 * Glacier client and AWS credentials.
+	 *
+	 * @param glacier
+	 *            The client for working with Amazon Glacier.
+	 * @param credentials
+	 *            The AWS credentials used to authenticate requests.
+	 */
+    public ArchiveTransferManager(AmazonGlacierClient glacier, AWSCredentials credentials) {
+    	this(glacier, new StaticCredentialsProvider(credentials), new ClientConfiguration());
+    }
+
+	/**
+	 * Constructs a new ArchiveTransferManager, using the specified Amazon
 	 * Glacier client, AWS credentials provider and client configuration.
 	 *
-	 * @param glacier 
-	 *            The client for working with Amazon Glacier. 
+	 * @param glacier
+	 *            The client for working with Amazon Glacier.
 	 * @param credentialsProvider
 	 *            The AWS credentials provider used to authenticate requests.
 	 * @param clientConfiguration
 	 *            Client specific options, such as proxy settings, retries, and
 	 *            timeouts.
 	 */
-    ArchiveTransferManager(AmazonGlacierClient glacier, AWSCredentialsProvider credentialsProvider, ClientConfiguration clientConfiguration) {
+    public ArchiveTransferManager(AmazonGlacierClient glacier, AWSCredentialsProvider credentialsProvider, ClientConfiguration clientConfiguration) {
     	this.credentialsProvider = credentialsProvider;
     	this.clientConfiguration = clientConfiguration;
     	this.glacier = glacier;
@@ -256,7 +282,7 @@ public class ArchiveTransferManager {
     	GetJobOutputResult jobOutputResult = null;
     	try {
     		jobStatusMonitor = new JobStatusMonitor(credentialsProvider, clientConfiguration);
-    		
+
     		JobParameters jobParameters = new JobParameters()
     			.withArchiveId(archiveId)
     			.withType("archive-retrieval")
@@ -276,10 +302,10 @@ public class ArchiveTransferManager {
     	} finally {
     		jobStatusMonitor.shutdown();
     	}
-    	
+
     	downloadJobOutput(jobOutputResult, file);
     }
-    
+
     private void downloadJobOutput(GetJobOutputResult jobOutputResult, File file) {
         TreeHashInputStream input;
         OutputStream output = null;
@@ -406,7 +432,7 @@ public class ArchiveTransferManager {
         }
     }
 
-    
+
     private UploadResult uploadInSinglePart(final String accountId, final String vaultName, final String archiveDescription, final File file)
             throws AmazonServiceException, AmazonClientException, FileNotFoundException {
         String checksum = TreeHashGenerator.calculateTreeHash(file);

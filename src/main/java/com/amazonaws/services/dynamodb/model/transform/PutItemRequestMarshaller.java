@@ -99,6 +99,9 @@ public class PutItemRequestMarshaller implements Marshaller<Request<PutItemReque
                         if (itemListValue.getValue().getN() != null) {
                             jsonWriter.key("N").value(itemListValue.getValue().getN());
                         }
+                        if (itemListValue.getValue().getB() != null) {
+                            jsonWriter.key("B").value(itemListValue.getValue().getB());
+                        }
 
                         java.util.List<String> sSList = itemListValue.getValue().getSS();
                         if (sSList != null && sSList.size() > 0) {
@@ -120,6 +123,18 @@ public class PutItemRequestMarshaller implements Marshaller<Request<PutItemReque
 
                             for (String nSListValue : nSList) {
                                 jsonWriter.value(nSListValue);
+                            }
+                            jsonWriter.endArray();
+                        }
+
+                        java.util.List<java.nio.ByteBuffer> bSList = itemListValue.getValue().getBS();
+                        if (bSList != null && bSList.size() > 0) {
+
+                            jsonWriter.key("BS");
+                            jsonWriter.array();
+
+                            for (java.nio.ByteBuffer bSListValue : bSList) {
+                                jsonWriter.value(bSListValue);
                             }
                             jsonWriter.endArray();
                         }
@@ -148,6 +163,9 @@ public class PutItemRequestMarshaller implements Marshaller<Request<PutItemReque
                             if (value.getN() != null) {
                                 jsonWriter.key("N").value(value.getN());
                             }
+                            if (value.getB() != null) {
+                                jsonWriter.key("B").value(value.getB());
+                            }
 
                             java.util.List<String> sSList = value.getSS();
                             if (sSList != null && sSList.size() > 0) {
@@ -169,6 +187,18 @@ public class PutItemRequestMarshaller implements Marshaller<Request<PutItemReque
 
                                 for (String nSListValue : nSList) {
                                     jsonWriter.value(nSListValue);
+                                }
+                                jsonWriter.endArray();
+                            }
+
+                            java.util.List<java.nio.ByteBuffer> bSList = value.getBS();
+                            if (bSList != null && bSList.size() > 0) {
+
+                                jsonWriter.key("BS");
+                                jsonWriter.array();
+
+                                for (java.nio.ByteBuffer bSListValue : bSList) {
+                                    jsonWriter.value(bSListValue);
                                 }
                                 jsonWriter.endArray();
                             }
