@@ -11,6 +11,9 @@
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
+ * 
+ * Portions copyright 2006-2009 James Murty. Please see LICENSE.txt 
+ * for applicable license terms and NOTICE.txt for applicable notices. 
  */
 package com.amazonaws.services.s3.model;
 

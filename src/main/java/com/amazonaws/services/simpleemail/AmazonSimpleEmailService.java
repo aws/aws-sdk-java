@@ -38,8 +38,8 @@ public interface AmazonSimpleEmailService {
      * Overrides the default endpoint for this client ("https://email.us-east-1.amazonaws.com").
      * Callers can use this method to control which AWS region they want to work with.
      * <p>
-     * Callers can pass in just the endpoint (ex: "ec2.amazonaws.com") or a full
-     * URL, including the protocol (ex: "https://ec2.amazonaws.com"). If the
+     * Callers can pass in just the endpoint (ex: "email.us-east-1.amazonaws.com") or a full
+     * URL, including the protocol (ex: "https://email.us-east-1.amazonaws.com"). If the
      * protocol is not specified here, the default protocol from this client's
      * {@link ClientConfiguration} will be used, which by default is HTTPS.
      * <p>
@@ -49,8 +49,8 @@ public interface AmazonSimpleEmailService {
      * http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912</a>
      *
      * @param endpoint
-     *            The endpoint (ex: "ec2.amazonaws.com") or a full URL,
-     *            including the protocol (ex: "https://ec2.amazonaws.com") of
+     *            The endpoint (ex: "email.us-east-1.amazonaws.com") or a full URL,
+     *            including the protocol (ex: "https://email.us-east-1.amazonaws.com") of
      *            the region specific AWS endpoint this client will communicate
      *            with.
      *

@@ -216,8 +216,11 @@ public class ServiceUtils {
      *            containing the object's data.
      * @param destinationFile
      *            The file to store the object's data in.
+     * @param performIntegrityCheck
+     *            Boolean valuable to indicate whether do the integrity check or not          
+     *            
      */
-    public static void downloadObjectToFile(S3Object s3Object, File destinationFile) {
+    public static void downloadObjectToFile(S3Object s3Object, File destinationFile,boolean performIntegrityCheck) {
 
         // attempt to create the parent if it doesn't exist
         File parentDirectory = destinationFile.getParentFile();
@@ -258,7 +261,7 @@ public class ServiceUtils {
             log.warn("Unable to calculate MD5 hash to validate download: " + e.getMessage(), e);
         }
 
-        if (clientSideHash != null && serverSideHash != null && !Arrays.equals(clientSideHash, serverSideHash)) {
+        if (performIntegrityCheck && clientSideHash != null && serverSideHash != null && !Arrays.equals(clientSideHash, serverSideHash)) {
             throw new AmazonClientException("Unable to verify integrity of data download.  " +
                     "Client calculated content hash didn't match hash calculated by Amazon S3.  " +
                     "The data stored in '" + destinationFile.getAbsolutePath() + "' may be corrupt.");

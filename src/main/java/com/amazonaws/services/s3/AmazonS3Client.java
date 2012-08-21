@@ -921,9 +921,10 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
         S3Object s3Object = getObject(getObjectRequest);
         // getObject can return null if constraints were specified but not met
-        if (s3Object == null) return null;
-
-        ServiceUtils.downloadObjectToFile(s3Object, destinationFile);
+        if(s3Object==null)return null;
+        
+        ServiceUtils.downloadObjectToFile(s3Object, destinationFile,(getObjectRequest.getRange()==null));
+        
         return s3Object.getObjectMetadata();
     }
 

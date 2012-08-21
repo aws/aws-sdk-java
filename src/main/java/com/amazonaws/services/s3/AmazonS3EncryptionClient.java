@@ -32,8 +32,10 @@ import org.apache.commons.logging.LogFactory;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
+import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.ClientConfiguration;
 import com.amazonaws.auth.AWSCredentials;
+import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.services.s3.internal.crypto.ByteRangeCapturingInputStream;
 import com.amazonaws.services.s3.internal.crypto.EncryptedUploadContext;
 import com.amazonaws.services.s3.internal.crypto.EncryptionInstruction;
@@ -41,6 +43,8 @@ import com.amazonaws.services.s3.internal.crypto.EncryptionUtils;
 import com.amazonaws.services.s3.internal.crypto.JceEncryptionConstants;
 import com.amazonaws.services.s3.model.CompleteMultipartUploadRequest;
 import com.amazonaws.services.s3.model.CompleteMultipartUploadResult;
+import com.amazonaws.services.s3.model.CopyPartRequest;
+import com.amazonaws.services.s3.model.CopyPartResult;
 import com.amazonaws.services.s3.model.CryptoConfiguration;
 import com.amazonaws.services.s3.model.CryptoStorageMode;
 import com.amazonaws.services.s3.model.DeleteObjectRequest;
@@ -58,6 +62,8 @@ import com.amazonaws.services.s3.model.S3Object;
 import com.amazonaws.services.s3.model.StaticEncryptionMaterialsProvider;
 import com.amazonaws.services.s3.model.UploadPartRequest;
 import com.amazonaws.services.s3.model.UploadPartResult;
+import com.amazonaws.services.s3.transfer.TransferManager;
+import com.amazonaws.util.VersionInfoUtils;
 
 /**
  * The AmazonS3Encryption class extends the Amazon S3 Client, allowing you to store data securely in S3.
@@ -68,6 +74,8 @@ public class AmazonS3EncryptionClient extends AmazonS3Client {
 
     private EncryptionMaterialsProvider encryptionMaterialsProvider;
     private CryptoConfiguration cryptoConfig;
+    
+    private static final String USER_AGENT = AmazonS3EncryptionClient.class.getName() + "/" + VersionInfoUtils.getVersion();
 
     /** Shared logger for encryption client events */
     private static Log log = LogFactory.getLog(AmazonS3EncryptionClient.class);
@@ -138,7 +146,7 @@ public class AmazonS3EncryptionClient extends AmazonS3Client {
      *            A provider for the encryption materials to be used to encrypt and decrypt data.
      */
     public AmazonS3EncryptionClient(EncryptionMaterialsProvider encryptionMaterialsProvider) {
-        this(null, encryptionMaterialsProvider, new ClientConfiguration(), new CryptoConfiguration());
+        this((AWSCredentialsProvider)null, encryptionMaterialsProvider, new ClientConfiguration(), new CryptoConfiguration());
     }
 
     /**
@@ -211,7 +219,7 @@ public class AmazonS3EncryptionClient extends AmazonS3Client {
      */
     public AmazonS3EncryptionClient(EncryptionMaterialsProvider encryptionMaterialsProvider,
             CryptoConfiguration cryptoConfig) {
-        this(null, encryptionMaterialsProvider, new ClientConfiguration(), cryptoConfig);
+        this((AWSCredentialsProvider)null, encryptionMaterialsProvider, new ClientConfiguration(), cryptoConfig);
     }
 
     /**
@@ -246,6 +254,23 @@ public class AmazonS3EncryptionClient extends AmazonS3Client {
      */
     public AmazonS3EncryptionClient(AWSCredentials credentials, EncryptionMaterialsProvider encryptionMaterialsProvider) {
         this(credentials, encryptionMaterialsProvider, new ClientConfiguration(), new CryptoConfiguration());
+    }
+    
+    /**
+     * <p>
+     * Constructs a new Amazon S3 Encryption client using the specified AWS credentials to
+     * access Amazon S3.  Object contents will be encrypted and decrypted with the encryption
+     * materials provided.
+     * </p>
+     *
+     * @param credentialsProvider
+     *            The AWS credentials provider which will provide credentials
+     *            to authenticate requests with AWS services.
+     * @param encryptionMaterialsProvider
+     *            A provider for the encryption materials to be used to encrypt and decrypt data.
+     */
+    public AmazonS3EncryptionClient(AWSCredentialsProvider credentialsProvider, EncryptionMaterialsProvider encryptionMaterialsProvider) {
+        this(credentialsProvider, encryptionMaterialsProvider, new ClientConfiguration(), new CryptoConfiguration());
     }
 
     /**
@@ -292,6 +317,27 @@ public class AmazonS3EncryptionClient extends AmazonS3Client {
 
     /**
      * <p>
+     * Constructs a new Amazon S3 Encryption client using the specified AWS credentials to
+     * access Amazon S3.  Object contents will be encrypted and decrypted with the encryption
+     * materials provided.  The encryption implementation of the provided crypto provider will
+     * be used to encrypt and decrypt data.
+     * </p>
+     *
+     * @param credentialsProvider
+     *            The AWS credentials provider which will provide credentials
+     *            to authenticate requests with AWS services.
+     * @param encryptionMaterialsProvider
+     *            A provider for the encryption materials to be used to encrypt and decrypt data.
+     * @param cryptoConfig
+     *            The crypto configuration whose parameters will be used to encrypt and decrypt data.
+     */
+    public AmazonS3EncryptionClient(AWSCredentialsProvider credentialsProvider,
+            EncryptionMaterialsProvider encryptionMaterialsProvider, CryptoConfiguration cryptoConfig) {
+        this(credentialsProvider, encryptionMaterialsProvider, new ClientConfiguration(), cryptoConfig);
+    }
+    
+    /**
+     * <p>
      * Constructs a new Amazon S3 Encryption client using the specified AWS credentials and
      * client configuration to access Amazon S3.  Object contents will be encrypted and decrypted
      * with the encryption materials provided. The crypto provider and storage mode denoted in
@@ -328,12 +374,26 @@ public class AmazonS3EncryptionClient extends AmazonS3Client {
         this.cryptoConfig = cryptoConfig;
     }
 
+    public AmazonS3EncryptionClient(AWSCredentialsProvider credentialsProvider,
+            EncryptionMaterialsProvider encryptionMaterialsProvider,
+            ClientConfiguration clientConfig, CryptoConfiguration cryptoConfig) {
+        super(credentialsProvider, clientConfig);
+        assertParameterNotNull(encryptionMaterialsProvider,
+                               "EncryptionMaterialsProvider parameter must not be null.");
+        assertParameterNotNull(cryptoConfig, "CryptoConfiguration parameter must not be null.");
+        this.encryptionMaterialsProvider = encryptionMaterialsProvider;
+        this.cryptoConfig = cryptoConfig;
+    }
+    
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#putObject(com.amazonaws.services.s3.model.PutObjectRequest)
      */
     @Override
     public PutObjectResult putObject(PutObjectRequest putObjectRequest)
     throws AmazonClientException, AmazonServiceException {
+    	
+    	appendUserAgent(putObjectRequest, USER_AGENT);
+    	
         if (this.cryptoConfig.getStorageMode() == CryptoStorageMode.InstructionFile) {
             return putObjectUsingInstructionFile(putObjectRequest);
         } else {
@@ -347,6 +407,9 @@ public class AmazonS3EncryptionClient extends AmazonS3Client {
     @Override
     public S3Object getObject(GetObjectRequest getObjectRequest)
     throws AmazonClientException, AmazonServiceException {
+    	
+    	appendUserAgent(getObjectRequest, USER_AGENT);
+    	
         // Adjust the crypto range to retrieve all of the cipher blocks needed to contain the user's desired
         // range of bytes.
         long[] desiredRange = getObjectRequest.getRange();
@@ -390,6 +453,7 @@ public class AmazonS3EncryptionClient extends AmazonS3Client {
     @Override
     public ObjectMetadata getObject(GetObjectRequest getObjectRequest, File destinationFile)
     throws AmazonClientException, AmazonServiceException {
+    		
         assertParameterNotNull(destinationFile,
         "The destination file parameter must be specified when downloading an object directly to a file");
 
@@ -427,6 +491,9 @@ public class AmazonS3EncryptionClient extends AmazonS3Client {
      */
     @Override
     public void deleteObject(DeleteObjectRequest deleteObjectRequest) {
+    	
+    	appendUserAgent(deleteObjectRequest, USER_AGENT);
+    	
         // Delete the object
         super.deleteObject(deleteObjectRequest);
         // If it exists, delete the instruction file.
@@ -441,6 +508,8 @@ public class AmazonS3EncryptionClient extends AmazonS3Client {
 	public CompleteMultipartUploadResult completeMultipartUpload(
 			CompleteMultipartUploadRequest completeMultipartUploadRequest)
 			throws AmazonClientException, AmazonServiceException {
+    	
+    	appendUserAgent(completeMultipartUploadRequest, USER_AGENT);
 
     	String uploadId = completeMultipartUploadRequest.getUploadId();
     	EncryptedUploadContext encryptedUploadContext = currentMultipartUploadSecretKeys.get(uploadId);
@@ -480,6 +549,8 @@ public class AmazonS3EncryptionClient extends AmazonS3Client {
 	public InitiateMultipartUploadResult initiateMultipartUpload(
 			InitiateMultipartUploadRequest initiateMultipartUploadRequest)
 			throws AmazonClientException, AmazonServiceException {
+		
+		appendUserAgent(initiateMultipartUploadRequest, USER_AGENT);
 
         // Generate a one-time use symmetric key and initialize a cipher to encrypt object data
         SecretKey envelopeSymmetricKey = EncryptionUtils.generateOneTimeUseSymmetricKey();
@@ -519,6 +590,8 @@ public class AmazonS3EncryptionClient extends AmazonS3Client {
 	@Override
     public UploadPartResult uploadPart(UploadPartRequest uploadPartRequest)
         throws AmazonClientException, AmazonServiceException {
+		
+		appendUserAgent(uploadPartRequest, USER_AGENT);
 
 		boolean isLastPart = uploadPartRequest.isLastPart();
 		String uploadId = uploadPartRequest.getUploadId();
@@ -573,7 +646,18 @@ public class AmazonS3EncryptionClient extends AmazonS3Client {
 		return result;
     }
 
-
+	@Override
+	 public CopyPartResult copyPart(CopyPartRequest copyPartRequest) {
+		String uploadId = copyPartRequest.getUploadId();
+		EncryptedUploadContext encryptedUploadContext = currentMultipartUploadSecretKeys.get(uploadId);
+		
+		if (!encryptedUploadContext.hasFinalPartBeenSeen()) {
+			encryptedUploadContext.setHasFinalPartBeenSeen(true);
+		}
+		
+		return super.copyPart(copyPartRequest);
+	}
+    
     /*
      * Private helper methods
      */
@@ -711,4 +795,10 @@ public class AmazonS3EncryptionClient extends AmazonS3Client {
     private void assertParameterNotNull(Object parameterValue, String errorMessage) {
         if (parameterValue == null) throw new IllegalArgumentException(errorMessage);
     }
+    
+    public <X extends AmazonWebServiceRequest> X appendUserAgent(X request, String userAgent) {
+        request.getRequestClientOptions().addClientMarker(USER_AGENT);
+        return request;
+    }
+    
 }

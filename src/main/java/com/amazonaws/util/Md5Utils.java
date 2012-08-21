@@ -1,6 +1,9 @@
 /*
  * Copyright 2012 Amazon Technologies, Inc.
  *
+ * Portions copyright 2006-2009 James Murty. Please see LICENSE.txt
+ * for applicable license terms and NOTICE.txt for applicable notices.
+ *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at:

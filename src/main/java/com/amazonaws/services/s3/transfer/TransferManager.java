@@ -111,7 +111,6 @@ public class TransferManager {
 
     /** Configuration for how TransferManager processes requests. */
     private TransferManagerConfiguration configuration;
-
     /** The thread pool in which transfers are uploaded or downloaded. */
     private ThreadPoolExecutor threadPool;
 
@@ -119,6 +118,7 @@ public class TransferManager {
     private ScheduledExecutorService timedThreadPool = new ScheduledThreadPoolExecutor(1);
 
     private static final Log log = LogFactory.getLog(TransferManager.class);
+
     
     /**
      * Constructs a new <code>TransferManager</code> and Amazon S3 client using
@@ -460,37 +460,49 @@ public class TransferManager {
         appendUserAgent(getObjectRequest, USER_AGENT);
 
         String description = "Downloading from " + getObjectRequest.getBucketName() + "/" + getObjectRequest.getKey();
-
+      
         // Add our own transfer progress listener
         TransferProgressImpl transferProgress = new TransferProgressImpl();
         ProgressListenerChain listenerChain = new ProgressListenerChain(new TransferProgressUpdatingListener(
                 transferProgress), getObjectRequest.getProgressListener());
-        getObjectRequest.setProgressListener(listenerChain);
-
-        final S3Object s3Object = s3.getObject(getObjectRequest);
-        final DownloadImpl download = new DownloadImpl(description, transferProgress, listenerChain, s3Object, stateListener);
-
-        // null is returned when constraints aren't met
-        if (s3Object == null) {
-            download.setState(TransferState.Canceled);
-            download.setMonitor(new DownloadMonitor(download, null));
-            return download;
-        }
-
-        long contentLength = s3Object.getObjectMetadata().getContentLength();
+        getObjectRequest.setProgressListener(listenerChain); 
+        final ObjectMetadata objectMetadata = s3.getObjectMetadata(getObjectRequest.getBucketName(), getObjectRequest.getKey());
+        
+        final StartDownloadLock startDownloadLock = new StartDownloadLock();
+        final DownloadImpl download = new DownloadImpl(description, transferProgress, listenerChain, null, stateListener);
+        long contentLength = objectMetadata.getContentLength();
         if (getObjectRequest.getRange() != null && getObjectRequest.getRange().length == 2) {
             long startingByte = getObjectRequest.getRange()[0];
             long lastByte     = getObjectRequest.getRange()[1];
             contentLength     = lastByte - startingByte;
         }
+        
         transferProgress.setTotalBytesToTransfer(contentLength);
 
         Future<?> future = threadPool.submit(new Callable<Object>() {
             @Override
             public Object call() throws Exception {
                 try {
+                	synchronized (startDownloadLock) {
+                		if ( !startDownloadLock.downloadReady ) {
+                            	try {
+                            		startDownloadLock.wait();
+                            		} catch ( InterruptedException e ) {
+                                 throw new AmazonClientException("Couldn't wait for setting future into the monitor");
+                             }
+                		 }
+                	 }
                     download.setState(TransferState.InProgress);
-                    ServiceUtils.downloadObjectToFile(s3Object, file);
+                    final S3Object s3Object = s3.getObject(getObjectRequest);
+                    
+                    download.setS3Object(s3Object);
+  
+               	    if (s3Object == null) {
+                        download.setState(TransferState.Canceled);
+                        download.setMonitor(new DownloadMonitor(download, null));
+                        return download;
+                    }
+                    ServiceUtils.downloadObjectToFile(s3Object, file,(getObjectRequest.getRange() == null));
                     download.setState(TransferState.Completed);
                     return true;
                 } catch (Exception e) {
@@ -503,7 +515,10 @@ public class TransferManager {
             }
         });
         download.setMonitor(new DownloadMonitor(download, future));
-
+        synchronized (startDownloadLock) {
+        	startDownloadLock.downloadReady = true;
+        	startDownloadLock.notify();
+        }
         return download;
     }
     
@@ -593,6 +608,11 @@ public class TransferManager {
                     stateChangeListener));
         }
         
+        if ( downloads.isEmpty() ) {
+        	multipleFileDownload.setState(TransferState.Completed);
+        	return multipleFileDownload;
+        }
+        
         // Notify all state changes waiting for the downloads to all be queued
         // to wake up and continue.
         synchronized (allTransfersQueuedLock) {
@@ -605,6 +625,10 @@ public class TransferManager {
     
     private static final class AllDownloadsQueuedLock {
         private volatile boolean allQueued = false;
+    }
+    
+    private  static final class StartDownloadLock {
+    	private volatile boolean downloadReady = false;
     }
     
     private static final class MultipleFileTransferStateChangeListener implements TransferStateChangeListener {
@@ -700,6 +724,9 @@ public class TransferManager {
         long totalSize = 0;
         List<File> files = new LinkedList<File>();
         listFiles(directory, files, includeSubdirectories);
+        if (files.isEmpty()) {
+         multipleFileUpload.setState(TransferState.Completed);
+        }
         for (File f : files) {
             totalSize += f.length();
             String key = f.getAbsolutePath().substring(directory.getAbsolutePath().length() + 1)
@@ -729,8 +756,8 @@ public class TransferManager {
         File[] found = dir.listFiles();
         if ( found != null ) {
             for ( File f : found ) {
-                if ( f.isDirectory() ) {
-                    if ( includeSubDirectories ) {
+                if (f.isDirectory()) {
+                    if (includeSubDirectories) {
                         listFiles(f, results, includeSubDirectories);
                     }
                 } else {

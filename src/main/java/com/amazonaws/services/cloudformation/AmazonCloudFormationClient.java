@@ -770,7 +770,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
     }
     
     /**
-     * Overrides the default endpoint for this client and explicitly provides
+     * Overrides the default endpoint for this client ("https://cloudformation.us-east-1.amazonaws.com") and explicitly provides
      * an AWS region ID and AWS service name to use when the client calculates a signature
      * for requests.  In almost all cases, this region ID and service name
      * are automatically determined from the endpoint, and callers should use the simpler
@@ -781,8 +781,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      * afterwards creates inevitable race conditions for any service requests in
      * transit.</b>
      * <p>
-     * Callers can pass in just the endpoint (ex: "ec2.amazonaws.com") or a full
-     * URL, including the protocol (ex: "https://ec2.amazonaws.com"). If the
+     * Callers can pass in just the endpoint (ex: "cloudformation.us-east-1.amazonaws.com") or a full
+     * URL, including the protocol (ex: "https://cloudformation.us-east-1.amazonaws.com"). If the
      * protocol is not specified here, the default protocol from this client's
      * {@link ClientConfiguration} will be used, which by default is HTTPS.
      * <p>
@@ -792,8 +792,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      * http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912</a>
      *
      * @param endpoint
-     *            The endpoint (ex: "ec2.amazonaws.com") or a full URL,
-     *            including the protocol (ex: "https://ec2.amazonaws.com") of
+     *            The endpoint (ex: "cloudformation.us-east-1.amazonaws.com") or a full URL,
+     *            including the protocol (ex: "https://cloudformation.us-east-1.amazonaws.com") of
      *            the region specific AWS endpoint this client will communicate
      *            with.
      * @param serviceName

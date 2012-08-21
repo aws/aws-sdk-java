@@ -47,6 +47,8 @@ import com.amazonaws.Request;
 import com.amazonaws.ResponseMetadata;
 import com.amazonaws.handlers.RequestHandler;
 import com.amazonaws.internal.CustomBackoffStrategy;
+import com.amazonaws.util.AWSRequestMetrics;
+import com.amazonaws.util.AWSRequestMetrics.Field;
 import com.amazonaws.util.CountingInputStream;
 import com.amazonaws.util.ResponseMetadataCache;
 import com.amazonaws.util.TimingInfo;
@@ -68,10 +70,6 @@ public class AmazonHttpClient {
 
     /** Internal client for sending HTTP requests */
     private HttpClient httpClient;
-
-	private static final String BYTES_PROCESSED_COUNTER = "bytes-processed";
-	private static final String RESPONSE_PROCESSING_SUBMEASUREMENT = "response-processing";
-	public static final String HTTP_REQUEST_TIME = "httprequest";
 
     /** Maximum exponential back-off time before retrying a request */
     private static final int MAX_BACKOFF_IN_MILLISECONDS = 20 * 1000;
@@ -166,7 +164,6 @@ public class AmazonHttpClient {
 
     	try {
     		TimingInfo timingInfo = new TimingInfo(startTime);
-    		executionContext.setTimingInfo(timingInfo);
     		T t = executeHelper(request, responseHandler, errorResponseHandler, executionContext);
     		timingInfo.setEndTime(System.currentTimeMillis());
 
@@ -209,6 +206,12 @@ public class AmazonHttpClient {
             requestLog.debug("Sending Request: " + request.toString());
         }
 
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        /* add the service endpoint to the logs. You can infer service name from service endpoint */
+        awsRequestMetrics.addProperty(Field.ServiceName.name(), request.getServiceName());
+        awsRequestMetrics.addProperty(Field.ServiceEndpoint.name(), request.getEndpoint());
+        
+        
         // Apply whatever request options we know how to handle, such as user-agent.
         applyRequestData(request);
 
@@ -225,47 +228,68 @@ public class AmazonHttpClient {
         originalHeaders.putAll(request.getHeaders());
 
         while (true) {
+            awsRequestMetrics.setCounter(Field.AttemptCount.name(), retryCount+1);
             if ( retryCount > 0 ) {
                 request.setParameters(originalParameters);
                 request.setHeaders(originalHeaders);
             }
 
-        	// Sign the request if a signer was provided
-        	if (executionContext.getSigner() != null && executionContext.getCredentials() != null) {
-        		executionContext.getSigner().sign(request, executionContext.getCredentials());
-        	}
-
-            HttpRequestBase httpRequest = httpRequestFactory.createHttpRequest(request, config, entity, executionContext);
-
-            if (httpRequest instanceof HttpEntityEnclosingRequest) {
-            	entity = ((HttpEntityEnclosingRequest)httpRequest).getEntity();
-            }
-
-            if (redirectedURI != null) {
-            	httpRequest.setURI(redirectedURI);
-            }
-
+            HttpRequestBase httpRequest = null;
             org.apache.http.HttpResponse response = null;
             try {
+            	if (request.getContent() != null && request.getContent().markSupported() && retryCount > 0) {
+            		request.getContent().reset();
+            	}
+            	
+            	// Sign the request if a signer was provided
+            	if (executionContext.getSigner() != null && executionContext.getCredentials() != null) {
+            		awsRequestMetrics.startEvent(Field.RequestSigningTime.name());
+            		executionContext.getSigner().sign(request, executionContext.getCredentials());
+            		awsRequestMetrics.endEvent(Field.RequestSigningTime.name());
+            	}
+            	
+            	httpRequest = httpRequestFactory.createHttpRequest(request, config, entity, executionContext);
+            	
+            	if (httpRequest instanceof HttpEntityEnclosingRequest) {
+            		entity = ((HttpEntityEnclosingRequest)httpRequest).getEntity();
+            	}
+            	
+            	if (redirectedURI != null) {
+            		httpRequest.setURI(redirectedURI);
+            	}
+            	
                 if ( retryCount > 0 ) {
+                    awsRequestMetrics.startEvent(Field.RetryPauseTime.name());
                     pauseExponentially(retryCount, exception, executionContext.getCustomBackoffStrategy());
-                    if ( entity != null ) {
-                        InputStream content = entity.getContent();
-                        if ( content.markSupported() ) {
-                            content.reset();
-                        }
+                    awsRequestMetrics.endEvent(Field.RetryPauseTime.name());
+                }
+                
+                if ( entity != null ) {
+                    InputStream content = entity.getContent();
+                    if ( retryCount > 0 ) {
+	                    if ( content.markSupported() ) {
+	                        content.reset();
+	                    	content.mark(-1);
+	                    }
+                    } else {
+	                    if ( content.markSupported() ) {
+	                    	content.mark(-1);
+	                    }
                     }
                 }
 
                 exception = null;
                 retryCount++;
 
-                long start = System.currentTimeMillis();
+                awsRequestMetrics.startEvent(Field.HttpRequestTime.name());
                 response = httpClient.execute(httpRequest);
-                long end = System.currentTimeMillis();
-                executionContext.getTimingInfo().addSubMeasurement(HTTP_REQUEST_TIME, new TimingInfo(start,end));
+                awsRequestMetrics.endEvent(Field.HttpRequestTime.name());
+
 
                 if (isRequestSuccessful(response)) {
+                    
+                    awsRequestMetrics.addProperty(Field.StatusCode.name(), response.getStatusLine().getStatusCode());
+                    
                     /*
                      * If we get back any 2xx status code, then we know we should
                      * treat the service call as successful.
@@ -284,16 +308,25 @@ public class AmazonHttpClient {
                     log.debug("Redirecting to: " + redirectedLocation);
                     redirectedURI = URI.create(redirectedLocation);
                     httpRequest.setURI(redirectedURI);
+                    awsRequestMetrics.addProperty(Field.StatusCode.name(), response.getStatusLine().getStatusCode());
+                    awsRequestMetrics.addProperty(Field.RedirectLocation.name(), redirectedLocation);
+                    awsRequestMetrics.addProperty(Field.AWSRequestID.name(), null);
+
                 } else {
                     leaveHttpConnectionOpen = errorResponseHandler.needsConnectionLeftOpen();
                     exception = handleErrorResponse(request, errorResponseHandler, httpRequest, response);
+                    awsRequestMetrics.addProperty(Field.AWSRequestID.name(), exception.getRequestId());
+                    awsRequestMetrics.addProperty(Field.AWSErrorCode.name(), exception.getErrorCode());
+                    awsRequestMetrics.addProperty(Field.StatusCode.name(), exception.getStatusCode());
 
                     if (!shouldRetry(httpRequest, exception, retryCount)) {
                         throw exception;
                     }
                 }
             } catch (IOException ioe) {
-                log.warn("Unable to execute HTTP request: " + ioe.getMessage(), ioe);
+                log.info("Unable to execute HTTP request: " + ioe.getMessage(), ioe);
+                awsRequestMetrics.addProperty(Field.Exception.name(), ioe.toString());
+                awsRequestMetrics.addProperty(Field.AWSRequestID.name(), null);
 
                 if (!shouldRetry(httpRequest, ioe, retryCount)) {
                     throw new AmazonClientException("Unable to execute HTTP request: " + ioe.getMessage(), ioe);
@@ -310,7 +343,7 @@ public class AmazonHttpClient {
                 	try {response.getEntity().getContent().close();} catch (Throwable t) {}
                 }
             }
-        }
+        } /* end while (true) */
     }
 
     /**
@@ -465,21 +498,14 @@ public class AmazonHttpClient {
                 httpResponse.setContent(countingInputStream);
             }
 
-            long startTime = System.currentTimeMillis();
+        	AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        	awsRequestMetrics.startEvent(Field.ResponseProcessingTime.name());
             AmazonWebServiceResponse<? extends T> awsResponse = responseHandler.handle(httpResponse);
-            long endTime = System.currentTimeMillis();
-
-        	if (System.getProperty(PROFILING_SYSTEM_PROPERTY) != null) {
-	            if (executionContext.getTimingInfo() != null) {
-	            	TimingInfo timingInfo = executionContext.getTimingInfo();
-	            	TimingInfo responseProcessingTiming = new TimingInfo(startTime, endTime);
-					timingInfo.addSubMeasurement(RESPONSE_PROCESSING_SUBMEASUREMENT, responseProcessingTiming);
-
-	                if (countingInputStream != null) {
-	               	 	responseProcessingTiming.addCounter(BYTES_PROCESSED_COUNTER, countingInputStream.getByteCount());
-	                }
-	            }
-        	}
+            awsRequestMetrics.endEvent(Field.ResponseProcessingTime.name());
+            if (countingInputStream != null) {
+                awsRequestMetrics.setCounter(Field.BytesProcessed.name(), countingInputStream.getByteCount());
+            }
+            
 
             if (awsResponse == null)
                 throw new RuntimeException("Unable to unmarshall response metadata");
@@ -490,7 +516,8 @@ public class AmazonHttpClient {
                 requestLog.debug("Received successful response: " + apacheHttpResponse.getStatusLine().getStatusCode()
                         + ", AWS Request ID: " + awsResponse.getRequestId());
             }
-
+            awsRequestMetrics.addProperty(Field.AWSRequestID.name(), awsResponse.getRequestId());
+            
             return awsResponse.getResult();
         } catch (Exception e) {
             String errorMessage = "Unable to unmarshall response (" + e.getMessage() + ")";

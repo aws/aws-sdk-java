@@ -14,10 +14,12 @@
  */
 package com.amazonaws.auth;
 
+import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 import java.net.URI;
+import java.security.DigestInputStream;
 import java.security.MessageDigest;
 import java.util.Iterator;
 import java.util.Map;
@@ -44,7 +46,7 @@ import com.amazonaws.util.StringInputStream;
 public abstract class AbstractAWSSigner implements Signer {
 
     /** The default encoding to use when URL encoding */
-    private static final String DEFAULT_ENCODING = "UTF-8";
+    protected static final String DEFAULT_ENCODING = "UTF-8";
 
     /**
      * Computes an RFC 2104-compliant HMAC signature and returns the result as a
@@ -113,6 +115,19 @@ public abstract class AbstractAWSSigner implements Signer {
             throw new AmazonClientException("Unable to compute hash while signing request: " + e.getMessage(), e);
         }
     }
+    
+    protected byte[] hash(InputStream input) throws AmazonClientException {
+        try {
+            MessageDigest md = MessageDigest.getInstance("SHA-256");
+            DigestInputStream digestInputStream = new DigestInputStream(input, md);
+            byte[] buffer = new byte[1024];
+            while (digestInputStream.read(buffer) > -1);
+            return digestInputStream.getMessageDigest().digest();
+        } catch (Exception e) {
+            throw new AmazonClientException("Unable to compute hash while signing request: " + e.getMessage(), e);
+        }
+    }
+   
 
     /**
      * Hashes the binary data using the SHA-256 algorithm.
@@ -234,18 +249,9 @@ public abstract class AbstractAWSSigner implements Signer {
 	 *         form encoding of query string params.
 	 */
     protected byte[] getBinaryRequestPayloadWithoutQueryParams(Request<?> request) {
-        try {
-            InputStream content = request.getContent();
-            if (content == null) return new byte[0];
+    	InputStream content = getBinaryRequestPayloadStreamWithoutQueryParams(request);
 
-            if (content instanceof StringInputStream) {
-                return ((StringInputStream)content).getString().getBytes(DEFAULT_ENCODING);
-            }
-
-            if (!content.markSupported()) {
-                throw new AmazonClientException("Unable to read request payload to sign request.");
-            }
-
+    	try {
             content.mark(-1);
             ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
             byte[] buffer = new byte[1024 * 5];
@@ -260,6 +266,39 @@ public abstract class AbstractAWSSigner implements Signer {
             content.reset();
 
             return byteArrayOutputStream.toByteArray();
+        } catch (Exception e) {
+            throw new AmazonClientException("Unable to read request payload to sign request: " + e.getMessage(), e);
+        }
+    }
+    
+    protected InputStream getBinaryRequestPayloadStream(Request<?> request) {
+        if (HttpUtils.usePayloadForQueryParameters(request)) {
+            String encodedParameters = HttpUtils.encodeParameters(request);
+            if (encodedParameters == null) return new ByteArrayInputStream(new byte[0]);
+            try {
+				return new ByteArrayInputStream(encodedParameters.getBytes(DEFAULT_ENCODING));
+			} catch (UnsupportedEncodingException e) {
+				throw new AmazonClientException("Unable to encode string into bytes");
+			}
+        }
+
+        return getBinaryRequestPayloadStreamWithoutQueryParams(request);
+    }
+    
+    protected InputStream getBinaryRequestPayloadStreamWithoutQueryParams(Request<?> request) {
+        try {
+            InputStream content = request.getContent();
+            if (content == null) return new ByteArrayInputStream(new byte[0]);
+
+            if (content instanceof StringInputStream) {
+                return (StringInputStream)content;
+            }
+
+            if (!content.markSupported()) {
+                throw new AmazonClientException("Unable to read request payload to sign request.");
+            }
+
+            return request.getContent();
         } catch (Exception e) {
             throw new AmazonClientException("Unable to read request payload to sign request: " + e.getMessage(), e);
         }

@@ -345,7 +345,7 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
     }
     
     /**
-     * Overrides the default endpoint for this client and explicitly provides
+     * Overrides the default endpoint for this client ("https://sts.amazonaws.com") and explicitly provides
      * an AWS region ID and AWS service name to use when the client calculates a signature
      * for requests.  In almost all cases, this region ID and service name
      * are automatically determined from the endpoint, and callers should use the simpler
@@ -356,8 +356,8 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
      * afterwards creates inevitable race conditions for any service requests in
      * transit.</b>
      * <p>
-     * Callers can pass in just the endpoint (ex: "ec2.amazonaws.com") or a full
-     * URL, including the protocol (ex: "https://ec2.amazonaws.com"). If the
+     * Callers can pass in just the endpoint (ex: "sts.amazonaws.com") or a full
+     * URL, including the protocol (ex: "https://sts.amazonaws.com"). If the
      * protocol is not specified here, the default protocol from this client's
      * {@link ClientConfiguration} will be used, which by default is HTTPS.
      * <p>
@@ -367,8 +367,8 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
      * http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912</a>
      *
      * @param endpoint
-     *            The endpoint (ex: "ec2.amazonaws.com") or a full URL,
-     *            including the protocol (ex: "https://ec2.amazonaws.com") of
+     *            The endpoint (ex: "sts.amazonaws.com") or a full URL,
+     *            including the protocol (ex: "https://sts.amazonaws.com") of
      *            the region specific AWS endpoint this client will communicate
      *            with.
      * @param serviceName

@@ -16,7 +16,12 @@ package com.amazonaws.services.s3.transfer.internal;
 
 import java.io.IOException;
 import java.util.Collection;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Future;
+import java.util.concurrent.ThreadPoolExecutor;
 
+import com.amazonaws.AmazonClientException;
+import com.amazonaws.AmazonServiceException;
 import com.amazonaws.services.s3.transfer.Download;
 import com.amazonaws.services.s3.transfer.MultipleFileDownload;
 import com.amazonaws.services.s3.transfer.Transfer;
@@ -50,7 +55,29 @@ public class MultipleFileDownloadImpl extends MultipleFileTransfer implements Mu
     public String getBucketName() {
         return bucketName;
     }
-
+   
+    /**
+     * Waits for this transfer to complete. This is a blocking call; the current
+     * thread is suspended until this transfer completes.
+     *
+     * @throws AmazonClientException
+     *             If any errors were encountered in the client while making the
+     *             request or handling the response.
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
+     * @throws InterruptedException
+     *             If this thread is interrupted while waiting for the transfer
+     *             to complete.
+     */
+    @Override
+    public void waitForCompletion()
+            throws AmazonClientException, AmazonServiceException, InterruptedException {
+    	if (subTransfers.isEmpty())
+    		return;
+        super.waitForCompletion();
+    }
+    
     /**
      * Aborts all outstanding downloads.
      */

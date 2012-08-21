@@ -23,7 +23,7 @@ import com.amazonaws.services.s3.transfer.TransferProgress;
 
 public class DownloadImpl extends AbstractTransfer implements Download {
     
-    final S3Object s3Object;
+    S3Object s3Object;
 
     public DownloadImpl(String description, TransferProgress transferProgress,
             ProgressListenerChain progressListenerChain, S3Object s3Object, TransferStateChangeListener listener) {
@@ -63,9 +63,21 @@ public class DownloadImpl extends AbstractTransfer implements Download {
      *
      * @throws IOException
      */
-    public void abort() throws IOException {
-        s3Object.getObjectContent().abort();
+    public synchronized void abort() throws IOException {
+    	
+    	this.monitor.getFuture().cancel(true);
+    	
+    	  if ( s3Object != null ) {
+              s3Object.getObjectContent().abort();
+    	      }
         setState(TransferState.Canceled);
+    }
+    
+    /**
+     *  Set the S3 object to download.
+     */
+    public synchronized void setS3Object(S3Object s3Object) {
+    	this.s3Object = s3Object;
     }
 
 

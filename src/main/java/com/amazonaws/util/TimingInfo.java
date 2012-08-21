@@ -14,61 +14,125 @@
  */
 package com.amazonaws.util;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 public class TimingInfo {
-	private final long startTime;
-	private long endTime;
+    
+    private final long startTime;
+    private long endTime;
+    private final Map<String, List<TimingInfo>> subMeasurementsByName = new HashMap<String, List<TimingInfo>>();
+    private final Map<String, Number> countersByName = new HashMap<String, Number>();
 
-	private Map<String, TimingInfo> subMeasurementsByName = new HashMap<String, TimingInfo>();
-	private Map<String, Number> countersByName = new HashMap<String, Number>();
+    public TimingInfo() {
+        this(System.currentTimeMillis(), -1);
+    }
 
+    public TimingInfo(long startTime) {
+        this(startTime, -1);
+    }
 
-	public TimingInfo() {
-		this(System.currentTimeMillis(), -1);
-	}
+    public TimingInfo(long startTime, long endTime) {
+        this.startTime = startTime;
+        this.endTime = endTime;
+    }
 
-	public TimingInfo(long startTime) {
-		this(startTime, -1);
-	}
+    /**
+     * Returns the time, in epoch milliseconds, at which this timing period started.
+     * 
+     * @return the time, in epoch milliseconds, at which this timing period started.
+     */
+    public long getStartTime() {
+        return startTime;
+    }
 
-	public TimingInfo(long startTime, long endTime) {
-		this.startTime = startTime;
-		this.endTime = endTime;
-	}
+    public long getEndTime() {
+        return endTime;
+    }
+    
+    /**
+     *  Returns the difference between endTime and startTime in milli-seconds
+     */
+    public double getTimeTakenMillis() {
+        return TimeUnit.NANOSECONDS.toMicros(endTime - startTime)/1000.0 /* do double math */;
+    }
+    
+    @Override
+    public String toString() {
+        return String.valueOf(getTimeTakenMillis());
+    }
 
+    public void setEndTime(long endTime) {
+        this.endTime = endTime;
+    }
 
-	/**
-	 * Returns the time, in epoch milliseconds, at which this timing period started.
-	 *
-	 * @return the time, in epoch milliseconds, at which this timing period started.
-	 */
-	public long getStartTime() {
-		return startTime;
-	}
+    public void addSubMeasurement(String subMeasurementName, TimingInfo timingInfo) {
 
-	public long getEndTime() {
-		return endTime;
-	}
+        List<TimingInfo> timings = subMeasurementsByName.get(subMeasurementName);
+        if (timings == null) {
+            timings = new ArrayList<TimingInfo>();
+            subMeasurementsByName.put(subMeasurementName, timings);
+        }
 
-	public void setEndTime(long endTime) {
-		this.endTime = endTime;
-	}
+        timings.add(timingInfo);
+    }
 
-	public void addSubMeasurement(String subMeasurementName, TimingInfo timingInfo) {
-		subMeasurementsByName.put(subMeasurementName, timingInfo);
-	}
+    public TimingInfo getSubMeasurement(String subMeasurementName) {
+        return getSubMeasurement(subMeasurementName, 0);
+    }
 
-	public TimingInfo getSubMeasurement(String subMeasurementName) {
-		return subMeasurementsByName.get(subMeasurementName);
-	}
+    public TimingInfo getSubMeasurement(String subMesurementName, int index) {
 
-	public void addCounter(String key, Number value) {
-		countersByName.put(key, value);
-	}
+        List<TimingInfo> timings = subMeasurementsByName.get(subMesurementName);
+        if (index < 0 || timings == null || timings.size() == 0
+                || index >= timings.size()) {
+            return null;
+        }
 
-	public Number getCounter(String key) {
-		return countersByName.get(key);
-	}
+        return timings.get(index);
+    }
+    
+    public TimingInfo getLastSubMeasurement(String subMeasurementName) {
+        
+        if (subMeasurementsByName == null || subMeasurementsByName.size() == 0) {
+            return null;
+        }
+        
+        return getSubMeasurement(subMeasurementName, subMeasurementsByName.size()-1);
+    }
+
+    public List<TimingInfo> getAllSubMeasurements(String subMeasurementName) {
+        return subMeasurementsByName.get(subMeasurementName);
+    }
+
+    public Map<String, List<TimingInfo>> getSubMeasurementsByName() {
+        return subMeasurementsByName;
+    }
+
+    public Number getCounter(String key) {
+        return countersByName.get(key);
+    }
+
+    public Map<String, Number> getAllCounters() {
+        return countersByName;
+    }
+    
+    public void setCounter(String key, long count) {
+        countersByName.put(key, count);
+    }
+
+    public void incrementCounter(String key) {
+
+        int count = 0;
+        Number counter = getCounter(key);
+
+        if (counter != null) {
+            count = counter.intValue();
+        }
+
+        setCounter(key, ++count);
+    }
 }

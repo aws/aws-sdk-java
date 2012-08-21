@@ -20,12 +20,12 @@ import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.Signer;
 import com.amazonaws.handlers.RequestHandler;
 import com.amazonaws.internal.CustomBackoffStrategy;
-import com.amazonaws.util.TimingInfo;
+import com.amazonaws.util.AWSRequestMetrics;
 
 public class ExecutionContext {
 	private List<RequestHandler> requestHandlers;
 	private String contextUserAgent;
-	private TimingInfo timingInfo;
+	private AWSRequestMetrics awsRequestMetrics = new AWSRequestMetrics();
 	private CustomBackoffStrategy backoffStrategy;
 
 	/** Optional signer to enable the runtime layer to handle signing requests (and resigning on retries). */
@@ -59,15 +59,15 @@ public class ExecutionContext {
 		return requestHandlers;
 	}
 
-	public TimingInfo getTimingInfo() {
-		return timingInfo;
-	}
+    public AWSRequestMetrics getAwsRequestMetrics() {
+        return awsRequestMetrics;
+    }
 
-	public void setTimingInfo(TimingInfo timingInfo) {
-		this.timingInfo = timingInfo;
-	}
+    public void setAwsRequestMetrics(AWSRequestMetrics awsRequestMetrics) {
+        this.awsRequestMetrics = awsRequestMetrics;
+    }
 
-	/**
+    /**
 	 * Returns the optional signer used to sign the associated request.
 	 *
 	 * @return The optional signer used to sign the associated request.
