@@ -18,52 +18,71 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.cloudformation.AmazonCloudFormation#listStacks(ListStacksRequest) ListStacks operation}.
  * <p>
- * Returns the summary information for stacks whose status matches the specified StackStatusFilter. Summary information for stacks that have been
- * deleted is kept for 90 days after the stack is deleted. If no StackStatusFilter is specified, summary information for all stacks is returned
- * (including existing stacks and stacks that have been deleted).
+ * Returns the summary information for stacks whose status matches the specified StackStatusFilter. Summary information for stacks that have been deleted
+ * is kept for 90 days after the stack is deleted. If no StackStatusFilter is specified, summary information for all stacks is returned (including
+ * existing stacks and stacks that have been deleted).
  * </p>
  *
  * @see com.amazonaws.services.cloudformation.AmazonCloudFormation#listStacks(ListStacksRequest)
  */
 public class ListStacksRequest extends AmazonWebServiceRequest {
 
+    /**
+     * String that identifies the start of the next list of stacks, if there
+     * is one. <p>Default: There is no default value.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 1024<br/>
+     */
     private String nextToken;
 
+    /**
+     * Stack status to use as a filter. Specify one or more stack status
+     * codes to list only stacks with the specified status codes. For a
+     * complete list of stack status codes, see the <code>StackStatus</code>
+     * parameter of the <a>Stack</a> data type.
+     */
     private java.util.List<String> stackStatusFilters;
 
     /**
-     * Returns the value of the NextToken property for this object.
+     * String that identifies the start of the next list of stacks, if there
+     * is one. <p>Default: There is no default value.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
      *
-     * @return The value of the NextToken property for this object.
+     * @return String that identifies the start of the next list of stacks, if there
+     *         is one. <p>Default: There is no default value.
      */
     public String getNextToken() {
         return nextToken;
     }
     
     /**
-     * Sets the value of the NextToken property for this object.
+     * String that identifies the start of the next list of stacks, if there
+     * is one. <p>Default: There is no default value.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
      *
-     * @param nextToken The new value for the NextToken property for this object.
+     * @param nextToken String that identifies the start of the next list of stacks, if there
+     *         is one. <p>Default: There is no default value.
      */
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
     
     /**
-     * Sets the value of the NextToken property for this object.
+     * String that identifies the start of the next list of stacks, if there
+     * is one. <p>Default: There is no default value.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
      *
-     * @param nextToken The new value for the NextToken property for this object.
+     * @param nextToken String that identifies the start of the next list of stacks, if there
+     *         is one. <p>Default: There is no default value.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -75,9 +94,15 @@ public class ListStacksRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * Returns the value of the StackStatusFilters property for this object.
+     * Stack status to use as a filter. Specify one or more stack status
+     * codes to list only stacks with the specified status codes. For a
+     * complete list of stack status codes, see the <code>StackStatus</code>
+     * parameter of the <a>Stack</a> data type.
      *
-     * @return The value of the StackStatusFilters property for this object.
+     * @return Stack status to use as a filter. Specify one or more stack status
+     *         codes to list only stacks with the specified status codes. For a
+     *         complete list of stack status codes, see the <code>StackStatus</code>
+     *         parameter of the <a>Stack</a> data type.
      */
     public java.util.List<String> getStackStatusFilters() {
         
@@ -88,9 +113,15 @@ public class ListStacksRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * Sets the value of the StackStatusFilters property for this object.
+     * Stack status to use as a filter. Specify one or more stack status
+     * codes to list only stacks with the specified status codes. For a
+     * complete list of stack status codes, see the <code>StackStatus</code>
+     * parameter of the <a>Stack</a> data type.
      *
-     * @param stackStatusFilters The new value for the StackStatusFilters property for this object.
+     * @param stackStatusFilters Stack status to use as a filter. Specify one or more stack status
+     *         codes to list only stacks with the specified status codes. For a
+     *         complete list of stack status codes, see the <code>StackStatus</code>
+     *         parameter of the <a>Stack</a> data type.
      */
     public void setStackStatusFilters(java.util.Collection<String> stackStatusFilters) {
         if (stackStatusFilters == null) {
@@ -104,11 +135,17 @@ public class ListStacksRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * Sets the value of the StackStatusFilters property for this object.
+     * Stack status to use as a filter. Specify one or more stack status
+     * codes to list only stacks with the specified status codes. For a
+     * complete list of stack status codes, see the <code>StackStatus</code>
+     * parameter of the <a>Stack</a> data type.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param stackStatusFilters The new value for the StackStatusFilters property for this object.
+     * @param stackStatusFilters Stack status to use as a filter. Specify one or more stack status
+     *         codes to list only stacks with the specified status codes. For a
+     *         complete list of stack status codes, see the <code>StackStatus</code>
+     *         parameter of the <a>Stack</a> data type.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -122,11 +159,17 @@ public class ListStacksRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * Sets the value of the StackStatusFilters property for this object.
+     * Stack status to use as a filter. Specify one or more stack status
+     * codes to list only stacks with the specified status codes. For a
+     * complete list of stack status codes, see the <code>StackStatus</code>
+     * parameter of the <a>Stack</a> data type.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param stackStatusFilters The new value for the StackStatusFilters property for this object.
+     * @param stackStatusFilters Stack status to use as a filter. Specify one or more stack status
+     *         codes to list only stacks with the specified status codes. For a
+     *         complete list of stack status codes, see the <code>StackStatus</code>
+     *         parameter of the <a>Stack</a> data type.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

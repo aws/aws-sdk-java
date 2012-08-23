@@ -71,8 +71,10 @@ public class CreateStackRequest extends AmazonWebServiceRequest {
     private java.util.List<Parameter> parameters;
 
     /**
-     * Boolean to enable or disable rollback on stack creation
-     * failures.<br></br> Default: <code>false</code>
+     * Set to <code>true</code> to disable rollback of the stack if stack
+     * creation failed. You can specify either <code>DisableRollback</code>
+     * or <code>OnFailure</code>, but not both. <p>Default:
+     * <code>false</code>
      */
     private Boolean disableRollback;
 
@@ -113,6 +115,25 @@ public class CreateStackRequest extends AmazonWebServiceRequest {
      * properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
      */
     private java.util.List<String> capabilities;
+
+    /**
+     * Determines what action will be taken if stack creation fails. This
+     * must be one of: DO_NOTHING, ROLLBACK, or DELETE. You can specify
+     * either <code>OnFailure</code> or <code>DisableRollback</code>, but not
+     * both. <p>Default: <code>ROLLBACK</code>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>DO_NOTHING, ROLLBACK, DELETE
+     */
+    private String onFailure;
+
+    /**
+     * A set of user-defined <code>Tags</code> to associate with this stack,
+     * represented by key/value pairs. Tags defined for the stack are
+     * propogated to EC2 resources that are created as part of the stack. A
+     * maximum number of 10 tags can be specified.
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * The name associated with the stack. The name must be unique within
@@ -396,35 +417,47 @@ public class CreateStackRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * Boolean to enable or disable rollback on stack creation
-     * failures.<br></br> Default: <code>false</code>
+     * Set to <code>true</code> to disable rollback of the stack if stack
+     * creation failed. You can specify either <code>DisableRollback</code>
+     * or <code>OnFailure</code>, but not both. <p>Default:
+     * <code>false</code>
      *
-     * @return Boolean to enable or disable rollback on stack creation
-     *         failures.<br></br> Default: <code>false</code>
+     * @return Set to <code>true</code> to disable rollback of the stack if stack
+     *         creation failed. You can specify either <code>DisableRollback</code>
+     *         or <code>OnFailure</code>, but not both. <p>Default:
+     *         <code>false</code>
      */
     public Boolean isDisableRollback() {
         return disableRollback;
     }
     
     /**
-     * Boolean to enable or disable rollback on stack creation
-     * failures.<br></br> Default: <code>false</code>
+     * Set to <code>true</code> to disable rollback of the stack if stack
+     * creation failed. You can specify either <code>DisableRollback</code>
+     * or <code>OnFailure</code>, but not both. <p>Default:
+     * <code>false</code>
      *
-     * @param disableRollback Boolean to enable or disable rollback on stack creation
-     *         failures.<br></br> Default: <code>false</code>
+     * @param disableRollback Set to <code>true</code> to disable rollback of the stack if stack
+     *         creation failed. You can specify either <code>DisableRollback</code>
+     *         or <code>OnFailure</code>, but not both. <p>Default:
+     *         <code>false</code>
      */
     public void setDisableRollback(Boolean disableRollback) {
         this.disableRollback = disableRollback;
     }
     
     /**
-     * Boolean to enable or disable rollback on stack creation
-     * failures.<br></br> Default: <code>false</code>
+     * Set to <code>true</code> to disable rollback of the stack if stack
+     * creation failed. You can specify either <code>DisableRollback</code>
+     * or <code>OnFailure</code>, but not both. <p>Default:
+     * <code>false</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param disableRollback Boolean to enable or disable rollback on stack creation
-     *         failures.<br></br> Default: <code>false</code>
+     * @param disableRollback Set to <code>true</code> to disable rollback of the stack if stack
+     *         creation failed. You can specify either <code>DisableRollback</code>
+     *         or <code>OnFailure</code>, but not both. <p>Default:
+     *         <code>false</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -436,11 +469,15 @@ public class CreateStackRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * Boolean to enable or disable rollback on stack creation
-     * failures.<br></br> Default: <code>false</code>
+     * Set to <code>true</code> to disable rollback of the stack if stack
+     * creation failed. You can specify either <code>DisableRollback</code>
+     * or <code>OnFailure</code>, but not both. <p>Default:
+     * <code>false</code>
      *
-     * @return Boolean to enable or disable rollback on stack creation
-     *         failures.<br></br> Default: <code>false</code>
+     * @return Set to <code>true</code> to disable rollback of the stack if stack
+     *         creation failed. You can specify either <code>DisableRollback</code>
+     *         or <code>OnFailure</code>, but not both. <p>Default:
+     *         <code>false</code>
      */
     public Boolean getDisableRollback() {
         return disableRollback;
@@ -772,6 +809,212 @@ public class CreateStackRequest extends AmazonWebServiceRequest {
     }
     
     /**
+     * Determines what action will be taken if stack creation fails. This
+     * must be one of: DO_NOTHING, ROLLBACK, or DELETE. You can specify
+     * either <code>OnFailure</code> or <code>DisableRollback</code>, but not
+     * both. <p>Default: <code>ROLLBACK</code>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>DO_NOTHING, ROLLBACK, DELETE
+     *
+     * @return Determines what action will be taken if stack creation fails. This
+     *         must be one of: DO_NOTHING, ROLLBACK, or DELETE. You can specify
+     *         either <code>OnFailure</code> or <code>DisableRollback</code>, but not
+     *         both. <p>Default: <code>ROLLBACK</code>
+     *
+     * @see OnFailure
+     */
+    public String getOnFailure() {
+        return onFailure;
+    }
+    
+    /**
+     * Determines what action will be taken if stack creation fails. This
+     * must be one of: DO_NOTHING, ROLLBACK, or DELETE. You can specify
+     * either <code>OnFailure</code> or <code>DisableRollback</code>, but not
+     * both. <p>Default: <code>ROLLBACK</code>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>DO_NOTHING, ROLLBACK, DELETE
+     *
+     * @param onFailure Determines what action will be taken if stack creation fails. This
+     *         must be one of: DO_NOTHING, ROLLBACK, or DELETE. You can specify
+     *         either <code>OnFailure</code> or <code>DisableRollback</code>, but not
+     *         both. <p>Default: <code>ROLLBACK</code>
+     *
+     * @see OnFailure
+     */
+    public void setOnFailure(String onFailure) {
+        this.onFailure = onFailure;
+    }
+    
+    /**
+     * Determines what action will be taken if stack creation fails. This
+     * must be one of: DO_NOTHING, ROLLBACK, or DELETE. You can specify
+     * either <code>OnFailure</code> or <code>DisableRollback</code>, but not
+     * both. <p>Default: <code>ROLLBACK</code>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>DO_NOTHING, ROLLBACK, DELETE
+     *
+     * @param onFailure Determines what action will be taken if stack creation fails. This
+     *         must be one of: DO_NOTHING, ROLLBACK, or DELETE. You can specify
+     *         either <code>OnFailure</code> or <code>DisableRollback</code>, but not
+     *         both. <p>Default: <code>ROLLBACK</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see OnFailure
+     */
+    public CreateStackRequest withOnFailure(String onFailure) {
+        this.onFailure = onFailure;
+        return this;
+    }
+    
+    
+    /**
+     * Determines what action will be taken if stack creation fails. This
+     * must be one of: DO_NOTHING, ROLLBACK, or DELETE. You can specify
+     * either <code>OnFailure</code> or <code>DisableRollback</code>, but not
+     * both. <p>Default: <code>ROLLBACK</code>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>DO_NOTHING, ROLLBACK, DELETE
+     *
+     * @param onFailure Determines what action will be taken if stack creation fails. This
+     *         must be one of: DO_NOTHING, ROLLBACK, or DELETE. You can specify
+     *         either <code>OnFailure</code> or <code>DisableRollback</code>, but not
+     *         both. <p>Default: <code>ROLLBACK</code>
+     *
+     * @see OnFailure
+     */
+    public void setOnFailure(OnFailure onFailure) {
+        this.onFailure = onFailure.toString();
+    }
+    
+    /**
+     * Determines what action will be taken if stack creation fails. This
+     * must be one of: DO_NOTHING, ROLLBACK, or DELETE. You can specify
+     * either <code>OnFailure</code> or <code>DisableRollback</code>, but not
+     * both. <p>Default: <code>ROLLBACK</code>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>DO_NOTHING, ROLLBACK, DELETE
+     *
+     * @param onFailure Determines what action will be taken if stack creation fails. This
+     *         must be one of: DO_NOTHING, ROLLBACK, or DELETE. You can specify
+     *         either <code>OnFailure</code> or <code>DisableRollback</code>, but not
+     *         both. <p>Default: <code>ROLLBACK</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see OnFailure
+     */
+    public CreateStackRequest withOnFailure(OnFailure onFailure) {
+        this.onFailure = onFailure.toString();
+        return this;
+    }
+    
+    /**
+     * A set of user-defined <code>Tags</code> to associate with this stack,
+     * represented by key/value pairs. Tags defined for the stack are
+     * propogated to EC2 resources that are created as part of the stack. A
+     * maximum number of 10 tags can be specified.
+     *
+     * @return A set of user-defined <code>Tags</code> to associate with this stack,
+     *         represented by key/value pairs. Tags defined for the stack are
+     *         propogated to EC2 resources that are created as part of the stack. A
+     *         maximum number of 10 tags can be specified.
+     */
+    public java.util.List<Tag> getTags() {
+        
+        if (tags == null) {
+            tags = new java.util.ArrayList<Tag>();
+        }
+        return tags;
+    }
+    
+    /**
+     * A set of user-defined <code>Tags</code> to associate with this stack,
+     * represented by key/value pairs. Tags defined for the stack are
+     * propogated to EC2 resources that are created as part of the stack. A
+     * maximum number of 10 tags can be specified.
+     *
+     * @param tags A set of user-defined <code>Tags</code> to associate with this stack,
+     *         represented by key/value pairs. Tags defined for the stack are
+     *         propogated to EC2 resources that are created as part of the stack. A
+     *         maximum number of 10 tags can be specified.
+     */
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>(tags.size());
+        tagsCopy.addAll(tags);
+        this.tags = tagsCopy;
+    }
+    
+    /**
+     * A set of user-defined <code>Tags</code> to associate with this stack,
+     * represented by key/value pairs. Tags defined for the stack are
+     * propogated to EC2 resources that are created as part of the stack. A
+     * maximum number of 10 tags can be specified.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param tags A set of user-defined <code>Tags</code> to associate with this stack,
+     *         represented by key/value pairs. Tags defined for the stack are
+     *         propogated to EC2 resources that are created as part of the stack. A
+     *         maximum number of 10 tags can be specified.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public CreateStackRequest withTags(Tag... tags) {
+        if (getTags() == null) setTags(new java.util.ArrayList<Tag>(tags.length));
+        for (Tag value : tags) {
+            getTags().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * A set of user-defined <code>Tags</code> to associate with this stack,
+     * represented by key/value pairs. Tags defined for the stack are
+     * propogated to EC2 resources that are created as part of the stack. A
+     * maximum number of 10 tags can be specified.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param tags A set of user-defined <code>Tags</code> to associate with this stack,
+     *         represented by key/value pairs. Tags defined for the stack are
+     *         propogated to EC2 resources that are created as part of the stack. A
+     *         maximum number of 10 tags can be specified.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public CreateStackRequest withTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+        } else {
+            java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>(tags.size());
+            tagsCopy.addAll(tags);
+            this.tags = tagsCopy;
+        }
+
+        return this;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -791,6 +1034,8 @@ public class CreateStackRequest extends AmazonWebServiceRequest {
         if (timeoutInMinutes != null) sb.append("TimeoutInMinutes: " + timeoutInMinutes + ", ");
         if (notificationARNs != null) sb.append("NotificationARNs: " + notificationARNs + ", ");
         if (capabilities != null) sb.append("Capabilities: " + capabilities + ", ");
+        if (onFailure != null) sb.append("OnFailure: " + onFailure + ", ");
+        if (tags != null) sb.append("Tags: " + tags + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -808,6 +1053,8 @@ public class CreateStackRequest extends AmazonWebServiceRequest {
         hashCode = prime * hashCode + ((getTimeoutInMinutes() == null) ? 0 : getTimeoutInMinutes().hashCode()); 
         hashCode = prime * hashCode + ((getNotificationARNs() == null) ? 0 : getNotificationARNs().hashCode()); 
         hashCode = prime * hashCode + ((getCapabilities() == null) ? 0 : getCapabilities().hashCode()); 
+        hashCode = prime * hashCode + ((getOnFailure() == null) ? 0 : getOnFailure().hashCode()); 
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode()); 
         return hashCode;
     }
     
@@ -835,6 +1082,10 @@ public class CreateStackRequest extends AmazonWebServiceRequest {
         if (other.getNotificationARNs() != null && other.getNotificationARNs().equals(this.getNotificationARNs()) == false) return false; 
         if (other.getCapabilities() == null ^ this.getCapabilities() == null) return false;
         if (other.getCapabilities() != null && other.getCapabilities().equals(this.getCapabilities()) == false) return false; 
+        if (other.getOnFailure() == null ^ this.getOnFailure() == null) return false;
+        if (other.getOnFailure() != null && other.getOnFailure().equals(this.getOnFailure()) == false) return false; 
+        if (other.getTags() == null ^ this.getTags() == null) return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false) return false; 
         return true;
     }
     

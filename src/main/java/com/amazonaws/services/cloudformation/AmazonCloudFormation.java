@@ -21,30 +21,14 @@ import com.amazonaws.services.cloudformation.model.*;
 /**
  * Interface for accessing AmazonCloudFormation.
  * AWS CloudFormation <p>
- * This is the AWS CloudFormation API Reference. The major sections of this guide are described in the following table.
- * </p>
- * 
- * <ul>
- * <li> <a href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/APIReference/API_Operations.html"> Actions </a> : Alphabetical list of
- * CloudFormation actions</li>
- * <li> <a href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/APIReference/API_Types.html"> Data Types </a> : Alphabetical list of
- * CloudFormation data types</li>
- * <li> <a href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/APIReference/CommonParameters.html"> Common Parameters </a> : Parameters
- * that all Query actions can use</li>
- * <li> <a href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/APIReference/CommonErrors.html"> Common Errors </a> : Client and server
- * errors that all actions can return</li>
- * 
- * </ul>
- * <p>
- * This guide is for programmers who need detailed information about the CloudFormation APIs. You use AWS CloudFormation to create and manage AWS
- * infrastructure deployments predictably and repeatedly. CloudFormation helps you leverage AWS products such as Amazon EC2, EBS, Amazon SNS, ELB, and
- * Auto Scaling to build highly-reliable, highly scalable, cost effective applications without worrying about creating and configuring the underlying the
- * AWS infrastructure.
+ * AWS CloudFormation enables you to create and manage AWS infrastructure deployments predictably and repeatedly. AWS CloudFormation helps you leverage
+ * AWS products such as Amazon EC2, EBS, Amazon SNS, ELB, and Auto Scaling to build highly-reliable, highly scalable, cost effective applications without
+ * worrying about creating and configuring the underlying the AWS infrastructure.
  * </p>
  * <p>
- * Through the use of a template file you write, and a few AWS CloudFormation commands or API actions, AWS CloudFormation enables you to manage a
- * collection of resources together as a single unit called a stack. AWS CloudFormation creates and deletes all member resources of the stack together
- * and manages all dependencies between the resources for you.
+ * With AWS CloudFormation, you declare all of your resources and dependencies in a template file. The template defines a collection of resources as a
+ * single unit called a stack. AWS CloudFormation creates and deletes all member resources of the stack together and manages all dependencies between the
+ * resources for you.
  * </p>
  * <p>
  * For more information about this product, go to the <a href="http://aws.amazon.com/cloudformation/"> CloudFormation Product Page </a> .
@@ -111,9 +95,9 @@ public interface AmazonCloudFormation {
 
     /**
      * <p>
-     * Creates a stack as specified in the template. After the call
-     * completes successfully, the stack creation starts. You can check the
-     * status of the stack via the DescribeStacks API.
+     * Creates a stack as specified in the template. After the call completes
+     * successfully, the stack creation starts. You can check the status of
+     * the stack via the DescribeStacks API.
      * </p>
      * <p>
      * <b>NOTE:</b> Currently, the limit for stacks is 20 stacks per account
@@ -168,7 +152,7 @@ public interface AmazonCloudFormation {
     /**
      * <p>
      * Returns the estimated monthly cost of a template. The return value is
-     * an AWS Simply Monthly Calculator URL with a query string that
+     * an AWS Simple Monthly Calculator URL with a query string that
      * describes the resources required to run the template.
      * </p>
      *
@@ -312,9 +296,9 @@ public interface AmazonCloudFormation {
 
     /**
      * <p>
-     * Deletes a specified stack. Once the call completes successfully,
-     * stack deletion starts. Deleted stacks do not show up in the
-     * DescribeStacks API if the deletion has been completed successfully.
+     * Deletes a specified stack. Once the call completes successfully, stack
+     * deletion starts. Deleted stacks do not show up in the DescribeStacks
+     * API if the deletion has been completed successfully.
      * </p>
      *
      * @param deleteStackRequest Container for the necessary parameters to
@@ -373,11 +357,21 @@ public interface AmazonCloudFormation {
      * information for up to 90 days after the stack has been deleted.
      * </p>
      * <p>
-     * You must specify <code>StackName</code> or
-     * <code>PhysicalResourceId.</code> In addition, you can specify
-     * <code>LogicalResourceId</code> to filter the returned result. For more
-     * information about resources, the <code>LogicalResourceId</code> and
-     * <code>PhysicalResourceId</code> , go to the <a
+     * If you do not provide either a stack or resource id, information for
+     * all stacks and resources will be returned, up to a limit of 100
+     * records.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> To list more than 100 resources use ListStackResources
+     * instead.
+     * </p>
+     * <p>
+     * You can specify either <code>StackName</code> or
+     * <code>PhysicalResourceId.</code> , but not both. In addition, you can
+     * specify <code>LogicalResourceId</code> to filter the returned result.
+     * For more information about resources, the
+     * <code>LogicalResourceId</code> and <code>PhysicalResourceId</code> ,
+     * go to the <a
      * http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">
      * AWS CloudFormation User Guide </a> .
      * </p>
@@ -407,13 +401,18 @@ public interface AmazonCloudFormation {
 
     /**
      * <p>
-     * Updates a stack as specified in the template. After the call
-     * completes successfully, the stack update starts. You can check the
-     * status of the stack via the DescribeStacks action.
+     * Updates a stack as specified in the template. After the call completes
+     * successfully, the stack update starts. You can check the status of the
+     * stack via the DescribeStacks action.
      * </p>
      * <p>
      * To get a copy of the template for an existing stack, you can use the
      * GetTemplate action.
+     * </p>
+     * <p>
+     * Tags that were associated with this stack during creation time will
+     * still be associated with the stack after an <code>UpdateStack</code>
+     * operation.
      * </p>
      * <p>
      * For more information about creating an update template, updating a
@@ -468,7 +467,7 @@ public interface AmazonCloudFormation {
     /**
      * <p>
      * Returns the estimated monthly cost of a template. The return value is
-     * an AWS Simply Monthly Calculator URL with a query string that
+     * an AWS Simple Monthly Calculator URL with a query string that
      * describes the resources required to run the template.
      * </p>
      * 
@@ -548,11 +547,21 @@ public interface AmazonCloudFormation {
      * information for up to 90 days after the stack has been deleted.
      * </p>
      * <p>
-     * You must specify <code>StackName</code> or
-     * <code>PhysicalResourceId.</code> In addition, you can specify
-     * <code>LogicalResourceId</code> to filter the returned result. For more
-     * information about resources, the <code>LogicalResourceId</code> and
-     * <code>PhysicalResourceId</code> , go to the <a
+     * If you do not provide either a stack or resource id, information for
+     * all stacks and resources will be returned, up to a limit of 100
+     * records.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> To list more than 100 resources use ListStackResources
+     * instead.
+     * </p>
+     * <p>
+     * You can specify either <code>StackName</code> or
+     * <code>PhysicalResourceId.</code> , but not both. In addition, you can
+     * specify <code>LogicalResourceId</code> to filter the returned result.
+     * For more information about resources, the
+     * <code>LogicalResourceId</code> and <code>PhysicalResourceId</code> ,
+     * go to the <a
      * http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">
      * AWS CloudFormation User Guide </a> .
      * </p>

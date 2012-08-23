@@ -46,6 +46,10 @@ public class Stack {
      */
     private java.util.Date creationTime;
 
+    /**
+     * The time the stack was last updated. This field will only be returned
+     * if the stack has been updated at least once.
+     */
     private java.util.Date lastUpdatedTime;
 
     /**
@@ -93,6 +97,12 @@ public class Stack {
      * A list of output structures.
      */
     private java.util.List<Output> outputs;
+
+    /**
+     * A list of <code>Tag</code>s that specify cost allocation information
+     * for the stack.
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * Unique identifier of the stack.
@@ -300,29 +310,35 @@ public class Stack {
     
     
     /**
-     * Returns the value of the LastUpdatedTime property for this object.
+     * The time the stack was last updated. This field will only be returned
+     * if the stack has been updated at least once.
      *
-     * @return The value of the LastUpdatedTime property for this object.
+     * @return The time the stack was last updated. This field will only be returned
+     *         if the stack has been updated at least once.
      */
     public java.util.Date getLastUpdatedTime() {
         return lastUpdatedTime;
     }
     
     /**
-     * Sets the value of the LastUpdatedTime property for this object.
+     * The time the stack was last updated. This field will only be returned
+     * if the stack has been updated at least once.
      *
-     * @param lastUpdatedTime The new value for the LastUpdatedTime property for this object.
+     * @param lastUpdatedTime The time the stack was last updated. This field will only be returned
+     *         if the stack has been updated at least once.
      */
     public void setLastUpdatedTime(java.util.Date lastUpdatedTime) {
         this.lastUpdatedTime = lastUpdatedTime;
     }
     
     /**
-     * Sets the value of the LastUpdatedTime property for this object.
+     * The time the stack was last updated. This field will only be returned
+     * if the stack has been updated at least once.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param lastUpdatedTime The new value for the LastUpdatedTime property for this object.
+     * @param lastUpdatedTime The time the stack was last updated. This field will only be returned
+     *         if the stack has been updated at least once.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -772,6 +788,83 @@ public class Stack {
     }
     
     /**
+     * A list of <code>Tag</code>s that specify cost allocation information
+     * for the stack.
+     *
+     * @return A list of <code>Tag</code>s that specify cost allocation information
+     *         for the stack.
+     */
+    public java.util.List<Tag> getTags() {
+        
+        if (tags == null) {
+            tags = new java.util.ArrayList<Tag>();
+        }
+        return tags;
+    }
+    
+    /**
+     * A list of <code>Tag</code>s that specify cost allocation information
+     * for the stack.
+     *
+     * @param tags A list of <code>Tag</code>s that specify cost allocation information
+     *         for the stack.
+     */
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>(tags.size());
+        tagsCopy.addAll(tags);
+        this.tags = tagsCopy;
+    }
+    
+    /**
+     * A list of <code>Tag</code>s that specify cost allocation information
+     * for the stack.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param tags A list of <code>Tag</code>s that specify cost allocation information
+     *         for the stack.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public Stack withTags(Tag... tags) {
+        if (getTags() == null) setTags(new java.util.ArrayList<Tag>(tags.length));
+        for (Tag value : tags) {
+            getTags().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * A list of <code>Tag</code>s that specify cost allocation information
+     * for the stack.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param tags A list of <code>Tag</code>s that specify cost allocation information
+     *         for the stack.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public Stack withTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+        } else {
+            java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>(tags.size());
+            tagsCopy.addAll(tags);
+            this.tags = tagsCopy;
+        }
+
+        return this;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -796,6 +889,7 @@ public class Stack {
         if (timeoutInMinutes != null) sb.append("TimeoutInMinutes: " + timeoutInMinutes + ", ");
         if (capabilities != null) sb.append("Capabilities: " + capabilities + ", ");
         if (outputs != null) sb.append("Outputs: " + outputs + ", ");
+        if (tags != null) sb.append("Tags: " + tags + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -818,6 +912,7 @@ public class Stack {
         hashCode = prime * hashCode + ((getTimeoutInMinutes() == null) ? 0 : getTimeoutInMinutes().hashCode()); 
         hashCode = prime * hashCode + ((getCapabilities() == null) ? 0 : getCapabilities().hashCode()); 
         hashCode = prime * hashCode + ((getOutputs() == null) ? 0 : getOutputs().hashCode()); 
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode()); 
         return hashCode;
     }
     
@@ -855,6 +950,8 @@ public class Stack {
         if (other.getCapabilities() != null && other.getCapabilities().equals(this.getCapabilities()) == false) return false; 
         if (other.getOutputs() == null ^ this.getOutputs() == null) return false;
         if (other.getOutputs() != null && other.getOutputs().equals(this.getOutputs()) == false) return false; 
+        if (other.getTags() == null ^ this.getTags() == null) return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false) return false; 
         return true;
     }
     

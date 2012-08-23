@@ -25,9 +25,11 @@ import java.io.InputStreamReader;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -52,6 +54,7 @@ import com.amazonaws.services.s3.model.BucketLifecycleConfiguration.Rule;
 import com.amazonaws.services.s3.model.BucketLoggingConfiguration;
 import com.amazonaws.services.s3.model.BucketNotificationConfiguration;
 import com.amazonaws.services.s3.model.BucketNotificationConfiguration.TopicConfiguration;
+import com.amazonaws.services.s3.model.BucketTaggingConfiguration;
 import com.amazonaws.services.s3.model.BucketVersioningConfiguration;
 import com.amazonaws.services.s3.model.BucketWebsiteConfiguration;
 import com.amazonaws.services.s3.model.CanonicalGrantee;
@@ -74,6 +77,7 @@ import com.amazonaws.services.s3.model.Permission;
 import com.amazonaws.services.s3.model.S3Object;
 import com.amazonaws.services.s3.model.S3ObjectSummary;
 import com.amazonaws.services.s3.model.S3VersionSummary;
+import com.amazonaws.services.s3.model.TagSet;
 import com.amazonaws.services.s3.model.VersionListing;
 
 /**
@@ -381,6 +385,14 @@ public class XmlResponsesSaxParser {
         parseXmlInputStream(handler, inputStream);
         return handler;
     }
+    
+    public BucketTaggingConfigurationHandler parseTaggingConfigurationResponse(InputStream inputStream)
+            throws AmazonClientException
+        {
+            BucketTaggingConfigurationHandler handler = new BucketTaggingConfigurationHandler();
+            parseXmlInputStream(handler, inputStream);
+            return handler;
+        }
 
     public DeleteObjectsHandler parseDeletedObjectsResult(InputStream inputStream) {
         DeleteObjectsHandler handler = new DeleteObjectsHandler();
@@ -1931,6 +1943,63 @@ public class XmlResponsesSaxParser {
             }
             else if (name.equals("NotificationConfiguration")) {
                 configuration.setTopicConfigurations( topicConfigurations );
+            }
+            text.setLength(0);
+        }
+
+        @Override
+        public void characters(char ch[], int start, int length) {
+            this.text.append(ch, start, length);
+        }
+    }
+    
+    public class BucketTaggingConfigurationHandler extends DefaultHandler {
+        private BucketTaggingConfiguration configuration = new BucketTaggingConfiguration();
+        private StringBuilder text;
+        private List<TagSet> tagSets;
+        private Map<String, String> tags;
+        private String tagKey;
+        private String tagValue;
+
+        public BucketTaggingConfiguration getConfiguration() { return configuration; }
+
+        @Override
+        public void startDocument() {
+            text = new StringBuilder();
+        }
+
+        @Override
+        public void startElement(String uri, String name, String qName, Attributes attrs) {
+            if (name.equals("Tagging")) {
+                tagSets = new ArrayList<TagSet>(1);
+            } else if (name.equals("TagSet")) {
+            	tags = new HashMap<String, String>( 1 );
+            } else if (name.equals("Tag")) {
+                tagKey = null;
+                tagValue = null;
+            } else if (name.equals("Key")) {
+                text.setLength(0);
+            } else if (name.equals("Value")) {
+                text.setLength(0);
+            } else {
+                log.warn("Ignoring unexpected tag <"+name+">");
+            }
+        }
+
+        @Override
+        public void endElement(String uri, String name, String qName) throws SAXException {
+            if (name.equals("Key")) {
+                tagKey = text.toString();
+            } else if (name.equals("Value")) {
+                tagValue = text.toString();
+            } else if (name.equals("Tag")) {
+            	if (tagKey != null && tagValue != null) {
+            		tags.put(tagKey, tagValue);
+            	}
+            } else if (name.equals("TagSet")) {
+                tagSets.add(new TagSet(tags));
+            } else if (name.equals("Tagging")) {
+                configuration.setTagSets(tagSets);
             }
             text.setLength(0);
         }

@@ -21,10 +21,6 @@ import java.util.List;
 import com.amazonaws.services.simpleworkflow.flow.DecisionException;
 
 
-/**
- * This class is for internal use only and may be changed or removed without prior notice.
- *
- */
 public abstract class RetryPolicyBase implements RetryPolicy {
     
     private List<Class<? extends Throwable>> exceptionsToRetry;

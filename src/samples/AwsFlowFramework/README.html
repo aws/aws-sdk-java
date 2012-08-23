@@ -213,7 +213,7 @@ Cron With Retry Sample:<br/>
 The sample has three executables. You should run each in a separate terminal/console. From the samples folder,<br/>
 Run: ant -f build.xml -Dmain-class="com.amazonaws.services.simpleworkflow.flow.examples.cronwithretry.ActivityHost" run<br/> 
 Run: ant -f build.xml -Dmain-class="com.amazonaws.services.simpleworkflow.flow.examples.cronwithretry.WorkflowHost" run <br/>
-Run: ant -f build.xml -Dmain-class="com.amazonaws.services.simpleworkflow.flow.examples.cronwithretry.CronWorkflowExecutionStarter" -Dmain-args="\"*/10 * * * * *\" PST 60" run<br/>
+Run: ant -f build.xml -Dmain-class="com.amazonaws.services.simpleworkflow.flow.examples.cronwithretry.CronWithRetryWorkflowExecutionStarter" -Dmain-args="\"*/10 * * * * *\" PST 60" run<br/>
 
 The workflow starter takes 3 command line arguments that must be specified:
 <ol>

@@ -51,6 +51,8 @@ import com.amazonaws.services.glacier.model.UploadArchiveResult;
 import com.amazonaws.services.glacier.model.UploadMultipartPartRequest;
 import com.amazonaws.services.s3.internal.InputSubstream;
 import com.amazonaws.services.s3.internal.RepeatableFileInputStream;
+import com.amazonaws.services.sns.AmazonSNSClient;
+import com.amazonaws.services.sqs.AmazonSQSClient;
 import com.amazonaws.util.BinaryUtils;
 
 /**
@@ -73,6 +75,10 @@ public class ArchiveTransferManager {
 	private final AWSCredentialsProvider credentialsProvider;
 
 	private final ClientConfiguration clientConfiguration;
+
+	private final AmazonSQSClient sqs;
+
+	private final AmazonSNSClient sns;
 
 	/**
 	 * Constructs a new ArchiveTransferManager, using the specified AWS
@@ -140,6 +146,35 @@ public class ArchiveTransferManager {
     	this.credentialsProvider = credentialsProvider;
     	this.clientConfiguration = clientConfiguration;
     	this.glacier = glacier;
+    	this.sns = null;
+    	this.sqs = null;
+    }
+
+	/**
+	 * Constructs a new ArchiveTransferManager, using the specified Amazon
+	 * Glacier client, and the specified Amazon SQS and Amazon SNS clients for
+	 * polling download job status.
+	 * <p>
+	 * This constructor form can be used to work with ArchiveTransferManager in
+	 * any AWS region where Amazon Glacier is supported. Just make sure to set
+	 * the correct endpoint on each individual client object so that they all
+	 * operate in the same region.
+	 *
+	 * @param glacier
+	 *            The client for working with Amazon Glacier.
+	 * @param sqs
+	 *            The client for working with Amazon SQS when polling archive
+	 *            retrieval job status.
+	 * @param sns
+	 *            The client for working with Amazon SNS when polling archive
+	 *            retrieval job status.
+	 */
+    public ArchiveTransferManager(AmazonGlacierClient glacier, AmazonSQSClient sqs, AmazonSNSClient sns) {
+    	this.credentialsProvider = null;
+    	this.clientConfiguration = null;
+    	this.glacier = glacier;
+		this.sqs = sqs;
+		this.sns = sns;
     }
 
 	/**
@@ -281,7 +316,11 @@ public class ArchiveTransferManager {
     	JobStatusMonitor jobStatusMonitor = null;
     	GetJobOutputResult jobOutputResult = null;
     	try {
-    		jobStatusMonitor = new JobStatusMonitor(credentialsProvider, clientConfiguration);
+    		if (credentialsProvider != null && clientConfiguration != null) {
+    			jobStatusMonitor = new JobStatusMonitor(credentialsProvider, clientConfiguration);
+    		} else {
+    			jobStatusMonitor = new JobStatusMonitor(sqs, sns);
+    		}
 
     		JobParameters jobParameters = new JobParameters()
     			.withArchiveId(archiveId)

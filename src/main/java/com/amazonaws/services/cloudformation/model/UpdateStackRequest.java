@@ -25,6 +25,9 @@ import com.amazonaws.AmazonWebServiceRequest;
  * To get a copy of the template for an existing stack, you can use the GetTemplate action.
  * </p>
  * <p>
+ * Tags that were associated with this stack during creation time will still be associated with the stack after an <code>UpdateStack</code> operation.
+ * </p>
+ * <p>
  * For more information about creating an update template, updating a stack, and monitoring the progress of the update, see <a
  * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks.html"> Updating a Stack </a> .
  * </p>

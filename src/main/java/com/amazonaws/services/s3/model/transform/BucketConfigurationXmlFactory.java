@@ -21,11 +21,13 @@ import com.amazonaws.services.s3.internal.Constants;
 import com.amazonaws.services.s3.internal.XmlWriter;
 import com.amazonaws.services.s3.model.BucketLifecycleConfiguration;
 import com.amazonaws.services.s3.model.BucketLoggingConfiguration;
+import com.amazonaws.services.s3.model.BucketTaggingConfiguration;
 import com.amazonaws.services.s3.model.BucketVersioningConfiguration;
 import com.amazonaws.services.s3.model.BucketNotificationConfiguration;
 import com.amazonaws.services.s3.model.BucketLifecycleConfiguration.Rule;
 import com.amazonaws.services.s3.model.BucketNotificationConfiguration.TopicConfiguration;
 import com.amazonaws.services.s3.model.BucketWebsiteConfiguration;
+import com.amazonaws.services.s3.model.TagSet;
 
 /**
  * Converts bucket configuration objects into XML byte arrays.
@@ -193,6 +195,52 @@ public class BucketConfigurationXmlFactory {
         xml.start("Days").value("" + rule.getExpirationInDays()).end();
         xml.end(); // </Expiration>
         xml.end(); // </Rule>
+    }
+    
+    /**
+     * Converts the specified {@link BucketTaggingConfiguration} object to an XML fragment that
+     * can be sent to Amazon S3.
+     *
+     * @param config
+     *            The {@link BucketTaggingConfiguration}
+     */
+    /*
+     * <Tagging>
+     	<TagSet>
+        	<Tag>
+           		<Key>Project</Key>
+           		<Value>Foo</Value>
+        	</Tag>
+        	<Tag>
+           		<Key>User</Key>
+           		<Value>nschnarr</Value>
+        	</Tag>
+     	</TagSet>
+  	  </Tagging>    
+    */    
+    public byte[] convertToXmlByteArray(BucketTaggingConfiguration config) throws AmazonClientException {
+        
+        XmlWriter xml = new XmlWriter();
+        xml.start("Tagging");
+        
+        for (TagSet tagset : config.getAllTagSets()) {
+            writeRule(xml, tagset);
+        }
+
+        xml.end();
+
+        return xml.getBytes();
+    }
+
+    private void writeRule(XmlWriter xml, TagSet tagset) {
+        xml.start("TagSet");
+        for ( String key : tagset.getAllTags().keySet() ) {
+        	xml.start("Tag");
+        	xml.start("Key").value(key).end();
+        	xml.start("Value").value(tagset.getTag(key)).end();
+        	xml.end(); // </Tag>
+        }
+        xml.end(); // </TagSet>
     }
 
 }

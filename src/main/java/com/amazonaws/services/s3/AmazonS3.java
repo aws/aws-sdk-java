@@ -32,6 +32,7 @@ import com.amazonaws.services.s3.model.BucketLifecycleConfiguration;
 import com.amazonaws.services.s3.model.BucketLoggingConfiguration;
 import com.amazonaws.services.s3.model.BucketNotificationConfiguration;
 import com.amazonaws.services.s3.model.BucketPolicy;
+import com.amazonaws.services.s3.model.BucketTaggingConfiguration;
 import com.amazonaws.services.s3.model.BucketVersioningConfiguration;
 import com.amazonaws.services.s3.model.BucketWebsiteConfiguration;
 import com.amazonaws.services.s3.model.CannedAccessControlList;
@@ -2650,6 +2651,37 @@ public interface AmazonS3 {
      *            configuration.
      */
     public void deleteBucketLifecycleConfiguration(String bucketName);
+    
+    /**
+     * Gets the tagging configuration for the specified bucket, or null if no
+     * configuration has been established.
+     * 
+     * @param bucketName
+     *            The name of the bucket for which to retrieve tagging
+     *            configuration.
+     */
+    public BucketTaggingConfiguration getBucketTaggingConfiguration(String bucketName);
+
+    /**
+     * Sets the tagging configuration for the specified bucket.
+     * 
+     * @param bucketName
+     *            The name of the bucket for which to set the tagging
+     *            configuration.
+     * @param bucketTaggingConfiguration
+     *            The new tagging configuration for this bucket, which
+     *            completely replaces any existing configuration.
+     */
+    public void setBucketTaggingConfiguration(String bucketName, BucketTaggingConfiguration bucketTaggingConfiguration);
+
+    /**
+     * Removes the Tagging configuration for the bucket specified.
+     * 
+     * @param bucketName
+     *            The name of the bucket for which to remove the tagging
+     *            configuration.
+     */
+    public void deleteBucketTaggingConfiguration(String bucketName);
     
     /**
      * Gets the notification configuration for the specified bucket.

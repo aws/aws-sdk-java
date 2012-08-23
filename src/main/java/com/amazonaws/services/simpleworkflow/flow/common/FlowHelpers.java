@@ -19,10 +19,6 @@ import java.lang.reflect.Method;
 import com.amazonaws.services.simpleworkflow.model.PredefinedDuration;
 
 
-/**
- * This class is for internal use only and may be changed or removed without prior notice.
- *
- */
 public final class FlowHelpers {
     
     public static String secondsToDuration(Long seconds) {

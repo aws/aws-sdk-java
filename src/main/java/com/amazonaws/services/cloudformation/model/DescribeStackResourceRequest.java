@@ -29,47 +29,47 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class DescribeStackResourceRequest extends AmazonWebServiceRequest {
 
     /**
-     * The name or the unique identifier associated with the stack. <p>
-     * Default: There is no default value.
+     * The name or the unique identifier associated with the stack.
+     * <p>Default: There is no default value.
      */
     private String stackName;
 
     /**
-     * The logical name of the resource as specified in the
-     * template.<br></br> Default: There is on default value.
+     * The logical name of the resource as specified in the template.
+     * <p>Default: There is no default value.
      */
     private String logicalResourceId;
 
     /**
-     * The name or the unique identifier associated with the stack. <p>
-     * Default: There is no default value.
+     * The name or the unique identifier associated with the stack.
+     * <p>Default: There is no default value.
      *
-     * @return The name or the unique identifier associated with the stack. <p>
-     *         Default: There is no default value.
+     * @return The name or the unique identifier associated with the stack.
+     *         <p>Default: There is no default value.
      */
     public String getStackName() {
         return stackName;
     }
     
     /**
-     * The name or the unique identifier associated with the stack. <p>
-     * Default: There is no default value.
+     * The name or the unique identifier associated with the stack.
+     * <p>Default: There is no default value.
      *
-     * @param stackName The name or the unique identifier associated with the stack. <p>
-     *         Default: There is no default value.
+     * @param stackName The name or the unique identifier associated with the stack.
+     *         <p>Default: There is no default value.
      */
     public void setStackName(String stackName) {
         this.stackName = stackName;
     }
     
     /**
-     * The name or the unique identifier associated with the stack. <p>
-     * Default: There is no default value.
+     * The name or the unique identifier associated with the stack.
+     * <p>Default: There is no default value.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param stackName The name or the unique identifier associated with the stack. <p>
-     *         Default: There is no default value.
+     * @param stackName The name or the unique identifier associated with the stack.
+     *         <p>Default: There is no default value.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -81,35 +81,35 @@ public class DescribeStackResourceRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * The logical name of the resource as specified in the
-     * template.<br></br> Default: There is on default value.
+     * The logical name of the resource as specified in the template.
+     * <p>Default: There is no default value.
      *
-     * @return The logical name of the resource as specified in the
-     *         template.<br></br> Default: There is on default value.
+     * @return The logical name of the resource as specified in the template.
+     *         <p>Default: There is no default value.
      */
     public String getLogicalResourceId() {
         return logicalResourceId;
     }
     
     /**
-     * The logical name of the resource as specified in the
-     * template.<br></br> Default: There is on default value.
+     * The logical name of the resource as specified in the template.
+     * <p>Default: There is no default value.
      *
-     * @param logicalResourceId The logical name of the resource as specified in the
-     *         template.<br></br> Default: There is on default value.
+     * @param logicalResourceId The logical name of the resource as specified in the template.
+     *         <p>Default: There is no default value.
      */
     public void setLogicalResourceId(String logicalResourceId) {
         this.logicalResourceId = logicalResourceId;
     }
     
     /**
-     * The logical name of the resource as specified in the
-     * template.<br></br> Default: There is on default value.
+     * The logical name of the resource as specified in the template.
+     * <p>Default: There is no default value.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param logicalResourceId The logical name of the resource as specified in the
-     *         template.<br></br> Default: There is on default value.
+     * @param logicalResourceId The logical name of the resource as specified in the template.
+     *         <p>Default: There is no default value.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

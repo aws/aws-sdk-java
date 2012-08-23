@@ -26,6 +26,8 @@ public class DescribeStacksResult {
      */
     private java.util.List<Stack> stacks;
 
+    private String nextToken;
+
     /**
      * A list of stack structures.
      *
@@ -96,6 +98,49 @@ public class DescribeStacksResult {
     }
     
     /**
+     * Returns the value of the NextToken property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 1024<br/>
+     *
+     * @return The value of the NextToken property for this object.
+     */
+    public String getNextToken() {
+        return nextToken;
+    }
+    
+    /**
+     * Sets the value of the NextToken property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 1024<br/>
+     *
+     * @param nextToken The new value for the NextToken property for this object.
+     */
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+    
+    /**
+     * Sets the value of the NextToken property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 1024<br/>
+     *
+     * @param nextToken The new value for the NextToken property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public DescribeStacksResult withNextToken(String nextToken) {
+        this.nextToken = nextToken;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -108,6 +153,7 @@ public class DescribeStacksResult {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (stacks != null) sb.append("Stacks: " + stacks + ", ");
+        if (nextToken != null) sb.append("NextToken: " + nextToken + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -118,6 +164,7 @@ public class DescribeStacksResult {
         int hashCode = 1;
         
         hashCode = prime * hashCode + ((getStacks() == null) ? 0 : getStacks().hashCode()); 
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode()); 
         return hashCode;
     }
     
@@ -131,6 +178,8 @@ public class DescribeStacksResult {
         
         if (other.getStacks() == null ^ this.getStacks() == null) return false;
         if (other.getStacks() != null && other.getStacks().equals(this.getStacks()) == false) return false; 
+        if (other.getNextToken() == null ^ this.getNextToken() == null) return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false) return false; 
         return true;
     }
     

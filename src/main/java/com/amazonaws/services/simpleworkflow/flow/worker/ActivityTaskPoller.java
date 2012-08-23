@@ -28,10 +28,6 @@ import com.amazonaws.services.simpleworkflow.flow.generic.ActivityImplementation
 import com.amazonaws.services.simpleworkflow.model.ActivityTask;
 import com.amazonaws.services.simpleworkflow.model.WorkflowExecution;
 
-/**
- * This class is for internal use only and may be changed or removed without prior notice.
- *
- */
 public class ActivityTaskPoller extends SynchronousActivityTaskPoller {
 
     private static final Log log = LogFactory.getLog(ActivityTaskPoller.class);

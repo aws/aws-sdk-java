@@ -24,7 +24,6 @@ import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 
-import com.amazonaws.ClientConfiguration;
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.BasicAWSCredentials;
 import com.amazonaws.services.s3.AmazonS3;
@@ -108,9 +107,8 @@ public class ConfigHelper {
     }
 
     public AmazonSimpleWorkflow createSWFClient() {
-        ClientConfiguration config = new ClientConfiguration().withSocketTimeout(70 * 1000);
         AWSCredentials awsCredentials = new BasicAWSCredentials(this.swfAccessId, this.swfSecretKey);
-        AmazonSimpleWorkflow client = new AmazonSimpleWorkflowClient(awsCredentials, config);
+        AmazonSimpleWorkflow client = new AmazonSimpleWorkflowClient(awsCredentials);
         client.setEndpoint(this.swfServiceUrl);
         return client;
     }

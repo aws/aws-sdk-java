@@ -50,6 +50,10 @@ public class DescribeStacksResultStaxUnmarshaller implements Unmarshaller<Descri
                     describeStacksResult.getStacks().add(StackStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("NextToken", targetDepth)) {
+                    describeStacksResult.setNextToken(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return describeStacksResult;

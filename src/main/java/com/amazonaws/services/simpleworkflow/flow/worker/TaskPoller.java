@@ -17,10 +17,6 @@ package com.amazonaws.services.simpleworkflow.flow.worker;
 import java.util.concurrent.TimeUnit;
 
 
-/**
- * This interface is for internal use only and may be changed or removed without prior notice.
- *
- */
 public interface TaskPoller {
 
     boolean pollAndProcessSingleTask() throws Exception;

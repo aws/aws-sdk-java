@@ -30,10 +30,6 @@ import com.amazonaws.services.simpleworkflow.model.DecisionTask;
 import com.amazonaws.services.simpleworkflow.model.RespondDecisionTaskCompletedRequest;
 import com.amazonaws.services.simpleworkflow.model.WorkflowType;
 
-/**
- * This class is for internal use only and may be changed or removed without prior notice.
- *
- */
 public class AsyncDecisionTaskHandler extends DecisionTaskHandler {
 
     private static final Log log = LogFactory.getLog(AsyncDecisionTaskHandler.class);

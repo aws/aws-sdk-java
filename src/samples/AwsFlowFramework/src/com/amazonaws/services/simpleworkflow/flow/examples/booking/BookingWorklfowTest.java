@@ -41,7 +41,7 @@ public class BookingWorklfowTest {
     @Before
     public void setUp() throws Exception {
         trace = new ArrayList<String>();
-        // Register activity implementaion to be used during test run
+        // Register activity implementation to be used during test run
         // In real life some mocking framework to be used
         BookingActivities activities = new BookingActivities() {
 

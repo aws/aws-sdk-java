@@ -89,6 +89,7 @@ import com.amazonaws.services.s3.model.BucketLifecycleConfiguration;
 import com.amazonaws.services.s3.model.BucketLoggingConfiguration;
 import com.amazonaws.services.s3.model.BucketNotificationConfiguration;
 import com.amazonaws.services.s3.model.BucketPolicy;
+import com.amazonaws.services.s3.model.BucketTaggingConfiguration;
 import com.amazonaws.services.s3.model.BucketVersioningConfiguration;
 import com.amazonaws.services.s3.model.BucketWebsiteConfiguration;
 import com.amazonaws.services.s3.model.CannedAccessControlList;
@@ -1593,14 +1594,64 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
         invoke(request, voidResponseHandler, bucketName, null);
 	}
-
-
+	
 	/* (non-Javadoc)
 	 * @see com.amazonaws.services.s3.AmazonS3#deleteBucketLifecycleConfiguration(java.lang.String)
 	 */
 	public void deleteBucketLifecycleConfiguration(String bucketName) {
         Request<GenericBucketRequest> request = createRequest(bucketName, null, new GenericBucketRequest(bucketName), HttpMethodName.DELETE);
         request.addParameter("lifecycle", null);
+
+        invoke(request, voidResponseHandler, bucketName, null);
+	}
+	
+	/* (non-Javadoc)
+	 * @see com.amazonaws.services.s3.AmazonS3#getBucketTaggingConfiguration(java.lang.String)
+	 */
+	public BucketTaggingConfiguration getBucketTaggingConfiguration(String bucketName) {
+        Request<GenericBucketRequest> request = createRequest(bucketName, null, new GenericBucketRequest(bucketName), HttpMethodName.GET);
+        request.addParameter("tagging", null);
+
+        try {
+            return invoke(request, new Unmarshallers.BucketTaggingConfigurationUnmarshaller(), bucketName, null);
+        } catch (AmazonServiceException ase) {
+            switch (ase.getStatusCode()) {
+            case 404:
+                return null;
+            default:
+                throw ase;
+            }
+        }
+	}
+
+	/* (non-Javadoc)
+	 * @see com.amazonaws.services.s3.AmazonS3#setBucketTaggingConfiguration(java.lang.String, com.amazonaws.services.s3.model.BucketLifecycleConfiguration)
+	 */
+	public void setBucketTaggingConfiguration(String bucketName, BucketTaggingConfiguration bucketTaggingConfiguration) {
+        Request<GenericBucketRequest> request = createRequest(bucketName, null, new GenericBucketRequest(bucketName), HttpMethodName.PUT);
+        request.addParameter("tagging", null);
+
+        byte[] content = new BucketConfigurationXmlFactory().convertToXmlByteArray(bucketTaggingConfiguration);
+        request.addHeader("Content-Length", String.valueOf(content.length));
+        request.addHeader("Content-Type", "application/xml");
+        request.setContent(new ByteArrayInputStream(content));
+        try {
+            byte[] md5 = Md5Utils.computeMD5Hash(content);
+            String md5Base64 = BinaryUtils.toBase64(md5);
+            request.addHeader("Content-MD5", md5Base64);
+        } catch ( Exception e ) {
+            throw new AmazonClientException("Couldn't compute md5 sum", e);
+        }
+
+        invoke(request, voidResponseHandler, bucketName, null);
+	}
+
+	/* (non-Javadoc)
+	 * @see com.amazonaws.services.s3.AmazonS3#deleteBucketTaggingConfiguration(java.lang.String)
+	 */
+	public void deleteBucketTaggingConfiguration(String bucketName) {
+        Request<GenericBucketRequest> request = createRequest(bucketName, null, new GenericBucketRequest(bucketName), HttpMethodName.DELETE);
+        request.addParameter("tagging", null);
 
         invoke(request, voidResponseHandler, bucketName, null);
 	}

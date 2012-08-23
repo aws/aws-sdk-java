@@ -28,10 +28,6 @@ import com.amazonaws.services.simpleworkflow.model.PollForDecisionTaskRequest;
 import com.amazonaws.services.simpleworkflow.model.RespondDecisionTaskCompletedRequest;
 import com.amazonaws.services.simpleworkflow.model.TaskList;
 
-/**
- * This class is for internal use only and may be changed or removed without prior notice.
- *
- */
 public class DecisionTaskPoller implements TaskPoller {
 
     private static final Log log = LogFactory.getLog(DecisionTaskPoller.class);

@@ -38,10 +38,6 @@ import com.amazonaws.services.simpleworkflow.model.RespondActivityTaskFailedRequ
 import com.amazonaws.services.simpleworkflow.model.TaskList;
 import com.amazonaws.services.simpleworkflow.model.UnknownResourceException;
 
-/**
- * This class is for internal use only and may be changed or removed without prior notice.
- *
- */
 public class SynchronousActivityTaskPoller implements TaskPoller {
 
     private static final Log log = LogFactory.getLog(SynchronousActivityTaskPoller.class);

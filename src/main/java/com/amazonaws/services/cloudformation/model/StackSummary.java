@@ -41,6 +41,10 @@ public class StackSummary {
      */
     private java.util.Date creationTime;
 
+    /**
+     * The time the stack was last updated. This field will only be returned
+     * if the stack has been updated at least once.
+     */
     private java.util.Date lastUpdatedTime;
 
     /**
@@ -49,13 +53,16 @@ public class StackSummary {
     private java.util.Date deletionTime;
 
     /**
-     * The status of the stack when it was deleted.
+     * The current status of the stack.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>CREATE_IN_PROGRESS, CREATE_FAILED, CREATE_COMPLETE, ROLLBACK_IN_PROGRESS, ROLLBACK_FAILED, ROLLBACK_COMPLETE, DELETE_IN_PROGRESS, DELETE_FAILED, DELETE_COMPLETE, UPDATE_IN_PROGRESS, UPDATE_COMPLETE_CLEANUP_IN_PROGRESS, UPDATE_COMPLETE, UPDATE_ROLLBACK_IN_PROGRESS, UPDATE_ROLLBACK_FAILED, UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS, UPDATE_ROLLBACK_COMPLETE
      */
     private String stackStatus;
 
+    /**
+     * Success/Failure message associated with the stack status.
+     */
     private String stackStatusReason;
 
     /**
@@ -195,29 +202,35 @@ public class StackSummary {
     
     
     /**
-     * Returns the value of the LastUpdatedTime property for this object.
+     * The time the stack was last updated. This field will only be returned
+     * if the stack has been updated at least once.
      *
-     * @return The value of the LastUpdatedTime property for this object.
+     * @return The time the stack was last updated. This field will only be returned
+     *         if the stack has been updated at least once.
      */
     public java.util.Date getLastUpdatedTime() {
         return lastUpdatedTime;
     }
     
     /**
-     * Sets the value of the LastUpdatedTime property for this object.
+     * The time the stack was last updated. This field will only be returned
+     * if the stack has been updated at least once.
      *
-     * @param lastUpdatedTime The new value for the LastUpdatedTime property for this object.
+     * @param lastUpdatedTime The time the stack was last updated. This field will only be returned
+     *         if the stack has been updated at least once.
      */
     public void setLastUpdatedTime(java.util.Date lastUpdatedTime) {
         this.lastUpdatedTime = lastUpdatedTime;
     }
     
     /**
-     * Sets the value of the LastUpdatedTime property for this object.
+     * The time the stack was last updated. This field will only be returned
+     * if the stack has been updated at least once.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param lastUpdatedTime The new value for the LastUpdatedTime property for this object.
+     * @param lastUpdatedTime The time the stack was last updated. This field will only be returned
+     *         if the stack has been updated at least once.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -263,12 +276,12 @@ public class StackSummary {
     
     
     /**
-     * The status of the stack when it was deleted.
+     * The current status of the stack.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>CREATE_IN_PROGRESS, CREATE_FAILED, CREATE_COMPLETE, ROLLBACK_IN_PROGRESS, ROLLBACK_FAILED, ROLLBACK_COMPLETE, DELETE_IN_PROGRESS, DELETE_FAILED, DELETE_COMPLETE, UPDATE_IN_PROGRESS, UPDATE_COMPLETE_CLEANUP_IN_PROGRESS, UPDATE_COMPLETE, UPDATE_ROLLBACK_IN_PROGRESS, UPDATE_ROLLBACK_FAILED, UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS, UPDATE_ROLLBACK_COMPLETE
      *
-     * @return The status of the stack when it was deleted.
+     * @return The current status of the stack.
      *
      * @see StackStatus
      */
@@ -277,12 +290,12 @@ public class StackSummary {
     }
     
     /**
-     * The status of the stack when it was deleted.
+     * The current status of the stack.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>CREATE_IN_PROGRESS, CREATE_FAILED, CREATE_COMPLETE, ROLLBACK_IN_PROGRESS, ROLLBACK_FAILED, ROLLBACK_COMPLETE, DELETE_IN_PROGRESS, DELETE_FAILED, DELETE_COMPLETE, UPDATE_IN_PROGRESS, UPDATE_COMPLETE_CLEANUP_IN_PROGRESS, UPDATE_COMPLETE, UPDATE_ROLLBACK_IN_PROGRESS, UPDATE_ROLLBACK_FAILED, UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS, UPDATE_ROLLBACK_COMPLETE
      *
-     * @param stackStatus The status of the stack when it was deleted.
+     * @param stackStatus The current status of the stack.
      *
      * @see StackStatus
      */
@@ -291,14 +304,14 @@ public class StackSummary {
     }
     
     /**
-     * The status of the stack when it was deleted.
+     * The current status of the stack.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>CREATE_IN_PROGRESS, CREATE_FAILED, CREATE_COMPLETE, ROLLBACK_IN_PROGRESS, ROLLBACK_FAILED, ROLLBACK_COMPLETE, DELETE_IN_PROGRESS, DELETE_FAILED, DELETE_COMPLETE, UPDATE_IN_PROGRESS, UPDATE_COMPLETE_CLEANUP_IN_PROGRESS, UPDATE_COMPLETE, UPDATE_ROLLBACK_IN_PROGRESS, UPDATE_ROLLBACK_FAILED, UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS, UPDATE_ROLLBACK_COMPLETE
      *
-     * @param stackStatus The status of the stack when it was deleted.
+     * @param stackStatus The current status of the stack.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -312,12 +325,12 @@ public class StackSummary {
     
     
     /**
-     * The status of the stack when it was deleted.
+     * The current status of the stack.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>CREATE_IN_PROGRESS, CREATE_FAILED, CREATE_COMPLETE, ROLLBACK_IN_PROGRESS, ROLLBACK_FAILED, ROLLBACK_COMPLETE, DELETE_IN_PROGRESS, DELETE_FAILED, DELETE_COMPLETE, UPDATE_IN_PROGRESS, UPDATE_COMPLETE_CLEANUP_IN_PROGRESS, UPDATE_COMPLETE, UPDATE_ROLLBACK_IN_PROGRESS, UPDATE_ROLLBACK_FAILED, UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS, UPDATE_ROLLBACK_COMPLETE
      *
-     * @param stackStatus The status of the stack when it was deleted.
+     * @param stackStatus The current status of the stack.
      *
      * @see StackStatus
      */
@@ -326,14 +339,14 @@ public class StackSummary {
     }
     
     /**
-     * The status of the stack when it was deleted.
+     * The current status of the stack.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>CREATE_IN_PROGRESS, CREATE_FAILED, CREATE_COMPLETE, ROLLBACK_IN_PROGRESS, ROLLBACK_FAILED, ROLLBACK_COMPLETE, DELETE_IN_PROGRESS, DELETE_FAILED, DELETE_COMPLETE, UPDATE_IN_PROGRESS, UPDATE_COMPLETE_CLEANUP_IN_PROGRESS, UPDATE_COMPLETE, UPDATE_ROLLBACK_IN_PROGRESS, UPDATE_ROLLBACK_FAILED, UPDATE_ROLLBACK_COMPLETE_CLEANUP_IN_PROGRESS, UPDATE_ROLLBACK_COMPLETE
      *
-     * @param stackStatus The status of the stack when it was deleted.
+     * @param stackStatus The current status of the stack.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -346,29 +359,29 @@ public class StackSummary {
     }
     
     /**
-     * Returns the value of the StackStatusReason property for this object.
+     * Success/Failure message associated with the stack status.
      *
-     * @return The value of the StackStatusReason property for this object.
+     * @return Success/Failure message associated with the stack status.
      */
     public String getStackStatusReason() {
         return stackStatusReason;
     }
     
     /**
-     * Sets the value of the StackStatusReason property for this object.
+     * Success/Failure message associated with the stack status.
      *
-     * @param stackStatusReason The new value for the StackStatusReason property for this object.
+     * @param stackStatusReason Success/Failure message associated with the stack status.
      */
     public void setStackStatusReason(String stackStatusReason) {
         this.stackStatusReason = stackStatusReason;
     }
     
     /**
-     * Sets the value of the StackStatusReason property for this object.
+     * Success/Failure message associated with the stack status.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param stackStatusReason The new value for the StackStatusReason property for this object.
+     * @param stackStatusReason Success/Failure message associated with the stack status.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

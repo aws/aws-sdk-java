@@ -31,10 +31,6 @@ import com.amazonaws.services.simpleworkflow.flow.annotations.Wait;
 import com.amazonaws.services.simpleworkflow.flow.core.AndPromise;
 import com.amazonaws.services.simpleworkflow.flow.core.Promise;
 
-/**
- * This class is for internal use only and may be changed or removed without prior notice.
- *
- */
 @Aspect
 public class AsynchronousAspect {
 

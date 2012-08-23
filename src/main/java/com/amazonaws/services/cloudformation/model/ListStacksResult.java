@@ -15,18 +15,33 @@
 package com.amazonaws.services.cloudformation.model;
 
 /**
- * List Stacks Result
+ * <p>
+ * The output for ListStacks action.
+ * </p>
  */
 public class ListStacksResult {
 
+    /**
+     * A list of <code>StackSummary</code> structures containing information
+     * about the specified stacks.
+     */
     private java.util.List<StackSummary> stackSummaries;
 
+    /**
+     * String that identifies the start of the next list of stacks, if there
+     * is one.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 1024<br/>
+     */
     private String nextToken;
 
     /**
-     * Returns the value of the StackSummaries property for this object.
+     * A list of <code>StackSummary</code> structures containing information
+     * about the specified stacks.
      *
-     * @return The value of the StackSummaries property for this object.
+     * @return A list of <code>StackSummary</code> structures containing information
+     *         about the specified stacks.
      */
     public java.util.List<StackSummary> getStackSummaries() {
         
@@ -37,9 +52,11 @@ public class ListStacksResult {
     }
     
     /**
-     * Sets the value of the StackSummaries property for this object.
+     * A list of <code>StackSummary</code> structures containing information
+     * about the specified stacks.
      *
-     * @param stackSummaries The new value for the StackSummaries property for this object.
+     * @param stackSummaries A list of <code>StackSummary</code> structures containing information
+     *         about the specified stacks.
      */
     public void setStackSummaries(java.util.Collection<StackSummary> stackSummaries) {
         if (stackSummaries == null) {
@@ -53,11 +70,13 @@ public class ListStacksResult {
     }
     
     /**
-     * Sets the value of the StackSummaries property for this object.
+     * A list of <code>StackSummary</code> structures containing information
+     * about the specified stacks.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param stackSummaries The new value for the StackSummaries property for this object.
+     * @param stackSummaries A list of <code>StackSummary</code> structures containing information
+     *         about the specified stacks.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -71,11 +90,13 @@ public class ListStacksResult {
     }
     
     /**
-     * Sets the value of the StackSummaries property for this object.
+     * A list of <code>StackSummary</code> structures containing information
+     * about the specified stacks.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param stackSummaries The new value for the StackSummaries property for this object.
+     * @param stackSummaries A list of <code>StackSummary</code> structures containing information
+     *         about the specified stacks.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -93,38 +114,44 @@ public class ListStacksResult {
     }
     
     /**
-     * Returns the value of the NextToken property for this object.
+     * String that identifies the start of the next list of stacks, if there
+     * is one.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
      *
-     * @return The value of the NextToken property for this object.
+     * @return String that identifies the start of the next list of stacks, if there
+     *         is one.
      */
     public String getNextToken() {
         return nextToken;
     }
     
     /**
-     * Sets the value of the NextToken property for this object.
+     * String that identifies the start of the next list of stacks, if there
+     * is one.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
      *
-     * @param nextToken The new value for the NextToken property for this object.
+     * @param nextToken String that identifies the start of the next list of stacks, if there
+     *         is one.
      */
     public void setNextToken(String nextToken) {
         this.nextToken = nextToken;
     }
     
     /**
-     * Sets the value of the NextToken property for this object.
+     * String that identifies the start of the next list of stacks, if there
+     * is one.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
      *
-     * @param nextToken The new value for the NextToken property for this object.
+     * @param nextToken String that identifies the start of the next list of stacks, if there
+     *         is one.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

@@ -32,10 +32,6 @@ import com.amazonaws.services.simpleworkflow.flow.interceptors.AsyncRetryingExec
 import com.amazonaws.services.simpleworkflow.flow.interceptors.AsyncRunnable;
 import com.amazonaws.services.simpleworkflow.flow.interceptors.ExponentialRetryPolicy;
 
-/**
- * This class is for internal use only and may be changed or removed without prior notice.
- *
- */
 @Aspect
 public class ExponentialRetryAspect {
 

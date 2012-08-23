@@ -15,10 +15,6 @@
 package com.amazonaws.services.simpleworkflow.flow.common;
 
 
-/**
- * This enum is for internal use only and may be changed or removed without prior notice.
- *
- */
 public enum FlowValueConstraint {
     
     FAILURE_REASON("FAILURE_REASON", 0, 256),

@@ -43,6 +43,9 @@ public class DescribeStacksRequestMarshaller implements Marshaller<Request<Descr
         if (describeStacksRequest.getStackName() != null) {
             request.addParameter("StackName", StringUtils.fromString(describeStacksRequest.getStackName()));
         }
+        if (describeStacksRequest.getNextToken() != null) {
+            request.addParameter("NextToken", StringUtils.fromString(describeStacksRequest.getNextToken()));
+        }
 
 
         return request;
