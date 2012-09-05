@@ -19,6 +19,9 @@ import java.util.List;
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.services.s3.internal.Constants;
 import com.amazonaws.services.s3.internal.XmlWriter;
+import com.amazonaws.services.s3.model.BucketCrossOriginConfiguration;
+import com.amazonaws.services.s3.model.CORSRule.AllowedMethods;
+import com.amazonaws.services.s3.model.CORSRule;
 import com.amazonaws.services.s3.model.BucketLifecycleConfiguration;
 import com.amazonaws.services.s3.model.BucketLoggingConfiguration;
 import com.amazonaws.services.s3.model.BucketTaggingConfiguration;
@@ -183,6 +186,37 @@ public class BucketConfigurationXmlFactory {
 
         return xml.getBytes();
     }
+    
+    /**
+     * Converts the specified {@link BucketCrossOriginConfiguration} object to an XML fragment that
+     * can be sent to Amazon S3.
+     *
+     * @param config
+     *            The {@link BucketCrossOriginConfiguration}
+     */
+    /*
+     * <CORSConfiguration>
+     		<CORSRule>
+       		<AllowedOrigin>http://www.foobar.com</AllowedOrigin>
+       		<AllowedMethod>GET</AllowedMethod>
+       		<MaxAgeSeconds>3000</MaxAgeSec>
+       		<ExposeHeader>x-amz-server-side-encryption</ExposeHeader>
+     		</CORSRule>
+  	 </CORSConfiguration> 
+     */    
+    public byte[] convertToXmlByteArray(BucketCrossOriginConfiguration config) throws AmazonClientException {
+        
+        XmlWriter xml = new XmlWriter();
+        xml.start("CORSConfiguration", "xmlns", Constants.XML_NAMESPACE);
+        
+        for (CORSRule rule : config.getRules()) {
+            writeRule(xml, rule);
+        }
+
+        xml.end();
+       
+        return xml.getBytes();
+    }
 
     private void writeRule(XmlWriter xml, Rule rule) {
         xml.start("Rule");
@@ -196,7 +230,38 @@ public class BucketConfigurationXmlFactory {
         xml.end(); // </Expiration>
         xml.end(); // </Rule>
     }
-    
+     
+    private void writeRule(XmlWriter xml, CORSRule rule) {
+    	xml.start("CORSRule");
+    	if (rule.getId() != null) {
+    		xml.start("ID").value(rule.getId()).end();
+    	}
+    	if (rule.getAllowedOrigins() != null) {
+    		for (String origin : rule.getAllowedOrigins()) {
+    			xml.start("AllowedOrigin").value(origin).end();
+    		}
+    	}
+    	if (rule.getAllowedMethods() != null) {
+    		for (AllowedMethods method : rule.getAllowedMethods()) {
+    			xml.start("AllowedMethod").value(method.toString()).end();
+    		}
+    	}
+    	if(rule.getMaxAgeSeconds() != 0) {
+            xml.start("MaxAgeSeconds").value(Integer.toString(rule.getMaxAgeSeconds())).end();    		
+    	}
+    	if (rule.getExposedHeaders() != null) {
+    		for (String header : rule.getExposedHeaders()) {
+    			xml.start("ExposeHeader").value(header).end();
+    		}
+    	}
+    	if (rule.getAllowedHeaders() != null) {
+    		for(String header : rule.getAllowedHeaders()) {
+    			xml.start("AllowedHeader").value(header).end();
+    		}  
+    	}
+    	xml.end();//</CORSRule>
+    }
+
     /**
      * Converts the specified {@link BucketTaggingConfiguration} object to an XML fragment that
      * can be sent to Amazon S3.

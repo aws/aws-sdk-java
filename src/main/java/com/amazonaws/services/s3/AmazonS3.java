@@ -28,6 +28,7 @@ import com.amazonaws.services.s3.internal.Constants;
 import com.amazonaws.services.s3.model.AbortMultipartUploadRequest;
 import com.amazonaws.services.s3.model.AccessControlList;
 import com.amazonaws.services.s3.model.Bucket;
+import com.amazonaws.services.s3.model.BucketCrossOriginConfiguration;
 import com.amazonaws.services.s3.model.BucketLifecycleConfiguration;
 import com.amazonaws.services.s3.model.BucketLoggingConfiguration;
 import com.amazonaws.services.s3.model.BucketNotificationConfiguration;
@@ -2651,6 +2652,37 @@ public interface AmazonS3 {
      *            configuration.
      */
     public void deleteBucketLifecycleConfiguration(String bucketName);
+    
+    /**
+     * Gets the cross origin configuration for the specified bucket, or null if no
+     * configuration has been established.
+     * 
+     * @param bucketName
+     *            The name of the bucket for which to retrieve cross origin
+     *            configuration.
+     */
+    public BucketCrossOriginConfiguration getBucketCrossOriginConfiguration(String bucketName);
+    
+    /**
+     * Sets the cross origin configuration for the specified bucket.
+     * 
+     * @param bucketName
+     *            The name of the bucket for which to retrieve cross origin
+     *            configuration.
+     * @param bucketCrossOriginConfiguration    
+     * 			  The new cross origin configuration for this bucket, which
+     *            completely replaces any existing configuration.
+     */
+    public void setBucketCrossOriginConfiguration(String bucketName, BucketCrossOriginConfiguration bucketCrossOriginConfiguration);
+    
+    /**
+     * Delete the cross origin configuration for the specified bucket.
+     * 
+     * @param bucketName
+     *            The name of the bucket for which to retrieve cross origin
+     *            configuration.
+     */
+    public void deleteBucketCrossOriginConfiguration(String bucketName);
     
     /**
      * Gets the tagging configuration for the specified bucket, or null if no

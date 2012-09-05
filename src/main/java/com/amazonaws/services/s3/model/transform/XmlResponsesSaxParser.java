@@ -49,6 +49,8 @@ import com.amazonaws.services.s3.internal.ServiceUtils;
 import com.amazonaws.services.s3.model.AccessControlList;
 import com.amazonaws.services.s3.model.AmazonS3Exception;
 import com.amazonaws.services.s3.model.Bucket;
+import com.amazonaws.services.s3.model.CORSRule.AllowedMethods;
+import com.amazonaws.services.s3.model.CORSRule;
 import com.amazonaws.services.s3.model.BucketLifecycleConfiguration;
 import com.amazonaws.services.s3.model.BucketLifecycleConfiguration.Rule;
 import com.amazonaws.services.s3.model.BucketLoggingConfiguration;
@@ -67,6 +69,7 @@ import com.amazonaws.services.s3.model.GroupGrantee;
 import com.amazonaws.services.s3.model.InitiateMultipartUploadResult;
 import com.amazonaws.services.s3.model.MultiObjectDeleteException;
 import com.amazonaws.services.s3.model.MultiObjectDeleteException.DeleteError;
+import com.amazonaws.services.s3.model.BucketCrossOriginConfiguration;
 import com.amazonaws.services.s3.model.MultipartUpload;
 import com.amazonaws.services.s3.model.MultipartUploadListing;
 import com.amazonaws.services.s3.model.ObjectListing;
@@ -350,6 +353,13 @@ public class XmlResponsesSaxParser {
     public BucketLifecycleConfigurationHandler parseBucketLifecycleConfigurationResponse(InputStream inputStream)
     {
         BucketLifecycleConfigurationHandler handler = new BucketLifecycleConfigurationHandler();
+        parseXmlInputStream(handler, inputStream);
+        return handler;
+    }
+    
+    public BucketCrossOriginConfigurationHandler parseBucketCrossOriginConfigurationResponse(InputStream inputStream)
+    {
+    	BucketCrossOriginConfigurationHandler handler = new BucketCrossOriginConfigurationHandler();
         parseXmlInputStream(handler, inputStream);
         return handler;
     }
@@ -2185,6 +2195,107 @@ public class XmlResponsesSaxParser {
             } else if ( name.equals("Expiration") ) {
             } else if ( name.equals("Days") ) {
                 rule.setExpirationInDays(Integer.parseInt(text.toString()));
+            } else {
+                log.warn("Unexpected tag: " + name);
+            }
+        }
+
+        @Override
+        public void characters(char ch[], int start, int length) {
+            this.text.append(ch, start, length);
+        }
+    }
+    
+    /*
+    HTTP/1.1 200 OK
+    x-amz-id-2: Uuag1LuByRx9e6j5Onimru9pO4ZVKnJ2Qz7/C1NPcfTWAtRPfTaOFg==
+    x-amz-request-id: 656c76696e6727732072657175657374
+    Date: Tue, 20 Sep 2011 20:34:56 GMT
+    Content-Length: Some Length
+    Connection: keep-alive
+    Server: AmazonS3
+    <CORSConfiguration>
+       <CORSRule>
+         <AllowedOrigin>http://www.foobar.com</AllowedOrigin>
+         <AllowedMethod>GET</AllowedMethod>
+         <MaxAgeSeconds>3000</MaxAgeSec>
+         <ExposeHeader>x-amz-server-side-encryption</ExposeHeader>
+       </CORSRule>
+    </CORSConfiguration>
+    */
+    public class  BucketCrossOriginConfigurationHandler extends DefaultHandler {
+        private StringBuilder text;
+        private CORSRule rule;
+        private List<CORSRule> rules = new LinkedList<CORSRule>();
+        private List<AllowedMethods> allowedMethods = null;
+        private List<String> allowedOrigins = null;
+        private List<String> exposedHeaders = null;
+        private List<String> allowedHeaders = null;
+
+        public BucketCrossOriginConfiguration getConfiguration() {
+            return new BucketCrossOriginConfiguration(rules);
+        }
+
+        @Override
+        public void startDocument() {
+            text = new StringBuilder();
+        }
+
+        @Override
+        public void startElement(String uri, String name, String qName, Attributes attrs) {
+            if ( name.equals("CORSConfiguration") ) {
+            } else if ( name.equals("CORSRule") ) {
+                rule = new CORSRule();
+            } else if (name.equals("ID")) {
+            } else if ( name.equals("AllowedOrigin") ) {
+            	if (allowedOrigins == null) {
+            		allowedOrigins = new LinkedList<String>();
+            	}
+            } else if ( name.equals("AllowedMethod") ) {
+            	if(allowedMethods == null) {
+            		allowedMethods = new LinkedList<AllowedMethods>();
+            	}
+            } else if ( name.equals("MaxAgeSeconds") ) {
+            } else if ( name.equals("ExposeHeader") ) {
+            	if(exposedHeaders == null) {
+            		exposedHeaders = new LinkedList<String>();
+            	}
+            } else if ( name.equals("AllowedHeader") ) {
+            	if(allowedHeaders == null) {
+            	allowedHeaders = new LinkedList<String>();
+            	}
+            } else {
+                log.warn("Unexpected tag: " + name);
+            }
+            text.setLength(0);
+        }
+
+        @Override
+        public void endElement(String uri, String name, String qName) throws SAXException {
+            if ( name.equals("CORSConfiguration") ) {
+            } else if ( name.equals("CORSRule") ) {
+            	rule.setAllowedHeaders(allowedHeaders);
+            	rule.setAllowedMethods(allowedMethods);
+            	rule.setAllowedOrigins(allowedOrigins);
+            	rule.setExposedHeaders(exposedHeaders);
+            	allowedHeaders = null;
+            	allowedMethods = null;
+            	allowedOrigins = null;
+            	exposedHeaders = null;
+                rules.add(rule);
+                rule = null;
+            } else if ( name.equals("ID") ) {
+                rule.setId(text.toString());
+            } else if ( name.equals("AllowedOrigin") ) {
+                allowedOrigins.add(text.toString());
+            } else if ( name.equals("AllowedMethod") ) {
+                 allowedMethods.add(AllowedMethods.fromValue(text.toString()));
+            } else if ( name.equals("MaxAgeSeconds") ) {
+            	rule.setMaxAgeSeconds(Integer.parseInt(text.toString()));
+            } else if ( name.equals("ExposeHeader") ) {
+                exposedHeaders.add(text.toString());
+            } else if (name.equals("AllowedHeader")) {
+            	allowedHeaders.add(text.toString());
             } else {
                 log.warn("Unexpected tag: " + name);
             }

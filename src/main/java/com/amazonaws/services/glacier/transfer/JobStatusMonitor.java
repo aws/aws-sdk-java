@@ -106,8 +106,6 @@ public class JobStatusMonitor {
 		while (true) {
 			List<Message> messages = sqs.receiveMessage(new ReceiveMessageRequest(queueUrl)).getMessages();
 			for (Message message : messages) {
-				sleep(1000 * 30);
-
 				String messageBody = message.getBody();
 				if (!messageBody.startsWith("{")) {
 					messageBody = new String(BinaryUtils.fromBase64(messageBody));
@@ -136,6 +134,8 @@ public class JobStatusMonitor {
 					throw new AmazonClientException("Unable to parse status message: " + messageBody, e);
 				}
 			}
+			
+			sleep(1000 * 30);
 		}
 	}
 
