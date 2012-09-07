@@ -80,9 +80,9 @@ public class UploadArchiveRequest extends AmazonWebServiceRequest {
     private String archiveDescription;
 
     /**
-     * The SHA256 checksum (a linear hash) of the payload.
+     * The SHA256 checksum (a tree hash) of the payload.
      */
-    private String checksum;
+    private String treeChecksum;
 
     /**
      * The data to upload.
@@ -103,13 +103,13 @@ public class UploadArchiveRequest extends AmazonWebServiceRequest {
      * @param vaultName The name of the vault.
      * @param archiveDescription The optional description of the archive you
      * are uploading.
-     * @param checksum The SHA256 checksum (a linear hash) of the payload.
+     * @param treeChecksum The SHA256 checksum (a tree hash) of the payload.
      * @param body The data to upload.
      */
-    public UploadArchiveRequest(String vaultName, String archiveDescription, String checksum, java.io.InputStream body) {
+    public UploadArchiveRequest(String vaultName, String archiveDescription, String treeChecksum, java.io.InputStream body) {
         this.vaultName = vaultName;
         this.archiveDescription = archiveDescription;
-        this.checksum = checksum;
+        this.treeChecksum = treeChecksum;
         this.body = body;
     }
 
@@ -128,14 +128,14 @@ public class UploadArchiveRequest extends AmazonWebServiceRequest {
      * do not include hyphens in it.
      * @param archiveDescription The optional description of the archive you
      * are uploading.
-     * @param checksum The SHA256 checksum (a linear hash) of the payload.
+     * @param treeChecksum The SHA256 checksum (a tree hash) of the payload.
      * @param body The data to upload.
      */
-    public UploadArchiveRequest(String vaultName, String accountId, String archiveDescription, String checksum, java.io.InputStream body) {
+    public UploadArchiveRequest(String vaultName, String accountId, String archiveDescription, String treeChecksum, java.io.InputStream body) {
         this.vaultName = vaultName;
         this.accountId = accountId;
         this.archiveDescription = archiveDescription;
-        this.checksum = checksum;
+        this.treeChecksum = treeChecksum;
         this.body = body;
     }
 
@@ -302,35 +302,35 @@ public class UploadArchiveRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * The SHA256 checksum (a linear hash) of the payload.
+     * The SHA256 checksum (a tree hash) of the payload.
      *
-     * @return The SHA256 checksum (a linear hash) of the payload.
+     * @return The SHA256 checksum (a tree hash) of the payload.
      */
     public String getChecksum() {
-        return checksum;
+        return treeChecksum;
     }
     
     /**
-     * The SHA256 checksum (a linear hash) of the payload.
+     * The SHA256 checksum (a tree hash) of the payload.
      *
-     * @param checksum The SHA256 checksum (a linear hash) of the payload.
+     * @param treeChecksum The SHA256 checksum (a tree hash) of the payload.
      */
-    public void setChecksum(String checksum) {
-        this.checksum = checksum;
+    public void setChecksum(String treeChecksum) {
+        this.treeChecksum = treeChecksum;
     }
     
     /**
-     * The SHA256 checksum (a linear hash) of the payload.
+     * The SHA256 checksum (a tree hash) of the payload.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param checksum The SHA256 checksum (a linear hash) of the payload.
+     * @param treeChecksum The SHA256 checksum (a tree hash) of the payload.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public UploadArchiveRequest withChecksum(String checksum) {
-        this.checksum = checksum;
+    public UploadArchiveRequest withChecksum(String treeChecksum) {
+        this.treeChecksum = treeChecksum;
         return this;
     }
     
@@ -385,7 +385,7 @@ public class UploadArchiveRequest extends AmazonWebServiceRequest {
         if (vaultName != null) sb.append("VaultName: " + vaultName + ", ");
         if (accountId != null) sb.append("AccountId: " + accountId + ", ");
         if (archiveDescription != null) sb.append("ArchiveDescription: " + archiveDescription + ", ");
-        if (checksum != null) sb.append("Checksum: " + checksum + ", ");
+        if (treeChecksum != null) sb.append("Tree checksum: " + treeChecksum + ", ");
         if (body != null) sb.append("Body: " + body + ", ");
         sb.append("}");
         return sb.toString();
