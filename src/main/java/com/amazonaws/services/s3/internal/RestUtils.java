@@ -40,7 +40,7 @@ public class RestUtils {
     private static final List<String> SIGNED_PARAMETERS = Arrays.asList(new String[] {
     		"acl", "torrent", "logging", "location", "policy", "requestPayment", "versioning",
     		"versions", "versionId", "notification", "uploadId", "uploads", "partNumber", "website", 
-    		"delete", "lifecycle", "tagging",
+    		"delete", "lifecycle", "tagging", "cors",
             ResponseHeaderOverrides.RESPONSE_HEADER_CACHE_CONTROL,
             ResponseHeaderOverrides.RESPONSE_HEADER_CONTENT_DISPOSITION,
             ResponseHeaderOverrides.RESPONSE_HEADER_CONTENT_ENCODING,
