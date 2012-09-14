@@ -51,6 +51,8 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest {
      */
     private String vpnGatewayId;
 
+    private VpnConnectionOptionsSpecification options;
+
     /**
      * Default constructor for a new CreateVpnConnectionRequest object.  Callers should use the
      * setter or fluent setter (with...) methods to initialize this object after creating it.
@@ -177,6 +179,40 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest {
     
     
     /**
+     * Returns the value of the Options property for this object.
+     *
+     * @return The value of the Options property for this object.
+     */
+    public VpnConnectionOptionsSpecification getOptions() {
+        return options;
+    }
+    
+    /**
+     * Sets the value of the Options property for this object.
+     *
+     * @param options The new value for the Options property for this object.
+     */
+    public void setOptions(VpnConnectionOptionsSpecification options) {
+        this.options = options;
+    }
+    
+    /**
+     * Sets the value of the Options property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param options The new value for the Options property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public CreateVpnConnectionRequest withOptions(VpnConnectionOptionsSpecification options) {
+        this.options = options;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -191,6 +227,7 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest {
         if (type != null) sb.append("Type: " + type + ", ");
         if (customerGatewayId != null) sb.append("CustomerGatewayId: " + customerGatewayId + ", ");
         if (vpnGatewayId != null) sb.append("VpnGatewayId: " + vpnGatewayId + ", ");
+        if (options != null) sb.append("Options: " + options + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -203,6 +240,7 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest {
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode()); 
         hashCode = prime * hashCode + ((getCustomerGatewayId() == null) ? 0 : getCustomerGatewayId().hashCode()); 
         hashCode = prime * hashCode + ((getVpnGatewayId() == null) ? 0 : getVpnGatewayId().hashCode()); 
+        hashCode = prime * hashCode + ((getOptions() == null) ? 0 : getOptions().hashCode()); 
         return hashCode;
     }
     
@@ -220,6 +258,8 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest {
         if (other.getCustomerGatewayId() != null && other.getCustomerGatewayId().equals(this.getCustomerGatewayId()) == false) return false; 
         if (other.getVpnGatewayId() == null ^ this.getVpnGatewayId() == null) return false;
         if (other.getVpnGatewayId() != null && other.getVpnGatewayId().equals(this.getVpnGatewayId()) == false) return false; 
+        if (other.getOptions() == null ^ this.getOptions() == null) return false;
+        if (other.getOptions() != null && other.getOptions().equals(this.getOptions()) == false) return false; 
         return true;
     }
     

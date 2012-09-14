@@ -90,6 +90,14 @@ public class ReservedInstancesOfferingStaxUnmarshaller implements Unmarshaller<R
                     reservedInstancesOffering.getRecurringCharges().add(RecurringChargeStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("marketplace", targetDepth)) {
+                    reservedInstancesOffering.setMarketplace(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("pricingDetailsSet/item", targetDepth)) {
+                    reservedInstancesOffering.getPricingDetails().add(PricingDetailStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return reservedInstancesOffering;

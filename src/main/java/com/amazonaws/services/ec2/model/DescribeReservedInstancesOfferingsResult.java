@@ -26,6 +26,8 @@ public class DescribeReservedInstancesOfferingsResult {
      */
     private java.util.List<ReservedInstancesOffering> reservedInstancesOfferings;
 
+    private String nextToken;
+
     /**
      * The list of described Reserved Instance offerings.
      *
@@ -96,6 +98,40 @@ public class DescribeReservedInstancesOfferingsResult {
     }
     
     /**
+     * Returns the value of the NextToken property for this object.
+     *
+     * @return The value of the NextToken property for this object.
+     */
+    public String getNextToken() {
+        return nextToken;
+    }
+    
+    /**
+     * Sets the value of the NextToken property for this object.
+     *
+     * @param nextToken The new value for the NextToken property for this object.
+     */
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+    
+    /**
+     * Sets the value of the NextToken property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param nextToken The new value for the NextToken property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public DescribeReservedInstancesOfferingsResult withNextToken(String nextToken) {
+        this.nextToken = nextToken;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -108,6 +144,7 @@ public class DescribeReservedInstancesOfferingsResult {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (reservedInstancesOfferings != null) sb.append("ReservedInstancesOfferings: " + reservedInstancesOfferings + ", ");
+        if (nextToken != null) sb.append("NextToken: " + nextToken + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -118,6 +155,7 @@ public class DescribeReservedInstancesOfferingsResult {
         int hashCode = 1;
         
         hashCode = prime * hashCode + ((getReservedInstancesOfferings() == null) ? 0 : getReservedInstancesOfferings().hashCode()); 
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode()); 
         return hashCode;
     }
     
@@ -131,6 +169,8 @@ public class DescribeReservedInstancesOfferingsResult {
         
         if (other.getReservedInstancesOfferings() == null ^ this.getReservedInstancesOfferings() == null) return false;
         if (other.getReservedInstancesOfferings() != null && other.getReservedInstancesOfferings().equals(this.getReservedInstancesOfferings()) == false) return false; 
+        if (other.getNextToken() == null ^ this.getNextToken() == null) return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false) return false; 
         return true;
     }
     

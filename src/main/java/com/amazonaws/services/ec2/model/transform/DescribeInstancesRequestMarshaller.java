@@ -38,7 +38,7 @@ public class DescribeInstancesRequestMarshaller implements Marshaller<Request<De
 
         Request<DescribeInstancesRequest> request = new DefaultRequest<DescribeInstancesRequest>(describeInstancesRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeInstances");
-        request.addParameter("Version", "2012-07-20");
+        request.addParameter("Version", "2012-08-15");
 
 
         java.util.List<String> instanceIdsList = describeInstancesRequest.getInstanceIds();

@@ -38,7 +38,7 @@ public class AssignPrivateIpAddressesRequestMarshaller implements Marshaller<Req
 
         Request<AssignPrivateIpAddressesRequest> request = new DefaultRequest<AssignPrivateIpAddressesRequest>(assignPrivateIpAddressesRequest, "AmazonEC2");
         request.addParameter("Action", "AssignPrivateIpAddresses");
-        request.addParameter("Version", "2012-07-20");
+        request.addParameter("Version", "2012-08-15");
 
         if (assignPrivateIpAddressesRequest.getNetworkInterfaceId() != null) {
             request.addParameter("NetworkInterfaceId", StringUtils.fromString(assignPrivateIpAddressesRequest.getNetworkInterfaceId()));

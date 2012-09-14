@@ -186,6 +186,10 @@ public class JsonUnmarshallerContext {
 	    nextToken = jsonParser.nextToken();
 	    return nextToken;
 	}
+	
+	public JsonParser getJsonParser() {
+	    return jsonParser;
+	}
 
 	/**
 	 * Returns any metadata collected through metadata expressions while this

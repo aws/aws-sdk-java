@@ -16,8 +16,6 @@ package com.amazonaws.http;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.SocketException;
-import java.net.SocketTimeoutException;
 import java.net.URI;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -32,7 +30,6 @@ import org.apache.http.Header;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpEntityEnclosingRequest;
 import org.apache.http.HttpStatus;
-import org.apache.http.NoHttpResponseException;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpEntityEnclosingRequestBase;
 import org.apache.http.client.methods.HttpRequestBase;
@@ -279,7 +276,6 @@ public class AmazonHttpClient {
                 }
 
                 exception = null;
-                retryCount++;
 
                 awsRequestMetrics.startEvent(Field.HttpRequestTime.name());
                 response = httpClient.execute(httpRequest);
@@ -332,6 +328,8 @@ public class AmazonHttpClient {
                     throw new AmazonClientException("Unable to execute HTTP request: " + ioe.getMessage(), ioe);
                 }
             } finally {
+                retryCount++;
+            	
                 /*
                  * Some response handlers need to manually manage the HTTP
                  * connection and will take care of releasing the connection on
@@ -398,16 +396,19 @@ public class AmazonHttpClient {
      * @return True if the failed request should be retried.
      */
     private boolean shouldRetry(HttpRequestBase method, Exception exception, int retries) {
-        if (retries > config.getMaxErrorRetry()) return false;
+        if (retries >= config.getMaxErrorRetry()) return false;
 
         if (method instanceof HttpEntityEnclosingRequest) {
             HttpEntity entity = ((HttpEntityEnclosingRequest)method).getEntity();
-            if (entity != null && !entity.isRepeatable()) return false;
+            if (entity != null && !entity.isRepeatable()) {
+                if (log.isDebugEnabled()) {
+                    log.debug("Entity not repeatable");
+                }
+                return false;
+            }
         }
 
-        if (exception instanceof NoHttpResponseException
-            || exception instanceof SocketException
-            || exception instanceof SocketTimeoutException) {
+        if (exception instanceof IOException) {
             if (log.isDebugEnabled()) {
                 log.debug("Retrying on " + exception.getClass().getName()
                         + ": " + exception.getMessage());

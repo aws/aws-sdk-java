@@ -37,6 +37,8 @@ public class PurchaseReservedInstancesOfferingRequest extends AmazonWebServiceRe
      */
     private Integer instanceCount;
 
+    private ReservedInstanceLimitPrice limitPrice;
+
     /**
      * Default constructor for a new PurchaseReservedInstancesOfferingRequest object.  Callers should use the
      * setter or fluent setter (with...) methods to initialize this object after creating it.
@@ -128,6 +130,40 @@ public class PurchaseReservedInstancesOfferingRequest extends AmazonWebServiceRe
     
     
     /**
+     * Returns the value of the LimitPrice property for this object.
+     *
+     * @return The value of the LimitPrice property for this object.
+     */
+    public ReservedInstanceLimitPrice getLimitPrice() {
+        return limitPrice;
+    }
+    
+    /**
+     * Sets the value of the LimitPrice property for this object.
+     *
+     * @param limitPrice The new value for the LimitPrice property for this object.
+     */
+    public void setLimitPrice(ReservedInstanceLimitPrice limitPrice) {
+        this.limitPrice = limitPrice;
+    }
+    
+    /**
+     * Sets the value of the LimitPrice property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param limitPrice The new value for the LimitPrice property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public PurchaseReservedInstancesOfferingRequest withLimitPrice(ReservedInstanceLimitPrice limitPrice) {
+        this.limitPrice = limitPrice;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -141,6 +177,7 @@ public class PurchaseReservedInstancesOfferingRequest extends AmazonWebServiceRe
         sb.append("{");
         if (reservedInstancesOfferingId != null) sb.append("ReservedInstancesOfferingId: " + reservedInstancesOfferingId + ", ");
         if (instanceCount != null) sb.append("InstanceCount: " + instanceCount + ", ");
+        if (limitPrice != null) sb.append("LimitPrice: " + limitPrice + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -152,6 +189,7 @@ public class PurchaseReservedInstancesOfferingRequest extends AmazonWebServiceRe
         
         hashCode = prime * hashCode + ((getReservedInstancesOfferingId() == null) ? 0 : getReservedInstancesOfferingId().hashCode()); 
         hashCode = prime * hashCode + ((getInstanceCount() == null) ? 0 : getInstanceCount().hashCode()); 
+        hashCode = prime * hashCode + ((getLimitPrice() == null) ? 0 : getLimitPrice().hashCode()); 
         return hashCode;
     }
     
@@ -167,6 +205,8 @@ public class PurchaseReservedInstancesOfferingRequest extends AmazonWebServiceRe
         if (other.getReservedInstancesOfferingId() != null && other.getReservedInstancesOfferingId().equals(this.getReservedInstancesOfferingId()) == false) return false; 
         if (other.getInstanceCount() == null ^ this.getInstanceCount() == null) return false;
         if (other.getInstanceCount() != null && other.getInstanceCount().equals(this.getInstanceCount()) == false) return false; 
+        if (other.getLimitPrice() == null ^ this.getLimitPrice() == null) return false;
+        if (other.getLimitPrice() != null && other.getLimitPrice().equals(this.getLimitPrice()) == false) return false; 
         return true;
     }
     

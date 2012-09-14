@@ -38,7 +38,7 @@ public class CreateVpnConnectionRequestMarshaller implements Marshaller<Request<
 
         Request<CreateVpnConnectionRequest> request = new DefaultRequest<CreateVpnConnectionRequest>(createVpnConnectionRequest, "AmazonEC2");
         request.addParameter("Action", "CreateVpnConnection");
-        request.addParameter("Version", "2012-07-20");
+        request.addParameter("Version", "2012-08-15");
 
         if (createVpnConnectionRequest.getType() != null) {
             request.addParameter("Type", StringUtils.fromString(createVpnConnectionRequest.getType()));
@@ -48,6 +48,12 @@ public class CreateVpnConnectionRequestMarshaller implements Marshaller<Request<
         }
         if (createVpnConnectionRequest.getVpnGatewayId() != null) {
             request.addParameter("VpnGatewayId", StringUtils.fromString(createVpnConnectionRequest.getVpnGatewayId()));
+        }
+        VpnConnectionOptionsSpecification vpnConnectionOptionsSpecificationOptions = createVpnConnectionRequest.getOptions();
+        if (vpnConnectionOptionsSpecificationOptions != null) {
+            if (vpnConnectionOptionsSpecificationOptions.isStaticRoutesOnly() != null) {
+                request.addParameter("Options.StaticRoutesOnly", StringUtils.fromBoolean(vpnConnectionOptionsSpecificationOptions.isStaticRoutesOnly()));
+            }
         }
 
 

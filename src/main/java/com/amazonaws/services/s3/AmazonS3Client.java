@@ -924,9 +924,9 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         S3Object s3Object = getObject(getObjectRequest);
         // getObject can return null if constraints were specified but not met
         if(s3Object==null)return null;
-        
+
         ServiceUtils.downloadObjectToFile(s3Object, destinationFile,(getObjectRequest.getRange()==null));
-        
+
         return s3Object.getObjectMetadata();
     }
 
@@ -1053,7 +1053,17 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         }
 
         if (!input.markSupported()) {
-            input = new RepeatableInputStream(input, Constants.DEFAULT_STREAM_BUFFER_SIZE);
+            int streamBufferSize = Constants.DEFAULT_STREAM_BUFFER_SIZE;
+            String bufferSizeOverride = System.getProperty("com.amazonaws.sdk.s3.defaultStreamBufferSize");
+			if (bufferSizeOverride != null) {
+            	try {
+            		streamBufferSize = Integer.parseInt(bufferSizeOverride);
+            	} catch (Exception e) {
+            		log.warn("Unable to parse buffer size override from value: " + bufferSizeOverride);
+            	}
+            }
+
+			input = new RepeatableInputStream(input, streamBufferSize);
         }
 
         MD5DigestCalculatingInputStream md5DigestStream = null;
@@ -1595,7 +1605,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
         invoke(request, voidResponseHandler, bucketName, null);
 	}
-	
+
 	/* (non-Javadoc)
 	 * @see com.amazonaws.services.s3.AmazonS3#deleteBucketLifecycleConfiguration(java.lang.String)
 	 */
@@ -1605,7 +1615,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
         invoke(request, voidResponseHandler, bucketName, null);
 	}
-	
+
 	/* (non-Javadoc)
 	 * @see com.amazonaws.services.s3.AmazonS3#getBucketCrossOriginConfiguration(java.lang.String)
 	 */
@@ -1643,10 +1653,10 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         } catch ( Exception e ) {
             throw new AmazonClientException("Couldn't compute md5 sum", e);
         }
-        
+
         invoke(request, voidResponseHandler, bucketName, null);
 	}
-	
+
 	/* (non-Javadoc)
 	 * @see com.amazonaws.services.s3.AmazonS3#deleteBucketCrossOriginConfiguration(java.lang.String)
 	 */
@@ -1655,7 +1665,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         request.addParameter("cors", null);
         invoke(request, voidResponseHandler, bucketName, null);
   	}
-  	
+
 	/* (non-Javadoc)
 	 * @see com.amazonaws.services.s3.AmazonS3#getBucketTaggingConfiguration(java.lang.String)
 	 */
@@ -1707,8 +1717,8 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         invoke(request, voidResponseHandler, bucketName, null);
 	}
 
-  
-	
+
+
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#setBucketWebsiteConfiguration(java.lang.String, com.amazonaws.services.s3.model.BucketWebsiteConfiguration)
      */
@@ -1716,7 +1726,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     		throws AmazonClientException, AmazonServiceException {
     	setBucketWebsiteConfiguration(new SetBucketWebsiteConfigurationRequest(bucketName, configuration));
     }
-    
+
 	/* (non-Javadoc)
 	 * @see com.amazonaws.services.s3.AmazonS3#setBucketWebsiteConfiguration(com.amazonaws.services.s3.model.SetBucketWebsiteConfigurationRequest)
 	 */

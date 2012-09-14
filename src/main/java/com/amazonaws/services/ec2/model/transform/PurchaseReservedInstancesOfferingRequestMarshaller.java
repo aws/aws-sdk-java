@@ -38,13 +38,22 @@ public class PurchaseReservedInstancesOfferingRequestMarshaller implements Marsh
 
         Request<PurchaseReservedInstancesOfferingRequest> request = new DefaultRequest<PurchaseReservedInstancesOfferingRequest>(purchaseReservedInstancesOfferingRequest, "AmazonEC2");
         request.addParameter("Action", "PurchaseReservedInstancesOffering");
-        request.addParameter("Version", "2012-07-20");
+        request.addParameter("Version", "2012-08-15");
 
         if (purchaseReservedInstancesOfferingRequest.getReservedInstancesOfferingId() != null) {
             request.addParameter("ReservedInstancesOfferingId", StringUtils.fromString(purchaseReservedInstancesOfferingRequest.getReservedInstancesOfferingId()));
         }
         if (purchaseReservedInstancesOfferingRequest.getInstanceCount() != null) {
             request.addParameter("InstanceCount", StringUtils.fromInteger(purchaseReservedInstancesOfferingRequest.getInstanceCount()));
+        }
+        ReservedInstanceLimitPrice reservedInstanceLimitPriceLimitPrice = purchaseReservedInstancesOfferingRequest.getLimitPrice();
+        if (reservedInstanceLimitPriceLimitPrice != null) {
+            if (reservedInstanceLimitPriceLimitPrice.getAmount() != null) {
+                request.addParameter("LimitPrice.Amount", StringUtils.fromDouble(reservedInstanceLimitPriceLimitPrice.getAmount()));
+            }
+            if (reservedInstanceLimitPriceLimitPrice.getCurrencyCode() != null) {
+                request.addParameter("LimitPrice.CurrencyCode", StringUtils.fromString(reservedInstanceLimitPriceLimitPrice.getCurrencyCode()));
+            }
         }
 
 

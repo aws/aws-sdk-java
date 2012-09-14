@@ -599,6 +599,27 @@ public interface AmazonEC2Async extends AmazonEC2 {
             throws AmazonServiceException, AmazonClientException;
 
     /**
+     *
+     * @param createReservedInstancesListingRequest Container for the
+     *           necessary parameters to execute the CreateReservedInstancesListing
+     *           operation on AmazonEC2.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreateReservedInstancesListing service method, as returned by
+     *         AmazonEC2.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<CreateReservedInstancesListingResult> createReservedInstancesListingAsync(CreateReservedInstancesListingRequest createReservedInstancesListingRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
      * <p>
      * Creates a set of DHCP options that you can then associate with one or
      * more VPCs, causing all existing and new instances that you launch in
@@ -1123,6 +1144,26 @@ public interface AmazonEC2Async extends AmazonEC2 {
             throws AmazonServiceException, AmazonClientException;
 
     /**
+     *
+     * @param enableVgwRoutePropagationRequest Container for the necessary
+     *           parameters to execute the EnableVgwRoutePropagation operation on
+     *           AmazonEC2.
+     * 
+     * @return A Java Future object containing the response from the
+     *         EnableVgwRoutePropagation service method, as returned by AmazonEC2.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> enableVgwRoutePropagationAsync(EnableVgwRoutePropagationRequest enableVgwRoutePropagationRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
      * <p>
      * Create a snapshot of the volume identified by volume ID. A volume
      * does not have to be detached at the time the snapshot is taken.
@@ -1254,30 +1295,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Deactivates a specific number of licenses. Deactivations can be done
-     * against a specific license ID after they have persisted for at least a
-     * 90-day period.
-     * </p>
-     *
-     * @param deactivateLicenseRequest Container for the necessary parameters
-     *           to execute the DeactivateLicense operation on AmazonEC2.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DeactivateLicense service method, as returned by AmazonEC2.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonEC2 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> deactivateLicenseAsync(DeactivateLicenseRequest deactivateLicenseRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
      * The AssociateAddress operation associates an elastic IP address with
      * an instance.
      * </p>
@@ -1322,6 +1339,30 @@ public interface AmazonEC2Async extends AmazonEC2 {
      *             either a problem with the data in the request, or a server side issue.
      */
     public Future<Void> cancelConversionTaskAsync(CancelConversionTaskRequest cancelConversionTaskRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Deactivates a specific number of licenses. Deactivations can be done
+     * against a specific license ID after they have persisted for at least a
+     * 90-day period.
+     * </p>
+     *
+     * @param deactivateLicenseRequest Container for the necessary parameters
+     *           to execute the DeactivateLicense operation on AmazonEC2.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeactivateLicense service method, as returned by AmazonEC2.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> deactivateLicenseAsync(DeactivateLicenseRequest deactivateLicenseRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -1494,6 +1535,27 @@ public interface AmazonEC2Async extends AmazonEC2 {
      *             either a problem with the data in the request, or a server side issue.
      */
     public Future<DescribeVolumesResult> describeVolumesAsync(DescribeVolumesRequest describeVolumesRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     *
+     * @param describeReservedInstancesListingsRequest Container for the
+     *           necessary parameters to execute the DescribeReservedInstancesListings
+     *           operation on AmazonEC2.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeReservedInstancesListings service method, as returned by
+     *         AmazonEC2.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeReservedInstancesListingsResult> describeReservedInstancesListingsAsync(DescribeReservedInstancesListingsRequest describeReservedInstancesListingsRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -1784,6 +1846,26 @@ public interface AmazonEC2Async extends AmazonEC2 {
      *             either a problem with the data in the request, or a server side issue.
      */
     public Future<CreateInternetGatewayResult> createInternetGatewayAsync(CreateInternetGatewayRequest createInternetGatewayRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     *
+     * @param deleteVpnConnectionRouteRequest Container for the necessary
+     *           parameters to execute the DeleteVpnConnectionRoute operation on
+     *           AmazonEC2.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeleteVpnConnectionRoute service method, as returned by AmazonEC2.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> deleteVpnConnectionRouteAsync(DeleteVpnConnectionRouteRequest deleteVpnConnectionRouteRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -2391,6 +2473,27 @@ public interface AmazonEC2Async extends AmazonEC2 {
             throws AmazonServiceException, AmazonClientException;
 
     /**
+     *
+     * @param cancelReservedInstancesListingRequest Container for the
+     *           necessary parameters to execute the CancelReservedInstancesListing
+     *           operation on AmazonEC2.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CancelReservedInstancesListing service method, as returned by
+     *         AmazonEC2.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<CancelReservedInstancesListingResult> cancelReservedInstancesListingAsync(CancelReservedInstancesListingRequest cancelReservedInstancesListingRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
      * <p>
      * Modifies an attribute of an instance.
      * </p>
@@ -2789,26 +2892,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      *
-     * @param attachNetworkInterfaceRequest Container for the necessary
-     *           parameters to execute the AttachNetworkInterface operation on
-     *           AmazonEC2.
-     * 
-     * @return A Java Future object containing the response from the
-     *         AttachNetworkInterface service method, as returned by AmazonEC2.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonEC2 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<AttachNetworkInterfaceResult> attachNetworkInterfaceAsync(AttachNetworkInterfaceRequest attachNetworkInterfaceRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     *
      * @param describeVolumeAttributeRequest Container for the necessary
      *           parameters to execute the DescribeVolumeAttribute operation on
      *           AmazonEC2.
@@ -2825,6 +2908,26 @@ public interface AmazonEC2Async extends AmazonEC2 {
      *             either a problem with the data in the request, or a server side issue.
      */
     public Future<DescribeVolumeAttributeResult> describeVolumeAttributeAsync(DescribeVolumeAttributeRequest describeVolumeAttributeRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     *
+     * @param attachNetworkInterfaceRequest Container for the necessary
+     *           parameters to execute the AttachNetworkInterface operation on
+     *           AmazonEC2.
+     * 
+     * @return A Java Future object containing the response from the
+     *         AttachNetworkInterface service method, as returned by AmazonEC2.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<AttachNetworkInterfaceResult> attachNetworkInterfaceAsync(AttachNetworkInterfaceRequest attachNetworkInterfaceRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -2898,6 +3001,26 @@ public interface AmazonEC2Async extends AmazonEC2 {
      *             either a problem with the data in the request, or a server side issue.
      */
     public Future<CancelBundleTaskResult> cancelBundleTaskAsync(CancelBundleTaskRequest cancelBundleTaskRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     *
+     * @param disableVgwRoutePropagationRequest Container for the necessary
+     *           parameters to execute the DisableVgwRoutePropagation operation on
+     *           AmazonEC2.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DisableVgwRoutePropagation service method, as returned by AmazonEC2.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> disableVgwRoutePropagationAsync(DisableVgwRoutePropagationRequest disableVgwRoutePropagationRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -3971,6 +4094,26 @@ public interface AmazonEC2Async extends AmazonEC2 {
      *             either a problem with the data in the request, or a server side issue.
      */
     public Future<Void> resetNetworkInterfaceAttributeAsync(ResetNetworkInterfaceAttributeRequest resetNetworkInterfaceAttributeRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     *
+     * @param createVpnConnectionRouteRequest Container for the necessary
+     *           parameters to execute the CreateVpnConnectionRoute operation on
+     *           AmazonEC2.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreateVpnConnectionRoute service method, as returned by AmazonEC2.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> createVpnConnectionRouteAsync(CreateVpnConnectionRouteRequest createVpnConnectionRouteRequest) 
             throws AmazonServiceException, AmazonClientException;
 
 }

@@ -34,6 +34,9 @@ import com.amazonaws.services.dynamodb.datamodeling.DynamoDBMapperConfig.Consist
 import com.amazonaws.services.dynamodb.datamodeling.DynamoDBMapperConfig.SaveBehavior;
 import com.amazonaws.services.dynamodb.model.AttributeValue;
 import com.amazonaws.services.dynamodb.model.AttributeValueUpdate;
+import com.amazonaws.services.dynamodb.model.BatchGetItemRequest;
+import com.amazonaws.services.dynamodb.model.BatchGetItemResult;
+import com.amazonaws.services.dynamodb.model.BatchResponse;
 import com.amazonaws.services.dynamodb.model.BatchWriteItemRequest;
 import com.amazonaws.services.dynamodb.model.BatchWriteItemResult;
 import com.amazonaws.services.dynamodb.model.ConditionalCheckFailedException;
@@ -43,6 +46,7 @@ import com.amazonaws.services.dynamodb.model.ExpectedAttributeValue;
 import com.amazonaws.services.dynamodb.model.GetItemRequest;
 import com.amazonaws.services.dynamodb.model.GetItemResult;
 import com.amazonaws.services.dynamodb.model.Key;
+import com.amazonaws.services.dynamodb.model.KeysAndAttributes;
 import com.amazonaws.services.dynamodb.model.PutItemRequest;
 import com.amazonaws.services.dynamodb.model.PutRequest;
 import com.amazonaws.services.dynamodb.model.QueryRequest;
@@ -800,6 +804,147 @@ public class DynamoDBMapper {
             update.apply();
         }
     }
+    
+    /**
+	 * Retrieves the attributes for multiple items from multiple tables using
+	 * their primary keys.
+	 * {@link AmazonDynamoDB#batchGetItem(BatchGetItemRequest)} API.
+	 * 
+	 * @see DynamoDBMapper#batchLoad(Map, List, DynamoDBMapperConfig)
+	 */
+	public Map<String, List<Object>> batchLoad(Map<Class<?>, List<KeyPair>> itemsToGet) {
+		return batchLoad(itemsToGet, this.config);
+	}
+
+	/**
+	 * 
+	 * Retrieves the attributes for multiple items from multiple tables using
+	 * their primary keys.
+	 * {@link AmazonDynamoDB#batchGetItem(BatchGetItemRequest)} API.
+	 * 
+	 * @param itemsToGet
+	 *            Container for the necessary parameters to execute the
+	 *            BatchGetItem service method on AmazonDynamoDB.
+	 *            {@link AmazonDynamoDB#batchWriteItem(BatchGetItemRequest)}
+	 *            API.
+	 * @param config
+	 *            Only {@link DynamoDBMapperConfig#getTableNameOverride()} is
+	 *            considered; if specified, all objects in the two parameter
+	 *            lists will be considered to belong to the given table
+	 *            override.
+	 */
+	public Map<String, List<Object>> batchLoad(Map<Class<?>, List<KeyPair>> itemsToGet, DynamoDBMapperConfig config) {
+		config = mergeConfig(config);
+
+		if (!validBatchGetRequest(itemsToGet)) {
+			return null;
+		}
+
+		Map<String, KeysAndAttributes> requestItems = new HashMap<String, KeysAndAttributes>();
+		Map<String, Class<?>> classesByTableName = new HashMap<String, Class<?>>();
+		Map<String, List<Object>> resultSet = new HashMap<String, List<Object>>();
+		int count = 0;
+
+		KeysAndAttributes keysAndAttributes = new KeysAndAttributes();
+		;
+		List<Key> keys = new LinkedList<Key>();
+		for (Class<?> clazz : itemsToGet.keySet()) {
+			String tableName = getTableName(clazz, config);
+			List<KeyPair> keyPairs = itemsToGet.get(clazz);
+			classesByTableName.put(tableName, clazz);
+
+			Method hashKeyGetter = reflector.getHashKeyGetter(clazz);
+			if (keyPairs == null) {
+				continue;
+			}
+			for (KeyPair keyPair : keyPairs) {
+				AttributeValue hashKeyElement = getHashKeyElement(keyPair.getHashKey(), hashKeyGetter);
+
+				// Determine the range key, if provided
+				AttributeValue rangeKeyElement = null;
+				if (keyPair.getRangeKey() != null) {
+					Method rangeKeyMethod = reflector.getRangeKeyGetter(clazz);
+					if (rangeKeyMethod == null) {
+						throw new DynamoDBMappingException("Zero-parameter range key property must be annotated with "
+								+ DynamoDBRangeKey.class);
+					}
+					rangeKeyElement = getRangeKeyElement(keyPair.getRangeKey(), rangeKeyMethod);
+				}
+
+				keys.add(new Key().withHashKeyElement(hashKeyElement).withRangeKeyElement(rangeKeyElement));
+				count++;
+				// Reach the maximum number which can be handled in a single
+				// batchGet
+				if (count == 100) {
+					requestItems.put(tableName, new KeysAndAttributes().withKeys(keys));
+					processBatchGetRequest(classesByTableName, requestItems, resultSet);
+					keys.clear();
+					requestItems.clear();
+					count = 0;
+				}
+
+			}
+
+			keysAndAttributes.setKeys(keys);
+			requestItems.put(tableName, new KeysAndAttributes().withKeys(new ArrayList<Key>(keys)));
+			keys.clear();
+		}
+
+		processBatchGetRequest(classesByTableName, requestItems, resultSet);
+		return resultSet;
+	}
+
+	private void processBatchGetRequest(Map<String, Class<?>> tableNameToClassMapper,
+			Map<String, KeysAndAttributes> requestItems, Map<String, List<Object>> resultSet) {
+		BatchGetItemResult batchGetItemResult = null;
+		BatchGetItemRequest batchGetItemRequest = new BatchGetItemRequest();
+		batchGetItemRequest.setRequestItems(requestItems);
+		do {
+			if (batchGetItemResult != null) {
+				batchGetItemRequest.setRequestItems(batchGetItemResult.getUnprocessedKeys());
+			}
+
+			batchGetItemResult = db.batchGetItem(batchGetItemRequest);
+			Map<String, BatchResponse> responses = batchGetItemResult.getResponses();
+			for (String tableName : responses.keySet()) {
+				BatchResponse batchResponse = responses.get(tableName);
+				List<Object> objects = null;
+				if (resultSet.get(tableName) != null) {
+					objects = resultSet.get(tableName);
+				} else {
+					objects = new LinkedList<Object>();
+				}
+				List<Map<String, AttributeValue>> items = batchResponse.getItems();
+				for (Map<String, AttributeValue> item : items) {
+
+					objects.add((Object) marshallIntoObject(tableNameToClassMapper.get(tableName), item));
+				}
+				resultSet.put(tableName, objects);
+
+			}
+			// To see whether there are unprocessed keys.
+		} while (batchGetItemResult.getUnprocessedKeys() != null && batchGetItemResult.getUnprocessedKeys().size() > 0);
+
+	}
+
+	/**
+	 * Check whether the batchGetRequest meet all the constraints.
+	 * 
+	 * @param itemsToGet
+	 */
+	private boolean validBatchGetRequest(Map<Class<?>, List<KeyPair>> itemsToGet) {
+		if (itemsToGet == null || itemsToGet.size() == 0) {
+			return false;
+		}
+
+		for (Class<?> clazz : itemsToGet.keySet()) {
+			if (itemsToGet.get(clazz) != null && itemsToGet.get(clazz).size() > 0) {
+				return true;
+			}
+		}
+		return false;
+	}
+
     
     /**
      * Swallows the checked exceptions around Method.invoke and repackages them

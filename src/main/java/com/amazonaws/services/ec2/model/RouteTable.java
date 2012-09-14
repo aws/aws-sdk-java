@@ -29,6 +29,10 @@ public class RouteTable {
 
     private java.util.List<Tag> tags;
 
+    private java.util.List<PropagatingVgw> propagatingVgws;
+
+    private java.util.List<PropagatedRoute> propagatedRoutes;
+
     /**
      * Returns the value of the RouteTableId property for this object.
      *
@@ -305,6 +309,144 @@ public class RouteTable {
     }
     
     /**
+     * Returns the value of the PropagatingVgws property for this object.
+     *
+     * @return The value of the PropagatingVgws property for this object.
+     */
+    public java.util.List<PropagatingVgw> getPropagatingVgws() {
+        
+        if (propagatingVgws == null) {
+            propagatingVgws = new java.util.ArrayList<PropagatingVgw>();
+        }
+        return propagatingVgws;
+    }
+    
+    /**
+     * Sets the value of the PropagatingVgws property for this object.
+     *
+     * @param propagatingVgws The new value for the PropagatingVgws property for this object.
+     */
+    public void setPropagatingVgws(java.util.Collection<PropagatingVgw> propagatingVgws) {
+        if (propagatingVgws == null) {
+            this.propagatingVgws = null;
+            return;
+        }
+
+        java.util.List<PropagatingVgw> propagatingVgwsCopy = new java.util.ArrayList<PropagatingVgw>(propagatingVgws.size());
+        propagatingVgwsCopy.addAll(propagatingVgws);
+        this.propagatingVgws = propagatingVgwsCopy;
+    }
+    
+    /**
+     * Sets the value of the PropagatingVgws property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param propagatingVgws The new value for the PropagatingVgws property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public RouteTable withPropagatingVgws(PropagatingVgw... propagatingVgws) {
+        if (getPropagatingVgws() == null) setPropagatingVgws(new java.util.ArrayList<PropagatingVgw>(propagatingVgws.length));
+        for (PropagatingVgw value : propagatingVgws) {
+            getPropagatingVgws().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * Sets the value of the PropagatingVgws property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param propagatingVgws The new value for the PropagatingVgws property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public RouteTable withPropagatingVgws(java.util.Collection<PropagatingVgw> propagatingVgws) {
+        if (propagatingVgws == null) {
+            this.propagatingVgws = null;
+        } else {
+            java.util.List<PropagatingVgw> propagatingVgwsCopy = new java.util.ArrayList<PropagatingVgw>(propagatingVgws.size());
+            propagatingVgwsCopy.addAll(propagatingVgws);
+            this.propagatingVgws = propagatingVgwsCopy;
+        }
+
+        return this;
+    }
+    
+    /**
+     * Returns the value of the PropagatedRoutes property for this object.
+     *
+     * @return The value of the PropagatedRoutes property for this object.
+     */
+    public java.util.List<PropagatedRoute> getPropagatedRoutes() {
+        
+        if (propagatedRoutes == null) {
+            propagatedRoutes = new java.util.ArrayList<PropagatedRoute>();
+        }
+        return propagatedRoutes;
+    }
+    
+    /**
+     * Sets the value of the PropagatedRoutes property for this object.
+     *
+     * @param propagatedRoutes The new value for the PropagatedRoutes property for this object.
+     */
+    public void setPropagatedRoutes(java.util.Collection<PropagatedRoute> propagatedRoutes) {
+        if (propagatedRoutes == null) {
+            this.propagatedRoutes = null;
+            return;
+        }
+
+        java.util.List<PropagatedRoute> propagatedRoutesCopy = new java.util.ArrayList<PropagatedRoute>(propagatedRoutes.size());
+        propagatedRoutesCopy.addAll(propagatedRoutes);
+        this.propagatedRoutes = propagatedRoutesCopy;
+    }
+    
+    /**
+     * Sets the value of the PropagatedRoutes property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param propagatedRoutes The new value for the PropagatedRoutes property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public RouteTable withPropagatedRoutes(PropagatedRoute... propagatedRoutes) {
+        if (getPropagatedRoutes() == null) setPropagatedRoutes(new java.util.ArrayList<PropagatedRoute>(propagatedRoutes.length));
+        for (PropagatedRoute value : propagatedRoutes) {
+            getPropagatedRoutes().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * Sets the value of the PropagatedRoutes property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param propagatedRoutes The new value for the PropagatedRoutes property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public RouteTable withPropagatedRoutes(java.util.Collection<PropagatedRoute> propagatedRoutes) {
+        if (propagatedRoutes == null) {
+            this.propagatedRoutes = null;
+        } else {
+            java.util.List<PropagatedRoute> propagatedRoutesCopy = new java.util.ArrayList<PropagatedRoute>(propagatedRoutes.size());
+            propagatedRoutesCopy.addAll(propagatedRoutes);
+            this.propagatedRoutes = propagatedRoutesCopy;
+        }
+
+        return this;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -321,6 +463,8 @@ public class RouteTable {
         if (routes != null) sb.append("Routes: " + routes + ", ");
         if (associations != null) sb.append("Associations: " + associations + ", ");
         if (tags != null) sb.append("Tags: " + tags + ", ");
+        if (propagatingVgws != null) sb.append("PropagatingVgws: " + propagatingVgws + ", ");
+        if (propagatedRoutes != null) sb.append("PropagatedRoutes: " + propagatedRoutes + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -335,6 +479,8 @@ public class RouteTable {
         hashCode = prime * hashCode + ((getRoutes() == null) ? 0 : getRoutes().hashCode()); 
         hashCode = prime * hashCode + ((getAssociations() == null) ? 0 : getAssociations().hashCode()); 
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode()); 
+        hashCode = prime * hashCode + ((getPropagatingVgws() == null) ? 0 : getPropagatingVgws().hashCode()); 
+        hashCode = prime * hashCode + ((getPropagatedRoutes() == null) ? 0 : getPropagatedRoutes().hashCode()); 
         return hashCode;
     }
     
@@ -356,6 +502,10 @@ public class RouteTable {
         if (other.getAssociations() != null && other.getAssociations().equals(this.getAssociations()) == false) return false; 
         if (other.getTags() == null ^ this.getTags() == null) return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false) return false; 
+        if (other.getPropagatingVgws() == null ^ this.getPropagatingVgws() == null) return false;
+        if (other.getPropagatingVgws() != null && other.getPropagatingVgws().equals(this.getPropagatingVgws()) == false) return false; 
+        if (other.getPropagatedRoutes() == null ^ this.getPropagatedRoutes() == null) return false;
+        if (other.getPropagatedRoutes() != null && other.getPropagatedRoutes().equals(this.getPropagatedRoutes()) == false) return false; 
         return true;
     }
     

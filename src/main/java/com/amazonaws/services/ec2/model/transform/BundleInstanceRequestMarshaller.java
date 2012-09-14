@@ -38,7 +38,7 @@ public class BundleInstanceRequestMarshaller implements Marshaller<Request<Bundl
 
         Request<BundleInstanceRequest> request = new DefaultRequest<BundleInstanceRequest>(bundleInstanceRequest, "AmazonEC2");
         request.addParameter("Action", "BundleInstance");
-        request.addParameter("Version", "2012-07-20");
+        request.addParameter("Version", "2012-08-15");
 
         if (bundleInstanceRequest.getInstanceId() != null) {
             request.addParameter("InstanceId", StringUtils.fromString(bundleInstanceRequest.getInstanceId()));

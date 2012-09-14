@@ -80,6 +80,10 @@ public class ReservedInstancesOffering {
      */
     private java.util.List<RecurringCharge> recurringCharges;
 
+    private Boolean marketplace;
+
+    private java.util.List<PricingDetail> pricingDetails;
+
     /**
      * The unique ID of this Reserved Instances offering.
      *
@@ -545,6 +549,118 @@ public class ReservedInstancesOffering {
     }
     
     /**
+     * Returns the value of the Marketplace property for this object.
+     *
+     * @return The value of the Marketplace property for this object.
+     */
+    public Boolean isMarketplace() {
+        return marketplace;
+    }
+    
+    /**
+     * Sets the value of the Marketplace property for this object.
+     *
+     * @param marketplace The new value for the Marketplace property for this object.
+     */
+    public void setMarketplace(Boolean marketplace) {
+        this.marketplace = marketplace;
+    }
+    
+    /**
+     * Sets the value of the Marketplace property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param marketplace The new value for the Marketplace property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public ReservedInstancesOffering withMarketplace(Boolean marketplace) {
+        this.marketplace = marketplace;
+        return this;
+    }
+    
+    
+    /**
+     * Returns the value of the Marketplace property for this object.
+     *
+     * @return The value of the Marketplace property for this object.
+     */
+    public Boolean getMarketplace() {
+        return marketplace;
+    }
+    
+    /**
+     * Returns the value of the PricingDetails property for this object.
+     *
+     * @return The value of the PricingDetails property for this object.
+     */
+    public java.util.List<PricingDetail> getPricingDetails() {
+        
+        if (pricingDetails == null) {
+            pricingDetails = new java.util.ArrayList<PricingDetail>();
+        }
+        return pricingDetails;
+    }
+    
+    /**
+     * Sets the value of the PricingDetails property for this object.
+     *
+     * @param pricingDetails The new value for the PricingDetails property for this object.
+     */
+    public void setPricingDetails(java.util.Collection<PricingDetail> pricingDetails) {
+        if (pricingDetails == null) {
+            this.pricingDetails = null;
+            return;
+        }
+
+        java.util.List<PricingDetail> pricingDetailsCopy = new java.util.ArrayList<PricingDetail>(pricingDetails.size());
+        pricingDetailsCopy.addAll(pricingDetails);
+        this.pricingDetails = pricingDetailsCopy;
+    }
+    
+    /**
+     * Sets the value of the PricingDetails property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param pricingDetails The new value for the PricingDetails property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public ReservedInstancesOffering withPricingDetails(PricingDetail... pricingDetails) {
+        if (getPricingDetails() == null) setPricingDetails(new java.util.ArrayList<PricingDetail>(pricingDetails.length));
+        for (PricingDetail value : pricingDetails) {
+            getPricingDetails().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * Sets the value of the PricingDetails property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param pricingDetails The new value for the PricingDetails property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public ReservedInstancesOffering withPricingDetails(java.util.Collection<PricingDetail> pricingDetails) {
+        if (pricingDetails == null) {
+            this.pricingDetails = null;
+        } else {
+            java.util.List<PricingDetail> pricingDetailsCopy = new java.util.ArrayList<PricingDetail>(pricingDetails.size());
+            pricingDetailsCopy.addAll(pricingDetails);
+            this.pricingDetails = pricingDetailsCopy;
+        }
+
+        return this;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -567,6 +683,8 @@ public class ReservedInstancesOffering {
         if (currencyCode != null) sb.append("CurrencyCode: " + currencyCode + ", ");
         if (offeringType != null) sb.append("OfferingType: " + offeringType + ", ");
         if (recurringCharges != null) sb.append("RecurringCharges: " + recurringCharges + ", ");
+        if (marketplace != null) sb.append("Marketplace: " + marketplace + ", ");
+        if (pricingDetails != null) sb.append("PricingDetails: " + pricingDetails + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -587,6 +705,8 @@ public class ReservedInstancesOffering {
         hashCode = prime * hashCode + ((getCurrencyCode() == null) ? 0 : getCurrencyCode().hashCode()); 
         hashCode = prime * hashCode + ((getOfferingType() == null) ? 0 : getOfferingType().hashCode()); 
         hashCode = prime * hashCode + ((getRecurringCharges() == null) ? 0 : getRecurringCharges().hashCode()); 
+        hashCode = prime * hashCode + ((isMarketplace() == null) ? 0 : isMarketplace().hashCode()); 
+        hashCode = prime * hashCode + ((getPricingDetails() == null) ? 0 : getPricingDetails().hashCode()); 
         return hashCode;
     }
     
@@ -620,6 +740,10 @@ public class ReservedInstancesOffering {
         if (other.getOfferingType() != null && other.getOfferingType().equals(this.getOfferingType()) == false) return false; 
         if (other.getRecurringCharges() == null ^ this.getRecurringCharges() == null) return false;
         if (other.getRecurringCharges() != null && other.getRecurringCharges().equals(this.getRecurringCharges()) == false) return false; 
+        if (other.isMarketplace() == null ^ this.isMarketplace() == null) return false;
+        if (other.isMarketplace() != null && other.isMarketplace().equals(this.isMarketplace()) == false) return false; 
+        if (other.getPricingDetails() == null ^ this.getPricingDetails() == null) return false;
+        if (other.getPricingDetails() != null && other.getPricingDetails().equals(this.getPricingDetails()) == false) return false; 
         return true;
     }
     

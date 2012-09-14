@@ -78,6 +78,14 @@ public class VpnConnectionStaxUnmarshaller implements Unmarshaller<VpnConnection
                     vpnConnection.getVgwTelemetry().add(VgwTelemetryStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("options", targetDepth)) {
+                    vpnConnection.setOptions(VpnConnectionOptionsStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("routes/item", targetDepth)) {
+                    vpnConnection.getRoutes().add(VpnStaticRouteStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return vpnConnection;

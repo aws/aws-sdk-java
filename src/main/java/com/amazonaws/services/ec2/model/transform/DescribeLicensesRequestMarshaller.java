@@ -38,7 +38,7 @@ public class DescribeLicensesRequestMarshaller implements Marshaller<Request<Des
 
         Request<DescribeLicensesRequest> request = new DefaultRequest<DescribeLicensesRequest>(describeLicensesRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeLicenses");
-        request.addParameter("Version", "2012-07-20");
+        request.addParameter("Version", "2012-08-15");
 
 
         java.util.List<String> licenseIdsList = describeLicensesRequest.getLicenseIds();

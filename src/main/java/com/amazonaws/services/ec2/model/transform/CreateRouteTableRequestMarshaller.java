@@ -38,7 +38,7 @@ public class CreateRouteTableRequestMarshaller implements Marshaller<Request<Cre
 
         Request<CreateRouteTableRequest> request = new DefaultRequest<CreateRouteTableRequest>(createRouteTableRequest, "AmazonEC2");
         request.addParameter("Action", "CreateRouteTable");
-        request.addParameter("Version", "2012-07-20");
+        request.addParameter("Version", "2012-08-15");
 
         if (createRouteTableRequest.getVpcId() != null) {
             request.addParameter("VpcId", StringUtils.fromString(createRouteTableRequest.getVpcId()));

@@ -831,6 +831,30 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     }
     
     /**
+     *
+     * @param createReservedInstancesListingRequest Container for the
+     *           necessary parameters to execute the CreateReservedInstancesListing
+     *           service method on AmazonEC2.
+     * 
+     * @return The response from the CreateReservedInstancesListing service
+     *         method, as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public CreateReservedInstancesListingResult createReservedInstancesListing(CreateReservedInstancesListingRequest createReservedInstancesListingRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<CreateReservedInstancesListingRequest> request = new CreateReservedInstancesListingRequestMarshaller().marshall(createReservedInstancesListingRequest);
+        return invoke(request, new CreateReservedInstancesListingResultStaxUnmarshaller());
+    }
+    
+    /**
      * <p>
      * Creates a set of DHCP options that you can then associate with one or
      * more VPCs, causing all existing and new instances that you launch in
@@ -1406,6 +1430,27 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     }
     
     /**
+     *
+     * @param enableVgwRoutePropagationRequest Container for the necessary
+     *           parameters to execute the EnableVgwRoutePropagation service method on
+     *           AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void enableVgwRoutePropagation(EnableVgwRoutePropagationRequest enableVgwRoutePropagationRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<EnableVgwRoutePropagationRequest> request = new EnableVgwRoutePropagationRequestMarshaller().marshall(enableVgwRoutePropagationRequest);
+        invoke(request, null);
+    }
+    
+    /**
      * <p>
      * Create a snapshot of the volume identified by volume ID. A volume
      * does not have to be detached at the time the snapshot is taken.
@@ -1551,31 +1596,6 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
-     * Deactivates a specific number of licenses. Deactivations can be done
-     * against a specific license ID after they have persisted for at least a
-     * 90-day period.
-     * </p>
-     *
-     * @param deactivateLicenseRequest Container for the necessary parameters
-     *           to execute the DeactivateLicense service method on AmazonEC2.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonEC2 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void deactivateLicense(DeactivateLicenseRequest deactivateLicenseRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<DeactivateLicenseRequest> request = new DeactivateLicenseRequestMarshaller().marshall(deactivateLicenseRequest);
-        invoke(request, null);
-    }
-    
-    /**
-     * <p>
      * The AssociateAddress operation associates an elastic IP address with
      * an instance.
      * </p>
@@ -1625,6 +1645,31 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public void cancelConversionTask(CancelConversionTaskRequest cancelConversionTaskRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<CancelConversionTaskRequest> request = new CancelConversionTaskRequestMarshaller().marshall(cancelConversionTaskRequest);
+        invoke(request, null);
+    }
+    
+    /**
+     * <p>
+     * Deactivates a specific number of licenses. Deactivations can be done
+     * against a specific license ID after they have persisted for at least a
+     * 90-day period.
+     * </p>
+     *
+     * @param deactivateLicenseRequest Container for the necessary parameters
+     *           to execute the DeactivateLicense service method on AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void deactivateLicense(DeactivateLicenseRequest deactivateLicenseRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<DeactivateLicenseRequest> request = new DeactivateLicenseRequestMarshaller().marshall(deactivateLicenseRequest);
         invoke(request, null);
     }
     
@@ -1814,6 +1859,30 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             throws AmazonServiceException, AmazonClientException {
         Request<DescribeVolumesRequest> request = new DescribeVolumesRequestMarshaller().marshall(describeVolumesRequest);
         return invoke(request, new DescribeVolumesResultStaxUnmarshaller());
+    }
+    
+    /**
+     *
+     * @param describeReservedInstancesListingsRequest Container for the
+     *           necessary parameters to execute the DescribeReservedInstancesListings
+     *           service method on AmazonEC2.
+     * 
+     * @return The response from the DescribeReservedInstancesListings
+     *         service method, as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeReservedInstancesListingsResult describeReservedInstancesListings(DescribeReservedInstancesListingsRequest describeReservedInstancesListingsRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<DescribeReservedInstancesListingsRequest> request = new DescribeReservedInstancesListingsRequestMarshaller().marshall(describeReservedInstancesListingsRequest);
+        return invoke(request, new DescribeReservedInstancesListingsResultStaxUnmarshaller());
     }
     
     /**
@@ -2143,6 +2212,27 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             throws AmazonServiceException, AmazonClientException {
         Request<CreateInternetGatewayRequest> request = new CreateInternetGatewayRequestMarshaller().marshall(createInternetGatewayRequest);
         return invoke(request, new CreateInternetGatewayResultStaxUnmarshaller());
+    }
+    
+    /**
+     *
+     * @param deleteVpnConnectionRouteRequest Container for the necessary
+     *           parameters to execute the DeleteVpnConnectionRoute service method on
+     *           AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void deleteVpnConnectionRoute(DeleteVpnConnectionRouteRequest deleteVpnConnectionRouteRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<DeleteVpnConnectionRouteRequest> request = new DeleteVpnConnectionRouteRequestMarshaller().marshall(deleteVpnConnectionRouteRequest);
+        invoke(request, null);
     }
     
     /**
@@ -2807,6 +2897,30 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     }
     
     /**
+     *
+     * @param cancelReservedInstancesListingRequest Container for the
+     *           necessary parameters to execute the CancelReservedInstancesListing
+     *           service method on AmazonEC2.
+     * 
+     * @return The response from the CancelReservedInstancesListing service
+     *         method, as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public CancelReservedInstancesListingResult cancelReservedInstancesListing(CancelReservedInstancesListingRequest cancelReservedInstancesListingRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<CancelReservedInstancesListingRequest> request = new CancelReservedInstancesListingRequestMarshaller().marshall(cancelReservedInstancesListingRequest);
+        return invoke(request, new CancelReservedInstancesListingResultStaxUnmarshaller());
+    }
+    
+    /**
      * <p>
      * Modifies an attribute of an instance.
      * </p>
@@ -3231,30 +3345,6 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      *
-     * @param attachNetworkInterfaceRequest Container for the necessary
-     *           parameters to execute the AttachNetworkInterface service method on
-     *           AmazonEC2.
-     * 
-     * @return The response from the AttachNetworkInterface service method,
-     *         as returned by AmazonEC2.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonEC2 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public AttachNetworkInterfaceResult attachNetworkInterface(AttachNetworkInterfaceRequest attachNetworkInterfaceRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<AttachNetworkInterfaceRequest> request = new AttachNetworkInterfaceRequestMarshaller().marshall(attachNetworkInterfaceRequest);
-        return invoke(request, new AttachNetworkInterfaceResultStaxUnmarshaller());
-    }
-    
-    /**
-     *
      * @param describeVolumeAttributeRequest Container for the necessary
      *           parameters to execute the DescribeVolumeAttribute service method on
      *           AmazonEC2.
@@ -3275,6 +3365,30 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             throws AmazonServiceException, AmazonClientException {
         Request<DescribeVolumeAttributeRequest> request = new DescribeVolumeAttributeRequestMarshaller().marshall(describeVolumeAttributeRequest);
         return invoke(request, new DescribeVolumeAttributeResultStaxUnmarshaller());
+    }
+    
+    /**
+     *
+     * @param attachNetworkInterfaceRequest Container for the necessary
+     *           parameters to execute the AttachNetworkInterface service method on
+     *           AmazonEC2.
+     * 
+     * @return The response from the AttachNetworkInterface service method,
+     *         as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public AttachNetworkInterfaceResult attachNetworkInterface(AttachNetworkInterfaceRequest attachNetworkInterfaceRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<AttachNetworkInterfaceRequest> request = new AttachNetworkInterfaceRequestMarshaller().marshall(attachNetworkInterfaceRequest);
+        return invoke(request, new AttachNetworkInterfaceResultStaxUnmarshaller());
     }
     
     /**
@@ -3357,6 +3471,27 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             throws AmazonServiceException, AmazonClientException {
         Request<CancelBundleTaskRequest> request = new CancelBundleTaskRequestMarshaller().marshall(cancelBundleTaskRequest);
         return invoke(request, new CancelBundleTaskResultStaxUnmarshaller());
+    }
+    
+    /**
+     *
+     * @param disableVgwRoutePropagationRequest Container for the necessary
+     *           parameters to execute the DisableVgwRoutePropagation service method on
+     *           AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void disableVgwRoutePropagation(DisableVgwRoutePropagationRequest disableVgwRoutePropagationRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<DisableVgwRoutePropagationRequest> request = new DisableVgwRoutePropagationRequestMarshaller().marshall(disableVgwRoutePropagationRequest);
+        invoke(request, null);
     }
     
     /**
@@ -4534,6 +4669,27 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     }
     
     /**
+     *
+     * @param createVpnConnectionRouteRequest Container for the necessary
+     *           parameters to execute the CreateVpnConnectionRoute service method on
+     *           AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void createVpnConnectionRoute(CreateVpnConnectionRouteRequest createVpnConnectionRouteRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<CreateVpnConnectionRouteRequest> request = new CreateVpnConnectionRouteRequestMarshaller().marshall(createVpnConnectionRouteRequest);
+        invoke(request, null);
+    }
+    
+    /**
      * <p>
      * The DescribeReservedInstances operation describes Reserved Instances
      * that were purchased for use with your account.
@@ -4949,6 +5105,24 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      */
     public DescribeVolumesResult describeVolumes() throws AmazonServiceException, AmazonClientException {
         return describeVolumes(new DescribeVolumesRequest());
+    }
+    
+    /**
+     * 
+     * @return The response from the DescribeReservedInstancesListings
+     *         service method, as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeReservedInstancesListingsResult describeReservedInstancesListings() throws AmazonServiceException, AmazonClientException {
+        return describeReservedInstancesListings(new DescribeReservedInstancesListingsRequest());
     }
     
     /**

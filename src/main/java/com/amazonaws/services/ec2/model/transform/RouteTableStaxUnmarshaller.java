@@ -66,6 +66,14 @@ public class RouteTableStaxUnmarshaller implements Unmarshaller<RouteTable, Stax
                     routeTable.getTags().add(TagStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("propagatingVgwSet/item", targetDepth)) {
+                    routeTable.getPropagatingVgws().add(PropagatingVgwStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("propagatedRouteSet/item", targetDepth)) {
+                    routeTable.getPropagatedRoutes().add(PropagatedRouteStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return routeTable;

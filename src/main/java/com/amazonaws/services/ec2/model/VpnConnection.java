@@ -66,6 +66,10 @@ public class VpnConnection {
 
     private java.util.List<VgwTelemetry> vgwTelemetry;
 
+    private VpnConnectionOptions options;
+
+    private java.util.List<VpnStaticRoute> routes;
+
     /**
      * Specifies the ID of the VPN gateway at the VPC end of the VPN
      * connection.
@@ -457,6 +461,109 @@ public class VpnConnection {
     }
     
     /**
+     * Returns the value of the Options property for this object.
+     *
+     * @return The value of the Options property for this object.
+     */
+    public VpnConnectionOptions getOptions() {
+        return options;
+    }
+    
+    /**
+     * Sets the value of the Options property for this object.
+     *
+     * @param options The new value for the Options property for this object.
+     */
+    public void setOptions(VpnConnectionOptions options) {
+        this.options = options;
+    }
+    
+    /**
+     * Sets the value of the Options property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param options The new value for the Options property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public VpnConnection withOptions(VpnConnectionOptions options) {
+        this.options = options;
+        return this;
+    }
+    
+    
+    /**
+     * Returns the value of the Routes property for this object.
+     *
+     * @return The value of the Routes property for this object.
+     */
+    public java.util.List<VpnStaticRoute> getRoutes() {
+        
+        if (routes == null) {
+            routes = new java.util.ArrayList<VpnStaticRoute>();
+        }
+        return routes;
+    }
+    
+    /**
+     * Sets the value of the Routes property for this object.
+     *
+     * @param routes The new value for the Routes property for this object.
+     */
+    public void setRoutes(java.util.Collection<VpnStaticRoute> routes) {
+        if (routes == null) {
+            this.routes = null;
+            return;
+        }
+
+        java.util.List<VpnStaticRoute> routesCopy = new java.util.ArrayList<VpnStaticRoute>(routes.size());
+        routesCopy.addAll(routes);
+        this.routes = routesCopy;
+    }
+    
+    /**
+     * Sets the value of the Routes property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param routes The new value for the Routes property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public VpnConnection withRoutes(VpnStaticRoute... routes) {
+        if (getRoutes() == null) setRoutes(new java.util.ArrayList<VpnStaticRoute>(routes.length));
+        for (VpnStaticRoute value : routes) {
+            getRoutes().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * Sets the value of the Routes property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param routes The new value for the Routes property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public VpnConnection withRoutes(java.util.Collection<VpnStaticRoute> routes) {
+        if (routes == null) {
+            this.routes = null;
+        } else {
+            java.util.List<VpnStaticRoute> routesCopy = new java.util.ArrayList<VpnStaticRoute>(routes.size());
+            routesCopy.addAll(routes);
+            this.routes = routesCopy;
+        }
+
+        return this;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -476,6 +583,8 @@ public class VpnConnection {
         if (vpnGatewayId != null) sb.append("VpnGatewayId: " + vpnGatewayId + ", ");
         if (tags != null) sb.append("Tags: " + tags + ", ");
         if (vgwTelemetry != null) sb.append("VgwTelemetry: " + vgwTelemetry + ", ");
+        if (options != null) sb.append("Options: " + options + ", ");
+        if (routes != null) sb.append("Routes: " + routes + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -493,6 +602,8 @@ public class VpnConnection {
         hashCode = prime * hashCode + ((getVpnGatewayId() == null) ? 0 : getVpnGatewayId().hashCode()); 
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode()); 
         hashCode = prime * hashCode + ((getVgwTelemetry() == null) ? 0 : getVgwTelemetry().hashCode()); 
+        hashCode = prime * hashCode + ((getOptions() == null) ? 0 : getOptions().hashCode()); 
+        hashCode = prime * hashCode + ((getRoutes() == null) ? 0 : getRoutes().hashCode()); 
         return hashCode;
     }
     
@@ -520,6 +631,10 @@ public class VpnConnection {
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false) return false; 
         if (other.getVgwTelemetry() == null ^ this.getVgwTelemetry() == null) return false;
         if (other.getVgwTelemetry() != null && other.getVgwTelemetry().equals(this.getVgwTelemetry()) == false) return false; 
+        if (other.getOptions() == null ^ this.getOptions() == null) return false;
+        if (other.getOptions() != null && other.getOptions().equals(this.getOptions()) == false) return false; 
+        if (other.getRoutes() == null ^ this.getRoutes() == null) return false;
+        if (other.getRoutes() != null && other.getRoutes().equals(this.getRoutes()) == false) return false; 
         return true;
     }
     

@@ -50,6 +50,10 @@ public class DescribeReservedInstancesOfferingsResultStaxUnmarshaller implements
                     describeReservedInstancesOfferingsResult.getReservedInstancesOfferings().add(ReservedInstancesOfferingStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("nextToken", targetDepth)) {
+                    describeReservedInstancesOfferingsResult.setNextToken(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return describeReservedInstancesOfferingsResult;
