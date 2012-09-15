@@ -338,9 +338,11 @@ public class ArchiveTransferManager {
     			.withAccountId(accountId)
     			.withVaultName(vaultName)
     			.withJobId(jobId));
-    	} finally {
-    		jobStatusMonitor.shutdown();
-    	}
+    	}  finally {
+            if (jobStatusMonitor!=null) {
+                jobStatusMonitor.shutdown();
+            }
+        }
 
     	downloadJobOutput(jobOutputResult, file);
     }
