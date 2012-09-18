@@ -93,6 +93,11 @@ public class UploadMultipartPartRequest extends AmazonWebServiceRequest {
     private String checksum;
 
     /**
+     * The SHA256 linear hash of the data being uploaded.
+     */
+    private String linearChecksum;
+
+    /**
      * Identifies the range of bytes in the assembled archive that will be
      * uploaded in this part. Amazon Glacier uses this information to
      * assemble the archive in the proper sequence. The format of this header
@@ -329,6 +334,39 @@ public class UploadMultipartPartRequest extends AmazonWebServiceRequest {
     
     
     /**
+     * The SHA256 linear hash of the data being uploaded.
+     *
+     * @return The SHA256 linear hash of the data being uploaded.
+     */
+    public String getLinearChecksum() {
+        return linearChecksum;
+    }
+    
+    /**
+     * The SHA256 linear hash of the data being uploaded.
+     *
+     * @param linearChecksum The SHA256 linear hash of the data being uploaded.
+     */
+    public void setLinearChecksum(String linearChecksum) {
+        this.linearChecksum = linearChecksum;
+    }
+    
+    /**
+     * The SHA256 linear hash of the data being uploaded.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param linearChecksum The SHA256 linear hash of the data being uploaded.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public UploadMultipartPartRequest withChecksum(String linearChecksum) {
+        this.linearChecksum = linearChecksum;
+        return this;
+    }
+    
+    /**
      * Identifies the range of bytes in the assembled archive that will be
      * uploaded in this part. Amazon Glacier uses this information to
      * assemble the archive in the proper sequence. The format of this header
@@ -436,6 +474,7 @@ public class UploadMultipartPartRequest extends AmazonWebServiceRequest {
         if (vaultName != null) sb.append("VaultName: " + vaultName + ", ");
         if (uploadId != null) sb.append("UploadId: " + uploadId + ", ");
         if (checksum != null) sb.append("Checksum: " + checksum + ", ");
+        if (linearChecksum != null) sb.append("Linear checksum: " + linearChecksum + ", ");
         if (range != null) sb.append("Range: " + range + ", ");
         if (body != null) sb.append("Body: " + body + ", ");
         sb.append("}");
@@ -451,6 +490,7 @@ public class UploadMultipartPartRequest extends AmazonWebServiceRequest {
         hashCode = prime * hashCode + ((getVaultName() == null) ? 0 : getVaultName().hashCode()); 
         hashCode = prime * hashCode + ((getUploadId() == null) ? 0 : getUploadId().hashCode()); 
         hashCode = prime * hashCode + ((getChecksum() == null) ? 0 : getChecksum().hashCode()); 
+        hashCode = prime * hashCode + ((getLinearChecksum() == null) ? 0 : getLinearChecksum().hashCode()); 
         hashCode = prime * hashCode + ((getRange() == null) ? 0 : getRange().hashCode()); 
         hashCode = prime * hashCode + ((getBody() == null) ? 0 : getBody().hashCode()); 
         return hashCode;
@@ -472,6 +512,8 @@ public class UploadMultipartPartRequest extends AmazonWebServiceRequest {
         if (other.getUploadId() != null && other.getUploadId().equals(this.getUploadId()) == false) return false; 
         if (other.getChecksum() == null ^ this.getChecksum() == null) return false;
         if (other.getChecksum() != null && other.getChecksum().equals(this.getChecksum()) == false) return false; 
+        if (other.getLinearChecksum() == null ^ this.getLinearChecksum() == null) return false;
+        if (other.getLinearChecksum() != null && other.getLinearChecksum().equals(this.getLinearChecksum()) == false) return false; 
         if (other.getRange() == null ^ this.getRange() == null) return false;
         if (other.getRange() != null && other.getRange().equals(this.getRange()) == false) return false; 
         if (other.getBody() == null ^ this.getBody() == null) return false;

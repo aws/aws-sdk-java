@@ -80,9 +80,14 @@ public class UploadArchiveRequest extends AmazonWebServiceRequest {
     private String archiveDescription;
 
     /**
-     * The SHA256 checksum (a linear hash) of the payload.
+     * The SHA256 checksum (a tree hash) of the payload.
      */
-    private String checksum;
+    private String treeChecksum;
+
+    /**
+     * The SHA256 checksum (a tree hash) of the payload.
+     */
+    private String linearChecksum;
 
     /**
      * The data to upload.
@@ -103,13 +108,13 @@ public class UploadArchiveRequest extends AmazonWebServiceRequest {
      * @param vaultName The name of the vault.
      * @param archiveDescription The optional description of the archive you
      * are uploading.
-     * @param checksum The SHA256 checksum (a linear hash) of the payload.
+     * @param treeChecksum The SHA256 checksum (a tree hash) of the payload.
      * @param body The data to upload.
      */
-    public UploadArchiveRequest(String vaultName, String archiveDescription, String checksum, java.io.InputStream body) {
+    public UploadArchiveRequest(String vaultName, String archiveDescription, String treeChecksum, java.io.InputStream body) {
         this.vaultName = vaultName;
         this.archiveDescription = archiveDescription;
-        this.checksum = checksum;
+        this.treeChecksum = treeChecksum;
         this.body = body;
     }
 
@@ -128,14 +133,14 @@ public class UploadArchiveRequest extends AmazonWebServiceRequest {
      * do not include hyphens in it.
      * @param archiveDescription The optional description of the archive you
      * are uploading.
-     * @param checksum The SHA256 checksum (a linear hash) of the payload.
+     * @param treeChecksum The SHA256 checksum (a tree hash) of the payload.
      * @param body The data to upload.
      */
-    public UploadArchiveRequest(String vaultName, String accountId, String archiveDescription, String checksum, java.io.InputStream body) {
+    public UploadArchiveRequest(String vaultName, String accountId, String archiveDescription, String treeChecksum, java.io.InputStream body) {
         this.vaultName = vaultName;
         this.accountId = accountId;
         this.archiveDescription = archiveDescription;
-        this.checksum = checksum;
+        this.treeChecksum = treeChecksum;
         this.body = body;
     }
 
@@ -302,21 +307,55 @@ public class UploadArchiveRequest extends AmazonWebServiceRequest {
     
     
     /**
+     * The SHA256 checksum (a tree hash) of the payload.
+     *
+     * @return The SHA256 checksum (a tree hash) of the payload.
+     */
+    public String getChecksum() {
+        return treeChecksum;
+    }
+    
+    /**
+     * The SHA256 checksum (a tree hash) of the payload.
+     *
+     * @param treeChecksum The SHA256 checksum (a tree hash) of the payload.
+     */
+    public void setChecksum(String treeChecksum) {
+        this.treeChecksum = treeChecksum;
+    }
+    
+    /**
+     * The SHA256 checksum (a tree hash) of the payload.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param treeChecksum The SHA256 checksum (a tree hash) of the payload.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public UploadArchiveRequest withChecksum(String treeChecksum) {
+        this.treeChecksum = treeChecksum;
+        return this;
+    }
+    
+    
+    /**
      * The SHA256 checksum (a linear hash) of the payload.
      *
      * @return The SHA256 checksum (a linear hash) of the payload.
      */
-    public String getChecksum() {
-        return checksum;
+    public String getLinearChecksum() {
+        return linearChecksum;
     }
     
     /**
      * The SHA256 checksum (a linear hash) of the payload.
      *
-     * @param checksum The SHA256 checksum (a linear hash) of the payload.
+     * @param linearChecksum The SHA256 checksum (a linear hash) of the payload.
      */
-    public void setChecksum(String checksum) {
-        this.checksum = checksum;
+    public void setLinearChecksum(String linearChecksum) {
+        this.linearChecksum = linearChecksum;
     }
     
     /**
@@ -324,13 +363,13 @@ public class UploadArchiveRequest extends AmazonWebServiceRequest {
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param checksum The SHA256 checksum (a linear hash) of the payload.
+     * @param treeChecksum The SHA256 checksum (a linear hash) of the payload.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public UploadArchiveRequest withChecksum(String checksum) {
-        this.checksum = checksum;
+    public UploadArchiveRequest withLinearChecksum(String linearChecksum) {
+        this.linearChecksum = linearChecksum;
         return this;
     }
     
@@ -385,7 +424,8 @@ public class UploadArchiveRequest extends AmazonWebServiceRequest {
         if (vaultName != null) sb.append("VaultName: " + vaultName + ", ");
         if (accountId != null) sb.append("AccountId: " + accountId + ", ");
         if (archiveDescription != null) sb.append("ArchiveDescription: " + archiveDescription + ", ");
-        if (checksum != null) sb.append("Checksum: " + checksum + ", ");
+        if (treeChecksum != null) sb.append("Tree checksum: " + treeChecksum + ", ");
+        if (linearChecksum != null) sb.append("Linear checksum: " + linearChecksum + ", ");
         if (body != null) sb.append("Body: " + body + ", ");
         sb.append("}");
         return sb.toString();
@@ -401,6 +441,7 @@ public class UploadArchiveRequest extends AmazonWebServiceRequest {
         hashCode = prime * hashCode + ((getAccountId() == null) ? 0 : getAccountId().hashCode()); 
         hashCode = prime * hashCode + ((getArchiveDescription() == null) ? 0 : getArchiveDescription().hashCode()); 
         hashCode = prime * hashCode + ((getChecksum() == null) ? 0 : getChecksum().hashCode()); 
+        hashCode = prime * hashCode + ((getLinearChecksum() == null) ? 0 : getLinearChecksum().hashCode()); 
         hashCode = prime * hashCode + ((getBody() == null) ? 0 : getBody().hashCode()); 
         return hashCode;
     }
@@ -423,6 +464,8 @@ public class UploadArchiveRequest extends AmazonWebServiceRequest {
         if (other.getArchiveDescription() != null && other.getArchiveDescription().equals(this.getArchiveDescription()) == false) return false; 
         if (other.getChecksum() == null ^ this.getChecksum() == null) return false;
         if (other.getChecksum() != null && other.getChecksum().equals(this.getChecksum()) == false) return false; 
+        if (other.getLinearChecksum() == null ^ this.getLinearChecksum() == null) return false;
+        if (other.getLinearChecksum() != null && other.getLinearChecksum().equals(this.getLinearChecksum()) == false) return false; 
         if (other.getBody() == null ^ this.getBody() == null) return false;
         if (other.getBody() != null && other.getBody().equals(this.getBody()) == false) return false; 
         return true;

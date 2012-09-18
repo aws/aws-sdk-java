@@ -61,6 +61,9 @@ public class UploadArchiveRequestMarshaller implements Marshaller<Request<Upload
         if (uploadArchiveRequest.getChecksum() != null)
         	request.addHeader("x-amz-sha256-tree-hash", StringUtils.fromString(uploadArchiveRequest.getChecksum()));
         
+        if (uploadArchiveRequest.getLinearChecksum() != null)
+        	request.addHeader("x-amz-content-sha256", StringUtils.fromString(uploadArchiveRequest.getLinearChecksum()));
+        
 
 
         String uriResourcePath = "/{accountId}/vaults/{vaultName}/archives"; 

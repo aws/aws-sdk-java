@@ -54,6 +54,9 @@ public class UploadMultipartPartRequestMarshaller implements Marshaller<Request<
         request.setHttpMethod(HttpMethodName.PUT);
         if (uploadMultipartPartRequest.getChecksum() != null)
         	request.addHeader("x-amz-sha256-tree-hash", StringUtils.fromString(uploadMultipartPartRequest.getChecksum()));
+
+        if (uploadMultipartPartRequest.getLinearChecksum() != null)
+        	request.addHeader("x-amz-content-sha256", StringUtils.fromString(uploadMultipartPartRequest.getLinearChecksum()));
         
         if (uploadMultipartPartRequest.getRange() != null)
         	request.addHeader("Content-Range", StringUtils.fromString(uploadMultipartPartRequest.getRange()));
