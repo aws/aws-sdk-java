@@ -328,6 +328,30 @@ public interface AmazonAutoScaling {
 
     /**
      * <p>
+     * Returns a list of all termination policies supported by Auto Scaling.
+     * </p>
+     *
+     * @param describeTerminationPolicyTypesRequest Container for the
+     *           necessary parameters to execute the DescribeTerminationPolicyTypes
+     *           service method on AmazonAutoScaling.
+     * 
+     * @return The response from the DescribeTerminationPolicyTypes service
+     *         method, as returned by AmazonAutoScaling.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonAutoScaling indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeTerminationPolicyTypesResult describeTerminationPolicyTypes(DescribeTerminationPolicyTypesRequest describeTerminationPolicyTypesRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
      * Lists the Auto Scaling group tags.
      * </p>
      * <p>
@@ -1137,6 +1161,25 @@ public interface AmazonAutoScaling {
      *             either a problem with the data in the request, or a server side issue.
      */
     public DescribeNotificationConfigurationsResult describeNotificationConfigurations() throws AmazonServiceException, AmazonClientException;
+    
+    /**
+     * <p>
+     * Returns a list of all termination policies supported by Auto Scaling.
+     * </p>
+     * 
+     * @return The response from the DescribeTerminationPolicyTypes service
+     *         method, as returned by AmazonAutoScaling.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonAutoScaling indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeTerminationPolicyTypesResult describeTerminationPolicyTypes() throws AmazonServiceException, AmazonClientException;
     
     /**
      * <p>

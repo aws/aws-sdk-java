@@ -159,6 +159,12 @@ public class AutoScalingGroup {
     private java.util.List<TagDescription> tags;
 
     /**
+     * A standalone termination policy or a list of termination policies for
+     * this Auto Scaling group.
+     */
+    private java.util.List<String> terminationPolicies;
+
+    /**
      * Specifies the name of the group.
      * <p>
      * <b>Constraints:</b><br/>
@@ -1177,6 +1183,83 @@ public class AutoScalingGroup {
     }
     
     /**
+     * A standalone termination policy or a list of termination policies for
+     * this Auto Scaling group.
+     *
+     * @return A standalone termination policy or a list of termination policies for
+     *         this Auto Scaling group.
+     */
+    public java.util.List<String> getTerminationPolicies() {
+        
+        if (terminationPolicies == null) {
+            terminationPolicies = new java.util.ArrayList<String>();
+        }
+        return terminationPolicies;
+    }
+    
+    /**
+     * A standalone termination policy or a list of termination policies for
+     * this Auto Scaling group.
+     *
+     * @param terminationPolicies A standalone termination policy or a list of termination policies for
+     *         this Auto Scaling group.
+     */
+    public void setTerminationPolicies(java.util.Collection<String> terminationPolicies) {
+        if (terminationPolicies == null) {
+            this.terminationPolicies = null;
+            return;
+        }
+
+        java.util.List<String> terminationPoliciesCopy = new java.util.ArrayList<String>(terminationPolicies.size());
+        terminationPoliciesCopy.addAll(terminationPolicies);
+        this.terminationPolicies = terminationPoliciesCopy;
+    }
+    
+    /**
+     * A standalone termination policy or a list of termination policies for
+     * this Auto Scaling group.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param terminationPolicies A standalone termination policy or a list of termination policies for
+     *         this Auto Scaling group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public AutoScalingGroup withTerminationPolicies(String... terminationPolicies) {
+        if (getTerminationPolicies() == null) setTerminationPolicies(new java.util.ArrayList<String>(terminationPolicies.length));
+        for (String value : terminationPolicies) {
+            getTerminationPolicies().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * A standalone termination policy or a list of termination policies for
+     * this Auto Scaling group.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param terminationPolicies A standalone termination policy or a list of termination policies for
+     *         this Auto Scaling group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public AutoScalingGroup withTerminationPolicies(java.util.Collection<String> terminationPolicies) {
+        if (terminationPolicies == null) {
+            this.terminationPolicies = null;
+        } else {
+            java.util.List<String> terminationPoliciesCopy = new java.util.ArrayList<String>(terminationPolicies.size());
+            terminationPoliciesCopy.addAll(terminationPolicies);
+            this.terminationPolicies = terminationPoliciesCopy;
+        }
+
+        return this;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -1207,6 +1290,7 @@ public class AutoScalingGroup {
         if (enabledMetrics != null) sb.append("EnabledMetrics: " + enabledMetrics + ", ");
         if (status != null) sb.append("Status: " + status + ", ");
         if (tags != null) sb.append("Tags: " + tags + ", ");
+        if (terminationPolicies != null) sb.append("TerminationPolicies: " + terminationPolicies + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -1235,6 +1319,7 @@ public class AutoScalingGroup {
         hashCode = prime * hashCode + ((getEnabledMetrics() == null) ? 0 : getEnabledMetrics().hashCode()); 
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode()); 
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode()); 
+        hashCode = prime * hashCode + ((getTerminationPolicies() == null) ? 0 : getTerminationPolicies().hashCode()); 
         return hashCode;
     }
     
@@ -1284,6 +1369,8 @@ public class AutoScalingGroup {
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false) return false; 
         if (other.getTags() == null ^ this.getTags() == null) return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false) return false; 
+        if (other.getTerminationPolicies() == null ^ this.getTerminationPolicies() == null) return false;
+        if (other.getTerminationPolicies() != null && other.getTerminationPolicies().equals(this.getTerminationPolicies()) == false) return false; 
         return true;
     }
     

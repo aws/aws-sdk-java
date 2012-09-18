@@ -233,11 +233,7 @@ public class AmazonHttpClient {
 
             HttpRequestBase httpRequest = null;
             org.apache.http.HttpResponse response = null;
-            try {
-            	if (request.getContent() != null && request.getContent().markSupported() && retryCount > 0) {
-            		request.getContent().reset();
-            	}
-            	
+            try {            	
             	// Sign the request if a signer was provided
             	if (executionContext.getSigner() != null && executionContext.getCredentials() != null) {
             		awsRequestMetrics.startEvent(Field.RequestSigningTime.name());
@@ -323,9 +319,19 @@ public class AmazonHttpClient {
                 log.info("Unable to execute HTTP request: " + ioe.getMessage(), ioe);
                 awsRequestMetrics.addProperty(Field.Exception.name(), ioe.toString());
                 awsRequestMetrics.addProperty(Field.AWSRequestID.name(), null);
-
+                
                 if (!shouldRetry(httpRequest, ioe, retryCount)) {
                     throw new AmazonClientException("Unable to execute HTTP request: " + ioe.getMessage(), ioe);
+                } else {
+                    if ( request.getContent() != null && request.getContent().markSupported() ) {
+                        try {
+                            request.getContent().reset();
+                        } catch ( IOException e ) {
+                            // This exception comes from being unable to reset the input stream, so throw the original
+                            throw new AmazonClientException(
+                                    "Encountered an exception and couldn't reset the stream to retry", ioe);
+                        }
+                    }
                 }
             } finally {
                 retryCount++;

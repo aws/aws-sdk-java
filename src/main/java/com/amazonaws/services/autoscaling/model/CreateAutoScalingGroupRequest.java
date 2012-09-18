@@ -125,11 +125,21 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest {
     private String vPCZoneIdentifier;
 
     /**
+     * A standalone termination policy or a list of termination policies used
+     * to select the instance to terminate. The policies are executed in the
+     * order that they are listed. <p> For more information on configuring a
+     * termination policy for your Auto Scaling group, go to <a
+     * AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Instance
+     * Termination Policy for Your Auto Scaling Group</a> in the the <i>Auto
+     * Scaling Developer Guide</i>.
+     */
+    private java.util.List<String> terminationPolicies;
+
+    /**
      * The tag to be created or updated. Each tag should be defined by its
      * resource type, resource ID, key, value, and a propagate flag. Valid
-     * values are: key=<i>value</i>, value=<i>value</i>,
-     * propagate=<i>true</i> or <i>false</i>. Value and propagate are
-     * optional parameters.
+     * values: key=<i>value</i>, value=<i>value</i>, propagate=<i>true</i> or
+     * <i>false</i>. Value and propagate are optional parameters.
      */
     private java.util.List<Tag> tags;
 
@@ -750,17 +760,132 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest {
     
     
     /**
+     * A standalone termination policy or a list of termination policies used
+     * to select the instance to terminate. The policies are executed in the
+     * order that they are listed. <p> For more information on configuring a
+     * termination policy for your Auto Scaling group, go to <a
+     * AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Instance
+     * Termination Policy for Your Auto Scaling Group</a> in the the <i>Auto
+     * Scaling Developer Guide</i>.
+     *
+     * @return A standalone termination policy or a list of termination policies used
+     *         to select the instance to terminate. The policies are executed in the
+     *         order that they are listed. <p> For more information on configuring a
+     *         termination policy for your Auto Scaling group, go to <a
+     *         AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Instance
+     *         Termination Policy for Your Auto Scaling Group</a> in the the <i>Auto
+     *         Scaling Developer Guide</i>.
+     */
+    public java.util.List<String> getTerminationPolicies() {
+        
+        if (terminationPolicies == null) {
+            terminationPolicies = new java.util.ArrayList<String>();
+        }
+        return terminationPolicies;
+    }
+    
+    /**
+     * A standalone termination policy or a list of termination policies used
+     * to select the instance to terminate. The policies are executed in the
+     * order that they are listed. <p> For more information on configuring a
+     * termination policy for your Auto Scaling group, go to <a
+     * AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Instance
+     * Termination Policy for Your Auto Scaling Group</a> in the the <i>Auto
+     * Scaling Developer Guide</i>.
+     *
+     * @param terminationPolicies A standalone termination policy or a list of termination policies used
+     *         to select the instance to terminate. The policies are executed in the
+     *         order that they are listed. <p> For more information on configuring a
+     *         termination policy for your Auto Scaling group, go to <a
+     *         AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Instance
+     *         Termination Policy for Your Auto Scaling Group</a> in the the <i>Auto
+     *         Scaling Developer Guide</i>.
+     */
+    public void setTerminationPolicies(java.util.Collection<String> terminationPolicies) {
+        if (terminationPolicies == null) {
+            this.terminationPolicies = null;
+            return;
+        }
+
+        java.util.List<String> terminationPoliciesCopy = new java.util.ArrayList<String>(terminationPolicies.size());
+        terminationPoliciesCopy.addAll(terminationPolicies);
+        this.terminationPolicies = terminationPoliciesCopy;
+    }
+    
+    /**
+     * A standalone termination policy or a list of termination policies used
+     * to select the instance to terminate. The policies are executed in the
+     * order that they are listed. <p> For more information on configuring a
+     * termination policy for your Auto Scaling group, go to <a
+     * AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Instance
+     * Termination Policy for Your Auto Scaling Group</a> in the the <i>Auto
+     * Scaling Developer Guide</i>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param terminationPolicies A standalone termination policy or a list of termination policies used
+     *         to select the instance to terminate. The policies are executed in the
+     *         order that they are listed. <p> For more information on configuring a
+     *         termination policy for your Auto Scaling group, go to <a
+     *         AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Instance
+     *         Termination Policy for Your Auto Scaling Group</a> in the the <i>Auto
+     *         Scaling Developer Guide</i>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public CreateAutoScalingGroupRequest withTerminationPolicies(String... terminationPolicies) {
+        if (getTerminationPolicies() == null) setTerminationPolicies(new java.util.ArrayList<String>(terminationPolicies.length));
+        for (String value : terminationPolicies) {
+            getTerminationPolicies().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * A standalone termination policy or a list of termination policies used
+     * to select the instance to terminate. The policies are executed in the
+     * order that they are listed. <p> For more information on configuring a
+     * termination policy for your Auto Scaling group, go to <a
+     * AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Instance
+     * Termination Policy for Your Auto Scaling Group</a> in the the <i>Auto
+     * Scaling Developer Guide</i>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param terminationPolicies A standalone termination policy or a list of termination policies used
+     *         to select the instance to terminate. The policies are executed in the
+     *         order that they are listed. <p> For more information on configuring a
+     *         termination policy for your Auto Scaling group, go to <a
+     *         AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Instance
+     *         Termination Policy for Your Auto Scaling Group</a> in the the <i>Auto
+     *         Scaling Developer Guide</i>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public CreateAutoScalingGroupRequest withTerminationPolicies(java.util.Collection<String> terminationPolicies) {
+        if (terminationPolicies == null) {
+            this.terminationPolicies = null;
+        } else {
+            java.util.List<String> terminationPoliciesCopy = new java.util.ArrayList<String>(terminationPolicies.size());
+            terminationPoliciesCopy.addAll(terminationPolicies);
+            this.terminationPolicies = terminationPoliciesCopy;
+        }
+
+        return this;
+    }
+    
+    /**
      * The tag to be created or updated. Each tag should be defined by its
      * resource type, resource ID, key, value, and a propagate flag. Valid
-     * values are: key=<i>value</i>, value=<i>value</i>,
-     * propagate=<i>true</i> or <i>false</i>. Value and propagate are
-     * optional parameters.
+     * values: key=<i>value</i>, value=<i>value</i>, propagate=<i>true</i> or
+     * <i>false</i>. Value and propagate are optional parameters.
      *
      * @return The tag to be created or updated. Each tag should be defined by its
      *         resource type, resource ID, key, value, and a propagate flag. Valid
-     *         values are: key=<i>value</i>, value=<i>value</i>,
-     *         propagate=<i>true</i> or <i>false</i>. Value and propagate are
-     *         optional parameters.
+     *         values: key=<i>value</i>, value=<i>value</i>, propagate=<i>true</i> or
+     *         <i>false</i>. Value and propagate are optional parameters.
      */
     public java.util.List<Tag> getTags() {
         
@@ -773,15 +898,13 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest {
     /**
      * The tag to be created or updated. Each tag should be defined by its
      * resource type, resource ID, key, value, and a propagate flag. Valid
-     * values are: key=<i>value</i>, value=<i>value</i>,
-     * propagate=<i>true</i> or <i>false</i>. Value and propagate are
-     * optional parameters.
+     * values: key=<i>value</i>, value=<i>value</i>, propagate=<i>true</i> or
+     * <i>false</i>. Value and propagate are optional parameters.
      *
      * @param tags The tag to be created or updated. Each tag should be defined by its
      *         resource type, resource ID, key, value, and a propagate flag. Valid
-     *         values are: key=<i>value</i>, value=<i>value</i>,
-     *         propagate=<i>true</i> or <i>false</i>. Value and propagate are
-     *         optional parameters.
+     *         values: key=<i>value</i>, value=<i>value</i>, propagate=<i>true</i> or
+     *         <i>false</i>. Value and propagate are optional parameters.
      */
     public void setTags(java.util.Collection<Tag> tags) {
         if (tags == null) {
@@ -797,17 +920,15 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest {
     /**
      * The tag to be created or updated. Each tag should be defined by its
      * resource type, resource ID, key, value, and a propagate flag. Valid
-     * values are: key=<i>value</i>, value=<i>value</i>,
-     * propagate=<i>true</i> or <i>false</i>. Value and propagate are
-     * optional parameters.
+     * values: key=<i>value</i>, value=<i>value</i>, propagate=<i>true</i> or
+     * <i>false</i>. Value and propagate are optional parameters.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param tags The tag to be created or updated. Each tag should be defined by its
      *         resource type, resource ID, key, value, and a propagate flag. Valid
-     *         values are: key=<i>value</i>, value=<i>value</i>,
-     *         propagate=<i>true</i> or <i>false</i>. Value and propagate are
-     *         optional parameters.
+     *         values: key=<i>value</i>, value=<i>value</i>, propagate=<i>true</i> or
+     *         <i>false</i>. Value and propagate are optional parameters.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -823,17 +944,15 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest {
     /**
      * The tag to be created or updated. Each tag should be defined by its
      * resource type, resource ID, key, value, and a propagate flag. Valid
-     * values are: key=<i>value</i>, value=<i>value</i>,
-     * propagate=<i>true</i> or <i>false</i>. Value and propagate are
-     * optional parameters.
+     * values: key=<i>value</i>, value=<i>value</i>, propagate=<i>true</i> or
+     * <i>false</i>. Value and propagate are optional parameters.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param tags The tag to be created or updated. Each tag should be defined by its
      *         resource type, resource ID, key, value, and a propagate flag. Valid
-     *         values are: key=<i>value</i>, value=<i>value</i>,
-     *         propagate=<i>true</i> or <i>false</i>. Value and propagate are
-     *         optional parameters.
+     *         values: key=<i>value</i>, value=<i>value</i>, propagate=<i>true</i> or
+     *         <i>false</i>. Value and propagate are optional parameters.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -874,6 +993,7 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest {
         if (healthCheckGracePeriod != null) sb.append("HealthCheckGracePeriod: " + healthCheckGracePeriod + ", ");
         if (placementGroup != null) sb.append("PlacementGroup: " + placementGroup + ", ");
         if (vPCZoneIdentifier != null) sb.append("VPCZoneIdentifier: " + vPCZoneIdentifier + ", ");
+        if (terminationPolicies != null) sb.append("TerminationPolicies: " + terminationPolicies + ", ");
         if (tags != null) sb.append("Tags: " + tags + ", ");
         sb.append("}");
         return sb.toString();
@@ -896,6 +1016,7 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest {
         hashCode = prime * hashCode + ((getHealthCheckGracePeriod() == null) ? 0 : getHealthCheckGracePeriod().hashCode()); 
         hashCode = prime * hashCode + ((getPlacementGroup() == null) ? 0 : getPlacementGroup().hashCode()); 
         hashCode = prime * hashCode + ((getVPCZoneIdentifier() == null) ? 0 : getVPCZoneIdentifier().hashCode()); 
+        hashCode = prime * hashCode + ((getTerminationPolicies() == null) ? 0 : getTerminationPolicies().hashCode()); 
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode()); 
         return hashCode;
     }
@@ -932,6 +1053,8 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest {
         if (other.getPlacementGroup() != null && other.getPlacementGroup().equals(this.getPlacementGroup()) == false) return false; 
         if (other.getVPCZoneIdentifier() == null ^ this.getVPCZoneIdentifier() == null) return false;
         if (other.getVPCZoneIdentifier() != null && other.getVPCZoneIdentifier().equals(this.getVPCZoneIdentifier()) == false) return false; 
+        if (other.getTerminationPolicies() == null ^ this.getTerminationPolicies() == null) return false;
+        if (other.getTerminationPolicies() != null && other.getTerminationPolicies().equals(this.getTerminationPolicies()) == false) return false; 
         if (other.getTags() == null ^ this.getTags() == null) return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false) return false; 
         return true;

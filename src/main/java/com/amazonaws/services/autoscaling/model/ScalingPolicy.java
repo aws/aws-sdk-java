@@ -81,7 +81,7 @@ public class ScalingPolicy {
 
     /**
      * Changes the <code>DesiredCapacity</code> of the Auto Scaling group by
-     * at least the specified value.
+     * at least the specified number of instances.
      */
     private Integer minAdjustmentStep;
 
@@ -450,10 +450,10 @@ public class ScalingPolicy {
     
     /**
      * Changes the <code>DesiredCapacity</code> of the Auto Scaling group by
-     * at least the specified value.
+     * at least the specified number of instances.
      *
      * @return Changes the <code>DesiredCapacity</code> of the Auto Scaling group by
-     *         at least the specified value.
+     *         at least the specified number of instances.
      */
     public Integer getMinAdjustmentStep() {
         return minAdjustmentStep;
@@ -461,10 +461,10 @@ public class ScalingPolicy {
     
     /**
      * Changes the <code>DesiredCapacity</code> of the Auto Scaling group by
-     * at least the specified value.
+     * at least the specified number of instances.
      *
      * @param minAdjustmentStep Changes the <code>DesiredCapacity</code> of the Auto Scaling group by
-     *         at least the specified value.
+     *         at least the specified number of instances.
      */
     public void setMinAdjustmentStep(Integer minAdjustmentStep) {
         this.minAdjustmentStep = minAdjustmentStep;
@@ -472,12 +472,12 @@ public class ScalingPolicy {
     
     /**
      * Changes the <code>DesiredCapacity</code> of the Auto Scaling group by
-     * at least the specified value.
+     * at least the specified number of instances.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param minAdjustmentStep Changes the <code>DesiredCapacity</code> of the Auto Scaling group by
-     *         at least the specified value.
+     *         at least the specified number of instances.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

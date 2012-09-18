@@ -203,7 +203,7 @@ public class AWS4Signer extends AbstractAWSSigner {
 
         StringBuilder buffer = new StringBuilder();
         for (String header : sortedHeaders) {
-            buffer.append(header.toLowerCase() + ":" + request.getHeaders().get(header));
+            buffer.append(header.toLowerCase().replaceAll("\\s+", " ") + ":" + request.getHeaders().get(header).replaceAll("\\s+", " "));
             buffer.append("\n");
         }
 

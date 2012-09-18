@@ -82,6 +82,17 @@ public class UpdateAutoScalingGroupRequestMarshaller implements Marshaller<Reque
             request.addParameter("VPCZoneIdentifier", StringUtils.fromString(updateAutoScalingGroupRequest.getVPCZoneIdentifier()));
         }
 
+        java.util.List<String> terminationPoliciesList = updateAutoScalingGroupRequest.getTerminationPolicies();
+        int terminationPoliciesListIndex = 1;
+
+        for (String terminationPoliciesListValue : terminationPoliciesList) {
+            if (terminationPoliciesListValue != null) {
+                request.addParameter("TerminationPolicies.member." + terminationPoliciesListIndex, StringUtils.fromString(terminationPoliciesListValue));
+            }
+
+            terminationPoliciesListIndex++;
+        }
+
 
         return request;
     }

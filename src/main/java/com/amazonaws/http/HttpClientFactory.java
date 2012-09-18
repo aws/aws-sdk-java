@@ -18,6 +18,7 @@ import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.net.UnknownHostException;
+import java.security.NoSuchAlgorithmException;
 import java.security.cert.CertificateException;
 import java.security.cert.X509Certificate;
 
@@ -33,8 +34,11 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.conn.ConnectTimeoutException;
 import org.apache.http.conn.params.ConnRoutePNames;
 import org.apache.http.conn.scheme.LayeredSchemeSocketFactory;
+import org.apache.http.conn.scheme.PlainSocketFactory;
 import org.apache.http.conn.scheme.Scheme;
+import org.apache.http.conn.scheme.SchemeRegistry;
 import org.apache.http.conn.scheme.SchemeSocketFactory;
+import org.apache.http.conn.ssl.SSLSocketFactory;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager;
 import org.apache.http.params.BasicHttpParams;
@@ -42,6 +46,7 @@ import org.apache.http.params.HttpConnectionParams;
 import org.apache.http.params.HttpParams;
 import org.apache.http.params.HttpProtocolParams;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.ClientConfiguration;
 
 /** Responsible for creating and configuring instances of Apache HttpClient4. */
@@ -80,8 +85,24 @@ class HttpClientFactory {
         }
 
         /* Set connection manager */
-        ThreadSafeClientConnManager connectionManager = ConnectionManagerFactory.createThreadSafeClientConnManager( config, httpClientParams );
+        ThreadSafeClientConnManager connectionManager = ConnectionManagerFactory.createThreadSafeClientConnManager(config, httpClientParams);
         DefaultHttpClient httpClient = new DefaultHttpClient(connectionManager, httpClientParams);
+
+        try {
+			Scheme http = new Scheme("http", 80, PlainSocketFactory.getSocketFactory());
+
+			SSLSocketFactory sf = new SSLSocketFactory(
+			        SSLContext.getDefault(),
+			        SSLSocketFactory.STRICT_HOSTNAME_VERIFIER);
+			Scheme https = new Scheme("https", 443, sf);
+
+			SchemeRegistry sr = connectionManager.getSchemeRegistry();
+			sr.register(http);
+			sr.register(https);
+		} catch (NoSuchAlgorithmException e) {
+			throw new AmazonClientException("Unable to access default SSL context");
+		}
+
 
 		/*
 		 * If SSL cert checking for endpoints has been explicitly disabled,

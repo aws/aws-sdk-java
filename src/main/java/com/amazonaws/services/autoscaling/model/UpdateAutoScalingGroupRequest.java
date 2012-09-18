@@ -131,6 +131,17 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest {
     private String vPCZoneIdentifier;
 
     /**
+     * A standalone termination policy or a list of termination policies used
+     * to select the instance to terminate. The policies are executed in the
+     * order that they are listed. <p> For more information on creating a
+     * termination policy for your Auto Scaling group, go to <a
+     * AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Instance
+     * Termination Policy for Your Auto Scaling Group</a> in the the <i>Auto
+     * Scaling Developer Guide</i>.
+     */
+    private java.util.List<String> terminationPolicies;
+
+    /**
      * The name of the Auto Scaling group.
      * <p>
      * <b>Constraints:</b><br/>
@@ -678,6 +689,123 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest {
     
     
     /**
+     * A standalone termination policy or a list of termination policies used
+     * to select the instance to terminate. The policies are executed in the
+     * order that they are listed. <p> For more information on creating a
+     * termination policy for your Auto Scaling group, go to <a
+     * AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Instance
+     * Termination Policy for Your Auto Scaling Group</a> in the the <i>Auto
+     * Scaling Developer Guide</i>.
+     *
+     * @return A standalone termination policy or a list of termination policies used
+     *         to select the instance to terminate. The policies are executed in the
+     *         order that they are listed. <p> For more information on creating a
+     *         termination policy for your Auto Scaling group, go to <a
+     *         AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Instance
+     *         Termination Policy for Your Auto Scaling Group</a> in the the <i>Auto
+     *         Scaling Developer Guide</i>.
+     */
+    public java.util.List<String> getTerminationPolicies() {
+        
+        if (terminationPolicies == null) {
+            terminationPolicies = new java.util.ArrayList<String>();
+        }
+        return terminationPolicies;
+    }
+    
+    /**
+     * A standalone termination policy or a list of termination policies used
+     * to select the instance to terminate. The policies are executed in the
+     * order that they are listed. <p> For more information on creating a
+     * termination policy for your Auto Scaling group, go to <a
+     * AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Instance
+     * Termination Policy for Your Auto Scaling Group</a> in the the <i>Auto
+     * Scaling Developer Guide</i>.
+     *
+     * @param terminationPolicies A standalone termination policy or a list of termination policies used
+     *         to select the instance to terminate. The policies are executed in the
+     *         order that they are listed. <p> For more information on creating a
+     *         termination policy for your Auto Scaling group, go to <a
+     *         AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Instance
+     *         Termination Policy for Your Auto Scaling Group</a> in the the <i>Auto
+     *         Scaling Developer Guide</i>.
+     */
+    public void setTerminationPolicies(java.util.Collection<String> terminationPolicies) {
+        if (terminationPolicies == null) {
+            this.terminationPolicies = null;
+            return;
+        }
+
+        java.util.List<String> terminationPoliciesCopy = new java.util.ArrayList<String>(terminationPolicies.size());
+        terminationPoliciesCopy.addAll(terminationPolicies);
+        this.terminationPolicies = terminationPoliciesCopy;
+    }
+    
+    /**
+     * A standalone termination policy or a list of termination policies used
+     * to select the instance to terminate. The policies are executed in the
+     * order that they are listed. <p> For more information on creating a
+     * termination policy for your Auto Scaling group, go to <a
+     * AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Instance
+     * Termination Policy for Your Auto Scaling Group</a> in the the <i>Auto
+     * Scaling Developer Guide</i>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param terminationPolicies A standalone termination policy or a list of termination policies used
+     *         to select the instance to terminate. The policies are executed in the
+     *         order that they are listed. <p> For more information on creating a
+     *         termination policy for your Auto Scaling group, go to <a
+     *         AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Instance
+     *         Termination Policy for Your Auto Scaling Group</a> in the the <i>Auto
+     *         Scaling Developer Guide</i>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public UpdateAutoScalingGroupRequest withTerminationPolicies(String... terminationPolicies) {
+        if (getTerminationPolicies() == null) setTerminationPolicies(new java.util.ArrayList<String>(terminationPolicies.length));
+        for (String value : terminationPolicies) {
+            getTerminationPolicies().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * A standalone termination policy or a list of termination policies used
+     * to select the instance to terminate. The policies are executed in the
+     * order that they are listed. <p> For more information on creating a
+     * termination policy for your Auto Scaling group, go to <a
+     * AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Instance
+     * Termination Policy for Your Auto Scaling Group</a> in the the <i>Auto
+     * Scaling Developer Guide</i>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param terminationPolicies A standalone termination policy or a list of termination policies used
+     *         to select the instance to terminate. The policies are executed in the
+     *         order that they are listed. <p> For more information on creating a
+     *         termination policy for your Auto Scaling group, go to <a
+     *         AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Instance
+     *         Termination Policy for Your Auto Scaling Group</a> in the the <i>Auto
+     *         Scaling Developer Guide</i>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public UpdateAutoScalingGroupRequest withTerminationPolicies(java.util.Collection<String> terminationPolicies) {
+        if (terminationPolicies == null) {
+            this.terminationPolicies = null;
+        } else {
+            java.util.List<String> terminationPoliciesCopy = new java.util.ArrayList<String>(terminationPolicies.size());
+            terminationPoliciesCopy.addAll(terminationPolicies);
+            this.terminationPolicies = terminationPoliciesCopy;
+        }
+
+        return this;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -700,6 +828,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest {
         if (healthCheckGracePeriod != null) sb.append("HealthCheckGracePeriod: " + healthCheckGracePeriod + ", ");
         if (placementGroup != null) sb.append("PlacementGroup: " + placementGroup + ", ");
         if (vPCZoneIdentifier != null) sb.append("VPCZoneIdentifier: " + vPCZoneIdentifier + ", ");
+        if (terminationPolicies != null) sb.append("TerminationPolicies: " + terminationPolicies + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -720,6 +849,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest {
         hashCode = prime * hashCode + ((getHealthCheckGracePeriod() == null) ? 0 : getHealthCheckGracePeriod().hashCode()); 
         hashCode = prime * hashCode + ((getPlacementGroup() == null) ? 0 : getPlacementGroup().hashCode()); 
         hashCode = prime * hashCode + ((getVPCZoneIdentifier() == null) ? 0 : getVPCZoneIdentifier().hashCode()); 
+        hashCode = prime * hashCode + ((getTerminationPolicies() == null) ? 0 : getTerminationPolicies().hashCode()); 
         return hashCode;
     }
     
@@ -753,6 +883,8 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest {
         if (other.getPlacementGroup() != null && other.getPlacementGroup().equals(this.getPlacementGroup()) == false) return false; 
         if (other.getVPCZoneIdentifier() == null ^ this.getVPCZoneIdentifier() == null) return false;
         if (other.getVPCZoneIdentifier() != null && other.getVPCZoneIdentifier().equals(this.getVPCZoneIdentifier()) == false) return false; 
+        if (other.getTerminationPolicies() == null ^ this.getTerminationPolicies() == null) return false;
+        if (other.getTerminationPolicies() != null && other.getTerminationPolicies().equals(this.getTerminationPolicies()) == false) return false; 
         return true;
     }
     

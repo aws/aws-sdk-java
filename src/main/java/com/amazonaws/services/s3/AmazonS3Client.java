@@ -19,6 +19,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
+import java.net.InetAddress;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
@@ -2784,7 +2785,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     protected <X extends AmazonWebServiceRequest> Request<X> createRequest(String bucketName, String key, X originalRequest, HttpMethodName httpMethod) {
         Request<X> request = new DefaultRequest<X>(originalRequest, Constants.S3_SERVICE_NAME);
         request.setHttpMethod(httpMethod);
-        if (bucketNameUtils.isDNSBucketName(bucketName)) {
+        if (bucketNameUtils.isDNSBucketName(bucketName) && !validIP(endpoint.getHost())) {
             request.setEndpoint(convertToVirtualHostEndpoint(bucketName));
             request.setResourcePath(ServiceUtils.urlEncode(key));
         } else {
@@ -2802,6 +2803,29 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         }
 
         return request;
+    }
+    
+    private boolean validIP(String IP) {
+        if (IP == null) {
+            return false;
+        }
+        String[] tokens = IP.split("\\.");
+        if (tokens.length != 4) {
+            return false;
+        }
+        for (String token : tokens) {
+            int tokenInt;
+            try {
+                tokenInt = Integer.parseInt(token);
+            } catch (NumberFormatException ase) {
+                return false;
+            }
+            if (tokenInt < 0 || tokenInt > 255) {
+                return false;
+            }
+
+        }
+        return true;
     }
 
     private <X, Y extends AmazonWebServiceRequest> X invoke(Request<Y> request,
@@ -2838,5 +2862,5 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
         return (X)client.execute(request, responseHandler, errorResponseHandler, executionContext);
     }
-
+    
 }

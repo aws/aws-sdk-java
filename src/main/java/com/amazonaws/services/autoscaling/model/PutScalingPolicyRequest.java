@@ -75,9 +75,9 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest {
      * Used with <code>AdjustmentType</code> with the value
      * <code>PercentChangeInCapacity</code>, the scaling policy changes the
      * <code>DesiredCapacity</code> of the Auto Scaling group by at least the
-     * specified value. <p> You will get a <code>ValidationError</code> if
-     * you use <code>MinAdjustmentStep</code> on a policy with an
-     * <code>AdjustmentType</code> other than
+     * number of instances specified in the value. <p> You will get a
+     * <code>ValidationError</code> if you use <code>MinAdjustmentStep</code>
+     * on a policy with an <code>AdjustmentType</code> other than
      * <code>PercentChangeInCapacity</code>.
      */
     private Integer minAdjustmentStep;
@@ -340,17 +340,17 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest {
      * Used with <code>AdjustmentType</code> with the value
      * <code>PercentChangeInCapacity</code>, the scaling policy changes the
      * <code>DesiredCapacity</code> of the Auto Scaling group by at least the
-     * specified value. <p> You will get a <code>ValidationError</code> if
-     * you use <code>MinAdjustmentStep</code> on a policy with an
-     * <code>AdjustmentType</code> other than
+     * number of instances specified in the value. <p> You will get a
+     * <code>ValidationError</code> if you use <code>MinAdjustmentStep</code>
+     * on a policy with an <code>AdjustmentType</code> other than
      * <code>PercentChangeInCapacity</code>.
      *
      * @return Used with <code>AdjustmentType</code> with the value
      *         <code>PercentChangeInCapacity</code>, the scaling policy changes the
      *         <code>DesiredCapacity</code> of the Auto Scaling group by at least the
-     *         specified value. <p> You will get a <code>ValidationError</code> if
-     *         you use <code>MinAdjustmentStep</code> on a policy with an
-     *         <code>AdjustmentType</code> other than
+     *         number of instances specified in the value. <p> You will get a
+     *         <code>ValidationError</code> if you use <code>MinAdjustmentStep</code>
+     *         on a policy with an <code>AdjustmentType</code> other than
      *         <code>PercentChangeInCapacity</code>.
      */
     public Integer getMinAdjustmentStep() {
@@ -361,17 +361,17 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest {
      * Used with <code>AdjustmentType</code> with the value
      * <code>PercentChangeInCapacity</code>, the scaling policy changes the
      * <code>DesiredCapacity</code> of the Auto Scaling group by at least the
-     * specified value. <p> You will get a <code>ValidationError</code> if
-     * you use <code>MinAdjustmentStep</code> on a policy with an
-     * <code>AdjustmentType</code> other than
+     * number of instances specified in the value. <p> You will get a
+     * <code>ValidationError</code> if you use <code>MinAdjustmentStep</code>
+     * on a policy with an <code>AdjustmentType</code> other than
      * <code>PercentChangeInCapacity</code>.
      *
      * @param minAdjustmentStep Used with <code>AdjustmentType</code> with the value
      *         <code>PercentChangeInCapacity</code>, the scaling policy changes the
      *         <code>DesiredCapacity</code> of the Auto Scaling group by at least the
-     *         specified value. <p> You will get a <code>ValidationError</code> if
-     *         you use <code>MinAdjustmentStep</code> on a policy with an
-     *         <code>AdjustmentType</code> other than
+     *         number of instances specified in the value. <p> You will get a
+     *         <code>ValidationError</code> if you use <code>MinAdjustmentStep</code>
+     *         on a policy with an <code>AdjustmentType</code> other than
      *         <code>PercentChangeInCapacity</code>.
      */
     public void setMinAdjustmentStep(Integer minAdjustmentStep) {
@@ -382,9 +382,9 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest {
      * Used with <code>AdjustmentType</code> with the value
      * <code>PercentChangeInCapacity</code>, the scaling policy changes the
      * <code>DesiredCapacity</code> of the Auto Scaling group by at least the
-     * specified value. <p> You will get a <code>ValidationError</code> if
-     * you use <code>MinAdjustmentStep</code> on a policy with an
-     * <code>AdjustmentType</code> other than
+     * number of instances specified in the value. <p> You will get a
+     * <code>ValidationError</code> if you use <code>MinAdjustmentStep</code>
+     * on a policy with an <code>AdjustmentType</code> other than
      * <code>PercentChangeInCapacity</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -392,9 +392,9 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest {
      * @param minAdjustmentStep Used with <code>AdjustmentType</code> with the value
      *         <code>PercentChangeInCapacity</code>, the scaling policy changes the
      *         <code>DesiredCapacity</code> of the Auto Scaling group by at least the
-     *         specified value. <p> You will get a <code>ValidationError</code> if
-     *         you use <code>MinAdjustmentStep</code> on a policy with an
-     *         <code>AdjustmentType</code> other than
+     *         number of instances specified in the value. <p> You will get a
+     *         <code>ValidationError</code> if you use <code>MinAdjustmentStep</code>
+     *         on a policy with an <code>AdjustmentType</code> other than
      *         <code>PercentChangeInCapacity</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 

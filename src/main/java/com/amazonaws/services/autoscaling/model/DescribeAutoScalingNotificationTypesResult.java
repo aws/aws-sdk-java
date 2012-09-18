@@ -15,7 +15,9 @@
 package com.amazonaws.services.autoscaling.model;
 
 /**
- * 
+ * <p>
+ * The <code>AutoScalingNotificationTypes</code> data type.
+ * </p>
  */
 public class DescribeAutoScalingNotificationTypesResult {
 

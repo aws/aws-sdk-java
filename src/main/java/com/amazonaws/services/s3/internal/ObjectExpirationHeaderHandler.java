@@ -64,7 +64,7 @@ public class ObjectExpirationHeaderHandler<T extends ObjectExpirationResult> imp
         Matcher matcher = datePattern.matcher(expirationHeader);
         if ( matcher.find() ) {
             String date = matcher.group(1);
-            SimpleDateFormat fmt = new SimpleDateFormat("EEE, dd MMM yyyy HH:MM:SS z");
+            SimpleDateFormat fmt = new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss z");
             try {
                 return fmt.parse(date);
             } catch ( ParseException e ) {

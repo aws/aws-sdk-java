@@ -113,7 +113,7 @@ public class LaunchConfiguration {
     private InstanceMonitoring instanceMonitoring;
 
     /**
-     * Specifies the bid price for the Spot Instance.
+     * Specifies the price to bid when launching Spot Instances.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
@@ -121,9 +121,9 @@ public class LaunchConfiguration {
     private String spotPrice;
 
     /**
-     * Provides the name or the full ARN of the instance profile associated
-     * with the IAM role for the instance. The instance profile is the
-     * container for the IAM role.
+     * Provides the name or the Amazon Resource Name (ARN) of the instance
+     * profile associated with the IAM role for the instance. The instance
+     * profile contains the IAM role.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1600<br/>
@@ -705,38 +705,38 @@ public class LaunchConfiguration {
     
     
     /**
-     * Specifies the bid price for the Spot Instance.
+     * Specifies the price to bid when launching Spot Instances.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      *
-     * @return Specifies the bid price for the Spot Instance.
+     * @return Specifies the price to bid when launching Spot Instances.
      */
     public String getSpotPrice() {
         return spotPrice;
     }
     
     /**
-     * Specifies the bid price for the Spot Instance.
+     * Specifies the price to bid when launching Spot Instances.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      *
-     * @param spotPrice Specifies the bid price for the Spot Instance.
+     * @param spotPrice Specifies the price to bid when launching Spot Instances.
      */
     public void setSpotPrice(String spotPrice) {
         this.spotPrice = spotPrice;
     }
     
     /**
-     * Specifies the bid price for the Spot Instance.
+     * Specifies the price to bid when launching Spot Instances.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      *
-     * @param spotPrice Specifies the bid price for the Spot Instance.
+     * @param spotPrice Specifies the price to bid when launching Spot Instances.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -748,43 +748,43 @@ public class LaunchConfiguration {
     
     
     /**
-     * Provides the name or the full ARN of the instance profile associated
-     * with the IAM role for the instance. The instance profile is the
-     * container for the IAM role.
+     * Provides the name or the Amazon Resource Name (ARN) of the instance
+     * profile associated with the IAM role for the instance. The instance
+     * profile contains the IAM role.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @return Provides the name or the full ARN of the instance profile associated
-     *         with the IAM role for the instance. The instance profile is the
-     *         container for the IAM role.
+     * @return Provides the name or the Amazon Resource Name (ARN) of the instance
+     *         profile associated with the IAM role for the instance. The instance
+     *         profile contains the IAM role.
      */
     public String getIamInstanceProfile() {
         return iamInstanceProfile;
     }
     
     /**
-     * Provides the name or the full ARN of the instance profile associated
-     * with the IAM role for the instance. The instance profile is the
-     * container for the IAM role.
+     * Provides the name or the Amazon Resource Name (ARN) of the instance
+     * profile associated with the IAM role for the instance. The instance
+     * profile contains the IAM role.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param iamInstanceProfile Provides the name or the full ARN of the instance profile associated
-     *         with the IAM role for the instance. The instance profile is the
-     *         container for the IAM role.
+     * @param iamInstanceProfile Provides the name or the Amazon Resource Name (ARN) of the instance
+     *         profile associated with the IAM role for the instance. The instance
+     *         profile contains the IAM role.
      */
     public void setIamInstanceProfile(String iamInstanceProfile) {
         this.iamInstanceProfile = iamInstanceProfile;
     }
     
     /**
-     * Provides the name or the full ARN of the instance profile associated
-     * with the IAM role for the instance. The instance profile is the
-     * container for the IAM role.
+     * Provides the name or the Amazon Resource Name (ARN) of the instance
+     * profile associated with the IAM role for the instance. The instance
+     * profile contains the IAM role.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -792,9 +792,9 @@ public class LaunchConfiguration {
      * <b>Length: </b>1 - 1600<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param iamInstanceProfile Provides the name or the full ARN of the instance profile associated
-     *         with the IAM role for the instance. The instance profile is the
-     *         container for the IAM role.
+     * @param iamInstanceProfile Provides the name or the Amazon Resource Name (ARN) of the instance
+     *         profile associated with the IAM role for the instance. The instance
+     *         profile contains the IAM role.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
