@@ -148,7 +148,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
      * fulfill the request. Spot Instances are launched when the price you
      * specify exceeds the current Spot market price. For more information on
      * launching Spot Instances, go to <a
-     * services.com/AutoScaling/latest/DeveloperGuide/US-SpotInstances.html">
+     * href="http://docs.amazonwebservices.com/AutoScaling/latest/DeveloperGuide/US-SpotInstances.html">
      * Using Auto Scaling to Launch Spot Instances</a> in the <i>Auto Scaling
      * Developer Guide</i>.
      * <p>
@@ -161,7 +161,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
      * The name or the Amazon Resource Name (ARN) of the instance profile
      * associated with the IAM role for the instance. For information on
      * launching EC2 instances with an IAM role, go to <a
-     * ices.com/AutoScaling/latest/DeveloperGuide/us-iam-role.html">Launching
+     * href="http://docs.amazonwebservices.com/AutoScaling/latest/DeveloperGuide/us-iam-role.html">Launching
      * Auto Scaling Instances With an IAM Role</a> in the <i>Auto Scaling
      * Developer Guide</i>.
      * <p>
@@ -888,7 +888,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
      * fulfill the request. Spot Instances are launched when the price you
      * specify exceeds the current Spot market price. For more information on
      * launching Spot Instances, go to <a
-     * services.com/AutoScaling/latest/DeveloperGuide/US-SpotInstances.html">
+     * href="http://docs.amazonwebservices.com/AutoScaling/latest/DeveloperGuide/US-SpotInstances.html">
      * Using Auto Scaling to Launch Spot Instances</a> in the <i>Auto Scaling
      * Developer Guide</i>.
      * <p>
@@ -899,7 +899,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
      *         fulfill the request. Spot Instances are launched when the price you
      *         specify exceeds the current Spot market price. For more information on
      *         launching Spot Instances, go to <a
-     *         services.com/AutoScaling/latest/DeveloperGuide/US-SpotInstances.html">
+     *         href="http://docs.amazonwebservices.com/AutoScaling/latest/DeveloperGuide/US-SpotInstances.html">
      *         Using Auto Scaling to Launch Spot Instances</a> in the <i>Auto Scaling
      *         Developer Guide</i>.
      */
@@ -912,7 +912,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
      * fulfill the request. Spot Instances are launched when the price you
      * specify exceeds the current Spot market price. For more information on
      * launching Spot Instances, go to <a
-     * services.com/AutoScaling/latest/DeveloperGuide/US-SpotInstances.html">
+     * href="http://docs.amazonwebservices.com/AutoScaling/latest/DeveloperGuide/US-SpotInstances.html">
      * Using Auto Scaling to Launch Spot Instances</a> in the <i>Auto Scaling
      * Developer Guide</i>.
      * <p>
@@ -923,7 +923,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
      *         fulfill the request. Spot Instances are launched when the price you
      *         specify exceeds the current Spot market price. For more information on
      *         launching Spot Instances, go to <a
-     *         services.com/AutoScaling/latest/DeveloperGuide/US-SpotInstances.html">
+     *         href="http://docs.amazonwebservices.com/AutoScaling/latest/DeveloperGuide/US-SpotInstances.html">
      *         Using Auto Scaling to Launch Spot Instances</a> in the <i>Auto Scaling
      *         Developer Guide</i>.
      */
@@ -936,7 +936,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
      * fulfill the request. Spot Instances are launched when the price you
      * specify exceeds the current Spot market price. For more information on
      * launching Spot Instances, go to <a
-     * services.com/AutoScaling/latest/DeveloperGuide/US-SpotInstances.html">
+     * href="http://docs.amazonwebservices.com/AutoScaling/latest/DeveloperGuide/US-SpotInstances.html">
      * Using Auto Scaling to Launch Spot Instances</a> in the <i>Auto Scaling
      * Developer Guide</i>.
      * <p>
@@ -949,7 +949,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
      *         fulfill the request. Spot Instances are launched when the price you
      *         specify exceeds the current Spot market price. For more information on
      *         launching Spot Instances, go to <a
-     *         services.com/AutoScaling/latest/DeveloperGuide/US-SpotInstances.html">
+     *         href="http://docs.amazonwebservices.com/AutoScaling/latest/DeveloperGuide/US-SpotInstances.html">
      *         Using Auto Scaling to Launch Spot Instances</a> in the <i>Auto Scaling
      *         Developer Guide</i>.
      *
@@ -966,7 +966,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
      * The name or the Amazon Resource Name (ARN) of the instance profile
      * associated with the IAM role for the instance. For information on
      * launching EC2 instances with an IAM role, go to <a
-     * ices.com/AutoScaling/latest/DeveloperGuide/us-iam-role.html">Launching
+     * href="http://docs.amazonwebservices.com/AutoScaling/latest/DeveloperGuide/us-iam-role.html">Launching
      * Auto Scaling Instances With an IAM Role</a> in the <i>Auto Scaling
      * Developer Guide</i>.
      * <p>
@@ -977,7 +977,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
      * @return The name or the Amazon Resource Name (ARN) of the instance profile
      *         associated with the IAM role for the instance. For information on
      *         launching EC2 instances with an IAM role, go to <a
-     *         ices.com/AutoScaling/latest/DeveloperGuide/us-iam-role.html">Launching
+     *         href="http://docs.amazonwebservices.com/AutoScaling/latest/DeveloperGuide/us-iam-role.html">Launching
      *         Auto Scaling Instances With an IAM Role</a> in the <i>Auto Scaling
      *         Developer Guide</i>.
      */
@@ -989,7 +989,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
      * The name or the Amazon Resource Name (ARN) of the instance profile
      * associated with the IAM role for the instance. For information on
      * launching EC2 instances with an IAM role, go to <a
-     * ices.com/AutoScaling/latest/DeveloperGuide/us-iam-role.html">Launching
+     * href="http://docs.amazonwebservices.com/AutoScaling/latest/DeveloperGuide/us-iam-role.html">Launching
      * Auto Scaling Instances With an IAM Role</a> in the <i>Auto Scaling
      * Developer Guide</i>.
      * <p>
@@ -1000,7 +1000,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
      * @param iamInstanceProfile The name or the Amazon Resource Name (ARN) of the instance profile
      *         associated with the IAM role for the instance. For information on
      *         launching EC2 instances with an IAM role, go to <a
-     *         ices.com/AutoScaling/latest/DeveloperGuide/us-iam-role.html">Launching
+     *         href="http://docs.amazonwebservices.com/AutoScaling/latest/DeveloperGuide/us-iam-role.html">Launching
      *         Auto Scaling Instances With an IAM Role</a> in the <i>Auto Scaling
      *         Developer Guide</i>.
      */
@@ -1012,7 +1012,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
      * The name or the Amazon Resource Name (ARN) of the instance profile
      * associated with the IAM role for the instance. For information on
      * launching EC2 instances with an IAM role, go to <a
-     * ices.com/AutoScaling/latest/DeveloperGuide/us-iam-role.html">Launching
+     * href="http://docs.amazonwebservices.com/AutoScaling/latest/DeveloperGuide/us-iam-role.html">Launching
      * Auto Scaling Instances With an IAM Role</a> in the <i>Auto Scaling
      * Developer Guide</i>.
      * <p>
@@ -1025,7 +1025,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
      * @param iamInstanceProfile The name or the Amazon Resource Name (ARN) of the instance profile
      *         associated with the IAM role for the instance. For information on
      *         launching EC2 instances with an IAM role, go to <a
-     *         ices.com/AutoScaling/latest/DeveloperGuide/us-iam-role.html">Launching
+     *         href="http://docs.amazonwebservices.com/AutoScaling/latest/DeveloperGuide/us-iam-role.html">Launching
      *         Auto Scaling Instances With an IAM Role</a> in the <i>Auto Scaling
      *         Developer Guide</i>.
      *
