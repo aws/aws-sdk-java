@@ -21,6 +21,7 @@ import java.util.concurrent.Future;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
+import com.amazonaws.handlers.AsyncHandler;
 import com.amazonaws.ClientConfiguration;
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSCredentialsProvider;
@@ -30,10 +31,10 @@ import com.amazonaws.services.securitytoken.model.*;
 
 
 /**
- * Client for accessing AWSSecurityTokenService.  All calls made
- * using this client are non-blocking and will immediately return a Java Future.
- * Callers must use the Future object to determine when the service call has actually
- * completed.
+ * Asynchronous client for accessing AWSSecurityTokenService.
+ * All asynchronous calls made using this client are non-blocking. Callers could either
+ * process the result and handle the exceptions in the worker thread by providing a callback handler
+ * when making the call, or use the returned Future object to check the result of the call in the calling thread.
  * AWS Security Token Service <p>
  * The AWS Security Token Service is a web service that enables you to request temporary, limited-privilege credentials for AWS Identity and Access
  * Management (IAM) users or for users that you authenticate (federated users). This guide provides descriptions of the AWS Security Token Service API.
@@ -310,6 +311,64 @@ public class AWSSecurityTokenServiceAsyncClient extends AWSSecurityTokenServiceC
 		    }
 		});
     }
+
+    
+    /**
+     * <p>
+     * The GetSessionToken action returns a set of temporary credentials for
+     * an AWS account or IAM user. The credentials consist of an Access Key
+     * ID, a Secret Access Key, and a security token. These credentials are
+     * valid for the specified duration only. The session duration for IAM
+     * users can be between one and 36 hours, with a default of 12 hours. The
+     * session duration for AWS account owners is restricted to one hour.
+     * Providing the AWS Multi-Factor Authentication (MFA) device serial
+     * number and the token code is optional.
+     * </p>
+     * <p>
+     * For more information about using GetSessionToken to create temporary
+     * credentials, go to <a
+     * mazonwebservices.com/IAM/latest/UserGuide/CreatingSessionTokens.html">
+     * Creating Temporary Credentials to Enable Access for IAM Users </a> in
+     * <i>Using IAM</i> .
+     * </p>
+     *
+     * @param getSessionTokenRequest Container for the necessary parameters
+     *           to execute the GetSessionToken operation on AWSSecurityTokenService.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetSessionToken service method, as returned by
+     *         AWSSecurityTokenService.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSSecurityTokenService indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetSessionTokenResult> getSessionTokenAsync(
+            final GetSessionTokenRequest getSessionTokenRequest,
+            final AsyncHandler<GetSessionTokenRequest, GetSessionTokenResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<GetSessionTokenResult>() {
+            public GetSessionTokenResult call() throws Exception {
+            	GetSessionTokenResult result;
+                try {
+            		result = getSessionToken(getSessionTokenRequest);
+            	} catch (Exception ex) {
+            	    asyncHandler.onError(ex);
+    				throw ex;
+            	}
+            	asyncHandler.onSuccess(getSessionTokenRequest, result);
+               	return result;
+		    }
+		});
+    }
     
     /**
      * <p>
@@ -357,6 +416,71 @@ public class AWSSecurityTokenServiceAsyncClient extends AWSSecurityTokenServiceC
         return executorService.submit(new Callable<GetFederationTokenResult>() {
             public GetFederationTokenResult call() throws Exception {
                 return getFederationToken(getFederationTokenRequest);
+		    }
+		});
+    }
+
+    
+    /**
+     * <p>
+     * The GetFederationToken action returns a set of temporary credentials
+     * for a federated user with the user name and policy specified in the
+     * request. The credentials consist of an Access Key ID, a Secret Access
+     * Key, and a security token. Credentials created by IAM users are valid
+     * for the specified duration, between one and 36 hours; credentials
+     * created using account credentials last one hour.
+     * </p>
+     * <p>
+     * The federated user who holds these credentials has any permissions
+     * allowed by the intersection of the specified policy and any resource
+     * or user policies that apply to the caller of the GetFederationToken
+     * API, and any resource policies that apply to the federated user's
+     * Amazon Resource Name (ARN). For more information about how token
+     * permissions work, see <a
+     * ocs.amazonwebservices.com/IAM/latest/UserGuide/TokenPermissions.html">
+     * Controlling Permissions in Temporary Credentials </a> in <i>Using AWS
+     * Identity and Access Management</i> . For information about using
+     * GetFederationToken to create temporary credentials, see <a
+     * cs.amazonwebservices.com/IAM/latest/UserGuide/CreatingFedTokens.html">
+     * Creating Temporary Credentials to Enable Access for Federated Users
+     * </a> in <i>Using AWS Identity and Access Management</i> .
+     * </p>
+     *
+     * @param getFederationTokenRequest Container for the necessary
+     *           parameters to execute the GetFederationToken operation on
+     *           AWSSecurityTokenService.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetFederationToken service method, as returned by
+     *         AWSSecurityTokenService.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSSecurityTokenService indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetFederationTokenResult> getFederationTokenAsync(
+            final GetFederationTokenRequest getFederationTokenRequest,
+            final AsyncHandler<GetFederationTokenRequest, GetFederationTokenResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<GetFederationTokenResult>() {
+            public GetFederationTokenResult call() throws Exception {
+            	GetFederationTokenResult result;
+                try {
+            		result = getFederationToken(getFederationTokenRequest);
+            	} catch (Exception ex) {
+            	    asyncHandler.onError(ex);
+    				throw ex;
+            	}
+            	asyncHandler.onSuccess(getFederationTokenRequest, result);
+               	return result;
 		    }
 		});
     }

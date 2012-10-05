@@ -27,8 +27,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * control policy to the new object.
  * </p>
  * <p>
- * Amazon S3 never stores partial objects; 
- * if during this call an exception wasn't thrown, 
+ * Amazon S3 never stores partial objects;
+ * if during this call an exception wasn't thrown,
  * the entire object was stored.
  * </p>
  * <p>
@@ -40,12 +40,12 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  * <ul>
  *  <li>
- *  The client automatically computes a checksum of the file. 
+ *  The client automatically computes a checksum of the file.
  *  Amazon S3 uses checksums to validate the data in each file.
  *  </li>
  *  <li>
- *  Using the file extension, Amazon S3 attempts to determine 
- *  the correct content type and content disposition to use 
+ *  Using the file extension, Amazon S3 attempts to determine
+ *  the correct content type and content disposition to use
  *  for the object.
  *  </li>
  * </ul>
@@ -59,23 +59,23 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Amazon S3 is a distributed system. If
  * Amazon S3 receives multiple write requests for the same object nearly
  * simultaneously, all of the objects might be stored. However, only one object
- * will obtain the key. 
+ * will obtain the key.
  * </p>
  * <p>
  * Note: Amazon S3 does not provide object locking; if this is needed, make
  * sure to build it into the application layer.
  * </p>
  * <p>
- * If the caller specifies a location constraint when creating a bucket, 
+ * If the caller specifies a location constraint when creating a bucket,
  * all objects added to the bucket are stored in the same region as the bucket.
- * For example, if specifying a Europe (EU) region constraint for a bucket, 
+ * For example, if specifying a Europe (EU) region constraint for a bucket,
  * all of that bucket's objects are stored in the EU region.
  * </p>
  * <p>
  * The specified bucket must already exist and the caller must have
  * {@link Permission#Write} permission to the bucket to upload an object.
  * </p>
- * 
+ *
  * @see PutObjectRequest#PutObjectRequest(String, String, File)
  * @see PutObjectRequest#PutObjectRequest(String, String, InputStream, ObjectMetadata)
  */
@@ -122,13 +122,13 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
      * object.  Ignored in favor of accessControlList, if present.
      */
     private CannedAccessControlList cannedAcl;
-    
+
     /**
      * An optional access control list to apply to the new object. If specified,
      * cannedAcl will be ignored.
      */
     private AccessControlList accessControlList;
-   
+
     /**
      * The optional Amazon S3 storage class to use when storing the new object.
      * If not specified, the default, standard storage class will be used.
@@ -137,17 +137,20 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
      * see the {@link StorageClass} enumeration.
      */
     private String storageClass;
-   
+
     /**
      * The optional progress listener for receiving updates about object upload
      * status.
      */
     private ProgressListener progressListener;
-    
+
+    /** The optional redirect location about an object */
+    private String redirectLocation;
+
     /**
-     * Constructs a new 
+     * Constructs a new
      * {@link PutObjectRequest} object to upload a file to the
-     * specified bucket and key. After constructing the request, 
+     * specified bucket and key. After constructing the request,
      * users may optionally specify object metadata or a canned ACL as well.
      *
      * @param bucketName
@@ -157,8 +160,9 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
      *            The key under which to store the new object.
      * @param file
      *            The path of the file to upload to Amazon S3.
-     *            
-     * @see PutObjectRequest#PutObjectRequest(String, String, InputStream, ObjectMetadata)          
+     *
+     * @see PutObjectRequest#PutObjectRequest(String, String, InputStream, ObjectMetadata)
+     * @See PutObjectRequest(String bucketName, String key, String redirectLocation)
      */
     public PutObjectRequest(String bucketName, String key, File file) {
         this.bucketName = bucketName;
@@ -167,9 +171,31 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
     }
 
     /**
-     * Constructs a new 
+     * Constructs a new {@link PutObjectRequest} object with redirect location.
+     * After constructing the request, users may optionally specify object
+     * metadata or a canned ACL as well.
+     *
+     * @param bucketName
+     *            The name of an existing bucket to which the new object will be
+     *            uploaded.
+     * @param key
+     *            The key under which to store the new object.
+     * @param redirectLocation
+     *            The redirect location of this new object.
+     *
+     * @see PutObjectRequest#PutObjectRequest(String, String, InputStream, ObjectMetadata)
+     * @see PutObjectRequest#PutObjectRequest(String, String, File)
+     */
+    public PutObjectRequest(String bucketName, String key, String redirectLocation) {
+        this.bucketName = bucketName;
+        this.key = key;
+        this.redirectLocation = redirectLocation;
+    }
+
+    /**
+     * Constructs a new
      * {@link PutObjectRequest} object to upload a stream of data to
-     * the specified bucket and key. After constructing the request, 
+     * the specified bucket and key. After constructing the request,
      * users may optionally specify object metadata or a canned ACL as well.
      * <p>
      * Content length for the data stream <b>must</b> be
@@ -190,8 +216,9 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
      * @param metadata
      *            The object metadata. At minimum this specifies the
      *            content length for the stream of data being uploaded.
-     *            
+     *
      * @see PutObjectRequest#PutObjectRequest(String, String, File)
+     * @see PutObjectRequest(String bucketName, String key, String redirectLocation)
      */
     public PutObjectRequest(String bucketName, String key, InputStream input, ObjectMetadata metadata) {
         this.bucketName = bucketName;
@@ -202,15 +229,15 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
 
     /**
      * Gets the name of the existing bucket where this request will
-     * upload a new object to. 
-     * In order to upload the object, 
+     * upload a new object to.
+     * In order to upload the object,
      * users must have {@link Permission#Write} permission granted.
      *
      * @return The name of an existing bucket where this request will
-     * upload a new object to. 
-     * 
+     * upload a new object to.
+     *
      * @see PutObjectRequest#setBucketName(String)
-     * @see PutObjectRequest#withBucketName(String)    
+     * @see PutObjectRequest#withBucketName(String)
      */
     public String getBucketName() {
         return bucketName;
@@ -218,17 +245,17 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
 
     /**
      * Sets the name of an existing bucket where this request will
-     * upload a new object to. In order to upload the object, 
+     * upload a new object to. In order to upload the object,
      * users must have {@link Permission#Write} permission granted.
-     * 
+     *
      * @param bucketName
      *            The name of an existing bucket where this request will
-     *            upload a new object to. 
-     *            In order to upload the object, 
+     *            upload a new object to.
+     *            In order to upload the object,
      *            users must have {@link Permission#Write} permission granted.
-     *            
+     *
      * @see PutObjectRequest#getBucketName()
-     * @see PutObjectRequest#withBucketName(String)          
+     * @see PutObjectRequest#withBucketName(String)
      */
     public void setBucketName(String bucketName) {
         this.bucketName = bucketName;
@@ -239,20 +266,20 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
      * object to. Returns this object, enabling additional method calls to be
      * chained together.
      * <p>
-     * In order to upload the object, 
+     * In order to upload the object,
      * users must have {@link Permission#Write} permission granted.
      *
      * @param bucketName
      *            The name of an existing bucket where this request will
-     *            upload a new object to. 
-     *            In order to upload the object, 
+     *            upload a new object to.
+     *            In order to upload the object,
      *            users must have {@link Permission#Write} permission granted.
      *
      * @return This {@link PutObjectRequest}, enabling additional method calls to be
      *         chained together.
-     *         
+     *
      * @see PutObjectRequest#getBucketName()
-     * @see PutObjectRequest#setBucketName(String)        
+     * @see PutObjectRequest#setBucketName(String)
      */
     public PutObjectRequest withBucketName(String bucketName) {
         setBucketName(bucketName);
@@ -263,7 +290,7 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
      * Gets the key under which to store the new object.
      *
      * @return The key under which to store the new object.
-     * 
+     *
      * @see PutObjectRequest#setKey(String)
      * @see PutObjectRequest#withKey(String)
      */
@@ -276,9 +303,9 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
      *
      * @param key
      *            The key under which to store the new object.
-     *            
+     *
      * @see PutObjectRequest#getKey()
-     * @see PutObjectRequest#withKey(String)         
+     * @see PutObjectRequest#withKey(String)
      */
     public void setKey(String key) {
         this.key = key;
@@ -293,9 +320,9 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
      *
      * @return This {@link PutObjectRequest}, enabling additional method calls to be
      *         chained together.
-     *         
-     * @see PutObjectRequest#getKey()  
-     * @see PutObjectRequest#setKey(String)    
+     *
+     * @see PutObjectRequest#getKey()
+     * @see PutObjectRequest#setKey(String)
      */
     public PutObjectRequest withKey(String key) {
         setKey(key);
@@ -313,9 +340,9 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
      *
      * @return The Amazon S3 storage class to use when storing the newly copied
      *         object.
-     * 
-     * @see PutObjectRequest#setStorageClass(String)               
-     * @see PutObjectRequest#setStorageClass(StorageClass) 
+     *
+     * @see PutObjectRequest#setStorageClass(String)
+     * @see PutObjectRequest#setStorageClass(StorageClass)
      * @see PutObjectRequest#withStorageClass(StorageClass)
      * @see PutObjectRequest#withStorageClass(String)
      */
@@ -331,17 +358,17 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
      * For more information on Amazon S3 storage classes and available values,
      * see the {@link StorageClass} enumeration.
      * </p>
-     * 
+     *
      * @param storageClass
      *         The storage class to use when storing the new object.
      *
      * @return The Amazon S3 storage class to use when storing the newly copied
      *         object.
-     *         
+     *
      * @see PutObjectRequest#getStorageClass()
      * @see PutObjectRequest#setStorageClass(StorageClass
      * @see PutObjectRequest#withStorageClass(StorageClass)
-     * @see PutObjectRequest#withStorageClass(String)                   
+     * @see PutObjectRequest#withStorageClass(String)
      */
     public void setStorageClass(String storageClass) {
         this.storageClass = storageClass;
@@ -356,17 +383,17 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
      * For more information on Amazon S3 storage classes and available values,
      * see the {@link StorageClass} enumeration.
      * </p>
-     * 
+     *
      * @param storageClass
      *         The storage class to use when storing the new object.
      *
      * @return This {@link PutObjectRequest}, enabling additional method calls to be
      *         chained together.
-     *         
+     *
      * @see PutObjectRequest#getStorageClass()
      * @see PutObjectRequest#setStorageClass(StorageClass)
-     * @see PutObjectRequest#setStorageClass(String)        
-     * @see PutObjectRequest#withStorageClass(StorageClass)  
+     * @see PutObjectRequest#setStorageClass(String)
+     * @see PutObjectRequest#withStorageClass(StorageClass)
      */
     public PutObjectRequest withStorageClass(String storageClass) {
         setStorageClass(storageClass);
@@ -381,15 +408,15 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
      * For more information on Amazon S3 storage classes and available values,
      * see the {@link StorageClass} enumeration.
      * </p>
-     * 
+     *
      * @param storageClass
      *         The storage class to use when storing the new object.
      *
      * @return The Amazon S3 storage class to use when storing the newly copied
      *         object.
-     *         
+     *
      * @see PutObjectRequest#getStorageClass()
-     * @see PutObjectRequest#setStorageClass(String)                     
+     * @see PutObjectRequest#setStorageClass(String)
      */
     public void setStorageClass(StorageClass storageClass) {
         this.storageClass = storageClass.toString();
@@ -404,22 +431,22 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
      * For more information on Amazon S3 storage classes and available values,
      * see the {@link StorageClass} enumeration.
      * </p>
-     * 
+     *
      * @param storageClass
      *         The storage class to use when storing the new object.
      *
      * @return This {@link PutObjectRequest}, enabling additional method calls to be
      *         chained together.
-     *         
+     *
      * @see PutObjectRequest#getStorageClass()
      * @see PutObjectRequest#setStorageClass(StorageClass)
-     * @see PutObjectRequest#setStorageClass(String)           
-     * @see PutObjectRequest#withStorageClass(String)          
+     * @see PutObjectRequest#setStorageClass(String)
+     * @see PutObjectRequest#withStorageClass(String)
      */
     public PutObjectRequest withStorageClass(StorageClass storageClass) {
         setStorageClass(storageClass);
         return this;
-    }    
+    }
 
     /**
      * Gets the path and name of the file
@@ -429,11 +456,11 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
      *
      * @return The path and name of the file
      *         containing the data to be uploaded to Amazon S3.
-     *         
+     *
      * @see PutObjectRequest#setFile(File)
      * @see PutObjectRequest#withFile(File)
      * @see PutObjectRequest#setInputStream(InputStream)
-     * @see PutObjectRequest#withInputStream(InputStream)      
+     * @see PutObjectRequest#withInputStream(InputStream)
      */
     public File getFile() {
         return file;
@@ -446,13 +473,13 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
      * uploaded to Amazon S3; both cannot be specified.
      *
      * @param file
-     *            The path and name of the 
+     *            The path and name of the
      *            file containing the data to be uploaded to Amazon S3.
-     *            
+     *
      * @see PutObjectRequest#getFile()
      * @see PutObjectRequest#withFile(File)
      * @see PutObjectRequest#getInputStream()
-     * @see PutObjectRequest#withInputStream(InputStream)              
+     * @see PutObjectRequest#withInputStream(InputStream)
      */
     public void setFile(File file) {
         this.file = file;
@@ -471,11 +498,11 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
      *
      * @return This {@link PutObjectRequest}, enabling additional method
      *         calls to be chained together.
-     *         
+     *
      * @see PutObjectRequest#getFile()
      * @see PutObjectRequest#setFile(File)
      * @see PutObjectRequest#getInputStream()
-     * @see PutObjectRequest#setInputStream(InputStream)             
+     * @see PutObjectRequest#setInputStream(InputStream)
      */
     public PutObjectRequest withFile(File file) {
         setFile(file);
@@ -485,7 +512,7 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
     /**
      * Gets the optional metadata instructing Amazon S3 how to handle the
      * uploaded data (e.g. custom user metadata, hooks for specifying content
-     * type, etc.). 
+     * type, etc.).
      * <p>
      * If uploading from an input stream,
      * <b>always</b> specify metadata with the content size set. Otherwise the
@@ -497,8 +524,8 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
      * @return The optional metadata instructing Amazon S3 how to handle the
      *         uploaded data (e.g. custom user metadata, hooks for specifying
      *         content type, etc.).
-     *         
-     * @see PutObjectRequest#setMetadata(ObjectMetadata)    
+     *
+     * @see PutObjectRequest#setMetadata(ObjectMetadata)
      * @see PutObjectRequest#withMetadata(ObjectMetadata)
      */
     public ObjectMetadata getMetadata() {
@@ -521,9 +548,9 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
      *            The optional metadata instructing Amazon S3 how to handle the
      *            uploaded data (e.g. custom user metadata, hooks for specifying
      *            content type, etc.).
-     *            
+     *
      * @see PutObjectRequest#getMetadata()
-     * @see PutObjectRequest#withMetadata(ObjectMetadata)              
+     * @see PutObjectRequest#withMetadata(ObjectMetadata)
      */
     public void setMetadata(ObjectMetadata metadata) {
         this.metadata = metadata;
@@ -549,9 +576,9 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
      *
      * @return This {@link PutObjectRequest}, enabling additional method
      *         calls to be chained together.
-     *         
-     * @see PutObjectRequest#getMetadata() 
-     * @see PutObjectRequest#setMetadata(ObjectMetadata)             
+     *
+     * @see PutObjectRequest#getMetadata()
+     * @see PutObjectRequest#setMetadata(ObjectMetadata)
      */
     public PutObjectRequest withMetadata(ObjectMetadata metadata) {
         setMetadata(metadata);
@@ -564,9 +591,9 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
      *
      * @return The optional pre-configured access control policy to use for the
      *         new object.
-     *         
+     *
      * @see PutObjectRequest#setCannedAcl(CannedAccessControlList)
-     * @see PutObjectRequest#withCannedAcl(CannedAccessControlList)      
+     * @see PutObjectRequest#withCannedAcl(CannedAccessControlList)
      */
     public CannedAccessControlList getCannedAcl() {
         return cannedAcl;
@@ -579,9 +606,9 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
      * @param cannedAcl
      *            The optional pre-configured access control policy to use for
      *            the new object.
-     *            
+     *
      * @see PutObjectRequest#getCannedAcl()
-     * @see PutObjectRequest#withCannedAcl(CannedAccessControlList)       
+     * @see PutObjectRequest#withCannedAcl(CannedAccessControlList)
      */
     public void setCannedAcl(CannedAccessControlList cannedAcl) {
         this.cannedAcl = cannedAcl;
@@ -598,15 +625,15 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
      *
      * @return This {@link PutObjectRequest}, enabling additional method
      *         calls to be chained together.
-     *         
-     * @see PutObjectRequest#getCannedAcl()   
-     * @see PutObjectRequest#setCannedAcl(CannedAccessControlList)      
+     *
+     * @see PutObjectRequest#getCannedAcl()
+     * @see PutObjectRequest#setCannedAcl(CannedAccessControlList)
      */
     public PutObjectRequest withCannedAcl(CannedAccessControlList cannedAcl) {
         setCannedAcl(cannedAcl);
         return this;
     }
-    
+
     /**
      * Returns the optional access control list for the new object. If
      * specified, cannedAcl will be ignored.
@@ -614,23 +641,23 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
     public AccessControlList getAccessControlList() {
         return accessControlList;
     }
-    
+
     /**
      * Sets the optional access control list for the new object. If specified,
      * cannedAcl will be ignored.
-     * 
+     *
      * @param accessControlList
      *            The access control list for the new object.
      */
     public void setAccessControlList(AccessControlList accessControlList) {
         this.accessControlList = accessControlList;
     }
-    
+
     /**
      * Sets the optional access control list for the new object. If specified,
      * cannedAcl will be ignored. Returns this {@link PutObjectRequest},
      * enabling additional method calls to be chained together.
-     * 
+     *
      * @param accessControlList
      *            The access control list for the new object.
      */
@@ -648,7 +675,7 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
      * @return The input stream containing the data to be uploaded to Amazon S3.
      *         Either specify a file or an input stream containing the
      *         data to be uploaded to Amazon S3, not both.
-     *         
+     *
      * @see PutObjectRequest#setInputStream(InputStream)
      * @see PutObjectRequest#withInputStream(InputStream)
      * @see PutObjectRequest#setFile(File)
@@ -659,7 +686,7 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
     }
 
     /**
-     * Sets the input stream containing the data to be uploaded to Amazon S3.      
+     * Sets the input stream containing the data to be uploaded to Amazon S3.
      * Either specify a file or an input stream containing the data to be
      * uploaded to Amazon S3; both cannot be specified.
      *
@@ -667,11 +694,11 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
      *            The input stream containing the data to be uploaded to Amazon
      *            S3. Either specify a file or an input stream containing the
      *            data to be uploaded to Amazon S3, not both.
-     *            
+     *
      * @see PutObjectRequest#getInputStream()
      * @see PutObjectRequest#withInputStream(InputStream)
      * @see PutObjectRequest#getFile()
-     * @see PutObjectRequest#withFile(File)   
+     * @see PutObjectRequest#withFile(File)
      */
     public void setInputStream(InputStream inputStream) {
         this.inputStream = inputStream;
@@ -692,11 +719,11 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
      *
      * @return This PutObjectRequest, so that additional method calls can be
      *         chained together.
-     *         
+     *
      * @see PutObjectRequest#getInputStream()
      * @see PutObjectRequest#setInputStream(InputStream)
      * @see PutObjectRequest#getFile()
-     * @see PutObjectRequest#setFile(File)    
+     * @see PutObjectRequest#setFile(File)
      */
     public PutObjectRequest withInputStream(InputStream inputStream) {
         setInputStream(inputStream);
@@ -704,9 +731,38 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
     }
 
     /**
-     * Sets the optional progress listener for receiving updates about object
+     * Sets the optional redirect location for the new object.
+     *
+     * @param redirectLocation
+     *            The redirect location for the new object.
+     */
+    public void setRedirectLocation(String redirectLocation) {
+        this.redirectLocation = redirectLocation;
+    }
+
+    /**
+     * Gets the optional redirect location for the new object.
+     */
+    public String getRedirectLocation() {
+        return this.redirectLocation;
+    }
+
+    /**
+     * Sets the optional redirect location for the new object.Returns this
+     * {@link PutObjectRequest}, enabling additional method calls to be chained
+     * together.
+     * @param redirectLocation
+     *            The redirect location for the new object.
+     */
+    public PutObjectRequest withRedirectLocation(String redirectLocation) {
+        this.redirectLocation = redirectLocation;
+        return this;
+    }
+
+    /**
+     * Sets the optional progress listener for receiving updates for object
      * upload status.
-     * 
+     *
      * @param progressListener
      *            The new progress listener.
      */
@@ -717,7 +773,7 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
     /**
      * Returns the optional progress listener for receiving updates about object
      * upload status.
-     * 
+     *
      * @return the optional progress listener for receiving updates about object
      *         upload status.
      */
@@ -729,10 +785,10 @@ public class PutObjectRequest extends AmazonWebServiceRequest {
      * Sets the optional progress listener for receiving updates about object
      * upload status, and returns this updated object so that additional method
      * calls can be chained together.
-     * 
+     *
      * @param progressListener
      *            The new progress listener.
-     * 
+     *
      * @return This updated PutObjectRequest object.
      */
     public PutObjectRequest withProgressListener(ProgressListener progressListener) {

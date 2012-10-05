@@ -57,6 +57,8 @@ public class GetVaultNotificationsRequestMarshaller implements Marshaller<Reques
         String uriResourcePath = "/{accountId}/vaults/{vaultName}/notification-configuration"; 
         uriResourcePath = uriResourcePath.replace("{accountId}", getString(getVaultNotificationsRequest.getAccountId())); 
         uriResourcePath = uriResourcePath.replace("{vaultName}", getString(getVaultNotificationsRequest.getVaultName())); 
+        
+        uriResourcePath = uriResourcePath.replaceAll("//", "/");
 
         if (uriResourcePath.contains("?")) {
             String queryString = uriResourcePath.substring(uriResourcePath.indexOf("?") + 1);

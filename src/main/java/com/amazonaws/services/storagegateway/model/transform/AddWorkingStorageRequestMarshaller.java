@@ -55,6 +55,8 @@ public class AddWorkingStorageRequestMarshaller implements Marshaller<Request<Ad
 
 
         String uriResourcePath = ""; 
+        
+        uriResourcePath = uriResourcePath.replaceAll("//", "/");
 
         if (uriResourcePath.contains("?")) {
             String queryString = uriResourcePath.substring(uriResourcePath.indexOf("?") + 1);
@@ -93,7 +95,9 @@ public class AddWorkingStorageRequestMarshaller implements Marshaller<Request<Ad
                 jsonWriter.array();
 
                 for (String diskIdsListValue : diskIdsList) {
-                    jsonWriter.value(diskIdsListValue);
+                    if (diskIdsListValue != null) {
+                        jsonWriter.value(diskIdsListValue);
+                    }
                 }
                 jsonWriter.endArray();
             }

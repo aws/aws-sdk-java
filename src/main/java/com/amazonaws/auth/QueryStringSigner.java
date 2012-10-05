@@ -64,6 +64,11 @@ public class QueryStringSigner extends AbstractAWSSigner implements Signer {
      *            signature algorithm. "HmacSHA256" is recommended.
      */
     public void sign(Request<?> request, SignatureVersion version, SigningAlgorithm algorithm, AWSCredentials credentials) throws AmazonClientException {
+    	// annonymous credentials, don't sign
+    	if ( credentials instanceof AnonymousAWSCredentials ) {
+    		return;
+    	}
+    	
     	AWSCredentials sanitizedCredentials = sanitizeCredentials(credentials);
         request.addParameter("AWSAccessKeyId", sanitizedCredentials.getAWSAccessKeyId());
         request.addParameter("SignatureVersion", version.toString());

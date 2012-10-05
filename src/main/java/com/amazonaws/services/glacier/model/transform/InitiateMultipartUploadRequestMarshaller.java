@@ -63,6 +63,8 @@ public class InitiateMultipartUploadRequestMarshaller implements Marshaller<Requ
         String uriResourcePath = "/{accountId}/vaults/{vaultName}/multipart-uploads"; 
         uriResourcePath = uriResourcePath.replace("{accountId}", getString(initiateMultipartUploadRequest.getAccountId())); 
         uriResourcePath = uriResourcePath.replace("{vaultName}", getString(initiateMultipartUploadRequest.getVaultName())); 
+        
+        uriResourcePath = uriResourcePath.replaceAll("//", "/");
 
         if (uriResourcePath.contains("?")) {
             String queryString = uriResourcePath.substring(uriResourcePath.indexOf("?") + 1);

@@ -161,7 +161,7 @@ public class JSONWriter {
     private JSONWriter end(char m, char c) throws JSONException {
         if (this.mode != m) {
             throw new JSONException(m == 'a' ? "Misplaced endArray." :
-            		"Misplaced endObject.");
+                    "Misplaced endObject.");
         }
         this.pop(m);
         try {
@@ -321,7 +321,7 @@ public class JSONWriter {
     public JSONWriter value(Date date) throws JSONException {
         return this.value(new Long(date.getTime() / 1000));
     }
-    
+
     /**
      * Appends a ByteBuffer value.
      *
@@ -330,11 +330,13 @@ public class JSONWriter {
      * @throws JSONException
      */
     public JSONWriter value(ByteBuffer b) throws JSONException {
-    	byte [] bytes = new byte[b.capacity()];
-    	b.get(bytes, 0, bytes.length);
-    	return this.value(BinaryUtils.toBase64(bytes));
+        b.mark();
+        byte[] bytes = new byte[b.capacity()];
+        b.get(bytes, 0, bytes.length);
+        b.reset();
+        return this.value(BinaryUtils.toBase64(bytes));
     }
-    
+
     /**
      * Append an object value.
      * @param o The object to append. It can be null, or a Boolean, Number,

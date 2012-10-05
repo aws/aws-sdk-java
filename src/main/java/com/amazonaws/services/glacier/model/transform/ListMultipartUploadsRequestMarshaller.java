@@ -59,6 +59,8 @@ public class ListMultipartUploadsRequestMarshaller implements Marshaller<Request
         uriResourcePath = uriResourcePath.replace("{vaultName}", getString(listMultipartUploadsRequest.getVaultName())); 
         uriResourcePath = uriResourcePath.replace("{marker}", getString(listMultipartUploadsRequest.getUploadIdMarker())); 
         uriResourcePath = uriResourcePath.replace("{limit}", getString(listMultipartUploadsRequest.getLimit())); 
+        
+        uriResourcePath = uriResourcePath.replaceAll("//", "/");
 
         if (uriResourcePath.contains("?")) {
             String queryString = uriResourcePath.substring(uriResourcePath.indexOf("?") + 1);

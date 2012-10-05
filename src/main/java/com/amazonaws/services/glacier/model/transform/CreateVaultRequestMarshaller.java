@@ -57,6 +57,8 @@ public class CreateVaultRequestMarshaller implements Marshaller<Request<CreateVa
         String uriResourcePath = "/{accountId}/vaults/{vaultName}"; 
         uriResourcePath = uriResourcePath.replace("{accountId}", getString(createVaultRequest.getAccountId())); 
         uriResourcePath = uriResourcePath.replace("{vaultName}", getString(createVaultRequest.getVaultName())); 
+        
+        uriResourcePath = uriResourcePath.replaceAll("//", "/");
 
         if (uriResourcePath.contains("?")) {
             String queryString = uriResourcePath.substring(uriResourcePath.indexOf("?") + 1);

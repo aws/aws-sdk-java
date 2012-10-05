@@ -55,6 +55,8 @@ public class DescribeStorediSCSIVolumesRequestMarshaller implements Marshaller<R
 
 
         String uriResourcePath = ""; 
+        
+        uriResourcePath = uriResourcePath.replaceAll("//", "/");
 
         if (uriResourcePath.contains("?")) {
             String queryString = uriResourcePath.substring(uriResourcePath.indexOf("?") + 1);
@@ -90,7 +92,9 @@ public class DescribeStorediSCSIVolumesRequestMarshaller implements Marshaller<R
                 jsonWriter.array();
 
                 for (String volumeARNsListValue : volumeARNsList) {
-                    jsonWriter.value(volumeARNsListValue);
+                    if (volumeARNsListValue != null) {
+                        jsonWriter.value(volumeARNsListValue);
+                    }
                 }
                 jsonWriter.endArray();
             }

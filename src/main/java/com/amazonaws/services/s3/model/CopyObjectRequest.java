@@ -118,6 +118,9 @@ public class CopyObjectRequest extends AmazonWebServiceRequest {
      * the source object has been modified since the specified date.
      */
     private Date modifiedSinceConstraint;
+    
+    /** Optional field specifying the redirect location for the new object */
+    private String redirectLocation;
 
 
     /**
@@ -945,5 +948,34 @@ public class CopyObjectRequest extends AmazonWebServiceRequest {
         setModifiedSinceConstraint(date);
         return this;
     }
+    
+	/**
+	 * Sets the optional redirect location for the newly copied object.
+	 * 
+	 * @param redirectLocation
+	 *            The redirect location for the newly copied object.
+	 */
+	public void setRedirectLocation(String redirectLocation) {
+		this.redirectLocation = redirectLocation;
+	}
+
+	/**
+	 * Gets the optional redirect location for the newly copied object.
+	 */
+	public String getRedirectLocation() {
+		return this.redirectLocation;
+	}
+
+	/**
+	 * Sets the optional redirect location for the newly copied object.Returns this
+	 * {@link CopyObjectRequest}, enabling additional method calls to be chained
+	 * together.
+	 * @param redirectLocation
+	 *            The redirect location for the newly copied object.
+	 */
+	public CopyObjectRequest withRedirectLocation(String redirectLocation) {
+		this.redirectLocation = redirectLocation;
+		return this;
+	}
 
 }

@@ -61,6 +61,8 @@ public class ListJobsRequestMarshaller implements Marshaller<Request<ListJobsReq
         uriResourcePath = uriResourcePath.replace("{marker}", getString(listJobsRequest.getMarker())); 
         uriResourcePath = uriResourcePath.replace("{statuscode}", getString(listJobsRequest.getStatuscode())); 
         uriResourcePath = uriResourcePath.replace("{completed}", getString(listJobsRequest.getCompleted())); 
+        
+        uriResourcePath = uriResourcePath.replaceAll("//", "/");
 
         if (uriResourcePath.contains("?")) {
             String queryString = uriResourcePath.substring(uriResourcePath.indexOf("?") + 1);

@@ -62,6 +62,11 @@ public class InitiateMultipartUploadRequest extends AmazonWebServiceRequest {
      * If not specified, the default storage class is used.
      */
     private StorageClass storageClass;
+    
+    /**
+     * The optional redirect location for the new object.
+     */
+    private String redirectLocation;
 
     /**
      * Constructs a request to initiate a new multipart upload in the specified
@@ -358,5 +363,34 @@ public class InitiateMultipartUploadRequest extends AmazonWebServiceRequest {
         setObjectMetadata(objectMetadata);
         return this;
     }
+    
+	/**
+	 * Sets the optional redirect location for the new object.
+	 * 
+	 * @param redirectLocation
+	 *            The redirect location for the new object.
+	 */
+	public void setRedirectLocation(String redirectLocation) {
+		this.redirectLocation = redirectLocation;
+	}
+
+	/**
+	 * Gets the optional redirect location for the new object.
+	 */
+	public String getRedirectLocation() {
+		return this.redirectLocation;
+	}
+
+	/**
+	 * Sets the optional redirect location for the new object. Returns this
+	 * {@link InitiateMultipartUploadRequest}, enabling additional method calls to be chained
+	 * together.
+	 * @param redirectLocation
+	 *            The redirect location for the new object.
+	 */
+	public InitiateMultipartUploadRequest withRedirectLocation(String redirectLocation) {
+		this.redirectLocation = redirectLocation;
+		return this;
+	}
 
 }

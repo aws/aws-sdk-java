@@ -55,6 +55,8 @@ public class ListWorkflowTypesRequestMarshaller implements Marshaller<Request<Li
 
 
         String uriResourcePath = ""; 
+        
+        uriResourcePath = uriResourcePath.replaceAll("//", "/");
 
         if (uriResourcePath.contains("?")) {
             String queryString = uriResourcePath.substring(uriResourcePath.indexOf("?") + 1);

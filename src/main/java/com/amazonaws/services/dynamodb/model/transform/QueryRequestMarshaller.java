@@ -55,6 +55,8 @@ public class QueryRequestMarshaller implements Marshaller<Request<QueryRequest>,
 
 
         String uriResourcePath = ""; 
+        
+        uriResourcePath = uriResourcePath.replaceAll("//", "/");
 
         if (uriResourcePath.contains("?")) {
             String queryString = uriResourcePath.substring(uriResourcePath.indexOf("?") + 1);
@@ -93,7 +95,9 @@ public class QueryRequestMarshaller implements Marshaller<Request<QueryRequest>,
                 jsonWriter.array();
 
                 for (String attributesToGetListValue : attributesToGetList) {
-                    jsonWriter.value(attributesToGetListValue);
+                    if (attributesToGetListValue != null) {
+                        jsonWriter.value(attributesToGetListValue);
+                    }
                 }
                 jsonWriter.endArray();
             }
@@ -129,7 +133,9 @@ public class QueryRequestMarshaller implements Marshaller<Request<QueryRequest>,
                     jsonWriter.array();
 
                     for (String sSListValue : sSList) {
-                        jsonWriter.value(sSListValue);
+                        if (sSListValue != null) {
+                            jsonWriter.value(sSListValue);
+                        }
                     }
                     jsonWriter.endArray();
                 }
@@ -141,7 +147,9 @@ public class QueryRequestMarshaller implements Marshaller<Request<QueryRequest>,
                     jsonWriter.array();
 
                     for (String nSListValue : nSList) {
-                        jsonWriter.value(nSListValue);
+                        if (nSListValue != null) {
+                            jsonWriter.value(nSListValue);
+                        }
                     }
                     jsonWriter.endArray();
                 }
@@ -153,7 +161,9 @@ public class QueryRequestMarshaller implements Marshaller<Request<QueryRequest>,
                     jsonWriter.array();
 
                     for (java.nio.ByteBuffer bSListValue : bSList) {
-                        jsonWriter.value(bSListValue);
+                        if (bSListValue != null) {
+                            jsonWriter.value(bSListValue);
+                        }
                     }
                     jsonWriter.endArray();
                 }
@@ -173,53 +183,61 @@ public class QueryRequestMarshaller implements Marshaller<Request<QueryRequest>,
                     jsonWriter.array();
 
                     for (AttributeValue attributeValueListListValue : attributeValueListList) {
-                        jsonWriter.object();
-                        if (attributeValueListListValue.getS() != null) {
-                            jsonWriter.key("S").value(attributeValueListListValue.getS());
-                        }
-                        if (attributeValueListListValue.getN() != null) {
-                            jsonWriter.key("N").value(attributeValueListListValue.getN());
-                        }
-                        if (attributeValueListListValue.getB() != null) {
-                            jsonWriter.key("B").value(attributeValueListListValue.getB());
-                        }
-
-                        java.util.List<String> sSList = attributeValueListListValue.getSS();
-                        if (sSList != null && sSList.size() > 0) {
-
-                            jsonWriter.key("SS");
-                            jsonWriter.array();
-
-                            for (String sSListValue : sSList) {
-                                jsonWriter.value(sSListValue);
+                        if (attributeValueListListValue != null) {
+                            jsonWriter.object();
+                            if (attributeValueListListValue.getS() != null) {
+                                jsonWriter.key("S").value(attributeValueListListValue.getS());
                             }
-                            jsonWriter.endArray();
-                        }
-
-                        java.util.List<String> nSList = attributeValueListListValue.getNS();
-                        if (nSList != null && nSList.size() > 0) {
-
-                            jsonWriter.key("NS");
-                            jsonWriter.array();
-
-                            for (String nSListValue : nSList) {
-                                jsonWriter.value(nSListValue);
+                            if (attributeValueListListValue.getN() != null) {
+                                jsonWriter.key("N").value(attributeValueListListValue.getN());
                             }
-                            jsonWriter.endArray();
-                        }
-
-                        java.util.List<java.nio.ByteBuffer> bSList = attributeValueListListValue.getBS();
-                        if (bSList != null && bSList.size() > 0) {
-
-                            jsonWriter.key("BS");
-                            jsonWriter.array();
-
-                            for (java.nio.ByteBuffer bSListValue : bSList) {
-                                jsonWriter.value(bSListValue);
+                            if (attributeValueListListValue.getB() != null) {
+                                jsonWriter.key("B").value(attributeValueListListValue.getB());
                             }
-                            jsonWriter.endArray();
+
+                            java.util.List<String> sSList = attributeValueListListValue.getSS();
+                            if (sSList != null && sSList.size() > 0) {
+
+                                jsonWriter.key("SS");
+                                jsonWriter.array();
+
+                                for (String sSListValue : sSList) {
+                                    if (sSListValue != null) {
+                                        jsonWriter.value(sSListValue);
+                                    }
+                                }
+                                jsonWriter.endArray();
+                            }
+
+                            java.util.List<String> nSList = attributeValueListListValue.getNS();
+                            if (nSList != null && nSList.size() > 0) {
+
+                                jsonWriter.key("NS");
+                                jsonWriter.array();
+
+                                for (String nSListValue : nSList) {
+                                    if (nSListValue != null) {
+                                        jsonWriter.value(nSListValue);
+                                    }
+                                }
+                                jsonWriter.endArray();
+                            }
+
+                            java.util.List<java.nio.ByteBuffer> bSList = attributeValueListListValue.getBS();
+                            if (bSList != null && bSList.size() > 0) {
+
+                                jsonWriter.key("BS");
+                                jsonWriter.array();
+
+                                for (java.nio.ByteBuffer bSListValue : bSList) {
+                                    if (bSListValue != null) {
+                                        jsonWriter.value(bSListValue);
+                                    }
+                                }
+                                jsonWriter.endArray();
+                            }
+                            jsonWriter.endObject();
                         }
-                        jsonWriter.endObject();
                     }
                     jsonWriter.endArray();
                 }
@@ -260,7 +278,9 @@ public class QueryRequestMarshaller implements Marshaller<Request<QueryRequest>,
                         jsonWriter.array();
 
                         for (String sSListValue : sSList) {
-                            jsonWriter.value(sSListValue);
+                            if (sSListValue != null) {
+                                jsonWriter.value(sSListValue);
+                            }
                         }
                         jsonWriter.endArray();
                     }
@@ -272,7 +292,9 @@ public class QueryRequestMarshaller implements Marshaller<Request<QueryRequest>,
                         jsonWriter.array();
 
                         for (String nSListValue : nSList) {
-                            jsonWriter.value(nSListValue);
+                            if (nSListValue != null) {
+                                jsonWriter.value(nSListValue);
+                            }
                         }
                         jsonWriter.endArray();
                     }
@@ -284,7 +306,9 @@ public class QueryRequestMarshaller implements Marshaller<Request<QueryRequest>,
                         jsonWriter.array();
 
                         for (java.nio.ByteBuffer bSListValue : bSList) {
-                            jsonWriter.value(bSListValue);
+                            if (bSListValue != null) {
+                                jsonWriter.value(bSListValue);
+                            }
                         }
                         jsonWriter.endArray();
                     }
@@ -313,7 +337,9 @@ public class QueryRequestMarshaller implements Marshaller<Request<QueryRequest>,
                         jsonWriter.array();
 
                         for (String sSListValue : sSList) {
-                            jsonWriter.value(sSListValue);
+                            if (sSListValue != null) {
+                                jsonWriter.value(sSListValue);
+                            }
                         }
                         jsonWriter.endArray();
                     }
@@ -325,7 +351,9 @@ public class QueryRequestMarshaller implements Marshaller<Request<QueryRequest>,
                         jsonWriter.array();
 
                         for (String nSListValue : nSList) {
-                            jsonWriter.value(nSListValue);
+                            if (nSListValue != null) {
+                                jsonWriter.value(nSListValue);
+                            }
                         }
                         jsonWriter.endArray();
                     }
@@ -337,7 +365,9 @@ public class QueryRequestMarshaller implements Marshaller<Request<QueryRequest>,
                         jsonWriter.array();
 
                         for (java.nio.ByteBuffer bSListValue : bSList) {
-                            jsonWriter.value(bSListValue);
+                            if (bSListValue != null) {
+                                jsonWriter.value(bSListValue);
+                            }
                         }
                         jsonWriter.endArray();
                     }

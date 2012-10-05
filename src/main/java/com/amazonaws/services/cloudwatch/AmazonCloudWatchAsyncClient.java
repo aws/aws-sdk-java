@@ -21,6 +21,7 @@ import java.util.concurrent.Future;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
+import com.amazonaws.handlers.AsyncHandler;
 import com.amazonaws.ClientConfiguration;
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSCredentialsProvider;
@@ -30,10 +31,10 @@ import com.amazonaws.services.cloudwatch.model.*;
 
 
 /**
- * Client for accessing AmazonCloudWatch.  All calls made
- * using this client are non-blocking and will immediately return a Java Future.
- * Callers must use the Future object to determine when the service call has actually
- * completed.
+ * Asynchronous client for accessing AmazonCloudWatch.
+ * All asynchronous calls made using this client are non-blocking. Callers could either
+ * process the result and handle the exceptions in the worker thread by providing a callback handler
+ * when making the call, or use the returned Future object to check the result of the call in the calling thread.
  * Amazon CloudWatch <p>
  * This is the <i>Amazon CloudWatch API Reference</i> . This guide provides detailed information about Amazon CloudWatch actions, data types, parameters,
  * and errors. For detailed information about Amazon CloudWatch features and their associated API calls, go to the <a
@@ -312,6 +313,60 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient
 		    }
 		});
     }
+
+    
+    /**
+     * <p>
+     * Creates or updates an alarm and associates it with the specified
+     * Amazon CloudWatch metric. Optionally, this operation can associate one
+     * or more Amazon Simple Notification Service resources with the alarm.
+     * </p>
+     * <p>
+     * When this operation creates an alarm, the alarm state is immediately
+     * set to <code>INSUFFICIENT_DATA</code> . The alarm is evaluated and
+     * its <code>StateValue</code> is set appropriately. Any actions
+     * associated with the <code>StateValue</code> is then executed.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> When updating an existing alarm, its StateValue is left
+     * unchanged.
+     * </p>
+     *
+     * @param putMetricAlarmRequest Container for the necessary parameters to
+     *           execute the PutMetricAlarm operation on AmazonCloudWatch.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         PutMetricAlarm service method, as returned by AmazonCloudWatch.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudWatch indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> putMetricAlarmAsync(
+            final PutMetricAlarmRequest putMetricAlarmRequest,
+            final AsyncHandler<PutMetricAlarmRequest, Void> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+            	try {
+            		putMetricAlarm(putMetricAlarmRequest);
+            	} catch (Exception ex) {
+            	    asyncHandler.onError(ex);
+    				throw ex;
+            	}
+            	asyncHandler.onSuccess(putMetricAlarmRequest, null);
+               	return null;
+		    }
+		});
+    }
     
     /**
      * <p>
@@ -359,6 +414,66 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient
 		    }
 		});
     }
+
+    
+    /**
+     * <p>
+     * Publishes metric data points to Amazon CloudWatch. Amazon Cloudwatch
+     * associates the data points with the specified metric. If the specified
+     * metric does not exist, Amazon CloudWatch creates the metric.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> If you create a metric with the PutMetricData action,
+     * allow up to fifteen minutes for the metric to appear in calls to the
+     * ListMetrics action.
+     * </p>
+     * <p>
+     * The size of a PutMetricData request is limited to 8 KB for HTTP GET
+     * requests and 40 KB for HTTP POST requests.
+     * </p>
+     * <p>
+     * <b>IMPORTANT:</b> Although the Value parameter accepts numbers of type
+     * Double, Amazon CloudWatch truncates values with very large exponents.
+     * Values with base-10 exponents greater than 126 (1 x 10^126) are
+     * truncated. Likewise, values with base-10 exponents less than -130 (1 x
+     * 10^-130) are also truncated.
+     * </p>
+     *
+     * @param putMetricDataRequest Container for the necessary parameters to
+     *           execute the PutMetricData operation on AmazonCloudWatch.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         PutMetricData service method, as returned by AmazonCloudWatch.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudWatch indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> putMetricDataAsync(
+            final PutMetricDataRequest putMetricDataRequest,
+            final AsyncHandler<PutMetricDataRequest, Void> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+            	try {
+            		putMetricData(putMetricDataRequest);
+            	} catch (Exception ex) {
+            	    asyncHandler.onError(ex);
+    				throw ex;
+            	}
+            	asyncHandler.onSuccess(putMetricDataRequest, null);
+               	return null;
+		    }
+		});
+    }
     
     /**
      * <p>
@@ -396,6 +511,61 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient
         return executorService.submit(new Callable<ListMetricsResult>() {
             public ListMetricsResult call() throws Exception {
                 return listMetrics(listMetricsRequest);
+		    }
+		});
+    }
+
+    
+    /**
+     * <p>
+     * Returns a list of valid metrics stored for the AWS account owner.
+     * Returned metrics can be used with <code>GetMetricStatistics</code> to
+     * obtain statistical data for a given metric.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> Up to 500 results are returned for any one call. To
+     * retrieve further results, use returned NextToken values with
+     * subsequent ListMetrics operations.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> If you create a metric with the PutMetricData action,
+     * allow up to fifteen minutes for the metric to appear in calls to the
+     * ListMetrics action.
+     * </p>
+     *
+     * @param listMetricsRequest Container for the necessary parameters to
+     *           execute the ListMetrics operation on AmazonCloudWatch.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ListMetrics service method, as returned by AmazonCloudWatch.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudWatch indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ListMetricsResult> listMetricsAsync(
+            final ListMetricsRequest listMetricsRequest,
+            final AsyncHandler<ListMetricsRequest, ListMetricsResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ListMetricsResult>() {
+            public ListMetricsResult call() throws Exception {
+            	ListMetricsResult result;
+                try {
+            		result = listMetrics(listMetricsRequest);
+            	} catch (Exception ex) {
+            	    asyncHandler.onError(ex);
+    				throw ex;
+            	}
+            	asyncHandler.onSuccess(listMetricsRequest, result);
+               	return result;
 		    }
 		});
     }
@@ -461,6 +631,83 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient
 		    }
 		});
     }
+
+    
+    /**
+     * <p>
+     * Gets statistics for the specified metric.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> The maximum number of data points returned from a single
+     * GetMetricStatistics request is 1,440. If a request is made that
+     * generates more than 1,440 data points, Amazon CloudWatch returns an
+     * error. In such a case, alter the request by narrowing the specified
+     * time range or increasing the specified period. Alternatively, make
+     * multiple requests across adjacent time ranges.
+     * </p>
+     * <p>
+     * Amazon CloudWatch aggregates data points based on the length of the
+     * <code>period</code> that you specify. For example, if you request
+     * statistics with a one-minute granularity, Amazon CloudWatch aggregates
+     * data points with time stamps that fall within the same one-minute
+     * period. In such a case, the data points queried can greatly outnumber
+     * the data points returned.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> The maximum number of data points that can be queried is
+     * 50,850; whereas the maximum number of data points returned is 1,440.
+     * </p>
+     * <p>
+     * The following examples show various statistics allowed by the data
+     * point query maximum of 50,850 when you call
+     * <code>GetMetricStatistics</code> on Amazon EC2 instances with detailed
+     * (one-minute) monitoring enabled:
+     * </p>
+     * 
+     * <ul>
+     * <li>Statistics for up to 400 instances for a span of one hour</li>
+     * <li>Statistics for up to 35 instances over a span of 24 hours</li>
+     * <li>Statistics for up to 2 instances over a span of 2 weeks</li>
+     * 
+     * </ul>
+     *
+     * @param getMetricStatisticsRequest Container for the necessary
+     *           parameters to execute the GetMetricStatistics operation on
+     *           AmazonCloudWatch.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetMetricStatistics service method, as returned by AmazonCloudWatch.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudWatch indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetMetricStatisticsResult> getMetricStatisticsAsync(
+            final GetMetricStatisticsRequest getMetricStatisticsRequest,
+            final AsyncHandler<GetMetricStatisticsRequest, GetMetricStatisticsResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<GetMetricStatisticsResult>() {
+            public GetMetricStatisticsResult call() throws Exception {
+            	GetMetricStatisticsResult result;
+                try {
+            		result = getMetricStatistics(getMetricStatisticsRequest);
+            	} catch (Exception ex) {
+            	    asyncHandler.onError(ex);
+    				throw ex;
+            	}
+            	asyncHandler.onSuccess(getMetricStatisticsRequest, result);
+               	return result;
+		    }
+		});
+    }
     
     /**
      * <p>
@@ -490,6 +737,51 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient
             public Void call() throws Exception {
                 disableAlarmActions(disableAlarmActionsRequest);
                 return null;
+		    }
+		});
+    }
+
+    
+    /**
+     * <p>
+     * Disables actions for the specified alarms. When an alarm's actions
+     * are disabled the alarm's state may change, but none of the alarm's
+     * actions will execute.
+     * </p>
+     *
+     * @param disableAlarmActionsRequest Container for the necessary
+     *           parameters to execute the DisableAlarmActions operation on
+     *           AmazonCloudWatch.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DisableAlarmActions service method, as returned by AmazonCloudWatch.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudWatch indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> disableAlarmActionsAsync(
+            final DisableAlarmActionsRequest disableAlarmActionsRequest,
+            final AsyncHandler<DisableAlarmActionsRequest, Void> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+            	try {
+            		disableAlarmActions(disableAlarmActionsRequest);
+            	} catch (Exception ex) {
+            	    asyncHandler.onError(ex);
+    				throw ex;
+            	}
+            	asyncHandler.onSuccess(disableAlarmActionsRequest, null);
+               	return null;
 		    }
 		});
     }
@@ -524,6 +816,52 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient
 		    }
 		});
     }
+
+    
+    /**
+     * <p>
+     * Retrieves alarms with the specified names. If no name is specified,
+     * all alarms for the user are returned. Alarms can be retrieved by using
+     * only a prefix for the alarm name, the alarm state, or a prefix for any
+     * action.
+     * </p>
+     *
+     * @param describeAlarmsRequest Container for the necessary parameters to
+     *           execute the DescribeAlarms operation on AmazonCloudWatch.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeAlarms service method, as returned by AmazonCloudWatch.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudWatch indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeAlarmsResult> describeAlarmsAsync(
+            final DescribeAlarmsRequest describeAlarmsRequest,
+            final AsyncHandler<DescribeAlarmsRequest, DescribeAlarmsResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeAlarmsResult>() {
+            public DescribeAlarmsResult call() throws Exception {
+            	DescribeAlarmsResult result;
+                try {
+            		result = describeAlarms(describeAlarmsRequest);
+            	} catch (Exception ex) {
+            	    asyncHandler.onError(ex);
+    				throw ex;
+            	}
+            	asyncHandler.onSuccess(describeAlarmsRequest, result);
+               	return result;
+		    }
+		});
+    }
     
     /**
      * <p>
@@ -552,6 +890,52 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient
         return executorService.submit(new Callable<DescribeAlarmsForMetricResult>() {
             public DescribeAlarmsForMetricResult call() throws Exception {
                 return describeAlarmsForMetric(describeAlarmsForMetricRequest);
+		    }
+		});
+    }
+
+    
+    /**
+     * <p>
+     * Retrieves all alarms for a single metric. Specify a statistic,
+     * period, or unit to filter the set of alarms further.
+     * </p>
+     *
+     * @param describeAlarmsForMetricRequest Container for the necessary
+     *           parameters to execute the DescribeAlarmsForMetric operation on
+     *           AmazonCloudWatch.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeAlarmsForMetric service method, as returned by
+     *         AmazonCloudWatch.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudWatch indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeAlarmsForMetricResult> describeAlarmsForMetricAsync(
+            final DescribeAlarmsForMetricRequest describeAlarmsForMetricRequest,
+            final AsyncHandler<DescribeAlarmsForMetricRequest, DescribeAlarmsForMetricResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeAlarmsForMetricResult>() {
+            public DescribeAlarmsForMetricResult call() throws Exception {
+            	DescribeAlarmsForMetricResult result;
+                try {
+            		result = describeAlarmsForMetric(describeAlarmsForMetricRequest);
+            	} catch (Exception ex) {
+            	    asyncHandler.onError(ex);
+    				throw ex;
+            	}
+            	asyncHandler.onSuccess(describeAlarmsForMetricRequest, result);
+               	return result;
 		    }
 		});
     }
@@ -590,6 +974,56 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient
 		    }
 		});
     }
+
+    
+    /**
+     * <p>
+     * Retrieves history for the specified alarm. Filter alarms by date
+     * range or item type. If an alarm name is not specified, Amazon
+     * CloudWatch returns histories for all of the owner's alarms.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> Amazon CloudWatch retains the history of an alarm for two
+     * weeks, whether or not you delete the alarm.
+     * </p>
+     *
+     * @param describeAlarmHistoryRequest Container for the necessary
+     *           parameters to execute the DescribeAlarmHistory operation on
+     *           AmazonCloudWatch.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeAlarmHistory service method, as returned by AmazonCloudWatch.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudWatch indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeAlarmHistoryResult> describeAlarmHistoryAsync(
+            final DescribeAlarmHistoryRequest describeAlarmHistoryRequest,
+            final AsyncHandler<DescribeAlarmHistoryRequest, DescribeAlarmHistoryResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeAlarmHistoryResult>() {
+            public DescribeAlarmHistoryResult call() throws Exception {
+            	DescribeAlarmHistoryResult result;
+                try {
+            		result = describeAlarmHistory(describeAlarmHistoryRequest);
+            	} catch (Exception ex) {
+            	    asyncHandler.onError(ex);
+    				throw ex;
+            	}
+            	asyncHandler.onSuccess(describeAlarmHistoryRequest, result);
+               	return result;
+		    }
+		});
+    }
     
     /**
      * <p>
@@ -617,6 +1051,49 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient
             public Void call() throws Exception {
                 enableAlarmActions(enableAlarmActionsRequest);
                 return null;
+		    }
+		});
+    }
+
+    
+    /**
+     * <p>
+     * Enables actions for the specified alarms.
+     * </p>
+     *
+     * @param enableAlarmActionsRequest Container for the necessary
+     *           parameters to execute the EnableAlarmActions operation on
+     *           AmazonCloudWatch.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         EnableAlarmActions service method, as returned by AmazonCloudWatch.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudWatch indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> enableAlarmActionsAsync(
+            final EnableAlarmActionsRequest enableAlarmActionsRequest,
+            final AsyncHandler<EnableAlarmActionsRequest, Void> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+            	try {
+            		enableAlarmActions(enableAlarmActionsRequest);
+            	} catch (Exception ex) {
+            	    asyncHandler.onError(ex);
+    				throw ex;
+            	}
+            	asyncHandler.onSuccess(enableAlarmActionsRequest, null);
+               	return null;
 		    }
 		});
     }
@@ -650,6 +1127,49 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient
 		    }
 		});
     }
+
+    
+    /**
+     * <p>
+     * Deletes all specified alarms. In the event of an error, no alarms are
+     * deleted.
+     * </p>
+     *
+     * @param deleteAlarmsRequest Container for the necessary parameters to
+     *           execute the DeleteAlarms operation on AmazonCloudWatch.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeleteAlarms service method, as returned by AmazonCloudWatch.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudWatch indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> deleteAlarmsAsync(
+            final DeleteAlarmsRequest deleteAlarmsRequest,
+            final AsyncHandler<DeleteAlarmsRequest, Void> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+            	try {
+            		deleteAlarms(deleteAlarmsRequest);
+            	} catch (Exception ex) {
+            	    asyncHandler.onError(ex);
+    				throw ex;
+            	}
+            	asyncHandler.onSuccess(deleteAlarmsRequest, null);
+               	return null;
+		    }
+		});
+    }
     
     /**
      * <p>
@@ -680,6 +1200,52 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient
             public Void call() throws Exception {
                 setAlarmState(setAlarmStateRequest);
                 return null;
+		    }
+		});
+    }
+
+    
+    /**
+     * <p>
+     * Temporarily sets the state of an alarm. When the updated
+     * <code>StateValue</code> differs from the previous value, the action
+     * configured for the appropriate state is invoked. This is not a
+     * permanent change. The next periodic alarm check (in about a minute)
+     * will set the alarm to its actual state.
+     * </p>
+     *
+     * @param setAlarmStateRequest Container for the necessary parameters to
+     *           execute the SetAlarmState operation on AmazonCloudWatch.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         SetAlarmState service method, as returned by AmazonCloudWatch.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudWatch indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> setAlarmStateAsync(
+            final SetAlarmStateRequest setAlarmStateRequest,
+            final AsyncHandler<SetAlarmStateRequest, Void> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+            	try {
+            		setAlarmState(setAlarmStateRequest);
+            	} catch (Exception ex) {
+            	    asyncHandler.onError(ex);
+    				throw ex;
+            	}
+            	asyncHandler.onSuccess(setAlarmStateRequest, null);
+               	return null;
 		    }
 		});
     }

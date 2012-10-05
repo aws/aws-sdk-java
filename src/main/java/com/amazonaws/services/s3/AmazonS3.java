@@ -162,6 +162,28 @@ public interface AmazonS3 {
      */
     public void changeObjectStorageClass(String bucketName, String key, StorageClass newStorageClass)
         throws AmazonClientException, AmazonServiceException;
+    
+    
+    /**
+     * <p>
+     * Changes the Amazon S3 redirect location for a specific object.
+     * </p>
+     * @param bucketName
+     *            The name of the bucket containing the object.
+     * @param key
+     *            The key of the object within the specified bucket.
+     * @param newRedirectLocation
+     *            The new redirect location for the specified object.
+     *
+     * @throws AmazonClientException
+     *             If any errors are encountered in the client while making the
+     *             request or handling the response.
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
+     */
+    public void setObjectRedirectLocation(String bucketName, String key, String newRedirectLocation)
+            throws AmazonClientException, AmazonServiceException;
 
     /**
      * <p>

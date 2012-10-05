@@ -66,6 +66,8 @@ public class UploadArchiveRequestMarshaller implements Marshaller<Request<Upload
         String uriResourcePath = "/{accountId}/vaults/{vaultName}/archives"; 
         uriResourcePath = uriResourcePath.replace("{vaultName}", getString(uploadArchiveRequest.getVaultName())); 
         uriResourcePath = uriResourcePath.replace("{accountId}", getString(uploadArchiveRequest.getAccountId())); 
+        
+        uriResourcePath = uriResourcePath.replaceAll("//", "/");
 
         if (uriResourcePath.contains("?")) {
             String queryString = uriResourcePath.substring(uriResourcePath.indexOf("?") + 1);

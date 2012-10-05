@@ -57,6 +57,8 @@ public class DeleteVaultRequestMarshaller implements Marshaller<Request<DeleteVa
         String uriResourcePath = "/{accountId}/vaults/{vaultName}"; 
         uriResourcePath = uriResourcePath.replace("{accountId}", getString(deleteVaultRequest.getAccountId())); 
         uriResourcePath = uriResourcePath.replace("{vaultName}", getString(deleteVaultRequest.getVaultName())); 
+        
+        uriResourcePath = uriResourcePath.replaceAll("//", "/");
 
         if (uriResourcePath.contains("?")) {
             String queryString = uriResourcePath.substring(uriResourcePath.indexOf("?") + 1);

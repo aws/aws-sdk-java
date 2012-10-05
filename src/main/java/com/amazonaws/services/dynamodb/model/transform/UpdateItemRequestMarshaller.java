@@ -55,6 +55,8 @@ public class UpdateItemRequestMarshaller implements Marshaller<Request<UpdateIte
 
 
         String uriResourcePath = ""; 
+        
+        uriResourcePath = uriResourcePath.replaceAll("//", "/");
 
         if (uriResourcePath.contains("?")) {
             String queryString = uriResourcePath.substring(uriResourcePath.indexOf("?") + 1);
@@ -114,7 +116,9 @@ public class UpdateItemRequestMarshaller implements Marshaller<Request<UpdateIte
                         jsonWriter.array();
 
                         for (String sSListValue : sSList) {
-                            jsonWriter.value(sSListValue);
+                            if (sSListValue != null) {
+                                jsonWriter.value(sSListValue);
+                            }
                         }
                         jsonWriter.endArray();
                     }
@@ -126,7 +130,9 @@ public class UpdateItemRequestMarshaller implements Marshaller<Request<UpdateIte
                         jsonWriter.array();
 
                         for (String nSListValue : nSList) {
-                            jsonWriter.value(nSListValue);
+                            if (nSListValue != null) {
+                                jsonWriter.value(nSListValue);
+                            }
                         }
                         jsonWriter.endArray();
                     }
@@ -138,7 +144,9 @@ public class UpdateItemRequestMarshaller implements Marshaller<Request<UpdateIte
                         jsonWriter.array();
 
                         for (java.nio.ByteBuffer bSListValue : bSList) {
-                            jsonWriter.value(bSListValue);
+                            if (bSListValue != null) {
+                                jsonWriter.value(bSListValue);
+                            }
                         }
                         jsonWriter.endArray();
                     }
@@ -167,7 +175,9 @@ public class UpdateItemRequestMarshaller implements Marshaller<Request<UpdateIte
                         jsonWriter.array();
 
                         for (String sSListValue : sSList) {
-                            jsonWriter.value(sSListValue);
+                            if (sSListValue != null) {
+                                jsonWriter.value(sSListValue);
+                            }
                         }
                         jsonWriter.endArray();
                     }
@@ -179,7 +189,9 @@ public class UpdateItemRequestMarshaller implements Marshaller<Request<UpdateIte
                         jsonWriter.array();
 
                         for (String nSListValue : nSList) {
-                            jsonWriter.value(nSListValue);
+                            if (nSListValue != null) {
+                                jsonWriter.value(nSListValue);
+                            }
                         }
                         jsonWriter.endArray();
                     }
@@ -191,7 +203,9 @@ public class UpdateItemRequestMarshaller implements Marshaller<Request<UpdateIte
                         jsonWriter.array();
 
                         for (java.nio.ByteBuffer bSListValue : bSList) {
-                            jsonWriter.value(bSListValue);
+                            if (bSListValue != null) {
+                                jsonWriter.value(bSListValue);
+                            }
                         }
                         jsonWriter.endArray();
                     }
@@ -230,7 +244,9 @@ public class UpdateItemRequestMarshaller implements Marshaller<Request<UpdateIte
                                 jsonWriter.array();
 
                                 for (String sSListValue : sSList) {
-                                    jsonWriter.value(sSListValue);
+                                    if (sSListValue != null) {
+                                        jsonWriter.value(sSListValue);
+                                    }
                                 }
                                 jsonWriter.endArray();
                             }
@@ -242,7 +258,9 @@ public class UpdateItemRequestMarshaller implements Marshaller<Request<UpdateIte
                                 jsonWriter.array();
 
                                 for (String nSListValue : nSList) {
-                                    jsonWriter.value(nSListValue);
+                                    if (nSListValue != null) {
+                                        jsonWriter.value(nSListValue);
+                                    }
                                 }
                                 jsonWriter.endArray();
                             }
@@ -254,7 +272,9 @@ public class UpdateItemRequestMarshaller implements Marshaller<Request<UpdateIte
                                 jsonWriter.array();
 
                                 for (java.nio.ByteBuffer bSListValue : bSList) {
-                                    jsonWriter.value(bSListValue);
+                                    if (bSListValue != null) {
+                                        jsonWriter.value(bSListValue);
+                                    }
                                 }
                                 jsonWriter.endArray();
                             }
@@ -299,7 +319,9 @@ public class UpdateItemRequestMarshaller implements Marshaller<Request<UpdateIte
                                 jsonWriter.array();
 
                                 for (String sSListValue : sSList) {
-                                    jsonWriter.value(sSListValue);
+                                    if (sSListValue != null) {
+                                        jsonWriter.value(sSListValue);
+                                    }
                                 }
                                 jsonWriter.endArray();
                             }
@@ -311,7 +333,9 @@ public class UpdateItemRequestMarshaller implements Marshaller<Request<UpdateIte
                                 jsonWriter.array();
 
                                 for (String nSListValue : nSList) {
-                                    jsonWriter.value(nSListValue);
+                                    if (nSListValue != null) {
+                                        jsonWriter.value(nSListValue);
+                                    }
                                 }
                                 jsonWriter.endArray();
                             }
@@ -323,7 +347,9 @@ public class UpdateItemRequestMarshaller implements Marshaller<Request<UpdateIte
                                 jsonWriter.array();
 
                                 for (java.nio.ByteBuffer bSListValue : bSList) {
-                                    jsonWriter.value(bSListValue);
+                                    if (bSListValue != null) {
+                                        jsonWriter.value(bSListValue);
+                                    }
                                 }
                                 jsonWriter.endArray();
                             }

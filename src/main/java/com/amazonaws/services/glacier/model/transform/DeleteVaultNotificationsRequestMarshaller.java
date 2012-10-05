@@ -57,6 +57,8 @@ public class DeleteVaultNotificationsRequestMarshaller implements Marshaller<Req
         String uriResourcePath = "/{accountId}/vaults/{vaultName}/notification-configuration"; 
         uriResourcePath = uriResourcePath.replace("{accountId}", getString(deleteVaultNotificationsRequest.getAccountId())); 
         uriResourcePath = uriResourcePath.replace("{vaultName}", getString(deleteVaultNotificationsRequest.getVaultName())); 
+        
+        uriResourcePath = uriResourcePath.replaceAll("//", "/");
 
         if (uriResourcePath.contains("?")) {
             String queryString = uriResourcePath.substring(uriResourcePath.indexOf("?") + 1);

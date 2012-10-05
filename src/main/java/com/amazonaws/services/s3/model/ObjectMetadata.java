@@ -50,7 +50,7 @@ public class ObjectMetadata implements ServerSideEncryptionResult, ObjectExpirat
     private Map<String, Object> metadata = new HashMap<String, Object>();
 
     public static final String AES_256_SERVER_SIDE_ENCRYPTION = "AES256";
-    
+
     /**
      * The time this object expires, or null if it has no expiration.
      * <p>
@@ -58,7 +58,7 @@ public class ObjectMetadata implements ServerSideEncryptionResult, ObjectExpirat
      * because the header contains both the time and the rule.
      */
     private Date expirationTime;
-    
+
     /** The expiration rule for this object */
     private String expirationTimeRuleId;
 
@@ -118,7 +118,7 @@ public class ObjectMetadata implements ServerSideEncryptionResult, ObjectExpirat
      * header limit. All HTTP headers included in a request (including user
      * metadata headers and other standard HTTP headers) must be less than 8KB.
      * </p>
-     * 
+     *
      * @param userMetadata
      *            The custom user-metadata for the associated object. Note that
      *            the key should not include the internal S3 HTTP header prefix.
@@ -562,7 +562,7 @@ public class ObjectMetadata implements ServerSideEncryptionResult, ObjectExpirat
     public String getVersionId() {
         return (String)metadata.get(Headers.S3_VERSION_ID);
     }
-    
+
     /**
      * Returns the server-side encryption algorithm for the object, or null if
      * none was used.
@@ -573,14 +573,14 @@ public class ObjectMetadata implements ServerSideEncryptionResult, ObjectExpirat
 
     /**
      * Sets the server-side encryption algorithm for the object.
-     * 
+     *
      * @param serverSideEncryption
      *            The server-side encryption algorithm for the object.
      */
     public void setServerSideEncryption(String serverSideEncryption) {
         metadata.put(Headers.SERVER_SIDE_ENCRYPTION, serverSideEncryption);
     }
-    
+
     /**
      * Returns the expiration time for this object, or null if it doesn't expire.
      */
@@ -589,8 +589,10 @@ public class ObjectMetadata implements ServerSideEncryptionResult, ObjectExpirat
     }
 
     /**
-     * Sets the expiration time for the object.
-     * 
+     * Sets the expiration time for the object. Note: the expiration date is
+     * represented by S3 as a time delta into the future, not an absolute time
+     * stamp.
+     *
      * @param expirationTime
      *            The expiration time for the object.
      */
@@ -609,7 +611,7 @@ public class ObjectMetadata implements ServerSideEncryptionResult, ObjectExpirat
     /**
      * Sets the {@link BucketLifecycleConfiguration} rule ID for this object's
      * expiration
-     * 
+     *
      * @param expirationTimeRuleId
      *            The rule ID for this object's expiration
      */

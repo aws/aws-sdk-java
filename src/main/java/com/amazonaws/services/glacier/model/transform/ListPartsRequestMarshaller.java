@@ -60,6 +60,8 @@ public class ListPartsRequestMarshaller implements Marshaller<Request<ListPartsR
         uriResourcePath = uriResourcePath.replace("{uploadId}", getString(listPartsRequest.getUploadId())); 
         uriResourcePath = uriResourcePath.replace("{marker}", getString(listPartsRequest.getMarker())); 
         uriResourcePath = uriResourcePath.replace("{limit}", getString(listPartsRequest.getLimit())); 
+        
+        uriResourcePath = uriResourcePath.replaceAll("//", "/");
 
         if (uriResourcePath.contains("?")) {
             String queryString = uriResourcePath.substring(uriResourcePath.indexOf("?") + 1);

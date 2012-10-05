@@ -434,11 +434,13 @@ public class ArchiveTransferManager {
 	                length = file.length() - currentPosition;
 	            }
 
-	            InputStream inputSubStream = newInputSubstream(file, currentPosition, length);
-	        	String checksum = TreeHashGenerator.calculateTreeHash(inputSubStream);
-	        	byte[] binaryChecksum = BinaryUtils.fromHex(checksum);
-	        	binaryChecksums.add(binaryChecksum);
-
+				InputStream inputSubStream = newInputSubstream(file, currentPosition, length);
+				inputSubStream.mark(-1);
+				String checksum = TreeHashGenerator.calculateTreeHash(inputSubStream);
+				byte[] binaryChecksum = BinaryUtils.fromHex(checksum);
+				binaryChecksums.add(binaryChecksum);
+				inputSubStream.reset();
+				
 	            try {
 	                glacier.uploadMultipartPart(new UploadMultipartPartRequest()
 	                    .withAccountId(accountId)
@@ -467,10 +469,10 @@ public class ArchiveTransferManager {
 
 	        String artifactId = completeMultipartUploadResult.getArchiveId();
 	        return new UploadResult(artifactId);
-        } catch (AmazonClientException e) {
-        	glacier.abortMultipartUpload(new AbortMultipartUploadRequest(accountId, vaultName, uploadId));
-        	throw e;
-        }
+		} catch (Exception e) {
+			glacier.abortMultipartUpload(new AbortMultipartUploadRequest(accountId, vaultName, uploadId));
+			throw new AmazonClientException("Unable to finish the upload", e);
+		}
     }
 
 

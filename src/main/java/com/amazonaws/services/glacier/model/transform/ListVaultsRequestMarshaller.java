@@ -58,6 +58,8 @@ public class ListVaultsRequestMarshaller implements Marshaller<Request<ListVault
         uriResourcePath = uriResourcePath.replace("{accountId}", getString(listVaultsRequest.getAccountId())); 
         uriResourcePath = uriResourcePath.replace("{marker}", getString(listVaultsRequest.getMarker())); 
         uriResourcePath = uriResourcePath.replace("{limit}", getString(listVaultsRequest.getLimit())); 
+        
+        uriResourcePath = uriResourcePath.replaceAll("//", "/");
 
         if (uriResourcePath.contains("?")) {
             String queryString = uriResourcePath.substring(uriResourcePath.indexOf("?") + 1);

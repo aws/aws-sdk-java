@@ -58,6 +58,8 @@ public class DescribeJobRequestMarshaller implements Marshaller<Request<Describe
         uriResourcePath = uriResourcePath.replace("{accountId}", getString(describeJobRequest.getAccountId())); 
         uriResourcePath = uriResourcePath.replace("{vaultName}", getString(describeJobRequest.getVaultName())); 
         uriResourcePath = uriResourcePath.replace("{jobId}", getString(describeJobRequest.getJobId())); 
+        
+        uriResourcePath = uriResourcePath.replaceAll("//", "/");
 
         if (uriResourcePath.contains("?")) {
             String queryString = uriResourcePath.substring(uriResourcePath.indexOf("?") + 1);

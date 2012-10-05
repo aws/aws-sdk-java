@@ -15,6 +15,7 @@
 package com.amazonaws.services.s3.internal;
 
 import java.text.ParseException;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -124,6 +125,12 @@ public abstract class AbstractS3ResponseHandler<T>
                 }
             } else if (key.equals(Headers.ETAG)) {
                 metadata.setHeader(key, ServiceUtils.removeQuotes(header.getValue()));
+            } else if (key.equals(Headers.EXPIRES)) {
+                try {
+                    metadata.setExpirationTime(new Date(Long.parseLong(header.getValue())));
+                } catch (NumberFormatException pe) {
+                    log.warn("Unable to parse expiration time: " + header.getValue(), pe);
+                }
             } else if (key.equals(Headers.EXPIRATION)) {
                 new ObjectExpirationHeaderHandler<ObjectMetadata>().handle(metadata, response);
             } else {

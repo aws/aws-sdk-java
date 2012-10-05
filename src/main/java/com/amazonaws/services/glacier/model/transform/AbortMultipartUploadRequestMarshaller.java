@@ -58,6 +58,8 @@ public class AbortMultipartUploadRequestMarshaller implements Marshaller<Request
         uriResourcePath = uriResourcePath.replace("{accountId}", getString(abortMultipartUploadRequest.getAccountId())); 
         uriResourcePath = uriResourcePath.replace("{vaultName}", getString(abortMultipartUploadRequest.getVaultName())); 
         uriResourcePath = uriResourcePath.replace("{uploadId}", getString(abortMultipartUploadRequest.getUploadId())); 
+        
+        uriResourcePath = uriResourcePath.replaceAll("//", "/");
 
         if (uriResourcePath.contains("?")) {
             String queryString = uriResourcePath.substring(uriResourcePath.indexOf("?") + 1);

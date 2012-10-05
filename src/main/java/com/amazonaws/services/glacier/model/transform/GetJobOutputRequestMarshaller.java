@@ -61,6 +61,8 @@ public class GetJobOutputRequestMarshaller implements Marshaller<Request<GetJobO
         uriResourcePath = uriResourcePath.replace("{accountId}", getString(getJobOutputRequest.getAccountId())); 
         uriResourcePath = uriResourcePath.replace("{vaultName}", getString(getJobOutputRequest.getVaultName())); 
         uriResourcePath = uriResourcePath.replace("{jobId}", getString(getJobOutputRequest.getJobId())); 
+        
+        uriResourcePath = uriResourcePath.replaceAll("//", "/");
 
         if (uriResourcePath.contains("?")) {
             String queryString = uriResourcePath.substring(uriResourcePath.indexOf("?") + 1);

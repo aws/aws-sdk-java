@@ -59,6 +59,10 @@ public class AWS3Signer extends AbstractAWSSigner {
      *            The request to sign.
      */
     public void sign(Request<?> request, AWSCredentials credentials) throws AmazonClientException {
+        // annonymous credentials, don't sign
+        if ( credentials instanceof AnonymousAWSCredentials ) {
+            return;
+        }
 
         AWSCredentials sanitizedCredentials = sanitizeCredentials(credentials);
 
@@ -85,13 +89,13 @@ public class AWS3Signer extends AbstractAWSSigner {
         byte[] bytesToSign;
         String stringToSign;
         if (isHttps) {
-        	request.addHeader(NONCE_HEADER, nonce);
+            request.addHeader(NONCE_HEADER, nonce);
             stringToSign = date + nonce;
             try {
-				bytesToSign = stringToSign.getBytes("UTF-8");
-			} catch (UnsupportedEncodingException e) {
-				throw new AmazonClientException("Unable to serialize string to bytes: " + e.getMessage(), e);
-			}
+                bytesToSign = stringToSign.getBytes("UTF-8");
+            } catch (UnsupportedEncodingException e) {
+                throw new AmazonClientException("Unable to serialize string to bytes: " + e.getMessage(), e);
+            }
         } else {
             /*
              * AWS3 requires all query params to be listed on the third line of
@@ -100,10 +104,10 @@ public class AWS3Signer extends AbstractAWSSigner {
              * params should *NOT* be included in the request payload.
              */
             stringToSign = request.getHttpMethod().toString() + "\n"
-                + getCanonicalizedResourcePath(request.getResourcePath()) + "\n"
-                + getCanonicalizedQueryString(request.getParameters()) + "\n"
-                + getCanonicalizedHeadersForStringToSign(request) + "\n"
-                + getRequestPayloadWithoutQueryParams(request);
+                    + getCanonicalizedResourcePath(request.getResourcePath()) + "\n"
+                    + getCanonicalizedQueryString(request.getParameters()) + "\n"
+                    + getCanonicalizedHeadersForStringToSign(request) + "\n"
+                    + getRequestPayloadWithoutQueryParams(request);
             bytesToSign = hash(stringToSign);
         }
         log.debug("Calculated StringToSign: " + stringToSign);
@@ -116,7 +120,7 @@ public class AWS3Signer extends AbstractAWSSigner {
         builder.append("Algorithm=" + algorithm.toString() + ",");
 
         if (!isHttps) {
-        	builder.append(getSignedHeadersComponent(request) + ",");
+            builder.append(getSignedHeadersComponent(request) + ",");
         }
 
         builder.append("Signature=" + signature);
@@ -124,15 +128,15 @@ public class AWS3Signer extends AbstractAWSSigner {
     }
 
     private String getSignedHeadersComponent(Request<?> request) {
-    	StringBuilder builder = new StringBuilder();
-    	builder.append("SignedHeaders=");
-    	boolean first = true;
-    	for (String header : getHeadersForStringToSign(request)) {
-    		if (!first) builder.append(";");
-    		builder.append(header);
-    		first = false;
-    	}
-    	return builder.toString();
+        StringBuilder builder = new StringBuilder();
+        builder.append("SignedHeaders=");
+        boolean first = true;
+        for (String header : getHeadersForStringToSign(request)) {
+            if (!first) builder.append(";");
+            builder.append(header);
+            first = false;
+        }
+        return builder.toString();
     }
 
     protected List<String> getHeadersForStringToSign(Request<?> request) {
@@ -141,8 +145,8 @@ public class AWS3Signer extends AbstractAWSSigner {
             String key = entry.getKey();
             String lowerCaseKey = key.toLowerCase();
             if (lowerCaseKey.startsWith("x-amz")
-            	|| lowerCaseKey.equals("host")) {
-            	headersToSign.add(key);
+                    || lowerCaseKey.equals("host")) {
+                headersToSign.add(key);
             }
         }
 
@@ -150,35 +154,35 @@ public class AWS3Signer extends AbstractAWSSigner {
         return headersToSign;
     }
 
-	/**
-	 * For internal testing only - allows the date to be overridden for internal
-	 * tests.
-	 *
-	 * @param date
-	 *            The RFC822 date string to use when signing requests.
-	 */
+    /**
+     * For internal testing only - allows the date to be overridden for internal
+     * tests.
+     *
+     * @param date
+     *            The RFC822 date string to use when signing requests.
+     */
     void overrideDate(String date) {
-		this.overriddenDate = date;
+        this.overriddenDate = date;
     }
 
     protected String getCanonicalizedHeadersForStringToSign(Request<?> request) {
-    	List<String> headersToSign = getHeadersForStringToSign(request);
+        List<String> headersToSign = getHeadersForStringToSign(request);
 
-    	for (int i = 0; i < headersToSign.size(); i++) {
-    		headersToSign.set(i, headersToSign.get(i).toLowerCase());
-    	}
+        for (int i = 0; i < headersToSign.size(); i++) {
+            headersToSign.set(i, headersToSign.get(i).toLowerCase());
+        }
 
         SortedMap<String, String> sortedHeaderMap = new TreeMap<String, String>();
         for (Map.Entry<String, String> entry : request.getHeaders().entrySet()) {
-        	if (headersToSign.contains(entry.getKey().toLowerCase())) {
-        		sortedHeaderMap.put(entry.getKey().toLowerCase(), entry.getValue());
-        	}
+            if (headersToSign.contains(entry.getKey().toLowerCase())) {
+                sortedHeaderMap.put(entry.getKey().toLowerCase(), entry.getValue());
+            }
         }
 
         StringBuilder builder = new StringBuilder();
         for (Map.Entry<String, String> entry : sortedHeaderMap.entrySet()) {
             builder.append(entry.getKey().toLowerCase()).append(":")
-                   .append(entry.getValue()).append("\n");
+            .append(entry.getValue()).append("\n");
         }
 
         return builder.toString();
@@ -193,7 +197,7 @@ public class AWS3Signer extends AbstractAWSSigner {
                 return true;
             } else {
                 throw new AmazonClientException("Unknown request endpoint protocol " +
-                		"encountered while signing request: " + protocol);
+                        "encountered while signing request: " + protocol);
             }
         } catch (MalformedURLException e) {
             throw new AmazonClientException("Unable to parse request endpoint during signing", e);

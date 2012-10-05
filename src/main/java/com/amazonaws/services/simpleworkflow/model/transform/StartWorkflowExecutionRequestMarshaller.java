@@ -55,6 +55,8 @@ public class StartWorkflowExecutionRequestMarshaller implements Marshaller<Reque
 
 
         String uriResourcePath = ""; 
+        
+        uriResourcePath = uriResourcePath.replaceAll("//", "/");
 
         if (uriResourcePath.contains("?")) {
             String queryString = uriResourcePath.substring(uriResourcePath.indexOf("?") + 1);
@@ -127,7 +129,9 @@ public class StartWorkflowExecutionRequestMarshaller implements Marshaller<Reque
                 jsonWriter.array();
 
                 for (String tagListListValue : tagListList) {
-                    jsonWriter.value(tagListListValue);
+                    if (tagListListValue != null) {
+                        jsonWriter.value(tagListListValue);
+                    }
                 }
                 jsonWriter.endArray();
             }

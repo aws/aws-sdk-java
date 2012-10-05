@@ -62,7 +62,8 @@ public class TreeHashGenerator {
 
 	/**
 	 * Calculates a hex encoded binary hash using a tree hashing algorithm for
-	 * the data in the specified input stream.
+	 * the data in the specified input stream. The method will consume all the
+	 * inputStream and close it when returned.
 	 * 
 	 * @param input
 	 *            The input stream containing the data to hash.
@@ -76,13 +77,10 @@ public class TreeHashGenerator {
 	 */
     public static String calculateTreeHash(InputStream input) throws AmazonClientException {
 		try {
-			input.mark(0);
 			TreeHashInputStream treeHashInputStream = new TreeHashInputStream(input);
-
             byte[] buffer = new byte[1024];
             while (treeHashInputStream.read(buffer, 0, buffer.length) != -1);
 			treeHashInputStream.close();
-			input.reset();
 			return calculateTreeHash(treeHashInputStream.getChecksums());
 		} catch (Exception e) {
 			throw new AmazonClientException("Unable to compute hash", e);

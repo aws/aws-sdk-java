@@ -55,6 +55,8 @@ public class TerminateWorkflowExecutionRequestMarshaller implements Marshaller<R
 
 
         String uriResourcePath = ""; 
+        
+        uriResourcePath = uriResourcePath.replaceAll("//", "/");
 
         if (uriResourcePath.contains("?")) {
             String queryString = uriResourcePath.substring(uriResourcePath.indexOf("?") + 1);

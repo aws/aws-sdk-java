@@ -57,6 +57,8 @@ public class SetVaultNotificationsRequestMarshaller implements Marshaller<Reques
         String uriResourcePath = "/{accountId}/vaults/{vaultName}/notification-configuration"; 
         uriResourcePath = uriResourcePath.replace("{accountId}", getString(setVaultNotificationsRequest.getAccountId())); 
         uriResourcePath = uriResourcePath.replace("{vaultName}", getString(setVaultNotificationsRequest.getVaultName())); 
+        
+        uriResourcePath = uriResourcePath.replaceAll("//", "/");
 
         if (uriResourcePath.contains("?")) {
             String queryString = uriResourcePath.substring(uriResourcePath.indexOf("?") + 1);
@@ -98,7 +100,9 @@ public class SetVaultNotificationsRequestMarshaller implements Marshaller<Reques
                     jsonWriter.array();
 
                     for (String eventsListValue : eventsList) {
-                        jsonWriter.value(eventsListValue);
+                        if (eventsListValue != null) {
+                            jsonWriter.value(eventsListValue);
+                        }
                     }
                     jsonWriter.endArray();
                 }

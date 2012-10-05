@@ -64,6 +64,8 @@ public class UploadMultipartPartRequestMarshaller implements Marshaller<Request<
         uriResourcePath = uriResourcePath.replace("{accountId}", getString(uploadMultipartPartRequest.getAccountId())); 
         uriResourcePath = uriResourcePath.replace("{vaultName}", getString(uploadMultipartPartRequest.getVaultName())); 
         uriResourcePath = uriResourcePath.replace("{uploadId}", getString(uploadMultipartPartRequest.getUploadId())); 
+        
+        uriResourcePath = uriResourcePath.replaceAll("//", "/");
 
         if (uriResourcePath.contains("?")) {
             String queryString = uriResourcePath.substring(uriResourcePath.indexOf("?") + 1);

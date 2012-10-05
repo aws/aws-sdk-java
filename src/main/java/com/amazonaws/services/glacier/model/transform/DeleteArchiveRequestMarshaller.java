@@ -58,6 +58,8 @@ public class DeleteArchiveRequestMarshaller implements Marshaller<Request<Delete
         uriResourcePath = uriResourcePath.replace("{accountId}", getString(deleteArchiveRequest.getAccountId())); 
         uriResourcePath = uriResourcePath.replace("{vaultName}", getString(deleteArchiveRequest.getVaultName())); 
         uriResourcePath = uriResourcePath.replace("{archiveId}", getString(deleteArchiveRequest.getArchiveId())); 
+        
+        uriResourcePath = uriResourcePath.replaceAll("//", "/");
 
         if (uriResourcePath.contains("?")) {
             String queryString = uriResourcePath.substring(uriResourcePath.indexOf("?") + 1);

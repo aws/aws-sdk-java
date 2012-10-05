@@ -57,6 +57,8 @@ public class DescribeVaultRequestMarshaller implements Marshaller<Request<Descri
         String uriResourcePath = "/{accountId}/vaults/{vaultName}"; 
         uriResourcePath = uriResourcePath.replace("{accountId}", getString(describeVaultRequest.getAccountId())); 
         uriResourcePath = uriResourcePath.replace("{vaultName}", getString(describeVaultRequest.getVaultName())); 
+        
+        uriResourcePath = uriResourcePath.replaceAll("//", "/");
 
         if (uriResourcePath.contains("?")) {
             String queryString = uriResourcePath.substring(uriResourcePath.indexOf("?") + 1);
