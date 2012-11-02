@@ -38,7 +38,7 @@ public class DescribeInstanceAttributeRequestMarshaller implements Marshaller<Re
 
         Request<DescribeInstanceAttributeRequest> request = new DefaultRequest<DescribeInstanceAttributeRequest>(describeInstanceAttributeRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeInstanceAttribute");
-        request.addParameter("Version", "2012-08-15");
+        request.addParameter("Version", "2012-10-01");
 
         if (describeInstanceAttributeRequest.getInstanceId() != null) {
             request.addParameter("InstanceId", StringUtils.fromString(describeInstanceAttributeRequest.getInstanceId()));

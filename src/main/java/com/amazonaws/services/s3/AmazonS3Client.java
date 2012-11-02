@@ -799,11 +799,11 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             }
 
             switch (ase.getStatusCode()) {
+            case 301:
+                // A redirect error means the bucket exists, but in another region.
+            	return true;
             case 403:
-                /*
-                 * A permissions error means the bucket exists, but is owned by
-                 * another account.
-                 */
+                // A permissions error means the bucket exists, but is owned by another account.
                 return true;
             case 404:
                 return false;

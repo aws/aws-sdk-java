@@ -23,10 +23,11 @@ import org.codehaus.jackson.JsonParser;
 
 import com.amazonaws.AmazonWebServiceResponse;
 import com.amazonaws.ResponseMetadata;
+import com.amazonaws.internal.CRC32MismatchException;
 import com.amazonaws.transform.JsonUnmarshallerContext;
 import com.amazonaws.transform.Unmarshaller;
 import com.amazonaws.transform.VoidJsonUnmarshaller;
-
+import com.amazonaws.util.CRC32ChecksumCalculatingInputStream;
 /**
  * Default implementation of HttpResponseHandler that handles a successful
  * response from an AWS service and unmarshalls the result using a StAX
@@ -79,9 +80,18 @@ public class JsonResponseHandler<T> implements HttpResponseHandler<AmazonWebServ
     public AmazonWebServiceResponse<T> handle(HttpResponse response) throws Exception {
         log.trace("Parsing service response JSON");
 
+        String CRC32Checksum = response.getHeaders().get("x-amz-crc32");
+        CRC32ChecksumCalculatingInputStream crc32ChecksumInputStream = null;
+
         JsonParser jsonParser = null;
+
         if (!needsConnectionLeftOpen) {
-        	jsonParser = jsonFactory.createJsonParser(response.getContent());
+            if (CRC32Checksum != null) {
+                crc32ChecksumInputStream = new CRC32ChecksumCalculatingInputStream(response.getContent());
+                jsonParser = jsonFactory.createJsonParser(crc32ChecksumInputStream);
+            } else {
+                jsonParser = jsonFactory.createJsonParser(response.getContent());
+            }
         }
 
         try {
@@ -90,6 +100,15 @@ public class JsonResponseHandler<T> implements HttpResponseHandler<AmazonWebServ
             registerAdditionalMetadataExpressions(unmarshallerContext);
 
             T result = responseUnmarshaller.unmarshall(unmarshallerContext);
+
+            if (CRC32Checksum != null) {
+                long serverSideCRC = Long.parseLong(CRC32Checksum);
+                long clientSideCRC = crc32ChecksumInputStream.getCRC32Checksum();
+                if (clientSideCRC != serverSideCRC) {
+                    throw new CRC32MismatchException("Client calculated crc32 checksum didn't match that calculated by server side");
+                }
+            }
+
             awsResponse.setResult(result);
 
             Map<String, String> metadata = unmarshallerContext.getMetadata();

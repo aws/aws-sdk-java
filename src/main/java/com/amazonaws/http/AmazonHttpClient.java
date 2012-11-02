@@ -43,6 +43,7 @@ import com.amazonaws.ClientConfiguration;
 import com.amazonaws.Request;
 import com.amazonaws.ResponseMetadata;
 import com.amazonaws.handlers.RequestHandler;
+import com.amazonaws.internal.CRC32MismatchException;
 import com.amazonaws.internal.CustomBackoffStrategy;
 import com.amazonaws.util.AWSRequestMetrics;
 import com.amazonaws.util.AWSRequestMetrics.Field;
@@ -230,27 +231,28 @@ public class AmazonHttpClient {
             HttpRequestBase httpRequest = null;
             org.apache.http.HttpResponse response = null;
 
-            try {
-            	// Sign the request if a signer was provided
-            	if (executionContext.getSigner() != null && executionContext.getCredentials() != null) {
-            		awsRequestMetrics.startEvent(Field.RequestSigningTime.name());
-            		executionContext.getSigner().sign(request, executionContext.getCredentials());
-            		awsRequestMetrics.endEvent(Field.RequestSigningTime.name());
-            	}
 
-            	 if (requestLog.isDebugEnabled()) {
-                     requestLog.debug("Sending Request: " + request.toString());
+            try {
+                // Sign the request if a signer was provided
+                if (executionContext.getSigner() != null && executionContext.getCredentials() != null) {
+                    awsRequestMetrics.startEvent(Field.RequestSigningTime.name());
+                    executionContext.getSigner().sign(request, executionContext.getCredentials());
+                    awsRequestMetrics.endEvent(Field.RequestSigningTime.name());
+                }
+
+                 if (requestLog.isDebugEnabled()) {
+                    requestLog.debug("Sending Request: " + request.toString());
                  }
 
-            	httpRequest = httpRequestFactory.createHttpRequest(request, config, entity, executionContext);
+                httpRequest = httpRequestFactory.createHttpRequest(request, config, entity, executionContext);
 
-            	if (httpRequest instanceof HttpEntityEnclosingRequest) {
-            		entity = ((HttpEntityEnclosingRequest)httpRequest).getEntity();
-            	}
+                if (httpRequest instanceof HttpEntityEnclosingRequest) {
+                    entity = ((HttpEntityEnclosingRequest)httpRequest).getEntity();
+                }
 
-            	if (redirectedURI != null) {
-            		httpRequest.setURI(redirectedURI);
-            	}
+                if (redirectedURI != null) {
+                    httpRequest.setURI(redirectedURI);
+                }
 
                 if ( retryCount > 0 ) {
                     awsRequestMetrics.startEvent(Field.RetryPauseTime.name());
@@ -546,6 +548,8 @@ public class AmazonHttpClient {
             awsRequestMetrics.addProperty(Field.AWSRequestID.name(), awsResponse.getRequestId());
 
             return awsResponse.getResult();
+        } catch (CRC32MismatchException e) {
+            throw e;
         } catch (Exception e) {
             String errorMessage = "Unable to unmarshall response (" + e.getMessage() + ")";
             throw new AmazonClientException(errorMessage, e);
@@ -698,4 +702,5 @@ public class AmazonHttpClient {
         this.shutdown();
         super.finalize();
     }
+
 }

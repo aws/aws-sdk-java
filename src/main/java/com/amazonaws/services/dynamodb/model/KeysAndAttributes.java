@@ -32,6 +32,12 @@ public class KeysAndAttributes {
     private java.util.List<String> attributesToGet;
 
     /**
+     * If set to <code>true</code>, then a consistent read is issued.
+     * Otherwise eventually-consistent is used.
+     */
+    private Boolean consistentRead;
+
+    /**
      * Returns the value of the Keys property for this object.
      * <p>
      * <b>Constraints:</b><br/>
@@ -204,6 +210,57 @@ public class KeysAndAttributes {
     }
     
     /**
+     * If set to <code>true</code>, then a consistent read is issued.
+     * Otherwise eventually-consistent is used.
+     *
+     * @return If set to <code>true</code>, then a consistent read is issued.
+     *         Otherwise eventually-consistent is used.
+     */
+    public Boolean isConsistentRead() {
+        return consistentRead;
+    }
+    
+    /**
+     * If set to <code>true</code>, then a consistent read is issued.
+     * Otherwise eventually-consistent is used.
+     *
+     * @param consistentRead If set to <code>true</code>, then a consistent read is issued.
+     *         Otherwise eventually-consistent is used.
+     */
+    public void setConsistentRead(Boolean consistentRead) {
+        this.consistentRead = consistentRead;
+    }
+    
+    /**
+     * If set to <code>true</code>, then a consistent read is issued.
+     * Otherwise eventually-consistent is used.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param consistentRead If set to <code>true</code>, then a consistent read is issued.
+     *         Otherwise eventually-consistent is used.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public KeysAndAttributes withConsistentRead(Boolean consistentRead) {
+        this.consistentRead = consistentRead;
+        return this;
+    }
+    
+    
+    /**
+     * If set to <code>true</code>, then a consistent read is issued.
+     * Otherwise eventually-consistent is used.
+     *
+     * @return If set to <code>true</code>, then a consistent read is issued.
+     *         Otherwise eventually-consistent is used.
+     */
+    public Boolean getConsistentRead() {
+        return consistentRead;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -217,6 +274,7 @@ public class KeysAndAttributes {
         sb.append("{");
         if (keys != null) sb.append("Keys: " + keys + ", ");
         if (attributesToGet != null) sb.append("AttributesToGet: " + attributesToGet + ", ");
+        if (consistentRead != null) sb.append("ConsistentRead: " + consistentRead + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -228,6 +286,7 @@ public class KeysAndAttributes {
         
         hashCode = prime * hashCode + ((getKeys() == null) ? 0 : getKeys().hashCode()); 
         hashCode = prime * hashCode + ((getAttributesToGet() == null) ? 0 : getAttributesToGet().hashCode()); 
+        hashCode = prime * hashCode + ((isConsistentRead() == null) ? 0 : isConsistentRead().hashCode()); 
         return hashCode;
     }
     
@@ -243,6 +302,8 @@ public class KeysAndAttributes {
         if (other.getKeys() != null && other.getKeys().equals(this.getKeys()) == false) return false; 
         if (other.getAttributesToGet() == null ^ this.getAttributesToGet() == null) return false;
         if (other.getAttributesToGet() != null && other.getAttributesToGet().equals(this.getAttributesToGet()) == false) return false; 
+        if (other.isConsistentRead() == null ^ this.isConsistentRead() == null) return false;
+        if (other.isConsistentRead() != null && other.isConsistentRead().equals(this.isConsistentRead()) == false) return false; 
         return true;
     }
     

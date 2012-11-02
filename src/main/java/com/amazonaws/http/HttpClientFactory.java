@@ -27,7 +27,12 @@ import javax.net.ssl.SSLSocket;
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.X509TrustManager;
 
+import org.apache.http.Header;
 import org.apache.http.HttpHost;
+import org.apache.http.HttpRequest;
+import org.apache.http.HttpResponse;
+import org.apache.http.HttpStatus;
+import org.apache.http.ProtocolException;
 import org.apache.http.auth.AuthScope;
 import org.apache.http.auth.NTCredentials;
 import org.apache.http.client.HttpClient;
@@ -40,11 +45,13 @@ import org.apache.http.conn.scheme.SchemeRegistry;
 import org.apache.http.conn.scheme.SchemeSocketFactory;
 import org.apache.http.conn.ssl.SSLSocketFactory;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.impl.client.DefaultRedirectStrategy;
 import org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager;
 import org.apache.http.params.BasicHttpParams;
 import org.apache.http.params.HttpConnectionParams;
 import org.apache.http.params.HttpParams;
 import org.apache.http.params.HttpProtocolParams;
+import org.apache.http.protocol.HttpContext;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.ClientConfiguration;
@@ -53,16 +60,16 @@ import com.amazonaws.ClientConfiguration;
 class HttpClientFactory {
 
     /**
-	 * Creates a new HttpClient object using the specified AWS
-	 * ClientConfiguration to configure the client.
-	 *
-	 * @param config
-	 *            Client configuration options (ex: proxy settings, connection
-	 *            limits, etc).
-	 *
-	 * @return The new, configured HttpClient.
-	 */
-	public HttpClient createHttpClient(ClientConfiguration config) {
+     * Creates a new HttpClient object using the specified AWS
+     * ClientConfiguration to configure the client.
+     *
+     * @param config
+     *            Client configuration options (ex: proxy settings, connection
+     *            limits, etc).
+     *
+     * @return The new, configured HttpClient.
+     */
+    public HttpClient createHttpClient(ClientConfiguration config) {
         /* Form User-Agent information */
         String userAgent = config.getUserAgent();
         if (!(userAgent.equals(ClientConfiguration.DEFAULT_USER_AGENT))) {
@@ -80,38 +87,38 @@ class HttpClientFactory {
         int socketSendBufferSizeHint = config.getSocketBufferSizeHints()[0];
         int socketReceiveBufferSizeHint = config.getSocketBufferSizeHints()[1];
         if (socketSendBufferSizeHint > 0 || socketReceiveBufferSizeHint > 0) {
-        	HttpConnectionParams.setSocketBufferSize(httpClientParams,
-        			Math.max(socketSendBufferSizeHint, socketReceiveBufferSizeHint));
+            HttpConnectionParams.setSocketBufferSize(httpClientParams,
+                    Math.max(socketSendBufferSizeHint, socketReceiveBufferSizeHint));
         }
 
         /* Set connection manager */
         ThreadSafeClientConnManager connectionManager = ConnectionManagerFactory.createThreadSafeClientConnManager(config, httpClientParams);
         DefaultHttpClient httpClient = new DefaultHttpClient(connectionManager, httpClientParams);
+        httpClient.setRedirectStrategy(new LocationHeaderNotRequiredRedirectStrategy());
 
         try {
-			Scheme http = new Scheme("http", 80, PlainSocketFactory.getSocketFactory());
+            Scheme http = new Scheme("http", 80, PlainSocketFactory.getSocketFactory());
 
-			SSLSocketFactory sf = new SSLSocketFactory(
-			        SSLContext.getDefault(),
-			        SSLSocketFactory.STRICT_HOSTNAME_VERIFIER);
-			Scheme https = new Scheme("https", 443, sf);
+            SSLSocketFactory sf = new SSLSocketFactory(
+                    SSLContext.getDefault(),
+                    SSLSocketFactory.STRICT_HOSTNAME_VERIFIER);
+            Scheme https = new Scheme("https", 443, sf);
 
-			SchemeRegistry sr = connectionManager.getSchemeRegistry();
-			sr.register(http);
-			sr.register(https);
-		} catch (NoSuchAlgorithmException e) {
-			throw new AmazonClientException("Unable to access default SSL context");
-		}
+            SchemeRegistry sr = connectionManager.getSchemeRegistry();
+            sr.register(http);
+            sr.register(https);
+        } catch (NoSuchAlgorithmException e) {
+            throw new AmazonClientException("Unable to access default SSL context");
+        }
 
-
-		/*
-		 * If SSL cert checking for endpoints has been explicitly disabled,
-		 * register a new scheme for HTTPS that won't cause self-signed certs to
-		 * error out.
-		 */
+        /*
+         * If SSL cert checking for endpoints has been explicitly disabled,
+         * register a new scheme for HTTPS that won't cause self-signed certs to
+         * error out.
+         */
         if (System.getProperty("com.amazonaws.sdk.disableCertChecking") != null) {
-        	Scheme sch = new Scheme("https", 443, new TrustingSocketFactory());
-        	httpClient.getConnectionManager().getSchemeRegistry().register(sch);
+            Scheme sch = new Scheme("https", 443, new TrustingSocketFactory());
+            httpClient.getConnectionManager().getSchemeRegistry().register(sch);
         }
 
         /* Set proxy if configured */
@@ -128,88 +135,109 @@ class HttpClientFactory {
             String proxyWorkstation = config.getProxyWorkstation();
 
             if (proxyUsername != null && proxyPassword != null) {
-        		httpClient.getCredentialsProvider().setCredentials(
-        				new AuthScope(proxyHost, proxyPort),
-        				new NTCredentials(proxyUsername, proxyPassword, proxyWorkstation, proxyDomain));
+                httpClient.getCredentialsProvider().setCredentials(
+                        new AuthScope(proxyHost, proxyPort),
+                        new NTCredentials(proxyUsername, proxyPassword, proxyWorkstation, proxyDomain));
             }
         }
 
         return httpClient;
-	}
+    }
 
-	/**
-	 * Simple implementation of SchemeSocketFactory (and
-	 * LayeredSchemeSocketFactory) that bypasses SSL certificate checks. This
-	 * class is only intended to be used for testing purposes.
-	 */
-	private static class TrustingSocketFactory implements SchemeSocketFactory, LayeredSchemeSocketFactory {
+    /**
+     * Customization of the default redirect strategy provided by HttpClient to be a little
+     * less strict about the Location header to account for S3 not sending the Location
+     * header with 301 responses. 
+     */
+    private final class LocationHeaderNotRequiredRedirectStrategy extends DefaultRedirectStrategy {
+		@Override
+		public boolean isRedirected(HttpRequest request,
+		        HttpResponse response, HttpContext context) throws ProtocolException {
+		    int statusCode = response.getStatusLine().getStatusCode();
+		    Header locationHeader = response.getFirstHeader("location");
 
-		private SSLContext sslcontext = null;
+		    // Instead of throwing a ProtocolException in this case, just
+		    // return false to indicate that this is not redirected
+		    if (locationHeader == null &&
+		        statusCode == HttpStatus.SC_MOVED_PERMANENTLY) return false;
 
-		private static SSLContext createSSLContext() throws IOException {
-			try {
-				SSLContext context = SSLContext.getInstance("TLS");
-				context.init(null, new TrustManager[] { new TrustingX509TrustManager() }, null);
-				return context;
-			} catch (Exception e) {
-				throw new IOException(e.getMessage());
-			}
-		}
-
-		private SSLContext getSSLContext() throws IOException {
-			if (this.sslcontext == null) this.sslcontext = createSSLContext();
-			return this.sslcontext;
-		}
-
-		public Socket createSocket(HttpParams params) throws IOException {
-			return getSSLContext().getSocketFactory().createSocket();
-		}
-
-		public Socket connectSocket(Socket sock,
-				InetSocketAddress remoteAddress,
-				InetSocketAddress localAddress, HttpParams params)
-				throws IOException, UnknownHostException,
-				ConnectTimeoutException {
-			int connTimeout = HttpConnectionParams.getConnectionTimeout(params);
-			int soTimeout = HttpConnectionParams.getSoTimeout(params);
-
-			SSLSocket sslsock = (SSLSocket) ((sock != null) ? sock : createSocket(params));
-			if (localAddress != null) sslsock.bind(localAddress);
-
-			sslsock.connect(remoteAddress, connTimeout);
-			sslsock.setSoTimeout(soTimeout);
-			return sslsock;
-		}
-
-		public boolean isSecure(Socket sock) throws IllegalArgumentException {
-			return true;
-		}
-
-		public Socket createLayeredSocket(Socket arg0, String arg1, int arg2, boolean arg3)
-				throws IOException, UnknownHostException {
-			return getSSLContext().getSocketFactory().createSocket();
+		    return super.isRedirected(request, response, context);
 		}
 	}
 
 	/**
-	 * Simple implementation of X509TrustManager that trusts all certificates.
-	 * This class is only intended to be used for testing purposes.
-	 */
-	private static class TrustingX509TrustManager implements X509TrustManager {
-    	private static final X509Certificate[] X509_CERTIFICATES = new X509Certificate[0];
+     * Simple implementation of SchemeSocketFactory (and
+     * LayeredSchemeSocketFactory) that bypasses SSL certificate checks. This
+     * class is only intended to be used for testing purposes.
+     */
+    private static class TrustingSocketFactory implements SchemeSocketFactory, LayeredSchemeSocketFactory {
 
-		public X509Certificate[] getAcceptedIssuers() {
-			return X509_CERTIFICATES;
-		}
+        private SSLContext sslcontext = null;
 
-		public void checkServerTrusted(X509Certificate[] chain, String authType)
-				throws CertificateException {
-			// No-op, to trust all certs
-		}
+        private static SSLContext createSSLContext() throws IOException {
+            try {
+                SSLContext context = SSLContext.getInstance("TLS");
+                context.init(null, new TrustManager[] { new TrustingX509TrustManager() }, null);
+                return context;
+            } catch (Exception e) {
+                throw new IOException(e.getMessage());
+            }
+        }
 
-		public void checkClientTrusted(X509Certificate[] chain, String authType)
-				throws CertificateException {
-			// No-op, to trust all certs
-		}
-	};
+        private SSLContext getSSLContext() throws IOException {
+            if (this.sslcontext == null) this.sslcontext = createSSLContext();
+            return this.sslcontext;
+        }
+
+        public Socket createSocket(HttpParams params) throws IOException {
+            return getSSLContext().getSocketFactory().createSocket();
+        }
+
+        public Socket connectSocket(Socket sock,
+                InetSocketAddress remoteAddress,
+                InetSocketAddress localAddress, HttpParams params)
+                throws IOException, UnknownHostException,
+                ConnectTimeoutException {
+            int connTimeout = HttpConnectionParams.getConnectionTimeout(params);
+            int soTimeout = HttpConnectionParams.getSoTimeout(params);
+
+            SSLSocket sslsock = (SSLSocket) ((sock != null) ? sock : createSocket(params));
+            if (localAddress != null) sslsock.bind(localAddress);
+
+            sslsock.connect(remoteAddress, connTimeout);
+            sslsock.setSoTimeout(soTimeout);
+            return sslsock;
+        }
+
+        public boolean isSecure(Socket sock) throws IllegalArgumentException {
+            return true;
+        }
+
+        public Socket createLayeredSocket(Socket arg0, String arg1, int arg2, boolean arg3)
+                throws IOException, UnknownHostException {
+            return getSSLContext().getSocketFactory().createSocket();
+        }
+    }
+
+    /**
+     * Simple implementation of X509TrustManager that trusts all certificates.
+     * This class is only intended to be used for testing purposes.
+     */
+    private static class TrustingX509TrustManager implements X509TrustManager {
+        private static final X509Certificate[] X509_CERTIFICATES = new X509Certificate[0];
+
+        public X509Certificate[] getAcceptedIssuers() {
+            return X509_CERTIFICATES;
+        }
+
+        public void checkServerTrusted(X509Certificate[] chain, String authType)
+                throws CertificateException {
+            // No-op, to trust all certs
+        }
+
+        public void checkClientTrusted(X509Certificate[] chain, String authType)
+                throws CertificateException {
+            // No-op, to trust all certs
+        }
+    };
 }

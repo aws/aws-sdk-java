@@ -369,6 +369,28 @@ public class DynamoDBReflector {
                                 }
                             };
                         }
+                    } else if ( short.class.isAssignableFrom(paramType) || Short.class.isAssignableFrom(paramType) ) {
+                        if ( isCollection ) {
+                            unmarshaller = new NSUnmarshaller() {
+
+                                @Override
+                                public Object unmarshall(AttributeValue value) {
+                                    Set<Short> argument = new HashSet<Short>();
+                                    for ( String s : value.getNS() ) {
+                                        argument.add(Short.parseShort(s));
+                                    }
+                                    return argument;
+                                }
+                            };
+                        } else {
+                            unmarshaller = new NUnmarshaller() {
+
+                                @Override
+                                public Object unmarshall(AttributeValue value) {
+                                    return Short.parseShort(value.getN());
+                                }
+                            };
+                        }
                     } else if ( boolean.class.isAssignableFrom(paramType) || Boolean.class.isAssignableFrom(paramType) ) {
                         if ( isCollection ) {
                             unmarshaller = new NSUnmarshaller() {
@@ -605,11 +627,11 @@ public class DynamoDBReflector {
                     if ( Set.class.isAssignableFrom(returnType) ) {
                         Type genericType = getter.getGenericReturnType();
                         if ( genericType instanceof ParameterizedType ) {
-                        	if (((ParameterizedType) genericType).getActualTypeArguments()[0].toString().equals("byte[]")) {
-                        		returnType = byte[].class;
-                        	} else {
-                            returnType = (Class<?>) ((ParameterizedType) genericType).getActualTypeArguments()[0];
-                        	}
+                            if ( ((ParameterizedType) genericType).getActualTypeArguments()[0].toString().equals("byte[]") ) {
+                                returnType = byte[].class;
+                            } else {
+                                returnType = (Class<?>) ((ParameterizedType) genericType).getActualTypeArguments()[0];
+                            }
                         }
 
                         if ( Date.class.isAssignableFrom(returnType) ) {

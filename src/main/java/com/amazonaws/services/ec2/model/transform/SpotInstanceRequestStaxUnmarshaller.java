@@ -66,6 +66,10 @@ public class SpotInstanceRequestStaxUnmarshaller implements Unmarshaller<SpotIns
                     spotInstanceRequest.setFault(SpotInstanceStateFaultStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("status", targetDepth)) {
+                    spotInstanceRequest.setStatus(SpotInstanceStatusStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
                 if (context.testExpression("validFrom", targetDepth)) {
                     spotInstanceRequest.setValidFrom(DateStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

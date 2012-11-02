@@ -239,6 +239,9 @@ public class BatchGetItemRequestMarshaller implements Marshaller<Request<BatchGe
                             }
                             jsonWriter.endArray();
                         }
+                        if (requestItemsListValue.getValue().isConsistentRead() != null) {
+                            jsonWriter.key("ConsistentRead").value(requestItemsListValue.getValue().isConsistentRead());
+                        }
                         jsonWriter.endObject();
                     }
                 }

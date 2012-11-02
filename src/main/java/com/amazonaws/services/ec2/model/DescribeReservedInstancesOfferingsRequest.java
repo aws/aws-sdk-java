@@ -72,6 +72,10 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      */
     private String offeringType;
 
+    private String nextToken;
+
+    private Integer maxResults;
+
     /**
      * An optional list of the unique IDs of the Reserved Instance offerings
      * to describe.
@@ -482,6 +486,74 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
     
     
     /**
+     * Returns the value of the NextToken property for this object.
+     *
+     * @return The value of the NextToken property for this object.
+     */
+    public String getNextToken() {
+        return nextToken;
+    }
+    
+    /**
+     * Sets the value of the NextToken property for this object.
+     *
+     * @param nextToken The new value for the NextToken property for this object.
+     */
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+    
+    /**
+     * Sets the value of the NextToken property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param nextToken The new value for the NextToken property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public DescribeReservedInstancesOfferingsRequest withNextToken(String nextToken) {
+        this.nextToken = nextToken;
+        return this;
+    }
+    
+    
+    /**
+     * Returns the value of the MaxResults property for this object.
+     *
+     * @return The value of the MaxResults property for this object.
+     */
+    public Integer getMaxResults() {
+        return maxResults;
+    }
+    
+    /**
+     * Sets the value of the MaxResults property for this object.
+     *
+     * @param maxResults The new value for the MaxResults property for this object.
+     */
+    public void setMaxResults(Integer maxResults) {
+        this.maxResults = maxResults;
+    }
+    
+    /**
+     * Sets the value of the MaxResults property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param maxResults The new value for the MaxResults property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public DescribeReservedInstancesOfferingsRequest withMaxResults(Integer maxResults) {
+        this.maxResults = maxResults;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -500,6 +572,8 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
         if (filters != null) sb.append("Filters: " + filters + ", ");
         if (instanceTenancy != null) sb.append("InstanceTenancy: " + instanceTenancy + ", ");
         if (offeringType != null) sb.append("OfferingType: " + offeringType + ", ");
+        if (nextToken != null) sb.append("NextToken: " + nextToken + ", ");
+        if (maxResults != null) sb.append("MaxResults: " + maxResults + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -516,6 +590,8 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
         hashCode = prime * hashCode + ((getFilters() == null) ? 0 : getFilters().hashCode()); 
         hashCode = prime * hashCode + ((getInstanceTenancy() == null) ? 0 : getInstanceTenancy().hashCode()); 
         hashCode = prime * hashCode + ((getOfferingType() == null) ? 0 : getOfferingType().hashCode()); 
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode()); 
+        hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode()); 
         return hashCode;
     }
     
@@ -541,6 +617,10 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
         if (other.getInstanceTenancy() != null && other.getInstanceTenancy().equals(this.getInstanceTenancy()) == false) return false; 
         if (other.getOfferingType() == null ^ this.getOfferingType() == null) return false;
         if (other.getOfferingType() != null && other.getOfferingType().equals(this.getOfferingType()) == false) return false; 
+        if (other.getNextToken() == null ^ this.getNextToken() == null) return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false) return false; 
+        if (other.getMaxResults() == null ^ this.getMaxResults() == null) return false;
+        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false) return false; 
         return true;
     }
     

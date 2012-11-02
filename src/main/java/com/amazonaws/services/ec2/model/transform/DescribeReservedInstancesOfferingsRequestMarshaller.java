@@ -38,7 +38,7 @@ public class DescribeReservedInstancesOfferingsRequestMarshaller implements Mars
 
         Request<DescribeReservedInstancesOfferingsRequest> request = new DefaultRequest<DescribeReservedInstancesOfferingsRequest>(describeReservedInstancesOfferingsRequest, "AmazonEC2");
         request.addParameter("Action", "DescribeReservedInstancesOfferings");
-        request.addParameter("Version", "2012-08-15");
+        request.addParameter("Version", "2012-10-01");
 
 
         java.util.List<String> reservedInstancesOfferingIdsList = describeReservedInstancesOfferingsRequest.getReservedInstancesOfferingIds();
@@ -90,6 +90,12 @@ public class DescribeReservedInstancesOfferingsRequestMarshaller implements Mars
         }
         if (describeReservedInstancesOfferingsRequest.getOfferingType() != null) {
             request.addParameter("OfferingType", StringUtils.fromString(describeReservedInstancesOfferingsRequest.getOfferingType()));
+        }
+        if (describeReservedInstancesOfferingsRequest.getNextToken() != null) {
+            request.addParameter("NextToken", StringUtils.fromString(describeReservedInstancesOfferingsRequest.getNextToken()));
+        }
+        if (describeReservedInstancesOfferingsRequest.getMaxResults() != null) {
+            request.addParameter("MaxResults", StringUtils.fromInteger(describeReservedInstancesOfferingsRequest.getMaxResults()));
         }
 
 

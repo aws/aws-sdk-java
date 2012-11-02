@@ -29,6 +29,8 @@ public class SpotInstanceRequest {
 
     private SpotInstanceStateFault fault;
 
+    private SpotInstanceStatus status;
+
     private java.util.Date validFrom;
 
     private java.util.Date validUntil;
@@ -274,6 +276,40 @@ public class SpotInstanceRequest {
      */
     public SpotInstanceRequest withFault(SpotInstanceStateFault fault) {
         this.fault = fault;
+        return this;
+    }
+    
+    
+    /**
+     * Returns the value of the Status property for this object.
+     *
+     * @return The value of the Status property for this object.
+     */
+    public SpotInstanceStatus getStatus() {
+        return status;
+    }
+    
+    /**
+     * Sets the value of the Status property for this object.
+     *
+     * @param status The new value for the Status property for this object.
+     */
+    public void setStatus(SpotInstanceStatus status) {
+        this.status = status;
+    }
+    
+    /**
+     * Sets the value of the Status property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param status The new value for the Status property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public SpotInstanceRequest withStatus(SpotInstanceStatus status) {
+        this.status = status;
         return this;
     }
     
@@ -671,6 +707,7 @@ public class SpotInstanceRequest {
         if (type != null) sb.append("Type: " + type + ", ");
         if (state != null) sb.append("State: " + state + ", ");
         if (fault != null) sb.append("Fault: " + fault + ", ");
+        if (status != null) sb.append("Status: " + status + ", ");
         if (validFrom != null) sb.append("ValidFrom: " + validFrom + ", ");
         if (validUntil != null) sb.append("ValidUntil: " + validUntil + ", ");
         if (launchGroup != null) sb.append("LaunchGroup: " + launchGroup + ", ");
@@ -695,6 +732,7 @@ public class SpotInstanceRequest {
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode()); 
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode()); 
         hashCode = prime * hashCode + ((getFault() == null) ? 0 : getFault().hashCode()); 
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode()); 
         hashCode = prime * hashCode + ((getValidFrom() == null) ? 0 : getValidFrom().hashCode()); 
         hashCode = prime * hashCode + ((getValidUntil() == null) ? 0 : getValidUntil().hashCode()); 
         hashCode = prime * hashCode + ((getLaunchGroup() == null) ? 0 : getLaunchGroup().hashCode()); 
@@ -726,6 +764,8 @@ public class SpotInstanceRequest {
         if (other.getState() != null && other.getState().equals(this.getState()) == false) return false; 
         if (other.getFault() == null ^ this.getFault() == null) return false;
         if (other.getFault() != null && other.getFault().equals(this.getFault()) == false) return false; 
+        if (other.getStatus() == null ^ this.getStatus() == null) return false;
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false) return false; 
         if (other.getValidFrom() == null ^ this.getValidFrom() == null) return false;
         if (other.getValidFrom() != null && other.getValidFrom().equals(this.getValidFrom()) == false) return false; 
         if (other.getValidUntil() == null ^ this.getValidUntil() == null) return false;
