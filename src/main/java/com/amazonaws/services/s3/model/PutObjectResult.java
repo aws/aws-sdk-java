@@ -51,6 +51,9 @@ public class PutObjectResult implements ServerSideEncryptionResult, ObjectExpira
     /** The expiration rule for this object */
     private String expirationTimeRuleId;
 
+    /** The content MD5 */
+    private String contentMd5;
+
     /**
      * Gets the optional version ID of the newly uploaded object. This field will 
      * be set only if object versioning is enabled for the bucket the
@@ -154,5 +157,21 @@ public class PutObjectResult implements ServerSideEncryptionResult, ObjectExpira
     public void setExpirationTimeRuleId(String expirationTimeRuleId) {
         this.expirationTimeRuleId = expirationTimeRuleId;
     }
-    
+
+    /**
+     * Sets the content MD5.
+     * 
+     * @param contentMd5
+     *            The content MD5
+     */
+    public void setContentMd5(String contentMd5) {
+    	this.contentMd5 = contentMd5;
+    }
+
+    /**
+     * Returns the content MD5.
+     */
+    public String getContentMd5() {
+    	return contentMd5;
+    }
 }
