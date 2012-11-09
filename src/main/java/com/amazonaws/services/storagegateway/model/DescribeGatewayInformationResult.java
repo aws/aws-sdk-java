@@ -74,6 +74,14 @@ public class DescribeGatewayInformationResult {
     private java.util.List<NetworkInterface> gatewayNetworkInterfaces;
 
     /**
+     * TBD
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>STORED, CACHED
+     */
+    private String gatewayType;
+
+    /**
      * The date at which an update to the gateway is available. This date is
      * in the time zone of the gateway. If the gateway is not available for
      * an update this field is not returned in the response. <!-- Q: [eronh]
@@ -447,6 +455,89 @@ public class DescribeGatewayInformationResult {
     }
     
     /**
+     * TBD
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>STORED, CACHED
+     *
+     * @return TBD
+     *
+     * @see GatewayType
+     */
+    public String getGatewayType() {
+        return gatewayType;
+    }
+    
+    /**
+     * TBD
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>STORED, CACHED
+     *
+     * @param gatewayType TBD
+     *
+     * @see GatewayType
+     */
+    public void setGatewayType(String gatewayType) {
+        this.gatewayType = gatewayType;
+    }
+    
+    /**
+     * TBD
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>STORED, CACHED
+     *
+     * @param gatewayType TBD
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see GatewayType
+     */
+    public DescribeGatewayInformationResult withGatewayType(String gatewayType) {
+        this.gatewayType = gatewayType;
+        return this;
+    }
+    
+    
+    /**
+     * TBD
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>STORED, CACHED
+     *
+     * @param gatewayType TBD
+     *
+     * @see GatewayType
+     */
+    public void setGatewayType(GatewayType gatewayType) {
+        this.gatewayType = gatewayType.toString();
+    }
+    
+    /**
+     * TBD
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>STORED, CACHED
+     *
+     * @param gatewayType TBD
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see GatewayType
+     */
+    public DescribeGatewayInformationResult withGatewayType(GatewayType gatewayType) {
+        this.gatewayType = gatewayType.toString();
+        return this;
+    }
+    
+    /**
      * The date at which an update to the gateway is available. This date is
      * in the time zone of the gateway. If the gateway is not available for
      * an update this field is not returned in the response. <!-- Q: [eronh]
@@ -530,6 +621,7 @@ public class DescribeGatewayInformationResult {
         if (gatewayTimezone != null) sb.append("GatewayTimezone: " + gatewayTimezone + ", ");
         if (gatewayState != null) sb.append("GatewayState: " + gatewayState + ", ");
         if (gatewayNetworkInterfaces != null) sb.append("GatewayNetworkInterfaces: " + gatewayNetworkInterfaces + ", ");
+        if (gatewayType != null) sb.append("GatewayType: " + gatewayType + ", ");
         if (nextUpdateAvailabilityDate != null) sb.append("NextUpdateAvailabilityDate: " + nextUpdateAvailabilityDate + ", ");
         sb.append("}");
         return sb.toString();
@@ -545,6 +637,7 @@ public class DescribeGatewayInformationResult {
         hashCode = prime * hashCode + ((getGatewayTimezone() == null) ? 0 : getGatewayTimezone().hashCode()); 
         hashCode = prime * hashCode + ((getGatewayState() == null) ? 0 : getGatewayState().hashCode()); 
         hashCode = prime * hashCode + ((getGatewayNetworkInterfaces() == null) ? 0 : getGatewayNetworkInterfaces().hashCode()); 
+        hashCode = prime * hashCode + ((getGatewayType() == null) ? 0 : getGatewayType().hashCode()); 
         hashCode = prime * hashCode + ((getNextUpdateAvailabilityDate() == null) ? 0 : getNextUpdateAvailabilityDate().hashCode()); 
         return hashCode;
     }
@@ -567,6 +660,8 @@ public class DescribeGatewayInformationResult {
         if (other.getGatewayState() != null && other.getGatewayState().equals(this.getGatewayState()) == false) return false; 
         if (other.getGatewayNetworkInterfaces() == null ^ this.getGatewayNetworkInterfaces() == null) return false;
         if (other.getGatewayNetworkInterfaces() != null && other.getGatewayNetworkInterfaces().equals(this.getGatewayNetworkInterfaces()) == false) return false; 
+        if (other.getGatewayType() == null ^ this.getGatewayType() == null) return false;
+        if (other.getGatewayType() != null && other.getGatewayType().equals(this.getGatewayType()) == false) return false; 
         if (other.getNextUpdateAvailabilityDate() == null ^ this.getNextUpdateAvailabilityDate() == null) return false;
         if (other.getNextUpdateAvailabilityDate() != null && other.getNextUpdateAvailabilityDate().equals(this.getNextUpdateAvailabilityDate()) == false) return false; 
         return true;

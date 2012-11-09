@@ -22,6 +22,10 @@ import com.amazonaws.AmazonWebServiceRequest;
  * the job flow is running are stopped. Any log files not already saved are uploaded to Amazon S3 if a LogUri was specified when the job flow was
  * created.
  * </p>
+ * <p>
+ * The call to TerminateJobFlows is asynchronous. Depending on the configuration of the job flow, it may take up to 5-20 minutes for the job flow to
+ * completely terminate and release allocated resources, such as Amazon EC2 instances.
+ * </p>
  *
  * @see com.amazonaws.services.elasticmapreduce.AmazonElasticMapReduce#terminateJobFlows(TerminateJobFlowsRequest)
  */

@@ -69,6 +69,14 @@ public class OptionGroupStaxUnmarshaller implements Unmarshaller<OptionGroup, St
                     optionGroup.getOptions().add(OptionStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("AllowsVpcAndNonVpcInstanceMemberships", targetDepth)) {
+                    optionGroup.setAllowsVpcAndNonVpcInstanceMemberships(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("VpcId", targetDepth)) {
+                    optionGroup.setVpcId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return optionGroup;

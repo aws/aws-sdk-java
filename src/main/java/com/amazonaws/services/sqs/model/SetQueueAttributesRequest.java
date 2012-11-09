@@ -18,8 +18,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sqs.AmazonSQS#setQueueAttributes(SetQueueAttributesRequest) SetQueueAttributes operation}.
  * <p>
- * Sets an attribute of a queue. The set of attributes that can be set are - DelaySeconds, MessageRetentionPeriod, MaximumMessageSize, VisibilityTimeout
- * and Policy.
+ * Sets the value of one or more queue attributes. Valid attributes that can be set are [VisibilityTimeout, Policy, MaximumMessageSize,
+ * MessageRetentionPeriod, ReceiveMessageWaitTimeSeconds].
  * </p>
  *
  * @see com.amazonaws.services.sqs.AmazonSQS#setQueueAttributes(SetQueueAttributesRequest)

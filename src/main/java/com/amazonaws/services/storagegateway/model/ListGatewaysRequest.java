@@ -36,8 +36,7 @@ public class ListGatewaysRequest extends AmazonWebServiceRequest {
 
     /**
      * An opaque string that indicates the position at which to begin the
-     * returned list of gateways. <p><i>Valid Values</i>: A marker obtained
-     * from the response of a previous List Gateways request.
+     * returned list of gateways.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1000<br/>
@@ -46,7 +45,7 @@ public class ListGatewaysRequest extends AmazonWebServiceRequest {
 
     /**
      * Specifies that the list of gateways returned be limited to the
-     * specified number of items. <p>Valid Values: a number from 1 to 100.
+     * specified number of items.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - <br/>
@@ -55,15 +54,13 @@ public class ListGatewaysRequest extends AmazonWebServiceRequest {
 
     /**
      * An opaque string that indicates the position at which to begin the
-     * returned list of gateways. <p><i>Valid Values</i>: A marker obtained
-     * from the response of a previous List Gateways request.
+     * returned list of gateways.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1000<br/>
      *
      * @return An opaque string that indicates the position at which to begin the
-     *         returned list of gateways. <p><i>Valid Values</i>: A marker obtained
-     *         from the response of a previous List Gateways request.
+     *         returned list of gateways.
      */
     public String getMarker() {
         return marker;
@@ -71,15 +68,13 @@ public class ListGatewaysRequest extends AmazonWebServiceRequest {
     
     /**
      * An opaque string that indicates the position at which to begin the
-     * returned list of gateways. <p><i>Valid Values</i>: A marker obtained
-     * from the response of a previous List Gateways request.
+     * returned list of gateways.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1000<br/>
      *
      * @param marker An opaque string that indicates the position at which to begin the
-     *         returned list of gateways. <p><i>Valid Values</i>: A marker obtained
-     *         from the response of a previous List Gateways request.
+     *         returned list of gateways.
      */
     public void setMarker(String marker) {
         this.marker = marker;
@@ -87,8 +82,7 @@ public class ListGatewaysRequest extends AmazonWebServiceRequest {
     
     /**
      * An opaque string that indicates the position at which to begin the
-     * returned list of gateways. <p><i>Valid Values</i>: A marker obtained
-     * from the response of a previous List Gateways request.
+     * returned list of gateways.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -96,8 +90,7 @@ public class ListGatewaysRequest extends AmazonWebServiceRequest {
      * <b>Length: </b>1 - 1000<br/>
      *
      * @param marker An opaque string that indicates the position at which to begin the
-     *         returned list of gateways. <p><i>Valid Values</i>: A marker obtained
-     *         from the response of a previous List Gateways request.
+     *         returned list of gateways.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -110,13 +103,13 @@ public class ListGatewaysRequest extends AmazonWebServiceRequest {
     
     /**
      * Specifies that the list of gateways returned be limited to the
-     * specified number of items. <p>Valid Values: a number from 1 to 100.
+     * specified number of items.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - <br/>
      *
      * @return Specifies that the list of gateways returned be limited to the
-     *         specified number of items. <p>Valid Values: a number from 1 to 100.
+     *         specified number of items.
      */
     public Integer getLimit() {
         return limit;
@@ -124,13 +117,13 @@ public class ListGatewaysRequest extends AmazonWebServiceRequest {
     
     /**
      * Specifies that the list of gateways returned be limited to the
-     * specified number of items. <p>Valid Values: a number from 1 to 100.
+     * specified number of items.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - <br/>
      *
      * @param limit Specifies that the list of gateways returned be limited to the
-     *         specified number of items. <p>Valid Values: a number from 1 to 100.
+     *         specified number of items.
      */
     public void setLimit(Integer limit) {
         this.limit = limit;
@@ -138,7 +131,7 @@ public class ListGatewaysRequest extends AmazonWebServiceRequest {
     
     /**
      * Specifies that the list of gateways returned be limited to the
-     * specified number of items. <p>Valid Values: a number from 1 to 100.
+     * specified number of items.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -146,7 +139,7 @@ public class ListGatewaysRequest extends AmazonWebServiceRequest {
      * <b>Range: </b>1 - <br/>
      *
      * @param limit Specifies that the list of gateways returned be limited to the
-     *         specified number of items. <p>Valid Values: a number from 1 to 100.
+     *         specified number of items.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

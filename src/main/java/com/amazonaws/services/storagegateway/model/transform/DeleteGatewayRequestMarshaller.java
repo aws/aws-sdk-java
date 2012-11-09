@@ -46,7 +46,7 @@ public class DeleteGatewayRequestMarshaller implements Marshaller<Request<Delete
 		}
 
         Request<DeleteGatewayRequest> request = new DefaultRequest<DeleteGatewayRequest>(deleteGatewayRequest, "AWSStorageGateway");
-        String target = "StorageGateway_20120430.DeleteGateway";
+        String target = "StorageGateway_20120630.DeleteGateway";
         request.addHeader("X-Amz-Target", target);
         request.addHeader("Content-Type", "application/x-amz-json-1.1");
 

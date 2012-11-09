@@ -36,6 +36,10 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <b>NOTE:</b>When you make a shutdown request, you will get a 200 OK success response immediately. However, it might take some time for the gateway to
  * shut down. You can call the DescribeGatewayInformation API to check the status. For more information, see ActivateGateway.
  * </p>
+ * <p>
+ * If do not intend to use the gateway again, you must delete the gateway (using DeleteGateway) to no longer pay software charges associated with the
+ * gateway.
+ * </p>
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#shutdownGateway(ShutdownGatewayRequest)
  */

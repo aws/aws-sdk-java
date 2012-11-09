@@ -25,6 +25,12 @@ import com.amazonaws.AmazonWebServiceRequest;
  * After you delete a gateway, you cannot reactivate it. Completed snapshots of the gateway volumes are not deleted upon deleting the gateway, however,
  * pending snapshots will not complete. After you delete a gateway, your next step is to remove it from your environment.
  * </p>
+ * <p>
+ * <b>IMPORTANT:</b> You no longer pay software charges after the gateway is deleted; however, your existing Amazon EBS snapshots persist and you will
+ * continue to be billed for these snapshots.??You can choose to remove all remaining Amazon EBS snapshots by canceling your Amazon EC2 subscription.??
+ * If you prefer not to cancel your Amazon EC2 subscription, you can delete your snapshots using the Amazon EC2 console. For more information, see the
+ * AWS Storage Gateway Detail Page.
+ * </p>
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#deleteGateway(DeleteGatewayRequest)
  */

@@ -174,6 +174,11 @@ public class DBInstance {
     private String licenseModel;
 
     /**
+     * Specifies the Provisioned IOPS (I/O operations per second) value.
+     */
+    private Integer iops;
+
+    /**
      * Specifies the name and status of the option group that this instance
      * belongs to.
      */
@@ -1263,6 +1268,40 @@ public class DBInstance {
     
     
     /**
+     * Specifies the Provisioned IOPS (I/O operations per second) value.
+     *
+     * @return Specifies the Provisioned IOPS (I/O operations per second) value.
+     */
+    public Integer getIops() {
+        return iops;
+    }
+    
+    /**
+     * Specifies the Provisioned IOPS (I/O operations per second) value.
+     *
+     * @param iops Specifies the Provisioned IOPS (I/O operations per second) value.
+     */
+    public void setIops(Integer iops) {
+        this.iops = iops;
+    }
+    
+    /**
+     * Specifies the Provisioned IOPS (I/O operations per second) value.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param iops Specifies the Provisioned IOPS (I/O operations per second) value.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public DBInstance withIops(Integer iops) {
+        this.iops = iops;
+        return this;
+    }
+    
+    
+    /**
      * Specifies the name and status of the option group that this instance
      * belongs to.
      *
@@ -1378,6 +1417,7 @@ public class DBInstance {
         if (readReplicaSourceDBInstanceIdentifier != null) sb.append("ReadReplicaSourceDBInstanceIdentifier: " + readReplicaSourceDBInstanceIdentifier + ", ");
         if (readReplicaDBInstanceIdentifiers != null) sb.append("ReadReplicaDBInstanceIdentifiers: " + readReplicaDBInstanceIdentifiers + ", ");
         if (licenseModel != null) sb.append("LicenseModel: " + licenseModel + ", ");
+        if (iops != null) sb.append("Iops: " + iops + ", ");
         if (optionGroupMembership != null) sb.append("OptionGroupMembership: " + optionGroupMembership + ", ");
         if (characterSetName != null) sb.append("CharacterSetName: " + characterSetName + ", ");
         sb.append("}");
@@ -1413,6 +1453,7 @@ public class DBInstance {
         hashCode = prime * hashCode + ((getReadReplicaSourceDBInstanceIdentifier() == null) ? 0 : getReadReplicaSourceDBInstanceIdentifier().hashCode()); 
         hashCode = prime * hashCode + ((getReadReplicaDBInstanceIdentifiers() == null) ? 0 : getReadReplicaDBInstanceIdentifiers().hashCode()); 
         hashCode = prime * hashCode + ((getLicenseModel() == null) ? 0 : getLicenseModel().hashCode()); 
+        hashCode = prime * hashCode + ((getIops() == null) ? 0 : getIops().hashCode()); 
         hashCode = prime * hashCode + ((getOptionGroupMembership() == null) ? 0 : getOptionGroupMembership().hashCode()); 
         hashCode = prime * hashCode + ((getCharacterSetName() == null) ? 0 : getCharacterSetName().hashCode()); 
         return hashCode;
@@ -1474,6 +1515,8 @@ public class DBInstance {
         if (other.getReadReplicaDBInstanceIdentifiers() != null && other.getReadReplicaDBInstanceIdentifiers().equals(this.getReadReplicaDBInstanceIdentifiers()) == false) return false; 
         if (other.getLicenseModel() == null ^ this.getLicenseModel() == null) return false;
         if (other.getLicenseModel() != null && other.getLicenseModel().equals(this.getLicenseModel()) == false) return false; 
+        if (other.getIops() == null ^ this.getIops() == null) return false;
+        if (other.getIops() != null && other.getIops().equals(this.getIops()) == false) return false; 
         if (other.getOptionGroupMembership() == null ^ this.getOptionGroupMembership() == null) return false;
         if (other.getOptionGroupMembership() != null && other.getOptionGroupMembership().equals(this.getOptionGroupMembership()) == false) return false; 
         if (other.getCharacterSetName() == null ^ this.getCharacterSetName() == null) return false;

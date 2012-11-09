@@ -82,6 +82,10 @@ public class JobFlowDetailStaxUnmarshaller implements Unmarshaller<JobFlowDetail
                     jobFlowDetail.getSupportedProducts().add(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("VisibleToAllUsers", targetDepth)) {
+                    jobFlowDetail.setVisibleToAllUsers(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return jobFlowDetail;

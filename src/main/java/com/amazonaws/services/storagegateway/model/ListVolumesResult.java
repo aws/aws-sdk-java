@@ -50,7 +50,8 @@ public class ListVolumesResult {
 
     /**
      * An array of <a>VolumeInfo</a> objects, where each object describes an
-     * iSCSI volume.
+     * iSCSI volume. If no volumes are defined for the gateway, then
+     * <code>VolumeInfos</code> is an empty array "[]".
      */
     private java.util.List<VolumeInfo> volumeInfos;
 
@@ -166,10 +167,12 @@ public class ListVolumesResult {
     
     /**
      * An array of <a>VolumeInfo</a> objects, where each object describes an
-     * iSCSI volume.
+     * iSCSI volume. If no volumes are defined for the gateway, then
+     * <code>VolumeInfos</code> is an empty array "[]".
      *
      * @return An array of <a>VolumeInfo</a> objects, where each object describes an
-     *         iSCSI volume.
+     *         iSCSI volume. If no volumes are defined for the gateway, then
+     *         <code>VolumeInfos</code> is an empty array "[]".
      */
     public java.util.List<VolumeInfo> getVolumeInfos() {
         
@@ -181,10 +184,12 @@ public class ListVolumesResult {
     
     /**
      * An array of <a>VolumeInfo</a> objects, where each object describes an
-     * iSCSI volume.
+     * iSCSI volume. If no volumes are defined for the gateway, then
+     * <code>VolumeInfos</code> is an empty array "[]".
      *
      * @param volumeInfos An array of <a>VolumeInfo</a> objects, where each object describes an
-     *         iSCSI volume.
+     *         iSCSI volume. If no volumes are defined for the gateway, then
+     *         <code>VolumeInfos</code> is an empty array "[]".
      */
     public void setVolumeInfos(java.util.Collection<VolumeInfo> volumeInfos) {
         if (volumeInfos == null) {
@@ -199,12 +204,14 @@ public class ListVolumesResult {
     
     /**
      * An array of <a>VolumeInfo</a> objects, where each object describes an
-     * iSCSI volume.
+     * iSCSI volume. If no volumes are defined for the gateway, then
+     * <code>VolumeInfos</code> is an empty array "[]".
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param volumeInfos An array of <a>VolumeInfo</a> objects, where each object describes an
-     *         iSCSI volume.
+     *         iSCSI volume. If no volumes are defined for the gateway, then
+     *         <code>VolumeInfos</code> is an empty array "[]".
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -219,12 +226,14 @@ public class ListVolumesResult {
     
     /**
      * An array of <a>VolumeInfo</a> objects, where each object describes an
-     * iSCSI volume.
+     * iSCSI volume. If no volumes are defined for the gateway, then
+     * <code>VolumeInfos</code> is an empty array "[]".
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param volumeInfos An array of <a>VolumeInfo</a> objects, where each object describes an
-     *         iSCSI volume.
+     *         iSCSI volume. If no volumes are defined for the gateway, then
+     *         <code>VolumeInfos</code> is an empty array "[]".
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

@@ -18,19 +18,19 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * Subnets in the DB subnet group should cover all availability zones.
+ * Provisioned IOPS not available in the specified Availability Zone.
  * </p>
  */        
-public class DBSubnetGroupListDoesNotCoverAllAzException extends AmazonServiceException {
+public class ProvisionedIopsNotAvailableInAZException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;
     
     /**
-     * Constructs a new DBSubnetGroupListDoesNotCoverAllAzException with the specified error
+     * Constructs a new ProvisionedIopsNotAvailableInAZException with the specified error
      * message.
      * 
      * @param message Describes the error encountered.
      */
-    public DBSubnetGroupListDoesNotCoverAllAzException(String message) {
+    public ProvisionedIopsNotAvailableInAZException(String message) {
         super(message);
     }
     

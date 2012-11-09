@@ -85,7 +85,8 @@ public class InstanceGroupDetail {
     private Integer instanceRunningCount;
 
     /**
-     * State of instance group.
+     * State of instance group. The following values are deprecated:
+     * STARTING, TERMINATED, and FAILED.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>PROVISIONING, STARTING, BOOTSTRAPPING, RUNNING, RESIZING, ARRESTED, SHUTTING_DOWN, TERMINATED, FAILED, ENDED
@@ -137,7 +138,8 @@ public class InstanceGroupDetail {
      * @param instanceRequestCount Target number of instances to run in the
      * instance group.
      * @param instanceRunningCount Actual count of running instances.
-     * @param state State of instance group.
+     * @param state State of instance group. The following values are
+     * deprecated: STARTING, TERMINATED, and FAILED.
      * @param creationDateTime The date/time the instance group was created.
      */
     public InstanceGroupDetail(String instanceRole, String instanceType, Integer instanceRequestCount, Integer instanceRunningCount, String state, java.util.Date creationDateTime) {
@@ -161,7 +163,8 @@ public class InstanceGroupDetail {
      * @param instanceRequestCount Target number of instances to run in the
      * instance group.
      * @param instanceRunningCount Actual count of running instances.
-     * @param state State of instance group.
+     * @param state State of instance group. The following values are
+     * deprecated: STARTING, TERMINATED, and FAILED.
      * @param creationDateTime The date/time the instance group was created.
      */
     public InstanceGroupDetail(InstanceRoleType instanceRole, String instanceType, Integer instanceRequestCount, Integer instanceRunningCount, InstanceGroupState state, java.util.Date creationDateTime) {
@@ -598,12 +601,14 @@ public class InstanceGroupDetail {
     
     
     /**
-     * State of instance group.
+     * State of instance group. The following values are deprecated:
+     * STARTING, TERMINATED, and FAILED.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>PROVISIONING, STARTING, BOOTSTRAPPING, RUNNING, RESIZING, ARRESTED, SHUTTING_DOWN, TERMINATED, FAILED, ENDED
      *
-     * @return State of instance group.
+     * @return State of instance group. The following values are deprecated:
+     *         STARTING, TERMINATED, and FAILED.
      *
      * @see InstanceGroupState
      */
@@ -612,12 +617,14 @@ public class InstanceGroupDetail {
     }
     
     /**
-     * State of instance group.
+     * State of instance group. The following values are deprecated:
+     * STARTING, TERMINATED, and FAILED.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>PROVISIONING, STARTING, BOOTSTRAPPING, RUNNING, RESIZING, ARRESTED, SHUTTING_DOWN, TERMINATED, FAILED, ENDED
      *
-     * @param state State of instance group.
+     * @param state State of instance group. The following values are deprecated:
+     *         STARTING, TERMINATED, and FAILED.
      *
      * @see InstanceGroupState
      */
@@ -626,14 +633,16 @@ public class InstanceGroupDetail {
     }
     
     /**
-     * State of instance group.
+     * State of instance group. The following values are deprecated:
+     * STARTING, TERMINATED, and FAILED.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>PROVISIONING, STARTING, BOOTSTRAPPING, RUNNING, RESIZING, ARRESTED, SHUTTING_DOWN, TERMINATED, FAILED, ENDED
      *
-     * @param state State of instance group.
+     * @param state State of instance group. The following values are deprecated:
+     *         STARTING, TERMINATED, and FAILED.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -647,12 +656,14 @@ public class InstanceGroupDetail {
     
     
     /**
-     * State of instance group.
+     * State of instance group. The following values are deprecated:
+     * STARTING, TERMINATED, and FAILED.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>PROVISIONING, STARTING, BOOTSTRAPPING, RUNNING, RESIZING, ARRESTED, SHUTTING_DOWN, TERMINATED, FAILED, ENDED
      *
-     * @param state State of instance group.
+     * @param state State of instance group. The following values are deprecated:
+     *         STARTING, TERMINATED, and FAILED.
      *
      * @see InstanceGroupState
      */
@@ -661,14 +672,16 @@ public class InstanceGroupDetail {
     }
     
     /**
-     * State of instance group.
+     * State of instance group. The following values are deprecated:
+     * STARTING, TERMINATED, and FAILED.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>PROVISIONING, STARTING, BOOTSTRAPPING, RUNNING, RESIZING, ARRESTED, SHUTTING_DOWN, TERMINATED, FAILED, ENDED
      *
-     * @param state State of instance group.
+     * @param state State of instance group. The following values are deprecated:
+     *         STARTING, TERMINATED, and FAILED.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

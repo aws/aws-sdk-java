@@ -38,7 +38,7 @@ public class DeleteMessageRequestMarshaller implements Marshaller<Request<Delete
 
         Request<DeleteMessageRequest> request = new DefaultRequest<DeleteMessageRequest>(deleteMessageRequest, "AmazonSQS");
         request.addParameter("Action", "DeleteMessage");
-        request.addParameter("Version", "2011-10-01");
+        request.addParameter("Version", "2012-11-05");
 
         if (deleteMessageRequest.getQueueUrl() != null) {
             request.addParameter("QueueUrl", StringUtils.fromString(deleteMessageRequest.getQueueUrl()));

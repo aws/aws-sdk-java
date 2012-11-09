@@ -53,7 +53,7 @@ public class DBSubnetGroup {
     private String subnetGroupStatus;
 
     /**
-     * Contains a list of <a>Subnets</a> elements.
+     * Contains a list of <a>Subnet</a> elements.
      */
     private java.util.List<Subnet> subnets;
 
@@ -194,9 +194,9 @@ public class DBSubnetGroup {
     
     
     /**
-     * Contains a list of <a>Subnets</a> elements.
+     * Contains a list of <a>Subnet</a> elements.
      *
-     * @return Contains a list of <a>Subnets</a> elements.
+     * @return Contains a list of <a>Subnet</a> elements.
      */
     public java.util.List<Subnet> getSubnets() {
         
@@ -207,9 +207,9 @@ public class DBSubnetGroup {
     }
     
     /**
-     * Contains a list of <a>Subnets</a> elements.
+     * Contains a list of <a>Subnet</a> elements.
      *
-     * @param subnets Contains a list of <a>Subnets</a> elements.
+     * @param subnets Contains a list of <a>Subnet</a> elements.
      */
     public void setSubnets(java.util.Collection<Subnet> subnets) {
         if (subnets == null) {
@@ -223,11 +223,11 @@ public class DBSubnetGroup {
     }
     
     /**
-     * Contains a list of <a>Subnets</a> elements.
+     * Contains a list of <a>Subnet</a> elements.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param subnets Contains a list of <a>Subnets</a> elements.
+     * @param subnets Contains a list of <a>Subnet</a> elements.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -241,11 +241,11 @@ public class DBSubnetGroup {
     }
     
     /**
-     * Contains a list of <a>Subnets</a> elements.
+     * Contains a list of <a>Subnet</a> elements.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param subnets Contains a list of <a>Subnets</a> elements.
+     * @param subnets Contains a list of <a>Subnet</a> elements.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

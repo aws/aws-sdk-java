@@ -22,9 +22,7 @@ package com.amazonaws.services.storagegateway.model;
 public class VolumeiSCSIAttributes {
 
     /**
-     * The Amazon Resource Name (ARN) of the volume target. <p><i>Valid
-     * Values</i>: 50 to 800 lowercase letters, numbers, periods (.), and
-     * hyphens (-).
+     * The Amazon Resource Name (ARN) of the volume target.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>50 - 800<br/>
@@ -58,50 +56,38 @@ public class VolumeiSCSIAttributes {
     private Boolean chapEnabled;
 
     /**
-     * The Amazon Resource Name (ARN) of the volume target. <p><i>Valid
-     * Values</i>: 50 to 800 lowercase letters, numbers, periods (.), and
-     * hyphens (-).
+     * The Amazon Resource Name (ARN) of the volume target.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>50 - 800<br/>
      *
-     * @return The Amazon Resource Name (ARN) of the volume target. <p><i>Valid
-     *         Values</i>: 50 to 800 lowercase letters, numbers, periods (.), and
-     *         hyphens (-).
+     * @return The Amazon Resource Name (ARN) of the volume target.
      */
     public String getTargetARN() {
         return targetARN;
     }
     
     /**
-     * The Amazon Resource Name (ARN) of the volume target. <p><i>Valid
-     * Values</i>: 50 to 800 lowercase letters, numbers, periods (.), and
-     * hyphens (-).
+     * The Amazon Resource Name (ARN) of the volume target.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>50 - 800<br/>
      *
-     * @param targetARN The Amazon Resource Name (ARN) of the volume target. <p><i>Valid
-     *         Values</i>: 50 to 800 lowercase letters, numbers, periods (.), and
-     *         hyphens (-).
+     * @param targetARN The Amazon Resource Name (ARN) of the volume target.
      */
     public void setTargetARN(String targetARN) {
         this.targetARN = targetARN;
     }
     
     /**
-     * The Amazon Resource Name (ARN) of the volume target. <p><i>Valid
-     * Values</i>: 50 to 800 lowercase letters, numbers, periods (.), and
-     * hyphens (-).
+     * The Amazon Resource Name (ARN) of the volume target.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>50 - 800<br/>
      *
-     * @param targetARN The Amazon Resource Name (ARN) of the volume target. <p><i>Valid
-     *         Values</i>: 50 to 800 lowercase letters, numbers, periods (.), and
-     *         hyphens (-).
+     * @param targetARN The Amazon Resource Name (ARN) of the volume target.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

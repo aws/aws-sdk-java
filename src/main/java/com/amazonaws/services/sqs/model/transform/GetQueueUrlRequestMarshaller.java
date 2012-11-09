@@ -38,7 +38,7 @@ public class GetQueueUrlRequestMarshaller implements Marshaller<Request<GetQueue
 
         Request<GetQueueUrlRequest> request = new DefaultRequest<GetQueueUrlRequest>(getQueueUrlRequest, "AmazonSQS");
         request.addParameter("Action", "GetQueueUrl");
-        request.addParameter("Version", "2011-10-01");
+        request.addParameter("Version", "2012-11-05");
 
         if (getQueueUrlRequest.getQueueName() != null) {
             request.addParameter("QueueName", StringUtils.fromString(getQueueUrlRequest.getQueueName()));

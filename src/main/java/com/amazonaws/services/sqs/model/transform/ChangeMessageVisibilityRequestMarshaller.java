@@ -38,7 +38,7 @@ public class ChangeMessageVisibilityRequestMarshaller implements Marshaller<Requ
 
         Request<ChangeMessageVisibilityRequest> request = new DefaultRequest<ChangeMessageVisibilityRequest>(changeMessageVisibilityRequest, "AmazonSQS");
         request.addParameter("Action", "ChangeMessageVisibility");
-        request.addParameter("Version", "2011-10-01");
+        request.addParameter("Version", "2012-11-05");
 
         if (changeMessageVisibilityRequest.getQueueUrl() != null) {
             request.addParameter("QueueUrl", StringUtils.fromString(changeMessageVisibilityRequest.getQueueUrl()));

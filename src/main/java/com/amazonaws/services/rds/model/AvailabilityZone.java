@@ -34,6 +34,8 @@ public class AvailabilityZone {
      */
     private String name;
 
+    private Boolean provisionedIopsCapable;
+
     /**
      * The name of the availability zone.
      *
@@ -69,6 +71,51 @@ public class AvailabilityZone {
     
     
     /**
+     * Returns the value of the ProvisionedIopsCapable property for this
+     * object.
+     *
+     * @return The value of the ProvisionedIopsCapable property for this object.
+     */
+    public Boolean isProvisionedIopsCapable() {
+        return provisionedIopsCapable;
+    }
+    
+    /**
+     * Sets the value of the ProvisionedIopsCapable property for this object.
+     *
+     * @param provisionedIopsCapable The new value for the ProvisionedIopsCapable property for this object.
+     */
+    public void setProvisionedIopsCapable(Boolean provisionedIopsCapable) {
+        this.provisionedIopsCapable = provisionedIopsCapable;
+    }
+    
+    /**
+     * Sets the value of the ProvisionedIopsCapable property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param provisionedIopsCapable The new value for the ProvisionedIopsCapable property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public AvailabilityZone withProvisionedIopsCapable(Boolean provisionedIopsCapable) {
+        this.provisionedIopsCapable = provisionedIopsCapable;
+        return this;
+    }
+    
+    
+    /**
+     * Returns the value of the ProvisionedIopsCapable property for this
+     * object.
+     *
+     * @return The value of the ProvisionedIopsCapable property for this object.
+     */
+    public Boolean getProvisionedIopsCapable() {
+        return provisionedIopsCapable;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -81,6 +128,7 @@ public class AvailabilityZone {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (name != null) sb.append("Name: " + name + ", ");
+        if (provisionedIopsCapable != null) sb.append("ProvisionedIopsCapable: " + provisionedIopsCapable + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -91,6 +139,7 @@ public class AvailabilityZone {
         int hashCode = 1;
         
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode()); 
+        hashCode = prime * hashCode + ((isProvisionedIopsCapable() == null) ? 0 : isProvisionedIopsCapable().hashCode()); 
         return hashCode;
     }
     
@@ -104,6 +153,8 @@ public class AvailabilityZone {
         
         if (other.getName() == null ^ this.getName() == null) return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false) return false; 
+        if (other.isProvisionedIopsCapable() == null ^ this.isProvisionedIopsCapable() == null) return false;
+        if (other.isProvisionedIopsCapable() != null && other.isProvisionedIopsCapable().equals(this.isProvisionedIopsCapable()) == false) return false; 
         return true;
     }
     

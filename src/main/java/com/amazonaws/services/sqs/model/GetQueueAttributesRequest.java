@@ -35,6 +35,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <li> <code>QueueArn</code> - returns the queue's Amazon resource name (ARN).</li>
  * <li> <code>ApproximateNumberOfMessagesDelayed</code> - returns the approximate number of messages that are pending to be added to the queue.</li>
  * <li> <code>DelaySeconds</code> - returns the default delay on the queue in seconds.</li>
+ * <li> <code>ReceiveMessageWaitTimeSeconds</code> - returns the time for which a ReceiveMessage call will wait for a message to arrive.</li>
  * 
  * </ul>
  * 

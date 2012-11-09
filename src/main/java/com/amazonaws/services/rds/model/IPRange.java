@@ -22,7 +22,8 @@ package com.amazonaws.services.rds.model;
 public class IPRange {
 
     /**
-     * Specifies the status of the IP range.
+     * Specifies the status of the IP range. Status can be "authorizing",
+     * "authorized", "revoking", and "revoked".
      */
     private String status;
 
@@ -38,29 +39,35 @@ public class IPRange {
     public IPRange() {}
     
     /**
-     * Specifies the status of the IP range.
+     * Specifies the status of the IP range. Status can be "authorizing",
+     * "authorized", "revoking", and "revoked".
      *
-     * @return Specifies the status of the IP range.
+     * @return Specifies the status of the IP range. Status can be "authorizing",
+     *         "authorized", "revoking", and "revoked".
      */
     public String getStatus() {
         return status;
     }
     
     /**
-     * Specifies the status of the IP range.
+     * Specifies the status of the IP range. Status can be "authorizing",
+     * "authorized", "revoking", and "revoked".
      *
-     * @param status Specifies the status of the IP range.
+     * @param status Specifies the status of the IP range. Status can be "authorizing",
+     *         "authorized", "revoking", and "revoked".
      */
     public void setStatus(String status) {
         this.status = status;
     }
     
     /**
-     * Specifies the status of the IP range.
+     * Specifies the status of the IP range. Status can be "authorizing",
+     * "authorized", "revoking", and "revoked".
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param status Specifies the status of the IP range.
+     * @param status Specifies the status of the IP range. Status can be "authorizing",
+     *         "authorized", "revoking", and "revoked".
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

@@ -49,9 +49,9 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
 
     /**
      * The compute and memory capacity of the Read Replica. <p> Valid Values:
-     * <code>db.m1.small | db.m1.large | db.m1.xlarge | db.m2.xlarge
-     * |db.m2.2xlarge | db.m2.4xlarge</code> <p>Default: Inherits from the
-     * source DB Instance.
+     * <code>db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge |
+     * db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge</code> <p>Default:
+     * Inherits from the source DB Instance.
      */
     private String dBInstanceClass;
 
@@ -75,6 +75,12 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      * from the source DB Instance
      */
     private Boolean autoMinorVersionUpgrade;
+
+    /**
+     * The amount of Provisioned IOPS (input/output operations per second) to
+     * be initially allocated for the DB Instance.
+     */
+    private Integer iops;
 
     private String optionGroupName;
 
@@ -205,14 +211,14 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
     
     /**
      * The compute and memory capacity of the Read Replica. <p> Valid Values:
-     * <code>db.m1.small | db.m1.large | db.m1.xlarge | db.m2.xlarge
-     * |db.m2.2xlarge | db.m2.4xlarge</code> <p>Default: Inherits from the
-     * source DB Instance.
+     * <code>db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge |
+     * db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge</code> <p>Default:
+     * Inherits from the source DB Instance.
      *
      * @return The compute and memory capacity of the Read Replica. <p> Valid Values:
-     *         <code>db.m1.small | db.m1.large | db.m1.xlarge | db.m2.xlarge
-     *         |db.m2.2xlarge | db.m2.4xlarge</code> <p>Default: Inherits from the
-     *         source DB Instance.
+     *         <code>db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge |
+     *         db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge</code> <p>Default:
+     *         Inherits from the source DB Instance.
      */
     public String getDBInstanceClass() {
         return dBInstanceClass;
@@ -220,14 +226,14 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
     
     /**
      * The compute and memory capacity of the Read Replica. <p> Valid Values:
-     * <code>db.m1.small | db.m1.large | db.m1.xlarge | db.m2.xlarge
-     * |db.m2.2xlarge | db.m2.4xlarge</code> <p>Default: Inherits from the
-     * source DB Instance.
+     * <code>db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge |
+     * db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge</code> <p>Default:
+     * Inherits from the source DB Instance.
      *
      * @param dBInstanceClass The compute and memory capacity of the Read Replica. <p> Valid Values:
-     *         <code>db.m1.small | db.m1.large | db.m1.xlarge | db.m2.xlarge
-     *         |db.m2.2xlarge | db.m2.4xlarge</code> <p>Default: Inherits from the
-     *         source DB Instance.
+     *         <code>db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge |
+     *         db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge</code> <p>Default:
+     *         Inherits from the source DB Instance.
      */
     public void setDBInstanceClass(String dBInstanceClass) {
         this.dBInstanceClass = dBInstanceClass;
@@ -235,16 +241,16 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
     
     /**
      * The compute and memory capacity of the Read Replica. <p> Valid Values:
-     * <code>db.m1.small | db.m1.large | db.m1.xlarge | db.m2.xlarge
-     * |db.m2.2xlarge | db.m2.4xlarge</code> <p>Default: Inherits from the
-     * source DB Instance.
+     * <code>db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge |
+     * db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge</code> <p>Default:
+     * Inherits from the source DB Instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param dBInstanceClass The compute and memory capacity of the Read Replica. <p> Valid Values:
-     *         <code>db.m1.small | db.m1.large | db.m1.xlarge | db.m2.xlarge
-     *         |db.m2.2xlarge | db.m2.4xlarge</code> <p>Default: Inherits from the
-     *         source DB Instance.
+     *         <code>db.m1.small | db.m1.medium | db.m1.large | db.m1.xlarge |
+     *         db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge</code> <p>Default:
+     *         Inherits from the source DB Instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -407,6 +413,46 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
     }
     
     /**
+     * The amount of Provisioned IOPS (input/output operations per second) to
+     * be initially allocated for the DB Instance.
+     *
+     * @return The amount of Provisioned IOPS (input/output operations per second) to
+     *         be initially allocated for the DB Instance.
+     */
+    public Integer getIops() {
+        return iops;
+    }
+    
+    /**
+     * The amount of Provisioned IOPS (input/output operations per second) to
+     * be initially allocated for the DB Instance.
+     *
+     * @param iops The amount of Provisioned IOPS (input/output operations per second) to
+     *         be initially allocated for the DB Instance.
+     */
+    public void setIops(Integer iops) {
+        this.iops = iops;
+    }
+    
+    /**
+     * The amount of Provisioned IOPS (input/output operations per second) to
+     * be initially allocated for the DB Instance.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param iops The amount of Provisioned IOPS (input/output operations per second) to
+     *         be initially allocated for the DB Instance.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public CreateDBInstanceReadReplicaRequest withIops(Integer iops) {
+        this.iops = iops;
+        return this;
+    }
+    
+    
+    /**
      * Returns the value of the OptionGroupName property for this object.
      *
      * @return The value of the OptionGroupName property for this object.
@@ -458,6 +504,7 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
         if (availabilityZone != null) sb.append("AvailabilityZone: " + availabilityZone + ", ");
         if (port != null) sb.append("Port: " + port + ", ");
         if (autoMinorVersionUpgrade != null) sb.append("AutoMinorVersionUpgrade: " + autoMinorVersionUpgrade + ", ");
+        if (iops != null) sb.append("Iops: " + iops + ", ");
         if (optionGroupName != null) sb.append("OptionGroupName: " + optionGroupName + ", ");
         sb.append("}");
         return sb.toString();
@@ -474,6 +521,7 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode()); 
         hashCode = prime * hashCode + ((getPort() == null) ? 0 : getPort().hashCode()); 
         hashCode = prime * hashCode + ((isAutoMinorVersionUpgrade() == null) ? 0 : isAutoMinorVersionUpgrade().hashCode()); 
+        hashCode = prime * hashCode + ((getIops() == null) ? 0 : getIops().hashCode()); 
         hashCode = prime * hashCode + ((getOptionGroupName() == null) ? 0 : getOptionGroupName().hashCode()); 
         return hashCode;
     }
@@ -498,6 +546,8 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
         if (other.getPort() != null && other.getPort().equals(this.getPort()) == false) return false; 
         if (other.isAutoMinorVersionUpgrade() == null ^ this.isAutoMinorVersionUpgrade() == null) return false;
         if (other.isAutoMinorVersionUpgrade() != null && other.isAutoMinorVersionUpgrade().equals(this.isAutoMinorVersionUpgrade()) == false) return false; 
+        if (other.getIops() == null ^ this.getIops() == null) return false;
+        if (other.getIops() != null && other.getIops().equals(this.getIops()) == false) return false; 
         if (other.getOptionGroupName() == null ^ this.getOptionGroupName() == null) return false;
         if (other.getOptionGroupName() != null && other.getOptionGroupName().equals(this.getOptionGroupName()) == false) return false; 
         return true;

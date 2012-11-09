@@ -38,7 +38,7 @@ public class ModifyDBInstanceRequestMarshaller implements Marshaller<Request<Mod
 
         Request<ModifyDBInstanceRequest> request = new DefaultRequest<ModifyDBInstanceRequest>(modifyDBInstanceRequest, "AmazonRDS");
         request.addParameter("Action", "ModifyDBInstance");
-        request.addParameter("Version", "2012-04-23");
+        request.addParameter("Version", "2012-09-17");
 
         if (modifyDBInstanceRequest.getDBInstanceIdentifier() != null) {
             request.addParameter("DBInstanceIdentifier", StringUtils.fromString(modifyDBInstanceRequest.getDBInstanceIdentifier()));
@@ -89,6 +89,9 @@ public class ModifyDBInstanceRequestMarshaller implements Marshaller<Request<Mod
         }
         if (modifyDBInstanceRequest.isAutoMinorVersionUpgrade() != null) {
             request.addParameter("AutoMinorVersionUpgrade", StringUtils.fromBoolean(modifyDBInstanceRequest.isAutoMinorVersionUpgrade()));
+        }
+        if (modifyDBInstanceRequest.getIops() != null) {
+            request.addParameter("Iops", StringUtils.fromInteger(modifyDBInstanceRequest.getIops()));
         }
         if (modifyDBInstanceRequest.getOptionGroupName() != null) {
             request.addParameter("OptionGroupName", StringUtils.fromString(modifyDBInstanceRequest.getOptionGroupName()));

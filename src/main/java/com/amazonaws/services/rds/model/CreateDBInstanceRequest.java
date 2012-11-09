@@ -61,11 +61,9 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
     private Integer allocatedStorage;
 
     /**
-     * The compute and memory capacity of the DB Instance. To determine the
-     * instance classes that are available for a particular DB engine, use
-     * the <a>DescribeOrderableDBInstanceOptions</a> action. <p> Valid
-     * Values: <code>db.t1.micro | db.m1.small | db.m1.large | db.m1.xlarge |
-     * db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge</code>
+     * The compute and memory capacity of the DB Instance. <p> Valid Values:
+     * <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large |
+     * db.m1.xlarge | db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge</code>
      */
     private String dBInstanceClass;
 
@@ -190,9 +188,9 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
     private Integer port;
 
     /**
-     * Specifies if the DB Instance is a Multi-AZ deployment. For Microsoft
-     * SQL Server, must be set to false. You cannot set the AvailabilityZone
-     * parameter if the MultiAZ parameter is set to true.
+     * Specifies if the DB Instance is a Multi-AZ deployment. You cannot set
+     * the AvailabilityZone parameter if the MultiAZ parameter is set to
+     * true.
      */
     private Boolean multiAZ;
 
@@ -217,6 +215,13 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
      * <code>general-public-license</code>
      */
     private String licenseModel;
+
+    /**
+     * The amount of Provisioned IOPS (input/output operations per second) to
+     * be initially allocated for the DB Instance. <p> Constraints: Must be
+     * an integer greater than 1000.
+     */
+    private Integer iops;
 
     /**
      * Indicates that the DB Instance should be associated with the specified
@@ -255,11 +260,9 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
      * 1024 (Standard Edition and Enterprise Edition) or from 30 to 1024
      * (Express Edition and Web Edition)
      * @param dBInstanceClass The compute and memory capacity of the DB
-     * Instance. To determine the instance classes that are available for a
-     * particular DB engine, use the
-     * <a>DescribeOrderableDBInstanceOptions</a> action. <p> Valid Values:
-     * <code>db.t1.micro | db.m1.small | db.m1.large | db.m1.xlarge |
-     * db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge</code>
+     * Instance. <p> Valid Values: <code>db.t1.micro | db.m1.small |
+     * db.m1.medium | db.m1.large | db.m1.xlarge | db.m2.xlarge
+     * |db.m2.2xlarge | db.m2.4xlarge</code>
      * @param engine The name of the database engine to be used for this
      * instance. <p> Valid Values: <code>MySQL</code> |
      * <code>oracle-se1</code> | <code>oracle-se</code> |
@@ -518,53 +521,41 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * The compute and memory capacity of the DB Instance. To determine the
-     * instance classes that are available for a particular DB engine, use
-     * the <a>DescribeOrderableDBInstanceOptions</a> action. <p> Valid
-     * Values: <code>db.t1.micro | db.m1.small | db.m1.large | db.m1.xlarge |
-     * db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge</code>
+     * The compute and memory capacity of the DB Instance. <p> Valid Values:
+     * <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large |
+     * db.m1.xlarge | db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge</code>
      *
-     * @return The compute and memory capacity of the DB Instance. To determine the
-     *         instance classes that are available for a particular DB engine, use
-     *         the <a>DescribeOrderableDBInstanceOptions</a> action. <p> Valid
-     *         Values: <code>db.t1.micro | db.m1.small | db.m1.large | db.m1.xlarge |
-     *         db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge</code>
+     * @return The compute and memory capacity of the DB Instance. <p> Valid Values:
+     *         <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large |
+     *         db.m1.xlarge | db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge</code>
      */
     public String getDBInstanceClass() {
         return dBInstanceClass;
     }
     
     /**
-     * The compute and memory capacity of the DB Instance. To determine the
-     * instance classes that are available for a particular DB engine, use
-     * the <a>DescribeOrderableDBInstanceOptions</a> action. <p> Valid
-     * Values: <code>db.t1.micro | db.m1.small | db.m1.large | db.m1.xlarge |
-     * db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge</code>
+     * The compute and memory capacity of the DB Instance. <p> Valid Values:
+     * <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large |
+     * db.m1.xlarge | db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge</code>
      *
-     * @param dBInstanceClass The compute and memory capacity of the DB Instance. To determine the
-     *         instance classes that are available for a particular DB engine, use
-     *         the <a>DescribeOrderableDBInstanceOptions</a> action. <p> Valid
-     *         Values: <code>db.t1.micro | db.m1.small | db.m1.large | db.m1.xlarge |
-     *         db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge</code>
+     * @param dBInstanceClass The compute and memory capacity of the DB Instance. <p> Valid Values:
+     *         <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large |
+     *         db.m1.xlarge | db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge</code>
      */
     public void setDBInstanceClass(String dBInstanceClass) {
         this.dBInstanceClass = dBInstanceClass;
     }
     
     /**
-     * The compute and memory capacity of the DB Instance. To determine the
-     * instance classes that are available for a particular DB engine, use
-     * the <a>DescribeOrderableDBInstanceOptions</a> action. <p> Valid
-     * Values: <code>db.t1.micro | db.m1.small | db.m1.large | db.m1.xlarge |
-     * db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge</code>
+     * The compute and memory capacity of the DB Instance. <p> Valid Values:
+     * <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large |
+     * db.m1.xlarge | db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBInstanceClass The compute and memory capacity of the DB Instance. To determine the
-     *         instance classes that are available for a particular DB engine, use
-     *         the <a>DescribeOrderableDBInstanceOptions</a> action. <p> Valid
-     *         Values: <code>db.t1.micro | db.m1.small | db.m1.large | db.m1.xlarge |
-     *         db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge</code>
+     * @param dBInstanceClass The compute and memory capacity of the DB Instance. <p> Valid Values:
+     *         <code>db.t1.micro | db.m1.small | db.m1.medium | db.m1.large |
+     *         db.m1.xlarge | db.m2.xlarge |db.m2.2xlarge | db.m2.4xlarge</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -1377,41 +1368,41 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * Specifies if the DB Instance is a Multi-AZ deployment. For Microsoft
-     * SQL Server, must be set to false. You cannot set the AvailabilityZone
-     * parameter if the MultiAZ parameter is set to true.
+     * Specifies if the DB Instance is a Multi-AZ deployment. You cannot set
+     * the AvailabilityZone parameter if the MultiAZ parameter is set to
+     * true.
      *
-     * @return Specifies if the DB Instance is a Multi-AZ deployment. For Microsoft
-     *         SQL Server, must be set to false. You cannot set the AvailabilityZone
-     *         parameter if the MultiAZ parameter is set to true.
+     * @return Specifies if the DB Instance is a Multi-AZ deployment. You cannot set
+     *         the AvailabilityZone parameter if the MultiAZ parameter is set to
+     *         true.
      */
     public Boolean isMultiAZ() {
         return multiAZ;
     }
     
     /**
-     * Specifies if the DB Instance is a Multi-AZ deployment. For Microsoft
-     * SQL Server, must be set to false. You cannot set the AvailabilityZone
-     * parameter if the MultiAZ parameter is set to true.
+     * Specifies if the DB Instance is a Multi-AZ deployment. You cannot set
+     * the AvailabilityZone parameter if the MultiAZ parameter is set to
+     * true.
      *
-     * @param multiAZ Specifies if the DB Instance is a Multi-AZ deployment. For Microsoft
-     *         SQL Server, must be set to false. You cannot set the AvailabilityZone
-     *         parameter if the MultiAZ parameter is set to true.
+     * @param multiAZ Specifies if the DB Instance is a Multi-AZ deployment. You cannot set
+     *         the AvailabilityZone parameter if the MultiAZ parameter is set to
+     *         true.
      */
     public void setMultiAZ(Boolean multiAZ) {
         this.multiAZ = multiAZ;
     }
     
     /**
-     * Specifies if the DB Instance is a Multi-AZ deployment. For Microsoft
-     * SQL Server, must be set to false. You cannot set the AvailabilityZone
-     * parameter if the MultiAZ parameter is set to true.
+     * Specifies if the DB Instance is a Multi-AZ deployment. You cannot set
+     * the AvailabilityZone parameter if the MultiAZ parameter is set to
+     * true.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param multiAZ Specifies if the DB Instance is a Multi-AZ deployment. For Microsoft
-     *         SQL Server, must be set to false. You cannot set the AvailabilityZone
-     *         parameter if the MultiAZ parameter is set to true.
+     * @param multiAZ Specifies if the DB Instance is a Multi-AZ deployment. You cannot set
+     *         the AvailabilityZone parameter if the MultiAZ parameter is set to
+     *         true.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -1423,13 +1414,13 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * Specifies if the DB Instance is a Multi-AZ deployment. For Microsoft
-     * SQL Server, must be set to false. You cannot set the AvailabilityZone
-     * parameter if the MultiAZ parameter is set to true.
+     * Specifies if the DB Instance is a Multi-AZ deployment. You cannot set
+     * the AvailabilityZone parameter if the MultiAZ parameter is set to
+     * true.
      *
-     * @return Specifies if the DB Instance is a Multi-AZ deployment. For Microsoft
-     *         SQL Server, must be set to false. You cannot set the AvailabilityZone
-     *         parameter if the MultiAZ parameter is set to true.
+     * @return Specifies if the DB Instance is a Multi-AZ deployment. You cannot set
+     *         the AvailabilityZone parameter if the MultiAZ parameter is set to
+     *         true.
      */
     public Boolean getMultiAZ() {
         return multiAZ;
@@ -1593,6 +1584,52 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
     
     
     /**
+     * The amount of Provisioned IOPS (input/output operations per second) to
+     * be initially allocated for the DB Instance. <p> Constraints: Must be
+     * an integer greater than 1000.
+     *
+     * @return The amount of Provisioned IOPS (input/output operations per second) to
+     *         be initially allocated for the DB Instance. <p> Constraints: Must be
+     *         an integer greater than 1000.
+     */
+    public Integer getIops() {
+        return iops;
+    }
+    
+    /**
+     * The amount of Provisioned IOPS (input/output operations per second) to
+     * be initially allocated for the DB Instance. <p> Constraints: Must be
+     * an integer greater than 1000.
+     *
+     * @param iops The amount of Provisioned IOPS (input/output operations per second) to
+     *         be initially allocated for the DB Instance. <p> Constraints: Must be
+     *         an integer greater than 1000.
+     */
+    public void setIops(Integer iops) {
+        this.iops = iops;
+    }
+    
+    /**
+     * The amount of Provisioned IOPS (input/output operations per second) to
+     * be initially allocated for the DB Instance. <p> Constraints: Must be
+     * an integer greater than 1000.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param iops The amount of Provisioned IOPS (input/output operations per second) to
+     *         be initially allocated for the DB Instance. <p> Constraints: Must be
+     *         an integer greater than 1000.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public CreateDBInstanceRequest withIops(Integer iops) {
+        this.iops = iops;
+        return this;
+    }
+    
+    
+    /**
      * Indicates that the DB Instance should be associated with the specified
      * option group.
      *
@@ -1703,6 +1740,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
         if (engineVersion != null) sb.append("EngineVersion: " + engineVersion + ", ");
         if (autoMinorVersionUpgrade != null) sb.append("AutoMinorVersionUpgrade: " + autoMinorVersionUpgrade + ", ");
         if (licenseModel != null) sb.append("LicenseModel: " + licenseModel + ", ");
+        if (iops != null) sb.append("Iops: " + iops + ", ");
         if (optionGroupName != null) sb.append("OptionGroupName: " + optionGroupName + ", ");
         if (characterSetName != null) sb.append("CharacterSetName: " + characterSetName + ", ");
         sb.append("}");
@@ -1733,6 +1771,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
         hashCode = prime * hashCode + ((getEngineVersion() == null) ? 0 : getEngineVersion().hashCode()); 
         hashCode = prime * hashCode + ((isAutoMinorVersionUpgrade() == null) ? 0 : isAutoMinorVersionUpgrade().hashCode()); 
         hashCode = prime * hashCode + ((getLicenseModel() == null) ? 0 : getLicenseModel().hashCode()); 
+        hashCode = prime * hashCode + ((getIops() == null) ? 0 : getIops().hashCode()); 
         hashCode = prime * hashCode + ((getOptionGroupName() == null) ? 0 : getOptionGroupName().hashCode()); 
         hashCode = prime * hashCode + ((getCharacterSetName() == null) ? 0 : getCharacterSetName().hashCode()); 
         return hashCode;
@@ -1784,6 +1823,8 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
         if (other.isAutoMinorVersionUpgrade() != null && other.isAutoMinorVersionUpgrade().equals(this.isAutoMinorVersionUpgrade()) == false) return false; 
         if (other.getLicenseModel() == null ^ this.getLicenseModel() == null) return false;
         if (other.getLicenseModel() != null && other.getLicenseModel().equals(this.getLicenseModel()) == false) return false; 
+        if (other.getIops() == null ^ this.getIops() == null) return false;
+        if (other.getIops() != null && other.getIops().equals(this.getIops()) == false) return false; 
         if (other.getOptionGroupName() == null ^ this.getOptionGroupName() == null) return false;
         if (other.getOptionGroupName() != null && other.getOptionGroupName().equals(this.getOptionGroupName()) == false) return false; 
         if (other.getCharacterSetName() == null ^ this.getCharacterSetName() == null) return false;

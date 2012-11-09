@@ -67,6 +67,10 @@ public class DescribeGatewayInformationResultJsonUnmarshaller implements Unmarsh
                 if (context.testExpression("GatewayNetworkInterfaces", targetDepth)) {
                     describeGatewayInformationResult.setGatewayNetworkInterfaces(new ListUnmarshaller<NetworkInterface>(NetworkInterfaceJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("GatewayType", targetDepth)) {
+                    context.nextToken();
+                    describeGatewayInformationResult.setGatewayType(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("NextUpdateAvailabilityDate", targetDepth)) {
                     context.nextToken();
                     describeGatewayInformationResult.setNextUpdateAvailabilityDate(StringJsonUnmarshaller.getInstance().unmarshall(context));

@@ -38,7 +38,7 @@ public class ReceiveMessageRequestMarshaller implements Marshaller<Request<Recei
 
         Request<ReceiveMessageRequest> request = new DefaultRequest<ReceiveMessageRequest>(receiveMessageRequest, "AmazonSQS");
         request.addParameter("Action", "ReceiveMessage");
-        request.addParameter("Version", "2011-10-01");
+        request.addParameter("Version", "2012-11-05");
 
         if (receiveMessageRequest.getQueueUrl() != null) {
             request.addParameter("QueueUrl", StringUtils.fromString(receiveMessageRequest.getQueueUrl()));
@@ -59,6 +59,9 @@ public class ReceiveMessageRequestMarshaller implements Marshaller<Request<Recei
         }
         if (receiveMessageRequest.getVisibilityTimeout() != null) {
             request.addParameter("VisibilityTimeout", StringUtils.fromInteger(receiveMessageRequest.getVisibilityTimeout()));
+        }
+        if (receiveMessageRequest.getWaitTimeSeconds() != null) {
+            request.addParameter("WaitTimeSeconds", StringUtils.fromInteger(receiveMessageRequest.getWaitTimeSeconds()));
         }
 
 

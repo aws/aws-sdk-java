@@ -66,6 +66,10 @@ public class DBEngineVersionStaxUnmarshaller implements Unmarshaller<DBEngineVer
                     dBEngineVersion.setDBEngineVersionDescription(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("DefaultCharacterSet", targetDepth)) {
+                    dBEngineVersion.setDefaultCharacterSet(CharacterSetStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
                 if (context.testExpression("SupportedCharacterSets/CharacterSet", targetDepth)) {
                     dBEngineVersion.getSupportedCharacterSets().add(CharacterSetStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

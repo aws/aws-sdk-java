@@ -19,7 +19,8 @@ package com.amazonaws.services.storagegateway.model;
  */
 public enum VolumeType {
     
-    STOREDISCSI("STORED iSCSI");
+    STOREDISCSI("STORED iSCSI"),
+    CACHEDISCSI("CACHED iSCSI");
 
     private String value;
 
@@ -45,6 +46,8 @@ public enum VolumeType {
         
         } else if ("STORED iSCSI".equals(value)) {
             return VolumeType.STOREDISCSI;
+        } else if ("CACHED iSCSI".equals(value)) {
+            return VolumeType.CACHEDISCSI;
         } else {
             throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
         }

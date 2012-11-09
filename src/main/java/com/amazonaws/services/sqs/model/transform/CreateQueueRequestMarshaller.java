@@ -38,7 +38,7 @@ public class CreateQueueRequestMarshaller implements Marshaller<Request<CreateQu
 
         Request<CreateQueueRequest> request = new DefaultRequest<CreateQueueRequest>(createQueueRequest, "AmazonSQS");
         request.addParameter("Action", "CreateQueue");
-        request.addParameter("Version", "2011-10-01");
+        request.addParameter("Version", "2012-11-05");
 
         if (createQueueRequest.getQueueName() != null) {
             request.addParameter("QueueName", StringUtils.fromString(createQueueRequest.getQueueName()));

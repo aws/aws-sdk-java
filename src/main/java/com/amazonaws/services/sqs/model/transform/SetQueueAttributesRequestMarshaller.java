@@ -38,7 +38,7 @@ public class SetQueueAttributesRequestMarshaller implements Marshaller<Request<S
 
         Request<SetQueueAttributesRequest> request = new DefaultRequest<SetQueueAttributesRequest>(setQueueAttributesRequest, "AmazonSQS");
         request.addParameter("Action", "SetQueueAttributes");
-        request.addParameter("Version", "2011-10-01");
+        request.addParameter("Version", "2012-11-05");
 
         if (setQueueAttributesRequest.getQueueUrl() != null) {
             request.addParameter("QueueUrl", StringUtils.fromString(setQueueAttributesRequest.getQueueUrl()));

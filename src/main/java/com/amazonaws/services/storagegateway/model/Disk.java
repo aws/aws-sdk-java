@@ -51,14 +51,15 @@ public class Disk {
      * identifies how the local disk is used.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>STORED iSCSI VOLUME, WORKING STORAGE, AVAILABLE
+     * <b>Allowed Values: </b>AVAILABLE, CACHE STORAGE, STORED iSCSI VOLUME, UPLOAD BUFFER, WORKING STORAGE
      */
     private String diskAllocationType;
 
     /**
      * The iSCSI Qualified Name (IQN) that is defined for the disk. This
      * field is not included in the response if the local disk is not defined
-     * as an iSCSI target.
+     * as an iSCSI target. The format of this field is
+     * <i>targetIqn::LUNNumber::region-volumeId</i>.
      */
     private String diskAllocationResource;
 
@@ -224,7 +225,7 @@ public class Disk {
      * identifies how the local disk is used.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>STORED iSCSI VOLUME, WORKING STORAGE, AVAILABLE
+     * <b>Allowed Values: </b>AVAILABLE, CACHE STORAGE, STORED iSCSI VOLUME, UPLOAD BUFFER, WORKING STORAGE
      *
      * @return One of the <a>DiskAllocationType</a> enumeration values that
      *         identifies how the local disk is used.
@@ -240,7 +241,7 @@ public class Disk {
      * identifies how the local disk is used.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>STORED iSCSI VOLUME, WORKING STORAGE, AVAILABLE
+     * <b>Allowed Values: </b>AVAILABLE, CACHE STORAGE, STORED iSCSI VOLUME, UPLOAD BUFFER, WORKING STORAGE
      *
      * @param diskAllocationType One of the <a>DiskAllocationType</a> enumeration values that
      *         identifies how the local disk is used.
@@ -258,7 +259,7 @@ public class Disk {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>STORED iSCSI VOLUME, WORKING STORAGE, AVAILABLE
+     * <b>Allowed Values: </b>AVAILABLE, CACHE STORAGE, STORED iSCSI VOLUME, UPLOAD BUFFER, WORKING STORAGE
      *
      * @param diskAllocationType One of the <a>DiskAllocationType</a> enumeration values that
      *         identifies how the local disk is used.
@@ -279,7 +280,7 @@ public class Disk {
      * identifies how the local disk is used.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>STORED iSCSI VOLUME, WORKING STORAGE, AVAILABLE
+     * <b>Allowed Values: </b>AVAILABLE, CACHE STORAGE, STORED iSCSI VOLUME, UPLOAD BUFFER, WORKING STORAGE
      *
      * @param diskAllocationType One of the <a>DiskAllocationType</a> enumeration values that
      *         identifies how the local disk is used.
@@ -297,7 +298,7 @@ public class Disk {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>STORED iSCSI VOLUME, WORKING STORAGE, AVAILABLE
+     * <b>Allowed Values: </b>AVAILABLE, CACHE STORAGE, STORED iSCSI VOLUME, UPLOAD BUFFER, WORKING STORAGE
      *
      * @param diskAllocationType One of the <a>DiskAllocationType</a> enumeration values that
      *         identifies how the local disk is used.
@@ -315,11 +316,13 @@ public class Disk {
     /**
      * The iSCSI Qualified Name (IQN) that is defined for the disk. This
      * field is not included in the response if the local disk is not defined
-     * as an iSCSI target.
+     * as an iSCSI target. The format of this field is
+     * <i>targetIqn::LUNNumber::region-volumeId</i>.
      *
      * @return The iSCSI Qualified Name (IQN) that is defined for the disk. This
      *         field is not included in the response if the local disk is not defined
-     *         as an iSCSI target.
+     *         as an iSCSI target. The format of this field is
+     *         <i>targetIqn::LUNNumber::region-volumeId</i>.
      */
     public String getDiskAllocationResource() {
         return diskAllocationResource;
@@ -328,11 +331,13 @@ public class Disk {
     /**
      * The iSCSI Qualified Name (IQN) that is defined for the disk. This
      * field is not included in the response if the local disk is not defined
-     * as an iSCSI target.
+     * as an iSCSI target. The format of this field is
+     * <i>targetIqn::LUNNumber::region-volumeId</i>.
      *
      * @param diskAllocationResource The iSCSI Qualified Name (IQN) that is defined for the disk. This
      *         field is not included in the response if the local disk is not defined
-     *         as an iSCSI target.
+     *         as an iSCSI target. The format of this field is
+     *         <i>targetIqn::LUNNumber::region-volumeId</i>.
      */
     public void setDiskAllocationResource(String diskAllocationResource) {
         this.diskAllocationResource = diskAllocationResource;
@@ -341,13 +346,15 @@ public class Disk {
     /**
      * The iSCSI Qualified Name (IQN) that is defined for the disk. This
      * field is not included in the response if the local disk is not defined
-     * as an iSCSI target.
+     * as an iSCSI target. The format of this field is
+     * <i>targetIqn::LUNNumber::region-volumeId</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param diskAllocationResource The iSCSI Qualified Name (IQN) that is defined for the disk. This
      *         field is not included in the response if the local disk is not defined
-     *         as an iSCSI target.
+     *         as an iSCSI target. The format of this field is
+     *         <i>targetIqn::LUNNumber::region-volumeId</i>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

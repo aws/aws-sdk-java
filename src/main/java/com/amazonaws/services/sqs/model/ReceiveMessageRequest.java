@@ -19,10 +19,18 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the {@link com.amazonaws.services.sqs.AmazonSQS#receiveMessage(ReceiveMessageRequest) ReceiveMessage operation}.
  * <p>
  * Retrieves one or more messages from the specified queue, including the message body and message ID of each message. Messages returned by this action
- * stay in the queue until you delete them. However, once a message is returned to a
- * <code>ReceiveMessage</code> request, it is not returned on subsequent <code>ReceiveMessage</code> requests for the duration of the
- * <code>VisibilityTimeout</code> . If you do not specify a <code>VisibilityTimeout</code> in the request, the overall visibility timeout for the queue
- * is used for the returned messages.
+ * stay in the queue until you delete them. However, once a message is returned to a <code>ReceiveMessage</code> request, it is not returned on
+ * subsequent <code>ReceiveMessage</code> requests for the duration of the <code>VisibilityTimeout</code> . If you do not specify a
+ * <code>VisibilityTimeout</code> in the request, the overall visibility timeout for the queue is used for the returned messages.
+ * </p>
+ * <p>
+ * If a message is available in the queue, the call will return immediately. Otherwise, it will wait up to <code>WaitTimeSeconds</code> for a message to
+ * arrive. If you do not specify <code>WaitTimeSeconds</code> in the request, the queue attribute ReceiveMessageWaitTimeSeconds is used to determine how
+ * long to wait.
+ * </p>
+ * <p>
+ * You could ask for additional information about each message through the attributes. Attributes that can be requested are <code>[SenderId,
+ * ApproximateFirstReceiveTimestamp, ApproximateReceiveCount, SentTimestamp]</code> .
  * </p>
  *
  * @see com.amazonaws.services.sqs.AmazonSQS#receiveMessage(ReceiveMessageRequest)
@@ -35,7 +43,10 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest {
     private String queueUrl;
 
     /**
-     * A list of attributes to retrieve information for.
+     * A list of attributes that need to be returned along with each message.
+     * The set of valid attributes are [SenderId,
+     * ApproximateFirstReceiveTimestamp, ApproximateReceiveCount,
+     * SentTimestamp].
      */
     private java.util.List<String> attributeNames;
 
@@ -52,6 +63,13 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest {
      * <code>ReceiveMessage</code> request.
      */
     private Integer visibilityTimeout;
+
+    /**
+     * The duration (in seconds) for which the call will wait for a message
+     * to arrive in the queue before returning. If a message is available,
+     * the call will return sooner than WaitTimeSeconds.
+     */
+    private Integer waitTimeSeconds;
 
     /**
      * Default constructor for a new ReceiveMessageRequest object.  Callers should use the
@@ -107,9 +125,15 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * A list of attributes to retrieve information for.
+     * A list of attributes that need to be returned along with each message.
+     * The set of valid attributes are [SenderId,
+     * ApproximateFirstReceiveTimestamp, ApproximateReceiveCount,
+     * SentTimestamp].
      *
-     * @return A list of attributes to retrieve information for.
+     * @return A list of attributes that need to be returned along with each message.
+     *         The set of valid attributes are [SenderId,
+     *         ApproximateFirstReceiveTimestamp, ApproximateReceiveCount,
+     *         SentTimestamp].
      */
     public java.util.List<String> getAttributeNames() {
         
@@ -120,9 +144,15 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * A list of attributes to retrieve information for.
+     * A list of attributes that need to be returned along with each message.
+     * The set of valid attributes are [SenderId,
+     * ApproximateFirstReceiveTimestamp, ApproximateReceiveCount,
+     * SentTimestamp].
      *
-     * @param attributeNames A list of attributes to retrieve information for.
+     * @param attributeNames A list of attributes that need to be returned along with each message.
+     *         The set of valid attributes are [SenderId,
+     *         ApproximateFirstReceiveTimestamp, ApproximateReceiveCount,
+     *         SentTimestamp].
      */
     public void setAttributeNames(java.util.Collection<String> attributeNames) {
         if (attributeNames == null) {
@@ -136,11 +166,17 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * A list of attributes to retrieve information for.
+     * A list of attributes that need to be returned along with each message.
+     * The set of valid attributes are [SenderId,
+     * ApproximateFirstReceiveTimestamp, ApproximateReceiveCount,
+     * SentTimestamp].
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param attributeNames A list of attributes to retrieve information for.
+     * @param attributeNames A list of attributes that need to be returned along with each message.
+     *         The set of valid attributes are [SenderId,
+     *         ApproximateFirstReceiveTimestamp, ApproximateReceiveCount,
+     *         SentTimestamp].
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -154,11 +190,17 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * A list of attributes to retrieve information for.
+     * A list of attributes that need to be returned along with each message.
+     * The set of valid attributes are [SenderId,
+     * ApproximateFirstReceiveTimestamp, ApproximateReceiveCount,
+     * SentTimestamp].
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param attributeNames A list of attributes to retrieve information for.
+     * @param attributeNames A list of attributes that need to be returned along with each message.
+     *         The set of valid attributes are [SenderId,
+     *         ApproximateFirstReceiveTimestamp, ApproximateReceiveCount,
+     *         SentTimestamp].
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -268,6 +310,52 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest {
     
     
     /**
+     * The duration (in seconds) for which the call will wait for a message
+     * to arrive in the queue before returning. If a message is available,
+     * the call will return sooner than WaitTimeSeconds.
+     *
+     * @return The duration (in seconds) for which the call will wait for a message
+     *         to arrive in the queue before returning. If a message is available,
+     *         the call will return sooner than WaitTimeSeconds.
+     */
+    public Integer getWaitTimeSeconds() {
+        return waitTimeSeconds;
+    }
+    
+    /**
+     * The duration (in seconds) for which the call will wait for a message
+     * to arrive in the queue before returning. If a message is available,
+     * the call will return sooner than WaitTimeSeconds.
+     *
+     * @param waitTimeSeconds The duration (in seconds) for which the call will wait for a message
+     *         to arrive in the queue before returning. If a message is available,
+     *         the call will return sooner than WaitTimeSeconds.
+     */
+    public void setWaitTimeSeconds(Integer waitTimeSeconds) {
+        this.waitTimeSeconds = waitTimeSeconds;
+    }
+    
+    /**
+     * The duration (in seconds) for which the call will wait for a message
+     * to arrive in the queue before returning. If a message is available,
+     * the call will return sooner than WaitTimeSeconds.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param waitTimeSeconds The duration (in seconds) for which the call will wait for a message
+     *         to arrive in the queue before returning. If a message is available,
+     *         the call will return sooner than WaitTimeSeconds.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public ReceiveMessageRequest withWaitTimeSeconds(Integer waitTimeSeconds) {
+        this.waitTimeSeconds = waitTimeSeconds;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -283,6 +371,7 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest {
         if (attributeNames != null) sb.append("AttributeNames: " + attributeNames + ", ");
         if (maxNumberOfMessages != null) sb.append("MaxNumberOfMessages: " + maxNumberOfMessages + ", ");
         if (visibilityTimeout != null) sb.append("VisibilityTimeout: " + visibilityTimeout + ", ");
+        if (waitTimeSeconds != null) sb.append("WaitTimeSeconds: " + waitTimeSeconds + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -296,6 +385,7 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest {
         hashCode = prime * hashCode + ((getAttributeNames() == null) ? 0 : getAttributeNames().hashCode()); 
         hashCode = prime * hashCode + ((getMaxNumberOfMessages() == null) ? 0 : getMaxNumberOfMessages().hashCode()); 
         hashCode = prime * hashCode + ((getVisibilityTimeout() == null) ? 0 : getVisibilityTimeout().hashCode()); 
+        hashCode = prime * hashCode + ((getWaitTimeSeconds() == null) ? 0 : getWaitTimeSeconds().hashCode()); 
         return hashCode;
     }
     
@@ -315,6 +405,8 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest {
         if (other.getMaxNumberOfMessages() != null && other.getMaxNumberOfMessages().equals(this.getMaxNumberOfMessages()) == false) return false; 
         if (other.getVisibilityTimeout() == null ^ this.getVisibilityTimeout() == null) return false;
         if (other.getVisibilityTimeout() != null && other.getVisibilityTimeout().equals(this.getVisibilityTimeout()) == false) return false; 
+        if (other.getWaitTimeSeconds() == null ^ this.getWaitTimeSeconds() == null) return false;
+        if (other.getWaitTimeSeconds() != null && other.getWaitTimeSeconds().equals(this.getWaitTimeSeconds()) == false) return false; 
         return true;
     }
     

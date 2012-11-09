@@ -32,7 +32,7 @@ public class ChapInfo {
 
     /**
      * The secret key that the initiator (e.g. Windows client) must provide
-     * to participate in mutual CHAP with the target. <p>Length: 12 to 16.
+     * to participate in mutual CHAP with the target.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>12 - 16<br/>
@@ -40,10 +40,7 @@ public class ChapInfo {
     private String secretToAuthenticateInitiator;
 
     /**
-     * The iSCSI initiator that connects to the target. <p>Length: Minimum
-     * length of 1. Maximum length of 255. <p><i>Valid Values</i>: The target
-     * name can contain lowercase letters, numbers, periods (.), and hyphens
-     * (-).
+     * The iSCSI initiator that connects to the target.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
@@ -53,7 +50,7 @@ public class ChapInfo {
 
     /**
      * The secret key that the target must provide to participate in mutual
-     * CHAP with the initiator (e.g. Windows client). <p>Length: 12 to 16.
+     * CHAP with the initiator (e.g. Windows client).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>12 - 16<br/>
@@ -111,13 +108,13 @@ public class ChapInfo {
     
     /**
      * The secret key that the initiator (e.g. Windows client) must provide
-     * to participate in mutual CHAP with the target. <p>Length: 12 to 16.
+     * to participate in mutual CHAP with the target.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>12 - 16<br/>
      *
      * @return The secret key that the initiator (e.g. Windows client) must provide
-     *         to participate in mutual CHAP with the target. <p>Length: 12 to 16.
+     *         to participate in mutual CHAP with the target.
      */
     public String getSecretToAuthenticateInitiator() {
         return secretToAuthenticateInitiator;
@@ -125,13 +122,13 @@ public class ChapInfo {
     
     /**
      * The secret key that the initiator (e.g. Windows client) must provide
-     * to participate in mutual CHAP with the target. <p>Length: 12 to 16.
+     * to participate in mutual CHAP with the target.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>12 - 16<br/>
      *
      * @param secretToAuthenticateInitiator The secret key that the initiator (e.g. Windows client) must provide
-     *         to participate in mutual CHAP with the target. <p>Length: 12 to 16.
+     *         to participate in mutual CHAP with the target.
      */
     public void setSecretToAuthenticateInitiator(String secretToAuthenticateInitiator) {
         this.secretToAuthenticateInitiator = secretToAuthenticateInitiator;
@@ -139,7 +136,7 @@ public class ChapInfo {
     
     /**
      * The secret key that the initiator (e.g. Windows client) must provide
-     * to participate in mutual CHAP with the target. <p>Length: 12 to 16.
+     * to participate in mutual CHAP with the target.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -147,7 +144,7 @@ public class ChapInfo {
      * <b>Length: </b>12 - 16<br/>
      *
      * @param secretToAuthenticateInitiator The secret key that the initiator (e.g. Windows client) must provide
-     *         to participate in mutual CHAP with the target. <p>Length: 12 to 16.
+     *         to participate in mutual CHAP with the target.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -159,48 +156,33 @@ public class ChapInfo {
     
     
     /**
-     * The iSCSI initiator that connects to the target. <p>Length: Minimum
-     * length of 1. Maximum length of 255. <p><i>Valid Values</i>: The target
-     * name can contain lowercase letters, numbers, periods (.), and hyphens
-     * (-).
+     * The iSCSI initiator that connects to the target.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[0-9a-z:.-]+<br/>
      *
-     * @return The iSCSI initiator that connects to the target. <p>Length: Minimum
-     *         length of 1. Maximum length of 255. <p><i>Valid Values</i>: The target
-     *         name can contain lowercase letters, numbers, periods (.), and hyphens
-     *         (-).
+     * @return The iSCSI initiator that connects to the target.
      */
     public String getInitiatorName() {
         return initiatorName;
     }
     
     /**
-     * The iSCSI initiator that connects to the target. <p>Length: Minimum
-     * length of 1. Maximum length of 255. <p><i>Valid Values</i>: The target
-     * name can contain lowercase letters, numbers, periods (.), and hyphens
-     * (-).
+     * The iSCSI initiator that connects to the target.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[0-9a-z:.-]+<br/>
      *
-     * @param initiatorName The iSCSI initiator that connects to the target. <p>Length: Minimum
-     *         length of 1. Maximum length of 255. <p><i>Valid Values</i>: The target
-     *         name can contain lowercase letters, numbers, periods (.), and hyphens
-     *         (-).
+     * @param initiatorName The iSCSI initiator that connects to the target.
      */
     public void setInitiatorName(String initiatorName) {
         this.initiatorName = initiatorName;
     }
     
     /**
-     * The iSCSI initiator that connects to the target. <p>Length: Minimum
-     * length of 1. Maximum length of 255. <p><i>Valid Values</i>: The target
-     * name can contain lowercase letters, numbers, periods (.), and hyphens
-     * (-).
+     * The iSCSI initiator that connects to the target.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -208,10 +190,7 @@ public class ChapInfo {
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[0-9a-z:.-]+<br/>
      *
-     * @param initiatorName The iSCSI initiator that connects to the target. <p>Length: Minimum
-     *         length of 1. Maximum length of 255. <p><i>Valid Values</i>: The target
-     *         name can contain lowercase letters, numbers, periods (.), and hyphens
-     *         (-).
+     * @param initiatorName The iSCSI initiator that connects to the target.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -224,13 +203,13 @@ public class ChapInfo {
     
     /**
      * The secret key that the target must provide to participate in mutual
-     * CHAP with the initiator (e.g. Windows client). <p>Length: 12 to 16.
+     * CHAP with the initiator (e.g. Windows client).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>12 - 16<br/>
      *
      * @return The secret key that the target must provide to participate in mutual
-     *         CHAP with the initiator (e.g. Windows client). <p>Length: 12 to 16.
+     *         CHAP with the initiator (e.g. Windows client).
      */
     public String getSecretToAuthenticateTarget() {
         return secretToAuthenticateTarget;
@@ -238,13 +217,13 @@ public class ChapInfo {
     
     /**
      * The secret key that the target must provide to participate in mutual
-     * CHAP with the initiator (e.g. Windows client). <p>Length: 12 to 16.
+     * CHAP with the initiator (e.g. Windows client).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>12 - 16<br/>
      *
      * @param secretToAuthenticateTarget The secret key that the target must provide to participate in mutual
-     *         CHAP with the initiator (e.g. Windows client). <p>Length: 12 to 16.
+     *         CHAP with the initiator (e.g. Windows client).
      */
     public void setSecretToAuthenticateTarget(String secretToAuthenticateTarget) {
         this.secretToAuthenticateTarget = secretToAuthenticateTarget;
@@ -252,7 +231,7 @@ public class ChapInfo {
     
     /**
      * The secret key that the target must provide to participate in mutual
-     * CHAP with the initiator (e.g. Windows client). <p>Length: 12 to 16.
+     * CHAP with the initiator (e.g. Windows client).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -260,7 +239,7 @@ public class ChapInfo {
      * <b>Length: </b>12 - 16<br/>
      *
      * @param secretToAuthenticateTarget The secret key that the target must provide to participate in mutual
-     *         CHAP with the initiator (e.g. Windows client). <p>Length: 12 to 16.
+     *         CHAP with the initiator (e.g. Windows client).
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

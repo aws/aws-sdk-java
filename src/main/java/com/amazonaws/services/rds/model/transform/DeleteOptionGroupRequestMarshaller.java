@@ -38,7 +38,7 @@ public class DeleteOptionGroupRequestMarshaller implements Marshaller<Request<De
 
         Request<DeleteOptionGroupRequest> request = new DefaultRequest<DeleteOptionGroupRequest>(deleteOptionGroupRequest, "AmazonRDS");
         request.addParameter("Action", "DeleteOptionGroup");
-        request.addParameter("Version", "2012-04-23");
+        request.addParameter("Version", "2012-09-17");
 
         if (deleteOptionGroupRequest.getOptionGroupName() != null) {
             request.addParameter("OptionGroupName", StringUtils.fromString(deleteOptionGroupRequest.getOptionGroupName()));

@@ -210,6 +210,9 @@ public class RunJobFlowRequestMarshaller implements Marshaller<Request<RunJobFlo
 
             supportedProductsListIndex++;
         }
+        if (runJobFlowRequest.isVisibleToAllUsers() != null) {
+            request.addParameter("VisibleToAllUsers", StringUtils.fromBoolean(runJobFlowRequest.isVisibleToAllUsers()));
+        }
 
 
         return request;

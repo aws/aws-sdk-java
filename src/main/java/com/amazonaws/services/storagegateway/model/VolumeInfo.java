@@ -38,7 +38,7 @@ public class VolumeInfo {
      * storage volume, for example as a storage volume.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>STORED iSCSI
+     * <b>Allowed Values: </b>STORED iSCSI, CACHED iSCSI
      */
     private String volumeType;
 
@@ -114,7 +114,7 @@ public class VolumeInfo {
      * storage volume, for example as a storage volume.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>STORED iSCSI
+     * <b>Allowed Values: </b>STORED iSCSI, CACHED iSCSI
      *
      * @return One of the VolumeType values that indicates the configuration of the
      *         storage volume, for example as a storage volume.
@@ -130,7 +130,7 @@ public class VolumeInfo {
      * storage volume, for example as a storage volume.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>STORED iSCSI
+     * <b>Allowed Values: </b>STORED iSCSI, CACHED iSCSI
      *
      * @param volumeType One of the VolumeType values that indicates the configuration of the
      *         storage volume, for example as a storage volume.
@@ -148,7 +148,7 @@ public class VolumeInfo {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>STORED iSCSI
+     * <b>Allowed Values: </b>STORED iSCSI, CACHED iSCSI
      *
      * @param volumeType One of the VolumeType values that indicates the configuration of the
      *         storage volume, for example as a storage volume.
@@ -169,7 +169,7 @@ public class VolumeInfo {
      * storage volume, for example as a storage volume.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>STORED iSCSI
+     * <b>Allowed Values: </b>STORED iSCSI, CACHED iSCSI
      *
      * @param volumeType One of the VolumeType values that indicates the configuration of the
      *         storage volume, for example as a storage volume.
@@ -187,7 +187,7 @@ public class VolumeInfo {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>STORED iSCSI
+     * <b>Allowed Values: </b>STORED iSCSI, CACHED iSCSI
      *
      * @param volumeType One of the VolumeType values that indicates the configuration of the
      *         storage volume, for example as a storage volume.

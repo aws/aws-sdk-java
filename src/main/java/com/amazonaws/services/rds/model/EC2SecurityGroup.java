@@ -29,7 +29,8 @@ package com.amazonaws.services.rds.model;
 public class EC2SecurityGroup {
 
     /**
-     * Provides the status of the EC2 security group.
+     * Provides the status of the EC2 security group. Status can be
+     * "authorizing", "authorized", "revoking", and "revoked".
      */
     private String status;
 
@@ -56,29 +57,35 @@ public class EC2SecurityGroup {
     public EC2SecurityGroup() {}
     
     /**
-     * Provides the status of the EC2 security group.
+     * Provides the status of the EC2 security group. Status can be
+     * "authorizing", "authorized", "revoking", and "revoked".
      *
-     * @return Provides the status of the EC2 security group.
+     * @return Provides the status of the EC2 security group. Status can be
+     *         "authorizing", "authorized", "revoking", and "revoked".
      */
     public String getStatus() {
         return status;
     }
     
     /**
-     * Provides the status of the EC2 security group.
+     * Provides the status of the EC2 security group. Status can be
+     * "authorizing", "authorized", "revoking", and "revoked".
      *
-     * @param status Provides the status of the EC2 security group.
+     * @param status Provides the status of the EC2 security group. Status can be
+     *         "authorizing", "authorized", "revoking", and "revoked".
      */
     public void setStatus(String status) {
         this.status = status;
     }
     
     /**
-     * Provides the status of the EC2 security group.
+     * Provides the status of the EC2 security group. Status can be
+     * "authorizing", "authorized", "revoking", and "revoked".
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param status Provides the status of the EC2 security group.
+     * @param status Provides the status of the EC2 security group. Status can be
+     *         "authorizing", "authorized", "revoking", and "revoked".
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

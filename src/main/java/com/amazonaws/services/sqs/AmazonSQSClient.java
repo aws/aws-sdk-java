@@ -70,7 +70,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
 
     
     /** AWS signer for authenticating requests. */
-    private QueryStringSigner signer;
+    private AWS4Signer signer;
 
 
     /**
@@ -208,9 +208,9 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
         exceptionUnmarshallers.add(new BatchEntryIdsNotDistinctExceptionUnmarshaller());
         
         exceptionUnmarshallers.add(new StandardErrorUnmarshaller());
-        setEndpoint("queue.amazonaws.com");
+        setEndpoint("sqs.us-east-1.amazonaws.com");
 
-        signer = new QueryStringSigner();
+        signer = new AWS4Signer();
         
 
         HandlerChainFactory chainFactory = new HandlerChainFactory();
@@ -221,9 +221,9 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
     
     /**
      * <p>
-     * Sets an attribute of a queue. The set of attributes that can be set
-     * are - DelaySeconds, MessageRetentionPeriod, MaximumMessageSize,
-     * VisibilityTimeout and Policy.
+     * Sets the value of one or more queue attributes. Valid attributes that
+     * can be set are [VisibilityTimeout, Policy, MaximumMessageSize,
+     * MessageRetentionPeriod, ReceiveMessageWaitTimeSeconds].
      * </p>
      *
      * @param setQueueAttributesRequest Container for the necessary
@@ -422,6 +422,9 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      * queue.</li>
      * <li> <code>DelaySeconds</code> - returns the default delay on the
      * queue in seconds.</li>
+     * <li> <code>ReceiveMessageWaitTimeSeconds</code> - returns the time
+     * for which a ReceiveMessage call will wait for a message to
+     * arrive.</li>
      * 
      * </ul>
      * 
@@ -545,12 +548,25 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      * Retrieves one or more messages from the specified queue, including the
      * message body and message ID of each message. Messages returned by this
      * action stay in the queue until you delete them. However, once a
-     * message is returned to a
-     * <code>ReceiveMessage</code> request, it is not
-     * returned on subsequent <code>ReceiveMessage</code> requests for the
-     * duration of the <code>VisibilityTimeout</code> . If you do not specify
-     * a <code>VisibilityTimeout</code> in the request, the overall
+     * message is returned to a <code>ReceiveMessage</code> request, it is
+     * not returned on subsequent <code>ReceiveMessage</code> requests for
+     * the duration of the <code>VisibilityTimeout</code> . If you do not
+     * specify a <code>VisibilityTimeout</code> in the request, the overall
      * visibility timeout for the queue is used for the returned messages.
+     * </p>
+     * <p>
+     * If a message is available in the queue, the call will return
+     * immediately. Otherwise, it will wait up to
+     * <code>WaitTimeSeconds</code> for a message to arrive. If you do not
+     * specify <code>WaitTimeSeconds</code> in the request, the queue
+     * attribute ReceiveMessageWaitTimeSeconds is used to determine how long
+     * to wait.
+     * </p>
+     * <p>
+     * You could ask for additional information about each message through
+     * the attributes. Attributes that can be requested are <code>[SenderId,
+     * ApproximateFirstReceiveTimestamp, ApproximateReceiveCount,
+     * SentTimestamp]</code> .
      * </p>
      *
      * @param receiveMessageRequest Container for the necessary parameters to
@@ -767,6 +783,47 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      */
     public ListQueuesResult listQueues() throws AmazonServiceException, AmazonClientException {
         return listQueues(new ListQueuesRequest());
+    }
+    
+    /**
+     * Overrides the default endpoint for this client ("sqs.us-east-1.amazonaws.com") and explicitly provides
+     * an AWS region ID and AWS service name to use when the client calculates a signature
+     * for requests.  In almost all cases, this region ID and service name
+     * are automatically determined from the endpoint, and callers should use the simpler
+     * one-argument form of setEndpoint instead of this method.
+     * <p>
+     * <b>This method is not threadsafe. Endpoints should be configured when the
+     * client is created and before any service requests are made. Changing it
+     * afterwards creates inevitable race conditions for any service requests in
+     * transit.</b>
+     * <p>
+     * Callers can pass in just the endpoint (ex: "sqs.us-east-1.amazonaws.com") or a full
+     * URL, including the protocol (ex: "sqs.us-east-1.amazonaws.com"). If the
+     * protocol is not specified here, the default protocol from this client's
+     * {@link ClientConfiguration} will be used, which by default is HTTPS.
+     * <p>
+     * For more information on using AWS regions with the AWS SDK for Java, and
+     * a complete list of all available endpoints for all AWS services, see:
+     * <a href="http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912">
+     * http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912</a>
+     *
+     * @param endpoint
+     *            The endpoint (ex: "sqs.us-east-1.amazonaws.com") or a full URL,
+     *            including the protocol (ex: "sqs.us-east-1.amazonaws.com") of
+     *            the region specific AWS endpoint this client will communicate
+     *            with.
+     * @param serviceName
+     *            The name of the AWS service to use when signing requests.
+     * @param regionId
+     *            The ID of the region in which this service resides.
+     *
+     * @throws IllegalArgumentException
+     *             If any problems are detected with the specified endpoint.
+     */
+    public void setEndpoint(String endpoint, String serviceName, String regionId) throws IllegalArgumentException {
+        setEndpoint(endpoint);
+        signer.setServiceName(serviceName);
+        signer.setRegionName(regionId);
     }
     
 

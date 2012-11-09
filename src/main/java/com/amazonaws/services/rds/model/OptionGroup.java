@@ -41,6 +41,23 @@ public class OptionGroup {
     private java.util.List<Option> options;
 
     /**
+     * Indicates whether this option group can be applied to both VPC and
+     * non-VPC instances. The value 'true' indicates the option group can be
+     * applied to both VPC and non-VPC instances.
+     */
+    private Boolean allowsVpcAndNonVpcInstanceMemberships;
+
+    /**
+     * If AllowsVpcAndNonVpcInstanceMemberships is 'false', this field is
+     * blank. If AllowsVpcAndNonVpcInstanceMemberships is 'true' and this
+     * field is blank, then this option group can be applied to both VPC and
+     * non-VPC instances. If this field contains a value, then this option
+     * group can only be applied to instances that are in the VPC indicated
+     * by this field.
+     */
+    private String vpcId;
+
+    /**
      * Specifies the name of the option group.
      *
      * @return Specifies the name of the option group.
@@ -247,6 +264,129 @@ public class OptionGroup {
     }
     
     /**
+     * Indicates whether this option group can be applied to both VPC and
+     * non-VPC instances. The value 'true' indicates the option group can be
+     * applied to both VPC and non-VPC instances.
+     *
+     * @return Indicates whether this option group can be applied to both VPC and
+     *         non-VPC instances. The value 'true' indicates the option group can be
+     *         applied to both VPC and non-VPC instances.
+     */
+    public Boolean isAllowsVpcAndNonVpcInstanceMemberships() {
+        return allowsVpcAndNonVpcInstanceMemberships;
+    }
+    
+    /**
+     * Indicates whether this option group can be applied to both VPC and
+     * non-VPC instances. The value 'true' indicates the option group can be
+     * applied to both VPC and non-VPC instances.
+     *
+     * @param allowsVpcAndNonVpcInstanceMemberships Indicates whether this option group can be applied to both VPC and
+     *         non-VPC instances. The value 'true' indicates the option group can be
+     *         applied to both VPC and non-VPC instances.
+     */
+    public void setAllowsVpcAndNonVpcInstanceMemberships(Boolean allowsVpcAndNonVpcInstanceMemberships) {
+        this.allowsVpcAndNonVpcInstanceMemberships = allowsVpcAndNonVpcInstanceMemberships;
+    }
+    
+    /**
+     * Indicates whether this option group can be applied to both VPC and
+     * non-VPC instances. The value 'true' indicates the option group can be
+     * applied to both VPC and non-VPC instances.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param allowsVpcAndNonVpcInstanceMemberships Indicates whether this option group can be applied to both VPC and
+     *         non-VPC instances. The value 'true' indicates the option group can be
+     *         applied to both VPC and non-VPC instances.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public OptionGroup withAllowsVpcAndNonVpcInstanceMemberships(Boolean allowsVpcAndNonVpcInstanceMemberships) {
+        this.allowsVpcAndNonVpcInstanceMemberships = allowsVpcAndNonVpcInstanceMemberships;
+        return this;
+    }
+    
+    
+    /**
+     * Indicates whether this option group can be applied to both VPC and
+     * non-VPC instances. The value 'true' indicates the option group can be
+     * applied to both VPC and non-VPC instances.
+     *
+     * @return Indicates whether this option group can be applied to both VPC and
+     *         non-VPC instances. The value 'true' indicates the option group can be
+     *         applied to both VPC and non-VPC instances.
+     */
+    public Boolean getAllowsVpcAndNonVpcInstanceMemberships() {
+        return allowsVpcAndNonVpcInstanceMemberships;
+    }
+    
+    /**
+     * If AllowsVpcAndNonVpcInstanceMemberships is 'false', this field is
+     * blank. If AllowsVpcAndNonVpcInstanceMemberships is 'true' and this
+     * field is blank, then this option group can be applied to both VPC and
+     * non-VPC instances. If this field contains a value, then this option
+     * group can only be applied to instances that are in the VPC indicated
+     * by this field.
+     *
+     * @return If AllowsVpcAndNonVpcInstanceMemberships is 'false', this field is
+     *         blank. If AllowsVpcAndNonVpcInstanceMemberships is 'true' and this
+     *         field is blank, then this option group can be applied to both VPC and
+     *         non-VPC instances. If this field contains a value, then this option
+     *         group can only be applied to instances that are in the VPC indicated
+     *         by this field.
+     */
+    public String getVpcId() {
+        return vpcId;
+    }
+    
+    /**
+     * If AllowsVpcAndNonVpcInstanceMemberships is 'false', this field is
+     * blank. If AllowsVpcAndNonVpcInstanceMemberships is 'true' and this
+     * field is blank, then this option group can be applied to both VPC and
+     * non-VPC instances. If this field contains a value, then this option
+     * group can only be applied to instances that are in the VPC indicated
+     * by this field.
+     *
+     * @param vpcId If AllowsVpcAndNonVpcInstanceMemberships is 'false', this field is
+     *         blank. If AllowsVpcAndNonVpcInstanceMemberships is 'true' and this
+     *         field is blank, then this option group can be applied to both VPC and
+     *         non-VPC instances. If this field contains a value, then this option
+     *         group can only be applied to instances that are in the VPC indicated
+     *         by this field.
+     */
+    public void setVpcId(String vpcId) {
+        this.vpcId = vpcId;
+    }
+    
+    /**
+     * If AllowsVpcAndNonVpcInstanceMemberships is 'false', this field is
+     * blank. If AllowsVpcAndNonVpcInstanceMemberships is 'true' and this
+     * field is blank, then this option group can be applied to both VPC and
+     * non-VPC instances. If this field contains a value, then this option
+     * group can only be applied to instances that are in the VPC indicated
+     * by this field.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param vpcId If AllowsVpcAndNonVpcInstanceMemberships is 'false', this field is
+     *         blank. If AllowsVpcAndNonVpcInstanceMemberships is 'true' and this
+     *         field is blank, then this option group can be applied to both VPC and
+     *         non-VPC instances. If this field contains a value, then this option
+     *         group can only be applied to instances that are in the VPC indicated
+     *         by this field.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public OptionGroup withVpcId(String vpcId) {
+        this.vpcId = vpcId;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -263,6 +403,8 @@ public class OptionGroup {
         if (engineName != null) sb.append("EngineName: " + engineName + ", ");
         if (majorEngineVersion != null) sb.append("MajorEngineVersion: " + majorEngineVersion + ", ");
         if (options != null) sb.append("Options: " + options + ", ");
+        if (allowsVpcAndNonVpcInstanceMemberships != null) sb.append("AllowsVpcAndNonVpcInstanceMemberships: " + allowsVpcAndNonVpcInstanceMemberships + ", ");
+        if (vpcId != null) sb.append("VpcId: " + vpcId + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -277,6 +419,8 @@ public class OptionGroup {
         hashCode = prime * hashCode + ((getEngineName() == null) ? 0 : getEngineName().hashCode()); 
         hashCode = prime * hashCode + ((getMajorEngineVersion() == null) ? 0 : getMajorEngineVersion().hashCode()); 
         hashCode = prime * hashCode + ((getOptions() == null) ? 0 : getOptions().hashCode()); 
+        hashCode = prime * hashCode + ((isAllowsVpcAndNonVpcInstanceMemberships() == null) ? 0 : isAllowsVpcAndNonVpcInstanceMemberships().hashCode()); 
+        hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode()); 
         return hashCode;
     }
     
@@ -298,6 +442,10 @@ public class OptionGroup {
         if (other.getMajorEngineVersion() != null && other.getMajorEngineVersion().equals(this.getMajorEngineVersion()) == false) return false; 
         if (other.getOptions() == null ^ this.getOptions() == null) return false;
         if (other.getOptions() != null && other.getOptions().equals(this.getOptions()) == false) return false; 
+        if (other.isAllowsVpcAndNonVpcInstanceMemberships() == null ^ this.isAllowsVpcAndNonVpcInstanceMemberships() == null) return false;
+        if (other.isAllowsVpcAndNonVpcInstanceMemberships() != null && other.isAllowsVpcAndNonVpcInstanceMemberships().equals(this.isAllowsVpcAndNonVpcInstanceMemberships()) == false) return false; 
+        if (other.getVpcId() == null ^ this.getVpcId() == null) return false;
+        if (other.getVpcId() != null && other.getVpcId().equals(this.getVpcId()) == false) return false; 
         return true;
     }
     

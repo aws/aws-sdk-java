@@ -43,9 +43,9 @@ import com.amazonaws.services.sqs.model.*;
 public interface AmazonSQSAsync extends AmazonSQS {
     /**
      * <p>
-     * Sets an attribute of a queue. The set of attributes that can be set
-     * are - DelaySeconds, MessageRetentionPeriod, MaximumMessageSize,
-     * VisibilityTimeout and Policy.
+     * Sets the value of one or more queue attributes. Valid attributes that
+     * can be set are [VisibilityTimeout, Policy, MaximumMessageSize,
+     * MessageRetentionPeriod, ReceiveMessageWaitTimeSeconds].
      * </p>
      *
      * @param setQueueAttributesRequest Container for the necessary
@@ -67,9 +67,9 @@ public interface AmazonSQSAsync extends AmazonSQS {
 
     /**
      * <p>
-     * Sets an attribute of a queue. The set of attributes that can be set
-     * are - DelaySeconds, MessageRetentionPeriod, MaximumMessageSize,
-     * VisibilityTimeout and Policy.
+     * Sets the value of one or more queue attributes. Valid attributes that
+     * can be set are [VisibilityTimeout, Policy, MaximumMessageSize,
+     * MessageRetentionPeriod, ReceiveMessageWaitTimeSeconds].
      * </p>
      *
      * @param setQueueAttributesRequest Container for the necessary
@@ -399,6 +399,9 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * queue.</li>
      * <li> <code>DelaySeconds</code> - returns the default delay on the
      * queue in seconds.</li>
+     * <li> <code>ReceiveMessageWaitTimeSeconds</code> - returns the time
+     * for which a ReceiveMessage call will wait for a message to
+     * arrive.</li>
      * 
      * </ul>
      * 
@@ -454,6 +457,9 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * queue.</li>
      * <li> <code>DelaySeconds</code> - returns the default delay on the
      * queue in seconds.</li>
+     * <li> <code>ReceiveMessageWaitTimeSeconds</code> - returns the time
+     * for which a ReceiveMessage call will wait for a message to
+     * arrive.</li>
      * 
      * </ul>
      * 
@@ -651,12 +657,25 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * Retrieves one or more messages from the specified queue, including the
      * message body and message ID of each message. Messages returned by this
      * action stay in the queue until you delete them. However, once a
-     * message is returned to a
-     * <code>ReceiveMessage</code> request, it is not
-     * returned on subsequent <code>ReceiveMessage</code> requests for the
-     * duration of the <code>VisibilityTimeout</code> . If you do not specify
-     * a <code>VisibilityTimeout</code> in the request, the overall
+     * message is returned to a <code>ReceiveMessage</code> request, it is
+     * not returned on subsequent <code>ReceiveMessage</code> requests for
+     * the duration of the <code>VisibilityTimeout</code> . If you do not
+     * specify a <code>VisibilityTimeout</code> in the request, the overall
      * visibility timeout for the queue is used for the returned messages.
+     * </p>
+     * <p>
+     * If a message is available in the queue, the call will return
+     * immediately. Otherwise, it will wait up to
+     * <code>WaitTimeSeconds</code> for a message to arrive. If you do not
+     * specify <code>WaitTimeSeconds</code> in the request, the queue
+     * attribute ReceiveMessageWaitTimeSeconds is used to determine how long
+     * to wait.
+     * </p>
+     * <p>
+     * You could ask for additional information about each message through
+     * the attributes. Attributes that can be requested are <code>[SenderId,
+     * ApproximateFirstReceiveTimestamp, ApproximateReceiveCount,
+     * SentTimestamp]</code> .
      * </p>
      *
      * @param receiveMessageRequest Container for the necessary parameters to
@@ -681,12 +700,25 @@ public interface AmazonSQSAsync extends AmazonSQS {
      * Retrieves one or more messages from the specified queue, including the
      * message body and message ID of each message. Messages returned by this
      * action stay in the queue until you delete them. However, once a
-     * message is returned to a
-     * <code>ReceiveMessage</code> request, it is not
-     * returned on subsequent <code>ReceiveMessage</code> requests for the
-     * duration of the <code>VisibilityTimeout</code> . If you do not specify
-     * a <code>VisibilityTimeout</code> in the request, the overall
+     * message is returned to a <code>ReceiveMessage</code> request, it is
+     * not returned on subsequent <code>ReceiveMessage</code> requests for
+     * the duration of the <code>VisibilityTimeout</code> . If you do not
+     * specify a <code>VisibilityTimeout</code> in the request, the overall
      * visibility timeout for the queue is used for the returned messages.
+     * </p>
+     * <p>
+     * If a message is available in the queue, the call will return
+     * immediately. Otherwise, it will wait up to
+     * <code>WaitTimeSeconds</code> for a message to arrive. If you do not
+     * specify <code>WaitTimeSeconds</code> in the request, the queue
+     * attribute ReceiveMessageWaitTimeSeconds is used to determine how long
+     * to wait.
+     * </p>
+     * <p>
+     * You could ask for additional information about each message through
+     * the attributes. Attributes that can be requested are <code>[SenderId,
+     * ApproximateFirstReceiveTimestamp, ApproximateReceiveCount,
+     * SentTimestamp]</code> .
      * </p>
      *
      * @param receiveMessageRequest Container for the necessary parameters to

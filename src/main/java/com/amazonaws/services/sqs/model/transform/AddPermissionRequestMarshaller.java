@@ -38,7 +38,7 @@ public class AddPermissionRequestMarshaller implements Marshaller<Request<AddPer
 
         Request<AddPermissionRequest> request = new DefaultRequest<AddPermissionRequest>(addPermissionRequest, "AmazonSQS");
         request.addParameter("Action", "AddPermission");
-        request.addParameter("Version", "2011-10-01");
+        request.addParameter("Version", "2012-11-05");
 
         if (addPermissionRequest.getQueueUrl() != null) {
             request.addParameter("QueueUrl", StringUtils.fromString(addPermissionRequest.getQueueUrl()));

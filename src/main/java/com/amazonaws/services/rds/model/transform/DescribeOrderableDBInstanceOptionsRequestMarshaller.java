@@ -38,7 +38,7 @@ public class DescribeOrderableDBInstanceOptionsRequestMarshaller implements Mars
 
         Request<DescribeOrderableDBInstanceOptionsRequest> request = new DefaultRequest<DescribeOrderableDBInstanceOptionsRequest>(describeOrderableDBInstanceOptionsRequest, "AmazonRDS");
         request.addParameter("Action", "DescribeOrderableDBInstanceOptions");
-        request.addParameter("Version", "2012-04-23");
+        request.addParameter("Version", "2012-09-17");
 
         if (describeOrderableDBInstanceOptionsRequest.getEngine() != null) {
             request.addParameter("Engine", StringUtils.fromString(describeOrderableDBInstanceOptionsRequest.getEngine()));
@@ -51,6 +51,9 @@ public class DescribeOrderableDBInstanceOptionsRequestMarshaller implements Mars
         }
         if (describeOrderableDBInstanceOptionsRequest.getLicenseModel() != null) {
             request.addParameter("LicenseModel", StringUtils.fromString(describeOrderableDBInstanceOptionsRequest.getLicenseModel()));
+        }
+        if (describeOrderableDBInstanceOptionsRequest.isVpc() != null) {
+            request.addParameter("Vpc", StringUtils.fromBoolean(describeOrderableDBInstanceOptionsRequest.isVpc()));
         }
         if (describeOrderableDBInstanceOptionsRequest.getMaxRecords() != null) {
             request.addParameter("MaxRecords", StringUtils.fromInteger(describeOrderableDBInstanceOptionsRequest.getMaxRecords()));

@@ -38,7 +38,7 @@ public class SendMessageRequestMarshaller implements Marshaller<Request<SendMess
 
         Request<SendMessageRequest> request = new DefaultRequest<SendMessageRequest>(sendMessageRequest, "AmazonSQS");
         request.addParameter("Action", "SendMessage");
-        request.addParameter("Version", "2011-10-01");
+        request.addParameter("Version", "2012-11-05");
 
         if (sendMessageRequest.getQueueUrl() != null) {
             request.addParameter("QueueUrl", StringUtils.fromString(sendMessageRequest.getQueueUrl()));
