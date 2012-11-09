@@ -255,6 +255,93 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
             
     /**
      * <p>
+     * Sets whether all AWS Identity and Access Management (IAM) users under
+     * your account can access the specifed job flows. This action works on
+     * running job flows. You can also set the visibility of a job flow when
+     * you launch it using the <code>VisibleToAllUsers</code> parameter of
+     * RunJobFlow. The SetVisibleToAllUsers action can be called only by an
+     * IAM user who created the job flow or the AWS account that owns the job
+     * flow.
+     * </p>
+     *
+     * @param setVisibleToAllUsersRequest Container for the necessary
+     *           parameters to execute the SetVisibleToAllUsers operation on
+     *           AmazonElasticMapReduce.
+     * 
+     * @return A Java Future object containing the response from the
+     *         SetVisibleToAllUsers service method, as returned by
+     *         AmazonElasticMapReduce.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElasticMapReduce indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> setVisibleToAllUsersAsync(final SetVisibleToAllUsersRequest setVisibleToAllUsersRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                setVisibleToAllUsers(setVisibleToAllUsersRequest);
+                return null;
+		    }
+		});
+    }
+
+    
+    /**
+     * <p>
+     * Sets whether all AWS Identity and Access Management (IAM) users under
+     * your account can access the specifed job flows. This action works on
+     * running job flows. You can also set the visibility of a job flow when
+     * you launch it using the <code>VisibleToAllUsers</code> parameter of
+     * RunJobFlow. The SetVisibleToAllUsers action can be called only by an
+     * IAM user who created the job flow or the AWS account that owns the job
+     * flow.
+     * </p>
+     *
+     * @param setVisibleToAllUsersRequest Container for the necessary
+     *           parameters to execute the SetVisibleToAllUsers operation on
+     *           AmazonElasticMapReduce.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         SetVisibleToAllUsers service method, as returned by
+     *         AmazonElasticMapReduce.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElasticMapReduce indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> setVisibleToAllUsersAsync(
+            final SetVisibleToAllUsersRequest setVisibleToAllUsersRequest,
+            final AsyncHandler<SetVisibleToAllUsersRequest, Void> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+            	try {
+            		setVisibleToAllUsers(setVisibleToAllUsersRequest);
+            	} catch (Exception ex) {
+            	    asyncHandler.onError(ex);
+    				throw ex;
+            	}
+            	asyncHandler.onSuccess(setVisibleToAllUsersRequest, null);
+               	return null;
+		    }
+		});
+    }
+    
+    /**
+     * <p>
      * AddInstanceGroups adds an instance group to a running cluster.
      * </p>
      *
@@ -463,6 +550,12 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
      * not already saved are uploaded to Amazon S3 if a LogUri was specified
      * when the job flow was created.
      * </p>
+     * <p>
+     * The call to TerminateJobFlows is asynchronous. Depending on the
+     * configuration of the job flow, it may take up to 5-20 minutes for the
+     * job flow to completely terminate and release allocated resources, such
+     * as Amazon EC2 instances.
+     * </p>
      *
      * @param terminateJobFlowsRequest Container for the necessary parameters
      *           to execute the TerminateJobFlows operation on AmazonElasticMapReduce.
@@ -497,6 +590,12 @@ public class AmazonElasticMapReduceAsyncClient extends AmazonElasticMapReduceCli
      * instances on which the job flow is running are stopped. Any log files
      * not already saved are uploaded to Amazon S3 if a LogUri was specified
      * when the job flow was created.
+     * </p>
+     * <p>
+     * The call to TerminateJobFlows is asynchronous. Depending on the
+     * configuration of the job flow, it may take up to 5-20 minutes for the
+     * job flow to completely terminate and release allocated resources, such
+     * as Amazon EC2 instances.
      * </p>
      *
      * @param terminateJobFlowsRequest Container for the necessary parameters

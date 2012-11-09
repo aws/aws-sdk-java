@@ -47,6 +47,13 @@ public class DBEngineVersion {
     private String dBEngineVersionDescription;
 
     /**
+     * The default character set for new instances of this engine version, if
+     * the <code>CharacterSetName</code> parameter of the CreateDBInstance
+     * API is not specified.
+     */
+    private CharacterSet defaultCharacterSet;
+
+    /**
      * A list of the character sets supported by this engine for the
      * <code>CharacterSetName</code> parameter of the CreateDBInstance API.
      */
@@ -229,6 +236,52 @@ public class DBEngineVersion {
     
     
     /**
+     * The default character set for new instances of this engine version, if
+     * the <code>CharacterSetName</code> parameter of the CreateDBInstance
+     * API is not specified.
+     *
+     * @return The default character set for new instances of this engine version, if
+     *         the <code>CharacterSetName</code> parameter of the CreateDBInstance
+     *         API is not specified.
+     */
+    public CharacterSet getDefaultCharacterSet() {
+        return defaultCharacterSet;
+    }
+    
+    /**
+     * The default character set for new instances of this engine version, if
+     * the <code>CharacterSetName</code> parameter of the CreateDBInstance
+     * API is not specified.
+     *
+     * @param defaultCharacterSet The default character set for new instances of this engine version, if
+     *         the <code>CharacterSetName</code> parameter of the CreateDBInstance
+     *         API is not specified.
+     */
+    public void setDefaultCharacterSet(CharacterSet defaultCharacterSet) {
+        this.defaultCharacterSet = defaultCharacterSet;
+    }
+    
+    /**
+     * The default character set for new instances of this engine version, if
+     * the <code>CharacterSetName</code> parameter of the CreateDBInstance
+     * API is not specified.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param defaultCharacterSet The default character set for new instances of this engine version, if
+     *         the <code>CharacterSetName</code> parameter of the CreateDBInstance
+     *         API is not specified.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public DBEngineVersion withDefaultCharacterSet(CharacterSet defaultCharacterSet) {
+        this.defaultCharacterSet = defaultCharacterSet;
+        return this;
+    }
+    
+    
+    /**
      * A list of the character sets supported by this engine for the
      * <code>CharacterSetName</code> parameter of the CreateDBInstance API.
      *
@@ -322,6 +375,7 @@ public class DBEngineVersion {
         if (dBParameterGroupFamily != null) sb.append("DBParameterGroupFamily: " + dBParameterGroupFamily + ", ");
         if (dBEngineDescription != null) sb.append("DBEngineDescription: " + dBEngineDescription + ", ");
         if (dBEngineVersionDescription != null) sb.append("DBEngineVersionDescription: " + dBEngineVersionDescription + ", ");
+        if (defaultCharacterSet != null) sb.append("DefaultCharacterSet: " + defaultCharacterSet + ", ");
         if (supportedCharacterSets != null) sb.append("SupportedCharacterSets: " + supportedCharacterSets + ", ");
         sb.append("}");
         return sb.toString();
@@ -337,6 +391,7 @@ public class DBEngineVersion {
         hashCode = prime * hashCode + ((getDBParameterGroupFamily() == null) ? 0 : getDBParameterGroupFamily().hashCode()); 
         hashCode = prime * hashCode + ((getDBEngineDescription() == null) ? 0 : getDBEngineDescription().hashCode()); 
         hashCode = prime * hashCode + ((getDBEngineVersionDescription() == null) ? 0 : getDBEngineVersionDescription().hashCode()); 
+        hashCode = prime * hashCode + ((getDefaultCharacterSet() == null) ? 0 : getDefaultCharacterSet().hashCode()); 
         hashCode = prime * hashCode + ((getSupportedCharacterSets() == null) ? 0 : getSupportedCharacterSets().hashCode()); 
         return hashCode;
     }
@@ -359,6 +414,8 @@ public class DBEngineVersion {
         if (other.getDBEngineDescription() != null && other.getDBEngineDescription().equals(this.getDBEngineDescription()) == false) return false; 
         if (other.getDBEngineVersionDescription() == null ^ this.getDBEngineVersionDescription() == null) return false;
         if (other.getDBEngineVersionDescription() != null && other.getDBEngineVersionDescription().equals(this.getDBEngineVersionDescription()) == false) return false; 
+        if (other.getDefaultCharacterSet() == null ^ this.getDefaultCharacterSet() == null) return false;
+        if (other.getDefaultCharacterSet() != null && other.getDefaultCharacterSet().equals(this.getDefaultCharacterSet()) == false) return false; 
         if (other.getSupportedCharacterSets() == null ^ this.getSupportedCharacterSets() == null) return false;
         if (other.getSupportedCharacterSets() != null && other.getSupportedCharacterSets().equals(this.getSupportedCharacterSets()) == false) return false; 
         return true;

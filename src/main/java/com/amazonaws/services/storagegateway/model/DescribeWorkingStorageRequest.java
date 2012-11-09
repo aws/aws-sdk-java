@@ -18,8 +18,15 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.storagegateway.AWSStorageGateway#describeWorkingStorage(DescribeWorkingStorageRequest) DescribeWorkingStorage operation}.
  * <p>
- * This operation returns information about the working storage of a gateway. The response includes disk IDs that are configured as working storage, and
- * it includes the amount of working storage allocated and used.
+ * This operation returns information about the working storage of a gateway. This operation is supported only for the gateway-stored volume
+ * architecture.
+ * </p>
+ * <p>
+ * <b>NOTE:</b> Working storage is also referred to as upload buffer. You can also use the DescribeUploadBuffer operation to add upload buffer to a
+ * stored-volume gateway.
+ * </p>
+ * <p>
+ * The response includes disk IDs that are configured as working storage, and it includes the amount of working storage allocated and used.
  * </p>
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#describeWorkingStorage(DescribeWorkingStorageRequest)

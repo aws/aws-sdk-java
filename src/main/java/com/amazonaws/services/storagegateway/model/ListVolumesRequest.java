@@ -53,8 +53,7 @@ public class ListVolumesRequest extends AmazonWebServiceRequest {
 
     /**
      * Specifies that the list of volumes returned be limited to the
-     * specified number of items. <p>Constraint: Minimum value of 1. Maximum
-     * value of 100.
+     * specified number of items.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - <br/>
@@ -173,15 +172,13 @@ public class ListVolumesRequest extends AmazonWebServiceRequest {
     
     /**
      * Specifies that the list of volumes returned be limited to the
-     * specified number of items. <p>Constraint: Minimum value of 1. Maximum
-     * value of 100.
+     * specified number of items.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - <br/>
      *
      * @return Specifies that the list of volumes returned be limited to the
-     *         specified number of items. <p>Constraint: Minimum value of 1. Maximum
-     *         value of 100.
+     *         specified number of items.
      */
     public Integer getLimit() {
         return limit;
@@ -189,15 +186,13 @@ public class ListVolumesRequest extends AmazonWebServiceRequest {
     
     /**
      * Specifies that the list of volumes returned be limited to the
-     * specified number of items. <p>Constraint: Minimum value of 1. Maximum
-     * value of 100.
+     * specified number of items.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - <br/>
      *
      * @param limit Specifies that the list of volumes returned be limited to the
-     *         specified number of items. <p>Constraint: Minimum value of 1. Maximum
-     *         value of 100.
+     *         specified number of items.
      */
     public void setLimit(Integer limit) {
         this.limit = limit;
@@ -205,8 +200,7 @@ public class ListVolumesRequest extends AmazonWebServiceRequest {
     
     /**
      * Specifies that the list of volumes returned be limited to the
-     * specified number of items. <p>Constraint: Minimum value of 1. Maximum
-     * value of 100.
+     * specified number of items.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -214,8 +208,7 @@ public class ListVolumesRequest extends AmazonWebServiceRequest {
      * <b>Range: </b>1 - <br/>
      *
      * @param limit Specifies that the list of volumes returned be limited to the
-     *         specified number of items. <p>Constraint: Minimum value of 1. Maximum
-     *         value of 100.
+     *         specified number of items.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

@@ -41,8 +41,9 @@ public class DescribeMaintenanceStartTimeResult {
     private String gatewayARN;
 
     /**
-     * A number between 0 and 23 that represents the hour of day. The hour of
-     * day is in the time zone of the gateway.
+     * The hour component of the maintenance start time represented as
+     * <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the day
+     * is in the time zone of the gateway.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - 23<br/>
@@ -50,8 +51,9 @@ public class DescribeMaintenanceStartTimeResult {
     private Integer hourOfDay;
 
     /**
-     * A number between 0 and 59 that represents the minute of hour. The
-     * minute of hour is in the time zone of the gateway.
+     * The minute component of the maintenance start time represented as
+     * <i>mm</i>, where <i>mm</i> is the minute (0 to 59). The minute of the
+     * hour is in the time zone of the gateway.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - 59<br/>
@@ -134,44 +136,50 @@ public class DescribeMaintenanceStartTimeResult {
     
     
     /**
-     * A number between 0 and 23 that represents the hour of day. The hour of
-     * day is in the time zone of the gateway.
+     * The hour component of the maintenance start time represented as
+     * <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the day
+     * is in the time zone of the gateway.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - 23<br/>
      *
-     * @return A number between 0 and 23 that represents the hour of day. The hour of
-     *         day is in the time zone of the gateway.
+     * @return The hour component of the maintenance start time represented as
+     *         <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the day
+     *         is in the time zone of the gateway.
      */
     public Integer getHourOfDay() {
         return hourOfDay;
     }
     
     /**
-     * A number between 0 and 23 that represents the hour of day. The hour of
-     * day is in the time zone of the gateway.
+     * The hour component of the maintenance start time represented as
+     * <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the day
+     * is in the time zone of the gateway.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - 23<br/>
      *
-     * @param hourOfDay A number between 0 and 23 that represents the hour of day. The hour of
-     *         day is in the time zone of the gateway.
+     * @param hourOfDay The hour component of the maintenance start time represented as
+     *         <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the day
+     *         is in the time zone of the gateway.
      */
     public void setHourOfDay(Integer hourOfDay) {
         this.hourOfDay = hourOfDay;
     }
     
     /**
-     * A number between 0 and 23 that represents the hour of day. The hour of
-     * day is in the time zone of the gateway.
+     * The hour component of the maintenance start time represented as
+     * <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the day
+     * is in the time zone of the gateway.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - 23<br/>
      *
-     * @param hourOfDay A number between 0 and 23 that represents the hour of day. The hour of
-     *         day is in the time zone of the gateway.
+     * @param hourOfDay The hour component of the maintenance start time represented as
+     *         <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the day
+     *         is in the time zone of the gateway.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -183,44 +191,50 @@ public class DescribeMaintenanceStartTimeResult {
     
     
     /**
-     * A number between 0 and 59 that represents the minute of hour. The
-     * minute of hour is in the time zone of the gateway.
+     * The minute component of the maintenance start time represented as
+     * <i>mm</i>, where <i>mm</i> is the minute (0 to 59). The minute of the
+     * hour is in the time zone of the gateway.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - 59<br/>
      *
-     * @return A number between 0 and 59 that represents the minute of hour. The
-     *         minute of hour is in the time zone of the gateway.
+     * @return The minute component of the maintenance start time represented as
+     *         <i>mm</i>, where <i>mm</i> is the minute (0 to 59). The minute of the
+     *         hour is in the time zone of the gateway.
      */
     public Integer getMinuteOfHour() {
         return minuteOfHour;
     }
     
     /**
-     * A number between 0 and 59 that represents the minute of hour. The
-     * minute of hour is in the time zone of the gateway.
+     * The minute component of the maintenance start time represented as
+     * <i>mm</i>, where <i>mm</i> is the minute (0 to 59). The minute of the
+     * hour is in the time zone of the gateway.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - 59<br/>
      *
-     * @param minuteOfHour A number between 0 and 59 that represents the minute of hour. The
-     *         minute of hour is in the time zone of the gateway.
+     * @param minuteOfHour The minute component of the maintenance start time represented as
+     *         <i>mm</i>, where <i>mm</i> is the minute (0 to 59). The minute of the
+     *         hour is in the time zone of the gateway.
      */
     public void setMinuteOfHour(Integer minuteOfHour) {
         this.minuteOfHour = minuteOfHour;
     }
     
     /**
-     * A number between 0 and 59 that represents the minute of hour. The
-     * minute of hour is in the time zone of the gateway.
+     * The minute component of the maintenance start time represented as
+     * <i>mm</i>, where <i>mm</i> is the minute (0 to 59). The minute of the
+     * hour is in the time zone of the gateway.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - 59<br/>
      *
-     * @param minuteOfHour A number between 0 and 59 that represents the minute of hour. The
-     *         minute of hour is in the time zone of the gateway.
+     * @param minuteOfHour The minute component of the maintenance start time represented as
+     *         <i>mm</i>, where <i>mm</i> is the minute (0 to 59). The minute of the
+     *         hour is in the time zone of the gateway.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

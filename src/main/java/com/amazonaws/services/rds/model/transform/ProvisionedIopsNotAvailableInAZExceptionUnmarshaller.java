@@ -20,22 +20,22 @@ import com.amazonaws.AmazonServiceException;
 import com.amazonaws.util.XpathUtils;
 import com.amazonaws.transform.StandardErrorUnmarshaller;
 
-import com.amazonaws.services.rds.model.DBSubnetGroupListDoesNotCoverAllAzException;
+import com.amazonaws.services.rds.model.ProvisionedIopsNotAvailableInAZException;
 
-public class DBSubnetGroupListDoesNotCoverAllAzExceptionUnmarshaller extends StandardErrorUnmarshaller {
+public class ProvisionedIopsNotAvailableInAZExceptionUnmarshaller extends StandardErrorUnmarshaller {
 
-    public DBSubnetGroupListDoesNotCoverAllAzExceptionUnmarshaller() {
-        super(DBSubnetGroupListDoesNotCoverAllAzException.class);
+    public ProvisionedIopsNotAvailableInAZExceptionUnmarshaller() {
+        super(ProvisionedIopsNotAvailableInAZException.class);
     }
 
     public AmazonServiceException unmarshall(Node node) throws Exception {
         // Bail out if this isn't the right error code that this
         // marshaller understands.
         String errorCode = parseErrorCode(node);
-        if (errorCode == null || !errorCode.equals("DBSubnetGroupListDoesNotCoverAllAz"))
+        if (errorCode == null || !errorCode.equals("ProvisionedIopsNotAvailableInAZFault"))
             return null;
 
-        DBSubnetGroupListDoesNotCoverAllAzException e = (DBSubnetGroupListDoesNotCoverAllAzException)super.unmarshall(node);
+        ProvisionedIopsNotAvailableInAZException e = (ProvisionedIopsNotAvailableInAZException)super.unmarshall(node);
         
         return e;
     }

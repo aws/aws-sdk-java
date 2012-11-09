@@ -46,7 +46,7 @@ public class DescribeSnapshotScheduleRequestMarshaller implements Marshaller<Req
 		}
 
         Request<DescribeSnapshotScheduleRequest> request = new DefaultRequest<DescribeSnapshotScheduleRequest>(describeSnapshotScheduleRequest, "AWSStorageGateway");
-        String target = "StorageGateway_20120430.DescribeSnapshotSchedule";
+        String target = "StorageGateway_20120630.DescribeSnapshotSchedule";
         request.addHeader("X-Amz-Target", target);
         request.addHeader("Content-Type", "application/x-amz-json-1.1");
 

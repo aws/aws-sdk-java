@@ -38,7 +38,7 @@ public class CopyDBSnapshotRequestMarshaller implements Marshaller<Request<CopyD
 
         Request<CopyDBSnapshotRequest> request = new DefaultRequest<CopyDBSnapshotRequest>(copyDBSnapshotRequest, "AmazonRDS");
         request.addParameter("Action", "CopyDBSnapshot");
-        request.addParameter("Version", "2012-04-23");
+        request.addParameter("Version", "2012-09-17");
 
         if (copyDBSnapshotRequest.getSourceDBSnapshotIdentifier() != null) {
             request.addParameter("SourceDBSnapshotIdentifier", StringUtils.fromString(copyDBSnapshotRequest.getSourceDBSnapshotIdentifier()));

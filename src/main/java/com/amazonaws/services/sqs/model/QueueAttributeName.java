@@ -29,7 +29,8 @@ public enum QueueAttributeName {
     LastModifiedTimestamp("LastModifiedTimestamp"),
     QueueArn("QueueArn"),
     ApproximateNumberOfMessagesDelayed("ApproximateNumberOfMessagesDelayed"),
-    DelaySeconds("DelaySeconds");
+    DelaySeconds("DelaySeconds"),
+    ReceiveMessageWaitTimeSeconds("ReceiveMessageWaitTimeSeconds");
 
     private String value;
 
@@ -75,6 +76,8 @@ public enum QueueAttributeName {
             return QueueAttributeName.ApproximateNumberOfMessagesDelayed;
         } else if ("DelaySeconds".equals(value)) {
             return QueueAttributeName.DelaySeconds;
+        } else if ("ReceiveMessageWaitTimeSeconds".equals(value)) {
+            return QueueAttributeName.ReceiveMessageWaitTimeSeconds;
         } else {
             throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
         }

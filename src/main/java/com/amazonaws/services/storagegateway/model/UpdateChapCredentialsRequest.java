@@ -21,6 +21,10 @@ import com.amazonaws.AmazonWebServiceRequest;
  * This operation updates the Challenge-Handshake Authentication Protocol (CHAP) credentials for a specified iSCSI target. By default, a gateway does not
  * have CHAP enabled; however, for added security, you might use it.
  * </p>
+ * <p>
+ * <b>IMPORTANT:</b> When you update CHAP credentials, all existing connections on the target are closed and initiators must reconnect with the new
+ * credentials.
+ * </p>
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#updateChapCredentials(UpdateChapCredentialsRequest)
  */
@@ -38,8 +42,7 @@ public class UpdateChapCredentialsRequest extends AmazonWebServiceRequest {
 
     /**
      * The secret key that the initiator (e.g. Windows client) must provide
-     * to participate in mutual CHAP with the target. <p>Length: Minimum
-     * length of 12. Maximum length of 16.
+     * to participate in mutual CHAP with the target.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>12 - 16<br/>
@@ -47,10 +50,7 @@ public class UpdateChapCredentialsRequest extends AmazonWebServiceRequest {
     private String secretToAuthenticateInitiator;
 
     /**
-     * The iSCSI initiator that connects to the target. <p>Length: Minimum
-     * length of 1. Maximum length of 255. <p><i>Valid Values</i>: The
-     * initiator name can contain lowercase letters, numbers, periods (.),
-     * and hyphens (-).
+     * The iSCSI initiator that connects to the target.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
@@ -60,8 +60,7 @@ public class UpdateChapCredentialsRequest extends AmazonWebServiceRequest {
 
     /**
      * The secret key that the target must provide to participate in mutual
-     * CHAP with the initiator (e.g. Windows client). <p>Length: Minimum
-     * length of 12. Maximum length of 16.
+     * CHAP with the initiator (e.g. Windows client).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>12 - 16<br/>
@@ -125,15 +124,13 @@ public class UpdateChapCredentialsRequest extends AmazonWebServiceRequest {
     
     /**
      * The secret key that the initiator (e.g. Windows client) must provide
-     * to participate in mutual CHAP with the target. <p>Length: Minimum
-     * length of 12. Maximum length of 16.
+     * to participate in mutual CHAP with the target.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>12 - 16<br/>
      *
      * @return The secret key that the initiator (e.g. Windows client) must provide
-     *         to participate in mutual CHAP with the target. <p>Length: Minimum
-     *         length of 12. Maximum length of 16.
+     *         to participate in mutual CHAP with the target.
      */
     public String getSecretToAuthenticateInitiator() {
         return secretToAuthenticateInitiator;
@@ -141,15 +138,13 @@ public class UpdateChapCredentialsRequest extends AmazonWebServiceRequest {
     
     /**
      * The secret key that the initiator (e.g. Windows client) must provide
-     * to participate in mutual CHAP with the target. <p>Length: Minimum
-     * length of 12. Maximum length of 16.
+     * to participate in mutual CHAP with the target.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>12 - 16<br/>
      *
      * @param secretToAuthenticateInitiator The secret key that the initiator (e.g. Windows client) must provide
-     *         to participate in mutual CHAP with the target. <p>Length: Minimum
-     *         length of 12. Maximum length of 16.
+     *         to participate in mutual CHAP with the target.
      */
     public void setSecretToAuthenticateInitiator(String secretToAuthenticateInitiator) {
         this.secretToAuthenticateInitiator = secretToAuthenticateInitiator;
@@ -157,8 +152,7 @@ public class UpdateChapCredentialsRequest extends AmazonWebServiceRequest {
     
     /**
      * The secret key that the initiator (e.g. Windows client) must provide
-     * to participate in mutual CHAP with the target. <p>Length: Minimum
-     * length of 12. Maximum length of 16.
+     * to participate in mutual CHAP with the target.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -166,8 +160,7 @@ public class UpdateChapCredentialsRequest extends AmazonWebServiceRequest {
      * <b>Length: </b>12 - 16<br/>
      *
      * @param secretToAuthenticateInitiator The secret key that the initiator (e.g. Windows client) must provide
-     *         to participate in mutual CHAP with the target. <p>Length: Minimum
-     *         length of 12. Maximum length of 16.
+     *         to participate in mutual CHAP with the target.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -179,48 +172,33 @@ public class UpdateChapCredentialsRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * The iSCSI initiator that connects to the target. <p>Length: Minimum
-     * length of 1. Maximum length of 255. <p><i>Valid Values</i>: The
-     * initiator name can contain lowercase letters, numbers, periods (.),
-     * and hyphens (-).
+     * The iSCSI initiator that connects to the target.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[0-9a-z:.-]+<br/>
      *
-     * @return The iSCSI initiator that connects to the target. <p>Length: Minimum
-     *         length of 1. Maximum length of 255. <p><i>Valid Values</i>: The
-     *         initiator name can contain lowercase letters, numbers, periods (.),
-     *         and hyphens (-).
+     * @return The iSCSI initiator that connects to the target.
      */
     public String getInitiatorName() {
         return initiatorName;
     }
     
     /**
-     * The iSCSI initiator that connects to the target. <p>Length: Minimum
-     * length of 1. Maximum length of 255. <p><i>Valid Values</i>: The
-     * initiator name can contain lowercase letters, numbers, periods (.),
-     * and hyphens (-).
+     * The iSCSI initiator that connects to the target.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[0-9a-z:.-]+<br/>
      *
-     * @param initiatorName The iSCSI initiator that connects to the target. <p>Length: Minimum
-     *         length of 1. Maximum length of 255. <p><i>Valid Values</i>: The
-     *         initiator name can contain lowercase letters, numbers, periods (.),
-     *         and hyphens (-).
+     * @param initiatorName The iSCSI initiator that connects to the target.
      */
     public void setInitiatorName(String initiatorName) {
         this.initiatorName = initiatorName;
     }
     
     /**
-     * The iSCSI initiator that connects to the target. <p>Length: Minimum
-     * length of 1. Maximum length of 255. <p><i>Valid Values</i>: The
-     * initiator name can contain lowercase letters, numbers, periods (.),
-     * and hyphens (-).
+     * The iSCSI initiator that connects to the target.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -228,10 +206,7 @@ public class UpdateChapCredentialsRequest extends AmazonWebServiceRequest {
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[0-9a-z:.-]+<br/>
      *
-     * @param initiatorName The iSCSI initiator that connects to the target. <p>Length: Minimum
-     *         length of 1. Maximum length of 255. <p><i>Valid Values</i>: The
-     *         initiator name can contain lowercase letters, numbers, periods (.),
-     *         and hyphens (-).
+     * @param initiatorName The iSCSI initiator that connects to the target.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -244,15 +219,13 @@ public class UpdateChapCredentialsRequest extends AmazonWebServiceRequest {
     
     /**
      * The secret key that the target must provide to participate in mutual
-     * CHAP with the initiator (e.g. Windows client). <p>Length: Minimum
-     * length of 12. Maximum length of 16.
+     * CHAP with the initiator (e.g. Windows client).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>12 - 16<br/>
      *
      * @return The secret key that the target must provide to participate in mutual
-     *         CHAP with the initiator (e.g. Windows client). <p>Length: Minimum
-     *         length of 12. Maximum length of 16.
+     *         CHAP with the initiator (e.g. Windows client).
      */
     public String getSecretToAuthenticateTarget() {
         return secretToAuthenticateTarget;
@@ -260,15 +233,13 @@ public class UpdateChapCredentialsRequest extends AmazonWebServiceRequest {
     
     /**
      * The secret key that the target must provide to participate in mutual
-     * CHAP with the initiator (e.g. Windows client). <p>Length: Minimum
-     * length of 12. Maximum length of 16.
+     * CHAP with the initiator (e.g. Windows client).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>12 - 16<br/>
      *
      * @param secretToAuthenticateTarget The secret key that the target must provide to participate in mutual
-     *         CHAP with the initiator (e.g. Windows client). <p>Length: Minimum
-     *         length of 12. Maximum length of 16.
+     *         CHAP with the initiator (e.g. Windows client).
      */
     public void setSecretToAuthenticateTarget(String secretToAuthenticateTarget) {
         this.secretToAuthenticateTarget = secretToAuthenticateTarget;
@@ -276,8 +247,7 @@ public class UpdateChapCredentialsRequest extends AmazonWebServiceRequest {
     
     /**
      * The secret key that the target must provide to participate in mutual
-     * CHAP with the initiator (e.g. Windows client). <p>Length: Minimum
-     * length of 12. Maximum length of 16.
+     * CHAP with the initiator (e.g. Windows client).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -285,8 +255,7 @@ public class UpdateChapCredentialsRequest extends AmazonWebServiceRequest {
      * <b>Length: </b>12 - 16<br/>
      *
      * @param secretToAuthenticateTarget The secret key that the target must provide to participate in mutual
-     *         CHAP with the initiator (e.g. Windows client). <p>Length: Minimum
-     *         length of 12. Maximum length of 16.
+     *         CHAP with the initiator (e.g. Windows client).
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

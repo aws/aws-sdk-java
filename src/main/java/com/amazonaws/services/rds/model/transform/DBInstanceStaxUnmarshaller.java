@@ -145,6 +145,10 @@ public class DBInstanceStaxUnmarshaller implements Unmarshaller<DBInstance, Stax
                     dBInstance.setLicenseModel(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("Iops", targetDepth)) {
+                    dBInstance.setIops(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
                 if (context.testExpression("OptionGroupMembership", targetDepth)) {
                     dBInstance.setOptionGroupMembership(OptionGroupMembershipStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

@@ -38,7 +38,7 @@ public class DeleteQueueRequestMarshaller implements Marshaller<Request<DeleteQu
 
         Request<DeleteQueueRequest> request = new DefaultRequest<DeleteQueueRequest>(deleteQueueRequest, "AmazonSQS");
         request.addParameter("Action", "DeleteQueue");
-        request.addParameter("Version", "2011-10-01");
+        request.addParameter("Version", "2012-11-05");
 
         if (deleteQueueRequest.getQueueUrl() != null) {
             request.addParameter("QueueUrl", StringUtils.fromString(deleteQueueRequest.getQueueUrl()));

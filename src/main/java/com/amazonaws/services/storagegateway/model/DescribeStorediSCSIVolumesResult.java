@@ -25,38 +25,37 @@ public class DescribeStorediSCSIVolumesResult {
      * Describes a single unit of output from
      * <a>DescribeStorediSCSIVolumes</a>. The following fields are returned:
      * <ul> <li> <p><b>ChapEnabled</b>: Indicates whether mutual CHAP is
-     * enabled for the iSCSI target. </li> <li>
-     * <p><b>VolumeiSCSIAttributes</b>: An <a>VolumeiSCSIAttributes</a>
-     * object that represents a collection of iSCSI attributes for one stored
-     * volume. </li> <li> <p><b>StorediSCSIVolumes</b>: An array of
-     * StorediSCSIVolume (p. 203) objects where each object contains metadata
-     * about one stored volume. </li> <li> <p><b>LunNumber</b>: The logical
-     * disk number. </li> <li> <p><b>NetworkInterfaceId</b>: The network
-     * interface ID of the stored volume that initiator use to map the stored
-     * volume as an iSCSI target. </li> <li> <p><b>NetworkInterfacePort</b>:
-     * The port used to communicate with iSCSI targets. </li> <li>
-     * <p><b>PreservedExistingData</b>: Indicates if when the stored volume
-     * was created, existing data on the underlying local disk was preserved.
-     * <p><i>Valid Values</i>: true, false </li> <li>
-     * <p><b>SourceSnapshotId</b>: If the stored volume was created from a
-     * snapshot, this field contains the snapshot ID used, e.g.
-     * snap-1122aabb. Otherwise, this field is not included. </li> <li>
-     * <p><b>TargetARN</b>: The Amazon Resource Name (ARN) of the volume
-     * target. </li> <li> <p><b>VolumeARN</b>: The Amazon Resource Name (ARN)
-     * of the stored volume. </li> <li> <p><b>VolumeDiskId</b>: The disk ID
-     * of the local disk that was specified in the
-     * <a>CreateStorediSCSIVolume</a> operation. </li> <li>
+     * enabled for the iSCSI target. </li> <li> <p><b>LunNumber</b>: The
+     * logical disk number. </li> <li> <p><b>NetworkInterfaceId</b>: The
+     * network interface ID of the stored volume that initiator use to map
+     * the stored volume as an iSCSI target. </li> <li>
+     * <p><b>NetworkInterfacePort</b>: The port used to communicate with
+     * iSCSI targets. </li> <li> <p><b>PreservedExistingData</b>: Indicates
+     * if when the stored volume was created, existing data on the underlying
+     * local disk was preserved. </li> <li> <p><b>SourceSnapshotId</b>: If
+     * the stored volume was created from a snapshot, this field contains the
+     * snapshot ID used, e.g. snap-1122aabb. Otherwise, this field is not
+     * included. </li> <li> <p><b>StorediSCSIVolumes</b>: An array of
+     * StorediSCSIVolume objects where each object contains metadata about
+     * one stored volume. </li> <li> <p><b>TargetARN</b>: The Amazon Resource
+     * Name (ARN) of the volume target. </li> <li> <p><b>VolumeARN</b>: The
+     * Amazon Resource Name (ARN) of the stored volume. </li> <li>
+     * <p><b>VolumeDiskId</b>: The disk ID of the local disk that was
+     * specified in the <a>CreateStorediSCSIVolume</a> operation. </li> <li>
      * <p><b>VolumeId</b>: The unique identifier of the storage volume, e.g.
-     * vol-1122AABB. </li> <li> <p><b>VolumeProgress</b>: Represents the
-     * percentage complete if the volume is restoring or bootstrapping that
-     * represents the percent of data transferred. This field does not appear
-     * in the response if the stored volume is not restoring or
-     * bootstrapping. </li> <li> <p><b>VolumeSizeInBytes</b>: The size of the
-     * volume in bytes. </li> <li> <p><b>VolumeStatus</b>: One of the
-     * <a>VolumeStatus</a> values that indicates the state of the volume.
-     * </li> <li> <p><b>VolumeType</b>: One of the enumeration values
-     * describing the type of the volume. Currently, on STORED volumes are
-     * supported. </li> </ul>
+     * vol-1122AABB. </li> <li> <p><b>VolumeiSCSIAttributes</b>: An
+     * <a>VolumeiSCSIAttributes</a> object that represents a collection of
+     * iSCSI attributes for one stored volume. </li> <li>
+     * <p><b>VolumeProgress</b>: Represents the percentage complete if the
+     * volume is restoring or bootstrapping that represents the percent of
+     * data transferred. This field does not appear in the response if the
+     * stored volume is not restoring or bootstrapping. </li> <li>
+     * <p><b>VolumeSizeInBytes</b>: The size of the volume in bytes. </li>
+     * <li> <p><b>VolumeStatus</b>: One of the <a>VolumeStatus</a> values
+     * that indicates the state of the volume. </li> <li>
+     * <p><b>VolumeType</b>: One of the enumeration values describing the
+     * type of the volume. Currently, on STORED volumes are supported. </li>
+     * </ul>
      */
     private java.util.List<StorediSCSIVolume> storediSCSIVolumes;
 
@@ -64,74 +63,72 @@ public class DescribeStorediSCSIVolumesResult {
      * Describes a single unit of output from
      * <a>DescribeStorediSCSIVolumes</a>. The following fields are returned:
      * <ul> <li> <p><b>ChapEnabled</b>: Indicates whether mutual CHAP is
-     * enabled for the iSCSI target. </li> <li>
-     * <p><b>VolumeiSCSIAttributes</b>: An <a>VolumeiSCSIAttributes</a>
-     * object that represents a collection of iSCSI attributes for one stored
-     * volume. </li> <li> <p><b>StorediSCSIVolumes</b>: An array of
-     * StorediSCSIVolume (p. 203) objects where each object contains metadata
-     * about one stored volume. </li> <li> <p><b>LunNumber</b>: The logical
-     * disk number. </li> <li> <p><b>NetworkInterfaceId</b>: The network
-     * interface ID of the stored volume that initiator use to map the stored
-     * volume as an iSCSI target. </li> <li> <p><b>NetworkInterfacePort</b>:
-     * The port used to communicate with iSCSI targets. </li> <li>
-     * <p><b>PreservedExistingData</b>: Indicates if when the stored volume
-     * was created, existing data on the underlying local disk was preserved.
-     * <p><i>Valid Values</i>: true, false </li> <li>
-     * <p><b>SourceSnapshotId</b>: If the stored volume was created from a
-     * snapshot, this field contains the snapshot ID used, e.g.
-     * snap-1122aabb. Otherwise, this field is not included. </li> <li>
-     * <p><b>TargetARN</b>: The Amazon Resource Name (ARN) of the volume
-     * target. </li> <li> <p><b>VolumeARN</b>: The Amazon Resource Name (ARN)
-     * of the stored volume. </li> <li> <p><b>VolumeDiskId</b>: The disk ID
-     * of the local disk that was specified in the
-     * <a>CreateStorediSCSIVolume</a> operation. </li> <li>
+     * enabled for the iSCSI target. </li> <li> <p><b>LunNumber</b>: The
+     * logical disk number. </li> <li> <p><b>NetworkInterfaceId</b>: The
+     * network interface ID of the stored volume that initiator use to map
+     * the stored volume as an iSCSI target. </li> <li>
+     * <p><b>NetworkInterfacePort</b>: The port used to communicate with
+     * iSCSI targets. </li> <li> <p><b>PreservedExistingData</b>: Indicates
+     * if when the stored volume was created, existing data on the underlying
+     * local disk was preserved. </li> <li> <p><b>SourceSnapshotId</b>: If
+     * the stored volume was created from a snapshot, this field contains the
+     * snapshot ID used, e.g. snap-1122aabb. Otherwise, this field is not
+     * included. </li> <li> <p><b>StorediSCSIVolumes</b>: An array of
+     * StorediSCSIVolume objects where each object contains metadata about
+     * one stored volume. </li> <li> <p><b>TargetARN</b>: The Amazon Resource
+     * Name (ARN) of the volume target. </li> <li> <p><b>VolumeARN</b>: The
+     * Amazon Resource Name (ARN) of the stored volume. </li> <li>
+     * <p><b>VolumeDiskId</b>: The disk ID of the local disk that was
+     * specified in the <a>CreateStorediSCSIVolume</a> operation. </li> <li>
      * <p><b>VolumeId</b>: The unique identifier of the storage volume, e.g.
-     * vol-1122AABB. </li> <li> <p><b>VolumeProgress</b>: Represents the
-     * percentage complete if the volume is restoring or bootstrapping that
-     * represents the percent of data transferred. This field does not appear
-     * in the response if the stored volume is not restoring or
-     * bootstrapping. </li> <li> <p><b>VolumeSizeInBytes</b>: The size of the
-     * volume in bytes. </li> <li> <p><b>VolumeStatus</b>: One of the
-     * <a>VolumeStatus</a> values that indicates the state of the volume.
-     * </li> <li> <p><b>VolumeType</b>: One of the enumeration values
-     * describing the type of the volume. Currently, on STORED volumes are
-     * supported. </li> </ul>
+     * vol-1122AABB. </li> <li> <p><b>VolumeiSCSIAttributes</b>: An
+     * <a>VolumeiSCSIAttributes</a> object that represents a collection of
+     * iSCSI attributes for one stored volume. </li> <li>
+     * <p><b>VolumeProgress</b>: Represents the percentage complete if the
+     * volume is restoring or bootstrapping that represents the percent of
+     * data transferred. This field does not appear in the response if the
+     * stored volume is not restoring or bootstrapping. </li> <li>
+     * <p><b>VolumeSizeInBytes</b>: The size of the volume in bytes. </li>
+     * <li> <p><b>VolumeStatus</b>: One of the <a>VolumeStatus</a> values
+     * that indicates the state of the volume. </li> <li>
+     * <p><b>VolumeType</b>: One of the enumeration values describing the
+     * type of the volume. Currently, on STORED volumes are supported. </li>
+     * </ul>
      *
      * @return Describes a single unit of output from
      *         <a>DescribeStorediSCSIVolumes</a>. The following fields are returned:
      *         <ul> <li> <p><b>ChapEnabled</b>: Indicates whether mutual CHAP is
-     *         enabled for the iSCSI target. </li> <li>
-     *         <p><b>VolumeiSCSIAttributes</b>: An <a>VolumeiSCSIAttributes</a>
-     *         object that represents a collection of iSCSI attributes for one stored
-     *         volume. </li> <li> <p><b>StorediSCSIVolumes</b>: An array of
-     *         StorediSCSIVolume (p. 203) objects where each object contains metadata
-     *         about one stored volume. </li> <li> <p><b>LunNumber</b>: The logical
-     *         disk number. </li> <li> <p><b>NetworkInterfaceId</b>: The network
-     *         interface ID of the stored volume that initiator use to map the stored
-     *         volume as an iSCSI target. </li> <li> <p><b>NetworkInterfacePort</b>:
-     *         The port used to communicate with iSCSI targets. </li> <li>
-     *         <p><b>PreservedExistingData</b>: Indicates if when the stored volume
-     *         was created, existing data on the underlying local disk was preserved.
-     *         <p><i>Valid Values</i>: true, false </li> <li>
-     *         <p><b>SourceSnapshotId</b>: If the stored volume was created from a
-     *         snapshot, this field contains the snapshot ID used, e.g.
-     *         snap-1122aabb. Otherwise, this field is not included. </li> <li>
-     *         <p><b>TargetARN</b>: The Amazon Resource Name (ARN) of the volume
-     *         target. </li> <li> <p><b>VolumeARN</b>: The Amazon Resource Name (ARN)
-     *         of the stored volume. </li> <li> <p><b>VolumeDiskId</b>: The disk ID
-     *         of the local disk that was specified in the
-     *         <a>CreateStorediSCSIVolume</a> operation. </li> <li>
+     *         enabled for the iSCSI target. </li> <li> <p><b>LunNumber</b>: The
+     *         logical disk number. </li> <li> <p><b>NetworkInterfaceId</b>: The
+     *         network interface ID of the stored volume that initiator use to map
+     *         the stored volume as an iSCSI target. </li> <li>
+     *         <p><b>NetworkInterfacePort</b>: The port used to communicate with
+     *         iSCSI targets. </li> <li> <p><b>PreservedExistingData</b>: Indicates
+     *         if when the stored volume was created, existing data on the underlying
+     *         local disk was preserved. </li> <li> <p><b>SourceSnapshotId</b>: If
+     *         the stored volume was created from a snapshot, this field contains the
+     *         snapshot ID used, e.g. snap-1122aabb. Otherwise, this field is not
+     *         included. </li> <li> <p><b>StorediSCSIVolumes</b>: An array of
+     *         StorediSCSIVolume objects where each object contains metadata about
+     *         one stored volume. </li> <li> <p><b>TargetARN</b>: The Amazon Resource
+     *         Name (ARN) of the volume target. </li> <li> <p><b>VolumeARN</b>: The
+     *         Amazon Resource Name (ARN) of the stored volume. </li> <li>
+     *         <p><b>VolumeDiskId</b>: The disk ID of the local disk that was
+     *         specified in the <a>CreateStorediSCSIVolume</a> operation. </li> <li>
      *         <p><b>VolumeId</b>: The unique identifier of the storage volume, e.g.
-     *         vol-1122AABB. </li> <li> <p><b>VolumeProgress</b>: Represents the
-     *         percentage complete if the volume is restoring or bootstrapping that
-     *         represents the percent of data transferred. This field does not appear
-     *         in the response if the stored volume is not restoring or
-     *         bootstrapping. </li> <li> <p><b>VolumeSizeInBytes</b>: The size of the
-     *         volume in bytes. </li> <li> <p><b>VolumeStatus</b>: One of the
-     *         <a>VolumeStatus</a> values that indicates the state of the volume.
-     *         </li> <li> <p><b>VolumeType</b>: One of the enumeration values
-     *         describing the type of the volume. Currently, on STORED volumes are
-     *         supported. </li> </ul>
+     *         vol-1122AABB. </li> <li> <p><b>VolumeiSCSIAttributes</b>: An
+     *         <a>VolumeiSCSIAttributes</a> object that represents a collection of
+     *         iSCSI attributes for one stored volume. </li> <li>
+     *         <p><b>VolumeProgress</b>: Represents the percentage complete if the
+     *         volume is restoring or bootstrapping that represents the percent of
+     *         data transferred. This field does not appear in the response if the
+     *         stored volume is not restoring or bootstrapping. </li> <li>
+     *         <p><b>VolumeSizeInBytes</b>: The size of the volume in bytes. </li>
+     *         <li> <p><b>VolumeStatus</b>: One of the <a>VolumeStatus</a> values
+     *         that indicates the state of the volume. </li> <li>
+     *         <p><b>VolumeType</b>: One of the enumeration values describing the
+     *         type of the volume. Currently, on STORED volumes are supported. </li>
+     *         </ul>
      */
     public java.util.List<StorediSCSIVolume> getStorediSCSIVolumes() {
         
@@ -145,74 +142,72 @@ public class DescribeStorediSCSIVolumesResult {
      * Describes a single unit of output from
      * <a>DescribeStorediSCSIVolumes</a>. The following fields are returned:
      * <ul> <li> <p><b>ChapEnabled</b>: Indicates whether mutual CHAP is
-     * enabled for the iSCSI target. </li> <li>
-     * <p><b>VolumeiSCSIAttributes</b>: An <a>VolumeiSCSIAttributes</a>
-     * object that represents a collection of iSCSI attributes for one stored
-     * volume. </li> <li> <p><b>StorediSCSIVolumes</b>: An array of
-     * StorediSCSIVolume (p. 203) objects where each object contains metadata
-     * about one stored volume. </li> <li> <p><b>LunNumber</b>: The logical
-     * disk number. </li> <li> <p><b>NetworkInterfaceId</b>: The network
-     * interface ID of the stored volume that initiator use to map the stored
-     * volume as an iSCSI target. </li> <li> <p><b>NetworkInterfacePort</b>:
-     * The port used to communicate with iSCSI targets. </li> <li>
-     * <p><b>PreservedExistingData</b>: Indicates if when the stored volume
-     * was created, existing data on the underlying local disk was preserved.
-     * <p><i>Valid Values</i>: true, false </li> <li>
-     * <p><b>SourceSnapshotId</b>: If the stored volume was created from a
-     * snapshot, this field contains the snapshot ID used, e.g.
-     * snap-1122aabb. Otherwise, this field is not included. </li> <li>
-     * <p><b>TargetARN</b>: The Amazon Resource Name (ARN) of the volume
-     * target. </li> <li> <p><b>VolumeARN</b>: The Amazon Resource Name (ARN)
-     * of the stored volume. </li> <li> <p><b>VolumeDiskId</b>: The disk ID
-     * of the local disk that was specified in the
-     * <a>CreateStorediSCSIVolume</a> operation. </li> <li>
+     * enabled for the iSCSI target. </li> <li> <p><b>LunNumber</b>: The
+     * logical disk number. </li> <li> <p><b>NetworkInterfaceId</b>: The
+     * network interface ID of the stored volume that initiator use to map
+     * the stored volume as an iSCSI target. </li> <li>
+     * <p><b>NetworkInterfacePort</b>: The port used to communicate with
+     * iSCSI targets. </li> <li> <p><b>PreservedExistingData</b>: Indicates
+     * if when the stored volume was created, existing data on the underlying
+     * local disk was preserved. </li> <li> <p><b>SourceSnapshotId</b>: If
+     * the stored volume was created from a snapshot, this field contains the
+     * snapshot ID used, e.g. snap-1122aabb. Otherwise, this field is not
+     * included. </li> <li> <p><b>StorediSCSIVolumes</b>: An array of
+     * StorediSCSIVolume objects where each object contains metadata about
+     * one stored volume. </li> <li> <p><b>TargetARN</b>: The Amazon Resource
+     * Name (ARN) of the volume target. </li> <li> <p><b>VolumeARN</b>: The
+     * Amazon Resource Name (ARN) of the stored volume. </li> <li>
+     * <p><b>VolumeDiskId</b>: The disk ID of the local disk that was
+     * specified in the <a>CreateStorediSCSIVolume</a> operation. </li> <li>
      * <p><b>VolumeId</b>: The unique identifier of the storage volume, e.g.
-     * vol-1122AABB. </li> <li> <p><b>VolumeProgress</b>: Represents the
-     * percentage complete if the volume is restoring or bootstrapping that
-     * represents the percent of data transferred. This field does not appear
-     * in the response if the stored volume is not restoring or
-     * bootstrapping. </li> <li> <p><b>VolumeSizeInBytes</b>: The size of the
-     * volume in bytes. </li> <li> <p><b>VolumeStatus</b>: One of the
-     * <a>VolumeStatus</a> values that indicates the state of the volume.
-     * </li> <li> <p><b>VolumeType</b>: One of the enumeration values
-     * describing the type of the volume. Currently, on STORED volumes are
-     * supported. </li> </ul>
+     * vol-1122AABB. </li> <li> <p><b>VolumeiSCSIAttributes</b>: An
+     * <a>VolumeiSCSIAttributes</a> object that represents a collection of
+     * iSCSI attributes for one stored volume. </li> <li>
+     * <p><b>VolumeProgress</b>: Represents the percentage complete if the
+     * volume is restoring or bootstrapping that represents the percent of
+     * data transferred. This field does not appear in the response if the
+     * stored volume is not restoring or bootstrapping. </li> <li>
+     * <p><b>VolumeSizeInBytes</b>: The size of the volume in bytes. </li>
+     * <li> <p><b>VolumeStatus</b>: One of the <a>VolumeStatus</a> values
+     * that indicates the state of the volume. </li> <li>
+     * <p><b>VolumeType</b>: One of the enumeration values describing the
+     * type of the volume. Currently, on STORED volumes are supported. </li>
+     * </ul>
      *
      * @param storediSCSIVolumes Describes a single unit of output from
      *         <a>DescribeStorediSCSIVolumes</a>. The following fields are returned:
      *         <ul> <li> <p><b>ChapEnabled</b>: Indicates whether mutual CHAP is
-     *         enabled for the iSCSI target. </li> <li>
-     *         <p><b>VolumeiSCSIAttributes</b>: An <a>VolumeiSCSIAttributes</a>
-     *         object that represents a collection of iSCSI attributes for one stored
-     *         volume. </li> <li> <p><b>StorediSCSIVolumes</b>: An array of
-     *         StorediSCSIVolume (p. 203) objects where each object contains metadata
-     *         about one stored volume. </li> <li> <p><b>LunNumber</b>: The logical
-     *         disk number. </li> <li> <p><b>NetworkInterfaceId</b>: The network
-     *         interface ID of the stored volume that initiator use to map the stored
-     *         volume as an iSCSI target. </li> <li> <p><b>NetworkInterfacePort</b>:
-     *         The port used to communicate with iSCSI targets. </li> <li>
-     *         <p><b>PreservedExistingData</b>: Indicates if when the stored volume
-     *         was created, existing data on the underlying local disk was preserved.
-     *         <p><i>Valid Values</i>: true, false </li> <li>
-     *         <p><b>SourceSnapshotId</b>: If the stored volume was created from a
-     *         snapshot, this field contains the snapshot ID used, e.g.
-     *         snap-1122aabb. Otherwise, this field is not included. </li> <li>
-     *         <p><b>TargetARN</b>: The Amazon Resource Name (ARN) of the volume
-     *         target. </li> <li> <p><b>VolumeARN</b>: The Amazon Resource Name (ARN)
-     *         of the stored volume. </li> <li> <p><b>VolumeDiskId</b>: The disk ID
-     *         of the local disk that was specified in the
-     *         <a>CreateStorediSCSIVolume</a> operation. </li> <li>
+     *         enabled for the iSCSI target. </li> <li> <p><b>LunNumber</b>: The
+     *         logical disk number. </li> <li> <p><b>NetworkInterfaceId</b>: The
+     *         network interface ID of the stored volume that initiator use to map
+     *         the stored volume as an iSCSI target. </li> <li>
+     *         <p><b>NetworkInterfacePort</b>: The port used to communicate with
+     *         iSCSI targets. </li> <li> <p><b>PreservedExistingData</b>: Indicates
+     *         if when the stored volume was created, existing data on the underlying
+     *         local disk was preserved. </li> <li> <p><b>SourceSnapshotId</b>: If
+     *         the stored volume was created from a snapshot, this field contains the
+     *         snapshot ID used, e.g. snap-1122aabb. Otherwise, this field is not
+     *         included. </li> <li> <p><b>StorediSCSIVolumes</b>: An array of
+     *         StorediSCSIVolume objects where each object contains metadata about
+     *         one stored volume. </li> <li> <p><b>TargetARN</b>: The Amazon Resource
+     *         Name (ARN) of the volume target. </li> <li> <p><b>VolumeARN</b>: The
+     *         Amazon Resource Name (ARN) of the stored volume. </li> <li>
+     *         <p><b>VolumeDiskId</b>: The disk ID of the local disk that was
+     *         specified in the <a>CreateStorediSCSIVolume</a> operation. </li> <li>
      *         <p><b>VolumeId</b>: The unique identifier of the storage volume, e.g.
-     *         vol-1122AABB. </li> <li> <p><b>VolumeProgress</b>: Represents the
-     *         percentage complete if the volume is restoring or bootstrapping that
-     *         represents the percent of data transferred. This field does not appear
-     *         in the response if the stored volume is not restoring or
-     *         bootstrapping. </li> <li> <p><b>VolumeSizeInBytes</b>: The size of the
-     *         volume in bytes. </li> <li> <p><b>VolumeStatus</b>: One of the
-     *         <a>VolumeStatus</a> values that indicates the state of the volume.
-     *         </li> <li> <p><b>VolumeType</b>: One of the enumeration values
-     *         describing the type of the volume. Currently, on STORED volumes are
-     *         supported. </li> </ul>
+     *         vol-1122AABB. </li> <li> <p><b>VolumeiSCSIAttributes</b>: An
+     *         <a>VolumeiSCSIAttributes</a> object that represents a collection of
+     *         iSCSI attributes for one stored volume. </li> <li>
+     *         <p><b>VolumeProgress</b>: Represents the percentage complete if the
+     *         volume is restoring or bootstrapping that represents the percent of
+     *         data transferred. This field does not appear in the response if the
+     *         stored volume is not restoring or bootstrapping. </li> <li>
+     *         <p><b>VolumeSizeInBytes</b>: The size of the volume in bytes. </li>
+     *         <li> <p><b>VolumeStatus</b>: One of the <a>VolumeStatus</a> values
+     *         that indicates the state of the volume. </li> <li>
+     *         <p><b>VolumeType</b>: One of the enumeration values describing the
+     *         type of the volume. Currently, on STORED volumes are supported. </li>
+     *         </ul>
      */
     public void setStorediSCSIVolumes(java.util.Collection<StorediSCSIVolume> storediSCSIVolumes) {
         if (storediSCSIVolumes == null) {
@@ -229,76 +224,74 @@ public class DescribeStorediSCSIVolumesResult {
      * Describes a single unit of output from
      * <a>DescribeStorediSCSIVolumes</a>. The following fields are returned:
      * <ul> <li> <p><b>ChapEnabled</b>: Indicates whether mutual CHAP is
-     * enabled for the iSCSI target. </li> <li>
-     * <p><b>VolumeiSCSIAttributes</b>: An <a>VolumeiSCSIAttributes</a>
-     * object that represents a collection of iSCSI attributes for one stored
-     * volume. </li> <li> <p><b>StorediSCSIVolumes</b>: An array of
-     * StorediSCSIVolume (p. 203) objects where each object contains metadata
-     * about one stored volume. </li> <li> <p><b>LunNumber</b>: The logical
-     * disk number. </li> <li> <p><b>NetworkInterfaceId</b>: The network
-     * interface ID of the stored volume that initiator use to map the stored
-     * volume as an iSCSI target. </li> <li> <p><b>NetworkInterfacePort</b>:
-     * The port used to communicate with iSCSI targets. </li> <li>
-     * <p><b>PreservedExistingData</b>: Indicates if when the stored volume
-     * was created, existing data on the underlying local disk was preserved.
-     * <p><i>Valid Values</i>: true, false </li> <li>
-     * <p><b>SourceSnapshotId</b>: If the stored volume was created from a
-     * snapshot, this field contains the snapshot ID used, e.g.
-     * snap-1122aabb. Otherwise, this field is not included. </li> <li>
-     * <p><b>TargetARN</b>: The Amazon Resource Name (ARN) of the volume
-     * target. </li> <li> <p><b>VolumeARN</b>: The Amazon Resource Name (ARN)
-     * of the stored volume. </li> <li> <p><b>VolumeDiskId</b>: The disk ID
-     * of the local disk that was specified in the
-     * <a>CreateStorediSCSIVolume</a> operation. </li> <li>
+     * enabled for the iSCSI target. </li> <li> <p><b>LunNumber</b>: The
+     * logical disk number. </li> <li> <p><b>NetworkInterfaceId</b>: The
+     * network interface ID of the stored volume that initiator use to map
+     * the stored volume as an iSCSI target. </li> <li>
+     * <p><b>NetworkInterfacePort</b>: The port used to communicate with
+     * iSCSI targets. </li> <li> <p><b>PreservedExistingData</b>: Indicates
+     * if when the stored volume was created, existing data on the underlying
+     * local disk was preserved. </li> <li> <p><b>SourceSnapshotId</b>: If
+     * the stored volume was created from a snapshot, this field contains the
+     * snapshot ID used, e.g. snap-1122aabb. Otherwise, this field is not
+     * included. </li> <li> <p><b>StorediSCSIVolumes</b>: An array of
+     * StorediSCSIVolume objects where each object contains metadata about
+     * one stored volume. </li> <li> <p><b>TargetARN</b>: The Amazon Resource
+     * Name (ARN) of the volume target. </li> <li> <p><b>VolumeARN</b>: The
+     * Amazon Resource Name (ARN) of the stored volume. </li> <li>
+     * <p><b>VolumeDiskId</b>: The disk ID of the local disk that was
+     * specified in the <a>CreateStorediSCSIVolume</a> operation. </li> <li>
      * <p><b>VolumeId</b>: The unique identifier of the storage volume, e.g.
-     * vol-1122AABB. </li> <li> <p><b>VolumeProgress</b>: Represents the
-     * percentage complete if the volume is restoring or bootstrapping that
-     * represents the percent of data transferred. This field does not appear
-     * in the response if the stored volume is not restoring or
-     * bootstrapping. </li> <li> <p><b>VolumeSizeInBytes</b>: The size of the
-     * volume in bytes. </li> <li> <p><b>VolumeStatus</b>: One of the
-     * <a>VolumeStatus</a> values that indicates the state of the volume.
-     * </li> <li> <p><b>VolumeType</b>: One of the enumeration values
-     * describing the type of the volume. Currently, on STORED volumes are
-     * supported. </li> </ul>
+     * vol-1122AABB. </li> <li> <p><b>VolumeiSCSIAttributes</b>: An
+     * <a>VolumeiSCSIAttributes</a> object that represents a collection of
+     * iSCSI attributes for one stored volume. </li> <li>
+     * <p><b>VolumeProgress</b>: Represents the percentage complete if the
+     * volume is restoring or bootstrapping that represents the percent of
+     * data transferred. This field does not appear in the response if the
+     * stored volume is not restoring or bootstrapping. </li> <li>
+     * <p><b>VolumeSizeInBytes</b>: The size of the volume in bytes. </li>
+     * <li> <p><b>VolumeStatus</b>: One of the <a>VolumeStatus</a> values
+     * that indicates the state of the volume. </li> <li>
+     * <p><b>VolumeType</b>: One of the enumeration values describing the
+     * type of the volume. Currently, on STORED volumes are supported. </li>
+     * </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param storediSCSIVolumes Describes a single unit of output from
      *         <a>DescribeStorediSCSIVolumes</a>. The following fields are returned:
      *         <ul> <li> <p><b>ChapEnabled</b>: Indicates whether mutual CHAP is
-     *         enabled for the iSCSI target. </li> <li>
-     *         <p><b>VolumeiSCSIAttributes</b>: An <a>VolumeiSCSIAttributes</a>
-     *         object that represents a collection of iSCSI attributes for one stored
-     *         volume. </li> <li> <p><b>StorediSCSIVolumes</b>: An array of
-     *         StorediSCSIVolume (p. 203) objects where each object contains metadata
-     *         about one stored volume. </li> <li> <p><b>LunNumber</b>: The logical
-     *         disk number. </li> <li> <p><b>NetworkInterfaceId</b>: The network
-     *         interface ID of the stored volume that initiator use to map the stored
-     *         volume as an iSCSI target. </li> <li> <p><b>NetworkInterfacePort</b>:
-     *         The port used to communicate with iSCSI targets. </li> <li>
-     *         <p><b>PreservedExistingData</b>: Indicates if when the stored volume
-     *         was created, existing data on the underlying local disk was preserved.
-     *         <p><i>Valid Values</i>: true, false </li> <li>
-     *         <p><b>SourceSnapshotId</b>: If the stored volume was created from a
-     *         snapshot, this field contains the snapshot ID used, e.g.
-     *         snap-1122aabb. Otherwise, this field is not included. </li> <li>
-     *         <p><b>TargetARN</b>: The Amazon Resource Name (ARN) of the volume
-     *         target. </li> <li> <p><b>VolumeARN</b>: The Amazon Resource Name (ARN)
-     *         of the stored volume. </li> <li> <p><b>VolumeDiskId</b>: The disk ID
-     *         of the local disk that was specified in the
-     *         <a>CreateStorediSCSIVolume</a> operation. </li> <li>
+     *         enabled for the iSCSI target. </li> <li> <p><b>LunNumber</b>: The
+     *         logical disk number. </li> <li> <p><b>NetworkInterfaceId</b>: The
+     *         network interface ID of the stored volume that initiator use to map
+     *         the stored volume as an iSCSI target. </li> <li>
+     *         <p><b>NetworkInterfacePort</b>: The port used to communicate with
+     *         iSCSI targets. </li> <li> <p><b>PreservedExistingData</b>: Indicates
+     *         if when the stored volume was created, existing data on the underlying
+     *         local disk was preserved. </li> <li> <p><b>SourceSnapshotId</b>: If
+     *         the stored volume was created from a snapshot, this field contains the
+     *         snapshot ID used, e.g. snap-1122aabb. Otherwise, this field is not
+     *         included. </li> <li> <p><b>StorediSCSIVolumes</b>: An array of
+     *         StorediSCSIVolume objects where each object contains metadata about
+     *         one stored volume. </li> <li> <p><b>TargetARN</b>: The Amazon Resource
+     *         Name (ARN) of the volume target. </li> <li> <p><b>VolumeARN</b>: The
+     *         Amazon Resource Name (ARN) of the stored volume. </li> <li>
+     *         <p><b>VolumeDiskId</b>: The disk ID of the local disk that was
+     *         specified in the <a>CreateStorediSCSIVolume</a> operation. </li> <li>
      *         <p><b>VolumeId</b>: The unique identifier of the storage volume, e.g.
-     *         vol-1122AABB. </li> <li> <p><b>VolumeProgress</b>: Represents the
-     *         percentage complete if the volume is restoring or bootstrapping that
-     *         represents the percent of data transferred. This field does not appear
-     *         in the response if the stored volume is not restoring or
-     *         bootstrapping. </li> <li> <p><b>VolumeSizeInBytes</b>: The size of the
-     *         volume in bytes. </li> <li> <p><b>VolumeStatus</b>: One of the
-     *         <a>VolumeStatus</a> values that indicates the state of the volume.
-     *         </li> <li> <p><b>VolumeType</b>: One of the enumeration values
-     *         describing the type of the volume. Currently, on STORED volumes are
-     *         supported. </li> </ul>
+     *         vol-1122AABB. </li> <li> <p><b>VolumeiSCSIAttributes</b>: An
+     *         <a>VolumeiSCSIAttributes</a> object that represents a collection of
+     *         iSCSI attributes for one stored volume. </li> <li>
+     *         <p><b>VolumeProgress</b>: Represents the percentage complete if the
+     *         volume is restoring or bootstrapping that represents the percent of
+     *         data transferred. This field does not appear in the response if the
+     *         stored volume is not restoring or bootstrapping. </li> <li>
+     *         <p><b>VolumeSizeInBytes</b>: The size of the volume in bytes. </li>
+     *         <li> <p><b>VolumeStatus</b>: One of the <a>VolumeStatus</a> values
+     *         that indicates the state of the volume. </li> <li>
+     *         <p><b>VolumeType</b>: One of the enumeration values describing the
+     *         type of the volume. Currently, on STORED volumes are supported. </li>
+     *         </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -315,76 +308,74 @@ public class DescribeStorediSCSIVolumesResult {
      * Describes a single unit of output from
      * <a>DescribeStorediSCSIVolumes</a>. The following fields are returned:
      * <ul> <li> <p><b>ChapEnabled</b>: Indicates whether mutual CHAP is
-     * enabled for the iSCSI target. </li> <li>
-     * <p><b>VolumeiSCSIAttributes</b>: An <a>VolumeiSCSIAttributes</a>
-     * object that represents a collection of iSCSI attributes for one stored
-     * volume. </li> <li> <p><b>StorediSCSIVolumes</b>: An array of
-     * StorediSCSIVolume (p. 203) objects where each object contains metadata
-     * about one stored volume. </li> <li> <p><b>LunNumber</b>: The logical
-     * disk number. </li> <li> <p><b>NetworkInterfaceId</b>: The network
-     * interface ID of the stored volume that initiator use to map the stored
-     * volume as an iSCSI target. </li> <li> <p><b>NetworkInterfacePort</b>:
-     * The port used to communicate with iSCSI targets. </li> <li>
-     * <p><b>PreservedExistingData</b>: Indicates if when the stored volume
-     * was created, existing data on the underlying local disk was preserved.
-     * <p><i>Valid Values</i>: true, false </li> <li>
-     * <p><b>SourceSnapshotId</b>: If the stored volume was created from a
-     * snapshot, this field contains the snapshot ID used, e.g.
-     * snap-1122aabb. Otherwise, this field is not included. </li> <li>
-     * <p><b>TargetARN</b>: The Amazon Resource Name (ARN) of the volume
-     * target. </li> <li> <p><b>VolumeARN</b>: The Amazon Resource Name (ARN)
-     * of the stored volume. </li> <li> <p><b>VolumeDiskId</b>: The disk ID
-     * of the local disk that was specified in the
-     * <a>CreateStorediSCSIVolume</a> operation. </li> <li>
+     * enabled for the iSCSI target. </li> <li> <p><b>LunNumber</b>: The
+     * logical disk number. </li> <li> <p><b>NetworkInterfaceId</b>: The
+     * network interface ID of the stored volume that initiator use to map
+     * the stored volume as an iSCSI target. </li> <li>
+     * <p><b>NetworkInterfacePort</b>: The port used to communicate with
+     * iSCSI targets. </li> <li> <p><b>PreservedExistingData</b>: Indicates
+     * if when the stored volume was created, existing data on the underlying
+     * local disk was preserved. </li> <li> <p><b>SourceSnapshotId</b>: If
+     * the stored volume was created from a snapshot, this field contains the
+     * snapshot ID used, e.g. snap-1122aabb. Otherwise, this field is not
+     * included. </li> <li> <p><b>StorediSCSIVolumes</b>: An array of
+     * StorediSCSIVolume objects where each object contains metadata about
+     * one stored volume. </li> <li> <p><b>TargetARN</b>: The Amazon Resource
+     * Name (ARN) of the volume target. </li> <li> <p><b>VolumeARN</b>: The
+     * Amazon Resource Name (ARN) of the stored volume. </li> <li>
+     * <p><b>VolumeDiskId</b>: The disk ID of the local disk that was
+     * specified in the <a>CreateStorediSCSIVolume</a> operation. </li> <li>
      * <p><b>VolumeId</b>: The unique identifier of the storage volume, e.g.
-     * vol-1122AABB. </li> <li> <p><b>VolumeProgress</b>: Represents the
-     * percentage complete if the volume is restoring or bootstrapping that
-     * represents the percent of data transferred. This field does not appear
-     * in the response if the stored volume is not restoring or
-     * bootstrapping. </li> <li> <p><b>VolumeSizeInBytes</b>: The size of the
-     * volume in bytes. </li> <li> <p><b>VolumeStatus</b>: One of the
-     * <a>VolumeStatus</a> values that indicates the state of the volume.
-     * </li> <li> <p><b>VolumeType</b>: One of the enumeration values
-     * describing the type of the volume. Currently, on STORED volumes are
-     * supported. </li> </ul>
+     * vol-1122AABB. </li> <li> <p><b>VolumeiSCSIAttributes</b>: An
+     * <a>VolumeiSCSIAttributes</a> object that represents a collection of
+     * iSCSI attributes for one stored volume. </li> <li>
+     * <p><b>VolumeProgress</b>: Represents the percentage complete if the
+     * volume is restoring or bootstrapping that represents the percent of
+     * data transferred. This field does not appear in the response if the
+     * stored volume is not restoring or bootstrapping. </li> <li>
+     * <p><b>VolumeSizeInBytes</b>: The size of the volume in bytes. </li>
+     * <li> <p><b>VolumeStatus</b>: One of the <a>VolumeStatus</a> values
+     * that indicates the state of the volume. </li> <li>
+     * <p><b>VolumeType</b>: One of the enumeration values describing the
+     * type of the volume. Currently, on STORED volumes are supported. </li>
+     * </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param storediSCSIVolumes Describes a single unit of output from
      *         <a>DescribeStorediSCSIVolumes</a>. The following fields are returned:
      *         <ul> <li> <p><b>ChapEnabled</b>: Indicates whether mutual CHAP is
-     *         enabled for the iSCSI target. </li> <li>
-     *         <p><b>VolumeiSCSIAttributes</b>: An <a>VolumeiSCSIAttributes</a>
-     *         object that represents a collection of iSCSI attributes for one stored
-     *         volume. </li> <li> <p><b>StorediSCSIVolumes</b>: An array of
-     *         StorediSCSIVolume (p. 203) objects where each object contains metadata
-     *         about one stored volume. </li> <li> <p><b>LunNumber</b>: The logical
-     *         disk number. </li> <li> <p><b>NetworkInterfaceId</b>: The network
-     *         interface ID of the stored volume that initiator use to map the stored
-     *         volume as an iSCSI target. </li> <li> <p><b>NetworkInterfacePort</b>:
-     *         The port used to communicate with iSCSI targets. </li> <li>
-     *         <p><b>PreservedExistingData</b>: Indicates if when the stored volume
-     *         was created, existing data on the underlying local disk was preserved.
-     *         <p><i>Valid Values</i>: true, false </li> <li>
-     *         <p><b>SourceSnapshotId</b>: If the stored volume was created from a
-     *         snapshot, this field contains the snapshot ID used, e.g.
-     *         snap-1122aabb. Otherwise, this field is not included. </li> <li>
-     *         <p><b>TargetARN</b>: The Amazon Resource Name (ARN) of the volume
-     *         target. </li> <li> <p><b>VolumeARN</b>: The Amazon Resource Name (ARN)
-     *         of the stored volume. </li> <li> <p><b>VolumeDiskId</b>: The disk ID
-     *         of the local disk that was specified in the
-     *         <a>CreateStorediSCSIVolume</a> operation. </li> <li>
+     *         enabled for the iSCSI target. </li> <li> <p><b>LunNumber</b>: The
+     *         logical disk number. </li> <li> <p><b>NetworkInterfaceId</b>: The
+     *         network interface ID of the stored volume that initiator use to map
+     *         the stored volume as an iSCSI target. </li> <li>
+     *         <p><b>NetworkInterfacePort</b>: The port used to communicate with
+     *         iSCSI targets. </li> <li> <p><b>PreservedExistingData</b>: Indicates
+     *         if when the stored volume was created, existing data on the underlying
+     *         local disk was preserved. </li> <li> <p><b>SourceSnapshotId</b>: If
+     *         the stored volume was created from a snapshot, this field contains the
+     *         snapshot ID used, e.g. snap-1122aabb. Otherwise, this field is not
+     *         included. </li> <li> <p><b>StorediSCSIVolumes</b>: An array of
+     *         StorediSCSIVolume objects where each object contains metadata about
+     *         one stored volume. </li> <li> <p><b>TargetARN</b>: The Amazon Resource
+     *         Name (ARN) of the volume target. </li> <li> <p><b>VolumeARN</b>: The
+     *         Amazon Resource Name (ARN) of the stored volume. </li> <li>
+     *         <p><b>VolumeDiskId</b>: The disk ID of the local disk that was
+     *         specified in the <a>CreateStorediSCSIVolume</a> operation. </li> <li>
      *         <p><b>VolumeId</b>: The unique identifier of the storage volume, e.g.
-     *         vol-1122AABB. </li> <li> <p><b>VolumeProgress</b>: Represents the
-     *         percentage complete if the volume is restoring or bootstrapping that
-     *         represents the percent of data transferred. This field does not appear
-     *         in the response if the stored volume is not restoring or
-     *         bootstrapping. </li> <li> <p><b>VolumeSizeInBytes</b>: The size of the
-     *         volume in bytes. </li> <li> <p><b>VolumeStatus</b>: One of the
-     *         <a>VolumeStatus</a> values that indicates the state of the volume.
-     *         </li> <li> <p><b>VolumeType</b>: One of the enumeration values
-     *         describing the type of the volume. Currently, on STORED volumes are
-     *         supported. </li> </ul>
+     *         vol-1122AABB. </li> <li> <p><b>VolumeiSCSIAttributes</b>: An
+     *         <a>VolumeiSCSIAttributes</a> object that represents a collection of
+     *         iSCSI attributes for one stored volume. </li> <li>
+     *         <p><b>VolumeProgress</b>: Represents the percentage complete if the
+     *         volume is restoring or bootstrapping that represents the percent of
+     *         data transferred. This field does not appear in the response if the
+     *         stored volume is not restoring or bootstrapping. </li> <li>
+     *         <p><b>VolumeSizeInBytes</b>: The size of the volume in bytes. </li>
+     *         <li> <p><b>VolumeStatus</b>: One of the <a>VolumeStatus</a> values
+     *         that indicates the state of the volume. </li> <li>
+     *         <p><b>VolumeType</b>: One of the enumeration values describing the
+     *         type of the volume. Currently, on STORED volumes are supported. </li>
+     *         </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

@@ -104,6 +104,12 @@ public class DBSnapshot {
     private String snapshotType;
 
     /**
+     * Specifies the Provisioned IOPS (I/O operations per second) value of
+     * the DB Instance at the time of the snapshot.
+     */
+    private Integer iops;
+
+    /**
      * Specifies the identifier for the DB Snapshot.
      *
      * @return Specifies the identifier for the DB Snapshot.
@@ -598,6 +604,46 @@ public class DBSnapshot {
     
     
     /**
+     * Specifies the Provisioned IOPS (I/O operations per second) value of
+     * the DB Instance at the time of the snapshot.
+     *
+     * @return Specifies the Provisioned IOPS (I/O operations per second) value of
+     *         the DB Instance at the time of the snapshot.
+     */
+    public Integer getIops() {
+        return iops;
+    }
+    
+    /**
+     * Specifies the Provisioned IOPS (I/O operations per second) value of
+     * the DB Instance at the time of the snapshot.
+     *
+     * @param iops Specifies the Provisioned IOPS (I/O operations per second) value of
+     *         the DB Instance at the time of the snapshot.
+     */
+    public void setIops(Integer iops) {
+        this.iops = iops;
+    }
+    
+    /**
+     * Specifies the Provisioned IOPS (I/O operations per second) value of
+     * the DB Instance at the time of the snapshot.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param iops Specifies the Provisioned IOPS (I/O operations per second) value of
+     *         the DB Instance at the time of the snapshot.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public DBSnapshot withIops(Integer iops) {
+        this.iops = iops;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -623,6 +669,7 @@ public class DBSnapshot {
         if (engineVersion != null) sb.append("EngineVersion: " + engineVersion + ", ");
         if (licenseModel != null) sb.append("LicenseModel: " + licenseModel + ", ");
         if (snapshotType != null) sb.append("SnapshotType: " + snapshotType + ", ");
+        if (iops != null) sb.append("Iops: " + iops + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -646,6 +693,7 @@ public class DBSnapshot {
         hashCode = prime * hashCode + ((getEngineVersion() == null) ? 0 : getEngineVersion().hashCode()); 
         hashCode = prime * hashCode + ((getLicenseModel() == null) ? 0 : getLicenseModel().hashCode()); 
         hashCode = prime * hashCode + ((getSnapshotType() == null) ? 0 : getSnapshotType().hashCode()); 
+        hashCode = prime * hashCode + ((getIops() == null) ? 0 : getIops().hashCode()); 
         return hashCode;
     }
     
@@ -685,6 +733,8 @@ public class DBSnapshot {
         if (other.getLicenseModel() != null && other.getLicenseModel().equals(this.getLicenseModel()) == false) return false; 
         if (other.getSnapshotType() == null ^ this.getSnapshotType() == null) return false;
         if (other.getSnapshotType() != null && other.getSnapshotType().equals(this.getSnapshotType()) == false) return false; 
+        if (other.getIops() == null ^ this.getIops() == null) return false;
+        if (other.getIops() != null && other.getIops().equals(this.getIops()) == false) return false; 
         return true;
     }
     

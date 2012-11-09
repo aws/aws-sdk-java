@@ -75,12 +75,12 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest {
 
     /**
      * The version of the Amazon Machine Image (AMI) to use when launching
-     * Amazon EC2 instances in the job flow. The following values ane valid:
+     * Amazon EC2 instances in the job flow. The following values are valid:
      * <ul> <li>"latest" (latest AMI version; currently AMI 2.0, Hadoop
      * 0.20.205)</li> <li>"2.0" (AMI 2.0, Hadoop 0.20.205)</li> <li>"1.0"
      * (AMI 1.0, Hadoop 0.18)</li> </ul> <p>If this value is not specified,
      * the job flow uses the default of (AMI 1.0, Hadoop 0.18). <p>If the AMI
-     * supports multiple verisons of Hadoop (for example, AMI 1.0 supports
+     * supports multiple versions of Hadoop (for example, AMI 1.0 supports
      * both Hadoop 0.18 and 0.20) you can use the
      * <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code> parameter to
      * modify the version of Hadoop from the defaults shown above. <p>For
@@ -114,12 +114,27 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest {
     private java.util.List<BootstrapActionConfig> bootstrapActions;
 
     /**
-     * A list of strings used by third-party software to tag the job flow.
-     * Currently the only valid value is "karmasphere-enterprise-utility",
-     * which tags the job flow for management by <a
-     * "http://aws.amazon.com/elasticmapreduce/karmasphere/">Karmasphere.</a>
+     * A list of strings that indicates third-party software to use with the
+     * job flow. For more information, go to <a
+     * lasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
+     * Third Party Applications with Amazon EMR</a>. Currently supported
+     * values are: <ul> <li>"karmasphere-enterprise-utility" - tag the job
+     * flow for management by <a
+     * ://aws.amazon.com/elasticmapreduce/karmasphere/">Karmasphere.</a></li>
+     * <li>"mapr-m3" - launch the job flow using MapR M3 Edition.</li>
+     * <li>"mapr-m5" - launch the job flow using MapR M5 Edition.</li> </ul>
      */
     private java.util.List<String> supportedProducts;
+
+    /**
+     * Whether the job flow is visible to all IAM users of the AWS account
+     * associated with the job flow. If this value is set to
+     * <code>true</code>, all IAM users of that AWS account can view and (if
+     * they have the proper policy permissions set) manage the job flow. If
+     * it is set to <code>false</code>, only the IAM user that created the
+     * job flow can view and manage it.
+     */
+    private Boolean visibleToAllUsers;
 
     /**
      * Default constructor for a new RunJobFlowRequest object.  Callers should use the
@@ -289,12 +304,12 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest {
     
     /**
      * The version of the Amazon Machine Image (AMI) to use when launching
-     * Amazon EC2 instances in the job flow. The following values ane valid:
+     * Amazon EC2 instances in the job flow. The following values are valid:
      * <ul> <li>"latest" (latest AMI version; currently AMI 2.0, Hadoop
      * 0.20.205)</li> <li>"2.0" (AMI 2.0, Hadoop 0.20.205)</li> <li>"1.0"
      * (AMI 1.0, Hadoop 0.18)</li> </ul> <p>If this value is not specified,
      * the job flow uses the default of (AMI 1.0, Hadoop 0.18). <p>If the AMI
-     * supports multiple verisons of Hadoop (for example, AMI 1.0 supports
+     * supports multiple versions of Hadoop (for example, AMI 1.0 supports
      * both Hadoop 0.18 and 0.20) you can use the
      * <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code> parameter to
      * modify the version of Hadoop from the defaults shown above. <p>For
@@ -309,12 +324,12 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest {
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @return The version of the Amazon Machine Image (AMI) to use when launching
-     *         Amazon EC2 instances in the job flow. The following values ane valid:
+     *         Amazon EC2 instances in the job flow. The following values are valid:
      *         <ul> <li>"latest" (latest AMI version; currently AMI 2.0, Hadoop
      *         0.20.205)</li> <li>"2.0" (AMI 2.0, Hadoop 0.20.205)</li> <li>"1.0"
      *         (AMI 1.0, Hadoop 0.18)</li> </ul> <p>If this value is not specified,
      *         the job flow uses the default of (AMI 1.0, Hadoop 0.18). <p>If the AMI
-     *         supports multiple verisons of Hadoop (for example, AMI 1.0 supports
+     *         supports multiple versions of Hadoop (for example, AMI 1.0 supports
      *         both Hadoop 0.18 and 0.20) you can use the
      *         <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code> parameter to
      *         modify the version of Hadoop from the defaults shown above. <p>For
@@ -330,12 +345,12 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest {
     
     /**
      * The version of the Amazon Machine Image (AMI) to use when launching
-     * Amazon EC2 instances in the job flow. The following values ane valid:
+     * Amazon EC2 instances in the job flow. The following values are valid:
      * <ul> <li>"latest" (latest AMI version; currently AMI 2.0, Hadoop
      * 0.20.205)</li> <li>"2.0" (AMI 2.0, Hadoop 0.20.205)</li> <li>"1.0"
      * (AMI 1.0, Hadoop 0.18)</li> </ul> <p>If this value is not specified,
      * the job flow uses the default of (AMI 1.0, Hadoop 0.18). <p>If the AMI
-     * supports multiple verisons of Hadoop (for example, AMI 1.0 supports
+     * supports multiple versions of Hadoop (for example, AMI 1.0 supports
      * both Hadoop 0.18 and 0.20) you can use the
      * <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code> parameter to
      * modify the version of Hadoop from the defaults shown above. <p>For
@@ -350,12 +365,12 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest {
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param amiVersion The version of the Amazon Machine Image (AMI) to use when launching
-     *         Amazon EC2 instances in the job flow. The following values ane valid:
+     *         Amazon EC2 instances in the job flow. The following values are valid:
      *         <ul> <li>"latest" (latest AMI version; currently AMI 2.0, Hadoop
      *         0.20.205)</li> <li>"2.0" (AMI 2.0, Hadoop 0.20.205)</li> <li>"1.0"
      *         (AMI 1.0, Hadoop 0.18)</li> </ul> <p>If this value is not specified,
      *         the job flow uses the default of (AMI 1.0, Hadoop 0.18). <p>If the AMI
-     *         supports multiple verisons of Hadoop (for example, AMI 1.0 supports
+     *         supports multiple versions of Hadoop (for example, AMI 1.0 supports
      *         both Hadoop 0.18 and 0.20) you can use the
      *         <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code> parameter to
      *         modify the version of Hadoop from the defaults shown above. <p>For
@@ -371,12 +386,12 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest {
     
     /**
      * The version of the Amazon Machine Image (AMI) to use when launching
-     * Amazon EC2 instances in the job flow. The following values ane valid:
+     * Amazon EC2 instances in the job flow. The following values are valid:
      * <ul> <li>"latest" (latest AMI version; currently AMI 2.0, Hadoop
      * 0.20.205)</li> <li>"2.0" (AMI 2.0, Hadoop 0.20.205)</li> <li>"1.0"
      * (AMI 1.0, Hadoop 0.18)</li> </ul> <p>If this value is not specified,
      * the job flow uses the default of (AMI 1.0, Hadoop 0.18). <p>If the AMI
-     * supports multiple verisons of Hadoop (for example, AMI 1.0 supports
+     * supports multiple versions of Hadoop (for example, AMI 1.0 supports
      * both Hadoop 0.18 and 0.20) you can use the
      * <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code> parameter to
      * modify the version of Hadoop from the defaults shown above. <p>For
@@ -393,12 +408,12 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest {
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param amiVersion The version of the Amazon Machine Image (AMI) to use when launching
-     *         Amazon EC2 instances in the job flow. The following values ane valid:
+     *         Amazon EC2 instances in the job flow. The following values are valid:
      *         <ul> <li>"latest" (latest AMI version; currently AMI 2.0, Hadoop
      *         0.20.205)</li> <li>"2.0" (AMI 2.0, Hadoop 0.20.205)</li> <li>"1.0"
      *         (AMI 1.0, Hadoop 0.18)</li> </ul> <p>If this value is not specified,
      *         the job flow uses the default of (AMI 1.0, Hadoop 0.18). <p>If the AMI
-     *         supports multiple verisons of Hadoop (for example, AMI 1.0 supports
+     *         supports multiple versions of Hadoop (for example, AMI 1.0 supports
      *         both Hadoop 0.18 and 0.20) you can use the
      *         <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code> parameter to
      *         modify the version of Hadoop from the defaults shown above. <p>For
@@ -604,15 +619,25 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * A list of strings used by third-party software to tag the job flow.
-     * Currently the only valid value is "karmasphere-enterprise-utility",
-     * which tags the job flow for management by <a
-     * "http://aws.amazon.com/elasticmapreduce/karmasphere/">Karmasphere.</a>
+     * A list of strings that indicates third-party software to use with the
+     * job flow. For more information, go to <a
+     * lasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
+     * Third Party Applications with Amazon EMR</a>. Currently supported
+     * values are: <ul> <li>"karmasphere-enterprise-utility" - tag the job
+     * flow for management by <a
+     * ://aws.amazon.com/elasticmapreduce/karmasphere/">Karmasphere.</a></li>
+     * <li>"mapr-m3" - launch the job flow using MapR M3 Edition.</li>
+     * <li>"mapr-m5" - launch the job flow using MapR M5 Edition.</li> </ul>
      *
-     * @return A list of strings used by third-party software to tag the job flow.
-     *         Currently the only valid value is "karmasphere-enterprise-utility",
-     *         which tags the job flow for management by <a
-     *         "http://aws.amazon.com/elasticmapreduce/karmasphere/">Karmasphere.</a>
+     * @return A list of strings that indicates third-party software to use with the
+     *         job flow. For more information, go to <a
+     *         lasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
+     *         Third Party Applications with Amazon EMR</a>. Currently supported
+     *         values are: <ul> <li>"karmasphere-enterprise-utility" - tag the job
+     *         flow for management by <a
+     *         ://aws.amazon.com/elasticmapreduce/karmasphere/">Karmasphere.</a></li>
+     *         <li>"mapr-m3" - launch the job flow using MapR M3 Edition.</li>
+     *         <li>"mapr-m5" - launch the job flow using MapR M5 Edition.</li> </ul>
      */
     public java.util.List<String> getSupportedProducts() {
         
@@ -623,15 +648,25 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * A list of strings used by third-party software to tag the job flow.
-     * Currently the only valid value is "karmasphere-enterprise-utility",
-     * which tags the job flow for management by <a
-     * "http://aws.amazon.com/elasticmapreduce/karmasphere/">Karmasphere.</a>
+     * A list of strings that indicates third-party software to use with the
+     * job flow. For more information, go to <a
+     * lasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
+     * Third Party Applications with Amazon EMR</a>. Currently supported
+     * values are: <ul> <li>"karmasphere-enterprise-utility" - tag the job
+     * flow for management by <a
+     * ://aws.amazon.com/elasticmapreduce/karmasphere/">Karmasphere.</a></li>
+     * <li>"mapr-m3" - launch the job flow using MapR M3 Edition.</li>
+     * <li>"mapr-m5" - launch the job flow using MapR M5 Edition.</li> </ul>
      *
-     * @param supportedProducts A list of strings used by third-party software to tag the job flow.
-     *         Currently the only valid value is "karmasphere-enterprise-utility",
-     *         which tags the job flow for management by <a
-     *         "http://aws.amazon.com/elasticmapreduce/karmasphere/">Karmasphere.</a>
+     * @param supportedProducts A list of strings that indicates third-party software to use with the
+     *         job flow. For more information, go to <a
+     *         lasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
+     *         Third Party Applications with Amazon EMR</a>. Currently supported
+     *         values are: <ul> <li>"karmasphere-enterprise-utility" - tag the job
+     *         flow for management by <a
+     *         ://aws.amazon.com/elasticmapreduce/karmasphere/">Karmasphere.</a></li>
+     *         <li>"mapr-m3" - launch the job flow using MapR M3 Edition.</li>
+     *         <li>"mapr-m5" - launch the job flow using MapR M5 Edition.</li> </ul>
      */
     public void setSupportedProducts(java.util.Collection<String> supportedProducts) {
         if (supportedProducts == null) {
@@ -645,17 +680,27 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * A list of strings used by third-party software to tag the job flow.
-     * Currently the only valid value is "karmasphere-enterprise-utility",
-     * which tags the job flow for management by <a
-     * "http://aws.amazon.com/elasticmapreduce/karmasphere/">Karmasphere.</a>
+     * A list of strings that indicates third-party software to use with the
+     * job flow. For more information, go to <a
+     * lasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
+     * Third Party Applications with Amazon EMR</a>. Currently supported
+     * values are: <ul> <li>"karmasphere-enterprise-utility" - tag the job
+     * flow for management by <a
+     * ://aws.amazon.com/elasticmapreduce/karmasphere/">Karmasphere.</a></li>
+     * <li>"mapr-m3" - launch the job flow using MapR M3 Edition.</li>
+     * <li>"mapr-m5" - launch the job flow using MapR M5 Edition.</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param supportedProducts A list of strings used by third-party software to tag the job flow.
-     *         Currently the only valid value is "karmasphere-enterprise-utility",
-     *         which tags the job flow for management by <a
-     *         "http://aws.amazon.com/elasticmapreduce/karmasphere/">Karmasphere.</a>
+     * @param supportedProducts A list of strings that indicates third-party software to use with the
+     *         job flow. For more information, go to <a
+     *         lasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
+     *         Third Party Applications with Amazon EMR</a>. Currently supported
+     *         values are: <ul> <li>"karmasphere-enterprise-utility" - tag the job
+     *         flow for management by <a
+     *         ://aws.amazon.com/elasticmapreduce/karmasphere/">Karmasphere.</a></li>
+     *         <li>"mapr-m3" - launch the job flow using MapR M3 Edition.</li>
+     *         <li>"mapr-m5" - launch the job flow using MapR M5 Edition.</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -669,17 +714,27 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * A list of strings used by third-party software to tag the job flow.
-     * Currently the only valid value is "karmasphere-enterprise-utility",
-     * which tags the job flow for management by <a
-     * "http://aws.amazon.com/elasticmapreduce/karmasphere/">Karmasphere.</a>
+     * A list of strings that indicates third-party software to use with the
+     * job flow. For more information, go to <a
+     * lasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
+     * Third Party Applications with Amazon EMR</a>. Currently supported
+     * values are: <ul> <li>"karmasphere-enterprise-utility" - tag the job
+     * flow for management by <a
+     * ://aws.amazon.com/elasticmapreduce/karmasphere/">Karmasphere.</a></li>
+     * <li>"mapr-m3" - launch the job flow using MapR M3 Edition.</li>
+     * <li>"mapr-m5" - launch the job flow using MapR M5 Edition.</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param supportedProducts A list of strings used by third-party software to tag the job flow.
-     *         Currently the only valid value is "karmasphere-enterprise-utility",
-     *         which tags the job flow for management by <a
-     *         "http://aws.amazon.com/elasticmapreduce/karmasphere/">Karmasphere.</a>
+     * @param supportedProducts A list of strings that indicates third-party software to use with the
+     *         job flow. For more information, go to <a
+     *         lasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
+     *         Third Party Applications with Amazon EMR</a>. Currently supported
+     *         values are: <ul> <li>"karmasphere-enterprise-utility" - tag the job
+     *         flow for management by <a
+     *         ://aws.amazon.com/elasticmapreduce/karmasphere/">Karmasphere.</a></li>
+     *         <li>"mapr-m3" - launch the job flow using MapR M3 Edition.</li>
+     *         <li>"mapr-m5" - launch the job flow using MapR M5 Edition.</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -694,6 +749,89 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest {
         }
 
         return this;
+    }
+    
+    /**
+     * Whether the job flow is visible to all IAM users of the AWS account
+     * associated with the job flow. If this value is set to
+     * <code>true</code>, all IAM users of that AWS account can view and (if
+     * they have the proper policy permissions set) manage the job flow. If
+     * it is set to <code>false</code>, only the IAM user that created the
+     * job flow can view and manage it.
+     *
+     * @return Whether the job flow is visible to all IAM users of the AWS account
+     *         associated with the job flow. If this value is set to
+     *         <code>true</code>, all IAM users of that AWS account can view and (if
+     *         they have the proper policy permissions set) manage the job flow. If
+     *         it is set to <code>false</code>, only the IAM user that created the
+     *         job flow can view and manage it.
+     */
+    public Boolean isVisibleToAllUsers() {
+        return visibleToAllUsers;
+    }
+    
+    /**
+     * Whether the job flow is visible to all IAM users of the AWS account
+     * associated with the job flow. If this value is set to
+     * <code>true</code>, all IAM users of that AWS account can view and (if
+     * they have the proper policy permissions set) manage the job flow. If
+     * it is set to <code>false</code>, only the IAM user that created the
+     * job flow can view and manage it.
+     *
+     * @param visibleToAllUsers Whether the job flow is visible to all IAM users of the AWS account
+     *         associated with the job flow. If this value is set to
+     *         <code>true</code>, all IAM users of that AWS account can view and (if
+     *         they have the proper policy permissions set) manage the job flow. If
+     *         it is set to <code>false</code>, only the IAM user that created the
+     *         job flow can view and manage it.
+     */
+    public void setVisibleToAllUsers(Boolean visibleToAllUsers) {
+        this.visibleToAllUsers = visibleToAllUsers;
+    }
+    
+    /**
+     * Whether the job flow is visible to all IAM users of the AWS account
+     * associated with the job flow. If this value is set to
+     * <code>true</code>, all IAM users of that AWS account can view and (if
+     * they have the proper policy permissions set) manage the job flow. If
+     * it is set to <code>false</code>, only the IAM user that created the
+     * job flow can view and manage it.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param visibleToAllUsers Whether the job flow is visible to all IAM users of the AWS account
+     *         associated with the job flow. If this value is set to
+     *         <code>true</code>, all IAM users of that AWS account can view and (if
+     *         they have the proper policy permissions set) manage the job flow. If
+     *         it is set to <code>false</code>, only the IAM user that created the
+     *         job flow can view and manage it.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public RunJobFlowRequest withVisibleToAllUsers(Boolean visibleToAllUsers) {
+        this.visibleToAllUsers = visibleToAllUsers;
+        return this;
+    }
+    
+    
+    /**
+     * Whether the job flow is visible to all IAM users of the AWS account
+     * associated with the job flow. If this value is set to
+     * <code>true</code>, all IAM users of that AWS account can view and (if
+     * they have the proper policy permissions set) manage the job flow. If
+     * it is set to <code>false</code>, only the IAM user that created the
+     * job flow can view and manage it.
+     *
+     * @return Whether the job flow is visible to all IAM users of the AWS account
+     *         associated with the job flow. If this value is set to
+     *         <code>true</code>, all IAM users of that AWS account can view and (if
+     *         they have the proper policy permissions set) manage the job flow. If
+     *         it is set to <code>false</code>, only the IAM user that created the
+     *         job flow can view and manage it.
+     */
+    public Boolean getVisibleToAllUsers() {
+        return visibleToAllUsers;
     }
     
     /**
@@ -716,6 +854,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest {
         if (steps != null) sb.append("Steps: " + steps + ", ");
         if (bootstrapActions != null) sb.append("BootstrapActions: " + bootstrapActions + ", ");
         if (supportedProducts != null) sb.append("SupportedProducts: " + supportedProducts + ", ");
+        if (visibleToAllUsers != null) sb.append("VisibleToAllUsers: " + visibleToAllUsers + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -733,6 +872,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest {
         hashCode = prime * hashCode + ((getSteps() == null) ? 0 : getSteps().hashCode()); 
         hashCode = prime * hashCode + ((getBootstrapActions() == null) ? 0 : getBootstrapActions().hashCode()); 
         hashCode = prime * hashCode + ((getSupportedProducts() == null) ? 0 : getSupportedProducts().hashCode()); 
+        hashCode = prime * hashCode + ((isVisibleToAllUsers() == null) ? 0 : isVisibleToAllUsers().hashCode()); 
         return hashCode;
     }
     
@@ -760,6 +900,8 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest {
         if (other.getBootstrapActions() != null && other.getBootstrapActions().equals(this.getBootstrapActions()) == false) return false; 
         if (other.getSupportedProducts() == null ^ this.getSupportedProducts() == null) return false;
         if (other.getSupportedProducts() != null && other.getSupportedProducts().equals(this.getSupportedProducts()) == false) return false; 
+        if (other.isVisibleToAllUsers() == null ^ this.isVisibleToAllUsers() == null) return false;
+        if (other.isVisibleToAllUsers() != null && other.isVisibleToAllUsers().equals(this.isVisibleToAllUsers()) == false) return false; 
         return true;
     }
     

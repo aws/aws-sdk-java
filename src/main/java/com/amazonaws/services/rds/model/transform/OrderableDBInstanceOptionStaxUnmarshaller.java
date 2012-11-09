@@ -77,16 +77,8 @@ public class OrderableDBInstanceOptionStaxUnmarshaller implements Unmarshaller<O
                     orderableDBInstanceOption.setReadReplicaCapable(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
-                if (context.testExpression("VpcCapable", targetDepth)) {
-                    orderableDBInstanceOption.setVpcCapable(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-                if (context.testExpression("VpcMultiAZCapable", targetDepth)) {
-                    orderableDBInstanceOption.setVpcMultiAZCapable(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-                if (context.testExpression("VpcReadReplicaCapable", targetDepth)) {
-                    orderableDBInstanceOption.setVpcReadReplicaCapable(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("Vpc", targetDepth)) {
+                    orderableDBInstanceOption.setVpc(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

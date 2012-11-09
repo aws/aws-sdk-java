@@ -27,7 +27,8 @@ public enum VolumeStatus {
     PASSTHROUGH("PASS THROUGH"),
     RESTOREANDPASSTHROUGH("RESTORE AND PASS THROUGH"),
     DELETED("DELETED"),
-    WORKINGSTORAGENOTCONFIGURED("WORKING STORAGE NOT CONFIGURED");
+    WORKINGSTORAGENOTCONFIGURED("WORKING STORAGE NOT CONFIGURED"),
+    UPLOADBUFFERNOTCONFIGURED("UPLOAD BUFFER NOT CONFIGURED");
 
     private String value;
 
@@ -69,6 +70,8 @@ public enum VolumeStatus {
             return VolumeStatus.DELETED;
         } else if ("WORKING STORAGE NOT CONFIGURED".equals(value)) {
             return VolumeStatus.WORKINGSTORAGENOTCONFIGURED;
+        } else if ("UPLOAD BUFFER NOT CONFIGURED".equals(value)) {
+            return VolumeStatus.UPLOADBUFFERNOTCONFIGURED;
         } else {
             throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
         }

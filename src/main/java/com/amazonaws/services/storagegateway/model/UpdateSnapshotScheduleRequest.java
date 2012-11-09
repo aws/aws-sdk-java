@@ -43,9 +43,9 @@ public class UpdateSnapshotScheduleRequest extends AmazonWebServiceRequest {
     private String volumeARN;
 
     /**
-     * The hour of the day at which the snapshot schedule begins. <p>Length:
-     * 2 <p><i>Valid Values</i>: An integer between 0 and 23, representing
-     * the hour of day.
+     * The hour of the day at which the snapshot schedule begins represented
+     * as <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the
+     * day is in the time zone of the gateway.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - 23<br/>
@@ -54,8 +54,6 @@ public class UpdateSnapshotScheduleRequest extends AmazonWebServiceRequest {
 
     /**
      * Frequency of snapshots. Specify the number of hours between snapshots.
-     * <p><i>Valid Values</i>: <code>1</code>, <code>2</code>,
-     * <code>4</code>, <code>8</code>, <code>12</code>, <code>24</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 24<br/>
@@ -64,7 +62,7 @@ public class UpdateSnapshotScheduleRequest extends AmazonWebServiceRequest {
 
     /**
      * Optional description of the snapshot that overwrites the existing
-     * description. <p>Length: up to 255 characters.
+     * description.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
@@ -121,50 +119,50 @@ public class UpdateSnapshotScheduleRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * The hour of the day at which the snapshot schedule begins. <p>Length:
-     * 2 <p><i>Valid Values</i>: An integer between 0 and 23, representing
-     * the hour of day.
+     * The hour of the day at which the snapshot schedule begins represented
+     * as <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the
+     * day is in the time zone of the gateway.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - 23<br/>
      *
-     * @return The hour of the day at which the snapshot schedule begins. <p>Length:
-     *         2 <p><i>Valid Values</i>: An integer between 0 and 23, representing
-     *         the hour of day.
+     * @return The hour of the day at which the snapshot schedule begins represented
+     *         as <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the
+     *         day is in the time zone of the gateway.
      */
     public Integer getStartAt() {
         return startAt;
     }
     
     /**
-     * The hour of the day at which the snapshot schedule begins. <p>Length:
-     * 2 <p><i>Valid Values</i>: An integer between 0 and 23, representing
-     * the hour of day.
+     * The hour of the day at which the snapshot schedule begins represented
+     * as <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the
+     * day is in the time zone of the gateway.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - 23<br/>
      *
-     * @param startAt The hour of the day at which the snapshot schedule begins. <p>Length:
-     *         2 <p><i>Valid Values</i>: An integer between 0 and 23, representing
-     *         the hour of day.
+     * @param startAt The hour of the day at which the snapshot schedule begins represented
+     *         as <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the
+     *         day is in the time zone of the gateway.
      */
     public void setStartAt(Integer startAt) {
         this.startAt = startAt;
     }
     
     /**
-     * The hour of the day at which the snapshot schedule begins. <p>Length:
-     * 2 <p><i>Valid Values</i>: An integer between 0 and 23, representing
-     * the hour of day.
+     * The hour of the day at which the snapshot schedule begins represented
+     * as <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the
+     * day is in the time zone of the gateway.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - 23<br/>
      *
-     * @param startAt The hour of the day at which the snapshot schedule begins. <p>Length:
-     *         2 <p><i>Valid Values</i>: An integer between 0 and 23, representing
-     *         the hour of day.
+     * @param startAt The hour of the day at which the snapshot schedule begins represented
+     *         as <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the
+     *         day is in the time zone of the gateway.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -177,15 +175,11 @@ public class UpdateSnapshotScheduleRequest extends AmazonWebServiceRequest {
     
     /**
      * Frequency of snapshots. Specify the number of hours between snapshots.
-     * <p><i>Valid Values</i>: <code>1</code>, <code>2</code>,
-     * <code>4</code>, <code>8</code>, <code>12</code>, <code>24</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 24<br/>
      *
      * @return Frequency of snapshots. Specify the number of hours between snapshots.
-     *         <p><i>Valid Values</i>: <code>1</code>, <code>2</code>,
-     *         <code>4</code>, <code>8</code>, <code>12</code>, <code>24</code>.
      */
     public Integer getRecurrenceInHours() {
         return recurrenceInHours;
@@ -193,15 +187,11 @@ public class UpdateSnapshotScheduleRequest extends AmazonWebServiceRequest {
     
     /**
      * Frequency of snapshots. Specify the number of hours between snapshots.
-     * <p><i>Valid Values</i>: <code>1</code>, <code>2</code>,
-     * <code>4</code>, <code>8</code>, <code>12</code>, <code>24</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 24<br/>
      *
      * @param recurrenceInHours Frequency of snapshots. Specify the number of hours between snapshots.
-     *         <p><i>Valid Values</i>: <code>1</code>, <code>2</code>,
-     *         <code>4</code>, <code>8</code>, <code>12</code>, <code>24</code>.
      */
     public void setRecurrenceInHours(Integer recurrenceInHours) {
         this.recurrenceInHours = recurrenceInHours;
@@ -209,8 +199,6 @@ public class UpdateSnapshotScheduleRequest extends AmazonWebServiceRequest {
     
     /**
      * Frequency of snapshots. Specify the number of hours between snapshots.
-     * <p><i>Valid Values</i>: <code>1</code>, <code>2</code>,
-     * <code>4</code>, <code>8</code>, <code>12</code>, <code>24</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -218,8 +206,6 @@ public class UpdateSnapshotScheduleRequest extends AmazonWebServiceRequest {
      * <b>Range: </b>1 - 24<br/>
      *
      * @param recurrenceInHours Frequency of snapshots. Specify the number of hours between snapshots.
-     *         <p><i>Valid Values</i>: <code>1</code>, <code>2</code>,
-     *         <code>4</code>, <code>8</code>, <code>12</code>, <code>24</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -232,13 +218,13 @@ public class UpdateSnapshotScheduleRequest extends AmazonWebServiceRequest {
     
     /**
      * Optional description of the snapshot that overwrites the existing
-     * description. <p>Length: up to 255 characters.
+     * description.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      *
      * @return Optional description of the snapshot that overwrites the existing
-     *         description. <p>Length: up to 255 characters.
+     *         description.
      */
     public String getDescription() {
         return description;
@@ -246,13 +232,13 @@ public class UpdateSnapshotScheduleRequest extends AmazonWebServiceRequest {
     
     /**
      * Optional description of the snapshot that overwrites the existing
-     * description. <p>Length: up to 255 characters.
+     * description.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      *
      * @param description Optional description of the snapshot that overwrites the existing
-     *         description. <p>Length: up to 255 characters.
+     *         description.
      */
     public void setDescription(String description) {
         this.description = description;
@@ -260,7 +246,7 @@ public class UpdateSnapshotScheduleRequest extends AmazonWebServiceRequest {
     
     /**
      * Optional description of the snapshot that overwrites the existing
-     * description. <p>Length: up to 255 characters.
+     * description.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -268,7 +254,7 @@ public class UpdateSnapshotScheduleRequest extends AmazonWebServiceRequest {
      * <b>Length: </b>1 - 255<br/>
      *
      * @param description Optional description of the snapshot that overwrites the existing
-     *         description. <p>Length: up to 255 characters.
+     *         description.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

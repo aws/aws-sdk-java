@@ -40,8 +40,9 @@ public class DescribeSnapshotScheduleResult {
     private String volumeARN;
 
     /**
-     * The hour of the day at which the snapshot schedule begins, from 0 to
-     * 23.
+     * The hour of the day at which the snapshot schedule begins represented
+     * as <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the
+     * day is in the time zone of the gateway.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - 23<br/>
@@ -49,9 +50,7 @@ public class DescribeSnapshotScheduleResult {
     private Integer startAt;
 
     /**
-     * The number of hours between snapshots. <p><i>Valid Values</i>:
-     * <code>1</code>, <code>2</code>, <code>4</code>, <code>8</code>,
-     * <code>12</code>, <code>24</code>.
+     * The number of hours between snapshots.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 24<br/>
@@ -125,44 +124,50 @@ public class DescribeSnapshotScheduleResult {
     
     
     /**
-     * The hour of the day at which the snapshot schedule begins, from 0 to
-     * 23.
+     * The hour of the day at which the snapshot schedule begins represented
+     * as <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the
+     * day is in the time zone of the gateway.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - 23<br/>
      *
-     * @return The hour of the day at which the snapshot schedule begins, from 0 to
-     *         23.
+     * @return The hour of the day at which the snapshot schedule begins represented
+     *         as <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the
+     *         day is in the time zone of the gateway.
      */
     public Integer getStartAt() {
         return startAt;
     }
     
     /**
-     * The hour of the day at which the snapshot schedule begins, from 0 to
-     * 23.
+     * The hour of the day at which the snapshot schedule begins represented
+     * as <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the
+     * day is in the time zone of the gateway.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - 23<br/>
      *
-     * @param startAt The hour of the day at which the snapshot schedule begins, from 0 to
-     *         23.
+     * @param startAt The hour of the day at which the snapshot schedule begins represented
+     *         as <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the
+     *         day is in the time zone of the gateway.
      */
     public void setStartAt(Integer startAt) {
         this.startAt = startAt;
     }
     
     /**
-     * The hour of the day at which the snapshot schedule begins, from 0 to
-     * 23.
+     * The hour of the day at which the snapshot schedule begins represented
+     * as <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the
+     * day is in the time zone of the gateway.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - 23<br/>
      *
-     * @param startAt The hour of the day at which the snapshot schedule begins, from 0 to
-     *         23.
+     * @param startAt The hour of the day at which the snapshot schedule begins represented
+     *         as <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the
+     *         day is in the time zone of the gateway.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -174,50 +179,38 @@ public class DescribeSnapshotScheduleResult {
     
     
     /**
-     * The number of hours between snapshots. <p><i>Valid Values</i>:
-     * <code>1</code>, <code>2</code>, <code>4</code>, <code>8</code>,
-     * <code>12</code>, <code>24</code>.
+     * The number of hours between snapshots.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 24<br/>
      *
-     * @return The number of hours between snapshots. <p><i>Valid Values</i>:
-     *         <code>1</code>, <code>2</code>, <code>4</code>, <code>8</code>,
-     *         <code>12</code>, <code>24</code>.
+     * @return The number of hours between snapshots.
      */
     public Integer getRecurrenceInHours() {
         return recurrenceInHours;
     }
     
     /**
-     * The number of hours between snapshots. <p><i>Valid Values</i>:
-     * <code>1</code>, <code>2</code>, <code>4</code>, <code>8</code>,
-     * <code>12</code>, <code>24</code>.
+     * The number of hours between snapshots.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 24<br/>
      *
-     * @param recurrenceInHours The number of hours between snapshots. <p><i>Valid Values</i>:
-     *         <code>1</code>, <code>2</code>, <code>4</code>, <code>8</code>,
-     *         <code>12</code>, <code>24</code>.
+     * @param recurrenceInHours The number of hours between snapshots.
      */
     public void setRecurrenceInHours(Integer recurrenceInHours) {
         this.recurrenceInHours = recurrenceInHours;
     }
     
     /**
-     * The number of hours between snapshots. <p><i>Valid Values</i>:
-     * <code>1</code>, <code>2</code>, <code>4</code>, <code>8</code>,
-     * <code>12</code>, <code>24</code>.
+     * The number of hours between snapshots.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - 24<br/>
      *
-     * @param recurrenceInHours The number of hours between snapshots. <p><i>Valid Values</i>:
-     *         <code>1</code>, <code>2</code>, <code>4</code>, <code>8</code>,
-     *         <code>12</code>, <code>24</code>.
+     * @param recurrenceInHours The number of hours between snapshots.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

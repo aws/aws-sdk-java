@@ -38,7 +38,7 @@ public class SendMessageBatchRequestMarshaller implements Marshaller<Request<Sen
 
         Request<SendMessageBatchRequest> request = new DefaultRequest<SendMessageBatchRequest>(sendMessageBatchRequest, "AmazonSQS");
         request.addParameter("Action", "SendMessageBatch");
-        request.addParameter("Version", "2011-10-01");
+        request.addParameter("Version", "2012-11-05");
 
         if (sendMessageBatchRequest.getQueueUrl() != null) {
             request.addParameter("QueueUrl", StringUtils.fromString(sendMessageBatchRequest.getQueueUrl()));

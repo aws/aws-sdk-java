@@ -1,1 +1,2 @@
 com.amazonaws.services.sqs.QueueUrlHandler
+com.amazonaws.services.sqs.internal.SQSRequestHandler

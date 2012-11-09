@@ -18,14 +18,16 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.storagegateway.AWSStorageGateway#createStorediSCSIVolume(CreateStorediSCSIVolumeRequest) CreateStorediSCSIVolume operation}.
  * <p>
- * This operation creates a volume on a specified gateway. The size of the volume is inferred from the disk size. You can choose to preserve existing
- * data on the disk, create volume from an existing snapshot, or create an empty volume. If you choose to create an empty gateway volume, then any
- * existing data on the disk is erased.
+ * This operation creates a volume on a specified gateway. This operation is supported only for the gateway-cached volume architecture.
+ * </p>
+ * <p>
+ * The size of the volume to create is inferred from the disk size. You can choose to preserve existing data on the disk, create volume from an existing
+ * snapshot, or create an empty volume. If you choose to create an empty gateway volume, then any existing data on the disk is erased.
  * </p>
  * <p>
  * In the request you must specify the gateway and the disk information on which you are creating the volume. In response, AWS Storage Gateway creates
- * the volume and returns volume information such as the volume ARN, size and the iSCSI target ARN that initiators can use to connect to the volume
- * target.
+ * the volume and returns volume information such as the volume Amazon Resource Name (ARN), its size, and the iSCSI target ARN that initiators can use to
+ * connect to the volume target.
  * </p>
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#createStorediSCSIVolume(CreateStorediSCSIVolumeRequest)
@@ -44,8 +46,9 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest {
 
     /**
      * The unique identifier for the gateway local disk that is configured as
-     * a stored volume. Use <a>ListLocalDisks</a> to list disk IDs for a
-     * gateway.
+     * a stored volume. Use <a
+     * gegateway/latest/userguide/API_ListLocalDisks.html">ListLocalDisks</a>
+     * to list disk IDs for a gateway.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 300<br/>
@@ -58,9 +61,7 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest {
      * iSCSI storage volume from a snapshot otherwise do not include this
      * field. To list snapshots for your account use <a
      * rence/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
-     * in the <i>Amazon Elastic Compute Cloud API Reference</i>. <p>Length:
-     * 13 <p><i>Valid Values</i>: Must be a valid snapshot ID, "snap-"
-     * followed by eight hexadecimal characters.
+     * in the <i>Amazon Elastic Compute Cloud API Reference</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>\Asnap-[0-9a-fA-F]{8}\z<br/>
@@ -81,9 +82,6 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest {
      * of
      * 111122223333:gateway/mygateway/target/iqn.1997-05.com.amazon:myvolume.
      * The target name must be unique across all volumes of a gateway.
-     * <p>Length: Minimum length of 1. Maximum length of 200. <p>Constraints:
-     * The name can contain lower case letters, numbers, periods (.), and
-     * hyphens (-).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 200<br/>
@@ -160,15 +158,17 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest {
     
     /**
      * The unique identifier for the gateway local disk that is configured as
-     * a stored volume. Use <a>ListLocalDisks</a> to list disk IDs for a
-     * gateway.
+     * a stored volume. Use <a
+     * gegateway/latest/userguide/API_ListLocalDisks.html">ListLocalDisks</a>
+     * to list disk IDs for a gateway.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 300<br/>
      *
      * @return The unique identifier for the gateway local disk that is configured as
-     *         a stored volume. Use <a>ListLocalDisks</a> to list disk IDs for a
-     *         gateway.
+     *         a stored volume. Use <a
+     *         gegateway/latest/userguide/API_ListLocalDisks.html">ListLocalDisks</a>
+     *         to list disk IDs for a gateway.
      */
     public String getDiskId() {
         return diskId;
@@ -176,15 +176,17 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest {
     
     /**
      * The unique identifier for the gateway local disk that is configured as
-     * a stored volume. Use <a>ListLocalDisks</a> to list disk IDs for a
-     * gateway.
+     * a stored volume. Use <a
+     * gegateway/latest/userguide/API_ListLocalDisks.html">ListLocalDisks</a>
+     * to list disk IDs for a gateway.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 300<br/>
      *
      * @param diskId The unique identifier for the gateway local disk that is configured as
-     *         a stored volume. Use <a>ListLocalDisks</a> to list disk IDs for a
-     *         gateway.
+     *         a stored volume. Use <a
+     *         gegateway/latest/userguide/API_ListLocalDisks.html">ListLocalDisks</a>
+     *         to list disk IDs for a gateway.
      */
     public void setDiskId(String diskId) {
         this.diskId = diskId;
@@ -192,8 +194,9 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest {
     
     /**
      * The unique identifier for the gateway local disk that is configured as
-     * a stored volume. Use <a>ListLocalDisks</a> to list disk IDs for a
-     * gateway.
+     * a stored volume. Use <a
+     * gegateway/latest/userguide/API_ListLocalDisks.html">ListLocalDisks</a>
+     * to list disk IDs for a gateway.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -201,8 +204,9 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest {
      * <b>Length: </b>1 - 300<br/>
      *
      * @param diskId The unique identifier for the gateway local disk that is configured as
-     *         a stored volume. Use <a>ListLocalDisks</a> to list disk IDs for a
-     *         gateway.
+     *         a stored volume. Use <a
+     *         gegateway/latest/userguide/API_ListLocalDisks.html">ListLocalDisks</a>
+     *         to list disk IDs for a gateway.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -219,9 +223,7 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest {
      * iSCSI storage volume from a snapshot otherwise do not include this
      * field. To list snapshots for your account use <a
      * rence/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
-     * in the <i>Amazon Elastic Compute Cloud API Reference</i>. <p>Length:
-     * 13 <p><i>Valid Values</i>: Must be a valid snapshot ID, "snap-"
-     * followed by eight hexadecimal characters.
+     * in the <i>Amazon Elastic Compute Cloud API Reference</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>\Asnap-[0-9a-fA-F]{8}\z<br/>
@@ -231,9 +233,7 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest {
      *         iSCSI storage volume from a snapshot otherwise do not include this
      *         field. To list snapshots for your account use <a
      *         rence/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
-     *         in the <i>Amazon Elastic Compute Cloud API Reference</i>. <p>Length:
-     *         13 <p><i>Valid Values</i>: Must be a valid snapshot ID, "snap-"
-     *         followed by eight hexadecimal characters.
+     *         in the <i>Amazon Elastic Compute Cloud API Reference</i>.
      */
     public String getSnapshotId() {
         return snapshotId;
@@ -245,9 +245,7 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest {
      * iSCSI storage volume from a snapshot otherwise do not include this
      * field. To list snapshots for your account use <a
      * rence/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
-     * in the <i>Amazon Elastic Compute Cloud API Reference</i>. <p>Length:
-     * 13 <p><i>Valid Values</i>: Must be a valid snapshot ID, "snap-"
-     * followed by eight hexadecimal characters.
+     * in the <i>Amazon Elastic Compute Cloud API Reference</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>\Asnap-[0-9a-fA-F]{8}\z<br/>
@@ -257,9 +255,7 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest {
      *         iSCSI storage volume from a snapshot otherwise do not include this
      *         field. To list snapshots for your account use <a
      *         rence/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
-     *         in the <i>Amazon Elastic Compute Cloud API Reference</i>. <p>Length:
-     *         13 <p><i>Valid Values</i>: Must be a valid snapshot ID, "snap-"
-     *         followed by eight hexadecimal characters.
+     *         in the <i>Amazon Elastic Compute Cloud API Reference</i>.
      */
     public void setSnapshotId(String snapshotId) {
         this.snapshotId = snapshotId;
@@ -271,9 +267,7 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest {
      * iSCSI storage volume from a snapshot otherwise do not include this
      * field. To list snapshots for your account use <a
      * rence/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
-     * in the <i>Amazon Elastic Compute Cloud API Reference</i>. <p>Length:
-     * 13 <p><i>Valid Values</i>: Must be a valid snapshot ID, "snap-"
-     * followed by eight hexadecimal characters.
+     * in the <i>Amazon Elastic Compute Cloud API Reference</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -285,9 +279,7 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest {
      *         iSCSI storage volume from a snapshot otherwise do not include this
      *         field. To list snapshots for your account use <a
      *         rence/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
-     *         in the <i>Amazon Elastic Compute Cloud API Reference</i>. <p>Length:
-     *         13 <p><i>Valid Values</i>: Must be a valid snapshot ID, "snap-"
-     *         followed by eight hexadecimal characters.
+     *         in the <i>Amazon Elastic Compute Cloud API Reference</i>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -364,9 +356,6 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest {
      * of
      * 111122223333:gateway/mygateway/target/iqn.1997-05.com.amazon:myvolume.
      * The target name must be unique across all volumes of a gateway.
-     * <p>Length: Minimum length of 1. Maximum length of 200. <p>Constraints:
-     * The name can contain lower case letters, numbers, periods (.), and
-     * hyphens (-).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 200<br/>
@@ -378,9 +367,6 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest {
      *         of
      *         111122223333:gateway/mygateway/target/iqn.1997-05.com.amazon:myvolume.
      *         The target name must be unique across all volumes of a gateway.
-     *         <p>Length: Minimum length of 1. Maximum length of 200. <p>Constraints:
-     *         The name can contain lower case letters, numbers, periods (.), and
-     *         hyphens (-).
      */
     public String getTargetName() {
         return targetName;
@@ -393,9 +379,6 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest {
      * of
      * 111122223333:gateway/mygateway/target/iqn.1997-05.com.amazon:myvolume.
      * The target name must be unique across all volumes of a gateway.
-     * <p>Length: Minimum length of 1. Maximum length of 200. <p>Constraints:
-     * The name can contain lower case letters, numbers, periods (.), and
-     * hyphens (-).
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 200<br/>
@@ -407,9 +390,6 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest {
      *         of
      *         111122223333:gateway/mygateway/target/iqn.1997-05.com.amazon:myvolume.
      *         The target name must be unique across all volumes of a gateway.
-     *         <p>Length: Minimum length of 1. Maximum length of 200. <p>Constraints:
-     *         The name can contain lower case letters, numbers, periods (.), and
-     *         hyphens (-).
      */
     public void setTargetName(String targetName) {
         this.targetName = targetName;
@@ -422,9 +402,6 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest {
      * of
      * 111122223333:gateway/mygateway/target/iqn.1997-05.com.amazon:myvolume.
      * The target name must be unique across all volumes of a gateway.
-     * <p>Length: Minimum length of 1. Maximum length of 200. <p>Constraints:
-     * The name can contain lower case letters, numbers, periods (.), and
-     * hyphens (-).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -438,9 +415,6 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest {
      *         of
      *         111122223333:gateway/mygateway/target/iqn.1997-05.com.amazon:myvolume.
      *         The target name must be unique across all volumes of a gateway.
-     *         <p>Length: Minimum length of 1. Maximum length of 200. <p>Constraints:
-     *         The name can contain lower case letters, numbers, periods (.), and
-     *         hyphens (-).
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

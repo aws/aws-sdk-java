@@ -38,7 +38,7 @@ public class RemovePermissionRequestMarshaller implements Marshaller<Request<Rem
 
         Request<RemovePermissionRequest> request = new DefaultRequest<RemovePermissionRequest>(removePermissionRequest, "AmazonSQS");
         request.addParameter("Action", "RemovePermission");
-        request.addParameter("Version", "2011-10-01");
+        request.addParameter("Version", "2012-11-05");
 
         if (removePermissionRequest.getQueueUrl() != null) {
             request.addParameter("QueueUrl", StringUtils.fromString(removePermissionRequest.getQueueUrl()));

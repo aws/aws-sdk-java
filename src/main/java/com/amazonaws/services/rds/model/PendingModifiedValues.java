@@ -62,6 +62,12 @@ public class PendingModifiedValues {
     private String engineVersion;
 
     /**
+     * Specifies the new Provisioned IOPS value for the DB Instance that will
+     * be applied or is being applied.
+     */
+    private Integer iops;
+
+    /**
      * Default constructor for a new PendingModifiedValues object.  Callers should use the
      * setter or fluent setter (with...) methods to initialize this object after creating it.
      */
@@ -347,6 +353,46 @@ public class PendingModifiedValues {
     
     
     /**
+     * Specifies the new Provisioned IOPS value for the DB Instance that will
+     * be applied or is being applied.
+     *
+     * @return Specifies the new Provisioned IOPS value for the DB Instance that will
+     *         be applied or is being applied.
+     */
+    public Integer getIops() {
+        return iops;
+    }
+    
+    /**
+     * Specifies the new Provisioned IOPS value for the DB Instance that will
+     * be applied or is being applied.
+     *
+     * @param iops Specifies the new Provisioned IOPS value for the DB Instance that will
+     *         be applied or is being applied.
+     */
+    public void setIops(Integer iops) {
+        this.iops = iops;
+    }
+    
+    /**
+     * Specifies the new Provisioned IOPS value for the DB Instance that will
+     * be applied or is being applied.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param iops Specifies the new Provisioned IOPS value for the DB Instance that will
+     *         be applied or is being applied.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public PendingModifiedValues withIops(Integer iops) {
+        this.iops = iops;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -365,6 +411,7 @@ public class PendingModifiedValues {
         if (backupRetentionPeriod != null) sb.append("BackupRetentionPeriod: " + backupRetentionPeriod + ", ");
         if (multiAZ != null) sb.append("MultiAZ: " + multiAZ + ", ");
         if (engineVersion != null) sb.append("EngineVersion: " + engineVersion + ", ");
+        if (iops != null) sb.append("Iops: " + iops + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -381,6 +428,7 @@ public class PendingModifiedValues {
         hashCode = prime * hashCode + ((getBackupRetentionPeriod() == null) ? 0 : getBackupRetentionPeriod().hashCode()); 
         hashCode = prime * hashCode + ((isMultiAZ() == null) ? 0 : isMultiAZ().hashCode()); 
         hashCode = prime * hashCode + ((getEngineVersion() == null) ? 0 : getEngineVersion().hashCode()); 
+        hashCode = prime * hashCode + ((getIops() == null) ? 0 : getIops().hashCode()); 
         return hashCode;
     }
     
@@ -406,6 +454,8 @@ public class PendingModifiedValues {
         if (other.isMultiAZ() != null && other.isMultiAZ().equals(this.isMultiAZ()) == false) return false; 
         if (other.getEngineVersion() == null ^ this.getEngineVersion() == null) return false;
         if (other.getEngineVersion() != null && other.getEngineVersion().equals(this.getEngineVersion()) == false) return false; 
+        if (other.getIops() == null ^ this.getIops() == null) return false;
+        if (other.getIops() != null && other.getIops().equals(this.getIops()) == false) return false; 
         return true;
     }
     

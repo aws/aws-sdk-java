@@ -49,6 +49,12 @@ public class DescribeOrderableDBInstanceOptionsRequest extends AmazonWebServiceR
     private String licenseModel;
 
     /**
+     * The VPC filter value. Specify this parameter to show only the
+     * available VPC or non-VPC offerings.
+     */
+    private Boolean vpc;
+
+    /**
      * The maximum number of records to include in the response. If more
      * records exist than the specified <code>MaxRecords</code> value, a
      * marker is included in the response so that the remaining results may
@@ -219,6 +225,57 @@ public class DescribeOrderableDBInstanceOptionsRequest extends AmazonWebServiceR
     
     
     /**
+     * The VPC filter value. Specify this parameter to show only the
+     * available VPC or non-VPC offerings.
+     *
+     * @return The VPC filter value. Specify this parameter to show only the
+     *         available VPC or non-VPC offerings.
+     */
+    public Boolean isVpc() {
+        return vpc;
+    }
+    
+    /**
+     * The VPC filter value. Specify this parameter to show only the
+     * available VPC or non-VPC offerings.
+     *
+     * @param vpc The VPC filter value. Specify this parameter to show only the
+     *         available VPC or non-VPC offerings.
+     */
+    public void setVpc(Boolean vpc) {
+        this.vpc = vpc;
+    }
+    
+    /**
+     * The VPC filter value. Specify this parameter to show only the
+     * available VPC or non-VPC offerings.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param vpc The VPC filter value. Specify this parameter to show only the
+     *         available VPC or non-VPC offerings.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public DescribeOrderableDBInstanceOptionsRequest withVpc(Boolean vpc) {
+        this.vpc = vpc;
+        return this;
+    }
+    
+    
+    /**
+     * The VPC filter value. Specify this parameter to show only the
+     * available VPC or non-VPC offerings.
+     *
+     * @return The VPC filter value. Specify this parameter to show only the
+     *         available VPC or non-VPC offerings.
+     */
+    public Boolean getVpc() {
+        return vpc;
+    }
+    
+    /**
      * The maximum number of records to include in the response. If more
      * records exist than the specified <code>MaxRecords</code> value, a
      * marker is included in the response so that the remaining results may
@@ -338,6 +395,7 @@ public class DescribeOrderableDBInstanceOptionsRequest extends AmazonWebServiceR
         if (engineVersion != null) sb.append("EngineVersion: " + engineVersion + ", ");
         if (dBInstanceClass != null) sb.append("DBInstanceClass: " + dBInstanceClass + ", ");
         if (licenseModel != null) sb.append("LicenseModel: " + licenseModel + ", ");
+        if (vpc != null) sb.append("Vpc: " + vpc + ", ");
         if (maxRecords != null) sb.append("MaxRecords: " + maxRecords + ", ");
         if (marker != null) sb.append("Marker: " + marker + ", ");
         sb.append("}");
@@ -353,6 +411,7 @@ public class DescribeOrderableDBInstanceOptionsRequest extends AmazonWebServiceR
         hashCode = prime * hashCode + ((getEngineVersion() == null) ? 0 : getEngineVersion().hashCode()); 
         hashCode = prime * hashCode + ((getDBInstanceClass() == null) ? 0 : getDBInstanceClass().hashCode()); 
         hashCode = prime * hashCode + ((getLicenseModel() == null) ? 0 : getLicenseModel().hashCode()); 
+        hashCode = prime * hashCode + ((isVpc() == null) ? 0 : isVpc().hashCode()); 
         hashCode = prime * hashCode + ((getMaxRecords() == null) ? 0 : getMaxRecords().hashCode()); 
         hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode()); 
         return hashCode;
@@ -374,6 +433,8 @@ public class DescribeOrderableDBInstanceOptionsRequest extends AmazonWebServiceR
         if (other.getDBInstanceClass() != null && other.getDBInstanceClass().equals(this.getDBInstanceClass()) == false) return false; 
         if (other.getLicenseModel() == null ^ this.getLicenseModel() == null) return false;
         if (other.getLicenseModel() != null && other.getLicenseModel().equals(this.getLicenseModel()) == false) return false; 
+        if (other.isVpc() == null ^ this.isVpc() == null) return false;
+        if (other.isVpc() != null && other.isVpc().equals(this.isVpc()) == false) return false; 
         if (other.getMaxRecords() == null ^ this.getMaxRecords() == null) return false;
         if (other.getMaxRecords() != null && other.getMaxRecords().equals(this.getMaxRecords()) == false) return false; 
         if (other.getMarker() == null ^ this.getMarker() == null) return false;

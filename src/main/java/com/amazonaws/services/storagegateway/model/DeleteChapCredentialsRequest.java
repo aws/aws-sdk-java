@@ -36,9 +36,7 @@ public class DeleteChapCredentialsRequest extends AmazonWebServiceRequest {
     private String targetARN;
 
     /**
-     * The iSCSI initiator that connects to the target. <p>Length: 1 to 255
-     * characters. <p><i>Valid Values</i>: lowercase letters, numbers,
-     * periods (.), and hyphens (-).
+     * The iSCSI initiator that connects to the target.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
@@ -102,43 +100,33 @@ public class DeleteChapCredentialsRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * The iSCSI initiator that connects to the target. <p>Length: 1 to 255
-     * characters. <p><i>Valid Values</i>: lowercase letters, numbers,
-     * periods (.), and hyphens (-).
+     * The iSCSI initiator that connects to the target.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[0-9a-z:.-]+<br/>
      *
-     * @return The iSCSI initiator that connects to the target. <p>Length: 1 to 255
-     *         characters. <p><i>Valid Values</i>: lowercase letters, numbers,
-     *         periods (.), and hyphens (-).
+     * @return The iSCSI initiator that connects to the target.
      */
     public String getInitiatorName() {
         return initiatorName;
     }
     
     /**
-     * The iSCSI initiator that connects to the target. <p>Length: 1 to 255
-     * characters. <p><i>Valid Values</i>: lowercase letters, numbers,
-     * periods (.), and hyphens (-).
+     * The iSCSI initiator that connects to the target.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[0-9a-z:.-]+<br/>
      *
-     * @param initiatorName The iSCSI initiator that connects to the target. <p>Length: 1 to 255
-     *         characters. <p><i>Valid Values</i>: lowercase letters, numbers,
-     *         periods (.), and hyphens (-).
+     * @param initiatorName The iSCSI initiator that connects to the target.
      */
     public void setInitiatorName(String initiatorName) {
         this.initiatorName = initiatorName;
     }
     
     /**
-     * The iSCSI initiator that connects to the target. <p>Length: 1 to 255
-     * characters. <p><i>Valid Values</i>: lowercase letters, numbers,
-     * periods (.), and hyphens (-).
+     * The iSCSI initiator that connects to the target.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -146,9 +134,7 @@ public class DeleteChapCredentialsRequest extends AmazonWebServiceRequest {
      * <b>Length: </b>1 - 255<br/>
      * <b>Pattern: </b>[0-9a-z:.-]+<br/>
      *
-     * @param initiatorName The iSCSI initiator that connects to the target. <p>Length: 1 to 255
-     *         characters. <p><i>Valid Values</i>: lowercase letters, numbers,
-     *         periods (.), and hyphens (-).
+     * @param initiatorName The iSCSI initiator that connects to the target.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

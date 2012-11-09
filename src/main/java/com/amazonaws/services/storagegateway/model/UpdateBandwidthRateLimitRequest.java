@@ -45,7 +45,6 @@ public class UpdateBandwidthRateLimitRequest extends AmazonWebServiceRequest {
 
     /**
      * The average upload bandwidth rate limit in bits per second.
-     * <p>Constraint: Minimum value of 51200.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>51200 - <br/>
@@ -54,7 +53,6 @@ public class UpdateBandwidthRateLimitRequest extends AmazonWebServiceRequest {
 
     /**
      * The average download bandwidth rate limit in bits per second.
-     * <p>Constraint: Minimum value of 102400.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>102400 - <br/>
@@ -118,13 +116,11 @@ public class UpdateBandwidthRateLimitRequest extends AmazonWebServiceRequest {
     
     /**
      * The average upload bandwidth rate limit in bits per second.
-     * <p>Constraint: Minimum value of 51200.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>51200 - <br/>
      *
      * @return The average upload bandwidth rate limit in bits per second.
-     *         <p>Constraint: Minimum value of 51200.
      */
     public Long getAverageUploadRateLimitInBitsPerSec() {
         return averageUploadRateLimitInBitsPerSec;
@@ -132,13 +128,11 @@ public class UpdateBandwidthRateLimitRequest extends AmazonWebServiceRequest {
     
     /**
      * The average upload bandwidth rate limit in bits per second.
-     * <p>Constraint: Minimum value of 51200.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>51200 - <br/>
      *
      * @param averageUploadRateLimitInBitsPerSec The average upload bandwidth rate limit in bits per second.
-     *         <p>Constraint: Minimum value of 51200.
      */
     public void setAverageUploadRateLimitInBitsPerSec(Long averageUploadRateLimitInBitsPerSec) {
         this.averageUploadRateLimitInBitsPerSec = averageUploadRateLimitInBitsPerSec;
@@ -146,7 +140,6 @@ public class UpdateBandwidthRateLimitRequest extends AmazonWebServiceRequest {
     
     /**
      * The average upload bandwidth rate limit in bits per second.
-     * <p>Constraint: Minimum value of 51200.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -154,7 +147,6 @@ public class UpdateBandwidthRateLimitRequest extends AmazonWebServiceRequest {
      * <b>Range: </b>51200 - <br/>
      *
      * @param averageUploadRateLimitInBitsPerSec The average upload bandwidth rate limit in bits per second.
-     *         <p>Constraint: Minimum value of 51200.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -167,13 +159,11 @@ public class UpdateBandwidthRateLimitRequest extends AmazonWebServiceRequest {
     
     /**
      * The average download bandwidth rate limit in bits per second.
-     * <p>Constraint: Minimum value of 102400.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>102400 - <br/>
      *
      * @return The average download bandwidth rate limit in bits per second.
-     *         <p>Constraint: Minimum value of 102400.
      */
     public Long getAverageDownloadRateLimitInBitsPerSec() {
         return averageDownloadRateLimitInBitsPerSec;
@@ -181,13 +171,11 @@ public class UpdateBandwidthRateLimitRequest extends AmazonWebServiceRequest {
     
     /**
      * The average download bandwidth rate limit in bits per second.
-     * <p>Constraint: Minimum value of 102400.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>102400 - <br/>
      *
      * @param averageDownloadRateLimitInBitsPerSec The average download bandwidth rate limit in bits per second.
-     *         <p>Constraint: Minimum value of 102400.
      */
     public void setAverageDownloadRateLimitInBitsPerSec(Long averageDownloadRateLimitInBitsPerSec) {
         this.averageDownloadRateLimitInBitsPerSec = averageDownloadRateLimitInBitsPerSec;
@@ -195,7 +183,6 @@ public class UpdateBandwidthRateLimitRequest extends AmazonWebServiceRequest {
     
     /**
      * The average download bandwidth rate limit in bits per second.
-     * <p>Constraint: Minimum value of 102400.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -203,7 +190,6 @@ public class UpdateBandwidthRateLimitRequest extends AmazonWebServiceRequest {
      * <b>Range: </b>102400 - <br/>
      *
      * @param averageDownloadRateLimitInBitsPerSec The average download bandwidth rate limit in bits per second.
-     *         <p>Constraint: Minimum value of 102400.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

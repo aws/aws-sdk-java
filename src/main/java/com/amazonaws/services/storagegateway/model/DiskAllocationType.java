@@ -19,9 +19,11 @@ package com.amazonaws.services.storagegateway.model;
  */
 public enum DiskAllocationType {
     
+    AVAILABLE("AVAILABLE"),
+    CACHESTORAGE("CACHE STORAGE"),
     STOREDISCSIVOLUME("STORED iSCSI VOLUME"),
-    WORKINGSTORAGE("WORKING STORAGE"),
-    AVAILABLE("AVAILABLE");
+    UPLOADBUFFER("UPLOAD BUFFER"),
+    WORKINGSTORAGE("WORKING STORAGE");
 
     private String value;
 
@@ -45,12 +47,16 @@ public enum DiskAllocationType {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
         
-        } else if ("STORED iSCSI VOLUME".equals(value)) {
-            return DiskAllocationType.STOREDISCSIVOLUME;
-        } else if ("WORKING STORAGE".equals(value)) {
-            return DiskAllocationType.WORKINGSTORAGE;
         } else if ("AVAILABLE".equals(value)) {
             return DiskAllocationType.AVAILABLE;
+        } else if ("CACHE STORAGE".equals(value)) {
+            return DiskAllocationType.CACHESTORAGE;
+        } else if ("STORED iSCSI VOLUME".equals(value)) {
+            return DiskAllocationType.STOREDISCSIVOLUME;
+        } else if ("UPLOAD BUFFER".equals(value)) {
+            return DiskAllocationType.UPLOADBUFFER;
+        } else if ("WORKING STORAGE".equals(value)) {
+            return DiskAllocationType.WORKINGSTORAGE;
         } else {
             throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
         }

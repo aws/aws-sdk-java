@@ -46,7 +46,7 @@ public class DeleteVolumeRequestMarshaller implements Marshaller<Request<DeleteV
 		}
 
         Request<DeleteVolumeRequest> request = new DefaultRequest<DeleteVolumeRequest>(deleteVolumeRequest, "AWSStorageGateway");
-        String target = "StorageGateway_20120430.DeleteVolume";
+        String target = "StorageGateway_20120630.DeleteVolume";
         request.addHeader("X-Amz-Target", target);
         request.addHeader("Content-Type", "application/x-amz-json-1.1");
 

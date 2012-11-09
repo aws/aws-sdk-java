@@ -46,7 +46,7 @@ public class DescribeStorediSCSIVolumesRequestMarshaller implements Marshaller<R
 		}
 
         Request<DescribeStorediSCSIVolumesRequest> request = new DefaultRequest<DescribeStorediSCSIVolumesRequest>(describeStorediSCSIVolumesRequest, "AWSStorageGateway");
-        String target = "StorageGateway_20120430.DescribeStorediSCSIVolumes";
+        String target = "StorageGateway_20120630.DescribeStorediSCSIVolumes";
         request.addHeader("X-Amz-Target", target);
         request.addHeader("Content-Type", "application/x-amz-json-1.1");
 

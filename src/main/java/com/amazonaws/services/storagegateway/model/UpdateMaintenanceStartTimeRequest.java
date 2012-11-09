@@ -37,8 +37,9 @@ public class UpdateMaintenanceStartTimeRequest extends AmazonWebServiceRequest {
     private String gatewayARN;
 
     /**
-     * The maintenance start time hour of day. <p>Length: 2 <p><i>Valid
-     * Values</i>: An integer between 0 and 23 representing the hour of day.
+     * The hour component of the maintenance start time represented as
+     * <emphasis>hh</emphasis>, where <i>hh</i> is the hour (00 to 23). The
+     * hour of the day is in the time zone of the gateway.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - 23<br/>
@@ -46,9 +47,9 @@ public class UpdateMaintenanceStartTimeRequest extends AmazonWebServiceRequest {
     private Integer hourOfDay;
 
     /**
-     * The maintenance start time minute of hour.. <p>Length: 2 <p><i>Valid
-     * Values</i>: An integer between 0 and 59 representing the minute of
-     * hour.
+     * The minute component of the maintenance start time represented as
+     * <i>mm</i>, where <i>mm</i> is the minute (00 to 59). The minute of the
+     * hour is in the time zone of the gateway.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - 59<br/>
@@ -56,9 +57,7 @@ public class UpdateMaintenanceStartTimeRequest extends AmazonWebServiceRequest {
     private Integer minuteOfHour;
 
     /**
-     * The maintenance start time day of the week. <p>Length: 1 <p>Valid
-     * Values An integer between 0 and 6, where 0 represents Sunday and 6
-     * represents Saturday.
+     * The maintenance start time day of the week.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - 6<br/>
@@ -121,44 +120,50 @@ public class UpdateMaintenanceStartTimeRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * The maintenance start time hour of day. <p>Length: 2 <p><i>Valid
-     * Values</i>: An integer between 0 and 23 representing the hour of day.
+     * The hour component of the maintenance start time represented as
+     * <emphasis>hh</emphasis>, where <i>hh</i> is the hour (00 to 23). The
+     * hour of the day is in the time zone of the gateway.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - 23<br/>
      *
-     * @return The maintenance start time hour of day. <p>Length: 2 <p><i>Valid
-     *         Values</i>: An integer between 0 and 23 representing the hour of day.
+     * @return The hour component of the maintenance start time represented as
+     *         <emphasis>hh</emphasis>, where <i>hh</i> is the hour (00 to 23). The
+     *         hour of the day is in the time zone of the gateway.
      */
     public Integer getHourOfDay() {
         return hourOfDay;
     }
     
     /**
-     * The maintenance start time hour of day. <p>Length: 2 <p><i>Valid
-     * Values</i>: An integer between 0 and 23 representing the hour of day.
+     * The hour component of the maintenance start time represented as
+     * <emphasis>hh</emphasis>, where <i>hh</i> is the hour (00 to 23). The
+     * hour of the day is in the time zone of the gateway.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - 23<br/>
      *
-     * @param hourOfDay The maintenance start time hour of day. <p>Length: 2 <p><i>Valid
-     *         Values</i>: An integer between 0 and 23 representing the hour of day.
+     * @param hourOfDay The hour component of the maintenance start time represented as
+     *         <emphasis>hh</emphasis>, where <i>hh</i> is the hour (00 to 23). The
+     *         hour of the day is in the time zone of the gateway.
      */
     public void setHourOfDay(Integer hourOfDay) {
         this.hourOfDay = hourOfDay;
     }
     
     /**
-     * The maintenance start time hour of day. <p>Length: 2 <p><i>Valid
-     * Values</i>: An integer between 0 and 23 representing the hour of day.
+     * The hour component of the maintenance start time represented as
+     * <emphasis>hh</emphasis>, where <i>hh</i> is the hour (00 to 23). The
+     * hour of the day is in the time zone of the gateway.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - 23<br/>
      *
-     * @param hourOfDay The maintenance start time hour of day. <p>Length: 2 <p><i>Valid
-     *         Values</i>: An integer between 0 and 23 representing the hour of day.
+     * @param hourOfDay The hour component of the maintenance start time represented as
+     *         <emphasis>hh</emphasis>, where <i>hh</i> is the hour (00 to 23). The
+     *         hour of the day is in the time zone of the gateway.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -170,50 +175,50 @@ public class UpdateMaintenanceStartTimeRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * The maintenance start time minute of hour.. <p>Length: 2 <p><i>Valid
-     * Values</i>: An integer between 0 and 59 representing the minute of
-     * hour.
+     * The minute component of the maintenance start time represented as
+     * <i>mm</i>, where <i>mm</i> is the minute (00 to 59). The minute of the
+     * hour is in the time zone of the gateway.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - 59<br/>
      *
-     * @return The maintenance start time minute of hour.. <p>Length: 2 <p><i>Valid
-     *         Values</i>: An integer between 0 and 59 representing the minute of
-     *         hour.
+     * @return The minute component of the maintenance start time represented as
+     *         <i>mm</i>, where <i>mm</i> is the minute (00 to 59). The minute of the
+     *         hour is in the time zone of the gateway.
      */
     public Integer getMinuteOfHour() {
         return minuteOfHour;
     }
     
     /**
-     * The maintenance start time minute of hour.. <p>Length: 2 <p><i>Valid
-     * Values</i>: An integer between 0 and 59 representing the minute of
-     * hour.
+     * The minute component of the maintenance start time represented as
+     * <i>mm</i>, where <i>mm</i> is the minute (00 to 59). The minute of the
+     * hour is in the time zone of the gateway.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - 59<br/>
      *
-     * @param minuteOfHour The maintenance start time minute of hour.. <p>Length: 2 <p><i>Valid
-     *         Values</i>: An integer between 0 and 59 representing the minute of
-     *         hour.
+     * @param minuteOfHour The minute component of the maintenance start time represented as
+     *         <i>mm</i>, where <i>mm</i> is the minute (00 to 59). The minute of the
+     *         hour is in the time zone of the gateway.
      */
     public void setMinuteOfHour(Integer minuteOfHour) {
         this.minuteOfHour = minuteOfHour;
     }
     
     /**
-     * The maintenance start time minute of hour.. <p>Length: 2 <p><i>Valid
-     * Values</i>: An integer between 0 and 59 representing the minute of
-     * hour.
+     * The minute component of the maintenance start time represented as
+     * <i>mm</i>, where <i>mm</i> is the minute (00 to 59). The minute of the
+     * hour is in the time zone of the gateway.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - 59<br/>
      *
-     * @param minuteOfHour The maintenance start time minute of hour.. <p>Length: 2 <p><i>Valid
-     *         Values</i>: An integer between 0 and 59 representing the minute of
-     *         hour.
+     * @param minuteOfHour The minute component of the maintenance start time represented as
+     *         <i>mm</i>, where <i>mm</i> is the minute (00 to 59). The minute of the
+     *         hour is in the time zone of the gateway.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -225,50 +230,38 @@ public class UpdateMaintenanceStartTimeRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * The maintenance start time day of the week. <p>Length: 1 <p>Valid
-     * Values An integer between 0 and 6, where 0 represents Sunday and 6
-     * represents Saturday.
+     * The maintenance start time day of the week.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - 6<br/>
      *
-     * @return The maintenance start time day of the week. <p>Length: 1 <p>Valid
-     *         Values An integer between 0 and 6, where 0 represents Sunday and 6
-     *         represents Saturday.
+     * @return The maintenance start time day of the week.
      */
     public Integer getDayOfWeek() {
         return dayOfWeek;
     }
     
     /**
-     * The maintenance start time day of the week. <p>Length: 1 <p>Valid
-     * Values An integer between 0 and 6, where 0 represents Sunday and 6
-     * represents Saturday.
+     * The maintenance start time day of the week.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - 6<br/>
      *
-     * @param dayOfWeek The maintenance start time day of the week. <p>Length: 1 <p>Valid
-     *         Values An integer between 0 and 6, where 0 represents Sunday and 6
-     *         represents Saturday.
+     * @param dayOfWeek The maintenance start time day of the week.
      */
     public void setDayOfWeek(Integer dayOfWeek) {
         this.dayOfWeek = dayOfWeek;
     }
     
     /**
-     * The maintenance start time day of the week. <p>Length: 1 <p>Valid
-     * Values An integer between 0 and 6, where 0 represents Sunday and 6
-     * represents Saturday.
+     * The maintenance start time day of the week.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - 6<br/>
      *
-     * @param dayOfWeek The maintenance start time day of the week. <p>Length: 1 <p>Valid
-     *         Values An integer between 0 and 6, where 0 represents Sunday and 6
-     *         represents Saturday.
+     * @param dayOfWeek The maintenance start time day of the week.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

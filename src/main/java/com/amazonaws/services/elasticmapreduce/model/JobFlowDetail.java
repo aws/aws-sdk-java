@@ -49,7 +49,7 @@ public class JobFlowDetail {
     private String logUri;
 
     /**
-     * The verison of the AMI used to initialize Amazon EC2 instances in the
+     * The version of the AMI used to initialize Amazon EC2 instances in the
      * job flow. For a list of AMI versions currently supported by Amazon
      * ElasticMapReduce, go to <a
      * perGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
@@ -88,6 +88,17 @@ public class JobFlowDetail {
      * flow this value is empty.
      */
     private java.util.List<String> supportedProducts;
+
+    /**
+     * Specifies whether the job flow is visible to all IAM users of the AWS
+     * account associated with the job flow. If this value is set to
+     * <code>true</code>, all IAM users of that AWS account can view and (if
+     * they have the proper policy permissions set) manage the job flow. If
+     * it is set to <code>false</code>, only the IAM user that created the
+     * job flow can view and manage it. This value can be changed using the
+     * <a>SetVisibleToAllUsers</a> action.
+     */
+    private Boolean visibleToAllUsers;
 
     /**
      * Default constructor for a new JobFlowDetail object.  Callers should use the
@@ -254,7 +265,7 @@ public class JobFlowDetail {
     
     
     /**
-     * The verison of the AMI used to initialize Amazon EC2 instances in the
+     * The version of the AMI used to initialize Amazon EC2 instances in the
      * job flow. For a list of AMI versions currently supported by Amazon
      * ElasticMapReduce, go to <a
      * perGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
@@ -265,7 +276,7 @@ public class JobFlowDetail {
      * <b>Length: </b>0 - 256<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @return The verison of the AMI used to initialize Amazon EC2 instances in the
+     * @return The version of the AMI used to initialize Amazon EC2 instances in the
      *         job flow. For a list of AMI versions currently supported by Amazon
      *         ElasticMapReduce, go to <a
      *         perGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
@@ -277,7 +288,7 @@ public class JobFlowDetail {
     }
     
     /**
-     * The verison of the AMI used to initialize Amazon EC2 instances in the
+     * The version of the AMI used to initialize Amazon EC2 instances in the
      * job flow. For a list of AMI versions currently supported by Amazon
      * ElasticMapReduce, go to <a
      * perGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
@@ -288,7 +299,7 @@ public class JobFlowDetail {
      * <b>Length: </b>0 - 256<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param amiVersion The verison of the AMI used to initialize Amazon EC2 instances in the
+     * @param amiVersion The version of the AMI used to initialize Amazon EC2 instances in the
      *         job flow. For a list of AMI versions currently supported by Amazon
      *         ElasticMapReduce, go to <a
      *         perGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
@@ -300,7 +311,7 @@ public class JobFlowDetail {
     }
     
     /**
-     * The verison of the AMI used to initialize Amazon EC2 instances in the
+     * The version of the AMI used to initialize Amazon EC2 instances in the
      * job flow. For a list of AMI versions currently supported by Amazon
      * ElasticMapReduce, go to <a
      * perGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
@@ -313,7 +324,7 @@ public class JobFlowDetail {
      * <b>Length: </b>0 - 256<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param amiVersion The verison of the AMI used to initialize Amazon EC2 instances in the
+     * @param amiVersion The version of the AMI used to initialize Amazon EC2 instances in the
      *         job flow. For a list of AMI versions currently supported by Amazon
      *         ElasticMapReduce, go to <a
      *         perGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
@@ -621,6 +632,97 @@ public class JobFlowDetail {
     }
     
     /**
+     * Specifies whether the job flow is visible to all IAM users of the AWS
+     * account associated with the job flow. If this value is set to
+     * <code>true</code>, all IAM users of that AWS account can view and (if
+     * they have the proper policy permissions set) manage the job flow. If
+     * it is set to <code>false</code>, only the IAM user that created the
+     * job flow can view and manage it. This value can be changed using the
+     * <a>SetVisibleToAllUsers</a> action.
+     *
+     * @return Specifies whether the job flow is visible to all IAM users of the AWS
+     *         account associated with the job flow. If this value is set to
+     *         <code>true</code>, all IAM users of that AWS account can view and (if
+     *         they have the proper policy permissions set) manage the job flow. If
+     *         it is set to <code>false</code>, only the IAM user that created the
+     *         job flow can view and manage it. This value can be changed using the
+     *         <a>SetVisibleToAllUsers</a> action.
+     */
+    public Boolean isVisibleToAllUsers() {
+        return visibleToAllUsers;
+    }
+    
+    /**
+     * Specifies whether the job flow is visible to all IAM users of the AWS
+     * account associated with the job flow. If this value is set to
+     * <code>true</code>, all IAM users of that AWS account can view and (if
+     * they have the proper policy permissions set) manage the job flow. If
+     * it is set to <code>false</code>, only the IAM user that created the
+     * job flow can view and manage it. This value can be changed using the
+     * <a>SetVisibleToAllUsers</a> action.
+     *
+     * @param visibleToAllUsers Specifies whether the job flow is visible to all IAM users of the AWS
+     *         account associated with the job flow. If this value is set to
+     *         <code>true</code>, all IAM users of that AWS account can view and (if
+     *         they have the proper policy permissions set) manage the job flow. If
+     *         it is set to <code>false</code>, only the IAM user that created the
+     *         job flow can view and manage it. This value can be changed using the
+     *         <a>SetVisibleToAllUsers</a> action.
+     */
+    public void setVisibleToAllUsers(Boolean visibleToAllUsers) {
+        this.visibleToAllUsers = visibleToAllUsers;
+    }
+    
+    /**
+     * Specifies whether the job flow is visible to all IAM users of the AWS
+     * account associated with the job flow. If this value is set to
+     * <code>true</code>, all IAM users of that AWS account can view and (if
+     * they have the proper policy permissions set) manage the job flow. If
+     * it is set to <code>false</code>, only the IAM user that created the
+     * job flow can view and manage it. This value can be changed using the
+     * <a>SetVisibleToAllUsers</a> action.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param visibleToAllUsers Specifies whether the job flow is visible to all IAM users of the AWS
+     *         account associated with the job flow. If this value is set to
+     *         <code>true</code>, all IAM users of that AWS account can view and (if
+     *         they have the proper policy permissions set) manage the job flow. If
+     *         it is set to <code>false</code>, only the IAM user that created the
+     *         job flow can view and manage it. This value can be changed using the
+     *         <a>SetVisibleToAllUsers</a> action.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public JobFlowDetail withVisibleToAllUsers(Boolean visibleToAllUsers) {
+        this.visibleToAllUsers = visibleToAllUsers;
+        return this;
+    }
+    
+    
+    /**
+     * Specifies whether the job flow is visible to all IAM users of the AWS
+     * account associated with the job flow. If this value is set to
+     * <code>true</code>, all IAM users of that AWS account can view and (if
+     * they have the proper policy permissions set) manage the job flow. If
+     * it is set to <code>false</code>, only the IAM user that created the
+     * job flow can view and manage it. This value can be changed using the
+     * <a>SetVisibleToAllUsers</a> action.
+     *
+     * @return Specifies whether the job flow is visible to all IAM users of the AWS
+     *         account associated with the job flow. If this value is set to
+     *         <code>true</code>, all IAM users of that AWS account can view and (if
+     *         they have the proper policy permissions set) manage the job flow. If
+     *         it is set to <code>false</code>, only the IAM user that created the
+     *         job flow can view and manage it. This value can be changed using the
+     *         <a>SetVisibleToAllUsers</a> action.
+     */
+    public Boolean getVisibleToAllUsers() {
+        return visibleToAllUsers;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -641,6 +743,7 @@ public class JobFlowDetail {
         if (steps != null) sb.append("Steps: " + steps + ", ");
         if (bootstrapActions != null) sb.append("BootstrapActions: " + bootstrapActions + ", ");
         if (supportedProducts != null) sb.append("SupportedProducts: " + supportedProducts + ", ");
+        if (visibleToAllUsers != null) sb.append("VisibleToAllUsers: " + visibleToAllUsers + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -659,6 +762,7 @@ public class JobFlowDetail {
         hashCode = prime * hashCode + ((getSteps() == null) ? 0 : getSteps().hashCode()); 
         hashCode = prime * hashCode + ((getBootstrapActions() == null) ? 0 : getBootstrapActions().hashCode()); 
         hashCode = prime * hashCode + ((getSupportedProducts() == null) ? 0 : getSupportedProducts().hashCode()); 
+        hashCode = prime * hashCode + ((isVisibleToAllUsers() == null) ? 0 : isVisibleToAllUsers().hashCode()); 
         return hashCode;
     }
     
@@ -688,6 +792,8 @@ public class JobFlowDetail {
         if (other.getBootstrapActions() != null && other.getBootstrapActions().equals(this.getBootstrapActions()) == false) return false; 
         if (other.getSupportedProducts() == null ^ this.getSupportedProducts() == null) return false;
         if (other.getSupportedProducts() != null && other.getSupportedProducts().equals(this.getSupportedProducts()) == false) return false; 
+        if (other.isVisibleToAllUsers() == null ^ this.isVisibleToAllUsers() == null) return false;
+        if (other.isVisibleToAllUsers() != null && other.isVisibleToAllUsers().equals(this.isVisibleToAllUsers()) == false) return false; 
         return true;
     }
     

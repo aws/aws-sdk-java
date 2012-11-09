@@ -39,8 +39,7 @@ public class UpdateGatewayInformationRequest extends AmazonWebServiceRequest {
     /**
      * A unique identifier for your gateway. This name becomes part of the
      * gateway Amazon Resources Name (ARN) which is what you use as an input
-     * to other operations. <p>Length: Minimum length of 2. Maximum length of
-     * 255.
+     * to other operations.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>2 - 255<br/>
@@ -116,8 +115,7 @@ public class UpdateGatewayInformationRequest extends AmazonWebServiceRequest {
     /**
      * A unique identifier for your gateway. This name becomes part of the
      * gateway Amazon Resources Name (ARN) which is what you use as an input
-     * to other operations. <p>Length: Minimum length of 2. Maximum length of
-     * 255.
+     * to other operations.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>2 - 255<br/>
@@ -125,8 +123,7 @@ public class UpdateGatewayInformationRequest extends AmazonWebServiceRequest {
      *
      * @return A unique identifier for your gateway. This name becomes part of the
      *         gateway Amazon Resources Name (ARN) which is what you use as an input
-     *         to other operations. <p>Length: Minimum length of 2. Maximum length of
-     *         255.
+     *         to other operations.
      */
     public String getGatewayName() {
         return gatewayName;
@@ -135,8 +132,7 @@ public class UpdateGatewayInformationRequest extends AmazonWebServiceRequest {
     /**
      * A unique identifier for your gateway. This name becomes part of the
      * gateway Amazon Resources Name (ARN) which is what you use as an input
-     * to other operations. <p>Length: Minimum length of 2. Maximum length of
-     * 255.
+     * to other operations.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>2 - 255<br/>
@@ -144,8 +140,7 @@ public class UpdateGatewayInformationRequest extends AmazonWebServiceRequest {
      *
      * @param gatewayName A unique identifier for your gateway. This name becomes part of the
      *         gateway Amazon Resources Name (ARN) which is what you use as an input
-     *         to other operations. <p>Length: Minimum length of 2. Maximum length of
-     *         255.
+     *         to other operations.
      */
     public void setGatewayName(String gatewayName) {
         this.gatewayName = gatewayName;
@@ -154,8 +149,7 @@ public class UpdateGatewayInformationRequest extends AmazonWebServiceRequest {
     /**
      * A unique identifier for your gateway. This name becomes part of the
      * gateway Amazon Resources Name (ARN) which is what you use as an input
-     * to other operations. <p>Length: Minimum length of 2. Maximum length of
-     * 255.
+     * to other operations.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -165,8 +159,7 @@ public class UpdateGatewayInformationRequest extends AmazonWebServiceRequest {
      *
      * @param gatewayName A unique identifier for your gateway. This name becomes part of the
      *         gateway Amazon Resources Name (ARN) which is what you use as an input
-     *         to other operations. <p>Length: Minimum length of 2. Maximum length of
-     *         255.
+     *         to other operations.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

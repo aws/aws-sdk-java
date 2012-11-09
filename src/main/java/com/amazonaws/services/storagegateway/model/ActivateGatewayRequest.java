@@ -18,9 +18,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.storagegateway.AWSStorageGateway#activateGateway(ActivateGatewayRequest) ActivateGateway operation}.
  * <p>
- * This operation activates the gateway you previously deployed on your VMware host. For more information, see DownloadAndDeploy. In the activation
- * process you specify information such as the region you want to use for storing snapshots, the time zone for scheduled snapshots and the gateway
- * schedule window, an activation key, and a name for your gateway. The activation process also associates your gateway with your account.
+ * This operation activates the gateway you previously deployed on your VMware host. For more information, see <a
+ * href="http://docs.amazonwebservices.com/storagegateway/latest/userguide/DownloadAndDeploy.html"> Downloading and Deploying AWS Storage Gateway VM </a>
+ * . In the activation process you specify information such as the region you want to use for storing snapshots, the time zone for scheduled snapshots
+ * and the gateway schedule window, an activation key, and a name for your gateway. The activation process also associates your gateway with your account
+ * (see UpdateGatewayInformation).
  * </p>
  * <p>
  * <b>NOTE:</b>You must power on the gateway VM before you can activate your gateway.
@@ -33,10 +35,12 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest {
     /**
      * Your gateway activation key. You can obtain the activation key by
      * sending an HTTP GET request with redirects enabled to the gateway IP
-     * address. The redirect URL returned in the response provides you the
-     * activation key for your gateway in the query string parameter
-     * <code>activationKey</code>. <p>Length: Minimum length of 1. Maximum
-     * length of 50.
+     * address (port 80). The redirect URL returned in the response provides
+     * you the activation key for your gateway in the query string parameter
+     * <code>activationKey</code>. It may also include other
+     * activation-related parameters, however, these are merely defaults --
+     * the arguments you pass to the <code>ActivateGateway</code> API call
+     * determine the actual configuration of your gateway.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 50<br/>
@@ -46,8 +50,7 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest {
     /**
      * A unique identifier for your gateway. This name becomes part of the
      * gateway Amazon Resources Name (ARN) which is what you use as an input
-     * to other operations. <p>Length: Minimum length of 2. Maximum length of
-     * 255.
+     * to other operations.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>2 - 255<br/>
@@ -56,9 +59,9 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest {
     private String gatewayName;
 
     /**
-     * One of the <a>GatewayTimezone</a> values that indicates the time zone
-     * you want to set for the gateway. The time zone is used, for example,
-     * for scheduling snapshots and your gateway's maintenance window.
+     * One of the values that indicates the time zone you want to set for the
+     * gateway. The time zone is used, for example, for scheduling snapshots
+     * and your gateway's maintenance schedule.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>GMT-12:00, GMT-11:00, GMT-10:00, GMT-9:00, GMT-8:00, GMT-7:00, GMT-6:00, GMT-5:00, GMT-4:00, GMT-3:30, GMT-3:00, GMT-2:00, GMT-1:00, GMT, GMT+1:00, GMT+2:00, GMT+3:00, GMT+3:30, GMT+4:00, GMT+4:30, GMT+5:00, GMT+5:30, GMT+5:45, GMT+6:00, GMT+7:00, GMT+8:00, GMT+9:00, GMT+9:30, GMT+10:00, GMT+11:00, GMT+12:00
@@ -66,9 +69,11 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest {
     private String gatewayTimezone;
 
     /**
-     * A value that indicates the region your gateway is activated in, and
-     * where your snapshots are stored. For more information about available
-     * regions and endpoints for AWS Storage Gateway, see <a
+     * One of the values that indicates the region where you want to store
+     * the snapshot backups. The gateway region specified must be the same
+     * region as the region in your <code>Host</code> header in the request.
+     * For more information about available regions and endpoints for AWS
+     * Storage Gateway, see <a
      * .amazonwebservices.com/general/latest/gr/rande.html#sg_region">Regions
      * and Endpoints</a> in the <b>Amazon Web Services Glossary</b>.
      * <p><i>Valid Values</i>: "us-east-1", "us-west-1", "us-west-2",
@@ -80,22 +85,37 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest {
     private String gatewayRegion;
 
     /**
+     * One of the values that defines the type of gateway to activate. The
+     * type specified is critical to all later functions of the gateway and
+     * cannot be changed after activation. The default value is
+     * <code>STORED</code>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>STORED, CACHED
+     */
+    private String gatewayType;
+
+    /**
      * Your gateway activation key. You can obtain the activation key by
      * sending an HTTP GET request with redirects enabled to the gateway IP
-     * address. The redirect URL returned in the response provides you the
-     * activation key for your gateway in the query string parameter
-     * <code>activationKey</code>. <p>Length: Minimum length of 1. Maximum
-     * length of 50.
+     * address (port 80). The redirect URL returned in the response provides
+     * you the activation key for your gateway in the query string parameter
+     * <code>activationKey</code>. It may also include other
+     * activation-related parameters, however, these are merely defaults --
+     * the arguments you pass to the <code>ActivateGateway</code> API call
+     * determine the actual configuration of your gateway.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 50<br/>
      *
      * @return Your gateway activation key. You can obtain the activation key by
      *         sending an HTTP GET request with redirects enabled to the gateway IP
-     *         address. The redirect URL returned in the response provides you the
-     *         activation key for your gateway in the query string parameter
-     *         <code>activationKey</code>. <p>Length: Minimum length of 1. Maximum
-     *         length of 50.
+     *         address (port 80). The redirect URL returned in the response provides
+     *         you the activation key for your gateway in the query string parameter
+     *         <code>activationKey</code>. It may also include other
+     *         activation-related parameters, however, these are merely defaults --
+     *         the arguments you pass to the <code>ActivateGateway</code> API call
+     *         determine the actual configuration of your gateway.
      */
     public String getActivationKey() {
         return activationKey;
@@ -104,20 +124,24 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest {
     /**
      * Your gateway activation key. You can obtain the activation key by
      * sending an HTTP GET request with redirects enabled to the gateway IP
-     * address. The redirect URL returned in the response provides you the
-     * activation key for your gateway in the query string parameter
-     * <code>activationKey</code>. <p>Length: Minimum length of 1. Maximum
-     * length of 50.
+     * address (port 80). The redirect URL returned in the response provides
+     * you the activation key for your gateway in the query string parameter
+     * <code>activationKey</code>. It may also include other
+     * activation-related parameters, however, these are merely defaults --
+     * the arguments you pass to the <code>ActivateGateway</code> API call
+     * determine the actual configuration of your gateway.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 50<br/>
      *
      * @param activationKey Your gateway activation key. You can obtain the activation key by
      *         sending an HTTP GET request with redirects enabled to the gateway IP
-     *         address. The redirect URL returned in the response provides you the
-     *         activation key for your gateway in the query string parameter
-     *         <code>activationKey</code>. <p>Length: Minimum length of 1. Maximum
-     *         length of 50.
+     *         address (port 80). The redirect URL returned in the response provides
+     *         you the activation key for your gateway in the query string parameter
+     *         <code>activationKey</code>. It may also include other
+     *         activation-related parameters, however, these are merely defaults --
+     *         the arguments you pass to the <code>ActivateGateway</code> API call
+     *         determine the actual configuration of your gateway.
      */
     public void setActivationKey(String activationKey) {
         this.activationKey = activationKey;
@@ -126,10 +150,12 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest {
     /**
      * Your gateway activation key. You can obtain the activation key by
      * sending an HTTP GET request with redirects enabled to the gateway IP
-     * address. The redirect URL returned in the response provides you the
-     * activation key for your gateway in the query string parameter
-     * <code>activationKey</code>. <p>Length: Minimum length of 1. Maximum
-     * length of 50.
+     * address (port 80). The redirect URL returned in the response provides
+     * you the activation key for your gateway in the query string parameter
+     * <code>activationKey</code>. It may also include other
+     * activation-related parameters, however, these are merely defaults --
+     * the arguments you pass to the <code>ActivateGateway</code> API call
+     * determine the actual configuration of your gateway.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -138,10 +164,12 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest {
      *
      * @param activationKey Your gateway activation key. You can obtain the activation key by
      *         sending an HTTP GET request with redirects enabled to the gateway IP
-     *         address. The redirect URL returned in the response provides you the
-     *         activation key for your gateway in the query string parameter
-     *         <code>activationKey</code>. <p>Length: Minimum length of 1. Maximum
-     *         length of 50.
+     *         address (port 80). The redirect URL returned in the response provides
+     *         you the activation key for your gateway in the query string parameter
+     *         <code>activationKey</code>. It may also include other
+     *         activation-related parameters, however, these are merely defaults --
+     *         the arguments you pass to the <code>ActivateGateway</code> API call
+     *         determine the actual configuration of your gateway.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -155,8 +183,7 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest {
     /**
      * A unique identifier for your gateway. This name becomes part of the
      * gateway Amazon Resources Name (ARN) which is what you use as an input
-     * to other operations. <p>Length: Minimum length of 2. Maximum length of
-     * 255.
+     * to other operations.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>2 - 255<br/>
@@ -164,8 +191,7 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest {
      *
      * @return A unique identifier for your gateway. This name becomes part of the
      *         gateway Amazon Resources Name (ARN) which is what you use as an input
-     *         to other operations. <p>Length: Minimum length of 2. Maximum length of
-     *         255.
+     *         to other operations.
      */
     public String getGatewayName() {
         return gatewayName;
@@ -174,8 +200,7 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest {
     /**
      * A unique identifier for your gateway. This name becomes part of the
      * gateway Amazon Resources Name (ARN) which is what you use as an input
-     * to other operations. <p>Length: Minimum length of 2. Maximum length of
-     * 255.
+     * to other operations.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>2 - 255<br/>
@@ -183,8 +208,7 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest {
      *
      * @param gatewayName A unique identifier for your gateway. This name becomes part of the
      *         gateway Amazon Resources Name (ARN) which is what you use as an input
-     *         to other operations. <p>Length: Minimum length of 2. Maximum length of
-     *         255.
+     *         to other operations.
      */
     public void setGatewayName(String gatewayName) {
         this.gatewayName = gatewayName;
@@ -193,8 +217,7 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest {
     /**
      * A unique identifier for your gateway. This name becomes part of the
      * gateway Amazon Resources Name (ARN) which is what you use as an input
-     * to other operations. <p>Length: Minimum length of 2. Maximum length of
-     * 255.
+     * to other operations.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -204,8 +227,7 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest {
      *
      * @param gatewayName A unique identifier for your gateway. This name becomes part of the
      *         gateway Amazon Resources Name (ARN) which is what you use as an input
-     *         to other operations. <p>Length: Minimum length of 2. Maximum length of
-     *         255.
+     *         to other operations.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -217,16 +239,16 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * One of the <a>GatewayTimezone</a> values that indicates the time zone
-     * you want to set for the gateway. The time zone is used, for example,
-     * for scheduling snapshots and your gateway's maintenance window.
+     * One of the values that indicates the time zone you want to set for the
+     * gateway. The time zone is used, for example, for scheduling snapshots
+     * and your gateway's maintenance schedule.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>GMT-12:00, GMT-11:00, GMT-10:00, GMT-9:00, GMT-8:00, GMT-7:00, GMT-6:00, GMT-5:00, GMT-4:00, GMT-3:30, GMT-3:00, GMT-2:00, GMT-1:00, GMT, GMT+1:00, GMT+2:00, GMT+3:00, GMT+3:30, GMT+4:00, GMT+4:30, GMT+5:00, GMT+5:30, GMT+5:45, GMT+6:00, GMT+7:00, GMT+8:00, GMT+9:00, GMT+9:30, GMT+10:00, GMT+11:00, GMT+12:00
      *
-     * @return One of the <a>GatewayTimezone</a> values that indicates the time zone
-     *         you want to set for the gateway. The time zone is used, for example,
-     *         for scheduling snapshots and your gateway's maintenance window.
+     * @return One of the values that indicates the time zone you want to set for the
+     *         gateway. The time zone is used, for example, for scheduling snapshots
+     *         and your gateway's maintenance schedule.
      *
      * @see GatewayTimezone
      */
@@ -235,16 +257,16 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * One of the <a>GatewayTimezone</a> values that indicates the time zone
-     * you want to set for the gateway. The time zone is used, for example,
-     * for scheduling snapshots and your gateway's maintenance window.
+     * One of the values that indicates the time zone you want to set for the
+     * gateway. The time zone is used, for example, for scheduling snapshots
+     * and your gateway's maintenance schedule.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>GMT-12:00, GMT-11:00, GMT-10:00, GMT-9:00, GMT-8:00, GMT-7:00, GMT-6:00, GMT-5:00, GMT-4:00, GMT-3:30, GMT-3:00, GMT-2:00, GMT-1:00, GMT, GMT+1:00, GMT+2:00, GMT+3:00, GMT+3:30, GMT+4:00, GMT+4:30, GMT+5:00, GMT+5:30, GMT+5:45, GMT+6:00, GMT+7:00, GMT+8:00, GMT+9:00, GMT+9:30, GMT+10:00, GMT+11:00, GMT+12:00
      *
-     * @param gatewayTimezone One of the <a>GatewayTimezone</a> values that indicates the time zone
-     *         you want to set for the gateway. The time zone is used, for example,
-     *         for scheduling snapshots and your gateway's maintenance window.
+     * @param gatewayTimezone One of the values that indicates the time zone you want to set for the
+     *         gateway. The time zone is used, for example, for scheduling snapshots
+     *         and your gateway's maintenance schedule.
      *
      * @see GatewayTimezone
      */
@@ -253,18 +275,18 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * One of the <a>GatewayTimezone</a> values that indicates the time zone
-     * you want to set for the gateway. The time zone is used, for example,
-     * for scheduling snapshots and your gateway's maintenance window.
+     * One of the values that indicates the time zone you want to set for the
+     * gateway. The time zone is used, for example, for scheduling snapshots
+     * and your gateway's maintenance schedule.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>GMT-12:00, GMT-11:00, GMT-10:00, GMT-9:00, GMT-8:00, GMT-7:00, GMT-6:00, GMT-5:00, GMT-4:00, GMT-3:30, GMT-3:00, GMT-2:00, GMT-1:00, GMT, GMT+1:00, GMT+2:00, GMT+3:00, GMT+3:30, GMT+4:00, GMT+4:30, GMT+5:00, GMT+5:30, GMT+5:45, GMT+6:00, GMT+7:00, GMT+8:00, GMT+9:00, GMT+9:30, GMT+10:00, GMT+11:00, GMT+12:00
      *
-     * @param gatewayTimezone One of the <a>GatewayTimezone</a> values that indicates the time zone
-     *         you want to set for the gateway. The time zone is used, for example,
-     *         for scheduling snapshots and your gateway's maintenance window.
+     * @param gatewayTimezone One of the values that indicates the time zone you want to set for the
+     *         gateway. The time zone is used, for example, for scheduling snapshots
+     *         and your gateway's maintenance schedule.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -278,16 +300,16 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * One of the <a>GatewayTimezone</a> values that indicates the time zone
-     * you want to set for the gateway. The time zone is used, for example,
-     * for scheduling snapshots and your gateway's maintenance window.
+     * One of the values that indicates the time zone you want to set for the
+     * gateway. The time zone is used, for example, for scheduling snapshots
+     * and your gateway's maintenance schedule.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>GMT-12:00, GMT-11:00, GMT-10:00, GMT-9:00, GMT-8:00, GMT-7:00, GMT-6:00, GMT-5:00, GMT-4:00, GMT-3:30, GMT-3:00, GMT-2:00, GMT-1:00, GMT, GMT+1:00, GMT+2:00, GMT+3:00, GMT+3:30, GMT+4:00, GMT+4:30, GMT+5:00, GMT+5:30, GMT+5:45, GMT+6:00, GMT+7:00, GMT+8:00, GMT+9:00, GMT+9:30, GMT+10:00, GMT+11:00, GMT+12:00
      *
-     * @param gatewayTimezone One of the <a>GatewayTimezone</a> values that indicates the time zone
-     *         you want to set for the gateway. The time zone is used, for example,
-     *         for scheduling snapshots and your gateway's maintenance window.
+     * @param gatewayTimezone One of the values that indicates the time zone you want to set for the
+     *         gateway. The time zone is used, for example, for scheduling snapshots
+     *         and your gateway's maintenance schedule.
      *
      * @see GatewayTimezone
      */
@@ -296,18 +318,18 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * One of the <a>GatewayTimezone</a> values that indicates the time zone
-     * you want to set for the gateway. The time zone is used, for example,
-     * for scheduling snapshots and your gateway's maintenance window.
+     * One of the values that indicates the time zone you want to set for the
+     * gateway. The time zone is used, for example, for scheduling snapshots
+     * and your gateway's maintenance schedule.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>GMT-12:00, GMT-11:00, GMT-10:00, GMT-9:00, GMT-8:00, GMT-7:00, GMT-6:00, GMT-5:00, GMT-4:00, GMT-3:30, GMT-3:00, GMT-2:00, GMT-1:00, GMT, GMT+1:00, GMT+2:00, GMT+3:00, GMT+3:30, GMT+4:00, GMT+4:30, GMT+5:00, GMT+5:30, GMT+5:45, GMT+6:00, GMT+7:00, GMT+8:00, GMT+9:00, GMT+9:30, GMT+10:00, GMT+11:00, GMT+12:00
      *
-     * @param gatewayTimezone One of the <a>GatewayTimezone</a> values that indicates the time zone
-     *         you want to set for the gateway. The time zone is used, for example,
-     *         for scheduling snapshots and your gateway's maintenance window.
+     * @param gatewayTimezone One of the values that indicates the time zone you want to set for the
+     *         gateway. The time zone is used, for example, for scheduling snapshots
+     *         and your gateway's maintenance schedule.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -320,9 +342,11 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * A value that indicates the region your gateway is activated in, and
-     * where your snapshots are stored. For more information about available
-     * regions and endpoints for AWS Storage Gateway, see <a
+     * One of the values that indicates the region where you want to store
+     * the snapshot backups. The gateway region specified must be the same
+     * region as the region in your <code>Host</code> header in the request.
+     * For more information about available regions and endpoints for AWS
+     * Storage Gateway, see <a
      * .amazonwebservices.com/general/latest/gr/rande.html#sg_region">Regions
      * and Endpoints</a> in the <b>Amazon Web Services Glossary</b>.
      * <p><i>Valid Values</i>: "us-east-1", "us-west-1", "us-west-2",
@@ -331,9 +355,11 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest {
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 25<br/>
      *
-     * @return A value that indicates the region your gateway is activated in, and
-     *         where your snapshots are stored. For more information about available
-     *         regions and endpoints for AWS Storage Gateway, see <a
+     * @return One of the values that indicates the region where you want to store
+     *         the snapshot backups. The gateway region specified must be the same
+     *         region as the region in your <code>Host</code> header in the request.
+     *         For more information about available regions and endpoints for AWS
+     *         Storage Gateway, see <a
      *         .amazonwebservices.com/general/latest/gr/rande.html#sg_region">Regions
      *         and Endpoints</a> in the <b>Amazon Web Services Glossary</b>.
      *         <p><i>Valid Values</i>: "us-east-1", "us-west-1", "us-west-2",
@@ -344,9 +370,11 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * A value that indicates the region your gateway is activated in, and
-     * where your snapshots are stored. For more information about available
-     * regions and endpoints for AWS Storage Gateway, see <a
+     * One of the values that indicates the region where you want to store
+     * the snapshot backups. The gateway region specified must be the same
+     * region as the region in your <code>Host</code> header in the request.
+     * For more information about available regions and endpoints for AWS
+     * Storage Gateway, see <a
      * .amazonwebservices.com/general/latest/gr/rande.html#sg_region">Regions
      * and Endpoints</a> in the <b>Amazon Web Services Glossary</b>.
      * <p><i>Valid Values</i>: "us-east-1", "us-west-1", "us-west-2",
@@ -355,9 +383,11 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest {
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 25<br/>
      *
-     * @param gatewayRegion A value that indicates the region your gateway is activated in, and
-     *         where your snapshots are stored. For more information about available
-     *         regions and endpoints for AWS Storage Gateway, see <a
+     * @param gatewayRegion One of the values that indicates the region where you want to store
+     *         the snapshot backups. The gateway region specified must be the same
+     *         region as the region in your <code>Host</code> header in the request.
+     *         For more information about available regions and endpoints for AWS
+     *         Storage Gateway, see <a
      *         .amazonwebservices.com/general/latest/gr/rande.html#sg_region">Regions
      *         and Endpoints</a> in the <b>Amazon Web Services Glossary</b>.
      *         <p><i>Valid Values</i>: "us-east-1", "us-west-1", "us-west-2",
@@ -368,9 +398,11 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * A value that indicates the region your gateway is activated in, and
-     * where your snapshots are stored. For more information about available
-     * regions and endpoints for AWS Storage Gateway, see <a
+     * One of the values that indicates the region where you want to store
+     * the snapshot backups. The gateway region specified must be the same
+     * region as the region in your <code>Host</code> header in the request.
+     * For more information about available regions and endpoints for AWS
+     * Storage Gateway, see <a
      * .amazonwebservices.com/general/latest/gr/rande.html#sg_region">Regions
      * and Endpoints</a> in the <b>Amazon Web Services Glossary</b>.
      * <p><i>Valid Values</i>: "us-east-1", "us-west-1", "us-west-2",
@@ -381,9 +413,11 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest {
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 25<br/>
      *
-     * @param gatewayRegion A value that indicates the region your gateway is activated in, and
-     *         where your snapshots are stored. For more information about available
-     *         regions and endpoints for AWS Storage Gateway, see <a
+     * @param gatewayRegion One of the values that indicates the region where you want to store
+     *         the snapshot backups. The gateway region specified must be the same
+     *         region as the region in your <code>Host</code> header in the request.
+     *         For more information about available regions and endpoints for AWS
+     *         Storage Gateway, see <a
      *         .amazonwebservices.com/general/latest/gr/rande.html#sg_region">Regions
      *         and Endpoints</a> in the <b>Amazon Web Services Glossary</b>.
      *         <p><i>Valid Values</i>: "us-east-1", "us-west-1", "us-west-2",
@@ -397,6 +431,119 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest {
         return this;
     }
     
+    
+    /**
+     * One of the values that defines the type of gateway to activate. The
+     * type specified is critical to all later functions of the gateway and
+     * cannot be changed after activation. The default value is
+     * <code>STORED</code>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>STORED, CACHED
+     *
+     * @return One of the values that defines the type of gateway to activate. The
+     *         type specified is critical to all later functions of the gateway and
+     *         cannot be changed after activation. The default value is
+     *         <code>STORED</code>.
+     *
+     * @see GatewayType
+     */
+    public String getGatewayType() {
+        return gatewayType;
+    }
+    
+    /**
+     * One of the values that defines the type of gateway to activate. The
+     * type specified is critical to all later functions of the gateway and
+     * cannot be changed after activation. The default value is
+     * <code>STORED</code>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>STORED, CACHED
+     *
+     * @param gatewayType One of the values that defines the type of gateway to activate. The
+     *         type specified is critical to all later functions of the gateway and
+     *         cannot be changed after activation. The default value is
+     *         <code>STORED</code>.
+     *
+     * @see GatewayType
+     */
+    public void setGatewayType(String gatewayType) {
+        this.gatewayType = gatewayType;
+    }
+    
+    /**
+     * One of the values that defines the type of gateway to activate. The
+     * type specified is critical to all later functions of the gateway and
+     * cannot be changed after activation. The default value is
+     * <code>STORED</code>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>STORED, CACHED
+     *
+     * @param gatewayType One of the values that defines the type of gateway to activate. The
+     *         type specified is critical to all later functions of the gateway and
+     *         cannot be changed after activation. The default value is
+     *         <code>STORED</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see GatewayType
+     */
+    public ActivateGatewayRequest withGatewayType(String gatewayType) {
+        this.gatewayType = gatewayType;
+        return this;
+    }
+    
+    
+    /**
+     * One of the values that defines the type of gateway to activate. The
+     * type specified is critical to all later functions of the gateway and
+     * cannot be changed after activation. The default value is
+     * <code>STORED</code>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>STORED, CACHED
+     *
+     * @param gatewayType One of the values that defines the type of gateway to activate. The
+     *         type specified is critical to all later functions of the gateway and
+     *         cannot be changed after activation. The default value is
+     *         <code>STORED</code>.
+     *
+     * @see GatewayType
+     */
+    public void setGatewayType(GatewayType gatewayType) {
+        this.gatewayType = gatewayType.toString();
+    }
+    
+    /**
+     * One of the values that defines the type of gateway to activate. The
+     * type specified is critical to all later functions of the gateway and
+     * cannot be changed after activation. The default value is
+     * <code>STORED</code>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>STORED, CACHED
+     *
+     * @param gatewayType One of the values that defines the type of gateway to activate. The
+     *         type specified is critical to all later functions of the gateway and
+     *         cannot be changed after activation. The default value is
+     *         <code>STORED</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see GatewayType
+     */
+    public ActivateGatewayRequest withGatewayType(GatewayType gatewayType) {
+        this.gatewayType = gatewayType.toString();
+        return this;
+    }
     
     /**
      * Returns a string representation of this object; useful for testing and
@@ -414,6 +561,7 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest {
         if (gatewayName != null) sb.append("GatewayName: " + gatewayName + ", ");
         if (gatewayTimezone != null) sb.append("GatewayTimezone: " + gatewayTimezone + ", ");
         if (gatewayRegion != null) sb.append("GatewayRegion: " + gatewayRegion + ", ");
+        if (gatewayType != null) sb.append("GatewayType: " + gatewayType + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -427,6 +575,7 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest {
         hashCode = prime * hashCode + ((getGatewayName() == null) ? 0 : getGatewayName().hashCode()); 
         hashCode = prime * hashCode + ((getGatewayTimezone() == null) ? 0 : getGatewayTimezone().hashCode()); 
         hashCode = prime * hashCode + ((getGatewayRegion() == null) ? 0 : getGatewayRegion().hashCode()); 
+        hashCode = prime * hashCode + ((getGatewayType() == null) ? 0 : getGatewayType().hashCode()); 
         return hashCode;
     }
     
@@ -446,6 +595,8 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest {
         if (other.getGatewayTimezone() != null && other.getGatewayTimezone().equals(this.getGatewayTimezone()) == false) return false; 
         if (other.getGatewayRegion() == null ^ this.getGatewayRegion() == null) return false;
         if (other.getGatewayRegion() != null && other.getGatewayRegion().equals(this.getGatewayRegion()) == false) return false; 
+        if (other.getGatewayType() == null ^ this.getGatewayType() == null) return false;
+        if (other.getGatewayType() != null && other.getGatewayType().equals(this.getGatewayType()) == false) return false; 
         return true;
     }
     

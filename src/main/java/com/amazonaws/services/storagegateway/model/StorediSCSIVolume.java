@@ -22,9 +22,7 @@ package com.amazonaws.services.storagegateway.model;
 public class StorediSCSIVolume {
 
     /**
-     * The Amazon Resource Name (ARN) of the storage volume. <p><i>Valid
-     * Values</i>: 50 to 500 lowercase letters, numbers, periods (.), and
-     * hyphens (-).
+     * The Amazon Resource Name (ARN) of the storage volume.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>50 - 500<br/>
@@ -44,7 +42,7 @@ public class StorediSCSIVolume {
      * the volume.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>STORED iSCSI
+     * <b>Allowed Values: </b>STORED iSCSI, CACHED iSCSI
      */
     private String volumeType;
 
@@ -53,7 +51,7 @@ public class StorediSCSIVolume {
      * storage volume.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>CREATING, AVAILABLE, RESTORING, BOOTSTRAPPING, IRRECOVERABLE, PASS THROUGH, RESTORE AND PASS THROUGH, DELETED, WORKING STORAGE NOT CONFIGURED
+     * <b>Allowed Values: </b>CREATING, AVAILABLE, RESTORING, BOOTSTRAPPING, IRRECOVERABLE, PASS THROUGH, RESTORE AND PASS THROUGH, DELETED, WORKING STORAGE NOT CONFIGURED, UPLOAD BUFFER NOT CONFIGURED
      */
     private String volumeStatus;
 
@@ -103,50 +101,38 @@ public class StorediSCSIVolume {
     private VolumeiSCSIAttributes volumeiSCSIAttributes;
 
     /**
-     * The Amazon Resource Name (ARN) of the storage volume. <p><i>Valid
-     * Values</i>: 50 to 500 lowercase letters, numbers, periods (.), and
-     * hyphens (-).
+     * The Amazon Resource Name (ARN) of the storage volume.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>50 - 500<br/>
      *
-     * @return The Amazon Resource Name (ARN) of the storage volume. <p><i>Valid
-     *         Values</i>: 50 to 500 lowercase letters, numbers, periods (.), and
-     *         hyphens (-).
+     * @return The Amazon Resource Name (ARN) of the storage volume.
      */
     public String getVolumeARN() {
         return volumeARN;
     }
     
     /**
-     * The Amazon Resource Name (ARN) of the storage volume. <p><i>Valid
-     * Values</i>: 50 to 500 lowercase letters, numbers, periods (.), and
-     * hyphens (-).
+     * The Amazon Resource Name (ARN) of the storage volume.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>50 - 500<br/>
      *
-     * @param volumeARN The Amazon Resource Name (ARN) of the storage volume. <p><i>Valid
-     *         Values</i>: 50 to 500 lowercase letters, numbers, periods (.), and
-     *         hyphens (-).
+     * @param volumeARN The Amazon Resource Name (ARN) of the storage volume.
      */
     public void setVolumeARN(String volumeARN) {
         this.volumeARN = volumeARN;
     }
     
     /**
-     * The Amazon Resource Name (ARN) of the storage volume. <p><i>Valid
-     * Values</i>: 50 to 500 lowercase letters, numbers, periods (.), and
-     * hyphens (-).
+     * The Amazon Resource Name (ARN) of the storage volume.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>50 - 500<br/>
      *
-     * @param volumeARN The Amazon Resource Name (ARN) of the storage volume. <p><i>Valid
-     *         Values</i>: 50 to 500 lowercase letters, numbers, periods (.), and
-     *         hyphens (-).
+     * @param volumeARN The Amazon Resource Name (ARN) of the storage volume.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -205,7 +191,7 @@ public class StorediSCSIVolume {
      * the volume.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>STORED iSCSI
+     * <b>Allowed Values: </b>STORED iSCSI, CACHED iSCSI
      *
      * @return One of the <a>VolumeType</a> enumeration values describing the type of
      *         the volume.
@@ -221,7 +207,7 @@ public class StorediSCSIVolume {
      * the volume.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>STORED iSCSI
+     * <b>Allowed Values: </b>STORED iSCSI, CACHED iSCSI
      *
      * @param volumeType One of the <a>VolumeType</a> enumeration values describing the type of
      *         the volume.
@@ -239,7 +225,7 @@ public class StorediSCSIVolume {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>STORED iSCSI
+     * <b>Allowed Values: </b>STORED iSCSI, CACHED iSCSI
      *
      * @param volumeType One of the <a>VolumeType</a> enumeration values describing the type of
      *         the volume.
@@ -260,7 +246,7 @@ public class StorediSCSIVolume {
      * the volume.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>STORED iSCSI
+     * <b>Allowed Values: </b>STORED iSCSI, CACHED iSCSI
      *
      * @param volumeType One of the <a>VolumeType</a> enumeration values describing the type of
      *         the volume.
@@ -278,7 +264,7 @@ public class StorediSCSIVolume {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>STORED iSCSI
+     * <b>Allowed Values: </b>STORED iSCSI, CACHED iSCSI
      *
      * @param volumeType One of the <a>VolumeType</a> enumeration values describing the type of
      *         the volume.
@@ -298,7 +284,7 @@ public class StorediSCSIVolume {
      * storage volume.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>CREATING, AVAILABLE, RESTORING, BOOTSTRAPPING, IRRECOVERABLE, PASS THROUGH, RESTORE AND PASS THROUGH, DELETED, WORKING STORAGE NOT CONFIGURED
+     * <b>Allowed Values: </b>CREATING, AVAILABLE, RESTORING, BOOTSTRAPPING, IRRECOVERABLE, PASS THROUGH, RESTORE AND PASS THROUGH, DELETED, WORKING STORAGE NOT CONFIGURED, UPLOAD BUFFER NOT CONFIGURED
      *
      * @return One of the <a>VolumeStatus</a> values that indicates the state of the
      *         storage volume.
@@ -314,7 +300,7 @@ public class StorediSCSIVolume {
      * storage volume.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>CREATING, AVAILABLE, RESTORING, BOOTSTRAPPING, IRRECOVERABLE, PASS THROUGH, RESTORE AND PASS THROUGH, DELETED, WORKING STORAGE NOT CONFIGURED
+     * <b>Allowed Values: </b>CREATING, AVAILABLE, RESTORING, BOOTSTRAPPING, IRRECOVERABLE, PASS THROUGH, RESTORE AND PASS THROUGH, DELETED, WORKING STORAGE NOT CONFIGURED, UPLOAD BUFFER NOT CONFIGURED
      *
      * @param volumeStatus One of the <a>VolumeStatus</a> values that indicates the state of the
      *         storage volume.
@@ -332,7 +318,7 @@ public class StorediSCSIVolume {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>CREATING, AVAILABLE, RESTORING, BOOTSTRAPPING, IRRECOVERABLE, PASS THROUGH, RESTORE AND PASS THROUGH, DELETED, WORKING STORAGE NOT CONFIGURED
+     * <b>Allowed Values: </b>CREATING, AVAILABLE, RESTORING, BOOTSTRAPPING, IRRECOVERABLE, PASS THROUGH, RESTORE AND PASS THROUGH, DELETED, WORKING STORAGE NOT CONFIGURED, UPLOAD BUFFER NOT CONFIGURED
      *
      * @param volumeStatus One of the <a>VolumeStatus</a> values that indicates the state of the
      *         storage volume.
@@ -353,7 +339,7 @@ public class StorediSCSIVolume {
      * storage volume.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>CREATING, AVAILABLE, RESTORING, BOOTSTRAPPING, IRRECOVERABLE, PASS THROUGH, RESTORE AND PASS THROUGH, DELETED, WORKING STORAGE NOT CONFIGURED
+     * <b>Allowed Values: </b>CREATING, AVAILABLE, RESTORING, BOOTSTRAPPING, IRRECOVERABLE, PASS THROUGH, RESTORE AND PASS THROUGH, DELETED, WORKING STORAGE NOT CONFIGURED, UPLOAD BUFFER NOT CONFIGURED
      *
      * @param volumeStatus One of the <a>VolumeStatus</a> values that indicates the state of the
      *         storage volume.
@@ -371,7 +357,7 @@ public class StorediSCSIVolume {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>CREATING, AVAILABLE, RESTORING, BOOTSTRAPPING, IRRECOVERABLE, PASS THROUGH, RESTORE AND PASS THROUGH, DELETED, WORKING STORAGE NOT CONFIGURED
+     * <b>Allowed Values: </b>CREATING, AVAILABLE, RESTORING, BOOTSTRAPPING, IRRECOVERABLE, PASS THROUGH, RESTORE AND PASS THROUGH, DELETED, WORKING STORAGE NOT CONFIGURED, UPLOAD BUFFER NOT CONFIGURED
      *
      * @param volumeStatus One of the <a>VolumeStatus</a> values that indicates the state of the
      *         storage volume.
