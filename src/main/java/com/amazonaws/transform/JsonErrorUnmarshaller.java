@@ -43,6 +43,9 @@ public class JsonErrorUnmarshaller extends AbstractErrorUnmarshaller<JSONObject>
         if (json.has("message")) {
             message = json.getString("message");
         }
+        else if (json.has("Message")) {
+            message = json.getString("Message");
+        }
         return message;
     }
 
