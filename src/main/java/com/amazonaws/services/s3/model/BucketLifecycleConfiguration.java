@@ -15,6 +15,7 @@
 package com.amazonaws.services.s3.model;
 
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -24,14 +25,14 @@ public class BucketLifecycleConfiguration {
 
     /**
      * Constant for an enabled rule.
-     * 
+     *
      * @see Rule#setStatus(String)
      */
     public static final String ENABLED = "Enabled";
 
     /**
      * Constant for a disabled rule.
-     * 
+     *
      * @see Rule#setStatus(String)
      */
     public static final String DISABLED = "Disabled";
@@ -73,7 +74,7 @@ public class BucketLifecycleConfiguration {
     /**
      * Constructs a new {@link BucketLifecycleConfiguration} object with the
      * rules given.
-     * 
+     *
      * @param rules
      */
     public BucketLifecycleConfiguration(List<Rule> rules) {
@@ -89,7 +90,20 @@ public class BucketLifecycleConfiguration {
         private String id;
         private String prefix;
         private String status;
-        private int expirationInDays;
+
+        /**
+         * The time, in days, between when the object is uploaded to the bucket
+         * and when it expires. Should not coexist with expirationDate within
+         * one lifecycle rule.
+         */
+        private int expirationInDays = -1;
+
+        /**
+         * The expiration date of the object and should not coexist with expirationInDays within
+         * one lifecycle rule.
+         */
+        private Date expirationDate;
+        private Transition transition;
 
         /**
          * Sets the ID of this rule. Rules must be less than 255 alphanumeric
@@ -125,7 +139,7 @@ public class BucketLifecycleConfiguration {
         /**
          * Sets the ID of this rule and returns a reference to this object for
          * method chaining.
-         * 
+         *
          * @see Rule#setId(String)
          */
         public Rule withId(String id) {
@@ -143,7 +157,7 @@ public class BucketLifecycleConfiguration {
         /**
          * Sets the key prefix for this rule and returns a reference to this
          * object for method chaining.
-         * 
+         *
          * @see Rule#setPrefix(String)
          */
         public Rule withPrefix(String prefix) {
@@ -162,7 +176,7 @@ public class BucketLifecycleConfiguration {
          * Sets the time, in days, between when an object is uploaded to the
          * bucket and when it expires, and returns a reference to this object
          * for method chaining.
-         * 
+         *
          * @see Rule#setExpirationInDays(int)
          */
         public Rule withExpirationInDays(int expirationInDays) {
@@ -172,7 +186,7 @@ public class BucketLifecycleConfiguration {
 
         /**
          * Returns the status of this rule.
-         * 
+         *
          * @see BucketLifecycleConfiguration#DISABLED
          * @see BucketLifecycleConfiguration#ENABLED
          */
@@ -182,7 +196,7 @@ public class BucketLifecycleConfiguration {
 
         /**
          * Sets the status of this rule.
-         * 
+         *
          * @see BucketLifecycleConfiguration#DISABLED
          * @see BucketLifecycleConfiguration#ENABLED
          */
@@ -193,7 +207,7 @@ public class BucketLifecycleConfiguration {
         /**
          * Sets the status of this rule and returns a reference to this object
          * for method chaining.
-         * 
+         *
          * @see Rule#setStatus(String)
          * @see BucketLifecycleConfiguration#DISABLED
          * @see BucketLifecycleConfiguration#ENABLED
@@ -202,6 +216,150 @@ public class BucketLifecycleConfiguration {
             setStatus(status);
             return this;
         }
+
+        /**
+         * Sets the expiration date of the object.
+         */
+        public void setExpirationDate(Date expirationDate) {
+            this.expirationDate = expirationDate;
+        }
+
+        /**
+         * Returns the expiration date of the object.
+         */
+        public Date getExpirationDate() {
+            return this.expirationDate;
+        }
+
+        /**
+         * Sets the expiration date of the object and returns a reference to this
+         * object(Rule) for method chaining.
+         */
+        public Rule withExpirationDate(Date expirationDate) {
+            this.expirationDate = expirationDate;
+            return this;
+        }
+
+        /**
+         * Sets the transition describing how this object will move between
+         * different storage classes in Amazon S3.
+         */
+        public void setTransition(Transition transition) {
+            this.transition = transition;
+        }
+
+        /**
+         * Returns the transition attribute of the rule.
+         */
+        public Transition getTransition() {
+            return this.transition;
+        }
+
+        /**
+         * Sets the transition describing how this object will move between
+         * different storage classes in Amazon S3 and returns a reference to
+         * this object(Rule) for method chaining.
+         */
+        public Rule withTransition(Transition transition) {
+            this.transition = transition;
+            return this;
+        }
+    }
+
+    /**
+     * The transition attribute of the rule describing how this object will move
+     * between different storage classes in Amazon S3.
+     */
+    public static class Transition {
+
+        /**
+         * The time, in days, between when the object is uploaded to the bucket
+         * and when it expires. Should not coexist with expirationDate within
+         * one lifecycle rule.
+         */
+        private int days = -1;
+
+        /**
+         * The expiration date of the object and should not coexist with expirationInDays within
+         * one lifecycle rule.
+         */
+        private Date date;
+
+        private StorageClass storageClass;
+
+        /**
+         * Sets the time, in days, between when an object is uploaded to the
+         * bucket and when it expires.
+         */
+        public void setDays(int expirationInDays) {
+            this.days = expirationInDays;
+        }
+
+        /**
+         * Returns the time in days from an object's creation to its expiration.
+         */
+        public int getDays() {
+            return days;
+        }
+
+        /**
+         * Sets the time, in days, between when an object is uploaded to the
+         * bucket and when it expires, and returns a reference to this object
+         * for method chaining.
+         *
+         * @see Rule#setExpirationInDays(int)
+         */
+        public Transition withDays(int expirationInDays) {
+            this.days = expirationInDays;
+            return this;
+        }
+
+        /**
+         * Sets the storage class of this object.
+         */
+        public void setStorageClass(StorageClass storageClass) {
+            this.storageClass = storageClass;
+        }
+
+        /**
+         * Returns the storage class of this object.
+         */
+        public StorageClass getStorageClass() {
+            return this.storageClass;
+        }
+
+        /**
+         * Sets the storage class of this object and returns a reference to this
+         * object(Transition) for method chaining.
+         */
+        public Transition withStorageClass(StorageClass storageClass) {
+            this.storageClass = storageClass;
+            return this;
+        }
+
+        /**
+         * Set the expiration date of this object.
+         */
+        public void setDate(Date expirationDate) {
+            this.date = expirationDate;
+        }
+
+        /**
+         * Returns the expiration date of this object.
+         */
+        public Date getDate() {
+            return this.date;
+        }
+
+        /**
+         * Set the expiration date of this object and returns a reference to
+         * this object(Transition) for method chaining.
+         */
+        public Transition withDate(Date expirationDate) {
+            this.date = expirationDate;
+            return this;
+        }
+
     }
 
 }

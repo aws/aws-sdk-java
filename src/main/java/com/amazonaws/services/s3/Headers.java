@@ -33,7 +33,7 @@ public interface Headers {
     public static final String ETAG = "ETag";
     public static final String LAST_MODIFIED = "Last-Modified";
     public static final String SERVER = "Server";
-  
+
     /*
      * Amazon HTTP Headers
      */
@@ -127,8 +127,11 @@ public interface Headers {
 
     /** Header for the optional original unencrypted Content MD5 of an encrypted object */
     public static final String UNENCRYPTED_CONTENT_MD5 = "x-amz-unencrypted-content-md5";
-    
+
     /** Header for optional redirect location of an object */
     public static final String REDIRECT_LOCATION = "x-amz-website-redirect-location";
+
+    /** Header for the optional restore information of an object */
+    public static String RESTORE = "x-amz-restore";
 
 }

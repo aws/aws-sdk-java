@@ -47,14 +47,21 @@ public enum StorageClass {
      * Amazon S3 for storing non-critical, reproducible data can choose this
      * low cost and highly available, but less redundant, storage option.
      */
-    ReducedRedundancy("REDUCED_REDUNDANCY");
+    ReducedRedundancy("REDUCED_REDUNDANCY"),
+
+    /**
+     * The Amazon Glacier storage class.
+     * This storage class means your object's data is stored in Amazon Glacier,
+     * and Amazon S3 stores a reference to the data in the Amazon S3 bucket.
+     */
+    Glacier("GLACIER");
 
     /**
      * Returns the Amazon S3 {@link StorageClass} enumeration value representing the
-     * specified Amazon S3 <code>StorageClass</code> ID string. 
-     * If the specified string doesn't map to a known Amazon S3 storage class, 
+     * specified Amazon S3 <code>StorageClass</code> ID string.
+     * If the specified string doesn't map to a known Amazon S3 storage class,
      * an <code>IllegalArgumentException</code> is thrown.
-     * 
+     *
      * @param s3StorageClassString
      *            The Amazon S3 storage class ID string.
      *

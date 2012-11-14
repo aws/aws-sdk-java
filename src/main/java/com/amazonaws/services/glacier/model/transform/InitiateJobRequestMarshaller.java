@@ -104,6 +104,9 @@ public class InitiateJobRequestMarshaller implements Marshaller<Request<Initiate
                 if (jobParameters.getSNSTopic() != null) {
                     jsonWriter.key("SNSTopic").value(jobParameters.getSNSTopic());
                 }
+                if (jobParameters.getRetrievalByteRange() != null) {
+                    jsonWriter.key("RetrievalByteRange").value(jobParameters.getRetrievalByteRange());
+                }
                 jsonWriter.endObject();
             }
 

@@ -32,8 +32,10 @@ public class SQSRequestHandler extends AbstractRequestHandler {
 		nonstandardEndpointMap.put("ap-southeast-1.queue.amazonaws.com", "sqs.ap-southeast-1.amazonaws.com");
 		nonstandardEndpointMap.put("ap-northeast-1.queue.amazonaws.com", "sqs.ap-northeast-1.amazonaws.com");
 		nonstandardEndpointMap.put("sa-east-1.queue.amazonaws.com",      "sqs.sa-east-1.amazonaws.com");
+		nonstandardEndpointMap.put("us-gov-west-1.queue.amazonaws.com",  "sqs.us-gov-west-1.amazonaws.com");
+		nonstandardEndpointMap.put("ap-southeast-2.queue.amazonaws.com", "sqs.ap-southeast-2.amazonaws.com");
 	}
-	
+
 	@Override
 	public void beforeRequest(Request<?> request) {
 		URI endpoint = request.getEndpoint();

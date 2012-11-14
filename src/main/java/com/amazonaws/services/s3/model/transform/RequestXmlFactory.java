@@ -18,8 +18,10 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.services.s3.internal.XmlWriter;
 import com.amazonaws.services.s3.model.PartETag;
+import com.amazonaws.services.s3.model.RestoreObjectRequest;
 
 public class RequestXmlFactory {
 
@@ -52,6 +54,29 @@ public class RequestXmlFactory {
                 xml.end();
             }
         }
+        xml.end();
+
+        return xml.getBytes();
+    }
+
+    /**
+     * Converts the RestoreObjectRequest to an XML fragment that can be sent to
+     * the RestoreObject operation of Amazon S3.
+     *
+     * @param restoreObjectRequest
+     *            The container which provides options for restoring an object,
+     *            which was transitioned to the Glacier from S3 when it was
+     *            expired, into S3 again.
+     *
+     * @return A byte array containing the data
+     *
+     * @throws AmazonClientException
+     */
+    public static byte[] convertToXmlByteArray(RestoreObjectRequest restoreObjectRequest) throws AmazonClientException {
+        XmlWriter xml = new XmlWriter();
+
+        xml.start("RestoreRequest");
+        xml.start("Days").value(Integer.toString(restoreObjectRequest.getExpirationInDays())).end();
         xml.end();
 
         return xml.getBytes();

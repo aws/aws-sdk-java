@@ -39,6 +39,7 @@ import com.amazonaws.services.s3.model.BucketWebsiteConfiguration;
 import com.amazonaws.services.s3.model.CannedAccessControlList;
 import com.amazonaws.services.s3.model.CompleteMultipartUploadRequest;
 import com.amazonaws.services.s3.model.CompleteMultipartUploadResult;
+import com.amazonaws.services.s3.model.RestoreObjectRequest;
 import com.amazonaws.services.s3.model.CopyObjectRequest;
 import com.amazonaws.services.s3.model.CopyObjectResult;
 import com.amazonaws.services.s3.model.CopyPartRequest;
@@ -162,8 +163,8 @@ public interface AmazonS3 {
      */
     public void changeObjectStorageClass(String bucketName, String key, StorageClass newStorageClass)
         throws AmazonClientException, AmazonServiceException;
-    
-    
+
+
     /**
      * <p>
      * Changes the Amazon S3 redirect location for a specific object.
@@ -2359,7 +2360,7 @@ public interface AmazonS3 {
      * attempts will cause an error. If any object in the request cannot be
      * deleted, this method throws a {@link MultiObjectDeleteException} with
      * details of the error.
-     * 
+     *
      * @param deleteObjectsRequest
      *            The request object containing all options for deleting
      *            multiple objects.
@@ -2647,7 +2648,7 @@ public interface AmazonS3 {
     /**
      * Gets the lifecycle configuration for the specified bucket, or null if no
      * configuration has been established.
-     * 
+     *
      * @param bucketName
      *            The name of the bucket for which to retrieve lifecycle
      *            configuration.
@@ -2656,7 +2657,7 @@ public interface AmazonS3 {
 
     /**
      * Sets the lifecycle configuration for the specified bucket.
-     * 
+     *
      * @param bucketName
      *            The name of the bucket for which to set the lifecycle
      *            configuration.
@@ -2668,48 +2669,48 @@ public interface AmazonS3 {
 
     /**
      * Removes the lifecycle configuration for the bucket specified.
-     * 
+     *
      * @param bucketName
      *            The name of the bucket for which to remove the lifecycle
      *            configuration.
      */
     public void deleteBucketLifecycleConfiguration(String bucketName);
-    
+
     /**
      * Gets the cross origin configuration for the specified bucket, or null if no
      * configuration has been established.
-     * 
+     *
      * @param bucketName
      *            The name of the bucket for which to retrieve cross origin
      *            configuration.
      */
     public BucketCrossOriginConfiguration getBucketCrossOriginConfiguration(String bucketName);
-    
+
     /**
      * Sets the cross origin configuration for the specified bucket.
-     * 
+     *
      * @param bucketName
      *            The name of the bucket for which to retrieve cross origin
      *            configuration.
-     * @param bucketCrossOriginConfiguration    
+     * @param bucketCrossOriginConfiguration
      * 			  The new cross origin configuration for this bucket, which
      *            completely replaces any existing configuration.
      */
     public void setBucketCrossOriginConfiguration(String bucketName, BucketCrossOriginConfiguration bucketCrossOriginConfiguration);
-    
+
     /**
      * Delete the cross origin configuration for the specified bucket.
-     * 
+     *
      * @param bucketName
      *            The name of the bucket for which to retrieve cross origin
      *            configuration.
      */
     public void deleteBucketCrossOriginConfiguration(String bucketName);
-    
+
     /**
      * Gets the tagging configuration for the specified bucket, or null if no
      * configuration has been established.
-     * 
+     *
      * @param bucketName
      *            The name of the bucket for which to retrieve tagging
      *            configuration.
@@ -2718,7 +2719,7 @@ public interface AmazonS3 {
 
     /**
      * Sets the tagging configuration for the specified bucket.
-     * 
+     *
      * @param bucketName
      *            The name of the bucket for which to set the tagging
      *            configuration.
@@ -2730,13 +2731,13 @@ public interface AmazonS3 {
 
     /**
      * Removes the Tagging configuration for the bucket specified.
-     * 
+     *
      * @param bucketName
      *            The name of the bucket for which to remove the tagging
      *            configuration.
      */
     public void deleteBucketTaggingConfiguration(String bucketName);
-    
+
     /**
      * Gets the notification configuration for the specified bucket.
      * <p>
@@ -3346,7 +3347,7 @@ public interface AmazonS3 {
      * >this blog post</a>. That method is only suitable for POSTs from HTML
      * forms by browsers.
      * </p>
-     * 
+     *
      * @param generatePresignedUrlRequest
      *            The request object containing all the options for generating a
      *            pre-signed URL (bucket name, key, expiration date, etc).
@@ -3561,5 +3562,54 @@ public interface AmazonS3 {
      *         <code>null</code> if none is available.
      */
     public S3ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+
+    /**
+     * Restore an object, which was transitioned to Amazon Glacier from Amazon
+     * S3 when it was expired, into Amazon S3 again. This copy is by nature temporary
+     * and is always stored as RRS in Amazon S3. The customer will be able to set /
+     * re-adjust the lifetime of this copy. By re-adjust we mean the customer
+     * can call this API to shorten or extend the lifetime of the copy. Note the
+     * request will only be accepted when there is no ongoing restore request. One
+     * needs to have the new s3:RestoreObject permission to perform this
+     * operation.
+     *
+     * @param RestoreObjectRequest
+     *            The request object containing all the options for restoring an
+     *            Amazon S3 object.
+     *
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
+     *
+     * @see AmazonS3Client#restoreObject(String, String, int)
+     */
+    public void restoreObject(RestoreObjectRequest copyGlacierObjectRequest)
+            throws AmazonServiceException;
+
+    /**
+     * Restore an object, which was transitioned to Amazon Glacier from Amazon
+     * S3 when it was expired, into Amazon S3 again. This copy is by nature temporary
+     * and is always stored as RRS in Amazon S3. The customer will be able to set /
+     * re-adjust the lifetime of this copy. By re-adjust we mean the customer
+     * can call this API to shorten or extend the lifetime of the copy. Note the
+     * request will only accepted when there is no ongoing restore request. One
+     * needs to have the new s3:RestoreObject permission to perform this
+     * operation.
+     *
+     * @param bucketName
+     *            The name of an existing bucket.
+     * @param key
+     *            The key under which to store the specified file.
+     * @param expirationInDays
+     *            The number of days after which the object will expire.
+     *
+     * @throws AmazonServiceException
+     *             If any errors occurred in Amazon S3 while processing the
+     *             request.
+     *
+     * @see AmazonS3Client#restoreObject(RestoreObjectRequest)
+     */
+    public void restoreObject(String bucketName, String key, int expirationInDays)
+            throws AmazonServiceException;
 
 }

@@ -61,6 +61,8 @@ public class JobParameters {
      */
     private String sNSTopic;
 
+    private String retrievalByteRange;
+
     /**
      * Default constructor for a new JobParameters object.  Callers should use the
      * setter or fluent setter (with...) methods to initialize this object after creating it.
@@ -359,6 +361,40 @@ public class JobParameters {
     
     
     /**
+     * Returns the value of the RetrievalByteRange property for this object.
+     *
+     * @return The value of the RetrievalByteRange property for this object.
+     */
+    public String getRetrievalByteRange() {
+        return retrievalByteRange;
+    }
+    
+    /**
+     * Sets the value of the RetrievalByteRange property for this object.
+     *
+     * @param retrievalByteRange The new value for the RetrievalByteRange property for this object.
+     */
+    public void setRetrievalByteRange(String retrievalByteRange) {
+        this.retrievalByteRange = retrievalByteRange;
+    }
+    
+    /**
+     * Sets the value of the RetrievalByteRange property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param retrievalByteRange The new value for the RetrievalByteRange property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public JobParameters withRetrievalByteRange(String retrievalByteRange) {
+        this.retrievalByteRange = retrievalByteRange;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -375,6 +411,7 @@ public class JobParameters {
         if (archiveId != null) sb.append("ArchiveId: " + archiveId + ", ");
         if (description != null) sb.append("Description: " + description + ", ");
         if (sNSTopic != null) sb.append("SNSTopic: " + sNSTopic + ", ");
+        if (retrievalByteRange != null) sb.append("RetrievalByteRange: " + retrievalByteRange + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -389,6 +426,7 @@ public class JobParameters {
         hashCode = prime * hashCode + ((getArchiveId() == null) ? 0 : getArchiveId().hashCode()); 
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode()); 
         hashCode = prime * hashCode + ((getSNSTopic() == null) ? 0 : getSNSTopic().hashCode()); 
+        hashCode = prime * hashCode + ((getRetrievalByteRange() == null) ? 0 : getRetrievalByteRange().hashCode()); 
         return hashCode;
     }
     
@@ -410,6 +448,8 @@ public class JobParameters {
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false) return false; 
         if (other.getSNSTopic() == null ^ this.getSNSTopic() == null) return false;
         if (other.getSNSTopic() != null && other.getSNSTopic().equals(this.getSNSTopic()) == false) return false; 
+        if (other.getRetrievalByteRange() == null ^ this.getRetrievalByteRange() == null) return false;
+        if (other.getRetrievalByteRange() != null && other.getRetrievalByteRange().equals(this.getRetrievalByteRange()) == false) return false; 
         return true;
     }
     

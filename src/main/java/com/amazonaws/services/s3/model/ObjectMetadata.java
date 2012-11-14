@@ -21,6 +21,7 @@ import java.util.Map;
 
 import com.amazonaws.services.s3.Headers;
 import com.amazonaws.services.s3.internal.ObjectExpirationResult;
+import com.amazonaws.services.s3.internal.ObjectRestoreResult;
 import com.amazonaws.services.s3.internal.ServerSideEncryptionResult;
 
 /**
@@ -28,7 +29,7 @@ import com.amazonaws.services.s3.internal.ServerSideEncryptionResult;
  * user-supplied metadata, as well as the standard HTTP headers that Amazon S3
  * sends and receives (Content-Length, ETag, Content-MD5, etc.).
  */
-public class ObjectMetadata implements ServerSideEncryptionResult, ObjectExpirationResult {
+public class ObjectMetadata implements ServerSideEncryptionResult, ObjectExpirationResult, ObjectRestoreResult {
 
     /*
      * TODO: Might be nice to get as many of the internal use only methods out
@@ -62,35 +63,40 @@ public class ObjectMetadata implements ServerSideEncryptionResult, ObjectExpirat
     /** The expiration rule for this object */
     private String expirationTimeRuleId;
 
-	/**
-	 * <p>
-	 * Gets the custom user-metadata for the associated object.
-	 * </p>
-	 * <p>
-	 * Amazon S3 can store additional metadata on objects by internally
-	 * representing it as HTTP headers prefixed with "x-amz-meta-". Use
-	 * user-metadata to store arbitrary metadata alongside their data in Amazon
-	 * S3. When setting user metadata, callers <i>should not</i> include the
-	 * internal "x-amz-meta-" prefix; this library will handle that for them.
-	 * Likewise, when callers retrieve custom user-metadata, they will not see
-	 * the "x-amz-meta-" header prefix.
-	 * </p>
-	 * <p>
-	 * User-metadata keys are <b>case insensitive</b> and will be returned as
-	 * lowercase strings, even if they were originally specified with uppercase
-	 * strings.
-	 * </p>
-	 * <p>
-	 * Note that user-metadata for an object is limited by the HTTP request
-	 * header limit. All HTTP headers included in a request (including user
-	 * metadata headers and other standard HTTP headers) must be less than 8KB.
-	 * </p>
-	 *
-	 * @return The custom user metadata for the associated object.
-	 *
-	 * @see ObjectMetadata#setUserMetadata(Map)
-	 * @see ObjectMetadata#addUserMetadata(String, String)
-	 */
+    /**
+     * Boolean value to indicate whether there is an ongoing restore request.
+     */
+    private Boolean ongoingRestore;
+
+    /**
+     * <p>
+     * Gets the custom user-metadata for the associated object.
+     * </p>
+     * <p>
+     * Amazon S3 can store additional metadata on objects by internally
+     * representing it as HTTP headers prefixed with "x-amz-meta-". Use
+     * user-metadata to store arbitrary metadata alongside their data in Amazon
+     * S3. When setting user metadata, callers <i>should not</i> include the
+     * internal "x-amz-meta-" prefix; this library will handle that for them.
+     * Likewise, when callers retrieve custom user-metadata, they will not see
+     * the "x-amz-meta-" header prefix.
+     * </p>
+     * <p>
+     * User-metadata keys are <b>case insensitive</b> and will be returned as
+     * lowercase strings, even if they were originally specified with uppercase
+     * strings.
+     * </p>
+     * <p>
+     * Note that user-metadata for an object is limited by the HTTP request
+     * header limit. All HTTP headers included in a request (including user
+     * metadata headers and other standard HTTP headers) must be less than 8KB.
+     * </p>
+     *
+     * @return The custom user metadata for the associated object.
+     *
+     * @see ObjectMetadata#setUserMetadata(Map)
+     * @see ObjectMetadata#addUserMetadata(String, String)
+     */
     public Map<String, String> getUserMetadata() {
         return userMetadata;
     }
@@ -617,6 +623,23 @@ public class ObjectMetadata implements ServerSideEncryptionResult, ObjectExpirat
      */
     public void setExpirationTimeRuleId(String expirationTimeRuleId) {
         this.expirationTimeRuleId = expirationTimeRuleId;
+    }
+
+    /**
+     * For internal use only. Sets the boolean value which indicates whether
+     * there is ongoing restore request. Not intended to be called by external
+     * code.
+     */
+    public void setOngoingRestore(boolean ongoingRestore) {
+        this.ongoingRestore = Boolean.valueOf(ongoingRestore);
+    }
+
+
+    /**
+     *  Returns the boolean value which indicates whether there is ongoing restore request.
+     */
+    public Boolean getOngoingRestore() {
+        return this.ongoingRestore;
     }
 
 }

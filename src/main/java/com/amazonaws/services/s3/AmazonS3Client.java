@@ -19,7 +19,6 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
-import java.net.InetAddress;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
@@ -141,6 +140,7 @@ import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.amazonaws.services.s3.model.PutObjectResult;
 import com.amazonaws.services.s3.model.Region;
 import com.amazonaws.services.s3.model.ResponseHeaderOverrides;
+import com.amazonaws.services.s3.model.RestoreObjectRequest;
 import com.amazonaws.services.s3.model.S3Object;
 import com.amazonaws.services.s3.model.S3ObjectInputStream;
 import com.amazonaws.services.s3.model.SetBucketAclRequest;
@@ -2318,6 +2318,49 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         return (S3ResponseMetadata)client.getResponseMetadataForRequest(request);
     }
 
+    /* (non-Javadoc)
+     * @see com.amazonaws.services.s3.AmazonS3#restoreObject(com.amazonaws.services.s3.model.RestoreObjectRequest)
+     */
+    public void restoreObject(RestoreObjectRequest restoreObjectRequest)
+            throws AmazonServiceException {
+        String bucketName = restoreObjectRequest.getBucketName();
+        String key = restoreObjectRequest.getKey();
+        int expirationIndays = restoreObjectRequest.getExpirationInDays();
+
+        assertParameterNotNull(bucketName, "The bucket name parameter must be specified when copying a glacier object");
+        assertParameterNotNull(key, "The key parameter must be specified when copying a glacier object");
+        if (expirationIndays == -1) {
+            throw new IllegalArgumentException("The expiration in days parameter must be specified when copying a glacier object");
+        }
+
+
+        Request<RestoreObjectRequest> request = createRequest(bucketName, key, restoreObjectRequest, HttpMethodName.POST);
+        request.addParameter("restore", null);
+
+        byte[] content = RequestXmlFactory.convertToXmlByteArray(restoreObjectRequest);
+        request.addHeader("Content-Length", String.valueOf(content.length));
+        request.addHeader("Content-Type", "application/xml");
+        request.setContent(new ByteArrayInputStream(content));
+        try {
+            byte[] md5 = Md5Utils.computeMD5Hash(content);
+            String md5Base64 = BinaryUtils.toBase64(md5);
+            request.addHeader("Content-MD5", md5Base64);
+        } catch (Exception e) {
+            throw new AmazonClientException("Couldn't compute md5 sum", e);
+        }
+
+        invoke(request, voidResponseHandler, bucketName, key);
+    }
+
+    /** (non-Javadoc)
+     * @see com.amazonaws.services.s3.AmazonS3#copyGlacierObject((java.lang.String, java.lang.String, int)
+     */
+    public void restoreObject(String bucketName, String key, int expirationInDays)
+            throws AmazonServiceException {
+        restoreObject(new RestoreObjectRequest(bucketName, key, expirationInDays));
+    }
+
+
     /*
      * Private Interface
      */
@@ -2903,7 +2946,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         executionContext.setSigner(createSigner(request, bucket, key));
         executionContext.setCredentials(credentials);
 
-        return (X)client.execute(request, responseHandler, errorResponseHandler, executionContext);
+        return client.execute(request, responseHandler, errorResponseHandler, executionContext);
     }
 
 }

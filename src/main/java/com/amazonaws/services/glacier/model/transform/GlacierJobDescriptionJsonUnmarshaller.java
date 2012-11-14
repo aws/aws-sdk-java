@@ -104,6 +104,14 @@ public class GlacierJobDescriptionJsonUnmarshaller implements Unmarshaller<Glaci
                     context.nextToken();
                     glacierJobDescription.setSHA256TreeHash(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("ArchiveSHA256TreeHash", targetDepth)) {
+                    context.nextToken();
+                    glacierJobDescription.setArchiveSHA256TreeHash(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("RetrievalByteRange", targetDepth)) {
+                    context.nextToken();
+                    glacierJobDescription.setRetrievalByteRange(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getCurrentDepth() <= originalDepth) break;
             }

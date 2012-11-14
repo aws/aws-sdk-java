@@ -38,9 +38,9 @@ public class RestUtils {
      * string to sign.
      */
     private static final List<String> SIGNED_PARAMETERS = Arrays.asList(new String[] {
-    		"acl", "torrent", "logging", "location", "policy", "requestPayment", "versioning",
-    		"versions", "versionId", "notification", "uploadId", "uploads", "partNumber", "website", 
-    		"delete", "lifecycle", "tagging", "cors",
+            "acl", "torrent", "logging", "location", "policy", "requestPayment", "versioning",
+            "versions", "versionId", "notification", "uploadId", "uploads", "partNumber", "website",
+            "delete", "lifecycle", "tagging", "cors", "restore",
             ResponseHeaderOverrides.RESPONSE_HEADER_CACHE_CONTROL,
             ResponseHeaderOverrides.RESPONSE_HEADER_CONTENT_DISPOSITION,
             ResponseHeaderOverrides.RESPONSE_HEADER_CONTENT_ENCODING,
@@ -132,7 +132,7 @@ public class RestUtils {
         char separator = '?';
         for (String parameterName : parameterNames) {
             // Skip any parameters that aren't part of the canonical signed string
-        	if (SIGNED_PARAMETERS.contains(parameterName) == false) continue;
+            if (SIGNED_PARAMETERS.contains(parameterName) == false) continue;
 
             buf.append(separator);
             buf.append(parameterName);

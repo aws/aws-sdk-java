@@ -21,7 +21,7 @@ import com.amazonaws.services.s3.model.BucketLifecycleConfiguration.Rule;
 
 /**
  * Interface for service responses that receive the x-amz-expiration header.
- * 
+ *
  * @see Headers#EXPIRATION
  */
 public interface ObjectExpirationResult {
@@ -34,7 +34,7 @@ public interface ObjectExpirationResult {
 
     /**
      * Sets the expiration date of the object.
-     * 
+     *
      * @param expiration
      *            The date the object will expire.
      */
@@ -43,7 +43,7 @@ public interface ObjectExpirationResult {
     /**
      * Returns the bucket lifecycle configuration rule ID for the expiration of
      * this object.
-     * 
+     *
      * @see Rule#getId()
      */
     public String getExpirationTimeRuleId();
@@ -51,7 +51,7 @@ public interface ObjectExpirationResult {
     /**
      * Sets the bucket lifecycle configuration rule ID for the expiration of
      * this object.
-     * 
+     *
      * @param ruleId
      *            The rule ID of this object's expiration configuration
      */

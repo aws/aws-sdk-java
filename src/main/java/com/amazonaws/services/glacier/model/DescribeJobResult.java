@@ -108,6 +108,10 @@ public class DescribeJobResult {
      */
     private String sHA256TreeHash;
 
+    private String archiveSHA256TreeHash;
+
+    private String retrievalByteRange;
+
     /**
      * An opaque string that identifies an Amazon Glacier job.
      *
@@ -762,6 +766,75 @@ public class DescribeJobResult {
     
     
     /**
+     * Returns the value of the ArchiveSHA256TreeHash property for this
+     * object.
+     *
+     * @return The value of the ArchiveSHA256TreeHash property for this object.
+     */
+    public String getArchiveSHA256TreeHash() {
+        return archiveSHA256TreeHash;
+    }
+    
+    /**
+     * Sets the value of the ArchiveSHA256TreeHash property for this object.
+     *
+     * @param archiveSHA256TreeHash The new value for the ArchiveSHA256TreeHash property for this object.
+     */
+    public void setArchiveSHA256TreeHash(String archiveSHA256TreeHash) {
+        this.archiveSHA256TreeHash = archiveSHA256TreeHash;
+    }
+    
+    /**
+     * Sets the value of the ArchiveSHA256TreeHash property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param archiveSHA256TreeHash The new value for the ArchiveSHA256TreeHash property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public DescribeJobResult withArchiveSHA256TreeHash(String archiveSHA256TreeHash) {
+        this.archiveSHA256TreeHash = archiveSHA256TreeHash;
+        return this;
+    }
+    
+    
+    /**
+     * Returns the value of the RetrievalByteRange property for this object.
+     *
+     * @return The value of the RetrievalByteRange property for this object.
+     */
+    public String getRetrievalByteRange() {
+        return retrievalByteRange;
+    }
+    
+    /**
+     * Sets the value of the RetrievalByteRange property for this object.
+     *
+     * @param retrievalByteRange The new value for the RetrievalByteRange property for this object.
+     */
+    public void setRetrievalByteRange(String retrievalByteRange) {
+        this.retrievalByteRange = retrievalByteRange;
+    }
+    
+    /**
+     * Sets the value of the RetrievalByteRange property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param retrievalByteRange The new value for the RetrievalByteRange property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public DescribeJobResult withRetrievalByteRange(String retrievalByteRange) {
+        this.retrievalByteRange = retrievalByteRange;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -787,6 +860,8 @@ public class DescribeJobResult {
         if (sNSTopic != null) sb.append("SNSTopic: " + sNSTopic + ", ");
         if (completionDate != null) sb.append("CompletionDate: " + completionDate + ", ");
         if (sHA256TreeHash != null) sb.append("SHA256TreeHash: " + sHA256TreeHash + ", ");
+        if (archiveSHA256TreeHash != null) sb.append("ArchiveSHA256TreeHash: " + archiveSHA256TreeHash + ", ");
+        if (retrievalByteRange != null) sb.append("RetrievalByteRange: " + retrievalByteRange + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -810,6 +885,8 @@ public class DescribeJobResult {
         hashCode = prime * hashCode + ((getSNSTopic() == null) ? 0 : getSNSTopic().hashCode()); 
         hashCode = prime * hashCode + ((getCompletionDate() == null) ? 0 : getCompletionDate().hashCode()); 
         hashCode = prime * hashCode + ((getSHA256TreeHash() == null) ? 0 : getSHA256TreeHash().hashCode()); 
+        hashCode = prime * hashCode + ((getArchiveSHA256TreeHash() == null) ? 0 : getArchiveSHA256TreeHash().hashCode()); 
+        hashCode = prime * hashCode + ((getRetrievalByteRange() == null) ? 0 : getRetrievalByteRange().hashCode()); 
         return hashCode;
     }
     
@@ -849,6 +926,10 @@ public class DescribeJobResult {
         if (other.getCompletionDate() != null && other.getCompletionDate().equals(this.getCompletionDate()) == false) return false; 
         if (other.getSHA256TreeHash() == null ^ this.getSHA256TreeHash() == null) return false;
         if (other.getSHA256TreeHash() != null && other.getSHA256TreeHash().equals(this.getSHA256TreeHash()) == false) return false; 
+        if (other.getArchiveSHA256TreeHash() == null ^ this.getArchiveSHA256TreeHash() == null) return false;
+        if (other.getArchiveSHA256TreeHash() != null && other.getArchiveSHA256TreeHash().equals(this.getArchiveSHA256TreeHash()) == false) return false; 
+        if (other.getRetrievalByteRange() == null ^ this.getRetrievalByteRange() == null) return false;
+        if (other.getRetrievalByteRange() != null && other.getRetrievalByteRange().equals(this.getRetrievalByteRange()) == false) return false; 
         return true;
     }
     

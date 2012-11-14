@@ -18,18 +18,20 @@ import java.util.List;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.services.s3.internal.Constants;
+import com.amazonaws.services.s3.internal.ServiceUtils;
 import com.amazonaws.services.s3.internal.XmlWriter;
 import com.amazonaws.services.s3.model.BucketCrossOriginConfiguration;
-import com.amazonaws.services.s3.model.CORSRule.AllowedMethods;
-import com.amazonaws.services.s3.model.CORSRule;
 import com.amazonaws.services.s3.model.BucketLifecycleConfiguration;
+import com.amazonaws.services.s3.model.BucketLifecycleConfiguration.Rule;
+import com.amazonaws.services.s3.model.BucketLifecycleConfiguration.Transition;
 import com.amazonaws.services.s3.model.BucketLoggingConfiguration;
+import com.amazonaws.services.s3.model.BucketNotificationConfiguration;
+import com.amazonaws.services.s3.model.BucketNotificationConfiguration.TopicConfiguration;
 import com.amazonaws.services.s3.model.BucketTaggingConfiguration;
 import com.amazonaws.services.s3.model.BucketVersioningConfiguration;
-import com.amazonaws.services.s3.model.BucketNotificationConfiguration;
-import com.amazonaws.services.s3.model.BucketLifecycleConfiguration.Rule;
-import com.amazonaws.services.s3.model.BucketNotificationConfiguration.TopicConfiguration;
 import com.amazonaws.services.s3.model.BucketWebsiteConfiguration;
+import com.amazonaws.services.s3.model.CORSRule;
+import com.amazonaws.services.s3.model.CORSRule.AllowedMethods;
 import com.amazonaws.services.s3.model.TagSet;
 
 /**
@@ -153,7 +155,7 @@ public class BucketConfigurationXmlFactory {
         xml.end();
         return xml.getBytes();
     }
-    
+
     /**
      * Converts the specified {@link BucketLifecycleConfiguration} object to an XML fragment that
      * can be sent to Amazon S3.
@@ -161,23 +163,38 @@ public class BucketConfigurationXmlFactory {
      * @param config
      *            The {@link BucketLifecycleConfiguration}
      */
-    /*
-     * <LifecycleConfiguration>
-        <Rule>
-            <ID>Expire object after 10 days</ID>
-            <Prefix>prefix</Prefix>
-            <Status>Enabled</Status>
-            <Expiration>
-                <Days>10</Days>
-            </Expiration>
-        </Rule>
-    </LifecycleConfiguration>    
-    */    
+     /* <LifecycleConfiguration>
+           <Rule>
+               <ID>logs-rule</ID>
+               <Prefix>logs/</Prefix>
+               <Status>Enabled</Status>
+               <Transition>
+                   <Days>30</Days>
+                   <StorageClass>GLACIER</StorageClass>
+               </Transition>
+               <Expiration>
+                   <Days>365</Days>
+               </Expiration>
+           </Rule>
+           <Rule>
+               <ID>image-rule</ID>
+               <Prefix>image/</Prefix>
+               <Status>Enabled</Status>
+               <Transition>
+                   <Date>2012-12-31T00:00:00.000Z</Date>
+                   <StorageClass>GLACIER</StorageClass>
+               </Transition>
+               <Expiration>
+                   <Date>2020-12-31T00:00:00.000Z</Date>
+               </Expiration>
+          </Rule>
+    </LifecycleConfiguration>
+    */
     public byte[] convertToXmlByteArray(BucketLifecycleConfiguration config) throws AmazonClientException {
-        
+
         XmlWriter xml = new XmlWriter();
         xml.start("LifecycleConfiguration");
-        
+
         for (Rule rule : config.getRules()) {
             writeRule(xml, rule);
         }
@@ -186,7 +203,7 @@ public class BucketConfigurationXmlFactory {
 
         return xml.getBytes();
     }
-    
+
     /**
      * Converts the specified {@link BucketCrossOriginConfiguration} object to an XML fragment that
      * can be sent to Amazon S3.
@@ -196,70 +213,100 @@ public class BucketConfigurationXmlFactory {
      */
     /*
      * <CORSConfiguration>
-     		<CORSRule>
-       		<AllowedOrigin>http://www.foobar.com</AllowedOrigin>
-       		<AllowedMethod>GET</AllowedMethod>
-       		<MaxAgeSeconds>3000</MaxAgeSec>
-       		<ExposeHeader>x-amz-server-side-encryption</ExposeHeader>
-     		</CORSRule>
-  	 </CORSConfiguration> 
-     */    
+             <CORSRule>
+               <AllowedOrigin>http://www.foobar.com</AllowedOrigin>
+               <AllowedMethod>GET</AllowedMethod>
+               <MaxAgeSeconds>3000</MaxAgeSec>
+               <ExposeHeader>x-amz-server-side-encryption</ExposeHeader>
+             </CORSRule>
+       </CORSConfiguration>
+     */
     public byte[] convertToXmlByteArray(BucketCrossOriginConfiguration config) throws AmazonClientException {
-        
+
         XmlWriter xml = new XmlWriter();
         xml.start("CORSConfiguration", "xmlns", Constants.XML_NAMESPACE);
-        
+
         for (CORSRule rule : config.getRules()) {
             writeRule(xml, rule);
         }
 
         xml.end();
-       
+
         return xml.getBytes();
     }
 
     private void writeRule(XmlWriter xml, Rule rule) {
         xml.start("Rule");
-        if ( rule.getId() != null ) {
+        if (rule.getId() != null) {
             xml.start("ID").value(rule.getId()).end();
         }
         xml.start("Prefix").value(rule.getPrefix()).end();
         xml.start("Status").value(rule.getStatus()).end();
-        xml.start("Expiration");
-        xml.start("Days").value("" + rule.getExpirationInDays()).end();
-        xml.end(); // </Expiration>
+
+        Transition transition = rule.getTransition();
+        if (transition != null) {
+            xml.start("Transition");
+            if (transition.getDate() != null) {
+                xml.start("Date");
+                xml.value(ServiceUtils.formatIso8601Date(transition.getDate()));
+                xml.end();
+            }
+            if (transition.getDays() != -1) {
+                xml.start("Days");
+                xml.value(Integer.toString(transition.getDays()));
+                xml.end();
+            }
+
+            xml.start("StorageClass");
+            xml.value(transition.getStorageClass().toString());
+            xml.end(); // <StorageClass>
+            xml.end(); // </Transition>
+        }
+
+        if (rule.getExpirationInDays() != -1) {
+            xml.start("Expiration");
+            xml.start("Days").value("" + rule.getExpirationInDays()).end();
+            xml.end(); // </Expiration>
+        }
+
+        if (rule.getExpirationDate() != null) {
+            xml.start("Expiration");
+            xml.start("Date").value(ServiceUtils.formatIso8601Date(rule.getExpirationDate())).end();
+            xml.end(); // </Expiration>
+        }
+
         xml.end(); // </Rule>
     }
-     
+
     private void writeRule(XmlWriter xml, CORSRule rule) {
-    	xml.start("CORSRule");
-    	if (rule.getId() != null) {
-    		xml.start("ID").value(rule.getId()).end();
-    	}
-    	if (rule.getAllowedOrigins() != null) {
-    		for (String origin : rule.getAllowedOrigins()) {
-    			xml.start("AllowedOrigin").value(origin).end();
-    		}
-    	}
-    	if (rule.getAllowedMethods() != null) {
-    		for (AllowedMethods method : rule.getAllowedMethods()) {
-    			xml.start("AllowedMethod").value(method.toString()).end();
-    		}
-    	}
-    	if(rule.getMaxAgeSeconds() != 0) {
-            xml.start("MaxAgeSeconds").value(Integer.toString(rule.getMaxAgeSeconds())).end();    		
-    	}
-    	if (rule.getExposedHeaders() != null) {
-    		for (String header : rule.getExposedHeaders()) {
-    			xml.start("ExposeHeader").value(header).end();
-    		}
-    	}
-    	if (rule.getAllowedHeaders() != null) {
-    		for(String header : rule.getAllowedHeaders()) {
-    			xml.start("AllowedHeader").value(header).end();
-    		}  
-    	}
-    	xml.end();//</CORSRule>
+        xml.start("CORSRule");
+        if (rule.getId() != null) {
+            xml.start("ID").value(rule.getId()).end();
+        }
+        if (rule.getAllowedOrigins() != null) {
+            for (String origin : rule.getAllowedOrigins()) {
+                xml.start("AllowedOrigin").value(origin).end();
+            }
+        }
+        if (rule.getAllowedMethods() != null) {
+            for (AllowedMethods method : rule.getAllowedMethods()) {
+                xml.start("AllowedMethod").value(method.toString()).end();
+            }
+        }
+        if(rule.getMaxAgeSeconds() != 0) {
+            xml.start("MaxAgeSeconds").value(Integer.toString(rule.getMaxAgeSeconds())).end();
+        }
+        if (rule.getExposedHeaders() != null) {
+            for (String header : rule.getExposedHeaders()) {
+                xml.start("ExposeHeader").value(header).end();
+            }
+        }
+        if (rule.getAllowedHeaders() != null) {
+            for(String header : rule.getAllowedHeaders()) {
+                xml.start("AllowedHeader").value(header).end();
+            }
+        }
+        xml.end();//</CORSRule>
     }
 
     /**
@@ -271,23 +318,23 @@ public class BucketConfigurationXmlFactory {
      */
     /*
      * <Tagging>
-     	<TagSet>
-        	<Tag>
-           		<Key>Project</Key>
-           		<Value>Foo</Value>
-        	</Tag>
-        	<Tag>
-           		<Key>User</Key>
-           		<Value>nschnarr</Value>
-        	</Tag>
-     	</TagSet>
-  	  </Tagging>    
-    */    
+         <TagSet>
+            <Tag>
+                   <Key>Project</Key>
+                   <Value>Foo</Value>
+            </Tag>
+            <Tag>
+                   <Key>User</Key>
+                   <Value>nschnarr</Value>
+            </Tag>
+         </TagSet>
+        </Tagging>
+    */
     public byte[] convertToXmlByteArray(BucketTaggingConfiguration config) throws AmazonClientException {
-        
+
         XmlWriter xml = new XmlWriter();
         xml.start("Tagging");
-        
+
         for (TagSet tagset : config.getAllTagSets()) {
             writeRule(xml, tagset);
         }
@@ -300,10 +347,10 @@ public class BucketConfigurationXmlFactory {
     private void writeRule(XmlWriter xml, TagSet tagset) {
         xml.start("TagSet");
         for ( String key : tagset.getAllTags().keySet() ) {
-        	xml.start("Tag");
-        	xml.start("Key").value(key).end();
-        	xml.start("Value").value(tagset.getTag(key)).end();
-        	xml.end(); // </Tag>
+            xml.start("Tag");
+            xml.start("Key").value(key).end();
+            xml.start("Value").value(tagset.getTag(key)).end();
+            xml.end(); // </Tag>
         }
         xml.end(); // </TagSet>
     }

@@ -104,6 +104,14 @@ public class DescribeJobResultJsonUnmarshaller implements Unmarshaller<DescribeJ
                     context.nextToken();
                     describeJobResult.setSHA256TreeHash(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("ArchiveSHA256TreeHash", targetDepth)) {
+                    context.nextToken();
+                    describeJobResult.setArchiveSHA256TreeHash(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("RetrievalByteRange", targetDepth)) {
+                    context.nextToken();
+                    describeJobResult.setRetrievalByteRange(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getCurrentDepth() <= originalDepth) break;
             }

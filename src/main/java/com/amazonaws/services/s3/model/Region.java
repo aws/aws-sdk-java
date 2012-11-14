@@ -48,7 +48,7 @@ public enum Region {
      * The US-West (Northern California) Amazon S3 Region. This region uses Amazon S3
      * servers located in Northern California.
      * <p>
-     * When using buckets in this region, optionally set the client
+     * When using buckets in this region, set the client
      * endpoint to <code>s3-us-west-1.amazonaws.com</code> on all requests to these
      * buckets to reduce any latency experienced after the first
      * hour of creating a bucket in this region.
@@ -65,7 +65,7 @@ public enum Region {
      * The US-West-2 (Oregon) Region. This region uses Amazon S3 servers located
      * in Oregon.
      * <p>
-     * When using buckets in this region, optionally set the client
+     * When using buckets in this region, set the client
      * endpoint to <code>s3-us-west-2.amazonaws.com</code> on all requests to these buckets
      * to reduce any latency experienced after the first hour of
      * creating a bucket in this region.
@@ -88,7 +88,7 @@ public enum Region {
      * The Asia Pacific (Singapore) Region. This region uses Amazon S3 servers located
      * in Singapore.
      * <p>
-     * When using buckets in this region, optionally set the client
+     * When using buckets in this region, set the client
      * endpoint to <code>s3-ap-southeast-1.amazonaws.com</code> on all requests to these buckets
      * to reduce any latency experienced after the first hour of
      * creating a bucket in this region.
@@ -96,11 +96,23 @@ public enum Region {
      */
     AP_Singapore("ap-southeast-1"),
 
-	/**
+    /**
+     * The Asia Pacific (Sydney) Region. This region uses Amazon S3 servers
+     * located in Sydney, Australia.
+     * <p>
+     * When using buckets in this region, set the client endpoint to
+     * <code>s3-ap-southeast-2.amazonaws.com</code> on all requests to these buckets
+     * to reduce any latency experienced after the first hour of creating a
+     * bucket in this region.
+     * </p>
+     */
+    AP_Sydney("ap-southeast-2"),
+
+    /**
 	 * The Asia Pacific (Tokyo) Region. This region uses Amazon S3 servers
 	 * located in Tokyo.
 	 * <p>
-	 * When using buckets in this region, optionally set the client endpoint to
+	 * When using buckets in this region, set the client endpoint to
 	 * <code>s3-ap-northeast-1.amazonaws.com</code> on all requests to these
 	 * buckets to reduce any latency experienced after the first hour of
 	 * creating a bucket in this region.
@@ -112,7 +124,7 @@ public enum Region {
      * The South America (Sao Paulo) Region. This region uses Amazon S3 servers
      * located in Sao Paulo.
      * <p>
-     * When using buckets in this region, optionally set the client endpoint to
+     * When using buckets in this region, set the client endpoint to
      * <code>s3-sa-east-1.amazonaws.com</code> on all requests to these buckets
      * to reduce any latency experienced after the first hour of creating a
      * bucket in this region.
