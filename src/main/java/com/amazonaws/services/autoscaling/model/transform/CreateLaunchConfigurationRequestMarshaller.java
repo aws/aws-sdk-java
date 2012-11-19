@@ -110,6 +110,9 @@ public class CreateLaunchConfigurationRequestMarshaller implements Marshaller<Re
         if (createLaunchConfigurationRequest.getIamInstanceProfile() != null) {
             request.addParameter("IamInstanceProfile", StringUtils.fromString(createLaunchConfigurationRequest.getIamInstanceProfile()));
         }
+        if (createLaunchConfigurationRequest.isEbsOptimized() != null) {
+            request.addParameter("EbsOptimized", StringUtils.fromBoolean(createLaunchConfigurationRequest.isEbsOptimized()));
+        }
 
 
         return request;

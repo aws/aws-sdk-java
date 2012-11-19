@@ -20,16 +20,16 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * The GetFederationToken action returns a set of temporary credentials for a federated user with the user name and policy specified in the request. The
  * credentials consist of an Access Key ID, a Secret Access Key, and a security token. Credentials created by IAM users are valid for the specified
- * duration, between one and 36 hours; credentials created using account credentials last one hour.
+ * duration, between 15 minutes and 36 hours; credentials created using account credentials have a maximum duration of one hour.
  * </p>
  * <p>
  * The federated user who holds these credentials has any permissions allowed by the intersection of the specified policy and any resource or user
  * policies that apply to the caller of the GetFederationToken API, and any resource policies that apply to the federated user's Amazon Resource Name
  * (ARN). For more information about how token permissions work, see <a
  * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/TokenPermissions.html"> Controlling Permissions in Temporary Credentials </a> in <i>Using
- * AWS Identity and Access Management</i> . For information about using GetFederationToken to create temporary credentials, see <a
+ * IAM</i> . For information about using GetFederationToken to create temporary credentials, see <a
  * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/CreatingFedTokens.html"> Creating Temporary Credentials to Enable Access for Federated
- * Users </a> in <i>Using AWS Identity and Access Management</i> .
+ * Users </a> in <i>Using IAM</i> .
  * </p>
  *
  * @see com.amazonaws.services.securitytoken.AWSSecurityTokenService#getFederationToken(GetFederationTokenRequest)
@@ -40,8 +40,7 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest {
      * The name of the federated user associated with the credentials. For
      * information about limitations on user names, go to <a
      * vices.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-     * on IAM Entities</a> in <i>Using AWS Identity and Access
-     * Management</i>.
+     * on IAM Entities</a> in <i>Using IAM</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>2 - 32<br/>
@@ -57,7 +56,7 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest {
      * temporary credentials, see <a
      * docs.amazonwebservices.com/IAM/latest/UserGuide/TokenPermissions.html"
      * target="_blank">Controlling Permissions in Temporary Credentials</a>
-     * in <i>Using AWS Identity and Access Management</i>.
+     * in <i>Using IAM</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 2048<br/>
@@ -67,11 +66,14 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest {
 
     /**
      * The duration, in seconds, that the session should last. Acceptable
-     * durations for federation sessions range from 3600s (one hour) to
-     * 129600s (36 hours), with 43200s (12 hours) as the default.
+     * durations for federation sessions range from 900s (15 minutes) to
+     * 129600s (36 hours), with 43200s (12 hours) as the default. Sessions
+     * for AWS account owners are restricted to a maximum of 3600s (one
+     * hour). If the duration is longer than one hour, the session for AWS
+     * account owners defaults to one hour.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Range: </b>3600 - 129600<br/>
+     * <b>Range: </b>900 - 129600<br/>
      */
     private Integer durationSeconds;
 
@@ -89,8 +91,7 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest {
      * @param name The name of the federated user associated with the
      * credentials. For information about limitations on user names, go to <a
      * vices.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-     * on IAM Entities</a> in <i>Using AWS Identity and Access
-     * Management</i>.
+     * on IAM Entities</a> in <i>Using IAM</i>.
      */
     public GetFederationTokenRequest(String name) {
         this.name = name;
@@ -102,8 +103,7 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest {
      * The name of the federated user associated with the credentials. For
      * information about limitations on user names, go to <a
      * vices.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-     * on IAM Entities</a> in <i>Using AWS Identity and Access
-     * Management</i>.
+     * on IAM Entities</a> in <i>Using IAM</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>2 - 32<br/>
@@ -112,8 +112,7 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest {
      * @return The name of the federated user associated with the credentials. For
      *         information about limitations on user names, go to <a
      *         vices.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-     *         on IAM Entities</a> in <i>Using AWS Identity and Access
-     *         Management</i>.
+     *         on IAM Entities</a> in <i>Using IAM</i>.
      */
     public String getName() {
         return name;
@@ -123,8 +122,7 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest {
      * The name of the federated user associated with the credentials. For
      * information about limitations on user names, go to <a
      * vices.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-     * on IAM Entities</a> in <i>Using AWS Identity and Access
-     * Management</i>.
+     * on IAM Entities</a> in <i>Using IAM</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>2 - 32<br/>
@@ -133,8 +131,7 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest {
      * @param name The name of the federated user associated with the credentials. For
      *         information about limitations on user names, go to <a
      *         vices.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-     *         on IAM Entities</a> in <i>Using AWS Identity and Access
-     *         Management</i>.
+     *         on IAM Entities</a> in <i>Using IAM</i>.
      */
     public void setName(String name) {
         this.name = name;
@@ -144,8 +141,7 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest {
      * The name of the federated user associated with the credentials. For
      * information about limitations on user names, go to <a
      * vices.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-     * on IAM Entities</a> in <i>Using AWS Identity and Access
-     * Management</i>.
+     * on IAM Entities</a> in <i>Using IAM</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -156,8 +152,7 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest {
      * @param name The name of the federated user associated with the credentials. For
      *         information about limitations on user names, go to <a
      *         vices.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
-     *         on IAM Entities</a> in <i>Using AWS Identity and Access
-     *         Management</i>.
+     *         on IAM Entities</a> in <i>Using IAM</i>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -176,7 +171,7 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest {
      * temporary credentials, see <a
      * docs.amazonwebservices.com/IAM/latest/UserGuide/TokenPermissions.html"
      * target="_blank">Controlling Permissions in Temporary Credentials</a>
-     * in <i>Using AWS Identity and Access Management</i>.
+     * in <i>Using IAM</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 2048<br/>
@@ -189,7 +184,7 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest {
      *         temporary credentials, see <a
      *         docs.amazonwebservices.com/IAM/latest/UserGuide/TokenPermissions.html"
      *         target="_blank">Controlling Permissions in Temporary Credentials</a>
-     *         in <i>Using AWS Identity and Access Management</i>.
+     *         in <i>Using IAM</i>.
      */
     public String getPolicy() {
         return policy;
@@ -203,7 +198,7 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest {
      * temporary credentials, see <a
      * docs.amazonwebservices.com/IAM/latest/UserGuide/TokenPermissions.html"
      * target="_blank">Controlling Permissions in Temporary Credentials</a>
-     * in <i>Using AWS Identity and Access Management</i>.
+     * in <i>Using IAM</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 2048<br/>
@@ -216,7 +211,7 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest {
      *         temporary credentials, see <a
      *         docs.amazonwebservices.com/IAM/latest/UserGuide/TokenPermissions.html"
      *         target="_blank">Controlling Permissions in Temporary Credentials</a>
-     *         in <i>Using AWS Identity and Access Management</i>.
+     *         in <i>Using IAM</i>.
      */
     public void setPolicy(String policy) {
         this.policy = policy;
@@ -230,7 +225,7 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest {
      * temporary credentials, see <a
      * docs.amazonwebservices.com/IAM/latest/UserGuide/TokenPermissions.html"
      * target="_blank">Controlling Permissions in Temporary Credentials</a>
-     * in <i>Using AWS Identity and Access Management</i>.
+     * in <i>Using IAM</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -245,7 +240,7 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest {
      *         temporary credentials, see <a
      *         docs.amazonwebservices.com/IAM/latest/UserGuide/TokenPermissions.html"
      *         target="_blank">Controlling Permissions in Temporary Credentials</a>
-     *         in <i>Using AWS Identity and Access Management</i>.
+     *         in <i>Using IAM</i>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -258,15 +253,21 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest {
     
     /**
      * The duration, in seconds, that the session should last. Acceptable
-     * durations for federation sessions range from 3600s (one hour) to
-     * 129600s (36 hours), with 43200s (12 hours) as the default.
+     * durations for federation sessions range from 900s (15 minutes) to
+     * 129600s (36 hours), with 43200s (12 hours) as the default. Sessions
+     * for AWS account owners are restricted to a maximum of 3600s (one
+     * hour). If the duration is longer than one hour, the session for AWS
+     * account owners defaults to one hour.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Range: </b>3600 - 129600<br/>
+     * <b>Range: </b>900 - 129600<br/>
      *
      * @return The duration, in seconds, that the session should last. Acceptable
-     *         durations for federation sessions range from 3600s (one hour) to
-     *         129600s (36 hours), with 43200s (12 hours) as the default.
+     *         durations for federation sessions range from 900s (15 minutes) to
+     *         129600s (36 hours), with 43200s (12 hours) as the default. Sessions
+     *         for AWS account owners are restricted to a maximum of 3600s (one
+     *         hour). If the duration is longer than one hour, the session for AWS
+     *         account owners defaults to one hour.
      */
     public Integer getDurationSeconds() {
         return durationSeconds;
@@ -274,15 +275,21 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest {
     
     /**
      * The duration, in seconds, that the session should last. Acceptable
-     * durations for federation sessions range from 3600s (one hour) to
-     * 129600s (36 hours), with 43200s (12 hours) as the default.
+     * durations for federation sessions range from 900s (15 minutes) to
+     * 129600s (36 hours), with 43200s (12 hours) as the default. Sessions
+     * for AWS account owners are restricted to a maximum of 3600s (one
+     * hour). If the duration is longer than one hour, the session for AWS
+     * account owners defaults to one hour.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Range: </b>3600 - 129600<br/>
+     * <b>Range: </b>900 - 129600<br/>
      *
      * @param durationSeconds The duration, in seconds, that the session should last. Acceptable
-     *         durations for federation sessions range from 3600s (one hour) to
-     *         129600s (36 hours), with 43200s (12 hours) as the default.
+     *         durations for federation sessions range from 900s (15 minutes) to
+     *         129600s (36 hours), with 43200s (12 hours) as the default. Sessions
+     *         for AWS account owners are restricted to a maximum of 3600s (one
+     *         hour). If the duration is longer than one hour, the session for AWS
+     *         account owners defaults to one hour.
      */
     public void setDurationSeconds(Integer durationSeconds) {
         this.durationSeconds = durationSeconds;
@@ -290,17 +297,23 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest {
     
     /**
      * The duration, in seconds, that the session should last. Acceptable
-     * durations for federation sessions range from 3600s (one hour) to
-     * 129600s (36 hours), with 43200s (12 hours) as the default.
+     * durations for federation sessions range from 900s (15 minutes) to
+     * 129600s (36 hours), with 43200s (12 hours) as the default. Sessions
+     * for AWS account owners are restricted to a maximum of 3600s (one
+     * hour). If the duration is longer than one hour, the session for AWS
+     * account owners defaults to one hour.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Range: </b>3600 - 129600<br/>
+     * <b>Range: </b>900 - 129600<br/>
      *
      * @param durationSeconds The duration, in seconds, that the session should last. Acceptable
-     *         durations for federation sessions range from 3600s (one hour) to
-     *         129600s (36 hours), with 43200s (12 hours) as the default.
+     *         durations for federation sessions range from 900s (15 minutes) to
+     *         129600s (36 hours), with 43200s (12 hours) as the default. Sessions
+     *         for AWS account owners are restricted to a maximum of 3600s (one
+     *         hour). If the duration is longer than one hour, the session for AWS
+     *         account owners defaults to one hour.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

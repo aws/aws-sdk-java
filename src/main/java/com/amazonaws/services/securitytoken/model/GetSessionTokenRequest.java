@@ -20,8 +20,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * The GetSessionToken action returns a set of temporary credentials for an AWS account or IAM user. The credentials consist of an Access Key ID, a
  * Secret Access Key, and a security token. These credentials are valid for the specified duration only. The session duration for IAM users can be
- * between one and 36 hours, with a default of 12 hours. The session duration for AWS account owners is restricted to one hour. Providing the AWS
- * Multi-Factor Authentication (MFA) device serial number and the token code is optional.
+ * between 15 minutes and 36 hours, with a default of 12 hours. The session duration for AWS account owners is restricted to a maximum of one hour.
+ * Providing the AWS Multi-Factor Authentication (MFA) device serial number and the token code is optional.
  * </p>
  * <p>
  * For more information about using GetSessionToken to create temporary credentials, go to <a
@@ -35,13 +35,14 @@ public class GetSessionTokenRequest extends AmazonWebServiceRequest {
 
     /**
      * The duration, in seconds, that the credentials should remain valid.
-     * Acceptable durations for IAM user sessions range from 3600s (one hour)
-     * to 129600s (36 hours), with 43200s (12 hours) as the default. Sessions
-     * for AWS account owners are restricted to a maximum of 3600s (one
-     * hour).
+     * Acceptable durations for IAM user sessions range from 900s (15
+     * minutes) to 129600s (36 hours), with 43200s (12 hours) as the default.
+     * Sessions for AWS account owners are restricted to a maximum of 3600s
+     * (one hour). If the duration is longer than one hour, the session for
+     * AWS account owners defaults to one hour.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Range: </b>3600 - 129600<br/>
+     * <b>Range: </b>900 - 129600<br/>
      */
     private Integer durationSeconds;
 
@@ -94,19 +95,21 @@ public class GetSessionTokenRequest extends AmazonWebServiceRequest {
     
     /**
      * The duration, in seconds, that the credentials should remain valid.
-     * Acceptable durations for IAM user sessions range from 3600s (one hour)
-     * to 129600s (36 hours), with 43200s (12 hours) as the default. Sessions
-     * for AWS account owners are restricted to a maximum of 3600s (one
-     * hour).
+     * Acceptable durations for IAM user sessions range from 900s (15
+     * minutes) to 129600s (36 hours), with 43200s (12 hours) as the default.
+     * Sessions for AWS account owners are restricted to a maximum of 3600s
+     * (one hour). If the duration is longer than one hour, the session for
+     * AWS account owners defaults to one hour.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Range: </b>3600 - 129600<br/>
+     * <b>Range: </b>900 - 129600<br/>
      *
      * @return The duration, in seconds, that the credentials should remain valid.
-     *         Acceptable durations for IAM user sessions range from 3600s (one hour)
-     *         to 129600s (36 hours), with 43200s (12 hours) as the default. Sessions
-     *         for AWS account owners are restricted to a maximum of 3600s (one
-     *         hour).
+     *         Acceptable durations for IAM user sessions range from 900s (15
+     *         minutes) to 129600s (36 hours), with 43200s (12 hours) as the default.
+     *         Sessions for AWS account owners are restricted to a maximum of 3600s
+     *         (one hour). If the duration is longer than one hour, the session for
+     *         AWS account owners defaults to one hour.
      */
     public Integer getDurationSeconds() {
         return durationSeconds;
@@ -114,19 +117,21 @@ public class GetSessionTokenRequest extends AmazonWebServiceRequest {
     
     /**
      * The duration, in seconds, that the credentials should remain valid.
-     * Acceptable durations for IAM user sessions range from 3600s (one hour)
-     * to 129600s (36 hours), with 43200s (12 hours) as the default. Sessions
-     * for AWS account owners are restricted to a maximum of 3600s (one
-     * hour).
+     * Acceptable durations for IAM user sessions range from 900s (15
+     * minutes) to 129600s (36 hours), with 43200s (12 hours) as the default.
+     * Sessions for AWS account owners are restricted to a maximum of 3600s
+     * (one hour). If the duration is longer than one hour, the session for
+     * AWS account owners defaults to one hour.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Range: </b>3600 - 129600<br/>
+     * <b>Range: </b>900 - 129600<br/>
      *
      * @param durationSeconds The duration, in seconds, that the credentials should remain valid.
-     *         Acceptable durations for IAM user sessions range from 3600s (one hour)
-     *         to 129600s (36 hours), with 43200s (12 hours) as the default. Sessions
-     *         for AWS account owners are restricted to a maximum of 3600s (one
-     *         hour).
+     *         Acceptable durations for IAM user sessions range from 900s (15
+     *         minutes) to 129600s (36 hours), with 43200s (12 hours) as the default.
+     *         Sessions for AWS account owners are restricted to a maximum of 3600s
+     *         (one hour). If the duration is longer than one hour, the session for
+     *         AWS account owners defaults to one hour.
      */
     public void setDurationSeconds(Integer durationSeconds) {
         this.durationSeconds = durationSeconds;
@@ -134,21 +139,23 @@ public class GetSessionTokenRequest extends AmazonWebServiceRequest {
     
     /**
      * The duration, in seconds, that the credentials should remain valid.
-     * Acceptable durations for IAM user sessions range from 3600s (one hour)
-     * to 129600s (36 hours), with 43200s (12 hours) as the default. Sessions
-     * for AWS account owners are restricted to a maximum of 3600s (one
-     * hour).
+     * Acceptable durations for IAM user sessions range from 900s (15
+     * minutes) to 129600s (36 hours), with 43200s (12 hours) as the default.
+     * Sessions for AWS account owners are restricted to a maximum of 3600s
+     * (one hour). If the duration is longer than one hour, the session for
+     * AWS account owners defaults to one hour.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Range: </b>3600 - 129600<br/>
+     * <b>Range: </b>900 - 129600<br/>
      *
      * @param durationSeconds The duration, in seconds, that the credentials should remain valid.
-     *         Acceptable durations for IAM user sessions range from 3600s (one hour)
-     *         to 129600s (36 hours), with 43200s (12 hours) as the default. Sessions
-     *         for AWS account owners are restricted to a maximum of 3600s (one
-     *         hour).
+     *         Acceptable durations for IAM user sessions range from 900s (15
+     *         minutes) to 129600s (36 hours), with 43200s (12 hours) as the default.
+     *         Sessions for AWS account owners are restricted to a maximum of 3600s
+     *         (one hour). If the duration is longer than one hour, the session for
+     *         AWS account owners defaults to one hour.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

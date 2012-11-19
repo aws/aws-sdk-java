@@ -171,6 +171,8 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
      */
     private String iamInstanceProfile;
 
+    private Boolean ebsOptimized;
+
     /**
      * The name of the launch configuration to create.
      * <p>
@@ -1039,6 +1041,49 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
     
     
     /**
+     * Returns the value of the EbsOptimized property for this object.
+     *
+     * @return The value of the EbsOptimized property for this object.
+     */
+    public Boolean isEbsOptimized() {
+        return ebsOptimized;
+    }
+    
+    /**
+     * Sets the value of the EbsOptimized property for this object.
+     *
+     * @param ebsOptimized The new value for the EbsOptimized property for this object.
+     */
+    public void setEbsOptimized(Boolean ebsOptimized) {
+        this.ebsOptimized = ebsOptimized;
+    }
+    
+    /**
+     * Sets the value of the EbsOptimized property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param ebsOptimized The new value for the EbsOptimized property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public CreateLaunchConfigurationRequest withEbsOptimized(Boolean ebsOptimized) {
+        this.ebsOptimized = ebsOptimized;
+        return this;
+    }
+    
+    
+    /**
+     * Returns the value of the EbsOptimized property for this object.
+     *
+     * @return The value of the EbsOptimized property for this object.
+     */
+    public Boolean getEbsOptimized() {
+        return ebsOptimized;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -1062,6 +1107,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
         if (instanceMonitoring != null) sb.append("InstanceMonitoring: " + instanceMonitoring + ", ");
         if (spotPrice != null) sb.append("SpotPrice: " + spotPrice + ", ");
         if (iamInstanceProfile != null) sb.append("IamInstanceProfile: " + iamInstanceProfile + ", ");
+        if (ebsOptimized != null) sb.append("EbsOptimized: " + ebsOptimized + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -1083,6 +1129,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
         hashCode = prime * hashCode + ((getInstanceMonitoring() == null) ? 0 : getInstanceMonitoring().hashCode()); 
         hashCode = prime * hashCode + ((getSpotPrice() == null) ? 0 : getSpotPrice().hashCode()); 
         hashCode = prime * hashCode + ((getIamInstanceProfile() == null) ? 0 : getIamInstanceProfile().hashCode()); 
+        hashCode = prime * hashCode + ((isEbsOptimized() == null) ? 0 : isEbsOptimized().hashCode()); 
         return hashCode;
     }
     
@@ -1118,6 +1165,8 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest {
         if (other.getSpotPrice() != null && other.getSpotPrice().equals(this.getSpotPrice()) == false) return false; 
         if (other.getIamInstanceProfile() == null ^ this.getIamInstanceProfile() == null) return false;
         if (other.getIamInstanceProfile() != null && other.getIamInstanceProfile().equals(this.getIamInstanceProfile()) == false) return false; 
+        if (other.isEbsOptimized() == null ^ this.isEbsOptimized() == null) return false;
+        if (other.isEbsOptimized() != null && other.isEbsOptimized().equals(this.isEbsOptimized()) == false) return false; 
         return true;
     }
     

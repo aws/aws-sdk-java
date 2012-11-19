@@ -102,6 +102,10 @@ public class LaunchConfigurationStaxUnmarshaller implements Unmarshaller<LaunchC
                     launchConfiguration.setCreatedTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("EbsOptimized", targetDepth)) {
+                    launchConfiguration.setEbsOptimized(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return launchConfiguration;

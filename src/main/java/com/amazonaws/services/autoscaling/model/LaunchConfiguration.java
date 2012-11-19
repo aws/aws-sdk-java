@@ -136,6 +136,8 @@ public class LaunchConfiguration {
      */
     private java.util.Date createdTime;
 
+    private Boolean ebsOptimized;
+
     /**
      * Specifies the name of the launch configuration.
      * <p>
@@ -840,6 +842,49 @@ public class LaunchConfiguration {
     
     
     /**
+     * Returns the value of the EbsOptimized property for this object.
+     *
+     * @return The value of the EbsOptimized property for this object.
+     */
+    public Boolean isEbsOptimized() {
+        return ebsOptimized;
+    }
+    
+    /**
+     * Sets the value of the EbsOptimized property for this object.
+     *
+     * @param ebsOptimized The new value for the EbsOptimized property for this object.
+     */
+    public void setEbsOptimized(Boolean ebsOptimized) {
+        this.ebsOptimized = ebsOptimized;
+    }
+    
+    /**
+     * Sets the value of the EbsOptimized property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param ebsOptimized The new value for the EbsOptimized property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public LaunchConfiguration withEbsOptimized(Boolean ebsOptimized) {
+        this.ebsOptimized = ebsOptimized;
+        return this;
+    }
+    
+    
+    /**
+     * Returns the value of the EbsOptimized property for this object.
+     *
+     * @return The value of the EbsOptimized property for this object.
+     */
+    public Boolean getEbsOptimized() {
+        return ebsOptimized;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -865,6 +910,7 @@ public class LaunchConfiguration {
         if (spotPrice != null) sb.append("SpotPrice: " + spotPrice + ", ");
         if (iamInstanceProfile != null) sb.append("IamInstanceProfile: " + iamInstanceProfile + ", ");
         if (createdTime != null) sb.append("CreatedTime: " + createdTime + ", ");
+        if (ebsOptimized != null) sb.append("EbsOptimized: " + ebsOptimized + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -888,6 +934,7 @@ public class LaunchConfiguration {
         hashCode = prime * hashCode + ((getSpotPrice() == null) ? 0 : getSpotPrice().hashCode()); 
         hashCode = prime * hashCode + ((getIamInstanceProfile() == null) ? 0 : getIamInstanceProfile().hashCode()); 
         hashCode = prime * hashCode + ((getCreatedTime() == null) ? 0 : getCreatedTime().hashCode()); 
+        hashCode = prime * hashCode + ((isEbsOptimized() == null) ? 0 : isEbsOptimized().hashCode()); 
         return hashCode;
     }
     
@@ -927,6 +974,8 @@ public class LaunchConfiguration {
         if (other.getIamInstanceProfile() != null && other.getIamInstanceProfile().equals(this.getIamInstanceProfile()) == false) return false; 
         if (other.getCreatedTime() == null ^ this.getCreatedTime() == null) return false;
         if (other.getCreatedTime() != null && other.getCreatedTime().equals(this.getCreatedTime()) == false) return false; 
+        if (other.isEbsOptimized() == null ^ this.isEbsOptimized() == null) return false;
+        if (other.isEbsOptimized() != null && other.isEbsOptimized().equals(this.isEbsOptimized()) == false) return false; 
         return true;
     }
     
