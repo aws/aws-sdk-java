@@ -100,7 +100,7 @@ public class AWS3Signer extends AbstractAWSSigner {
              * params should *NOT* be included in the request payload.
              */
             stringToSign = request.getHttpMethod().toString() + "\n"
-                + getCanonicalizedResourcePath(request.getResourcePath()) + "\n"
+                + getCanonicalizedResourcePath(request.getEndpoint()) + "\n"
                 + getCanonicalizedQueryString(request.getParameters()) + "\n"
                 + getCanonicalizedHeadersForStringToSign(request) + "\n"
                 + getRequestPayloadWithoutQueryParams(request);

@@ -127,7 +127,7 @@ public class QueryStringSigner extends AbstractAWSSigner implements Signer {
         StringBuilder data = new StringBuilder();
         data.append("POST").append("\n");
         data.append(getCanonicalizedEndpoint(endpoint)).append("\n");
-        data.append(getCanonicalizedResourcePath(request)).append("\n");
+        data.append(getCanonicalizedResourcePath(endpoint)).append("\n");
         data.append(getCanonicalizedQueryString(parameters));
         return data.toString();
     }

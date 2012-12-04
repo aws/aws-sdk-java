@@ -265,11 +265,12 @@ public abstract class AbstractAWSSigner implements Signer {
         }
     }
 
-    protected String getCanonicalizedResourcePath(String resourcePath) {
-        if (resourcePath == null || resourcePath.length() == 0) {
+    protected String getCanonicalizedResourcePath(URI endpoint) {
+	String uri = endpoint.getPath();
+	if (uri == null || uri.length() == 0) {
             return "/";
         } else {
-            return HttpUtils.urlEncode(resourcePath, true);
+	    return HttpUtils.urlEncode(uri, true);
         }
     }
 

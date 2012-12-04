@@ -95,7 +95,7 @@ public class AWS4Signer extends AbstractAWSSigner {
 
         String canonicalRequest =
             request.getHttpMethod().toString() + "\n" +
-            super.getCanonicalizedResourcePath(request.getResourcePath()) + "\n" +
+            super.getCanonicalizedResourcePath(request.getEndpoint()) + "\n" +
             getCanonicalizedQueryString(request) + "\n" +
             getCanonicalizedHeaderString(request) + "\n" +
             getSignedHeadersString(request) + "\n" +
