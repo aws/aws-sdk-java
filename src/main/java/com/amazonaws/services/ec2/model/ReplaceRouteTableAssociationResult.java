@@ -67,7 +67,7 @@ public class ReplaceRouteTableAssociationResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (newAssociationId != null) sb.append("NewAssociationId: " + newAssociationId + ", ");
+        if (getNewAssociationId() != null) sb.append("NewAssociationId: " + getNewAssociationId() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -85,7 +85,7 @@ public class ReplaceRouteTableAssociationResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof ReplaceRouteTableAssociationResult == false) return false;
         ReplaceRouteTableAssociationResult other = (ReplaceRouteTableAssociationResult)obj;
         

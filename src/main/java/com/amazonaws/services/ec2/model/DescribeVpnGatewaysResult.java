@@ -107,7 +107,7 @@ public class DescribeVpnGatewaysResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (vpnGateways != null) sb.append("VpnGateways: " + vpnGateways + ", ");
+        if (getVpnGateways() != null) sb.append("VpnGateways: " + getVpnGateways() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -125,7 +125,7 @@ public class DescribeVpnGatewaysResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DescribeVpnGatewaysResult == false) return false;
         DescribeVpnGatewaysResult other = (DescribeVpnGatewaysResult)obj;
         

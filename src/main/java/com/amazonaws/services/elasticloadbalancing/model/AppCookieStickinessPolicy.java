@@ -141,8 +141,8 @@ public class AppCookieStickinessPolicy {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (policyName != null) sb.append("PolicyName: " + policyName + ", ");
-        if (cookieName != null) sb.append("CookieName: " + cookieName + ", ");
+        if (getPolicyName() != null) sb.append("PolicyName: " + getPolicyName() + ", ");
+        if (getCookieName() != null) sb.append("CookieName: " + getCookieName() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -161,7 +161,7 @@ public class AppCookieStickinessPolicy {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof AppCookieStickinessPolicy == false) return false;
         AppCookieStickinessPolicy other = (AppCookieStickinessPolicy)obj;
         

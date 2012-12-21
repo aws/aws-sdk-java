@@ -440,15 +440,15 @@ public class InstanceNetworkInterfaceSpecification {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (networkInterfaceId != null) sb.append("NetworkInterfaceId: " + networkInterfaceId + ", ");
-        if (deviceIndex != null) sb.append("DeviceIndex: " + deviceIndex + ", ");
-        if (subnetId != null) sb.append("SubnetId: " + subnetId + ", ");
-        if (description != null) sb.append("Description: " + description + ", ");
-        if (privateIpAddress != null) sb.append("PrivateIpAddress: " + privateIpAddress + ", ");
-        if (groups != null) sb.append("Groups: " + groups + ", ");
-        if (deleteOnTermination != null) sb.append("DeleteOnTermination: " + deleteOnTermination + ", ");
-        if (privateIpAddresses != null) sb.append("PrivateIpAddresses: " + privateIpAddresses + ", ");
-        if (secondaryPrivateIpAddressCount != null) sb.append("SecondaryPrivateIpAddressCount: " + secondaryPrivateIpAddressCount + ", ");
+        if (getNetworkInterfaceId() != null) sb.append("NetworkInterfaceId: " + getNetworkInterfaceId() + ", ");
+        if (getDeviceIndex() != null) sb.append("DeviceIndex: " + getDeviceIndex() + ", ");
+        if (getSubnetId() != null) sb.append("SubnetId: " + getSubnetId() + ", ");
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ", ");
+        if (getPrivateIpAddress() != null) sb.append("PrivateIpAddress: " + getPrivateIpAddress() + ", ");
+        if (getGroups() != null) sb.append("Groups: " + getGroups() + ", ");
+        if (isDeleteOnTermination() != null) sb.append("DeleteOnTermination: " + isDeleteOnTermination() + ", ");
+        if (getPrivateIpAddresses() != null) sb.append("PrivateIpAddresses: " + getPrivateIpAddresses() + ", ");
+        if (getSecondaryPrivateIpAddressCount() != null) sb.append("SecondaryPrivateIpAddressCount: " + getSecondaryPrivateIpAddressCount() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -474,7 +474,7 @@ public class InstanceNetworkInterfaceSpecification {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof InstanceNetworkInterfaceSpecification == false) return false;
         InstanceNetworkInterfaceSpecification other = (InstanceNetworkInterfaceSpecification)obj;
         

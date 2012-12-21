@@ -107,7 +107,7 @@ public class DescribeCustomerGatewaysResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (customerGateways != null) sb.append("CustomerGateways: " + customerGateways + ", ");
+        if (getCustomerGateways() != null) sb.append("CustomerGateways: " + getCustomerGateways() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -125,7 +125,7 @@ public class DescribeCustomerGatewaysResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DescribeCustomerGatewaysResult == false) return false;
         DescribeCustomerGatewaysResult other = (DescribeCustomerGatewaysResult)obj;
         

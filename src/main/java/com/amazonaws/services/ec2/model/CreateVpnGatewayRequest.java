@@ -135,8 +135,8 @@ public class CreateVpnGatewayRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (type != null) sb.append("Type: " + type + ", ");
-        if (availabilityZone != null) sb.append("AvailabilityZone: " + availabilityZone + ", ");
+        if (getType() != null) sb.append("Type: " + getType() + ", ");
+        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -155,7 +155,7 @@ public class CreateVpnGatewayRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof CreateVpnGatewayRequest == false) return false;
         CreateVpnGatewayRequest other = (CreateVpnGatewayRequest)obj;
         

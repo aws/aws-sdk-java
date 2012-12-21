@@ -175,9 +175,9 @@ public class PurchaseReservedInstancesOfferingRequest extends AmazonWebServiceRe
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (reservedInstancesOfferingId != null) sb.append("ReservedInstancesOfferingId: " + reservedInstancesOfferingId + ", ");
-        if (instanceCount != null) sb.append("InstanceCount: " + instanceCount + ", ");
-        if (limitPrice != null) sb.append("LimitPrice: " + limitPrice + ", ");
+        if (getReservedInstancesOfferingId() != null) sb.append("ReservedInstancesOfferingId: " + getReservedInstancesOfferingId() + ", ");
+        if (getInstanceCount() != null) sb.append("InstanceCount: " + getInstanceCount() + ", ");
+        if (getLimitPrice() != null) sb.append("LimitPrice: " + getLimitPrice() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -197,7 +197,7 @@ public class PurchaseReservedInstancesOfferingRequest extends AmazonWebServiceRe
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof PurchaseReservedInstancesOfferingRequest == false) return false;
         PurchaseReservedInstancesOfferingRequest other = (PurchaseReservedInstancesOfferingRequest)obj;
         

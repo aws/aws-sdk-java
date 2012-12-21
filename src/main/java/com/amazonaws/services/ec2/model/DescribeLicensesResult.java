@@ -115,7 +115,7 @@ public class DescribeLicensesResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (licenses != null) sb.append("Licenses: " + licenses + ", ");
+        if (getLicenses() != null) sb.append("Licenses: " + getLicenses() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -133,7 +133,7 @@ public class DescribeLicensesResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DescribeLicensesResult == false) return false;
         DescribeLicensesResult other = (DescribeLicensesResult)obj;
         

@@ -144,9 +144,9 @@ public class NetworkAclAssociation {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (networkAclAssociationId != null) sb.append("NetworkAclAssociationId: " + networkAclAssociationId + ", ");
-        if (networkAclId != null) sb.append("NetworkAclId: " + networkAclId + ", ");
-        if (subnetId != null) sb.append("SubnetId: " + subnetId + ", ");
+        if (getNetworkAclAssociationId() != null) sb.append("NetworkAclAssociationId: " + getNetworkAclAssociationId() + ", ");
+        if (getNetworkAclId() != null) sb.append("NetworkAclId: " + getNetworkAclId() + ", ");
+        if (getSubnetId() != null) sb.append("SubnetId: " + getSubnetId() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -166,7 +166,7 @@ public class NetworkAclAssociation {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof NetworkAclAssociation == false) return false;
         NetworkAclAssociation other = (NetworkAclAssociation)obj;
         

@@ -333,11 +333,11 @@ public class IpPermission {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (ipProtocol != null) sb.append("IpProtocol: " + ipProtocol + ", ");
-        if (fromPort != null) sb.append("FromPort: " + fromPort + ", ");
-        if (toPort != null) sb.append("ToPort: " + toPort + ", ");
-        if (userIdGroupPairs != null) sb.append("UserIdGroupPairs: " + userIdGroupPairs + ", ");
-        if (ipRanges != null) sb.append("IpRanges: " + ipRanges + ", ");
+        if (getIpProtocol() != null) sb.append("IpProtocol: " + getIpProtocol() + ", ");
+        if (getFromPort() != null) sb.append("FromPort: " + getFromPort() + ", ");
+        if (getToPort() != null) sb.append("ToPort: " + getToPort() + ", ");
+        if (getUserIdGroupPairs() != null) sb.append("UserIdGroupPairs: " + getUserIdGroupPairs() + ", ");
+        if (getIpRanges() != null) sb.append("IpRanges: " + getIpRanges() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -359,7 +359,7 @@ public class IpPermission {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof IpPermission == false) return false;
         IpPermission other = (IpPermission)obj;
         

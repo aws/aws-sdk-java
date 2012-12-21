@@ -71,7 +71,7 @@ public class CancelExportTaskRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (exportTaskId != null) sb.append("ExportTaskId: " + exportTaskId + ", ");
+        if (getExportTaskId() != null) sb.append("ExportTaskId: " + getExportTaskId() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -89,7 +89,7 @@ public class CancelExportTaskRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof CancelExportTaskRequest == false) return false;
         CancelExportTaskRequest other = (CancelExportTaskRequest)obj;
         

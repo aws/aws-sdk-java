@@ -109,7 +109,7 @@ public class CreateReservedInstancesListingResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (reservedInstancesListings != null) sb.append("ReservedInstancesListings: " + reservedInstancesListings + ", ");
+        if (getReservedInstancesListings() != null) sb.append("ReservedInstancesListings: " + getReservedInstancesListings() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -127,7 +127,7 @@ public class CreateReservedInstancesListingResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof CreateReservedInstancesListingResult == false) return false;
         CreateReservedInstancesListingResult other = (CreateReservedInstancesListingResult)obj;
         

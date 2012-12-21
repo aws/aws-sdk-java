@@ -116,7 +116,7 @@ public class TerminateInstancesResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (terminatingInstances != null) sb.append("TerminatingInstances: " + terminatingInstances + ", ");
+        if (getTerminatingInstances() != null) sb.append("TerminatingInstances: " + getTerminatingInstances() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -134,7 +134,7 @@ public class TerminateInstancesResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof TerminateInstancesResult == false) return false;
         TerminateInstancesResult other = (TerminateInstancesResult)obj;
         

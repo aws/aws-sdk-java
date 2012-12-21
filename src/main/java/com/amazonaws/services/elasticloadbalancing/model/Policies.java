@@ -279,9 +279,9 @@ public class Policies {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (appCookieStickinessPolicies != null) sb.append("AppCookieStickinessPolicies: " + appCookieStickinessPolicies + ", ");
-        if (lBCookieStickinessPolicies != null) sb.append("LBCookieStickinessPolicies: " + lBCookieStickinessPolicies + ", ");
-        if (otherPolicies != null) sb.append("OtherPolicies: " + otherPolicies + ", ");
+        if (getAppCookieStickinessPolicies() != null) sb.append("AppCookieStickinessPolicies: " + getAppCookieStickinessPolicies() + ", ");
+        if (getLBCookieStickinessPolicies() != null) sb.append("LBCookieStickinessPolicies: " + getLBCookieStickinessPolicies() + ", ");
+        if (getOtherPolicies() != null) sb.append("OtherPolicies: " + getOtherPolicies() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -301,7 +301,7 @@ public class Policies {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof Policies == false) return false;
         Policies other = (Policies)obj;
         

@@ -79,7 +79,7 @@ public class InstanceLicense {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (pool != null) sb.append("Pool: " + pool + ", ");
+        if (getPool() != null) sb.append("Pool: " + getPool() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -97,7 +97,7 @@ public class InstanceLicense {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof InstanceLicense == false) return false;
         InstanceLicense other = (InstanceLicense)obj;
         

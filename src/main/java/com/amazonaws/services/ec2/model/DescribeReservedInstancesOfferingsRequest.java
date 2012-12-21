@@ -565,15 +565,15 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (reservedInstancesOfferingIds != null) sb.append("ReservedInstancesOfferingIds: " + reservedInstancesOfferingIds + ", ");
-        if (instanceType != null) sb.append("InstanceType: " + instanceType + ", ");
-        if (availabilityZone != null) sb.append("AvailabilityZone: " + availabilityZone + ", ");
-        if (productDescription != null) sb.append("ProductDescription: " + productDescription + ", ");
-        if (filters != null) sb.append("Filters: " + filters + ", ");
-        if (instanceTenancy != null) sb.append("InstanceTenancy: " + instanceTenancy + ", ");
-        if (offeringType != null) sb.append("OfferingType: " + offeringType + ", ");
-        if (nextToken != null) sb.append("NextToken: " + nextToken + ", ");
-        if (maxResults != null) sb.append("MaxResults: " + maxResults + ", ");
+        if (getReservedInstancesOfferingIds() != null) sb.append("ReservedInstancesOfferingIds: " + getReservedInstancesOfferingIds() + ", ");
+        if (getInstanceType() != null) sb.append("InstanceType: " + getInstanceType() + ", ");
+        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ", ");
+        if (getProductDescription() != null) sb.append("ProductDescription: " + getProductDescription() + ", ");
+        if (getFilters() != null) sb.append("Filters: " + getFilters() + ", ");
+        if (getInstanceTenancy() != null) sb.append("InstanceTenancy: " + getInstanceTenancy() + ", ");
+        if (getOfferingType() != null) sb.append("OfferingType: " + getOfferingType() + ", ");
+        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() + ", ");
+        if (getMaxResults() != null) sb.append("MaxResults: " + getMaxResults() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -599,7 +599,7 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DescribeReservedInstancesOfferingsRequest == false) return false;
         DescribeReservedInstancesOfferingsRequest other = (DescribeReservedInstancesOfferingsRequest)obj;
         

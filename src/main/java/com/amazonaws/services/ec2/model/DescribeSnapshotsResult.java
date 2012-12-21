@@ -107,7 +107,7 @@ public class DescribeSnapshotsResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (snapshots != null) sb.append("Snapshots: " + snapshots + ", ");
+        if (getSnapshots() != null) sb.append("Snapshots: " + getSnapshots() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -125,7 +125,7 @@ public class DescribeSnapshotsResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DescribeSnapshotsResult == false) return false;
         DescribeSnapshotsResult other = (DescribeSnapshotsResult)obj;
         

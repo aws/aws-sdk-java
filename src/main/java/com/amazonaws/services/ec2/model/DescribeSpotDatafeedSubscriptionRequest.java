@@ -58,7 +58,7 @@ public class DescribeSpotDatafeedSubscriptionRequest extends AmazonWebServiceReq
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DescribeSpotDatafeedSubscriptionRequest == false) return false;
         DescribeSpotDatafeedSubscriptionRequest other = (DescribeSpotDatafeedSubscriptionRequest)obj;
         

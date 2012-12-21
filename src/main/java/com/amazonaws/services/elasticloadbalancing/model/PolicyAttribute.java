@@ -134,8 +134,8 @@ public class PolicyAttribute {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (attributeName != null) sb.append("AttributeName: " + attributeName + ", ");
-        if (attributeValue != null) sb.append("AttributeValue: " + attributeValue + ", ");
+        if (getAttributeName() != null) sb.append("AttributeName: " + getAttributeName() + ", ");
+        if (getAttributeValue() != null) sb.append("AttributeValue: " + getAttributeValue() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -154,7 +154,7 @@ public class PolicyAttribute {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof PolicyAttribute == false) return false;
         PolicyAttribute other = (PolicyAttribute)obj;
         

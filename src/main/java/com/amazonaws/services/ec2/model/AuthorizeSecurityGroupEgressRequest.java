@@ -418,14 +418,14 @@ public class AuthorizeSecurityGroupEgressRequest extends AmazonWebServiceRequest
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (groupId != null) sb.append("GroupId: " + groupId + ", ");
-        if (sourceSecurityGroupName != null) sb.append("SourceSecurityGroupName: " + sourceSecurityGroupName + ", ");
-        if (sourceSecurityGroupOwnerId != null) sb.append("SourceSecurityGroupOwnerId: " + sourceSecurityGroupOwnerId + ", ");
-        if (ipProtocol != null) sb.append("IpProtocol: " + ipProtocol + ", ");
-        if (fromPort != null) sb.append("FromPort: " + fromPort + ", ");
-        if (toPort != null) sb.append("ToPort: " + toPort + ", ");
-        if (cidrIp != null) sb.append("CidrIp: " + cidrIp + ", ");
-        if (ipPermissions != null) sb.append("IpPermissions: " + ipPermissions + ", ");
+        if (getGroupId() != null) sb.append("GroupId: " + getGroupId() + ", ");
+        if (getSourceSecurityGroupName() != null) sb.append("SourceSecurityGroupName: " + getSourceSecurityGroupName() + ", ");
+        if (getSourceSecurityGroupOwnerId() != null) sb.append("SourceSecurityGroupOwnerId: " + getSourceSecurityGroupOwnerId() + ", ");
+        if (getIpProtocol() != null) sb.append("IpProtocol: " + getIpProtocol() + ", ");
+        if (getFromPort() != null) sb.append("FromPort: " + getFromPort() + ", ");
+        if (getToPort() != null) sb.append("ToPort: " + getToPort() + ", ");
+        if (getCidrIp() != null) sb.append("CidrIp: " + getCidrIp() + ", ");
+        if (getIpPermissions() != null) sb.append("IpPermissions: " + getIpPermissions() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -450,7 +450,7 @@ public class AuthorizeSecurityGroupEgressRequest extends AmazonWebServiceRequest
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof AuthorizeSecurityGroupEgressRequest == false) return false;
         AuthorizeSecurityGroupEgressRequest other = (AuthorizeSecurityGroupEgressRequest)obj;
         

@@ -102,7 +102,7 @@ public class DescribeInternetGatewaysResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (internetGateways != null) sb.append("InternetGateways: " + internetGateways + ", ");
+        if (getInternetGateways() != null) sb.append("InternetGateways: " + getInternetGateways() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -120,7 +120,7 @@ public class DescribeInternetGatewaysResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DescribeInternetGatewaysResult == false) return false;
         DescribeInternetGatewaysResult other = (DescribeInternetGatewaysResult)obj;
         

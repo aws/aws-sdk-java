@@ -49,7 +49,7 @@ public class DeleteLoadBalancerPolicyResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DeleteLoadBalancerPolicyResult == false) return false;
         DeleteLoadBalancerPolicyResult other = (DeleteLoadBalancerPolicyResult)obj;
         

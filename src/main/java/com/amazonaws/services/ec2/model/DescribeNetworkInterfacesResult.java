@@ -102,7 +102,7 @@ public class DescribeNetworkInterfacesResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (networkInterfaces != null) sb.append("NetworkInterfaces: " + networkInterfaces + ", ");
+        if (getNetworkInterfaces() != null) sb.append("NetworkInterfaces: " + getNetworkInterfaces() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -120,7 +120,7 @@ public class DescribeNetworkInterfacesResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DescribeNetworkInterfacesResult == false) return false;
         DescribeNetworkInterfacesResult other = (DescribeNetworkInterfacesResult)obj;
         

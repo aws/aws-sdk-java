@@ -575,16 +575,16 @@ public class VpnConnection {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (vpnConnectionId != null) sb.append("VpnConnectionId: " + vpnConnectionId + ", ");
-        if (state != null) sb.append("State: " + state + ", ");
-        if (customerGatewayConfiguration != null) sb.append("CustomerGatewayConfiguration: " + customerGatewayConfiguration + ", ");
-        if (type != null) sb.append("Type: " + type + ", ");
-        if (customerGatewayId != null) sb.append("CustomerGatewayId: " + customerGatewayId + ", ");
-        if (vpnGatewayId != null) sb.append("VpnGatewayId: " + vpnGatewayId + ", ");
-        if (tags != null) sb.append("Tags: " + tags + ", ");
-        if (vgwTelemetry != null) sb.append("VgwTelemetry: " + vgwTelemetry + ", ");
-        if (options != null) sb.append("Options: " + options + ", ");
-        if (routes != null) sb.append("Routes: " + routes + ", ");
+        if (getVpnConnectionId() != null) sb.append("VpnConnectionId: " + getVpnConnectionId() + ", ");
+        if (getState() != null) sb.append("State: " + getState() + ", ");
+        if (getCustomerGatewayConfiguration() != null) sb.append("CustomerGatewayConfiguration: " + getCustomerGatewayConfiguration() + ", ");
+        if (getType() != null) sb.append("Type: " + getType() + ", ");
+        if (getCustomerGatewayId() != null) sb.append("CustomerGatewayId: " + getCustomerGatewayId() + ", ");
+        if (getVpnGatewayId() != null) sb.append("VpnGatewayId: " + getVpnGatewayId() + ", ");
+        if (getTags() != null) sb.append("Tags: " + getTags() + ", ");
+        if (getVgwTelemetry() != null) sb.append("VgwTelemetry: " + getVgwTelemetry() + ", ");
+        if (getOptions() != null) sb.append("Options: " + getOptions() + ", ");
+        if (getRoutes() != null) sb.append("Routes: " + getRoutes() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -611,7 +611,7 @@ public class VpnConnection {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof VpnConnection == false) return false;
         VpnConnection other = (VpnConnection)obj;
         

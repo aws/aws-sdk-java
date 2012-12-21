@@ -196,10 +196,10 @@ public class BlockDeviceMapping {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (virtualName != null) sb.append("VirtualName: " + virtualName + ", ");
-        if (deviceName != null) sb.append("DeviceName: " + deviceName + ", ");
-        if (ebs != null) sb.append("Ebs: " + ebs + ", ");
-        if (noDevice != null) sb.append("NoDevice: " + noDevice + ", ");
+        if (getVirtualName() != null) sb.append("VirtualName: " + getVirtualName() + ", ");
+        if (getDeviceName() != null) sb.append("DeviceName: " + getDeviceName() + ", ");
+        if (getEbs() != null) sb.append("Ebs: " + getEbs() + ", ");
+        if (getNoDevice() != null) sb.append("NoDevice: " + getNoDevice() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -220,7 +220,7 @@ public class BlockDeviceMapping {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof BlockDeviceMapping == false) return false;
         BlockDeviceMapping other = (BlockDeviceMapping)obj;
         

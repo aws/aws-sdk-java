@@ -146,8 +146,8 @@ public class DescribeLoadBalancersResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (loadBalancerDescriptions != null) sb.append("LoadBalancerDescriptions: " + loadBalancerDescriptions + ", ");
-        if (nextMarker != null) sb.append("NextMarker: " + nextMarker + ", ");
+        if (getLoadBalancerDescriptions() != null) sb.append("LoadBalancerDescriptions: " + getLoadBalancerDescriptions() + ", ");
+        if (getNextMarker() != null) sb.append("NextMarker: " + getNextMarker() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -166,7 +166,7 @@ public class DescribeLoadBalancersResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DescribeLoadBalancersResult == false) return false;
         DescribeLoadBalancersResult other = (DescribeLoadBalancersResult)obj;
         

@@ -107,7 +107,7 @@ public class DescribeRegionsResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (regions != null) sb.append("Regions: " + regions + ", ");
+        if (getRegions() != null) sb.append("Regions: " + getRegions() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -125,7 +125,7 @@ public class DescribeRegionsResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DescribeRegionsResult == false) return false;
         DescribeRegionsResult other = (DescribeRegionsResult)obj;
         

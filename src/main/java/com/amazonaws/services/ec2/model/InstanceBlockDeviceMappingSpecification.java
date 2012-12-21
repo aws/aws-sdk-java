@@ -210,10 +210,10 @@ public class InstanceBlockDeviceMappingSpecification {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (deviceName != null) sb.append("DeviceName: " + deviceName + ", ");
-        if (ebs != null) sb.append("Ebs: " + ebs + ", ");
-        if (virtualName != null) sb.append("VirtualName: " + virtualName + ", ");
-        if (noDevice != null) sb.append("NoDevice: " + noDevice + ", ");
+        if (getDeviceName() != null) sb.append("DeviceName: " + getDeviceName() + ", ");
+        if (getEbs() != null) sb.append("Ebs: " + getEbs() + ", ");
+        if (getVirtualName() != null) sb.append("VirtualName: " + getVirtualName() + ", ");
+        if (getNoDevice() != null) sb.append("NoDevice: " + getNoDevice() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -234,7 +234,7 @@ public class InstanceBlockDeviceMappingSpecification {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof InstanceBlockDeviceMappingSpecification == false) return false;
         InstanceBlockDeviceMappingSpecification other = (InstanceBlockDeviceMappingSpecification)obj;
         

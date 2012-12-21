@@ -224,10 +224,10 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (type != null) sb.append("Type: " + type + ", ");
-        if (customerGatewayId != null) sb.append("CustomerGatewayId: " + customerGatewayId + ", ");
-        if (vpnGatewayId != null) sb.append("VpnGatewayId: " + vpnGatewayId + ", ");
-        if (options != null) sb.append("Options: " + options + ", ");
+        if (getType() != null) sb.append("Type: " + getType() + ", ");
+        if (getCustomerGatewayId() != null) sb.append("CustomerGatewayId: " + getCustomerGatewayId() + ", ");
+        if (getVpnGatewayId() != null) sb.append("VpnGatewayId: " + getVpnGatewayId() + ", ");
+        if (getOptions() != null) sb.append("Options: " + getOptions() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -248,7 +248,7 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof CreateVpnConnectionRequest == false) return false;
         CreateVpnConnectionRequest other = (CreateVpnConnectionRequest)obj;
         

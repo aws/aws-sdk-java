@@ -106,7 +106,7 @@ public class DescribePlacementGroupsResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (placementGroups != null) sb.append("PlacementGroups: " + placementGroups + ", ");
+        if (getPlacementGroups() != null) sb.append("PlacementGroups: " + getPlacementGroups() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -124,7 +124,7 @@ public class DescribePlacementGroupsResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DescribePlacementGroupsResult == false) return false;
         DescribePlacementGroupsResult other = (DescribePlacementGroupsResult)obj;
         

@@ -102,7 +102,7 @@ public class DescribeConversionTasksResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (conversionTasks != null) sb.append("ConversionTasks: " + conversionTasks + ", ");
+        if (getConversionTasks() != null) sb.append("ConversionTasks: " + getConversionTasks() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -120,7 +120,7 @@ public class DescribeConversionTasksResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DescribeConversionTasksResult == false) return false;
         DescribeConversionTasksResult other = (DescribeConversionTasksResult)obj;
         

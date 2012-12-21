@@ -103,8 +103,8 @@ public class IamInstanceProfileSpecification {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (arn != null) sb.append("Arn: " + arn + ", ");
-        if (name != null) sb.append("Name: " + name + ", ");
+        if (getArn() != null) sb.append("Arn: " + getArn() + ", ");
+        if (getName() != null) sb.append("Name: " + getName() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -123,7 +123,7 @@ public class IamInstanceProfileSpecification {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof IamInstanceProfileSpecification == false) return false;
         IamInstanceProfileSpecification other = (IamInstanceProfileSpecification)obj;
         

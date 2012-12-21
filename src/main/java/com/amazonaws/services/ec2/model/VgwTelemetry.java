@@ -211,11 +211,11 @@ public class VgwTelemetry {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (outsideIpAddress != null) sb.append("OutsideIpAddress: " + outsideIpAddress + ", ");
-        if (status != null) sb.append("Status: " + status + ", ");
-        if (lastStatusChange != null) sb.append("LastStatusChange: " + lastStatusChange + ", ");
-        if (statusMessage != null) sb.append("StatusMessage: " + statusMessage + ", ");
-        if (acceptedRouteCount != null) sb.append("AcceptedRouteCount: " + acceptedRouteCount + ", ");
+        if (getOutsideIpAddress() != null) sb.append("OutsideIpAddress: " + getOutsideIpAddress() + ", ");
+        if (getStatus() != null) sb.append("Status: " + getStatus() + ", ");
+        if (getLastStatusChange() != null) sb.append("LastStatusChange: " + getLastStatusChange() + ", ");
+        if (getStatusMessage() != null) sb.append("StatusMessage: " + getStatusMessage() + ", ");
+        if (getAcceptedRouteCount() != null) sb.append("AcceptedRouteCount: " + getAcceptedRouteCount() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -237,7 +237,7 @@ public class VgwTelemetry {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof VgwTelemetry == false) return false;
         VgwTelemetry other = (VgwTelemetry)obj;
         

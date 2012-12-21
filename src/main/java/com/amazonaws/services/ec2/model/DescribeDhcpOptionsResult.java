@@ -102,7 +102,7 @@ public class DescribeDhcpOptionsResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (dhcpOptions != null) sb.append("DhcpOptions: " + dhcpOptions + ", ");
+        if (getDhcpOptions() != null) sb.append("DhcpOptions: " + getDhcpOptions() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -120,7 +120,7 @@ public class DescribeDhcpOptionsResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DescribeDhcpOptionsResult == false) return false;
         DescribeDhcpOptionsResult other = (DescribeDhcpOptionsResult)obj;
         

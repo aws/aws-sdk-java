@@ -118,8 +118,8 @@ public class CreateVolumePermission {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (userId != null) sb.append("UserId: " + userId + ", ");
-        if (group != null) sb.append("Group: " + group + ", ");
+        if (getUserId() != null) sb.append("UserId: " + getUserId() + ", ");
+        if (getGroup() != null) sb.append("Group: " + getGroup() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -138,7 +138,7 @@ public class CreateVolumePermission {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof CreateVolumePermission == false) return false;
         CreateVolumePermission other = (CreateVolumePermission)obj;
         

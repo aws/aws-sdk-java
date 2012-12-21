@@ -296,9 +296,9 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (groupNames != null) sb.append("GroupNames: " + groupNames + ", ");
-        if (groupIds != null) sb.append("GroupIds: " + groupIds + ", ");
-        if (filters != null) sb.append("Filters: " + filters + ", ");
+        if (getGroupNames() != null) sb.append("GroupNames: " + getGroupNames() + ", ");
+        if (getGroupIds() != null) sb.append("GroupIds: " + getGroupIds() + ", ");
+        if (getFilters() != null) sb.append("Filters: " + getFilters() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -318,7 +318,7 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DescribeSecurityGroupsRequest == false) return false;
         DescribeSecurityGroupsRequest other = (DescribeSecurityGroupsRequest)obj;
         

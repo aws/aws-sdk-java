@@ -361,12 +361,12 @@ public class NetworkAcl {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (networkAclId != null) sb.append("NetworkAclId: " + networkAclId + ", ");
-        if (vpcId != null) sb.append("VpcId: " + vpcId + ", ");
-        if (isDefault != null) sb.append("IsDefault: " + isDefault + ", ");
-        if (entries != null) sb.append("Entries: " + entries + ", ");
-        if (associations != null) sb.append("Associations: " + associations + ", ");
-        if (tags != null) sb.append("Tags: " + tags + ", ");
+        if (getNetworkAclId() != null) sb.append("NetworkAclId: " + getNetworkAclId() + ", ");
+        if (getVpcId() != null) sb.append("VpcId: " + getVpcId() + ", ");
+        if (isDefault() != null) sb.append("IsDefault: " + isDefault() + ", ");
+        if (getEntries() != null) sb.append("Entries: " + getEntries() + ", ");
+        if (getAssociations() != null) sb.append("Associations: " + getAssociations() + ", ");
+        if (getTags() != null) sb.append("Tags: " + getTags() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -389,7 +389,7 @@ public class NetworkAcl {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof NetworkAcl == false) return false;
         NetworkAcl other = (NetworkAcl)obj;
         

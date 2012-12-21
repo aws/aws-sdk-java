@@ -96,7 +96,7 @@ public class CreateKeyPairRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (keyName != null) sb.append("KeyName: " + keyName + ", ");
+        if (getKeyName() != null) sb.append("KeyName: " + getKeyName() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -114,7 +114,7 @@ public class CreateKeyPairRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof CreateKeyPairRequest == false) return false;
         CreateKeyPairRequest other = (CreateKeyPairRequest)obj;
         

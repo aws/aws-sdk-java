@@ -139,9 +139,9 @@ public class DiskImage {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (image != null) sb.append("Image: " + image + ", ");
-        if (description != null) sb.append("Description: " + description + ", ");
-        if (volume != null) sb.append("Volume: " + volume + ", ");
+        if (getImage() != null) sb.append("Image: " + getImage() + ", ");
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ", ");
+        if (getVolume() != null) sb.append("Volume: " + getVolume() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -161,7 +161,7 @@ public class DiskImage {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DiskImage == false) return false;
         DiskImage other = (DiskImage)obj;
         

@@ -225,8 +225,8 @@ public class DescribeDhcpOptionsRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (dhcpOptionsIds != null) sb.append("DhcpOptionsIds: " + dhcpOptionsIds + ", ");
-        if (filters != null) sb.append("Filters: " + filters + ", ");
+        if (getDhcpOptionsIds() != null) sb.append("DhcpOptionsIds: " + getDhcpOptionsIds() + ", ");
+        if (getFilters() != null) sb.append("Filters: " + getFilters() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -245,7 +245,7 @@ public class DescribeDhcpOptionsRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DescribeDhcpOptionsRequest == false) return false;
         DescribeDhcpOptionsRequest other = (DescribeDhcpOptionsRequest)obj;
         

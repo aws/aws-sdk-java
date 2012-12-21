@@ -107,7 +107,7 @@ public class DescribeVpcsResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (vpcs != null) sb.append("Vpcs: " + vpcs + ", ");
+        if (getVpcs() != null) sb.append("Vpcs: " + getVpcs() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -125,7 +125,7 @@ public class DescribeVpcsResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DescribeVpcsResult == false) return false;
         DescribeVpcsResult other = (DescribeVpcsResult)obj;
         

@@ -49,7 +49,7 @@ public class CreateAppCookieStickinessPolicyResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof CreateAppCookieStickinessPolicyResult == false) return false;
         CreateAppCookieStickinessPolicyResult other = (CreateAppCookieStickinessPolicyResult)obj;
         

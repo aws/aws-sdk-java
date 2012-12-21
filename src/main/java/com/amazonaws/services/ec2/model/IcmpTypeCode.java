@@ -137,8 +137,8 @@ public class IcmpTypeCode {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (type != null) sb.append("Type: " + type + ", ");
-        if (code != null) sb.append("Code: " + code + ", ");
+        if (getType() != null) sb.append("Type: " + getType() + ", ");
+        if (getCode() != null) sb.append("Code: " + getCode() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -157,7 +157,7 @@ public class IcmpTypeCode {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof IcmpTypeCode == false) return false;
         IcmpTypeCode other = (IcmpTypeCode)obj;
         

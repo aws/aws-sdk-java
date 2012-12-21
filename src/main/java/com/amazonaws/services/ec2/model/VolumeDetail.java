@@ -67,7 +67,7 @@ public class VolumeDetail {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (size != null) sb.append("Size: " + size + ", ");
+        if (getSize() != null) sb.append("Size: " + getSize() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -85,7 +85,7 @@ public class VolumeDetail {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof VolumeDetail == false) return false;
         VolumeDetail other = (VolumeDetail)obj;
         

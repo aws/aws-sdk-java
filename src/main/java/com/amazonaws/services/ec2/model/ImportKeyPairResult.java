@@ -117,8 +117,8 @@ public class ImportKeyPairResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (keyName != null) sb.append("KeyName: " + keyName + ", ");
-        if (keyFingerprint != null) sb.append("KeyFingerprint: " + keyFingerprint + ", ");
+        if (getKeyName() != null) sb.append("KeyName: " + getKeyName() + ", ");
+        if (getKeyFingerprint() != null) sb.append("KeyFingerprint: " + getKeyFingerprint() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -137,7 +137,7 @@ public class ImportKeyPairResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof ImportKeyPairResult == false) return false;
         ImportKeyPairResult other = (ImportKeyPairResult)obj;
         

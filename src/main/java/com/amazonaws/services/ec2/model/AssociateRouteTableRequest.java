@@ -121,8 +121,8 @@ public class AssociateRouteTableRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (subnetId != null) sb.append("SubnetId: " + subnetId + ", ");
-        if (routeTableId != null) sb.append("RouteTableId: " + routeTableId + ", ");
+        if (getSubnetId() != null) sb.append("SubnetId: " + getSubnetId() + ", ");
+        if (getRouteTableId() != null) sb.append("RouteTableId: " + getRouteTableId() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -141,7 +141,7 @@ public class AssociateRouteTableRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof AssociateRouteTableRequest == false) return false;
         AssociateRouteTableRequest other = (AssociateRouteTableRequest)obj;
         

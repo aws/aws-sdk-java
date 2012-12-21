@@ -144,8 +144,8 @@ public class AssociateDhcpOptionsRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (dhcpOptionsId != null) sb.append("DhcpOptionsId: " + dhcpOptionsId + ", ");
-        if (vpcId != null) sb.append("VpcId: " + vpcId + ", ");
+        if (getDhcpOptionsId() != null) sb.append("DhcpOptionsId: " + getDhcpOptionsId() + ", ");
+        if (getVpcId() != null) sb.append("VpcId: " + getVpcId() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -164,7 +164,7 @@ public class AssociateDhcpOptionsRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof AssociateDhcpOptionsRequest == false) return false;
         AssociateDhcpOptionsRequest other = (AssociateDhcpOptionsRequest)obj;
         

@@ -273,10 +273,10 @@ public class ExportToS3Task {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (diskImageFormat != null) sb.append("DiskImageFormat: " + diskImageFormat + ", ");
-        if (containerFormat != null) sb.append("ContainerFormat: " + containerFormat + ", ");
-        if (s3Bucket != null) sb.append("S3Bucket: " + s3Bucket + ", ");
-        if (s3Key != null) sb.append("S3Key: " + s3Key + ", ");
+        if (getDiskImageFormat() != null) sb.append("DiskImageFormat: " + getDiskImageFormat() + ", ");
+        if (getContainerFormat() != null) sb.append("ContainerFormat: " + getContainerFormat() + ", ");
+        if (getS3Bucket() != null) sb.append("S3Bucket: " + getS3Bucket() + ", ");
+        if (getS3Key() != null) sb.append("S3Key: " + getS3Key() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -297,7 +297,7 @@ public class ExportToS3Task {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof ExportToS3Task == false) return false;
         ExportToS3Task other = (ExportToS3Task)obj;
         

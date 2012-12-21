@@ -321,12 +321,12 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (instances != null) sb.append("Instances: " + instances + ", ");
-        if (status != null) sb.append("Status: " + status + ", ");
-        if (startTime != null) sb.append("StartTime: " + startTime + ", ");
-        if (endTime != null) sb.append("EndTime: " + endTime + ", ");
-        if (reasonCodes != null) sb.append("ReasonCodes: " + reasonCodes + ", ");
-        if (description != null) sb.append("Description: " + description + ", ");
+        if (getInstances() != null) sb.append("Instances: " + getInstances() + ", ");
+        if (getStatus() != null) sb.append("Status: " + getStatus() + ", ");
+        if (getStartTime() != null) sb.append("StartTime: " + getStartTime() + ", ");
+        if (getEndTime() != null) sb.append("EndTime: " + getEndTime() + ", ");
+        if (getReasonCodes() != null) sb.append("ReasonCodes: " + getReasonCodes() + ", ");
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -349,7 +349,7 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof ReportInstanceStatusRequest == false) return false;
         ReportInstanceStatusRequest other = (ReportInstanceStatusRequest)obj;
         

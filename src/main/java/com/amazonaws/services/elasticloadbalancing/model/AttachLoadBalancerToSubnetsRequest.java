@@ -160,8 +160,8 @@ public class AttachLoadBalancerToSubnetsRequest extends AmazonWebServiceRequest 
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (loadBalancerName != null) sb.append("LoadBalancerName: " + loadBalancerName + ", ");
-        if (subnets != null) sb.append("Subnets: " + subnets + ", ");
+        if (getLoadBalancerName() != null) sb.append("LoadBalancerName: " + getLoadBalancerName() + ", ");
+        if (getSubnets() != null) sb.append("Subnets: " + getSubnets() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -180,7 +180,7 @@ public class AttachLoadBalancerToSubnetsRequest extends AmazonWebServiceRequest 
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof AttachLoadBalancerToSubnetsRequest == false) return false;
         AttachLoadBalancerToSubnetsRequest other = (AttachLoadBalancerToSubnetsRequest)obj;
         

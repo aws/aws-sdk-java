@@ -77,7 +77,7 @@ public class DeleteInternetGatewayRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (internetGatewayId != null) sb.append("InternetGatewayId: " + internetGatewayId + ", ");
+        if (getInternetGatewayId() != null) sb.append("InternetGatewayId: " + getInternetGatewayId() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -95,7 +95,7 @@ public class DeleteInternetGatewayRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DeleteInternetGatewayRequest == false) return false;
         DeleteInternetGatewayRequest other = (DeleteInternetGatewayRequest)obj;
         

@@ -499,14 +499,14 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (startTime != null) sb.append("StartTime: " + startTime + ", ");
-        if (endTime != null) sb.append("EndTime: " + endTime + ", ");
-        if (instanceTypes != null) sb.append("InstanceTypes: " + instanceTypes + ", ");
-        if (productDescriptions != null) sb.append("ProductDescriptions: " + productDescriptions + ", ");
-        if (filters != null) sb.append("Filters: " + filters + ", ");
-        if (availabilityZone != null) sb.append("AvailabilityZone: " + availabilityZone + ", ");
-        if (maxResults != null) sb.append("MaxResults: " + maxResults + ", ");
-        if (nextToken != null) sb.append("NextToken: " + nextToken + ", ");
+        if (getStartTime() != null) sb.append("StartTime: " + getStartTime() + ", ");
+        if (getEndTime() != null) sb.append("EndTime: " + getEndTime() + ", ");
+        if (getInstanceTypes() != null) sb.append("InstanceTypes: " + getInstanceTypes() + ", ");
+        if (getProductDescriptions() != null) sb.append("ProductDescriptions: " + getProductDescriptions() + ", ");
+        if (getFilters() != null) sb.append("Filters: " + getFilters() + ", ");
+        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ", ");
+        if (getMaxResults() != null) sb.append("MaxResults: " + getMaxResults() + ", ");
+        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -531,7 +531,7 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DescribeSpotPriceHistoryRequest == false) return false;
         DescribeSpotPriceHistoryRequest other = (DescribeSpotPriceHistoryRequest)obj;
         

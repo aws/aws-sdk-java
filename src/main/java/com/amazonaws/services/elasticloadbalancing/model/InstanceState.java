@@ -209,10 +209,10 @@ public class InstanceState {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (instanceId != null) sb.append("InstanceId: " + instanceId + ", ");
-        if (state != null) sb.append("State: " + state + ", ");
-        if (reasonCode != null) sb.append("ReasonCode: " + reasonCode + ", ");
-        if (description != null) sb.append("Description: " + description + ", ");
+        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ", ");
+        if (getState() != null) sb.append("State: " + getState() + ", ");
+        if (getReasonCode() != null) sb.append("ReasonCode: " + getReasonCode() + ", ");
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -233,7 +233,7 @@ public class InstanceState {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof InstanceState == false) return false;
         InstanceState other = (InstanceState)obj;
         

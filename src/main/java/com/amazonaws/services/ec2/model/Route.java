@@ -248,12 +248,12 @@ public class Route {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (destinationCidrBlock != null) sb.append("DestinationCidrBlock: " + destinationCidrBlock + ", ");
-        if (gatewayId != null) sb.append("GatewayId: " + gatewayId + ", ");
-        if (instanceId != null) sb.append("InstanceId: " + instanceId + ", ");
-        if (instanceOwnerId != null) sb.append("InstanceOwnerId: " + instanceOwnerId + ", ");
-        if (networkInterfaceId != null) sb.append("NetworkInterfaceId: " + networkInterfaceId + ", ");
-        if (state != null) sb.append("State: " + state + ", ");
+        if (getDestinationCidrBlock() != null) sb.append("DestinationCidrBlock: " + getDestinationCidrBlock() + ", ");
+        if (getGatewayId() != null) sb.append("GatewayId: " + getGatewayId() + ", ");
+        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ", ");
+        if (getInstanceOwnerId() != null) sb.append("InstanceOwnerId: " + getInstanceOwnerId() + ", ");
+        if (getNetworkInterfaceId() != null) sb.append("NetworkInterfaceId: " + getNetworkInterfaceId() + ", ");
+        if (getState() != null) sb.append("State: " + getState() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -276,7 +276,7 @@ public class Route {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof Route == false) return false;
         Route other = (Route)obj;
         

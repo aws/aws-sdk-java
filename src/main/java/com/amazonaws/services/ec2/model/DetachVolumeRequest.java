@@ -291,10 +291,10 @@ public class DetachVolumeRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (volumeId != null) sb.append("VolumeId: " + volumeId + ", ");
-        if (instanceId != null) sb.append("InstanceId: " + instanceId + ", ");
-        if (device != null) sb.append("Device: " + device + ", ");
-        if (force != null) sb.append("Force: " + force + ", ");
+        if (getVolumeId() != null) sb.append("VolumeId: " + getVolumeId() + ", ");
+        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ", ");
+        if (getDevice() != null) sb.append("Device: " + getDevice() + ", ");
+        if (isForce() != null) sb.append("Force: " + isForce() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -315,7 +315,7 @@ public class DetachVolumeRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DetachVolumeRequest == false) return false;
         DetachVolumeRequest other = (DetachVolumeRequest)obj;
         

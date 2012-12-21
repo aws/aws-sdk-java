@@ -76,7 +76,7 @@ public class CancelReservedInstancesListingRequest extends AmazonWebServiceReque
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (reservedInstancesListingId != null) sb.append("ReservedInstancesListingId: " + reservedInstancesListingId + ", ");
+        if (getReservedInstancesListingId() != null) sb.append("ReservedInstancesListingId: " + getReservedInstancesListingId() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -94,7 +94,7 @@ public class CancelReservedInstancesListingRequest extends AmazonWebServiceReque
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof CancelReservedInstancesListingRequest == false) return false;
         CancelReservedInstancesListingRequest other = (CancelReservedInstancesListingRequest)obj;
         

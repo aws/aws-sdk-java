@@ -67,7 +67,7 @@ public class AttachNetworkInterfaceResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (attachmentId != null) sb.append("AttachmentId: " + attachmentId + ", ");
+        if (getAttachmentId() != null) sb.append("AttachmentId: " + getAttachmentId() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -85,7 +85,7 @@ public class AttachNetworkInterfaceResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof AttachNetworkInterfaceResult == false) return false;
         AttachNetworkInterfaceResult other = (AttachNetworkInterfaceResult)obj;
         

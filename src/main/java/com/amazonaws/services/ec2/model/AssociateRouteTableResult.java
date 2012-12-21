@@ -67,7 +67,7 @@ public class AssociateRouteTableResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (associationId != null) sb.append("AssociationId: " + associationId + ", ");
+        if (getAssociationId() != null) sb.append("AssociationId: " + getAssociationId() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -85,7 +85,7 @@ public class AssociateRouteTableResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof AssociateRouteTableResult == false) return false;
         AssociateRouteTableResult other = (AssociateRouteTableResult)obj;
         

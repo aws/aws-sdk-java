@@ -143,8 +143,8 @@ public class DisassociateAddressRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (publicIp != null) sb.append("PublicIp: " + publicIp + ", ");
-        if (associationId != null) sb.append("AssociationId: " + associationId + ", ");
+        if (getPublicIp() != null) sb.append("PublicIp: " + getPublicIp() + ", ");
+        if (getAssociationId() != null) sb.append("AssociationId: " + getAssociationId() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -163,7 +163,7 @@ public class DisassociateAddressRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DisassociateAddressRequest == false) return false;
         DisassociateAddressRequest other = (DisassociateAddressRequest)obj;
         

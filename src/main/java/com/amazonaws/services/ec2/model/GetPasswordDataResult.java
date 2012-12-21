@@ -157,9 +157,9 @@ public class GetPasswordDataResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (instanceId != null) sb.append("InstanceId: " + instanceId + ", ");
-        if (timestamp != null) sb.append("Timestamp: " + timestamp + ", ");
-        if (passwordData != null) sb.append("PasswordData: " + passwordData + ", ");
+        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ", ");
+        if (getTimestamp() != null) sb.append("Timestamp: " + getTimestamp() + ", ");
+        if (getPasswordData() != null) sb.append("PasswordData: " + getPasswordData() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -179,7 +179,7 @@ public class GetPasswordDataResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof GetPasswordDataResult == false) return false;
         GetPasswordDataResult other = (GetPasswordDataResult)obj;
         

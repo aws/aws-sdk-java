@@ -54,7 +54,7 @@ public class CreateInternetGatewayRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof CreateInternetGatewayRequest == false) return false;
         CreateInternetGatewayRequest other = (CreateInternetGatewayRequest)obj;
         

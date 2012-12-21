@@ -97,7 +97,7 @@ public class CancelBundleTaskRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (bundleId != null) sb.append("BundleId: " + bundleId + ", ");
+        if (getBundleId() != null) sb.append("BundleId: " + getBundleId() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -115,7 +115,7 @@ public class CancelBundleTaskRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof CancelBundleTaskRequest == false) return false;
         CancelBundleTaskRequest other = (CancelBundleTaskRequest)obj;
         

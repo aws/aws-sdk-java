@@ -111,8 +111,8 @@ public class StateReason {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (code != null) sb.append("Code: " + code + ", ");
-        if (message != null) sb.append("Message: " + message + ", ");
+        if (getCode() != null) sb.append("Code: " + getCode() + ", ");
+        if (getMessage() != null) sb.append("Message: " + getMessage() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -131,7 +131,7 @@ public class StateReason {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof StateReason == false) return false;
         StateReason other = (StateReason)obj;
         

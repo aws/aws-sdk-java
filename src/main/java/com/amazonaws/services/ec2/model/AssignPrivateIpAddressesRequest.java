@@ -229,10 +229,10 @@ public class AssignPrivateIpAddressesRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (networkInterfaceId != null) sb.append("NetworkInterfaceId: " + networkInterfaceId + ", ");
-        if (privateIpAddresses != null) sb.append("PrivateIpAddresses: " + privateIpAddresses + ", ");
-        if (secondaryPrivateIpAddressCount != null) sb.append("SecondaryPrivateIpAddressCount: " + secondaryPrivateIpAddressCount + ", ");
-        if (allowReassignment != null) sb.append("AllowReassignment: " + allowReassignment + ", ");
+        if (getNetworkInterfaceId() != null) sb.append("NetworkInterfaceId: " + getNetworkInterfaceId() + ", ");
+        if (getPrivateIpAddresses() != null) sb.append("PrivateIpAddresses: " + getPrivateIpAddresses() + ", ");
+        if (getSecondaryPrivateIpAddressCount() != null) sb.append("SecondaryPrivateIpAddressCount: " + getSecondaryPrivateIpAddressCount() + ", ");
+        if (isAllowReassignment() != null) sb.append("AllowReassignment: " + isAllowReassignment() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -253,7 +253,7 @@ public class AssignPrivateIpAddressesRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof AssignPrivateIpAddressesRequest == false) return false;
         AssignPrivateIpAddressesRequest other = (AssignPrivateIpAddressesRequest)obj;
         

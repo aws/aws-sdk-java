@@ -107,7 +107,7 @@ public class DescribeInstanceHealthResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (instanceStates != null) sb.append("InstanceStates: " + instanceStates + ", ");
+        if (getInstanceStates() != null) sb.append("InstanceStates: " + getInstanceStates() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -125,7 +125,7 @@ public class DescribeInstanceHealthResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DescribeInstanceHealthResult == false) return false;
         DescribeInstanceHealthResult other = (DescribeInstanceHealthResult)obj;
         

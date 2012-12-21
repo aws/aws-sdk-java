@@ -285,9 +285,9 @@ public class PlacementGroup {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (groupName != null) sb.append("GroupName: " + groupName + ", ");
-        if (strategy != null) sb.append("Strategy: " + strategy + ", ");
-        if (state != null) sb.append("State: " + state + ", ");
+        if (getGroupName() != null) sb.append("GroupName: " + getGroupName() + ", ");
+        if (getStrategy() != null) sb.append("Strategy: " + getStrategy() + ", ");
+        if (getState() != null) sb.append("State: " + getState() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -307,7 +307,7 @@ public class PlacementGroup {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof PlacementGroup == false) return false;
         PlacementGroup other = (PlacementGroup)obj;
         

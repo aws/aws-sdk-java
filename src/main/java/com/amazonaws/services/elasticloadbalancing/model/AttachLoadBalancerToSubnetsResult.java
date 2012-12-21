@@ -107,7 +107,7 @@ public class AttachLoadBalancerToSubnetsResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (subnets != null) sb.append("Subnets: " + subnets + ", ");
+        if (getSubnets() != null) sb.append("Subnets: " + getSubnets() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -125,7 +125,7 @@ public class AttachLoadBalancerToSubnetsResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof AttachLoadBalancerToSubnetsResult == false) return false;
         AttachLoadBalancerToSubnetsResult other = (AttachLoadBalancerToSubnetsResult)obj;
         

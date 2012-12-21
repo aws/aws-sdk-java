@@ -507,18 +507,18 @@ public class InstanceNetworkInterface {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (networkInterfaceId != null) sb.append("NetworkInterfaceId: " + networkInterfaceId + ", ");
-        if (subnetId != null) sb.append("SubnetId: " + subnetId + ", ");
-        if (vpcId != null) sb.append("VpcId: " + vpcId + ", ");
-        if (description != null) sb.append("Description: " + description + ", ");
-        if (ownerId != null) sb.append("OwnerId: " + ownerId + ", ");
-        if (status != null) sb.append("Status: " + status + ", ");
-        if (privateIpAddress != null) sb.append("PrivateIpAddress: " + privateIpAddress + ", ");
-        if (privateDnsName != null) sb.append("PrivateDnsName: " + privateDnsName + ", ");
-        if (sourceDestCheck != null) sb.append("SourceDestCheck: " + sourceDestCheck + ", ");
-        if (groups != null) sb.append("Groups: " + groups + ", ");
-        if (attachment != null) sb.append("Attachment: " + attachment + ", ");
-        if (association != null) sb.append("Association: " + association + ", ");
+        if (getNetworkInterfaceId() != null) sb.append("NetworkInterfaceId: " + getNetworkInterfaceId() + ", ");
+        if (getSubnetId() != null) sb.append("SubnetId: " + getSubnetId() + ", ");
+        if (getVpcId() != null) sb.append("VpcId: " + getVpcId() + ", ");
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ", ");
+        if (getOwnerId() != null) sb.append("OwnerId: " + getOwnerId() + ", ");
+        if (getStatus() != null) sb.append("Status: " + getStatus() + ", ");
+        if (getPrivateIpAddress() != null) sb.append("PrivateIpAddress: " + getPrivateIpAddress() + ", ");
+        if (getPrivateDnsName() != null) sb.append("PrivateDnsName: " + getPrivateDnsName() + ", ");
+        if (isSourceDestCheck() != null) sb.append("SourceDestCheck: " + isSourceDestCheck() + ", ");
+        if (getGroups() != null) sb.append("Groups: " + getGroups() + ", ");
+        if (getAttachment() != null) sb.append("Attachment: " + getAttachment() + ", ");
+        if (getAssociation() != null) sb.append("Association: " + getAssociation() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -547,7 +547,7 @@ public class InstanceNetworkInterface {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof InstanceNetworkInterface == false) return false;
         InstanceNetworkInterface other = (InstanceNetworkInterface)obj;
         

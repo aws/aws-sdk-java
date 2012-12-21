@@ -579,17 +579,17 @@ public class InstanceAttribute {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (instanceId != null) sb.append("InstanceId: " + instanceId + ", ");
-        if (instanceType != null) sb.append("InstanceType: " + instanceType + ", ");
-        if (kernelId != null) sb.append("KernelId: " + kernelId + ", ");
-        if (ramdiskId != null) sb.append("RamdiskId: " + ramdiskId + ", ");
-        if (userData != null) sb.append("UserData: " + userData + ", ");
-        if (disableApiTermination != null) sb.append("DisableApiTermination: " + disableApiTermination + ", ");
-        if (instanceInitiatedShutdownBehavior != null) sb.append("InstanceInitiatedShutdownBehavior: " + instanceInitiatedShutdownBehavior + ", ");
-        if (rootDeviceName != null) sb.append("RootDeviceName: " + rootDeviceName + ", ");
-        if (blockDeviceMappings != null) sb.append("BlockDeviceMappings: " + blockDeviceMappings + ", ");
-        if (productCodes != null) sb.append("ProductCodes: " + productCodes + ", ");
-        if (ebsOptimized != null) sb.append("EbsOptimized: " + ebsOptimized + ", ");
+        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ", ");
+        if (getInstanceType() != null) sb.append("InstanceType: " + getInstanceType() + ", ");
+        if (getKernelId() != null) sb.append("KernelId: " + getKernelId() + ", ");
+        if (getRamdiskId() != null) sb.append("RamdiskId: " + getRamdiskId() + ", ");
+        if (getUserData() != null) sb.append("UserData: " + getUserData() + ", ");
+        if (isDisableApiTermination() != null) sb.append("DisableApiTermination: " + isDisableApiTermination() + ", ");
+        if (getInstanceInitiatedShutdownBehavior() != null) sb.append("InstanceInitiatedShutdownBehavior: " + getInstanceInitiatedShutdownBehavior() + ", ");
+        if (getRootDeviceName() != null) sb.append("RootDeviceName: " + getRootDeviceName() + ", ");
+        if (getBlockDeviceMappings() != null) sb.append("BlockDeviceMappings: " + getBlockDeviceMappings() + ", ");
+        if (getProductCodes() != null) sb.append("ProductCodes: " + getProductCodes() + ", ");
+        if (isEbsOptimized() != null) sb.append("EbsOptimized: " + isEbsOptimized() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -617,7 +617,7 @@ public class InstanceAttribute {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof InstanceAttribute == false) return false;
         InstanceAttribute other = (InstanceAttribute)obj;
         

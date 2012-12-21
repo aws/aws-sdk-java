@@ -107,7 +107,7 @@ public class ApplySecurityGroupsToLoadBalancerResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (securityGroups != null) sb.append("SecurityGroups: " + securityGroups + ", ");
+        if (getSecurityGroups() != null) sb.append("SecurityGroups: " + getSecurityGroups() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -125,7 +125,7 @@ public class ApplySecurityGroupsToLoadBalancerResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof ApplySecurityGroupsToLoadBalancerResult == false) return false;
         ApplySecurityGroupsToLoadBalancerResult other = (ApplySecurityGroupsToLoadBalancerResult)obj;
         

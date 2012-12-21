@@ -76,7 +76,7 @@ public class VpnConnectionOptions {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (staticRoutesOnly != null) sb.append("StaticRoutesOnly: " + staticRoutesOnly + ", ");
+        if (isStaticRoutesOnly() != null) sb.append("StaticRoutesOnly: " + isStaticRoutesOnly() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -94,7 +94,7 @@ public class VpnConnectionOptions {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof VpnConnectionOptions == false) return false;
         VpnConnectionOptions other = (VpnConnectionOptions)obj;
         

@@ -187,8 +187,8 @@ public class Filter {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (name != null) sb.append("Name: " + name + ", ");
-        if (values != null) sb.append("Values: " + values + ", ");
+        if (getName() != null) sb.append("Name: " + getName() + ", ");
+        if (getValues() != null) sb.append("Values: " + getValues() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -207,7 +207,7 @@ public class Filter {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof Filter == false) return false;
         Filter other = (Filter)obj;
         

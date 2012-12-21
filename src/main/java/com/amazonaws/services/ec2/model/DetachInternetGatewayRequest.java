@@ -119,8 +119,8 @@ public class DetachInternetGatewayRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (internetGatewayId != null) sb.append("InternetGatewayId: " + internetGatewayId + ", ");
-        if (vpcId != null) sb.append("VpcId: " + vpcId + ", ");
+        if (getInternetGatewayId() != null) sb.append("InternetGatewayId: " + getInternetGatewayId() + ", ");
+        if (getVpcId() != null) sb.append("VpcId: " + getVpcId() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -139,7 +139,7 @@ public class DetachInternetGatewayRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DetachInternetGatewayRequest == false) return false;
         DetachInternetGatewayRequest other = (DetachInternetGatewayRequest)obj;
         

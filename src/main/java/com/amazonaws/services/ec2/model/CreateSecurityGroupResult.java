@@ -67,7 +67,7 @@ public class CreateSecurityGroupResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (groupId != null) sb.append("GroupId: " + groupId + ", ");
+        if (getGroupId() != null) sb.append("GroupId: " + getGroupId() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -85,7 +85,7 @@ public class CreateSecurityGroupResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof CreateSecurityGroupResult == false) return false;
         CreateSecurityGroupResult other = (CreateSecurityGroupResult)obj;
         

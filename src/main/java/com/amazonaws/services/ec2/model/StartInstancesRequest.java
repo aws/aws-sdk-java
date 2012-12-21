@@ -172,8 +172,8 @@ public class StartInstancesRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (instanceIds != null) sb.append("InstanceIds: " + instanceIds + ", ");
-        if (additionalInfo != null) sb.append("AdditionalInfo: " + additionalInfo + ", ");
+        if (getInstanceIds() != null) sb.append("InstanceIds: " + getInstanceIds() + ", ");
+        if (getAdditionalInfo() != null) sb.append("AdditionalInfo: " + getAdditionalInfo() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -192,7 +192,7 @@ public class StartInstancesRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof StartInstancesRequest == false) return false;
         StartInstancesRequest other = (StartInstancesRequest)obj;
         

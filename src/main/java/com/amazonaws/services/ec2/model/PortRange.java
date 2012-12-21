@@ -123,8 +123,8 @@ public class PortRange {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (from != null) sb.append("From: " + from + ", ");
-        if (to != null) sb.append("To: " + to + ", ");
+        if (getFrom() != null) sb.append("From: " + getFrom() + ", ");
+        if (getTo() != null) sb.append("To: " + getTo() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -143,7 +143,7 @@ public class PortRange {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof PortRange == false) return false;
         PortRange other = (PortRange)obj;
         

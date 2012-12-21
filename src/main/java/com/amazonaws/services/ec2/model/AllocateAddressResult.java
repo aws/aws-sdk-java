@@ -193,9 +193,9 @@ public class AllocateAddressResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (publicIp != null) sb.append("PublicIp: " + publicIp + ", ");
-        if (domain != null) sb.append("Domain: " + domain + ", ");
-        if (allocationId != null) sb.append("AllocationId: " + allocationId + ", ");
+        if (getPublicIp() != null) sb.append("PublicIp: " + getPublicIp() + ", ");
+        if (getDomain() != null) sb.append("Domain: " + getDomain() + ", ");
+        if (getAllocationId() != null) sb.append("AllocationId: " + getAllocationId() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -215,7 +215,7 @@ public class AllocateAddressResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof AllocateAddressResult == false) return false;
         AllocateAddressResult other = (AllocateAddressResult)obj;
         

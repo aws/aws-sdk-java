@@ -107,7 +107,7 @@ public class DescribeKeyPairsResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (keyPairs != null) sb.append("KeyPairs: " + keyPairs + ", ");
+        if (getKeyPairs() != null) sb.append("KeyPairs: " + getKeyPairs() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -125,7 +125,7 @@ public class DescribeKeyPairsResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DescribeKeyPairsResult == false) return false;
         DescribeKeyPairsResult other = (DescribeKeyPairsResult)obj;
         

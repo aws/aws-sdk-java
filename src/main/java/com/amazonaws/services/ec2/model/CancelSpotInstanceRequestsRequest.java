@@ -140,7 +140,7 @@ public class CancelSpotInstanceRequestsRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (spotInstanceRequestIds != null) sb.append("SpotInstanceRequestIds: " + spotInstanceRequestIds + ", ");
+        if (getSpotInstanceRequestIds() != null) sb.append("SpotInstanceRequestIds: " + getSpotInstanceRequestIds() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -158,7 +158,7 @@ public class CancelSpotInstanceRequestsRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof CancelSpotInstanceRequestsRequest == false) return false;
         CancelSpotInstanceRequestsRequest other = (CancelSpotInstanceRequestsRequest)obj;
         

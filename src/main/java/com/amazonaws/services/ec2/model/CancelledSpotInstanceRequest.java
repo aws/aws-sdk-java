@@ -104,8 +104,8 @@ public class CancelledSpotInstanceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (spotInstanceRequestId != null) sb.append("SpotInstanceRequestId: " + spotInstanceRequestId + ", ");
-        if (state != null) sb.append("State: " + state + ", ");
+        if (getSpotInstanceRequestId() != null) sb.append("SpotInstanceRequestId: " + getSpotInstanceRequestId() + ", ");
+        if (getState() != null) sb.append("State: " + getState() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -124,7 +124,7 @@ public class CancelledSpotInstanceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof CancelledSpotInstanceRequest == false) return false;
         CancelledSpotInstanceRequest other = (CancelledSpotInstanceRequest)obj;
         

@@ -72,7 +72,7 @@ public class DescribeInstanceAttributeResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (instanceAttribute != null) sb.append("InstanceAttribute: " + instanceAttribute + ", ");
+        if (getInstanceAttribute() != null) sb.append("InstanceAttribute: " + getInstanceAttribute() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -90,7 +90,7 @@ public class DescribeInstanceAttributeResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DescribeInstanceAttributeResult == false) return false;
         DescribeInstanceAttributeResult other = (DescribeInstanceAttributeResult)obj;
         

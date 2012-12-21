@@ -157,8 +157,8 @@ public class LBCookieStickinessPolicy {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (policyName != null) sb.append("PolicyName: " + policyName + ", ");
-        if (cookieExpirationPeriod != null) sb.append("CookieExpirationPeriod: " + cookieExpirationPeriod + ", ");
+        if (getPolicyName() != null) sb.append("PolicyName: " + getPolicyName() + ", ");
+        if (getCookieExpirationPeriod() != null) sb.append("CookieExpirationPeriod: " + getCookieExpirationPeriod() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -177,7 +177,7 @@ public class LBCookieStickinessPolicy {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof LBCookieStickinessPolicy == false) return false;
         LBCookieStickinessPolicy other = (LBCookieStickinessPolicy)obj;
         

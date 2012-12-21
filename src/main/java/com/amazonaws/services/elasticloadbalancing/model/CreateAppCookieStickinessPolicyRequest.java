@@ -206,9 +206,9 @@ public class CreateAppCookieStickinessPolicyRequest extends AmazonWebServiceRequ
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (loadBalancerName != null) sb.append("LoadBalancerName: " + loadBalancerName + ", ");
-        if (policyName != null) sb.append("PolicyName: " + policyName + ", ");
-        if (cookieName != null) sb.append("CookieName: " + cookieName + ", ");
+        if (getLoadBalancerName() != null) sb.append("LoadBalancerName: " + getLoadBalancerName() + ", ");
+        if (getPolicyName() != null) sb.append("PolicyName: " + getPolicyName() + ", ");
+        if (getCookieName() != null) sb.append("CookieName: " + getCookieName() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -228,7 +228,7 @@ public class CreateAppCookieStickinessPolicyRequest extends AmazonWebServiceRequ
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof CreateAppCookieStickinessPolicyRequest == false) return false;
         CreateAppCookieStickinessPolicyRequest other = (CreateAppCookieStickinessPolicyRequest)obj;
         

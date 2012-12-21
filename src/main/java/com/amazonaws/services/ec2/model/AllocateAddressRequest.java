@@ -139,7 +139,7 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (domain != null) sb.append("Domain: " + domain + ", ");
+        if (getDomain() != null) sb.append("Domain: " + getDomain() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -157,7 +157,7 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof AllocateAddressRequest == false) return false;
         AllocateAddressRequest other = (AllocateAddressRequest)obj;
         

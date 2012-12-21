@@ -95,7 +95,7 @@ public class DeleteSubnetRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (subnetId != null) sb.append("SubnetId: " + subnetId + ", ");
+        if (getSubnetId() != null) sb.append("SubnetId: " + getSubnetId() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -113,7 +113,7 @@ public class DeleteSubnetRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DeleteSubnetRequest == false) return false;
         DeleteSubnetRequest other = (DeleteSubnetRequest)obj;
         

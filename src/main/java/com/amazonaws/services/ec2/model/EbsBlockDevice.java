@@ -289,11 +289,11 @@ public class EbsBlockDevice {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (snapshotId != null) sb.append("SnapshotId: " + snapshotId + ", ");
-        if (volumeSize != null) sb.append("VolumeSize: " + volumeSize + ", ");
-        if (deleteOnTermination != null) sb.append("DeleteOnTermination: " + deleteOnTermination + ", ");
-        if (volumeType != null) sb.append("VolumeType: " + volumeType + ", ");
-        if (iops != null) sb.append("Iops: " + iops + ", ");
+        if (getSnapshotId() != null) sb.append("SnapshotId: " + getSnapshotId() + ", ");
+        if (getVolumeSize() != null) sb.append("VolumeSize: " + getVolumeSize() + ", ");
+        if (isDeleteOnTermination() != null) sb.append("DeleteOnTermination: " + isDeleteOnTermination() + ", ");
+        if (getVolumeType() != null) sb.append("VolumeType: " + getVolumeType() + ", ");
+        if (getIops() != null) sb.append("Iops: " + getIops() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -315,7 +315,7 @@ public class EbsBlockDevice {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof EbsBlockDevice == false) return false;
         EbsBlockDevice other = (EbsBlockDevice)obj;
         

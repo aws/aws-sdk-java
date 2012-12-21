@@ -754,21 +754,21 @@ public class ReservedInstances {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (reservedInstancesId != null) sb.append("ReservedInstancesId: " + reservedInstancesId + ", ");
-        if (instanceType != null) sb.append("InstanceType: " + instanceType + ", ");
-        if (availabilityZone != null) sb.append("AvailabilityZone: " + availabilityZone + ", ");
-        if (start != null) sb.append("Start: " + start + ", ");
-        if (duration != null) sb.append("Duration: " + duration + ", ");
-        if (usagePrice != null) sb.append("UsagePrice: " + usagePrice + ", ");
-        if (fixedPrice != null) sb.append("FixedPrice: " + fixedPrice + ", ");
-        if (instanceCount != null) sb.append("InstanceCount: " + instanceCount + ", ");
-        if (productDescription != null) sb.append("ProductDescription: " + productDescription + ", ");
-        if (state != null) sb.append("State: " + state + ", ");
-        if (tags != null) sb.append("Tags: " + tags + ", ");
-        if (instanceTenancy != null) sb.append("InstanceTenancy: " + instanceTenancy + ", ");
-        if (currencyCode != null) sb.append("CurrencyCode: " + currencyCode + ", ");
-        if (offeringType != null) sb.append("OfferingType: " + offeringType + ", ");
-        if (recurringCharges != null) sb.append("RecurringCharges: " + recurringCharges + ", ");
+        if (getReservedInstancesId() != null) sb.append("ReservedInstancesId: " + getReservedInstancesId() + ", ");
+        if (getInstanceType() != null) sb.append("InstanceType: " + getInstanceType() + ", ");
+        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ", ");
+        if (getStart() != null) sb.append("Start: " + getStart() + ", ");
+        if (getDuration() != null) sb.append("Duration: " + getDuration() + ", ");
+        if (getUsagePrice() != null) sb.append("UsagePrice: " + getUsagePrice() + ", ");
+        if (getFixedPrice() != null) sb.append("FixedPrice: " + getFixedPrice() + ", ");
+        if (getInstanceCount() != null) sb.append("InstanceCount: " + getInstanceCount() + ", ");
+        if (getProductDescription() != null) sb.append("ProductDescription: " + getProductDescription() + ", ");
+        if (getState() != null) sb.append("State: " + getState() + ", ");
+        if (getTags() != null) sb.append("Tags: " + getTags() + ", ");
+        if (getInstanceTenancy() != null) sb.append("InstanceTenancy: " + getInstanceTenancy() + ", ");
+        if (getCurrencyCode() != null) sb.append("CurrencyCode: " + getCurrencyCode() + ", ");
+        if (getOfferingType() != null) sb.append("OfferingType: " + getOfferingType() + ", ");
+        if (getRecurringCharges() != null) sb.append("RecurringCharges: " + getRecurringCharges() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -800,7 +800,7 @@ public class ReservedInstances {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof ReservedInstances == false) return false;
         ReservedInstances other = (ReservedInstances)obj;
         

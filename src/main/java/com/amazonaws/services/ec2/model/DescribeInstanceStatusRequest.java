@@ -362,11 +362,11 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (instanceIds != null) sb.append("InstanceIds: " + instanceIds + ", ");
-        if (filters != null) sb.append("Filters: " + filters + ", ");
-        if (nextToken != null) sb.append("NextToken: " + nextToken + ", ");
-        if (maxResults != null) sb.append("MaxResults: " + maxResults + ", ");
-        if (includeAllInstances != null) sb.append("IncludeAllInstances: " + includeAllInstances + ", ");
+        if (getInstanceIds() != null) sb.append("InstanceIds: " + getInstanceIds() + ", ");
+        if (getFilters() != null) sb.append("Filters: " + getFilters() + ", ");
+        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() + ", ");
+        if (getMaxResults() != null) sb.append("MaxResults: " + getMaxResults() + ", ");
+        if (isIncludeAllInstances() != null) sb.append("IncludeAllInstances: " + isIncludeAllInstances() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -388,7 +388,7 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DescribeInstanceStatusRequest == false) return false;
         DescribeInstanceStatusRequest other = (DescribeInstanceStatusRequest)obj;
         

@@ -72,7 +72,7 @@ public class CreateSnapshotResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (snapshot != null) sb.append("Snapshot: " + snapshot + ", ");
+        if (getSnapshot() != null) sb.append("Snapshot: " + getSnapshot() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -90,7 +90,7 @@ public class CreateSnapshotResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof CreateSnapshotResult == false) return false;
         CreateSnapshotResult other = (CreateSnapshotResult)obj;
         

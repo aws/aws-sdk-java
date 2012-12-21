@@ -702,22 +702,22 @@ public class SpotInstanceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (spotInstanceRequestId != null) sb.append("SpotInstanceRequestId: " + spotInstanceRequestId + ", ");
-        if (spotPrice != null) sb.append("SpotPrice: " + spotPrice + ", ");
-        if (type != null) sb.append("Type: " + type + ", ");
-        if (state != null) sb.append("State: " + state + ", ");
-        if (fault != null) sb.append("Fault: " + fault + ", ");
-        if (status != null) sb.append("Status: " + status + ", ");
-        if (validFrom != null) sb.append("ValidFrom: " + validFrom + ", ");
-        if (validUntil != null) sb.append("ValidUntil: " + validUntil + ", ");
-        if (launchGroup != null) sb.append("LaunchGroup: " + launchGroup + ", ");
-        if (availabilityZoneGroup != null) sb.append("AvailabilityZoneGroup: " + availabilityZoneGroup + ", ");
-        if (launchSpecification != null) sb.append("LaunchSpecification: " + launchSpecification + ", ");
-        if (instanceId != null) sb.append("InstanceId: " + instanceId + ", ");
-        if (createTime != null) sb.append("CreateTime: " + createTime + ", ");
-        if (productDescription != null) sb.append("ProductDescription: " + productDescription + ", ");
-        if (tags != null) sb.append("Tags: " + tags + ", ");
-        if (launchedAvailabilityZone != null) sb.append("LaunchedAvailabilityZone: " + launchedAvailabilityZone + ", ");
+        if (getSpotInstanceRequestId() != null) sb.append("SpotInstanceRequestId: " + getSpotInstanceRequestId() + ", ");
+        if (getSpotPrice() != null) sb.append("SpotPrice: " + getSpotPrice() + ", ");
+        if (getType() != null) sb.append("Type: " + getType() + ", ");
+        if (getState() != null) sb.append("State: " + getState() + ", ");
+        if (getFault() != null) sb.append("Fault: " + getFault() + ", ");
+        if (getStatus() != null) sb.append("Status: " + getStatus() + ", ");
+        if (getValidFrom() != null) sb.append("ValidFrom: " + getValidFrom() + ", ");
+        if (getValidUntil() != null) sb.append("ValidUntil: " + getValidUntil() + ", ");
+        if (getLaunchGroup() != null) sb.append("LaunchGroup: " + getLaunchGroup() + ", ");
+        if (getAvailabilityZoneGroup() != null) sb.append("AvailabilityZoneGroup: " + getAvailabilityZoneGroup() + ", ");
+        if (getLaunchSpecification() != null) sb.append("LaunchSpecification: " + getLaunchSpecification() + ", ");
+        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ", ");
+        if (getCreateTime() != null) sb.append("CreateTime: " + getCreateTime() + ", ");
+        if (getProductDescription() != null) sb.append("ProductDescription: " + getProductDescription() + ", ");
+        if (getTags() != null) sb.append("Tags: " + getTags() + ", ");
+        if (getLaunchedAvailabilityZone() != null) sb.append("LaunchedAvailabilityZone: " + getLaunchedAvailabilityZone() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -750,7 +750,7 @@ public class SpotInstanceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof SpotInstanceRequest == false) return false;
         SpotInstanceRequest other = (SpotInstanceRequest)obj;
         

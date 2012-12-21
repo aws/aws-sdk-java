@@ -67,7 +67,7 @@ public class ImportVolumeResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (conversionTask != null) sb.append("ConversionTask: " + conversionTask + ", ");
+        if (getConversionTask() != null) sb.append("ConversionTask: " + getConversionTask() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -85,7 +85,7 @@ public class ImportVolumeResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof ImportVolumeResult == false) return false;
         ImportVolumeResult other = (ImportVolumeResult)obj;
         

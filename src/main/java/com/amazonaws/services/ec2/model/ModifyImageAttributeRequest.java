@@ -588,15 +588,15 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (imageId != null) sb.append("ImageId: " + imageId + ", ");
-        if (attribute != null) sb.append("Attribute: " + attribute + ", ");
-        if (operationType != null) sb.append("OperationType: " + operationType + ", ");
-        if (userIds != null) sb.append("UserIds: " + userIds + ", ");
-        if (userGroups != null) sb.append("UserGroups: " + userGroups + ", ");
-        if (productCodes != null) sb.append("ProductCodes: " + productCodes + ", ");
-        if (value != null) sb.append("Value: " + value + ", ");
-        if (launchPermission != null) sb.append("LaunchPermission: " + launchPermission + ", ");
-        if (description != null) sb.append("Description: " + description + ", ");
+        if (getImageId() != null) sb.append("ImageId: " + getImageId() + ", ");
+        if (getAttribute() != null) sb.append("Attribute: " + getAttribute() + ", ");
+        if (getOperationType() != null) sb.append("OperationType: " + getOperationType() + ", ");
+        if (getUserIds() != null) sb.append("UserIds: " + getUserIds() + ", ");
+        if (getUserGroups() != null) sb.append("UserGroups: " + getUserGroups() + ", ");
+        if (getProductCodes() != null) sb.append("ProductCodes: " + getProductCodes() + ", ");
+        if (getValue() != null) sb.append("Value: " + getValue() + ", ");
+        if (getLaunchPermission() != null) sb.append("LaunchPermission: " + getLaunchPermission() + ", ");
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -622,7 +622,7 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof ModifyImageAttributeRequest == false) return false;
         ModifyImageAttributeRequest other = (ModifyImageAttributeRequest)obj;
         

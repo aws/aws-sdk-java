@@ -222,8 +222,8 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (keyNames != null) sb.append("KeyNames: " + keyNames + ", ");
-        if (filters != null) sb.append("Filters: " + filters + ", ");
+        if (getKeyNames() != null) sb.append("KeyNames: " + getKeyNames() + ", ");
+        if (getFilters() != null) sb.append("Filters: " + getFilters() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -242,7 +242,7 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DescribeKeyPairsRequest == false) return false;
         DescribeKeyPairsRequest other = (DescribeKeyPairsRequest)obj;
         

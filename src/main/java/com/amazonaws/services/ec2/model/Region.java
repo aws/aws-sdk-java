@@ -111,8 +111,8 @@ public class Region {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (regionName != null) sb.append("RegionName: " + regionName + ", ");
-        if (endpoint != null) sb.append("Endpoint: " + endpoint + ", ");
+        if (getRegionName() != null) sb.append("RegionName: " + getRegionName() + ", ");
+        if (getEndpoint() != null) sb.append("Endpoint: " + getEndpoint() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -131,7 +131,7 @@ public class Region {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof Region == false) return false;
         Region other = (Region)obj;
         

@@ -79,7 +79,7 @@ public class ConfirmProductInstanceResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (ownerId != null) sb.append("OwnerId: " + ownerId + ", ");
+        if (getOwnerId() != null) sb.append("OwnerId: " + getOwnerId() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -97,7 +97,7 @@ public class ConfirmProductInstanceResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof ConfirmProductInstanceResult == false) return false;
         ConfirmProductInstanceResult other = (ConfirmProductInstanceResult)obj;
         

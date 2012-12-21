@@ -111,8 +111,8 @@ public class InstanceMonitoring {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (instanceId != null) sb.append("InstanceId: " + instanceId + ", ");
-        if (monitoring != null) sb.append("Monitoring: " + monitoring + ", ");
+        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ", ");
+        if (getMonitoring() != null) sb.append("Monitoring: " + getMonitoring() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -131,7 +131,7 @@ public class InstanceMonitoring {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof InstanceMonitoring == false) return false;
         InstanceMonitoring other = (InstanceMonitoring)obj;
         

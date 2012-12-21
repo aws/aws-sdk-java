@@ -261,11 +261,11 @@ public class DescribeNetworkInterfaceAttributeResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (networkInterfaceId != null) sb.append("NetworkInterfaceId: " + networkInterfaceId + ", ");
-        if (description != null) sb.append("Description: " + description + ", ");
-        if (sourceDestCheck != null) sb.append("SourceDestCheck: " + sourceDestCheck + ", ");
-        if (groups != null) sb.append("Groups: " + groups + ", ");
-        if (attachment != null) sb.append("Attachment: " + attachment + ", ");
+        if (getNetworkInterfaceId() != null) sb.append("NetworkInterfaceId: " + getNetworkInterfaceId() + ", ");
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ", ");
+        if (isSourceDestCheck() != null) sb.append("SourceDestCheck: " + isSourceDestCheck() + ", ");
+        if (getGroups() != null) sb.append("Groups: " + getGroups() + ", ");
+        if (getAttachment() != null) sb.append("Attachment: " + getAttachment() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -287,7 +287,7 @@ public class DescribeNetworkInterfaceAttributeResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DescribeNetworkInterfaceAttributeResult == false) return false;
         DescribeNetworkInterfaceAttributeResult other = (DescribeNetworkInterfaceAttributeResult)obj;
         

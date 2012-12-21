@@ -49,7 +49,7 @@ public class SetLoadBalancerPoliciesOfListenerResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof SetLoadBalancerPoliciesOfListenerResult == false) return false;
         SetLoadBalancerPoliciesOfListenerResult other = (SetLoadBalancerPoliciesOfListenerResult)obj;
         

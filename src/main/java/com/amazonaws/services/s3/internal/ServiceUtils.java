@@ -217,10 +217,10 @@ public class ServiceUtils {
      * @param destinationFile
      *            The file to store the object's data in.
      * @param performIntegrityCheck
-     *            Boolean valuable to indicate whether do the integrity check or not          
-     *            
+     *            Boolean valuable to indicate whether do the integrity check or not
+     *
      */
-    public static void downloadObjectToFile(S3Object s3Object, File destinationFile,boolean performIntegrityCheck) {
+    public static void downloadObjectToFile(S3Object s3Object, File destinationFile, boolean performIntegrityCheck) {
 
         // attempt to create the parent if it doesn't exist
         File parentDirectory = destinationFile.getParentFile();

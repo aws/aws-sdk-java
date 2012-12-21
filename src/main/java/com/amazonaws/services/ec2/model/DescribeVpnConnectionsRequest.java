@@ -229,8 +229,8 @@ public class DescribeVpnConnectionsRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (vpnConnectionIds != null) sb.append("VpnConnectionIds: " + vpnConnectionIds + ", ");
-        if (filters != null) sb.append("Filters: " + filters + ", ");
+        if (getVpnConnectionIds() != null) sb.append("VpnConnectionIds: " + getVpnConnectionIds() + ", ");
+        if (getFilters() != null) sb.append("Filters: " + getFilters() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -249,7 +249,7 @@ public class DescribeVpnConnectionsRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DescribeVpnConnectionsRequest == false) return false;
         DescribeVpnConnectionsRequest other = (DescribeVpnConnectionsRequest)obj;
         

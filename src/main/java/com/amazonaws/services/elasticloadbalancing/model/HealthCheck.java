@@ -457,11 +457,11 @@ public class HealthCheck {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (target != null) sb.append("Target: " + target + ", ");
-        if (interval != null) sb.append("Interval: " + interval + ", ");
-        if (timeout != null) sb.append("Timeout: " + timeout + ", ");
-        if (unhealthyThreshold != null) sb.append("UnhealthyThreshold: " + unhealthyThreshold + ", ");
-        if (healthyThreshold != null) sb.append("HealthyThreshold: " + healthyThreshold + ", ");
+        if (getTarget() != null) sb.append("Target: " + getTarget() + ", ");
+        if (getInterval() != null) sb.append("Interval: " + getInterval() + ", ");
+        if (getTimeout() != null) sb.append("Timeout: " + getTimeout() + ", ");
+        if (getUnhealthyThreshold() != null) sb.append("UnhealthyThreshold: " + getUnhealthyThreshold() + ", ");
+        if (getHealthyThreshold() != null) sb.append("HealthyThreshold: " + getHealthyThreshold() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -483,7 +483,7 @@ public class HealthCheck {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof HealthCheck == false) return false;
         HealthCheck other = (HealthCheck)obj;
         

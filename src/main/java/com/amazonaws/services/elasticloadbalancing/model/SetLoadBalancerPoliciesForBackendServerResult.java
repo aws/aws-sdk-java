@@ -49,7 +49,7 @@ public class SetLoadBalancerPoliciesForBackendServerResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof SetLoadBalancerPoliciesForBackendServerResult == false) return false;
         SetLoadBalancerPoliciesForBackendServerResult other = (SetLoadBalancerPoliciesForBackendServerResult)obj;
         

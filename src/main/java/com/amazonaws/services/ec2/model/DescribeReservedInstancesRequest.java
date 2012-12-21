@@ -260,9 +260,9 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (reservedInstancesIds != null) sb.append("ReservedInstancesIds: " + reservedInstancesIds + ", ");
-        if (filters != null) sb.append("Filters: " + filters + ", ");
-        if (offeringType != null) sb.append("OfferingType: " + offeringType + ", ");
+        if (getReservedInstancesIds() != null) sb.append("ReservedInstancesIds: " + getReservedInstancesIds() + ", ");
+        if (getFilters() != null) sb.append("Filters: " + getFilters() + ", ");
+        if (getOfferingType() != null) sb.append("OfferingType: " + getOfferingType() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -282,7 +282,7 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DescribeReservedInstancesRequest == false) return false;
         DescribeReservedInstancesRequest other = (DescribeReservedInstancesRequest)obj;
         

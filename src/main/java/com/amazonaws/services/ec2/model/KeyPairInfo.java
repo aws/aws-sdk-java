@@ -114,8 +114,8 @@ public class KeyPairInfo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (keyName != null) sb.append("KeyName: " + keyName + ", ");
-        if (keyFingerprint != null) sb.append("KeyFingerprint: " + keyFingerprint + ", ");
+        if (getKeyName() != null) sb.append("KeyName: " + getKeyName() + ", ");
+        if (getKeyFingerprint() != null) sb.append("KeyFingerprint: " + getKeyFingerprint() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -134,7 +134,7 @@ public class KeyPairInfo {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof KeyPairInfo == false) return false;
         KeyPairInfo other = (KeyPairInfo)obj;
         

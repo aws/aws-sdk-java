@@ -103,8 +103,8 @@ public class DiskImageVolumeDescription {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (size != null) sb.append("Size: " + size + ", ");
-        if (id != null) sb.append("Id: " + id + ", ");
+        if (getSize() != null) sb.append("Size: " + getSize() + ", ");
+        if (getId() != null) sb.append("Id: " + getId() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -123,7 +123,7 @@ public class DiskImageVolumeDescription {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DiskImageVolumeDescription == false) return false;
         DiskImageVolumeDescription other = (DiskImageVolumeDescription)obj;
         

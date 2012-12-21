@@ -330,12 +330,12 @@ public class CustomerGateway {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (customerGatewayId != null) sb.append("CustomerGatewayId: " + customerGatewayId + ", ");
-        if (state != null) sb.append("State: " + state + ", ");
-        if (type != null) sb.append("Type: " + type + ", ");
-        if (ipAddress != null) sb.append("IpAddress: " + ipAddress + ", ");
-        if (bgpAsn != null) sb.append("BgpAsn: " + bgpAsn + ", ");
-        if (tags != null) sb.append("Tags: " + tags + ", ");
+        if (getCustomerGatewayId() != null) sb.append("CustomerGatewayId: " + getCustomerGatewayId() + ", ");
+        if (getState() != null) sb.append("State: " + getState() + ", ");
+        if (getType() != null) sb.append("Type: " + getType() + ", ");
+        if (getIpAddress() != null) sb.append("IpAddress: " + getIpAddress() + ", ");
+        if (getBgpAsn() != null) sb.append("BgpAsn: " + getBgpAsn() + ", ");
+        if (getTags() != null) sb.append("Tags: " + getTags() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -358,7 +358,7 @@ public class CustomerGateway {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof CustomerGateway == false) return false;
         CustomerGateway other = (CustomerGateway)obj;
         

@@ -107,7 +107,7 @@ public class RequestSpotInstancesResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (spotInstanceRequests != null) sb.append("SpotInstanceRequests: " + spotInstanceRequests + ", ");
+        if (getSpotInstanceRequests() != null) sb.append("SpotInstanceRequests: " + getSpotInstanceRequests() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -125,7 +125,7 @@ public class RequestSpotInstancesResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof RequestSpotInstancesResult == false) return false;
         RequestSpotInstancesResult other = (RequestSpotInstancesResult)obj;
         

@@ -116,7 +116,7 @@ public class StopInstancesResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (stoppingInstances != null) sb.append("StoppingInstances: " + stoppingInstances + ", ");
+        if (getStoppingInstances() != null) sb.append("StoppingInstances: " + getStoppingInstances() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -134,7 +134,7 @@ public class StopInstancesResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof StopInstancesResult == false) return false;
         StopInstancesResult other = (StopInstancesResult)obj;
         

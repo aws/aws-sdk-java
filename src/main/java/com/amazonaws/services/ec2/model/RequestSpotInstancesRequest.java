@@ -513,14 +513,14 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (spotPrice != null) sb.append("SpotPrice: " + spotPrice + ", ");
-        if (instanceCount != null) sb.append("InstanceCount: " + instanceCount + ", ");
-        if (type != null) sb.append("Type: " + type + ", ");
-        if (validFrom != null) sb.append("ValidFrom: " + validFrom + ", ");
-        if (validUntil != null) sb.append("ValidUntil: " + validUntil + ", ");
-        if (launchGroup != null) sb.append("LaunchGroup: " + launchGroup + ", ");
-        if (availabilityZoneGroup != null) sb.append("AvailabilityZoneGroup: " + availabilityZoneGroup + ", ");
-        if (launchSpecification != null) sb.append("LaunchSpecification: " + launchSpecification + ", ");
+        if (getSpotPrice() != null) sb.append("SpotPrice: " + getSpotPrice() + ", ");
+        if (getInstanceCount() != null) sb.append("InstanceCount: " + getInstanceCount() + ", ");
+        if (getType() != null) sb.append("Type: " + getType() + ", ");
+        if (getValidFrom() != null) sb.append("ValidFrom: " + getValidFrom() + ", ");
+        if (getValidUntil() != null) sb.append("ValidUntil: " + getValidUntil() + ", ");
+        if (getLaunchGroup() != null) sb.append("LaunchGroup: " + getLaunchGroup() + ", ");
+        if (getAvailabilityZoneGroup() != null) sb.append("AvailabilityZoneGroup: " + getAvailabilityZoneGroup() + ", ");
+        if (getLaunchSpecification() != null) sb.append("LaunchSpecification: " + getLaunchSpecification() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -545,7 +545,7 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof RequestSpotInstancesRequest == false) return false;
         RequestSpotInstancesRequest other = (RequestSpotInstancesRequest)obj;
         

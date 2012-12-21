@@ -191,8 +191,8 @@ public class CreateLoadBalancerListenersRequest extends AmazonWebServiceRequest 
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (loadBalancerName != null) sb.append("LoadBalancerName: " + loadBalancerName + ", ");
-        if (listeners != null) sb.append("Listeners: " + listeners + ", ");
+        if (getLoadBalancerName() != null) sb.append("LoadBalancerName: " + getLoadBalancerName() + ", ");
+        if (getListeners() != null) sb.append("Listeners: " + getListeners() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -211,7 +211,7 @@ public class CreateLoadBalancerListenersRequest extends AmazonWebServiceRequest 
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof CreateLoadBalancerListenersRequest == false) return false;
         CreateLoadBalancerListenersRequest other = (CreateLoadBalancerListenersRequest)obj;
         

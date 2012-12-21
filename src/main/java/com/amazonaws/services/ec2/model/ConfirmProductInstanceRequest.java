@@ -141,8 +141,8 @@ public class ConfirmProductInstanceRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (productCode != null) sb.append("ProductCode: " + productCode + ", ");
-        if (instanceId != null) sb.append("InstanceId: " + instanceId + ", ");
+        if (getProductCode() != null) sb.append("ProductCode: " + getProductCode() + ", ");
+        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -161,7 +161,7 @@ public class ConfirmProductInstanceRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof ConfirmProductInstanceRequest == false) return false;
         ConfirmProductInstanceRequest other = (ConfirmProductInstanceRequest)obj;
         

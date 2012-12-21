@@ -224,10 +224,10 @@ public class AvailabilityZone {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (zoneName != null) sb.append("ZoneName: " + zoneName + ", ");
-        if (state != null) sb.append("State: " + state + ", ");
-        if (regionName != null) sb.append("RegionName: " + regionName + ", ");
-        if (messages != null) sb.append("Messages: " + messages + ", ");
+        if (getZoneName() != null) sb.append("ZoneName: " + getZoneName() + ", ");
+        if (getState() != null) sb.append("State: " + getState() + ", ");
+        if (getRegionName() != null) sb.append("RegionName: " + getRegionName() + ", ");
+        if (getMessages() != null) sb.append("Messages: " + getMessages() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -248,7 +248,7 @@ public class AvailabilityZone {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof AvailabilityZone == false) return false;
         AvailabilityZone other = (AvailabilityZone)obj;
         

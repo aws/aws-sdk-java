@@ -72,7 +72,7 @@ public class AttachVpnGatewayResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (vpcAttachement != null) sb.append("VpcAttachement: " + vpcAttachement + ", ");
+        if (getVpcAttachement() != null) sb.append("VpcAttachement: " + getVpcAttachement() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -90,7 +90,7 @@ public class AttachVpnGatewayResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof AttachVpnGatewayResult == false) return false;
         AttachVpnGatewayResult other = (AttachVpnGatewayResult)obj;
         

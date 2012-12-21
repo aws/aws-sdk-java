@@ -292,9 +292,9 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (publicIps != null) sb.append("PublicIps: " + publicIps + ", ");
-        if (filters != null) sb.append("Filters: " + filters + ", ");
-        if (allocationIds != null) sb.append("AllocationIds: " + allocationIds + ", ");
+        if (getPublicIps() != null) sb.append("PublicIps: " + getPublicIps() + ", ");
+        if (getFilters() != null) sb.append("Filters: " + getFilters() + ", ");
+        if (getAllocationIds() != null) sb.append("AllocationIds: " + getAllocationIds() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -314,7 +314,7 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DescribeAddressesRequest == false) return false;
         DescribeAddressesRequest other = (DescribeAddressesRequest)obj;
         

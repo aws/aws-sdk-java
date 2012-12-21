@@ -58,7 +58,7 @@ public class DeleteSpotDatafeedSubscriptionRequest extends AmazonWebServiceReque
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DeleteSpotDatafeedSubscriptionRequest == false) return false;
         DeleteSpotDatafeedSubscriptionRequest other = (DeleteSpotDatafeedSubscriptionRequest)obj;
         

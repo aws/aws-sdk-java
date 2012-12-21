@@ -107,7 +107,7 @@ public class DescribeLoadBalancerPoliciesResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (policyDescriptions != null) sb.append("PolicyDescriptions: " + policyDescriptions + ", ");
+        if (getPolicyDescriptions() != null) sb.append("PolicyDescriptions: " + getPolicyDescriptions() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -125,7 +125,7 @@ public class DescribeLoadBalancerPoliciesResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DescribeLoadBalancerPoliciesResult == false) return false;
         DescribeLoadBalancerPoliciesResult other = (DescribeLoadBalancerPoliciesResult)obj;
         

@@ -323,12 +323,12 @@ public class Vpc {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (vpcId != null) sb.append("VpcId: " + vpcId + ", ");
-        if (state != null) sb.append("State: " + state + ", ");
-        if (cidrBlock != null) sb.append("CidrBlock: " + cidrBlock + ", ");
-        if (dhcpOptionsId != null) sb.append("DhcpOptionsId: " + dhcpOptionsId + ", ");
-        if (tags != null) sb.append("Tags: " + tags + ", ");
-        if (instanceTenancy != null) sb.append("InstanceTenancy: " + instanceTenancy + ", ");
+        if (getVpcId() != null) sb.append("VpcId: " + getVpcId() + ", ");
+        if (getState() != null) sb.append("State: " + getState() + ", ");
+        if (getCidrBlock() != null) sb.append("CidrBlock: " + getCidrBlock() + ", ");
+        if (getDhcpOptionsId() != null) sb.append("DhcpOptionsId: " + getDhcpOptionsId() + ", ");
+        if (getTags() != null) sb.append("Tags: " + getTags() + ", ");
+        if (getInstanceTenancy() != null) sb.append("InstanceTenancy: " + getInstanceTenancy() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -351,7 +351,7 @@ public class Vpc {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof Vpc == false) return false;
         Vpc other = (Vpc)obj;
         

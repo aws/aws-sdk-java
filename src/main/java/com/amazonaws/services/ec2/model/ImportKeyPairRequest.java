@@ -153,8 +153,8 @@ public class ImportKeyPairRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (keyName != null) sb.append("KeyName: " + keyName + ", ");
-        if (publicKeyMaterial != null) sb.append("PublicKeyMaterial: " + publicKeyMaterial + ", ");
+        if (getKeyName() != null) sb.append("KeyName: " + getKeyName() + ", ");
+        if (getPublicKeyMaterial() != null) sb.append("PublicKeyMaterial: " + getPublicKeyMaterial() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -173,7 +173,7 @@ public class ImportKeyPairRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof ImportKeyPairRequest == false) return false;
         ImportKeyPairRequest other = (ImportKeyPairRequest)obj;
         

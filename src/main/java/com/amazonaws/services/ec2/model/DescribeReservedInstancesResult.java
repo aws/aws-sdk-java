@@ -107,7 +107,7 @@ public class DescribeReservedInstancesResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (reservedInstances != null) sb.append("ReservedInstances: " + reservedInstances + ", ");
+        if (getReservedInstances() != null) sb.append("ReservedInstances: " + getReservedInstances() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -125,7 +125,7 @@ public class DescribeReservedInstancesResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DescribeReservedInstancesResult == false) return false;
         DescribeReservedInstancesResult other = (DescribeReservedInstancesResult)obj;
         

@@ -211,9 +211,9 @@ public class SetLoadBalancerListenerSSLCertificateRequest extends AmazonWebServi
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (loadBalancerName != null) sb.append("LoadBalancerName: " + loadBalancerName + ", ");
-        if (loadBalancerPort != null) sb.append("LoadBalancerPort: " + loadBalancerPort + ", ");
-        if (sSLCertificateId != null) sb.append("SSLCertificateId: " + sSLCertificateId + ", ");
+        if (getLoadBalancerName() != null) sb.append("LoadBalancerName: " + getLoadBalancerName() + ", ");
+        if (getLoadBalancerPort() != null) sb.append("LoadBalancerPort: " + getLoadBalancerPort() + ", ");
+        if (getSSLCertificateId() != null) sb.append("SSLCertificateId: " + getSSLCertificateId() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -233,7 +233,7 @@ public class SetLoadBalancerListenerSSLCertificateRequest extends AmazonWebServi
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof SetLoadBalancerListenerSSLCertificateRequest == false) return false;
         SetLoadBalancerListenerSSLCertificateRequest other = (SetLoadBalancerListenerSSLCertificateRequest)obj;
         

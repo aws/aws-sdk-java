@@ -131,7 +131,7 @@ public class UnmonitorInstancesRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (instanceIds != null) sb.append("InstanceIds: " + instanceIds + ", ");
+        if (getInstanceIds() != null) sb.append("InstanceIds: " + getInstanceIds() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -149,7 +149,7 @@ public class UnmonitorInstancesRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof UnmonitorInstancesRequest == false) return false;
         UnmonitorInstancesRequest other = (UnmonitorInstancesRequest)obj;
         

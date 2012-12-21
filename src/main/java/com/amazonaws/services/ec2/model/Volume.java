@@ -588,16 +588,16 @@ public class Volume {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (volumeId != null) sb.append("VolumeId: " + volumeId + ", ");
-        if (size != null) sb.append("Size: " + size + ", ");
-        if (snapshotId != null) sb.append("SnapshotId: " + snapshotId + ", ");
-        if (availabilityZone != null) sb.append("AvailabilityZone: " + availabilityZone + ", ");
-        if (state != null) sb.append("State: " + state + ", ");
-        if (createTime != null) sb.append("CreateTime: " + createTime + ", ");
-        if (attachments != null) sb.append("Attachments: " + attachments + ", ");
-        if (tags != null) sb.append("Tags: " + tags + ", ");
-        if (volumeType != null) sb.append("VolumeType: " + volumeType + ", ");
-        if (iops != null) sb.append("Iops: " + iops + ", ");
+        if (getVolumeId() != null) sb.append("VolumeId: " + getVolumeId() + ", ");
+        if (getSize() != null) sb.append("Size: " + getSize() + ", ");
+        if (getSnapshotId() != null) sb.append("SnapshotId: " + getSnapshotId() + ", ");
+        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ", ");
+        if (getState() != null) sb.append("State: " + getState() + ", ");
+        if (getCreateTime() != null) sb.append("CreateTime: " + getCreateTime() + ", ");
+        if (getAttachments() != null) sb.append("Attachments: " + getAttachments() + ", ");
+        if (getTags() != null) sb.append("Tags: " + getTags() + ", ");
+        if (getVolumeType() != null) sb.append("VolumeType: " + getVolumeType() + ", ");
+        if (getIops() != null) sb.append("Iops: " + getIops() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -624,7 +624,7 @@ public class Volume {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof Volume == false) return false;
         Volume other = (Volume)obj;
         

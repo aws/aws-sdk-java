@@ -318,13 +318,13 @@ public class ConversionTask {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (conversionTaskId != null) sb.append("ConversionTaskId: " + conversionTaskId + ", ");
-        if (expirationTime != null) sb.append("ExpirationTime: " + expirationTime + ", ");
-        if (importInstance != null) sb.append("ImportInstance: " + importInstance + ", ");
-        if (importVolume != null) sb.append("ImportVolume: " + importVolume + ", ");
-        if (state != null) sb.append("State: " + state + ", ");
-        if (statusMessage != null) sb.append("StatusMessage: " + statusMessage + ", ");
-        if (tags != null) sb.append("Tags: " + tags + ", ");
+        if (getConversionTaskId() != null) sb.append("ConversionTaskId: " + getConversionTaskId() + ", ");
+        if (getExpirationTime() != null) sb.append("ExpirationTime: " + getExpirationTime() + ", ");
+        if (getImportInstance() != null) sb.append("ImportInstance: " + getImportInstance() + ", ");
+        if (getImportVolume() != null) sb.append("ImportVolume: " + getImportVolume() + ", ");
+        if (getState() != null) sb.append("State: " + getState() + ", ");
+        if (getStatusMessage() != null) sb.append("StatusMessage: " + getStatusMessage() + ", ");
+        if (getTags() != null) sb.append("Tags: " + getTags() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -348,7 +348,7 @@ public class ConversionTask {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof ConversionTask == false) return false;
         ConversionTask other = (ConversionTask)obj;
         

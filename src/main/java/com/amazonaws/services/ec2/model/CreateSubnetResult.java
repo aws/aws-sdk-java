@@ -72,7 +72,7 @@ public class CreateSubnetResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (subnet != null) sb.append("Subnet: " + subnet + ", ");
+        if (getSubnet() != null) sb.append("Subnet: " + getSubnet() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -90,7 +90,7 @@ public class CreateSubnetResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof CreateSubnetResult == false) return false;
         CreateSubnetResult other = (CreateSubnetResult)obj;
         

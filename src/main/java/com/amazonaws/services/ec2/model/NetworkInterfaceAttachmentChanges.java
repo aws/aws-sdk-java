@@ -112,8 +112,8 @@ public class NetworkInterfaceAttachmentChanges {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (attachmentId != null) sb.append("AttachmentId: " + attachmentId + ", ");
-        if (deleteOnTermination != null) sb.append("DeleteOnTermination: " + deleteOnTermination + ", ");
+        if (getAttachmentId() != null) sb.append("AttachmentId: " + getAttachmentId() + ", ");
+        if (isDeleteOnTermination() != null) sb.append("DeleteOnTermination: " + isDeleteOnTermination() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -132,7 +132,7 @@ public class NetworkInterfaceAttachmentChanges {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof NetworkInterfaceAttachmentChanges == false) return false;
         NetworkInterfaceAttachmentChanges other = (NetworkInterfaceAttachmentChanges)obj;
         

@@ -123,8 +123,8 @@ public class ReplaceNetworkAclAssociationRequest extends AmazonWebServiceRequest
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (associationId != null) sb.append("AssociationId: " + associationId + ", ");
-        if (networkAclId != null) sb.append("NetworkAclId: " + networkAclId + ", ");
+        if (getAssociationId() != null) sb.append("AssociationId: " + getAssociationId() + ", ");
+        if (getNetworkAclId() != null) sb.append("NetworkAclId: " + getNetworkAclId() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -143,7 +143,7 @@ public class ReplaceNetworkAclAssociationRequest extends AmazonWebServiceRequest
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof ReplaceNetworkAclAssociationRequest == false) return false;
         ReplaceNetworkAclAssociationRequest other = (ReplaceNetworkAclAssociationRequest)obj;
         

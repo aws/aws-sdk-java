@@ -458,13 +458,13 @@ public class RouteTable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (routeTableId != null) sb.append("RouteTableId: " + routeTableId + ", ");
-        if (vpcId != null) sb.append("VpcId: " + vpcId + ", ");
-        if (routes != null) sb.append("Routes: " + routes + ", ");
-        if (associations != null) sb.append("Associations: " + associations + ", ");
-        if (tags != null) sb.append("Tags: " + tags + ", ");
-        if (propagatingVgws != null) sb.append("PropagatingVgws: " + propagatingVgws + ", ");
-        if (propagatedRoutes != null) sb.append("PropagatedRoutes: " + propagatedRoutes + ", ");
+        if (getRouteTableId() != null) sb.append("RouteTableId: " + getRouteTableId() + ", ");
+        if (getVpcId() != null) sb.append("VpcId: " + getVpcId() + ", ");
+        if (getRoutes() != null) sb.append("Routes: " + getRoutes() + ", ");
+        if (getAssociations() != null) sb.append("Associations: " + getAssociations() + ", ");
+        if (getTags() != null) sb.append("Tags: " + getTags() + ", ");
+        if (getPropagatingVgws() != null) sb.append("PropagatingVgws: " + getPropagatingVgws() + ", ");
+        if (getPropagatedRoutes() != null) sb.append("PropagatedRoutes: " + getPropagatedRoutes() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -488,7 +488,7 @@ public class RouteTable {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof RouteTable == false) return false;
         RouteTable other = (RouteTable)obj;
         

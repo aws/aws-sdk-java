@@ -292,13 +292,13 @@ public class NetworkInterfaceAttachment {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (attachmentId != null) sb.append("AttachmentId: " + attachmentId + ", ");
-        if (instanceId != null) sb.append("InstanceId: " + instanceId + ", ");
-        if (instanceOwnerId != null) sb.append("InstanceOwnerId: " + instanceOwnerId + ", ");
-        if (deviceIndex != null) sb.append("DeviceIndex: " + deviceIndex + ", ");
-        if (status != null) sb.append("Status: " + status + ", ");
-        if (attachTime != null) sb.append("AttachTime: " + attachTime + ", ");
-        if (deleteOnTermination != null) sb.append("DeleteOnTermination: " + deleteOnTermination + ", ");
+        if (getAttachmentId() != null) sb.append("AttachmentId: " + getAttachmentId() + ", ");
+        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ", ");
+        if (getInstanceOwnerId() != null) sb.append("InstanceOwnerId: " + getInstanceOwnerId() + ", ");
+        if (getDeviceIndex() != null) sb.append("DeviceIndex: " + getDeviceIndex() + ", ");
+        if (getStatus() != null) sb.append("Status: " + getStatus() + ", ");
+        if (getAttachTime() != null) sb.append("AttachTime: " + getAttachTime() + ", ");
+        if (isDeleteOnTermination() != null) sb.append("DeleteOnTermination: " + isDeleteOnTermination() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -322,7 +322,7 @@ public class NetworkInterfaceAttachment {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof NetworkInterfaceAttachment == false) return false;
         NetworkInterfaceAttachment other = (NetworkInterfaceAttachment)obj;
         

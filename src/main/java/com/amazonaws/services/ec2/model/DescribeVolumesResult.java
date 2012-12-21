@@ -107,7 +107,7 @@ public class DescribeVolumesResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (volumes != null) sb.append("Volumes: " + volumes + ", ");
+        if (getVolumes() != null) sb.append("Volumes: " + getVolumes() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -125,7 +125,7 @@ public class DescribeVolumesResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DescribeVolumesResult == false) return false;
         DescribeVolumesResult other = (DescribeVolumesResult)obj;
         

@@ -79,7 +79,7 @@ public class DetachVolumeResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (attachment != null) sb.append("Attachment: " + attachment + ", ");
+        if (getAttachment() != null) sb.append("Attachment: " + getAttachment() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -97,7 +97,7 @@ public class DetachVolumeResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DetachVolumeResult == false) return false;
         DetachVolumeResult other = (DetachVolumeResult)obj;
         

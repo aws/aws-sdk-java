@@ -67,7 +67,7 @@ public class CreateNetworkInterfaceResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (networkInterface != null) sb.append("NetworkInterface: " + networkInterface + ", ");
+        if (getNetworkInterface() != null) sb.append("NetworkInterface: " + getNetworkInterface() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -85,7 +85,7 @@ public class CreateNetworkInterfaceResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof CreateNetworkInterfaceResult == false) return false;
         CreateNetworkInterfaceResult other = (CreateNetworkInterfaceResult)obj;
         

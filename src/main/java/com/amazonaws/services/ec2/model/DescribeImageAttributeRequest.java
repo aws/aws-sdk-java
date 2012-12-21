@@ -153,8 +153,8 @@ public class DescribeImageAttributeRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (imageId != null) sb.append("ImageId: " + imageId + ", ");
-        if (attribute != null) sb.append("Attribute: " + attribute + ", ");
+        if (getImageId() != null) sb.append("ImageId: " + getImageId() + ", ");
+        if (getAttribute() != null) sb.append("Attribute: " + getAttribute() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -173,7 +173,7 @@ public class DescribeImageAttributeRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DescribeImageAttributeRequest == false) return false;
         DescribeImageAttributeRequest other = (DescribeImageAttributeRequest)obj;
         

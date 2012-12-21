@@ -107,8 +107,8 @@ public class EnableVgwRoutePropagationRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (routeTableId != null) sb.append("RouteTableId: " + routeTableId + ", ");
-        if (gatewayId != null) sb.append("GatewayId: " + gatewayId + ", ");
+        if (getRouteTableId() != null) sb.append("RouteTableId: " + getRouteTableId() + ", ");
+        if (getGatewayId() != null) sb.append("GatewayId: " + getGatewayId() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -127,7 +127,7 @@ public class EnableVgwRoutePropagationRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof EnableVgwRoutePropagationRequest == false) return false;
         EnableVgwRoutePropagationRequest other = (EnableVgwRoutePropagationRequest)obj;
         

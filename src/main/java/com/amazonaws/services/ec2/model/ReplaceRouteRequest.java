@@ -245,11 +245,11 @@ public class ReplaceRouteRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (routeTableId != null) sb.append("RouteTableId: " + routeTableId + ", ");
-        if (destinationCidrBlock != null) sb.append("DestinationCidrBlock: " + destinationCidrBlock + ", ");
-        if (gatewayId != null) sb.append("GatewayId: " + gatewayId + ", ");
-        if (instanceId != null) sb.append("InstanceId: " + instanceId + ", ");
-        if (networkInterfaceId != null) sb.append("NetworkInterfaceId: " + networkInterfaceId + ", ");
+        if (getRouteTableId() != null) sb.append("RouteTableId: " + getRouteTableId() + ", ");
+        if (getDestinationCidrBlock() != null) sb.append("DestinationCidrBlock: " + getDestinationCidrBlock() + ", ");
+        if (getGatewayId() != null) sb.append("GatewayId: " + getGatewayId() + ", ");
+        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ", ");
+        if (getNetworkInterfaceId() != null) sb.append("NetworkInterfaceId: " + getNetworkInterfaceId() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -271,7 +271,7 @@ public class ReplaceRouteRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof ReplaceRouteRequest == false) return false;
         ReplaceRouteRequest other = (ReplaceRouteRequest)obj;
         

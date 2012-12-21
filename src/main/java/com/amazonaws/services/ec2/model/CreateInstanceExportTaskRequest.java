@@ -228,10 +228,10 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (description != null) sb.append("Description: " + description + ", ");
-        if (instanceId != null) sb.append("InstanceId: " + instanceId + ", ");
-        if (targetEnvironment != null) sb.append("TargetEnvironment: " + targetEnvironment + ", ");
-        if (exportToS3Task != null) sb.append("ExportToS3Task: " + exportToS3Task + ", ");
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ", ");
+        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ", ");
+        if (getTargetEnvironment() != null) sb.append("TargetEnvironment: " + getTargetEnvironment() + ", ");
+        if (getExportToS3Task() != null) sb.append("ExportToS3Task: " + getExportToS3Task() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -252,7 +252,7 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof CreateInstanceExportTaskRequest == false) return false;
         CreateInstanceExportTaskRequest other = (CreateInstanceExportTaskRequest)obj;
         

@@ -148,8 +148,8 @@ public class DescribeSpotPriceHistoryResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (spotPriceHistory != null) sb.append("SpotPriceHistory: " + spotPriceHistory + ", ");
-        if (nextToken != null) sb.append("NextToken: " + nextToken + ", ");
+        if (getSpotPriceHistory() != null) sb.append("SpotPriceHistory: " + getSpotPriceHistory() + ", ");
+        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -168,7 +168,7 @@ public class DescribeSpotPriceHistoryResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DescribeSpotPriceHistoryResult == false) return false;
         DescribeSpotPriceHistoryResult other = (DescribeSpotPriceHistoryResult)obj;
         

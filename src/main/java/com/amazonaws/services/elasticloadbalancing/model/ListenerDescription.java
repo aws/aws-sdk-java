@@ -161,8 +161,8 @@ public class ListenerDescription {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (listener != null) sb.append("Listener: " + listener + ", ");
-        if (policyNames != null) sb.append("PolicyNames: " + policyNames + ", ");
+        if (getListener() != null) sb.append("Listener: " + getListener() + ", ");
+        if (getPolicyNames() != null) sb.append("PolicyNames: " + getPolicyNames() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -181,7 +181,7 @@ public class ListenerDescription {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof ListenerDescription == false) return false;
         ListenerDescription other = (ListenerDescription)obj;
         

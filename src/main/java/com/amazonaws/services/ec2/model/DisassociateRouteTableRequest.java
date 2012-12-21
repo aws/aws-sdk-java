@@ -88,7 +88,7 @@ public class DisassociateRouteTableRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (associationId != null) sb.append("AssociationId: " + associationId + ", ");
+        if (getAssociationId() != null) sb.append("AssociationId: " + getAssociationId() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -106,7 +106,7 @@ public class DisassociateRouteTableRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DisassociateRouteTableRequest == false) return false;
         DisassociateRouteTableRequest other = (DisassociateRouteTableRequest)obj;
         

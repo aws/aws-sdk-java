@@ -111,8 +111,8 @@ public class VpcAttachment {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (vpcId != null) sb.append("VpcId: " + vpcId + ", ");
-        if (state != null) sb.append("State: " + state + ", ");
+        if (getVpcId() != null) sb.append("VpcId: " + getVpcId() + ", ");
+        if (getState() != null) sb.append("State: " + getState() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -131,7 +131,7 @@ public class VpcAttachment {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof VpcAttachment == false) return false;
         VpcAttachment other = (VpcAttachment)obj;
         

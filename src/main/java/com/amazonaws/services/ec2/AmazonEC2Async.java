@@ -8342,6 +8342,49 @@ public interface AmazonEC2Async extends AmazonEC2 {
                     throws AmazonServiceException, AmazonClientException;
 
     /**
+     *
+     * @param copySnapshotRequest Container for the necessary parameters to
+     *           execute the CopySnapshot operation on AmazonEC2.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CopySnapshot service method, as returned by AmazonEC2.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<CopySnapshotResult> copySnapshotAsync(CopySnapshotRequest copySnapshotRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     *
+     * @param copySnapshotRequest Container for the necessary parameters to
+     *           execute the CopySnapshot operation on AmazonEC2.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CopySnapshot service method, as returned by AmazonEC2.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<CopySnapshotResult> copySnapshotAsync(CopySnapshotRequest copySnapshotRequest,
+            AsyncHandler<CopySnapshotRequest, CopySnapshotResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException;
+
+    /**
      * <p>
      * The AllocateAddress operation acquires an elastic IP address for use
      * with your account.

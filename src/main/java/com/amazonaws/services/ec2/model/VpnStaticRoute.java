@@ -140,9 +140,9 @@ public class VpnStaticRoute {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (destinationCidrBlock != null) sb.append("DestinationCidrBlock: " + destinationCidrBlock + ", ");
-        if (source != null) sb.append("Source: " + source + ", ");
-        if (state != null) sb.append("State: " + state + ", ");
+        if (getDestinationCidrBlock() != null) sb.append("DestinationCidrBlock: " + getDestinationCidrBlock() + ", ");
+        if (getSource() != null) sb.append("Source: " + getSource() + ", ");
+        if (getState() != null) sb.append("State: " + getState() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -162,7 +162,7 @@ public class VpnStaticRoute {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof VpnStaticRoute == false) return false;
         VpnStaticRoute other = (VpnStaticRoute)obj;
         

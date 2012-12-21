@@ -116,8 +116,8 @@ public class DetachNetworkInterfaceRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (attachmentId != null) sb.append("AttachmentId: " + attachmentId + ", ");
-        if (force != null) sb.append("Force: " + force + ", ");
+        if (getAttachmentId() != null) sb.append("AttachmentId: " + getAttachmentId() + ", ");
+        if (isForce() != null) sb.append("Force: " + isForce() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -136,7 +136,7 @@ public class DetachNetworkInterfaceRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DetachNetworkInterfaceRequest == false) return false;
         DetachNetworkInterfaceRequest other = (DetachNetworkInterfaceRequest)obj;
         

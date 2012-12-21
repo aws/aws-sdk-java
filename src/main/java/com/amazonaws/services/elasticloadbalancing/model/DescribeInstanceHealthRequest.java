@@ -182,8 +182,8 @@ public class DescribeInstanceHealthRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (loadBalancerName != null) sb.append("LoadBalancerName: " + loadBalancerName + ", ");
-        if (instances != null) sb.append("Instances: " + instances + ", ");
+        if (getLoadBalancerName() != null) sb.append("LoadBalancerName: " + getLoadBalancerName() + ", ");
+        if (getInstances() != null) sb.append("Instances: " + getInstances() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -202,7 +202,7 @@ public class DescribeInstanceHealthRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DescribeInstanceHealthRequest == false) return false;
         DescribeInstanceHealthRequest other = (DescribeInstanceHealthRequest)obj;
         

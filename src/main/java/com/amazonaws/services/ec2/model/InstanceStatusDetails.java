@@ -139,9 +139,9 @@ public class InstanceStatusDetails {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (name != null) sb.append("Name: " + name + ", ");
-        if (status != null) sb.append("Status: " + status + ", ");
-        if (impairedSince != null) sb.append("ImpairedSince: " + impairedSince + ", ");
+        if (getName() != null) sb.append("Name: " + getName() + ", ");
+        if (getStatus() != null) sb.append("Status: " + getStatus() + ", ");
+        if (getImpairedSince() != null) sb.append("ImpairedSince: " + getImpairedSince() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -161,7 +161,7 @@ public class InstanceStatusDetails {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof InstanceStatusDetails == false) return false;
         InstanceStatusDetails other = (InstanceStatusDetails)obj;
         

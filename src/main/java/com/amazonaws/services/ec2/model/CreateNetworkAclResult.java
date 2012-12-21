@@ -67,7 +67,7 @@ public class CreateNetworkAclResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (networkAcl != null) sb.append("NetworkAcl: " + networkAcl + ", ");
+        if (getNetworkAcl() != null) sb.append("NetworkAcl: " + getNetworkAcl() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -85,7 +85,7 @@ public class CreateNetworkAclResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof CreateNetworkAclResult == false) return false;
         CreateNetworkAclResult other = (CreateNetworkAclResult)obj;
         

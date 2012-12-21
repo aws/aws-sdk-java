@@ -1031,22 +1031,22 @@ public class LoadBalancerDescription {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (loadBalancerName != null) sb.append("LoadBalancerName: " + loadBalancerName + ", ");
-        if (dNSName != null) sb.append("DNSName: " + dNSName + ", ");
-        if (canonicalHostedZoneName != null) sb.append("CanonicalHostedZoneName: " + canonicalHostedZoneName + ", ");
-        if (canonicalHostedZoneNameID != null) sb.append("CanonicalHostedZoneNameID: " + canonicalHostedZoneNameID + ", ");
-        if (listenerDescriptions != null) sb.append("ListenerDescriptions: " + listenerDescriptions + ", ");
-        if (policies != null) sb.append("Policies: " + policies + ", ");
-        if (backendServerDescriptions != null) sb.append("BackendServerDescriptions: " + backendServerDescriptions + ", ");
-        if (availabilityZones != null) sb.append("AvailabilityZones: " + availabilityZones + ", ");
-        if (subnets != null) sb.append("Subnets: " + subnets + ", ");
-        if (vPCId != null) sb.append("VPCId: " + vPCId + ", ");
-        if (instances != null) sb.append("Instances: " + instances + ", ");
-        if (healthCheck != null) sb.append("HealthCheck: " + healthCheck + ", ");
-        if (sourceSecurityGroup != null) sb.append("SourceSecurityGroup: " + sourceSecurityGroup + ", ");
-        if (securityGroups != null) sb.append("SecurityGroups: " + securityGroups + ", ");
-        if (createdTime != null) sb.append("CreatedTime: " + createdTime + ", ");
-        if (scheme != null) sb.append("Scheme: " + scheme + ", ");
+        if (getLoadBalancerName() != null) sb.append("LoadBalancerName: " + getLoadBalancerName() + ", ");
+        if (getDNSName() != null) sb.append("DNSName: " + getDNSName() + ", ");
+        if (getCanonicalHostedZoneName() != null) sb.append("CanonicalHostedZoneName: " + getCanonicalHostedZoneName() + ", ");
+        if (getCanonicalHostedZoneNameID() != null) sb.append("CanonicalHostedZoneNameID: " + getCanonicalHostedZoneNameID() + ", ");
+        if (getListenerDescriptions() != null) sb.append("ListenerDescriptions: " + getListenerDescriptions() + ", ");
+        if (getPolicies() != null) sb.append("Policies: " + getPolicies() + ", ");
+        if (getBackendServerDescriptions() != null) sb.append("BackendServerDescriptions: " + getBackendServerDescriptions() + ", ");
+        if (getAvailabilityZones() != null) sb.append("AvailabilityZones: " + getAvailabilityZones() + ", ");
+        if (getSubnets() != null) sb.append("Subnets: " + getSubnets() + ", ");
+        if (getVPCId() != null) sb.append("VPCId: " + getVPCId() + ", ");
+        if (getInstances() != null) sb.append("Instances: " + getInstances() + ", ");
+        if (getHealthCheck() != null) sb.append("HealthCheck: " + getHealthCheck() + ", ");
+        if (getSourceSecurityGroup() != null) sb.append("SourceSecurityGroup: " + getSourceSecurityGroup() + ", ");
+        if (getSecurityGroups() != null) sb.append("SecurityGroups: " + getSecurityGroups() + ", ");
+        if (getCreatedTime() != null) sb.append("CreatedTime: " + getCreatedTime() + ", ");
+        if (getScheme() != null) sb.append("Scheme: " + getScheme() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -1079,7 +1079,7 @@ public class LoadBalancerDescription {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof LoadBalancerDescription == false) return false;
         LoadBalancerDescription other = (LoadBalancerDescription)obj;
         

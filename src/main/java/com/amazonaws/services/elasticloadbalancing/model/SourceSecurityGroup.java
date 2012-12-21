@@ -156,8 +156,8 @@ public class SourceSecurityGroup {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (ownerAlias != null) sb.append("OwnerAlias: " + ownerAlias + ", ");
-        if (groupName != null) sb.append("GroupName: " + groupName + ", ");
+        if (getOwnerAlias() != null) sb.append("OwnerAlias: " + getOwnerAlias() + ", ");
+        if (getGroupName() != null) sb.append("GroupName: " + getGroupName() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -176,7 +176,7 @@ public class SourceSecurityGroup {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof SourceSecurityGroup == false) return false;
         SourceSecurityGroup other = (SourceSecurityGroup)obj;
         

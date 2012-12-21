@@ -234,8 +234,8 @@ public class DescribeInternetGatewaysRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (internetGatewayIds != null) sb.append("InternetGatewayIds: " + internetGatewayIds + ", ");
-        if (filters != null) sb.append("Filters: " + filters + ", ");
+        if (getInternetGatewayIds() != null) sb.append("InternetGatewayIds: " + getInternetGatewayIds() + ", ");
+        if (getFilters() != null) sb.append("Filters: " + getFilters() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -254,7 +254,7 @@ public class DescribeInternetGatewaysRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DescribeInternetGatewaysRequest == false) return false;
         DescribeInternetGatewaysRequest other = (DescribeInternetGatewaysRequest)obj;
         

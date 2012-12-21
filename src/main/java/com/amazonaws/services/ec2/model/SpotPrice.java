@@ -260,11 +260,11 @@ public class SpotPrice {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (instanceType != null) sb.append("InstanceType: " + instanceType + ", ");
-        if (productDescription != null) sb.append("ProductDescription: " + productDescription + ", ");
-        if (spotPrice != null) sb.append("SpotPrice: " + spotPrice + ", ");
-        if (timestamp != null) sb.append("Timestamp: " + timestamp + ", ");
-        if (availabilityZone != null) sb.append("AvailabilityZone: " + availabilityZone + ", ");
+        if (getInstanceType() != null) sb.append("InstanceType: " + getInstanceType() + ", ");
+        if (getProductDescription() != null) sb.append("ProductDescription: " + getProductDescription() + ", ");
+        if (getSpotPrice() != null) sb.append("SpotPrice: " + getSpotPrice() + ", ");
+        if (getTimestamp() != null) sb.append("Timestamp: " + getTimestamp() + ", ");
+        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -286,7 +286,7 @@ public class SpotPrice {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof SpotPrice == false) return false;
         SpotPrice other = (SpotPrice)obj;
         

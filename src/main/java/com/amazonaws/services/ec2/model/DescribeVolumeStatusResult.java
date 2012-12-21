@@ -138,8 +138,8 @@ public class DescribeVolumeStatusResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (volumeStatuses != null) sb.append("VolumeStatuses: " + volumeStatuses + ", ");
-        if (nextToken != null) sb.append("NextToken: " + nextToken + ", ");
+        if (getVolumeStatuses() != null) sb.append("VolumeStatuses: " + getVolumeStatuses() + ", ");
+        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -158,7 +158,7 @@ public class DescribeVolumeStatusResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DescribeVolumeStatusResult == false) return false;
         DescribeVolumeStatusResult other = (DescribeVolumeStatusResult)obj;
         

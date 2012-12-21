@@ -107,7 +107,7 @@ public class DescribeAddressesResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (addresses != null) sb.append("Addresses: " + addresses + ", ");
+        if (getAddresses() != null) sb.append("Addresses: " + getAddresses() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -125,7 +125,7 @@ public class DescribeAddressesResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DescribeAddressesResult == false) return false;
         DescribeAddressesResult other = (DescribeAddressesResult)obj;
         

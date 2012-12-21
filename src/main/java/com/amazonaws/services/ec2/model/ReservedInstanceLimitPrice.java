@@ -103,8 +103,8 @@ public class ReservedInstanceLimitPrice {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (amount != null) sb.append("Amount: " + amount + ", ");
-        if (currencyCode != null) sb.append("CurrencyCode: " + currencyCode + ", ");
+        if (getAmount() != null) sb.append("Amount: " + getAmount() + ", ");
+        if (getCurrencyCode() != null) sb.append("CurrencyCode: " + getCurrencyCode() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -123,7 +123,7 @@ public class ReservedInstanceLimitPrice {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof ReservedInstanceLimitPrice == false) return false;
         ReservedInstanceLimitPrice other = (ReservedInstanceLimitPrice)obj;
         

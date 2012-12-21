@@ -70,7 +70,7 @@ public class CreateSpotDatafeedSubscriptionResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (spotDatafeedSubscription != null) sb.append("SpotDatafeedSubscription: " + spotDatafeedSubscription + ", ");
+        if (getSpotDatafeedSubscription() != null) sb.append("SpotDatafeedSubscription: " + getSpotDatafeedSubscription() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -88,7 +88,7 @@ public class CreateSpotDatafeedSubscriptionResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof CreateSpotDatafeedSubscriptionResult == false) return false;
         CreateSpotDatafeedSubscriptionResult other = (CreateSpotDatafeedSubscriptionResult)obj;
         

@@ -351,12 +351,12 @@ public class VpnGateway {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (vpnGatewayId != null) sb.append("VpnGatewayId: " + vpnGatewayId + ", ");
-        if (state != null) sb.append("State: " + state + ", ");
-        if (type != null) sb.append("Type: " + type + ", ");
-        if (availabilityZone != null) sb.append("AvailabilityZone: " + availabilityZone + ", ");
-        if (vpcAttachments != null) sb.append("VpcAttachments: " + vpcAttachments + ", ");
-        if (tags != null) sb.append("Tags: " + tags + ", ");
+        if (getVpnGatewayId() != null) sb.append("VpnGatewayId: " + getVpnGatewayId() + ", ");
+        if (getState() != null) sb.append("State: " + getState() + ", ");
+        if (getType() != null) sb.append("Type: " + getType() + ", ");
+        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ", ");
+        if (getVpcAttachments() != null) sb.append("VpcAttachments: " + getVpcAttachments() + ", ");
+        if (getTags() != null) sb.append("Tags: " + getTags() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -379,7 +379,7 @@ public class VpnGateway {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof VpnGateway == false) return false;
         VpnGateway other = (VpnGateway)obj;
         

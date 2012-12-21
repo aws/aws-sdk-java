@@ -266,8 +266,8 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (vpnGatewayIds != null) sb.append("VpnGatewayIds: " + vpnGatewayIds + ", ");
-        if (filters != null) sb.append("Filters: " + filters + ", ");
+        if (getVpnGatewayIds() != null) sb.append("VpnGatewayIds: " + getVpnGatewayIds() + ", ");
+        if (getFilters() != null) sb.append("Filters: " + getFilters() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -286,7 +286,7 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DescribeVpnGatewaysRequest == false) return false;
         DescribeVpnGatewaysRequest other = (DescribeVpnGatewaysRequest)obj;
         

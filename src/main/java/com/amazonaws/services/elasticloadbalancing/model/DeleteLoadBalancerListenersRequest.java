@@ -182,8 +182,8 @@ public class DeleteLoadBalancerListenersRequest extends AmazonWebServiceRequest 
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (loadBalancerName != null) sb.append("LoadBalancerName: " + loadBalancerName + ", ");
-        if (loadBalancerPorts != null) sb.append("LoadBalancerPorts: " + loadBalancerPorts + ", ");
+        if (getLoadBalancerName() != null) sb.append("LoadBalancerName: " + getLoadBalancerName() + ", ");
+        if (getLoadBalancerPorts() != null) sb.append("LoadBalancerPorts: " + getLoadBalancerPorts() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -202,7 +202,7 @@ public class DeleteLoadBalancerListenersRequest extends AmazonWebServiceRequest 
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DeleteLoadBalancerListenersRequest == false) return false;
         DeleteLoadBalancerListenersRequest other = (DeleteLoadBalancerListenersRequest)obj;
         

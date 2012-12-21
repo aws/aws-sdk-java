@@ -107,7 +107,7 @@ public class DisableAvailabilityZonesForLoadBalancerResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (availabilityZones != null) sb.append("AvailabilityZones: " + availabilityZones + ", ");
+        if (getAvailabilityZones() != null) sb.append("AvailabilityZones: " + getAvailabilityZones() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -125,7 +125,7 @@ public class DisableAvailabilityZonesForLoadBalancerResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DisableAvailabilityZonesForLoadBalancerResult == false) return false;
         DisableAvailabilityZonesForLoadBalancerResult other = (DisableAvailabilityZonesForLoadBalancerResult)obj;
         

@@ -146,8 +146,8 @@ public class Tag {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (key != null) sb.append("Key: " + key + ", ");
-        if (value != null) sb.append("Value: " + value + ", ");
+        if (getKey() != null) sb.append("Key: " + getKey() + ", ");
+        if (getValue() != null) sb.append("Value: " + getValue() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -166,7 +166,7 @@ public class Tag {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof Tag == false) return false;
         Tag other = (Tag)obj;
         

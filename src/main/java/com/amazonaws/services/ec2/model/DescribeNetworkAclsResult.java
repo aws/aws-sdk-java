@@ -102,7 +102,7 @@ public class DescribeNetworkAclsResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (networkAcls != null) sb.append("NetworkAcls: " + networkAcls + ", ");
+        if (getNetworkAcls() != null) sb.append("NetworkAcls: " + getNetworkAcls() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -120,7 +120,7 @@ public class DescribeNetworkAclsResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DescribeNetworkAclsResult == false) return false;
         DescribeNetworkAclsResult other = (DescribeNetworkAclsResult)obj;
         

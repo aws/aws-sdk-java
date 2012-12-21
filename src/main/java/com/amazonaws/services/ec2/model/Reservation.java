@@ -397,12 +397,12 @@ public class Reservation {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (reservationId != null) sb.append("ReservationId: " + reservationId + ", ");
-        if (ownerId != null) sb.append("OwnerId: " + ownerId + ", ");
-        if (requesterId != null) sb.append("RequesterId: " + requesterId + ", ");
-        if (groups != null) sb.append("Groups: " + groups + ", ");
-        if (groupNames != null) sb.append("GroupNames: " + groupNames + ", ");
-        if (instances != null) sb.append("Instances: " + instances + ", ");
+        if (getReservationId() != null) sb.append("ReservationId: " + getReservationId() + ", ");
+        if (getOwnerId() != null) sb.append("OwnerId: " + getOwnerId() + ", ");
+        if (getRequesterId() != null) sb.append("RequesterId: " + getRequesterId() + ", ");
+        if (getGroups() != null) sb.append("Groups: " + getGroups() + ", ");
+        if (getGroupNames() != null) sb.append("GroupNames: " + getGroupNames() + ", ");
+        if (getInstances() != null) sb.append("Instances: " + getInstances() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -425,7 +425,7 @@ public class Reservation {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof Reservation == false) return false;
         Reservation other = (Reservation)obj;
         

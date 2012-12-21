@@ -154,8 +154,8 @@ public class CreateVpcRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (cidrBlock != null) sb.append("CidrBlock: " + cidrBlock + ", ");
-        if (instanceTenancy != null) sb.append("InstanceTenancy: " + instanceTenancy + ", ");
+        if (getCidrBlock() != null) sb.append("CidrBlock: " + getCidrBlock() + ", ");
+        if (getInstanceTenancy() != null) sb.append("InstanceTenancy: " + getInstanceTenancy() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -174,7 +174,7 @@ public class CreateVpcRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof CreateVpcRequest == false) return false;
         CreateVpcRequest other = (CreateVpcRequest)obj;
         

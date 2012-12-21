@@ -212,8 +212,8 @@ public class StopInstancesRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (instanceIds != null) sb.append("InstanceIds: " + instanceIds + ", ");
-        if (force != null) sb.append("Force: " + force + ", ");
+        if (getInstanceIds() != null) sb.append("InstanceIds: " + getInstanceIds() + ", ");
+        if (isForce() != null) sb.append("Force: " + isForce() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -232,7 +232,7 @@ public class StopInstancesRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof StopInstancesRequest == false) return false;
         StopInstancesRequest other = (StopInstancesRequest)obj;
         

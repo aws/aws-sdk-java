@@ -72,7 +72,7 @@ public class BundleInstanceResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (bundleTask != null) sb.append("BundleTask: " + bundleTask + ", ");
+        if (getBundleTask() != null) sb.append("BundleTask: " + getBundleTask() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -90,7 +90,7 @@ public class BundleInstanceResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof BundleInstanceResult == false) return false;
         BundleInstanceResult other = (BundleInstanceResult)obj;
         

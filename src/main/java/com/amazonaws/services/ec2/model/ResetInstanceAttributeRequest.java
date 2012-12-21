@@ -216,8 +216,8 @@ public class ResetInstanceAttributeRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (instanceId != null) sb.append("InstanceId: " + instanceId + ", ");
-        if (attribute != null) sb.append("Attribute: " + attribute + ", ");
+        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ", ");
+        if (getAttribute() != null) sb.append("Attribute: " + getAttribute() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -236,7 +236,7 @@ public class ResetInstanceAttributeRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof ResetInstanceAttributeRequest == false) return false;
         ResetInstanceAttributeRequest other = (ResetInstanceAttributeRequest)obj;
         

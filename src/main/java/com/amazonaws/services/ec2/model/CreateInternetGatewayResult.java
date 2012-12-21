@@ -67,7 +67,7 @@ public class CreateInternetGatewayResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (internetGateway != null) sb.append("InternetGateway: " + internetGateway + ", ");
+        if (getInternetGateway() != null) sb.append("InternetGateway: " + getInternetGateway() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -85,7 +85,7 @@ public class CreateInternetGatewayResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof CreateInternetGatewayResult == false) return false;
         CreateInternetGatewayResult other = (CreateInternetGatewayResult)obj;
         

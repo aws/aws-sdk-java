@@ -97,7 +97,7 @@ public class DeleteVpnGatewayRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (vpnGatewayId != null) sb.append("VpnGatewayId: " + vpnGatewayId + ", ");
+        if (getVpnGatewayId() != null) sb.append("VpnGatewayId: " + getVpnGatewayId() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -115,7 +115,7 @@ public class DeleteVpnGatewayRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DeleteVpnGatewayRequest == false) return false;
         DeleteVpnGatewayRequest other = (DeleteVpnGatewayRequest)obj;
         

@@ -103,8 +103,8 @@ public class SpotInstanceStateFault {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (code != null) sb.append("Code: " + code + ", ");
-        if (message != null) sb.append("Message: " + message + ", ");
+        if (getCode() != null) sb.append("Code: " + getCode() + ", ");
+        if (getMessage() != null) sb.append("Message: " + getMessage() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -123,7 +123,7 @@ public class SpotInstanceStateFault {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof SpotInstanceStateFault == false) return false;
         SpotInstanceStateFault other = (SpotInstanceStateFault)obj;
         

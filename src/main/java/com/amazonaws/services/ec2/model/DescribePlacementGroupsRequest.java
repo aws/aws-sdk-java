@@ -221,8 +221,8 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (groupNames != null) sb.append("GroupNames: " + groupNames + ", ");
-        if (filters != null) sb.append("Filters: " + filters + ", ");
+        if (getGroupNames() != null) sb.append("GroupNames: " + getGroupNames() + ", ");
+        if (getFilters() != null) sb.append("Filters: " + getFilters() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -241,7 +241,7 @@ public class DescribePlacementGroupsRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DescribePlacementGroupsRequest == false) return false;
         DescribePlacementGroupsRequest other = (DescribePlacementGroupsRequest)obj;
         

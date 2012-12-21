@@ -189,10 +189,10 @@ public class RouteTableAssociation {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (routeTableAssociationId != null) sb.append("RouteTableAssociationId: " + routeTableAssociationId + ", ");
-        if (routeTableId != null) sb.append("RouteTableId: " + routeTableId + ", ");
-        if (subnetId != null) sb.append("SubnetId: " + subnetId + ", ");
-        if (main != null) sb.append("Main: " + main + ", ");
+        if (getRouteTableAssociationId() != null) sb.append("RouteTableAssociationId: " + getRouteTableAssociationId() + ", ");
+        if (getRouteTableId() != null) sb.append("RouteTableId: " + getRouteTableId() + ", ");
+        if (getSubnetId() != null) sb.append("SubnetId: " + getSubnetId() + ", ");
+        if (isMain() != null) sb.append("Main: " + isMain() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -213,7 +213,7 @@ public class RouteTableAssociation {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof RouteTableAssociation == false) return false;
         RouteTableAssociation other = (RouteTableAssociation)obj;
         

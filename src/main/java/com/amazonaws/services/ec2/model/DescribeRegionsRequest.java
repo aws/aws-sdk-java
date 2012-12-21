@@ -212,8 +212,8 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (regionNames != null) sb.append("RegionNames: " + regionNames + ", ");
-        if (filters != null) sb.append("Filters: " + filters + ", ");
+        if (getRegionNames() != null) sb.append("RegionNames: " + getRegionNames() + ", ");
+        if (getFilters() != null) sb.append("Filters: " + getFilters() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -232,7 +232,7 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DescribeRegionsRequest == false) return false;
         DescribeRegionsRequest other = (DescribeRegionsRequest)obj;
         

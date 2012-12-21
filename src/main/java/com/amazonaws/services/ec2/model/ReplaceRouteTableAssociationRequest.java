@@ -129,8 +129,8 @@ public class ReplaceRouteTableAssociationRequest extends AmazonWebServiceRequest
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (associationId != null) sb.append("AssociationId: " + associationId + ", ");
-        if (routeTableId != null) sb.append("RouteTableId: " + routeTableId + ", ");
+        if (getAssociationId() != null) sb.append("AssociationId: " + getAssociationId() + ", ");
+        if (getRouteTableId() != null) sb.append("RouteTableId: " + getRouteTableId() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -149,7 +149,7 @@ public class ReplaceRouteTableAssociationRequest extends AmazonWebServiceRequest
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof ReplaceRouteTableAssociationRequest == false) return false;
         ReplaceRouteTableAssociationRequest other = (ReplaceRouteTableAssociationRequest)obj;
         

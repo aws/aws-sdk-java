@@ -103,8 +103,8 @@ public class IamInstanceProfile {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (arn != null) sb.append("Arn: " + arn + ", ");
-        if (id != null) sb.append("Id: " + id + ", ");
+        if (getArn() != null) sb.append("Arn: " + getArn() + ", ");
+        if (getId() != null) sb.append("Id: " + getId() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -123,7 +123,7 @@ public class IamInstanceProfile {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof IamInstanceProfile == false) return false;
         IamInstanceProfile other = (IamInstanceProfile)obj;
         

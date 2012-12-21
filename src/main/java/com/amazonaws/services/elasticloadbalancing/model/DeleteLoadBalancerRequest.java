@@ -115,7 +115,7 @@ public class DeleteLoadBalancerRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (loadBalancerName != null) sb.append("LoadBalancerName: " + loadBalancerName + ", ");
+        if (getLoadBalancerName() != null) sb.append("LoadBalancerName: " + getLoadBalancerName() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -133,7 +133,7 @@ public class DeleteLoadBalancerRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DeleteLoadBalancerRequest == false) return false;
         DeleteLoadBalancerRequest other = (DeleteLoadBalancerRequest)obj;
         

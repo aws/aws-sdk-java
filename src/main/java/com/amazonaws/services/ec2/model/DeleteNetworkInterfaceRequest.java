@@ -71,7 +71,7 @@ public class DeleteNetworkInterfaceRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (networkInterfaceId != null) sb.append("NetworkInterfaceId: " + networkInterfaceId + ", ");
+        if (getNetworkInterfaceId() != null) sb.append("NetworkInterfaceId: " + getNetworkInterfaceId() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -89,7 +89,7 @@ public class DeleteNetworkInterfaceRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DeleteNetworkInterfaceRequest == false) return false;
         DeleteNetworkInterfaceRequest other = (DeleteNetworkInterfaceRequest)obj;
         

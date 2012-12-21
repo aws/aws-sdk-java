@@ -173,8 +173,8 @@ public class LaunchPermissionModifications {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (add != null) sb.append("Add: " + add + ", ");
-        if (remove != null) sb.append("Remove: " + remove + ", ");
+        if (getAdd() != null) sb.append("Add: " + getAdd() + ", ");
+        if (getRemove() != null) sb.append("Remove: " + getRemove() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -193,7 +193,7 @@ public class LaunchPermissionModifications {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof LaunchPermissionModifications == false) return false;
         LaunchPermissionModifications other = (LaunchPermissionModifications)obj;
         

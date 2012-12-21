@@ -296,12 +296,12 @@ public class InstanceStatus {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (instanceId != null) sb.append("InstanceId: " + instanceId + ", ");
-        if (availabilityZone != null) sb.append("AvailabilityZone: " + availabilityZone + ", ");
-        if (events != null) sb.append("Events: " + events + ", ");
-        if (instanceState != null) sb.append("InstanceState: " + instanceState + ", ");
-        if (systemStatus != null) sb.append("SystemStatus: " + systemStatus + ", ");
-        if (instanceStatus != null) sb.append("InstanceStatus: " + instanceStatus + ", ");
+        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ", ");
+        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ", ");
+        if (getEvents() != null) sb.append("Events: " + getEvents() + ", ");
+        if (getInstanceState() != null) sb.append("InstanceState: " + getInstanceState() + ", ");
+        if (getSystemStatus() != null) sb.append("SystemStatus: " + getSystemStatus() + ", ");
+        if (getInstanceStatus() != null) sb.append("InstanceStatus: " + getInstanceStatus() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -324,7 +324,7 @@ public class InstanceStatus {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof InstanceStatus == false) return false;
         InstanceStatus other = (InstanceStatus)obj;
         

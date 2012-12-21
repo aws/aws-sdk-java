@@ -96,7 +96,7 @@ public class DeletePlacementGroupRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (groupName != null) sb.append("GroupName: " + groupName + ", ");
+        if (getGroupName() != null) sb.append("GroupName: " + getGroupName() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -114,7 +114,7 @@ public class DeletePlacementGroupRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DeletePlacementGroupRequest == false) return false;
         DeletePlacementGroupRequest other = (DeletePlacementGroupRequest)obj;
         

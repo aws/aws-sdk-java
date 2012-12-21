@@ -204,9 +204,9 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (type != null) sb.append("Type: " + type + ", ");
-        if (publicIp != null) sb.append("PublicIp: " + publicIp + ", ");
-        if (bgpAsn != null) sb.append("BgpAsn: " + bgpAsn + ", ");
+        if (getType() != null) sb.append("Type: " + getType() + ", ");
+        if (getPublicIp() != null) sb.append("PublicIp: " + getPublicIp() + ", ");
+        if (getBgpAsn() != null) sb.append("BgpAsn: " + getBgpAsn() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -226,7 +226,7 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof CreateCustomerGatewayRequest == false) return false;
         CreateCustomerGatewayRequest other = (CreateCustomerGatewayRequest)obj;
         

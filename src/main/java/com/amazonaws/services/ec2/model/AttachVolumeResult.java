@@ -72,7 +72,7 @@ public class AttachVolumeResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (attachment != null) sb.append("Attachment: " + attachment + ", ");
+        if (getAttachment() != null) sb.append("Attachment: " + getAttachment() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -90,7 +90,7 @@ public class AttachVolumeResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof AttachVolumeResult == false) return false;
         AttachVolumeResult other = (AttachVolumeResult)obj;
         

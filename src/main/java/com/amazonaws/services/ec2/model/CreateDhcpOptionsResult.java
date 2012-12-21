@@ -72,7 +72,7 @@ public class CreateDhcpOptionsResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (dhcpOptions != null) sb.append("DhcpOptions: " + dhcpOptions + ", ");
+        if (getDhcpOptions() != null) sb.append("DhcpOptions: " + getDhcpOptions() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -90,7 +90,7 @@ public class CreateDhcpOptionsResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof CreateDhcpOptionsResult == false) return false;
         CreateDhcpOptionsResult other = (CreateDhcpOptionsResult)obj;
         

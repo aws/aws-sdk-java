@@ -344,12 +344,12 @@ public class VolumeAttachment {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (volumeId != null) sb.append("VolumeId: " + volumeId + ", ");
-        if (instanceId != null) sb.append("InstanceId: " + instanceId + ", ");
-        if (device != null) sb.append("Device: " + device + ", ");
-        if (state != null) sb.append("State: " + state + ", ");
-        if (attachTime != null) sb.append("AttachTime: " + attachTime + ", ");
-        if (deleteOnTermination != null) sb.append("DeleteOnTermination: " + deleteOnTermination + ", ");
+        if (getVolumeId() != null) sb.append("VolumeId: " + getVolumeId() + ", ");
+        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ", ");
+        if (getDevice() != null) sb.append("Device: " + getDevice() + ", ");
+        if (getState() != null) sb.append("State: " + getState() + ", ");
+        if (getAttachTime() != null) sb.append("AttachTime: " + getAttachTime() + ", ");
+        if (isDeleteOnTermination() != null) sb.append("DeleteOnTermination: " + isDeleteOnTermination() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -372,7 +372,7 @@ public class VolumeAttachment {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof VolumeAttachment == false) return false;
         VolumeAttachment other = (VolumeAttachment)obj;
         

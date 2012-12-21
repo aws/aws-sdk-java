@@ -252,10 +252,10 @@ public class TagDescription {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (resourceId != null) sb.append("ResourceId: " + resourceId + ", ");
-        if (resourceType != null) sb.append("ResourceType: " + resourceType + ", ");
-        if (key != null) sb.append("Key: " + key + ", ");
-        if (value != null) sb.append("Value: " + value + ", ");
+        if (getResourceId() != null) sb.append("ResourceId: " + getResourceId() + ", ");
+        if (getResourceType() != null) sb.append("ResourceType: " + getResourceType() + ", ");
+        if (getKey() != null) sb.append("Key: " + getKey() + ", ");
+        if (getValue() != null) sb.append("Value: " + getValue() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -276,7 +276,7 @@ public class TagDescription {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof TagDescription == false) return false;
         TagDescription other = (TagDescription)obj;
         

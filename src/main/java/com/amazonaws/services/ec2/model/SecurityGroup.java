@@ -438,14 +438,14 @@ public class SecurityGroup {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (ownerId != null) sb.append("OwnerId: " + ownerId + ", ");
-        if (groupName != null) sb.append("GroupName: " + groupName + ", ");
-        if (groupId != null) sb.append("GroupId: " + groupId + ", ");
-        if (description != null) sb.append("Description: " + description + ", ");
-        if (ipPermissions != null) sb.append("IpPermissions: " + ipPermissions + ", ");
-        if (ipPermissionsEgress != null) sb.append("IpPermissionsEgress: " + ipPermissionsEgress + ", ");
-        if (vpcId != null) sb.append("VpcId: " + vpcId + ", ");
-        if (tags != null) sb.append("Tags: " + tags + ", ");
+        if (getOwnerId() != null) sb.append("OwnerId: " + getOwnerId() + ", ");
+        if (getGroupName() != null) sb.append("GroupName: " + getGroupName() + ", ");
+        if (getGroupId() != null) sb.append("GroupId: " + getGroupId() + ", ");
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ", ");
+        if (getIpPermissions() != null) sb.append("IpPermissions: " + getIpPermissions() + ", ");
+        if (getIpPermissionsEgress() != null) sb.append("IpPermissionsEgress: " + getIpPermissionsEgress() + ", ");
+        if (getVpcId() != null) sb.append("VpcId: " + getVpcId() + ", ");
+        if (getTags() != null) sb.append("Tags: " + getTags() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -470,7 +470,7 @@ public class SecurityGroup {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof SecurityGroup == false) return false;
         SecurityGroup other = (SecurityGroup)obj;
         

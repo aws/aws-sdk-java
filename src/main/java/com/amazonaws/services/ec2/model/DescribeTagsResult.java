@@ -106,7 +106,7 @@ public class DescribeTagsResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (tags != null) sb.append("Tags: " + tags + ", ");
+        if (getTags() != null) sb.append("Tags: " + getTags() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -124,7 +124,7 @@ public class DescribeTagsResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DescribeTagsResult == false) return false;
         DescribeTagsResult other = (DescribeTagsResult)obj;
         

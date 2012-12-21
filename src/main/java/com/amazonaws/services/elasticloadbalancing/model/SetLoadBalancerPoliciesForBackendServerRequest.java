@@ -207,9 +207,9 @@ public class SetLoadBalancerPoliciesForBackendServerRequest extends AmazonWebSer
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (loadBalancerName != null) sb.append("LoadBalancerName: " + loadBalancerName + ", ");
-        if (instancePort != null) sb.append("InstancePort: " + instancePort + ", ");
-        if (policyNames != null) sb.append("PolicyNames: " + policyNames + ", ");
+        if (getLoadBalancerName() != null) sb.append("LoadBalancerName: " + getLoadBalancerName() + ", ");
+        if (getInstancePort() != null) sb.append("InstancePort: " + getInstancePort() + ", ");
+        if (getPolicyNames() != null) sb.append("PolicyNames: " + getPolicyNames() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -229,7 +229,7 @@ public class SetLoadBalancerPoliciesForBackendServerRequest extends AmazonWebSer
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof SetLoadBalancerPoliciesForBackendServerRequest == false) return false;
         SetLoadBalancerPoliciesForBackendServerRequest other = (SetLoadBalancerPoliciesForBackendServerRequest)obj;
         

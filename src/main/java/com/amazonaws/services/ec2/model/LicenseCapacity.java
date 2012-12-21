@@ -217,10 +217,10 @@ public class LicenseCapacity {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (capacity != null) sb.append("Capacity: " + capacity + ", ");
-        if (instanceCapacity != null) sb.append("InstanceCapacity: " + instanceCapacity + ", ");
-        if (state != null) sb.append("State: " + state + ", ");
-        if (earliestAllowedDeactivationTime != null) sb.append("EarliestAllowedDeactivationTime: " + earliestAllowedDeactivationTime + ", ");
+        if (getCapacity() != null) sb.append("Capacity: " + getCapacity() + ", ");
+        if (getInstanceCapacity() != null) sb.append("InstanceCapacity: " + getInstanceCapacity() + ", ");
+        if (getState() != null) sb.append("State: " + getState() + ", ");
+        if (getEarliestAllowedDeactivationTime() != null) sb.append("EarliestAllowedDeactivationTime: " + getEarliestAllowedDeactivationTime() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -241,7 +241,7 @@ public class LicenseCapacity {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof LicenseCapacity == false) return false;
         LicenseCapacity other = (LicenseCapacity)obj;
         

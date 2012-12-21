@@ -501,16 +501,16 @@ public class ReservedInstancesListing {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (reservedInstancesListingId != null) sb.append("ReservedInstancesListingId: " + reservedInstancesListingId + ", ");
-        if (reservedInstancesId != null) sb.append("ReservedInstancesId: " + reservedInstancesId + ", ");
-        if (createDate != null) sb.append("CreateDate: " + createDate + ", ");
-        if (updateDate != null) sb.append("UpdateDate: " + updateDate + ", ");
-        if (status != null) sb.append("Status: " + status + ", ");
-        if (statusMessage != null) sb.append("StatusMessage: " + statusMessage + ", ");
-        if (instanceCounts != null) sb.append("InstanceCounts: " + instanceCounts + ", ");
-        if (priceSchedules != null) sb.append("PriceSchedules: " + priceSchedules + ", ");
-        if (tags != null) sb.append("Tags: " + tags + ", ");
-        if (clientToken != null) sb.append("ClientToken: " + clientToken + ", ");
+        if (getReservedInstancesListingId() != null) sb.append("ReservedInstancesListingId: " + getReservedInstancesListingId() + ", ");
+        if (getReservedInstancesId() != null) sb.append("ReservedInstancesId: " + getReservedInstancesId() + ", ");
+        if (getCreateDate() != null) sb.append("CreateDate: " + getCreateDate() + ", ");
+        if (getUpdateDate() != null) sb.append("UpdateDate: " + getUpdateDate() + ", ");
+        if (getStatus() != null) sb.append("Status: " + getStatus() + ", ");
+        if (getStatusMessage() != null) sb.append("StatusMessage: " + getStatusMessage() + ", ");
+        if (getInstanceCounts() != null) sb.append("InstanceCounts: " + getInstanceCounts() + ", ");
+        if (getPriceSchedules() != null) sb.append("PriceSchedules: " + getPriceSchedules() + ", ");
+        if (getTags() != null) sb.append("Tags: " + getTags() + ", ");
+        if (getClientToken() != null) sb.append("ClientToken: " + getClientToken() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -537,7 +537,7 @@ public class ReservedInstancesListing {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof ReservedInstancesListing == false) return false;
         ReservedInstancesListing other = (ReservedInstancesListing)obj;
         

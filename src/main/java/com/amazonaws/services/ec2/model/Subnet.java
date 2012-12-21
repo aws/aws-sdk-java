@@ -362,13 +362,13 @@ public class Subnet {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (subnetId != null) sb.append("SubnetId: " + subnetId + ", ");
-        if (state != null) sb.append("State: " + state + ", ");
-        if (vpcId != null) sb.append("VpcId: " + vpcId + ", ");
-        if (cidrBlock != null) sb.append("CidrBlock: " + cidrBlock + ", ");
-        if (availableIpAddressCount != null) sb.append("AvailableIpAddressCount: " + availableIpAddressCount + ", ");
-        if (availabilityZone != null) sb.append("AvailabilityZone: " + availabilityZone + ", ");
-        if (tags != null) sb.append("Tags: " + tags + ", ");
+        if (getSubnetId() != null) sb.append("SubnetId: " + getSubnetId() + ", ");
+        if (getState() != null) sb.append("State: " + getState() + ", ");
+        if (getVpcId() != null) sb.append("VpcId: " + getVpcId() + ", ");
+        if (getCidrBlock() != null) sb.append("CidrBlock: " + getCidrBlock() + ", ");
+        if (getAvailableIpAddressCount() != null) sb.append("AvailableIpAddressCount: " + getAvailableIpAddressCount() + ", ");
+        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ", ");
+        if (getTags() != null) sb.append("Tags: " + getTags() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -392,7 +392,7 @@ public class Subnet {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof Subnet == false) return false;
         Subnet other = (Subnet)obj;
         

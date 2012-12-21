@@ -72,7 +72,7 @@ public class ConfigureHealthCheckResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (healthCheck != null) sb.append("HealthCheck: " + healthCheck + ", ");
+        if (getHealthCheck() != null) sb.append("HealthCheck: " + getHealthCheck() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -90,7 +90,7 @@ public class ConfigureHealthCheckResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof ConfigureHealthCheckResult == false) return false;
         ConfigureHealthCheckResult other = (ConfigureHealthCheckResult)obj;
         

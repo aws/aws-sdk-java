@@ -211,11 +211,11 @@ public class VolumeStatusEvent {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (eventType != null) sb.append("EventType: " + eventType + ", ");
-        if (description != null) sb.append("Description: " + description + ", ");
-        if (notBefore != null) sb.append("NotBefore: " + notBefore + ", ");
-        if (notAfter != null) sb.append("NotAfter: " + notAfter + ", ");
-        if (eventId != null) sb.append("EventId: " + eventId + ", ");
+        if (getEventType() != null) sb.append("EventType: " + getEventType() + ", ");
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ", ");
+        if (getNotBefore() != null) sb.append("NotBefore: " + getNotBefore() + ", ");
+        if (getNotAfter() != null) sb.append("NotAfter: " + getNotAfter() + ", ");
+        if (getEventId() != null) sb.append("EventId: " + getEventId() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -237,7 +237,7 @@ public class VolumeStatusEvent {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof VolumeStatusEvent == false) return false;
         VolumeStatusEvent other = (VolumeStatusEvent)obj;
         

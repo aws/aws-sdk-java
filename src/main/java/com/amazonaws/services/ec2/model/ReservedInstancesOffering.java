@@ -672,19 +672,19 @@ public class ReservedInstancesOffering {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (reservedInstancesOfferingId != null) sb.append("ReservedInstancesOfferingId: " + reservedInstancesOfferingId + ", ");
-        if (instanceType != null) sb.append("InstanceType: " + instanceType + ", ");
-        if (availabilityZone != null) sb.append("AvailabilityZone: " + availabilityZone + ", ");
-        if (duration != null) sb.append("Duration: " + duration + ", ");
-        if (usagePrice != null) sb.append("UsagePrice: " + usagePrice + ", ");
-        if (fixedPrice != null) sb.append("FixedPrice: " + fixedPrice + ", ");
-        if (productDescription != null) sb.append("ProductDescription: " + productDescription + ", ");
-        if (instanceTenancy != null) sb.append("InstanceTenancy: " + instanceTenancy + ", ");
-        if (currencyCode != null) sb.append("CurrencyCode: " + currencyCode + ", ");
-        if (offeringType != null) sb.append("OfferingType: " + offeringType + ", ");
-        if (recurringCharges != null) sb.append("RecurringCharges: " + recurringCharges + ", ");
-        if (marketplace != null) sb.append("Marketplace: " + marketplace + ", ");
-        if (pricingDetails != null) sb.append("PricingDetails: " + pricingDetails + ", ");
+        if (getReservedInstancesOfferingId() != null) sb.append("ReservedInstancesOfferingId: " + getReservedInstancesOfferingId() + ", ");
+        if (getInstanceType() != null) sb.append("InstanceType: " + getInstanceType() + ", ");
+        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ", ");
+        if (getDuration() != null) sb.append("Duration: " + getDuration() + ", ");
+        if (getUsagePrice() != null) sb.append("UsagePrice: " + getUsagePrice() + ", ");
+        if (getFixedPrice() != null) sb.append("FixedPrice: " + getFixedPrice() + ", ");
+        if (getProductDescription() != null) sb.append("ProductDescription: " + getProductDescription() + ", ");
+        if (getInstanceTenancy() != null) sb.append("InstanceTenancy: " + getInstanceTenancy() + ", ");
+        if (getCurrencyCode() != null) sb.append("CurrencyCode: " + getCurrencyCode() + ", ");
+        if (getOfferingType() != null) sb.append("OfferingType: " + getOfferingType() + ", ");
+        if (getRecurringCharges() != null) sb.append("RecurringCharges: " + getRecurringCharges() + ", ");
+        if (isMarketplace() != null) sb.append("Marketplace: " + isMarketplace() + ", ");
+        if (getPricingDetails() != null) sb.append("PricingDetails: " + getPricingDetails() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -714,7 +714,7 @@ public class ReservedInstancesOffering {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof ReservedInstancesOffering == false) return false;
         ReservedInstancesOffering other = (ReservedInstancesOffering)obj;
         

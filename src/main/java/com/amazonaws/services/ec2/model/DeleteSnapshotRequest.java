@@ -96,7 +96,7 @@ public class DeleteSnapshotRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (snapshotId != null) sb.append("SnapshotId: " + snapshotId + ", ");
+        if (getSnapshotId() != null) sb.append("SnapshotId: " + getSnapshotId() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -114,7 +114,7 @@ public class DeleteSnapshotRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DeleteSnapshotRequest == false) return false;
         DeleteSnapshotRequest other = (DeleteSnapshotRequest)obj;
         

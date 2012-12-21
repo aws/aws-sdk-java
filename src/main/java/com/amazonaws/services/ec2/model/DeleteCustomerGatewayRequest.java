@@ -99,7 +99,7 @@ public class DeleteCustomerGatewayRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (customerGatewayId != null) sb.append("CustomerGatewayId: " + customerGatewayId + ", ");
+        if (getCustomerGatewayId() != null) sb.append("CustomerGatewayId: " + getCustomerGatewayId() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -117,7 +117,7 @@ public class DeleteCustomerGatewayRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DeleteCustomerGatewayRequest == false) return false;
         DeleteCustomerGatewayRequest other = (DeleteCustomerGatewayRequest)obj;
         

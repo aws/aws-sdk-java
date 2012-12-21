@@ -283,13 +283,13 @@ public class ImportInstanceVolumeDetailItem {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (bytesConverted != null) sb.append("BytesConverted: " + bytesConverted + ", ");
-        if (availabilityZone != null) sb.append("AvailabilityZone: " + availabilityZone + ", ");
-        if (image != null) sb.append("Image: " + image + ", ");
-        if (volume != null) sb.append("Volume: " + volume + ", ");
-        if (status != null) sb.append("Status: " + status + ", ");
-        if (statusMessage != null) sb.append("StatusMessage: " + statusMessage + ", ");
-        if (description != null) sb.append("Description: " + description + ", ");
+        if (getBytesConverted() != null) sb.append("BytesConverted: " + getBytesConverted() + ", ");
+        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ", ");
+        if (getImage() != null) sb.append("Image: " + getImage() + ", ");
+        if (getVolume() != null) sb.append("Volume: " + getVolume() + ", ");
+        if (getStatus() != null) sb.append("Status: " + getStatus() + ", ");
+        if (getStatusMessage() != null) sb.append("StatusMessage: " + getStatusMessage() + ", ");
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -313,7 +313,7 @@ public class ImportInstanceVolumeDetailItem {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof ImportInstanceVolumeDetailItem == false) return false;
         ImportInstanceVolumeDetailItem other = (ImportInstanceVolumeDetailItem)obj;
         

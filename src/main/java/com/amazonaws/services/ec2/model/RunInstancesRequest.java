@@ -1381,30 +1381,30 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (imageId != null) sb.append("ImageId: " + imageId + ", ");
-        if (minCount != null) sb.append("MinCount: " + minCount + ", ");
-        if (maxCount != null) sb.append("MaxCount: " + maxCount + ", ");
-        if (keyName != null) sb.append("KeyName: " + keyName + ", ");
-        if (securityGroups != null) sb.append("SecurityGroups: " + securityGroups + ", ");
-        if (securityGroupIds != null) sb.append("SecurityGroupIds: " + securityGroupIds + ", ");
-        if (userData != null) sb.append("UserData: " + userData + ", ");
-        if (addressingType != null) sb.append("AddressingType: " + addressingType + ", ");
-        if (instanceType != null) sb.append("InstanceType: " + instanceType + ", ");
-        if (placement != null) sb.append("Placement: " + placement + ", ");
-        if (kernelId != null) sb.append("KernelId: " + kernelId + ", ");
-        if (ramdiskId != null) sb.append("RamdiskId: " + ramdiskId + ", ");
-        if (blockDeviceMappings != null) sb.append("BlockDeviceMappings: " + blockDeviceMappings + ", ");
-        if (monitoring != null) sb.append("Monitoring: " + monitoring + ", ");
-        if (subnetId != null) sb.append("SubnetId: " + subnetId + ", ");
-        if (disableApiTermination != null) sb.append("DisableApiTermination: " + disableApiTermination + ", ");
-        if (instanceInitiatedShutdownBehavior != null) sb.append("InstanceInitiatedShutdownBehavior: " + instanceInitiatedShutdownBehavior + ", ");
-        if (license != null) sb.append("License: " + license + ", ");
-        if (privateIpAddress != null) sb.append("PrivateIpAddress: " + privateIpAddress + ", ");
-        if (clientToken != null) sb.append("ClientToken: " + clientToken + ", ");
-        if (additionalInfo != null) sb.append("AdditionalInfo: " + additionalInfo + ", ");
-        if (networkInterfaces != null) sb.append("NetworkInterfaces: " + networkInterfaces + ", ");
-        if (iamInstanceProfile != null) sb.append("IamInstanceProfile: " + iamInstanceProfile + ", ");
-        if (ebsOptimized != null) sb.append("EbsOptimized: " + ebsOptimized + ", ");
+        if (getImageId() != null) sb.append("ImageId: " + getImageId() + ", ");
+        if (getMinCount() != null) sb.append("MinCount: " + getMinCount() + ", ");
+        if (getMaxCount() != null) sb.append("MaxCount: " + getMaxCount() + ", ");
+        if (getKeyName() != null) sb.append("KeyName: " + getKeyName() + ", ");
+        if (getSecurityGroups() != null) sb.append("SecurityGroups: " + getSecurityGroups() + ", ");
+        if (getSecurityGroupIds() != null) sb.append("SecurityGroupIds: " + getSecurityGroupIds() + ", ");
+        if (getUserData() != null) sb.append("UserData: " + getUserData() + ", ");
+        if (getAddressingType() != null) sb.append("AddressingType: " + getAddressingType() + ", ");
+        if (getInstanceType() != null) sb.append("InstanceType: " + getInstanceType() + ", ");
+        if (getPlacement() != null) sb.append("Placement: " + getPlacement() + ", ");
+        if (getKernelId() != null) sb.append("KernelId: " + getKernelId() + ", ");
+        if (getRamdiskId() != null) sb.append("RamdiskId: " + getRamdiskId() + ", ");
+        if (getBlockDeviceMappings() != null) sb.append("BlockDeviceMappings: " + getBlockDeviceMappings() + ", ");
+        if (isMonitoring() != null) sb.append("Monitoring: " + isMonitoring() + ", ");
+        if (getSubnetId() != null) sb.append("SubnetId: " + getSubnetId() + ", ");
+        if (isDisableApiTermination() != null) sb.append("DisableApiTermination: " + isDisableApiTermination() + ", ");
+        if (getInstanceInitiatedShutdownBehavior() != null) sb.append("InstanceInitiatedShutdownBehavior: " + getInstanceInitiatedShutdownBehavior() + ", ");
+        if (getLicense() != null) sb.append("License: " + getLicense() + ", ");
+        if (getPrivateIpAddress() != null) sb.append("PrivateIpAddress: " + getPrivateIpAddress() + ", ");
+        if (getClientToken() != null) sb.append("ClientToken: " + getClientToken() + ", ");
+        if (getAdditionalInfo() != null) sb.append("AdditionalInfo: " + getAdditionalInfo() + ", ");
+        if (getNetworkInterfaces() != null) sb.append("NetworkInterfaces: " + getNetworkInterfaces() + ", ");
+        if (getIamInstanceProfile() != null) sb.append("IamInstanceProfile: " + getIamInstanceProfile() + ", ");
+        if (isEbsOptimized() != null) sb.append("EbsOptimized: " + isEbsOptimized() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -1445,7 +1445,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof RunInstancesRequest == false) return false;
         RunInstancesRequest other = (RunInstancesRequest)obj;
         

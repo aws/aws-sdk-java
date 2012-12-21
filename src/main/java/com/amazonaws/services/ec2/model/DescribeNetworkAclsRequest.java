@@ -234,8 +234,8 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (networkAclIds != null) sb.append("NetworkAclIds: " + networkAclIds + ", ");
-        if (filters != null) sb.append("Filters: " + filters + ", ");
+        if (getNetworkAclIds() != null) sb.append("NetworkAclIds: " + getNetworkAclIds() + ", ");
+        if (getFilters() != null) sb.append("Filters: " + getFilters() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -254,7 +254,7 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DescribeNetworkAclsRequest == false) return false;
         DescribeNetworkAclsRequest other = (DescribeNetworkAclsRequest)obj;
         

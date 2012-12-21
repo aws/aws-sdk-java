@@ -67,7 +67,7 @@ public class PropagatingVgw {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (gatewayId != null) sb.append("GatewayId: " + gatewayId + ", ");
+        if (getGatewayId() != null) sb.append("GatewayId: " + getGatewayId() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -85,7 +85,7 @@ public class PropagatingVgw {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof PropagatingVgw == false) return false;
         PropagatingVgw other = (PropagatingVgw)obj;
         

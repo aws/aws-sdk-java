@@ -67,7 +67,7 @@ public class AssociateAddressResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (associationId != null) sb.append("AssociationId: " + associationId + ", ");
+        if (getAssociationId() != null) sb.append("AssociationId: " + getAssociationId() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -85,7 +85,7 @@ public class AssociateAddressResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof AssociateAddressResult == false) return false;
         AssociateAddressResult other = (AssociateAddressResult)obj;
         

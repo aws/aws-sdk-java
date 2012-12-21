@@ -183,8 +183,8 @@ public class DescribeLoadBalancerPoliciesRequest extends AmazonWebServiceRequest
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (loadBalancerName != null) sb.append("LoadBalancerName: " + loadBalancerName + ", ");
-        if (policyNames != null) sb.append("PolicyNames: " + policyNames + ", ");
+        if (getLoadBalancerName() != null) sb.append("LoadBalancerName: " + getLoadBalancerName() + ", ");
+        if (getPolicyNames() != null) sb.append("PolicyNames: " + getPolicyNames() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -203,7 +203,7 @@ public class DescribeLoadBalancerPoliciesRequest extends AmazonWebServiceRequest
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DescribeLoadBalancerPoliciesRequest == false) return false;
         DescribeLoadBalancerPoliciesRequest other = (DescribeLoadBalancerPoliciesRequest)obj;
         

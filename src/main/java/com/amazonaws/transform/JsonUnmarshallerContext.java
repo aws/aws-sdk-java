@@ -34,15 +34,15 @@ import com.amazonaws.http.HttpResponse;
 
 public class JsonUnmarshallerContext {
 
-	private final JsonParser jsonParser;
+    private final JsonParser jsonParser;
 
-	private final Stack<String> stack = new Stack<String>();
-	private String stackString = "";
+    private final Stack<String> stack = new Stack<String>();
+    private String stackString = "";
 
-	private String currentField;
+    private String currentField;
 
-	private Map<String, String> metadata = new HashMap<String, String>();
-	private List<MetadataExpression> metadataExpressions = new ArrayList<MetadataExpression>();
+    private Map<String, String> metadata = new HashMap<String, String>();
+    private List<MetadataExpression> metadataExpressions = new ArrayList<MetadataExpression>();
 
     public JsonToken currentToken;
     private JsonToken nextToken;
@@ -50,13 +50,13 @@ public class JsonUnmarshallerContext {
 
 
     public JsonUnmarshallerContext(JsonParser jsonParser) {
-	    this(jsonParser, null);
-	}
+        this(jsonParser, null);
+    }
 
-	public JsonUnmarshallerContext(JsonParser jsonParser, HttpResponse httpResponse) {
-	    this.jsonParser = jsonParser;
+    public JsonUnmarshallerContext(JsonParser jsonParser, HttpResponse httpResponse) {
+        this.jsonParser = jsonParser;
         this.httpResponse = httpResponse;
-	}
+    }
 
 
     /**
@@ -79,206 +79,219 @@ public class JsonUnmarshallerContext {
         return httpResponse;
     }
 
-	/**
-	 * Returns the element depth of the parser's current position in the JSON
-	 * document being parsed.
-	 *
-	 * @return The element depth of the parser's current position in the JSON
-	 *         document being parsed.
-	 */
-	public int getCurrentDepth() {
-		int depth = stack.size();
-		if (currentField != null) depth++;
-		return depth;
-	}
+    /**
+     * Returns the element depth of the parser's current position in the JSON
+     * document being parsed.
+     *
+     * @return The element depth of the parser's current position in the JSON
+     *         document being parsed.
+     */
+    public int getCurrentDepth() {
+        int depth = 0;
+        for (String s : stack) {
+            if (!(s.equals(START_OBJECT.asString()) || s.equals(START_ARRAY.toString()))) {
+                 depth++;
+            }
+        }
+        if (currentField != null) depth++;
+        return depth;
+    }
 
-	/**
-	 * Returns the text of the current token, or throws an exception if
-	 * the current token does not contain text (ex: '{', '}', etc.).
-	 *
-	 * @return The text of the current token.
-	 *
-	 * @throws IOException
-	 */
-	public String readText() throws IOException {
-		switch (currentToken) {
-		case VALUE_STRING:
-			String text = jsonParser.getText();
-			return text;
-		case VALUE_FALSE: return "false";
-		case VALUE_TRUE: return "true";
-		case VALUE_NULL: return null;
-		case VALUE_NUMBER_FLOAT:
-		case VALUE_NUMBER_INT:
-			return jsonParser.getNumberValue().toString();
-		case FIELD_NAME:
-			return jsonParser.getText();
-		default:
-			throw new RuntimeException(
-					"We expected a VALUE token but got: " + currentToken);
-		}
-	}
+    /**
+     * Returns the text of the current token, or throws an exception if
+     * the current token does not contain text (ex: '{', '}', etc.).
+     *
+     * @return The text of the current token.
+     *
+     * @throws IOException
+     */
+    public String readText() throws IOException {
+        switch (currentToken) {
+        case VALUE_STRING:
+            String text = jsonParser.getText();
+            return text;
+        case VALUE_FALSE: return "false";
+        case VALUE_TRUE: return "true";
+        case VALUE_NULL: return null;
+        case VALUE_NUMBER_FLOAT:
+        case VALUE_NUMBER_INT:
+            return jsonParser.getNumberValue().toString();
+        case FIELD_NAME:
+            return jsonParser.getText();
+        default:
+            throw new RuntimeException(
+                    "We expected a VALUE token but got: " + currentToken);
+        }
+    }
 
-	public boolean isStartOfDocument() {
-		return jsonParser == null || jsonParser.getCurrentToken() == null;
-	}
+    public boolean isStartOfDocument() {
+        return jsonParser == null || jsonParser.getCurrentToken() == null;
+    }
 
-	/**
-	 * Tests the specified expression against the current position in the JSON
-	 * document being parsed.
-	 *
-	 * @param expression
-	 *            The psuedo-xpath expression to test.
-	 * @return True if the expression matches the current document position,
-	 *         otherwise false.
-	 */
-	public boolean testExpression(String expression) {
-		if (expression.equals("."))
-			return true;
-		return stackString.endsWith(expression);
-	}
+    /**
+     * Tests the specified expression against the current position in the JSON
+     * document being parsed.
+     *
+     * @param expression
+     *            The psuedo-xpath expression to test.
+     * @return True if the expression matches the current document position,
+     *         otherwise false.
+     */
+    public boolean testExpression(String expression) {
+        if (expression.equals("."))
+            return true;
+        return stackString.endsWith(expression);
+    }
 
-	/**
-	 * Tests the specified expression against the current position in the JSON
-	 * document being parsed, and restricts the expression to matching at the
-	 * specified stack depth.
-	 *
-	 * @param expression
-	 *            The psuedo-xpath expression to test.
-	 * @param stackDepth
-	 *            The depth in the stack representing where the expression must
-	 *            start matching in order for this method to return true.
-	 *
-	 * @return True if the specified expression matches the current position in
-	 *         the JSON document, starting from the specified depth.
-	 */
-	public boolean testExpression(String expression, int stackDepth) {
-		if (expression.equals(".")) return true;
+    /**
+     * Tests the specified expression against the current position in the JSON
+     * document being parsed, and restricts the expression to matching at the
+     * specified stack depth.
+     *
+     * @param expression
+     *            The psuedo-xpath expression to test.
+     * @param stackDepth
+     *            The depth in the stack representing where the expression must
+     *            start matching in order for this method to return true.
+     *
+     * @return True if the specified expression matches the current position in
+     *         the JSON document, starting from the specified depth.
+     */
+    public boolean testExpression(String expression, int stackDepth) {
+        if (expression.equals(".")) return true;
 
-		int index = -1;
-		while ((index = expression.indexOf("/", index + 1)) > -1) {
-			// Don't consider attributes a new depth level
-			if (expression.charAt(index + 1) != '@') {
-				stackDepth++;
-			}
-		}
+        int index = -1;
+        while ((index = expression.indexOf("/", index + 1)) > -1) {
+            // Don't consider attributes a new depth level
+            if (expression.charAt(index + 1) != '@') {
+                stackDepth++;
+            }
+        }
 
-		return stackString.endsWith("/" + expression) &&
-		       stackDepth == getCurrentDepth();
-	}
+        return stackString.endsWith("/" + expression) &&
+               stackDepth == getCurrentDepth();
+    }
 
-	public JsonToken nextToken() throws IOException {
-	    // Use the value from the nextToken field if
-	    // we've already populated it to peek ahead.
-	    JsonToken token = (nextToken != null) ?
-	            nextToken : jsonParser.nextToken();
+    public JsonToken nextToken() throws IOException {
+        // Use the value from the nextToken field if
+        // we've already populated it to peek ahead.
+        JsonToken token = (nextToken != null) ?
+                nextToken : jsonParser.nextToken();
 
-	    this.currentToken = token;
-	    nextToken = null;
+        this.currentToken = token;
+        nextToken = null;
 
-		updateContext();
-		return token;
-	}
+        updateContext();
+        return token;
+    }
 
-	public JsonToken peek() throws IOException {
-	    if (nextToken != null) return nextToken;
+    public JsonToken peek() throws IOException {
+        if (nextToken != null) return nextToken;
 
-	    nextToken = jsonParser.nextToken();
-	    return nextToken;
-	}
-	
-	public JsonParser getJsonParser() {
-	    return jsonParser;
-	}
+        nextToken = jsonParser.nextToken();
+        return nextToken;
+    }
 
-	/**
-	 * Returns any metadata collected through metadata expressions while this
-	 * context was reading the JSON events from the JSON document.
-	 *
-	 * @return A map of any metadata collected through metadata expressions
-	 *         while this context was reading the JSON document.
-	 */
-	public Map<String, String> getMetadata() {
-		return metadata;
-	}
+    public JsonParser getJsonParser() {
+        return jsonParser;
+    }
 
-	/**
-	 * Registers an expression, which if matched, will cause the data for the
-	 * matching element to be stored in the metadata map under the specified
-	 * key.
-	 *
-	 * @param expression
-	 *            The expression an element must match in order for it's data to
-	 *            be pulled out and stored in the metadata map.
-	 * @param targetDepth
-	 *            The depth in the JSON document where the expression match must
-	 *            start.
-	 * @param storageKey
-	 *            The key under which to store the matching element's data.
-	 */
-	public void registerMetadataExpression(String expression, int targetDepth,
-			String storageKey) {
-		metadataExpressions.add(new MetadataExpression(expression, targetDepth,
-				storageKey));
-	}
+    /**
+     * Returns any metadata collected through metadata expressions while this
+     * context was reading the JSON events from the JSON document.
+     *
+     * @return A map of any metadata collected through metadata expressions
+     *         while this context was reading the JSON document.
+     */
+    public Map<String, String> getMetadata() {
+        return metadata;
+    }
 
-	/*
-	 * Private Interface
-	 */
+    /**
+     * Registers an expression, which if matched, will cause the data for the
+     * matching element to be stored in the metadata map under the specified
+     * key.
+     *
+     * @param expression
+     *            The expression an element must match in order for it's data to
+     *            be pulled out and stored in the metadata map.
+     * @param targetDepth
+     *            The depth in the JSON document where the expression match must
+     *            start.
+     * @param storageKey
+     *            The key under which to store the matching element's data.
+     */
+    public void registerMetadataExpression(String expression, int targetDepth,
+            String storageKey) {
+        metadataExpressions.add(new MetadataExpression(expression, targetDepth,
+                storageKey));
+    }
 
-	/**
-	 * Simple container for the details of a metadata expression this
-	 * unmarshaller context is looking for.
-	 */
-	private class MetadataExpression {
-		public String expression;
-		public int targetDepth;
-		public String key;
+    /*
+     * Private Interface
+     */
 
-		public MetadataExpression(String expression, int targetDepth, String key) {
-			this.expression = expression;
-			this.targetDepth = targetDepth;
-			this.key = key;
-		}
-	}
+    /**
+     * Simple container for the details of a metadata expression this
+     * unmarshaller context is looking for.
+     */
+    private class MetadataExpression {
+        public String expression;
+        public int targetDepth;
+        public String key;
 
-	private void updateContext() throws IOException {
-		if (currentToken == null) return;
+        public MetadataExpression(String expression, int targetDepth, String key) {
+            this.expression = expression;
+            this.targetDepth = targetDepth;
+            this.key = key;
+        }
+    }
 
-		if (currentToken == START_OBJECT || currentToken == START_ARRAY) {
-			if (currentField != null) {
-				stack.push(currentField);
-				currentField = null;
-			}
+    private void updateContext() throws IOException {
+        if (currentToken == null) return;
+
+        if (currentToken == START_OBJECT || currentToken == START_ARRAY) {
+            if (currentField != null) {
+                stack.push(currentField);
+                stack.push(currentToken.asString());
+                currentField = null;
+            }
         } else if (currentToken == END_OBJECT || currentToken == END_ARRAY) {
             if (!stack.isEmpty()) {
+                boolean squareBracketsMatch = currentToken == END_ARRAY && stack.peek().equals(START_ARRAY.asString());
+                boolean curlyBracketsMatch = currentToken == END_OBJECT && stack.peek().equals(START_OBJECT.asString());
+                if (squareBracketsMatch || curlyBracketsMatch) {
                 stack.pop();
+                stack.pop();
+                }
             }
             currentField = null;
-		} else if (currentToken == FIELD_NAME) {
-			String t = jsonParser.getText();
-			currentField = t;
-		}
+        } else if (currentToken == FIELD_NAME) {
+            String t = jsonParser.getText();
+            currentField = t;
+        }
 
-		rebuildStackString();
-	}
+        rebuildStackString();
+    }
 
-	@Override
-	public String toString() {
-		return stackString;
-	}
+    @Override
+    public String toString() {
+        return stackString;
+    }
 
-	private void rebuildStackString() {
-	    stackString = "";
+    private void rebuildStackString() {
+        stackString = "";
 
-		for (String s : stack) {
-			stackString += "/" + s;
-		}
+        for (String s : stack) {
+            if (! (s.equals(START_ARRAY.asString()) || s.equals(START_OBJECT.asString()))) {
+                stackString += "/" + s;
+            }
+        }
 
-		if (currentField != null) {
-			stackString += "/" + currentField;
-		}
+        if (currentField != null) {
+            stackString += "/" + currentField;
+        }
 
-		if (stackString == "") stackString = "/";
-	}
+        if (stackString == "") stackString = "/";
+    }
 }

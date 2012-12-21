@@ -107,7 +107,7 @@ public class DescribeBundleTasksResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (bundleTasks != null) sb.append("BundleTasks: " + bundleTasks + ", ");
+        if (getBundleTasks() != null) sb.append("BundleTasks: " + getBundleTasks() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -125,7 +125,7 @@ public class DescribeBundleTasksResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DescribeBundleTasksResult == false) return false;
         DescribeBundleTasksResult other = (DescribeBundleTasksResult)obj;
         

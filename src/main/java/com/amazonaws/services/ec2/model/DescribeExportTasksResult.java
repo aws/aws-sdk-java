@@ -102,7 +102,7 @@ public class DescribeExportTasksResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (exportTasks != null) sb.append("ExportTasks: " + exportTasks + ", ");
+        if (getExportTasks() != null) sb.append("ExportTasks: " + getExportTasks() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -120,7 +120,7 @@ public class DescribeExportTasksResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DescribeExportTasksResult == false) return false;
         DescribeExportTasksResult other = (DescribeExportTasksResult)obj;
         

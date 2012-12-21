@@ -152,8 +152,8 @@ public class ConfigureHealthCheckRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (loadBalancerName != null) sb.append("LoadBalancerName: " + loadBalancerName + ", ");
-        if (healthCheck != null) sb.append("HealthCheck: " + healthCheck + ", ");
+        if (getLoadBalancerName() != null) sb.append("LoadBalancerName: " + getLoadBalancerName() + ", ");
+        if (getHealthCheck() != null) sb.append("HealthCheck: " + getHealthCheck() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -172,7 +172,7 @@ public class ConfigureHealthCheckRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof ConfigureHealthCheckRequest == false) return false;
         ConfigureHealthCheckRequest other = (ConfigureHealthCheckRequest)obj;
         

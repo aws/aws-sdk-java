@@ -198,8 +198,8 @@ public class EnableAvailabilityZonesForLoadBalancerRequest extends AmazonWebServ
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (loadBalancerName != null) sb.append("LoadBalancerName: " + loadBalancerName + ", ");
-        if (availabilityZones != null) sb.append("AvailabilityZones: " + availabilityZones + ", ");
+        if (getLoadBalancerName() != null) sb.append("LoadBalancerName: " + getLoadBalancerName() + ", ");
+        if (getAvailabilityZones() != null) sb.append("AvailabilityZones: " + getAvailabilityZones() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -218,7 +218,7 @@ public class EnableAvailabilityZonesForLoadBalancerRequest extends AmazonWebServ
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof EnableAvailabilityZonesForLoadBalancerRequest == false) return false;
         EnableAvailabilityZonesForLoadBalancerRequest other = (EnableAvailabilityZonesForLoadBalancerRequest)obj;
         

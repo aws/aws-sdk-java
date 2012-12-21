@@ -227,8 +227,8 @@ public class CreateTagsRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (resources != null) sb.append("Resources: " + resources + ", ");
-        if (tags != null) sb.append("Tags: " + tags + ", ");
+        if (getResources() != null) sb.append("Resources: " + getResources() + ", ");
+        if (getTags() != null) sb.append("Tags: " + getTags() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -247,7 +247,7 @@ public class CreateTagsRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof CreateTagsRequest == false) return false;
         CreateTagsRequest other = (CreateTagsRequest)obj;
         

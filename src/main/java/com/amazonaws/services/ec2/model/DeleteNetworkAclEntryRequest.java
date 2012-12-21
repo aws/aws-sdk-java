@@ -173,9 +173,9 @@ public class DeleteNetworkAclEntryRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (networkAclId != null) sb.append("NetworkAclId: " + networkAclId + ", ");
-        if (ruleNumber != null) sb.append("RuleNumber: " + ruleNumber + ", ");
-        if (egress != null) sb.append("Egress: " + egress + ", ");
+        if (getNetworkAclId() != null) sb.append("NetworkAclId: " + getNetworkAclId() + ", ");
+        if (getRuleNumber() != null) sb.append("RuleNumber: " + getRuleNumber() + ", ");
+        if (isEgress() != null) sb.append("Egress: " + isEgress() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -195,7 +195,7 @@ public class DeleteNetworkAclEntryRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DeleteNetworkAclEntryRequest == false) return false;
         DeleteNetworkAclEntryRequest other = (DeleteNetworkAclEntryRequest)obj;
         

@@ -225,8 +225,8 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (customerGatewayIds != null) sb.append("CustomerGatewayIds: " + customerGatewayIds + ", ");
-        if (filters != null) sb.append("Filters: " + filters + ", ");
+        if (getCustomerGatewayIds() != null) sb.append("CustomerGatewayIds: " + getCustomerGatewayIds() + ", ");
+        if (getFilters() != null) sb.append("Filters: " + getFilters() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -245,7 +245,7 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DescribeCustomerGatewaysRequest == false) return false;
         DescribeCustomerGatewaysRequest other = (DescribeCustomerGatewaysRequest)obj;
         

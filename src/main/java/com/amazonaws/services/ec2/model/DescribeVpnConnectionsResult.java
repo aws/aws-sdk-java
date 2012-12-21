@@ -107,7 +107,7 @@ public class DescribeVpnConnectionsResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (vpnConnections != null) sb.append("VpnConnections: " + vpnConnections + ", ");
+        if (getVpnConnections() != null) sb.append("VpnConnections: " + getVpnConnections() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -125,7 +125,7 @@ public class DescribeVpnConnectionsResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DescribeVpnConnectionsResult == false) return false;
         DescribeVpnConnectionsResult other = (DescribeVpnConnectionsResult)obj;
         

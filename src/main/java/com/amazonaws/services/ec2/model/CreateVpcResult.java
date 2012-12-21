@@ -72,7 +72,7 @@ public class CreateVpcResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (vpc != null) sb.append("Vpc: " + vpc + ", ");
+        if (getVpc() != null) sb.append("Vpc: " + getVpc() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -90,7 +90,7 @@ public class CreateVpcResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof CreateVpcResult == false) return false;
         CreateVpcResult other = (CreateVpcResult)obj;
         

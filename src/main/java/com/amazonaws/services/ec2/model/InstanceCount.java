@@ -103,8 +103,8 @@ public class InstanceCount {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (state != null) sb.append("State: " + state + ", ");
-        if (instanceCount != null) sb.append("InstanceCount: " + instanceCount + ", ");
+        if (getState() != null) sb.append("State: " + getState() + ", ");
+        if (getInstanceCount() != null) sb.append("InstanceCount: " + getInstanceCount() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -123,7 +123,7 @@ public class InstanceCount {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof InstanceCount == false) return false;
         InstanceCount other = (InstanceCount)obj;
         

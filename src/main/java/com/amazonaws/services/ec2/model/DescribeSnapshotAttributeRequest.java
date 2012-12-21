@@ -216,8 +216,8 @@ public class DescribeSnapshotAttributeRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (snapshotId != null) sb.append("SnapshotId: " + snapshotId + ", ");
-        if (attribute != null) sb.append("Attribute: " + attribute + ", ");
+        if (getSnapshotId() != null) sb.append("SnapshotId: " + getSnapshotId() + ", ");
+        if (getAttribute() != null) sb.append("Attribute: " + getAttribute() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -236,7 +236,7 @@ public class DescribeSnapshotAttributeRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DescribeSnapshotAttributeRequest == false) return false;
         DescribeSnapshotAttributeRequest other = (DescribeSnapshotAttributeRequest)obj;
         

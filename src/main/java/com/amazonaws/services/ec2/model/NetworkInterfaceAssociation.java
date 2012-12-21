@@ -175,10 +175,10 @@ public class NetworkInterfaceAssociation {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (publicIp != null) sb.append("PublicIp: " + publicIp + ", ");
-        if (ipOwnerId != null) sb.append("IpOwnerId: " + ipOwnerId + ", ");
-        if (allocationId != null) sb.append("AllocationId: " + allocationId + ", ");
-        if (associationId != null) sb.append("AssociationId: " + associationId + ", ");
+        if (getPublicIp() != null) sb.append("PublicIp: " + getPublicIp() + ", ");
+        if (getIpOwnerId() != null) sb.append("IpOwnerId: " + getIpOwnerId() + ", ");
+        if (getAllocationId() != null) sb.append("AllocationId: " + getAllocationId() + ", ");
+        if (getAssociationId() != null) sb.append("AssociationId: " + getAssociationId() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -199,7 +199,7 @@ public class NetworkInterfaceAssociation {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof NetworkInterfaceAssociation == false) return false;
         NetworkInterfaceAssociation other = (NetworkInterfaceAssociation)obj;
         

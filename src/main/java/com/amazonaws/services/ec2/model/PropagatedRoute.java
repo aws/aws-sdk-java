@@ -176,10 +176,10 @@ public class PropagatedRoute {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (destinationCidrBlock != null) sb.append("DestinationCidrBlock: " + destinationCidrBlock + ", ");
-        if (gatewayId != null) sb.append("GatewayId: " + gatewayId + ", ");
-        if (status != null) sb.append("Status: " + status + ", ");
-        if (sourceId != null) sb.append("SourceId: " + sourceId + ", ");
+        if (getDestinationCidrBlock() != null) sb.append("DestinationCidrBlock: " + getDestinationCidrBlock() + ", ");
+        if (getGatewayId() != null) sb.append("GatewayId: " + getGatewayId() + ", ");
+        if (getStatus() != null) sb.append("Status: " + getStatus() + ", ");
+        if (getSourceId() != null) sb.append("SourceId: " + getSourceId() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -200,7 +200,7 @@ public class PropagatedRoute {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof PropagatedRoute == false) return false;
         PropagatedRoute other = (PropagatedRoute)obj;
         

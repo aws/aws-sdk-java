@@ -106,7 +106,7 @@ public class DescribeExportTasksRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (exportTaskIds != null) sb.append("ExportTaskIds: " + exportTaskIds + ", ");
+        if (getExportTaskIds() != null) sb.append("ExportTaskIds: " + getExportTaskIds() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -124,7 +124,7 @@ public class DescribeExportTasksRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DescribeExportTasksRequest == false) return false;
         DescribeExportTasksRequest other = (DescribeExportTasksRequest)obj;
         

@@ -152,8 +152,8 @@ public class SpotPlacement {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (availabilityZone != null) sb.append("AvailabilityZone: " + availabilityZone + ", ");
-        if (groupName != null) sb.append("GroupName: " + groupName + ", ");
+        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ", ");
+        if (getGroupName() != null) sb.append("GroupName: " + getGroupName() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -172,7 +172,7 @@ public class SpotPlacement {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof SpotPlacement == false) return false;
         SpotPlacement other = (SpotPlacement)obj;
         

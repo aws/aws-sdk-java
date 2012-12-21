@@ -116,7 +116,7 @@ public class DeregisterInstancesFromLoadBalancerResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (instances != null) sb.append("Instances: " + instances + ", ");
+        if (getInstances() != null) sb.append("Instances: " + getInstances() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -134,7 +134,7 @@ public class DeregisterInstancesFromLoadBalancerResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DeregisterInstancesFromLoadBalancerResult == false) return false;
         DeregisterInstancesFromLoadBalancerResult other = (DeregisterInstancesFromLoadBalancerResult)obj;
         

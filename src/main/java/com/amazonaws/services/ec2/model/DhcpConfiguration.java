@@ -146,8 +146,8 @@ public class DhcpConfiguration {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (key != null) sb.append("Key: " + key + ", ");
-        if (values != null) sb.append("Values: " + values + ", ");
+        if (getKey() != null) sb.append("Key: " + getKey() + ", ");
+        if (getValues() != null) sb.append("Values: " + getValues() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -166,7 +166,7 @@ public class DhcpConfiguration {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DhcpConfiguration == false) return false;
         DhcpConfiguration other = (DhcpConfiguration)obj;
         

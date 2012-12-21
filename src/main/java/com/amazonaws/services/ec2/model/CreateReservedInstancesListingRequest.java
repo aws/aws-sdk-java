@@ -214,10 +214,10 @@ public class CreateReservedInstancesListingRequest extends AmazonWebServiceReque
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (reservedInstancesId != null) sb.append("ReservedInstancesId: " + reservedInstancesId + ", ");
-        if (instanceCount != null) sb.append("InstanceCount: " + instanceCount + ", ");
-        if (priceSchedules != null) sb.append("PriceSchedules: " + priceSchedules + ", ");
-        if (clientToken != null) sb.append("ClientToken: " + clientToken + ", ");
+        if (getReservedInstancesId() != null) sb.append("ReservedInstancesId: " + getReservedInstancesId() + ", ");
+        if (getInstanceCount() != null) sb.append("InstanceCount: " + getInstanceCount() + ", ");
+        if (getPriceSchedules() != null) sb.append("PriceSchedules: " + getPriceSchedules() + ", ");
+        if (getClientToken() != null) sb.append("ClientToken: " + getClientToken() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -238,7 +238,7 @@ public class CreateReservedInstancesListingRequest extends AmazonWebServiceReque
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof CreateReservedInstancesListingRequest == false) return false;
         CreateReservedInstancesListingRequest other = (CreateReservedInstancesListingRequest)obj;
         

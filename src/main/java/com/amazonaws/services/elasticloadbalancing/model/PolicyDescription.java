@@ -185,9 +185,9 @@ public class PolicyDescription {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (policyName != null) sb.append("PolicyName: " + policyName + ", ");
-        if (policyTypeName != null) sb.append("PolicyTypeName: " + policyTypeName + ", ");
-        if (policyAttributeDescriptions != null) sb.append("PolicyAttributeDescriptions: " + policyAttributeDescriptions + ", ");
+        if (getPolicyName() != null) sb.append("PolicyName: " + getPolicyName() + ", ");
+        if (getPolicyTypeName() != null) sb.append("PolicyTypeName: " + getPolicyTypeName() + ", ");
+        if (getPolicyAttributeDescriptions() != null) sb.append("PolicyAttributeDescriptions: " + getPolicyAttributeDescriptions() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -207,7 +207,7 @@ public class PolicyDescription {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof PolicyDescription == false) return false;
         PolicyDescription other = (PolicyDescription)obj;
         

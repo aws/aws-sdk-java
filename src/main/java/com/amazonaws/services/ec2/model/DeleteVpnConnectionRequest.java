@@ -102,7 +102,7 @@ public class DeleteVpnConnectionRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (vpnConnectionId != null) sb.append("VpnConnectionId: " + vpnConnectionId + ", ");
+        if (getVpnConnectionId() != null) sb.append("VpnConnectionId: " + getVpnConnectionId() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -120,7 +120,7 @@ public class DeleteVpnConnectionRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DeleteVpnConnectionRequest == false) return false;
         DeleteVpnConnectionRequest other = (DeleteVpnConnectionRequest)obj;
         

@@ -107,7 +107,7 @@ public class RegisterInstancesWithLoadBalancerResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (instances != null) sb.append("Instances: " + instances + ", ");
+        if (getInstances() != null) sb.append("Instances: " + getInstances() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -125,7 +125,7 @@ public class RegisterInstancesWithLoadBalancerResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof RegisterInstancesWithLoadBalancerResult == false) return false;
         RegisterInstancesWithLoadBalancerResult other = (RegisterInstancesWithLoadBalancerResult)obj;
         

@@ -49,7 +49,7 @@ public class CreateLoadBalancerPolicyResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof CreateLoadBalancerPolicyResult == false) return false;
         CreateLoadBalancerPolicyResult other = (CreateLoadBalancerPolicyResult)obj;
         

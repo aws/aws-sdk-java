@@ -345,14 +345,14 @@ public class BundleTask {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (instanceId != null) sb.append("InstanceId: " + instanceId + ", ");
-        if (bundleId != null) sb.append("BundleId: " + bundleId + ", ");
-        if (state != null) sb.append("State: " + state + ", ");
-        if (startTime != null) sb.append("StartTime: " + startTime + ", ");
-        if (updateTime != null) sb.append("UpdateTime: " + updateTime + ", ");
-        if (storage != null) sb.append("Storage: " + storage + ", ");
-        if (progress != null) sb.append("Progress: " + progress + ", ");
-        if (bundleTaskError != null) sb.append("BundleTaskError: " + bundleTaskError + ", ");
+        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ", ");
+        if (getBundleId() != null) sb.append("BundleId: " + getBundleId() + ", ");
+        if (getState() != null) sb.append("State: " + getState() + ", ");
+        if (getStartTime() != null) sb.append("StartTime: " + getStartTime() + ", ");
+        if (getUpdateTime() != null) sb.append("UpdateTime: " + getUpdateTime() + ", ");
+        if (getStorage() != null) sb.append("Storage: " + getStorage() + ", ");
+        if (getProgress() != null) sb.append("Progress: " + getProgress() + ", ");
+        if (getBundleTaskError() != null) sb.append("BundleTaskError: " + getBundleTaskError() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -377,7 +377,7 @@ public class BundleTask {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof BundleTask == false) return false;
         BundleTask other = (BundleTask)obj;
         

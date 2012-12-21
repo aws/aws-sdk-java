@@ -95,7 +95,7 @@ public class DeleteVolumeRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (volumeId != null) sb.append("VolumeId: " + volumeId + ", ");
+        if (getVolumeId() != null) sb.append("VolumeId: " + getVolumeId() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -113,7 +113,7 @@ public class DeleteVolumeRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DeleteVolumeRequest == false) return false;
         DeleteVolumeRequest other = (DeleteVolumeRequest)obj;
         

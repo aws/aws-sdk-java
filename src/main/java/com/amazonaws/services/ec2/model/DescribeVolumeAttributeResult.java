@@ -186,9 +186,9 @@ public class DescribeVolumeAttributeResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (volumeId != null) sb.append("VolumeId: " + volumeId + ", ");
-        if (autoEnableIO != null) sb.append("AutoEnableIO: " + autoEnableIO + ", ");
-        if (productCodes != null) sb.append("ProductCodes: " + productCodes + ", ");
+        if (getVolumeId() != null) sb.append("VolumeId: " + getVolumeId() + ", ");
+        if (isAutoEnableIO() != null) sb.append("AutoEnableIO: " + isAutoEnableIO() + ", ");
+        if (getProductCodes() != null) sb.append("ProductCodes: " + getProductCodes() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -208,7 +208,7 @@ public class DescribeVolumeAttributeResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DescribeVolumeAttributeResult == false) return false;
         DescribeVolumeAttributeResult other = (DescribeVolumeAttributeResult)obj;
         

@@ -96,7 +96,7 @@ public class DeleteDhcpOptionsRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (dhcpOptionsId != null) sb.append("DhcpOptionsId: " + dhcpOptionsId + ", ");
+        if (getDhcpOptionsId() != null) sb.append("DhcpOptionsId: " + getDhcpOptionsId() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -114,7 +114,7 @@ public class DeleteDhcpOptionsRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DeleteDhcpOptionsRequest == false) return false;
         DeleteDhcpOptionsRequest other = (DeleteDhcpOptionsRequest)obj;
         

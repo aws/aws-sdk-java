@@ -79,7 +79,7 @@ public class Monitoring {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (state != null) sb.append("State: " + state + ", ");
+        if (getState() != null) sb.append("State: " + getState() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -97,7 +97,7 @@ public class Monitoring {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof Monitoring == false) return false;
         Monitoring other = (Monitoring)obj;
         

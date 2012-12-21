@@ -72,7 +72,7 @@ public class CreateVpnConnectionResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (vpnConnection != null) sb.append("VpnConnection: " + vpnConnection + ", ");
+        if (getVpnConnection() != null) sb.append("VpnConnection: " + getVpnConnection() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -90,7 +90,7 @@ public class CreateVpnConnectionResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof CreateVpnConnectionResult == false) return false;
         CreateVpnConnectionResult other = (CreateVpnConnectionResult)obj;
         

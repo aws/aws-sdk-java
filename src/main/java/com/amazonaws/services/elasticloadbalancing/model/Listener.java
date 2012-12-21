@@ -402,11 +402,11 @@ public class Listener {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (protocol != null) sb.append("Protocol: " + protocol + ", ");
-        if (loadBalancerPort != null) sb.append("LoadBalancerPort: " + loadBalancerPort + ", ");
-        if (instanceProtocol != null) sb.append("InstanceProtocol: " + instanceProtocol + ", ");
-        if (instancePort != null) sb.append("InstancePort: " + instancePort + ", ");
-        if (sSLCertificateId != null) sb.append("SSLCertificateId: " + sSLCertificateId + ", ");
+        if (getProtocol() != null) sb.append("Protocol: " + getProtocol() + ", ");
+        if (getLoadBalancerPort() != null) sb.append("LoadBalancerPort: " + getLoadBalancerPort() + ", ");
+        if (getInstanceProtocol() != null) sb.append("InstanceProtocol: " + getInstanceProtocol() + ", ");
+        if (getInstancePort() != null) sb.append("InstancePort: " + getInstancePort() + ", ");
+        if (getSSLCertificateId() != null) sb.append("SSLCertificateId: " + getSSLCertificateId() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -428,7 +428,7 @@ public class Listener {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof Listener == false) return false;
         Listener other = (Listener)obj;
         

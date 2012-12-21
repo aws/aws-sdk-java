@@ -72,7 +72,7 @@ public class Storage {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (s3 != null) sb.append("S3: " + s3 + ", ");
+        if (getS3() != null) sb.append("S3: " + getS3() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -90,7 +90,7 @@ public class Storage {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof Storage == false) return false;
         Storage other = (Storage)obj;
         

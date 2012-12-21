@@ -138,8 +138,8 @@ public class ActivateLicenseRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (licenseId != null) sb.append("LicenseId: " + licenseId + ", ");
-        if (capacity != null) sb.append("Capacity: " + capacity + ", ");
+        if (getLicenseId() != null) sb.append("LicenseId: " + getLicenseId() + ", ");
+        if (getCapacity() != null) sb.append("Capacity: " + getCapacity() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -158,7 +158,7 @@ public class ActivateLicenseRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof ActivateLicenseRequest == false) return false;
         ActivateLicenseRequest other = (ActivateLicenseRequest)obj;
         

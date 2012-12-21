@@ -183,9 +183,9 @@ public class DescribeReservedInstancesListingsRequest extends AmazonWebServiceRe
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (reservedInstancesId != null) sb.append("ReservedInstancesId: " + reservedInstancesId + ", ");
-        if (reservedInstancesListingId != null) sb.append("ReservedInstancesListingId: " + reservedInstancesListingId + ", ");
-        if (filters != null) sb.append("Filters: " + filters + ", ");
+        if (getReservedInstancesId() != null) sb.append("ReservedInstancesId: " + getReservedInstancesId() + ", ");
+        if (getReservedInstancesListingId() != null) sb.append("ReservedInstancesListingId: " + getReservedInstancesListingId() + ", ");
+        if (getFilters() != null) sb.append("Filters: " + getFilters() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -205,7 +205,7 @@ public class DescribeReservedInstancesListingsRequest extends AmazonWebServiceRe
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DescribeReservedInstancesListingsRequest == false) return false;
         DescribeReservedInstancesListingsRequest other = (DescribeReservedInstancesListingsRequest)obj;
         

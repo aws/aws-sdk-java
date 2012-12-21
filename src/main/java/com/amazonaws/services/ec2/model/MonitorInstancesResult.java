@@ -117,7 +117,7 @@ public class MonitorInstancesResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (instanceMonitorings != null) sb.append("InstanceMonitorings: " + instanceMonitorings + ", ");
+        if (getInstanceMonitorings() != null) sb.append("InstanceMonitorings: " + getInstanceMonitorings() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -135,7 +135,7 @@ public class MonitorInstancesResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof MonitorInstancesResult == false) return false;
         MonitorInstancesResult other = (MonitorInstancesResult)obj;
         

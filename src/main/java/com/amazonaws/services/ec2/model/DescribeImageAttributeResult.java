@@ -72,7 +72,7 @@ public class DescribeImageAttributeResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (imageAttribute != null) sb.append("ImageAttribute: " + imageAttribute + ", ");
+        if (getImageAttribute() != null) sb.append("ImageAttribute: " + getImageAttribute() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -90,7 +90,7 @@ public class DescribeImageAttributeResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DescribeImageAttributeResult == false) return false;
         DescribeImageAttributeResult other = (DescribeImageAttributeResult)obj;
         

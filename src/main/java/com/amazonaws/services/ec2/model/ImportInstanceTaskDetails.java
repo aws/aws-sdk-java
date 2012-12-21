@@ -210,10 +210,10 @@ public class ImportInstanceTaskDetails {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (volumes != null) sb.append("Volumes: " + volumes + ", ");
-        if (instanceId != null) sb.append("InstanceId: " + instanceId + ", ");
-        if (platform != null) sb.append("Platform: " + platform + ", ");
-        if (description != null) sb.append("Description: " + description + ", ");
+        if (getVolumes() != null) sb.append("Volumes: " + getVolumes() + ", ");
+        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ", ");
+        if (getPlatform() != null) sb.append("Platform: " + getPlatform() + ", ");
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -234,7 +234,7 @@ public class ImportInstanceTaskDetails {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof ImportInstanceTaskDetails == false) return false;
         ImportInstanceTaskDetails other = (ImportInstanceTaskDetails)obj;
         

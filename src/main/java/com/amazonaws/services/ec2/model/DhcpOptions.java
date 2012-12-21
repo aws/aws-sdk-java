@@ -220,9 +220,9 @@ public class DhcpOptions {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (dhcpOptionsId != null) sb.append("DhcpOptionsId: " + dhcpOptionsId + ", ");
-        if (dhcpConfigurations != null) sb.append("DhcpConfigurations: " + dhcpConfigurations + ", ");
-        if (tags != null) sb.append("Tags: " + tags + ", ");
+        if (getDhcpOptionsId() != null) sb.append("DhcpOptionsId: " + getDhcpOptionsId() + ", ");
+        if (getDhcpConfigurations() != null) sb.append("DhcpConfigurations: " + getDhcpConfigurations() + ", ");
+        if (getTags() != null) sb.append("Tags: " + getTags() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -242,7 +242,7 @@ public class DhcpOptions {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DhcpOptions == false) return false;
         DhcpOptions other = (DhcpOptions)obj;
         

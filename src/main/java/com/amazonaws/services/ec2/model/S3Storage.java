@@ -256,11 +256,11 @@ public class S3Storage {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (bucket != null) sb.append("Bucket: " + bucket + ", ");
-        if (prefix != null) sb.append("Prefix: " + prefix + ", ");
-        if (aWSAccessKeyId != null) sb.append("AWSAccessKeyId: " + aWSAccessKeyId + ", ");
-        if (uploadPolicy != null) sb.append("UploadPolicy: " + uploadPolicy + ", ");
-        if (uploadPolicySignature != null) sb.append("UploadPolicySignature: " + uploadPolicySignature + ", ");
+        if (getBucket() != null) sb.append("Bucket: " + getBucket() + ", ");
+        if (getPrefix() != null) sb.append("Prefix: " + getPrefix() + ", ");
+        if (getAWSAccessKeyId() != null) sb.append("AWSAccessKeyId: " + getAWSAccessKeyId() + ", ");
+        if (getUploadPolicy() != null) sb.append("UploadPolicy: " + getUploadPolicy() + ", ");
+        if (getUploadPolicySignature() != null) sb.append("UploadPolicySignature: " + getUploadPolicySignature() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -282,7 +282,7 @@ public class S3Storage {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof S3Storage == false) return false;
         S3Storage other = (S3Storage)obj;
         

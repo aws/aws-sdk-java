@@ -150,9 +150,9 @@ public class InstanceStateChange {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (instanceId != null) sb.append("InstanceId: " + instanceId + ", ");
-        if (currentState != null) sb.append("CurrentState: " + currentState + ", ");
-        if (previousState != null) sb.append("PreviousState: " + previousState + ", ");
+        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ", ");
+        if (getCurrentState() != null) sb.append("CurrentState: " + getCurrentState() + ", ");
+        if (getPreviousState() != null) sb.append("PreviousState: " + getPreviousState() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -172,7 +172,7 @@ public class InstanceStateChange {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof InstanceStateChange == false) return false;
         InstanceStateChange other = (InstanceStateChange)obj;
         

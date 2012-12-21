@@ -72,7 +72,7 @@ public class CreateKeyPairResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (keyPair != null) sb.append("KeyPair: " + keyPair + ", ");
+        if (getKeyPair() != null) sb.append("KeyPair: " + getKeyPair() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -90,7 +90,7 @@ public class CreateKeyPairResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof CreateKeyPairResult == false) return false;
         CreateKeyPairResult other = (CreateKeyPairResult)obj;
         

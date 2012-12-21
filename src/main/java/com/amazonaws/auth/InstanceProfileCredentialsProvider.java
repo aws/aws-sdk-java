@@ -35,6 +35,9 @@ public class InstanceProfileCredentialsProvider implements AWSCredentialsProvide
 
     public AWSCredentials getCredentials() {
         if (needsToLoadCredentials()) loadCredentials();
+        if (expired()) {
+            throw new AmazonClientException("The credentials received from the Amazon EC2 metadata service have expired");
+        }
 
         return credentials;
     }
@@ -50,6 +53,16 @@ public class InstanceProfileCredentialsProvider implements AWSCredentialsProvide
             int thresholdInMilliseconds = 1000 * 60 * 5;
             boolean withinExpirationThreshold = credentialsExpiration.getTime() - System.currentTimeMillis() < thresholdInMilliseconds;
             if (withinExpirationThreshold) return true;
+        }
+
+        return false;
+    }
+
+    private boolean expired() {
+        if (credentialsExpiration != null) {
+            if (credentialsExpiration.getTime() < System.currentTimeMillis()) {
+                return true;
+            }
         }
 
         return false;

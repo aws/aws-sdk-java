@@ -175,8 +175,8 @@ public class DescribeLoadBalancersRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (loadBalancerNames != null) sb.append("LoadBalancerNames: " + loadBalancerNames + ", ");
-        if (marker != null) sb.append("Marker: " + marker + ", ");
+        if (getLoadBalancerNames() != null) sb.append("LoadBalancerNames: " + getLoadBalancerNames() + ", ");
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -195,7 +195,7 @@ public class DescribeLoadBalancersRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DescribeLoadBalancersRequest == false) return false;
         DescribeLoadBalancersRequest other = (DescribeLoadBalancersRequest)obj;
         

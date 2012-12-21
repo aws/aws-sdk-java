@@ -209,9 +209,9 @@ public class InternetGateway {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (internetGatewayId != null) sb.append("InternetGatewayId: " + internetGatewayId + ", ");
-        if (attachments != null) sb.append("Attachments: " + attachments + ", ");
-        if (tags != null) sb.append("Tags: " + tags + ", ");
+        if (getInternetGatewayId() != null) sb.append("InternetGatewayId: " + getInternetGatewayId() + ", ");
+        if (getAttachments() != null) sb.append("Attachments: " + getAttachments() + ", ");
+        if (getTags() != null) sb.append("Tags: " + getTags() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -231,7 +231,7 @@ public class InternetGateway {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof InternetGateway == false) return false;
         InternetGateway other = (InternetGateway)obj;
         

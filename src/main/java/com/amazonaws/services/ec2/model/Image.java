@@ -1180,27 +1180,27 @@ public class Image {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (imageId != null) sb.append("ImageId: " + imageId + ", ");
-        if (imageLocation != null) sb.append("ImageLocation: " + imageLocation + ", ");
-        if (state != null) sb.append("State: " + state + ", ");
-        if (ownerId != null) sb.append("OwnerId: " + ownerId + ", ");
-        if (publicValue != null) sb.append("Public: " + publicValue + ", ");
-        if (productCodes != null) sb.append("ProductCodes: " + productCodes + ", ");
-        if (architecture != null) sb.append("Architecture: " + architecture + ", ");
-        if (imageType != null) sb.append("ImageType: " + imageType + ", ");
-        if (kernelId != null) sb.append("KernelId: " + kernelId + ", ");
-        if (ramdiskId != null) sb.append("RamdiskId: " + ramdiskId + ", ");
-        if (platform != null) sb.append("Platform: " + platform + ", ");
-        if (stateReason != null) sb.append("StateReason: " + stateReason + ", ");
-        if (imageOwnerAlias != null) sb.append("ImageOwnerAlias: " + imageOwnerAlias + ", ");
-        if (name != null) sb.append("Name: " + name + ", ");
-        if (description != null) sb.append("Description: " + description + ", ");
-        if (rootDeviceType != null) sb.append("RootDeviceType: " + rootDeviceType + ", ");
-        if (rootDeviceName != null) sb.append("RootDeviceName: " + rootDeviceName + ", ");
-        if (blockDeviceMappings != null) sb.append("BlockDeviceMappings: " + blockDeviceMappings + ", ");
-        if (virtualizationType != null) sb.append("VirtualizationType: " + virtualizationType + ", ");
-        if (tags != null) sb.append("Tags: " + tags + ", ");
-        if (hypervisor != null) sb.append("Hypervisor: " + hypervisor + ", ");
+        if (getImageId() != null) sb.append("ImageId: " + getImageId() + ", ");
+        if (getImageLocation() != null) sb.append("ImageLocation: " + getImageLocation() + ", ");
+        if (getState() != null) sb.append("State: " + getState() + ", ");
+        if (getOwnerId() != null) sb.append("OwnerId: " + getOwnerId() + ", ");
+        if (isPublic() != null) sb.append("Public: " + isPublic() + ", ");
+        if (getProductCodes() != null) sb.append("ProductCodes: " + getProductCodes() + ", ");
+        if (getArchitecture() != null) sb.append("Architecture: " + getArchitecture() + ", ");
+        if (getImageType() != null) sb.append("ImageType: " + getImageType() + ", ");
+        if (getKernelId() != null) sb.append("KernelId: " + getKernelId() + ", ");
+        if (getRamdiskId() != null) sb.append("RamdiskId: " + getRamdiskId() + ", ");
+        if (getPlatform() != null) sb.append("Platform: " + getPlatform() + ", ");
+        if (getStateReason() != null) sb.append("StateReason: " + getStateReason() + ", ");
+        if (getImageOwnerAlias() != null) sb.append("ImageOwnerAlias: " + getImageOwnerAlias() + ", ");
+        if (getName() != null) sb.append("Name: " + getName() + ", ");
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ", ");
+        if (getRootDeviceType() != null) sb.append("RootDeviceType: " + getRootDeviceType() + ", ");
+        if (getRootDeviceName() != null) sb.append("RootDeviceName: " + getRootDeviceName() + ", ");
+        if (getBlockDeviceMappings() != null) sb.append("BlockDeviceMappings: " + getBlockDeviceMappings() + ", ");
+        if (getVirtualizationType() != null) sb.append("VirtualizationType: " + getVirtualizationType() + ", ");
+        if (getTags() != null) sb.append("Tags: " + getTags() + ", ");
+        if (getHypervisor() != null) sb.append("Hypervisor: " + getHypervisor() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -1238,7 +1238,7 @@ public class Image {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof Image == false) return false;
         Image other = (Image)obj;
         

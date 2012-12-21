@@ -251,10 +251,10 @@ public class DescribeVolumeStatusRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (volumeIds != null) sb.append("VolumeIds: " + volumeIds + ", ");
-        if (filters != null) sb.append("Filters: " + filters + ", ");
-        if (nextToken != null) sb.append("NextToken: " + nextToken + ", ");
-        if (maxResults != null) sb.append("MaxResults: " + maxResults + ", ");
+        if (getVolumeIds() != null) sb.append("VolumeIds: " + getVolumeIds() + ", ");
+        if (getFilters() != null) sb.append("Filters: " + getFilters() + ", ");
+        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() + ", ");
+        if (getMaxResults() != null) sb.append("MaxResults: " + getMaxResults() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -275,7 +275,7 @@ public class DescribeVolumeStatusRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DescribeVolumeStatusRequest == false) return false;
         DescribeVolumeStatusRequest other = (DescribeVolumeStatusRequest)obj;
         

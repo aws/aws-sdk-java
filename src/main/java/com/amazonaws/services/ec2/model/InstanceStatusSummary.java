@@ -138,8 +138,8 @@ public class InstanceStatusSummary {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (status != null) sb.append("Status: " + status + ", ");
-        if (details != null) sb.append("Details: " + details + ", ");
+        if (getStatus() != null) sb.append("Status: " + getStatus() + ", ");
+        if (getDetails() != null) sb.append("Details: " + getDetails() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -158,7 +158,7 @@ public class InstanceStatusSummary {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof InstanceStatusSummary == false) return false;
         InstanceStatusSummary other = (InstanceStatusSummary)obj;
         

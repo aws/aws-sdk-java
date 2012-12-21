@@ -183,9 +183,9 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (vpcId != null) sb.append("VpcId: " + vpcId + ", ");
-        if (cidrBlock != null) sb.append("CidrBlock: " + cidrBlock + ", ");
-        if (availabilityZone != null) sb.append("AvailabilityZone: " + availabilityZone + ", ");
+        if (getVpcId() != null) sb.append("VpcId: " + getVpcId() + ", ");
+        if (getCidrBlock() != null) sb.append("CidrBlock: " + getCidrBlock() + ", ");
+        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -205,7 +205,7 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof CreateSubnetRequest == false) return false;
         CreateSubnetRequest other = (CreateSubnetRequest)obj;
         

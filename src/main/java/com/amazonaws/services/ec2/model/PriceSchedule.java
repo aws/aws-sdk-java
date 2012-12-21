@@ -184,10 +184,10 @@ public class PriceSchedule {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (term != null) sb.append("Term: " + term + ", ");
-        if (price != null) sb.append("Price: " + price + ", ");
-        if (currencyCode != null) sb.append("CurrencyCode: " + currencyCode + ", ");
-        if (active != null) sb.append("Active: " + active + ", ");
+        if (getTerm() != null) sb.append("Term: " + getTerm() + ", ");
+        if (getPrice() != null) sb.append("Price: " + getPrice() + ", ");
+        if (getCurrencyCode() != null) sb.append("CurrencyCode: " + getCurrencyCode() + ", ");
+        if (isActive() != null) sb.append("Active: " + isActive() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -208,7 +208,7 @@ public class PriceSchedule {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof PriceSchedule == false) return false;
         PriceSchedule other = (PriceSchedule)obj;
         

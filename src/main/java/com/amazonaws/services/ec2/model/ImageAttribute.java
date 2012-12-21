@@ -411,13 +411,13 @@ public class ImageAttribute {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (imageId != null) sb.append("ImageId: " + imageId + ", ");
-        if (launchPermissions != null) sb.append("LaunchPermissions: " + launchPermissions + ", ");
-        if (productCodes != null) sb.append("ProductCodes: " + productCodes + ", ");
-        if (kernelId != null) sb.append("KernelId: " + kernelId + ", ");
-        if (ramdiskId != null) sb.append("RamdiskId: " + ramdiskId + ", ");
-        if (description != null) sb.append("Description: " + description + ", ");
-        if (blockDeviceMappings != null) sb.append("BlockDeviceMappings: " + blockDeviceMappings + ", ");
+        if (getImageId() != null) sb.append("ImageId: " + getImageId() + ", ");
+        if (getLaunchPermissions() != null) sb.append("LaunchPermissions: " + getLaunchPermissions() + ", ");
+        if (getProductCodes() != null) sb.append("ProductCodes: " + getProductCodes() + ", ");
+        if (getKernelId() != null) sb.append("KernelId: " + getKernelId() + ", ");
+        if (getRamdiskId() != null) sb.append("RamdiskId: " + getRamdiskId() + ", ");
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ", ");
+        if (getBlockDeviceMappings() != null) sb.append("BlockDeviceMappings: " + getBlockDeviceMappings() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -441,7 +441,7 @@ public class ImageAttribute {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof ImageAttribute == false) return false;
         ImageAttribute other = (ImageAttribute)obj;
         

@@ -151,8 +151,8 @@ public class ReleaseAddressRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (publicIp != null) sb.append("PublicIp: " + publicIp + ", ");
-        if (allocationId != null) sb.append("AllocationId: " + allocationId + ", ");
+        if (getPublicIp() != null) sb.append("PublicIp: " + getPublicIp() + ", ");
+        if (getAllocationId() != null) sb.append("AllocationId: " + getAllocationId() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -171,7 +171,7 @@ public class ReleaseAddressRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof ReleaseAddressRequest == false) return false;
         ReleaseAddressRequest other = (ReleaseAddressRequest)obj;
         

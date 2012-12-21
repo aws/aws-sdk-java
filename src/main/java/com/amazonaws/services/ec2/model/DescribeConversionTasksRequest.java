@@ -177,8 +177,8 @@ public class DescribeConversionTasksRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (filters != null) sb.append("Filters: " + filters + ", ");
-        if (conversionTaskIds != null) sb.append("ConversionTaskIds: " + conversionTaskIds + ", ");
+        if (getFilters() != null) sb.append("Filters: " + getFilters() + ", ");
+        if (getConversionTaskIds() != null) sb.append("ConversionTaskIds: " + getConversionTaskIds() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -197,7 +197,7 @@ public class DescribeConversionTasksRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DescribeConversionTasksRequest == false) return false;
         DescribeConversionTasksRequest other = (DescribeConversionTasksRequest)obj;
         

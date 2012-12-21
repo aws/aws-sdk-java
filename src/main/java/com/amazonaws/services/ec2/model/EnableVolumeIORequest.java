@@ -73,7 +73,7 @@ public class EnableVolumeIORequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (volumeId != null) sb.append("VolumeId: " + volumeId + ", ");
+        if (getVolumeId() != null) sb.append("VolumeId: " + getVolumeId() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -91,7 +91,7 @@ public class EnableVolumeIORequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof EnableVolumeIORequest == false) return false;
         EnableVolumeIORequest other = (EnableVolumeIORequest)obj;
         

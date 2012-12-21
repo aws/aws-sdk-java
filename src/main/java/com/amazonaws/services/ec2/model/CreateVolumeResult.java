@@ -72,7 +72,7 @@ public class CreateVolumeResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (volume != null) sb.append("Volume: " + volume + ", ");
+        if (getVolume() != null) sb.append("Volume: " + getVolume() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -90,7 +90,7 @@ public class CreateVolumeResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof CreateVolumeResult == false) return false;
         CreateVolumeResult other = (CreateVolumeResult)obj;
         

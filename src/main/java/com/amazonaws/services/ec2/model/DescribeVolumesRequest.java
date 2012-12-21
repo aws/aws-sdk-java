@@ -232,8 +232,8 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (volumeIds != null) sb.append("VolumeIds: " + volumeIds + ", ");
-        if (filters != null) sb.append("Filters: " + filters + ", ");
+        if (getVolumeIds() != null) sb.append("VolumeIds: " + getVolumeIds() + ", ");
+        if (getFilters() != null) sb.append("Filters: " + getFilters() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -252,7 +252,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DescribeVolumesRequest == false) return false;
         DescribeVolumesRequest other = (DescribeVolumesRequest)obj;
         

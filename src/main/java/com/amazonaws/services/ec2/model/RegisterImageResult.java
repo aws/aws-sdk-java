@@ -72,7 +72,7 @@ public class RegisterImageResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (imageId != null) sb.append("ImageId: " + imageId + ", ");
+        if (getImageId() != null) sb.append("ImageId: " + getImageId() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -90,7 +90,7 @@ public class RegisterImageResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof RegisterImageResult == false) return false;
         RegisterImageResult other = (RegisterImageResult)obj;
         

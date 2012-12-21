@@ -67,7 +67,7 @@ public class CreateInstanceExportTaskResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (exportTask != null) sb.append("ExportTask: " + exportTask + ", ");
+        if (getExportTask() != null) sb.append("ExportTask: " + getExportTask() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -85,7 +85,7 @@ public class CreateInstanceExportTaskResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof CreateInstanceExportTaskResult == false) return false;
         CreateInstanceExportTaskResult other = (CreateInstanceExportTaskResult)obj;
         

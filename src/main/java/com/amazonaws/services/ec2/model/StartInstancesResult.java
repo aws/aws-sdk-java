@@ -116,7 +116,7 @@ public class StartInstancesResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (startingInstances != null) sb.append("StartingInstances: " + startingInstances + ", ");
+        if (getStartingInstances() != null) sb.append("StartingInstances: " + getStartingInstances() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -134,7 +134,7 @@ public class StartInstancesResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof StartInstancesResult == false) return false;
         StartInstancesResult other = (StartInstancesResult)obj;
         

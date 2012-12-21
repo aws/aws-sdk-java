@@ -341,11 +341,11 @@ public class CreateImageRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (instanceId != null) sb.append("InstanceId: " + instanceId + ", ");
-        if (name != null) sb.append("Name: " + name + ", ");
-        if (description != null) sb.append("Description: " + description + ", ");
-        if (noReboot != null) sb.append("NoReboot: " + noReboot + ", ");
-        if (blockDeviceMappings != null) sb.append("BlockDeviceMappings: " + blockDeviceMappings + ", ");
+        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ", ");
+        if (getName() != null) sb.append("Name: " + getName() + ", ");
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ", ");
+        if (isNoReboot() != null) sb.append("NoReboot: " + isNoReboot() + ", ");
+        if (getBlockDeviceMappings() != null) sb.append("BlockDeviceMappings: " + getBlockDeviceMappings() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -367,7 +367,7 @@ public class CreateImageRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof CreateImageRequest == false) return false;
         CreateImageRequest other = (CreateImageRequest)obj;
         

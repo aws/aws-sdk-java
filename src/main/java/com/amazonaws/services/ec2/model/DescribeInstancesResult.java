@@ -107,7 +107,7 @@ public class DescribeInstancesResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (reservations != null) sb.append("Reservations: " + reservations + ", ");
+        if (getReservations() != null) sb.append("Reservations: " + getReservations() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -125,7 +125,7 @@ public class DescribeInstancesResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DescribeInstancesResult == false) return false;
         DescribeInstancesResult other = (DescribeInstancesResult)obj;
         

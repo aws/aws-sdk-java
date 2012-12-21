@@ -78,7 +78,7 @@ public class DeleteRouteTableRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (routeTableId != null) sb.append("RouteTableId: " + routeTableId + ", ");
+        if (getRouteTableId() != null) sb.append("RouteTableId: " + getRouteTableId() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -96,7 +96,7 @@ public class DeleteRouteTableRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DeleteRouteTableRequest == false) return false;
         DeleteRouteTableRequest other = (DeleteRouteTableRequest)obj;
         

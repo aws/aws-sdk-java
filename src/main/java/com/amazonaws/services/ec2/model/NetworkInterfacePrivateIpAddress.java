@@ -148,9 +148,9 @@ public class NetworkInterfacePrivateIpAddress {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (privateIpAddress != null) sb.append("PrivateIpAddress: " + privateIpAddress + ", ");
-        if (primary != null) sb.append("Primary: " + primary + ", ");
-        if (association != null) sb.append("Association: " + association + ", ");
+        if (getPrivateIpAddress() != null) sb.append("PrivateIpAddress: " + getPrivateIpAddress() + ", ");
+        if (isPrimary() != null) sb.append("Primary: " + isPrimary() + ", ");
+        if (getAssociation() != null) sb.append("Association: " + getAssociation() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -170,7 +170,7 @@ public class NetworkInterfacePrivateIpAddress {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof NetworkInterfacePrivateIpAddress == false) return false;
         NetworkInterfacePrivateIpAddress other = (NetworkInterfacePrivateIpAddress)obj;
         

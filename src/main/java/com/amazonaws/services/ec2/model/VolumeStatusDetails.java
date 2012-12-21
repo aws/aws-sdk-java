@@ -103,8 +103,8 @@ public class VolumeStatusDetails {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (name != null) sb.append("Name: " + name + ", ");
-        if (status != null) sb.append("Status: " + status + ", ");
+        if (getName() != null) sb.append("Name: " + getName() + ", ");
+        if (getStatus() != null) sb.append("Status: " + getStatus() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -123,7 +123,7 @@ public class VolumeStatusDetails {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof VolumeStatusDetails == false) return false;
         VolumeStatusDetails other = (VolumeStatusDetails)obj;
         
