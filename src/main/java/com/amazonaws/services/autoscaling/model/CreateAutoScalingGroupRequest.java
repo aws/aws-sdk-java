@@ -129,7 +129,7 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest {
      * to select the instance to terminate. The policies are executed in the
      * order that they are listed. <p> For more information on configuring a
      * termination policy for your Auto Scaling group, go to <a
-     * AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Instance
+     * href="http://docs.amazonwebservices.com/AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Instance
      * Termination Policy for Your Auto Scaling Group</a> in the the <i>Auto
      * Scaling Developer Guide</i>.
      */
@@ -764,7 +764,7 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest {
      * to select the instance to terminate. The policies are executed in the
      * order that they are listed. <p> For more information on configuring a
      * termination policy for your Auto Scaling group, go to <a
-     * AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Instance
+     * href="http://docs.amazonwebservices.com/AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Instance
      * Termination Policy for Your Auto Scaling Group</a> in the the <i>Auto
      * Scaling Developer Guide</i>.
      *
@@ -772,8 +772,8 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest {
      *         to select the instance to terminate. The policies are executed in the
      *         order that they are listed. <p> For more information on configuring a
      *         termination policy for your Auto Scaling group, go to <a
-     *         AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Instance
-     *         Termination Policy for Your Auto Scaling Group</a> in the the <i>Auto
+     *         href="http://docs.amazonwebservices.com/AutoScaling/latest/DeveloperGuide/us-termination-policy.html"
+     *         >Instance Termination Policy for Your Auto Scaling Group</a> in the the <i>Auto
      *         Scaling Developer Guide</i>.
      */
     public java.util.List<String> getTerminationPolicies() {
@@ -789,7 +789,7 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest {
      * to select the instance to terminate. The policies are executed in the
      * order that they are listed. <p> For more information on configuring a
      * termination policy for your Auto Scaling group, go to <a
-     * AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Instance
+     * href="http://docs.amazonwebservices.com/AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Instance
      * Termination Policy for Your Auto Scaling Group</a> in the the <i>Auto
      * Scaling Developer Guide</i>.
      *
@@ -797,8 +797,8 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest {
      *         to select the instance to terminate. The policies are executed in the
      *         order that they are listed. <p> For more information on configuring a
      *         termination policy for your Auto Scaling group, go to <a
-     *         AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Instance
-     *         Termination Policy for Your Auto Scaling Group</a> in the the <i>Auto
+     *         href="http://docs.amazonwebservices.com/AutoScaling/latest/DeveloperGuide/us-termination-policy.html"
+     *         >Instance Termination Policy for Your Auto Scaling Group</a> in the the <i>Auto
      *         Scaling Developer Guide</i>.
      */
     public void setTerminationPolicies(java.util.Collection<String> terminationPolicies) {
@@ -817,7 +817,7 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest {
      * to select the instance to terminate. The policies are executed in the
      * order that they are listed. <p> For more information on configuring a
      * termination policy for your Auto Scaling group, go to <a
-     * AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Instance
+     * href="http://docs.amazonwebservices.com/AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Instance
      * Termination Policy for Your Auto Scaling Group</a> in the the <i>Auto
      * Scaling Developer Guide</i>.
      * <p>
@@ -827,8 +827,8 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest {
      *         to select the instance to terminate. The policies are executed in the
      *         order that they are listed. <p> For more information on configuring a
      *         termination policy for your Auto Scaling group, go to <a
-     *         AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Instance
-     *         Termination Policy for Your Auto Scaling Group</a> in the the <i>Auto
+     *         href="http://docs.amazonwebservices.com/AutoScaling/latest/DeveloperGuide/us-termination-policy.html"
+     *         >Instance Termination Policy for Your Auto Scaling Group</a> in the the <i>Auto
      *         Scaling Developer Guide</i>.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -847,7 +847,7 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest {
      * to select the instance to terminate. The policies are executed in the
      * order that they are listed. <p> For more information on configuring a
      * termination policy for your Auto Scaling group, go to <a
-     * AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Instance
+     * href="http://docs.amazonwebservices.com/AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Instance
      * Termination Policy for Your Auto Scaling Group</a> in the the <i>Auto
      * Scaling Developer Guide</i>.
      * <p>
@@ -857,8 +857,8 @@ public class CreateAutoScalingGroupRequest extends AmazonWebServiceRequest {
      *         to select the instance to terminate. The policies are executed in the
      *         order that they are listed. <p> For more information on configuring a
      *         termination policy for your Auto Scaling group, go to <a
-     *         AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Instance
-     *         Termination Policy for Your Auto Scaling Group</a> in the the <i>Auto
+     *         href="http://docs.amazonwebservices.com/AutoScaling/latest/DeveloperGuide/us-termination-policy.html"
+     *         >Instance Termination Policy for Your Auto Scaling Group</a> in the the <i>Auto
      *         Scaling Developer Guide</i>.
      *
      * @return A reference to this updated object so that method calls can be chained 
