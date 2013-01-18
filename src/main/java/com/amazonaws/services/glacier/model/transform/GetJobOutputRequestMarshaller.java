@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -41,9 +41,9 @@ public class GetJobOutputRequestMarshaller implements Marshaller<Request<GetJobO
     
 
     public Request<GetJobOutputRequest> marshall(GetJobOutputRequest getJobOutputRequest) {
-		if (getJobOutputRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+    if (getJobOutputRequest == null) {
+        throw new AmazonClientException("Invalid argument passed to marshall(...)");
+    }
 
         Request<GetJobOutputRequest> request = new DefaultRequest<GetJobOutputRequest>(getJobOutputRequest, "AmazonGlacier");
         String target = "Glacier.GetJobOutput";
@@ -53,7 +53,7 @@ public class GetJobOutputRequestMarshaller implements Marshaller<Request<GetJobO
         
         request.setHttpMethod(HttpMethodName.GET);
         if (getJobOutputRequest.getRange() != null)
-        	request.addHeader("Range", StringUtils.fromString(getJobOutputRequest.getRange()));
+          request.addHeader("Range", StringUtils.fromString(getJobOutputRequest.getRange()));
         
 
 
@@ -61,7 +61,7 @@ public class GetJobOutputRequestMarshaller implements Marshaller<Request<GetJobO
         uriResourcePath = uriResourcePath.replace("{accountId}", getString(getJobOutputRequest.getAccountId())); 
         uriResourcePath = uriResourcePath.replace("{vaultName}", getString(getJobOutputRequest.getVaultName())); 
         uriResourcePath = uriResourcePath.replace("{jobId}", getString(getJobOutputRequest.getJobId())); 
-        
+
         uriResourcePath = uriResourcePath.replaceAll("//", "/");
 
         if (uriResourcePath.contains("?")) {

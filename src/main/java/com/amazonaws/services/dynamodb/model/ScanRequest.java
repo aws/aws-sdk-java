@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -446,6 +446,7 @@ public class ScanRequest extends AmazonWebServiceRequest {
     public java.util.Map<String,Condition> getScanFilter() {
         
         return scanFilter;
+
     }
     
     /**
@@ -548,12 +549,12 @@ public class ScanRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (tableName != null) sb.append("TableName: " + tableName + ", ");
-        if (attributesToGet != null) sb.append("AttributesToGet: " + attributesToGet + ", ");
-        if (limit != null) sb.append("Limit: " + limit + ", ");
-        if (count != null) sb.append("Count: " + count + ", ");
-        if (scanFilter != null) sb.append("ScanFilter: " + scanFilter + ", ");
-        if (exclusiveStartKey != null) sb.append("ExclusiveStartKey: " + exclusiveStartKey + ", ");
+        if (getTableName() != null) sb.append("TableName: " + getTableName() + ", ");
+        if (getAttributesToGet() != null) sb.append("AttributesToGet: " + getAttributesToGet() + ", ");
+        if (getLimit() != null) sb.append("Limit: " + getLimit() + ", ");
+        if (isCount() != null) sb.append("Count: " + isCount() + ", ");
+        if (getScanFilter() != null) sb.append("ScanFilter: " + getScanFilter() + ", ");
+        if (getExclusiveStartKey() != null) sb.append("ExclusiveStartKey: " + getExclusiveStartKey() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -576,7 +577,7 @@ public class ScanRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof ScanRequest == false) return false;
         ScanRequest other = (ScanRequest)obj;
         

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -635,14 +635,14 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (namespace != null) sb.append("Namespace: " + namespace + ", ");
-        if (metricName != null) sb.append("MetricName: " + metricName + ", ");
-        if (dimensions != null) sb.append("Dimensions: " + dimensions + ", ");
-        if (startTime != null) sb.append("StartTime: " + startTime + ", ");
-        if (endTime != null) sb.append("EndTime: " + endTime + ", ");
-        if (period != null) sb.append("Period: " + period + ", ");
-        if (statistics != null) sb.append("Statistics: " + statistics + ", ");
-        if (unit != null) sb.append("Unit: " + unit + ", ");
+        if (getNamespace() != null) sb.append("Namespace: " + getNamespace() + ", ");
+        if (getMetricName() != null) sb.append("MetricName: " + getMetricName() + ", ");
+        if (getDimensions() != null) sb.append("Dimensions: " + getDimensions() + ", ");
+        if (getStartTime() != null) sb.append("StartTime: " + getStartTime() + ", ");
+        if (getEndTime() != null) sb.append("EndTime: " + getEndTime() + ", ");
+        if (getPeriod() != null) sb.append("Period: " + getPeriod() + ", ");
+        if (getStatistics() != null) sb.append("Statistics: " + getStatistics() + ", ");
+        if (getUnit() != null) sb.append("Unit: " + getUnit() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -667,7 +667,7 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof GetMetricStatisticsRequest == false) return false;
         GetMetricStatisticsRequest other = (GetMetricStatisticsRequest)obj;
         

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -887,20 +887,20 @@ public class InstanceGroupDetail {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (instanceGroupId != null) sb.append("InstanceGroupId: " + instanceGroupId + ", ");
-        if (name != null) sb.append("Name: " + name + ", ");
-        if (market != null) sb.append("Market: " + market + ", ");
-        if (instanceRole != null) sb.append("InstanceRole: " + instanceRole + ", ");
-        if (bidPrice != null) sb.append("BidPrice: " + bidPrice + ", ");
-        if (instanceType != null) sb.append("InstanceType: " + instanceType + ", ");
-        if (instanceRequestCount != null) sb.append("InstanceRequestCount: " + instanceRequestCount + ", ");
-        if (instanceRunningCount != null) sb.append("InstanceRunningCount: " + instanceRunningCount + ", ");
-        if (state != null) sb.append("State: " + state + ", ");
-        if (lastStateChangeReason != null) sb.append("LastStateChangeReason: " + lastStateChangeReason + ", ");
-        if (creationDateTime != null) sb.append("CreationDateTime: " + creationDateTime + ", ");
-        if (startDateTime != null) sb.append("StartDateTime: " + startDateTime + ", ");
-        if (readyDateTime != null) sb.append("ReadyDateTime: " + readyDateTime + ", ");
-        if (endDateTime != null) sb.append("EndDateTime: " + endDateTime + ", ");
+        if (getInstanceGroupId() != null) sb.append("InstanceGroupId: " + getInstanceGroupId() + ", ");
+        if (getName() != null) sb.append("Name: " + getName() + ", ");
+        if (getMarket() != null) sb.append("Market: " + getMarket() + ", ");
+        if (getInstanceRole() != null) sb.append("InstanceRole: " + getInstanceRole() + ", ");
+        if (getBidPrice() != null) sb.append("BidPrice: " + getBidPrice() + ", ");
+        if (getInstanceType() != null) sb.append("InstanceType: " + getInstanceType() + ", ");
+        if (getInstanceRequestCount() != null) sb.append("InstanceRequestCount: " + getInstanceRequestCount() + ", ");
+        if (getInstanceRunningCount() != null) sb.append("InstanceRunningCount: " + getInstanceRunningCount() + ", ");
+        if (getState() != null) sb.append("State: " + getState() + ", ");
+        if (getLastStateChangeReason() != null) sb.append("LastStateChangeReason: " + getLastStateChangeReason() + ", ");
+        if (getCreationDateTime() != null) sb.append("CreationDateTime: " + getCreationDateTime() + ", ");
+        if (getStartDateTime() != null) sb.append("StartDateTime: " + getStartDateTime() + ", ");
+        if (getReadyDateTime() != null) sb.append("ReadyDateTime: " + getReadyDateTime() + ", ");
+        if (getEndDateTime() != null) sb.append("EndDateTime: " + getEndDateTime() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -931,7 +931,7 @@ public class InstanceGroupDetail {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof InstanceGroupDetail == false) return false;
         InstanceGroupDetail other = (InstanceGroupDetail)obj;
         

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -294,10 +294,10 @@ public class DescribeCacheClustersRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (cacheClusterId != null) sb.append("CacheClusterId: " + cacheClusterId + ", ");
-        if (maxRecords != null) sb.append("MaxRecords: " + maxRecords + ", ");
-        if (marker != null) sb.append("Marker: " + marker + ", ");
-        if (showCacheNodeInfo != null) sb.append("ShowCacheNodeInfo: " + showCacheNodeInfo + ", ");
+        if (getCacheClusterId() != null) sb.append("CacheClusterId: " + getCacheClusterId() + ", ");
+        if (getMaxRecords() != null) sb.append("MaxRecords: " + getMaxRecords() + ", ");
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ", ");
+        if (isShowCacheNodeInfo() != null) sb.append("ShowCacheNodeInfo: " + isShowCacheNodeInfo() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -318,7 +318,7 @@ public class DescribeCacheClustersRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DescribeCacheClustersRequest == false) return false;
         DescribeCacheClustersRequest other = (DescribeCacheClustersRequest)obj;
         

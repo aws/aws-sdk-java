@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -216,10 +216,10 @@ public class EC2SecurityGroup {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (status != null) sb.append("Status: " + status + ", ");
-        if (eC2SecurityGroupName != null) sb.append("EC2SecurityGroupName: " + eC2SecurityGroupName + ", ");
-        if (eC2SecurityGroupId != null) sb.append("EC2SecurityGroupId: " + eC2SecurityGroupId + ", ");
-        if (eC2SecurityGroupOwnerId != null) sb.append("EC2SecurityGroupOwnerId: " + eC2SecurityGroupOwnerId + ", ");
+        if (getStatus() != null) sb.append("Status: " + getStatus() + ", ");
+        if (getEC2SecurityGroupName() != null) sb.append("EC2SecurityGroupName: " + getEC2SecurityGroupName() + ", ");
+        if (getEC2SecurityGroupId() != null) sb.append("EC2SecurityGroupId: " + getEC2SecurityGroupId() + ", ");
+        if (getEC2SecurityGroupOwnerId() != null) sb.append("EC2SecurityGroupOwnerId: " + getEC2SecurityGroupOwnerId() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -240,7 +240,7 @@ public class EC2SecurityGroup {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof EC2SecurityGroup == false) return false;
         EC2SecurityGroup other = (EC2SecurityGroup)obj;
         

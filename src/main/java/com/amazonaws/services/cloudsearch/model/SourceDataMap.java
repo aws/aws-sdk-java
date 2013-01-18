@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -150,6 +150,7 @@ public class SourceDataMap {
             cases = new java.util.HashMap<String,String>();
         }
         return cases;
+
     }
     
     /**
@@ -188,9 +189,9 @@ public class SourceDataMap {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (sourceName != null) sb.append("SourceName: " + sourceName + ", ");
-        if (defaultValue != null) sb.append("DefaultValue: " + defaultValue + ", ");
-        if (cases != null) sb.append("Cases: " + cases + ", ");
+        if (getSourceName() != null) sb.append("SourceName: " + getSourceName() + ", ");
+        if (getDefaultValue() != null) sb.append("DefaultValue: " + getDefaultValue() + ", ");
+        if (getCases() != null) sb.append("Cases: " + getCases() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -210,7 +211,7 @@ public class SourceDataMap {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof SourceDataMap == false) return false;
         SourceDataMap other = (SourceDataMap)obj;
         

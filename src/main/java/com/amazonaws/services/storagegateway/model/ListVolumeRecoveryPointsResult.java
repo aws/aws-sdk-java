@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -189,8 +189,8 @@ public class ListVolumeRecoveryPointsResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (gatewayARN != null) sb.append("GatewayARN: " + gatewayARN + ", ");
-        if (volumeRecoveryPointInfos != null) sb.append("VolumeRecoveryPointInfos: " + volumeRecoveryPointInfos + ", ");
+        if (getGatewayARN() != null) sb.append("GatewayARN: " + getGatewayARN() + ", ");
+        if (getVolumeRecoveryPointInfos() != null) sb.append("VolumeRecoveryPointInfos: " + getVolumeRecoveryPointInfos() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -209,7 +209,7 @@ public class ListVolumeRecoveryPointsResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof ListVolumeRecoveryPointsResult == false) return false;
         ListVolumeRecoveryPointsResult other = (ListVolumeRecoveryPointsResult)obj;
         

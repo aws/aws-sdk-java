@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -660,14 +660,14 @@ public class ResourceRecordSet {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (name != null) sb.append("Name: " + name + ", ");
-        if (type != null) sb.append("Type: " + type + ", ");
-        if (setIdentifier != null) sb.append("SetIdentifier: " + setIdentifier + ", ");
-        if (weight != null) sb.append("Weight: " + weight + ", ");
-        if (region != null) sb.append("Region: " + region + ", ");
-        if (tTL != null) sb.append("TTL: " + tTL + ", ");
-        if (resourceRecords != null) sb.append("ResourceRecords: " + resourceRecords + ", ");
-        if (aliasTarget != null) sb.append("AliasTarget: " + aliasTarget + ", ");
+        if (getName() != null) sb.append("Name: " + getName() + ", ");
+        if (getType() != null) sb.append("Type: " + getType() + ", ");
+        if (getSetIdentifier() != null) sb.append("SetIdentifier: " + getSetIdentifier() + ", ");
+        if (getWeight() != null) sb.append("Weight: " + getWeight() + ", ");
+        if (getRegion() != null) sb.append("Region: " + getRegion() + ", ");
+        if (getTTL() != null) sb.append("TTL: " + getTTL() + ", ");
+        if (getResourceRecords() != null) sb.append("ResourceRecords: " + getResourceRecords() + ", ");
+        if (getAliasTarget() != null) sb.append("AliasTarget: " + getAliasTarget() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -692,7 +692,7 @@ public class ResourceRecordSet {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof ResourceRecordSet == false) return false;
         ResourceRecordSet other = (ResourceRecordSet)obj;
         

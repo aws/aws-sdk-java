@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -177,9 +177,9 @@ public class CloudFrontOriginAccessIdentitySummary {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (id != null) sb.append("Id: " + id + ", ");
-        if (s3CanonicalUserId != null) sb.append("S3CanonicalUserId: " + s3CanonicalUserId + ", ");
-        if (comment != null) sb.append("Comment: " + comment + ", ");
+        if (getId() != null) sb.append("Id: " + getId() + ", ");
+        if (getS3CanonicalUserId() != null) sb.append("S3CanonicalUserId: " + getS3CanonicalUserId() + ", ");
+        if (getComment() != null) sb.append("Comment: " + getComment() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -199,7 +199,7 @@ public class CloudFrontOriginAccessIdentitySummary {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof CloudFrontOriginAccessIdentitySummary == false) return false;
         CloudFrontOriginAccessIdentitySummary other = (CloudFrontOriginAccessIdentitySummary)obj;
         

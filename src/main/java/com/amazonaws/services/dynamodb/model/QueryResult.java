@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -286,10 +286,10 @@ public class QueryResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (items != null) sb.append("Items: " + items + ", ");
-        if (count != null) sb.append("Count: " + count + ", ");
-        if (lastEvaluatedKey != null) sb.append("LastEvaluatedKey: " + lastEvaluatedKey + ", ");
-        if (consumedCapacityUnits != null) sb.append("ConsumedCapacityUnits: " + consumedCapacityUnits + ", ");
+        if (getItems() != null) sb.append("Items: " + getItems() + ", ");
+        if (getCount() != null) sb.append("Count: " + getCount() + ", ");
+        if (getLastEvaluatedKey() != null) sb.append("LastEvaluatedKey: " + getLastEvaluatedKey() + ", ");
+        if (getConsumedCapacityUnits() != null) sb.append("ConsumedCapacityUnits: " + getConsumedCapacityUnits() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -310,7 +310,7 @@ public class QueryResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof QueryResult == false) return false;
         QueryResult other = (QueryResult)obj;
         

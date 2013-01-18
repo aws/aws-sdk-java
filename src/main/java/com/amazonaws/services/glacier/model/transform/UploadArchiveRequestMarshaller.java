@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -41,9 +41,9 @@ public class UploadArchiveRequestMarshaller implements Marshaller<Request<Upload
     
 
     public Request<UploadArchiveRequest> marshall(UploadArchiveRequest uploadArchiveRequest) {
-		if (uploadArchiveRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+    if (uploadArchiveRequest == null) {
+        throw new AmazonClientException("Invalid argument passed to marshall(...)");
+    }
 
         Request<UploadArchiveRequest> request = new DefaultRequest<UploadArchiveRequest>(uploadArchiveRequest, "AmazonGlacier");
         String target = "Glacier.UploadArchive";
@@ -53,20 +53,20 @@ public class UploadArchiveRequestMarshaller implements Marshaller<Request<Upload
         
         request.setHttpMethod(HttpMethodName.POST);
         if (uploadArchiveRequest.getContentLength() != null)
-        	request.addHeader("x-amz-content-length", StringUtils.fromLong(uploadArchiveRequest.getContentLength()));
+          request.addHeader("x-amz-content-length", StringUtils.fromLong(uploadArchiveRequest.getContentLength()));
         
         if (uploadArchiveRequest.getArchiveDescription() != null)
-        	request.addHeader("x-amz-archive-description", StringUtils.fromString(uploadArchiveRequest.getArchiveDescription()));
+          request.addHeader("x-amz-archive-description", StringUtils.fromString(uploadArchiveRequest.getArchiveDescription()));
         
         if (uploadArchiveRequest.getChecksum() != null)
-        	request.addHeader("x-amz-sha256-tree-hash", StringUtils.fromString(uploadArchiveRequest.getChecksum()));
+          request.addHeader("x-amz-sha256-tree-hash", StringUtils.fromString(uploadArchiveRequest.getChecksum()));
         
 
 
         String uriResourcePath = "/{accountId}/vaults/{vaultName}/archives"; 
         uriResourcePath = uriResourcePath.replace("{vaultName}", getString(uploadArchiveRequest.getVaultName())); 
         uriResourcePath = uriResourcePath.replace("{accountId}", getString(uploadArchiveRequest.getAccountId())); 
-        
+
         uriResourcePath = uriResourcePath.replaceAll("//", "/");
 
         if (uriResourcePath.contains("?")) {

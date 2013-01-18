@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -655,21 +655,21 @@ public class DBSnapshot {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (dBSnapshotIdentifier != null) sb.append("DBSnapshotIdentifier: " + dBSnapshotIdentifier + ", ");
-        if (dBInstanceIdentifier != null) sb.append("DBInstanceIdentifier: " + dBInstanceIdentifier + ", ");
-        if (snapshotCreateTime != null) sb.append("SnapshotCreateTime: " + snapshotCreateTime + ", ");
-        if (engine != null) sb.append("Engine: " + engine + ", ");
-        if (allocatedStorage != null) sb.append("AllocatedStorage: " + allocatedStorage + ", ");
-        if (status != null) sb.append("Status: " + status + ", ");
-        if (port != null) sb.append("Port: " + port + ", ");
-        if (availabilityZone != null) sb.append("AvailabilityZone: " + availabilityZone + ", ");
-        if (vpcId != null) sb.append("VpcId: " + vpcId + ", ");
-        if (instanceCreateTime != null) sb.append("InstanceCreateTime: " + instanceCreateTime + ", ");
-        if (masterUsername != null) sb.append("MasterUsername: " + masterUsername + ", ");
-        if (engineVersion != null) sb.append("EngineVersion: " + engineVersion + ", ");
-        if (licenseModel != null) sb.append("LicenseModel: " + licenseModel + ", ");
-        if (snapshotType != null) sb.append("SnapshotType: " + snapshotType + ", ");
-        if (iops != null) sb.append("Iops: " + iops + ", ");
+        if (getDBSnapshotIdentifier() != null) sb.append("DBSnapshotIdentifier: " + getDBSnapshotIdentifier() + ", ");
+        if (getDBInstanceIdentifier() != null) sb.append("DBInstanceIdentifier: " + getDBInstanceIdentifier() + ", ");
+        if (getSnapshotCreateTime() != null) sb.append("SnapshotCreateTime: " + getSnapshotCreateTime() + ", ");
+        if (getEngine() != null) sb.append("Engine: " + getEngine() + ", ");
+        if (getAllocatedStorage() != null) sb.append("AllocatedStorage: " + getAllocatedStorage() + ", ");
+        if (getStatus() != null) sb.append("Status: " + getStatus() + ", ");
+        if (getPort() != null) sb.append("Port: " + getPort() + ", ");
+        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ", ");
+        if (getVpcId() != null) sb.append("VpcId: " + getVpcId() + ", ");
+        if (getInstanceCreateTime() != null) sb.append("InstanceCreateTime: " + getInstanceCreateTime() + ", ");
+        if (getMasterUsername() != null) sb.append("MasterUsername: " + getMasterUsername() + ", ");
+        if (getEngineVersion() != null) sb.append("EngineVersion: " + getEngineVersion() + ", ");
+        if (getLicenseModel() != null) sb.append("LicenseModel: " + getLicenseModel() + ", ");
+        if (getSnapshotType() != null) sb.append("SnapshotType: " + getSnapshotType() + ", ");
+        if (getIops() != null) sb.append("Iops: " + getIops() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -701,7 +701,7 @@ public class DBSnapshot {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DBSnapshot == false) return false;
         DBSnapshot other = (DBSnapshot)obj;
         

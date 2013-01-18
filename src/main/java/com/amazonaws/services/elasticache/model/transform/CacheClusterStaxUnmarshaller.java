@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -53,6 +53,14 @@ public class CacheClusterStaxUnmarshaller implements Unmarshaller<CacheCluster, 
                     cacheCluster.setCacheClusterId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("ConfigurationEndpoint", targetDepth)) {
+                    cacheCluster.setConfigurationEndpoint(EndpointStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("ClientDownloadLandingPage", targetDepth)) {
+                    cacheCluster.setClientDownloadLandingPage(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
                 if (context.testExpression("CacheNodeType", targetDepth)) {
                     cacheCluster.setCacheNodeType(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -101,12 +109,20 @@ public class CacheClusterStaxUnmarshaller implements Unmarshaller<CacheCluster, 
                     cacheCluster.setCacheParameterGroup(CacheParameterGroupStatusStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("CacheSubnetGroupName", targetDepth)) {
+                    cacheCluster.setCacheSubnetGroupName(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
                 if (context.testExpression("CacheNodes/CacheNode", targetDepth)) {
                     cacheCluster.getCacheNodes().add(CacheNodeStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
                 if (context.testExpression("AutoMinorVersionUpgrade", targetDepth)) {
                     cacheCluster.setAutoMinorVersionUpgrade(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("SecurityGroups/member", targetDepth)) {
+                    cacheCluster.getSecurityGroups().add(SecurityGroupMembershipStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

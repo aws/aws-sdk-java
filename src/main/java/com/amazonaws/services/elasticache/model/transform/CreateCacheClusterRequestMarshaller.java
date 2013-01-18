@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -38,7 +38,7 @@ public class CreateCacheClusterRequestMarshaller implements Marshaller<Request<C
 
         Request<CreateCacheClusterRequest> request = new DefaultRequest<CreateCacheClusterRequest>(createCacheClusterRequest, "AmazonElastiCache");
         request.addParameter("Action", "CreateCacheCluster");
-        request.addParameter("Version", "2012-03-09");
+        request.addParameter("Version", "2012-11-15");
 
         if (createCacheClusterRequest.getCacheClusterId() != null) {
             request.addParameter("CacheClusterId", StringUtils.fromString(createCacheClusterRequest.getCacheClusterId()));
@@ -58,6 +58,9 @@ public class CreateCacheClusterRequestMarshaller implements Marshaller<Request<C
         if (createCacheClusterRequest.getCacheParameterGroupName() != null) {
             request.addParameter("CacheParameterGroupName", StringUtils.fromString(createCacheClusterRequest.getCacheParameterGroupName()));
         }
+        if (createCacheClusterRequest.getCacheSubnetGroupName() != null) {
+            request.addParameter("CacheSubnetGroupName", StringUtils.fromString(createCacheClusterRequest.getCacheSubnetGroupName()));
+        }
 
         java.util.List<String> cacheSecurityGroupNamesList = createCacheClusterRequest.getCacheSecurityGroupNames();
         int cacheSecurityGroupNamesListIndex = 1;
@@ -68,6 +71,17 @@ public class CreateCacheClusterRequestMarshaller implements Marshaller<Request<C
             }
 
             cacheSecurityGroupNamesListIndex++;
+        }
+
+        java.util.List<String> securityGroupIdsList = createCacheClusterRequest.getSecurityGroupIds();
+        int securityGroupIdsListIndex = 1;
+
+        for (String securityGroupIdsListValue : securityGroupIdsList) {
+            if (securityGroupIdsListValue != null) {
+                request.addParameter("SecurityGroupIds.SecurityGroupId." + securityGroupIdsListIndex, StringUtils.fromString(securityGroupIdsListValue));
+            }
+
+            securityGroupIdsListIndex++;
         }
         if (createCacheClusterRequest.getPreferredAvailabilityZone() != null) {
             request.addParameter("PreferredAvailabilityZone", StringUtils.fromString(createCacheClusterRequest.getPreferredAvailabilityZone()));

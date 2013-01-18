@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -198,10 +198,10 @@ public class BatchResultErrorEntry {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (id != null) sb.append("Id: " + id + ", ");
-        if (senderFault != null) sb.append("SenderFault: " + senderFault + ", ");
-        if (code != null) sb.append("Code: " + code + ", ");
-        if (message != null) sb.append("Message: " + message + ", ");
+        if (getId() != null) sb.append("Id: " + getId() + ", ");
+        if (isSenderFault() != null) sb.append("SenderFault: " + isSenderFault() + ", ");
+        if (getCode() != null) sb.append("Code: " + getCode() + ", ");
+        if (getMessage() != null) sb.append("Message: " + getMessage() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -222,7 +222,7 @@ public class BatchResultErrorEntry {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof BatchResultErrorEntry == false) return false;
         BatchResultErrorEntry other = (BatchResultErrorEntry)obj;
         

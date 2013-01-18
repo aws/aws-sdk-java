@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -41,9 +41,9 @@ public class RegisterDomainRequestMarshaller implements Marshaller<Request<Regis
     
 
     public Request<RegisterDomainRequest> marshall(RegisterDomainRequest registerDomainRequest) {
-		if (registerDomainRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+    if (registerDomainRequest == null) {
+        throw new AmazonClientException("Invalid argument passed to marshall(...)");
+    }
 
         Request<RegisterDomainRequest> request = new DefaultRequest<RegisterDomainRequest>(registerDomainRequest, "AmazonSimpleWorkflow");
         String target = "SimpleWorkflowService.RegisterDomain";
@@ -55,7 +55,7 @@ public class RegisterDomainRequestMarshaller implements Marshaller<Request<Regis
 
 
         String uriResourcePath = ""; 
-        
+
         uriResourcePath = uriResourcePath.replaceAll("//", "/");
 
         if (uriResourcePath.contains("?")) {
@@ -77,13 +77,13 @@ public class RegisterDomainRequestMarshaller implements Marshaller<Request<Regis
 
         
         try {
-        	StringWriter stringWriter = new StringWriter();
-        	JSONWriter jsonWriter = new JSONWriter(stringWriter);
+          StringWriter stringWriter = new StringWriter();
+          JSONWriter jsonWriter = new JSONWriter(stringWriter);
 
-        	
+          
             
-        	jsonWriter.object();
-        	
+          jsonWriter.object();
+          
             if (registerDomainRequest.getName() != null) {
                 jsonWriter.key("name").value(registerDomainRequest.getName());
             }
@@ -94,13 +94,13 @@ public class RegisterDomainRequestMarshaller implements Marshaller<Request<Regis
                 jsonWriter.key("workflowExecutionRetentionPeriodInDays").value(registerDomainRequest.getWorkflowExecutionRetentionPeriodInDays());
             }
 
-    	    jsonWriter.endObject();
-        	
+          jsonWriter.endObject();
+          
 
-    	    String snippet = stringWriter.toString();
-    	    byte[] content = snippet.getBytes("UTF-8");
-        	request.setContent(new StringInputStream(snippet));
-	        request.addHeader("Content-Length", Integer.toString(content.length));
+          String snippet = stringWriter.toString();
+          byte[] content = snippet.getBytes("UTF-8");
+          request.setContent(new StringInputStream(snippet));
+          request.addHeader("Content-Length", Integer.toString(content.length));
         } catch(Throwable t) {
           throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }

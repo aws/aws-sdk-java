@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -410,14 +410,14 @@ public class OrderableDBInstanceOption {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (engine != null) sb.append("Engine: " + engine + ", ");
-        if (engineVersion != null) sb.append("EngineVersion: " + engineVersion + ", ");
-        if (dBInstanceClass != null) sb.append("DBInstanceClass: " + dBInstanceClass + ", ");
-        if (licenseModel != null) sb.append("LicenseModel: " + licenseModel + ", ");
-        if (availabilityZones != null) sb.append("AvailabilityZones: " + availabilityZones + ", ");
-        if (multiAZCapable != null) sb.append("MultiAZCapable: " + multiAZCapable + ", ");
-        if (readReplicaCapable != null) sb.append("ReadReplicaCapable: " + readReplicaCapable + ", ");
-        if (vpc != null) sb.append("Vpc: " + vpc + ", ");
+        if (getEngine() != null) sb.append("Engine: " + getEngine() + ", ");
+        if (getEngineVersion() != null) sb.append("EngineVersion: " + getEngineVersion() + ", ");
+        if (getDBInstanceClass() != null) sb.append("DBInstanceClass: " + getDBInstanceClass() + ", ");
+        if (getLicenseModel() != null) sb.append("LicenseModel: " + getLicenseModel() + ", ");
+        if (getAvailabilityZones() != null) sb.append("AvailabilityZones: " + getAvailabilityZones() + ", ");
+        if (isMultiAZCapable() != null) sb.append("MultiAZCapable: " + isMultiAZCapable() + ", ");
+        if (isReadReplicaCapable() != null) sb.append("ReadReplicaCapable: " + isReadReplicaCapable() + ", ");
+        if (isVpc() != null) sb.append("Vpc: " + isVpc() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -442,7 +442,7 @@ public class OrderableDBInstanceOption {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof OrderableDBInstanceOption == false) return false;
         OrderableDBInstanceOption other = (OrderableDBInstanceOption)obj;
         

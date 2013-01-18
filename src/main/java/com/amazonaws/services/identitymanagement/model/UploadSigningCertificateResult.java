@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -72,7 +72,7 @@ public class UploadSigningCertificateResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (certificate != null) sb.append("Certificate: " + certificate + ", ");
+        if (getCertificate() != null) sb.append("Certificate: " + getCertificate() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -90,7 +90,7 @@ public class UploadSigningCertificateResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof UploadSigningCertificateResult == false) return false;
         UploadSigningCertificateResult other = (UploadSigningCertificateResult)obj;
         

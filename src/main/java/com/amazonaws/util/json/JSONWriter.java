@@ -331,7 +331,7 @@ public class JSONWriter {
      */
     public JSONWriter value(ByteBuffer b) throws JSONException {
         b.mark();
-        byte[] bytes = new byte[b.capacity()];
+        byte[] bytes = new byte[b.remaining()];
         b.get(bytes, 0, bytes.length);
         b.reset();
         return this.value(BinaryUtils.toBase64(bytes));

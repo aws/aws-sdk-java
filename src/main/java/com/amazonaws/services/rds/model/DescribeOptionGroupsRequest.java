@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -254,11 +254,11 @@ public class DescribeOptionGroupsRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (optionGroupName != null) sb.append("OptionGroupName: " + optionGroupName + ", ");
-        if (marker != null) sb.append("Marker: " + marker + ", ");
-        if (maxRecords != null) sb.append("MaxRecords: " + maxRecords + ", ");
-        if (engineName != null) sb.append("EngineName: " + engineName + ", ");
-        if (majorEngineVersion != null) sb.append("MajorEngineVersion: " + majorEngineVersion + ", ");
+        if (getOptionGroupName() != null) sb.append("OptionGroupName: " + getOptionGroupName() + ", ");
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ", ");
+        if (getMaxRecords() != null) sb.append("MaxRecords: " + getMaxRecords() + ", ");
+        if (getEngineName() != null) sb.append("EngineName: " + getEngineName() + ", ");
+        if (getMajorEngineVersion() != null) sb.append("MajorEngineVersion: " + getMajorEngineVersion() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -280,7 +280,7 @@ public class DescribeOptionGroupsRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DescribeOptionGroupsRequest == false) return false;
         DescribeOptionGroupsRequest other = (DescribeOptionGroupsRequest)obj;
         

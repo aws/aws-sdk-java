@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -304,9 +304,9 @@ public class DeleteDBInstanceRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (dBInstanceIdentifier != null) sb.append("DBInstanceIdentifier: " + dBInstanceIdentifier + ", ");
-        if (skipFinalSnapshot != null) sb.append("SkipFinalSnapshot: " + skipFinalSnapshot + ", ");
-        if (finalDBSnapshotIdentifier != null) sb.append("FinalDBSnapshotIdentifier: " + finalDBSnapshotIdentifier + ", ");
+        if (getDBInstanceIdentifier() != null) sb.append("DBInstanceIdentifier: " + getDBInstanceIdentifier() + ", ");
+        if (isSkipFinalSnapshot() != null) sb.append("SkipFinalSnapshot: " + isSkipFinalSnapshot() + ", ");
+        if (getFinalDBSnapshotIdentifier() != null) sb.append("FinalDBSnapshotIdentifier: " + getFinalDBSnapshotIdentifier() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -326,7 +326,7 @@ public class DeleteDBInstanceRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DeleteDBInstanceRequest == false) return false;
         DeleteDBInstanceRequest other = (DeleteDBInstanceRequest)obj;
         

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -811,16 +811,16 @@ public class WorkflowExecutionStartedEventAttributes {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (input != null) sb.append("Input: " + input + ", ");
-        if (executionStartToCloseTimeout != null) sb.append("ExecutionStartToCloseTimeout: " + executionStartToCloseTimeout + ", ");
-        if (taskStartToCloseTimeout != null) sb.append("TaskStartToCloseTimeout: " + taskStartToCloseTimeout + ", ");
-        if (childPolicy != null) sb.append("ChildPolicy: " + childPolicy + ", ");
-        if (taskList != null) sb.append("TaskList: " + taskList + ", ");
-        if (workflowType != null) sb.append("WorkflowType: " + workflowType + ", ");
-        if (tagList != null) sb.append("TagList: " + tagList + ", ");
-        if (continuedExecutionRunId != null) sb.append("ContinuedExecutionRunId: " + continuedExecutionRunId + ", ");
-        if (parentWorkflowExecution != null) sb.append("ParentWorkflowExecution: " + parentWorkflowExecution + ", ");
-        if (parentInitiatedEventId != null) sb.append("ParentInitiatedEventId: " + parentInitiatedEventId + ", ");
+        if (getInput() != null) sb.append("Input: " + getInput() + ", ");
+        if (getExecutionStartToCloseTimeout() != null) sb.append("ExecutionStartToCloseTimeout: " + getExecutionStartToCloseTimeout() + ", ");
+        if (getTaskStartToCloseTimeout() != null) sb.append("TaskStartToCloseTimeout: " + getTaskStartToCloseTimeout() + ", ");
+        if (getChildPolicy() != null) sb.append("ChildPolicy: " + getChildPolicy() + ", ");
+        if (getTaskList() != null) sb.append("TaskList: " + getTaskList() + ", ");
+        if (getWorkflowType() != null) sb.append("WorkflowType: " + getWorkflowType() + ", ");
+        if (getTagList() != null) sb.append("TagList: " + getTagList() + ", ");
+        if (getContinuedExecutionRunId() != null) sb.append("ContinuedExecutionRunId: " + getContinuedExecutionRunId() + ", ");
+        if (getParentWorkflowExecution() != null) sb.append("ParentWorkflowExecution: " + getParentWorkflowExecution() + ", ");
+        if (getParentInitiatedEventId() != null) sb.append("ParentInitiatedEventId: " + getParentInitiatedEventId() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -847,7 +847,7 @@ public class WorkflowExecutionStartedEventAttributes {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof WorkflowExecutionStartedEventAttributes == false) return false;
         WorkflowExecutionStartedEventAttributes other = (WorkflowExecutionStartedEventAttributes)obj;
         

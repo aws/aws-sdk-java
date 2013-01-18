@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -273,11 +273,11 @@ public class VolumeiSCSIAttributes {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (targetARN != null) sb.append("TargetARN: " + targetARN + ", ");
-        if (networkInterfaceId != null) sb.append("NetworkInterfaceId: " + networkInterfaceId + ", ");
-        if (networkInterfacePort != null) sb.append("NetworkInterfacePort: " + networkInterfacePort + ", ");
-        if (lunNumber != null) sb.append("LunNumber: " + lunNumber + ", ");
-        if (chapEnabled != null) sb.append("ChapEnabled: " + chapEnabled + ", ");
+        if (getTargetARN() != null) sb.append("TargetARN: " + getTargetARN() + ", ");
+        if (getNetworkInterfaceId() != null) sb.append("NetworkInterfaceId: " + getNetworkInterfaceId() + ", ");
+        if (getNetworkInterfacePort() != null) sb.append("NetworkInterfacePort: " + getNetworkInterfacePort() + ", ");
+        if (getLunNumber() != null) sb.append("LunNumber: " + getLunNumber() + ", ");
+        if (isChapEnabled() != null) sb.append("ChapEnabled: " + isChapEnabled() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -299,7 +299,7 @@ public class VolumeiSCSIAttributes {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof VolumeiSCSIAttributes == false) return false;
         VolumeiSCSIAttributes other = (VolumeiSCSIAttributes)obj;
         

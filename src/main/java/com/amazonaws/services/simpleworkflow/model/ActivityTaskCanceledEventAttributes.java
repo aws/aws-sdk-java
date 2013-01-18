@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -264,10 +264,10 @@ public class ActivityTaskCanceledEventAttributes {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (details != null) sb.append("Details: " + details + ", ");
-        if (scheduledEventId != null) sb.append("ScheduledEventId: " + scheduledEventId + ", ");
-        if (startedEventId != null) sb.append("StartedEventId: " + startedEventId + ", ");
-        if (latestCancelRequestedEventId != null) sb.append("LatestCancelRequestedEventId: " + latestCancelRequestedEventId + ", ");
+        if (getDetails() != null) sb.append("Details: " + getDetails() + ", ");
+        if (getScheduledEventId() != null) sb.append("ScheduledEventId: " + getScheduledEventId() + ", ");
+        if (getStartedEventId() != null) sb.append("StartedEventId: " + getStartedEventId() + ", ");
+        if (getLatestCancelRequestedEventId() != null) sb.append("LatestCancelRequestedEventId: " + getLatestCancelRequestedEventId() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -288,7 +288,7 @@ public class ActivityTaskCanceledEventAttributes {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof ActivityTaskCanceledEventAttributes == false) return false;
         ActivityTaskCanceledEventAttributes other = (ActivityTaskCanceledEventAttributes)obj;
         

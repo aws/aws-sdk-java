@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -296,11 +296,11 @@ public class WorkflowExecutionDetail {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (executionInfo != null) sb.append("ExecutionInfo: " + executionInfo + ", ");
-        if (executionConfiguration != null) sb.append("ExecutionConfiguration: " + executionConfiguration + ", ");
-        if (openCounts != null) sb.append("OpenCounts: " + openCounts + ", ");
-        if (latestActivityTaskTimestamp != null) sb.append("LatestActivityTaskTimestamp: " + latestActivityTaskTimestamp + ", ");
-        if (latestExecutionContext != null) sb.append("LatestExecutionContext: " + latestExecutionContext + ", ");
+        if (getExecutionInfo() != null) sb.append("ExecutionInfo: " + getExecutionInfo() + ", ");
+        if (getExecutionConfiguration() != null) sb.append("ExecutionConfiguration: " + getExecutionConfiguration() + ", ");
+        if (getOpenCounts() != null) sb.append("OpenCounts: " + getOpenCounts() + ", ");
+        if (getLatestActivityTaskTimestamp() != null) sb.append("LatestActivityTaskTimestamp: " + getLatestActivityTaskTimestamp() + ", ");
+        if (getLatestExecutionContext() != null) sb.append("LatestExecutionContext: " + getLatestExecutionContext() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -322,7 +322,7 @@ public class WorkflowExecutionDetail {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof WorkflowExecutionDetail == false) return false;
         WorkflowExecutionDetail other = (WorkflowExecutionDetail)obj;
         

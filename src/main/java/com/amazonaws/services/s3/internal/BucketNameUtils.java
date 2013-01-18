@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -13,6 +13,9 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.s3.internal;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Utilities for working with Amazon S3 bucket names, such as validation and
@@ -59,7 +62,7 @@ public class BucketNameUtils {
             throw new IllegalArgumentException("Bucket name should not contain '_'");
 
         if (bucketName.contains("!") || bucketName.contains("@") || bucketName.contains("#"))
-        	throw new IllegalArgumentException("Bucket name contains illegal characters");
+            throw new IllegalArgumentException("Bucket name contains illegal characters");
 
         if (bucketName.length() < 3 || bucketName.length() > 63)
             throw new IllegalArgumentException("Bucket name should be between 3 and 63 characters long");
@@ -77,6 +80,18 @@ public class BucketNameUtils {
         if ( bucketName.contains(":") ||
              bucketName.contains(":;") )
             throw new IllegalArgumentException("Bucket name should not contain colons or semicolons");
+
+        if ( bucketName.contains("\\")) {
+            throw new IllegalArgumentException("Bucket name should not contain '\\'");
+        }
+
+        // Check whether there is white space in the bucket name.
+        if (bucketName.matches("(.*\\s+.*)+") ) {
+            throw new IllegalArgumentException("Bucket name should not contain white space");
+        }
+
+        if (bucketName.contains("/"))
+            throw new IllegalArgumentException("Bucket name should not contain '/'");
     }
 
     /**

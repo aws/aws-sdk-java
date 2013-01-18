@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -352,11 +352,11 @@ public class HostedZone {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (id != null) sb.append("Id: " + id + ", ");
-        if (name != null) sb.append("Name: " + name + ", ");
-        if (callerReference != null) sb.append("CallerReference: " + callerReference + ", ");
-        if (config != null) sb.append("Config: " + config + ", ");
-        if (resourceRecordSetCount != null) sb.append("ResourceRecordSetCount: " + resourceRecordSetCount + ", ");
+        if (getId() != null) sb.append("Id: " + getId() + ", ");
+        if (getName() != null) sb.append("Name: " + getName() + ", ");
+        if (getCallerReference() != null) sb.append("CallerReference: " + getCallerReference() + ", ");
+        if (getConfig() != null) sb.append("Config: " + getConfig() + ", ");
+        if (getResourceRecordSetCount() != null) sb.append("ResourceRecordSetCount: " + getResourceRecordSetCount() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -378,7 +378,7 @@ public class HostedZone {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof HostedZone == false) return false;
         HostedZone other = (HostedZone)obj;
         

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -204,9 +204,9 @@ public class ExecutePolicyRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (autoScalingGroupName != null) sb.append("AutoScalingGroupName: " + autoScalingGroupName + ", ");
-        if (policyName != null) sb.append("PolicyName: " + policyName + ", ");
-        if (honorCooldown != null) sb.append("HonorCooldown: " + honorCooldown + ", ");
+        if (getAutoScalingGroupName() != null) sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ", ");
+        if (getPolicyName() != null) sb.append("PolicyName: " + getPolicyName() + ", ");
+        if (isHonorCooldown() != null) sb.append("HonorCooldown: " + isHonorCooldown() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -226,7 +226,7 @@ public class ExecutePolicyRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof ExecutePolicyRequest == false) return false;
         ExecutePolicyRequest other = (ExecutePolicyRequest)obj;
         

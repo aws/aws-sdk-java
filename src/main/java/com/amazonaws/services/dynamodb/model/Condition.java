@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -400,8 +400,8 @@ public class Condition {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (attributeValueList != null) sb.append("AttributeValueList: " + attributeValueList + ", ");
-        if (comparisonOperator != null) sb.append("ComparisonOperator: " + comparisonOperator + ", ");
+        if (getAttributeValueList() != null) sb.append("AttributeValueList: " + getAttributeValueList() + ", ");
+        if (getComparisonOperator() != null) sb.append("ComparisonOperator: " + getComparisonOperator() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -420,7 +420,7 @@ public class Condition {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof Condition == false) return false;
         Condition other = (Condition)obj;
         

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -290,10 +290,10 @@ public class GetGroupResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (group != null) sb.append("Group: " + group + ", ");
-        if (users != null) sb.append("Users: " + users + ", ");
-        if (isTruncated != null) sb.append("IsTruncated: " + isTruncated + ", ");
-        if (marker != null) sb.append("Marker: " + marker + ", ");
+        if (getGroup() != null) sb.append("Group: " + getGroup() + ", ");
+        if (getUsers() != null) sb.append("Users: " + getUsers() + ", ");
+        if (isTruncated() != null) sb.append("IsTruncated: " + isTruncated() + ", ");
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -314,7 +314,7 @@ public class GetGroupResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof GetGroupResult == false) return false;
         GetGroupResult other = (GetGroupResult)obj;
         

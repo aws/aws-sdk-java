@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -229,10 +229,10 @@ public class VolumeRecoveryPointInfo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (volumeARN != null) sb.append("VolumeARN: " + volumeARN + ", ");
-        if (volumeSizeInBytes != null) sb.append("VolumeSizeInBytes: " + volumeSizeInBytes + ", ");
-        if (volumeUsageInBytes != null) sb.append("VolumeUsageInBytes: " + volumeUsageInBytes + ", ");
-        if (volumeRecoveryPointTime != null) sb.append("VolumeRecoveryPointTime: " + volumeRecoveryPointTime + ", ");
+        if (getVolumeARN() != null) sb.append("VolumeARN: " + getVolumeARN() + ", ");
+        if (getVolumeSizeInBytes() != null) sb.append("VolumeSizeInBytes: " + getVolumeSizeInBytes() + ", ");
+        if (getVolumeUsageInBytes() != null) sb.append("VolumeUsageInBytes: " + getVolumeUsageInBytes() + ", ");
+        if (getVolumeRecoveryPointTime() != null) sb.append("VolumeRecoveryPointTime: " + getVolumeRecoveryPointTime() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -253,7 +253,7 @@ public class VolumeRecoveryPointInfo {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof VolumeRecoveryPointInfo == false) return false;
         VolumeRecoveryPointInfo other = (VolumeRecoveryPointInfo)obj;
         

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -425,10 +425,10 @@ public class PublishRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (topicArn != null) sb.append("TopicArn: " + topicArn + ", ");
-        if (message != null) sb.append("Message: " + message + ", ");
-        if (subject != null) sb.append("Subject: " + subject + ", ");
-        if (messageStructure != null) sb.append("MessageStructure: " + messageStructure + ", ");
+        if (getTopicArn() != null) sb.append("TopicArn: " + getTopicArn() + ", ");
+        if (getMessage() != null) sb.append("Message: " + getMessage() + ", ");
+        if (getSubject() != null) sb.append("Subject: " + getSubject() + ", ");
+        if (getMessageStructure() != null) sb.append("MessageStructure: " + getMessageStructure() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -449,7 +449,7 @@ public class PublishRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof PublishRequest == false) return false;
         PublishRequest other = (PublishRequest)obj;
         

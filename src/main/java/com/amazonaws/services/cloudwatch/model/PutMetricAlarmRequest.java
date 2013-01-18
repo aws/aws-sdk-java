@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -1224,21 +1224,21 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (alarmName != null) sb.append("AlarmName: " + alarmName + ", ");
-        if (alarmDescription != null) sb.append("AlarmDescription: " + alarmDescription + ", ");
-        if (actionsEnabled != null) sb.append("ActionsEnabled: " + actionsEnabled + ", ");
-        if (oKActions != null) sb.append("OKActions: " + oKActions + ", ");
-        if (alarmActions != null) sb.append("AlarmActions: " + alarmActions + ", ");
-        if (insufficientDataActions != null) sb.append("InsufficientDataActions: " + insufficientDataActions + ", ");
-        if (metricName != null) sb.append("MetricName: " + metricName + ", ");
-        if (namespace != null) sb.append("Namespace: " + namespace + ", ");
-        if (statistic != null) sb.append("Statistic: " + statistic + ", ");
-        if (dimensions != null) sb.append("Dimensions: " + dimensions + ", ");
-        if (period != null) sb.append("Period: " + period + ", ");
-        if (unit != null) sb.append("Unit: " + unit + ", ");
-        if (evaluationPeriods != null) sb.append("EvaluationPeriods: " + evaluationPeriods + ", ");
-        if (threshold != null) sb.append("Threshold: " + threshold + ", ");
-        if (comparisonOperator != null) sb.append("ComparisonOperator: " + comparisonOperator + ", ");
+        if (getAlarmName() != null) sb.append("AlarmName: " + getAlarmName() + ", ");
+        if (getAlarmDescription() != null) sb.append("AlarmDescription: " + getAlarmDescription() + ", ");
+        if (isActionsEnabled() != null) sb.append("ActionsEnabled: " + isActionsEnabled() + ", ");
+        if (getOKActions() != null) sb.append("OKActions: " + getOKActions() + ", ");
+        if (getAlarmActions() != null) sb.append("AlarmActions: " + getAlarmActions() + ", ");
+        if (getInsufficientDataActions() != null) sb.append("InsufficientDataActions: " + getInsufficientDataActions() + ", ");
+        if (getMetricName() != null) sb.append("MetricName: " + getMetricName() + ", ");
+        if (getNamespace() != null) sb.append("Namespace: " + getNamespace() + ", ");
+        if (getStatistic() != null) sb.append("Statistic: " + getStatistic() + ", ");
+        if (getDimensions() != null) sb.append("Dimensions: " + getDimensions() + ", ");
+        if (getPeriod() != null) sb.append("Period: " + getPeriod() + ", ");
+        if (getUnit() != null) sb.append("Unit: " + getUnit() + ", ");
+        if (getEvaluationPeriods() != null) sb.append("EvaluationPeriods: " + getEvaluationPeriods() + ", ");
+        if (getThreshold() != null) sb.append("Threshold: " + getThreshold() + ", ");
+        if (getComparisonOperator() != null) sb.append("ComparisonOperator: " + getComparisonOperator() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -1270,7 +1270,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof PutMetricAlarmRequest == false) return false;
         PutMetricAlarmRequest other = (PutMetricAlarmRequest)obj;
         

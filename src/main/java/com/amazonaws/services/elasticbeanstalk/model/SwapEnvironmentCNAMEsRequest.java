@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -329,10 +329,10 @@ public class SwapEnvironmentCNAMEsRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (sourceEnvironmentId != null) sb.append("SourceEnvironmentId: " + sourceEnvironmentId + ", ");
-        if (sourceEnvironmentName != null) sb.append("SourceEnvironmentName: " + sourceEnvironmentName + ", ");
-        if (destinationEnvironmentId != null) sb.append("DestinationEnvironmentId: " + destinationEnvironmentId + ", ");
-        if (destinationEnvironmentName != null) sb.append("DestinationEnvironmentName: " + destinationEnvironmentName + ", ");
+        if (getSourceEnvironmentId() != null) sb.append("SourceEnvironmentId: " + getSourceEnvironmentId() + ", ");
+        if (getSourceEnvironmentName() != null) sb.append("SourceEnvironmentName: " + getSourceEnvironmentName() + ", ");
+        if (getDestinationEnvironmentId() != null) sb.append("DestinationEnvironmentId: " + getDestinationEnvironmentId() + ", ");
+        if (getDestinationEnvironmentName() != null) sb.append("DestinationEnvironmentName: " + getDestinationEnvironmentName() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -353,7 +353,7 @@ public class SwapEnvironmentCNAMEsRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof SwapEnvironmentCNAMEsRequest == false) return false;
         SwapEnvironmentCNAMEsRequest other = (SwapEnvironmentCNAMEsRequest)obj;
         

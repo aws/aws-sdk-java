@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -140,8 +140,8 @@ public class ServiceEndpoint {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (arn != null) sb.append("Arn: " + arn + ", ");
-        if (endpoint != null) sb.append("Endpoint: " + endpoint + ", ");
+        if (getArn() != null) sb.append("Arn: " + getArn() + ", ");
+        if (getEndpoint() != null) sb.append("Endpoint: " + getEndpoint() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -160,7 +160,7 @@ public class ServiceEndpoint {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof ServiceEndpoint == false) return false;
         ServiceEndpoint other = (ServiceEndpoint)obj;
         

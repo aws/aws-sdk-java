@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -365,13 +365,13 @@ public class Datapoint {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (timestamp != null) sb.append("Timestamp: " + timestamp + ", ");
-        if (sampleCount != null) sb.append("SampleCount: " + sampleCount + ", ");
-        if (average != null) sb.append("Average: " + average + ", ");
-        if (sum != null) sb.append("Sum: " + sum + ", ");
-        if (minimum != null) sb.append("Minimum: " + minimum + ", ");
-        if (maximum != null) sb.append("Maximum: " + maximum + ", ");
-        if (unit != null) sb.append("Unit: " + unit + ", ");
+        if (getTimestamp() != null) sb.append("Timestamp: " + getTimestamp() + ", ");
+        if (getSampleCount() != null) sb.append("SampleCount: " + getSampleCount() + ", ");
+        if (getAverage() != null) sb.append("Average: " + getAverage() + ", ");
+        if (getSum() != null) sb.append("Sum: " + getSum() + ", ");
+        if (getMinimum() != null) sb.append("Minimum: " + getMinimum() + ", ");
+        if (getMaximum() != null) sb.append("Maximum: " + getMaximum() + ", ");
+        if (getUnit() != null) sb.append("Unit: " + getUnit() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -395,7 +395,7 @@ public class Datapoint {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof Datapoint == false) return false;
         Datapoint other = (Datapoint)obj;
         

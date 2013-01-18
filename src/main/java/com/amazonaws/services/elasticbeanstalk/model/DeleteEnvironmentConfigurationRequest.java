@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -167,8 +167,8 @@ public class DeleteEnvironmentConfigurationRequest extends AmazonWebServiceReque
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (applicationName != null) sb.append("ApplicationName: " + applicationName + ", ");
-        if (environmentName != null) sb.append("EnvironmentName: " + environmentName + ", ");
+        if (getApplicationName() != null) sb.append("ApplicationName: " + getApplicationName() + ", ");
+        if (getEnvironmentName() != null) sb.append("EnvironmentName: " + getEnvironmentName() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -187,7 +187,7 @@ public class DeleteEnvironmentConfigurationRequest extends AmazonWebServiceReque
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DeleteEnvironmentConfigurationRequest == false) return false;
         DeleteEnvironmentConfigurationRequest other = (DeleteEnvironmentConfigurationRequest)obj;
         

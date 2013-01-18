@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -29,7 +29,7 @@ public abstract class AmazonWebServiceRequest {
      * field is not intended to be used by clients.
      */
     private final RequestClientOptions requestClientOptions = new RequestClientOptions();
-    
+
     /**
      * The optional credentials to use for this request - overrides the
      * default credentials set at the client level.
@@ -70,7 +70,7 @@ public abstract class AmazonWebServiceRequest {
     public Map<String, String> copyPrivateRequestParameters() {
         return new HashMap<String, String>();
     }
-    
+
     /**
      * Gets the options stored with this request object. Intended for internal
      * use only.

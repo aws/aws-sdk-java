@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -557,11 +557,11 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (activationKey != null) sb.append("ActivationKey: " + activationKey + ", ");
-        if (gatewayName != null) sb.append("GatewayName: " + gatewayName + ", ");
-        if (gatewayTimezone != null) sb.append("GatewayTimezone: " + gatewayTimezone + ", ");
-        if (gatewayRegion != null) sb.append("GatewayRegion: " + gatewayRegion + ", ");
-        if (gatewayType != null) sb.append("GatewayType: " + gatewayType + ", ");
+        if (getActivationKey() != null) sb.append("ActivationKey: " + getActivationKey() + ", ");
+        if (getGatewayName() != null) sb.append("GatewayName: " + getGatewayName() + ", ");
+        if (getGatewayTimezone() != null) sb.append("GatewayTimezone: " + getGatewayTimezone() + ", ");
+        if (getGatewayRegion() != null) sb.append("GatewayRegion: " + getGatewayRegion() + ", ");
+        if (getGatewayType() != null) sb.append("GatewayType: " + getGatewayType() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -583,7 +583,7 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof ActivateGatewayRequest == false) return false;
         ActivateGatewayRequest other = (ActivateGatewayRequest)obj;
         

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -369,11 +369,11 @@ public class DescribeSnapshotScheduleResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (volumeARN != null) sb.append("VolumeARN: " + volumeARN + ", ");
-        if (startAt != null) sb.append("StartAt: " + startAt + ", ");
-        if (recurrenceInHours != null) sb.append("RecurrenceInHours: " + recurrenceInHours + ", ");
-        if (description != null) sb.append("Description: " + description + ", ");
-        if (timezone != null) sb.append("Timezone: " + timezone + ", ");
+        if (getVolumeARN() != null) sb.append("VolumeARN: " + getVolumeARN() + ", ");
+        if (getStartAt() != null) sb.append("StartAt: " + getStartAt() + ", ");
+        if (getRecurrenceInHours() != null) sb.append("RecurrenceInHours: " + getRecurrenceInHours() + ", ");
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ", ");
+        if (getTimezone() != null) sb.append("Timezone: " + getTimezone() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -395,7 +395,7 @@ public class DescribeSnapshotScheduleResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DescribeSnapshotScheduleResult == false) return false;
         DescribeSnapshotScheduleResult other = (DescribeSnapshotScheduleResult)obj;
         

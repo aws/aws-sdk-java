@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -189,9 +189,9 @@ public class PurchaseReservedDBInstancesOfferingRequest extends AmazonWebService
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (reservedDBInstancesOfferingId != null) sb.append("ReservedDBInstancesOfferingId: " + reservedDBInstancesOfferingId + ", ");
-        if (reservedDBInstanceId != null) sb.append("ReservedDBInstanceId: " + reservedDBInstanceId + ", ");
-        if (dBInstanceCount != null) sb.append("DBInstanceCount: " + dBInstanceCount + ", ");
+        if (getReservedDBInstancesOfferingId() != null) sb.append("ReservedDBInstancesOfferingId: " + getReservedDBInstancesOfferingId() + ", ");
+        if (getReservedDBInstanceId() != null) sb.append("ReservedDBInstanceId: " + getReservedDBInstanceId() + ", ");
+        if (getDBInstanceCount() != null) sb.append("DBInstanceCount: " + getDBInstanceCount() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -211,7 +211,7 @@ public class PurchaseReservedDBInstancesOfferingRequest extends AmazonWebService
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof PurchaseReservedDBInstancesOfferingRequest == false) return false;
         PurchaseReservedDBInstancesOfferingRequest other = (PurchaseReservedDBInstancesOfferingRequest)obj;
         

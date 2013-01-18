@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -62,37 +62,6 @@ public interface AmazonElastiCache {
     
     /**
      * <p>
-     * Modifies the parameters of a CacheParameterGroup. To modify more than
-     * one parameter, submit a list of ParameterName and ParameterValue
-     * parameters. A maximum of 20 parameters can be modified in a single
-     * request.
-     * </p>
-     *
-     * @param modifyCacheParameterGroupRequest Container for the necessary
-     *           parameters to execute the ModifyCacheParameterGroup service method on
-     *           AmazonElastiCache.
-     * 
-     * @return The response from the ModifyCacheParameterGroup service
-     *         method, as returned by AmazonElastiCache.
-     * 
-     * @throws InvalidParameterValueException
-     * @throws InvalidParameterCombinationException
-     * @throws CacheParameterGroupNotFoundException
-     * @throws InvalidCacheParameterGroupStateException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonElastiCache indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public ModifyCacheParameterGroupResult modifyCacheParameterGroup(ModifyCacheParameterGroupRequest modifyCacheParameterGroupRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
      * Authorizes ingress to a CacheSecurityGroup using EC2 Security Groups
      * as authorization (therefore the application using the cache must be
      * running on EC2 clusters). This API requires the following parameters:
@@ -125,6 +94,63 @@ public interface AmazonElastiCache {
      *             either a problem with the data in the request, or a server side issue.
      */
     public CacheSecurityGroup authorizeCacheSecurityGroupIngress(AuthorizeCacheSecurityGroupIngressRequest authorizeCacheSecurityGroupIngressRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Creates a new Cache Subnet Group.
+     * </p>
+     *
+     * @param createCacheSubnetGroupRequest Container for the necessary
+     *           parameters to execute the CreateCacheSubnetGroup service method on
+     *           AmazonElastiCache.
+     * 
+     * @return The response from the CreateCacheSubnetGroup service method,
+     *         as returned by AmazonElastiCache.
+     * 
+     * @throws CacheSubnetGroupAlreadyExistsException
+     * @throws CacheSubnetGroupQuotaExceededException
+     * @throws CacheSubnetQuotaExceededException
+     * @throws InvalidSubnetException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElastiCache indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public CacheSubnetGroup createCacheSubnetGroup(CreateCacheSubnetGroupRequest createCacheSubnetGroupRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Purchases a reserved Cache Node offering.
+     * </p>
+     *
+     * @param purchaseReservedCacheNodesOfferingRequest Container for the
+     *           necessary parameters to execute the PurchaseReservedCacheNodesOffering
+     *           service method on AmazonElastiCache.
+     * 
+     * @return The response from the PurchaseReservedCacheNodesOffering
+     *         service method, as returned by AmazonElastiCache.
+     * 
+     * @throws InvalidParameterValueException
+     * @throws ReservedCacheNodeQuotaExceededException
+     * @throws ReservedCacheNodeAlreadyExistsException
+     * @throws ReservedCacheNodesOfferingNotFoundException
+     * @throws InvalidParameterCombinationException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElastiCache indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ReservedCacheNode purchaseReservedCacheNodesOffering(PurchaseReservedCacheNodesOfferingRequest purchaseReservedCacheNodesOfferingRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -162,99 +188,6 @@ public interface AmazonElastiCache {
 
     /**
      * <p>
-     * Lists available reserved Cache Node offerings.
-     * </p>
-     *
-     * @param describeReservedCacheNodesOfferingsRequest Container for the
-     *           necessary parameters to execute the
-     *           DescribeReservedCacheNodesOfferings service method on
-     *           AmazonElastiCache.
-     * 
-     * @return The response from the DescribeReservedCacheNodesOfferings
-     *         service method, as returned by AmazonElastiCache.
-     * 
-     * @throws InvalidParameterValueException
-     * @throws ReservedCacheNodesOfferingNotFoundException
-     * @throws InvalidParameterCombinationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonElastiCache indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeReservedCacheNodesOfferingsResult describeReservedCacheNodesOfferings(DescribeReservedCacheNodesOfferingsRequest describeReservedCacheNodesOfferingsRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Deletes a previously provisioned Cache Cluster. A successful response
-     * from the web service indicates the request was received correctly.
-     * This action cannot be canceled or reverted. DeleteCacheCluster deletes
-     * all associated Cache Nodes, node endpoints and the Cache Cluster
-     * itself.
-     * </p>
-     *
-     * @param deleteCacheClusterRequest Container for the necessary
-     *           parameters to execute the DeleteCacheCluster service method on
-     *           AmazonElastiCache.
-     * 
-     * @return The response from the DeleteCacheCluster service method, as
-     *         returned by AmazonElastiCache.
-     * 
-     * @throws InvalidParameterValueException
-     * @throws CacheClusterNotFoundException
-     * @throws InvalidParameterCombinationException
-     * @throws InvalidCacheClusterStateException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonElastiCache indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public CacheCluster deleteCacheCluster(DeleteCacheClusterRequest deleteCacheClusterRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Creates a new Cache Cluster.
-     * </p>
-     *
-     * @param createCacheClusterRequest Container for the necessary
-     *           parameters to execute the CreateCacheCluster service method on
-     *           AmazonElastiCache.
-     * 
-     * @return The response from the CreateCacheCluster service method, as
-     *         returned by AmazonElastiCache.
-     * 
-     * @throws NodeQuotaForCustomerExceededException
-     * @throws NodeQuotaForClusterExceededException
-     * @throws InvalidParameterValueException
-     * @throws ClusterQuotaForCustomerExceededException
-     * @throws CacheClusterAlreadyExistsException
-     * @throws InsufficientCacheClusterCapacityException
-     * @throws InvalidParameterCombinationException
-     * @throws CacheParameterGroupNotFoundException
-     * @throws CacheSecurityGroupNotFoundException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonElastiCache indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public CacheCluster createCacheCluster(CreateCacheClusterRequest createCacheClusterRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
      * Revokes ingress from a CacheSecurityGroup for previously authorized
      * EC2 Security Groups.
      * </p>
@@ -285,22 +218,19 @@ public interface AmazonElastiCache {
 
     /**
      * <p>
-     * Creates a new Cache Parameter Group. Cache Parameter groups control
-     * the parameters for a Cache Cluster.
+     * Returns a list of CacheSubnetGroup descriptions. If a
+     * CacheSubnetGroupName is specified, the list will contain only the
+     * description of the specified Cache Subnet Group.
      * </p>
      *
-     * @param createCacheParameterGroupRequest Container for the necessary
-     *           parameters to execute the CreateCacheParameterGroup service method on
+     * @param describeCacheSubnetGroupsRequest Container for the necessary
+     *           parameters to execute the DescribeCacheSubnetGroups service method on
      *           AmazonElastiCache.
      * 
-     * @return The response from the CreateCacheParameterGroup service
+     * @return The response from the DescribeCacheSubnetGroups service
      *         method, as returned by AmazonElastiCache.
      * 
-     * @throws InvalidParameterValueException
-     * @throws CacheParameterGroupQuotaExceededException
-     * @throws CacheParameterGroupAlreadyExistsException
-     * @throws InvalidParameterCombinationException
-     * @throws InvalidCacheParameterGroupStateException
+     * @throws CacheSubnetGroupNotFoundException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -310,7 +240,76 @@ public interface AmazonElastiCache {
      *             If an error response is returned by AmazonElastiCache indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public CacheParameterGroup createCacheParameterGroup(CreateCacheParameterGroupRequest createCacheParameterGroupRequest) 
+    public DescribeCacheSubnetGroupsResult describeCacheSubnetGroups(DescribeCacheSubnetGroupsRequest describeCacheSubnetGroupsRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Creates a new Cache Security Group. Cache Security groups control
+     * access to one or more Cache Clusters.
+     * </p>
+     * <p>
+     * Only use cache security groups when you are creating a cluster
+     * outside of an Amazon Virtual Private Cloud (VPC). Inside of a VPC, use
+     * VPC security groups.
+     * </p>
+     *
+     * @param createCacheSecurityGroupRequest Container for the necessary
+     *           parameters to execute the CreateCacheSecurityGroup service method on
+     *           AmazonElastiCache.
+     * 
+     * @return The response from the CreateCacheSecurityGroup service method,
+     *         as returned by AmazonElastiCache.
+     * 
+     * @throws CacheSecurityGroupAlreadyExistsException
+     * @throws InvalidParameterValueException
+     * @throws CacheSecurityGroupQuotaExceededException
+     * @throws InvalidParameterCombinationException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElastiCache indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public CacheSecurityGroup createCacheSecurityGroup(CreateCacheSecurityGroupRequest createCacheSecurityGroupRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Creates a new Cache Cluster.
+     * </p>
+     *
+     * @param createCacheClusterRequest Container for the necessary
+     *           parameters to execute the CreateCacheCluster service method on
+     *           AmazonElastiCache.
+     * 
+     * @return The response from the CreateCacheCluster service method, as
+     *         returned by AmazonElastiCache.
+     * 
+     * @throws NodeQuotaForCustomerExceededException
+     * @throws NodeQuotaForClusterExceededException
+     * @throws CacheSubnetGroupNotFoundException
+     * @throws InvalidParameterValueException
+     * @throws ClusterQuotaForCustomerExceededException
+     * @throws CacheClusterAlreadyExistsException
+     * @throws InvalidVPCNetworkStateException
+     * @throws InsufficientCacheClusterCapacityException
+     * @throws InvalidParameterCombinationException
+     * @throws CacheParameterGroupNotFoundException
+     * @throws CacheSecurityGroupNotFoundException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElastiCache indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public CacheCluster createCacheCluster(CreateCacheClusterRequest createCacheClusterRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -372,21 +371,16 @@ public interface AmazonElastiCache {
 
     /**
      * <p>
-     * Returns a list of CacheParameterGroup descriptions. If a
-     * CacheParameterGroupName is specified, the list will contain only the
-     * descriptions of the specified CacheParameterGroup.
+     * Returns a list of the available cache engines and their versions.
      * </p>
      *
-     * @param describeCacheParameterGroupsRequest Container for the necessary
-     *           parameters to execute the DescribeCacheParameterGroups service method
+     * @param describeCacheEngineVersionsRequest Container for the necessary
+     *           parameters to execute the DescribeCacheEngineVersions service method
      *           on AmazonElastiCache.
      * 
-     * @return The response from the DescribeCacheParameterGroups service
+     * @return The response from the DescribeCacheEngineVersions service
      *         method, as returned by AmazonElastiCache.
      * 
-     * @throws InvalidParameterValueException
-     * @throws InvalidParameterCombinationException
-     * @throws CacheParameterGroupNotFoundException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -396,7 +390,7 @@ public interface AmazonElastiCache {
      *             If an error response is returned by AmazonElastiCache indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DescribeCacheParameterGroupsResult describeCacheParameterGroups(DescribeCacheParameterGroupsRequest describeCacheParameterGroupsRequest) 
+    public DescribeCacheEngineVersionsResult describeCacheEngineVersions(DescribeCacheEngineVersionsRequest describeCacheEngineVersionsRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -427,19 +421,134 @@ public interface AmazonElastiCache {
 
     /**
      * <p>
-     * Deletes a Cache Security Group.
+     * Modifies the parameters of a CacheParameterGroup. To modify more than
+     * one parameter, submit a list of ParameterName and ParameterValue
+     * parameters. A maximum of 20 parameters can be modified in a single
+     * request.
+     * </p>
+     *
+     * @param modifyCacheParameterGroupRequest Container for the necessary
+     *           parameters to execute the ModifyCacheParameterGroup service method on
+     *           AmazonElastiCache.
+     * 
+     * @return The response from the ModifyCacheParameterGroup service
+     *         method, as returned by AmazonElastiCache.
+     * 
+     * @throws InvalidParameterValueException
+     * @throws InvalidParameterCombinationException
+     * @throws CacheParameterGroupNotFoundException
+     * @throws InvalidCacheParameterGroupStateException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElastiCache indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ModifyCacheParameterGroupResult modifyCacheParameterGroup(ModifyCacheParameterGroupRequest modifyCacheParameterGroupRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Returns the default engine and system parameter information for the
+     * specified cache engine.
+     * </p>
+     *
+     * @param describeEngineDefaultParametersRequest Container for the
+     *           necessary parameters to execute the DescribeEngineDefaultParameters
+     *           service method on AmazonElastiCache.
+     * 
+     * @return The response from the DescribeEngineDefaultParameters service
+     *         method, as returned by AmazonElastiCache.
+     * 
+     * @throws InvalidParameterValueException
+     * @throws InvalidParameterCombinationException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElastiCache indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public EngineDefaults describeEngineDefaultParameters(DescribeEngineDefaultParametersRequest describeEngineDefaultParametersRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Deletes a Cache Subnet Group.
      * </p>
      * <p>
-     * <b>NOTE:</b>The specified Cache Security Group must not be associated
+     * <b>NOTE:</b>The specified Cache Subnet Group must not be associated
      * with any Cache Clusters.
      * </p>
      *
-     * @param deleteCacheSecurityGroupRequest Container for the necessary
-     *           parameters to execute the DeleteCacheSecurityGroup service method on
+     * @param deleteCacheSubnetGroupRequest Container for the necessary
+     *           parameters to execute the DeleteCacheSubnetGroup service method on
      *           AmazonElastiCache.
      * 
+     * @throws CacheSubnetGroupNotFoundException
+     * @throws CacheSubnetGroupInUseException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElastiCache indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void deleteCacheSubnetGroup(DeleteCacheSubnetGroupRequest deleteCacheSubnetGroupRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Creates a new Cache Parameter Group. Cache Parameter groups control
+     * the parameters for a Cache Cluster.
+     * </p>
+     *
+     * @param createCacheParameterGroupRequest Container for the necessary
+     *           parameters to execute the CreateCacheParameterGroup service method on
+     *           AmazonElastiCache.
+     * 
+     * @return The response from the CreateCacheParameterGroup service
+     *         method, as returned by AmazonElastiCache.
+     * 
      * @throws InvalidParameterValueException
-     * @throws InvalidCacheSecurityGroupStateException
+     * @throws CacheParameterGroupQuotaExceededException
+     * @throws CacheParameterGroupAlreadyExistsException
+     * @throws InvalidParameterCombinationException
+     * @throws InvalidCacheParameterGroupStateException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElastiCache indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public CacheParameterGroup createCacheParameterGroup(CreateCacheParameterGroupRequest createCacheParameterGroupRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Returns a list of CacheSecurityGroup descriptions. If a
+     * CacheSecurityGroupName is specified, the list will contain only the
+     * description of the specified CacheSecurityGroup.
+     * </p>
+     *
+     * @param describeCacheSecurityGroupsRequest Container for the necessary
+     *           parameters to execute the DescribeCacheSecurityGroups service method
+     *           on AmazonElastiCache.
+     * 
+     * @return The response from the DescribeCacheSecurityGroups service
+     *         method, as returned by AmazonElastiCache.
+     * 
+     * @throws InvalidParameterValueException
      * @throws InvalidParameterCombinationException
      * @throws CacheSecurityGroupNotFoundException
      *
@@ -451,26 +560,26 @@ public interface AmazonElastiCache {
      *             If an error response is returned by AmazonElastiCache indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public void deleteCacheSecurityGroup(DeleteCacheSecurityGroupRequest deleteCacheSecurityGroupRequest) 
+    public DescribeCacheSecurityGroupsResult describeCacheSecurityGroups(DescribeCacheSecurityGroupsRequest describeCacheSecurityGroupsRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
      * <p>
-     * Purchases a reserved Cache Node offering.
+     * Returns a list of CacheParameterGroup descriptions. If a
+     * CacheParameterGroupName is specified, the list will contain only the
+     * descriptions of the specified CacheParameterGroup.
      * </p>
      *
-     * @param purchaseReservedCacheNodesOfferingRequest Container for the
-     *           necessary parameters to execute the PurchaseReservedCacheNodesOffering
-     *           service method on AmazonElastiCache.
+     * @param describeCacheParameterGroupsRequest Container for the necessary
+     *           parameters to execute the DescribeCacheParameterGroups service method
+     *           on AmazonElastiCache.
      * 
-     * @return The response from the PurchaseReservedCacheNodesOffering
-     *         service method, as returned by AmazonElastiCache.
+     * @return The response from the DescribeCacheParameterGroups service
+     *         method, as returned by AmazonElastiCache.
      * 
      * @throws InvalidParameterValueException
-     * @throws ReservedCacheNodeQuotaExceededException
-     * @throws ReservedCacheNodeAlreadyExistsException
-     * @throws ReservedCacheNodesOfferingNotFoundException
      * @throws InvalidParameterCombinationException
+     * @throws CacheParameterGroupNotFoundException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -480,7 +589,7 @@ public interface AmazonElastiCache {
      *             If an error response is returned by AmazonElastiCache indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public ReservedCacheNode purchaseReservedCacheNodesOffering(PurchaseReservedCacheNodesOfferingRequest purchaseReservedCacheNodesOfferingRequest) 
+    public DescribeCacheParameterGroupsResult describeCacheParameterGroups(DescribeCacheParameterGroupsRequest describeCacheParameterGroupsRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -542,6 +651,66 @@ public interface AmazonElastiCache {
 
     /**
      * <p>
+     * Modifies the parameters of a CacheParameterGroup to the engine or
+     * system default value. To reset specific parameters submit a list of
+     * the parameter names. To reset the entire CacheParameterGroup, specify
+     * the CacheParameterGroup name and ResetAllParameters parameters.
+     * </p>
+     *
+     * @param resetCacheParameterGroupRequest Container for the necessary
+     *           parameters to execute the ResetCacheParameterGroup service method on
+     *           AmazonElastiCache.
+     * 
+     * @return The response from the ResetCacheParameterGroup service method,
+     *         as returned by AmazonElastiCache.
+     * 
+     * @throws InvalidParameterValueException
+     * @throws InvalidParameterCombinationException
+     * @throws InvalidCacheParameterGroupStateException
+     * @throws CacheParameterGroupNotFoundException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElastiCache indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ResetCacheParameterGroupResult resetCacheParameterGroup(ResetCacheParameterGroupRequest resetCacheParameterGroupRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Deletes a Cache Security Group.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>The specified Cache Security Group must not be associated
+     * with any Cache Clusters.
+     * </p>
+     *
+     * @param deleteCacheSecurityGroupRequest Container for the necessary
+     *           parameters to execute the DeleteCacheSecurityGroup service method on
+     *           AmazonElastiCache.
+     * 
+     * @throws InvalidParameterValueException
+     * @throws InvalidCacheSecurityGroupStateException
+     * @throws InvalidParameterCombinationException
+     * @throws CacheSecurityGroupNotFoundException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElastiCache indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void deleteCacheSecurityGroup(DeleteCacheSecurityGroupRequest deleteCacheSecurityGroupRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
      * Modifies the Cache Cluster settings. You can change one or more Cache
      * Cluster configuration parameters by specifying the parameters and the
      * new values in the request.
@@ -558,6 +727,7 @@ public interface AmazonElastiCache {
      * @throws NodeQuotaForClusterExceededException
      * @throws InvalidParameterValueException
      * @throws InvalidCacheSecurityGroupStateException
+     * @throws InvalidVPCNetworkStateException
      * @throws CacheClusterNotFoundException
      * @throws InvalidParameterCombinationException
      * @throws CacheParameterGroupNotFoundException
@@ -577,21 +747,24 @@ public interface AmazonElastiCache {
 
     /**
      * <p>
-     * Returns a list of CacheSecurityGroup descriptions. If a
-     * CacheSecurityGroupName is specified, the list will contain only the
-     * description of the specified CacheSecurityGroup.
+     * Deletes a previously provisioned Cache Cluster. A successful response
+     * from the web service indicates the request was received correctly.
+     * This action cannot be canceled or reverted. DeleteCacheCluster deletes
+     * all associated Cache Nodes, node endpoints and the Cache Cluster
+     * itself.
      * </p>
      *
-     * @param describeCacheSecurityGroupsRequest Container for the necessary
-     *           parameters to execute the DescribeCacheSecurityGroups service method
-     *           on AmazonElastiCache.
+     * @param deleteCacheClusterRequest Container for the necessary
+     *           parameters to execute the DeleteCacheCluster service method on
+     *           AmazonElastiCache.
      * 
-     * @return The response from the DescribeCacheSecurityGroups service
-     *         method, as returned by AmazonElastiCache.
+     * @return The response from the DeleteCacheCluster service method, as
+     *         returned by AmazonElastiCache.
      * 
      * @throws InvalidParameterValueException
+     * @throws CacheClusterNotFoundException
      * @throws InvalidParameterCombinationException
-     * @throws CacheSecurityGroupNotFoundException
+     * @throws InvalidCacheClusterStateException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -601,25 +774,24 @@ public interface AmazonElastiCache {
      *             If an error response is returned by AmazonElastiCache indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DescribeCacheSecurityGroupsResult describeCacheSecurityGroups(DescribeCacheSecurityGroupsRequest describeCacheSecurityGroupsRequest) 
+    public CacheCluster deleteCacheCluster(DeleteCacheClusterRequest deleteCacheClusterRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
      * <p>
-     * Creates a new Cache Security Group. Cache Security groups control
-     * access to one or more Cache Clusters.
+     * Lists available reserved Cache Node offerings.
      * </p>
      *
-     * @param createCacheSecurityGroupRequest Container for the necessary
-     *           parameters to execute the CreateCacheSecurityGroup service method on
+     * @param describeReservedCacheNodesOfferingsRequest Container for the
+     *           necessary parameters to execute the
+     *           DescribeReservedCacheNodesOfferings service method on
      *           AmazonElastiCache.
      * 
-     * @return The response from the CreateCacheSecurityGroup service method,
-     *         as returned by AmazonElastiCache.
+     * @return The response from the DescribeReservedCacheNodesOfferings
+     *         service method, as returned by AmazonElastiCache.
      * 
-     * @throws CacheSecurityGroupAlreadyExistsException
      * @throws InvalidParameterValueException
-     * @throws CacheSecurityGroupQuotaExceededException
+     * @throws ReservedCacheNodesOfferingNotFoundException
      * @throws InvalidParameterCombinationException
      *
      * @throws AmazonClientException
@@ -630,7 +802,7 @@ public interface AmazonElastiCache {
      *             If an error response is returned by AmazonElastiCache indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public CacheSecurityGroup createCacheSecurityGroup(CreateCacheSecurityGroupRequest createCacheSecurityGroupRequest) 
+    public DescribeReservedCacheNodesOfferingsResult describeReservedCacheNodesOfferings(DescribeReservedCacheNodesOfferingsRequest describeReservedCacheNodesOfferingsRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -663,50 +835,20 @@ public interface AmazonElastiCache {
 
     /**
      * <p>
-     * Returns the default engine and system parameter information for the
-     * specified cache engine.
+     * Modifies an existing Cache Subnet Group.
      * </p>
      *
-     * @param describeEngineDefaultParametersRequest Container for the
-     *           necessary parameters to execute the DescribeEngineDefaultParameters
-     *           service method on AmazonElastiCache.
-     * 
-     * @return The response from the DescribeEngineDefaultParameters service
-     *         method, as returned by AmazonElastiCache.
-     * 
-     * @throws InvalidParameterValueException
-     * @throws InvalidParameterCombinationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonElastiCache indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public EngineDefaults describeEngineDefaultParameters(DescribeEngineDefaultParametersRequest describeEngineDefaultParametersRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Modifies the parameters of a CacheParameterGroup to the engine or
-     * system default value. To reset specific parameters submit a list of
-     * the parameter names. To reset the entire CacheParameterGroup, specify
-     * the CacheParameterGroup name and ResetAllParameters parameters.
-     * </p>
-     *
-     * @param resetCacheParameterGroupRequest Container for the necessary
-     *           parameters to execute the ResetCacheParameterGroup service method on
+     * @param modifyCacheSubnetGroupRequest Container for the necessary
+     *           parameters to execute the ModifyCacheSubnetGroup service method on
      *           AmazonElastiCache.
      * 
-     * @return The response from the ResetCacheParameterGroup service method,
+     * @return The response from the ModifyCacheSubnetGroup service method,
      *         as returned by AmazonElastiCache.
      * 
-     * @throws InvalidParameterValueException
-     * @throws InvalidParameterCombinationException
-     * @throws InvalidCacheParameterGroupStateException
-     * @throws CacheParameterGroupNotFoundException
+     * @throws CacheSubnetGroupNotFoundException
+     * @throws CacheSubnetQuotaExceededException
+     * @throws InvalidSubnetException
+     * @throws SubnetInUseException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -716,20 +858,20 @@ public interface AmazonElastiCache {
      *             If an error response is returned by AmazonElastiCache indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public ResetCacheParameterGroupResult resetCacheParameterGroup(ResetCacheParameterGroupRequest resetCacheParameterGroupRequest) 
+    public CacheSubnetGroup modifyCacheSubnetGroup(ModifyCacheSubnetGroupRequest modifyCacheSubnetGroupRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
      * <p>
-     * Lists available reserved Cache Node offerings.
+     * Returns a list of CacheSubnetGroup descriptions. If a
+     * CacheSubnetGroupName is specified, the list will contain only the
+     * description of the specified Cache Subnet Group.
      * </p>
      * 
-     * @return The response from the DescribeReservedCacheNodesOfferings
-     *         service method, as returned by AmazonElastiCache.
+     * @return The response from the DescribeCacheSubnetGroups service
+     *         method, as returned by AmazonElastiCache.
      * 
-     * @throws InvalidParameterValueException
-     * @throws ReservedCacheNodesOfferingNotFoundException
-     * @throws InvalidParameterCombinationException
+     * @throws CacheSubnetGroupNotFoundException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -739,7 +881,7 @@ public interface AmazonElastiCache {
      *             If an error response is returned by AmazonElastiCache indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DescribeReservedCacheNodesOfferingsResult describeReservedCacheNodesOfferings() throws AmazonServiceException, AmazonClientException;
+    public DescribeCacheSubnetGroupsResult describeCacheSubnetGroups() throws AmazonServiceException, AmazonClientException;
     
     /**
      * <p>
@@ -788,6 +930,49 @@ public interface AmazonElastiCache {
      *             either a problem with the data in the request, or a server side issue.
      */
     public DescribeReservedCacheNodesResult describeReservedCacheNodes() throws AmazonServiceException, AmazonClientException;
+    
+    /**
+     * <p>
+     * Returns a list of the available cache engines and their versions.
+     * </p>
+     * 
+     * @return The response from the DescribeCacheEngineVersions service
+     *         method, as returned by AmazonElastiCache.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElastiCache indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeCacheEngineVersionsResult describeCacheEngineVersions() throws AmazonServiceException, AmazonClientException;
+    
+    /**
+     * <p>
+     * Returns a list of CacheSecurityGroup descriptions. If a
+     * CacheSecurityGroupName is specified, the list will contain only the
+     * description of the specified CacheSecurityGroup.
+     * </p>
+     * 
+     * @return The response from the DescribeCacheSecurityGroups service
+     *         method, as returned by AmazonElastiCache.
+     * 
+     * @throws InvalidParameterValueException
+     * @throws InvalidParameterCombinationException
+     * @throws CacheSecurityGroupNotFoundException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElastiCache indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeCacheSecurityGroupsResult describeCacheSecurityGroups() throws AmazonServiceException, AmazonClientException;
     
     /**
      * <p>
@@ -867,17 +1052,15 @@ public interface AmazonElastiCache {
     
     /**
      * <p>
-     * Returns a list of CacheSecurityGroup descriptions. If a
-     * CacheSecurityGroupName is specified, the list will contain only the
-     * description of the specified CacheSecurityGroup.
+     * Lists available reserved Cache Node offerings.
      * </p>
      * 
-     * @return The response from the DescribeCacheSecurityGroups service
-     *         method, as returned by AmazonElastiCache.
+     * @return The response from the DescribeReservedCacheNodesOfferings
+     *         service method, as returned by AmazonElastiCache.
      * 
      * @throws InvalidParameterValueException
+     * @throws ReservedCacheNodesOfferingNotFoundException
      * @throws InvalidParameterCombinationException
-     * @throws CacheSecurityGroupNotFoundException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -887,7 +1070,7 @@ public interface AmazonElastiCache {
      *             If an error response is returned by AmazonElastiCache indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DescribeCacheSecurityGroupsResult describeCacheSecurityGroups() throws AmazonServiceException, AmazonClientException;
+    public DescribeReservedCacheNodesOfferingsResult describeReservedCacheNodesOfferings() throws AmazonServiceException, AmazonClientException;
     
     /**
      * Shuts down this client object, releasing any resources that might be held

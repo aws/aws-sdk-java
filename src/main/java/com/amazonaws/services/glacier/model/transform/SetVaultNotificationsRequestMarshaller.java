@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -41,9 +41,9 @@ public class SetVaultNotificationsRequestMarshaller implements Marshaller<Reques
     
 
     public Request<SetVaultNotificationsRequest> marshall(SetVaultNotificationsRequest setVaultNotificationsRequest) {
-		if (setVaultNotificationsRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+    if (setVaultNotificationsRequest == null) {
+        throw new AmazonClientException("Invalid argument passed to marshall(...)");
+    }
 
         Request<SetVaultNotificationsRequest> request = new DefaultRequest<SetVaultNotificationsRequest>(setVaultNotificationsRequest, "AmazonGlacier");
         String target = "Glacier.SetVaultNotifications";
@@ -57,7 +57,7 @@ public class SetVaultNotificationsRequestMarshaller implements Marshaller<Reques
         String uriResourcePath = "/{accountId}/vaults/{vaultName}/notification-configuration"; 
         uriResourcePath = uriResourcePath.replace("{accountId}", getString(setVaultNotificationsRequest.getAccountId())); 
         uriResourcePath = uriResourcePath.replace("{vaultName}", getString(setVaultNotificationsRequest.getVaultName())); 
-        
+
         uriResourcePath = uriResourcePath.replaceAll("//", "/");
 
         if (uriResourcePath.contains("?")) {
@@ -79,10 +79,10 @@ public class SetVaultNotificationsRequestMarshaller implements Marshaller<Reques
 
         
         try {
-        	StringWriter stringWriter = new StringWriter();
-        	JSONWriter jsonWriter = new JSONWriter(stringWriter);
+          StringWriter stringWriter = new StringWriter();
+          JSONWriter jsonWriter = new JSONWriter(stringWriter);
 
-        	
+          
             
             VaultNotificationConfig vaultNotificationConfig = setVaultNotificationsRequest.getVaultNotificationConfig();
             if (vaultNotificationConfig != null) {
@@ -110,10 +110,10 @@ public class SetVaultNotificationsRequestMarshaller implements Marshaller<Reques
             }
 
 
-    	    String snippet = stringWriter.toString();
-    	    byte[] content = snippet.getBytes("UTF-8");
-        	request.setContent(new StringInputStream(snippet));
-	        request.addHeader("Content-Length", Integer.toString(content.length));
+          String snippet = stringWriter.toString();
+          byte[] content = snippet.getBytes("UTF-8");
+          request.setContent(new StringInputStream(snippet));
+          request.addHeader("Content-Length", Integer.toString(content.length));
         } catch(Throwable t) {
           throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }

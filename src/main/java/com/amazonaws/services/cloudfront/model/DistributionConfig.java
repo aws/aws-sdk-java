@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -616,15 +616,15 @@ public class DistributionConfig {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (callerReference != null) sb.append("CallerReference: " + callerReference + ", ");
-        if (aliases != null) sb.append("Aliases: " + aliases + ", ");
-        if (defaultRootObject != null) sb.append("DefaultRootObject: " + defaultRootObject + ", ");
-        if (origins != null) sb.append("Origins: " + origins + ", ");
-        if (defaultCacheBehavior != null) sb.append("DefaultCacheBehavior: " + defaultCacheBehavior + ", ");
-        if (cacheBehaviors != null) sb.append("CacheBehaviors: " + cacheBehaviors + ", ");
-        if (comment != null) sb.append("Comment: " + comment + ", ");
-        if (logging != null) sb.append("Logging: " + logging + ", ");
-        if (enabled != null) sb.append("Enabled: " + enabled + ", ");
+        if (getCallerReference() != null) sb.append("CallerReference: " + getCallerReference() + ", ");
+        if (getAliases() != null) sb.append("Aliases: " + getAliases() + ", ");
+        if (getDefaultRootObject() != null) sb.append("DefaultRootObject: " + getDefaultRootObject() + ", ");
+        if (getOrigins() != null) sb.append("Origins: " + getOrigins() + ", ");
+        if (getDefaultCacheBehavior() != null) sb.append("DefaultCacheBehavior: " + getDefaultCacheBehavior() + ", ");
+        if (getCacheBehaviors() != null) sb.append("CacheBehaviors: " + getCacheBehaviors() + ", ");
+        if (getComment() != null) sb.append("Comment: " + getComment() + ", ");
+        if (getLogging() != null) sb.append("Logging: " + getLogging() + ", ");
+        if (isEnabled() != null) sb.append("Enabled: " + isEnabled() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -650,7 +650,7 @@ public class DistributionConfig {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DistributionConfig == false) return false;
         DistributionConfig other = (DistributionConfig)obj;
         

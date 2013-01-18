@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -192,8 +192,8 @@ public class KeySchemaElement {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (attributeName != null) sb.append("AttributeName: " + attributeName + ", ");
-        if (attributeType != null) sb.append("AttributeType: " + attributeType + ", ");
+        if (getAttributeName() != null) sb.append("AttributeName: " + getAttributeName() + ", ");
+        if (getAttributeType() != null) sb.append("AttributeType: " + getAttributeType() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -212,7 +212,7 @@ public class KeySchemaElement {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof KeySchemaElement == false) return false;
         KeySchemaElement other = (KeySchemaElement)obj;
         

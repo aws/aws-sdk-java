@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -315,10 +315,10 @@ public class DescribeUploadBufferResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (gatewayARN != null) sb.append("GatewayARN: " + gatewayARN + ", ");
-        if (diskIds != null) sb.append("DiskIds: " + diskIds + ", ");
-        if (uploadBufferUsedInBytes != null) sb.append("UploadBufferUsedInBytes: " + uploadBufferUsedInBytes + ", ");
-        if (uploadBufferAllocatedInBytes != null) sb.append("UploadBufferAllocatedInBytes: " + uploadBufferAllocatedInBytes + ", ");
+        if (getGatewayARN() != null) sb.append("GatewayARN: " + getGatewayARN() + ", ");
+        if (getDiskIds() != null) sb.append("DiskIds: " + getDiskIds() + ", ");
+        if (getUploadBufferUsedInBytes() != null) sb.append("UploadBufferUsedInBytes: " + getUploadBufferUsedInBytes() + ", ");
+        if (getUploadBufferAllocatedInBytes() != null) sb.append("UploadBufferAllocatedInBytes: " + getUploadBufferAllocatedInBytes() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -339,7 +339,7 @@ public class DescribeUploadBufferResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DescribeUploadBufferResult == false) return false;
         DescribeUploadBufferResult other = (DescribeUploadBufferResult)obj;
         

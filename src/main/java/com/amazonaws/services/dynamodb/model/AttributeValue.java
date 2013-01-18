@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -431,12 +431,12 @@ public class AttributeValue {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (s != null) sb.append("S: " + s + ", ");
-        if (n != null) sb.append("N: " + n + ", ");
-        if (b != null) sb.append("B: " + b + ", ");
-        if (sS != null) sb.append("SS: " + sS + ", ");
-        if (nS != null) sb.append("NS: " + nS + ", ");
-        if (bS != null) sb.append("BS: " + bS + ", ");
+        if (getS() != null) sb.append("S: " + getS() + ", ");
+        if (getN() != null) sb.append("N: " + getN() + ", ");
+        if (getB() != null) sb.append("B: " + getB() + ", ");
+        if (getSS() != null) sb.append("SS: " + getSS() + ", ");
+        if (getNS() != null) sb.append("NS: " + getNS() + ", ");
+        if (getBS() != null) sb.append("BS: " + getBS() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -459,7 +459,7 @@ public class AttributeValue {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof AttributeValue == false) return false;
         AttributeValue other = (AttributeValue)obj;
         

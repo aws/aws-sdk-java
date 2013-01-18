@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -203,8 +203,8 @@ public class CreateVirtualMFADeviceRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (path != null) sb.append("Path: " + path + ", ");
-        if (virtualMFADeviceName != null) sb.append("VirtualMFADeviceName: " + virtualMFADeviceName + ", ");
+        if (getPath() != null) sb.append("Path: " + getPath() + ", ");
+        if (getVirtualMFADeviceName() != null) sb.append("VirtualMFADeviceName: " + getVirtualMFADeviceName() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -223,7 +223,7 @@ public class CreateVirtualMFADeviceRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof CreateVirtualMFADeviceRequest == false) return false;
         CreateVirtualMFADeviceRequest other = (CreateVirtualMFADeviceRequest)obj;
         

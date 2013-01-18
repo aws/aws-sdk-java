@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -187,9 +187,9 @@ public class SendMessageBatchRequestEntry {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (id != null) sb.append("Id: " + id + ", ");
-        if (messageBody != null) sb.append("MessageBody: " + messageBody + ", ");
-        if (delaySeconds != null) sb.append("DelaySeconds: " + delaySeconds + ", ");
+        if (getId() != null) sb.append("Id: " + getId() + ", ");
+        if (getMessageBody() != null) sb.append("MessageBody: " + getMessageBody() + ", ");
+        if (getDelaySeconds() != null) sb.append("DelaySeconds: " + getDelaySeconds() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -209,7 +209,7 @@ public class SendMessageBatchRequestEntry {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof SendMessageBatchRequestEntry == false) return false;
         SendMessageBatchRequestEntry other = (SendMessageBatchRequestEntry)obj;
         

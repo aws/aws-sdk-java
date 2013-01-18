@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -536,16 +536,16 @@ public class ScheduledUpdateGroupAction {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (autoScalingGroupName != null) sb.append("AutoScalingGroupName: " + autoScalingGroupName + ", ");
-        if (scheduledActionName != null) sb.append("ScheduledActionName: " + scheduledActionName + ", ");
-        if (scheduledActionARN != null) sb.append("ScheduledActionARN: " + scheduledActionARN + ", ");
-        if (time != null) sb.append("Time: " + time + ", ");
-        if (startTime != null) sb.append("StartTime: " + startTime + ", ");
-        if (endTime != null) sb.append("EndTime: " + endTime + ", ");
-        if (recurrence != null) sb.append("Recurrence: " + recurrence + ", ");
-        if (minSize != null) sb.append("MinSize: " + minSize + ", ");
-        if (maxSize != null) sb.append("MaxSize: " + maxSize + ", ");
-        if (desiredCapacity != null) sb.append("DesiredCapacity: " + desiredCapacity + ", ");
+        if (getAutoScalingGroupName() != null) sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ", ");
+        if (getScheduledActionName() != null) sb.append("ScheduledActionName: " + getScheduledActionName() + ", ");
+        if (getScheduledActionARN() != null) sb.append("ScheduledActionARN: " + getScheduledActionARN() + ", ");
+        if (getTime() != null) sb.append("Time: " + getTime() + ", ");
+        if (getStartTime() != null) sb.append("StartTime: " + getStartTime() + ", ");
+        if (getEndTime() != null) sb.append("EndTime: " + getEndTime() + ", ");
+        if (getRecurrence() != null) sb.append("Recurrence: " + getRecurrence() + ", ");
+        if (getMinSize() != null) sb.append("MinSize: " + getMinSize() + ", ");
+        if (getMaxSize() != null) sb.append("MaxSize: " + getMaxSize() + ", ");
+        if (getDesiredCapacity() != null) sb.append("DesiredCapacity: " + getDesiredCapacity() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -572,7 +572,7 @@ public class ScheduledUpdateGroupAction {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof ScheduledUpdateGroupAction == false) return false;
         ScheduledUpdateGroupAction other = (ScheduledUpdateGroupAction)obj;
         

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -406,12 +406,12 @@ public class JobParameters {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (format != null) sb.append("Format: " + format + ", ");
-        if (type != null) sb.append("Type: " + type + ", ");
-        if (archiveId != null) sb.append("ArchiveId: " + archiveId + ", ");
-        if (description != null) sb.append("Description: " + description + ", ");
-        if (sNSTopic != null) sb.append("SNSTopic: " + sNSTopic + ", ");
-        if (retrievalByteRange != null) sb.append("RetrievalByteRange: " + retrievalByteRange + ", ");
+        if (getFormat() != null) sb.append("Format: " + getFormat() + ", ");
+        if (getType() != null) sb.append("Type: " + getType() + ", ");
+        if (getArchiveId() != null) sb.append("ArchiveId: " + getArchiveId() + ", ");
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ", ");
+        if (getSNSTopic() != null) sb.append("SNSTopic: " + getSNSTopic() + ", ");
+        if (getRetrievalByteRange() != null) sb.append("RetrievalByteRange: " + getRetrievalByteRange() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -434,7 +434,7 @@ public class JobParameters {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof JobParameters == false) return false;
         JobParameters other = (JobParameters)obj;
         

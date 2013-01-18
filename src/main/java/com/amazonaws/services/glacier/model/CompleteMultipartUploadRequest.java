@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -391,11 +391,11 @@ public class CompleteMultipartUploadRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (accountId != null) sb.append("AccountId: " + accountId + ", ");
-        if (vaultName != null) sb.append("VaultName: " + vaultName + ", ");
-        if (uploadId != null) sb.append("UploadId: " + uploadId + ", ");
-        if (archiveSize != null) sb.append("ArchiveSize: " + archiveSize + ", ");
-        if (checksum != null) sb.append("Checksum: " + checksum + ", ");
+        if (getAccountId() != null) sb.append("AccountId: " + getAccountId() + ", ");
+        if (getVaultName() != null) sb.append("VaultName: " + getVaultName() + ", ");
+        if (getUploadId() != null) sb.append("UploadId: " + getUploadId() + ", ");
+        if (getArchiveSize() != null) sb.append("ArchiveSize: " + getArchiveSize() + ", ");
+        if (getChecksum() != null) sb.append("Checksum: " + getChecksum() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -417,7 +417,7 @@ public class CompleteMultipartUploadRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof CompleteMultipartUploadRequest == false) return false;
         CompleteMultipartUploadRequest other = (CompleteMultipartUploadRequest)obj;
         

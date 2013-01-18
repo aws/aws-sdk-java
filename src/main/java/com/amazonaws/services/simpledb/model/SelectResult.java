@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -158,8 +158,8 @@ public class SelectResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (items != null) sb.append("Items: " + items + ", ");
-        if (nextToken != null) sb.append("NextToken: " + nextToken + ", ");
+        if (getItems() != null) sb.append("Items: " + getItems() + ", ");
+        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -178,7 +178,7 @@ public class SelectResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof SelectResult == false) return false;
         SelectResult other = (SelectResult)obj;
         

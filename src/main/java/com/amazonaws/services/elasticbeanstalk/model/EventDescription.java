@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -458,14 +458,14 @@ public class EventDescription {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (eventDate != null) sb.append("EventDate: " + eventDate + ", ");
-        if (message != null) sb.append("Message: " + message + ", ");
-        if (applicationName != null) sb.append("ApplicationName: " + applicationName + ", ");
-        if (versionLabel != null) sb.append("VersionLabel: " + versionLabel + ", ");
-        if (templateName != null) sb.append("TemplateName: " + templateName + ", ");
-        if (environmentName != null) sb.append("EnvironmentName: " + environmentName + ", ");
-        if (requestId != null) sb.append("RequestId: " + requestId + ", ");
-        if (severity != null) sb.append("Severity: " + severity + ", ");
+        if (getEventDate() != null) sb.append("EventDate: " + getEventDate() + ", ");
+        if (getMessage() != null) sb.append("Message: " + getMessage() + ", ");
+        if (getApplicationName() != null) sb.append("ApplicationName: " + getApplicationName() + ", ");
+        if (getVersionLabel() != null) sb.append("VersionLabel: " + getVersionLabel() + ", ");
+        if (getTemplateName() != null) sb.append("TemplateName: " + getTemplateName() + ", ");
+        if (getEnvironmentName() != null) sb.append("EnvironmentName: " + getEnvironmentName() + ", ");
+        if (getRequestId() != null) sb.append("RequestId: " + getRequestId() + ", ");
+        if (getSeverity() != null) sb.append("Severity: " + getSeverity() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -490,7 +490,7 @@ public class EventDescription {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof EventDescription == false) return false;
         EventDescription other = (EventDescription)obj;
         

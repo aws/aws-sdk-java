@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -167,8 +167,8 @@ public class ListMultipartUploadsResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (uploadsList != null) sb.append("UploadsList: " + uploadsList + ", ");
-        if (marker != null) sb.append("Marker: " + marker + ", ");
+        if (getUploadsList() != null) sb.append("UploadsList: " + getUploadsList() + ", ");
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -187,7 +187,7 @@ public class ListMultipartUploadsResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof ListMultipartUploadsResult == false) return false;
         ListMultipartUploadsResult other = (ListMultipartUploadsResult)obj;
         

@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2011-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -16,21 +16,20 @@
 import java.io.BufferedReader;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-
 import java.util.List;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
-import com.amazonaws.auth.PropertiesCredentials;
+import com.amazonaws.auth.ClasspathPropertiesFileCredentialsProvider;
 import com.amazonaws.services.cloudformation.AmazonCloudFormation;
 import com.amazonaws.services.cloudformation.AmazonCloudFormationClient;
 import com.amazonaws.services.cloudformation.model.CreateStackRequest;
-import com.amazonaws.services.cloudformation.model.DescribeStacksRequest;
-import com.amazonaws.services.cloudformation.model.DescribeStackResourcesRequest;
 import com.amazonaws.services.cloudformation.model.DeleteStackRequest;
+import com.amazonaws.services.cloudformation.model.DescribeStackResourcesRequest;
+import com.amazonaws.services.cloudformation.model.DescribeStacksRequest;
 import com.amazonaws.services.cloudformation.model.Stack;
-import com.amazonaws.services.cloudformation.model.StackStatus;
 import com.amazonaws.services.cloudformation.model.StackResource;
+import com.amazonaws.services.cloudformation.model.StackStatus;
 
 /**
  * This sample demonstrates how to make basic requests to AWS CloudFormation
@@ -48,14 +47,15 @@ import com.amazonaws.services.cloudformation.model.StackResource;
 public class CloudFormationSample {
 
     public static void main(String[] args) throws Exception {
-         /*
+        /*
+         * This credentials provider implementation loads your AWS credentials
+         * from a properties file at the root of your classpath.
          * Important: Be sure to fill in your AWS access credentials in the
          *            AwsCredentials.properties file before you try to run this
          *            sample.
          * http://aws.amazon.com/security-credentials
          */
-        AmazonCloudFormation stackbuilder = new AmazonCloudFormationClient(new PropertiesCredentials(
-                CloudFormationSample.class.getResourceAsStream("AwsCredentials.properties")));
+        AmazonCloudFormation stackbuilder = new AmazonCloudFormationClient(new ClasspathPropertiesFileCredentialsProvider());
 
         System.out.println("===========================================");
         System.out.println("Getting Started with AWS CloudFormation");

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -41,9 +41,9 @@ public class DeleteVaultNotificationsRequestMarshaller implements Marshaller<Req
     
 
     public Request<DeleteVaultNotificationsRequest> marshall(DeleteVaultNotificationsRequest deleteVaultNotificationsRequest) {
-		if (deleteVaultNotificationsRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+    if (deleteVaultNotificationsRequest == null) {
+        throw new AmazonClientException("Invalid argument passed to marshall(...)");
+    }
 
         Request<DeleteVaultNotificationsRequest> request = new DefaultRequest<DeleteVaultNotificationsRequest>(deleteVaultNotificationsRequest, "AmazonGlacier");
         String target = "Glacier.DeleteVaultNotifications";
@@ -57,7 +57,7 @@ public class DeleteVaultNotificationsRequestMarshaller implements Marshaller<Req
         String uriResourcePath = "/{accountId}/vaults/{vaultName}/notification-configuration"; 
         uriResourcePath = uriResourcePath.replace("{accountId}", getString(deleteVaultNotificationsRequest.getAccountId())); 
         uriResourcePath = uriResourcePath.replace("{vaultName}", getString(deleteVaultNotificationsRequest.getVaultName())); 
-        
+
         uriResourcePath = uriResourcePath.replaceAll("//", "/");
 
         if (uriResourcePath.contains("?")) {

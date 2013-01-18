@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -257,10 +257,10 @@ public class Job {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (jobId != null) sb.append("JobId: " + jobId + ", ");
-        if (creationDate != null) sb.append("CreationDate: " + creationDate + ", ");
-        if (isCanceled != null) sb.append("IsCanceled: " + isCanceled + ", ");
-        if (jobType != null) sb.append("JobType: " + jobType + ", ");
+        if (getJobId() != null) sb.append("JobId: " + getJobId() + ", ");
+        if (getCreationDate() != null) sb.append("CreationDate: " + getCreationDate() + ", ");
+        if (isCanceled() != null) sb.append("IsCanceled: " + isCanceled() + ", ");
+        if (getJobType() != null) sb.append("JobType: " + getJobType() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -281,7 +281,7 @@ public class Job {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof Job == false) return false;
         Job other = (Job)obj;
         

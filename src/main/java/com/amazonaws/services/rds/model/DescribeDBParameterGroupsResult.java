@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -146,8 +146,8 @@ public class DescribeDBParameterGroupsResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (marker != null) sb.append("Marker: " + marker + ", ");
-        if (dBParameterGroups != null) sb.append("DBParameterGroups: " + dBParameterGroups + ", ");
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ", ");
+        if (getDBParameterGroups() != null) sb.append("DBParameterGroups: " + getDBParameterGroups() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -166,7 +166,7 @@ public class DescribeDBParameterGroupsResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DescribeDBParameterGroupsResult == false) return false;
         DescribeDBParameterGroupsResult other = (DescribeDBParameterGroupsResult)obj;
         

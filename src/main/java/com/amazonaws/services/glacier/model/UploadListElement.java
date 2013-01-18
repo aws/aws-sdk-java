@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -255,11 +255,11 @@ public class UploadListElement {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (multipartUploadId != null) sb.append("MultipartUploadId: " + multipartUploadId + ", ");
-        if (vaultARN != null) sb.append("VaultARN: " + vaultARN + ", ");
-        if (archiveDescription != null) sb.append("ArchiveDescription: " + archiveDescription + ", ");
-        if (partSizeInBytes != null) sb.append("PartSizeInBytes: " + partSizeInBytes + ", ");
-        if (creationDate != null) sb.append("CreationDate: " + creationDate + ", ");
+        if (getMultipartUploadId() != null) sb.append("MultipartUploadId: " + getMultipartUploadId() + ", ");
+        if (getVaultARN() != null) sb.append("VaultARN: " + getVaultARN() + ", ");
+        if (getArchiveDescription() != null) sb.append("ArchiveDescription: " + getArchiveDescription() + ", ");
+        if (getPartSizeInBytes() != null) sb.append("PartSizeInBytes: " + getPartSizeInBytes() + ", ");
+        if (getCreationDate() != null) sb.append("CreationDate: " + getCreationDate() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -281,7 +281,7 @@ public class UploadListElement {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof UploadListElement == false) return false;
         UploadListElement other = (UploadListElement)obj;
         

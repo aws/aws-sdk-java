@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -800,16 +800,16 @@ public class StartChildWorkflowExecutionInitiatedEventAttributes {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (workflowId != null) sb.append("WorkflowId: " + workflowId + ", ");
-        if (workflowType != null) sb.append("WorkflowType: " + workflowType + ", ");
-        if (control != null) sb.append("Control: " + control + ", ");
-        if (input != null) sb.append("Input: " + input + ", ");
-        if (executionStartToCloseTimeout != null) sb.append("ExecutionStartToCloseTimeout: " + executionStartToCloseTimeout + ", ");
-        if (taskList != null) sb.append("TaskList: " + taskList + ", ");
-        if (decisionTaskCompletedEventId != null) sb.append("DecisionTaskCompletedEventId: " + decisionTaskCompletedEventId + ", ");
-        if (childPolicy != null) sb.append("ChildPolicy: " + childPolicy + ", ");
-        if (taskStartToCloseTimeout != null) sb.append("TaskStartToCloseTimeout: " + taskStartToCloseTimeout + ", ");
-        if (tagList != null) sb.append("TagList: " + tagList + ", ");
+        if (getWorkflowId() != null) sb.append("WorkflowId: " + getWorkflowId() + ", ");
+        if (getWorkflowType() != null) sb.append("WorkflowType: " + getWorkflowType() + ", ");
+        if (getControl() != null) sb.append("Control: " + getControl() + ", ");
+        if (getInput() != null) sb.append("Input: " + getInput() + ", ");
+        if (getExecutionStartToCloseTimeout() != null) sb.append("ExecutionStartToCloseTimeout: " + getExecutionStartToCloseTimeout() + ", ");
+        if (getTaskList() != null) sb.append("TaskList: " + getTaskList() + ", ");
+        if (getDecisionTaskCompletedEventId() != null) sb.append("DecisionTaskCompletedEventId: " + getDecisionTaskCompletedEventId() + ", ");
+        if (getChildPolicy() != null) sb.append("ChildPolicy: " + getChildPolicy() + ", ");
+        if (getTaskStartToCloseTimeout() != null) sb.append("TaskStartToCloseTimeout: " + getTaskStartToCloseTimeout() + ", ");
+        if (getTagList() != null) sb.append("TagList: " + getTagList() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -836,7 +836,7 @@ public class StartChildWorkflowExecutionInitiatedEventAttributes {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof StartChildWorkflowExecutionInitiatedEventAttributes == false) return false;
         StartChildWorkflowExecutionInitiatedEventAttributes other = (StartChildWorkflowExecutionInitiatedEventAttributes)obj;
         

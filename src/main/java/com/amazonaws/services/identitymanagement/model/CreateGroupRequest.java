@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -200,8 +200,8 @@ public class CreateGroupRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (path != null) sb.append("Path: " + path + ", ");
-        if (groupName != null) sb.append("GroupName: " + groupName + ", ");
+        if (getPath() != null) sb.append("Path: " + getPath() + ", ");
+        if (getGroupName() != null) sb.append("GroupName: " + getGroupName() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -220,7 +220,7 @@ public class CreateGroupRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof CreateGroupRequest == false) return false;
         CreateGroupRequest other = (CreateGroupRequest)obj;
         

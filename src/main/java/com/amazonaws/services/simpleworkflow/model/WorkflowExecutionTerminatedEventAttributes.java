@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -438,10 +438,10 @@ public class WorkflowExecutionTerminatedEventAttributes {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (reason != null) sb.append("Reason: " + reason + ", ");
-        if (details != null) sb.append("Details: " + details + ", ");
-        if (childPolicy != null) sb.append("ChildPolicy: " + childPolicy + ", ");
-        if (cause != null) sb.append("Cause: " + cause + ", ");
+        if (getReason() != null) sb.append("Reason: " + getReason() + ", ");
+        if (getDetails() != null) sb.append("Details: " + getDetails() + ", ");
+        if (getChildPolicy() != null) sb.append("ChildPolicy: " + getChildPolicy() + ", ");
+        if (getCause() != null) sb.append("Cause: " + getCause() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -462,7 +462,7 @@ public class WorkflowExecutionTerminatedEventAttributes {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof WorkflowExecutionTerminatedEventAttributes == false) return false;
         WorkflowExecutionTerminatedEventAttributes other = (WorkflowExecutionTerminatedEventAttributes)obj;
         

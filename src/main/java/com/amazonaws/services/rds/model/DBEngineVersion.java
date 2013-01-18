@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -370,13 +370,13 @@ public class DBEngineVersion {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (engine != null) sb.append("Engine: " + engine + ", ");
-        if (engineVersion != null) sb.append("EngineVersion: " + engineVersion + ", ");
-        if (dBParameterGroupFamily != null) sb.append("DBParameterGroupFamily: " + dBParameterGroupFamily + ", ");
-        if (dBEngineDescription != null) sb.append("DBEngineDescription: " + dBEngineDescription + ", ");
-        if (dBEngineVersionDescription != null) sb.append("DBEngineVersionDescription: " + dBEngineVersionDescription + ", ");
-        if (defaultCharacterSet != null) sb.append("DefaultCharacterSet: " + defaultCharacterSet + ", ");
-        if (supportedCharacterSets != null) sb.append("SupportedCharacterSets: " + supportedCharacterSets + ", ");
+        if (getEngine() != null) sb.append("Engine: " + getEngine() + ", ");
+        if (getEngineVersion() != null) sb.append("EngineVersion: " + getEngineVersion() + ", ");
+        if (getDBParameterGroupFamily() != null) sb.append("DBParameterGroupFamily: " + getDBParameterGroupFamily() + ", ");
+        if (getDBEngineDescription() != null) sb.append("DBEngineDescription: " + getDBEngineDescription() + ", ");
+        if (getDBEngineVersionDescription() != null) sb.append("DBEngineVersionDescription: " + getDBEngineVersionDescription() + ", ");
+        if (getDefaultCharacterSet() != null) sb.append("DefaultCharacterSet: " + getDefaultCharacterSet() + ", ");
+        if (getSupportedCharacterSets() != null) sb.append("SupportedCharacterSets: " + getSupportedCharacterSets() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -400,7 +400,7 @@ public class DBEngineVersion {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DBEngineVersion == false) return false;
         DBEngineVersion other = (DBEngineVersion)obj;
         

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -112,7 +112,7 @@ public class GetIdentityVerificationAttributesRequest extends AmazonWebServiceRe
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (identities != null) sb.append("Identities: " + identities + ", ");
+        if (getIdentities() != null) sb.append("Identities: " + getIdentities() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -130,7 +130,7 @@ public class GetIdentityVerificationAttributesRequest extends AmazonWebServiceRe
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof GetIdentityVerificationAttributesRequest == false) return false;
         GetIdentityVerificationAttributesRequest other = (GetIdentityVerificationAttributesRequest)obj;
         

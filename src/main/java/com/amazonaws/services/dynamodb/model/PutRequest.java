@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -34,6 +34,7 @@ public class PutRequest {
     public java.util.Map<String,AttributeValue> getItem() {
         
         return item;
+
     }
     
     /**
@@ -72,7 +73,7 @@ public class PutRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (item != null) sb.append("Item: " + item + ", ");
+        if (getItem() != null) sb.append("Item: " + getItem() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -90,7 +91,7 @@ public class PutRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof PutRequest == false) return false;
         PutRequest other = (PutRequest)obj;
         

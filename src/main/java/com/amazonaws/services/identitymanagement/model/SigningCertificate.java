@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -401,11 +401,11 @@ public class SigningCertificate {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (userName != null) sb.append("UserName: " + userName + ", ");
-        if (certificateId != null) sb.append("CertificateId: " + certificateId + ", ");
-        if (certificateBody != null) sb.append("CertificateBody: " + certificateBody + ", ");
-        if (status != null) sb.append("Status: " + status + ", ");
-        if (uploadDate != null) sb.append("UploadDate: " + uploadDate + ", ");
+        if (getUserName() != null) sb.append("UserName: " + getUserName() + ", ");
+        if (getCertificateId() != null) sb.append("CertificateId: " + getCertificateId() + ", ");
+        if (getCertificateBody() != null) sb.append("CertificateBody: " + getCertificateBody() + ", ");
+        if (getStatus() != null) sb.append("Status: " + getStatus() + ", ");
+        if (getUploadDate() != null) sb.append("UploadDate: " + getUploadDate() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -427,7 +427,7 @@ public class SigningCertificate {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof SigningCertificate == false) return false;
         SigningCertificate other = (SigningCertificate)obj;
         

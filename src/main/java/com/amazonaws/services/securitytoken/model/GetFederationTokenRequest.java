@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -336,9 +336,9 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (name != null) sb.append("Name: " + name + ", ");
-        if (policy != null) sb.append("Policy: " + policy + ", ");
-        if (durationSeconds != null) sb.append("DurationSeconds: " + durationSeconds + ", ");
+        if (getName() != null) sb.append("Name: " + getName() + ", ");
+        if (getPolicy() != null) sb.append("Policy: " + getPolicy() + ", ");
+        if (getDurationSeconds() != null) sb.append("DurationSeconds: " + getDurationSeconds() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -358,7 +358,7 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof GetFederationTokenRequest == false) return false;
         GetFederationTokenRequest other = (GetFederationTokenRequest)obj;
         

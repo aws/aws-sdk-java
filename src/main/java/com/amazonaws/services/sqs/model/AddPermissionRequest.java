@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -350,10 +350,10 @@ public class AddPermissionRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (queueUrl != null) sb.append("QueueUrl: " + queueUrl + ", ");
-        if (label != null) sb.append("Label: " + label + ", ");
-        if (aWSAccountIds != null) sb.append("AWSAccountIds: " + aWSAccountIds + ", ");
-        if (actions != null) sb.append("Actions: " + actions + ", ");
+        if (getQueueUrl() != null) sb.append("QueueUrl: " + getQueueUrl() + ", ");
+        if (getLabel() != null) sb.append("Label: " + getLabel() + ", ");
+        if (getAWSAccountIds() != null) sb.append("AWSAccountIds: " + getAWSAccountIds() + ", ");
+        if (getActions() != null) sb.append("Actions: " + getActions() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -374,7 +374,7 @@ public class AddPermissionRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof AddPermissionRequest == false) return false;
         AddPermissionRequest other = (AddPermissionRequest)obj;
         

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -734,16 +734,16 @@ public class JobFlowDetail {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (jobFlowId != null) sb.append("JobFlowId: " + jobFlowId + ", ");
-        if (name != null) sb.append("Name: " + name + ", ");
-        if (logUri != null) sb.append("LogUri: " + logUri + ", ");
-        if (amiVersion != null) sb.append("AmiVersion: " + amiVersion + ", ");
-        if (executionStatusDetail != null) sb.append("ExecutionStatusDetail: " + executionStatusDetail + ", ");
-        if (instances != null) sb.append("Instances: " + instances + ", ");
-        if (steps != null) sb.append("Steps: " + steps + ", ");
-        if (bootstrapActions != null) sb.append("BootstrapActions: " + bootstrapActions + ", ");
-        if (supportedProducts != null) sb.append("SupportedProducts: " + supportedProducts + ", ");
-        if (visibleToAllUsers != null) sb.append("VisibleToAllUsers: " + visibleToAllUsers + ", ");
+        if (getJobFlowId() != null) sb.append("JobFlowId: " + getJobFlowId() + ", ");
+        if (getName() != null) sb.append("Name: " + getName() + ", ");
+        if (getLogUri() != null) sb.append("LogUri: " + getLogUri() + ", ");
+        if (getAmiVersion() != null) sb.append("AmiVersion: " + getAmiVersion() + ", ");
+        if (getExecutionStatusDetail() != null) sb.append("ExecutionStatusDetail: " + getExecutionStatusDetail() + ", ");
+        if (getInstances() != null) sb.append("Instances: " + getInstances() + ", ");
+        if (getSteps() != null) sb.append("Steps: " + getSteps() + ", ");
+        if (getBootstrapActions() != null) sb.append("BootstrapActions: " + getBootstrapActions() + ", ");
+        if (getSupportedProducts() != null) sb.append("SupportedProducts: " + getSupportedProducts() + ", ");
+        if (isVisibleToAllUsers() != null) sb.append("VisibleToAllUsers: " + isVisibleToAllUsers() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -770,7 +770,7 @@ public class JobFlowDetail {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof JobFlowDetail == false) return false;
         JobFlowDetail other = (JobFlowDetail)obj;
         

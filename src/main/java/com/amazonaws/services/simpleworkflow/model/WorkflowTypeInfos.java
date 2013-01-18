@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -179,8 +179,8 @@ public class WorkflowTypeInfos {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (typeInfos != null) sb.append("TypeInfos: " + typeInfos + ", ");
-        if (nextPageToken != null) sb.append("NextPageToken: " + nextPageToken + ", ");
+        if (getTypeInfos() != null) sb.append("TypeInfos: " + getTypeInfos() + ", ");
+        if (getNextPageToken() != null) sb.append("NextPageToken: " + getNextPageToken() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -199,7 +199,7 @@ public class WorkflowTypeInfos {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof WorkflowTypeInfos == false) return false;
         WorkflowTypeInfos other = (WorkflowTypeInfos)obj;
         

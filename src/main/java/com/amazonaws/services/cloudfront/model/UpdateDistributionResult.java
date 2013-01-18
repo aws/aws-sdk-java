@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -111,8 +111,8 @@ public class UpdateDistributionResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (distribution != null) sb.append("Distribution: " + distribution + ", ");
-        if (eTag != null) sb.append("ETag: " + eTag + ", ");
+        if (getDistribution() != null) sb.append("Distribution: " + getDistribution() + ", ");
+        if (getETag() != null) sb.append("ETag: " + getETag() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -131,7 +131,7 @@ public class UpdateDistributionResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof UpdateDistributionResult == false) return false;
         UpdateDistributionResult other = (UpdateDistributionResult)obj;
         

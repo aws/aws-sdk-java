@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -17,7 +17,7 @@ import java.util.Map.Entry;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
-import com.amazonaws.auth.PropertiesCredentials;
+import com.amazonaws.auth.ClasspathPropertiesFileCredentialsProvider;
 import com.amazonaws.services.sqs.AmazonSQS;
 import com.amazonaws.services.sqs.AmazonSQSClient;
 import com.amazonaws.services.sqs.model.CreateQueueRequest;
@@ -44,13 +44,15 @@ public class SimpleQueueServiceSample {
 
     public static void main(String[] args) throws Exception {
         /*
+         * This credentials provider implementation loads your AWS credentials
+         * from a properties file at the root of your classpath.
+         * 
          * Important: Be sure to fill in your AWS access credentials in the
          *            AwsCredentials.properties file before you try to run this
          *            sample.
          * http://aws.amazon.com/security-credentials
          */
-        AmazonSQS sqs = new AmazonSQSClient(new PropertiesCredentials(
-                SimpleQueueServiceSample.class.getResourceAsStream("AwsCredentials.properties")));
+        AmazonSQS sqs = new AmazonSQSClient(new ClasspathPropertiesFileCredentialsProvider());
 
         System.out.println("===========================================");
         System.out.println("Getting Started with Amazon SQS");

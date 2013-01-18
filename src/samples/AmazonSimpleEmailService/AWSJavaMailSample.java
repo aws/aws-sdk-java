@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2011-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -24,7 +24,8 @@ import javax.mail.internet.AddressException;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
-import com.amazonaws.auth.PropertiesCredentials;
+import com.amazonaws.auth.AWSCredentials;
+import com.amazonaws.auth.ClasspathPropertiesFileCredentialsProvider;
 import com.amazonaws.services.simpleemail.AWSJavaMailTransport;
 import com.amazonaws.services.simpleemail.AmazonSimpleEmailService;
 import com.amazonaws.services.simpleemail.AmazonSimpleEmailServiceClient;
@@ -57,18 +58,19 @@ public class AWSJavaMailSample {
 
     public static void main(String[] args) throws IOException {
         /*
+         * This credentials provider implementation loads your AWS credentials
+         * from a properties file at the root of your classpath.
+         * 
          * Important: Be sure to fill in your AWS access credentials in the
-         * AwsCredentials.properties file before you try to run this sample.
-         * http://aws.amazon.com/security-credentials
+         *            AwsCredentials.properties file before you try to run this sample.
+         *            http://aws.amazon.com/security-credentials
          */
-        PropertiesCredentials credentials = new PropertiesCredentials(
-                AWSJavaMailSample.class
-                        .getResourceAsStream("AwsCredentials.properties"));
-        AmazonSimpleEmailService ses = new AmazonSimpleEmailServiceClient(credentials);
+        AWSCredentials credentials = new ClasspathPropertiesFileCredentialsProvider().getCredentials();
+		AmazonSimpleEmailService ses = new AmazonSimpleEmailServiceClient(credentials);
 
         /*
          * Before you can send email via Amazon SES, you need to verify that you
-         * own the email address from which you’ll be sending email. This will
+         * own the email address from which you?ll be sending email. This will
          * trigger a verification email, which will contain a link that you can
          * click on to complete the verification process.
          */

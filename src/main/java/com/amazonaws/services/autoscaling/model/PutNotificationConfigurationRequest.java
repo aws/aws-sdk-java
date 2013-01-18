@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -241,9 +241,9 @@ public class PutNotificationConfigurationRequest extends AmazonWebServiceRequest
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (autoScalingGroupName != null) sb.append("AutoScalingGroupName: " + autoScalingGroupName + ", ");
-        if (topicARN != null) sb.append("TopicARN: " + topicARN + ", ");
-        if (notificationTypes != null) sb.append("NotificationTypes: " + notificationTypes + ", ");
+        if (getAutoScalingGroupName() != null) sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ", ");
+        if (getTopicARN() != null) sb.append("TopicARN: " + getTopicARN() + ", ");
+        if (getNotificationTypes() != null) sb.append("NotificationTypes: " + getNotificationTypes() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -263,7 +263,7 @@ public class PutNotificationConfigurationRequest extends AmazonWebServiceRequest
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof PutNotificationConfigurationRequest == false) return false;
         PutNotificationConfigurationRequest other = (PutNotificationConfigurationRequest)obj;
         

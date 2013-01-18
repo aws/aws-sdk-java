@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -21,7 +21,8 @@ public enum SourceType {
     
     CacheCluster("cache-cluster"),
     CacheParameterGroup("cache-parameter-group"),
-    CacheSecurityGroup("cache-security-group");
+    CacheSecurityGroup("cache-security-group"),
+    CacheSubnetGroup("cache-subnet-group");
 
     private String value;
 
@@ -51,6 +52,8 @@ public enum SourceType {
             return SourceType.CacheParameterGroup;
         } else if ("cache-security-group".equals(value)) {
             return SourceType.CacheSecurityGroup;
+        } else if ("cache-subnet-group".equals(value)) {
+            return SourceType.CacheSubnetGroup;
         } else {
             throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
         }

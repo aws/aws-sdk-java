@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -124,8 +124,8 @@ public class NotificationConfiguration {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (topicArn != null) sb.append("TopicArn: " + topicArn + ", ");
-        if (topicStatus != null) sb.append("TopicStatus: " + topicStatus + ", ");
+        if (getTopicArn() != null) sb.append("TopicArn: " + getTopicArn() + ", ");
+        if (getTopicStatus() != null) sb.append("TopicStatus: " + getTopicStatus() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -144,7 +144,7 @@ public class NotificationConfiguration {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof NotificationConfiguration == false) return false;
         NotificationConfiguration other = (NotificationConfiguration)obj;
         

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -313,9 +313,9 @@ public class CreateTableRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (tableName != null) sb.append("TableName: " + tableName + ", ");
-        if (keySchema != null) sb.append("KeySchema: " + keySchema + ", ");
-        if (provisionedThroughput != null) sb.append("ProvisionedThroughput: " + provisionedThroughput + ", ");
+        if (getTableName() != null) sb.append("TableName: " + getTableName() + ", ");
+        if (getKeySchema() != null) sb.append("KeySchema: " + getKeySchema() + ", ");
+        if (getProvisionedThroughput() != null) sb.append("ProvisionedThroughput: " + getProvisionedThroughput() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -335,7 +335,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof CreateTableRequest == false) return false;
         CreateTableRequest other = (CreateTableRequest)obj;
         

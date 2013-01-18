@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,7 +30,7 @@ public class Event {
      * Specifies the source type for this event.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>cache-cluster, cache-parameter-group, cache-security-group
+     * <b>Allowed Values: </b>cache-cluster, cache-parameter-group, cache-security-group, cache-subnet-group
      */
     private String sourceType;
 
@@ -88,7 +88,7 @@ public class Event {
      * Specifies the source type for this event.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>cache-cluster, cache-parameter-group, cache-security-group
+     * <b>Allowed Values: </b>cache-cluster, cache-parameter-group, cache-security-group, cache-subnet-group
      *
      * @return Specifies the source type for this event.
      *
@@ -102,7 +102,7 @@ public class Event {
      * Specifies the source type for this event.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>cache-cluster, cache-parameter-group, cache-security-group
+     * <b>Allowed Values: </b>cache-cluster, cache-parameter-group, cache-security-group, cache-subnet-group
      *
      * @param sourceType Specifies the source type for this event.
      *
@@ -118,7 +118,7 @@ public class Event {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>cache-cluster, cache-parameter-group, cache-security-group
+     * <b>Allowed Values: </b>cache-cluster, cache-parameter-group, cache-security-group, cache-subnet-group
      *
      * @param sourceType Specifies the source type for this event.
      *
@@ -137,7 +137,7 @@ public class Event {
      * Specifies the source type for this event.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>cache-cluster, cache-parameter-group, cache-security-group
+     * <b>Allowed Values: </b>cache-cluster, cache-parameter-group, cache-security-group, cache-subnet-group
      *
      * @param sourceType Specifies the source type for this event.
      *
@@ -153,7 +153,7 @@ public class Event {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>cache-cluster, cache-parameter-group, cache-security-group
+     * <b>Allowed Values: </b>cache-cluster, cache-parameter-group, cache-security-group, cache-subnet-group
      *
      * @param sourceType Specifies the source type for this event.
      *
@@ -247,10 +247,10 @@ public class Event {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (sourceIdentifier != null) sb.append("SourceIdentifier: " + sourceIdentifier + ", ");
-        if (sourceType != null) sb.append("SourceType: " + sourceType + ", ");
-        if (message != null) sb.append("Message: " + message + ", ");
-        if (date != null) sb.append("Date: " + date + ", ");
+        if (getSourceIdentifier() != null) sb.append("SourceIdentifier: " + getSourceIdentifier() + ", ");
+        if (getSourceType() != null) sb.append("SourceType: " + getSourceType() + ", ");
+        if (getMessage() != null) sb.append("Message: " + getMessage() + ", ");
+        if (getDate() != null) sb.append("Date: " + getDate() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -271,7 +271,7 @@ public class Event {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof Event == false) return false;
         Event other = (Event)obj;
         

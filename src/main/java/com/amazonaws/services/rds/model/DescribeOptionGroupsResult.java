@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -143,8 +143,8 @@ public class DescribeOptionGroupsResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (optionGroupsList != null) sb.append("OptionGroupsList: " + optionGroupsList + ", ");
-        if (marker != null) sb.append("Marker: " + marker + ", ");
+        if (getOptionGroupsList() != null) sb.append("OptionGroupsList: " + getOptionGroupsList() + ", ");
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -163,7 +163,7 @@ public class DescribeOptionGroupsResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DescribeOptionGroupsResult == false) return false;
         DescribeOptionGroupsResult other = (DescribeOptionGroupsResult)obj;
         

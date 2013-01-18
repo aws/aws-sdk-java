@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -189,8 +189,8 @@ public class CreateSnapshotFromVolumeRecoveryPointRequest extends AmazonWebServi
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (volumeARN != null) sb.append("VolumeARN: " + volumeARN + ", ");
-        if (snapshotDescription != null) sb.append("SnapshotDescription: " + snapshotDescription + ", ");
+        if (getVolumeARN() != null) sb.append("VolumeARN: " + getVolumeARN() + ", ");
+        if (getSnapshotDescription() != null) sb.append("SnapshotDescription: " + getSnapshotDescription() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -209,7 +209,7 @@ public class CreateSnapshotFromVolumeRecoveryPointRequest extends AmazonWebServi
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof CreateSnapshotFromVolumeRecoveryPointRequest == false) return false;
         CreateSnapshotFromVolumeRecoveryPointRequest other = (CreateSnapshotFromVolumeRecoveryPointRequest)obj;
         

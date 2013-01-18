@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -1271,26 +1271,26 @@ public class AutoScalingGroup {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (autoScalingGroupName != null) sb.append("AutoScalingGroupName: " + autoScalingGroupName + ", ");
-        if (autoScalingGroupARN != null) sb.append("AutoScalingGroupARN: " + autoScalingGroupARN + ", ");
-        if (launchConfigurationName != null) sb.append("LaunchConfigurationName: " + launchConfigurationName + ", ");
-        if (minSize != null) sb.append("MinSize: " + minSize + ", ");
-        if (maxSize != null) sb.append("MaxSize: " + maxSize + ", ");
-        if (desiredCapacity != null) sb.append("DesiredCapacity: " + desiredCapacity + ", ");
-        if (defaultCooldown != null) sb.append("DefaultCooldown: " + defaultCooldown + ", ");
-        if (availabilityZones != null) sb.append("AvailabilityZones: " + availabilityZones + ", ");
-        if (loadBalancerNames != null) sb.append("LoadBalancerNames: " + loadBalancerNames + ", ");
-        if (healthCheckType != null) sb.append("HealthCheckType: " + healthCheckType + ", ");
-        if (healthCheckGracePeriod != null) sb.append("HealthCheckGracePeriod: " + healthCheckGracePeriod + ", ");
-        if (instances != null) sb.append("Instances: " + instances + ", ");
-        if (createdTime != null) sb.append("CreatedTime: " + createdTime + ", ");
-        if (suspendedProcesses != null) sb.append("SuspendedProcesses: " + suspendedProcesses + ", ");
-        if (placementGroup != null) sb.append("PlacementGroup: " + placementGroup + ", ");
-        if (vPCZoneIdentifier != null) sb.append("VPCZoneIdentifier: " + vPCZoneIdentifier + ", ");
-        if (enabledMetrics != null) sb.append("EnabledMetrics: " + enabledMetrics + ", ");
-        if (status != null) sb.append("Status: " + status + ", ");
-        if (tags != null) sb.append("Tags: " + tags + ", ");
-        if (terminationPolicies != null) sb.append("TerminationPolicies: " + terminationPolicies + ", ");
+        if (getAutoScalingGroupName() != null) sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ", ");
+        if (getAutoScalingGroupARN() != null) sb.append("AutoScalingGroupARN: " + getAutoScalingGroupARN() + ", ");
+        if (getLaunchConfigurationName() != null) sb.append("LaunchConfigurationName: " + getLaunchConfigurationName() + ", ");
+        if (getMinSize() != null) sb.append("MinSize: " + getMinSize() + ", ");
+        if (getMaxSize() != null) sb.append("MaxSize: " + getMaxSize() + ", ");
+        if (getDesiredCapacity() != null) sb.append("DesiredCapacity: " + getDesiredCapacity() + ", ");
+        if (getDefaultCooldown() != null) sb.append("DefaultCooldown: " + getDefaultCooldown() + ", ");
+        if (getAvailabilityZones() != null) sb.append("AvailabilityZones: " + getAvailabilityZones() + ", ");
+        if (getLoadBalancerNames() != null) sb.append("LoadBalancerNames: " + getLoadBalancerNames() + ", ");
+        if (getHealthCheckType() != null) sb.append("HealthCheckType: " + getHealthCheckType() + ", ");
+        if (getHealthCheckGracePeriod() != null) sb.append("HealthCheckGracePeriod: " + getHealthCheckGracePeriod() + ", ");
+        if (getInstances() != null) sb.append("Instances: " + getInstances() + ", ");
+        if (getCreatedTime() != null) sb.append("CreatedTime: " + getCreatedTime() + ", ");
+        if (getSuspendedProcesses() != null) sb.append("SuspendedProcesses: " + getSuspendedProcesses() + ", ");
+        if (getPlacementGroup() != null) sb.append("PlacementGroup: " + getPlacementGroup() + ", ");
+        if (getVPCZoneIdentifier() != null) sb.append("VPCZoneIdentifier: " + getVPCZoneIdentifier() + ", ");
+        if (getEnabledMetrics() != null) sb.append("EnabledMetrics: " + getEnabledMetrics() + ", ");
+        if (getStatus() != null) sb.append("Status: " + getStatus() + ", ");
+        if (getTags() != null) sb.append("Tags: " + getTags() + ", ");
+        if (getTerminationPolicies() != null) sb.append("TerminationPolicies: " + getTerminationPolicies() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -1327,7 +1327,7 @@ public class AutoScalingGroup {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof AutoScalingGroup == false) return false;
         AutoScalingGroup other = (AutoScalingGroup)obj;
         

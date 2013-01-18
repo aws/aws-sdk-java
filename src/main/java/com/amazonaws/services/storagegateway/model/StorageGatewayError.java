@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -129,6 +129,7 @@ public class StorageGatewayError {
             errorDetails = new java.util.HashMap<String,String>();
         }
         return errorDetails;
+
     }
     
     /**
@@ -167,8 +168,8 @@ public class StorageGatewayError {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (errorCode != null) sb.append("ErrorCode: " + errorCode + ", ");
-        if (errorDetails != null) sb.append("ErrorDetails: " + errorDetails + ", ");
+        if (getErrorCode() != null) sb.append("ErrorCode: " + getErrorCode() + ", ");
+        if (getErrorDetails() != null) sb.append("ErrorDetails: " + getErrorDetails() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -187,7 +188,7 @@ public class StorageGatewayError {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof StorageGatewayError == false) return false;
         StorageGatewayError other = (StorageGatewayError)obj;
         

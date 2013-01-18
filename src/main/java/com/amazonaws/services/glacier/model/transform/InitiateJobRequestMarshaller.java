@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -41,9 +41,9 @@ public class InitiateJobRequestMarshaller implements Marshaller<Request<Initiate
     
 
     public Request<InitiateJobRequest> marshall(InitiateJobRequest initiateJobRequest) {
-		if (initiateJobRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+    if (initiateJobRequest == null) {
+        throw new AmazonClientException("Invalid argument passed to marshall(...)");
+    }
 
         Request<InitiateJobRequest> request = new DefaultRequest<InitiateJobRequest>(initiateJobRequest, "AmazonGlacier");
         String target = "Glacier.InitiateJob";
@@ -57,7 +57,7 @@ public class InitiateJobRequestMarshaller implements Marshaller<Request<Initiate
         String uriResourcePath = "/{accountId}/vaults/{vaultName}/jobs"; 
         uriResourcePath = uriResourcePath.replace("{accountId}", getString(initiateJobRequest.getAccountId())); 
         uriResourcePath = uriResourcePath.replace("{vaultName}", getString(initiateJobRequest.getVaultName())); 
-        
+
         uriResourcePath = uriResourcePath.replaceAll("//", "/");
 
         if (uriResourcePath.contains("?")) {
@@ -79,10 +79,10 @@ public class InitiateJobRequestMarshaller implements Marshaller<Request<Initiate
 
         
         try {
-        	StringWriter stringWriter = new StringWriter();
-        	JSONWriter jsonWriter = new JSONWriter(stringWriter);
+          StringWriter stringWriter = new StringWriter();
+          JSONWriter jsonWriter = new JSONWriter(stringWriter);
 
-        	
+          
             
             JobParameters jobParameters = initiateJobRequest.getJobParameters();
             if (jobParameters != null) {
@@ -111,10 +111,10 @@ public class InitiateJobRequestMarshaller implements Marshaller<Request<Initiate
             }
 
 
-    	    String snippet = stringWriter.toString();
-    	    byte[] content = snippet.getBytes("UTF-8");
-        	request.setContent(new StringInputStream(snippet));
-	        request.addHeader("Content-Length", Integer.toString(content.length));
+          String snippet = stringWriter.toString();
+          byte[] content = snippet.getBytes("UTF-8");
+          request.setContent(new StringInputStream(snippet));
+          request.addHeader("Content-Length", Integer.toString(content.length));
         } catch(Throwable t) {
           throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -339,11 +339,11 @@ public class AuthorizeDBSecurityGroupIngressRequest extends AmazonWebServiceRequ
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (dBSecurityGroupName != null) sb.append("DBSecurityGroupName: " + dBSecurityGroupName + ", ");
-        if (cIDRIP != null) sb.append("CIDRIP: " + cIDRIP + ", ");
-        if (eC2SecurityGroupName != null) sb.append("EC2SecurityGroupName: " + eC2SecurityGroupName + ", ");
-        if (eC2SecurityGroupId != null) sb.append("EC2SecurityGroupId: " + eC2SecurityGroupId + ", ");
-        if (eC2SecurityGroupOwnerId != null) sb.append("EC2SecurityGroupOwnerId: " + eC2SecurityGroupOwnerId + ", ");
+        if (getDBSecurityGroupName() != null) sb.append("DBSecurityGroupName: " + getDBSecurityGroupName() + ", ");
+        if (getCIDRIP() != null) sb.append("CIDRIP: " + getCIDRIP() + ", ");
+        if (getEC2SecurityGroupName() != null) sb.append("EC2SecurityGroupName: " + getEC2SecurityGroupName() + ", ");
+        if (getEC2SecurityGroupId() != null) sb.append("EC2SecurityGroupId: " + getEC2SecurityGroupId() + ", ");
+        if (getEC2SecurityGroupOwnerId() != null) sb.append("EC2SecurityGroupOwnerId: " + getEC2SecurityGroupOwnerId() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -365,7 +365,7 @@ public class AuthorizeDBSecurityGroupIngressRequest extends AmazonWebServiceRequ
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof AuthorizeDBSecurityGroupIngressRequest == false) return false;
         AuthorizeDBSecurityGroupIngressRequest other = (AuthorizeDBSecurityGroupIngressRequest)obj;
         

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -498,14 +498,14 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (dBInstanceIdentifier != null) sb.append("DBInstanceIdentifier: " + dBInstanceIdentifier + ", ");
-        if (sourceDBInstanceIdentifier != null) sb.append("SourceDBInstanceIdentifier: " + sourceDBInstanceIdentifier + ", ");
-        if (dBInstanceClass != null) sb.append("DBInstanceClass: " + dBInstanceClass + ", ");
-        if (availabilityZone != null) sb.append("AvailabilityZone: " + availabilityZone + ", ");
-        if (port != null) sb.append("Port: " + port + ", ");
-        if (autoMinorVersionUpgrade != null) sb.append("AutoMinorVersionUpgrade: " + autoMinorVersionUpgrade + ", ");
-        if (iops != null) sb.append("Iops: " + iops + ", ");
-        if (optionGroupName != null) sb.append("OptionGroupName: " + optionGroupName + ", ");
+        if (getDBInstanceIdentifier() != null) sb.append("DBInstanceIdentifier: " + getDBInstanceIdentifier() + ", ");
+        if (getSourceDBInstanceIdentifier() != null) sb.append("SourceDBInstanceIdentifier: " + getSourceDBInstanceIdentifier() + ", ");
+        if (getDBInstanceClass() != null) sb.append("DBInstanceClass: " + getDBInstanceClass() + ", ");
+        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ", ");
+        if (getPort() != null) sb.append("Port: " + getPort() + ", ");
+        if (isAutoMinorVersionUpgrade() != null) sb.append("AutoMinorVersionUpgrade: " + isAutoMinorVersionUpgrade() + ", ");
+        if (getIops() != null) sb.append("Iops: " + getIops() + ", ");
+        if (getOptionGroupName() != null) sb.append("OptionGroupName: " + getOptionGroupName() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -530,7 +530,7 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof CreateDBInstanceReadReplicaRequest == false) return false;
         CreateDBInstanceReadReplicaRequest other = (CreateDBInstanceReadReplicaRequest)obj;
         

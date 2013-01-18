@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -137,8 +137,8 @@ public class SendMessageResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (mD5OfMessageBody != null) sb.append("MD5OfMessageBody: " + mD5OfMessageBody + ", ");
-        if (messageId != null) sb.append("MessageId: " + messageId + ", ");
+        if (getMD5OfMessageBody() != null) sb.append("MD5OfMessageBody: " + getMD5OfMessageBody() + ", ");
+        if (getMessageId() != null) sb.append("MessageId: " + getMessageId() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -157,7 +157,7 @@ public class SendMessageResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof SendMessageResult == false) return false;
         SendMessageResult other = (SendMessageResult)obj;
         

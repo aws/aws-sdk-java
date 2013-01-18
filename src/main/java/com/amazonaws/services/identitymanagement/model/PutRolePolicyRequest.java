@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -214,9 +214,9 @@ public class PutRolePolicyRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (roleName != null) sb.append("RoleName: " + roleName + ", ");
-        if (policyName != null) sb.append("PolicyName: " + policyName + ", ");
-        if (policyDocument != null) sb.append("PolicyDocument: " + policyDocument + ", ");
+        if (getRoleName() != null) sb.append("RoleName: " + getRoleName() + ", ");
+        if (getPolicyName() != null) sb.append("PolicyName: " + getPolicyName() + ", ");
+        if (getPolicyDocument() != null) sb.append("PolicyDocument: " + getPolicyDocument() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -236,7 +236,7 @@ public class PutRolePolicyRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof PutRolePolicyRequest == false) return false;
         PutRolePolicyRequest other = (PutRolePolicyRequest)obj;
         

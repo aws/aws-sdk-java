@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -145,8 +145,8 @@ public class ParameterNameValue {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (parameterName != null) sb.append("ParameterName: " + parameterName + ", ");
-        if (parameterValue != null) sb.append("ParameterValue: " + parameterValue + ", ");
+        if (getParameterName() != null) sb.append("ParameterName: " + getParameterName() + ", ");
+        if (getParameterValue() != null) sb.append("ParameterValue: " + getParameterValue() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -165,7 +165,7 @@ public class ParameterNameValue {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof ParameterNameValue == false) return false;
         ParameterNameValue other = (ParameterNameValue)obj;
         

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -116,7 +116,7 @@ public class IndexDocumentsResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (fieldNames != null) sb.append("FieldNames: " + fieldNames + ", ");
+        if (getFieldNames() != null) sb.append("FieldNames: " + getFieldNames() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -134,7 +134,7 @@ public class IndexDocumentsResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof IndexDocumentsResult == false) return false;
         IndexDocumentsResult other = (IndexDocumentsResult)obj;
         

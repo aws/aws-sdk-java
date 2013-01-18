@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -511,16 +511,16 @@ public class Parameter {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (parameterName != null) sb.append("ParameterName: " + parameterName + ", ");
-        if (parameterValue != null) sb.append("ParameterValue: " + parameterValue + ", ");
-        if (description != null) sb.append("Description: " + description + ", ");
-        if (source != null) sb.append("Source: " + source + ", ");
-        if (applyType != null) sb.append("ApplyType: " + applyType + ", ");
-        if (dataType != null) sb.append("DataType: " + dataType + ", ");
-        if (allowedValues != null) sb.append("AllowedValues: " + allowedValues + ", ");
-        if (isModifiable != null) sb.append("IsModifiable: " + isModifiable + ", ");
-        if (minimumEngineVersion != null) sb.append("MinimumEngineVersion: " + minimumEngineVersion + ", ");
-        if (applyMethod != null) sb.append("ApplyMethod: " + applyMethod + ", ");
+        if (getParameterName() != null) sb.append("ParameterName: " + getParameterName() + ", ");
+        if (getParameterValue() != null) sb.append("ParameterValue: " + getParameterValue() + ", ");
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ", ");
+        if (getSource() != null) sb.append("Source: " + getSource() + ", ");
+        if (getApplyType() != null) sb.append("ApplyType: " + getApplyType() + ", ");
+        if (getDataType() != null) sb.append("DataType: " + getDataType() + ", ");
+        if (getAllowedValues() != null) sb.append("AllowedValues: " + getAllowedValues() + ", ");
+        if (isModifiable() != null) sb.append("IsModifiable: " + isModifiable() + ", ");
+        if (getMinimumEngineVersion() != null) sb.append("MinimumEngineVersion: " + getMinimumEngineVersion() + ", ");
+        if (getApplyMethod() != null) sb.append("ApplyMethod: " + getApplyMethod() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -547,7 +547,7 @@ public class Parameter {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof Parameter == false) return false;
         Parameter other = (Parameter)obj;
         

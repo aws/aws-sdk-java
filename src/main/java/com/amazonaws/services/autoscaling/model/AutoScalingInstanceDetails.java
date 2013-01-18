@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -377,12 +377,12 @@ public class AutoScalingInstanceDetails {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (instanceId != null) sb.append("InstanceId: " + instanceId + ", ");
-        if (autoScalingGroupName != null) sb.append("AutoScalingGroupName: " + autoScalingGroupName + ", ");
-        if (availabilityZone != null) sb.append("AvailabilityZone: " + availabilityZone + ", ");
-        if (lifecycleState != null) sb.append("LifecycleState: " + lifecycleState + ", ");
-        if (healthStatus != null) sb.append("HealthStatus: " + healthStatus + ", ");
-        if (launchConfigurationName != null) sb.append("LaunchConfigurationName: " + launchConfigurationName + ", ");
+        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ", ");
+        if (getAutoScalingGroupName() != null) sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ", ");
+        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ", ");
+        if (getLifecycleState() != null) sb.append("LifecycleState: " + getLifecycleState() + ", ");
+        if (getHealthStatus() != null) sb.append("HealthStatus: " + getHealthStatus() + ", ");
+        if (getLaunchConfigurationName() != null) sb.append("LaunchConfigurationName: " + getLaunchConfigurationName() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -405,7 +405,7 @@ public class AutoScalingInstanceDetails {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof AutoScalingInstanceDetails == false) return false;
         AutoScalingInstanceDetails other = (AutoScalingInstanceDetails)obj;
         

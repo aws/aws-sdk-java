@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -235,9 +235,9 @@ public class StartTimerDecisionAttributes {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (timerId != null) sb.append("TimerId: " + timerId + ", ");
-        if (control != null) sb.append("Control: " + control + ", ");
-        if (startToFireTimeout != null) sb.append("StartToFireTimeout: " + startToFireTimeout + ", ");
+        if (getTimerId() != null) sb.append("TimerId: " + getTimerId() + ", ");
+        if (getControl() != null) sb.append("Control: " + getControl() + ", ");
+        if (getStartToFireTimeout() != null) sb.append("StartToFireTimeout: " + getStartToFireTimeout() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -257,7 +257,7 @@ public class StartTimerDecisionAttributes {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof StartTimerDecisionAttributes == false) return false;
         StartTimerDecisionAttributes other = (StartTimerDecisionAttributes)obj;
         

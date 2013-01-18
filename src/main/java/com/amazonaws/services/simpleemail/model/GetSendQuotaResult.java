@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -157,9 +157,9 @@ public class GetSendQuotaResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (max24HourSend != null) sb.append("Max24HourSend: " + max24HourSend + ", ");
-        if (maxSendRate != null) sb.append("MaxSendRate: " + maxSendRate + ", ");
-        if (sentLast24Hours != null) sb.append("SentLast24Hours: " + sentLast24Hours + ", ");
+        if (getMax24HourSend() != null) sb.append("Max24HourSend: " + getMax24HourSend() + ", ");
+        if (getMaxSendRate() != null) sb.append("MaxSendRate: " + getMaxSendRate() + ", ");
+        if (getSentLast24Hours() != null) sb.append("SentLast24Hours: " + getSentLast24Hours() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -179,7 +179,7 @@ public class GetSendQuotaResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof GetSendQuotaResult == false) return false;
         GetSendQuotaResult other = (GetSendQuotaResult)obj;
         

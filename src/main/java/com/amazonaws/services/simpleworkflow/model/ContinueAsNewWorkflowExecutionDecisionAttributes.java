@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -800,13 +800,13 @@ public class ContinueAsNewWorkflowExecutionDecisionAttributes {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (input != null) sb.append("Input: " + input + ", ");
-        if (executionStartToCloseTimeout != null) sb.append("ExecutionStartToCloseTimeout: " + executionStartToCloseTimeout + ", ");
-        if (taskList != null) sb.append("TaskList: " + taskList + ", ");
-        if (taskStartToCloseTimeout != null) sb.append("TaskStartToCloseTimeout: " + taskStartToCloseTimeout + ", ");
-        if (childPolicy != null) sb.append("ChildPolicy: " + childPolicy + ", ");
-        if (tagList != null) sb.append("TagList: " + tagList + ", ");
-        if (workflowTypeVersion != null) sb.append("WorkflowTypeVersion: " + workflowTypeVersion + ", ");
+        if (getInput() != null) sb.append("Input: " + getInput() + ", ");
+        if (getExecutionStartToCloseTimeout() != null) sb.append("ExecutionStartToCloseTimeout: " + getExecutionStartToCloseTimeout() + ", ");
+        if (getTaskList() != null) sb.append("TaskList: " + getTaskList() + ", ");
+        if (getTaskStartToCloseTimeout() != null) sb.append("TaskStartToCloseTimeout: " + getTaskStartToCloseTimeout() + ", ");
+        if (getChildPolicy() != null) sb.append("ChildPolicy: " + getChildPolicy() + ", ");
+        if (getTagList() != null) sb.append("TagList: " + getTagList() + ", ");
+        if (getWorkflowTypeVersion() != null) sb.append("WorkflowTypeVersion: " + getWorkflowTypeVersion() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -830,7 +830,7 @@ public class ContinueAsNewWorkflowExecutionDecisionAttributes {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof ContinueAsNewWorkflowExecutionDecisionAttributes == false) return false;
         ContinueAsNewWorkflowExecutionDecisionAttributes other = (ContinueAsNewWorkflowExecutionDecisionAttributes)obj;
         

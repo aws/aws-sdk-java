@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -308,10 +308,10 @@ public class ModifyOptionGroupRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (optionGroupName != null) sb.append("OptionGroupName: " + optionGroupName + ", ");
-        if (optionsToInclude != null) sb.append("OptionsToInclude: " + optionsToInclude + ", ");
-        if (optionsToRemove != null) sb.append("OptionsToRemove: " + optionsToRemove + ", ");
-        if (applyImmediately != null) sb.append("ApplyImmediately: " + applyImmediately + ", ");
+        if (getOptionGroupName() != null) sb.append("OptionGroupName: " + getOptionGroupName() + ", ");
+        if (getOptionsToInclude() != null) sb.append("OptionsToInclude: " + getOptionsToInclude() + ", ");
+        if (getOptionsToRemove() != null) sb.append("OptionsToRemove: " + getOptionsToRemove() + ", ");
+        if (isApplyImmediately() != null) sb.append("ApplyImmediately: " + isApplyImmediately() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -332,7 +332,7 @@ public class ModifyOptionGroupRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof ModifyOptionGroupRequest == false) return false;
         ModifyOptionGroupRequest other = (ModifyOptionGroupRequest)obj;
         

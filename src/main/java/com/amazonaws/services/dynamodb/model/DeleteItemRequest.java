@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -227,6 +227,7 @@ public class DeleteItemRequest extends AmazonWebServiceRequest {
     public java.util.Map<String,ExpectedAttributeValue> getExpected() {
         
         return expected;
+
     }
     
     /**
@@ -500,10 +501,10 @@ public class DeleteItemRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (tableName != null) sb.append("TableName: " + tableName + ", ");
-        if (key != null) sb.append("Key: " + key + ", ");
-        if (expected != null) sb.append("Expected: " + expected + ", ");
-        if (returnValues != null) sb.append("ReturnValues: " + returnValues + ", ");
+        if (getTableName() != null) sb.append("TableName: " + getTableName() + ", ");
+        if (getKey() != null) sb.append("Key: " + getKey() + ", ");
+        if (getExpected() != null) sb.append("Expected: " + getExpected() + ", ");
+        if (getReturnValues() != null) sb.append("ReturnValues: " + getReturnValues() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -524,7 +525,7 @@ public class DeleteItemRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DeleteItemRequest == false) return false;
         DeleteItemRequest other = (DeleteItemRequest)obj;
         

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -143,8 +143,8 @@ public class Alarm {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (alarmName != null) sb.append("AlarmName: " + alarmName + ", ");
-        if (alarmARN != null) sb.append("AlarmARN: " + alarmARN + ", ");
+        if (getAlarmName() != null) sb.append("AlarmName: " + getAlarmName() + ", ");
+        if (getAlarmARN() != null) sb.append("AlarmARN: " + getAlarmARN() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -163,7 +163,7 @@ public class Alarm {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof Alarm == false) return false;
         Alarm other = (Alarm)obj;
         

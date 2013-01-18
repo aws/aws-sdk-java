@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -527,14 +527,14 @@ public class CachediSCSIVolume {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (volumeARN != null) sb.append("VolumeARN: " + volumeARN + ", ");
-        if (volumeId != null) sb.append("VolumeId: " + volumeId + ", ");
-        if (volumeType != null) sb.append("VolumeType: " + volumeType + ", ");
-        if (volumeStatus != null) sb.append("VolumeStatus: " + volumeStatus + ", ");
-        if (volumeSizeInBytes != null) sb.append("VolumeSizeInBytes: " + volumeSizeInBytes + ", ");
-        if (volumeProgress != null) sb.append("VolumeProgress: " + volumeProgress + ", ");
-        if (sourceSnapshotId != null) sb.append("SourceSnapshotId: " + sourceSnapshotId + ", ");
-        if (volumeiSCSIAttributes != null) sb.append("VolumeiSCSIAttributes: " + volumeiSCSIAttributes + ", ");
+        if (getVolumeARN() != null) sb.append("VolumeARN: " + getVolumeARN() + ", ");
+        if (getVolumeId() != null) sb.append("VolumeId: " + getVolumeId() + ", ");
+        if (getVolumeType() != null) sb.append("VolumeType: " + getVolumeType() + ", ");
+        if (getVolumeStatus() != null) sb.append("VolumeStatus: " + getVolumeStatus() + ", ");
+        if (getVolumeSizeInBytes() != null) sb.append("VolumeSizeInBytes: " + getVolumeSizeInBytes() + ", ");
+        if (getVolumeProgress() != null) sb.append("VolumeProgress: " + getVolumeProgress() + ", ");
+        if (getSourceSnapshotId() != null) sb.append("SourceSnapshotId: " + getSourceSnapshotId() + ", ");
+        if (getVolumeiSCSIAttributes() != null) sb.append("VolumeiSCSIAttributes: " + getVolumeiSCSIAttributes() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -559,7 +559,7 @@ public class CachediSCSIVolume {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof CachediSCSIVolume == false) return false;
         CachediSCSIVolume other = (CachediSCSIVolume)obj;
         

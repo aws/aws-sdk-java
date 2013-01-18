@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -41,9 +41,9 @@ public class DescribeJobRequestMarshaller implements Marshaller<Request<Describe
     
 
     public Request<DescribeJobRequest> marshall(DescribeJobRequest describeJobRequest) {
-		if (describeJobRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+    if (describeJobRequest == null) {
+        throw new AmazonClientException("Invalid argument passed to marshall(...)");
+    }
 
         Request<DescribeJobRequest> request = new DefaultRequest<DescribeJobRequest>(describeJobRequest, "AmazonGlacier");
         String target = "Glacier.DescribeJob";
@@ -58,7 +58,7 @@ public class DescribeJobRequestMarshaller implements Marshaller<Request<Describe
         uriResourcePath = uriResourcePath.replace("{accountId}", getString(describeJobRequest.getAccountId())); 
         uriResourcePath = uriResourcePath.replace("{vaultName}", getString(describeJobRequest.getVaultName())); 
         uriResourcePath = uriResourcePath.replace("{jobId}", getString(describeJobRequest.getJobId())); 
-        
+
         uriResourcePath = uriResourcePath.replaceAll("//", "/");
 
         if (uriResourcePath.contains("?")) {

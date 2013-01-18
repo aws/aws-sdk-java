@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -698,15 +698,15 @@ public class WorkflowExecutionInfo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (execution != null) sb.append("Execution: " + execution + ", ");
-        if (workflowType != null) sb.append("WorkflowType: " + workflowType + ", ");
-        if (startTimestamp != null) sb.append("StartTimestamp: " + startTimestamp + ", ");
-        if (closeTimestamp != null) sb.append("CloseTimestamp: " + closeTimestamp + ", ");
-        if (executionStatus != null) sb.append("ExecutionStatus: " + executionStatus + ", ");
-        if (closeStatus != null) sb.append("CloseStatus: " + closeStatus + ", ");
-        if (parent != null) sb.append("Parent: " + parent + ", ");
-        if (tagList != null) sb.append("TagList: " + tagList + ", ");
-        if (cancelRequested != null) sb.append("CancelRequested: " + cancelRequested + ", ");
+        if (getExecution() != null) sb.append("Execution: " + getExecution() + ", ");
+        if (getWorkflowType() != null) sb.append("WorkflowType: " + getWorkflowType() + ", ");
+        if (getStartTimestamp() != null) sb.append("StartTimestamp: " + getStartTimestamp() + ", ");
+        if (getCloseTimestamp() != null) sb.append("CloseTimestamp: " + getCloseTimestamp() + ", ");
+        if (getExecutionStatus() != null) sb.append("ExecutionStatus: " + getExecutionStatus() + ", ");
+        if (getCloseStatus() != null) sb.append("CloseStatus: " + getCloseStatus() + ", ");
+        if (getParent() != null) sb.append("Parent: " + getParent() + ", ");
+        if (getTagList() != null) sb.append("TagList: " + getTagList() + ", ");
+        if (isCancelRequested() != null) sb.append("CancelRequested: " + isCancelRequested() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -732,7 +732,7 @@ public class WorkflowExecutionInfo {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof WorkflowExecutionInfo == false) return false;
         WorkflowExecutionInfo other = (WorkflowExecutionInfo)obj;
         

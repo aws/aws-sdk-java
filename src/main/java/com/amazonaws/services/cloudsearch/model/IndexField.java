@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -494,12 +494,12 @@ public class IndexField {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (indexFieldName != null) sb.append("IndexFieldName: " + indexFieldName + ", ");
-        if (indexFieldType != null) sb.append("IndexFieldType: " + indexFieldType + ", ");
-        if (uIntOptions != null) sb.append("UIntOptions: " + uIntOptions + ", ");
-        if (literalOptions != null) sb.append("LiteralOptions: " + literalOptions + ", ");
-        if (textOptions != null) sb.append("TextOptions: " + textOptions + ", ");
-        if (sourceAttributes != null) sb.append("SourceAttributes: " + sourceAttributes + ", ");
+        if (getIndexFieldName() != null) sb.append("IndexFieldName: " + getIndexFieldName() + ", ");
+        if (getIndexFieldType() != null) sb.append("IndexFieldType: " + getIndexFieldType() + ", ");
+        if (getUIntOptions() != null) sb.append("UIntOptions: " + getUIntOptions() + ", ");
+        if (getLiteralOptions() != null) sb.append("LiteralOptions: " + getLiteralOptions() + ", ");
+        if (getTextOptions() != null) sb.append("TextOptions: " + getTextOptions() + ", ");
+        if (getSourceAttributes() != null) sb.append("SourceAttributes: " + getSourceAttributes() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -522,7 +522,7 @@ public class IndexField {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof IndexField == false) return false;
         IndexField other = (IndexField)obj;
         

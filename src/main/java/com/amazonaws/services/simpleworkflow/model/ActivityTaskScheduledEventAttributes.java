@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -577,16 +577,16 @@ public class ActivityTaskScheduledEventAttributes {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (activityType != null) sb.append("ActivityType: " + activityType + ", ");
-        if (activityId != null) sb.append("ActivityId: " + activityId + ", ");
-        if (input != null) sb.append("Input: " + input + ", ");
-        if (control != null) sb.append("Control: " + control + ", ");
-        if (scheduleToStartTimeout != null) sb.append("ScheduleToStartTimeout: " + scheduleToStartTimeout + ", ");
-        if (scheduleToCloseTimeout != null) sb.append("ScheduleToCloseTimeout: " + scheduleToCloseTimeout + ", ");
-        if (startToCloseTimeout != null) sb.append("StartToCloseTimeout: " + startToCloseTimeout + ", ");
-        if (taskList != null) sb.append("TaskList: " + taskList + ", ");
-        if (decisionTaskCompletedEventId != null) sb.append("DecisionTaskCompletedEventId: " + decisionTaskCompletedEventId + ", ");
-        if (heartbeatTimeout != null) sb.append("HeartbeatTimeout: " + heartbeatTimeout + ", ");
+        if (getActivityType() != null) sb.append("ActivityType: " + getActivityType() + ", ");
+        if (getActivityId() != null) sb.append("ActivityId: " + getActivityId() + ", ");
+        if (getInput() != null) sb.append("Input: " + getInput() + ", ");
+        if (getControl() != null) sb.append("Control: " + getControl() + ", ");
+        if (getScheduleToStartTimeout() != null) sb.append("ScheduleToStartTimeout: " + getScheduleToStartTimeout() + ", ");
+        if (getScheduleToCloseTimeout() != null) sb.append("ScheduleToCloseTimeout: " + getScheduleToCloseTimeout() + ", ");
+        if (getStartToCloseTimeout() != null) sb.append("StartToCloseTimeout: " + getStartToCloseTimeout() + ", ");
+        if (getTaskList() != null) sb.append("TaskList: " + getTaskList() + ", ");
+        if (getDecisionTaskCompletedEventId() != null) sb.append("DecisionTaskCompletedEventId: " + getDecisionTaskCompletedEventId() + ", ");
+        if (getHeartbeatTimeout() != null) sb.append("HeartbeatTimeout: " + getHeartbeatTimeout() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -613,7 +613,7 @@ public class ActivityTaskScheduledEventAttributes {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof ActivityTaskScheduledEventAttributes == false) return false;
         ActivityTaskScheduledEventAttributes other = (ActivityTaskScheduledEventAttributes)obj;
         

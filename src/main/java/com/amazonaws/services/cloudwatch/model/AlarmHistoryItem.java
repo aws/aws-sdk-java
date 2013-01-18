@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -317,11 +317,11 @@ public class AlarmHistoryItem {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (alarmName != null) sb.append("AlarmName: " + alarmName + ", ");
-        if (timestamp != null) sb.append("Timestamp: " + timestamp + ", ");
-        if (historyItemType != null) sb.append("HistoryItemType: " + historyItemType + ", ");
-        if (historySummary != null) sb.append("HistorySummary: " + historySummary + ", ");
-        if (historyData != null) sb.append("HistoryData: " + historyData + ", ");
+        if (getAlarmName() != null) sb.append("AlarmName: " + getAlarmName() + ", ");
+        if (getTimestamp() != null) sb.append("Timestamp: " + getTimestamp() + ", ");
+        if (getHistoryItemType() != null) sb.append("HistoryItemType: " + getHistoryItemType() + ", ");
+        if (getHistorySummary() != null) sb.append("HistorySummary: " + getHistorySummary() + ", ");
+        if (getHistoryData() != null) sb.append("HistoryData: " + getHistoryData() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -343,7 +343,7 @@ public class AlarmHistoryItem {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof AlarmHistoryItem == false) return false;
         AlarmHistoryItem other = (AlarmHistoryItem)obj;
         

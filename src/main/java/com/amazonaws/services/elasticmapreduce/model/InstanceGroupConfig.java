@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -468,12 +468,12 @@ public class InstanceGroupConfig {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (name != null) sb.append("Name: " + name + ", ");
-        if (market != null) sb.append("Market: " + market + ", ");
-        if (instanceRole != null) sb.append("InstanceRole: " + instanceRole + ", ");
-        if (bidPrice != null) sb.append("BidPrice: " + bidPrice + ", ");
-        if (instanceType != null) sb.append("InstanceType: " + instanceType + ", ");
-        if (instanceCount != null) sb.append("InstanceCount: " + instanceCount + ", ");
+        if (getName() != null) sb.append("Name: " + getName() + ", ");
+        if (getMarket() != null) sb.append("Market: " + getMarket() + ", ");
+        if (getInstanceRole() != null) sb.append("InstanceRole: " + getInstanceRole() + ", ");
+        if (getBidPrice() != null) sb.append("BidPrice: " + getBidPrice() + ", ");
+        if (getInstanceType() != null) sb.append("InstanceType: " + getInstanceType() + ", ");
+        if (getInstanceCount() != null) sb.append("InstanceCount: " + getInstanceCount() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -496,7 +496,7 @@ public class InstanceGroupConfig {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof InstanceGroupConfig == false) return false;
         InstanceGroupConfig other = (InstanceGroupConfig)obj;
         

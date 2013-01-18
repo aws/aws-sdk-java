@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -432,12 +432,12 @@ public class UploadMultipartPartRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (accountId != null) sb.append("AccountId: " + accountId + ", ");
-        if (vaultName != null) sb.append("VaultName: " + vaultName + ", ");
-        if (uploadId != null) sb.append("UploadId: " + uploadId + ", ");
-        if (checksum != null) sb.append("Checksum: " + checksum + ", ");
-        if (range != null) sb.append("Range: " + range + ", ");
-        if (body != null) sb.append("Body: " + body + ", ");
+        if (getAccountId() != null) sb.append("AccountId: " + getAccountId() + ", ");
+        if (getVaultName() != null) sb.append("VaultName: " + getVaultName() + ", ");
+        if (getUploadId() != null) sb.append("UploadId: " + getUploadId() + ", ");
+        if (getChecksum() != null) sb.append("Checksum: " + getChecksum() + ", ");
+        if (getRange() != null) sb.append("Range: " + getRange() + ", ");
+        if (getBody() != null) sb.append("Body: " + getBody() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -460,7 +460,7 @@ public class UploadMultipartPartRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof UploadMultipartPartRequest == false) return false;
         UploadMultipartPartRequest other = (UploadMultipartPartRequest)obj;
         

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -41,9 +41,9 @@ public class DeleteVaultRequestMarshaller implements Marshaller<Request<DeleteVa
     
 
     public Request<DeleteVaultRequest> marshall(DeleteVaultRequest deleteVaultRequest) {
-		if (deleteVaultRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+    if (deleteVaultRequest == null) {
+        throw new AmazonClientException("Invalid argument passed to marshall(...)");
+    }
 
         Request<DeleteVaultRequest> request = new DefaultRequest<DeleteVaultRequest>(deleteVaultRequest, "AmazonGlacier");
         String target = "Glacier.DeleteVault";
@@ -57,7 +57,7 @@ public class DeleteVaultRequestMarshaller implements Marshaller<Request<DeleteVa
         String uriResourcePath = "/{accountId}/vaults/{vaultName}"; 
         uriResourcePath = uriResourcePath.replace("{accountId}", getString(deleteVaultRequest.getAccountId())); 
         uriResourcePath = uriResourcePath.replace("{vaultName}", getString(deleteVaultRequest.getVaultName())); 
-        
+
         uriResourcePath = uriResourcePath.replaceAll("//", "/");
 
         if (uriResourcePath.contains("?")) {

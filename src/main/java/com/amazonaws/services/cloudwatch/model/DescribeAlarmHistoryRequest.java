@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -358,12 +358,12 @@ public class DescribeAlarmHistoryRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (alarmName != null) sb.append("AlarmName: " + alarmName + ", ");
-        if (historyItemType != null) sb.append("HistoryItemType: " + historyItemType + ", ");
-        if (startDate != null) sb.append("StartDate: " + startDate + ", ");
-        if (endDate != null) sb.append("EndDate: " + endDate + ", ");
-        if (maxRecords != null) sb.append("MaxRecords: " + maxRecords + ", ");
-        if (nextToken != null) sb.append("NextToken: " + nextToken + ", ");
+        if (getAlarmName() != null) sb.append("AlarmName: " + getAlarmName() + ", ");
+        if (getHistoryItemType() != null) sb.append("HistoryItemType: " + getHistoryItemType() + ", ");
+        if (getStartDate() != null) sb.append("StartDate: " + getStartDate() + ", ");
+        if (getEndDate() != null) sb.append("EndDate: " + getEndDate() + ", ");
+        if (getMaxRecords() != null) sb.append("MaxRecords: " + getMaxRecords() + ", ");
+        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -386,7 +386,7 @@ public class DescribeAlarmHistoryRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DescribeAlarmHistoryRequest == false) return false;
         DescribeAlarmHistoryRequest other = (DescribeAlarmHistoryRequest)obj;
         

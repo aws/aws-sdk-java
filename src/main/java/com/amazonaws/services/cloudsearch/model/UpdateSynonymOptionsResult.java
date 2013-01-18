@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -79,7 +79,7 @@ public class UpdateSynonymOptionsResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (synonyms != null) sb.append("Synonyms: " + synonyms + ", ");
+        if (getSynonyms() != null) sb.append("Synonyms: " + getSynonyms() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -97,7 +97,7 @@ public class UpdateSynonymOptionsResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof UpdateSynonymOptionsResult == false) return false;
         UpdateSynonymOptionsResult other = (UpdateSynonymOptionsResult)obj;
         

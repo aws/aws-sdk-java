@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -209,10 +209,10 @@ public class Attribute {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (name != null) sb.append("Name: " + name + ", ");
-        if (alternateNameEncoding != null) sb.append("AlternateNameEncoding: " + alternateNameEncoding + ", ");
-        if (value != null) sb.append("Value: " + value + ", ");
-        if (alternateValueEncoding != null) sb.append("AlternateValueEncoding: " + alternateValueEncoding + ", ");
+        if (getName() != null) sb.append("Name: " + getName() + ", ");
+        if (getAlternateNameEncoding() != null) sb.append("AlternateNameEncoding: " + getAlternateNameEncoding() + ", ");
+        if (getValue() != null) sb.append("Value: " + getValue() + ", ");
+        if (getAlternateValueEncoding() != null) sb.append("AlternateValueEncoding: " + getAlternateValueEncoding() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -233,7 +233,7 @@ public class Attribute {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof Attribute == false) return false;
         Attribute other = (Attribute)obj;
         

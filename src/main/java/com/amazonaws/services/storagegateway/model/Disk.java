@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -377,12 +377,12 @@ public class Disk {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (diskId != null) sb.append("DiskId: " + diskId + ", ");
-        if (diskPath != null) sb.append("DiskPath: " + diskPath + ", ");
-        if (diskNode != null) sb.append("DiskNode: " + diskNode + ", ");
-        if (diskSizeInBytes != null) sb.append("DiskSizeInBytes: " + diskSizeInBytes + ", ");
-        if (diskAllocationType != null) sb.append("DiskAllocationType: " + diskAllocationType + ", ");
-        if (diskAllocationResource != null) sb.append("DiskAllocationResource: " + diskAllocationResource + ", ");
+        if (getDiskId() != null) sb.append("DiskId: " + getDiskId() + ", ");
+        if (getDiskPath() != null) sb.append("DiskPath: " + getDiskPath() + ", ");
+        if (getDiskNode() != null) sb.append("DiskNode: " + getDiskNode() + ", ");
+        if (getDiskSizeInBytes() != null) sb.append("DiskSizeInBytes: " + getDiskSizeInBytes() + ", ");
+        if (getDiskAllocationType() != null) sb.append("DiskAllocationType: " + getDiskAllocationType() + ", ");
+        if (getDiskAllocationResource() != null) sb.append("DiskAllocationResource: " + getDiskAllocationResource() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -405,7 +405,7 @@ public class Disk {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof Disk == false) return false;
         Disk other = (Disk)obj;
         

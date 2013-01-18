@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Portions copyright 2006-2009 James Murty. Please see LICENSE.txt
  * for applicable license terms and NOTICE.txt for applicable notices.
@@ -78,6 +78,9 @@ import com.amazonaws.services.s3.model.Owner;
 import com.amazonaws.services.s3.model.PartListing;
 import com.amazonaws.services.s3.model.PartSummary;
 import com.amazonaws.services.s3.model.Permission;
+import com.amazonaws.services.s3.model.RoutingRule;
+import com.amazonaws.services.s3.model.RoutingRuleCondition;
+import com.amazonaws.services.s3.model.RedirectRule;
 import com.amazonaws.services.s3.model.S3Object;
 import com.amazonaws.services.s3.model.S3ObjectSummary;
 import com.amazonaws.services.s3.model.S3VersionSummary;
@@ -1333,10 +1336,20 @@ public class XmlResponsesSaxParser {
 
     public class BucketWebsiteConfigurationHandler extends DefaultHandler {
         private BucketWebsiteConfiguration configuration = new BucketWebsiteConfiguration(null);
+        private RoutingRuleCondition condition = null;
+        private RedirectRule  redirect  = null;
+        private List<RoutingRule> rules = null;
+        private RedirectRule  redirectAllRequestsTo = null;
+        RoutingRule rule = null;
         private StringBuilder text;
 
         boolean inIndexDocumentElement = false;
         boolean inErrorDocumentElement = false;
+        boolean inRoutingRules = false;
+        boolean inRoutingRule = false;
+        boolean inCondition = false;
+        boolean inRedirect = false;
+        boolean inRedirectAllRequestsTo = false;
 
         public BucketWebsiteConfiguration getConfiguration() { return configuration; }
 
@@ -1354,6 +1367,28 @@ public class XmlResponsesSaxParser {
             } else if (name.equals("ErrorDocument")) {
                 inErrorDocumentElement = true;
             } else if (name.equals("Key") && inErrorDocumentElement) {
+            } else if (name.equals("RedirectAllRequestsTo")) {
+            	redirectAllRequestsTo = new RedirectRule();
+            	inRedirectAllRequestsTo = true;
+            } else if (name.equals("RoutingRules")) {
+            	rules = new LinkedList<RoutingRule>();
+            	inRoutingRules = true;
+            } else if (name.equals("RoutingRule") && inRoutingRules) {
+            	rule = new RoutingRule();
+            	inRoutingRule = true;
+            } else if (name.equals("Condition") && inRoutingRule) {
+            	condition = new RoutingRuleCondition();
+            	inCondition = true;
+            } else if (name.equals("KeyPrefixEquals") && inCondition) {
+            } else if (name.equals("HttpErrorCodeReturnedEquals") && inCondition) {
+            } else if (name.equals("Redirect") && inRoutingRule) {
+            	redirect = new RedirectRule();
+            	inRedirect = true;
+            } else if (name.equals("Protocol") && (inRedirect || inRedirectAllRequestsTo)) {
+            } else if (name.equals("HostName") && (inRedirect || inRedirectAllRequestsTo)) {
+            } else if (name.equals("ReplaceKeyPrefixWith") && (inRedirect || inRedirectAllRequestsTo)) {
+            } else if (name.equals("ReplaceKeyWith") && (inRedirect || inRedirectAllRequestsTo)) {
+            } else if (name.equals("HttpRedirectCode") && (inRedirect || inRedirectAllRequestsTo)) {
             } else {
                 log.warn("Ignoring unexpected tag <"+name+">");
             }
@@ -1370,6 +1405,50 @@ public class XmlResponsesSaxParser {
                 inErrorDocumentElement = false;
             } else if (name.equals("Key") && inErrorDocumentElement) {
                 configuration.setErrorDocument(text.toString());
+            } else if (name.equals("KeyPrefixEquals") && inCondition) {
+            	condition.setKeyPrefixEquals(text.toString());
+            } else if (name.equals("HttpErrorCodeReturnedEquals") && inCondition) {
+            	condition.setHttpErrorCodeReturnedEquals(text.toString());
+            } else if (name.equals("Condition") && inRoutingRule) {
+                rule.setCondition(condition);
+                inCondition = false;
+                condition = null;
+            } else if (name.equals("Protocol") && inRedirect) {
+            	redirect.setProtocol(text.toString());
+            } else if (name.equals("Protocol") && inRedirectAllRequestsTo) {
+            	redirectAllRequestsTo.setProtocol(text.toString());
+            } else if (name.equals("HostName") && inRedirect) {
+            	redirect.setHostName(text.toString());
+            } else if (name.equals("HostName") && inRedirectAllRequestsTo) {
+            	redirectAllRequestsTo.setHostName(text.toString());
+            } else if (name.equals("ReplaceKeyPrefixWith") && inRedirect) {
+            	redirect.setReplaceKeyPrefixWith(text.toString());
+            } else if (name.equals("ReplaceKeyPrefixWith") && inRedirectAllRequestsTo) {
+            	redirectAllRequestsTo.setReplaceKeyPrefixWith(text.toString());
+            } else if (name.equals("ReplaceKeyWith") && inRedirect) {
+            	redirect.setReplaceKeyWith(text.toString());
+            } else if (name.equals("ReplaceKeyWith") && inRedirectAllRequestsTo) {
+            	redirectAllRequestsTo.setReplaceKeyWith(text.toString());
+            } else if (name.equals("HttpRedirectCode") && inRedirect) {
+            	redirect.setHttpRedirectCode(text.toString());
+            } else if (name.equals("HttpRedirectCode") && inRedirectAllRequestsTo) {
+            	redirectAllRequestsTo.setHttpRedirectCode(text.toString());
+            } else if (name.equals("Redirect") && inRoutingRule) {
+            	rule.setRedirect(redirect);
+            	inRedirect = false;
+                redirect = null;
+            } else if (name.equals("RoutingRule") && inRoutingRules) {
+            	rules.add(rule);
+            	rule = null;
+            	inRoutingRule = false;
+            } else if (name.equals("RoutingRules")) {
+            	configuration.setRoutingRules(rules);
+            	rules = null;
+            	inRoutingRules = false;
+            } else if (name.equals("RedirectAllRequestsTo")) {
+            	configuration.setRedirectAllRequestsTo(redirectAllRequestsTo);
+            	inRedirectAllRequestsTo = false;
+            	redirectAllRequestsTo = null;
             }
             text.setLength(0);
         }

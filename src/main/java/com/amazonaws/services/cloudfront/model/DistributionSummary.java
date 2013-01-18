@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -510,16 +510,16 @@ public class DistributionSummary {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (id != null) sb.append("Id: " + id + ", ");
-        if (status != null) sb.append("Status: " + status + ", ");
-        if (lastModifiedTime != null) sb.append("LastModifiedTime: " + lastModifiedTime + ", ");
-        if (domainName != null) sb.append("DomainName: " + domainName + ", ");
-        if (aliases != null) sb.append("Aliases: " + aliases + ", ");
-        if (origins != null) sb.append("Origins: " + origins + ", ");
-        if (defaultCacheBehavior != null) sb.append("DefaultCacheBehavior: " + defaultCacheBehavior + ", ");
-        if (cacheBehaviors != null) sb.append("CacheBehaviors: " + cacheBehaviors + ", ");
-        if (comment != null) sb.append("Comment: " + comment + ", ");
-        if (enabled != null) sb.append("Enabled: " + enabled + ", ");
+        if (getId() != null) sb.append("Id: " + getId() + ", ");
+        if (getStatus() != null) sb.append("Status: " + getStatus() + ", ");
+        if (getLastModifiedTime() != null) sb.append("LastModifiedTime: " + getLastModifiedTime() + ", ");
+        if (getDomainName() != null) sb.append("DomainName: " + getDomainName() + ", ");
+        if (getAliases() != null) sb.append("Aliases: " + getAliases() + ", ");
+        if (getOrigins() != null) sb.append("Origins: " + getOrigins() + ", ");
+        if (getDefaultCacheBehavior() != null) sb.append("DefaultCacheBehavior: " + getDefaultCacheBehavior() + ", ");
+        if (getCacheBehaviors() != null) sb.append("CacheBehaviors: " + getCacheBehaviors() + ", ");
+        if (getComment() != null) sb.append("Comment: " + getComment() + ", ");
+        if (isEnabled() != null) sb.append("Enabled: " + isEnabled() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -546,7 +546,7 @@ public class DistributionSummary {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DistributionSummary == false) return false;
         DistributionSummary other = (DistributionSummary)obj;
         

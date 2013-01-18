@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -132,8 +132,8 @@ public class StepDetail {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (stepConfig != null) sb.append("StepConfig: " + stepConfig + ", ");
-        if (executionStatusDetail != null) sb.append("ExecutionStatusDetail: " + executionStatusDetail + ", ");
+        if (getStepConfig() != null) sb.append("StepConfig: " + getStepConfig() + ", ");
+        if (getExecutionStatusDetail() != null) sb.append("ExecutionStatusDetail: " + getExecutionStatusDetail() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -152,7 +152,7 @@ public class StepDetail {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof StepDetail == false) return false;
         StepDetail other = (StepDetail)obj;
         

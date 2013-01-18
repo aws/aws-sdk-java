@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -41,8 +41,12 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest {
 
     /**
      * The compute and memory capacity of nodes in a Cache Cluster. <p>Valid
-     * values: <code>cache.m1.large | cache.m1.xlarge | cache.m2.xlarge |
-     * cache.m2.2xlarge | cache.m2.4xlarge | cache.c1.xlarge </code>
+     * values: <code>cache.t1.micro</code> | <code>cache.m1.small</code> |
+     * <code>cache.m1.medium</code> | <code>cache.m1.large</code> |
+     * <code>cache.m1.xlarge</code> | <code>cache.m3.xlarge</code> |
+     * <code>cache.m3.2xlarge</code> | <code>cache.m2.xlarge</code> |
+     * <code>cache.m2.2xlarge</code> | <code>cache.m2.4xlarge</code> |
+     * <code>cache.c1.xlarge</code>
      */
     private String cacheNodeType;
 
@@ -66,17 +70,31 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest {
     private String cacheParameterGroupName;
 
     /**
+     * The name of the Cache Subnet Group to be used for the Cache Cluster.
+     * <p>Use this parameter only when you are creating a cluster in an
+     * Amazon Virtual Private Cloud (VPC).
+     */
+    private String cacheSubnetGroupName;
+
+    /**
      * A list of Cache Security Group Names to associate with this Cache
-     * Cluster.
+     * Cluster. <p> Use this parameter only when you are creating a cluster
+     * outside of an Amazon Virtual Private Cloud (VPC).
      */
     private java.util.List<String> cacheSecurityGroupNames;
 
     /**
+     * Specifies the VPC Security Groups associated with the Cache Cluster.
+     * <p>Use this parameter only when you are creating a cluster in an
+     * Amazon Virtual Private Cloud (VPC).
+     */
+    private java.util.List<String> securityGroupIds;
+
+    /**
      * The EC2 Availability Zone that the Cache Cluster will be created in.
-     * <p> In normal use, all CacheNodes belonging to a CacheCluster are
-     * placed in the preferred availability zone. In rare circumstances, some
-     * of the CacheNodes might temporarily be in a different availability
-     * zone. <p> Default: System chosen (random) availability zone.
+     * <p> All cache nodes belonging to a cache cluster are placed in the
+     * preferred availability zone. <p> Default: System chosen (random)
+     * availability zone.
      */
     private String preferredAvailabilityZone;
 
@@ -127,14 +145,19 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest {
      * @param numCacheNodes The number of Cache Nodes the Cache Cluster
      * should have.
      * @param cacheNodeType The compute and memory capacity of nodes in a
-     * Cache Cluster. <p>Valid values: <code>cache.m1.large | cache.m1.xlarge
-     * | cache.m2.xlarge | cache.m2.2xlarge | cache.m2.4xlarge |
-     * cache.c1.xlarge </code>
+     * Cache Cluster. <p>Valid values: <code>cache.t1.micro</code> |
+     * <code>cache.m1.small</code> | <code>cache.m1.medium</code> |
+     * <code>cache.m1.large</code> | <code>cache.m1.xlarge</code> |
+     * <code>cache.m3.xlarge</code> | <code>cache.m3.2xlarge</code> |
+     * <code>cache.m2.xlarge</code> | <code>cache.m2.2xlarge</code> |
+     * <code>cache.m2.4xlarge</code> | <code>cache.c1.xlarge</code>
      * @param engine The name of the cache engine to be used for this Cache
      * Cluster. <note>Currently, <i>memcached</i> is the only cache engine
      * supported by the service.</note>
      * @param cacheSecurityGroupNames A list of Cache Security Group Names to
-     * associate with this Cache Cluster.
+     * associate with this Cache Cluster. <p> Use this parameter only when
+     * you are creating a cluster outside of an Amazon Virtual Private Cloud
+     * (VPC).
      */
     public CreateCacheClusterRequest(String cacheClusterId, Integer numCacheNodes, String cacheNodeType, String engine, java.util.List<String> cacheSecurityGroupNames) {
         this.cacheClusterId = cacheClusterId;
@@ -240,12 +263,20 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest {
     
     /**
      * The compute and memory capacity of nodes in a Cache Cluster. <p>Valid
-     * values: <code>cache.m1.large | cache.m1.xlarge | cache.m2.xlarge |
-     * cache.m2.2xlarge | cache.m2.4xlarge | cache.c1.xlarge </code>
+     * values: <code>cache.t1.micro</code> | <code>cache.m1.small</code> |
+     * <code>cache.m1.medium</code> | <code>cache.m1.large</code> |
+     * <code>cache.m1.xlarge</code> | <code>cache.m3.xlarge</code> |
+     * <code>cache.m3.2xlarge</code> | <code>cache.m2.xlarge</code> |
+     * <code>cache.m2.2xlarge</code> | <code>cache.m2.4xlarge</code> |
+     * <code>cache.c1.xlarge</code>
      *
      * @return The compute and memory capacity of nodes in a Cache Cluster. <p>Valid
-     *         values: <code>cache.m1.large | cache.m1.xlarge | cache.m2.xlarge |
-     *         cache.m2.2xlarge | cache.m2.4xlarge | cache.c1.xlarge </code>
+     *         values: <code>cache.t1.micro</code> | <code>cache.m1.small</code> |
+     *         <code>cache.m1.medium</code> | <code>cache.m1.large</code> |
+     *         <code>cache.m1.xlarge</code> | <code>cache.m3.xlarge</code> |
+     *         <code>cache.m3.2xlarge</code> | <code>cache.m2.xlarge</code> |
+     *         <code>cache.m2.2xlarge</code> | <code>cache.m2.4xlarge</code> |
+     *         <code>cache.c1.xlarge</code>
      */
     public String getCacheNodeType() {
         return cacheNodeType;
@@ -253,12 +284,20 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest {
     
     /**
      * The compute and memory capacity of nodes in a Cache Cluster. <p>Valid
-     * values: <code>cache.m1.large | cache.m1.xlarge | cache.m2.xlarge |
-     * cache.m2.2xlarge | cache.m2.4xlarge | cache.c1.xlarge </code>
+     * values: <code>cache.t1.micro</code> | <code>cache.m1.small</code> |
+     * <code>cache.m1.medium</code> | <code>cache.m1.large</code> |
+     * <code>cache.m1.xlarge</code> | <code>cache.m3.xlarge</code> |
+     * <code>cache.m3.2xlarge</code> | <code>cache.m2.xlarge</code> |
+     * <code>cache.m2.2xlarge</code> | <code>cache.m2.4xlarge</code> |
+     * <code>cache.c1.xlarge</code>
      *
      * @param cacheNodeType The compute and memory capacity of nodes in a Cache Cluster. <p>Valid
-     *         values: <code>cache.m1.large | cache.m1.xlarge | cache.m2.xlarge |
-     *         cache.m2.2xlarge | cache.m2.4xlarge | cache.c1.xlarge </code>
+     *         values: <code>cache.t1.micro</code> | <code>cache.m1.small</code> |
+     *         <code>cache.m1.medium</code> | <code>cache.m1.large</code> |
+     *         <code>cache.m1.xlarge</code> | <code>cache.m3.xlarge</code> |
+     *         <code>cache.m3.2xlarge</code> | <code>cache.m2.xlarge</code> |
+     *         <code>cache.m2.2xlarge</code> | <code>cache.m2.4xlarge</code> |
+     *         <code>cache.c1.xlarge</code>
      */
     public void setCacheNodeType(String cacheNodeType) {
         this.cacheNodeType = cacheNodeType;
@@ -266,14 +305,22 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest {
     
     /**
      * The compute and memory capacity of nodes in a Cache Cluster. <p>Valid
-     * values: <code>cache.m1.large | cache.m1.xlarge | cache.m2.xlarge |
-     * cache.m2.2xlarge | cache.m2.4xlarge | cache.c1.xlarge </code>
+     * values: <code>cache.t1.micro</code> | <code>cache.m1.small</code> |
+     * <code>cache.m1.medium</code> | <code>cache.m1.large</code> |
+     * <code>cache.m1.xlarge</code> | <code>cache.m3.xlarge</code> |
+     * <code>cache.m3.2xlarge</code> | <code>cache.m2.xlarge</code> |
+     * <code>cache.m2.2xlarge</code> | <code>cache.m2.4xlarge</code> |
+     * <code>cache.c1.xlarge</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cacheNodeType The compute and memory capacity of nodes in a Cache Cluster. <p>Valid
-     *         values: <code>cache.m1.large | cache.m1.xlarge | cache.m2.xlarge |
-     *         cache.m2.2xlarge | cache.m2.4xlarge | cache.c1.xlarge </code>
+     *         values: <code>cache.t1.micro</code> | <code>cache.m1.small</code> |
+     *         <code>cache.m1.medium</code> | <code>cache.m1.large</code> |
+     *         <code>cache.m1.xlarge</code> | <code>cache.m3.xlarge</code> |
+     *         <code>cache.m3.2xlarge</code> | <code>cache.m2.xlarge</code> |
+     *         <code>cache.m2.2xlarge</code> | <code>cache.m2.4xlarge</code> |
+     *         <code>cache.c1.xlarge</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -411,11 +458,59 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest {
     
     
     /**
+     * The name of the Cache Subnet Group to be used for the Cache Cluster.
+     * <p>Use this parameter only when you are creating a cluster in an
+     * Amazon Virtual Private Cloud (VPC).
+     *
+     * @return The name of the Cache Subnet Group to be used for the Cache Cluster.
+     *         <p>Use this parameter only when you are creating a cluster in an
+     *         Amazon Virtual Private Cloud (VPC).
+     */
+    public String getCacheSubnetGroupName() {
+        return cacheSubnetGroupName;
+    }
+    
+    /**
+     * The name of the Cache Subnet Group to be used for the Cache Cluster.
+     * <p>Use this parameter only when you are creating a cluster in an
+     * Amazon Virtual Private Cloud (VPC).
+     *
+     * @param cacheSubnetGroupName The name of the Cache Subnet Group to be used for the Cache Cluster.
+     *         <p>Use this parameter only when you are creating a cluster in an
+     *         Amazon Virtual Private Cloud (VPC).
+     */
+    public void setCacheSubnetGroupName(String cacheSubnetGroupName) {
+        this.cacheSubnetGroupName = cacheSubnetGroupName;
+    }
+    
+    /**
+     * The name of the Cache Subnet Group to be used for the Cache Cluster.
+     * <p>Use this parameter only when you are creating a cluster in an
+     * Amazon Virtual Private Cloud (VPC).
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param cacheSubnetGroupName The name of the Cache Subnet Group to be used for the Cache Cluster.
+     *         <p>Use this parameter only when you are creating a cluster in an
+     *         Amazon Virtual Private Cloud (VPC).
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public CreateCacheClusterRequest withCacheSubnetGroupName(String cacheSubnetGroupName) {
+        this.cacheSubnetGroupName = cacheSubnetGroupName;
+        return this;
+    }
+    
+    
+    /**
      * A list of Cache Security Group Names to associate with this Cache
-     * Cluster.
+     * Cluster. <p> Use this parameter only when you are creating a cluster
+     * outside of an Amazon Virtual Private Cloud (VPC).
      *
      * @return A list of Cache Security Group Names to associate with this Cache
-     *         Cluster.
+     *         Cluster. <p> Use this parameter only when you are creating a cluster
+     *         outside of an Amazon Virtual Private Cloud (VPC).
      */
     public java.util.List<String> getCacheSecurityGroupNames() {
         
@@ -427,10 +522,12 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest {
     
     /**
      * A list of Cache Security Group Names to associate with this Cache
-     * Cluster.
+     * Cluster. <p> Use this parameter only when you are creating a cluster
+     * outside of an Amazon Virtual Private Cloud (VPC).
      *
      * @param cacheSecurityGroupNames A list of Cache Security Group Names to associate with this Cache
-     *         Cluster.
+     *         Cluster. <p> Use this parameter only when you are creating a cluster
+     *         outside of an Amazon Virtual Private Cloud (VPC).
      */
     public void setCacheSecurityGroupNames(java.util.Collection<String> cacheSecurityGroupNames) {
         if (cacheSecurityGroupNames == null) {
@@ -445,12 +542,14 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest {
     
     /**
      * A list of Cache Security Group Names to associate with this Cache
-     * Cluster.
+     * Cluster. <p> Use this parameter only when you are creating a cluster
+     * outside of an Amazon Virtual Private Cloud (VPC).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cacheSecurityGroupNames A list of Cache Security Group Names to associate with this Cache
-     *         Cluster.
+     *         Cluster. <p> Use this parameter only when you are creating a cluster
+     *         outside of an Amazon Virtual Private Cloud (VPC).
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -465,12 +564,14 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest {
     
     /**
      * A list of Cache Security Group Names to associate with this Cache
-     * Cluster.
+     * Cluster. <p> Use this parameter only when you are creating a cluster
+     * outside of an Amazon Virtual Private Cloud (VPC).
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cacheSecurityGroupNames A list of Cache Security Group Names to associate with this Cache
-     *         Cluster.
+     *         Cluster. <p> Use this parameter only when you are creating a cluster
+     *         outside of an Amazon Virtual Private Cloud (VPC).
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -488,17 +589,100 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest {
     }
     
     /**
+     * Specifies the VPC Security Groups associated with the Cache Cluster.
+     * <p>Use this parameter only when you are creating a cluster in an
+     * Amazon Virtual Private Cloud (VPC).
+     *
+     * @return Specifies the VPC Security Groups associated with the Cache Cluster.
+     *         <p>Use this parameter only when you are creating a cluster in an
+     *         Amazon Virtual Private Cloud (VPC).
+     */
+    public java.util.List<String> getSecurityGroupIds() {
+        
+        if (securityGroupIds == null) {
+            securityGroupIds = new java.util.ArrayList<String>();
+        }
+        return securityGroupIds;
+    }
+    
+    /**
+     * Specifies the VPC Security Groups associated with the Cache Cluster.
+     * <p>Use this parameter only when you are creating a cluster in an
+     * Amazon Virtual Private Cloud (VPC).
+     *
+     * @param securityGroupIds Specifies the VPC Security Groups associated with the Cache Cluster.
+     *         <p>Use this parameter only when you are creating a cluster in an
+     *         Amazon Virtual Private Cloud (VPC).
+     */
+    public void setSecurityGroupIds(java.util.Collection<String> securityGroupIds) {
+        if (securityGroupIds == null) {
+            this.securityGroupIds = null;
+            return;
+        }
+
+        java.util.List<String> securityGroupIdsCopy = new java.util.ArrayList<String>(securityGroupIds.size());
+        securityGroupIdsCopy.addAll(securityGroupIds);
+        this.securityGroupIds = securityGroupIdsCopy;
+    }
+    
+    /**
+     * Specifies the VPC Security Groups associated with the Cache Cluster.
+     * <p>Use this parameter only when you are creating a cluster in an
+     * Amazon Virtual Private Cloud (VPC).
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param securityGroupIds Specifies the VPC Security Groups associated with the Cache Cluster.
+     *         <p>Use this parameter only when you are creating a cluster in an
+     *         Amazon Virtual Private Cloud (VPC).
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public CreateCacheClusterRequest withSecurityGroupIds(String... securityGroupIds) {
+        if (getSecurityGroupIds() == null) setSecurityGroupIds(new java.util.ArrayList<String>(securityGroupIds.length));
+        for (String value : securityGroupIds) {
+            getSecurityGroupIds().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * Specifies the VPC Security Groups associated with the Cache Cluster.
+     * <p>Use this parameter only when you are creating a cluster in an
+     * Amazon Virtual Private Cloud (VPC).
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param securityGroupIds Specifies the VPC Security Groups associated with the Cache Cluster.
+     *         <p>Use this parameter only when you are creating a cluster in an
+     *         Amazon Virtual Private Cloud (VPC).
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public CreateCacheClusterRequest withSecurityGroupIds(java.util.Collection<String> securityGroupIds) {
+        if (securityGroupIds == null) {
+            this.securityGroupIds = null;
+        } else {
+            java.util.List<String> securityGroupIdsCopy = new java.util.ArrayList<String>(securityGroupIds.size());
+            securityGroupIdsCopy.addAll(securityGroupIds);
+            this.securityGroupIds = securityGroupIdsCopy;
+        }
+
+        return this;
+    }
+    
+    /**
      * The EC2 Availability Zone that the Cache Cluster will be created in.
-     * <p> In normal use, all CacheNodes belonging to a CacheCluster are
-     * placed in the preferred availability zone. In rare circumstances, some
-     * of the CacheNodes might temporarily be in a different availability
-     * zone. <p> Default: System chosen (random) availability zone.
+     * <p> All cache nodes belonging to a cache cluster are placed in the
+     * preferred availability zone. <p> Default: System chosen (random)
+     * availability zone.
      *
      * @return The EC2 Availability Zone that the Cache Cluster will be created in.
-     *         <p> In normal use, all CacheNodes belonging to a CacheCluster are
-     *         placed in the preferred availability zone. In rare circumstances, some
-     *         of the CacheNodes might temporarily be in a different availability
-     *         zone. <p> Default: System chosen (random) availability zone.
+     *         <p> All cache nodes belonging to a cache cluster are placed in the
+     *         preferred availability zone. <p> Default: System chosen (random)
+     *         availability zone.
      */
     public String getPreferredAvailabilityZone() {
         return preferredAvailabilityZone;
@@ -506,16 +690,14 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest {
     
     /**
      * The EC2 Availability Zone that the Cache Cluster will be created in.
-     * <p> In normal use, all CacheNodes belonging to a CacheCluster are
-     * placed in the preferred availability zone. In rare circumstances, some
-     * of the CacheNodes might temporarily be in a different availability
-     * zone. <p> Default: System chosen (random) availability zone.
+     * <p> All cache nodes belonging to a cache cluster are placed in the
+     * preferred availability zone. <p> Default: System chosen (random)
+     * availability zone.
      *
      * @param preferredAvailabilityZone The EC2 Availability Zone that the Cache Cluster will be created in.
-     *         <p> In normal use, all CacheNodes belonging to a CacheCluster are
-     *         placed in the preferred availability zone. In rare circumstances, some
-     *         of the CacheNodes might temporarily be in a different availability
-     *         zone. <p> Default: System chosen (random) availability zone.
+     *         <p> All cache nodes belonging to a cache cluster are placed in the
+     *         preferred availability zone. <p> Default: System chosen (random)
+     *         availability zone.
      */
     public void setPreferredAvailabilityZone(String preferredAvailabilityZone) {
         this.preferredAvailabilityZone = preferredAvailabilityZone;
@@ -523,18 +705,16 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest {
     
     /**
      * The EC2 Availability Zone that the Cache Cluster will be created in.
-     * <p> In normal use, all CacheNodes belonging to a CacheCluster are
-     * placed in the preferred availability zone. In rare circumstances, some
-     * of the CacheNodes might temporarily be in a different availability
-     * zone. <p> Default: System chosen (random) availability zone.
+     * <p> All cache nodes belonging to a cache cluster are placed in the
+     * preferred availability zone. <p> Default: System chosen (random)
+     * availability zone.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param preferredAvailabilityZone The EC2 Availability Zone that the Cache Cluster will be created in.
-     *         <p> In normal use, all CacheNodes belonging to a CacheCluster are
-     *         placed in the preferred availability zone. In rare circumstances, some
-     *         of the CacheNodes might temporarily be in a different availability
-     *         zone. <p> Default: System chosen (random) availability zone.
+     *         <p> All cache nodes belonging to a cache cluster are placed in the
+     *         preferred availability zone. <p> Default: System chosen (random)
+     *         availability zone.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -748,18 +928,20 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (cacheClusterId != null) sb.append("CacheClusterId: " + cacheClusterId + ", ");
-        if (numCacheNodes != null) sb.append("NumCacheNodes: " + numCacheNodes + ", ");
-        if (cacheNodeType != null) sb.append("CacheNodeType: " + cacheNodeType + ", ");
-        if (engine != null) sb.append("Engine: " + engine + ", ");
-        if (engineVersion != null) sb.append("EngineVersion: " + engineVersion + ", ");
-        if (cacheParameterGroupName != null) sb.append("CacheParameterGroupName: " + cacheParameterGroupName + ", ");
-        if (cacheSecurityGroupNames != null) sb.append("CacheSecurityGroupNames: " + cacheSecurityGroupNames + ", ");
-        if (preferredAvailabilityZone != null) sb.append("PreferredAvailabilityZone: " + preferredAvailabilityZone + ", ");
-        if (preferredMaintenanceWindow != null) sb.append("PreferredMaintenanceWindow: " + preferredMaintenanceWindow + ", ");
-        if (port != null) sb.append("Port: " + port + ", ");
-        if (notificationTopicArn != null) sb.append("NotificationTopicArn: " + notificationTopicArn + ", ");
-        if (autoMinorVersionUpgrade != null) sb.append("AutoMinorVersionUpgrade: " + autoMinorVersionUpgrade + ", ");
+        if (getCacheClusterId() != null) sb.append("CacheClusterId: " + getCacheClusterId() + ", ");
+        if (getNumCacheNodes() != null) sb.append("NumCacheNodes: " + getNumCacheNodes() + ", ");
+        if (getCacheNodeType() != null) sb.append("CacheNodeType: " + getCacheNodeType() + ", ");
+        if (getEngine() != null) sb.append("Engine: " + getEngine() + ", ");
+        if (getEngineVersion() != null) sb.append("EngineVersion: " + getEngineVersion() + ", ");
+        if (getCacheParameterGroupName() != null) sb.append("CacheParameterGroupName: " + getCacheParameterGroupName() + ", ");
+        if (getCacheSubnetGroupName() != null) sb.append("CacheSubnetGroupName: " + getCacheSubnetGroupName() + ", ");
+        if (getCacheSecurityGroupNames() != null) sb.append("CacheSecurityGroupNames: " + getCacheSecurityGroupNames() + ", ");
+        if (getSecurityGroupIds() != null) sb.append("SecurityGroupIds: " + getSecurityGroupIds() + ", ");
+        if (getPreferredAvailabilityZone() != null) sb.append("PreferredAvailabilityZone: " + getPreferredAvailabilityZone() + ", ");
+        if (getPreferredMaintenanceWindow() != null) sb.append("PreferredMaintenanceWindow: " + getPreferredMaintenanceWindow() + ", ");
+        if (getPort() != null) sb.append("Port: " + getPort() + ", ");
+        if (getNotificationTopicArn() != null) sb.append("NotificationTopicArn: " + getNotificationTopicArn() + ", ");
+        if (isAutoMinorVersionUpgrade() != null) sb.append("AutoMinorVersionUpgrade: " + isAutoMinorVersionUpgrade() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -775,7 +957,9 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest {
         hashCode = prime * hashCode + ((getEngine() == null) ? 0 : getEngine().hashCode()); 
         hashCode = prime * hashCode + ((getEngineVersion() == null) ? 0 : getEngineVersion().hashCode()); 
         hashCode = prime * hashCode + ((getCacheParameterGroupName() == null) ? 0 : getCacheParameterGroupName().hashCode()); 
+        hashCode = prime * hashCode + ((getCacheSubnetGroupName() == null) ? 0 : getCacheSubnetGroupName().hashCode()); 
         hashCode = prime * hashCode + ((getCacheSecurityGroupNames() == null) ? 0 : getCacheSecurityGroupNames().hashCode()); 
+        hashCode = prime * hashCode + ((getSecurityGroupIds() == null) ? 0 : getSecurityGroupIds().hashCode()); 
         hashCode = prime * hashCode + ((getPreferredAvailabilityZone() == null) ? 0 : getPreferredAvailabilityZone().hashCode()); 
         hashCode = prime * hashCode + ((getPreferredMaintenanceWindow() == null) ? 0 : getPreferredMaintenanceWindow().hashCode()); 
         hashCode = prime * hashCode + ((getPort() == null) ? 0 : getPort().hashCode()); 
@@ -788,7 +972,7 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof CreateCacheClusterRequest == false) return false;
         CreateCacheClusterRequest other = (CreateCacheClusterRequest)obj;
         
@@ -804,8 +988,12 @@ public class CreateCacheClusterRequest extends AmazonWebServiceRequest {
         if (other.getEngineVersion() != null && other.getEngineVersion().equals(this.getEngineVersion()) == false) return false; 
         if (other.getCacheParameterGroupName() == null ^ this.getCacheParameterGroupName() == null) return false;
         if (other.getCacheParameterGroupName() != null && other.getCacheParameterGroupName().equals(this.getCacheParameterGroupName()) == false) return false; 
+        if (other.getCacheSubnetGroupName() == null ^ this.getCacheSubnetGroupName() == null) return false;
+        if (other.getCacheSubnetGroupName() != null && other.getCacheSubnetGroupName().equals(this.getCacheSubnetGroupName()) == false) return false; 
         if (other.getCacheSecurityGroupNames() == null ^ this.getCacheSecurityGroupNames() == null) return false;
         if (other.getCacheSecurityGroupNames() != null && other.getCacheSecurityGroupNames().equals(this.getCacheSecurityGroupNames()) == false) return false; 
+        if (other.getSecurityGroupIds() == null ^ this.getSecurityGroupIds() == null) return false;
+        if (other.getSecurityGroupIds() != null && other.getSecurityGroupIds().equals(this.getSecurityGroupIds()) == false) return false; 
         if (other.getPreferredAvailabilityZone() == null ^ this.getPreferredAvailabilityZone() == null) return false;
         if (other.getPreferredAvailabilityZone() != null && other.getPreferredAvailabilityZone().equals(this.getPreferredAvailabilityZone()) == false) return false; 
         if (other.getPreferredMaintenanceWindow() == null ^ this.getPreferredMaintenanceWindow() == null) return false;

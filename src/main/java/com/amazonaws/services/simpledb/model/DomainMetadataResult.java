@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -311,13 +311,13 @@ public class DomainMetadataResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (itemCount != null) sb.append("ItemCount: " + itemCount + ", ");
-        if (itemNamesSizeBytes != null) sb.append("ItemNamesSizeBytes: " + itemNamesSizeBytes + ", ");
-        if (attributeNameCount != null) sb.append("AttributeNameCount: " + attributeNameCount + ", ");
-        if (attributeNamesSizeBytes != null) sb.append("AttributeNamesSizeBytes: " + attributeNamesSizeBytes + ", ");
-        if (attributeValueCount != null) sb.append("AttributeValueCount: " + attributeValueCount + ", ");
-        if (attributeValuesSizeBytes != null) sb.append("AttributeValuesSizeBytes: " + attributeValuesSizeBytes + ", ");
-        if (timestamp != null) sb.append("Timestamp: " + timestamp + ", ");
+        if (getItemCount() != null) sb.append("ItemCount: " + getItemCount() + ", ");
+        if (getItemNamesSizeBytes() != null) sb.append("ItemNamesSizeBytes: " + getItemNamesSizeBytes() + ", ");
+        if (getAttributeNameCount() != null) sb.append("AttributeNameCount: " + getAttributeNameCount() + ", ");
+        if (getAttributeNamesSizeBytes() != null) sb.append("AttributeNamesSizeBytes: " + getAttributeNamesSizeBytes() + ", ");
+        if (getAttributeValueCount() != null) sb.append("AttributeValueCount: " + getAttributeValueCount() + ", ");
+        if (getAttributeValuesSizeBytes() != null) sb.append("AttributeValuesSizeBytes: " + getAttributeValuesSizeBytes() + ", ");
+        if (getTimestamp() != null) sb.append("Timestamp: " + getTimestamp() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -341,7 +341,7 @@ public class DomainMetadataResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DomainMetadataResult == false) return false;
         DomainMetadataResult other = (DomainMetadataResult)obj;
         

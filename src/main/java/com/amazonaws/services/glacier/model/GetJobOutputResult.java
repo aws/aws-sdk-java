@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -460,13 +460,13 @@ public class GetJobOutputResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (body != null) sb.append("Body: " + body + ", ");
-        if (checksum != null) sb.append("Checksum: " + checksum + ", ");
-        if (status != null) sb.append("Status: " + status + ", ");
-        if (contentRange != null) sb.append("ContentRange: " + contentRange + ", ");
-        if (acceptRanges != null) sb.append("AcceptRanges: " + acceptRanges + ", ");
-        if (contentType != null) sb.append("ContentType: " + contentType + ", ");
-        if (archiveDescription != null) sb.append("ArchiveDescription: " + archiveDescription + ", ");
+        if (getBody() != null) sb.append("Body: " + getBody() + ", ");
+        if (getChecksum() != null) sb.append("Checksum: " + getChecksum() + ", ");
+        if (getStatus() != null) sb.append("Status: " + getStatus() + ", ");
+        if (getContentRange() != null) sb.append("ContentRange: " + getContentRange() + ", ");
+        if (getAcceptRanges() != null) sb.append("AcceptRanges: " + getAcceptRanges() + ", ");
+        if (getContentType() != null) sb.append("ContentType: " + getContentType() + ", ");
+        if (getArchiveDescription() != null) sb.append("ArchiveDescription: " + getArchiveDescription() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -490,7 +490,7 @@ public class GetJobOutputResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof GetJobOutputResult == false) return false;
         GetJobOutputResult other = (GetJobOutputResult)obj;
         

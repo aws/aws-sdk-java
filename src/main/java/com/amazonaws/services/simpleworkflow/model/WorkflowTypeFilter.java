@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -135,8 +135,8 @@ public class WorkflowTypeFilter {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (name != null) sb.append("Name: " + name + ", ");
-        if (version != null) sb.append("Version: " + version + ", ");
+        if (getName() != null) sb.append("Name: " + getName() + ", ");
+        if (getVersion() != null) sb.append("Version: " + getVersion() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -155,7 +155,7 @@ public class WorkflowTypeFilter {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof WorkflowTypeFilter == false) return false;
         WorkflowTypeFilter other = (WorkflowTypeFilter)obj;
         

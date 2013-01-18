@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -296,9 +296,9 @@ public class InitiateJobRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (accountId != null) sb.append("AccountId: " + accountId + ", ");
-        if (vaultName != null) sb.append("VaultName: " + vaultName + ", ");
-        if (jobParameters != null) sb.append("JobParameters: " + jobParameters + ", ");
+        if (getAccountId() != null) sb.append("AccountId: " + getAccountId() + ", ");
+        if (getVaultName() != null) sb.append("VaultName: " + getVaultName() + ", ");
+        if (getJobParameters() != null) sb.append("JobParameters: " + getJobParameters() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -318,7 +318,7 @@ public class InitiateJobRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof InitiateJobRequest == false) return false;
         InitiateJobRequest other = (InitiateJobRequest)obj;
         

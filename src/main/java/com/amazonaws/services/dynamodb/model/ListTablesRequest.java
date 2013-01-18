@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -164,8 +164,8 @@ public class ListTablesRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (exclusiveStartTableName != null) sb.append("ExclusiveStartTableName: " + exclusiveStartTableName + ", ");
-        if (limit != null) sb.append("Limit: " + limit + ", ");
+        if (getExclusiveStartTableName() != null) sb.append("ExclusiveStartTableName: " + getExclusiveStartTableName() + ", ");
+        if (getLimit() != null) sb.append("Limit: " + getLimit() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -184,7 +184,7 @@ public class ListTablesRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof ListTablesRequest == false) return false;
         ListTablesRequest other = (ListTablesRequest)obj;
         

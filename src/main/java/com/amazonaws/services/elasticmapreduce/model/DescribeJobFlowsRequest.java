@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -303,10 +303,10 @@ public class DescribeJobFlowsRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (createdAfter != null) sb.append("CreatedAfter: " + createdAfter + ", ");
-        if (createdBefore != null) sb.append("CreatedBefore: " + createdBefore + ", ");
-        if (jobFlowIds != null) sb.append("JobFlowIds: " + jobFlowIds + ", ");
-        if (jobFlowStates != null) sb.append("JobFlowStates: " + jobFlowStates + ", ");
+        if (getCreatedAfter() != null) sb.append("CreatedAfter: " + getCreatedAfter() + ", ");
+        if (getCreatedBefore() != null) sb.append("CreatedBefore: " + getCreatedBefore() + ", ");
+        if (getJobFlowIds() != null) sb.append("JobFlowIds: " + getJobFlowIds() + ", ");
+        if (getJobFlowStates() != null) sb.append("JobFlowStates: " + getJobFlowStates() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -327,7 +327,7 @@ public class DescribeJobFlowsRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DescribeJobFlowsRequest == false) return false;
         DescribeJobFlowsRequest other = (DescribeJobFlowsRequest)obj;
         

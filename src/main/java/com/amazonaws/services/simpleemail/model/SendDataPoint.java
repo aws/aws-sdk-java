@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -228,11 +228,11 @@ public class SendDataPoint {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (timestamp != null) sb.append("Timestamp: " + timestamp + ", ");
-        if (deliveryAttempts != null) sb.append("DeliveryAttempts: " + deliveryAttempts + ", ");
-        if (bounces != null) sb.append("Bounces: " + bounces + ", ");
-        if (complaints != null) sb.append("Complaints: " + complaints + ", ");
-        if (rejects != null) sb.append("Rejects: " + rejects + ", ");
+        if (getTimestamp() != null) sb.append("Timestamp: " + getTimestamp() + ", ");
+        if (getDeliveryAttempts() != null) sb.append("DeliveryAttempts: " + getDeliveryAttempts() + ", ");
+        if (getBounces() != null) sb.append("Bounces: " + getBounces() + ", ");
+        if (getComplaints() != null) sb.append("Complaints: " + getComplaints() + ", ");
+        if (getRejects() != null) sb.append("Rejects: " + getRejects() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -254,7 +254,7 @@ public class SendDataPoint {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof SendDataPoint == false) return false;
         SendDataPoint other = (SendDataPoint)obj;
         

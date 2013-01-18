@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -41,9 +41,9 @@ public class UploadMultipartPartRequestMarshaller implements Marshaller<Request<
     
 
     public Request<UploadMultipartPartRequest> marshall(UploadMultipartPartRequest uploadMultipartPartRequest) {
-		if (uploadMultipartPartRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+    if (uploadMultipartPartRequest == null) {
+        throw new AmazonClientException("Invalid argument passed to marshall(...)");
+    }
 
         Request<UploadMultipartPartRequest> request = new DefaultRequest<UploadMultipartPartRequest>(uploadMultipartPartRequest, "AmazonGlacier");
         String target = "Glacier.UploadMultipartPart";
@@ -53,10 +53,10 @@ public class UploadMultipartPartRequestMarshaller implements Marshaller<Request<
         
         request.setHttpMethod(HttpMethodName.PUT);
         if (uploadMultipartPartRequest.getChecksum() != null)
-        	request.addHeader("x-amz-sha256-tree-hash", StringUtils.fromString(uploadMultipartPartRequest.getChecksum()));
+          request.addHeader("x-amz-sha256-tree-hash", StringUtils.fromString(uploadMultipartPartRequest.getChecksum()));
         
         if (uploadMultipartPartRequest.getRange() != null)
-        	request.addHeader("Content-Range", StringUtils.fromString(uploadMultipartPartRequest.getRange()));
+          request.addHeader("Content-Range", StringUtils.fromString(uploadMultipartPartRequest.getRange()));
         
 
 
@@ -64,7 +64,7 @@ public class UploadMultipartPartRequestMarshaller implements Marshaller<Request<
         uriResourcePath = uriResourcePath.replace("{accountId}", getString(uploadMultipartPartRequest.getAccountId())); 
         uriResourcePath = uriResourcePath.replace("{vaultName}", getString(uploadMultipartPartRequest.getVaultName())); 
         uriResourcePath = uriResourcePath.replace("{uploadId}", getString(uploadMultipartPartRequest.getUploadId())); 
-        
+
         uriResourcePath = uriResourcePath.replaceAll("//", "/");
 
         if (uriResourcePath.contains("?")) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -41,9 +41,9 @@ public class AbortMultipartUploadRequestMarshaller implements Marshaller<Request
     
 
     public Request<AbortMultipartUploadRequest> marshall(AbortMultipartUploadRequest abortMultipartUploadRequest) {
-		if (abortMultipartUploadRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+    if (abortMultipartUploadRequest == null) {
+        throw new AmazonClientException("Invalid argument passed to marshall(...)");
+    }
 
         Request<AbortMultipartUploadRequest> request = new DefaultRequest<AbortMultipartUploadRequest>(abortMultipartUploadRequest, "AmazonGlacier");
         String target = "Glacier.AbortMultipartUpload";
@@ -58,7 +58,7 @@ public class AbortMultipartUploadRequestMarshaller implements Marshaller<Request
         uriResourcePath = uriResourcePath.replace("{accountId}", getString(abortMultipartUploadRequest.getAccountId())); 
         uriResourcePath = uriResourcePath.replace("{vaultName}", getString(abortMultipartUploadRequest.getVaultName())); 
         uriResourcePath = uriResourcePath.replace("{uploadId}", getString(abortMultipartUploadRequest.getUploadId())); 
-        
+
         uriResourcePath = uriResourcePath.replaceAll("//", "/");
 
         if (uriResourcePath.contains("?")) {

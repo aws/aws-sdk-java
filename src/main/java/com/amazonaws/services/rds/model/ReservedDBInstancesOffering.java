@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -473,16 +473,16 @@ public class ReservedDBInstancesOffering {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (reservedDBInstancesOfferingId != null) sb.append("ReservedDBInstancesOfferingId: " + reservedDBInstancesOfferingId + ", ");
-        if (dBInstanceClass != null) sb.append("DBInstanceClass: " + dBInstanceClass + ", ");
-        if (duration != null) sb.append("Duration: " + duration + ", ");
-        if (fixedPrice != null) sb.append("FixedPrice: " + fixedPrice + ", ");
-        if (usagePrice != null) sb.append("UsagePrice: " + usagePrice + ", ");
-        if (currencyCode != null) sb.append("CurrencyCode: " + currencyCode + ", ");
-        if (productDescription != null) sb.append("ProductDescription: " + productDescription + ", ");
-        if (offeringType != null) sb.append("OfferingType: " + offeringType + ", ");
-        if (multiAZ != null) sb.append("MultiAZ: " + multiAZ + ", ");
-        if (recurringCharges != null) sb.append("RecurringCharges: " + recurringCharges + ", ");
+        if (getReservedDBInstancesOfferingId() != null) sb.append("ReservedDBInstancesOfferingId: " + getReservedDBInstancesOfferingId() + ", ");
+        if (getDBInstanceClass() != null) sb.append("DBInstanceClass: " + getDBInstanceClass() + ", ");
+        if (getDuration() != null) sb.append("Duration: " + getDuration() + ", ");
+        if (getFixedPrice() != null) sb.append("FixedPrice: " + getFixedPrice() + ", ");
+        if (getUsagePrice() != null) sb.append("UsagePrice: " + getUsagePrice() + ", ");
+        if (getCurrencyCode() != null) sb.append("CurrencyCode: " + getCurrencyCode() + ", ");
+        if (getProductDescription() != null) sb.append("ProductDescription: " + getProductDescription() + ", ");
+        if (getOfferingType() != null) sb.append("OfferingType: " + getOfferingType() + ", ");
+        if (isMultiAZ() != null) sb.append("MultiAZ: " + isMultiAZ() + ", ");
+        if (getRecurringCharges() != null) sb.append("RecurringCharges: " + getRecurringCharges() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -509,7 +509,7 @@ public class ReservedDBInstancesOffering {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof ReservedDBInstancesOffering == false) return false;
         ReservedDBInstancesOffering other = (ReservedDBInstancesOffering)obj;
         

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -486,13 +486,13 @@ public class CountClosedWorkflowExecutionsRequest extends AmazonWebServiceReques
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (domain != null) sb.append("Domain: " + domain + ", ");
-        if (startTimeFilter != null) sb.append("StartTimeFilter: " + startTimeFilter + ", ");
-        if (closeTimeFilter != null) sb.append("CloseTimeFilter: " + closeTimeFilter + ", ");
-        if (executionFilter != null) sb.append("ExecutionFilter: " + executionFilter + ", ");
-        if (typeFilter != null) sb.append("TypeFilter: " + typeFilter + ", ");
-        if (tagFilter != null) sb.append("TagFilter: " + tagFilter + ", ");
-        if (closeStatusFilter != null) sb.append("CloseStatusFilter: " + closeStatusFilter + ", ");
+        if (getDomain() != null) sb.append("Domain: " + getDomain() + ", ");
+        if (getStartTimeFilter() != null) sb.append("StartTimeFilter: " + getStartTimeFilter() + ", ");
+        if (getCloseTimeFilter() != null) sb.append("CloseTimeFilter: " + getCloseTimeFilter() + ", ");
+        if (getExecutionFilter() != null) sb.append("ExecutionFilter: " + getExecutionFilter() + ", ");
+        if (getTypeFilter() != null) sb.append("TypeFilter: " + getTypeFilter() + ", ");
+        if (getTagFilter() != null) sb.append("TagFilter: " + getTagFilter() + ", ");
+        if (getCloseStatusFilter() != null) sb.append("CloseStatusFilter: " + getCloseStatusFilter() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -516,7 +516,7 @@ public class CountClosedWorkflowExecutionsRequest extends AmazonWebServiceReques
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof CountClosedWorkflowExecutionsRequest == false) return false;
         CountClosedWorkflowExecutionsRequest other = (CountClosedWorkflowExecutionsRequest)obj;
         

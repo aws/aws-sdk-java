@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,7 +12,6 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-package getting_started;
 
 import com.amazonaws.AmazonServiceException;
 
@@ -65,11 +64,11 @@ public class GettingStartedApp {
         try {
         	// Setup the helper object that will perform all of the API calls.
         	Requests requests = new Requests();
-        	
+
         	// Submit all of the requests.
         	requests.submitRequests();
-        	
-        	// Loop through all of the requests until all bids are in the active state 
+
+        	// Loop through all of the requests until all bids are in the active state
         	// (or at least not in the open state).
         	do
         	{
@@ -79,7 +78,7 @@ public class GettingStartedApp {
 
         	// Cancel all requests and terminate all running instances.
         	requests.cleanup();
-        	
+
         } catch (AmazonServiceException ase) {
     		// Write out any exceptions that may have occurred.
             System.out.println("Caught Exception: " + ase.getMessage());

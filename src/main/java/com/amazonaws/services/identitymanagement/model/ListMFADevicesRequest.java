@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -263,9 +263,9 @@ public class ListMFADevicesRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (userName != null) sb.append("UserName: " + userName + ", ");
-        if (marker != null) sb.append("Marker: " + marker + ", ");
-        if (maxItems != null) sb.append("MaxItems: " + maxItems + ", ");
+        if (getUserName() != null) sb.append("UserName: " + getUserName() + ", ");
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ", ");
+        if (getMaxItems() != null) sb.append("MaxItems: " + getMaxItems() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -285,7 +285,7 @@ public class ListMFADevicesRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof ListMFADevicesRequest == false) return false;
         ListMFADevicesRequest other = (ListMFADevicesRequest)obj;
         

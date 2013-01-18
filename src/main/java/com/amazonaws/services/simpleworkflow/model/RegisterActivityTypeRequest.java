@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -796,15 +796,15 @@ public class RegisterActivityTypeRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (domain != null) sb.append("Domain: " + domain + ", ");
-        if (name != null) sb.append("Name: " + name + ", ");
-        if (version != null) sb.append("Version: " + version + ", ");
-        if (description != null) sb.append("Description: " + description + ", ");
-        if (defaultTaskStartToCloseTimeout != null) sb.append("DefaultTaskStartToCloseTimeout: " + defaultTaskStartToCloseTimeout + ", ");
-        if (defaultTaskHeartbeatTimeout != null) sb.append("DefaultTaskHeartbeatTimeout: " + defaultTaskHeartbeatTimeout + ", ");
-        if (defaultTaskList != null) sb.append("DefaultTaskList: " + defaultTaskList + ", ");
-        if (defaultTaskScheduleToStartTimeout != null) sb.append("DefaultTaskScheduleToStartTimeout: " + defaultTaskScheduleToStartTimeout + ", ");
-        if (defaultTaskScheduleToCloseTimeout != null) sb.append("DefaultTaskScheduleToCloseTimeout: " + defaultTaskScheduleToCloseTimeout + ", ");
+        if (getDomain() != null) sb.append("Domain: " + getDomain() + ", ");
+        if (getName() != null) sb.append("Name: " + getName() + ", ");
+        if (getVersion() != null) sb.append("Version: " + getVersion() + ", ");
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ", ");
+        if (getDefaultTaskStartToCloseTimeout() != null) sb.append("DefaultTaskStartToCloseTimeout: " + getDefaultTaskStartToCloseTimeout() + ", ");
+        if (getDefaultTaskHeartbeatTimeout() != null) sb.append("DefaultTaskHeartbeatTimeout: " + getDefaultTaskHeartbeatTimeout() + ", ");
+        if (getDefaultTaskList() != null) sb.append("DefaultTaskList: " + getDefaultTaskList() + ", ");
+        if (getDefaultTaskScheduleToStartTimeout() != null) sb.append("DefaultTaskScheduleToStartTimeout: " + getDefaultTaskScheduleToStartTimeout() + ", ");
+        if (getDefaultTaskScheduleToCloseTimeout() != null) sb.append("DefaultTaskScheduleToCloseTimeout: " + getDefaultTaskScheduleToCloseTimeout() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -830,7 +830,7 @@ public class RegisterActivityTypeRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof RegisterActivityTypeRequest == false) return false;
         RegisterActivityTypeRequest other = (RegisterActivityTypeRequest)obj;
         

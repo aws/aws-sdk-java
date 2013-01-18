@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -259,9 +259,9 @@ public class DescribeAutoScalingInstancesRequest extends AmazonWebServiceRequest
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (instanceIds != null) sb.append("InstanceIds: " + instanceIds + ", ");
-        if (maxRecords != null) sb.append("MaxRecords: " + maxRecords + ", ");
-        if (nextToken != null) sb.append("NextToken: " + nextToken + ", ");
+        if (getInstanceIds() != null) sb.append("InstanceIds: " + getInstanceIds() + ", ");
+        if (getMaxRecords() != null) sb.append("MaxRecords: " + getMaxRecords() + ", ");
+        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -281,7 +281,7 @@ public class DescribeAutoScalingInstancesRequest extends AmazonWebServiceRequest
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DescribeAutoScalingInstancesRequest == false) return false;
         DescribeAutoScalingInstancesRequest other = (DescribeAutoScalingInstancesRequest)obj;
         

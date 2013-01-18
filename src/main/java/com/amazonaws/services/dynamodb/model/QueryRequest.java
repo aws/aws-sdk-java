@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -728,15 +728,15 @@ public class QueryRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (tableName != null) sb.append("TableName: " + tableName + ", ");
-        if (attributesToGet != null) sb.append("AttributesToGet: " + attributesToGet + ", ");
-        if (limit != null) sb.append("Limit: " + limit + ", ");
-        if (consistentRead != null) sb.append("ConsistentRead: " + consistentRead + ", ");
-        if (count != null) sb.append("Count: " + count + ", ");
-        if (hashKeyValue != null) sb.append("HashKeyValue: " + hashKeyValue + ", ");
-        if (rangeKeyCondition != null) sb.append("RangeKeyCondition: " + rangeKeyCondition + ", ");
-        if (scanIndexForward != null) sb.append("ScanIndexForward: " + scanIndexForward + ", ");
-        if (exclusiveStartKey != null) sb.append("ExclusiveStartKey: " + exclusiveStartKey + ", ");
+        if (getTableName() != null) sb.append("TableName: " + getTableName() + ", ");
+        if (getAttributesToGet() != null) sb.append("AttributesToGet: " + getAttributesToGet() + ", ");
+        if (getLimit() != null) sb.append("Limit: " + getLimit() + ", ");
+        if (isConsistentRead() != null) sb.append("ConsistentRead: " + isConsistentRead() + ", ");
+        if (isCount() != null) sb.append("Count: " + isCount() + ", ");
+        if (getHashKeyValue() != null) sb.append("HashKeyValue: " + getHashKeyValue() + ", ");
+        if (getRangeKeyCondition() != null) sb.append("RangeKeyCondition: " + getRangeKeyCondition() + ", ");
+        if (isScanIndexForward() != null) sb.append("ScanIndexForward: " + isScanIndexForward() + ", ");
+        if (getExclusiveStartKey() != null) sb.append("ExclusiveStartKey: " + getExclusiveStartKey() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -762,7 +762,7 @@ public class QueryRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof QueryRequest == false) return false;
         QueryRequest other = (QueryRequest)obj;
         

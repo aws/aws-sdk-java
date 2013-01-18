@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -262,10 +262,10 @@ public class ChapInfo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (targetARN != null) sb.append("TargetARN: " + targetARN + ", ");
-        if (secretToAuthenticateInitiator != null) sb.append("SecretToAuthenticateInitiator: " + secretToAuthenticateInitiator + ", ");
-        if (initiatorName != null) sb.append("InitiatorName: " + initiatorName + ", ");
-        if (secretToAuthenticateTarget != null) sb.append("SecretToAuthenticateTarget: " + secretToAuthenticateTarget + ", ");
+        if (getTargetARN() != null) sb.append("TargetARN: " + getTargetARN() + ", ");
+        if (getSecretToAuthenticateInitiator() != null) sb.append("SecretToAuthenticateInitiator: " + getSecretToAuthenticateInitiator() + ", ");
+        if (getInitiatorName() != null) sb.append("InitiatorName: " + getInitiatorName() + ", ");
+        if (getSecretToAuthenticateTarget() != null) sb.append("SecretToAuthenticateTarget: " + getSecretToAuthenticateTarget() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -286,7 +286,7 @@ public class ChapInfo {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof ChapInfo == false) return false;
         ChapInfo other = (ChapInfo)obj;
         

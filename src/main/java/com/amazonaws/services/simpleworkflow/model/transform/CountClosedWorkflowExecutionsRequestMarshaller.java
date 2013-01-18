@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -41,9 +41,9 @@ public class CountClosedWorkflowExecutionsRequestMarshaller implements Marshalle
     
 
     public Request<CountClosedWorkflowExecutionsRequest> marshall(CountClosedWorkflowExecutionsRequest countClosedWorkflowExecutionsRequest) {
-		if (countClosedWorkflowExecutionsRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+    if (countClosedWorkflowExecutionsRequest == null) {
+        throw new AmazonClientException("Invalid argument passed to marshall(...)");
+    }
 
         Request<CountClosedWorkflowExecutionsRequest> request = new DefaultRequest<CountClosedWorkflowExecutionsRequest>(countClosedWorkflowExecutionsRequest, "AmazonSimpleWorkflow");
         String target = "SimpleWorkflowService.CountClosedWorkflowExecutions";
@@ -55,7 +55,7 @@ public class CountClosedWorkflowExecutionsRequestMarshaller implements Marshalle
 
 
         String uriResourcePath = ""; 
-        
+
         uriResourcePath = uriResourcePath.replaceAll("//", "/");
 
         if (uriResourcePath.contains("?")) {
@@ -77,13 +77,13 @@ public class CountClosedWorkflowExecutionsRequestMarshaller implements Marshalle
 
         
         try {
-        	StringWriter stringWriter = new StringWriter();
-        	JSONWriter jsonWriter = new JSONWriter(stringWriter);
+          StringWriter stringWriter = new StringWriter();
+          JSONWriter jsonWriter = new JSONWriter(stringWriter);
 
-        	
+          
             
-        	jsonWriter.object();
-        	
+          jsonWriter.object();
+          
             if (countClosedWorkflowExecutionsRequest.getDomain() != null) {
                 jsonWriter.key("domain").value(countClosedWorkflowExecutionsRequest.getDomain());
             }
@@ -163,13 +163,13 @@ public class CountClosedWorkflowExecutionsRequestMarshaller implements Marshalle
                 jsonWriter.endObject();
             }
 
-    	    jsonWriter.endObject();
-        	
+          jsonWriter.endObject();
+          
 
-    	    String snippet = stringWriter.toString();
-    	    byte[] content = snippet.getBytes("UTF-8");
-        	request.setContent(new StringInputStream(snippet));
-	        request.addHeader("Content-Length", Integer.toString(content.length));
+          String snippet = stringWriter.toString();
+          byte[] content = snippet.getBytes("UTF-8");
+          request.setContent(new StringInputStream(snippet));
+          request.addHeader("Content-Length", Integer.toString(content.length));
         } catch(Throwable t) {
           throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }

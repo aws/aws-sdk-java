@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -267,10 +267,10 @@ public class Origin {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (id != null) sb.append("Id: " + id + ", ");
-        if (domainName != null) sb.append("DomainName: " + domainName + ", ");
-        if (s3OriginConfig != null) sb.append("S3OriginConfig: " + s3OriginConfig + ", ");
-        if (customOriginConfig != null) sb.append("CustomOriginConfig: " + customOriginConfig + ", ");
+        if (getId() != null) sb.append("Id: " + getId() + ", ");
+        if (getDomainName() != null) sb.append("DomainName: " + getDomainName() + ", ");
+        if (getS3OriginConfig() != null) sb.append("S3OriginConfig: " + getS3OriginConfig() + ", ");
+        if (getCustomOriginConfig() != null) sb.append("CustomOriginConfig: " + getCustomOriginConfig() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -291,7 +291,7 @@ public class Origin {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof Origin == false) return false;
         Origin other = (Origin)obj;
         

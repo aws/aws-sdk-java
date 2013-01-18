@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -398,8 +398,8 @@ public class NamedRankExpression {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (rankName != null) sb.append("RankName: " + rankName + ", ");
-        if (rankExpression != null) sb.append("RankExpression: " + rankExpression + ", ");
+        if (getRankName() != null) sb.append("RankName: " + getRankName() + ", ");
+        if (getRankExpression() != null) sb.append("RankExpression: " + getRankExpression() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -418,7 +418,7 @@ public class NamedRankExpression {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof NamedRankExpression == false) return false;
         NamedRankExpression other = (NamedRankExpression)obj;
         

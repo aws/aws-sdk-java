@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -128,8 +128,8 @@ public class DescribeActivityTypeRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (domain != null) sb.append("Domain: " + domain + ", ");
-        if (activityType != null) sb.append("ActivityType: " + activityType + ", ");
+        if (getDomain() != null) sb.append("Domain: " + getDomain() + ", ");
+        if (getActivityType() != null) sb.append("ActivityType: " + getActivityType() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -148,7 +148,7 @@ public class DescribeActivityTypeRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DescribeActivityTypeRequest == false) return false;
         DescribeActivityTypeRequest other = (DescribeActivityTypeRequest)obj;
         

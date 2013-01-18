@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,7 +12,6 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-package advanced;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -69,28 +68,28 @@ public class GettingStartedApp {
         try {
         	// Setup the helper object that will perform all of the API calls.
         	Requests requests = new Requests("t1.micro","ami-8c1fece5","0.03","GettingStartedGroup");
-        	
+
         	// Submit all of the requests.
         	requests.submitRequests();
-        	
+
         	// Create the list of tags we want to create and tag any associated requests.
         	ArrayList<Tag> tags = new ArrayList<Tag>();
         	tags.add(new Tag("keyname1","value1"));
         	requests.tagRequests(tags);
 
         	// Initialize the timer to now.
-    	    Calendar startTimer = Calendar.getInstance(); 
+    	    Calendar startTimer = Calendar.getInstance();
     	    Calendar nowTimer = null;
-    	    
-        	// Loop through all of the requests until all bids are in the active state 
+
+        	// Loop through all of the requests until all bids are in the active state
         	// (or at least not in the open state).
         	do
         	{
 	        	// Sleep for 60 seconds.
 	        	Thread.sleep(SLEEP_CYCLE);
-	        	
-		    	// Initialize the timer to now, and then subtract 15 minutes, so we can 
-		    	// compare to see if we have exceeded 15 minutes compared to the startTime. 
+
+		    	// Initialize the timer to now, and then subtract 15 minutes, so we can
+		    	// compare to see if we have exceeded 15 minutes compared to the startTime.
 		    	nowTimer = Calendar.getInstance();
 		    	nowTimer.add(Calendar.MINUTE, -15);
 	    	} while (requests.areAnyOpen() && !nowTimer.after(startTimer));
@@ -100,14 +99,14 @@ public class GettingStartedApp {
     	    if (nowTimer.after(startTimer)) {
     	    	// Cancel all requests because we timed out.
             	requests.cleanup();
-            	
+
             	// Launch On-Demand instances instead
     	    	requests.launchOnDemand();
     	    }
 
         	// Tag any created instances.
         	requests.tagInstances(tags);
-    	    
+
     	    // Cancel all requests and terminate all running instances.
         	requests.cleanup();
         } catch (AmazonServiceException ase) {

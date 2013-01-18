@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -134,8 +134,8 @@ public class GetQueueUrlRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (queueName != null) sb.append("QueueName: " + queueName + ", ");
-        if (queueOwnerAWSAccountId != null) sb.append("QueueOwnerAWSAccountId: " + queueOwnerAWSAccountId + ", ");
+        if (getQueueName() != null) sb.append("QueueName: " + getQueueName() + ", ");
+        if (getQueueOwnerAWSAccountId() != null) sb.append("QueueOwnerAWSAccountId: " + getQueueOwnerAWSAccountId() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -154,7 +154,7 @@ public class GetQueueUrlRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof GetQueueUrlRequest == false) return false;
         GetQueueUrlRequest other = (GetQueueUrlRequest)obj;
         

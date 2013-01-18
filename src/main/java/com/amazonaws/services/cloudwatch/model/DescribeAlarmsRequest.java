@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -424,12 +424,12 @@ public class DescribeAlarmsRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (alarmNames != null) sb.append("AlarmNames: " + alarmNames + ", ");
-        if (alarmNamePrefix != null) sb.append("AlarmNamePrefix: " + alarmNamePrefix + ", ");
-        if (stateValue != null) sb.append("StateValue: " + stateValue + ", ");
-        if (actionPrefix != null) sb.append("ActionPrefix: " + actionPrefix + ", ");
-        if (maxRecords != null) sb.append("MaxRecords: " + maxRecords + ", ");
-        if (nextToken != null) sb.append("NextToken: " + nextToken + ", ");
+        if (getAlarmNames() != null) sb.append("AlarmNames: " + getAlarmNames() + ", ");
+        if (getAlarmNamePrefix() != null) sb.append("AlarmNamePrefix: " + getAlarmNamePrefix() + ", ");
+        if (getStateValue() != null) sb.append("StateValue: " + getStateValue() + ", ");
+        if (getActionPrefix() != null) sb.append("ActionPrefix: " + getActionPrefix() + ", ");
+        if (getMaxRecords() != null) sb.append("MaxRecords: " + getMaxRecords() + ", ");
+        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -452,7 +452,7 @@ public class DescribeAlarmsRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DescribeAlarmsRequest == false) return false;
         DescribeAlarmsRequest other = (DescribeAlarmsRequest)obj;
         

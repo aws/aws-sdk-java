@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -404,14 +404,14 @@ public class PendingModifiedValues {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (dBInstanceClass != null) sb.append("DBInstanceClass: " + dBInstanceClass + ", ");
-        if (allocatedStorage != null) sb.append("AllocatedStorage: " + allocatedStorage + ", ");
-        if (masterUserPassword != null) sb.append("MasterUserPassword: " + masterUserPassword + ", ");
-        if (port != null) sb.append("Port: " + port + ", ");
-        if (backupRetentionPeriod != null) sb.append("BackupRetentionPeriod: " + backupRetentionPeriod + ", ");
-        if (multiAZ != null) sb.append("MultiAZ: " + multiAZ + ", ");
-        if (engineVersion != null) sb.append("EngineVersion: " + engineVersion + ", ");
-        if (iops != null) sb.append("Iops: " + iops + ", ");
+        if (getDBInstanceClass() != null) sb.append("DBInstanceClass: " + getDBInstanceClass() + ", ");
+        if (getAllocatedStorage() != null) sb.append("AllocatedStorage: " + getAllocatedStorage() + ", ");
+        if (getMasterUserPassword() != null) sb.append("MasterUserPassword: " + getMasterUserPassword() + ", ");
+        if (getPort() != null) sb.append("Port: " + getPort() + ", ");
+        if (getBackupRetentionPeriod() != null) sb.append("BackupRetentionPeriod: " + getBackupRetentionPeriod() + ", ");
+        if (isMultiAZ() != null) sb.append("MultiAZ: " + isMultiAZ() + ", ");
+        if (getEngineVersion() != null) sb.append("EngineVersion: " + getEngineVersion() + ", ");
+        if (getIops() != null) sb.append("Iops: " + getIops() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -436,7 +436,7 @@ public class PendingModifiedValues {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof PendingModifiedValues == false) return false;
         PendingModifiedValues other = (PendingModifiedValues)obj;
         

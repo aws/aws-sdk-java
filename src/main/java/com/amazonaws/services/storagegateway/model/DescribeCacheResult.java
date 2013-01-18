@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -468,13 +468,13 @@ public class DescribeCacheResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (gatewayARN != null) sb.append("GatewayARN: " + gatewayARN + ", ");
-        if (diskIds != null) sb.append("DiskIds: " + diskIds + ", ");
-        if (cacheAllocatedInBytes != null) sb.append("CacheAllocatedInBytes: " + cacheAllocatedInBytes + ", ");
-        if (cacheUsedPercentage != null) sb.append("CacheUsedPercentage: " + cacheUsedPercentage + ", ");
-        if (cacheDirtyPercentage != null) sb.append("CacheDirtyPercentage: " + cacheDirtyPercentage + ", ");
-        if (cacheHitPercentage != null) sb.append("CacheHitPercentage: " + cacheHitPercentage + ", ");
-        if (cacheMissPercentage != null) sb.append("CacheMissPercentage: " + cacheMissPercentage + ", ");
+        if (getGatewayARN() != null) sb.append("GatewayARN: " + getGatewayARN() + ", ");
+        if (getDiskIds() != null) sb.append("DiskIds: " + getDiskIds() + ", ");
+        if (getCacheAllocatedInBytes() != null) sb.append("CacheAllocatedInBytes: " + getCacheAllocatedInBytes() + ", ");
+        if (getCacheUsedPercentage() != null) sb.append("CacheUsedPercentage: " + getCacheUsedPercentage() + ", ");
+        if (getCacheDirtyPercentage() != null) sb.append("CacheDirtyPercentage: " + getCacheDirtyPercentage() + ", ");
+        if (getCacheHitPercentage() != null) sb.append("CacheHitPercentage: " + getCacheHitPercentage() + ", ");
+        if (getCacheMissPercentage() != null) sb.append("CacheMissPercentage: " + getCacheMissPercentage() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -498,7 +498,7 @@ public class DescribeCacheResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DescribeCacheResult == false) return false;
         DescribeCacheResult other = (DescribeCacheResult)obj;
         

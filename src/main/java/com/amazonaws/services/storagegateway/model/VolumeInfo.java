@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -214,8 +214,8 @@ public class VolumeInfo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (volumeARN != null) sb.append("VolumeARN: " + volumeARN + ", ");
-        if (volumeType != null) sb.append("VolumeType: " + volumeType + ", ");
+        if (getVolumeARN() != null) sb.append("VolumeARN: " + getVolumeARN() + ", ");
+        if (getVolumeType() != null) sb.append("VolumeType: " + getVolumeType() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -234,7 +234,7 @@ public class VolumeInfo {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof VolumeInfo == false) return false;
         VolumeInfo other = (VolumeInfo)obj;
         

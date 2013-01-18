@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -49,6 +49,7 @@ public class UpdateItemResult {
     public java.util.Map<String,AttributeValue> getAttributes() {
         
         return attributes;
+
     }
     
     /**
@@ -165,8 +166,8 @@ public class UpdateItemResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (attributes != null) sb.append("Attributes: " + attributes + ", ");
-        if (consumedCapacityUnits != null) sb.append("ConsumedCapacityUnits: " + consumedCapacityUnits + ", ");
+        if (getAttributes() != null) sb.append("Attributes: " + getAttributes() + ", ");
+        if (getConsumedCapacityUnits() != null) sb.append("ConsumedCapacityUnits: " + getConsumedCapacityUnits() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -185,7 +186,7 @@ public class UpdateItemResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof UpdateItemResult == false) return false;
         UpdateItemResult other = (UpdateItemResult)obj;
         

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -251,9 +251,9 @@ public class ListInstanceProfilesForRoleResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (instanceProfiles != null) sb.append("InstanceProfiles: " + instanceProfiles + ", ");
-        if (isTruncated != null) sb.append("IsTruncated: " + isTruncated + ", ");
-        if (marker != null) sb.append("Marker: " + marker + ", ");
+        if (getInstanceProfiles() != null) sb.append("InstanceProfiles: " + getInstanceProfiles() + ", ");
+        if (isTruncated() != null) sb.append("IsTruncated: " + isTruncated() + ", ");
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -273,7 +273,7 @@ public class ListInstanceProfilesForRoleResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof ListInstanceProfilesForRoleResult == false) return false;
         ListInstanceProfilesForRoleResult other = (ListInstanceProfilesForRoleResult)obj;
         

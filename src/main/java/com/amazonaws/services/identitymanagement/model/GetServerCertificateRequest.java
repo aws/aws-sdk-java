@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -119,7 +119,7 @@ public class GetServerCertificateRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (serverCertificateName != null) sb.append("ServerCertificateName: " + serverCertificateName + ", ");
+        if (getServerCertificateName() != null) sb.append("ServerCertificateName: " + getServerCertificateName() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -137,7 +137,7 @@ public class GetServerCertificateRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof GetServerCertificateRequest == false) return false;
         GetServerCertificateRequest other = (GetServerCertificateRequest)obj;
         

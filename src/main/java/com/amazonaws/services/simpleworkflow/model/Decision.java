@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -769,19 +769,19 @@ public class Decision {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (decisionType != null) sb.append("DecisionType: " + decisionType + ", ");
-        if (scheduleActivityTaskDecisionAttributes != null) sb.append("ScheduleActivityTaskDecisionAttributes: " + scheduleActivityTaskDecisionAttributes + ", ");
-        if (requestCancelActivityTaskDecisionAttributes != null) sb.append("RequestCancelActivityTaskDecisionAttributes: " + requestCancelActivityTaskDecisionAttributes + ", ");
-        if (completeWorkflowExecutionDecisionAttributes != null) sb.append("CompleteWorkflowExecutionDecisionAttributes: " + completeWorkflowExecutionDecisionAttributes + ", ");
-        if (failWorkflowExecutionDecisionAttributes != null) sb.append("FailWorkflowExecutionDecisionAttributes: " + failWorkflowExecutionDecisionAttributes + ", ");
-        if (cancelWorkflowExecutionDecisionAttributes != null) sb.append("CancelWorkflowExecutionDecisionAttributes: " + cancelWorkflowExecutionDecisionAttributes + ", ");
-        if (continueAsNewWorkflowExecutionDecisionAttributes != null) sb.append("ContinueAsNewWorkflowExecutionDecisionAttributes: " + continueAsNewWorkflowExecutionDecisionAttributes + ", ");
-        if (recordMarkerDecisionAttributes != null) sb.append("RecordMarkerDecisionAttributes: " + recordMarkerDecisionAttributes + ", ");
-        if (startTimerDecisionAttributes != null) sb.append("StartTimerDecisionAttributes: " + startTimerDecisionAttributes + ", ");
-        if (cancelTimerDecisionAttributes != null) sb.append("CancelTimerDecisionAttributes: " + cancelTimerDecisionAttributes + ", ");
-        if (signalExternalWorkflowExecutionDecisionAttributes != null) sb.append("SignalExternalWorkflowExecutionDecisionAttributes: " + signalExternalWorkflowExecutionDecisionAttributes + ", ");
-        if (requestCancelExternalWorkflowExecutionDecisionAttributes != null) sb.append("RequestCancelExternalWorkflowExecutionDecisionAttributes: " + requestCancelExternalWorkflowExecutionDecisionAttributes + ", ");
-        if (startChildWorkflowExecutionDecisionAttributes != null) sb.append("StartChildWorkflowExecutionDecisionAttributes: " + startChildWorkflowExecutionDecisionAttributes + ", ");
+        if (getDecisionType() != null) sb.append("DecisionType: " + getDecisionType() + ", ");
+        if (getScheduleActivityTaskDecisionAttributes() != null) sb.append("ScheduleActivityTaskDecisionAttributes: " + getScheduleActivityTaskDecisionAttributes() + ", ");
+        if (getRequestCancelActivityTaskDecisionAttributes() != null) sb.append("RequestCancelActivityTaskDecisionAttributes: " + getRequestCancelActivityTaskDecisionAttributes() + ", ");
+        if (getCompleteWorkflowExecutionDecisionAttributes() != null) sb.append("CompleteWorkflowExecutionDecisionAttributes: " + getCompleteWorkflowExecutionDecisionAttributes() + ", ");
+        if (getFailWorkflowExecutionDecisionAttributes() != null) sb.append("FailWorkflowExecutionDecisionAttributes: " + getFailWorkflowExecutionDecisionAttributes() + ", ");
+        if (getCancelWorkflowExecutionDecisionAttributes() != null) sb.append("CancelWorkflowExecutionDecisionAttributes: " + getCancelWorkflowExecutionDecisionAttributes() + ", ");
+        if (getContinueAsNewWorkflowExecutionDecisionAttributes() != null) sb.append("ContinueAsNewWorkflowExecutionDecisionAttributes: " + getContinueAsNewWorkflowExecutionDecisionAttributes() + ", ");
+        if (getRecordMarkerDecisionAttributes() != null) sb.append("RecordMarkerDecisionAttributes: " + getRecordMarkerDecisionAttributes() + ", ");
+        if (getStartTimerDecisionAttributes() != null) sb.append("StartTimerDecisionAttributes: " + getStartTimerDecisionAttributes() + ", ");
+        if (getCancelTimerDecisionAttributes() != null) sb.append("CancelTimerDecisionAttributes: " + getCancelTimerDecisionAttributes() + ", ");
+        if (getSignalExternalWorkflowExecutionDecisionAttributes() != null) sb.append("SignalExternalWorkflowExecutionDecisionAttributes: " + getSignalExternalWorkflowExecutionDecisionAttributes() + ", ");
+        if (getRequestCancelExternalWorkflowExecutionDecisionAttributes() != null) sb.append("RequestCancelExternalWorkflowExecutionDecisionAttributes: " + getRequestCancelExternalWorkflowExecutionDecisionAttributes() + ", ");
+        if (getStartChildWorkflowExecutionDecisionAttributes() != null) sb.append("StartChildWorkflowExecutionDecisionAttributes: " + getStartChildWorkflowExecutionDecisionAttributes() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -811,7 +811,7 @@ public class Decision {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof Decision == false) return false;
         Decision other = (Decision)obj;
         

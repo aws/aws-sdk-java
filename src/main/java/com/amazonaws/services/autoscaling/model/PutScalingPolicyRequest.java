@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -418,12 +418,12 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (autoScalingGroupName != null) sb.append("AutoScalingGroupName: " + autoScalingGroupName + ", ");
-        if (policyName != null) sb.append("PolicyName: " + policyName + ", ");
-        if (scalingAdjustment != null) sb.append("ScalingAdjustment: " + scalingAdjustment + ", ");
-        if (adjustmentType != null) sb.append("AdjustmentType: " + adjustmentType + ", ");
-        if (cooldown != null) sb.append("Cooldown: " + cooldown + ", ");
-        if (minAdjustmentStep != null) sb.append("MinAdjustmentStep: " + minAdjustmentStep + ", ");
+        if (getAutoScalingGroupName() != null) sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ", ");
+        if (getPolicyName() != null) sb.append("PolicyName: " + getPolicyName() + ", ");
+        if (getScalingAdjustment() != null) sb.append("ScalingAdjustment: " + getScalingAdjustment() + ", ");
+        if (getAdjustmentType() != null) sb.append("AdjustmentType: " + getAdjustmentType() + ", ");
+        if (getCooldown() != null) sb.append("Cooldown: " + getCooldown() + ", ");
+        if (getMinAdjustmentStep() != null) sb.append("MinAdjustmentStep: " + getMinAdjustmentStep() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -446,7 +446,7 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof PutScalingPolicyRequest == false) return false;
         PutScalingPolicyRequest other = (PutScalingPolicyRequest)obj;
         

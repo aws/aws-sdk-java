@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -251,10 +251,10 @@ public class WorkflowExecutionOpenCounts {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (openActivityTasks != null) sb.append("OpenActivityTasks: " + openActivityTasks + ", ");
-        if (openDecisionTasks != null) sb.append("OpenDecisionTasks: " + openDecisionTasks + ", ");
-        if (openTimers != null) sb.append("OpenTimers: " + openTimers + ", ");
-        if (openChildWorkflowExecutions != null) sb.append("OpenChildWorkflowExecutions: " + openChildWorkflowExecutions + ", ");
+        if (getOpenActivityTasks() != null) sb.append("OpenActivityTasks: " + getOpenActivityTasks() + ", ");
+        if (getOpenDecisionTasks() != null) sb.append("OpenDecisionTasks: " + getOpenDecisionTasks() + ", ");
+        if (getOpenTimers() != null) sb.append("OpenTimers: " + getOpenTimers() + ", ");
+        if (getOpenChildWorkflowExecutions() != null) sb.append("OpenChildWorkflowExecutions: " + getOpenChildWorkflowExecutions() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -275,7 +275,7 @@ public class WorkflowExecutionOpenCounts {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof WorkflowExecutionOpenCounts == false) return false;
         WorkflowExecutionOpenCounts other = (WorkflowExecutionOpenCounts)obj;
         

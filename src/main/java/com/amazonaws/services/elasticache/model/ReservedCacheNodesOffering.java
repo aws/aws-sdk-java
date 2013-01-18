@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -380,14 +380,14 @@ public class ReservedCacheNodesOffering {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (reservedCacheNodesOfferingId != null) sb.append("ReservedCacheNodesOfferingId: " + reservedCacheNodesOfferingId + ", ");
-        if (cacheNodeType != null) sb.append("CacheNodeType: " + cacheNodeType + ", ");
-        if (duration != null) sb.append("Duration: " + duration + ", ");
-        if (fixedPrice != null) sb.append("FixedPrice: " + fixedPrice + ", ");
-        if (usagePrice != null) sb.append("UsagePrice: " + usagePrice + ", ");
-        if (productDescription != null) sb.append("ProductDescription: " + productDescription + ", ");
-        if (offeringType != null) sb.append("OfferingType: " + offeringType + ", ");
-        if (recurringCharges != null) sb.append("RecurringCharges: " + recurringCharges + ", ");
+        if (getReservedCacheNodesOfferingId() != null) sb.append("ReservedCacheNodesOfferingId: " + getReservedCacheNodesOfferingId() + ", ");
+        if (getCacheNodeType() != null) sb.append("CacheNodeType: " + getCacheNodeType() + ", ");
+        if (getDuration() != null) sb.append("Duration: " + getDuration() + ", ");
+        if (getFixedPrice() != null) sb.append("FixedPrice: " + getFixedPrice() + ", ");
+        if (getUsagePrice() != null) sb.append("UsagePrice: " + getUsagePrice() + ", ");
+        if (getProductDescription() != null) sb.append("ProductDescription: " + getProductDescription() + ", ");
+        if (getOfferingType() != null) sb.append("OfferingType: " + getOfferingType() + ", ");
+        if (getRecurringCharges() != null) sb.append("RecurringCharges: " + getRecurringCharges() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -412,7 +412,7 @@ public class ReservedCacheNodesOffering {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof ReservedCacheNodesOffering == false) return false;
         ReservedCacheNodesOffering other = (ReservedCacheNodesOffering)obj;
         

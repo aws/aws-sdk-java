@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -158,8 +158,8 @@ public class SolutionStackDescription {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (solutionStackName != null) sb.append("SolutionStackName: " + solutionStackName + ", ");
-        if (permittedFileTypes != null) sb.append("PermittedFileTypes: " + permittedFileTypes + ", ");
+        if (getSolutionStackName() != null) sb.append("SolutionStackName: " + getSolutionStackName() + ", ");
+        if (getPermittedFileTypes() != null) sb.append("PermittedFileTypes: " + getPermittedFileTypes() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -178,7 +178,7 @@ public class SolutionStackDescription {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof SolutionStackDescription == false) return false;
         SolutionStackDescription other = (SolutionStackDescription)obj;
         

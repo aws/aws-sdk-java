@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,7 +12,6 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-package getting_started;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,15 +34,15 @@ public class Requests {
     private AmazonEC2      ec2;
     private ArrayList<String> instanceIds;
     private ArrayList<String> spotInstanceRequestIds;
-    
+
     /**
      * Public constructor.
-     * @throws Exception 
+     * @throws Exception
      */
     public Requests () throws Exception {
         init();
     }
-    
+
     /**
      * The only information needed to create a client are security credentials
      * consisting of the AWS Access Key ID and Secret Access Key. All other
@@ -64,11 +63,11 @@ public class Requests {
 
     /**
      * The submit method will create 1 x one-time t1.micro request with a maximum bid
-     * price of $0.03 using the Amazon Linux AMI. 
-     * 
-     * Note the AMI id may change after the release of this code sample, and it is important 
-     * to use the latest. You can find the latest version by logging into the AWS Management 
-     * console, and attempting to perform a launch. You will be presented with AMI options, 
+     * price of $0.03 using the Amazon Linux AMI.
+     *
+     * Note the AMI id may change after the release of this code sample, and it is important
+     * to use the latest. You can find the latest version by logging into the AWS Management
+     * console, and attempting to perform a launch. You will be presented with AMI options,
      * one of which will be Amazon Linux. Simply use that AMI id.
      */
     public void submitRequests() {
@@ -78,35 +77,35 @@ public class Requests {
 
     	// Initializes a Spot Instance Request
     	RequestSpotInstancesRequest requestRequest = new RequestSpotInstancesRequest();
-   
-    	// Request 1 x t1.micro instance with a bid price of $0.03. 
+
+    	// Request 1 x t1.micro instance with a bid price of $0.03.
     	requestRequest.setSpotPrice("0.03");
     	requestRequest.setInstanceCount(Integer.valueOf(1));
-    	
+
     	// Setup the specifications of the launch. This includes the instance type (e.g. t1.micro)
-    	// and the latest Amazon Linux AMI id available. Note, you should always use the latest 
+    	// and the latest Amazon Linux AMI id available. Note, you should always use the latest
     	// Amazon Linux AMI id or another of your choosing.
     	LaunchSpecification launchSpecification = new LaunchSpecification();
     	launchSpecification.setImageId("ami-8c1fece5");
     	launchSpecification.setInstanceType("t1.micro");
-    	
+
     	// Add the security group to the request.
     	ArrayList<String> securityGroups = new ArrayList<String>();
     	securityGroups.add("GettingStartedGroup");
-    	launchSpecification.setSecurityGroups(securityGroups); 
+    	launchSpecification.setSecurityGroups(securityGroups);
 
     	// Add the launch specifications to the request.
     	requestRequest.setLaunchSpecification(launchSpecification);
-    	
-    	// Call the RequestSpotInstance API. 
-    	RequestSpotInstancesResult requestResult = ec2.requestSpotInstances(requestRequest);        	
+
+    	// Call the RequestSpotInstance API.
+    	RequestSpotInstancesResult requestResult = ec2.requestSpotInstances(requestRequest);
     	List<SpotInstanceRequest> requestResponses = requestResult.getSpotInstanceRequests();
-    	
+
     	// Setup an arraylist to collect all of the request ids we want to watch hit the running
     	// state.
     	spotInstanceRequestIds = new ArrayList<String>();
-    	
-    	// Add all of the request ids to the hashset, so we can determine when they hit the 
+
+    	// Add all of the request ids to the hashset, so we can determine when they hit the
     	// active state.
     	for (SpotInstanceRequest requestResponse : requestResponses) {
     		System.out.println("Created Spot Request: "+requestResponse.getSpotInstanceRequestId());
@@ -118,7 +117,7 @@ public class Requests {
     /**
      * The areOpen method will determine if any of the requests that were started are still
      * in the open state. If all of them have transitioned to either active, cancelled, or
-     * closed, then this will return false. 
+     * closed, then this will return false.
      * @return
      */
     public boolean areAnyOpen() {
@@ -127,32 +126,32 @@ public class Requests {
     	//==========================================================================//
 
     	// Create the describeRequest with tall of the request id to monitor (e.g. that we started).
-    	DescribeSpotInstanceRequestsRequest describeRequest = new DescribeSpotInstanceRequestsRequest();    	
+    	DescribeSpotInstanceRequestsRequest describeRequest = new DescribeSpotInstanceRequestsRequest();
     	describeRequest.setSpotInstanceRequestIds(spotInstanceRequestIds);
 
 		System.out.println("Checking to determine if Spot Bids have reached the active state...");
 
 		// Initialize variables.
 		instanceIds = new ArrayList<String>();
-		
+
 		try
 		{
-        	// Retrieve all of the requests we want to monitor. 
+        	// Retrieve all of the requests we want to monitor.
 			DescribeSpotInstanceRequestsResult describeResult = ec2.describeSpotInstanceRequests(describeRequest);
 			List<SpotInstanceRequest> describeResponses = describeResult.getSpotInstanceRequests();
 
         	// Look through each request and determine if they are all in the active state.
         	for (SpotInstanceRequest describeResponse : describeResponses) {
-        		System.out.println(" " +describeResponse.getSpotInstanceRequestId() + 
+        		System.out.println(" " +describeResponse.getSpotInstanceRequestId() +
         						   " is in the "+describeResponse.getState() + " state.");
-        		
+
         		// If the state is open, it hasn't changed since we attempted to request it.
         		// There is the potential for it to transition almost immediately to closed or
         		// cancelled so we compare against open instead of active.
         		if (describeResponse.getState().equals("open")) {
         			return true;
         		}
-        		
+
         		// Add the instance id to the list we will eventually terminate.
         		instanceIds.add(describeResponse.getInstanceId());
         	}
@@ -168,13 +167,13 @@ public class Requests {
 			// This prevents the scenario where there was blip on the wire.
 			return true;
         }
-		
-		return false; 	
+
+		return false;
     }
-    
+
     /**
      * The cleanup method will cancel and active requests and terminate any running instances
-     * that were created using this object. 
+     * that were created using this object.
      */
     public void cleanup () {
     	//==========================================================================//
@@ -193,7 +192,7 @@ public class Requests {
             System.out.println("Error Code: " + e.getErrorCode());
             System.out.println("Request ID: " + e.getRequestId());
         }
-    	
+
     	try {
         	// Terminate instances.
         	System.out.println("Terminate instances");
@@ -207,11 +206,11 @@ public class Requests {
             System.out.println("Error Code: " + e.getErrorCode());
             System.out.println("Request ID: " + e.getRequestId());
         }
-    	
+
     	// Delete all requests and instances that we have terminated.
     	instanceIds.clear();
     	spotInstanceRequestIds.clear();
     }
-    
+
 }
 

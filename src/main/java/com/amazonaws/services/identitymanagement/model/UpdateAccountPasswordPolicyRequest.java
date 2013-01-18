@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -327,12 +327,12 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest 
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (minimumPasswordLength != null) sb.append("MinimumPasswordLength: " + minimumPasswordLength + ", ");
-        if (requireSymbols != null) sb.append("RequireSymbols: " + requireSymbols + ", ");
-        if (requireNumbers != null) sb.append("RequireNumbers: " + requireNumbers + ", ");
-        if (requireUppercaseCharacters != null) sb.append("RequireUppercaseCharacters: " + requireUppercaseCharacters + ", ");
-        if (requireLowercaseCharacters != null) sb.append("RequireLowercaseCharacters: " + requireLowercaseCharacters + ", ");
-        if (allowUsersToChangePassword != null) sb.append("AllowUsersToChangePassword: " + allowUsersToChangePassword + ", ");
+        if (getMinimumPasswordLength() != null) sb.append("MinimumPasswordLength: " + getMinimumPasswordLength() + ", ");
+        if (isRequireSymbols() != null) sb.append("RequireSymbols: " + isRequireSymbols() + ", ");
+        if (isRequireNumbers() != null) sb.append("RequireNumbers: " + isRequireNumbers() + ", ");
+        if (isRequireUppercaseCharacters() != null) sb.append("RequireUppercaseCharacters: " + isRequireUppercaseCharacters() + ", ");
+        if (isRequireLowercaseCharacters() != null) sb.append("RequireLowercaseCharacters: " + isRequireLowercaseCharacters() + ", ");
+        if (isAllowUsersToChangePassword() != null) sb.append("AllowUsersToChangePassword: " + isAllowUsersToChangePassword() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -355,7 +355,7 @@ public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest 
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof UpdateAccountPasswordPolicyRequest == false) return false;
         UpdateAccountPasswordPolicyRequest other = (UpdateAccountPasswordPolicyRequest)obj;
         

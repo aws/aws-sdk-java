@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -294,10 +294,10 @@ public class EnableMFADeviceRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (userName != null) sb.append("UserName: " + userName + ", ");
-        if (serialNumber != null) sb.append("SerialNumber: " + serialNumber + ", ");
-        if (authenticationCode1 != null) sb.append("AuthenticationCode1: " + authenticationCode1 + ", ");
-        if (authenticationCode2 != null) sb.append("AuthenticationCode2: " + authenticationCode2 + ", ");
+        if (getUserName() != null) sb.append("UserName: " + getUserName() + ", ");
+        if (getSerialNumber() != null) sb.append("SerialNumber: " + getSerialNumber() + ", ");
+        if (getAuthenticationCode1() != null) sb.append("AuthenticationCode1: " + getAuthenticationCode1() + ", ");
+        if (getAuthenticationCode2() != null) sb.append("AuthenticationCode2: " + getAuthenticationCode2() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -318,7 +318,7 @@ public class EnableMFADeviceRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof EnableMFADeviceRequest == false) return false;
         EnableMFADeviceRequest other = (EnableMFADeviceRequest)obj;
         

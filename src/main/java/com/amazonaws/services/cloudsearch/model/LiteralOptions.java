@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -237,10 +237,10 @@ public class LiteralOptions {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (defaultValue != null) sb.append("DefaultValue: " + defaultValue + ", ");
-        if (searchEnabled != null) sb.append("SearchEnabled: " + searchEnabled + ", ");
-        if (facetEnabled != null) sb.append("FacetEnabled: " + facetEnabled + ", ");
-        if (resultEnabled != null) sb.append("ResultEnabled: " + resultEnabled + ", ");
+        if (getDefaultValue() != null) sb.append("DefaultValue: " + getDefaultValue() + ", ");
+        if (isSearchEnabled() != null) sb.append("SearchEnabled: " + isSearchEnabled() + ", ");
+        if (isFacetEnabled() != null) sb.append("FacetEnabled: " + isFacetEnabled() + ", ");
+        if (isResultEnabled() != null) sb.append("ResultEnabled: " + isResultEnabled() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -261,7 +261,7 @@ public class LiteralOptions {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof LiteralOptions == false) return false;
         LiteralOptions other = (LiteralOptions)obj;
         

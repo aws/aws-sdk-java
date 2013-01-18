@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -404,14 +404,14 @@ public class StackSummary {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (stackId != null) sb.append("StackId: " + stackId + ", ");
-        if (stackName != null) sb.append("StackName: " + stackName + ", ");
-        if (templateDescription != null) sb.append("TemplateDescription: " + templateDescription + ", ");
-        if (creationTime != null) sb.append("CreationTime: " + creationTime + ", ");
-        if (lastUpdatedTime != null) sb.append("LastUpdatedTime: " + lastUpdatedTime + ", ");
-        if (deletionTime != null) sb.append("DeletionTime: " + deletionTime + ", ");
-        if (stackStatus != null) sb.append("StackStatus: " + stackStatus + ", ");
-        if (stackStatusReason != null) sb.append("StackStatusReason: " + stackStatusReason + ", ");
+        if (getStackId() != null) sb.append("StackId: " + getStackId() + ", ");
+        if (getStackName() != null) sb.append("StackName: " + getStackName() + ", ");
+        if (getTemplateDescription() != null) sb.append("TemplateDescription: " + getTemplateDescription() + ", ");
+        if (getCreationTime() != null) sb.append("CreationTime: " + getCreationTime() + ", ");
+        if (getLastUpdatedTime() != null) sb.append("LastUpdatedTime: " + getLastUpdatedTime() + ", ");
+        if (getDeletionTime() != null) sb.append("DeletionTime: " + getDeletionTime() + ", ");
+        if (getStackStatus() != null) sb.append("StackStatus: " + getStackStatus() + ", ");
+        if (getStackStatusReason() != null) sb.append("StackStatusReason: " + getStackStatusReason() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -436,7 +436,7 @@ public class StackSummary {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof StackSummary == false) return false;
         StackSummary other = (StackSummary)obj;
         

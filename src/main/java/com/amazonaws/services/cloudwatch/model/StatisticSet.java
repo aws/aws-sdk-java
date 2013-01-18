@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -190,10 +190,10 @@ public class StatisticSet {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (sampleCount != null) sb.append("SampleCount: " + sampleCount + ", ");
-        if (sum != null) sb.append("Sum: " + sum + ", ");
-        if (minimum != null) sb.append("Minimum: " + minimum + ", ");
-        if (maximum != null) sb.append("Maximum: " + maximum + ", ");
+        if (getSampleCount() != null) sb.append("SampleCount: " + getSampleCount() + ", ");
+        if (getSum() != null) sb.append("Sum: " + getSum() + ", ");
+        if (getMinimum() != null) sb.append("Minimum: " + getMinimum() + ", ");
+        if (getMaximum() != null) sb.append("Maximum: " + getMaximum() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -214,7 +214,7 @@ public class StatisticSet {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof StatisticSet == false) return false;
         StatisticSet other = (StatisticSet)obj;
         

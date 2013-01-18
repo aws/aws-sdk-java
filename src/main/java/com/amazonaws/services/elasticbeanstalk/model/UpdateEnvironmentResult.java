@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -1056,20 +1056,20 @@ public class UpdateEnvironmentResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (environmentName != null) sb.append("EnvironmentName: " + environmentName + ", ");
-        if (environmentId != null) sb.append("EnvironmentId: " + environmentId + ", ");
-        if (applicationName != null) sb.append("ApplicationName: " + applicationName + ", ");
-        if (versionLabel != null) sb.append("VersionLabel: " + versionLabel + ", ");
-        if (solutionStackName != null) sb.append("SolutionStackName: " + solutionStackName + ", ");
-        if (templateName != null) sb.append("TemplateName: " + templateName + ", ");
-        if (description != null) sb.append("Description: " + description + ", ");
-        if (endpointURL != null) sb.append("EndpointURL: " + endpointURL + ", ");
-        if (cNAME != null) sb.append("CNAME: " + cNAME + ", ");
-        if (dateCreated != null) sb.append("DateCreated: " + dateCreated + ", ");
-        if (dateUpdated != null) sb.append("DateUpdated: " + dateUpdated + ", ");
-        if (status != null) sb.append("Status: " + status + ", ");
-        if (health != null) sb.append("Health: " + health + ", ");
-        if (resources != null) sb.append("Resources: " + resources + ", ");
+        if (getEnvironmentName() != null) sb.append("EnvironmentName: " + getEnvironmentName() + ", ");
+        if (getEnvironmentId() != null) sb.append("EnvironmentId: " + getEnvironmentId() + ", ");
+        if (getApplicationName() != null) sb.append("ApplicationName: " + getApplicationName() + ", ");
+        if (getVersionLabel() != null) sb.append("VersionLabel: " + getVersionLabel() + ", ");
+        if (getSolutionStackName() != null) sb.append("SolutionStackName: " + getSolutionStackName() + ", ");
+        if (getTemplateName() != null) sb.append("TemplateName: " + getTemplateName() + ", ");
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ", ");
+        if (getEndpointURL() != null) sb.append("EndpointURL: " + getEndpointURL() + ", ");
+        if (getCNAME() != null) sb.append("CNAME: " + getCNAME() + ", ");
+        if (getDateCreated() != null) sb.append("DateCreated: " + getDateCreated() + ", ");
+        if (getDateUpdated() != null) sb.append("DateUpdated: " + getDateUpdated() + ", ");
+        if (getStatus() != null) sb.append("Status: " + getStatus() + ", ");
+        if (getHealth() != null) sb.append("Health: " + getHealth() + ", ");
+        if (getResources() != null) sb.append("Resources: " + getResources() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -1100,7 +1100,7 @@ public class UpdateEnvironmentResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof UpdateEnvironmentResult == false) return false;
         UpdateEnvironmentResult other = (UpdateEnvironmentResult)obj;
         

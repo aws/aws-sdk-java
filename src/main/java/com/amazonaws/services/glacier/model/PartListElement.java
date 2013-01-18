@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -124,8 +124,8 @@ public class PartListElement {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (rangeInBytes != null) sb.append("RangeInBytes: " + rangeInBytes + ", ");
-        if (sHA256TreeHash != null) sb.append("SHA256TreeHash: " + sHA256TreeHash + ", ");
+        if (getRangeInBytes() != null) sb.append("RangeInBytes: " + getRangeInBytes() + ", ");
+        if (getSHA256TreeHash() != null) sb.append("SHA256TreeHash: " + getSHA256TreeHash() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -144,7 +144,7 @@ public class PartListElement {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof PartListElement == false) return false;
         PartListElement other = (PartListElement)obj;
         

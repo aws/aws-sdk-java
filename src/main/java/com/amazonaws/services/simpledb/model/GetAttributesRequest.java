@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -303,10 +303,10 @@ public class GetAttributesRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (domainName != null) sb.append("DomainName: " + domainName + ", ");
-        if (itemName != null) sb.append("ItemName: " + itemName + ", ");
-        if (attributeNames != null) sb.append("AttributeNames: " + attributeNames + ", ");
-        if (consistentRead != null) sb.append("ConsistentRead: " + consistentRead + ", ");
+        if (getDomainName() != null) sb.append("DomainName: " + getDomainName() + ", ");
+        if (getItemName() != null) sb.append("ItemName: " + getItemName() + ", ");
+        if (getAttributeNames() != null) sb.append("AttributeNames: " + getAttributeNames() + ", ");
+        if (isConsistentRead() != null) sb.append("ConsistentRead: " + isConsistentRead() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -327,7 +327,7 @@ public class GetAttributesRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof GetAttributesRequest == false) return false;
         GetAttributesRequest other = (GetAttributesRequest)obj;
         

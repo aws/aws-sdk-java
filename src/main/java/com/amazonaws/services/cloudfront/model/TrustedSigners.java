@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -237,9 +237,9 @@ public class TrustedSigners {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (enabled != null) sb.append("Enabled: " + enabled + ", ");
-        if (quantity != null) sb.append("Quantity: " + quantity + ", ");
-        if (items != null) sb.append("Items: " + items + ", ");
+        if (isEnabled() != null) sb.append("Enabled: " + isEnabled() + ", ");
+        if (getQuantity() != null) sb.append("Quantity: " + getQuantity() + ", ");
+        if (getItems() != null) sb.append("Items: " + getItems() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -259,7 +259,7 @@ public class TrustedSigners {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof TrustedSigners == false) return false;
         TrustedSigners other = (TrustedSigners)obj;
         

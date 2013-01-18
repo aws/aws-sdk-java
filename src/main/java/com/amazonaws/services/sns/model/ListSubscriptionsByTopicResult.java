@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -151,8 +151,8 @@ public class ListSubscriptionsByTopicResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (subscriptions != null) sb.append("Subscriptions: " + subscriptions + ", ");
-        if (nextToken != null) sb.append("NextToken: " + nextToken + ", ");
+        if (getSubscriptions() != null) sb.append("Subscriptions: " + getSubscriptions() + ", ");
+        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -171,7 +171,7 @@ public class ListSubscriptionsByTopicResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof ListSubscriptionsByTopicResult == false) return false;
         ListSubscriptionsByTopicResult other = (ListSubscriptionsByTopicResult)obj;
         

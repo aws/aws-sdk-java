@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -460,12 +460,12 @@ public class Role {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (path != null) sb.append("Path: " + path + ", ");
-        if (roleName != null) sb.append("RoleName: " + roleName + ", ");
-        if (roleId != null) sb.append("RoleId: " + roleId + ", ");
-        if (arn != null) sb.append("Arn: " + arn + ", ");
-        if (createDate != null) sb.append("CreateDate: " + createDate + ", ");
-        if (assumeRolePolicyDocument != null) sb.append("AssumeRolePolicyDocument: " + assumeRolePolicyDocument + ", ");
+        if (getPath() != null) sb.append("Path: " + getPath() + ", ");
+        if (getRoleName() != null) sb.append("RoleName: " + getRoleName() + ", ");
+        if (getRoleId() != null) sb.append("RoleId: " + getRoleId() + ", ");
+        if (getArn() != null) sb.append("Arn: " + getArn() + ", ");
+        if (getCreateDate() != null) sb.append("CreateDate: " + getCreateDate() + ", ");
+        if (getAssumeRolePolicyDocument() != null) sb.append("AssumeRolePolicyDocument: " + getAssumeRolePolicyDocument() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -488,7 +488,7 @@ public class Role {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof Role == false) return false;
         Role other = (Role)obj;
         

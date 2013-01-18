@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -139,8 +139,8 @@ public class Ebs {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (snapshotId != null) sb.append("SnapshotId: " + snapshotId + ", ");
-        if (volumeSize != null) sb.append("VolumeSize: " + volumeSize + ", ");
+        if (getSnapshotId() != null) sb.append("SnapshotId: " + getSnapshotId() + ", ");
+        if (getVolumeSize() != null) sb.append("VolumeSize: " + getVolumeSize() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -159,7 +159,7 @@ public class Ebs {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof Ebs == false) return false;
         Ebs other = (Ebs)obj;
         

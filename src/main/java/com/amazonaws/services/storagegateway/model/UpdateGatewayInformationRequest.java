@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -285,9 +285,9 @@ public class UpdateGatewayInformationRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (gatewayARN != null) sb.append("GatewayARN: " + gatewayARN + ", ");
-        if (gatewayName != null) sb.append("GatewayName: " + gatewayName + ", ");
-        if (gatewayTimezone != null) sb.append("GatewayTimezone: " + gatewayTimezone + ", ");
+        if (getGatewayARN() != null) sb.append("GatewayARN: " + getGatewayARN() + ", ");
+        if (getGatewayName() != null) sb.append("GatewayName: " + getGatewayName() + ", ");
+        if (getGatewayTimezone() != null) sb.append("GatewayTimezone: " + getGatewayTimezone() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -307,7 +307,7 @@ public class UpdateGatewayInformationRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof UpdateGatewayInformationRequest == false) return false;
         UpdateGatewayInformationRequest other = (UpdateGatewayInformationRequest)obj;
         

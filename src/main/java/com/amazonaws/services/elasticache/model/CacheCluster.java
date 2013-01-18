@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -26,6 +26,18 @@ public class CacheCluster {
      * identifies a Cache Cluster.
      */
     private String cacheClusterId;
+
+    /**
+     * Specifies a user-supplied identifier. This is the unique key that
+     * identifies a Cache Cluster.
+     */
+    private Endpoint configurationEndpoint;
+
+    /**
+     * Provides the landing page to download the latest ElastiCache client
+     * library.
+     */
+    private String clientDownloadLandingPage;
 
     /**
      * Specifies the name of the compute and memory capacity node type for
@@ -98,6 +110,12 @@ public class CacheCluster {
     private CacheParameterGroupStatus cacheParameterGroup;
 
     /**
+     * Specifies the name of the Cache Subnet Group associated with the Cache
+     * Cluster.
+     */
+    private String cacheSubnetGroupName;
+
+    /**
      * Specifies the list of Cache Nodes the Cache Cluster contains.
      */
     private java.util.List<CacheNode> cacheNodes;
@@ -106,6 +124,11 @@ public class CacheCluster {
      * Indicates that minor version patches are applied automatically.
      */
     private Boolean autoMinorVersionUpgrade;
+
+    /**
+     * Specifies the VPC Security Groups associated with the Cache Cluster.
+     */
+    private java.util.List<SecurityGroupMembership> securityGroups;
 
     /**
      * Specifies a user-supplied identifier. This is the unique key that
@@ -143,6 +166,86 @@ public class CacheCluster {
      */
     public CacheCluster withCacheClusterId(String cacheClusterId) {
         this.cacheClusterId = cacheClusterId;
+        return this;
+    }
+    
+    
+    /**
+     * Specifies a user-supplied identifier. This is the unique key that
+     * identifies a Cache Cluster.
+     *
+     * @return Specifies a user-supplied identifier. This is the unique key that
+     *         identifies a Cache Cluster.
+     */
+    public Endpoint getConfigurationEndpoint() {
+        return configurationEndpoint;
+    }
+    
+    /**
+     * Specifies a user-supplied identifier. This is the unique key that
+     * identifies a Cache Cluster.
+     *
+     * @param configurationEndpoint Specifies a user-supplied identifier. This is the unique key that
+     *         identifies a Cache Cluster.
+     */
+    public void setConfigurationEndpoint(Endpoint configurationEndpoint) {
+        this.configurationEndpoint = configurationEndpoint;
+    }
+    
+    /**
+     * Specifies a user-supplied identifier. This is the unique key that
+     * identifies a Cache Cluster.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param configurationEndpoint Specifies a user-supplied identifier. This is the unique key that
+     *         identifies a Cache Cluster.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public CacheCluster withConfigurationEndpoint(Endpoint configurationEndpoint) {
+        this.configurationEndpoint = configurationEndpoint;
+        return this;
+    }
+    
+    
+    /**
+     * Provides the landing page to download the latest ElastiCache client
+     * library.
+     *
+     * @return Provides the landing page to download the latest ElastiCache client
+     *         library.
+     */
+    public String getClientDownloadLandingPage() {
+        return clientDownloadLandingPage;
+    }
+    
+    /**
+     * Provides the landing page to download the latest ElastiCache client
+     * library.
+     *
+     * @param clientDownloadLandingPage Provides the landing page to download the latest ElastiCache client
+     *         library.
+     */
+    public void setClientDownloadLandingPage(String clientDownloadLandingPage) {
+        this.clientDownloadLandingPage = clientDownloadLandingPage;
+    }
+    
+    /**
+     * Provides the landing page to download the latest ElastiCache client
+     * library.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param clientDownloadLandingPage Provides the landing page to download the latest ElastiCache client
+     *         library.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public CacheCluster withClientDownloadLandingPage(String clientDownloadLandingPage) {
+        this.clientDownloadLandingPage = clientDownloadLandingPage;
         return this;
     }
     
@@ -655,6 +758,46 @@ public class CacheCluster {
     
     
     /**
+     * Specifies the name of the Cache Subnet Group associated with the Cache
+     * Cluster.
+     *
+     * @return Specifies the name of the Cache Subnet Group associated with the Cache
+     *         Cluster.
+     */
+    public String getCacheSubnetGroupName() {
+        return cacheSubnetGroupName;
+    }
+    
+    /**
+     * Specifies the name of the Cache Subnet Group associated with the Cache
+     * Cluster.
+     *
+     * @param cacheSubnetGroupName Specifies the name of the Cache Subnet Group associated with the Cache
+     *         Cluster.
+     */
+    public void setCacheSubnetGroupName(String cacheSubnetGroupName) {
+        this.cacheSubnetGroupName = cacheSubnetGroupName;
+    }
+    
+    /**
+     * Specifies the name of the Cache Subnet Group associated with the Cache
+     * Cluster.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param cacheSubnetGroupName Specifies the name of the Cache Subnet Group associated with the Cache
+     *         Cluster.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public CacheCluster withCacheSubnetGroupName(String cacheSubnetGroupName) {
+        this.cacheSubnetGroupName = cacheSubnetGroupName;
+        return this;
+    }
+    
+    
+    /**
      * Specifies the list of Cache Nodes the Cache Cluster contains.
      *
      * @return Specifies the list of Cache Nodes the Cache Cluster contains.
@@ -767,6 +910,75 @@ public class CacheCluster {
     }
     
     /**
+     * Specifies the VPC Security Groups associated with the Cache Cluster.
+     *
+     * @return Specifies the VPC Security Groups associated with the Cache Cluster.
+     */
+    public java.util.List<SecurityGroupMembership> getSecurityGroups() {
+        
+        if (securityGroups == null) {
+            securityGroups = new java.util.ArrayList<SecurityGroupMembership>();
+        }
+        return securityGroups;
+    }
+    
+    /**
+     * Specifies the VPC Security Groups associated with the Cache Cluster.
+     *
+     * @param securityGroups Specifies the VPC Security Groups associated with the Cache Cluster.
+     */
+    public void setSecurityGroups(java.util.Collection<SecurityGroupMembership> securityGroups) {
+        if (securityGroups == null) {
+            this.securityGroups = null;
+            return;
+        }
+
+        java.util.List<SecurityGroupMembership> securityGroupsCopy = new java.util.ArrayList<SecurityGroupMembership>(securityGroups.size());
+        securityGroupsCopy.addAll(securityGroups);
+        this.securityGroups = securityGroupsCopy;
+    }
+    
+    /**
+     * Specifies the VPC Security Groups associated with the Cache Cluster.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param securityGroups Specifies the VPC Security Groups associated with the Cache Cluster.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public CacheCluster withSecurityGroups(SecurityGroupMembership... securityGroups) {
+        if (getSecurityGroups() == null) setSecurityGroups(new java.util.ArrayList<SecurityGroupMembership>(securityGroups.length));
+        for (SecurityGroupMembership value : securityGroups) {
+            getSecurityGroups().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * Specifies the VPC Security Groups associated with the Cache Cluster.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param securityGroups Specifies the VPC Security Groups associated with the Cache Cluster.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public CacheCluster withSecurityGroups(java.util.Collection<SecurityGroupMembership> securityGroups) {
+        if (securityGroups == null) {
+            this.securityGroups = null;
+        } else {
+            java.util.List<SecurityGroupMembership> securityGroupsCopy = new java.util.ArrayList<SecurityGroupMembership>(securityGroups.size());
+            securityGroupsCopy.addAll(securityGroups);
+            this.securityGroups = securityGroupsCopy;
+        }
+
+        return this;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -778,21 +990,25 @@ public class CacheCluster {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (cacheClusterId != null) sb.append("CacheClusterId: " + cacheClusterId + ", ");
-        if (cacheNodeType != null) sb.append("CacheNodeType: " + cacheNodeType + ", ");
-        if (engine != null) sb.append("Engine: " + engine + ", ");
-        if (engineVersion != null) sb.append("EngineVersion: " + engineVersion + ", ");
-        if (cacheClusterStatus != null) sb.append("CacheClusterStatus: " + cacheClusterStatus + ", ");
-        if (numCacheNodes != null) sb.append("NumCacheNodes: " + numCacheNodes + ", ");
-        if (preferredAvailabilityZone != null) sb.append("PreferredAvailabilityZone: " + preferredAvailabilityZone + ", ");
-        if (cacheClusterCreateTime != null) sb.append("CacheClusterCreateTime: " + cacheClusterCreateTime + ", ");
-        if (preferredMaintenanceWindow != null) sb.append("PreferredMaintenanceWindow: " + preferredMaintenanceWindow + ", ");
-        if (pendingModifiedValues != null) sb.append("PendingModifiedValues: " + pendingModifiedValues + ", ");
-        if (notificationConfiguration != null) sb.append("NotificationConfiguration: " + notificationConfiguration + ", ");
-        if (cacheSecurityGroups != null) sb.append("CacheSecurityGroups: " + cacheSecurityGroups + ", ");
-        if (cacheParameterGroup != null) sb.append("CacheParameterGroup: " + cacheParameterGroup + ", ");
-        if (cacheNodes != null) sb.append("CacheNodes: " + cacheNodes + ", ");
-        if (autoMinorVersionUpgrade != null) sb.append("AutoMinorVersionUpgrade: " + autoMinorVersionUpgrade + ", ");
+        if (getCacheClusterId() != null) sb.append("CacheClusterId: " + getCacheClusterId() + ", ");
+        if (getConfigurationEndpoint() != null) sb.append("ConfigurationEndpoint: " + getConfigurationEndpoint() + ", ");
+        if (getClientDownloadLandingPage() != null) sb.append("ClientDownloadLandingPage: " + getClientDownloadLandingPage() + ", ");
+        if (getCacheNodeType() != null) sb.append("CacheNodeType: " + getCacheNodeType() + ", ");
+        if (getEngine() != null) sb.append("Engine: " + getEngine() + ", ");
+        if (getEngineVersion() != null) sb.append("EngineVersion: " + getEngineVersion() + ", ");
+        if (getCacheClusterStatus() != null) sb.append("CacheClusterStatus: " + getCacheClusterStatus() + ", ");
+        if (getNumCacheNodes() != null) sb.append("NumCacheNodes: " + getNumCacheNodes() + ", ");
+        if (getPreferredAvailabilityZone() != null) sb.append("PreferredAvailabilityZone: " + getPreferredAvailabilityZone() + ", ");
+        if (getCacheClusterCreateTime() != null) sb.append("CacheClusterCreateTime: " + getCacheClusterCreateTime() + ", ");
+        if (getPreferredMaintenanceWindow() != null) sb.append("PreferredMaintenanceWindow: " + getPreferredMaintenanceWindow() + ", ");
+        if (getPendingModifiedValues() != null) sb.append("PendingModifiedValues: " + getPendingModifiedValues() + ", ");
+        if (getNotificationConfiguration() != null) sb.append("NotificationConfiguration: " + getNotificationConfiguration() + ", ");
+        if (getCacheSecurityGroups() != null) sb.append("CacheSecurityGroups: " + getCacheSecurityGroups() + ", ");
+        if (getCacheParameterGroup() != null) sb.append("CacheParameterGroup: " + getCacheParameterGroup() + ", ");
+        if (getCacheSubnetGroupName() != null) sb.append("CacheSubnetGroupName: " + getCacheSubnetGroupName() + ", ");
+        if (getCacheNodes() != null) sb.append("CacheNodes: " + getCacheNodes() + ", ");
+        if (isAutoMinorVersionUpgrade() != null) sb.append("AutoMinorVersionUpgrade: " + isAutoMinorVersionUpgrade() + ", ");
+        if (getSecurityGroups() != null) sb.append("SecurityGroups: " + getSecurityGroups() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -803,6 +1019,8 @@ public class CacheCluster {
         int hashCode = 1;
         
         hashCode = prime * hashCode + ((getCacheClusterId() == null) ? 0 : getCacheClusterId().hashCode()); 
+        hashCode = prime * hashCode + ((getConfigurationEndpoint() == null) ? 0 : getConfigurationEndpoint().hashCode()); 
+        hashCode = prime * hashCode + ((getClientDownloadLandingPage() == null) ? 0 : getClientDownloadLandingPage().hashCode()); 
         hashCode = prime * hashCode + ((getCacheNodeType() == null) ? 0 : getCacheNodeType().hashCode()); 
         hashCode = prime * hashCode + ((getEngine() == null) ? 0 : getEngine().hashCode()); 
         hashCode = prime * hashCode + ((getEngineVersion() == null) ? 0 : getEngineVersion().hashCode()); 
@@ -815,8 +1033,10 @@ public class CacheCluster {
         hashCode = prime * hashCode + ((getNotificationConfiguration() == null) ? 0 : getNotificationConfiguration().hashCode()); 
         hashCode = prime * hashCode + ((getCacheSecurityGroups() == null) ? 0 : getCacheSecurityGroups().hashCode()); 
         hashCode = prime * hashCode + ((getCacheParameterGroup() == null) ? 0 : getCacheParameterGroup().hashCode()); 
+        hashCode = prime * hashCode + ((getCacheSubnetGroupName() == null) ? 0 : getCacheSubnetGroupName().hashCode()); 
         hashCode = prime * hashCode + ((getCacheNodes() == null) ? 0 : getCacheNodes().hashCode()); 
         hashCode = prime * hashCode + ((isAutoMinorVersionUpgrade() == null) ? 0 : isAutoMinorVersionUpgrade().hashCode()); 
+        hashCode = prime * hashCode + ((getSecurityGroups() == null) ? 0 : getSecurityGroups().hashCode()); 
         return hashCode;
     }
     
@@ -824,12 +1044,16 @@ public class CacheCluster {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof CacheCluster == false) return false;
         CacheCluster other = (CacheCluster)obj;
         
         if (other.getCacheClusterId() == null ^ this.getCacheClusterId() == null) return false;
         if (other.getCacheClusterId() != null && other.getCacheClusterId().equals(this.getCacheClusterId()) == false) return false; 
+        if (other.getConfigurationEndpoint() == null ^ this.getConfigurationEndpoint() == null) return false;
+        if (other.getConfigurationEndpoint() != null && other.getConfigurationEndpoint().equals(this.getConfigurationEndpoint()) == false) return false; 
+        if (other.getClientDownloadLandingPage() == null ^ this.getClientDownloadLandingPage() == null) return false;
+        if (other.getClientDownloadLandingPage() != null && other.getClientDownloadLandingPage().equals(this.getClientDownloadLandingPage()) == false) return false; 
         if (other.getCacheNodeType() == null ^ this.getCacheNodeType() == null) return false;
         if (other.getCacheNodeType() != null && other.getCacheNodeType().equals(this.getCacheNodeType()) == false) return false; 
         if (other.getEngine() == null ^ this.getEngine() == null) return false;
@@ -854,10 +1078,14 @@ public class CacheCluster {
         if (other.getCacheSecurityGroups() != null && other.getCacheSecurityGroups().equals(this.getCacheSecurityGroups()) == false) return false; 
         if (other.getCacheParameterGroup() == null ^ this.getCacheParameterGroup() == null) return false;
         if (other.getCacheParameterGroup() != null && other.getCacheParameterGroup().equals(this.getCacheParameterGroup()) == false) return false; 
+        if (other.getCacheSubnetGroupName() == null ^ this.getCacheSubnetGroupName() == null) return false;
+        if (other.getCacheSubnetGroupName() != null && other.getCacheSubnetGroupName().equals(this.getCacheSubnetGroupName()) == false) return false; 
         if (other.getCacheNodes() == null ^ this.getCacheNodes() == null) return false;
         if (other.getCacheNodes() != null && other.getCacheNodes().equals(this.getCacheNodes()) == false) return false; 
         if (other.isAutoMinorVersionUpgrade() == null ^ this.isAutoMinorVersionUpgrade() == null) return false;
         if (other.isAutoMinorVersionUpgrade() != null && other.isAutoMinorVersionUpgrade().equals(this.isAutoMinorVersionUpgrade()) == false) return false; 
+        if (other.getSecurityGroups() == null ^ this.getSecurityGroups() == null) return false;
+        if (other.getSecurityGroups() != null && other.getSecurityGroups().equals(this.getSecurityGroups()) == false) return false; 
         return true;
     }
     

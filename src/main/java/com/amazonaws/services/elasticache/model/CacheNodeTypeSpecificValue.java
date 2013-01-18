@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -117,8 +117,8 @@ public class CacheNodeTypeSpecificValue {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (cacheNodeType != null) sb.append("CacheNodeType: " + cacheNodeType + ", ");
-        if (value != null) sb.append("Value: " + value + ", ");
+        if (getCacheNodeType() != null) sb.append("CacheNodeType: " + getCacheNodeType() + ", ");
+        if (getValue() != null) sb.append("Value: " + getValue() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -137,7 +137,7 @@ public class CacheNodeTypeSpecificValue {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof CacheNodeTypeSpecificValue == false) return false;
         CacheNodeTypeSpecificValue other = (CacheNodeTypeSpecificValue)obj;
         

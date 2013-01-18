@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -38,7 +38,7 @@ public class DescribeReservedCacheNodesOfferingsRequestMarshaller implements Mar
 
         Request<DescribeReservedCacheNodesOfferingsRequest> request = new DefaultRequest<DescribeReservedCacheNodesOfferingsRequest>(describeReservedCacheNodesOfferingsRequest, "AmazonElastiCache");
         request.addParameter("Action", "DescribeReservedCacheNodesOfferings");
-        request.addParameter("Version", "2012-03-09");
+        request.addParameter("Version", "2012-11-15");
 
         if (describeReservedCacheNodesOfferingsRequest.getReservedCacheNodesOfferingId() != null) {
             request.addParameter("ReservedCacheNodesOfferingId", StringUtils.fromString(describeReservedCacheNodesOfferingsRequest.getReservedCacheNodesOfferingId()));

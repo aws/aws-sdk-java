@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -550,13 +550,13 @@ public class StreamingDistributionConfig {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (callerReference != null) sb.append("CallerReference: " + callerReference + ", ");
-        if (s3Origin != null) sb.append("S3Origin: " + s3Origin + ", ");
-        if (aliases != null) sb.append("Aliases: " + aliases + ", ");
-        if (comment != null) sb.append("Comment: " + comment + ", ");
-        if (logging != null) sb.append("Logging: " + logging + ", ");
-        if (trustedSigners != null) sb.append("TrustedSigners: " + trustedSigners + ", ");
-        if (enabled != null) sb.append("Enabled: " + enabled + ", ");
+        if (getCallerReference() != null) sb.append("CallerReference: " + getCallerReference() + ", ");
+        if (getS3Origin() != null) sb.append("S3Origin: " + getS3Origin() + ", ");
+        if (getAliases() != null) sb.append("Aliases: " + getAliases() + ", ");
+        if (getComment() != null) sb.append("Comment: " + getComment() + ", ");
+        if (getLogging() != null) sb.append("Logging: " + getLogging() + ", ");
+        if (getTrustedSigners() != null) sb.append("TrustedSigners: " + getTrustedSigners() + ", ");
+        if (isEnabled() != null) sb.append("Enabled: " + isEnabled() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -580,7 +580,7 @@ public class StreamingDistributionConfig {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof StreamingDistributionConfig == false) return false;
         StreamingDistributionConfig other = (StreamingDistributionConfig)obj;
         

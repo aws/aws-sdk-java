@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -38,7 +38,7 @@ public class DescribeCacheSecurityGroupsRequestMarshaller implements Marshaller<
 
         Request<DescribeCacheSecurityGroupsRequest> request = new DefaultRequest<DescribeCacheSecurityGroupsRequest>(describeCacheSecurityGroupsRequest, "AmazonElastiCache");
         request.addParameter("Action", "DescribeCacheSecurityGroups");
-        request.addParameter("Version", "2012-03-09");
+        request.addParameter("Version", "2012-11-15");
 
         if (describeCacheSecurityGroupsRequest.getCacheSecurityGroupName() != null) {
             request.addParameter("CacheSecurityGroupName", StringUtils.fromString(describeCacheSecurityGroupsRequest.getCacheSecurityGroupName()));

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -281,9 +281,9 @@ public class RegisterDomainRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (name != null) sb.append("Name: " + name + ", ");
-        if (description != null) sb.append("Description: " + description + ", ");
-        if (workflowExecutionRetentionPeriodInDays != null) sb.append("WorkflowExecutionRetentionPeriodInDays: " + workflowExecutionRetentionPeriodInDays + ", ");
+        if (getName() != null) sb.append("Name: " + getName() + ", ");
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ", ");
+        if (getWorkflowExecutionRetentionPeriodInDays() != null) sb.append("WorkflowExecutionRetentionPeriodInDays: " + getWorkflowExecutionRetentionPeriodInDays() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -303,7 +303,7 @@ public class RegisterDomainRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof RegisterDomainRequest == false) return false;
         RegisterDomainRequest other = (RegisterDomainRequest)obj;
         

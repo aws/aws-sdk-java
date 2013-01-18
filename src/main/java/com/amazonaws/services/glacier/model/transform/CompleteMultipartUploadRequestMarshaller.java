@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -41,9 +41,9 @@ public class CompleteMultipartUploadRequestMarshaller implements Marshaller<Requ
     
 
     public Request<CompleteMultipartUploadRequest> marshall(CompleteMultipartUploadRequest completeMultipartUploadRequest) {
-		if (completeMultipartUploadRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+    if (completeMultipartUploadRequest == null) {
+        throw new AmazonClientException("Invalid argument passed to marshall(...)");
+    }
 
         Request<CompleteMultipartUploadRequest> request = new DefaultRequest<CompleteMultipartUploadRequest>(completeMultipartUploadRequest, "AmazonGlacier");
         String target = "Glacier.CompleteMultipartUpload";
@@ -53,10 +53,10 @@ public class CompleteMultipartUploadRequestMarshaller implements Marshaller<Requ
         
         request.setHttpMethod(HttpMethodName.POST);
         if (completeMultipartUploadRequest.getArchiveSize() != null)
-        	request.addHeader("x-amz-archive-size", StringUtils.fromString(completeMultipartUploadRequest.getArchiveSize()));
+          request.addHeader("x-amz-archive-size", StringUtils.fromString(completeMultipartUploadRequest.getArchiveSize()));
         
         if (completeMultipartUploadRequest.getChecksum() != null)
-        	request.addHeader("x-amz-sha256-tree-hash", StringUtils.fromString(completeMultipartUploadRequest.getChecksum()));
+          request.addHeader("x-amz-sha256-tree-hash", StringUtils.fromString(completeMultipartUploadRequest.getChecksum()));
         
 
 
@@ -64,7 +64,7 @@ public class CompleteMultipartUploadRequestMarshaller implements Marshaller<Requ
         uriResourcePath = uriResourcePath.replace("{accountId}", getString(completeMultipartUploadRequest.getAccountId())); 
         uriResourcePath = uriResourcePath.replace("{vaultName}", getString(completeMultipartUploadRequest.getVaultName())); 
         uriResourcePath = uriResourcePath.replace("{uploadId}", getString(completeMultipartUploadRequest.getUploadId())); 
-        
+
         uriResourcePath = uriResourcePath.replaceAll("//", "/");
 
         if (uriResourcePath.contains("?")) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -178,9 +178,9 @@ public class SendMessageBatchResultEntry {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (id != null) sb.append("Id: " + id + ", ");
-        if (messageId != null) sb.append("MessageId: " + messageId + ", ");
-        if (mD5OfMessageBody != null) sb.append("MD5OfMessageBody: " + mD5OfMessageBody + ", ");
+        if (getId() != null) sb.append("Id: " + getId() + ", ");
+        if (getMessageId() != null) sb.append("MessageId: " + getMessageId() + ", ");
+        if (getMD5OfMessageBody() != null) sb.append("MD5OfMessageBody: " + getMD5OfMessageBody() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -200,7 +200,7 @@ public class SendMessageBatchResultEntry {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof SendMessageBatchResultEntry == false) return false;
         SendMessageBatchResultEntry other = (SendMessageBatchResultEntry)obj;
         

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -310,9 +310,9 @@ public class UpdateSigningCertificateRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (userName != null) sb.append("UserName: " + userName + ", ");
-        if (certificateId != null) sb.append("CertificateId: " + certificateId + ", ");
-        if (status != null) sb.append("Status: " + status + ", ");
+        if (getUserName() != null) sb.append("UserName: " + getUserName() + ", ");
+        if (getCertificateId() != null) sb.append("CertificateId: " + getCertificateId() + ", ");
+        if (getStatus() != null) sb.append("Status: " + getStatus() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -332,7 +332,7 @@ public class UpdateSigningCertificateRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof UpdateSigningCertificateRequest == false) return false;
         UpdateSigningCertificateRequest other = (UpdateSigningCertificateRequest)obj;
         

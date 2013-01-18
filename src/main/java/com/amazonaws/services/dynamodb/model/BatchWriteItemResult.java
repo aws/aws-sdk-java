@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -50,6 +50,7 @@ public class BatchWriteItemResult {
     public java.util.Map<String,BatchWriteResponse> getResponses() {
         
         return responses;
+
     }
     
     /**
@@ -99,6 +100,7 @@ public class BatchWriteItemResult {
     public java.util.Map<String,java.util.List<WriteRequest>> getUnprocessedItems() {
         
         return unprocessedItems;
+
     }
     
     /**
@@ -151,8 +153,8 @@ public class BatchWriteItemResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (responses != null) sb.append("Responses: " + responses + ", ");
-        if (unprocessedItems != null) sb.append("UnprocessedItems: " + unprocessedItems + ", ");
+        if (getResponses() != null) sb.append("Responses: " + getResponses() + ", ");
+        if (getUnprocessedItems() != null) sb.append("UnprocessedItems: " + getUnprocessedItems() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -171,7 +173,7 @@ public class BatchWriteItemResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof BatchWriteItemResult == false) return false;
         BatchWriteItemResult other = (BatchWriteItemResult)obj;
         

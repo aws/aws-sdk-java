@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -146,8 +146,8 @@ public class DescribeDBInstancesResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (marker != null) sb.append("Marker: " + marker + ", ");
-        if (dBInstances != null) sb.append("DBInstances: " + dBInstances + ", ");
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ", ");
+        if (getDBInstances() != null) sb.append("DBInstances: " + getDBInstances() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -166,7 +166,7 @@ public class DescribeDBInstancesResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DescribeDBInstancesResult == false) return false;
         DescribeDBInstancesResult other = (DescribeDBInstancesResult)obj;
         

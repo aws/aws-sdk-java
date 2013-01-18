@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -1007,17 +1007,17 @@ public class ConfigurationOptionDescription {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (namespace != null) sb.append("Namespace: " + namespace + ", ");
-        if (name != null) sb.append("Name: " + name + ", ");
-        if (defaultValue != null) sb.append("DefaultValue: " + defaultValue + ", ");
-        if (changeSeverity != null) sb.append("ChangeSeverity: " + changeSeverity + ", ");
-        if (userDefined != null) sb.append("UserDefined: " + userDefined + ", ");
-        if (valueType != null) sb.append("ValueType: " + valueType + ", ");
-        if (valueOptions != null) sb.append("ValueOptions: " + valueOptions + ", ");
-        if (minValue != null) sb.append("MinValue: " + minValue + ", ");
-        if (maxValue != null) sb.append("MaxValue: " + maxValue + ", ");
-        if (maxLength != null) sb.append("MaxLength: " + maxLength + ", ");
-        if (regex != null) sb.append("Regex: " + regex + ", ");
+        if (getNamespace() != null) sb.append("Namespace: " + getNamespace() + ", ");
+        if (getName() != null) sb.append("Name: " + getName() + ", ");
+        if (getDefaultValue() != null) sb.append("DefaultValue: " + getDefaultValue() + ", ");
+        if (getChangeSeverity() != null) sb.append("ChangeSeverity: " + getChangeSeverity() + ", ");
+        if (isUserDefined() != null) sb.append("UserDefined: " + isUserDefined() + ", ");
+        if (getValueType() != null) sb.append("ValueType: " + getValueType() + ", ");
+        if (getValueOptions() != null) sb.append("ValueOptions: " + getValueOptions() + ", ");
+        if (getMinValue() != null) sb.append("MinValue: " + getMinValue() + ", ");
+        if (getMaxValue() != null) sb.append("MaxValue: " + getMaxValue() + ", ");
+        if (getMaxLength() != null) sb.append("MaxLength: " + getMaxLength() + ", ");
+        if (getRegex() != null) sb.append("Regex: " + getRegex() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -1045,7 +1045,7 @@ public class ConfigurationOptionDescription {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof ConfigurationOptionDescription == false) return false;
         ConfigurationOptionDescription other = (ConfigurationOptionDescription)obj;
         

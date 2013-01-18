@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -839,15 +839,15 @@ public class ScheduleActivityTaskDecisionAttributes {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (activityType != null) sb.append("ActivityType: " + activityType + ", ");
-        if (activityId != null) sb.append("ActivityId: " + activityId + ", ");
-        if (control != null) sb.append("Control: " + control + ", ");
-        if (input != null) sb.append("Input: " + input + ", ");
-        if (scheduleToCloseTimeout != null) sb.append("ScheduleToCloseTimeout: " + scheduleToCloseTimeout + ", ");
-        if (taskList != null) sb.append("TaskList: " + taskList + ", ");
-        if (scheduleToStartTimeout != null) sb.append("ScheduleToStartTimeout: " + scheduleToStartTimeout + ", ");
-        if (startToCloseTimeout != null) sb.append("StartToCloseTimeout: " + startToCloseTimeout + ", ");
-        if (heartbeatTimeout != null) sb.append("HeartbeatTimeout: " + heartbeatTimeout + ", ");
+        if (getActivityType() != null) sb.append("ActivityType: " + getActivityType() + ", ");
+        if (getActivityId() != null) sb.append("ActivityId: " + getActivityId() + ", ");
+        if (getControl() != null) sb.append("Control: " + getControl() + ", ");
+        if (getInput() != null) sb.append("Input: " + getInput() + ", ");
+        if (getScheduleToCloseTimeout() != null) sb.append("ScheduleToCloseTimeout: " + getScheduleToCloseTimeout() + ", ");
+        if (getTaskList() != null) sb.append("TaskList: " + getTaskList() + ", ");
+        if (getScheduleToStartTimeout() != null) sb.append("ScheduleToStartTimeout: " + getScheduleToStartTimeout() + ", ");
+        if (getStartToCloseTimeout() != null) sb.append("StartToCloseTimeout: " + getStartToCloseTimeout() + ", ");
+        if (getHeartbeatTimeout() != null) sb.append("HeartbeatTimeout: " + getHeartbeatTimeout() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -873,7 +873,7 @@ public class ScheduleActivityTaskDecisionAttributes {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof ScheduleActivityTaskDecisionAttributes == false) return false;
         ScheduleActivityTaskDecisionAttributes other = (ScheduleActivityTaskDecisionAttributes)obj;
         

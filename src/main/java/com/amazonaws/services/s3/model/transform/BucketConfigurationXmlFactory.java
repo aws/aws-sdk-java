@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -32,6 +32,8 @@ import com.amazonaws.services.s3.model.BucketVersioningConfiguration;
 import com.amazonaws.services.s3.model.BucketWebsiteConfiguration;
 import com.amazonaws.services.s3.model.CORSRule;
 import com.amazonaws.services.s3.model.CORSRule.AllowedMethods;
+import com.amazonaws.services.s3.model.RoutingRule;
+import com.amazonaws.services.s3.model.RedirectRule;
 import com.amazonaws.services.s3.model.TagSet;
 
 /**
@@ -124,13 +126,13 @@ public class BucketConfigurationXmlFactory {
      *
      * Sample XML:
      * <WebsiteConfiguration xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
-     *	  <IndexDocument>
-     *	    <Suffix>index.html</Suffix>
-     *	  </IndexDocument>
-     *	  <ErrorDocument>
-     *	    <Key>404.html</Key>
-     *	  </ErrorDocument>
-     *	</WebsiteConfiguration>
+     *    <IndexDocument>
+     *      <Suffix>index.html</Suffix>
+     *    </IndexDocument>
+     *    <ErrorDocument>
+     *      <Key>404.html</Key>
+     *    </ErrorDocument>
+     *  </WebsiteConfiguration>
      *
      * @param websiteConfiguration
      *            The configuration to convert.
@@ -150,6 +152,37 @@ public class BucketConfigurationXmlFactory {
             XmlWriter errorDocumentElement = xml.start("ErrorDocument");
             errorDocumentElement.start("Key").value(websiteConfiguration.getErrorDocument()).end();
             errorDocumentElement.end();
+        }
+
+        RedirectRule redirectAllRequestsTo = websiteConfiguration.getRedirectAllRequestsTo();
+        if (redirectAllRequestsTo != null) {
+            XmlWriter redirectAllRequestsElement = xml.start("RedirectAllRequestsTo");
+            if (redirectAllRequestsTo.getprotocol() != null) {
+                xml.start("Protocol").value(redirectAllRequestsTo.getprotocol()).end();
+            }
+
+            if (redirectAllRequestsTo.getHostName() != null) {
+                xml.start("HostName").value(redirectAllRequestsTo.getHostName()).end();
+            }
+
+            if (redirectAllRequestsTo.getReplaceKeyPrefixWith() != null) {
+                xml.start("ReplaceKeyPrefixWith").value(redirectAllRequestsTo.getReplaceKeyPrefixWith()).end();
+            }
+
+            if (redirectAllRequestsTo.getReplaceKeyWith() != null) {
+                xml.start("ReplaceKeyWith").value(redirectAllRequestsTo.getReplaceKeyWith()).end();
+            }
+            redirectAllRequestsElement.end();
+        }
+
+        if (websiteConfiguration.getRoutingRules() != null && websiteConfiguration.getRoutingRules().size() > 0) {
+
+            XmlWriter routingRules = xml.start("RoutingRules");
+            for (RoutingRule rule : websiteConfiguration.getRoutingRules()) {
+                writeRule(routingRules, rule);
+            }
+
+            routingRules.end();
         }
 
         xml.end();
@@ -308,6 +341,46 @@ public class BucketConfigurationXmlFactory {
         }
         xml.end();//</CORSRule>
     }
+
+    private void writeRule(XmlWriter xml, RoutingRule rule) {
+        xml.start("RoutingRule");
+        if (rule.getCondition() != null) {
+            xml.start("Condition");
+            xml.start("KeyPrefixEquals");
+            if (rule.getCondition().getKeyPrefixEquals() != null) {
+                xml.value(rule.getCondition().getKeyPrefixEquals());
+            }
+            xml.end(); // </KeyPrefixEquals">
+
+            if (rule.getCondition().getHttpErrorCodeReturnedEquals() != null) {
+                xml.start("HttpErrorCodeReturnedEquals ").value(rule.getCondition().getHttpErrorCodeReturnedEquals()).end();
+            }
+
+            xml.end(); // </Condition>
+        }
+
+        xml.start("Redirect");
+        if (rule.getRedirect() != null) {
+            if (rule.getRedirect().getprotocol() != null) {
+                xml.start("Protocol").value(rule.getRedirect().getprotocol()).end();
+            }
+
+            if (rule.getRedirect().getHostName() != null) {
+                xml.start("HostName").value(rule.getRedirect().getHostName()).end();
+            }
+
+            if (rule.getRedirect().getReplaceKeyPrefixWith() != null) {
+                xml.start("ReplaceKeyPrefixWith").value(rule.getRedirect().getReplaceKeyPrefixWith()).end();
+            }
+
+            if (rule.getRedirect().getReplaceKeyWith() != null) {
+                xml.start("ReplaceKeyWith").value(rule.getRedirect().getReplaceKeyWith()).end();
+            }
+        }
+        xml.end(); // </Redirect>
+        xml.end();// </CORSRule>
+    }
+
 
     /**
      * Converts the specified {@link BucketTaggingConfiguration} object to an XML fragment that

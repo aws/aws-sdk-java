@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -120,7 +120,7 @@ public class DeleteDomainRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (domainName != null) sb.append("DomainName: " + domainName + ", ");
+        if (getDomainName() != null) sb.append("DomainName: " + getDomainName() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -138,7 +138,7 @@ public class DeleteDomainRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DeleteDomainRequest == false) return false;
         DeleteDomainRequest other = (DeleteDomainRequest)obj;
         

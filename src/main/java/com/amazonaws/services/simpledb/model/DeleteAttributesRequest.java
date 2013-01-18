@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -356,10 +356,10 @@ public class DeleteAttributesRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (domainName != null) sb.append("DomainName: " + domainName + ", ");
-        if (itemName != null) sb.append("ItemName: " + itemName + ", ");
-        if (attributes != null) sb.append("Attributes: " + attributes + ", ");
-        if (expected != null) sb.append("Expected: " + expected + ", ");
+        if (getDomainName() != null) sb.append("DomainName: " + getDomainName() + ", ");
+        if (getItemName() != null) sb.append("ItemName: " + getItemName() + ", ");
+        if (getAttributes() != null) sb.append("Attributes: " + getAttributes() + ", ");
+        if (getExpected() != null) sb.append("Expected: " + getExpected() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -380,7 +380,7 @@ public class DeleteAttributesRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DeleteAttributesRequest == false) return false;
         DeleteAttributesRequest other = (DeleteAttributesRequest)obj;
         

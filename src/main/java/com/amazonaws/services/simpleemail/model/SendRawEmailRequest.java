@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -319,9 +319,9 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (source != null) sb.append("Source: " + source + ", ");
-        if (destinations != null) sb.append("Destinations: " + destinations + ", ");
-        if (rawMessage != null) sb.append("RawMessage: " + rawMessage + ", ");
+        if (getSource() != null) sb.append("Source: " + getSource() + ", ");
+        if (getDestinations() != null) sb.append("Destinations: " + getDestinations() + ", ");
+        if (getRawMessage() != null) sb.append("RawMessage: " + getRawMessage() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -341,7 +341,7 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof SendRawEmailRequest == false) return false;
         SendRawEmailRequest other = (SendRawEmailRequest)obj;
         

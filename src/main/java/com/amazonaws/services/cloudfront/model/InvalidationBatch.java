@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -274,8 +274,8 @@ public class InvalidationBatch {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (paths != null) sb.append("Paths: " + paths + ", ");
-        if (callerReference != null) sb.append("CallerReference: " + callerReference + ", ");
+        if (getPaths() != null) sb.append("Paths: " + getPaths() + ", ");
+        if (getCallerReference() != null) sb.append("CallerReference: " + getCallerReference() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -294,7 +294,7 @@ public class InvalidationBatch {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof InvalidationBatch == false) return false;
         InvalidationBatch other = (InvalidationBatch)obj;
         

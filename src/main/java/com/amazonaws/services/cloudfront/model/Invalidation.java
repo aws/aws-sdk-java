@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -209,10 +209,10 @@ public class Invalidation {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (id != null) sb.append("Id: " + id + ", ");
-        if (status != null) sb.append("Status: " + status + ", ");
-        if (createTime != null) sb.append("CreateTime: " + createTime + ", ");
-        if (invalidationBatch != null) sb.append("InvalidationBatch: " + invalidationBatch + ", ");
+        if (getId() != null) sb.append("Id: " + getId() + ", ");
+        if (getStatus() != null) sb.append("Status: " + getStatus() + ", ");
+        if (getCreateTime() != null) sb.append("CreateTime: " + getCreateTime() + ", ");
+        if (getInvalidationBatch() != null) sb.append("InvalidationBatch: " + getInvalidationBatch() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -233,7 +233,7 @@ public class Invalidation {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof Invalidation == false) return false;
         Invalidation other = (Invalidation)obj;
         

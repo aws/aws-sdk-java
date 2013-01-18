@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -212,9 +212,9 @@ public class UpdateBandwidthRateLimitRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (gatewayARN != null) sb.append("GatewayARN: " + gatewayARN + ", ");
-        if (averageUploadRateLimitInBitsPerSec != null) sb.append("AverageUploadRateLimitInBitsPerSec: " + averageUploadRateLimitInBitsPerSec + ", ");
-        if (averageDownloadRateLimitInBitsPerSec != null) sb.append("AverageDownloadRateLimitInBitsPerSec: " + averageDownloadRateLimitInBitsPerSec + ", ");
+        if (getGatewayARN() != null) sb.append("GatewayARN: " + getGatewayARN() + ", ");
+        if (getAverageUploadRateLimitInBitsPerSec() != null) sb.append("AverageUploadRateLimitInBitsPerSec: " + getAverageUploadRateLimitInBitsPerSec() + ", ");
+        if (getAverageDownloadRateLimitInBitsPerSec() != null) sb.append("AverageDownloadRateLimitInBitsPerSec: " + getAverageDownloadRateLimitInBitsPerSec() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -234,7 +234,7 @@ public class UpdateBandwidthRateLimitRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof UpdateBandwidthRateLimitRequest == false) return false;
         UpdateBandwidthRateLimitRequest other = (UpdateBandwidthRateLimitRequest)obj;
         

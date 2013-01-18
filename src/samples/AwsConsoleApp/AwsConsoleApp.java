@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -18,8 +18,8 @@ import java.util.Set;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
-import com.amazonaws.auth.AWSCredentials;
-import com.amazonaws.auth.PropertiesCredentials;
+import com.amazonaws.auth.AWSCredentialsProvider;
+import com.amazonaws.auth.ClasspathPropertiesFileCredentialsProvider;
 import com.amazonaws.services.ec2.AmazonEC2;
 import com.amazonaws.services.ec2.AmazonEC2Client;
 import com.amazonaws.services.ec2.model.DescribeAvailabilityZonesResult;
@@ -87,12 +87,15 @@ public class AwsConsoleApp {
      * @see com.amazonaws.ClientConfiguration
      */
     private static void init() throws Exception {
-        AWSCredentials credentials = new PropertiesCredentials(
-                AwsConsoleApp.class.getResourceAsStream("AwsCredentials.properties"));
+    	/*
+		 * This credentials provider implementation loads your AWS credentials
+		 * from a properties file at the root of your classpath.
+		 */
+        AWSCredentialsProvider credentialsProvider = new ClasspathPropertiesFileCredentialsProvider();
 
-        ec2 = new AmazonEC2Client(credentials);
-        s3  = new AmazonS3Client(credentials);
-        sdb = new AmazonSimpleDBClient(credentials);
+        ec2 = new AmazonEC2Client(credentialsProvider);
+        s3  = new AmazonS3Client(credentialsProvider);
+        sdb = new AmazonSimpleDBClient(credentialsProvider);
     }
 
 

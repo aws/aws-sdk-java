@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -247,10 +247,10 @@ public class EnvironmentInfoDescription {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (infoType != null) sb.append("InfoType: " + infoType + ", ");
-        if (ec2InstanceId != null) sb.append("Ec2InstanceId: " + ec2InstanceId + ", ");
-        if (sampleTimestamp != null) sb.append("SampleTimestamp: " + sampleTimestamp + ", ");
-        if (message != null) sb.append("Message: " + message + ", ");
+        if (getInfoType() != null) sb.append("InfoType: " + getInfoType() + ", ");
+        if (getEc2InstanceId() != null) sb.append("Ec2InstanceId: " + getEc2InstanceId() + ", ");
+        if (getSampleTimestamp() != null) sb.append("SampleTimestamp: " + getSampleTimestamp() + ", ");
+        if (getMessage() != null) sb.append("Message: " + getMessage() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -271,7 +271,7 @@ public class EnvironmentInfoDescription {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof EnvironmentInfoDescription == false) return false;
         EnvironmentInfoDescription other = (EnvironmentInfoDescription)obj;
         

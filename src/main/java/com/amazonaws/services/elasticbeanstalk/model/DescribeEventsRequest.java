@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -682,17 +682,17 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (applicationName != null) sb.append("ApplicationName: " + applicationName + ", ");
-        if (versionLabel != null) sb.append("VersionLabel: " + versionLabel + ", ");
-        if (templateName != null) sb.append("TemplateName: " + templateName + ", ");
-        if (environmentId != null) sb.append("EnvironmentId: " + environmentId + ", ");
-        if (environmentName != null) sb.append("EnvironmentName: " + environmentName + ", ");
-        if (requestId != null) sb.append("RequestId: " + requestId + ", ");
-        if (severity != null) sb.append("Severity: " + severity + ", ");
-        if (startTime != null) sb.append("StartTime: " + startTime + ", ");
-        if (endTime != null) sb.append("EndTime: " + endTime + ", ");
-        if (maxRecords != null) sb.append("MaxRecords: " + maxRecords + ", ");
-        if (nextToken != null) sb.append("NextToken: " + nextToken + ", ");
+        if (getApplicationName() != null) sb.append("ApplicationName: " + getApplicationName() + ", ");
+        if (getVersionLabel() != null) sb.append("VersionLabel: " + getVersionLabel() + ", ");
+        if (getTemplateName() != null) sb.append("TemplateName: " + getTemplateName() + ", ");
+        if (getEnvironmentId() != null) sb.append("EnvironmentId: " + getEnvironmentId() + ", ");
+        if (getEnvironmentName() != null) sb.append("EnvironmentName: " + getEnvironmentName() + ", ");
+        if (getRequestId() != null) sb.append("RequestId: " + getRequestId() + ", ");
+        if (getSeverity() != null) sb.append("Severity: " + getSeverity() + ", ");
+        if (getStartTime() != null) sb.append("StartTime: " + getStartTime() + ", ");
+        if (getEndTime() != null) sb.append("EndTime: " + getEndTime() + ", ");
+        if (getMaxRecords() != null) sb.append("MaxRecords: " + getMaxRecords() + ", ");
+        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -720,7 +720,7 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DescribeEventsRequest == false) return false;
         DescribeEventsRequest other = (DescribeEventsRequest)obj;
         

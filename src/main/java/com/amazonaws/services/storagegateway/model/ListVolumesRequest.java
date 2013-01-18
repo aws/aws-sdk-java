@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -231,9 +231,9 @@ public class ListVolumesRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (gatewayARN != null) sb.append("GatewayARN: " + gatewayARN + ", ");
-        if (marker != null) sb.append("Marker: " + marker + ", ");
-        if (limit != null) sb.append("Limit: " + limit + ", ");
+        if (getGatewayARN() != null) sb.append("GatewayARN: " + getGatewayARN() + ", ");
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ", ");
+        if (getLimit() != null) sb.append("Limit: " + getLimit() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -253,7 +253,7 @@ public class ListVolumesRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof ListVolumesRequest == false) return false;
         ListVolumesRequest other = (ListVolumesRequest)obj;
         

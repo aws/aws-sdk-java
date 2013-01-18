@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -41,9 +41,9 @@ public class ListVaultsRequestMarshaller implements Marshaller<Request<ListVault
     
 
     public Request<ListVaultsRequest> marshall(ListVaultsRequest listVaultsRequest) {
-		if (listVaultsRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+    if (listVaultsRequest == null) {
+        throw new AmazonClientException("Invalid argument passed to marshall(...)");
+    }
 
         Request<ListVaultsRequest> request = new DefaultRequest<ListVaultsRequest>(listVaultsRequest, "AmazonGlacier");
         String target = "Glacier.ListVaults";
@@ -58,7 +58,7 @@ public class ListVaultsRequestMarshaller implements Marshaller<Request<ListVault
         uriResourcePath = uriResourcePath.replace("{accountId}", getString(listVaultsRequest.getAccountId())); 
         uriResourcePath = uriResourcePath.replace("{marker}", getString(listVaultsRequest.getMarker())); 
         uriResourcePath = uriResourcePath.replace("{limit}", getString(listVaultsRequest.getLimit())); 
-        
+
         uriResourcePath = uriResourcePath.replaceAll("//", "/");
 
         if (uriResourcePath.contains("?")) {

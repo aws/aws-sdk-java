@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -38,7 +38,7 @@ public class ModifyCacheClusterRequestMarshaller implements Marshaller<Request<M
 
         Request<ModifyCacheClusterRequest> request = new DefaultRequest<ModifyCacheClusterRequest>(modifyCacheClusterRequest, "AmazonElastiCache");
         request.addParameter("Action", "ModifyCacheCluster");
-        request.addParameter("Version", "2012-03-09");
+        request.addParameter("Version", "2012-11-15");
 
         if (modifyCacheClusterRequest.getCacheClusterId() != null) {
             request.addParameter("CacheClusterId", StringUtils.fromString(modifyCacheClusterRequest.getCacheClusterId()));
@@ -67,6 +67,17 @@ public class ModifyCacheClusterRequestMarshaller implements Marshaller<Request<M
             }
 
             cacheSecurityGroupNamesListIndex++;
+        }
+
+        java.util.List<String> securityGroupIdsList = modifyCacheClusterRequest.getSecurityGroupIds();
+        int securityGroupIdsListIndex = 1;
+
+        for (String securityGroupIdsListValue : securityGroupIdsList) {
+            if (securityGroupIdsListValue != null) {
+                request.addParameter("SecurityGroupIds.SecurityGroupId." + securityGroupIdsListIndex, StringUtils.fromString(securityGroupIdsListValue));
+            }
+
+            securityGroupIdsListIndex++;
         }
         if (modifyCacheClusterRequest.getPreferredMaintenanceWindow() != null) {
             request.addParameter("PreferredMaintenanceWindow", StringUtils.fromString(modifyCacheClusterRequest.getPreferredMaintenanceWindow()));

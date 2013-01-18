@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -265,10 +265,10 @@ public class CreateJobRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (jobType != null) sb.append("JobType: " + jobType + ", ");
-        if (manifest != null) sb.append("Manifest: " + manifest + ", ");
-        if (manifestAddendum != null) sb.append("ManifestAddendum: " + manifestAddendum + ", ");
-        if (validateOnly != null) sb.append("ValidateOnly: " + validateOnly + ", ");
+        if (getJobType() != null) sb.append("JobType: " + getJobType() + ", ");
+        if (getManifest() != null) sb.append("Manifest: " + getManifest() + ", ");
+        if (getManifestAddendum() != null) sb.append("ManifestAddendum: " + getManifestAddendum() + ", ");
+        if (isValidateOnly() != null) sb.append("ValidateOnly: " + isValidateOnly() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -289,7 +289,7 @@ public class CreateJobRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof CreateJobRequest == false) return false;
         CreateJobRequest other = (CreateJobRequest)obj;
         

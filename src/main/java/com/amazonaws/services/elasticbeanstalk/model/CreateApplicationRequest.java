@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -179,8 +179,8 @@ public class CreateApplicationRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (applicationName != null) sb.append("ApplicationName: " + applicationName + ", ");
-        if (description != null) sb.append("Description: " + description + ", ");
+        if (getApplicationName() != null) sb.append("ApplicationName: " + getApplicationName() + ", ");
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -199,7 +199,7 @@ public class CreateApplicationRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof CreateApplicationRequest == false) return false;
         CreateApplicationRequest other = (CreateApplicationRequest)obj;
         

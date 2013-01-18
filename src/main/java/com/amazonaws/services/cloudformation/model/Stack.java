@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -876,20 +876,20 @@ public class Stack {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (stackId != null) sb.append("StackId: " + stackId + ", ");
-        if (stackName != null) sb.append("StackName: " + stackName + ", ");
-        if (description != null) sb.append("Description: " + description + ", ");
-        if (parameters != null) sb.append("Parameters: " + parameters + ", ");
-        if (creationTime != null) sb.append("CreationTime: " + creationTime + ", ");
-        if (lastUpdatedTime != null) sb.append("LastUpdatedTime: " + lastUpdatedTime + ", ");
-        if (stackStatus != null) sb.append("StackStatus: " + stackStatus + ", ");
-        if (stackStatusReason != null) sb.append("StackStatusReason: " + stackStatusReason + ", ");
-        if (disableRollback != null) sb.append("DisableRollback: " + disableRollback + ", ");
-        if (notificationARNs != null) sb.append("NotificationARNs: " + notificationARNs + ", ");
-        if (timeoutInMinutes != null) sb.append("TimeoutInMinutes: " + timeoutInMinutes + ", ");
-        if (capabilities != null) sb.append("Capabilities: " + capabilities + ", ");
-        if (outputs != null) sb.append("Outputs: " + outputs + ", ");
-        if (tags != null) sb.append("Tags: " + tags + ", ");
+        if (getStackId() != null) sb.append("StackId: " + getStackId() + ", ");
+        if (getStackName() != null) sb.append("StackName: " + getStackName() + ", ");
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ", ");
+        if (getParameters() != null) sb.append("Parameters: " + getParameters() + ", ");
+        if (getCreationTime() != null) sb.append("CreationTime: " + getCreationTime() + ", ");
+        if (getLastUpdatedTime() != null) sb.append("LastUpdatedTime: " + getLastUpdatedTime() + ", ");
+        if (getStackStatus() != null) sb.append("StackStatus: " + getStackStatus() + ", ");
+        if (getStackStatusReason() != null) sb.append("StackStatusReason: " + getStackStatusReason() + ", ");
+        if (isDisableRollback() != null) sb.append("DisableRollback: " + isDisableRollback() + ", ");
+        if (getNotificationARNs() != null) sb.append("NotificationARNs: " + getNotificationARNs() + ", ");
+        if (getTimeoutInMinutes() != null) sb.append("TimeoutInMinutes: " + getTimeoutInMinutes() + ", ");
+        if (getCapabilities() != null) sb.append("Capabilities: " + getCapabilities() + ", ");
+        if (getOutputs() != null) sb.append("Outputs: " + getOutputs() + ", ");
+        if (getTags() != null) sb.append("Tags: " + getTags() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -920,7 +920,7 @@ public class Stack {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof Stack == false) return false;
         Stack other = (Stack)obj;
         

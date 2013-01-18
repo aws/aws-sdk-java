@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -200,8 +200,8 @@ public class FederatedUser {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (federatedUserId != null) sb.append("FederatedUserId: " + federatedUserId + ", ");
-        if (arn != null) sb.append("Arn: " + arn + ", ");
+        if (getFederatedUserId() != null) sb.append("FederatedUserId: " + getFederatedUserId() + ", ");
+        if (getArn() != null) sb.append("Arn: " + getArn() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -220,7 +220,7 @@ public class FederatedUser {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof FederatedUser == false) return false;
         FederatedUser other = (FederatedUser)obj;
         

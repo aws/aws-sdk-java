@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -462,12 +462,12 @@ public class InstanceProfile {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (path != null) sb.append("Path: " + path + ", ");
-        if (instanceProfileName != null) sb.append("InstanceProfileName: " + instanceProfileName + ", ");
-        if (instanceProfileId != null) sb.append("InstanceProfileId: " + instanceProfileId + ", ");
-        if (arn != null) sb.append("Arn: " + arn + ", ");
-        if (createDate != null) sb.append("CreateDate: " + createDate + ", ");
-        if (roles != null) sb.append("Roles: " + roles + ", ");
+        if (getPath() != null) sb.append("Path: " + getPath() + ", ");
+        if (getInstanceProfileName() != null) sb.append("InstanceProfileName: " + getInstanceProfileName() + ", ");
+        if (getInstanceProfileId() != null) sb.append("InstanceProfileId: " + getInstanceProfileId() + ", ");
+        if (getArn() != null) sb.append("Arn: " + getArn() + ", ");
+        if (getCreateDate() != null) sb.append("CreateDate: " + getCreateDate() + ", ");
+        if (getRoles() != null) sb.append("Roles: " + getRoles() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -490,7 +490,7 @@ public class InstanceProfile {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof InstanceProfile == false) return false;
         InstanceProfile other = (InstanceProfile)obj;
         

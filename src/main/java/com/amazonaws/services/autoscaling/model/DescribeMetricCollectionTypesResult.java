@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -226,8 +226,8 @@ public class DescribeMetricCollectionTypesResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (metrics != null) sb.append("Metrics: " + metrics + ", ");
-        if (granularities != null) sb.append("Granularities: " + granularities + ", ");
+        if (getMetrics() != null) sb.append("Metrics: " + getMetrics() + ", ");
+        if (getGranularities() != null) sb.append("Granularities: " + getGranularities() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -246,7 +246,7 @@ public class DescribeMetricCollectionTypesResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DescribeMetricCollectionTypesResult == false) return false;
         DescribeMetricCollectionTypesResult other = (DescribeMetricCollectionTypesResult)obj;
         

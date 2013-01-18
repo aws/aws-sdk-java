@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -43,7 +43,7 @@ public class CacheNode {
     private Endpoint endpoint;
 
     /**
-     * Specified the status of teh parameter group applied to this Cache
+     * Specifies the status of the parameter group applied to this Cache
      * Node.
      */
     private String parameterGroupStatus;
@@ -197,10 +197,10 @@ public class CacheNode {
     
     
     /**
-     * Specified the status of teh parameter group applied to this Cache
+     * Specifies the status of the parameter group applied to this Cache
      * Node.
      *
-     * @return Specified the status of teh parameter group applied to this Cache
+     * @return Specifies the status of the parameter group applied to this Cache
      *         Node.
      */
     public String getParameterGroupStatus() {
@@ -208,10 +208,10 @@ public class CacheNode {
     }
     
     /**
-     * Specified the status of teh parameter group applied to this Cache
+     * Specifies the status of the parameter group applied to this Cache
      * Node.
      *
-     * @param parameterGroupStatus Specified the status of teh parameter group applied to this Cache
+     * @param parameterGroupStatus Specifies the status of the parameter group applied to this Cache
      *         Node.
      */
     public void setParameterGroupStatus(String parameterGroupStatus) {
@@ -219,12 +219,12 @@ public class CacheNode {
     }
     
     /**
-     * Specified the status of teh parameter group applied to this Cache
+     * Specifies the status of the parameter group applied to this Cache
      * Node.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param parameterGroupStatus Specified the status of teh parameter group applied to this Cache
+     * @param parameterGroupStatus Specifies the status of the parameter group applied to this Cache
      *         Node.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -248,11 +248,11 @@ public class CacheNode {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (cacheNodeId != null) sb.append("CacheNodeId: " + cacheNodeId + ", ");
-        if (cacheNodeStatus != null) sb.append("CacheNodeStatus: " + cacheNodeStatus + ", ");
-        if (cacheNodeCreateTime != null) sb.append("CacheNodeCreateTime: " + cacheNodeCreateTime + ", ");
-        if (endpoint != null) sb.append("Endpoint: " + endpoint + ", ");
-        if (parameterGroupStatus != null) sb.append("ParameterGroupStatus: " + parameterGroupStatus + ", ");
+        if (getCacheNodeId() != null) sb.append("CacheNodeId: " + getCacheNodeId() + ", ");
+        if (getCacheNodeStatus() != null) sb.append("CacheNodeStatus: " + getCacheNodeStatus() + ", ");
+        if (getCacheNodeCreateTime() != null) sb.append("CacheNodeCreateTime: " + getCacheNodeCreateTime() + ", ");
+        if (getEndpoint() != null) sb.append("Endpoint: " + getEndpoint() + ", ");
+        if (getParameterGroupStatus() != null) sb.append("ParameterGroupStatus: " + getParameterGroupStatus() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -274,7 +274,7 @@ public class CacheNode {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof CacheNode == false) return false;
         CacheNode other = (CacheNode)obj;
         

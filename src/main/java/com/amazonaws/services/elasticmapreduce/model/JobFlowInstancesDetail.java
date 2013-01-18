@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -835,19 +835,19 @@ public class JobFlowInstancesDetail {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (masterInstanceType != null) sb.append("MasterInstanceType: " + masterInstanceType + ", ");
-        if (masterPublicDnsName != null) sb.append("MasterPublicDnsName: " + masterPublicDnsName + ", ");
-        if (masterInstanceId != null) sb.append("MasterInstanceId: " + masterInstanceId + ", ");
-        if (slaveInstanceType != null) sb.append("SlaveInstanceType: " + slaveInstanceType + ", ");
-        if (instanceCount != null) sb.append("InstanceCount: " + instanceCount + ", ");
-        if (instanceGroups != null) sb.append("InstanceGroups: " + instanceGroups + ", ");
-        if (normalizedInstanceHours != null) sb.append("NormalizedInstanceHours: " + normalizedInstanceHours + ", ");
-        if (ec2KeyName != null) sb.append("Ec2KeyName: " + ec2KeyName + ", ");
-        if (ec2SubnetId != null) sb.append("Ec2SubnetId: " + ec2SubnetId + ", ");
-        if (placement != null) sb.append("Placement: " + placement + ", ");
-        if (keepJobFlowAliveWhenNoSteps != null) sb.append("KeepJobFlowAliveWhenNoSteps: " + keepJobFlowAliveWhenNoSteps + ", ");
-        if (terminationProtected != null) sb.append("TerminationProtected: " + terminationProtected + ", ");
-        if (hadoopVersion != null) sb.append("HadoopVersion: " + hadoopVersion + ", ");
+        if (getMasterInstanceType() != null) sb.append("MasterInstanceType: " + getMasterInstanceType() + ", ");
+        if (getMasterPublicDnsName() != null) sb.append("MasterPublicDnsName: " + getMasterPublicDnsName() + ", ");
+        if (getMasterInstanceId() != null) sb.append("MasterInstanceId: " + getMasterInstanceId() + ", ");
+        if (getSlaveInstanceType() != null) sb.append("SlaveInstanceType: " + getSlaveInstanceType() + ", ");
+        if (getInstanceCount() != null) sb.append("InstanceCount: " + getInstanceCount() + ", ");
+        if (getInstanceGroups() != null) sb.append("InstanceGroups: " + getInstanceGroups() + ", ");
+        if (getNormalizedInstanceHours() != null) sb.append("NormalizedInstanceHours: " + getNormalizedInstanceHours() + ", ");
+        if (getEc2KeyName() != null) sb.append("Ec2KeyName: " + getEc2KeyName() + ", ");
+        if (getEc2SubnetId() != null) sb.append("Ec2SubnetId: " + getEc2SubnetId() + ", ");
+        if (getPlacement() != null) sb.append("Placement: " + getPlacement() + ", ");
+        if (isKeepJobFlowAliveWhenNoSteps() != null) sb.append("KeepJobFlowAliveWhenNoSteps: " + isKeepJobFlowAliveWhenNoSteps() + ", ");
+        if (isTerminationProtected() != null) sb.append("TerminationProtected: " + isTerminationProtected() + ", ");
+        if (getHadoopVersion() != null) sb.append("HadoopVersion: " + getHadoopVersion() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -877,7 +877,7 @@ public class JobFlowInstancesDetail {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof JobFlowInstancesDetail == false) return false;
         JobFlowInstancesDetail other = (JobFlowInstancesDetail)obj;
         

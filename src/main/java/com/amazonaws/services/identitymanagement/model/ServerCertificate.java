@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -214,9 +214,9 @@ public class ServerCertificate {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (serverCertificateMetadata != null) sb.append("ServerCertificateMetadata: " + serverCertificateMetadata + ", ");
-        if (certificateBody != null) sb.append("CertificateBody: " + certificateBody + ", ");
-        if (certificateChain != null) sb.append("CertificateChain: " + certificateChain + ", ");
+        if (getServerCertificateMetadata() != null) sb.append("ServerCertificateMetadata: " + getServerCertificateMetadata() + ", ");
+        if (getCertificateBody() != null) sb.append("CertificateBody: " + getCertificateBody() + ", ");
+        if (getCertificateChain() != null) sb.append("CertificateChain: " + getCertificateChain() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -236,7 +236,7 @@ public class ServerCertificate {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof ServerCertificate == false) return false;
         ServerCertificate other = (ServerCertificate)obj;
         

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -347,12 +347,12 @@ public class CreateJobResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (jobId != null) sb.append("JobId: " + jobId + ", ");
-        if (jobType != null) sb.append("JobType: " + jobType + ", ");
-        if (awsShippingAddress != null) sb.append("AwsShippingAddress: " + awsShippingAddress + ", ");
-        if (signature != null) sb.append("Signature: " + signature + ", ");
-        if (signatureFileContents != null) sb.append("SignatureFileContents: " + signatureFileContents + ", ");
-        if (warningMessage != null) sb.append("WarningMessage: " + warningMessage + ", ");
+        if (getJobId() != null) sb.append("JobId: " + getJobId() + ", ");
+        if (getJobType() != null) sb.append("JobType: " + getJobType() + ", ");
+        if (getAwsShippingAddress() != null) sb.append("AwsShippingAddress: " + getAwsShippingAddress() + ", ");
+        if (getSignature() != null) sb.append("Signature: " + getSignature() + ", ");
+        if (getSignatureFileContents() != null) sb.append("SignatureFileContents: " + getSignatureFileContents() + ", ");
+        if (getWarningMessage() != null) sb.append("WarningMessage: " + getWarningMessage() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -375,7 +375,7 @@ public class CreateJobResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof CreateJobResult == false) return false;
         CreateJobResult other = (CreateJobResult)obj;
         

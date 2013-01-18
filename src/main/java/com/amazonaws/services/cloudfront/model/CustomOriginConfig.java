@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -202,9 +202,9 @@ public class CustomOriginConfig {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (hTTPPort != null) sb.append("HTTPPort: " + hTTPPort + ", ");
-        if (hTTPSPort != null) sb.append("HTTPSPort: " + hTTPSPort + ", ");
-        if (originProtocolPolicy != null) sb.append("OriginProtocolPolicy: " + originProtocolPolicy + ", ");
+        if (getHTTPPort() != null) sb.append("HTTPPort: " + getHTTPPort() + ", ");
+        if (getHTTPSPort() != null) sb.append("HTTPSPort: " + getHTTPSPort() + ", ");
+        if (getOriginProtocolPolicy() != null) sb.append("OriginProtocolPolicy: " + getOriginProtocolPolicy() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -224,7 +224,7 @@ public class CustomOriginConfig {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof CustomOriginConfig == false) return false;
         CustomOriginConfig other = (CustomOriginConfig)obj;
         

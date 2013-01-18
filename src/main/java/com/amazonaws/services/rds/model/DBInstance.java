@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -1393,33 +1393,33 @@ public class DBInstance {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (dBInstanceIdentifier != null) sb.append("DBInstanceIdentifier: " + dBInstanceIdentifier + ", ");
-        if (dBInstanceClass != null) sb.append("DBInstanceClass: " + dBInstanceClass + ", ");
-        if (engine != null) sb.append("Engine: " + engine + ", ");
-        if (dBInstanceStatus != null) sb.append("DBInstanceStatus: " + dBInstanceStatus + ", ");
-        if (masterUsername != null) sb.append("MasterUsername: " + masterUsername + ", ");
-        if (dBName != null) sb.append("DBName: " + dBName + ", ");
-        if (endpoint != null) sb.append("Endpoint: " + endpoint + ", ");
-        if (allocatedStorage != null) sb.append("AllocatedStorage: " + allocatedStorage + ", ");
-        if (instanceCreateTime != null) sb.append("InstanceCreateTime: " + instanceCreateTime + ", ");
-        if (preferredBackupWindow != null) sb.append("PreferredBackupWindow: " + preferredBackupWindow + ", ");
-        if (backupRetentionPeriod != null) sb.append("BackupRetentionPeriod: " + backupRetentionPeriod + ", ");
-        if (dBSecurityGroups != null) sb.append("DBSecurityGroups: " + dBSecurityGroups + ", ");
-        if (dBParameterGroups != null) sb.append("DBParameterGroups: " + dBParameterGroups + ", ");
-        if (availabilityZone != null) sb.append("AvailabilityZone: " + availabilityZone + ", ");
-        if (dBSubnetGroup != null) sb.append("DBSubnetGroup: " + dBSubnetGroup + ", ");
-        if (preferredMaintenanceWindow != null) sb.append("PreferredMaintenanceWindow: " + preferredMaintenanceWindow + ", ");
-        if (pendingModifiedValues != null) sb.append("PendingModifiedValues: " + pendingModifiedValues + ", ");
-        if (latestRestorableTime != null) sb.append("LatestRestorableTime: " + latestRestorableTime + ", ");
-        if (multiAZ != null) sb.append("MultiAZ: " + multiAZ + ", ");
-        if (engineVersion != null) sb.append("EngineVersion: " + engineVersion + ", ");
-        if (autoMinorVersionUpgrade != null) sb.append("AutoMinorVersionUpgrade: " + autoMinorVersionUpgrade + ", ");
-        if (readReplicaSourceDBInstanceIdentifier != null) sb.append("ReadReplicaSourceDBInstanceIdentifier: " + readReplicaSourceDBInstanceIdentifier + ", ");
-        if (readReplicaDBInstanceIdentifiers != null) sb.append("ReadReplicaDBInstanceIdentifiers: " + readReplicaDBInstanceIdentifiers + ", ");
-        if (licenseModel != null) sb.append("LicenseModel: " + licenseModel + ", ");
-        if (iops != null) sb.append("Iops: " + iops + ", ");
-        if (optionGroupMembership != null) sb.append("OptionGroupMembership: " + optionGroupMembership + ", ");
-        if (characterSetName != null) sb.append("CharacterSetName: " + characterSetName + ", ");
+        if (getDBInstanceIdentifier() != null) sb.append("DBInstanceIdentifier: " + getDBInstanceIdentifier() + ", ");
+        if (getDBInstanceClass() != null) sb.append("DBInstanceClass: " + getDBInstanceClass() + ", ");
+        if (getEngine() != null) sb.append("Engine: " + getEngine() + ", ");
+        if (getDBInstanceStatus() != null) sb.append("DBInstanceStatus: " + getDBInstanceStatus() + ", ");
+        if (getMasterUsername() != null) sb.append("MasterUsername: " + getMasterUsername() + ", ");
+        if (getDBName() != null) sb.append("DBName: " + getDBName() + ", ");
+        if (getEndpoint() != null) sb.append("Endpoint: " + getEndpoint() + ", ");
+        if (getAllocatedStorage() != null) sb.append("AllocatedStorage: " + getAllocatedStorage() + ", ");
+        if (getInstanceCreateTime() != null) sb.append("InstanceCreateTime: " + getInstanceCreateTime() + ", ");
+        if (getPreferredBackupWindow() != null) sb.append("PreferredBackupWindow: " + getPreferredBackupWindow() + ", ");
+        if (getBackupRetentionPeriod() != null) sb.append("BackupRetentionPeriod: " + getBackupRetentionPeriod() + ", ");
+        if (getDBSecurityGroups() != null) sb.append("DBSecurityGroups: " + getDBSecurityGroups() + ", ");
+        if (getDBParameterGroups() != null) sb.append("DBParameterGroups: " + getDBParameterGroups() + ", ");
+        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ", ");
+        if (getDBSubnetGroup() != null) sb.append("DBSubnetGroup: " + getDBSubnetGroup() + ", ");
+        if (getPreferredMaintenanceWindow() != null) sb.append("PreferredMaintenanceWindow: " + getPreferredMaintenanceWindow() + ", ");
+        if (getPendingModifiedValues() != null) sb.append("PendingModifiedValues: " + getPendingModifiedValues() + ", ");
+        if (getLatestRestorableTime() != null) sb.append("LatestRestorableTime: " + getLatestRestorableTime() + ", ");
+        if (isMultiAZ() != null) sb.append("MultiAZ: " + isMultiAZ() + ", ");
+        if (getEngineVersion() != null) sb.append("EngineVersion: " + getEngineVersion() + ", ");
+        if (isAutoMinorVersionUpgrade() != null) sb.append("AutoMinorVersionUpgrade: " + isAutoMinorVersionUpgrade() + ", ");
+        if (getReadReplicaSourceDBInstanceIdentifier() != null) sb.append("ReadReplicaSourceDBInstanceIdentifier: " + getReadReplicaSourceDBInstanceIdentifier() + ", ");
+        if (getReadReplicaDBInstanceIdentifiers() != null) sb.append("ReadReplicaDBInstanceIdentifiers: " + getReadReplicaDBInstanceIdentifiers() + ", ");
+        if (getLicenseModel() != null) sb.append("LicenseModel: " + getLicenseModel() + ", ");
+        if (getIops() != null) sb.append("Iops: " + getIops() + ", ");
+        if (getOptionGroupMembership() != null) sb.append("OptionGroupMembership: " + getOptionGroupMembership() + ", ");
+        if (getCharacterSetName() != null) sb.append("CharacterSetName: " + getCharacterSetName() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -1463,7 +1463,7 @@ public class DBInstance {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DBInstance == false) return false;
         DBInstance other = (DBInstance)obj;
         

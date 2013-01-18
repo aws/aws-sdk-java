@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -340,12 +340,12 @@ public class StackResourceSummary {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (logicalResourceId != null) sb.append("LogicalResourceId: " + logicalResourceId + ", ");
-        if (physicalResourceId != null) sb.append("PhysicalResourceId: " + physicalResourceId + ", ");
-        if (resourceType != null) sb.append("ResourceType: " + resourceType + ", ");
-        if (lastUpdatedTimestamp != null) sb.append("LastUpdatedTimestamp: " + lastUpdatedTimestamp + ", ");
-        if (resourceStatus != null) sb.append("ResourceStatus: " + resourceStatus + ", ");
-        if (resourceStatusReason != null) sb.append("ResourceStatusReason: " + resourceStatusReason + ", ");
+        if (getLogicalResourceId() != null) sb.append("LogicalResourceId: " + getLogicalResourceId() + ", ");
+        if (getPhysicalResourceId() != null) sb.append("PhysicalResourceId: " + getPhysicalResourceId() + ", ");
+        if (getResourceType() != null) sb.append("ResourceType: " + getResourceType() + ", ");
+        if (getLastUpdatedTimestamp() != null) sb.append("LastUpdatedTimestamp: " + getLastUpdatedTimestamp() + ", ");
+        if (getResourceStatus() != null) sb.append("ResourceStatus: " + getResourceStatus() + ", ");
+        if (getResourceStatusReason() != null) sb.append("ResourceStatusReason: " + getResourceStatusReason() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -368,7 +368,7 @@ public class StackResourceSummary {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof StackResourceSummary == false) return false;
         StackResourceSummary other = (StackResourceSummary)obj;
         

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -460,12 +460,12 @@ public class EnvironmentResourceDescription {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (environmentName != null) sb.append("EnvironmentName: " + environmentName + ", ");
-        if (autoScalingGroups != null) sb.append("AutoScalingGroups: " + autoScalingGroups + ", ");
-        if (instances != null) sb.append("Instances: " + instances + ", ");
-        if (launchConfigurations != null) sb.append("LaunchConfigurations: " + launchConfigurations + ", ");
-        if (loadBalancers != null) sb.append("LoadBalancers: " + loadBalancers + ", ");
-        if (triggers != null) sb.append("Triggers: " + triggers + ", ");
+        if (getEnvironmentName() != null) sb.append("EnvironmentName: " + getEnvironmentName() + ", ");
+        if (getAutoScalingGroups() != null) sb.append("AutoScalingGroups: " + getAutoScalingGroups() + ", ");
+        if (getInstances() != null) sb.append("Instances: " + getInstances() + ", ");
+        if (getLaunchConfigurations() != null) sb.append("LaunchConfigurations: " + getLaunchConfigurations() + ", ");
+        if (getLoadBalancers() != null) sb.append("LoadBalancers: " + getLoadBalancers() + ", ");
+        if (getTriggers() != null) sb.append("Triggers: " + getTriggers() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -488,7 +488,7 @@ public class EnvironmentResourceDescription {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof EnvironmentResourceDescription == false) return false;
         EnvironmentResourceDescription other = (EnvironmentResourceDescription)obj;
         

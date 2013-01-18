@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -345,11 +345,11 @@ public class SendEmailRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (source != null) sb.append("Source: " + source + ", ");
-        if (destination != null) sb.append("Destination: " + destination + ", ");
-        if (message != null) sb.append("Message: " + message + ", ");
-        if (replyToAddresses != null) sb.append("ReplyToAddresses: " + replyToAddresses + ", ");
-        if (returnPath != null) sb.append("ReturnPath: " + returnPath + ", ");
+        if (getSource() != null) sb.append("Source: " + getSource() + ", ");
+        if (getDestination() != null) sb.append("Destination: " + getDestination() + ", ");
+        if (getMessage() != null) sb.append("Message: " + getMessage() + ", ");
+        if (getReplyToAddresses() != null) sb.append("ReplyToAddresses: " + getReplyToAddresses() + ", ");
+        if (getReturnPath() != null) sb.append("ReturnPath: " + getReturnPath() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -371,7 +371,7 @@ public class SendEmailRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof SendEmailRequest == false) return false;
         SendEmailRequest other = (SendEmailRequest)obj;
         

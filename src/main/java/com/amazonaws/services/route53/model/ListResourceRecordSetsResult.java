@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -496,12 +496,12 @@ public class ListResourceRecordSetsResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (resourceRecordSets != null) sb.append("ResourceRecordSets: " + resourceRecordSets + ", ");
-        if (isTruncated != null) sb.append("IsTruncated: " + isTruncated + ", ");
-        if (nextRecordName != null) sb.append("NextRecordName: " + nextRecordName + ", ");
-        if (nextRecordType != null) sb.append("NextRecordType: " + nextRecordType + ", ");
-        if (nextRecordIdentifier != null) sb.append("NextRecordIdentifier: " + nextRecordIdentifier + ", ");
-        if (maxItems != null) sb.append("MaxItems: " + maxItems + ", ");
+        if (getResourceRecordSets() != null) sb.append("ResourceRecordSets: " + getResourceRecordSets() + ", ");
+        if (isTruncated() != null) sb.append("IsTruncated: " + isTruncated() + ", ");
+        if (getNextRecordName() != null) sb.append("NextRecordName: " + getNextRecordName() + ", ");
+        if (getNextRecordType() != null) sb.append("NextRecordType: " + getNextRecordType() + ", ");
+        if (getNextRecordIdentifier() != null) sb.append("NextRecordIdentifier: " + getNextRecordIdentifier() + ", ");
+        if (getMaxItems() != null) sb.append("MaxItems: " + getMaxItems() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -524,7 +524,7 @@ public class ListResourceRecordSetsResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof ListResourceRecordSetsResult == false) return false;
         ListResourceRecordSetsResult other = (ListResourceRecordSetsResult)obj;
         

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -174,9 +174,9 @@ public class ConfigurationOptionSetting {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (namespace != null) sb.append("Namespace: " + namespace + ", ");
-        if (optionName != null) sb.append("OptionName: " + optionName + ", ");
-        if (value != null) sb.append("Value: " + value + ", ");
+        if (getNamespace() != null) sb.append("Namespace: " + getNamespace() + ", ");
+        if (getOptionName() != null) sb.append("OptionName: " + getOptionName() + ", ");
+        if (getValue() != null) sb.append("Value: " + getValue() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -196,7 +196,7 @@ public class ConfigurationOptionSetting {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof ConfigurationOptionSetting == false) return false;
         ConfigurationOptionSetting other = (ConfigurationOptionSetting)obj;
         

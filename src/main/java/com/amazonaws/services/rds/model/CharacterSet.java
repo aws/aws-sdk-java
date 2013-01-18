@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -111,8 +111,8 @@ public class CharacterSet {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (characterSetName != null) sb.append("CharacterSetName: " + characterSetName + ", ");
-        if (characterSetDescription != null) sb.append("CharacterSetDescription: " + characterSetDescription + ", ");
+        if (getCharacterSetName() != null) sb.append("CharacterSetName: " + getCharacterSetName() + ", ");
+        if (getCharacterSetDescription() != null) sb.append("CharacterSetDescription: " + getCharacterSetDescription() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -131,7 +131,7 @@ public class CharacterSet {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof CharacterSet == false) return false;
         CharacterSet other = (CharacterSet)obj;
         

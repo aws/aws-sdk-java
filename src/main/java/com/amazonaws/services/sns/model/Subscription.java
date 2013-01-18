@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -234,11 +234,11 @@ public class Subscription {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (subscriptionArn != null) sb.append("SubscriptionArn: " + subscriptionArn + ", ");
-        if (owner != null) sb.append("Owner: " + owner + ", ");
-        if (protocol != null) sb.append("Protocol: " + protocol + ", ");
-        if (endpoint != null) sb.append("Endpoint: " + endpoint + ", ");
-        if (topicArn != null) sb.append("TopicArn: " + topicArn + ", ");
+        if (getSubscriptionArn() != null) sb.append("SubscriptionArn: " + getSubscriptionArn() + ", ");
+        if (getOwner() != null) sb.append("Owner: " + getOwner() + ", ");
+        if (getProtocol() != null) sb.append("Protocol: " + getProtocol() + ", ");
+        if (getEndpoint() != null) sb.append("Endpoint: " + getEndpoint() + ", ");
+        if (getTopicArn() != null) sb.append("TopicArn: " + getTopicArn() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -260,7 +260,7 @@ public class Subscription {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof Subscription == false) return false;
         Subscription other = (Subscription)obj;
         

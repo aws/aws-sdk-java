@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -12,16 +12,13 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
-package advanced;
 
-import java.io.IOException;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
 
 import com.amazonaws.AmazonServiceException;
-import com.amazonaws.auth.AWSCredentials;
-import com.amazonaws.auth.PropertiesCredentials;
+import com.amazonaws.auth.ClasspathPropertiesFileCredentialsProvider;
 import com.amazonaws.services.ec2.AmazonEC2;
 import com.amazonaws.services.ec2.AmazonEC2Client;
 import com.amazonaws.services.ec2.model.AuthorizeSecurityGroupIngressRequest;
@@ -34,31 +31,20 @@ public class CreateSecurityGroupApp {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// Retrieves the credentials from an AWSCredentials.properties file.
-		AWSCredentials credentials = null;
-		try {
-			credentials = new PropertiesCredentials(
-			           	InlineTaggingCodeSampleApp.class.getResourceAsStream("AwsCredentials.properties"));
-		} catch (IOException e1) {
-			System.out.println("Credentials were not properly entered into AwsCredentials.properties.");
-			System.out.println(e1.getMessage());
-			System.exit(-1);
-		}
-
 		// Create the AmazonEC2Client object so we can call various APIs.
-		AmazonEC2 ec2 = new AmazonEC2Client(credentials);
+		AmazonEC2 ec2 = new AmazonEC2Client(new ClasspathPropertiesFileCredentialsProvider());
 
 	    	// Create a new security group.
 	    	try {
 	        	CreateSecurityGroupRequest securityGroupRequest = new CreateSecurityGroupRequest("GettingStartedGroup", "Getting Started Security Group");
-	        	ec2.createSecurityGroup(securityGroupRequest); 		
+	        	ec2.createSecurityGroup(securityGroupRequest);
 	    	} catch (AmazonServiceException ase) {
 	    		// Likely this means that the group is already created, so ignore.
 	    		System.out.println(ase.getMessage());
 	    	}
 
 	    	String ipAddr = "0.0.0.0/0";
-	    	
+
 	    	// Get the IP of the current host, so that we can limit the Security Group
 	    	// by default to the ip range associated with your subnet.
 	    	try {
@@ -73,7 +59,7 @@ public class CreateSecurityGroupApp {
 	    	// Create a range that you would like to populate.
 	    	ArrayList<String> ipRanges = new ArrayList<String>();
 	    	ipRanges.add(ipAddr);
-	    	
+
 	    	// Open up port 23 for TCP traffic to the associated IP from above (e.g. ssh traffic).
 	    	ArrayList<IpPermission> ipPermissions = new ArrayList<IpPermission> ();
 	    	IpPermission ipPermission = new IpPermission();
@@ -82,7 +68,7 @@ public class CreateSecurityGroupApp {
 	    	ipPermission.setToPort(new Integer(22));
 	    	ipPermission.setIpRanges(ipRanges);
 	    	ipPermissions.add(ipPermission);
-	    	
+
 	    	try {
 		    	// Authorize the ports to the used.
 		    	AuthorizeSecurityGroupIngressRequest ingressRequest = new AuthorizeSecurityGroupIngressRequest("GettingStartedGroup",ipPermissions);

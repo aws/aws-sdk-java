@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -206,8 +206,8 @@ public class SetVisibleToAllUsersRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (jobFlowIds != null) sb.append("JobFlowIds: " + jobFlowIds + ", ");
-        if (visibleToAllUsers != null) sb.append("VisibleToAllUsers: " + visibleToAllUsers + ", ");
+        if (getJobFlowIds() != null) sb.append("JobFlowIds: " + getJobFlowIds() + ", ");
+        if (isVisibleToAllUsers() != null) sb.append("VisibleToAllUsers: " + isVisibleToAllUsers() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -226,7 +226,7 @@ public class SetVisibleToAllUsersRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof SetVisibleToAllUsersRequest == false) return false;
         SetVisibleToAllUsersRequest other = (SetVisibleToAllUsersRequest)obj;
         

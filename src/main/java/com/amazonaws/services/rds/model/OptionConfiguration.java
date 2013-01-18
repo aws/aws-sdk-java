@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -181,9 +181,9 @@ public class OptionConfiguration {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (optionName != null) sb.append("OptionName: " + optionName + ", ");
-        if (port != null) sb.append("Port: " + port + ", ");
-        if (dBSecurityGroupMemberships != null) sb.append("DBSecurityGroupMemberships: " + dBSecurityGroupMemberships + ", ");
+        if (getOptionName() != null) sb.append("OptionName: " + getOptionName() + ", ");
+        if (getPort() != null) sb.append("Port: " + getPort() + ", ");
+        if (getDBSecurityGroupMemberships() != null) sb.append("DBSecurityGroupMemberships: " + getDBSecurityGroupMemberships() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -203,7 +203,7 @@ public class OptionConfiguration {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof OptionConfiguration == false) return false;
         OptionConfiguration other = (OptionConfiguration)obj;
         

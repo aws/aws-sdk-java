@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -284,10 +284,10 @@ public class UpdateMaintenanceStartTimeRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (gatewayARN != null) sb.append("GatewayARN: " + gatewayARN + ", ");
-        if (hourOfDay != null) sb.append("HourOfDay: " + hourOfDay + ", ");
-        if (minuteOfHour != null) sb.append("MinuteOfHour: " + minuteOfHour + ", ");
-        if (dayOfWeek != null) sb.append("DayOfWeek: " + dayOfWeek + ", ");
+        if (getGatewayARN() != null) sb.append("GatewayARN: " + getGatewayARN() + ", ");
+        if (getHourOfDay() != null) sb.append("HourOfDay: " + getHourOfDay() + ", ");
+        if (getMinuteOfHour() != null) sb.append("MinuteOfHour: " + getMinuteOfHour() + ", ");
+        if (getDayOfWeek() != null) sb.append("DayOfWeek: " + getDayOfWeek() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -308,7 +308,7 @@ public class UpdateMaintenanceStartTimeRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof UpdateMaintenanceStartTimeRequest == false) return false;
         UpdateMaintenanceStartTimeRequest other = (UpdateMaintenanceStartTimeRequest)obj;
         

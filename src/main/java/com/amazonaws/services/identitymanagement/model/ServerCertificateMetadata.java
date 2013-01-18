@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -414,11 +414,11 @@ public class ServerCertificateMetadata {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (path != null) sb.append("Path: " + path + ", ");
-        if (serverCertificateName != null) sb.append("ServerCertificateName: " + serverCertificateName + ", ");
-        if (serverCertificateId != null) sb.append("ServerCertificateId: " + serverCertificateId + ", ");
-        if (arn != null) sb.append("Arn: " + arn + ", ");
-        if (uploadDate != null) sb.append("UploadDate: " + uploadDate + ", ");
+        if (getPath() != null) sb.append("Path: " + getPath() + ", ");
+        if (getServerCertificateName() != null) sb.append("ServerCertificateName: " + getServerCertificateName() + ", ");
+        if (getServerCertificateId() != null) sb.append("ServerCertificateId: " + getServerCertificateId() + ", ");
+        if (getArn() != null) sb.append("Arn: " + getArn() + ", ");
+        if (getUploadDate() != null) sb.append("UploadDate: " + getUploadDate() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -440,7 +440,7 @@ public class ServerCertificateMetadata {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof ServerCertificateMetadata == false) return false;
         ServerCertificateMetadata other = (ServerCertificateMetadata)obj;
         

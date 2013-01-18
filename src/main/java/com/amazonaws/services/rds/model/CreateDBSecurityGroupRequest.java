@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -214,9 +214,9 @@ public class CreateDBSecurityGroupRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (dBSecurityGroupName != null) sb.append("DBSecurityGroupName: " + dBSecurityGroupName + ", ");
-        if (dBSecurityGroupDescription != null) sb.append("DBSecurityGroupDescription: " + dBSecurityGroupDescription + ", ");
-        if (eC2VpcId != null) sb.append("EC2VpcId: " + eC2VpcId + ", ");
+        if (getDBSecurityGroupName() != null) sb.append("DBSecurityGroupName: " + getDBSecurityGroupName() + ", ");
+        if (getDBSecurityGroupDescription() != null) sb.append("DBSecurityGroupDescription: " + getDBSecurityGroupDescription() + ", ");
+        if (getEC2VpcId() != null) sb.append("EC2VpcId: " + getEC2VpcId() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -236,7 +236,7 @@ public class CreateDBSecurityGroupRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof CreateDBSecurityGroupRequest == false) return false;
         CreateDBSecurityGroupRequest other = (CreateDBSecurityGroupRequest)obj;
         

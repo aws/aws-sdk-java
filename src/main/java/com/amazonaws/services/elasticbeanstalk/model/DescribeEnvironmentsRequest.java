@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -467,12 +467,12 @@ public class DescribeEnvironmentsRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (applicationName != null) sb.append("ApplicationName: " + applicationName + ", ");
-        if (versionLabel != null) sb.append("VersionLabel: " + versionLabel + ", ");
-        if (environmentIds != null) sb.append("EnvironmentIds: " + environmentIds + ", ");
-        if (environmentNames != null) sb.append("EnvironmentNames: " + environmentNames + ", ");
-        if (includeDeleted != null) sb.append("IncludeDeleted: " + includeDeleted + ", ");
-        if (includedDeletedBackTo != null) sb.append("IncludedDeletedBackTo: " + includedDeletedBackTo + ", ");
+        if (getApplicationName() != null) sb.append("ApplicationName: " + getApplicationName() + ", ");
+        if (getVersionLabel() != null) sb.append("VersionLabel: " + getVersionLabel() + ", ");
+        if (getEnvironmentIds() != null) sb.append("EnvironmentIds: " + getEnvironmentIds() + ", ");
+        if (getEnvironmentNames() != null) sb.append("EnvironmentNames: " + getEnvironmentNames() + ", ");
+        if (isIncludeDeleted() != null) sb.append("IncludeDeleted: " + isIncludeDeleted() + ", ");
+        if (getIncludedDeletedBackTo() != null) sb.append("IncludedDeletedBackTo: " + getIncludedDeletedBackTo() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -495,7 +495,7 @@ public class DescribeEnvironmentsRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DescribeEnvironmentsRequest == false) return false;
         DescribeEnvironmentsRequest other = (DescribeEnvironmentsRequest)obj;
         

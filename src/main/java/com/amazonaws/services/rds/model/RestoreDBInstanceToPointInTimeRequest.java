@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -935,21 +935,21 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (sourceDBInstanceIdentifier != null) sb.append("SourceDBInstanceIdentifier: " + sourceDBInstanceIdentifier + ", ");
-        if (targetDBInstanceIdentifier != null) sb.append("TargetDBInstanceIdentifier: " + targetDBInstanceIdentifier + ", ");
-        if (restoreTime != null) sb.append("RestoreTime: " + restoreTime + ", ");
-        if (useLatestRestorableTime != null) sb.append("UseLatestRestorableTime: " + useLatestRestorableTime + ", ");
-        if (dBInstanceClass != null) sb.append("DBInstanceClass: " + dBInstanceClass + ", ");
-        if (port != null) sb.append("Port: " + port + ", ");
-        if (availabilityZone != null) sb.append("AvailabilityZone: " + availabilityZone + ", ");
-        if (dBSubnetGroupName != null) sb.append("DBSubnetGroupName: " + dBSubnetGroupName + ", ");
-        if (multiAZ != null) sb.append("MultiAZ: " + multiAZ + ", ");
-        if (autoMinorVersionUpgrade != null) sb.append("AutoMinorVersionUpgrade: " + autoMinorVersionUpgrade + ", ");
-        if (licenseModel != null) sb.append("LicenseModel: " + licenseModel + ", ");
-        if (dBName != null) sb.append("DBName: " + dBName + ", ");
-        if (engine != null) sb.append("Engine: " + engine + ", ");
-        if (iops != null) sb.append("Iops: " + iops + ", ");
-        if (optionGroupName != null) sb.append("OptionGroupName: " + optionGroupName + ", ");
+        if (getSourceDBInstanceIdentifier() != null) sb.append("SourceDBInstanceIdentifier: " + getSourceDBInstanceIdentifier() + ", ");
+        if (getTargetDBInstanceIdentifier() != null) sb.append("TargetDBInstanceIdentifier: " + getTargetDBInstanceIdentifier() + ", ");
+        if (getRestoreTime() != null) sb.append("RestoreTime: " + getRestoreTime() + ", ");
+        if (isUseLatestRestorableTime() != null) sb.append("UseLatestRestorableTime: " + isUseLatestRestorableTime() + ", ");
+        if (getDBInstanceClass() != null) sb.append("DBInstanceClass: " + getDBInstanceClass() + ", ");
+        if (getPort() != null) sb.append("Port: " + getPort() + ", ");
+        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ", ");
+        if (getDBSubnetGroupName() != null) sb.append("DBSubnetGroupName: " + getDBSubnetGroupName() + ", ");
+        if (isMultiAZ() != null) sb.append("MultiAZ: " + isMultiAZ() + ", ");
+        if (isAutoMinorVersionUpgrade() != null) sb.append("AutoMinorVersionUpgrade: " + isAutoMinorVersionUpgrade() + ", ");
+        if (getLicenseModel() != null) sb.append("LicenseModel: " + getLicenseModel() + ", ");
+        if (getDBName() != null) sb.append("DBName: " + getDBName() + ", ");
+        if (getEngine() != null) sb.append("Engine: " + getEngine() + ", ");
+        if (getIops() != null) sb.append("Iops: " + getIops() + ", ");
+        if (getOptionGroupName() != null) sb.append("OptionGroupName: " + getOptionGroupName() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -981,7 +981,7 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof RestoreDBInstanceToPointInTimeRequest == false) return false;
         RestoreDBInstanceToPointInTimeRequest other = (RestoreDBInstanceToPointInTimeRequest)obj;
         

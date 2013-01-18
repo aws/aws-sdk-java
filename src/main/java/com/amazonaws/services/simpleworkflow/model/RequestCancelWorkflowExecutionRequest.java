@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -200,9 +200,9 @@ public class RequestCancelWorkflowExecutionRequest extends AmazonWebServiceReque
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (domain != null) sb.append("Domain: " + domain + ", ");
-        if (workflowId != null) sb.append("WorkflowId: " + workflowId + ", ");
-        if (runId != null) sb.append("RunId: " + runId + ", ");
+        if (getDomain() != null) sb.append("Domain: " + getDomain() + ", ");
+        if (getWorkflowId() != null) sb.append("WorkflowId: " + getWorkflowId() + ", ");
+        if (getRunId() != null) sb.append("RunId: " + getRunId() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -222,7 +222,7 @@ public class RequestCancelWorkflowExecutionRequest extends AmazonWebServiceReque
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof RequestCancelWorkflowExecutionRequest == false) return false;
         RequestCancelWorkflowExecutionRequest other = (RequestCancelWorkflowExecutionRequest)obj;
         

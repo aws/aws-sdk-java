@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -496,16 +496,16 @@ public class StackEvent {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (stackId != null) sb.append("StackId: " + stackId + ", ");
-        if (eventId != null) sb.append("EventId: " + eventId + ", ");
-        if (stackName != null) sb.append("StackName: " + stackName + ", ");
-        if (logicalResourceId != null) sb.append("LogicalResourceId: " + logicalResourceId + ", ");
-        if (physicalResourceId != null) sb.append("PhysicalResourceId: " + physicalResourceId + ", ");
-        if (resourceType != null) sb.append("ResourceType: " + resourceType + ", ");
-        if (timestamp != null) sb.append("Timestamp: " + timestamp + ", ");
-        if (resourceStatus != null) sb.append("ResourceStatus: " + resourceStatus + ", ");
-        if (resourceStatusReason != null) sb.append("ResourceStatusReason: " + resourceStatusReason + ", ");
-        if (resourceProperties != null) sb.append("ResourceProperties: " + resourceProperties + ", ");
+        if (getStackId() != null) sb.append("StackId: " + getStackId() + ", ");
+        if (getEventId() != null) sb.append("EventId: " + getEventId() + ", ");
+        if (getStackName() != null) sb.append("StackName: " + getStackName() + ", ");
+        if (getLogicalResourceId() != null) sb.append("LogicalResourceId: " + getLogicalResourceId() + ", ");
+        if (getPhysicalResourceId() != null) sb.append("PhysicalResourceId: " + getPhysicalResourceId() + ", ");
+        if (getResourceType() != null) sb.append("ResourceType: " + getResourceType() + ", ");
+        if (getTimestamp() != null) sb.append("Timestamp: " + getTimestamp() + ", ");
+        if (getResourceStatus() != null) sb.append("ResourceStatus: " + getResourceStatus() + ", ");
+        if (getResourceStatusReason() != null) sb.append("ResourceStatusReason: " + getResourceStatusReason() + ", ");
+        if (getResourceProperties() != null) sb.append("ResourceProperties: " + getResourceProperties() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -532,7 +532,7 @@ public class StackEvent {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof StackEvent == false) return false;
         StackEvent other = (StackEvent)obj;
         

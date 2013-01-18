@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -41,9 +41,9 @@ public class AddUploadBufferRequestMarshaller implements Marshaller<Request<AddU
     
 
     public Request<AddUploadBufferRequest> marshall(AddUploadBufferRequest addUploadBufferRequest) {
-		if (addUploadBufferRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+    if (addUploadBufferRequest == null) {
+        throw new AmazonClientException("Invalid argument passed to marshall(...)");
+    }
 
         Request<AddUploadBufferRequest> request = new DefaultRequest<AddUploadBufferRequest>(addUploadBufferRequest, "AWSStorageGateway");
         String target = "StorageGateway_20120630.AddUploadBuffer";
@@ -55,7 +55,7 @@ public class AddUploadBufferRequestMarshaller implements Marshaller<Request<AddU
 
 
         String uriResourcePath = ""; 
-        
+
         uriResourcePath = uriResourcePath.replaceAll("//", "/");
 
         if (uriResourcePath.contains("?")) {
@@ -77,13 +77,13 @@ public class AddUploadBufferRequestMarshaller implements Marshaller<Request<AddU
 
         
         try {
-        	StringWriter stringWriter = new StringWriter();
-        	JSONWriter jsonWriter = new JSONWriter(stringWriter);
+          StringWriter stringWriter = new StringWriter();
+          JSONWriter jsonWriter = new JSONWriter(stringWriter);
 
-        	
+          
             
-        	jsonWriter.object();
-        	
+          jsonWriter.object();
+          
             if (addUploadBufferRequest.getGatewayARN() != null) {
                 jsonWriter.key("GatewayARN").value(addUploadBufferRequest.getGatewayARN());
             }
@@ -102,13 +102,13 @@ public class AddUploadBufferRequestMarshaller implements Marshaller<Request<AddU
                 jsonWriter.endArray();
             }
 
-    	    jsonWriter.endObject();
-        	
+          jsonWriter.endObject();
+          
 
-    	    String snippet = stringWriter.toString();
-    	    byte[] content = snippet.getBytes("UTF-8");
-        	request.setContent(new StringInputStream(snippet));
-	        request.addHeader("Content-Length", Integer.toString(content.length));
+          String snippet = stringWriter.toString();
+          byte[] content = snippet.getBytes("UTF-8");
+          request.setContent(new StringInputStream(snippet));
+          request.addHeader("Content-Length", Integer.toString(content.length));
         } catch(Throwable t) {
           throw new AmazonClientException("Unable to marshall request to JSON: " + t.getMessage(), t);
         }

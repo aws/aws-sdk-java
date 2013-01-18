@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -304,10 +304,10 @@ public class SetAlarmStateRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (alarmName != null) sb.append("AlarmName: " + alarmName + ", ");
-        if (stateValue != null) sb.append("StateValue: " + stateValue + ", ");
-        if (stateReason != null) sb.append("StateReason: " + stateReason + ", ");
-        if (stateReasonData != null) sb.append("StateReasonData: " + stateReasonData + ", ");
+        if (getAlarmName() != null) sb.append("AlarmName: " + getAlarmName() + ", ");
+        if (getStateValue() != null) sb.append("StateValue: " + getStateValue() + ", ");
+        if (getStateReason() != null) sb.append("StateReason: " + getStateReason() + ", ");
+        if (getStateReasonData() != null) sb.append("StateReasonData: " + getStateReasonData() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -328,7 +328,7 @@ public class SetAlarmStateRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof SetAlarmStateRequest == false) return false;
         SetAlarmStateRequest other = (SetAlarmStateRequest)obj;
         

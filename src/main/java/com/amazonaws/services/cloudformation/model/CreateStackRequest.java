@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -1026,16 +1026,16 @@ public class CreateStackRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (stackName != null) sb.append("StackName: " + stackName + ", ");
-        if (templateBody != null) sb.append("TemplateBody: " + templateBody + ", ");
-        if (templateURL != null) sb.append("TemplateURL: " + templateURL + ", ");
-        if (parameters != null) sb.append("Parameters: " + parameters + ", ");
-        if (disableRollback != null) sb.append("DisableRollback: " + disableRollback + ", ");
-        if (timeoutInMinutes != null) sb.append("TimeoutInMinutes: " + timeoutInMinutes + ", ");
-        if (notificationARNs != null) sb.append("NotificationARNs: " + notificationARNs + ", ");
-        if (capabilities != null) sb.append("Capabilities: " + capabilities + ", ");
-        if (onFailure != null) sb.append("OnFailure: " + onFailure + ", ");
-        if (tags != null) sb.append("Tags: " + tags + ", ");
+        if (getStackName() != null) sb.append("StackName: " + getStackName() + ", ");
+        if (getTemplateBody() != null) sb.append("TemplateBody: " + getTemplateBody() + ", ");
+        if (getTemplateURL() != null) sb.append("TemplateURL: " + getTemplateURL() + ", ");
+        if (getParameters() != null) sb.append("Parameters: " + getParameters() + ", ");
+        if (isDisableRollback() != null) sb.append("DisableRollback: " + isDisableRollback() + ", ");
+        if (getTimeoutInMinutes() != null) sb.append("TimeoutInMinutes: " + getTimeoutInMinutes() + ", ");
+        if (getNotificationARNs() != null) sb.append("NotificationARNs: " + getNotificationARNs() + ", ");
+        if (getCapabilities() != null) sb.append("Capabilities: " + getCapabilities() + ", ");
+        if (getOnFailure() != null) sb.append("OnFailure: " + getOnFailure() + ", ");
+        if (getTags() != null) sb.append("Tags: " + getTags() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -1062,7 +1062,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof CreateStackRequest == false) return false;
         CreateStackRequest other = (CreateStackRequest)obj;
         

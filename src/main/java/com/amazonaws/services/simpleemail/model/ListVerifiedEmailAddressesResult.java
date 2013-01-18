@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -107,7 +107,7 @@ public class ListVerifiedEmailAddressesResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (verifiedEmailAddresses != null) sb.append("VerifiedEmailAddresses: " + verifiedEmailAddresses + ", ");
+        if (getVerifiedEmailAddresses() != null) sb.append("VerifiedEmailAddresses: " + getVerifiedEmailAddresses() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -125,7 +125,7 @@ public class ListVerifiedEmailAddressesResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof ListVerifiedEmailAddressesResult == false) return false;
         ListVerifiedEmailAddressesResult other = (ListVerifiedEmailAddressesResult)obj;
         

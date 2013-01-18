@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -277,10 +277,10 @@ public class UpdateSnapshotScheduleRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (volumeARN != null) sb.append("VolumeARN: " + volumeARN + ", ");
-        if (startAt != null) sb.append("StartAt: " + startAt + ", ");
-        if (recurrenceInHours != null) sb.append("RecurrenceInHours: " + recurrenceInHours + ", ");
-        if (description != null) sb.append("Description: " + description + ", ");
+        if (getVolumeARN() != null) sb.append("VolumeARN: " + getVolumeARN() + ", ");
+        if (getStartAt() != null) sb.append("StartAt: " + getStartAt() + ", ");
+        if (getRecurrenceInHours() != null) sb.append("RecurrenceInHours: " + getRecurrenceInHours() + ", ");
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -301,7 +301,7 @@ public class UpdateSnapshotScheduleRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof UpdateSnapshotScheduleRequest == false) return false;
         UpdateSnapshotScheduleRequest other = (UpdateSnapshotScheduleRequest)obj;
         

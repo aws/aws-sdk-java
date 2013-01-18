@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -424,12 +424,12 @@ public class MetricDatum {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (metricName != null) sb.append("MetricName: " + metricName + ", ");
-        if (dimensions != null) sb.append("Dimensions: " + dimensions + ", ");
-        if (timestamp != null) sb.append("Timestamp: " + timestamp + ", ");
-        if (value != null) sb.append("Value: " + value + ", ");
-        if (statisticValues != null) sb.append("StatisticValues: " + statisticValues + ", ");
-        if (unit != null) sb.append("Unit: " + unit + ", ");
+        if (getMetricName() != null) sb.append("MetricName: " + getMetricName() + ", ");
+        if (getDimensions() != null) sb.append("Dimensions: " + getDimensions() + ", ");
+        if (getTimestamp() != null) sb.append("Timestamp: " + getTimestamp() + ", ");
+        if (getValue() != null) sb.append("Value: " + getValue() + ", ");
+        if (getStatisticValues() != null) sb.append("StatisticValues: " + getStatisticValues() + ", ");
+        if (getUnit() != null) sb.append("Unit: " + getUnit() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -452,7 +452,7 @@ public class MetricDatum {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof MetricDatum == false) return false;
         MetricDatum other = (MetricDatum)obj;
         

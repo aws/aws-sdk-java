@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -158,7 +158,7 @@ public class ProcessType {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (processName != null) sb.append("ProcessName: " + processName + ", ");
+        if (getProcessName() != null) sb.append("ProcessName: " + getProcessName() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -176,7 +176,7 @@ public class ProcessType {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof ProcessType == false) return false;
         ProcessType other = (ProcessType)obj;
         

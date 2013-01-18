@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -616,13 +616,13 @@ public class DescribeGatewayInformationResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (gatewayARN != null) sb.append("GatewayARN: " + gatewayARN + ", ");
-        if (gatewayId != null) sb.append("GatewayId: " + gatewayId + ", ");
-        if (gatewayTimezone != null) sb.append("GatewayTimezone: " + gatewayTimezone + ", ");
-        if (gatewayState != null) sb.append("GatewayState: " + gatewayState + ", ");
-        if (gatewayNetworkInterfaces != null) sb.append("GatewayNetworkInterfaces: " + gatewayNetworkInterfaces + ", ");
-        if (gatewayType != null) sb.append("GatewayType: " + gatewayType + ", ");
-        if (nextUpdateAvailabilityDate != null) sb.append("NextUpdateAvailabilityDate: " + nextUpdateAvailabilityDate + ", ");
+        if (getGatewayARN() != null) sb.append("GatewayARN: " + getGatewayARN() + ", ");
+        if (getGatewayId() != null) sb.append("GatewayId: " + getGatewayId() + ", ");
+        if (getGatewayTimezone() != null) sb.append("GatewayTimezone: " + getGatewayTimezone() + ", ");
+        if (getGatewayState() != null) sb.append("GatewayState: " + getGatewayState() + ", ");
+        if (getGatewayNetworkInterfaces() != null) sb.append("GatewayNetworkInterfaces: " + getGatewayNetworkInterfaces() + ", ");
+        if (getGatewayType() != null) sb.append("GatewayType: " + getGatewayType() + ", ");
+        if (getNextUpdateAvailabilityDate() != null) sb.append("NextUpdateAvailabilityDate: " + getNextUpdateAvailabilityDate() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -646,7 +646,7 @@ public class DescribeGatewayInformationResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DescribeGatewayInformationResult == false) return false;
         DescribeGatewayInformationResult other = (DescribeGatewayInformationResult)obj;
         

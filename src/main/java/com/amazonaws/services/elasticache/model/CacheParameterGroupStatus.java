@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -200,9 +200,9 @@ public class CacheParameterGroupStatus {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (cacheParameterGroupName != null) sb.append("CacheParameterGroupName: " + cacheParameterGroupName + ", ");
-        if (parameterApplyStatus != null) sb.append("ParameterApplyStatus: " + parameterApplyStatus + ", ");
-        if (cacheNodeIdsToReboot != null) sb.append("CacheNodeIdsToReboot: " + cacheNodeIdsToReboot + ", ");
+        if (getCacheParameterGroupName() != null) sb.append("CacheParameterGroupName: " + getCacheParameterGroupName() + ", ");
+        if (getParameterApplyStatus() != null) sb.append("ParameterApplyStatus: " + getParameterApplyStatus() + ", ");
+        if (getCacheNodeIdsToReboot() != null) sb.append("CacheNodeIdsToReboot: " + getCacheNodeIdsToReboot() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -222,7 +222,7 @@ public class CacheParameterGroupStatus {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof CacheParameterGroupStatus == false) return false;
         CacheParameterGroupStatus other = (CacheParameterGroupStatus)obj;
         

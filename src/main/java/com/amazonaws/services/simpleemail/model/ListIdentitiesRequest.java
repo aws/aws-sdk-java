@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -235,9 +235,9 @@ public class ListIdentitiesRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (identityType != null) sb.append("IdentityType: " + identityType + ", ");
-        if (nextToken != null) sb.append("NextToken: " + nextToken + ", ");
-        if (maxItems != null) sb.append("MaxItems: " + maxItems + ", ");
+        if (getIdentityType() != null) sb.append("IdentityType: " + getIdentityType() + ", ");
+        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() + ", ");
+        if (getMaxItems() != null) sb.append("MaxItems: " + getMaxItems() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -257,7 +257,7 @@ public class ListIdentitiesRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof ListIdentitiesRequest == false) return false;
         ListIdentitiesRequest other = (ListIdentitiesRequest)obj;
         

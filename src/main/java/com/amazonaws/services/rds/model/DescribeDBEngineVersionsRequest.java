@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -417,13 +417,13 @@ public class DescribeDBEngineVersionsRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (engine != null) sb.append("Engine: " + engine + ", ");
-        if (engineVersion != null) sb.append("EngineVersion: " + engineVersion + ", ");
-        if (dBParameterGroupFamily != null) sb.append("DBParameterGroupFamily: " + dBParameterGroupFamily + ", ");
-        if (maxRecords != null) sb.append("MaxRecords: " + maxRecords + ", ");
-        if (marker != null) sb.append("Marker: " + marker + ", ");
-        if (defaultOnly != null) sb.append("DefaultOnly: " + defaultOnly + ", ");
-        if (listSupportedCharacterSets != null) sb.append("ListSupportedCharacterSets: " + listSupportedCharacterSets + ", ");
+        if (getEngine() != null) sb.append("Engine: " + getEngine() + ", ");
+        if (getEngineVersion() != null) sb.append("EngineVersion: " + getEngineVersion() + ", ");
+        if (getDBParameterGroupFamily() != null) sb.append("DBParameterGroupFamily: " + getDBParameterGroupFamily() + ", ");
+        if (getMaxRecords() != null) sb.append("MaxRecords: " + getMaxRecords() + ", ");
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ", ");
+        if (isDefaultOnly() != null) sb.append("DefaultOnly: " + isDefaultOnly() + ", ");
+        if (isListSupportedCharacterSets() != null) sb.append("ListSupportedCharacterSets: " + isListSupportedCharacterSets() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -447,7 +447,7 @@ public class DescribeDBEngineVersionsRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DescribeDBEngineVersionsRequest == false) return false;
         DescribeDBEngineVersionsRequest other = (DescribeDBEngineVersionsRequest)obj;
         

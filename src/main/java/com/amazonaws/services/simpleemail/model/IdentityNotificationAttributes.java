@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -215,9 +215,9 @@ public class IdentityNotificationAttributes {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (bounceTopic != null) sb.append("BounceTopic: " + bounceTopic + ", ");
-        if (complaintTopic != null) sb.append("ComplaintTopic: " + complaintTopic + ", ");
-        if (forwardingEnabled != null) sb.append("ForwardingEnabled: " + forwardingEnabled + ", ");
+        if (getBounceTopic() != null) sb.append("BounceTopic: " + getBounceTopic() + ", ");
+        if (getComplaintTopic() != null) sb.append("ComplaintTopic: " + getComplaintTopic() + ", ");
+        if (isForwardingEnabled() != null) sb.append("ForwardingEnabled: " + isForwardingEnabled() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -237,7 +237,7 @@ public class IdentityNotificationAttributes {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof IdentityNotificationAttributes == false) return false;
         IdentityNotificationAttributes other = (IdentityNotificationAttributes)obj;
         

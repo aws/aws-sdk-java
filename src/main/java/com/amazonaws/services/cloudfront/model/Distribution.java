@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -418,13 +418,13 @@ public class Distribution {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (id != null) sb.append("Id: " + id + ", ");
-        if (status != null) sb.append("Status: " + status + ", ");
-        if (lastModifiedTime != null) sb.append("LastModifiedTime: " + lastModifiedTime + ", ");
-        if (inProgressInvalidationBatches != null) sb.append("InProgressInvalidationBatches: " + inProgressInvalidationBatches + ", ");
-        if (domainName != null) sb.append("DomainName: " + domainName + ", ");
-        if (activeTrustedSigners != null) sb.append("ActiveTrustedSigners: " + activeTrustedSigners + ", ");
-        if (distributionConfig != null) sb.append("DistributionConfig: " + distributionConfig + ", ");
+        if (getId() != null) sb.append("Id: " + getId() + ", ");
+        if (getStatus() != null) sb.append("Status: " + getStatus() + ", ");
+        if (getLastModifiedTime() != null) sb.append("LastModifiedTime: " + getLastModifiedTime() + ", ");
+        if (getInProgressInvalidationBatches() != null) sb.append("InProgressInvalidationBatches: " + getInProgressInvalidationBatches() + ", ");
+        if (getDomainName() != null) sb.append("DomainName: " + getDomainName() + ", ");
+        if (getActiveTrustedSigners() != null) sb.append("ActiveTrustedSigners: " + getActiveTrustedSigners() + ", ");
+        if (getDistributionConfig() != null) sb.append("DistributionConfig: " + getDistributionConfig() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -448,7 +448,7 @@ public class Distribution {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof Distribution == false) return false;
         Distribution other = (Distribution)obj;
         

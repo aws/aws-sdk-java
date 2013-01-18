@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -800,22 +800,22 @@ public class GetStatusResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (jobId != null) sb.append("JobId: " + jobId + ", ");
-        if (jobType != null) sb.append("JobType: " + jobType + ", ");
-        if (awsShippingAddress != null) sb.append("AwsShippingAddress: " + awsShippingAddress + ", ");
-        if (locationCode != null) sb.append("LocationCode: " + locationCode + ", ");
-        if (locationMessage != null) sb.append("LocationMessage: " + locationMessage + ", ");
-        if (progressCode != null) sb.append("ProgressCode: " + progressCode + ", ");
-        if (progressMessage != null) sb.append("ProgressMessage: " + progressMessage + ", ");
-        if (carrier != null) sb.append("Carrier: " + carrier + ", ");
-        if (trackingNumber != null) sb.append("TrackingNumber: " + trackingNumber + ", ");
-        if (logBucket != null) sb.append("LogBucket: " + logBucket + ", ");
-        if (logKey != null) sb.append("LogKey: " + logKey + ", ");
-        if (errorCount != null) sb.append("ErrorCount: " + errorCount + ", ");
-        if (signature != null) sb.append("Signature: " + signature + ", ");
-        if (signatureFileContents != null) sb.append("SignatureFileContents: " + signatureFileContents + ", ");
-        if (currentManifest != null) sb.append("CurrentManifest: " + currentManifest + ", ");
-        if (creationDate != null) sb.append("CreationDate: " + creationDate + ", ");
+        if (getJobId() != null) sb.append("JobId: " + getJobId() + ", ");
+        if (getJobType() != null) sb.append("JobType: " + getJobType() + ", ");
+        if (getAwsShippingAddress() != null) sb.append("AwsShippingAddress: " + getAwsShippingAddress() + ", ");
+        if (getLocationCode() != null) sb.append("LocationCode: " + getLocationCode() + ", ");
+        if (getLocationMessage() != null) sb.append("LocationMessage: " + getLocationMessage() + ", ");
+        if (getProgressCode() != null) sb.append("ProgressCode: " + getProgressCode() + ", ");
+        if (getProgressMessage() != null) sb.append("ProgressMessage: " + getProgressMessage() + ", ");
+        if (getCarrier() != null) sb.append("Carrier: " + getCarrier() + ", ");
+        if (getTrackingNumber() != null) sb.append("TrackingNumber: " + getTrackingNumber() + ", ");
+        if (getLogBucket() != null) sb.append("LogBucket: " + getLogBucket() + ", ");
+        if (getLogKey() != null) sb.append("LogKey: " + getLogKey() + ", ");
+        if (getErrorCount() != null) sb.append("ErrorCount: " + getErrorCount() + ", ");
+        if (getSignature() != null) sb.append("Signature: " + getSignature() + ", ");
+        if (getSignatureFileContents() != null) sb.append("SignatureFileContents: " + getSignatureFileContents() + ", ");
+        if (getCurrentManifest() != null) sb.append("CurrentManifest: " + getCurrentManifest() + ", ");
+        if (getCreationDate() != null) sb.append("CreationDate: " + getCreationDate() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -848,7 +848,7 @@ public class GetStatusResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof GetStatusResult == false) return false;
         GetStatusResult other = (GetStatusResult)obj;
         

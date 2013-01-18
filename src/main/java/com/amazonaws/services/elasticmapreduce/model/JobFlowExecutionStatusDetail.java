@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -376,12 +376,12 @@ public class JobFlowExecutionStatusDetail {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (state != null) sb.append("State: " + state + ", ");
-        if (creationDateTime != null) sb.append("CreationDateTime: " + creationDateTime + ", ");
-        if (startDateTime != null) sb.append("StartDateTime: " + startDateTime + ", ");
-        if (readyDateTime != null) sb.append("ReadyDateTime: " + readyDateTime + ", ");
-        if (endDateTime != null) sb.append("EndDateTime: " + endDateTime + ", ");
-        if (lastStateChangeReason != null) sb.append("LastStateChangeReason: " + lastStateChangeReason + ", ");
+        if (getState() != null) sb.append("State: " + getState() + ", ");
+        if (getCreationDateTime() != null) sb.append("CreationDateTime: " + getCreationDateTime() + ", ");
+        if (getStartDateTime() != null) sb.append("StartDateTime: " + getStartDateTime() + ", ");
+        if (getReadyDateTime() != null) sb.append("ReadyDateTime: " + getReadyDateTime() + ", ");
+        if (getEndDateTime() != null) sb.append("EndDateTime: " + getEndDateTime() + ", ");
+        if (getLastStateChangeReason() != null) sb.append("LastStateChangeReason: " + getLastStateChangeReason() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -404,7 +404,7 @@ public class JobFlowExecutionStatusDetail {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof JobFlowExecutionStatusDetail == false) return false;
         JobFlowExecutionStatusDetail other = (JobFlowExecutionStatusDetail)obj;
         

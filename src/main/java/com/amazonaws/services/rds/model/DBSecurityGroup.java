@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -348,12 +348,12 @@ public class DBSecurityGroup {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (ownerId != null) sb.append("OwnerId: " + ownerId + ", ");
-        if (dBSecurityGroupName != null) sb.append("DBSecurityGroupName: " + dBSecurityGroupName + ", ");
-        if (dBSecurityGroupDescription != null) sb.append("DBSecurityGroupDescription: " + dBSecurityGroupDescription + ", ");
-        if (vpcId != null) sb.append("VpcId: " + vpcId + ", ");
-        if (eC2SecurityGroups != null) sb.append("EC2SecurityGroups: " + eC2SecurityGroups + ", ");
-        if (iPRanges != null) sb.append("IPRanges: " + iPRanges + ", ");
+        if (getOwnerId() != null) sb.append("OwnerId: " + getOwnerId() + ", ");
+        if (getDBSecurityGroupName() != null) sb.append("DBSecurityGroupName: " + getDBSecurityGroupName() + ", ");
+        if (getDBSecurityGroupDescription() != null) sb.append("DBSecurityGroupDescription: " + getDBSecurityGroupDescription() + ", ");
+        if (getVpcId() != null) sb.append("VpcId: " + getVpcId() + ", ");
+        if (getEC2SecurityGroups() != null) sb.append("EC2SecurityGroups: " + getEC2SecurityGroups() + ", ");
+        if (getIPRanges() != null) sb.append("IPRanges: " + getIPRanges() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -376,7 +376,7 @@ public class DBSecurityGroup {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DBSecurityGroup == false) return false;
         DBSecurityGroup other = (DBSecurityGroup)obj;
         

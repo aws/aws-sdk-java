@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -276,10 +276,10 @@ public class WorkflowExecutionSignaledEventAttributes {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (signalName != null) sb.append("SignalName: " + signalName + ", ");
-        if (input != null) sb.append("Input: " + input + ", ");
-        if (externalWorkflowExecution != null) sb.append("ExternalWorkflowExecution: " + externalWorkflowExecution + ", ");
-        if (externalInitiatedEventId != null) sb.append("ExternalInitiatedEventId: " + externalInitiatedEventId + ", ");
+        if (getSignalName() != null) sb.append("SignalName: " + getSignalName() + ", ");
+        if (getInput() != null) sb.append("Input: " + getInput() + ", ");
+        if (getExternalWorkflowExecution() != null) sb.append("ExternalWorkflowExecution: " + getExternalWorkflowExecution() + ", ");
+        if (getExternalInitiatedEventId() != null) sb.append("ExternalInitiatedEventId: " + getExternalInitiatedEventId() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -300,7 +300,7 @@ public class WorkflowExecutionSignaledEventAttributes {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof WorkflowExecutionSignaledEventAttributes == false) return false;
         WorkflowExecutionSignaledEventAttributes other = (WorkflowExecutionSignaledEventAttributes)obj;
         

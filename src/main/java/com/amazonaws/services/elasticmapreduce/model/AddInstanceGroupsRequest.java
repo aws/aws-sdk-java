@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -187,8 +187,8 @@ public class AddInstanceGroupsRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (instanceGroups != null) sb.append("InstanceGroups: " + instanceGroups + ", ");
-        if (jobFlowId != null) sb.append("JobFlowId: " + jobFlowId + ", ");
+        if (getInstanceGroups() != null) sb.append("InstanceGroups: " + getInstanceGroups() + ", ");
+        if (getJobFlowId() != null) sb.append("JobFlowId: " + getJobFlowId() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -207,7 +207,7 @@ public class AddInstanceGroupsRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof AddInstanceGroupsRequest == false) return false;
         AddInstanceGroupsRequest other = (AddInstanceGroupsRequest)obj;
         

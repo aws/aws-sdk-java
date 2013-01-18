@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -338,12 +338,12 @@ public class ActivityTask {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (taskToken != null) sb.append("TaskToken: " + taskToken + ", ");
-        if (activityId != null) sb.append("ActivityId: " + activityId + ", ");
-        if (startedEventId != null) sb.append("StartedEventId: " + startedEventId + ", ");
-        if (workflowExecution != null) sb.append("WorkflowExecution: " + workflowExecution + ", ");
-        if (activityType != null) sb.append("ActivityType: " + activityType + ", ");
-        if (input != null) sb.append("Input: " + input + ", ");
+        if (getTaskToken() != null) sb.append("TaskToken: " + getTaskToken() + ", ");
+        if (getActivityId() != null) sb.append("ActivityId: " + getActivityId() + ", ");
+        if (getStartedEventId() != null) sb.append("StartedEventId: " + getStartedEventId() + ", ");
+        if (getWorkflowExecution() != null) sb.append("WorkflowExecution: " + getWorkflowExecution() + ", ");
+        if (getActivityType() != null) sb.append("ActivityType: " + getActivityType() + ", ");
+        if (getInput() != null) sb.append("Input: " + getInput() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -366,7 +366,7 @@ public class ActivityTask {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof ActivityTask == false) return false;
         ActivityTask other = (ActivityTask)obj;
         

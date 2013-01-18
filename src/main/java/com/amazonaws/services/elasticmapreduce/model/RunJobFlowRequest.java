@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -846,15 +846,15 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (name != null) sb.append("Name: " + name + ", ");
-        if (logUri != null) sb.append("LogUri: " + logUri + ", ");
-        if (additionalInfo != null) sb.append("AdditionalInfo: " + additionalInfo + ", ");
-        if (amiVersion != null) sb.append("AmiVersion: " + amiVersion + ", ");
-        if (instances != null) sb.append("Instances: " + instances + ", ");
-        if (steps != null) sb.append("Steps: " + steps + ", ");
-        if (bootstrapActions != null) sb.append("BootstrapActions: " + bootstrapActions + ", ");
-        if (supportedProducts != null) sb.append("SupportedProducts: " + supportedProducts + ", ");
-        if (visibleToAllUsers != null) sb.append("VisibleToAllUsers: " + visibleToAllUsers + ", ");
+        if (getName() != null) sb.append("Name: " + getName() + ", ");
+        if (getLogUri() != null) sb.append("LogUri: " + getLogUri() + ", ");
+        if (getAdditionalInfo() != null) sb.append("AdditionalInfo: " + getAdditionalInfo() + ", ");
+        if (getAmiVersion() != null) sb.append("AmiVersion: " + getAmiVersion() + ", ");
+        if (getInstances() != null) sb.append("Instances: " + getInstances() + ", ");
+        if (getSteps() != null) sb.append("Steps: " + getSteps() + ", ");
+        if (getBootstrapActions() != null) sb.append("BootstrapActions: " + getBootstrapActions() + ", ");
+        if (getSupportedProducts() != null) sb.append("SupportedProducts: " + getSupportedProducts() + ", ");
+        if (isVisibleToAllUsers() != null) sb.append("VisibleToAllUsers: " + isVisibleToAllUsers() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -880,7 +880,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof RunJobFlowRequest == false) return false;
         RunJobFlowRequest other = (RunJobFlowRequest)obj;
         

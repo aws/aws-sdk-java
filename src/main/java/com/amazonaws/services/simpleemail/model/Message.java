@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -140,8 +140,8 @@ public class Message {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (subject != null) sb.append("Subject: " + subject + ", ");
-        if (body != null) sb.append("Body: " + body + ", ");
+        if (getSubject() != null) sb.append("Subject: " + getSubject() + ", ");
+        if (getBody() != null) sb.append("Body: " + getBody() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -160,7 +160,7 @@ public class Message {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof Message == false) return false;
         Message other = (Message)obj;
         

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -396,14 +396,14 @@ public class OptionGroupOption {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (name != null) sb.append("Name: " + name + ", ");
-        if (description != null) sb.append("Description: " + description + ", ");
-        if (engineName != null) sb.append("EngineName: " + engineName + ", ");
-        if (majorEngineVersion != null) sb.append("MajorEngineVersion: " + majorEngineVersion + ", ");
-        if (minimumRequiredMinorEngineVersion != null) sb.append("MinimumRequiredMinorEngineVersion: " + minimumRequiredMinorEngineVersion + ", ");
-        if (portRequired != null) sb.append("PortRequired: " + portRequired + ", ");
-        if (defaultPort != null) sb.append("DefaultPort: " + defaultPort + ", ");
-        if (optionsDependedOn != null) sb.append("OptionsDependedOn: " + optionsDependedOn + ", ");
+        if (getName() != null) sb.append("Name: " + getName() + ", ");
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ", ");
+        if (getEngineName() != null) sb.append("EngineName: " + getEngineName() + ", ");
+        if (getMajorEngineVersion() != null) sb.append("MajorEngineVersion: " + getMajorEngineVersion() + ", ");
+        if (getMinimumRequiredMinorEngineVersion() != null) sb.append("MinimumRequiredMinorEngineVersion: " + getMinimumRequiredMinorEngineVersion() + ", ");
+        if (isPortRequired() != null) sb.append("PortRequired: " + isPortRequired() + ", ");
+        if (getDefaultPort() != null) sb.append("DefaultPort: " + getDefaultPort() + ", ");
+        if (getOptionsDependedOn() != null) sb.append("OptionsDependedOn: " + getOptionsDependedOn() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -428,7 +428,7 @@ public class OptionGroupOption {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof OptionGroupOption == false) return false;
         OptionGroupOption other = (OptionGroupOption)obj;
         

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -372,11 +372,11 @@ public class AccessKey {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (userName != null) sb.append("UserName: " + userName + ", ");
-        if (accessKeyId != null) sb.append("AccessKeyId: " + accessKeyId + ", ");
-        if (status != null) sb.append("Status: " + status + ", ");
-        if (secretAccessKey != null) sb.append("SecretAccessKey: " + secretAccessKey + ", ");
-        if (createDate != null) sb.append("CreateDate: " + createDate + ", ");
+        if (getUserName() != null) sb.append("UserName: " + getUserName() + ", ");
+        if (getAccessKeyId() != null) sb.append("AccessKeyId: " + getAccessKeyId() + ", ");
+        if (getStatus() != null) sb.append("Status: " + getStatus() + ", ");
+        if (getSecretAccessKey() != null) sb.append("SecretAccessKey: " + getSecretAccessKey() + ", ");
+        if (getCreateDate() != null) sb.append("CreateDate: " + getCreateDate() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -398,7 +398,7 @@ public class AccessKey {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof AccessKey == false) return false;
         AccessKey other = (AccessKey)obj;
         

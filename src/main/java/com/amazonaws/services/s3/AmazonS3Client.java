@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -801,7 +801,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             switch (ase.getStatusCode()) {
             case 301:
                 // A redirect error means the bucket exists, but in another region.
-            	return true;
+                return true;
             case 403:
                 // A permissions error means the bucket exists, but is owned by another account.
                 return true;
@@ -1755,16 +1755,18 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
      * @see com.amazonaws.services.s3.AmazonS3#setBucketWebsiteConfiguration(com.amazonaws.services.s3.model.SetBucketWebsiteConfigurationRequest)
      */
     public void setBucketWebsiteConfiguration(SetBucketWebsiteConfigurationRequest setBucketWebsiteConfigurationRequest)
-        throws AmazonClientException, AmazonServiceException {
+           throws AmazonClientException, AmazonServiceException {
         String bucketName = setBucketWebsiteConfigurationRequest.getBucketName();
         BucketWebsiteConfiguration configuration = setBucketWebsiteConfigurationRequest.getConfiguration();
 
-        assertParameterNotNull(bucketName,
-            "The bucket name parameter must be specified when setting a bucket's website configuration");
-        assertParameterNotNull(configuration,
-            "The bucket website configuration parameter must be specified when setting a bucket's website configuration");
-        assertParameterNotNull(configuration.getIndexDocumentSuffix(),
-            "The bucket website configuration parameter must specify the index document suffix when setting a bucket's website configuration");
+            assertParameterNotNull(bucketName,
+                    "The bucket name parameter must be specified when setting a bucket's website configuration");
+            assertParameterNotNull(configuration,
+                    "The bucket website configuration parameter must be specified when setting a bucket's website configuration");
+            if (configuration.getRedirectAllRequestsTo() == null) {
+            assertParameterNotNull(configuration.getIndexDocumentSuffix(),
+                    "The bucket website configuration parameter must specify the index document suffix when setting a bucket's website configuration");
+            }
 
         Request<SetBucketWebsiteConfigurationRequest> request = createRequest(bucketName, null, setBucketWebsiteConfigurationRequest, HttpMethodName.PUT);
         request.addParameter("website", null);
@@ -2821,12 +2823,12 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         String path = null;
         if ( bucketNameUtils.isDNSBucketName(bucketName) ) {
             requestEndpoint = convertToVirtualHostEndpoint(bucketName);
-            path = ServiceUtils.urlEncode(key);
+            path = key;
         } else {
             requestEndpoint = endpoint;
 
             if ( bucketName != null ) {
-                path = bucketName + "/" + (key != null ? ServiceUtils.urlEncode(key) : "");
+                path = bucketName + "/" + (key != null ? key : "");
             }
         }
 

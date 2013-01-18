@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -299,10 +299,10 @@ public class ScheduleActivityTaskFailedEventAttributes {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (activityType != null) sb.append("ActivityType: " + activityType + ", ");
-        if (activityId != null) sb.append("ActivityId: " + activityId + ", ");
-        if (cause != null) sb.append("Cause: " + cause + ", ");
-        if (decisionTaskCompletedEventId != null) sb.append("DecisionTaskCompletedEventId: " + decisionTaskCompletedEventId + ", ");
+        if (getActivityType() != null) sb.append("ActivityType: " + getActivityType() + ", ");
+        if (getActivityId() != null) sb.append("ActivityId: " + getActivityId() + ", ");
+        if (getCause() != null) sb.append("Cause: " + getCause() + ", ");
+        if (getDecisionTaskCompletedEventId() != null) sb.append("DecisionTaskCompletedEventId: " + getDecisionTaskCompletedEventId() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -323,7 +323,7 @@ public class ScheduleActivityTaskFailedEventAttributes {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof ScheduleActivityTaskFailedEventAttributes == false) return false;
         ScheduleActivityTaskFailedEventAttributes other = (ScheduleActivityTaskFailedEventAttributes)obj;
         

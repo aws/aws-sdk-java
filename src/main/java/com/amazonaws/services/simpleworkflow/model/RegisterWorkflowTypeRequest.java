@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -830,14 +830,14 @@ public class RegisterWorkflowTypeRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (domain != null) sb.append("Domain: " + domain + ", ");
-        if (name != null) sb.append("Name: " + name + ", ");
-        if (version != null) sb.append("Version: " + version + ", ");
-        if (description != null) sb.append("Description: " + description + ", ");
-        if (defaultTaskStartToCloseTimeout != null) sb.append("DefaultTaskStartToCloseTimeout: " + defaultTaskStartToCloseTimeout + ", ");
-        if (defaultExecutionStartToCloseTimeout != null) sb.append("DefaultExecutionStartToCloseTimeout: " + defaultExecutionStartToCloseTimeout + ", ");
-        if (defaultTaskList != null) sb.append("DefaultTaskList: " + defaultTaskList + ", ");
-        if (defaultChildPolicy != null) sb.append("DefaultChildPolicy: " + defaultChildPolicy + ", ");
+        if (getDomain() != null) sb.append("Domain: " + getDomain() + ", ");
+        if (getName() != null) sb.append("Name: " + getName() + ", ");
+        if (getVersion() != null) sb.append("Version: " + getVersion() + ", ");
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ", ");
+        if (getDefaultTaskStartToCloseTimeout() != null) sb.append("DefaultTaskStartToCloseTimeout: " + getDefaultTaskStartToCloseTimeout() + ", ");
+        if (getDefaultExecutionStartToCloseTimeout() != null) sb.append("DefaultExecutionStartToCloseTimeout: " + getDefaultExecutionStartToCloseTimeout() + ", ");
+        if (getDefaultTaskList() != null) sb.append("DefaultTaskList: " + getDefaultTaskList() + ", ");
+        if (getDefaultChildPolicy() != null) sb.append("DefaultChildPolicy: " + getDefaultChildPolicy() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -862,7 +862,7 @@ public class RegisterWorkflowTypeRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof RegisterWorkflowTypeRequest == false) return false;
         RegisterWorkflowTypeRequest other = (RegisterWorkflowTypeRequest)obj;
         

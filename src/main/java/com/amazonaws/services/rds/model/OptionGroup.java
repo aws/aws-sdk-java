@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -398,13 +398,13 @@ public class OptionGroup {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (optionGroupName != null) sb.append("OptionGroupName: " + optionGroupName + ", ");
-        if (optionGroupDescription != null) sb.append("OptionGroupDescription: " + optionGroupDescription + ", ");
-        if (engineName != null) sb.append("EngineName: " + engineName + ", ");
-        if (majorEngineVersion != null) sb.append("MajorEngineVersion: " + majorEngineVersion + ", ");
-        if (options != null) sb.append("Options: " + options + ", ");
-        if (allowsVpcAndNonVpcInstanceMemberships != null) sb.append("AllowsVpcAndNonVpcInstanceMemberships: " + allowsVpcAndNonVpcInstanceMemberships + ", ");
-        if (vpcId != null) sb.append("VpcId: " + vpcId + ", ");
+        if (getOptionGroupName() != null) sb.append("OptionGroupName: " + getOptionGroupName() + ", ");
+        if (getOptionGroupDescription() != null) sb.append("OptionGroupDescription: " + getOptionGroupDescription() + ", ");
+        if (getEngineName() != null) sb.append("EngineName: " + getEngineName() + ", ");
+        if (getMajorEngineVersion() != null) sb.append("MajorEngineVersion: " + getMajorEngineVersion() + ", ");
+        if (getOptions() != null) sb.append("Options: " + getOptions() + ", ");
+        if (isAllowsVpcAndNonVpcInstanceMemberships() != null) sb.append("AllowsVpcAndNonVpcInstanceMemberships: " + isAllowsVpcAndNonVpcInstanceMemberships() + ", ");
+        if (getVpcId() != null) sb.append("VpcId: " + getVpcId() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -428,7 +428,7 @@ public class OptionGroup {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof OptionGroup == false) return false;
         OptionGroup other = (OptionGroup)obj;
         

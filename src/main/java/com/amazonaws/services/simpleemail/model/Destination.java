@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -274,9 +274,9 @@ public class Destination {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (toAddresses != null) sb.append("ToAddresses: " + toAddresses + ", ");
-        if (ccAddresses != null) sb.append("CcAddresses: " + ccAddresses + ", ");
-        if (bccAddresses != null) sb.append("BccAddresses: " + bccAddresses + ", ");
+        if (getToAddresses() != null) sb.append("ToAddresses: " + getToAddresses() + ", ");
+        if (getCcAddresses() != null) sb.append("CcAddresses: " + getCcAddresses() + ", ");
+        if (getBccAddresses() != null) sb.append("BccAddresses: " + getBccAddresses() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -296,7 +296,7 @@ public class Destination {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof Destination == false) return false;
         Destination other = (Destination)obj;
         

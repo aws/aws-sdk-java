@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -135,7 +135,7 @@ public class S3OriginConfig {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (originAccessIdentity != null) sb.append("OriginAccessIdentity: " + originAccessIdentity + ", ");
+        if (getOriginAccessIdentity() != null) sb.append("OriginAccessIdentity: " + getOriginAccessIdentity() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -153,7 +153,7 @@ public class S3OriginConfig {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof S3OriginConfig == false) return false;
         S3OriginConfig other = (S3OriginConfig)obj;
         

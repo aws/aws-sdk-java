@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -207,10 +207,10 @@ public class TemplateParameter {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (parameterKey != null) sb.append("ParameterKey: " + parameterKey + ", ");
-        if (defaultValue != null) sb.append("DefaultValue: " + defaultValue + ", ");
-        if (noEcho != null) sb.append("NoEcho: " + noEcho + ", ");
-        if (description != null) sb.append("Description: " + description + ", ");
+        if (getParameterKey() != null) sb.append("ParameterKey: " + getParameterKey() + ", ");
+        if (getDefaultValue() != null) sb.append("DefaultValue: " + getDefaultValue() + ", ");
+        if (isNoEcho() != null) sb.append("NoEcho: " + isNoEcho() + ", ");
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -231,7 +231,7 @@ public class TemplateParameter {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof TemplateParameter == false) return false;
         TemplateParameter other = (TemplateParameter)obj;
         

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -783,18 +783,18 @@ public class DomainStatus {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (domainId != null) sb.append("DomainId: " + domainId + ", ");
-        if (domainName != null) sb.append("DomainName: " + domainName + ", ");
-        if (created != null) sb.append("Created: " + created + ", ");
-        if (deleted != null) sb.append("Deleted: " + deleted + ", ");
-        if (numSearchableDocs != null) sb.append("NumSearchableDocs: " + numSearchableDocs + ", ");
-        if (docService != null) sb.append("DocService: " + docService + ", ");
-        if (searchService != null) sb.append("SearchService: " + searchService + ", ");
-        if (requiresIndexDocuments != null) sb.append("RequiresIndexDocuments: " + requiresIndexDocuments + ", ");
-        if (processing != null) sb.append("Processing: " + processing + ", ");
-        if (searchInstanceType != null) sb.append("SearchInstanceType: " + searchInstanceType + ", ");
-        if (searchPartitionCount != null) sb.append("SearchPartitionCount: " + searchPartitionCount + ", ");
-        if (searchInstanceCount != null) sb.append("SearchInstanceCount: " + searchInstanceCount + ", ");
+        if (getDomainId() != null) sb.append("DomainId: " + getDomainId() + ", ");
+        if (getDomainName() != null) sb.append("DomainName: " + getDomainName() + ", ");
+        if (isCreated() != null) sb.append("Created: " + isCreated() + ", ");
+        if (isDeleted() != null) sb.append("Deleted: " + isDeleted() + ", ");
+        if (getNumSearchableDocs() != null) sb.append("NumSearchableDocs: " + getNumSearchableDocs() + ", ");
+        if (getDocService() != null) sb.append("DocService: " + getDocService() + ", ");
+        if (getSearchService() != null) sb.append("SearchService: " + getSearchService() + ", ");
+        if (isRequiresIndexDocuments() != null) sb.append("RequiresIndexDocuments: " + isRequiresIndexDocuments() + ", ");
+        if (isProcessing() != null) sb.append("Processing: " + isProcessing() + ", ");
+        if (getSearchInstanceType() != null) sb.append("SearchInstanceType: " + getSearchInstanceType() + ", ");
+        if (getSearchPartitionCount() != null) sb.append("SearchPartitionCount: " + getSearchPartitionCount() + ", ");
+        if (getSearchInstanceCount() != null) sb.append("SearchInstanceCount: " + getSearchInstanceCount() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -823,7 +823,7 @@ public class DomainStatus {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DomainStatus == false) return false;
         DomainStatus other = (DomainStatus)obj;
         

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -348,11 +348,11 @@ public class GetWorkflowExecutionHistoryRequest extends AmazonWebServiceRequest 
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (domain != null) sb.append("Domain: " + domain + ", ");
-        if (execution != null) sb.append("Execution: " + execution + ", ");
-        if (nextPageToken != null) sb.append("NextPageToken: " + nextPageToken + ", ");
-        if (maximumPageSize != null) sb.append("MaximumPageSize: " + maximumPageSize + ", ");
-        if (reverseOrder != null) sb.append("ReverseOrder: " + reverseOrder + ", ");
+        if (getDomain() != null) sb.append("Domain: " + getDomain() + ", ");
+        if (getExecution() != null) sb.append("Execution: " + getExecution() + ", ");
+        if (getNextPageToken() != null) sb.append("NextPageToken: " + getNextPageToken() + ", ");
+        if (getMaximumPageSize() != null) sb.append("MaximumPageSize: " + getMaximumPageSize() + ", ");
+        if (isReverseOrder() != null) sb.append("ReverseOrder: " + isReverseOrder() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -374,7 +374,7 @@ public class GetWorkflowExecutionHistoryRequest extends AmazonWebServiceRequest 
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof GetWorkflowExecutionHistoryRequest == false) return false;
         GetWorkflowExecutionHistoryRequest other = (GetWorkflowExecutionHistoryRequest)obj;
         

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -288,9 +288,9 @@ public class EnableMetricsCollectionRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (autoScalingGroupName != null) sb.append("AutoScalingGroupName: " + autoScalingGroupName + ", ");
-        if (metrics != null) sb.append("Metrics: " + metrics + ", ");
-        if (granularity != null) sb.append("Granularity: " + granularity + ", ");
+        if (getAutoScalingGroupName() != null) sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ", ");
+        if (getMetrics() != null) sb.append("Metrics: " + getMetrics() + ", ");
+        if (getGranularity() != null) sb.append("Granularity: " + getGranularity() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -310,7 +310,7 @@ public class EnableMetricsCollectionRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof EnableMetricsCollectionRequest == false) return false;
         EnableMetricsCollectionRequest other = (EnableMetricsCollectionRequest)obj;
         

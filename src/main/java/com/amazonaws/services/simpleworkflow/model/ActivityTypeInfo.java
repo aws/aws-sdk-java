@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -313,11 +313,11 @@ public class ActivityTypeInfo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (activityType != null) sb.append("ActivityType: " + activityType + ", ");
-        if (status != null) sb.append("Status: " + status + ", ");
-        if (description != null) sb.append("Description: " + description + ", ");
-        if (creationDate != null) sb.append("CreationDate: " + creationDate + ", ");
-        if (deprecationDate != null) sb.append("DeprecationDate: " + deprecationDate + ", ");
+        if (getActivityType() != null) sb.append("ActivityType: " + getActivityType() + ", ");
+        if (getStatus() != null) sb.append("Status: " + getStatus() + ", ");
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ", ");
+        if (getCreationDate() != null) sb.append("CreationDate: " + getCreationDate() + ", ");
+        if (getDeprecationDate() != null) sb.append("DeprecationDate: " + getDeprecationDate() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -339,7 +339,7 @@ public class ActivityTypeInfo {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof ActivityTypeInfo == false) return false;
         ActivityTypeInfo other = (ActivityTypeInfo)obj;
         

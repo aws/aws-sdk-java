@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -180,8 +180,8 @@ public class ProvisionedThroughput {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (readCapacityUnits != null) sb.append("ReadCapacityUnits: " + readCapacityUnits + ", ");
-        if (writeCapacityUnits != null) sb.append("WriteCapacityUnits: " + writeCapacityUnits + ", ");
+        if (getReadCapacityUnits() != null) sb.append("ReadCapacityUnits: " + getReadCapacityUnits() + ", ");
+        if (getWriteCapacityUnits() != null) sb.append("WriteCapacityUnits: " + getWriteCapacityUnits() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -200,7 +200,7 @@ public class ProvisionedThroughput {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof ProvisionedThroughput == false) return false;
         ProvisionedThroughput other = (ProvisionedThroughput)obj;
         

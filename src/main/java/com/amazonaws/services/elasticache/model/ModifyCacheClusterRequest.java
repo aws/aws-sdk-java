@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -54,10 +54,19 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest {
     /**
      * A list of Cache Security Group Names to authorize on this Cache
      * Cluster. This change is asynchronously applied as soon as possible.
-     * <p>Constraints: Must contain no more than 255 alphanumeric characters.
-     * Must not be "Default".
+     * <p>This parameter can be used only with clusters that are created
+     * outside of an Amazon Virtual Private Cloud (VPC). <p>Constraints: Must
+     * contain no more than 255 alphanumeric characters. Must not be
+     * "Default".
      */
     private java.util.List<String> cacheSecurityGroupNames;
+
+    /**
+     * Specifies the VPC Security Groups associated with the Cache Cluster.
+     * <p>This parameter can be used only with clusters that are created in
+     * an Amazon Virtual Private Cloud (VPC).
+     */
+    private java.util.List<String> securityGroupIds;
 
     /**
      * The weekly time range (in UTC) during which system maintenance can
@@ -341,13 +350,17 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest {
     /**
      * A list of Cache Security Group Names to authorize on this Cache
      * Cluster. This change is asynchronously applied as soon as possible.
-     * <p>Constraints: Must contain no more than 255 alphanumeric characters.
-     * Must not be "Default".
+     * <p>This parameter can be used only with clusters that are created
+     * outside of an Amazon Virtual Private Cloud (VPC). <p>Constraints: Must
+     * contain no more than 255 alphanumeric characters. Must not be
+     * "Default".
      *
      * @return A list of Cache Security Group Names to authorize on this Cache
      *         Cluster. This change is asynchronously applied as soon as possible.
-     *         <p>Constraints: Must contain no more than 255 alphanumeric characters.
-     *         Must not be "Default".
+     *         <p>This parameter can be used only with clusters that are created
+     *         outside of an Amazon Virtual Private Cloud (VPC). <p>Constraints: Must
+     *         contain no more than 255 alphanumeric characters. Must not be
+     *         "Default".
      */
     public java.util.List<String> getCacheSecurityGroupNames() {
         
@@ -360,13 +373,17 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest {
     /**
      * A list of Cache Security Group Names to authorize on this Cache
      * Cluster. This change is asynchronously applied as soon as possible.
-     * <p>Constraints: Must contain no more than 255 alphanumeric characters.
-     * Must not be "Default".
+     * <p>This parameter can be used only with clusters that are created
+     * outside of an Amazon Virtual Private Cloud (VPC). <p>Constraints: Must
+     * contain no more than 255 alphanumeric characters. Must not be
+     * "Default".
      *
      * @param cacheSecurityGroupNames A list of Cache Security Group Names to authorize on this Cache
      *         Cluster. This change is asynchronously applied as soon as possible.
-     *         <p>Constraints: Must contain no more than 255 alphanumeric characters.
-     *         Must not be "Default".
+     *         <p>This parameter can be used only with clusters that are created
+     *         outside of an Amazon Virtual Private Cloud (VPC). <p>Constraints: Must
+     *         contain no more than 255 alphanumeric characters. Must not be
+     *         "Default".
      */
     public void setCacheSecurityGroupNames(java.util.Collection<String> cacheSecurityGroupNames) {
         if (cacheSecurityGroupNames == null) {
@@ -382,15 +399,19 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest {
     /**
      * A list of Cache Security Group Names to authorize on this Cache
      * Cluster. This change is asynchronously applied as soon as possible.
-     * <p>Constraints: Must contain no more than 255 alphanumeric characters.
-     * Must not be "Default".
+     * <p>This parameter can be used only with clusters that are created
+     * outside of an Amazon Virtual Private Cloud (VPC). <p>Constraints: Must
+     * contain no more than 255 alphanumeric characters. Must not be
+     * "Default".
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cacheSecurityGroupNames A list of Cache Security Group Names to authorize on this Cache
      *         Cluster. This change is asynchronously applied as soon as possible.
-     *         <p>Constraints: Must contain no more than 255 alphanumeric characters.
-     *         Must not be "Default".
+     *         <p>This parameter can be used only with clusters that are created
+     *         outside of an Amazon Virtual Private Cloud (VPC). <p>Constraints: Must
+     *         contain no more than 255 alphanumeric characters. Must not be
+     *         "Default".
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -406,15 +427,19 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest {
     /**
      * A list of Cache Security Group Names to authorize on this Cache
      * Cluster. This change is asynchronously applied as soon as possible.
-     * <p>Constraints: Must contain no more than 255 alphanumeric characters.
-     * Must not be "Default".
+     * <p>This parameter can be used only with clusters that are created
+     * outside of an Amazon Virtual Private Cloud (VPC). <p>Constraints: Must
+     * contain no more than 255 alphanumeric characters. Must not be
+     * "Default".
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param cacheSecurityGroupNames A list of Cache Security Group Names to authorize on this Cache
      *         Cluster. This change is asynchronously applied as soon as possible.
-     *         <p>Constraints: Must contain no more than 255 alphanumeric characters.
-     *         Must not be "Default".
+     *         <p>This parameter can be used only with clusters that are created
+     *         outside of an Amazon Virtual Private Cloud (VPC). <p>Constraints: Must
+     *         contain no more than 255 alphanumeric characters. Must not be
+     *         "Default".
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -426,6 +451,91 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest {
             java.util.List<String> cacheSecurityGroupNamesCopy = new java.util.ArrayList<String>(cacheSecurityGroupNames.size());
             cacheSecurityGroupNamesCopy.addAll(cacheSecurityGroupNames);
             this.cacheSecurityGroupNames = cacheSecurityGroupNamesCopy;
+        }
+
+        return this;
+    }
+    
+    /**
+     * Specifies the VPC Security Groups associated with the Cache Cluster.
+     * <p>This parameter can be used only with clusters that are created in
+     * an Amazon Virtual Private Cloud (VPC).
+     *
+     * @return Specifies the VPC Security Groups associated with the Cache Cluster.
+     *         <p>This parameter can be used only with clusters that are created in
+     *         an Amazon Virtual Private Cloud (VPC).
+     */
+    public java.util.List<String> getSecurityGroupIds() {
+        
+        if (securityGroupIds == null) {
+            securityGroupIds = new java.util.ArrayList<String>();
+        }
+        return securityGroupIds;
+    }
+    
+    /**
+     * Specifies the VPC Security Groups associated with the Cache Cluster.
+     * <p>This parameter can be used only with clusters that are created in
+     * an Amazon Virtual Private Cloud (VPC).
+     *
+     * @param securityGroupIds Specifies the VPC Security Groups associated with the Cache Cluster.
+     *         <p>This parameter can be used only with clusters that are created in
+     *         an Amazon Virtual Private Cloud (VPC).
+     */
+    public void setSecurityGroupIds(java.util.Collection<String> securityGroupIds) {
+        if (securityGroupIds == null) {
+            this.securityGroupIds = null;
+            return;
+        }
+
+        java.util.List<String> securityGroupIdsCopy = new java.util.ArrayList<String>(securityGroupIds.size());
+        securityGroupIdsCopy.addAll(securityGroupIds);
+        this.securityGroupIds = securityGroupIdsCopy;
+    }
+    
+    /**
+     * Specifies the VPC Security Groups associated with the Cache Cluster.
+     * <p>This parameter can be used only with clusters that are created in
+     * an Amazon Virtual Private Cloud (VPC).
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param securityGroupIds Specifies the VPC Security Groups associated with the Cache Cluster.
+     *         <p>This parameter can be used only with clusters that are created in
+     *         an Amazon Virtual Private Cloud (VPC).
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public ModifyCacheClusterRequest withSecurityGroupIds(String... securityGroupIds) {
+        if (getSecurityGroupIds() == null) setSecurityGroupIds(new java.util.ArrayList<String>(securityGroupIds.length));
+        for (String value : securityGroupIds) {
+            getSecurityGroupIds().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * Specifies the VPC Security Groups associated with the Cache Cluster.
+     * <p>This parameter can be used only with clusters that are created in
+     * an Amazon Virtual Private Cloud (VPC).
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param securityGroupIds Specifies the VPC Security Groups associated with the Cache Cluster.
+     *         <p>This parameter can be used only with clusters that are created in
+     *         an Amazon Virtual Private Cloud (VPC).
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public ModifyCacheClusterRequest withSecurityGroupIds(java.util.Collection<String> securityGroupIds) {
+        if (securityGroupIds == null) {
+            this.securityGroupIds = null;
+        } else {
+            java.util.List<String> securityGroupIdsCopy = new java.util.ArrayList<String>(securityGroupIds.size());
+            securityGroupIdsCopy.addAll(securityGroupIds);
+            this.securityGroupIds = securityGroupIdsCopy;
         }
 
         return this;
@@ -829,17 +939,18 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (cacheClusterId != null) sb.append("CacheClusterId: " + cacheClusterId + ", ");
-        if (numCacheNodes != null) sb.append("NumCacheNodes: " + numCacheNodes + ", ");
-        if (cacheNodeIdsToRemove != null) sb.append("CacheNodeIdsToRemove: " + cacheNodeIdsToRemove + ", ");
-        if (cacheSecurityGroupNames != null) sb.append("CacheSecurityGroupNames: " + cacheSecurityGroupNames + ", ");
-        if (preferredMaintenanceWindow != null) sb.append("PreferredMaintenanceWindow: " + preferredMaintenanceWindow + ", ");
-        if (notificationTopicArn != null) sb.append("NotificationTopicArn: " + notificationTopicArn + ", ");
-        if (cacheParameterGroupName != null) sb.append("CacheParameterGroupName: " + cacheParameterGroupName + ", ");
-        if (notificationTopicStatus != null) sb.append("NotificationTopicStatus: " + notificationTopicStatus + ", ");
-        if (applyImmediately != null) sb.append("ApplyImmediately: " + applyImmediately + ", ");
-        if (engineVersion != null) sb.append("EngineVersion: " + engineVersion + ", ");
-        if (autoMinorVersionUpgrade != null) sb.append("AutoMinorVersionUpgrade: " + autoMinorVersionUpgrade + ", ");
+        if (getCacheClusterId() != null) sb.append("CacheClusterId: " + getCacheClusterId() + ", ");
+        if (getNumCacheNodes() != null) sb.append("NumCacheNodes: " + getNumCacheNodes() + ", ");
+        if (getCacheNodeIdsToRemove() != null) sb.append("CacheNodeIdsToRemove: " + getCacheNodeIdsToRemove() + ", ");
+        if (getCacheSecurityGroupNames() != null) sb.append("CacheSecurityGroupNames: " + getCacheSecurityGroupNames() + ", ");
+        if (getSecurityGroupIds() != null) sb.append("SecurityGroupIds: " + getSecurityGroupIds() + ", ");
+        if (getPreferredMaintenanceWindow() != null) sb.append("PreferredMaintenanceWindow: " + getPreferredMaintenanceWindow() + ", ");
+        if (getNotificationTopicArn() != null) sb.append("NotificationTopicArn: " + getNotificationTopicArn() + ", ");
+        if (getCacheParameterGroupName() != null) sb.append("CacheParameterGroupName: " + getCacheParameterGroupName() + ", ");
+        if (getNotificationTopicStatus() != null) sb.append("NotificationTopicStatus: " + getNotificationTopicStatus() + ", ");
+        if (isApplyImmediately() != null) sb.append("ApplyImmediately: " + isApplyImmediately() + ", ");
+        if (getEngineVersion() != null) sb.append("EngineVersion: " + getEngineVersion() + ", ");
+        if (isAutoMinorVersionUpgrade() != null) sb.append("AutoMinorVersionUpgrade: " + isAutoMinorVersionUpgrade() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -853,6 +964,7 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest {
         hashCode = prime * hashCode + ((getNumCacheNodes() == null) ? 0 : getNumCacheNodes().hashCode()); 
         hashCode = prime * hashCode + ((getCacheNodeIdsToRemove() == null) ? 0 : getCacheNodeIdsToRemove().hashCode()); 
         hashCode = prime * hashCode + ((getCacheSecurityGroupNames() == null) ? 0 : getCacheSecurityGroupNames().hashCode()); 
+        hashCode = prime * hashCode + ((getSecurityGroupIds() == null) ? 0 : getSecurityGroupIds().hashCode()); 
         hashCode = prime * hashCode + ((getPreferredMaintenanceWindow() == null) ? 0 : getPreferredMaintenanceWindow().hashCode()); 
         hashCode = prime * hashCode + ((getNotificationTopicArn() == null) ? 0 : getNotificationTopicArn().hashCode()); 
         hashCode = prime * hashCode + ((getCacheParameterGroupName() == null) ? 0 : getCacheParameterGroupName().hashCode()); 
@@ -867,7 +979,7 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof ModifyCacheClusterRequest == false) return false;
         ModifyCacheClusterRequest other = (ModifyCacheClusterRequest)obj;
         
@@ -879,6 +991,8 @@ public class ModifyCacheClusterRequest extends AmazonWebServiceRequest {
         if (other.getCacheNodeIdsToRemove() != null && other.getCacheNodeIdsToRemove().equals(this.getCacheNodeIdsToRemove()) == false) return false; 
         if (other.getCacheSecurityGroupNames() == null ^ this.getCacheSecurityGroupNames() == null) return false;
         if (other.getCacheSecurityGroupNames() != null && other.getCacheSecurityGroupNames().equals(this.getCacheSecurityGroupNames()) == false) return false; 
+        if (other.getSecurityGroupIds() == null ^ this.getSecurityGroupIds() == null) return false;
+        if (other.getSecurityGroupIds() != null && other.getSecurityGroupIds().equals(this.getSecurityGroupIds()) == false) return false; 
         if (other.getPreferredMaintenanceWindow() == null ^ this.getPreferredMaintenanceWindow() == null) return false;
         if (other.getPreferredMaintenanceWindow() != null && other.getPreferredMaintenanceWindow().equals(this.getPreferredMaintenanceWindow()) == false) return false; 
         if (other.getNotificationTopicArn() == null ^ this.getNotificationTopicArn() == null) return false;

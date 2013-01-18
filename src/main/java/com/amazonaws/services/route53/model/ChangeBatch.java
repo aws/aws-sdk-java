@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -210,8 +210,8 @@ public class ChangeBatch {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (comment != null) sb.append("Comment: " + comment + ", ");
-        if (changes != null) sb.append("Changes: " + changes + ", ");
+        if (getComment() != null) sb.append("Comment: " + getComment() + ", ");
+        if (getChanges() != null) sb.append("Changes: " + getChanges() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -230,7 +230,7 @@ public class ChangeBatch {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof ChangeBatch == false) return false;
         ChangeBatch other = (ChangeBatch)obj;
         

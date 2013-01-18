@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -291,9 +291,9 @@ public class WorkflowExecutionCancelRequestedEventAttributes {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (externalWorkflowExecution != null) sb.append("ExternalWorkflowExecution: " + externalWorkflowExecution + ", ");
-        if (externalInitiatedEventId != null) sb.append("ExternalInitiatedEventId: " + externalInitiatedEventId + ", ");
-        if (cause != null) sb.append("Cause: " + cause + ", ");
+        if (getExternalWorkflowExecution() != null) sb.append("ExternalWorkflowExecution: " + getExternalWorkflowExecution() + ", ");
+        if (getExternalInitiatedEventId() != null) sb.append("ExternalInitiatedEventId: " + getExternalInitiatedEventId() + ", ");
+        if (getCause() != null) sb.append("Cause: " + getCause() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -313,7 +313,7 @@ public class WorkflowExecutionCancelRequestedEventAttributes {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof WorkflowExecutionCancelRequestedEventAttributes == false) return false;
         WorkflowExecutionCancelRequestedEventAttributes other = (WorkflowExecutionCancelRequestedEventAttributes)obj;
         

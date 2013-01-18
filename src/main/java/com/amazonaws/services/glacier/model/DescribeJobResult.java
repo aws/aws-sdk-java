@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -846,22 +846,22 @@ public class DescribeJobResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (jobId != null) sb.append("JobId: " + jobId + ", ");
-        if (jobDescription != null) sb.append("JobDescription: " + jobDescription + ", ");
-        if (action != null) sb.append("Action: " + action + ", ");
-        if (archiveId != null) sb.append("ArchiveId: " + archiveId + ", ");
-        if (vaultARN != null) sb.append("VaultARN: " + vaultARN + ", ");
-        if (creationDate != null) sb.append("CreationDate: " + creationDate + ", ");
-        if (completed != null) sb.append("Completed: " + completed + ", ");
-        if (statusCode != null) sb.append("StatusCode: " + statusCode + ", ");
-        if (statusMessage != null) sb.append("StatusMessage: " + statusMessage + ", ");
-        if (archiveSizeInBytes != null) sb.append("ArchiveSizeInBytes: " + archiveSizeInBytes + ", ");
-        if (inventorySizeInBytes != null) sb.append("InventorySizeInBytes: " + inventorySizeInBytes + ", ");
-        if (sNSTopic != null) sb.append("SNSTopic: " + sNSTopic + ", ");
-        if (completionDate != null) sb.append("CompletionDate: " + completionDate + ", ");
-        if (sHA256TreeHash != null) sb.append("SHA256TreeHash: " + sHA256TreeHash + ", ");
-        if (archiveSHA256TreeHash != null) sb.append("ArchiveSHA256TreeHash: " + archiveSHA256TreeHash + ", ");
-        if (retrievalByteRange != null) sb.append("RetrievalByteRange: " + retrievalByteRange + ", ");
+        if (getJobId() != null) sb.append("JobId: " + getJobId() + ", ");
+        if (getJobDescription() != null) sb.append("JobDescription: " + getJobDescription() + ", ");
+        if (getAction() != null) sb.append("Action: " + getAction() + ", ");
+        if (getArchiveId() != null) sb.append("ArchiveId: " + getArchiveId() + ", ");
+        if (getVaultARN() != null) sb.append("VaultARN: " + getVaultARN() + ", ");
+        if (getCreationDate() != null) sb.append("CreationDate: " + getCreationDate() + ", ");
+        if (isCompleted() != null) sb.append("Completed: " + isCompleted() + ", ");
+        if (getStatusCode() != null) sb.append("StatusCode: " + getStatusCode() + ", ");
+        if (getStatusMessage() != null) sb.append("StatusMessage: " + getStatusMessage() + ", ");
+        if (getArchiveSizeInBytes() != null) sb.append("ArchiveSizeInBytes: " + getArchiveSizeInBytes() + ", ");
+        if (getInventorySizeInBytes() != null) sb.append("InventorySizeInBytes: " + getInventorySizeInBytes() + ", ");
+        if (getSNSTopic() != null) sb.append("SNSTopic: " + getSNSTopic() + ", ");
+        if (getCompletionDate() != null) sb.append("CompletionDate: " + getCompletionDate() + ", ");
+        if (getSHA256TreeHash() != null) sb.append("SHA256TreeHash: " + getSHA256TreeHash() + ", ");
+        if (getArchiveSHA256TreeHash() != null) sb.append("ArchiveSHA256TreeHash: " + getArchiveSHA256TreeHash() + ", ");
+        if (getRetrievalByteRange() != null) sb.append("RetrievalByteRange: " + getRetrievalByteRange() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -894,7 +894,7 @@ public class DescribeJobResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DescribeJobResult == false) return false;
         DescribeJobResult other = (DescribeJobResult)obj;
         

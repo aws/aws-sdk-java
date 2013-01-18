@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -408,9 +408,9 @@ public class GetSessionTokenRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (durationSeconds != null) sb.append("DurationSeconds: " + durationSeconds + ", ");
-        if (serialNumber != null) sb.append("SerialNumber: " + serialNumber + ", ");
-        if (tokenCode != null) sb.append("TokenCode: " + tokenCode + ", ");
+        if (getDurationSeconds() != null) sb.append("DurationSeconds: " + getDurationSeconds() + ", ");
+        if (getSerialNumber() != null) sb.append("SerialNumber: " + getSerialNumber() + ", ");
+        if (getTokenCode() != null) sb.append("TokenCode: " + getTokenCode() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -430,7 +430,7 @@ public class GetSessionTokenRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof GetSessionTokenRequest == false) return false;
         GetSessionTokenRequest other = (GetSessionTokenRequest)obj;
         

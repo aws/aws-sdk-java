@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ import javax.swing.JProgressBar;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.auth.AWSCredentials;
-import com.amazonaws.auth.PropertiesCredentials;
+import com.amazonaws.auth.ClasspathPropertiesFileCredentialsProvider;
 import com.amazonaws.services.s3.model.ProgressEvent;
 import com.amazonaws.services.s3.model.ProgressListener;
 import com.amazonaws.services.s3.model.PutObjectRequest;
@@ -59,12 +59,14 @@ public class S3TransferProgressSample {
     private JButton button;
 
     public static void main(String[] args) throws Exception {
-        credentials = new PropertiesCredentials(S3TransferProgressSample.class
-                .getResourceAsStream("AwsCredentials.properties"));
-
-        // TransferManager manages a pool of threads, so we create a
-        // single instance and share it throughout our application.
-        tx = new TransferManager(credentials);
+        /*
+         * This credentials provider implementation loads your AWS credentials
+         * from a properties file at the root of your classpath.
+         * 
+         * TransferManager manages a pool of threads, so we create a
+         * single instance and share it throughout our application.
+         */
+        tx = new TransferManager(new ClasspathPropertiesFileCredentialsProvider().getCredentials());
         
         bucketName = "s3-upload-sdk-sample-" + credentials.getAWSAccessKeyId().toLowerCase();
         

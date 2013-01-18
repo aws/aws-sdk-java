@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -128,8 +128,8 @@ public class DescribeWorkflowTypeRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (domain != null) sb.append("Domain: " + domain + ", ");
-        if (workflowType != null) sb.append("WorkflowType: " + workflowType + ", ");
+        if (getDomain() != null) sb.append("Domain: " + getDomain() + ", ");
+        if (getWorkflowType() != null) sb.append("WorkflowType: " + getWorkflowType() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -148,7 +148,7 @@ public class DescribeWorkflowTypeRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DescribeWorkflowTypeRequest == false) return false;
         DescribeWorkflowTypeRequest other = (DescribeWorkflowTypeRequest)obj;
         

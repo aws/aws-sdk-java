@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -322,9 +322,9 @@ public class IdentityDkimAttributes {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (dkimEnabled != null) sb.append("DkimEnabled: " + dkimEnabled + ", ");
-        if (dkimVerificationStatus != null) sb.append("DkimVerificationStatus: " + dkimVerificationStatus + ", ");
-        if (dkimTokens != null) sb.append("DkimTokens: " + dkimTokens + ", ");
+        if (isDkimEnabled() != null) sb.append("DkimEnabled: " + isDkimEnabled() + ", ");
+        if (getDkimVerificationStatus() != null) sb.append("DkimVerificationStatus: " + getDkimVerificationStatus() + ", ");
+        if (getDkimTokens() != null) sb.append("DkimTokens: " + getDkimTokens() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -344,7 +344,7 @@ public class IdentityDkimAttributes {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof IdentityDkimAttributes == false) return false;
         IdentityDkimAttributes other = (IdentityDkimAttributes)obj;
         

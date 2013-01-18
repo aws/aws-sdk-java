@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -41,9 +41,9 @@ public class GetVaultNotificationsRequestMarshaller implements Marshaller<Reques
     
 
     public Request<GetVaultNotificationsRequest> marshall(GetVaultNotificationsRequest getVaultNotificationsRequest) {
-		if (getVaultNotificationsRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+    if (getVaultNotificationsRequest == null) {
+        throw new AmazonClientException("Invalid argument passed to marshall(...)");
+    }
 
         Request<GetVaultNotificationsRequest> request = new DefaultRequest<GetVaultNotificationsRequest>(getVaultNotificationsRequest, "AmazonGlacier");
         String target = "Glacier.GetVaultNotifications";
@@ -57,7 +57,7 @@ public class GetVaultNotificationsRequestMarshaller implements Marshaller<Reques
         String uriResourcePath = "/{accountId}/vaults/{vaultName}/notification-configuration"; 
         uriResourcePath = uriResourcePath.replace("{accountId}", getString(getVaultNotificationsRequest.getAccountId())); 
         uriResourcePath = uriResourcePath.replace("{vaultName}", getString(getVaultNotificationsRequest.getVaultName())); 
-        
+
         uriResourcePath = uriResourcePath.replaceAll("//", "/");
 
         if (uriResourcePath.contains("?")) {

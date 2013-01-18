@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -398,11 +398,11 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (path != null) sb.append("Path: " + path + ", ");
-        if (serverCertificateName != null) sb.append("ServerCertificateName: " + serverCertificateName + ", ");
-        if (certificateBody != null) sb.append("CertificateBody: " + certificateBody + ", ");
-        if (privateKey != null) sb.append("PrivateKey: " + privateKey + ", ");
-        if (certificateChain != null) sb.append("CertificateChain: " + certificateChain + ", ");
+        if (getPath() != null) sb.append("Path: " + getPath() + ", ");
+        if (getServerCertificateName() != null) sb.append("ServerCertificateName: " + getServerCertificateName() + ", ");
+        if (getCertificateBody() != null) sb.append("CertificateBody: " + getCertificateBody() + ", ");
+        if (getPrivateKey() != null) sb.append("PrivateKey: " + getPrivateKey() + ", ");
+        if (getCertificateChain() != null) sb.append("CertificateChain: " + getCertificateChain() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -424,7 +424,7 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof UploadServerCertificateRequest == false) return false;
         UploadServerCertificateRequest other = (UploadServerCertificateRequest)obj;
         

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -444,11 +444,11 @@ public class DefaultCacheBehavior {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (targetOriginId != null) sb.append("TargetOriginId: " + targetOriginId + ", ");
-        if (forwardedValues != null) sb.append("ForwardedValues: " + forwardedValues + ", ");
-        if (trustedSigners != null) sb.append("TrustedSigners: " + trustedSigners + ", ");
-        if (viewerProtocolPolicy != null) sb.append("ViewerProtocolPolicy: " + viewerProtocolPolicy + ", ");
-        if (minTTL != null) sb.append("MinTTL: " + minTTL + ", ");
+        if (getTargetOriginId() != null) sb.append("TargetOriginId: " + getTargetOriginId() + ", ");
+        if (getForwardedValues() != null) sb.append("ForwardedValues: " + getForwardedValues() + ", ");
+        if (getTrustedSigners() != null) sb.append("TrustedSigners: " + getTrustedSigners() + ", ");
+        if (getViewerProtocolPolicy() != null) sb.append("ViewerProtocolPolicy: " + getViewerProtocolPolicy() + ", ");
+        if (getMinTTL() != null) sb.append("MinTTL: " + getMinTTL() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -470,7 +470,7 @@ public class DefaultCacheBehavior {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DefaultCacheBehavior == false) return false;
         DefaultCacheBehavior other = (DefaultCacheBehavior)obj;
         

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -430,11 +430,11 @@ public class ListHostedZonesResult {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (hostedZones != null) sb.append("HostedZones: " + hostedZones + ", ");
-        if (marker != null) sb.append("Marker: " + marker + ", ");
-        if (isTruncated != null) sb.append("IsTruncated: " + isTruncated + ", ");
-        if (nextMarker != null) sb.append("NextMarker: " + nextMarker + ", ");
-        if (maxItems != null) sb.append("MaxItems: " + maxItems + ", ");
+        if (getHostedZones() != null) sb.append("HostedZones: " + getHostedZones() + ", ");
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ", ");
+        if (isTruncated() != null) sb.append("IsTruncated: " + isTruncated() + ", ");
+        if (getNextMarker() != null) sb.append("NextMarker: " + getNextMarker() + ", ");
+        if (getMaxItems() != null) sb.append("MaxItems: " + getMaxItems() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -456,7 +456,7 @@ public class ListHostedZonesResult {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof ListHostedZonesResult == false) return false;
         ListHostedZonesResult other = (ListHostedZonesResult)obj;
         

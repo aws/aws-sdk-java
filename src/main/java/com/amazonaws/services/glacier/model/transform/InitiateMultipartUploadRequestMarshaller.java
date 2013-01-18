@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -41,9 +41,9 @@ public class InitiateMultipartUploadRequestMarshaller implements Marshaller<Requ
     
 
     public Request<InitiateMultipartUploadRequest> marshall(InitiateMultipartUploadRequest initiateMultipartUploadRequest) {
-		if (initiateMultipartUploadRequest == null) {
-		    throw new AmazonClientException("Invalid argument passed to marshall(...)");
-		}
+    if (initiateMultipartUploadRequest == null) {
+        throw new AmazonClientException("Invalid argument passed to marshall(...)");
+    }
 
         Request<InitiateMultipartUploadRequest> request = new DefaultRequest<InitiateMultipartUploadRequest>(initiateMultipartUploadRequest, "AmazonGlacier");
         String target = "Glacier.InitiateMultipartUpload";
@@ -53,17 +53,17 @@ public class InitiateMultipartUploadRequestMarshaller implements Marshaller<Requ
         
         request.setHttpMethod(HttpMethodName.POST);
         if (initiateMultipartUploadRequest.getArchiveDescription() != null)
-        	request.addHeader("x-amz-archive-description", StringUtils.fromString(initiateMultipartUploadRequest.getArchiveDescription()));
+          request.addHeader("x-amz-archive-description", StringUtils.fromString(initiateMultipartUploadRequest.getArchiveDescription()));
         
         if (initiateMultipartUploadRequest.getPartSize() != null)
-        	request.addHeader("x-amz-part-size", StringUtils.fromString(initiateMultipartUploadRequest.getPartSize()));
+          request.addHeader("x-amz-part-size", StringUtils.fromString(initiateMultipartUploadRequest.getPartSize()));
         
 
 
         String uriResourcePath = "/{accountId}/vaults/{vaultName}/multipart-uploads"; 
         uriResourcePath = uriResourcePath.replace("{accountId}", getString(initiateMultipartUploadRequest.getAccountId())); 
         uriResourcePath = uriResourcePath.replace("{vaultName}", getString(initiateMultipartUploadRequest.getVaultName())); 
-        
+
         uriResourcePath = uriResourcePath.replaceAll("//", "/");
 
         if (uriResourcePath.contains("?")) {

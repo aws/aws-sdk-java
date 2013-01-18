@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -77,7 +77,7 @@ public class DeleteStackRequest extends AmazonWebServiceRequest {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (stackName != null) sb.append("StackName: " + stackName + ", ");
+        if (getStackName() != null) sb.append("StackName: " + getStackName() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -95,7 +95,7 @@ public class DeleteStackRequest extends AmazonWebServiceRequest {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof DeleteStackRequest == false) return false;
         DeleteStackRequest other = (DeleteStackRequest)obj;
         

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2012 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -437,12 +437,12 @@ public class RequestCancelExternalWorkflowExecutionFailedEventAttributes {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (workflowId != null) sb.append("WorkflowId: " + workflowId + ", ");
-        if (runId != null) sb.append("RunId: " + runId + ", ");
-        if (cause != null) sb.append("Cause: " + cause + ", ");
-        if (initiatedEventId != null) sb.append("InitiatedEventId: " + initiatedEventId + ", ");
-        if (decisionTaskCompletedEventId != null) sb.append("DecisionTaskCompletedEventId: " + decisionTaskCompletedEventId + ", ");
-        if (control != null) sb.append("Control: " + control + ", ");
+        if (getWorkflowId() != null) sb.append("WorkflowId: " + getWorkflowId() + ", ");
+        if (getRunId() != null) sb.append("RunId: " + getRunId() + ", ");
+        if (getCause() != null) sb.append("Cause: " + getCause() + ", ");
+        if (getInitiatedEventId() != null) sb.append("InitiatedEventId: " + getInitiatedEventId() + ", ");
+        if (getDecisionTaskCompletedEventId() != null) sb.append("DecisionTaskCompletedEventId: " + getDecisionTaskCompletedEventId() + ", ");
+        if (getControl() != null) sb.append("Control: " + getControl() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -465,7 +465,7 @@ public class RequestCancelExternalWorkflowExecutionFailedEventAttributes {
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null) return false;
-    
+
         if (obj instanceof RequestCancelExternalWorkflowExecutionFailedEventAttributes == false) return false;
         RequestCancelExternalWorkflowExecutionFailedEventAttributes other = (RequestCancelExternalWorkflowExecutionFailedEventAttributes)obj;
         
