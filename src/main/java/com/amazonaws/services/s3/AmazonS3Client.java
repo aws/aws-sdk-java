@@ -207,6 +207,9 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /** Provider for AWS credentials. */
     private AWSCredentialsProvider awsCredentialsProvider;
 
+    /** Flag for forcing path style access */
+    private boolean forcePathStyleAccess = false;
+  
     /**
      * Constructs a new client to invoke service methods on Amazon S3. A
      * credentials provider chain will be used that searches for credentials in
@@ -346,7 +349,29 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         requestHandlers.add(requestHandler);
     }
 
-
+    /**
+     * <p>
+     * Configures the client to use path-style access for all requests.
+     * </p>
+     * <p>
+     * Amazon S3 supports virtual-hosted-style and path-style access in all
+     * Regions. The path-style syntax, however, requires that you use the
+     * region-specific endpoint when attempting to access a bucket.
+     * </p>
+     * <p>
+     * The default behaviour is to detect which access style to use based on
+     * the configured endpoint (an IP will result in path-style access) and
+     * the bucket being accessed (some buckets are not valid DNS names).
+     * Setting this flag will result in path-style access being used for all
+     * requests.
+     * </p>
+     * @param forcePathStyleAccess
+     *            True to always use path-style access.
+     */
+    public void setForcePathStyleAccess( boolean forcePathStyleAccess ) {
+      this.forcePathStyleAccess = forcePathStyleAccess;
+    }
+  
     /* (non-Javadoc)
      * @see com.amazonaws.services.s3.AmazonS3#listNextBatchOfVersions(com.amazonaws.services.s3.model.S3VersionListing)
      */
@@ -2871,7 +2896,8 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         boolean sslCertMismatch = endpoint.getScheme().equalsIgnoreCase("https") &&
                                   bucketName != null && bucketName.contains(".");
 
-        if (bucketNameUtils.isDNSBucketName(bucketName) && !validIP(endpoint.getHost()) && !sslCertMismatch) {
+        if (!forcePathStyleAccess && bucketNameUtils.isDNSBucketName(bucketName) && 
+                !validIP(endpoint.getHost()) && !sslCertMismatch) {
             request.setEndpoint(convertToVirtualHostEndpoint(bucketName));
             request.setResourcePath(ServiceUtils.urlEncode(key));
         } else {

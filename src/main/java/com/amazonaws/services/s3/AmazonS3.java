@@ -137,6 +137,27 @@ public interface AmazonS3 {
 
     /**
      * <p>
+     * Configures the client to use path-style access for all requests.
+     * </p>
+     * <p>
+     * Amazon S3 supports virtual-hosted-style and path-style access in all
+     * Regions. The path-style syntax, however, requires that you use the
+     * region-specific endpoint when attempting to access a bucket.
+     * </p>
+     * <p>
+     * The default behaviour is to detect which access style to use based on
+     * the configured endpoint (an IP will result in path-style access) and
+     * the bucket being accessed (some buckets are not valid DNS names).
+     * Setting this flag will result in path-style access being used for all
+     * requests.
+     * </p>
+     * @param forcePathStyleAccess
+     *            True to always use path-style access.
+     */
+    public void setForcePathStyleAccess(boolean forcePathStyleAccess);
+  
+    /**
+     * <p>
      * Changes the Amazon S3 storage class for a specified object. Amazon S3
      * offers multiple storage classes for developers' different needs.
      * </p>
