@@ -38,7 +38,7 @@ public class DeleteDBSubnetGroupRequestMarshaller implements Marshaller<Request<
 
         Request<DeleteDBSubnetGroupRequest> request = new DefaultRequest<DeleteDBSubnetGroupRequest>(deleteDBSubnetGroupRequest, "AmazonRDS");
         request.addParameter("Action", "DeleteDBSubnetGroup");
-        request.addParameter("Version", "2012-09-17");
+        request.addParameter("Version", "2013-01-10");
 
         if (deleteDBSubnetGroupRequest.getDBSubnetGroupName() != null) {
             request.addParameter("DBSubnetGroupName", StringUtils.fromString(deleteDBSubnetGroupRequest.getDBSubnetGroupName()));

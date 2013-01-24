@@ -82,6 +82,10 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      */
     private Integer iops;
 
+    /**
+     * The option group the DB instance will be associated with. If omitted,
+     * the default Option Group for the engine specified will be used.
+     */
     private String optionGroupName;
 
     /**
@@ -453,29 +457,35 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
     
     
     /**
-     * Returns the value of the OptionGroupName property for this object.
+     * The option group the DB instance will be associated with. If omitted,
+     * the default Option Group for the engine specified will be used.
      *
-     * @return The value of the OptionGroupName property for this object.
+     * @return The option group the DB instance will be associated with. If omitted,
+     *         the default Option Group for the engine specified will be used.
      */
     public String getOptionGroupName() {
         return optionGroupName;
     }
     
     /**
-     * Sets the value of the OptionGroupName property for this object.
+     * The option group the DB instance will be associated with. If omitted,
+     * the default Option Group for the engine specified will be used.
      *
-     * @param optionGroupName The new value for the OptionGroupName property for this object.
+     * @param optionGroupName The option group the DB instance will be associated with. If omitted,
+     *         the default Option Group for the engine specified will be used.
      */
     public void setOptionGroupName(String optionGroupName) {
         this.optionGroupName = optionGroupName;
     }
     
     /**
-     * Sets the value of the OptionGroupName property for this object.
+     * The option group the DB instance will be associated with. If omitted,
+     * the default Option Group for the engine specified will be used.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param optionGroupName The new value for the OptionGroupName property for this object.
+     * @param optionGroupName The option group the DB instance will be associated with. If omitted,
+     *         the default Option Group for the engine specified will be used.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

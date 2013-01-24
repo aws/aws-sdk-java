@@ -38,7 +38,7 @@ public class ModifyDBInstanceRequestMarshaller implements Marshaller<Request<Mod
 
         Request<ModifyDBInstanceRequest> request = new DefaultRequest<ModifyDBInstanceRequest>(modifyDBInstanceRequest, "AmazonRDS");
         request.addParameter("Action", "ModifyDBInstance");
-        request.addParameter("Version", "2012-09-17");
+        request.addParameter("Version", "2013-01-10");
 
         if (modifyDBInstanceRequest.getDBInstanceIdentifier() != null) {
             request.addParameter("DBInstanceIdentifier", StringUtils.fromString(modifyDBInstanceRequest.getDBInstanceIdentifier()));
@@ -59,6 +59,17 @@ public class ModifyDBInstanceRequestMarshaller implements Marshaller<Request<Mod
             }
 
             dBSecurityGroupsListIndex++;
+        }
+
+        java.util.List<String> vpcSecurityGroupIdsList = modifyDBInstanceRequest.getVpcSecurityGroupIds();
+        int vpcSecurityGroupIdsListIndex = 1;
+
+        for (String vpcSecurityGroupIdsListValue : vpcSecurityGroupIdsList) {
+            if (vpcSecurityGroupIdsListValue != null) {
+                request.addParameter("VpcSecurityGroupIds.VpcSecurityGroupId." + vpcSecurityGroupIdsListIndex, StringUtils.fromString(vpcSecurityGroupIdsListValue));
+            }
+
+            vpcSecurityGroupIdsListIndex++;
         }
         if (modifyDBInstanceRequest.isApplyImmediately() != null) {
             request.addParameter("ApplyImmediately", StringUtils.fromBoolean(modifyDBInstanceRequest.isApplyImmediately()));
@@ -95,6 +106,9 @@ public class ModifyDBInstanceRequestMarshaller implements Marshaller<Request<Mod
         }
         if (modifyDBInstanceRequest.getOptionGroupName() != null) {
             request.addParameter("OptionGroupName", StringUtils.fromString(modifyDBInstanceRequest.getOptionGroupName()));
+        }
+        if (modifyDBInstanceRequest.getNewDBInstanceIdentifier() != null) {
+            request.addParameter("NewDBInstanceIdentifier", StringUtils.fromString(modifyDBInstanceRequest.getNewDBInstanceIdentifier()));
         }
 
 

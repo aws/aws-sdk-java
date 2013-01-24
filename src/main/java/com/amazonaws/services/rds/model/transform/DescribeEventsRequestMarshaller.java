@@ -38,7 +38,7 @@ public class DescribeEventsRequestMarshaller implements Marshaller<Request<Descr
 
         Request<DescribeEventsRequest> request = new DefaultRequest<DescribeEventsRequest>(describeEventsRequest, "AmazonRDS");
         request.addParameter("Action", "DescribeEvents");
-        request.addParameter("Version", "2012-09-17");
+        request.addParameter("Version", "2013-01-10");
 
         if (describeEventsRequest.getSourceIdentifier() != null) {
             request.addParameter("SourceIdentifier", StringUtils.fromString(describeEventsRequest.getSourceIdentifier()));
@@ -54,6 +54,17 @@ public class DescribeEventsRequestMarshaller implements Marshaller<Request<Descr
         }
         if (describeEventsRequest.getDuration() != null) {
             request.addParameter("Duration", StringUtils.fromInteger(describeEventsRequest.getDuration()));
+        }
+
+        java.util.List<String> eventCategoriesList = describeEventsRequest.getEventCategories();
+        int eventCategoriesListIndex = 1;
+
+        for (String eventCategoriesListValue : eventCategoriesList) {
+            if (eventCategoriesListValue != null) {
+                request.addParameter("EventCategories.EventCategory." + eventCategoriesListIndex, StringUtils.fromString(eventCategoriesListValue));
+            }
+
+            eventCategoriesListIndex++;
         }
         if (describeEventsRequest.getMaxRecords() != null) {
             request.addParameter("MaxRecords", StringUtils.fromInteger(describeEventsRequest.getMaxRecords()));

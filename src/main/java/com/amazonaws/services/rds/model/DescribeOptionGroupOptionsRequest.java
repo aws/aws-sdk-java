@@ -37,8 +37,20 @@ public class DescribeOptionGroupOptionsRequest extends AmazonWebServiceRequest {
      */
     private String majorEngineVersion;
 
+    /**
+     * The maximum number of records to include in the response. If more
+     * records exist than the specified <code>MaxRecords</code> value, a
+     * pagination token called a marker is included in the response so that
+     * the remaining results can be retrieved. <p>Default: 100
+     * <p>Constraints: minimum 20, maximum 100
+     */
     private Integer maxRecords;
 
+    /**
+     * An optional pagination token provided by a previous request. If this
+     * parameter is specified, the response includes only records beyond the
+     * marker, up to the value specified by <code>MaxRecords</code>.
+     */
     private String marker;
 
     /**
@@ -122,29 +134,53 @@ public class DescribeOptionGroupOptionsRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * Returns the value of the MaxRecords property for this object.
+     * The maximum number of records to include in the response. If more
+     * records exist than the specified <code>MaxRecords</code> value, a
+     * pagination token called a marker is included in the response so that
+     * the remaining results can be retrieved. <p>Default: 100
+     * <p>Constraints: minimum 20, maximum 100
      *
-     * @return The value of the MaxRecords property for this object.
+     * @return The maximum number of records to include in the response. If more
+     *         records exist than the specified <code>MaxRecords</code> value, a
+     *         pagination token called a marker is included in the response so that
+     *         the remaining results can be retrieved. <p>Default: 100
+     *         <p>Constraints: minimum 20, maximum 100
      */
     public Integer getMaxRecords() {
         return maxRecords;
     }
     
     /**
-     * Sets the value of the MaxRecords property for this object.
+     * The maximum number of records to include in the response. If more
+     * records exist than the specified <code>MaxRecords</code> value, a
+     * pagination token called a marker is included in the response so that
+     * the remaining results can be retrieved. <p>Default: 100
+     * <p>Constraints: minimum 20, maximum 100
      *
-     * @param maxRecords The new value for the MaxRecords property for this object.
+     * @param maxRecords The maximum number of records to include in the response. If more
+     *         records exist than the specified <code>MaxRecords</code> value, a
+     *         pagination token called a marker is included in the response so that
+     *         the remaining results can be retrieved. <p>Default: 100
+     *         <p>Constraints: minimum 20, maximum 100
      */
     public void setMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;
     }
     
     /**
-     * Sets the value of the MaxRecords property for this object.
+     * The maximum number of records to include in the response. If more
+     * records exist than the specified <code>MaxRecords</code> value, a
+     * pagination token called a marker is included in the response so that
+     * the remaining results can be retrieved. <p>Default: 100
+     * <p>Constraints: minimum 20, maximum 100
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param maxRecords The new value for the MaxRecords property for this object.
+     * @param maxRecords The maximum number of records to include in the response. If more
+     *         records exist than the specified <code>MaxRecords</code> value, a
+     *         pagination token called a marker is included in the response so that
+     *         the remaining results can be retrieved. <p>Default: 100
+     *         <p>Constraints: minimum 20, maximum 100
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -156,29 +192,41 @@ public class DescribeOptionGroupOptionsRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * Returns the value of the Marker property for this object.
+     * An optional pagination token provided by a previous request. If this
+     * parameter is specified, the response includes only records beyond the
+     * marker, up to the value specified by <code>MaxRecords</code>.
      *
-     * @return The value of the Marker property for this object.
+     * @return An optional pagination token provided by a previous request. If this
+     *         parameter is specified, the response includes only records beyond the
+     *         marker, up to the value specified by <code>MaxRecords</code>.
      */
     public String getMarker() {
         return marker;
     }
     
     /**
-     * Sets the value of the Marker property for this object.
+     * An optional pagination token provided by a previous request. If this
+     * parameter is specified, the response includes only records beyond the
+     * marker, up to the value specified by <code>MaxRecords</code>.
      *
-     * @param marker The new value for the Marker property for this object.
+     * @param marker An optional pagination token provided by a previous request. If this
+     *         parameter is specified, the response includes only records beyond the
+     *         marker, up to the value specified by <code>MaxRecords</code>.
      */
     public void setMarker(String marker) {
         this.marker = marker;
     }
     
     /**
-     * Sets the value of the Marker property for this object.
+     * An optional pagination token provided by a previous request. If this
+     * parameter is specified, the response includes only records beyond the
+     * marker, up to the value specified by <code>MaxRecords</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param marker The new value for the Marker property for this object.
+     * @param marker An optional pagination token provided by a previous request. If this
+     *         parameter is specified, the response includes only records beyond the
+     *         marker, up to the value specified by <code>MaxRecords</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

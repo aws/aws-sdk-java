@@ -34,8 +34,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * If your job flow is long-running (such as a Hive data warehouse) or complex, you may require more than 256 steps to process your data. You can bypass
  * the 256-step limitation in various ways, including using the SSH shell to connect to the master node and submitting queries directly to the software
  * running on the master node, such as Hive and Hadoop. For more information on how to do this, go to <a
- * href="http://docs.amazonwebservices.com/ElasticMapReduce/latest/DeveloperGuide/AddMoreThan256Steps.html"> Add More than 256 Steps to a Job Flow </a>
- * in the <i>Amazon Elastic MapReduce Developer's Guide</i> .
+ * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/AddMoreThan256Steps.html"> Add More than 256 Steps to a Job Flow </a> in the
+ * <i>Amazon Elastic MapReduce Developer's Guide</i> .
  * </p>
  * <p>
  * For long running job flows, we recommend that you periodically store your results.
@@ -76,12 +76,11 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest {
     /**
      * The version of the Amazon Machine Image (AMI) to use when launching
      * Amazon EC2 instances in the job flow. The following values are valid:
-     * <ul> <li>"latest" (latest AMI version; currently AMI 2.0, Hadoop
-     * 0.20.205)</li> <li>"2.0" (AMI 2.0, Hadoop 0.20.205)</li> <li>"1.0"
-     * (AMI 1.0, Hadoop 0.18)</li> </ul> <p>If this value is not specified,
-     * the job flow uses the default of (AMI 1.0, Hadoop 0.18). <p>If the AMI
-     * supports multiple versions of Hadoop (for example, AMI 1.0 supports
-     * both Hadoop 0.18 and 0.20) you can use the
+     * <ul> <li>"latest" (uses the latest AMI)</li> <li>The version number of
+     * the AMI to use, for example, "2.0"</li> </ul> <p>If this value is not
+     * specified, the job flow uses the default of (AMI 1.0, Hadoop 0.18).
+     * <p>If the AMI supports multiple versions of Hadoop (for example, AMI
+     * 1.0 supports both Hadoop 0.18 and 0.20) you can use the
      * <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code> parameter to
      * modify the version of Hadoop from the defaults shown above. <p>For
      * details about the AMI versions currently supported by Amazon
@@ -135,6 +134,18 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest {
      * job flow can view and manage it.
      */
     private Boolean visibleToAllUsers;
+
+    /**
+     * An IAM role for the job flow. The EC2 instances of the job flow assume
+     * this role. The default role is <code>EMRJobflowDefault</code>. In
+     * order to use the default role, you must have already created it using
+     * the CLI.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 10280<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     */
+    private String jobFlowRole;
 
     /**
      * Default constructor for a new RunJobFlowRequest object.  Callers should use the
@@ -305,12 +316,11 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest {
     /**
      * The version of the Amazon Machine Image (AMI) to use when launching
      * Amazon EC2 instances in the job flow. The following values are valid:
-     * <ul> <li>"latest" (latest AMI version; currently AMI 2.0, Hadoop
-     * 0.20.205)</li> <li>"2.0" (AMI 2.0, Hadoop 0.20.205)</li> <li>"1.0"
-     * (AMI 1.0, Hadoop 0.18)</li> </ul> <p>If this value is not specified,
-     * the job flow uses the default of (AMI 1.0, Hadoop 0.18). <p>If the AMI
-     * supports multiple versions of Hadoop (for example, AMI 1.0 supports
-     * both Hadoop 0.18 and 0.20) you can use the
+     * <ul> <li>"latest" (uses the latest AMI)</li> <li>The version number of
+     * the AMI to use, for example, "2.0"</li> </ul> <p>If this value is not
+     * specified, the job flow uses the default of (AMI 1.0, Hadoop 0.18).
+     * <p>If the AMI supports multiple versions of Hadoop (for example, AMI
+     * 1.0 supports both Hadoop 0.18 and 0.20) you can use the
      * <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code> parameter to
      * modify the version of Hadoop from the defaults shown above. <p>For
      * details about the AMI versions currently supported by Amazon
@@ -325,12 +335,11 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest {
      *
      * @return The version of the Amazon Machine Image (AMI) to use when launching
      *         Amazon EC2 instances in the job flow. The following values are valid:
-     *         <ul> <li>"latest" (latest AMI version; currently AMI 2.0, Hadoop
-     *         0.20.205)</li> <li>"2.0" (AMI 2.0, Hadoop 0.20.205)</li> <li>"1.0"
-     *         (AMI 1.0, Hadoop 0.18)</li> </ul> <p>If this value is not specified,
-     *         the job flow uses the default of (AMI 1.0, Hadoop 0.18). <p>If the AMI
-     *         supports multiple versions of Hadoop (for example, AMI 1.0 supports
-     *         both Hadoop 0.18 and 0.20) you can use the
+     *         <ul> <li>"latest" (uses the latest AMI)</li> <li>The version number of
+     *         the AMI to use, for example, "2.0"</li> </ul> <p>If this value is not
+     *         specified, the job flow uses the default of (AMI 1.0, Hadoop 0.18).
+     *         <p>If the AMI supports multiple versions of Hadoop (for example, AMI
+     *         1.0 supports both Hadoop 0.18 and 0.20) you can use the
      *         <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code> parameter to
      *         modify the version of Hadoop from the defaults shown above. <p>For
      *         details about the AMI versions currently supported by Amazon
@@ -346,12 +355,11 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest {
     /**
      * The version of the Amazon Machine Image (AMI) to use when launching
      * Amazon EC2 instances in the job flow. The following values are valid:
-     * <ul> <li>"latest" (latest AMI version; currently AMI 2.0, Hadoop
-     * 0.20.205)</li> <li>"2.0" (AMI 2.0, Hadoop 0.20.205)</li> <li>"1.0"
-     * (AMI 1.0, Hadoop 0.18)</li> </ul> <p>If this value is not specified,
-     * the job flow uses the default of (AMI 1.0, Hadoop 0.18). <p>If the AMI
-     * supports multiple versions of Hadoop (for example, AMI 1.0 supports
-     * both Hadoop 0.18 and 0.20) you can use the
+     * <ul> <li>"latest" (uses the latest AMI)</li> <li>The version number of
+     * the AMI to use, for example, "2.0"</li> </ul> <p>If this value is not
+     * specified, the job flow uses the default of (AMI 1.0, Hadoop 0.18).
+     * <p>If the AMI supports multiple versions of Hadoop (for example, AMI
+     * 1.0 supports both Hadoop 0.18 and 0.20) you can use the
      * <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code> parameter to
      * modify the version of Hadoop from the defaults shown above. <p>For
      * details about the AMI versions currently supported by Amazon
@@ -366,12 +374,11 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest {
      *
      * @param amiVersion The version of the Amazon Machine Image (AMI) to use when launching
      *         Amazon EC2 instances in the job flow. The following values are valid:
-     *         <ul> <li>"latest" (latest AMI version; currently AMI 2.0, Hadoop
-     *         0.20.205)</li> <li>"2.0" (AMI 2.0, Hadoop 0.20.205)</li> <li>"1.0"
-     *         (AMI 1.0, Hadoop 0.18)</li> </ul> <p>If this value is not specified,
-     *         the job flow uses the default of (AMI 1.0, Hadoop 0.18). <p>If the AMI
-     *         supports multiple versions of Hadoop (for example, AMI 1.0 supports
-     *         both Hadoop 0.18 and 0.20) you can use the
+     *         <ul> <li>"latest" (uses the latest AMI)</li> <li>The version number of
+     *         the AMI to use, for example, "2.0"</li> </ul> <p>If this value is not
+     *         specified, the job flow uses the default of (AMI 1.0, Hadoop 0.18).
+     *         <p>If the AMI supports multiple versions of Hadoop (for example, AMI
+     *         1.0 supports both Hadoop 0.18 and 0.20) you can use the
      *         <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code> parameter to
      *         modify the version of Hadoop from the defaults shown above. <p>For
      *         details about the AMI versions currently supported by Amazon
@@ -387,12 +394,11 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest {
     /**
      * The version of the Amazon Machine Image (AMI) to use when launching
      * Amazon EC2 instances in the job flow. The following values are valid:
-     * <ul> <li>"latest" (latest AMI version; currently AMI 2.0, Hadoop
-     * 0.20.205)</li> <li>"2.0" (AMI 2.0, Hadoop 0.20.205)</li> <li>"1.0"
-     * (AMI 1.0, Hadoop 0.18)</li> </ul> <p>If this value is not specified,
-     * the job flow uses the default of (AMI 1.0, Hadoop 0.18). <p>If the AMI
-     * supports multiple versions of Hadoop (for example, AMI 1.0 supports
-     * both Hadoop 0.18 and 0.20) you can use the
+     * <ul> <li>"latest" (uses the latest AMI)</li> <li>The version number of
+     * the AMI to use, for example, "2.0"</li> </ul> <p>If this value is not
+     * specified, the job flow uses the default of (AMI 1.0, Hadoop 0.18).
+     * <p>If the AMI supports multiple versions of Hadoop (for example, AMI
+     * 1.0 supports both Hadoop 0.18 and 0.20) you can use the
      * <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code> parameter to
      * modify the version of Hadoop from the defaults shown above. <p>For
      * details about the AMI versions currently supported by Amazon
@@ -409,12 +415,11 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest {
      *
      * @param amiVersion The version of the Amazon Machine Image (AMI) to use when launching
      *         Amazon EC2 instances in the job flow. The following values are valid:
-     *         <ul> <li>"latest" (latest AMI version; currently AMI 2.0, Hadoop
-     *         0.20.205)</li> <li>"2.0" (AMI 2.0, Hadoop 0.20.205)</li> <li>"1.0"
-     *         (AMI 1.0, Hadoop 0.18)</li> </ul> <p>If this value is not specified,
-     *         the job flow uses the default of (AMI 1.0, Hadoop 0.18). <p>If the AMI
-     *         supports multiple versions of Hadoop (for example, AMI 1.0 supports
-     *         both Hadoop 0.18 and 0.20) you can use the
+     *         <ul> <li>"latest" (uses the latest AMI)</li> <li>The version number of
+     *         the AMI to use, for example, "2.0"</li> </ul> <p>If this value is not
+     *         specified, the job flow uses the default of (AMI 1.0, Hadoop 0.18).
+     *         <p>If the AMI supports multiple versions of Hadoop (for example, AMI
+     *         1.0 supports both Hadoop 0.18 and 0.20) you can use the
      *         <a>JobFlowInstancesConfig</a> <code>HadoopVersion</code> parameter to
      *         modify the version of Hadoop from the defaults shown above. <p>For
      *         details about the AMI versions currently supported by Amazon
@@ -835,6 +840,70 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest {
     }
     
     /**
+     * An IAM role for the job flow. The EC2 instances of the job flow assume
+     * this role. The default role is <code>EMRJobflowDefault</code>. In
+     * order to use the default role, you must have already created it using
+     * the CLI.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 10280<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     *
+     * @return An IAM role for the job flow. The EC2 instances of the job flow assume
+     *         this role. The default role is <code>EMRJobflowDefault</code>. In
+     *         order to use the default role, you must have already created it using
+     *         the CLI.
+     */
+    public String getJobFlowRole() {
+        return jobFlowRole;
+    }
+    
+    /**
+     * An IAM role for the job flow. The EC2 instances of the job flow assume
+     * this role. The default role is <code>EMRJobflowDefault</code>. In
+     * order to use the default role, you must have already created it using
+     * the CLI.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 10280<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     *
+     * @param jobFlowRole An IAM role for the job flow. The EC2 instances of the job flow assume
+     *         this role. The default role is <code>EMRJobflowDefault</code>. In
+     *         order to use the default role, you must have already created it using
+     *         the CLI.
+     */
+    public void setJobFlowRole(String jobFlowRole) {
+        this.jobFlowRole = jobFlowRole;
+    }
+    
+    /**
+     * An IAM role for the job flow. The EC2 instances of the job flow assume
+     * this role. The default role is <code>EMRJobflowDefault</code>. In
+     * order to use the default role, you must have already created it using
+     * the CLI.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 10280<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     *
+     * @param jobFlowRole An IAM role for the job flow. The EC2 instances of the job flow assume
+     *         this role. The default role is <code>EMRJobflowDefault</code>. In
+     *         order to use the default role, you must have already created it using
+     *         the CLI.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public RunJobFlowRequest withJobFlowRole(String jobFlowRole) {
+        this.jobFlowRole = jobFlowRole;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -855,6 +924,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest {
         if (getBootstrapActions() != null) sb.append("BootstrapActions: " + getBootstrapActions() + ", ");
         if (getSupportedProducts() != null) sb.append("SupportedProducts: " + getSupportedProducts() + ", ");
         if (isVisibleToAllUsers() != null) sb.append("VisibleToAllUsers: " + isVisibleToAllUsers() + ", ");
+        if (getJobFlowRole() != null) sb.append("JobFlowRole: " + getJobFlowRole() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -873,6 +943,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest {
         hashCode = prime * hashCode + ((getBootstrapActions() == null) ? 0 : getBootstrapActions().hashCode()); 
         hashCode = prime * hashCode + ((getSupportedProducts() == null) ? 0 : getSupportedProducts().hashCode()); 
         hashCode = prime * hashCode + ((isVisibleToAllUsers() == null) ? 0 : isVisibleToAllUsers().hashCode()); 
+        hashCode = prime * hashCode + ((getJobFlowRole() == null) ? 0 : getJobFlowRole().hashCode()); 
         return hashCode;
     }
     
@@ -902,6 +973,8 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest {
         if (other.getSupportedProducts() != null && other.getSupportedProducts().equals(this.getSupportedProducts()) == false) return false; 
         if (other.isVisibleToAllUsers() == null ^ this.isVisibleToAllUsers() == null) return false;
         if (other.isVisibleToAllUsers() != null && other.isVisibleToAllUsers().equals(this.isVisibleToAllUsers()) == false) return false; 
+        if (other.getJobFlowRole() == null ^ this.getJobFlowRole() == null) return false;
+        if (other.getJobFlowRole() != null && other.getJobFlowRole().equals(this.getJobFlowRole()) == false) return false; 
         return true;
     }
     

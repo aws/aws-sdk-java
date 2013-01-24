@@ -26,6 +26,9 @@ public class OptionGroup {
      */
     private String optionGroupName;
 
+    /**
+     * Provides the description of the option group.
+     */
     private String optionGroupDescription;
 
     /**
@@ -38,6 +41,9 @@ public class OptionGroup {
      */
     private String majorEngineVersion;
 
+    /**
+     * Indicates what options are available in the option group.
+     */
     private java.util.List<Option> options;
 
     /**
@@ -92,30 +98,29 @@ public class OptionGroup {
     
     
     /**
-     * Returns the value of the OptionGroupDescription property for this
-     * object.
+     * Provides the description of the option group.
      *
-     * @return The value of the OptionGroupDescription property for this object.
+     * @return Provides the description of the option group.
      */
     public String getOptionGroupDescription() {
         return optionGroupDescription;
     }
     
     /**
-     * Sets the value of the OptionGroupDescription property for this object.
+     * Provides the description of the option group.
      *
-     * @param optionGroupDescription The new value for the OptionGroupDescription property for this object.
+     * @param optionGroupDescription Provides the description of the option group.
      */
     public void setOptionGroupDescription(String optionGroupDescription) {
         this.optionGroupDescription = optionGroupDescription;
     }
     
     /**
-     * Sets the value of the OptionGroupDescription property for this object.
+     * Provides the description of the option group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param optionGroupDescription The new value for the OptionGroupDescription property for this object.
+     * @param optionGroupDescription Provides the description of the option group.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -195,9 +200,9 @@ public class OptionGroup {
     
     
     /**
-     * Returns the value of the Options property for this object.
+     * Indicates what options are available in the option group.
      *
-     * @return The value of the Options property for this object.
+     * @return Indicates what options are available in the option group.
      */
     public java.util.List<Option> getOptions() {
         
@@ -208,9 +213,9 @@ public class OptionGroup {
     }
     
     /**
-     * Sets the value of the Options property for this object.
+     * Indicates what options are available in the option group.
      *
-     * @param options The new value for the Options property for this object.
+     * @param options Indicates what options are available in the option group.
      */
     public void setOptions(java.util.Collection<Option> options) {
         if (options == null) {
@@ -224,11 +229,11 @@ public class OptionGroup {
     }
     
     /**
-     * Sets the value of the Options property for this object.
+     * Indicates what options are available in the option group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param options The new value for the Options property for this object.
+     * @param options Indicates what options are available in the option group.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -242,11 +247,11 @@ public class OptionGroup {
     }
     
     /**
-     * Sets the value of the Options property for this object.
+     * Indicates what options are available in the option group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param options The new value for the Options property for this object.
+     * @param options Indicates what options are available in the option group.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

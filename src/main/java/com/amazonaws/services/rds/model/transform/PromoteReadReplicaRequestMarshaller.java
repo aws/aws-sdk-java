@@ -38,7 +38,7 @@ public class PromoteReadReplicaRequestMarshaller implements Marshaller<Request<P
 
         Request<PromoteReadReplicaRequest> request = new DefaultRequest<PromoteReadReplicaRequest>(promoteReadReplicaRequest, "AmazonRDS");
         request.addParameter("Action", "PromoteReadReplica");
-        request.addParameter("Version", "2012-09-17");
+        request.addParameter("Version", "2013-01-10");
 
         if (promoteReadReplicaRequest.getDBInstanceIdentifier() != null) {
             request.addParameter("DBInstanceIdentifier", StringUtils.fromString(promoteReadReplicaRequest.getDBInstanceIdentifier()));

@@ -17,7 +17,9 @@ package com.amazonaws.services.rds.model;
 import com.amazonaws.AmazonServiceException;
 
 /**
- * AmazonRDS exception
+ * <p>
+ * The DB subnet is already in use in the availability zone.
+ * </p>
  */        
 public class SubnetAlreadyInUseException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;

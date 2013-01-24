@@ -71,18 +71,22 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest {
      */
     private Integer duration;
 
+    private java.util.List<String> eventCategories;
+
     /**
      * The maximum number of records to include in the response. If more
      * records exist than the specified <code>MaxRecords</code> value, a
-     * marker is included in the response so that the remaining results may
-     * be retrieved. <p>Default: 100 <p>Constraints: minimum 20, maximum 100
+     * pagination token called a marker is included in the response so that
+     * the remaining results may be retrieved. <p>Default: 100
+     * <p>Constraints: minimum 20, maximum 100
      */
     private Integer maxRecords;
 
     /**
-     * An optional marker provided in the previous DescribeEvents request. If
-     * this parameter is specified, the response includes only records beyond
-     * the marker, up to the value specified by <code>MaxRecords</code>.
+     * An optional pagination token provided by a previous DescribeEvents
+     * request. If this parameter is specified, the response includes only
+     * records beyond the marker, up to the value specified by
+     * <code>MaxRecords</code>.
      */
     private String marker;
 
@@ -412,15 +416,86 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest {
     
     
     /**
+     * Returns the value of the EventCategories property for this object.
+     *
+     * @return The value of the EventCategories property for this object.
+     */
+    public java.util.List<String> getEventCategories() {
+        
+        if (eventCategories == null) {
+            eventCategories = new java.util.ArrayList<String>();
+        }
+        return eventCategories;
+    }
+    
+    /**
+     * Sets the value of the EventCategories property for this object.
+     *
+     * @param eventCategories The new value for the EventCategories property for this object.
+     */
+    public void setEventCategories(java.util.Collection<String> eventCategories) {
+        if (eventCategories == null) {
+            this.eventCategories = null;
+            return;
+        }
+
+        java.util.List<String> eventCategoriesCopy = new java.util.ArrayList<String>(eventCategories.size());
+        eventCategoriesCopy.addAll(eventCategories);
+        this.eventCategories = eventCategoriesCopy;
+    }
+    
+    /**
+     * Sets the value of the EventCategories property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param eventCategories The new value for the EventCategories property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public DescribeEventsRequest withEventCategories(String... eventCategories) {
+        if (getEventCategories() == null) setEventCategories(new java.util.ArrayList<String>(eventCategories.length));
+        for (String value : eventCategories) {
+            getEventCategories().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * Sets the value of the EventCategories property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param eventCategories The new value for the EventCategories property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public DescribeEventsRequest withEventCategories(java.util.Collection<String> eventCategories) {
+        if (eventCategories == null) {
+            this.eventCategories = null;
+        } else {
+            java.util.List<String> eventCategoriesCopy = new java.util.ArrayList<String>(eventCategories.size());
+            eventCategoriesCopy.addAll(eventCategories);
+            this.eventCategories = eventCategoriesCopy;
+        }
+
+        return this;
+    }
+    
+    /**
      * The maximum number of records to include in the response. If more
      * records exist than the specified <code>MaxRecords</code> value, a
-     * marker is included in the response so that the remaining results may
-     * be retrieved. <p>Default: 100 <p>Constraints: minimum 20, maximum 100
+     * pagination token called a marker is included in the response so that
+     * the remaining results may be retrieved. <p>Default: 100
+     * <p>Constraints: minimum 20, maximum 100
      *
      * @return The maximum number of records to include in the response. If more
      *         records exist than the specified <code>MaxRecords</code> value, a
-     *         marker is included in the response so that the remaining results may
-     *         be retrieved. <p>Default: 100 <p>Constraints: minimum 20, maximum 100
+     *         pagination token called a marker is included in the response so that
+     *         the remaining results may be retrieved. <p>Default: 100
+     *         <p>Constraints: minimum 20, maximum 100
      */
     public Integer getMaxRecords() {
         return maxRecords;
@@ -429,13 +504,15 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest {
     /**
      * The maximum number of records to include in the response. If more
      * records exist than the specified <code>MaxRecords</code> value, a
-     * marker is included in the response so that the remaining results may
-     * be retrieved. <p>Default: 100 <p>Constraints: minimum 20, maximum 100
+     * pagination token called a marker is included in the response so that
+     * the remaining results may be retrieved. <p>Default: 100
+     * <p>Constraints: minimum 20, maximum 100
      *
      * @param maxRecords The maximum number of records to include in the response. If more
      *         records exist than the specified <code>MaxRecords</code> value, a
-     *         marker is included in the response so that the remaining results may
-     *         be retrieved. <p>Default: 100 <p>Constraints: minimum 20, maximum 100
+     *         pagination token called a marker is included in the response so that
+     *         the remaining results may be retrieved. <p>Default: 100
+     *         <p>Constraints: minimum 20, maximum 100
      */
     public void setMaxRecords(Integer maxRecords) {
         this.maxRecords = maxRecords;
@@ -444,15 +521,17 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest {
     /**
      * The maximum number of records to include in the response. If more
      * records exist than the specified <code>MaxRecords</code> value, a
-     * marker is included in the response so that the remaining results may
-     * be retrieved. <p>Default: 100 <p>Constraints: minimum 20, maximum 100
+     * pagination token called a marker is included in the response so that
+     * the remaining results may be retrieved. <p>Default: 100
+     * <p>Constraints: minimum 20, maximum 100
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param maxRecords The maximum number of records to include in the response. If more
      *         records exist than the specified <code>MaxRecords</code> value, a
-     *         marker is included in the response so that the remaining results may
-     *         be retrieved. <p>Default: 100 <p>Constraints: minimum 20, maximum 100
+     *         pagination token called a marker is included in the response so that
+     *         the remaining results may be retrieved. <p>Default: 100
+     *         <p>Constraints: minimum 20, maximum 100
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -464,41 +543,47 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * An optional marker provided in the previous DescribeEvents request. If
-     * this parameter is specified, the response includes only records beyond
-     * the marker, up to the value specified by <code>MaxRecords</code>.
+     * An optional pagination token provided by a previous DescribeEvents
+     * request. If this parameter is specified, the response includes only
+     * records beyond the marker, up to the value specified by
+     * <code>MaxRecords</code>.
      *
-     * @return An optional marker provided in the previous DescribeEvents request. If
-     *         this parameter is specified, the response includes only records beyond
-     *         the marker, up to the value specified by <code>MaxRecords</code>.
+     * @return An optional pagination token provided by a previous DescribeEvents
+     *         request. If this parameter is specified, the response includes only
+     *         records beyond the marker, up to the value specified by
+     *         <code>MaxRecords</code>.
      */
     public String getMarker() {
         return marker;
     }
     
     /**
-     * An optional marker provided in the previous DescribeEvents request. If
-     * this parameter is specified, the response includes only records beyond
-     * the marker, up to the value specified by <code>MaxRecords</code>.
+     * An optional pagination token provided by a previous DescribeEvents
+     * request. If this parameter is specified, the response includes only
+     * records beyond the marker, up to the value specified by
+     * <code>MaxRecords</code>.
      *
-     * @param marker An optional marker provided in the previous DescribeEvents request. If
-     *         this parameter is specified, the response includes only records beyond
-     *         the marker, up to the value specified by <code>MaxRecords</code>.
+     * @param marker An optional pagination token provided by a previous DescribeEvents
+     *         request. If this parameter is specified, the response includes only
+     *         records beyond the marker, up to the value specified by
+     *         <code>MaxRecords</code>.
      */
     public void setMarker(String marker) {
         this.marker = marker;
     }
     
     /**
-     * An optional marker provided in the previous DescribeEvents request. If
-     * this parameter is specified, the response includes only records beyond
-     * the marker, up to the value specified by <code>MaxRecords</code>.
+     * An optional pagination token provided by a previous DescribeEvents
+     * request. If this parameter is specified, the response includes only
+     * records beyond the marker, up to the value specified by
+     * <code>MaxRecords</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param marker An optional marker provided in the previous DescribeEvents request. If
-     *         this parameter is specified, the response includes only records beyond
-     *         the marker, up to the value specified by <code>MaxRecords</code>.
+     * @param marker An optional pagination token provided by a previous DescribeEvents
+     *         request. If this parameter is specified, the response includes only
+     *         records beyond the marker, up to the value specified by
+     *         <code>MaxRecords</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -526,6 +611,7 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest {
         if (getStartTime() != null) sb.append("StartTime: " + getStartTime() + ", ");
         if (getEndTime() != null) sb.append("EndTime: " + getEndTime() + ", ");
         if (getDuration() != null) sb.append("Duration: " + getDuration() + ", ");
+        if (getEventCategories() != null) sb.append("EventCategories: " + getEventCategories() + ", ");
         if (getMaxRecords() != null) sb.append("MaxRecords: " + getMaxRecords() + ", ");
         if (getMarker() != null) sb.append("Marker: " + getMarker() + ", ");
         sb.append("}");
@@ -542,6 +628,7 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest {
         hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode()); 
         hashCode = prime * hashCode + ((getEndTime() == null) ? 0 : getEndTime().hashCode()); 
         hashCode = prime * hashCode + ((getDuration() == null) ? 0 : getDuration().hashCode()); 
+        hashCode = prime * hashCode + ((getEventCategories() == null) ? 0 : getEventCategories().hashCode()); 
         hashCode = prime * hashCode + ((getMaxRecords() == null) ? 0 : getMaxRecords().hashCode()); 
         hashCode = prime * hashCode + ((getMarker() == null) ? 0 : getMarker().hashCode()); 
         return hashCode;
@@ -565,6 +652,8 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest {
         if (other.getEndTime() != null && other.getEndTime().equals(this.getEndTime()) == false) return false; 
         if (other.getDuration() == null ^ this.getDuration() == null) return false;
         if (other.getDuration() != null && other.getDuration().equals(this.getDuration()) == false) return false; 
+        if (other.getEventCategories() == null ^ this.getEventCategories() == null) return false;
+        if (other.getEventCategories() != null && other.getEventCategories().equals(this.getEventCategories()) == false) return false; 
         if (other.getMaxRecords() == null ^ this.getMaxRecords() == null) return false;
         if (other.getMaxRecords() != null && other.getMaxRecords().equals(this.getMaxRecords()) == false) return false; 
         if (other.getMarker() == null ^ this.getMarker() == null) return false;

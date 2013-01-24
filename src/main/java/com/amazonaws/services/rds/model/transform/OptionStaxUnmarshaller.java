@@ -62,6 +62,10 @@ public class OptionStaxUnmarshaller implements Unmarshaller<Option, StaxUnmarsha
                     option.getDBSecurityGroupMemberships().add(DBSecurityGroupMembershipStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("VpcSecurityGroupMemberships/VpcSecurityGroupMembership", targetDepth)) {
+                    option.getVpcSecurityGroupMemberships().add(VpcSecurityGroupMembershipStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return option;

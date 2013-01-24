@@ -15,7 +15,9 @@
 package com.amazonaws.services.rds.model;
 
 /**
- * Option
+ * <p>
+ * Option details.
+ * </p>
  */
 public class Option {
 
@@ -34,7 +36,17 @@ public class Option {
      */
     private Integer port;
 
+    /**
+     * If the Option requires access to a port, then this DB Security Group
+     * allows access to the port.
+     */
     private java.util.List<DBSecurityGroupMembership> dBSecurityGroupMemberships;
+
+    /**
+     * If the Option requires access to a port, then this VPC Security Group
+     * allows access to the port.
+     */
+    private java.util.List<VpcSecurityGroupMembership> vpcSecurityGroupMemberships;
 
     /**
      * The name of the option.
@@ -139,10 +151,11 @@ public class Option {
     
     
     /**
-     * Returns the value of the DBSecurityGroupMemberships property for this
-     * object.
+     * If the Option requires access to a port, then this DB Security Group
+     * allows access to the port.
      *
-     * @return The value of the DBSecurityGroupMemberships property for this object.
+     * @return If the Option requires access to a port, then this DB Security Group
+     *         allows access to the port.
      */
     public java.util.List<DBSecurityGroupMembership> getDBSecurityGroupMemberships() {
         
@@ -153,11 +166,11 @@ public class Option {
     }
     
     /**
-     * Sets the value of the DBSecurityGroupMemberships property for this
-     * object.
+     * If the Option requires access to a port, then this DB Security Group
+     * allows access to the port.
      *
-     * @param dBSecurityGroupMemberships The new value for the DBSecurityGroupMemberships property for this
-     *         object.
+     * @param dBSecurityGroupMemberships If the Option requires access to a port, then this DB Security Group
+     *         allows access to the port.
      */
     public void setDBSecurityGroupMemberships(java.util.Collection<DBSecurityGroupMembership> dBSecurityGroupMemberships) {
         if (dBSecurityGroupMemberships == null) {
@@ -171,13 +184,13 @@ public class Option {
     }
     
     /**
-     * Sets the value of the DBSecurityGroupMemberships property for this
-     * object.
+     * If the Option requires access to a port, then this DB Security Group
+     * allows access to the port.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBSecurityGroupMemberships The new value for the DBSecurityGroupMemberships property for this
-     *         object.
+     * @param dBSecurityGroupMemberships If the Option requires access to a port, then this DB Security Group
+     *         allows access to the port.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -191,13 +204,13 @@ public class Option {
     }
     
     /**
-     * Sets the value of the DBSecurityGroupMemberships property for this
-     * object.
+     * If the Option requires access to a port, then this DB Security Group
+     * allows access to the port.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBSecurityGroupMemberships The new value for the DBSecurityGroupMemberships property for this
-     *         object.
+     * @param dBSecurityGroupMemberships If the Option requires access to a port, then this DB Security Group
+     *         allows access to the port.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -209,6 +222,83 @@ public class Option {
             java.util.List<DBSecurityGroupMembership> dBSecurityGroupMembershipsCopy = new java.util.ArrayList<DBSecurityGroupMembership>(dBSecurityGroupMemberships.size());
             dBSecurityGroupMembershipsCopy.addAll(dBSecurityGroupMemberships);
             this.dBSecurityGroupMemberships = dBSecurityGroupMembershipsCopy;
+        }
+
+        return this;
+    }
+    
+    /**
+     * If the Option requires access to a port, then this VPC Security Group
+     * allows access to the port.
+     *
+     * @return If the Option requires access to a port, then this VPC Security Group
+     *         allows access to the port.
+     */
+    public java.util.List<VpcSecurityGroupMembership> getVpcSecurityGroupMemberships() {
+        
+        if (vpcSecurityGroupMemberships == null) {
+            vpcSecurityGroupMemberships = new java.util.ArrayList<VpcSecurityGroupMembership>();
+        }
+        return vpcSecurityGroupMemberships;
+    }
+    
+    /**
+     * If the Option requires access to a port, then this VPC Security Group
+     * allows access to the port.
+     *
+     * @param vpcSecurityGroupMemberships If the Option requires access to a port, then this VPC Security Group
+     *         allows access to the port.
+     */
+    public void setVpcSecurityGroupMemberships(java.util.Collection<VpcSecurityGroupMembership> vpcSecurityGroupMemberships) {
+        if (vpcSecurityGroupMemberships == null) {
+            this.vpcSecurityGroupMemberships = null;
+            return;
+        }
+
+        java.util.List<VpcSecurityGroupMembership> vpcSecurityGroupMembershipsCopy = new java.util.ArrayList<VpcSecurityGroupMembership>(vpcSecurityGroupMemberships.size());
+        vpcSecurityGroupMembershipsCopy.addAll(vpcSecurityGroupMemberships);
+        this.vpcSecurityGroupMemberships = vpcSecurityGroupMembershipsCopy;
+    }
+    
+    /**
+     * If the Option requires access to a port, then this VPC Security Group
+     * allows access to the port.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param vpcSecurityGroupMemberships If the Option requires access to a port, then this VPC Security Group
+     *         allows access to the port.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public Option withVpcSecurityGroupMemberships(VpcSecurityGroupMembership... vpcSecurityGroupMemberships) {
+        if (getVpcSecurityGroupMemberships() == null) setVpcSecurityGroupMemberships(new java.util.ArrayList<VpcSecurityGroupMembership>(vpcSecurityGroupMemberships.length));
+        for (VpcSecurityGroupMembership value : vpcSecurityGroupMemberships) {
+            getVpcSecurityGroupMemberships().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * If the Option requires access to a port, then this VPC Security Group
+     * allows access to the port.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param vpcSecurityGroupMemberships If the Option requires access to a port, then this VPC Security Group
+     *         allows access to the port.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public Option withVpcSecurityGroupMemberships(java.util.Collection<VpcSecurityGroupMembership> vpcSecurityGroupMemberships) {
+        if (vpcSecurityGroupMemberships == null) {
+            this.vpcSecurityGroupMemberships = null;
+        } else {
+            java.util.List<VpcSecurityGroupMembership> vpcSecurityGroupMembershipsCopy = new java.util.ArrayList<VpcSecurityGroupMembership>(vpcSecurityGroupMemberships.size());
+            vpcSecurityGroupMembershipsCopy.addAll(vpcSecurityGroupMemberships);
+            this.vpcSecurityGroupMemberships = vpcSecurityGroupMembershipsCopy;
         }
 
         return this;
@@ -230,6 +320,7 @@ public class Option {
         if (getOptionDescription() != null) sb.append("OptionDescription: " + getOptionDescription() + ", ");
         if (getPort() != null) sb.append("Port: " + getPort() + ", ");
         if (getDBSecurityGroupMemberships() != null) sb.append("DBSecurityGroupMemberships: " + getDBSecurityGroupMemberships() + ", ");
+        if (getVpcSecurityGroupMemberships() != null) sb.append("VpcSecurityGroupMemberships: " + getVpcSecurityGroupMemberships() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -243,6 +334,7 @@ public class Option {
         hashCode = prime * hashCode + ((getOptionDescription() == null) ? 0 : getOptionDescription().hashCode()); 
         hashCode = prime * hashCode + ((getPort() == null) ? 0 : getPort().hashCode()); 
         hashCode = prime * hashCode + ((getDBSecurityGroupMemberships() == null) ? 0 : getDBSecurityGroupMemberships().hashCode()); 
+        hashCode = prime * hashCode + ((getVpcSecurityGroupMemberships() == null) ? 0 : getVpcSecurityGroupMemberships().hashCode()); 
         return hashCode;
     }
     
@@ -262,6 +354,8 @@ public class Option {
         if (other.getPort() != null && other.getPort().equals(this.getPort()) == false) return false; 
         if (other.getDBSecurityGroupMemberships() == null ^ this.getDBSecurityGroupMemberships() == null) return false;
         if (other.getDBSecurityGroupMemberships() != null && other.getDBSecurityGroupMemberships().equals(this.getDBSecurityGroupMemberships()) == false) return false; 
+        if (other.getVpcSecurityGroupMemberships() == null ^ this.getVpcSecurityGroupMemberships() == null) return false;
+        if (other.getVpcSecurityGroupMemberships() != null && other.getVpcSecurityGroupMemberships().equals(this.getVpcSecurityGroupMemberships()) == false) return false; 
         return true;
     }
     

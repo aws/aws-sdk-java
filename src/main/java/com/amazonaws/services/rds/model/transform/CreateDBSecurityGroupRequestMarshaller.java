@@ -38,16 +38,13 @@ public class CreateDBSecurityGroupRequestMarshaller implements Marshaller<Reques
 
         Request<CreateDBSecurityGroupRequest> request = new DefaultRequest<CreateDBSecurityGroupRequest>(createDBSecurityGroupRequest, "AmazonRDS");
         request.addParameter("Action", "CreateDBSecurityGroup");
-        request.addParameter("Version", "2012-09-17");
+        request.addParameter("Version", "2013-01-10");
 
         if (createDBSecurityGroupRequest.getDBSecurityGroupName() != null) {
             request.addParameter("DBSecurityGroupName", StringUtils.fromString(createDBSecurityGroupRequest.getDBSecurityGroupName()));
         }
         if (createDBSecurityGroupRequest.getDBSecurityGroupDescription() != null) {
             request.addParameter("DBSecurityGroupDescription", StringUtils.fromString(createDBSecurityGroupRequest.getDBSecurityGroupDescription()));
-        }
-        if (createDBSecurityGroupRequest.getEC2VpcId() != null) {
-            request.addParameter("EC2VpcId", StringUtils.fromString(createDBSecurityGroupRequest.getEC2VpcId()));
         }
 
 

@@ -38,7 +38,7 @@ public class CreateDBInstanceRequestMarshaller implements Marshaller<Request<Cre
 
         Request<CreateDBInstanceRequest> request = new DefaultRequest<CreateDBInstanceRequest>(createDBInstanceRequest, "AmazonRDS");
         request.addParameter("Action", "CreateDBInstance");
-        request.addParameter("Version", "2012-09-17");
+        request.addParameter("Version", "2013-01-10");
 
         if (createDBInstanceRequest.getDBName() != null) {
             request.addParameter("DBName", StringUtils.fromString(createDBInstanceRequest.getDBName()));
@@ -71,6 +71,17 @@ public class CreateDBInstanceRequestMarshaller implements Marshaller<Request<Cre
             }
 
             dBSecurityGroupsListIndex++;
+        }
+
+        java.util.List<String> vpcSecurityGroupIdsList = createDBInstanceRequest.getVpcSecurityGroupIds();
+        int vpcSecurityGroupIdsListIndex = 1;
+
+        for (String vpcSecurityGroupIdsListValue : vpcSecurityGroupIdsList) {
+            if (vpcSecurityGroupIdsListValue != null) {
+                request.addParameter("VpcSecurityGroupIds.VpcSecurityGroupId." + vpcSecurityGroupIdsListIndex, StringUtils.fromString(vpcSecurityGroupIdsListValue));
+            }
+
+            vpcSecurityGroupIdsListIndex++;
         }
         if (createDBInstanceRequest.getAvailabilityZone() != null) {
             request.addParameter("AvailabilityZone", StringUtils.fromString(createDBInstanceRequest.getAvailabilityZone()));

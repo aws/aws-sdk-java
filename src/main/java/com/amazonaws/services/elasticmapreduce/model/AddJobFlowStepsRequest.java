@@ -24,8 +24,8 @@ import com.amazonaws.AmazonWebServiceRequest;
  * If your job flow is long-running (such as a Hive data warehouse) or complex, you may require more than 256 steps to process your data. You can bypass
  * the 256-step limitation in various ways, including using the SSH shell to connect to the master node and submitting queries directly to the software
  * running on the master node, such as Hive and Hadoop. For more information on how to do this, go to <a
- * href="http://docs.amazonwebservices.com/ElasticMapReduce/latest/DeveloperGuide/AddMoreThan256Steps.html"> Add More than 256 Steps to a Job Flow </a>
- * in the <i>Amazon Elastic MapReduce Developer's Guide</i> .
+ * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/AddMoreThan256Steps.html"> Add More than 256 Steps to a Job Flow </a> in the
+ * <i>Amazon Elastic MapReduce Developer's Guide</i> .
  * </p>
  * <p>
  * A step specifies the location of a JAR file stored either on the master node of the job flow or in Amazon S3. Each step is performed by the main

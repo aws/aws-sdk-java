@@ -34,6 +34,9 @@ public class AvailabilityZone {
      */
     private String name;
 
+    /**
+     * True indicates the availability zone is capable of provisioned IOPs.
+     */
     private Boolean provisionedIopsCapable;
 
     /**
@@ -71,30 +74,29 @@ public class AvailabilityZone {
     
     
     /**
-     * Returns the value of the ProvisionedIopsCapable property for this
-     * object.
+     * True indicates the availability zone is capable of provisioned IOPs.
      *
-     * @return The value of the ProvisionedIopsCapable property for this object.
+     * @return True indicates the availability zone is capable of provisioned IOPs.
      */
     public Boolean isProvisionedIopsCapable() {
         return provisionedIopsCapable;
     }
     
     /**
-     * Sets the value of the ProvisionedIopsCapable property for this object.
+     * True indicates the availability zone is capable of provisioned IOPs.
      *
-     * @param provisionedIopsCapable The new value for the ProvisionedIopsCapable property for this object.
+     * @param provisionedIopsCapable True indicates the availability zone is capable of provisioned IOPs.
      */
     public void setProvisionedIopsCapable(Boolean provisionedIopsCapable) {
         this.provisionedIopsCapable = provisionedIopsCapable;
     }
     
     /**
-     * Sets the value of the ProvisionedIopsCapable property for this object.
+     * True indicates the availability zone is capable of provisioned IOPs.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param provisionedIopsCapable The new value for the ProvisionedIopsCapable property for this object.
+     * @param provisionedIopsCapable True indicates the availability zone is capable of provisioned IOPs.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -106,10 +108,9 @@ public class AvailabilityZone {
     
     
     /**
-     * Returns the value of the ProvisionedIopsCapable property for this
-     * object.
+     * True indicates the availability zone is capable of provisioned IOPs.
      *
-     * @return The value of the ProvisionedIopsCapable property for this object.
+     * @return True indicates the availability zone is capable of provisioned IOPs.
      */
     public Boolean getProvisionedIopsCapable() {
         return provisionedIopsCapable;

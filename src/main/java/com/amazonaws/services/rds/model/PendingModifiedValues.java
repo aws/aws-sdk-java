@@ -68,6 +68,12 @@ public class PendingModifiedValues {
     private Integer iops;
 
     /**
+     * Contains the new <code>DBInstanceIdentifier</code> for the DB Instance
+     * that will be applied or is in progress.
+     */
+    private String dBInstanceIdentifier;
+
+    /**
      * Default constructor for a new PendingModifiedValues object.  Callers should use the
      * setter or fluent setter (with...) methods to initialize this object after creating it.
      */
@@ -393,6 +399,46 @@ public class PendingModifiedValues {
     
     
     /**
+     * Contains the new <code>DBInstanceIdentifier</code> for the DB Instance
+     * that will be applied or is in progress.
+     *
+     * @return Contains the new <code>DBInstanceIdentifier</code> for the DB Instance
+     *         that will be applied or is in progress.
+     */
+    public String getDBInstanceIdentifier() {
+        return dBInstanceIdentifier;
+    }
+    
+    /**
+     * Contains the new <code>DBInstanceIdentifier</code> for the DB Instance
+     * that will be applied or is in progress.
+     *
+     * @param dBInstanceIdentifier Contains the new <code>DBInstanceIdentifier</code> for the DB Instance
+     *         that will be applied or is in progress.
+     */
+    public void setDBInstanceIdentifier(String dBInstanceIdentifier) {
+        this.dBInstanceIdentifier = dBInstanceIdentifier;
+    }
+    
+    /**
+     * Contains the new <code>DBInstanceIdentifier</code> for the DB Instance
+     * that will be applied or is in progress.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param dBInstanceIdentifier Contains the new <code>DBInstanceIdentifier</code> for the DB Instance
+     *         that will be applied or is in progress.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public PendingModifiedValues withDBInstanceIdentifier(String dBInstanceIdentifier) {
+        this.dBInstanceIdentifier = dBInstanceIdentifier;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -412,6 +458,7 @@ public class PendingModifiedValues {
         if (isMultiAZ() != null) sb.append("MultiAZ: " + isMultiAZ() + ", ");
         if (getEngineVersion() != null) sb.append("EngineVersion: " + getEngineVersion() + ", ");
         if (getIops() != null) sb.append("Iops: " + getIops() + ", ");
+        if (getDBInstanceIdentifier() != null) sb.append("DBInstanceIdentifier: " + getDBInstanceIdentifier() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -429,6 +476,7 @@ public class PendingModifiedValues {
         hashCode = prime * hashCode + ((isMultiAZ() == null) ? 0 : isMultiAZ().hashCode()); 
         hashCode = prime * hashCode + ((getEngineVersion() == null) ? 0 : getEngineVersion().hashCode()); 
         hashCode = prime * hashCode + ((getIops() == null) ? 0 : getIops().hashCode()); 
+        hashCode = prime * hashCode + ((getDBInstanceIdentifier() == null) ? 0 : getDBInstanceIdentifier().hashCode()); 
         return hashCode;
     }
     
@@ -456,6 +504,8 @@ public class PendingModifiedValues {
         if (other.getEngineVersion() != null && other.getEngineVersion().equals(this.getEngineVersion()) == false) return false; 
         if (other.getIops() == null ^ this.getIops() == null) return false;
         if (other.getIops() != null && other.getIops().equals(this.getIops()) == false) return false; 
+        if (other.getDBInstanceIdentifier() == null ^ this.getDBInstanceIdentifier() == null) return false;
+        if (other.getDBInstanceIdentifier() != null && other.getDBInstanceIdentifier().equals(this.getDBInstanceIdentifier()) == false) return false; 
         return true;
     }
     

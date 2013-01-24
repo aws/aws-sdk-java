@@ -22,7 +22,9 @@ package com.amazonaws.services.rds.model;
 public class DescribeDBEngineVersionsResult {
 
     /**
-     * The identifier returned to allow retrieval of paginated results.
+     * An optional pagination token provided by a previous request. If this
+     * parameter is specified, the response includes only records beyond the
+     * marker, up to the value specified by <code>MaxRecords</code>.
      */
     private String marker;
 
@@ -32,29 +34,41 @@ public class DescribeDBEngineVersionsResult {
     private java.util.List<DBEngineVersion> dBEngineVersions;
 
     /**
-     * The identifier returned to allow retrieval of paginated results.
+     * An optional pagination token provided by a previous request. If this
+     * parameter is specified, the response includes only records beyond the
+     * marker, up to the value specified by <code>MaxRecords</code>.
      *
-     * @return The identifier returned to allow retrieval of paginated results.
+     * @return An optional pagination token provided by a previous request. If this
+     *         parameter is specified, the response includes only records beyond the
+     *         marker, up to the value specified by <code>MaxRecords</code>.
      */
     public String getMarker() {
         return marker;
     }
     
     /**
-     * The identifier returned to allow retrieval of paginated results.
+     * An optional pagination token provided by a previous request. If this
+     * parameter is specified, the response includes only records beyond the
+     * marker, up to the value specified by <code>MaxRecords</code>.
      *
-     * @param marker The identifier returned to allow retrieval of paginated results.
+     * @param marker An optional pagination token provided by a previous request. If this
+     *         parameter is specified, the response includes only records beyond the
+     *         marker, up to the value specified by <code>MaxRecords</code>.
      */
     public void setMarker(String marker) {
         this.marker = marker;
     }
     
     /**
-     * The identifier returned to allow retrieval of paginated results.
+     * An optional pagination token provided by a previous request. If this
+     * parameter is specified, the response includes only records beyond the
+     * marker, up to the value specified by <code>MaxRecords</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param marker The identifier returned to allow retrieval of paginated results.
+     * @param marker An optional pagination token provided by a previous request. If this
+     *         parameter is specified, the response includes only records beyond the
+     *         marker, up to the value specified by <code>MaxRecords</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

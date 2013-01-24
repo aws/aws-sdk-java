@@ -28,12 +28,12 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 
 /**
- * Event StAX Unmarshaller
+ * Vpc Security Group Membership StAX Unmarshaller
  */
-public class EventStaxUnmarshaller implements Unmarshaller<Event, StaxUnmarshallerContext> {
+public class VpcSecurityGroupMembershipStaxUnmarshaller implements Unmarshaller<VpcSecurityGroupMembership, StaxUnmarshallerContext> {
 
-    public Event unmarshall(StaxUnmarshallerContext context) throws Exception {
-        Event event = new Event();
+    public VpcSecurityGroupMembership unmarshall(StaxUnmarshallerContext context) throws Exception {
+        VpcSecurityGroupMembership vpcSecurityGroupMembership = new VpcSecurityGroupMembership();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
@@ -43,40 +43,28 @@ public class EventStaxUnmarshaller implements Unmarshaller<Event, StaxUnmarshall
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();
-            if (xmlEvent.isEndDocument()) return event;
+            if (xmlEvent.isEndDocument()) return vpcSecurityGroupMembership;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
-                if (context.testExpression("SourceIdentifier", targetDepth)) {
-                    event.setSourceIdentifier(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("VpcSecurityGroupId", targetDepth)) {
+                    vpcSecurityGroupMembership.setVpcSecurityGroupId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
-                if (context.testExpression("SourceType", targetDepth)) {
-                    event.setSourceType(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-                if (context.testExpression("Message", targetDepth)) {
-                    event.setMessage(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-                if (context.testExpression("EventCategories/EventCategory", targetDepth)) {
-                    event.getEventCategories().add(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-                if (context.testExpression("Date", targetDepth)) {
-                    event.setDate(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("Status", targetDepth)) {
+                    vpcSecurityGroupMembership.setStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
-                    return event;
+                    return vpcSecurityGroupMembership;
                 }
             }
         }
     }
 
-    private static EventStaxUnmarshaller instance;
-    public static EventStaxUnmarshaller getInstance() {
-        if (instance == null) instance = new EventStaxUnmarshaller();
+    private static VpcSecurityGroupMembershipStaxUnmarshaller instance;
+    public static VpcSecurityGroupMembershipStaxUnmarshaller getInstance() {
+        if (instance == null) instance = new VpcSecurityGroupMembershipStaxUnmarshaller();
         return instance;
     }
 }

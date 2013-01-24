@@ -31,7 +31,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * you must first unlock the job flow by a subsequent call to SetTerminationProtection in which you set the value to <code>false</code> .
  * </p>
  * <p>
- * For more information, go to <a href="http://docs.amazonwebservices.com/ElasticMapReduce/latest/DeveloperGuide/UsingEMR_TerminationProtection.html">
+ * For more information, go to <a href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/UsingEMR_TerminationProtection.html">
  * Protecting a Job Flow from Termination </a> in the <i>Amazon Elastic MapReduce Developer's Guide.</i>
  * </p>
  *

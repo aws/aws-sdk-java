@@ -38,7 +38,7 @@ public class ModifyOptionGroupRequestMarshaller implements Marshaller<Request<Mo
 
         Request<ModifyOptionGroupRequest> request = new DefaultRequest<ModifyOptionGroupRequest>(modifyOptionGroupRequest, "AmazonRDS");
         request.addParameter("Action", "ModifyOptionGroup");
-        request.addParameter("Version", "2012-09-17");
+        request.addParameter("Version", "2013-01-10");
 
         if (modifyOptionGroupRequest.getOptionGroupName() != null) {
             request.addParameter("OptionGroupName", StringUtils.fromString(modifyOptionGroupRequest.getOptionGroupName()));
@@ -66,6 +66,17 @@ public class ModifyOptionGroupRequestMarshaller implements Marshaller<Request<Mo
                     }
 
                     dBSecurityGroupMembershipsListIndex++;
+                }
+
+                java.util.List<String> vpcSecurityGroupMembershipsList = optionConfigurationMember.getVpcSecurityGroupMemberships();
+                int vpcSecurityGroupMembershipsListIndex = 1;
+
+                for (String vpcSecurityGroupMembershipsListValue : vpcSecurityGroupMembershipsList) {
+                    if (vpcSecurityGroupMembershipsListValue != null) {
+                        request.addParameter("OptionsToInclude.OptionConfiguration." + optionsToIncludeListIndex + ".VpcSecurityGroupMemberships.VpcSecurityGroupId." + vpcSecurityGroupMembershipsListIndex, StringUtils.fromString(vpcSecurityGroupMembershipsListValue));
+                    }
+
+                    vpcSecurityGroupMembershipsListIndex++;
                 }
             }
 

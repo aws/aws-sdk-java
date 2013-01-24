@@ -40,6 +40,11 @@ public class Event {
     private String message;
 
     /**
+     * Specifies the category for the event.
+     */
+    private java.util.List<String> eventCategories;
+
+    /**
      * Specifies the date and time of the event.
      */
     private java.util.Date date;
@@ -202,6 +207,75 @@ public class Event {
     
     
     /**
+     * Specifies the category for the event.
+     *
+     * @return Specifies the category for the event.
+     */
+    public java.util.List<String> getEventCategories() {
+        
+        if (eventCategories == null) {
+            eventCategories = new java.util.ArrayList<String>();
+        }
+        return eventCategories;
+    }
+    
+    /**
+     * Specifies the category for the event.
+     *
+     * @param eventCategories Specifies the category for the event.
+     */
+    public void setEventCategories(java.util.Collection<String> eventCategories) {
+        if (eventCategories == null) {
+            this.eventCategories = null;
+            return;
+        }
+
+        java.util.List<String> eventCategoriesCopy = new java.util.ArrayList<String>(eventCategories.size());
+        eventCategoriesCopy.addAll(eventCategories);
+        this.eventCategories = eventCategoriesCopy;
+    }
+    
+    /**
+     * Specifies the category for the event.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param eventCategories Specifies the category for the event.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public Event withEventCategories(String... eventCategories) {
+        if (getEventCategories() == null) setEventCategories(new java.util.ArrayList<String>(eventCategories.length));
+        for (String value : eventCategories) {
+            getEventCategories().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * Specifies the category for the event.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param eventCategories Specifies the category for the event.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public Event withEventCategories(java.util.Collection<String> eventCategories) {
+        if (eventCategories == null) {
+            this.eventCategories = null;
+        } else {
+            java.util.List<String> eventCategoriesCopy = new java.util.ArrayList<String>(eventCategories.size());
+            eventCategoriesCopy.addAll(eventCategories);
+            this.eventCategories = eventCategoriesCopy;
+        }
+
+        return this;
+    }
+    
+    /**
      * Specifies the date and time of the event.
      *
      * @return Specifies the date and time of the event.
@@ -250,6 +324,7 @@ public class Event {
         if (getSourceIdentifier() != null) sb.append("SourceIdentifier: " + getSourceIdentifier() + ", ");
         if (getSourceType() != null) sb.append("SourceType: " + getSourceType() + ", ");
         if (getMessage() != null) sb.append("Message: " + getMessage() + ", ");
+        if (getEventCategories() != null) sb.append("EventCategories: " + getEventCategories() + ", ");
         if (getDate() != null) sb.append("Date: " + getDate() + ", ");
         sb.append("}");
         return sb.toString();
@@ -263,6 +338,7 @@ public class Event {
         hashCode = prime * hashCode + ((getSourceIdentifier() == null) ? 0 : getSourceIdentifier().hashCode()); 
         hashCode = prime * hashCode + ((getSourceType() == null) ? 0 : getSourceType().hashCode()); 
         hashCode = prime * hashCode + ((getMessage() == null) ? 0 : getMessage().hashCode()); 
+        hashCode = prime * hashCode + ((getEventCategories() == null) ? 0 : getEventCategories().hashCode()); 
         hashCode = prime * hashCode + ((getDate() == null) ? 0 : getDate().hashCode()); 
         return hashCode;
     }
@@ -281,6 +357,8 @@ public class Event {
         if (other.getSourceType() != null && other.getSourceType().equals(this.getSourceType()) == false) return false; 
         if (other.getMessage() == null ^ this.getMessage() == null) return false;
         if (other.getMessage() != null && other.getMessage().equals(this.getMessage()) == false) return false; 
+        if (other.getEventCategories() == null ^ this.getEventCategories() == null) return false;
+        if (other.getEventCategories() != null && other.getEventCategories().equals(this.getEventCategories()) == false) return false; 
         if (other.getDate() == null ^ this.getDate() == null) return false;
         if (other.getDate() != null && other.getDate().equals(this.getDate()) == false) return false; 
         return true;

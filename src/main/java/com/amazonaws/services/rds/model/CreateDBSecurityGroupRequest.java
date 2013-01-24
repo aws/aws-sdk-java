@@ -39,13 +39,6 @@ public class CreateDBSecurityGroupRequest extends AmazonWebServiceRequest {
     private String dBSecurityGroupDescription;
 
     /**
-     * The Id of VPC. Indicates which VPC this DB Security Group should
-     * belong to. Must be specified to create a DB Security Group for a VPC;
-     * may not be specified otherwise.
-     */
-    private String eC2VpcId;
-
-    /**
      * Default constructor for a new CreateDBSecurityGroupRequest object.  Callers should use the
      * setter or fluent setter (with...) methods to initialize this object after creating it.
      */
@@ -157,52 +150,6 @@ public class CreateDBSecurityGroupRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * The Id of VPC. Indicates which VPC this DB Security Group should
-     * belong to. Must be specified to create a DB Security Group for a VPC;
-     * may not be specified otherwise.
-     *
-     * @return The Id of VPC. Indicates which VPC this DB Security Group should
-     *         belong to. Must be specified to create a DB Security Group for a VPC;
-     *         may not be specified otherwise.
-     */
-    public String getEC2VpcId() {
-        return eC2VpcId;
-    }
-    
-    /**
-     * The Id of VPC. Indicates which VPC this DB Security Group should
-     * belong to. Must be specified to create a DB Security Group for a VPC;
-     * may not be specified otherwise.
-     *
-     * @param eC2VpcId The Id of VPC. Indicates which VPC this DB Security Group should
-     *         belong to. Must be specified to create a DB Security Group for a VPC;
-     *         may not be specified otherwise.
-     */
-    public void setEC2VpcId(String eC2VpcId) {
-        this.eC2VpcId = eC2VpcId;
-    }
-    
-    /**
-     * The Id of VPC. Indicates which VPC this DB Security Group should
-     * belong to. Must be specified to create a DB Security Group for a VPC;
-     * may not be specified otherwise.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param eC2VpcId The Id of VPC. Indicates which VPC this DB Security Group should
-     *         belong to. Must be specified to create a DB Security Group for a VPC;
-     *         may not be specified otherwise.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     */
-    public CreateDBSecurityGroupRequest withEC2VpcId(String eC2VpcId) {
-        this.eC2VpcId = eC2VpcId;
-        return this;
-    }
-    
-    
-    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -216,7 +163,6 @@ public class CreateDBSecurityGroupRequest extends AmazonWebServiceRequest {
         sb.append("{");
         if (getDBSecurityGroupName() != null) sb.append("DBSecurityGroupName: " + getDBSecurityGroupName() + ", ");
         if (getDBSecurityGroupDescription() != null) sb.append("DBSecurityGroupDescription: " + getDBSecurityGroupDescription() + ", ");
-        if (getEC2VpcId() != null) sb.append("EC2VpcId: " + getEC2VpcId() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -228,7 +174,6 @@ public class CreateDBSecurityGroupRequest extends AmazonWebServiceRequest {
         
         hashCode = prime * hashCode + ((getDBSecurityGroupName() == null) ? 0 : getDBSecurityGroupName().hashCode()); 
         hashCode = prime * hashCode + ((getDBSecurityGroupDescription() == null) ? 0 : getDBSecurityGroupDescription().hashCode()); 
-        hashCode = prime * hashCode + ((getEC2VpcId() == null) ? 0 : getEC2VpcId().hashCode()); 
         return hashCode;
     }
     
@@ -244,8 +189,6 @@ public class CreateDBSecurityGroupRequest extends AmazonWebServiceRequest {
         if (other.getDBSecurityGroupName() != null && other.getDBSecurityGroupName().equals(this.getDBSecurityGroupName()) == false) return false; 
         if (other.getDBSecurityGroupDescription() == null ^ this.getDBSecurityGroupDescription() == null) return false;
         if (other.getDBSecurityGroupDescription() != null && other.getDBSecurityGroupDescription().equals(this.getDBSecurityGroupDescription()) == false) return false; 
-        if (other.getEC2VpcId() == null ^ this.getEC2VpcId() == null) return false;
-        if (other.getEC2VpcId() != null && other.getEC2VpcId().equals(this.getEC2VpcId()) == false) return false; 
         return true;
     }
     

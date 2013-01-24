@@ -213,6 +213,9 @@ public class RunJobFlowRequestMarshaller implements Marshaller<Request<RunJobFlo
         if (runJobFlowRequest.isVisibleToAllUsers() != null) {
             request.addParameter("VisibleToAllUsers", StringUtils.fromBoolean(runJobFlowRequest.isVisibleToAllUsers()));
         }
+        if (runJobFlowRequest.getJobFlowRole() != null) {
+            request.addParameter("JobFlowRole", StringUtils.fromString(runJobFlowRequest.getJobFlowRole()));
+        }
 
 
         return request;

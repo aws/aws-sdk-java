@@ -105,6 +105,12 @@ public class DBInstance {
     private java.util.List<DBSecurityGroupMembership> dBSecurityGroups;
 
     /**
+     * Provides List of VPC security group elements that the DB Instance
+     * belongs to.
+     */
+    private java.util.List<VpcSecurityGroupMembership> vpcSecurityGroups;
+
+    /**
      * Provides the list of DB Parameter Groups applied to this DB Instance.
      */
     private java.util.List<DBParameterGroupStatus> dBParameterGroups;
@@ -189,6 +195,14 @@ public class DBInstance {
      * is associated with.
      */
     private String characterSetName;
+
+    /**
+     * If present, specifies the name of the secondary Availability Zone for
+     * a DB instance with multi-AZ support.
+     */
+    private String secondaryAvailabilityZone;
+
+    private Boolean publiclyAccessible;
 
     /**
      * Contains a user-supplied database identifier. This is the unique key
@@ -710,6 +724,83 @@ public class DBInstance {
             java.util.List<DBSecurityGroupMembership> dBSecurityGroupsCopy = new java.util.ArrayList<DBSecurityGroupMembership>(dBSecurityGroups.size());
             dBSecurityGroupsCopy.addAll(dBSecurityGroups);
             this.dBSecurityGroups = dBSecurityGroupsCopy;
+        }
+
+        return this;
+    }
+    
+    /**
+     * Provides List of VPC security group elements that the DB Instance
+     * belongs to.
+     *
+     * @return Provides List of VPC security group elements that the DB Instance
+     *         belongs to.
+     */
+    public java.util.List<VpcSecurityGroupMembership> getVpcSecurityGroups() {
+        
+        if (vpcSecurityGroups == null) {
+            vpcSecurityGroups = new java.util.ArrayList<VpcSecurityGroupMembership>();
+        }
+        return vpcSecurityGroups;
+    }
+    
+    /**
+     * Provides List of VPC security group elements that the DB Instance
+     * belongs to.
+     *
+     * @param vpcSecurityGroups Provides List of VPC security group elements that the DB Instance
+     *         belongs to.
+     */
+    public void setVpcSecurityGroups(java.util.Collection<VpcSecurityGroupMembership> vpcSecurityGroups) {
+        if (vpcSecurityGroups == null) {
+            this.vpcSecurityGroups = null;
+            return;
+        }
+
+        java.util.List<VpcSecurityGroupMembership> vpcSecurityGroupsCopy = new java.util.ArrayList<VpcSecurityGroupMembership>(vpcSecurityGroups.size());
+        vpcSecurityGroupsCopy.addAll(vpcSecurityGroups);
+        this.vpcSecurityGroups = vpcSecurityGroupsCopy;
+    }
+    
+    /**
+     * Provides List of VPC security group elements that the DB Instance
+     * belongs to.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param vpcSecurityGroups Provides List of VPC security group elements that the DB Instance
+     *         belongs to.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public DBInstance withVpcSecurityGroups(VpcSecurityGroupMembership... vpcSecurityGroups) {
+        if (getVpcSecurityGroups() == null) setVpcSecurityGroups(new java.util.ArrayList<VpcSecurityGroupMembership>(vpcSecurityGroups.length));
+        for (VpcSecurityGroupMembership value : vpcSecurityGroups) {
+            getVpcSecurityGroups().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * Provides List of VPC security group elements that the DB Instance
+     * belongs to.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param vpcSecurityGroups Provides List of VPC security group elements that the DB Instance
+     *         belongs to.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public DBInstance withVpcSecurityGroups(java.util.Collection<VpcSecurityGroupMembership> vpcSecurityGroups) {
+        if (vpcSecurityGroups == null) {
+            this.vpcSecurityGroups = null;
+        } else {
+            java.util.List<VpcSecurityGroupMembership> vpcSecurityGroupsCopy = new java.util.ArrayList<VpcSecurityGroupMembership>(vpcSecurityGroups.size());
+            vpcSecurityGroupsCopy.addAll(vpcSecurityGroups);
+            this.vpcSecurityGroups = vpcSecurityGroupsCopy;
         }
 
         return this;
@@ -1382,6 +1473,89 @@ public class DBInstance {
     
     
     /**
+     * If present, specifies the name of the secondary Availability Zone for
+     * a DB instance with multi-AZ support.
+     *
+     * @return If present, specifies the name of the secondary Availability Zone for
+     *         a DB instance with multi-AZ support.
+     */
+    public String getSecondaryAvailabilityZone() {
+        return secondaryAvailabilityZone;
+    }
+    
+    /**
+     * If present, specifies the name of the secondary Availability Zone for
+     * a DB instance with multi-AZ support.
+     *
+     * @param secondaryAvailabilityZone If present, specifies the name of the secondary Availability Zone for
+     *         a DB instance with multi-AZ support.
+     */
+    public void setSecondaryAvailabilityZone(String secondaryAvailabilityZone) {
+        this.secondaryAvailabilityZone = secondaryAvailabilityZone;
+    }
+    
+    /**
+     * If present, specifies the name of the secondary Availability Zone for
+     * a DB instance with multi-AZ support.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param secondaryAvailabilityZone If present, specifies the name of the secondary Availability Zone for
+     *         a DB instance with multi-AZ support.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public DBInstance withSecondaryAvailabilityZone(String secondaryAvailabilityZone) {
+        this.secondaryAvailabilityZone = secondaryAvailabilityZone;
+        return this;
+    }
+    
+    
+    /**
+     * Returns the value of the PubliclyAccessible property for this object.
+     *
+     * @return The value of the PubliclyAccessible property for this object.
+     */
+    public Boolean isPubliclyAccessible() {
+        return publiclyAccessible;
+    }
+    
+    /**
+     * Sets the value of the PubliclyAccessible property for this object.
+     *
+     * @param publiclyAccessible The new value for the PubliclyAccessible property for this object.
+     */
+    public void setPubliclyAccessible(Boolean publiclyAccessible) {
+        this.publiclyAccessible = publiclyAccessible;
+    }
+    
+    /**
+     * Sets the value of the PubliclyAccessible property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param publiclyAccessible The new value for the PubliclyAccessible property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public DBInstance withPubliclyAccessible(Boolean publiclyAccessible) {
+        this.publiclyAccessible = publiclyAccessible;
+        return this;
+    }
+    
+    
+    /**
+     * Returns the value of the PubliclyAccessible property for this object.
+     *
+     * @return The value of the PubliclyAccessible property for this object.
+     */
+    public Boolean getPubliclyAccessible() {
+        return publiclyAccessible;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -1405,6 +1579,7 @@ public class DBInstance {
         if (getPreferredBackupWindow() != null) sb.append("PreferredBackupWindow: " + getPreferredBackupWindow() + ", ");
         if (getBackupRetentionPeriod() != null) sb.append("BackupRetentionPeriod: " + getBackupRetentionPeriod() + ", ");
         if (getDBSecurityGroups() != null) sb.append("DBSecurityGroups: " + getDBSecurityGroups() + ", ");
+        if (getVpcSecurityGroups() != null) sb.append("VpcSecurityGroups: " + getVpcSecurityGroups() + ", ");
         if (getDBParameterGroups() != null) sb.append("DBParameterGroups: " + getDBParameterGroups() + ", ");
         if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ", ");
         if (getDBSubnetGroup() != null) sb.append("DBSubnetGroup: " + getDBSubnetGroup() + ", ");
@@ -1420,6 +1595,8 @@ public class DBInstance {
         if (getIops() != null) sb.append("Iops: " + getIops() + ", ");
         if (getOptionGroupMembership() != null) sb.append("OptionGroupMembership: " + getOptionGroupMembership() + ", ");
         if (getCharacterSetName() != null) sb.append("CharacterSetName: " + getCharacterSetName() + ", ");
+        if (getSecondaryAvailabilityZone() != null) sb.append("SecondaryAvailabilityZone: " + getSecondaryAvailabilityZone() + ", ");
+        if (isPubliclyAccessible() != null) sb.append("PubliclyAccessible: " + isPubliclyAccessible() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -1441,6 +1618,7 @@ public class DBInstance {
         hashCode = prime * hashCode + ((getPreferredBackupWindow() == null) ? 0 : getPreferredBackupWindow().hashCode()); 
         hashCode = prime * hashCode + ((getBackupRetentionPeriod() == null) ? 0 : getBackupRetentionPeriod().hashCode()); 
         hashCode = prime * hashCode + ((getDBSecurityGroups() == null) ? 0 : getDBSecurityGroups().hashCode()); 
+        hashCode = prime * hashCode + ((getVpcSecurityGroups() == null) ? 0 : getVpcSecurityGroups().hashCode()); 
         hashCode = prime * hashCode + ((getDBParameterGroups() == null) ? 0 : getDBParameterGroups().hashCode()); 
         hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode()); 
         hashCode = prime * hashCode + ((getDBSubnetGroup() == null) ? 0 : getDBSubnetGroup().hashCode()); 
@@ -1456,6 +1634,8 @@ public class DBInstance {
         hashCode = prime * hashCode + ((getIops() == null) ? 0 : getIops().hashCode()); 
         hashCode = prime * hashCode + ((getOptionGroupMembership() == null) ? 0 : getOptionGroupMembership().hashCode()); 
         hashCode = prime * hashCode + ((getCharacterSetName() == null) ? 0 : getCharacterSetName().hashCode()); 
+        hashCode = prime * hashCode + ((getSecondaryAvailabilityZone() == null) ? 0 : getSecondaryAvailabilityZone().hashCode()); 
+        hashCode = prime * hashCode + ((isPubliclyAccessible() == null) ? 0 : isPubliclyAccessible().hashCode()); 
         return hashCode;
     }
     
@@ -1491,6 +1671,8 @@ public class DBInstance {
         if (other.getBackupRetentionPeriod() != null && other.getBackupRetentionPeriod().equals(this.getBackupRetentionPeriod()) == false) return false; 
         if (other.getDBSecurityGroups() == null ^ this.getDBSecurityGroups() == null) return false;
         if (other.getDBSecurityGroups() != null && other.getDBSecurityGroups().equals(this.getDBSecurityGroups()) == false) return false; 
+        if (other.getVpcSecurityGroups() == null ^ this.getVpcSecurityGroups() == null) return false;
+        if (other.getVpcSecurityGroups() != null && other.getVpcSecurityGroups().equals(this.getVpcSecurityGroups()) == false) return false; 
         if (other.getDBParameterGroups() == null ^ this.getDBParameterGroups() == null) return false;
         if (other.getDBParameterGroups() != null && other.getDBParameterGroups().equals(this.getDBParameterGroups()) == false) return false; 
         if (other.getAvailabilityZone() == null ^ this.getAvailabilityZone() == null) return false;
@@ -1521,6 +1703,10 @@ public class DBInstance {
         if (other.getOptionGroupMembership() != null && other.getOptionGroupMembership().equals(this.getOptionGroupMembership()) == false) return false; 
         if (other.getCharacterSetName() == null ^ this.getCharacterSetName() == null) return false;
         if (other.getCharacterSetName() != null && other.getCharacterSetName().equals(this.getCharacterSetName()) == false) return false; 
+        if (other.getSecondaryAvailabilityZone() == null ^ this.getSecondaryAvailabilityZone() == null) return false;
+        if (other.getSecondaryAvailabilityZone() != null && other.getSecondaryAvailabilityZone().equals(this.getSecondaryAvailabilityZone()) == false) return false; 
+        if (other.isPubliclyAccessible() == null ^ this.isPubliclyAccessible() == null) return false;
+        if (other.isPubliclyAccessible() != null && other.isPubliclyAccessible().equals(this.isPubliclyAccessible()) == false) return false; 
         return true;
     }
     

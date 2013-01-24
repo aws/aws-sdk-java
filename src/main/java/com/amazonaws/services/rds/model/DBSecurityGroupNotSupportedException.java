@@ -17,20 +17,18 @@ package com.amazonaws.services.rds.model;
 import com.amazonaws.AmazonServiceException;
 
 /**
- * <p>
- * The DB subnet is not in the <i>available</i> state.
- * </p>
+ * AmazonRDS exception
  */        
-public class InvalidDBSubnetStateException extends AmazonServiceException {
+public class DBSecurityGroupNotSupportedException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;
     
     /**
-     * Constructs a new InvalidDBSubnetStateException with the specified error
+     * Constructs a new DBSecurityGroupNotSupportedException with the specified error
      * message.
      * 
      * @param message Describes the error encountered.
      */
-    public InvalidDBSubnetStateException(String message) {
+    public DBSecurityGroupNotSupportedException(String message) {
         super(message);
     }
     

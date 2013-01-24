@@ -69,6 +69,11 @@ public class ObjectMetadata implements ServerSideEncryptionResult, ObjectExpirat
     private Boolean ongoingRestore;
 
     /**
+     * The expiration time when the object is scheduled to move to Amazon Glacier, or null if it has no expiration.
+     */
+    private Date restoreExpirationTime;
+
+    /**
      * <p>
      * Gets the custom user-metadata for the associated object.
      * </p>
@@ -623,6 +628,26 @@ public class ObjectMetadata implements ServerSideEncryptionResult, ObjectExpirat
      */
     public void setExpirationTimeRuleId(String expirationTimeRuleId) {
         this.expirationTimeRuleId = expirationTimeRuleId;
+    }
+
+
+    /**
+     * Returns the expiration time when the object is scheduled to move to
+     * Amazon Glacier, or null if it doesn't expire.
+     */
+    public Date getRestoreExpirationTime() {
+        return restoreExpirationTime;
+    }
+
+    /**
+     * Sets the expiration time when the object is scheduled to move to Amazon
+     * Glacier.
+     *
+     * @param expirationTime
+     *            The expiration time for the object to move to.
+     */
+    public void setRestoreExpirationTime(Date restoreExpirationTime) {
+        this.restoreExpirationTime = restoreExpirationTime;
     }
 
     /**

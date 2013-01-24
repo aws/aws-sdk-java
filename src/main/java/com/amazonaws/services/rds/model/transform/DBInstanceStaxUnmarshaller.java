@@ -97,6 +97,10 @@ public class DBInstanceStaxUnmarshaller implements Unmarshaller<DBInstance, Stax
                     dBInstance.getDBSecurityGroups().add(DBSecurityGroupMembershipStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("VpcSecurityGroups/VpcSecurityGroupMembership", targetDepth)) {
+                    dBInstance.getVpcSecurityGroups().add(VpcSecurityGroupMembershipStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
                 if (context.testExpression("DBParameterGroups/DBParameterGroup", targetDepth)) {
                     dBInstance.getDBParameterGroups().add(DBParameterGroupStatusStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -155,6 +159,14 @@ public class DBInstanceStaxUnmarshaller implements Unmarshaller<DBInstance, Stax
                 }
                 if (context.testExpression("CharacterSetName", targetDepth)) {
                     dBInstance.setCharacterSetName(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("SecondaryAvailabilityZone", targetDepth)) {
+                    dBInstance.setSecondaryAvailabilityZone(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("PubliclyAccessible", targetDepth)) {
+                    dBInstance.setPubliclyAccessible(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

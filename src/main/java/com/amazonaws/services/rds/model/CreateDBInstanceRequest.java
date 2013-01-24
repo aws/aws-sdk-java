@@ -92,11 +92,12 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
     private String masterUsername;
 
     /**
-     * The password for the master database user. <p><b>MySQL</b> <p>
+     * The password for the master database user. Can be any printable ASCII
+     * character except "/", "\", or "@". <p>Type: String <p><b>MySQL</b> <p>
      * Constraints: Must contain from 8 to 41 alphanumeric characters.
-     * <p>Type: String <p><b>Oracle</b> <p> Constraints: Must contain from 8
-     * to 30 alphanumeric characters. <p><b>SQL Server</b> <p> Constraints:
-     * Must contain from 8 to 128 alphanumeric characters.
+     * <p><b>Oracle</b> <p> Constraints: Must contain from 8 to 30
+     * alphanumeric characters. <p><b>SQL Server</b> <p> Constraints: Must
+     * contain from 8 to 128 alphanumeric characters.
      */
     private String masterUserPassword;
 
@@ -105,6 +106,13 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
      * Default: The default DB Security Group for the database engine.
      */
     private java.util.List<String> dBSecurityGroups;
+
+    /**
+     * A list of Ec2 Vpc Security Groups to associate with this DB Instance.
+     * <p> Default: The default Ec2 Vpc Security Group for the DB Subnet
+     * group's Vpc.
+     */
+    private java.util.List<String> vpcSecurityGroupIds;
 
     /**
      * The EC2 Availability Zone that the database instance will be created
@@ -281,11 +289,11 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
      * characters.</li> <li>First character must be a letter.</li> <li>Cannot
      * be a reserved word for the chosen database engine.</li> </ul>
      * @param masterUserPassword The password for the master database user.
-     * <p><b>MySQL</b> <p> Constraints: Must contain from 8 to 41
-     * alphanumeric characters. <p>Type: String <p><b>Oracle</b> <p>
-     * Constraints: Must contain from 8 to 30 alphanumeric characters.
-     * <p><b>SQL Server</b> <p> Constraints: Must contain from 8 to 128
-     * alphanumeric characters.
+     * Can be any printable ASCII character except "/", "\", or "@". <p>Type:
+     * String <p><b>MySQL</b> <p> Constraints: Must contain from 8 to 41
+     * alphanumeric characters. <p><b>Oracle</b> <p> Constraints: Must
+     * contain from 8 to 30 alphanumeric characters. <p><b>SQL Server</b> <p>
+     * Constraints: Must contain from 8 to 128 alphanumeric characters.
      */
     public CreateDBInstanceRequest(String dBInstanceIdentifier, Integer allocatedStorage, String dBInstanceClass, String engine, String masterUsername, String masterUserPassword) {
         this.dBInstanceIdentifier = dBInstanceIdentifier;
@@ -719,53 +727,59 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * The password for the master database user. <p><b>MySQL</b> <p>
+     * The password for the master database user. Can be any printable ASCII
+     * character except "/", "\", or "@". <p>Type: String <p><b>MySQL</b> <p>
      * Constraints: Must contain from 8 to 41 alphanumeric characters.
-     * <p>Type: String <p><b>Oracle</b> <p> Constraints: Must contain from 8
-     * to 30 alphanumeric characters. <p><b>SQL Server</b> <p> Constraints:
-     * Must contain from 8 to 128 alphanumeric characters.
+     * <p><b>Oracle</b> <p> Constraints: Must contain from 8 to 30
+     * alphanumeric characters. <p><b>SQL Server</b> <p> Constraints: Must
+     * contain from 8 to 128 alphanumeric characters.
      *
-     * @return The password for the master database user. <p><b>MySQL</b> <p>
+     * @return The password for the master database user. Can be any printable ASCII
+     *         character except "/", "\", or "@". <p>Type: String <p><b>MySQL</b> <p>
      *         Constraints: Must contain from 8 to 41 alphanumeric characters.
-     *         <p>Type: String <p><b>Oracle</b> <p> Constraints: Must contain from 8
-     *         to 30 alphanumeric characters. <p><b>SQL Server</b> <p> Constraints:
-     *         Must contain from 8 to 128 alphanumeric characters.
+     *         <p><b>Oracle</b> <p> Constraints: Must contain from 8 to 30
+     *         alphanumeric characters. <p><b>SQL Server</b> <p> Constraints: Must
+     *         contain from 8 to 128 alphanumeric characters.
      */
     public String getMasterUserPassword() {
         return masterUserPassword;
     }
     
     /**
-     * The password for the master database user. <p><b>MySQL</b> <p>
+     * The password for the master database user. Can be any printable ASCII
+     * character except "/", "\", or "@". <p>Type: String <p><b>MySQL</b> <p>
      * Constraints: Must contain from 8 to 41 alphanumeric characters.
-     * <p>Type: String <p><b>Oracle</b> <p> Constraints: Must contain from 8
-     * to 30 alphanumeric characters. <p><b>SQL Server</b> <p> Constraints:
-     * Must contain from 8 to 128 alphanumeric characters.
+     * <p><b>Oracle</b> <p> Constraints: Must contain from 8 to 30
+     * alphanumeric characters. <p><b>SQL Server</b> <p> Constraints: Must
+     * contain from 8 to 128 alphanumeric characters.
      *
-     * @param masterUserPassword The password for the master database user. <p><b>MySQL</b> <p>
+     * @param masterUserPassword The password for the master database user. Can be any printable ASCII
+     *         character except "/", "\", or "@". <p>Type: String <p><b>MySQL</b> <p>
      *         Constraints: Must contain from 8 to 41 alphanumeric characters.
-     *         <p>Type: String <p><b>Oracle</b> <p> Constraints: Must contain from 8
-     *         to 30 alphanumeric characters. <p><b>SQL Server</b> <p> Constraints:
-     *         Must contain from 8 to 128 alphanumeric characters.
+     *         <p><b>Oracle</b> <p> Constraints: Must contain from 8 to 30
+     *         alphanumeric characters. <p><b>SQL Server</b> <p> Constraints: Must
+     *         contain from 8 to 128 alphanumeric characters.
      */
     public void setMasterUserPassword(String masterUserPassword) {
         this.masterUserPassword = masterUserPassword;
     }
     
     /**
-     * The password for the master database user. <p><b>MySQL</b> <p>
+     * The password for the master database user. Can be any printable ASCII
+     * character except "/", "\", or "@". <p>Type: String <p><b>MySQL</b> <p>
      * Constraints: Must contain from 8 to 41 alphanumeric characters.
-     * <p>Type: String <p><b>Oracle</b> <p> Constraints: Must contain from 8
-     * to 30 alphanumeric characters. <p><b>SQL Server</b> <p> Constraints:
-     * Must contain from 8 to 128 alphanumeric characters.
+     * <p><b>Oracle</b> <p> Constraints: Must contain from 8 to 30
+     * alphanumeric characters. <p><b>SQL Server</b> <p> Constraints: Must
+     * contain from 8 to 128 alphanumeric characters.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param masterUserPassword The password for the master database user. <p><b>MySQL</b> <p>
+     * @param masterUserPassword The password for the master database user. Can be any printable ASCII
+     *         character except "/", "\", or "@". <p>Type: String <p><b>MySQL</b> <p>
      *         Constraints: Must contain from 8 to 41 alphanumeric characters.
-     *         <p>Type: String <p><b>Oracle</b> <p> Constraints: Must contain from 8
-     *         to 30 alphanumeric characters. <p><b>SQL Server</b> <p> Constraints:
-     *         Must contain from 8 to 128 alphanumeric characters.
+     *         <p><b>Oracle</b> <p> Constraints: Must contain from 8 to 30
+     *         alphanumeric characters. <p><b>SQL Server</b> <p> Constraints: Must
+     *         contain from 8 to 128 alphanumeric characters.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -848,6 +862,91 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
             java.util.List<String> dBSecurityGroupsCopy = new java.util.ArrayList<String>(dBSecurityGroups.size());
             dBSecurityGroupsCopy.addAll(dBSecurityGroups);
             this.dBSecurityGroups = dBSecurityGroupsCopy;
+        }
+
+        return this;
+    }
+    
+    /**
+     * A list of Ec2 Vpc Security Groups to associate with this DB Instance.
+     * <p> Default: The default Ec2 Vpc Security Group for the DB Subnet
+     * group's Vpc.
+     *
+     * @return A list of Ec2 Vpc Security Groups to associate with this DB Instance.
+     *         <p> Default: The default Ec2 Vpc Security Group for the DB Subnet
+     *         group's Vpc.
+     */
+    public java.util.List<String> getVpcSecurityGroupIds() {
+        
+        if (vpcSecurityGroupIds == null) {
+            vpcSecurityGroupIds = new java.util.ArrayList<String>();
+        }
+        return vpcSecurityGroupIds;
+    }
+    
+    /**
+     * A list of Ec2 Vpc Security Groups to associate with this DB Instance.
+     * <p> Default: The default Ec2 Vpc Security Group for the DB Subnet
+     * group's Vpc.
+     *
+     * @param vpcSecurityGroupIds A list of Ec2 Vpc Security Groups to associate with this DB Instance.
+     *         <p> Default: The default Ec2 Vpc Security Group for the DB Subnet
+     *         group's Vpc.
+     */
+    public void setVpcSecurityGroupIds(java.util.Collection<String> vpcSecurityGroupIds) {
+        if (vpcSecurityGroupIds == null) {
+            this.vpcSecurityGroupIds = null;
+            return;
+        }
+
+        java.util.List<String> vpcSecurityGroupIdsCopy = new java.util.ArrayList<String>(vpcSecurityGroupIds.size());
+        vpcSecurityGroupIdsCopy.addAll(vpcSecurityGroupIds);
+        this.vpcSecurityGroupIds = vpcSecurityGroupIdsCopy;
+    }
+    
+    /**
+     * A list of Ec2 Vpc Security Groups to associate with this DB Instance.
+     * <p> Default: The default Ec2 Vpc Security Group for the DB Subnet
+     * group's Vpc.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param vpcSecurityGroupIds A list of Ec2 Vpc Security Groups to associate with this DB Instance.
+     *         <p> Default: The default Ec2 Vpc Security Group for the DB Subnet
+     *         group's Vpc.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public CreateDBInstanceRequest withVpcSecurityGroupIds(String... vpcSecurityGroupIds) {
+        if (getVpcSecurityGroupIds() == null) setVpcSecurityGroupIds(new java.util.ArrayList<String>(vpcSecurityGroupIds.length));
+        for (String value : vpcSecurityGroupIds) {
+            getVpcSecurityGroupIds().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * A list of Ec2 Vpc Security Groups to associate with this DB Instance.
+     * <p> Default: The default Ec2 Vpc Security Group for the DB Subnet
+     * group's Vpc.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param vpcSecurityGroupIds A list of Ec2 Vpc Security Groups to associate with this DB Instance.
+     *         <p> Default: The default Ec2 Vpc Security Group for the DB Subnet
+     *         group's Vpc.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public CreateDBInstanceRequest withVpcSecurityGroupIds(java.util.Collection<String> vpcSecurityGroupIds) {
+        if (vpcSecurityGroupIds == null) {
+            this.vpcSecurityGroupIds = null;
+        } else {
+            java.util.List<String> vpcSecurityGroupIdsCopy = new java.util.ArrayList<String>(vpcSecurityGroupIds.size());
+            vpcSecurityGroupIdsCopy.addAll(vpcSecurityGroupIds);
+            this.vpcSecurityGroupIds = vpcSecurityGroupIdsCopy;
         }
 
         return this;
@@ -1729,6 +1828,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
         if (getMasterUsername() != null) sb.append("MasterUsername: " + getMasterUsername() + ", ");
         if (getMasterUserPassword() != null) sb.append("MasterUserPassword: " + getMasterUserPassword() + ", ");
         if (getDBSecurityGroups() != null) sb.append("DBSecurityGroups: " + getDBSecurityGroups() + ", ");
+        if (getVpcSecurityGroupIds() != null) sb.append("VpcSecurityGroupIds: " + getVpcSecurityGroupIds() + ", ");
         if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ", ");
         if (getDBSubnetGroupName() != null) sb.append("DBSubnetGroupName: " + getDBSubnetGroupName() + ", ");
         if (getPreferredMaintenanceWindow() != null) sb.append("PreferredMaintenanceWindow: " + getPreferredMaintenanceWindow() + ", ");
@@ -1760,6 +1860,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
         hashCode = prime * hashCode + ((getMasterUsername() == null) ? 0 : getMasterUsername().hashCode()); 
         hashCode = prime * hashCode + ((getMasterUserPassword() == null) ? 0 : getMasterUserPassword().hashCode()); 
         hashCode = prime * hashCode + ((getDBSecurityGroups() == null) ? 0 : getDBSecurityGroups().hashCode()); 
+        hashCode = prime * hashCode + ((getVpcSecurityGroupIds() == null) ? 0 : getVpcSecurityGroupIds().hashCode()); 
         hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode()); 
         hashCode = prime * hashCode + ((getDBSubnetGroupName() == null) ? 0 : getDBSubnetGroupName().hashCode()); 
         hashCode = prime * hashCode + ((getPreferredMaintenanceWindow() == null) ? 0 : getPreferredMaintenanceWindow().hashCode()); 
@@ -1801,6 +1902,8 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
         if (other.getMasterUserPassword() != null && other.getMasterUserPassword().equals(this.getMasterUserPassword()) == false) return false; 
         if (other.getDBSecurityGroups() == null ^ this.getDBSecurityGroups() == null) return false;
         if (other.getDBSecurityGroups() != null && other.getDBSecurityGroups().equals(this.getDBSecurityGroups()) == false) return false; 
+        if (other.getVpcSecurityGroupIds() == null ^ this.getVpcSecurityGroupIds() == null) return false;
+        if (other.getVpcSecurityGroupIds() != null && other.getVpcSecurityGroupIds().equals(this.getVpcSecurityGroupIds()) == false) return false; 
         if (other.getAvailabilityZone() == null ^ this.getAvailabilityZone() == null) return false;
         if (other.getAvailabilityZone() != null && other.getAvailabilityZone().equals(this.getAvailabilityZone()) == false) return false; 
         if (other.getDBSubnetGroupName() == null ^ this.getDBSubnetGroupName() == null) return false;

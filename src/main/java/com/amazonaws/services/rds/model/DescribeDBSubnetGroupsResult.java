@@ -22,7 +22,9 @@ package com.amazonaws.services.rds.model;
 public class DescribeDBSubnetGroupsResult {
 
     /**
-     * The marker obtained from a previous operation response.
+     * An optional pagination token provided by a previous request. If this
+     * parameter is specified, the response includes only records beyond the
+     * marker, up to the value specified by <code>MaxRecords</code>.
      */
     private String marker;
 
@@ -32,29 +34,41 @@ public class DescribeDBSubnetGroupsResult {
     private java.util.List<DBSubnetGroup> dBSubnetGroups;
 
     /**
-     * The marker obtained from a previous operation response.
+     * An optional pagination token provided by a previous request. If this
+     * parameter is specified, the response includes only records beyond the
+     * marker, up to the value specified by <code>MaxRecords</code>.
      *
-     * @return The marker obtained from a previous operation response.
+     * @return An optional pagination token provided by a previous request. If this
+     *         parameter is specified, the response includes only records beyond the
+     *         marker, up to the value specified by <code>MaxRecords</code>.
      */
     public String getMarker() {
         return marker;
     }
     
     /**
-     * The marker obtained from a previous operation response.
+     * An optional pagination token provided by a previous request. If this
+     * parameter is specified, the response includes only records beyond the
+     * marker, up to the value specified by <code>MaxRecords</code>.
      *
-     * @param marker The marker obtained from a previous operation response.
+     * @param marker An optional pagination token provided by a previous request. If this
+     *         parameter is specified, the response includes only records beyond the
+     *         marker, up to the value specified by <code>MaxRecords</code>.
      */
     public void setMarker(String marker) {
         this.marker = marker;
     }
     
     /**
-     * The marker obtained from a previous operation response.
+     * An optional pagination token provided by a previous request. If this
+     * parameter is specified, the response includes only records beyond the
+     * marker, up to the value specified by <code>MaxRecords</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param marker The marker obtained from a previous operation response.
+     * @param marker An optional pagination token provided by a previous request. If this
+     *         parameter is specified, the response includes only records beyond the
+     *         marker, up to the value specified by <code>MaxRecords</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

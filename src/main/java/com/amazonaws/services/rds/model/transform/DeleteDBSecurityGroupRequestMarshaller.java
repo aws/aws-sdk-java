@@ -38,7 +38,7 @@ public class DeleteDBSecurityGroupRequestMarshaller implements Marshaller<Reques
 
         Request<DeleteDBSecurityGroupRequest> request = new DefaultRequest<DeleteDBSecurityGroupRequest>(deleteDBSecurityGroupRequest, "AmazonRDS");
         request.addParameter("Action", "DeleteDBSecurityGroup");
-        request.addParameter("Version", "2012-09-17");
+        request.addParameter("Version", "2013-01-10");
 
         if (deleteDBSecurityGroupRequest.getDBSecurityGroupName() != null) {
             request.addParameter("DBSecurityGroupName", StringUtils.fromString(deleteDBSecurityGroupRequest.getDBSecurityGroupName()));

@@ -38,7 +38,7 @@ public class DescribeEngineDefaultParametersRequestMarshaller implements Marshal
 
         Request<DescribeEngineDefaultParametersRequest> request = new DefaultRequest<DescribeEngineDefaultParametersRequest>(describeEngineDefaultParametersRequest, "AmazonRDS");
         request.addParameter("Action", "DescribeEngineDefaultParameters");
-        request.addParameter("Version", "2012-09-17");
+        request.addParameter("Version", "2013-01-10");
 
         if (describeEngineDefaultParametersRequest.getDBParameterGroupFamily() != null) {
             request.addParameter("DBParameterGroupFamily", StringUtils.fromString(describeEngineDefaultParametersRequest.getDBParameterGroupFamily()));

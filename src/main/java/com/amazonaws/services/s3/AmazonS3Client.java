@@ -2573,7 +2573,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         try {
             return new URI(endpoint.getScheme() + "://" + bucketName + "." + endpoint.getAuthority());
         } catch (URISyntaxException e) {
-            throw new AmazonClientException("Can't turn bucket name into a URI: " + e.getMessage(), e);
+            throw new IllegalArgumentException("Invalid bucket name: " + bucketName, e);
         }
     }
 

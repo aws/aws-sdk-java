@@ -101,6 +101,16 @@ public class JobFlowDetail {
     private Boolean visibleToAllUsers;
 
     /**
+     * The IAM role that was specified when the job flow was launched. The
+     * EC2 instances of the job flow assume this role.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 10280<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     */
+    private String jobFlowRole;
+
+    /**
      * Default constructor for a new JobFlowDetail object.  Callers should use the
      * setter or fluent setter (with...) methods to initialize this object after creating it.
      */
@@ -723,6 +733,58 @@ public class JobFlowDetail {
     }
     
     /**
+     * The IAM role that was specified when the job flow was launched. The
+     * EC2 instances of the job flow assume this role.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 10280<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     *
+     * @return The IAM role that was specified when the job flow was launched. The
+     *         EC2 instances of the job flow assume this role.
+     */
+    public String getJobFlowRole() {
+        return jobFlowRole;
+    }
+    
+    /**
+     * The IAM role that was specified when the job flow was launched. The
+     * EC2 instances of the job flow assume this role.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 10280<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     *
+     * @param jobFlowRole The IAM role that was specified when the job flow was launched. The
+     *         EC2 instances of the job flow assume this role.
+     */
+    public void setJobFlowRole(String jobFlowRole) {
+        this.jobFlowRole = jobFlowRole;
+    }
+    
+    /**
+     * The IAM role that was specified when the job flow was launched. The
+     * EC2 instances of the job flow assume this role.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 10280<br/>
+     * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
+     *
+     * @param jobFlowRole The IAM role that was specified when the job flow was launched. The
+     *         EC2 instances of the job flow assume this role.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public JobFlowDetail withJobFlowRole(String jobFlowRole) {
+        this.jobFlowRole = jobFlowRole;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -744,6 +806,7 @@ public class JobFlowDetail {
         if (getBootstrapActions() != null) sb.append("BootstrapActions: " + getBootstrapActions() + ", ");
         if (getSupportedProducts() != null) sb.append("SupportedProducts: " + getSupportedProducts() + ", ");
         if (isVisibleToAllUsers() != null) sb.append("VisibleToAllUsers: " + isVisibleToAllUsers() + ", ");
+        if (getJobFlowRole() != null) sb.append("JobFlowRole: " + getJobFlowRole() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -763,6 +826,7 @@ public class JobFlowDetail {
         hashCode = prime * hashCode + ((getBootstrapActions() == null) ? 0 : getBootstrapActions().hashCode()); 
         hashCode = prime * hashCode + ((getSupportedProducts() == null) ? 0 : getSupportedProducts().hashCode()); 
         hashCode = prime * hashCode + ((isVisibleToAllUsers() == null) ? 0 : isVisibleToAllUsers().hashCode()); 
+        hashCode = prime * hashCode + ((getJobFlowRole() == null) ? 0 : getJobFlowRole().hashCode()); 
         return hashCode;
     }
     
@@ -794,6 +858,8 @@ public class JobFlowDetail {
         if (other.getSupportedProducts() != null && other.getSupportedProducts().equals(this.getSupportedProducts()) == false) return false; 
         if (other.isVisibleToAllUsers() == null ^ this.isVisibleToAllUsers() == null) return false;
         if (other.isVisibleToAllUsers() != null && other.isVisibleToAllUsers().equals(this.isVisibleToAllUsers()) == false) return false; 
+        if (other.getJobFlowRole() == null ^ this.getJobFlowRole() == null) return false;
+        if (other.getJobFlowRole() != null && other.getJobFlowRole().equals(this.getJobFlowRole()) == false) return false; 
         return true;
     }
     
