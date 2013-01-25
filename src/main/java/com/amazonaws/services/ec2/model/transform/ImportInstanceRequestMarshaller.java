@@ -54,7 +54,7 @@ public class ImportInstanceRequestMarshaller implements Marshaller<Request<Impor
 
             for (String securityGroupsListValue : securityGroupsList) {
                 if (securityGroupsListValue != null) {
-                    request.addParameter("LaunchSpecification.SecurityGroup." + securityGroupsListIndex, StringUtils.fromString(securityGroupsListValue));
+                    request.addParameter("LaunchSpecification.GroupName." + securityGroupsListIndex, StringUtils.fromString(securityGroupsListValue));
                 }
 
                 securityGroupsListIndex++;
