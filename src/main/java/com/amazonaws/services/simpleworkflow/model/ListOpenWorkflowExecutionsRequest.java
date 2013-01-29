@@ -24,6 +24,31 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * <b>NOTE:</b> This operation is eventually consistent. The results are best effort and may not exactly reflect recent updates and changes.
  * </p>
+ * <p>
+ * <b>Access Control</b>
+ * </p>
+ * <p>
+ * You can use IAM policies to control this action's access to Amazon SWF resources as follows:
+ * </p>
+ * 
+ * <ul>
+ * <li>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</li>
+ * <li>Use an <code>Action</code> element to allow or deny permission to call this action.</li>
+ * <li>Constrain the following parameters by using a <code>Condition</code> element with the appropriate keys.
+ * <ul>
+ * <li> <code>tag</code> : String constraint. The key is <code>swf:tagFilter.tag</code> .</li>
+ * <li> <code>typeFilter.name</code> : String constraint. String constraint. The key is <code>swf:typeFilter.name</code> .</li>
+ * <li> <code>typeFilter.version</code> : String constraint. String constraint. The key is <code>swf:typeFilter.version</code> .</li>
+ * 
+ * </ul>
+ * </li>
+ * 
+ * </ul>
+ * <p>
+ * If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action
+ * fails by throwing <code>OperationNotPermitted</code> . For details and example IAM policies, see <a
+ * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access to Amazon SWF Workflows </a> .
+ * </p>
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#listOpenWorkflowExecutions(ListOpenWorkflowExecutionsRequest)
  */
@@ -75,7 +100,9 @@ public class ListOpenWorkflowExecutionsRequest extends AmazonWebServiceRequest {
      * The maximum number of results returned in each page. The default is
      * 100, but the caller can override this value to a page size
      * <i>smaller</i> than the default. You cannot specify a page size
-     * greater than 100.
+     * greater than 100. Note that the number of executions may be less than
+     * the maxiumum page size, in which case, the returned page will have
+     * fewer results than the maximumPageSize specified.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - 1000<br/>
@@ -356,7 +383,9 @@ public class ListOpenWorkflowExecutionsRequest extends AmazonWebServiceRequest {
      * The maximum number of results returned in each page. The default is
      * 100, but the caller can override this value to a page size
      * <i>smaller</i> than the default. You cannot specify a page size
-     * greater than 100.
+     * greater than 100. Note that the number of executions may be less than
+     * the maxiumum page size, in which case, the returned page will have
+     * fewer results than the maximumPageSize specified.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - 1000<br/>
@@ -364,7 +393,9 @@ public class ListOpenWorkflowExecutionsRequest extends AmazonWebServiceRequest {
      * @return The maximum number of results returned in each page. The default is
      *         100, but the caller can override this value to a page size
      *         <i>smaller</i> than the default. You cannot specify a page size
-     *         greater than 100.
+     *         greater than 100. Note that the number of executions may be less than
+     *         the maxiumum page size, in which case, the returned page will have
+     *         fewer results than the maximumPageSize specified.
      */
     public Integer getMaximumPageSize() {
         return maximumPageSize;
@@ -374,7 +405,9 @@ public class ListOpenWorkflowExecutionsRequest extends AmazonWebServiceRequest {
      * The maximum number of results returned in each page. The default is
      * 100, but the caller can override this value to a page size
      * <i>smaller</i> than the default. You cannot specify a page size
-     * greater than 100.
+     * greater than 100. Note that the number of executions may be less than
+     * the maxiumum page size, in which case, the returned page will have
+     * fewer results than the maximumPageSize specified.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - 1000<br/>
@@ -382,7 +415,9 @@ public class ListOpenWorkflowExecutionsRequest extends AmazonWebServiceRequest {
      * @param maximumPageSize The maximum number of results returned in each page. The default is
      *         100, but the caller can override this value to a page size
      *         <i>smaller</i> than the default. You cannot specify a page size
-     *         greater than 100.
+     *         greater than 100. Note that the number of executions may be less than
+     *         the maxiumum page size, in which case, the returned page will have
+     *         fewer results than the maximumPageSize specified.
      */
     public void setMaximumPageSize(Integer maximumPageSize) {
         this.maximumPageSize = maximumPageSize;
@@ -392,7 +427,9 @@ public class ListOpenWorkflowExecutionsRequest extends AmazonWebServiceRequest {
      * The maximum number of results returned in each page. The default is
      * 100, but the caller can override this value to a page size
      * <i>smaller</i> than the default. You cannot specify a page size
-     * greater than 100.
+     * greater than 100. Note that the number of executions may be less than
+     * the maxiumum page size, in which case, the returned page will have
+     * fewer results than the maximumPageSize specified.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -402,7 +439,9 @@ public class ListOpenWorkflowExecutionsRequest extends AmazonWebServiceRequest {
      * @param maximumPageSize The maximum number of results returned in each page. The default is
      *         100, but the caller can override this value to a page size
      *         <i>smaller</i> than the default. You cannot specify a page size
-     *         greater than 100.
+     *         greater than 100. Note that the number of executions may be less than
+     *         the maxiumum page size, in which case, the returned page will have
+     *         fewer results than the maximumPageSize specified.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

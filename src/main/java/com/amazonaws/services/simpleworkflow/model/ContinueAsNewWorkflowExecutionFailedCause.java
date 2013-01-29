@@ -21,10 +21,12 @@ public enum ContinueAsNewWorkflowExecutionFailedCause {
     
     UNHANDLED_DECISION("UNHANDLED_DECISION"),
     WORKFLOW_TYPE_DEPRECATED("WORKFLOW_TYPE_DEPRECATED"),
+    WORKFLOW_TYPE_DOES_NOT_EXIST("WORKFLOW_TYPE_DOES_NOT_EXIST"),
     DEFAULT_EXECUTION_START_TO_CLOSE_TIMEOUT_UNDEFINED("DEFAULT_EXECUTION_START_TO_CLOSE_TIMEOUT_UNDEFINED"),
     DEFAULT_TASK_START_TO_CLOSE_TIMEOUT_UNDEFINED("DEFAULT_TASK_START_TO_CLOSE_TIMEOUT_UNDEFINED"),
     DEFAULT_TASK_LIST_UNDEFINED("DEFAULT_TASK_LIST_UNDEFINED"),
-    DEFAULT_CHILD_POLICY_UNDEFINED("DEFAULT_CHILD_POLICY_UNDEFINED");
+    DEFAULT_CHILD_POLICY_UNDEFINED("DEFAULT_CHILD_POLICY_UNDEFINED"),
+    OPERATION_NOT_PERMITTED("OPERATION_NOT_PERMITTED");
 
     private String value;
 
@@ -52,6 +54,8 @@ public enum ContinueAsNewWorkflowExecutionFailedCause {
             return ContinueAsNewWorkflowExecutionFailedCause.UNHANDLED_DECISION;
         } else if ("WORKFLOW_TYPE_DEPRECATED".equals(value)) {
             return ContinueAsNewWorkflowExecutionFailedCause.WORKFLOW_TYPE_DEPRECATED;
+        } else if ("WORKFLOW_TYPE_DOES_NOT_EXIST".equals(value)) {
+            return ContinueAsNewWorkflowExecutionFailedCause.WORKFLOW_TYPE_DOES_NOT_EXIST;
         } else if ("DEFAULT_EXECUTION_START_TO_CLOSE_TIMEOUT_UNDEFINED".equals(value)) {
             return ContinueAsNewWorkflowExecutionFailedCause.DEFAULT_EXECUTION_START_TO_CLOSE_TIMEOUT_UNDEFINED;
         } else if ("DEFAULT_TASK_START_TO_CLOSE_TIMEOUT_UNDEFINED".equals(value)) {
@@ -60,6 +64,8 @@ public enum ContinueAsNewWorkflowExecutionFailedCause {
             return ContinueAsNewWorkflowExecutionFailedCause.DEFAULT_TASK_LIST_UNDEFINED;
         } else if ("DEFAULT_CHILD_POLICY_UNDEFINED".equals(value)) {
             return ContinueAsNewWorkflowExecutionFailedCause.DEFAULT_CHILD_POLICY_UNDEFINED;
+        } else if ("OPERATION_NOT_PERMITTED".equals(value)) {
+            return ContinueAsNewWorkflowExecutionFailedCause.OPERATION_NOT_PERMITTED;
         } else {
             throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
         }

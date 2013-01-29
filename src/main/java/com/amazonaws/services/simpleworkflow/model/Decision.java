@@ -20,33 +20,55 @@ package com.amazonaws.services.simpleworkflow.model;
  * </p>
  * 
  * <ul>
- * <li> <b>ScheduleActivityTask</b> schedules an activity task.</li>
+ * <li> <b>CancelTimer</b> cancels a previously started timer and records a <code>TimerCanceled</code> event in the history.</li>
+ * <li> <b>CancelWorkflowExecution</b> closes the workflow execution and records a <code>WorkflowExecutionCanceled</code> event in the history.</li>
+ * <li> <b>CompleteWorkflowExecution</b> closes the workflow execution and records a <code>WorkflowExecutionCompleted</code> event in the history .</li>
+ * <li> <b>ContinueAsNewWorkflowExecution</b> closes the workflow execution and starts a new workflow execution of the same type using the same workflow
+ * id and a unique run Id. A <code>WorkflowExecutionContinuedAsNew</code> event is recorded in the history.</li>
+ * <li> <b>FailWorkflowExecution</b> closes the workflow execution and records a <code>WorkflowExecutionFailed</code> event in the history.</li>
+ * <li> <b>RecordMarker</b> records a <code>MarkerRecorded</code> event in the history. Markers can be used for adding custom information in the history
+ * for instance to let deciders know that they do not need to look at the history beyond the marker event.</li>
  * <li> <b>RequestCancelActivityTask</b> attempts to cancel a previously scheduled activity task. If the activity task was scheduled but has not been
  * assigned to a worker, then it will be canceled. If the activity task was already assigned to a worker, then the worker will be informed that
  * cancellation has been requested in the response to RecordActivityTaskHeartbeat.</li>
- * <li> <b>RecordMarker</b> records a <code>MarkerRecorded</code> event in the history. Markers can be used for adding custom information in the history
- * for instance to let deciders know that they do not need to look at the history beyond the marker event.</li>
- * <li> <b>CompleteWorkflowExecution</b> closes the workflow execution and records a <code>WorkflowExecutionCompleted</code> event in the history .</li>
- * <li> <b>FailWorkflowExecution</b> closes the workflow execution and records a <code>WorkflowExecutionFailed</code> event in the history.</li>
- * <li> <b>CancelWorkflowExecution</b> closes the workflow execution and records a <code>WorkflowExecutionCanceled</code> event in the history.</li>
- * <li> <b>ContinueAsNewWorkflowExecution</b> closes the workflow execution and starts a new workflow execution of the same type using the same workflow
- * id and a unique run Id. A <code>WorkflowExecutionContinuedAsNew</code> event is recorded in the history.</li>
- * <li> <b>StartTimer</b> starts a timer for this workflow execution and records a <code>TimerStarted</code> event in the history. This timer will fire
- * after the specified delay and record a <code>TimerFired</code> event.</li>
- * <li> <b>CancelTimer</b> cancels a previously started timer and records a <code>TimerCanceled</code> event in the history.</li>
- * <li> <b>SignalExternalWorkflowExecution</b> requests a signal to be delivered to the specified external workflow execution and records a
- * <code>SignalExternalWorkflowExecutionInitiated</code> event in the history.</li>
  * <li> <b>RequestCancelExternalWorkflowExecution</b> requests that a request be made to cancel the specified external workflow execution and records a
  * <code>RequestCancelExternalWorkflowExecutionInitiated</code> event in the history.</li>
+ * <li> <b>ScheduleActivityTask</b> schedules an activity task.</li>
+ * <li> <b>SignalExternalWorkflowExecution</b> requests a signal to be delivered to the specified external workflow execution and records a
+ * <code>SignalExternalWorkflowExecutionInitiated</code> event in the history.</li>
  * <li> <b>StartChildWorkflowExecution</b> requests that a child workflow execution be started and records a
  * <code>StartChildWorkflowExecutionInitiated</code> event in the history. The child workflow execution is a separate workflow execution with its own
  * history.</li>
+ * <li> <b>StartTimer</b> starts a timer for this workflow execution and records a <code>TimerStarted</code> event in the history. This timer will fire
+ * after the specified delay and record a <code>TimerFired</code> event.</li>
  * 
  * </ul>
  * <p>
- * The ordering of decisions should follow a logical flow. Some decisions might not make sense in the current context of the workflow execution and will
- * therefore fail. A decision might also fail due to a limit being reached on your account. One of the following events might be added to the history to
- * indicate an error:
+ * <b>Access Control</b>
+ * </p>
+ * <p>
+ * If you grant permission to use <code>RespondDecisionTaskCompleted</code> , you can use IAM policies to express permissions for the list of decisions
+ * returned by this action as if they were members of the API. Treating decisions as a pseudo API maintains a uniform conceptual model and helps keep
+ * policies readable. For details and example IAM policies, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">
+ * Using IAM to Manage Access to Amazon SWF Workflows </a> .
+ * </p>
+ * <p>
+ * <b>Decision Failure</b>
+ * </p>
+ * <p>
+ * Decisions can fail for several reasons
+ * </p>
+ * 
+ * <ul>
+ * <li>The ordering of decisions should follow a logical flow. Some decisions might not make sense in the current context of the workflow execution and
+ * will therefore fail.</li>
+ * <li>A limit on your account was reached.</li>
+ * <li>The decision lacks sufficient permissions.</li>
+ * 
+ * </ul>
+ * <p>
+ * One of the following events might be added to the history to indicate an error. The event attribute's <b>cause</b> parameter indicates the cause. If
+ * <b>cause</b> is set to OPERATION_NOT_PERMITTED, the decision failed because it lacked sufficient permissions.
  * </p>
  * 
  * <ul>
@@ -85,8 +107,11 @@ package com.amazonaws.services.simpleworkflow.model;
  * with these new events included in the history. The decider should handle the new events and may decide to close the workflow execution.
  * </p>
  * <p>
- * You must code a decision by first setting the decision type field to one of the above decision values, and then set the corresponding attributes
- * field shown below:
+ * <b>How to Code a Decision</b>
+ * </p>
+ * <p>
+ * You code a decision by first setting the decision type field to one of the above decision values, and then set the corresponding attributes field
+ * shown below:
  * </p>
  * 
  * <ul>

@@ -314,7 +314,12 @@ public abstract class AbstractAWSSigner implements Signer {
         if (resourcePath == null || resourcePath.length() == 0) {
             return "/";
         } else {
-            return HttpUtils.urlEncode(resourcePath, true);
+            String value = HttpUtils.urlEncode(resourcePath, true);
+            if (value.startsWith("/")) {
+                return value;
+            } else {
+                return "/".concat(value);
+            }
         }
     }
 

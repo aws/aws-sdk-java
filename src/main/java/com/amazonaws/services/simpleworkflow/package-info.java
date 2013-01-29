@@ -7,8 +7,8 @@
  * types.
  * </p>
  * <p>
- * For an broader overview of the Amazon SWF programming model, please go to the <a
- * href="http://docs.amazonwebservices.com/amazonswf/latest/developerguide/"> Amazon SWF Developer Guide </a> .
+ * For an broader overview of the Amazon SWF programming model, please go to the <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/">
+ * Amazon SWF Developer Guide </a> .
  * </p>
  * <p>
  * This section provides an overview of Amazon SWF actions.

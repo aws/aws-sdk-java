@@ -219,6 +219,8 @@ public class WorkflowExecutionUtils {
                 failureCause = historyEvent.getStartTimerFailedEventAttributes().getCause();
             } else if (historyEvent.getEventType().equals(EventType.ContinueAsNewWorkflowExecutionFailed.toString())) {
                 failureCause = historyEvent.getContinueAsNewWorkflowExecutionFailedEventAttributes().getCause();
+            } else if (historyEvent.getEventType().equals(EventType.RecordMarkerFailed.toString())) {
+            	failureCause = historyEvent.getRecordMarkerFailedEventAttributes().getCause();
             }
         }
         

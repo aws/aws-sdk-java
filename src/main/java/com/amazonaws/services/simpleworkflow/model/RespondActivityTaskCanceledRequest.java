@@ -28,6 +28,29 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <b>IMPORTANT:</b> Only use this operation if the canceled flag of a RecordActivityTaskHeartbeat request returns true and if the activity can be safely
  * undone or abandoned.
  * </p>
+ * <p>
+ * A task is considered open from the time that it is scheduled until it is closed. Therefore a task is reported as open while a worker is processing
+ * it. A task is closed after it has been specified in a call to RespondActivityTaskCompleted, RespondActivityTaskCanceled, RespondActivityTaskFailed, or
+ * the task has <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-basic.html#swf-dev-timeout-types"> timed out </a> .
+ * </p>
+ * <p>
+ * <b>Access Control</b>
+ * </p>
+ * <p>
+ * You can use IAM policies to control this action's access to Amazon SWF resources as follows:
+ * </p>
+ * 
+ * <ul>
+ * <li>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</li>
+ * <li>Use an <code>Action</code> element to allow or deny permission to call this action.</li>
+ * <li>You cannot use an IAM policy to constrain this action's parameters.</li>
+ * 
+ * </ul>
+ * <p>
+ * If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action
+ * fails by throwing <code>OperationNotPermitted</code> . For details and example IAM policies, see <a
+ * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access to Amazon SWF Workflows </a> .
+ * </p>
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#respondActivityTaskCanceled(RespondActivityTaskCanceledRequest)
  */

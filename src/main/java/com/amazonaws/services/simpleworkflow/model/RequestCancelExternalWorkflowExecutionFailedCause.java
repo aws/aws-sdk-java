@@ -20,7 +20,8 @@ package com.amazonaws.services.simpleworkflow.model;
 public enum RequestCancelExternalWorkflowExecutionFailedCause {
     
     UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION("UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION"),
-    REQUEST_CANCEL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED("REQUEST_CANCEL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED");
+    REQUEST_CANCEL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED("REQUEST_CANCEL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED"),
+    OPERATION_NOT_PERMITTED("OPERATION_NOT_PERMITTED");
 
     private String value;
 
@@ -48,6 +49,8 @@ public enum RequestCancelExternalWorkflowExecutionFailedCause {
             return RequestCancelExternalWorkflowExecutionFailedCause.UNKNOWN_EXTERNAL_WORKFLOW_EXECUTION;
         } else if ("REQUEST_CANCEL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED".equals(value)) {
             return RequestCancelExternalWorkflowExecutionFailedCause.REQUEST_CANCEL_EXTERNAL_WORKFLOW_EXECUTION_RATE_EXCEEDED;
+        } else if ("OPERATION_NOT_PERMITTED".equals(value)) {
+            return RequestCancelExternalWorkflowExecutionFailedCause.OPERATION_NOT_PERMITTED;
         } else {
             throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
         }

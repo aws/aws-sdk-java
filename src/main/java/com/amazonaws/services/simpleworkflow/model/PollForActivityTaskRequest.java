@@ -19,14 +19,32 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the {@link com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#pollForActivityTask(PollForActivityTaskRequest) PollForActivityTask operation}.
  * <p>
  * Used by workers to get an ActivityTask from the specified activity <code>taskList</code> .
- * This initiates a long poll, where the service holds the HTTP connection open and responds as soon as a task becomes available. The maximum time the
- * service holds on to the request before responding is 60 seconds. If no task is available within 60 seconds, the poll will return an empty result. An
- * empty result, in this context, means that an ActivityTask is returned, but that the value of taskToken is an empty string. If a task is returned, the
- * worker should use its type to identify and process it correctly.
+ * This initiates a long poll, where the service holds the HTTP connection open and responds as soon as a task becomes available. The maximum time
+ * the service holds on to the request before responding is 60 seconds. If no task is available within 60 seconds, the poll will return an empty result.
+ * An empty result, in this context, means that an ActivityTask is returned, but that the value of taskToken is an empty string. If a task is returned,
+ * the worker should use its type to identify and process it correctly.
  * </p>
  * <p>
  * <b>IMPORTANT:</b> Workers should set their client side socket timeout to at least 70 seconds (10 seconds higher than the maximum time service may hold
  * the poll request).
+ * </p>
+ * <p>
+ * <b>Access Control</b>
+ * </p>
+ * <p>
+ * You can use IAM policies to control this action's access to Amazon SWF resources as follows:
+ * </p>
+ * 
+ * <ul>
+ * <li>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</li>
+ * <li>Use an <code>Action</code> element to allow or deny permission to call this action.</li>
+ * <li>Use a <b>Condition</b> element with the <code>swf:taskList.name</code> key to allow the action to access only certain task lists.</li>
+ * 
+ * </ul>
+ * <p>
+ * If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action
+ * fails by throwing <code>OperationNotPermitted</code> . For details and example IAM policies, see <a
+ * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access to Amazon SWF Workflows </a> .
  * </p>
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#pollForActivityTask(PollForActivityTaskRequest)

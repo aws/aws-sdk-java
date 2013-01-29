@@ -46,6 +46,7 @@ public enum EventType {
     RequestCancelActivityTaskFailed("RequestCancelActivityTaskFailed"),
     WorkflowExecutionSignaled("WorkflowExecutionSignaled"),
     MarkerRecorded("MarkerRecorded"),
+    RecordMarkerFailed("RecordMarkerFailed"),
     TimerStarted("TimerStarted"),
     StartTimerFailed("StartTimerFailed"),
     TimerFired("TimerFired"),
@@ -142,6 +143,8 @@ public enum EventType {
             return EventType.WorkflowExecutionSignaled;
         } else if ("MarkerRecorded".equals(value)) {
             return EventType.MarkerRecorded;
+        } else if ("RecordMarkerFailed".equals(value)) {
+            return EventType.RecordMarkerFailed;
         } else if ("TimerStarted".equals(value)) {
             return EventType.TimerStarted;
         } else if ("StartTimerFailed".equals(value)) {

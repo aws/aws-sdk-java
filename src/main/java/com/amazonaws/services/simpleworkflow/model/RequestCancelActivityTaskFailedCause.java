@@ -19,7 +19,8 @@ package com.amazonaws.services.simpleworkflow.model;
  */
 public enum RequestCancelActivityTaskFailedCause {
     
-    ACTIVITY_ID_UNKNOWN("ACTIVITY_ID_UNKNOWN");
+    ACTIVITY_ID_UNKNOWN("ACTIVITY_ID_UNKNOWN"),
+    OPERATION_NOT_PERMITTED("OPERATION_NOT_PERMITTED");
 
     private String value;
 
@@ -45,6 +46,8 @@ public enum RequestCancelActivityTaskFailedCause {
         
         } else if ("ACTIVITY_ID_UNKNOWN".equals(value)) {
             return RequestCancelActivityTaskFailedCause.ACTIVITY_ID_UNKNOWN;
+        } else if ("OPERATION_NOT_PERMITTED".equals(value)) {
+            return RequestCancelActivityTaskFailedCause.OPERATION_NOT_PERMITTED;
         } else {
             throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
         }

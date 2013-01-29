@@ -21,7 +21,8 @@ public enum StartTimerFailedCause {
     
     TIMER_ID_ALREADY_IN_USE("TIMER_ID_ALREADY_IN_USE"),
     OPEN_TIMERS_LIMIT_EXCEEDED("OPEN_TIMERS_LIMIT_EXCEEDED"),
-    TIMER_CREATION_RATE_EXCEEDED("TIMER_CREATION_RATE_EXCEEDED");
+    TIMER_CREATION_RATE_EXCEEDED("TIMER_CREATION_RATE_EXCEEDED"),
+    OPERATION_NOT_PERMITTED("OPERATION_NOT_PERMITTED");
 
     private String value;
 
@@ -51,6 +52,8 @@ public enum StartTimerFailedCause {
             return StartTimerFailedCause.OPEN_TIMERS_LIMIT_EXCEEDED;
         } else if ("TIMER_CREATION_RATE_EXCEEDED".equals(value)) {
             return StartTimerFailedCause.TIMER_CREATION_RATE_EXCEEDED;
+        } else if ("OPERATION_NOT_PERMITTED".equals(value)) {
+            return StartTimerFailedCause.OPERATION_NOT_PERMITTED;
         } else {
             throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
         }

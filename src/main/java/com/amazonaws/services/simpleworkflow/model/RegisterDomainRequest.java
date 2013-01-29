@@ -20,6 +20,27 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <p>
  * Registers a new domain.
  * </p>
+ * <p>
+ * <b>Access Control</b>
+ * </p>
+ * <p>
+ * You can use IAM policies to control this action's access to Amazon SWF resources as follows:
+ * </p>
+ * 
+ * <ul>
+ * <li>You cannot use an IAM policy to control domain access for this action. The name of the domain being registered is available as the resource of
+ * this action.</li>
+ * <li>Use an <code>Action</code> element to allow or deny permission to call this action.</li>
+ * <li>You cannot use an IAM policy to constrain this action's parameters.</li>
+ * 
+ * </ul>
+ * <p>
+ * If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action
+ * fails by throwing <code>OperationNotPermitted</code> . For details and example IAM policies, see <a
+ * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access to Amazon SWF Workflows </a> .
+ * </p>
+ * <p>
+ * </p>
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#registerDomain(RegisterDomainRequest)
  */
@@ -52,10 +73,7 @@ public class RegisterDomainRequest extends AmazonWebServiceRequest {
      * be kept by the service. After the retention period, the workflow
      * execution will not be available in the results of visibility calls. If
      * a duration of <code>NONE</code> is specified, the records for workflow
-     * executions in this domain are not retained at all. <p>The valid values
-     * are integers greater than or equal to <code>0</code>. An integer value
-     * can be used to specify the duration in seconds while <code>NONE</code>
-     * can be used to specify unlimited duration.
+     * executions in this domain are not retained at all.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 8<br/>
@@ -184,10 +202,7 @@ public class RegisterDomainRequest extends AmazonWebServiceRequest {
      * be kept by the service. After the retention period, the workflow
      * execution will not be available in the results of visibility calls. If
      * a duration of <code>NONE</code> is specified, the records for workflow
-     * executions in this domain are not retained at all. <p>The valid values
-     * are integers greater than or equal to <code>0</code>. An integer value
-     * can be used to specify the duration in seconds while <code>NONE</code>
-     * can be used to specify unlimited duration.
+     * executions in this domain are not retained at all.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 8<br/>
@@ -197,10 +212,7 @@ public class RegisterDomainRequest extends AmazonWebServiceRequest {
      *         be kept by the service. After the retention period, the workflow
      *         execution will not be available in the results of visibility calls. If
      *         a duration of <code>NONE</code> is specified, the records for workflow
-     *         executions in this domain are not retained at all. <p>The valid values
-     *         are integers greater than or equal to <code>0</code>. An integer value
-     *         can be used to specify the duration in seconds while <code>NONE</code>
-     *         can be used to specify unlimited duration.
+     *         executions in this domain are not retained at all.
      */
     public String getWorkflowExecutionRetentionPeriodInDays() {
         return workflowExecutionRetentionPeriodInDays;
@@ -212,10 +224,7 @@ public class RegisterDomainRequest extends AmazonWebServiceRequest {
      * be kept by the service. After the retention period, the workflow
      * execution will not be available in the results of visibility calls. If
      * a duration of <code>NONE</code> is specified, the records for workflow
-     * executions in this domain are not retained at all. <p>The valid values
-     * are integers greater than or equal to <code>0</code>. An integer value
-     * can be used to specify the duration in seconds while <code>NONE</code>
-     * can be used to specify unlimited duration.
+     * executions in this domain are not retained at all.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 8<br/>
@@ -225,10 +234,7 @@ public class RegisterDomainRequest extends AmazonWebServiceRequest {
      *         be kept by the service. After the retention period, the workflow
      *         execution will not be available in the results of visibility calls. If
      *         a duration of <code>NONE</code> is specified, the records for workflow
-     *         executions in this domain are not retained at all. <p>The valid values
-     *         are integers greater than or equal to <code>0</code>. An integer value
-     *         can be used to specify the duration in seconds while <code>NONE</code>
-     *         can be used to specify unlimited duration.
+     *         executions in this domain are not retained at all.
      */
     public void setWorkflowExecutionRetentionPeriodInDays(String workflowExecutionRetentionPeriodInDays) {
         this.workflowExecutionRetentionPeriodInDays = workflowExecutionRetentionPeriodInDays;
@@ -240,10 +246,7 @@ public class RegisterDomainRequest extends AmazonWebServiceRequest {
      * be kept by the service. After the retention period, the workflow
      * execution will not be available in the results of visibility calls. If
      * a duration of <code>NONE</code> is specified, the records for workflow
-     * executions in this domain are not retained at all. <p>The valid values
-     * are integers greater than or equal to <code>0</code>. An integer value
-     * can be used to specify the duration in seconds while <code>NONE</code>
-     * can be used to specify unlimited duration.
+     * executions in this domain are not retained at all.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -255,10 +258,7 @@ public class RegisterDomainRequest extends AmazonWebServiceRequest {
      *         be kept by the service. After the retention period, the workflow
      *         execution will not be available in the results of visibility calls. If
      *         a duration of <code>NONE</code> is specified, the records for workflow
-     *         executions in this domain are not retained at all. <p>The valid values
-     *         are integers greater than or equal to <code>0</code>. An integer value
-     *         can be used to specify the duration in seconds while <code>NONE</code>
-     *         can be used to specify unlimited duration.
+     *         executions in this domain are not retained at all.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

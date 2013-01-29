@@ -28,7 +28,8 @@ public enum StartChildWorkflowExecutionFailedCause {
     DEFAULT_EXECUTION_START_TO_CLOSE_TIMEOUT_UNDEFINED("DEFAULT_EXECUTION_START_TO_CLOSE_TIMEOUT_UNDEFINED"),
     DEFAULT_TASK_LIST_UNDEFINED("DEFAULT_TASK_LIST_UNDEFINED"),
     DEFAULT_TASK_START_TO_CLOSE_TIMEOUT_UNDEFINED("DEFAULT_TASK_START_TO_CLOSE_TIMEOUT_UNDEFINED"),
-    DEFAULT_CHILD_POLICY_UNDEFINED("DEFAULT_CHILD_POLICY_UNDEFINED");
+    DEFAULT_CHILD_POLICY_UNDEFINED("DEFAULT_CHILD_POLICY_UNDEFINED"),
+    OPERATION_NOT_PERMITTED("OPERATION_NOT_PERMITTED");
 
     private String value;
 
@@ -72,6 +73,8 @@ public enum StartChildWorkflowExecutionFailedCause {
             return StartChildWorkflowExecutionFailedCause.DEFAULT_TASK_START_TO_CLOSE_TIMEOUT_UNDEFINED;
         } else if ("DEFAULT_CHILD_POLICY_UNDEFINED".equals(value)) {
             return StartChildWorkflowExecutionFailedCause.DEFAULT_CHILD_POLICY_UNDEFINED;
+        } else if ("OPERATION_NOT_PERMITTED".equals(value)) {
+            return StartChildWorkflowExecutionFailedCause.OPERATION_NOT_PERMITTED;
         } else {
             throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
         }

@@ -26,6 +26,15 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <code>DecisionTaskCompleted</code> event is added to the workflow history. The <code>executionContext</code> specified is attached
  * to the event in the workflow execution history.
  * </p>
+ * <p>
+ * <b>Access Control</b>
+ * </p>
+ * <p>
+ * If an IAM policy grants permission to use <code>RespondDecisionTaskCompleted</code> , it can express permissions for the list of decisions in the
+ * <code>decisions</code> parameter in the same way as for the regular API. This approach maintains a uniform conceptual model and helps keep policies
+ * readable. For more information, see <a href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access
+ * to Amazon SWF Workflows </a> .
+ * </p>
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#respondDecisionTaskCompleted(RespondDecisionTaskCompletedRequest)
  */

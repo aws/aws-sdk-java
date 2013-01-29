@@ -17,7 +17,8 @@ package com.amazonaws.services.simpleworkflow.model;
 /**
  * <p>
  * Used to filter the workflow executions in visibility APIs by various time-based rules. Each parameter, if specified, defines a rule that must be
- * satisfied by each returned query result.
+ * satisfied by each returned query result. The parameter values are in the <a href="https://en.wikipedia.org/wiki/Unix_time"> Unix Time format </a> .
+ * For example: "oldestDate": 1325376070.
  * </p>
  */
 public class ExecutionTimeFilter {

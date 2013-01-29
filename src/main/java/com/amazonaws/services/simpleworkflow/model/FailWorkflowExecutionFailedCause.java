@@ -19,7 +19,8 @@ package com.amazonaws.services.simpleworkflow.model;
  */
 public enum FailWorkflowExecutionFailedCause {
     
-    UNHANDLED_DECISION("UNHANDLED_DECISION");
+    UNHANDLED_DECISION("UNHANDLED_DECISION"),
+    OPERATION_NOT_PERMITTED("OPERATION_NOT_PERMITTED");
 
     private String value;
 
@@ -45,6 +46,8 @@ public enum FailWorkflowExecutionFailedCause {
         
         } else if ("UNHANDLED_DECISION".equals(value)) {
             return FailWorkflowExecutionFailedCause.UNHANDLED_DECISION;
+        } else if ("OPERATION_NOT_PERMITTED".equals(value)) {
+            return FailWorkflowExecutionFailedCause.OPERATION_NOT_PERMITTED;
         } else {
             throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
         }

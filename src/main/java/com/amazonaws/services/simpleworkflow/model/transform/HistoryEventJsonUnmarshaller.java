@@ -160,6 +160,10 @@ public class HistoryEventJsonUnmarshaller implements Unmarshaller<HistoryEvent, 
                     context.nextToken();
                     historyEvent.setMarkerRecordedEventAttributes(MarkerRecordedEventAttributesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("recordMarkerFailedEventAttributes", targetDepth)) {
+                    context.nextToken();
+                    historyEvent.setRecordMarkerFailedEventAttributes(RecordMarkerFailedEventAttributesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("timerStartedEventAttributes", targetDepth)) {
                     context.nextToken();
                     historyEvent.setTimerStartedEventAttributes(TimerStartedEventAttributesJsonUnmarshaller.getInstance().unmarshall(context));

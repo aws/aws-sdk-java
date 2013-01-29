@@ -270,6 +270,8 @@ class AsyncDecider {
             break;
         case MarkerRecorded:
             break;
+        case RecordMarkerFailed:
+        	break;
         case WorkflowExecutionCompleted:
             break;
         case CompleteWorkflowExecutionFailed:
@@ -543,6 +545,7 @@ class AsyncDecider {
         case ActivityTaskCancelRequested:
         case RequestCancelActivityTaskFailed:
         case MarkerRecorded:
+        case RecordMarkerFailed:
         case WorkflowExecutionCompleted:
         case CompleteWorkflowExecutionFailed:
         case WorkflowExecutionFailed:

@@ -28,7 +28,8 @@ public enum ScheduleActivityTaskFailedCause {
     DEFAULT_TASK_LIST_UNDEFINED("DEFAULT_TASK_LIST_UNDEFINED"),
     DEFAULT_SCHEDULE_TO_START_TIMEOUT_UNDEFINED("DEFAULT_SCHEDULE_TO_START_TIMEOUT_UNDEFINED"),
     DEFAULT_START_TO_CLOSE_TIMEOUT_UNDEFINED("DEFAULT_START_TO_CLOSE_TIMEOUT_UNDEFINED"),
-    DEFAULT_HEARTBEAT_TIMEOUT_UNDEFINED("DEFAULT_HEARTBEAT_TIMEOUT_UNDEFINED");
+    DEFAULT_HEARTBEAT_TIMEOUT_UNDEFINED("DEFAULT_HEARTBEAT_TIMEOUT_UNDEFINED"),
+    OPERATION_NOT_PERMITTED("OPERATION_NOT_PERMITTED");
 
     private String value;
 
@@ -72,6 +73,8 @@ public enum ScheduleActivityTaskFailedCause {
             return ScheduleActivityTaskFailedCause.DEFAULT_START_TO_CLOSE_TIMEOUT_UNDEFINED;
         } else if ("DEFAULT_HEARTBEAT_TIMEOUT_UNDEFINED".equals(value)) {
             return ScheduleActivityTaskFailedCause.DEFAULT_HEARTBEAT_TIMEOUT_UNDEFINED;
+        } else if ("OPERATION_NOT_PERMITTED".equals(value)) {
+            return ScheduleActivityTaskFailedCause.OPERATION_NOT_PERMITTED;
         } else {
             throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
         }

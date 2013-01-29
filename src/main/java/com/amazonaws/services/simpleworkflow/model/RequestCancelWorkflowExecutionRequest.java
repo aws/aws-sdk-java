@@ -30,6 +30,24 @@ import com.amazonaws.AmazonWebServiceRequest;
  * <b>NOTE:</b> Because this action allows the workflow to properly clean up and gracefully close, it should be used instead of
  * TerminateWorkflowExecution when possible.
  * </p>
+ * <p>
+ * <b>Access Control</b>
+ * </p>
+ * <p>
+ * You can use IAM policies to control this action's access to Amazon SWF resources as follows:
+ * </p>
+ * 
+ * <ul>
+ * <li>Use a <code>Resource</code> element with the domain name to limit the action to only specified domains.</li>
+ * <li>Use an <code>Action</code> element to allow or deny permission to call this action.</li>
+ * <li>You cannot use an IAM policy to constrain this action's parameters.</li>
+ * 
+ * </ul>
+ * <p>
+ * If the caller does not have sufficient permissions to invoke the action, or the parameter values fall outside the specified constraints, the action
+ * fails by throwing <code>OperationNotPermitted</code> . For details and example IAM policies, see <a
+ * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access to Amazon SWF Workflows </a> .
+ * </p>
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#requestCancelWorkflowExecution(RequestCancelWorkflowExecutionRequest)
  */
