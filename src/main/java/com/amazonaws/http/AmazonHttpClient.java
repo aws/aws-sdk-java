@@ -677,6 +677,7 @@ public class AmazonHttpClient {
         try {
             Thread.sleep(delay);
         } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
             throw new AmazonClientException(e.getMessage(), e);
         }
     }
