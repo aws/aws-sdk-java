@@ -310,13 +310,21 @@ public class AWSJavaMailTransport extends Transport {
 
 		if (isNullOrEmpty(awsAccessKey) || isNullOrEmpty(awsSecretKey)) {
 			if (isNullOrEmpty(accessKey) || isNullOrEmpty(secretKey)) {
-				return false;
+				// Use the no-argument constructor to fall back on:
+				// - Environment Variables
+				// - Java System Properties
+				// - Instance profile credentials delivered through the Amazon EC2 metadata service
+				this.emailService = new AmazonSimpleEmailServiceClient();
 			}
 			awsAccessKey = this.accessKey;
 			awsSecretKey = this.secretKey;
 		}
 
-        this.emailService = new AmazonSimpleEmailServiceClient(new BasicAWSCredentials(awsAccessKey, awsSecretKey));
+		if (this.emailService == null) {
+			// Use the supplied credentials.
+			this.emailService = new AmazonSimpleEmailServiceClient(new BasicAWSCredentials(awsAccessKey, awsSecretKey));
+		}
+		
 		if (!isNullOrEmpty(host)) {
 			this.emailService.setEndpoint(host);
 		} else if (this.httpsEndpoint != null) {
