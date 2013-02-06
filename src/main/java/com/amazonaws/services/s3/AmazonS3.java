@@ -137,6 +137,15 @@ public interface AmazonS3 {
 
     /**
      * <p>
+     * Override the default S3 client options for this client.
+     * </p>
+     * @param clientOptions
+     *            The S3 client options to use.
+     */
+    public void setS3ClientOptions(S3ClientOptions clientOptions);
+  
+    /**
+     * <p>
      * Changes the Amazon S3 storage class for a specified object. Amazon S3
      * offers multiple storage classes for developers' different needs.
      * </p>

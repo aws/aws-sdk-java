@@ -204,6 +204,9 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     /** Shared factory for converting configuration objects to XML */
     private static final BucketConfigurationXmlFactory bucketConfigurationXmlFactory = new BucketConfigurationXmlFactory();
 
+    /** S3 specific client configuration options */
+    private S3ClientOptions clientOptions = new S3ClientOptions();
+  
     /** Provider for AWS credentials. */
     private AWSCredentialsProvider awsCredentialsProvider;
 
@@ -334,6 +337,17 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
                 "/com/amazonaws/services/s3/request.handlers"));
     }
 
+    /**
+     * <p>
+     * Override the default S3 client options for this client.
+     * </p>
+     * @param clientOptions
+     *            The S3 client options to use.
+     */
+    public void setS3ClientOptions(S3ClientOptions clientOptions) {
+      this.clientOptions = new S3ClientOptions(clientOptions);      
+    }
+  
     /**
      * Appends a request handler to the list of registered handlers that are run
      * as part of a request's lifecycle.
@@ -2873,7 +2887,8 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         boolean sslCertMismatch = endpoint.getScheme().equalsIgnoreCase("https") &&
                                   bucketName != null && bucketName.contains(".");
 
-        if (bucketNameUtils.isDNSBucketName(bucketName) && !validIP(endpoint.getHost()) && !sslCertMismatch) {
+        if (!clientOptions.isPathStyleAccess() && bucketNameUtils.isDNSBucketName(bucketName) && 
+              !validIP(endpoint.getHost()) && !sslCertMismatch) {
             request.setEndpoint(convertToVirtualHostEndpoint(bucketName));
             request.setResourcePath(ServiceUtils.urlEncode(key));
         } else {
