@@ -69,9 +69,9 @@ public class DefaultErrorResponseHandler
         catch (SAXParseException e) {
             AmazonServiceException exception =
                 new AmazonServiceException(String.format("Unable to unmarshall error response (%s)", e.getMessage()), e);
-            exception.setErrorCode(String.format("%s (%s)", errorResponse.getStatusText(), errorResponse.getStatusCode()));
+            exception.setErrorCode(String.format("%s %s", errorResponse.getStatusCode(), errorResponse.getStatusText()));
             exception.setErrorType(AmazonServiceException.ErrorType.Unknown);
-            exception.setStatusCode(HttpStatus.SC_INTERNAL_SERVER_ERROR);
+            exception.setStatusCode(errorResponse.getStatusCode());
 
             return exception;
         }
