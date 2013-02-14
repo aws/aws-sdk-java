@@ -62,7 +62,18 @@ public class DefaultErrorResponseHandler
      */
     public AmazonServiceException handle(HttpResponse errorResponse)
             throws Exception {
-        Document document = XpathUtils.documentFrom(errorResponse.getContent());
+        Document document;
+        try {
+            document = XpathUtils.documentFrom(errorResponse.getContent());
+        }
+        catch (SAXParseException e) {
+            AmazonServiceException exception =
+                new AmazonServiceException(String.format("Unable to unmarshall error response (%s)", e.getMessage()), e);
+            exception.setErrorCode(String.format("%s %s", errorResponse.getStatusCode(), errorResponse.getStatusText()));
+            exception.setErrorType(AmazonServiceException.ErrorType.Service);
+
+            return exception;
+        }
 
         /*
          * We need to select which exception unmarshaller is the correct one to
