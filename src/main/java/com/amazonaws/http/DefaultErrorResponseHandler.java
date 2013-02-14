@@ -70,8 +70,7 @@ public class DefaultErrorResponseHandler
             AmazonServiceException exception =
                 new AmazonServiceException(String.format("Unable to unmarshall error response (%s)", e.getMessage()), e);
             exception.setErrorCode(String.format("%s %s", errorResponse.getStatusCode(), errorResponse.getStatusText()));
-            exception.setErrorType(AmazonServiceException.ErrorType.Unknown);
-            exception.setStatusCode(errorResponse.getStatusCode());
+            exception.setErrorType(AmazonServiceException.ErrorType.Service);
 
             return exception;
         }
