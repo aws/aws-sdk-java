@@ -69,18 +69,55 @@ public class DynamoDBMapperConfig {
     public static final class TableNameOverride {
 
         private final String tableNameOverride;
-
-        public TableNameOverride(String tableNameOverride) {
-            this.tableNameOverride = tableNameOverride;
+        private final String tableNamePrefix;
+        
+        /**
+         * Returns a new {@link TableNameOverride} object that will prepend the
+         * given string to every table name.
+         */
+        public static TableNameOverride withTableNamePrefix(String tableNamePrefix) {
+            return new TableNameOverride(null, tableNamePrefix);
         }
 
         /**
+         * Returns a new {@link TableNameOverride} object that will replace
+         * every table name in requests with the given string.
+         */
+        public static TableNameOverride withTableNameReplacement(String tableNameReplacement) {
+            return new TableNameOverride(tableNameReplacement, null);            
+        }
+        
+        private TableNameOverride(String tableNameOverride, String tableNamePrefix) {
+            this.tableNameOverride = tableNameOverride;
+            this.tableNamePrefix = tableNamePrefix;
+        }
+
+        /**
+         * @see TableNameOverride#withTableNameReplacement(String)
+         */
+        public TableNameOverride(String tableNameOverride) {
+            this(tableNameOverride, null);
+        }
+
+        /**
+         * Returns the table name to use for all requests. Exclusive with
+         * {@link TableNameOverride#getTableNamePrefix()}
+         * 
          * @see DynamoDBMapperConfig#getTableNameOverride()
          */
         public String getTableName() {
             return tableNameOverride;
         }
 
+        /**
+         * Returns the table name prefix to prepend the table name for all
+         * requests. Exclusive with {@link TableNameOverride#getTableName()}
+         * 
+         * @see DynamoDBMapperConfig#getTableNameOverride()
+         */
+        public String getTableNamePrefix() {
+            return tableNamePrefix;
+        }        
     }
 
     private final SaveBehavior saveBehavior;
@@ -166,8 +203,13 @@ public class DynamoDBMapperConfig {
 
     /**
      * Returns the table name override for this configuration. This value will
-     * override the table name specified in a {@link DynamoDBTable} annotation.
-     * This is useful for partitioning data in multiple tables at runtime.
+     * override the table name specified in a {@link DynamoDBTable} annotation,
+     * either by replacing the table name entirely or else by pre-pending a
+     * string to each table name. This is useful for partitioning data in
+     * multiple tables at runtime.
+     * 
+     * @see TableNameOverride#withTableNamePrefix(String)
+     * @see TableNameOverride#withTableNameReplacement(String)
      */
     public TableNameOverride getTableNameOverride() {
         return tableNameOverride;

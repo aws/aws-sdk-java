@@ -6,12 +6,12 @@
     <artifactId>aws-java-sdk</artifactId>
     <packaging>jar</packaging>
     <name>AWS SDK for Java</name>
-    <version>1.3.30</version>
+    <version>1.3.31</version>
     <description>The Amazon Web Services SDK for Java provides Java APIs for building software on AWS’ cost-effective, scalable, and reliable infrastructure products. The AWS Java SDK allows developers to code against APIs for all of Amazon's infrastructure web services (Amazon S3, Amazon EC2, Amazon SQS, Amazon Relational Database Service, Amazon AutoScaling, etc).</description>
     <url>http://aws.amazon.com/sdkforjava</url>
 
     <scm>
-        <url>http://github.com/amazonwebservices/aws-sdk-for-java.git</url>
+        <url>http://github.com/aws/aws-sdk-java.git</url>
     </scm>
 
     <licenses>

@@ -44,7 +44,7 @@ public class CreateDistributionRequestMarshaller implements Marshaller<Request<C
         Request<CreateDistributionRequest> request = new DefaultRequest<CreateDistributionRequest>(createDistributionRequest, "AmazonCloudFront");
         request.setHttpMethod(HttpMethodName.POST);
 
-        String uriResourcePath = "2012-05-05/distribution"; 
+        String uriResourcePath = "2012-07-01/distribution"; 
 
         if (uriResourcePath.contains("?")) {
             String queryString = uriResourcePath.substring(uriResourcePath.indexOf("?") + 1);
@@ -64,7 +64,7 @@ public class CreateDistributionRequestMarshaller implements Marshaller<Request<C
 
         
             StringWriter stringWriter = new StringWriter();
-            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2012-05-05/");
+            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2012-07-01/");
 
             
                     if (createDistributionRequest != null) {
@@ -178,6 +178,44 @@ public class CreateDistributionRequestMarshaller implements Marshaller<Request<C
                                 if (forwardedValuesForwardedValues.isQueryString() != null) {
                                     xmlWriter.startElement("QueryString").value(forwardedValuesForwardedValues.isQueryString()).endElement();
                                 }
+                                if (forwardedValuesForwardedValues != null) {
+                                    CookiePreference cookiePreferenceCookies = forwardedValuesForwardedValues.getCookies();
+                                    if (cookiePreferenceCookies != null) {
+                                        xmlWriter.startElement("Cookies");
+                                        if (cookiePreferenceCookies.getForward() != null) {
+                                            xmlWriter.startElement("Forward").value(cookiePreferenceCookies.getForward()).endElement();
+                                        }
+                                        if (cookiePreferenceCookies != null) {
+                                            CookieNames cookieNamesWhitelistedNames = cookiePreferenceCookies.getWhitelistedNames();
+                                            if (cookieNamesWhitelistedNames != null) {
+                                                xmlWriter.startElement("WhitelistedNames");
+                                                if (cookieNamesWhitelistedNames.getQuantity() != null) {
+                                                    xmlWriter.startElement("Quantity").value(cookieNamesWhitelistedNames.getQuantity()).endElement();
+                                                }
+
+                                                if (cookieNamesWhitelistedNames != null) {
+                                                    java.util.List<String> cookieNamesWhitelistedNamesitemsList = cookieNamesWhitelistedNames.getItems();
+                                                    if (cookieNamesWhitelistedNamesitemsList != null && cookieNamesWhitelistedNamesitemsList.size() > 0) {
+                                                        int cookieNamesWhitelistedNamesitemsListIndex = 1;
+                                                        xmlWriter.startElement("Items");
+                                                        for (String cookieNamesWhitelistedNamesitemsListValue : cookieNamesWhitelistedNamesitemsList) {
+
+                                                        xmlWriter.startElement("Name");
+                                                            xmlWriter.value(cookieNamesWhitelistedNamesitemsListValue);
+                                                        xmlWriter.endElement();
+
+
+                                                            cookieNamesWhitelistedNamesitemsListIndex++;
+                                                        }
+                                                        xmlWriter.endElement();
+                                                    }
+                                                }
+                                                xmlWriter.endElement();
+                                            }
+                                        }
+                                        xmlWriter.endElement();
+                                    }
+                                }
                                 xmlWriter.endElement();
                             }
                         }
@@ -250,6 +288,44 @@ public class CreateDistributionRequestMarshaller implements Marshaller<Request<C
                                             if (forwardedValuesForwardedValues.isQueryString() != null) {
                                                 xmlWriter.startElement("QueryString").value(forwardedValuesForwardedValues.isQueryString()).endElement();
                                             }
+                                            if (forwardedValuesForwardedValues != null) {
+                                                CookiePreference cookiePreferenceCookies = forwardedValuesForwardedValues.getCookies();
+                                                if (cookiePreferenceCookies != null) {
+                                                    xmlWriter.startElement("Cookies");
+                                                    if (cookiePreferenceCookies.getForward() != null) {
+                                                        xmlWriter.startElement("Forward").value(cookiePreferenceCookies.getForward()).endElement();
+                                                    }
+                                                    if (cookiePreferenceCookies != null) {
+                                                        CookieNames cookieNamesWhitelistedNames = cookiePreferenceCookies.getWhitelistedNames();
+                                                        if (cookieNamesWhitelistedNames != null) {
+                                                            xmlWriter.startElement("WhitelistedNames");
+                                                            if (cookieNamesWhitelistedNames.getQuantity() != null) {
+                                                                xmlWriter.startElement("Quantity").value(cookieNamesWhitelistedNames.getQuantity()).endElement();
+                                                            }
+
+                                                            if (cookieNamesWhitelistedNames != null) {
+                                                                java.util.List<String> cookieNamesWhitelistedNamesitemsList = cookieNamesWhitelistedNames.getItems();
+                                                                if (cookieNamesWhitelistedNamesitemsList != null && cookieNamesWhitelistedNamesitemsList.size() > 0) {
+                                                                    int cookieNamesWhitelistedNamesitemsListIndex = 1;
+                                                                    xmlWriter.startElement("Items");
+                                                                    for (String cookieNamesWhitelistedNamesitemsListValue : cookieNamesWhitelistedNamesitemsList) {
+
+                                                                    xmlWriter.startElement("Name");
+                                                                        xmlWriter.value(cookieNamesWhitelistedNamesitemsListValue);
+                                                                    xmlWriter.endElement();
+
+
+                                                                        cookieNamesWhitelistedNamesitemsListIndex++;
+                                                                    }
+                                                                    xmlWriter.endElement();
+                                                                }
+                                                            }
+                                                            xmlWriter.endElement();
+                                                        }
+                                                    }
+                                                    xmlWriter.endElement();
+                                                }
+                                            }
                                             xmlWriter.endElement();
                                         }
                                     }
@@ -311,6 +387,9 @@ public class CreateDistributionRequestMarshaller implements Marshaller<Request<C
                         if (loggingConfigLogging.isEnabled() != null) {
                             xmlWriter.startElement("Enabled").value(loggingConfigLogging.isEnabled()).endElement();
                         }
+                        if (loggingConfigLogging.isIncludeCookies() != null) {
+                            xmlWriter.startElement("IncludeCookies").value(loggingConfigLogging.isIncludeCookies()).endElement();
+                        }
                         if (loggingConfigLogging.getBucket() != null) {
                             xmlWriter.startElement("Bucket").value(loggingConfigLogging.getBucket()).endElement();
                         }
@@ -319,6 +398,9 @@ public class CreateDistributionRequestMarshaller implements Marshaller<Request<C
                         }
                         xmlWriter.endElement();
                     }
+                }
+                if (distributionConfigDistributionConfig.getPriceClass() != null) {
+                    xmlWriter.startElement("PriceClass").value(distributionConfigDistributionConfig.getPriceClass()).endElement();
                 }
                 if (distributionConfigDistributionConfig.isEnabled() != null) {
                     xmlWriter.startElement("Enabled").value(distributionConfigDistributionConfig.isEnabled()).endElement();

@@ -76,6 +76,10 @@ public class StreamingDistributionSummaryStaxUnmarshaller implements Unmarshalle
                     streamingDistributionSummary.setComment(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("PriceClass", targetDepth)) {
+                    streamingDistributionSummary.setPriceClass(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
                 if (context.testExpression("Enabled", targetDepth)) {
                     streamingDistributionSummary.setEnabled(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

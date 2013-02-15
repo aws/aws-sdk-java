@@ -26,6 +26,8 @@ public class InvalidationSummary {
      */
     private String id;
 
+    private java.util.Date createTime;
+
     /**
      * The status of an invalidation request.
      */
@@ -67,6 +69,40 @@ public class InvalidationSummary {
      */
     public InvalidationSummary withId(String id) {
         this.id = id;
+        return this;
+    }
+    
+    
+    /**
+     * Returns the value of the CreateTime property for this object.
+     *
+     * @return The value of the CreateTime property for this object.
+     */
+    public java.util.Date getCreateTime() {
+        return createTime;
+    }
+    
+    /**
+     * Sets the value of the CreateTime property for this object.
+     *
+     * @param createTime The new value for the CreateTime property for this object.
+     */
+    public void setCreateTime(java.util.Date createTime) {
+        this.createTime = createTime;
+    }
+    
+    /**
+     * Sets the value of the CreateTime property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param createTime The new value for the CreateTime property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public InvalidationSummary withCreateTime(java.util.Date createTime) {
+        this.createTime = createTime;
         return this;
     }
     
@@ -118,6 +154,7 @@ public class InvalidationSummary {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getId() != null) sb.append("Id: " + getId() + ", ");
+        if (getCreateTime() != null) sb.append("CreateTime: " + getCreateTime() + ", ");
         if (getStatus() != null) sb.append("Status: " + getStatus() + ", ");
         sb.append("}");
         return sb.toString();
@@ -129,6 +166,7 @@ public class InvalidationSummary {
         int hashCode = 1;
         
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode()); 
+        hashCode = prime * hashCode + ((getCreateTime() == null) ? 0 : getCreateTime().hashCode()); 
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode()); 
         return hashCode;
     }
@@ -143,6 +181,8 @@ public class InvalidationSummary {
         
         if (other.getId() == null ^ this.getId() == null) return false;
         if (other.getId() != null && other.getId().equals(this.getId()) == false) return false; 
+        if (other.getCreateTime() == null ^ this.getCreateTime() == null) return false;
+        if (other.getCreateTime() != null && other.getCreateTime().equals(this.getCreateTime()) == false) return false; 
         if (other.getStatus() == null ^ this.getStatus() == null) return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false) return false; 
         return true;

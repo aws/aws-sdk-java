@@ -88,6 +88,15 @@ public class DistributionConfig {
     private LoggingConfig logging;
 
     /**
+     * A complex type that contains information about price class for this
+     * distribution.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>PriceClass_100, PriceClass_200, PriceClass_All
+     */
+    private String priceClass;
+
+    /**
      * Whether the distribution is enabled to accept end user requests for
      * content.
      */
@@ -554,6 +563,99 @@ public class DistributionConfig {
     
     
     /**
+     * A complex type that contains information about price class for this
+     * distribution.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>PriceClass_100, PriceClass_200, PriceClass_All
+     *
+     * @return A complex type that contains information about price class for this
+     *         distribution.
+     *
+     * @see PriceClass
+     */
+    public String getPriceClass() {
+        return priceClass;
+    }
+    
+    /**
+     * A complex type that contains information about price class for this
+     * distribution.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>PriceClass_100, PriceClass_200, PriceClass_All
+     *
+     * @param priceClass A complex type that contains information about price class for this
+     *         distribution.
+     *
+     * @see PriceClass
+     */
+    public void setPriceClass(String priceClass) {
+        this.priceClass = priceClass;
+    }
+    
+    /**
+     * A complex type that contains information about price class for this
+     * distribution.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>PriceClass_100, PriceClass_200, PriceClass_All
+     *
+     * @param priceClass A complex type that contains information about price class for this
+     *         distribution.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see PriceClass
+     */
+    public DistributionConfig withPriceClass(String priceClass) {
+        this.priceClass = priceClass;
+        return this;
+    }
+    
+    
+    /**
+     * A complex type that contains information about price class for this
+     * distribution.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>PriceClass_100, PriceClass_200, PriceClass_All
+     *
+     * @param priceClass A complex type that contains information about price class for this
+     *         distribution.
+     *
+     * @see PriceClass
+     */
+    public void setPriceClass(PriceClass priceClass) {
+        this.priceClass = priceClass.toString();
+    }
+    
+    /**
+     * A complex type that contains information about price class for this
+     * distribution.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>PriceClass_100, PriceClass_200, PriceClass_All
+     *
+     * @param priceClass A complex type that contains information about price class for this
+     *         distribution.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see PriceClass
+     */
+    public DistributionConfig withPriceClass(PriceClass priceClass) {
+        this.priceClass = priceClass.toString();
+        return this;
+    }
+    
+    /**
      * Whether the distribution is enabled to accept end user requests for
      * content.
      *
@@ -624,6 +726,7 @@ public class DistributionConfig {
         if (getCacheBehaviors() != null) sb.append("CacheBehaviors: " + getCacheBehaviors() + ", ");
         if (getComment() != null) sb.append("Comment: " + getComment() + ", ");
         if (getLogging() != null) sb.append("Logging: " + getLogging() + ", ");
+        if (getPriceClass() != null) sb.append("PriceClass: " + getPriceClass() + ", ");
         if (isEnabled() != null) sb.append("Enabled: " + isEnabled() + ", ");
         sb.append("}");
         return sb.toString();
@@ -642,6 +745,7 @@ public class DistributionConfig {
         hashCode = prime * hashCode + ((getCacheBehaviors() == null) ? 0 : getCacheBehaviors().hashCode()); 
         hashCode = prime * hashCode + ((getComment() == null) ? 0 : getComment().hashCode()); 
         hashCode = prime * hashCode + ((getLogging() == null) ? 0 : getLogging().hashCode()); 
+        hashCode = prime * hashCode + ((getPriceClass() == null) ? 0 : getPriceClass().hashCode()); 
         hashCode = prime * hashCode + ((isEnabled() == null) ? 0 : isEnabled().hashCode()); 
         return hashCode;
     }
@@ -670,6 +774,8 @@ public class DistributionConfig {
         if (other.getComment() != null && other.getComment().equals(this.getComment()) == false) return false; 
         if (other.getLogging() == null ^ this.getLogging() == null) return false;
         if (other.getLogging() != null && other.getLogging().equals(this.getLogging()) == false) return false; 
+        if (other.getPriceClass() == null ^ this.getPriceClass() == null) return false;
+        if (other.getPriceClass() != null && other.getPriceClass().equals(this.getPriceClass()) == false) return false; 
         if (other.isEnabled() == null ^ this.isEnabled() == null) return false;
         if (other.isEnabled() != null && other.isEnabled().equals(this.isEnabled()) == false) return false; 
         return true;

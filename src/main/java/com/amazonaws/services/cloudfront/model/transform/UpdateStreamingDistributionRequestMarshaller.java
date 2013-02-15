@@ -47,7 +47,7 @@ public class UpdateStreamingDistributionRequestMarshaller implements Marshaller<
         	request.addHeader("If-Match", StringUtils.fromString(updateStreamingDistributionRequest.getIfMatch()));
         
 
-        String uriResourcePath = "2012-05-05/streaming-distribution/{Id}/config"; 
+        String uriResourcePath = "2012-07-01/streaming-distribution/{Id}/config"; 
         uriResourcePath = uriResourcePath.replace("{Id}", getString(updateStreamingDistributionRequest.getId())); 
 
         if (uriResourcePath.contains("?")) {
@@ -68,7 +68,7 @@ public class UpdateStreamingDistributionRequestMarshaller implements Marshaller<
 
         
             StringWriter stringWriter = new StringWriter();
-            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2012-05-05/");
+            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2012-07-01/");
 
             
                     if (updateStreamingDistributionRequest != null) {
@@ -123,17 +123,17 @@ public class UpdateStreamingDistributionRequestMarshaller implements Marshaller<
                     xmlWriter.startElement("Comment").value(streamingDistributionConfigStreamingDistributionConfig.getComment()).endElement();
                 }
                 if (streamingDistributionConfigStreamingDistributionConfig != null) {
-                    LoggingConfig loggingConfigLogging = streamingDistributionConfigStreamingDistributionConfig.getLogging();
-                    if (loggingConfigLogging != null) {
+                    StreamingLoggingConfig streamingLoggingConfigLogging = streamingDistributionConfigStreamingDistributionConfig.getLogging();
+                    if (streamingLoggingConfigLogging != null) {
                         xmlWriter.startElement("Logging");
-                        if (loggingConfigLogging.isEnabled() != null) {
-                            xmlWriter.startElement("Enabled").value(loggingConfigLogging.isEnabled()).endElement();
+                        if (streamingLoggingConfigLogging.isEnabled() != null) {
+                            xmlWriter.startElement("Enabled").value(streamingLoggingConfigLogging.isEnabled()).endElement();
                         }
-                        if (loggingConfigLogging.getBucket() != null) {
-                            xmlWriter.startElement("Bucket").value(loggingConfigLogging.getBucket()).endElement();
+                        if (streamingLoggingConfigLogging.getBucket() != null) {
+                            xmlWriter.startElement("Bucket").value(streamingLoggingConfigLogging.getBucket()).endElement();
                         }
-                        if (loggingConfigLogging.getPrefix() != null) {
-                            xmlWriter.startElement("Prefix").value(loggingConfigLogging.getPrefix()).endElement();
+                        if (streamingLoggingConfigLogging.getPrefix() != null) {
+                            xmlWriter.startElement("Prefix").value(streamingLoggingConfigLogging.getPrefix()).endElement();
                         }
                         xmlWriter.endElement();
                     }
@@ -168,6 +168,9 @@ public class UpdateStreamingDistributionRequestMarshaller implements Marshaller<
                         }
                         xmlWriter.endElement();
                     }
+                }
+                if (streamingDistributionConfigStreamingDistributionConfig.getPriceClass() != null) {
+                    xmlWriter.startElement("PriceClass").value(streamingDistributionConfigStreamingDistributionConfig.getPriceClass()).endElement();
                 }
                 if (streamingDistributionConfigStreamingDistributionConfig.isEnabled() != null) {
                     xmlWriter.startElement("Enabled").value(streamingDistributionConfigStreamingDistributionConfig.isEnabled()).endElement();

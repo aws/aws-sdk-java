@@ -30,7 +30,8 @@ public class DefaultCacheBehavior {
     private String targetOriginId;
 
     /**
-     * A complex type that specifies how CloudFront handles query strings.
+     * A complex type that specifies how CloudFront handles query strings and
+     * cookies.
      */
     private ForwardedValues forwardedValues;
 
@@ -118,29 +119,35 @@ public class DefaultCacheBehavior {
     
     
     /**
-     * A complex type that specifies how CloudFront handles query strings.
+     * A complex type that specifies how CloudFront handles query strings and
+     * cookies.
      *
-     * @return A complex type that specifies how CloudFront handles query strings.
+     * @return A complex type that specifies how CloudFront handles query strings and
+     *         cookies.
      */
     public ForwardedValues getForwardedValues() {
         return forwardedValues;
     }
     
     /**
-     * A complex type that specifies how CloudFront handles query strings.
+     * A complex type that specifies how CloudFront handles query strings and
+     * cookies.
      *
-     * @param forwardedValues A complex type that specifies how CloudFront handles query strings.
+     * @param forwardedValues A complex type that specifies how CloudFront handles query strings and
+     *         cookies.
      */
     public void setForwardedValues(ForwardedValues forwardedValues) {
         this.forwardedValues = forwardedValues;
     }
     
     /**
-     * A complex type that specifies how CloudFront handles query strings.
+     * A complex type that specifies how CloudFront handles query strings and
+     * cookies.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param forwardedValues A complex type that specifies how CloudFront handles query strings.
+     * @param forwardedValues A complex type that specifies how CloudFront handles query strings and
+     *         cookies.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

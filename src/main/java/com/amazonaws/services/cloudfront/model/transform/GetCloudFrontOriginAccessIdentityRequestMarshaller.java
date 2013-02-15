@@ -44,7 +44,7 @@ public class GetCloudFrontOriginAccessIdentityRequestMarshaller implements Marsh
         Request<GetCloudFrontOriginAccessIdentityRequest> request = new DefaultRequest<GetCloudFrontOriginAccessIdentityRequest>(getCloudFrontOriginAccessIdentityRequest, "AmazonCloudFront");
         request.setHttpMethod(HttpMethodName.GET);
 
-        String uriResourcePath = "2012-05-05/origin-access-identity/cloudfront/{Id}"; 
+        String uriResourcePath = "2012-07-01/origin-access-identity/cloudfront/{Id}"; 
         uriResourcePath = uriResourcePath.replace("{Id}", getString(getCloudFrontOriginAccessIdentityRequest.getId())); 
 
         if (uriResourcePath.contains("?")) {

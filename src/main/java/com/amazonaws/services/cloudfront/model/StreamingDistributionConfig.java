@@ -59,7 +59,7 @@ public class StreamingDistributionConfig {
      * A complex type that controls whether access logs are written for the
      * streaming distribution.
      */
-    private LoggingConfig logging;
+    private StreamingLoggingConfig logging;
 
     /**
      * A complex type that specifies the AWS accounts, if any, that you want
@@ -77,6 +77,15 @@ public class StreamingDistributionConfig {
      * distribution.
      */
     private TrustedSigners trustedSigners;
+
+    /**
+     * A complex type that contains information about price class for this
+     * streaming distribution.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>PriceClass_100, PriceClass_200, PriceClass_All
+     */
+    private String priceClass;
 
     /**
      * Whether the streaming distribution is enabled to accept end user
@@ -348,7 +357,7 @@ public class StreamingDistributionConfig {
      * @return A complex type that controls whether access logs are written for the
      *         streaming distribution.
      */
-    public LoggingConfig getLogging() {
+    public StreamingLoggingConfig getLogging() {
         return logging;
     }
     
@@ -359,7 +368,7 @@ public class StreamingDistributionConfig {
      * @param logging A complex type that controls whether access logs are written for the
      *         streaming distribution.
      */
-    public void setLogging(LoggingConfig logging) {
+    public void setLogging(StreamingLoggingConfig logging) {
         this.logging = logging;
     }
     
@@ -375,7 +384,7 @@ public class StreamingDistributionConfig {
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public StreamingDistributionConfig withLogging(LoggingConfig logging) {
+    public StreamingDistributionConfig withLogging(StreamingLoggingConfig logging) {
         this.logging = logging;
         return this;
     }
@@ -488,6 +497,99 @@ public class StreamingDistributionConfig {
     
     
     /**
+     * A complex type that contains information about price class for this
+     * streaming distribution.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>PriceClass_100, PriceClass_200, PriceClass_All
+     *
+     * @return A complex type that contains information about price class for this
+     *         streaming distribution.
+     *
+     * @see PriceClass
+     */
+    public String getPriceClass() {
+        return priceClass;
+    }
+    
+    /**
+     * A complex type that contains information about price class for this
+     * streaming distribution.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>PriceClass_100, PriceClass_200, PriceClass_All
+     *
+     * @param priceClass A complex type that contains information about price class for this
+     *         streaming distribution.
+     *
+     * @see PriceClass
+     */
+    public void setPriceClass(String priceClass) {
+        this.priceClass = priceClass;
+    }
+    
+    /**
+     * A complex type that contains information about price class for this
+     * streaming distribution.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>PriceClass_100, PriceClass_200, PriceClass_All
+     *
+     * @param priceClass A complex type that contains information about price class for this
+     *         streaming distribution.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see PriceClass
+     */
+    public StreamingDistributionConfig withPriceClass(String priceClass) {
+        this.priceClass = priceClass;
+        return this;
+    }
+    
+    
+    /**
+     * A complex type that contains information about price class for this
+     * streaming distribution.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>PriceClass_100, PriceClass_200, PriceClass_All
+     *
+     * @param priceClass A complex type that contains information about price class for this
+     *         streaming distribution.
+     *
+     * @see PriceClass
+     */
+    public void setPriceClass(PriceClass priceClass) {
+        this.priceClass = priceClass.toString();
+    }
+    
+    /**
+     * A complex type that contains information about price class for this
+     * streaming distribution.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>PriceClass_100, PriceClass_200, PriceClass_All
+     *
+     * @param priceClass A complex type that contains information about price class for this
+     *         streaming distribution.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see PriceClass
+     */
+    public StreamingDistributionConfig withPriceClass(PriceClass priceClass) {
+        this.priceClass = priceClass.toString();
+        return this;
+    }
+    
+    /**
      * Whether the streaming distribution is enabled to accept end user
      * requests for content.
      *
@@ -556,6 +658,7 @@ public class StreamingDistributionConfig {
         if (getComment() != null) sb.append("Comment: " + getComment() + ", ");
         if (getLogging() != null) sb.append("Logging: " + getLogging() + ", ");
         if (getTrustedSigners() != null) sb.append("TrustedSigners: " + getTrustedSigners() + ", ");
+        if (getPriceClass() != null) sb.append("PriceClass: " + getPriceClass() + ", ");
         if (isEnabled() != null) sb.append("Enabled: " + isEnabled() + ", ");
         sb.append("}");
         return sb.toString();
@@ -572,6 +675,7 @@ public class StreamingDistributionConfig {
         hashCode = prime * hashCode + ((getComment() == null) ? 0 : getComment().hashCode()); 
         hashCode = prime * hashCode + ((getLogging() == null) ? 0 : getLogging().hashCode()); 
         hashCode = prime * hashCode + ((getTrustedSigners() == null) ? 0 : getTrustedSigners().hashCode()); 
+        hashCode = prime * hashCode + ((getPriceClass() == null) ? 0 : getPriceClass().hashCode()); 
         hashCode = prime * hashCode + ((isEnabled() == null) ? 0 : isEnabled().hashCode()); 
         return hashCode;
     }
@@ -596,6 +700,8 @@ public class StreamingDistributionConfig {
         if (other.getLogging() != null && other.getLogging().equals(this.getLogging()) == false) return false; 
         if (other.getTrustedSigners() == null ^ this.getTrustedSigners() == null) return false;
         if (other.getTrustedSigners() != null && other.getTrustedSigners().equals(this.getTrustedSigners()) == false) return false; 
+        if (other.getPriceClass() == null ^ this.getPriceClass() == null) return false;
+        if (other.getPriceClass() != null && other.getPriceClass().equals(this.getPriceClass()) == false) return false; 
         if (other.isEnabled() == null ^ this.isEnabled() == null) return false;
         if (other.isEnabled() != null && other.isEnabled().equals(this.isEnabled()) == false) return false; 
         return true;

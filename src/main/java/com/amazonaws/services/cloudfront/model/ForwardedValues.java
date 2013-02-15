@@ -29,6 +29,11 @@ public class ForwardedValues {
     private Boolean queryString;
 
     /**
+     * A complex type that specifies how CloudFront handles cookies.
+     */
+    private CookiePreference cookies;
+
+    /**
      * Indicates whether you want CloudFront to forward query strings to the
      * origin that is associated with this cache behavior. If so, specify
      * true; if not, specify false.
@@ -88,6 +93,40 @@ public class ForwardedValues {
     }
     
     /**
+     * A complex type that specifies how CloudFront handles cookies.
+     *
+     * @return A complex type that specifies how CloudFront handles cookies.
+     */
+    public CookiePreference getCookies() {
+        return cookies;
+    }
+    
+    /**
+     * A complex type that specifies how CloudFront handles cookies.
+     *
+     * @param cookies A complex type that specifies how CloudFront handles cookies.
+     */
+    public void setCookies(CookiePreference cookies) {
+        this.cookies = cookies;
+    }
+    
+    /**
+     * A complex type that specifies how CloudFront handles cookies.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param cookies A complex type that specifies how CloudFront handles cookies.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public ForwardedValues withCookies(CookiePreference cookies) {
+        this.cookies = cookies;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -100,6 +139,7 @@ public class ForwardedValues {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (isQueryString() != null) sb.append("QueryString: " + isQueryString() + ", ");
+        if (getCookies() != null) sb.append("Cookies: " + getCookies() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -110,6 +150,7 @@ public class ForwardedValues {
         int hashCode = 1;
         
         hashCode = prime * hashCode + ((isQueryString() == null) ? 0 : isQueryString().hashCode()); 
+        hashCode = prime * hashCode + ((getCookies() == null) ? 0 : getCookies().hashCode()); 
         return hashCode;
     }
     
@@ -123,6 +164,8 @@ public class ForwardedValues {
         
         if (other.isQueryString() == null ^ this.isQueryString() == null) return false;
         if (other.isQueryString() != null && other.isQueryString().equals(this.isQueryString()) == false) return false; 
+        if (other.getCookies() == null ^ this.getCookies() == null) return false;
+        if (other.getCookies() != null && other.getCookies().equals(this.getCookies()) == false) return false; 
         return true;
     }
     

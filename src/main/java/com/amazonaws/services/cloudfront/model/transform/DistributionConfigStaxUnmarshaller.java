@@ -76,6 +76,10 @@ public class DistributionConfigStaxUnmarshaller implements Unmarshaller<Distribu
                     distributionConfig.setLogging(LoggingConfigStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("PriceClass", targetDepth)) {
+                    distributionConfig.setPriceClass(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
                 if (context.testExpression("Enabled", targetDepth)) {
                     distributionConfig.setEnabled(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

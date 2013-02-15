@@ -80,6 +80,10 @@ public class DistributionSummaryStaxUnmarshaller implements Unmarshaller<Distrib
                     distributionSummary.setComment(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("PriceClass", targetDepth)) {
+                    distributionSummary.setPriceClass(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
                 if (context.testExpression("Enabled", targetDepth)) {
                     distributionSummary.setEnabled(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

@@ -48,6 +48,10 @@ public class InvalidationSummaryStaxUnmarshaller implements Unmarshaller<Invalid
                     invalidationSummary.setId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("CreateTime", targetDepth)) {
+                    invalidationSummary.setCreateTime(DateStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
                 if (context.testExpression("Status", targetDepth)) {
                     invalidationSummary.setStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

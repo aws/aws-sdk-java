@@ -79,6 +79,8 @@ public class StreamingDistributionSummary {
      */
     private String comment;
 
+    private String priceClass;
+
     /**
      * Whether the distribution is enabled to accept end user requests for
      * content.
@@ -472,6 +474,89 @@ public class StreamingDistributionSummary {
     
     
     /**
+     * Returns the value of the PriceClass property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>PriceClass_100, PriceClass_200, PriceClass_All
+     *
+     * @return The value of the PriceClass property for this object.
+     *
+     * @see PriceClass
+     */
+    public String getPriceClass() {
+        return priceClass;
+    }
+    
+    /**
+     * Sets the value of the PriceClass property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>PriceClass_100, PriceClass_200, PriceClass_All
+     *
+     * @param priceClass The new value for the PriceClass property for this object.
+     *
+     * @see PriceClass
+     */
+    public void setPriceClass(String priceClass) {
+        this.priceClass = priceClass;
+    }
+    
+    /**
+     * Sets the value of the PriceClass property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>PriceClass_100, PriceClass_200, PriceClass_All
+     *
+     * @param priceClass The new value for the PriceClass property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see PriceClass
+     */
+    public StreamingDistributionSummary withPriceClass(String priceClass) {
+        this.priceClass = priceClass;
+        return this;
+    }
+    
+    
+    /**
+     * Sets the value of the PriceClass property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>PriceClass_100, PriceClass_200, PriceClass_All
+     *
+     * @param priceClass The new value for the PriceClass property for this object.
+     *
+     * @see PriceClass
+     */
+    public void setPriceClass(PriceClass priceClass) {
+        this.priceClass = priceClass.toString();
+    }
+    
+    /**
+     * Sets the value of the PriceClass property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>PriceClass_100, PriceClass_200, PriceClass_All
+     *
+     * @param priceClass The new value for the PriceClass property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see PriceClass
+     */
+    public StreamingDistributionSummary withPriceClass(PriceClass priceClass) {
+        this.priceClass = priceClass.toString();
+        return this;
+    }
+    
+    /**
      * Whether the distribution is enabled to accept end user requests for
      * content.
      *
@@ -542,6 +627,7 @@ public class StreamingDistributionSummary {
         if (getAliases() != null) sb.append("Aliases: " + getAliases() + ", ");
         if (getTrustedSigners() != null) sb.append("TrustedSigners: " + getTrustedSigners() + ", ");
         if (getComment() != null) sb.append("Comment: " + getComment() + ", ");
+        if (getPriceClass() != null) sb.append("PriceClass: " + getPriceClass() + ", ");
         if (isEnabled() != null) sb.append("Enabled: " + isEnabled() + ", ");
         sb.append("}");
         return sb.toString();
@@ -560,6 +646,7 @@ public class StreamingDistributionSummary {
         hashCode = prime * hashCode + ((getAliases() == null) ? 0 : getAliases().hashCode()); 
         hashCode = prime * hashCode + ((getTrustedSigners() == null) ? 0 : getTrustedSigners().hashCode()); 
         hashCode = prime * hashCode + ((getComment() == null) ? 0 : getComment().hashCode()); 
+        hashCode = prime * hashCode + ((getPriceClass() == null) ? 0 : getPriceClass().hashCode()); 
         hashCode = prime * hashCode + ((isEnabled() == null) ? 0 : isEnabled().hashCode()); 
         return hashCode;
     }
@@ -588,6 +675,8 @@ public class StreamingDistributionSummary {
         if (other.getTrustedSigners() != null && other.getTrustedSigners().equals(this.getTrustedSigners()) == false) return false; 
         if (other.getComment() == null ^ this.getComment() == null) return false;
         if (other.getComment() != null && other.getComment().equals(this.getComment()) == false) return false; 
+        if (other.getPriceClass() == null ^ this.getPriceClass() == null) return false;
+        if (other.getPriceClass() != null && other.getPriceClass().equals(this.getPriceClass()) == false) return false; 
         if (other.isEnabled() == null ^ this.isEnabled() == null) return false;
         if (other.isEnabled() != null && other.isEnabled().equals(this.isEnabled()) == false) return false; 
         return true;

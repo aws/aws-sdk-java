@@ -56,6 +56,10 @@ public class ProvisionedThroughputDescriptionJsonUnmarshaller implements Unmarsh
                     context.nextToken();
                     provisionedThroughputDescription.setLastDecreaseDateTime(DateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("NumberOfDecreasesToday", targetDepth)) {
+                    context.nextToken();
+                    provisionedThroughputDescription.setNumberOfDecreasesToday(LongJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("ReadCapacityUnits", targetDepth)) {
                     context.nextToken();
                     provisionedThroughputDescription.setReadCapacityUnits(LongJsonUnmarshaller.getInstance().unmarshall(context));

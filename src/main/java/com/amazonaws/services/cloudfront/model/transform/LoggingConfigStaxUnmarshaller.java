@@ -48,6 +48,10 @@ public class LoggingConfigStaxUnmarshaller implements Unmarshaller<LoggingConfig
                     loggingConfig.setEnabled(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("IncludeCookies", targetDepth)) {
+                    loggingConfig.setIncludeCookies(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
                 if (context.testExpression("Bucket", targetDepth)) {
                     loggingConfig.setBucket(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

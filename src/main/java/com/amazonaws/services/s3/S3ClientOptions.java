@@ -18,15 +18,15 @@ package com.amazonaws.services.s3;
  * S3 client configuration options such as the request access style.
  */
 public class S3ClientOptions {
-  
+
     /** The default setting for use of path-style access */
     public static final boolean DEFAULT_PATH_STYLE_ACCESS = false;
-  
+
     /** Flag for use of path-style access */
     private boolean pathStyleAccess = DEFAULT_PATH_STYLE_ACCESS;
-    
+
     public S3ClientOptions() {}
-  
+
     public S3ClientOptions( S3ClientOptions other ) {
         this.pathStyleAccess = other.pathStyleAccess;
     }
@@ -52,7 +52,7 @@ public class S3ClientOptions {
     public boolean isPathStyleAccess() {
         return pathStyleAccess;
     }
-  
+
     /**
      * <p>
      * Configures the client to use path-style access for all requests.
@@ -71,7 +71,7 @@ public class S3ClientOptions {
      * </p>
      * @param pathStyleAccess
      *            True to always use path-style access.
-     */  
+     */
     public void setPathStyleAccess(boolean pathStyleAccess) {
       this.pathStyleAccess = pathStyleAccess;
     }
@@ -94,7 +94,7 @@ public class S3ClientOptions {
      * </p>
      * @param pathStyleAccess
      *            True to always use path-style access.
-     *            
+     *
      * @return The updated S3ClientOptions object with the new path-style
      *         access setting.
      */

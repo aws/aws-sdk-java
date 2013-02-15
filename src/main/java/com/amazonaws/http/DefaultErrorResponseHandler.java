@@ -4,9 +4,9 @@
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -18,6 +18,7 @@ import java.util.List;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Node;
+import org.xml.sax.SAXParseException;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
@@ -47,7 +48,7 @@ public class DefaultErrorResponseHandler
      * responses from Amazon services using the specified list of unmarshallers.
      * Each unmarshaller will be tried, in order, until one is found that can
      * unmarshall the error response.
-     * 
+     *
      * @param unmarshallerList
      *            The list of unmarshallers to try using when handling an error
      *            response.
@@ -56,13 +57,24 @@ public class DefaultErrorResponseHandler
             List<Unmarshaller<AmazonServiceException, Node>> unmarshallerList) {
         this.unmarshallerList = unmarshallerList;
     }
-    
+
     /* (non-Javadoc)
      * @see com.amazonaws.http.HttpResponseHandler#handle(com.amazonaws.http.HttpResponse)
      */
     public AmazonServiceException handle(HttpResponse errorResponse)
             throws Exception {
-        Document document = XpathUtils.documentFrom(errorResponse.getContent());
+        Document document;
+        try {
+            document = XpathUtils.documentFrom(errorResponse.getContent());
+        } catch (SAXParseException e) {
+            AmazonServiceException exception =
+                new AmazonServiceException(String.format("Unable to unmarshall error response (%s)", e.getMessage()), e);
+            exception.setErrorCode(String.format("%s %s", errorResponse.getStatusCode(), errorResponse.getStatusText()));
+            exception.setErrorType(AmazonServiceException.ErrorType.Unknown);
+            exception.setStatusCode(errorResponse.getStatusCode());
+
+            return exception;
+        }
 
         /*
          * We need to select which exception unmarshaller is the correct one to
@@ -78,7 +90,7 @@ public class DefaultErrorResponseHandler
                 return ase;
             }
         }
-        
+
         throw new AmazonClientException("Unable to unmarshall error response from service");
     }
 

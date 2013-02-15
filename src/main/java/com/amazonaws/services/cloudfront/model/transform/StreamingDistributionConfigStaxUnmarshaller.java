@@ -61,11 +61,15 @@ public class StreamingDistributionConfigStaxUnmarshaller implements Unmarshaller
                     continue;
                 }
                 if (context.testExpression("Logging", targetDepth)) {
-                    streamingDistributionConfig.setLogging(LoggingConfigStaxUnmarshaller.getInstance().unmarshall(context));
+                    streamingDistributionConfig.setLogging(StreamingLoggingConfigStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
                 if (context.testExpression("TrustedSigners", targetDepth)) {
                     streamingDistributionConfig.setTrustedSigners(TrustedSignersStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("PriceClass", targetDepth)) {
+                    streamingDistributionConfig.setPriceClass(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
                 if (context.testExpression("Enabled", targetDepth)) {
