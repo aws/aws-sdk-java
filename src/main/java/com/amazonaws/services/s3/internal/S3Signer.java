@@ -27,6 +27,7 @@ import com.amazonaws.auth.AbstractAWSSigner;
 import com.amazonaws.auth.Signer;
 import com.amazonaws.auth.SigningAlgorithm;
 import com.amazonaws.services.s3.Headers;
+import com.amazonaws.util.HttpUtils;
 
 /**
  * Implementation of the {@linkplain Signer} interface specific to S3's signing
@@ -94,8 +95,9 @@ public class S3Signer extends AbstractAWSSigner {
         }
 
         request.addHeader(Headers.DATE, ServiceUtils.formatRfc822Date(new Date()));
+	String path = HttpUtils.appendUri(request.getEndpoint().getPath(), request.getResourcePath());
         String canonicalString = RestUtils.makeS3CanonicalString(
-                httpVerb, resourcePath, request, null);
+		httpVerb, path, request, null);
         log.debug("Calculated string to sign:\n\"" + canonicalString + "\"");
 
         String signature = super.signAndBase64Encode(canonicalString, sanitizedCredentials.getAWSSecretKey(), SigningAlgorithm.HmacSHA1);

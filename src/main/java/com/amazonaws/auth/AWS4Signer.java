@@ -74,6 +74,7 @@ public class AWS4Signer extends AbstractAWSSigner {
 
         String regionName  = extractRegionName(request.getEndpoint());
         String serviceName = extractServiceName(request.getEndpoint());
+	String path = HttpUtils.appendUri(request.getEndpoint().getPath(), request.getResourcePath());
 
         // AWS4 requires that we sign the Host header so we
         // have to have it in the request by the time we sign.
@@ -95,7 +96,7 @@ public class AWS4Signer extends AbstractAWSSigner {
 
         String canonicalRequest =
             request.getHttpMethod().toString() + "\n" +
-            super.getCanonicalizedResourcePath(request.getResourcePath()) + "\n" +
+	    super.getCanonicalizedResourcePath(path) + "\n" +
             getCanonicalizedQueryString(request) + "\n" +
             getCanonicalizedHeaderString(request) + "\n" +
             getSignedHeadersString(request) + "\n" +

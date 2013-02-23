@@ -147,6 +147,8 @@ public class QueryStringSigner extends AbstractAWSSigner implements Signer {
             }
 
             resourcePath += request.getResourcePath();
+        } else if ( !resourcePath.endsWith("/") ) {
+          resourcePath += "/";
         }
 
         if (!resourcePath.startsWith("/")) {
@@ -165,7 +167,7 @@ public class QueryStringSigner extends AbstractAWSSigner implements Signer {
      */
     private String getFormattedTimestamp() {
         SimpleDateFormat df = new SimpleDateFormat(
-                "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
+		"yyyy-MM-dd'T'HH:mm:ss'Z'");
         df.setTimeZone(TimeZone.getTimeZone("UTC"));
 
         if (overriddenDate != null) {
