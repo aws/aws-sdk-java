@@ -3,7 +3,7 @@
      before trying to run it.  -->
 <project name="AWS Console Sample" default="run" basedir=".">
     <path id="aws.java.sdk.classpath">
-<!--        <fileset dir="${basedir}/../../third-party" includes="**/*.jar"/> -->
+        <fileset dir="${basedir}/../../third-party" includes="**/*.jar"/>
         <fileset dir="${basedir}/../../lib" includes="**/*.jar"/>
         <pathelement location="."/>
     </path>
