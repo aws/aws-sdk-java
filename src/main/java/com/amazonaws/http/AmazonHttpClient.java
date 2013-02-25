@@ -149,7 +149,7 @@ public class AmazonHttpClient {
             HttpResponseHandler<AmazonWebServiceResponse<T>> responseHandler,
             HttpResponseHandler<AmazonServiceException> errorResponseHandler,
             ExecutionContext executionContext) throws AmazonClientException, AmazonServiceException {
-        long startTime = System.currentTimeMillis();
+        long startTime = System.nanoTime();
 
         if (executionContext == null) throw new AmazonClientException("Internal SDK Error: No execution context parameter specified.");
         List<RequestHandler> requestHandlers = executionContext.getRequestHandlers();
@@ -163,7 +163,7 @@ public class AmazonHttpClient {
         try {
             TimingInfo timingInfo = new TimingInfo(startTime);
             T t = executeHelper(request, responseHandler, errorResponseHandler, executionContext);
-            timingInfo.setEndTime(System.currentTimeMillis());
+            timingInfo.setEndTime(System.nanoTime());
 
             for (RequestHandler handler : requestHandlers) {
                 try {

@@ -28,27 +28,44 @@ public class TimingInfo {
     private final Map<String, Number> countersByName = new HashMap<String, Number>();
 
     public TimingInfo() {
-        this(System.currentTimeMillis(), -1);
+        this(System.nanoTime(), -1);
     }
 
+    /**
+     * @param startTime the time in nanoseconds at which this timing period started, as returned by
+     * {@link java.lang.System#nanoTime() System.nanoTime()}.
+     */
     public TimingInfo(long startTime) {
         this(startTime, -1);
     }
 
+    /**
+     * @param startTime the time in nanoseconds at which this timing period started, as returned by
+     * {@link java.lang.System#nanoTime() System.nanoTime()}.
+     * @param endTime the time in nanoseconds at which this timing period ended, as returned by
+     * {@link java.lang.System#nanoTime() System.nanoTime()}.
+     */
     public TimingInfo(long startTime, long endTime) {
         this.startTime = startTime;
         this.endTime = endTime;
     }
 
     /**
-     * Returns the time, in epoch milliseconds, at which this timing period started.
+     * Returns the time at which this timing period started.
      * 
-     * @return the time, in epoch milliseconds, at which this timing period started.
+     * @return the time in nanoseconds at which this timing period started, as returned by
+     * {@link java.lang.System#nanoTime() System.nanoTime()}.
      */
     public long getStartTime() {
         return startTime;
     }
 
+    /**
+     * Returns the time at which this timing period ended.
+     *
+     * @return the time in nanoseconds at which this timing period ended, as returned by
+     * {@link java.lang.System#nanoTime() System.nanoTime()}.
+     */
     public long getEndTime() {
         return endTime;
     }
