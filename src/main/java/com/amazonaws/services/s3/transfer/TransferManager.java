@@ -735,10 +735,10 @@ public class TransferManager {
      * @param directory
      *            The common parent directory of files to upload. The keys
      *            of the files in the list of files are constructed relative to
-     *            this directory.
+     *            this directory and the virtualDirectoryKeyPrefix.
      * @param files
      *            A list of files to upload. The keys of the files are
-     *            calculated relative to the commonParentDirectory and the
+     *            calculated relative to the common parent directory and the
      *            virtualDirectoryKeyPrefix.
      */
     public MultipleFileUpload uploadFileList(String bucketName, String virtualDirectoryKeyPrefix, File directory, List<File> files) {
