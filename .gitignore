@@ -1,1 +1,3 @@
 target/
+.idea
+aws-java-sdk.iml
