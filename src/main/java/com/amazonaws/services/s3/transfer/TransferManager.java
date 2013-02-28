@@ -770,12 +770,14 @@ public class TransferManager {
 
         long totalSize = 0;
         for (File f : files) {
-            totalSize += f.length();
-            String key = f.getAbsolutePath().substring(directory.getAbsolutePath().length() + 1)
-                    .replaceAll("\\\\", "/");
-            uploads.add((UploadImpl) upload(
-                    new PutObjectRequest(bucketName, virtualDirectoryKeyPrefix + key, f).withProgressListener(listener),
-                    stateChangeListener));
+            if (f.isFile()) {
+                totalSize += f.length();
+                String key = f.getAbsolutePath().substring(directory.getAbsolutePath().length() + 1)
+                        .replaceAll("\\\\", "/");
+                uploads.add((UploadImpl) upload(
+                        new PutObjectRequest(bucketName, virtualDirectoryKeyPrefix + key, f).withProgressListener(listener),
+                        stateChangeListener));
+            }
         }
 
         transferProgress.setTotalBytesToTransfer(totalSize);
