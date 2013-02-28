@@ -764,7 +764,7 @@ public class TransferManager {
         MultipleFileTransferStateChangeListener stateChangeListener = new MultipleFileTransferStateChangeListener(
                 allTransfersQueuedLock, multipleFileUpload);
 
-        if (files.isEmpty()) {
+        if ( files == null || files.isEmpty()) {
             multipleFileUpload.setState(TransferState.Completed);
         }
 
