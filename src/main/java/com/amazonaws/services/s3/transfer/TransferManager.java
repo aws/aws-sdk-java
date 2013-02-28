@@ -713,6 +713,40 @@ public class TransferManager {
             throw new IllegalArgumentException("Must provide a directory to upload");
         }
 
+        List<File> files = new LinkedList<File>();
+        listFiles(directory, files, includeSubdirectories);
+        return uploadFileList(bucketName, virtualDirectoryKeyPrefix, directory, files);
+    }
+
+
+    /**
+     * Uploads all files in the fileList given to the bucket named, constructing
+     * relative keys depending on the commonParentDirectory given.
+     * <p>
+     * S3 will overwrite any existing objects that happen to have the same key,
+     * just as when uploading individual files, so use with caution.
+     *
+     * @param bucketName
+     *            The name of the bucket to upload objects to.
+     * @param virtualDirectoryKeyPrefix
+     *            The key prefix of the virtual directory to upload to. Use the
+     *            null or empty string to upload files to the root of the
+     *            bucket.
+     * @param directory
+     *            The common parent directory of fileList to upload. The keys
+     *            of the files in the fileList are constructed relative to this
+     *            directory.
+     * @param files
+     *            A list of files to upload. The keys of the files are
+     *            calculated relative to the commonParentDirectory and the
+     *            virtualDirectoryKeyPrefix.
+     */
+    public MultipleFileUpload uploadFileList(String bucketName, String virtualDirectoryKeyPrefix, File directory, List<File> files) {
+
+        if ( directory == null || !directory.exists() || !directory.isDirectory() ) {
+            throw new IllegalArgumentException("Must provide a directory to upload");
+        }
+
         if (virtualDirectoryKeyPrefix == null || virtualDirectoryKeyPrefix.length() == 0) {
             virtualDirectoryKeyPrefix = "";
         } else if ( !virtualDirectoryKeyPrefix.endsWith("/") ) {
@@ -730,12 +764,11 @@ public class TransferManager {
         MultipleFileTransferStateChangeListener stateChangeListener = new MultipleFileTransferStateChangeListener(
                 allTransfersQueuedLock, multipleFileUpload);
 
-        long totalSize = 0;
-        List<File> files = new LinkedList<File>();
-        listFiles(directory, files, includeSubdirectories);
         if (files.isEmpty()) {
-         multipleFileUpload.setState(TransferState.Completed);
+            multipleFileUpload.setState(TransferState.Completed);
         }
+
+        long totalSize = 0;
         for (File f : files) {
             totalSize += f.length();
             String key = f.getAbsolutePath().substring(directory.getAbsolutePath().length() + 1)
