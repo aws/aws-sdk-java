@@ -39,7 +39,7 @@ public class ChangeInfo {
      * servers. <p>Valid Values: <code>PENDING</code> | <code>INSYNC</code>
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>InProgress, Deployed
+     * <b>Allowed Values: </b>PENDING, INSYNC
      */
     private String status;
 
@@ -175,7 +175,7 @@ public class ChangeInfo {
      * servers. <p>Valid Values: <code>PENDING</code> | <code>INSYNC</code>
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>InProgress, Deployed
+     * <b>Allowed Values: </b>PENDING, INSYNC
      *
      * @return The current state of the request. <code>PENDING</code> indicates that
      *         this request has not yet been applied to all Amazon Route 53 DNS
@@ -193,7 +193,7 @@ public class ChangeInfo {
      * servers. <p>Valid Values: <code>PENDING</code> | <code>INSYNC</code>
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>InProgress, Deployed
+     * <b>Allowed Values: </b>PENDING, INSYNC
      *
      * @param status The current state of the request. <code>PENDING</code> indicates that
      *         this request has not yet been applied to all Amazon Route 53 DNS
@@ -213,7 +213,7 @@ public class ChangeInfo {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>InProgress, Deployed
+     * <b>Allowed Values: </b>PENDING, INSYNC
      *
      * @param status The current state of the request. <code>PENDING</code> indicates that
      *         this request has not yet been applied to all Amazon Route 53 DNS
@@ -236,7 +236,7 @@ public class ChangeInfo {
      * servers. <p>Valid Values: <code>PENDING</code> | <code>INSYNC</code>
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>InProgress, Deployed
+     * <b>Allowed Values: </b>PENDING, INSYNC
      *
      * @param status The current state of the request. <code>PENDING</code> indicates that
      *         this request has not yet been applied to all Amazon Route 53 DNS
@@ -256,7 +256,7 @@ public class ChangeInfo {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>InProgress, Deployed
+     * <b>Allowed Values: </b>PENDING, INSYNC
      *
      * @param status The current state of the request. <code>PENDING</code> indicates that
      *         this request has not yet been applied to all Amazon Route 53 DNS

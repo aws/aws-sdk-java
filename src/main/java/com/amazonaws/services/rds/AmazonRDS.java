@@ -69,35 +69,6 @@ public interface AmazonRDS {
     
     /**
      * <p>
-     * Deletes a DBSnapshot.
-     * </p>
-     * <p>
-     * <b>NOTE:</b>The DBSnapshot must be in the available state to be
-     * deleted.
-     * </p>
-     *
-     * @param deleteDBSnapshotRequest Container for the necessary parameters
-     *           to execute the DeleteDBSnapshot service method on AmazonRDS.
-     * 
-     * @return The response from the DeleteDBSnapshot service method, as
-     *         returned by AmazonRDS.
-     * 
-     * @throws InvalidDBSnapshotStateException
-     * @throws DBSnapshotNotFoundException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DBSnapshot deleteDBSnapshot(DeleteDBSnapshotRequest deleteDBSnapshotRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
      * Creates a DB Instance that acts as a Read Replica of a source DB
      * Instance.
      * </p>
@@ -174,11 +145,476 @@ public interface AmazonRDS {
 
     /**
      * <p>
-     * Returns events related to DB Instances, DB Security Groups, DB
-     * Snapshots and DB Parameter Groups for the past 14 days. Events
-     * specific to a particular DB Instance, DB Security Group, database
-     * snapshot or DB Parameter Group can be obtained by providing the name
-     * as a parameter. By default, the past hour of events are returned.
+     * Modifies an existing Option Group.
+     * </p>
+     *
+     * @param modifyOptionGroupRequest Container for the necessary parameters
+     *           to execute the ModifyOptionGroup service method on AmazonRDS.
+     * 
+     * @return The response from the ModifyOptionGroup service method, as
+     *         returned by AmazonRDS.
+     * 
+     * @throws InvalidOptionGroupStateException
+     * @throws OptionGroupNotFoundException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public OptionGroup modifyOptionGroup(ModifyOptionGroupRequest modifyOptionGroupRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Creates a new DB instance.
+     * </p>
+     *
+     * @param createDBInstanceRequest Container for the necessary parameters
+     *           to execute the CreateDBInstance service method on AmazonRDS.
+     * 
+     * @return The response from the CreateDBInstance service method, as
+     *         returned by AmazonRDS.
+     * 
+     * @throws DBParameterGroupNotFoundException
+     * @throws InstanceQuotaExceededException
+     * @throws DBSubnetGroupNotFoundException
+     * @throws DBInstanceAlreadyExistsException
+     * @throws StorageQuotaExceededException
+     * @throws InvalidVPCNetworkStateException
+     * @throws DBSecurityGroupNotFoundException
+     * @throws InsufficientDBInstanceCapacityException
+     * @throws DBSubnetGroupDoesNotCoverEnoughAZsException
+     * @throws InvalidSubnetException
+     * @throws OptionGroupNotFoundException
+     * @throws ProvisionedIopsNotAvailableInAZException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DBInstance createDBInstance(CreateDBInstanceRequest createDBInstanceRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Modifies the parameters of a DBParameterGroup to the engine/system
+     * default value. To reset specific parameters submit a list of the
+     * following: ParameterName and ApplyMethod. To reset the entire
+     * DBParameterGroup specify the DBParameterGroup name and
+     * ResetAllParameters parameters. When resetting the entire group,
+     * dynamic parameters are updated immediately and static parameters are
+     * set to pending-reboot to take effect on the next DB instance restart
+     * or RebootDBInstance request.
+     * </p>
+     *
+     * @param resetDBParameterGroupRequest Container for the necessary
+     *           parameters to execute the ResetDBParameterGroup service method on
+     *           AmazonRDS.
+     * 
+     * @return The response from the ResetDBParameterGroup service method, as
+     *         returned by AmazonRDS.
+     * 
+     * @throws DBParameterGroupNotFoundException
+     * @throws InvalidDBParameterGroupStateException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ResetDBParameterGroupResult resetDBParameterGroup(ResetDBParameterGroupRequest resetDBParameterGroupRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Lists available reserved DB Instance offerings.
+     * </p>
+     *
+     * @param describeReservedDBInstancesOfferingsRequest Container for the
+     *           necessary parameters to execute the
+     *           DescribeReservedDBInstancesOfferings service method on AmazonRDS.
+     * 
+     * @return The response from the DescribeReservedDBInstancesOfferings
+     *         service method, as returned by AmazonRDS.
+     * 
+     * @throws ReservedDBInstancesOfferingNotFoundException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeReservedDBInstancesOfferingsResult describeReservedDBInstancesOfferings(DescribeReservedDBInstancesOfferingsRequest describeReservedDBInstancesOfferingsRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Deletes a DB subnet group.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>The specified database subnet group must not be associated
+     * with any DB instances.
+     * </p>
+     *
+     * @param deleteDBSubnetGroupRequest Container for the necessary
+     *           parameters to execute the DeleteDBSubnetGroup service method on
+     *           AmazonRDS.
+     * 
+     * @throws DBSubnetGroupNotFoundException
+     * @throws InvalidDBSubnetGroupStateException
+     * @throws InvalidDBSubnetStateException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void deleteDBSubnetGroup(DeleteDBSubnetGroupRequest deleteDBSubnetGroupRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Modifies an existing RDS event notification subscription. Note that
+     * you cannot modify the source identifiers using this call; to change
+     * source identifiers for a subscription, use the
+     * AddSourceIdentifierToSubscription and
+     * RemoveSourceIdentifierFromSubscription calls.
+     * </p>
+     * <p>
+     * You can see a list of the event categories for a given SourceType in
+     * the <a
+     * tp://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">
+     * Events </a> topic in the Amazon RDS User Guide or by using the
+     * <b>DescribeEventCategories</b> action.
+     * </p>
+     *
+     * @param modifyEventSubscriptionRequest Container for the necessary
+     *           parameters to execute the ModifyEventSubscription service method on
+     *           AmazonRDS.
+     * 
+     * @return The response from the ModifyEventSubscription service method,
+     *         as returned by AmazonRDS.
+     * 
+     * @throws SNSTopicArnNotFoundException
+     * @throws SNSInvalidTopicException
+     * @throws SubscriptionCategoryNotFoundException
+     * @throws SubscriptionNotFoundException
+     * @throws SNSNoAuthorizationException
+     * @throws EventSubscriptionQuotaExceededException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public EventSubscription modifyEventSubscription(ModifyEventSubscriptionRequest modifyEventSubscriptionRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Copies the specified DBSnapshot. The source DBSnapshot must be in the
+     * "available" state.
+     * </p>
+     *
+     * @param copyDBSnapshotRequest Container for the necessary parameters to
+     *           execute the CopyDBSnapshot service method on AmazonRDS.
+     * 
+     * @return The response from the CopyDBSnapshot service method, as
+     *         returned by AmazonRDS.
+     * 
+     * @throws InvalidDBSnapshotStateException
+     * @throws SnapshotQuotaExceededException
+     * @throws DBSnapshotAlreadyExistsException
+     * @throws DBSnapshotNotFoundException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DBSnapshot copyDBSnapshot(CopyDBSnapshotRequest copyDBSnapshotRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Creates an RDS event notification subscription. This action requires a
+     * topic ARN (Amazon Resource Name) created by either the RDS console,
+     * the SNS console, or the SNS API. To obtain an ARN with SNS, you must
+     * create a topic in Amazon SNS and subscribe to the topic. The ARN is
+     * displayed in the SNS console.
+     * </p>
+     * <p>
+     * You can specify the type of source (SourceType) you want to be
+     * notified of, provide a list of RDS sources (SourceIds) that triggers
+     * the events, and provide a list of event categories (EventCategories)
+     * for events you want to be notified of. For example, you can specify
+     * SourceType = db-instance, SourceIds = mydbinstance1, mydbinstance2 and
+     * EventCategories = Availability, Backup.
+     * </p>
+     * <p>
+     * If you specify both the SourceType and SourceIds, such as SourceType =
+     * db-instance and SourceIdentifier = myDBInstance1, you will be notified
+     * of all the db-instance events for the specified source. If you specify
+     * a SourceType but do not specify a SourceIdentifier, you will receive
+     * notice of the events for that source type for all your RDS sources. If
+     * you do not specify either the SourceType nor the SourceIdentifier, you
+     * will be notified of events generated from all RDS sources belonging to
+     * your customer account.
+     * </p>
+     *
+     * @param createEventSubscriptionRequest Container for the necessary
+     *           parameters to execute the CreateEventSubscription service method on
+     *           AmazonRDS.
+     * 
+     * @return The response from the CreateEventSubscription service method,
+     *         as returned by AmazonRDS.
+     * 
+     * @throws SourceNotFoundException
+     * @throws SNSTopicArnNotFoundException
+     * @throws SNSInvalidTopicException
+     * @throws SubscriptionCategoryNotFoundException
+     * @throws SNSNoAuthorizationException
+     * @throws EventSubscriptionQuotaExceededException
+     * @throws SubscriptionAlreadyExistException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public EventSubscription createEventSubscription(CreateEventSubscriptionRequest createEventSubscriptionRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Creates a new DB subnet group. DB subnet groups must contain at least
+     * one subnet in at least two AZs in the region.
+     * </p>
+     *
+     * @param createDBSubnetGroupRequest Container for the necessary
+     *           parameters to execute the CreateDBSubnetGroup service method on
+     *           AmazonRDS.
+     * 
+     * @return The response from the CreateDBSubnetGroup service method, as
+     *         returned by AmazonRDS.
+     * 
+     * @throws DBSubnetQuotaExceededException
+     * @throws DBSubnetGroupAlreadyExistsException
+     * @throws DBSubnetGroupQuotaExceededException
+     * @throws DBSubnetGroupDoesNotCoverEnoughAZsException
+     * @throws InvalidSubnetException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DBSubnetGroup createDBSubnetGroup(CreateDBSubnetGroupRequest createDBSubnetGroupRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Deletes an RDS event notification subscription.
+     * </p>
+     *
+     * @param deleteEventSubscriptionRequest Container for the necessary
+     *           parameters to execute the DeleteEventSubscription service method on
+     *           AmazonRDS.
+     * 
+     * @return The response from the DeleteEventSubscription service method,
+     *         as returned by AmazonRDS.
+     * 
+     * @throws SubscriptionNotFoundException
+     * @throws InvalidEventSubscriptionStateException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public EventSubscription deleteEventSubscription(DeleteEventSubscriptionRequest deleteEventSubscriptionRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Returns a list of the available DB engines.
+     * </p>
+     *
+     * @param describeDBEngineVersionsRequest Container for the necessary
+     *           parameters to execute the DescribeDBEngineVersions service method on
+     *           AmazonRDS.
+     * 
+     * @return The response from the DescribeDBEngineVersions service method,
+     *         as returned by AmazonRDS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeDBEngineVersionsResult describeDBEngineVersions(DescribeDBEngineVersionsRequest describeDBEngineVersionsRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * The DeleteDBInstance API deletes a previously provisioned RDS
+     * instance. A successful response from the web service indicates the
+     * request was received correctly. If a final DBSnapshot is requested the
+     * status of the RDS instance will be "deleting" until the DBSnapshot is
+     * created. DescribeDBInstance is used to monitor the status of this
+     * operation. This cannot be canceled or reverted once submitted.
+     * </p>
+     *
+     * @param deleteDBInstanceRequest Container for the necessary parameters
+     *           to execute the DeleteDBInstance service method on AmazonRDS.
+     * 
+     * @return The response from the DeleteDBInstance service method, as
+     *         returned by AmazonRDS.
+     * 
+     * @throws DBInstanceNotFoundException
+     * @throws InvalidDBInstanceStateException
+     * @throws SnapshotQuotaExceededException
+     * @throws DBSnapshotAlreadyExistsException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DBInstance deleteDBInstance(DeleteDBInstanceRequest deleteDBInstanceRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Returns information about DBSnapshots. This API supports pagination.
+     * </p>
+     *
+     * @param describeDBSnapshotsRequest Container for the necessary
+     *           parameters to execute the DescribeDBSnapshots service method on
+     *           AmazonRDS.
+     * 
+     * @return The response from the DescribeDBSnapshots service method, as
+     *         returned by AmazonRDS.
+     * 
+     * @throws DBSnapshotNotFoundException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeDBSnapshotsResult describeDBSnapshots(DescribeDBSnapshotsRequest describeDBSnapshotsRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Describes the available option groups.
+     * </p>
+     *
+     * @param describeOptionGroupsRequest Container for the necessary
+     *           parameters to execute the DescribeOptionGroups service method on
+     *           AmazonRDS.
+     * 
+     * @return The response from the DescribeOptionGroups service method, as
+     *         returned by AmazonRDS.
+     * 
+     * @throws OptionGroupNotFoundException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeOptionGroupsResult describeOptionGroups(DescribeOptionGroupsRequest describeOptionGroupsRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Deletes a DBSnapshot.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>The DBSnapshot must be in the available state to be
+     * deleted.
+     * </p>
+     *
+     * @param deleteDBSnapshotRequest Container for the necessary parameters
+     *           to execute the DeleteDBSnapshot service method on AmazonRDS.
+     * 
+     * @return The response from the DeleteDBSnapshot service method, as
+     *         returned by AmazonRDS.
+     * 
+     * @throws InvalidDBSnapshotStateException
+     * @throws DBSnapshotNotFoundException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DBSnapshot deleteDBSnapshot(DeleteDBSnapshotRequest deleteDBSnapshotRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Returns events related to DB instances, DB security groups, DB
+     * Snapshots, and DB parameter groups for the past 14 days. Events
+     * specific to a particular DB Iinstance, DB security group, DB Snapshot,
+     * or DB parameter group can be obtained by providing the source
+     * identifier as a parameter. By default, the past hour of events are
+     * returned.
+     * </p>
+     * <p>
+     * You can see a list of event categories and source types in the <a
+     * tp://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">
+     * Events </a> topic in the Amazon RDS User Guide.
      * </p>
      *
      * @param describeEventsRequest Container for the necessary parameters to
@@ -229,92 +665,6 @@ public interface AmazonRDS {
 
     /**
      * <p>
-     * Modifies an existing Option Group.
-     * </p>
-     *
-     * @param modifyOptionGroupRequest Container for the necessary parameters
-     *           to execute the ModifyOptionGroup service method on AmazonRDS.
-     * 
-     * @return The response from the ModifyOptionGroup service method, as
-     *         returned by AmazonRDS.
-     * 
-     * @throws InvalidOptionGroupStateException
-     * @throws OptionGroupNotFoundException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public OptionGroup modifyOptionGroup(ModifyOptionGroupRequest modifyOptionGroupRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Returns the detailed parameter list for a particular
-     * DBParameterGroup.
-     * </p>
-     *
-     * @param describeDBParametersRequest Container for the necessary
-     *           parameters to execute the DescribeDBParameters service method on
-     *           AmazonRDS.
-     * 
-     * @return The response from the DescribeDBParameters service method, as
-     *         returned by AmazonRDS.
-     * 
-     * @throws DBParameterGroupNotFoundException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeDBParametersResult describeDBParameters(DescribeDBParametersRequest describeDBParametersRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Creates a new DB instance.
-     * </p>
-     *
-     * @param createDBInstanceRequest Container for the necessary parameters
-     *           to execute the CreateDBInstance service method on AmazonRDS.
-     * 
-     * @return The response from the CreateDBInstance service method, as
-     *         returned by AmazonRDS.
-     * 
-     * @throws DBParameterGroupNotFoundException
-     * @throws InstanceQuotaExceededException
-     * @throws DBSubnetGroupNotFoundException
-     * @throws DBInstanceAlreadyExistsException
-     * @throws StorageQuotaExceededException
-     * @throws InvalidVPCNetworkStateException
-     * @throws DBSecurityGroupNotFoundException
-     * @throws InsufficientDBInstanceCapacityException
-     * @throws DBSubnetGroupDoesNotCoverEnoughAZsException
-     * @throws InvalidSubnetException
-     * @throws OptionGroupNotFoundException
-     * @throws ProvisionedIopsNotAvailableInAZException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DBInstance createDBInstance(CreateDBInstanceRequest createDBInstanceRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
      * Restores a DB Instance to an arbitrary point-in-time. Users can
      * restore to any point in time before the latestRestorableTime for up to
      * backupRetentionPeriod days. The target database is created from the
@@ -358,6 +708,32 @@ public interface AmazonRDS {
 
     /**
      * <p>
+     * Returns the detailed parameter list for a particular
+     * DBParameterGroup.
+     * </p>
+     *
+     * @param describeDBParametersRequest Container for the necessary
+     *           parameters to execute the DescribeDBParameters service method on
+     *           AmazonRDS.
+     * 
+     * @return The response from the DescribeDBParameters service method, as
+     *         returned by AmazonRDS.
+     * 
+     * @throws DBParameterGroupNotFoundException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeDBParametersResult describeDBParameters(DescribeDBParametersRequest describeDBParametersRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
      * Creates a new DB Parameter Group.
      * </p>
      * <p>
@@ -394,25 +770,18 @@ public interface AmazonRDS {
 
     /**
      * <p>
-     * Modifies the parameters of a DBParameterGroup to the engine/system
-     * default value. To reset specific parameters submit a list of the
-     * following: ParameterName and ApplyMethod. To reset the entire
-     * DBParameterGroup specify the DBParameterGroup name and
-     * ResetAllParameters parameters. When resetting the entire group,
-     * dynamic parameters are updated immediately and static parameters are
-     * set to pending-reboot to take effect on the next DB instance restart
-     * or RebootDBInstance request.
+     * Promotes a Read Replica DB Instance to a standalone DB Instance.
      * </p>
      *
-     * @param resetDBParameterGroupRequest Container for the necessary
-     *           parameters to execute the ResetDBParameterGroup service method on
+     * @param promoteReadReplicaRequest Container for the necessary
+     *           parameters to execute the PromoteReadReplica service method on
      *           AmazonRDS.
      * 
-     * @return The response from the ResetDBParameterGroup service method, as
+     * @return The response from the PromoteReadReplica service method, as
      *         returned by AmazonRDS.
      * 
-     * @throws DBParameterGroupNotFoundException
-     * @throws InvalidDBParameterGroupStateException
+     * @throws DBInstanceNotFoundException
+     * @throws InvalidDBInstanceStateException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -422,7 +791,7 @@ public interface AmazonRDS {
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public ResetDBParameterGroupResult resetDBParameterGroup(ResetDBParameterGroupRequest resetDBParameterGroupRequest) 
+    public DBInstance promoteReadReplica(PromoteReadReplicaRequest promoteReadReplicaRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -463,18 +832,24 @@ public interface AmazonRDS {
 
     /**
      * <p>
-     * Promotes a Read Replica DB Instance to a standalone DB Instance.
+     * Returns a list of DBSecurityGroup descriptions. If a
+     * DBSecurityGroupName is specified, the list will contain only the
+     * descriptions of the specified DBSecurityGroup.
+     * </p>
+     * <p>
+     * For an overview of CIDR ranges, go to the <a
+     * href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">
+     * Wikipedia Tutorial </a> .
      * </p>
      *
-     * @param promoteReadReplicaRequest Container for the necessary
-     *           parameters to execute the PromoteReadReplica service method on
+     * @param describeDBSecurityGroupsRequest Container for the necessary
+     *           parameters to execute the DescribeDBSecurityGroups service method on
      *           AmazonRDS.
      * 
-     * @return The response from the PromoteReadReplica service method, as
-     *         returned by AmazonRDS.
+     * @return The response from the DescribeDBSecurityGroups service method,
+     *         as returned by AmazonRDS.
      * 
-     * @throws DBInstanceNotFoundException
-     * @throws InvalidDBInstanceStateException
+     * @throws DBSecurityGroupNotFoundException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -484,7 +859,33 @@ public interface AmazonRDS {
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DBInstance promoteReadReplica(PromoteReadReplicaRequest promoteReadReplicaRequest) 
+    public DescribeDBSecurityGroupsResult describeDBSecurityGroups(DescribeDBSecurityGroupsRequest describeDBSecurityGroupsRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Returns information about provisioned RDS instances. This API
+     * supports pagination.
+     * </p>
+     *
+     * @param describeDBInstancesRequest Container for the necessary
+     *           parameters to execute the DescribeDBInstances service method on
+     *           AmazonRDS.
+     * 
+     * @return The response from the DescribeDBInstances service method, as
+     *         returned by AmazonRDS.
+     * 
+     * @throws DBInstanceNotFoundException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeDBInstancesResult describeDBInstances(DescribeDBInstancesRequest describeDBInstancesRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -516,64 +917,6 @@ public interface AmazonRDS {
      *             either a problem with the data in the request, or a server side issue.
      */
     public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Returns information about provisioned RDS instances. This API
-     * supports pagination.
-     * </p>
-     *
-     * @param describeDBInstancesRequest Container for the necessary
-     *           parameters to execute the DescribeDBInstances service method on
-     *           AmazonRDS.
-     * 
-     * @return The response from the DescribeDBInstances service method, as
-     *         returned by AmazonRDS.
-     * 
-     * @throws DBInstanceNotFoundException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeDBInstancesResult describeDBInstances(DescribeDBInstancesRequest describeDBInstancesRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Returns a list of DBSecurityGroup descriptions. If a
-     * DBSecurityGroupName is specified, the list will contain only the
-     * descriptions of the specified DBSecurityGroup.
-     * </p>
-     * <p>
-     * For an overview of CIDR ranges, go to the <a
-     * href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">
-     * Wikipedia Tutorial </a> .
-     * </p>
-     *
-     * @param describeDBSecurityGroupsRequest Container for the necessary
-     *           parameters to execute the DescribeDBSecurityGroups service method on
-     *           AmazonRDS.
-     * 
-     * @return The response from the DescribeDBSecurityGroups service method,
-     *         as returned by AmazonRDS.
-     * 
-     * @throws DBSecurityGroupNotFoundException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeDBSecurityGroupsResult describeDBSecurityGroups(DescribeDBSecurityGroupsRequest describeDBSecurityGroupsRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -635,6 +978,31 @@ public interface AmazonRDS {
 
     /**
      * <p>
+     * Creates a new Option Group.
+     * </p>
+     *
+     * @param createOptionGroupRequest Container for the necessary parameters
+     *           to execute the CreateOptionGroup service method on AmazonRDS.
+     * 
+     * @return The response from the CreateOptionGroup service method, as
+     *         returned by AmazonRDS.
+     * 
+     * @throws OptionGroupAlreadyExistsException
+     * @throws OptionGroupQuotaExceededException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public OptionGroup createOptionGroup(CreateOptionGroupRequest createOptionGroupRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
      * Reboots a previously provisioned RDS instance. This API results in
      * the application of modified DBParameterGroup parameters with
      * ApplyStatus of pending-reboot to the RDS instance. This action is
@@ -663,56 +1031,6 @@ public interface AmazonRDS {
      *             either a problem with the data in the request, or a server side issue.
      */
     public DBInstance rebootDBInstance(RebootDBInstanceRequest rebootDBInstanceRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Lists available reserved DB Instance offerings.
-     * </p>
-     *
-     * @param describeReservedDBInstancesOfferingsRequest Container for the
-     *           necessary parameters to execute the
-     *           DescribeReservedDBInstancesOfferings service method on AmazonRDS.
-     * 
-     * @return The response from the DescribeReservedDBInstancesOfferings
-     *         service method, as returned by AmazonRDS.
-     * 
-     * @throws ReservedDBInstancesOfferingNotFoundException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeReservedDBInstancesOfferingsResult describeReservedDBInstancesOfferings(DescribeReservedDBInstancesOfferingsRequest describeReservedDBInstancesOfferingsRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Creates a new Option Group.
-     * </p>
-     *
-     * @param createOptionGroupRequest Container for the necessary parameters
-     *           to execute the CreateOptionGroup service method on AmazonRDS.
-     * 
-     * @return The response from the CreateOptionGroup service method, as
-     *         returned by AmazonRDS.
-     * 
-     * @throws OptionGroupAlreadyExistsException
-     * @throws OptionGroupQuotaExceededException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public OptionGroup createOptionGroup(CreateOptionGroupRequest createOptionGroupRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -772,34 +1090,6 @@ public interface AmazonRDS {
 
     /**
      * <p>
-     * Deletes a DB subnet group.
-     * </p>
-     * <p>
-     * <b>NOTE:</b>The specified database subnet group must not be associated
-     * with any DB instances.
-     * </p>
-     *
-     * @param deleteDBSubnetGroupRequest Container for the necessary
-     *           parameters to execute the DeleteDBSubnetGroup service method on
-     *           AmazonRDS.
-     * 
-     * @throws DBSubnetGroupNotFoundException
-     * @throws InvalidDBSubnetGroupStateException
-     * @throws InvalidDBSubnetStateException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void deleteDBSubnetGroup(DeleteDBSubnetGroupRequest deleteDBSubnetGroupRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
      * Deletes an existing Option Group.
      * </p>
      *
@@ -818,6 +1108,33 @@ public interface AmazonRDS {
      *             either a problem with the data in the request, or a server side issue.
      */
     public void deleteOptionGroup(DeleteOptionGroupRequest deleteOptionGroupRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Removes a source identifier from an existing RDS event notification
+     * subscription.
+     * </p>
+     *
+     * @param removeSourceIdentifierFromSubscriptionRequest Container for the
+     *           necessary parameters to execute the
+     *           RemoveSourceIdentifierFromSubscription service method on AmazonRDS.
+     * 
+     * @return The response from the RemoveSourceIdentifierFromSubscription
+     *         service method, as returned by AmazonRDS.
+     * 
+     * @throws SourceNotFoundException
+     * @throws SubscriptionNotFoundException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public EventSubscription removeSourceIdentifierFromSubscription(RemoveSourceIdentifierFromSubscriptionRequest removeSourceIdentifierFromSubscriptionRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -850,50 +1167,20 @@ public interface AmazonRDS {
 
     /**
      * <p>
-     * Copies the specified DBSnapshot. The source DBSnapshot must be in the
-     * "available" state.
+     * Displays a list of categories for all event source types, or, if
+     * specified, for a specified source type. You can see a list of the
+     * event categories and source types in the <a
+     * tp://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">
+     * Events </a> topic in the Amazon RDS User Guide.
      * </p>
      *
-     * @param copyDBSnapshotRequest Container for the necessary parameters to
-     *           execute the CopyDBSnapshot service method on AmazonRDS.
-     * 
-     * @return The response from the CopyDBSnapshot service method, as
-     *         returned by AmazonRDS.
-     * 
-     * @throws InvalidDBSnapshotStateException
-     * @throws SnapshotQuotaExceededException
-     * @throws DBSnapshotAlreadyExistsException
-     * @throws DBSnapshotNotFoundException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DBSnapshot copyDBSnapshot(CopyDBSnapshotRequest copyDBSnapshotRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Creates a new DB subnet group. DB subnet groups must contain at least
-     * one subnet in each AZ in the region.
-     * </p>
-     *
-     * @param createDBSubnetGroupRequest Container for the necessary
-     *           parameters to execute the CreateDBSubnetGroup service method on
+     * @param describeEventCategoriesRequest Container for the necessary
+     *           parameters to execute the DescribeEventCategories service method on
      *           AmazonRDS.
      * 
-     * @return The response from the CreateDBSubnetGroup service method, as
-     *         returned by AmazonRDS.
+     * @return The response from the DescribeEventCategories service method,
+     *         as returned by AmazonRDS.
      * 
-     * @throws DBSubnetQuotaExceededException
-     * @throws DBSubnetGroupAlreadyExistsException
-     * @throws DBSubnetGroupQuotaExceededException
-     * @throws DBSubnetGroupDoesNotCoverEnoughAZsException
-     * @throws InvalidSubnetException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -903,7 +1190,7 @@ public interface AmazonRDS {
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DBSubnetGroup createDBSubnetGroup(CreateDBSubnetGroupRequest createDBSubnetGroupRequest) 
+    public DescribeEventCategoriesResult describeEventCategories(DescribeEventCategoriesRequest describeEventCategoriesRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -987,7 +1274,7 @@ public interface AmazonRDS {
     /**
      * <p>
      * Modifies an existing DB subnet group. DB subnet groups must contain
-     * at least one subnet in each AZ in the region.
+     * at least one subnet in at least two AZs in the region.
      * </p>
      *
      * @param modifyDBSubnetGroupRequest Container for the necessary
@@ -1039,6 +1326,33 @@ public interface AmazonRDS {
      *             either a problem with the data in the request, or a server side issue.
      */
     public void deleteDBSecurityGroup(DeleteDBSecurityGroupRequest deleteDBSecurityGroupRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Adds a source identifier to an existing RDS event notification
+     * subscription.
+     * </p>
+     *
+     * @param addSourceIdentifierToSubscriptionRequest Container for the
+     *           necessary parameters to execute the AddSourceIdentifierToSubscription
+     *           service method on AmazonRDS.
+     * 
+     * @return The response from the AddSourceIdentifierToSubscription
+     *         service method, as returned by AmazonRDS.
+     * 
+     * @throws SourceNotFoundException
+     * @throws SubscriptionNotFoundException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public EventSubscription addSourceIdentifierToSubscription(AddSourceIdentifierToSubscriptionRequest addSourceIdentifierToSubscriptionRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -1107,62 +1421,6 @@ public interface AmazonRDS {
 
     /**
      * <p>
-     * Returns a list of the available DB engines.
-     * </p>
-     *
-     * @param describeDBEngineVersionsRequest Container for the necessary
-     *           parameters to execute the DescribeDBEngineVersions service method on
-     *           AmazonRDS.
-     * 
-     * @return The response from the DescribeDBEngineVersions service method,
-     *         as returned by AmazonRDS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeDBEngineVersionsResult describeDBEngineVersions(DescribeDBEngineVersionsRequest describeDBEngineVersionsRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * The DeleteDBInstance API deletes a previously provisioned RDS
-     * instance. A successful response from the web service indicates the
-     * request was received correctly. If a final DBSnapshot is requested the
-     * status of the RDS instance will be "deleting" until the DBSnapshot is
-     * created. DescribeDBInstance is used to monitor the status of this
-     * operation. This cannot be canceled or reverted once submitted.
-     * </p>
-     *
-     * @param deleteDBInstanceRequest Container for the necessary parameters
-     *           to execute the DeleteDBInstance service method on AmazonRDS.
-     * 
-     * @return The response from the DeleteDBInstance service method, as
-     *         returned by AmazonRDS.
-     * 
-     * @throws DBInstanceNotFoundException
-     * @throws InvalidDBInstanceStateException
-     * @throws SnapshotQuotaExceededException
-     * @throws DBSnapshotAlreadyExistsException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DBInstance deleteDBInstance(DeleteDBInstanceRequest deleteDBInstanceRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
      * Modifies the parameters of a DBParameterGroup. To modify more than
      * one parameter submit a list of the following: ParameterName,
      * ParameterValue, and ApplyMethod. A maximum of 20 parameters can be
@@ -1227,31 +1485,6 @@ public interface AmazonRDS {
 
     /**
      * <p>
-     * Returns information about DBSnapshots. This API supports pagination.
-     * </p>
-     *
-     * @param describeDBSnapshotsRequest Container for the necessary
-     *           parameters to execute the DescribeDBSnapshots service method on
-     *           AmazonRDS.
-     * 
-     * @return The response from the DescribeDBSnapshots service method, as
-     *         returned by AmazonRDS.
-     * 
-     * @throws DBSnapshotNotFoundException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeDBSnapshotsResult describeDBSnapshots(DescribeDBSnapshotsRequest describeDBSnapshotsRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
      * Creates a DBSnapshot. The source DBInstance must be in "available"
      * state.
      * </p>
@@ -1276,6 +1509,37 @@ public interface AmazonRDS {
      *             either a problem with the data in the request, or a server side issue.
      */
     public DBSnapshot createDBSnapshot(CreateDBSnapshotRequest createDBSnapshotRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Lists all the subscription descriptions for a customer account. The
+     * description for a subscription includes SubscriptionName, SNSTopicARN,
+     * CustomerID, SourceType, SourceID, CreationTime, and Status.
+     * </p>
+     * <p>
+     * If you specify a SubscriptionName, lists the description for that
+     * subscription.
+     * </p>
+     *
+     * @param describeEventSubscriptionsRequest Container for the necessary
+     *           parameters to execute the DescribeEventSubscriptions service method on
+     *           AmazonRDS.
+     * 
+     * @return The response from the DescribeEventSubscriptions service
+     *         method, as returned by AmazonRDS.
+     * 
+     * @throws SubscriptionNotFoundException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeEventSubscriptionsResult describeEventSubscriptions(DescribeEventSubscriptionsRequest describeEventSubscriptionsRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -1330,31 +1594,6 @@ public interface AmazonRDS {
 
     /**
      * <p>
-     * Describes the available option groups.
-     * </p>
-     *
-     * @param describeOptionGroupsRequest Container for the necessary
-     *           parameters to execute the DescribeOptionGroups service method on
-     *           AmazonRDS.
-     * 
-     * @return The response from the DescribeOptionGroups service method, as
-     *         returned by AmazonRDS.
-     * 
-     * @throws OptionGroupNotFoundException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeOptionGroupsResult describeOptionGroups(DescribeOptionGroupsRequest describeOptionGroupsRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
      * Returns a list of DBParameterGroup descriptions. If a
      * DBParameterGroupName is specified, the list will contain only the
      * description of the specified DBParameterGroup.
@@ -1377,98 +1616,6 @@ public interface AmazonRDS {
     
     /**
      * <p>
-     * Returns events related to DB Instances, DB Security Groups, DB
-     * Snapshots and DB Parameter Groups for the past 14 days. Events
-     * specific to a particular DB Instance, DB Security Group, database
-     * snapshot or DB Parameter Group can be obtained by providing the name
-     * as a parameter. By default, the past hour of events are returned.
-     * </p>
-     * 
-     * @return The response from the DescribeEvents service method, as
-     *         returned by AmazonRDS.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeEventsResult describeEvents() throws AmazonServiceException, AmazonClientException;
-    
-    /**
-     * <p>
-     * Returns information about provisioned RDS instances. This API
-     * supports pagination.
-     * </p>
-     * 
-     * @return The response from the DescribeDBInstances service method, as
-     *         returned by AmazonRDS.
-     * 
-     * @throws DBInstanceNotFoundException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeDBInstancesResult describeDBInstances() throws AmazonServiceException, AmazonClientException;
-    
-    /**
-     * <p>
-     * Returns a list of DBSecurityGroup descriptions. If a
-     * DBSecurityGroupName is specified, the list will contain only the
-     * descriptions of the specified DBSecurityGroup.
-     * </p>
-     * <p>
-     * For an overview of CIDR ranges, go to the <a
-     * href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">
-     * Wikipedia Tutorial </a> .
-     * </p>
-     * 
-     * @return The response from the DescribeDBSecurityGroups service method,
-     *         as returned by AmazonRDS.
-     * 
-     * @throws DBSecurityGroupNotFoundException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeDBSecurityGroupsResult describeDBSecurityGroups() throws AmazonServiceException, AmazonClientException;
-    
-    /**
-     * <p>
-     * Returns information about reserved DB Instances for this account, or
-     * about a specified reserved DB Instance.
-     * </p>
-     * 
-     * @return The response from the DescribeReservedDBInstances service
-     *         method, as returned by AmazonRDS.
-     * 
-     * @throws ReservedDBInstanceNotFoundException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeReservedDBInstancesResult describeReservedDBInstances() throws AmazonServiceException, AmazonClientException;
-    
-    /**
-     * <p>
      * Lists available reserved DB Instance offerings.
      * </p>
      * 
@@ -1486,33 +1633,6 @@ public interface AmazonRDS {
      *             either a problem with the data in the request, or a server side issue.
      */
     public DescribeReservedDBInstancesOfferingsResult describeReservedDBInstancesOfferings() throws AmazonServiceException, AmazonClientException;
-    
-    /**
-     * <p>
-     * Returns a list of DBSubnetGroup descriptions. If a DBSubnetGroupName
-     * is specified, the list will contain only the descriptions of the
-     * specified DBSubnetGroup.
-     * </p>
-     * <p>
-     * For an overview of CIDR ranges, go to the <a
-     * href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">
-     * Wikipedia Tutorial </a> .
-     * </p>
-     * 
-     * @return The response from the DescribeDBSubnetGroups service method,
-     *         as returned by AmazonRDS.
-     * 
-     * @throws DBSubnetGroupNotFoundException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DescribeDBSubnetGroupsResult describeDBSubnetGroups() throws AmazonServiceException, AmazonClientException;
     
     /**
      * <p>
@@ -1572,6 +1692,180 @@ public interface AmazonRDS {
      *             either a problem with the data in the request, or a server side issue.
      */
     public DescribeOptionGroupsResult describeOptionGroups() throws AmazonServiceException, AmazonClientException;
+    
+    /**
+     * <p>
+     * Returns events related to DB instances, DB security groups, DB
+     * Snapshots, and DB parameter groups for the past 14 days. Events
+     * specific to a particular DB Iinstance, DB security group, DB Snapshot,
+     * or DB parameter group can be obtained by providing the source
+     * identifier as a parameter. By default, the past hour of events are
+     * returned.
+     * </p>
+     * <p>
+     * You can see a list of event categories and source types in the <a
+     * tp://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">
+     * Events </a> topic in the Amazon RDS User Guide.
+     * </p>
+     * 
+     * @return The response from the DescribeEvents service method, as
+     *         returned by AmazonRDS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeEventsResult describeEvents() throws AmazonServiceException, AmazonClientException;
+    
+    /**
+     * <p>
+     * Returns a list of DBSecurityGroup descriptions. If a
+     * DBSecurityGroupName is specified, the list will contain only the
+     * descriptions of the specified DBSecurityGroup.
+     * </p>
+     * <p>
+     * For an overview of CIDR ranges, go to the <a
+     * href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">
+     * Wikipedia Tutorial </a> .
+     * </p>
+     * 
+     * @return The response from the DescribeDBSecurityGroups service method,
+     *         as returned by AmazonRDS.
+     * 
+     * @throws DBSecurityGroupNotFoundException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeDBSecurityGroupsResult describeDBSecurityGroups() throws AmazonServiceException, AmazonClientException;
+    
+    /**
+     * <p>
+     * Returns information about provisioned RDS instances. This API
+     * supports pagination.
+     * </p>
+     * 
+     * @return The response from the DescribeDBInstances service method, as
+     *         returned by AmazonRDS.
+     * 
+     * @throws DBInstanceNotFoundException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeDBInstancesResult describeDBInstances() throws AmazonServiceException, AmazonClientException;
+    
+    /**
+     * <p>
+     * Returns information about reserved DB Instances for this account, or
+     * about a specified reserved DB Instance.
+     * </p>
+     * 
+     * @return The response from the DescribeReservedDBInstances service
+     *         method, as returned by AmazonRDS.
+     * 
+     * @throws ReservedDBInstanceNotFoundException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeReservedDBInstancesResult describeReservedDBInstances() throws AmazonServiceException, AmazonClientException;
+    
+    /**
+     * <p>
+     * Displays a list of categories for all event source types, or, if
+     * specified, for a specified source type. You can see a list of the
+     * event categories and source types in the <a
+     * tp://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">
+     * Events </a> topic in the Amazon RDS User Guide.
+     * </p>
+     * 
+     * @return The response from the DescribeEventCategories service method,
+     *         as returned by AmazonRDS.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeEventCategoriesResult describeEventCategories() throws AmazonServiceException, AmazonClientException;
+    
+    /**
+     * <p>
+     * Returns a list of DBSubnetGroup descriptions. If a DBSubnetGroupName
+     * is specified, the list will contain only the descriptions of the
+     * specified DBSubnetGroup.
+     * </p>
+     * <p>
+     * For an overview of CIDR ranges, go to the <a
+     * href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">
+     * Wikipedia Tutorial </a> .
+     * </p>
+     * 
+     * @return The response from the DescribeDBSubnetGroups service method,
+     *         as returned by AmazonRDS.
+     * 
+     * @throws DBSubnetGroupNotFoundException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeDBSubnetGroupsResult describeDBSubnetGroups() throws AmazonServiceException, AmazonClientException;
+    
+    /**
+     * <p>
+     * Lists all the subscription descriptions for a customer account. The
+     * description for a subscription includes SubscriptionName, SNSTopicARN,
+     * CustomerID, SourceType, SourceID, CreationTime, and Status.
+     * </p>
+     * <p>
+     * If you specify a SubscriptionName, lists the description for that
+     * subscription.
+     * </p>
+     * 
+     * @return The response from the DescribeEventSubscriptions service
+     *         method, as returned by AmazonRDS.
+     * 
+     * @throws SubscriptionNotFoundException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeEventSubscriptionsResult describeEventSubscriptions() throws AmazonServiceException, AmazonClientException;
     
     /**
      * Shuts down this client object, releasing any resources that might be held

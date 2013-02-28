@@ -64,6 +64,10 @@ public class ResourceRecordSetStaxUnmarshaller implements Unmarshaller<ResourceR
                     resourceRecordSet.setRegion(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("Failover", targetDepth)) {
+                    resourceRecordSet.setFailover(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
                 if (context.testExpression("TTL", targetDepth)) {
                     resourceRecordSet.setTTL(LongStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -74,6 +78,10 @@ public class ResourceRecordSetStaxUnmarshaller implements Unmarshaller<ResourceR
                 }
                 if (context.testExpression("AliasTarget", targetDepth)) {
                     resourceRecordSet.setAliasTarget(AliasTargetStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("HealthCheckId", targetDepth)) {
+                    resourceRecordSet.setHealthCheckId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

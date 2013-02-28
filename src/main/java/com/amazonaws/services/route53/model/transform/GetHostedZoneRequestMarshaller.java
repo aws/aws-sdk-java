@@ -44,7 +44,7 @@ public class GetHostedZoneRequestMarshaller implements Marshaller<Request<GetHos
         Request<GetHostedZoneRequest> request = new DefaultRequest<GetHostedZoneRequest>(getHostedZoneRequest, "AmazonRoute53");
         request.setHttpMethod(HttpMethodName.GET);
 
-        String uriResourcePath = "/2012-02-29/hostedzone/{Id}"; 
+        String uriResourcePath = "/2012-12-12/hostedzone/{Id}"; 
         uriResourcePath = uriResourcePath.replace("{Id}", getString(getHostedZoneRequest.getId())); 
 
         if (uriResourcePath.contains("?")) {

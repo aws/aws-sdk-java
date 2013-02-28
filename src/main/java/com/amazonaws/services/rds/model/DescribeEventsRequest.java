@@ -18,9 +18,13 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#describeEvents(DescribeEventsRequest) DescribeEvents operation}.
  * <p>
- * Returns events related to DB Instances, DB Security Groups, DB Snapshots and DB Parameter Groups for the past 14 days. Events specific to a
- * particular DB Instance, DB Security Group, database snapshot or DB Parameter Group can be obtained by providing the name as a parameter. By default,
- * the past hour of events are returned.
+ * Returns events related to DB instances, DB security groups, DB Snapshots, and DB parameter groups for the past 14 days. Events specific to a
+ * particular DB Iinstance, DB security group, DB Snapshot, or DB parameter group can be obtained by providing the source identifier as a parameter. By
+ * default, the past hour of events are returned.
+ * </p>
+ * <p>
+ * You can see a list of event categories and source types in the <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">
+ * Events </a> topic in the Amazon RDS User Guide.
  * </p>
  *
  * @see com.amazonaws.services.rds.AmazonRDS#describeEvents(DescribeEventsRequest)
@@ -71,6 +75,10 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest {
      */
     private Integer duration;
 
+    /**
+     * A list of event categories that trigger notifications for a event
+     * notification subscription.
+     */
     private java.util.List<String> eventCategories;
 
     /**
@@ -416,9 +424,11 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * Returns the value of the EventCategories property for this object.
+     * A list of event categories that trigger notifications for a event
+     * notification subscription.
      *
-     * @return The value of the EventCategories property for this object.
+     * @return A list of event categories that trigger notifications for a event
+     *         notification subscription.
      */
     public java.util.List<String> getEventCategories() {
         
@@ -429,9 +439,11 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * Sets the value of the EventCategories property for this object.
+     * A list of event categories that trigger notifications for a event
+     * notification subscription.
      *
-     * @param eventCategories The new value for the EventCategories property for this object.
+     * @param eventCategories A list of event categories that trigger notifications for a event
+     *         notification subscription.
      */
     public void setEventCategories(java.util.Collection<String> eventCategories) {
         if (eventCategories == null) {
@@ -445,11 +457,13 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * Sets the value of the EventCategories property for this object.
+     * A list of event categories that trigger notifications for a event
+     * notification subscription.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param eventCategories The new value for the EventCategories property for this object.
+     * @param eventCategories A list of event categories that trigger notifications for a event
+     *         notification subscription.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -463,11 +477,13 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * Sets the value of the EventCategories property for this object.
+     * A list of event categories that trigger notifications for a event
+     * notification subscription.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param eventCategories The new value for the EventCategories property for this object.
+     * @param eventCategories A list of event categories that trigger notifications for a event
+     *         notification subscription.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

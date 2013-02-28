@@ -31,9 +31,9 @@ public class CreateStackRequest extends AmazonWebServiceRequest {
 
     /**
      * The name associated with the stack. The name must be unique within
-     * your AWS account. <note> Must contain only alphanumeric characters
+     * your AWS account. <note>Must contain only alphanumeric characters
      * (case sensitive) and start with an alpha character. Maximum length of
-     * the name is 255 characters. </note>
+     * the name is 255 characters.</note>
      */
     private String stackName;
 
@@ -46,14 +46,14 @@ public class CreateStackRequest extends AmazonWebServiceRequest {
      * passed, only <code>TemplateBody</code> is used.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - <br/>
+     * <b>Length: </b>1 - 51200<br/>
      */
     private String templateBody;
 
     /**
      * Location of file containing the template body. The URL must point to a
-     * template located in an S3 bucket in the same region as the stack. For
-     * more information, go to the <a
+     * template (max size: 307,200 bytes) located in an S3 bucket in the same
+     * region as the stack. For more information, go to the <a
      * p://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
      * CloudFormation User Guide</a>. <p>Conditional: You must pass
      * <code>TemplateURL</code> or <code>TemplateBody</code>. If both are
@@ -137,14 +137,14 @@ public class CreateStackRequest extends AmazonWebServiceRequest {
 
     /**
      * The name associated with the stack. The name must be unique within
-     * your AWS account. <note> Must contain only alphanumeric characters
+     * your AWS account. <note>Must contain only alphanumeric characters
      * (case sensitive) and start with an alpha character. Maximum length of
-     * the name is 255 characters. </note>
+     * the name is 255 characters.</note>
      *
      * @return The name associated with the stack. The name must be unique within
-     *         your AWS account. <note> Must contain only alphanumeric characters
+     *         your AWS account. <note>Must contain only alphanumeric characters
      *         (case sensitive) and start with an alpha character. Maximum length of
-     *         the name is 255 characters. </note>
+     *         the name is 255 characters.</note>
      */
     public String getStackName() {
         return stackName;
@@ -152,14 +152,14 @@ public class CreateStackRequest extends AmazonWebServiceRequest {
     
     /**
      * The name associated with the stack. The name must be unique within
-     * your AWS account. <note> Must contain only alphanumeric characters
+     * your AWS account. <note>Must contain only alphanumeric characters
      * (case sensitive) and start with an alpha character. Maximum length of
-     * the name is 255 characters. </note>
+     * the name is 255 characters.</note>
      *
      * @param stackName The name associated with the stack. The name must be unique within
-     *         your AWS account. <note> Must contain only alphanumeric characters
+     *         your AWS account. <note>Must contain only alphanumeric characters
      *         (case sensitive) and start with an alpha character. Maximum length of
-     *         the name is 255 characters. </note>
+     *         the name is 255 characters.</note>
      */
     public void setStackName(String stackName) {
         this.stackName = stackName;
@@ -167,16 +167,16 @@ public class CreateStackRequest extends AmazonWebServiceRequest {
     
     /**
      * The name associated with the stack. The name must be unique within
-     * your AWS account. <note> Must contain only alphanumeric characters
+     * your AWS account. <note>Must contain only alphanumeric characters
      * (case sensitive) and start with an alpha character. Maximum length of
-     * the name is 255 characters. </note>
+     * the name is 255 characters.</note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param stackName The name associated with the stack. The name must be unique within
-     *         your AWS account. <note> Must contain only alphanumeric characters
+     *         your AWS account. <note>Must contain only alphanumeric characters
      *         (case sensitive) and start with an alpha character. Maximum length of
-     *         the name is 255 characters. </note>
+     *         the name is 255 characters.</note>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -196,7 +196,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest {
      * passed, only <code>TemplateBody</code> is used.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - <br/>
+     * <b>Length: </b>1 - 51200<br/>
      *
      * @return Structure containing the template body. (For more information, go to
      *         the <a
@@ -218,7 +218,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest {
      * passed, only <code>TemplateBody</code> is used.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - <br/>
+     * <b>Length: </b>1 - 51200<br/>
      *
      * @param templateBody Structure containing the template body. (For more information, go to
      *         the <a
@@ -242,7 +242,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - <br/>
+     * <b>Length: </b>1 - 51200<br/>
      *
      * @param templateBody Structure containing the template body. (For more information, go to
      *         the <a
@@ -262,8 +262,8 @@ public class CreateStackRequest extends AmazonWebServiceRequest {
     
     /**
      * Location of file containing the template body. The URL must point to a
-     * template located in an S3 bucket in the same region as the stack. For
-     * more information, go to the <a
+     * template (max size: 307,200 bytes) located in an S3 bucket in the same
+     * region as the stack. For more information, go to the <a
      * p://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
      * CloudFormation User Guide</a>. <p>Conditional: You must pass
      * <code>TemplateURL</code> or <code>TemplateBody</code>. If both are
@@ -273,8 +273,8 @@ public class CreateStackRequest extends AmazonWebServiceRequest {
      * <b>Length: </b>1 - 1024<br/>
      *
      * @return Location of file containing the template body. The URL must point to a
-     *         template located in an S3 bucket in the same region as the stack. For
-     *         more information, go to the <a
+     *         template (max size: 307,200 bytes) located in an S3 bucket in the same
+     *         region as the stack. For more information, go to the <a
      *         p://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
      *         CloudFormation User Guide</a>. <p>Conditional: You must pass
      *         <code>TemplateURL</code> or <code>TemplateBody</code>. If both are
@@ -286,8 +286,8 @@ public class CreateStackRequest extends AmazonWebServiceRequest {
     
     /**
      * Location of file containing the template body. The URL must point to a
-     * template located in an S3 bucket in the same region as the stack. For
-     * more information, go to the <a
+     * template (max size: 307,200 bytes) located in an S3 bucket in the same
+     * region as the stack. For more information, go to the <a
      * p://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
      * CloudFormation User Guide</a>. <p>Conditional: You must pass
      * <code>TemplateURL</code> or <code>TemplateBody</code>. If both are
@@ -297,8 +297,8 @@ public class CreateStackRequest extends AmazonWebServiceRequest {
      * <b>Length: </b>1 - 1024<br/>
      *
      * @param templateURL Location of file containing the template body. The URL must point to a
-     *         template located in an S3 bucket in the same region as the stack. For
-     *         more information, go to the <a
+     *         template (max size: 307,200 bytes) located in an S3 bucket in the same
+     *         region as the stack. For more information, go to the <a
      *         p://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
      *         CloudFormation User Guide</a>. <p>Conditional: You must pass
      *         <code>TemplateURL</code> or <code>TemplateBody</code>. If both are
@@ -310,8 +310,8 @@ public class CreateStackRequest extends AmazonWebServiceRequest {
     
     /**
      * Location of file containing the template body. The URL must point to a
-     * template located in an S3 bucket in the same region as the stack. For
-     * more information, go to the <a
+     * template (max size: 307,200 bytes) located in an S3 bucket in the same
+     * region as the stack. For more information, go to the <a
      * p://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
      * CloudFormation User Guide</a>. <p>Conditional: You must pass
      * <code>TemplateURL</code> or <code>TemplateBody</code>. If both are
@@ -323,8 +323,8 @@ public class CreateStackRequest extends AmazonWebServiceRequest {
      * <b>Length: </b>1 - 1024<br/>
      *
      * @param templateURL Location of file containing the template body. The URL must point to a
-     *         template located in an S3 bucket in the same region as the stack. For
-     *         more information, go to the <a
+     *         template (max size: 307,200 bytes) located in an S3 bucket in the same
+     *         region as the stack. For more information, go to the <a
      *         p://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
      *         CloudFormation User Guide</a>. <p>Conditional: You must pass
      *         <code>TemplateURL</code> or <code>TemplateBody</code>. If both are

@@ -35,7 +35,7 @@ public class EstimateTemplateCostRequest extends AmazonWebServiceRequest {
      * passed, only <code>TemplateBody</code> is used.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - <br/>
+     * <b>Length: </b>1 - 51200<br/>
      */
     private String templateBody;
 
@@ -68,7 +68,7 @@ public class EstimateTemplateCostRequest extends AmazonWebServiceRequest {
      * passed, only <code>TemplateBody</code> is used.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - <br/>
+     * <b>Length: </b>1 - 51200<br/>
      *
      * @return Structure containing the template body. (For more information, go to
      *         the <a
@@ -90,7 +90,7 @@ public class EstimateTemplateCostRequest extends AmazonWebServiceRequest {
      * passed, only <code>TemplateBody</code> is used.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - <br/>
+     * <b>Length: </b>1 - 51200<br/>
      *
      * @param templateBody Structure containing the template body. (For more information, go to
      *         the <a
@@ -114,7 +114,7 @@ public class EstimateTemplateCostRequest extends AmazonWebServiceRequest {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - <br/>
+     * <b>Length: </b>1 - 51200<br/>
      *
      * @param templateBody Structure containing the template body. (For more information, go to
      *         the <a

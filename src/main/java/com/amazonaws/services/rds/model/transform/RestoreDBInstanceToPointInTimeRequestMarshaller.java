@@ -67,6 +67,9 @@ public class RestoreDBInstanceToPointInTimeRequestMarshaller implements Marshall
         if (restoreDBInstanceToPointInTimeRequest.isMultiAZ() != null) {
             request.addParameter("MultiAZ", StringUtils.fromBoolean(restoreDBInstanceToPointInTimeRequest.isMultiAZ()));
         }
+        if (restoreDBInstanceToPointInTimeRequest.isPubliclyAccessible() != null) {
+            request.addParameter("PubliclyAccessible", StringUtils.fromBoolean(restoreDBInstanceToPointInTimeRequest.isPubliclyAccessible()));
+        }
         if (restoreDBInstanceToPointInTimeRequest.isAutoMinorVersionUpgrade() != null) {
             request.addParameter("AutoMinorVersionUpgrade", StringUtils.fromBoolean(restoreDBInstanceToPointInTimeRequest.isAutoMinorVersionUpgrade()));
         }

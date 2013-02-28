@@ -15,7 +15,7 @@
 package com.amazonaws.auth.policy;
 
 /**
- * A principal is an AWS account which is being allowed or denied access to a
+ * A principal is an AWS account or AWS web serivce, which is being allowed or denied access to a
  * resource through an access control policy. The principal is a property of the
  * {@link Statement} object, not directly the {@link Policy} object.
  * <p>
@@ -40,6 +40,23 @@ public class Principal {
     public static final Principal AllUsers = new Principal("*");
 
     private final String id;
+    private final String provider;
+
+	/**
+	 * Constructs a new principal with the specified AWS web service which
+	 * is being allowed or denied access to a resource through an access control
+	 * policy.
+	 *
+	 * @param service
+	 *            An AWS service.
+	 */
+    public Principal(Services service) {
+        if (service == null) {
+            throw new IllegalArgumentException("Null AWS service name specified");
+        }
+       id = service.getServiceId();
+       provider = "Service";
+    }
 
     /**
      * Constructs a new principal with the specified AWS account ID.
@@ -52,6 +69,7 @@ public class Principal {
             throw new IllegalArgumentException("Null AWS account ID specified");
         }
         this.id = accountId.replaceAll("-", "");
+        provider = "AWS";
     }
 
     /**
@@ -61,7 +79,7 @@ public class Principal {
      * @return The provider for this principal.
      */
     public String getProvider() {
-        return "AWS";
+       return provider;
     }
 
     /**
@@ -70,7 +88,35 @@ public class Principal {
      * @return The unique ID for this principal.
      */
     public String getId() {
-        return id;
+			return id;
+    }
+
+	/**
+	 * The services who have the right to do the assume the role
+	 * action. The AssumeRole action returns a set of temporary security
+	 * credentials that you can use to access resources that are defined in the
+	 * role's policy. The returned credentials consist of an Access Key ID, a
+	 * Secret Access Key, and a security token.
+	 */
+    static public enum Services {
+
+        AWSDataPipeline("datapipeline.amazonaws.com"),
+        AmazonElasticTranscoder("elastictranscoder.amazonaws.com"),
+        AmazonEC2("ec2.amazonaws.com");
+        private String serviceId;
+
+		/**
+		 * The service which has the right to assume the role.
+		 */
+        private Services(String serviceId) {
+        	this.serviceId = serviceId;
+        }
+
+        public String getServiceId() {
+            return serviceId;
+        }
+
+
     }
 
 }

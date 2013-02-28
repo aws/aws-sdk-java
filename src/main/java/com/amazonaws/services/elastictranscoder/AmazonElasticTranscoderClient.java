@@ -238,6 +238,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      * @throws AccessDeniedException
      * @throws ResourceInUseException
      * @throws InternalServiceException
+     * @throws ValidationException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -289,6 +290,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      * @throws AccessDeniedException
      * @throws ResourceInUseException
      * @throws InternalServiceException
+     * @throws ValidationException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -332,6 +334,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      * 
      * @throws AccessDeniedException
      * @throws InternalServiceException
+     * @throws ValidationException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -383,6 +386,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      * @throws ResourceNotFoundException
      * @throws AccessDeniedException
      * @throws InternalServiceException
+     * @throws ValidationException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -482,6 +486,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      * @throws ResourceNotFoundException
      * @throws AccessDeniedException
      * @throws InternalServiceException
+     * @throws ValidationException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -526,6 +531,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      * 
      * @throws AccessDeniedException
      * @throws InternalServiceException
+     * @throws ValidationException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -578,6 +584,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      * @throws AccessDeniedException
      * @throws ResourceInUseException
      * @throws InternalServiceException
+     * @throws ValidationException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -628,6 +635,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      * @throws ResourceNotFoundException
      * @throws AccessDeniedException
      * @throws InternalServiceException
+     * @throws ValidationException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -734,6 +742,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      * @throws AccessDeniedException
      * @throws ResourceInUseException
      * @throws InternalServiceException
+     * @throws ValidationException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -778,6 +787,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      * @throws ResourceNotFoundException
      * @throws AccessDeniedException
      * @throws InternalServiceException
+     * @throws ValidationException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -822,6 +832,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      * @throws ResourceNotFoundException
      * @throws AccessDeniedException
      * @throws InternalServiceException
+     * @throws ValidationException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -869,6 +880,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      * @throws ResourceNotFoundException
      * @throws AccessDeniedException
      * @throws InternalServiceException
+     * @throws ValidationException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -976,6 +988,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      * @throws ResourceNotFoundException
      * @throws AccessDeniedException
      * @throws InternalServiceException
+     * @throws ValidationException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1016,6 +1029,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      * 
      * @throws AccessDeniedException
      * @throws InternalServiceException
+     * @throws ValidationException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1041,6 +1055,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      * 
      * @throws AccessDeniedException
      * @throws InternalServiceException
+     * @throws ValidationException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while

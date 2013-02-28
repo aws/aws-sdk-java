@@ -90,7 +90,7 @@ public class AWS4Signer extends AbstractAWSSigner {
         }
         request.addHeader("Host", hostHeader);
 
-        Date date = new Date();
+        Date date = getSignatureDate(request.getTimeOffset());
         if (overriddenDate != null) date = overriddenDate;
 
         String dateTime  = dateTimeFormat.format(date);

@@ -34,7 +34,7 @@ public class ListHostedZonesResult {
      * results.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 32<br/>
+     * <b>Length: </b>0 - 64<br/>
      */
     private String marker;
 
@@ -54,7 +54,7 @@ public class ListHostedZonesResult {
      * element to get the next page of results.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 32<br/>
+     * <b>Length: </b>0 - 64<br/>
      */
     private String nextMarker;
 
@@ -154,7 +154,7 @@ public class ListHostedZonesResult {
      * results.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 32<br/>
+     * <b>Length: </b>0 - 64<br/>
      *
      * @return If the request returned more than one page of results, submit another
      *         request and specify the value of <code>NextMarker</code> from the last
@@ -172,7 +172,7 @@ public class ListHostedZonesResult {
      * results.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 32<br/>
+     * <b>Length: </b>0 - 64<br/>
      *
      * @param marker If the request returned more than one page of results, submit another
      *         request and specify the value of <code>NextMarker</code> from the last
@@ -192,7 +192,7 @@ public class ListHostedZonesResult {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 32<br/>
+     * <b>Length: </b>0 - 64<br/>
      *
      * @param marker If the request returned more than one page of results, submit another
      *         request and specify the value of <code>NextMarker</code> from the last
@@ -283,7 +283,7 @@ public class ListHostedZonesResult {
      * element to get the next page of results.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 32<br/>
+     * <b>Length: </b>0 - 64<br/>
      *
      * @return Indicates where to continue listing hosted zones. If
      *         <a>ListHostedZonesResponse$IsTruncated</a> is <code>true</code>, make
@@ -303,7 +303,7 @@ public class ListHostedZonesResult {
      * element to get the next page of results.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 32<br/>
+     * <b>Length: </b>0 - 64<br/>
      *
      * @param nextMarker Indicates where to continue listing hosted zones. If
      *         <a>ListHostedZonesResponse$IsTruncated</a> is <code>true</code>, make
@@ -325,7 +325,7 @@ public class ListHostedZonesResult {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 32<br/>
+     * <b>Length: </b>0 - 64<br/>
      *
      * @param nextMarker Indicates where to continue listing hosted zones. If
      *         <a>ListHostedZonesResponse$IsTruncated</a> is <code>true</code>, make

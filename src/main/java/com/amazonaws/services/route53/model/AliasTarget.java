@@ -19,11 +19,8 @@ package com.amazonaws.services.route53.model;
  * <i>Alias resource record sets only:</i> Information about the domain to which you are redirecting traffic.
  * </p>
  * <p>
- * <b>NOTE:</b>Currently, Route 53 supports aliases only for Elastic Load Balancing.
- * </p>
- * <p>
- * For more information and an example, see <a href="http://docs.amazonwebservices.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html"> Creating
- * Alias Resource Record Sets for Elastic Load Balancing </a> in the <i>Amazon Route 53 Developer Guide</i>
+ * For more information and an example, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html"> Creating Alias
+ * Resource Record Sets </a> in the <i>Amazon Route 53 Developer Guide</i>
  * </p>
  * <p>
  * .
@@ -33,13 +30,11 @@ public class AliasTarget {
 
     /**
      * <i>Alias resource record sets only:</i> The value of the hosted zone
-     * ID, CanonicalHostedZoneNameId, for the LoadBalancer. <note>Currently,
-     * Route 53 supports alias resource record sets only for Elastic Load
-     * Balancing.</note> <p>For more information, an example, and several
-     * ways to get the hosted zone ID for the LoadBalancer, see <a
-     * s.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
-     * Alias Resource Record Sets for Elastic Load Balancing</a> in the
-     * <i>Amazon Route 53 Developer Guide</i>.
+     * ID for the AWS resource. <p>For more information and an example, see
+     * <a
+     * n.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
+     * Alias Resource Record Sets</a> in the <i>Amazon Route 53 Developer
+     * Guide</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 32<br/>
@@ -48,18 +43,27 @@ public class AliasTarget {
 
     /**
      * <i>Alias resource record sets only:</i> The external DNS name
-     * associated with the LoadBalancer. <note>Currently, Route 53 supports
-     * alias resource record sets only for Elastic Load Balancing.</note>
-     * <p>For more information, an example, and several ways to get the
-     * hosted zone ID for the LoadBalancer, see <a
-     * s.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
-     * Alias Resource Record Sets for Elastic Load Balancing</a> in the
-     * <i>Amazon Route 53 Developer Guide</i>.
+     * associated with the AWS Resource. <p>For more information and an
+     * example, see <a
+     * n.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
+     * Alias Resource Record Sets</a> in the <i>Amazon Route 53 Developer
+     * Guide</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 1024<br/>
      */
     private String dNSName;
+
+    /**
+     * <i>Alias resource record sets only:</i> A boolean value that indicates
+     * whether this Resource Record Set should respect the health status of
+     * any health checks associated with the ALIAS target record which it is
+     * linked to. <p>For more information and an example, see <a
+     * n.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
+     * Alias Resource Record Sets</a> in the <i>Amazon Route 53 Developer
+     * Guide</i>.
+     */
+    private Boolean evaluateTargetHealth;
 
     /**
      * Default constructor for a new AliasTarget object.  Callers should use the
@@ -73,22 +77,17 @@ public class AliasTarget {
      * initialize any additional object members.
      * 
      * @param hostedZoneId <i>Alias resource record sets only:</i> The value
-     * of the hosted zone ID, CanonicalHostedZoneNameId, for the
-     * LoadBalancer. <note>Currently, Route 53 supports alias resource record
-     * sets only for Elastic Load Balancing.</note> <p>For more information,
-     * an example, and several ways to get the hosted zone ID for the
-     * LoadBalancer, see <a
-     * s.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
-     * Alias Resource Record Sets for Elastic Load Balancing</a> in the
-     * <i>Amazon Route 53 Developer Guide</i>.
+     * of the hosted zone ID for the AWS resource. <p>For more information
+     * and an example, see <a
+     * n.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
+     * Alias Resource Record Sets</a> in the <i>Amazon Route 53 Developer
+     * Guide</i>.
      * @param dNSName <i>Alias resource record sets only:</i> The external
-     * DNS name associated with the LoadBalancer. <note>Currently, Route 53
-     * supports alias resource record sets only for Elastic Load
-     * Balancing.</note> <p>For more information, an example, and several
-     * ways to get the hosted zone ID for the LoadBalancer, see <a
-     * s.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
-     * Alias Resource Record Sets for Elastic Load Balancing</a> in the
-     * <i>Amazon Route 53 Developer Guide</i>.
+     * DNS name associated with the AWS Resource. <p>For more information and
+     * an example, see <a
+     * n.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
+     * Alias Resource Record Sets</a> in the <i>Amazon Route 53 Developer
+     * Guide</i>.
      */
     public AliasTarget(String hostedZoneId, String dNSName) {
         this.hostedZoneId = hostedZoneId;
@@ -99,25 +98,21 @@ public class AliasTarget {
     
     /**
      * <i>Alias resource record sets only:</i> The value of the hosted zone
-     * ID, CanonicalHostedZoneNameId, for the LoadBalancer. <note>Currently,
-     * Route 53 supports alias resource record sets only for Elastic Load
-     * Balancing.</note> <p>For more information, an example, and several
-     * ways to get the hosted zone ID for the LoadBalancer, see <a
-     * s.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
-     * Alias Resource Record Sets for Elastic Load Balancing</a> in the
-     * <i>Amazon Route 53 Developer Guide</i>.
+     * ID for the AWS resource. <p>For more information and an example, see
+     * <a
+     * n.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
+     * Alias Resource Record Sets</a> in the <i>Amazon Route 53 Developer
+     * Guide</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 32<br/>
      *
      * @return <i>Alias resource record sets only:</i> The value of the hosted zone
-     *         ID, CanonicalHostedZoneNameId, for the LoadBalancer. <note>Currently,
-     *         Route 53 supports alias resource record sets only for Elastic Load
-     *         Balancing.</note> <p>For more information, an example, and several
-     *         ways to get the hosted zone ID for the LoadBalancer, see <a
-     *         s.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
-     *         Alias Resource Record Sets for Elastic Load Balancing</a> in the
-     *         <i>Amazon Route 53 Developer Guide</i>.
+     *         ID for the AWS resource. <p>For more information and an example, see
+     *         <a
+     *         n.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
+     *         Alias Resource Record Sets</a> in the <i>Amazon Route 53 Developer
+     *         Guide</i>.
      */
     public String getHostedZoneId() {
         return hostedZoneId;
@@ -125,25 +120,21 @@ public class AliasTarget {
     
     /**
      * <i>Alias resource record sets only:</i> The value of the hosted zone
-     * ID, CanonicalHostedZoneNameId, for the LoadBalancer. <note>Currently,
-     * Route 53 supports alias resource record sets only for Elastic Load
-     * Balancing.</note> <p>For more information, an example, and several
-     * ways to get the hosted zone ID for the LoadBalancer, see <a
-     * s.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
-     * Alias Resource Record Sets for Elastic Load Balancing</a> in the
-     * <i>Amazon Route 53 Developer Guide</i>.
+     * ID for the AWS resource. <p>For more information and an example, see
+     * <a
+     * n.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
+     * Alias Resource Record Sets</a> in the <i>Amazon Route 53 Developer
+     * Guide</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 32<br/>
      *
      * @param hostedZoneId <i>Alias resource record sets only:</i> The value of the hosted zone
-     *         ID, CanonicalHostedZoneNameId, for the LoadBalancer. <note>Currently,
-     *         Route 53 supports alias resource record sets only for Elastic Load
-     *         Balancing.</note> <p>For more information, an example, and several
-     *         ways to get the hosted zone ID for the LoadBalancer, see <a
-     *         s.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
-     *         Alias Resource Record Sets for Elastic Load Balancing</a> in the
-     *         <i>Amazon Route 53 Developer Guide</i>.
+     *         ID for the AWS resource. <p>For more information and an example, see
+     *         <a
+     *         n.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
+     *         Alias Resource Record Sets</a> in the <i>Amazon Route 53 Developer
+     *         Guide</i>.
      */
     public void setHostedZoneId(String hostedZoneId) {
         this.hostedZoneId = hostedZoneId;
@@ -151,13 +142,11 @@ public class AliasTarget {
     
     /**
      * <i>Alias resource record sets only:</i> The value of the hosted zone
-     * ID, CanonicalHostedZoneNameId, for the LoadBalancer. <note>Currently,
-     * Route 53 supports alias resource record sets only for Elastic Load
-     * Balancing.</note> <p>For more information, an example, and several
-     * ways to get the hosted zone ID for the LoadBalancer, see <a
-     * s.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
-     * Alias Resource Record Sets for Elastic Load Balancing</a> in the
-     * <i>Amazon Route 53 Developer Guide</i>.
+     * ID for the AWS resource. <p>For more information and an example, see
+     * <a
+     * n.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
+     * Alias Resource Record Sets</a> in the <i>Amazon Route 53 Developer
+     * Guide</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -165,13 +154,11 @@ public class AliasTarget {
      * <b>Length: </b>0 - 32<br/>
      *
      * @param hostedZoneId <i>Alias resource record sets only:</i> The value of the hosted zone
-     *         ID, CanonicalHostedZoneNameId, for the LoadBalancer. <note>Currently,
-     *         Route 53 supports alias resource record sets only for Elastic Load
-     *         Balancing.</note> <p>For more information, an example, and several
-     *         ways to get the hosted zone ID for the LoadBalancer, see <a
-     *         s.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
-     *         Alias Resource Record Sets for Elastic Load Balancing</a> in the
-     *         <i>Amazon Route 53 Developer Guide</i>.
+     *         ID for the AWS resource. <p>For more information and an example, see
+     *         <a
+     *         n.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
+     *         Alias Resource Record Sets</a> in the <i>Amazon Route 53 Developer
+     *         Guide</i>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -184,25 +171,21 @@ public class AliasTarget {
     
     /**
      * <i>Alias resource record sets only:</i> The external DNS name
-     * associated with the LoadBalancer. <note>Currently, Route 53 supports
-     * alias resource record sets only for Elastic Load Balancing.</note>
-     * <p>For more information, an example, and several ways to get the
-     * hosted zone ID for the LoadBalancer, see <a
-     * s.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
-     * Alias Resource Record Sets for Elastic Load Balancing</a> in the
-     * <i>Amazon Route 53 Developer Guide</i>.
+     * associated with the AWS Resource. <p>For more information and an
+     * example, see <a
+     * n.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
+     * Alias Resource Record Sets</a> in the <i>Amazon Route 53 Developer
+     * Guide</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 1024<br/>
      *
      * @return <i>Alias resource record sets only:</i> The external DNS name
-     *         associated with the LoadBalancer. <note>Currently, Route 53 supports
-     *         alias resource record sets only for Elastic Load Balancing.</note>
-     *         <p>For more information, an example, and several ways to get the
-     *         hosted zone ID for the LoadBalancer, see <a
-     *         s.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
-     *         Alias Resource Record Sets for Elastic Load Balancing</a> in the
-     *         <i>Amazon Route 53 Developer Guide</i>.
+     *         associated with the AWS Resource. <p>For more information and an
+     *         example, see <a
+     *         n.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
+     *         Alias Resource Record Sets</a> in the <i>Amazon Route 53 Developer
+     *         Guide</i>.
      */
     public String getDNSName() {
         return dNSName;
@@ -210,25 +193,21 @@ public class AliasTarget {
     
     /**
      * <i>Alias resource record sets only:</i> The external DNS name
-     * associated with the LoadBalancer. <note>Currently, Route 53 supports
-     * alias resource record sets only for Elastic Load Balancing.</note>
-     * <p>For more information, an example, and several ways to get the
-     * hosted zone ID for the LoadBalancer, see <a
-     * s.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
-     * Alias Resource Record Sets for Elastic Load Balancing</a> in the
-     * <i>Amazon Route 53 Developer Guide</i>.
+     * associated with the AWS Resource. <p>For more information and an
+     * example, see <a
+     * n.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
+     * Alias Resource Record Sets</a> in the <i>Amazon Route 53 Developer
+     * Guide</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 1024<br/>
      *
      * @param dNSName <i>Alias resource record sets only:</i> The external DNS name
-     *         associated with the LoadBalancer. <note>Currently, Route 53 supports
-     *         alias resource record sets only for Elastic Load Balancing.</note>
-     *         <p>For more information, an example, and several ways to get the
-     *         hosted zone ID for the LoadBalancer, see <a
-     *         s.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
-     *         Alias Resource Record Sets for Elastic Load Balancing</a> in the
-     *         <i>Amazon Route 53 Developer Guide</i>.
+     *         associated with the AWS Resource. <p>For more information and an
+     *         example, see <a
+     *         n.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
+     *         Alias Resource Record Sets</a> in the <i>Amazon Route 53 Developer
+     *         Guide</i>.
      */
     public void setDNSName(String dNSName) {
         this.dNSName = dNSName;
@@ -236,13 +215,11 @@ public class AliasTarget {
     
     /**
      * <i>Alias resource record sets only:</i> The external DNS name
-     * associated with the LoadBalancer. <note>Currently, Route 53 supports
-     * alias resource record sets only for Elastic Load Balancing.</note>
-     * <p>For more information, an example, and several ways to get the
-     * hosted zone ID for the LoadBalancer, see <a
-     * s.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
-     * Alias Resource Record Sets for Elastic Load Balancing</a> in the
-     * <i>Amazon Route 53 Developer Guide</i>.
+     * associated with the AWS Resource. <p>For more information and an
+     * example, see <a
+     * n.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
+     * Alias Resource Record Sets</a> in the <i>Amazon Route 53 Developer
+     * Guide</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -250,13 +227,11 @@ public class AliasTarget {
      * <b>Length: </b>0 - 1024<br/>
      *
      * @param dNSName <i>Alias resource record sets only:</i> The external DNS name
-     *         associated with the LoadBalancer. <note>Currently, Route 53 supports
-     *         alias resource record sets only for Elastic Load Balancing.</note>
-     *         <p>For more information, an example, and several ways to get the
-     *         hosted zone ID for the LoadBalancer, see <a
-     *         s.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
-     *         Alias Resource Record Sets for Elastic Load Balancing</a> in the
-     *         <i>Amazon Route 53 Developer Guide</i>.
+     *         associated with the AWS Resource. <p>For more information and an
+     *         example, see <a
+     *         n.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
+     *         Alias Resource Record Sets</a> in the <i>Amazon Route 53 Developer
+     *         Guide</i>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -266,6 +241,97 @@ public class AliasTarget {
         return this;
     }
     
+    
+    /**
+     * <i>Alias resource record sets only:</i> A boolean value that indicates
+     * whether this Resource Record Set should respect the health status of
+     * any health checks associated with the ALIAS target record which it is
+     * linked to. <p>For more information and an example, see <a
+     * n.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
+     * Alias Resource Record Sets</a> in the <i>Amazon Route 53 Developer
+     * Guide</i>.
+     *
+     * @return <i>Alias resource record sets only:</i> A boolean value that indicates
+     *         whether this Resource Record Set should respect the health status of
+     *         any health checks associated with the ALIAS target record which it is
+     *         linked to. <p>For more information and an example, see <a
+     *         n.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
+     *         Alias Resource Record Sets</a> in the <i>Amazon Route 53 Developer
+     *         Guide</i>.
+     */
+    public Boolean isEvaluateTargetHealth() {
+        return evaluateTargetHealth;
+    }
+    
+    /**
+     * <i>Alias resource record sets only:</i> A boolean value that indicates
+     * whether this Resource Record Set should respect the health status of
+     * any health checks associated with the ALIAS target record which it is
+     * linked to. <p>For more information and an example, see <a
+     * n.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
+     * Alias Resource Record Sets</a> in the <i>Amazon Route 53 Developer
+     * Guide</i>.
+     *
+     * @param evaluateTargetHealth <i>Alias resource record sets only:</i> A boolean value that indicates
+     *         whether this Resource Record Set should respect the health status of
+     *         any health checks associated with the ALIAS target record which it is
+     *         linked to. <p>For more information and an example, see <a
+     *         n.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
+     *         Alias Resource Record Sets</a> in the <i>Amazon Route 53 Developer
+     *         Guide</i>.
+     */
+    public void setEvaluateTargetHealth(Boolean evaluateTargetHealth) {
+        this.evaluateTargetHealth = evaluateTargetHealth;
+    }
+    
+    /**
+     * <i>Alias resource record sets only:</i> A boolean value that indicates
+     * whether this Resource Record Set should respect the health status of
+     * any health checks associated with the ALIAS target record which it is
+     * linked to. <p>For more information and an example, see <a
+     * n.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
+     * Alias Resource Record Sets</a> in the <i>Amazon Route 53 Developer
+     * Guide</i>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param evaluateTargetHealth <i>Alias resource record sets only:</i> A boolean value that indicates
+     *         whether this Resource Record Set should respect the health status of
+     *         any health checks associated with the ALIAS target record which it is
+     *         linked to. <p>For more information and an example, see <a
+     *         n.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
+     *         Alias Resource Record Sets</a> in the <i>Amazon Route 53 Developer
+     *         Guide</i>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public AliasTarget withEvaluateTargetHealth(Boolean evaluateTargetHealth) {
+        this.evaluateTargetHealth = evaluateTargetHealth;
+        return this;
+    }
+    
+    
+    /**
+     * <i>Alias resource record sets only:</i> A boolean value that indicates
+     * whether this Resource Record Set should respect the health status of
+     * any health checks associated with the ALIAS target record which it is
+     * linked to. <p>For more information and an example, see <a
+     * n.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
+     * Alias Resource Record Sets</a> in the <i>Amazon Route 53 Developer
+     * Guide</i>.
+     *
+     * @return <i>Alias resource record sets only:</i> A boolean value that indicates
+     *         whether this Resource Record Set should respect the health status of
+     *         any health checks associated with the ALIAS target record which it is
+     *         linked to. <p>For more information and an example, see <a
+     *         n.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
+     *         Alias Resource Record Sets</a> in the <i>Amazon Route 53 Developer
+     *         Guide</i>.
+     */
+    public Boolean getEvaluateTargetHealth() {
+        return evaluateTargetHealth;
+    }
     
     /**
      * Returns a string representation of this object; useful for testing and
@@ -281,6 +347,7 @@ public class AliasTarget {
         sb.append("{");
         if (getHostedZoneId() != null) sb.append("HostedZoneId: " + getHostedZoneId() + ", ");
         if (getDNSName() != null) sb.append("DNSName: " + getDNSName() + ", ");
+        if (isEvaluateTargetHealth() != null) sb.append("EvaluateTargetHealth: " + isEvaluateTargetHealth() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -292,6 +359,7 @@ public class AliasTarget {
         
         hashCode = prime * hashCode + ((getHostedZoneId() == null) ? 0 : getHostedZoneId().hashCode()); 
         hashCode = prime * hashCode + ((getDNSName() == null) ? 0 : getDNSName().hashCode()); 
+        hashCode = prime * hashCode + ((isEvaluateTargetHealth() == null) ? 0 : isEvaluateTargetHealth().hashCode()); 
         return hashCode;
     }
     
@@ -307,6 +375,8 @@ public class AliasTarget {
         if (other.getHostedZoneId() != null && other.getHostedZoneId().equals(this.getHostedZoneId()) == false) return false; 
         if (other.getDNSName() == null ^ this.getDNSName() == null) return false;
         if (other.getDNSName() != null && other.getDNSName().equals(this.getDNSName()) == false) return false; 
+        if (other.isEvaluateTargetHealth() == null ^ this.isEvaluateTargetHealth() == null) return false;
+        if (other.isEvaluateTargetHealth() != null && other.isEvaluateTargetHealth().equals(this.isEvaluateTargetHealth()) == false) return false; 
         return true;
     }
     

@@ -52,6 +52,10 @@ public class AliasTargetStaxUnmarshaller implements Unmarshaller<AliasTarget, St
                     aliasTarget.setDNSName(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("EvaluateTargetHealth", targetDepth)) {
+                    aliasTarget.setEvaluateTargetHealth(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return aliasTarget;

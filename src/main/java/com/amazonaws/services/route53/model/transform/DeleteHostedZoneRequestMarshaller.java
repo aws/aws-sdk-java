@@ -44,7 +44,7 @@ public class DeleteHostedZoneRequestMarshaller implements Marshaller<Request<Del
         Request<DeleteHostedZoneRequest> request = new DefaultRequest<DeleteHostedZoneRequest>(deleteHostedZoneRequest, "AmazonRoute53");
         request.setHttpMethod(HttpMethodName.DELETE);
 
-        String uriResourcePath = "/2012-02-29/hostedzone/{Id}"; 
+        String uriResourcePath = "/2012-12-12/hostedzone/{Id}"; 
         uriResourcePath = uriResourcePath.replace("{Id}", getString(deleteHostedZoneRequest.getId())); 
 
         if (uriResourcePath.contains("?")) {

@@ -46,6 +46,9 @@ public abstract class AmazonWebServiceClient {
 
     /** Optional request handlers for additional request processing. */
     protected final List<RequestHandler> requestHandlers;
+    
+    /** Optional offset (in seconds) to use when signing requests */
+    protected int timeOffset;
 
 
     /**
@@ -180,6 +183,47 @@ public abstract class AmazonWebServiceClient {
     protected ExecutionContext createExecutionContext() {
         ExecutionContext executionContext = new ExecutionContext(requestHandlers);
         return executionContext;
+    }
+    
+    /**
+     * Sets the optional value for time offset for this client.  This
+     * value will be applied to all requests processed through this client.
+     * Value is in seconds, positive values imply the current clock is "fast",
+     * negative values imply clock is slow.
+     *
+     * @param timeOffset
+     *            The optional value for time offset (in seconds) for this client.
+     */
+    public void setTimeOffset(int timeOffset) {
+        this.timeOffset = timeOffset;
+    }
+    
+    /**
+     * Sets the optional value for time offset for this client.  This
+     * value will be applied to all requests processed through this client.
+     * Value is in seconds, positive values imply the current clock is "fast",
+     * negative values imply clock is slow.
+     *
+     * @param timeOffset
+     *            The optional value for time offset (in seconds) for this client.
+     * 
+     * @return the updated web service client
+     */
+    public AmazonWebServiceClient withTimeOffset(int timeOffset) {
+        setTimeOffset(timeOffset);
+        return this;
+    }
+    
+    /**
+     * Returns the optional value for time offset for this client.  This
+     * value will be applied to all requests processed through this client.
+     * Value is in seconds, positive values imply the current clock is "fast",
+     * negative values imply clock is slow.
+     *
+     * @return The optional value for time offset (in seconds) for this client.
+     */
+    public int getTimeOffset() {
+        return timeOffset;
     }
 
 }

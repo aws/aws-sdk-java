@@ -15,38 +15,46 @@
 package com.amazonaws.services.rds.model;
 
 /**
- * Vpc Security Group Membership
+ * <p>
+ * This data type is used as a response element for queries on VPC security group membership.
+ * </p>
  */
 public class VpcSecurityGroupMembership {
 
+    /**
+     * The name of the VPC security group.
+     */
     private String vpcSecurityGroupId;
 
+    /**
+     * The status of the VPC Security Group.
+     */
     private String status;
 
     /**
-     * Returns the value of the VpcSecurityGroupId property for this object.
+     * The name of the VPC security group.
      *
-     * @return The value of the VpcSecurityGroupId property for this object.
+     * @return The name of the VPC security group.
      */
     public String getVpcSecurityGroupId() {
         return vpcSecurityGroupId;
     }
     
     /**
-     * Sets the value of the VpcSecurityGroupId property for this object.
+     * The name of the VPC security group.
      *
-     * @param vpcSecurityGroupId The new value for the VpcSecurityGroupId property for this object.
+     * @param vpcSecurityGroupId The name of the VPC security group.
      */
     public void setVpcSecurityGroupId(String vpcSecurityGroupId) {
         this.vpcSecurityGroupId = vpcSecurityGroupId;
     }
     
     /**
-     * Sets the value of the VpcSecurityGroupId property for this object.
+     * The name of the VPC security group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpcSecurityGroupId The new value for the VpcSecurityGroupId property for this object.
+     * @param vpcSecurityGroupId The name of the VPC security group.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -58,29 +66,29 @@ public class VpcSecurityGroupMembership {
     
     
     /**
-     * Returns the value of the Status property for this object.
+     * The status of the VPC Security Group.
      *
-     * @return The value of the Status property for this object.
+     * @return The status of the VPC Security Group.
      */
     public String getStatus() {
         return status;
     }
     
     /**
-     * Sets the value of the Status property for this object.
+     * The status of the VPC Security Group.
      *
-     * @param status The new value for the Status property for this object.
+     * @param status The status of the VPC Security Group.
      */
     public void setStatus(String status) {
         this.status = status;
     }
     
     /**
-     * Sets the value of the Status property for this object.
+     * The status of the VPC Security Group.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param status The new value for the Status property for this object.
+     * @param status The status of the VPC Security Group.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

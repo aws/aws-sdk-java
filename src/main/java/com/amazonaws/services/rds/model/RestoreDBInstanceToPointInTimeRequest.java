@@ -98,6 +98,8 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
      */
     private Boolean multiAZ;
 
+    private Boolean publiclyAccessible;
+
     /**
      * Indicates that minor version upgrades will be applied automatically to
      * the DB Instance during the maintenance window.
@@ -655,6 +657,49 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
     }
     
     /**
+     * Returns the value of the PubliclyAccessible property for this object.
+     *
+     * @return The value of the PubliclyAccessible property for this object.
+     */
+    public Boolean isPubliclyAccessible() {
+        return publiclyAccessible;
+    }
+    
+    /**
+     * Sets the value of the PubliclyAccessible property for this object.
+     *
+     * @param publiclyAccessible The new value for the PubliclyAccessible property for this object.
+     */
+    public void setPubliclyAccessible(Boolean publiclyAccessible) {
+        this.publiclyAccessible = publiclyAccessible;
+    }
+    
+    /**
+     * Sets the value of the PubliclyAccessible property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param publiclyAccessible The new value for the PubliclyAccessible property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public RestoreDBInstanceToPointInTimeRequest withPubliclyAccessible(Boolean publiclyAccessible) {
+        this.publiclyAccessible = publiclyAccessible;
+        return this;
+    }
+    
+    
+    /**
+     * Returns the value of the PubliclyAccessible property for this object.
+     *
+     * @return The value of the PubliclyAccessible property for this object.
+     */
+    public Boolean getPubliclyAccessible() {
+        return publiclyAccessible;
+    }
+    
+    /**
      * Indicates that minor version upgrades will be applied automatically to
      * the DB Instance during the maintenance window.
      *
@@ -944,6 +989,7 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
         if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ", ");
         if (getDBSubnetGroupName() != null) sb.append("DBSubnetGroupName: " + getDBSubnetGroupName() + ", ");
         if (isMultiAZ() != null) sb.append("MultiAZ: " + isMultiAZ() + ", ");
+        if (isPubliclyAccessible() != null) sb.append("PubliclyAccessible: " + isPubliclyAccessible() + ", ");
         if (isAutoMinorVersionUpgrade() != null) sb.append("AutoMinorVersionUpgrade: " + isAutoMinorVersionUpgrade() + ", ");
         if (getLicenseModel() != null) sb.append("LicenseModel: " + getLicenseModel() + ", ");
         if (getDBName() != null) sb.append("DBName: " + getDBName() + ", ");
@@ -968,6 +1014,7 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
         hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode()); 
         hashCode = prime * hashCode + ((getDBSubnetGroupName() == null) ? 0 : getDBSubnetGroupName().hashCode()); 
         hashCode = prime * hashCode + ((isMultiAZ() == null) ? 0 : isMultiAZ().hashCode()); 
+        hashCode = prime * hashCode + ((isPubliclyAccessible() == null) ? 0 : isPubliclyAccessible().hashCode()); 
         hashCode = prime * hashCode + ((isAutoMinorVersionUpgrade() == null) ? 0 : isAutoMinorVersionUpgrade().hashCode()); 
         hashCode = prime * hashCode + ((getLicenseModel() == null) ? 0 : getLicenseModel().hashCode()); 
         hashCode = prime * hashCode + ((getDBName() == null) ? 0 : getDBName().hashCode()); 
@@ -1003,6 +1050,8 @@ public class RestoreDBInstanceToPointInTimeRequest extends AmazonWebServiceReque
         if (other.getDBSubnetGroupName() != null && other.getDBSubnetGroupName().equals(this.getDBSubnetGroupName()) == false) return false; 
         if (other.isMultiAZ() == null ^ this.isMultiAZ() == null) return false;
         if (other.isMultiAZ() != null && other.isMultiAZ().equals(this.isMultiAZ()) == false) return false; 
+        if (other.isPubliclyAccessible() == null ^ this.isPubliclyAccessible() == null) return false;
+        if (other.isPubliclyAccessible() != null && other.isPubliclyAccessible().equals(this.isPubliclyAccessible()) == false) return false; 
         if (other.isAutoMinorVersionUpgrade() == null ^ this.isAutoMinorVersionUpgrade() == null) return false;
         if (other.isAutoMinorVersionUpgrade() != null && other.isAutoMinorVersionUpgrade().equals(this.isAutoMinorVersionUpgrade()) == false) return false; 
         if (other.getLicenseModel() == null ^ this.getLicenseModel() == null) return false;

@@ -32,7 +32,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
      * existing DB Instance</li> <li>Must contain from 1 to 63 alphanumeric
      * characters or hyphens</li> <li>First character must be a letter</li>
      * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-     * </ul> <p>Example: <copy>mydbinstance</copy>
+     * </ul>
      */
     private String dBInstanceIdentifier;
 
@@ -79,7 +79,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
     private java.util.List<String> dBSecurityGroups;
 
     /**
-     * A list of Ec2 Vpc Security Groups to authorize on this DB Instance.
+     * A list of EC2 VPC Security Groups to authorize on this DB Instance.
      * This change is asynchronously applied as soon as possible.
      * <p>Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters</li>
      * <li>First character must be a letter</li> <li>Cannot end with a hyphen
@@ -245,7 +245,6 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
      * <ul> <li>Must contain from 1 to 63 alphanumeric characters or
      * hyphens</li> <li>First character must be a letter</li> <li>Cannot end
      * with a hyphen or contain two consecutive hyphens</li> </ul>
-     * <p>Example: <copy>mydbinstance</copy>
      */
     private String newDBInstanceIdentifier;
 
@@ -265,7 +264,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
      * identifier for an existing DB Instance</li> <li>Must contain from 1 to
      * 63 alphanumeric characters or hyphens</li> <li>First character must be
      * a letter</li> <li>Cannot end with a hyphen or contain two consecutive
-     * hyphens</li> </ul> <p>Example: <copy>mydbinstance</copy>
+     * hyphens</li> </ul>
      */
     public ModifyDBInstanceRequest(String dBInstanceIdentifier) {
         this.dBInstanceIdentifier = dBInstanceIdentifier;
@@ -279,14 +278,14 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
      * existing DB Instance</li> <li>Must contain from 1 to 63 alphanumeric
      * characters or hyphens</li> <li>First character must be a letter</li>
      * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-     * </ul> <p>Example: <copy>mydbinstance</copy>
+     * </ul>
      *
      * @return The DB Instance identifier. This value is stored as a lowercase
      *         string. <p>Constraints: <ul> <li>Must be the identifier for an
      *         existing DB Instance</li> <li>Must contain from 1 to 63 alphanumeric
      *         characters or hyphens</li> <li>First character must be a letter</li>
      *         <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-     *         </ul> <p>Example: <copy>mydbinstance</copy>
+     *         </ul>
      */
     public String getDBInstanceIdentifier() {
         return dBInstanceIdentifier;
@@ -298,14 +297,14 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
      * existing DB Instance</li> <li>Must contain from 1 to 63 alphanumeric
      * characters or hyphens</li> <li>First character must be a letter</li>
      * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-     * </ul> <p>Example: <copy>mydbinstance</copy>
+     * </ul>
      *
      * @param dBInstanceIdentifier The DB Instance identifier. This value is stored as a lowercase
      *         string. <p>Constraints: <ul> <li>Must be the identifier for an
      *         existing DB Instance</li> <li>Must contain from 1 to 63 alphanumeric
      *         characters or hyphens</li> <li>First character must be a letter</li>
      *         <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-     *         </ul> <p>Example: <copy>mydbinstance</copy>
+     *         </ul>
      */
     public void setDBInstanceIdentifier(String dBInstanceIdentifier) {
         this.dBInstanceIdentifier = dBInstanceIdentifier;
@@ -317,7 +316,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
      * existing DB Instance</li> <li>Must contain from 1 to 63 alphanumeric
      * characters or hyphens</li> <li>First character must be a letter</li>
      * <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-     * </ul> <p>Example: <copy>mydbinstance</copy>
+     * </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -326,7 +325,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
      *         existing DB Instance</li> <li>Must contain from 1 to 63 alphanumeric
      *         characters or hyphens</li> <li>First character must be a letter</li>
      *         <li>Cannot end with a hyphen or contain two consecutive hyphens</li>
-     *         </ul> <p>Example: <copy>mydbinstance</copy>
+     *         </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -647,13 +646,13 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * A list of Ec2 Vpc Security Groups to authorize on this DB Instance.
+     * A list of EC2 VPC Security Groups to authorize on this DB Instance.
      * This change is asynchronously applied as soon as possible.
      * <p>Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters</li>
      * <li>First character must be a letter</li> <li>Cannot end with a hyphen
      * or contain two consecutive hyphens</li> </ul>
      *
-     * @return A list of Ec2 Vpc Security Groups to authorize on this DB Instance.
+     * @return A list of EC2 VPC Security Groups to authorize on this DB Instance.
      *         This change is asynchronously applied as soon as possible.
      *         <p>Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters</li>
      *         <li>First character must be a letter</li> <li>Cannot end with a hyphen
@@ -668,13 +667,13 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * A list of Ec2 Vpc Security Groups to authorize on this DB Instance.
+     * A list of EC2 VPC Security Groups to authorize on this DB Instance.
      * This change is asynchronously applied as soon as possible.
      * <p>Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters</li>
      * <li>First character must be a letter</li> <li>Cannot end with a hyphen
      * or contain two consecutive hyphens</li> </ul>
      *
-     * @param vpcSecurityGroupIds A list of Ec2 Vpc Security Groups to authorize on this DB Instance.
+     * @param vpcSecurityGroupIds A list of EC2 VPC Security Groups to authorize on this DB Instance.
      *         This change is asynchronously applied as soon as possible.
      *         <p>Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters</li>
      *         <li>First character must be a letter</li> <li>Cannot end with a hyphen
@@ -692,7 +691,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * A list of Ec2 Vpc Security Groups to authorize on this DB Instance.
+     * A list of EC2 VPC Security Groups to authorize on this DB Instance.
      * This change is asynchronously applied as soon as possible.
      * <p>Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters</li>
      * <li>First character must be a letter</li> <li>Cannot end with a hyphen
@@ -700,7 +699,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpcSecurityGroupIds A list of Ec2 Vpc Security Groups to authorize on this DB Instance.
+     * @param vpcSecurityGroupIds A list of EC2 VPC Security Groups to authorize on this DB Instance.
      *         This change is asynchronously applied as soon as possible.
      *         <p>Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters</li>
      *         <li>First character must be a letter</li> <li>Cannot end with a hyphen
@@ -718,7 +717,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * A list of Ec2 Vpc Security Groups to authorize on this DB Instance.
+     * A list of EC2 VPC Security Groups to authorize on this DB Instance.
      * This change is asynchronously applied as soon as possible.
      * <p>Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters</li>
      * <li>First character must be a letter</li> <li>Cannot end with a hyphen
@@ -726,7 +725,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpcSecurityGroupIds A list of Ec2 Vpc Security Groups to authorize on this DB Instance.
+     * @param vpcSecurityGroupIds A list of EC2 VPC Security Groups to authorize on this DB Instance.
      *         This change is asynchronously applied as soon as possible.
      *         <p>Constraints: <ul> <li>Must be 1 to 255 alphanumeric characters</li>
      *         <li>First character must be a letter</li> <li>Cannot end with a hyphen
@@ -1795,14 +1794,12 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
      * <ul> <li>Must contain from 1 to 63 alphanumeric characters or
      * hyphens</li> <li>First character must be a letter</li> <li>Cannot end
      * with a hyphen or contain two consecutive hyphens</li> </ul>
-     * <p>Example: <copy>mydbinstance</copy>
      *
      * @return The new DB Instance identifier for the DB Instance when renaming a DB
      *         Instance. This value is stored as a lowercase string. <p>Constraints:
      *         <ul> <li>Must contain from 1 to 63 alphanumeric characters or
      *         hyphens</li> <li>First character must be a letter</li> <li>Cannot end
      *         with a hyphen or contain two consecutive hyphens</li> </ul>
-     *         <p>Example: <copy>mydbinstance</copy>
      */
     public String getNewDBInstanceIdentifier() {
         return newDBInstanceIdentifier;
@@ -1814,14 +1811,12 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
      * <ul> <li>Must contain from 1 to 63 alphanumeric characters or
      * hyphens</li> <li>First character must be a letter</li> <li>Cannot end
      * with a hyphen or contain two consecutive hyphens</li> </ul>
-     * <p>Example: <copy>mydbinstance</copy>
      *
      * @param newDBInstanceIdentifier The new DB Instance identifier for the DB Instance when renaming a DB
      *         Instance. This value is stored as a lowercase string. <p>Constraints:
      *         <ul> <li>Must contain from 1 to 63 alphanumeric characters or
      *         hyphens</li> <li>First character must be a letter</li> <li>Cannot end
      *         with a hyphen or contain two consecutive hyphens</li> </ul>
-     *         <p>Example: <copy>mydbinstance</copy>
      */
     public void setNewDBInstanceIdentifier(String newDBInstanceIdentifier) {
         this.newDBInstanceIdentifier = newDBInstanceIdentifier;
@@ -1833,7 +1828,6 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
      * <ul> <li>Must contain from 1 to 63 alphanumeric characters or
      * hyphens</li> <li>First character must be a letter</li> <li>Cannot end
      * with a hyphen or contain two consecutive hyphens</li> </ul>
-     * <p>Example: <copy>mydbinstance</copy>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -1842,7 +1836,6 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest {
      *         <ul> <li>Must contain from 1 to 63 alphanumeric characters or
      *         hyphens</li> <li>First character must be a letter</li> <li>Cannot end
      *         with a hyphen or contain two consecutive hyphens</li> </ul>
-     *         <p>Example: <copy>mydbinstance</copy>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

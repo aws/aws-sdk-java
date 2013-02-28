@@ -17,12 +17,15 @@ package com.amazonaws.http;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URI;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
+
+import javax.net.ssl.SSLContext;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -33,6 +36,9 @@ import org.apache.http.HttpStatus;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpEntityEnclosingRequestBase;
 import org.apache.http.client.methods.HttpRequestBase;
+import org.apache.http.conn.scheme.Scheme;
+import org.apache.http.conn.scheme.SchemeRegistry;
+import org.apache.http.conn.ssl.SSLSocketFactory;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
@@ -131,6 +137,26 @@ public class AmazonHttpClient {
     }
 
     /**
+     * Disables the default strict hostname verification in this client and
+     * instead uses a browser compatible hostname verification strategy (i.e.
+     * cert hostname wildcards are evaulated more liberally).
+     */
+    public void disableStrictHostnameVerification() {
+        try {
+            SchemeRegistry schemeRegistry = httpClient.getConnectionManager().getSchemeRegistry();
+
+            SSLSocketFactory sf = new SSLSocketFactory(
+                    SSLContext.getDefault(),
+                    SSLSocketFactory.BROWSER_COMPATIBLE_HOSTNAME_VERIFIER);
+            Scheme https = new Scheme("https", 443, sf);
+
+            schemeRegistry.register(https);
+        } catch (NoSuchAlgorithmException e) {
+            throw new AmazonClientException("Unable to access default SSL context to disable strict hostname verification");
+        }
+    }
+
+    /**
      * Executes the request and returns the result.
      *
      * @param request
@@ -161,8 +187,8 @@ public class AmazonHttpClient {
         }
 
         try {
-            TimingInfo timingInfo = new TimingInfo(startTime);
             T t = executeHelper(request, responseHandler, errorResponseHandler, executionContext);
+            TimingInfo timingInfo = executionContext.getAwsRequestMetrics().getTimingInfo();
             timingInfo.setEndTime(System.currentTimeMillis());
 
             for (RequestHandler handler : requestHandlers) {

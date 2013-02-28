@@ -44,7 +44,7 @@ public class ListResourceRecordSetsRequestMarshaller implements Marshaller<Reque
         Request<ListResourceRecordSetsRequest> request = new DefaultRequest<ListResourceRecordSetsRequest>(listResourceRecordSetsRequest, "AmazonRoute53");
         request.setHttpMethod(HttpMethodName.GET);
 
-        String uriResourcePath = "/2012-02-29/hostedzone/{Id}/rrset?type={Type}&name={Name}&identifier={Identifier}&maxitems={MaxItems}"; 
+        String uriResourcePath = "/2012-12-12/hostedzone/{Id}/rrset?type={Type}&name={Name}&identifier={Identifier}&maxitems={MaxItems}"; 
         uriResourcePath = uriResourcePath.replace("{Id}", getString(listResourceRecordSetsRequest.getHostedZoneId())); 
         uriResourcePath = uriResourcePath.replace("{Name}", getString(listResourceRecordSetsRequest.getStartRecordName())); 
         uriResourcePath = uriResourcePath.replace("{Type}", getString(listResourceRecordSetsRequest.getStartRecordType())); 

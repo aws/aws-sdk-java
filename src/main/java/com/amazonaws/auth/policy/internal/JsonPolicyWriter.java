@@ -129,20 +129,20 @@ public class JsonPolicyWriter {
         }
         generator.endObject();
     }
-    
+
     private Map<String, List<String>> sortConditionsByKey(List<Condition> conditions) {
         Map<String, List<String>> conditionValuesByConditionKey = new HashMap<String, List<String>>();
-        
+
         for (Condition condition : conditions) {
             String key = condition.getConditionKey();
             List<String> values = condition.getValues();
-            
+
             if (conditionValuesByConditionKey.containsKey(key) == false) {
                 conditionValuesByConditionKey.put(key, new ArrayList<String>());
             }
             conditionValuesByConditionKey.get(key).addAll(values);
         }
-        
+
         return conditionValuesByConditionKey;
     }
 
@@ -193,18 +193,18 @@ public class JsonPolicyWriter {
         if (principals == null || principals.isEmpty()) return;
 
         generator.key("Principal").object();
-        Map<String, List<String>> principalIdsByScheme = new HashMap<String, List<String>>();
+        Map<String, List<String>> principalContentsByScheme = new HashMap<String, List<String>>();
         for (Principal p : principals) {
-            List<String> principalIds = principalIdsByScheme.get(p.getProvider());
-            if (principalIds == null) {
-                principalIds = new ArrayList<String>();
-                principalIdsByScheme.put(p.getProvider(), principalIds);
+            List<String> principalValues = principalContentsByScheme.get(p.getProvider());
+            if (principalValues == null) {
+                principalValues = new ArrayList<String>();
+                principalContentsByScheme.put(p.getProvider(), principalValues);
             }
-            principalIds.add(p.getId());
+            	 principalValues.add(p.getId());
         }
-        for (String scheme : principalIdsByScheme.keySet()) {
+        for (String scheme : principalContentsByScheme.keySet()) {
             generator.key(scheme).array();
-            for (String principalId : principalIdsByScheme.get(scheme)) {
+            for (String principalId : principalContentsByScheme.get(scheme)) {
                 generator.value(principalId);
             }
             generator.endArray();

@@ -45,7 +45,7 @@ public class TestRoleRequest extends AmazonWebServiceRequest {
      * action attempts to read from this bucket.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 255<br/>
+     * <b>Pattern: </b>^(\w|\.|-){1,255}$<br/>
      */
     private String inputBucket;
 
@@ -54,7 +54,7 @@ public class TestRoleRequest extends AmazonWebServiceRequest {
      * media files to. The action attempts to read from this bucket.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 255<br/>
+     * <b>Pattern: </b>^(\w|\.|-){1,255}$<br/>
      */
     private String outputBucket;
 
@@ -118,7 +118,7 @@ public class TestRoleRequest extends AmazonWebServiceRequest {
      * action attempts to read from this bucket.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 255<br/>
+     * <b>Pattern: </b>^(\w|\.|-){1,255}$<br/>
      *
      * @return The Amazon S3 bucket that contains media files to be transcoded. The
      *         action attempts to read from this bucket.
@@ -132,7 +132,7 @@ public class TestRoleRequest extends AmazonWebServiceRequest {
      * action attempts to read from this bucket.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 255<br/>
+     * <b>Pattern: </b>^(\w|\.|-){1,255}$<br/>
      *
      * @param inputBucket The Amazon S3 bucket that contains media files to be transcoded. The
      *         action attempts to read from this bucket.
@@ -148,7 +148,7 @@ public class TestRoleRequest extends AmazonWebServiceRequest {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 255<br/>
+     * <b>Pattern: </b>^(\w|\.|-){1,255}$<br/>
      *
      * @param inputBucket The Amazon S3 bucket that contains media files to be transcoded. The
      *         action attempts to read from this bucket.
@@ -167,7 +167,7 @@ public class TestRoleRequest extends AmazonWebServiceRequest {
      * media files to. The action attempts to read from this bucket.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 255<br/>
+     * <b>Pattern: </b>^(\w|\.|-){1,255}$<br/>
      *
      * @return The Amazon S3 bucket that Elastic Transcoder will write transcoded
      *         media files to. The action attempts to read from this bucket.
@@ -181,7 +181,7 @@ public class TestRoleRequest extends AmazonWebServiceRequest {
      * media files to. The action attempts to read from this bucket.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 255<br/>
+     * <b>Pattern: </b>^(\w|\.|-){1,255}$<br/>
      *
      * @param outputBucket The Amazon S3 bucket that Elastic Transcoder will write transcoded
      *         media files to. The action attempts to read from this bucket.
@@ -197,7 +197,7 @@ public class TestRoleRequest extends AmazonWebServiceRequest {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 255<br/>
+     * <b>Pattern: </b>^(\w|\.|-){1,255}$<br/>
      *
      * @param outputBucket The Amazon S3 bucket that Elastic Transcoder will write transcoded
      *         media files to. The action attempts to read from this bucket.

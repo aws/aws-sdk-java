@@ -26,7 +26,7 @@ public class ResourceRecord {
      * record set.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 8192<br/>
+     * <b>Length: </b>0 - 4000<br/>
      */
     private String value;
 
@@ -55,7 +55,7 @@ public class ResourceRecord {
      * record set.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 8192<br/>
+     * <b>Length: </b>0 - 4000<br/>
      *
      * @return The value of the <code>Value</code> element for the current resource
      *         record set.
@@ -69,7 +69,7 @@ public class ResourceRecord {
      * record set.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 8192<br/>
+     * <b>Length: </b>0 - 4000<br/>
      *
      * @param value The value of the <code>Value</code> element for the current resource
      *         record set.
@@ -85,7 +85,7 @@ public class ResourceRecord {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>0 - 8192<br/>
+     * <b>Length: </b>0 - 4000<br/>
      *
      * @param value The value of the <code>Value</code> element for the current resource
      *         record set.

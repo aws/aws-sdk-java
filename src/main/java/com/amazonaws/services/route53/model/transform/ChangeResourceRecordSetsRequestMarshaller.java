@@ -44,7 +44,7 @@ public class ChangeResourceRecordSetsRequestMarshaller implements Marshaller<Req
         Request<ChangeResourceRecordSetsRequest> request = new DefaultRequest<ChangeResourceRecordSetsRequest>(changeResourceRecordSetsRequest, "AmazonRoute53");
         request.setHttpMethod(HttpMethodName.POST);
 
-        String uriResourcePath = "/2012-02-29/hostedzone/{Id}/rrset/"; 
+        String uriResourcePath = "/2012-12-12/hostedzone/{Id}/rrset/"; 
         uriResourcePath = uriResourcePath.replace("{Id}", getString(changeResourceRecordSetsRequest.getHostedZoneId())); 
 
         if (uriResourcePath.contains("?")) {
@@ -65,7 +65,7 @@ public class ChangeResourceRecordSetsRequestMarshaller implements Marshaller<Req
 
         
             StringWriter stringWriter = new StringWriter();
-            XMLWriter xmlWriter = new XMLWriter(stringWriter, "https://route53.amazonaws.com/doc/2012-02-29/");
+            XMLWriter xmlWriter = new XMLWriter(stringWriter, "https://route53.amazonaws.com/doc/2012-12-12/");
 
             
             
@@ -108,6 +108,9 @@ public class ChangeResourceRecordSetsRequestMarshaller implements Marshaller<Req
                                     if (resourceRecordSetResourceRecordSet.getRegion() != null) {
                                         xmlWriter.startElement("Region").value(resourceRecordSetResourceRecordSet.getRegion()).endElement();
                                     }
+                                    if (resourceRecordSetResourceRecordSet.getFailover() != null) {
+                                        xmlWriter.startElement("Failover").value(resourceRecordSetResourceRecordSet.getFailover()).endElement();
+                                    }
                                     if (resourceRecordSetResourceRecordSet.getTTL() != null) {
                                         xmlWriter.startElement("TTL").value(resourceRecordSetResourceRecordSet.getTTL()).endElement();
                                     }
@@ -141,8 +144,14 @@ public class ChangeResourceRecordSetsRequestMarshaller implements Marshaller<Req
                                             if (aliasTargetAliasTarget.getDNSName() != null) {
                                                 xmlWriter.startElement("DNSName").value(aliasTargetAliasTarget.getDNSName()).endElement();
                                             }
+                                            if (aliasTargetAliasTarget.isEvaluateTargetHealth() != null) {
+                                                xmlWriter.startElement("EvaluateTargetHealth").value(aliasTargetAliasTarget.isEvaluateTargetHealth()).endElement();
+                                            }
                                             xmlWriter.endElement();
                                         }
+                                    }
+                                    if (resourceRecordSetResourceRecordSet.getHealthCheckId() != null) {
+                                        xmlWriter.startElement("HealthCheckId").value(resourceRecordSetResourceRecordSet.getHealthCheckId()).endElement();
                                     }
                                     xmlWriter.endElement();
                                 }

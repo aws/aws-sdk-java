@@ -19,8 +19,8 @@ package com.amazonaws.services.route53.model;
  */
 public enum ChangeStatus {
     
-    InProgress("InProgress"),
-    Deployed("Deployed");
+    PENDING("PENDING"),
+    INSYNC("INSYNC");
 
     private String value;
 
@@ -44,10 +44,10 @@ public enum ChangeStatus {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
         
-        } else if ("InProgress".equals(value)) {
-            return ChangeStatus.InProgress;
-        } else if ("Deployed".equals(value)) {
-            return ChangeStatus.Deployed;
+        } else if ("PENDING".equals(value)) {
+            return ChangeStatus.PENDING;
+        } else if ("INSYNC".equals(value)) {
+            return ChangeStatus.INSYNC;
         } else {
             throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
         }

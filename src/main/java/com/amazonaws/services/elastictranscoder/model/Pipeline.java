@@ -47,7 +47,7 @@ public class Pipeline {
      * pipeline is not currently processing jobs.</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^Active$)|(^Paused$)|(^Hidden$)<br/>
+     * <b>Pattern: </b>(^Active$)|(^Paused$)<br/>
      */
     private String status;
 
@@ -56,7 +56,7 @@ public class Pipeline {
      * to transcode.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 255<br/>
+     * <b>Pattern: </b>^(\w|\.|-){1,255}$<br/>
      */
     private String inputBucket;
 
@@ -65,7 +65,7 @@ public class Pipeline {
      * transcoded files.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 255<br/>
+     * <b>Pattern: </b>^(\w|\.|-){1,255}$<br/>
      */
     private String outputBucket;
 
@@ -210,7 +210,7 @@ public class Pipeline {
      * pipeline is not currently processing jobs.</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^Active$)|(^Paused$)|(^Hidden$)<br/>
+     * <b>Pattern: </b>(^Active$)|(^Paused$)<br/>
      *
      * @return The current status of the pipeline: <ul> <li><code>active</code>: The
      *         pipeline is processing jobs.</li> <li><code>paused</code>: The
@@ -226,7 +226,7 @@ public class Pipeline {
      * pipeline is not currently processing jobs.</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^Active$)|(^Paused$)|(^Hidden$)<br/>
+     * <b>Pattern: </b>(^Active$)|(^Paused$)<br/>
      *
      * @param status The current status of the pipeline: <ul> <li><code>active</code>: The
      *         pipeline is processing jobs.</li> <li><code>paused</code>: The
@@ -244,7 +244,7 @@ public class Pipeline {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^Active$)|(^Paused$)|(^Hidden$)<br/>
+     * <b>Pattern: </b>(^Active$)|(^Paused$)<br/>
      *
      * @param status The current status of the pipeline: <ul> <li><code>active</code>: The
      *         pipeline is processing jobs.</li> <li><code>paused</code>: The
@@ -264,7 +264,7 @@ public class Pipeline {
      * to transcode.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 255<br/>
+     * <b>Pattern: </b>^(\w|\.|-){1,255}$<br/>
      *
      * @return The Amazon S3 bucket in which you saved the media files that you want
      *         to transcode.
@@ -278,7 +278,7 @@ public class Pipeline {
      * to transcode.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 255<br/>
+     * <b>Pattern: </b>^(\w|\.|-){1,255}$<br/>
      *
      * @param inputBucket The Amazon S3 bucket in which you saved the media files that you want
      *         to transcode.
@@ -294,7 +294,7 @@ public class Pipeline {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 255<br/>
+     * <b>Pattern: </b>^(\w|\.|-){1,255}$<br/>
      *
      * @param inputBucket The Amazon S3 bucket in which you saved the media files that you want
      *         to transcode.
@@ -313,7 +313,7 @@ public class Pipeline {
      * transcoded files.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 255<br/>
+     * <b>Pattern: </b>^(\w|\.|-){1,255}$<br/>
      *
      * @return The Amazon S3 bucket in which you want Elastic Transcoder to save the
      *         transcoded files.
@@ -327,7 +327,7 @@ public class Pipeline {
      * transcoded files.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 255<br/>
+     * <b>Pattern: </b>^(\w|\.|-){1,255}$<br/>
      *
      * @param outputBucket The Amazon S3 bucket in which you want Elastic Transcoder to save the
      *         transcoded files.
@@ -343,7 +343,7 @@ public class Pipeline {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Length: </b>1 - 255<br/>
+     * <b>Pattern: </b>^(\w|\.|-){1,255}$<br/>
      *
      * @param outputBucket The Amazon S3 bucket in which you want Elastic Transcoder to save the
      *         transcoded files.

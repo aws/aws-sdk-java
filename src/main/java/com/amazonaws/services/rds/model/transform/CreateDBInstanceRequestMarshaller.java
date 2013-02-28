@@ -125,6 +125,9 @@ public class CreateDBInstanceRequestMarshaller implements Marshaller<Request<Cre
         if (createDBInstanceRequest.getCharacterSetName() != null) {
             request.addParameter("CharacterSetName", StringUtils.fromString(createDBInstanceRequest.getCharacterSetName()));
         }
+        if (createDBInstanceRequest.isPubliclyAccessible() != null) {
+            request.addParameter("PubliclyAccessible", StringUtils.fromBoolean(createDBInstanceRequest.isPubliclyAccessible()));
+        }
 
 
         return request;

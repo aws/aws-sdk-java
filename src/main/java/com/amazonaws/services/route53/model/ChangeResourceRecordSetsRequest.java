@@ -19,13 +19,13 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Container for the parameters to the {@link com.amazonaws.services.route53.AmazonRoute53#changeResourceRecordSets(ChangeResourceRecordSetsRequest) ChangeResourceRecordSets operation}.
  * <p>
  * Use this action to create or change your authoritative DNS information. To use this action, send a <code>POST</code> request to the
- * <code>2012-02-29/hostedzone/hosted Zone ID/rrset</code> resource. The request body must include an XML document with a
+ * <code>2012-12-12/hostedzone/hosted Zone ID/rrset</code> resource. The request body must include an XML document with a
  * <code>ChangeResourceRecordSetsRequest</code> element.
  * </p>
  * <p>
  * Changes are a list of change items and are considered transactional. For more information on transactional changes, also known as change batches, see
- * <a href="http://docs.amazonwebservices.com/Route53/latest/DeveloperGuide/RRSchanges.html#RRSchanges_API"> Creating, Changing, and Deleting Resource
- * Record Sets Using the Route 53 API </a> in the <i>Amazon Route 53 Developer Guide</i> .
+ * <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/RRSchanges.html#RRSchanges_API"> Creating, Changing, and Deleting Resource Record
+ * Sets Using the Route 53 API </a> in the <i>Amazon Route 53 Developer Guide</i> .
  * </p>
  * <p>
  * <b>IMPORTANT:</b>Due to the nature of transactional changes, you cannot delete the same resource record set more than once in a single change batch.
@@ -55,10 +55,8 @@ public class ChangeResourceRecordSetsRequest extends AmazonWebServiceRequest {
 
     /**
      * <i>Alias resource record sets only:</i> The value of the hosted zone
-     * ID, CanonicalHostedZoneNameId, for the LoadBalancer. <note>Currently,
-     * Route 53 supports alias resource record sets only for Elastic Load
-     * Balancing.</note> <p>For more information, an example, and several
-     * ways to get the hosted zone ID for the LoadBalancer, see <a
+     * ID for the AWS resource. <p>For more information, an example, and
+     * several ways to get the hosted zone ID for the LoadBalancer, see <a
      * s.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
      * Alias Resource Record Sets for Elastic Load Balancing</a> in the
      * <i>Amazon Route 53 Developer Guide</i>.
@@ -86,9 +84,7 @@ public class ChangeResourceRecordSetsRequest extends AmazonWebServiceRequest {
      * initialize any additional object members.
      * 
      * @param hostedZoneId <i>Alias resource record sets only:</i> The value
-     * of the hosted zone ID, CanonicalHostedZoneNameId, for the
-     * LoadBalancer. <note>Currently, Route 53 supports alias resource record
-     * sets only for Elastic Load Balancing.</note> <p>For more information,
+     * of the hosted zone ID for the AWS resource. <p>For more information,
      * an example, and several ways to get the hosted zone ID for the
      * LoadBalancer, see <a
      * s.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
@@ -106,10 +102,8 @@ public class ChangeResourceRecordSetsRequest extends AmazonWebServiceRequest {
     
     /**
      * <i>Alias resource record sets only:</i> The value of the hosted zone
-     * ID, CanonicalHostedZoneNameId, for the LoadBalancer. <note>Currently,
-     * Route 53 supports alias resource record sets only for Elastic Load
-     * Balancing.</note> <p>For more information, an example, and several
-     * ways to get the hosted zone ID for the LoadBalancer, see <a
+     * ID for the AWS resource. <p>For more information, an example, and
+     * several ways to get the hosted zone ID for the LoadBalancer, see <a
      * s.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
      * Alias Resource Record Sets for Elastic Load Balancing</a> in the
      * <i>Amazon Route 53 Developer Guide</i>.
@@ -118,10 +112,8 @@ public class ChangeResourceRecordSetsRequest extends AmazonWebServiceRequest {
      * <b>Length: </b>0 - 32<br/>
      *
      * @return <i>Alias resource record sets only:</i> The value of the hosted zone
-     *         ID, CanonicalHostedZoneNameId, for the LoadBalancer. <note>Currently,
-     *         Route 53 supports alias resource record sets only for Elastic Load
-     *         Balancing.</note> <p>For more information, an example, and several
-     *         ways to get the hosted zone ID for the LoadBalancer, see <a
+     *         ID for the AWS resource. <p>For more information, an example, and
+     *         several ways to get the hosted zone ID for the LoadBalancer, see <a
      *         s.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
      *         Alias Resource Record Sets for Elastic Load Balancing</a> in the
      *         <i>Amazon Route 53 Developer Guide</i>.
@@ -132,10 +124,8 @@ public class ChangeResourceRecordSetsRequest extends AmazonWebServiceRequest {
     
     /**
      * <i>Alias resource record sets only:</i> The value of the hosted zone
-     * ID, CanonicalHostedZoneNameId, for the LoadBalancer. <note>Currently,
-     * Route 53 supports alias resource record sets only for Elastic Load
-     * Balancing.</note> <p>For more information, an example, and several
-     * ways to get the hosted zone ID for the LoadBalancer, see <a
+     * ID for the AWS resource. <p>For more information, an example, and
+     * several ways to get the hosted zone ID for the LoadBalancer, see <a
      * s.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
      * Alias Resource Record Sets for Elastic Load Balancing</a> in the
      * <i>Amazon Route 53 Developer Guide</i>.
@@ -144,10 +134,8 @@ public class ChangeResourceRecordSetsRequest extends AmazonWebServiceRequest {
      * <b>Length: </b>0 - 32<br/>
      *
      * @param hostedZoneId <i>Alias resource record sets only:</i> The value of the hosted zone
-     *         ID, CanonicalHostedZoneNameId, for the LoadBalancer. <note>Currently,
-     *         Route 53 supports alias resource record sets only for Elastic Load
-     *         Balancing.</note> <p>For more information, an example, and several
-     *         ways to get the hosted zone ID for the LoadBalancer, see <a
+     *         ID for the AWS resource. <p>For more information, an example, and
+     *         several ways to get the hosted zone ID for the LoadBalancer, see <a
      *         s.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
      *         Alias Resource Record Sets for Elastic Load Balancing</a> in the
      *         <i>Amazon Route 53 Developer Guide</i>.
@@ -158,10 +146,8 @@ public class ChangeResourceRecordSetsRequest extends AmazonWebServiceRequest {
     
     /**
      * <i>Alias resource record sets only:</i> The value of the hosted zone
-     * ID, CanonicalHostedZoneNameId, for the LoadBalancer. <note>Currently,
-     * Route 53 supports alias resource record sets only for Elastic Load
-     * Balancing.</note> <p>For more information, an example, and several
-     * ways to get the hosted zone ID for the LoadBalancer, see <a
+     * ID for the AWS resource. <p>For more information, an example, and
+     * several ways to get the hosted zone ID for the LoadBalancer, see <a
      * s.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
      * Alias Resource Record Sets for Elastic Load Balancing</a> in the
      * <i>Amazon Route 53 Developer Guide</i>.
@@ -172,10 +158,8 @@ public class ChangeResourceRecordSetsRequest extends AmazonWebServiceRequest {
      * <b>Length: </b>0 - 32<br/>
      *
      * @param hostedZoneId <i>Alias resource record sets only:</i> The value of the hosted zone
-     *         ID, CanonicalHostedZoneNameId, for the LoadBalancer. <note>Currently,
-     *         Route 53 supports alias resource record sets only for Elastic Load
-     *         Balancing.</note> <p>For more information, an example, and several
-     *         ways to get the hosted zone ID for the LoadBalancer, see <a
+     *         ID for the AWS resource. <p>For more information, an example, and
+     *         several ways to get the hosted zone ID for the LoadBalancer, see <a
      *         s.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
      *         Alias Resource Record Sets for Elastic Load Balancing</a> in the
      *         <i>Amazon Route 53 Developer Guide</i>.

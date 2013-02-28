@@ -46,6 +46,173 @@ import com.amazonaws.services.cloudformation.model.*;
 public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
     /**
      * <p>
+     * Validates a specified template.
+     * </p>
+     *
+     * @param validateTemplateRequest Container for the necessary parameters
+     *           to execute the ValidateTemplate operation on AmazonCloudFormation.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ValidateTemplate service method, as returned by AmazonCloudFormation.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudFormation indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ValidateTemplateResult> validateTemplateAsync(ValidateTemplateRequest validateTemplateRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Validates a specified template.
+     * </p>
+     *
+     * @param validateTemplateRequest Container for the necessary parameters
+     *           to execute the ValidateTemplate operation on AmazonCloudFormation.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ValidateTemplate service method, as returned by AmazonCloudFormation.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudFormation indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ValidateTemplateResult> validateTemplateAsync(ValidateTemplateRequest validateTemplateRequest,
+            AsyncHandler<ValidateTemplateRequest, ValidateTemplateResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Returns the description for the specified stack; if no stack name was
+     * specified, then it returns the description for all the stacks created.
+     * </p>
+     *
+     * @param describeStacksRequest Container for the necessary parameters to
+     *           execute the DescribeStacks operation on AmazonCloudFormation.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeStacks service method, as returned by AmazonCloudFormation.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudFormation indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeStacksResult> describeStacksAsync(DescribeStacksRequest describeStacksRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Returns the description for the specified stack; if no stack name was
+     * specified, then it returns the description for all the stacks created.
+     * </p>
+     *
+     * @param describeStacksRequest Container for the necessary parameters to
+     *           execute the DescribeStacks operation on AmazonCloudFormation.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeStacks service method, as returned by AmazonCloudFormation.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudFormation indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeStacksResult> describeStacksAsync(DescribeStacksRequest describeStacksRequest,
+            AsyncHandler<DescribeStacksRequest, DescribeStacksResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Returns the template body for a specified stack name. You can get the
+     * template for running or deleted stacks.
+     * </p>
+     * <p>
+     * For deleted stacks, GetTemplate returns the template for up to 90 days
+     * after the stack has been deleted.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> If the template does not exist, a ValidationError is
+     * returned.
+     * </p>
+     *
+     * @param getTemplateRequest Container for the necessary parameters to
+     *           execute the GetTemplate operation on AmazonCloudFormation.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetTemplate service method, as returned by AmazonCloudFormation.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudFormation indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetTemplateResult> getTemplateAsync(GetTemplateRequest getTemplateRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Returns the template body for a specified stack name. You can get the
+     * template for running or deleted stacks.
+     * </p>
+     * <p>
+     * For deleted stacks, GetTemplate returns the template for up to 90 days
+     * after the stack has been deleted.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> If the template does not exist, a ValidationError is
+     * returned.
+     * </p>
+     *
+     * @param getTemplateRequest Container for the necessary parameters to
+     *           execute the GetTemplate operation on AmazonCloudFormation.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         GetTemplate service method, as returned by AmazonCloudFormation.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudFormation indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<GetTemplateResult> getTemplateAsync(GetTemplateRequest getTemplateRequest,
+            AsyncHandler<GetTemplateRequest, GetTemplateResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
      * Returns the summary information for stacks whose status matches the
      * specified StackStatusFilter. Summary information for stacks that have
      * been deleted is kept for 90 days after the stack is deleted. If no
@@ -166,55 +333,6 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
 
     /**
      * <p>
-     * Validates a specified template.
-     * </p>
-     *
-     * @param validateTemplateRequest Container for the necessary parameters
-     *           to execute the ValidateTemplate operation on AmazonCloudFormation.
-     * 
-     * @return A Java Future object containing the response from the
-     *         ValidateTemplate service method, as returned by AmazonCloudFormation.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCloudFormation indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<ValidateTemplateResult> validateTemplateAsync(ValidateTemplateRequest validateTemplateRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Validates a specified template.
-     * </p>
-     *
-     * @param validateTemplateRequest Container for the necessary parameters
-     *           to execute the ValidateTemplate operation on AmazonCloudFormation.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         ValidateTemplate service method, as returned by AmazonCloudFormation.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCloudFormation indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<ValidateTemplateResult> validateTemplateAsync(ValidateTemplateRequest validateTemplateRequest,
-            AsyncHandler<ValidateTemplateRequest, ValidateTemplateResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
      * Returns the estimated monthly cost of a template. The return value is
      * an AWS Simple Monthly Calculator URL with a query string that
      * describes the resources required to run the template.
@@ -268,57 +386,6 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      */
     public Future<EstimateTemplateCostResult> estimateTemplateCostAsync(EstimateTemplateCostRequest estimateTemplateCostRequest,
             AsyncHandler<EstimateTemplateCostRequest, EstimateTemplateCostResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Returns the description for the specified stack; if no stack name was
-     * specified, then it returns the description for all the stacks created.
-     * </p>
-     *
-     * @param describeStacksRequest Container for the necessary parameters to
-     *           execute the DescribeStacks operation on AmazonCloudFormation.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeStacks service method, as returned by AmazonCloudFormation.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCloudFormation indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DescribeStacksResult> describeStacksAsync(DescribeStacksRequest describeStacksRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Returns the description for the specified stack; if no stack name was
-     * specified, then it returns the description for all the stacks created.
-     * </p>
-     *
-     * @param describeStacksRequest Container for the necessary parameters to
-     *           execute the DescribeStacks operation on AmazonCloudFormation.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeStacks service method, as returned by AmazonCloudFormation.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCloudFormation indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DescribeStacksResult> describeStacksAsync(DescribeStacksRequest describeStacksRequest,
-            AsyncHandler<DescribeStacksRequest, DescribeStacksResult> asyncHandler)
                     throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -396,73 +463,6 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
 
     /**
      * <p>
-     * Returns the template body for a specified stack name. You can get the
-     * template for running or deleted stacks.
-     * </p>
-     * <p>
-     * For deleted stacks, GetTemplate returns the template for up to 90 days
-     * after the stack has been deleted.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> If the template does not exist, a ValidationError is
-     * returned.
-     * </p>
-     *
-     * @param getTemplateRequest Container for the necessary parameters to
-     *           execute the GetTemplate operation on AmazonCloudFormation.
-     * 
-     * @return A Java Future object containing the response from the
-     *         GetTemplate service method, as returned by AmazonCloudFormation.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCloudFormation indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<GetTemplateResult> getTemplateAsync(GetTemplateRequest getTemplateRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Returns the template body for a specified stack name. You can get the
-     * template for running or deleted stacks.
-     * </p>
-     * <p>
-     * For deleted stacks, GetTemplate returns the template for up to 90 days
-     * after the stack has been deleted.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> If the template does not exist, a ValidationError is
-     * returned.
-     * </p>
-     *
-     * @param getTemplateRequest Container for the necessary parameters to
-     *           execute the GetTemplate operation on AmazonCloudFormation.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         GetTemplate service method, as returned by AmazonCloudFormation.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonCloudFormation indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<GetTemplateResult> getTemplateAsync(GetTemplateRequest getTemplateRequest,
-            AsyncHandler<GetTemplateRequest, GetTemplateResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
      * Returns a description of the specified resource in the specified
      * stack.
      * </p>
@@ -522,6 +522,67 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      */
     public Future<DescribeStackResourceResult> describeStackResourceAsync(DescribeStackResourceRequest describeStackResourceRequest,
             AsyncHandler<DescribeStackResourceRequest, DescribeStackResourceResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Cancels an update on the specified stack. If the call completes
+     * successfully, the stack will roll back the update and revert to the
+     * previous stack configuration.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>Only stacks that are in the UPDATE_IN_PROGRESS state can
+     * be canceled.
+     * </p>
+     *
+     * @param cancelUpdateStackRequest Container for the necessary parameters
+     *           to execute the CancelUpdateStack operation on AmazonCloudFormation.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CancelUpdateStack service method, as returned by AmazonCloudFormation.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudFormation indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> cancelUpdateStackAsync(CancelUpdateStackRequest cancelUpdateStackRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Cancels an update on the specified stack. If the call completes
+     * successfully, the stack will roll back the update and revert to the
+     * previous stack configuration.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>Only stacks that are in the UPDATE_IN_PROGRESS state can
+     * be canceled.
+     * </p>
+     *
+     * @param cancelUpdateStackRequest Container for the necessary parameters
+     *           to execute the CancelUpdateStack operation on AmazonCloudFormation.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CancelUpdateStack service method, as returned by AmazonCloudFormation.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonCloudFormation indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> cancelUpdateStackAsync(CancelUpdateStackRequest cancelUpdateStackRequest,
+            AsyncHandler<CancelUpdateStackRequest, Void> asyncHandler)
                     throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -643,34 +704,31 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      * Returns AWS resource descriptions for running and deleted stacks. If
      * <code>StackName</code> is specified, all the associated resources that
      * are part of the stack are returned. If <code>PhysicalResourceId</code>
-     * is specified, all the associated resources of the stack the resource
+     * is specified, the associated resources of the stack that the resource
      * belongs to are returned.
      * </p>
      * <p>
-     * For deleted stacks, DescribeStackResources returns resource
-     * information for up to 90 days after the stack has been deleted.
-     * </p>
-     * <p>
-     * If you do not provide either a stack or resource id, information for
-     * all stacks and resources will be returned, up to a limit of 100
-     * records.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> To list more than 100 resources use ListStackResources
+     * <b>NOTE:</b>Only the first 100 resources will be returned. If your
+     * stack has more resources than this, you should use ListStackResources
      * instead.
      * </p>
      * <p>
-     * You can specify either <code>StackName</code> or
-     * <code>PhysicalResourceId.</code> , but not both. In addition, you can
+     * For deleted stacks, <code>DescribeStackResources</code> returns
+     * resource information for up to 90 days after the stack has been
+     * deleted.
+     * </p>
+     * <p>
+     * You must specify either <code>StackName</code> or
+     * <code>PhysicalResourceId</code> , but not both. In addition, you can
      * specify <code>LogicalResourceId</code> to filter the returned result.
      * For more information about resources, the
      * <code>LogicalResourceId</code> and <code>PhysicalResourceId</code> ,
      * go to the <a
-     * http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide">
      * AWS CloudFormation User Guide </a> .
      * </p>
      * <p>
-     * <b>NOTE:</b> A ValidationError is returned if you specify both
+     * <b>NOTE:</b>A ValidationError is returned if you specify both
      * StackName and PhysicalResourceId in the same request.
      * </p>
      *
@@ -698,34 +756,31 @@ public interface AmazonCloudFormationAsync extends AmazonCloudFormation {
      * Returns AWS resource descriptions for running and deleted stacks. If
      * <code>StackName</code> is specified, all the associated resources that
      * are part of the stack are returned. If <code>PhysicalResourceId</code>
-     * is specified, all the associated resources of the stack the resource
+     * is specified, the associated resources of the stack that the resource
      * belongs to are returned.
      * </p>
      * <p>
-     * For deleted stacks, DescribeStackResources returns resource
-     * information for up to 90 days after the stack has been deleted.
-     * </p>
-     * <p>
-     * If you do not provide either a stack or resource id, information for
-     * all stacks and resources will be returned, up to a limit of 100
-     * records.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> To list more than 100 resources use ListStackResources
+     * <b>NOTE:</b>Only the first 100 resources will be returned. If your
+     * stack has more resources than this, you should use ListStackResources
      * instead.
      * </p>
      * <p>
-     * You can specify either <code>StackName</code> or
-     * <code>PhysicalResourceId.</code> , but not both. In addition, you can
+     * For deleted stacks, <code>DescribeStackResources</code> returns
+     * resource information for up to 90 days after the stack has been
+     * deleted.
+     * </p>
+     * <p>
+     * You must specify either <code>StackName</code> or
+     * <code>PhysicalResourceId</code> , but not both. In addition, you can
      * specify <code>LogicalResourceId</code> to filter the returned result.
      * For more information about resources, the
      * <code>LogicalResourceId</code> and <code>PhysicalResourceId</code> ,
      * go to the <a
-     * http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide">
      * AWS CloudFormation User Guide </a> .
      * </p>
      * <p>
-     * <b>NOTE:</b> A ValidationError is returned if you specify both
+     * <b>NOTE:</b>A ValidationError is returned if you specify both
      * StackName and PhysicalResourceId in the same request.
      * </p>
      *

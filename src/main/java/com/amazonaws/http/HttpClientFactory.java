@@ -81,7 +81,7 @@ class HttpClientFactory {
         HttpProtocolParams.setUserAgent(httpClientParams, userAgent);
         HttpConnectionParams.setConnectionTimeout(httpClientParams, config.getConnectionTimeout());
         HttpConnectionParams.setSoTimeout(httpClientParams, config.getSocketTimeout());
-        HttpConnectionParams.setStaleCheckingEnabled(httpClientParams, true);
+        HttpConnectionParams.setStaleCheckingEnabled(httpClientParams, false);
         HttpConnectionParams.setTcpNoDelay(httpClientParams, true);
 
         int socketSendBufferSizeHint = config.getSocketBufferSizeHints()[0];
@@ -147,25 +147,25 @@ class HttpClientFactory {
     /**
      * Customization of the default redirect strategy provided by HttpClient to be a little
      * less strict about the Location header to account for S3 not sending the Location
-     * header with 301 responses. 
+     * header with 301 responses.
      */
     private final class LocationHeaderNotRequiredRedirectStrategy extends DefaultRedirectStrategy {
-		@Override
-		public boolean isRedirected(HttpRequest request,
-		        HttpResponse response, HttpContext context) throws ProtocolException {
-		    int statusCode = response.getStatusLine().getStatusCode();
-		    Header locationHeader = response.getFirstHeader("location");
+        @Override
+        public boolean isRedirected(HttpRequest request,
+                HttpResponse response, HttpContext context) throws ProtocolException {
+            int statusCode = response.getStatusLine().getStatusCode();
+            Header locationHeader = response.getFirstHeader("location");
 
-		    // Instead of throwing a ProtocolException in this case, just
-		    // return false to indicate that this is not redirected
-		    if (locationHeader == null &&
-		        statusCode == HttpStatus.SC_MOVED_PERMANENTLY) return false;
+            // Instead of throwing a ProtocolException in this case, just
+            // return false to indicate that this is not redirected
+            if (locationHeader == null &&
+                statusCode == HttpStatus.SC_MOVED_PERMANENTLY) return false;
 
-		    return super.isRedirected(request, response, context);
-		}
-	}
+            return super.isRedirected(request, response, context);
+        }
+    }
 
-	/**
+    /**
      * Simple implementation of SchemeSocketFactory (and
      * LayeredSchemeSocketFactory) that bypasses SSL certificate checks. This
      * class is only intended to be used for testing purposes.

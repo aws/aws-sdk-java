@@ -18,11 +18,12 @@ import com.amazonaws.AmazonWebServiceRequest;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.route53.AmazonRoute53#deleteHostedZone(DeleteHostedZoneRequest) DeleteHostedZone operation}.
  * <p>
- * This action deletes a hosted zone. To delete a hosted zone, send a <code>DELETE</code> request to the <code>2012-02-29/hostedzone/hosted zone ID
+ * This action deletes a hosted zone. To delete a hosted zone, send a <code>DELETE</code> request to the <code>2012-12-12/hostedzone/hosted zone ID
  * </code> resource.
  * </p>
  * <p>
- * For more information about deleting a hosted zone, see Deleting a Hosted Zone in the Amazon Route 53 Developer Guide.
+ * For more information about deleting a hosted zone, see <a href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DeleteHostedZone.html">
+ * Deleting a Hosted Zone </a> in the <i>Amazon Route 53 Developer Guide</i> .
  * </p>
  * <p>
  * <b>IMPORTANT:</b> You can delete a hosted zone only if there are no resource record sets other than the default SOA record and NS resource record

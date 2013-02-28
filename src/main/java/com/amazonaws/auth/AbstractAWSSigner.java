@@ -21,6 +21,7 @@ import java.io.UnsupportedEncodingException;
 import java.net.URI;
 import java.security.DigestInputStream;
 import java.security.MessageDigest;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.SortedMap;
@@ -388,6 +389,15 @@ public abstract class AbstractAWSSigner implements Signer {
         }
     }
 
+    protected Date getSignatureDate(int timeOffset) {
+        Date dateValue = new Date();
+        if (timeOffset != 0) {
+            long epochSeconds = dateValue.getTime();
+            dateValue = new Date(epochSeconds-timeOffset);   
+        }
+        return dateValue;
+    }
+    
     /**
      * Adds session credentials to the request given.
      *
@@ -397,5 +407,5 @@ public abstract class AbstractAWSSigner implements Signer {
      *            The session credentials to add to the request
      */
     protected abstract void addSessionCredentials(Request<?> request, AWSSessionCredentials credentials);
-
+    
 }

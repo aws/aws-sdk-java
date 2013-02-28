@@ -33,6 +33,12 @@ import org.apache.http.conn.ClientConnectionManager;
  * <p>
  * This class closes idle connections before they can move into the CLOSE_WAIT
  * state.
+ * <p>
+ * This thread is important because by default, we disable Apache HttpClient's
+ * stale connection checking, so without this thread running in the background,
+ * cleaning up old/inactive HTTP connections, we'd see more IO exceptions when
+ * stale connections (i.e. closed on the AWS side) are left in the connection
+ * pool, and requests grab one of them to begin executing a request.
  */
 public class IdleConnectionReaper extends Thread {
 
@@ -80,7 +86,7 @@ public class IdleConnectionReaper extends Thread {
                 // than block/lock while this loop executes).
                 List<ClientConnectionManager> connectionManagers = null;
                 synchronized (IdleConnectionReaper.class) {
-                    connectionManagers = (List<ClientConnectionManager>)IdleConnectionReaper.connectionManagers.clone();                    
+                    connectionManagers = (List<ClientConnectionManager>)IdleConnectionReaper.connectionManagers.clone();
                 }
                 for (ClientConnectionManager connectionManager : connectionManagers) {
                     // When we release connections, the connection manager leaves them

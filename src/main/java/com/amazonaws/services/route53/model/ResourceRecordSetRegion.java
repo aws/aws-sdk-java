@@ -24,6 +24,7 @@ public enum ResourceRecordSetRegion {
     UsWest2("us-west-2"),
     EuWest1("eu-west-1"),
     ApSoutheast1("ap-southeast-1"),
+    ApSoutheast2("ap-southeast-2"),
     ApNortheast1("ap-northeast-1"),
     SaEast1("sa-east-1");
 
@@ -59,6 +60,8 @@ public enum ResourceRecordSetRegion {
             return ResourceRecordSetRegion.EuWest1;
         } else if ("ap-southeast-1".equals(value)) {
             return ResourceRecordSetRegion.ApSoutheast1;
+        } else if ("ap-southeast-2".equals(value)) {
+            return ResourceRecordSetRegion.ApSoutheast2;
         } else if ("ap-northeast-1".equals(value)) {
             return ResourceRecordSetRegion.ApNortheast1;
         } else if ("sa-east-1".equals(value)) {

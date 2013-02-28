@@ -46,7 +46,7 @@ public class UpdatePipelineStatusRequest extends AmazonWebServiceRequest {
      * jobs. </li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^Active$)|(^Paused$)|(^Hidden$)<br/>
+     * <b>Pattern: </b>(^Active$)|(^Paused$)<br/>
      */
     private String status;
 
@@ -100,7 +100,7 @@ public class UpdatePipelineStatusRequest extends AmazonWebServiceRequest {
      * jobs. </li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^Active$)|(^Paused$)|(^Hidden$)<br/>
+     * <b>Pattern: </b>(^Active$)|(^Paused$)<br/>
      *
      * @return The new status of the pipeline: <ul> <li> <code>active</code>: Enable
      *         the pipeline, so it starts processing jobs. </li> <li>
@@ -118,7 +118,7 @@ public class UpdatePipelineStatusRequest extends AmazonWebServiceRequest {
      * jobs. </li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^Active$)|(^Paused$)|(^Hidden$)<br/>
+     * <b>Pattern: </b>(^Active$)|(^Paused$)<br/>
      *
      * @param status The new status of the pipeline: <ul> <li> <code>active</code>: Enable
      *         the pipeline, so it starts processing jobs. </li> <li>
@@ -138,7 +138,7 @@ public class UpdatePipelineStatusRequest extends AmazonWebServiceRequest {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^Active$)|(^Paused$)|(^Hidden$)<br/>
+     * <b>Pattern: </b>(^Active$)|(^Paused$)<br/>
      *
      * @param status The new status of the pipeline: <ul> <li> <code>active</code>: Enable
      *         the pipeline, so it starts processing jobs. </li> <li>

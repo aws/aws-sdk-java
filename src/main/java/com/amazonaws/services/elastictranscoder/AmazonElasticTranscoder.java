@@ -73,6 +73,7 @@ public interface AmazonElasticTranscoder {
      * @throws AccessDeniedException
      * @throws ResourceInUseException
      * @throws InternalServiceException
+     * @throws ValidationException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -107,6 +108,7 @@ public interface AmazonElasticTranscoder {
      * @throws AccessDeniedException
      * @throws ResourceInUseException
      * @throws InternalServiceException
+     * @throws ValidationException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -133,6 +135,7 @@ public interface AmazonElasticTranscoder {
      * 
      * @throws AccessDeniedException
      * @throws InternalServiceException
+     * @throws ValidationException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -167,6 +170,7 @@ public interface AmazonElasticTranscoder {
      * @throws ResourceNotFoundException
      * @throws AccessDeniedException
      * @throws InternalServiceException
+     * @throws ValidationException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -232,6 +236,7 @@ public interface AmazonElasticTranscoder {
      * @throws ResourceNotFoundException
      * @throws AccessDeniedException
      * @throws InternalServiceException
+     * @throws ValidationException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -259,6 +264,7 @@ public interface AmazonElasticTranscoder {
      * 
      * @throws AccessDeniedException
      * @throws InternalServiceException
+     * @throws ValidationException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -294,6 +300,7 @@ public interface AmazonElasticTranscoder {
      * @throws AccessDeniedException
      * @throws ResourceInUseException
      * @throws InternalServiceException
+     * @throws ValidationException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -327,6 +334,7 @@ public interface AmazonElasticTranscoder {
      * @throws ResourceNotFoundException
      * @throws AccessDeniedException
      * @throws InternalServiceException
+     * @throws ValidationException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -399,6 +407,7 @@ public interface AmazonElasticTranscoder {
      * @throws AccessDeniedException
      * @throws ResourceInUseException
      * @throws InternalServiceException
+     * @throws ValidationException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -426,6 +435,7 @@ public interface AmazonElasticTranscoder {
      * @throws ResourceNotFoundException
      * @throws AccessDeniedException
      * @throws InternalServiceException
+     * @throws ValidationException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -453,6 +463,7 @@ public interface AmazonElasticTranscoder {
      * @throws ResourceNotFoundException
      * @throws AccessDeniedException
      * @throws InternalServiceException
+     * @throws ValidationException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -483,6 +494,7 @@ public interface AmazonElasticTranscoder {
      * @throws ResourceNotFoundException
      * @throws AccessDeniedException
      * @throws InternalServiceException
+     * @throws ValidationException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -556,6 +568,7 @@ public interface AmazonElasticTranscoder {
      * @throws ResourceNotFoundException
      * @throws AccessDeniedException
      * @throws InternalServiceException
+     * @throws ValidationException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -579,6 +592,7 @@ public interface AmazonElasticTranscoder {
      * 
      * @throws AccessDeniedException
      * @throws InternalServiceException
+     * @throws ValidationException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -602,6 +616,7 @@ public interface AmazonElasticTranscoder {
      * 
      * @throws AccessDeniedException
      * @throws InternalServiceException
+     * @throws ValidationException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while

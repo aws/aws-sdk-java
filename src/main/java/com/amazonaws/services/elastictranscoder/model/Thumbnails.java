@@ -25,7 +25,7 @@ public class Thumbnails {
      * Transcoder to create thumbnails when you create a job.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^png$)<br/>
+     * <b>Pattern: </b>(^jpg$)|(^png$)<br/>
      */
     private String format;
 
@@ -67,7 +67,7 @@ public class Thumbnails {
      * Transcoder to create thumbnails when you create a job.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^png$)<br/>
+     * <b>Pattern: </b>(^jpg$)|(^png$)<br/>
      *
      * @return The format of thumbnails, if any. Valid values are <code>jpg</code>
      *         and <code>png</code>. <p>You specify whether you want Elastic
@@ -83,7 +83,7 @@ public class Thumbnails {
      * Transcoder to create thumbnails when you create a job.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^png$)<br/>
+     * <b>Pattern: </b>(^jpg$)|(^png$)<br/>
      *
      * @param format The format of thumbnails, if any. Valid values are <code>jpg</code>
      *         and <code>png</code>. <p>You specify whether you want Elastic
@@ -101,7 +101,7 @@ public class Thumbnails {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^png$)<br/>
+     * <b>Pattern: </b>(^jpg$)|(^png$)<br/>
      *
      * @param format The format of thumbnails, if any. Valid values are <code>jpg</code>
      *         and <code>png</code>. <p>You specify whether you want Elastic

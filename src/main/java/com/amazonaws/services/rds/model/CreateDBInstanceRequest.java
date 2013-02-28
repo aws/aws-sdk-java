@@ -108,9 +108,9 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
     private java.util.List<String> dBSecurityGroups;
 
     /**
-     * A list of Ec2 Vpc Security Groups to associate with this DB Instance.
-     * <p> Default: The default Ec2 Vpc Security Group for the DB Subnet
-     * group's Vpc.
+     * A list of EC2 VPC Security Groups to associate with this DB Instance.
+     * <p> Default: The default EC2 VPC Security Group for the DB Subnet
+     * group's VPC.
      */
     private java.util.List<String> vpcSecurityGroupIds;
 
@@ -242,6 +242,8 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
      * associated with the specified CharacterSet.
      */
     private String characterSetName;
+
+    private Boolean publiclyAccessible;
 
     /**
      * Default constructor for a new CreateDBInstanceRequest object.  Callers should use the
@@ -868,13 +870,13 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * A list of Ec2 Vpc Security Groups to associate with this DB Instance.
-     * <p> Default: The default Ec2 Vpc Security Group for the DB Subnet
-     * group's Vpc.
+     * A list of EC2 VPC Security Groups to associate with this DB Instance.
+     * <p> Default: The default EC2 VPC Security Group for the DB Subnet
+     * group's VPC.
      *
-     * @return A list of Ec2 Vpc Security Groups to associate with this DB Instance.
-     *         <p> Default: The default Ec2 Vpc Security Group for the DB Subnet
-     *         group's Vpc.
+     * @return A list of EC2 VPC Security Groups to associate with this DB Instance.
+     *         <p> Default: The default EC2 VPC Security Group for the DB Subnet
+     *         group's VPC.
      */
     public java.util.List<String> getVpcSecurityGroupIds() {
         
@@ -885,13 +887,13 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * A list of Ec2 Vpc Security Groups to associate with this DB Instance.
-     * <p> Default: The default Ec2 Vpc Security Group for the DB Subnet
-     * group's Vpc.
+     * A list of EC2 VPC Security Groups to associate with this DB Instance.
+     * <p> Default: The default EC2 VPC Security Group for the DB Subnet
+     * group's VPC.
      *
-     * @param vpcSecurityGroupIds A list of Ec2 Vpc Security Groups to associate with this DB Instance.
-     *         <p> Default: The default Ec2 Vpc Security Group for the DB Subnet
-     *         group's Vpc.
+     * @param vpcSecurityGroupIds A list of EC2 VPC Security Groups to associate with this DB Instance.
+     *         <p> Default: The default EC2 VPC Security Group for the DB Subnet
+     *         group's VPC.
      */
     public void setVpcSecurityGroupIds(java.util.Collection<String> vpcSecurityGroupIds) {
         if (vpcSecurityGroupIds == null) {
@@ -905,15 +907,15 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * A list of Ec2 Vpc Security Groups to associate with this DB Instance.
-     * <p> Default: The default Ec2 Vpc Security Group for the DB Subnet
-     * group's Vpc.
+     * A list of EC2 VPC Security Groups to associate with this DB Instance.
+     * <p> Default: The default EC2 VPC Security Group for the DB Subnet
+     * group's VPC.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpcSecurityGroupIds A list of Ec2 Vpc Security Groups to associate with this DB Instance.
-     *         <p> Default: The default Ec2 Vpc Security Group for the DB Subnet
-     *         group's Vpc.
+     * @param vpcSecurityGroupIds A list of EC2 VPC Security Groups to associate with this DB Instance.
+     *         <p> Default: The default EC2 VPC Security Group for the DB Subnet
+     *         group's VPC.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -927,15 +929,15 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
     }
     
     /**
-     * A list of Ec2 Vpc Security Groups to associate with this DB Instance.
-     * <p> Default: The default Ec2 Vpc Security Group for the DB Subnet
-     * group's Vpc.
+     * A list of EC2 VPC Security Groups to associate with this DB Instance.
+     * <p> Default: The default EC2 VPC Security Group for the DB Subnet
+     * group's VPC.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpcSecurityGroupIds A list of Ec2 Vpc Security Groups to associate with this DB Instance.
-     *         <p> Default: The default Ec2 Vpc Security Group for the DB Subnet
-     *         group's Vpc.
+     * @param vpcSecurityGroupIds A list of EC2 VPC Security Groups to associate with this DB Instance.
+     *         <p> Default: The default EC2 VPC Security Group for the DB Subnet
+     *         group's VPC.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -1809,6 +1811,49 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
     
     
     /**
+     * Returns the value of the PubliclyAccessible property for this object.
+     *
+     * @return The value of the PubliclyAccessible property for this object.
+     */
+    public Boolean isPubliclyAccessible() {
+        return publiclyAccessible;
+    }
+    
+    /**
+     * Sets the value of the PubliclyAccessible property for this object.
+     *
+     * @param publiclyAccessible The new value for the PubliclyAccessible property for this object.
+     */
+    public void setPubliclyAccessible(Boolean publiclyAccessible) {
+        this.publiclyAccessible = publiclyAccessible;
+    }
+    
+    /**
+     * Sets the value of the PubliclyAccessible property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param publiclyAccessible The new value for the PubliclyAccessible property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public CreateDBInstanceRequest withPubliclyAccessible(Boolean publiclyAccessible) {
+        this.publiclyAccessible = publiclyAccessible;
+        return this;
+    }
+    
+    
+    /**
+     * Returns the value of the PubliclyAccessible property for this object.
+     *
+     * @return The value of the PubliclyAccessible property for this object.
+     */
+    public Boolean getPubliclyAccessible() {
+        return publiclyAccessible;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -1843,6 +1888,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
         if (getIops() != null) sb.append("Iops: " + getIops() + ", ");
         if (getOptionGroupName() != null) sb.append("OptionGroupName: " + getOptionGroupName() + ", ");
         if (getCharacterSetName() != null) sb.append("CharacterSetName: " + getCharacterSetName() + ", ");
+        if (isPubliclyAccessible() != null) sb.append("PubliclyAccessible: " + isPubliclyAccessible() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -1875,6 +1921,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
         hashCode = prime * hashCode + ((getIops() == null) ? 0 : getIops().hashCode()); 
         hashCode = prime * hashCode + ((getOptionGroupName() == null) ? 0 : getOptionGroupName().hashCode()); 
         hashCode = prime * hashCode + ((getCharacterSetName() == null) ? 0 : getCharacterSetName().hashCode()); 
+        hashCode = prime * hashCode + ((isPubliclyAccessible() == null) ? 0 : isPubliclyAccessible().hashCode()); 
         return hashCode;
     }
     
@@ -1932,6 +1979,8 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest {
         if (other.getOptionGroupName() != null && other.getOptionGroupName().equals(this.getOptionGroupName()) == false) return false; 
         if (other.getCharacterSetName() == null ^ this.getCharacterSetName() == null) return false;
         if (other.getCharacterSetName() != null && other.getCharacterSetName().equals(this.getCharacterSetName()) == false) return false; 
+        if (other.isPubliclyAccessible() == null ^ this.isPubliclyAccessible() == null) return false;
+        if (other.isPubliclyAccessible() != null && other.isPubliclyAccessible().equals(this.isPubliclyAccessible()) == false) return false; 
         return true;
     }
     

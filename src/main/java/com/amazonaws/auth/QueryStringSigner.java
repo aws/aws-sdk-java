@@ -72,7 +72,7 @@ public class QueryStringSigner extends AbstractAWSSigner implements Signer {
     	AWSCredentials sanitizedCredentials = sanitizeCredentials(credentials);
         request.addParameter("AWSAccessKeyId", sanitizedCredentials.getAWSAccessKeyId());
         request.addParameter("SignatureVersion", version.toString());
-        request.addParameter("Timestamp", getFormattedTimestamp());
+        request.addParameter("Timestamp", getFormattedTimestamp(request.getTimeOffset()));
 
         if ( sanitizedCredentials instanceof AWSSessionCredentials ) {
             addSessionCredentials(request, (AWSSessionCredentials) sanitizedCredentials);
@@ -168,7 +168,7 @@ public class QueryStringSigner extends AbstractAWSSigner implements Signer {
     /**
      * Formats date as ISO 8601 timestamp
      */
-    private String getFormattedTimestamp() {
+    private String getFormattedTimestamp(int offset) {
         SimpleDateFormat df = new SimpleDateFormat(
                 "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
         df.setTimeZone(TimeZone.getTimeZone("UTC"));
@@ -176,7 +176,7 @@ public class QueryStringSigner extends AbstractAWSSigner implements Signer {
         if (overriddenDate != null) {
             return df.format(overriddenDate);
         } else {
-            return df.format(new Date());
+            return df.format(getSignatureDate(offset));
         }
     }
 

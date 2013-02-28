@@ -88,6 +88,8 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      */
     private String optionGroupName;
 
+    private Boolean publiclyAccessible;
+
     /**
      * Default constructor for a new CreateDBInstanceReadReplicaRequest object.  Callers should use the
      * setter or fluent setter (with...) methods to initialize this object after creating it.
@@ -497,6 +499,49 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
     
     
     /**
+     * Returns the value of the PubliclyAccessible property for this object.
+     *
+     * @return The value of the PubliclyAccessible property for this object.
+     */
+    public Boolean isPubliclyAccessible() {
+        return publiclyAccessible;
+    }
+    
+    /**
+     * Sets the value of the PubliclyAccessible property for this object.
+     *
+     * @param publiclyAccessible The new value for the PubliclyAccessible property for this object.
+     */
+    public void setPubliclyAccessible(Boolean publiclyAccessible) {
+        this.publiclyAccessible = publiclyAccessible;
+    }
+    
+    /**
+     * Sets the value of the PubliclyAccessible property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param publiclyAccessible The new value for the PubliclyAccessible property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public CreateDBInstanceReadReplicaRequest withPubliclyAccessible(Boolean publiclyAccessible) {
+        this.publiclyAccessible = publiclyAccessible;
+        return this;
+    }
+    
+    
+    /**
+     * Returns the value of the PubliclyAccessible property for this object.
+     *
+     * @return The value of the PubliclyAccessible property for this object.
+     */
+    public Boolean getPubliclyAccessible() {
+        return publiclyAccessible;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -516,6 +561,7 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
         if (isAutoMinorVersionUpgrade() != null) sb.append("AutoMinorVersionUpgrade: " + isAutoMinorVersionUpgrade() + ", ");
         if (getIops() != null) sb.append("Iops: " + getIops() + ", ");
         if (getOptionGroupName() != null) sb.append("OptionGroupName: " + getOptionGroupName() + ", ");
+        if (isPubliclyAccessible() != null) sb.append("PubliclyAccessible: " + isPubliclyAccessible() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -533,6 +579,7 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((isAutoMinorVersionUpgrade() == null) ? 0 : isAutoMinorVersionUpgrade().hashCode()); 
         hashCode = prime * hashCode + ((getIops() == null) ? 0 : getIops().hashCode()); 
         hashCode = prime * hashCode + ((getOptionGroupName() == null) ? 0 : getOptionGroupName().hashCode()); 
+        hashCode = prime * hashCode + ((isPubliclyAccessible() == null) ? 0 : isPubliclyAccessible().hashCode()); 
         return hashCode;
     }
     
@@ -560,6 +607,8 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
         if (other.getIops() != null && other.getIops().equals(this.getIops()) == false) return false; 
         if (other.getOptionGroupName() == null ^ this.getOptionGroupName() == null) return false;
         if (other.getOptionGroupName() != null && other.getOptionGroupName().equals(this.getOptionGroupName()) == false) return false; 
+        if (other.isPubliclyAccessible() == null ^ this.isPubliclyAccessible() == null) return false;
+        if (other.isPubliclyAccessible() != null && other.isPubliclyAccessible().equals(this.isPubliclyAccessible()) == false) return false; 
         return true;
     }
     

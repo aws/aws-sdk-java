@@ -64,6 +64,9 @@ public class CreateDBInstanceReadReplicaRequestMarshaller implements Marshaller<
         if (createDBInstanceReadReplicaRequest.getOptionGroupName() != null) {
             request.addParameter("OptionGroupName", StringUtils.fromString(createDBInstanceReadReplicaRequest.getOptionGroupName()));
         }
+        if (createDBInstanceReadReplicaRequest.isPubliclyAccessible() != null) {
+            request.addParameter("PubliclyAccessible", StringUtils.fromBoolean(createDBInstanceReadReplicaRequest.isPubliclyAccessible()));
+        }
 
 
         return request;

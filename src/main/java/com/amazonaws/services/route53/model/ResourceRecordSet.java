@@ -38,9 +38,9 @@ public class ResourceRecordSet {
     private String type;
 
     /**
-     * <i>Weighted resource record sets or Regional resource record sets
-     * only:</i> An identifier that differentiates among multiple resource
-     * record sets that have the same combination of DNS name and type.
+     * <i>Weighted, Regional, and Failover resource record sets only:</i> An
+     * identifier that differentiates among multiple resource record sets
+     * that have the same combination of DNS name and type.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
@@ -65,9 +65,32 @@ public class ResourceRecordSet {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
-     * <b>Allowed Values: </b>us-east-1, us-west-1, us-west-2, eu-west-1, ap-southeast-1, ap-northeast-1, sa-east-1
+     * <b>Allowed Values: </b>us-east-1, us-west-1, us-west-2, eu-west-1, ap-southeast-1, ap-southeast-2, ap-northeast-1, sa-east-1
      */
     private String region;
+
+    /**
+     * <i>Failover resource record sets only:</i> Among resource record sets
+     * that have the same combination of DNS name and type, a value that
+     * indicates whether the current resource record set is a primary or
+     * secondary resource record set. A failover set may contain at most one
+     * resource record set marked as primary and one resource record set
+     * marked as secondary. A resource record set marked as primary will be
+     * returned if any of the following are true: (1) an associated health
+     * check is passing, (2) if the resource record set is an alias with the
+     * evaluate target health and at least one target resource record set is
+     * healthy, (3) both the primary and secondary resource record set are
+     * failing health checks or (4) there is no secondary resource record
+     * set. A secondary resource record set will be returned if: (1) the
+     * primary is failing a health check and either the secondary is passing
+     * a health check or has no associated health check, or (2) there is no
+     * primary resource record set. <p>Valid values: <code>PRIMARY</code> |
+     * <code>SECONDARY</code>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>PRIMARY, SECONDARY
+     */
+    private String failover;
 
     /**
      * The cache time to live for the current resource record set.
@@ -87,10 +110,20 @@ public class ResourceRecordSet {
     private java.util.List<ResourceRecord> resourceRecords;
 
     /**
-     * <i>Alias resource record sets only:</i> Information about the Elastic
-     * Load Balancing LoadBalancer to which you are redirecting traffic.
+     * <i>Alias resource record sets only:</i> Information about the AWS
+     * resource to which you are redirecting traffic.
      */
     private AliasTarget aliasTarget;
+
+    /**
+     * <i>Health Check resource record sets only, not required for alias
+     * resource record sets:</i> An identifier that is used to identify
+     * health check associated with the resource record set.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 64<br/>
+     */
+    private String healthCheckId;
 
     /**
      * Default constructor for a new ResourceRecordSet object.  Callers should use the
@@ -253,50 +286,50 @@ public class ResourceRecordSet {
     }
     
     /**
-     * <i>Weighted resource record sets or Regional resource record sets
-     * only:</i> An identifier that differentiates among multiple resource
-     * record sets that have the same combination of DNS name and type.
+     * <i>Weighted, Regional, and Failover resource record sets only:</i> An
+     * identifier that differentiates among multiple resource record sets
+     * that have the same combination of DNS name and type.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      *
-     * @return <i>Weighted resource record sets or Regional resource record sets
-     *         only:</i> An identifier that differentiates among multiple resource
-     *         record sets that have the same combination of DNS name and type.
+     * @return <i>Weighted, Regional, and Failover resource record sets only:</i> An
+     *         identifier that differentiates among multiple resource record sets
+     *         that have the same combination of DNS name and type.
      */
     public String getSetIdentifier() {
         return setIdentifier;
     }
     
     /**
-     * <i>Weighted resource record sets or Regional resource record sets
-     * only:</i> An identifier that differentiates among multiple resource
-     * record sets that have the same combination of DNS name and type.
+     * <i>Weighted, Regional, and Failover resource record sets only:</i> An
+     * identifier that differentiates among multiple resource record sets
+     * that have the same combination of DNS name and type.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      *
-     * @param setIdentifier <i>Weighted resource record sets or Regional resource record sets
-     *         only:</i> An identifier that differentiates among multiple resource
-     *         record sets that have the same combination of DNS name and type.
+     * @param setIdentifier <i>Weighted, Regional, and Failover resource record sets only:</i> An
+     *         identifier that differentiates among multiple resource record sets
+     *         that have the same combination of DNS name and type.
      */
     public void setSetIdentifier(String setIdentifier) {
         this.setIdentifier = setIdentifier;
     }
     
     /**
-     * <i>Weighted resource record sets or Regional resource record sets
-     * only:</i> An identifier that differentiates among multiple resource
-     * record sets that have the same combination of DNS name and type.
+     * <i>Weighted, Regional, and Failover resource record sets only:</i> An
+     * identifier that differentiates among multiple resource record sets
+     * that have the same combination of DNS name and type.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 128<br/>
      *
-     * @param setIdentifier <i>Weighted resource record sets or Regional resource record sets
-     *         only:</i> An identifier that differentiates among multiple resource
-     *         record sets that have the same combination of DNS name and type.
+     * @param setIdentifier <i>Weighted, Regional, and Failover resource record sets only:</i> An
+     *         identifier that differentiates among multiple resource record sets
+     *         that have the same combination of DNS name and type.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -375,7 +408,7 @@ public class ResourceRecordSet {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
-     * <b>Allowed Values: </b>us-east-1, us-west-1, us-west-2, eu-west-1, ap-southeast-1, ap-northeast-1, sa-east-1
+     * <b>Allowed Values: </b>us-east-1, us-west-1, us-west-2, eu-west-1, ap-southeast-1, ap-southeast-2, ap-northeast-1, sa-east-1
      *
      * @return <i>Regional resource record sets only:</i> Among resource record sets
      *         that have the same combination of DNS name and type, a value that
@@ -394,7 +427,7 @@ public class ResourceRecordSet {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
-     * <b>Allowed Values: </b>us-east-1, us-west-1, us-west-2, eu-west-1, ap-southeast-1, ap-northeast-1, sa-east-1
+     * <b>Allowed Values: </b>us-east-1, us-west-1, us-west-2, eu-west-1, ap-southeast-1, ap-southeast-2, ap-northeast-1, sa-east-1
      *
      * @param region <i>Regional resource record sets only:</i> Among resource record sets
      *         that have the same combination of DNS name and type, a value that
@@ -415,7 +448,7 @@ public class ResourceRecordSet {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
-     * <b>Allowed Values: </b>us-east-1, us-west-1, us-west-2, eu-west-1, ap-southeast-1, ap-northeast-1, sa-east-1
+     * <b>Allowed Values: </b>us-east-1, us-west-1, us-west-2, eu-west-1, ap-southeast-1, ap-southeast-2, ap-northeast-1, sa-east-1
      *
      * @param region <i>Regional resource record sets only:</i> Among resource record sets
      *         that have the same combination of DNS name and type, a value that
@@ -439,7 +472,7 @@ public class ResourceRecordSet {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
-     * <b>Allowed Values: </b>us-east-1, us-west-1, us-west-2, eu-west-1, ap-southeast-1, ap-northeast-1, sa-east-1
+     * <b>Allowed Values: </b>us-east-1, us-west-1, us-west-2, eu-west-1, ap-southeast-1, ap-southeast-2, ap-northeast-1, sa-east-1
      *
      * @param region <i>Regional resource record sets only:</i> Among resource record sets
      *         that have the same combination of DNS name and type, a value that
@@ -460,7 +493,7 @@ public class ResourceRecordSet {
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 64<br/>
-     * <b>Allowed Values: </b>us-east-1, us-west-1, us-west-2, eu-west-1, ap-southeast-1, ap-northeast-1, sa-east-1
+     * <b>Allowed Values: </b>us-east-1, us-west-1, us-west-2, eu-west-1, ap-southeast-1, ap-southeast-2, ap-northeast-1, sa-east-1
      *
      * @param region <i>Regional resource record sets only:</i> Among resource record sets
      *         that have the same combination of DNS name and type, a value that
@@ -473,6 +506,239 @@ public class ResourceRecordSet {
      */
     public ResourceRecordSet withRegion(ResourceRecordSetRegion region) {
         this.region = region.toString();
+        return this;
+    }
+    
+    /**
+     * <i>Failover resource record sets only:</i> Among resource record sets
+     * that have the same combination of DNS name and type, a value that
+     * indicates whether the current resource record set is a primary or
+     * secondary resource record set. A failover set may contain at most one
+     * resource record set marked as primary and one resource record set
+     * marked as secondary. A resource record set marked as primary will be
+     * returned if any of the following are true: (1) an associated health
+     * check is passing, (2) if the resource record set is an alias with the
+     * evaluate target health and at least one target resource record set is
+     * healthy, (3) both the primary and secondary resource record set are
+     * failing health checks or (4) there is no secondary resource record
+     * set. A secondary resource record set will be returned if: (1) the
+     * primary is failing a health check and either the secondary is passing
+     * a health check or has no associated health check, or (2) there is no
+     * primary resource record set. <p>Valid values: <code>PRIMARY</code> |
+     * <code>SECONDARY</code>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>PRIMARY, SECONDARY
+     *
+     * @return <i>Failover resource record sets only:</i> Among resource record sets
+     *         that have the same combination of DNS name and type, a value that
+     *         indicates whether the current resource record set is a primary or
+     *         secondary resource record set. A failover set may contain at most one
+     *         resource record set marked as primary and one resource record set
+     *         marked as secondary. A resource record set marked as primary will be
+     *         returned if any of the following are true: (1) an associated health
+     *         check is passing, (2) if the resource record set is an alias with the
+     *         evaluate target health and at least one target resource record set is
+     *         healthy, (3) both the primary and secondary resource record set are
+     *         failing health checks or (4) there is no secondary resource record
+     *         set. A secondary resource record set will be returned if: (1) the
+     *         primary is failing a health check and either the secondary is passing
+     *         a health check or has no associated health check, or (2) there is no
+     *         primary resource record set. <p>Valid values: <code>PRIMARY</code> |
+     *         <code>SECONDARY</code>
+     *
+     * @see ResourceRecordSetFailover
+     */
+    public String getFailover() {
+        return failover;
+    }
+    
+    /**
+     * <i>Failover resource record sets only:</i> Among resource record sets
+     * that have the same combination of DNS name and type, a value that
+     * indicates whether the current resource record set is a primary or
+     * secondary resource record set. A failover set may contain at most one
+     * resource record set marked as primary and one resource record set
+     * marked as secondary. A resource record set marked as primary will be
+     * returned if any of the following are true: (1) an associated health
+     * check is passing, (2) if the resource record set is an alias with the
+     * evaluate target health and at least one target resource record set is
+     * healthy, (3) both the primary and secondary resource record set are
+     * failing health checks or (4) there is no secondary resource record
+     * set. A secondary resource record set will be returned if: (1) the
+     * primary is failing a health check and either the secondary is passing
+     * a health check or has no associated health check, or (2) there is no
+     * primary resource record set. <p>Valid values: <code>PRIMARY</code> |
+     * <code>SECONDARY</code>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>PRIMARY, SECONDARY
+     *
+     * @param failover <i>Failover resource record sets only:</i> Among resource record sets
+     *         that have the same combination of DNS name and type, a value that
+     *         indicates whether the current resource record set is a primary or
+     *         secondary resource record set. A failover set may contain at most one
+     *         resource record set marked as primary and one resource record set
+     *         marked as secondary. A resource record set marked as primary will be
+     *         returned if any of the following are true: (1) an associated health
+     *         check is passing, (2) if the resource record set is an alias with the
+     *         evaluate target health and at least one target resource record set is
+     *         healthy, (3) both the primary and secondary resource record set are
+     *         failing health checks or (4) there is no secondary resource record
+     *         set. A secondary resource record set will be returned if: (1) the
+     *         primary is failing a health check and either the secondary is passing
+     *         a health check or has no associated health check, or (2) there is no
+     *         primary resource record set. <p>Valid values: <code>PRIMARY</code> |
+     *         <code>SECONDARY</code>
+     *
+     * @see ResourceRecordSetFailover
+     */
+    public void setFailover(String failover) {
+        this.failover = failover;
+    }
+    
+    /**
+     * <i>Failover resource record sets only:</i> Among resource record sets
+     * that have the same combination of DNS name and type, a value that
+     * indicates whether the current resource record set is a primary or
+     * secondary resource record set. A failover set may contain at most one
+     * resource record set marked as primary and one resource record set
+     * marked as secondary. A resource record set marked as primary will be
+     * returned if any of the following are true: (1) an associated health
+     * check is passing, (2) if the resource record set is an alias with the
+     * evaluate target health and at least one target resource record set is
+     * healthy, (3) both the primary and secondary resource record set are
+     * failing health checks or (4) there is no secondary resource record
+     * set. A secondary resource record set will be returned if: (1) the
+     * primary is failing a health check and either the secondary is passing
+     * a health check or has no associated health check, or (2) there is no
+     * primary resource record set. <p>Valid values: <code>PRIMARY</code> |
+     * <code>SECONDARY</code>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>PRIMARY, SECONDARY
+     *
+     * @param failover <i>Failover resource record sets only:</i> Among resource record sets
+     *         that have the same combination of DNS name and type, a value that
+     *         indicates whether the current resource record set is a primary or
+     *         secondary resource record set. A failover set may contain at most one
+     *         resource record set marked as primary and one resource record set
+     *         marked as secondary. A resource record set marked as primary will be
+     *         returned if any of the following are true: (1) an associated health
+     *         check is passing, (2) if the resource record set is an alias with the
+     *         evaluate target health and at least one target resource record set is
+     *         healthy, (3) both the primary and secondary resource record set are
+     *         failing health checks or (4) there is no secondary resource record
+     *         set. A secondary resource record set will be returned if: (1) the
+     *         primary is failing a health check and either the secondary is passing
+     *         a health check or has no associated health check, or (2) there is no
+     *         primary resource record set. <p>Valid values: <code>PRIMARY</code> |
+     *         <code>SECONDARY</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see ResourceRecordSetFailover
+     */
+    public ResourceRecordSet withFailover(String failover) {
+        this.failover = failover;
+        return this;
+    }
+    
+    
+    /**
+     * <i>Failover resource record sets only:</i> Among resource record sets
+     * that have the same combination of DNS name and type, a value that
+     * indicates whether the current resource record set is a primary or
+     * secondary resource record set. A failover set may contain at most one
+     * resource record set marked as primary and one resource record set
+     * marked as secondary. A resource record set marked as primary will be
+     * returned if any of the following are true: (1) an associated health
+     * check is passing, (2) if the resource record set is an alias with the
+     * evaluate target health and at least one target resource record set is
+     * healthy, (3) both the primary and secondary resource record set are
+     * failing health checks or (4) there is no secondary resource record
+     * set. A secondary resource record set will be returned if: (1) the
+     * primary is failing a health check and either the secondary is passing
+     * a health check or has no associated health check, or (2) there is no
+     * primary resource record set. <p>Valid values: <code>PRIMARY</code> |
+     * <code>SECONDARY</code>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>PRIMARY, SECONDARY
+     *
+     * @param failover <i>Failover resource record sets only:</i> Among resource record sets
+     *         that have the same combination of DNS name and type, a value that
+     *         indicates whether the current resource record set is a primary or
+     *         secondary resource record set. A failover set may contain at most one
+     *         resource record set marked as primary and one resource record set
+     *         marked as secondary. A resource record set marked as primary will be
+     *         returned if any of the following are true: (1) an associated health
+     *         check is passing, (2) if the resource record set is an alias with the
+     *         evaluate target health and at least one target resource record set is
+     *         healthy, (3) both the primary and secondary resource record set are
+     *         failing health checks or (4) there is no secondary resource record
+     *         set. A secondary resource record set will be returned if: (1) the
+     *         primary is failing a health check and either the secondary is passing
+     *         a health check or has no associated health check, or (2) there is no
+     *         primary resource record set. <p>Valid values: <code>PRIMARY</code> |
+     *         <code>SECONDARY</code>
+     *
+     * @see ResourceRecordSetFailover
+     */
+    public void setFailover(ResourceRecordSetFailover failover) {
+        this.failover = failover.toString();
+    }
+    
+    /**
+     * <i>Failover resource record sets only:</i> Among resource record sets
+     * that have the same combination of DNS name and type, a value that
+     * indicates whether the current resource record set is a primary or
+     * secondary resource record set. A failover set may contain at most one
+     * resource record set marked as primary and one resource record set
+     * marked as secondary. A resource record set marked as primary will be
+     * returned if any of the following are true: (1) an associated health
+     * check is passing, (2) if the resource record set is an alias with the
+     * evaluate target health and at least one target resource record set is
+     * healthy, (3) both the primary and secondary resource record set are
+     * failing health checks or (4) there is no secondary resource record
+     * set. A secondary resource record set will be returned if: (1) the
+     * primary is failing a health check and either the secondary is passing
+     * a health check or has no associated health check, or (2) there is no
+     * primary resource record set. <p>Valid values: <code>PRIMARY</code> |
+     * <code>SECONDARY</code>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>PRIMARY, SECONDARY
+     *
+     * @param failover <i>Failover resource record sets only:</i> Among resource record sets
+     *         that have the same combination of DNS name and type, a value that
+     *         indicates whether the current resource record set is a primary or
+     *         secondary resource record set. A failover set may contain at most one
+     *         resource record set marked as primary and one resource record set
+     *         marked as secondary. A resource record set marked as primary will be
+     *         returned if any of the following are true: (1) an associated health
+     *         check is passing, (2) if the resource record set is an alias with the
+     *         evaluate target health and at least one target resource record set is
+     *         healthy, (3) both the primary and secondary resource record set are
+     *         failing health checks or (4) there is no secondary resource record
+     *         set. A secondary resource record set will be returned if: (1) the
+     *         primary is failing a health check and either the secondary is passing
+     *         a health check or has no associated health check, or (2) there is no
+     *         primary resource record set. <p>Valid values: <code>PRIMARY</code> |
+     *         <code>SECONDARY</code>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see ResourceRecordSetFailover
+     */
+    public ResourceRecordSet withFailover(ResourceRecordSetFailover failover) {
+        this.failover = failover.toString();
         return this;
     }
     
@@ -609,41 +875,96 @@ public class ResourceRecordSet {
     }
     
     /**
-     * <i>Alias resource record sets only:</i> Information about the Elastic
-     * Load Balancing LoadBalancer to which you are redirecting traffic.
+     * <i>Alias resource record sets only:</i> Information about the AWS
+     * resource to which you are redirecting traffic.
      *
-     * @return <i>Alias resource record sets only:</i> Information about the Elastic
-     *         Load Balancing LoadBalancer to which you are redirecting traffic.
+     * @return <i>Alias resource record sets only:</i> Information about the AWS
+     *         resource to which you are redirecting traffic.
      */
     public AliasTarget getAliasTarget() {
         return aliasTarget;
     }
     
     /**
-     * <i>Alias resource record sets only:</i> Information about the Elastic
-     * Load Balancing LoadBalancer to which you are redirecting traffic.
+     * <i>Alias resource record sets only:</i> Information about the AWS
+     * resource to which you are redirecting traffic.
      *
-     * @param aliasTarget <i>Alias resource record sets only:</i> Information about the Elastic
-     *         Load Balancing LoadBalancer to which you are redirecting traffic.
+     * @param aliasTarget <i>Alias resource record sets only:</i> Information about the AWS
+     *         resource to which you are redirecting traffic.
      */
     public void setAliasTarget(AliasTarget aliasTarget) {
         this.aliasTarget = aliasTarget;
     }
     
     /**
-     * <i>Alias resource record sets only:</i> Information about the Elastic
-     * Load Balancing LoadBalancer to which you are redirecting traffic.
+     * <i>Alias resource record sets only:</i> Information about the AWS
+     * resource to which you are redirecting traffic.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param aliasTarget <i>Alias resource record sets only:</i> Information about the Elastic
-     *         Load Balancing LoadBalancer to which you are redirecting traffic.
+     * @param aliasTarget <i>Alias resource record sets only:</i> Information about the AWS
+     *         resource to which you are redirecting traffic.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
     public ResourceRecordSet withAliasTarget(AliasTarget aliasTarget) {
         this.aliasTarget = aliasTarget;
+        return this;
+    }
+    
+    
+    /**
+     * <i>Health Check resource record sets only, not required for alias
+     * resource record sets:</i> An identifier that is used to identify
+     * health check associated with the resource record set.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 64<br/>
+     *
+     * @return <i>Health Check resource record sets only, not required for alias
+     *         resource record sets:</i> An identifier that is used to identify
+     *         health check associated with the resource record set.
+     */
+    public String getHealthCheckId() {
+        return healthCheckId;
+    }
+    
+    /**
+     * <i>Health Check resource record sets only, not required for alias
+     * resource record sets:</i> An identifier that is used to identify
+     * health check associated with the resource record set.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 64<br/>
+     *
+     * @param healthCheckId <i>Health Check resource record sets only, not required for alias
+     *         resource record sets:</i> An identifier that is used to identify
+     *         health check associated with the resource record set.
+     */
+    public void setHealthCheckId(String healthCheckId) {
+        this.healthCheckId = healthCheckId;
+    }
+    
+    /**
+     * <i>Health Check resource record sets only, not required for alias
+     * resource record sets:</i> An identifier that is used to identify
+     * health check associated with the resource record set.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 64<br/>
+     *
+     * @param healthCheckId <i>Health Check resource record sets only, not required for alias
+     *         resource record sets:</i> An identifier that is used to identify
+     *         health check associated with the resource record set.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public ResourceRecordSet withHealthCheckId(String healthCheckId) {
+        this.healthCheckId = healthCheckId;
         return this;
     }
     
@@ -665,9 +986,11 @@ public class ResourceRecordSet {
         if (getSetIdentifier() != null) sb.append("SetIdentifier: " + getSetIdentifier() + ", ");
         if (getWeight() != null) sb.append("Weight: " + getWeight() + ", ");
         if (getRegion() != null) sb.append("Region: " + getRegion() + ", ");
+        if (getFailover() != null) sb.append("Failover: " + getFailover() + ", ");
         if (getTTL() != null) sb.append("TTL: " + getTTL() + ", ");
         if (getResourceRecords() != null) sb.append("ResourceRecords: " + getResourceRecords() + ", ");
         if (getAliasTarget() != null) sb.append("AliasTarget: " + getAliasTarget() + ", ");
+        if (getHealthCheckId() != null) sb.append("HealthCheckId: " + getHealthCheckId() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -682,9 +1005,11 @@ public class ResourceRecordSet {
         hashCode = prime * hashCode + ((getSetIdentifier() == null) ? 0 : getSetIdentifier().hashCode()); 
         hashCode = prime * hashCode + ((getWeight() == null) ? 0 : getWeight().hashCode()); 
         hashCode = prime * hashCode + ((getRegion() == null) ? 0 : getRegion().hashCode()); 
+        hashCode = prime * hashCode + ((getFailover() == null) ? 0 : getFailover().hashCode()); 
         hashCode = prime * hashCode + ((getTTL() == null) ? 0 : getTTL().hashCode()); 
         hashCode = prime * hashCode + ((getResourceRecords() == null) ? 0 : getResourceRecords().hashCode()); 
         hashCode = prime * hashCode + ((getAliasTarget() == null) ? 0 : getAliasTarget().hashCode()); 
+        hashCode = prime * hashCode + ((getHealthCheckId() == null) ? 0 : getHealthCheckId().hashCode()); 
         return hashCode;
     }
     
@@ -706,12 +1031,16 @@ public class ResourceRecordSet {
         if (other.getWeight() != null && other.getWeight().equals(this.getWeight()) == false) return false; 
         if (other.getRegion() == null ^ this.getRegion() == null) return false;
         if (other.getRegion() != null && other.getRegion().equals(this.getRegion()) == false) return false; 
+        if (other.getFailover() == null ^ this.getFailover() == null) return false;
+        if (other.getFailover() != null && other.getFailover().equals(this.getFailover()) == false) return false; 
         if (other.getTTL() == null ^ this.getTTL() == null) return false;
         if (other.getTTL() != null && other.getTTL().equals(this.getTTL()) == false) return false; 
         if (other.getResourceRecords() == null ^ this.getResourceRecords() == null) return false;
         if (other.getResourceRecords() != null && other.getResourceRecords().equals(this.getResourceRecords()) == false) return false; 
         if (other.getAliasTarget() == null ^ this.getAliasTarget() == null) return false;
         if (other.getAliasTarget() != null && other.getAliasTarget().equals(this.getAliasTarget()) == false) return false; 
+        if (other.getHealthCheckId() == null ^ this.getHealthCheckId() == null) return false;
+        if (other.getHealthCheckId() != null && other.getHealthCheckId().equals(this.getHealthCheckId()) == false) return false; 
         return true;
     }
     

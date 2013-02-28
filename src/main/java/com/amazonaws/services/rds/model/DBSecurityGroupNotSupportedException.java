@@ -17,7 +17,9 @@ package com.amazonaws.services.rds.model;
 import com.amazonaws.AmazonServiceException;
 
 /**
- * AmazonRDS exception
+ * <p>
+ * A DB security group is not allowed for this action.
+ * </p>
  */        
 public class DBSecurityGroupNotSupportedException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;
