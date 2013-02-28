@@ -733,9 +733,9 @@ public class TransferManager {
      *            null or empty string to upload files to the root of the
      *            bucket.
      * @param directory
-     *            The common parent directory of fileList to upload. The keys
-     *            of the files in the fileList are constructed relative to this
-     *            directory.
+     *            The common parent directory of files to upload. The keys
+     *            of the files in the list of files are constructed relative to
+     *            this directory.
      * @param files
      *            A list of files to upload. The keys of the files are
      *            calculated relative to the commonParentDirectory and the
@@ -770,6 +770,7 @@ public class TransferManager {
 
         long totalSize = 0;
         for (File f : files) {
+            //Check, if file, since only files can be uploaded.
             if (f.isFile()) {
                 totalSize += f.length();
                 String key = f.getAbsolutePath().substring(directory.getAbsolutePath().length() + 1)
