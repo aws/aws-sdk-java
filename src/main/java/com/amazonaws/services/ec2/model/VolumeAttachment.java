@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Specifies the details of a how an EC2 EBS volume is attached to an instance.
  * </p>
  */
-public class VolumeAttachment {
+public class VolumeAttachment  implements Serializable  {
 
     /**
      * 

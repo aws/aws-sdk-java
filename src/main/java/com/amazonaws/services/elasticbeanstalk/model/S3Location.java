@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elasticbeanstalk.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * A specification of a location in Amazon S3.
  * </p>
  */
-public class S3Location {
+public class S3Location  implements Serializable  {
 
     /**
      * The Amazon S3 bucket where the data is located.

@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.simpleemail.model;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -20,7 +21,7 @@ package com.amazonaws.services.simpleemail.model;
  * variety of email clients.
  * </p>
  */
-public class Body {
+public class Body  implements Serializable  {
 
     /**
      * The content of the message, in text format. Use this for text-based

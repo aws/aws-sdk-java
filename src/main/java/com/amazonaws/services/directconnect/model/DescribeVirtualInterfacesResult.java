@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.directconnect.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * A structure containing a list of virtual interfaces.
  * </p>
  */
-public class DescribeVirtualInterfacesResult {
+public class DescribeVirtualInterfacesResult  implements Serializable  {
 
     /**
      * A list of virtual interfaces.

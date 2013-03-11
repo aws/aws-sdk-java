@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#importVolume(ImportVolumeRequest) ImportVolume operation}.
@@ -21,7 +22,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#importVolume(ImportVolumeRequest)
  */
-public class ImportVolumeRequest extends AmazonWebServiceRequest {
+public class ImportVolumeRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     private String availabilityZone;
 

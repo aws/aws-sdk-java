@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.autoscaling.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The <code>InstanceMonitoring</code> data type.
  * </p>
  */
-public class InstanceMonitoring {
+public class InstanceMonitoring  implements Serializable  {
 
     /**
      * If <code>True</code>, instance monitoring is enabled.

@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.cloudfront.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Origin access identity configuration.
  * </p>
  */
-public class CloudFrontOriginAccessIdentityConfig {
+public class CloudFrontOriginAccessIdentityConfig  implements Serializable  {
 
     /**
      * A unique number that ensures the request can't be replayed. If the

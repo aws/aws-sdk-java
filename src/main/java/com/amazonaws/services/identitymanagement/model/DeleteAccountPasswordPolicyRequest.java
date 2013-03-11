@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.identitymanagement.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteAccountPasswordPolicy(DeleteAccountPasswordPolicyRequest) DeleteAccountPasswordPolicy operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteAccountPasswordPolicy(DeleteAccountPasswordPolicyRequest)
  */
-public class DeleteAccountPasswordPolicyRequest extends AmazonWebServiceRequest {
+public class DeleteAccountPasswordPolicyRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * Returns a string representation of this object; useful for testing and

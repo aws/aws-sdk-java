@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.opsworks.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.opsworks.AWSOpsWorks#createDeployment(CreateDeploymentRequest) CreateDeployment operation}.
@@ -30,7 +31,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#createDeployment(CreateDeploymentRequest)
  */
-public class CreateDeploymentRequest extends AmazonWebServiceRequest {
+public class CreateDeploymentRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The stack ID.

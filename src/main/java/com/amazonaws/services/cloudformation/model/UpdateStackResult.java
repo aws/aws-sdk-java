@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.cloudformation.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The output for a UpdateStack action.
  * </p>
  */
-public class UpdateStackResult {
+public class UpdateStackResult  implements Serializable  {
 
     /**
      * Unique identifier of the stack.

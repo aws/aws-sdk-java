@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.simpleworkflow.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#respondActivityTaskCanceled(RespondActivityTaskCanceledRequest) RespondActivityTaskCanceled operation}.
@@ -54,7 +55,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#respondActivityTaskCanceled(RespondActivityTaskCanceledRequest)
  */
-public class RespondActivityTaskCanceledRequest extends AmazonWebServiceRequest {
+public class RespondActivityTaskCanceledRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The <code>taskToken</code> of the <a>ActivityTask</a>. <important> The

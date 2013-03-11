@@ -13,11 +13,12 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elastictranscoder.model;
+import java.io.Serializable;
 
 /**
  * 
  */
-public class ListPipelinesResult {
+public class ListPipelinesResult  implements Serializable  {
 
     /**
      * An array of <code>Pipeline</code> objects.

@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.rds.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#modifyOptionGroup(ModifyOptionGroupRequest) ModifyOptionGroup operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#modifyOptionGroup(ModifyOptionGroupRequest)
  */
-public class ModifyOptionGroupRequest extends AmazonWebServiceRequest {
+public class ModifyOptionGroupRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of the option group to be modified.

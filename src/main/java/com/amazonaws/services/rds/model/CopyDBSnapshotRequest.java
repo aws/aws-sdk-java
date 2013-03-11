@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.rds.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#copyDBSnapshot(CopyDBSnapshotRequest) CopyDBSnapshot operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#copyDBSnapshot(CopyDBSnapshotRequest)
  */
-public class CopyDBSnapshotRequest extends AmazonWebServiceRequest {
+public class CopyDBSnapshotRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The identifier for the source DB snapshot. <p>Constraints: <ul>

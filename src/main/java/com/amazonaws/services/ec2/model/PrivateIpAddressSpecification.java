@@ -13,11 +13,12 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * Private Ip Address Specification
  */
-public class PrivateIpAddressSpecification {
+public class PrivateIpAddressSpecification  implements Serializable  {
 
     private String privateIpAddress;
 

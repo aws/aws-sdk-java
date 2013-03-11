@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Describes where an Amazon EC2 instance is running within an Amazon EC2 region.
  * </p>
  */
-public class SpotPlacement {
+public class SpotPlacement  implements Serializable  {
 
     /**
      * The availability zone in which an Amazon EC2 instance runs.

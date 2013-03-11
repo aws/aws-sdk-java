@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.simpleworkflow.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#signalWorkflowExecution(SignalWorkflowExecutionRequest) SignalWorkflowExecution operation}.
@@ -49,7 +50,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#signalWorkflowExecution(SignalWorkflowExecutionRequest)
  */
-public class SignalWorkflowExecutionRequest extends AmazonWebServiceRequest {
+public class SignalWorkflowExecutionRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of the domain containing the workflow execution to signal.

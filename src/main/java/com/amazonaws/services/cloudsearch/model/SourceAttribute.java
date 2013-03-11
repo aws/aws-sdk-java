@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.cloudsearch.model;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -20,7 +21,7 @@ package com.amazonaws.services.cloudsearch.model;
  * default, the value of the source attribute is copied to the index field.
  * </p>
  */
-public class SourceAttribute {
+public class SourceAttribute  implements Serializable  {
 
     /**
      * Identifies the transformation to apply when copying data from a source

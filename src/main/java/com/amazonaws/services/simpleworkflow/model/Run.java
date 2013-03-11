@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.simpleworkflow.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Specifies the <code>runId</code> of a workflow execution.
  * </p>
  */
-public class Run {
+public class Run  implements Serializable  {
 
     /**
      * The <code>runId</code> of a workflow execution. This Id is generated

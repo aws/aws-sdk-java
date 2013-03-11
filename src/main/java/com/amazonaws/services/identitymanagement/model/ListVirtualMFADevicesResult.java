@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.identitymanagement.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Contains the result of a successful invocation of the ListVirtualMFADevices action.
  * </p>
  */
-public class ListVirtualMFADevicesResult {
+public class ListVirtualMFADevicesResult  implements Serializable  {
 
     private java.util.List<VirtualMFADevice> virtualMFADevices;
 

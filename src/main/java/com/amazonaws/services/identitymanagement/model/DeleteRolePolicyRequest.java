@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.identitymanagement.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteRolePolicy(DeleteRolePolicyRequest) DeleteRolePolicy operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteRolePolicy(DeleteRolePolicyRequest)
  */
-public class DeleteRolePolicyRequest extends AmazonWebServiceRequest {
+public class DeleteRolePolicyRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * Name of the role the associated with the policy.

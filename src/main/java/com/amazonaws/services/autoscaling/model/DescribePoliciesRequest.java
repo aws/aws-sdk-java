@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.autoscaling.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.autoscaling.AmazonAutoScaling#describePolicies(DescribePoliciesRequest) DescribePolicies operation}.
@@ -24,7 +25,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#describePolicies(DescribePoliciesRequest)
  */
-public class DescribePoliciesRequest extends AmazonWebServiceRequest {
+public class DescribePoliciesRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of the Auto Scaling group.

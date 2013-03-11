@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#monitorInstances(MonitorInstancesRequest) MonitorInstances operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#monitorInstances(MonitorInstancesRequest)
  */
-public class MonitorInstancesRequest extends AmazonWebServiceRequest {
+public class MonitorInstancesRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The list of Amazon EC2 instances on which to enable monitoring.

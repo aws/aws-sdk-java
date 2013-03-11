@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.elasticloadbalancing.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#attachLoadBalancerToSubnets(AttachLoadBalancerToSubnetsRequest) AttachLoadBalancerToSubnets operation}.
@@ -26,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#attachLoadBalancerToSubnets(AttachLoadBalancerToSubnetsRequest)
  */
-public class AttachLoadBalancerToSubnetsRequest extends AmazonWebServiceRequest {
+public class AttachLoadBalancerToSubnetsRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name associated with the LoadBalancer. The name must be unique

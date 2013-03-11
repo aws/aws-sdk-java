@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.glacier.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.glacier.AmazonGlacier#uploadArchive(UploadArchiveRequest) UploadArchive operation}.
@@ -56,7 +57,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.glacier.AmazonGlacier#uploadArchive(UploadArchiveRequest)
  */
-public class UploadArchiveRequest extends AmazonWebServiceRequest {
+public class UploadArchiveRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     private Long contentLength;
 

@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#deleteCustomerGateway(DeleteCustomerGatewayRequest) DeleteCustomerGateway operation}.
@@ -27,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#deleteCustomerGateway(DeleteCustomerGatewayRequest)
  */
-public class DeleteCustomerGatewayRequest extends AmazonWebServiceRequest {
+public class DeleteCustomerGatewayRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The ID of the customer gateway to delete.

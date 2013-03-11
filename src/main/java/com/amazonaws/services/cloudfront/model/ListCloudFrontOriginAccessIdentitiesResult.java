@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.cloudfront.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The returned result of the corresponding request.
  * </p>
  */
-public class ListCloudFrontOriginAccessIdentitiesResult {
+public class ListCloudFrontOriginAccessIdentitiesResult  implements Serializable  {
 
     /**
      * The CloudFrontOriginAccessIdentityList type.

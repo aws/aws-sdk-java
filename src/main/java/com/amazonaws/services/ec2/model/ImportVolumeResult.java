@@ -13,11 +13,12 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * Import Volume Result
  */
-public class ImportVolumeResult {
+public class ImportVolumeResult  implements Serializable  {
 
     private ConversionTask conversionTask;
 

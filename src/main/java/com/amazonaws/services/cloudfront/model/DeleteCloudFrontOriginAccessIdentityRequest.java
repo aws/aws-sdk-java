@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.cloudfront.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.cloudfront.AmazonCloudFront#deleteCloudFrontOriginAccessIdentity(DeleteCloudFrontOriginAccessIdentityRequest) DeleteCloudFrontOriginAccessIdentity operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudfront.AmazonCloudFront#deleteCloudFrontOriginAccessIdentity(DeleteCloudFrontOriginAccessIdentityRequest)
  */
-public class DeleteCloudFrontOriginAccessIdentityRequest extends AmazonWebServiceRequest {
+public class DeleteCloudFrontOriginAccessIdentityRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The origin access identity's id.

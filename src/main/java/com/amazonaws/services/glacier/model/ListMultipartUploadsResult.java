@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.glacier.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Contains the Amazon Glacier response to your request.
  * </p>
  */
-public class ListMultipartUploadsResult {
+public class ListMultipartUploadsResult  implements Serializable  {
 
     /**
      * A list of in-progress multipart uploads.

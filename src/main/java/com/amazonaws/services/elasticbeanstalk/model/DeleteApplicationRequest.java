@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.elasticbeanstalk.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#deleteApplication(DeleteApplicationRequest) DeleteApplication operation}.
@@ -26,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#deleteApplication(DeleteApplicationRequest)
  */
-public class DeleteApplicationRequest extends AmazonWebServiceRequest {
+public class DeleteApplicationRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of the application to delete.

@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.sns.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#removePermission(RemovePermissionRequest) RemovePermission operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.sns.AmazonSNS#removePermission(RemovePermissionRequest)
  */
-public class RemovePermissionRequest extends AmazonWebServiceRequest {
+public class RemovePermissionRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The ARN of the topic whose access control policy you wish to modify.

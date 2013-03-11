@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.redshift.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.redshift.AmazonRedshift#deleteClusterSecurityGroup(DeleteClusterSecurityGroupRequest) DeleteClusterSecurityGroup operation}.
@@ -30,7 +31,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#deleteClusterSecurityGroup(DeleteClusterSecurityGroupRequest)
  */
-public class DeleteClusterSecurityGroupRequest extends AmazonWebServiceRequest {
+public class DeleteClusterSecurityGroupRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of the cluster security group to be deleted.

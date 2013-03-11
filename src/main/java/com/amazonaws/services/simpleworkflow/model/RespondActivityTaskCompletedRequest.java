@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.simpleworkflow.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#respondActivityTaskCompleted(RespondActivityTaskCompletedRequest) RespondActivityTaskCompleted operation}.
@@ -52,7 +53,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#respondActivityTaskCompleted(RespondActivityTaskCompletedRequest)
  */
-public class RespondActivityTaskCompletedRequest extends AmazonWebServiceRequest {
+public class RespondActivityTaskCompletedRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The <code>taskToken</code> of the <a>ActivityTask</a>. <important> The

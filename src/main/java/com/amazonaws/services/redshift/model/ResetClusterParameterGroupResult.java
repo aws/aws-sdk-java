@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.redshift.model;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -20,7 +21,7 @@ package com.amazonaws.services.redshift.model;
  * status of the operation on the parameter group.
  * </p>
  */
-public class ResetClusterParameterGroupResult {
+public class ResetClusterParameterGroupResult  implements Serializable  {
 
     /**
      * The name of the cluster parameter group.

@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeVolumes(DescribeVolumesRequest) DescribeVolumes operation}.
@@ -24,7 +25,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeVolumes(DescribeVolumesRequest)
  */
-public class DescribeVolumesRequest extends AmazonWebServiceRequest {
+public class DescribeVolumesRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The optional list of EBS volumes to describe.

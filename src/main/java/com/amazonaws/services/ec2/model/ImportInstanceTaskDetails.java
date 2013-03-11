@@ -13,11 +13,12 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * Import Instance Task Details
  */
-public class ImportInstanceTaskDetails {
+public class ImportInstanceTaskDetails  implements Serializable  {
 
     private java.util.List<ImportInstanceVolumeDetailItem> volumes;
 

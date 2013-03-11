@@ -13,11 +13,12 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.dynamodb.model;
+import java.io.Serializable;
 
 /**
  * Batch Get Item Result
  */
-public class BatchGetItemResult {
+public class BatchGetItemResult  implements Serializable  {
 
     /**
      * Table names and the respective item attributes from the tables.

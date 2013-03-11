@@ -38,7 +38,7 @@ public class AttachVpnGatewayRequestMarshaller implements Marshaller<Request<Att
 
         Request<AttachVpnGatewayRequest> request = new DefaultRequest<AttachVpnGatewayRequest>(attachVpnGatewayRequest, "AmazonEC2");
         request.addParameter("Action", "AttachVpnGateway");
-        request.addParameter("Version", "2012-12-01");
+        request.addParameter("Version", "2013-02-01");
 
         if (attachVpnGatewayRequest.getVpnGatewayId() != null) {
             request.addParameter("VpnGatewayId", StringUtils.fromString(attachVpnGatewayRequest.getVpnGatewayId()));

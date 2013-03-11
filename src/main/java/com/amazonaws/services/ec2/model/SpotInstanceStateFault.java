@@ -13,11 +13,12 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * Spot Instance State Fault
  */
-public class SpotInstanceStateFault {
+public class SpotInstanceStateFault  implements Serializable  {
 
     private String code;
 

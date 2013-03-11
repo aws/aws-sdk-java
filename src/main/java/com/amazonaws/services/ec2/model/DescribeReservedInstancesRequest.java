@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeReservedInstances(DescribeReservedInstancesRequest) DescribeReservedInstances operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeReservedInstances(DescribeReservedInstancesRequest)
  */
-public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest {
+public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The optional list of Reserved Instance IDs to describe.

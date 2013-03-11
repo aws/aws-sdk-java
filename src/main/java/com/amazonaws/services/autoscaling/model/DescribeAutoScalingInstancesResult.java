@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.autoscaling.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The <code>AutoScalingInstancesType</code> data type.
  * </p>
  */
-public class DescribeAutoScalingInstancesResult {
+public class DescribeAutoScalingInstancesResult  implements Serializable  {
 
     /**
      * A list of Auto Scaling instances.

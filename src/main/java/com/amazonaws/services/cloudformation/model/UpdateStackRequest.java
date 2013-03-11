@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.cloudformation.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.cloudformation.AmazonCloudFormation#updateStack(UpdateStackRequest) UpdateStack operation}.
@@ -34,7 +35,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudformation.AmazonCloudFormation#updateStack(UpdateStackRequest)
  */
-public class UpdateStackRequest extends AmazonWebServiceRequest {
+public class UpdateStackRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name or stack ID of the stack to update. <note> Must contain only

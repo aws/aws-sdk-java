@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.cloudfront.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.cloudfront.AmazonCloudFront#createStreamingDistribution(CreateStreamingDistributionRequest) CreateStreamingDistribution operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudfront.AmazonCloudFront#createStreamingDistribution(CreateStreamingDistributionRequest)
  */
-public class CreateStreamingDistributionRequest extends AmazonWebServiceRequest {
+public class CreateStreamingDistributionRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The streaming distribution's configuration information.

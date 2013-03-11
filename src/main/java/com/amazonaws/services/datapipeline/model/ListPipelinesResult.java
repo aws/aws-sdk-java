@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.datapipeline.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Contains the output from the ListPipelines action.
  * </p>
  */
-public class ListPipelinesResult {
+public class ListPipelinesResult  implements Serializable  {
 
     /**
      * A list of all the pipeline identifiers that your account has

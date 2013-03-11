@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.cloudformation.model;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -20,7 +21,7 @@ package com.amazonaws.services.cloudformation.model;
  * store information related to cost allocation for an AWS CloudFormation stack.
  * </p>
  */
-public class Tag {
+public class Tag  implements Serializable  {
 
     /**
      * <i>Required</i>. A string used to identify this tag. You can specify a

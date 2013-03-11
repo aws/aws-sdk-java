@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.dynamodb.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.dynamodb.AmazonDynamoDB#deleteTable(DeleteTableRequest) DeleteTable operation}.
@@ -28,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.dynamodb.AmazonDynamoDB#deleteTable(DeleteTableRequest)
  */
-public class DeleteTableRequest extends AmazonWebServiceRequest {
+public class DeleteTableRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of the table you want to delete. Allowed characters are

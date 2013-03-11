@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elastictranscoder.model;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -22,7 +23,7 @@ package com.amazonaws.services.elastictranscoder.model;
  * <b>IMPORTANT:</b>To receive notifications, you must also subscribe to the new topic in the Amazon SNS console.
  * </p>
  */
-public class Notifications {
+public class Notifications  implements Serializable  {
 
     /**
      * The Amazon Simple Notification Service (Amazon SNS) topic that you

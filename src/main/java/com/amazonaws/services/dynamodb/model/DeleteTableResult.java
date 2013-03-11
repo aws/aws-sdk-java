@@ -13,11 +13,12 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.dynamodb.model;
+import java.io.Serializable;
 
 /**
  * Delete Table Result
  */
-public class DeleteTableResult {
+public class DeleteTableResult  implements Serializable  {
 
     private TableDescription tableDescription;
 

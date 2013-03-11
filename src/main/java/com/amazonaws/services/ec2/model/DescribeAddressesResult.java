@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The result of describing an account's available Elastic IPs.
  * </p>
  */
-public class DescribeAddressesResult {
+public class DescribeAddressesResult  implements Serializable  {
 
     /**
      * The list of Elastic IPs.

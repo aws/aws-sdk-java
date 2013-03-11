@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Represents the capacity that a license is able to support.
  * </p>
  */
-public class LicenseCapacity {
+public class LicenseCapacity  implements Serializable  {
 
     /**
      * The number of licenses available.

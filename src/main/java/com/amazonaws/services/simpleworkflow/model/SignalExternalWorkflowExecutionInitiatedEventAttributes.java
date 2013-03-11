@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.simpleworkflow.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Provides details of the <code>SignalExternalWorkflowExecutionInitiated</code> event.
  * </p>
  */
-public class SignalExternalWorkflowExecutionInitiatedEventAttributes {
+public class SignalExternalWorkflowExecutionInitiatedEventAttributes  implements Serializable  {
 
     /**
      * The <code>workflowId</code> of the external workflow execution.

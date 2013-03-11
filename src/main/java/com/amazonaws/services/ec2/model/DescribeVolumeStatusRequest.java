@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeVolumeStatus(DescribeVolumeStatusRequest) DescribeVolumeStatus operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeVolumeStatus(DescribeVolumeStatusRequest)
  */
-public class DescribeVolumeStatusRequest extends AmazonWebServiceRequest {
+public class DescribeVolumeStatusRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     private java.util.List<String> volumeIds;
 

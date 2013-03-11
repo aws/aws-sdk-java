@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.rds.model;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -28,7 +29,7 @@ package com.amazonaws.services.rds.model;
  * This data type is used as a response element in the DescribeDBSnapshots action.
  * </p>
  */
-public class DBSnapshot {
+public class DBSnapshot  implements Serializable  {
 
     /**
      * Specifies the identifier for the DB Snapshot.

@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.glacier.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.glacier.AmazonGlacier#createVault(CreateVaultRequest) CreateVault operation}.
@@ -57,7 +58,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.glacier.AmazonGlacier#createVault(CreateVaultRequest)
  */
-public class CreateVaultRequest extends AmazonWebServiceRequest {
+public class CreateVaultRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The <code>AccountId</code> is the AWS Account ID. You can specify

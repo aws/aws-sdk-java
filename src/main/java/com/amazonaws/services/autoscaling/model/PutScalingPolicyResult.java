@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.autoscaling.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The <code>PolicyARNType</code> data type.
  * </p>
  */
-public class PutScalingPolicyResult {
+public class PutScalingPolicyResult  implements Serializable  {
 
     /**
      * A policy's Amazon Resource Name (ARN).

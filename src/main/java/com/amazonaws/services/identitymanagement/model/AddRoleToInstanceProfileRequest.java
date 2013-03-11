@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.identitymanagement.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#addRoleToInstanceProfile(AddRoleToInstanceProfileRequest) AddRoleToInstanceProfile operation}.
@@ -25,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#addRoleToInstanceProfile(AddRoleToInstanceProfileRequest)
  */
-public class AddRoleToInstanceProfileRequest extends AmazonWebServiceRequest {
+public class AddRoleToInstanceProfileRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * Name of the instance profile to update.

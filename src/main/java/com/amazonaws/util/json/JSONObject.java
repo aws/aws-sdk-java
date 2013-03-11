@@ -894,8 +894,8 @@ public class JSONObject {
      * @return      A string which is the value.
      */
     public String optString(String key, String defaultValue) {
-        Object o = opt(key);
-        return o != null ? o.toString() : defaultValue;
+    	Object o = opt(key);
+    	return o instanceof String ? o.toString() : defaultValue;
     }
 
 

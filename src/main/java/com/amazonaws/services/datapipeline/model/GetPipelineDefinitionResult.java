@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.datapipeline.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Contains the output from the GetPipelineDefinition action.
  * </p>
  */
-public class GetPipelineDefinitionResult {
+public class GetPipelineDefinitionResult  implements Serializable  {
 
     /**
      * An array of objects defined in the pipeline.

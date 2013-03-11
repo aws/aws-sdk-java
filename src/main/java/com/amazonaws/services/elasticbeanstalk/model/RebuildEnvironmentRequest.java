@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.elasticbeanstalk.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#rebuildEnvironment(RebuildEnvironmentRequest) RebuildEnvironment operation}.
@@ -24,7 +25,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#rebuildEnvironment(RebuildEnvironmentRequest)
  */
-public class RebuildEnvironmentRequest extends AmazonWebServiceRequest {
+public class RebuildEnvironmentRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The ID of the environment to rebuild. <p> Condition: You must specify

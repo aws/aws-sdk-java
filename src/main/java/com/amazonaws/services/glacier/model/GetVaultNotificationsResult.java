@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.glacier.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Contains the Amazon Glacier response to your request.
  * </p>
  */
-public class GetVaultNotificationsResult {
+public class GetVaultNotificationsResult  implements Serializable  {
 
     /**
      * Returns the notification configuration set on the vault.

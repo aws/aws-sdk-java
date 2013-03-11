@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.sqs.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Encloses a receipt handle and an entry id for each message in ChangeMessageVisibilityBatchRequest.
  * </p>
  */
-public class ChangeMessageVisibilityBatchRequestEntry {
+public class ChangeMessageVisibilityBatchRequestEntry  implements Serializable  {
 
     /**
      * An identifier for this particular receipt handle. This is used to

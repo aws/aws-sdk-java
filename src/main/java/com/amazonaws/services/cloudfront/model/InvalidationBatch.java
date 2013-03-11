@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.cloudfront.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * An invalidation batch.
  * </p>
  */
-public class InvalidationBatch {
+public class InvalidationBatch  implements Serializable  {
 
     /**
      * The path of the object to invalidate. The path is relative to the

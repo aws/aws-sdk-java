@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elasticmapreduce.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Specifies the Amazon EC2 location for the job flow.
  * </p>
  */
-public class PlacementType {
+public class PlacementType  implements Serializable  {
 
     /**
      * The Amazon EC2 Availability Zone for the job flow.

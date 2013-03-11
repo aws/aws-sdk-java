@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -26,7 +27,7 @@ package com.amazonaws.services.ec2.model;
  * 
  * </p>
  */
-public class Filter {
+public class Filter  implements Serializable  {
 
     /**
      * Specifies the name of the filter.

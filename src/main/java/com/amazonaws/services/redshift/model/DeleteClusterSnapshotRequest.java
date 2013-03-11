@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.redshift.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.redshift.AmazonRedshift#deleteClusterSnapshot(DeleteClusterSnapshotRequest) DeleteClusterSnapshot operation}.
@@ -27,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#deleteClusterSnapshot(DeleteClusterSnapshotRequest)
  */
-public class DeleteClusterSnapshotRequest extends AmazonWebServiceRequest {
+public class DeleteClusterSnapshotRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The unique identifier of the manual snapshot to be deleted.

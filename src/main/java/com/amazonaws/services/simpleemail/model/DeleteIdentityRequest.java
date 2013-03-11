@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.simpleemail.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.simpleemail.AmazonSimpleEmailService#deleteIdentity(DeleteIdentityRequest) DeleteIdentity operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpleemail.AmazonSimpleEmailService#deleteIdentity(DeleteIdentityRequest)
  */
-public class DeleteIdentityRequest extends AmazonWebServiceRequest {
+public class DeleteIdentityRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The identity to be removed from the list of identities for the AWS

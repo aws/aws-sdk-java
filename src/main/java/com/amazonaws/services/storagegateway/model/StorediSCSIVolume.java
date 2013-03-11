@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.storagegateway.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Describes an iSCSI stored volume.
  * </p>
  */
-public class StorediSCSIVolume {
+public class StorediSCSIVolume  implements Serializable  {
 
     /**
      * The Amazon Resource Name (ARN) of the storage volume.

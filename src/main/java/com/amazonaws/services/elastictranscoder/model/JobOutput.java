@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elastictranscoder.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * A section of the request or response body that provides information about the transcoded (target) file.
  * </p>
  */
-public class JobOutput {
+public class JobOutput  implements Serializable  {
 
     /**
      * The name to assign to the transcoded file. Elastic Transcoder saves

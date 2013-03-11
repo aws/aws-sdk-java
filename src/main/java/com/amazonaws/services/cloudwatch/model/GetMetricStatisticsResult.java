@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.cloudwatch.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The output for the GetMetricStatistics action.
  * </p>
  */
-public class GetMetricStatisticsResult {
+public class GetMetricStatisticsResult  implements Serializable  {
 
     /**
      * A label describing the specified metric.

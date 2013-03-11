@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.rds.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Contains the result of a successful invocation of the DescribeEngineDefaultParameters action.
  * </p>
  */
-public class EngineDefaults {
+public class EngineDefaults  implements Serializable  {
 
     /**
      * Specifies the name of the DB Parameter Group Family which the engine

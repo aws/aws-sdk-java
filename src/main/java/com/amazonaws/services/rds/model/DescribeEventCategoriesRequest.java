@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.rds.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#describeEventCategories(DescribeEventCategoriesRequest) DescribeEventCategories operation}.
@@ -25,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#describeEventCategories(DescribeEventCategoriesRequest)
  */
-public class DescribeEventCategoriesRequest extends AmazonWebServiceRequest {
+public class DescribeEventCategoriesRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The type of source that will be generating the events. <p>Valid

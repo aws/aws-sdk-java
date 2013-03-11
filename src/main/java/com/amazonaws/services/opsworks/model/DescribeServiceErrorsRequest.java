@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.opsworks.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.opsworks.AWSOpsWorks#describeServiceErrors(DescribeServiceErrorsRequest) DescribeServiceErrors operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#describeServiceErrors(DescribeServiceErrorsRequest)
  */
-public class DescribeServiceErrorsRequest extends AmazonWebServiceRequest {
+public class DescribeServiceErrorsRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The stack ID.

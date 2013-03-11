@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.simpleemail.model;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -23,7 +24,7 @@ package com.amazonaws.services.simpleemail.model;
  * also specify a character set. Examples include UTF-8, ISO-8859-1, and Shift_JIS.
  * </p>
  */
-public class Content {
+public class Content  implements Serializable  {
 
     /**
      * The textual data of the content.

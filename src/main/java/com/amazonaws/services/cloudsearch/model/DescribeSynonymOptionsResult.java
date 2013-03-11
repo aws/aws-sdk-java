@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.cloudsearch.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * A response message that contains the synonym options for a search domain.
  * </p>
  */
-public class DescribeSynonymOptionsResult {
+public class DescribeSynonymOptionsResult  implements Serializable  {
 
     /**
      * The synonym options configured for this search domain and the current

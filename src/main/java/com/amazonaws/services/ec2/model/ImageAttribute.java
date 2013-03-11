@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Represents an attribute of an <i>Amazon Machine Image</i> (AMI).
  * </p>
  */
-public class ImageAttribute {
+public class ImageAttribute  implements Serializable  {
 
     /**
      * The ID of the associated AMI.

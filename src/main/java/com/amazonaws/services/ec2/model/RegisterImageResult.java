@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The result of registering a new Amazon Machine Image (AMI). Contains the ID of the new image.
  * </p>
  */
-public class RegisterImageResult {
+public class RegisterImageResult  implements Serializable  {
 
     /**
      * The ID of the new Amazon Machine Image (AMI).

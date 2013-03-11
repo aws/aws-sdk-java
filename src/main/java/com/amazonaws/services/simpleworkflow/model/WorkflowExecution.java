@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.simpleworkflow.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Represents a workflow execution.
  * </p>
  */
-public class WorkflowExecution {
+public class WorkflowExecution  implements Serializable  {
 
     /**
      * The user defined identifier associated with the workflow execution.

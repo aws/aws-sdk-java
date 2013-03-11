@@ -13,11 +13,12 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.dynamodb.model;
+import java.io.Serializable;
 
 /**
  * Get Item Result
  */
-public class GetItemResult {
+public class GetItemResult  implements Serializable  {
 
     /**
      * Contains the requested attributes.

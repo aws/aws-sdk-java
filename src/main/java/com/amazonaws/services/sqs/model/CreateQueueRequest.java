@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.sqs.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sqs.AmazonSQS#createQueue(CreateQueueRequest) CreateQueue operation}.
@@ -32,7 +33,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.sqs.AmazonSQS#createQueue(CreateQueueRequest)
  */
-public class CreateQueueRequest extends AmazonWebServiceRequest {
+public class CreateQueueRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name for the queue to be created.

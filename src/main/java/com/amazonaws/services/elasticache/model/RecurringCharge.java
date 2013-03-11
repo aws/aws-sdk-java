@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elasticache.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * This data type is used as a response element in the DescribeReservedCacheNodes and DescribeReservedCacheNodesOfferings actions.
  * </p>
  */
-public class RecurringCharge {
+public class RecurringCharge  implements Serializable  {
 
     /**
      * The amount of the recurring charge.

@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.dynamodb.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.dynamodb.AmazonDynamoDB#query(QueryRequest) Query operation}.
@@ -27,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.dynamodb.AmazonDynamoDB#query(QueryRequest)
  */
-public class QueryRequest extends AmazonWebServiceRequest {
+public class QueryRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of the table in which you want to query. Allowed characters

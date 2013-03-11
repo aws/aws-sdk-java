@@ -13,11 +13,12 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * Disk Image
  */
-public class DiskImage {
+public class DiskImage  implements Serializable  {
 
     private DiskImageDetail image;
 

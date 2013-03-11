@@ -15,8 +15,8 @@
 package com.amazonaws.services.directconnect;
 
 import com.amazonaws.*;
+import com.amazonaws.regions.*;
 import com.amazonaws.services.directconnect.model.*;
-
 
 /**
  * Interface for accessing AmazonDirectConnect.
@@ -59,6 +59,11 @@ public interface AmazonDirectConnect {
      * a complete list of all available endpoints for all AWS services, see:
      * <a href="http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912">
      * http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912</a>
+     * <p>
+     * <b>This method is not threadsafe. An endpoint should be configured when the
+     * client is created and before any service requests are made. Changing it
+     * afterwards creates inevitable race conditions for any service requests in
+     * transit or retrying.</b>
      *
      * @param endpoint
      *            The endpoint (ex: "directConnect.us-east-1.amazonaws.com/") or a full URL,
@@ -69,8 +74,34 @@ public interface AmazonDirectConnect {
      * @throws IllegalArgumentException
      *             If any problems are detected with the specified endpoint.
      */
-    public void setEndpoint(String endpoint) throws java.lang.IllegalArgumentException;
-    
+    public void setEndpoint(String endpoint) throws java.lang.IllegalArgumentException;    
+
+    /**
+     * An alternative to {@link AmazonDynamoDB#setEndpoint(String)}, sets the
+     * regional endpoint for this client's service calls. Callers can use this
+     * method to control which AWS region they want to work with.
+     * <p>
+     * By default, all service endpoints in all regions use the https protocol.
+     * To use http instead, specify it in the {@link ClientConfiguration}
+     * supplied at construction.
+     * <p>
+     * <b>This method is not threadsafe. A region should be configured when the
+     * client is created and before any service requests are made. Changing it
+     * afterwards creates inevitable race conditions for any service requests in
+     * transit or retrying.</b>
+     * 
+     * @param region
+     *            The region this client will communicate with. See
+     *            {@link Region#getRegion(com.amazonaws.regions.Regions)} for
+     *            accessing a given region.
+     * @throws java.lang.IllegalArgumentException
+     *             If the given region is null, or if this service isn't
+     *             available in the given region. See
+     *             {@link Region#isServiceSupported(String)}
+     * @see Region#getRegion(com.amazonaws.regions.Regions)
+     */
+    public void setRegion(Region region) throws java.lang.IllegalArgumentException;    
+	
     /**
      * <p>
      * Displays all virtual interfaces for an AWS account. Virtual interfaces

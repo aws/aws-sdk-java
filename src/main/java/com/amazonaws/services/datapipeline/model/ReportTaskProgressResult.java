@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.datapipeline.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Contains the output from the ReportTaskProgress action.
  * </p>
  */
-public class ReportTaskProgressResult {
+public class ReportTaskProgressResult  implements Serializable  {
 
     /**
      * If <code>True</code>, the calling task runner should cancel processing

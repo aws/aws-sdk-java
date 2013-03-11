@@ -13,11 +13,12 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * Launch Permission Modifications
  */
-public class LaunchPermissionModifications {
+public class LaunchPermissionModifications  implements Serializable  {
 
     private java.util.List<LaunchPermission> add;
 

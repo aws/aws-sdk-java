@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.rds.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#describeOrderableDBInstanceOptions(DescribeOrderableDBInstanceOptionsRequest) DescribeOrderableDBInstanceOptions operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#describeOrderableDBInstanceOptions(DescribeOrderableDBInstanceOptionsRequest)
  */
-public class DescribeOrderableDBInstanceOptionsRequest extends AmazonWebServiceRequest {
+public class DescribeOrderableDBInstanceOptionsRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of the engine to retrieve DB Instance options for.

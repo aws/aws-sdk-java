@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.simpleworkflow.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Provides details of the <code>ChildWorkflowExecutionFailed</code> event.
  * </p>
  */
-public class ChildWorkflowExecutionFailedEventAttributes {
+public class ChildWorkflowExecutionFailedEventAttributes  implements Serializable  {
 
     /**
      * The child workflow execution that failed.

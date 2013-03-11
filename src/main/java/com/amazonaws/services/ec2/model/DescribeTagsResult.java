@@ -13,12 +13,13 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * </p>
  */
-public class DescribeTagsResult {
+public class DescribeTagsResult  implements Serializable  {
 
     /**
      * A list of the tags for the specified resources.

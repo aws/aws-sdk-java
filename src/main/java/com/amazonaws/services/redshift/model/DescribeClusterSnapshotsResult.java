@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.redshift.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Contains the output from the DescribeClusterSnapshots action.
  * </p>
  */
-public class DescribeClusterSnapshotsResult {
+public class DescribeClusterSnapshotsResult  implements Serializable  {
 
     /**
      * A marker that indicates the first snapshot that a subsequent

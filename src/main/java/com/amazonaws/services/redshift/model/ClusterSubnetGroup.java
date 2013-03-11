@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.redshift.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Describes a subnet group.
  * </p>
  */
-public class ClusterSubnetGroup {
+public class ClusterSubnetGroup  implements Serializable  {
 
     /**
      * The name of the cluster subnet group.

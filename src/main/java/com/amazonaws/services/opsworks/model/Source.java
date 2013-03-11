@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.opsworks.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Contains the information required to retrieve an app or cookbook from a repository.
  * </p>
  */
-public class Source {
+public class Source  implements Serializable  {
 
     /**
      * The repository type.

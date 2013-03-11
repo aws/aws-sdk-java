@@ -13,11 +13,12 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elastictranscoder.model;
+import java.io.Serializable;
 
 /**
  * 
  */
-public class JobInput {
+public class JobInput  implements Serializable  {
 
     /**
      * The name of the file to transcode. Elsewhere in the body of the JSON

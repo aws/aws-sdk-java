@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.rds.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Contains the result of a successful invocation of the ModifyDBParameterGroup or ResetDBParameterGroup action.
  * </p>
  */
-public class ResetDBParameterGroupResult {
+public class ResetDBParameterGroupResult  implements Serializable  {
 
     /**
      * The name of the DB Parameter Group.

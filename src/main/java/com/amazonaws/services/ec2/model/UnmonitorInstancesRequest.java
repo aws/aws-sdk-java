@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#unmonitorInstances(UnmonitorInstancesRequest) UnmonitorInstances operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#unmonitorInstances(UnmonitorInstancesRequest)
  */
-public class UnmonitorInstancesRequest extends AmazonWebServiceRequest {
+public class UnmonitorInstancesRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The list of Amazon EC2 instances on which to disable monitoring.

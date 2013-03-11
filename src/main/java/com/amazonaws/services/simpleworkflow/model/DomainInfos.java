@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.simpleworkflow.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Contains a paginated collection of DomainInfo structures.
  * </p>
  */
-public class DomainInfos {
+public class DomainInfos  implements Serializable  {
 
     /**
      * A list of DomainInfo structures.

@@ -13,11 +13,12 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * Instance Network Interface
  */
-public class InstanceNetworkInterface {
+public class InstanceNetworkInterface  implements Serializable  {
 
     private String networkInterfaceId;
 
@@ -42,6 +43,8 @@ public class InstanceNetworkInterface {
     private InstanceNetworkInterfaceAttachment attachment;
 
     private InstanceNetworkInterfaceAssociation association;
+
+    private java.util.List<InstancePrivateIpAddress> privateIpAddresses;
 
     /**
      * Returns the value of the NetworkInterfaceId property for this object.
@@ -496,6 +499,75 @@ public class InstanceNetworkInterface {
     
     
     /**
+     * Returns the value of the PrivateIpAddresses property for this object.
+     *
+     * @return The value of the PrivateIpAddresses property for this object.
+     */
+    public java.util.List<InstancePrivateIpAddress> getPrivateIpAddresses() {
+        
+        if (privateIpAddresses == null) {
+            privateIpAddresses = new java.util.ArrayList<InstancePrivateIpAddress>();
+        }
+        return privateIpAddresses;
+    }
+    
+    /**
+     * Sets the value of the PrivateIpAddresses property for this object.
+     *
+     * @param privateIpAddresses The new value for the PrivateIpAddresses property for this object.
+     */
+    public void setPrivateIpAddresses(java.util.Collection<InstancePrivateIpAddress> privateIpAddresses) {
+        if (privateIpAddresses == null) {
+            this.privateIpAddresses = null;
+            return;
+        }
+
+        java.util.List<InstancePrivateIpAddress> privateIpAddressesCopy = new java.util.ArrayList<InstancePrivateIpAddress>(privateIpAddresses.size());
+        privateIpAddressesCopy.addAll(privateIpAddresses);
+        this.privateIpAddresses = privateIpAddressesCopy;
+    }
+    
+    /**
+     * Sets the value of the PrivateIpAddresses property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param privateIpAddresses The new value for the PrivateIpAddresses property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public InstanceNetworkInterface withPrivateIpAddresses(InstancePrivateIpAddress... privateIpAddresses) {
+        if (getPrivateIpAddresses() == null) setPrivateIpAddresses(new java.util.ArrayList<InstancePrivateIpAddress>(privateIpAddresses.length));
+        for (InstancePrivateIpAddress value : privateIpAddresses) {
+            getPrivateIpAddresses().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * Sets the value of the PrivateIpAddresses property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param privateIpAddresses The new value for the PrivateIpAddresses property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public InstanceNetworkInterface withPrivateIpAddresses(java.util.Collection<InstancePrivateIpAddress> privateIpAddresses) {
+        if (privateIpAddresses == null) {
+            this.privateIpAddresses = null;
+        } else {
+            java.util.List<InstancePrivateIpAddress> privateIpAddressesCopy = new java.util.ArrayList<InstancePrivateIpAddress>(privateIpAddresses.size());
+            privateIpAddressesCopy.addAll(privateIpAddresses);
+            this.privateIpAddresses = privateIpAddressesCopy;
+        }
+
+        return this;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -519,6 +591,7 @@ public class InstanceNetworkInterface {
         if (getGroups() != null) sb.append("Groups: " + getGroups() + ", ");
         if (getAttachment() != null) sb.append("Attachment: " + getAttachment() + ", ");
         if (getAssociation() != null) sb.append("Association: " + getAssociation() + ", ");
+        if (getPrivateIpAddresses() != null) sb.append("PrivateIpAddresses: " + getPrivateIpAddresses() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -540,6 +613,7 @@ public class InstanceNetworkInterface {
         hashCode = prime * hashCode + ((getGroups() == null) ? 0 : getGroups().hashCode()); 
         hashCode = prime * hashCode + ((getAttachment() == null) ? 0 : getAttachment().hashCode()); 
         hashCode = prime * hashCode + ((getAssociation() == null) ? 0 : getAssociation().hashCode()); 
+        hashCode = prime * hashCode + ((getPrivateIpAddresses() == null) ? 0 : getPrivateIpAddresses().hashCode()); 
         return hashCode;
     }
     
@@ -575,6 +649,8 @@ public class InstanceNetworkInterface {
         if (other.getAttachment() != null && other.getAttachment().equals(this.getAttachment()) == false) return false; 
         if (other.getAssociation() == null ^ this.getAssociation() == null) return false;
         if (other.getAssociation() != null && other.getAssociation().equals(this.getAssociation()) == false) return false; 
+        if (other.getPrivateIpAddresses() == null ^ this.getPrivateIpAddresses() == null) return false;
+        if (other.getPrivateIpAddresses() != null && other.getPrivateIpAddresses().equals(this.getPrivateIpAddresses()) == false) return false; 
         return true;
     }
     

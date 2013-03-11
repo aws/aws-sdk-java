@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.simpleworkflow.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Provides details of the <code>ActivityTaskFailed</code> event.
  * </p>
  */
-public class ActivityTaskFailedEventAttributes {
+public class ActivityTaskFailedEventAttributes  implements Serializable  {
 
     /**
      * The reason provided for the failure (if any).

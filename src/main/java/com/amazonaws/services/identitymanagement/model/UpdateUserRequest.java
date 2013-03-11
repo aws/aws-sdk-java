@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.identitymanagement.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#updateUser(UpdateUserRequest) UpdateUser operation}.
@@ -32,7 +33,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#updateUser(UpdateUserRequest)
  */
-public class UpdateUserRequest extends AmazonWebServiceRequest {
+public class UpdateUserRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * Name of the user to update. If you're changing the name of the user,

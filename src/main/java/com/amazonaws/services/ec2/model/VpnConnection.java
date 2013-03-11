@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The VpnConnection data type.
  * </p>
  */
-public class VpnConnection {
+public class VpnConnection  implements Serializable  {
 
     /**
      * Specifies the ID of the VPN gateway at the VPC end of the VPN

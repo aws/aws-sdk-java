@@ -13,11 +13,12 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elastictranscoder.model;
+import java.io.Serializable;
 
 /**
  * 
  */
-public class AudioParameters {
+public class AudioParameters  implements Serializable  {
 
     /**
      * The audio codec for the output file. This value must be

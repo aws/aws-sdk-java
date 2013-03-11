@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.elastictranscoder.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#readPreset(ReadPresetRequest) ReadPreset operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#readPreset(ReadPresetRequest)
  */
-public class ReadPresetRequest extends AmazonWebServiceRequest {
+public class ReadPresetRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The identifier of the preset for which you want to get detailed

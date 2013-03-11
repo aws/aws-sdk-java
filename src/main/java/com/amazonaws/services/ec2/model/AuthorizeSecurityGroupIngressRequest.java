@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#authorizeSecurityGroupIngress(AuthorizeSecurityGroupIngressRequest) AuthorizeSecurityGroupIngress operation}.
@@ -32,7 +33,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#authorizeSecurityGroupIngress(AuthorizeSecurityGroupIngressRequest)
  */
-public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceRequest {
+public class AuthorizeSecurityGroupIngressRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * Name of the standard (EC2) security group to modify. The group must

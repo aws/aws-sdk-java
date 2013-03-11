@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * An Amazon EC2 reservation of requested EC2 instances.
  * </p>
  */
-public class Reservation {
+public class Reservation  implements Serializable  {
 
     /**
      * The unique ID of this reservation.

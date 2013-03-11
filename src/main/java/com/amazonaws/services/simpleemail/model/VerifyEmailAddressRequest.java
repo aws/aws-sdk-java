@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.simpleemail.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.simpleemail.AmazonSimpleEmailService#verifyEmailAddress(VerifyEmailAddressRequest) VerifyEmailAddress operation}.
@@ -27,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpleemail.AmazonSimpleEmailService#verifyEmailAddress(VerifyEmailAddressRequest)
  */
-public class VerifyEmailAddressRequest extends AmazonWebServiceRequest {
+public class VerifyEmailAddressRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The email address to be verified.

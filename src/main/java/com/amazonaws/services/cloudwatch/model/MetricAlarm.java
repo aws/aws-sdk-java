@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.cloudwatch.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The MetricAlarm data type represents an alarm. You can use PutMetricAlarm to create or update an alarm.
  * </p>
  */
-public class MetricAlarm {
+public class MetricAlarm  implements Serializable  {
 
     /**
      * The name of the alarm.

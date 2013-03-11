@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.opsworks.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Describes an Amazon EBS volume configuration.
  * </p>
  */
-public class VolumeConfiguration {
+public class VolumeConfiguration  implements Serializable  {
 
     /**
      * The volume mount point. For example "/dev/sdh".

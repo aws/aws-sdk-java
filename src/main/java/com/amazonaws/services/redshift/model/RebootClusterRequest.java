@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.redshift.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.redshift.AmazonRedshift#rebootCluster(RebootClusterRequest) RebootCluster operation}.
@@ -27,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#rebootCluster(RebootClusterRequest)
  */
-public class RebootClusterRequest extends AmazonWebServiceRequest {
+public class RebootClusterRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The cluster identifier.

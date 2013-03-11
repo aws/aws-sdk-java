@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#startInstances(StartInstancesRequest) StartInstances operation}.
@@ -29,7 +30,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#startInstances(StartInstancesRequest)
  */
-public class StartInstancesRequest extends AmazonWebServiceRequest {
+public class StartInstancesRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The list of Amazon EC2 instances to start.

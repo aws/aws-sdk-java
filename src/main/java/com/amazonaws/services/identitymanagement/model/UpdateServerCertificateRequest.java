@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.identitymanagement.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#updateServerCertificate(UpdateServerCertificateRequest) UpdateServerCertificate operation}.
@@ -32,7 +33,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#updateServerCertificate(UpdateServerCertificateRequest)
  */
-public class UpdateServerCertificateRequest extends AmazonWebServiceRequest {
+public class UpdateServerCertificateRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of the server certificate that you want to update.

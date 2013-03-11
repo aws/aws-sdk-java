@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.redshift.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Describes a snapshot.
  * </p>
  */
-public class Snapshot {
+public class Snapshot  implements Serializable  {
 
     /**
      * The snapshot identifier that is provided in the request.

@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elasticmapreduce.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Specification of a job flow step.
  * </p>
  */
-public class StepConfig {
+public class StepConfig  implements Serializable  {
 
     /**
      * The name of the job flow step.

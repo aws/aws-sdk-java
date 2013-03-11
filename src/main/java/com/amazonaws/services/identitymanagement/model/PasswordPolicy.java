@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.identitymanagement.model;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -22,7 +23,7 @@ package com.amazonaws.services.identitymanagement.model;
  * This data type is used as a response element in the action GetAccountPasswordPolicy.
  * </p>
  */
-public class PasswordPolicy {
+public class PasswordPolicy  implements Serializable  {
 
     /**
      * Minimum length to require for IAM user passwords.

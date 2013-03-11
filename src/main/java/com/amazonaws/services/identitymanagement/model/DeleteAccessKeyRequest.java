@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.identitymanagement.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteAccessKey(DeleteAccessKeyRequest) DeleteAccessKey operation}.
@@ -27,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteAccessKey(DeleteAccessKeyRequest)
  */
-public class DeleteAccessKeyRequest extends AmazonWebServiceRequest {
+public class DeleteAccessKeyRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * Name of the user whose key you want to delete.

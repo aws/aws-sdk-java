@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.cloudwatch.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.cloudwatch.AmazonCloudWatch#disableAlarmActions(DisableAlarmActionsRequest) DisableAlarmActions operation}.
@@ -24,7 +25,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudwatch.AmazonCloudWatch#disableAlarmActions(DisableAlarmActionsRequest)
  */
-public class DisableAlarmActionsRequest extends AmazonWebServiceRequest {
+public class DisableAlarmActionsRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The names of the alarms to disable actions for.

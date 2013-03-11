@@ -38,7 +38,7 @@ public class ReportInstanceStatusRequestMarshaller implements Marshaller<Request
 
         Request<ReportInstanceStatusRequest> request = new DefaultRequest<ReportInstanceStatusRequest>(reportInstanceStatusRequest, "AmazonEC2");
         request.addParameter("Action", "ReportInstanceStatus");
-        request.addParameter("Version", "2012-12-01");
+        request.addParameter("Version", "2013-02-01");
 
 
         java.util.List<String> instancesList = reportInstanceStatusRequest.getInstances();

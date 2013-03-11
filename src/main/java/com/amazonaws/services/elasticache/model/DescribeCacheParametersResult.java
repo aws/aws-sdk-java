@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elasticache.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Contains a list of Parametes and CacheNodeTypeSpecificParameters.
  * </p>
  */
-public class DescribeCacheParametersResult {
+public class DescribeCacheParametersResult  implements Serializable  {
 
     /**
      * The marker obtained from a previous operation response.

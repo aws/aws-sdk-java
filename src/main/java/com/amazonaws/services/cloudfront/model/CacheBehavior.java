@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.cloudfront.model;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -26,7 +27,7 @@ package com.amazonaws.services.cloudfront.model;
  * behaviors that you want to include in the updated distribution.
  * </p>
  */
-public class CacheBehavior {
+public class CacheBehavior  implements Serializable  {
 
     /**
      * The pattern (for example, images/*.jpg) that specifies which requests

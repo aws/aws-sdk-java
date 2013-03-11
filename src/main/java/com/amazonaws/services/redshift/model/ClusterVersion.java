@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.redshift.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Describes a cluster version, including the parameter group family and description of the version.
  * </p>
  */
-public class ClusterVersion {
+public class ClusterVersion  implements Serializable  {
 
     /**
      * The version number used by the cluster.

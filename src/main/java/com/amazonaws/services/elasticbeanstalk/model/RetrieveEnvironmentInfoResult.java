@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elasticbeanstalk.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Result message containing a description of the requested environment info.
  * </p>
  */
-public class RetrieveEnvironmentInfoResult {
+public class RetrieveEnvironmentInfoResult  implements Serializable  {
 
     /**
      * The <a>EnvironmentInfoDescription</a> of the environment.

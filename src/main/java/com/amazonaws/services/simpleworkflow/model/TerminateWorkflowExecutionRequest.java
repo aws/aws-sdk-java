@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.simpleworkflow.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#terminateWorkflowExecution(TerminateWorkflowExecutionRequest) TerminateWorkflowExecution operation}.
@@ -54,7 +55,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#terminateWorkflowExecution(TerminateWorkflowExecutionRequest)
  */
-public class TerminateWorkflowExecutionRequest extends AmazonWebServiceRequest {
+public class TerminateWorkflowExecutionRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The domain of the workflow execution to terminate.

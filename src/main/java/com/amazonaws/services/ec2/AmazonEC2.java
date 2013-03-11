@@ -15,8 +15,8 @@
 package com.amazonaws.services.ec2;
 
 import com.amazonaws.*;
+import com.amazonaws.regions.*;
 import com.amazonaws.services.ec2.model.*;
-
 
 /**
  * Interface for accessing AmazonEC2.
@@ -50,6 +50,11 @@ public interface AmazonEC2 {
      * a complete list of all available endpoints for all AWS services, see:
      * <a href="http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912">
      * http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912</a>
+     * <p>
+     * <b>This method is not threadsafe. An endpoint should be configured when the
+     * client is created and before any service requests are made. Changing it
+     * afterwards creates inevitable race conditions for any service requests in
+     * transit or retrying.</b>
      *
      * @param endpoint
      *            The endpoint (ex: "ec2.amazonaws.com") or a full URL,
@@ -60,8 +65,34 @@ public interface AmazonEC2 {
      * @throws IllegalArgumentException
      *             If any problems are detected with the specified endpoint.
      */
-    public void setEndpoint(String endpoint) throws java.lang.IllegalArgumentException;
-    
+    public void setEndpoint(String endpoint) throws java.lang.IllegalArgumentException;    
+
+    /**
+     * An alternative to {@link AmazonDynamoDB#setEndpoint(String)}, sets the
+     * regional endpoint for this client's service calls. Callers can use this
+     * method to control which AWS region they want to work with.
+     * <p>
+     * By default, all service endpoints in all regions use the https protocol.
+     * To use http instead, specify it in the {@link ClientConfiguration}
+     * supplied at construction.
+     * <p>
+     * <b>This method is not threadsafe. A region should be configured when the
+     * client is created and before any service requests are made. Changing it
+     * afterwards creates inevitable race conditions for any service requests in
+     * transit or retrying.</b>
+     * 
+     * @param region
+     *            The region this client will communicate with. See
+     *            {@link com.amazonaws.regions.Region#getRegion(com.amazonaws.regions.Regions)} for
+     *            accessing a given region.
+     * @throws java.lang.IllegalArgumentException
+     *             If the given region is null, or if this service isn't
+     *             available in the given region. See
+     *             {@link com.amazonaws.regions.Region#isServiceSupported(String)}
+     * @see Region#getRegion(com.amazonaws.regions.Regions)
+     */
+    public void setRegion(com.amazonaws.regions.Region region) throws java.lang.IllegalArgumentException;    
+	
     /**
      * <p>
      * The RebootInstances operation requests a reboot of one or more
@@ -314,51 +345,6 @@ public interface AmazonEC2 {
 
     /**
      * <p>
-     * This action applies only to security groups in a VPC; it's not
-     * supported for EC2 security groups. For information about Amazon
-     * Virtual Private Cloud and VPC security groups, go to the Amazon
-     * Virtual Private Cloud User Guide.
-     * </p>
-     * <p>
-     * The action adds one or more egress rules to a VPC security group.
-     * Specifically, this permits instances in a security group to send
-     * traffic to either one or more destination CIDR IP address ranges, or
-     * to one or more destination security groups in the same VPC.
-     * </p>
-     * <p>
-     * Each rule consists of the protocol (e.g., TCP), plus either a CIDR
-     * range, or a source group. For the TCP and UDP protocols, you must also
-     * specify the destination port or port range. For the ICMP protocol, you
-     * must also specify the ICMP type and code. You can use <code>-1</code>
-     * as a wildcard for the ICMP type or code.
-     * </p>
-     * <p>
-     * Rule changes are propagated to instances within the security group as
-     * quickly as possible. However, a small delay might occur.
-     * </p>
-     * <p>
-     * <b>Important:</b> For VPC security groups: You can have up to 50
-     * rules total per group (covering both ingress and egress).
-     * </p>
-     *
-     * @param authorizeSecurityGroupEgressRequest Container for the necessary
-     *           parameters to execute the AuthorizeSecurityGroupEgress service method
-     *           on AmazonEC2.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonEC2 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void authorizeSecurityGroupEgress(AuthorizeSecurityGroupEgressRequest authorizeSecurityGroupEgressRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
      * Retrieves the encrypted administrator password for the instances
      * running Windows.
      * </p>
@@ -414,6 +400,51 @@ public interface AmazonEC2 {
      *             either a problem with the data in the request, or a server side issue.
      */
     public void associateDhcpOptions(AssociateDhcpOptionsRequest associateDhcpOptionsRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * This action applies only to security groups in a VPC; it's not
+     * supported for EC2 security groups. For information about Amazon
+     * Virtual Private Cloud and VPC security groups, go to the Amazon
+     * Virtual Private Cloud User Guide.
+     * </p>
+     * <p>
+     * The action adds one or more egress rules to a VPC security group.
+     * Specifically, this permits instances in a security group to send
+     * traffic to either one or more destination CIDR IP address ranges, or
+     * to one or more destination security groups in the same VPC.
+     * </p>
+     * <p>
+     * Each rule consists of the protocol (e.g., TCP), plus either a CIDR
+     * range, or a source group. For the TCP and UDP protocols, you must also
+     * specify the destination port or port range. For the ICMP protocol, you
+     * must also specify the ICMP type and code. You can use <code>-1</code>
+     * as a wildcard for the ICMP type or code.
+     * </p>
+     * <p>
+     * Rule changes are propagated to instances within the security group as
+     * quickly as possible. However, a small delay might occur.
+     * </p>
+     * <p>
+     * <b>Important:</b> For VPC security groups: You can have up to 50
+     * rules total per group (covering both ingress and egress).
+     * </p>
+     *
+     * @param authorizeSecurityGroupEgressRequest Container for the necessary
+     *           parameters to execute the AuthorizeSecurityGroupEgress service method
+     *           on AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void authorizeSecurityGroupEgress(AuthorizeSecurityGroupEgressRequest authorizeSecurityGroupEgressRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -510,6 +541,24 @@ public interface AmazonEC2 {
      *             either a problem with the data in the request, or a server side issue.
      */
     public void deleteNetworkInterface(DeleteNetworkInterfaceRequest deleteNetworkInterfaceRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     *
+     * @param modifyVpcAttributeRequest Container for the necessary
+     *           parameters to execute the ModifyVpcAttribute service method on
+     *           AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void modifyVpcAttribute(ModifyVpcAttributeRequest modifyVpcAttributeRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -937,6 +986,27 @@ public interface AmazonEC2 {
             throws AmazonServiceException, AmazonClientException;
 
     /**
+     *
+     * @param describeAccountAttributesRequest Container for the necessary
+     *           parameters to execute the DescribeAccountAttributes service method on
+     *           AmazonEC2.
+     * 
+     * @return The response from the DescribeAccountAttributes service
+     *         method, as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeAccountAttributesResult describeAccountAttributes(DescribeAccountAttributesRequest describeAccountAttributesRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
      * <p>
      * Creates a new VPN gateway. A VPN gateway is the VPC-side endpoint for
      * your VPN connection. You can create a VPN gateway before creating the
@@ -1311,6 +1381,24 @@ public interface AmazonEC2 {
             throws AmazonServiceException, AmazonClientException;
 
     /**
+     *
+     * @param cancelConversionTaskRequest Container for the necessary
+     *           parameters to execute the CancelConversionTask service method on
+     *           AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void cancelConversionTask(CancelConversionTaskRequest cancelConversionTaskRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
      * <p>
      * The AssociateAddress operation associates an elastic IP address with
      * an instance.
@@ -1338,24 +1426,6 @@ public interface AmazonEC2 {
      *             either a problem with the data in the request, or a server side issue.
      */
     public AssociateAddressResult associateAddress(AssociateAddressRequest associateAddressRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     *
-     * @param cancelConversionTaskRequest Container for the necessary
-     *           parameters to execute the CancelConversionTask service method on
-     *           AmazonEC2.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonEC2 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void cancelConversionTask(CancelConversionTaskRequest cancelConversionTaskRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -2782,6 +2852,26 @@ public interface AmazonEC2 {
 
     /**
      *
+     * @param copyImageRequest Container for the necessary parameters to
+     *           execute the CopyImage service method on AmazonEC2.
+     * 
+     * @return The response from the CopyImage service method, as returned by
+     *         AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public CopyImageResult copyImage(CopyImageRequest copyImageRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     *
      * @param modifyNetworkInterfaceAttributeRequest Container for the
      *           necessary parameters to execute the ModifyNetworkInterfaceAttribute
      *           service method on AmazonEC2.
@@ -3390,6 +3480,27 @@ public interface AmazonEC2 {
      *             either a problem with the data in the request, or a server side issue.
      */
     public void disassociateRouteTable(DisassociateRouteTableRequest disassociateRouteTableRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     *
+     * @param describeVpcAttributeRequest Container for the necessary
+     *           parameters to execute the DescribeVpcAttribute service method on
+     *           AmazonEC2.
+     * 
+     * @return The response from the DescribeVpcAttribute service method, as
+     *         returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeVpcAttributeResult describeVpcAttribute(DescribeVpcAttributeRequest describeVpcAttributeRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -4205,6 +4316,19 @@ public interface AmazonEC2 {
     public void deleteSecurityGroup() throws AmazonServiceException, AmazonClientException;
     
     /**
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void modifyVpcAttribute() throws AmazonServiceException, AmazonClientException;
+    
+    /**
      * <p>
      * Describes the Spot Price history.
      * </p>
@@ -4376,6 +4500,22 @@ public interface AmazonEC2 {
      *             either a problem with the data in the request, or a server side issue.
      */
     public DescribeSpotDatafeedSubscriptionResult describeSpotDatafeedSubscription() throws AmazonServiceException, AmazonClientException;
+    
+    /**
+     * 
+     * @return The response from the DescribeAccountAttributes service
+     *         method, as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeAccountAttributesResult describeAccountAttributes() throws AmazonServiceException, AmazonClientException;
     
     /**
      * <p>
@@ -5230,6 +5370,25 @@ public interface AmazonEC2 {
      *             either a problem with the data in the request, or a server side issue.
      */
     public DescribeReservedInstancesOfferingsResult describeReservedInstancesOfferings() throws AmazonServiceException, AmazonClientException;
+    
+    /**
+     * <p>
+     * The DisassociateAddress operation disassociates the specified elastic
+     * IP address from the instance to which it is assigned. This is an
+     * idempotent operation. If you enter it more than once, Amazon EC2 does
+     * not return an error.
+     * </p>
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void disassociateAddress() throws AmazonServiceException, AmazonClientException;
     
     /**
      * <p>

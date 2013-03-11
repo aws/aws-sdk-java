@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.datapipeline.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Contains the output from the EvaluateExpression action.
  * </p>
  */
-public class EvaluateExpressionResult {
+public class EvaluateExpressionResult  implements Serializable  {
 
     /**
      * The evaluated expression.

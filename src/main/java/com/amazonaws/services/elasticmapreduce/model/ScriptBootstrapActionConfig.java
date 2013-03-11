@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elasticmapreduce.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Configuration of the script to run during a bootstrap action.
  * </p>
  */
-public class ScriptBootstrapActionConfig {
+public class ScriptBootstrapActionConfig  implements Serializable  {
 
     /**
      * Location of the script to run during a bootstrap action. Can be either

@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.elasticbeanstalk.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#createApplicationVersion(CreateApplicationVersionRequest) CreateApplicationVersion operation}.
@@ -27,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#createApplicationVersion(CreateApplicationVersionRequest)
  */
-public class CreateApplicationVersionRequest extends AmazonWebServiceRequest {
+public class CreateApplicationVersionRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of the application. If no application is found with this

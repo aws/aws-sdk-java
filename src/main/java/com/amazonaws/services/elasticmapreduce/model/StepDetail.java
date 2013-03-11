@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elasticmapreduce.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Combines the execution state and configuration of a step.
  * </p>
  */
-public class StepDetail {
+public class StepDetail  implements Serializable  {
 
     /**
      * The step configuration.

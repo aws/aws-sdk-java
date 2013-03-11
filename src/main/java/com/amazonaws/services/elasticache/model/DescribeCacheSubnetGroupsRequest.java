@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.elasticache.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticache.AmazonElastiCache#describeCacheSubnetGroups(DescribeCacheSubnetGroupsRequest) DescribeCacheSubnetGroups operation}.
@@ -24,7 +25,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#describeCacheSubnetGroups(DescribeCacheSubnetGroupsRequest)
  */
-public class DescribeCacheSubnetGroupsRequest extends AmazonWebServiceRequest {
+public class DescribeCacheSubnetGroupsRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of the Cache Subnet Group to return details for.

@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.storagegateway.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.storagegateway.AWSStorageGateway#listVolumes(ListVolumesRequest) ListVolumes operation}.
@@ -29,7 +30,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#listVolumes(ListVolumesRequest)
  */
-public class ListVolumesRequest extends AmazonWebServiceRequest {
+public class ListVolumesRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The Amazon Resource Name (ARN) of the gateway. Use the

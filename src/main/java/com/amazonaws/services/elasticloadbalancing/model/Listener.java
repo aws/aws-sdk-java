@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elasticloadbalancing.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The Listener data type.
  * </p>
  */
-public class Listener {
+public class Listener  implements Serializable  {
 
     /**
      * Specifies the LoadBalancer transport protocol to use for routing -

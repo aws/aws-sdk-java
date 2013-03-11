@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elasticmapreduce.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * A description of a job flow.
  * </p>
  */
-public class JobFlowDetail {
+public class JobFlowDetail  implements Serializable  {
 
     /**
      * The job flow identifier.

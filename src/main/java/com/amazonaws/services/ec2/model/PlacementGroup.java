@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -20,7 +21,7 @@ package com.amazonaws.services.ec2.model;
  * physically located close enough to support HPC features, such as higher IO network connections between instances in the group.
  * </p>
  */
-public class PlacementGroup {
+public class PlacementGroup  implements Serializable  {
 
     /**
      * The name of this <code>PlacementGroup</code>.

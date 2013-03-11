@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.storagegateway.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Describes a gateway's network interface.
  * </p>
  */
-public class NetworkInterface {
+public class NetworkInterface  implements Serializable  {
 
     /**
      * The Internet Protocol version 4 (IPv4) address of the interface.

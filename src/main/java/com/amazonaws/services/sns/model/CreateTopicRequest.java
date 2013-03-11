@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.sns.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#createTopic(CreateTopicRequest) CreateTopic operation}.
@@ -24,7 +25,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.sns.AmazonSNS#createTopic(CreateTopicRequest)
  */
-public class CreateTopicRequest extends AmazonWebServiceRequest {
+public class CreateTopicRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of the topic you want to create. <p>Constraints: Topic names

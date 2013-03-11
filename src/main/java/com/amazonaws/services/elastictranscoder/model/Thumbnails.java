@@ -13,11 +13,12 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elastictranscoder.model;
+import java.io.Serializable;
 
 /**
  * 
  */
-public class Thumbnails {
+public class Thumbnails  implements Serializable  {
 
     /**
      * The format of thumbnails, if any. Valid values are <code>jpg</code>

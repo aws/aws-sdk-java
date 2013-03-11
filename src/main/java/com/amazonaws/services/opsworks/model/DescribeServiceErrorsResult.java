@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.opsworks.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Contains the response to a <code>DescribeServiceErrors</code> request.
  * </p>
  */
-public class DescribeServiceErrorsResult {
+public class DescribeServiceErrorsResult  implements Serializable  {
 
     /**
      * An array of <code>ServiceError</code> objects that describe the

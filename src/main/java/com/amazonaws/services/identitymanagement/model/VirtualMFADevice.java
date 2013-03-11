@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.identitymanagement.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The <code>VirtualMFADevice</code> data type contains information about a virtual MFA device.
  * </p>
  */
-public class VirtualMFADevice {
+public class VirtualMFADevice  implements Serializable  {
 
     /**
      * The serial number associated with <code>VirtualMFADevice</code>.

@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.sqs.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sqs.AmazonSQS#sendMessage(SendMessageRequest) SendMessage operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.sqs.AmazonSQS#sendMessage(SendMessageRequest)
  */
-public class SendMessageRequest extends AmazonWebServiceRequest {
+public class SendMessageRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The URL of the SQS queue to take action on.

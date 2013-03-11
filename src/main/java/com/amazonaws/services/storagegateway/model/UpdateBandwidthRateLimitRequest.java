@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.storagegateway.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.storagegateway.AWSStorageGateway#updateBandwidthRateLimit(UpdateBandwidthRateLimitRequest) UpdateBandwidthRateLimit operation}.
@@ -31,7 +32,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#updateBandwidthRateLimit(UpdateBandwidthRateLimitRequest)
  */
-public class UpdateBandwidthRateLimitRequest extends AmazonWebServiceRequest {
+public class UpdateBandwidthRateLimitRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The Amazon Resource Name (ARN) of the gateway. Use the

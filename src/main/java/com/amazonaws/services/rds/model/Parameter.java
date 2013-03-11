@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.rds.model;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -22,7 +23,7 @@ package com.amazonaws.services.rds.model;
  * This data type is used as a response element in the DescribeEngineDefaultParameters and DescribeDBParameters actions.
  * </p>
  */
-public class Parameter {
+public class Parameter  implements Serializable  {
 
     /**
      * Specifies the name of the parameter.

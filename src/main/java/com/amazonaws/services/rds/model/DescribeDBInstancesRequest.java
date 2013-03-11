@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.rds.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#describeDBInstances(DescribeDBInstancesRequest) DescribeDBInstances operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#describeDBInstances(DescribeDBInstancesRequest)
  */
-public class DescribeDBInstancesRequest extends AmazonWebServiceRequest {
+public class DescribeDBInstancesRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The user-supplied instance identifier. If this parameter is specified,

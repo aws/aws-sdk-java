@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.datapipeline.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Contains the output from the ReportTaskRunnerHeartbeat action.
  * </p>
  */
-public class ReportTaskRunnerHeartbeatResult {
+public class ReportTaskRunnerHeartbeatResult  implements Serializable  {
 
     /**
      * Indicates whether the calling task runner should terminate. If

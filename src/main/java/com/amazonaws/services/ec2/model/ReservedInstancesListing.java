@@ -13,11 +13,12 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * Reserved Instances Listing
  */
-public class ReservedInstancesListing {
+public class ReservedInstancesListing  implements Serializable  {
 
     private String reservedInstancesListingId;
 

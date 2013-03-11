@@ -18,6 +18,8 @@ import java.util.List;
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.auth.ClasspathPropertiesFileCredentialsProvider;
+import com.amazonaws.regions.Region;
+import com.amazonaws.regions.Regions;
 import com.amazonaws.services.simpledb.AmazonSimpleDB;
 import com.amazonaws.services.simpledb.AmazonSimpleDBClient;
 import com.amazonaws.services.simpledb.model.Attribute;
@@ -50,13 +52,15 @@ public class SimpleDBSample {
         /*
          * This credentials provider implementation loads your AWS credentials
          * from a properties file at the root of your classpath.
-         * 
+         *
          * Important: Be sure to fill in your AWS access credentials in the
          *            AwsCredentials.properties file before you try to run this
          *            sample.
          * http://aws.amazon.com/security-credentials
          */
         AmazonSimpleDB sdb = new AmazonSimpleDBClient(new ClasspathPropertiesFileCredentialsProvider());
+		Region usWest2 = Region.getRegion(Regions.US_WEST_2);
+		sdb.setRegion(usWest2);
 
         System.out.println("===========================================");
         System.out.println("Getting Started with Amazon SimpleDB");

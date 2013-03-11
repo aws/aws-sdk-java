@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -20,7 +21,7 @@ package com.amazonaws.services.ec2.model;
  * such as by purpose, owner, or environment.
  * </p>
  */
-public class Tag {
+public class Tag  implements Serializable  {
 
     /**
      * The tag's key.

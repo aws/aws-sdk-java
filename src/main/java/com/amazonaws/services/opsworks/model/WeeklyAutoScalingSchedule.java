@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.opsworks.model;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -35,7 +36,7 @@ package com.amazonaws.services.opsworks.model;
  * "12":"on", "13":"on", "14":"on", "15":"on" }
  * </code>
  */
-public class WeeklyAutoScalingSchedule {
+public class WeeklyAutoScalingSchedule  implements Serializable  {
 
     /**
      * The schedule for Monday.

@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.redshift.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Contains the output from the DescribeOrderableClusterOptions action.
  * </p>
  */
-public class DescribeOrderableClusterOptionsResult {
+public class DescribeOrderableClusterOptionsResult  implements Serializable  {
 
     /**
      * An <a>OrderableClusterOption</a> structure containing information

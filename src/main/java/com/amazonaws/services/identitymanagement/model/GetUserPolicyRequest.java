@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.identitymanagement.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getUserPolicy(GetUserPolicyRequest) GetUserPolicy operation}.
@@ -24,7 +25,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getUserPolicy(GetUserPolicyRequest)
  */
-public class GetUserPolicyRequest extends AmazonWebServiceRequest {
+public class GetUserPolicyRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * Name of the user who the policy is associated with.

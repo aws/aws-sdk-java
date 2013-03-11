@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Represents a task to bundle an EC2 Windows instance into a new image.
  * </p>
  */
-public class BundleTask {
+public class BundleTask  implements Serializable  {
 
     /**
      * Instance associated with this bundle task.

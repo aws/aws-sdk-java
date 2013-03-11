@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.opsworks.model;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -20,7 +21,7 @@ package com.amazonaws.services.opsworks.model;
  * instances.
  * </p>
  */
-public class AutoScalingThresholds {
+public class AutoScalingThresholds  implements Serializable  {
 
     /**
      * The number of instances to add or remove when the load exceeds a

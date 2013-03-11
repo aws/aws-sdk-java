@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.sns.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * A wrapper type for the topic's Amazon Resource Name (ARN). To retrieve a topic's attributes, use GetTopicAttributes.
  * </p>
  */
-public class Topic {
+public class Topic  implements Serializable  {
 
     /**
      * The topic's ARN.

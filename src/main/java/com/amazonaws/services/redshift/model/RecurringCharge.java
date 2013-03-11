@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.redshift.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Describes a recurring charge.
  * </p>
  */
-public class RecurringCharge {
+public class RecurringCharge  implements Serializable  {
 
     /**
      * The amount charged per the period of time specified by the recurring

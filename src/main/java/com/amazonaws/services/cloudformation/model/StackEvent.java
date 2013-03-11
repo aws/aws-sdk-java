@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.cloudformation.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The StackEvent data type.
  * </p>
  */
-public class StackEvent {
+public class StackEvent  implements Serializable  {
 
     /**
      * The unique ID name of the instance of the stack.

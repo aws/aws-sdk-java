@@ -13,11 +13,12 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * Instance Network Interface Specification
  */
-public class InstanceNetworkInterfaceSpecification {
+public class InstanceNetworkInterfaceSpecification  implements Serializable  {
 
     private String networkInterfaceId;
 

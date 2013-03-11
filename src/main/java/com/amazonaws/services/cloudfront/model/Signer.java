@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.cloudfront.model;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -20,7 +21,7 @@ package com.amazonaws.services.cloudfront.model;
  * any.
  * </p>
  */
-public class Signer {
+public class Signer  implements Serializable  {
 
     /**
      * Specifies an AWS account that can create signed URLs. Values: self,

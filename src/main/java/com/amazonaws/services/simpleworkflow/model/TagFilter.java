@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.simpleworkflow.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Used to filter the workflow executions in visibility APIs based on a tag.
  * </p>
  */
-public class TagFilter {
+public class TagFilter  implements Serializable  {
 
     /**
      * Specifies the tag that must be associated with the execution for it to

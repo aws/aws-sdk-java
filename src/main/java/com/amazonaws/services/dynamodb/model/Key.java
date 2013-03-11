@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.dynamodb.model;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -20,7 +21,7 @@ package com.amazonaws.services.dynamodb.model;
  * (hash-and-range) primary key.
  * </p>
  */
-public class Key {
+public class Key  implements Serializable  {
 
     /**
      * A hash key element is treated as the primary key, and can be a string

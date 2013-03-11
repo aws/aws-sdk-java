@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.route53.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * A complex type that contain information about the specified hosted zone.
  * </p>
  */
-public class HostedZone {
+public class HostedZone  implements Serializable  {
 
     /**
      * The ID of the specified hosted zone.

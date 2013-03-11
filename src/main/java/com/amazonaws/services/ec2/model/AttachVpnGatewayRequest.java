@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#attachVpnGateway(AttachVpnGatewayRequest) AttachVpnGateway operation}.
@@ -24,7 +25,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#attachVpnGateway(AttachVpnGatewayRequest)
  */
-public class AttachVpnGatewayRequest extends AmazonWebServiceRequest {
+public class AttachVpnGatewayRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The ID of the VPN gateway to attach to the VPC.

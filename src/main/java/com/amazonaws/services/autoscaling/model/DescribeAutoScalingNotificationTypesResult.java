@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.autoscaling.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The <code>AutoScalingNotificationTypes</code> data type.
  * </p>
  */
-public class DescribeAutoScalingNotificationTypesResult {
+public class DescribeAutoScalingNotificationTypesResult  implements Serializable  {
 
     /**
      * Notification types supported by Auto Scaling. They are:

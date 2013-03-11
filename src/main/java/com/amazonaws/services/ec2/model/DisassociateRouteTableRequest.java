@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#disassociateRouteTable(DisassociateRouteTableRequest) DisassociateRouteTable operation}.
@@ -28,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#disassociateRouteTable(DisassociateRouteTableRequest)
  */
-public class DisassociateRouteTableRequest extends AmazonWebServiceRequest {
+public class DisassociateRouteTableRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The association ID representing the current association between the

@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.simpleworkflow.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Provides details of the <code>MarkerRecorded</code> event.
  * </p>
  */
-public class MarkerRecordedEventAttributes {
+public class MarkerRecordedEventAttributes  implements Serializable  {
 
     /**
      * The name of the marker.

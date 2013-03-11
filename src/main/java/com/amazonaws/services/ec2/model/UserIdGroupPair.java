@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * An AWS user ID identifiying an AWS account, and the name of a security group within that account.
  * </p>
  */
-public class UserIdGroupPair {
+public class UserIdGroupPair  implements Serializable  {
 
     /**
      * The AWS user ID of an account.

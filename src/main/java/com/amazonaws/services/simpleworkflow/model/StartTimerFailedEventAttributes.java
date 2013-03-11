@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.simpleworkflow.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Provides details of the <code>StartTimerFailed</code> event.
  * </p>
  */
-public class StartTimerFailedEventAttributes {
+public class StartTimerFailedEventAttributes  implements Serializable  {
 
     /**
      * The timerId provided in the <code>StartTimer</code> decision that

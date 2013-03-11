@@ -13,12 +13,13 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * </p>
  */
-public class DescribePlacementGroupsResult {
+public class DescribePlacementGroupsResult  implements Serializable  {
 
     /**
      * Contains information about the specified <code>PlacementGroups</code>.

@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.elasticloadbalancing.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#deregisterInstancesFromLoadBalancer(DeregisterInstancesFromLoadBalancerRequest) DeregisterInstancesFromLoadBalancer operation}.
@@ -26,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#deregisterInstancesFromLoadBalancer(DeregisterInstancesFromLoadBalancerRequest)
  */
-public class DeregisterInstancesFromLoadBalancerRequest extends AmazonWebServiceRequest {
+public class DeregisterInstancesFromLoadBalancerRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name associated with the LoadBalancer. The name must be unique

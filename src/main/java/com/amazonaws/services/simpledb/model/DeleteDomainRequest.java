@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.simpledb.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.simpledb.AmazonSimpleDB#deleteDomain(DeleteDomainRequest) DeleteDomain operation}.
@@ -28,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpledb.AmazonSimpleDB#deleteDomain(DeleteDomainRequest)
  */
-public class DeleteDomainRequest extends AmazonWebServiceRequest {
+public class DeleteDomainRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of the domain to delete.

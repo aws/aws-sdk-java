@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.datapipeline.model;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -20,7 +21,7 @@ package com.amazonaws.services.datapipeline.model;
  * a pipeline defines the pipeline.
  * </p>
  */
-public class PipelineObject {
+public class PipelineObject  implements Serializable  {
 
     /**
      * Identifier of the object.

@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.sns.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#setSubscriptionAttributes(SetSubscriptionAttributesRequest) SetSubscriptionAttributes operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.sns.AmazonSNS#setSubscriptionAttributes(SetSubscriptionAttributesRequest)
  */
-public class SetSubscriptionAttributesRequest extends AmazonWebServiceRequest {
+public class SetSubscriptionAttributesRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The ARN of the subscription to modify.

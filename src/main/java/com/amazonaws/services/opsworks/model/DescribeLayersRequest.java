@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.opsworks.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.opsworks.AWSOpsWorks#describeLayers(DescribeLayersRequest) DescribeLayers operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#describeLayers(DescribeLayersRequest)
  */
-public class DescribeLayersRequest extends AmazonWebServiceRequest {
+public class DescribeLayersRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The stack ID.

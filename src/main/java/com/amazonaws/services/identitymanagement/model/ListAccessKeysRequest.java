@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.identitymanagement.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listAccessKeys(ListAccessKeysRequest) ListAccessKeys operation}.
@@ -35,7 +36,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listAccessKeys(ListAccessKeysRequest)
  */
-public class ListAccessKeysRequest extends AmazonWebServiceRequest {
+public class ListAccessKeysRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * Name of the user.

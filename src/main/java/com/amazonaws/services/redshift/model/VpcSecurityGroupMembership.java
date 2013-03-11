@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.redshift.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Describes the members of a VPC security group.
  * </p>
  */
-public class VpcSecurityGroupMembership {
+public class VpcSecurityGroupMembership  implements Serializable  {
 
     /**
      * 

@@ -13,11 +13,12 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * Describe Network Interfaces Result
  */
-public class DescribeNetworkInterfacesResult {
+public class DescribeNetworkInterfacesResult  implements Serializable  {
 
     private java.util.List<NetworkInterface> networkInterfaces;
 

@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#createNetworkAcl(CreateNetworkAclRequest) CreateNetworkAcl operation}.
@@ -24,7 +25,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createNetworkAcl(CreateNetworkAclRequest)
  */
-public class CreateNetworkAclRequest extends AmazonWebServiceRequest {
+public class CreateNetworkAclRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The ID of the VPC where the network ACL will be created.

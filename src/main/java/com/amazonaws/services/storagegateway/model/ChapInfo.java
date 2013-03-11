@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.storagegateway.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Describes Challenge-Handshake Authentication Protocol (CHAP) information that supports authentication between your gateway and iSCSI initiators.
  * </p>
  */
-public class ChapInfo {
+public class ChapInfo  implements Serializable  {
 
     /**
      * The Amazon Resource Name (ARN) of the volume. <p><i>Valid Values</i>:

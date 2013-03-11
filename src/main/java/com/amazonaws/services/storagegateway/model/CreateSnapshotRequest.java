@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.storagegateway.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.storagegateway.AWSStorageGateway#createSnapshot(CreateSnapshotRequest) CreateSnapshot operation}.
@@ -39,7 +40,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#createSnapshot(CreateSnapshotRequest)
  */
-public class CreateSnapshotRequest extends AmazonWebServiceRequest {
+public class CreateSnapshotRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The Amazon Resource Name (ARN) of the volume. Use the

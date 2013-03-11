@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.identitymanagement.model;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -22,7 +23,7 @@ package com.amazonaws.services.identitymanagement.model;
  * This data type is used as a response element in the action ListAccessKeys.
  * </p>
  */
-public class AccessKeyMetadata {
+public class AccessKeyMetadata  implements Serializable  {
 
     /**
      * Name of the user the key is associated with.

@@ -13,11 +13,12 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * Create Internet Gateway Result
  */
-public class CreateInternetGatewayResult {
+public class CreateInternetGatewayResult  implements Serializable  {
 
     private InternetGateway internetGateway;
 

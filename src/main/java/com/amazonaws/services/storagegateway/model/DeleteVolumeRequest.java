@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.storagegateway.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.storagegateway.AWSStorageGateway#deleteVolume(DeleteVolumeRequest) DeleteVolume operation}.
@@ -34,7 +35,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#deleteVolume(DeleteVolumeRequest)
  */
-public class DeleteVolumeRequest extends AmazonWebServiceRequest {
+public class DeleteVolumeRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The Amazon Resource Name (ARN) of the volume. Use the

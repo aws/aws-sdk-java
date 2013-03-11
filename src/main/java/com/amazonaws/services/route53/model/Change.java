@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.route53.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * A complex type that contains the information for each change in a change batch request.
  * </p>
  */
-public class Change {
+public class Change  implements Serializable  {
 
     /**
      * The action to perform. <p>Valid values: <code>CREATE</code> |

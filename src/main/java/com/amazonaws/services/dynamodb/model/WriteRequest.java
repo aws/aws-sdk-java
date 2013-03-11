@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.dynamodb.model;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -20,7 +21,7 @@ package com.amazonaws.services.dynamodb.model;
  * Both. This is enforced in the code.
  * </p>
  */
-public class WriteRequest {
+public class WriteRequest  implements Serializable  {
 
     /**
      * A container for a Put BatchWrite request

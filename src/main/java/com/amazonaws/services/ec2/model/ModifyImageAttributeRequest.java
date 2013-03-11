@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#modifyImageAttribute(ModifyImageAttributeRequest) ModifyImageAttribute operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#modifyImageAttribute(ModifyImageAttributeRequest)
  */
-public class ModifyImageAttributeRequest extends AmazonWebServiceRequest {
+public class ModifyImageAttributeRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The ID of the AMI whose attribute you want to modify.

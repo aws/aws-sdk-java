@@ -70,6 +70,14 @@ public class SubnetStaxUnmarshaller implements Unmarshaller<Subnet, StaxUnmarsha
                     subnet.setAvailabilityZone(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("defaultForAz", targetDepth)) {
+                    subnet.setDefaultForAz(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("mapPublicIpOnLaunch", targetDepth)) {
+                    subnet.setMapPublicIpOnLaunch(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
                 if (context.testExpression("tagSet/item", targetDepth)) {
                     subnet.getTags().add(TagStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

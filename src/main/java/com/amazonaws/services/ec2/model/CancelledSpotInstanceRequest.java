@@ -13,11 +13,12 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * Cancelled Spot Instance Request
  */
-public class CancelledSpotInstanceRequest {
+public class CancelledSpotInstanceRequest  implements Serializable  {
 
     private String spotInstanceRequestId;
 

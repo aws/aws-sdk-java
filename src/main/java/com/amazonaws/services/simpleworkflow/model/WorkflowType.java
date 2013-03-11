@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.simpleworkflow.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Represents a workflow type.
  * </p>
  */
-public class WorkflowType {
+public class WorkflowType  implements Serializable  {
 
     /**
      * The name of the workflow type. This field is required. <note>The

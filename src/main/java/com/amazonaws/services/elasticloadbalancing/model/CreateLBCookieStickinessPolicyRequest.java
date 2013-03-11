@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.elasticloadbalancing.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#createLBCookieStickinessPolicy(CreateLBCookieStickinessPolicyRequest) CreateLBCookieStickinessPolicy operation}.
@@ -34,7 +35,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#createLBCookieStickinessPolicy(CreateLBCookieStickinessPolicyRequest)
  */
-public class CreateLBCookieStickinessPolicyRequest extends AmazonWebServiceRequest {
+public class CreateLBCookieStickinessPolicyRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name associated with the LoadBalancer. The name must be unique

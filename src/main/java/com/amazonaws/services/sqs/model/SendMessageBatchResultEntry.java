@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.sqs.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Encloses a message ID for successfully enqueued message of a SendMessageBatchRequest.
  * </p>
  */
-public class SendMessageBatchResultEntry {
+public class SendMessageBatchResultEntry  implements Serializable  {
 
     /**
      * An identifier for the message in this batch.

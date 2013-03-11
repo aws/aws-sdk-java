@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.simpleemail.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.simpleemail.AmazonSimpleEmailService#getIdentityDkimAttributes(GetIdentityDkimAttributesRequest) GetIdentityDkimAttributes operation}.
@@ -40,7 +41,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpleemail.AmazonSimpleEmailService#getIdentityDkimAttributes(GetIdentityDkimAttributesRequest)
  */
-public class GetIdentityDkimAttributesRequest extends AmazonWebServiceRequest {
+public class GetIdentityDkimAttributesRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * A list of one or more verified identities - email addresses, domains,

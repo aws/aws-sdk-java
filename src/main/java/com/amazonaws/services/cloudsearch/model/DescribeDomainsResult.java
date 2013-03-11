@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.cloudsearch.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * A response message that contains the status of one or more domains.
  * </p>
  */
-public class DescribeDomainsResult {
+public class DescribeDomainsResult  implements Serializable  {
 
     /**
      * The current status of all of your search domains.

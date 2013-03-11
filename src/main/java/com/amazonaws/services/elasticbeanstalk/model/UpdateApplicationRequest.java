@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.elasticbeanstalk.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#updateApplication(UpdateApplicationRequest) UpdateApplication operation}.
@@ -27,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#updateApplication(UpdateApplicationRequest)
  */
-public class UpdateApplicationRequest extends AmazonWebServiceRequest {
+public class UpdateApplicationRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of the application to update. If no such application is

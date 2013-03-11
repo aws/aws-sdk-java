@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.sqs.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * This is used in the responses of batch API to give a detailed description of the result of an operation on each entry in the request.
  * </p>
  */
-public class BatchResultErrorEntry {
+public class BatchResultErrorEntry  implements Serializable  {
 
     /**
      * The id of an entry in a batch request.

@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.elasticbeanstalk.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#deleteConfigurationTemplate(DeleteConfigurationTemplateRequest) DeleteConfigurationTemplate operation}.
@@ -27,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#deleteConfigurationTemplate(DeleteConfigurationTemplateRequest)
  */
-public class DeleteConfigurationTemplateRequest extends AmazonWebServiceRequest {
+public class DeleteConfigurationTemplateRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of the application to delete the configuration template from.

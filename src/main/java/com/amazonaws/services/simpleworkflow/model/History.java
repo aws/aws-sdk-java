@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.simpleworkflow.model;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -20,7 +21,7 @@ package com.amazonaws.services.simpleworkflow.model;
  * related to all tasks and events in the life of the workflow execution.
  * </p>
  */
-public class History {
+public class History  implements Serializable  {
 
     /**
      * The list of history events.

@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.elasticache.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticache.AmazonElastiCache#describeReservedCacheNodes(DescribeReservedCacheNodesRequest) DescribeReservedCacheNodes operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#describeReservedCacheNodes(DescribeReservedCacheNodesRequest)
  */
-public class DescribeReservedCacheNodesRequest extends AmazonWebServiceRequest {
+public class DescribeReservedCacheNodesRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The reserved Cache Node identifier filter value. Specify this

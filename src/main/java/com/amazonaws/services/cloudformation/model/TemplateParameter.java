@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.cloudformation.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The TemplateParameter data type.
  * </p>
  */
-public class TemplateParameter {
+public class TemplateParameter  implements Serializable  {
 
     /**
      * The name associated with the parameter.

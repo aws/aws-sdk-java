@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.importexport.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.importexport.AmazonImportExport#listJobs(ListJobsRequest) ListJobs operation}.
@@ -24,7 +25,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.importexport.AmazonImportExport#listJobs(ListJobsRequest)
  */
-public class ListJobsRequest extends AmazonWebServiceRequest {
+public class ListJobsRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * Sets the maximum number of jobs returned in the response. If there are

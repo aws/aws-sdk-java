@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.elasticbeanstalk.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#deleteApplicationVersion(DeleteApplicationVersionRequest) DeleteApplicationVersion operation}.
@@ -26,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#deleteApplicationVersion(DeleteApplicationVersionRequest)
  */
-public class DeleteApplicationVersionRequest extends AmazonWebServiceRequest {
+public class DeleteApplicationVersionRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of the application to delete releases from.

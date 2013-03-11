@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.cloudfront.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.cloudfront.AmazonCloudFront#listStreamingDistributions(ListStreamingDistributionsRequest) ListStreamingDistributions operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudfront.AmazonCloudFront#listStreamingDistributions(ListStreamingDistributionsRequest)
  */
-public class ListStreamingDistributionsRequest extends AmazonWebServiceRequest {
+public class ListStreamingDistributionsRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * Use this when paginating results to indicate where to begin in your

@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.redshift.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.redshift.AmazonRedshift#describeReservedNodeOfferings(DescribeReservedNodeOfferingsRequest) DescribeReservedNodeOfferings operation}.
@@ -33,7 +34,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#describeReservedNodeOfferings(DescribeReservedNodeOfferingsRequest)
  */
-public class DescribeReservedNodeOfferingsRequest extends AmazonWebServiceRequest {
+public class DescribeReservedNodeOfferingsRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The unique identifier for the offering.

@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.rds.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#createDBSubnetGroup(CreateDBSubnetGroupRequest) CreateDBSubnetGroup operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#createDBSubnetGroup(CreateDBSubnetGroupRequest)
  */
-public class CreateDBSubnetGroupRequest extends AmazonWebServiceRequest {
+public class CreateDBSubnetGroupRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name for the DB Subnet Group. This value is stored as a lowercase

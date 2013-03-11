@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.directconnect.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * A step in the offering order process.
  * </p>
  */
-public class OfferingOrderStep {
+public class OfferingOrderStep  implements Serializable  {
 
     /**
      * Number of an order step. <p>Example: 1

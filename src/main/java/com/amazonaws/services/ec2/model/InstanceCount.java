@@ -13,11 +13,12 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * Instance Count
  */
-public class InstanceCount {
+public class InstanceCount  implements Serializable  {
 
     private String state;
 

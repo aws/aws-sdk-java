@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeInstances(DescribeInstancesRequest) DescribeInstances operation}.
@@ -31,7 +32,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeInstances(DescribeInstancesRequest)
  */
-public class DescribeInstancesRequest extends AmazonWebServiceRequest {
+public class DescribeInstancesRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * An optional list of the instances to describe.

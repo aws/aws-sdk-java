@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.dynamodb.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * <code>KeySchemaElement</code> is the primary key (hash or hash-and-range) structure for the table.
  * </p>
  */
-public class KeySchemaElement {
+public class KeySchemaElement  implements Serializable  {
 
     /**
      * The <code>AttributeName</code> of the <code>KeySchemaElement</code>.

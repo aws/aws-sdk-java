@@ -13,11 +13,12 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.simpledb.model;
+import java.io.Serializable;
 
 /**
  * Deletable Item
  */
-public class DeletableItem {
+public class DeletableItem  implements Serializable  {
 
     private String name;
 

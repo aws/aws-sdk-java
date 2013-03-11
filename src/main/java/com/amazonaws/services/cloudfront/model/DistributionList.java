@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.cloudfront.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * A distribution list.
  * </p>
  */
-public class DistributionList {
+public class DistributionList  implements Serializable  {
 
     /**
      * The value you provided for the Marker request parameter.

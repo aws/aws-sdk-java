@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.simpleworkflow.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Status information about an activity task.
  * </p>
  */
-public class ActivityTaskStatus {
+public class ActivityTaskStatus  implements Serializable  {
 
     /**
      * Set to <code>true</code> if cancellation of the task is requested.

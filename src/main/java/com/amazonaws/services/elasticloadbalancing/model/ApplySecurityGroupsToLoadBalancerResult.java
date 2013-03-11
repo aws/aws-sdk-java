@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elasticloadbalancing.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The out for the ApplySecurityGroupsToLoadBalancer action.
  * </p>
  */
-public class ApplySecurityGroupsToLoadBalancerResult {
+public class ApplySecurityGroupsToLoadBalancerResult  implements Serializable  {
 
     /**
      * A list of security group IDs associated with your LoadBalancer.

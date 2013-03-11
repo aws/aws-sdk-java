@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elasticache.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * An event represents something interesting that has happened in the system.
  * </p>
  */
-public class Event {
+public class Event  implements Serializable  {
 
     /**
      * Provides the identifier for the source of the event.

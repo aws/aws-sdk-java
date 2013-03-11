@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.rds.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#describeDBEngineVersions(DescribeDBEngineVersionsRequest) DescribeDBEngineVersions operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#describeDBEngineVersions(DescribeDBEngineVersionsRequest)
  */
-public class DescribeDBEngineVersionsRequest extends AmazonWebServiceRequest {
+public class DescribeDBEngineVersionsRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The database engine to return.

@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#resetNetworkInterfaceAttribute(ResetNetworkInterfaceAttributeRequest) ResetNetworkInterfaceAttribute operation}.
@@ -21,7 +22,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#resetNetworkInterfaceAttribute(ResetNetworkInterfaceAttributeRequest)
  */
-public class ResetNetworkInterfaceAttributeRequest extends AmazonWebServiceRequest {
+public class ResetNetworkInterfaceAttributeRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     private String networkInterfaceId;
 

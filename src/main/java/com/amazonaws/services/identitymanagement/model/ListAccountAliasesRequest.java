@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.identitymanagement.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listAccountAliases(ListAccountAliasesRequest) ListAccountAliases operation}.
@@ -28,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listAccountAliases(ListAccountAliasesRequest)
  */
-public class ListAccountAliasesRequest extends AmazonWebServiceRequest {
+public class ListAccountAliasesRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * Use this only when paginating results, and only in a subsequent

@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.elasticbeanstalk.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#terminateEnvironment(TerminateEnvironmentRequest) TerminateEnvironment operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#terminateEnvironment(TerminateEnvironmentRequest)
  */
-public class TerminateEnvironmentRequest extends AmazonWebServiceRequest {
+public class TerminateEnvironmentRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The ID of the environment to terminate. <p> Condition: You must

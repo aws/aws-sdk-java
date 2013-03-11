@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elasticache.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Availability Zone in which the Cache Cluster is launched
  * </p>
  */
-public class AvailabilityZone {
+public class AvailabilityZone  implements Serializable  {
 
     /**
      * Specifies the name of the Availability Zone

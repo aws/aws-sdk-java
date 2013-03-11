@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.elasticmapreduce.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticmapreduce.AmazonElasticMapReduce#setTerminationProtection(SetTerminationProtectionRequest) SetTerminationProtection operation}.
@@ -37,7 +38,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticmapreduce.AmazonElasticMapReduce#setTerminationProtection(SetTerminationProtectionRequest)
  */
-public class SetTerminationProtectionRequest extends AmazonWebServiceRequest {
+public class SetTerminationProtectionRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * A list of strings that uniquely identify the job flows to protect.

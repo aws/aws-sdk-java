@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.autoscaling.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.autoscaling.AmazonAutoScaling#deletePolicy(DeletePolicyRequest) DeletePolicy operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#deletePolicy(DeletePolicyRequest)
  */
-public class DeletePolicyRequest extends AmazonWebServiceRequest {
+public class DeletePolicyRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of the Auto Scaling group.

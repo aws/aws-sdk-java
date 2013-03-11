@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.simpleworkflow.model;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -21,7 +22,7 @@ package com.amazonaws.services.simpleworkflow.model;
  * For example: "oldestDate": 1325376070.
  * </p>
  */
-public class ExecutionTimeFilter {
+public class ExecutionTimeFilter  implements Serializable  {
 
     /**
      * Specifies the oldest start or close date and time to return.

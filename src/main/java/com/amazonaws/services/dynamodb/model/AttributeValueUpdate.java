@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.dynamodb.model;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -20,7 +21,7 @@ package com.amazonaws.services.dynamodb.model;
  * .
  * </p>
  */
-public class AttributeValueUpdate {
+public class AttributeValueUpdate  implements Serializable  {
 
     /**
      * AttributeValue can be <code>String</code>, <code>Number</code>,

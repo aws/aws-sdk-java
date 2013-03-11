@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.cloudfront.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The CloudFrontOriginAccessIdentityList type.
  * </p>
  */
-public class CloudFrontOriginAccessIdentityList {
+public class CloudFrontOriginAccessIdentityList  implements Serializable  {
 
     /**
      * The value you provided for the Marker request parameter.

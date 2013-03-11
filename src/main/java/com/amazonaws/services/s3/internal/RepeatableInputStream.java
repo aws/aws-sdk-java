@@ -140,12 +140,10 @@ public class RepeatableInputStream extends InputStream {
      * @see java.io.InputStream#read(byte[], int, int)
      */
     public int read(byte[] out, int outOffset, int outLength) throws IOException {
-        byte[] tmp = new byte[outLength];
-
         // Check whether we already have buffered data.
         if (bufferOffset < bytesReadPastMark && buffer != null) {
             // Data is being repeated, so read from buffer instead of wrapped input stream.
-            int bytesFromBuffer = tmp.length;
+            int bytesFromBuffer = outLength;
             if (bufferOffset + bytesFromBuffer > bytesReadPastMark) {
                 bytesFromBuffer = (int) bytesReadPastMark - bufferOffset;
             }
@@ -157,7 +155,7 @@ public class RepeatableInputStream extends InputStream {
         }
 
         // Read data from input stream.
-        int count = is.read(tmp);
+        int count = is.read(out, outOffset, outLength);
 
         if (count <= 0) {
             return count;
@@ -165,9 +163,9 @@ public class RepeatableInputStream extends InputStream {
 
         // Fill the buffer with data, as long as we won't exceed its capacity.
         if (bytesReadPastMark + count <= bufferSize) {
-            System.arraycopy(tmp, 0, buffer, (int) bytesReadPastMark, count);
+            System.arraycopy(out, outOffset, buffer, (int) bytesReadPastMark, count);
             bufferOffset += count;
-        } else if (buffer != null) {
+        } else {
             // We have exceeded the buffer capacity, after which point it is of no use. Free the memory.
         	if (log.isDebugEnabled()) {
         		log.debug("Buffer size " + bufferSize + " has been exceeded and the input stream "
@@ -176,8 +174,6 @@ public class RepeatableInputStream extends InputStream {
             buffer = null;
         }
 
-        // Write to output byte array.
-        System.arraycopy(tmp, 0, out, outOffset, count);
         bytesReadPastMark += count;
 
         return count;

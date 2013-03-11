@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.route53.model;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -20,7 +21,7 @@ package com.amazonaws.services.route53.model;
  * <code>HostedZoneConfig</code> and <code>Comment</code> elements from the XML document.
  * </p>
  */
-public class HostedZoneConfig {
+public class HostedZoneConfig  implements Serializable  {
 
     /**
      * An optional comment about your hosted zone. If you don't want to

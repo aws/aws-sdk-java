@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#authorizeSecurityGroupEgress(AuthorizeSecurityGroupEgressRequest) AuthorizeSecurityGroupEgress operation}.
@@ -39,7 +40,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#authorizeSecurityGroupEgress(AuthorizeSecurityGroupEgressRequest)
  */
-public class AuthorizeSecurityGroupEgressRequest extends AmazonWebServiceRequest {
+public class AuthorizeSecurityGroupEgressRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * ID of the VPC security group to modify.

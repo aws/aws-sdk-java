@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -22,7 +23,7 @@ package com.amazonaws.services.ec2.model;
  * The public key portion is stored by Amazon EC2 and the private key is returned only once, in this type, when the key is initially created.
  * </p>
  */
-public class KeyPair {
+public class KeyPair  implements Serializable  {
 
     /**
      * The name of the key pair.

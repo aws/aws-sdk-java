@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.identitymanagement.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#createGroup(CreateGroupRequest) CreateGroup operation}.
@@ -28,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#createGroup(CreateGroupRequest)
  */
-public class CreateGroupRequest extends AmazonWebServiceRequest {
+public class CreateGroupRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The path to the group. For more information about paths, see <a

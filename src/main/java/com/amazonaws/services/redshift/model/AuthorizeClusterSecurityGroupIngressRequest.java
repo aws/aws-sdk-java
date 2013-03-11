@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.redshift.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.redshift.AmazonRedshift#authorizeClusterSecurityGroupIngress(AuthorizeClusterSecurityGroupIngressRequest) AuthorizeClusterSecurityGroupIngress operation}.
@@ -38,7 +39,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#authorizeClusterSecurityGroupIngress(AuthorizeClusterSecurityGroupIngressRequest)
  */
-public class AuthorizeClusterSecurityGroupIngressRequest extends AmazonWebServiceRequest {
+public class AuthorizeClusterSecurityGroupIngressRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of the security group to which the ingress rule is added.

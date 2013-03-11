@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.identitymanagement.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#updateAccountPasswordPolicy(UpdateAccountPasswordPolicyRequest) UpdateAccountPasswordPolicy operation}.
@@ -24,7 +25,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#updateAccountPasswordPolicy(UpdateAccountPasswordPolicyRequest)
  */
-public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest {
+public class UpdateAccountPasswordPolicyRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     private Integer minimumPasswordLength;
 

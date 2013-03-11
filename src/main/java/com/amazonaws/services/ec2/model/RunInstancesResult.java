@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The result of calling the RunInstancesResult, contains the new reservation created by Amazon EC2.
  * </p>
  */
-public class RunInstancesResult {
+public class RunInstancesResult  implements Serializable  {
 
     /**
      * The newly created reservation, containing the new instances.

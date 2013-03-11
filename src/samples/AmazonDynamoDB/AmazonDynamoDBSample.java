@@ -18,6 +18,8 @@ import java.util.Map;
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.auth.ClasspathPropertiesFileCredentialsProvider;
+import com.amazonaws.regions.Region;
+import com.amazonaws.regions.Regions;
 import com.amazonaws.services.dynamodb.AmazonDynamoDBClient;
 import com.amazonaws.services.dynamodb.model.AttributeValue;
 import com.amazonaws.services.dynamodb.model.ComparisonOperator;
@@ -66,6 +68,8 @@ public class AmazonDynamoDBSample {
 		 * from a properties file at the root of your classpath.
 		 */
         dynamoDB = new AmazonDynamoDBClient(new ClasspathPropertiesFileCredentialsProvider());
+        Region usWest2 = Region.getRegion(Regions.US_WEST_2);
+        dynamoDB.setRegion(usWest2);
     }
 
 

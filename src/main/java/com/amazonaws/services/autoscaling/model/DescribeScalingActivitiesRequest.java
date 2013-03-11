@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.autoscaling.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.autoscaling.AmazonAutoScaling#describeScalingActivities(DescribeScalingActivitiesRequest) DescribeScalingActivities operation}.
@@ -31,7 +32,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#describeScalingActivities(DescribeScalingActivitiesRequest)
  */
-public class DescribeScalingActivitiesRequest extends AmazonWebServiceRequest {
+public class DescribeScalingActivitiesRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * A list containing the activity IDs of the desired scaling activities.

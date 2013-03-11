@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.elasticache.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticache.AmazonElastiCache#describeCacheClusters(DescribeCacheClustersRequest) DescribeCacheClusters operation}.
@@ -44,7 +45,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#describeCacheClusters(DescribeCacheClustersRequest)
  */
-public class DescribeCacheClustersRequest extends AmazonWebServiceRequest {
+public class DescribeCacheClustersRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The user-supplied cluster identifier. If this parameter is specified,

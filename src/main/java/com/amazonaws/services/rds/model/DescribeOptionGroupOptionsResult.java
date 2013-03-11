@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.rds.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * 
  * </p>
  */
-public class DescribeOptionGroupOptionsResult {
+public class DescribeOptionGroupOptionsResult  implements Serializable  {
 
     /**
      * List of available options.

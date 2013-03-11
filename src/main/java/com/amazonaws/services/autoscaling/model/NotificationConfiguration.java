@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.autoscaling.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The <code>NotificationConfiguration</code> data type.
  * </p>
  */
-public class NotificationConfiguration {
+public class NotificationConfiguration  implements Serializable  {
 
     /**
      * Specifies the Auto Scaling group name.

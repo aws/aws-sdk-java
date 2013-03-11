@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.simpleworkflow.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#describeWorkflowExecution(DescribeWorkflowExecutionRequest) DescribeWorkflowExecution operation}.
@@ -44,7 +45,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#describeWorkflowExecution(DescribeWorkflowExecutionRequest)
  */
-public class DescribeWorkflowExecutionRequest extends AmazonWebServiceRequest {
+public class DescribeWorkflowExecutionRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of the domain containing the workflow execution.

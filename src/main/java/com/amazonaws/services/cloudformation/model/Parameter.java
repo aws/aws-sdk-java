@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.cloudformation.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The Parameter data type.
  * </p>
  */
-public class Parameter {
+public class Parameter  implements Serializable  {
 
     /**
      * The key associated with the parameter.

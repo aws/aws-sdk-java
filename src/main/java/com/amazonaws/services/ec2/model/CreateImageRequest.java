@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#createImage(CreateImageRequest) CreateImage operation}.
@@ -24,7 +25,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createImage(CreateImageRequest)
  */
-public class CreateImageRequest extends AmazonWebServiceRequest {
+public class CreateImageRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The ID of the instance from which to create the new image.

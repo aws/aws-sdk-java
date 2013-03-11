@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.simpleemail.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Represents a unique message ID returned from a successful <code>SendEmail</code> request.
  * </p>
  */
-public class SendEmailResult {
+public class SendEmailResult  implements Serializable  {
 
     /**
      * The unique message identifier returned from the <code>SendEmail</code>

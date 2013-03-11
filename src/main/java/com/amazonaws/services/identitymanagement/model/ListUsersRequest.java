@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.identitymanagement.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listUsers(ListUsersRequest) ListUsers operation}.
@@ -26,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listUsers(ListUsersRequest)
  */
-public class ListUsersRequest extends AmazonWebServiceRequest {
+public class ListUsersRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The path prefix for filtering the results. For example:

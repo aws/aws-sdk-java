@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.directconnect.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.directconnect.AmazonDirectConnect#describeVirtualGateways(DescribeVirtualGatewaysRequest) DescribeVirtualGateways operation}.
@@ -28,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.directconnect.AmazonDirectConnect#describeVirtualGateways(DescribeVirtualGatewaysRequest)
  */
-public class DescribeVirtualGatewaysRequest extends AmazonWebServiceRequest {
+public class DescribeVirtualGatewaysRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * Returns a string representation of this object; useful for testing and

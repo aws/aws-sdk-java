@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.glacier.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * A list of the part sizes of the multipart upload.
  * </p>
  */
-public class PartListElement {
+public class PartListElement  implements Serializable  {
 
     /**
      * The byte range of a part, inclusive of the upper value of the range.

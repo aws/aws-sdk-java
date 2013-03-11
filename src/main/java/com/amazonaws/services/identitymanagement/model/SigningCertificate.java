@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.identitymanagement.model;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -22,7 +23,7 @@ package com.amazonaws.services.identitymanagement.model;
  * This data type is used as a response element in the actions UploadSigningCertificate and ListSigningCertificates.
  * </p>
  */
-public class SigningCertificate {
+public class SigningCertificate  implements Serializable  {
 
     /**
      * Name of the user the signing certificate is associated with.

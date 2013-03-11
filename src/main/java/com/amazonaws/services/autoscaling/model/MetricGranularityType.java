@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.autoscaling.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The MetricGranularityType data type.
  * </p>
  */
-public class MetricGranularityType {
+public class MetricGranularityType  implements Serializable  {
 
     /**
      * The granularity of a Metric.

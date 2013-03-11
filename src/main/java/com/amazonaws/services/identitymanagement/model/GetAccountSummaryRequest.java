@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.identitymanagement.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getAccountSummary(GetAccountSummaryRequest) GetAccountSummary operation}.
@@ -28,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getAccountSummary(GetAccountSummaryRequest)
  */
-public class GetAccountSummaryRequest extends AmazonWebServiceRequest {
+public class GetAccountSummaryRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * Returns a string representation of this object; useful for testing and

@@ -70,6 +70,10 @@ public class VpcStaxUnmarshaller implements Unmarshaller<Vpc, StaxUnmarshallerCo
                     vpc.setInstanceTenancy(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("isDefault", targetDepth)) {
+                    vpc.setIsDefault(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return vpc;

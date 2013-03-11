@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.rds.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * This data type is used as a response element in the DescribeEvents action.
  * </p>
  */
-public class Event {
+public class Event  implements Serializable  {
 
     /**
      * Provides the identifier for the source of the event.

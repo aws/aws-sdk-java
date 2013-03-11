@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.dynamodb.model;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -20,7 +21,7 @@ package com.amazonaws.services.dynamodb.model;
  * attribute value exists and has a particular value before changing it.
  * </p>
  */
-public class ExpectedAttributeValue {
+public class ExpectedAttributeValue  implements Serializable  {
 
     /**
      * Specify whether or not a value already exists and has a specific

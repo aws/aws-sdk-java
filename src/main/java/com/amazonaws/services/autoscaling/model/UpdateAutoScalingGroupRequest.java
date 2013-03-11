@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.autoscaling.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.autoscaling.AmazonAutoScaling#updateAutoScalingGroup(UpdateAutoScalingGroupRequest) UpdateAutoScalingGroup operation}.
@@ -39,7 +40,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#updateAutoScalingGroup(UpdateAutoScalingGroupRequest)
  */
-public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest {
+public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of the Auto Scaling group.

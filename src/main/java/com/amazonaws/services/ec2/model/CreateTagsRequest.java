@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#createTags(CreateTagsRequest) CreateTags operation}.
@@ -24,7 +25,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createTags(CreateTagsRequest)
  */
-public class CreateTagsRequest extends AmazonWebServiceRequest {
+public class CreateTagsRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * One or more IDs of resources to tag. This could be the ID of an AMI,

@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The result of detaching an EBS volume from an instance.
  * </p>
  */
-public class DetachVolumeResult {
+public class DetachVolumeResult  implements Serializable  {
 
     /**
      * The updated EBS volume attachment information after trying to detach

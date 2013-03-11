@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.elasticloadbalancing.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#deleteLoadBalancerListeners(DeleteLoadBalancerListenersRequest) DeleteLoadBalancerListeners operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#deleteLoadBalancerListeners(DeleteLoadBalancerListenersRequest)
  */
-public class DeleteLoadBalancerListenersRequest extends AmazonWebServiceRequest {
+public class DeleteLoadBalancerListenersRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The mnemonic name associated with the LoadBalancer.

@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.glacier.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * A list of in-progress multipart uploads for a vault.
  * </p>
  */
-public class UploadListElement {
+public class UploadListElement  implements Serializable  {
 
     /**
      * The ID of a multipart upload.

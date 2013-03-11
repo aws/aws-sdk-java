@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.storagegateway.model;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -24,7 +25,7 @@ package com.amazonaws.services.storagegateway.model;
  * UpdateChapCredentialsOutput$TargetARN
  * </ul>
  */
-public class UpdateChapCredentialsResult {
+public class UpdateChapCredentialsResult  implements Serializable  {
 
     /**
      * The Amazon Resource Name (ARN) of the target. This is the same target

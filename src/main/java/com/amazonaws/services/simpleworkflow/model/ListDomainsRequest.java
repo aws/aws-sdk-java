@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.simpleworkflow.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#listDomains(ListDomainsRequest) ListDomains operation}.
@@ -46,7 +47,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#listDomains(ListDomainsRequest)
  */
-public class ListDomainsRequest extends AmazonWebServiceRequest {
+public class ListDomainsRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * If on a previous call to this method a <code>NextPageToken</code> was

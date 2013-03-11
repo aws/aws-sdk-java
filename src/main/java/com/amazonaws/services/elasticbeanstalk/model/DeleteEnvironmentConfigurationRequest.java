@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.elasticbeanstalk.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#deleteEnvironmentConfiguration(DeleteEnvironmentConfigurationRequest) DeleteEnvironmentConfiguration operation}.
@@ -28,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#deleteEnvironmentConfiguration(DeleteEnvironmentConfigurationRequest)
  */
-public class DeleteEnvironmentConfigurationRequest extends AmazonWebServiceRequest {
+public class DeleteEnvironmentConfigurationRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of the application the environment is associated with.

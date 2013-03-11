@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.rds.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Data returned by the <b>DescribeEventSubscriptions</b> action.
  * </p>
  */
-public class DescribeEventSubscriptionsResult {
+public class DescribeEventSubscriptionsResult  implements Serializable  {
 
     /**
      * An optional pagination token provided by a previous

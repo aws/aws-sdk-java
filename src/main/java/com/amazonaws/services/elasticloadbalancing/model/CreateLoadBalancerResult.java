@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elasticloadbalancing.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The output for the CreateLoadBalancer action.
  * </p>
  */
-public class CreateLoadBalancerResult {
+public class CreateLoadBalancerResult  implements Serializable  {
 
     /**
      * The DNS name for the LoadBalancer.

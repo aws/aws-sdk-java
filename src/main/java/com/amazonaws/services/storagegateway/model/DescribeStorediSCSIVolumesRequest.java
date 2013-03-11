@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.storagegateway.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.storagegateway.AWSStorageGateway#describeStorediSCSIVolumes(DescribeStorediSCSIVolumesRequest) DescribeStorediSCSIVolumes operation}.
@@ -24,7 +25,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#describeStorediSCSIVolumes(DescribeStorediSCSIVolumesRequest)
  */
-public class DescribeStorediSCSIVolumesRequest extends AmazonWebServiceRequest {
+public class DescribeStorediSCSIVolumesRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * An array of strings where each string represents the Amazon Resource

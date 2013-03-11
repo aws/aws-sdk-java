@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.cloudsearch.model;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -20,7 +21,7 @@ package com.amazonaws.services.cloudsearch.model;
  * the endpoint can be referenced in other API calls such as UpdateServiceAccessPolicies.
  * </p>
  */
-public class ServiceEndpoint {
+public class ServiceEndpoint  implements Serializable  {
 
     /**
      * An Amazon Resource Name (ARN). See <a

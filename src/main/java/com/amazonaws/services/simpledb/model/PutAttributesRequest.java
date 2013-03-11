@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.simpledb.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.simpledb.AmazonSimpleDB#putAttributes(PutAttributesRequest) PutAttributes operation}.
@@ -59,7 +60,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpledb.AmazonSimpleDB#putAttributes(PutAttributesRequest)
  */
-public class PutAttributesRequest extends AmazonWebServiceRequest {
+public class PutAttributesRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of the domain in which to perform the operation.

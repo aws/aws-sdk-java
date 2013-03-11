@@ -13,11 +13,12 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * Vpn Connection Options
  */
-public class VpnConnectionOptions {
+public class VpnConnectionOptions  implements Serializable  {
 
     private Boolean staticRoutesOnly;
 

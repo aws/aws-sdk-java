@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.glacier.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Represents a vault's notification configuration.
  * </p>
  */
-public class VaultNotificationConfig {
+public class VaultNotificationConfig  implements Serializable  {
 
     /**
      * The Amazon Simple Notification Service (Amazon SNS) topic Amazon

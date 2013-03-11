@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.storagegateway.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * A JSON object containing the GatewayARN of the gateway that was shut down.
  * </p>
  */
-public class ShutdownGatewayResult {
+public class ShutdownGatewayResult  implements Serializable  {
 
     /**
      * The Amazon Resource Name (ARN) of the gateway. Use the

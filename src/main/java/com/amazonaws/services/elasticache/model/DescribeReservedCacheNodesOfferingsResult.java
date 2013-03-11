@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elasticache.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Contains the result of a successful invocation of the DescribeReservedCacheNodesOfferings action.
  * </p>
  */
-public class DescribeReservedCacheNodesOfferingsResult {
+public class DescribeReservedCacheNodesOfferingsResult  implements Serializable  {
 
     /**
      * A marker provided for paginated results.

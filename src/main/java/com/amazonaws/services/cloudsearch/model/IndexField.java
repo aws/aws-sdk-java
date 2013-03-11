@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.cloudsearch.model;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -20,7 +21,7 @@ package com.amazonaws.services.cloudsearch.model;
  * will be present. It is invalid to specify options for a type other than the <code>IndexFieldType</code> .
  * </p>
  */
-public class IndexField {
+public class IndexField  implements Serializable  {
 
     /**
      * The name of a field in the search index. Field names must begin with a

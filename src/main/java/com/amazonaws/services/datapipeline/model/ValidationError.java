@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.datapipeline.model;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -20,7 +21,7 @@ package com.amazonaws.services.datapipeline.model;
  * defined by AWS Data Pipeline.
  * </p>
  */
-public class ValidationError {
+public class ValidationError  implements Serializable  {
 
     /**
      * The identifier of the object that contains the validation error.

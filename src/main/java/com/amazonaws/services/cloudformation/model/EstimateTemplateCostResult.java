@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.cloudformation.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The output for a EstimateTemplateCost action.
  * </p>
  */
-public class EstimateTemplateCostResult {
+public class EstimateTemplateCostResult  implements Serializable  {
 
     /**
      * An AWS Simple Monthly Calculator URL with a query string that

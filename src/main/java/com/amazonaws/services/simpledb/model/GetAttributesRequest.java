@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.simpledb.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.simpledb.AmazonSimpleDB#getAttributes(GetAttributesRequest) GetAttributes operation}.
@@ -31,7 +32,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpledb.AmazonSimpleDB#getAttributes(GetAttributesRequest)
  */
-public class GetAttributesRequest extends AmazonWebServiceRequest {
+public class GetAttributesRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of the domain in which to perform the operation.

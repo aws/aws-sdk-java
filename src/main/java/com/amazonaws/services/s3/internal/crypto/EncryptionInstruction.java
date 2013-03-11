@@ -19,6 +19,7 @@ import java.util.Map;
 import javax.crypto.Cipher;
 import javax.crypto.SecretKey;
 
+
 /**
  * Contains information used to encrypt and decrypt objects in S3.
  */
@@ -28,10 +29,11 @@ public class EncryptionInstruction {
     private final byte[] encryptedSymmetricKey;
     private final SecretKey symmetricKey;
     private final Cipher symmetricCipher;
+    private CipherFactory symmetricCipherFactory;
 
     /**
      * Construct a new EncryptionInstruction object with the provided fields.
-     * 
+     *
      * @param materialsDescription
      *      The description of the encryption materials that were used to encrypt the envelope symmetric key.
      * @param encryptedSymmetricKey
@@ -41,16 +43,29 @@ public class EncryptionInstruction {
      * @param symmetricCipher
      *      The symmetric cipher that will encrypt the object data.
      */
-    public EncryptionInstruction(Map<String, String> materialsDescription, byte[] encryptedSymmetricKey, SecretKey symmetricKey, Cipher symmetricCipher) {              
+    public EncryptionInstruction(Map<String, String> materialsDescription, byte[] encryptedSymmetricKey, SecretKey symmetricKey, Cipher symmetricCipher) {
         this.materialsDescription = materialsDescription;
         this.encryptedSymmetricKey = encryptedSymmetricKey;
         this.symmetricKey = symmetricKey;
         this.symmetricCipher = symmetricCipher;
     }
 
+    public EncryptionInstruction(Map<String, String> materialsDescription, byte[] encryptedSymmetricKey, SecretKey symmetricKey, CipherFactory symmetricCipherFactory) {
+        this.materialsDescription = materialsDescription;
+        this.encryptedSymmetricKey = encryptedSymmetricKey;
+        this.symmetricKey = symmetricKey;
+        this.symmetricCipherFactory = symmetricCipherFactory;
+        this.symmetricCipher = symmetricCipherFactory.createCipher();
+    }
+
+
+    public CipherFactory getCipherFactory() {
+        return symmetricCipherFactory;
+    }
+
     /**
      * Returns the description of the encryption materials that were used to encrypt the envelope symmetric key.
-     * 
+     *
      * @return the description of the encryption materials that were used to encrypt the envelope symmetric key.
      */
     public Map<String, String> getMaterialsDescription() {
@@ -59,7 +74,7 @@ public class EncryptionInstruction {
 
     /**
      * Returns an array of bytes representing the encrypted envelope symmetric key.
-     * 
+     *
      * @return an array of bytes representing the encrypted envelope symmetric key.
      */
     public byte[] getEncryptedSymmetricKey() {
@@ -68,7 +83,7 @@ public class EncryptionInstruction {
 
     /**
      * Returns the envelope symmetric key.
-     * 
+     *
      * @return the envelope symmetric key.
      */
     public SecretKey getSymmetricKey() {
@@ -77,7 +92,7 @@ public class EncryptionInstruction {
 
     /**
      * Returns the symmetric cipher created with the envelope symmetric key.
-     * 
+     *
      * @return the symmetric cipher created with the envelope symmetric key.
      */
     public Cipher getSymmetricCipher() {

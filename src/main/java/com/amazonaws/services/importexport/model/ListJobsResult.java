@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.importexport.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Output structure for the ListJobs operation.
  * </p>
  */
-public class ListJobsResult {
+public class ListJobsResult  implements Serializable  {
 
     /**
      * A list container for Jobs returned by the ListJobs operation.

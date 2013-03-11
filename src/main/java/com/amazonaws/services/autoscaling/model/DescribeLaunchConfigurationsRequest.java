@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.autoscaling.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.autoscaling.AmazonAutoScaling#describeLaunchConfigurations(DescribeLaunchConfigurationsRequest) DescribeLaunchConfigurations operation}.
@@ -26,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#describeLaunchConfigurations(DescribeLaunchConfigurationsRequest)
  */
-public class DescribeLaunchConfigurationsRequest extends AmazonWebServiceRequest {
+public class DescribeLaunchConfigurationsRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * A list of launch configuration names.

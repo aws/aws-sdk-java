@@ -13,11 +13,12 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.sns.model;
+import java.io.Serializable;
 
 /**
  * Get Subscription Attributes Result
  */
-public class GetSubscriptionAttributesResult {
+public class GetSubscriptionAttributesResult  implements Serializable  {
 
     /**
      * A map of the subscription's attributes. Attributes in this map include

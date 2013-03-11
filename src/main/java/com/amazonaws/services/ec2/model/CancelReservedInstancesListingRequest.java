@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#cancelReservedInstancesListing(CancelReservedInstancesListingRequest) CancelReservedInstancesListing operation}.
@@ -21,7 +22,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#cancelReservedInstancesListing(CancelReservedInstancesListingRequest)
  */
-public class CancelReservedInstancesListingRequest extends AmazonWebServiceRequest {
+public class CancelReservedInstancesListingRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     private String reservedInstancesListingId;
 

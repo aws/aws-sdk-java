@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.identitymanagement.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#createAccountAlias(CreateAccountAliasRequest) CreateAccountAlias operation}.
@@ -25,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#createAccountAlias(CreateAccountAliasRequest)
  */
-public class CreateAccountAliasRequest extends AmazonWebServiceRequest {
+public class CreateAccountAliasRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * Name of the account alias to create.

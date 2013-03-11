@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.simpleemail.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.simpleemail.AmazonSimpleEmailService#setIdentityDkimEnabled(SetIdentityDkimEnabledRequest) SetIdentityDkimEnabled operation}.
@@ -38,7 +39,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpleemail.AmazonSimpleEmailService#setIdentityDkimEnabled(SetIdentityDkimEnabledRequest)
  */
-public class SetIdentityDkimEnabledRequest extends AmazonWebServiceRequest {
+public class SetIdentityDkimEnabledRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The identity for which DKIM signing should be enabled or disabled.

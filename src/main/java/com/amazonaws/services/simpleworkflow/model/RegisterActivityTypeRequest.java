@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.simpleworkflow.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#registerActivityType(RegisterActivityTypeRequest) RegisterActivityType operation}.
@@ -52,7 +53,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#registerActivityType(RegisterActivityTypeRequest)
  */
-public class RegisterActivityTypeRequest extends AmazonWebServiceRequest {
+public class RegisterActivityTypeRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of the domain in which this activity is to be registered.

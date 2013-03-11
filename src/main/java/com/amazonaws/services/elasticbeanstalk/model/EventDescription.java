@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elasticbeanstalk.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Describes an event.
  * </p>
  */
-public class EventDescription {
+public class EventDescription  implements Serializable  {
 
     /**
      * The date when the event occurred.

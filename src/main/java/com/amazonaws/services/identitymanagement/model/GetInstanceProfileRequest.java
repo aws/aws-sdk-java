@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.identitymanagement.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getInstanceProfile(GetInstanceProfileRequest) GetInstanceProfile operation}.
@@ -26,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getInstanceProfile(GetInstanceProfileRequest)
  */
-public class GetInstanceProfileRequest extends AmazonWebServiceRequest {
+public class GetInstanceProfileRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * Name of the instance profile to get information about.

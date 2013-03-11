@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#purchaseReservedInstancesOffering(PurchaseReservedInstancesOfferingRequest) PurchaseReservedInstancesOffering operation}.
@@ -25,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#purchaseReservedInstancesOffering(PurchaseReservedInstancesOfferingRequest)
  */
-public class PurchaseReservedInstancesOfferingRequest extends AmazonWebServiceRequest {
+public class PurchaseReservedInstancesOfferingRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The unique ID of the Reserved Instances offering being purchased.

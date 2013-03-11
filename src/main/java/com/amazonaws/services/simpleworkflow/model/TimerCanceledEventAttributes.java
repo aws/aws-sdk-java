@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.simpleworkflow.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Provides details of the <code>TimerCanceled</code> event.
  * </p>
  */
-public class TimerCanceledEventAttributes {
+public class TimerCanceledEventAttributes  implements Serializable  {
 
     /**
      * The unique Id of the timer that was canceled.

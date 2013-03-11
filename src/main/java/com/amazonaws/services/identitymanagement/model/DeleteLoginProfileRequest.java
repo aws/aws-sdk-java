@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.identitymanagement.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteLoginProfile(DeleteLoginProfileRequest) DeleteLoginProfile operation}.
@@ -28,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteLoginProfile(DeleteLoginProfileRequest)
  */
-public class DeleteLoginProfileRequest extends AmazonWebServiceRequest {
+public class DeleteLoginProfileRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * Name of the user whose password you want to delete.

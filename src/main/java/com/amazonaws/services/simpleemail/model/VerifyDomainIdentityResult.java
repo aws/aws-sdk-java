@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.simpleemail.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Represents a token used for domain ownership verification.
  * </p>
  */
-public class VerifyDomainIdentityResult {
+public class VerifyDomainIdentityResult  implements Serializable  {
 
     /**
      * A TXT record that must be placed in the DNS settings for the domain,

@@ -765,6 +765,11 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
         return listTopics(new ListTopicsRequest());
     }
     
+    @Override
+    protected String getServiceAbbreviation() {
+        return "sns";
+    }
+    
 
     /**
      * Returns additional metadata for a previously executed successful, request, typically used for
@@ -788,6 +793,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
 
     private <X, Y extends AmazonWebServiceRequest> X invoke(Request<Y> request, Unmarshaller<X, StaxUnmarshallerContext> unmarshaller) {
         request.setEndpoint(endpoint);
+        request.setTimeOffset(timeOffset);
         for (Entry<String, String> entry : request.getOriginalRequest().copyPrivateRequestParameters().entrySet()) {
             request.addParameter(entry.getKey(), entry.getValue());
         }

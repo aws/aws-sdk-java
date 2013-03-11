@@ -32,6 +32,7 @@ public enum InstanceType {
     C1Medium("c1.medium"),
     C1Xlarge("c1.xlarge"),
     Hi14xlarge("hi1.4xlarge"),
+    Hs18xlarge("hs1.8xlarge"),
     Cc14xlarge("cc1.4xlarge"),
     Cc28xlarge("cc2.8xlarge"),
     Cg14xlarge("cg1.4xlarge");
@@ -84,6 +85,8 @@ public enum InstanceType {
             return InstanceType.C1Xlarge;
         } else if ("hi1.4xlarge".equals(value)) {
             return InstanceType.Hi14xlarge;
+        } else if ("hs1.8xlarge".equals(value)) {
+            return InstanceType.Hs18xlarge;
         } else if ("cc1.4xlarge".equals(value)) {
             return InstanceType.Cc14xlarge;
         } else if ("cc2.8xlarge".equals(value)) {

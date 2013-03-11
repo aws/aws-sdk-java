@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.route53.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.route53.AmazonRoute53#changeResourceRecordSets(ChangeResourceRecordSetsRequest) ChangeResourceRecordSets operation}.
@@ -51,7 +52,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.route53.AmazonRoute53#changeResourceRecordSets(ChangeResourceRecordSetsRequest)
  */
-public class ChangeResourceRecordSetsRequest extends AmazonWebServiceRequest {
+public class ChangeResourceRecordSetsRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * <i>Alias resource record sets only:</i> The value of the hosted zone

@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -20,7 +21,7 @@ package com.amazonaws.services.ec2.model;
  * instance.
  * </p>
  */
-public class InstanceLicenseSpecification {
+public class InstanceLicenseSpecification  implements Serializable  {
 
     /**
      * The license pool from which to take a license when starting Amazon EC2

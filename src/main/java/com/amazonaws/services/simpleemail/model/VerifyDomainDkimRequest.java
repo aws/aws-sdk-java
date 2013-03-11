@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.simpleemail.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.simpleemail.AmazonSimpleEmailService#verifyDomainDkim(VerifyDomainDkimRequest) VerifyDomainDkim operation}.
@@ -33,7 +34,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpleemail.AmazonSimpleEmailService#verifyDomainDkim(VerifyDomainDkimRequest)
  */
-public class VerifyDomainDkimRequest extends AmazonWebServiceRequest {
+public class VerifyDomainDkimRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of the domain to be verified for Easy DKIM signing.

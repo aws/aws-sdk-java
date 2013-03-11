@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elasticache.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Defines a set of EC2 Security groups that are allowed to access a Cache Cluster.
  * </p>
  */
-public class CacheSecurityGroup {
+public class CacheSecurityGroup  implements Serializable  {
 
     /**
      * Provides the AWS ID of the owner of a specific Cache Security Group.

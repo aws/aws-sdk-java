@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.elasticmapreduce.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticmapreduce.AmazonElasticMapReduce#describeJobFlows(DescribeJobFlowsRequest) DescribeJobFlows operation}.
@@ -43,7 +44,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticmapreduce.AmazonElasticMapReduce#describeJobFlows(DescribeJobFlowsRequest)
  */
-public class DescribeJobFlowsRequest extends AmazonWebServiceRequest {
+public class DescribeJobFlowsRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * Return only job flows created after this date and time.

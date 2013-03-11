@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.cloudsearch.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Options that define a <code>uint</code> field in the search index.
  * </p>
  */
-public class UIntOptions {
+public class UIntOptions  implements Serializable  {
 
     /**
      * The default value for an unsigned integer field.

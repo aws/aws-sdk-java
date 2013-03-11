@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.rds.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#describeReservedDBInstancesOfferings(DescribeReservedDBInstancesOfferingsRequest) DescribeReservedDBInstancesOfferings operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#describeReservedDBInstancesOfferings(DescribeReservedDBInstancesOfferingsRequest)
  */
-public class DescribeReservedDBInstancesOfferingsRequest extends AmazonWebServiceRequest {
+public class DescribeReservedDBInstancesOfferingsRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The offering identifier filter value. Specify this parameter to show

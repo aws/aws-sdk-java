@@ -13,11 +13,12 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * Route Table
  */
-public class RouteTable {
+public class RouteTable  implements Serializable  {
 
     private String routeTableId;
 
@@ -30,8 +31,6 @@ public class RouteTable {
     private java.util.List<Tag> tags;
 
     private java.util.List<PropagatingVgw> propagatingVgws;
-
-    private java.util.List<PropagatedRoute> propagatedRoutes;
 
     /**
      * Returns the value of the RouteTableId property for this object.
@@ -378,75 +377,6 @@ public class RouteTable {
     }
     
     /**
-     * Returns the value of the PropagatedRoutes property for this object.
-     *
-     * @return The value of the PropagatedRoutes property for this object.
-     */
-    public java.util.List<PropagatedRoute> getPropagatedRoutes() {
-        
-        if (propagatedRoutes == null) {
-            propagatedRoutes = new java.util.ArrayList<PropagatedRoute>();
-        }
-        return propagatedRoutes;
-    }
-    
-    /**
-     * Sets the value of the PropagatedRoutes property for this object.
-     *
-     * @param propagatedRoutes The new value for the PropagatedRoutes property for this object.
-     */
-    public void setPropagatedRoutes(java.util.Collection<PropagatedRoute> propagatedRoutes) {
-        if (propagatedRoutes == null) {
-            this.propagatedRoutes = null;
-            return;
-        }
-
-        java.util.List<PropagatedRoute> propagatedRoutesCopy = new java.util.ArrayList<PropagatedRoute>(propagatedRoutes.size());
-        propagatedRoutesCopy.addAll(propagatedRoutes);
-        this.propagatedRoutes = propagatedRoutesCopy;
-    }
-    
-    /**
-     * Sets the value of the PropagatedRoutes property for this object.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param propagatedRoutes The new value for the PropagatedRoutes property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     */
-    public RouteTable withPropagatedRoutes(PropagatedRoute... propagatedRoutes) {
-        if (getPropagatedRoutes() == null) setPropagatedRoutes(new java.util.ArrayList<PropagatedRoute>(propagatedRoutes.length));
-        for (PropagatedRoute value : propagatedRoutes) {
-            getPropagatedRoutes().add(value);
-        }
-        return this;
-    }
-    
-    /**
-     * Sets the value of the PropagatedRoutes property for this object.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param propagatedRoutes The new value for the PropagatedRoutes property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     */
-    public RouteTable withPropagatedRoutes(java.util.Collection<PropagatedRoute> propagatedRoutes) {
-        if (propagatedRoutes == null) {
-            this.propagatedRoutes = null;
-        } else {
-            java.util.List<PropagatedRoute> propagatedRoutesCopy = new java.util.ArrayList<PropagatedRoute>(propagatedRoutes.size());
-            propagatedRoutesCopy.addAll(propagatedRoutes);
-            this.propagatedRoutes = propagatedRoutesCopy;
-        }
-
-        return this;
-    }
-    
-    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -464,7 +394,6 @@ public class RouteTable {
         if (getAssociations() != null) sb.append("Associations: " + getAssociations() + ", ");
         if (getTags() != null) sb.append("Tags: " + getTags() + ", ");
         if (getPropagatingVgws() != null) sb.append("PropagatingVgws: " + getPropagatingVgws() + ", ");
-        if (getPropagatedRoutes() != null) sb.append("PropagatedRoutes: " + getPropagatedRoutes() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -480,7 +409,6 @@ public class RouteTable {
         hashCode = prime * hashCode + ((getAssociations() == null) ? 0 : getAssociations().hashCode()); 
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode()); 
         hashCode = prime * hashCode + ((getPropagatingVgws() == null) ? 0 : getPropagatingVgws().hashCode()); 
-        hashCode = prime * hashCode + ((getPropagatedRoutes() == null) ? 0 : getPropagatedRoutes().hashCode()); 
         return hashCode;
     }
     
@@ -504,8 +432,6 @@ public class RouteTable {
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false) return false; 
         if (other.getPropagatingVgws() == null ^ this.getPropagatingVgws() == null) return false;
         if (other.getPropagatingVgws() != null && other.getPropagatingVgws().equals(this.getPropagatingVgws()) == false) return false; 
-        if (other.getPropagatedRoutes() == null ^ this.getPropagatedRoutes() == null) return false;
-        if (other.getPropagatedRoutes() != null && other.getPropagatedRoutes().equals(this.getPropagatedRoutes()) == false) return false; 
         return true;
     }
     

@@ -42,14 +42,14 @@ public class Principal {
     private final String id;
     private final String provider;
 
-	/**
-	 * Constructs a new principal with the specified AWS web service which
-	 * is being allowed or denied access to a resource through an access control
-	 * policy.
-	 *
-	 * @param service
-	 *            An AWS service.
-	 */
+    /**
+     * Constructs a new principal with the specified AWS web service which
+     * is being allowed or denied access to a resource through an access control
+     * policy.
+     *
+     * @param service
+     *            An AWS service.
+     */
     public Principal(Services service) {
         if (service == null) {
             throw new IllegalArgumentException("Null AWS service name specified");
@@ -88,32 +88,48 @@ public class Principal {
      * @return The unique ID for this principal.
      */
     public String getId() {
-			return id;
+            return id;
     }
 
-	/**
-	 * The services who have the right to do the assume the role
-	 * action. The AssumeRole action returns a set of temporary security
-	 * credentials that you can use to access resources that are defined in the
-	 * role's policy. The returned credentials consist of an Access Key ID, a
-	 * Secret Access Key, and a security token.
-	 */
+    /**
+     * The services who have the right to do the assume the role
+     * action. The AssumeRole action returns a set of temporary security
+     * credentials that you can use to access resources that are defined in the
+     * role's policy. The returned credentials consist of an Access Key ID, a
+     * Secret Access Key, and a security token.
+     */
     static public enum Services {
 
         AWSDataPipeline("datapipeline.amazonaws.com"),
         AmazonElasticTranscoder("elastictranscoder.amazonaws.com"),
-        AmazonEC2("ec2.amazonaws.com");
+        AmazonEC2("ec2.amazonaws.com"),
+        AWSOpsWorks("opsworks.amazonaws.com");
         private String serviceId;
 
-		/**
-		 * The service which has the right to assume the role.
-		 */
+        /**
+         * The service which has the right to assume the role.
+         */
         private Services(String serviceId) {
-        	this.serviceId = serviceId;
+            this.serviceId = serviceId;
         }
 
         public String getServiceId() {
             return serviceId;
+        }
+
+        /**
+         * Construct the Services object from a string representing the service id.
+         */
+        public static Services fromString(String serviceId) {
+            if (serviceId != null) {
+                for (Services s : Services.values()) {
+                    if (s.getServiceId().equalsIgnoreCase(serviceId)) {
+                        return s;
+                    }
+                }
+            }
+
+            return null;
         }
 
 

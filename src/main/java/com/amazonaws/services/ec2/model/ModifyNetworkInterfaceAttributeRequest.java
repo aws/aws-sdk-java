@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#modifyNetworkInterfaceAttribute(ModifyNetworkInterfaceAttributeRequest) ModifyNetworkInterfaceAttribute operation}.
@@ -21,7 +22,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#modifyNetworkInterfaceAttribute(ModifyNetworkInterfaceAttributeRequest)
  */
-public class ModifyNetworkInterfaceAttributeRequest extends AmazonWebServiceRequest {
+public class ModifyNetworkInterfaceAttributeRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     private String networkInterfaceId;
 

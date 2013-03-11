@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.storagegateway.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.storagegateway.AWSStorageGateway#activateGateway(ActivateGatewayRequest) ActivateGateway operation}.
@@ -30,7 +31,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#activateGateway(ActivateGatewayRequest)
  */
-public class ActivateGatewayRequest extends AmazonWebServiceRequest {
+public class ActivateGatewayRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * Your gateway activation key. You can obtain the activation key by

@@ -13,11 +13,12 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.sqs.model;
+import java.io.Serializable;
 
 /**
  * 
  */
-public class ReceiveMessageResult {
+public class ReceiveMessageResult  implements Serializable  {
 
     /**
      * A list of messages.

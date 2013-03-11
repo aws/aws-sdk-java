@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elasticache.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * A setting controlling some apsect of the service's behavior.
  * </p>
  */
-public class Parameter {
+public class Parameter  implements Serializable  {
 
     /**
      * Specifies the name of the parameter.

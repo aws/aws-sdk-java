@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#runInstances(RunInstancesRequest) RunInstances operation}.
@@ -54,7 +55,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#runInstances(RunInstancesRequest)
  */
-public class RunInstancesRequest extends AmazonWebServiceRequest {
+public class RunInstancesRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * Unique ID of a machine image, returned by a call to DescribeImages.
@@ -93,13 +94,11 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
      */
     private String userData;
 
-    private String addressingType;
-
     /**
      * Specifies the instance type for the launched instances.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, m3.xlarge, m3.2xlarge, c1.medium, c1.xlarge, hi1.4xlarge, cc1.4xlarge, cc2.8xlarge, cg1.4xlarge
+     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, m3.xlarge, m3.2xlarge, c1.medium, c1.xlarge, hi1.4xlarge, hs1.8xlarge, cc1.4xlarge, cc2.8xlarge, cg1.4xlarge
      */
     private String instanceType;
 
@@ -550,44 +549,10 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
     
     
     /**
-     * Returns the value of the AddressingType property for this object.
-     *
-     * @return The value of the AddressingType property for this object.
-     */
-    public String getAddressingType() {
-        return addressingType;
-    }
-    
-    /**
-     * Sets the value of the AddressingType property for this object.
-     *
-     * @param addressingType The new value for the AddressingType property for this object.
-     */
-    public void setAddressingType(String addressingType) {
-        this.addressingType = addressingType;
-    }
-    
-    /**
-     * Sets the value of the AddressingType property for this object.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param addressingType The new value for the AddressingType property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     */
-    public RunInstancesRequest withAddressingType(String addressingType) {
-        this.addressingType = addressingType;
-        return this;
-    }
-    
-    
-    /**
      * Specifies the instance type for the launched instances.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, m3.xlarge, m3.2xlarge, c1.medium, c1.xlarge, hi1.4xlarge, cc1.4xlarge, cc2.8xlarge, cg1.4xlarge
+     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, m3.xlarge, m3.2xlarge, c1.medium, c1.xlarge, hi1.4xlarge, hs1.8xlarge, cc1.4xlarge, cc2.8xlarge, cg1.4xlarge
      *
      * @return Specifies the instance type for the launched instances.
      *
@@ -601,7 +566,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
      * Specifies the instance type for the launched instances.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, m3.xlarge, m3.2xlarge, c1.medium, c1.xlarge, hi1.4xlarge, cc1.4xlarge, cc2.8xlarge, cg1.4xlarge
+     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, m3.xlarge, m3.2xlarge, c1.medium, c1.xlarge, hi1.4xlarge, hs1.8xlarge, cc1.4xlarge, cc2.8xlarge, cg1.4xlarge
      *
      * @param instanceType Specifies the instance type for the launched instances.
      *
@@ -617,7 +582,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, m3.xlarge, m3.2xlarge, c1.medium, c1.xlarge, hi1.4xlarge, cc1.4xlarge, cc2.8xlarge, cg1.4xlarge
+     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, m3.xlarge, m3.2xlarge, c1.medium, c1.xlarge, hi1.4xlarge, hs1.8xlarge, cc1.4xlarge, cc2.8xlarge, cg1.4xlarge
      *
      * @param instanceType Specifies the instance type for the launched instances.
      *
@@ -636,7 +601,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
      * Specifies the instance type for the launched instances.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, m3.xlarge, m3.2xlarge, c1.medium, c1.xlarge, hi1.4xlarge, cc1.4xlarge, cc2.8xlarge, cg1.4xlarge
+     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, m3.xlarge, m3.2xlarge, c1.medium, c1.xlarge, hi1.4xlarge, hs1.8xlarge, cc1.4xlarge, cc2.8xlarge, cg1.4xlarge
      *
      * @param instanceType Specifies the instance type for the launched instances.
      *
@@ -652,7 +617,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, m3.xlarge, m3.2xlarge, c1.medium, c1.xlarge, hi1.4xlarge, cc1.4xlarge, cc2.8xlarge, cg1.4xlarge
+     * <b>Allowed Values: </b>t1.micro, m1.small, m1.medium, m1.large, m1.xlarge, m2.xlarge, m2.2xlarge, m2.4xlarge, m3.xlarge, m3.2xlarge, c1.medium, c1.xlarge, hi1.4xlarge, hs1.8xlarge, cc1.4xlarge, cc2.8xlarge, cg1.4xlarge
      *
      * @param instanceType Specifies the instance type for the launched instances.
      *
@@ -1388,7 +1353,6 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
         if (getSecurityGroups() != null) sb.append("SecurityGroups: " + getSecurityGroups() + ", ");
         if (getSecurityGroupIds() != null) sb.append("SecurityGroupIds: " + getSecurityGroupIds() + ", ");
         if (getUserData() != null) sb.append("UserData: " + getUserData() + ", ");
-        if (getAddressingType() != null) sb.append("AddressingType: " + getAddressingType() + ", ");
         if (getInstanceType() != null) sb.append("InstanceType: " + getInstanceType() + ", ");
         if (getPlacement() != null) sb.append("Placement: " + getPlacement() + ", ");
         if (getKernelId() != null) sb.append("KernelId: " + getKernelId() + ", ");
@@ -1421,7 +1385,6 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
         hashCode = prime * hashCode + ((getSecurityGroups() == null) ? 0 : getSecurityGroups().hashCode()); 
         hashCode = prime * hashCode + ((getSecurityGroupIds() == null) ? 0 : getSecurityGroupIds().hashCode()); 
         hashCode = prime * hashCode + ((getUserData() == null) ? 0 : getUserData().hashCode()); 
-        hashCode = prime * hashCode + ((getAddressingType() == null) ? 0 : getAddressingType().hashCode()); 
         hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode()); 
         hashCode = prime * hashCode + ((getPlacement() == null) ? 0 : getPlacement().hashCode()); 
         hashCode = prime * hashCode + ((getKernelId() == null) ? 0 : getKernelId().hashCode()); 
@@ -1463,8 +1426,6 @@ public class RunInstancesRequest extends AmazonWebServiceRequest {
         if (other.getSecurityGroupIds() != null && other.getSecurityGroupIds().equals(this.getSecurityGroupIds()) == false) return false; 
         if (other.getUserData() == null ^ this.getUserData() == null) return false;
         if (other.getUserData() != null && other.getUserData().equals(this.getUserData()) == false) return false; 
-        if (other.getAddressingType() == null ^ this.getAddressingType() == null) return false;
-        if (other.getAddressingType() != null && other.getAddressingType().equals(this.getAddressingType()) == false) return false; 
         if (other.getInstanceType() == null ^ this.getInstanceType() == null) return false;
         if (other.getInstanceType() != null && other.getInstanceType().equals(this.getInstanceType()) == false) return false; 
         if (other.getPlacement() == null ^ this.getPlacement() == null) return false;

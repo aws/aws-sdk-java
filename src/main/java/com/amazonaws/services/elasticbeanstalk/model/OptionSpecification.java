@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elasticbeanstalk.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * A specification identifying an individual configuration option.
  * </p>
  */
-public class OptionSpecification {
+public class OptionSpecification  implements Serializable  {
 
     /**
      * A unique namespace identifying the option's associated AWS resource.

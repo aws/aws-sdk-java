@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.route53.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.route53.AmazonRoute53#getHealthCheck(GetHealthCheckRequest) GetHealthCheck operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.route53.AmazonRoute53#getHealthCheck(GetHealthCheckRequest)
  */
-public class GetHealthCheckRequest extends AmazonWebServiceRequest {
+public class GetHealthCheckRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The ID of the health check to retrieve.

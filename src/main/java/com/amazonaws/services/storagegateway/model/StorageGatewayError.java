@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.storagegateway.model;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -20,7 +21,7 @@ package com.amazonaws.services.storagegateway.model;
  * <code>errorCode</code> and <code>errorDetails</code> members for more information about the error.
  * </p>
  */
-public class StorageGatewayError {
+public class StorageGatewayError  implements Serializable  {
 
     /**
      * Additional information about the error.

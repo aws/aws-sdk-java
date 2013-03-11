@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.storagegateway.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * A JSON object containing the UpdateSnapshotScheduleOutput$VolumeARN of the updated storage volume.
  * </p>
  */
-public class UpdateSnapshotScheduleResult {
+public class UpdateSnapshotScheduleResult  implements Serializable  {
 
     /**
      * The <a>UpdateSnapshotScheduleOutput$VolumeARN</a> of the storage

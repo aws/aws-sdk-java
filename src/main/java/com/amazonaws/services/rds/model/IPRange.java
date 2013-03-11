@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.rds.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * This data type is used as a response element in the DescribeDBSecurityGroups action.
  * </p>
  */
-public class IPRange {
+public class IPRange  implements Serializable  {
 
     /**
      * Specifies the status of the IP range. Status can be "authorizing",

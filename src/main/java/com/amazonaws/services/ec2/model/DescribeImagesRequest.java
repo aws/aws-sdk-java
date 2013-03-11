@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeImages(DescribeImagesRequest) DescribeImages operation}.
@@ -55,7 +56,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeImages(DescribeImagesRequest)
  */
-public class DescribeImagesRequest extends AmazonWebServiceRequest {
+public class DescribeImagesRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * An optional list of the AMI IDs to describe. If not specified, all

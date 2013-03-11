@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.rds.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#addTagsToResource(AddTagsToResourceRequest) AddTagsToResource operation}.
@@ -27,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#addTagsToResource(AddTagsToResourceRequest)
  */
-public class AddTagsToResourceRequest extends AmazonWebServiceRequest {
+public class AddTagsToResourceRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The DB Instance the tags will be added to.

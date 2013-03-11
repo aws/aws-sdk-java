@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elasticache.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * This data type is used as a response element in the action DescribeCacheEngineVersions.
  * </p>
  */
-public class CacheEngineVersion {
+public class CacheEngineVersion  implements Serializable  {
 
     /**
      * The name of the cache engine.

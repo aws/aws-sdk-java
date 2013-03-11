@@ -13,11 +13,12 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.sqs.model;
+import java.io.Serializable;
 
 /**
  * 
  */
-public class ListQueuesResult {
+public class ListQueuesResult  implements Serializable  {
 
     /**
      * A list of queue URLs, up to 1000 entries.

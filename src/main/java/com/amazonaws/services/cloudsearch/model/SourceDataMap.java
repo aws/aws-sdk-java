@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.cloudsearch.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Specifies how to map source attribute values to custom values when populating an <code>IndexField</code> .
  * </p>
  */
-public class SourceDataMap {
+public class SourceDataMap  implements Serializable  {
 
     /**
      * The name of the document source field to add to this

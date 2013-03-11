@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.sqs.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sqs.AmazonSQS#setQueueAttributes(SetQueueAttributesRequest) SetQueueAttributes operation}.
@@ -24,7 +25,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.sqs.AmazonSQS#setQueueAttributes(SetQueueAttributesRequest)
  */
-public class SetQueueAttributesRequest extends AmazonWebServiceRequest {
+public class SetQueueAttributesRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The URL of the SQS queue to take action on.

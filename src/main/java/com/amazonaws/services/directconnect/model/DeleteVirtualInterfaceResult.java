@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.directconnect.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The response received when DeleteVirtualInterface is called.
  * </p>
  */
-public class DeleteVirtualInterfaceResult {
+public class DeleteVirtualInterfaceResult  implements Serializable  {
 
     /**
      * State of the virtual interface. <ul> <li><b>Verifying</b>: This state

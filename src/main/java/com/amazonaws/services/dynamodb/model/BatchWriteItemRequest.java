@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.dynamodb.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.dynamodb.AmazonDynamoDB#batchWriteItem(BatchWriteItemRequest) BatchWriteItem operation}.
@@ -26,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.dynamodb.AmazonDynamoDB#batchWriteItem(BatchWriteItemRequest)
  */
-public class BatchWriteItemRequest extends AmazonWebServiceRequest {
+public class BatchWriteItemRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * A map of table name to list-of-write-requests. Used as input to the

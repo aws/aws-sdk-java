@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.datapipeline.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Contains the output from the ActivatePipeline action.
  * </p>
  */
-public class ActivatePipelineResult {
+public class ActivatePipelineResult  implements Serializable  {
 
     /**
      * Returns a string representation of this object; useful for testing and

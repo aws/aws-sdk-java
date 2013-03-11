@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.storagegateway.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Describes a gateway; contains one data member, the GatewayARN of this gateway.
  * </p>
  */
-public class GatewayInfo {
+public class GatewayInfo  implements Serializable  {
 
     /**
      * The Amazon Resource Name (ARN) of the gateway. Use the

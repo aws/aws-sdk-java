@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.rds.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Contains the result of a successful invocation of the DescribeOrderableDBInstanceOptions action.
  * </p>
  */
-public class DescribeOrderableDBInstanceOptionsResult {
+public class DescribeOrderableDBInstanceOptionsResult  implements Serializable  {
 
     /**
      * An <a>OrderableDBInstanceOption</a> structure containing information

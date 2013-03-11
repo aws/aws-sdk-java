@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.cloudsearch.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The source attribute name and an optional default value to use if a document doesn't have an attribute of that name.
  * </p>
  */
-public class SourceData {
+public class SourceData  implements Serializable  {
 
     /**
      * The name of the document source field to add to this

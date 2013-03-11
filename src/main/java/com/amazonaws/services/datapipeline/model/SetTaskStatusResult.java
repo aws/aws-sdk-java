@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.datapipeline.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The output from the SetTaskStatus action.
  * </p>
  */
-public class SetTaskStatusResult {
+public class SetTaskStatusResult  implements Serializable  {
 
     /**
      * Returns a string representation of this object; useful for testing and

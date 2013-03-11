@@ -50,6 +50,10 @@ public class NetworkInterfacePrivateIpAddressStaxUnmarshaller implements Unmarsh
                     networkInterfacePrivateIpAddress.setPrivateIpAddress(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("privateDnsName", targetDepth)) {
+                    networkInterfacePrivateIpAddress.setPrivateDnsName(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
                 if (context.testExpression("primary", targetDepth)) {
                     networkInterfacePrivateIpAddress.setPrimary(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

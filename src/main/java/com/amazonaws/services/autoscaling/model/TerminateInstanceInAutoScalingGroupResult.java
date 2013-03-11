@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.autoscaling.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The output for the TerminateInstanceInAutoScalingGroup action.
  * </p>
  */
-public class TerminateInstanceInAutoScalingGroupResult {
+public class TerminateInstanceInAutoScalingGroupResult  implements Serializable  {
 
     /**
      * A scaling Activity.

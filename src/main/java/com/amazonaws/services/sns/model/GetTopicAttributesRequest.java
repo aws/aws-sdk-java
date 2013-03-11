@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.sns.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#getTopicAttributes(GetTopicAttributesRequest) GetTopicAttributes operation}.
@@ -24,7 +25,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.sns.AmazonSNS#getTopicAttributes(GetTopicAttributesRequest)
  */
-public class GetTopicAttributesRequest extends AmazonWebServiceRequest {
+public class GetTopicAttributesRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The ARN of the topic whose properties you want to get.

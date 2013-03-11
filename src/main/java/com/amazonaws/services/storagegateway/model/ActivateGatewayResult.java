@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.storagegateway.model;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -20,7 +21,7 @@ package com.amazonaws.services.storagegateway.model;
  * name, and region. This ARN is used to reference the gateway in other API operations as well as resource-based authorization.
  * </p>
  */
-public class ActivateGatewayResult {
+public class ActivateGatewayResult  implements Serializable  {
 
     /**
      * The Amazon Resource Name (ARN) of the gateway. Use the

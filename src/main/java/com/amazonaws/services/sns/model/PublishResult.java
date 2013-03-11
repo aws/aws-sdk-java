@@ -13,11 +13,12 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.sns.model;
+import java.io.Serializable;
 
 /**
  * Publish Result
  */
-public class PublishResult {
+public class PublishResult  implements Serializable  {
 
     /**
      * Unique identifier assigned to the published message.

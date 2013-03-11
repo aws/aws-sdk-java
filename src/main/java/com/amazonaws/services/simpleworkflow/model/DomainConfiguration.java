@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.simpleworkflow.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Contains the configuration settings of a domain.
  * </p>
  */
-public class DomainConfiguration {
+public class DomainConfiguration  implements Serializable  {
 
     /**
      * The retention period for workflow executions in this domain.

@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.cloudwatch.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The <code>Dimension</code> data type further expands on the identity of a metric using a Name, Value pair.
  * </p>
  */
-public class Dimension {
+public class Dimension  implements Serializable  {
 
     /**
      * The name of the dimension.

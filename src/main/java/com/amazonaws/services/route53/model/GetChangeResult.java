@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.route53.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * A complex type that contains the <code>ChangeInfo</code> element.
  * </p>
  */
-public class GetChangeResult {
+public class GetChangeResult  implements Serializable  {
 
     /**
      * A complex type that contains information about the specified change

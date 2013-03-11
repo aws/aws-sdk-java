@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.simpleworkflow.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#respondDecisionTaskCompleted(RespondDecisionTaskCompletedRequest) RespondDecisionTaskCompleted operation}.
@@ -38,7 +39,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#respondDecisionTaskCompleted(RespondDecisionTaskCompletedRequest)
  */
-public class RespondDecisionTaskCompletedRequest extends AmazonWebServiceRequest {
+public class RespondDecisionTaskCompletedRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The <code>taskToken</code> from the <a>DecisionTask</a>. <important>

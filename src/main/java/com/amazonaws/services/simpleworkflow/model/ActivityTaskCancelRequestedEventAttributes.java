@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.simpleworkflow.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Provides details of the <code>ActivityTaskCancelRequested</code> event.
  * </p>
  */
-public class ActivityTaskCancelRequestedEventAttributes {
+public class ActivityTaskCancelRequestedEventAttributes  implements Serializable  {
 
     /**
      * The id of the <code>DecisionTaskCompleted</code> event corresponding

@@ -13,11 +13,12 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.simpledb.model;
+import java.io.Serializable;
 
 /**
  * Select Result
  */
-public class SelectResult {
+public class SelectResult  implements Serializable  {
 
     /**
      * A list of items that match the select expression.

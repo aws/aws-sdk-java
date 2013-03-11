@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.simpleemail.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Represents the destination of the message, consisting of To:, CC:, and BCC: fields.
  * </p>
  */
-public class Destination {
+public class Destination  implements Serializable  {
 
     /**
      * The To: field(s) of the message.

@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.autoscaling.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The <code>TerminationPolicyTypes</code> data type.
  * </p>
  */
-public class DescribeTerminationPolicyTypesResult {
+public class DescribeTerminationPolicyTypesResult  implements Serializable  {
 
     /**
      * Termination policies supported by Auto Scaling. They are:

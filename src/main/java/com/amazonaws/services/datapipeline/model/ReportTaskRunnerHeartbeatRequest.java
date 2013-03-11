@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.datapipeline.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.datapipeline.DataPipeline#reportTaskRunnerHeartbeat(ReportTaskRunnerHeartbeatRequest) ReportTaskRunnerHeartbeat operation}.
@@ -24,7 +25,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.datapipeline.DataPipeline#reportTaskRunnerHeartbeat(ReportTaskRunnerHeartbeatRequest)
  */
-public class ReportTaskRunnerHeartbeatRequest extends AmazonWebServiceRequest {
+public class ReportTaskRunnerHeartbeatRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The identifier of the task runner. This value should be unique across

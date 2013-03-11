@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.simpleworkflow.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Represents a task list.
  * </p>
  */
-public class TaskList {
+public class TaskList  implements Serializable  {
 
     /**
      * The name of the task list.

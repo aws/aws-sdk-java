@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.cloudwatch.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.cloudwatch.AmazonCloudWatch#deleteAlarms(DeleteAlarmsRequest) DeleteAlarms operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudwatch.AmazonCloudWatch#deleteAlarms(DeleteAlarmsRequest)
  */
-public class DeleteAlarmsRequest extends AmazonWebServiceRequest {
+public class DeleteAlarmsRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * A list of alarms to be deleted.

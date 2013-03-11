@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#replaceRouteTableAssociation(ReplaceRouteTableAssociationRequest) ReplaceRouteTableAssociation operation}.
@@ -30,7 +31,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#replaceRouteTableAssociation(ReplaceRouteTableAssociationRequest)
  */
-public class ReplaceRouteTableAssociationRequest extends AmazonWebServiceRequest {
+public class ReplaceRouteTableAssociationRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The ID representing the current association between the original route

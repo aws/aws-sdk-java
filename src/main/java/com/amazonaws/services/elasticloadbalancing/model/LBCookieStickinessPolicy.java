@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elasticloadbalancing.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The LBCookieStickinessPolicy data type.
  * </p>
  */
-public class LBCookieStickinessPolicy {
+public class LBCookieStickinessPolicy  implements Serializable  {
 
     /**
      * The name for the policy being created. The name must be unique within

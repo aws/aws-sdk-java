@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.rds.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#createDBInstanceReadReplica(CreateDBInstanceReadReplicaRequest) CreateDBInstanceReadReplica operation}.
@@ -30,7 +31,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#createDBInstanceReadReplica(CreateDBInstanceReadReplicaRequest)
  */
-public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest {
+public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The DB Instance identifier of the Read Replica. This is the unique key

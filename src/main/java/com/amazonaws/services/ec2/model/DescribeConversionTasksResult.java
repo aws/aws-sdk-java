@@ -13,11 +13,12 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * Describe Conversion Tasks Result
  */
-public class DescribeConversionTasksResult {
+public class DescribeConversionTasksResult  implements Serializable  {
 
     private java.util.List<ConversionTask> conversionTasks;
 

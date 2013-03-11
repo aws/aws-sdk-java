@@ -18,6 +18,8 @@ import java.util.Map.Entry;
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.auth.ClasspathPropertiesFileCredentialsProvider;
+import com.amazonaws.regions.Region;
+import com.amazonaws.regions.Regions;
 import com.amazonaws.services.sqs.AmazonSQS;
 import com.amazonaws.services.sqs.AmazonSQSClient;
 import com.amazonaws.services.sqs.model.CreateQueueRequest;
@@ -46,13 +48,15 @@ public class SimpleQueueServiceSample {
         /*
          * This credentials provider implementation loads your AWS credentials
          * from a properties file at the root of your classpath.
-         * 
+         *
          * Important: Be sure to fill in your AWS access credentials in the
          *            AwsCredentials.properties file before you try to run this
          *            sample.
          * http://aws.amazon.com/security-credentials
          */
         AmazonSQS sqs = new AmazonSQSClient(new ClasspathPropertiesFileCredentialsProvider());
+		Region usWest2 = Region.getRegion(Regions.US_WEST_2);
+		sqs.setRegion(usWest2);
 
         System.out.println("===========================================");
         System.out.println("Getting Started with Amazon SQS");

@@ -34,19 +34,23 @@
  * Using TransferManager to upload data to Amazon S3 is easy:
  * <pre>
  * AWSCredentials myCredentials = new BasicAWSCredentials(...);
- * TransferManager tm = new TransferManager(myCredentials);
- * Transfer myUpload = tm.upload(myBucket, myFile.getName(), myFile);
+ * TransferManager tx = new TransferManager(myCredentials);
+ * Upload myUpload = tx.upload(myBucket, myFile.getName(), myFile);
  *
- * // You can keep doing work while the transfer uploads in a background thread
- * while (myUpload.isDone() == false) {
+ * // You can poll your transfer's status to check its progress
+ * if (myUpload.isDone() == false) {
  *     System.out.println("Transfer: " + myUpload.getDescription());
- *     System.out.println("  - State:    " + myUpload.getState());
+ *     System.out.println("  - State: " + myUpload.getState());
  *     System.out.println("  - Progress: " + myUpload.getProgress().getBytesTransfered());
- *     // Do work while we wait for our upload to complete...
- *     Thread.sleep(500);
  * }
  *
- * // Or you can wait for the transfer to finish if you don't need to do more work
+ * // Transfers also allow you to set a <code>ProgressListener</code> to receive
+ * // asynchronous notifications about your transfer's progress.
+ * myUpload.addProgressListener(myProgressListener);
+ *
+ * // Or you can block the current thread and wait for your transfer to
+ * // to complete.  If the transfer fails, this method will throw an
+ * // AmazonClientException or AmazonServiceException detailing the reason.
  * myUpload.waitForCompletion();
  * </pre>
  *

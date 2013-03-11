@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.glacier.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.glacier.AmazonGlacier#deleteVault(DeleteVaultRequest) DeleteVault operation}.
@@ -43,7 +44,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.glacier.AmazonGlacier#deleteVault(DeleteVaultRequest)
  */
-public class DeleteVaultRequest extends AmazonWebServiceRequest {
+public class DeleteVaultRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The <code>AccountId</code> is the AWS Account ID. You can specify

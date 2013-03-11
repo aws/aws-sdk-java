@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.route53.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.route53.AmazonRoute53#getHostedZone(GetHostedZoneRequest) GetHostedZone operation}.
@@ -24,7 +25,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.route53.AmazonRoute53#getHostedZone(GetHostedZoneRequest)
  */
-public class GetHostedZoneRequest extends AmazonWebServiceRequest {
+public class GetHostedZoneRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The ID of the hosted zone for which you want to get a list of the name

@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.elasticache.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticache.AmazonElastiCache#describeCacheEngineVersions(DescribeCacheEngineVersionsRequest) DescribeCacheEngineVersions operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#describeCacheEngineVersions(DescribeCacheEngineVersionsRequest)
  */
-public class DescribeCacheEngineVersionsRequest extends AmazonWebServiceRequest {
+public class DescribeCacheEngineVersionsRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The cache engine to return.

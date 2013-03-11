@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.cloudfront.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * A distribution Configuration.
  * </p>
  */
-public class DistributionConfig {
+public class DistributionConfig  implements Serializable  {
 
     /**
      * A unique number that ensures the request can't be replayed. If the

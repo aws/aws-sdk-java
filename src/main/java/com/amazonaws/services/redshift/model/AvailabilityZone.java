@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.redshift.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Describes an availability zone.
  * </p>
  */
-public class AvailabilityZone {
+public class AvailabilityZone  implements Serializable  {
 
     /**
      * The name of the availability zone.

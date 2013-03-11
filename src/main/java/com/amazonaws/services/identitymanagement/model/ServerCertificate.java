@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.identitymanagement.model;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -22,7 +23,7 @@ package com.amazonaws.services.identitymanagement.model;
  * This data type is used as a response element in the action GetServerCertificate.
  * </p>
  */
-public class ServerCertificate {
+public class ServerCertificate  implements Serializable  {
 
     /**
      * The meta information of the server certificate, such as its name,

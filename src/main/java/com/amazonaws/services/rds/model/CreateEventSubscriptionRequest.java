@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.rds.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#createEventSubscription(CreateEventSubscriptionRequest) CreateEventSubscription operation}.
@@ -36,7 +37,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#createEventSubscription(CreateEventSubscriptionRequest)
  */
-public class CreateEventSubscriptionRequest extends AmazonWebServiceRequest {
+public class CreateEventSubscriptionRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of the subscription. <p>Constraints: The name must be less

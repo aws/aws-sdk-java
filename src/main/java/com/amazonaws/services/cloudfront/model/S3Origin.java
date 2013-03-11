@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.cloudfront.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * A complex type that contains information about the Amazon S3 bucket from which you want CloudFront to get your media files for distribution.
  * </p>
  */
-public class S3Origin {
+public class S3Origin  implements Serializable  {
 
     /**
      * The DNS name of the S3 origin.

@@ -13,11 +13,12 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * Associate Route Table Result
  */
-public class AssociateRouteTableResult {
+public class AssociateRouteTableResult  implements Serializable  {
 
     private String associationId;
 

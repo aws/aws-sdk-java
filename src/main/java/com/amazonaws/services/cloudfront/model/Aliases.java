@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.cloudfront.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * A complex type that contains information about CNAMEs (alternate domain names), if any, for this distribution.
  * </p>
  */
-public class Aliases {
+public class Aliases  implements Serializable  {
 
     /**
      * The number of CNAMEs, if any, for this distribution.

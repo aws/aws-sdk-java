@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.datapipeline.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.datapipeline.DataPipeline#setStatus(SetStatusRequest) SetStatus operation}.
@@ -24,7 +25,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.datapipeline.DataPipeline#setStatus(SetStatusRequest)
  */
-public class SetStatusRequest extends AmazonWebServiceRequest {
+public class SetStatusRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * Identifies the pipeline that contains the objects.

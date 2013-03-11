@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.sns.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#confirmSubscription(ConfirmSubscriptionRequest) ConfirmSubscription operation}.
@@ -25,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.sns.AmazonSNS#confirmSubscription(ConfirmSubscriptionRequest)
  */
-public class ConfirmSubscriptionRequest extends AmazonWebServiceRequest {
+public class ConfirmSubscriptionRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The ARN of the topic for which you wish to confirm a subscription.

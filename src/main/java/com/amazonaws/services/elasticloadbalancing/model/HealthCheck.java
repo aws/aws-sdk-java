@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elasticloadbalancing.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The HealthCheck data type.
  * </p>
  */
-public class HealthCheck {
+public class HealthCheck  implements Serializable  {
 
     /**
      * Specifies the instance being checked. The protocol is either TCP,

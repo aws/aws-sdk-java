@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.datapipeline.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.datapipeline.DataPipeline#validatePipelineDefinition(ValidatePipelineDefinitionRequest) ValidatePipelineDefinition operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.datapipeline.DataPipeline#validatePipelineDefinition(ValidatePipelineDefinitionRequest)
  */
-public class ValidatePipelineDefinitionRequest extends AmazonWebServiceRequest {
+public class ValidatePipelineDefinitionRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * Identifies the pipeline whose definition is to be validated.

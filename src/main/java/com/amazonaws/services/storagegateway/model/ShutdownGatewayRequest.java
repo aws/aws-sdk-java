@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.storagegateway.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.storagegateway.AWSStorageGateway#shutdownGateway(ShutdownGatewayRequest) ShutdownGateway operation}.
@@ -43,7 +44,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#shutdownGateway(ShutdownGatewayRequest)
  */
-public class ShutdownGatewayRequest extends AmazonWebServiceRequest {
+public class ShutdownGatewayRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The Amazon Resource Name (ARN) of the gateway. Use the

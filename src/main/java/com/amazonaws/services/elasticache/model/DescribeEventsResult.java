@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elasticache.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Contains a list of Events.
  * </p>
  */
-public class DescribeEventsResult {
+public class DescribeEventsResult  implements Serializable  {
 
     /**
      * The marker obtained from a previous operation response.

@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.datapipeline.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * A comparision that is used to determine whether a query should return this object.
  * </p>
  */
-public class Selector {
+public class Selector  implements Serializable  {
 
     /**
      * The name of the field that the operator will be applied to. The field

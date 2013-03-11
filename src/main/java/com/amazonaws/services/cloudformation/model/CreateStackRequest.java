@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.cloudformation.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.cloudformation.AmazonCloudFormation#createStack(CreateStackRequest) CreateStack operation}.
@@ -27,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudformation.AmazonCloudFormation#createStack(CreateStackRequest)
  */
-public class CreateStackRequest extends AmazonWebServiceRequest {
+public class CreateStackRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name associated with the stack. The name must be unique within

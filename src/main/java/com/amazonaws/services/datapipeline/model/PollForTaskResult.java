@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.datapipeline.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Contains the output from the PollForTask action.
  * </p>
  */
-public class PollForTaskResult {
+public class PollForTaskResult  implements Serializable  {
 
     /**
      * An instance of PollForTaskResult, which contains an instance of

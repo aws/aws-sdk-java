@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.elasticbeanstalk.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#updateConfigurationTemplate(UpdateConfigurationTemplateRequest) UpdateConfigurationTemplate operation}.
@@ -35,7 +36,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#updateConfigurationTemplate(UpdateConfigurationTemplateRequest)
  */
-public class UpdateConfigurationTemplateRequest extends AmazonWebServiceRequest {
+public class UpdateConfigurationTemplateRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of the application associated with the configuration template

@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.dynamodb.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * A container for a Delete BatchWrite request
  * </p>
  */
-public class DeleteRequest {
+public class DeleteRequest  implements Serializable  {
 
     /**
      * The item's key to be delete

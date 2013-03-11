@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.simpledb.model;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -20,7 +21,7 @@ package com.amazonaws.services.simpledb.model;
  * condition is satisfied. For example, if an attribute with a specific name and value exists, or if a specific attribute doesn't exist.
  * </p>
  */
-public class UpdateCondition {
+public class UpdateCondition  implements Serializable  {
 
     /**
      * The name of the attribute involved in the condition.

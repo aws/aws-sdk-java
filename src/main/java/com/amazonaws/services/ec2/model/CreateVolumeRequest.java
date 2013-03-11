@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#createVolume(CreateVolumeRequest) CreateVolume operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createVolume(CreateVolumeRequest)
  */
-public class CreateVolumeRequest extends AmazonWebServiceRequest {
+public class CreateVolumeRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The size of the volume, in gigabytes. Required if you are not creating

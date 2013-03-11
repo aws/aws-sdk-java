@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.elasticache.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticache.AmazonElastiCache#describeCacheParameters(DescribeCacheParametersRequest) DescribeCacheParameters operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#describeCacheParameters(DescribeCacheParametersRequest)
  */
-public class DescribeCacheParametersRequest extends AmazonWebServiceRequest {
+public class DescribeCacheParametersRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of a specific cache parameter group to return details for.

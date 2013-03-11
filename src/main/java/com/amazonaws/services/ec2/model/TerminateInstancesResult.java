@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The result of calling the TerminateInstances operation. Contains details on how the specified instances are changing state.
  * </p>
  */
-public class TerminateInstancesResult {
+public class TerminateInstancesResult  implements Serializable  {
 
     /**
      * The list of the terminating instances and details on how their state

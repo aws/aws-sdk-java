@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elasticbeanstalk.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Result message containing a single description of an application.
  * </p>
  */
-public class CreateApplicationResult {
+public class CreateApplicationResult  implements Serializable  {
 
     /**
      * The <a>ApplicationDescription</a> of the application.

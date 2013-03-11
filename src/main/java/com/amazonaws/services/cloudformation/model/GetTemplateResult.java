@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.cloudformation.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The output for GetTemplate action.
  * </p>
  */
-public class GetTemplateResult {
+public class GetTemplateResult  implements Serializable  {
 
     /**
      * Structure containing the template body. (For more information, go to

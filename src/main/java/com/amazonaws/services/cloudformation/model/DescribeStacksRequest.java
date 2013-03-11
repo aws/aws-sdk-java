@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.cloudformation.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.cloudformation.AmazonCloudFormation#describeStacks(DescribeStacksRequest) DescribeStacks operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudformation.AmazonCloudFormation#describeStacks(DescribeStacksRequest)
  */
-public class DescribeStacksRequest extends AmazonWebServiceRequest {
+public class DescribeStacksRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name or the unique identifier associated with the stack.

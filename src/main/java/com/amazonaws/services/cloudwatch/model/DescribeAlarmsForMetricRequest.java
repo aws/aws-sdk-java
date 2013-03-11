@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.cloudwatch.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.cloudwatch.AmazonCloudWatch#describeAlarmsForMetric(DescribeAlarmsForMetricRequest) DescribeAlarmsForMetric operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudwatch.AmazonCloudWatch#describeAlarmsForMetric(DescribeAlarmsForMetricRequest)
  */
-public class DescribeAlarmsForMetricRequest extends AmazonWebServiceRequest {
+public class DescribeAlarmsForMetricRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of the metric.

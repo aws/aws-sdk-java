@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.simpleworkflow.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#registerWorkflowType(RegisterWorkflowTypeRequest) RegisterWorkflowType operation}.
@@ -55,7 +56,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#registerWorkflowType(RegisterWorkflowTypeRequest)
  */
-public class RegisterWorkflowTypeRequest extends AmazonWebServiceRequest {
+public class RegisterWorkflowTypeRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of the domain in which to register the workflow type.

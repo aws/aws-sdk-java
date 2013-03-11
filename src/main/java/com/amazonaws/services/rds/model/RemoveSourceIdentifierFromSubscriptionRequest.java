@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.rds.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#removeSourceIdentifierFromSubscription(RemoveSourceIdentifierFromSubscriptionRequest) RemoveSourceIdentifierFromSubscription operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#removeSourceIdentifierFromSubscription(RemoveSourceIdentifierFromSubscriptionRequest)
  */
-public class RemoveSourceIdentifierFromSubscriptionRequest extends AmazonWebServiceRequest {
+public class RemoveSourceIdentifierFromSubscriptionRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of the RDS event notification subscription you want to remove

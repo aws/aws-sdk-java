@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.redshift.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.redshift.AmazonRedshift#describeOrderableClusterOptions(DescribeOrderableClusterOptionsRequest) DescribeOrderableClusterOptions operation}.
@@ -28,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#describeOrderableClusterOptions(DescribeOrderableClusterOptionsRequest)
  */
-public class DescribeOrderableClusterOptionsRequest extends AmazonWebServiceRequest {
+public class DescribeOrderableClusterOptionsRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The version filter value. Specify this parameter to show only the

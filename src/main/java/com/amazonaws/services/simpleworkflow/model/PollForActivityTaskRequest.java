@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.simpleworkflow.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#pollForActivityTask(PollForActivityTaskRequest) PollForActivityTask operation}.
@@ -49,7 +50,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#pollForActivityTask(PollForActivityTaskRequest)
  */
-public class PollForActivityTaskRequest extends AmazonWebServiceRequest {
+public class PollForActivityTaskRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of the domain that contains the task lists being polled.

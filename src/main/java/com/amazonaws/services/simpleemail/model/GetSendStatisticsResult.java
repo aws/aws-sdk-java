@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.simpleemail.model;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -20,7 +21,7 @@ package com.amazonaws.services.simpleemail.model;
  * data from the previous two weeks of sending activity.
  * </p>
  */
-public class GetSendStatisticsResult {
+public class GetSendStatisticsResult  implements Serializable  {
 
     /**
      * A list of data points, each of which represents 15 minutes of

@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.datapipeline.model;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -20,7 +21,7 @@ package com.amazonaws.services.datapipeline.model;
  * another object (RefValue) but not as both.
  * </p>
  */
-public class Field {
+public class Field  implements Serializable  {
 
     /**
      * The field identifier.

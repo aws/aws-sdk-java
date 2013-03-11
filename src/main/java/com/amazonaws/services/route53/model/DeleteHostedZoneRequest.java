@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.route53.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.route53.AmazonRoute53#deleteHostedZone(DeleteHostedZoneRequest) DeleteHostedZone operation}.
@@ -34,7 +35,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.route53.AmazonRoute53#deleteHostedZone(DeleteHostedZoneRequest)
  */
-public class DeleteHostedZoneRequest extends AmazonWebServiceRequest {
+public class DeleteHostedZoneRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The ID of the request. Include this ID in a call to <a>GetChange</a>

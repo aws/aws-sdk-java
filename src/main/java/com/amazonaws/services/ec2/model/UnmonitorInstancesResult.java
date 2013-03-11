@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The result of calling the UnmonitorInstances operation. Contains the updated monitoring status for each instance specified in the request.
  * </p>
  */
-public class UnmonitorInstancesResult {
+public class UnmonitorInstancesResult  implements Serializable  {
 
     /**
      * A list of updated monitoring information for the instances specified

@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.redshift.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.redshift.AmazonRedshift#deleteClusterSubnetGroup(DeleteClusterSubnetGroupRequest) DeleteClusterSubnetGroup operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#deleteClusterSubnetGroup(DeleteClusterSubnetGroupRequest)
  */
-public class DeleteClusterSubnetGroupRequest extends AmazonWebServiceRequest {
+public class DeleteClusterSubnetGroupRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of the cluster subnet group name to be deleted.

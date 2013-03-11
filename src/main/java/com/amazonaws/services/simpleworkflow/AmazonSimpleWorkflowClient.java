@@ -23,6 +23,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 import com.amazonaws.*;
+import com.amazonaws.regions.*;
 import com.amazonaws.auth.*;
 import com.amazonaws.handlers.HandlerChainFactory;
 import com.amazonaws.handlers.RequestHandler;
@@ -2962,6 +2963,11 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
         return invoke(request, responseHandler, executionContext);
     }
     
+    @Override
+    protected String getServiceAbbreviation() {
+        return "swf";
+    }
+    
 
     /**
      * Returns additional metadata for a previously executed successful, request, typically used for
@@ -2988,6 +2994,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
                                                                 ExecutionContext executionContext) throws AmazonClientException {
 
         request.setEndpoint(endpoint);
+        request.setTimeOffset(timeOffset);
 
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
 

@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.storagegateway.model;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -25,7 +26,7 @@ package com.amazonaws.services.storagegateway.model;
  * 
  * </ul>
  */
-public class CreateSnapshotResult {
+public class CreateSnapshotResult  implements Serializable  {
 
     /**
      * The Amazon Resource Name (ARN) of the volume of which the snapshot was

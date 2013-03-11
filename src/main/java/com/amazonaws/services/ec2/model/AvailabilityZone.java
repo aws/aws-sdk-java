@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * An EC2 availability zone, separate and fault tolerant from other availability zones.
  * </p>
  */
-public class AvailabilityZone {
+public class AvailabilityZone  implements Serializable  {
 
     /**
      * Name of the Availability Zone.

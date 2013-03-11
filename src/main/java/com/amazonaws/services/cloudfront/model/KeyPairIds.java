@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.cloudfront.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * A complex type that lists the active CloudFront key pairs, if any, that are associated with AwsAccountNumber.
  * </p>
  */
-public class KeyPairIds {
+public class KeyPairIds  implements Serializable  {
 
     /**
      * The number of active CloudFront key pairs for AwsAccountNumber.

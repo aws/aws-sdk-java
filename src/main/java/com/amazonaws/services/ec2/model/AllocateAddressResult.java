@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Result returned from allocating an Elastic IP.
  * </p>
  */
-public class AllocateAddressResult {
+public class AllocateAddressResult  implements Serializable  {
 
     /**
      * IP address for use with your account.

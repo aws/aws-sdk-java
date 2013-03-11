@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The SpotDatafeedSubscriptionType data type.
  * </p>
  */
-public class SpotDatafeedSubscription {
+public class SpotDatafeedSubscription  implements Serializable  {
 
     /**
      * Specifies the AWS account ID of the account.

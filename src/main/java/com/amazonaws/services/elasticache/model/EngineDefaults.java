@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elasticache.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The default Parameters and CacheNodeTypeSpecificParameters for a CacheParameterGroupFamily.
  * </p>
  */
-public class EngineDefaults {
+public class EngineDefaults  implements Serializable  {
 
     /**
      * Specifies the name of the Cache Parameter Group Family which the

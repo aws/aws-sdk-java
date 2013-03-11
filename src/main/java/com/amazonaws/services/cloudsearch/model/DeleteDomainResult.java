@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.cloudsearch.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * A response message that contains the status of a newly deleted domain, or no status if the domain has already been completely deleted.
  * </p>
  */
-public class DeleteDomainResult {
+public class DeleteDomainResult  implements Serializable  {
 
     /**
      * The current status of the search domain.

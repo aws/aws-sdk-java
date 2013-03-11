@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.storagegateway.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.storagegateway.AWSStorageGateway#listGateways(ListGatewaysRequest) ListGateways operation}.
@@ -32,7 +33,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#listGateways(ListGatewaysRequest)
  */
-public class ListGatewaysRequest extends AmazonWebServiceRequest {
+public class ListGatewaysRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * An opaque string that indicates the position at which to begin the

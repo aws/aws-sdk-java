@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elasticmapreduce.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * A key value pair.
  * </p>
  */
-public class KeyValue {
+public class KeyValue  implements Serializable  {
 
     /**
      * The unique identifier of a key value pair.

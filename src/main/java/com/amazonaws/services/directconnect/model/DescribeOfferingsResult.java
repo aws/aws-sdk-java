@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.directconnect.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * A structure containing a list of offerings.
  * </p>
  */
-public class DescribeOfferingsResult {
+public class DescribeOfferingsResult  implements Serializable  {
 
     /**
      * A list of offerings.

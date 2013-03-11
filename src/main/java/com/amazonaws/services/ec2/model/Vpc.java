@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The Vpc data type.
  * </p>
  */
-public class Vpc {
+public class Vpc  implements Serializable  {
 
     /**
      * Specifies the ID of the VPC.
@@ -53,6 +54,11 @@ public class Vpc {
      * The allowed tenancy of instances launched into the VPC.
      */
     private String instanceTenancy;
+
+    /**
+     * 
+     */
+    private Boolean isDefault;
 
     /**
      * Specifies the ID of the VPC.
@@ -312,6 +318,49 @@ public class Vpc {
     
     
     /**
+     * 
+     *
+     * @return 
+     */
+    public Boolean isDefault() {
+        return isDefault;
+    }
+    
+    /**
+     * 
+     *
+     * @param isDefault 
+     */
+    public void setIsDefault(Boolean isDefault) {
+        this.isDefault = isDefault;
+    }
+    
+    /**
+     * 
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param isDefault 
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public Vpc withIsDefault(Boolean isDefault) {
+        this.isDefault = isDefault;
+        return this;
+    }
+    
+    
+    /**
+     * 
+     *
+     * @return 
+     */
+    public Boolean getIsDefault() {
+        return isDefault;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -329,6 +378,7 @@ public class Vpc {
         if (getDhcpOptionsId() != null) sb.append("DhcpOptionsId: " + getDhcpOptionsId() + ", ");
         if (getTags() != null) sb.append("Tags: " + getTags() + ", ");
         if (getInstanceTenancy() != null) sb.append("InstanceTenancy: " + getInstanceTenancy() + ", ");
+        if (isDefault() != null) sb.append("IsDefault: " + isDefault() + ", ");
         sb.append("}");
         return sb.toString();
     }
@@ -344,6 +394,7 @@ public class Vpc {
         hashCode = prime * hashCode + ((getDhcpOptionsId() == null) ? 0 : getDhcpOptionsId().hashCode()); 
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode()); 
         hashCode = prime * hashCode + ((getInstanceTenancy() == null) ? 0 : getInstanceTenancy().hashCode()); 
+        hashCode = prime * hashCode + ((isDefault() == null) ? 0 : isDefault().hashCode()); 
         return hashCode;
     }
     
@@ -367,6 +418,8 @@ public class Vpc {
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false) return false; 
         if (other.getInstanceTenancy() == null ^ this.getInstanceTenancy() == null) return false;
         if (other.getInstanceTenancy() != null && other.getInstanceTenancy().equals(this.getInstanceTenancy()) == false) return false; 
+        if (other.isDefault() == null ^ this.isDefault() == null) return false;
+        if (other.isDefault() != null && other.isDefault().equals(this.isDefault()) == false) return false; 
         return true;
     }
     

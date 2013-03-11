@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.sqs.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Encloses a receipt handle and an identifier for it.
  * </p>
  */
-public class DeleteMessageBatchRequestEntry {
+public class DeleteMessageBatchRequestEntry  implements Serializable  {
 
     /**
      * An identifier for this particular receipt handle. This is used to

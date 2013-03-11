@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.storagegateway.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * A JSON object containing the DeleteVolumeOutput$VolumeARN of the storage volume that was deleted
  * </p>
  */
-public class DeleteVolumeResult {
+public class DeleteVolumeResult  implements Serializable  {
 
     /**
      * The Amazon Resource Name (ARN) of the storage volume that was deleted.

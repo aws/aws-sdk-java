@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.datapipeline.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.datapipeline.DataPipeline#describePipelines(DescribePipelinesRequest) DescribePipelines operation}.
@@ -28,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.datapipeline.DataPipeline#describePipelines(DescribePipelinesRequest)
  */
-public class DescribePipelinesRequest extends AmazonWebServiceRequest {
+public class DescribePipelinesRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * Identifiers of the pipelines to describe. You can pass as many as 25

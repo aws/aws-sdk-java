@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#resetInstanceAttribute(ResetInstanceAttributeRequest) ResetInstanceAttribute operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#resetInstanceAttribute(ResetInstanceAttributeRequest)
  */
-public class ResetInstanceAttributeRequest extends AmazonWebServiceRequest {
+public class ResetInstanceAttributeRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The ID of the Amazon EC2 instance whose attribute is being reset.

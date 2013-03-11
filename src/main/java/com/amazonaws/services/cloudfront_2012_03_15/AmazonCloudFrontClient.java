@@ -320,7 +320,14 @@ public class AmazonCloudFrontClient extends AmazonWebServiceClient implements Am
 		requestHandlers.addAll(chainFactory.newRequestHandlerChain(
                 "/com/amazonaws/services.cloudfront_2012_03_15request.handlers"));
     }
-
+    
+    /* (non-Javadoc)
+     * @see com.amazonaws.AmazonWebServiceClient#getServiceAbbreviation()
+     */
+    @Override
+    protected String getServiceAbbreviation() {
+        return "cloudfront";
+    }
 
     /**
      * <p>

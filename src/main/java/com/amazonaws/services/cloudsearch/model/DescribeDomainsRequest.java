@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.cloudsearch.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.cloudsearch.AmazonCloudSearch#describeDomains(DescribeDomainsRequest) DescribeDomains operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudsearch.AmazonCloudSearch#describeDomains(DescribeDomainsRequest)
  */
-public class DescribeDomainsRequest extends AmazonWebServiceRequest {
+public class DescribeDomainsRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * Limits the DescribeDomains response to the specified search domains.

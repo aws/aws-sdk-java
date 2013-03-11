@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.redshift.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.redshift.AmazonRedshift#modifyCluster(ModifyClusterRequest) ModifyCluster operation}.
@@ -32,7 +33,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#modifyCluster(ModifyClusterRequest)
  */
-public class ModifyClusterRequest extends AmazonWebServiceRequest {
+public class ModifyClusterRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The unique identifier of the cluster to be modified. <p>Example:

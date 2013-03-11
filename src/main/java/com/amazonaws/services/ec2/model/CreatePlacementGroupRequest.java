@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#createPlacementGroup(CreatePlacementGroupRequest) CreatePlacementGroup operation}.
@@ -24,7 +25,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createPlacementGroup(CreatePlacementGroupRequest)
  */
-public class CreatePlacementGroupRequest extends AmazonWebServiceRequest {
+public class CreatePlacementGroupRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of the <code>PlacementGroup</code>.

@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeVpcs(DescribeVpcsRequest) DescribeVpcs operation}.
@@ -31,7 +32,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeVpcs(DescribeVpcsRequest)
  */
-public class DescribeVpcsRequest extends AmazonWebServiceRequest {
+public class DescribeVpcsRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The ID of a VPC you want information about.

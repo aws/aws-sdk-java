@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elasticmapreduce.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Modify an instance group size.
  * </p>
  */
-public class InstanceGroupModifyConfig {
+public class InstanceGroupModifyConfig  implements Serializable  {
 
     /**
      * Unique ID of the instance group to expand or shrink.

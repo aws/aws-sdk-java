@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.identitymanagement.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listInstanceProfiles(ListInstanceProfilesRequest) ListInstanceProfiles operation}.
@@ -27,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listInstanceProfiles(ListInstanceProfilesRequest)
  */
-public class ListInstanceProfilesRequest extends AmazonWebServiceRequest {
+public class ListInstanceProfilesRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The path prefix for filtering the results. For example:

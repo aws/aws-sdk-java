@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.simpleworkflow.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Provides details of the <code>WorkflowExecutionSignaled</code> event.
  * </p>
  */
-public class WorkflowExecutionSignaledEventAttributes {
+public class WorkflowExecutionSignaledEventAttributes  implements Serializable  {
 
     /**
      * The name of the signal received. The decider can use the signal name

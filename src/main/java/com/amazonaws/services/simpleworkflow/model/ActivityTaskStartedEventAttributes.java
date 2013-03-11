@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.simpleworkflow.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Provides details of the <code>ActivityTaskStarted</code> event.
  * </p>
  */
-public class ActivityTaskStartedEventAttributes {
+public class ActivityTaskStartedEventAttributes  implements Serializable  {
 
     /**
      * Identity of the worker that was assigned this task. This aids

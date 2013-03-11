@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elasticmapreduce.model;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -20,7 +21,7 @@ package com.amazonaws.services.elasticmapreduce.model;
  * job to finish or fail.
  * </p>
  */
-public class HadoopJarStepConfig {
+public class HadoopJarStepConfig  implements Serializable  {
 
     /**
      * A list of Java properties that are set when the step runs. You can use

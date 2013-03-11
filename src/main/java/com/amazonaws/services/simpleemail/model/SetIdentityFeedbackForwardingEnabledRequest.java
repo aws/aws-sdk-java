@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.simpleemail.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.simpleemail.AmazonSimpleEmailService#setIdentityFeedbackForwardingEnabled(SetIdentityFeedbackForwardingEnabledRequest) SetIdentityFeedbackForwardingEnabled operation}.
@@ -25,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpleemail.AmazonSimpleEmailService#setIdentityFeedbackForwardingEnabled(SetIdentityFeedbackForwardingEnabledRequest)
  */
-public class SetIdentityFeedbackForwardingEnabledRequest extends AmazonWebServiceRequest {
+public class SetIdentityFeedbackForwardingEnabledRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The identity for which to set feedback notification forwarding.

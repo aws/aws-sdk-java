@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeVpnGateways(DescribeVpnGatewaysRequest) DescribeVpnGateways operation}.
@@ -32,7 +33,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeVpnGateways(DescribeVpnGatewaysRequest)
  */
-public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest {
+public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * A list of filters used to match properties for VPN Gateways. For a

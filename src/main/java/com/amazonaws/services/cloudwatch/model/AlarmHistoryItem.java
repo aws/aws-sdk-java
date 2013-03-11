@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.cloudwatch.model;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -20,7 +21,7 @@ package com.amazonaws.services.cloudwatch.model;
  * Amazon CloudWatch returns this data type as part of the DescribeAlarmHistoryResult data type.
  * </p>
  */
-public class AlarmHistoryItem {
+public class AlarmHistoryItem  implements Serializable  {
 
     /**
      * The descriptive name for the alarm.

@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.simpleworkflow.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Contains the count of tasks in a task list.
  * </p>
  */
-public class PendingTaskCount {
+public class PendingTaskCount  implements Serializable  {
 
     /**
      * The number of tasks in the task list.

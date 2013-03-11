@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.route53.model;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -26,7 +27,7 @@ package com.amazonaws.services.route53.model;
  * .
  * </p>
  */
-public class AliasTarget {
+public class AliasTarget  implements Serializable  {
 
     /**
      * <i>Alias resource record sets only:</i> The value of the hosted zone

@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#replaceNetworkAclEntry(ReplaceNetworkAclEntryRequest) ReplaceNetworkAclEntry operation}.
@@ -24,7 +25,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#replaceNetworkAclEntry(ReplaceNetworkAclEntryRequest)
  */
-public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest {
+public class ReplaceNetworkAclEntryRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * ID of the ACL where the entry will be replaced.

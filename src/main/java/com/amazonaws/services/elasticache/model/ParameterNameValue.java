@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elasticache.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * A name and value pair used to update the value of a Parameter.
  * </p>
  */
-public class ParameterNameValue {
+public class ParameterNameValue  implements Serializable  {
 
     /**
      * Specifies the name of the parameter.

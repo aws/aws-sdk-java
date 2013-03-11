@@ -13,11 +13,12 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.dynamodb.model;
+import java.io.Serializable;
 
 /**
  * Put Item Result
  */
-public class PutItemResult {
+public class PutItemResult  implements Serializable  {
 
     /**
      * Attribute values before the put operation, but only if the

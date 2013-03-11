@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.cloudfront.model;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -20,7 +21,7 @@ package com.amazonaws.services.cloudfront.model;
  * the other cache behaviors for this distribution. These are accounts that you want to allow to create signed URLs for private content.
  * </p>
  */
-public class ActiveTrustedSigners {
+public class ActiveTrustedSigners  implements Serializable  {
 
     /**
      * Each active trusted signer.

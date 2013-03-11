@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.datapipeline.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.datapipeline.DataPipeline#setTaskStatus(SetTaskStatusRequest) SetTaskStatus operation}.
@@ -25,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.datapipeline.DataPipeline#setTaskStatus(SetTaskStatusRequest)
  */
-public class SetTaskStatusRequest extends AmazonWebServiceRequest {
+public class SetTaskStatusRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * Identifies the task assigned to the task runner. This value is set in

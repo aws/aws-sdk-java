@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.elastictranscoder.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#listJobsByStatus(ListJobsByStatusRequest) ListJobsByStatus operation}.
@@ -27,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#listJobsByStatus(ListJobsByStatusRequest)
  */
-public class ListJobsByStatusRequest extends AmazonWebServiceRequest {
+public class ListJobsByStatusRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * To get information about all of the jobs associated with the current

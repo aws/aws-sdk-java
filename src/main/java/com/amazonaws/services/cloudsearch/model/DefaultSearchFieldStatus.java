@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.cloudsearch.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The value of the <code>DefaultSearchField</code> configured for this search domain and its current status.
  * </p>
  */
-public class DefaultSearchFieldStatus {
+public class DefaultSearchFieldStatus  implements Serializable  {
 
     /**
      * The name of the <code>IndexField</code> to use as the default search

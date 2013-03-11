@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.simpleworkflow.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Contains details of a domain.
  * </p>
  */
-public class DomainDetail {
+public class DomainDetail  implements Serializable  {
 
     /**
      * Contains general information about a domain.

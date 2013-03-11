@@ -13,13 +13,16 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * Instance Network Interface Association
  */
-public class InstanceNetworkInterfaceAssociation {
+public class InstanceNetworkInterfaceAssociation  implements Serializable  {
 
     private String publicIp;
+
+    private String publicDnsName;
 
     private String ipOwnerId;
 
@@ -53,6 +56,40 @@ public class InstanceNetworkInterfaceAssociation {
      */
     public InstanceNetworkInterfaceAssociation withPublicIp(String publicIp) {
         this.publicIp = publicIp;
+        return this;
+    }
+    
+    
+    /**
+     * Returns the value of the PublicDnsName property for this object.
+     *
+     * @return The value of the PublicDnsName property for this object.
+     */
+    public String getPublicDnsName() {
+        return publicDnsName;
+    }
+    
+    /**
+     * Sets the value of the PublicDnsName property for this object.
+     *
+     * @param publicDnsName The new value for the PublicDnsName property for this object.
+     */
+    public void setPublicDnsName(String publicDnsName) {
+        this.publicDnsName = publicDnsName;
+    }
+    
+    /**
+     * Sets the value of the PublicDnsName property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param publicDnsName The new value for the PublicDnsName property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public InstanceNetworkInterfaceAssociation withPublicDnsName(String publicDnsName) {
+        this.publicDnsName = publicDnsName;
         return this;
     }
     
@@ -104,6 +141,7 @@ public class InstanceNetworkInterfaceAssociation {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPublicIp() != null) sb.append("PublicIp: " + getPublicIp() + ", ");
+        if (getPublicDnsName() != null) sb.append("PublicDnsName: " + getPublicDnsName() + ", ");
         if (getIpOwnerId() != null) sb.append("IpOwnerId: " + getIpOwnerId() + ", ");
         sb.append("}");
         return sb.toString();
@@ -115,6 +153,7 @@ public class InstanceNetworkInterfaceAssociation {
         int hashCode = 1;
         
         hashCode = prime * hashCode + ((getPublicIp() == null) ? 0 : getPublicIp().hashCode()); 
+        hashCode = prime * hashCode + ((getPublicDnsName() == null) ? 0 : getPublicDnsName().hashCode()); 
         hashCode = prime * hashCode + ((getIpOwnerId() == null) ? 0 : getIpOwnerId().hashCode()); 
         return hashCode;
     }
@@ -129,6 +168,8 @@ public class InstanceNetworkInterfaceAssociation {
         
         if (other.getPublicIp() == null ^ this.getPublicIp() == null) return false;
         if (other.getPublicIp() != null && other.getPublicIp().equals(this.getPublicIp()) == false) return false; 
+        if (other.getPublicDnsName() == null ^ this.getPublicDnsName() == null) return false;
+        if (other.getPublicDnsName() != null && other.getPublicDnsName().equals(this.getPublicDnsName()) == false) return false; 
         if (other.getIpOwnerId() == null ^ this.getIpOwnerId() == null) return false;
         if (other.getIpOwnerId() != null && other.getIpOwnerId().equals(this.getIpOwnerId()) == false) return false; 
         return true;

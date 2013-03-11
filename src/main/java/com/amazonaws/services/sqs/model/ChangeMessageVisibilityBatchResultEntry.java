@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.sqs.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Encloses the id of an entry in ChangeMessageVisibilityBatchRequest.
  * </p>
  */
-public class ChangeMessageVisibilityBatchResultEntry {
+public class ChangeMessageVisibilityBatchResultEntry  implements Serializable  {
 
     /**
      * Represents a message whose visibility timeout has been changed

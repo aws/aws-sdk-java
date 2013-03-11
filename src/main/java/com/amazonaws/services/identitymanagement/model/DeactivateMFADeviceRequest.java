@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.identitymanagement.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deactivateMFADevice(DeactivateMFADeviceRequest) DeactivateMFADevice operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deactivateMFADevice(DeactivateMFADeviceRequest)
  */
-public class DeactivateMFADeviceRequest extends AmazonWebServiceRequest {
+public class DeactivateMFADeviceRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * Name of the user whose MFA device you want to deactivate.

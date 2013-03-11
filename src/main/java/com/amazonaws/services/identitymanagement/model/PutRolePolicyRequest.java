@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.identitymanagement.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#putRolePolicy(PutRolePolicyRequest) PutRolePolicy operation}.
@@ -35,7 +36,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#putRolePolicy(PutRolePolicyRequest)
  */
-public class PutRolePolicyRequest extends AmazonWebServiceRequest {
+public class PutRolePolicyRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * Name of the role to associate the policy with.

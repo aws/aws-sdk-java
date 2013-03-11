@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.securitytoken.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.securitytoken.AWSSecurityTokenService#getFederationToken(GetFederationTokenRequest) GetFederationToken operation}.
@@ -34,7 +35,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.securitytoken.AWSSecurityTokenService#getFederationToken(GetFederationTokenRequest)
  */
-public class GetFederationTokenRequest extends AmazonWebServiceRequest {
+public class GetFederationTokenRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of the federated user associated with the credentials. For

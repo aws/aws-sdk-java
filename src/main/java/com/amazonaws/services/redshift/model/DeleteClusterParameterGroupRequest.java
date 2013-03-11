@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.redshift.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.redshift.AmazonRedshift#deleteClusterParameterGroup(DeleteClusterParameterGroupRequest) DeleteClusterParameterGroup operation}.
@@ -26,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#deleteClusterParameterGroup(DeleteClusterParameterGroupRequest)
  */
-public class DeleteClusterParameterGroupRequest extends AmazonWebServiceRequest {
+public class DeleteClusterParameterGroupRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of the parameter group to be deleted. <p>Constraints: <ul>

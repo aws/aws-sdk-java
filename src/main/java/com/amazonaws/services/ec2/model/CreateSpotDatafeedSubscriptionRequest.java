@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#createSpotDatafeedSubscription(CreateSpotDatafeedSubscriptionRequest) CreateSpotDatafeedSubscription operation}.
@@ -28,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createSpotDatafeedSubscription(CreateSpotDatafeedSubscriptionRequest)
  */
-public class CreateSpotDatafeedSubscriptionRequest extends AmazonWebServiceRequest {
+public class CreateSpotDatafeedSubscriptionRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The Amazon S3 bucket in which to store the Spot Instance datafeed.

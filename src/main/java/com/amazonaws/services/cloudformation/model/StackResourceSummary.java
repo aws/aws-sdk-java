@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.cloudformation.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Contains high-level information about the specified stack resource.
  * </p>
  */
-public class StackResourceSummary {
+public class StackResourceSummary  implements Serializable  {
 
     /**
      * The logical name of the resource specified in the template.

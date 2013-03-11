@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.cloudfront.model;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -20,7 +21,7 @@ package com.amazonaws.services.cloudfront.model;
  * create at least one origin.
  * </p>
  */
-public class Origin {
+public class Origin  implements Serializable  {
 
     /**
      * A unique identifier for the origin. The value of Id must be unique

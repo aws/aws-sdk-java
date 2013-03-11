@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeKeyPairs(DescribeKeyPairsRequest) DescribeKeyPairs operation}.
@@ -24,7 +25,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeKeyPairs(DescribeKeyPairsRequest)
  */
-public class DescribeKeyPairsRequest extends AmazonWebServiceRequest {
+public class DescribeKeyPairsRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The optional list of key pair names to describe.

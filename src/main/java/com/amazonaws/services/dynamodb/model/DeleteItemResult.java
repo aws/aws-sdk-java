@@ -13,11 +13,12 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.dynamodb.model;
+import java.io.Serializable;
 
 /**
  * Delete Item Result
  */
-public class DeleteItemResult {
+public class DeleteItemResult  implements Serializable  {
 
     /**
      * If the <code>ReturnValues</code> parameter is provided as

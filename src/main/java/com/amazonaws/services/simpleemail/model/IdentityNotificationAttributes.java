@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.simpleemail.model;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -20,7 +21,7 @@ package com.amazonaws.services.simpleemail.model;
  * enabled.
  * </p>
  */
-public class IdentityNotificationAttributes {
+public class IdentityNotificationAttributes  implements Serializable  {
 
     /**
      * The Amazon Resource Name (ARN) of the Amazon Simple Notification

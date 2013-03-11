@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.autoscaling.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The AutoScalingGroup data type.
  * </p>
  */
-public class AutoScalingGroup {
+public class AutoScalingGroup  implements Serializable  {
 
     /**
      * Specifies the name of the group.

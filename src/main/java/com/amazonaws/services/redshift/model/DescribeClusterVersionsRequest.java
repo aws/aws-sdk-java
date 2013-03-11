@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.redshift.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.redshift.AmazonRedshift#describeClusterVersions(DescribeClusterVersionsRequest) DescribeClusterVersions operation}.
@@ -26,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#describeClusterVersions(DescribeClusterVersionsRequest)
  */
-public class DescribeClusterVersionsRequest extends AmazonWebServiceRequest {
+public class DescribeClusterVersionsRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The specific cluster version to return. <p>Example: <code>1.0</code>

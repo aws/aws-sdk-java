@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.simpleworkflow.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#getWorkflowExecutionHistory(GetWorkflowExecutionHistoryRequest) GetWorkflowExecutionHistory operation}.
@@ -45,7 +46,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#getWorkflowExecutionHistory(GetWorkflowExecutionHistoryRequest)
  */
-public class GetWorkflowExecutionHistoryRequest extends AmazonWebServiceRequest {
+public class GetWorkflowExecutionHistoryRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of the domain containing the workflow execution.

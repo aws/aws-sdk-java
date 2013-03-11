@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.sqs.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sqs.AmazonSQS#listQueues(ListQueuesRequest) ListQueues operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.sqs.AmazonSQS#listQueues(ListQueuesRequest)
  */
-public class ListQueuesRequest extends AmazonWebServiceRequest {
+public class ListQueuesRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * A string to use for filtering the list results. Only those queues

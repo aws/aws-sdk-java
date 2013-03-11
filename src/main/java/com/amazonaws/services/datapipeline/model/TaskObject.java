@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.datapipeline.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Contains information about a pipeline task that is assigned to a task runner.
  * </p>
  */
-public class TaskObject {
+public class TaskObject  implements Serializable  {
 
     /**
      * An internal identifier for the task. This ID is passed to the

@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.redshift.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.redshift.AmazonRedshift#describeResize(DescribeResizeRequest) DescribeResize operation}.
@@ -28,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#describeResize(DescribeResizeRequest)
  */
-public class DescribeResizeRequest extends AmazonWebServiceRequest {
+public class DescribeResizeRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The unique identifier of a cluster whose resize progress you are

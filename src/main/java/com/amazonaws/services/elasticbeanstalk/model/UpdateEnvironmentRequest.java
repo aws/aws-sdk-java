@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.elasticbeanstalk.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#updateEnvironment(UpdateEnvironmentRequest) UpdateEnvironment operation}.
@@ -32,7 +33,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#updateEnvironment(UpdateEnvironmentRequest)
  */
-public class UpdateEnvironmentRequest extends AmazonWebServiceRequest {
+public class UpdateEnvironmentRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The ID of the environment to update. <p> If no environment with this

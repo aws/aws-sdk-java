@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.elasticbeanstalk.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#checkDNSAvailability(CheckDNSAvailabilityRequest) CheckDNSAvailability operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#checkDNSAvailability(CheckDNSAvailabilityRequest)
  */
-public class CheckDNSAvailabilityRequest extends AmazonWebServiceRequest {
+public class CheckDNSAvailabilityRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The prefix used when this CNAME is reserved.

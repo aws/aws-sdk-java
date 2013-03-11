@@ -38,7 +38,7 @@ public class CreateVpnConnectionRequestMarshaller implements Marshaller<Request<
 
         Request<CreateVpnConnectionRequest> request = new DefaultRequest<CreateVpnConnectionRequest>(createVpnConnectionRequest, "AmazonEC2");
         request.addParameter("Action", "CreateVpnConnection");
-        request.addParameter("Version", "2012-12-01");
+        request.addParameter("Version", "2013-02-01");
 
         if (createVpnConnectionRequest.getType() != null) {
             request.addParameter("Type", StringUtils.fromString(createVpnConnectionRequest.getType()));

@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.cloudwatch.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.cloudwatch.AmazonCloudWatch#listMetrics(ListMetricsRequest) ListMetrics operation}.
@@ -32,7 +33,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudwatch.AmazonCloudWatch#listMetrics(ListMetricsRequest)
  */
-public class ListMetricsRequest extends AmazonWebServiceRequest {
+public class ListMetricsRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The namespace to filter against.

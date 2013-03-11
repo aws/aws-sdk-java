@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The result of describing the Amazon EC2 availability zones in the current region.
  * </p>
  */
-public class DescribeAvailabilityZonesResult {
+public class DescribeAvailabilityZonesResult  implements Serializable  {
 
     /**
      * The list of described Amazon EC2 availability zones.

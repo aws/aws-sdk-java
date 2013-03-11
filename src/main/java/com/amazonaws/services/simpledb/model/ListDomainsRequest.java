@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.simpledb.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.simpledb.AmazonSimpleDB#listDomains(ListDomainsRequest) ListDomains operation}.
@@ -26,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpledb.AmazonSimpleDB#listDomains(ListDomainsRequest)
  */
-public class ListDomainsRequest extends AmazonWebServiceRequest {
+public class ListDomainsRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The maximum number of domain names you want returned. The range is 1

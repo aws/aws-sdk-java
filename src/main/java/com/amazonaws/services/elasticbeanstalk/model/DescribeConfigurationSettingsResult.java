@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elasticbeanstalk.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The results from a request to change the configuration settings of an environment.
  * </p>
  */
-public class DescribeConfigurationSettingsResult {
+public class DescribeConfigurationSettingsResult  implements Serializable  {
 
     /**
      * A list of <a>ConfigurationSettingsDescription</a>.

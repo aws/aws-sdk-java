@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.importexport.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Output structure for the CreateJob operation.
  * </p>
  */
-public class CreateJobResult {
+public class CreateJobResult  implements Serializable  {
 
     /**
      * A unique identifier which refers to a particular job.

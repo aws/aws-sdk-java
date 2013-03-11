@@ -23,6 +23,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
 import com.amazonaws.*;
+import com.amazonaws.regions.*;
 import com.amazonaws.auth.*;
 import com.amazonaws.handlers.HandlerChainFactory;
 import com.amazonaws.handlers.RequestHandler;
@@ -1070,7 +1071,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
     }
     
     /**
-     * Overrides the default endpoint for this client and explicitly provides
+     * Overrides the default endpoint for this client ("https://elastictranscoder.us-east-1.amazonaws.com/") and explicitly provides
      * an AWS region ID and AWS service name to use when the client calculates a signature
      * for requests.  In almost all cases, this region ID and service name
      * are automatically determined from the endpoint, and callers should use the simpler
@@ -1103,11 +1104,17 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
      *
      * @throws IllegalArgumentException
      *             If any problems are detected with the specified endpoint.
+     * @see AmazonDynamoDB#setRegion(Region)     
      */
     public void setEndpoint(String endpoint, String serviceName, String regionId) throws IllegalArgumentException {
         setEndpoint(endpoint);
         signer.setServiceName(serviceName);
         signer.setRegionName(regionId);
+    }
+    
+    @Override
+    protected String getServiceAbbreviation() {
+        return "elastictranscoder";
     }
     
 
@@ -1136,6 +1143,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
                                                                 ExecutionContext executionContext) throws AmazonClientException {
 
         request.setEndpoint(endpoint);
+        request.setTimeOffset(timeOffset);
 
         AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
 

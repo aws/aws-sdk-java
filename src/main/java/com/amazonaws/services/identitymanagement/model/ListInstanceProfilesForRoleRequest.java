@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.identitymanagement.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listInstanceProfilesForRole(ListInstanceProfilesForRoleRequest) ListInstanceProfilesForRole operation}.
@@ -27,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listInstanceProfilesForRole(ListInstanceProfilesForRoleRequest)
  */
-public class ListInstanceProfilesForRoleRequest extends AmazonWebServiceRequest {
+public class ListInstanceProfilesForRoleRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of the role to list instance profiles for.

@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.glacier.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Contains the Amazon Glacier response to your request.
  * </p>
  */
-public class ListJobsResult {
+public class ListJobsResult  implements Serializable  {
 
     /**
      * A list of job objects. Each job object contains metadata describing

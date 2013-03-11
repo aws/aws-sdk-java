@@ -17,7 +17,10 @@
  */
 package com.amazonaws.util;
 
+import java.io.ByteArrayInputStream;
+import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
+import java.nio.ByteBuffer;
 import java.util.Locale;
 
 import org.apache.commons.codec.binary.Base64;
@@ -108,6 +111,19 @@ public class BinaryUtils {
             decoded = Base64.decodeBase64(b64Data.getBytes());
         }
         return decoded;
+    }
+
+    /**
+     * Wraps a ByteBuffer in an InputStream. 
+     * 
+     * @param byteBuffer The ByteBuffer to wrap.
+     * 
+     * @return An InputStream wrapping the ByteBuffer content.
+     */
+    public static InputStream toStream(ByteBuffer byteBuffer) {
+        byte[] bytes = new byte[byteBuffer.remaining()];
+        byteBuffer.get(bytes);
+        return new ByteArrayInputStream(bytes);
     }
 
 }

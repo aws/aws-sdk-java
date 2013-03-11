@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.identitymanagement.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#resyncMFADevice(ResyncMFADeviceRequest) ResyncMFADevice operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#resyncMFADevice(ResyncMFADeviceRequest)
  */
-public class ResyncMFADeviceRequest extends AmazonWebServiceRequest {
+public class ResyncMFADeviceRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * Name of the user whose MFA device you want to resynchronize.

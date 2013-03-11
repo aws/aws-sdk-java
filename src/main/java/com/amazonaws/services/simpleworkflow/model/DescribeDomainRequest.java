@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.simpleworkflow.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#describeDomain(DescribeDomainRequest) DescribeDomain operation}.
@@ -41,7 +42,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#describeDomain(DescribeDomainRequest)
  */
-public class DescribeDomainRequest extends AmazonWebServiceRequest {
+public class DescribeDomainRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of the domain to describe.

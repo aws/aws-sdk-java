@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.simpleworkflow.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Provides details of the <code>RecordMarkerFailed</code> event.
  * </p>
  */
-public class RecordMarkerFailedEventAttributes {
+public class RecordMarkerFailedEventAttributes  implements Serializable  {
 
     /**
      * The marker's name.

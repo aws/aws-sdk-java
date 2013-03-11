@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.opsworks.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.opsworks.AWSOpsWorks#describeTimeBasedAutoScaling(DescribeTimeBasedAutoScalingRequest) DescribeTimeBasedAutoScaling operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#describeTimeBasedAutoScaling(DescribeTimeBasedAutoScalingRequest)
  */
-public class DescribeTimeBasedAutoScalingRequest extends AmazonWebServiceRequest {
+public class DescribeTimeBasedAutoScalingRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * An array of instance IDs.

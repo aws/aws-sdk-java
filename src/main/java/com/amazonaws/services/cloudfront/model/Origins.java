@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.cloudfront.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * A complex type that contains information about origins for this distribution.
  * </p>
  */
-public class Origins {
+public class Origins  implements Serializable  {
 
     /**
      * The number of origins for this distribution.

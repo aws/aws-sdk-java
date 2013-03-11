@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#reportInstanceStatus(ReportInstanceStatusRequest) ReportInstanceStatus operation}.
@@ -21,7 +22,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#reportInstanceStatus(ReportInstanceStatusRequest)
  */
-public class ReportInstanceStatusRequest extends AmazonWebServiceRequest {
+public class ReportInstanceStatusRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     private java.util.List<String> instances;
 

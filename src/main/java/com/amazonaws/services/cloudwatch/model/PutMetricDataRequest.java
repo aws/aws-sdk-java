@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.cloudwatch.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.cloudwatch.AmazonCloudWatch#putMetricData(PutMetricDataRequest) PutMetricData operation}.
@@ -36,7 +37,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudwatch.AmazonCloudWatch#putMetricData(PutMetricDataRequest)
  */
-public class PutMetricDataRequest extends AmazonWebServiceRequest {
+public class PutMetricDataRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The namespace for the metric data.

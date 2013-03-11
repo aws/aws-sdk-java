@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.opsworks.model;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -29,7 +30,7 @@ package com.amazonaws.services.opsworks.model;
  * without the .rb extension. For example: phpapp2::dbsetup specifies the dbsetup.rb recipe in the repository's phpapp2 folder.
  * </p>
  */
-public class Recipes {
+public class Recipes  implements Serializable  {
 
     /**
      * An array of custom recipe names to be run following a

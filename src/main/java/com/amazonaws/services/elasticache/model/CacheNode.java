@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elasticache.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * A Cache Cluster is made up of one or more Cache Nodes. Each Cache Node is an separate endpoint servicing the memcached protocol.
  * </p>
  */
-public class CacheNode {
+public class CacheNode  implements Serializable  {
 
     /**
      * Specifies a Cache Node identifier. This is the unique key that

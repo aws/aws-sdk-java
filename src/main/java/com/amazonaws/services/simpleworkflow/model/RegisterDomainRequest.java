@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.simpleworkflow.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#registerDomain(RegisterDomainRequest) RegisterDomain operation}.
@@ -44,7 +45,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#registerDomain(RegisterDomainRequest)
  */
-public class RegisterDomainRequest extends AmazonWebServiceRequest {
+public class RegisterDomainRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * Name of the domain to register. The name must be unique. <p>The

@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Represents the state of an Amazon EC2 instance.
  * </p>
  */
-public class InstanceState {
+public class InstanceState  implements Serializable  {
 
     /**
      * A 16-bit unsigned integer. The high byte is an opaque internal value

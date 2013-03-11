@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.redshift.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.redshift.AmazonRedshift#describeClusterSubnetGroups(DescribeClusterSubnetGroupsRequest) DescribeClusterSubnetGroups operation}.
@@ -24,7 +25,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#describeClusterSubnetGroups(DescribeClusterSubnetGroupsRequest)
  */
-public class DescribeClusterSubnetGroupsRequest extends AmazonWebServiceRequest {
+public class DescribeClusterSubnetGroupsRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of the cluster subnet group for which information is

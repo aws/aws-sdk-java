@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.autoscaling.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.autoscaling.AmazonAutoScaling#describeScalingProcessTypes(DescribeScalingProcessTypesRequest) DescribeScalingProcessTypes operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#describeScalingProcessTypes(DescribeScalingProcessTypesRequest)
  */
-public class DescribeScalingProcessTypesRequest extends AmazonWebServiceRequest {
+public class DescribeScalingProcessTypesRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * Returns a string representation of this object; useful for testing and

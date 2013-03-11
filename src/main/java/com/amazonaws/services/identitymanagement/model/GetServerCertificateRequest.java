@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.identitymanagement.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getServerCertificate(GetServerCertificateRequest) GetServerCertificate operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getServerCertificate(GetServerCertificateRequest)
  */
-public class GetServerCertificateRequest extends AmazonWebServiceRequest {
+public class GetServerCertificateRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of the server certificate you want to retrieve information

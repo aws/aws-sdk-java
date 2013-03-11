@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The result of creating a new EBS volume.
  * </p>
  */
-public class CreateVolumeResult {
+public class CreateVolumeResult  implements Serializable  {
 
     /**
      * The newly created EBS volume.

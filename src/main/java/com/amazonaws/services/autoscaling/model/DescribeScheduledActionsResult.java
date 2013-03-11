@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.autoscaling.model;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -22,7 +23,7 @@ package com.amazonaws.services.autoscaling.model;
  * Starting with API version 2011-01-01, you can use <code>recurrence</code> to specify that a scaling action occurs regularly on a schedule.
  * </p>
  */
-public class DescribeScheduledActionsResult {
+public class DescribeScheduledActionsResult  implements Serializable  {
 
     /**
      * A list of scheduled actions designed to update an Auto Scaling group.

@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The result of calling the ConfirmProductInstance operation.
  * </p>
  */
-public class ConfirmProductInstanceResult {
+public class ConfirmProductInstanceResult  implements Serializable  {
 
     /**
      * The instance owner's account ID. Only present if the product code is

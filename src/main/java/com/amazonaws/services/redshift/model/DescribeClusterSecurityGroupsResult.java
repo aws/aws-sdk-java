@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.redshift.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Contains the output from the DescribeClusterSecurityGroups action.
  * </p>
  */
-public class DescribeClusterSecurityGroupsResult {
+public class DescribeClusterSecurityGroupsResult  implements Serializable  {
 
     /**
      * A marker at which to continue listing cluster security groups in a new

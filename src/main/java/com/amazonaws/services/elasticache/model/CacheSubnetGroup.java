@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elasticache.model;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -30,7 +31,7 @@ package com.amazonaws.services.elasticache.model;
  * This data type is used as a response element in the DescribeCacheSubnetGroups action.
  * </p>
  */
-public class CacheSubnetGroup {
+public class CacheSubnetGroup  implements Serializable  {
 
     /**
      * Specifies the name of the Cache Subnet Group.

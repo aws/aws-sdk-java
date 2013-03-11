@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.dynamodb.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.dynamodb.AmazonDynamoDB#updateItem(UpdateItemRequest) UpdateItem operation}.
@@ -27,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.dynamodb.AmazonDynamoDB#updateItem(UpdateItemRequest)
  */
-public class UpdateItemRequest extends AmazonWebServiceRequest {
+public class UpdateItemRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of the table in which you want to update an item. Allowed

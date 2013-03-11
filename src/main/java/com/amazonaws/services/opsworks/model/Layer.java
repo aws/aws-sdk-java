@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.opsworks.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Describes a layer.
  * </p>
  */
-public class Layer {
+public class Layer  implements Serializable  {
 
     /**
      * The layer stack ID.

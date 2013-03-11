@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elasticache.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Represents one or more Cache Security Groups to which a Cache Cluster belongs.
  * </p>
  */
-public class SecurityGroupMembership {
+public class SecurityGroupMembership  implements Serializable  {
 
     /**
      * The identifier of the Cache Security Group.

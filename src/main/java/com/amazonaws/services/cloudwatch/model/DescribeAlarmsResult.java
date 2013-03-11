@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.cloudwatch.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The output for the DescribeAlarms action.
  * </p>
  */
-public class DescribeAlarmsResult {
+public class DescribeAlarmsResult  implements Serializable  {
 
     /**
      * A list of information for the specified alarms.

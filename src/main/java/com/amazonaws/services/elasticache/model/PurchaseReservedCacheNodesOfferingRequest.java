@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.elasticache.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticache.AmazonElastiCache#purchaseReservedCacheNodesOffering(PurchaseReservedCacheNodesOfferingRequest) PurchaseReservedCacheNodesOffering operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#purchaseReservedCacheNodesOffering(PurchaseReservedCacheNodesOfferingRequest)
  */
-public class PurchaseReservedCacheNodesOfferingRequest extends AmazonWebServiceRequest {
+public class PurchaseReservedCacheNodesOfferingRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The ID of the Reserved Cache Node offering to purchase. <p>Example:

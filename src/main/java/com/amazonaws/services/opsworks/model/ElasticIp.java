@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.opsworks.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Describes an Elastic IP address.
  * </p>
  */
-public class ElasticIp {
+public class ElasticIp  implements Serializable  {
 
     /**
      * The Elastic IP address

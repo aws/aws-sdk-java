@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.simpleworkflow.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Provides details of the <code>ActivityTaskTimedOut</code> event.
  * </p>
  */
-public class ActivityTaskTimedOutEventAttributes {
+public class ActivityTaskTimedOutEventAttributes  implements Serializable  {
 
     /**
      * The type of the timeout that caused this event.

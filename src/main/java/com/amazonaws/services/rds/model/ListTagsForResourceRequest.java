@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.rds.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#listTagsForResource(ListTagsForResourceRequest) ListTagsForResource operation}.
@@ -27,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#listTagsForResource(ListTagsForResourceRequest)
  */
-public class ListTagsForResourceRequest extends AmazonWebServiceRequest {
+public class ListTagsForResourceRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The DB Instance with tags to be listed.

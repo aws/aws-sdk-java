@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.elasticmapreduce.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticmapreduce.AmazonElasticMapReduce#modifyInstanceGroups(ModifyInstanceGroupsRequest) ModifyInstanceGroups operation}.
@@ -24,7 +25,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticmapreduce.AmazonElasticMapReduce#modifyInstanceGroups(ModifyInstanceGroupsRequest)
  */
-public class ModifyInstanceGroupsRequest extends AmazonWebServiceRequest {
+public class ModifyInstanceGroupsRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * Instance groups to change.

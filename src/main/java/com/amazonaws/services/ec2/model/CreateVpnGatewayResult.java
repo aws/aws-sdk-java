@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * 
  * </p>
  */
-public class CreateVpnGatewayResult {
+public class CreateVpnGatewayResult  implements Serializable  {
 
     /**
      * 

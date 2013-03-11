@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.cloudformation.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.cloudformation.AmazonCloudFormation#estimateTemplateCost(EstimateTemplateCostRequest) EstimateTemplateCost operation}.
@@ -24,7 +25,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudformation.AmazonCloudFormation#estimateTemplateCost(EstimateTemplateCostRequest)
  */
-public class EstimateTemplateCostRequest extends AmazonWebServiceRequest {
+public class EstimateTemplateCostRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * Structure containing the template body. (For more information, go to

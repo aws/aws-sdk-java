@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.rds.model;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -30,7 +31,7 @@ package com.amazonaws.services.rds.model;
  * This data type is used as a response element in the DescribeDBSubnetGroups action.
  * </p>
  */
-public class DBSubnetGroup {
+public class DBSubnetGroup  implements Serializable  {
 
     /**
      * Specifies the name of the DB Subnet Group.

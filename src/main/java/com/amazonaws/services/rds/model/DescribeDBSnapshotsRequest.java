@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.rds.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#describeDBSnapshots(DescribeDBSnapshotsRequest) DescribeDBSnapshots operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#describeDBSnapshots(DescribeDBSnapshotsRequest)
  */
-public class DescribeDBSnapshotsRequest extends AmazonWebServiceRequest {
+public class DescribeDBSnapshotsRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * A DB Instance Identifier to retrieve the list of DB Snapshots for.

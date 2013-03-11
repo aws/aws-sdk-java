@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.redshift.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Describes a cluster.
  * </p>
  */
-public class Cluster {
+public class Cluster  implements Serializable  {
 
     /**
      * The unique identifier of the cluster.

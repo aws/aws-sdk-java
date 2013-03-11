@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.redshift.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.redshift.AmazonRedshift#createClusterSnapshot(CreateClusterSnapshotRequest) CreateClusterSnapshot operation}.
@@ -27,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#createClusterSnapshot(CreateClusterSnapshotRequest)
  */
-public class CreateClusterSnapshotRequest extends AmazonWebServiceRequest {
+public class CreateClusterSnapshotRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * A unique identifier for the snapshot that you are requesting. This

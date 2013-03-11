@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.identitymanagement.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getRole(GetRoleRequest) GetRole operation}.
@@ -29,7 +30,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getRole(GetRoleRequest)
  */
-public class GetRoleRequest extends AmazonWebServiceRequest {
+public class GetRoleRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * Name of the role to get information about.

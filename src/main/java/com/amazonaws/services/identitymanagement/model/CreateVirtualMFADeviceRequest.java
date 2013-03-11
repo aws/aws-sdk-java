@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.identitymanagement.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#createVirtualMFADevice(CreateVirtualMFADeviceRequest) CreateVirtualMFADevice operation}.
@@ -37,7 +38,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#createVirtualMFADevice(CreateVirtualMFADeviceRequest)
  */
-public class CreateVirtualMFADeviceRequest extends AmazonWebServiceRequest {
+public class CreateVirtualMFADeviceRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The path for the virtual MFA device. For more information about paths,

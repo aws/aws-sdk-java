@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.rds.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Contains the results of a successful invocation of the DescribeEventCategories action.
  * </p>
  */
-public class EventCategoriesMap {
+public class EventCategoriesMap  implements Serializable  {
 
     /**
      * The source type that the returned categories belong to

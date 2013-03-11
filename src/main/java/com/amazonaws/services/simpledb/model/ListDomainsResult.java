@@ -13,11 +13,12 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.simpledb.model;
+import java.io.Serializable;
 
 /**
  * List Domains Result
  */
-public class ListDomainsResult {
+public class ListDomainsResult  implements Serializable  {
 
     /**
      * A list of domain names that match the expression.

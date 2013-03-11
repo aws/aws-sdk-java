@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.identitymanagement.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteVirtualMFADevice(DeleteVirtualMFADeviceRequest) DeleteVirtualMFADevice operation}.
@@ -27,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteVirtualMFADevice(DeleteVirtualMFADeviceRequest)
  */
-public class DeleteVirtualMFADeviceRequest extends AmazonWebServiceRequest {
+public class DeleteVirtualMFADeviceRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The serial number that uniquely identifies the MFA device. For virtual

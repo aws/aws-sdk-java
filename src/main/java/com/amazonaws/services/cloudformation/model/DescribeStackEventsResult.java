@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.cloudformation.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The output for a DescribeStackEvents action.
  * </p>
  */
-public class DescribeStackEventsResult {
+public class DescribeStackEventsResult  implements Serializable  {
 
     /**
      * A list of <code>StackEvents</code> structures.

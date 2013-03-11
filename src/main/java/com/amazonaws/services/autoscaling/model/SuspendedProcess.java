@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.autoscaling.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * An Auto Scaling process that has been suspended. For more information, see ProcessType.
  * </p>
  */
-public class SuspendedProcess {
+public class SuspendedProcess  implements Serializable  {
 
     /**
      * The name of the suspended process.

@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.rds.model;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -29,7 +30,7 @@ package com.amazonaws.services.rds.model;
  * This data type is used as a response element in the DescribeDBInstances action.
  * </p>
  */
-public class DBInstance {
+public class DBInstance  implements Serializable  {
 
     /**
      * Contains a user-supplied database identifier. This is the unique key

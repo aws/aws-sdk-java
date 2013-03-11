@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.identitymanagement.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listGroupsForUser(ListGroupsForUserRequest) ListGroupsForUser operation}.
@@ -26,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listGroupsForUser(ListGroupsForUserRequest)
  */
-public class ListGroupsForUserRequest extends AmazonWebServiceRequest {
+public class ListGroupsForUserRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of the user to list groups for.

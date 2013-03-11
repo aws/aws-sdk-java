@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elasticbeanstalk.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Describes an Auto Scaling launch configuration.
  * </p>
  */
-public class AutoScalingGroup {
+public class AutoScalingGroup  implements Serializable  {
 
     /**
      * The name of the <code>AutoScalingGroup</code> .

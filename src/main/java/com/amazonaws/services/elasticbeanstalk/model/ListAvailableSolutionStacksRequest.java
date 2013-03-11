@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.elasticbeanstalk.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#listAvailableSolutionStacks(ListAvailableSolutionStacksRequest) ListAvailableSolutionStacks operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#listAvailableSolutionStacks(ListAvailableSolutionStacksRequest)
  */
-public class ListAvailableSolutionStacksRequest extends AmazonWebServiceRequest {
+public class ListAvailableSolutionStacksRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * Returns a string representation of this object; useful for testing and

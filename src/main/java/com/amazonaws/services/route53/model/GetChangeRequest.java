@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.route53.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.route53.AmazonRoute53#getChange(GetChangeRequest) GetChange operation}.
@@ -30,7 +31,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.route53.AmazonRoute53#getChange(GetChangeRequest)
  */
-public class GetChangeRequest extends AmazonWebServiceRequest {
+public class GetChangeRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The ID of the change batch request. The value that you specify here is

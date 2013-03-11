@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elasticache.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Contains a set of parameters and their values which can be applied to a Cache Cluster.
  * </p>
  */
-public class CacheParameterGroup {
+public class CacheParameterGroup  implements Serializable  {
 
     /**
      * Provides the name of the Cache Parameter Group.

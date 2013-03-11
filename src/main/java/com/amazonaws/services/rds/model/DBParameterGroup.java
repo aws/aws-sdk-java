@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.rds.model;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -23,7 +24,7 @@ package com.amazonaws.services.rds.model;
  * action.
  * </p>
  */
-public class DBParameterGroup {
+public class DBParameterGroup  implements Serializable  {
 
     /**
      * Provides the name of the DB Parameter Group.

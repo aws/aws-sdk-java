@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.redshift.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Describes a reserved node offering.
  * </p>
  */
-public class ReservedNodeOffering {
+public class ReservedNodeOffering  implements Serializable  {
 
     /**
      * The offering identifier.

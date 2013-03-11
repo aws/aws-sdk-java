@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.datapipeline.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Contains a logical operation for comparing the value of a field with a specified value.
  * </p>
  */
-public class Operator {
+public class Operator  implements Serializable  {
 
     /**
      * The logical operation to be performed: equal (EQ), equal reference

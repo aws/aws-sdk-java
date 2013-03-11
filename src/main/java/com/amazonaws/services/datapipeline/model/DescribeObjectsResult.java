@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.datapipeline.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * If <code>True</code> , there are more results that can be returned in another call to DescribeObjects.
  * </p>
  */
-public class DescribeObjectsResult {
+public class DescribeObjectsResult  implements Serializable  {
 
     /**
      * An array of object definitions that are returned by the call to

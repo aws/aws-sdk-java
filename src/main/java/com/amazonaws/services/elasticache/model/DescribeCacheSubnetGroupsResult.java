@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elasticache.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Represents the output from a DescribeCacheSubnetGroups action.
  * </p>
  */
-public class DescribeCacheSubnetGroupsResult {
+public class DescribeCacheSubnetGroupsResult  implements Serializable  {
 
     /**
      * The marker obtained from a previous operation response.

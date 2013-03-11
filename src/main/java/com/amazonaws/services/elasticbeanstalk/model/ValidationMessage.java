@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elasticbeanstalk.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * An error or warning for a desired configuration option value.
  * </p>
  */
-public class ValidationMessage {
+public class ValidationMessage  implements Serializable  {
 
     /**
      * A message describing the error or warning.

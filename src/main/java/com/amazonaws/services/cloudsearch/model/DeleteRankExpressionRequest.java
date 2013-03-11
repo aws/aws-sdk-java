@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.cloudsearch.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.cloudsearch.AmazonCloudSearch#deleteRankExpression(DeleteRankExpressionRequest) DeleteRankExpression operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudsearch.AmazonCloudSearch#deleteRankExpression(DeleteRankExpressionRequest)
  */
-public class DeleteRankExpressionRequest extends AmazonWebServiceRequest {
+public class DeleteRankExpressionRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * A string that represents the name of a domain. Domain names must be

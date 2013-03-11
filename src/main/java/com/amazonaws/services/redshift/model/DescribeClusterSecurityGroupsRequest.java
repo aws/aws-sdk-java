@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.redshift.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.redshift.AmazonRedshift#describeClusterSecurityGroups(DescribeClusterSecurityGroupsRequest) DescribeClusterSecurityGroups operation}.
@@ -28,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#describeClusterSecurityGroups(DescribeClusterSecurityGroupsRequest)
  */
-public class DescribeClusterSecurityGroupsRequest extends AmazonWebServiceRequest {
+public class DescribeClusterSecurityGroupsRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of a cluster security group for which you are requesting

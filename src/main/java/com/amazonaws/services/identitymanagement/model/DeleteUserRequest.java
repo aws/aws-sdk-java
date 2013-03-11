@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.identitymanagement.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteUser(DeleteUserRequest) DeleteUser operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteUser(DeleteUserRequest)
  */
-public class DeleteUserRequest extends AmazonWebServiceRequest {
+public class DeleteUserRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * Name of the user to delete.

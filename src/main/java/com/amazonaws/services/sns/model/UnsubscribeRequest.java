@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.sns.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#unsubscribe(UnsubscribeRequest) Unsubscribe operation}.
@@ -26,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.sns.AmazonSNS#unsubscribe(UnsubscribeRequest)
  */
-public class UnsubscribeRequest extends AmazonWebServiceRequest {
+public class UnsubscribeRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The ARN of the subscription to be deleted.

@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elasticloadbalancing.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The AppCookieStickinessPolicy data type.
  * </p>
  */
-public class AppCookieStickinessPolicy {
+public class AppCookieStickinessPolicy  implements Serializable  {
 
     /**
      * The mnemonic name for the policy being created. The name must be

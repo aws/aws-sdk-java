@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.opsworks.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.opsworks.AWSOpsWorks#updateLayer(UpdateLayerRequest) UpdateLayer operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#updateLayer(UpdateLayerRequest)
  */
-public class UpdateLayerRequest extends AmazonWebServiceRequest {
+public class UpdateLayerRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The layer ID.

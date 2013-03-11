@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Provides information about an Amazon EC2 resource Tag.
  * </p>
  */
-public class TagDescription {
+public class TagDescription  implements Serializable  {
 
     /**
      * The resource ID for the tag.

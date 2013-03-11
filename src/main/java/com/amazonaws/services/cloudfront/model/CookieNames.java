@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.cloudfront.model;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -20,7 +21,7 @@ package com.amazonaws.services.cloudfront.model;
  * behavior.
  * </p>
  */
-public class CookieNames {
+public class CookieNames  implements Serializable  {
 
     /**
      * The number of whitelisted cookies for this cache behavior.

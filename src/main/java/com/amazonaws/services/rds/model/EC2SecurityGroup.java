@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.rds.model;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -26,7 +27,7 @@ package com.amazonaws.services.rds.model;
  * 
  * </ul>
  */
-public class EC2SecurityGroup {
+public class EC2SecurityGroup  implements Serializable  {
 
     /**
      * Provides the status of the EC2 security group. Status can be

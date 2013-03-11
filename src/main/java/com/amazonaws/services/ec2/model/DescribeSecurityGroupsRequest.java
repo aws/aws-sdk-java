@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeSecurityGroups(DescribeSecurityGroupsRequest) DescribeSecurityGroups operation}.
@@ -27,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeSecurityGroups(DescribeSecurityGroupsRequest)
  */
-public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest {
+public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The optional list of Amazon EC2 security groups to describe.

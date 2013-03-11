@@ -487,54 +487,6 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
-     * This action applies only to security groups in a VPC; it's not
-     * supported for EC2 security groups. For information about Amazon
-     * Virtual Private Cloud and VPC security groups, go to the Amazon
-     * Virtual Private Cloud User Guide.
-     * </p>
-     * <p>
-     * The action adds one or more egress rules to a VPC security group.
-     * Specifically, this permits instances in a security group to send
-     * traffic to either one or more destination CIDR IP address ranges, or
-     * to one or more destination security groups in the same VPC.
-     * </p>
-     * <p>
-     * Each rule consists of the protocol (e.g., TCP), plus either a CIDR
-     * range, or a source group. For the TCP and UDP protocols, you must also
-     * specify the destination port or port range. For the ICMP protocol, you
-     * must also specify the ICMP type and code. You can use <code>-1</code>
-     * as a wildcard for the ICMP type or code.
-     * </p>
-     * <p>
-     * Rule changes are propagated to instances within the security group as
-     * quickly as possible. However, a small delay might occur.
-     * </p>
-     * <p>
-     * <b>Important:</b> For VPC security groups: You can have up to 50
-     * rules total per group (covering both ingress and egress).
-     * </p>
-     *
-     * @param authorizeSecurityGroupEgressRequest Container for the necessary
-     *           parameters to execute the AuthorizeSecurityGroupEgress service method
-     *           on AmazonEC2.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonEC2 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void authorizeSecurityGroupEgress(AuthorizeSecurityGroupEgressRequest authorizeSecurityGroupEgressRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<AuthorizeSecurityGroupEgressRequest> request = new AuthorizeSecurityGroupEgressRequestMarshaller().marshall(authorizeSecurityGroupEgressRequest);
-        invoke(request, null);
-    }
-    
-    /**
-     * <p>
      * Retrieves the encrypted administrator password for the instances
      * running Windows.
      * </p>
@@ -595,6 +547,54 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public void associateDhcpOptions(AssociateDhcpOptionsRequest associateDhcpOptionsRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<AssociateDhcpOptionsRequest> request = new AssociateDhcpOptionsRequestMarshaller().marshall(associateDhcpOptionsRequest);
+        invoke(request, null);
+    }
+    
+    /**
+     * <p>
+     * This action applies only to security groups in a VPC; it's not
+     * supported for EC2 security groups. For information about Amazon
+     * Virtual Private Cloud and VPC security groups, go to the Amazon
+     * Virtual Private Cloud User Guide.
+     * </p>
+     * <p>
+     * The action adds one or more egress rules to a VPC security group.
+     * Specifically, this permits instances in a security group to send
+     * traffic to either one or more destination CIDR IP address ranges, or
+     * to one or more destination security groups in the same VPC.
+     * </p>
+     * <p>
+     * Each rule consists of the protocol (e.g., TCP), plus either a CIDR
+     * range, or a source group. For the TCP and UDP protocols, you must also
+     * specify the destination port or port range. For the ICMP protocol, you
+     * must also specify the ICMP type and code. You can use <code>-1</code>
+     * as a wildcard for the ICMP type or code.
+     * </p>
+     * <p>
+     * Rule changes are propagated to instances within the security group as
+     * quickly as possible. However, a small delay might occur.
+     * </p>
+     * <p>
+     * <b>Important:</b> For VPC security groups: You can have up to 50
+     * rules total per group (covering both ingress and egress).
+     * </p>
+     *
+     * @param authorizeSecurityGroupEgressRequest Container for the necessary
+     *           parameters to execute the AuthorizeSecurityGroupEgress service method
+     *           on AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void authorizeSecurityGroupEgress(AuthorizeSecurityGroupEgressRequest authorizeSecurityGroupEgressRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<AuthorizeSecurityGroupEgressRequest> request = new AuthorizeSecurityGroupEgressRequestMarshaller().marshall(authorizeSecurityGroupEgressRequest);
         invoke(request, null);
     }
     
@@ -700,6 +700,27 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     public void deleteNetworkInterface(DeleteNetworkInterfaceRequest deleteNetworkInterfaceRequest) 
             throws AmazonServiceException, AmazonClientException {
         Request<DeleteNetworkInterfaceRequest> request = new DeleteNetworkInterfaceRequestMarshaller().marshall(deleteNetworkInterfaceRequest);
+        invoke(request, null);
+    }
+    
+    /**
+     *
+     * @param modifyVpcAttributeRequest Container for the necessary
+     *           parameters to execute the ModifyVpcAttribute service method on
+     *           AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void modifyVpcAttribute(ModifyVpcAttributeRequest modifyVpcAttributeRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<ModifyVpcAttributeRequest> request = new ModifyVpcAttributeRequestMarshaller().marshall(modifyVpcAttributeRequest);
         invoke(request, null);
     }
     
@@ -1176,6 +1197,30 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     }
     
     /**
+     *
+     * @param describeAccountAttributesRequest Container for the necessary
+     *           parameters to execute the DescribeAccountAttributes service method on
+     *           AmazonEC2.
+     * 
+     * @return The response from the DescribeAccountAttributes service
+     *         method, as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeAccountAttributesResult describeAccountAttributes(DescribeAccountAttributesRequest describeAccountAttributesRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<DescribeAccountAttributesRequest> request = new DescribeAccountAttributesRequestMarshaller().marshall(describeAccountAttributesRequest);
+        return invoke(request, new DescribeAccountAttributesResultStaxUnmarshaller());
+    }
+    
+    /**
      * <p>
      * Creates a new VPN gateway. A VPN gateway is the VPC-side endpoint for
      * your VPN connection. You can create a VPN gateway before creating the
@@ -1595,6 +1640,27 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     }
     
     /**
+     *
+     * @param cancelConversionTaskRequest Container for the necessary
+     *           parameters to execute the CancelConversionTask service method on
+     *           AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void cancelConversionTask(CancelConversionTaskRequest cancelConversionTaskRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<CancelConversionTaskRequest> request = new CancelConversionTaskRequestMarshaller().marshall(cancelConversionTaskRequest);
+        invoke(request, null);
+    }
+    
+    /**
      * <p>
      * The AssociateAddress operation associates an elastic IP address with
      * an instance.
@@ -1625,27 +1691,6 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             throws AmazonServiceException, AmazonClientException {
         Request<AssociateAddressRequest> request = new AssociateAddressRequestMarshaller().marshall(associateAddressRequest);
         return invoke(request, new AssociateAddressResultStaxUnmarshaller());
-    }
-    
-    /**
-     *
-     * @param cancelConversionTaskRequest Container for the necessary
-     *           parameters to execute the CancelConversionTask service method on
-     *           AmazonEC2.
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonEC2 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void cancelConversionTask(CancelConversionTaskRequest cancelConversionTaskRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        Request<CancelConversionTaskRequest> request = new CancelConversionTaskRequestMarshaller().marshall(cancelConversionTaskRequest);
-        invoke(request, null);
     }
     
     /**
@@ -3210,6 +3255,29 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      *
+     * @param copyImageRequest Container for the necessary parameters to
+     *           execute the CopyImage service method on AmazonEC2.
+     * 
+     * @return The response from the CopyImage service method, as returned by
+     *         AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public CopyImageResult copyImage(CopyImageRequest copyImageRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<CopyImageRequest> request = new CopyImageRequestMarshaller().marshall(copyImageRequest);
+        return invoke(request, new CopyImageResultStaxUnmarshaller());
+    }
+    
+    /**
+     *
      * @param modifyNetworkInterfaceAttributeRequest Container for the
      *           necessary parameters to execute the ModifyNetworkInterfaceAttribute
      *           service method on AmazonEC2.
@@ -3890,6 +3958,30 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
             throws AmazonServiceException, AmazonClientException {
         Request<DisassociateRouteTableRequest> request = new DisassociateRouteTableRequestMarshaller().marshall(disassociateRouteTableRequest);
         invoke(request, null);
+    }
+    
+    /**
+     *
+     * @param describeVpcAttributeRequest Container for the necessary
+     *           parameters to execute the DescribeVpcAttribute service method on
+     *           AmazonEC2.
+     * 
+     * @return The response from the DescribeVpcAttribute service method, as
+     *         returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeVpcAttributeResult describeVpcAttribute(DescribeVpcAttributeRequest describeVpcAttributeRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        Request<DescribeVpcAttributeRequest> request = new DescribeVpcAttributeRequestMarshaller().marshall(describeVpcAttributeRequest);
+        return invoke(request, new DescribeVpcAttributeResultStaxUnmarshaller());
     }
     
     /**
@@ -4789,6 +4881,21 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     }
     
     /**
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void modifyVpcAttribute() throws AmazonServiceException, AmazonClientException {
+        modifyVpcAttribute(new ModifyVpcAttributeRequest());
+    }
+    
+    /**
      * <p>
      * Describes the Spot Price history.
      * </p>
@@ -4973,6 +5080,24 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
      */
     public DescribeSpotDatafeedSubscriptionResult describeSpotDatafeedSubscription() throws AmazonServiceException, AmazonClientException {
         return describeSpotDatafeedSubscription(new DescribeSpotDatafeedSubscriptionRequest());
+    }
+    
+    /**
+     * 
+     * @return The response from the DescribeAccountAttributes service
+     *         method, as returned by AmazonEC2.
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DescribeAccountAttributesResult describeAccountAttributes() throws AmazonServiceException, AmazonClientException {
+        return describeAccountAttributes(new DescribeAccountAttributesRequest());
     }
     
     /**
@@ -5889,6 +6014,27 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     
     /**
      * <p>
+     * The DisassociateAddress operation disassociates the specified elastic
+     * IP address from the instance to which it is assigned. This is an
+     * idempotent operation. If you enter it more than once, Amazon EC2 does
+     * not return an error.
+     * </p>
+     * 
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public void disassociateAddress() throws AmazonServiceException, AmazonClientException {
+        disassociateAddress(new DisassociateAddressRequest());
+    }
+    
+    /**
+     * <p>
      * The AllocateAddress operation acquires an elastic IP address for use
      * with your account.
      * </p>
@@ -6004,6 +6150,11 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
         return registerImage(new RegisterImageRequest());
     }
     
+    @Override
+    protected String getServiceAbbreviation() {
+        return "ec2";
+    }
+    
 
     /**
      * Returns additional metadata for a previously executed successful, request, typically used for
@@ -6027,6 +6178,7 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     private <X, Y extends AmazonWebServiceRequest> X invoke(Request<Y> request, Unmarshaller<X, StaxUnmarshallerContext> unmarshaller) {
         request.setEndpoint(endpoint);
+        request.setTimeOffset(timeOffset);
         for (Entry<String, String> entry : request.getOriginalRequest().copyPrivateRequestParameters().entrySet()) {
             request.addParameter(entry.getKey(), entry.getValue());
         }

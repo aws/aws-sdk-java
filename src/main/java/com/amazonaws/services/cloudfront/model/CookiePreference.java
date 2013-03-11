@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.cloudfront.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * A complex type that specifies the cookie preferences associated with this cache behavior.
  * </p>
  */
-public class CookiePreference {
+public class CookiePreference  implements Serializable  {
 
     /**
      * Use this element to specify whether you want CloudFront to forward

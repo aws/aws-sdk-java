@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.identitymanagement.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listUserPolicies(ListUserPoliciesRequest) ListUserPolicies operation}.
@@ -26,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listUserPolicies(ListUserPoliciesRequest)
  */
-public class ListUserPoliciesRequest extends AmazonWebServiceRequest {
+public class ListUserPoliciesRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of the user to list policies for.

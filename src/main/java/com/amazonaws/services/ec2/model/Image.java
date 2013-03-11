@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Represents an <i>Amazon Machine Image</i> (AMI) that can be run on an Amazon EC2 instance.
  * </p>
  */
-public class Image {
+public class Image  implements Serializable  {
 
     /**
      * The unique ID of the AMI.

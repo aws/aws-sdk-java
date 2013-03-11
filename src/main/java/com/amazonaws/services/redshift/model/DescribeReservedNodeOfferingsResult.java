@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.redshift.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Contains the output from the DescribeReservedNodeOfferings action.
  * </p>
  */
-public class DescribeReservedNodeOfferingsResult {
+public class DescribeReservedNodeOfferingsResult  implements Serializable  {
 
     /**
      * An optional marker returned by a previous

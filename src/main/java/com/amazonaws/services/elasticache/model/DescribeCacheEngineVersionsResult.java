@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elasticache.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Contains the result of a successful invocation of the DescribeCacheEngineVersions action.
  * </p>
  */
-public class DescribeCacheEngineVersionsResult {
+public class DescribeCacheEngineVersionsResult  implements Serializable  {
 
     /**
      * The identifier returned to allow retrieval of paginated results.

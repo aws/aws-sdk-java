@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#activateLicense(ActivateLicenseRequest) ActivateLicense operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#activateLicense(ActivateLicenseRequest)
  */
-public class ActivateLicenseRequest extends AmazonWebServiceRequest {
+public class ActivateLicenseRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * Specifies the ID for the specific license to activate against.

@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elasticbeanstalk.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Results of a CreateStorageLocationResult call.
  * </p>
  */
-public class CreateStorageLocationResult {
+public class CreateStorageLocationResult  implements Serializable  {
 
     /**
      * The name of the Amazon S3 bucket created.

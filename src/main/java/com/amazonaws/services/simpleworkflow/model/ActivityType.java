@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.simpleworkflow.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Represents an activity type.
  * </p>
  */
-public class ActivityType {
+public class ActivityType  implements Serializable  {
 
     /**
      * The name of this activity. <note>The combination of activity type name

@@ -28,7 +28,6 @@ import java.util.Iterator;
 import java.util.Map;
 
 import javax.crypto.Cipher;
-import javax.crypto.CipherInputStream;
 import javax.crypto.KeyGenerator;
 import javax.crypto.SecretKey;
 import javax.crypto.spec.IvParameterSpec;
@@ -40,6 +39,7 @@ import com.amazonaws.AmazonClientException;
 import com.amazonaws.services.s3.Headers;
 import com.amazonaws.services.s3.internal.InputSubstream;
 import com.amazonaws.services.s3.internal.Mimetypes;
+import com.amazonaws.services.s3.internal.RepeatableCipherInputStream;
 import com.amazonaws.services.s3.internal.RepeatableFileInputStream;
 import com.amazonaws.services.s3.model.DeleteObjectRequest;
 import com.amazonaws.services.s3.model.EncryptionMaterials;
@@ -136,14 +136,14 @@ public class EncryptionUtils {
     public static EncryptionInstruction generateInstruction(EncryptionMaterialsProvider materialsProvider, Provider cryptoProvider) {
         // Generate a one-time use symmetric key and initialize a cipher to encrypt object data
         SecretKey envelopeSymmetricKey = generateOneTimeUseSymmetricKey();
-        Cipher symmetricCipher = createSymmetricCipher(envelopeSymmetricKey, Cipher.ENCRYPT_MODE, cryptoProvider, null);
+        CipherFactory cipherFactory = new CipherFactory(envelopeSymmetricKey, Cipher.ENCRYPT_MODE, null, cryptoProvider);
 
         // Encrypt the envelope symmetric key
         EncryptionMaterials materials = materialsProvider.getEncryptionMaterials();
         byte[] encryptedEnvelopeSymmetricKey = getEncryptedSymmetricKey(envelopeSymmetricKey, materials, cryptoProvider);
 
         // Return a new instruction with the appropriate fields.
-        return new EncryptionInstruction(materials.getMaterialsDescription(), encryptedEnvelopeSymmetricKey, envelopeSymmetricKey, symmetricCipher);
+        return new EncryptionInstruction(materials.getMaterialsDescription(), encryptedEnvelopeSymmetricKey, envelopeSymmetricKey, cipherFactory);
     }
 
     /**
@@ -209,9 +209,9 @@ public class EncryptionUtils {
 
             // Decrypt the symmetric key and create the symmetric cipher
             SecretKey symmetricKey = getDecryptedSymmetricKey(encryptedSymmetricKeyBytes, materials, cryptoProvider);
-            Cipher cipher = createSymmetricCipher(symmetricKey, Cipher.DECRYPT_MODE, cryptoProvider, initVectorBytes);
+            CipherFactory cipherFactory = new CipherFactory(symmetricKey, Cipher.DECRYPT_MODE, initVectorBytes, cryptoProvider);
 
-            return new EncryptionInstruction(materialsDescription, encryptedSymmetricKeyBytes, symmetricKey, cipher);
+            return new EncryptionInstruction(materialsDescription, encryptedSymmetricKeyBytes, symmetricKey, cipherFactory);
         } catch (JSONException e) {
             throw new AmazonClientException("Unable to parse retrieved instruction file : " + e.getMessage());
         }
@@ -284,9 +284,9 @@ public class EncryptionUtils {
 
         // Decrypt the symmetric key and create the symmetric cipher
         SecretKey symmetricKey = getDecryptedSymmetricKey(encryptedSymmetricKeyBytes, materials, cryptoProvider);
-        Cipher cipher = createSymmetricCipher(symmetricKey, Cipher.DECRYPT_MODE, cryptoProvider, initVectorBytes);
+        CipherFactory cipherFactory = new CipherFactory(symmetricKey, Cipher.DECRYPT_MODE, initVectorBytes, cryptoProvider);
 
-        return new EncryptionInstruction(materialsDescription, encryptedSymmetricKeyBytes, symmetricKey, cipher);
+        return new EncryptionInstruction(materialsDescription, encryptedSymmetricKeyBytes, symmetricKey, cipherFactory);
     }
 
     /**
@@ -301,9 +301,6 @@ public class EncryptionUtils {
      *      The updated request where the input stream contains the encrypted contents.
      */
     public static PutObjectRequest encryptRequestUsingInstruction(PutObjectRequest request, EncryptionInstruction instruction) {
-        // Use the symmetric cipher from the instruction to encrypt the object.
-        Cipher symmetricCipher = instruction.getSymmetricCipher();
-
         // Create a new metadata object if there is no metadata already.
         ObjectMetadata metadata = request.getMetadata();
         if (metadata == null) {
@@ -327,8 +324,7 @@ public class EncryptionUtils {
         request.setMetadata(metadata);
 
         // Create encrypted input stream
-        InputStream encryptedInputStream = getEncryptedInputStream(request, symmetricCipher);
-        request.setInputStream(encryptedInputStream);
+        request.setInputStream(getEncryptedInputStream(request, instruction.getCipherFactory()));
 
         // Treat all encryption requests as input stream upload requests, not as file upload requests.
         request.setFile(null);
@@ -348,7 +344,8 @@ public class EncryptionUtils {
      */
     public static S3Object decryptObjectUsingInstruction(S3Object object, EncryptionInstruction instruction) {
         S3ObjectInputStream objectContent = object.getObjectContent();
-        InputStream decryptedInputStream = new CipherInputStream(objectContent, instruction.getSymmetricCipher());
+
+        InputStream decryptedInputStream = new RepeatableCipherInputStream(objectContent, instruction.getCipherFactory());
         object.setObjectContent(new S3ObjectInputStream(decryptedInputStream, objectContent.getHttpRequest()));
         return object;
     }
@@ -393,7 +390,7 @@ public class EncryptionUtils {
         metadata.setContentLength(instructionBytes.length);
         metadata.addUserMetadata(Headers.CRYPTO_INSTRUCTION_FILE, "");
 
-		return new PutObjectRequest(bucketName, key + INSTRUCTION_SUFFIX, instructionInputStream, metadata);
+        return new PutObjectRequest(bucketName, key + INSTRUCTION_SUFFIX, instructionInputStream, metadata);
     }
 
     /**
@@ -552,7 +549,9 @@ public class EncryptionUtils {
             }
             return cipher;
         } catch (Exception e) {
-            throw new AmazonClientException("Unable to build cipher with the provided algorithm and padding: " + e.getMessage(), e);
+            throw new AmazonClientException("Unable to build cipher: " + e.getMessage() +
+                    "\nMake sure you have the JCE unlimited strength policy files installed and " +
+                    "configured for your JVM: http://www.ngs.ac.uk/tools/jcepolicyfiles", e);
         }
     }
 
@@ -588,7 +587,7 @@ public class EncryptionUtils {
      * Decrypts an encrypted symmetric key using the provided encryption materials and returns
      * it as a SecretKey object.
      */
-    private static SecretKey getDecryptedSymmetricKey(byte[] encryptedSymmetricKeyBytes, EncryptionMaterials materials,	Provider cryptoProvider) {
+    private static SecretKey getDecryptedSymmetricKey(byte[] encryptedSymmetricKeyBytes, EncryptionMaterials materials, Provider cryptoProvider) {
         Key keyToDoDecryption;
         if (materials.getKeyPair() != null) {
             // Do envelope decryption with private key from key pair
@@ -612,42 +611,39 @@ public class EncryptionUtils {
         }
     }
 
-    /**
-     * Returns an input stream encrypted with the given symmetric cipher.
-     */
-    private static InputStream getEncryptedInputStream(PutObjectRequest request, Cipher symmetricCipher) {
+    private static InputStream getEncryptedInputStream(PutObjectRequest request, CipherFactory cipherFactory) {
         try {
             InputStream originalInputStream = request.getInputStream();
             if (request.getFile() != null) {
                 originalInputStream = new RepeatableFileInputStream(request.getFile());
             }
-            return new CipherInputStream(originalInputStream, symmetricCipher);
+            return new RepeatableCipherInputStream(originalInputStream, cipherFactory);
         } catch (Exception e) {
             throw new AmazonClientException("Unable to create cipher input stream: " + e.getMessage(), e);
         }
     }
 
-    public static InputStream getEncryptedInputStream(UploadPartRequest request, Cipher symmetricCipher) {
-    	try {
-    		InputStream originalInputStream = request.getInputStream();
-    		if (request.getFile() != null) {
+    public static InputStream getEncryptedInputStream(UploadPartRequest request, CipherFactory cipherFactory) {
+        try {
+            InputStream originalInputStream = request.getInputStream();
+            if (request.getFile() != null) {
                 originalInputStream = new InputSubstream(new RepeatableFileInputStream(request.getFile()),
                         request.getFileOffset(), request.getPartSize(), request.isLastPart());
-    		}
+            }
 
-    		originalInputStream = new CipherInputStream(originalInputStream, symmetricCipher);
+            originalInputStream = new RepeatableCipherInputStream(originalInputStream, cipherFactory);
 
-    		if (request.isLastPart() == false) {
-    			// We want to prevent the final padding from being sent on the stream...
-    			originalInputStream = new InputSubstream(originalInputStream, 0, request.getPartSize(), false);
-    		}
+            if (request.isLastPart() == false) {
+                // We want to prevent the final padding from being sent on the stream...
+                originalInputStream = new InputSubstream(originalInputStream, 0, request.getPartSize(), false);
+            }
 
-    		long partSize = request.getPartSize();
-    		int cipherBlockSize = symmetricCipher.getBlockSize();
-    		return new ByteRangeCapturingInputStream(originalInputStream, partSize - cipherBlockSize, partSize);
-    	} catch (Exception e) {
-    		throw new AmazonClientException("Unable to create cipher input stream: " + e.getMessage(), e);
-    	}
+            long partSize = request.getPartSize();
+            int cipherBlockSize = cipherFactory.createCipher().getBlockSize();
+            return new ByteRangeCapturingInputStream(originalInputStream, partSize - cipherBlockSize, partSize);
+        } catch (Exception e) {
+            throw new AmazonClientException("Unable to create cipher input stream: " + e.getMessage(), e);
+        }
     }
 
     /**
@@ -788,8 +784,8 @@ public class EncryptionUtils {
     public static long calculateCryptoContentLength(Cipher symmetricCipher, UploadPartRequest request) {
         long plaintextLength;
         if (request.getFile() != null) {
-        	if (request.getPartSize() > 0) plaintextLength = request.getPartSize();
-        	else plaintextLength = request.getFile().length();
+            if (request.getPartSize() > 0) plaintextLength = request.getPartSize();
+            else plaintextLength = request.getFile().length();
         } else if (request.getInputStream() != null) {
             plaintextLength = request.getPartSize();
         } else {

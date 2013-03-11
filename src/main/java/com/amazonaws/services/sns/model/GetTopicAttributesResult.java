@@ -13,11 +13,12 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.sns.model;
+import java.io.Serializable;
 
 /**
  * Get Topic Attributes Result
  */
-public class GetTopicAttributesResult {
+public class GetTopicAttributesResult  implements Serializable  {
 
     /**
      * A map of the topic's attributes. Attributes in this map include the

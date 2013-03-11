@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.rds.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * This data type is used as a response element for queries on VPC security group membership.
  * </p>
  */
-public class VpcSecurityGroupMembership {
+public class VpcSecurityGroupMembership  implements Serializable  {
 
     /**
      * The name of the VPC security group.

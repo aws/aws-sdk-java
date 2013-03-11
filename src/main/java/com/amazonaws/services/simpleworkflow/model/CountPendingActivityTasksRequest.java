@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.simpleworkflow.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#countPendingActivityTasks(CountPendingActivityTasksRequest) CountPendingActivityTasks operation}.
@@ -42,7 +43,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#countPendingActivityTasks(CountPendingActivityTasksRequest)
  */
-public class CountPendingActivityTasksRequest extends AmazonWebServiceRequest {
+public class CountPendingActivityTasksRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of the domain that contains the task list.

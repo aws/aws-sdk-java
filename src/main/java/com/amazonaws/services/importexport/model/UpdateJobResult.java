@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.importexport.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Output structure for the UpateJob operation.
  * </p>
  */
-public class UpdateJobResult {
+public class UpdateJobResult  implements Serializable  {
 
     /**
      * Specifies whether (true) or not (false) AWS Import/Export updated your

@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elasticloadbalancing.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * This data type is used as a response element in the DescribeLoadBalancers action to describe the configuration of the back-end server.
  * </p>
  */
-public class BackendServerDescription {
+public class BackendServerDescription  implements Serializable  {
 
     /**
      * Provides the port on which the back-end server is listening.

@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.directconnect.model;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -23,7 +24,7 @@ package com.amazonaws.services.directconnect.model;
  * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-CreateVpnGateway.html"> EC2 CreateVpnGateway API </a> .
  * </p>
  */
-public class VirtualGateway {
+public class VirtualGateway  implements Serializable  {
 
     /**
      * Virtual private gateway to a VPC. <p>Example: vgw-123er56

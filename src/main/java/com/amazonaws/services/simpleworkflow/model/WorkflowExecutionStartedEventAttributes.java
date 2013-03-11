@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.simpleworkflow.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Provides details of <code>WorkflowExecutionStarted</code> event.
  * </p>
  */
-public class WorkflowExecutionStartedEventAttributes {
+public class WorkflowExecutionStartedEventAttributes  implements Serializable  {
 
     /**
      * The input provided to the workflow execution (if any).

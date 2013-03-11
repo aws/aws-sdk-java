@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.simpleemail.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.simpleemail.AmazonSimpleEmailService#deleteVerifiedEmailAddress(DeleteVerifiedEmailAddressRequest) DeleteVerifiedEmailAddress operation}.
@@ -27,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpleemail.AmazonSimpleEmailService#deleteVerifiedEmailAddress(DeleteVerifiedEmailAddressRequest)
  */
-public class DeleteVerifiedEmailAddressRequest extends AmazonWebServiceRequest {
+public class DeleteVerifiedEmailAddressRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * An email address to be removed from the list of verified addresses.

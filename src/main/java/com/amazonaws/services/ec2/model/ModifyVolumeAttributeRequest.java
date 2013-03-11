@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#modifyVolumeAttribute(ModifyVolumeAttributeRequest) ModifyVolumeAttribute operation}.
@@ -21,7 +22,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#modifyVolumeAttribute(ModifyVolumeAttributeRequest)
  */
-public class ModifyVolumeAttributeRequest extends AmazonWebServiceRequest {
+public class ModifyVolumeAttributeRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     private String volumeId;
 

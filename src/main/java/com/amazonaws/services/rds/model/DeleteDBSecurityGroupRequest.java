@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.rds.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#deleteDBSecurityGroup(DeleteDBSecurityGroupRequest) DeleteDBSecurityGroup operation}.
@@ -26,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#deleteDBSecurityGroup(DeleteDBSecurityGroupRequest)
  */
-public class DeleteDBSecurityGroupRequest extends AmazonWebServiceRequest {
+public class DeleteDBSecurityGroupRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of the DB Security Group to delete. <note>You cannot delete

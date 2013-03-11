@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.directconnect.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Additional information about connection order steps.
  * </p>
  */
-public class DescribeConnectionDetailResult {
+public class DescribeConnectionDetailResult  implements Serializable  {
 
     /**
      * ID of the connection. <p>Example: dxcon-fg5678gh <p>Default: None

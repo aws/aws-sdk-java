@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.importexport.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.importexport.AmazonImportExport#createJob(CreateJobRequest) CreateJob operation}.
@@ -25,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.importexport.AmazonImportExport#createJob(CreateJobRequest)
  */
-public class CreateJobRequest extends AmazonWebServiceRequest {
+public class CreateJobRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * Specifies whether the job to initiate is an import or export job.

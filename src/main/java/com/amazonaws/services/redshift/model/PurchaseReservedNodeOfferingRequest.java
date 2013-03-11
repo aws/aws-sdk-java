@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.redshift.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.redshift.AmazonRedshift#purchaseReservedNodeOffering(PurchaseReservedNodeOfferingRequest) PurchaseReservedNodeOffering operation}.
@@ -32,7 +33,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#purchaseReservedNodeOffering(PurchaseReservedNodeOfferingRequest)
  */
-public class PurchaseReservedNodeOfferingRequest extends AmazonWebServiceRequest {
+public class PurchaseReservedNodeOfferingRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The unique identifier of the reserved node offering you want to

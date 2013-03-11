@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.glacier.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Provides options for defining a job.
  * </p>
  */
-public class JobParameters {
+public class JobParameters  implements Serializable  {
 
     /**
      * When initiating a job to retrieve a vault inventory, you can

@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elasticloadbalancing.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The output for the DetachLoadBalancerFromSubnets action.
  * </p>
  */
-public class DetachLoadBalancerFromSubnetsResult {
+public class DetachLoadBalancerFromSubnetsResult  implements Serializable  {
 
     /**
      * A list of subnet IDs removed from the configured set of subnets for

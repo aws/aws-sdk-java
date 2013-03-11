@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * An AWS DevPay product code.
  * </p>
  */
-public class ProductCode {
+public class ProductCode  implements Serializable  {
 
     /**
      * The unique ID of an AWS DevPay product code.

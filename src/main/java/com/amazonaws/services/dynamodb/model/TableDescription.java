@@ -13,11 +13,12 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.dynamodb.model;
+import java.io.Serializable;
 
 /**
  * Table Description
  */
-public class TableDescription {
+public class TableDescription  implements Serializable  {
 
     /**
      * The name of the table being described.

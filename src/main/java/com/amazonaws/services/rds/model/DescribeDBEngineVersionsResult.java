@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.rds.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Contains the result of a successful invocation of the DescribeDBEngineVersions action.
  * </p>
  */
-public class DescribeDBEngineVersionsResult {
+public class DescribeDBEngineVersionsResult  implements Serializable  {
 
     /**
      * An optional pagination token provided by a previous request. If this

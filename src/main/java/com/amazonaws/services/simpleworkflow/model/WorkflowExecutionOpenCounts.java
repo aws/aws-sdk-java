@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.simpleworkflow.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Contains the counts of open tasks, child workflow executions and timers for a workflow execution.
  * </p>
  */
-public class WorkflowExecutionOpenCounts {
+public class WorkflowExecutionOpenCounts  implements Serializable  {
 
     /**
      * The count of activity tasks whose status is OPEN.

@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.cloudsearch.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * A response message that contains the status of an updated default search field.
  * </p>
  */
-public class UpdateDefaultSearchFieldResult {
+public class UpdateDefaultSearchFieldResult  implements Serializable  {
 
     /**
      * The value of the <code>DefaultSearchField</code> configured for this

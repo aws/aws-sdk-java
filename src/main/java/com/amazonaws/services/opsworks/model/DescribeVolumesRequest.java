@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.opsworks.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.opsworks.AWSOpsWorks#describeVolumes(DescribeVolumesRequest) DescribeVolumes operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#describeVolumes(DescribeVolumesRequest)
  */
-public class DescribeVolumesRequest extends AmazonWebServiceRequest {
+public class DescribeVolumesRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The instance ID.

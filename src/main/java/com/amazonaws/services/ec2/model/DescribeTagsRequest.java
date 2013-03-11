@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeTags(DescribeTagsRequest) DescribeTags operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeTags(DescribeTagsRequest)
  */
-public class DescribeTagsRequest extends AmazonWebServiceRequest {
+public class DescribeTagsRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * A list of filters used to match properties for tags.

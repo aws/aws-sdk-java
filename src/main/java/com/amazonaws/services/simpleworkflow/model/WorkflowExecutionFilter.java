@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.simpleworkflow.model;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -20,7 +21,7 @@ package com.amazonaws.services.simpleworkflow.model;
  * 
  * </p>
  */
-public class WorkflowExecutionFilter {
+public class WorkflowExecutionFilter  implements Serializable  {
 
     /**
      * The workflowId to pass of match the criteria of this filter.

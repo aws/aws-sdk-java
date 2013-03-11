@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * An EBS volume backed block device which is attached to an instance.
  * </p>
  */
-public class EbsInstanceBlockDevice {
+public class EbsInstanceBlockDevice  implements Serializable  {
 
     /**
      * The ID of the EBS volume.

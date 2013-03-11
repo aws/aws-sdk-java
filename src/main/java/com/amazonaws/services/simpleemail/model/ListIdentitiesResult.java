@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.simpleemail.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Represents a list of all verified identities for the AWS Account.
  * </p>
  */
-public class ListIdentitiesResult {
+public class ListIdentitiesResult  implements Serializable  {
 
     /**
      * A list of identities.

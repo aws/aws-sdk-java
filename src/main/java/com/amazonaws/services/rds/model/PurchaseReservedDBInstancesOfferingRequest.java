@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.rds.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#purchaseReservedDBInstancesOffering(PurchaseReservedDBInstancesOfferingRequest) PurchaseReservedDBInstancesOffering operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#purchaseReservedDBInstancesOffering(PurchaseReservedDBInstancesOfferingRequest)
  */
-public class PurchaseReservedDBInstancesOfferingRequest extends AmazonWebServiceRequest {
+public class PurchaseReservedDBInstancesOfferingRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The ID of the Reserved DB Instance offering to purchase. <p>Example:

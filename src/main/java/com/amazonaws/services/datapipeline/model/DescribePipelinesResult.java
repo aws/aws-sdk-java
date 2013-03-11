@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.datapipeline.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Contains the output from the DescribePipelines action.
  * </p>
  */
-public class DescribePipelinesResult {
+public class DescribePipelinesResult  implements Serializable  {
 
     /**
      * An array of descriptions returned for the specified pipelines.

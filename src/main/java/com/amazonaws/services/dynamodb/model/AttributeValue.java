@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.dynamodb.model;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -24,7 +25,7 @@ package com.amazonaws.services.dynamodb.model;
  * <code>BinarySet</code> .
  * </p>
  */
-public class AttributeValue {
+public class AttributeValue  implements Serializable  {
 
     /**
      * Strings are Unicode with UTF-8 binary encoding. The maximum size is

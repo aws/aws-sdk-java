@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.dynamodb.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * A container for a Put BatchWrite request
  * </p>
  */
-public class PutRequest {
+public class PutRequest  implements Serializable  {
 
     /**
      * The item to put

@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.opsworks.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Describes an app's SSL configuration.
  * </p>
  */
-public class SslConfiguration {
+public class SslConfiguration  implements Serializable  {
 
     /**
      * The contents of the certificate's domain.crt file.

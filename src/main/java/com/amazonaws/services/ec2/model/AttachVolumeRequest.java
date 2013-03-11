@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#attachVolume(AttachVolumeRequest) AttachVolume operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#attachVolume(AttachVolumeRequest)
  */
-public class AttachVolumeRequest extends AmazonWebServiceRequest {
+public class AttachVolumeRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The ID of the Amazon EBS volume. The volume and instance must be

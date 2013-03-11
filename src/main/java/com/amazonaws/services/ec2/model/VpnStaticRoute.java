@@ -13,11 +13,12 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * Vpn Static Route
  */
-public class VpnStaticRoute {
+public class VpnStaticRoute  implements Serializable  {
 
     private String destinationCidrBlock;
 

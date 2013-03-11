@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.securitytoken.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Contains the result of a successful invocation of the AssumeRole action.
  * </p>
  */
-public class AssumeRoleResult {
+public class AssumeRoleResult  implements Serializable  {
 
     /**
      * The temporary security credentials, which includes an Access Key ID, a

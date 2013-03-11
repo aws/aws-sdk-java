@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elasticloadbalancing.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The output for the DisableAvailabilityZonesForLoadBalancer action.
  * </p>
  */
-public class DisableAvailabilityZonesForLoadBalancerResult {
+public class DisableAvailabilityZonesForLoadBalancerResult  implements Serializable  {
 
     /**
      * A list of updated Availability Zones for the LoadBalancer.

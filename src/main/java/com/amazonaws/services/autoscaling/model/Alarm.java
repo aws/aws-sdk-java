@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.autoscaling.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The Alarm data type.
  * </p>
  */
-public class Alarm {
+public class Alarm  implements Serializable  {
 
     /**
      * The name of the alarm.

@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.cloudfront.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * A complex type that controls whether access logs are written for the distribution.
  * </p>
  */
-public class LoggingConfig {
+public class LoggingConfig  implements Serializable  {
 
     /**
      * Specifies whether you want CloudFront to save access logs to an Amazon

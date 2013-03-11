@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.autoscaling.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.autoscaling.AmazonAutoScaling#createOrUpdateTags(CreateOrUpdateTagsRequest) CreateOrUpdateTags operation}.
@@ -27,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#createOrUpdateTags(CreateOrUpdateTagsRequest)
  */
-public class CreateOrUpdateTagsRequest extends AmazonWebServiceRequest {
+public class CreateOrUpdateTagsRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The tag to be created or updated. Each tag should be defined by its

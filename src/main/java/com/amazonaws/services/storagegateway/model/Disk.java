@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.storagegateway.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Describes a gateway local disk.
  * </p>
  */
-public class Disk {
+public class Disk  implements Serializable  {
 
     /**
      * The unique device ID or other distinguishing data that identify the

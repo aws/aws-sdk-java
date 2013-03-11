@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.elasticbeanstalk.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#describeEvents(DescribeEventsRequest) DescribeEvents operation}.
@@ -26,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#describeEvents(DescribeEventsRequest)
  */
-public class DescribeEventsRequest extends AmazonWebServiceRequest {
+public class DescribeEventsRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * If specified, AWS Elastic Beanstalk restricts the returned

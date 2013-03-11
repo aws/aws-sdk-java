@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.storagegateway.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Lists information about the recovery points of a cached volume.
  * </p>
  */
-public class VolumeRecoveryPointInfo {
+public class VolumeRecoveryPointInfo  implements Serializable  {
 
     /**
      * The Amazon Resource Name (ARN) of the volume associated with the

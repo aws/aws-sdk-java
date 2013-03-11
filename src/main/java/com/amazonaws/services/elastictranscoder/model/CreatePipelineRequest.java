@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.elastictranscoder.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#createPipeline(CreatePipelineRequest) CreatePipeline operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#createPipeline(CreatePipelineRequest)
  */
-public class CreatePipelineRequest extends AmazonWebServiceRequest {
+public class CreatePipelineRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of the pipeline. We recommend that the name be unique within

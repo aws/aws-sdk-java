@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.cloudfront.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.cloudfront.AmazonCloudFront#createCloudFrontOriginAccessIdentity(CreateCloudFrontOriginAccessIdentityRequest) CreateCloudFrontOriginAccessIdentity operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudfront.AmazonCloudFront#createCloudFrontOriginAccessIdentity(CreateCloudFrontOriginAccessIdentityRequest)
  */
-public class CreateCloudFrontOriginAccessIdentityRequest extends AmazonWebServiceRequest {
+public class CreateCloudFrontOriginAccessIdentityRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The origin access identity's configuration information.

@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.identitymanagement.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Contains the result of a successful invocation of the ListUserPolicies action.
  * </p>
  */
-public class ListUserPoliciesResult {
+public class ListUserPoliciesResult  implements Serializable  {
 
     /**
      * A list of policy names.

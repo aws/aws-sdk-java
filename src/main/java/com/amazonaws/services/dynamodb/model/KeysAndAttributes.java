@@ -13,11 +13,12 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.dynamodb.model;
+import java.io.Serializable;
 
 /**
  * Keys And Attributes
  */
-public class KeysAndAttributes {
+public class KeysAndAttributes  implements Serializable  {
 
     private java.util.List<Key> keys;
 

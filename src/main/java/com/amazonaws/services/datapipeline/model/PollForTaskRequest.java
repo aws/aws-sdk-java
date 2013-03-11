@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.datapipeline.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.datapipeline.DataPipeline#pollForTask(PollForTaskRequest) PollForTask operation}.
@@ -31,7 +32,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.datapipeline.DataPipeline#pollForTask(PollForTaskRequest)
  */
-public class PollForTaskRequest extends AmazonWebServiceRequest {
+public class PollForTaskRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * Indicates the type of task the task runner is configured to accept and

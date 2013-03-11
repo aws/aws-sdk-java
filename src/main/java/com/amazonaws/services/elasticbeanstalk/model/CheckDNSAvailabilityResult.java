@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elasticbeanstalk.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Indicates if the specified CNAME is available.
  * </p>
  */
-public class CheckDNSAvailabilityResult {
+public class CheckDNSAvailabilityResult  implements Serializable  {
 
     /**
      * Indicates if the specified CNAME is available: <enumValues> <value

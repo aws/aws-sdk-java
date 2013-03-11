@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.identitymanagement.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#uploadServerCertificate(UploadServerCertificateRequest) UploadServerCertificate operation}.
@@ -34,7 +35,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#uploadServerCertificate(UploadServerCertificateRequest)
  */
-public class UploadServerCertificateRequest extends AmazonWebServiceRequest {
+public class UploadServerCertificateRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The path for the server certificate. For more information about paths,

@@ -330,11 +330,23 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
     }
 
     private void init() {
+        // Because of S3's virtual host style addressing, we need to change the
+        // default, strict hostname verification to be more lenient.
+        client.disableStrictHostnameVerification();
+
         setEndpoint(Constants.S3_HOSTNAME);
 
         HandlerChainFactory chainFactory = new HandlerChainFactory();
         requestHandlers.addAll(chainFactory.newRequestHandlerChain(
                 "/com/amazonaws/services/s3/request.handlers"));
+    }
+    
+    /* (non-Javadoc)
+     * @see com.amazonaws.AmazonWebServiceClient#getServiceAbbreviation()
+     */
+    @Override
+    protected String getServiceAbbreviation() {
+        return "s3";
     }
 
     /**
@@ -2881,14 +2893,9 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         Request<X> request = new DefaultRequest<X>(originalRequest, Constants.S3_SERVICE_NAME);
         request.setHttpMethod(httpMethod);
 
-        // If we're using SSL and the bucket name contains a period, we the hostname
-        // won't line up with the cert hostname pattern, since wildcards are only
-        // allowed to match one segment in a DNS name.
-        boolean sslCertMismatch = endpoint.getScheme().equalsIgnoreCase("https") &&
-                                  bucketName != null && bucketName.contains(".");
-
-        if (!clientOptions.isPathStyleAccess() && bucketNameUtils.isDNSBucketName(bucketName) &&
-              !validIP(endpoint.getHost()) && !sslCertMismatch) {
+        if ( !clientOptions.isPathStyleAccess()
+             && bucketNameUtils.isDNSBucketName(bucketName)
+             && !validIP(endpoint.getHost()) ) {
             request.setEndpoint(convertToVirtualHostEndpoint(bucketName));
             request.setResourcePath(ServiceUtils.urlEncode(key));
         } else {
@@ -2942,6 +2949,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         for (Entry<String, String> entry : request.getOriginalRequest().copyPrivateRequestParameters().entrySet()) {
             request.addParameter(entry.getKey(), entry.getValue());
         }
+        request.setTimeOffset(timeOffset);
 
         /*
          * The string we sign needs to include the exact headers that we

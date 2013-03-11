@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.cloudsearch.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * A <code>PolicyDocument</code> that specifies access policies for the search domain's services, and the current status of those policies.
  * </p>
  */
-public class AccessPoliciesStatus {
+public class AccessPoliciesStatus  implements Serializable  {
 
     /**
      * An IAM access policy as described in <a

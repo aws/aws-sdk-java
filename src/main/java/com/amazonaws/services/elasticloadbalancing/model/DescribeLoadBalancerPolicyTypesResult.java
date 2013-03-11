@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elasticloadbalancing.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The output for the DescribeLoadBalancerPolicyTypes action.
  * </p>
  */
-public class DescribeLoadBalancerPolicyTypesResult {
+public class DescribeLoadBalancerPolicyTypesResult  implements Serializable  {
 
     /**
      * List of policy type description structures of the specified policy

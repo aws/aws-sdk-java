@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.redshift.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Describes a parameter group.
  * </p>
  */
-public class ClusterParameterGroup {
+public class ClusterParameterGroup  implements Serializable  {
 
     /**
      * The name of the cluster parameter group.

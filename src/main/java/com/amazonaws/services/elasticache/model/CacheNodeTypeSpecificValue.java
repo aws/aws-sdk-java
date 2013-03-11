@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elasticache.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * A value that applies only to a certain Cache Node Type.
  * </p>
  */
-public class CacheNodeTypeSpecificValue {
+public class CacheNodeTypeSpecificValue  implements Serializable  {
 
     /**
      * Specifies the Cache Node type for which this value applies.

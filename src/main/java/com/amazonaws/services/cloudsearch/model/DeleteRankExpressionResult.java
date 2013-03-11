@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.cloudsearch.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * A response message that contains the status of a deleted <code>RankExpression</code> .
  * </p>
  */
-public class DeleteRankExpressionResult {
+public class DeleteRankExpressionResult  implements Serializable  {
 
     /**
      * The value of a <code>RankExpression</code> and its current status.

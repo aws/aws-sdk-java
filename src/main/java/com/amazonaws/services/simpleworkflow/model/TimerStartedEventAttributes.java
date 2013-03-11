@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.simpleworkflow.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Provides details of the <code>TimerStarted</code> event.
  * </p>
  */
-public class TimerStartedEventAttributes {
+public class TimerStartedEventAttributes  implements Serializable  {
 
     /**
      * The unique Id of the timer that was started.

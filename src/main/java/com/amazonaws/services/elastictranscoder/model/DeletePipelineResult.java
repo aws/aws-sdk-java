@@ -13,11 +13,12 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elastictranscoder.model;
+import java.io.Serializable;
 
 /**
  * 
  */
-public class DeletePipelineResult {
+public class DeletePipelineResult  implements Serializable  {
 
     /**
      * Returns a string representation of this object; useful for testing and

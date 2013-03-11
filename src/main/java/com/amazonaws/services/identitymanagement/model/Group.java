@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.identitymanagement.model;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -29,7 +30,7 @@ package com.amazonaws.services.identitymanagement.model;
  * 
  * </ul>
  */
-public class Group {
+public class Group  implements Serializable  {
 
     /**
      * Path to the group. For more information about paths, see <a

@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.route53.model;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -22,7 +23,7 @@ package com.amazonaws.services.route53.model;
  * This element contains an ID that you use when performing a GetChange action to get detailed information about the change.
  * </p>
  */
-public class ChangeInfo {
+public class ChangeInfo  implements Serializable  {
 
     /**
      * The ID of the request. Use this ID to track when the change has

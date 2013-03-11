@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Describes a permission to launch an Amazon Machine Image (AMI).
  * </p>
  */
-public class LaunchPermission {
+public class LaunchPermission  implements Serializable  {
 
     /**
      * The AWS user ID of the user involved in this launch permission.

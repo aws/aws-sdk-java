@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#unassignPrivateIpAddresses(UnassignPrivateIpAddressesRequest) UnassignPrivateIpAddresses operation}.
@@ -21,7 +22,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#unassignPrivateIpAddresses(UnassignPrivateIpAddressesRequest)
  */
-public class UnassignPrivateIpAddressesRequest extends AmazonWebServiceRequest {
+public class UnassignPrivateIpAddressesRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     private String networkInterfaceId;
 

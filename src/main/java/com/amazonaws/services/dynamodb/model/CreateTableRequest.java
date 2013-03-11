@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.dynamodb.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.dynamodb.AmazonDynamoDB#createTable(CreateTableRequest) CreateTable operation}.
@@ -32,7 +33,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.dynamodb.AmazonDynamoDB#createTable(CreateTableRequest)
  */
-public class CreateTableRequest extends AmazonWebServiceRequest {
+public class CreateTableRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of the table you want to create. Allowed characters are

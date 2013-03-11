@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * An IP permission describing allowed incoming IP traffic to an Amazon EC2 security group.
  * </p>
  */
-public class IpPermission {
+public class IpPermission  implements Serializable  {
 
     /**
      * The IP protocol of this permission. <p> Valid protocol values:

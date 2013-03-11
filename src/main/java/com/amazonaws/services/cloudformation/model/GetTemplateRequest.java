@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.cloudformation.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.cloudformation.AmazonCloudFormation#getTemplate(GetTemplateRequest) GetTemplate operation}.
@@ -29,7 +30,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudformation.AmazonCloudFormation#getTemplate(GetTemplateRequest)
  */
-public class GetTemplateRequest extends AmazonWebServiceRequest {
+public class GetTemplateRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name or the unique identifier associated with the stack.

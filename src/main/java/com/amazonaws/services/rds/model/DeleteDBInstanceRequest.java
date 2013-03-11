@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.rds.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#deleteDBInstance(DeleteDBInstanceRequest) DeleteDBInstance operation}.
@@ -25,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#deleteDBInstance(DeleteDBInstanceRequest)
  */
-public class DeleteDBInstanceRequest extends AmazonWebServiceRequest {
+public class DeleteDBInstanceRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The DB Instance identifier for the DB Instance to be deleted. This

@@ -13,11 +13,12 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * Reserved Instance Limit Price
  */
-public class ReservedInstanceLimitPrice {
+public class ReservedInstanceLimitPrice  implements Serializable  {
 
     private Double amount;
 

@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.route53.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.route53.AmazonRoute53#deleteHealthCheck(DeleteHealthCheckRequest) DeleteHealthCheck operation}.
@@ -30,7 +31,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.route53.AmazonRoute53#deleteHealthCheck(DeleteHealthCheckRequest)
  */
-public class DeleteHealthCheckRequest extends AmazonWebServiceRequest {
+public class DeleteHealthCheckRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The ID of the health check to delete.

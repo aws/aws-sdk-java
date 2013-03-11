@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Represents the status of an Amazon EC2 instance.
  * </p>
  */
-public class InstanceStatus {
+public class InstanceStatus  implements Serializable  {
 
     /**
      * The ID of the Amazon EC2 instance.

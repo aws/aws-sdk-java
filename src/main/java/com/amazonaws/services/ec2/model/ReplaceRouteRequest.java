@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#replaceRoute(ReplaceRouteRequest) ReplaceRoute operation}.
@@ -25,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#replaceRoute(ReplaceRouteRequest)
  */
-public class ReplaceRouteRequest extends AmazonWebServiceRequest {
+public class ReplaceRouteRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The ID of the route table where the route will be replaced.

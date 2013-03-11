@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elasticache.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Network Subnet associated with a Cache Cluster
  * </p>
  */
-public class Subnet {
+public class Subnet  implements Serializable  {
 
     /**
      * Specifies the unique identifier for the Subnet

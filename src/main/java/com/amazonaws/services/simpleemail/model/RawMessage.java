@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.simpleemail.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Represents the raw data of the message.
  * </p>
  */
-public class RawMessage {
+public class RawMessage  implements Serializable  {
 
     /**
      * The raw data of the message. The client must ensure that the message

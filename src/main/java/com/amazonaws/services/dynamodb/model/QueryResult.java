@@ -13,11 +13,12 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.dynamodb.model;
+import java.io.Serializable;
 
 /**
  * Query Result
  */
-public class QueryResult {
+public class QueryResult  implements Serializable  {
 
     private java.util.List<java.util.Map<String,AttributeValue>> items;
 

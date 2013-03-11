@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.autoscaling.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.autoscaling.AmazonAutoScaling#deleteLaunchConfiguration(DeleteLaunchConfigurationRequest) DeleteLaunchConfiguration operation}.
@@ -27,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#deleteLaunchConfiguration(DeleteLaunchConfigurationRequest)
  */
-public class DeleteLaunchConfigurationRequest extends AmazonWebServiceRequest {
+public class DeleteLaunchConfigurationRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of the launch configuration.

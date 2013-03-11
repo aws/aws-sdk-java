@@ -13,11 +13,12 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * Network Interface Attachment
  */
-public class NetworkInterfaceAttachment {
+public class NetworkInterfaceAttachment  implements Serializable  {
 
     private String attachmentId;
 

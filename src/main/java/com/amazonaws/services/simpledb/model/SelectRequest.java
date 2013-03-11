@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.simpledb.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.simpledb.AmazonSimpleDB#select(SelectRequest) Select operation}.
@@ -32,7 +33,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpledb.AmazonSimpleDB#select(SelectRequest)
  */
-public class SelectRequest extends AmazonWebServiceRequest {
+public class SelectRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The expression used to query the domain.

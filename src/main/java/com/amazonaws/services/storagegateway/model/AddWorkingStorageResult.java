@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.storagegateway.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * A JSON object containing the GatewayARN of the gateway for which working storage was configured.
  * </p>
  */
-public class AddWorkingStorageResult {
+public class AddWorkingStorageResult  implements Serializable  {
 
     /**
      * The Amazon Resource Name (ARN) of the gateway. Use the

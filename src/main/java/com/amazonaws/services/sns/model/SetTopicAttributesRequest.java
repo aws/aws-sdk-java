@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.sns.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#setTopicAttributes(SetTopicAttributesRequest) SetTopicAttributes operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.sns.AmazonSNS#setTopicAttributes(SetTopicAttributesRequest)
  */
-public class SetTopicAttributesRequest extends AmazonWebServiceRequest {
+public class SetTopicAttributesRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The ARN of the topic to modify.

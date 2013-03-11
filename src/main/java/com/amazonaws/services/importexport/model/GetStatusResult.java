@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.importexport.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Output structure for the GetStatus operation.
  * </p>
  */
-public class GetStatusResult {
+public class GetStatusResult  implements Serializable  {
 
     /**
      * A unique identifier which refers to a particular job.

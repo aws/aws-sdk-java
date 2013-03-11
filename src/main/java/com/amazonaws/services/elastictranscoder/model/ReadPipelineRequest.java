@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.elastictranscoder.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#readPipeline(ReadPipelineRequest) ReadPipeline operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#readPipeline(ReadPipelineRequest)
  */
-public class ReadPipelineRequest extends AmazonWebServiceRequest {
+public class ReadPipelineRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The identifier of the pipeline to read.

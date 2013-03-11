@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.glacier.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.glacier.AmazonGlacier#listJobs(ListJobsRequest) ListJobs operation}.
@@ -56,7 +57,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.glacier.AmazonGlacier#listJobs(ListJobsRequest)
  */
-public class ListJobsRequest extends AmazonWebServiceRequest {
+public class ListJobsRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The <code>AccountId</code> is the AWS Account ID. You can specify

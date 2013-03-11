@@ -33,7 +33,7 @@ import org.apache.commons.logging.LogFactory;
 public class RepeatableFileInputStream extends InputStream {
     private static final Log log = LogFactory.getLog(RepeatableFileInputStream.class);
 
-    private File file = null;
+    private final File file;
     private FileInputStream fis = null;
     private long bytesReadPastMarkPoint = 0;
     private long markPoint = 0;
@@ -56,6 +56,15 @@ public class RepeatableFileInputStream extends InputStream {
     }
 
     /**
+     * Returns the File this stream is reading data from.
+     *
+     * @return the File this stream is reading data from.
+     */
+    public File getFile() {
+        return file;
+    }
+
+    /**
      * Resets the input stream to the last mark point, or the beginning of the
      * stream if there is no mark point, by creating a new FileInputStream based
      * on the underlying file.
@@ -68,15 +77,15 @@ public class RepeatableFileInputStream extends InputStream {
         this.fis = new FileInputStream(file);
 
         long skipped = 0;
-		long toSkip = markPoint;
+        long toSkip = markPoint;
         while (toSkip > 0) {
-			skipped = this.fis.skip(toSkip);
-			toSkip -= skipped;
-		}
+            skipped = this.fis.skip(toSkip);
+            toSkip -= skipped;
+        }
 
         if (log.isDebugEnabled()) {
-        	log.debug("Reset to mark point " + markPoint
-        	        + " after returning " + bytesReadPastMarkPoint + " bytes");
+            log.debug("Reset to mark point " + markPoint
+                    + " after returning " + bytesReadPastMarkPoint + " bytes");
         }
         this.bytesReadPastMarkPoint = 0;
     }
@@ -85,18 +94,18 @@ public class RepeatableFileInputStream extends InputStream {
      * @see java.io.InputStream#markSupported()
      */
     public boolean markSupported() {
-    	return true;
+        return true;
     }
 
     /**
      * @see java.io.InputStream#mark(int)
      */
     public void mark(int readlimit) {
-    	this.markPoint += bytesReadPastMarkPoint;
-    	this.bytesReadPastMarkPoint = 0;
-    	if (log.isDebugEnabled()) {
-    		log.debug("Input stream marked at " + this.markPoint + " bytes");
-    	}
+        this.markPoint += bytesReadPastMarkPoint;
+        this.bytesReadPastMarkPoint = 0;
+        if (log.isDebugEnabled()) {
+            log.debug("Input stream marked at " + this.markPoint + " bytes");
+        }
     }
 
     /**
@@ -127,13 +136,13 @@ public class RepeatableFileInputStream extends InputStream {
     }
 
     @Override
-	public long skip(long n) throws IOException {
-		long skipped = fis.skip(n);
-		bytesReadPastMarkPoint += skipped;
-		return skipped;
-	}
+    public long skip(long n) throws IOException {
+        long skipped = fis.skip(n);
+        bytesReadPastMarkPoint += skipped;
+        return skipped;
+    }
 
-	/**
+    /**
      * @see java.io.InputStream#read(byte[], int, int)
      */
     public int read(byte[] arg0, int arg1, int arg2) throws IOException {

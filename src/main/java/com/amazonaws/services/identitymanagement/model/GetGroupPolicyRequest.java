@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.identitymanagement.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getGroupPolicy(GetGroupPolicyRequest) GetGroupPolicy operation}.
@@ -24,7 +25,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getGroupPolicy(GetGroupPolicyRequest)
  */
-public class GetGroupPolicyRequest extends AmazonWebServiceRequest {
+public class GetGroupPolicyRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * Name of the group the policy is associated with.

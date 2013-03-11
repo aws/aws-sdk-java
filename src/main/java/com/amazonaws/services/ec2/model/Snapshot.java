@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Represents a snapshot of an Amazon EC2 EBS volume.
  * </p>
  */
-public class Snapshot {
+public class Snapshot  implements Serializable  {
 
     /**
      * The unique ID of this snapshot.

@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.redshift.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Describes cluster attributes that are in a pending state. A change to one or more the attributes was requested and is in progress or will be applied.
  * </p>
  */
-public class PendingModifiedValues {
+public class PendingModifiedValues  implements Serializable  {
 
     /**
      * The pending or in-progress change of the master credentials for the

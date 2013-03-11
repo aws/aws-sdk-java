@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.route53.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.route53.AmazonRoute53#listResourceRecordSets(ListResourceRecordSetsRequest) ListResourceRecordSets operation}.
@@ -57,7 +58,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.route53.AmazonRoute53#listResourceRecordSets(ListResourceRecordSetsRequest)
  */
-public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest {
+public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The ID of the hosted zone that contains the resource record sets that

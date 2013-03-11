@@ -13,11 +13,12 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * Describe Spot Datafeed Subscription Result
  */
-public class DescribeSpotDatafeedSubscriptionResult {
+public class DescribeSpotDatafeedSubscriptionResult  implements Serializable  {
 
     /**
      * The Spot Instance datafeed subscription.

@@ -13,11 +13,12 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.sns.model;
+import java.io.Serializable;
 
 /**
  * Subscribe Result
  */
-public class SubscribeResult {
+public class SubscribeResult  implements Serializable  {
 
     /**
      * The ARN of the subscription, if the service was able to create a

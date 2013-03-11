@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.identitymanagement.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#changePassword(ChangePasswordRequest) ChangePassword operation}.
@@ -24,7 +25,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#changePassword(ChangePasswordRequest)
  */
-public class ChangePasswordRequest extends AmazonWebServiceRequest {
+public class ChangePasswordRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     private String oldPassword;
 

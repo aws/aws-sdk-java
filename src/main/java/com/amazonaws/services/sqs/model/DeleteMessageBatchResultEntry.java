@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.sqs.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Encloses the id an entry in DeleteMessageBatchRequest.
  * </p>
  */
-public class DeleteMessageBatchResultEntry {
+public class DeleteMessageBatchResultEntry  implements Serializable  {
 
     /**
      * Represents a successfully deleted message.

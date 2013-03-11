@@ -13,11 +13,12 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.sns.model;
+import java.io.Serializable;
 
 /**
  * List Subscriptions Result
  */
-public class ListSubscriptionsResult {
+public class ListSubscriptionsResult  implements Serializable  {
 
     /**
      * A list of subscriptions.

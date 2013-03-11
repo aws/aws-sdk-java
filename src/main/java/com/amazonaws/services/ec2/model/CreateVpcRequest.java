@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#createVpc(CreateVpcRequest) CreateVpc operation}.
@@ -29,7 +30,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createVpc(CreateVpcRequest)
  */
-public class CreateVpcRequest extends AmazonWebServiceRequest {
+public class CreateVpcRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * A valid CIDR block.

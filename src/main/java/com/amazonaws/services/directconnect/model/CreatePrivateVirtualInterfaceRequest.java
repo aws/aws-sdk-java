@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.directconnect.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.directconnect.AmazonDirectConnect#createPrivateVirtualInterface(CreatePrivateVirtualInterfaceRequest) CreatePrivateVirtualInterface operation}.
@@ -24,7 +25,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.directconnect.AmazonDirectConnect#createPrivateVirtualInterface(CreatePrivateVirtualInterfaceRequest)
  */
-public class CreatePrivateVirtualInterfaceRequest extends AmazonWebServiceRequest {
+public class CreatePrivateVirtualInterfaceRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * ID of the connection. <p>Example: dxcon-fg5678gh <p>Default: None

@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#createVpnGateway(CreateVpnGatewayRequest) CreateVpnGateway operation}.
@@ -24,7 +25,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createVpnGateway(CreateVpnGatewayRequest)
  */
-public class CreateVpnGatewayRequest extends AmazonWebServiceRequest {
+public class CreateVpnGatewayRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The type of VPN connection this VPN gateway supports.

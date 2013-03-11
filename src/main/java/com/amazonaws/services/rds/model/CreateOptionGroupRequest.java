@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.rds.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#createOptionGroup(CreateOptionGroupRequest) CreateOptionGroup operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#createOptionGroup(CreateOptionGroupRequest)
  */
-public class CreateOptionGroupRequest extends AmazonWebServiceRequest {
+public class CreateOptionGroupRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * Specifies the name of the option group to be created. <p> Constraints:

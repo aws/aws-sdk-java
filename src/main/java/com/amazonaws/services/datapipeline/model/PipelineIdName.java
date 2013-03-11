@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.datapipeline.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Contains the name and identifier of a pipeline.
  * </p>
  */
-public class PipelineIdName {
+public class PipelineIdName  implements Serializable  {
 
     /**
      * Identifier of the pipeline that was assigned by AWS Data Pipeline.

@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.redshift.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Describes an event.
  * </p>
  */
-public class Event {
+public class Event  implements Serializable  {
 
     /**
      * The identifier for the source of the event.

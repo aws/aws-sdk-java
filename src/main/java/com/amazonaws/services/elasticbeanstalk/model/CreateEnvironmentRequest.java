@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.elasticbeanstalk.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#createEnvironment(CreateEnvironmentRequest) CreateEnvironment operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#createEnvironment(CreateEnvironmentRequest)
  */
-public class CreateEnvironmentRequest extends AmazonWebServiceRequest {
+public class CreateEnvironmentRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of the application that contains the version to be deployed.

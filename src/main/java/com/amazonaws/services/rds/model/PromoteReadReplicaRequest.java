@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.rds.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#promoteReadReplica(PromoteReadReplicaRequest) PromoteReadReplica operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#promoteReadReplica(PromoteReadReplicaRequest)
  */
-public class PromoteReadReplicaRequest extends AmazonWebServiceRequest {
+public class PromoteReadReplicaRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The DB Instance identifier. This value is stored as a lowercase

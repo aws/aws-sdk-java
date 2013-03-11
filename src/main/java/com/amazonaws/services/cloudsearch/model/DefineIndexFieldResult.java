@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.cloudsearch.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * A response message that contains the status of an updated index field.
  * </p>
  */
-public class DefineIndexFieldResult {
+public class DefineIndexFieldResult  implements Serializable  {
 
     /**
      * The value of an <code>IndexField</code> and its current status.

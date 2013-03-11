@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elasticmapreduce.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Detailed information about an instance group.
  * </p>
  */
-public class InstanceGroupDetail {
+public class InstanceGroupDetail  implements Serializable  {
 
     /**
      * Unique identifier for the instance group.

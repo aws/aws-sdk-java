@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.identitymanagement.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Contains the result of a successful invocation of the GetGroupPolicy action.
  * </p>
  */
-public class GetGroupPolicyResult {
+public class GetGroupPolicyResult  implements Serializable  {
 
     /**
      * The group the policy is associated with.

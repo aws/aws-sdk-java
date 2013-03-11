@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.simpleemail.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Represents sending statistics data. Each <code>SendDataPoint</code> contains statistics for a 15-minute period of sending activity.
  * </p>
  */
-public class SendDataPoint {
+public class SendDataPoint  implements Serializable  {
 
     /**
      * Time of the data point.

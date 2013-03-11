@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elasticloadbalancing.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The output for the CreateLBCookieStickinessPolicy action.
  * </p>
  */
-public class CreateLBCookieStickinessPolicyResult {
+public class CreateLBCookieStickinessPolicyResult  implements Serializable  {
 
     /**
      * Returns a string representation of this object; useful for testing and

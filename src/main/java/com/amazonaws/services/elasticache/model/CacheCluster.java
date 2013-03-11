@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elasticache.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Contains information about a Cache Cluster.
  * </p>
  */
-public class CacheCluster {
+public class CacheCluster  implements Serializable  {
 
     /**
      * Specifies a user-supplied identifier. This is the unique key that

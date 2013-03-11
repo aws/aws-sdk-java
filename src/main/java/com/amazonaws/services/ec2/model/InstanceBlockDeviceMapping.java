@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Describes how block devices are mapped on an Amazon EC2 instance.
  * </p>
  */
-public class InstanceBlockDeviceMapping {
+public class InstanceBlockDeviceMapping  implements Serializable  {
 
     /**
      * The device name (e.g., <code>/dev/sdh</code>) at which the block

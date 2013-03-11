@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.redshift.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.redshift.AmazonRedshift#describeDefaultClusterParameters(DescribeDefaultClusterParametersRequest) DescribeDefaultClusterParameters operation}.
@@ -28,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#describeDefaultClusterParameters(DescribeDefaultClusterParametersRequest)
  */
-public class DescribeDefaultClusterParametersRequest extends AmazonWebServiceRequest {
+public class DescribeDefaultClusterParametersRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of the cluster parameter group family.

@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elasticloadbalancing.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The Instance data type.
  * </p>
  */
-public class Instance {
+public class Instance  implements Serializable  {
 
     /**
      * Provides an EC2 instance ID.

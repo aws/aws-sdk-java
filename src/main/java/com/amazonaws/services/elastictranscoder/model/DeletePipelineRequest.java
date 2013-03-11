@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.elastictranscoder.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#deletePipeline(DeletePipelineRequest) DeletePipeline operation}.
@@ -27,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#deletePipeline(DeletePipelineRequest)
  */
-public class DeletePipelineRequest extends AmazonWebServiceRequest {
+public class DeletePipelineRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The identifier of the pipeline that you want to delete.

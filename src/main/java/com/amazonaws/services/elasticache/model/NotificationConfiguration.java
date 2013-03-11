@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elasticache.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Contains pair of Topic and Topic Status.
  * </p>
  */
-public class NotificationConfiguration {
+public class NotificationConfiguration  implements Serializable  {
 
     /**
      * Specifies the topic Amazon Resource Name (ARN), identifying this

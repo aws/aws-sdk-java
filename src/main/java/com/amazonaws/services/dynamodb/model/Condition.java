@@ -13,11 +13,12 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.dynamodb.model;
+import java.io.Serializable;
 
 /**
  * Condition
  */
-public class Condition {
+public class Condition  implements Serializable  {
 
     /**
      * A list of attribute values to be used with a comparison operator for a

@@ -13,11 +13,12 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elastictranscoder.model;
+import java.io.Serializable;
 
 /**
  * 
  */
-public class CreateJobOutput {
+public class CreateJobOutput  implements Serializable  {
 
     /**
      * The name to assign to the transcoded file. Elastic Transcoder saves

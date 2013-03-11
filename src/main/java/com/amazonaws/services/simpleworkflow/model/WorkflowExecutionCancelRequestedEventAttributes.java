@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.simpleworkflow.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Provides details of the <code>WorkflowExecutionCancelRequested</code> event.
  * </p>
  */
-public class WorkflowExecutionCancelRequestedEventAttributes {
+public class WorkflowExecutionCancelRequestedEventAttributes  implements Serializable  {
 
     /**
      * The external workflow execution for which the cancellation was

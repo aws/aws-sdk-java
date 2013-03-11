@@ -28,12 +28,12 @@ import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.*;
 
 
 /**
- * Propagated Route StAX Unmarshaller
+ * Describe Account Attributes Result StAX Unmarshaller
  */
-public class PropagatedRouteStaxUnmarshaller implements Unmarshaller<PropagatedRoute, StaxUnmarshallerContext> {
+public class DescribeAccountAttributesResultStaxUnmarshaller implements Unmarshaller<DescribeAccountAttributesResult, StaxUnmarshallerContext> {
 
-    public PropagatedRoute unmarshall(StaxUnmarshallerContext context) throws Exception {
-        PropagatedRoute propagatedRoute = new PropagatedRoute();
+    public DescribeAccountAttributesResult unmarshall(StaxUnmarshallerContext context) throws Exception {
+        DescribeAccountAttributesResult describeAccountAttributesResult = new DescribeAccountAttributesResult();
         int originalDepth = context.getCurrentDepth();
         int targetDepth = originalDepth + 1;
 
@@ -43,36 +43,24 @@ public class PropagatedRouteStaxUnmarshaller implements Unmarshaller<PropagatedR
 
         while (true) {
             XMLEvent xmlEvent = context.nextEvent();
-            if (xmlEvent.isEndDocument()) return propagatedRoute;
+            if (xmlEvent.isEndDocument()) return describeAccountAttributesResult;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
-                if (context.testExpression("destinationCidrBlock", targetDepth)) {
-                    propagatedRoute.setDestinationCidrBlock(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-                if (context.testExpression("gatewayId", targetDepth)) {
-                    propagatedRoute.setGatewayId(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-                if (context.testExpression("status", targetDepth)) {
-                    propagatedRoute.setStatus(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-                if (context.testExpression("sourceId", targetDepth)) {
-                    propagatedRoute.setSourceId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("accountAttributeSet/item", targetDepth)) {
+                    describeAccountAttributesResult.getAccountAttributes().add(AccountAttributeStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
-                    return propagatedRoute;
+                    return describeAccountAttributesResult;
                 }
             }
         }
     }
 
-    private static PropagatedRouteStaxUnmarshaller instance;
-    public static PropagatedRouteStaxUnmarshaller getInstance() {
-        if (instance == null) instance = new PropagatedRouteStaxUnmarshaller();
+    private static DescribeAccountAttributesResultStaxUnmarshaller instance;
+    public static DescribeAccountAttributesResultStaxUnmarshaller getInstance() {
+        if (instance == null) instance = new DescribeAccountAttributesResultStaxUnmarshaller();
         return instance;
     }
 }

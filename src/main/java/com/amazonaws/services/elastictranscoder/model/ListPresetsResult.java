@@ -13,11 +13,12 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elastictranscoder.model;
+import java.io.Serializable;
 
 /**
  * 
  */
-public class ListPresetsResult {
+public class ListPresetsResult  implements Serializable  {
 
     /**
      * An array of <code>Preset</code> objects.

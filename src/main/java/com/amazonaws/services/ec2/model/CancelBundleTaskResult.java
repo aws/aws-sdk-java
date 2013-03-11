@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The result of canceling an Amazon EC2 bundle task.
  * </p>
  */
-public class CancelBundleTaskResult {
+public class CancelBundleTaskResult  implements Serializable  {
 
     /**
      * The canceled bundle task.

@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.datapipeline.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Defines the query to run against an object.
  * </p>
  */
-public class Query {
+public class Query  implements Serializable  {
 
     /**
      * List of selectors that define the query. An object must satisfy all of

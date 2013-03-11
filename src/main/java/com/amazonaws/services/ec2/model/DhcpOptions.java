@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The DhcpOptions data type.
  * </p>
  */
-public class DhcpOptions {
+public class DhcpOptions  implements Serializable  {
 
     /**
      * Specifies the ID of the set of DHCP options.

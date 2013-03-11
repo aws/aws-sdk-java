@@ -16,7 +16,6 @@ package com.amazonaws.services.s3.internal;
 
 
 import com.amazonaws.AmazonWebServiceResponse;
-import com.amazonaws.auth.AWSRefreshableSessionCredentials;
 import com.amazonaws.http.HttpResponse;
 import com.amazonaws.services.s3.Headers;
 import com.amazonaws.services.s3.model.ObjectMetadata;

@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.redshift.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Contains the output from the DescribeClusterVersions action.
  * </p>
  */
-public class DescribeClusterVersionsResult {
+public class DescribeClusterVersionsResult  implements Serializable  {
 
     /**
      * The identifier returned to allow retrieval of paginated results.

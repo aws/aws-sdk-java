@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.securitytoken.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.securitytoken.AWSSecurityTokenService#getSessionToken(GetSessionTokenRequest) GetSessionToken operation}.
@@ -31,7 +32,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.securitytoken.AWSSecurityTokenService#getSessionToken(GetSessionTokenRequest)
  */
-public class GetSessionTokenRequest extends AmazonWebServiceRequest {
+public class GetSessionTokenRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The duration, in seconds, that the credentials should remain valid.

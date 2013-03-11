@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.opsworks.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Contains the response to a <code>DescribeApps</code> request.
  * </p>
  */
-public class DescribeAppsResult {
+public class DescribeAppsResult  implements Serializable  {
 
     /**
      * An array of <code>App</code> objects that describe the specified apps.

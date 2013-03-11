@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.sqs.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Contains the details of a single SQS message along with a <code>Id</code> .
  * </p>
  */
-public class SendMessageBatchRequestEntry {
+public class SendMessageBatchRequestEntry  implements Serializable  {
 
     /**
      * An identifier for the message in this batch. This is used to

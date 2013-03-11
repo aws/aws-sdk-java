@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.cloudformation.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The StackResource data type.
  * </p>
  */
-public class StackResource {
+public class StackResource  implements Serializable  {
 
     /**
      * The name associated with the stack.

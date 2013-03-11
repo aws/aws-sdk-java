@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.directconnect.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * A route filter prefix that the customer can advertise through Border Gateway Protocol (BGP) over a public virtual interface.
  * </p>
  */
-public class RouteFilterPrefix {
+public class RouteFilterPrefix  implements Serializable  {
 
     /**
      * CIDR notation for the advertised route. Multiple routes are separated

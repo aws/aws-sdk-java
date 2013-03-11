@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.sns.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#deleteTopic(DeleteTopicRequest) DeleteTopic operation}.
@@ -24,7 +25,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.sns.AmazonSNS#deleteTopic(DeleteTopicRequest)
  */
-public class DeleteTopicRequest extends AmazonWebServiceRequest {
+public class DeleteTopicRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The ARN of the topic you want to delete. <examples> <queryrequest>

@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.autoscaling.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The output of the DescribeNotificationConfigurations action.
  * </p>
  */
-public class DescribeNotificationConfigurationsResult {
+public class DescribeNotificationConfigurationsResult  implements Serializable  {
 
     /**
      * The list of notification configurations.

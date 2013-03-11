@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.identitymanagement.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getGroup(GetGroupRequest) GetGroup operation}.
@@ -24,7 +25,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#getGroup(GetGroupRequest)
  */
-public class GetGroupRequest extends AmazonWebServiceRequest {
+public class GetGroupRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * Name of the group.

@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.redshift.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.redshift.AmazonRedshift#deleteCluster(DeleteClusterRequest) DeleteCluster operation}.
@@ -29,7 +30,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#deleteCluster(DeleteClusterRequest)
  */
-public class DeleteClusterRequest extends AmazonWebServiceRequest {
+public class DeleteClusterRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The identifier of the cluster to be deleted. <p>Constraints: <ul>

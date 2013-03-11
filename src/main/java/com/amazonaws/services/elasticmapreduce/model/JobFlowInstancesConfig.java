@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elasticmapreduce.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * A description of the Amazon EC2 instance running the job flow.
  * </p>
  */
-public class JobFlowInstancesConfig {
+public class JobFlowInstancesConfig  implements Serializable  {
 
     /**
      * The EC2 instance type of the master node.

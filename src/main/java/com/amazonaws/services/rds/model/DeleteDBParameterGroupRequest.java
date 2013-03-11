@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.rds.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#deleteDBParameterGroup(DeleteDBParameterGroupRequest) DeleteDBParameterGroup operation}.
@@ -26,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#deleteDBParameterGroup(DeleteDBParameterGroupRequest)
  */
-public class DeleteDBParameterGroupRequest extends AmazonWebServiceRequest {
+public class DeleteDBParameterGroupRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of the DB Parameter Group. <p>Constraints: <ul> <li>Must be

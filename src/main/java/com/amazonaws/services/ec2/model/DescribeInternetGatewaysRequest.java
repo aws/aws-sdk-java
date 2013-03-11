@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeInternetGateways(DescribeInternetGatewaysRequest) DescribeInternetGateways operation}.
@@ -36,7 +37,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeInternetGateways(DescribeInternetGatewaysRequest)
  */
-public class DescribeInternetGatewaysRequest extends AmazonWebServiceRequest {
+public class DescribeInternetGatewaysRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * One or more Internet gateway IDs.

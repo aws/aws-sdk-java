@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.opsworks.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Contains the response to a <code>CreateDeployment</code> request.
  * </p>
  */
-public class CreateDeploymentResult {
+public class CreateDeploymentResult  implements Serializable  {
 
     /**
      * The deployment ID, which can be used with other requests to identify

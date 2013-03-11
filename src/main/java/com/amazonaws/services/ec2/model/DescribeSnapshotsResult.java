@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The result of describing EBS snapshots.
  * </p>
  */
-public class DescribeSnapshotsResult {
+public class DescribeSnapshotsResult  implements Serializable  {
 
     /**
      * The list of described EBS snapshots.

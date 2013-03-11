@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.simpledb.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.simpledb.AmazonSimpleDB#batchPutAttributes(BatchPutAttributesRequest) BatchPutAttributes operation}.
@@ -69,7 +70,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpledb.AmazonSimpleDB#batchPutAttributes(BatchPutAttributesRequest)
  */
-public class BatchPutAttributesRequest extends AmazonWebServiceRequest {
+public class BatchPutAttributesRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of the domain in which the attributes are being stored.

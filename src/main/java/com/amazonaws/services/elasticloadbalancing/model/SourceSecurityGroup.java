@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elasticloadbalancing.model;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -22,7 +23,7 @@ package com.amazonaws.services.elasticloadbalancing.model;
  * 
  * </p>
  */
-public class SourceSecurityGroup {
+public class SourceSecurityGroup  implements Serializable  {
 
     /**
      * Owner of the source security group. Use this value for the

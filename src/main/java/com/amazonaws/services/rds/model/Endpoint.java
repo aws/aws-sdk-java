@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.rds.model;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -26,7 +27,7 @@ package com.amazonaws.services.rds.model;
  * 
  * </ul>
  */
-public class Endpoint {
+public class Endpoint  implements Serializable  {
 
     /**
      * Specifies the DNS address of the DB Instance.

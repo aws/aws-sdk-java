@@ -13,11 +13,12 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * Network Acl
  */
-public class NetworkAcl {
+public class NetworkAcl  implements Serializable  {
 
     private String networkAclId;
 

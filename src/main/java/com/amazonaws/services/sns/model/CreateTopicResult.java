@@ -13,11 +13,12 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.sns.model;
+import java.io.Serializable;
 
 /**
  * Create Topic Result
  */
-public class CreateTopicResult {
+public class CreateTopicResult  implements Serializable  {
 
     /**
      * The Amazon Resource Name (ARN) assigned to the created topic.

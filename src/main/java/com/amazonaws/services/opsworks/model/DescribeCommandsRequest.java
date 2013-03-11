@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.opsworks.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.opsworks.AWSOpsWorks#describeCommands(DescribeCommandsRequest) DescribeCommands operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#describeCommands(DescribeCommandsRequest)
  */
-public class DescribeCommandsRequest extends AmazonWebServiceRequest {
+public class DescribeCommandsRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The deployment ID.

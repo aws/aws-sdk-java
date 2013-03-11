@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The result of calling the StopInstances operation. Contains details on how the specified instances are changing state.
  * </p>
  */
-public class StopInstancesResult {
+public class StopInstancesResult  implements Serializable  {
 
     /**
      * The list of the stopping instances and details on how their state has

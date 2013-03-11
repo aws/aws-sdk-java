@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.identitymanagement.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listGroups(ListGroupsRequest) ListGroups operation}.
@@ -26,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listGroups(ListGroupsRequest)
  */
-public class ListGroupsRequest extends AmazonWebServiceRequest {
+public class ListGroupsRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The path prefix for filtering the results. For example:

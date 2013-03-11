@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.identitymanagement.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#uploadSigningCertificate(UploadSigningCertificateRequest) UploadSigningCertificate operation}.
@@ -34,7 +35,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#uploadSigningCertificate(UploadSigningCertificateRequest)
  */
-public class UploadSigningCertificateRequest extends AmazonWebServiceRequest {
+public class UploadSigningCertificateRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * Name of the user the signing certificate is for.

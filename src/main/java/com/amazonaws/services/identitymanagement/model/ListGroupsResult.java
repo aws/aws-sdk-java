@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.identitymanagement.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Contains the result of a successful invocation of the ListGroups action.
  * </p>
  */
-public class ListGroupsResult {
+public class ListGroupsResult  implements Serializable  {
 
     /**
      * A list of groups.

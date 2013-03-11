@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.cloudwatch.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.cloudwatch.AmazonCloudWatch#setAlarmState(SetAlarmStateRequest) SetAlarmState operation}.
@@ -25,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudwatch.AmazonCloudWatch#setAlarmState(SetAlarmStateRequest)
  */
-public class SetAlarmStateRequest extends AmazonWebServiceRequest {
+public class SetAlarmStateRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The descriptive name for the alarm. This name must be unique within

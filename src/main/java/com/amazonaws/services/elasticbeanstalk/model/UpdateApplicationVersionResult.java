@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elasticbeanstalk.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Result message wrapping a single description of an application version.
  * </p>
  */
-public class UpdateApplicationVersionResult {
+public class UpdateApplicationVersionResult  implements Serializable  {
 
     /**
      * The <a>ApplicationVersionDescription</a> of the application version.

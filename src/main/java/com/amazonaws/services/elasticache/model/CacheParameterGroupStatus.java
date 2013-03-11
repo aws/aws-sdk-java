@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elasticache.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The status of the Cache Parameter Group.
  * </p>
  */
-public class CacheParameterGroupStatus {
+public class CacheParameterGroupStatus  implements Serializable  {
 
     /**
      * The name of the Cache Parameter Group.

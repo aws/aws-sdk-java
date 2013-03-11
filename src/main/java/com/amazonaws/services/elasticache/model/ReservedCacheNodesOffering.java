@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elasticache.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * This data type is used as a response element in the DescribeReservedCacheNodesOfferings action.
  * </p>
  */
-public class ReservedCacheNodesOffering {
+public class ReservedCacheNodesOffering  implements Serializable  {
 
     /**
      * The offering identifier.

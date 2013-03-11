@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.rds.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#deleteEventSubscription(DeleteEventSubscriptionRequest) DeleteEventSubscription operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#deleteEventSubscription(DeleteEventSubscriptionRequest)
  */
-public class DeleteEventSubscriptionRequest extends AmazonWebServiceRequest {
+public class DeleteEventSubscriptionRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of the RDS event notification subscription you want to

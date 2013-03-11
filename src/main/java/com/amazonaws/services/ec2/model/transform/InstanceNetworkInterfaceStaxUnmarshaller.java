@@ -94,6 +94,10 @@ public class InstanceNetworkInterfaceStaxUnmarshaller implements Unmarshaller<In
                     instanceNetworkInterface.setAssociation(InstanceNetworkInterfaceAssociationStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("privateIpAddressesSet/item", targetDepth)) {
+                    instanceNetworkInterface.getPrivateIpAddresses().add(InstancePrivateIpAddressStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return instanceNetworkInterface;

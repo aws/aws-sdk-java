@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.redshift.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Describes the result of a cluster resize operation.
  * </p>
  */
-public class DescribeResizeResult {
+public class DescribeResizeResult  implements Serializable  {
 
     /**
      * The node type that the cluster will have after the resize is complete.

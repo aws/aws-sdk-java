@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.identitymanagement.model;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -22,7 +23,7 @@ package com.amazonaws.services.identitymanagement.model;
  * This data type is used as a response element in the actions CreateLoginProfile and GetLoginProfile.
  * </p>
  */
-public class LoginProfile {
+public class LoginProfile  implements Serializable  {
 
     /**
      * The name of the user, which can be used for signing into the AWS

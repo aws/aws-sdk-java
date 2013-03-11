@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.cloudsearch.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Options that define a text field in the search index.
  * </p>
  */
-public class TextOptions {
+public class TextOptions  implements Serializable  {
 
     /**
      * The default value for a text field.

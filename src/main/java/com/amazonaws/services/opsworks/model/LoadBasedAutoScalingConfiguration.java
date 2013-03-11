@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.opsworks.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Describes a layer's load-based auto scaling configuration.
  * </p>
  */
-public class LoadBasedAutoScalingConfiguration {
+public class LoadBasedAutoScalingConfiguration  implements Serializable  {
 
     /**
      * The layer ID.

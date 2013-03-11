@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -20,7 +21,7 @@ package com.amazonaws.services.ec2.model;
  * request.
  * </p>
  */
-public class MonitorInstancesResult {
+public class MonitorInstancesResult  implements Serializable  {
 
     /**
      * A list of updated monitoring information for the instances specified

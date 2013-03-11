@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.elasticbeanstalk.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#restartAppServer(RestartAppServerRequest) RestartAppServer operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#restartAppServer(RestartAppServerRequest)
  */
-public class RestartAppServerRequest extends AmazonWebServiceRequest {
+public class RestartAppServerRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The ID of the environment to restart the server for. <p> Condition:

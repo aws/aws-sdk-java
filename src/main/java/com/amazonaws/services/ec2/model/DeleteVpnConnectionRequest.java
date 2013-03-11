@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#deleteVpnConnection(DeleteVpnConnectionRequest) DeleteVpnConnection operation}.
@@ -30,7 +31,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#deleteVpnConnection(DeleteVpnConnectionRequest)
  */
-public class DeleteVpnConnectionRequest extends AmazonWebServiceRequest {
+public class DeleteVpnConnectionRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The ID of the VPN connection to delete

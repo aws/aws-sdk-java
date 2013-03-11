@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.dynamodb.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.dynamodb.AmazonDynamoDB#putItem(PutItemRequest) PutItem operation}.
@@ -28,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.dynamodb.AmazonDynamoDB#putItem(PutItemRequest)
  */
-public class PutItemRequest extends AmazonWebServiceRequest {
+public class PutItemRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of the table in which you want to put an item. Allowed

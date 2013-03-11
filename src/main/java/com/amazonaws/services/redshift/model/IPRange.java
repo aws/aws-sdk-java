@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.redshift.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Describes an IP range used in a security group.
  * </p>
  */
-public class IPRange {
+public class IPRange  implements Serializable  {
 
     /**
      * The status of the IP range, for example, "authorized".

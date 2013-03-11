@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.identitymanagement.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#removeUserFromGroup(RemoveUserFromGroupRequest) RemoveUserFromGroup operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#removeUserFromGroup(RemoveUserFromGroupRequest)
  */
-public class RemoveUserFromGroupRequest extends AmazonWebServiceRequest {
+public class RemoveUserFromGroupRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * Name of the group to update.

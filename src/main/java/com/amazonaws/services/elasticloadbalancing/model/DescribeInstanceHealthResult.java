@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elasticloadbalancing.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The output for the DescribeInstanceHealth action.
  * </p>
  */
-public class DescribeInstanceHealthResult {
+public class DescribeInstanceHealthResult  implements Serializable  {
 
     /**
      * A list containing health information for the specified instances.

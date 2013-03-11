@@ -587,105 +587,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * This action applies only to security groups in a VPC; it's not
-     * supported for EC2 security groups. For information about Amazon
-     * Virtual Private Cloud and VPC security groups, go to the Amazon
-     * Virtual Private Cloud User Guide.
-     * </p>
-     * <p>
-     * The action adds one or more egress rules to a VPC security group.
-     * Specifically, this permits instances in a security group to send
-     * traffic to either one or more destination CIDR IP address ranges, or
-     * to one or more destination security groups in the same VPC.
-     * </p>
-     * <p>
-     * Each rule consists of the protocol (e.g., TCP), plus either a CIDR
-     * range, or a source group. For the TCP and UDP protocols, you must also
-     * specify the destination port or port range. For the ICMP protocol, you
-     * must also specify the ICMP type and code. You can use <code>-1</code>
-     * as a wildcard for the ICMP type or code.
-     * </p>
-     * <p>
-     * Rule changes are propagated to instances within the security group as
-     * quickly as possible. However, a small delay might occur.
-     * </p>
-     * <p>
-     * <b>Important:</b> For VPC security groups: You can have up to 50
-     * rules total per group (covering both ingress and egress).
-     * </p>
-     *
-     * @param authorizeSecurityGroupEgressRequest Container for the necessary
-     *           parameters to execute the AuthorizeSecurityGroupEgress operation on
-     *           AmazonEC2.
-     * 
-     * @return A Java Future object containing the response from the
-     *         AuthorizeSecurityGroupEgress service method, as returned by AmazonEC2.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonEC2 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> authorizeSecurityGroupEgressAsync(AuthorizeSecurityGroupEgressRequest authorizeSecurityGroupEgressRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * This action applies only to security groups in a VPC; it's not
-     * supported for EC2 security groups. For information about Amazon
-     * Virtual Private Cloud and VPC security groups, go to the Amazon
-     * Virtual Private Cloud User Guide.
-     * </p>
-     * <p>
-     * The action adds one or more egress rules to a VPC security group.
-     * Specifically, this permits instances in a security group to send
-     * traffic to either one or more destination CIDR IP address ranges, or
-     * to one or more destination security groups in the same VPC.
-     * </p>
-     * <p>
-     * Each rule consists of the protocol (e.g., TCP), plus either a CIDR
-     * range, or a source group. For the TCP and UDP protocols, you must also
-     * specify the destination port or port range. For the ICMP protocol, you
-     * must also specify the ICMP type and code. You can use <code>-1</code>
-     * as a wildcard for the ICMP type or code.
-     * </p>
-     * <p>
-     * Rule changes are propagated to instances within the security group as
-     * quickly as possible. However, a small delay might occur.
-     * </p>
-     * <p>
-     * <b>Important:</b> For VPC security groups: You can have up to 50
-     * rules total per group (covering both ingress and egress).
-     * </p>
-     *
-     * @param authorizeSecurityGroupEgressRequest Container for the necessary
-     *           parameters to execute the AuthorizeSecurityGroupEgress operation on
-     *           AmazonEC2.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         AuthorizeSecurityGroupEgress service method, as returned by AmazonEC2.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonEC2 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> authorizeSecurityGroupEgressAsync(AuthorizeSecurityGroupEgressRequest authorizeSecurityGroupEgressRequest,
-            AsyncHandler<AuthorizeSecurityGroupEgressRequest, Void> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
      * Retrieves the encrypted administrator password for the instances
      * running Windows.
      * </p>
@@ -810,6 +711,105 @@ public interface AmazonEC2Async extends AmazonEC2 {
      */
     public Future<Void> associateDhcpOptionsAsync(AssociateDhcpOptionsRequest associateDhcpOptionsRequest,
             AsyncHandler<AssociateDhcpOptionsRequest, Void> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * This action applies only to security groups in a VPC; it's not
+     * supported for EC2 security groups. For information about Amazon
+     * Virtual Private Cloud and VPC security groups, go to the Amazon
+     * Virtual Private Cloud User Guide.
+     * </p>
+     * <p>
+     * The action adds one or more egress rules to a VPC security group.
+     * Specifically, this permits instances in a security group to send
+     * traffic to either one or more destination CIDR IP address ranges, or
+     * to one or more destination security groups in the same VPC.
+     * </p>
+     * <p>
+     * Each rule consists of the protocol (e.g., TCP), plus either a CIDR
+     * range, or a source group. For the TCP and UDP protocols, you must also
+     * specify the destination port or port range. For the ICMP protocol, you
+     * must also specify the ICMP type and code. You can use <code>-1</code>
+     * as a wildcard for the ICMP type or code.
+     * </p>
+     * <p>
+     * Rule changes are propagated to instances within the security group as
+     * quickly as possible. However, a small delay might occur.
+     * </p>
+     * <p>
+     * <b>Important:</b> For VPC security groups: You can have up to 50
+     * rules total per group (covering both ingress and egress).
+     * </p>
+     *
+     * @param authorizeSecurityGroupEgressRequest Container for the necessary
+     *           parameters to execute the AuthorizeSecurityGroupEgress operation on
+     *           AmazonEC2.
+     * 
+     * @return A Java Future object containing the response from the
+     *         AuthorizeSecurityGroupEgress service method, as returned by AmazonEC2.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> authorizeSecurityGroupEgressAsync(AuthorizeSecurityGroupEgressRequest authorizeSecurityGroupEgressRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * This action applies only to security groups in a VPC; it's not
+     * supported for EC2 security groups. For information about Amazon
+     * Virtual Private Cloud and VPC security groups, go to the Amazon
+     * Virtual Private Cloud User Guide.
+     * </p>
+     * <p>
+     * The action adds one or more egress rules to a VPC security group.
+     * Specifically, this permits instances in a security group to send
+     * traffic to either one or more destination CIDR IP address ranges, or
+     * to one or more destination security groups in the same VPC.
+     * </p>
+     * <p>
+     * Each rule consists of the protocol (e.g., TCP), plus either a CIDR
+     * range, or a source group. For the TCP and UDP protocols, you must also
+     * specify the destination port or port range. For the ICMP protocol, you
+     * must also specify the ICMP type and code. You can use <code>-1</code>
+     * as a wildcard for the ICMP type or code.
+     * </p>
+     * <p>
+     * Rule changes are propagated to instances within the security group as
+     * quickly as possible. However, a small delay might occur.
+     * </p>
+     * <p>
+     * <b>Important:</b> For VPC security groups: You can have up to 50
+     * rules total per group (covering both ingress and egress).
+     * </p>
+     *
+     * @param authorizeSecurityGroupEgressRequest Container for the necessary
+     *           parameters to execute the AuthorizeSecurityGroupEgress operation on
+     *           AmazonEC2.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         AuthorizeSecurityGroupEgress service method, as returned by AmazonEC2.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> authorizeSecurityGroupEgressAsync(AuthorizeSecurityGroupEgressRequest authorizeSecurityGroupEgressRequest,
+            AsyncHandler<AuthorizeSecurityGroupEgressRequest, Void> asyncHandler)
                     throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -1017,6 +1017,49 @@ public interface AmazonEC2Async extends AmazonEC2 {
      */
     public Future<Void> deleteNetworkInterfaceAsync(DeleteNetworkInterfaceRequest deleteNetworkInterfaceRequest,
             AsyncHandler<DeleteNetworkInterfaceRequest, Void> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException;
+
+    /**
+     *
+     * @param modifyVpcAttributeRequest Container for the necessary
+     *           parameters to execute the ModifyVpcAttribute operation on AmazonEC2.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ModifyVpcAttribute service method, as returned by AmazonEC2.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> modifyVpcAttributeAsync(ModifyVpcAttributeRequest modifyVpcAttributeRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     *
+     * @param modifyVpcAttributeRequest Container for the necessary
+     *           parameters to execute the ModifyVpcAttribute operation on AmazonEC2.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ModifyVpcAttribute service method, as returned by AmazonEC2.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> modifyVpcAttributeAsync(ModifyVpcAttributeRequest modifyVpcAttributeRequest,
+            AsyncHandler<ModifyVpcAttributeRequest, Void> asyncHandler)
                     throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -1954,6 +1997,51 @@ public interface AmazonEC2Async extends AmazonEC2 {
                     throws AmazonServiceException, AmazonClientException;
 
     /**
+     *
+     * @param describeAccountAttributesRequest Container for the necessary
+     *           parameters to execute the DescribeAccountAttributes operation on
+     *           AmazonEC2.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeAccountAttributes service method, as returned by AmazonEC2.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeAccountAttributesResult> describeAccountAttributesAsync(DescribeAccountAttributesRequest describeAccountAttributesRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     *
+     * @param describeAccountAttributesRequest Container for the necessary
+     *           parameters to execute the DescribeAccountAttributes operation on
+     *           AmazonEC2.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeAccountAttributes service method, as returned by AmazonEC2.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeAccountAttributesResult> describeAccountAttributesAsync(DescribeAccountAttributesRequest describeAccountAttributesRequest,
+            AsyncHandler<DescribeAccountAttributesRequest, DescribeAccountAttributesResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException;
+
+    /**
      * <p>
      * Creates a new VPN gateway. A VPN gateway is the VPC-side endpoint for
      * your VPN connection. You can create a VPN gateway before creating the
@@ -2785,6 +2873,49 @@ public interface AmazonEC2Async extends AmazonEC2 {
                     throws AmazonServiceException, AmazonClientException;
 
     /**
+     *
+     * @param cancelConversionTaskRequest Container for the necessary
+     *           parameters to execute the CancelConversionTask operation on AmazonEC2.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CancelConversionTask service method, as returned by AmazonEC2.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> cancelConversionTaskAsync(CancelConversionTaskRequest cancelConversionTaskRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     *
+     * @param cancelConversionTaskRequest Container for the necessary
+     *           parameters to execute the CancelConversionTask operation on AmazonEC2.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CancelConversionTask service method, as returned by AmazonEC2.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> cancelConversionTaskAsync(CancelConversionTaskRequest cancelConversionTaskRequest,
+            AsyncHandler<CancelConversionTaskRequest, Void> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException;
+
+    /**
      * <p>
      * The AssociateAddress operation associates an elastic IP address with
      * an instance.
@@ -2845,49 +2976,6 @@ public interface AmazonEC2Async extends AmazonEC2 {
      */
     public Future<AssociateAddressResult> associateAddressAsync(AssociateAddressRequest associateAddressRequest,
             AsyncHandler<AssociateAddressRequest, AssociateAddressResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
-
-    /**
-     *
-     * @param cancelConversionTaskRequest Container for the necessary
-     *           parameters to execute the CancelConversionTask operation on AmazonEC2.
-     * 
-     * @return A Java Future object containing the response from the
-     *         CancelConversionTask service method, as returned by AmazonEC2.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonEC2 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> cancelConversionTaskAsync(CancelConversionTaskRequest cancelConversionTaskRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     *
-     * @param cancelConversionTaskRequest Container for the necessary
-     *           parameters to execute the CancelConversionTask operation on AmazonEC2.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         CancelConversionTask service method, as returned by AmazonEC2.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonEC2 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> cancelConversionTaskAsync(CancelConversionTaskRequest cancelConversionTaskRequest,
-            AsyncHandler<CancelConversionTaskRequest, Void> asyncHandler)
                     throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -5970,6 +6058,49 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      *
+     * @param copyImageRequest Container for the necessary parameters to
+     *           execute the CopyImage operation on AmazonEC2.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CopyImage service method, as returned by AmazonEC2.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<CopyImageResult> copyImageAsync(CopyImageRequest copyImageRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     *
+     * @param copyImageRequest Container for the necessary parameters to
+     *           execute the CopyImage operation on AmazonEC2.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CopyImage service method, as returned by AmazonEC2.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<CopyImageResult> copyImageAsync(CopyImageRequest copyImageRequest,
+            AsyncHandler<CopyImageRequest, CopyImageResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException;
+
+    /**
+     *
      * @param modifyNetworkInterfaceAttributeRequest Container for the
      *           necessary parameters to execute the ModifyNetworkInterfaceAttribute
      *           operation on AmazonEC2.
@@ -7320,6 +7451,49 @@ public interface AmazonEC2Async extends AmazonEC2 {
      */
     public Future<Void> disassociateRouteTableAsync(DisassociateRouteTableRequest disassociateRouteTableRequest,
             AsyncHandler<DisassociateRouteTableRequest, Void> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException;
+
+    /**
+     *
+     * @param describeVpcAttributeRequest Container for the necessary
+     *           parameters to execute the DescribeVpcAttribute operation on AmazonEC2.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeVpcAttribute service method, as returned by AmazonEC2.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeVpcAttributeResult> describeVpcAttributeAsync(DescribeVpcAttributeRequest describeVpcAttributeRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     *
+     * @param describeVpcAttributeRequest Container for the necessary
+     *           parameters to execute the DescribeVpcAttribute operation on AmazonEC2.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeVpcAttribute service method, as returned by AmazonEC2.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonEC2 indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeVpcAttributeResult> describeVpcAttributeAsync(DescribeVpcAttributeRequest describeVpcAttributeRequest,
+            AsyncHandler<DescribeVpcAttributeRequest, DescribeVpcAttributeResult> asyncHandler)
                     throws AmazonServiceException, AmazonClientException;
 
     /**

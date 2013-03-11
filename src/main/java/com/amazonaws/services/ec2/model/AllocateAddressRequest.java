@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#allocateAddress(AllocateAddressRequest) AllocateAddress operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#allocateAddress(AllocateAddressRequest)
  */
-public class AllocateAddressRequest extends AmazonWebServiceRequest {
+public class AllocateAddressRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * Set to <code>vpc</code> to allocate the address to your VPC. By

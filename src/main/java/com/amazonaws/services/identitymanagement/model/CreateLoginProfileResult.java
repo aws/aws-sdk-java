@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.identitymanagement.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Contains the result of a successful invocation of the CreateLoginProfile action.
  * </p>
  */
-public class CreateLoginProfileResult {
+public class CreateLoginProfileResult  implements Serializable  {
 
     /**
      * The user name and password create date.

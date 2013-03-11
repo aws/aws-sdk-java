@@ -13,11 +13,12 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * Instance Status Details
  */
-public class InstanceStatusDetails {
+public class InstanceStatusDetails  implements Serializable  {
 
     private String name;
 

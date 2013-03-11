@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.simpleworkflow.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Provides details of the <code>DecisionTaskStarted</code> event.
  * </p>
  */
-public class DecisionTaskStartedEventAttributes {
+public class DecisionTaskStartedEventAttributes  implements Serializable  {
 
     /**
      * Identity of the decider making the request. This enables diagnostic

@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.cloudformation.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The Output data type.
  * </p>
  */
-public class Output {
+public class Output  implements Serializable  {
 
     /**
      * The key associated with the output.

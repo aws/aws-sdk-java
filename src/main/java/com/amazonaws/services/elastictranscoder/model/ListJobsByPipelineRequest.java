@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.elastictranscoder.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#listJobsByPipeline(ListJobsByPipelineRequest) ListJobsByPipeline operation}.
@@ -27,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#listJobsByPipeline(ListJobsByPipelineRequest)
  */
-public class ListJobsByPipelineRequest extends AmazonWebServiceRequest {
+public class ListJobsByPipelineRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The ID of the pipeline for which you want to get job information.

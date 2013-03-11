@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elastictranscoder.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * A section of the response body that provides information about the job that is created.
  * </p>
  */
-public class Job {
+public class Job  implements Serializable  {
 
     /**
      * The identifier that Elastic Transcoder assigned to the job. You use

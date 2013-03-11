@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.redshift.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.redshift.AmazonRedshift#createCluster(CreateClusterRequest) CreateCluster operation}.
@@ -28,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#createCluster(CreateClusterRequest)
  */
-public class CreateClusterRequest extends AmazonWebServiceRequest {
+public class CreateClusterRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of the first database to be created when the cluster is

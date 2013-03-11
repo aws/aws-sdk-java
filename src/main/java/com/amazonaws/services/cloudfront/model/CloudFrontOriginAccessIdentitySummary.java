@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.cloudfront.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Summary of the information about a CloudFront origin access identity.
  * </p>
  */
-public class CloudFrontOriginAccessIdentitySummary {
+public class CloudFrontOriginAccessIdentitySummary  implements Serializable  {
 
     /**
      * The ID for the origin access identity. For example: E74FTE3AJFJ256A.

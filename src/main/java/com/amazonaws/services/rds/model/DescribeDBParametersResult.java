@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.rds.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Contains the result of a successful invocation of the DescribeDBParameters action.
  * </p>
  */
-public class DescribeDBParametersResult {
+public class DescribeDBParametersResult  implements Serializable  {
 
     /**
      * A list of <a>Parameter</a> instances.

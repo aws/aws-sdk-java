@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.simpleworkflow.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * A structure that represents a decision task. Decision tasks are sent to deciders in order for them to make decisions.
  * </p>
  */
-public class DecisionTask {
+public class DecisionTask  implements Serializable  {
 
     /**
      * The opaque string used as a handle on the task. This token is used by

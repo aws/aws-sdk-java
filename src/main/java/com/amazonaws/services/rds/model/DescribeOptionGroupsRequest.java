@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.rds.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#describeOptionGroups(DescribeOptionGroupsRequest) DescribeOptionGroups operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#describeOptionGroups(DescribeOptionGroupsRequest)
  */
-public class DescribeOptionGroupsRequest extends AmazonWebServiceRequest {
+public class DescribeOptionGroupsRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of the option group to describe. Cannot be supplied together

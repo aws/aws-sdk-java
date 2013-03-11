@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.identitymanagement.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listGroupPolicies(ListGroupPoliciesRequest) ListGroupPolicies operation}.
@@ -26,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listGroupPolicies(ListGroupPoliciesRequest)
  */
-public class ListGroupPoliciesRequest extends AmazonWebServiceRequest {
+public class ListGroupPoliciesRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of the group to list policies for.

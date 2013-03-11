@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elasticbeanstalk.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Describes the details of a LoadBalancer.
  * </p>
  */
-public class LoadBalancerDescription {
+public class LoadBalancerDescription  implements Serializable  {
 
     /**
      * The name of the LoadBalancer.

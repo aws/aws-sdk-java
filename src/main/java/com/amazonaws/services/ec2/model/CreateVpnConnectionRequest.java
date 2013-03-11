@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#createVpnConnection(CreateVpnConnectionRequest) CreateVpnConnection operation}.
@@ -34,7 +35,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createVpnConnection(CreateVpnConnectionRequest)
  */
-public class CreateVpnConnectionRequest extends AmazonWebServiceRequest {
+public class CreateVpnConnectionRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The type of VPN connection.

@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.autoscaling.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * 
  * </p>
  */
-public class DescribeTagsResult {
+public class DescribeTagsResult  implements Serializable  {
 
     /**
      * The list of tags.

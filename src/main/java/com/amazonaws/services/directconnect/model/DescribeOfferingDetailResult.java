@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.directconnect.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * A structure containing detailed information about an offering.
  * </p>
  */
-public class DescribeOfferingDetailResult {
+public class DescribeOfferingDetailResult  implements Serializable  {
 
     /**
      * The ID of the offering. <p>Example: us-west-1_EqSV5_1G <p>Default:

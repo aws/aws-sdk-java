@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.rds.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#describeDBSecurityGroups(DescribeDBSecurityGroupsRequest) DescribeDBSecurityGroups operation}.
@@ -27,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#describeDBSecurityGroups(DescribeDBSecurityGroupsRequest)
  */
-public class DescribeDBSecurityGroupsRequest extends AmazonWebServiceRequest {
+public class DescribeDBSecurityGroupsRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of the DB Security Group to return details for.

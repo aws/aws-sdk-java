@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.storagegateway.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * A JSON object containing a DescribeChapCredentialsOutput$ChapCredentials.
  * </p>
  */
-public class DescribeChapCredentialsResult {
+public class DescribeChapCredentialsResult  implements Serializable  {
 
     /**
      * An array of <a>ChapInfo</a> objects that represent CHAP credentials.

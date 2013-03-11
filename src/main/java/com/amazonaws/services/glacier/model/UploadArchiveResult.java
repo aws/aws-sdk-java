@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.glacier.model;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -24,7 +25,7 @@ package com.amazonaws.services.glacier.model;
  * href="http://docs.amazonwebservices.com/amazonglacier/latest/dev/working-with-archives.html"> Working with Archives in Amazon Glacier </a> .
  * </p>
  */
-public class UploadArchiveResult {
+public class UploadArchiveResult  implements Serializable  {
 
     /**
      * The relative URI path of the newly added archive resource.

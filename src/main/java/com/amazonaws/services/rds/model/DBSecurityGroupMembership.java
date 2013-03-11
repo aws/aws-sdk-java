@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.rds.model;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -27,7 +28,7 @@ package com.amazonaws.services.rds.model;
  * 
  * </ul>
  */
-public class DBSecurityGroupMembership {
+public class DBSecurityGroupMembership  implements Serializable  {
 
     /**
      * The name of the DB Security Group.

@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elasticloadbalancing.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The <code>PolicyAttributeTypeDescription</code> data type. This data type is used to describe values that are acceptable for the policy attribute.
  * </p>
  */
-public class PolicyAttributeTypeDescription {
+public class PolicyAttributeTypeDescription  implements Serializable  {
 
     /**
      * The name of the attribute associated with the policy type.

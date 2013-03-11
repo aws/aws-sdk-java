@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.storagegateway.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.storagegateway.AWSStorageGateway#describeWorkingStorage(DescribeWorkingStorageRequest) DescribeWorkingStorage operation}.
@@ -31,7 +32,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#describeWorkingStorage(DescribeWorkingStorageRequest)
  */
-public class DescribeWorkingStorageRequest extends AmazonWebServiceRequest {
+public class DescribeWorkingStorageRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The Amazon Resource Name (ARN) of the gateway. Use the

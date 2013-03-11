@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elasticloadbalancing.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The output for the AttachLoadBalancerToSubnets action.
  * </p>
  */
-public class AttachLoadBalancerToSubnetsResult {
+public class AttachLoadBalancerToSubnetsResult  implements Serializable  {
 
     /**
      * A list of subnet IDs added for the LoadBalancer.

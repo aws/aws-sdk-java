@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elasticache.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Contains values that will be applied to the Cache Cluster in the future.
  * </p>
  */
-public class PendingModifiedValues {
+public class PendingModifiedValues  implements Serializable  {
 
     /**
      * Contains the new <i>NumCacheNodes</i> for the Cache Cluster that will

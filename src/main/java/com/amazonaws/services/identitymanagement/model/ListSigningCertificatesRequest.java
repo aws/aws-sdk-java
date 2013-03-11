@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.identitymanagement.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listSigningCertificates(ListSigningCertificatesRequest) ListSigningCertificates operation}.
@@ -32,7 +33,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listSigningCertificates(ListSigningCertificatesRequest)
  */
-public class ListSigningCertificatesRequest extends AmazonWebServiceRequest {
+public class ListSigningCertificatesRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of the user.

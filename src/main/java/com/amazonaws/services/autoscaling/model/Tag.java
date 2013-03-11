@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.autoscaling.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The tag applied to an Auto Scaling group.
  * </p>
  */
-public class Tag {
+public class Tag  implements Serializable  {
 
     /**
      * The name of the Auto Scaling group.

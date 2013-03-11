@@ -92,13 +92,21 @@ import com.amazonaws.util.VersionInfoUtils;
  * TransferManager tx = new TransferManager(myCredentials);
  * Upload myUpload = tx.upload(myBucket, myFile.getName(), myFile);
  *
- * while (myUpload.isDone() == false) {
+ * // You can poll your transfer's status to check its progress
+ * if (myUpload.isDone() == false) {
  *     System.out.println("Transfer: " + myUpload.getDescription());
  *     System.out.println("  - State: " + myUpload.getState());
  *     System.out.println("  - Progress: " + myUpload.getProgress().getBytesTransfered());
- *     // Do work while we wait for our upload to complete...
- *     Thread.sleep(500);
  * }
+ *
+ * // Transfers also allow you to set a <code>ProgressListener</code> to receive
+ * // asynchronous notifications about your transfer's progress.
+ * myUpload.addProgressListener(myProgressListener);
+ *
+ * // Or you can block the current thread and wait for your transfer to
+ * // to complete.  If the transfer fails, this method will throw an
+ * // AmazonClientException or AmazonServiceException detailing the reason.
+ * myUpload.waitForCompletion();
  * </pre>
  * <p>
  * Note: Transfers are stored in memory. If the JVM is restarted, previous
@@ -718,9 +726,8 @@ public class TransferManager {
         return uploadFileList(bucketName, virtualDirectoryKeyPrefix, directory, files);
     }
 
-
     /**
-     * Uploads all files in the fileList given to the bucket named, constructing
+     * Uploads all specified files to the bucket named, constructing
      * relative keys depending on the commonParentDirectory given.
      * <p>
      * S3 will overwrite any existing objects that happen to have the same key,
@@ -744,7 +751,7 @@ public class TransferManager {
     public MultipleFileUpload uploadFileList(String bucketName, String virtualDirectoryKeyPrefix, File directory, List<File> files) {
 
         if ( directory == null || !directory.exists() || !directory.isDirectory() ) {
-            throw new IllegalArgumentException("Must provide a directory to upload");
+            throw new IllegalArgumentException("Must provide a common base directory for uploaded files");
         }
 
         if (virtualDirectoryKeyPrefix == null || virtualDirectoryKeyPrefix.length() == 0) {

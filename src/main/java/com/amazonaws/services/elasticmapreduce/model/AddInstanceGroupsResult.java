@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elasticmapreduce.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Output from an AddInstanceGroups call.
  * </p>
  */
-public class AddInstanceGroupsResult {
+public class AddInstanceGroupsResult  implements Serializable  {
 
     /**
      * The job flow ID in which the instance groups are added.

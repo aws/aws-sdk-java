@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.opsworks.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.opsworks.AWSOpsWorks#deleteUserProfile(DeleteUserProfileRequest) DeleteUserProfile operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#deleteUserProfile(DeleteUserProfileRequest)
  */
-public class DeleteUserProfileRequest extends AmazonWebServiceRequest {
+public class DeleteUserProfileRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The user's IAM ARN.

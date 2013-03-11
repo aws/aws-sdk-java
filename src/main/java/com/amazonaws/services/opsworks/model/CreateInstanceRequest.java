@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.opsworks.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.opsworks.AWSOpsWorks#createInstance(CreateInstanceRequest) CreateInstance operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#createInstance(CreateInstanceRequest)
  */
-public class CreateInstanceRequest extends AmazonWebServiceRequest {
+public class CreateInstanceRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The stack ID.

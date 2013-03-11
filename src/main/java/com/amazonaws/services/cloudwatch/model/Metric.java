@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.cloudwatch.model;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -20,7 +21,7 @@ package com.amazonaws.services.cloudwatch.model;
  * contained by this data type.
  * </p>
  */
-public class Metric {
+public class Metric  implements Serializable  {
 
     /**
      * The namespace of the metric.

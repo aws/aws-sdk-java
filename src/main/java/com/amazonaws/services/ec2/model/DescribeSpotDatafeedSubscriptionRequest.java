@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeSpotDatafeedSubscription(DescribeSpotDatafeedSubscriptionRequest) DescribeSpotDatafeedSubscription operation}.
@@ -28,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeSpotDatafeedSubscription(DescribeSpotDatafeedSubscriptionRequest)
  */
-public class DescribeSpotDatafeedSubscriptionRequest extends AmazonWebServiceRequest {
+public class DescribeSpotDatafeedSubscriptionRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * Returns a string representation of this object; useful for testing and

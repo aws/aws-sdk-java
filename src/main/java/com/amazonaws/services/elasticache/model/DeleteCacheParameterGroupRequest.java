@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.elasticache.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticache.AmazonElastiCache#deleteCacheParameterGroup(DeleteCacheParameterGroupRequest) DeleteCacheParameterGroup operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#deleteCacheParameterGroup(DeleteCacheParameterGroupRequest)
  */
-public class DeleteCacheParameterGroupRequest extends AmazonWebServiceRequest {
+public class DeleteCacheParameterGroupRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of the Cache Parameter Group to delete. <note> The specified

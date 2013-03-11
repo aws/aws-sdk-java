@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.redshift.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Describes a subnet.
  * </p>
  */
-public class Subnet {
+public class Subnet  implements Serializable  {
 
     /**
      * The identifier of the subnet.

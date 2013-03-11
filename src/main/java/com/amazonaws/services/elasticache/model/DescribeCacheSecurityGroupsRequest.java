@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.elasticache.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticache.AmazonElastiCache#describeCacheSecurityGroups(DescribeCacheSecurityGroupsRequest) DescribeCacheSecurityGroups operation}.
@@ -24,7 +25,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#describeCacheSecurityGroups(DescribeCacheSecurityGroupsRequest)
  */
-public class DescribeCacheSecurityGroupsRequest extends AmazonWebServiceRequest {
+public class DescribeCacheSecurityGroupsRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of the Cache Security Group to return details for.

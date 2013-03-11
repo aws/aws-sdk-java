@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.directconnect.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.directconnect.AmazonDirectConnect#describeOfferings(DescribeOfferingsRequest) DescribeOfferings operation}.
@@ -26,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.directconnect.AmazonDirectConnect#describeOfferings(DescribeOfferingsRequest)
  */
-public class DescribeOfferingsRequest extends AmazonWebServiceRequest {
+public class DescribeOfferingsRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * Returns a string representation of this object; useful for testing and

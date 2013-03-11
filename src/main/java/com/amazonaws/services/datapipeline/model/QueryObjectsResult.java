@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.datapipeline.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Contains the output from the QueryObjects action.
  * </p>
  */
-public class QueryObjectsResult {
+public class QueryObjectsResult  implements Serializable  {
 
     /**
      * A list of identifiers that match the query selectors.

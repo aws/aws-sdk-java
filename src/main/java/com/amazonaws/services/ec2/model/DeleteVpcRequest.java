@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#deleteVpc(DeleteVpcRequest) DeleteVpc operation}.
@@ -24,7 +25,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#deleteVpc(DeleteVpcRequest)
  */
-public class DeleteVpcRequest extends AmazonWebServiceRequest {
+public class DeleteVpcRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The ID of the VPC you want to delete.

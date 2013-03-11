@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.storagegateway.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The Amazon Resource Name (ARN) of the gateway for which cache storage was configured.
  * </p>
  */
-public class AddCacheResult {
+public class AddCacheResult  implements Serializable  {
 
     /**
      * The Amazon Resource Name (ARN) of the gateway. Use the

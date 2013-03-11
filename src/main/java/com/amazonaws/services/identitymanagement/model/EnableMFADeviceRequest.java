@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.identitymanagement.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#enableMFADevice(EnableMFADeviceRequest) EnableMFADevice operation}.
@@ -24,7 +25,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#enableMFADevice(EnableMFADeviceRequest)
  */
-public class EnableMFADeviceRequest extends AmazonWebServiceRequest {
+public class EnableMFADeviceRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * Name of the user for whom you want to enable the MFA device.

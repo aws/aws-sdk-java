@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.opsworks.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Contains the response to a <code>CreateStack</code> request.
  * </p>
  */
-public class CreateStackResult {
+public class CreateStackResult  implements Serializable  {
 
     /**
      * The stack ID, which is an opaque string that you use to identify the

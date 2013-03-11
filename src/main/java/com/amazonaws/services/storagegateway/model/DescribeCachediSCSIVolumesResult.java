@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.storagegateway.model;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -24,7 +25,7 @@ package com.amazonaws.services.storagegateway.model;
  * 
  * </ul>
  */
-public class DescribeCachediSCSIVolumesResult {
+public class DescribeCachediSCSIVolumesResult  implements Serializable  {
 
     /**
      * An array of <a>CachediSCSIVolume</a> objects where each object

@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#cancelBundleTask(CancelBundleTaskRequest) CancelBundleTask operation}.
@@ -25,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#cancelBundleTask(CancelBundleTaskRequest)
  */
-public class CancelBundleTaskRequest extends AmazonWebServiceRequest {
+public class CancelBundleTaskRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The ID of the bundle task to cancel.

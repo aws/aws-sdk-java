@@ -13,11 +13,12 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.sqs.model;
+import java.io.Serializable;
 
 /**
  * 
  */
-public class CreateQueueResult {
+public class CreateQueueResult  implements Serializable  {
 
     /**
      * The URL for the created SQS queue.

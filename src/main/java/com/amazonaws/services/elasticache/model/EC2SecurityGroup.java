@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elasticache.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Specifies the current state of this Cache Node.
  * </p>
  */
-public class EC2SecurityGroup {
+public class EC2SecurityGroup  implements Serializable  {
 
     /**
      * Provides the status of the EC2 Security Group.

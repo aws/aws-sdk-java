@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.redshift.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Describes a connection endpoint.
  * </p>
  */
-public class Endpoint {
+public class Endpoint  implements Serializable  {
 
     /**
      * The DNS address of the Cluster.

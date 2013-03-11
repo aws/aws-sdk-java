@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Represents an Amazon EC2 region. EC2 regions are completely isolated from each other.
  * </p>
  */
-public class Region {
+public class Region  implements Serializable  {
 
     /**
      * Name of the region.

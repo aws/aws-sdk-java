@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#associateRouteTable(AssociateRouteTableRequest) AssociateRouteTable operation}.
@@ -29,7 +30,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#associateRouteTable(AssociateRouteTableRequest)
  */
-public class AssociateRouteTableRequest extends AmazonWebServiceRequest {
+public class AssociateRouteTableRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The ID of the subnet.

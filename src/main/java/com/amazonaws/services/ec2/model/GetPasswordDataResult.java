@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The result of the GetPasswordData operation.
  * </p>
  */
-public class GetPasswordDataResult {
+public class GetPasswordDataResult  implements Serializable  {
 
     /**
      * The ID of the instance whose Windows administrator password was

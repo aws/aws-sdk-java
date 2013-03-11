@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.cloudfront.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * A complex type that specifies how CloudFront handles query strings.
  * </p>
  */
-public class ForwardedValues {
+public class ForwardedValues  implements Serializable  {
 
     /**
      * Indicates whether you want CloudFront to forward query strings to the

@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.rds.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#createDBSnapshot(CreateDBSnapshotRequest) CreateDBSnapshot operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#createDBSnapshot(CreateDBSnapshotRequest)
  */
-public class CreateDBSnapshotRequest extends AmazonWebServiceRequest {
+public class CreateDBSnapshotRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The identifier for the DB Snapshot. <p>Constraints: <ul> <li>Cannot be

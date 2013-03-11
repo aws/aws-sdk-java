@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The BlockDeviceMappingItemType data type.
  * </p>
  */
-public class BlockDeviceMapping {
+public class BlockDeviceMapping  implements Serializable  {
 
     /**
      * Specifies the virtual device name.

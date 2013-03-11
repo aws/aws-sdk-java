@@ -19,6 +19,8 @@ import java.util.ArrayList;
 
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.auth.ClasspathPropertiesFileCredentialsProvider;
+import com.amazonaws.regions.Region;
+import com.amazonaws.regions.Regions;
 import com.amazonaws.services.ec2.AmazonEC2;
 import com.amazonaws.services.ec2.AmazonEC2Client;
 import com.amazonaws.services.ec2.model.AuthorizeSecurityGroupIngressRequest;
@@ -34,6 +36,8 @@ public class CreateSecurityGroupApp {
 
 		// Create the AmazonEC2Client object so we can call various APIs.
 		AmazonEC2 ec2 = new AmazonEC2Client(new ClasspathPropertiesFileCredentialsProvider());
+		Region usWest2 = Region.getRegion(Regions.US_WEST_2);
+		ec2.setRegion(usWest2);
 
 	    	// Create a new security group.
 	    	try {

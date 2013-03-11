@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The CustomerGateway data type.
  * </p>
  */
-public class CustomerGateway {
+public class CustomerGateway  implements Serializable  {
 
     /**
      * Specifies the ID of the customer gateway.

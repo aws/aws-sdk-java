@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#stopInstances(StopInstancesRequest) StopInstances operation}.
@@ -30,7 +31,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#stopInstances(StopInstancesRequest)
  */
-public class StopInstancesRequest extends AmazonWebServiceRequest {
+public class StopInstancesRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The list of Amazon EC2 instances to stop.

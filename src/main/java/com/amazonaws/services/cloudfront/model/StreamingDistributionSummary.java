@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.cloudfront.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * A summary of the information for an Amazon CloudFront streaming distribution.
  * </p>
  */
-public class StreamingDistributionSummary {
+public class StreamingDistributionSummary  implements Serializable  {
 
     /**
      * The identifier for the distribution. For example: EDFDVBD632BHDS5.

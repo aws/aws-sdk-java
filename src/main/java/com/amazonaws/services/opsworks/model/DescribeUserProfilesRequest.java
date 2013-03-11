@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.opsworks.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.opsworks.AWSOpsWorks#describeUserProfiles(DescribeUserProfilesRequest) DescribeUserProfiles operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#describeUserProfiles(DescribeUserProfilesRequest)
  */
-public class DescribeUserProfilesRequest extends AmazonWebServiceRequest {
+public class DescribeUserProfilesRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * An array of IAM user ARNs that identify the users to be described.

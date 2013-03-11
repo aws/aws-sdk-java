@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.elasticbeanstalk.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#validateConfigurationSettings(ValidateConfigurationSettingsRequest) ValidateConfigurationSettings operation}.
@@ -26,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#validateConfigurationSettings(ValidateConfigurationSettingsRequest)
  */
-public class ValidateConfigurationSettingsRequest extends AmazonWebServiceRequest {
+public class ValidateConfigurationSettingsRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of the application that the configuration template or

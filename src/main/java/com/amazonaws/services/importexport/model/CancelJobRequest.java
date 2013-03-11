@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.importexport.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.importexport.AmazonImportExport#cancelJob(CancelJobRequest) CancelJob operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.importexport.AmazonImportExport#cancelJob(CancelJobRequest)
  */
-public class CancelJobRequest extends AmazonWebServiceRequest {
+public class CancelJobRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * A unique identifier which refers to a particular job.

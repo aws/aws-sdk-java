@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.identitymanagement.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Contains the result of a successful invocation of the ListUsers action.
  * </p>
  */
-public class ListUsersResult {
+public class ListUsersResult  implements Serializable  {
 
     /**
      * A list of users.

@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.cloudsearch.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * A response message that contains the status of updated access policies.
  * </p>
  */
-public class UpdateServiceAccessPoliciesResult {
+public class UpdateServiceAccessPoliciesResult  implements Serializable  {
 
     /**
      * A <code>PolicyDocument</code> that specifies access policies for the

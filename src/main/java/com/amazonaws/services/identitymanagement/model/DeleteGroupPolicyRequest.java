@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.identitymanagement.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteGroupPolicy(DeleteGroupPolicyRequest) DeleteGroupPolicy operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#deleteGroupPolicy(DeleteGroupPolicyRequest)
  */
-public class DeleteGroupPolicyRequest extends AmazonWebServiceRequest {
+public class DeleteGroupPolicyRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * Name of the group the policy is associated with.

@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.cloudsearch.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The result of an <code>IndexDocuments</code> action.
  * </p>
  */
-public class IndexDocumentsResult {
+public class IndexDocumentsResult  implements Serializable  {
 
     /**
      * The names of the fields that are currently being processed due to an

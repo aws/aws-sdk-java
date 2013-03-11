@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The result of describing an AMI attribute.
  * </p>
  */
-public class DescribeImageAttributeResult {
+public class DescribeImageAttributeResult  implements Serializable  {
 
     /**
      * The described image attribute of the associated AMI.

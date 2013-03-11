@@ -13,11 +13,12 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * Instance Export Details
  */
-public class InstanceExportDetails {
+public class InstanceExportDetails  implements Serializable  {
 
     private String instanceId;
 

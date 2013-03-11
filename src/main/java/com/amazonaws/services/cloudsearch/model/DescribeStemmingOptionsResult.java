@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.cloudsearch.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * A response message that contains the stemming options for a search domain.
  * </p>
  */
-public class DescribeStemmingOptionsResult {
+public class DescribeStemmingOptionsResult  implements Serializable  {
 
     /**
      * The stemming options configured for this search domain and the current

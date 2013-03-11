@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.storagegateway.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * A JSON object containing a list of DescribeStorediSCSIVolumesOutput$StorediSCSIVolumes.
  * </p>
  */
-public class DescribeStorediSCSIVolumesResult {
+public class DescribeStorediSCSIVolumesResult  implements Serializable  {
 
     /**
      * Describes a single unit of output from

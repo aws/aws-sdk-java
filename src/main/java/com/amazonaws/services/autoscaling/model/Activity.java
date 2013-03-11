@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.autoscaling.model;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -20,7 +21,7 @@ package com.amazonaws.services.autoscaling.model;
  * be a process to replace an instance, or a process to perform any other long-running operations supported by the API.
  * </p>
  */
-public class Activity {
+public class Activity  implements Serializable  {
 
     /**
      * Specifies the ID of the activity.

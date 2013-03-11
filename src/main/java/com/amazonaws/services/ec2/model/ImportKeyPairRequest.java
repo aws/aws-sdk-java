@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#importKeyPair(ImportKeyPairRequest) ImportKeyPair operation}.
@@ -39,7 +40,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#importKeyPair(ImportKeyPairRequest)
  */
-public class ImportKeyPairRequest extends AmazonWebServiceRequest {
+public class ImportKeyPairRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The unique name for the key pair.

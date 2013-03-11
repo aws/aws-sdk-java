@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.glacier.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Contains the Amazon Glacier response to your request.
  * </p>
  */
-public class GetJobOutputResult {
+public class GetJobOutputResult  implements Serializable  {
 
     /**
      * The job data, either archive data or inventory data.

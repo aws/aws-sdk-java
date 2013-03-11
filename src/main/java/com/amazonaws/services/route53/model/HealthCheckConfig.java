@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.route53.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * A complex type that contains the health check configuration.
  * </p>
  */
-public class HealthCheckConfig {
+public class HealthCheckConfig  implements Serializable  {
 
     /**
      * IP Address of the instance being checked.

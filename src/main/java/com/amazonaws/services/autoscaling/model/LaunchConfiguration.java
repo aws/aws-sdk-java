@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.autoscaling.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The <code>LaunchConfiguration</code> data type.
  * </p>
  */
-public class LaunchConfiguration {
+public class LaunchConfiguration  implements Serializable  {
 
     /**
      * Specifies the name of the launch configuration.

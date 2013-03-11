@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.simpleemail.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.simpleemail.AmazonSimpleEmailService#sendRawEmail(SendRawEmailRequest) SendRawEmail operation}.
@@ -41,7 +42,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpleemail.AmazonSimpleEmailService#sendRawEmail(SendRawEmailRequest)
  */
-public class SendRawEmailRequest extends AmazonWebServiceRequest {
+public class SendRawEmailRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The identity's email address. <note>If you specify the

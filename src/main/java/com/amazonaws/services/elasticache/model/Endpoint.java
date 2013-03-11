@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elasticache.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * An endpoint completely specifies enough information to connect to a Cache Node.
  * </p>
  */
-public class Endpoint {
+public class Endpoint  implements Serializable  {
 
     /**
      * Specifies the DNS address of the Cache Node.

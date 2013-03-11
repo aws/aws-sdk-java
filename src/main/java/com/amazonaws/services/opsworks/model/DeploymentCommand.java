@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.opsworks.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Used to specify a deployment operation.
  * </p>
  */
-public class DeploymentCommand {
+public class DeploymentCommand  implements Serializable  {
 
     /**
      * Specifies the deployment operation. You can specify only one command.

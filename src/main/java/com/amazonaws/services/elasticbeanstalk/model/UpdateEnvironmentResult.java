@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elasticbeanstalk.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Describes the properties of an environment.
  * </p>
  */
-public class UpdateEnvironmentResult {
+public class UpdateEnvironmentResult  implements Serializable  {
 
     /**
      * The name of this environment.

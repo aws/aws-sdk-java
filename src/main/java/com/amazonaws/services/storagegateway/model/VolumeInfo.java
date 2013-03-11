@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.storagegateway.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Describes a storage volume.
  * </p>
  */
-public class VolumeInfo {
+public class VolumeInfo  implements Serializable  {
 
     /**
      * The Amazon Resource Name (ARN) for the storage volume. For example,

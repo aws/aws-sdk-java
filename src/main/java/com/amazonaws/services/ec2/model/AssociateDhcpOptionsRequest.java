@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#associateDhcpOptions(AssociateDhcpOptionsRequest) AssociateDhcpOptions operation}.
@@ -26,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#associateDhcpOptions(AssociateDhcpOptionsRequest)
  */
-public class AssociateDhcpOptionsRequest extends AmazonWebServiceRequest {
+public class AssociateDhcpOptionsRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The ID of the DHCP options to associate with the VPC. Specify

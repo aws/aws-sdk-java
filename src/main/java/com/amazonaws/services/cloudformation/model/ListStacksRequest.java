@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.cloudformation.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.cloudformation.AmazonCloudFormation#listStacks(ListStacksRequest) ListStacks operation}.
@@ -25,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudformation.AmazonCloudFormation#listStacks(ListStacksRequest)
  */
-public class ListStacksRequest extends AmazonWebServiceRequest {
+public class ListStacksRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * String that identifies the start of the next list of stacks, if there

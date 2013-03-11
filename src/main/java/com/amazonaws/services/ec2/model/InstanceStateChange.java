@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Represents a state change for a specific EC2 instance.
  * </p>
  */
-public class InstanceStateChange {
+public class InstanceStateChange  implements Serializable  {
 
     /**
      * The ID of the instance whose state changed.

@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.dynamodb.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.dynamodb.AmazonDynamoDB#batchGetItem(BatchGetItemRequest) BatchGetItem operation}.
@@ -33,7 +34,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.dynamodb.AmazonDynamoDB#batchGetItem(BatchGetItemRequest)
  */
-public class BatchGetItemRequest extends AmazonWebServiceRequest {
+public class BatchGetItemRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * A map of the table name and corresponding items to get by primary key.

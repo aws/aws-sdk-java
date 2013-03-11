@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.simpleworkflow.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Provides details of the <code>DecisionTaskScheduled</code> event.
  * </p>
  */
-public class DecisionTaskScheduledEventAttributes {
+public class DecisionTaskScheduledEventAttributes  implements Serializable  {
 
     /**
      * The name of the task list in which the decision task was scheduled.

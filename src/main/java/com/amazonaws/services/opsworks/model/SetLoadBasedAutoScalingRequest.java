@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.opsworks.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.opsworks.AWSOpsWorks#setLoadBasedAutoScaling(SetLoadBasedAutoScalingRequest) SetLoadBasedAutoScaling operation}.
@@ -27,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#setLoadBasedAutoScaling(SetLoadBasedAutoScalingRequest)
  */
-public class SetLoadBasedAutoScalingRequest extends AmazonWebServiceRequest {
+public class SetLoadBasedAutoScalingRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The layer ID.

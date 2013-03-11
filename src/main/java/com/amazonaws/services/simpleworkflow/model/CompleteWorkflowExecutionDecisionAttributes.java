@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.simpleworkflow.model;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -37,7 +38,7 @@ package com.amazonaws.services.simpleworkflow.model;
  * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access to Amazon SWF Workflows </a> .
  * </p>
  */
-public class CompleteWorkflowExecutionDecisionAttributes {
+public class CompleteWorkflowExecutionDecisionAttributes  implements Serializable  {
 
     /**
      * The result of the workflow execution. The form of the result is

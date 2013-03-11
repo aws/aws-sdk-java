@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elasticbeanstalk.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * A list of available AWS Elastic Beanstalk solution stacks.
  * </p>
  */
-public class ListAvailableSolutionStacksResult {
+public class ListAvailableSolutionStacksResult  implements Serializable  {
 
     /**
      * A list of available solution stacks.

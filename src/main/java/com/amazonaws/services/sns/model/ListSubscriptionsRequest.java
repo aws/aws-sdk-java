@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.sns.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#listSubscriptions(ListSubscriptionsRequest) ListSubscriptions operation}.
@@ -24,7 +25,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.sns.AmazonSNS#listSubscriptions(ListSubscriptionsRequest)
  */
-public class ListSubscriptionsRequest extends AmazonWebServiceRequest {
+public class ListSubscriptionsRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * Token returned by the previous ListSubscriptions request.

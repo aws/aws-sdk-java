@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.importexport.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Output structure for the CancelJob operation.
  * </p>
  */
-public class CancelJobResult {
+public class CancelJobResult  implements Serializable  {
 
     /**
      * Specifies whether (true) or not (false) AWS Import/Export updated your

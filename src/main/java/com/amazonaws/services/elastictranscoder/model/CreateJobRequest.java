@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.elastictranscoder.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#createJob(CreateJobRequest) CreateJob operation}.
@@ -27,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#createJob(CreateJobRequest)
  */
-public class CreateJobRequest extends AmazonWebServiceRequest {
+public class CreateJobRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The <code>Id</code> of the pipeline that you want Elastic Transcoder

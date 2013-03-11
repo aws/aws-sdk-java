@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.redshift.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.redshift.AmazonRedshift#resetClusterParameterGroup(ResetClusterParameterGroupRequest) ResetClusterParameterGroup operation}.
@@ -25,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#resetClusterParameterGroup(ResetClusterParameterGroupRequest)
  */
-public class ResetClusterParameterGroupRequest extends AmazonWebServiceRequest {
+public class ResetClusterParameterGroupRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of the cluster parameter group to be reset.

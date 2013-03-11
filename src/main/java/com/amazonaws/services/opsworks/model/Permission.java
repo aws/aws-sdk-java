@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.opsworks.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Describes stack or user permissions.
  * </p>
  */
-public class Permission {
+public class Permission  implements Serializable  {
 
     /**
      * A stack ID.

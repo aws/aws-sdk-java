@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elasticloadbalancing.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The PolicyTypeDescription data type.
  * </p>
  */
-public class PolicyTypeDescription {
+public class PolicyTypeDescription  implements Serializable  {
 
     /**
      * The name of the policy type.

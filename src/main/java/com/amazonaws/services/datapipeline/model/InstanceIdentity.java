@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.datapipeline.model;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -25,7 +26,7 @@ package com.amazonaws.services.datapipeline.model;
  * 
  * </p>
  */
-public class InstanceIdentity {
+public class InstanceIdentity  implements Serializable  {
 
     /**
      * A description of an Amazon EC2 instance that is generated when the

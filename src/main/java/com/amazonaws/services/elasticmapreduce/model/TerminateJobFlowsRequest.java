@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.elasticmapreduce.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticmapreduce.AmazonElasticMapReduce#terminateJobFlows(TerminateJobFlowsRequest) TerminateJobFlows operation}.
@@ -29,7 +30,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticmapreduce.AmazonElasticMapReduce#terminateJobFlows(TerminateJobFlowsRequest)
  */
-public class TerminateJobFlowsRequest extends AmazonWebServiceRequest {
+public class TerminateJobFlowsRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * A list of job flows to be shutdown.

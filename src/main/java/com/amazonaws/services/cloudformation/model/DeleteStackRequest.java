@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.cloudformation.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.cloudformation.AmazonCloudFormation#deleteStack(DeleteStackRequest) DeleteStack operation}.
@@ -24,7 +25,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudformation.AmazonCloudFormation#deleteStack(DeleteStackRequest)
  */
-public class DeleteStackRequest extends AmazonWebServiceRequest {
+public class DeleteStackRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name or the unique identifier associated with the stack.

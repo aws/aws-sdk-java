@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#requestSpotInstances(RequestSpotInstancesRequest) RequestSpotInstances operation}.
@@ -31,7 +32,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#requestSpotInstances(RequestSpotInstancesRequest)
  */
-public class RequestSpotInstancesRequest extends AmazonWebServiceRequest {
+public class RequestSpotInstancesRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * Specifies the maximum hourly price for any Spot Instance launched to

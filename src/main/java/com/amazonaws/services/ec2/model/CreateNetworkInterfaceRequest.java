@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#createNetworkInterface(CreateNetworkInterfaceRequest) CreateNetworkInterface operation}.
@@ -21,7 +22,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createNetworkInterface(CreateNetworkInterfaceRequest)
  */
-public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest {
+public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     private String subnetId;
 

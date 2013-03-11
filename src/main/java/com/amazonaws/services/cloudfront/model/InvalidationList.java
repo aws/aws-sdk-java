@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.cloudfront.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * An invalidation list.
  * </p>
  */
-public class InvalidationList {
+public class InvalidationList  implements Serializable  {
 
     /**
      * The value you provided for the Marker request parameter.

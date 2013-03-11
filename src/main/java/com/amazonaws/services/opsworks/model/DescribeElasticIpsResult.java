@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.opsworks.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Contains the response to a <code>DescribeElasticIps</code> request.
  * </p>
  */
-public class DescribeElasticIpsResult {
+public class DescribeElasticIpsResult  implements Serializable  {
 
     /**
      * An <code>ElasticIps</code> object that describes the specified Elastic

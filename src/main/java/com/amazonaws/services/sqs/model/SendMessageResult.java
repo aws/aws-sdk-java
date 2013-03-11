@@ -13,11 +13,12 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.sqs.model;
+import java.io.Serializable;
 
 /**
  * 
  */
-public class SendMessageResult {
+public class SendMessageResult  implements Serializable  {
 
     /**
      * An MD5 digest of the non-URL-encoded message body string. This can be

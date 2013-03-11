@@ -13,11 +13,12 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * 
  */
-public class PortRange {
+public class PortRange  implements Serializable  {
 
     /**
      * The first port in the range. Required if specifying <code>tcp</code>

@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.simpleworkflow.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#listOpenWorkflowExecutions(ListOpenWorkflowExecutionsRequest) ListOpenWorkflowExecutions operation}.
@@ -52,7 +53,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#listOpenWorkflowExecutions(ListOpenWorkflowExecutionsRequest)
  */
-public class ListOpenWorkflowExecutionsRequest extends AmazonWebServiceRequest {
+public class ListOpenWorkflowExecutionsRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of the domain that contains the workflow executions to list.

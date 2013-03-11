@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.rds.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Metadata assigned to a DB Instance consisting of a key-value pair.
  * </p>
  */
-public class Tag {
+public class Tag  implements Serializable  {
 
     /**
      * A key is the required name of the tag. The string value can be from 1

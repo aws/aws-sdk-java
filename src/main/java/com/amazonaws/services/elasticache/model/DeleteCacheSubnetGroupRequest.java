@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.elasticache.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticache.AmazonElastiCache#deleteCacheSubnetGroup(DeleteCacheSubnetGroupRequest) DeleteCacheSubnetGroup operation}.
@@ -26,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#deleteCacheSubnetGroup(DeleteCacheSubnetGroupRequest)
  */
-public class DeleteCacheSubnetGroupRequest extends AmazonWebServiceRequest {
+public class DeleteCacheSubnetGroupRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of the Cache Subnet Group to delete. <p>Constraints: Must

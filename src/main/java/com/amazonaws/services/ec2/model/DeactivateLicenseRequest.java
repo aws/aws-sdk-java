@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#deactivateLicense(DeactivateLicenseRequest) DeactivateLicense operation}.
@@ -24,7 +25,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#deactivateLicense(DeactivateLicenseRequest)
  */
-public class DeactivateLicenseRequest extends AmazonWebServiceRequest {
+public class DeactivateLicenseRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * Specifies the ID for the specific license to deactivate against.

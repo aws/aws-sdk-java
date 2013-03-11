@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.simpleworkflow.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Unit of work sent to an activity worker.
  * </p>
  */
-public class ActivityTask {
+public class ActivityTask  implements Serializable  {
 
     /**
      * The opaque string used as a handle on the task. This token is used by

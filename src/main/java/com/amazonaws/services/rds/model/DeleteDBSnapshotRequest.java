@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.rds.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#deleteDBSnapshot(DeleteDBSnapshotRequest) DeleteDBSnapshot operation}.
@@ -26,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#deleteDBSnapshot(DeleteDBSnapshotRequest)
  */
-public class DeleteDBSnapshotRequest extends AmazonWebServiceRequest {
+public class DeleteDBSnapshotRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The DBSnapshot identifier. <p>Constraints: Must be the name of an

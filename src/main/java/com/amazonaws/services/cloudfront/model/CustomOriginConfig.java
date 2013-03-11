@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.cloudfront.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * A customer origin.
  * </p>
  */
-public class CustomOriginConfig {
+public class CustomOriginConfig  implements Serializable  {
 
     /**
      * The HTTP port the custom origin listens on.

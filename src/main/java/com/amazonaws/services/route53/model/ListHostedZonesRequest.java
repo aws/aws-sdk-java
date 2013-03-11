@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.route53.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.route53.AmazonRoute53#listHostedZones(ListHostedZonesRequest) ListHostedZones operation}.
@@ -30,7 +31,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.route53.AmazonRoute53#listHostedZones(ListHostedZonesRequest)
  */
-public class ListHostedZonesRequest extends AmazonWebServiceRequest {
+public class ListHostedZonesRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * If the request returned more than one page of results, submit another

@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.redshift.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Describes the default cluster parameters for a parameter group family.
  * </p>
  */
-public class DefaultClusterParameters {
+public class DefaultClusterParameters  implements Serializable  {
 
     /**
      * The name of the cluster parameter group family to which the engine

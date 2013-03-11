@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.simpleworkflow.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The configuration settings of a workflow type.
  * </p>
  */
-public class WorkflowTypeConfiguration {
+public class WorkflowTypeConfiguration  implements Serializable  {
 
     /**
      * The optional default maximum duration, specified when registering the

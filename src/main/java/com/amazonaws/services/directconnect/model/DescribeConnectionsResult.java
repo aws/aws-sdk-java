@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.directconnect.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * A structure containing a list of connections.
  * </p>
  */
-public class DescribeConnectionsResult {
+public class DescribeConnectionsResult  implements Serializable  {
 
     /**
      * A list of connections.

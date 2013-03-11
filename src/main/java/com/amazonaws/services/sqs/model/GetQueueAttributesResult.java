@@ -13,11 +13,12 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.sqs.model;
+import java.io.Serializable;
 
 /**
  * 
  */
-public class GetQueueAttributesResult {
+public class GetQueueAttributesResult  implements Serializable  {
 
     /**
      * A map of attributes to the respective values.

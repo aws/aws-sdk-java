@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.route53.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Empty response for the request.
  * </p>
  */
-public class DeleteHealthCheckResult {
+public class DeleteHealthCheckResult  implements Serializable  {
 
     /**
      * Returns a string representation of this object; useful for testing and

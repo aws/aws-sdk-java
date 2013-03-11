@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.dynamodb.model;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -22,7 +23,7 @@ package com.amazonaws.services.dynamodb.model;
  * 3k, triple the value, etc. Eventually-consistent reads consume half the resources of strictly consistent reads.
  * </p>
  */
-public class ProvisionedThroughput {
+public class ProvisionedThroughput  implements Serializable  {
 
     /**
      * <code>ReadCapacityUnits</code> are in terms of strictly consistent

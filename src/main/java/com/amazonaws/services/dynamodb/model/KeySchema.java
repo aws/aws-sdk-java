@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.dynamodb.model;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -21,7 +22,7 @@ package com.amazonaws.services.dynamodb.model;
  * A composite hash-and-range primary key contains two attribute values: a <code>HashKeyElement</code> and a <code>RangeKeyElement</code> .
  * </p>
  */
-public class KeySchema {
+public class KeySchema  implements Serializable  {
 
     /**
      * A hash key element is treated as the primary key, and can be a string

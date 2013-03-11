@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.cloudwatch.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The output for the ListMetrics action.
  * </p>
  */
-public class ListMetricsResult {
+public class ListMetricsResult  implements Serializable  {
 
     /**
      * A list of metrics used to generate statistics for an AWS account.

@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.autoscaling.model;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -89,7 +90,7 @@ package com.amazonaws.services.autoscaling.model;
  * scheduled actions might not function as expected.
  * </p>
  */
-public class ProcessType {
+public class ProcessType  implements Serializable  {
 
     /**
      * The name of a process.

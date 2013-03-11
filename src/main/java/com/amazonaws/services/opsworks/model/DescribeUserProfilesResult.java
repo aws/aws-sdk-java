@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.opsworks.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Contains the response to a <code>DescribeUserProfiles</code> request.
  * </p>
  */
-public class DescribeUserProfilesResult {
+public class DescribeUserProfilesResult  implements Serializable  {
 
     /**
      * A <code>Users</code> object that describes the specified users.

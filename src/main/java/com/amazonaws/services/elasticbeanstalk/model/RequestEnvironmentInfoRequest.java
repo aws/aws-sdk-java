@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.elasticbeanstalk.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#requestEnvironmentInfo(RequestEnvironmentInfoRequest) RequestEnvironmentInfo operation}.
@@ -35,7 +36,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#requestEnvironmentInfo(RequestEnvironmentInfoRequest)
  */
-public class RequestEnvironmentInfoRequest extends AmazonWebServiceRequest {
+public class RequestEnvironmentInfoRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The ID of the environment of the requested data. <p> If no such

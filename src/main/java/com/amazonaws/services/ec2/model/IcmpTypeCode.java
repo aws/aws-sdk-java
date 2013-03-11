@@ -13,11 +13,12 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * 
  */
-public class IcmpTypeCode {
+public class IcmpTypeCode  implements Serializable  {
 
     /**
      * For the ICMP protocol, the ICMP type. A value of <code>-1</code> is a

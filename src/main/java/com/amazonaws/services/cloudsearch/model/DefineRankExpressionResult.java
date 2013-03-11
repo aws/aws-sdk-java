@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.cloudsearch.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * A response message that contains the status of an updated <code>RankExpression</code> .
  * </p>
  */
-public class DefineRankExpressionResult {
+public class DefineRankExpressionResult  implements Serializable  {
 
     /**
      * The value of a <code>RankExpression</code> and its current status.

@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.directconnect.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * A connection represents the physical network connection between the Direct Connect location and the customer.
  * </p>
  */
-public class Connection {
+public class Connection  implements Serializable  {
 
     /**
      * ID of the connection. <p>Example: dxcon-fg5678gh <p>Default: None

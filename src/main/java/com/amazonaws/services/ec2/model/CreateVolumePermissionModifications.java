@@ -13,11 +13,12 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * Create Volume Permission Modifications
  */
-public class CreateVolumePermissionModifications {
+public class CreateVolumePermissionModifications  implements Serializable  {
 
     private java.util.List<CreateVolumePermission> add;
 

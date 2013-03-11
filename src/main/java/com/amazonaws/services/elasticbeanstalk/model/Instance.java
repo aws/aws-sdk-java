@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elasticbeanstalk.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The description of an Amazon EC2 instance.
  * </p>
  */
-public class Instance {
+public class Instance  implements Serializable  {
 
     /**
      * The ID of the Amazon EC2 instance.

@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.cloudsearch.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.cloudsearch.AmazonCloudSearch#updateDefaultSearchField(UpdateDefaultSearchFieldRequest) UpdateDefaultSearchField operation}.
@@ -24,7 +25,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudsearch.AmazonCloudSearch#updateDefaultSearchField(UpdateDefaultSearchFieldRequest)
  */
-public class UpdateDefaultSearchFieldRequest extends AmazonWebServiceRequest {
+public class UpdateDefaultSearchFieldRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * A string that represents the name of a domain. Domain names must be

@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.cloudfront.model;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -20,7 +21,7 @@ package com.amazonaws.services.cloudfront.model;
  * PathPattern in CacheBehavior elements.You must create exactly one default cache behavior.
  * </p>
  */
-public class DefaultCacheBehavior {
+public class DefaultCacheBehavior  implements Serializable  {
 
     /**
      * The value of ID for the origin that you want CloudFront to route

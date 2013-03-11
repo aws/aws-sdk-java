@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.route53.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.route53.AmazonRoute53#createHealthCheck(CreateHealthCheckRequest) CreateHealthCheck operation}.
@@ -28,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.route53.AmazonRoute53#createHealthCheck(CreateHealthCheckRequest)
  */
-public class CreateHealthCheckRequest extends AmazonWebServiceRequest {
+public class CreateHealthCheckRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * A unique string that identifies the request and that allows failed

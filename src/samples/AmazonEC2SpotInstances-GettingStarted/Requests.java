@@ -19,6 +19,8 @@ import java.util.List;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.PropertiesCredentials;
+import com.amazonaws.regions.Region;
+import com.amazonaws.regions.Regions;
 import com.amazonaws.services.ec2.AmazonEC2;
 import com.amazonaws.services.ec2.AmazonEC2Client;
 import com.amazonaws.services.ec2.model.CancelSpotInstanceRequestsRequest;
@@ -59,6 +61,8 @@ public class Requests {
                 InlineGettingStartedCodeSampleApp.class.getResourceAsStream("AwsCredentials.properties"));
 
         ec2 = new AmazonEC2Client(credentials);
+		Region usWest2 = Region.getRegion(Regions.US_WEST_2);
+		ec2.setRegion(usWest2);
     }
 
     /**

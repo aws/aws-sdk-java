@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#describeLicenses(DescribeLicensesRequest) DescribeLicenses operation}.
@@ -24,7 +25,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#describeLicenses(DescribeLicensesRequest)
  */
-public class DescribeLicensesRequest extends AmazonWebServiceRequest {
+public class DescribeLicensesRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * Specifies the license registration for which details are to be

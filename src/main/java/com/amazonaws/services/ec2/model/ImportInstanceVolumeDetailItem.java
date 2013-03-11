@@ -13,11 +13,12 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * Import Instance Volume Detail Item
  */
-public class ImportInstanceVolumeDetailItem {
+public class ImportInstanceVolumeDetailItem  implements Serializable  {
 
     private Long bytesConverted;
 

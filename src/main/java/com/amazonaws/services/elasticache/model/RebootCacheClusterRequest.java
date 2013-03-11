@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.elasticache.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticache.AmazonElastiCache#rebootCacheCluster(RebootCacheClusterRequest) RebootCacheCluster operation}.
@@ -26,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#rebootCacheCluster(RebootCacheClusterRequest)
  */
-public class RebootCacheClusterRequest extends AmazonWebServiceRequest {
+public class RebootCacheClusterRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The Cache Cluster identifier. This parameter is stored as a lowercase

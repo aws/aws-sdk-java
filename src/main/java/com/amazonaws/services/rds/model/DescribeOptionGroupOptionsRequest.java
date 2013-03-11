@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.rds.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#describeOptionGroupOptions(DescribeOptionGroupOptionsRequest) DescribeOptionGroupOptions operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#describeOptionGroupOptions(DescribeOptionGroupOptionsRequest)
  */
-public class DescribeOptionGroupOptionsRequest extends AmazonWebServiceRequest {
+public class DescribeOptionGroupOptionsRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * Options available for the given DB engine name to be described.

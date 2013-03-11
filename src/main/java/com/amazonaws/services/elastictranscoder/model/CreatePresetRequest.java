@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.elastictranscoder.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#createPreset(CreatePresetRequest) CreatePreset operation}.
@@ -34,7 +35,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#createPreset(CreatePresetRequest)
  */
-public class CreatePresetRequest extends AmazonWebServiceRequest {
+public class CreatePresetRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of the preset. We recommend that the name be unique within

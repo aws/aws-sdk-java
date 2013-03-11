@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.simpleworkflow.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Contains general information about a domain.
  * </p>
  */
-public class DomainInfo {
+public class DomainInfo  implements Serializable  {
 
     /**
      * The name of the domain. This name is unique within the account.

@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.simpleworkflow.model;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -44,7 +45,7 @@ package com.amazonaws.services.simpleworkflow.model;
  * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html"> Using IAM to Manage Access to Amazon SWF Workflows </a> .
  * </p>
  */
-public class ScheduleActivityTaskDecisionAttributes {
+public class ScheduleActivityTaskDecisionAttributes  implements Serializable  {
 
     /**
      * The type of the activity task to schedule. This field is required.

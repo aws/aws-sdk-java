@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.autoscaling.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.autoscaling.AmazonAutoScaling#describeMetricCollectionTypes(DescribeMetricCollectionTypesRequest) DescribeMetricCollectionTypes operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#describeMetricCollectionTypes(DescribeMetricCollectionTypesRequest)
  */
-public class DescribeMetricCollectionTypesRequest extends AmazonWebServiceRequest {
+public class DescribeMetricCollectionTypesRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * Returns a string representation of this object; useful for testing and

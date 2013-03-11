@@ -13,11 +13,12 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * Price Schedule Specification
  */
-public class PriceScheduleSpecification {
+public class PriceScheduleSpecification  implements Serializable  {
 
     private Long term;
 

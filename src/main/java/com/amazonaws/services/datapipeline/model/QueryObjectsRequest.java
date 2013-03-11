@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.datapipeline.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.datapipeline.DataPipeline#queryObjects(QueryObjectsRequest) QueryObjects operation}.
@@ -28,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.datapipeline.DataPipeline#queryObjects(QueryObjectsRequest)
  */
-public class QueryObjectsRequest extends AmazonWebServiceRequest {
+public class QueryObjectsRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * Identifier of the pipeline to be queried for object names.

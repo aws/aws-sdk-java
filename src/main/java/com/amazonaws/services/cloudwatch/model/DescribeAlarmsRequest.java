@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.cloudwatch.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.cloudwatch.AmazonCloudWatch#describeAlarms(DescribeAlarmsRequest) DescribeAlarms operation}.
@@ -24,7 +25,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudwatch.AmazonCloudWatch#describeAlarms(DescribeAlarmsRequest)
  */
-public class DescribeAlarmsRequest extends AmazonWebServiceRequest {
+public class DescribeAlarmsRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * A list of alarm names to retrieve information for.

@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.rds.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#describeEventSubscriptions(DescribeEventSubscriptionsRequest) DescribeEventSubscriptions operation}.
@@ -27,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#describeEventSubscriptions(DescribeEventSubscriptionsRequest)
  */
-public class DescribeEventSubscriptionsRequest extends AmazonWebServiceRequest {
+public class DescribeEventSubscriptionsRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of the RDS event notification subscription you want to

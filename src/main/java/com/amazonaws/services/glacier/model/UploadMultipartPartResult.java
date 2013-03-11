@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.glacier.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Contains the Amazon Glacier response to your request.
  * </p>
  */
-public class UploadMultipartPartResult {
+public class UploadMultipartPartResult  implements Serializable  {
 
     /**
      * The SHA256 tree hash that Amazon Glacier computed for the uploaded

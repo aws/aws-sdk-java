@@ -25,6 +25,7 @@ import com.amazonaws.AmazonServiceException;
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.ResponseMetadata;
 import com.amazonaws.handlers.AsyncHandler;
+import com.amazonaws.regions.Region;
 import com.amazonaws.services.sqs.AmazonSQSAsync;
 import com.amazonaws.services.sqs.model.AddPermissionRequest;
 import com.amazonaws.services.sqs.model.ChangeMessageVisibilityBatchRequest;
@@ -100,6 +101,14 @@ public class AmazonSQSBufferedAsyncClient implements AmazonSQSAsync {
     }
 
     
+    /* (non-Javadoc)
+     * @see com.amazonaws.services.sqs.AmazonSQS#setRegion(com.amazonaws.regions.Region)
+     */
+    @Override
+    public void setRegion(Region region) throws IllegalArgumentException {
+        realSQS.setRegion(region);
+    }
+
     public void setQueueAttributes(
             SetQueueAttributesRequest setQueueAttributesRequest)
             throws AmazonServiceException, AmazonClientException {

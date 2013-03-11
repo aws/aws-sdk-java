@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.elasticloadbalancing.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#setLoadBalancerListenerSSLCertificate(SetLoadBalancerListenerSSLCertificateRequest) SetLoadBalancerListenerSSLCertificate operation}.
@@ -24,7 +25,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#setLoadBalancerListenerSSLCertificate(SetLoadBalancerListenerSSLCertificateRequest)
  */
-public class SetLoadBalancerListenerSSLCertificateRequest extends AmazonWebServiceRequest {
+public class SetLoadBalancerListenerSSLCertificateRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of the the LoadBalancer.

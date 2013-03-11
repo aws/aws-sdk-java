@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.datapipeline.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Contains the output of the PutPipelineDefinition action.
  * </p>
  */
-public class PutPipelineDefinitionResult {
+public class PutPipelineDefinitionResult  implements Serializable  {
 
     /**
      * A list of the validation errors that are associated with the objects

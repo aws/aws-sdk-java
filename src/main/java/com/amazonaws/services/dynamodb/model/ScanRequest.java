@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.dynamodb.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.dynamodb.AmazonDynamoDB#scan(ScanRequest) Scan operation}.
@@ -26,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.dynamodb.AmazonDynamoDB#scan(ScanRequest)
  */
-public class ScanRequest extends AmazonWebServiceRequest {
+public class ScanRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of the table in which you want to scan. Allowed characters

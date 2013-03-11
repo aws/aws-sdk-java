@@ -13,11 +13,12 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elastictranscoder.model;
+import java.io.Serializable;
 
 /**
  * 
  */
-public class VideoParameters {
+public class VideoParameters  implements Serializable  {
 
     /**
      * The video codec for the output file. This value must be

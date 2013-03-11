@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#deleteTags(DeleteTagsRequest) DeleteTags operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#deleteTags(DeleteTagsRequest)
  */
-public class DeleteTagsRequest extends AmazonWebServiceRequest {
+public class DeleteTagsRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * A list of one or more resource IDs. This could be the ID of an AMI, an

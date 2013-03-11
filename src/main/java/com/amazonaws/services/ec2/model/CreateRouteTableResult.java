@@ -13,11 +13,12 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * Create Route Table Result
  */
-public class CreateRouteTableResult {
+public class CreateRouteTableResult  implements Serializable  {
 
     private RouteTable routeTable;
 

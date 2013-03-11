@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.identitymanagement.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#createRole(CreateRoleRequest) CreateRole operation}.
@@ -32,7 +33,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#createRole(CreateRoleRequest)
  */
-public class CreateRoleRequest extends AmazonWebServiceRequest {
+public class CreateRoleRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The path to the role. For more information about paths, see <a

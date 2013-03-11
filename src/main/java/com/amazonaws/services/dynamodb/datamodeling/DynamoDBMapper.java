@@ -845,7 +845,7 @@ public class DynamoDBMapper {
         config = mergeConfig(config);
         boolean consistentReads = (config.getConsistentReads() == ConsistentReads.CONSISTENT);
 
-        if (!validBatchGetRequest(itemsToGet)) {
+        if ( !validBatchGetRequest(itemsToGet) ) {
             return null;
         }
 
@@ -854,52 +854,52 @@ public class DynamoDBMapper {
         Map<String, List<Object>> resultSet = new HashMap<String, List<Object>>();
         int count = 0;
 
-        KeysAndAttributes keysAndAttributes = new KeysAndAttributes();
-        List<Key> keys = new LinkedList<Key>();
-        for (Class<?> clazz : itemsToGet.keySet()) {
+        for ( Class<?> clazz : itemsToGet.keySet() ) {
             String tableName = getTableName(clazz, config);
             List<KeyPair> keyPairs = itemsToGet.get(clazz);
-            if (keyPairs == null) {
+            if ( keyPairs == null ) {
                 continue;
             }
             classesByTableName.put(tableName, clazz);
 
             Method hashKeyGetter = reflector.getHashKeyGetter(clazz);
-            for (KeyPair keyPair : keyPairs) {
+            for ( KeyPair keyPair : keyPairs ) {
                 AttributeValue hashKeyElement = getHashKeyElement(keyPair.getHashKey(), hashKeyGetter);
 
                 // Determine the range key, if provided
                 AttributeValue rangeKeyElement = null;
-                if (keyPair.getRangeKey() != null) {
+                if ( keyPair.getRangeKey() != null ) {
                     Method rangeKeyMethod = reflector.getRangeKeyGetter(clazz);
-                    if (rangeKeyMethod == null) {
+                    if ( rangeKeyMethod == null ) {
                         throw new DynamoDBMappingException("Zero-parameter range key property must be annotated with "
                                 + DynamoDBRangeKey.class);
                     }
                     rangeKeyElement = getRangeKeyElement(keyPair.getRangeKey(), rangeKeyMethod);
                 }
 
-                keys.add(new Key().withHashKeyElement(hashKeyElement).withRangeKeyElement(rangeKeyElement));
-                count++;
+                if ( !requestItems.containsKey(tableName) ) {
+                    requestItems
+                            .put(tableName,
+                                    new KeysAndAttributes().withConsistentRead(consistentReads).withKeys(
+                                            new LinkedList<Key>()));
+                }
+
+                requestItems.get(tableName).getKeys()
+                        .add(new Key().withHashKeyElement(hashKeyElement).withRangeKeyElement(rangeKeyElement));
+
                 // Reach the maximum number which can be handled in a single
                 // batchGet
-                if (count == 100) {
-                    requestItems.put(tableName, new KeysAndAttributes().withKeys(keys).withConsistentRead(consistentReads));
+                if ( ++count == 100 ) {
                     processBatchGetRequest(classesByTableName, requestItems, resultSet);
-                    keys.clear();
                     requestItems.clear();
                     count = 0;
                 }
 
             }
-
-            keysAndAttributes.setKeys(keys);
-            requestItems.put(tableName, new KeysAndAttributes().withKeys(new ArrayList<Key>(keys)));
-            keys.clear();
         }
 
-        if (count > 0) {
-        processBatchGetRequest(classesByTableName, requestItems, resultSet);
+        if ( count > 0 ) {
+            processBatchGetRequest(classesByTableName, requestItems, resultSet);
         }
 
         return resultSet;
@@ -1395,9 +1395,19 @@ public class DynamoDBMapper {
     private Map<String, AttributeValueUpdate> transformAttributeUpdates(Class<?> clazz,
             Map<String, AttributeValueUpdate> updateValues) {
         Map<String, AttributeValue> item = convertToItem(updateValues);
-        transformAttributes(clazz, item);
+        item = transformAttributes(clazz, item);
         for(String key: item.keySet()) {
-            updateValues.get(key).getValue().setB(item.get(key).getB());
+            if (updateValues.containsKey(key)) {
+                updateValues.get(key).getValue()
+                    .withB(item.get(key).getB())
+                    .withBS(item.get(key).getBS())
+                    .withN(item.get(key).getN())
+                    .withNS(item.get(key).getNS())
+                    .withS(item.get(key).getS())
+                    .withSS(item.get(key).getSS());
+            } else {
+                updateValues.put(key, new AttributeValueUpdate(item.get(key), "PUT"));
+            }
         }
         return updateValues;
     }

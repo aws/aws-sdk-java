@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.route53.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * A complex type containing the response information for the new health check.
  * </p>
  */
-public class CreateHealthCheckResult {
+public class CreateHealthCheckResult  implements Serializable  {
 
     /**
      * A complex type that contains identifying information about the health

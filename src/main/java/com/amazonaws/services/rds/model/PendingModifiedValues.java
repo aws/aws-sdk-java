@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.rds.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * This data type is used as a response element in the ModifyDBInstance action.
  * </p>
  */
-public class PendingModifiedValues {
+public class PendingModifiedValues  implements Serializable  {
 
     /**
      * Contains the new <code>DBInstanceClass</code> for the DB Instance that

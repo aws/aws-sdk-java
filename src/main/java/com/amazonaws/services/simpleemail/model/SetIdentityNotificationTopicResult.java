@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.simpleemail.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * An empty element. Receiving this element indicates that the request completed successfully.
  * </p>
  */
-public class SetIdentityNotificationTopicResult {
+public class SetIdentityNotificationTopicResult  implements Serializable  {
 
     /**
      * Returns a string representation of this object; useful for testing and

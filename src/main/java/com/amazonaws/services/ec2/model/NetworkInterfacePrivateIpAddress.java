@@ -13,13 +13,16 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * Network Interface Private Ip Address
  */
-public class NetworkInterfacePrivateIpAddress {
+public class NetworkInterfacePrivateIpAddress  implements Serializable  {
 
     private String privateIpAddress;
+
+    private String privateDnsName;
 
     private Boolean primary;
 
@@ -55,6 +58,40 @@ public class NetworkInterfacePrivateIpAddress {
      */
     public NetworkInterfacePrivateIpAddress withPrivateIpAddress(String privateIpAddress) {
         this.privateIpAddress = privateIpAddress;
+        return this;
+    }
+    
+    
+    /**
+     * Returns the value of the PrivateDnsName property for this object.
+     *
+     * @return The value of the PrivateDnsName property for this object.
+     */
+    public String getPrivateDnsName() {
+        return privateDnsName;
+    }
+    
+    /**
+     * Sets the value of the PrivateDnsName property for this object.
+     *
+     * @param privateDnsName The new value for the PrivateDnsName property for this object.
+     */
+    public void setPrivateDnsName(String privateDnsName) {
+        this.privateDnsName = privateDnsName;
+    }
+    
+    /**
+     * Sets the value of the PrivateDnsName property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param privateDnsName The new value for the PrivateDnsName property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public NetworkInterfacePrivateIpAddress withPrivateDnsName(String privateDnsName) {
+        this.privateDnsName = privateDnsName;
         return this;
     }
     
@@ -149,6 +186,7 @@ public class NetworkInterfacePrivateIpAddress {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getPrivateIpAddress() != null) sb.append("PrivateIpAddress: " + getPrivateIpAddress() + ", ");
+        if (getPrivateDnsName() != null) sb.append("PrivateDnsName: " + getPrivateDnsName() + ", ");
         if (isPrimary() != null) sb.append("Primary: " + isPrimary() + ", ");
         if (getAssociation() != null) sb.append("Association: " + getAssociation() + ", ");
         sb.append("}");
@@ -161,6 +199,7 @@ public class NetworkInterfacePrivateIpAddress {
         int hashCode = 1;
         
         hashCode = prime * hashCode + ((getPrivateIpAddress() == null) ? 0 : getPrivateIpAddress().hashCode()); 
+        hashCode = prime * hashCode + ((getPrivateDnsName() == null) ? 0 : getPrivateDnsName().hashCode()); 
         hashCode = prime * hashCode + ((isPrimary() == null) ? 0 : isPrimary().hashCode()); 
         hashCode = prime * hashCode + ((getAssociation() == null) ? 0 : getAssociation().hashCode()); 
         return hashCode;
@@ -176,6 +215,8 @@ public class NetworkInterfacePrivateIpAddress {
         
         if (other.getPrivateIpAddress() == null ^ this.getPrivateIpAddress() == null) return false;
         if (other.getPrivateIpAddress() != null && other.getPrivateIpAddress().equals(this.getPrivateIpAddress()) == false) return false; 
+        if (other.getPrivateDnsName() == null ^ this.getPrivateDnsName() == null) return false;
+        if (other.getPrivateDnsName() != null && other.getPrivateDnsName().equals(this.getPrivateDnsName()) == false) return false; 
         if (other.isPrimary() == null ^ this.isPrimary() == null) return false;
         if (other.isPrimary() != null && other.isPrimary().equals(this.isPrimary()) == false) return false; 
         if (other.getAssociation() == null ^ this.getAssociation() == null) return false;

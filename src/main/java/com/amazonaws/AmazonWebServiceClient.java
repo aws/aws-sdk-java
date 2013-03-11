@@ -26,6 +26,8 @@ import com.amazonaws.http.AmazonHttpClient;
 import com.amazonaws.http.ExecutionContext;
 import com.amazonaws.http.HttpMethodName;
 import com.amazonaws.http.HttpRequest;
+import com.amazonaws.regions.Region;
+import com.amazonaws.regions.ServiceAbbreviations;
 
 /**
  * Abstract base class for Amazon Web Service Java clients.
@@ -106,6 +108,55 @@ public abstract class AmazonWebServiceClient {
         } catch (URISyntaxException e) {
             throw new IllegalArgumentException(e);
         }
+    }
+    
+    /**
+     * An alternative to {@link AmazonDynamoDB#setEndpoint(String)}, sets the
+     * regional endpoint for this client's service calls. Callers can use this
+     * method to control which AWS region they want to work with.
+     * <p>
+     * <b>This method is not threadsafe. A region should be configured when the
+     * client is created and before any service requests are made. Changing it
+     * afterwards creates inevitable race conditions for any service requests in
+     * transit or retrying.</b>
+     * <p>
+     * By default, all service endpoints in all regions use the https protocol.
+     * To use http instead, specify it in the {@link ClientConfiguration}
+     * supplied at construction.
+     * 
+     * @param region
+     *            The region this client will communicate with. See
+     *            {@link Region#getRegion(com.amazonaws.regions.Regions)} for
+     *            accessing a given region.
+     * @throws java.lang.IllegalArgumentException
+     *             If the given region is null, or if this service isn't
+     *             available in the given region. See
+     *             {@link Region#isServiceSupported(String)}
+     * @see Region#getRegion(com.amazonaws.regions.Regions)
+     */
+    public void setRegion(Region region) throws IllegalArgumentException {
+        if ( region == null )
+            throw new IllegalArgumentException("No region provided");
+        if ( !region.isServiceSupported(getServiceAbbreviation()) )
+            throw new IllegalArgumentException(getServiceAbbreviation() + " isn't supported in region "
+                    + region.getName());
+        String serviceEndpoint = region.getServiceEndpoint(getServiceAbbreviation());
+        int protocolIdx = serviceEndpoint.indexOf("://");
+        // Strip off the protocol to allow the client config to specify it
+        if ( protocolIdx >= 0 ) {
+            serviceEndpoint = serviceEndpoint.substring(protocolIdx + "://".length());
+        }
+        setEndpoint(serviceEndpoint);
+    }
+    
+    /**
+     * Returns the service abbreviation for this service, used for identifying
+     * service endpoints by region.
+     * 
+     * @see ServiceAbbreviations
+     */
+    protected String getServiceAbbreviation() {
+        return "NO_SERVICE_ABBREVIATION_SPECIFIED";
     }
 
     public void setConfiguration(ClientConfiguration clientConfiguration) {

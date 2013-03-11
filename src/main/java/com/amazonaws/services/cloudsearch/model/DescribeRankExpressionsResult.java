@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.cloudsearch.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * A response message that contains the rank expressions for a search domain.
  * </p>
  */
-public class DescribeRankExpressionsResult {
+public class DescribeRankExpressionsResult  implements Serializable  {
 
     /**
      * The rank expressions configured for the domain.

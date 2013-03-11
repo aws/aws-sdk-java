@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.simpleworkflow.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#listActivityTypes(ListActivityTypesRequest) ListActivityTypes operation}.
@@ -43,7 +44,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow#listActivityTypes(ListActivityTypesRequest)
  */
-public class ListActivityTypesRequest extends AmazonWebServiceRequest {
+public class ListActivityTypesRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of the domain in which the activity types have been

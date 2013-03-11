@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.cloudwatch.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The <code>DimensionFilter</code> data type is used to filter ListMetrics results.
  * </p>
  */
-public class DimensionFilter {
+public class DimensionFilter  implements Serializable  {
 
     /**
      * The dimension name to be matched.

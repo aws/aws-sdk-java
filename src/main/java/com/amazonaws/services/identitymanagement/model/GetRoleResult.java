@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.identitymanagement.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Contains the result of a successful invocation of the GetRole action.
  * </p>
  */
-public class GetRoleResult {
+public class GetRoleResult  implements Serializable  {
 
     /**
      * Information about the role.

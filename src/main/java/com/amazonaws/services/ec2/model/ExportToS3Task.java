@@ -13,11 +13,12 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * Export To S3 Task
  */
-public class ExportToS3Task {
+public class ExportToS3Task  implements Serializable  {
 
     private String diskImageFormat;
 

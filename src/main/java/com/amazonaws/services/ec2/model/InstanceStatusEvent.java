@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Represents an event that affects the status of an Amazon EC2 instance.
  * </p>
  */
-public class InstanceStatusEvent {
+public class InstanceStatusEvent  implements Serializable  {
 
     /**
      * The associated code of the event. Valid values: instance-reboot,

@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.sns.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * A wrapper type for the attributes of an SNS subscription.
  * </p>
  */
-public class Subscription {
+public class Subscription  implements Serializable  {
 
     /**
      * The subscription's ARN.

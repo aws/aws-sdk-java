@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.autoscaling.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The <code>AutoScalingInstanceDetails</code> data type.
  * </p>
  */
-public class AutoScalingInstanceDetails {
+public class AutoScalingInstanceDetails  implements Serializable  {
 
     /**
      * The instance ID of the Amazon EC2 instance.

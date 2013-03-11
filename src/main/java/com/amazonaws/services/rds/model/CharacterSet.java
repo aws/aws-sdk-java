@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.rds.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * This data type is used as a response element in the action DescribeDBEngineVersions.
  * </p>
  */
-public class CharacterSet {
+public class CharacterSet  implements Serializable  {
 
     /**
      * The name of the character set.

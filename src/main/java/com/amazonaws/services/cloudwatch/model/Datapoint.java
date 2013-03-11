@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.cloudwatch.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The <code>Datapoint</code> data type encapsulates the statistical data that Amazon CloudWatch computes from metric data.
  * </p>
  */
-public class Datapoint {
+public class Datapoint  implements Serializable  {
 
     /**
      * The time stamp used for the datapoint.

@@ -13,11 +13,12 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.dynamodb.model;
+import java.io.Serializable;
 
 /**
  * Update Item Result
  */
-public class UpdateItemResult {
+public class UpdateItemResult  implements Serializable  {
 
     /**
      * A map of attribute name-value pairs, but only if the

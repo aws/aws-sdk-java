@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.sns.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#publish(PublishRequest) Publish operation}.
@@ -25,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.sns.AmazonSNS#publish(PublishRequest)
  */
-public class PublishRequest extends AmazonWebServiceRequest {
+public class PublishRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The topic you want to publish to.

@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elasticloadbalancing.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The output for the DeregisterInstancesFromLoadBalancer action.
  * </p>
  */
-public class DeregisterInstancesFromLoadBalancerResult {
+public class DeregisterInstancesFromLoadBalancerResult  implements Serializable  {
 
     /**
      * An updated list of remaining instances registered with the

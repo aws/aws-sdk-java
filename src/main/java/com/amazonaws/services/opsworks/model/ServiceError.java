@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.opsworks.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Describes an OpsWorks service error.
  * </p>
  */
-public class ServiceError {
+public class ServiceError  implements Serializable  {
 
     /**
      * The error ID.

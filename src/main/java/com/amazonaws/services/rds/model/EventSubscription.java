@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.rds.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Contains the results of a successful invocation of the DescribeEventSubscriptions action.
  * </p>
  */
-public class EventSubscription {
+public class EventSubscription  implements Serializable  {
 
     /**
      * Not used.

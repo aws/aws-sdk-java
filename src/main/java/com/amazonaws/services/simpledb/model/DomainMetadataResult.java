@@ -13,11 +13,12 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.simpledb.model;
+import java.io.Serializable;
 
 /**
  * Domain Metadata Result
  */
-public class DomainMetadataResult {
+public class DomainMetadataResult  implements Serializable  {
 
     /**
      * The number of all items in the domain.

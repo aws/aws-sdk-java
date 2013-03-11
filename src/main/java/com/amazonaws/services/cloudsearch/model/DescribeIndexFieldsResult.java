@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.cloudsearch.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * A response message that contains the index fields for a search domain.
  * </p>
  */
-public class DescribeIndexFieldsResult {
+public class DescribeIndexFieldsResult  implements Serializable  {
 
     /**
      * The index fields configured for the domain.

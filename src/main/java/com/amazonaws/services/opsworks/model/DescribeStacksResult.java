@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.opsworks.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Contains the response to a <code>DescribeStacks</code> request.
  * </p>
  */
-public class DescribeStacksResult {
+public class DescribeStacksResult  implements Serializable  {
 
     /**
      * An array of <code>Stack</code> objects that describe the stacks.

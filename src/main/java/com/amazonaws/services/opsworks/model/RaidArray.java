@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.opsworks.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Describes an instance's RAID array.
  * </p>
  */
-public class RaidArray {
+public class RaidArray  implements Serializable  {
 
     /**
      * The array ID.

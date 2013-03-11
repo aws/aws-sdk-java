@@ -13,11 +13,12 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elastictranscoder.model;
+import java.io.Serializable;
 
 /**
  * 
  */
-public class TestRoleResult {
+public class TestRoleResult  implements Serializable  {
 
     /**
      * If the operation is successful, this value is <code>true</code>;

@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#detachInternetGateway(DetachInternetGatewayRequest) DetachInternetGateway operation}.
@@ -27,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#detachInternetGateway(DetachInternetGatewayRequest)
  */
-public class DetachInternetGatewayRequest extends AmazonWebServiceRequest {
+public class DetachInternetGatewayRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The ID of the Internet gateway to detach.

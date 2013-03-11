@@ -13,11 +13,12 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elastictranscoder.model;
+import java.io.Serializable;
 
 /**
  * 
  */
-public class Preset {
+public class Preset  implements Serializable  {
 
     /**
      * Identifier for the new preset. You use this value to get settings for

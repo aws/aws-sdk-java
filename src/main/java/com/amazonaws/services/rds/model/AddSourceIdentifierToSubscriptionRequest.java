@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.rds.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#addSourceIdentifierToSubscription(AddSourceIdentifierToSubscriptionRequest) AddSourceIdentifierToSubscription operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#addSourceIdentifierToSubscription(AddSourceIdentifierToSubscriptionRequest)
  */
-public class AddSourceIdentifierToSubscriptionRequest extends AmazonWebServiceRequest {
+public class AddSourceIdentifierToSubscriptionRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of the RDS event notification subscription you want to add a

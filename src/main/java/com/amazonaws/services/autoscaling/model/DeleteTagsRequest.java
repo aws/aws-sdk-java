@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.autoscaling.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.autoscaling.AmazonAutoScaling#deleteTags(DeleteTagsRequest) DeleteTags operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.autoscaling.AmazonAutoScaling#deleteTags(DeleteTagsRequest)
  */
-public class DeleteTagsRequest extends AmazonWebServiceRequest {
+public class DeleteTagsRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * Each tag should be defined by its resource type, resource ID, key,

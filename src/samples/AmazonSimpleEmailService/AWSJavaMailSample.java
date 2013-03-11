@@ -26,6 +26,8 @@ import javax.mail.internet.MimeMessage;
 
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.ClasspathPropertiesFileCredentialsProvider;
+import com.amazonaws.regions.Region;
+import com.amazonaws.regions.Regions;
 import com.amazonaws.services.simpleemail.AWSJavaMailTransport;
 import com.amazonaws.services.simpleemail.AmazonSimpleEmailService;
 import com.amazonaws.services.simpleemail.AmazonSimpleEmailServiceClient;
@@ -60,17 +62,19 @@ public class AWSJavaMailSample {
         /*
          * This credentials provider implementation loads your AWS credentials
          * from a properties file at the root of your classpath.
-         * 
+         *
          * Important: Be sure to fill in your AWS access credentials in the
          *            AwsCredentials.properties file before you try to run this sample.
          *            http://aws.amazon.com/security-credentials
          */
         AWSCredentials credentials = new ClasspathPropertiesFileCredentialsProvider().getCredentials();
 		AmazonSimpleEmailService ses = new AmazonSimpleEmailServiceClient(credentials);
+		Region usWest2 = Region.getRegion(Regions.US_WEST_2);
+		ses.setRegion(usWest2);
 
         /*
          * Before you can send email via Amazon SES, you need to verify that you
-         * own the email address from which you?ll be sending email. This will
+         * own the email address from which you???ll be sending email. This will
          * trigger a verification email, which will contain a link that you can
          * click on to complete the verification process.
          */

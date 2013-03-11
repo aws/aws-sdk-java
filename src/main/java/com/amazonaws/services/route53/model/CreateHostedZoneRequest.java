@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.route53.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.route53.AmazonRoute53#createHostedZone(CreateHostedZoneRequest) CreateHostedZone operation}.
@@ -38,7 +39,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.route53.AmazonRoute53#createHostedZone(CreateHostedZoneRequest)
  */
-public class CreateHostedZoneRequest extends AmazonWebServiceRequest {
+public class CreateHostedZoneRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of the domain. This must be a fully-specified domain, for

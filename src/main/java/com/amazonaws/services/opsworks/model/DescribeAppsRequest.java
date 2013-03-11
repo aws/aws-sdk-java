@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.opsworks.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.opsworks.AWSOpsWorks#describeApps(DescribeAppsRequest) DescribeApps operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#describeApps(DescribeAppsRequest)
  */
-public class DescribeAppsRequest extends AmazonWebServiceRequest {
+public class DescribeAppsRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The app stack ID. <!-- Could this be more than one stack ID for more

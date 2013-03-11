@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.rds.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#restoreDBInstanceFromDBSnapshot(RestoreDBInstanceFromDBSnapshotRequest) RestoreDBInstanceFromDBSnapshot operation}.
@@ -24,7 +25,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#restoreDBInstanceFromDBSnapshot(RestoreDBInstanceFromDBSnapshotRequest)
  */
-public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequest {
+public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The identifier for the DB Snapshot to restore from. <p>Constraints:

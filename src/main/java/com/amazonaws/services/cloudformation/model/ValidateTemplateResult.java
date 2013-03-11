@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.cloudformation.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The output for ValidateTemplate action.
  * </p>
  */
-public class ValidateTemplateResult {
+public class ValidateTemplateResult  implements Serializable  {
 
     /**
      * A list of <code>TemplateParameter</code> structures.

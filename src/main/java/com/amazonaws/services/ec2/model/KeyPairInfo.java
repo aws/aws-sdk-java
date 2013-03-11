@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -22,7 +23,7 @@ package com.amazonaws.services.ec2.model;
  * The private key material is only available when initially creating the key pair.
  * </p>
  */
-public class KeyPairInfo {
+public class KeyPairInfo  implements Serializable  {
 
     /**
      * The name of the key pair.

@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.datapipeline.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.datapipeline.DataPipeline#activatePipeline(ActivatePipelineRequest) ActivatePipeline operation}.
@@ -27,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.datapipeline.DataPipeline#activatePipeline(ActivatePipelineRequest)
  */
-public class ActivatePipelineRequest extends AmazonWebServiceRequest {
+public class ActivatePipelineRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The identifier of the pipeline to activate.

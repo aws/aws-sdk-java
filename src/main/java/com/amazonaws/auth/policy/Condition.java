@@ -60,7 +60,7 @@ import com.amazonaws.auth.policy.conditions.NumericCondition.NumericComparisonTy
  * should use the many available conditions and condition factories in the
  * com.amazonaws.auth.policy.conditions package.
  */
-public abstract class Condition {
+public class Condition {
     protected String type;
     protected String conditionKey;
     protected List<String> values;
@@ -93,7 +93,7 @@ public abstract class Condition {
      * Your policy is evaluated for each incoming request, and condition keys
      * specify what information to pull out of those incoming requests and plug
      * into the conditions in your policy.
-     * 
+     *
      * @return The name of the condition key involved in this condition.
      */
     public String getConditionKey() {
@@ -145,16 +145,16 @@ public abstract class Condition {
     public void setValues(List<String> values) {
         this.values = values;
     }
-    
+
     /**
      * Fluent version of {@link Condition#setType(String)}
      * @return this
      */
     public Condition withType(String type) {
         setType(type);
-        return this;        
+        return this;
     }
-    
+
     /**
      * Fluent version of {@link Condition#setConditionKey(String)}
      * @return this
@@ -163,7 +163,7 @@ public abstract class Condition {
         setConditionKey(key);
         return this;
     }
-    
+
     /**
      * Fluent version of {@link Condition#setValues(List)}
      * @return this
@@ -172,8 +172,8 @@ public abstract class Condition {
         setValues(Arrays.asList(values));
         return this;
     }
-    
-    
+
+
     /**
      * Fluent version of {@link Condition#setValues(List)}
      * @return this

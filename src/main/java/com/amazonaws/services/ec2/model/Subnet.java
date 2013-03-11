@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The Subnet data type.
  * </p>
  */
-public class Subnet {
+public class Subnet  implements Serializable  {
 
     /**
      * Specifies the ID of the subnet.
@@ -53,6 +54,10 @@ public class Subnet {
      * Specifies the Availability Zone the subnet is in.
      */
     private String availabilityZone;
+
+    private Boolean defaultForAz;
+
+    private Boolean mapPublicIpOnLaunch;
 
     /**
      * A list of tags for the Subnet.
@@ -282,6 +287,92 @@ public class Subnet {
     
     
     /**
+     * Returns the value of the DefaultForAz property for this object.
+     *
+     * @return The value of the DefaultForAz property for this object.
+     */
+    public Boolean isDefaultForAz() {
+        return defaultForAz;
+    }
+    
+    /**
+     * Sets the value of the DefaultForAz property for this object.
+     *
+     * @param defaultForAz The new value for the DefaultForAz property for this object.
+     */
+    public void setDefaultForAz(Boolean defaultForAz) {
+        this.defaultForAz = defaultForAz;
+    }
+    
+    /**
+     * Sets the value of the DefaultForAz property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param defaultForAz The new value for the DefaultForAz property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public Subnet withDefaultForAz(Boolean defaultForAz) {
+        this.defaultForAz = defaultForAz;
+        return this;
+    }
+    
+    
+    /**
+     * Returns the value of the DefaultForAz property for this object.
+     *
+     * @return The value of the DefaultForAz property for this object.
+     */
+    public Boolean getDefaultForAz() {
+        return defaultForAz;
+    }
+    
+    /**
+     * Returns the value of the MapPublicIpOnLaunch property for this object.
+     *
+     * @return The value of the MapPublicIpOnLaunch property for this object.
+     */
+    public Boolean isMapPublicIpOnLaunch() {
+        return mapPublicIpOnLaunch;
+    }
+    
+    /**
+     * Sets the value of the MapPublicIpOnLaunch property for this object.
+     *
+     * @param mapPublicIpOnLaunch The new value for the MapPublicIpOnLaunch property for this object.
+     */
+    public void setMapPublicIpOnLaunch(Boolean mapPublicIpOnLaunch) {
+        this.mapPublicIpOnLaunch = mapPublicIpOnLaunch;
+    }
+    
+    /**
+     * Sets the value of the MapPublicIpOnLaunch property for this object.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param mapPublicIpOnLaunch The new value for the MapPublicIpOnLaunch property for this object.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public Subnet withMapPublicIpOnLaunch(Boolean mapPublicIpOnLaunch) {
+        this.mapPublicIpOnLaunch = mapPublicIpOnLaunch;
+        return this;
+    }
+    
+    
+    /**
+     * Returns the value of the MapPublicIpOnLaunch property for this object.
+     *
+     * @return The value of the MapPublicIpOnLaunch property for this object.
+     */
+    public Boolean getMapPublicIpOnLaunch() {
+        return mapPublicIpOnLaunch;
+    }
+    
+    /**
      * A list of tags for the Subnet.
      *
      * @return A list of tags for the Subnet.
@@ -368,6 +459,8 @@ public class Subnet {
         if (getCidrBlock() != null) sb.append("CidrBlock: " + getCidrBlock() + ", ");
         if (getAvailableIpAddressCount() != null) sb.append("AvailableIpAddressCount: " + getAvailableIpAddressCount() + ", ");
         if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ", ");
+        if (isDefaultForAz() != null) sb.append("DefaultForAz: " + isDefaultForAz() + ", ");
+        if (isMapPublicIpOnLaunch() != null) sb.append("MapPublicIpOnLaunch: " + isMapPublicIpOnLaunch() + ", ");
         if (getTags() != null) sb.append("Tags: " + getTags() + ", ");
         sb.append("}");
         return sb.toString();
@@ -384,6 +477,8 @@ public class Subnet {
         hashCode = prime * hashCode + ((getCidrBlock() == null) ? 0 : getCidrBlock().hashCode()); 
         hashCode = prime * hashCode + ((getAvailableIpAddressCount() == null) ? 0 : getAvailableIpAddressCount().hashCode()); 
         hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode()); 
+        hashCode = prime * hashCode + ((isDefaultForAz() == null) ? 0 : isDefaultForAz().hashCode()); 
+        hashCode = prime * hashCode + ((isMapPublicIpOnLaunch() == null) ? 0 : isMapPublicIpOnLaunch().hashCode()); 
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode()); 
         return hashCode;
     }
@@ -408,6 +503,10 @@ public class Subnet {
         if (other.getAvailableIpAddressCount() != null && other.getAvailableIpAddressCount().equals(this.getAvailableIpAddressCount()) == false) return false; 
         if (other.getAvailabilityZone() == null ^ this.getAvailabilityZone() == null) return false;
         if (other.getAvailabilityZone() != null && other.getAvailabilityZone().equals(this.getAvailabilityZone()) == false) return false; 
+        if (other.isDefaultForAz() == null ^ this.isDefaultForAz() == null) return false;
+        if (other.isDefaultForAz() != null && other.isDefaultForAz().equals(this.isDefaultForAz()) == false) return false; 
+        if (other.isMapPublicIpOnLaunch() == null ^ this.isMapPublicIpOnLaunch() == null) return false;
+        if (other.isMapPublicIpOnLaunch() != null && other.isMapPublicIpOnLaunch().equals(this.isMapPublicIpOnLaunch()) == false) return false; 
         if (other.getTags() == null ^ this.getTags() == null) return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false) return false; 
         return true;

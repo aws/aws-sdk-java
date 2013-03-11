@@ -13,11 +13,12 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.simpledb.model;
+import java.io.Serializable;
 
 /**
  * Get Attributes Result
  */
-public class GetAttributesResult {
+public class GetAttributesResult  implements Serializable  {
 
     /**
      * The list of attributes returned by the operation.

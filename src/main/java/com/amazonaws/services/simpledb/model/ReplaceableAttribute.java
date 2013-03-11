@@ -13,12 +13,13 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.simpledb.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * </p>
  */
-public class ReplaceableAttribute {
+public class ReplaceableAttribute  implements Serializable  {
 
     /**
      * The name of the replaceable attribute.

@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.storagegateway.model;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -26,7 +27,7 @@ package com.amazonaws.services.storagegateway.model;
  * 
  * </ul>
  */
-public class CreateSnapshotFromVolumeRecoveryPointResult {
+public class CreateSnapshotFromVolumeRecoveryPointResult  implements Serializable  {
 
     /**
      * The snapshot ID that is used to refer to the snapshot in future

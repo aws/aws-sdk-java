@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.identitymanagement.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Contains the result of a successful invocation of the ListInstanceProfiles action.
  * </p>
  */
-public class ListInstanceProfilesResult {
+public class ListInstanceProfilesResult  implements Serializable  {
 
     /**
      * A list of instance profiles.

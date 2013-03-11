@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#createRoute(CreateRouteRequest) CreateRoute operation}.
@@ -41,7 +42,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#createRoute(CreateRouteRequest)
  */
-public class CreateRouteRequest extends AmazonWebServiceRequest {
+public class CreateRouteRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The ID of the route table where the route will be added.

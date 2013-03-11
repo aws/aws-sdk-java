@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.identitymanagement.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Contains the result of a successful invocation of the GetUserPolicy action.
  * </p>
  */
-public class GetUserPolicyResult {
+public class GetUserPolicyResult  implements Serializable  {
 
     /**
      * The user the policy is associated with.

@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#deleteKeyPair(DeleteKeyPairRequest) DeleteKeyPair operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#deleteKeyPair(DeleteKeyPairRequest)
  */
-public class DeleteKeyPairRequest extends AmazonWebServiceRequest {
+public class DeleteKeyPairRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of the Amazon EC2 key pair to delete.

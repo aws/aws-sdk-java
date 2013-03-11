@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.storagegateway.model;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -25,7 +26,7 @@ package com.amazonaws.services.storagegateway.model;
  * 
  * </ul>
  */
-public class CreateCachediSCSIVolumeResult {
+public class CreateCachediSCSIVolumeResult  implements Serializable  {
 
     /**
      * The ARN of the configured volume.

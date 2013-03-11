@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.dynamodb.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.dynamodb.AmazonDynamoDB#listTables(ListTablesRequest) ListTables operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.dynamodb.AmazonDynamoDB#listTables(ListTablesRequest)
  */
-public class ListTablesRequest extends AmazonWebServiceRequest {
+public class ListTablesRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of the table that starts the list. If you already ran a

@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.simpleworkflow.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Provides details of the <code>DecisionTaskTimedOut</code> event.
  * </p>
  */
-public class DecisionTaskTimedOutEventAttributes {
+public class DecisionTaskTimedOutEventAttributes  implements Serializable  {
 
     /**
      * The type of timeout that expired before the decision task could be

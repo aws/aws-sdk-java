@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.directconnect.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Cost description.
  * </p>
  */
-public class ConnectionCost {
+public class ConnectionCost  implements Serializable  {
 
     /**
      * The name of the cost item. <p>Example: Inbound data transfer

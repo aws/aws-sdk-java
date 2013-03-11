@@ -21,6 +21,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import com.amazonaws.auth.policy.internal.JsonPolicyReader;
 import com.amazonaws.auth.policy.internal.JsonPolicyWriter;
 
 /**
@@ -189,10 +190,10 @@ public class Policy {
      * <p>
      * Any statements that don't have a statement ID yet will automatically be
      * assigned a unique ID within this policy.
-     * 
+     *
      * @param statements
      *            The collection of statements included in this policy.
-     * 
+     *
      * @return The updated policy object, so that additional method calls can be
      *         chained together.
      */
@@ -212,16 +213,32 @@ public class Policy {
         return new JsonPolicyWriter().writePolicyToString(this);
     }
 
+    /**
+     * Returns an AWS access control policy object generated from JSON string.
+     *
+     * @param jsonString
+     *            The JSON string representation of this AWS access control policy.
+     *
+     * @return An AWS access control policy object.
+     *
+     * @throws IllegalArgumentException
+     *      If the specified JSON string is null or invalid and cannot be
+     *      converted to an AWS policy object.
+     */
+    public static Policy fromJson(String jsonString) {
+        return new JsonPolicyReader().createPolicyFromJsonString(jsonString);
+    }
+
     private void assignUniqueStatementIds() {
         Set<String> usedStatementIds = new HashSet<String>();
         for (Statement statement : statements) {
             if (statement.getId() != null) usedStatementIds.add(statement.getId());
         }
-        
+
         int counter = 0;
         for (Statement statement : statements) {
             if (statement.getId() != null) continue;
-            
+
             while (usedStatementIds.contains(Integer.toString(++counter)));
             statement.setId(Integer.toString(counter));
         }

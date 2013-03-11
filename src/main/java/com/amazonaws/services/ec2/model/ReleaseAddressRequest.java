@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#releaseAddress(ReleaseAddressRequest) ReleaseAddress operation}.
@@ -32,7 +33,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#releaseAddress(ReleaseAddressRequest)
  */
-public class ReleaseAddressRequest extends AmazonWebServiceRequest {
+public class ReleaseAddressRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The elastic IP address that you are releasing from your account.

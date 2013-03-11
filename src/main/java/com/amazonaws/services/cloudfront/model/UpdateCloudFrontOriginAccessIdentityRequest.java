@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.cloudfront.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.cloudfront.AmazonCloudFront#updateCloudFrontOriginAccessIdentity(UpdateCloudFrontOriginAccessIdentityRequest) UpdateCloudFrontOriginAccessIdentity operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudfront.AmazonCloudFront#updateCloudFrontOriginAccessIdentity(UpdateCloudFrontOriginAccessIdentityRequest)
  */
-public class UpdateCloudFrontOriginAccessIdentityRequest extends AmazonWebServiceRequest {
+public class UpdateCloudFrontOriginAccessIdentityRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The identity's configuration information.

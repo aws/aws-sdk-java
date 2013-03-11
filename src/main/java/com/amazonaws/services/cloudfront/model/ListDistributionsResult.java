@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.cloudfront.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The returned result of the corresponding request.
  * </p>
  */
-public class ListDistributionsResult {
+public class ListDistributionsResult  implements Serializable  {
 
     /**
      * The DistributionList type.

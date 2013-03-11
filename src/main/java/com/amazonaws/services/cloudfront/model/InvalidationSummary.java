@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.cloudfront.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Summary of an invalidation request.
  * </p>
  */
-public class InvalidationSummary {
+public class InvalidationSummary  implements Serializable  {
 
     /**
      * The unique ID for an invalidation request.

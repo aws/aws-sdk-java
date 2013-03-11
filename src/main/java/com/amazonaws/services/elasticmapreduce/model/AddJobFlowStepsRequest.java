@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.elasticmapreduce.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticmapreduce.AmazonElasticMapReduce#addJobFlowSteps(AddJobFlowStepsRequest) AddJobFlowSteps operation}.
@@ -42,7 +43,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticmapreduce.AmazonElasticMapReduce#addJobFlowSteps(AddJobFlowStepsRequest)
  */
-public class AddJobFlowStepsRequest extends AmazonWebServiceRequest {
+public class AddJobFlowStepsRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * A string that uniquely identifies the job flow. This identifier is

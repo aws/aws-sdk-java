@@ -13,11 +13,12 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * Replace Network Acl Association Result
  */
-public class ReplaceNetworkAclAssociationResult {
+public class ReplaceNetworkAclAssociationResult  implements Serializable  {
 
     private String newAssociationId;
 

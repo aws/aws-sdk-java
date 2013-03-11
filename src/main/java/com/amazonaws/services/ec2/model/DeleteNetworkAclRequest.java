@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#deleteNetworkAcl(DeleteNetworkAclRequest) DeleteNetworkAcl operation}.
@@ -24,7 +25,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#deleteNetworkAcl(DeleteNetworkAclRequest)
  */
-public class DeleteNetworkAclRequest extends AmazonWebServiceRequest {
+public class DeleteNetworkAclRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The ID of the network ACL to be deleted.

@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elasticmapreduce.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Reports the configuration of a bootstrap action in a job flow.
  * </p>
  */
-public class BootstrapActionDetail {
+public class BootstrapActionDetail  implements Serializable  {
 
     /**
      * A description of the bootstrap action.

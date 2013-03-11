@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.storagegateway.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.storagegateway.AWSStorageGateway#createStorediSCSIVolume(CreateStorediSCSIVolumeRequest) CreateStorediSCSIVolume operation}.
@@ -32,7 +33,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.storagegateway.AWSStorageGateway#createStorediSCSIVolume(CreateStorediSCSIVolumeRequest)
  */
-public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest {
+public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The Amazon Resource Name (ARN) of the gateway. Use the

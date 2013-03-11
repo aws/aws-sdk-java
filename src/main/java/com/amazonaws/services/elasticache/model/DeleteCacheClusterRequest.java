@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.elasticache.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticache.AmazonElastiCache#deleteCacheCluster(DeleteCacheClusterRequest) DeleteCacheCluster operation}.
@@ -24,7 +25,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#deleteCacheCluster(DeleteCacheClusterRequest)
  */
-public class DeleteCacheClusterRequest extends AmazonWebServiceRequest {
+public class DeleteCacheClusterRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The Cache Cluster identifier for the Cache Cluster to be deleted. This

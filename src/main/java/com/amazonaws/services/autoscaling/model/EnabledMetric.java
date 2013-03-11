@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.autoscaling.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The <code>EnabledMetric</code> data type.
  * </p>
  */
-public class EnabledMetric {
+public class EnabledMetric  implements Serializable  {
 
     /**
      * The name of the enabled metric.

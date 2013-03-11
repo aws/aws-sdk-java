@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.simpleemail.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Represents the user's current activity limits returned from a successful <code>GetSendQuota</code> request.
  * </p>
  */
-public class GetSendQuotaResult {
+public class GetSendQuotaResult  implements Serializable  {
 
     /**
      * The maximum number of emails the user is allowed to send in a 24-hour

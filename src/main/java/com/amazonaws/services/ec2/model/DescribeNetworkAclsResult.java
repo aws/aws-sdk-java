@@ -13,11 +13,12 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * Describe Network Acls Result
  */
-public class DescribeNetworkAclsResult {
+public class DescribeNetworkAclsResult  implements Serializable  {
 
     private java.util.List<NetworkAcl> networkAcls;
 

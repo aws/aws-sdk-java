@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.simpleemail.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Represents the verification attributes for a list of identities.
  * </p>
  */
-public class GetIdentityVerificationAttributesResult {
+public class GetIdentityVerificationAttributesResult  implements Serializable  {
 
     /**
      * A map of Identities to IdentityVerificationAttributes objects.

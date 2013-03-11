@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.cloudfront.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.cloudfront.AmazonCloudFront#listInvalidations(ListInvalidationsRequest) ListInvalidations operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudfront.AmazonCloudFront#listInvalidations(ListInvalidationsRequest)
  */
-public class ListInvalidationsRequest extends AmazonWebServiceRequest {
+public class ListInvalidationsRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The distribution's id.

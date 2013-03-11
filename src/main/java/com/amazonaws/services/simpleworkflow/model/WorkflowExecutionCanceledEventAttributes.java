@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.simpleworkflow.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Provides details of the <code>WorkflowExecutionCanceled</code> event.
  * </p>
  */
-public class WorkflowExecutionCanceledEventAttributes {
+public class WorkflowExecutionCanceledEventAttributes  implements Serializable  {
 
     /**
      * Details for the cancellation (if any).

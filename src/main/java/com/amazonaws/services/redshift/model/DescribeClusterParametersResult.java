@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.redshift.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Contains the output from the DescribeClusterParameters action.
  * </p>
  */
-public class DescribeClusterParametersResult {
+public class DescribeClusterParametersResult  implements Serializable  {
 
     /**
      * A list of <a>Parameter</a> instances. Each instance lists the

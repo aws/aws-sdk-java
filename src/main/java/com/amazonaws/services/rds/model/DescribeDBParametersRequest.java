@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.rds.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#describeDBParameters(DescribeDBParametersRequest) DescribeDBParameters operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#describeDBParameters(DescribeDBParametersRequest)
  */
-public class DescribeDBParametersRequest extends AmazonWebServiceRequest {
+public class DescribeDBParametersRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of a specific DB Parameter Group to return details for.

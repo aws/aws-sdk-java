@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.datapipeline.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Contains pipeline metadata.
  * </p>
  */
-public class PipelineDescription {
+public class PipelineDescription  implements Serializable  {
 
     /**
      * The pipeline identifier that was assigned by AWS Data Pipeline. This

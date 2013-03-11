@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.cloudwatch.model;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -20,7 +21,7 @@ package com.amazonaws.services.cloudwatch.model;
  * describes a specific metric.
  * </p>
  */
-public class StatisticSet {
+public class StatisticSet  implements Serializable  {
 
     /**
      * The number of samples used for the statistic set.

@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.cloudfront.model;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -24,7 +25,7 @@ package com.amazonaws.services.cloudfront.model;
  * specify all of the trusted signers that you want to include in the updated distribution.
  * </p>
  */
-public class TrustedSigners {
+public class TrustedSigners  implements Serializable  {
 
     /**
      * Specifies whether you want to require end users to use signed URLs to

@@ -13,11 +13,12 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * Spot Instance Request
  */
-public class SpotInstanceRequest {
+public class SpotInstanceRequest  implements Serializable  {
 
     private String spotInstanceRequestId;
 

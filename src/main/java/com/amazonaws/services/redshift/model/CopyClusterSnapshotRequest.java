@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.redshift.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.redshift.AmazonRedshift#copyClusterSnapshot(CopyClusterSnapshotRequest) CopyClusterSnapshot operation}.
@@ -33,7 +34,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.redshift.AmazonRedshift#copyClusterSnapshot(CopyClusterSnapshotRequest)
  */
-public class CopyClusterSnapshotRequest extends AmazonWebServiceRequest {
+public class CopyClusterSnapshotRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The identifier for the source snapshot. <p>Constraints: <ul> <li>Must

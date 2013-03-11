@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elasticbeanstalk.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * A regular expression representing a restriction on a string configuration option value.
  * </p>
  */
-public class OptionRestrictionRegex {
+public class OptionRestrictionRegex  implements Serializable  {
 
     /**
      * The regular expression pattern that a string configuration option

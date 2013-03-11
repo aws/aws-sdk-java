@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The RequestSpotInstancesResult data type.
  * </p>
  */
-public class RequestSpotInstancesResult {
+public class RequestSpotInstancesResult  implements Serializable  {
 
     /**
      * Contains a list of Spot Instance requests.

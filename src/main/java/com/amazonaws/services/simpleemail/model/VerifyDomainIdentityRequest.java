@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.simpleemail.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.simpleemail.AmazonSimpleEmailService#verifyDomainIdentity(VerifyDomainIdentityRequest) VerifyDomainIdentity operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpleemail.AmazonSimpleEmailService#verifyDomainIdentity(VerifyDomainIdentityRequest)
  */
-public class VerifyDomainIdentityRequest extends AmazonWebServiceRequest {
+public class VerifyDomainIdentityRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The domain to be verified.

@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.storagegateway.model;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -27,7 +28,7 @@ package com.amazonaws.services.storagegateway.model;
  * 
  * </ul>
  */
-public class DescribeUploadBufferResult {
+public class DescribeUploadBufferResult  implements Serializable  {
 
     /**
      * In response, AWS Storage Gateway returns the ARN of the activated

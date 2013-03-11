@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.simpleemail.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Represents the DKIM attributes of a verified email address or a domain.
  * </p>
  */
-public class IdentityDkimAttributes {
+public class IdentityDkimAttributes  implements Serializable  {
 
     /**
      * True if DKIM signing is enabled for email sent from the identity;

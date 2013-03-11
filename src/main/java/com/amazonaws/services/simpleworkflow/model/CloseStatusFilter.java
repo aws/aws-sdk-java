@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.simpleworkflow.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Used to filter the closed workflow executions in visibility APIs by their close status.
  * </p>
  */
-public class CloseStatusFilter {
+public class CloseStatusFilter  implements Serializable  {
 
     /**
      * The close status that must match the close status of an execution for

@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.simpleemail.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.simpleemail.AmazonSimpleEmailService#listIdentities(ListIdentitiesRequest) ListIdentities operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpleemail.AmazonSimpleEmailService#listIdentities(ListIdentitiesRequest)
  */
-public class ListIdentitiesRequest extends AmazonWebServiceRequest {
+public class ListIdentitiesRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The type of the identities to list. Possible values are "EmailAddress"

@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.identitymanagement.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#removeRoleFromInstanceProfile(RemoveRoleFromInstanceProfileRequest) RemoveRoleFromInstanceProfile operation}.
@@ -32,7 +33,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#removeRoleFromInstanceProfile(RemoveRoleFromInstanceProfileRequest)
  */
-public class RemoveRoleFromInstanceProfileRequest extends AmazonWebServiceRequest {
+public class RemoveRoleFromInstanceProfileRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * Name of the instance profile to update.

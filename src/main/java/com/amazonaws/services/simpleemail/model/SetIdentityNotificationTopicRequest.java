@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.simpleemail.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.simpleemail.AmazonSimpleEmailService#setIdentityNotificationTopic(SetIdentityNotificationTopicRequest) SetIdentityNotificationTopic operation}.
@@ -26,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpleemail.AmazonSimpleEmailService#setIdentityNotificationTopic(SetIdentityNotificationTopicRequest)
  */
-public class SetIdentityNotificationTopicRequest extends AmazonWebServiceRequest {
+public class SetIdentityNotificationTopicRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The identity for which the topic will be set. Examples:

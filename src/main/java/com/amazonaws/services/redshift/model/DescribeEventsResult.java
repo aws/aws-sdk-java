@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.redshift.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Contains the output from the DescribeEvents action.
  * </p>
  */
-public class DescribeEventsResult {
+public class DescribeEventsResult  implements Serializable  {
 
     /**
      * A marker at which to continue listing events in a new request. The

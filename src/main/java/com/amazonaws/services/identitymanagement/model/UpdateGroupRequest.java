@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.identitymanagement.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#updateGroup(UpdateGroupRequest) UpdateGroup operation}.
@@ -32,7 +33,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#updateGroup(UpdateGroupRequest)
  */
-public class UpdateGroupRequest extends AmazonWebServiceRequest {
+public class UpdateGroupRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * Name of the group to update. If you're changing the name of the group,

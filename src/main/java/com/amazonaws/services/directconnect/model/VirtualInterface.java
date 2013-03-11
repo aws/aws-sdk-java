@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.directconnect.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * A virtual interface (VLAN) transmits the traffic between the Direct Connect location and the customer.
  * </p>
  */
-public class VirtualInterface {
+public class VirtualInterface  implements Serializable  {
 
     /**
      * ID of the virtual interface. <p>Example: dxvif-123dfg56 <p>Default:

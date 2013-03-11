@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.elasticbeanstalk.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#describeConfigurationSettings(DescribeConfigurationSettingsRequest) DescribeConfigurationSettings operation}.
@@ -37,7 +38,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#describeConfigurationSettings(DescribeConfigurationSettingsRequest)
  */
-public class DescribeConfigurationSettingsRequest extends AmazonWebServiceRequest {
+public class DescribeConfigurationSettingsRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The application for the environment or configuration template.

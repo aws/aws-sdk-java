@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.storagegateway.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * A JSON object containing the GatewayARN of the gateway that was updated.
  * </p>
  */
-public class UpdateGatewayInformationResult {
+public class UpdateGatewayInformationResult  implements Serializable  {
 
     /**
      * The Amazon Resource Name (ARN) of the gateway. Use the

@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.identitymanagement.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#updateAssumeRolePolicy(UpdateAssumeRolePolicyRequest) UpdateAssumeRolePolicy operation}.
@@ -24,7 +25,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#updateAssumeRolePolicy(UpdateAssumeRolePolicyRequest)
  */
-public class UpdateAssumeRolePolicyRequest extends AmazonWebServiceRequest {
+public class UpdateAssumeRolePolicyRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * Name of the role to update.

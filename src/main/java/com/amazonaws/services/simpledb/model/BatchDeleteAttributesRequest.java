@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.simpledb.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.simpledb.AmazonSimpleDB#batchDeleteAttributes(BatchDeleteAttributesRequest) BatchDeleteAttributes operation}.
@@ -41,7 +42,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpledb.AmazonSimpleDB#batchDeleteAttributes(BatchDeleteAttributesRequest)
  */
-public class BatchDeleteAttributesRequest extends AmazonWebServiceRequest {
+public class BatchDeleteAttributesRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of the domain in which the attributes are being deleted.

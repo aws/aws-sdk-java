@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.identitymanagement.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Contains the result of a successful invocation of the ListAccessKeys action.
  * </p>
  */
-public class ListAccessKeysResult {
+public class ListAccessKeysResult  implements Serializable  {
 
     /**
      * A list of access key metadata.

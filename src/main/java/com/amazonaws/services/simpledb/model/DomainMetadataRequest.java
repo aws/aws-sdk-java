@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.simpledb.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.simpledb.AmazonSimpleDB#domainMetadata(DomainMetadataRequest) DomainMetadata operation}.
@@ -24,7 +25,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.simpledb.AmazonSimpleDB#domainMetadata(DomainMetadataRequest)
  */
-public class DomainMetadataRequest extends AmazonWebServiceRequest {
+public class DomainMetadataRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of the domain for which to display the metadata of.

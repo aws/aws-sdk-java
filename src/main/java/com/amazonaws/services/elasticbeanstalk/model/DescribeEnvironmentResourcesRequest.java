@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.elasticbeanstalk.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#describeEnvironmentResources(DescribeEnvironmentResourcesRequest) DescribeEnvironmentResources operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticbeanstalk.AWSElasticBeanstalk#describeEnvironmentResources(DescribeEnvironmentResourcesRequest)
  */
-public class DescribeEnvironmentResourcesRequest extends AmazonWebServiceRequest {
+public class DescribeEnvironmentResourcesRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The ID of the environment to retrieve AWS resource usage data. <p>

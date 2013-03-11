@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.opsworks.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.opsworks.AWSOpsWorks#updateUserProfile(UpdateUserProfileRequest) UpdateUserProfile operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#updateUserProfile(UpdateUserProfileRequest)
  */
-public class UpdateUserProfileRequest extends AmazonWebServiceRequest {
+public class UpdateUserProfileRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The user IAM ARN.

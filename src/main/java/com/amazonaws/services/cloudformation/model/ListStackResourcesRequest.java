@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.cloudformation.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.cloudformation.AmazonCloudFormation#listStackResources(ListStackResourcesRequest) ListStackResources operation}.
@@ -26,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.cloudformation.AmazonCloudFormation#listStackResources(ListStackResourcesRequest)
  */
-public class ListStackResourcesRequest extends AmazonWebServiceRequest {
+public class ListStackResourcesRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name or the unique identifier associated with the stack.

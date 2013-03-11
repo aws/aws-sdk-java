@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#attachInternetGateway(AttachInternetGatewayRequest) AttachInternetGateway operation}.
@@ -24,7 +25,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#attachInternetGateway(AttachInternetGatewayRequest)
  */
-public class AttachInternetGatewayRequest extends AmazonWebServiceRequest {
+public class AttachInternetGatewayRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The ID of the Internet gateway to attach.

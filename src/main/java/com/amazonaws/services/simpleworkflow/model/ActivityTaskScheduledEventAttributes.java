@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.simpleworkflow.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Provides details of the <code>ActivityTaskScheduled</code> event.
  * </p>
  */
-public class ActivityTaskScheduledEventAttributes {
+public class ActivityTaskScheduledEventAttributes  implements Serializable  {
 
     /**
      * The type of the activity task.

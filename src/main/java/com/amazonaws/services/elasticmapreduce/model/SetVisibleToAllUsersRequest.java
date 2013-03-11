@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.elasticmapreduce.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticmapreduce.AmazonElasticMapReduce#setVisibleToAllUsers(SetVisibleToAllUsersRequest) SetVisibleToAllUsers operation}.
@@ -25,7 +26,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticmapreduce.AmazonElasticMapReduce#setVisibleToAllUsers(SetVisibleToAllUsersRequest)
  */
-public class SetVisibleToAllUsersRequest extends AmazonWebServiceRequest {
+public class SetVisibleToAllUsersRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * Identifiers of the job flows to receive the new visibility setting.

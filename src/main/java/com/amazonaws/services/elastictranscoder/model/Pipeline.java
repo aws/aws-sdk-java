@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.elastictranscoder.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The pipeline (queue) that is used to manage jobs.
  * </p>
  */
-public class Pipeline {
+public class Pipeline  implements Serializable  {
 
     /**
      * The identifier for the pipeline. You use this value to identify the

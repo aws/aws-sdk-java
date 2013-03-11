@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.route53.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * A complex type that contains an optional comment and the changes that you want to make with a change batch request.
  * </p>
  */
-public class ChangeBatch {
+public class ChangeBatch  implements Serializable  {
 
     /**
      * <i>Optional:</i> Any comments you want to include about a change batch

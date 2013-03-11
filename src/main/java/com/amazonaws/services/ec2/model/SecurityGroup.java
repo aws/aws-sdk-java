@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * An Amazon EC2 security group, describing how EC2 instances in this group can receive network traffic.
  * </p>
  */
-public class SecurityGroup {
+public class SecurityGroup  implements Serializable  {
 
     /**
      * The AWS Access Key ID of the owner of the security group.

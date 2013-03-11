@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.simpleworkflow.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Provides details of the <code>ScheduleActivityTaskFailed</code> event.
  * </p>
  */
-public class ScheduleActivityTaskFailedEventAttributes {
+public class ScheduleActivityTaskFailedEventAttributes  implements Serializable  {
 
     /**
      * The activity type provided in the <code>ScheduleActivityTask</code>

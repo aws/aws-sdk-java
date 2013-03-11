@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.rds.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#deleteDBSubnetGroup(DeleteDBSubnetGroupRequest) DeleteDBSubnetGroup operation}.
@@ -26,7 +27,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#deleteDBSubnetGroup(DeleteDBSubnetGroupRequest)
  */
-public class DeleteDBSubnetGroupRequest extends AmazonWebServiceRequest {
+public class DeleteDBSubnetGroupRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of the database subnet group to delete. <note>You cannot

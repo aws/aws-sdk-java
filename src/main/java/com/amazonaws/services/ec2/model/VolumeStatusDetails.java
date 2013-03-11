@@ -13,11 +13,12 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.ec2.model;
+import java.io.Serializable;
 
 /**
  * Volume Status Details
  */
-public class VolumeStatusDetails {
+public class VolumeStatusDetails  implements Serializable  {
 
     private String name;
 

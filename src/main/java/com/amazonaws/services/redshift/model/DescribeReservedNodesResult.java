@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.redshift.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Contains the output from the DescribeReservedNodes action.
  * </p>
  */
-public class DescribeReservedNodesResult {
+public class DescribeReservedNodesResult  implements Serializable  {
 
     /**
      * A marker that can be used to retrieve paginated results.

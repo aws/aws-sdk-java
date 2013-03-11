@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.autoscaling.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * The Ebs data type.
  * </p>
  */
-public class Ebs {
+public class Ebs  implements Serializable  {
 
     /**
      * The snapshot ID.

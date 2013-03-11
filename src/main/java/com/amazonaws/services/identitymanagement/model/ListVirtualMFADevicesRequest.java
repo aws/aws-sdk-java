@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.identitymanagement.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listVirtualMFADevices(ListVirtualMFADevicesRequest) ListVirtualMFADevices operation}.
@@ -30,7 +31,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.identitymanagement.AmazonIdentityManagement#listVirtualMFADevices(ListVirtualMFADevicesRequest)
  */
-public class ListVirtualMFADevicesRequest extends AmazonWebServiceRequest {
+public class ListVirtualMFADevicesRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The status (unassigned or assigned) of the devices to list. If you do

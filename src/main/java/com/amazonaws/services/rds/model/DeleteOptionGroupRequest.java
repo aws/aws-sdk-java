@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.rds.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#deleteOptionGroup(DeleteOptionGroupRequest) DeleteOptionGroup operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.rds.AmazonRDS#deleteOptionGroup(DeleteOptionGroupRequest)
  */
-public class DeleteOptionGroupRequest extends AmazonWebServiceRequest {
+public class DeleteOptionGroupRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of the option group to be deleted. <note>You cannot delete

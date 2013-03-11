@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.datapipeline.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Contains the output from the CreatePipeline action.
  * </p>
  */
-public class CreatePipelineResult {
+public class CreatePipelineResult  implements Serializable  {
 
     /**
      * The ID that AWS Data Pipeline assigns the newly created pipeline. The

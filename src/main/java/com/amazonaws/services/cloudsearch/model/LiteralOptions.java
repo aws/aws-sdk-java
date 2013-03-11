@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.cloudsearch.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Options that define a literal field in the search index.
  * </p>
  */
-public class LiteralOptions {
+public class LiteralOptions  implements Serializable  {
 
     /**
      * The default value for a literal field.

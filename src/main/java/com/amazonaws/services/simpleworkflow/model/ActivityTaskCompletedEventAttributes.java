@@ -13,13 +13,14 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.simpleworkflow.model;
+import java.io.Serializable;
 
 /**
  * <p>
  * Provides details of the <code>ActivityTaskCompleted</code> event.
  * </p>
  */
-public class ActivityTaskCompletedEventAttributes {
+public class ActivityTaskCompletedEventAttributes  implements Serializable  {
 
     /**
      * The results of the activity task (if any).

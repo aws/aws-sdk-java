@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.ec2.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.ec2.AmazonEC2#deleteSubnet(DeleteSubnetRequest) DeleteSubnet operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.ec2.AmazonEC2#deleteSubnet(DeleteSubnetRequest)
  */
-public class DeleteSubnetRequest extends AmazonWebServiceRequest {
+public class DeleteSubnetRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The ID of the subnet you want to delete.

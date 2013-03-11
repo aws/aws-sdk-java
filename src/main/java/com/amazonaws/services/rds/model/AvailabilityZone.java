@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.rds.model;
+import java.io.Serializable;
 
 /**
  * <p>
@@ -27,7 +28,7 @@ package com.amazonaws.services.rds.model;
  * 
  * </p>
  */
-public class AvailabilityZone {
+public class AvailabilityZone  implements Serializable  {
 
     /**
      * The name of the availability zone.

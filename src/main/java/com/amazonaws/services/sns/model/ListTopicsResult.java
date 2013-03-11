@@ -13,11 +13,12 @@
  * permissions and limitations under the License.
  */
 package com.amazonaws.services.sns.model;
+import java.io.Serializable;
 
 /**
  * List Topics Result
  */
-public class ListTopicsResult {
+public class ListTopicsResult  implements Serializable  {
 
     /**
      * A list of topic ARNs.

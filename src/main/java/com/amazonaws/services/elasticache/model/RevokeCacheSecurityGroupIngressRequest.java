@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.elasticache.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticache.AmazonElastiCache#revokeCacheSecurityGroupIngress(RevokeCacheSecurityGroupIngressRequest) RevokeCacheSecurityGroupIngress operation}.
@@ -23,7 +24,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticache.AmazonElastiCache#revokeCacheSecurityGroupIngress(RevokeCacheSecurityGroupIngressRequest)
  */
-public class RevokeCacheSecurityGroupIngressRequest extends AmazonWebServiceRequest {
+public class RevokeCacheSecurityGroupIngressRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of the Cache Security Group to revoke ingress from.

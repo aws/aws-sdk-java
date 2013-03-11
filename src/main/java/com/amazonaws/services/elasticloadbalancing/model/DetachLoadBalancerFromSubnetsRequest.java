@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.elasticloadbalancing.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#detachLoadBalancerFromSubnets(DetachLoadBalancerFromSubnetsRequest) DetachLoadBalancerFromSubnets operation}.
@@ -27,7 +28,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.elasticloadbalancing.AmazonElasticLoadBalancing#detachLoadBalancerFromSubnets(DetachLoadBalancerFromSubnetsRequest)
  */
-public class DetachLoadBalancerFromSubnetsRequest extends AmazonWebServiceRequest {
+public class DetachLoadBalancerFromSubnetsRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name associated with the LoadBalancer to be detached. The name

@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.dynamodb.model;
 import com.amazonaws.AmazonWebServiceRequest;
+import java.io.Serializable;
 
 /**
  * Container for the parameters to the {@link com.amazonaws.services.dynamodb.AmazonDynamoDB#getItem(GetItemRequest) GetItem operation}.
@@ -28,7 +29,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  *
  * @see com.amazonaws.services.dynamodb.AmazonDynamoDB#getItem(GetItemRequest)
  */
-public class GetItemRequest extends AmazonWebServiceRequest {
+public class GetItemRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
      * The name of the table in which you want to get an item. Allowed
