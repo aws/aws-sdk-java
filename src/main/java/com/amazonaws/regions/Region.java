@@ -18,10 +18,9 @@ import java.lang.reflect.Constructor;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.apache.http.client.CredentialsProvider;
-
 import com.amazonaws.AmazonWebServiceClient;
 import com.amazonaws.ClientConfiguration;
+import com.amazonaws.auth.AWSCredentialsProvider;
 
 /**
  * Metadata for an AWS region, including its name and what services
@@ -126,7 +125,7 @@ public final class Region {
      * @see ServiceAbbreviations
      */
     public <T extends AmazonWebServiceClient> T createClient(Class<T> serviceClass,
-                                                             CredentialsProvider credentials,
+                                                             AWSCredentialsProvider credentials,
                                                              ClientConfiguration config) {
         Constructor<T> constructor;
         T client;
@@ -138,10 +137,10 @@ public final class Region {
                 constructor = serviceClass.getConstructor(ClientConfiguration.class);
                 client = constructor.newInstance(config);
             } else if ( config == null ) {
-                constructor = serviceClass.getConstructor(CredentialsProvider.class);
+                constructor = serviceClass.getConstructor(AWSCredentialsProvider.class);
                 client = constructor.newInstance(credentials);
             } else {
-                constructor = serviceClass.getConstructor(CredentialsProvider.class, ClientConfiguration.class);
+                constructor = serviceClass.getConstructor(AWSCredentialsProvider.class, ClientConfiguration.class);
                 client = constructor.newInstance(credentials, config);
             }
             

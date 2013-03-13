@@ -225,11 +225,12 @@ public class AmazonServiceException extends AmazonClientException {
      */
     @Override
     public String toString() {
-        return "Status Code: " + getStatusCode() + ", "
-            + "AWS Service: " + getServiceName() + ", "
-            + "AWS Request ID: " + getRequestId() + ", "
-            + "AWS Error Code: " + getErrorCode() + ", "
-            + "AWS Error Message: " + getMessage();
+        return getClass().getSimpleName() + ": "
+                + "Status Code: " + getStatusCode() + ", "
+                + "AWS Service: " + getServiceName() + ", "
+                + "AWS Request ID: " + getRequestId() + ", "
+                + "AWS Error Code: " + getErrorCode() + ", "
+                + "AWS Error Message: " + getMessage();
     }
 
 }
