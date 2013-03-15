@@ -62,7 +62,7 @@ public interface AmazonElasticMapReduce {
     public void setEndpoint(String endpoint) throws java.lang.IllegalArgumentException;    
 
     /**
-     * An alternative to {@link AmazonDynamoDB#setEndpoint(String)}, sets the
+     * An alternative to {@link AmazonElasticMapReduce#setEndpoint(String)}, sets the
      * regional endpoint for this client's service calls. Callers can use this
      * method to control which AWS region they want to work with.
      * <p>
@@ -84,6 +84,7 @@ public interface AmazonElasticMapReduce {
      *             available in the given region. See
      *             {@link Region#isServiceSupported(String)}
      * @see Region#getRegion(com.amazonaws.regions.Regions)
+     * @see Region#createClient(Class, com.amazonaws.auth.AWSCredentialsProvider, ClientConfiguration)
      */
     public void setRegion(Region region) throws java.lang.IllegalArgumentException;    
 	

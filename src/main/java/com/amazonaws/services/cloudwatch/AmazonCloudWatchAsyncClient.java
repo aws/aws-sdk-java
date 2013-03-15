@@ -226,6 +226,28 @@ public class AmazonCloudWatchAsyncClient extends AmazonCloudWatchClient
     /**
      * Constructs a new asynchronous client to invoke service methods on
      * AmazonCloudWatch using the specified AWS account credentials
+     * provider and client configuration options.
+     *
+     * <p>
+     * All calls made using this new client object are non-blocking, and will immediately
+     * return a Java Future object that the caller can later check to see if the service
+     * call has actually completed.
+     *
+     * @param awsCredentialsProvider
+     *            The AWS credentials provider which will provide credentials
+     *            to authenticate requests with AWS services.
+     * @param clientConfiguration
+     *            Client configuration options (ex: max retry limit, proxy
+     *            settings, etc).
+     */
+    public AmazonCloudWatchAsyncClient(AWSCredentialsProvider awsCredentialsProvider,
+                ClientConfiguration clientConfiguration) {
+        this(awsCredentialsProvider, clientConfiguration, Executors.newCachedThreadPool());
+    }
+
+    /**
+     * Constructs a new asynchronous client to invoke service methods on
+     * AmazonCloudWatch using the specified AWS account credentials
      * provider, executor service, and client configuration options.
      *
      * <p>

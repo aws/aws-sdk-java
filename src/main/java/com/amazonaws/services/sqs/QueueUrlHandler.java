@@ -32,16 +32,24 @@ import com.amazonaws.handlers.AbstractRequestHandler;
 public class QueueUrlHandler extends AbstractRequestHandler {
     private static final String QUEUE_URL_PARAMETER = "QueueUrl";
 
-	public void beforeRequest(Request<?> request) {
+    public void beforeRequest(Request<?> request) {
         if (request.getParameters().get(QUEUE_URL_PARAMETER) != null) {
             String queueUrl = (String)request.getParameters().remove(QUEUE_URL_PARAMETER);
 
             try {
                 URI uri = new URI(queueUrl);
-				request.setResourcePath(uri.getPath());
+                request.setResourcePath(uri.getPath());
+
+                if (uri.getHost() != null) {
+                    // If the URI has a host specified, set the request's endpoint to the queue URLs
+                    // endpoint, so that queue URLs from different regions will send the request to
+                    // the correct endpoint.
+                    URI uriWithoutPath = new URI(uri.toString().replace(uri.getPath(), ""));
+                    request.setEndpoint(uriWithoutPath);
+                }
             } catch (URISyntaxException e) {
                 throw new AmazonClientException("Unable to parse SQS queue URL '" + queueUrl + "'", e);
             }
         }
-	}
+    }
 }

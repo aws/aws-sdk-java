@@ -111,7 +111,7 @@ public abstract class AmazonWebServiceClient {
     }
     
     /**
-     * An alternative to {@link AmazonDynamoDB#setEndpoint(String)}, sets the
+     * An alternative to {@link AmazonWebServiceClient#setEndpoint(String)}, sets the
      * regional endpoint for this client's service calls. Callers can use this
      * method to control which AWS region they want to work with.
      * <p>
@@ -133,6 +133,7 @@ public abstract class AmazonWebServiceClient {
      *             available in the given region. See
      *             {@link Region#isServiceSupported(String)}
      * @see Region#getRegion(com.amazonaws.regions.Regions)
+     * @see Region#createClient(Class, com.amazonaws.auth.AWSCredentialsProvider, ClientConfiguration)
      */
     public void setRegion(Region region) throws IllegalArgumentException {
         if ( region == null )
