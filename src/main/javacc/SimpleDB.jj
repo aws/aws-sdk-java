@@ -1,0 +1,356 @@
+/*
+ ===========================================================================
+ Copyright (c) 2013 3Pillar Global
+
+ Permission is hereby granted, free of charge, to any person obtaining a copy
+ of this software and associated documentation files (the "Software"), to deal
+ in the Software without restriction, including without limitation the rights
+ to use, copy, modify, merge, publish, distribute, sub-license, and/or sell
+ copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
+
+ The above copyright notice and this permission notice shall be included in
+ all copies or substantial portions of the Software.
+
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ THE SOFTWARE.
+ ===========================================================================
+
+ */
+options
+{
+  JDK_VERSION = "1.5";
+  static = false;
+}
+
+/**
+ * Defines the grammar for an Amazon SimpleDB Select Query.
+ *
+ * The valid form of the select expression is defined in the
+ * Amazon SimpleDB Developer Guide.
+ *
+ * @see <a href="http://docs.aws.amazon.com/AmazonSimpleDB/2009-04-15/DeveloperGuide/UsingSelect.html">Amazon SimpleDB Developer Guide</a>
+ */
+PARSER_BEGIN(SimpleDBParser)
+package com.amazonaws.services.simpledb.parser;
+
+import java.io.StringReader;
+
+public class SimpleDBParser {
+  
+  	public SimpleDBParser(String input) {
+		this(new StringReader(input));  	  	
+	}
+}
+PARSER_END(SimpleDBParser)
+
+/* white space */
+SKIP :
+{
+  " "
+| "\t"
+| "\n"
+| "\r"
+| "\f"
+}
+
+/* select literals */
+TOKEN [IGNORE_CASE]:
+{
+  < SELECT: "select" >
+| < FROM: "from" >
+| < WHERE: "where" >
+| < ORDER_BY: "order by" >
+| < LIMIT: "limit" >
+| < ASC: "asc" >
+| < DESC: "desc" >
+}
+
+/* select expression literals */
+TOKEN [IGNORE_CASE]:
+{
+  < ALL_ITEMS: "*" >
+| < COUNT: "count(*)" >
+| < ITEM_NAME: "itemName()" >
+}
+
+/* comparison operators */
+TOKEN [IGNORE_CASE]:
+{
+  < EQUALS: "=" >
+| < NOT_EQUALS: "!=" >
+| < GTEQ: " >=" >
+| < GT: ">" >
+| < LTEQ: "<=" >
+| < LT: "<" >
+| < LIKE: "like" >
+| < NOT_LIKE: "not like" >
+| < BETWEEN: "between" >
+| < IS_NOT_NULL: "is not null" >
+| < IS_NULL: "is null" >
+| < IN: "in" >
+| < EVERY: "every" <LPAREN> <IDENTIFIER> <RPAREN> >
+| < AND: "and" >
+| < OR: "or" >
+| < INTERSECTION: "intersection" >
+| < NOT: "not" >  
+}
+
+TOKEN :
+{
+   < QUOTED_STRING_LITERAL_NO_PERCENT_1:
+		<QUOTE>
+			(
+			  <QUOTE> <QUOTE> | ~[ "'", "%" ]
+			)*
+			<PERCENT>
+		<QUOTE>
+  >
+}
+TOKEN :
+{
+   < QUOTED_STRING_LITERAL_NO_PERCENT_2:
+		<QUOTE>
+			<PERCENT>
+			(
+			  <QUOTE> <QUOTE> | ~[ "'", "%" ]
+			)*
+			( "%" )?
+		<QUOTE>
+  >
+}
+
+TOKEN :
+{
+  < QUOTED_STRING_LITERAL:
+  		<QUOTE>
+			(
+			  <QUOTE> <QUOTE> | ~[ "'" ]
+			)*
+		<QUOTE>
+  >
+}
+
+/* IDENTIFIERS */
+TOKEN :
+{
+  < IDENTIFIER: <LETTER> (<LETTER>|<DIGIT>)* >
+|
+  < NUMBER: (<DIGIT>)+ >
+| 
+  < #LETTER:
+      [
+       "_",
+       "a"-"z",
+       "A"-"Z"
+      ]
+  >
+|
+  < #DIGIT:
+      [
+		"0"-"9"
+      ]
+  >
+}
+
+TOKEN : /* SEPARATORS */
+{
+  < LPAREN: "(" >
+| < RPAREN: ")" >
+| < LBRACKET: "[" >
+| < RBRACKET: "]" >
+| < COMMA: "," >
+| < DOT: "." >
+| < QUOTE: "'" >
+| < DOUBLE_QUOTE: "\"" >
+| < BACKTICK: "`" >
+| < PERCENT: "%" >
+}
+
+/*****************************************
+ * The SimpleDB grammar starts here 	 *
+ *****************************************
+ */
+/**
+ * select output_list
+ * from domain_name
+ * [where expression]
+ * [sort_instructions]
+ * [limit limit]
+ *
+ */
+void selectQuery():
+{}
+{
+  select()
+  from()
+  ( where() )?
+  ( sort()  )?
+  ( limit() )?
+  < EOF >
+}
+
+/* *********************** select ************************ */
+private void select():
+{}
+{
+	<SELECT>
+	( <ALL_ITEMS> |	<ITEM_NAME> | <COUNT> | listOfAttributes() )
+}
+
+private void listOfAttributes():
+{}
+{
+	attributeName()
+	( <COMMA> attributeName() )*
+}
+
+/* *********************** from ************************ */
+private void from():
+{}
+{
+  <FROM>
+  domainName()
+}
+
+private void domainName():
+{}
+{
+  	attributeName()
+}
+
+/* *********************** where ************************ */
+/**
+ * Identifier inside the where expression can be formed by multiple identifiers separated by a dot (complex domain name)
+ */
+private void attributeName():
+{}
+{
+  (
+  	<BACKTICK>
+	<IDENTIFIER>
+	( <DOT> <IDENTIFIER> )*
+	<BACKTICK>
+  ) |
+  (
+    <IDENTIFIER>
+  )
+}
+
+private void whereAttribute():
+{}
+{
+  	<ITEM_NAME> | attributeName() | <EVERY>
+}
+
+private void whereOperator():
+{}
+{
+  	<AND> | <OR> | <INTERSECTION>
+}
+  
+
+private void where():
+{}
+{
+  <WHERE>
+  whereExpression()
+}
+
+/**
+  * The expression can be any of the following:
+  * 	    <select expression> intersection <select expression>
+  *		NOT <select expression>
+  *		(<select expression>)
+  *		<select expression> or <select expression>
+  *		<select expression> and <select expression>
+  *		<simple comparison>
+  */
+private void whereExpression():
+{}
+{
+	(
+	  	( <NOT> whereExpression() ) 			 |
+		( <LPAREN> whereExpression() <RPAREN> )  |
+		( simpleComparison() )
+	)
+
+	( whereOperator() whereExpression() )?
+}
+  
+
+/* ** comparison expressions ** */
+private void simpleComparison():
+{}
+{
+  	whereAttribute()
+	( simpleComparisonExpression() | likeComparisonExpression() | betweenComparisonExpression() | inComparisonExpression() | unaryComparisonExpression() )
+}
+
+private void simpleComparisonExpression():
+{}
+{
+  	(
+	  <EQUALS> | <NOT_EQUALS> | <GT> | <GTEQ> | <LT> | <LTEQ>
+	)
+	
+	<QUOTED_STRING_LITERAL>
+}
+
+private void likeComparisonExpression():
+{}
+{
+  	(
+  	  <LIKE> | <NOT_LIKE>
+  	)
+    (
+  	   <QUOTED_STRING_LITERAL_NO_PERCENT_1> |
+       <QUOTED_STRING_LITERAL_NO_PERCENT_2>
+     )
+}
+
+private void betweenComparisonExpression():
+{}
+{
+	<BETWEEN>
+	<QUOTED_STRING_LITERAL>
+	<AND>
+	<QUOTED_STRING_LITERAL>
+}
+
+private void inComparisonExpression():
+{}
+{
+	<IN>
+	<LPAREN>
+	<QUOTED_STRING_LITERAL> ( <COMMA> <QUOTED_STRING_LITERAL> )*
+	<RPAREN>
+}
+
+private void unaryComparisonExpression():
+{}
+{
+	<IS_NULL> | <IS_NOT_NULL>
+}
+
+/* *********************** sort ************************ */
+private void sort():
+{}
+{
+  <ORDER_BY>
+  ( <ITEM_NAME> | attributeName() )
+  ( <ASC> | <DESC> )?
+}
+
+/* *********************** limit ************************ */
+private void limit():
+{}
+{
+  <LIMIT>
+  <NUMBER>
+}

@@ -1,1 +1,13 @@
+#Build
 target/
+
+#Eclipse
+*.classpath
+*.project
+*.settings
+
+#Idea
+*.iml
+*.ipr
+*.iws
+.idea
