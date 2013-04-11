@@ -434,24 +434,36 @@ public class ArchiveTransferManager {
 	                length = file.length() - currentPosition;
 	            }
 
-				InputStream inputSubStream = newInputSubstream(file, currentPosition, length);
-				inputSubStream.mark(-1);
-				String checksum = TreeHashGenerator.calculateTreeHash(inputSubStream);
-				byte[] binaryChecksum = BinaryUtils.fromHex(checksum);
-				binaryChecksums.add(binaryChecksum);
-				inputSubStream.reset();
-				
-	            try {
-	                glacier.uploadMultipartPart(new UploadMultipartPartRequest()
-	                    .withAccountId(accountId)
-	                    .withChecksum(checksum)
-	                    .withBody(inputSubStream)
-	                    .withRange("bytes " + currentPosition + "-" + (currentPosition + length - 1) + "/*")
-	                    .withUploadId(uploadId)
-	                    .withVaultName(vaultName));
-	            } finally {
-	                try {inputSubStream.close();} catch (Exception e) {}
-	            }
+                Exception failedException = null;
+                boolean completed = false;
+                int tries = 0;
+
+                while(!completed && tries<5){
+                    tries++;
+                    InputStream inputSubStream = newInputSubstream(file, currentPosition, length);
+                    inputSubStream.mark(-1);
+                    String checksum = TreeHashGenerator.calculateTreeHash(inputSubStream);
+                    byte[] binaryChecksum = BinaryUtils.fromHex(checksum);
+                    inputSubStream.reset();
+                    try {
+                        glacier.uploadMultipartPart(new UploadMultipartPartRequest()
+                                .withAccountId(accountId)
+                                .withChecksum(checksum)
+                                .withBody(inputSubStream)
+                                .withRange("bytes " + currentPosition + "-" + (currentPosition + length - 1) + "/*")
+                                .withUploadId(uploadId)
+                                .withVaultName(vaultName));
+                        completed = true;
+                        binaryChecksums.add(binaryChecksum);
+                    } catch (Exception e){
+                        failedException = e;
+                    } finally {
+                        try {inputSubStream.close();} catch (Exception e) {}
+                    }
+                }
+                if(!completed && failedException!=null){
+                    throw failedException;
+                }
 
 	            currentPosition += partSize;
 	        }
