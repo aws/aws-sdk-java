@@ -27,8 +27,8 @@ import java.util.Random;
 
 import javax.net.ssl.SSLContext;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.apache.http.Header;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpEntityEnclosingRequest;
@@ -64,13 +64,13 @@ public class AmazonHttpClient {
      * enable this logger to get access to AWS request IDs for responses,
      * individual requests and parameters sent to AWS, etc.
      */
-    private static final Log requestLog = LogFactory.getLog("com.amazonaws.request");
+    private static final Logger requestLog = LoggerFactory.getLogger("com.amazonaws.request");
 
     /**
      * Logger for more detailed debugging information, that might not be as
      * useful for end users (ex: HTTP client configuration, etc).
      */
-    static final Log log = LogFactory.getLog(AmazonHttpClient.class);
+    static final Logger log = LoggerFactory.getLogger(AmazonHttpClient.class);
 
     /** Internal client for sending HTTP requests */
     private final HttpClient httpClient;

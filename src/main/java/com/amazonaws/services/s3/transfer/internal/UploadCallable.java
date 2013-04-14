@@ -22,8 +22,8 @@ import java.util.concurrent.CancellationException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Future;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3EncryptionClient;
@@ -49,7 +49,7 @@ public class UploadCallable implements Callable<UploadResult> {
     private String multipartUploadId;
     private final UploadImpl upload;
 
-    private static final Log log = LogFactory.getLog(UploadCallable.class);
+    private static final Logger log = LoggerFactory.getLogger(UploadCallable.class);
     private final TransferManagerConfiguration configuration;
     private final ProgressListenerChain progressListenerChain;
     private final List<Future<PartETag>> futures = new ArrayList<Future<PartETag>>();

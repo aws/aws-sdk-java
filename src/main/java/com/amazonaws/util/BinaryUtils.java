@@ -24,8 +24,8 @@ import java.nio.ByteBuffer;
 import java.util.Locale;
 
 import org.apache.commons.codec.binary.Base64;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Utilities for encoding and decoding binary data to and from different forms.
@@ -35,7 +35,7 @@ public class BinaryUtils {
     /** Default encoding when extracting binary data from a String */
     private static final String DEFAULT_ENCODING = "UTF-8";
 
-    private static final Log log = LogFactory.getLog(BinaryUtils.class);
+    private static final Logger log = LoggerFactory.getLogger(BinaryUtils.class);
 
     /**
      * Converts byte data to a Hex-encoded string.

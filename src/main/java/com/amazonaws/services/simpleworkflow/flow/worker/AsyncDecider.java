@@ -18,8 +18,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CancellationException;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.AmazonServiceException.ErrorType;
@@ -125,7 +125,7 @@ class AsyncDecider {
 
     }
 
-    private static final Log log = LogFactory.getLog(AsyncDecider.class);
+    private static final Logger log = LoggerFactory.getLogger(AsyncDecider.class);
 
     private final WorkflowDefinitionFactory workflowDefinitionFactory;
 

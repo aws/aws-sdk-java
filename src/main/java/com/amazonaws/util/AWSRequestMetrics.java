@@ -21,8 +21,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.amazonaws.http.AmazonHttpClient;
 
@@ -60,7 +60,7 @@ public class AWSRequestMetrics {
     /* A map to store events that are being profiled. */
     private final Map<String, Long> eventsBeingProfiled = new HashMap<String, Long>();
     /* Latency Logger */
-    private static final Log latencyLogger = LogFactory.getLog("com.amazonaws.latency");
+    private static final Logger latencyLogger = LoggerFactory.getLogger("com.amazonaws.latency");
     private static final Object KEY_VALUE_SEPARATOR = "=";
     private static final Object COMMA_SEPARATOR = ", ";
     

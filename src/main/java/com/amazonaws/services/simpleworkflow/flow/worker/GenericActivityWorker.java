@@ -19,8 +19,8 @@ import java.util.concurrent.SynchronousQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow;
@@ -35,7 +35,7 @@ import com.amazonaws.services.simpleworkflow.model.TypeAlreadyExistsException;
 
 public class GenericActivityWorker extends GenericWorker {
 
-    private static final Log log = LogFactory.getLog(GenericActivityWorker.class);
+    private static final Logger log = LoggerFactory.getLogger(GenericActivityWorker.class);
 
     private static final String POLL_THREAD_NAME_PREFIX = "SWF Activity Poll ";
 

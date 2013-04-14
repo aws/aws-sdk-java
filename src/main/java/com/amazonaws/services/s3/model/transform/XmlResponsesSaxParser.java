@@ -31,8 +31,8 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Map;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.xml.sax.Attributes;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
@@ -93,7 +93,7 @@ import com.amazonaws.services.s3.model.VersionListing;
  * converting these documents into objects.
  */
 public class XmlResponsesSaxParser {
-    private static final Log log = LogFactory.getLog(XmlResponsesSaxParser.class);
+    private static final Logger log = LoggerFactory.getLogger(XmlResponsesSaxParser.class);
 
     private XMLReader xr = null;
 

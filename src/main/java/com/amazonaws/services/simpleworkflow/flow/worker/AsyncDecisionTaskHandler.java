@@ -18,8 +18,8 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.amazonaws.services.simpleworkflow.flow.core.AsyncTaskInfo;
 import com.amazonaws.services.simpleworkflow.flow.generic.WorkflowDefinition;
@@ -32,9 +32,9 @@ import com.amazonaws.services.simpleworkflow.model.WorkflowType;
 
 public class AsyncDecisionTaskHandler extends DecisionTaskHandler {
 
-    private static final Log log = LogFactory.getLog(AsyncDecisionTaskHandler.class);
+    private static final Logger log = LoggerFactory.getLogger(AsyncDecisionTaskHandler.class);
 
-    private static final Log asyncThreadDumpLog = LogFactory.getLog(AsyncDecisionTaskHandler.class.getName()
+    private static final Logger asyncThreadDumpLog = LoggerFactory.getLogger(AsyncDecisionTaskHandler.class.getName()
             + ".waitingTasksStacks");
 
     private final WorkflowDefinitionFactoryFactory definitionFactoryFactory;

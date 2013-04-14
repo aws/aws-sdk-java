@@ -23,8 +23,8 @@ import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.services.s3.AmazonS3;
@@ -53,7 +53,7 @@ public class UploadMonitor implements Callable<UploadResult>, TransferMonitor {
     private final PutObjectRequest putObjectRequest;
     private ScheduledExecutorService timedThreadPool;
 
-    private static final Log log = LogFactory.getLog(UploadMonitor.class);
+    private static final Logger log = LoggerFactory.getLogger(UploadMonitor.class);
     private final TransferManagerConfiguration configuration;
     private final ProgressListenerChain progressListenerChain;
     private final UploadCallable multipartUploadCallable;

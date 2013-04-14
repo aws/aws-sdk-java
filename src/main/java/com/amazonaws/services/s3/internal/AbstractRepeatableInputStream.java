@@ -21,8 +21,8 @@ import java.io.FilterInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Abstract base class for input stream wrappers that add support for
@@ -32,7 +32,7 @@ import org.apache.commons.logging.LogFactory;
  */
 public abstract class AbstractRepeatableInputStream extends FilterInputStream {
 
-    private static final Log log = LogFactory.getLog(AbstractRepeatableInputStream.class);
+    private static final Logger log = LoggerFactory.getLogger(AbstractRepeatableInputStream.class);
 
     private long bytesReadPastMarkPoint = 0;
     private long markPoint = 0;

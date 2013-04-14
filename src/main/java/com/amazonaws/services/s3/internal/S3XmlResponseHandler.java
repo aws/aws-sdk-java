@@ -17,8 +17,8 @@ package com.amazonaws.services.s3.internal;
 import java.io.InputStream;
 import java.util.Map;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.amazonaws.AmazonWebServiceResponse;
 import com.amazonaws.http.HttpResponse;
@@ -34,7 +34,7 @@ public class S3XmlResponseHandler<T> extends AbstractS3ResponseHandler<T> {
     private Unmarshaller<T, InputStream> responseUnmarshaller;
 
     /** Shared logger for profiling information */
-    private static final Log log = LogFactory.getLog("com.amazonaws.request");
+    private static final Logger log = LoggerFactory.getLogger("com.amazonaws.request");
 
     /** Response headers from the processed response */
     private Map<String, String> responseHeaders;

@@ -19,8 +19,8 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map.Entry;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.amazonaws.*;
 import com.amazonaws.regions.*;
@@ -60,7 +60,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
     /** Provider for AWS credentials. */
     private AWSCredentialsProvider awsCredentialsProvider;
 
-    private static final Log log = LogFactory.getLog(AmazonDynamoDB.class);
+    private static final Logger log = LoggerFactory.getLogger(AmazonDynamoDB.class);
 
     /**
      * List of exception unmarshallers for all AmazonDynamoDB exceptions.

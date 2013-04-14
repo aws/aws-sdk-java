@@ -16,8 +16,8 @@ package com.amazonaws.services.s3.internal;
 
 import java.util.Date;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
@@ -35,7 +35,7 @@ import com.amazonaws.services.s3.Headers;
 public class S3Signer extends AbstractAWSSigner {
 
     /** Shared log for signing debug output */
-    private static final Log log = LogFactory.getLog(S3Signer.class);
+    private static final Logger log = LoggerFactory.getLogger(S3Signer.class);
 
     /**
      * The HTTP verb (GET, PUT, HEAD, DELETE) the request to sign

@@ -33,8 +33,8 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
@@ -190,7 +190,7 @@ import com.amazonaws.util.Md5Utils;
 public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
     /** Shared logger for client events */
-    private static Log log = LogFactory.getLog(AmazonS3Client.class);
+    private static Logger log = LoggerFactory.getLogger(AmazonS3Client.class);
 
     /** Responsible for handling error responses from all S3 service calls. */
     private S3ErrorResponseHandler errorResponseHandler = new S3ErrorResponseHandler();

@@ -18,8 +18,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.apache.http.entity.BasicHttpEntity;
 import org.apache.http.entity.InputStreamEntity;
 
@@ -44,7 +44,7 @@ class RepeatableInputStreamRequestEntity extends BasicHttpEntity {
     private InputStream content;
 
     /** Shared logger for more debugging information */
-    private static final Log log = LogFactory.getLog(AmazonHttpClient.class);
+    private static final Logger log = LoggerFactory.getLogger(AmazonHttpClient.class);
 
     /**
      * Record the original exception if we do attempt a retry, so that if the

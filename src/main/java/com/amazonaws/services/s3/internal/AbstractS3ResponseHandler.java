@@ -22,8 +22,8 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.amazonaws.AmazonWebServiceResponse;
 import com.amazonaws.ResponseMetadata;
@@ -45,7 +45,7 @@ public abstract class AbstractS3ResponseHandler<T>
         implements HttpResponseHandler<AmazonWebServiceResponse<T>> {
 
     /** Shared logger */
-    private static final Log log = LogFactory.getLog(S3MetadataResponseHandler.class);
+    private static final Logger log = LoggerFactory.getLogger(S3MetadataResponseHandler.class);
 
     /** The set of response headers that aren't part of the object's metadata */
     private static final Set<String> ignoredHeaders;
