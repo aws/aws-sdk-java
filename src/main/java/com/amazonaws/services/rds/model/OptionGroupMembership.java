@@ -16,7 +16,9 @@ package com.amazonaws.services.rds.model;
 import java.io.Serializable;
 
 /**
- * Option Group Membership
+ * <p>
+ * Provides information on the option groups the DB instance is a member of.
+ * </p>
  */
 public class OptionGroupMembership  implements Serializable  {
 
@@ -116,9 +118,9 @@ public class OptionGroupMembership  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getOptionGroupName() != null) sb.append("OptionGroupName: " + getOptionGroupName() + ", ");
-        if (getStatus() != null) sb.append("Status: " + getStatus() + ", ");
+        sb.append("{");    	
+        if (getOptionGroupName() != null) sb.append("OptionGroupName: " + getOptionGroupName() + ",");    	
+        if (getStatus() != null) sb.append("Status: " + getStatus() );
         sb.append("}");
         return sb.toString();
     }

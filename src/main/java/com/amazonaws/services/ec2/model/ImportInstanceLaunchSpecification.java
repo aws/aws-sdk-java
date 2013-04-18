@@ -618,19 +618,19 @@ public class ImportInstanceLaunchSpecification  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getArchitecture() != null) sb.append("Architecture: " + getArchitecture() + ", ");
-        if (getSecurityGroups() != null) sb.append("SecurityGroups: " + getSecurityGroups() + ", ");
-        if (getAdditionalInfo() != null) sb.append("AdditionalInfo: " + getAdditionalInfo() + ", ");
-        if (getUserData() != null) sb.append("UserData: " + getUserData() + ", ");
-        if (getInstanceType() != null) sb.append("InstanceType: " + getInstanceType() + ", ");
-        if (getPlacement() != null) sb.append("Placement: " + getPlacement() + ", ");
-        if (getBlockDeviceMappings() != null) sb.append("BlockDeviceMappings: " + getBlockDeviceMappings() + ", ");
-        if (isMonitoring() != null) sb.append("Monitoring: " + isMonitoring() + ", ");
-        if (getSubnetId() != null) sb.append("SubnetId: " + getSubnetId() + ", ");
-        if (isDisableApiTermination() != null) sb.append("DisableApiTermination: " + isDisableApiTermination() + ", ");
-        if (getInstanceInitiatedShutdownBehavior() != null) sb.append("InstanceInitiatedShutdownBehavior: " + getInstanceInitiatedShutdownBehavior() + ", ");
-        if (getPrivateIpAddress() != null) sb.append("PrivateIpAddress: " + getPrivateIpAddress() + ", ");
+        sb.append("{");    	
+        if (getArchitecture() != null) sb.append("Architecture: " + getArchitecture() + ",");    	
+        if (getSecurityGroups() != null) sb.append("SecurityGroups: " + getSecurityGroups() + ",");    	
+        if (getAdditionalInfo() != null) sb.append("AdditionalInfo: " + getAdditionalInfo() + ",");    	
+        if (getUserData() != null) sb.append("UserData: " + getUserData() + ",");    	
+        if (getInstanceType() != null) sb.append("InstanceType: " + getInstanceType() + ",");    	
+        if (getPlacement() != null) sb.append("Placement: " + getPlacement() + ",");    	
+        if (getBlockDeviceMappings() != null) sb.append("BlockDeviceMappings: " + getBlockDeviceMappings() + ",");    	
+        if (isMonitoring() != null) sb.append("Monitoring: " + isMonitoring() + ",");    	
+        if (getSubnetId() != null) sb.append("SubnetId: " + getSubnetId() + ",");    	
+        if (isDisableApiTermination() != null) sb.append("DisableApiTermination: " + isDisableApiTermination() + ",");    	
+        if (getInstanceInitiatedShutdownBehavior() != null) sb.append("InstanceInitiatedShutdownBehavior: " + getInstanceInitiatedShutdownBehavior() + ",");    	
+        if (getPrivateIpAddress() != null) sb.append("PrivateIpAddress: " + getPrivateIpAddress() );
         sb.append("}");
         return sb.toString();
     }

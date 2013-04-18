@@ -387,13 +387,13 @@ public class RouteTable  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getRouteTableId() != null) sb.append("RouteTableId: " + getRouteTableId() + ", ");
-        if (getVpcId() != null) sb.append("VpcId: " + getVpcId() + ", ");
-        if (getRoutes() != null) sb.append("Routes: " + getRoutes() + ", ");
-        if (getAssociations() != null) sb.append("Associations: " + getAssociations() + ", ");
-        if (getTags() != null) sb.append("Tags: " + getTags() + ", ");
-        if (getPropagatingVgws() != null) sb.append("PropagatingVgws: " + getPropagatingVgws() + ", ");
+        sb.append("{");    	
+        if (getRouteTableId() != null) sb.append("RouteTableId: " + getRouteTableId() + ",");    	
+        if (getVpcId() != null) sb.append("VpcId: " + getVpcId() + ",");    	
+        if (getRoutes() != null) sb.append("Routes: " + getRoutes() + ",");    	
+        if (getAssociations() != null) sb.append("Associations: " + getAssociations() + ",");    	
+        if (getTags() != null) sb.append("Tags: " + getTags() + ",");    	
+        if (getPropagatingVgws() != null) sb.append("PropagatingVgws: " + getPropagatingVgws() );
         sb.append("}");
         return sb.toString();
     }

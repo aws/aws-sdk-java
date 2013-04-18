@@ -103,9 +103,9 @@ public class DiskImageVolumeDescription  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getSize() != null) sb.append("Size: " + getSize() + ", ");
-        if (getId() != null) sb.append("Id: " + getId() + ", ");
+        sb.append("{");    	
+        if (getSize() != null) sb.append("Size: " + getSize() + ",");    	
+        if (getId() != null) sb.append("Id: " + getId() );
         sb.append("}");
         return sb.toString();
     }

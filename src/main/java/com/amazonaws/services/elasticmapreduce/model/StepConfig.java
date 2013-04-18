@@ -240,10 +240,10 @@ public class StepConfig  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getName() != null) sb.append("Name: " + getName() + ", ");
-        if (getActionOnFailure() != null) sb.append("ActionOnFailure: " + getActionOnFailure() + ", ");
-        if (getHadoopJarStep() != null) sb.append("HadoopJarStep: " + getHadoopJarStep() + ", ");
+        sb.append("{");    	
+        if (getName() != null) sb.append("Name: " + getName() + ",");    	
+        if (getActionOnFailure() != null) sb.append("ActionOnFailure: " + getActionOnFailure() + ",");    	
+        if (getHadoopJarStep() != null) sb.append("HadoopJarStep: " + getHadoopJarStep() );
         sb.append("}");
         return sb.toString();
     }

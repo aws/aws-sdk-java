@@ -682,18 +682,18 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest  implements S
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getApplicationName() != null) sb.append("ApplicationName: " + getApplicationName() + ", ");
-        if (getVersionLabel() != null) sb.append("VersionLabel: " + getVersionLabel() + ", ");
-        if (getTemplateName() != null) sb.append("TemplateName: " + getTemplateName() + ", ");
-        if (getEnvironmentId() != null) sb.append("EnvironmentId: " + getEnvironmentId() + ", ");
-        if (getEnvironmentName() != null) sb.append("EnvironmentName: " + getEnvironmentName() + ", ");
-        if (getRequestId() != null) sb.append("RequestId: " + getRequestId() + ", ");
-        if (getSeverity() != null) sb.append("Severity: " + getSeverity() + ", ");
-        if (getStartTime() != null) sb.append("StartTime: " + getStartTime() + ", ");
-        if (getEndTime() != null) sb.append("EndTime: " + getEndTime() + ", ");
-        if (getMaxRecords() != null) sb.append("MaxRecords: " + getMaxRecords() + ", ");
-        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() + ", ");
+        sb.append("{");    	
+        if (getApplicationName() != null) sb.append("ApplicationName: " + getApplicationName() + ",");    	
+        if (getVersionLabel() != null) sb.append("VersionLabel: " + getVersionLabel() + ",");    	
+        if (getTemplateName() != null) sb.append("TemplateName: " + getTemplateName() + ",");    	
+        if (getEnvironmentId() != null) sb.append("EnvironmentId: " + getEnvironmentId() + ",");    	
+        if (getEnvironmentName() != null) sb.append("EnvironmentName: " + getEnvironmentName() + ",");    	
+        if (getRequestId() != null) sb.append("RequestId: " + getRequestId() + ",");    	
+        if (getSeverity() != null) sb.append("Severity: " + getSeverity() + ",");    	
+        if (getStartTime() != null) sb.append("StartTime: " + getStartTime() + ",");    	
+        if (getEndTime() != null) sb.append("EndTime: " + getEndTime() + ",");    	
+        if (getMaxRecords() != null) sb.append("MaxRecords: " + getMaxRecords() + ",");    	
+        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() );
         sb.append("}");
         return sb.toString();
     }

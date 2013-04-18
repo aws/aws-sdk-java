@@ -752,16 +752,16 @@ public class CreateConfigurationTemplateResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getSolutionStackName() != null) sb.append("SolutionStackName: " + getSolutionStackName() + ", ");
-        if (getApplicationName() != null) sb.append("ApplicationName: " + getApplicationName() + ", ");
-        if (getTemplateName() != null) sb.append("TemplateName: " + getTemplateName() + ", ");
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ", ");
-        if (getEnvironmentName() != null) sb.append("EnvironmentName: " + getEnvironmentName() + ", ");
-        if (getDeploymentStatus() != null) sb.append("DeploymentStatus: " + getDeploymentStatus() + ", ");
-        if (getDateCreated() != null) sb.append("DateCreated: " + getDateCreated() + ", ");
-        if (getDateUpdated() != null) sb.append("DateUpdated: " + getDateUpdated() + ", ");
-        if (getOptionSettings() != null) sb.append("OptionSettings: " + getOptionSettings() + ", ");
+        sb.append("{");    	
+        if (getSolutionStackName() != null) sb.append("SolutionStackName: " + getSolutionStackName() + ",");    	
+        if (getApplicationName() != null) sb.append("ApplicationName: " + getApplicationName() + ",");    	
+        if (getTemplateName() != null) sb.append("TemplateName: " + getTemplateName() + ",");    	
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");    	
+        if (getEnvironmentName() != null) sb.append("EnvironmentName: " + getEnvironmentName() + ",");    	
+        if (getDeploymentStatus() != null) sb.append("DeploymentStatus: " + getDeploymentStatus() + ",");    	
+        if (getDateCreated() != null) sb.append("DateCreated: " + getDateCreated() + ",");    	
+        if (getDateUpdated() != null) sb.append("DateUpdated: " + getDateUpdated() + ",");    	
+        if (getOptionSettings() != null) sb.append("OptionSettings: " + getOptionSettings() );
         sb.append("}");
         return sb.toString();
     }

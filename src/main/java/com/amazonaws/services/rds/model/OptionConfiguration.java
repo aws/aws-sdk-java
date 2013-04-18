@@ -44,6 +44,11 @@ public class OptionConfiguration  implements Serializable  {
     private java.util.List<String> vpcSecurityGroupMemberships;
 
     /**
+     * The option settings to include in an option group.
+     */
+    private java.util.List<OptionSetting> optionSettings;
+
+    /**
      * The configuration of options to include in a group.
      *
      * @return The configuration of options to include in a group.
@@ -258,6 +263,75 @@ public class OptionConfiguration  implements Serializable  {
     }
     
     /**
+     * The option settings to include in an option group.
+     *
+     * @return The option settings to include in an option group.
+     */
+    public java.util.List<OptionSetting> getOptionSettings() {
+        
+        if (optionSettings == null) {
+            optionSettings = new java.util.ArrayList<OptionSetting>();
+        }
+        return optionSettings;
+    }
+    
+    /**
+     * The option settings to include in an option group.
+     *
+     * @param optionSettings The option settings to include in an option group.
+     */
+    public void setOptionSettings(java.util.Collection<OptionSetting> optionSettings) {
+        if (optionSettings == null) {
+            this.optionSettings = null;
+            return;
+        }
+
+        java.util.List<OptionSetting> optionSettingsCopy = new java.util.ArrayList<OptionSetting>(optionSettings.size());
+        optionSettingsCopy.addAll(optionSettings);
+        this.optionSettings = optionSettingsCopy;
+    }
+    
+    /**
+     * The option settings to include in an option group.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param optionSettings The option settings to include in an option group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public OptionConfiguration withOptionSettings(OptionSetting... optionSettings) {
+        if (getOptionSettings() == null) setOptionSettings(new java.util.ArrayList<OptionSetting>(optionSettings.length));
+        for (OptionSetting value : optionSettings) {
+            getOptionSettings().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * The option settings to include in an option group.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param optionSettings The option settings to include in an option group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public OptionConfiguration withOptionSettings(java.util.Collection<OptionSetting> optionSettings) {
+        if (optionSettings == null) {
+            this.optionSettings = null;
+        } else {
+            java.util.List<OptionSetting> optionSettingsCopy = new java.util.ArrayList<OptionSetting>(optionSettings.size());
+            optionSettingsCopy.addAll(optionSettings);
+            this.optionSettings = optionSettingsCopy;
+        }
+
+        return this;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -268,11 +342,12 @@ public class OptionConfiguration  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getOptionName() != null) sb.append("OptionName: " + getOptionName() + ", ");
-        if (getPort() != null) sb.append("Port: " + getPort() + ", ");
-        if (getDBSecurityGroupMemberships() != null) sb.append("DBSecurityGroupMemberships: " + getDBSecurityGroupMemberships() + ", ");
-        if (getVpcSecurityGroupMemberships() != null) sb.append("VpcSecurityGroupMemberships: " + getVpcSecurityGroupMemberships() + ", ");
+        sb.append("{");    	
+        if (getOptionName() != null) sb.append("OptionName: " + getOptionName() + ",");    	
+        if (getPort() != null) sb.append("Port: " + getPort() + ",");    	
+        if (getDBSecurityGroupMemberships() != null) sb.append("DBSecurityGroupMemberships: " + getDBSecurityGroupMemberships() + ",");    	
+        if (getVpcSecurityGroupMemberships() != null) sb.append("VpcSecurityGroupMemberships: " + getVpcSecurityGroupMemberships() + ",");    	
+        if (getOptionSettings() != null) sb.append("OptionSettings: " + getOptionSettings() );
         sb.append("}");
         return sb.toString();
     }
@@ -286,6 +361,7 @@ public class OptionConfiguration  implements Serializable  {
         hashCode = prime * hashCode + ((getPort() == null) ? 0 : getPort().hashCode()); 
         hashCode = prime * hashCode + ((getDBSecurityGroupMemberships() == null) ? 0 : getDBSecurityGroupMemberships().hashCode()); 
         hashCode = prime * hashCode + ((getVpcSecurityGroupMemberships() == null) ? 0 : getVpcSecurityGroupMemberships().hashCode()); 
+        hashCode = prime * hashCode + ((getOptionSettings() == null) ? 0 : getOptionSettings().hashCode()); 
         return hashCode;
     }
     
@@ -305,6 +381,8 @@ public class OptionConfiguration  implements Serializable  {
         if (other.getDBSecurityGroupMemberships() != null && other.getDBSecurityGroupMemberships().equals(this.getDBSecurityGroupMemberships()) == false) return false; 
         if (other.getVpcSecurityGroupMemberships() == null ^ this.getVpcSecurityGroupMemberships() == null) return false;
         if (other.getVpcSecurityGroupMemberships() != null && other.getVpcSecurityGroupMemberships().equals(this.getVpcSecurityGroupMemberships()) == false) return false; 
+        if (other.getOptionSettings() == null ^ this.getOptionSettings() == null) return false;
+        if (other.getOptionSettings() != null && other.getOptionSettings().equals(this.getOptionSettings()) == false) return false; 
         return true;
     }
     

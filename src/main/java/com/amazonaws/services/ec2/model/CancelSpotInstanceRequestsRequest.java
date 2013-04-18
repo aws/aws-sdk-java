@@ -140,8 +140,8 @@ public class CancelSpotInstanceRequestsRequest extends AmazonWebServiceRequest  
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getSpotInstanceRequestIds() != null) sb.append("SpotInstanceRequestIds: " + getSpotInstanceRequestIds() + ", ");
+        sb.append("{");    	
+        if (getSpotInstanceRequestIds() != null) sb.append("SpotInstanceRequestIds: " + getSpotInstanceRequestIds() );
         sb.append("}");
         return sb.toString();
     }

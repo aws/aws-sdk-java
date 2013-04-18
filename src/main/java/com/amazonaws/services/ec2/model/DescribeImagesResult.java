@@ -107,8 +107,8 @@ public class DescribeImagesResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getImages() != null) sb.append("Images: " + getImages() + ", ");
+        sb.append("{");    	
+        if (getImages() != null) sb.append("Images: " + getImages() );
         sb.append("}");
         return sb.toString();
     }

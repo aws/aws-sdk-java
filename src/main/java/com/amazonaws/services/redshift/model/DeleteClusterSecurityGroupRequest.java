@@ -83,8 +83,8 @@ public class DeleteClusterSecurityGroupRequest extends AmazonWebServiceRequest  
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getClusterSecurityGroupName() != null) sb.append("ClusterSecurityGroupName: " + getClusterSecurityGroupName() + ", ");
+        sb.append("{");    	
+        if (getClusterSecurityGroupName() != null) sb.append("ClusterSecurityGroupName: " + getClusterSecurityGroupName() );
         sb.append("}");
         return sb.toString();
     }

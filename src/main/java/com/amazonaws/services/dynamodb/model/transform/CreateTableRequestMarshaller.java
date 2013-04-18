@@ -37,6 +37,7 @@ import com.amazonaws.util.json.*;
 /**
  * Create Table Request Marshaller
  */
+@Deprecated
 public class CreateTableRequestMarshaller implements Marshaller<Request<CreateTableRequest>, CreateTableRequest> {
 
     

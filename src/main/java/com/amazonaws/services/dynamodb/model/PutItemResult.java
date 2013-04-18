@@ -18,6 +18,7 @@ import java.io.Serializable;
 /**
  * Put Item Result
  */
+@Deprecated
 public class PutItemResult  implements Serializable  {
 
     /**

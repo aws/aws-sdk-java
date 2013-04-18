@@ -401,12 +401,12 @@ public class SigningCertificate  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getUserName() != null) sb.append("UserName: " + getUserName() + ", ");
-        if (getCertificateId() != null) sb.append("CertificateId: " + getCertificateId() + ", ");
-        if (getCertificateBody() != null) sb.append("CertificateBody: " + getCertificateBody() + ", ");
-        if (getStatus() != null) sb.append("Status: " + getStatus() + ", ");
-        if (getUploadDate() != null) sb.append("UploadDate: " + getUploadDate() + ", ");
+        sb.append("{");    	
+        if (getUserName() != null) sb.append("UserName: " + getUserName() + ",");    	
+        if (getCertificateId() != null) sb.append("CertificateId: " + getCertificateId() + ",");    	
+        if (getCertificateBody() != null) sb.append("CertificateBody: " + getCertificateBody() + ",");    	
+        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");    	
+        if (getUploadDate() != null) sb.append("UploadDate: " + getUploadDate() );
         sb.append("}");
         return sb.toString();
     }

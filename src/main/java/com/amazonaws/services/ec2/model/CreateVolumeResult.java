@@ -72,8 +72,8 @@ public class CreateVolumeResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getVolume() != null) sb.append("Volume: " + getVolume() + ", ");
+        sb.append("{");    	
+        if (getVolume() != null) sb.append("Volume: " + getVolume() );
         sb.append("}");
         return sb.toString();
     }

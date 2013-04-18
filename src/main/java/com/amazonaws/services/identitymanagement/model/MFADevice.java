@@ -217,10 +217,10 @@ public class MFADevice  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getUserName() != null) sb.append("UserName: " + getUserName() + ", ");
-        if (getSerialNumber() != null) sb.append("SerialNumber: " + getSerialNumber() + ", ");
-        if (getEnableDate() != null) sb.append("EnableDate: " + getEnableDate() + ", ");
+        sb.append("{");    	
+        if (getUserName() != null) sb.append("UserName: " + getUserName() + ",");    	
+        if (getSerialNumber() != null) sb.append("SerialNumber: " + getSerialNumber() + ",");    	
+        if (getEnableDate() != null) sb.append("EnableDate: " + getEnableDate() );
         sb.append("}");
         return sb.toString();
     }

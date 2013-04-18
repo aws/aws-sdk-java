@@ -212,9 +212,9 @@ public class Change  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getAction() != null) sb.append("Action: " + getAction() + ", ");
-        if (getResourceRecordSet() != null) sb.append("ResourceRecordSet: " + getResourceRecordSet() + ", ");
+        sb.append("{");    	
+        if (getAction() != null) sb.append("Action: " + getAction() + ",");    	
+        if (getResourceRecordSet() != null) sb.append("ResourceRecordSet: " + getResourceRecordSet() );
         sb.append("}");
         return sb.toString();
     }

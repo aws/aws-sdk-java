@@ -277,12 +277,12 @@ public class ClusterSubnetGroup  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getClusterSubnetGroupName() != null) sb.append("ClusterSubnetGroupName: " + getClusterSubnetGroupName() + ", ");
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ", ");
-        if (getVpcId() != null) sb.append("VpcId: " + getVpcId() + ", ");
-        if (getSubnetGroupStatus() != null) sb.append("SubnetGroupStatus: " + getSubnetGroupStatus() + ", ");
-        if (getSubnets() != null) sb.append("Subnets: " + getSubnets() + ", ");
+        sb.append("{");    	
+        if (getClusterSubnetGroupName() != null) sb.append("ClusterSubnetGroupName: " + getClusterSubnetGroupName() + ",");    	
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");    	
+        if (getVpcId() != null) sb.append("VpcId: " + getVpcId() + ",");    	
+        if (getSubnetGroupStatus() != null) sb.append("SubnetGroupStatus: " + getSubnetGroupStatus() + ",");    	
+        if (getSubnets() != null) sb.append("Subnets: " + getSubnets() );
         sb.append("}");
         return sb.toString();
     }

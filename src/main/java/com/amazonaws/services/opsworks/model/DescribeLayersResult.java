@@ -107,8 +107,8 @@ public class DescribeLayersResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getLayers() != null) sb.append("Layers: " + getLayers() + ", ");
+        sb.append("{");    	
+        if (getLayers() != null) sb.append("Layers: " + getLayers() );
         sb.append("}");
         return sb.toString();
     }

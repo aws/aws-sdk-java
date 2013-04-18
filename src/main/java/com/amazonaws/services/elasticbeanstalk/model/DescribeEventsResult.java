@@ -160,9 +160,9 @@ public class DescribeEventsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getEvents() != null) sb.append("Events: " + getEvents() + ", ");
-        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() + ", ");
+        sb.append("{");    	
+        if (getEvents() != null) sb.append("Events: " + getEvents() + ",");    	
+        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() );
         sb.append("}");
         return sb.toString();
     }

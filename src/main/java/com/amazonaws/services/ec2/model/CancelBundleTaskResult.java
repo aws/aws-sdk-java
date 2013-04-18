@@ -72,8 +72,8 @@ public class CancelBundleTaskResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getBundleTask() != null) sb.append("BundleTask: " + getBundleTask() + ", ");
+        sb.append("{");    	
+        if (getBundleTask() != null) sb.append("BundleTask: " + getBundleTask() );
         sb.append("}");
         return sb.toString();
     }

@@ -47,7 +47,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest  implements Seri
      * OpsWorks to work with AWS resources on your behalf. You must set this
      * parameter to the Amazon Resource Name (ARN) for an existing IAM role.
      * For more information about IAM ARNs, see <a
-     * docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.
      */
     private String serviceRoleArn;
@@ -55,7 +55,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest  implements Seri
     /**
      * The ARN of an IAM profile that is the default profile for all of the
      * stack's EC2 instances. For more information about IAM ARNs, see <a
-     * docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.
      */
     private String defaultInstanceProfileArn;
@@ -232,14 +232,14 @@ public class UpdateStackRequest extends AmazonWebServiceRequest  implements Seri
      * OpsWorks to work with AWS resources on your behalf. You must set this
      * parameter to the Amazon Resource Name (ARN) for an existing IAM role.
      * For more information about IAM ARNs, see <a
-     * docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.
      *
      * @return The stack AWS Identity and Access Management (IAM) role, which allows
      *         OpsWorks to work with AWS resources on your behalf. You must set this
      *         parameter to the Amazon Resource Name (ARN) for an existing IAM role.
      *         For more information about IAM ARNs, see <a
-     *         docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      *         Identifiers</a>.
      */
     public String getServiceRoleArn() {
@@ -251,14 +251,14 @@ public class UpdateStackRequest extends AmazonWebServiceRequest  implements Seri
      * OpsWorks to work with AWS resources on your behalf. You must set this
      * parameter to the Amazon Resource Name (ARN) for an existing IAM role.
      * For more information about IAM ARNs, see <a
-     * docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.
      *
      * @param serviceRoleArn The stack AWS Identity and Access Management (IAM) role, which allows
      *         OpsWorks to work with AWS resources on your behalf. You must set this
      *         parameter to the Amazon Resource Name (ARN) for an existing IAM role.
      *         For more information about IAM ARNs, see <a
-     *         docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      *         Identifiers</a>.
      */
     public void setServiceRoleArn(String serviceRoleArn) {
@@ -270,7 +270,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest  implements Seri
      * OpsWorks to work with AWS resources on your behalf. You must set this
      * parameter to the Amazon Resource Name (ARN) for an existing IAM role.
      * For more information about IAM ARNs, see <a
-     * docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -279,7 +279,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest  implements Seri
      *         OpsWorks to work with AWS resources on your behalf. You must set this
      *         parameter to the Amazon Resource Name (ARN) for an existing IAM role.
      *         For more information about IAM ARNs, see <a
-     *         docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      *         Identifiers</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -294,12 +294,12 @@ public class UpdateStackRequest extends AmazonWebServiceRequest  implements Seri
     /**
      * The ARN of an IAM profile that is the default profile for all of the
      * stack's EC2 instances. For more information about IAM ARNs, see <a
-     * docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.
      *
      * @return The ARN of an IAM profile that is the default profile for all of the
      *         stack's EC2 instances. For more information about IAM ARNs, see <a
-     *         docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      *         Identifiers</a>.
      */
     public String getDefaultInstanceProfileArn() {
@@ -309,12 +309,12 @@ public class UpdateStackRequest extends AmazonWebServiceRequest  implements Seri
     /**
      * The ARN of an IAM profile that is the default profile for all of the
      * stack's EC2 instances. For more information about IAM ARNs, see <a
-     * docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.
      *
      * @param defaultInstanceProfileArn The ARN of an IAM profile that is the default profile for all of the
      *         stack's EC2 instances. For more information about IAM ARNs, see <a
-     *         docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      *         Identifiers</a>.
      */
     public void setDefaultInstanceProfileArn(String defaultInstanceProfileArn) {
@@ -324,14 +324,14 @@ public class UpdateStackRequest extends AmazonWebServiceRequest  implements Seri
     /**
      * The ARN of an IAM profile that is the default profile for all of the
      * stack's EC2 instances. For more information about IAM ARNs, see <a
-     * docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param defaultInstanceProfileArn The ARN of an IAM profile that is the default profile for all of the
      *         stack's EC2 instances. For more information about IAM ARNs, see <a
-     *         docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      *         Identifiers</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -721,19 +721,19 @@ public class UpdateStackRequest extends AmazonWebServiceRequest  implements Seri
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getStackId() != null) sb.append("StackId: " + getStackId() + ", ");
-        if (getName() != null) sb.append("Name: " + getName() + ", ");
-        if (getAttributes() != null) sb.append("Attributes: " + getAttributes() + ", ");
-        if (getServiceRoleArn() != null) sb.append("ServiceRoleArn: " + getServiceRoleArn() + ", ");
-        if (getDefaultInstanceProfileArn() != null) sb.append("DefaultInstanceProfileArn: " + getDefaultInstanceProfileArn() + ", ");
-        if (getDefaultOs() != null) sb.append("DefaultOs: " + getDefaultOs() + ", ");
-        if (getHostnameTheme() != null) sb.append("HostnameTheme: " + getHostnameTheme() + ", ");
-        if (getDefaultAvailabilityZone() != null) sb.append("DefaultAvailabilityZone: " + getDefaultAvailabilityZone() + ", ");
-        if (getCustomJson() != null) sb.append("CustomJson: " + getCustomJson() + ", ");
-        if (isUseCustomCookbooks() != null) sb.append("UseCustomCookbooks: " + isUseCustomCookbooks() + ", ");
-        if (getCustomCookbooksSource() != null) sb.append("CustomCookbooksSource: " + getCustomCookbooksSource() + ", ");
-        if (getDefaultSshKeyName() != null) sb.append("DefaultSshKeyName: " + getDefaultSshKeyName() + ", ");
+        sb.append("{");    	
+        if (getStackId() != null) sb.append("StackId: " + getStackId() + ",");    	
+        if (getName() != null) sb.append("Name: " + getName() + ",");    	
+        if (getAttributes() != null) sb.append("Attributes: " + getAttributes() + ",");    	
+        if (getServiceRoleArn() != null) sb.append("ServiceRoleArn: " + getServiceRoleArn() + ",");    	
+        if (getDefaultInstanceProfileArn() != null) sb.append("DefaultInstanceProfileArn: " + getDefaultInstanceProfileArn() + ",");    	
+        if (getDefaultOs() != null) sb.append("DefaultOs: " + getDefaultOs() + ",");    	
+        if (getHostnameTheme() != null) sb.append("HostnameTheme: " + getHostnameTheme() + ",");    	
+        if (getDefaultAvailabilityZone() != null) sb.append("DefaultAvailabilityZone: " + getDefaultAvailabilityZone() + ",");    	
+        if (getCustomJson() != null) sb.append("CustomJson: " + getCustomJson() + ",");    	
+        if (isUseCustomCookbooks() != null) sb.append("UseCustomCookbooks: " + isUseCustomCookbooks() + ",");    	
+        if (getCustomCookbooksSource() != null) sb.append("CustomCookbooksSource: " + getCustomCookbooksSource() + ",");    	
+        if (getDefaultSshKeyName() != null) sb.append("DefaultSshKeyName: " + getDefaultSshKeyName() );
         sb.append("}");
         return sb.toString();
     }

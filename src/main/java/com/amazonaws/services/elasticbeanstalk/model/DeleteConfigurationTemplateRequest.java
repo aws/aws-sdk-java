@@ -165,9 +165,9 @@ public class DeleteConfigurationTemplateRequest extends AmazonWebServiceRequest 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getApplicationName() != null) sb.append("ApplicationName: " + getApplicationName() + ", ");
-        if (getTemplateName() != null) sb.append("TemplateName: " + getTemplateName() + ", ");
+        sb.append("{");    	
+        if (getApplicationName() != null) sb.append("ApplicationName: " + getApplicationName() + ",");    	
+        if (getTemplateName() != null) sb.append("TemplateName: " + getTemplateName() );
         sb.append("}");
         return sb.toString();
     }

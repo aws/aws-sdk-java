@@ -113,9 +113,9 @@ public class ExecutionTimeFilter  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getOldestDate() != null) sb.append("OldestDate: " + getOldestDate() + ", ");
-        if (getLatestDate() != null) sb.append("LatestDate: " + getLatestDate() + ", ");
+        sb.append("{");    	
+        if (getOldestDate() != null) sb.append("OldestDate: " + getOldestDate() + ",");    	
+        if (getLatestDate() != null) sb.append("LatestDate: " + getLatestDate() );
         sb.append("}");
         return sb.toString();
     }

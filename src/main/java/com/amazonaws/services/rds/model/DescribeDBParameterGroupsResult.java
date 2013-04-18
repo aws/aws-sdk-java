@@ -160,9 +160,9 @@ public class DescribeDBParameterGroupsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ", ");
-        if (getDBParameterGroups() != null) sb.append("DBParameterGroups: " + getDBParameterGroups() + ", ");
+        sb.append("{");    	
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");    	
+        if (getDBParameterGroups() != null) sb.append("DBParameterGroups: " + getDBParameterGroups() );
         sb.append("}");
         return sb.toString();
     }

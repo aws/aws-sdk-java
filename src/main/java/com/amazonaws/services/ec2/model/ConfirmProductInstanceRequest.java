@@ -141,9 +141,9 @@ public class ConfirmProductInstanceRequest extends AmazonWebServiceRequest  impl
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getProductCode() != null) sb.append("ProductCode: " + getProductCode() + ", ");
-        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ", ");
+        sb.append("{");    	
+        if (getProductCode() != null) sb.append("ProductCode: " + getProductCode() + ",");    	
+        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() );
         sb.append("}");
         return sb.toString();
     }

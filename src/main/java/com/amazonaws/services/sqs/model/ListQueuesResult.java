@@ -105,8 +105,8 @@ public class ListQueuesResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getQueueUrls() != null) sb.append("QueueUrls: " + getQueueUrls() + ", ");
+        sb.append("{");    	
+        if (getQueueUrls() != null) sb.append("QueueUrls: " + getQueueUrls() );
         sb.append("}");
         return sb.toString();
     }

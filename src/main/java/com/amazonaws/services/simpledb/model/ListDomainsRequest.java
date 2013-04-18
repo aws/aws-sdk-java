@@ -138,9 +138,9 @@ public class ListDomainsRequest extends AmazonWebServiceRequest  implements Seri
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getMaxNumberOfDomains() != null) sb.append("MaxNumberOfDomains: " + getMaxNumberOfDomains() + ", ");
-        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() + ", ");
+        sb.append("{");    	
+        if (getMaxNumberOfDomains() != null) sb.append("MaxNumberOfDomains: " + getMaxNumberOfDomains() + ",");    	
+        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() );
         sb.append("}");
         return sb.toString();
     }

@@ -107,8 +107,8 @@ public class RetrieveEnvironmentInfoResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getEnvironmentInfo() != null) sb.append("EnvironmentInfo: " + getEnvironmentInfo() + ", ");
+        sb.append("{");    	
+        if (getEnvironmentInfo() != null) sb.append("EnvironmentInfo: " + getEnvironmentInfo() );
         sb.append("}");
         return sb.toString();
     }

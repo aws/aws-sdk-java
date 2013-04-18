@@ -248,10 +248,10 @@ public class UpdateApplicationVersionRequest extends AmazonWebServiceRequest  im
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getApplicationName() != null) sb.append("ApplicationName: " + getApplicationName() + ", ");
-        if (getVersionLabel() != null) sb.append("VersionLabel: " + getVersionLabel() + ", ");
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ", ");
+        sb.append("{");    	
+        if (getApplicationName() != null) sb.append("ApplicationName: " + getApplicationName() + ",");    	
+        if (getVersionLabel() != null) sb.append("VersionLabel: " + getVersionLabel() + ",");    	
+        if (getDescription() != null) sb.append("Description: " + getDescription() );
         sb.append("}");
         return sb.toString();
     }

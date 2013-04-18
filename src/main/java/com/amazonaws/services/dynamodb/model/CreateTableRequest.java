@@ -33,6 +33,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.dynamodb.AmazonDynamoDB#createTable(CreateTableRequest)
  */
+@Deprecated
 public class CreateTableRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**

@@ -41,7 +41,7 @@ public class UpdateServiceAccessPoliciesRequest extends AmazonWebServiceRequest 
 
     /**
      * An IAM access policy as described in <a
-     * ervices.com/IAM/latest/UserGuide/index.html?AccessPolicyLanguage.html"
+     * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?AccessPolicyLanguage.html"
      * target="_blank">The Access Policy Language</a> in <i>Using AWS
      * Identity and Access Management</i>. The maximum size of an access
      * policy document is 100KB. <p>Example: <code>{"Statement":
@@ -126,7 +126,7 @@ public class UpdateServiceAccessPoliciesRequest extends AmazonWebServiceRequest 
     
     /**
      * An IAM access policy as described in <a
-     * ervices.com/IAM/latest/UserGuide/index.html?AccessPolicyLanguage.html"
+     * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?AccessPolicyLanguage.html"
      * target="_blank">The Access Policy Language</a> in <i>Using AWS
      * Identity and Access Management</i>. The maximum size of an access
      * policy document is 100KB. <p>Example: <code>{"Statement":
@@ -138,7 +138,7 @@ public class UpdateServiceAccessPoliciesRequest extends AmazonWebServiceRequest 
      * "IpAddress": { aws:SourceIp": ["203.0.113.1/32"] } }} ] }</code>
      *
      * @return An IAM access policy as described in <a
-     *         ervices.com/IAM/latest/UserGuide/index.html?AccessPolicyLanguage.html"
+     *         href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?AccessPolicyLanguage.html"
      *         target="_blank">The Access Policy Language</a> in <i>Using AWS
      *         Identity and Access Management</i>. The maximum size of an access
      *         policy document is 100KB. <p>Example: <code>{"Statement":
@@ -155,7 +155,7 @@ public class UpdateServiceAccessPoliciesRequest extends AmazonWebServiceRequest 
     
     /**
      * An IAM access policy as described in <a
-     * ervices.com/IAM/latest/UserGuide/index.html?AccessPolicyLanguage.html"
+     * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?AccessPolicyLanguage.html"
      * target="_blank">The Access Policy Language</a> in <i>Using AWS
      * Identity and Access Management</i>. The maximum size of an access
      * policy document is 100KB. <p>Example: <code>{"Statement":
@@ -167,7 +167,7 @@ public class UpdateServiceAccessPoliciesRequest extends AmazonWebServiceRequest 
      * "IpAddress": { aws:SourceIp": ["203.0.113.1/32"] } }} ] }</code>
      *
      * @param accessPolicies An IAM access policy as described in <a
-     *         ervices.com/IAM/latest/UserGuide/index.html?AccessPolicyLanguage.html"
+     *         href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?AccessPolicyLanguage.html"
      *         target="_blank">The Access Policy Language</a> in <i>Using AWS
      *         Identity and Access Management</i>. The maximum size of an access
      *         policy document is 100KB. <p>Example: <code>{"Statement":
@@ -184,7 +184,7 @@ public class UpdateServiceAccessPoliciesRequest extends AmazonWebServiceRequest 
     
     /**
      * An IAM access policy as described in <a
-     * ervices.com/IAM/latest/UserGuide/index.html?AccessPolicyLanguage.html"
+     * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?AccessPolicyLanguage.html"
      * target="_blank">The Access Policy Language</a> in <i>Using AWS
      * Identity and Access Management</i>. The maximum size of an access
      * policy document is 100KB. <p>Example: <code>{"Statement":
@@ -198,7 +198,7 @@ public class UpdateServiceAccessPoliciesRequest extends AmazonWebServiceRequest 
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param accessPolicies An IAM access policy as described in <a
-     *         ervices.com/IAM/latest/UserGuide/index.html?AccessPolicyLanguage.html"
+     *         href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?AccessPolicyLanguage.html"
      *         target="_blank">The Access Policy Language</a> in <i>Using AWS
      *         Identity and Access Management</i>. The maximum size of an access
      *         policy document is 100KB. <p>Example: <code>{"Statement":
@@ -229,9 +229,9 @@ public class UpdateServiceAccessPoliciesRequest extends AmazonWebServiceRequest 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getDomainName() != null) sb.append("DomainName: " + getDomainName() + ", ");
-        if (getAccessPolicies() != null) sb.append("AccessPolicies: " + getAccessPolicies() + ", ");
+        sb.append("{");    	
+        if (getDomainName() != null) sb.append("DomainName: " + getDomainName() + ",");    	
+        if (getAccessPolicies() != null) sb.append("AccessPolicies: " + getAccessPolicies() );
         sb.append("}");
         return sb.toString();
     }

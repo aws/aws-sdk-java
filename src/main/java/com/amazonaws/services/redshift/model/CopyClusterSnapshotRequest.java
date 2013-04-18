@@ -174,9 +174,9 @@ public class CopyClusterSnapshotRequest extends AmazonWebServiceRequest  impleme
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getSourceSnapshotIdentifier() != null) sb.append("SourceSnapshotIdentifier: " + getSourceSnapshotIdentifier() + ", ");
-        if (getTargetSnapshotIdentifier() != null) sb.append("TargetSnapshotIdentifier: " + getTargetSnapshotIdentifier() + ", ");
+        sb.append("{");    	
+        if (getSourceSnapshotIdentifier() != null) sb.append("SourceSnapshotIdentifier: " + getSourceSnapshotIdentifier() + ",");    	
+        if (getTargetSnapshotIdentifier() != null) sb.append("TargetSnapshotIdentifier: " + getTargetSnapshotIdentifier() );
         sb.append("}");
         return sb.toString();
     }

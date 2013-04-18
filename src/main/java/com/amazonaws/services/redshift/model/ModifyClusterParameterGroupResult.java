@@ -126,9 +126,9 @@ public class ModifyClusterParameterGroupResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getParameterGroupName() != null) sb.append("ParameterGroupName: " + getParameterGroupName() + ", ");
-        if (getParameterGroupStatus() != null) sb.append("ParameterGroupStatus: " + getParameterGroupStatus() + ", ");
+        sb.append("{");    	
+        if (getParameterGroupName() != null) sb.append("ParameterGroupName: " + getParameterGroupName() + ",");    	
+        if (getParameterGroupStatus() != null) sb.append("ParameterGroupStatus: " + getParameterGroupStatus() );
         sb.append("}");
         return sb.toString();
     }

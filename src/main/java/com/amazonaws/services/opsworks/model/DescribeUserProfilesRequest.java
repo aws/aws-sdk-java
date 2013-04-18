@@ -111,8 +111,8 @@ public class DescribeUserProfilesRequest extends AmazonWebServiceRequest  implem
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getIamUserArns() != null) sb.append("IamUserArns: " + getIamUserArns() + ", ");
+        sb.append("{");    	
+        if (getIamUserArns() != null) sb.append("IamUserArns: " + getIamUserArns() );
         sb.append("}");
         return sb.toString();
     }

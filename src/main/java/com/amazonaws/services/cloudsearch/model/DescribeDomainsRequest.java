@@ -111,8 +111,8 @@ public class DescribeDomainsRequest extends AmazonWebServiceRequest  implements 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getDomainNames() != null) sb.append("DomainNames: " + getDomainNames() + ", ");
+        sb.append("{");    	
+        if (getDomainNames() != null) sb.append("DomainNames: " + getDomainNames() );
         sb.append("}");
         return sb.toString();
     }

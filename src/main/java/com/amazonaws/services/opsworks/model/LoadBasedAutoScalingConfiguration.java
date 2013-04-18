@@ -226,11 +226,11 @@ public class LoadBasedAutoScalingConfiguration  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getLayerId() != null) sb.append("LayerId: " + getLayerId() + ", ");
-        if (isEnable() != null) sb.append("Enable: " + isEnable() + ", ");
-        if (getUpScaling() != null) sb.append("UpScaling: " + getUpScaling() + ", ");
-        if (getDownScaling() != null) sb.append("DownScaling: " + getDownScaling() + ", ");
+        sb.append("{");    	
+        if (getLayerId() != null) sb.append("LayerId: " + getLayerId() + ",");    	
+        if (isEnable() != null) sb.append("Enable: " + isEnable() + ",");    	
+        if (getUpScaling() != null) sb.append("UpScaling: " + getUpScaling() + ",");    	
+        if (getDownScaling() != null) sb.append("DownScaling: " + getDownScaling() );
         sb.append("}");
         return sb.toString();
     }

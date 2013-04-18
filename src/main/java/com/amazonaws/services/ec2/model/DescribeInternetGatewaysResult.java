@@ -102,8 +102,8 @@ public class DescribeInternetGatewaysResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getInternetGateways() != null) sb.append("InternetGateways: " + getInternetGateways() + ", ");
+        sb.append("{");    	
+        if (getInternetGateways() != null) sb.append("InternetGateways: " + getInternetGateways() );
         sb.append("}");
         return sb.toString();
     }

@@ -161,9 +161,9 @@ public class Origins  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getQuantity() != null) sb.append("Quantity: " + getQuantity() + ", ");
-        if (getItems() != null) sb.append("Items: " + getItems() + ", ");
+        sb.append("{");    	
+        if (getQuantity() != null) sb.append("Quantity: " + getQuantity() + ",");    	
+        if (getItems() != null) sb.append("Items: " + getItems() );
         sb.append("}");
         return sb.toString();
     }

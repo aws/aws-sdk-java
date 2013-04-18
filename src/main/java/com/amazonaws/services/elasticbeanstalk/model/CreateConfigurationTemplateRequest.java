@@ -624,14 +624,14 @@ public class CreateConfigurationTemplateRequest extends AmazonWebServiceRequest 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getApplicationName() != null) sb.append("ApplicationName: " + getApplicationName() + ", ");
-        if (getTemplateName() != null) sb.append("TemplateName: " + getTemplateName() + ", ");
-        if (getSolutionStackName() != null) sb.append("SolutionStackName: " + getSolutionStackName() + ", ");
-        if (getSourceConfiguration() != null) sb.append("SourceConfiguration: " + getSourceConfiguration() + ", ");
-        if (getEnvironmentId() != null) sb.append("EnvironmentId: " + getEnvironmentId() + ", ");
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ", ");
-        if (getOptionSettings() != null) sb.append("OptionSettings: " + getOptionSettings() + ", ");
+        sb.append("{");    	
+        if (getApplicationName() != null) sb.append("ApplicationName: " + getApplicationName() + ",");    	
+        if (getTemplateName() != null) sb.append("TemplateName: " + getTemplateName() + ",");    	
+        if (getSolutionStackName() != null) sb.append("SolutionStackName: " + getSolutionStackName() + ",");    	
+        if (getSourceConfiguration() != null) sb.append("SourceConfiguration: " + getSourceConfiguration() + ",");    	
+        if (getEnvironmentId() != null) sb.append("EnvironmentId: " + getEnvironmentId() + ",");    	
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");    	
+        if (getOptionSettings() != null) sb.append("OptionSettings: " + getOptionSettings() );
         sb.append("}");
         return sb.toString();
     }

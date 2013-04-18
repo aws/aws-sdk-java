@@ -79,8 +79,8 @@ public class RouteFilterPrefix  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getCidr() != null) sb.append("Cidr: " + getCidr() + ", ");
+        sb.append("{");    	
+        if (getCidr() != null) sb.append("Cidr: " + getCidr() );
         sb.append("}");
         return sb.toString();
     }

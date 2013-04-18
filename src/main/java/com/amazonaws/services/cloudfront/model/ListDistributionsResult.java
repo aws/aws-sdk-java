@@ -72,8 +72,8 @@ public class ListDistributionsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getDistributionList() != null) sb.append("DistributionList: " + getDistributionList() + ", ");
+        sb.append("{");    	
+        if (getDistributionList() != null) sb.append("DistributionList: " + getDistributionList() );
         sb.append("}");
         return sb.toString();
     }

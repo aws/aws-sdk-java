@@ -143,8 +143,8 @@ public class DescribeCachediSCSIVolumesRequest extends AmazonWebServiceRequest  
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getVolumeARNs() != null) sb.append("VolumeARNs: " + getVolumeARNs() + ", ");
+        sb.append("{");    	
+        if (getVolumeARNs() != null) sb.append("VolumeARNs: " + getVolumeARNs() );
         sb.append("}");
         return sb.toString();
     }

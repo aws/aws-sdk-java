@@ -23,6 +23,7 @@ import java.io.Serializable;
  * 3k, triple the value, etc. Eventually-consistent reads consume half the resources of strictly consistent reads.
  * </p>
  */
+@Deprecated
 public class ProvisionedThroughput  implements Serializable  {
 
     /**

@@ -235,12 +235,12 @@ public class SpotDatafeedSubscription  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getOwnerId() != null) sb.append("OwnerId: " + getOwnerId() + ", ");
-        if (getBucket() != null) sb.append("Bucket: " + getBucket() + ", ");
-        if (getPrefix() != null) sb.append("Prefix: " + getPrefix() + ", ");
-        if (getState() != null) sb.append("State: " + getState() + ", ");
-        if (getFault() != null) sb.append("Fault: " + getFault() + ", ");
+        sb.append("{");    	
+        if (getOwnerId() != null) sb.append("OwnerId: " + getOwnerId() + ",");    	
+        if (getBucket() != null) sb.append("Bucket: " + getBucket() + ",");    	
+        if (getPrefix() != null) sb.append("Prefix: " + getPrefix() + ",");    	
+        if (getState() != null) sb.append("State: " + getState() + ",");    	
+        if (getFault() != null) sb.append("Fault: " + getFault() );
         sb.append("}");
         return sb.toString();
     }

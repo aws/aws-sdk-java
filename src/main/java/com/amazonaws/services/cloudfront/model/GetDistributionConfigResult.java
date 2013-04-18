@@ -111,9 +111,9 @@ public class GetDistributionConfigResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getDistributionConfig() != null) sb.append("DistributionConfig: " + getDistributionConfig() + ", ");
-        if (getETag() != null) sb.append("ETag: " + getETag() + ", ");
+        sb.append("{");    	
+        if (getDistributionConfig() != null) sb.append("DistributionConfig: " + getDistributionConfig() + ",");    	
+        if (getETag() != null) sb.append("ETag: " + getETag() );
         sb.append("}");
         return sb.toString();
     }

@@ -43,7 +43,7 @@ public class CreateVirtualMFADeviceRequest extends AmazonWebServiceRequest  impl
     /**
      * The path for the virtual MFA device. For more information about paths,
      * see <a
-     * ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      * Identity and Access Management</i>. <p>This parameter is optional. If
      * it is not included, it defaults to a slash (/).
@@ -67,7 +67,7 @@ public class CreateVirtualMFADeviceRequest extends AmazonWebServiceRequest  impl
     /**
      * The path for the virtual MFA device. For more information about paths,
      * see <a
-     * ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      * Identity and Access Management</i>. <p>This parameter is optional. If
      * it is not included, it defaults to a slash (/).
@@ -78,7 +78,7 @@ public class CreateVirtualMFADeviceRequest extends AmazonWebServiceRequest  impl
      *
      * @return The path for the virtual MFA device. For more information about paths,
      *         see <a
-     *         ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     *         href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i>. <p>This parameter is optional. If
      *         it is not included, it defaults to a slash (/).
@@ -90,7 +90,7 @@ public class CreateVirtualMFADeviceRequest extends AmazonWebServiceRequest  impl
     /**
      * The path for the virtual MFA device. For more information about paths,
      * see <a
-     * ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      * Identity and Access Management</i>. <p>This parameter is optional. If
      * it is not included, it defaults to a slash (/).
@@ -101,7 +101,7 @@ public class CreateVirtualMFADeviceRequest extends AmazonWebServiceRequest  impl
      *
      * @param path The path for the virtual MFA device. For more information about paths,
      *         see <a
-     *         ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     *         href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i>. <p>This parameter is optional. If
      *         it is not included, it defaults to a slash (/).
@@ -113,7 +113,7 @@ public class CreateVirtualMFADeviceRequest extends AmazonWebServiceRequest  impl
     /**
      * The path for the virtual MFA device. For more information about paths,
      * see <a
-     * ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      * Identity and Access Management</i>. <p>This parameter is optional. If
      * it is not included, it defaults to a slash (/).
@@ -126,7 +126,7 @@ public class CreateVirtualMFADeviceRequest extends AmazonWebServiceRequest  impl
      *
      * @param path The path for the virtual MFA device. For more information about paths,
      *         see <a
-     *         ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     *         href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i>. <p>This parameter is optional. If
      *         it is not included, it defaults to a slash (/).
@@ -203,9 +203,9 @@ public class CreateVirtualMFADeviceRequest extends AmazonWebServiceRequest  impl
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getPath() != null) sb.append("Path: " + getPath() + ", ");
-        if (getVirtualMFADeviceName() != null) sb.append("VirtualMFADeviceName: " + getVirtualMFADeviceName() + ", ");
+        sb.append("{");    	
+        if (getPath() != null) sb.append("Path: " + getPath() + ",");    	
+        if (getVirtualMFADeviceName() != null) sb.append("VirtualMFADeviceName: " + getVirtualMFADeviceName() );
         sb.append("}");
         return sb.toString();
     }

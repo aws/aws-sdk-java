@@ -189,10 +189,10 @@ public class DescribeServiceErrorsRequest extends AmazonWebServiceRequest  imple
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getStackId() != null) sb.append("StackId: " + getStackId() + ", ");
-        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ", ");
-        if (getServiceErrorIds() != null) sb.append("ServiceErrorIds: " + getServiceErrorIds() + ", ");
+        sb.append("{");    	
+        if (getStackId() != null) sb.append("StackId: " + getStackId() + ",");    	
+        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ",");    	
+        if (getServiceErrorIds() != null) sb.append("ServiceErrorIds: " + getServiceErrorIds() );
         sb.append("}");
         return sb.toString();
     }

@@ -107,8 +107,8 @@ public class DescribeVirtualInterfacesResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getVirtualInterfaces() != null) sb.append("VirtualInterfaces: " + getVirtualInterfaces() + ", ");
+        sb.append("{");    	
+        if (getVirtualInterfaces() != null) sb.append("VirtualInterfaces: " + getVirtualInterfaces() );
         sb.append("}");
         return sb.toString();
     }

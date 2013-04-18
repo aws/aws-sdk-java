@@ -248,13 +248,13 @@ public class Route  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getDestinationCidrBlock() != null) sb.append("DestinationCidrBlock: " + getDestinationCidrBlock() + ", ");
-        if (getGatewayId() != null) sb.append("GatewayId: " + getGatewayId() + ", ");
-        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ", ");
-        if (getInstanceOwnerId() != null) sb.append("InstanceOwnerId: " + getInstanceOwnerId() + ", ");
-        if (getNetworkInterfaceId() != null) sb.append("NetworkInterfaceId: " + getNetworkInterfaceId() + ", ");
-        if (getState() != null) sb.append("State: " + getState() + ", ");
+        sb.append("{");    	
+        if (getDestinationCidrBlock() != null) sb.append("DestinationCidrBlock: " + getDestinationCidrBlock() + ",");    	
+        if (getGatewayId() != null) sb.append("GatewayId: " + getGatewayId() + ",");    	
+        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ",");    	
+        if (getInstanceOwnerId() != null) sb.append("InstanceOwnerId: " + getInstanceOwnerId() + ",");    	
+        if (getNetworkInterfaceId() != null) sb.append("NetworkInterfaceId: " + getNetworkInterfaceId() + ",");    	
+        if (getState() != null) sb.append("State: " + getState() );
         sb.append("}");
         return sb.toString();
     }

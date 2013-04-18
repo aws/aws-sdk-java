@@ -38,7 +38,7 @@ public class DeleteEventSubscriptionRequestMarshaller implements Marshaller<Requ
 
         Request<DeleteEventSubscriptionRequest> request = new DefaultRequest<DeleteEventSubscriptionRequest>(deleteEventSubscriptionRequest, "AmazonRDS");
         request.addParameter("Action", "DeleteEventSubscription");
-        request.addParameter("Version", "2013-01-10");
+        request.addParameter("Version", "2013-02-12");
 
         if (deleteEventSubscriptionRequest.getSubscriptionName() != null) {
             request.addParameter("SubscriptionName", StringUtils.fromString(deleteEventSubscriptionRequest.getSubscriptionName()));

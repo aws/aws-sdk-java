@@ -570,15 +570,15 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest  implements S
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getStackId() != null) sb.append("StackId: " + getStackId() + ", ");
-        if (getLayerIds() != null) sb.append("LayerIds: " + getLayerIds() + ", ");
-        if (getInstanceType() != null) sb.append("InstanceType: " + getInstanceType() + ", ");
-        if (getAutoScalingType() != null) sb.append("AutoScalingType: " + getAutoScalingType() + ", ");
-        if (getHostname() != null) sb.append("Hostname: " + getHostname() + ", ");
-        if (getOs() != null) sb.append("Os: " + getOs() + ", ");
-        if (getSshKeyName() != null) sb.append("SshKeyName: " + getSshKeyName() + ", ");
-        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ", ");
+        sb.append("{");    	
+        if (getStackId() != null) sb.append("StackId: " + getStackId() + ",");    	
+        if (getLayerIds() != null) sb.append("LayerIds: " + getLayerIds() + ",");    	
+        if (getInstanceType() != null) sb.append("InstanceType: " + getInstanceType() + ",");    	
+        if (getAutoScalingType() != null) sb.append("AutoScalingType: " + getAutoScalingType() + ",");    	
+        if (getHostname() != null) sb.append("Hostname: " + getHostname() + ",");    	
+        if (getOs() != null) sb.append("Os: " + getOs() + ",");    	
+        if (getSshKeyName() != null) sb.append("SshKeyName: " + getSshKeyName() + ",");    	
+        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() );
         sb.append("}");
         return sb.toString();
     }

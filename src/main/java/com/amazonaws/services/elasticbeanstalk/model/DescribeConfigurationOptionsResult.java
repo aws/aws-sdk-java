@@ -158,9 +158,9 @@ public class DescribeConfigurationOptionsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getSolutionStackName() != null) sb.append("SolutionStackName: " + getSolutionStackName() + ", ");
-        if (getOptions() != null) sb.append("Options: " + getOptions() + ", ");
+        sb.append("{");    	
+        if (getSolutionStackName() != null) sb.append("SolutionStackName: " + getSolutionStackName() + ",");    	
+        if (getOptions() != null) sb.append("Options: " + getOptions() );
         sb.append("}");
         return sb.toString();
     }

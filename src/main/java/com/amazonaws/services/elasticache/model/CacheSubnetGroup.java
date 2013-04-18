@@ -235,11 +235,11 @@ public class CacheSubnetGroup  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getCacheSubnetGroupName() != null) sb.append("CacheSubnetGroupName: " + getCacheSubnetGroupName() + ", ");
-        if (getCacheSubnetGroupDescription() != null) sb.append("CacheSubnetGroupDescription: " + getCacheSubnetGroupDescription() + ", ");
-        if (getVpcId() != null) sb.append("VpcId: " + getVpcId() + ", ");
-        if (getSubnets() != null) sb.append("Subnets: " + getSubnets() + ", ");
+        sb.append("{");    	
+        if (getCacheSubnetGroupName() != null) sb.append("CacheSubnetGroupName: " + getCacheSubnetGroupName() + ",");    	
+        if (getCacheSubnetGroupDescription() != null) sb.append("CacheSubnetGroupDescription: " + getCacheSubnetGroupDescription() + ",");    	
+        if (getVpcId() != null) sb.append("VpcId: " + getVpcId() + ",");    	
+        if (getSubnets() != null) sb.append("Subnets: " + getSubnets() );
         sb.append("}");
         return sb.toString();
     }

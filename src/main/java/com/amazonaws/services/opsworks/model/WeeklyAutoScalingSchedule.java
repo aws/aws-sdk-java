@@ -350,14 +350,14 @@ public class WeeklyAutoScalingSchedule  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getMonday() != null) sb.append("Monday: " + getMonday() + ", ");
-        if (getTuesday() != null) sb.append("Tuesday: " + getTuesday() + ", ");
-        if (getWednesday() != null) sb.append("Wednesday: " + getWednesday() + ", ");
-        if (getThursday() != null) sb.append("Thursday: " + getThursday() + ", ");
-        if (getFriday() != null) sb.append("Friday: " + getFriday() + ", ");
-        if (getSaturday() != null) sb.append("Saturday: " + getSaturday() + ", ");
-        if (getSunday() != null) sb.append("Sunday: " + getSunday() + ", ");
+        sb.append("{");    	
+        if (getMonday() != null) sb.append("Monday: " + getMonday() + ",");    	
+        if (getTuesday() != null) sb.append("Tuesday: " + getTuesday() + ",");    	
+        if (getWednesday() != null) sb.append("Wednesday: " + getWednesday() + ",");    	
+        if (getThursday() != null) sb.append("Thursday: " + getThursday() + ",");    	
+        if (getFriday() != null) sb.append("Friday: " + getFriday() + ",");    	
+        if (getSaturday() != null) sb.append("Saturday: " + getSaturday() + ",");    	
+        if (getSunday() != null) sb.append("Sunday: " + getSunday() );
         sb.append("}");
         return sb.toString();
     }

@@ -33,6 +33,7 @@ package com.amazonaws.services.dynamodb.datamodeling;
  * mapper.delete(obj, new DynamoDBMapperConfig(SaveBehavior.CLOBBER));
  * </pre>
  */
+@Deprecated
 public class DynamoDBMapperConfig {
 
     /**

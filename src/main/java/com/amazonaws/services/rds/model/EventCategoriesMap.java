@@ -146,9 +146,9 @@ public class EventCategoriesMap  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getSourceType() != null) sb.append("SourceType: " + getSourceType() + ", ");
-        if (getEventCategories() != null) sb.append("EventCategories: " + getEventCategories() + ", ");
+        sb.append("{");    	
+        if (getSourceType() != null) sb.append("SourceType: " + getSourceType() + ",");    	
+        if (getEventCategories() != null) sb.append("EventCategories: " + getEventCategories() );
         sb.append("}");
         return sb.toString();
     }

@@ -107,8 +107,8 @@ public class DescribeIndexFieldsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getIndexFields() != null) sb.append("IndexFields: " + getIndexFields() + ", ");
+        sb.append("{");    	
+        if (getIndexFields() != null) sb.append("IndexFields: " + getIndexFields() );
         sb.append("}");
         return sb.toString();
     }

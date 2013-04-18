@@ -89,6 +89,21 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      */
     private String optionGroupName;
 
+    /**
+     * Specifies the accessibility options for the DB Instance. A value of
+     * true specifies an Internet-facing instance with a publicly resolvable
+     * DNS name, which resolves to a public IP address. A value of false
+     * specifies an internal instance with a DNS name that resolves to a
+     * private IP address. <p> Default: The default behavior varies depending
+     * on whether a VPC has been requested or not. The following list shows
+     * the default behavior in each case. <ul> <li><b>Default
+     * VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> <p> If no DB subnet
+     * group has been specified as part of the request and the
+     * PubliclyAccessible value has not been set, the DB instance will be
+     * publicly accessible. If a specific DB subnet group has been specified
+     * as part of the request and the PubliclyAccessible value has not been
+     * set, the DB instance will be private.
+     */
     private Boolean publiclyAccessible;
 
     /**
@@ -500,29 +515,101 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
     
     
     /**
-     * Returns the value of the PubliclyAccessible property for this object.
+     * Specifies the accessibility options for the DB Instance. A value of
+     * true specifies an Internet-facing instance with a publicly resolvable
+     * DNS name, which resolves to a public IP address. A value of false
+     * specifies an internal instance with a DNS name that resolves to a
+     * private IP address. <p> Default: The default behavior varies depending
+     * on whether a VPC has been requested or not. The following list shows
+     * the default behavior in each case. <ul> <li><b>Default
+     * VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> <p> If no DB subnet
+     * group has been specified as part of the request and the
+     * PubliclyAccessible value has not been set, the DB instance will be
+     * publicly accessible. If a specific DB subnet group has been specified
+     * as part of the request and the PubliclyAccessible value has not been
+     * set, the DB instance will be private.
      *
-     * @return The value of the PubliclyAccessible property for this object.
+     * @return Specifies the accessibility options for the DB Instance. A value of
+     *         true specifies an Internet-facing instance with a publicly resolvable
+     *         DNS name, which resolves to a public IP address. A value of false
+     *         specifies an internal instance with a DNS name that resolves to a
+     *         private IP address. <p> Default: The default behavior varies depending
+     *         on whether a VPC has been requested or not. The following list shows
+     *         the default behavior in each case. <ul> <li><b>Default
+     *         VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> <p> If no DB subnet
+     *         group has been specified as part of the request and the
+     *         PubliclyAccessible value has not been set, the DB instance will be
+     *         publicly accessible. If a specific DB subnet group has been specified
+     *         as part of the request and the PubliclyAccessible value has not been
+     *         set, the DB instance will be private.
      */
     public Boolean isPubliclyAccessible() {
         return publiclyAccessible;
     }
     
     /**
-     * Sets the value of the PubliclyAccessible property for this object.
+     * Specifies the accessibility options for the DB Instance. A value of
+     * true specifies an Internet-facing instance with a publicly resolvable
+     * DNS name, which resolves to a public IP address. A value of false
+     * specifies an internal instance with a DNS name that resolves to a
+     * private IP address. <p> Default: The default behavior varies depending
+     * on whether a VPC has been requested or not. The following list shows
+     * the default behavior in each case. <ul> <li><b>Default
+     * VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> <p> If no DB subnet
+     * group has been specified as part of the request and the
+     * PubliclyAccessible value has not been set, the DB instance will be
+     * publicly accessible. If a specific DB subnet group has been specified
+     * as part of the request and the PubliclyAccessible value has not been
+     * set, the DB instance will be private.
      *
-     * @param publiclyAccessible The new value for the PubliclyAccessible property for this object.
+     * @param publiclyAccessible Specifies the accessibility options for the DB Instance. A value of
+     *         true specifies an Internet-facing instance with a publicly resolvable
+     *         DNS name, which resolves to a public IP address. A value of false
+     *         specifies an internal instance with a DNS name that resolves to a
+     *         private IP address. <p> Default: The default behavior varies depending
+     *         on whether a VPC has been requested or not. The following list shows
+     *         the default behavior in each case. <ul> <li><b>Default
+     *         VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> <p> If no DB subnet
+     *         group has been specified as part of the request and the
+     *         PubliclyAccessible value has not been set, the DB instance will be
+     *         publicly accessible. If a specific DB subnet group has been specified
+     *         as part of the request and the PubliclyAccessible value has not been
+     *         set, the DB instance will be private.
      */
     public void setPubliclyAccessible(Boolean publiclyAccessible) {
         this.publiclyAccessible = publiclyAccessible;
     }
     
     /**
-     * Sets the value of the PubliclyAccessible property for this object.
+     * Specifies the accessibility options for the DB Instance. A value of
+     * true specifies an Internet-facing instance with a publicly resolvable
+     * DNS name, which resolves to a public IP address. A value of false
+     * specifies an internal instance with a DNS name that resolves to a
+     * private IP address. <p> Default: The default behavior varies depending
+     * on whether a VPC has been requested or not. The following list shows
+     * the default behavior in each case. <ul> <li><b>Default
+     * VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> <p> If no DB subnet
+     * group has been specified as part of the request and the
+     * PubliclyAccessible value has not been set, the DB instance will be
+     * publicly accessible. If a specific DB subnet group has been specified
+     * as part of the request and the PubliclyAccessible value has not been
+     * set, the DB instance will be private.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param publiclyAccessible The new value for the PubliclyAccessible property for this object.
+     * @param publiclyAccessible Specifies the accessibility options for the DB Instance. A value of
+     *         true specifies an Internet-facing instance with a publicly resolvable
+     *         DNS name, which resolves to a public IP address. A value of false
+     *         specifies an internal instance with a DNS name that resolves to a
+     *         private IP address. <p> Default: The default behavior varies depending
+     *         on whether a VPC has been requested or not. The following list shows
+     *         the default behavior in each case. <ul> <li><b>Default
+     *         VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> <p> If no DB subnet
+     *         group has been specified as part of the request and the
+     *         PubliclyAccessible value has not been set, the DB instance will be
+     *         publicly accessible. If a specific DB subnet group has been specified
+     *         as part of the request and the PubliclyAccessible value has not been
+     *         set, the DB instance will be private.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -534,9 +621,33 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
     
     
     /**
-     * Returns the value of the PubliclyAccessible property for this object.
+     * Specifies the accessibility options for the DB Instance. A value of
+     * true specifies an Internet-facing instance with a publicly resolvable
+     * DNS name, which resolves to a public IP address. A value of false
+     * specifies an internal instance with a DNS name that resolves to a
+     * private IP address. <p> Default: The default behavior varies depending
+     * on whether a VPC has been requested or not. The following list shows
+     * the default behavior in each case. <ul> <li><b>Default
+     * VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> <p> If no DB subnet
+     * group has been specified as part of the request and the
+     * PubliclyAccessible value has not been set, the DB instance will be
+     * publicly accessible. If a specific DB subnet group has been specified
+     * as part of the request and the PubliclyAccessible value has not been
+     * set, the DB instance will be private.
      *
-     * @return The value of the PubliclyAccessible property for this object.
+     * @return Specifies the accessibility options for the DB Instance. A value of
+     *         true specifies an Internet-facing instance with a publicly resolvable
+     *         DNS name, which resolves to a public IP address. A value of false
+     *         specifies an internal instance with a DNS name that resolves to a
+     *         private IP address. <p> Default: The default behavior varies depending
+     *         on whether a VPC has been requested or not. The following list shows
+     *         the default behavior in each case. <ul> <li><b>Default
+     *         VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> <p> If no DB subnet
+     *         group has been specified as part of the request and the
+     *         PubliclyAccessible value has not been set, the DB instance will be
+     *         publicly accessible. If a specific DB subnet group has been specified
+     *         as part of the request and the PubliclyAccessible value has not been
+     *         set, the DB instance will be private.
      */
     public Boolean getPubliclyAccessible() {
         return publiclyAccessible;
@@ -553,16 +664,16 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getDBInstanceIdentifier() != null) sb.append("DBInstanceIdentifier: " + getDBInstanceIdentifier() + ", ");
-        if (getSourceDBInstanceIdentifier() != null) sb.append("SourceDBInstanceIdentifier: " + getSourceDBInstanceIdentifier() + ", ");
-        if (getDBInstanceClass() != null) sb.append("DBInstanceClass: " + getDBInstanceClass() + ", ");
-        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ", ");
-        if (getPort() != null) sb.append("Port: " + getPort() + ", ");
-        if (isAutoMinorVersionUpgrade() != null) sb.append("AutoMinorVersionUpgrade: " + isAutoMinorVersionUpgrade() + ", ");
-        if (getIops() != null) sb.append("Iops: " + getIops() + ", ");
-        if (getOptionGroupName() != null) sb.append("OptionGroupName: " + getOptionGroupName() + ", ");
-        if (isPubliclyAccessible() != null) sb.append("PubliclyAccessible: " + isPubliclyAccessible() + ", ");
+        sb.append("{");    	
+        if (getDBInstanceIdentifier() != null) sb.append("DBInstanceIdentifier: " + getDBInstanceIdentifier() + ",");    	
+        if (getSourceDBInstanceIdentifier() != null) sb.append("SourceDBInstanceIdentifier: " + getSourceDBInstanceIdentifier() + ",");    	
+        if (getDBInstanceClass() != null) sb.append("DBInstanceClass: " + getDBInstanceClass() + ",");    	
+        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");    	
+        if (getPort() != null) sb.append("Port: " + getPort() + ",");    	
+        if (isAutoMinorVersionUpgrade() != null) sb.append("AutoMinorVersionUpgrade: " + isAutoMinorVersionUpgrade() + ",");    	
+        if (getIops() != null) sb.append("Iops: " + getIops() + ",");    	
+        if (getOptionGroupName() != null) sb.append("OptionGroupName: " + getOptionGroupName() + ",");    	
+        if (isPubliclyAccessible() != null) sb.append("PubliclyAccessible: " + isPubliclyAccessible() );
         sb.append("}");
         return sb.toString();
     }

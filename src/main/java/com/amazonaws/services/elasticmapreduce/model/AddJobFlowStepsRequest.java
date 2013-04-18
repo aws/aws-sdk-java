@@ -238,9 +238,9 @@ public class AddJobFlowStepsRequest extends AmazonWebServiceRequest  implements 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getJobFlowId() != null) sb.append("JobFlowId: " + getJobFlowId() + ", ");
-        if (getSteps() != null) sb.append("Steps: " + getSteps() + ", ");
+        sb.append("{");    	
+        if (getJobFlowId() != null) sb.append("JobFlowId: " + getJobFlowId() + ",");    	
+        if (getSteps() != null) sb.append("Steps: " + getSteps() );
         sb.append("}");
         return sb.toString();
     }

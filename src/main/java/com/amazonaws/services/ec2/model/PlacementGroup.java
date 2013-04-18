@@ -285,10 +285,10 @@ public class PlacementGroup  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getGroupName() != null) sb.append("GroupName: " + getGroupName() + ", ");
-        if (getStrategy() != null) sb.append("Strategy: " + getStrategy() + ", ");
-        if (getState() != null) sb.append("State: " + getState() + ", ");
+        sb.append("{");    	
+        if (getGroupName() != null) sb.append("GroupName: " + getGroupName() + ",");    	
+        if (getStrategy() != null) sb.append("Strategy: " + getStrategy() + ",");    	
+        if (getState() != null) sb.append("State: " + getState() );
         sb.append("}");
         return sb.toString();
     }

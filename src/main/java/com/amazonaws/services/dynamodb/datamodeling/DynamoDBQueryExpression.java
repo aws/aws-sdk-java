@@ -21,6 +21,7 @@ import com.amazonaws.services.dynamodb.model.Key;
 /**
  * A query expression
  */
+@Deprecated
 public class DynamoDBQueryExpression {
 
     private boolean consistentRead = true;

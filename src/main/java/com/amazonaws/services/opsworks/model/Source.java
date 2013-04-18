@@ -340,13 +340,13 @@ public class Source  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getType() != null) sb.append("Type: " + getType() + ", ");
-        if (getUrl() != null) sb.append("Url: " + getUrl() + ", ");
-        if (getUsername() != null) sb.append("Username: " + getUsername() + ", ");
-        if (getPassword() != null) sb.append("Password: " + getPassword() + ", ");
-        if (getSshKey() != null) sb.append("SshKey: " + getSshKey() + ", ");
-        if (getRevision() != null) sb.append("Revision: " + getRevision() + ", ");
+        sb.append("{");    	
+        if (getType() != null) sb.append("Type: " + getType() + ",");    	
+        if (getUrl() != null) sb.append("Url: " + getUrl() + ",");    	
+        if (getUsername() != null) sb.append("Username: " + getUsername() + ",");    	
+        if (getPassword() != null) sb.append("Password: " + getPassword() + ",");    	
+        if (getSshKey() != null) sb.append("SshKey: " + getSshKey() + ",");    	
+        if (getRevision() != null) sb.append("Revision: " + getRevision() );
         sb.append("}");
         return sb.toString();
     }

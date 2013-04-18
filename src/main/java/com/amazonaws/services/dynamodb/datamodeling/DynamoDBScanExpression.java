@@ -29,6 +29,7 @@ import com.amazonaws.services.dynamodb.model.Key;
  * 
  * @see DynamoDBMapper#scan(Class, DynamoDBScanExpression)
  */
+@Deprecated
 public class DynamoDBScanExpression {
 
     /** Optional filter to limit the results of the scan. */

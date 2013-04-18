@@ -144,10 +144,10 @@ public class NetworkAclAssociation  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getNetworkAclAssociationId() != null) sb.append("NetworkAclAssociationId: " + getNetworkAclAssociationId() + ", ");
-        if (getNetworkAclId() != null) sb.append("NetworkAclId: " + getNetworkAclId() + ", ");
-        if (getSubnetId() != null) sb.append("SubnetId: " + getSubnetId() + ", ");
+        sb.append("{");    	
+        if (getNetworkAclAssociationId() != null) sb.append("NetworkAclAssociationId: " + getNetworkAclAssociationId() + ",");    	
+        if (getNetworkAclId() != null) sb.append("NetworkAclId: " + getNetworkAclId() + ",");    	
+        if (getSubnetId() != null) sb.append("SubnetId: " + getSubnetId() );
         sb.append("}");
         return sb.toString();
     }

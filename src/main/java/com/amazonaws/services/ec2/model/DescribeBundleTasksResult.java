@@ -107,8 +107,8 @@ public class DescribeBundleTasksResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getBundleTasks() != null) sb.append("BundleTasks: " + getBundleTasks() + ", ");
+        sb.append("{");    	
+        if (getBundleTasks() != null) sb.append("BundleTasks: " + getBundleTasks() );
         sb.append("}");
         return sb.toString();
     }

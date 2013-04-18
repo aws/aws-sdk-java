@@ -116,8 +116,8 @@ public class StartInstancesResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getStartingInstances() != null) sb.append("StartingInstances: " + getStartingInstances() + ", ");
+        sb.append("{");    	
+        if (getStartingInstances() != null) sb.append("StartingInstances: " + getStartingInstances() );
         sb.append("}");
         return sb.toString();
     }

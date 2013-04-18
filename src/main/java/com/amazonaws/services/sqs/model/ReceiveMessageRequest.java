@@ -367,12 +367,12 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest  implements S
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getQueueUrl() != null) sb.append("QueueUrl: " + getQueueUrl() + ", ");
-        if (getAttributeNames() != null) sb.append("AttributeNames: " + getAttributeNames() + ", ");
-        if (getMaxNumberOfMessages() != null) sb.append("MaxNumberOfMessages: " + getMaxNumberOfMessages() + ", ");
-        if (getVisibilityTimeout() != null) sb.append("VisibilityTimeout: " + getVisibilityTimeout() + ", ");
-        if (getWaitTimeSeconds() != null) sb.append("WaitTimeSeconds: " + getWaitTimeSeconds() + ", ");
+        sb.append("{");    	
+        if (getQueueUrl() != null) sb.append("QueueUrl: " + getQueueUrl() + ",");    	
+        if (getAttributeNames() != null) sb.append("AttributeNames: " + getAttributeNames() + ",");    	
+        if (getMaxNumberOfMessages() != null) sb.append("MaxNumberOfMessages: " + getMaxNumberOfMessages() + ",");    	
+        if (getVisibilityTimeout() != null) sb.append("VisibilityTimeout: " + getVisibilityTimeout() + ",");    	
+        if (getWaitTimeSeconds() != null) sb.append("WaitTimeSeconds: " + getWaitTimeSeconds() );
         sb.append("}");
         return sb.toString();
     }

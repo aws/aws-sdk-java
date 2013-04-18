@@ -113,8 +113,8 @@ public class CreateAccountAliasRequest extends AmazonWebServiceRequest  implemen
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getAccountAlias() != null) sb.append("AccountAlias: " + getAccountAlias() + ", ");
+        sb.append("{");    	
+        if (getAccountAlias() != null) sb.append("AccountAlias: " + getAccountAlias() );
         sb.append("}");
         return sb.toString();
     }

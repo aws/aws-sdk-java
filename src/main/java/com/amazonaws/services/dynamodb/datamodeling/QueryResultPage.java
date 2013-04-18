@@ -22,6 +22,7 @@ import com.amazonaws.services.dynamodb.model.Key;
 /**
  * Container for a page of query results
  */
+@Deprecated
 public class QueryResultPage<T> {
 
     private List<T> results;

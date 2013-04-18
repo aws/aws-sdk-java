@@ -27,6 +27,7 @@ import org.codehaus.jackson.map.MappingJsonFactory;
  * of that library, the documentation of which is available here:
  * http://docs.codehaus.org/display/JACKSON/Home
  */
+@Deprecated
 public class JsonMarshaller<T extends Object> implements DynamoDBMarshaller<T> {
 
     @Override

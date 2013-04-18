@@ -107,8 +107,8 @@ public class DescribeStacksResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getStacks() != null) sb.append("Stacks: " + getStacks() + ", ");
+        sb.append("{");    	
+        if (getStacks() != null) sb.append("Stacks: " + getStacks() );
         sb.append("}");
         return sb.toString();
     }

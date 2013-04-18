@@ -18,6 +18,7 @@ import java.io.Serializable;
 /**
  * Update Item Result
  */
+@Deprecated
 public class UpdateItemResult  implements Serializable  {
 
     /**

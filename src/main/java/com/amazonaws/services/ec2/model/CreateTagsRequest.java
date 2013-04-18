@@ -227,9 +227,9 @@ public class CreateTagsRequest extends AmazonWebServiceRequest  implements Seria
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getResources() != null) sb.append("Resources: " + getResources() + ", ");
-        if (getTags() != null) sb.append("Tags: " + getTags() + ", ");
+        sb.append("{");    	
+        if (getResources() != null) sb.append("Resources: " + getResources() + ",");    	
+        if (getTags() != null) sb.append("Tags: " + getTags() );
         sb.append("}");
         return sb.toString();
     }

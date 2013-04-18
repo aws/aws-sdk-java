@@ -88,8 +88,8 @@ public class RunJobFlowResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getJobFlowId() != null) sb.append("JobFlowId: " + getJobFlowId() + ", ");
+        sb.append("{");    	
+        if (getJobFlowId() != null) sb.append("JobFlowId: " + getJobFlowId() );
         sb.append("}");
         return sb.toString();
     }

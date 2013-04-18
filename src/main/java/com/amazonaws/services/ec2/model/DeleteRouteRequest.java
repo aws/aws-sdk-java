@@ -124,9 +124,9 @@ public class DeleteRouteRequest extends AmazonWebServiceRequest  implements Seri
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getRouteTableId() != null) sb.append("RouteTableId: " + getRouteTableId() + ", ");
-        if (getDestinationCidrBlock() != null) sb.append("DestinationCidrBlock: " + getDestinationCidrBlock() + ", ");
+        sb.append("{");    	
+        if (getRouteTableId() != null) sb.append("RouteTableId: " + getRouteTableId() + ",");    	
+        if (getDestinationCidrBlock() != null) sb.append("DestinationCidrBlock: " + getDestinationCidrBlock() );
         sb.append("}");
         return sb.toString();
     }

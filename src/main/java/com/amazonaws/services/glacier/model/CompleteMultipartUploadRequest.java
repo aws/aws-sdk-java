@@ -391,12 +391,12 @@ public class CompleteMultipartUploadRequest extends AmazonWebServiceRequest  imp
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getAccountId() != null) sb.append("AccountId: " + getAccountId() + ", ");
-        if (getVaultName() != null) sb.append("VaultName: " + getVaultName() + ", ");
-        if (getUploadId() != null) sb.append("UploadId: " + getUploadId() + ", ");
-        if (getArchiveSize() != null) sb.append("ArchiveSize: " + getArchiveSize() + ", ");
-        if (getChecksum() != null) sb.append("Checksum: " + getChecksum() + ", ");
+        sb.append("{");    	
+        if (getAccountId() != null) sb.append("AccountId: " + getAccountId() + ",");    	
+        if (getVaultName() != null) sb.append("VaultName: " + getVaultName() + ",");    	
+        if (getUploadId() != null) sb.append("UploadId: " + getUploadId() + ",");    	
+        if (getArchiveSize() != null) sb.append("ArchiveSize: " + getArchiveSize() + ",");    	
+        if (getChecksum() != null) sb.append("Checksum: " + getChecksum() );
         sb.append("}");
         return sb.toString();
     }

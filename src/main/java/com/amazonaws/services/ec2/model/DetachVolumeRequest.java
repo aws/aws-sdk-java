@@ -291,11 +291,11 @@ public class DetachVolumeRequest extends AmazonWebServiceRequest  implements Ser
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getVolumeId() != null) sb.append("VolumeId: " + getVolumeId() + ", ");
-        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ", ");
-        if (getDevice() != null) sb.append("Device: " + getDevice() + ", ");
-        if (isForce() != null) sb.append("Force: " + isForce() + ", ");
+        sb.append("{");    	
+        if (getVolumeId() != null) sb.append("VolumeId: " + getVolumeId() + ",");    	
+        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ",");    	
+        if (getDevice() != null) sb.append("Device: " + getDevice() + ",");    	
+        if (isForce() != null) sb.append("Force: " + isForce() );
         sb.append("}");
         return sb.toString();
     }

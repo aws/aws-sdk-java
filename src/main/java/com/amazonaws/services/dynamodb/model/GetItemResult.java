@@ -18,6 +18,7 @@ import java.io.Serializable;
 /**
  * Get Item Result
  */
+@Deprecated
 public class GetItemResult  implements Serializable  {
 
     /**

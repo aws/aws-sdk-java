@@ -86,7 +86,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest  implements Seria
      * modify the version of Hadoop from the defaults shown above. <p>For
      * details about the AMI versions currently supported by Amazon
      * ElasticMapReduce, go to <a
-     * perGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
+     * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
      * Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic
      * MapReduce Developer's Guide.</i>
      * <p>
@@ -116,11 +116,11 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest  implements Seria
     /**
      * A list of strings that indicates third-party software to use with the
      * job flow. For more information, go to <a
-     * lasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
+     * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
      * Third Party Applications with Amazon EMR</a>. Currently supported
      * values are: <ul> <li>"karmasphere-enterprise-utility" - tag the job
      * flow for management by <a
-     * ://aws.amazon.com/elasticmapreduce/karmasphere/">Karmasphere.</a></li>
+     * href="http://aws.amazon.com/elasticmapreduce/karmasphere/">Karmasphere.</a></li>
      * <li>"mapr-m3" - launch the job flow using MapR M3 Edition.</li>
      * <li>"mapr-m5" - launch the job flow using MapR M5 Edition.</li> </ul>
      */
@@ -326,7 +326,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest  implements Seria
      * modify the version of Hadoop from the defaults shown above. <p>For
      * details about the AMI versions currently supported by Amazon
      * ElasticMapReduce, go to <a
-     * perGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
+     * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
      * Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic
      * MapReduce Developer's Guide.</i>
      * <p>
@@ -345,7 +345,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest  implements Seria
      *         modify the version of Hadoop from the defaults shown above. <p>For
      *         details about the AMI versions currently supported by Amazon
      *         ElasticMapReduce, go to <a
-     *         perGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
+     *         href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
      *         Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic
      *         MapReduce Developer's Guide.</i>
      */
@@ -365,7 +365,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest  implements Seria
      * modify the version of Hadoop from the defaults shown above. <p>For
      * details about the AMI versions currently supported by Amazon
      * ElasticMapReduce, go to <a
-     * perGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
+     * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
      * Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic
      * MapReduce Developer's Guide.</i>
      * <p>
@@ -384,7 +384,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest  implements Seria
      *         modify the version of Hadoop from the defaults shown above. <p>For
      *         details about the AMI versions currently supported by Amazon
      *         ElasticMapReduce, go to <a
-     *         perGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
+     *         href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
      *         Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic
      *         MapReduce Developer's Guide.</i>
      */
@@ -404,7 +404,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest  implements Seria
      * modify the version of Hadoop from the defaults shown above. <p>For
      * details about the AMI versions currently supported by Amazon
      * ElasticMapReduce, go to <a
-     * perGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
+     * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
      * Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic
      * MapReduce Developer's Guide.</i>
      * <p>
@@ -425,7 +425,7 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest  implements Seria
      *         modify the version of Hadoop from the defaults shown above. <p>For
      *         details about the AMI versions currently supported by Amazon
      *         ElasticMapReduce, go to <a
-     *         perGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
+     *         href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
      *         Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic
      *         MapReduce Developer's Guide.</i>
      *
@@ -627,21 +627,21 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest  implements Seria
     /**
      * A list of strings that indicates third-party software to use with the
      * job flow. For more information, go to <a
-     * lasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
+     * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
      * Third Party Applications with Amazon EMR</a>. Currently supported
      * values are: <ul> <li>"karmasphere-enterprise-utility" - tag the job
      * flow for management by <a
-     * ://aws.amazon.com/elasticmapreduce/karmasphere/">Karmasphere.</a></li>
+     * href="http://aws.amazon.com/elasticmapreduce/karmasphere/">Karmasphere.</a></li>
      * <li>"mapr-m3" - launch the job flow using MapR M3 Edition.</li>
      * <li>"mapr-m5" - launch the job flow using MapR M5 Edition.</li> </ul>
      *
      * @return A list of strings that indicates third-party software to use with the
      *         job flow. For more information, go to <a
-     *         lasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
+     *         href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
      *         Third Party Applications with Amazon EMR</a>. Currently supported
      *         values are: <ul> <li>"karmasphere-enterprise-utility" - tag the job
      *         flow for management by <a
-     *         ://aws.amazon.com/elasticmapreduce/karmasphere/">Karmasphere.</a></li>
+     *         href="http://aws.amazon.com/elasticmapreduce/karmasphere/">Karmasphere.</a></li>
      *         <li>"mapr-m3" - launch the job flow using MapR M3 Edition.</li>
      *         <li>"mapr-m5" - launch the job flow using MapR M5 Edition.</li> </ul>
      */
@@ -656,21 +656,21 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest  implements Seria
     /**
      * A list of strings that indicates third-party software to use with the
      * job flow. For more information, go to <a
-     * lasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
+     * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
      * Third Party Applications with Amazon EMR</a>. Currently supported
      * values are: <ul> <li>"karmasphere-enterprise-utility" - tag the job
      * flow for management by <a
-     * ://aws.amazon.com/elasticmapreduce/karmasphere/">Karmasphere.</a></li>
+     * href="http://aws.amazon.com/elasticmapreduce/karmasphere/">Karmasphere.</a></li>
      * <li>"mapr-m3" - launch the job flow using MapR M3 Edition.</li>
      * <li>"mapr-m5" - launch the job flow using MapR M5 Edition.</li> </ul>
      *
      * @param supportedProducts A list of strings that indicates third-party software to use with the
      *         job flow. For more information, go to <a
-     *         lasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
+     *         href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
      *         Third Party Applications with Amazon EMR</a>. Currently supported
      *         values are: <ul> <li>"karmasphere-enterprise-utility" - tag the job
      *         flow for management by <a
-     *         ://aws.amazon.com/elasticmapreduce/karmasphere/">Karmasphere.</a></li>
+     *         href="http://aws.amazon.com/elasticmapreduce/karmasphere/">Karmasphere.</a></li>
      *         <li>"mapr-m3" - launch the job flow using MapR M3 Edition.</li>
      *         <li>"mapr-m5" - launch the job flow using MapR M5 Edition.</li> </ul>
      */
@@ -688,11 +688,11 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest  implements Seria
     /**
      * A list of strings that indicates third-party software to use with the
      * job flow. For more information, go to <a
-     * lasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
+     * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
      * Third Party Applications with Amazon EMR</a>. Currently supported
      * values are: <ul> <li>"karmasphere-enterprise-utility" - tag the job
      * flow for management by <a
-     * ://aws.amazon.com/elasticmapreduce/karmasphere/">Karmasphere.</a></li>
+     * href="http://aws.amazon.com/elasticmapreduce/karmasphere/">Karmasphere.</a></li>
      * <li>"mapr-m3" - launch the job flow using MapR M3 Edition.</li>
      * <li>"mapr-m5" - launch the job flow using MapR M5 Edition.</li> </ul>
      * <p>
@@ -700,11 +700,11 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest  implements Seria
      *
      * @param supportedProducts A list of strings that indicates third-party software to use with the
      *         job flow. For more information, go to <a
-     *         lasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
+     *         href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
      *         Third Party Applications with Amazon EMR</a>. Currently supported
      *         values are: <ul> <li>"karmasphere-enterprise-utility" - tag the job
      *         flow for management by <a
-     *         ://aws.amazon.com/elasticmapreduce/karmasphere/">Karmasphere.</a></li>
+     *         href="http://aws.amazon.com/elasticmapreduce/karmasphere/">Karmasphere.</a></li>
      *         <li>"mapr-m3" - launch the job flow using MapR M3 Edition.</li>
      *         <li>"mapr-m5" - launch the job flow using MapR M5 Edition.</li> </ul>
      *
@@ -722,11 +722,11 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest  implements Seria
     /**
      * A list of strings that indicates third-party software to use with the
      * job flow. For more information, go to <a
-     * lasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
+     * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
      * Third Party Applications with Amazon EMR</a>. Currently supported
      * values are: <ul> <li>"karmasphere-enterprise-utility" - tag the job
      * flow for management by <a
-     * ://aws.amazon.com/elasticmapreduce/karmasphere/">Karmasphere.</a></li>
+     * href="http://aws.amazon.com/elasticmapreduce/karmasphere/">Karmasphere.</a></li>
      * <li>"mapr-m3" - launch the job flow using MapR M3 Edition.</li>
      * <li>"mapr-m5" - launch the job flow using MapR M5 Edition.</li> </ul>
      * <p>
@@ -734,11 +734,11 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest  implements Seria
      *
      * @param supportedProducts A list of strings that indicates third-party software to use with the
      *         job flow. For more information, go to <a
-     *         lasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
+     *         href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/emr-supported-products.html">Use
      *         Third Party Applications with Amazon EMR</a>. Currently supported
      *         values are: <ul> <li>"karmasphere-enterprise-utility" - tag the job
      *         flow for management by <a
-     *         ://aws.amazon.com/elasticmapreduce/karmasphere/">Karmasphere.</a></li>
+     *         href="http://aws.amazon.com/elasticmapreduce/karmasphere/">Karmasphere.</a></li>
      *         <li>"mapr-m3" - launch the job flow using MapR M3 Edition.</li>
      *         <li>"mapr-m5" - launch the job flow using MapR M5 Edition.</li> </ul>
      *
@@ -915,17 +915,17 @@ public class RunJobFlowRequest extends AmazonWebServiceRequest  implements Seria
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getName() != null) sb.append("Name: " + getName() + ", ");
-        if (getLogUri() != null) sb.append("LogUri: " + getLogUri() + ", ");
-        if (getAdditionalInfo() != null) sb.append("AdditionalInfo: " + getAdditionalInfo() + ", ");
-        if (getAmiVersion() != null) sb.append("AmiVersion: " + getAmiVersion() + ", ");
-        if (getInstances() != null) sb.append("Instances: " + getInstances() + ", ");
-        if (getSteps() != null) sb.append("Steps: " + getSteps() + ", ");
-        if (getBootstrapActions() != null) sb.append("BootstrapActions: " + getBootstrapActions() + ", ");
-        if (getSupportedProducts() != null) sb.append("SupportedProducts: " + getSupportedProducts() + ", ");
-        if (isVisibleToAllUsers() != null) sb.append("VisibleToAllUsers: " + isVisibleToAllUsers() + ", ");
-        if (getJobFlowRole() != null) sb.append("JobFlowRole: " + getJobFlowRole() + ", ");
+        sb.append("{");    	
+        if (getName() != null) sb.append("Name: " + getName() + ",");    	
+        if (getLogUri() != null) sb.append("LogUri: " + getLogUri() + ",");    	
+        if (getAdditionalInfo() != null) sb.append("AdditionalInfo: " + getAdditionalInfo() + ",");    	
+        if (getAmiVersion() != null) sb.append("AmiVersion: " + getAmiVersion() + ",");    	
+        if (getInstances() != null) sb.append("Instances: " + getInstances() + ",");    	
+        if (getSteps() != null) sb.append("Steps: " + getSteps() + ",");    	
+        if (getBootstrapActions() != null) sb.append("BootstrapActions: " + getBootstrapActions() + ",");    	
+        if (getSupportedProducts() != null) sb.append("SupportedProducts: " + getSupportedProducts() + ",");    	
+        if (isVisibleToAllUsers() != null) sb.append("VisibleToAllUsers: " + isVisibleToAllUsers() + ",");    	
+        if (getJobFlowRole() != null) sb.append("JobFlowRole: " + getJobFlowRole() );
         sb.append("}");
         return sb.toString();
     }

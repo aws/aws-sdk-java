@@ -160,9 +160,9 @@ public class DescribeDBSecurityGroupsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ", ");
-        if (getDBSecurityGroups() != null) sb.append("DBSecurityGroups: " + getDBSecurityGroups() + ", ");
+        sb.append("{");    	
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");    	
+        if (getDBSecurityGroups() != null) sb.append("DBSecurityGroups: " + getDBSecurityGroups() );
         sb.append("}");
         return sb.toString();
     }

@@ -107,8 +107,8 @@ public class AttachLoadBalancerToSubnetsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getSubnets() != null) sb.append("Subnets: " + getSubnets() + ", ");
+        sb.append("{");    	
+        if (getSubnets() != null) sb.append("Subnets: " + getSubnets() );
         sb.append("}");
         return sb.toString();
     }

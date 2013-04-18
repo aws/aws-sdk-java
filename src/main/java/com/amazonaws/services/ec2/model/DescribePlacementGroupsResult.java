@@ -106,8 +106,8 @@ public class DescribePlacementGroupsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getPlacementGroups() != null) sb.append("PlacementGroups: " + getPlacementGroups() + ", ");
+        sb.append("{");    	
+        if (getPlacementGroups() != null) sb.append("PlacementGroups: " + getPlacementGroups() );
         sb.append("}");
         return sb.toString();
     }

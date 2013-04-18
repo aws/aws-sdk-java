@@ -99,8 +99,8 @@ public class ReportTaskProgressResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (isCanceled() != null) sb.append("Canceled: " + isCanceled() + ", ");
+        sb.append("{");    	
+        if (isCanceled() != null) sb.append("Canceled: " + isCanceled() );
         sb.append("}");
         return sb.toString();
     }

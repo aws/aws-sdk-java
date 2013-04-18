@@ -277,11 +277,11 @@ public class UpdateSnapshotScheduleRequest extends AmazonWebServiceRequest  impl
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getVolumeARN() != null) sb.append("VolumeARN: " + getVolumeARN() + ", ");
-        if (getStartAt() != null) sb.append("StartAt: " + getStartAt() + ", ");
-        if (getRecurrenceInHours() != null) sb.append("RecurrenceInHours: " + getRecurrenceInHours() + ", ");
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ", ");
+        sb.append("{");    	
+        if (getVolumeARN() != null) sb.append("VolumeARN: " + getVolumeARN() + ",");    	
+        if (getStartAt() != null) sb.append("StartAt: " + getStartAt() + ",");    	
+        if (getRecurrenceInHours() != null) sb.append("RecurrenceInHours: " + getRecurrenceInHours() + ",");    	
+        if (getDescription() != null) sb.append("Description: " + getDescription() );
         sb.append("}");
         return sb.toString();
     }

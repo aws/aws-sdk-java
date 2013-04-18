@@ -214,11 +214,11 @@ public class ImportInstanceRequest extends AmazonWebServiceRequest  implements S
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ", ");
-        if (getLaunchSpecification() != null) sb.append("LaunchSpecification: " + getLaunchSpecification() + ", ");
-        if (getDiskImages() != null) sb.append("DiskImages: " + getDiskImages() + ", ");
-        if (getPlatform() != null) sb.append("Platform: " + getPlatform() + ", ");
+        sb.append("{");    	
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");    	
+        if (getLaunchSpecification() != null) sb.append("LaunchSpecification: " + getLaunchSpecification() + ",");    	
+        if (getDiskImages() != null) sb.append("DiskImages: " + getDiskImages() + ",");    	
+        if (getPlatform() != null) sb.append("Platform: " + getPlatform() );
         sb.append("}");
         return sb.toString();
     }

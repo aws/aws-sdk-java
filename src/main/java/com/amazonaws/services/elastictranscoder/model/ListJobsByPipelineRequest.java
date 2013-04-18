@@ -222,10 +222,10 @@ public class ListJobsByPipelineRequest extends AmazonWebServiceRequest  implemen
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getPipelineId() != null) sb.append("PipelineId: " + getPipelineId() + ", ");
-        if (getAscending() != null) sb.append("Ascending: " + getAscending() + ", ");
-        if (getPageToken() != null) sb.append("PageToken: " + getPageToken() + ", ");
+        sb.append("{");    	
+        if (getPipelineId() != null) sb.append("PipelineId: " + getPipelineId() + ",");    	
+        if (getAscending() != null) sb.append("Ascending: " + getAscending() + ",");    	
+        if (getPageToken() != null) sb.append("PageToken: " + getPageToken() );
         sb.append("}");
         return sb.toString();
     }

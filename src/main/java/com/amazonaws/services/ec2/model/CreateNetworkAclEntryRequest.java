@@ -461,15 +461,15 @@ public class CreateNetworkAclEntryRequest extends AmazonWebServiceRequest  imple
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getNetworkAclId() != null) sb.append("NetworkAclId: " + getNetworkAclId() + ", ");
-        if (getRuleNumber() != null) sb.append("RuleNumber: " + getRuleNumber() + ", ");
-        if (getProtocol() != null) sb.append("Protocol: " + getProtocol() + ", ");
-        if (getRuleAction() != null) sb.append("RuleAction: " + getRuleAction() + ", ");
-        if (isEgress() != null) sb.append("Egress: " + isEgress() + ", ");
-        if (getCidrBlock() != null) sb.append("CidrBlock: " + getCidrBlock() + ", ");
-        if (getIcmpTypeCode() != null) sb.append("IcmpTypeCode: " + getIcmpTypeCode() + ", ");
-        if (getPortRange() != null) sb.append("PortRange: " + getPortRange() + ", ");
+        sb.append("{");    	
+        if (getNetworkAclId() != null) sb.append("NetworkAclId: " + getNetworkAclId() + ",");    	
+        if (getRuleNumber() != null) sb.append("RuleNumber: " + getRuleNumber() + ",");    	
+        if (getProtocol() != null) sb.append("Protocol: " + getProtocol() + ",");    	
+        if (getRuleAction() != null) sb.append("RuleAction: " + getRuleAction() + ",");    	
+        if (isEgress() != null) sb.append("Egress: " + isEgress() + ",");    	
+        if (getCidrBlock() != null) sb.append("CidrBlock: " + getCidrBlock() + ",");    	
+        if (getIcmpTypeCode() != null) sb.append("IcmpTypeCode: " + getIcmpTypeCode() + ",");    	
+        if (getPortRange() != null) sb.append("PortRange: " + getPortRange() );
         sb.append("}");
         return sb.toString();
     }

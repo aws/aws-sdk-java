@@ -102,8 +102,8 @@ public class DescribeNetworkAclsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getNetworkAcls() != null) sb.append("NetworkAcls: " + getNetworkAcls() + ", ");
+        sb.append("{");    	
+        if (getNetworkAcls() != null) sb.append("NetworkAcls: " + getNetworkAcls() );
         sb.append("}");
         return sb.toString();
     }

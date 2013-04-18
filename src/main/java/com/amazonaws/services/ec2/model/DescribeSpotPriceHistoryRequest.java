@@ -59,7 +59,7 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest  im
      * A list of filters used to match properties for SpotPriceHistory. For a
      * complete reference to the available filter keys for this operation,
      * see the <a
-     * "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      * EC2 API reference</a>.
      */
     private java.util.List<Filter> filters;
@@ -289,13 +289,13 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest  im
      * A list of filters used to match properties for SpotPriceHistory. For a
      * complete reference to the available filter keys for this operation,
      * see the <a
-     * "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      * EC2 API reference</a>.
      *
      * @return A list of filters used to match properties for SpotPriceHistory. For a
      *         complete reference to the available filter keys for this operation,
      *         see the <a
-     *         "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      *         EC2 API reference</a>.
      */
     public java.util.List<Filter> getFilters() {
@@ -310,13 +310,13 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest  im
      * A list of filters used to match properties for SpotPriceHistory. For a
      * complete reference to the available filter keys for this operation,
      * see the <a
-     * "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      * EC2 API reference</a>.
      *
      * @param filters A list of filters used to match properties for SpotPriceHistory. For a
      *         complete reference to the available filter keys for this operation,
      *         see the <a
-     *         "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      *         EC2 API reference</a>.
      */
     public void setFilters(java.util.Collection<Filter> filters) {
@@ -334,7 +334,7 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest  im
      * A list of filters used to match properties for SpotPriceHistory. For a
      * complete reference to the available filter keys for this operation,
      * see the <a
-     * "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      * EC2 API reference</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -342,7 +342,7 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest  im
      * @param filters A list of filters used to match properties for SpotPriceHistory. For a
      *         complete reference to the available filter keys for this operation,
      *         see the <a
-     *         "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      *         EC2 API reference</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -360,7 +360,7 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest  im
      * A list of filters used to match properties for SpotPriceHistory. For a
      * complete reference to the available filter keys for this operation,
      * see the <a
-     * "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      * EC2 API reference</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -368,7 +368,7 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest  im
      * @param filters A list of filters used to match properties for SpotPriceHistory. For a
      *         complete reference to the available filter keys for this operation,
      *         see the <a
-     *         "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      *         EC2 API reference</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -499,15 +499,15 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest  im
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getStartTime() != null) sb.append("StartTime: " + getStartTime() + ", ");
-        if (getEndTime() != null) sb.append("EndTime: " + getEndTime() + ", ");
-        if (getInstanceTypes() != null) sb.append("InstanceTypes: " + getInstanceTypes() + ", ");
-        if (getProductDescriptions() != null) sb.append("ProductDescriptions: " + getProductDescriptions() + ", ");
-        if (getFilters() != null) sb.append("Filters: " + getFilters() + ", ");
-        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ", ");
-        if (getMaxResults() != null) sb.append("MaxResults: " + getMaxResults() + ", ");
-        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() + ", ");
+        sb.append("{");    	
+        if (getStartTime() != null) sb.append("StartTime: " + getStartTime() + ",");    	
+        if (getEndTime() != null) sb.append("EndTime: " + getEndTime() + ",");    	
+        if (getInstanceTypes() != null) sb.append("InstanceTypes: " + getInstanceTypes() + ",");    	
+        if (getProductDescriptions() != null) sb.append("ProductDescriptions: " + getProductDescriptions() + ",");    	
+        if (getFilters() != null) sb.append("Filters: " + getFilters() + ",");    	
+        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");    	
+        if (getMaxResults() != null) sb.append("MaxResults: " + getMaxResults() + ",");    	
+        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() );
         sb.append("}");
         return sb.toString();
     }

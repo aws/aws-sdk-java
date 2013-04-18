@@ -29,6 +29,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.dynamodb.AmazonDynamoDB#putItem(PutItemRequest)
  */
+@Deprecated
 public class PutItemRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**

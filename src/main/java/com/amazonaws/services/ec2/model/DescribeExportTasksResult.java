@@ -102,8 +102,8 @@ public class DescribeExportTasksResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getExportTasks() != null) sb.append("ExportTasks: " + getExportTasks() + ", ");
+        sb.append("{");    	
+        if (getExportTasks() != null) sb.append("ExportTasks: " + getExportTasks() );
         sb.append("}");
         return sb.toString();
     }

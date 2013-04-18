@@ -146,9 +146,9 @@ public class CountPendingDecisionTasksRequest extends AmazonWebServiceRequest  i
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getDomain() != null) sb.append("Domain: " + getDomain() + ", ");
-        if (getTaskList() != null) sb.append("TaskList: " + getTaskList() + ", ");
+        sb.append("{");    	
+        if (getDomain() != null) sb.append("Domain: " + getDomain() + ",");    	
+        if (getTaskList() != null) sb.append("TaskList: " + getTaskList() );
         sb.append("}");
         return sb.toString();
     }

@@ -107,8 +107,8 @@ public class DescribeVpcsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getVpcs() != null) sb.append("Vpcs: " + getVpcs() + ", ");
+        sb.append("{");    	
+        if (getVpcs() != null) sb.append("Vpcs: " + getVpcs() );
         sb.append("}");
         return sb.toString();
     }

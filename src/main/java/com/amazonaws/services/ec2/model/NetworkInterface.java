@@ -802,25 +802,25 @@ public class NetworkInterface  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getNetworkInterfaceId() != null) sb.append("NetworkInterfaceId: " + getNetworkInterfaceId() + ", ");
-        if (getSubnetId() != null) sb.append("SubnetId: " + getSubnetId() + ", ");
-        if (getVpcId() != null) sb.append("VpcId: " + getVpcId() + ", ");
-        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ", ");
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ", ");
-        if (getOwnerId() != null) sb.append("OwnerId: " + getOwnerId() + ", ");
-        if (getRequesterId() != null) sb.append("RequesterId: " + getRequesterId() + ", ");
-        if (isRequesterManaged() != null) sb.append("RequesterManaged: " + isRequesterManaged() + ", ");
-        if (getStatus() != null) sb.append("Status: " + getStatus() + ", ");
-        if (getMacAddress() != null) sb.append("MacAddress: " + getMacAddress() + ", ");
-        if (getPrivateIpAddress() != null) sb.append("PrivateIpAddress: " + getPrivateIpAddress() + ", ");
-        if (getPrivateDnsName() != null) sb.append("PrivateDnsName: " + getPrivateDnsName() + ", ");
-        if (isSourceDestCheck() != null) sb.append("SourceDestCheck: " + isSourceDestCheck() + ", ");
-        if (getGroups() != null) sb.append("Groups: " + getGroups() + ", ");
-        if (getAttachment() != null) sb.append("Attachment: " + getAttachment() + ", ");
-        if (getAssociation() != null) sb.append("Association: " + getAssociation() + ", ");
-        if (getTagSet() != null) sb.append("TagSet: " + getTagSet() + ", ");
-        if (getPrivateIpAddresses() != null) sb.append("PrivateIpAddresses: " + getPrivateIpAddresses() + ", ");
+        sb.append("{");    	
+        if (getNetworkInterfaceId() != null) sb.append("NetworkInterfaceId: " + getNetworkInterfaceId() + ",");    	
+        if (getSubnetId() != null) sb.append("SubnetId: " + getSubnetId() + ",");    	
+        if (getVpcId() != null) sb.append("VpcId: " + getVpcId() + ",");    	
+        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");    	
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");    	
+        if (getOwnerId() != null) sb.append("OwnerId: " + getOwnerId() + ",");    	
+        if (getRequesterId() != null) sb.append("RequesterId: " + getRequesterId() + ",");    	
+        if (isRequesterManaged() != null) sb.append("RequesterManaged: " + isRequesterManaged() + ",");    	
+        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");    	
+        if (getMacAddress() != null) sb.append("MacAddress: " + getMacAddress() + ",");    	
+        if (getPrivateIpAddress() != null) sb.append("PrivateIpAddress: " + getPrivateIpAddress() + ",");    	
+        if (getPrivateDnsName() != null) sb.append("PrivateDnsName: " + getPrivateDnsName() + ",");    	
+        if (isSourceDestCheck() != null) sb.append("SourceDestCheck: " + isSourceDestCheck() + ",");    	
+        if (getGroups() != null) sb.append("Groups: " + getGroups() + ",");    	
+        if (getAttachment() != null) sb.append("Attachment: " + getAttachment() + ",");    	
+        if (getAssociation() != null) sb.append("Association: " + getAssociation() + ",");    	
+        if (getTagSet() != null) sb.append("TagSet: " + getTagSet() + ",");    	
+        if (getPrivateIpAddresses() != null) sb.append("PrivateIpAddresses: " + getPrivateIpAddresses() );
         sb.append("}");
         return sb.toString();
     }

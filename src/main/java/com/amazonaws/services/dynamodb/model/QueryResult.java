@@ -18,6 +18,7 @@ import java.io.Serializable;
 /**
  * Query Result
  */
+@Deprecated
 public class QueryResult  implements Serializable  {
 
     private java.util.List<java.util.Map<String,AttributeValue>> items;

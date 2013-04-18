@@ -107,8 +107,8 @@ public class DescribeRegionsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getRegions() != null) sb.append("Regions: " + getRegions() + ", ");
+        sb.append("{");    	
+        if (getRegions() != null) sb.append("Regions: " + getRegions() );
         sb.append("}");
         return sb.toString();
     }

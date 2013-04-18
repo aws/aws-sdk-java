@@ -318,14 +318,14 @@ public class ConversionTask  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getConversionTaskId() != null) sb.append("ConversionTaskId: " + getConversionTaskId() + ", ");
-        if (getExpirationTime() != null) sb.append("ExpirationTime: " + getExpirationTime() + ", ");
-        if (getImportInstance() != null) sb.append("ImportInstance: " + getImportInstance() + ", ");
-        if (getImportVolume() != null) sb.append("ImportVolume: " + getImportVolume() + ", ");
-        if (getState() != null) sb.append("State: " + getState() + ", ");
-        if (getStatusMessage() != null) sb.append("StatusMessage: " + getStatusMessage() + ", ");
-        if (getTags() != null) sb.append("Tags: " + getTags() + ", ");
+        sb.append("{");    	
+        if (getConversionTaskId() != null) sb.append("ConversionTaskId: " + getConversionTaskId() + ",");    	
+        if (getExpirationTime() != null) sb.append("ExpirationTime: " + getExpirationTime() + ",");    	
+        if (getImportInstance() != null) sb.append("ImportInstance: " + getImportInstance() + ",");    	
+        if (getImportVolume() != null) sb.append("ImportVolume: " + getImportVolume() + ",");    	
+        if (getState() != null) sb.append("State: " + getState() + ",");    	
+        if (getStatusMessage() != null) sb.append("StatusMessage: " + getStatusMessage() + ",");    	
+        if (getTags() != null) sb.append("Tags: " + getTags() );
         sb.append("}");
         return sb.toString();
     }

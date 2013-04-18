@@ -118,9 +118,9 @@ public class LaunchPermission  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getUserId() != null) sb.append("UserId: " + getUserId() + ", ");
-        if (getGroup() != null) sb.append("Group: " + getGroup() + ", ");
+        sb.append("{");    	
+        if (getUserId() != null) sb.append("UserId: " + getUserId() + ",");    	
+        if (getGroup() != null) sb.append("Group: " + getGroup() );
         sb.append("}");
         return sb.toString();
     }

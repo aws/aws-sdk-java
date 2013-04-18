@@ -102,8 +102,8 @@ public class DescribeRouteTablesResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getRouteTables() != null) sb.append("RouteTables: " + getRouteTables() + ", ");
+        sb.append("{");    	
+        if (getRouteTables() != null) sb.append("RouteTables: " + getRouteTables() );
         sb.append("}");
         return sb.toString();
     }

@@ -721,16 +721,16 @@ public class WorkflowExecutionContinuedAsNewEventAttributes  implements Serializ
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getInput() != null) sb.append("Input: " + getInput() + ", ");
-        if (getDecisionTaskCompletedEventId() != null) sb.append("DecisionTaskCompletedEventId: " + getDecisionTaskCompletedEventId() + ", ");
-        if (getNewExecutionRunId() != null) sb.append("NewExecutionRunId: " + getNewExecutionRunId() + ", ");
-        if (getExecutionStartToCloseTimeout() != null) sb.append("ExecutionStartToCloseTimeout: " + getExecutionStartToCloseTimeout() + ", ");
-        if (getTaskList() != null) sb.append("TaskList: " + getTaskList() + ", ");
-        if (getTaskStartToCloseTimeout() != null) sb.append("TaskStartToCloseTimeout: " + getTaskStartToCloseTimeout() + ", ");
-        if (getChildPolicy() != null) sb.append("ChildPolicy: " + getChildPolicy() + ", ");
-        if (getTagList() != null) sb.append("TagList: " + getTagList() + ", ");
-        if (getWorkflowType() != null) sb.append("WorkflowType: " + getWorkflowType() + ", ");
+        sb.append("{");    	
+        if (getInput() != null) sb.append("Input: " + getInput() + ",");    	
+        if (getDecisionTaskCompletedEventId() != null) sb.append("DecisionTaskCompletedEventId: " + getDecisionTaskCompletedEventId() + ",");    	
+        if (getNewExecutionRunId() != null) sb.append("NewExecutionRunId: " + getNewExecutionRunId() + ",");    	
+        if (getExecutionStartToCloseTimeout() != null) sb.append("ExecutionStartToCloseTimeout: " + getExecutionStartToCloseTimeout() + ",");    	
+        if (getTaskList() != null) sb.append("TaskList: " + getTaskList() + ",");    	
+        if (getTaskStartToCloseTimeout() != null) sb.append("TaskStartToCloseTimeout: " + getTaskStartToCloseTimeout() + ",");    	
+        if (getChildPolicy() != null) sb.append("ChildPolicy: " + getChildPolicy() + ",");    	
+        if (getTagList() != null) sb.append("TagList: " + getTagList() + ",");    	
+        if (getWorkflowType() != null) sb.append("WorkflowType: " + getWorkflowType() );
         sb.append("}");
         return sb.toString();
     }

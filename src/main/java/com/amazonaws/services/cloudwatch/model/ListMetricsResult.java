@@ -146,9 +146,9 @@ public class ListMetricsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getMetrics() != null) sb.append("Metrics: " + getMetrics() + ", ");
-        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() + ", ");
+        sb.append("{");    	
+        if (getMetrics() != null) sb.append("Metrics: " + getMetrics() + ",");    	
+        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() );
         sb.append("}");
         return sb.toString();
     }

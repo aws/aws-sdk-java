@@ -146,9 +146,9 @@ public class DescribeAlarmsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getMetricAlarms() != null) sb.append("MetricAlarms: " + getMetricAlarms() + ", ");
-        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() + ", ");
+        sb.append("{");    	
+        if (getMetricAlarms() != null) sb.append("MetricAlarms: " + getMetricAlarms() + ",");    	
+        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() );
         sb.append("}");
         return sb.toString();
     }

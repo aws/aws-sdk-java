@@ -376,13 +376,13 @@ public class JobFlowExecutionStatusDetail  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getState() != null) sb.append("State: " + getState() + ", ");
-        if (getCreationDateTime() != null) sb.append("CreationDateTime: " + getCreationDateTime() + ", ");
-        if (getStartDateTime() != null) sb.append("StartDateTime: " + getStartDateTime() + ", ");
-        if (getReadyDateTime() != null) sb.append("ReadyDateTime: " + getReadyDateTime() + ", ");
-        if (getEndDateTime() != null) sb.append("EndDateTime: " + getEndDateTime() + ", ");
-        if (getLastStateChangeReason() != null) sb.append("LastStateChangeReason: " + getLastStateChangeReason() + ", ");
+        sb.append("{");    	
+        if (getState() != null) sb.append("State: " + getState() + ",");    	
+        if (getCreationDateTime() != null) sb.append("CreationDateTime: " + getCreationDateTime() + ",");    	
+        if (getStartDateTime() != null) sb.append("StartDateTime: " + getStartDateTime() + ",");    	
+        if (getReadyDateTime() != null) sb.append("ReadyDateTime: " + getReadyDateTime() + ",");    	
+        if (getEndDateTime() != null) sb.append("EndDateTime: " + getEndDateTime() + ",");    	
+        if (getLastStateChangeReason() != null) sb.append("LastStateChangeReason: " + getLastStateChangeReason() );
         sb.append("}");
         return sb.toString();
     }

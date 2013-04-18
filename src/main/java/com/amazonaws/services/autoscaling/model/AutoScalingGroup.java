@@ -118,7 +118,7 @@ public class AutoScalingGroup  implements Serializable  {
     /**
      * The name of the cluster placement group, if applicable. For more
      * information, go to <a
-     * webservices.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">
+     * href="http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">
      * Using Cluster Instances</a> in the Amazon EC2 User Guide.
      * <p>
      * <b>Constraints:</b><br/>
@@ -868,7 +868,7 @@ public class AutoScalingGroup  implements Serializable  {
     /**
      * The name of the cluster placement group, if applicable. For more
      * information, go to <a
-     * webservices.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">
+     * href="http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">
      * Using Cluster Instances</a> in the Amazon EC2 User Guide.
      * <p>
      * <b>Constraints:</b><br/>
@@ -877,7 +877,7 @@ public class AutoScalingGroup  implements Serializable  {
      *
      * @return The name of the cluster placement group, if applicable. For more
      *         information, go to <a
-     *         webservices.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">
+     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">
      *         Using Cluster Instances</a> in the Amazon EC2 User Guide.
      */
     public String getPlacementGroup() {
@@ -887,7 +887,7 @@ public class AutoScalingGroup  implements Serializable  {
     /**
      * The name of the cluster placement group, if applicable. For more
      * information, go to <a
-     * webservices.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">
+     * href="http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">
      * Using Cluster Instances</a> in the Amazon EC2 User Guide.
      * <p>
      * <b>Constraints:</b><br/>
@@ -896,7 +896,7 @@ public class AutoScalingGroup  implements Serializable  {
      *
      * @param placementGroup The name of the cluster placement group, if applicable. For more
      *         information, go to <a
-     *         webservices.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">
+     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">
      *         Using Cluster Instances</a> in the Amazon EC2 User Guide.
      */
     public void setPlacementGroup(String placementGroup) {
@@ -906,7 +906,7 @@ public class AutoScalingGroup  implements Serializable  {
     /**
      * The name of the cluster placement group, if applicable. For more
      * information, go to <a
-     * webservices.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">
+     * href="http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">
      * Using Cluster Instances</a> in the Amazon EC2 User Guide.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -917,7 +917,7 @@ public class AutoScalingGroup  implements Serializable  {
      *
      * @param placementGroup The name of the cluster placement group, if applicable. For more
      *         information, go to <a
-     *         webservices.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">
+     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">
      *         Using Cluster Instances</a> in the Amazon EC2 User Guide.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -1271,27 +1271,27 @@ public class AutoScalingGroup  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getAutoScalingGroupName() != null) sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ", ");
-        if (getAutoScalingGroupARN() != null) sb.append("AutoScalingGroupARN: " + getAutoScalingGroupARN() + ", ");
-        if (getLaunchConfigurationName() != null) sb.append("LaunchConfigurationName: " + getLaunchConfigurationName() + ", ");
-        if (getMinSize() != null) sb.append("MinSize: " + getMinSize() + ", ");
-        if (getMaxSize() != null) sb.append("MaxSize: " + getMaxSize() + ", ");
-        if (getDesiredCapacity() != null) sb.append("DesiredCapacity: " + getDesiredCapacity() + ", ");
-        if (getDefaultCooldown() != null) sb.append("DefaultCooldown: " + getDefaultCooldown() + ", ");
-        if (getAvailabilityZones() != null) sb.append("AvailabilityZones: " + getAvailabilityZones() + ", ");
-        if (getLoadBalancerNames() != null) sb.append("LoadBalancerNames: " + getLoadBalancerNames() + ", ");
-        if (getHealthCheckType() != null) sb.append("HealthCheckType: " + getHealthCheckType() + ", ");
-        if (getHealthCheckGracePeriod() != null) sb.append("HealthCheckGracePeriod: " + getHealthCheckGracePeriod() + ", ");
-        if (getInstances() != null) sb.append("Instances: " + getInstances() + ", ");
-        if (getCreatedTime() != null) sb.append("CreatedTime: " + getCreatedTime() + ", ");
-        if (getSuspendedProcesses() != null) sb.append("SuspendedProcesses: " + getSuspendedProcesses() + ", ");
-        if (getPlacementGroup() != null) sb.append("PlacementGroup: " + getPlacementGroup() + ", ");
-        if (getVPCZoneIdentifier() != null) sb.append("VPCZoneIdentifier: " + getVPCZoneIdentifier() + ", ");
-        if (getEnabledMetrics() != null) sb.append("EnabledMetrics: " + getEnabledMetrics() + ", ");
-        if (getStatus() != null) sb.append("Status: " + getStatus() + ", ");
-        if (getTags() != null) sb.append("Tags: " + getTags() + ", ");
-        if (getTerminationPolicies() != null) sb.append("TerminationPolicies: " + getTerminationPolicies() + ", ");
+        sb.append("{");    	
+        if (getAutoScalingGroupName() != null) sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ",");    	
+        if (getAutoScalingGroupARN() != null) sb.append("AutoScalingGroupARN: " + getAutoScalingGroupARN() + ",");    	
+        if (getLaunchConfigurationName() != null) sb.append("LaunchConfigurationName: " + getLaunchConfigurationName() + ",");    	
+        if (getMinSize() != null) sb.append("MinSize: " + getMinSize() + ",");    	
+        if (getMaxSize() != null) sb.append("MaxSize: " + getMaxSize() + ",");    	
+        if (getDesiredCapacity() != null) sb.append("DesiredCapacity: " + getDesiredCapacity() + ",");    	
+        if (getDefaultCooldown() != null) sb.append("DefaultCooldown: " + getDefaultCooldown() + ",");    	
+        if (getAvailabilityZones() != null) sb.append("AvailabilityZones: " + getAvailabilityZones() + ",");    	
+        if (getLoadBalancerNames() != null) sb.append("LoadBalancerNames: " + getLoadBalancerNames() + ",");    	
+        if (getHealthCheckType() != null) sb.append("HealthCheckType: " + getHealthCheckType() + ",");    	
+        if (getHealthCheckGracePeriod() != null) sb.append("HealthCheckGracePeriod: " + getHealthCheckGracePeriod() + ",");    	
+        if (getInstances() != null) sb.append("Instances: " + getInstances() + ",");    	
+        if (getCreatedTime() != null) sb.append("CreatedTime: " + getCreatedTime() + ",");    	
+        if (getSuspendedProcesses() != null) sb.append("SuspendedProcesses: " + getSuspendedProcesses() + ",");    	
+        if (getPlacementGroup() != null) sb.append("PlacementGroup: " + getPlacementGroup() + ",");    	
+        if (getVPCZoneIdentifier() != null) sb.append("VPCZoneIdentifier: " + getVPCZoneIdentifier() + ",");    	
+        if (getEnabledMetrics() != null) sb.append("EnabledMetrics: " + getEnabledMetrics() + ",");    	
+        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");    	
+        if (getTags() != null) sb.append("Tags: " + getTags() + ",");    	
+        if (getTerminationPolicies() != null) sb.append("TerminationPolicies: " + getTerminationPolicies() );
         sb.append("}");
         return sb.toString();
     }

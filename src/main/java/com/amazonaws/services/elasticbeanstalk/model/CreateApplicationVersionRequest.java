@@ -500,12 +500,12 @@ public class CreateApplicationVersionRequest extends AmazonWebServiceRequest  im
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getApplicationName() != null) sb.append("ApplicationName: " + getApplicationName() + ", ");
-        if (getVersionLabel() != null) sb.append("VersionLabel: " + getVersionLabel() + ", ");
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ", ");
-        if (getSourceBundle() != null) sb.append("SourceBundle: " + getSourceBundle() + ", ");
-        if (isAutoCreateApplication() != null) sb.append("AutoCreateApplication: " + isAutoCreateApplication() + ", ");
+        sb.append("{");    	
+        if (getApplicationName() != null) sb.append("ApplicationName: " + getApplicationName() + ",");    	
+        if (getVersionLabel() != null) sb.append("VersionLabel: " + getVersionLabel() + ",");    	
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");    	
+        if (getSourceBundle() != null) sb.append("SourceBundle: " + getSourceBundle() + ",");    	
+        if (isAutoCreateApplication() != null) sb.append("AutoCreateApplication: " + isAutoCreateApplication() );
         sb.append("}");
         return sb.toString();
     }

@@ -100,8 +100,8 @@ public class GetConsoleOutputRequest extends AmazonWebServiceRequest  implements
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ", ");
+        sb.append("{");    	
+        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() );
         sb.append("}");
         return sb.toString();
     }

@@ -37,6 +37,7 @@ import com.amazonaws.util.json.*;
 /**
  * Update Item Request Marshaller
  */
+@Deprecated
 public class UpdateItemRequestMarshaller implements Marshaller<Request<UpdateItemRequest>, UpdateItemRequest> {
 
     

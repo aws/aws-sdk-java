@@ -422,15 +422,15 @@ public class CacheNodeTypeSpecificParameter  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getParameterName() != null) sb.append("ParameterName: " + getParameterName() + ", ");
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ", ");
-        if (getSource() != null) sb.append("Source: " + getSource() + ", ");
-        if (getDataType() != null) sb.append("DataType: " + getDataType() + ", ");
-        if (getAllowedValues() != null) sb.append("AllowedValues: " + getAllowedValues() + ", ");
-        if (isModifiable() != null) sb.append("IsModifiable: " + isModifiable() + ", ");
-        if (getMinimumEngineVersion() != null) sb.append("MinimumEngineVersion: " + getMinimumEngineVersion() + ", ");
-        if (getCacheNodeTypeSpecificValues() != null) sb.append("CacheNodeTypeSpecificValues: " + getCacheNodeTypeSpecificValues() + ", ");
+        sb.append("{");    	
+        if (getParameterName() != null) sb.append("ParameterName: " + getParameterName() + ",");    	
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");    	
+        if (getSource() != null) sb.append("Source: " + getSource() + ",");    	
+        if (getDataType() != null) sb.append("DataType: " + getDataType() + ",");    	
+        if (getAllowedValues() != null) sb.append("AllowedValues: " + getAllowedValues() + ",");    	
+        if (isModifiable() != null) sb.append("IsModifiable: " + isModifiable() + ",");    	
+        if (getMinimumEngineVersion() != null) sb.append("MinimumEngineVersion: " + getMinimumEngineVersion() + ",");    	
+        if (getCacheNodeTypeSpecificValues() != null) sb.append("CacheNodeTypeSpecificValues: " + getCacheNodeTypeSpecificValues() );
         sb.append("}");
         return sb.toString();
     }

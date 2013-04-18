@@ -137,9 +137,9 @@ public class BundleInstanceRequest extends AmazonWebServiceRequest  implements S
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ", ");
-        if (getStorage() != null) sb.append("Storage: " + getStorage() + ", ");
+        sb.append("{");    	
+        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ",");    	
+        if (getStorage() != null) sb.append("Storage: " + getStorage() );
         sb.append("}");
         return sb.toString();
     }

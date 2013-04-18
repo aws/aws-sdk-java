@@ -182,9 +182,9 @@ public class DeleteLoadBalancerListenersRequest extends AmazonWebServiceRequest 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getLoadBalancerName() != null) sb.append("LoadBalancerName: " + getLoadBalancerName() + ", ");
-        if (getLoadBalancerPorts() != null) sb.append("LoadBalancerPorts: " + getLoadBalancerPorts() + ", ");
+        sb.append("{");    	
+        if (getLoadBalancerName() != null) sb.append("LoadBalancerName: " + getLoadBalancerName() + ",");    	
+        if (getLoadBalancerPorts() != null) sb.append("LoadBalancerPorts: " + getLoadBalancerPorts() );
         sb.append("}");
         return sb.toString();
     }

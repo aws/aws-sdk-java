@@ -343,11 +343,11 @@ public class HadoopJarStepConfig  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getProperties() != null) sb.append("Properties: " + getProperties() + ", ");
-        if (getJar() != null) sb.append("Jar: " + getJar() + ", ");
-        if (getMainClass() != null) sb.append("MainClass: " + getMainClass() + ", ");
-        if (getArgs() != null) sb.append("Args: " + getArgs() + ", ");
+        sb.append("{");    	
+        if (getProperties() != null) sb.append("Properties: " + getProperties() + ",");    	
+        if (getJar() != null) sb.append("Jar: " + getJar() + ",");    	
+        if (getMainClass() != null) sb.append("MainClass: " + getMainClass() + ",");    	
+        if (getArgs() != null) sb.append("Args: " + getArgs() );
         sb.append("}");
         return sb.toString();
     }

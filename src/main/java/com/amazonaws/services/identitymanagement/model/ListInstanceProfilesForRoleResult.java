@@ -251,10 +251,10 @@ public class ListInstanceProfilesForRoleResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getInstanceProfiles() != null) sb.append("InstanceProfiles: " + getInstanceProfiles() + ", ");
-        if (isTruncated() != null) sb.append("IsTruncated: " + isTruncated() + ", ");
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ", ");
+        sb.append("{");    	
+        if (getInstanceProfiles() != null) sb.append("InstanceProfiles: " + getInstanceProfiles() + ",");    	
+        if (isTruncated() != null) sb.append("IsTruncated: " + isTruncated() + ",");    	
+        if (getMarker() != null) sb.append("Marker: " + getMarker() );
         sb.append("}");
         return sb.toString();
     }

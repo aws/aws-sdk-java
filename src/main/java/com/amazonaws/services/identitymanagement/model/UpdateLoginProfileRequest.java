@@ -166,9 +166,9 @@ public class UpdateLoginProfileRequest extends AmazonWebServiceRequest  implemen
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getUserName() != null) sb.append("UserName: " + getUserName() + ", ");
-        if (getPassword() != null) sb.append("Password: " + getPassword() + ", ");
+        sb.append("{");    	
+        if (getUserName() != null) sb.append("UserName: " + getUserName() + ",");    	
+        if (getPassword() != null) sb.append("Password: " + getPassword() );
         sb.append("}");
         return sb.toString();
     }

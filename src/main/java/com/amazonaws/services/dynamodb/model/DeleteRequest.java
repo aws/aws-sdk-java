@@ -20,6 +20,7 @@ import java.io.Serializable;
  * A container for a Delete BatchWrite request
  * </p>
  */
+@Deprecated
 public class DeleteRequest  implements Serializable  {
 
     /**

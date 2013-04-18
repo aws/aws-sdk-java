@@ -175,11 +175,11 @@ public class NetworkInterfaceAssociation  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getPublicIp() != null) sb.append("PublicIp: " + getPublicIp() + ", ");
-        if (getIpOwnerId() != null) sb.append("IpOwnerId: " + getIpOwnerId() + ", ");
-        if (getAllocationId() != null) sb.append("AllocationId: " + getAllocationId() + ", ");
-        if (getAssociationId() != null) sb.append("AssociationId: " + getAssociationId() + ", ");
+        sb.append("{");    	
+        if (getPublicIp() != null) sb.append("PublicIp: " + getPublicIp() + ",");    	
+        if (getIpOwnerId() != null) sb.append("IpOwnerId: " + getIpOwnerId() + ",");    	
+        if (getAllocationId() != null) sb.append("AllocationId: " + getAllocationId() + ",");    	
+        if (getAssociationId() != null) sb.append("AssociationId: " + getAssociationId() );
         sb.append("}");
         return sb.toString();
     }

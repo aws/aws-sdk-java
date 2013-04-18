@@ -159,9 +159,9 @@ public class LoginProfile  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getUserName() != null) sb.append("UserName: " + getUserName() + ", ");
-        if (getCreateDate() != null) sb.append("CreateDate: " + getCreateDate() + ", ");
+        sb.append("{");    	
+        if (getUserName() != null) sb.append("UserName: " + getUserName() + ",");    	
+        if (getCreateDate() != null) sb.append("CreateDate: " + getCreateDate() );
         sb.append("}");
         return sb.toString();
     }

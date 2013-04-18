@@ -158,7 +158,7 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest  implements Se
      * The new cluster parameter group can be the default for that cluster
      * parameter group family. For more information about managing parameter
      * groups, go to <a
-     * on.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
+     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
      * Redshift Parameter Groups</a> in the <i>Amazon Redshift Management
      * Guide</i>. <p>Example: <code>1.0</code>
      */
@@ -992,7 +992,7 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest  implements Se
      * The new cluster parameter group can be the default for that cluster
      * parameter group family. For more information about managing parameter
      * groups, go to <a
-     * on.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
+     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
      * Redshift Parameter Groups</a> in the <i>Amazon Redshift Management
      * Guide</i>. <p>Example: <code>1.0</code>
      *
@@ -1003,7 +1003,7 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest  implements Se
      *         The new cluster parameter group can be the default for that cluster
      *         parameter group family. For more information about managing parameter
      *         groups, go to <a
-     *         on.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
+     *         href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
      *         Redshift Parameter Groups</a> in the <i>Amazon Redshift Management
      *         Guide</i>. <p>Example: <code>1.0</code>
      */
@@ -1019,7 +1019,7 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest  implements Se
      * The new cluster parameter group can be the default for that cluster
      * parameter group family. For more information about managing parameter
      * groups, go to <a
-     * on.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
+     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
      * Redshift Parameter Groups</a> in the <i>Amazon Redshift Management
      * Guide</i>. <p>Example: <code>1.0</code>
      *
@@ -1030,7 +1030,7 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest  implements Se
      *         The new cluster parameter group can be the default for that cluster
      *         parameter group family. For more information about managing parameter
      *         groups, go to <a
-     *         on.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
+     *         href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
      *         Redshift Parameter Groups</a> in the <i>Amazon Redshift Management
      *         Guide</i>. <p>Example: <code>1.0</code>
      */
@@ -1046,7 +1046,7 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest  implements Se
      * The new cluster parameter group can be the default for that cluster
      * parameter group family. For more information about managing parameter
      * groups, go to <a
-     * on.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
+     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
      * Redshift Parameter Groups</a> in the <i>Amazon Redshift Management
      * Guide</i>. <p>Example: <code>1.0</code>
      * <p>
@@ -1059,7 +1059,7 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest  implements Se
      *         The new cluster parameter group can be the default for that cluster
      *         parameter group family. For more information about managing parameter
      *         groups, go to <a
-     *         on.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
+     *         href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
      *         Redshift Parameter Groups</a> in the <i>Amazon Redshift Management
      *         Guide</i>. <p>Example: <code>1.0</code>
      *
@@ -1134,19 +1134,19 @@ public class ModifyClusterRequest extends AmazonWebServiceRequest  implements Se
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getClusterIdentifier() != null) sb.append("ClusterIdentifier: " + getClusterIdentifier() + ", ");
-        if (getClusterType() != null) sb.append("ClusterType: " + getClusterType() + ", ");
-        if (getNodeType() != null) sb.append("NodeType: " + getNodeType() + ", ");
-        if (getNumberOfNodes() != null) sb.append("NumberOfNodes: " + getNumberOfNodes() + ", ");
-        if (getClusterSecurityGroups() != null) sb.append("ClusterSecurityGroups: " + getClusterSecurityGroups() + ", ");
-        if (getVpcSecurityGroupIds() != null) sb.append("VpcSecurityGroupIds: " + getVpcSecurityGroupIds() + ", ");
-        if (getMasterUserPassword() != null) sb.append("MasterUserPassword: " + getMasterUserPassword() + ", ");
-        if (getClusterParameterGroupName() != null) sb.append("ClusterParameterGroupName: " + getClusterParameterGroupName() + ", ");
-        if (getAutomatedSnapshotRetentionPeriod() != null) sb.append("AutomatedSnapshotRetentionPeriod: " + getAutomatedSnapshotRetentionPeriod() + ", ");
-        if (getPreferredMaintenanceWindow() != null) sb.append("PreferredMaintenanceWindow: " + getPreferredMaintenanceWindow() + ", ");
-        if (getClusterVersion() != null) sb.append("ClusterVersion: " + getClusterVersion() + ", ");
-        if (isAllowVersionUpgrade() != null) sb.append("AllowVersionUpgrade: " + isAllowVersionUpgrade() + ", ");
+        sb.append("{");    	
+        if (getClusterIdentifier() != null) sb.append("ClusterIdentifier: " + getClusterIdentifier() + ",");    	
+        if (getClusterType() != null) sb.append("ClusterType: " + getClusterType() + ",");    	
+        if (getNodeType() != null) sb.append("NodeType: " + getNodeType() + ",");    	
+        if (getNumberOfNodes() != null) sb.append("NumberOfNodes: " + getNumberOfNodes() + ",");    	
+        if (getClusterSecurityGroups() != null) sb.append("ClusterSecurityGroups: " + getClusterSecurityGroups() + ",");    	
+        if (getVpcSecurityGroupIds() != null) sb.append("VpcSecurityGroupIds: " + getVpcSecurityGroupIds() + ",");    	
+        if (getMasterUserPassword() != null) sb.append("MasterUserPassword: " + getMasterUserPassword() + ",");    	
+        if (getClusterParameterGroupName() != null) sb.append("ClusterParameterGroupName: " + getClusterParameterGroupName() + ",");    	
+        if (getAutomatedSnapshotRetentionPeriod() != null) sb.append("AutomatedSnapshotRetentionPeriod: " + getAutomatedSnapshotRetentionPeriod() + ",");    	
+        if (getPreferredMaintenanceWindow() != null) sb.append("PreferredMaintenanceWindow: " + getPreferredMaintenanceWindow() + ",");    	
+        if (getClusterVersion() != null) sb.append("ClusterVersion: " + getClusterVersion() + ",");    	
+        if (isAllowVersionUpgrade() != null) sb.append("AllowVersionUpgrade: " + isAllowVersionUpgrade() );
         sb.append("}");
         return sb.toString();
     }

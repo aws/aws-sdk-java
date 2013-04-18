@@ -150,9 +150,9 @@ public class DescribeLayersRequest extends AmazonWebServiceRequest  implements S
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getStackId() != null) sb.append("StackId: " + getStackId() + ", ");
-        if (getLayerIds() != null) sb.append("LayerIds: " + getLayerIds() + ", ");
+        sb.append("{");    	
+        if (getStackId() != null) sb.append("StackId: " + getStackId() + ",");    	
+        if (getLayerIds() != null) sb.append("LayerIds: " + getLayerIds() );
         sb.append("}");
         return sb.toString();
     }

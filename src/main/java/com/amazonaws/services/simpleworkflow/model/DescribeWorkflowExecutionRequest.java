@@ -148,9 +148,9 @@ public class DescribeWorkflowExecutionRequest extends AmazonWebServiceRequest  i
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getDomain() != null) sb.append("Domain: " + getDomain() + ", ");
-        if (getExecution() != null) sb.append("Execution: " + getExecution() + ", ");
+        sb.append("{");    	
+        if (getDomain() != null) sb.append("Domain: " + getDomain() + ",");    	
+        if (getExecution() != null) sb.append("Execution: " + getExecution() );
         sb.append("}");
         return sb.toString();
     }

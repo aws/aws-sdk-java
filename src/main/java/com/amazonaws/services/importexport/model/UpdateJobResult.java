@@ -136,9 +136,9 @@ public class UpdateJobResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (isSuccess() != null) sb.append("Success: " + isSuccess() + ", ");
-        if (getWarningMessage() != null) sb.append("WarningMessage: " + getWarningMessage() + ", ");
+        sb.append("{");    	
+        if (isSuccess() != null) sb.append("Success: " + isSuccess() + ",");    	
+        if (getWarningMessage() != null) sb.append("WarningMessage: " + getWarningMessage() );
         sb.append("}");
         return sb.toString();
     }

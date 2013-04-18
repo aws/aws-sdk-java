@@ -99,8 +99,8 @@ public class ActivateGatewayResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getGatewayARN() != null) sb.append("GatewayARN: " + getGatewayARN() + ", ");
+        sb.append("{");    	
+        if (getGatewayARN() != null) sb.append("GatewayARN: " + getGatewayARN() );
         sb.append("}");
         return sb.toString();
     }

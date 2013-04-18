@@ -262,11 +262,11 @@ public class Job  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getId() != null) sb.append("Id: " + getId() + ", ");
-        if (getPipelineId() != null) sb.append("PipelineId: " + getPipelineId() + ", ");
-        if (getInput() != null) sb.append("Input: " + getInput() + ", ");
-        if (getOutput() != null) sb.append("Output: " + getOutput() + ", ");
+        sb.append("{");    	
+        if (getId() != null) sb.append("Id: " + getId() + ",");    	
+        if (getPipelineId() != null) sb.append("PipelineId: " + getPipelineId() + ",");    	
+        if (getInput() != null) sb.append("Input: " + getInput() + ",");    	
+        if (getOutput() != null) sb.append("Output: " + getOutput() );
         sb.append("}");
         return sb.toString();
     }

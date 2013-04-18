@@ -104,8 +104,8 @@ public class DeleteCacheClusterRequest extends AmazonWebServiceRequest  implemen
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getCacheClusterId() != null) sb.append("CacheClusterId: " + getCacheClusterId() + ", ");
+        sb.append("{");    	
+        if (getCacheClusterId() != null) sb.append("CacheClusterId: " + getCacheClusterId() );
         sb.append("}");
         return sb.toString();
     }

@@ -169,9 +169,9 @@ public class CreateSnapshotResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getVolumeARN() != null) sb.append("VolumeARN: " + getVolumeARN() + ", ");
-        if (getSnapshotId() != null) sb.append("SnapshotId: " + getSnapshotId() + ", ");
+        sb.append("{");    	
+        if (getVolumeARN() != null) sb.append("VolumeARN: " + getVolumeARN() + ",");    	
+        if (getSnapshotId() != null) sb.append("SnapshotId: " + getSnapshotId() );
         sb.append("}");
         return sb.toString();
     }

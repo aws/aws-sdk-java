@@ -221,9 +221,9 @@ public class DisableMetricsCollectionRequest extends AmazonWebServiceRequest  im
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getAutoScalingGroupName() != null) sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ", ");
-        if (getMetrics() != null) sb.append("Metrics: " + getMetrics() + ", ");
+        sb.append("{");    	
+        if (getAutoScalingGroupName() != null) sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ",");    	
+        if (getMetrics() != null) sb.append("Metrics: " + getMetrics() );
         sb.append("}");
         return sb.toString();
     }

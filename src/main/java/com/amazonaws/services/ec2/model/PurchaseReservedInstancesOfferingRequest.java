@@ -175,10 +175,10 @@ public class PurchaseReservedInstancesOfferingRequest extends AmazonWebServiceRe
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getReservedInstancesOfferingId() != null) sb.append("ReservedInstancesOfferingId: " + getReservedInstancesOfferingId() + ", ");
-        if (getInstanceCount() != null) sb.append("InstanceCount: " + getInstanceCount() + ", ");
-        if (getLimitPrice() != null) sb.append("LimitPrice: " + getLimitPrice() + ", ");
+        sb.append("{");    	
+        if (getReservedInstancesOfferingId() != null) sb.append("ReservedInstancesOfferingId: " + getReservedInstancesOfferingId() + ",");    	
+        if (getInstanceCount() != null) sb.append("InstanceCount: " + getInstanceCount() + ",");    	
+        if (getLimitPrice() != null) sb.append("LimitPrice: " + getLimitPrice() );
         sb.append("}");
         return sb.toString();
     }

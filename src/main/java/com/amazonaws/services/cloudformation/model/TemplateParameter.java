@@ -207,11 +207,11 @@ public class TemplateParameter  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getParameterKey() != null) sb.append("ParameterKey: " + getParameterKey() + ", ");
-        if (getDefaultValue() != null) sb.append("DefaultValue: " + getDefaultValue() + ", ");
-        if (isNoEcho() != null) sb.append("NoEcho: " + isNoEcho() + ", ");
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ", ");
+        sb.append("{");    	
+        if (getParameterKey() != null) sb.append("ParameterKey: " + getParameterKey() + ",");    	
+        if (getDefaultValue() != null) sb.append("DefaultValue: " + getDefaultValue() + ",");    	
+        if (isNoEcho() != null) sb.append("NoEcho: " + isNoEcho() + ",");    	
+        if (getDescription() != null) sb.append("Description: " + getDescription() );
         sb.append("}");
         return sb.toString();
     }

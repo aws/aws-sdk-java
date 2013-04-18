@@ -249,10 +249,10 @@ public class ResetCacheParameterGroupRequest extends AmazonWebServiceRequest  im
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getCacheParameterGroupName() != null) sb.append("CacheParameterGroupName: " + getCacheParameterGroupName() + ", ");
-        if (isResetAllParameters() != null) sb.append("ResetAllParameters: " + isResetAllParameters() + ", ");
-        if (getParameterNameValues() != null) sb.append("ParameterNameValues: " + getParameterNameValues() + ", ");
+        sb.append("{");    	
+        if (getCacheParameterGroupName() != null) sb.append("CacheParameterGroupName: " + getCacheParameterGroupName() + ",");    	
+        if (isResetAllParameters() != null) sb.append("ResetAllParameters: " + isResetAllParameters() + ",");    	
+        if (getParameterNameValues() != null) sb.append("ParameterNameValues: " + getParameterNameValues() );
         sb.append("}");
         return sb.toString();
     }

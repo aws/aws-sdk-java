@@ -84,8 +84,8 @@ public class UIntOptions  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getDefaultValue() != null) sb.append("DefaultValue: " + getDefaultValue() + ", ");
+        sb.append("{");    	
+        if (getDefaultValue() != null) sb.append("DefaultValue: " + getDefaultValue() );
         sb.append("}");
         return sb.toString();
     }

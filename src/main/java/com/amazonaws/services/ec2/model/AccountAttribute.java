@@ -138,9 +138,9 @@ public class AccountAttribute  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getAttributeName() != null) sb.append("AttributeName: " + getAttributeName() + ", ");
-        if (getAttributeValues() != null) sb.append("AttributeValues: " + getAttributeValues() + ", ");
+        sb.append("{");    	
+        if (getAttributeName() != null) sb.append("AttributeName: " + getAttributeName() + ",");    	
+        if (getAttributeValues() != null) sb.append("AttributeValues: " + getAttributeValues() );
         sb.append("}");
         return sb.toString();
     }

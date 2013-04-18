@@ -286,11 +286,11 @@ public class ResyncMFADeviceRequest extends AmazonWebServiceRequest  implements 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getUserName() != null) sb.append("UserName: " + getUserName() + ", ");
-        if (getSerialNumber() != null) sb.append("SerialNumber: " + getSerialNumber() + ", ");
-        if (getAuthenticationCode1() != null) sb.append("AuthenticationCode1: " + getAuthenticationCode1() + ", ");
-        if (getAuthenticationCode2() != null) sb.append("AuthenticationCode2: " + getAuthenticationCode2() + ", ");
+        sb.append("{");    	
+        if (getUserName() != null) sb.append("UserName: " + getUserName() + ",");    	
+        if (getSerialNumber() != null) sb.append("SerialNumber: " + getSerialNumber() + ",");    	
+        if (getAuthenticationCode1() != null) sb.append("AuthenticationCode1: " + getAuthenticationCode1() + ",");    	
+        if (getAuthenticationCode2() != null) sb.append("AuthenticationCode2: " + getAuthenticationCode2() );
         sb.append("}");
         return sb.toString();
     }

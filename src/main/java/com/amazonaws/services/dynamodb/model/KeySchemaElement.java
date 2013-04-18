@@ -20,6 +20,7 @@ import java.io.Serializable;
  * <code>KeySchemaElement</code> is the primary key (hash or hash-and-range) structure for the table.
  * </p>
  */
+@Deprecated
 public class KeySchemaElement  implements Serializable  {
 
     /**

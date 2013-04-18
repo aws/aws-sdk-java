@@ -458,12 +458,12 @@ public class Recipes  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getSetup() != null) sb.append("Setup: " + getSetup() + ", ");
-        if (getConfigure() != null) sb.append("Configure: " + getConfigure() + ", ");
-        if (getDeploy() != null) sb.append("Deploy: " + getDeploy() + ", ");
-        if (getUndeploy() != null) sb.append("Undeploy: " + getUndeploy() + ", ");
-        if (getShutdown() != null) sb.append("Shutdown: " + getShutdown() + ", ");
+        sb.append("{");    	
+        if (getSetup() != null) sb.append("Setup: " + getSetup() + ",");    	
+        if (getConfigure() != null) sb.append("Configure: " + getConfigure() + ",");    	
+        if (getDeploy() != null) sb.append("Deploy: " + getDeploy() + ",");    	
+        if (getUndeploy() != null) sb.append("Undeploy: " + getUndeploy() + ",");    	
+        if (getShutdown() != null) sb.append("Shutdown: " + getShutdown() );
         sb.append("}");
         return sb.toString();
     }

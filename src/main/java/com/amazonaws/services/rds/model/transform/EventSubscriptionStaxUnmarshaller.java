@@ -49,10 +49,6 @@ public class EventSubscriptionStaxUnmarshaller implements Unmarshaller<EventSubs
             if (xmlEvent.isEndDocument()) return eventSubscription;
 
             if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
-                if (context.testExpression("Id", targetDepth)) {
-                    eventSubscription.setId(StringStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
                 if (context.testExpression("CustomerAwsId", targetDepth)) {
                     eventSubscription.setCustomerAwsId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

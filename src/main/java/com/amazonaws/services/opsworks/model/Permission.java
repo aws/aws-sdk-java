@@ -30,7 +30,7 @@ public class Permission  implements Serializable  {
     /**
      * The Amazon Resource Name (ARN) for an AWS Identity and Access
      * Management (IAM) role. For more information about IAM ARNs, see <a
-     * docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.
      */
     private String iamUserArn;
@@ -82,12 +82,12 @@ public class Permission  implements Serializable  {
     /**
      * The Amazon Resource Name (ARN) for an AWS Identity and Access
      * Management (IAM) role. For more information about IAM ARNs, see <a
-     * docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.
      *
      * @return The Amazon Resource Name (ARN) for an AWS Identity and Access
      *         Management (IAM) role. For more information about IAM ARNs, see <a
-     *         docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      *         Identifiers</a>.
      */
     public String getIamUserArn() {
@@ -97,12 +97,12 @@ public class Permission  implements Serializable  {
     /**
      * The Amazon Resource Name (ARN) for an AWS Identity and Access
      * Management (IAM) role. For more information about IAM ARNs, see <a
-     * docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.
      *
      * @param iamUserArn The Amazon Resource Name (ARN) for an AWS Identity and Access
      *         Management (IAM) role. For more information about IAM ARNs, see <a
-     *         docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      *         Identifiers</a>.
      */
     public void setIamUserArn(String iamUserArn) {
@@ -112,14 +112,14 @@ public class Permission  implements Serializable  {
     /**
      * The Amazon Resource Name (ARN) for an AWS Identity and Access
      * Management (IAM) role. For more information about IAM ARNs, see <a
-     * docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param iamUserArn The Amazon Resource Name (ARN) for an AWS Identity and Access
      *         Management (IAM) role. For more information about IAM ARNs, see <a
-     *         docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      *         Identifiers</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -228,11 +228,11 @@ public class Permission  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getStackId() != null) sb.append("StackId: " + getStackId() + ", ");
-        if (getIamUserArn() != null) sb.append("IamUserArn: " + getIamUserArn() + ", ");
-        if (isAllowSsh() != null) sb.append("AllowSsh: " + isAllowSsh() + ", ");
-        if (isAllowSudo() != null) sb.append("AllowSudo: " + isAllowSudo() + ", ");
+        sb.append("{");    	
+        if (getStackId() != null) sb.append("StackId: " + getStackId() + ",");    	
+        if (getIamUserArn() != null) sb.append("IamUserArn: " + getIamUserArn() + ",");    	
+        if (isAllowSsh() != null) sb.append("AllowSsh: " + isAllowSsh() + ",");    	
+        if (isAllowSudo() != null) sb.append("AllowSudo: " + isAllowSudo() );
         sb.append("}");
         return sb.toString();
     }

@@ -167,9 +167,9 @@ public class DefineRankExpressionRequest extends AmazonWebServiceRequest  implem
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getDomainName() != null) sb.append("DomainName: " + getDomainName() + ", ");
-        if (getRankExpression() != null) sb.append("RankExpression: " + getRankExpression() + ", ");
+        sb.append("{");    	
+        if (getDomainName() != null) sb.append("DomainName: " + getDomainName() + ",");    	
+        if (getRankExpression() != null) sb.append("RankExpression: " + getRankExpression() );
         sb.append("}");
         return sb.toString();
     }

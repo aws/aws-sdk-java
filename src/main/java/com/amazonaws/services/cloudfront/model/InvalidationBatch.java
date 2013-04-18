@@ -274,9 +274,9 @@ public class InvalidationBatch  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getPaths() != null) sb.append("Paths: " + getPaths() + ", ");
-        if (getCallerReference() != null) sb.append("CallerReference: " + getCallerReference() + ", ");
+        sb.append("{");    	
+        if (getPaths() != null) sb.append("Paths: " + getPaths() + ",");    	
+        if (getCallerReference() != null) sb.append("CallerReference: " + getCallerReference() );
         sb.append("}");
         return sb.toString();
     }

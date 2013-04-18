@@ -76,8 +76,8 @@ public class GetIdentityDkimAttributesResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getDkimAttributes() != null) sb.append("DkimAttributes: " + getDkimAttributes() + ", ");
+        sb.append("{");    	
+        if (getDkimAttributes() != null) sb.append("DkimAttributes: " + getDkimAttributes() );
         sb.append("}");
         return sb.toString();
     }

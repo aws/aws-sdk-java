@@ -251,10 +251,10 @@ public class ListUsersResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getUsers() != null) sb.append("Users: " + getUsers() + ", ");
-        if (isTruncated() != null) sb.append("IsTruncated: " + isTruncated() + ", ");
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ", ");
+        sb.append("{");    	
+        if (getUsers() != null) sb.append("Users: " + getUsers() + ",");    	
+        if (isTruncated() != null) sb.append("IsTruncated: " + isTruncated() + ",");    	
+        if (getMarker() != null) sb.append("Marker: " + getMarker() );
         sb.append("}");
         return sb.toString();
     }

@@ -110,8 +110,8 @@ public class CancelSpotInstanceRequestsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getCancelledSpotInstanceRequests() != null) sb.append("CancelledSpotInstanceRequests: " + getCancelledSpotInstanceRequests() + ", ");
+        sb.append("{");    	
+        if (getCancelledSpotInstanceRequests() != null) sb.append("CancelledSpotInstanceRequests: " + getCancelledSpotInstanceRequests() );
         sb.append("}");
         return sb.toString();
     }

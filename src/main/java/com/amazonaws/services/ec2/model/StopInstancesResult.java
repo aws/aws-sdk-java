@@ -116,8 +116,8 @@ public class StopInstancesResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getStoppingInstances() != null) sb.append("StoppingInstances: " + getStoppingInstances() + ", ");
+        sb.append("{");    	
+        if (getStoppingInstances() != null) sb.append("StoppingInstances: " + getStoppingInstances() );
         sb.append("}");
         return sb.toString();
     }

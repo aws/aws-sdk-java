@@ -389,12 +389,12 @@ public class DeleteConnectionResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getConnectionId() != null) sb.append("ConnectionId: " + getConnectionId() + ", ");
-        if (getConnectionName() != null) sb.append("ConnectionName: " + getConnectionName() + ", ");
-        if (getConnectionState() != null) sb.append("ConnectionState: " + getConnectionState() + ", ");
-        if (getRegion() != null) sb.append("Region: " + getRegion() + ", ");
-        if (getLocation() != null) sb.append("Location: " + getLocation() + ", ");
+        sb.append("{");    	
+        if (getConnectionId() != null) sb.append("ConnectionId: " + getConnectionId() + ",");    	
+        if (getConnectionName() != null) sb.append("ConnectionName: " + getConnectionName() + ",");    	
+        if (getConnectionState() != null) sb.append("ConnectionState: " + getConnectionState() + ",");    	
+        if (getRegion() != null) sb.append("Region: " + getRegion() + ",");    	
+        if (getLocation() != null) sb.append("Location: " + getLocation() );
         sb.append("}");
         return sb.toString();
     }

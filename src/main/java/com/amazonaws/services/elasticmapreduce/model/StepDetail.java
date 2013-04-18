@@ -132,9 +132,9 @@ public class StepDetail  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getStepConfig() != null) sb.append("StepConfig: " + getStepConfig() + ", ");
-        if (getExecutionStatusDetail() != null) sb.append("ExecutionStatusDetail: " + getExecutionStatusDetail() + ", ");
+        sb.append("{");    	
+        if (getStepConfig() != null) sb.append("StepConfig: " + getStepConfig() + ",");    	
+        if (getExecutionStatusDetail() != null) sb.append("ExecutionStatusDetail: " + getExecutionStatusDetail() );
         sb.append("}");
         return sb.toString();
     }

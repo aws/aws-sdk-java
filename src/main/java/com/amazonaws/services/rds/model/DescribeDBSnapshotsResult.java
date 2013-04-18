@@ -160,9 +160,9 @@ public class DescribeDBSnapshotsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ", ");
-        if (getDBSnapshots() != null) sb.append("DBSnapshots: " + getDBSnapshots() + ", ");
+        sb.append("{");    	
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");    	
+        if (getDBSnapshots() != null) sb.append("DBSnapshots: " + getDBSnapshots() );
         sb.append("}");
         return sb.toString();
     }

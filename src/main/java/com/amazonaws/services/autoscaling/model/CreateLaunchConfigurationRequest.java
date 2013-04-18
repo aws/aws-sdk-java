@@ -72,10 +72,10 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest  i
      * security groups using security group IDs, such as
      * <code>sg-12345678</code>. For more information about Amazon EC2
      * security groups, go to <a
-     * s.com/AWSEC2/latest/UserGuide/index.html?using-network-security.html">
+     * href="http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/index.html?using-network-security.html">
      * Using Security Groups</a> in the Amazon EC2 product documentation. For
      * more information about Amazon VPC security groups, go to <a
-     * es.com/AmazonVPC/latest/UserGuide/index.html?VPC_SecurityGroups.html">
+     * href="http://docs.amazonwebservices.com/AmazonVPC/latest/UserGuide/index.html?VPC_SecurityGroups.html">
      * Security Groups</a> in the Amazon VPC product documentation.
      */
     private java.util.List<String> securityGroups;
@@ -128,7 +128,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest  i
      * <i>DeviceName</i>, and an <i>ebs</i> data structure that contains
      * information about the associated Elastic Block Storage volume. For
      * more information about Amazon EC2 BlockDeviceMappings, go to <a
-     * WSEC2/latest/UserGuide/index.html?block-device-mapping-concepts.html">
+     * href="http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/index.html?block-device-mapping-concepts.html">
      * Block Device Mapping</a> in the Amazon EC2 product documentation.
      */
     private java.util.List<BlockDeviceMapping> blockDeviceMappings;
@@ -149,7 +149,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest  i
      * fulfill the request. Spot Instances are launched when the price you
      * specify exceeds the current Spot market price. For more information on
      * launching Spot Instances, go to <a
-     * services.com/AutoScaling/latest/DeveloperGuide/US-SpotInstances.html">
+     * href="http://docs.amazonwebservices.com/AutoScaling/latest/DeveloperGuide/US-SpotInstances.html">
      * Using Auto Scaling to Launch Spot Instances</a> in the <i>Auto Scaling
      * Developer Guide</i>.
      * <p>
@@ -162,7 +162,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest  i
      * The name or the Amazon Resource Name (ARN) of the instance profile
      * associated with the IAM role for the instance. For information on
      * launching EC2 instances with an IAM role, go to <a
-     * ices.com/AutoScaling/latest/DeveloperGuide/us-iam-role.html">Launching
+     * href="http://docs.amazonwebservices.com/AutoScaling/latest/DeveloperGuide/us-iam-role.html">Launching
      * Auto Scaling Instances With an IAM Role</a> in the <i>Auto Scaling
      * Developer Guide</i>.
      * <p>
@@ -337,10 +337,10 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest  i
      * security groups using security group IDs, such as
      * <code>sg-12345678</code>. For more information about Amazon EC2
      * security groups, go to <a
-     * s.com/AWSEC2/latest/UserGuide/index.html?using-network-security.html">
+     * href="http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/index.html?using-network-security.html">
      * Using Security Groups</a> in the Amazon EC2 product documentation. For
      * more information about Amazon VPC security groups, go to <a
-     * es.com/AmazonVPC/latest/UserGuide/index.html?VPC_SecurityGroups.html">
+     * href="http://docs.amazonwebservices.com/AmazonVPC/latest/UserGuide/index.html?VPC_SecurityGroups.html">
      * Security Groups</a> in the Amazon VPC product documentation.
      *
      * @return The names of the security groups with which to associate Amazon EC2 or
@@ -349,10 +349,10 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest  i
      *         security groups using security group IDs, such as
      *         <code>sg-12345678</code>. For more information about Amazon EC2
      *         security groups, go to <a
-     *         s.com/AWSEC2/latest/UserGuide/index.html?using-network-security.html">
+     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/index.html?using-network-security.html">
      *         Using Security Groups</a> in the Amazon EC2 product documentation. For
      *         more information about Amazon VPC security groups, go to <a
-     *         es.com/AmazonVPC/latest/UserGuide/index.html?VPC_SecurityGroups.html">
+     *         href="http://docs.amazonwebservices.com/AmazonVPC/latest/UserGuide/index.html?VPC_SecurityGroups.html">
      *         Security Groups</a> in the Amazon VPC product documentation.
      */
     public java.util.List<String> getSecurityGroups() {
@@ -370,10 +370,10 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest  i
      * security groups using security group IDs, such as
      * <code>sg-12345678</code>. For more information about Amazon EC2
      * security groups, go to <a
-     * s.com/AWSEC2/latest/UserGuide/index.html?using-network-security.html">
+     * href="http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/index.html?using-network-security.html">
      * Using Security Groups</a> in the Amazon EC2 product documentation. For
      * more information about Amazon VPC security groups, go to <a
-     * es.com/AmazonVPC/latest/UserGuide/index.html?VPC_SecurityGroups.html">
+     * href="http://docs.amazonwebservices.com/AmazonVPC/latest/UserGuide/index.html?VPC_SecurityGroups.html">
      * Security Groups</a> in the Amazon VPC product documentation.
      *
      * @param securityGroups The names of the security groups with which to associate Amazon EC2 or
@@ -382,10 +382,10 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest  i
      *         security groups using security group IDs, such as
      *         <code>sg-12345678</code>. For more information about Amazon EC2
      *         security groups, go to <a
-     *         s.com/AWSEC2/latest/UserGuide/index.html?using-network-security.html">
+     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/index.html?using-network-security.html">
      *         Using Security Groups</a> in the Amazon EC2 product documentation. For
      *         more information about Amazon VPC security groups, go to <a
-     *         es.com/AmazonVPC/latest/UserGuide/index.html?VPC_SecurityGroups.html">
+     *         href="http://docs.amazonwebservices.com/AmazonVPC/latest/UserGuide/index.html?VPC_SecurityGroups.html">
      *         Security Groups</a> in the Amazon VPC product documentation.
      */
     public void setSecurityGroups(java.util.Collection<String> securityGroups) {
@@ -406,10 +406,10 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest  i
      * security groups using security group IDs, such as
      * <code>sg-12345678</code>. For more information about Amazon EC2
      * security groups, go to <a
-     * s.com/AWSEC2/latest/UserGuide/index.html?using-network-security.html">
+     * href="http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/index.html?using-network-security.html">
      * Using Security Groups</a> in the Amazon EC2 product documentation. For
      * more information about Amazon VPC security groups, go to <a
-     * es.com/AmazonVPC/latest/UserGuide/index.html?VPC_SecurityGroups.html">
+     * href="http://docs.amazonwebservices.com/AmazonVPC/latest/UserGuide/index.html?VPC_SecurityGroups.html">
      * Security Groups</a> in the Amazon VPC product documentation.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -420,10 +420,10 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest  i
      *         security groups using security group IDs, such as
      *         <code>sg-12345678</code>. For more information about Amazon EC2
      *         security groups, go to <a
-     *         s.com/AWSEC2/latest/UserGuide/index.html?using-network-security.html">
+     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/index.html?using-network-security.html">
      *         Using Security Groups</a> in the Amazon EC2 product documentation. For
      *         more information about Amazon VPC security groups, go to <a
-     *         es.com/AmazonVPC/latest/UserGuide/index.html?VPC_SecurityGroups.html">
+     *         href="http://docs.amazonwebservices.com/AmazonVPC/latest/UserGuide/index.html?VPC_SecurityGroups.html">
      *         Security Groups</a> in the Amazon VPC product documentation.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -444,10 +444,10 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest  i
      * security groups using security group IDs, such as
      * <code>sg-12345678</code>. For more information about Amazon EC2
      * security groups, go to <a
-     * s.com/AWSEC2/latest/UserGuide/index.html?using-network-security.html">
+     * href="http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/index.html?using-network-security.html">
      * Using Security Groups</a> in the Amazon EC2 product documentation. For
      * more information about Amazon VPC security groups, go to <a
-     * es.com/AmazonVPC/latest/UserGuide/index.html?VPC_SecurityGroups.html">
+     * href="http://docs.amazonwebservices.com/AmazonVPC/latest/UserGuide/index.html?VPC_SecurityGroups.html">
      * Security Groups</a> in the Amazon VPC product documentation.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -458,10 +458,10 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest  i
      *         security groups using security group IDs, such as
      *         <code>sg-12345678</code>. For more information about Amazon EC2
      *         security groups, go to <a
-     *         s.com/AWSEC2/latest/UserGuide/index.html?using-network-security.html">
+     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/index.html?using-network-security.html">
      *         Using Security Groups</a> in the Amazon EC2 product documentation. For
      *         more information about Amazon VPC security groups, go to <a
-     *         es.com/AmazonVPC/latest/UserGuide/index.html?VPC_SecurityGroups.html">
+     *         href="http://docs.amazonwebservices.com/AmazonVPC/latest/UserGuide/index.html?VPC_SecurityGroups.html">
      *         Security Groups</a> in the Amazon VPC product documentation.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -705,7 +705,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest  i
      * <i>DeviceName</i>, and an <i>ebs</i> data structure that contains
      * information about the associated Elastic Block Storage volume. For
      * more information about Amazon EC2 BlockDeviceMappings, go to <a
-     * WSEC2/latest/UserGuide/index.html?block-device-mapping-concepts.html">
+     * href="http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/index.html?block-device-mapping-concepts.html">
      * Block Device Mapping</a> in the Amazon EC2 product documentation.
      *
      * @return A list of mappings that specify how block devices are exposed to the
@@ -713,7 +713,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest  i
      *         <i>DeviceName</i>, and an <i>ebs</i> data structure that contains
      *         information about the associated Elastic Block Storage volume. For
      *         more information about Amazon EC2 BlockDeviceMappings, go to <a
-     *         WSEC2/latest/UserGuide/index.html?block-device-mapping-concepts.html">
+     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/index.html?block-device-mapping-concepts.html">
      *         Block Device Mapping</a> in the Amazon EC2 product documentation.
      */
     public java.util.List<BlockDeviceMapping> getBlockDeviceMappings() {
@@ -730,7 +730,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest  i
      * <i>DeviceName</i>, and an <i>ebs</i> data structure that contains
      * information about the associated Elastic Block Storage volume. For
      * more information about Amazon EC2 BlockDeviceMappings, go to <a
-     * WSEC2/latest/UserGuide/index.html?block-device-mapping-concepts.html">
+     * href="http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/index.html?block-device-mapping-concepts.html">
      * Block Device Mapping</a> in the Amazon EC2 product documentation.
      *
      * @param blockDeviceMappings A list of mappings that specify how block devices are exposed to the
@@ -738,7 +738,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest  i
      *         <i>DeviceName</i>, and an <i>ebs</i> data structure that contains
      *         information about the associated Elastic Block Storage volume. For
      *         more information about Amazon EC2 BlockDeviceMappings, go to <a
-     *         WSEC2/latest/UserGuide/index.html?block-device-mapping-concepts.html">
+     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/index.html?block-device-mapping-concepts.html">
      *         Block Device Mapping</a> in the Amazon EC2 product documentation.
      */
     public void setBlockDeviceMappings(java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
@@ -758,7 +758,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest  i
      * <i>DeviceName</i>, and an <i>ebs</i> data structure that contains
      * information about the associated Elastic Block Storage volume. For
      * more information about Amazon EC2 BlockDeviceMappings, go to <a
-     * WSEC2/latest/UserGuide/index.html?block-device-mapping-concepts.html">
+     * href="http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/index.html?block-device-mapping-concepts.html">
      * Block Device Mapping</a> in the Amazon EC2 product documentation.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -768,7 +768,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest  i
      *         <i>DeviceName</i>, and an <i>ebs</i> data structure that contains
      *         information about the associated Elastic Block Storage volume. For
      *         more information about Amazon EC2 BlockDeviceMappings, go to <a
-     *         WSEC2/latest/UserGuide/index.html?block-device-mapping-concepts.html">
+     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/index.html?block-device-mapping-concepts.html">
      *         Block Device Mapping</a> in the Amazon EC2 product documentation.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -788,7 +788,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest  i
      * <i>DeviceName</i>, and an <i>ebs</i> data structure that contains
      * information about the associated Elastic Block Storage volume. For
      * more information about Amazon EC2 BlockDeviceMappings, go to <a
-     * WSEC2/latest/UserGuide/index.html?block-device-mapping-concepts.html">
+     * href="http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/index.html?block-device-mapping-concepts.html">
      * Block Device Mapping</a> in the Amazon EC2 product documentation.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -798,7 +798,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest  i
      *         <i>DeviceName</i>, and an <i>ebs</i> data structure that contains
      *         information about the associated Elastic Block Storage volume. For
      *         more information about Amazon EC2 BlockDeviceMappings, go to <a
-     *         WSEC2/latest/UserGuide/index.html?block-device-mapping-concepts.html">
+     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/index.html?block-device-mapping-concepts.html">
      *         Block Device Mapping</a> in the Amazon EC2 product documentation.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -891,7 +891,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest  i
      * fulfill the request. Spot Instances are launched when the price you
      * specify exceeds the current Spot market price. For more information on
      * launching Spot Instances, go to <a
-     * services.com/AutoScaling/latest/DeveloperGuide/US-SpotInstances.html">
+     * href="http://docs.amazonwebservices.com/AutoScaling/latest/DeveloperGuide/US-SpotInstances.html">
      * Using Auto Scaling to Launch Spot Instances</a> in the <i>Auto Scaling
      * Developer Guide</i>.
      * <p>
@@ -902,7 +902,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest  i
      *         fulfill the request. Spot Instances are launched when the price you
      *         specify exceeds the current Spot market price. For more information on
      *         launching Spot Instances, go to <a
-     *         services.com/AutoScaling/latest/DeveloperGuide/US-SpotInstances.html">
+     *         href="http://docs.amazonwebservices.com/AutoScaling/latest/DeveloperGuide/US-SpotInstances.html">
      *         Using Auto Scaling to Launch Spot Instances</a> in the <i>Auto Scaling
      *         Developer Guide</i>.
      */
@@ -915,7 +915,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest  i
      * fulfill the request. Spot Instances are launched when the price you
      * specify exceeds the current Spot market price. For more information on
      * launching Spot Instances, go to <a
-     * services.com/AutoScaling/latest/DeveloperGuide/US-SpotInstances.html">
+     * href="http://docs.amazonwebservices.com/AutoScaling/latest/DeveloperGuide/US-SpotInstances.html">
      * Using Auto Scaling to Launch Spot Instances</a> in the <i>Auto Scaling
      * Developer Guide</i>.
      * <p>
@@ -926,7 +926,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest  i
      *         fulfill the request. Spot Instances are launched when the price you
      *         specify exceeds the current Spot market price. For more information on
      *         launching Spot Instances, go to <a
-     *         services.com/AutoScaling/latest/DeveloperGuide/US-SpotInstances.html">
+     *         href="http://docs.amazonwebservices.com/AutoScaling/latest/DeveloperGuide/US-SpotInstances.html">
      *         Using Auto Scaling to Launch Spot Instances</a> in the <i>Auto Scaling
      *         Developer Guide</i>.
      */
@@ -939,7 +939,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest  i
      * fulfill the request. Spot Instances are launched when the price you
      * specify exceeds the current Spot market price. For more information on
      * launching Spot Instances, go to <a
-     * services.com/AutoScaling/latest/DeveloperGuide/US-SpotInstances.html">
+     * href="http://docs.amazonwebservices.com/AutoScaling/latest/DeveloperGuide/US-SpotInstances.html">
      * Using Auto Scaling to Launch Spot Instances</a> in the <i>Auto Scaling
      * Developer Guide</i>.
      * <p>
@@ -952,7 +952,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest  i
      *         fulfill the request. Spot Instances are launched when the price you
      *         specify exceeds the current Spot market price. For more information on
      *         launching Spot Instances, go to <a
-     *         services.com/AutoScaling/latest/DeveloperGuide/US-SpotInstances.html">
+     *         href="http://docs.amazonwebservices.com/AutoScaling/latest/DeveloperGuide/US-SpotInstances.html">
      *         Using Auto Scaling to Launch Spot Instances</a> in the <i>Auto Scaling
      *         Developer Guide</i>.
      *
@@ -969,7 +969,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest  i
      * The name or the Amazon Resource Name (ARN) of the instance profile
      * associated with the IAM role for the instance. For information on
      * launching EC2 instances with an IAM role, go to <a
-     * ices.com/AutoScaling/latest/DeveloperGuide/us-iam-role.html">Launching
+     * href="http://docs.amazonwebservices.com/AutoScaling/latest/DeveloperGuide/us-iam-role.html">Launching
      * Auto Scaling Instances With an IAM Role</a> in the <i>Auto Scaling
      * Developer Guide</i>.
      * <p>
@@ -980,7 +980,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest  i
      * @return The name or the Amazon Resource Name (ARN) of the instance profile
      *         associated with the IAM role for the instance. For information on
      *         launching EC2 instances with an IAM role, go to <a
-     *         ices.com/AutoScaling/latest/DeveloperGuide/us-iam-role.html">Launching
+     *         href="http://docs.amazonwebservices.com/AutoScaling/latest/DeveloperGuide/us-iam-role.html">Launching
      *         Auto Scaling Instances With an IAM Role</a> in the <i>Auto Scaling
      *         Developer Guide</i>.
      */
@@ -992,7 +992,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest  i
      * The name or the Amazon Resource Name (ARN) of the instance profile
      * associated with the IAM role for the instance. For information on
      * launching EC2 instances with an IAM role, go to <a
-     * ices.com/AutoScaling/latest/DeveloperGuide/us-iam-role.html">Launching
+     * href="http://docs.amazonwebservices.com/AutoScaling/latest/DeveloperGuide/us-iam-role.html">Launching
      * Auto Scaling Instances With an IAM Role</a> in the <i>Auto Scaling
      * Developer Guide</i>.
      * <p>
@@ -1003,7 +1003,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest  i
      * @param iamInstanceProfile The name or the Amazon Resource Name (ARN) of the instance profile
      *         associated with the IAM role for the instance. For information on
      *         launching EC2 instances with an IAM role, go to <a
-     *         ices.com/AutoScaling/latest/DeveloperGuide/us-iam-role.html">Launching
+     *         href="http://docs.amazonwebservices.com/AutoScaling/latest/DeveloperGuide/us-iam-role.html">Launching
      *         Auto Scaling Instances With an IAM Role</a> in the <i>Auto Scaling
      *         Developer Guide</i>.
      */
@@ -1015,7 +1015,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest  i
      * The name or the Amazon Resource Name (ARN) of the instance profile
      * associated with the IAM role for the instance. For information on
      * launching EC2 instances with an IAM role, go to <a
-     * ices.com/AutoScaling/latest/DeveloperGuide/us-iam-role.html">Launching
+     * href="http://docs.amazonwebservices.com/AutoScaling/latest/DeveloperGuide/us-iam-role.html">Launching
      * Auto Scaling Instances With an IAM Role</a> in the <i>Auto Scaling
      * Developer Guide</i>.
      * <p>
@@ -1028,7 +1028,7 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest  i
      * @param iamInstanceProfile The name or the Amazon Resource Name (ARN) of the instance profile
      *         associated with the IAM role for the instance. For information on
      *         launching EC2 instances with an IAM role, go to <a
-     *         ices.com/AutoScaling/latest/DeveloperGuide/us-iam-role.html">Launching
+     *         href="http://docs.amazonwebservices.com/AutoScaling/latest/DeveloperGuide/us-iam-role.html">Launching
      *         Auto Scaling Instances With an IAM Role</a> in the <i>Auto Scaling
      *         Developer Guide</i>.
      *
@@ -1095,20 +1095,20 @@ public class CreateLaunchConfigurationRequest extends AmazonWebServiceRequest  i
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getLaunchConfigurationName() != null) sb.append("LaunchConfigurationName: " + getLaunchConfigurationName() + ", ");
-        if (getImageId() != null) sb.append("ImageId: " + getImageId() + ", ");
-        if (getKeyName() != null) sb.append("KeyName: " + getKeyName() + ", ");
-        if (getSecurityGroups() != null) sb.append("SecurityGroups: " + getSecurityGroups() + ", ");
-        if (getUserData() != null) sb.append("UserData: " + getUserData() + ", ");
-        if (getInstanceType() != null) sb.append("InstanceType: " + getInstanceType() + ", ");
-        if (getKernelId() != null) sb.append("KernelId: " + getKernelId() + ", ");
-        if (getRamdiskId() != null) sb.append("RamdiskId: " + getRamdiskId() + ", ");
-        if (getBlockDeviceMappings() != null) sb.append("BlockDeviceMappings: " + getBlockDeviceMappings() + ", ");
-        if (getInstanceMonitoring() != null) sb.append("InstanceMonitoring: " + getInstanceMonitoring() + ", ");
-        if (getSpotPrice() != null) sb.append("SpotPrice: " + getSpotPrice() + ", ");
-        if (getIamInstanceProfile() != null) sb.append("IamInstanceProfile: " + getIamInstanceProfile() + ", ");
-        if (isEbsOptimized() != null) sb.append("EbsOptimized: " + isEbsOptimized() + ", ");
+        sb.append("{");    	
+        if (getLaunchConfigurationName() != null) sb.append("LaunchConfigurationName: " + getLaunchConfigurationName() + ",");    	
+        if (getImageId() != null) sb.append("ImageId: " + getImageId() + ",");    	
+        if (getKeyName() != null) sb.append("KeyName: " + getKeyName() + ",");    	
+        if (getSecurityGroups() != null) sb.append("SecurityGroups: " + getSecurityGroups() + ",");    	
+        if (getUserData() != null) sb.append("UserData: " + getUserData() + ",");    	
+        if (getInstanceType() != null) sb.append("InstanceType: " + getInstanceType() + ",");    	
+        if (getKernelId() != null) sb.append("KernelId: " + getKernelId() + ",");    	
+        if (getRamdiskId() != null) sb.append("RamdiskId: " + getRamdiskId() + ",");    	
+        if (getBlockDeviceMappings() != null) sb.append("BlockDeviceMappings: " + getBlockDeviceMappings() + ",");    	
+        if (getInstanceMonitoring() != null) sb.append("InstanceMonitoring: " + getInstanceMonitoring() + ",");    	
+        if (getSpotPrice() != null) sb.append("SpotPrice: " + getSpotPrice() + ",");    	
+        if (getIamInstanceProfile() != null) sb.append("IamInstanceProfile: " + getIamInstanceProfile() + ",");    	
+        if (isEbsOptimized() != null) sb.append("EbsOptimized: " + isEbsOptimized() );
         sb.append("}");
         return sb.toString();
     }

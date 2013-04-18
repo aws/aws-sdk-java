@@ -876,21 +876,21 @@ public class Stack  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getStackId() != null) sb.append("StackId: " + getStackId() + ", ");
-        if (getStackName() != null) sb.append("StackName: " + getStackName() + ", ");
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ", ");
-        if (getParameters() != null) sb.append("Parameters: " + getParameters() + ", ");
-        if (getCreationTime() != null) sb.append("CreationTime: " + getCreationTime() + ", ");
-        if (getLastUpdatedTime() != null) sb.append("LastUpdatedTime: " + getLastUpdatedTime() + ", ");
-        if (getStackStatus() != null) sb.append("StackStatus: " + getStackStatus() + ", ");
-        if (getStackStatusReason() != null) sb.append("StackStatusReason: " + getStackStatusReason() + ", ");
-        if (isDisableRollback() != null) sb.append("DisableRollback: " + isDisableRollback() + ", ");
-        if (getNotificationARNs() != null) sb.append("NotificationARNs: " + getNotificationARNs() + ", ");
-        if (getTimeoutInMinutes() != null) sb.append("TimeoutInMinutes: " + getTimeoutInMinutes() + ", ");
-        if (getCapabilities() != null) sb.append("Capabilities: " + getCapabilities() + ", ");
-        if (getOutputs() != null) sb.append("Outputs: " + getOutputs() + ", ");
-        if (getTags() != null) sb.append("Tags: " + getTags() + ", ");
+        sb.append("{");    	
+        if (getStackId() != null) sb.append("StackId: " + getStackId() + ",");    	
+        if (getStackName() != null) sb.append("StackName: " + getStackName() + ",");    	
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");    	
+        if (getParameters() != null) sb.append("Parameters: " + getParameters() + ",");    	
+        if (getCreationTime() != null) sb.append("CreationTime: " + getCreationTime() + ",");    	
+        if (getLastUpdatedTime() != null) sb.append("LastUpdatedTime: " + getLastUpdatedTime() + ",");    	
+        if (getStackStatus() != null) sb.append("StackStatus: " + getStackStatus() + ",");    	
+        if (getStackStatusReason() != null) sb.append("StackStatusReason: " + getStackStatusReason() + ",");    	
+        if (isDisableRollback() != null) sb.append("DisableRollback: " + isDisableRollback() + ",");    	
+        if (getNotificationARNs() != null) sb.append("NotificationARNs: " + getNotificationARNs() + ",");    	
+        if (getTimeoutInMinutes() != null) sb.append("TimeoutInMinutes: " + getTimeoutInMinutes() + ",");    	
+        if (getCapabilities() != null) sb.append("Capabilities: " + getCapabilities() + ",");    	
+        if (getOutputs() != null) sb.append("Outputs: " + getOutputs() + ",");    	
+        if (getTags() != null) sb.append("Tags: " + getTags() );
         sb.append("}");
         return sb.toString();
     }

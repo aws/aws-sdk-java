@@ -131,8 +131,8 @@ public class MonitorInstancesRequest extends AmazonWebServiceRequest  implements
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getInstanceIds() != null) sb.append("InstanceIds: " + getInstanceIds() + ", ");
+        sb.append("{");    	
+        if (getInstanceIds() != null) sb.append("InstanceIds: " + getInstanceIds() );
         sb.append("}");
         return sb.toString();
     }

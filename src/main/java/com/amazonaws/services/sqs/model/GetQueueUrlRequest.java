@@ -134,9 +134,9 @@ public class GetQueueUrlRequest extends AmazonWebServiceRequest  implements Seri
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getQueueName() != null) sb.append("QueueName: " + getQueueName() + ", ");
-        if (getQueueOwnerAWSAccountId() != null) sb.append("QueueOwnerAWSAccountId: " + getQueueOwnerAWSAccountId() + ", ");
+        sb.append("{");    	
+        if (getQueueName() != null) sb.append("QueueName: " + getQueueName() + ",");    	
+        if (getQueueOwnerAWSAccountId() != null) sb.append("QueueOwnerAWSAccountId: " + getQueueOwnerAWSAccountId() );
         sb.append("}");
         return sb.toString();
     }

@@ -278,11 +278,11 @@ public class UpdateChapCredentialsRequest extends AmazonWebServiceRequest  imple
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getTargetARN() != null) sb.append("TargetARN: " + getTargetARN() + ", ");
-        if (getSecretToAuthenticateInitiator() != null) sb.append("SecretToAuthenticateInitiator: " + getSecretToAuthenticateInitiator() + ", ");
-        if (getInitiatorName() != null) sb.append("InitiatorName: " + getInitiatorName() + ", ");
-        if (getSecretToAuthenticateTarget() != null) sb.append("SecretToAuthenticateTarget: " + getSecretToAuthenticateTarget() + ", ");
+        sb.append("{");    	
+        if (getTargetARN() != null) sb.append("TargetARN: " + getTargetARN() + ",");    	
+        if (getSecretToAuthenticateInitiator() != null) sb.append("SecretToAuthenticateInitiator: " + getSecretToAuthenticateInitiator() + ",");    	
+        if (getInitiatorName() != null) sb.append("InitiatorName: " + getInitiatorName() + ",");    	
+        if (getSecretToAuthenticateTarget() != null) sb.append("SecretToAuthenticateTarget: " + getSecretToAuthenticateTarget() );
         sb.append("}");
         return sb.toString();
     }

@@ -143,9 +143,9 @@ public class DisassociateAddressRequest extends AmazonWebServiceRequest  impleme
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getPublicIp() != null) sb.append("PublicIp: " + getPublicIp() + ", ");
-        if (getAssociationId() != null) sb.append("AssociationId: " + getAssociationId() + ", ");
+        sb.append("{");    	
+        if (getPublicIp() != null) sb.append("PublicIp: " + getPublicIp() + ",");    	
+        if (getAssociationId() != null) sb.append("AssociationId: " + getAssociationId() );
         sb.append("}");
         return sb.toString();
     }

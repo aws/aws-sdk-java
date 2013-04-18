@@ -568,13 +568,13 @@ public class TerminateWorkflowExecutionRequest extends AmazonWebServiceRequest  
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getDomain() != null) sb.append("Domain: " + getDomain() + ", ");
-        if (getWorkflowId() != null) sb.append("WorkflowId: " + getWorkflowId() + ", ");
-        if (getRunId() != null) sb.append("RunId: " + getRunId() + ", ");
-        if (getReason() != null) sb.append("Reason: " + getReason() + ", ");
-        if (getDetails() != null) sb.append("Details: " + getDetails() + ", ");
-        if (getChildPolicy() != null) sb.append("ChildPolicy: " + getChildPolicy() + ", ");
+        sb.append("{");    	
+        if (getDomain() != null) sb.append("Domain: " + getDomain() + ",");    	
+        if (getWorkflowId() != null) sb.append("WorkflowId: " + getWorkflowId() + ",");    	
+        if (getRunId() != null) sb.append("RunId: " + getRunId() + ",");    	
+        if (getReason() != null) sb.append("Reason: " + getReason() + ",");    	
+        if (getDetails() != null) sb.append("Details: " + getDetails() + ",");    	
+        if (getChildPolicy() != null) sb.append("ChildPolicy: " + getChildPolicy() );
         sb.append("}");
         return sb.toString();
     }

@@ -588,17 +588,17 @@ public class Volume  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getVolumeId() != null) sb.append("VolumeId: " + getVolumeId() + ", ");
-        if (getSize() != null) sb.append("Size: " + getSize() + ", ");
-        if (getSnapshotId() != null) sb.append("SnapshotId: " + getSnapshotId() + ", ");
-        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ", ");
-        if (getState() != null) sb.append("State: " + getState() + ", ");
-        if (getCreateTime() != null) sb.append("CreateTime: " + getCreateTime() + ", ");
-        if (getAttachments() != null) sb.append("Attachments: " + getAttachments() + ", ");
-        if (getTags() != null) sb.append("Tags: " + getTags() + ", ");
-        if (getVolumeType() != null) sb.append("VolumeType: " + getVolumeType() + ", ");
-        if (getIops() != null) sb.append("Iops: " + getIops() + ", ");
+        sb.append("{");    	
+        if (getVolumeId() != null) sb.append("VolumeId: " + getVolumeId() + ",");    	
+        if (getSize() != null) sb.append("Size: " + getSize() + ",");    	
+        if (getSnapshotId() != null) sb.append("SnapshotId: " + getSnapshotId() + ",");    	
+        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");    	
+        if (getState() != null) sb.append("State: " + getState() + ",");    	
+        if (getCreateTime() != null) sb.append("CreateTime: " + getCreateTime() + ",");    	
+        if (getAttachments() != null) sb.append("Attachments: " + getAttachments() + ",");    	
+        if (getTags() != null) sb.append("Tags: " + getTags() + ",");    	
+        if (getVolumeType() != null) sb.append("VolumeType: " + getVolumeType() + ",");    	
+        if (getIops() != null) sb.append("Iops: " + getIops() );
         sb.append("}");
         return sb.toString();
     }

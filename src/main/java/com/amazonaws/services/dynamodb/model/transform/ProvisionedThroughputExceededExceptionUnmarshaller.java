@@ -20,6 +20,7 @@ import com.amazonaws.util.json.JSONObject;
 
 import com.amazonaws.services.dynamodb.model.ProvisionedThroughputExceededException;
 
+@Deprecated
 public class ProvisionedThroughputExceededExceptionUnmarshaller extends JsonErrorUnmarshaller {
 
     public ProvisionedThroughputExceededExceptionUnmarshaller() {

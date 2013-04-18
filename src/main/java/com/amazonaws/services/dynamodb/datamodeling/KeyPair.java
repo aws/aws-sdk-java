@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.dynamodb.datamodeling;
 
+@Deprecated
 public class KeyPair {
 	private Object hashKey;
 	private Object rangeKey;

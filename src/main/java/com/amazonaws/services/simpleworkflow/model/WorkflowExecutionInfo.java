@@ -698,16 +698,16 @@ public class WorkflowExecutionInfo  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getExecution() != null) sb.append("Execution: " + getExecution() + ", ");
-        if (getWorkflowType() != null) sb.append("WorkflowType: " + getWorkflowType() + ", ");
-        if (getStartTimestamp() != null) sb.append("StartTimestamp: " + getStartTimestamp() + ", ");
-        if (getCloseTimestamp() != null) sb.append("CloseTimestamp: " + getCloseTimestamp() + ", ");
-        if (getExecutionStatus() != null) sb.append("ExecutionStatus: " + getExecutionStatus() + ", ");
-        if (getCloseStatus() != null) sb.append("CloseStatus: " + getCloseStatus() + ", ");
-        if (getParent() != null) sb.append("Parent: " + getParent() + ", ");
-        if (getTagList() != null) sb.append("TagList: " + getTagList() + ", ");
-        if (isCancelRequested() != null) sb.append("CancelRequested: " + isCancelRequested() + ", ");
+        sb.append("{");    	
+        if (getExecution() != null) sb.append("Execution: " + getExecution() + ",");    	
+        if (getWorkflowType() != null) sb.append("WorkflowType: " + getWorkflowType() + ",");    	
+        if (getStartTimestamp() != null) sb.append("StartTimestamp: " + getStartTimestamp() + ",");    	
+        if (getCloseTimestamp() != null) sb.append("CloseTimestamp: " + getCloseTimestamp() + ",");    	
+        if (getExecutionStatus() != null) sb.append("ExecutionStatus: " + getExecutionStatus() + ",");    	
+        if (getCloseStatus() != null) sb.append("CloseStatus: " + getCloseStatus() + ",");    	
+        if (getParent() != null) sb.append("Parent: " + getParent() + ",");    	
+        if (getTagList() != null) sb.append("TagList: " + getTagList() + ",");    	
+        if (isCancelRequested() != null) sb.append("CancelRequested: " + isCancelRequested() );
         sb.append("}");
         return sb.toString();
     }

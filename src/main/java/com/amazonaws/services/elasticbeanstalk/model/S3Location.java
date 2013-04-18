@@ -156,9 +156,9 @@ public class S3Location  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getS3Bucket() != null) sb.append("S3Bucket: " + getS3Bucket() + ", ");
-        if (getS3Key() != null) sb.append("S3Key: " + getS3Key() + ", ");
+        sb.append("{");    	
+        if (getS3Bucket() != null) sb.append("S3Bucket: " + getS3Bucket() + ",");    	
+        if (getS3Key() != null) sb.append("S3Key: " + getS3Key() );
         sb.append("}");
         return sb.toString();
     }

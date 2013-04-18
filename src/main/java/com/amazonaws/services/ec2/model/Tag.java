@@ -146,9 +146,9 @@ public class Tag  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getKey() != null) sb.append("Key: " + getKey() + ", ");
-        if (getValue() != null) sb.append("Value: " + getValue() + ", ");
+        sb.append("{");    	
+        if (getKey() != null) sb.append("Key: " + getKey() + ",");    	
+        if (getValue() != null) sb.append("Value: " + getValue() );
         sb.append("}");
         return sb.toString();
     }

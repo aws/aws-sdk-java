@@ -290,11 +290,11 @@ public class GetGroupResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getGroup() != null) sb.append("Group: " + getGroup() + ", ");
-        if (getUsers() != null) sb.append("Users: " + getUsers() + ", ");
-        if (isTruncated() != null) sb.append("IsTruncated: " + isTruncated() + ", ");
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ", ");
+        sb.append("{");    	
+        if (getGroup() != null) sb.append("Group: " + getGroup() + ",");    	
+        if (getUsers() != null) sb.append("Users: " + getUsers() + ",");    	
+        if (isTruncated() != null) sb.append("IsTruncated: " + isTruncated() + ",");    	
+        if (getMarker() != null) sb.append("Marker: " + getMarker() );
         sb.append("}");
         return sb.toString();
     }

@@ -81,8 +81,8 @@ public class InstanceMonitoring  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (isEnabled() != null) sb.append("Enabled: " + isEnabled() + ", ");
+        sb.append("{");    	
+        if (isEnabled() != null) sb.append("Enabled: " + isEnabled() );
         sb.append("}");
         return sb.toString();
     }

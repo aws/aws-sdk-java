@@ -440,16 +440,16 @@ public class InstanceNetworkInterfaceSpecification  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getNetworkInterfaceId() != null) sb.append("NetworkInterfaceId: " + getNetworkInterfaceId() + ", ");
-        if (getDeviceIndex() != null) sb.append("DeviceIndex: " + getDeviceIndex() + ", ");
-        if (getSubnetId() != null) sb.append("SubnetId: " + getSubnetId() + ", ");
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ", ");
-        if (getPrivateIpAddress() != null) sb.append("PrivateIpAddress: " + getPrivateIpAddress() + ", ");
-        if (getGroups() != null) sb.append("Groups: " + getGroups() + ", ");
-        if (isDeleteOnTermination() != null) sb.append("DeleteOnTermination: " + isDeleteOnTermination() + ", ");
-        if (getPrivateIpAddresses() != null) sb.append("PrivateIpAddresses: " + getPrivateIpAddresses() + ", ");
-        if (getSecondaryPrivateIpAddressCount() != null) sb.append("SecondaryPrivateIpAddressCount: " + getSecondaryPrivateIpAddressCount() + ", ");
+        sb.append("{");    	
+        if (getNetworkInterfaceId() != null) sb.append("NetworkInterfaceId: " + getNetworkInterfaceId() + ",");    	
+        if (getDeviceIndex() != null) sb.append("DeviceIndex: " + getDeviceIndex() + ",");    	
+        if (getSubnetId() != null) sb.append("SubnetId: " + getSubnetId() + ",");    	
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");    	
+        if (getPrivateIpAddress() != null) sb.append("PrivateIpAddress: " + getPrivateIpAddress() + ",");    	
+        if (getGroups() != null) sb.append("Groups: " + getGroups() + ",");    	
+        if (isDeleteOnTermination() != null) sb.append("DeleteOnTermination: " + isDeleteOnTermination() + ",");    	
+        if (getPrivateIpAddresses() != null) sb.append("PrivateIpAddresses: " + getPrivateIpAddresses() + ",");    	
+        if (getSecondaryPrivateIpAddressCount() != null) sb.append("SecondaryPrivateIpAddressCount: " + getSecondaryPrivateIpAddressCount() );
         sb.append("}");
         return sb.toString();
     }

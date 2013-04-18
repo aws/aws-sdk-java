@@ -276,11 +276,11 @@ public class WorkflowExecutionSignaledEventAttributes  implements Serializable  
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getSignalName() != null) sb.append("SignalName: " + getSignalName() + ", ");
-        if (getInput() != null) sb.append("Input: " + getInput() + ", ");
-        if (getExternalWorkflowExecution() != null) sb.append("ExternalWorkflowExecution: " + getExternalWorkflowExecution() + ", ");
-        if (getExternalInitiatedEventId() != null) sb.append("ExternalInitiatedEventId: " + getExternalInitiatedEventId() + ", ");
+        sb.append("{");    	
+        if (getSignalName() != null) sb.append("SignalName: " + getSignalName() + ",");    	
+        if (getInput() != null) sb.append("Input: " + getInput() + ",");    	
+        if (getExternalWorkflowExecution() != null) sb.append("ExternalWorkflowExecution: " + getExternalWorkflowExecution() + ",");    	
+        if (getExternalInitiatedEventId() != null) sb.append("ExternalInitiatedEventId: " + getExternalInitiatedEventId() );
         sb.append("}");
         return sb.toString();
     }

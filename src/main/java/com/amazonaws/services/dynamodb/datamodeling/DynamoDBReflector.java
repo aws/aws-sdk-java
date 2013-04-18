@@ -42,6 +42,7 @@ import com.amazonaws.util.DateUtils;
 /**
  * Reflection assistant for {@link DynamoDBMapper}
  */
+@Deprecated
 public class DynamoDBReflector {
 
     /*

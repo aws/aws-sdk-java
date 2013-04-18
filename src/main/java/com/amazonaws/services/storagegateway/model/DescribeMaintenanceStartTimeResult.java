@@ -415,12 +415,12 @@ public class DescribeMaintenanceStartTimeResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getGatewayARN() != null) sb.append("GatewayARN: " + getGatewayARN() + ", ");
-        if (getHourOfDay() != null) sb.append("HourOfDay: " + getHourOfDay() + ", ");
-        if (getMinuteOfHour() != null) sb.append("MinuteOfHour: " + getMinuteOfHour() + ", ");
-        if (getDayOfWeek() != null) sb.append("DayOfWeek: " + getDayOfWeek() + ", ");
-        if (getTimezone() != null) sb.append("Timezone: " + getTimezone() + ", ");
+        sb.append("{");    	
+        if (getGatewayARN() != null) sb.append("GatewayARN: " + getGatewayARN() + ",");    	
+        if (getHourOfDay() != null) sb.append("HourOfDay: " + getHourOfDay() + ",");    	
+        if (getMinuteOfHour() != null) sb.append("MinuteOfHour: " + getMinuteOfHour() + ",");    	
+        if (getDayOfWeek() != null) sb.append("DayOfWeek: " + getDayOfWeek() + ",");    	
+        if (getTimezone() != null) sb.append("Timezone: " + getTimezone() );
         sb.append("}");
         return sb.toString();
     }

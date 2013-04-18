@@ -704,22 +704,22 @@ public class Snapshot  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getSnapshotIdentifier() != null) sb.append("SnapshotIdentifier: " + getSnapshotIdentifier() + ", ");
-        if (getClusterIdentifier() != null) sb.append("ClusterIdentifier: " + getClusterIdentifier() + ", ");
-        if (getSnapshotCreateTime() != null) sb.append("SnapshotCreateTime: " + getSnapshotCreateTime() + ", ");
-        if (getStatus() != null) sb.append("Status: " + getStatus() + ", ");
-        if (getPort() != null) sb.append("Port: " + getPort() + ", ");
-        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ", ");
-        if (getClusterCreateTime() != null) sb.append("ClusterCreateTime: " + getClusterCreateTime() + ", ");
-        if (getMasterUsername() != null) sb.append("MasterUsername: " + getMasterUsername() + ", ");
-        if (getClusterVersion() != null) sb.append("ClusterVersion: " + getClusterVersion() + ", ");
-        if (getSnapshotType() != null) sb.append("SnapshotType: " + getSnapshotType() + ", ");
-        if (getNodeType() != null) sb.append("NodeType: " + getNodeType() + ", ");
-        if (getNumberOfNodes() != null) sb.append("NumberOfNodes: " + getNumberOfNodes() + ", ");
-        if (getDBName() != null) sb.append("DBName: " + getDBName() + ", ");
-        if (getVpcId() != null) sb.append("VpcId: " + getVpcId() + ", ");
-        if (isEncrypted() != null) sb.append("Encrypted: " + isEncrypted() + ", ");
+        sb.append("{");    	
+        if (getSnapshotIdentifier() != null) sb.append("SnapshotIdentifier: " + getSnapshotIdentifier() + ",");    	
+        if (getClusterIdentifier() != null) sb.append("ClusterIdentifier: " + getClusterIdentifier() + ",");    	
+        if (getSnapshotCreateTime() != null) sb.append("SnapshotCreateTime: " + getSnapshotCreateTime() + ",");    	
+        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");    	
+        if (getPort() != null) sb.append("Port: " + getPort() + ",");    	
+        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");    	
+        if (getClusterCreateTime() != null) sb.append("ClusterCreateTime: " + getClusterCreateTime() + ",");    	
+        if (getMasterUsername() != null) sb.append("MasterUsername: " + getMasterUsername() + ",");    	
+        if (getClusterVersion() != null) sb.append("ClusterVersion: " + getClusterVersion() + ",");    	
+        if (getSnapshotType() != null) sb.append("SnapshotType: " + getSnapshotType() + ",");    	
+        if (getNodeType() != null) sb.append("NodeType: " + getNodeType() + ",");    	
+        if (getNumberOfNodes() != null) sb.append("NumberOfNodes: " + getNumberOfNodes() + ",");    	
+        if (getDBName() != null) sb.append("DBName: " + getDBName() + ",");    	
+        if (getVpcId() != null) sb.append("VpcId: " + getVpcId() + ",");    	
+        if (isEncrypted() != null) sb.append("Encrypted: " + isEncrypted() );
         sb.append("}");
         return sb.toString();
     }

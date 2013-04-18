@@ -397,13 +397,13 @@ public class DescribeScheduledActionsRequest extends AmazonWebServiceRequest  im
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getAutoScalingGroupName() != null) sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ", ");
-        if (getScheduledActionNames() != null) sb.append("ScheduledActionNames: " + getScheduledActionNames() + ", ");
-        if (getStartTime() != null) sb.append("StartTime: " + getStartTime() + ", ");
-        if (getEndTime() != null) sb.append("EndTime: " + getEndTime() + ", ");
-        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() + ", ");
-        if (getMaxRecords() != null) sb.append("MaxRecords: " + getMaxRecords() + ", ");
+        sb.append("{");    	
+        if (getAutoScalingGroupName() != null) sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ",");    	
+        if (getScheduledActionNames() != null) sb.append("ScheduledActionNames: " + getScheduledActionNames() + ",");    	
+        if (getStartTime() != null) sb.append("StartTime: " + getStartTime() + ",");    	
+        if (getEndTime() != null) sb.append("EndTime: " + getEndTime() + ",");    	
+        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() + ",");    	
+        if (getMaxRecords() != null) sb.append("MaxRecords: " + getMaxRecords() );
         sb.append("}");
         return sb.toString();
     }

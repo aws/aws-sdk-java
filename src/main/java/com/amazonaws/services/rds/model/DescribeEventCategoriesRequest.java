@@ -92,8 +92,8 @@ public class DescribeEventCategoriesRequest extends AmazonWebServiceRequest  imp
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getSourceType() != null) sb.append("SourceType: " + getSourceType() + ", ");
+        sb.append("{");    	
+        if (getSourceType() != null) sb.append("SourceType: " + getSourceType() );
         sb.append("}");
         return sb.toString();
     }

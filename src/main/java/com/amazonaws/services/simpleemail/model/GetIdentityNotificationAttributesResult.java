@@ -76,8 +76,8 @@ public class GetIdentityNotificationAttributesResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getNotificationAttributes() != null) sb.append("NotificationAttributes: " + getNotificationAttributes() + ", ");
+        sb.append("{");    	
+        if (getNotificationAttributes() != null) sb.append("NotificationAttributes: " + getNotificationAttributes() );
         sb.append("}");
         return sb.toString();
     }

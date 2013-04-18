@@ -67,8 +67,8 @@ public class CreateNetworkInterfaceResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getNetworkInterface() != null) sb.append("NetworkInterface: " + getNetworkInterface() + ", ");
+        sb.append("{");    	
+        if (getNetworkInterface() != null) sb.append("NetworkInterface: " + getNetworkInterface() );
         sb.append("}");
         return sb.toString();
     }

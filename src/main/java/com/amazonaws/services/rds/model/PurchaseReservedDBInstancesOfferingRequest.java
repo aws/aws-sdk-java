@@ -189,10 +189,10 @@ public class PurchaseReservedDBInstancesOfferingRequest extends AmazonWebService
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getReservedDBInstancesOfferingId() != null) sb.append("ReservedDBInstancesOfferingId: " + getReservedDBInstancesOfferingId() + ", ");
-        if (getReservedDBInstanceId() != null) sb.append("ReservedDBInstanceId: " + getReservedDBInstanceId() + ", ");
-        if (getDBInstanceCount() != null) sb.append("DBInstanceCount: " + getDBInstanceCount() + ", ");
+        sb.append("{");    	
+        if (getReservedDBInstancesOfferingId() != null) sb.append("ReservedDBInstancesOfferingId: " + getReservedDBInstancesOfferingId() + ",");    	
+        if (getReservedDBInstanceId() != null) sb.append("ReservedDBInstanceId: " + getReservedDBInstanceId() + ",");    	
+        if (getDBInstanceCount() != null) sb.append("DBInstanceCount: " + getDBInstanceCount() );
         sb.append("}");
         return sb.toString();
     }

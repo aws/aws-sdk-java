@@ -303,11 +303,11 @@ public class DescribeJobFlowsRequest extends AmazonWebServiceRequest  implements
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getCreatedAfter() != null) sb.append("CreatedAfter: " + getCreatedAfter() + ", ");
-        if (getCreatedBefore() != null) sb.append("CreatedBefore: " + getCreatedBefore() + ", ");
-        if (getJobFlowIds() != null) sb.append("JobFlowIds: " + getJobFlowIds() + ", ");
-        if (getJobFlowStates() != null) sb.append("JobFlowStates: " + getJobFlowStates() + ", ");
+        sb.append("{");    	
+        if (getCreatedAfter() != null) sb.append("CreatedAfter: " + getCreatedAfter() + ",");    	
+        if (getCreatedBefore() != null) sb.append("CreatedBefore: " + getCreatedBefore() + ",");    	
+        if (getJobFlowIds() != null) sb.append("JobFlowIds: " + getJobFlowIds() + ",");    	
+        if (getJobFlowStates() != null) sb.append("JobFlowStates: " + getJobFlowStates() );
         sb.append("}");
         return sb.toString();
     }

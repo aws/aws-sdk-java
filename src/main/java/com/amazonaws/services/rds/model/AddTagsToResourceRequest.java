@@ -154,9 +154,9 @@ public class AddTagsToResourceRequest extends AmazonWebServiceRequest  implement
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getResourceName() != null) sb.append("ResourceName: " + getResourceName() + ", ");
-        if (getTags() != null) sb.append("Tags: " + getTags() + ", ");
+        sb.append("{");    	
+        if (getResourceName() != null) sb.append("ResourceName: " + getResourceName() + ",");    	
+        if (getTags() != null) sb.append("Tags: " + getTags() );
         sb.append("}");
         return sb.toString();
     }

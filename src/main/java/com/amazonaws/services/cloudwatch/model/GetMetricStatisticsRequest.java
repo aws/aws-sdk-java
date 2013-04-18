@@ -635,15 +635,15 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest  impleme
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getNamespace() != null) sb.append("Namespace: " + getNamespace() + ", ");
-        if (getMetricName() != null) sb.append("MetricName: " + getMetricName() + ", ");
-        if (getDimensions() != null) sb.append("Dimensions: " + getDimensions() + ", ");
-        if (getStartTime() != null) sb.append("StartTime: " + getStartTime() + ", ");
-        if (getEndTime() != null) sb.append("EndTime: " + getEndTime() + ", ");
-        if (getPeriod() != null) sb.append("Period: " + getPeriod() + ", ");
-        if (getStatistics() != null) sb.append("Statistics: " + getStatistics() + ", ");
-        if (getUnit() != null) sb.append("Unit: " + getUnit() + ", ");
+        sb.append("{");    	
+        if (getNamespace() != null) sb.append("Namespace: " + getNamespace() + ",");    	
+        if (getMetricName() != null) sb.append("MetricName: " + getMetricName() + ",");    	
+        if (getDimensions() != null) sb.append("Dimensions: " + getDimensions() + ",");    	
+        if (getStartTime() != null) sb.append("StartTime: " + getStartTime() + ",");    	
+        if (getEndTime() != null) sb.append("EndTime: " + getEndTime() + ",");    	
+        if (getPeriod() != null) sb.append("Period: " + getPeriod() + ",");    	
+        if (getStatistics() != null) sb.append("Statistics: " + getStatistics() + ",");    	
+        if (getUnit() != null) sb.append("Unit: " + getUnit() );
         sb.append("}");
         return sb.toString();
     }

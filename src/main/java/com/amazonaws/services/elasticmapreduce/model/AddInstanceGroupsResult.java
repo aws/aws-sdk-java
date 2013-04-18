@@ -162,9 +162,9 @@ public class AddInstanceGroupsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getJobFlowId() != null) sb.append("JobFlowId: " + getJobFlowId() + ", ");
-        if (getInstanceGroupIds() != null) sb.append("InstanceGroupIds: " + getInstanceGroupIds() + ", ");
+        sb.append("{");    	
+        if (getJobFlowId() != null) sb.append("JobFlowId: " + getJobFlowId() + ",");    	
+        if (getInstanceGroupIds() != null) sb.append("InstanceGroupIds: " + getInstanceGroupIds() );
         sb.append("}");
         return sb.toString();
     }

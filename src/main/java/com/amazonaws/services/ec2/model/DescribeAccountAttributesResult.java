@@ -102,8 +102,8 @@ public class DescribeAccountAttributesResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getAccountAttributes() != null) sb.append("AccountAttributes: " + getAccountAttributes() + ", ");
+        sb.append("{");    	
+        if (getAccountAttributes() != null) sb.append("AccountAttributes: " + getAccountAttributes() );
         sb.append("}");
         return sb.toString();
     }

@@ -72,8 +72,8 @@ public class CreateDhcpOptionsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getDhcpOptions() != null) sb.append("DhcpOptions: " + getDhcpOptions() + ", ");
+        sb.append("{");    	
+        if (getDhcpOptions() != null) sb.append("DhcpOptions: " + getDhcpOptions() );
         sb.append("}");
         return sb.toString();
     }

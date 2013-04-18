@@ -173,9 +173,9 @@ public class History  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getEvents() != null) sb.append("Events: " + getEvents() + ", ");
-        if (getNextPageToken() != null) sb.append("NextPageToken: " + getNextPageToken() + ", ");
+        sb.append("{");    	
+        if (getEvents() != null) sb.append("Events: " + getEvents() + ",");    	
+        if (getNextPageToken() != null) sb.append("NextPageToken: " + getNextPageToken() );
         sb.append("}");
         return sb.toString();
     }

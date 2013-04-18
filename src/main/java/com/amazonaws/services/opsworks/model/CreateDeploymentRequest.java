@@ -348,13 +348,13 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest  implements
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getStackId() != null) sb.append("StackId: " + getStackId() + ", ");
-        if (getAppId() != null) sb.append("AppId: " + getAppId() + ", ");
-        if (getInstanceIds() != null) sb.append("InstanceIds: " + getInstanceIds() + ", ");
-        if (getCommand() != null) sb.append("Command: " + getCommand() + ", ");
-        if (getComment() != null) sb.append("Comment: " + getComment() + ", ");
-        if (getCustomJson() != null) sb.append("CustomJson: " + getCustomJson() + ", ");
+        sb.append("{");    	
+        if (getStackId() != null) sb.append("StackId: " + getStackId() + ",");    	
+        if (getAppId() != null) sb.append("AppId: " + getAppId() + ",");    	
+        if (getInstanceIds() != null) sb.append("InstanceIds: " + getInstanceIds() + ",");    	
+        if (getCommand() != null) sb.append("Command: " + getCommand() + ",");    	
+        if (getComment() != null) sb.append("Comment: " + getComment() + ",");    	
+        if (getCustomJson() != null) sb.append("CustomJson: " + getCustomJson() );
         sb.append("}");
         return sb.toString();
     }

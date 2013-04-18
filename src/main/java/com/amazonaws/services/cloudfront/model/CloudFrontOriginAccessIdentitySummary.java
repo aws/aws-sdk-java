@@ -177,10 +177,10 @@ public class CloudFrontOriginAccessIdentitySummary  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getId() != null) sb.append("Id: " + getId() + ", ");
-        if (getS3CanonicalUserId() != null) sb.append("S3CanonicalUserId: " + getS3CanonicalUserId() + ", ");
-        if (getComment() != null) sb.append("Comment: " + getComment() + ", ");
+        sb.append("{");    	
+        if (getId() != null) sb.append("Id: " + getId() + ",");    	
+        if (getS3CanonicalUserId() != null) sb.append("S3CanonicalUserId: " + getS3CanonicalUserId() + ",");    	
+        if (getComment() != null) sb.append("Comment: " + getComment() );
         sb.append("}");
         return sb.toString();
     }

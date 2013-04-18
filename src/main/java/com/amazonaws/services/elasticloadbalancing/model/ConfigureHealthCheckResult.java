@@ -72,8 +72,8 @@ public class ConfigureHealthCheckResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getHealthCheck() != null) sb.append("HealthCheck: " + getHealthCheck() + ", ");
+        sb.append("{");    	
+        if (getHealthCheck() != null) sb.append("HealthCheck: " + getHealthCheck() );
         sb.append("}");
         return sb.toString();
     }

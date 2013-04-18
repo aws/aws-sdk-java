@@ -1045,16 +1045,16 @@ public class StartChildWorkflowExecutionDecisionAttributes  implements Serializa
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getWorkflowType() != null) sb.append("WorkflowType: " + getWorkflowType() + ", ");
-        if (getWorkflowId() != null) sb.append("WorkflowId: " + getWorkflowId() + ", ");
-        if (getControl() != null) sb.append("Control: " + getControl() + ", ");
-        if (getInput() != null) sb.append("Input: " + getInput() + ", ");
-        if (getExecutionStartToCloseTimeout() != null) sb.append("ExecutionStartToCloseTimeout: " + getExecutionStartToCloseTimeout() + ", ");
-        if (getTaskList() != null) sb.append("TaskList: " + getTaskList() + ", ");
-        if (getTaskStartToCloseTimeout() != null) sb.append("TaskStartToCloseTimeout: " + getTaskStartToCloseTimeout() + ", ");
-        if (getChildPolicy() != null) sb.append("ChildPolicy: " + getChildPolicy() + ", ");
-        if (getTagList() != null) sb.append("TagList: " + getTagList() + ", ");
+        sb.append("{");    	
+        if (getWorkflowType() != null) sb.append("WorkflowType: " + getWorkflowType() + ",");    	
+        if (getWorkflowId() != null) sb.append("WorkflowId: " + getWorkflowId() + ",");    	
+        if (getControl() != null) sb.append("Control: " + getControl() + ",");    	
+        if (getInput() != null) sb.append("Input: " + getInput() + ",");    	
+        if (getExecutionStartToCloseTimeout() != null) sb.append("ExecutionStartToCloseTimeout: " + getExecutionStartToCloseTimeout() + ",");    	
+        if (getTaskList() != null) sb.append("TaskList: " + getTaskList() + ",");    	
+        if (getTaskStartToCloseTimeout() != null) sb.append("TaskStartToCloseTimeout: " + getTaskStartToCloseTimeout() + ",");    	
+        if (getChildPolicy() != null) sb.append("ChildPolicy: " + getChildPolicy() + ",");    	
+        if (getTagList() != null) sb.append("TagList: " + getTagList() );
         sb.append("}");
         return sb.toString();
     }

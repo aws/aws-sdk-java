@@ -345,15 +345,15 @@ public class BundleTask  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ", ");
-        if (getBundleId() != null) sb.append("BundleId: " + getBundleId() + ", ");
-        if (getState() != null) sb.append("State: " + getState() + ", ");
-        if (getStartTime() != null) sb.append("StartTime: " + getStartTime() + ", ");
-        if (getUpdateTime() != null) sb.append("UpdateTime: " + getUpdateTime() + ", ");
-        if (getStorage() != null) sb.append("Storage: " + getStorage() + ", ");
-        if (getProgress() != null) sb.append("Progress: " + getProgress() + ", ");
-        if (getBundleTaskError() != null) sb.append("BundleTaskError: " + getBundleTaskError() + ", ");
+        sb.append("{");    	
+        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ",");    	
+        if (getBundleId() != null) sb.append("BundleId: " + getBundleId() + ",");    	
+        if (getState() != null) sb.append("State: " + getState() + ",");    	
+        if (getStartTime() != null) sb.append("StartTime: " + getStartTime() + ",");    	
+        if (getUpdateTime() != null) sb.append("UpdateTime: " + getUpdateTime() + ",");    	
+        if (getStorage() != null) sb.append("Storage: " + getStorage() + ",");    	
+        if (getProgress() != null) sb.append("Progress: " + getProgress() + ",");    	
+        if (getBundleTaskError() != null) sb.append("BundleTaskError: " + getBundleTaskError() );
         sb.append("}");
         return sb.toString();
     }

@@ -502,9 +502,27 @@ public class TransferManager {
                          }
                      }
                     download.setState(TransferState.InProgress);
-                    final S3Object s3Object = s3.getObject(getObjectRequest);
-
-                    download.setS3Object(s3Object);
+                    S3Object s3Object = ServiceUtils.retryableDownloadS3ObjectToFile(file, new ServiceUtils.RetryableS3DownloadTask() {
+						
+						@Override
+						public S3Object getS3ObjectStream() {
+							S3Object s3Object = s3.getObject(getObjectRequest);
+							download.setS3Object(s3Object);
+							return s3Object;
+						}
+						
+						@Override
+						public boolean needIntegrityCheck() {
+		                    // Don't perform the integrity check if the stream data is wrapped
+		                    // in a decryption stream, or if we're only looking at a range of
+		                    // the data, since otherwise the checksum won't match up.
+		                    boolean performIntegrityCheck = true;
+		                    if (getObjectRequest.getRange() != null) performIntegrityCheck = false;
+		                    if (s3 instanceof AmazonS3EncryptionClient) performIntegrityCheck = false;
+		                    return performIntegrityCheck;				
+						}
+					});
+                    
 
                     if (s3Object == null) {
                         download.setState(TransferState.Canceled);
@@ -512,14 +530,7 @@ public class TransferManager {
                         return download;
                     }
 
-                    // Don't perform the integrity check if the stream data is wrapped
-                    // in a decryption stream, or if we're only looking at a range of
-                    // the data, since otherwise the checksum won't match up.
-                    boolean performIntegrityCheck = true;
-                    if (getObjectRequest.getRange() != null) performIntegrityCheck = false;
-                    if (s3 instanceof AmazonS3EncryptionClient) performIntegrityCheck = false;
 
-                    ServiceUtils.downloadObjectToFile(s3Object, file, performIntegrityCheck);
                     download.setState(TransferState.Completed);
                     return true;
                 } catch (Exception e) {

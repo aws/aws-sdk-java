@@ -55,7 +55,7 @@ public class CreateCachediSCSIVolumeRequest extends AmazonWebServiceRequest  imp
      * the new stored volume. Specify this field if you want to create the
      * iSCSI cached volume from a snapshot; otherwise, do not include this
      * field. To list snapshots for your account, use <a
-     * rence/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
+     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
      * in Amazon Elastic Compute Cloud API Reference.
      * <p>
      * <b>Constraints:</b><br/>
@@ -67,7 +67,7 @@ public class CreateCachediSCSIVolumeRequest extends AmazonWebServiceRequest  imp
      * The name of the iSCSI target used by initiators to connect to the
      * target and as a suffix for the target ARN. For example, specifying
      * <b>TargetName</b> as <i>myvolume</i> results in the target ARN of
-     * 22223333:gateway/mygateway/target/iqn.1997-05.com.amazon:myvolume</i>.
+     * <i>arn:aws:storagegateway:us-east-1:111122223333:gateway/mygateway/target/iqn.1997-05.com.amazon:myvolume</i>.
      * The target name must be unique across all volumes of a gateway.
      * <p>
      * <b>Constraints:</b><br/>
@@ -189,7 +189,7 @@ public class CreateCachediSCSIVolumeRequest extends AmazonWebServiceRequest  imp
      * the new stored volume. Specify this field if you want to create the
      * iSCSI cached volume from a snapshot; otherwise, do not include this
      * field. To list snapshots for your account, use <a
-     * rence/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
+     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
      * in Amazon Elastic Compute Cloud API Reference.
      * <p>
      * <b>Constraints:</b><br/>
@@ -199,7 +199,7 @@ public class CreateCachediSCSIVolumeRequest extends AmazonWebServiceRequest  imp
      *         the new stored volume. Specify this field if you want to create the
      *         iSCSI cached volume from a snapshot; otherwise, do not include this
      *         field. To list snapshots for your account, use <a
-     *         rence/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
+     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
      *         in Amazon Elastic Compute Cloud API Reference.
      */
     public String getSnapshotId() {
@@ -211,7 +211,7 @@ public class CreateCachediSCSIVolumeRequest extends AmazonWebServiceRequest  imp
      * the new stored volume. Specify this field if you want to create the
      * iSCSI cached volume from a snapshot; otherwise, do not include this
      * field. To list snapshots for your account, use <a
-     * rence/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
+     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
      * in Amazon Elastic Compute Cloud API Reference.
      * <p>
      * <b>Constraints:</b><br/>
@@ -221,7 +221,7 @@ public class CreateCachediSCSIVolumeRequest extends AmazonWebServiceRequest  imp
      *         the new stored volume. Specify this field if you want to create the
      *         iSCSI cached volume from a snapshot; otherwise, do not include this
      *         field. To list snapshots for your account, use <a
-     *         rence/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
+     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
      *         in Amazon Elastic Compute Cloud API Reference.
      */
     public void setSnapshotId(String snapshotId) {
@@ -233,7 +233,7 @@ public class CreateCachediSCSIVolumeRequest extends AmazonWebServiceRequest  imp
      * the new stored volume. Specify this field if you want to create the
      * iSCSI cached volume from a snapshot; otherwise, do not include this
      * field. To list snapshots for your account, use <a
-     * rence/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
+     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
      * in Amazon Elastic Compute Cloud API Reference.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -245,7 +245,7 @@ public class CreateCachediSCSIVolumeRequest extends AmazonWebServiceRequest  imp
      *         the new stored volume. Specify this field if you want to create the
      *         iSCSI cached volume from a snapshot; otherwise, do not include this
      *         field. To list snapshots for your account, use <a
-     *         rence/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
+     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
      *         in Amazon Elastic Compute Cloud API Reference.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -261,7 +261,7 @@ public class CreateCachediSCSIVolumeRequest extends AmazonWebServiceRequest  imp
      * The name of the iSCSI target used by initiators to connect to the
      * target and as a suffix for the target ARN. For example, specifying
      * <b>TargetName</b> as <i>myvolume</i> results in the target ARN of
-     * 22223333:gateway/mygateway/target/iqn.1997-05.com.amazon:myvolume</i>.
+     * <i>arn:aws:storagegateway:us-east-1:111122223333:gateway/mygateway/target/iqn.1997-05.com.amazon:myvolume</i>.
      * The target name must be unique across all volumes of a gateway.
      * <p>
      * <b>Constraints:</b><br/>
@@ -271,7 +271,7 @@ public class CreateCachediSCSIVolumeRequest extends AmazonWebServiceRequest  imp
      * @return The name of the iSCSI target used by initiators to connect to the
      *         target and as a suffix for the target ARN. For example, specifying
      *         <b>TargetName</b> as <i>myvolume</i> results in the target ARN of
-     *         22223333:gateway/mygateway/target/iqn.1997-05.com.amazon:myvolume</i>.
+     *         <i>arn:aws:storagegateway:us-east-1:111122223333:gateway/mygateway/target/iqn.1997-05.com.amazon:myvolume</i>.
      *         The target name must be unique across all volumes of a gateway.
      */
     public String getTargetName() {
@@ -282,7 +282,7 @@ public class CreateCachediSCSIVolumeRequest extends AmazonWebServiceRequest  imp
      * The name of the iSCSI target used by initiators to connect to the
      * target and as a suffix for the target ARN. For example, specifying
      * <b>TargetName</b> as <i>myvolume</i> results in the target ARN of
-     * 22223333:gateway/mygateway/target/iqn.1997-05.com.amazon:myvolume</i>.
+     * <i>arn:aws:storagegateway:us-east-1:111122223333:gateway/mygateway/target/iqn.1997-05.com.amazon:myvolume</i>.
      * The target name must be unique across all volumes of a gateway.
      * <p>
      * <b>Constraints:</b><br/>
@@ -292,7 +292,7 @@ public class CreateCachediSCSIVolumeRequest extends AmazonWebServiceRequest  imp
      * @param targetName The name of the iSCSI target used by initiators to connect to the
      *         target and as a suffix for the target ARN. For example, specifying
      *         <b>TargetName</b> as <i>myvolume</i> results in the target ARN of
-     *         22223333:gateway/mygateway/target/iqn.1997-05.com.amazon:myvolume</i>.
+     *         <i>arn:aws:storagegateway:us-east-1:111122223333:gateway/mygateway/target/iqn.1997-05.com.amazon:myvolume</i>.
      *         The target name must be unique across all volumes of a gateway.
      */
     public void setTargetName(String targetName) {
@@ -303,7 +303,7 @@ public class CreateCachediSCSIVolumeRequest extends AmazonWebServiceRequest  imp
      * The name of the iSCSI target used by initiators to connect to the
      * target and as a suffix for the target ARN. For example, specifying
      * <b>TargetName</b> as <i>myvolume</i> results in the target ARN of
-     * 22223333:gateway/mygateway/target/iqn.1997-05.com.amazon:myvolume</i>.
+     * <i>arn:aws:storagegateway:us-east-1:111122223333:gateway/mygateway/target/iqn.1997-05.com.amazon:myvolume</i>.
      * The target name must be unique across all volumes of a gateway.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -315,7 +315,7 @@ public class CreateCachediSCSIVolumeRequest extends AmazonWebServiceRequest  imp
      * @param targetName The name of the iSCSI target used by initiators to connect to the
      *         target and as a suffix for the target ARN. For example, specifying
      *         <b>TargetName</b> as <i>myvolume</i> results in the target ARN of
-     *         22223333:gateway/mygateway/target/iqn.1997-05.com.amazon:myvolume</i>.
+     *         <i>arn:aws:storagegateway:us-east-1:111122223333:gateway/mygateway/target/iqn.1997-05.com.amazon:myvolume</i>.
      *         The target name must be unique across all volumes of a gateway.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -442,13 +442,13 @@ public class CreateCachediSCSIVolumeRequest extends AmazonWebServiceRequest  imp
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getGatewayARN() != null) sb.append("GatewayARN: " + getGatewayARN() + ", ");
-        if (getVolumeSizeInBytes() != null) sb.append("VolumeSizeInBytes: " + getVolumeSizeInBytes() + ", ");
-        if (getSnapshotId() != null) sb.append("SnapshotId: " + getSnapshotId() + ", ");
-        if (getTargetName() != null) sb.append("TargetName: " + getTargetName() + ", ");
-        if (getNetworkInterfaceId() != null) sb.append("NetworkInterfaceId: " + getNetworkInterfaceId() + ", ");
-        if (getClientToken() != null) sb.append("ClientToken: " + getClientToken() + ", ");
+        sb.append("{");    	
+        if (getGatewayARN() != null) sb.append("GatewayARN: " + getGatewayARN() + ",");    	
+        if (getVolumeSizeInBytes() != null) sb.append("VolumeSizeInBytes: " + getVolumeSizeInBytes() + ",");    	
+        if (getSnapshotId() != null) sb.append("SnapshotId: " + getSnapshotId() + ",");    	
+        if (getTargetName() != null) sb.append("TargetName: " + getTargetName() + ",");    	
+        if (getNetworkInterfaceId() != null) sb.append("NetworkInterfaceId: " + getNetworkInterfaceId() + ",");    	
+        if (getClientToken() != null) sb.append("ClientToken: " + getClientToken() );
         sb.append("}");
         return sb.toString();
     }

@@ -95,8 +95,8 @@ public class DeleteSubnetRequest extends AmazonWebServiceRequest  implements Ser
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getSubnetId() != null) sb.append("SubnetId: " + getSubnetId() + ", ");
+        sb.append("{");    	
+        if (getSubnetId() != null) sb.append("SubnetId: " + getSubnetId() );
         sb.append("}");
         return sb.toString();
     }

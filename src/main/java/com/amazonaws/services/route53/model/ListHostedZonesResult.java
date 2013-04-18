@@ -430,12 +430,12 @@ public class ListHostedZonesResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getHostedZones() != null) sb.append("HostedZones: " + getHostedZones() + ", ");
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ", ");
-        if (isTruncated() != null) sb.append("IsTruncated: " + isTruncated() + ", ");
-        if (getNextMarker() != null) sb.append("NextMarker: " + getNextMarker() + ", ");
-        if (getMaxItems() != null) sb.append("MaxItems: " + getMaxItems() + ", ");
+        sb.append("{");    	
+        if (getHostedZones() != null) sb.append("HostedZones: " + getHostedZones() + ",");    	
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");    	
+        if (isTruncated() != null) sb.append("IsTruncated: " + isTruncated() + ",");    	
+        if (getNextMarker() != null) sb.append("NextMarker: " + getNextMarker() + ",");    	
+        if (getMaxItems() != null) sb.append("MaxItems: " + getMaxItems() );
         sb.append("}");
         return sb.toString();
     }

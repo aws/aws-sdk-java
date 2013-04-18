@@ -132,9 +132,9 @@ public class DescribeStackResourceRequest extends AmazonWebServiceRequest  imple
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getStackName() != null) sb.append("StackName: " + getStackName() + ", ");
-        if (getLogicalResourceId() != null) sb.append("LogicalResourceId: " + getLogicalResourceId() + ", ");
+        sb.append("{");    	
+        if (getStackName() != null) sb.append("StackName: " + getStackName() + ",");    	
+        if (getLogicalResourceId() != null) sb.append("LogicalResourceId: " + getLogicalResourceId() );
         sb.append("}");
         return sb.toString();
     }

@@ -383,13 +383,13 @@ public class CloudFrontOriginAccessIdentityList  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ", ");
-        if (getNextMarker() != null) sb.append("NextMarker: " + getNextMarker() + ", ");
-        if (getMaxItems() != null) sb.append("MaxItems: " + getMaxItems() + ", ");
-        if (isTruncated() != null) sb.append("IsTruncated: " + isTruncated() + ", ");
-        if (getQuantity() != null) sb.append("Quantity: " + getQuantity() + ", ");
-        if (getItems() != null) sb.append("Items: " + getItems() + ", ");
+        sb.append("{");    	
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");    	
+        if (getNextMarker() != null) sb.append("NextMarker: " + getNextMarker() + ",");    	
+        if (getMaxItems() != null) sb.append("MaxItems: " + getMaxItems() + ",");    	
+        if (isTruncated() != null) sb.append("IsTruncated: " + isTruncated() + ",");    	
+        if (getQuantity() != null) sb.append("Quantity: " + getQuantity() + ",");    	
+        if (getItems() != null) sb.append("Items: " + getItems() );
         sb.append("}");
         return sb.toString();
     }

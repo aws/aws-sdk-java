@@ -109,8 +109,8 @@ public class DescribeReservedInstancesListingsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getReservedInstancesListings() != null) sb.append("ReservedInstancesListings: " + getReservedInstancesListings() + ", ");
+        sb.append("{");    	
+        if (getReservedInstancesListings() != null) sb.append("ReservedInstancesListings: " + getReservedInstancesListings() );
         sb.append("}");
         return sb.toString();
     }

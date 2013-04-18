@@ -72,8 +72,8 @@ public class ListStreamingDistributionsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getStreamingDistributionList() != null) sb.append("StreamingDistributionList: " + getStreamingDistributionList() + ", ");
+        sb.append("{");    	
+        if (getStreamingDistributionList() != null) sb.append("StreamingDistributionList: " + getStreamingDistributionList() );
         sb.append("}");
         return sb.toString();
     }

@@ -131,8 +131,8 @@ public class ModifyInstanceGroupsRequest extends AmazonWebServiceRequest  implem
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getInstanceGroups() != null) sb.append("InstanceGroups: " + getInstanceGroups() + ", ");
+        sb.append("{");    	
+        if (getInstanceGroups() != null) sb.append("InstanceGroups: " + getInstanceGroups() );
         sb.append("}");
         return sb.toString();
     }

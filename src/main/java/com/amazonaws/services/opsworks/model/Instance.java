@@ -63,7 +63,7 @@ public class Instance  implements Serializable  {
     /**
      * The ARN of the instance's IAM profile. For more information about IAM
      * ARNs, see <a
-     * docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.
      */
     private String instanceProfileArn;
@@ -110,7 +110,7 @@ public class Instance  implements Serializable  {
 
     /**
      * The instance <a
-     * com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"></a>Elastic
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"></a>Elastic
      * IP address.
      */
     private String elasticIp;
@@ -484,12 +484,12 @@ public class Instance  implements Serializable  {
     /**
      * The ARN of the instance's IAM profile. For more information about IAM
      * ARNs, see <a
-     * docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.
      *
      * @return The ARN of the instance's IAM profile. For more information about IAM
      *         ARNs, see <a
-     *         docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      *         Identifiers</a>.
      */
     public String getInstanceProfileArn() {
@@ -499,12 +499,12 @@ public class Instance  implements Serializable  {
     /**
      * The ARN of the instance's IAM profile. For more information about IAM
      * ARNs, see <a
-     * docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.
      *
      * @param instanceProfileArn The ARN of the instance's IAM profile. For more information about IAM
      *         ARNs, see <a
-     *         docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      *         Identifiers</a>.
      */
     public void setInstanceProfileArn(String instanceProfileArn) {
@@ -514,14 +514,14 @@ public class Instance  implements Serializable  {
     /**
      * The ARN of the instance's IAM profile. For more information about IAM
      * ARNs, see <a
-     * docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param instanceProfileArn The ARN of the instance's IAM profile. For more information about IAM
      *         ARNs, see <a
-     *         docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      *         Identifiers</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -803,11 +803,11 @@ public class Instance  implements Serializable  {
     
     /**
      * The instance <a
-     * com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"></a>Elastic
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"></a>Elastic
      * IP address.
      *
      * @return The instance <a
-     *         com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"></a>Elastic
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"></a>Elastic
      *         IP address.
      */
     public String getElasticIp() {
@@ -816,11 +816,11 @@ public class Instance  implements Serializable  {
     
     /**
      * The instance <a
-     * com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"></a>Elastic
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"></a>Elastic
      * IP address.
      *
      * @param elasticIp The instance <a
-     *         com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"></a>Elastic
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"></a>Elastic
      *         IP address.
      */
     public void setElasticIp(String elasticIp) {
@@ -829,13 +829,13 @@ public class Instance  implements Serializable  {
     
     /**
      * The instance <a
-     * com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"></a>Elastic
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"></a>Elastic
      * IP address.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param elasticIp The instance <a
-     *         com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"></a>Elastic
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"></a>Elastic
      *         IP address.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -1177,29 +1177,29 @@ public class Instance  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ", ");
-        if (getEc2InstanceId() != null) sb.append("Ec2InstanceId: " + getEc2InstanceId() + ", ");
-        if (getHostname() != null) sb.append("Hostname: " + getHostname() + ", ");
-        if (getStackId() != null) sb.append("StackId: " + getStackId() + ", ");
-        if (getLayerIds() != null) sb.append("LayerIds: " + getLayerIds() + ", ");
-        if (getSecurityGroupIds() != null) sb.append("SecurityGroupIds: " + getSecurityGroupIds() + ", ");
-        if (getInstanceType() != null) sb.append("InstanceType: " + getInstanceType() + ", ");
-        if (getInstanceProfileArn() != null) sb.append("InstanceProfileArn: " + getInstanceProfileArn() + ", ");
-        if (getStatus() != null) sb.append("Status: " + getStatus() + ", ");
-        if (getOs() != null) sb.append("Os: " + getOs() + ", ");
-        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ", ");
-        if (getPublicDns() != null) sb.append("PublicDns: " + getPublicDns() + ", ");
-        if (getPrivateDns() != null) sb.append("PrivateDns: " + getPrivateDns() + ", ");
-        if (getPublicIp() != null) sb.append("PublicIp: " + getPublicIp() + ", ");
-        if (getPrivateIp() != null) sb.append("PrivateIp: " + getPrivateIp() + ", ");
-        if (getElasticIp() != null) sb.append("ElasticIp: " + getElasticIp() + ", ");
-        if (getAutoScalingType() != null) sb.append("AutoScalingType: " + getAutoScalingType() + ", ");
-        if (getSshKeyName() != null) sb.append("SshKeyName: " + getSshKeyName() + ", ");
-        if (getSshHostRsaKeyFingerprint() != null) sb.append("SshHostRsaKeyFingerprint: " + getSshHostRsaKeyFingerprint() + ", ");
-        if (getSshHostDsaKeyFingerprint() != null) sb.append("SshHostDsaKeyFingerprint: " + getSshHostDsaKeyFingerprint() + ", ");
-        if (getCreatedAt() != null) sb.append("CreatedAt: " + getCreatedAt() + ", ");
-        if (getLastServiceErrorId() != null) sb.append("LastServiceErrorId: " + getLastServiceErrorId() + ", ");
+        sb.append("{");    	
+        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ",");    	
+        if (getEc2InstanceId() != null) sb.append("Ec2InstanceId: " + getEc2InstanceId() + ",");    	
+        if (getHostname() != null) sb.append("Hostname: " + getHostname() + ",");    	
+        if (getStackId() != null) sb.append("StackId: " + getStackId() + ",");    	
+        if (getLayerIds() != null) sb.append("LayerIds: " + getLayerIds() + ",");    	
+        if (getSecurityGroupIds() != null) sb.append("SecurityGroupIds: " + getSecurityGroupIds() + ",");    	
+        if (getInstanceType() != null) sb.append("InstanceType: " + getInstanceType() + ",");    	
+        if (getInstanceProfileArn() != null) sb.append("InstanceProfileArn: " + getInstanceProfileArn() + ",");    	
+        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");    	
+        if (getOs() != null) sb.append("Os: " + getOs() + ",");    	
+        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");    	
+        if (getPublicDns() != null) sb.append("PublicDns: " + getPublicDns() + ",");    	
+        if (getPrivateDns() != null) sb.append("PrivateDns: " + getPrivateDns() + ",");    	
+        if (getPublicIp() != null) sb.append("PublicIp: " + getPublicIp() + ",");    	
+        if (getPrivateIp() != null) sb.append("PrivateIp: " + getPrivateIp() + ",");    	
+        if (getElasticIp() != null) sb.append("ElasticIp: " + getElasticIp() + ",");    	
+        if (getAutoScalingType() != null) sb.append("AutoScalingType: " + getAutoScalingType() + ",");    	
+        if (getSshKeyName() != null) sb.append("SshKeyName: " + getSshKeyName() + ",");    	
+        if (getSshHostRsaKeyFingerprint() != null) sb.append("SshHostRsaKeyFingerprint: " + getSshHostRsaKeyFingerprint() + ",");    	
+        if (getSshHostDsaKeyFingerprint() != null) sb.append("SshHostDsaKeyFingerprint: " + getSshHostDsaKeyFingerprint() + ",");    	
+        if (getCreatedAt() != null) sb.append("CreatedAt: " + getCreatedAt() + ",");    	
+        if (getLastServiceErrorId() != null) sb.append("LastServiceErrorId: " + getLastServiceErrorId() );
         sb.append("}");
         return sb.toString();
     }

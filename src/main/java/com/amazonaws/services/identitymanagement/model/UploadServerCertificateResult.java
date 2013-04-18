@@ -79,8 +79,8 @@ public class UploadServerCertificateResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getServerCertificateMetadata() != null) sb.append("ServerCertificateMetadata: " + getServerCertificateMetadata() + ", ");
+        sb.append("{");    	
+        if (getServerCertificateMetadata() != null) sb.append("ServerCertificateMetadata: " + getServerCertificateMetadata() );
         sb.append("}");
         return sb.toString();
     }

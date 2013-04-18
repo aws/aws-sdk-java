@@ -168,9 +168,9 @@ public class RemoveUserFromGroupRequest extends AmazonWebServiceRequest  impleme
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getGroupName() != null) sb.append("GroupName: " + getGroupName() + ", ");
-        if (getUserName() != null) sb.append("UserName: " + getUserName() + ", ");
+        sb.append("{");    	
+        if (getGroupName() != null) sb.append("GroupName: " + getGroupName() + ",");    	
+        if (getUserName() != null) sb.append("UserName: " + getUserName() );
         sb.append("}");
         return sb.toString();
     }

@@ -67,8 +67,8 @@ public class ImportInstanceResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getConversionTask() != null) sb.append("ConversionTask: " + getConversionTask() + ", ");
+        sb.append("{");    	
+        if (getConversionTask() != null) sb.append("ConversionTask: " + getConversionTask() );
         sb.append("}");
         return sb.toString();
     }

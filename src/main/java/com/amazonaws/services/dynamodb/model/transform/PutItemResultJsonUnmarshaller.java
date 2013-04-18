@@ -28,6 +28,7 @@ import static org.codehaus.jackson.JsonToken.*;
 /**
  * Put Item Result JSON Unmarshaller
  */
+@Deprecated
 public class PutItemResultJsonUnmarshaller implements Unmarshaller<PutItemResult, JsonUnmarshallerContext> {
 
     

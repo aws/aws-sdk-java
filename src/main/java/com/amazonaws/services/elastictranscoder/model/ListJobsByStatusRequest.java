@@ -243,10 +243,10 @@ public class ListJobsByStatusRequest extends AmazonWebServiceRequest  implements
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getStatus() != null) sb.append("Status: " + getStatus() + ", ");
-        if (getAscending() != null) sb.append("Ascending: " + getAscending() + ", ");
-        if (getPageToken() != null) sb.append("PageToken: " + getPageToken() + ", ");
+        sb.append("{");    	
+        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");    	
+        if (getAscending() != null) sb.append("Ascending: " + getAscending() + ",");    	
+        if (getPageToken() != null) sb.append("PageToken: " + getPageToken() );
         sb.append("}");
         return sb.toString();
     }

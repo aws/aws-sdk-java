@@ -37,6 +37,7 @@ import com.amazonaws.util.json.*;
 /**
  * Describe Table Request Marshaller
  */
+@Deprecated
 public class DescribeTableRequestMarshaller implements Marshaller<Request<DescribeTableRequest>, DescribeTableRequest> {
 
     

@@ -32,6 +32,7 @@ import java.util.Set;
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)
+@Deprecated
 public @interface DynamoDBMarshalling {
 
     /**

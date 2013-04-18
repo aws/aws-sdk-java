@@ -107,8 +107,8 @@ public class DescribeInstancesResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getReservations() != null) sb.append("Reservations: " + getReservations() + ", ");
+        sb.append("{");    	
+        if (getReservations() != null) sb.append("Reservations: " + getReservations() );
         sb.append("}");
         return sb.toString();
     }

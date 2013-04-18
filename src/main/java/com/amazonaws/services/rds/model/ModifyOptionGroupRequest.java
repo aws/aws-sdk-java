@@ -308,11 +308,11 @@ public class ModifyOptionGroupRequest extends AmazonWebServiceRequest  implement
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getOptionGroupName() != null) sb.append("OptionGroupName: " + getOptionGroupName() + ", ");
-        if (getOptionsToInclude() != null) sb.append("OptionsToInclude: " + getOptionsToInclude() + ", ");
-        if (getOptionsToRemove() != null) sb.append("OptionsToRemove: " + getOptionsToRemove() + ", ");
-        if (isApplyImmediately() != null) sb.append("ApplyImmediately: " + isApplyImmediately() + ", ");
+        sb.append("{");    	
+        if (getOptionGroupName() != null) sb.append("OptionGroupName: " + getOptionGroupName() + ",");    	
+        if (getOptionsToInclude() != null) sb.append("OptionsToInclude: " + getOptionsToInclude() + ",");    	
+        if (getOptionsToRemove() != null) sb.append("OptionsToRemove: " + getOptionsToRemove() + ",");    	
+        if (isApplyImmediately() != null) sb.append("ApplyImmediately: " + isApplyImmediately() );
         sb.append("}");
         return sb.toString();
     }

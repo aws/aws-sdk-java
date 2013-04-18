@@ -160,9 +160,9 @@ public class ActivityTypeDetail  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getTypeInfo() != null) sb.append("TypeInfo: " + getTypeInfo() + ", ");
-        if (getConfiguration() != null) sb.append("Configuration: " + getConfiguration() + ", ");
+        sb.append("{");    	
+        if (getTypeInfo() != null) sb.append("TypeInfo: " + getTypeInfo() + ",");    	
+        if (getConfiguration() != null) sb.append("Configuration: " + getConfiguration() );
         sb.append("}");
         return sb.toString();
     }

@@ -145,9 +145,9 @@ public class S3Origin  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getDomainName() != null) sb.append("DomainName: " + getDomainName() + ", ");
-        if (getOriginAccessIdentity() != null) sb.append("OriginAccessIdentity: " + getOriginAccessIdentity() + ", ");
+        sb.append("{");    	
+        if (getDomainName() != null) sb.append("DomainName: " + getDomainName() + ",");    	
+        if (getOriginAccessIdentity() != null) sb.append("OriginAccessIdentity: " + getOriginAccessIdentity() );
         sb.append("}");
         return sb.toString();
     }

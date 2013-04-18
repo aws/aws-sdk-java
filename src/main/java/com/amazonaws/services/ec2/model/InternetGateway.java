@@ -209,10 +209,10 @@ public class InternetGateway  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getInternetGatewayId() != null) sb.append("InternetGatewayId: " + getInternetGatewayId() + ", ");
-        if (getAttachments() != null) sb.append("Attachments: " + getAttachments() + ", ");
-        if (getTags() != null) sb.append("Tags: " + getTags() + ", ");
+        sb.append("{");    	
+        if (getInternetGatewayId() != null) sb.append("InternetGatewayId: " + getInternetGatewayId() + ",");    	
+        if (getAttachments() != null) sb.append("Attachments: " + getAttachments() + ",");    	
+        if (getTags() != null) sb.append("Tags: " + getTags() );
         sb.append("}");
         return sb.toString();
     }

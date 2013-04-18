@@ -146,9 +146,9 @@ public class DescribeClusterVersionsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ", ");
-        if (getClusterVersions() != null) sb.append("ClusterVersions: " + getClusterVersions() + ", ");
+        sb.append("{");    	
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");    	
+        if (getClusterVersions() != null) sb.append("ClusterVersions: " + getClusterVersions() );
         sb.append("}");
         return sb.toString();
     }

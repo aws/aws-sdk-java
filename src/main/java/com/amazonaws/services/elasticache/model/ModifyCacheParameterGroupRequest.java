@@ -203,9 +203,9 @@ public class ModifyCacheParameterGroupRequest extends AmazonWebServiceRequest  i
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getCacheParameterGroupName() != null) sb.append("CacheParameterGroupName: " + getCacheParameterGroupName() + ", ");
-        if (getParameterNameValues() != null) sb.append("ParameterNameValues: " + getParameterNameValues() + ", ");
+        sb.append("{");    	
+        if (getCacheParameterGroupName() != null) sb.append("CacheParameterGroupName: " + getCacheParameterGroupName() + ",");    	
+        if (getParameterNameValues() != null) sb.append("ParameterNameValues: " + getParameterNameValues() );
         sb.append("}");
         return sb.toString();
     }

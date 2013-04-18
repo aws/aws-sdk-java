@@ -214,10 +214,10 @@ public class ServerCertificate  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getServerCertificateMetadata() != null) sb.append("ServerCertificateMetadata: " + getServerCertificateMetadata() + ", ");
-        if (getCertificateBody() != null) sb.append("CertificateBody: " + getCertificateBody() + ", ");
-        if (getCertificateChain() != null) sb.append("CertificateChain: " + getCertificateChain() + ", ");
+        sb.append("{");    	
+        if (getServerCertificateMetadata() != null) sb.append("ServerCertificateMetadata: " + getServerCertificateMetadata() + ",");    	
+        if (getCertificateBody() != null) sb.append("CertificateBody: " + getCertificateBody() + ",");    	
+        if (getCertificateChain() != null) sb.append("CertificateChain: " + getCertificateChain() );
         sb.append("}");
         return sb.toString();
     }

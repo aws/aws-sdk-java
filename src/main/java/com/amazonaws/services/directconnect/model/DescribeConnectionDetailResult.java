@@ -576,15 +576,15 @@ public class DescribeConnectionDetailResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getConnectionId() != null) sb.append("ConnectionId: " + getConnectionId() + ", ");
-        if (getConnectionName() != null) sb.append("ConnectionName: " + getConnectionName() + ", ");
-        if (getConnectionState() != null) sb.append("ConnectionState: " + getConnectionState() + ", ");
-        if (getRegion() != null) sb.append("Region: " + getRegion() + ", ");
-        if (getLocation() != null) sb.append("Location: " + getLocation() + ", ");
-        if (getBandwidth() != null) sb.append("Bandwidth: " + getBandwidth() + ", ");
-        if (getConnectionCosts() != null) sb.append("ConnectionCosts: " + getConnectionCosts() + ", ");
-        if (getOrderSteps() != null) sb.append("OrderSteps: " + getOrderSteps() + ", ");
+        sb.append("{");    	
+        if (getConnectionId() != null) sb.append("ConnectionId: " + getConnectionId() + ",");    	
+        if (getConnectionName() != null) sb.append("ConnectionName: " + getConnectionName() + ",");    	
+        if (getConnectionState() != null) sb.append("ConnectionState: " + getConnectionState() + ",");    	
+        if (getRegion() != null) sb.append("Region: " + getRegion() + ",");    	
+        if (getLocation() != null) sb.append("Location: " + getLocation() + ",");    	
+        if (getBandwidth() != null) sb.append("Bandwidth: " + getBandwidth() + ",");    	
+        if (getConnectionCosts() != null) sb.append("ConnectionCosts: " + getConnectionCosts() + ",");    	
+        if (getOrderSteps() != null) sb.append("OrderSteps: " + getOrderSteps() );
         sb.append("}");
         return sb.toString();
     }

@@ -189,11 +189,11 @@ public class UserProfile  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getIamUserArn() != null) sb.append("IamUserArn: " + getIamUserArn() + ", ");
-        if (getName() != null) sb.append("Name: " + getName() + ", ");
-        if (getSshUsername() != null) sb.append("SshUsername: " + getSshUsername() + ", ");
-        if (getSshPublicKey() != null) sb.append("SshPublicKey: " + getSshPublicKey() + ", ");
+        sb.append("{");    	
+        if (getIamUserArn() != null) sb.append("IamUserArn: " + getIamUserArn() + ",");    	
+        if (getName() != null) sb.append("Name: " + getName() + ",");    	
+        if (getSshUsername() != null) sb.append("SshUsername: " + getSshUsername() + ",");    	
+        if (getSshPublicKey() != null) sb.append("SshPublicKey: " + getSshPublicKey() );
         sb.append("}");
         return sb.toString();
     }

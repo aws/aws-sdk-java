@@ -21,6 +21,7 @@ import com.amazonaws.services.dynamodb.model.Key;
 /**
  * Container for a page of scan results.
  */
+@Deprecated
 public class ScanResultPage<T> {
 
     private List<T> results;

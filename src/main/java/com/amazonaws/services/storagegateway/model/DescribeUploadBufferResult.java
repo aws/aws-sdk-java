@@ -315,11 +315,11 @@ public class DescribeUploadBufferResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getGatewayARN() != null) sb.append("GatewayARN: " + getGatewayARN() + ", ");
-        if (getDiskIds() != null) sb.append("DiskIds: " + getDiskIds() + ", ");
-        if (getUploadBufferUsedInBytes() != null) sb.append("UploadBufferUsedInBytes: " + getUploadBufferUsedInBytes() + ", ");
-        if (getUploadBufferAllocatedInBytes() != null) sb.append("UploadBufferAllocatedInBytes: " + getUploadBufferAllocatedInBytes() + ", ");
+        sb.append("{");    	
+        if (getGatewayARN() != null) sb.append("GatewayARN: " + getGatewayARN() + ",");    	
+        if (getDiskIds() != null) sb.append("DiskIds: " + getDiskIds() + ",");    	
+        if (getUploadBufferUsedInBytes() != null) sb.append("UploadBufferUsedInBytes: " + getUploadBufferUsedInBytes() + ",");    	
+        if (getUploadBufferAllocatedInBytes() != null) sb.append("UploadBufferAllocatedInBytes: " + getUploadBufferAllocatedInBytes() );
         sb.append("}");
         return sb.toString();
     }

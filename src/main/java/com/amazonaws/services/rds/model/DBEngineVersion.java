@@ -370,14 +370,14 @@ public class DBEngineVersion  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getEngine() != null) sb.append("Engine: " + getEngine() + ", ");
-        if (getEngineVersion() != null) sb.append("EngineVersion: " + getEngineVersion() + ", ");
-        if (getDBParameterGroupFamily() != null) sb.append("DBParameterGroupFamily: " + getDBParameterGroupFamily() + ", ");
-        if (getDBEngineDescription() != null) sb.append("DBEngineDescription: " + getDBEngineDescription() + ", ");
-        if (getDBEngineVersionDescription() != null) sb.append("DBEngineVersionDescription: " + getDBEngineVersionDescription() + ", ");
-        if (getDefaultCharacterSet() != null) sb.append("DefaultCharacterSet: " + getDefaultCharacterSet() + ", ");
-        if (getSupportedCharacterSets() != null) sb.append("SupportedCharacterSets: " + getSupportedCharacterSets() + ", ");
+        sb.append("{");    	
+        if (getEngine() != null) sb.append("Engine: " + getEngine() + ",");    	
+        if (getEngineVersion() != null) sb.append("EngineVersion: " + getEngineVersion() + ",");    	
+        if (getDBParameterGroupFamily() != null) sb.append("DBParameterGroupFamily: " + getDBParameterGroupFamily() + ",");    	
+        if (getDBEngineDescription() != null) sb.append("DBEngineDescription: " + getDBEngineDescription() + ",");    	
+        if (getDBEngineVersionDescription() != null) sb.append("DBEngineVersionDescription: " + getDBEngineVersionDescription() + ",");    	
+        if (getDefaultCharacterSet() != null) sb.append("DefaultCharacterSet: " + getDefaultCharacterSet() + ",");    	
+        if (getSupportedCharacterSets() != null) sb.append("SupportedCharacterSets: " + getSupportedCharacterSets() );
         sb.append("}");
         return sb.toString();
     }

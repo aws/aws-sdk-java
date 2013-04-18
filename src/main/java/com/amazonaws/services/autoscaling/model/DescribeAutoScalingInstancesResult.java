@@ -158,9 +158,9 @@ public class DescribeAutoScalingInstancesResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getAutoScalingInstances() != null) sb.append("AutoScalingInstances: " + getAutoScalingInstances() + ", ");
-        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() + ", ");
+        sb.append("{");    	
+        if (getAutoScalingInstances() != null) sb.append("AutoScalingInstances: " + getAutoScalingInstances() + ",");    	
+        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() );
         sb.append("}");
         return sb.toString();
     }

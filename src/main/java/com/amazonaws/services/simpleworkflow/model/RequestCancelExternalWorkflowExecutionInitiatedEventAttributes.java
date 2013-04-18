@@ -274,11 +274,11 @@ public class RequestCancelExternalWorkflowExecutionInitiatedEventAttributes  imp
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getWorkflowId() != null) sb.append("WorkflowId: " + getWorkflowId() + ", ");
-        if (getRunId() != null) sb.append("RunId: " + getRunId() + ", ");
-        if (getDecisionTaskCompletedEventId() != null) sb.append("DecisionTaskCompletedEventId: " + getDecisionTaskCompletedEventId() + ", ");
-        if (getControl() != null) sb.append("Control: " + getControl() + ", ");
+        sb.append("{");    	
+        if (getWorkflowId() != null) sb.append("WorkflowId: " + getWorkflowId() + ",");    	
+        if (getRunId() != null) sb.append("RunId: " + getRunId() + ",");    	
+        if (getDecisionTaskCompletedEventId() != null) sb.append("DecisionTaskCompletedEventId: " + getDecisionTaskCompletedEventId() + ",");    	
+        if (getControl() != null) sb.append("Control: " + getControl() );
         sb.append("}");
         return sb.toString();
     }

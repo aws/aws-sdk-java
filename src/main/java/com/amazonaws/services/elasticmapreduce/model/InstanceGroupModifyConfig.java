@@ -149,9 +149,9 @@ public class InstanceGroupModifyConfig  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getInstanceGroupId() != null) sb.append("InstanceGroupId: " + getInstanceGroupId() + ", ");
-        if (getInstanceCount() != null) sb.append("InstanceCount: " + getInstanceCount() + ", ");
+        sb.append("{");    	
+        if (getInstanceGroupId() != null) sb.append("InstanceGroupId: " + getInstanceGroupId() + ",");    	
+        if (getInstanceCount() != null) sb.append("InstanceCount: " + getInstanceCount() );
         sb.append("}");
         return sb.toString();
     }

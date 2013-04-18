@@ -252,10 +252,10 @@ public class UpdateUserRequest extends AmazonWebServiceRequest  implements Seria
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getUserName() != null) sb.append("UserName: " + getUserName() + ", ");
-        if (getNewPath() != null) sb.append("NewPath: " + getNewPath() + ", ");
-        if (getNewUserName() != null) sb.append("NewUserName: " + getNewUserName() + ", ");
+        sb.append("{");    	
+        if (getUserName() != null) sb.append("UserName: " + getUserName() + ",");    	
+        if (getNewPath() != null) sb.append("NewPath: " + getNewPath() + ",");    	
+        if (getNewUserName() != null) sb.append("NewUserName: " + getNewUserName() );
         sb.append("}");
         return sb.toString();
     }

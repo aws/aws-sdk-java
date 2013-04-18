@@ -31,6 +31,9 @@ import java.text.ParseException;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
+import java.net.SocketException;
+
+import javax.net.ssl.SSLProtocolException;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -140,7 +143,11 @@ public class ServiceUtils {
             String encodedString = URLEncoder.encode(s, Constants.DEFAULT_ENCODING);
             // Web browsers do not always handle '+' characters well, use the
             // well-supported '%20' instead.
-            return encodedString.replaceAll("\\+", "%20");
+            encodedString =  encodedString.replaceAll("\\+", "%20");
+            // Change all "%2F" back to "/", so that when users download a file in a virtual folder by the presigned URL,
+            // the web browsers won't mess up the filename. (e.g. 'folder1_folder2_filename' instead of 'filename')
+            encodedString = encodedString.replace("%2F", "/");
+            return encodedString;
         } catch (UnsupportedEncodingException e) {
             throw new AmazonClientException("Unable to encode path: " + s, e);
         }
@@ -266,5 +273,77 @@ public class ServiceUtils {
                     "Client calculated content hash didn't match hash calculated by Amazon S3.  " +
                     "The data stored in '" + destinationFile.getAbsolutePath() + "' may be corrupt.");
         }
+    }
+    
+    /**
+     * Interface for the task of downloading object from S3 to a specific file, 
+     * enabling one-time retry mechanism after integrity check failure
+     * on the downloaded file.
+     */
+    public interface RetryableS3DownloadTask {
+    	/**
+    	 * User defines how to get the S3Object from S3 for this RetryableS3DownloadTask.
+    	 * 
+    	 * @return
+    	 * 		The S3Object containing a reference to an InputStream
+    	 *    	containing the object's data.
+    	 */
+    	public S3Object getS3ObjectStream ();
+    	/**
+    	 * User defines whether integrity check is needed for this RetryableS3DownloadTask.
+    	 * 
+    	 * @return
+    	 * 		Boolean value indicating whether this task requires integrity check
+    	 * 		after downloading the S3 object to file.
+    	 */
+    	public boolean needIntegrityCheck ();
+    }
+    
+    /**
+     * Gets an object stored in S3 and downloads it into the specified file.
+     * This method includes the one-time retry mechanism after integrity check failure
+     * on the downloaded file. It will also return immediately after getting null valued
+     * S3Object (when getObject request does not meet the specified constraints).
+     * 
+     * @param file
+     * 			The file to store the object's data in.
+     * @param safeS3DownloadTask
+     * 			The implementation of SafeS3DownloadTask interface which allows user to 
+     * 			get access to all the visible variables at the calling site of this method.
+     */
+    public static S3Object retryableDownloadS3ObjectToFile (File file, RetryableS3DownloadTask retryableS3DownloadTask) { 	
+    	boolean hasRetried = false;
+        boolean needRetry = false;
+        S3Object s3Object;
+        do {
+        	s3Object = retryableS3DownloadTask.getS3ObjectStream();
+	        if ( s3Object == null )
+	        	return null;
+	        
+	        try {
+	        	ServiceUtils.downloadObjectToFile(s3Object, file, retryableS3DownloadTask.needIntegrityCheck());	
+            } catch (AmazonClientException ace) {
+            	// Determine whether an immediate retry is needed according to the captured AmazonClientException.
+            	// (There are three cases when downloadObjectToFile() throws AmazonClientException:
+            	// 		1) SocketException or SSLProtocolException when writing to disk (e.g. when user aborts the download)
+            	//		2) Other IOException when writing to disk
+            	//		3) MD5 hashes don't match
+            	// The current code will retry the download only when case 2) or 3) happens.
+            	if (ace.getCause() instanceof SocketException || ace.getCause() instanceof SSLProtocolException) {
+            		throw ace;
+            	} else {
+            		needRetry = true;
+                	if ( hasRetried )
+                		throw ace;
+                	else {
+                		log.info("Retry the download of object " + s3Object.getKey() + " (bucket " + s3Object.getBucketName() + ")", ace);
+                		hasRetried = true;
+                	}
+            	}	
+            } finally {
+            	try { s3Object.getObjectContent().abort(); } catch (IOException e) {}
+            }  
+        } while ( needRetry );
+        return s3Object;
     }
 }

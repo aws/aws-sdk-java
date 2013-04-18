@@ -136,8 +136,8 @@ public class TerminateJobFlowsRequest extends AmazonWebServiceRequest  implement
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getJobFlowIds() != null) sb.append("JobFlowIds: " + getJobFlowIds() + ", ");
+        sb.append("{");    	
+        if (getJobFlowIds() != null) sb.append("JobFlowIds: " + getJobFlowIds() );
         sb.append("}");
         return sb.toString();
     }

@@ -164,9 +164,9 @@ public class ListJobsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getJobs() != null) sb.append("Jobs: " + getJobs() + ", ");
-        if (isTruncated() != null) sb.append("IsTruncated: " + isTruncated() + ", ");
+        sb.append("{");    	
+        if (getJobs() != null) sb.append("Jobs: " + getJobs() + ",");    	
+        if (isTruncated() != null) sb.append("IsTruncated: " + isTruncated() );
         sb.append("}");
         return sb.toString();
     }

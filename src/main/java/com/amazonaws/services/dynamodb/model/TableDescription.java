@@ -18,6 +18,7 @@ import java.io.Serializable;
 /**
  * Table Description
  */
+@Deprecated
 public class TableDescription  implements Serializable  {
 
     /**

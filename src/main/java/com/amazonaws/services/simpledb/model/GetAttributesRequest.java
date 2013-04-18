@@ -303,11 +303,11 @@ public class GetAttributesRequest extends AmazonWebServiceRequest  implements Se
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getDomainName() != null) sb.append("DomainName: " + getDomainName() + ", ");
-        if (getItemName() != null) sb.append("ItemName: " + getItemName() + ", ");
-        if (getAttributeNames() != null) sb.append("AttributeNames: " + getAttributeNames() + ", ");
-        if (isConsistentRead() != null) sb.append("ConsistentRead: " + isConsistentRead() + ", ");
+        sb.append("{");    	
+        if (getDomainName() != null) sb.append("DomainName: " + getDomainName() + ",");    	
+        if (getItemName() != null) sb.append("ItemName: " + getItemName() + ",");    	
+        if (getAttributeNames() != null) sb.append("AttributeNames: " + getAttributeNames() + ",");    	
+        if (isConsistentRead() != null) sb.append("ConsistentRead: " + isConsistentRead() );
         sb.append("}");
         return sb.toString();
     }

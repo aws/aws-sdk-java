@@ -148,9 +148,9 @@ public class BootstrapActionConfig  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getName() != null) sb.append("Name: " + getName() + ", ");
-        if (getScriptBootstrapAction() != null) sb.append("ScriptBootstrapAction: " + getScriptBootstrapAction() + ", ");
+        sb.append("{");    	
+        if (getName() != null) sb.append("Name: " + getName() + ",");    	
+        if (getScriptBootstrapAction() != null) sb.append("ScriptBootstrapAction: " + getScriptBootstrapAction() );
         sb.append("}");
         return sb.toString();
     }

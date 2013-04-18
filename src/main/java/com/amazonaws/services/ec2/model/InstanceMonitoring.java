@@ -111,9 +111,9 @@ public class InstanceMonitoring  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ", ");
-        if (getMonitoring() != null) sb.append("Monitoring: " + getMonitoring() + ", ");
+        sb.append("{");    	
+        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ",");    	
+        if (getMonitoring() != null) sb.append("Monitoring: " + getMonitoring() );
         sb.append("}");
         return sb.toString();
     }

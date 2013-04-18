@@ -17,7 +17,9 @@ package com.amazonaws.services.rds.model;
 import com.amazonaws.AmazonServiceException;
 
 /**
- * AmazonRDS exception
+ * <p>
+ * The specified option group could not be found.
+ * </p>
  */        
 public class OptionGroupNotFoundException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;

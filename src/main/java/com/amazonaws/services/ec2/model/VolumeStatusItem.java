@@ -281,12 +281,12 @@ public class VolumeStatusItem  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getVolumeId() != null) sb.append("VolumeId: " + getVolumeId() + ", ");
-        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ", ");
-        if (getVolumeStatus() != null) sb.append("VolumeStatus: " + getVolumeStatus() + ", ");
-        if (getEvents() != null) sb.append("Events: " + getEvents() + ", ");
-        if (getActions() != null) sb.append("Actions: " + getActions() + ", ");
+        sb.append("{");    	
+        if (getVolumeId() != null) sb.append("VolumeId: " + getVolumeId() + ",");    	
+        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");    	
+        if (getVolumeStatus() != null) sb.append("VolumeStatus: " + getVolumeStatus() + ",");    	
+        if (getEvents() != null) sb.append("Events: " + getEvents() + ",");    	
+        if (getActions() != null) sb.append("Actions: " + getActions() );
         sb.append("}");
         return sb.toString();
     }

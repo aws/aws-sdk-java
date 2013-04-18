@@ -107,8 +107,8 @@ public class ValidateConfigurationSettingsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getMessages() != null) sb.append("Messages: " + getMessages() + ", ");
+        sb.append("{");    	
+        if (getMessages() != null) sb.append("Messages: " + getMessages() );
         sb.append("}");
         return sb.toString();
     }

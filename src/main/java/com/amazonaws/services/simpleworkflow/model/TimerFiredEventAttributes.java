@@ -137,9 +137,9 @@ public class TimerFiredEventAttributes  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getTimerId() != null) sb.append("TimerId: " + getTimerId() + ", ");
-        if (getStartedEventId() != null) sb.append("StartedEventId: " + getStartedEventId() + ", ");
+        sb.append("{");    	
+        if (getTimerId() != null) sb.append("TimerId: " + getTimerId() + ",");    	
+        if (getStartedEventId() != null) sb.append("StartedEventId: " + getStartedEventId() );
         sb.append("}");
         return sb.toString();
     }

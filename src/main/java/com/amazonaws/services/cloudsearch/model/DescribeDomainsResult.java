@@ -107,8 +107,8 @@ public class DescribeDomainsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getDomainStatusList() != null) sb.append("DomainStatusList: " + getDomainStatusList() + ", ");
+        sb.append("{");    	
+        if (getDomainStatusList() != null) sb.append("DomainStatusList: " + getDomainStatusList() );
         sb.append("}");
         return sb.toString();
     }

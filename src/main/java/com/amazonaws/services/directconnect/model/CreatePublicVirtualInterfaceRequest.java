@@ -123,9 +123,9 @@ public class CreatePublicVirtualInterfaceRequest extends AmazonWebServiceRequest
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getConnectionId() != null) sb.append("ConnectionId: " + getConnectionId() + ", ");
-        if (getNewPublicVirtualInterface() != null) sb.append("NewPublicVirtualInterface: " + getNewPublicVirtualInterface() + ", ");
+        sb.append("{");    	
+        if (getConnectionId() != null) sb.append("ConnectionId: " + getConnectionId() + ",");    	
+        if (getNewPublicVirtualInterface() != null) sb.append("NewPublicVirtualInterface: " + getNewPublicVirtualInterface() );
         sb.append("}");
         return sb.toString();
     }

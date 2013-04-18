@@ -288,10 +288,10 @@ public class EnableMetricsCollectionRequest extends AmazonWebServiceRequest  imp
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getAutoScalingGroupName() != null) sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ", ");
-        if (getMetrics() != null) sb.append("Metrics: " + getMetrics() + ", ");
-        if (getGranularity() != null) sb.append("Granularity: " + getGranularity() + ", ");
+        sb.append("{");    	
+        if (getAutoScalingGroupName() != null) sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ",");    	
+        if (getMetrics() != null) sb.append("Metrics: " + getMetrics() + ",");    	
+        if (getGranularity() != null) sb.append("Granularity: " + getGranularity() );
         sb.append("}");
         return sb.toString();
     }

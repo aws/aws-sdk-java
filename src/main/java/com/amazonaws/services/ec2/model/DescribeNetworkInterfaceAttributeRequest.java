@@ -215,12 +215,12 @@ public class DescribeNetworkInterfaceAttributeRequest extends AmazonWebServiceRe
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getNetworkInterfaceId() != null) sb.append("NetworkInterfaceId: " + getNetworkInterfaceId() + ", ");
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ", ");
-        if (getSourceDestCheck() != null) sb.append("SourceDestCheck: " + getSourceDestCheck() + ", ");
-        if (getGroups() != null) sb.append("Groups: " + getGroups() + ", ");
-        if (getAttachment() != null) sb.append("Attachment: " + getAttachment() + ", ");
+        sb.append("{");    	
+        if (getNetworkInterfaceId() != null) sb.append("NetworkInterfaceId: " + getNetworkInterfaceId() + ",");    	
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");    	
+        if (getSourceDestCheck() != null) sb.append("SourceDestCheck: " + getSourceDestCheck() + ",");    	
+        if (getGroups() != null) sb.append("Groups: " + getGroups() + ",");    	
+        if (getAttachment() != null) sb.append("Attachment: " + getAttachment() );
         sb.append("}");
         return sb.toString();
     }

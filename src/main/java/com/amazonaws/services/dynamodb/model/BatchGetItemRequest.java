@@ -34,6 +34,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.dynamodb.AmazonDynamoDB#batchGetItem(BatchGetItemRequest)
  */
+@Deprecated
 public class BatchGetItemRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**

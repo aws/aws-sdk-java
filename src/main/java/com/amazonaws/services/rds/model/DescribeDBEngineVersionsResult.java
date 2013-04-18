@@ -160,9 +160,9 @@ public class DescribeDBEngineVersionsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ", ");
-        if (getDBEngineVersions() != null) sb.append("DBEngineVersions: " + getDBEngineVersions() + ", ");
+        sb.append("{");    	
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");    	
+        if (getDBEngineVersions() != null) sb.append("DBEngineVersions: " + getDBEngineVersions() );
         sb.append("}");
         return sb.toString();
     }

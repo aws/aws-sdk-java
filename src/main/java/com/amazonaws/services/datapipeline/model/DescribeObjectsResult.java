@@ -226,10 +226,10 @@ public class DescribeObjectsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getPipelineObjects() != null) sb.append("PipelineObjects: " + getPipelineObjects() + ", ");
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ", ");
-        if (isHasMoreResults() != null) sb.append("HasMoreResults: " + isHasMoreResults() + ", ");
+        sb.append("{");    	
+        if (getPipelineObjects() != null) sb.append("PipelineObjects: " + getPipelineObjects() + ",");    	
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");    	
+        if (isHasMoreResults() != null) sb.append("HasMoreResults: " + isHasMoreResults() );
         sb.append("}");
         return sb.toString();
     }

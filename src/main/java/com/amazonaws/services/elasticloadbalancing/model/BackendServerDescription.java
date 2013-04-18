@@ -158,9 +158,9 @@ public class BackendServerDescription  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getInstancePort() != null) sb.append("InstancePort: " + getInstancePort() + ", ");
-        if (getPolicyNames() != null) sb.append("PolicyNames: " + getPolicyNames() + ", ");
+        sb.append("{");    	
+        if (getInstancePort() != null) sb.append("InstancePort: " + getInstancePort() + ",");    	
+        if (getPolicyNames() != null) sb.append("PolicyNames: " + getPolicyNames() );
         sb.append("}");
         return sb.toString();
     }

@@ -191,9 +191,9 @@ public class PutPipelineDefinitionResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getValidationErrors() != null) sb.append("ValidationErrors: " + getValidationErrors() + ", ");
-        if (isErrored() != null) sb.append("Errored: " + isErrored() + ", ");
+        sb.append("{");    	
+        if (getValidationErrors() != null) sb.append("ValidationErrors: " + getValidationErrors() + ",");    	
+        if (isErrored() != null) sb.append("Errored: " + isErrored() );
         sb.append("}");
         return sb.toString();
     }

@@ -146,9 +146,9 @@ public class DescribeCacheParameterGroupsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ", ");
-        if (getCacheParameterGroups() != null) sb.append("CacheParameterGroups: " + getCacheParameterGroups() + ", ");
+        sb.append("{");    	
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");    	
+        if (getCacheParameterGroups() != null) sb.append("CacheParameterGroups: " + getCacheParameterGroups() );
         sb.append("}");
         return sb.toString();
     }

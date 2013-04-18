@@ -18,6 +18,7 @@ import java.io.Serializable;
 /**
  * List Tables Result
  */
+@Deprecated
 public class ListTablesResult  implements Serializable  {
 
     private java.util.List<String> tableNames;

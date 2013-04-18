@@ -228,11 +228,11 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest  implement
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getStackId() != null) sb.append("StackId: " + getStackId() + ", ");
-        if (getLayerId() != null) sb.append("LayerId: " + getLayerId() + ", ");
-        if (getAppId() != null) sb.append("AppId: " + getAppId() + ", ");
-        if (getInstanceIds() != null) sb.append("InstanceIds: " + getInstanceIds() + ", ");
+        sb.append("{");    	
+        if (getStackId() != null) sb.append("StackId: " + getStackId() + ",");    	
+        if (getLayerId() != null) sb.append("LayerId: " + getLayerId() + ",");    	
+        if (getAppId() != null) sb.append("AppId: " + getAppId() + ",");    	
+        if (getInstanceIds() != null) sb.append("InstanceIds: " + getInstanceIds() );
         sb.append("}");
         return sb.toString();
     }

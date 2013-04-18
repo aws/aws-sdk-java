@@ -30,7 +30,7 @@ public class CreateCloudFrontOriginAccessIdentityResult  implements Serializable
     /**
      * The fully qualified URI of the new origin access identity just
      * created. For example:
-     * naws.com/2010-11-01/origin-access-identity/cloudfront/E74FTE3AJFJ256A.
+     * https://cloudfront.amazonaws.com/2010-11-01/origin-access-identity/cloudfront/E74FTE3AJFJ256A.
      */
     private String location;
 
@@ -76,11 +76,11 @@ public class CreateCloudFrontOriginAccessIdentityResult  implements Serializable
     /**
      * The fully qualified URI of the new origin access identity just
      * created. For example:
-     * naws.com/2010-11-01/origin-access-identity/cloudfront/E74FTE3AJFJ256A.
+     * https://cloudfront.amazonaws.com/2010-11-01/origin-access-identity/cloudfront/E74FTE3AJFJ256A.
      *
      * @return The fully qualified URI of the new origin access identity just
      *         created. For example:
-     *         naws.com/2010-11-01/origin-access-identity/cloudfront/E74FTE3AJFJ256A.
+     *         https://cloudfront.amazonaws.com/2010-11-01/origin-access-identity/cloudfront/E74FTE3AJFJ256A.
      */
     public String getLocation() {
         return location;
@@ -89,11 +89,11 @@ public class CreateCloudFrontOriginAccessIdentityResult  implements Serializable
     /**
      * The fully qualified URI of the new origin access identity just
      * created. For example:
-     * naws.com/2010-11-01/origin-access-identity/cloudfront/E74FTE3AJFJ256A.
+     * https://cloudfront.amazonaws.com/2010-11-01/origin-access-identity/cloudfront/E74FTE3AJFJ256A.
      *
      * @param location The fully qualified URI of the new origin access identity just
      *         created. For example:
-     *         naws.com/2010-11-01/origin-access-identity/cloudfront/E74FTE3AJFJ256A.
+     *         https://cloudfront.amazonaws.com/2010-11-01/origin-access-identity/cloudfront/E74FTE3AJFJ256A.
      */
     public void setLocation(String location) {
         this.location = location;
@@ -102,13 +102,13 @@ public class CreateCloudFrontOriginAccessIdentityResult  implements Serializable
     /**
      * The fully qualified URI of the new origin access identity just
      * created. For example:
-     * naws.com/2010-11-01/origin-access-identity/cloudfront/E74FTE3AJFJ256A.
+     * https://cloudfront.amazonaws.com/2010-11-01/origin-access-identity/cloudfront/E74FTE3AJFJ256A.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param location The fully qualified URI of the new origin access identity just
      *         created. For example:
-     *         naws.com/2010-11-01/origin-access-identity/cloudfront/E74FTE3AJFJ256A.
+     *         https://cloudfront.amazonaws.com/2010-11-01/origin-access-identity/cloudfront/E74FTE3AJFJ256A.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -164,10 +164,10 @@ public class CreateCloudFrontOriginAccessIdentityResult  implements Serializable
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getCloudFrontOriginAccessIdentity() != null) sb.append("CloudFrontOriginAccessIdentity: " + getCloudFrontOriginAccessIdentity() + ", ");
-        if (getLocation() != null) sb.append("Location: " + getLocation() + ", ");
-        if (getETag() != null) sb.append("ETag: " + getETag() + ", ");
+        sb.append("{");    	
+        if (getCloudFrontOriginAccessIdentity() != null) sb.append("CloudFrontOriginAccessIdentity: " + getCloudFrontOriginAccessIdentity() + ",");    	
+        if (getLocation() != null) sb.append("Location: " + getLocation() + ",");    	
+        if (getETag() != null) sb.append("ETag: " + getETag() );
         sb.append("}");
         return sb.toString();
     }

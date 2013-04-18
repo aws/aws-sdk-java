@@ -107,8 +107,8 @@ public class DescribeLoadBalancerPoliciesResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getPolicyDescriptions() != null) sb.append("PolicyDescriptions: " + getPolicyDescriptions() + ", ");
+        sb.append("{");    	
+        if (getPolicyDescriptions() != null) sb.append("PolicyDescriptions: " + getPolicyDescriptions() );
         sb.append("}");
         return sb.toString();
     }

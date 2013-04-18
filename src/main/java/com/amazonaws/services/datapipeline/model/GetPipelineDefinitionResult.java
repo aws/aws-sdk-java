@@ -107,8 +107,8 @@ public class GetPipelineDefinitionResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getPipelineObjects() != null) sb.append("PipelineObjects: " + getPipelineObjects() + ", ");
+        sb.append("{");    	
+        if (getPipelineObjects() != null) sb.append("PipelineObjects: " + getPipelineObjects() );
         sb.append("}");
         return sb.toString();
     }

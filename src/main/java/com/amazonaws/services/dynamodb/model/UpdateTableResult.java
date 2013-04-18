@@ -18,6 +18,7 @@ import java.io.Serializable;
 /**
  * Update Table Result
  */
+@Deprecated
 public class UpdateTableResult  implements Serializable  {
 
     private TableDescription tableDescription;

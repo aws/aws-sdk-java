@@ -91,8 +91,8 @@ public class BootstrapActionDetail  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getBootstrapActionConfig() != null) sb.append("BootstrapActionConfig: " + getBootstrapActionConfig() + ", ");
+        sb.append("{");    	
+        if (getBootstrapActionConfig() != null) sb.append("BootstrapActionConfig: " + getBootstrapActionConfig() );
         sb.append("}");
         return sb.toString();
     }

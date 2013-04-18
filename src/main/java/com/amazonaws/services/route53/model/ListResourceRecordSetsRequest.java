@@ -537,12 +537,12 @@ public class ListResourceRecordSetsRequest extends AmazonWebServiceRequest  impl
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getHostedZoneId() != null) sb.append("HostedZoneId: " + getHostedZoneId() + ", ");
-        if (getStartRecordName() != null) sb.append("StartRecordName: " + getStartRecordName() + ", ");
-        if (getStartRecordType() != null) sb.append("StartRecordType: " + getStartRecordType() + ", ");
-        if (getStartRecordIdentifier() != null) sb.append("StartRecordIdentifier: " + getStartRecordIdentifier() + ", ");
-        if (getMaxItems() != null) sb.append("MaxItems: " + getMaxItems() + ", ");
+        sb.append("{");    	
+        if (getHostedZoneId() != null) sb.append("HostedZoneId: " + getHostedZoneId() + ",");    	
+        if (getStartRecordName() != null) sb.append("StartRecordName: " + getStartRecordName() + ",");    	
+        if (getStartRecordType() != null) sb.append("StartRecordType: " + getStartRecordType() + ",");    	
+        if (getStartRecordIdentifier() != null) sb.append("StartRecordIdentifier: " + getStartRecordIdentifier() + ",");    	
+        if (getMaxItems() != null) sb.append("MaxItems: " + getMaxItems() );
         sb.append("}");
         return sb.toString();
     }

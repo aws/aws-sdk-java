@@ -262,10 +262,10 @@ public class ListVolumesResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getGatewayARN() != null) sb.append("GatewayARN: " + getGatewayARN() + ", ");
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ", ");
-        if (getVolumeInfos() != null) sb.append("VolumeInfos: " + getVolumeInfos() + ", ");
+        sb.append("{");    	
+        if (getGatewayARN() != null) sb.append("GatewayARN: " + getGatewayARN() + ",");    	
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");    	
+        if (getVolumeInfos() != null) sb.append("VolumeInfos: " + getVolumeInfos() );
         sb.append("}");
         return sb.toString();
     }

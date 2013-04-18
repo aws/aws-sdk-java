@@ -167,9 +167,9 @@ public class DescribeEventSubscriptionsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ", ");
-        if (getEventSubscriptionsList() != null) sb.append("EventSubscriptionsList: " + getEventSubscriptionsList() + ", ");
+        sb.append("{");    	
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");    	
+        if (getEventSubscriptionsList() != null) sb.append("EventSubscriptionsList: " + getEventSubscriptionsList() );
         sb.append("}");
         return sb.toString();
     }

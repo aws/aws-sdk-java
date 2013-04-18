@@ -187,10 +187,10 @@ public class UpdateDistributionRequest extends AmazonWebServiceRequest  implemen
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getDistributionConfig() != null) sb.append("DistributionConfig: " + getDistributionConfig() + ", ");
-        if (getId() != null) sb.append("Id: " + getId() + ", ");
-        if (getIfMatch() != null) sb.append("IfMatch: " + getIfMatch() + ", ");
+        sb.append("{");    	
+        if (getDistributionConfig() != null) sb.append("DistributionConfig: " + getDistributionConfig() + ",");    	
+        if (getId() != null) sb.append("Id: " + getId() + ",");    	
+        if (getIfMatch() != null) sb.append("IfMatch: " + getIfMatch() );
         sb.append("}");
         return sb.toString();
     }

@@ -37,6 +37,7 @@ import com.amazonaws.util.json.*;
 /**
  * Delete Item Request Marshaller
  */
+@Deprecated
 public class DeleteItemRequestMarshaller implements Marshaller<Request<DeleteItemRequest>, DeleteItemRequest> {
 
     

@@ -27,7 +27,8 @@ import java.io.Serializable;
 public class DescribeOptionGroupOptionsRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
-     * Options available for the given DB engine name to be described.
+     * A required parameter. Options available for the given Engine name will
+     * be described.
      */
     private String engineName;
 
@@ -54,29 +55,35 @@ public class DescribeOptionGroupOptionsRequest extends AmazonWebServiceRequest  
     private String marker;
 
     /**
-     * Options available for the given DB engine name to be described.
+     * A required parameter. Options available for the given Engine name will
+     * be described.
      *
-     * @return Options available for the given DB engine name to be described.
+     * @return A required parameter. Options available for the given Engine name will
+     *         be described.
      */
     public String getEngineName() {
         return engineName;
     }
     
     /**
-     * Options available for the given DB engine name to be described.
+     * A required parameter. Options available for the given Engine name will
+     * be described.
      *
-     * @param engineName Options available for the given DB engine name to be described.
+     * @param engineName A required parameter. Options available for the given Engine name will
+     *         be described.
      */
     public void setEngineName(String engineName) {
         this.engineName = engineName;
     }
     
     /**
-     * Options available for the given DB engine name to be described.
+     * A required parameter. Options available for the given Engine name will
+     * be described.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param engineName Options available for the given DB engine name to be described.
+     * @param engineName A required parameter. Options available for the given Engine name will
+     *         be described.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -242,11 +249,11 @@ public class DescribeOptionGroupOptionsRequest extends AmazonWebServiceRequest  
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getEngineName() != null) sb.append("EngineName: " + getEngineName() + ", ");
-        if (getMajorEngineVersion() != null) sb.append("MajorEngineVersion: " + getMajorEngineVersion() + ", ");
-        if (getMaxRecords() != null) sb.append("MaxRecords: " + getMaxRecords() + ", ");
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ", ");
+        sb.append("{");    	
+        if (getEngineName() != null) sb.append("EngineName: " + getEngineName() + ",");    	
+        if (getMajorEngineVersion() != null) sb.append("MajorEngineVersion: " + getMajorEngineVersion() + ",");    	
+        if (getMaxRecords() != null) sb.append("MaxRecords: " + getMaxRecords() + ",");    	
+        if (getMarker() != null) sb.append("Marker: " + getMarker() );
         sb.append("}");
         return sb.toString();
     }

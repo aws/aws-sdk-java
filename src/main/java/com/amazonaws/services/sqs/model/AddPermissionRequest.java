@@ -54,7 +54,7 @@ public class AddPermissionRequest extends AmazonWebServiceRequest  implements Se
 
     /**
      * The AWS account number of the <a
-     * AWSSimpleQueueService/latest/APIReference/Glossary.html">principal</a>
+     * href="http://docs.amazonwebservices.com/AWSSimpleQueueService/latest/APIReference/Glossary.html">principal</a>
      * who will be given permission. The principal must have an AWS account,
      * but does not need to be signed up for Amazon SQS.
      */
@@ -82,7 +82,7 @@ public class AddPermissionRequest extends AmazonWebServiceRequest  implements Se
      * characters; alphanumeric characters, hyphens (-), and underscores (_)
      * are allowed.
      * @param aWSAccountIds The AWS account number of the <a
-     * AWSSimpleQueueService/latest/APIReference/Glossary.html">principal</a>
+     * href="http://docs.amazonwebservices.com/AWSSimpleQueueService/latest/APIReference/Glossary.html">principal</a>
      * who will be given permission. The principal must have an AWS account,
      * but does not need to be signed up for Amazon SQS.
      * @param actions The action the client wants to allow for the specified
@@ -179,12 +179,12 @@ public class AddPermissionRequest extends AmazonWebServiceRequest  implements Se
     
     /**
      * The AWS account number of the <a
-     * AWSSimpleQueueService/latest/APIReference/Glossary.html">principal</a>
+     * href="http://docs.amazonwebservices.com/AWSSimpleQueueService/latest/APIReference/Glossary.html">principal</a>
      * who will be given permission. The principal must have an AWS account,
      * but does not need to be signed up for Amazon SQS.
      *
      * @return The AWS account number of the <a
-     *         AWSSimpleQueueService/latest/APIReference/Glossary.html">principal</a>
+     *         href="http://docs.amazonwebservices.com/AWSSimpleQueueService/latest/APIReference/Glossary.html">principal</a>
      *         who will be given permission. The principal must have an AWS account,
      *         but does not need to be signed up for Amazon SQS.
      */
@@ -198,12 +198,12 @@ public class AddPermissionRequest extends AmazonWebServiceRequest  implements Se
     
     /**
      * The AWS account number of the <a
-     * AWSSimpleQueueService/latest/APIReference/Glossary.html">principal</a>
+     * href="http://docs.amazonwebservices.com/AWSSimpleQueueService/latest/APIReference/Glossary.html">principal</a>
      * who will be given permission. The principal must have an AWS account,
      * but does not need to be signed up for Amazon SQS.
      *
      * @param aWSAccountIds The AWS account number of the <a
-     *         AWSSimpleQueueService/latest/APIReference/Glossary.html">principal</a>
+     *         href="http://docs.amazonwebservices.com/AWSSimpleQueueService/latest/APIReference/Glossary.html">principal</a>
      *         who will be given permission. The principal must have an AWS account,
      *         but does not need to be signed up for Amazon SQS.
      */
@@ -220,14 +220,14 @@ public class AddPermissionRequest extends AmazonWebServiceRequest  implements Se
     
     /**
      * The AWS account number of the <a
-     * AWSSimpleQueueService/latest/APIReference/Glossary.html">principal</a>
+     * href="http://docs.amazonwebservices.com/AWSSimpleQueueService/latest/APIReference/Glossary.html">principal</a>
      * who will be given permission. The principal must have an AWS account,
      * but does not need to be signed up for Amazon SQS.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param aWSAccountIds The AWS account number of the <a
-     *         AWSSimpleQueueService/latest/APIReference/Glossary.html">principal</a>
+     *         href="http://docs.amazonwebservices.com/AWSSimpleQueueService/latest/APIReference/Glossary.html">principal</a>
      *         who will be given permission. The principal must have an AWS account,
      *         but does not need to be signed up for Amazon SQS.
      *
@@ -244,14 +244,14 @@ public class AddPermissionRequest extends AmazonWebServiceRequest  implements Se
     
     /**
      * The AWS account number of the <a
-     * AWSSimpleQueueService/latest/APIReference/Glossary.html">principal</a>
+     * href="http://docs.amazonwebservices.com/AWSSimpleQueueService/latest/APIReference/Glossary.html">principal</a>
      * who will be given permission. The principal must have an AWS account,
      * but does not need to be signed up for Amazon SQS.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param aWSAccountIds The AWS account number of the <a
-     *         AWSSimpleQueueService/latest/APIReference/Glossary.html">principal</a>
+     *         href="http://docs.amazonwebservices.com/AWSSimpleQueueService/latest/APIReference/Glossary.html">principal</a>
      *         who will be given permission. The principal must have an AWS account,
      *         but does not need to be signed up for Amazon SQS.
      *
@@ -350,11 +350,11 @@ public class AddPermissionRequest extends AmazonWebServiceRequest  implements Se
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getQueueUrl() != null) sb.append("QueueUrl: " + getQueueUrl() + ", ");
-        if (getLabel() != null) sb.append("Label: " + getLabel() + ", ");
-        if (getAWSAccountIds() != null) sb.append("AWSAccountIds: " + getAWSAccountIds() + ", ");
-        if (getActions() != null) sb.append("Actions: " + getActions() + ", ");
+        sb.append("{");    	
+        if (getQueueUrl() != null) sb.append("QueueUrl: " + getQueueUrl() + ",");    	
+        if (getLabel() != null) sb.append("Label: " + getLabel() + ",");    	
+        if (getAWSAccountIds() != null) sb.append("AWSAccountIds: " + getAWSAccountIds() + ",");    	
+        if (getActions() != null) sb.append("Actions: " + getActions() );
         sb.append("}");
         return sb.toString();
     }

@@ -175,11 +175,11 @@ public class VolumeStatusAction  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getCode() != null) sb.append("Code: " + getCode() + ", ");
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ", ");
-        if (getEventType() != null) sb.append("EventType: " + getEventType() + ", ");
-        if (getEventId() != null) sb.append("EventId: " + getEventId() + ", ");
+        sb.append("{");    	
+        if (getCode() != null) sb.append("Code: " + getCode() + ",");    	
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");    	
+        if (getEventType() != null) sb.append("EventType: " + getEventType() + ",");    	
+        if (getEventId() != null) sb.append("EventId: " + getEventId() );
         sb.append("}");
         return sb.toString();
     }

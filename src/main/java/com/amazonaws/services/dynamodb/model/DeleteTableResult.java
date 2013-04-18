@@ -18,6 +18,7 @@ import java.io.Serializable;
 /**
  * Delete Table Result
  */
+@Deprecated
 public class DeleteTableResult  implements Serializable  {
 
     private TableDescription tableDescription;

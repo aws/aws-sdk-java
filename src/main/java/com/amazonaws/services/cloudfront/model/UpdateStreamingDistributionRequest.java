@@ -187,10 +187,10 @@ public class UpdateStreamingDistributionRequest extends AmazonWebServiceRequest 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getStreamingDistributionConfig() != null) sb.append("StreamingDistributionConfig: " + getStreamingDistributionConfig() + ", ");
-        if (getId() != null) sb.append("Id: " + getId() + ", ");
-        if (getIfMatch() != null) sb.append("IfMatch: " + getIfMatch() + ", ");
+        sb.append("{");    	
+        if (getStreamingDistributionConfig() != null) sb.append("StreamingDistributionConfig: " + getStreamingDistributionConfig() + ",");    	
+        if (getId() != null) sb.append("Id: " + getId() + ",");    	
+        if (getIfMatch() != null) sb.append("IfMatch: " + getIfMatch() );
         sb.append("}");
         return sb.toString();
     }

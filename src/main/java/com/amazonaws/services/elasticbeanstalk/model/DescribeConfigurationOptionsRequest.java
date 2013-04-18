@@ -374,12 +374,12 @@ public class DescribeConfigurationOptionsRequest extends AmazonWebServiceRequest
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getApplicationName() != null) sb.append("ApplicationName: " + getApplicationName() + ", ");
-        if (getTemplateName() != null) sb.append("TemplateName: " + getTemplateName() + ", ");
-        if (getEnvironmentName() != null) sb.append("EnvironmentName: " + getEnvironmentName() + ", ");
-        if (getSolutionStackName() != null) sb.append("SolutionStackName: " + getSolutionStackName() + ", ");
-        if (getOptions() != null) sb.append("Options: " + getOptions() + ", ");
+        sb.append("{");    	
+        if (getApplicationName() != null) sb.append("ApplicationName: " + getApplicationName() + ",");    	
+        if (getTemplateName() != null) sb.append("TemplateName: " + getTemplateName() + ",");    	
+        if (getEnvironmentName() != null) sb.append("EnvironmentName: " + getEnvironmentName() + ",");    	
+        if (getSolutionStackName() != null) sb.append("SolutionStackName: " + getSolutionStackName() + ",");    	
+        if (getOptions() != null) sb.append("Options: " + getOptions() );
         sb.append("}");
         return sb.toString();
     }

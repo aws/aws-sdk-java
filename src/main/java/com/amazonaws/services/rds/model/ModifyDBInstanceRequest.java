@@ -1858,25 +1858,25 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest  implements
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getDBInstanceIdentifier() != null) sb.append("DBInstanceIdentifier: " + getDBInstanceIdentifier() + ", ");
-        if (getAllocatedStorage() != null) sb.append("AllocatedStorage: " + getAllocatedStorage() + ", ");
-        if (getDBInstanceClass() != null) sb.append("DBInstanceClass: " + getDBInstanceClass() + ", ");
-        if (getDBSecurityGroups() != null) sb.append("DBSecurityGroups: " + getDBSecurityGroups() + ", ");
-        if (getVpcSecurityGroupIds() != null) sb.append("VpcSecurityGroupIds: " + getVpcSecurityGroupIds() + ", ");
-        if (isApplyImmediately() != null) sb.append("ApplyImmediately: " + isApplyImmediately() + ", ");
-        if (getMasterUserPassword() != null) sb.append("MasterUserPassword: " + getMasterUserPassword() + ", ");
-        if (getDBParameterGroupName() != null) sb.append("DBParameterGroupName: " + getDBParameterGroupName() + ", ");
-        if (getBackupRetentionPeriod() != null) sb.append("BackupRetentionPeriod: " + getBackupRetentionPeriod() + ", ");
-        if (getPreferredBackupWindow() != null) sb.append("PreferredBackupWindow: " + getPreferredBackupWindow() + ", ");
-        if (getPreferredMaintenanceWindow() != null) sb.append("PreferredMaintenanceWindow: " + getPreferredMaintenanceWindow() + ", ");
-        if (isMultiAZ() != null) sb.append("MultiAZ: " + isMultiAZ() + ", ");
-        if (getEngineVersion() != null) sb.append("EngineVersion: " + getEngineVersion() + ", ");
-        if (isAllowMajorVersionUpgrade() != null) sb.append("AllowMajorVersionUpgrade: " + isAllowMajorVersionUpgrade() + ", ");
-        if (isAutoMinorVersionUpgrade() != null) sb.append("AutoMinorVersionUpgrade: " + isAutoMinorVersionUpgrade() + ", ");
-        if (getIops() != null) sb.append("Iops: " + getIops() + ", ");
-        if (getOptionGroupName() != null) sb.append("OptionGroupName: " + getOptionGroupName() + ", ");
-        if (getNewDBInstanceIdentifier() != null) sb.append("NewDBInstanceIdentifier: " + getNewDBInstanceIdentifier() + ", ");
+        sb.append("{");    	
+        if (getDBInstanceIdentifier() != null) sb.append("DBInstanceIdentifier: " + getDBInstanceIdentifier() + ",");    	
+        if (getAllocatedStorage() != null) sb.append("AllocatedStorage: " + getAllocatedStorage() + ",");    	
+        if (getDBInstanceClass() != null) sb.append("DBInstanceClass: " + getDBInstanceClass() + ",");    	
+        if (getDBSecurityGroups() != null) sb.append("DBSecurityGroups: " + getDBSecurityGroups() + ",");    	
+        if (getVpcSecurityGroupIds() != null) sb.append("VpcSecurityGroupIds: " + getVpcSecurityGroupIds() + ",");    	
+        if (isApplyImmediately() != null) sb.append("ApplyImmediately: " + isApplyImmediately() + ",");    	
+        if (getMasterUserPassword() != null) sb.append("MasterUserPassword: " + getMasterUserPassword() + ",");    	
+        if (getDBParameterGroupName() != null) sb.append("DBParameterGroupName: " + getDBParameterGroupName() + ",");    	
+        if (getBackupRetentionPeriod() != null) sb.append("BackupRetentionPeriod: " + getBackupRetentionPeriod() + ",");    	
+        if (getPreferredBackupWindow() != null) sb.append("PreferredBackupWindow: " + getPreferredBackupWindow() + ",");    	
+        if (getPreferredMaintenanceWindow() != null) sb.append("PreferredMaintenanceWindow: " + getPreferredMaintenanceWindow() + ",");    	
+        if (isMultiAZ() != null) sb.append("MultiAZ: " + isMultiAZ() + ",");    	
+        if (getEngineVersion() != null) sb.append("EngineVersion: " + getEngineVersion() + ",");    	
+        if (isAllowMajorVersionUpgrade() != null) sb.append("AllowMajorVersionUpgrade: " + isAllowMajorVersionUpgrade() + ",");    	
+        if (isAutoMinorVersionUpgrade() != null) sb.append("AutoMinorVersionUpgrade: " + isAutoMinorVersionUpgrade() + ",");    	
+        if (getIops() != null) sb.append("Iops: " + getIops() + ",");    	
+        if (getOptionGroupName() != null) sb.append("OptionGroupName: " + getOptionGroupName() + ",");    	
+        if (getNewDBInstanceIdentifier() != null) sb.append("NewDBInstanceIdentifier: " + getNewDBInstanceIdentifier() );
         sb.append("}");
         return sb.toString();
     }

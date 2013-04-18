@@ -157,9 +157,9 @@ public class DescribeAppsRequest extends AmazonWebServiceRequest  implements Ser
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getStackId() != null) sb.append("StackId: " + getStackId() + ", ");
-        if (getAppIds() != null) sb.append("AppIds: " + getAppIds() + ", ");
+        sb.append("{");    	
+        if (getStackId() != null) sb.append("StackId: " + getStackId() + ",");    	
+        if (getAppIds() != null) sb.append("AppIds: " + getAppIds() );
         sb.append("}");
         return sb.toString();
     }

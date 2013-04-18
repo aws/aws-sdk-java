@@ -83,8 +83,8 @@ public class DeleteIdentityRequest extends AmazonWebServiceRequest  implements S
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getIdentity() != null) sb.append("Identity: " + getIdentity() + ", ");
+        sb.append("{");    	
+        if (getIdentity() != null) sb.append("Identity: " + getIdentity() );
         sb.append("}");
         return sb.toString();
     }

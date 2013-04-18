@@ -274,10 +274,10 @@ public class Destination  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getToAddresses() != null) sb.append("ToAddresses: " + getToAddresses() + ", ");
-        if (getCcAddresses() != null) sb.append("CcAddresses: " + getCcAddresses() + ", ");
-        if (getBccAddresses() != null) sb.append("BccAddresses: " + getBccAddresses() + ", ");
+        sb.append("{");    	
+        if (getToAddresses() != null) sb.append("ToAddresses: " + getToAddresses() + ",");    	
+        if (getCcAddresses() != null) sb.append("CcAddresses: " + getCcAddresses() + ",");    	
+        if (getBccAddresses() != null) sb.append("BccAddresses: " + getBccAddresses() );
         sb.append("}");
         return sb.toString();
     }

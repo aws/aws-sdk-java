@@ -184,11 +184,11 @@ public class PriceSchedule  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getTerm() != null) sb.append("Term: " + getTerm() + ", ");
-        if (getPrice() != null) sb.append("Price: " + getPrice() + ", ");
-        if (getCurrencyCode() != null) sb.append("CurrencyCode: " + getCurrencyCode() + ", ");
-        if (isActive() != null) sb.append("Active: " + isActive() + ", ");
+        sb.append("{");    	
+        if (getTerm() != null) sb.append("Term: " + getTerm() + ",");    	
+        if (getPrice() != null) sb.append("Price: " + getPrice() + ",");    	
+        if (getCurrencyCode() != null) sb.append("CurrencyCode: " + getCurrencyCode() + ",");    	
+        if (isActive() != null) sb.append("Active: " + isActive() );
         sb.append("}");
         return sb.toString();
     }

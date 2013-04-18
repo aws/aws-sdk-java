@@ -38,7 +38,7 @@ public class DescribeDBSubnetGroupsRequestMarshaller implements Marshaller<Reque
 
         Request<DescribeDBSubnetGroupsRequest> request = new DefaultRequest<DescribeDBSubnetGroupsRequest>(describeDBSubnetGroupsRequest, "AmazonRDS");
         request.addParameter("Action", "DescribeDBSubnetGroups");
-        request.addParameter("Version", "2013-01-10");
+        request.addParameter("Version", "2013-02-12");
 
         if (describeDBSubnetGroupsRequest.getDBSubnetGroupName() != null) {
             request.addParameter("DBSubnetGroupName", StringUtils.fromString(describeDBSubnetGroupsRequest.getDBSubnetGroupName()));

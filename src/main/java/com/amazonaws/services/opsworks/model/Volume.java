@@ -49,7 +49,7 @@ public class Volume  implements Serializable  {
 
     /**
      * The value returned by <a
-     * eference/ApiReference-query-DescribeVolumes.html">DescribeVolumes</a>.
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeVolumes.html">DescribeVolumes</a>.
      */
     private String status;
 
@@ -254,10 +254,10 @@ public class Volume  implements Serializable  {
     
     /**
      * The value returned by <a
-     * eference/ApiReference-query-DescribeVolumes.html">DescribeVolumes</a>.
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeVolumes.html">DescribeVolumes</a>.
      *
      * @return The value returned by <a
-     *         eference/ApiReference-query-DescribeVolumes.html">DescribeVolumes</a>.
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeVolumes.html">DescribeVolumes</a>.
      */
     public String getStatus() {
         return status;
@@ -265,10 +265,10 @@ public class Volume  implements Serializable  {
     
     /**
      * The value returned by <a
-     * eference/ApiReference-query-DescribeVolumes.html">DescribeVolumes</a>.
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeVolumes.html">DescribeVolumes</a>.
      *
      * @param status The value returned by <a
-     *         eference/ApiReference-query-DescribeVolumes.html">DescribeVolumes</a>.
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeVolumes.html">DescribeVolumes</a>.
      */
     public void setStatus(String status) {
         this.status = status;
@@ -276,12 +276,12 @@ public class Volume  implements Serializable  {
     
     /**
      * The value returned by <a
-     * eference/ApiReference-query-DescribeVolumes.html">DescribeVolumes</a>.
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeVolumes.html">DescribeVolumes</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param status The value returned by <a
-     *         eference/ApiReference-query-DescribeVolumes.html">DescribeVolumes</a>.
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeVolumes.html">DescribeVolumes</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -497,18 +497,18 @@ public class Volume  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getVolumeId() != null) sb.append("VolumeId: " + getVolumeId() + ", ");
-        if (getEc2VolumeId() != null) sb.append("Ec2VolumeId: " + getEc2VolumeId() + ", ");
-        if (getName() != null) sb.append("Name: " + getName() + ", ");
-        if (getRaidArrayId() != null) sb.append("RaidArrayId: " + getRaidArrayId() + ", ");
-        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ", ");
-        if (getStatus() != null) sb.append("Status: " + getStatus() + ", ");
-        if (getSize() != null) sb.append("Size: " + getSize() + ", ");
-        if (getDevice() != null) sb.append("Device: " + getDevice() + ", ");
-        if (getMountPoint() != null) sb.append("MountPoint: " + getMountPoint() + ", ");
-        if (getRegion() != null) sb.append("Region: " + getRegion() + ", ");
-        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ", ");
+        sb.append("{");    	
+        if (getVolumeId() != null) sb.append("VolumeId: " + getVolumeId() + ",");    	
+        if (getEc2VolumeId() != null) sb.append("Ec2VolumeId: " + getEc2VolumeId() + ",");    	
+        if (getName() != null) sb.append("Name: " + getName() + ",");    	
+        if (getRaidArrayId() != null) sb.append("RaidArrayId: " + getRaidArrayId() + ",");    	
+        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ",");    	
+        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");    	
+        if (getSize() != null) sb.append("Size: " + getSize() + ",");    	
+        if (getDevice() != null) sb.append("Device: " + getDevice() + ",");    	
+        if (getMountPoint() != null) sb.append("MountPoint: " + getMountPoint() + ",");    	
+        if (getRegion() != null) sb.append("Region: " + getRegion() + ",");    	
+        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() );
         sb.append("}");
         return sb.toString();
     }

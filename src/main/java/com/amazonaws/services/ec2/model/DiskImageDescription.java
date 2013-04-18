@@ -175,11 +175,11 @@ public class DiskImageDescription  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getFormat() != null) sb.append("Format: " + getFormat() + ", ");
-        if (getSize() != null) sb.append("Size: " + getSize() + ", ");
-        if (getImportManifestUrl() != null) sb.append("ImportManifestUrl: " + getImportManifestUrl() + ", ");
-        if (getChecksum() != null) sb.append("Checksum: " + getChecksum() + ", ");
+        sb.append("{");    	
+        if (getFormat() != null) sb.append("Format: " + getFormat() + ",");    	
+        if (getSize() != null) sb.append("Size: " + getSize() + ",");    	
+        if (getImportManifestUrl() != null) sb.append("ImportManifestUrl: " + getImportManifestUrl() + ",");    	
+        if (getChecksum() != null) sb.append("Checksum: " + getChecksum() );
         sb.append("}");
         return sb.toString();
     }

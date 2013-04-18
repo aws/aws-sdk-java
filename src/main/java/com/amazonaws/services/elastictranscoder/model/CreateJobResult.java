@@ -77,8 +77,8 @@ public class CreateJobResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getJob() != null) sb.append("Job: " + getJob() + ", ");
+        sb.append("{");    	
+        if (getJob() != null) sb.append("Job: " + getJob() );
         sb.append("}");
         return sb.toString();
     }

@@ -111,9 +111,9 @@ public class Listener  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getProtocol() != null) sb.append("Protocol: " + getProtocol() + ", ");
-        if (getPort() != null) sb.append("Port: " + getPort() + ", ");
+        sb.append("{");    	
+        if (getProtocol() != null) sb.append("Protocol: " + getProtocol() + ",");    	
+        if (getPort() != null) sb.append("Port: " + getPort() );
         sb.append("}");
         return sb.toString();
     }

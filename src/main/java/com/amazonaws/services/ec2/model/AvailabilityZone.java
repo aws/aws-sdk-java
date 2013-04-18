@@ -224,11 +224,11 @@ public class AvailabilityZone  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getZoneName() != null) sb.append("ZoneName: " + getZoneName() + ", ");
-        if (getState() != null) sb.append("State: " + getState() + ", ");
-        if (getRegionName() != null) sb.append("RegionName: " + getRegionName() + ", ");
-        if (getMessages() != null) sb.append("Messages: " + getMessages() + ", ");
+        sb.append("{");    	
+        if (getZoneName() != null) sb.append("ZoneName: " + getZoneName() + ",");    	
+        if (getState() != null) sb.append("State: " + getState() + ",");    	
+        if (getRegionName() != null) sb.append("RegionName: " + getRegionName() + ",");    	
+        if (getMessages() != null) sb.append("Messages: " + getMessages() );
         sb.append("}");
         return sb.toString();
     }

@@ -118,9 +118,9 @@ public class InstanceBlockDeviceMapping  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getDeviceName() != null) sb.append("DeviceName: " + getDeviceName() + ", ");
-        if (getEbs() != null) sb.append("Ebs: " + getEbs() + ", ");
+        sb.append("{");    	
+        if (getDeviceName() != null) sb.append("DeviceName: " + getDeviceName() + ",");    	
+        if (getEbs() != null) sb.append("Ebs: " + getEbs() );
         sb.append("}");
         return sb.toString();
     }

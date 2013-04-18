@@ -226,9 +226,9 @@ public class DescribeMetricCollectionTypesResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getMetrics() != null) sb.append("Metrics: " + getMetrics() + ", ");
-        if (getGranularities() != null) sb.append("Granularities: " + getGranularities() + ", ");
+        sb.append("{");    	
+        if (getMetrics() != null) sb.append("Metrics: " + getMetrics() + ",");    	
+        if (getGranularities() != null) sb.append("Granularities: " + getGranularities() );
         sb.append("}");
         return sb.toString();
     }

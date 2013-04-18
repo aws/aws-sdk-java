@@ -37,6 +37,7 @@ import com.amazonaws.util.json.*;
 /**
  * Batch Write Item Request Marshaller
  */
+@Deprecated
 public class BatchWriteItemRequestMarshaller implements Marshaller<Request<BatchWriteItemRequest>, BatchWriteItemRequest> {
 
     

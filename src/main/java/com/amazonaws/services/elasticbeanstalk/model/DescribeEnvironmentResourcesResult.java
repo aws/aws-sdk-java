@@ -72,8 +72,8 @@ public class DescribeEnvironmentResourcesResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getEnvironmentResources() != null) sb.append("EnvironmentResources: " + getEnvironmentResources() + ", ");
+        sb.append("{");    	
+        if (getEnvironmentResources() != null) sb.append("EnvironmentResources: " + getEnvironmentResources() );
         sb.append("}");
         return sb.toString();
     }

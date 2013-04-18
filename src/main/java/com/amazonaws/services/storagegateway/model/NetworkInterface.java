@@ -164,10 +164,10 @@ public class NetworkInterface  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getIpv4Address() != null) sb.append("Ipv4Address: " + getIpv4Address() + ", ");
-        if (getMacAddress() != null) sb.append("MacAddress: " + getMacAddress() + ", ");
-        if (getIpv6Address() != null) sb.append("Ipv6Address: " + getIpv6Address() + ", ");
+        sb.append("{");    	
+        if (getIpv4Address() != null) sb.append("Ipv4Address: " + getIpv4Address() + ",");    	
+        if (getMacAddress() != null) sb.append("MacAddress: " + getMacAddress() + ",");    	
+        if (getIpv6Address() != null) sb.append("Ipv6Address: " + getIpv6Address() );
         sb.append("}");
         return sb.toString();
     }

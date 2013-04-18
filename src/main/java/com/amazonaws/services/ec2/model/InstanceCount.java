@@ -103,9 +103,9 @@ public class InstanceCount  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getState() != null) sb.append("State: " + getState() + ", ");
-        if (getInstanceCount() != null) sb.append("InstanceCount: " + getInstanceCount() + ", ");
+        sb.append("{");    	
+        if (getState() != null) sb.append("State: " + getState() + ",");    	
+        if (getInstanceCount() != null) sb.append("InstanceCount: " + getInstanceCount() );
         sb.append("}");
         return sb.toString();
     }

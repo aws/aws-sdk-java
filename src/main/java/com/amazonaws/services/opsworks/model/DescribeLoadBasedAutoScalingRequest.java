@@ -111,8 +111,8 @@ public class DescribeLoadBasedAutoScalingRequest extends AmazonWebServiceRequest
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getLayerIds() != null) sb.append("LayerIds: " + getLayerIds() + ", ");
+        sb.append("{");    	
+        if (getLayerIds() != null) sb.append("LayerIds: " + getLayerIds() );
         sb.append("}");
         return sb.toString();
     }

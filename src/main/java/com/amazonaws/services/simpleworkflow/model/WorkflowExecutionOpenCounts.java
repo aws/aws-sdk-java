@@ -251,11 +251,11 @@ public class WorkflowExecutionOpenCounts  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getOpenActivityTasks() != null) sb.append("OpenActivityTasks: " + getOpenActivityTasks() + ", ");
-        if (getOpenDecisionTasks() != null) sb.append("OpenDecisionTasks: " + getOpenDecisionTasks() + ", ");
-        if (getOpenTimers() != null) sb.append("OpenTimers: " + getOpenTimers() + ", ");
-        if (getOpenChildWorkflowExecutions() != null) sb.append("OpenChildWorkflowExecutions: " + getOpenChildWorkflowExecutions() + ", ");
+        sb.append("{");    	
+        if (getOpenActivityTasks() != null) sb.append("OpenActivityTasks: " + getOpenActivityTasks() + ",");    	
+        if (getOpenDecisionTasks() != null) sb.append("OpenDecisionTasks: " + getOpenDecisionTasks() + ",");    	
+        if (getOpenTimers() != null) sb.append("OpenTimers: " + getOpenTimers() + ",");    	
+        if (getOpenChildWorkflowExecutions() != null) sb.append("OpenChildWorkflowExecutions: " + getOpenChildWorkflowExecutions() );
         sb.append("}");
         return sb.toString();
     }

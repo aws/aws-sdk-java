@@ -425,11 +425,11 @@ public class PublishRequest extends AmazonWebServiceRequest  implements Serializ
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getTopicArn() != null) sb.append("TopicArn: " + getTopicArn() + ", ");
-        if (getMessage() != null) sb.append("Message: " + getMessage() + ", ");
-        if (getSubject() != null) sb.append("Subject: " + getSubject() + ", ");
-        if (getMessageStructure() != null) sb.append("MessageStructure: " + getMessageStructure() + ", ");
+        sb.append("{");    	
+        if (getTopicArn() != null) sb.append("TopicArn: " + getTopicArn() + ",");    	
+        if (getMessage() != null) sb.append("Message: " + getMessage() + ",");    	
+        if (getSubject() != null) sb.append("Subject: " + getSubject() + ",");    	
+        if (getMessageStructure() != null) sb.append("MessageStructure: " + getMessageStructure() );
         sb.append("}");
         return sb.toString();
     }

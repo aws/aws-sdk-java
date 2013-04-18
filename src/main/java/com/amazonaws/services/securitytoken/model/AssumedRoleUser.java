@@ -37,7 +37,7 @@ public class AssumedRoleUser  implements Serializable  {
      * The ARN of the temporary security credentials that are returned from
      * the AssumeRole action. For more information about ARNs and how to use
      * them in policies, see <a
-     * ocs.amazonwebservices.com/IAM/latest/UserGuide/Using_Identifiers.html"
+     * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/Using_Identifiers.html"
      * target="_blank"> Identifiers for IAM Entities</a> in <i>Using IAM</i>.
      * <p>
      * <b>Constraints:</b><br/>
@@ -107,7 +107,7 @@ public class AssumedRoleUser  implements Serializable  {
      * The ARN of the temporary security credentials that are returned from
      * the AssumeRole action. For more information about ARNs and how to use
      * them in policies, see <a
-     * ocs.amazonwebservices.com/IAM/latest/UserGuide/Using_Identifiers.html"
+     * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/Using_Identifiers.html"
      * target="_blank"> Identifiers for IAM Entities</a> in <i>Using IAM</i>.
      * <p>
      * <b>Constraints:</b><br/>
@@ -116,7 +116,7 @@ public class AssumedRoleUser  implements Serializable  {
      * @return The ARN of the temporary security credentials that are returned from
      *         the AssumeRole action. For more information about ARNs and how to use
      *         them in policies, see <a
-     *         ocs.amazonwebservices.com/IAM/latest/UserGuide/Using_Identifiers.html"
+     *         href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/Using_Identifiers.html"
      *         target="_blank"> Identifiers for IAM Entities</a> in <i>Using IAM</i>.
      */
     public String getArn() {
@@ -127,7 +127,7 @@ public class AssumedRoleUser  implements Serializable  {
      * The ARN of the temporary security credentials that are returned from
      * the AssumeRole action. For more information about ARNs and how to use
      * them in policies, see <a
-     * ocs.amazonwebservices.com/IAM/latest/UserGuide/Using_Identifiers.html"
+     * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/Using_Identifiers.html"
      * target="_blank"> Identifiers for IAM Entities</a> in <i>Using IAM</i>.
      * <p>
      * <b>Constraints:</b><br/>
@@ -136,7 +136,7 @@ public class AssumedRoleUser  implements Serializable  {
      * @param arn The ARN of the temporary security credentials that are returned from
      *         the AssumeRole action. For more information about ARNs and how to use
      *         them in policies, see <a
-     *         ocs.amazonwebservices.com/IAM/latest/UserGuide/Using_Identifiers.html"
+     *         href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/Using_Identifiers.html"
      *         target="_blank"> Identifiers for IAM Entities</a> in <i>Using IAM</i>.
      */
     public void setArn(String arn) {
@@ -147,7 +147,7 @@ public class AssumedRoleUser  implements Serializable  {
      * The ARN of the temporary security credentials that are returned from
      * the AssumeRole action. For more information about ARNs and how to use
      * them in policies, see <a
-     * ocs.amazonwebservices.com/IAM/latest/UserGuide/Using_Identifiers.html"
+     * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/Using_Identifiers.html"
      * target="_blank"> Identifiers for IAM Entities</a> in <i>Using IAM</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -158,7 +158,7 @@ public class AssumedRoleUser  implements Serializable  {
      * @param arn The ARN of the temporary security credentials that are returned from
      *         the AssumeRole action. For more information about ARNs and how to use
      *         them in policies, see <a
-     *         ocs.amazonwebservices.com/IAM/latest/UserGuide/Using_Identifiers.html"
+     *         href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/Using_Identifiers.html"
      *         target="_blank"> Identifiers for IAM Entities</a> in <i>Using IAM</i>.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -181,9 +181,9 @@ public class AssumedRoleUser  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getAssumedRoleId() != null) sb.append("AssumedRoleId: " + getAssumedRoleId() + ", ");
-        if (getArn() != null) sb.append("Arn: " + getArn() + ", ");
+        sb.append("{");    	
+        if (getAssumedRoleId() != null) sb.append("AssumedRoleId: " + getAssumedRoleId() + ",");    	
+        if (getArn() != null) sb.append("Arn: " + getArn() );
         sb.append("}");
         return sb.toString();
     }

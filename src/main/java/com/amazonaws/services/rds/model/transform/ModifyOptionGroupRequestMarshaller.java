@@ -38,7 +38,7 @@ public class ModifyOptionGroupRequestMarshaller implements Marshaller<Request<Mo
 
         Request<ModifyOptionGroupRequest> request = new DefaultRequest<ModifyOptionGroupRequest>(modifyOptionGroupRequest, "AmazonRDS");
         request.addParameter("Action", "ModifyOptionGroup");
-        request.addParameter("Version", "2013-01-10");
+        request.addParameter("Version", "2013-02-12");
 
         if (modifyOptionGroupRequest.getOptionGroupName() != null) {
             request.addParameter("OptionGroupName", StringUtils.fromString(modifyOptionGroupRequest.getOptionGroupName()));
@@ -77,6 +77,44 @@ public class ModifyOptionGroupRequestMarshaller implements Marshaller<Request<Mo
                     }
 
                     vpcSecurityGroupMembershipsListIndex++;
+                }
+
+                java.util.List<OptionSetting> optionSettingsList = optionConfigurationMember.getOptionSettings();
+                int optionSettingsListIndex = 1;
+
+                for (OptionSetting optionSettingsListValue : optionSettingsList) {
+                    OptionSetting optionSettingMember = optionSettingsListValue;
+                    if (optionSettingMember != null) {
+                        if (optionSettingMember.getName() != null) {
+                            request.addParameter("OptionsToInclude.OptionConfiguration." + optionsToIncludeListIndex + ".OptionSettings.OptionSetting." + optionSettingsListIndex + ".Name", StringUtils.fromString(optionSettingMember.getName()));
+                        }
+                        if (optionSettingMember.getValue() != null) {
+                            request.addParameter("OptionsToInclude.OptionConfiguration." + optionsToIncludeListIndex + ".OptionSettings.OptionSetting." + optionSettingsListIndex + ".Value", StringUtils.fromString(optionSettingMember.getValue()));
+                        }
+                        if (optionSettingMember.getDefaultValue() != null) {
+                            request.addParameter("OptionsToInclude.OptionConfiguration." + optionsToIncludeListIndex + ".OptionSettings.OptionSetting." + optionSettingsListIndex + ".DefaultValue", StringUtils.fromString(optionSettingMember.getDefaultValue()));
+                        }
+                        if (optionSettingMember.getDescription() != null) {
+                            request.addParameter("OptionsToInclude.OptionConfiguration." + optionsToIncludeListIndex + ".OptionSettings.OptionSetting." + optionSettingsListIndex + ".Description", StringUtils.fromString(optionSettingMember.getDescription()));
+                        }
+                        if (optionSettingMember.getApplyType() != null) {
+                            request.addParameter("OptionsToInclude.OptionConfiguration." + optionsToIncludeListIndex + ".OptionSettings.OptionSetting." + optionSettingsListIndex + ".ApplyType", StringUtils.fromString(optionSettingMember.getApplyType()));
+                        }
+                        if (optionSettingMember.getDataType() != null) {
+                            request.addParameter("OptionsToInclude.OptionConfiguration." + optionsToIncludeListIndex + ".OptionSettings.OptionSetting." + optionSettingsListIndex + ".DataType", StringUtils.fromString(optionSettingMember.getDataType()));
+                        }
+                        if (optionSettingMember.getAllowedValues() != null) {
+                            request.addParameter("OptionsToInclude.OptionConfiguration." + optionsToIncludeListIndex + ".OptionSettings.OptionSetting." + optionSettingsListIndex + ".AllowedValues", StringUtils.fromString(optionSettingMember.getAllowedValues()));
+                        }
+                        if (optionSettingMember.isModifiable() != null) {
+                            request.addParameter("OptionsToInclude.OptionConfiguration." + optionsToIncludeListIndex + ".OptionSettings.OptionSetting." + optionSettingsListIndex + ".IsModifiable", StringUtils.fromBoolean(optionSettingMember.isModifiable()));
+                        }
+                        if (optionSettingMember.isCollection() != null) {
+                            request.addParameter("OptionsToInclude.OptionConfiguration." + optionsToIncludeListIndex + ".OptionSettings.OptionSetting." + optionSettingsListIndex + ".IsCollection", StringUtils.fromBoolean(optionSettingMember.isCollection()));
+                        }
+                    }
+
+                    optionSettingsListIndex++;
                 }
             }
 

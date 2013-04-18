@@ -198,9 +198,9 @@ public class ListStacksRequest extends AmazonWebServiceRequest  implements Seria
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() + ", ");
-        if (getStackStatusFilters() != null) sb.append("StackStatusFilters: " + getStackStatusFilters() + ", ");
+        sb.append("{");    	
+        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() + ",");    	
+        if (getStackStatusFilters() != null) sb.append("StackStatusFilters: " + getStackStatusFilters() );
         sb.append("}");
         return sb.toString();
     }

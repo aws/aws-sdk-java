@@ -124,9 +124,9 @@ public class NotificationConfiguration  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getTopicArn() != null) sb.append("TopicArn: " + getTopicArn() + ", ");
-        if (getTopicStatus() != null) sb.append("TopicStatus: " + getTopicStatus() + ", ");
+        sb.append("{");    	
+        if (getTopicArn() != null) sb.append("TopicArn: " + getTopicArn() + ",");    	
+        if (getTopicStatus() != null) sb.append("TopicStatus: " + getTopicStatus() );
         sb.append("}");
         return sb.toString();
     }

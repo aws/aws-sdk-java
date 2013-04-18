@@ -253,10 +253,10 @@ public class SelectRequest extends AmazonWebServiceRequest  implements Serializa
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getSelectExpression() != null) sb.append("SelectExpression: " + getSelectExpression() + ", ");
-        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() + ", ");
-        if (isConsistentRead() != null) sb.append("ConsistentRead: " + isConsistentRead() + ", ");
+        sb.append("{");    	
+        if (getSelectExpression() != null) sb.append("SelectExpression: " + getSelectExpression() + ",");    	
+        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() + ",");    	
+        if (isConsistentRead() != null) sb.append("ConsistentRead: " + isConsistentRead() );
         sb.append("}");
         return sb.toString();
     }

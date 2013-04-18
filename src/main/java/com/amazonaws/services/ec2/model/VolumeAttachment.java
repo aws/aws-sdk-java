@@ -344,13 +344,13 @@ public class VolumeAttachment  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getVolumeId() != null) sb.append("VolumeId: " + getVolumeId() + ", ");
-        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ", ");
-        if (getDevice() != null) sb.append("Device: " + getDevice() + ", ");
-        if (getState() != null) sb.append("State: " + getState() + ", ");
-        if (getAttachTime() != null) sb.append("AttachTime: " + getAttachTime() + ", ");
-        if (isDeleteOnTermination() != null) sb.append("DeleteOnTermination: " + isDeleteOnTermination() + ", ");
+        sb.append("{");    	
+        if (getVolumeId() != null) sb.append("VolumeId: " + getVolumeId() + ",");    	
+        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ",");    	
+        if (getDevice() != null) sb.append("Device: " + getDevice() + ",");    	
+        if (getState() != null) sb.append("State: " + getState() + ",");    	
+        if (getAttachTime() != null) sb.append("AttachTime: " + getAttachTime() + ",");    	
+        if (isDeleteOnTermination() != null) sb.append("DeleteOnTermination: " + isDeleteOnTermination() );
         sb.append("}");
         return sb.toString();
     }

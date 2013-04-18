@@ -362,13 +362,13 @@ public class ConnectionOrderStep  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getNumber() != null) sb.append("Number: " + getNumber() + ", ");
-        if (getName() != null) sb.append("Name: " + getName() + ", ");
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ", ");
-        if (getOwner() != null) sb.append("Owner: " + getOwner() + ", ");
-        if (getSla() != null) sb.append("Sla: " + getSla() + ", ");
-        if (getStepState() != null) sb.append("StepState: " + getStepState() + ", ");
+        sb.append("{");    	
+        if (getNumber() != null) sb.append("Number: " + getNumber() + ",");    	
+        if (getName() != null) sb.append("Name: " + getName() + ",");    	
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");    	
+        if (getOwner() != null) sb.append("Owner: " + getOwner() + ",");    	
+        if (getSla() != null) sb.append("Sla: " + getSla() + ",");    	
+        if (getStepState() != null) sb.append("StepState: " + getStepState() );
         sb.append("}");
         return sb.toString();
     }

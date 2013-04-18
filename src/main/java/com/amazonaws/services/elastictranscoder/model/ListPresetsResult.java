@@ -105,8 +105,8 @@ public class ListPresetsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getPresets() != null) sb.append("Presets: " + getPresets() + ", ");
+        sb.append("{");    	
+        if (getPresets() != null) sb.append("Presets: " + getPresets() );
         sb.append("}");
         return sb.toString();
     }

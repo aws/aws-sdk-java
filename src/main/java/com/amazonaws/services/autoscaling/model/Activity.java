@@ -567,17 +567,17 @@ public class Activity  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getActivityId() != null) sb.append("ActivityId: " + getActivityId() + ", ");
-        if (getAutoScalingGroupName() != null) sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ", ");
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ", ");
-        if (getCause() != null) sb.append("Cause: " + getCause() + ", ");
-        if (getStartTime() != null) sb.append("StartTime: " + getStartTime() + ", ");
-        if (getEndTime() != null) sb.append("EndTime: " + getEndTime() + ", ");
-        if (getStatusCode() != null) sb.append("StatusCode: " + getStatusCode() + ", ");
-        if (getStatusMessage() != null) sb.append("StatusMessage: " + getStatusMessage() + ", ");
-        if (getProgress() != null) sb.append("Progress: " + getProgress() + ", ");
-        if (getDetails() != null) sb.append("Details: " + getDetails() + ", ");
+        sb.append("{");    	
+        if (getActivityId() != null) sb.append("ActivityId: " + getActivityId() + ",");    	
+        if (getAutoScalingGroupName() != null) sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ",");    	
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");    	
+        if (getCause() != null) sb.append("Cause: " + getCause() + ",");    	
+        if (getStartTime() != null) sb.append("StartTime: " + getStartTime() + ",");    	
+        if (getEndTime() != null) sb.append("EndTime: " + getEndTime() + ",");    	
+        if (getStatusCode() != null) sb.append("StatusCode: " + getStatusCode() + ",");    	
+        if (getStatusMessage() != null) sb.append("StatusMessage: " + getStatusMessage() + ",");    	
+        if (getProgress() != null) sb.append("Progress: " + getProgress() + ",");    	
+        if (getDetails() != null) sb.append("Details: " + getDetails() );
         sb.append("}");
         return sb.toString();
     }

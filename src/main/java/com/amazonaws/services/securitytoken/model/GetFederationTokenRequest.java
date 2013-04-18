@@ -40,7 +40,7 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest  implemen
     /**
      * The name of the federated user associated with the credentials. For
      * information about limitations on user names, go to <a
-     * vices.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
+     * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
      * on IAM Entities</a> in <i>Using IAM</i>.
      * <p>
      * <b>Constraints:</b><br/>
@@ -55,7 +55,7 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest  implemen
      * and both policies will be checked when a service call is made. For
      * more information about how permissions work in the context of
      * temporary credentials, see <a
-     * docs.amazonwebservices.com/IAM/latest/UserGuide/TokenPermissions.html"
+     * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/TokenPermissions.html"
      * target="_blank">Controlling Permissions in Temporary Credentials</a>
      * in <i>Using IAM</i>.
      * <p>
@@ -91,7 +91,7 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest  implemen
      * 
      * @param name The name of the federated user associated with the
      * credentials. For information about limitations on user names, go to <a
-     * vices.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
+     * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
      * on IAM Entities</a> in <i>Using IAM</i>.
      */
     public GetFederationTokenRequest(String name) {
@@ -103,7 +103,7 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest  implemen
     /**
      * The name of the federated user associated with the credentials. For
      * information about limitations on user names, go to <a
-     * vices.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
+     * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
      * on IAM Entities</a> in <i>Using IAM</i>.
      * <p>
      * <b>Constraints:</b><br/>
@@ -112,7 +112,7 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest  implemen
      *
      * @return The name of the federated user associated with the credentials. For
      *         information about limitations on user names, go to <a
-     *         vices.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
+     *         href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
      *         on IAM Entities</a> in <i>Using IAM</i>.
      */
     public String getName() {
@@ -122,7 +122,7 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest  implemen
     /**
      * The name of the federated user associated with the credentials. For
      * information about limitations on user names, go to <a
-     * vices.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
+     * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
      * on IAM Entities</a> in <i>Using IAM</i>.
      * <p>
      * <b>Constraints:</b><br/>
@@ -131,7 +131,7 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest  implemen
      *
      * @param name The name of the federated user associated with the credentials. For
      *         information about limitations on user names, go to <a
-     *         vices.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
+     *         href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
      *         on IAM Entities</a> in <i>Using IAM</i>.
      */
     public void setName(String name) {
@@ -141,7 +141,7 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest  implemen
     /**
      * The name of the federated user associated with the credentials. For
      * information about limitations on user names, go to <a
-     * vices.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
+     * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
      * on IAM Entities</a> in <i>Using IAM</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -152,7 +152,7 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest  implemen
      *
      * @param name The name of the federated user associated with the credentials. For
      *         information about limitations on user names, go to <a
-     *         vices.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
+     *         href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/LimitationsOnEntities.html">Limitations
      *         on IAM Entities</a> in <i>Using IAM</i>.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -170,7 +170,7 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest  implemen
      * and both policies will be checked when a service call is made. For
      * more information about how permissions work in the context of
      * temporary credentials, see <a
-     * docs.amazonwebservices.com/IAM/latest/UserGuide/TokenPermissions.html"
+     * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/TokenPermissions.html"
      * target="_blank">Controlling Permissions in Temporary Credentials</a>
      * in <i>Using IAM</i>.
      * <p>
@@ -183,7 +183,7 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest  implemen
      *         and both policies will be checked when a service call is made. For
      *         more information about how permissions work in the context of
      *         temporary credentials, see <a
-     *         docs.amazonwebservices.com/IAM/latest/UserGuide/TokenPermissions.html"
+     *         href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/TokenPermissions.html"
      *         target="_blank">Controlling Permissions in Temporary Credentials</a>
      *         in <i>Using IAM</i>.
      */
@@ -197,7 +197,7 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest  implemen
      * and both policies will be checked when a service call is made. For
      * more information about how permissions work in the context of
      * temporary credentials, see <a
-     * docs.amazonwebservices.com/IAM/latest/UserGuide/TokenPermissions.html"
+     * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/TokenPermissions.html"
      * target="_blank">Controlling Permissions in Temporary Credentials</a>
      * in <i>Using IAM</i>.
      * <p>
@@ -210,7 +210,7 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest  implemen
      *         and both policies will be checked when a service call is made. For
      *         more information about how permissions work in the context of
      *         temporary credentials, see <a
-     *         docs.amazonwebservices.com/IAM/latest/UserGuide/TokenPermissions.html"
+     *         href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/TokenPermissions.html"
      *         target="_blank">Controlling Permissions in Temporary Credentials</a>
      *         in <i>Using IAM</i>.
      */
@@ -224,7 +224,7 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest  implemen
      * and both policies will be checked when a service call is made. For
      * more information about how permissions work in the context of
      * temporary credentials, see <a
-     * docs.amazonwebservices.com/IAM/latest/UserGuide/TokenPermissions.html"
+     * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/TokenPermissions.html"
      * target="_blank">Controlling Permissions in Temporary Credentials</a>
      * in <i>Using IAM</i>.
      * <p>
@@ -239,7 +239,7 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest  implemen
      *         and both policies will be checked when a service call is made. For
      *         more information about how permissions work in the context of
      *         temporary credentials, see <a
-     *         docs.amazonwebservices.com/IAM/latest/UserGuide/TokenPermissions.html"
+     *         href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/TokenPermissions.html"
      *         target="_blank">Controlling Permissions in Temporary Credentials</a>
      *         in <i>Using IAM</i>.
      *
@@ -336,10 +336,10 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest  implemen
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getName() != null) sb.append("Name: " + getName() + ", ");
-        if (getPolicy() != null) sb.append("Policy: " + getPolicy() + ", ");
-        if (getDurationSeconds() != null) sb.append("DurationSeconds: " + getDurationSeconds() + ", ");
+        sb.append("{");    	
+        if (getName() != null) sb.append("Name: " + getName() + ",");    	
+        if (getPolicy() != null) sb.append("Policy: " + getPolicy() + ",");    	
+        if (getDurationSeconds() != null) sb.append("DurationSeconds: " + getDurationSeconds() );
         sb.append("}");
         return sb.toString();
     }

@@ -103,9 +103,9 @@ public class IamInstanceProfileSpecification  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getArn() != null) sb.append("Arn: " + getArn() + ", ");
-        if (getName() != null) sb.append("Name: " + getName() + ", ");
+        sb.append("{");    	
+        if (getArn() != null) sb.append("Arn: " + getArn() + ",");    	
+        if (getName() != null) sb.append("Name: " + getName() );
         sb.append("}");
         return sb.toString();
     }

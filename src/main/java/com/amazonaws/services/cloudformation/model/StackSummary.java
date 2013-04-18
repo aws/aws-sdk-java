@@ -404,15 +404,15 @@ public class StackSummary  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getStackId() != null) sb.append("StackId: " + getStackId() + ", ");
-        if (getStackName() != null) sb.append("StackName: " + getStackName() + ", ");
-        if (getTemplateDescription() != null) sb.append("TemplateDescription: " + getTemplateDescription() + ", ");
-        if (getCreationTime() != null) sb.append("CreationTime: " + getCreationTime() + ", ");
-        if (getLastUpdatedTime() != null) sb.append("LastUpdatedTime: " + getLastUpdatedTime() + ", ");
-        if (getDeletionTime() != null) sb.append("DeletionTime: " + getDeletionTime() + ", ");
-        if (getStackStatus() != null) sb.append("StackStatus: " + getStackStatus() + ", ");
-        if (getStackStatusReason() != null) sb.append("StackStatusReason: " + getStackStatusReason() + ", ");
+        sb.append("{");    	
+        if (getStackId() != null) sb.append("StackId: " + getStackId() + ",");    	
+        if (getStackName() != null) sb.append("StackName: " + getStackName() + ",");    	
+        if (getTemplateDescription() != null) sb.append("TemplateDescription: " + getTemplateDescription() + ",");    	
+        if (getCreationTime() != null) sb.append("CreationTime: " + getCreationTime() + ",");    	
+        if (getLastUpdatedTime() != null) sb.append("LastUpdatedTime: " + getLastUpdatedTime() + ",");    	
+        if (getDeletionTime() != null) sb.append("DeletionTime: " + getDeletionTime() + ",");    	
+        if (getStackStatus() != null) sb.append("StackStatus: " + getStackStatus() + ",");    	
+        if (getStackStatusReason() != null) sb.append("StackStatusReason: " + getStackStatusReason() );
         sb.append("}");
         return sb.toString();
     }

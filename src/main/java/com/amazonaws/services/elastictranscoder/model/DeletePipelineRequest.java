@@ -92,8 +92,8 @@ public class DeletePipelineRequest extends AmazonWebServiceRequest  implements S
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getId() != null) sb.append("Id: " + getId() + ", ");
+        sb.append("{");    	
+        if (getId() != null) sb.append("Id: " + getId() );
         sb.append("}");
         return sb.toString();
     }

@@ -21,6 +21,7 @@ import com.amazonaws.AmazonServiceException;
  * This exception is thrown when the service has a problem when trying to process the request.
  * </p>
  */        
+@Deprecated
 public class InternalServerErrorException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;
     

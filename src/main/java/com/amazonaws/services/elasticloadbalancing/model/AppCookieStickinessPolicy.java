@@ -141,9 +141,9 @@ public class AppCookieStickinessPolicy  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getPolicyName() != null) sb.append("PolicyName: " + getPolicyName() + ", ");
-        if (getCookieName() != null) sb.append("CookieName: " + getCookieName() + ", ");
+        sb.append("{");    	
+        if (getPolicyName() != null) sb.append("PolicyName: " + getPolicyName() + ",");    	
+        if (getCookieName() != null) sb.append("CookieName: " + getCookieName() );
         sb.append("}");
         return sb.toString();
     }

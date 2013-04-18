@@ -287,11 +287,11 @@ public class ListMetricsRequest extends AmazonWebServiceRequest  implements Seri
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getNamespace() != null) sb.append("Namespace: " + getNamespace() + ", ");
-        if (getMetricName() != null) sb.append("MetricName: " + getMetricName() + ", ");
-        if (getDimensions() != null) sb.append("Dimensions: " + getDimensions() + ", ");
-        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() + ", ");
+        sb.append("{");    	
+        if (getNamespace() != null) sb.append("Namespace: " + getNamespace() + ",");    	
+        if (getMetricName() != null) sb.append("MetricName: " + getMetricName() + ",");    	
+        if (getDimensions() != null) sb.append("Dimensions: " + getDimensions() + ",");    	
+        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() );
         sb.append("}");
         return sb.toString();
     }

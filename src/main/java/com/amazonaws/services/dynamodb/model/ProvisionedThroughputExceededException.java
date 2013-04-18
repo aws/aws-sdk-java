@@ -21,6 +21,7 @@ import com.amazonaws.AmazonServiceException;
  * This exception is thrown when the level of provisioned throughput defined for the table is exceeded.
  * </p>
  */        
+@Deprecated
 public class ProvisionedThroughputExceededException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;
     

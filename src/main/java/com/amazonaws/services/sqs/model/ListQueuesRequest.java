@@ -104,8 +104,8 @@ public class ListQueuesRequest extends AmazonWebServiceRequest  implements Seria
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getQueueNamePrefix() != null) sb.append("QueueNamePrefix: " + getQueueNamePrefix() + ", ");
+        sb.append("{");    	
+        if (getQueueNamePrefix() != null) sb.append("QueueNamePrefix: " + getQueueNamePrefix() );
         sb.append("}");
         return sb.toString();
     }

@@ -53,7 +53,7 @@ public class Stack  implements Serializable  {
     /**
      * The ARN of an IAM profile that is the default profile for all of the
      * stack's EC2 instances. For more information about IAM ARNs, see <a
-     * docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.
      */
     private String defaultInstanceProfileArn;
@@ -302,12 +302,12 @@ public class Stack  implements Serializable  {
     /**
      * The ARN of an IAM profile that is the default profile for all of the
      * stack's EC2 instances. For more information about IAM ARNs, see <a
-     * docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.
      *
      * @return The ARN of an IAM profile that is the default profile for all of the
      *         stack's EC2 instances. For more information about IAM ARNs, see <a
-     *         docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      *         Identifiers</a>.
      */
     public String getDefaultInstanceProfileArn() {
@@ -317,12 +317,12 @@ public class Stack  implements Serializable  {
     /**
      * The ARN of an IAM profile that is the default profile for all of the
      * stack's EC2 instances. For more information about IAM ARNs, see <a
-     * docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.
      *
      * @param defaultInstanceProfileArn The ARN of an IAM profile that is the default profile for all of the
      *         stack's EC2 instances. For more information about IAM ARNs, see <a
-     *         docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      *         Identifiers</a>.
      */
     public void setDefaultInstanceProfileArn(String defaultInstanceProfileArn) {
@@ -332,14 +332,14 @@ public class Stack  implements Serializable  {
     /**
      * The ARN of an IAM profile that is the default profile for all of the
      * stack's EC2 instances. For more information about IAM ARNs, see <a
-     * docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param defaultInstanceProfileArn The ARN of an IAM profile that is the default profile for all of the
      *         stack's EC2 instances. For more information about IAM ARNs, see <a
-     *         docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      *         Identifiers</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -697,21 +697,21 @@ public class Stack  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getStackId() != null) sb.append("StackId: " + getStackId() + ", ");
-        if (getName() != null) sb.append("Name: " + getName() + ", ");
-        if (getRegion() != null) sb.append("Region: " + getRegion() + ", ");
-        if (getAttributes() != null) sb.append("Attributes: " + getAttributes() + ", ");
-        if (getServiceRoleArn() != null) sb.append("ServiceRoleArn: " + getServiceRoleArn() + ", ");
-        if (getDefaultInstanceProfileArn() != null) sb.append("DefaultInstanceProfileArn: " + getDefaultInstanceProfileArn() + ", ");
-        if (getDefaultOs() != null) sb.append("DefaultOs: " + getDefaultOs() + ", ");
-        if (getHostnameTheme() != null) sb.append("HostnameTheme: " + getHostnameTheme() + ", ");
-        if (getDefaultAvailabilityZone() != null) sb.append("DefaultAvailabilityZone: " + getDefaultAvailabilityZone() + ", ");
-        if (getCustomJson() != null) sb.append("CustomJson: " + getCustomJson() + ", ");
-        if (isUseCustomCookbooks() != null) sb.append("UseCustomCookbooks: " + isUseCustomCookbooks() + ", ");
-        if (getCustomCookbooksSource() != null) sb.append("CustomCookbooksSource: " + getCustomCookbooksSource() + ", ");
-        if (getDefaultSshKeyName() != null) sb.append("DefaultSshKeyName: " + getDefaultSshKeyName() + ", ");
-        if (getCreatedAt() != null) sb.append("CreatedAt: " + getCreatedAt() + ", ");
+        sb.append("{");    	
+        if (getStackId() != null) sb.append("StackId: " + getStackId() + ",");    	
+        if (getName() != null) sb.append("Name: " + getName() + ",");    	
+        if (getRegion() != null) sb.append("Region: " + getRegion() + ",");    	
+        if (getAttributes() != null) sb.append("Attributes: " + getAttributes() + ",");    	
+        if (getServiceRoleArn() != null) sb.append("ServiceRoleArn: " + getServiceRoleArn() + ",");    	
+        if (getDefaultInstanceProfileArn() != null) sb.append("DefaultInstanceProfileArn: " + getDefaultInstanceProfileArn() + ",");    	
+        if (getDefaultOs() != null) sb.append("DefaultOs: " + getDefaultOs() + ",");    	
+        if (getHostnameTheme() != null) sb.append("HostnameTheme: " + getHostnameTheme() + ",");    	
+        if (getDefaultAvailabilityZone() != null) sb.append("DefaultAvailabilityZone: " + getDefaultAvailabilityZone() + ",");    	
+        if (getCustomJson() != null) sb.append("CustomJson: " + getCustomJson() + ",");    	
+        if (isUseCustomCookbooks() != null) sb.append("UseCustomCookbooks: " + isUseCustomCookbooks() + ",");    	
+        if (getCustomCookbooksSource() != null) sb.append("CustomCookbooksSource: " + getCustomCookbooksSource() + ",");    	
+        if (getDefaultSshKeyName() != null) sb.append("DefaultSshKeyName: " + getDefaultSshKeyName() + ",");    	
+        if (getCreatedAt() != null) sb.append("CreatedAt: " + getCreatedAt() );
         sb.append("}");
         return sb.toString();
     }

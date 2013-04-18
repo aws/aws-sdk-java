@@ -146,9 +146,9 @@ public class DescribeCacheSubnetGroupsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ", ");
-        if (getCacheSubnetGroups() != null) sb.append("CacheSubnetGroups: " + getCacheSubnetGroups() + ", ");
+        sb.append("{");    	
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");    	
+        if (getCacheSubnetGroups() != null) sb.append("CacheSubnetGroups: " + getCacheSubnetGroups() );
         sb.append("}");
         return sb.toString();
     }

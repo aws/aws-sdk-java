@@ -397,13 +397,13 @@ public class Reservation  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getReservationId() != null) sb.append("ReservationId: " + getReservationId() + ", ");
-        if (getOwnerId() != null) sb.append("OwnerId: " + getOwnerId() + ", ");
-        if (getRequesterId() != null) sb.append("RequesterId: " + getRequesterId() + ", ");
-        if (getGroups() != null) sb.append("Groups: " + getGroups() + ", ");
-        if (getGroupNames() != null) sb.append("GroupNames: " + getGroupNames() + ", ");
-        if (getInstances() != null) sb.append("Instances: " + getInstances() + ", ");
+        sb.append("{");    	
+        if (getReservationId() != null) sb.append("ReservationId: " + getReservationId() + ",");    	
+        if (getOwnerId() != null) sb.append("OwnerId: " + getOwnerId() + ",");    	
+        if (getRequesterId() != null) sb.append("RequesterId: " + getRequesterId() + ",");    	
+        if (getGroups() != null) sb.append("Groups: " + getGroups() + ",");    	
+        if (getGroupNames() != null) sb.append("GroupNames: " + getGroupNames() + ",");    	
+        if (getInstances() != null) sb.append("Instances: " + getInstances() );
         sb.append("}");
         return sb.toString();
     }

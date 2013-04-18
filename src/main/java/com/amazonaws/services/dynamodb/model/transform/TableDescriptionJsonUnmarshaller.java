@@ -28,6 +28,7 @@ import static org.codehaus.jackson.JsonToken.*;
 /**
  * Table Description JSON Unmarshaller
  */
+@Deprecated
 public class TableDescriptionJsonUnmarshaller implements Unmarshaller<TableDescription, JsonUnmarshallerContext> {
 
     

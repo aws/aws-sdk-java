@@ -72,8 +72,8 @@ public class GetInvalidationResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getInvalidation() != null) sb.append("Invalidation: " + getInvalidation() + ", ");
+        sb.append("{");    	
+        if (getInvalidation() != null) sb.append("Invalidation: " + getInvalidation() );
         sb.append("}");
         return sb.toString();
     }

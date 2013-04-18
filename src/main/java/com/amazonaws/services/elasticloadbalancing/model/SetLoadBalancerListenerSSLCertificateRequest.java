@@ -40,7 +40,7 @@ public class SetLoadBalancerListenerSSLCertificateRequest extends AmazonWebServi
     /**
      * The ID of the SSL certificate chain to use. For more information on
      * SSL certificates, see <a
-     * .amazonwebservices.com/IAM/latest/UserGuide/ManagingServerCerts.html">
+     * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/ManagingServerCerts.html">
      * Managing Server Certificates </a> in the AWS Identity and Access
      * Management documentation.
      */
@@ -62,7 +62,7 @@ public class SetLoadBalancerListenerSSLCertificateRequest extends AmazonWebServi
      * certificate.
      * @param sSLCertificateId The ID of the SSL certificate chain to use.
      * For more information on SSL certificates, see <a
-     * .amazonwebservices.com/IAM/latest/UserGuide/ManagingServerCerts.html">
+     * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/ManagingServerCerts.html">
      * Managing Server Certificates </a> in the AWS Identity and Access
      * Management documentation.
      */
@@ -145,13 +145,13 @@ public class SetLoadBalancerListenerSSLCertificateRequest extends AmazonWebServi
     /**
      * The ID of the SSL certificate chain to use. For more information on
      * SSL certificates, see <a
-     * .amazonwebservices.com/IAM/latest/UserGuide/ManagingServerCerts.html">
+     * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/ManagingServerCerts.html">
      * Managing Server Certificates </a> in the AWS Identity and Access
      * Management documentation.
      *
      * @return The ID of the SSL certificate chain to use. For more information on
      *         SSL certificates, see <a
-     *         .amazonwebservices.com/IAM/latest/UserGuide/ManagingServerCerts.html">
+     *         href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/ManagingServerCerts.html">
      *         Managing Server Certificates </a> in the AWS Identity and Access
      *         Management documentation.
      */
@@ -162,13 +162,13 @@ public class SetLoadBalancerListenerSSLCertificateRequest extends AmazonWebServi
     /**
      * The ID of the SSL certificate chain to use. For more information on
      * SSL certificates, see <a
-     * .amazonwebservices.com/IAM/latest/UserGuide/ManagingServerCerts.html">
+     * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/ManagingServerCerts.html">
      * Managing Server Certificates </a> in the AWS Identity and Access
      * Management documentation.
      *
      * @param sSLCertificateId The ID of the SSL certificate chain to use. For more information on
      *         SSL certificates, see <a
-     *         .amazonwebservices.com/IAM/latest/UserGuide/ManagingServerCerts.html">
+     *         href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/ManagingServerCerts.html">
      *         Managing Server Certificates </a> in the AWS Identity and Access
      *         Management documentation.
      */
@@ -179,7 +179,7 @@ public class SetLoadBalancerListenerSSLCertificateRequest extends AmazonWebServi
     /**
      * The ID of the SSL certificate chain to use. For more information on
      * SSL certificates, see <a
-     * .amazonwebservices.com/IAM/latest/UserGuide/ManagingServerCerts.html">
+     * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/ManagingServerCerts.html">
      * Managing Server Certificates </a> in the AWS Identity and Access
      * Management documentation.
      * <p>
@@ -187,7 +187,7 @@ public class SetLoadBalancerListenerSSLCertificateRequest extends AmazonWebServi
      *
      * @param sSLCertificateId The ID of the SSL certificate chain to use. For more information on
      *         SSL certificates, see <a
-     *         .amazonwebservices.com/IAM/latest/UserGuide/ManagingServerCerts.html">
+     *         href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/ManagingServerCerts.html">
      *         Managing Server Certificates </a> in the AWS Identity and Access
      *         Management documentation.
      *
@@ -211,10 +211,10 @@ public class SetLoadBalancerListenerSSLCertificateRequest extends AmazonWebServi
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getLoadBalancerName() != null) sb.append("LoadBalancerName: " + getLoadBalancerName() + ", ");
-        if (getLoadBalancerPort() != null) sb.append("LoadBalancerPort: " + getLoadBalancerPort() + ", ");
-        if (getSSLCertificateId() != null) sb.append("SSLCertificateId: " + getSSLCertificateId() + ", ");
+        sb.append("{");    	
+        if (getLoadBalancerName() != null) sb.append("LoadBalancerName: " + getLoadBalancerName() + ",");    	
+        if (getLoadBalancerPort() != null) sb.append("LoadBalancerPort: " + getLoadBalancerPort() + ",");    	
+        if (getSSLCertificateId() != null) sb.append("SSLCertificateId: " + getSSLCertificateId() );
         sb.append("}");
         return sb.toString();
     }

@@ -80,8 +80,8 @@ public class InstanceLicenseSpecification  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getPool() != null) sb.append("Pool: " + getPool() + ", ");
+        sb.append("{");    	
+        if (getPool() != null) sb.append("Pool: " + getPool() );
         sb.append("}");
         return sb.toString();
     }

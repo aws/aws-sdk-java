@@ -107,8 +107,8 @@ public class DescribeSnapshotsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getSnapshots() != null) sb.append("Snapshots: " + getSnapshots() + ", ");
+        sb.append("{");    	
+        if (getSnapshots() != null) sb.append("Snapshots: " + getSnapshots() );
         sb.append("}");
         return sb.toString();
     }

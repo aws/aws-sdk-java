@@ -59,7 +59,7 @@ public class GetSessionTokenRequest extends AmazonWebServiceRequest  implements 
      * is the device serial number for a hardware device (usually the number
      * from the back of the device), such as <code>GAHT12345678</code>. For
      * more information, see <a
-     * ocs.amazonwebservices.com/IAM/latest/UserGuide/Using_ManagingMFA.html"
+     * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/Using_ManagingMFA.html"
      * target="_blank">Using Multi-Factor Authentication (MFA) Devices with
      * AWS</a> in <i>Using IAM</i>.
      * <p>
@@ -78,7 +78,7 @@ public class GetSessionTokenRequest extends AmazonWebServiceRequest  implements 
      * credentials, the user will receive an "access denied" response when
      * requesting resources that require MFA authentication. For more
      * information, see <a
-     * ocs.amazonwebservices.com/IAM/latest/UserGuide/Using_ManagingMFA.html"
+     * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/Using_ManagingMFA.html"
      * target="_blank">Using Multi-Factor Authentication (MFA) Devices with
      * AWS</a> in <i>Using IAM</i>.
      * <p>
@@ -179,7 +179,7 @@ public class GetSessionTokenRequest extends AmazonWebServiceRequest  implements 
      * is the device serial number for a hardware device (usually the number
      * from the back of the device), such as <code>GAHT12345678</code>. For
      * more information, see <a
-     * ocs.amazonwebservices.com/IAM/latest/UserGuide/Using_ManagingMFA.html"
+     * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/Using_ManagingMFA.html"
      * target="_blank">Using Multi-Factor Authentication (MFA) Devices with
      * AWS</a> in <i>Using IAM</i>.
      * <p>
@@ -198,7 +198,7 @@ public class GetSessionTokenRequest extends AmazonWebServiceRequest  implements 
      *         is the device serial number for a hardware device (usually the number
      *         from the back of the device), such as <code>GAHT12345678</code>. For
      *         more information, see <a
-     *         ocs.amazonwebservices.com/IAM/latest/UserGuide/Using_ManagingMFA.html"
+     *         href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/Using_ManagingMFA.html"
      *         target="_blank">Using Multi-Factor Authentication (MFA) Devices with
      *         AWS</a> in <i>Using IAM</i>.
      */
@@ -218,7 +218,7 @@ public class GetSessionTokenRequest extends AmazonWebServiceRequest  implements 
      * is the device serial number for a hardware device (usually the number
      * from the back of the device), such as <code>GAHT12345678</code>. For
      * more information, see <a
-     * ocs.amazonwebservices.com/IAM/latest/UserGuide/Using_ManagingMFA.html"
+     * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/Using_ManagingMFA.html"
      * target="_blank">Using Multi-Factor Authentication (MFA) Devices with
      * AWS</a> in <i>Using IAM</i>.
      * <p>
@@ -237,7 +237,7 @@ public class GetSessionTokenRequest extends AmazonWebServiceRequest  implements 
      *         is the device serial number for a hardware device (usually the number
      *         from the back of the device), such as <code>GAHT12345678</code>. For
      *         more information, see <a
-     *         ocs.amazonwebservices.com/IAM/latest/UserGuide/Using_ManagingMFA.html"
+     *         href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/Using_ManagingMFA.html"
      *         target="_blank">Using Multi-Factor Authentication (MFA) Devices with
      *         AWS</a> in <i>Using IAM</i>.
      */
@@ -257,7 +257,7 @@ public class GetSessionTokenRequest extends AmazonWebServiceRequest  implements 
      * is the device serial number for a hardware device (usually the number
      * from the back of the device), such as <code>GAHT12345678</code>. For
      * more information, see <a
-     * ocs.amazonwebservices.com/IAM/latest/UserGuide/Using_ManagingMFA.html"
+     * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/Using_ManagingMFA.html"
      * target="_blank">Using Multi-Factor Authentication (MFA) Devices with
      * AWS</a> in <i>Using IAM</i>.
      * <p>
@@ -278,7 +278,7 @@ public class GetSessionTokenRequest extends AmazonWebServiceRequest  implements 
      *         is the device serial number for a hardware device (usually the number
      *         from the back of the device), such as <code>GAHT12345678</code>. For
      *         more information, see <a
-     *         ocs.amazonwebservices.com/IAM/latest/UserGuide/Using_ManagingMFA.html"
+     *         href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/Using_ManagingMFA.html"
      *         target="_blank">Using Multi-Factor Authentication (MFA) Devices with
      *         AWS</a> in <i>Using IAM</i>.
      *
@@ -300,7 +300,7 @@ public class GetSessionTokenRequest extends AmazonWebServiceRequest  implements 
      * credentials, the user will receive an "access denied" response when
      * requesting resources that require MFA authentication. For more
      * information, see <a
-     * ocs.amazonwebservices.com/IAM/latest/UserGuide/Using_ManagingMFA.html"
+     * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/Using_ManagingMFA.html"
      * target="_blank">Using Multi-Factor Authentication (MFA) Devices with
      * AWS</a> in <i>Using IAM</i>.
      * <p>
@@ -316,7 +316,7 @@ public class GetSessionTokenRequest extends AmazonWebServiceRequest  implements 
      *         credentials, the user will receive an "access denied" response when
      *         requesting resources that require MFA authentication. For more
      *         information, see <a
-     *         ocs.amazonwebservices.com/IAM/latest/UserGuide/Using_ManagingMFA.html"
+     *         href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/Using_ManagingMFA.html"
      *         target="_blank">Using Multi-Factor Authentication (MFA) Devices with
      *         AWS</a> in <i>Using IAM</i>.
      */
@@ -333,7 +333,7 @@ public class GetSessionTokenRequest extends AmazonWebServiceRequest  implements 
      * credentials, the user will receive an "access denied" response when
      * requesting resources that require MFA authentication. For more
      * information, see <a
-     * ocs.amazonwebservices.com/IAM/latest/UserGuide/Using_ManagingMFA.html"
+     * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/Using_ManagingMFA.html"
      * target="_blank">Using Multi-Factor Authentication (MFA) Devices with
      * AWS</a> in <i>Using IAM</i>.
      * <p>
@@ -349,7 +349,7 @@ public class GetSessionTokenRequest extends AmazonWebServiceRequest  implements 
      *         credentials, the user will receive an "access denied" response when
      *         requesting resources that require MFA authentication. For more
      *         information, see <a
-     *         ocs.amazonwebservices.com/IAM/latest/UserGuide/Using_ManagingMFA.html"
+     *         href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/Using_ManagingMFA.html"
      *         target="_blank">Using Multi-Factor Authentication (MFA) Devices with
      *         AWS</a> in <i>Using IAM</i>.
      */
@@ -366,7 +366,7 @@ public class GetSessionTokenRequest extends AmazonWebServiceRequest  implements 
      * credentials, the user will receive an "access denied" response when
      * requesting resources that require MFA authentication. For more
      * information, see <a
-     * ocs.amazonwebservices.com/IAM/latest/UserGuide/Using_ManagingMFA.html"
+     * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/Using_ManagingMFA.html"
      * target="_blank">Using Multi-Factor Authentication (MFA) Devices with
      * AWS</a> in <i>Using IAM</i>.
      * <p>
@@ -384,7 +384,7 @@ public class GetSessionTokenRequest extends AmazonWebServiceRequest  implements 
      *         credentials, the user will receive an "access denied" response when
      *         requesting resources that require MFA authentication. For more
      *         information, see <a
-     *         ocs.amazonwebservices.com/IAM/latest/UserGuide/Using_ManagingMFA.html"
+     *         href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/Using_ManagingMFA.html"
      *         target="_blank">Using Multi-Factor Authentication (MFA) Devices with
      *         AWS</a> in <i>Using IAM</i>.
      *
@@ -408,10 +408,10 @@ public class GetSessionTokenRequest extends AmazonWebServiceRequest  implements 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getDurationSeconds() != null) sb.append("DurationSeconds: " + getDurationSeconds() + ", ");
-        if (getSerialNumber() != null) sb.append("SerialNumber: " + getSerialNumber() + ", ");
-        if (getTokenCode() != null) sb.append("TokenCode: " + getTokenCode() + ", ");
+        sb.append("{");    	
+        if (getDurationSeconds() != null) sb.append("DurationSeconds: " + getDurationSeconds() + ",");    	
+        if (getSerialNumber() != null) sb.append("SerialNumber: " + getSerialNumber() + ",");    	
+        if (getTokenCode() != null) sb.append("TokenCode: " + getTokenCode() );
         sb.append("}");
         return sb.toString();
     }

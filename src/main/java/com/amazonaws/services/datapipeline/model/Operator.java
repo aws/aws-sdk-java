@@ -396,9 +396,9 @@ public class Operator  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getType() != null) sb.append("Type: " + getType() + ", ");
-        if (getValues() != null) sb.append("Values: " + getValues() + ", ");
+        sb.append("{");    	
+        if (getType() != null) sb.append("Type: " + getType() + ",");    	
+        if (getValues() != null) sb.append("Values: " + getValues() );
         sb.append("}");
         return sb.toString();
     }

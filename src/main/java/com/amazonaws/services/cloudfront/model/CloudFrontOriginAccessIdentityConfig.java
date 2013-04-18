@@ -218,9 +218,9 @@ public class CloudFrontOriginAccessIdentityConfig  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getCallerReference() != null) sb.append("CallerReference: " + getCallerReference() + ", ");
-        if (getComment() != null) sb.append("Comment: " + getComment() + ", ");
+        sb.append("{");    	
+        if (getCallerReference() != null) sb.append("CallerReference: " + getCallerReference() + ",");    	
+        if (getComment() != null) sb.append("Comment: " + getComment() );
         sb.append("}");
         return sb.toString();
     }

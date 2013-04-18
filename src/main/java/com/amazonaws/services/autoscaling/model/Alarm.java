@@ -143,9 +143,9 @@ public class Alarm  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getAlarmName() != null) sb.append("AlarmName: " + getAlarmName() + ", ");
-        if (getAlarmARN() != null) sb.append("AlarmARN: " + getAlarmARN() + ", ");
+        sb.append("{");    	
+        if (getAlarmName() != null) sb.append("AlarmName: " + getAlarmName() + ",");    	
+        if (getAlarmARN() != null) sb.append("AlarmARN: " + getAlarmARN() );
         sb.append("}");
         return sb.toString();
     }

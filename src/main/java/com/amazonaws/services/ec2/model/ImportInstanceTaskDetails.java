@@ -210,11 +210,11 @@ public class ImportInstanceTaskDetails  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getVolumes() != null) sb.append("Volumes: " + getVolumes() + ", ");
-        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ", ");
-        if (getPlatform() != null) sb.append("Platform: " + getPlatform() + ", ");
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ", ");
+        sb.append("{");    	
+        if (getVolumes() != null) sb.append("Volumes: " + getVolumes() + ",");    	
+        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ",");    	
+        if (getPlatform() != null) sb.append("Platform: " + getPlatform() + ",");    	
+        if (getDescription() != null) sb.append("Description: " + getDescription() );
         sb.append("}");
         return sb.toString();
     }

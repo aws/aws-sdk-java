@@ -96,8 +96,8 @@ public class CreateDistributionRequest extends AmazonWebServiceRequest  implemen
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getDistributionConfig() != null) sb.append("DistributionConfig: " + getDistributionConfig() + ", ");
+        sb.append("{");    	
+        if (getDistributionConfig() != null) sb.append("DistributionConfig: " + getDistributionConfig() );
         sb.append("}");
         return sb.toString();
     }

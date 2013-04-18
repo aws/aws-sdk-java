@@ -116,8 +116,8 @@ public class DescribeTimeBasedAutoScalingResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getTimeBasedAutoScalingConfigurations() != null) sb.append("TimeBasedAutoScalingConfigurations: " + getTimeBasedAutoScalingConfigurations() + ", ");
+        sb.append("{");    	
+        if (getTimeBasedAutoScalingConfigurations() != null) sb.append("TimeBasedAutoScalingConfigurations: " + getTimeBasedAutoScalingConfigurations() );
         sb.append("}");
         return sb.toString();
     }

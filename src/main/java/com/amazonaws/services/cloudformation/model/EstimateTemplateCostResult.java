@@ -79,8 +79,8 @@ public class EstimateTemplateCostResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getUrl() != null) sb.append("Url: " + getUrl() + ", ");
+        sb.append("{");    	
+        if (getUrl() != null) sb.append("Url: " + getUrl() );
         sb.append("}");
         return sb.toString();
     }

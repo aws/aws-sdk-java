@@ -79,8 +79,8 @@ public class SendRawEmailResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getMessageId() != null) sb.append("MessageId: " + getMessageId() + ", ");
+        sb.append("{");    	
+        if (getMessageId() != null) sb.append("MessageId: " + getMessageId() );
         sb.append("}");
         return sb.toString();
     }

@@ -107,8 +107,8 @@ public class DescribePipelinesResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getPipelineDescriptionList() != null) sb.append("PipelineDescriptionList: " + getPipelineDescriptionList() + ", ");
+        sb.append("{");    	
+        if (getPipelineDescriptionList() != null) sb.append("PipelineDescriptionList: " + getPipelineDescriptionList() );
         sb.append("}");
         return sb.toString();
     }

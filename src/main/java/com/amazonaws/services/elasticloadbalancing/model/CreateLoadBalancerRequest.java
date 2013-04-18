@@ -555,13 +555,13 @@ public class CreateLoadBalancerRequest extends AmazonWebServiceRequest  implemen
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getLoadBalancerName() != null) sb.append("LoadBalancerName: " + getLoadBalancerName() + ", ");
-        if (getListeners() != null) sb.append("Listeners: " + getListeners() + ", ");
-        if (getAvailabilityZones() != null) sb.append("AvailabilityZones: " + getAvailabilityZones() + ", ");
-        if (getSubnets() != null) sb.append("Subnets: " + getSubnets() + ", ");
-        if (getSecurityGroups() != null) sb.append("SecurityGroups: " + getSecurityGroups() + ", ");
-        if (getScheme() != null) sb.append("Scheme: " + getScheme() + ", ");
+        sb.append("{");    	
+        if (getLoadBalancerName() != null) sb.append("LoadBalancerName: " + getLoadBalancerName() + ",");    	
+        if (getListeners() != null) sb.append("Listeners: " + getListeners() + ",");    	
+        if (getAvailabilityZones() != null) sb.append("AvailabilityZones: " + getAvailabilityZones() + ",");    	
+        if (getSubnets() != null) sb.append("Subnets: " + getSubnets() + ",");    	
+        if (getSecurityGroups() != null) sb.append("SecurityGroups: " + getSecurityGroups() + ",");    	
+        if (getScheme() != null) sb.append("Scheme: " + getScheme() );
         sb.append("}");
         return sb.toString();
     }

@@ -116,9 +116,9 @@ public class DetachNetworkInterfaceRequest extends AmazonWebServiceRequest  impl
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getAttachmentId() != null) sb.append("AttachmentId: " + getAttachmentId() + ", ");
-        if (isForce() != null) sb.append("Force: " + isForce() + ", ");
+        sb.append("{");    	
+        if (getAttachmentId() != null) sb.append("AttachmentId: " + getAttachmentId() + ",");    	
+        if (isForce() != null) sb.append("Force: " + isForce() );
         sb.append("}");
         return sb.toString();
     }

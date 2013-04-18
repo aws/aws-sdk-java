@@ -517,17 +517,17 @@ public class Snapshot  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getSnapshotId() != null) sb.append("SnapshotId: " + getSnapshotId() + ", ");
-        if (getVolumeId() != null) sb.append("VolumeId: " + getVolumeId() + ", ");
-        if (getState() != null) sb.append("State: " + getState() + ", ");
-        if (getStartTime() != null) sb.append("StartTime: " + getStartTime() + ", ");
-        if (getProgress() != null) sb.append("Progress: " + getProgress() + ", ");
-        if (getOwnerId() != null) sb.append("OwnerId: " + getOwnerId() + ", ");
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ", ");
-        if (getVolumeSize() != null) sb.append("VolumeSize: " + getVolumeSize() + ", ");
-        if (getOwnerAlias() != null) sb.append("OwnerAlias: " + getOwnerAlias() + ", ");
-        if (getTags() != null) sb.append("Tags: " + getTags() + ", ");
+        sb.append("{");    	
+        if (getSnapshotId() != null) sb.append("SnapshotId: " + getSnapshotId() + ",");    	
+        if (getVolumeId() != null) sb.append("VolumeId: " + getVolumeId() + ",");    	
+        if (getState() != null) sb.append("State: " + getState() + ",");    	
+        if (getStartTime() != null) sb.append("StartTime: " + getStartTime() + ",");    	
+        if (getProgress() != null) sb.append("Progress: " + getProgress() + ",");    	
+        if (getOwnerId() != null) sb.append("OwnerId: " + getOwnerId() + ",");    	
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");    	
+        if (getVolumeSize() != null) sb.append("VolumeSize: " + getVolumeSize() + ",");    	
+        if (getOwnerAlias() != null) sb.append("OwnerAlias: " + getOwnerAlias() + ",");    	
+        if (getTags() != null) sb.append("Tags: " + getTags() );
         sb.append("}");
         return sb.toString();
     }

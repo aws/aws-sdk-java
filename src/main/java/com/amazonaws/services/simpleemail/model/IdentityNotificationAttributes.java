@@ -215,10 +215,10 @@ public class IdentityNotificationAttributes  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getBounceTopic() != null) sb.append("BounceTopic: " + getBounceTopic() + ", ");
-        if (getComplaintTopic() != null) sb.append("ComplaintTopic: " + getComplaintTopic() + ", ");
-        if (isForwardingEnabled() != null) sb.append("ForwardingEnabled: " + isForwardingEnabled() + ", ");
+        sb.append("{");    	
+        if (getBounceTopic() != null) sb.append("BounceTopic: " + getBounceTopic() + ",");    	
+        if (getComplaintTopic() != null) sb.append("ComplaintTopic: " + getComplaintTopic() + ",");    	
+        if (isForwardingEnabled() != null) sb.append("ForwardingEnabled: " + isForwardingEnabled() );
         sb.append("}");
         return sb.toString();
     }

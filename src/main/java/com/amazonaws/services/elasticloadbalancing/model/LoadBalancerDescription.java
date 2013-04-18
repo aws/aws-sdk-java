@@ -36,7 +36,7 @@ public class LoadBalancerDescription  implements Serializable  {
      * Provides the name of the Amazon Route 53 hosted zone that is
      * associated with the LoadBalancer. For information on how to associate
      * your load balancer with a hosted zone, go to <a
-     * alancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using
+     * href="http://docs.amazonwebservices.com/ElasticLoadBalancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using
      * Domain Names With Elastic Load Balancing</a> in the <i>Elastic Load
      * Balancing Developer Guide</i>.
      */
@@ -46,7 +46,7 @@ public class LoadBalancerDescription  implements Serializable  {
      * Provides the ID of the Amazon Route 53 hosted zone name that is
      * associated with the LoadBalancer. For information on how to associate
      * or disassociate your load balancer with a hosted zone, go to <a
-     * alancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using
+     * href="http://docs.amazonwebservices.com/ElasticLoadBalancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using
      * Domain Names With Elastic Load Balancing</a> in the <i>Elastic Load
      * Balancing Developer Guide</i>.
      */
@@ -202,14 +202,14 @@ public class LoadBalancerDescription  implements Serializable  {
      * Provides the name of the Amazon Route 53 hosted zone that is
      * associated with the LoadBalancer. For information on how to associate
      * your load balancer with a hosted zone, go to <a
-     * alancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using
+     * href="http://docs.amazonwebservices.com/ElasticLoadBalancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using
      * Domain Names With Elastic Load Balancing</a> in the <i>Elastic Load
      * Balancing Developer Guide</i>.
      *
      * @return Provides the name of the Amazon Route 53 hosted zone that is
      *         associated with the LoadBalancer. For information on how to associate
      *         your load balancer with a hosted zone, go to <a
-     *         alancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using
+     *         href="http://docs.amazonwebservices.com/ElasticLoadBalancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using
      *         Domain Names With Elastic Load Balancing</a> in the <i>Elastic Load
      *         Balancing Developer Guide</i>.
      */
@@ -221,14 +221,14 @@ public class LoadBalancerDescription  implements Serializable  {
      * Provides the name of the Amazon Route 53 hosted zone that is
      * associated with the LoadBalancer. For information on how to associate
      * your load balancer with a hosted zone, go to <a
-     * alancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using
+     * href="http://docs.amazonwebservices.com/ElasticLoadBalancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using
      * Domain Names With Elastic Load Balancing</a> in the <i>Elastic Load
      * Balancing Developer Guide</i>.
      *
      * @param canonicalHostedZoneName Provides the name of the Amazon Route 53 hosted zone that is
      *         associated with the LoadBalancer. For information on how to associate
      *         your load balancer with a hosted zone, go to <a
-     *         alancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using
+     *         href="http://docs.amazonwebservices.com/ElasticLoadBalancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using
      *         Domain Names With Elastic Load Balancing</a> in the <i>Elastic Load
      *         Balancing Developer Guide</i>.
      */
@@ -240,7 +240,7 @@ public class LoadBalancerDescription  implements Serializable  {
      * Provides the name of the Amazon Route 53 hosted zone that is
      * associated with the LoadBalancer. For information on how to associate
      * your load balancer with a hosted zone, go to <a
-     * alancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using
+     * href="http://docs.amazonwebservices.com/ElasticLoadBalancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using
      * Domain Names With Elastic Load Balancing</a> in the <i>Elastic Load
      * Balancing Developer Guide</i>.
      * <p>
@@ -249,7 +249,7 @@ public class LoadBalancerDescription  implements Serializable  {
      * @param canonicalHostedZoneName Provides the name of the Amazon Route 53 hosted zone that is
      *         associated with the LoadBalancer. For information on how to associate
      *         your load balancer with a hosted zone, go to <a
-     *         alancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using
+     *         href="http://docs.amazonwebservices.com/ElasticLoadBalancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using
      *         Domain Names With Elastic Load Balancing</a> in the <i>Elastic Load
      *         Balancing Developer Guide</i>.
      *
@@ -266,14 +266,14 @@ public class LoadBalancerDescription  implements Serializable  {
      * Provides the ID of the Amazon Route 53 hosted zone name that is
      * associated with the LoadBalancer. For information on how to associate
      * or disassociate your load balancer with a hosted zone, go to <a
-     * alancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using
+     * href="http://docs.amazonwebservices.com/ElasticLoadBalancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using
      * Domain Names With Elastic Load Balancing</a> in the <i>Elastic Load
      * Balancing Developer Guide</i>.
      *
      * @return Provides the ID of the Amazon Route 53 hosted zone name that is
      *         associated with the LoadBalancer. For information on how to associate
      *         or disassociate your load balancer with a hosted zone, go to <a
-     *         alancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using
+     *         href="http://docs.amazonwebservices.com/ElasticLoadBalancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using
      *         Domain Names With Elastic Load Balancing</a> in the <i>Elastic Load
      *         Balancing Developer Guide</i>.
      */
@@ -285,14 +285,14 @@ public class LoadBalancerDescription  implements Serializable  {
      * Provides the ID of the Amazon Route 53 hosted zone name that is
      * associated with the LoadBalancer. For information on how to associate
      * or disassociate your load balancer with a hosted zone, go to <a
-     * alancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using
+     * href="http://docs.amazonwebservices.com/ElasticLoadBalancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using
      * Domain Names With Elastic Load Balancing</a> in the <i>Elastic Load
      * Balancing Developer Guide</i>.
      *
      * @param canonicalHostedZoneNameID Provides the ID of the Amazon Route 53 hosted zone name that is
      *         associated with the LoadBalancer. For information on how to associate
      *         or disassociate your load balancer with a hosted zone, go to <a
-     *         alancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using
+     *         href="http://docs.amazonwebservices.com/ElasticLoadBalancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using
      *         Domain Names With Elastic Load Balancing</a> in the <i>Elastic Load
      *         Balancing Developer Guide</i>.
      */
@@ -304,7 +304,7 @@ public class LoadBalancerDescription  implements Serializable  {
      * Provides the ID of the Amazon Route 53 hosted zone name that is
      * associated with the LoadBalancer. For information on how to associate
      * or disassociate your load balancer with a hosted zone, go to <a
-     * alancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using
+     * href="http://docs.amazonwebservices.com/ElasticLoadBalancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using
      * Domain Names With Elastic Load Balancing</a> in the <i>Elastic Load
      * Balancing Developer Guide</i>.
      * <p>
@@ -313,7 +313,7 @@ public class LoadBalancerDescription  implements Serializable  {
      * @param canonicalHostedZoneNameID Provides the ID of the Amazon Route 53 hosted zone name that is
      *         associated with the LoadBalancer. For information on how to associate
      *         or disassociate your load balancer with a hosted zone, go to <a
-     *         alancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using
+     *         href="http://docs.amazonwebservices.com/ElasticLoadBalancing/latest/DeveloperGuide/using-domain-names-with-elb.html">Using
      *         Domain Names With Elastic Load Balancing</a> in the <i>Elastic Load
      *         Balancing Developer Guide</i>.
      *
@@ -1031,23 +1031,23 @@ public class LoadBalancerDescription  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getLoadBalancerName() != null) sb.append("LoadBalancerName: " + getLoadBalancerName() + ", ");
-        if (getDNSName() != null) sb.append("DNSName: " + getDNSName() + ", ");
-        if (getCanonicalHostedZoneName() != null) sb.append("CanonicalHostedZoneName: " + getCanonicalHostedZoneName() + ", ");
-        if (getCanonicalHostedZoneNameID() != null) sb.append("CanonicalHostedZoneNameID: " + getCanonicalHostedZoneNameID() + ", ");
-        if (getListenerDescriptions() != null) sb.append("ListenerDescriptions: " + getListenerDescriptions() + ", ");
-        if (getPolicies() != null) sb.append("Policies: " + getPolicies() + ", ");
-        if (getBackendServerDescriptions() != null) sb.append("BackendServerDescriptions: " + getBackendServerDescriptions() + ", ");
-        if (getAvailabilityZones() != null) sb.append("AvailabilityZones: " + getAvailabilityZones() + ", ");
-        if (getSubnets() != null) sb.append("Subnets: " + getSubnets() + ", ");
-        if (getVPCId() != null) sb.append("VPCId: " + getVPCId() + ", ");
-        if (getInstances() != null) sb.append("Instances: " + getInstances() + ", ");
-        if (getHealthCheck() != null) sb.append("HealthCheck: " + getHealthCheck() + ", ");
-        if (getSourceSecurityGroup() != null) sb.append("SourceSecurityGroup: " + getSourceSecurityGroup() + ", ");
-        if (getSecurityGroups() != null) sb.append("SecurityGroups: " + getSecurityGroups() + ", ");
-        if (getCreatedTime() != null) sb.append("CreatedTime: " + getCreatedTime() + ", ");
-        if (getScheme() != null) sb.append("Scheme: " + getScheme() + ", ");
+        sb.append("{");    	
+        if (getLoadBalancerName() != null) sb.append("LoadBalancerName: " + getLoadBalancerName() + ",");    	
+        if (getDNSName() != null) sb.append("DNSName: " + getDNSName() + ",");    	
+        if (getCanonicalHostedZoneName() != null) sb.append("CanonicalHostedZoneName: " + getCanonicalHostedZoneName() + ",");    	
+        if (getCanonicalHostedZoneNameID() != null) sb.append("CanonicalHostedZoneNameID: " + getCanonicalHostedZoneNameID() + ",");    	
+        if (getListenerDescriptions() != null) sb.append("ListenerDescriptions: " + getListenerDescriptions() + ",");    	
+        if (getPolicies() != null) sb.append("Policies: " + getPolicies() + ",");    	
+        if (getBackendServerDescriptions() != null) sb.append("BackendServerDescriptions: " + getBackendServerDescriptions() + ",");    	
+        if (getAvailabilityZones() != null) sb.append("AvailabilityZones: " + getAvailabilityZones() + ",");    	
+        if (getSubnets() != null) sb.append("Subnets: " + getSubnets() + ",");    	
+        if (getVPCId() != null) sb.append("VPCId: " + getVPCId() + ",");    	
+        if (getInstances() != null) sb.append("Instances: " + getInstances() + ",");    	
+        if (getHealthCheck() != null) sb.append("HealthCheck: " + getHealthCheck() + ",");    	
+        if (getSourceSecurityGroup() != null) sb.append("SourceSecurityGroup: " + getSourceSecurityGroup() + ",");    	
+        if (getSecurityGroups() != null) sb.append("SecurityGroups: " + getSecurityGroups() + ",");    	
+        if (getCreatedTime() != null) sb.append("CreatedTime: " + getCreatedTime() + ",");    	
+        if (getScheme() != null) sb.append("Scheme: " + getScheme() );
         sb.append("}");
         return sb.toString();
     }

@@ -153,9 +153,9 @@ public class ImportKeyPairRequest extends AmazonWebServiceRequest  implements Se
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getKeyName() != null) sb.append("KeyName: " + getKeyName() + ", ");
-        if (getPublicKeyMaterial() != null) sb.append("PublicKeyMaterial: " + getPublicKeyMaterial() + ", ");
+        sb.append("{");    	
+        if (getKeyName() != null) sb.append("KeyName: " + getKeyName() + ",");    	
+        if (getPublicKeyMaterial() != null) sb.append("PublicKeyMaterial: " + getPublicKeyMaterial() );
         sb.append("}");
         return sb.toString();
     }

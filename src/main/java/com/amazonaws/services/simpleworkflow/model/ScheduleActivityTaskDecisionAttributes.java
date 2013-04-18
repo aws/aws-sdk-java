@@ -864,16 +864,16 @@ public class ScheduleActivityTaskDecisionAttributes  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getActivityType() != null) sb.append("ActivityType: " + getActivityType() + ", ");
-        if (getActivityId() != null) sb.append("ActivityId: " + getActivityId() + ", ");
-        if (getControl() != null) sb.append("Control: " + getControl() + ", ");
-        if (getInput() != null) sb.append("Input: " + getInput() + ", ");
-        if (getScheduleToCloseTimeout() != null) sb.append("ScheduleToCloseTimeout: " + getScheduleToCloseTimeout() + ", ");
-        if (getTaskList() != null) sb.append("TaskList: " + getTaskList() + ", ");
-        if (getScheduleToStartTimeout() != null) sb.append("ScheduleToStartTimeout: " + getScheduleToStartTimeout() + ", ");
-        if (getStartToCloseTimeout() != null) sb.append("StartToCloseTimeout: " + getStartToCloseTimeout() + ", ");
-        if (getHeartbeatTimeout() != null) sb.append("HeartbeatTimeout: " + getHeartbeatTimeout() + ", ");
+        sb.append("{");    	
+        if (getActivityType() != null) sb.append("ActivityType: " + getActivityType() + ",");    	
+        if (getActivityId() != null) sb.append("ActivityId: " + getActivityId() + ",");    	
+        if (getControl() != null) sb.append("Control: " + getControl() + ",");    	
+        if (getInput() != null) sb.append("Input: " + getInput() + ",");    	
+        if (getScheduleToCloseTimeout() != null) sb.append("ScheduleToCloseTimeout: " + getScheduleToCloseTimeout() + ",");    	
+        if (getTaskList() != null) sb.append("TaskList: " + getTaskList() + ",");    	
+        if (getScheduleToStartTimeout() != null) sb.append("ScheduleToStartTimeout: " + getScheduleToStartTimeout() + ",");    	
+        if (getStartToCloseTimeout() != null) sb.append("StartToCloseTimeout: " + getStartToCloseTimeout() + ",");    	
+        if (getHeartbeatTimeout() != null) sb.append("HeartbeatTimeout: " + getHeartbeatTimeout() );
         sb.append("}");
         return sb.toString();
     }

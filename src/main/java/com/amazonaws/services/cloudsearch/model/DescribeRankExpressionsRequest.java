@@ -204,9 +204,9 @@ public class DescribeRankExpressionsRequest extends AmazonWebServiceRequest  imp
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getDomainName() != null) sb.append("DomainName: " + getDomainName() + ", ");
-        if (getRankNames() != null) sb.append("RankNames: " + getRankNames() + ", ");
+        sb.append("{");    	
+        if (getDomainName() != null) sb.append("DomainName: " + getDomainName() + ",");    	
+        if (getRankNames() != null) sb.append("RankNames: " + getRankNames() );
         sb.append("}");
         return sb.toString();
     }

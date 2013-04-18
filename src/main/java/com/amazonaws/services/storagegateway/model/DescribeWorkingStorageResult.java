@@ -299,11 +299,11 @@ public class DescribeWorkingStorageResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getGatewayARN() != null) sb.append("GatewayARN: " + getGatewayARN() + ", ");
-        if (getDiskIds() != null) sb.append("DiskIds: " + getDiskIds() + ", ");
-        if (getWorkingStorageUsedInBytes() != null) sb.append("WorkingStorageUsedInBytes: " + getWorkingStorageUsedInBytes() + ", ");
-        if (getWorkingStorageAllocatedInBytes() != null) sb.append("WorkingStorageAllocatedInBytes: " + getWorkingStorageAllocatedInBytes() + ", ");
+        sb.append("{");    	
+        if (getGatewayARN() != null) sb.append("GatewayARN: " + getGatewayARN() + ",");    	
+        if (getDiskIds() != null) sb.append("DiskIds: " + getDiskIds() + ",");    	
+        if (getWorkingStorageUsedInBytes() != null) sb.append("WorkingStorageUsedInBytes: " + getWorkingStorageUsedInBytes() + ",");    	
+        if (getWorkingStorageAllocatedInBytes() != null) sb.append("WorkingStorageAllocatedInBytes: " + getWorkingStorageAllocatedInBytes() );
         sb.append("}");
         return sb.toString();
     }

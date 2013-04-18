@@ -195,9 +195,9 @@ public class UpdateSynonymOptionsRequest extends AmazonWebServiceRequest  implem
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getDomainName() != null) sb.append("DomainName: " + getDomainName() + ", ");
-        if (getSynonyms() != null) sb.append("Synonyms: " + getSynonyms() + ", ");
+        sb.append("{");    	
+        if (getDomainName() != null) sb.append("DomainName: " + getDomainName() + ",");    	
+        if (getSynonyms() != null) sb.append("Synonyms: " + getSynonyms() );
         sb.append("}");
         return sb.toString();
     }

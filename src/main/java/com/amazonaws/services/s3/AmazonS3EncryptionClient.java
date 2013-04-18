@@ -432,15 +432,22 @@ public class AmazonS3EncryptionClient extends AmazonS3Client {
                 objectToBeReturned = decryptObjectUsingMetadata(retrievedObject);
             } else {
                 // Check if encrypted info is in an instruction file
-                S3Object instructionFile = getInstructionFile(getObjectRequest);
-                if (EncryptionUtils.isEncryptionInfoInInstructionFile(instructionFile)) {
-                    objectToBeReturned = decryptObjectUsingInstructionFile(retrievedObject, instructionFile);
-                } else {
-                    // The object was not encrypted to begin with.  Return the object without decrypting it.
-                    log.warn(String.format("Unable to detect encryption information for object '%s' in bucket '%s'. " +
-                            "Returning object without decryption.",
-                            retrievedObject.getKey(), retrievedObject.getBucketName()));
-                    objectToBeReturned = retrievedObject;
+                S3Object instructionFile = null;
+                try {
+                    instructionFile = getInstructionFile(getObjectRequest);
+                    if (EncryptionUtils.isEncryptionInfoInInstructionFile(instructionFile)) {
+                        objectToBeReturned = decryptObjectUsingInstructionFile(retrievedObject, instructionFile);
+                    } else {
+                        // The object was not encrypted to begin with.  Return the object without decrypting it.
+                        log.warn(String.format("Unable to detect encryption information for object '%s' in bucket '%s'. " +
+                                "Returning object without decryption.",
+                                retrievedObject.getKey(), retrievedObject.getBucketName()));
+                        objectToBeReturned = retrievedObject;
+                    }
+                } finally {
+                    if (instructionFile != null) {
+                        try { instructionFile.getObjectContent().close();} catch (Exception e) {}
+                    }
                 }
             }
         } catch (AmazonClientException ace) {

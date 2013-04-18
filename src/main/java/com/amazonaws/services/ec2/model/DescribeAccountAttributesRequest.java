@@ -106,8 +106,8 @@ public class DescribeAccountAttributesRequest extends AmazonWebServiceRequest  i
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getAttributeNames() != null) sb.append("AttributeNames: " + getAttributeNames() + ", ");
+        sb.append("{");    	
+        if (getAttributeNames() != null) sb.append("AttributeNames: " + getAttributeNames() );
         sb.append("}");
         return sb.toString();
     }

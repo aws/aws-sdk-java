@@ -83,8 +83,8 @@ public class DeleteEventSubscriptionRequest extends AmazonWebServiceRequest  imp
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getSubscriptionName() != null) sb.append("SubscriptionName: " + getSubscriptionName() + ", ");
+        sb.append("{");    	
+        if (getSubscriptionName() != null) sb.append("SubscriptionName: " + getSubscriptionName() );
         sb.append("}");
         return sb.toString();
     }

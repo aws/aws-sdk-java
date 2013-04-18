@@ -155,9 +155,9 @@ public class DescribeOrderableClusterOptionsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getOrderableClusterOptions() != null) sb.append("OrderableClusterOptions: " + getOrderableClusterOptions() + ", ");
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ", ");
+        sb.append("{");    	
+        if (getOrderableClusterOptions() != null) sb.append("OrderableClusterOptions: " + getOrderableClusterOptions() + ",");    	
+        if (getMarker() != null) sb.append("Marker: " + getMarker() );
         sb.append("}");
         return sb.toString();
     }

@@ -189,9 +189,9 @@ public class GetQueueAttributesRequest extends AmazonWebServiceRequest  implemen
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getQueueUrl() != null) sb.append("QueueUrl: " + getQueueUrl() + ", ");
-        if (getAttributeNames() != null) sb.append("AttributeNames: " + getAttributeNames() + ", ");
+        sb.append("{");    	
+        if (getQueueUrl() != null) sb.append("QueueUrl: " + getQueueUrl() + ",");    	
+        if (getAttributeNames() != null) sb.append("AttributeNames: " + getAttributeNames() );
         sb.append("}");
         return sb.toString();
     }

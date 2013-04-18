@@ -1007,18 +1007,18 @@ public class ConfigurationOptionDescription  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getNamespace() != null) sb.append("Namespace: " + getNamespace() + ", ");
-        if (getName() != null) sb.append("Name: " + getName() + ", ");
-        if (getDefaultValue() != null) sb.append("DefaultValue: " + getDefaultValue() + ", ");
-        if (getChangeSeverity() != null) sb.append("ChangeSeverity: " + getChangeSeverity() + ", ");
-        if (isUserDefined() != null) sb.append("UserDefined: " + isUserDefined() + ", ");
-        if (getValueType() != null) sb.append("ValueType: " + getValueType() + ", ");
-        if (getValueOptions() != null) sb.append("ValueOptions: " + getValueOptions() + ", ");
-        if (getMinValue() != null) sb.append("MinValue: " + getMinValue() + ", ");
-        if (getMaxValue() != null) sb.append("MaxValue: " + getMaxValue() + ", ");
-        if (getMaxLength() != null) sb.append("MaxLength: " + getMaxLength() + ", ");
-        if (getRegex() != null) sb.append("Regex: " + getRegex() + ", ");
+        sb.append("{");    	
+        if (getNamespace() != null) sb.append("Namespace: " + getNamespace() + ",");    	
+        if (getName() != null) sb.append("Name: " + getName() + ",");    	
+        if (getDefaultValue() != null) sb.append("DefaultValue: " + getDefaultValue() + ",");    	
+        if (getChangeSeverity() != null) sb.append("ChangeSeverity: " + getChangeSeverity() + ",");    	
+        if (isUserDefined() != null) sb.append("UserDefined: " + isUserDefined() + ",");    	
+        if (getValueType() != null) sb.append("ValueType: " + getValueType() + ",");    	
+        if (getValueOptions() != null) sb.append("ValueOptions: " + getValueOptions() + ",");    	
+        if (getMinValue() != null) sb.append("MinValue: " + getMinValue() + ",");    	
+        if (getMaxValue() != null) sb.append("MaxValue: " + getMaxValue() + ",");    	
+        if (getMaxLength() != null) sb.append("MaxLength: " + getMaxLength() + ",");    	
+        if (getRegex() != null) sb.append("Regex: " + getRegex() );
         sb.append("}");
         return sb.toString();
     }

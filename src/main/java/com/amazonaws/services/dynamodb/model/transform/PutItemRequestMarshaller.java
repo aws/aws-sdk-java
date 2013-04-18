@@ -37,6 +37,7 @@ import com.amazonaws.util.json.*;
 /**
  * Put Item Request Marshaller
  */
+@Deprecated
 public class PutItemRequestMarshaller implements Marshaller<Request<PutItemRequest>, PutItemRequest> {
 
     

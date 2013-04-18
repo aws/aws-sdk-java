@@ -352,14 +352,14 @@ public class NewPublicVirtualInterface  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getVirtualInterfaceName() != null) sb.append("VirtualInterfaceName: " + getVirtualInterfaceName() + ", ");
-        if (getVlan() != null) sb.append("Vlan: " + getVlan() + ", ");
-        if (getAsn() != null) sb.append("Asn: " + getAsn() + ", ");
-        if (getAuthKey() != null) sb.append("AuthKey: " + getAuthKey() + ", ");
-        if (getAmazonAddress() != null) sb.append("AmazonAddress: " + getAmazonAddress() + ", ");
-        if (getCustomerAddress() != null) sb.append("CustomerAddress: " + getCustomerAddress() + ", ");
-        if (getRouteFilterPrefixes() != null) sb.append("RouteFilterPrefixes: " + getRouteFilterPrefixes() + ", ");
+        sb.append("{");    	
+        if (getVirtualInterfaceName() != null) sb.append("VirtualInterfaceName: " + getVirtualInterfaceName() + ",");    	
+        if (getVlan() != null) sb.append("Vlan: " + getVlan() + ",");    	
+        if (getAsn() != null) sb.append("Asn: " + getAsn() + ",");    	
+        if (getAuthKey() != null) sb.append("AuthKey: " + getAuthKey() + ",");    	
+        if (getAmazonAddress() != null) sb.append("AmazonAddress: " + getAmazonAddress() + ",");    	
+        if (getCustomerAddress() != null) sb.append("CustomerAddress: " + getCustomerAddress() + ",");    	
+        if (getRouteFilterPrefixes() != null) sb.append("RouteFilterPrefixes: " + getRouteFilterPrefixes() );
         sb.append("}");
         return sb.toString();
     }

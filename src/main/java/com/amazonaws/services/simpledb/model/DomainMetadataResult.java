@@ -311,14 +311,14 @@ public class DomainMetadataResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getItemCount() != null) sb.append("ItemCount: " + getItemCount() + ", ");
-        if (getItemNamesSizeBytes() != null) sb.append("ItemNamesSizeBytes: " + getItemNamesSizeBytes() + ", ");
-        if (getAttributeNameCount() != null) sb.append("AttributeNameCount: " + getAttributeNameCount() + ", ");
-        if (getAttributeNamesSizeBytes() != null) sb.append("AttributeNamesSizeBytes: " + getAttributeNamesSizeBytes() + ", ");
-        if (getAttributeValueCount() != null) sb.append("AttributeValueCount: " + getAttributeValueCount() + ", ");
-        if (getAttributeValuesSizeBytes() != null) sb.append("AttributeValuesSizeBytes: " + getAttributeValuesSizeBytes() + ", ");
-        if (getTimestamp() != null) sb.append("Timestamp: " + getTimestamp() + ", ");
+        sb.append("{");    	
+        if (getItemCount() != null) sb.append("ItemCount: " + getItemCount() + ",");    	
+        if (getItemNamesSizeBytes() != null) sb.append("ItemNamesSizeBytes: " + getItemNamesSizeBytes() + ",");    	
+        if (getAttributeNameCount() != null) sb.append("AttributeNameCount: " + getAttributeNameCount() + ",");    	
+        if (getAttributeNamesSizeBytes() != null) sb.append("AttributeNamesSizeBytes: " + getAttributeNamesSizeBytes() + ",");    	
+        if (getAttributeValueCount() != null) sb.append("AttributeValueCount: " + getAttributeValueCount() + ",");    	
+        if (getAttributeValuesSizeBytes() != null) sb.append("AttributeValuesSizeBytes: " + getAttributeValuesSizeBytes() + ",");    	
+        if (getTimestamp() != null) sb.append("Timestamp: " + getTimestamp() );
         sb.append("}");
         return sb.toString();
     }

@@ -22,6 +22,7 @@ import java.io.Serializable;
  * A composite hash-and-range primary key contains two attribute values: a <code>HashKeyElement</code> and a <code>RangeKeyElement</code> .
  * </p>
  */
+@Deprecated
 public class KeySchema  implements Serializable  {
 
     /**

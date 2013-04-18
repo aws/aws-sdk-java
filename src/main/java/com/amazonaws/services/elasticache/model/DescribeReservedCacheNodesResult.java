@@ -146,9 +146,9 @@ public class DescribeReservedCacheNodesResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ", ");
-        if (getReservedCacheNodes() != null) sb.append("ReservedCacheNodes: " + getReservedCacheNodes() + ", ");
+        sb.append("{");    	
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");    	
+        if (getReservedCacheNodes() != null) sb.append("ReservedCacheNodes: " + getReservedCacheNodes() );
         sb.append("}");
         return sb.toString();
     }

@@ -356,11 +356,11 @@ public class DeleteAttributesRequest extends AmazonWebServiceRequest  implements
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getDomainName() != null) sb.append("DomainName: " + getDomainName() + ", ");
-        if (getItemName() != null) sb.append("ItemName: " + getItemName() + ", ");
-        if (getAttributes() != null) sb.append("Attributes: " + getAttributes() + ", ");
-        if (getExpected() != null) sb.append("Expected: " + getExpected() + ", ");
+        sb.append("{");    	
+        if (getDomainName() != null) sb.append("DomainName: " + getDomainName() + ",");    	
+        if (getItemName() != null) sb.append("ItemName: " + getItemName() + ",");    	
+        if (getAttributes() != null) sb.append("Attributes: " + getAttributes() + ",");    	
+        if (getExpected() != null) sb.append("Expected: " + getExpected() );
         sb.append("}");
         return sb.toString();
     }

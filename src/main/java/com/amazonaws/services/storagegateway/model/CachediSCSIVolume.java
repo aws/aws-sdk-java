@@ -527,15 +527,15 @@ public class CachediSCSIVolume  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getVolumeARN() != null) sb.append("VolumeARN: " + getVolumeARN() + ", ");
-        if (getVolumeId() != null) sb.append("VolumeId: " + getVolumeId() + ", ");
-        if (getVolumeType() != null) sb.append("VolumeType: " + getVolumeType() + ", ");
-        if (getVolumeStatus() != null) sb.append("VolumeStatus: " + getVolumeStatus() + ", ");
-        if (getVolumeSizeInBytes() != null) sb.append("VolumeSizeInBytes: " + getVolumeSizeInBytes() + ", ");
-        if (getVolumeProgress() != null) sb.append("VolumeProgress: " + getVolumeProgress() + ", ");
-        if (getSourceSnapshotId() != null) sb.append("SourceSnapshotId: " + getSourceSnapshotId() + ", ");
-        if (getVolumeiSCSIAttributes() != null) sb.append("VolumeiSCSIAttributes: " + getVolumeiSCSIAttributes() + ", ");
+        sb.append("{");    	
+        if (getVolumeARN() != null) sb.append("VolumeARN: " + getVolumeARN() + ",");    	
+        if (getVolumeId() != null) sb.append("VolumeId: " + getVolumeId() + ",");    	
+        if (getVolumeType() != null) sb.append("VolumeType: " + getVolumeType() + ",");    	
+        if (getVolumeStatus() != null) sb.append("VolumeStatus: " + getVolumeStatus() + ",");    	
+        if (getVolumeSizeInBytes() != null) sb.append("VolumeSizeInBytes: " + getVolumeSizeInBytes() + ",");    	
+        if (getVolumeProgress() != null) sb.append("VolumeProgress: " + getVolumeProgress() + ",");    	
+        if (getSourceSnapshotId() != null) sb.append("SourceSnapshotId: " + getSourceSnapshotId() + ",");    	
+        if (getVolumeiSCSIAttributes() != null) sb.append("VolumeiSCSIAttributes: " + getVolumeiSCSIAttributes() );
         sb.append("}");
         return sb.toString();
     }

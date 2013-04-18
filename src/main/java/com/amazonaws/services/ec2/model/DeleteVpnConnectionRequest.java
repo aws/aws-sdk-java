@@ -102,8 +102,8 @@ public class DeleteVpnConnectionRequest extends AmazonWebServiceRequest  impleme
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getVpnConnectionId() != null) sb.append("VpnConnectionId: " + getVpnConnectionId() + ", ");
+        sb.append("{");    	
+        if (getVpnConnectionId() != null) sb.append("VpnConnectionId: " + getVpnConnectionId() );
         sb.append("}");
         return sb.toString();
     }

@@ -154,9 +154,9 @@ public class DeleteNotificationConfigurationRequest extends AmazonWebServiceRequ
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getAutoScalingGroupName() != null) sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ", ");
-        if (getTopicARN() != null) sb.append("TopicARN: " + getTopicARN() + ", ");
+        sb.append("{");    	
+        if (getAutoScalingGroupName() != null) sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ",");    	
+        if (getTopicARN() != null) sb.append("TopicARN: " + getTopicARN() );
         sb.append("}");
         return sb.toString();
     }

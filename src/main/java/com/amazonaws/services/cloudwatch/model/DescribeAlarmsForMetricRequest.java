@@ -465,13 +465,13 @@ public class DescribeAlarmsForMetricRequest extends AmazonWebServiceRequest  imp
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getMetricName() != null) sb.append("MetricName: " + getMetricName() + ", ");
-        if (getNamespace() != null) sb.append("Namespace: " + getNamespace() + ", ");
-        if (getStatistic() != null) sb.append("Statistic: " + getStatistic() + ", ");
-        if (getDimensions() != null) sb.append("Dimensions: " + getDimensions() + ", ");
-        if (getPeriod() != null) sb.append("Period: " + getPeriod() + ", ");
-        if (getUnit() != null) sb.append("Unit: " + getUnit() + ", ");
+        sb.append("{");    	
+        if (getMetricName() != null) sb.append("MetricName: " + getMetricName() + ",");    	
+        if (getNamespace() != null) sb.append("Namespace: " + getNamespace() + ",");    	
+        if (getStatistic() != null) sb.append("Statistic: " + getStatistic() + ",");    	
+        if (getDimensions() != null) sb.append("Dimensions: " + getDimensions() + ",");    	
+        if (getPeriod() != null) sb.append("Period: " + getPeriod() + ",");    	
+        if (getUnit() != null) sb.append("Unit: " + getUnit() );
         sb.append("}");
         return sb.toString();
     }

@@ -175,9 +175,9 @@ public class ValidatePipelineDefinitionRequest extends AmazonWebServiceRequest  
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getPipelineId() != null) sb.append("PipelineId: " + getPipelineId() + ", ");
-        if (getPipelineObjects() != null) sb.append("PipelineObjects: " + getPipelineObjects() + ", ");
+        sb.append("{");    	
+        if (getPipelineId() != null) sb.append("PipelineId: " + getPipelineId() + ",");    	
+        if (getPipelineObjects() != null) sb.append("PipelineObjects: " + getPipelineObjects() );
         sb.append("}");
         return sb.toString();
     }

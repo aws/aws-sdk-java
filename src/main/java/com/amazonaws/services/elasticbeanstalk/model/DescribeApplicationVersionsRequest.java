@@ -191,9 +191,9 @@ public class DescribeApplicationVersionsRequest extends AmazonWebServiceRequest 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getApplicationName() != null) sb.append("ApplicationName: " + getApplicationName() + ", ");
-        if (getVersionLabels() != null) sb.append("VersionLabels: " + getVersionLabels() + ", ");
+        sb.append("{");    	
+        if (getApplicationName() != null) sb.append("ApplicationName: " + getApplicationName() + ",");    	
+        if (getVersionLabels() != null) sb.append("VersionLabels: " + getVersionLabels() );
         sb.append("}");
         return sb.toString();
     }

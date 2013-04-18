@@ -118,9 +118,9 @@ public class CreateInvalidationResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getLocation() != null) sb.append("Location: " + getLocation() + ", ");
-        if (getInvalidation() != null) sb.append("Invalidation: " + getInvalidation() + ", ");
+        sb.append("{");    	
+        if (getLocation() != null) sb.append("Location: " + getLocation() + ",");    	
+        if (getInvalidation() != null) sb.append("Invalidation: " + getInvalidation() );
         sb.append("}");
         return sb.toString();
     }

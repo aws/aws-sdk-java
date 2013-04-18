@@ -79,8 +79,8 @@ public class DetachVolumeResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getAttachment() != null) sb.append("Attachment: " + getAttachment() + ", ");
+        sb.append("{");    	
+        if (getAttachment() != null) sb.append("Attachment: " + getAttachment() );
         sb.append("}");
         return sb.toString();
     }

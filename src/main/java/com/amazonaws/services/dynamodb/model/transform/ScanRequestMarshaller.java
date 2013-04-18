@@ -37,6 +37,7 @@ import com.amazonaws.util.json.*;
 /**
  * Scan Request Marshaller
  */
+@Deprecated
 public class ScanRequestMarshaller implements Marshaller<Request<ScanRequest>, ScanRequest> {
 
     

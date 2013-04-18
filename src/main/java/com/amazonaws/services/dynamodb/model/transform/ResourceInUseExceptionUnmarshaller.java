@@ -20,6 +20,7 @@ import com.amazonaws.util.json.JSONObject;
 
 import com.amazonaws.services.dynamodb.model.ResourceInUseException;
 
+@Deprecated
 public class ResourceInUseExceptionUnmarshaller extends JsonErrorUnmarshaller {
 
     public ResourceInUseExceptionUnmarshaller() {

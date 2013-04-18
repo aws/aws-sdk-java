@@ -138,9 +138,9 @@ public class ActivateLicenseRequest extends AmazonWebServiceRequest  implements 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getLicenseId() != null) sb.append("LicenseId: " + getLicenseId() + ", ");
-        if (getCapacity() != null) sb.append("Capacity: " + getCapacity() + ", ");
+        sb.append("{");    	
+        if (getLicenseId() != null) sb.append("LicenseId: " + getLicenseId() + ",");    	
+        if (getCapacity() != null) sb.append("Capacity: " + getCapacity() );
         sb.append("}");
         return sb.toString();
     }

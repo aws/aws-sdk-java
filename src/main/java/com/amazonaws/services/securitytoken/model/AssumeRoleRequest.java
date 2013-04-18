@@ -80,7 +80,7 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest  implements Seria
      * temporary security credentials, both the role's permission policy and
      * supplemental policy are checked. For more information about how
      * permissions work in the context of temporary credentials, see <a
-     * docs.amazonwebservices.com/IAM/latest/UserGuide/TokenPermissions.html"
+     * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/TokenPermissions.html"
      * target="_blank">Controlling Permissions in Temporary Credentials</a>.
      * <p>
      * <b>Constraints:</b><br/>
@@ -108,7 +108,7 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest  implements Seria
      * The external ID is useful in order to help third parties bind a role
      * to the customer who created it. For more information about the
      * external ID, see <a
-     * zonwebservices.com/STS/latest/UsingSTS/sts-delegating-externalid.html"
+     * href="http://docs.amazonwebservices.com/STS/latest/UsingSTS/sts-delegating-externalid.html"
      * target="_blank">About the External ID</a> in <i>Using Temporary
      * Security Credentials</i>.
      * <p>
@@ -227,7 +227,7 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest  implements Seria
      * temporary security credentials, both the role's permission policy and
      * supplemental policy are checked. For more information about how
      * permissions work in the context of temporary credentials, see <a
-     * docs.amazonwebservices.com/IAM/latest/UserGuide/TokenPermissions.html"
+     * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/TokenPermissions.html"
      * target="_blank">Controlling Permissions in Temporary Credentials</a>.
      * <p>
      * <b>Constraints:</b><br/>
@@ -241,7 +241,7 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest  implements Seria
      *         temporary security credentials, both the role's permission policy and
      *         supplemental policy are checked. For more information about how
      *         permissions work in the context of temporary credentials, see <a
-     *         docs.amazonwebservices.com/IAM/latest/UserGuide/TokenPermissions.html"
+     *         href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/TokenPermissions.html"
      *         target="_blank">Controlling Permissions in Temporary Credentials</a>.
      */
     public String getPolicy() {
@@ -256,7 +256,7 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest  implements Seria
      * temporary security credentials, both the role's permission policy and
      * supplemental policy are checked. For more information about how
      * permissions work in the context of temporary credentials, see <a
-     * docs.amazonwebservices.com/IAM/latest/UserGuide/TokenPermissions.html"
+     * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/TokenPermissions.html"
      * target="_blank">Controlling Permissions in Temporary Credentials</a>.
      * <p>
      * <b>Constraints:</b><br/>
@@ -270,7 +270,7 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest  implements Seria
      *         temporary security credentials, both the role's permission policy and
      *         supplemental policy are checked. For more information about how
      *         permissions work in the context of temporary credentials, see <a
-     *         docs.amazonwebservices.com/IAM/latest/UserGuide/TokenPermissions.html"
+     *         href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/TokenPermissions.html"
      *         target="_blank">Controlling Permissions in Temporary Credentials</a>.
      */
     public void setPolicy(String policy) {
@@ -285,7 +285,7 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest  implements Seria
      * temporary security credentials, both the role's permission policy and
      * supplemental policy are checked. For more information about how
      * permissions work in the context of temporary credentials, see <a
-     * docs.amazonwebservices.com/IAM/latest/UserGuide/TokenPermissions.html"
+     * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/TokenPermissions.html"
      * target="_blank">Controlling Permissions in Temporary Credentials</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -301,7 +301,7 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest  implements Seria
      *         temporary security credentials, both the role's permission policy and
      *         supplemental policy are checked. For more information about how
      *         permissions work in the context of temporary credentials, see <a
-     *         docs.amazonwebservices.com/IAM/latest/UserGuide/TokenPermissions.html"
+     *         href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/TokenPermissions.html"
      *         target="_blank">Controlling Permissions in Temporary Credentials</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -377,7 +377,7 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest  implements Seria
      * The external ID is useful in order to help third parties bind a role
      * to the customer who created it. For more information about the
      * external ID, see <a
-     * zonwebservices.com/STS/latest/UsingSTS/sts-delegating-externalid.html"
+     * href="http://docs.amazonwebservices.com/STS/latest/UsingSTS/sts-delegating-externalid.html"
      * target="_blank">About the External ID</a> in <i>Using Temporary
      * Security Credentials</i>.
      * <p>
@@ -393,7 +393,7 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest  implements Seria
      *         The external ID is useful in order to help third parties bind a role
      *         to the customer who created it. For more information about the
      *         external ID, see <a
-     *         zonwebservices.com/STS/latest/UsingSTS/sts-delegating-externalid.html"
+     *         href="http://docs.amazonwebservices.com/STS/latest/UsingSTS/sts-delegating-externalid.html"
      *         target="_blank">About the External ID</a> in <i>Using Temporary
      *         Security Credentials</i>.
      */
@@ -410,7 +410,7 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest  implements Seria
      * The external ID is useful in order to help third parties bind a role
      * to the customer who created it. For more information about the
      * external ID, see <a
-     * zonwebservices.com/STS/latest/UsingSTS/sts-delegating-externalid.html"
+     * href="http://docs.amazonwebservices.com/STS/latest/UsingSTS/sts-delegating-externalid.html"
      * target="_blank">About the External ID</a> in <i>Using Temporary
      * Security Credentials</i>.
      * <p>
@@ -426,7 +426,7 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest  implements Seria
      *         The external ID is useful in order to help third parties bind a role
      *         to the customer who created it. For more information about the
      *         external ID, see <a
-     *         zonwebservices.com/STS/latest/UsingSTS/sts-delegating-externalid.html"
+     *         href="http://docs.amazonwebservices.com/STS/latest/UsingSTS/sts-delegating-externalid.html"
      *         target="_blank">About the External ID</a> in <i>Using Temporary
      *         Security Credentials</i>.
      */
@@ -443,7 +443,7 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest  implements Seria
      * The external ID is useful in order to help third parties bind a role
      * to the customer who created it. For more information about the
      * external ID, see <a
-     * zonwebservices.com/STS/latest/UsingSTS/sts-delegating-externalid.html"
+     * href="http://docs.amazonwebservices.com/STS/latest/UsingSTS/sts-delegating-externalid.html"
      * target="_blank">About the External ID</a> in <i>Using Temporary
      * Security Credentials</i>.
      * <p>
@@ -461,7 +461,7 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest  implements Seria
      *         The external ID is useful in order to help third parties bind a role
      *         to the customer who created it. For more information about the
      *         external ID, see <a
-     *         zonwebservices.com/STS/latest/UsingSTS/sts-delegating-externalid.html"
+     *         href="http://docs.amazonwebservices.com/STS/latest/UsingSTS/sts-delegating-externalid.html"
      *         target="_blank">About the External ID</a> in <i>Using Temporary
      *         Security Credentials</i>.
      *
@@ -485,12 +485,12 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest  implements Seria
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getRoleArn() != null) sb.append("RoleArn: " + getRoleArn() + ", ");
-        if (getRoleSessionName() != null) sb.append("RoleSessionName: " + getRoleSessionName() + ", ");
-        if (getPolicy() != null) sb.append("Policy: " + getPolicy() + ", ");
-        if (getDurationSeconds() != null) sb.append("DurationSeconds: " + getDurationSeconds() + ", ");
-        if (getExternalId() != null) sb.append("ExternalId: " + getExternalId() + ", ");
+        sb.append("{");    	
+        if (getRoleArn() != null) sb.append("RoleArn: " + getRoleArn() + ",");    	
+        if (getRoleSessionName() != null) sb.append("RoleSessionName: " + getRoleSessionName() + ",");    	
+        if (getPolicy() != null) sb.append("Policy: " + getPolicy() + ",");    	
+        if (getDurationSeconds() != null) sb.append("DurationSeconds: " + getDurationSeconds() + ",");    	
+        if (getExternalId() != null) sb.append("ExternalId: " + getExternalId() );
         sb.append("}");
         return sb.toString();
     }

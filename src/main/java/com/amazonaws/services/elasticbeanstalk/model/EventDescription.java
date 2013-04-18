@@ -458,15 +458,15 @@ public class EventDescription  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getEventDate() != null) sb.append("EventDate: " + getEventDate() + ", ");
-        if (getMessage() != null) sb.append("Message: " + getMessage() + ", ");
-        if (getApplicationName() != null) sb.append("ApplicationName: " + getApplicationName() + ", ");
-        if (getVersionLabel() != null) sb.append("VersionLabel: " + getVersionLabel() + ", ");
-        if (getTemplateName() != null) sb.append("TemplateName: " + getTemplateName() + ", ");
-        if (getEnvironmentName() != null) sb.append("EnvironmentName: " + getEnvironmentName() + ", ");
-        if (getRequestId() != null) sb.append("RequestId: " + getRequestId() + ", ");
-        if (getSeverity() != null) sb.append("Severity: " + getSeverity() + ", ");
+        sb.append("{");    	
+        if (getEventDate() != null) sb.append("EventDate: " + getEventDate() + ",");    	
+        if (getMessage() != null) sb.append("Message: " + getMessage() + ",");    	
+        if (getApplicationName() != null) sb.append("ApplicationName: " + getApplicationName() + ",");    	
+        if (getVersionLabel() != null) sb.append("VersionLabel: " + getVersionLabel() + ",");    	
+        if (getTemplateName() != null) sb.append("TemplateName: " + getTemplateName() + ",");    	
+        if (getEnvironmentName() != null) sb.append("EnvironmentName: " + getEnvironmentName() + ",");    	
+        if (getRequestId() != null) sb.append("RequestId: " + getRequestId() + ",");    	
+        if (getSeverity() != null) sb.append("Severity: " + getSeverity() );
         sb.append("}");
         return sb.toString();
     }

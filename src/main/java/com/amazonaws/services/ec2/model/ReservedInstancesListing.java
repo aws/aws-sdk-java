@@ -501,17 +501,17 @@ public class ReservedInstancesListing  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getReservedInstancesListingId() != null) sb.append("ReservedInstancesListingId: " + getReservedInstancesListingId() + ", ");
-        if (getReservedInstancesId() != null) sb.append("ReservedInstancesId: " + getReservedInstancesId() + ", ");
-        if (getCreateDate() != null) sb.append("CreateDate: " + getCreateDate() + ", ");
-        if (getUpdateDate() != null) sb.append("UpdateDate: " + getUpdateDate() + ", ");
-        if (getStatus() != null) sb.append("Status: " + getStatus() + ", ");
-        if (getStatusMessage() != null) sb.append("StatusMessage: " + getStatusMessage() + ", ");
-        if (getInstanceCounts() != null) sb.append("InstanceCounts: " + getInstanceCounts() + ", ");
-        if (getPriceSchedules() != null) sb.append("PriceSchedules: " + getPriceSchedules() + ", ");
-        if (getTags() != null) sb.append("Tags: " + getTags() + ", ");
-        if (getClientToken() != null) sb.append("ClientToken: " + getClientToken() + ", ");
+        sb.append("{");    	
+        if (getReservedInstancesListingId() != null) sb.append("ReservedInstancesListingId: " + getReservedInstancesListingId() + ",");    	
+        if (getReservedInstancesId() != null) sb.append("ReservedInstancesId: " + getReservedInstancesId() + ",");    	
+        if (getCreateDate() != null) sb.append("CreateDate: " + getCreateDate() + ",");    	
+        if (getUpdateDate() != null) sb.append("UpdateDate: " + getUpdateDate() + ",");    	
+        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");    	
+        if (getStatusMessage() != null) sb.append("StatusMessage: " + getStatusMessage() + ",");    	
+        if (getInstanceCounts() != null) sb.append("InstanceCounts: " + getInstanceCounts() + ",");    	
+        if (getPriceSchedules() != null) sb.append("PriceSchedules: " + getPriceSchedules() + ",");    	
+        if (getTags() != null) sb.append("Tags: " + getTags() + ",");    	
+        if (getClientToken() != null) sb.append("ClientToken: " + getClientToken() );
         sb.append("}");
         return sb.toString();
     }

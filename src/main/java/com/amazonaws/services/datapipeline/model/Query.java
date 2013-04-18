@@ -116,8 +116,8 @@ public class Query  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getSelectors() != null) sb.append("Selectors: " + getSelectors() + ", ");
+        sb.append("{");    	
+        if (getSelectors() != null) sb.append("Selectors: " + getSelectors() );
         sb.append("}");
         return sb.toString();
     }

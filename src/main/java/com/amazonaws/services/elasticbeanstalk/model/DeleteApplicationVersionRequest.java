@@ -257,10 +257,10 @@ public class DeleteApplicationVersionRequest extends AmazonWebServiceRequest  im
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getApplicationName() != null) sb.append("ApplicationName: " + getApplicationName() + ", ");
-        if (getVersionLabel() != null) sb.append("VersionLabel: " + getVersionLabel() + ", ");
-        if (isDeleteSourceBundle() != null) sb.append("DeleteSourceBundle: " + isDeleteSourceBundle() + ", ");
+        sb.append("{");    	
+        if (getApplicationName() != null) sb.append("ApplicationName: " + getApplicationName() + ",");    	
+        if (getVersionLabel() != null) sb.append("VersionLabel: " + getVersionLabel() + ",");    	
+        if (isDeleteSourceBundle() != null) sb.append("DeleteSourceBundle: " + isDeleteSourceBundle() );
         sb.append("}");
         return sb.toString();
     }

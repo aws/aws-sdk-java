@@ -21,6 +21,7 @@ import java.io.Serializable;
  * (hash-and-range) primary key.
  * </p>
  */
+@Deprecated
 public class Key  implements Serializable  {
 
     /**

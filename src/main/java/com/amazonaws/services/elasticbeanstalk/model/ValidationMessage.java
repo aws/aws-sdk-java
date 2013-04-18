@@ -324,11 +324,11 @@ public class ValidationMessage  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getMessage() != null) sb.append("Message: " + getMessage() + ", ");
-        if (getSeverity() != null) sb.append("Severity: " + getSeverity() + ", ");
-        if (getNamespace() != null) sb.append("Namespace: " + getNamespace() + ", ");
-        if (getOptionName() != null) sb.append("OptionName: " + getOptionName() + ", ");
+        sb.append("{");    	
+        if (getMessage() != null) sb.append("Message: " + getMessage() + ",");    	
+        if (getSeverity() != null) sb.append("Severity: " + getSeverity() + ",");    	
+        if (getNamespace() != null) sb.append("Namespace: " + getNamespace() + ",");    	
+        if (getOptionName() != null) sb.append("OptionName: " + getOptionName() );
         sb.append("}");
         return sb.toString();
     }

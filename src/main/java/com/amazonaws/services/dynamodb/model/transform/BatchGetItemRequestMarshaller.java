@@ -37,6 +37,7 @@ import com.amazonaws.util.json.*;
 /**
  * Batch Get Item Request Marshaller
  */
+@Deprecated
 public class BatchGetItemRequestMarshaller implements Marshaller<Request<BatchGetItemRequest>, BatchGetItemRequest> {
 
     

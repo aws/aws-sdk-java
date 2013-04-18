@@ -208,9 +208,9 @@ public class RecordActivityTaskHeartbeatRequest extends AmazonWebServiceRequest 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getTaskToken() != null) sb.append("TaskToken: " + getTaskToken() + ", ");
-        if (getDetails() != null) sb.append("Details: " + getDetails() + ", ");
+        sb.append("{");    	
+        if (getTaskToken() != null) sb.append("TaskToken: " + getTaskToken() + ",");    	
+        if (getDetails() != null) sb.append("Details: " + getDetails() );
         sb.append("}");
         return sb.toString();
     }

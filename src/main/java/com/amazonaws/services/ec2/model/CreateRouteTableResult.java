@@ -67,8 +67,8 @@ public class CreateRouteTableResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getRouteTable() != null) sb.append("RouteTable: " + getRouteTable() + ", ");
+        sb.append("{");    	
+        if (getRouteTable() != null) sb.append("RouteTable: " + getRouteTable() );
         sb.append("}");
         return sb.toString();
     }

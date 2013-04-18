@@ -140,9 +140,9 @@ public class Message  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getSubject() != null) sb.append("Subject: " + getSubject() + ", ");
-        if (getBody() != null) sb.append("Body: " + getBody() + ", ");
+        sb.append("{");    	
+        if (getSubject() != null) sb.append("Subject: " + getSubject() + ",");    	
+        if (getBody() != null) sb.append("Body: " + getBody() );
         sb.append("}");
         return sb.toString();
     }

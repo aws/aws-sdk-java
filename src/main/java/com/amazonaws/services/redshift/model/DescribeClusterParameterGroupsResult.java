@@ -169,9 +169,9 @@ public class DescribeClusterParameterGroupsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ", ");
-        if (getParameterGroups() != null) sb.append("ParameterGroups: " + getParameterGroups() + ", ");
+        sb.append("{");    	
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");    	
+        if (getParameterGroups() != null) sb.append("ParameterGroups: " + getParameterGroups() );
         sb.append("}");
         return sb.toString();
     }

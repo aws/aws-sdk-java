@@ -28,6 +28,7 @@ import static org.codehaus.jackson.JsonToken.*;
 /**
  * Update Item Result JSON Unmarshaller
  */
+@Deprecated
 public class UpdateItemResultJsonUnmarshaller implements Unmarshaller<UpdateItemResult, JsonUnmarshallerContext> {
 
     

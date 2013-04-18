@@ -284,11 +284,11 @@ public class UpdateMaintenanceStartTimeRequest extends AmazonWebServiceRequest  
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getGatewayARN() != null) sb.append("GatewayARN: " + getGatewayARN() + ", ");
-        if (getHourOfDay() != null) sb.append("HourOfDay: " + getHourOfDay() + ", ");
-        if (getMinuteOfHour() != null) sb.append("MinuteOfHour: " + getMinuteOfHour() + ", ");
-        if (getDayOfWeek() != null) sb.append("DayOfWeek: " + getDayOfWeek() + ", ");
+        sb.append("{");    	
+        if (getGatewayARN() != null) sb.append("GatewayARN: " + getGatewayARN() + ",");    	
+        if (getHourOfDay() != null) sb.append("HourOfDay: " + getHourOfDay() + ",");    	
+        if (getMinuteOfHour() != null) sb.append("MinuteOfHour: " + getMinuteOfHour() + ",");    	
+        if (getDayOfWeek() != null) sb.append("DayOfWeek: " + getDayOfWeek() );
         sb.append("}");
         return sb.toString();
     }

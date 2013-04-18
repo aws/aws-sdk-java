@@ -177,9 +177,9 @@ public class UploadSigningCertificateRequest extends AmazonWebServiceRequest  im
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getUserName() != null) sb.append("UserName: " + getUserName() + ", ");
-        if (getCertificateBody() != null) sb.append("CertificateBody: " + getCertificateBody() + ", ");
+        sb.append("{");    	
+        if (getUserName() != null) sb.append("UserName: " + getUserName() + ",");    	
+        if (getCertificateBody() != null) sb.append("CertificateBody: " + getCertificateBody() );
         sb.append("}");
         return sb.toString();
     }

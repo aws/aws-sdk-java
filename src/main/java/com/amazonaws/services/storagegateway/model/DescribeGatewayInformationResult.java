@@ -616,14 +616,14 @@ public class DescribeGatewayInformationResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getGatewayARN() != null) sb.append("GatewayARN: " + getGatewayARN() + ", ");
-        if (getGatewayId() != null) sb.append("GatewayId: " + getGatewayId() + ", ");
-        if (getGatewayTimezone() != null) sb.append("GatewayTimezone: " + getGatewayTimezone() + ", ");
-        if (getGatewayState() != null) sb.append("GatewayState: " + getGatewayState() + ", ");
-        if (getGatewayNetworkInterfaces() != null) sb.append("GatewayNetworkInterfaces: " + getGatewayNetworkInterfaces() + ", ");
-        if (getGatewayType() != null) sb.append("GatewayType: " + getGatewayType() + ", ");
-        if (getNextUpdateAvailabilityDate() != null) sb.append("NextUpdateAvailabilityDate: " + getNextUpdateAvailabilityDate() + ", ");
+        sb.append("{");    	
+        if (getGatewayARN() != null) sb.append("GatewayARN: " + getGatewayARN() + ",");    	
+        if (getGatewayId() != null) sb.append("GatewayId: " + getGatewayId() + ",");    	
+        if (getGatewayTimezone() != null) sb.append("GatewayTimezone: " + getGatewayTimezone() + ",");    	
+        if (getGatewayState() != null) sb.append("GatewayState: " + getGatewayState() + ",");    	
+        if (getGatewayNetworkInterfaces() != null) sb.append("GatewayNetworkInterfaces: " + getGatewayNetworkInterfaces() + ",");    	
+        if (getGatewayType() != null) sb.append("GatewayType: " + getGatewayType() + ",");    	
+        if (getNextUpdateAvailabilityDate() != null) sb.append("NextUpdateAvailabilityDate: " + getNextUpdateAvailabilityDate() );
         sb.append("}");
         return sb.toString();
     }

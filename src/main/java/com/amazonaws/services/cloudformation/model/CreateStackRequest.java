@@ -41,7 +41,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest  implements Seri
     /**
      * Structure containing the template body. (For more information, go to
      * the <a
-     * p://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
+     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
      * CloudFormation User Guide</a>.) <p>Conditional: You must pass
      * <code>TemplateBody</code> or <code>TemplateURL</code>. If both are
      * passed, only <code>TemplateBody</code> is used.
@@ -55,7 +55,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest  implements Seri
      * Location of file containing the template body. The URL must point to a
      * template (max size: 307,200 bytes) located in an S3 bucket in the same
      * region as the stack. For more information, go to the <a
-     * p://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
+     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
      * CloudFormation User Guide</a>. <p>Conditional: You must pass
      * <code>TemplateURL</code> or <code>TemplateBody</code>. If both are
      * passed, only <code>TemplateBody</code> is used.
@@ -105,15 +105,15 @@ public class CreateStackRequest extends AmazonWebServiceRequest  implements Seri
      * template contains IAM resources, you must specify the CAPABILITY_IAM
      * value for this parameter; otherwise, this action returns an
      * InsufficientCapabilities error. IAM resources are the following: <a
-     * /UserGuide/aws-properties-iam-accesskey.html">AWS::IAM::AccessKey</a>,
+     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">AWS::IAM::AccessKey</a>,
      * <a
-     * n/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>,
+     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>,
      * <a
-     * latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>,
+     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>,
      * <a
-     * ion/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::User</a>,
+     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::User</a>,
      * and <a
-     * properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
+     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
      */
     private java.util.List<String> capabilities;
 
@@ -191,7 +191,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest  implements Seri
     /**
      * Structure containing the template body. (For more information, go to
      * the <a
-     * p://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
+     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
      * CloudFormation User Guide</a>.) <p>Conditional: You must pass
      * <code>TemplateBody</code> or <code>TemplateURL</code>. If both are
      * passed, only <code>TemplateBody</code> is used.
@@ -201,7 +201,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest  implements Seri
      *
      * @return Structure containing the template body. (For more information, go to
      *         the <a
-     *         p://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
+     *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
      *         CloudFormation User Guide</a>.) <p>Conditional: You must pass
      *         <code>TemplateBody</code> or <code>TemplateURL</code>. If both are
      *         passed, only <code>TemplateBody</code> is used.
@@ -213,7 +213,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest  implements Seri
     /**
      * Structure containing the template body. (For more information, go to
      * the <a
-     * p://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
+     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
      * CloudFormation User Guide</a>.) <p>Conditional: You must pass
      * <code>TemplateBody</code> or <code>TemplateURL</code>. If both are
      * passed, only <code>TemplateBody</code> is used.
@@ -223,7 +223,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest  implements Seri
      *
      * @param templateBody Structure containing the template body. (For more information, go to
      *         the <a
-     *         p://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
+     *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
      *         CloudFormation User Guide</a>.) <p>Conditional: You must pass
      *         <code>TemplateBody</code> or <code>TemplateURL</code>. If both are
      *         passed, only <code>TemplateBody</code> is used.
@@ -235,7 +235,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest  implements Seri
     /**
      * Structure containing the template body. (For more information, go to
      * the <a
-     * p://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
+     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
      * CloudFormation User Guide</a>.) <p>Conditional: You must pass
      * <code>TemplateBody</code> or <code>TemplateURL</code>. If both are
      * passed, only <code>TemplateBody</code> is used.
@@ -247,7 +247,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest  implements Seri
      *
      * @param templateBody Structure containing the template body. (For more information, go to
      *         the <a
-     *         p://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
+     *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
      *         CloudFormation User Guide</a>.) <p>Conditional: You must pass
      *         <code>TemplateBody</code> or <code>TemplateURL</code>. If both are
      *         passed, only <code>TemplateBody</code> is used.
@@ -265,7 +265,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest  implements Seri
      * Location of file containing the template body. The URL must point to a
      * template (max size: 307,200 bytes) located in an S3 bucket in the same
      * region as the stack. For more information, go to the <a
-     * p://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
+     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
      * CloudFormation User Guide</a>. <p>Conditional: You must pass
      * <code>TemplateURL</code> or <code>TemplateBody</code>. If both are
      * passed, only <code>TemplateBody</code> is used.
@@ -276,7 +276,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest  implements Seri
      * @return Location of file containing the template body. The URL must point to a
      *         template (max size: 307,200 bytes) located in an S3 bucket in the same
      *         region as the stack. For more information, go to the <a
-     *         p://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
+     *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
      *         CloudFormation User Guide</a>. <p>Conditional: You must pass
      *         <code>TemplateURL</code> or <code>TemplateBody</code>. If both are
      *         passed, only <code>TemplateBody</code> is used.
@@ -289,7 +289,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest  implements Seri
      * Location of file containing the template body. The URL must point to a
      * template (max size: 307,200 bytes) located in an S3 bucket in the same
      * region as the stack. For more information, go to the <a
-     * p://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
+     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
      * CloudFormation User Guide</a>. <p>Conditional: You must pass
      * <code>TemplateURL</code> or <code>TemplateBody</code>. If both are
      * passed, only <code>TemplateBody</code> is used.
@@ -300,7 +300,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest  implements Seri
      * @param templateURL Location of file containing the template body. The URL must point to a
      *         template (max size: 307,200 bytes) located in an S3 bucket in the same
      *         region as the stack. For more information, go to the <a
-     *         p://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
+     *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
      *         CloudFormation User Guide</a>. <p>Conditional: You must pass
      *         <code>TemplateURL</code> or <code>TemplateBody</code>. If both are
      *         passed, only <code>TemplateBody</code> is used.
@@ -313,7 +313,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest  implements Seri
      * Location of file containing the template body. The URL must point to a
      * template (max size: 307,200 bytes) located in an S3 bucket in the same
      * region as the stack. For more information, go to the <a
-     * p://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
+     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
      * CloudFormation User Guide</a>. <p>Conditional: You must pass
      * <code>TemplateURL</code> or <code>TemplateBody</code>. If both are
      * passed, only <code>TemplateBody</code> is used.
@@ -326,7 +326,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest  implements Seri
      * @param templateURL Location of file containing the template body. The URL must point to a
      *         template (max size: 307,200 bytes) located in an S3 bucket in the same
      *         region as the stack. For more information, go to the <a
-     *         p://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
+     *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
      *         CloudFormation User Guide</a>. <p>Conditional: You must pass
      *         <code>TemplateURL</code> or <code>TemplateBody</code>. If both are
      *         passed, only <code>TemplateBody</code> is used.
@@ -649,29 +649,29 @@ public class CreateStackRequest extends AmazonWebServiceRequest  implements Seri
      * template contains IAM resources, you must specify the CAPABILITY_IAM
      * value for this parameter; otherwise, this action returns an
      * InsufficientCapabilities error. IAM resources are the following: <a
-     * /UserGuide/aws-properties-iam-accesskey.html">AWS::IAM::AccessKey</a>,
+     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">AWS::IAM::AccessKey</a>,
      * <a
-     * n/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>,
+     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>,
      * <a
-     * latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>,
+     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>,
      * <a
-     * ion/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::User</a>,
+     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::User</a>,
      * and <a
-     * properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
+     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
      *
      * @return The list of capabilities that you want to allow in the stack. If your
      *         template contains IAM resources, you must specify the CAPABILITY_IAM
      *         value for this parameter; otherwise, this action returns an
      *         InsufficientCapabilities error. IAM resources are the following: <a
-     *         /UserGuide/aws-properties-iam-accesskey.html">AWS::IAM::AccessKey</a>,
+     *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">AWS::IAM::AccessKey</a>,
      *         <a
-     *         n/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>,
+     *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>,
      *         <a
-     *         latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>,
+     *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>,
      *         <a
-     *         ion/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::User</a>,
+     *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::User</a>,
      *         and <a
-     *         properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
+     *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
      */
     public java.util.List<String> getCapabilities() {
         
@@ -686,29 +686,29 @@ public class CreateStackRequest extends AmazonWebServiceRequest  implements Seri
      * template contains IAM resources, you must specify the CAPABILITY_IAM
      * value for this parameter; otherwise, this action returns an
      * InsufficientCapabilities error. IAM resources are the following: <a
-     * /UserGuide/aws-properties-iam-accesskey.html">AWS::IAM::AccessKey</a>,
+     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">AWS::IAM::AccessKey</a>,
      * <a
-     * n/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>,
+     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>,
      * <a
-     * latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>,
+     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>,
      * <a
-     * ion/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::User</a>,
+     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::User</a>,
      * and <a
-     * properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
+     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
      *
      * @param capabilities The list of capabilities that you want to allow in the stack. If your
      *         template contains IAM resources, you must specify the CAPABILITY_IAM
      *         value for this parameter; otherwise, this action returns an
      *         InsufficientCapabilities error. IAM resources are the following: <a
-     *         /UserGuide/aws-properties-iam-accesskey.html">AWS::IAM::AccessKey</a>,
+     *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">AWS::IAM::AccessKey</a>,
      *         <a
-     *         n/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>,
+     *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>,
      *         <a
-     *         latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>,
+     *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>,
      *         <a
-     *         ion/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::User</a>,
+     *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::User</a>,
      *         and <a
-     *         properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
+     *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
      */
     public void setCapabilities(java.util.Collection<String> capabilities) {
         if (capabilities == null) {
@@ -726,15 +726,15 @@ public class CreateStackRequest extends AmazonWebServiceRequest  implements Seri
      * template contains IAM resources, you must specify the CAPABILITY_IAM
      * value for this parameter; otherwise, this action returns an
      * InsufficientCapabilities error. IAM resources are the following: <a
-     * /UserGuide/aws-properties-iam-accesskey.html">AWS::IAM::AccessKey</a>,
+     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">AWS::IAM::AccessKey</a>,
      * <a
-     * n/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>,
+     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>,
      * <a
-     * latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>,
+     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>,
      * <a
-     * ion/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::User</a>,
+     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::User</a>,
      * and <a
-     * properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
+     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -742,15 +742,15 @@ public class CreateStackRequest extends AmazonWebServiceRequest  implements Seri
      *         template contains IAM resources, you must specify the CAPABILITY_IAM
      *         value for this parameter; otherwise, this action returns an
      *         InsufficientCapabilities error. IAM resources are the following: <a
-     *         /UserGuide/aws-properties-iam-accesskey.html">AWS::IAM::AccessKey</a>,
+     *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">AWS::IAM::AccessKey</a>,
      *         <a
-     *         n/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>,
+     *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>,
      *         <a
-     *         latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>,
+     *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>,
      *         <a
-     *         ion/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::User</a>,
+     *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::User</a>,
      *         and <a
-     *         properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
+     *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -768,15 +768,15 @@ public class CreateStackRequest extends AmazonWebServiceRequest  implements Seri
      * template contains IAM resources, you must specify the CAPABILITY_IAM
      * value for this parameter; otherwise, this action returns an
      * InsufficientCapabilities error. IAM resources are the following: <a
-     * /UserGuide/aws-properties-iam-accesskey.html">AWS::IAM::AccessKey</a>,
+     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">AWS::IAM::AccessKey</a>,
      * <a
-     * n/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>,
+     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>,
      * <a
-     * latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>,
+     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>,
      * <a
-     * ion/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::User</a>,
+     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::User</a>,
      * and <a
-     * properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
+     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -784,15 +784,15 @@ public class CreateStackRequest extends AmazonWebServiceRequest  implements Seri
      *         template contains IAM resources, you must specify the CAPABILITY_IAM
      *         value for this parameter; otherwise, this action returns an
      *         InsufficientCapabilities error. IAM resources are the following: <a
-     *         /UserGuide/aws-properties-iam-accesskey.html">AWS::IAM::AccessKey</a>,
+     *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-accesskey.html">AWS::IAM::AccessKey</a>,
      *         <a
-     *         n/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>,
+     *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html">AWS::IAM::Group</a>,
      *         <a
-     *         latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>,
+     *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html">AWS::IAM::Policy</a>,
      *         <a
-     *         ion/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::User</a>,
+     *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html">AWS::IAM::User</a>,
      *         and <a
-     *         properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
+     *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -1026,17 +1026,17 @@ public class CreateStackRequest extends AmazonWebServiceRequest  implements Seri
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getStackName() != null) sb.append("StackName: " + getStackName() + ", ");
-        if (getTemplateBody() != null) sb.append("TemplateBody: " + getTemplateBody() + ", ");
-        if (getTemplateURL() != null) sb.append("TemplateURL: " + getTemplateURL() + ", ");
-        if (getParameters() != null) sb.append("Parameters: " + getParameters() + ", ");
-        if (isDisableRollback() != null) sb.append("DisableRollback: " + isDisableRollback() + ", ");
-        if (getTimeoutInMinutes() != null) sb.append("TimeoutInMinutes: " + getTimeoutInMinutes() + ", ");
-        if (getNotificationARNs() != null) sb.append("NotificationARNs: " + getNotificationARNs() + ", ");
-        if (getCapabilities() != null) sb.append("Capabilities: " + getCapabilities() + ", ");
-        if (getOnFailure() != null) sb.append("OnFailure: " + getOnFailure() + ", ");
-        if (getTags() != null) sb.append("Tags: " + getTags() + ", ");
+        sb.append("{");    	
+        if (getStackName() != null) sb.append("StackName: " + getStackName() + ",");    	
+        if (getTemplateBody() != null) sb.append("TemplateBody: " + getTemplateBody() + ",");    	
+        if (getTemplateURL() != null) sb.append("TemplateURL: " + getTemplateURL() + ",");    	
+        if (getParameters() != null) sb.append("Parameters: " + getParameters() + ",");    	
+        if (isDisableRollback() != null) sb.append("DisableRollback: " + isDisableRollback() + ",");    	
+        if (getTimeoutInMinutes() != null) sb.append("TimeoutInMinutes: " + getTimeoutInMinutes() + ",");    	
+        if (getNotificationARNs() != null) sb.append("NotificationARNs: " + getNotificationARNs() + ",");    	
+        if (getCapabilities() != null) sb.append("Capabilities: " + getCapabilities() + ",");    	
+        if (getOnFailure() != null) sb.append("OnFailure: " + getOnFailure() + ",");    	
+        if (getTags() != null) sb.append("Tags: " + getTags() );
         sb.append("}");
         return sb.toString();
     }

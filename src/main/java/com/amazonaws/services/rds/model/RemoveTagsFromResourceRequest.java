@@ -154,9 +154,9 @@ public class RemoveTagsFromResourceRequest extends AmazonWebServiceRequest  impl
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getResourceName() != null) sb.append("ResourceName: " + getResourceName() + ", ");
-        if (getTagKeys() != null) sb.append("TagKeys: " + getTagKeys() + ", ");
+        sb.append("{");    	
+        if (getResourceName() != null) sb.append("ResourceName: " + getResourceName() + ",");    	
+        if (getTagKeys() != null) sb.append("TagKeys: " + getTagKeys() );
         sb.append("}");
         return sb.toString();
     }

@@ -187,10 +187,10 @@ public class SendMessageBatchRequestEntry  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getId() != null) sb.append("Id: " + getId() + ", ");
-        if (getMessageBody() != null) sb.append("MessageBody: " + getMessageBody() + ", ");
-        if (getDelaySeconds() != null) sb.append("DelaySeconds: " + getDelaySeconds() + ", ");
+        sb.append("{");    	
+        if (getId() != null) sb.append("Id: " + getId() + ",");    	
+        if (getMessageBody() != null) sb.append("MessageBody: " + getMessageBody() + ",");    	
+        if (getDelaySeconds() != null) sb.append("DelaySeconds: " + getDelaySeconds() );
         sb.append("}");
         return sb.toString();
     }

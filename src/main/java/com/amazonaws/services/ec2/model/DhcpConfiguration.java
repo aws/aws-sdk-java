@@ -146,9 +146,9 @@ public class DhcpConfiguration  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getKey() != null) sb.append("Key: " + getKey() + ", ");
-        if (getValues() != null) sb.append("Values: " + getValues() + ", ");
+        sb.append("{");    	
+        if (getKey() != null) sb.append("Key: " + getKey() + ",");    	
+        if (getValues() != null) sb.append("Values: " + getValues() );
         sb.append("}");
         return sb.toString();
     }

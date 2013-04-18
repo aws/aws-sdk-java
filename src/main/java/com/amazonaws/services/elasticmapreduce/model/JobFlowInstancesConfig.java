@@ -673,17 +673,17 @@ public class JobFlowInstancesConfig  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getMasterInstanceType() != null) sb.append("MasterInstanceType: " + getMasterInstanceType() + ", ");
-        if (getSlaveInstanceType() != null) sb.append("SlaveInstanceType: " + getSlaveInstanceType() + ", ");
-        if (getInstanceCount() != null) sb.append("InstanceCount: " + getInstanceCount() + ", ");
-        if (getInstanceGroups() != null) sb.append("InstanceGroups: " + getInstanceGroups() + ", ");
-        if (getEc2KeyName() != null) sb.append("Ec2KeyName: " + getEc2KeyName() + ", ");
-        if (getPlacement() != null) sb.append("Placement: " + getPlacement() + ", ");
-        if (isKeepJobFlowAliveWhenNoSteps() != null) sb.append("KeepJobFlowAliveWhenNoSteps: " + isKeepJobFlowAliveWhenNoSteps() + ", ");
-        if (isTerminationProtected() != null) sb.append("TerminationProtected: " + isTerminationProtected() + ", ");
-        if (getHadoopVersion() != null) sb.append("HadoopVersion: " + getHadoopVersion() + ", ");
-        if (getEc2SubnetId() != null) sb.append("Ec2SubnetId: " + getEc2SubnetId() + ", ");
+        sb.append("{");    	
+        if (getMasterInstanceType() != null) sb.append("MasterInstanceType: " + getMasterInstanceType() + ",");    	
+        if (getSlaveInstanceType() != null) sb.append("SlaveInstanceType: " + getSlaveInstanceType() + ",");    	
+        if (getInstanceCount() != null) sb.append("InstanceCount: " + getInstanceCount() + ",");    	
+        if (getInstanceGroups() != null) sb.append("InstanceGroups: " + getInstanceGroups() + ",");    	
+        if (getEc2KeyName() != null) sb.append("Ec2KeyName: " + getEc2KeyName() + ",");    	
+        if (getPlacement() != null) sb.append("Placement: " + getPlacement() + ",");    	
+        if (isKeepJobFlowAliveWhenNoSteps() != null) sb.append("KeepJobFlowAliveWhenNoSteps: " + isKeepJobFlowAliveWhenNoSteps() + ",");    	
+        if (isTerminationProtected() != null) sb.append("TerminationProtected: " + isTerminationProtected() + ",");    	
+        if (getHadoopVersion() != null) sb.append("HadoopVersion: " + getHadoopVersion() + ",");    	
+        if (getEc2SubnetId() != null) sb.append("Ec2SubnetId: " + getEc2SubnetId() );
         sb.append("}");
         return sb.toString();
     }

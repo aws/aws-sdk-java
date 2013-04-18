@@ -303,13 +303,13 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest  implements
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ", ");
-        if (getPublicIp() != null) sb.append("PublicIp: " + getPublicIp() + ", ");
-        if (getAllocationId() != null) sb.append("AllocationId: " + getAllocationId() + ", ");
-        if (getNetworkInterfaceId() != null) sb.append("NetworkInterfaceId: " + getNetworkInterfaceId() + ", ");
-        if (getPrivateIpAddress() != null) sb.append("PrivateIpAddress: " + getPrivateIpAddress() + ", ");
-        if (isAllowReassociation() != null) sb.append("AllowReassociation: " + isAllowReassociation() + ", ");
+        sb.append("{");    	
+        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ",");    	
+        if (getPublicIp() != null) sb.append("PublicIp: " + getPublicIp() + ",");    	
+        if (getAllocationId() != null) sb.append("AllocationId: " + getAllocationId() + ",");    	
+        if (getNetworkInterfaceId() != null) sb.append("NetworkInterfaceId: " + getNetworkInterfaceId() + ",");    	
+        if (getPrivateIpAddress() != null) sb.append("PrivateIpAddress: " + getPrivateIpAddress() + ",");    	
+        if (isAllowReassociation() != null) sb.append("AllowReassociation: " + isAllowReassociation() );
         sb.append("}");
         return sb.toString();
     }

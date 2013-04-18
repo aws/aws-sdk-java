@@ -211,12 +211,12 @@ public class VgwTelemetry  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getOutsideIpAddress() != null) sb.append("OutsideIpAddress: " + getOutsideIpAddress() + ", ");
-        if (getStatus() != null) sb.append("Status: " + getStatus() + ", ");
-        if (getLastStatusChange() != null) sb.append("LastStatusChange: " + getLastStatusChange() + ", ");
-        if (getStatusMessage() != null) sb.append("StatusMessage: " + getStatusMessage() + ", ");
-        if (getAcceptedRouteCount() != null) sb.append("AcceptedRouteCount: " + getAcceptedRouteCount() + ", ");
+        sb.append("{");    	
+        if (getOutsideIpAddress() != null) sb.append("OutsideIpAddress: " + getOutsideIpAddress() + ",");    	
+        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");    	
+        if (getLastStatusChange() != null) sb.append("LastStatusChange: " + getLastStatusChange() + ",");    	
+        if (getStatusMessage() != null) sb.append("StatusMessage: " + getStatusMessage() + ",");    	
+        if (getAcceptedRouteCount() != null) sb.append("AcceptedRouteCount: " + getAcceptedRouteCount() );
         sb.append("}");
         return sb.toString();
     }

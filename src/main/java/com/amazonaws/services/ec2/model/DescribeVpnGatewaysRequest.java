@@ -39,7 +39,7 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest  impleme
      * A list of filters used to match properties for VPN Gateways. For a
      * complete reference to the available filter keys for this operation,
      * see the <a
-     * "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      * EC2 API reference</a>.
      */
     private java.util.List<String> vpnGatewayIds;
@@ -48,7 +48,7 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest  impleme
      * A list of filters used to match properties for VPN Gateways. For a
      * complete reference to the available filter keys for this operation,
      * see the <a
-     * "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      * EC2 API reference</a>.
      */
     private java.util.List<Filter> filters;
@@ -57,13 +57,13 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest  impleme
      * A list of filters used to match properties for VPN Gateways. For a
      * complete reference to the available filter keys for this operation,
      * see the <a
-     * "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      * EC2 API reference</a>.
      *
      * @return A list of filters used to match properties for VPN Gateways. For a
      *         complete reference to the available filter keys for this operation,
      *         see the <a
-     *         "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      *         EC2 API reference</a>.
      */
     public java.util.List<String> getVpnGatewayIds() {
@@ -78,13 +78,13 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest  impleme
      * A list of filters used to match properties for VPN Gateways. For a
      * complete reference to the available filter keys for this operation,
      * see the <a
-     * "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      * EC2 API reference</a>.
      *
      * @param vpnGatewayIds A list of filters used to match properties for VPN Gateways. For a
      *         complete reference to the available filter keys for this operation,
      *         see the <a
-     *         "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      *         EC2 API reference</a>.
      */
     public void setVpnGatewayIds(java.util.Collection<String> vpnGatewayIds) {
@@ -102,7 +102,7 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest  impleme
      * A list of filters used to match properties for VPN Gateways. For a
      * complete reference to the available filter keys for this operation,
      * see the <a
-     * "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      * EC2 API reference</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -110,7 +110,7 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest  impleme
      * @param vpnGatewayIds A list of filters used to match properties for VPN Gateways. For a
      *         complete reference to the available filter keys for this operation,
      *         see the <a
-     *         "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      *         EC2 API reference</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -128,7 +128,7 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest  impleme
      * A list of filters used to match properties for VPN Gateways. For a
      * complete reference to the available filter keys for this operation,
      * see the <a
-     * "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      * EC2 API reference</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -136,7 +136,7 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest  impleme
      * @param vpnGatewayIds A list of filters used to match properties for VPN Gateways. For a
      *         complete reference to the available filter keys for this operation,
      *         see the <a
-     *         "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      *         EC2 API reference</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -158,13 +158,13 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest  impleme
      * A list of filters used to match properties for VPN Gateways. For a
      * complete reference to the available filter keys for this operation,
      * see the <a
-     * "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      * EC2 API reference</a>.
      *
      * @return A list of filters used to match properties for VPN Gateways. For a
      *         complete reference to the available filter keys for this operation,
      *         see the <a
-     *         "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      *         EC2 API reference</a>.
      */
     public java.util.List<Filter> getFilters() {
@@ -179,13 +179,13 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest  impleme
      * A list of filters used to match properties for VPN Gateways. For a
      * complete reference to the available filter keys for this operation,
      * see the <a
-     * "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      * EC2 API reference</a>.
      *
      * @param filters A list of filters used to match properties for VPN Gateways. For a
      *         complete reference to the available filter keys for this operation,
      *         see the <a
-     *         "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      *         EC2 API reference</a>.
      */
     public void setFilters(java.util.Collection<Filter> filters) {
@@ -203,7 +203,7 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest  impleme
      * A list of filters used to match properties for VPN Gateways. For a
      * complete reference to the available filter keys for this operation,
      * see the <a
-     * "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      * EC2 API reference</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -211,7 +211,7 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest  impleme
      * @param filters A list of filters used to match properties for VPN Gateways. For a
      *         complete reference to the available filter keys for this operation,
      *         see the <a
-     *         "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      *         EC2 API reference</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -229,7 +229,7 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest  impleme
      * A list of filters used to match properties for VPN Gateways. For a
      * complete reference to the available filter keys for this operation,
      * see the <a
-     * "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      * EC2 API reference</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -237,7 +237,7 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest  impleme
      * @param filters A list of filters used to match properties for VPN Gateways. For a
      *         complete reference to the available filter keys for this operation,
      *         see the <a
-     *         "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      *         EC2 API reference</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -266,9 +266,9 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest  impleme
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getVpnGatewayIds() != null) sb.append("VpnGatewayIds: " + getVpnGatewayIds() + ", ");
-        if (getFilters() != null) sb.append("Filters: " + getFilters() + ", ");
+        sb.append("{");    	
+        if (getVpnGatewayIds() != null) sb.append("VpnGatewayIds: " + getVpnGatewayIds() + ",");    	
+        if (getFilters() != null) sb.append("Filters: " + getFilters() );
         sb.append("}");
         return sb.toString();
     }

@@ -322,12 +322,12 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest  implements Ser
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getSize() != null) sb.append("Size: " + getSize() + ", ");
-        if (getSnapshotId() != null) sb.append("SnapshotId: " + getSnapshotId() + ", ");
-        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ", ");
-        if (getVolumeType() != null) sb.append("VolumeType: " + getVolumeType() + ", ");
-        if (getIops() != null) sb.append("Iops: " + getIops() + ", ");
+        sb.append("{");    	
+        if (getSize() != null) sb.append("Size: " + getSize() + ",");    	
+        if (getSnapshotId() != null) sb.append("SnapshotId: " + getSnapshotId() + ",");    	
+        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");    	
+        if (getVolumeType() != null) sb.append("VolumeType: " + getVolumeType() + ",");    	
+        if (getIops() != null) sb.append("Iops: " + getIops() );
         sb.append("}");
         return sb.toString();
     }

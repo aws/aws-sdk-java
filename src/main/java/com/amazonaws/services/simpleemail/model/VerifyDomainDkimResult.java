@@ -134,8 +134,8 @@ public class VerifyDomainDkimResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getDkimTokens() != null) sb.append("DkimTokens: " + getDkimTokens() + ", ");
+        sb.append("{");    	
+        if (getDkimTokens() != null) sb.append("DkimTokens: " + getDkimTokens() );
         sb.append("}");
         return sb.toString();
     }

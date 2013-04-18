@@ -107,8 +107,8 @@ public class DescribeEnvironmentsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getEnvironments() != null) sb.append("Environments: " + getEnvironments() + ", ");
+        sb.append("{");    	
+        if (getEnvironments() != null) sb.append("Environments: " + getEnvironments() );
         sb.append("}");
         return sb.toString();
     }

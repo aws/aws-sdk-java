@@ -338,13 +338,13 @@ public class ActivityTask  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getTaskToken() != null) sb.append("TaskToken: " + getTaskToken() + ", ");
-        if (getActivityId() != null) sb.append("ActivityId: " + getActivityId() + ", ");
-        if (getStartedEventId() != null) sb.append("StartedEventId: " + getStartedEventId() + ", ");
-        if (getWorkflowExecution() != null) sb.append("WorkflowExecution: " + getWorkflowExecution() + ", ");
-        if (getActivityType() != null) sb.append("ActivityType: " + getActivityType() + ", ");
-        if (getInput() != null) sb.append("Input: " + getInput() + ", ");
+        sb.append("{");    	
+        if (getTaskToken() != null) sb.append("TaskToken: " + getTaskToken() + ",");    	
+        if (getActivityId() != null) sb.append("ActivityId: " + getActivityId() + ",");    	
+        if (getStartedEventId() != null) sb.append("StartedEventId: " + getStartedEventId() + ",");    	
+        if (getWorkflowExecution() != null) sb.append("WorkflowExecution: " + getWorkflowExecution() + ",");    	
+        if (getActivityType() != null) sb.append("ActivityType: " + getActivityType() + ",");    	
+        if (getInput() != null) sb.append("Input: " + getInput() );
         sb.append("}");
         return sb.toString();
     }

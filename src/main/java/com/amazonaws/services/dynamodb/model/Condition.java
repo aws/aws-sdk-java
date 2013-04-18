@@ -18,6 +18,7 @@ import java.io.Serializable;
 /**
  * Condition
  */
+@Deprecated
 public class Condition  implements Serializable  {
 
     /**

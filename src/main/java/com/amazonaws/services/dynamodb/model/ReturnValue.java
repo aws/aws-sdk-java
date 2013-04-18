@@ -17,6 +17,7 @@ package com.amazonaws.services.dynamodb.model;
 /**
  * Return Value
  */
+@Deprecated
 public enum ReturnValue {
     
     NONE("NONE"),

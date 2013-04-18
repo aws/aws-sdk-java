@@ -21,6 +21,7 @@ import java.io.Serializable;
  * attribute value exists and has a particular value before changing it.
  * </p>
  */
+@Deprecated
 public class ExpectedAttributeValue  implements Serializable  {
 
     /**

@@ -116,8 +116,8 @@ public class DescribeElasticIpsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getElasticIps() != null) sb.append("ElasticIps: " + getElasticIps() + ", ");
+        sb.append("{");    	
+        if (getElasticIps() != null) sb.append("ElasticIps: " + getElasticIps() );
         sb.append("}");
         return sb.toString();
     }

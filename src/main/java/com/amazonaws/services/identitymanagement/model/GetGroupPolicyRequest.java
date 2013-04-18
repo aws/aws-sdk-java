@@ -169,9 +169,9 @@ public class GetGroupPolicyRequest extends AmazonWebServiceRequest  implements S
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getGroupName() != null) sb.append("GroupName: " + getGroupName() + ", ");
-        if (getPolicyName() != null) sb.append("PolicyName: " + getPolicyName() + ", ");
+        sb.append("{");    	
+        if (getGroupName() != null) sb.append("GroupName: " + getGroupName() + ",");    	
+        if (getPolicyName() != null) sb.append("PolicyName: " + getPolicyName() );
         sb.append("}");
         return sb.toString();
     }

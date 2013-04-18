@@ -183,9 +183,9 @@ public class CreateSnapshotRequest extends AmazonWebServiceRequest  implements S
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getVolumeARN() != null) sb.append("VolumeARN: " + getVolumeARN() + ", ");
-        if (getSnapshotDescription() != null) sb.append("SnapshotDescription: " + getSnapshotDescription() + ", ");
+        sb.append("{");    	
+        if (getVolumeARN() != null) sb.append("VolumeARN: " + getVolumeARN() + ",");    	
+        if (getSnapshotDescription() != null) sb.append("SnapshotDescription: " + getSnapshotDescription() );
         sb.append("}");
         return sb.toString();
     }

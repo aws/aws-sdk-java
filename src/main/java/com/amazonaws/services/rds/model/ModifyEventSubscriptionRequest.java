@@ -57,7 +57,7 @@ public class ModifyEventSubscriptionRequest extends AmazonWebServiceRequest  imp
      * A list of event categories for a SourceType that you want to subscribe
      * to. You can see a list of the categories for a given SourceType in the
      * <a
-     * aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
      * topic in the Amazon RDS User Guide or by using the
      * <b>DescribeEventCategories</b> action.
      */
@@ -210,14 +210,14 @@ public class ModifyEventSubscriptionRequest extends AmazonWebServiceRequest  imp
      * A list of event categories for a SourceType that you want to subscribe
      * to. You can see a list of the categories for a given SourceType in the
      * <a
-     * aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
      * topic in the Amazon RDS User Guide or by using the
      * <b>DescribeEventCategories</b> action.
      *
      * @return A list of event categories for a SourceType that you want to subscribe
      *         to. You can see a list of the categories for a given SourceType in the
      *         <a
-     *         aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
+     *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
      *         topic in the Amazon RDS User Guide or by using the
      *         <b>DescribeEventCategories</b> action.
      */
@@ -233,14 +233,14 @@ public class ModifyEventSubscriptionRequest extends AmazonWebServiceRequest  imp
      * A list of event categories for a SourceType that you want to subscribe
      * to. You can see a list of the categories for a given SourceType in the
      * <a
-     * aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
      * topic in the Amazon RDS User Guide or by using the
      * <b>DescribeEventCategories</b> action.
      *
      * @param eventCategories A list of event categories for a SourceType that you want to subscribe
      *         to. You can see a list of the categories for a given SourceType in the
      *         <a
-     *         aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
+     *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
      *         topic in the Amazon RDS User Guide or by using the
      *         <b>DescribeEventCategories</b> action.
      */
@@ -259,7 +259,7 @@ public class ModifyEventSubscriptionRequest extends AmazonWebServiceRequest  imp
      * A list of event categories for a SourceType that you want to subscribe
      * to. You can see a list of the categories for a given SourceType in the
      * <a
-     * aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
      * topic in the Amazon RDS User Guide or by using the
      * <b>DescribeEventCategories</b> action.
      * <p>
@@ -268,7 +268,7 @@ public class ModifyEventSubscriptionRequest extends AmazonWebServiceRequest  imp
      * @param eventCategories A list of event categories for a SourceType that you want to subscribe
      *         to. You can see a list of the categories for a given SourceType in the
      *         <a
-     *         aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
+     *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
      *         topic in the Amazon RDS User Guide or by using the
      *         <b>DescribeEventCategories</b> action.
      *
@@ -287,7 +287,7 @@ public class ModifyEventSubscriptionRequest extends AmazonWebServiceRequest  imp
      * A list of event categories for a SourceType that you want to subscribe
      * to. You can see a list of the categories for a given SourceType in the
      * <a
-     * aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
      * topic in the Amazon RDS User Guide or by using the
      * <b>DescribeEventCategories</b> action.
      * <p>
@@ -296,7 +296,7 @@ public class ModifyEventSubscriptionRequest extends AmazonWebServiceRequest  imp
      * @param eventCategories A list of event categories for a SourceType that you want to subscribe
      *         to. You can see a list of the categories for a given SourceType in the
      *         <a
-     *         aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
+     *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a>
      *         topic in the Amazon RDS User Guide or by using the
      *         <b>DescribeEventCategories</b> action.
      *
@@ -369,12 +369,12 @@ public class ModifyEventSubscriptionRequest extends AmazonWebServiceRequest  imp
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getSubscriptionName() != null) sb.append("SubscriptionName: " + getSubscriptionName() + ", ");
-        if (getSnsTopicArn() != null) sb.append("SnsTopicArn: " + getSnsTopicArn() + ", ");
-        if (getSourceType() != null) sb.append("SourceType: " + getSourceType() + ", ");
-        if (getEventCategories() != null) sb.append("EventCategories: " + getEventCategories() + ", ");
-        if (isEnabled() != null) sb.append("Enabled: " + isEnabled() + ", ");
+        sb.append("{");    	
+        if (getSubscriptionName() != null) sb.append("SubscriptionName: " + getSubscriptionName() + ",");    	
+        if (getSnsTopicArn() != null) sb.append("SnsTopicArn: " + getSnsTopicArn() + ",");    	
+        if (getSourceType() != null) sb.append("SourceType: " + getSourceType() + ",");    	
+        if (getEventCategories() != null) sb.append("EventCategories: " + getEventCategories() + ",");    	
+        if (isEnabled() != null) sb.append("Enabled: " + isEnabled() );
         sb.append("}");
         return sb.toString();
     }

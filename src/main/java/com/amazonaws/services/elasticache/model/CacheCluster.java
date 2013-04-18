@@ -990,26 +990,26 @@ public class CacheCluster  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getCacheClusterId() != null) sb.append("CacheClusterId: " + getCacheClusterId() + ", ");
-        if (getConfigurationEndpoint() != null) sb.append("ConfigurationEndpoint: " + getConfigurationEndpoint() + ", ");
-        if (getClientDownloadLandingPage() != null) sb.append("ClientDownloadLandingPage: " + getClientDownloadLandingPage() + ", ");
-        if (getCacheNodeType() != null) sb.append("CacheNodeType: " + getCacheNodeType() + ", ");
-        if (getEngine() != null) sb.append("Engine: " + getEngine() + ", ");
-        if (getEngineVersion() != null) sb.append("EngineVersion: " + getEngineVersion() + ", ");
-        if (getCacheClusterStatus() != null) sb.append("CacheClusterStatus: " + getCacheClusterStatus() + ", ");
-        if (getNumCacheNodes() != null) sb.append("NumCacheNodes: " + getNumCacheNodes() + ", ");
-        if (getPreferredAvailabilityZone() != null) sb.append("PreferredAvailabilityZone: " + getPreferredAvailabilityZone() + ", ");
-        if (getCacheClusterCreateTime() != null) sb.append("CacheClusterCreateTime: " + getCacheClusterCreateTime() + ", ");
-        if (getPreferredMaintenanceWindow() != null) sb.append("PreferredMaintenanceWindow: " + getPreferredMaintenanceWindow() + ", ");
-        if (getPendingModifiedValues() != null) sb.append("PendingModifiedValues: " + getPendingModifiedValues() + ", ");
-        if (getNotificationConfiguration() != null) sb.append("NotificationConfiguration: " + getNotificationConfiguration() + ", ");
-        if (getCacheSecurityGroups() != null) sb.append("CacheSecurityGroups: " + getCacheSecurityGroups() + ", ");
-        if (getCacheParameterGroup() != null) sb.append("CacheParameterGroup: " + getCacheParameterGroup() + ", ");
-        if (getCacheSubnetGroupName() != null) sb.append("CacheSubnetGroupName: " + getCacheSubnetGroupName() + ", ");
-        if (getCacheNodes() != null) sb.append("CacheNodes: " + getCacheNodes() + ", ");
-        if (isAutoMinorVersionUpgrade() != null) sb.append("AutoMinorVersionUpgrade: " + isAutoMinorVersionUpgrade() + ", ");
-        if (getSecurityGroups() != null) sb.append("SecurityGroups: " + getSecurityGroups() + ", ");
+        sb.append("{");    	
+        if (getCacheClusterId() != null) sb.append("CacheClusterId: " + getCacheClusterId() + ",");    	
+        if (getConfigurationEndpoint() != null) sb.append("ConfigurationEndpoint: " + getConfigurationEndpoint() + ",");    	
+        if (getClientDownloadLandingPage() != null) sb.append("ClientDownloadLandingPage: " + getClientDownloadLandingPage() + ",");    	
+        if (getCacheNodeType() != null) sb.append("CacheNodeType: " + getCacheNodeType() + ",");    	
+        if (getEngine() != null) sb.append("Engine: " + getEngine() + ",");    	
+        if (getEngineVersion() != null) sb.append("EngineVersion: " + getEngineVersion() + ",");    	
+        if (getCacheClusterStatus() != null) sb.append("CacheClusterStatus: " + getCacheClusterStatus() + ",");    	
+        if (getNumCacheNodes() != null) sb.append("NumCacheNodes: " + getNumCacheNodes() + ",");    	
+        if (getPreferredAvailabilityZone() != null) sb.append("PreferredAvailabilityZone: " + getPreferredAvailabilityZone() + ",");    	
+        if (getCacheClusterCreateTime() != null) sb.append("CacheClusterCreateTime: " + getCacheClusterCreateTime() + ",");    	
+        if (getPreferredMaintenanceWindow() != null) sb.append("PreferredMaintenanceWindow: " + getPreferredMaintenanceWindow() + ",");    	
+        if (getPendingModifiedValues() != null) sb.append("PendingModifiedValues: " + getPendingModifiedValues() + ",");    	
+        if (getNotificationConfiguration() != null) sb.append("NotificationConfiguration: " + getNotificationConfiguration() + ",");    	
+        if (getCacheSecurityGroups() != null) sb.append("CacheSecurityGroups: " + getCacheSecurityGroups() + ",");    	
+        if (getCacheParameterGroup() != null) sb.append("CacheParameterGroup: " + getCacheParameterGroup() + ",");    	
+        if (getCacheSubnetGroupName() != null) sb.append("CacheSubnetGroupName: " + getCacheSubnetGroupName() + ",");    	
+        if (getCacheNodes() != null) sb.append("CacheNodes: " + getCacheNodes() + ",");    	
+        if (isAutoMinorVersionUpgrade() != null) sb.append("AutoMinorVersionUpgrade: " + isAutoMinorVersionUpgrade() + ",");    	
+        if (getSecurityGroups() != null) sb.append("SecurityGroups: " + getSecurityGroups() );
         sb.append("}");
         return sb.toString();
     }

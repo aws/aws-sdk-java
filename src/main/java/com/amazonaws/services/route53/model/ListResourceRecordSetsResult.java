@@ -496,13 +496,13 @@ public class ListResourceRecordSetsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getResourceRecordSets() != null) sb.append("ResourceRecordSets: " + getResourceRecordSets() + ", ");
-        if (isTruncated() != null) sb.append("IsTruncated: " + isTruncated() + ", ");
-        if (getNextRecordName() != null) sb.append("NextRecordName: " + getNextRecordName() + ", ");
-        if (getNextRecordType() != null) sb.append("NextRecordType: " + getNextRecordType() + ", ");
-        if (getNextRecordIdentifier() != null) sb.append("NextRecordIdentifier: " + getNextRecordIdentifier() + ", ");
-        if (getMaxItems() != null) sb.append("MaxItems: " + getMaxItems() + ", ");
+        sb.append("{");    	
+        if (getResourceRecordSets() != null) sb.append("ResourceRecordSets: " + getResourceRecordSets() + ",");    	
+        if (isTruncated() != null) sb.append("IsTruncated: " + isTruncated() + ",");    	
+        if (getNextRecordName() != null) sb.append("NextRecordName: " + getNextRecordName() + ",");    	
+        if (getNextRecordType() != null) sb.append("NextRecordType: " + getNextRecordType() + ",");    	
+        if (getNextRecordIdentifier() != null) sb.append("NextRecordIdentifier: " + getNextRecordIdentifier() + ",");    	
+        if (getMaxItems() != null) sb.append("MaxItems: " + getMaxItems() );
         sb.append("}");
         return sb.toString();
     }

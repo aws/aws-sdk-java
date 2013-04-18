@@ -164,10 +164,10 @@ public class ElasticIp  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getIp() != null) sb.append("Ip: " + getIp() + ", ");
-        if (getName() != null) sb.append("Name: " + getName() + ", ");
-        if (getRegion() != null) sb.append("Region: " + getRegion() + ", ");
+        sb.append("{");    	
+        if (getIp() != null) sb.append("Ip: " + getIp() + ",");    	
+        if (getName() != null) sb.append("Name: " + getName() + ",");    	
+        if (getRegion() != null) sb.append("Region: " + getRegion() );
         sb.append("}");
         return sb.toString();
     }

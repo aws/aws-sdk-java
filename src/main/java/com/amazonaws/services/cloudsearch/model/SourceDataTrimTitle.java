@@ -250,11 +250,11 @@ public class SourceDataTrimTitle  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getSourceName() != null) sb.append("SourceName: " + getSourceName() + ", ");
-        if (getDefaultValue() != null) sb.append("DefaultValue: " + getDefaultValue() + ", ");
-        if (getSeparator() != null) sb.append("Separator: " + getSeparator() + ", ");
-        if (getLanguage() != null) sb.append("Language: " + getLanguage() + ", ");
+        sb.append("{");    	
+        if (getSourceName() != null) sb.append("SourceName: " + getSourceName() + ",");    	
+        if (getDefaultValue() != null) sb.append("DefaultValue: " + getDefaultValue() + ",");    	
+        if (getSeparator() != null) sb.append("Separator: " + getSeparator() + ",");    	
+        if (getLanguage() != null) sb.append("Language: " + getLanguage() );
         sb.append("}");
         return sb.toString();
     }

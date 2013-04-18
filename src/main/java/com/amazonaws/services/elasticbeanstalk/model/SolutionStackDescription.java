@@ -158,9 +158,9 @@ public class SolutionStackDescription  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getSolutionStackName() != null) sb.append("SolutionStackName: " + getSolutionStackName() + ", ");
-        if (getPermittedFileTypes() != null) sb.append("PermittedFileTypes: " + getPermittedFileTypes() + ", ");
+        sb.append("{");    	
+        if (getSolutionStackName() != null) sb.append("SolutionStackName: " + getSolutionStackName() + ",");    	
+        if (getPermittedFileTypes() != null) sb.append("PermittedFileTypes: " + getPermittedFileTypes() );
         sb.append("}");
         return sb.toString();
     }

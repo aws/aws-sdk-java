@@ -754,22 +754,22 @@ public class ReservedInstances  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getReservedInstancesId() != null) sb.append("ReservedInstancesId: " + getReservedInstancesId() + ", ");
-        if (getInstanceType() != null) sb.append("InstanceType: " + getInstanceType() + ", ");
-        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ", ");
-        if (getStart() != null) sb.append("Start: " + getStart() + ", ");
-        if (getDuration() != null) sb.append("Duration: " + getDuration() + ", ");
-        if (getUsagePrice() != null) sb.append("UsagePrice: " + getUsagePrice() + ", ");
-        if (getFixedPrice() != null) sb.append("FixedPrice: " + getFixedPrice() + ", ");
-        if (getInstanceCount() != null) sb.append("InstanceCount: " + getInstanceCount() + ", ");
-        if (getProductDescription() != null) sb.append("ProductDescription: " + getProductDescription() + ", ");
-        if (getState() != null) sb.append("State: " + getState() + ", ");
-        if (getTags() != null) sb.append("Tags: " + getTags() + ", ");
-        if (getInstanceTenancy() != null) sb.append("InstanceTenancy: " + getInstanceTenancy() + ", ");
-        if (getCurrencyCode() != null) sb.append("CurrencyCode: " + getCurrencyCode() + ", ");
-        if (getOfferingType() != null) sb.append("OfferingType: " + getOfferingType() + ", ");
-        if (getRecurringCharges() != null) sb.append("RecurringCharges: " + getRecurringCharges() + ", ");
+        sb.append("{");    	
+        if (getReservedInstancesId() != null) sb.append("ReservedInstancesId: " + getReservedInstancesId() + ",");    	
+        if (getInstanceType() != null) sb.append("InstanceType: " + getInstanceType() + ",");    	
+        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");    	
+        if (getStart() != null) sb.append("Start: " + getStart() + ",");    	
+        if (getDuration() != null) sb.append("Duration: " + getDuration() + ",");    	
+        if (getUsagePrice() != null) sb.append("UsagePrice: " + getUsagePrice() + ",");    	
+        if (getFixedPrice() != null) sb.append("FixedPrice: " + getFixedPrice() + ",");    	
+        if (getInstanceCount() != null) sb.append("InstanceCount: " + getInstanceCount() + ",");    	
+        if (getProductDescription() != null) sb.append("ProductDescription: " + getProductDescription() + ",");    	
+        if (getState() != null) sb.append("State: " + getState() + ",");    	
+        if (getTags() != null) sb.append("Tags: " + getTags() + ",");    	
+        if (getInstanceTenancy() != null) sb.append("InstanceTenancy: " + getInstanceTenancy() + ",");    	
+        if (getCurrencyCode() != null) sb.append("CurrencyCode: " + getCurrencyCode() + ",");    	
+        if (getOfferingType() != null) sb.append("OfferingType: " + getOfferingType() + ",");    	
+        if (getRecurringCharges() != null) sb.append("RecurringCharges: " + getRecurringCharges() );
         sb.append("}");
         return sb.toString();
     }

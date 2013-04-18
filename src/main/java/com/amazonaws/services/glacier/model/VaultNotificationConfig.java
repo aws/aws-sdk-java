@@ -185,9 +185,9 @@ public class VaultNotificationConfig  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getSNSTopic() != null) sb.append("SNSTopic: " + getSNSTopic() + ", ");
-        if (getEvents() != null) sb.append("Events: " + getEvents() + ", ");
+        sb.append("{");    	
+        if (getSNSTopic() != null) sb.append("SNSTopic: " + getSNSTopic() + ",");    	
+        if (getEvents() != null) sb.append("Events: " + getEvents() );
         sb.append("}");
         return sb.toString();
     }

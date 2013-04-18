@@ -144,6 +144,7 @@ import com.amazonaws.util.VersionInfoUtils;
  * @see DynamoDBMarshalling
  * @see DynamoDBMapperConfig
  */
+@Deprecated
 public class DynamoDBMapper {
 
     private final AmazonDynamoDB db;
@@ -539,10 +540,10 @@ public class DynamoDBMapper {
                     .withItem(transformAttributes(clazz, convertToItem(updateValues)))
                     .withExpected(expectedValues)));
         } else if ( !nonKeyAttributePresent ) {
-            keyOnlyPut(tableName, objectKey, hashKeyGetter, rangeKeyGetter);
+            keyOnlyPut(clazz, tableName, objectKey, hashKeyGetter, rangeKeyGetter);
         } else {
             db.updateItem(applyUserAgent(new UpdateItemRequest().withTableName(tableName).withKey(objectKey)
-                    .withAttributeUpdates(transformAttributeUpdates(clazz, updateValues)).withExpected(expectedValues)));
+                                         .withAttributeUpdates(transformAttributeUpdates(clazz, objectKey, updateValues)).withExpected(expectedValues)));
         }
 
         /*
@@ -564,7 +565,8 @@ public class DynamoDBMapper {
      * isn't perfect, but we should be doing a putItem at all in this case, so
      * it's the best we can do.
      */
-    private void keyOnlyPut(String tableName, Key objectKey, Method hashKeyGetter, Method rangeKeyGetter) {
+    private void keyOnlyPut(Class<?> clazz, String tableName, Key objectKey,
+                            Method hashKeyGetter, Method rangeKeyGetter) {
         Map<String, AttributeValue> attributes = new HashMap<String, AttributeValue>();
         Map<String, ExpectedAttributeValue> expectedValues = new HashMap<String, ExpectedAttributeValue>();
 
@@ -577,7 +579,7 @@ public class DynamoDBMapper {
             attributes.put(rangeKeyAttributeName, objectKey.getRangeKeyElement());
             expectedValues.put(rangeKeyAttributeName, new ExpectedAttributeValue().withExists(false));
         }
-
+        attributes = transformAttributes(clazz, attributes);
         db.putItem(applyUserAgent(new PutItemRequest().withTableName(tableName).withItem(attributes)
                 .withExpected(expectedValues)));
     }
@@ -1351,7 +1353,8 @@ public class DynamoDBMapper {
     /**
      * Transforms the attribute values after loading from DynamoDb.
      * Only ever called by {@link #untransformAttributes(Class, Map)}.
-     * By default, returns the attributes unchanged.
+     * By default, returns the attributes unchanged. Currently, the
+     * values associated with the hash key and range key must be left unchanged.
      * 
      * @param hashKey the attribute name of the hash key
      * @param rangeKey the attribute name of the range key (or null if there is none)
@@ -1391,11 +1394,45 @@ public class DynamoDBMapper {
             Map<String, AttributeValue> attributeValues) {
         return attributeValues;
     }
-    
+
+    /**
+     * A transformation expects to see all values, including keys, when
+     * determining the transformation, therefore we must insert them if they are
+     * not already present. However, we must remove the keys prior to actual
+     * storage as this method is called when updating DynamoDB, which does
+     * not permit the modification of key attributes as part of an update call.
+     **/
     private Map<String, AttributeValueUpdate> transformAttributeUpdates(Class<?> clazz,
-            Map<String, AttributeValueUpdate> updateValues) {
+            Key objectKey, Map<String, AttributeValueUpdate> updateValues) {
         Map<String, AttributeValue> item = convertToItem(updateValues);
+
+        boolean hashKeyAdded = false;
+        boolean rangeKeyAdded = false;
+        String hashKey = reflector.getAttributeName(reflector.getHashKeyGetter(clazz));
+        if(!item.containsKey(hashKey)) {
+            item.put(hashKey, objectKey.getHashKeyElement());
+            hashKeyAdded = true;
+        }
+        String rangeKey = null;
+        Method rangeKeyGetter = reflector.getRangeKeyGetter(clazz);
+        if (rangeKeyGetter != null) {
+            rangeKey = reflector.getAttributeName(rangeKeyGetter);
+            if (!item.containsKey(rangeKey)) {
+                item.put(rangeKey, objectKey.getRangeKeyElement());
+                rangeKeyAdded = true;
+            }
+        }
+
         item = transformAttributes(clazz, item);
+
+        // Remove the keys if we added them before.
+        if (hashKeyAdded) {
+            item.remove(hashKey);
+        }
+        if (rangeKeyAdded) {
+            item.remove(rangeKey);
+        }
+
         for(String key: item.keySet()) {
             if (updateValues.containsKey(key)) {
                 updateValues.get(key).getValue()

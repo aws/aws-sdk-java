@@ -79,6 +79,21 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      */
     private Boolean multiAZ;
 
+    /**
+     * Specifies the accessibility options for the DB Instance. A value of
+     * true specifies an Internet-facing instance with a publicly resolvable
+     * DNS name, which resolves to a public IP address. A value of false
+     * specifies an internal instance with a DNS name that resolves to a
+     * private IP address. <p> Default: The default behavior varies depending
+     * on whether a VPC has been requested or not. The following list shows
+     * the default behavior in each case. <ul> <li><b>Default
+     * VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> <p> If no DB subnet
+     * group has been specified as part of the request and the
+     * PubliclyAccessible value has not been set, the DB instance will be
+     * publicly accessible. If a specific DB subnet group has been specified
+     * as part of the request and the PubliclyAccessible value has not been
+     * set, the DB instance will be private.
+     */
     private Boolean publiclyAccessible;
 
     /**
@@ -109,12 +124,19 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     private String engine;
 
     /**
-     * The amount of Provisioned IOPS (input/output operations per second) to
-     * be initially allocated for the DB Instance. <p> Constraints: Must be
-     * an integer greater than 1000.
+     * Specifies the amount of provisioned IOPS for the DB Instance,
+     * expressed in I/O operations per second. If this parameter is not
+     * specified, the IOPS value will be taken from the backup. If this
+     * parameter is set to 0, the new instance will be converted to a
+     * non-PIOPS instance, which will take additional time, though your DB
+     * instance will be available for connections before the conversion
+     * starts. <p> Constraints: Must be an integer greater than 1000.
      */
     private Integer iops;
 
+    /**
+     * The name of the option group to be used for the restored DB instance.
+     */
     private String optionGroupName;
 
     /**
@@ -501,29 +523,101 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     }
     
     /**
-     * Returns the value of the PubliclyAccessible property for this object.
+     * Specifies the accessibility options for the DB Instance. A value of
+     * true specifies an Internet-facing instance with a publicly resolvable
+     * DNS name, which resolves to a public IP address. A value of false
+     * specifies an internal instance with a DNS name that resolves to a
+     * private IP address. <p> Default: The default behavior varies depending
+     * on whether a VPC has been requested or not. The following list shows
+     * the default behavior in each case. <ul> <li><b>Default
+     * VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> <p> If no DB subnet
+     * group has been specified as part of the request and the
+     * PubliclyAccessible value has not been set, the DB instance will be
+     * publicly accessible. If a specific DB subnet group has been specified
+     * as part of the request and the PubliclyAccessible value has not been
+     * set, the DB instance will be private.
      *
-     * @return The value of the PubliclyAccessible property for this object.
+     * @return Specifies the accessibility options for the DB Instance. A value of
+     *         true specifies an Internet-facing instance with a publicly resolvable
+     *         DNS name, which resolves to a public IP address. A value of false
+     *         specifies an internal instance with a DNS name that resolves to a
+     *         private IP address. <p> Default: The default behavior varies depending
+     *         on whether a VPC has been requested or not. The following list shows
+     *         the default behavior in each case. <ul> <li><b>Default
+     *         VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> <p> If no DB subnet
+     *         group has been specified as part of the request and the
+     *         PubliclyAccessible value has not been set, the DB instance will be
+     *         publicly accessible. If a specific DB subnet group has been specified
+     *         as part of the request and the PubliclyAccessible value has not been
+     *         set, the DB instance will be private.
      */
     public Boolean isPubliclyAccessible() {
         return publiclyAccessible;
     }
     
     /**
-     * Sets the value of the PubliclyAccessible property for this object.
+     * Specifies the accessibility options for the DB Instance. A value of
+     * true specifies an Internet-facing instance with a publicly resolvable
+     * DNS name, which resolves to a public IP address. A value of false
+     * specifies an internal instance with a DNS name that resolves to a
+     * private IP address. <p> Default: The default behavior varies depending
+     * on whether a VPC has been requested or not. The following list shows
+     * the default behavior in each case. <ul> <li><b>Default
+     * VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> <p> If no DB subnet
+     * group has been specified as part of the request and the
+     * PubliclyAccessible value has not been set, the DB instance will be
+     * publicly accessible. If a specific DB subnet group has been specified
+     * as part of the request and the PubliclyAccessible value has not been
+     * set, the DB instance will be private.
      *
-     * @param publiclyAccessible The new value for the PubliclyAccessible property for this object.
+     * @param publiclyAccessible Specifies the accessibility options for the DB Instance. A value of
+     *         true specifies an Internet-facing instance with a publicly resolvable
+     *         DNS name, which resolves to a public IP address. A value of false
+     *         specifies an internal instance with a DNS name that resolves to a
+     *         private IP address. <p> Default: The default behavior varies depending
+     *         on whether a VPC has been requested or not. The following list shows
+     *         the default behavior in each case. <ul> <li><b>Default
+     *         VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> <p> If no DB subnet
+     *         group has been specified as part of the request and the
+     *         PubliclyAccessible value has not been set, the DB instance will be
+     *         publicly accessible. If a specific DB subnet group has been specified
+     *         as part of the request and the PubliclyAccessible value has not been
+     *         set, the DB instance will be private.
      */
     public void setPubliclyAccessible(Boolean publiclyAccessible) {
         this.publiclyAccessible = publiclyAccessible;
     }
     
     /**
-     * Sets the value of the PubliclyAccessible property for this object.
+     * Specifies the accessibility options for the DB Instance. A value of
+     * true specifies an Internet-facing instance with a publicly resolvable
+     * DNS name, which resolves to a public IP address. A value of false
+     * specifies an internal instance with a DNS name that resolves to a
+     * private IP address. <p> Default: The default behavior varies depending
+     * on whether a VPC has been requested or not. The following list shows
+     * the default behavior in each case. <ul> <li><b>Default
+     * VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> <p> If no DB subnet
+     * group has been specified as part of the request and the
+     * PubliclyAccessible value has not been set, the DB instance will be
+     * publicly accessible. If a specific DB subnet group has been specified
+     * as part of the request and the PubliclyAccessible value has not been
+     * set, the DB instance will be private.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param publiclyAccessible The new value for the PubliclyAccessible property for this object.
+     * @param publiclyAccessible Specifies the accessibility options for the DB Instance. A value of
+     *         true specifies an Internet-facing instance with a publicly resolvable
+     *         DNS name, which resolves to a public IP address. A value of false
+     *         specifies an internal instance with a DNS name that resolves to a
+     *         private IP address. <p> Default: The default behavior varies depending
+     *         on whether a VPC has been requested or not. The following list shows
+     *         the default behavior in each case. <ul> <li><b>Default
+     *         VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> <p> If no DB subnet
+     *         group has been specified as part of the request and the
+     *         PubliclyAccessible value has not been set, the DB instance will be
+     *         publicly accessible. If a specific DB subnet group has been specified
+     *         as part of the request and the PubliclyAccessible value has not been
+     *         set, the DB instance will be private.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -535,9 +629,33 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     
     
     /**
-     * Returns the value of the PubliclyAccessible property for this object.
+     * Specifies the accessibility options for the DB Instance. A value of
+     * true specifies an Internet-facing instance with a publicly resolvable
+     * DNS name, which resolves to a public IP address. A value of false
+     * specifies an internal instance with a DNS name that resolves to a
+     * private IP address. <p> Default: The default behavior varies depending
+     * on whether a VPC has been requested or not. The following list shows
+     * the default behavior in each case. <ul> <li><b>Default
+     * VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> <p> If no DB subnet
+     * group has been specified as part of the request and the
+     * PubliclyAccessible value has not been set, the DB instance will be
+     * publicly accessible. If a specific DB subnet group has been specified
+     * as part of the request and the PubliclyAccessible value has not been
+     * set, the DB instance will be private.
      *
-     * @return The value of the PubliclyAccessible property for this object.
+     * @return Specifies the accessibility options for the DB Instance. A value of
+     *         true specifies an Internet-facing instance with a publicly resolvable
+     *         DNS name, which resolves to a public IP address. A value of false
+     *         specifies an internal instance with a DNS name that resolves to a
+     *         private IP address. <p> Default: The default behavior varies depending
+     *         on whether a VPC has been requested or not. The following list shows
+     *         the default behavior in each case. <ul> <li><b>Default
+     *         VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> <p> If no DB subnet
+     *         group has been specified as part of the request and the
+     *         PubliclyAccessible value has not been set, the DB instance will be
+     *         publicly accessible. If a specific DB subnet group has been specified
+     *         as part of the request and the PubliclyAccessible value has not been
+     *         set, the DB instance will be private.
      */
     public Boolean getPubliclyAccessible() {
         return publiclyAccessible;
@@ -733,41 +851,65 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     
     
     /**
-     * The amount of Provisioned IOPS (input/output operations per second) to
-     * be initially allocated for the DB Instance. <p> Constraints: Must be
-     * an integer greater than 1000.
+     * Specifies the amount of provisioned IOPS for the DB Instance,
+     * expressed in I/O operations per second. If this parameter is not
+     * specified, the IOPS value will be taken from the backup. If this
+     * parameter is set to 0, the new instance will be converted to a
+     * non-PIOPS instance, which will take additional time, though your DB
+     * instance will be available for connections before the conversion
+     * starts. <p> Constraints: Must be an integer greater than 1000.
      *
-     * @return The amount of Provisioned IOPS (input/output operations per second) to
-     *         be initially allocated for the DB Instance. <p> Constraints: Must be
-     *         an integer greater than 1000.
+     * @return Specifies the amount of provisioned IOPS for the DB Instance,
+     *         expressed in I/O operations per second. If this parameter is not
+     *         specified, the IOPS value will be taken from the backup. If this
+     *         parameter is set to 0, the new instance will be converted to a
+     *         non-PIOPS instance, which will take additional time, though your DB
+     *         instance will be available for connections before the conversion
+     *         starts. <p> Constraints: Must be an integer greater than 1000.
      */
     public Integer getIops() {
         return iops;
     }
     
     /**
-     * The amount of Provisioned IOPS (input/output operations per second) to
-     * be initially allocated for the DB Instance. <p> Constraints: Must be
-     * an integer greater than 1000.
+     * Specifies the amount of provisioned IOPS for the DB Instance,
+     * expressed in I/O operations per second. If this parameter is not
+     * specified, the IOPS value will be taken from the backup. If this
+     * parameter is set to 0, the new instance will be converted to a
+     * non-PIOPS instance, which will take additional time, though your DB
+     * instance will be available for connections before the conversion
+     * starts. <p> Constraints: Must be an integer greater than 1000.
      *
-     * @param iops The amount of Provisioned IOPS (input/output operations per second) to
-     *         be initially allocated for the DB Instance. <p> Constraints: Must be
-     *         an integer greater than 1000.
+     * @param iops Specifies the amount of provisioned IOPS for the DB Instance,
+     *         expressed in I/O operations per second. If this parameter is not
+     *         specified, the IOPS value will be taken from the backup. If this
+     *         parameter is set to 0, the new instance will be converted to a
+     *         non-PIOPS instance, which will take additional time, though your DB
+     *         instance will be available for connections before the conversion
+     *         starts. <p> Constraints: Must be an integer greater than 1000.
      */
     public void setIops(Integer iops) {
         this.iops = iops;
     }
     
     /**
-     * The amount of Provisioned IOPS (input/output operations per second) to
-     * be initially allocated for the DB Instance. <p> Constraints: Must be
-     * an integer greater than 1000.
+     * Specifies the amount of provisioned IOPS for the DB Instance,
+     * expressed in I/O operations per second. If this parameter is not
+     * specified, the IOPS value will be taken from the backup. If this
+     * parameter is set to 0, the new instance will be converted to a
+     * non-PIOPS instance, which will take additional time, though your DB
+     * instance will be available for connections before the conversion
+     * starts. <p> Constraints: Must be an integer greater than 1000.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param iops The amount of Provisioned IOPS (input/output operations per second) to
-     *         be initially allocated for the DB Instance. <p> Constraints: Must be
-     *         an integer greater than 1000.
+     * @param iops Specifies the amount of provisioned IOPS for the DB Instance,
+     *         expressed in I/O operations per second. If this parameter is not
+     *         specified, the IOPS value will be taken from the backup. If this
+     *         parameter is set to 0, the new instance will be converted to a
+     *         non-PIOPS instance, which will take additional time, though your DB
+     *         instance will be available for connections before the conversion
+     *         starts. <p> Constraints: Must be an integer greater than 1000.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -779,29 +921,29 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     
     
     /**
-     * Returns the value of the OptionGroupName property for this object.
+     * The name of the option group to be used for the restored DB instance.
      *
-     * @return The value of the OptionGroupName property for this object.
+     * @return The name of the option group to be used for the restored DB instance.
      */
     public String getOptionGroupName() {
         return optionGroupName;
     }
     
     /**
-     * Sets the value of the OptionGroupName property for this object.
+     * The name of the option group to be used for the restored DB instance.
      *
-     * @param optionGroupName The new value for the OptionGroupName property for this object.
+     * @param optionGroupName The name of the option group to be used for the restored DB instance.
      */
     public void setOptionGroupName(String optionGroupName) {
         this.optionGroupName = optionGroupName;
     }
     
     /**
-     * Sets the value of the OptionGroupName property for this object.
+     * The name of the option group to be used for the restored DB instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param optionGroupName The new value for the OptionGroupName property for this object.
+     * @param optionGroupName The name of the option group to be used for the restored DB instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -823,21 +965,21 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getDBInstanceIdentifier() != null) sb.append("DBInstanceIdentifier: " + getDBInstanceIdentifier() + ", ");
-        if (getDBSnapshotIdentifier() != null) sb.append("DBSnapshotIdentifier: " + getDBSnapshotIdentifier() + ", ");
-        if (getDBInstanceClass() != null) sb.append("DBInstanceClass: " + getDBInstanceClass() + ", ");
-        if (getPort() != null) sb.append("Port: " + getPort() + ", ");
-        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ", ");
-        if (getDBSubnetGroupName() != null) sb.append("DBSubnetGroupName: " + getDBSubnetGroupName() + ", ");
-        if (isMultiAZ() != null) sb.append("MultiAZ: " + isMultiAZ() + ", ");
-        if (isPubliclyAccessible() != null) sb.append("PubliclyAccessible: " + isPubliclyAccessible() + ", ");
-        if (isAutoMinorVersionUpgrade() != null) sb.append("AutoMinorVersionUpgrade: " + isAutoMinorVersionUpgrade() + ", ");
-        if (getLicenseModel() != null) sb.append("LicenseModel: " + getLicenseModel() + ", ");
-        if (getDBName() != null) sb.append("DBName: " + getDBName() + ", ");
-        if (getEngine() != null) sb.append("Engine: " + getEngine() + ", ");
-        if (getIops() != null) sb.append("Iops: " + getIops() + ", ");
-        if (getOptionGroupName() != null) sb.append("OptionGroupName: " + getOptionGroupName() + ", ");
+        sb.append("{");    	
+        if (getDBInstanceIdentifier() != null) sb.append("DBInstanceIdentifier: " + getDBInstanceIdentifier() + ",");    	
+        if (getDBSnapshotIdentifier() != null) sb.append("DBSnapshotIdentifier: " + getDBSnapshotIdentifier() + ",");    	
+        if (getDBInstanceClass() != null) sb.append("DBInstanceClass: " + getDBInstanceClass() + ",");    	
+        if (getPort() != null) sb.append("Port: " + getPort() + ",");    	
+        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");    	
+        if (getDBSubnetGroupName() != null) sb.append("DBSubnetGroupName: " + getDBSubnetGroupName() + ",");    	
+        if (isMultiAZ() != null) sb.append("MultiAZ: " + isMultiAZ() + ",");    	
+        if (isPubliclyAccessible() != null) sb.append("PubliclyAccessible: " + isPubliclyAccessible() + ",");    	
+        if (isAutoMinorVersionUpgrade() != null) sb.append("AutoMinorVersionUpgrade: " + isAutoMinorVersionUpgrade() + ",");    	
+        if (getLicenseModel() != null) sb.append("LicenseModel: " + getLicenseModel() + ",");    	
+        if (getDBName() != null) sb.append("DBName: " + getDBName() + ",");    	
+        if (getEngine() != null) sb.append("Engine: " + getEngine() + ",");    	
+        if (getIops() != null) sb.append("Iops: " + getIops() + ",");    	
+        if (getOptionGroupName() != null) sb.append("OptionGroupName: " + getOptionGroupName() );
         sb.append("}");
         return sb.toString();
     }

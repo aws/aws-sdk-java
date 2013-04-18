@@ -173,10 +173,10 @@ public class DeleteNetworkAclEntryRequest extends AmazonWebServiceRequest  imple
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getNetworkAclId() != null) sb.append("NetworkAclId: " + getNetworkAclId() + ", ");
-        if (getRuleNumber() != null) sb.append("RuleNumber: " + getRuleNumber() + ", ");
-        if (isEgress() != null) sb.append("Egress: " + isEgress() + ", ");
+        sb.append("{");    	
+        if (getNetworkAclId() != null) sb.append("NetworkAclId: " + getNetworkAclId() + ",");    	
+        if (getRuleNumber() != null) sb.append("RuleNumber: " + getRuleNumber() + ",");    	
+        if (isEgress() != null) sb.append("Egress: " + isEgress() );
         sb.append("}");
         return sb.toString();
     }

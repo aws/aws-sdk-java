@@ -235,10 +235,10 @@ public class ListIdentitiesRequest extends AmazonWebServiceRequest  implements S
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getIdentityType() != null) sb.append("IdentityType: " + getIdentityType() + ", ");
-        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() + ", ");
-        if (getMaxItems() != null) sb.append("MaxItems: " + getMaxItems() + ", ");
+        sb.append("{");    	
+        if (getIdentityType() != null) sb.append("IdentityType: " + getIdentityType() + ",");    	
+        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() + ",");    	
+        if (getMaxItems() != null) sb.append("MaxItems: " + getMaxItems() );
         sb.append("}");
         return sb.toString();
     }

@@ -536,19 +536,19 @@ public class ReservedCacheNode  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getReservedCacheNodeId() != null) sb.append("ReservedCacheNodeId: " + getReservedCacheNodeId() + ", ");
-        if (getReservedCacheNodesOfferingId() != null) sb.append("ReservedCacheNodesOfferingId: " + getReservedCacheNodesOfferingId() + ", ");
-        if (getCacheNodeType() != null) sb.append("CacheNodeType: " + getCacheNodeType() + ", ");
-        if (getStartTime() != null) sb.append("StartTime: " + getStartTime() + ", ");
-        if (getDuration() != null) sb.append("Duration: " + getDuration() + ", ");
-        if (getFixedPrice() != null) sb.append("FixedPrice: " + getFixedPrice() + ", ");
-        if (getUsagePrice() != null) sb.append("UsagePrice: " + getUsagePrice() + ", ");
-        if (getCacheNodeCount() != null) sb.append("CacheNodeCount: " + getCacheNodeCount() + ", ");
-        if (getProductDescription() != null) sb.append("ProductDescription: " + getProductDescription() + ", ");
-        if (getOfferingType() != null) sb.append("OfferingType: " + getOfferingType() + ", ");
-        if (getState() != null) sb.append("State: " + getState() + ", ");
-        if (getRecurringCharges() != null) sb.append("RecurringCharges: " + getRecurringCharges() + ", ");
+        sb.append("{");    	
+        if (getReservedCacheNodeId() != null) sb.append("ReservedCacheNodeId: " + getReservedCacheNodeId() + ",");    	
+        if (getReservedCacheNodesOfferingId() != null) sb.append("ReservedCacheNodesOfferingId: " + getReservedCacheNodesOfferingId() + ",");    	
+        if (getCacheNodeType() != null) sb.append("CacheNodeType: " + getCacheNodeType() + ",");    	
+        if (getStartTime() != null) sb.append("StartTime: " + getStartTime() + ",");    	
+        if (getDuration() != null) sb.append("Duration: " + getDuration() + ",");    	
+        if (getFixedPrice() != null) sb.append("FixedPrice: " + getFixedPrice() + ",");    	
+        if (getUsagePrice() != null) sb.append("UsagePrice: " + getUsagePrice() + ",");    	
+        if (getCacheNodeCount() != null) sb.append("CacheNodeCount: " + getCacheNodeCount() + ",");    	
+        if (getProductDescription() != null) sb.append("ProductDescription: " + getProductDescription() + ",");    	
+        if (getOfferingType() != null) sb.append("OfferingType: " + getOfferingType() + ",");    	
+        if (getState() != null) sb.append("State: " + getState() + ",");    	
+        if (getRecurringCharges() != null) sb.append("RecurringCharges: " + getRecurringCharges() );
         sb.append("}");
         return sb.toString();
     }

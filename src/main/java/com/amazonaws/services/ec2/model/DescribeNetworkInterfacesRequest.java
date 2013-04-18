@@ -177,9 +177,9 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest  i
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getNetworkInterfaceIds() != null) sb.append("NetworkInterfaceIds: " + getNetworkInterfaceIds() + ", ");
-        if (getFilters() != null) sb.append("Filters: " + getFilters() + ", ");
+        sb.append("{");    	
+        if (getNetworkInterfaceIds() != null) sb.append("NetworkInterfaceIds: " + getNetworkInterfaceIds() + ",");    	
+        if (getFilters() != null) sb.append("Filters: " + getFilters() );
         sb.append("}");
         return sb.toString();
     }

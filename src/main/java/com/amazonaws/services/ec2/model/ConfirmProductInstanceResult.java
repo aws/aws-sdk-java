@@ -79,8 +79,8 @@ public class ConfirmProductInstanceResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getOwnerId() != null) sb.append("OwnerId: " + getOwnerId() + ", ");
+        sb.append("{");    	
+        if (getOwnerId() != null) sb.append("OwnerId: " + getOwnerId() );
         sb.append("}");
         return sb.toString();
     }

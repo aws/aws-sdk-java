@@ -273,10 +273,10 @@ public class ReportTaskRunnerHeartbeatRequest extends AmazonWebServiceRequest  i
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getTaskrunnerId() != null) sb.append("TaskrunnerId: " + getTaskrunnerId() + ", ");
-        if (getWorkerGroup() != null) sb.append("WorkerGroup: " + getWorkerGroup() + ", ");
-        if (getHostname() != null) sb.append("Hostname: " + getHostname() + ", ");
+        sb.append("{");    	
+        if (getTaskrunnerId() != null) sb.append("TaskrunnerId: " + getTaskrunnerId() + ",");    	
+        if (getWorkerGroup() != null) sb.append("WorkerGroup: " + getWorkerGroup() + ",");    	
+        if (getHostname() != null) sb.append("Hostname: " + getHostname() );
         sb.append("}");
         return sb.toString();
     }

@@ -203,9 +203,9 @@ public class DescribeIndexFieldsRequest extends AmazonWebServiceRequest  impleme
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getDomainName() != null) sb.append("DomainName: " + getDomainName() + ", ");
-        if (getFieldNames() != null) sb.append("FieldNames: " + getFieldNames() + ", ");
+        sb.append("{");    	
+        if (getDomainName() != null) sb.append("DomainName: " + getDomainName() + ",");    	
+        if (getFieldNames() != null) sb.append("FieldNames: " + getFieldNames() );
         sb.append("}");
         return sb.toString();
     }

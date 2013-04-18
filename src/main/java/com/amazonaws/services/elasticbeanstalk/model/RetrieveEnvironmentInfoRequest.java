@@ -312,10 +312,10 @@ public class RetrieveEnvironmentInfoRequest extends AmazonWebServiceRequest  imp
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getEnvironmentId() != null) sb.append("EnvironmentId: " + getEnvironmentId() + ", ");
-        if (getEnvironmentName() != null) sb.append("EnvironmentName: " + getEnvironmentName() + ", ");
-        if (getInfoType() != null) sb.append("InfoType: " + getInfoType() + ", ");
+        sb.append("{");    	
+        if (getEnvironmentId() != null) sb.append("EnvironmentId: " + getEnvironmentId() + ",");    	
+        if (getEnvironmentName() != null) sb.append("EnvironmentName: " + getEnvironmentName() + ",");    	
+        if (getInfoType() != null) sb.append("InfoType: " + getInfoType() );
         sb.append("}");
         return sb.toString();
     }

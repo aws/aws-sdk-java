@@ -160,9 +160,9 @@ public class DescribeReservedDBInstancesResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ", ");
-        if (getReservedDBInstances() != null) sb.append("ReservedDBInstances: " + getReservedDBInstances() + ", ");
+        sb.append("{");    	
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");    	
+        if (getReservedDBInstances() != null) sb.append("ReservedDBInstances: " + getReservedDBInstances() );
         sb.append("}");
         return sb.toString();
     }

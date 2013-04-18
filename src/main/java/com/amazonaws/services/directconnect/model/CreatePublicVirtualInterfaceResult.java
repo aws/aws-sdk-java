@@ -811,21 +811,21 @@ public class CreatePublicVirtualInterfaceResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getVirtualInterfaceId() != null) sb.append("VirtualInterfaceId: " + getVirtualInterfaceId() + ", ");
-        if (getLocation() != null) sb.append("Location: " + getLocation() + ", ");
-        if (getConnectionId() != null) sb.append("ConnectionId: " + getConnectionId() + ", ");
-        if (getVirtualInterfaceType() != null) sb.append("VirtualInterfaceType: " + getVirtualInterfaceType() + ", ");
-        if (getVirtualInterfaceName() != null) sb.append("VirtualInterfaceName: " + getVirtualInterfaceName() + ", ");
-        if (getVlan() != null) sb.append("Vlan: " + getVlan() + ", ");
-        if (getAsn() != null) sb.append("Asn: " + getAsn() + ", ");
-        if (getAuthKey() != null) sb.append("AuthKey: " + getAuthKey() + ", ");
-        if (getAmazonAddress() != null) sb.append("AmazonAddress: " + getAmazonAddress() + ", ");
-        if (getCustomerAddress() != null) sb.append("CustomerAddress: " + getCustomerAddress() + ", ");
-        if (getVirtualInterfaceState() != null) sb.append("VirtualInterfaceState: " + getVirtualInterfaceState() + ", ");
-        if (getCustomerRouterConfig() != null) sb.append("CustomerRouterConfig: " + getCustomerRouterConfig() + ", ");
-        if (getVirtualGatewayId() != null) sb.append("VirtualGatewayId: " + getVirtualGatewayId() + ", ");
-        if (getRouteFilterPrefixes() != null) sb.append("RouteFilterPrefixes: " + getRouteFilterPrefixes() + ", ");
+        sb.append("{");    	
+        if (getVirtualInterfaceId() != null) sb.append("VirtualInterfaceId: " + getVirtualInterfaceId() + ",");    	
+        if (getLocation() != null) sb.append("Location: " + getLocation() + ",");    	
+        if (getConnectionId() != null) sb.append("ConnectionId: " + getConnectionId() + ",");    	
+        if (getVirtualInterfaceType() != null) sb.append("VirtualInterfaceType: " + getVirtualInterfaceType() + ",");    	
+        if (getVirtualInterfaceName() != null) sb.append("VirtualInterfaceName: " + getVirtualInterfaceName() + ",");    	
+        if (getVlan() != null) sb.append("Vlan: " + getVlan() + ",");    	
+        if (getAsn() != null) sb.append("Asn: " + getAsn() + ",");    	
+        if (getAuthKey() != null) sb.append("AuthKey: " + getAuthKey() + ",");    	
+        if (getAmazonAddress() != null) sb.append("AmazonAddress: " + getAmazonAddress() + ",");    	
+        if (getCustomerAddress() != null) sb.append("CustomerAddress: " + getCustomerAddress() + ",");    	
+        if (getVirtualInterfaceState() != null) sb.append("VirtualInterfaceState: " + getVirtualInterfaceState() + ",");    	
+        if (getCustomerRouterConfig() != null) sb.append("CustomerRouterConfig: " + getCustomerRouterConfig() + ",");    	
+        if (getVirtualGatewayId() != null) sb.append("VirtualGatewayId: " + getVirtualGatewayId() + ",");    	
+        if (getRouteFilterPrefixes() != null) sb.append("RouteFilterPrefixes: " + getRouteFilterPrefixes() );
         sb.append("}");
         return sb.toString();
     }

@@ -194,10 +194,10 @@ public class PolicyTypeDescription  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getPolicyTypeName() != null) sb.append("PolicyTypeName: " + getPolicyTypeName() + ", ");
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ", ");
-        if (getPolicyAttributeTypeDescriptions() != null) sb.append("PolicyAttributeTypeDescriptions: " + getPolicyAttributeTypeDescriptions() + ", ");
+        sb.append("{");    	
+        if (getPolicyTypeName() != null) sb.append("PolicyTypeName: " + getPolicyTypeName() + ",");    	
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");    	
+        if (getPolicyAttributeTypeDescriptions() != null) sb.append("PolicyAttributeTypeDescriptions: " + getPolicyAttributeTypeDescriptions() );
         sb.append("}");
         return sb.toString();
     }

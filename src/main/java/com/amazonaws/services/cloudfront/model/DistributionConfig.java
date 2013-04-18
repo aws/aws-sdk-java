@@ -718,17 +718,17 @@ public class DistributionConfig  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getCallerReference() != null) sb.append("CallerReference: " + getCallerReference() + ", ");
-        if (getAliases() != null) sb.append("Aliases: " + getAliases() + ", ");
-        if (getDefaultRootObject() != null) sb.append("DefaultRootObject: " + getDefaultRootObject() + ", ");
-        if (getOrigins() != null) sb.append("Origins: " + getOrigins() + ", ");
-        if (getDefaultCacheBehavior() != null) sb.append("DefaultCacheBehavior: " + getDefaultCacheBehavior() + ", ");
-        if (getCacheBehaviors() != null) sb.append("CacheBehaviors: " + getCacheBehaviors() + ", ");
-        if (getComment() != null) sb.append("Comment: " + getComment() + ", ");
-        if (getLogging() != null) sb.append("Logging: " + getLogging() + ", ");
-        if (getPriceClass() != null) sb.append("PriceClass: " + getPriceClass() + ", ");
-        if (isEnabled() != null) sb.append("Enabled: " + isEnabled() + ", ");
+        sb.append("{");    	
+        if (getCallerReference() != null) sb.append("CallerReference: " + getCallerReference() + ",");    	
+        if (getAliases() != null) sb.append("Aliases: " + getAliases() + ",");    	
+        if (getDefaultRootObject() != null) sb.append("DefaultRootObject: " + getDefaultRootObject() + ",");    	
+        if (getOrigins() != null) sb.append("Origins: " + getOrigins() + ",");    	
+        if (getDefaultCacheBehavior() != null) sb.append("DefaultCacheBehavior: " + getDefaultCacheBehavior() + ",");    	
+        if (getCacheBehaviors() != null) sb.append("CacheBehaviors: " + getCacheBehaviors() + ",");    	
+        if (getComment() != null) sb.append("Comment: " + getComment() + ",");    	
+        if (getLogging() != null) sb.append("Logging: " + getLogging() + ",");    	
+        if (getPriceClass() != null) sb.append("PriceClass: " + getPriceClass() + ",");    	
+        if (isEnabled() != null) sb.append("Enabled: " + isEnabled() );
         sb.append("}");
         return sb.toString();
     }

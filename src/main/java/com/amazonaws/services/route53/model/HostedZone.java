@@ -352,12 +352,12 @@ public class HostedZone  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getId() != null) sb.append("Id: " + getId() + ", ");
-        if (getName() != null) sb.append("Name: " + getName() + ", ");
-        if (getCallerReference() != null) sb.append("CallerReference: " + getCallerReference() + ", ");
-        if (getConfig() != null) sb.append("Config: " + getConfig() + ", ");
-        if (getResourceRecordSetCount() != null) sb.append("ResourceRecordSetCount: " + getResourceRecordSetCount() + ", ");
+        sb.append("{");    	
+        if (getId() != null) sb.append("Id: " + getId() + ",");    	
+        if (getName() != null) sb.append("Name: " + getName() + ",");    	
+        if (getCallerReference() != null) sb.append("CallerReference: " + getCallerReference() + ",");    	
+        if (getConfig() != null) sb.append("Config: " + getConfig() + ",");    	
+        if (getResourceRecordSetCount() != null) sb.append("ResourceRecordSetCount: " + getResourceRecordSetCount() );
         sb.append("}");
         return sb.toString();
     }

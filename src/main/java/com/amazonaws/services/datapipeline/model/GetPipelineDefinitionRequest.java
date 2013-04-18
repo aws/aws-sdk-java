@@ -148,9 +148,9 @@ public class GetPipelineDefinitionRequest extends AmazonWebServiceRequest  imple
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getPipelineId() != null) sb.append("PipelineId: " + getPipelineId() + ", ");
-        if (getVersion() != null) sb.append("Version: " + getVersion() + ", ");
+        sb.append("{");    	
+        if (getPipelineId() != null) sb.append("PipelineId: " + getPipelineId() + ",");    	
+        if (getVersion() != null) sb.append("Version: " + getVersion() );
         sb.append("}");
         return sb.toString();
     }

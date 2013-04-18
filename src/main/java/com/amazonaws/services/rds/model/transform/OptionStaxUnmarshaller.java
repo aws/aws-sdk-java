@@ -54,8 +54,16 @@ public class OptionStaxUnmarshaller implements Unmarshaller<Option, StaxUnmarsha
                     option.setOptionDescription(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("Persistent", targetDepth)) {
+                    option.setPersistent(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
                 if (context.testExpression("Port", targetDepth)) {
                     option.setPort(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("OptionSettings/OptionSetting", targetDepth)) {
+                    option.getOptionSettings().add(OptionSettingStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
                 if (context.testExpression("DBSecurityGroupMemberships/DBSecurityGroup", targetDepth)) {

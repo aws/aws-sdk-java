@@ -147,9 +147,9 @@ public class DeleteScheduledActionRequest extends AmazonWebServiceRequest  imple
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getAutoScalingGroupName() != null) sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ", ");
-        if (getScheduledActionName() != null) sb.append("ScheduledActionName: " + getScheduledActionName() + ", ");
+        sb.append("{");    	
+        if (getAutoScalingGroupName() != null) sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ",");    	
+        if (getScheduledActionName() != null) sb.append("ScheduledActionName: " + getScheduledActionName() );
         sb.append("}");
         return sb.toString();
     }

@@ -25,7 +25,7 @@ public class VolumeInfo  implements Serializable  {
     /**
      * The Amazon Resource Name (ARN) for the storage volume. For example,
      * the following is a valid ARN: <p>
-     * ay:us-east-1:111122223333:gateway/mygateway/volume/vol-1122AABB</code>
+     * <code>arn:aws:storagegateway:us-east-1:111122223333:gateway/mygateway/volume/vol-1122AABB</code>
      * <p><i>Valid Values</i>: 50 to 500 lowercase letters, numbers, periods
      * (.), and hyphens (-).
      * <p>
@@ -46,7 +46,7 @@ public class VolumeInfo  implements Serializable  {
     /**
      * The Amazon Resource Name (ARN) for the storage volume. For example,
      * the following is a valid ARN: <p>
-     * ay:us-east-1:111122223333:gateway/mygateway/volume/vol-1122AABB</code>
+     * <code>arn:aws:storagegateway:us-east-1:111122223333:gateway/mygateway/volume/vol-1122AABB</code>
      * <p><i>Valid Values</i>: 50 to 500 lowercase letters, numbers, periods
      * (.), and hyphens (-).
      * <p>
@@ -55,7 +55,7 @@ public class VolumeInfo  implements Serializable  {
      *
      * @return The Amazon Resource Name (ARN) for the storage volume. For example,
      *         the following is a valid ARN: <p>
-     *         ay:us-east-1:111122223333:gateway/mygateway/volume/vol-1122AABB</code>
+     *         <code>arn:aws:storagegateway:us-east-1:111122223333:gateway/mygateway/volume/vol-1122AABB</code>
      *         <p><i>Valid Values</i>: 50 to 500 lowercase letters, numbers, periods
      *         (.), and hyphens (-).
      */
@@ -66,7 +66,7 @@ public class VolumeInfo  implements Serializable  {
     /**
      * The Amazon Resource Name (ARN) for the storage volume. For example,
      * the following is a valid ARN: <p>
-     * ay:us-east-1:111122223333:gateway/mygateway/volume/vol-1122AABB</code>
+     * <code>arn:aws:storagegateway:us-east-1:111122223333:gateway/mygateway/volume/vol-1122AABB</code>
      * <p><i>Valid Values</i>: 50 to 500 lowercase letters, numbers, periods
      * (.), and hyphens (-).
      * <p>
@@ -75,7 +75,7 @@ public class VolumeInfo  implements Serializable  {
      *
      * @param volumeARN The Amazon Resource Name (ARN) for the storage volume. For example,
      *         the following is a valid ARN: <p>
-     *         ay:us-east-1:111122223333:gateway/mygateway/volume/vol-1122AABB</code>
+     *         <code>arn:aws:storagegateway:us-east-1:111122223333:gateway/mygateway/volume/vol-1122AABB</code>
      *         <p><i>Valid Values</i>: 50 to 500 lowercase letters, numbers, periods
      *         (.), and hyphens (-).
      */
@@ -86,7 +86,7 @@ public class VolumeInfo  implements Serializable  {
     /**
      * The Amazon Resource Name (ARN) for the storage volume. For example,
      * the following is a valid ARN: <p>
-     * ay:us-east-1:111122223333:gateway/mygateway/volume/vol-1122AABB</code>
+     * <code>arn:aws:storagegateway:us-east-1:111122223333:gateway/mygateway/volume/vol-1122AABB</code>
      * <p><i>Valid Values</i>: 50 to 500 lowercase letters, numbers, periods
      * (.), and hyphens (-).
      * <p>
@@ -97,7 +97,7 @@ public class VolumeInfo  implements Serializable  {
      *
      * @param volumeARN The Amazon Resource Name (ARN) for the storage volume. For example,
      *         the following is a valid ARN: <p>
-     *         ay:us-east-1:111122223333:gateway/mygateway/volume/vol-1122AABB</code>
+     *         <code>arn:aws:storagegateway:us-east-1:111122223333:gateway/mygateway/volume/vol-1122AABB</code>
      *         <p><i>Valid Values</i>: 50 to 500 lowercase letters, numbers, periods
      *         (.), and hyphens (-).
      *
@@ -214,9 +214,9 @@ public class VolumeInfo  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getVolumeARN() != null) sb.append("VolumeARN: " + getVolumeARN() + ", ");
-        if (getVolumeType() != null) sb.append("VolumeType: " + getVolumeType() + ", ");
+        sb.append("{");    	
+        if (getVolumeARN() != null) sb.append("VolumeARN: " + getVolumeARN() + ",");    	
+        if (getVolumeType() != null) sb.append("VolumeType: " + getVolumeType() );
         sb.append("}");
         return sb.toString();
     }

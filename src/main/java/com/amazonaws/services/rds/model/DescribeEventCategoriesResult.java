@@ -107,8 +107,8 @@ public class DescribeEventCategoriesResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getEventCategoriesMapList() != null) sb.append("EventCategoriesMapList: " + getEventCategoriesMapList() + ", ");
+        sb.append("{");    	
+        if (getEventCategoriesMapList() != null) sb.append("EventCategoriesMapList: " + getEventCategoriesMapList() );
         sb.append("}");
         return sb.toString();
     }

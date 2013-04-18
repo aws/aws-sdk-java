@@ -123,9 +123,9 @@ public class PortRange  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getFrom() != null) sb.append("From: " + getFrom() + ", ");
-        if (getTo() != null) sb.append("To: " + getTo() + ", ");
+        sb.append("{");    	
+        if (getFrom() != null) sb.append("From: " + getFrom() + ",");    	
+        if (getTo() != null) sb.append("To: " + getTo() );
         sb.append("}");
         return sb.toString();
     }

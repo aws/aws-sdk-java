@@ -103,9 +103,9 @@ public class ReservedInstanceLimitPrice  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getAmount() != null) sb.append("Amount: " + getAmount() + ", ");
-        if (getCurrencyCode() != null) sb.append("CurrencyCode: " + getCurrencyCode() + ", ");
+        sb.append("{");    	
+        if (getAmount() != null) sb.append("Amount: " + getAmount() + ",");    	
+        if (getCurrencyCode() != null) sb.append("CurrencyCode: " + getCurrencyCode() );
         sb.append("}");
         return sb.toString();
     }
