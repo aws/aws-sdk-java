@@ -1,6 +1,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.amazonaws</groupId>
     <artifactId>aws-java-sdk</artifactId>
@@ -8,16 +8,16 @@
     <name>AWS SDK for Java</name>
     <version>1.4.2</version>
     <description>The Amazon Web Services SDK for Java provides Java APIs for building software on AWS’ cost-effective, scalable, and reliable infrastructure products. The AWS Java SDK allows developers to code against APIs for all of Amazon's infrastructure web services (Amazon S3, Amazon EC2, Amazon SQS, Amazon Relational Database Service, Amazon AutoScaling, etc).</description>
-    <url>http://aws.amazon.com/sdkforjava</url>
+    <url>https://aws.amazon.com/sdkforjava</url>
 
     <scm>
-        <url>http://github.com/aws/aws-sdk-java.git</url>
+        <url>https://github.com/aws/aws-sdk-java.git</url>
     </scm>
 
     <licenses>
         <license>
             <name>Apache License, Version 2.0</name>
-            <url>http://aws.amazon.com/apache2.0</url>
+            <url>https://aws.amazon.com/apache2.0</url>
             <distribution>repo</distribution>
         </license>
     </licenses>
@@ -137,7 +137,7 @@
         <developer>
             <id>amazonwebservices</id>
             <organization>Amazon Web Services</organization>
-            <organizationUrl>http://aws.amazon.com</organizationUrl>
+            <organizationUrl>https://aws.amazon.com</organizationUrl>
             <roles>
                 <role>developer</role>
             </roles>
