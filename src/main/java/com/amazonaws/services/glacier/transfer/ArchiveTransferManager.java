@@ -324,7 +324,6 @@ public class ArchiveTransferManager {
 
         JobStatusMonitor jobStatusMonitor = null;
         String jobId = null;
-        long archiveSize = 0;
 
         try {
             if (credentialsProvider != null && clientConfiguration != null) {
@@ -344,9 +343,6 @@ public class ArchiveTransferManager {
                     .withJobParameters(jobParameters));
             jobId = archiveRetrievalResult.getJobId();
 
-            DescribeJobResult describeJobResult = glacier.describeJob(new DescribeJobRequest(accountId, vaultName, jobId));
-            archiveSize = describeJobResult.getArchiveSizeInBytes();
-
             jobStatusMonitor.waitForJobToComplete(jobId);
 
         } finally {
@@ -355,17 +351,22 @@ public class ArchiveTransferManager {
             }
         }
 
-        downloadJobOutputInMultipleChunks(accountId, vaultName, jobId, archiveSize, file);
+        downloadJobOutputInMultipleChunks(accountId, vaultName, jobId, file);
     }
 
-    private void downloadJobOutputInMultipleChunks(String accountId, String vaultName, String jobId, long archiveSize, File file) {
+    public void downloadJobOutputInMultipleChunks(String accountId, String vaultName, String jobId, File file) {
 
+        long archiveSize = 0;
         long chunkSize = DEFAULT_DOWNLOAD_CHUNK_SIZE;
         long currentPosition = 0;
         long endPosition = 0;
+
         RandomAccessFile output = null;
         String customizedChunkSize = null;
         customizedChunkSize = System.getProperty("com.amazonaws.services.glacier.transfer.downloadChunkSizeInMB");
+
+        DescribeJobResult describeJobResult = glacier.describeJob(new DescribeJobRequest(accountId, vaultName, jobId));
+        archiveSize = describeJobResult.getArchiveSizeInBytes();
 
         if (customizedChunkSize != null) {
             try {
