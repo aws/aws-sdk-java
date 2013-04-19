@@ -511,17 +511,17 @@ public class Parameter  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getParameterName() != null) sb.append("ParameterName: " + getParameterName() + ", ");
-        if (getParameterValue() != null) sb.append("ParameterValue: " + getParameterValue() + ", ");
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ", ");
-        if (getSource() != null) sb.append("Source: " + getSource() + ", ");
-        if (getApplyType() != null) sb.append("ApplyType: " + getApplyType() + ", ");
-        if (getDataType() != null) sb.append("DataType: " + getDataType() + ", ");
-        if (getAllowedValues() != null) sb.append("AllowedValues: " + getAllowedValues() + ", ");
-        if (isModifiable() != null) sb.append("IsModifiable: " + isModifiable() + ", ");
-        if (getMinimumEngineVersion() != null) sb.append("MinimumEngineVersion: " + getMinimumEngineVersion() + ", ");
-        if (getApplyMethod() != null) sb.append("ApplyMethod: " + getApplyMethod() + ", ");
+        sb.append("{");    	
+        if (getParameterName() != null) sb.append("ParameterName: " + getParameterName() + ",");    	
+        if (getParameterValue() != null) sb.append("ParameterValue: " + getParameterValue() + ",");    	
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");    	
+        if (getSource() != null) sb.append("Source: " + getSource() + ",");    	
+        if (getApplyType() != null) sb.append("ApplyType: " + getApplyType() + ",");    	
+        if (getDataType() != null) sb.append("DataType: " + getDataType() + ",");    	
+        if (getAllowedValues() != null) sb.append("AllowedValues: " + getAllowedValues() + ",");    	
+        if (isModifiable() != null) sb.append("IsModifiable: " + isModifiable() + ",");    	
+        if (getMinimumEngineVersion() != null) sb.append("MinimumEngineVersion: " + getMinimumEngineVersion() + ",");    	
+        if (getApplyMethod() != null) sb.append("ApplyMethod: " + getApplyMethod() );
         sb.append("}");
         return sb.toString();
     }

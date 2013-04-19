@@ -95,8 +95,8 @@ public class DeregisterImageRequest extends AmazonWebServiceRequest  implements 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getImageId() != null) sb.append("ImageId: " + getImageId() + ", ");
+        sb.append("{");    	
+        if (getImageId() != null) sb.append("ImageId: " + getImageId() );
         sb.append("}");
         return sb.toString();
     }

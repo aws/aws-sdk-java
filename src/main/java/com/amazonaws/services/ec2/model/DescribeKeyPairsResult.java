@@ -107,8 +107,8 @@ public class DescribeKeyPairsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getKeyPairs() != null) sb.append("KeyPairs: " + getKeyPairs() + ", ");
+        sb.append("{");    	
+        if (getKeyPairs() != null) sb.append("KeyPairs: " + getKeyPairs() );
         sb.append("}");
         return sb.toString();
     }

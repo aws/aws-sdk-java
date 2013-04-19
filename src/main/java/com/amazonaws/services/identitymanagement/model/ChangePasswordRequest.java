@@ -134,9 +134,9 @@ public class ChangePasswordRequest extends AmazonWebServiceRequest  implements S
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getOldPassword() != null) sb.append("OldPassword: " + getOldPassword() + ", ");
-        if (getNewPassword() != null) sb.append("NewPassword: " + getNewPassword() + ", ");
+        sb.append("{");    	
+        if (getOldPassword() != null) sb.append("OldPassword: " + getOldPassword() + ",");    	
+        if (getNewPassword() != null) sb.append("NewPassword: " + getNewPassword() );
         sb.append("}");
         return sb.toString();
     }

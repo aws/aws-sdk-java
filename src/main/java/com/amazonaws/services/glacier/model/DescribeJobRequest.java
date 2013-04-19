@@ -244,10 +244,10 @@ public class DescribeJobRequest extends AmazonWebServiceRequest  implements Seri
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getAccountId() != null) sb.append("AccountId: " + getAccountId() + ", ");
-        if (getVaultName() != null) sb.append("VaultName: " + getVaultName() + ", ");
-        if (getJobId() != null) sb.append("JobId: " + getJobId() + ", ");
+        sb.append("{");    	
+        if (getAccountId() != null) sb.append("AccountId: " + getAccountId() + ",");    	
+        if (getVaultName() != null) sb.append("VaultName: " + getVaultName() + ",");    	
+        if (getJobId() != null) sb.append("JobId: " + getJobId() );
         sb.append("}");
         return sb.toString();
     }

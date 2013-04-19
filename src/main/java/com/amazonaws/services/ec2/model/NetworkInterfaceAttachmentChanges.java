@@ -112,9 +112,9 @@ public class NetworkInterfaceAttachmentChanges  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getAttachmentId() != null) sb.append("AttachmentId: " + getAttachmentId() + ", ");
-        if (isDeleteOnTermination() != null) sb.append("DeleteOnTermination: " + isDeleteOnTermination() + ", ");
+        sb.append("{");    	
+        if (getAttachmentId() != null) sb.append("AttachmentId: " + getAttachmentId() + ",");    	
+        if (isDeleteOnTermination() != null) sb.append("DeleteOnTermination: " + isDeleteOnTermination() );
         sb.append("}");
         return sb.toString();
     }

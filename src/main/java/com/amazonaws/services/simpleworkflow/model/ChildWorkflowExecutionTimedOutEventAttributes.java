@@ -340,12 +340,12 @@ public class ChildWorkflowExecutionTimedOutEventAttributes  implements Serializa
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getWorkflowExecution() != null) sb.append("WorkflowExecution: " + getWorkflowExecution() + ", ");
-        if (getWorkflowType() != null) sb.append("WorkflowType: " + getWorkflowType() + ", ");
-        if (getTimeoutType() != null) sb.append("TimeoutType: " + getTimeoutType() + ", ");
-        if (getInitiatedEventId() != null) sb.append("InitiatedEventId: " + getInitiatedEventId() + ", ");
-        if (getStartedEventId() != null) sb.append("StartedEventId: " + getStartedEventId() + ", ");
+        sb.append("{");    	
+        if (getWorkflowExecution() != null) sb.append("WorkflowExecution: " + getWorkflowExecution() + ",");    	
+        if (getWorkflowType() != null) sb.append("WorkflowType: " + getWorkflowType() + ",");    	
+        if (getTimeoutType() != null) sb.append("TimeoutType: " + getTimeoutType() + ",");    	
+        if (getInitiatedEventId() != null) sb.append("InitiatedEventId: " + getInitiatedEventId() + ",");    	
+        if (getStartedEventId() != null) sb.append("StartedEventId: " + getStartedEventId() );
         sb.append("}");
         return sb.toString();
     }

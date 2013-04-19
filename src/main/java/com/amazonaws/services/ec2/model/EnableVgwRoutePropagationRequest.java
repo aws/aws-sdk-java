@@ -107,9 +107,9 @@ public class EnableVgwRoutePropagationRequest extends AmazonWebServiceRequest  i
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getRouteTableId() != null) sb.append("RouteTableId: " + getRouteTableId() + ", ");
-        if (getGatewayId() != null) sb.append("GatewayId: " + getGatewayId() + ", ");
+        sb.append("{");    	
+        if (getRouteTableId() != null) sb.append("RouteTableId: " + getRouteTableId() + ",");    	
+        if (getGatewayId() != null) sb.append("GatewayId: " + getGatewayId() );
         sb.append("}");
         return sb.toString();
     }

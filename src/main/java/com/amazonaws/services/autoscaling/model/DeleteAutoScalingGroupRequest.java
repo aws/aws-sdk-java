@@ -162,9 +162,9 @@ public class DeleteAutoScalingGroupRequest extends AmazonWebServiceRequest  impl
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getAutoScalingGroupName() != null) sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ", ");
-        if (isForceDelete() != null) sb.append("ForceDelete: " + isForceDelete() + ", ");
+        sb.append("{");    	
+        if (getAutoScalingGroupName() != null) sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ",");    	
+        if (isForceDelete() != null) sb.append("ForceDelete: " + isForceDelete() );
         sb.append("}");
         return sb.toString();
     }

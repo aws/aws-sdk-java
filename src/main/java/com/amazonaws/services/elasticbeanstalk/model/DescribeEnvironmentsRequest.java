@@ -467,13 +467,13 @@ public class DescribeEnvironmentsRequest extends AmazonWebServiceRequest  implem
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getApplicationName() != null) sb.append("ApplicationName: " + getApplicationName() + ", ");
-        if (getVersionLabel() != null) sb.append("VersionLabel: " + getVersionLabel() + ", ");
-        if (getEnvironmentIds() != null) sb.append("EnvironmentIds: " + getEnvironmentIds() + ", ");
-        if (getEnvironmentNames() != null) sb.append("EnvironmentNames: " + getEnvironmentNames() + ", ");
-        if (isIncludeDeleted() != null) sb.append("IncludeDeleted: " + isIncludeDeleted() + ", ");
-        if (getIncludedDeletedBackTo() != null) sb.append("IncludedDeletedBackTo: " + getIncludedDeletedBackTo() + ", ");
+        sb.append("{");    	
+        if (getApplicationName() != null) sb.append("ApplicationName: " + getApplicationName() + ",");    	
+        if (getVersionLabel() != null) sb.append("VersionLabel: " + getVersionLabel() + ",");    	
+        if (getEnvironmentIds() != null) sb.append("EnvironmentIds: " + getEnvironmentIds() + ",");    	
+        if (getEnvironmentNames() != null) sb.append("EnvironmentNames: " + getEnvironmentNames() + ",");    	
+        if (isIncludeDeleted() != null) sb.append("IncludeDeleted: " + isIncludeDeleted() + ",");    	
+        if (getIncludedDeletedBackTo() != null) sb.append("IncludedDeletedBackTo: " + getIncludedDeletedBackTo() );
         sb.append("}");
         return sb.toString();
     }

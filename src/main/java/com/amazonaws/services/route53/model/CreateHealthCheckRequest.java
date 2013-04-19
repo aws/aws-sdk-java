@@ -181,9 +181,9 @@ public class CreateHealthCheckRequest extends AmazonWebServiceRequest  implement
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getCallerReference() != null) sb.append("CallerReference: " + getCallerReference() + ", ");
-        if (getHealthCheckConfig() != null) sb.append("HealthCheckConfig: " + getHealthCheckConfig() + ", ");
+        sb.append("{");    	
+        if (getCallerReference() != null) sb.append("CallerReference: " + getCallerReference() + ",");    	
+        if (getHealthCheckConfig() != null) sb.append("HealthCheckConfig: " + getHealthCheckConfig() );
         sb.append("}");
         return sb.toString();
     }

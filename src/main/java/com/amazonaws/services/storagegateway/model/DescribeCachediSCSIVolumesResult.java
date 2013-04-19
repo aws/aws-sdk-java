@@ -121,8 +121,8 @@ public class DescribeCachediSCSIVolumesResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getCachediSCSIVolumes() != null) sb.append("CachediSCSIVolumes: " + getCachediSCSIVolumes() + ", ");
+        sb.append("{");    	
+        if (getCachediSCSIVolumes() != null) sb.append("CachediSCSIVolumes: " + getCachediSCSIVolumes() );
         sb.append("}");
         return sb.toString();
     }

@@ -37,6 +37,7 @@ import com.amazonaws.util.json.*;
 /**
  * Get Item Request Marshaller
  */
+@Deprecated
 public class GetItemRequestMarshaller implements Marshaller<Request<GetItemRequest>, GetItemRequest> {
 
     

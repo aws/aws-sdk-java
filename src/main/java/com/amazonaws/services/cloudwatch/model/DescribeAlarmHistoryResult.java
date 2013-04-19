@@ -146,9 +146,9 @@ public class DescribeAlarmHistoryResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getAlarmHistoryItems() != null) sb.append("AlarmHistoryItems: " + getAlarmHistoryItems() + ", ");
-        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() + ", ");
+        sb.append("{");    	
+        if (getAlarmHistoryItems() != null) sb.append("AlarmHistoryItems: " + getAlarmHistoryItems() + ",");    	
+        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() );
         sb.append("}");
         return sb.toString();
     }

@@ -116,8 +116,8 @@ public class DescribeCommandsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getCommands() != null) sb.append("Commands: " + getCommands() + ", ");
+        sb.append("{");    	
+        if (getCommands() != null) sb.append("Commands: " + getCommands() );
         sb.append("}");
         return sb.toString();
     }

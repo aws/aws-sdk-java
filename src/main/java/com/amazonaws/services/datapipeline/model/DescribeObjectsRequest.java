@@ -313,11 +313,11 @@ public class DescribeObjectsRequest extends AmazonWebServiceRequest  implements 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getPipelineId() != null) sb.append("PipelineId: " + getPipelineId() + ", ");
-        if (getObjectIds() != null) sb.append("ObjectIds: " + getObjectIds() + ", ");
-        if (isEvaluateExpressions() != null) sb.append("EvaluateExpressions: " + isEvaluateExpressions() + ", ");
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ", ");
+        sb.append("{");    	
+        if (getPipelineId() != null) sb.append("PipelineId: " + getPipelineId() + ",");    	
+        if (getObjectIds() != null) sb.append("ObjectIds: " + getObjectIds() + ",");    	
+        if (isEvaluateExpressions() != null) sb.append("EvaluateExpressions: " + isEvaluateExpressions() + ",");    	
+        if (getMarker() != null) sb.append("Marker: " + getMarker() );
         sb.append("}");
         return sb.toString();
     }

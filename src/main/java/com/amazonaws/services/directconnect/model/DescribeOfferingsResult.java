@@ -107,8 +107,8 @@ public class DescribeOfferingsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getOfferings() != null) sb.append("Offerings: " + getOfferings() + ", ");
+        sb.append("{");    	
+        if (getOfferings() != null) sb.append("Offerings: " + getOfferings() );
         sb.append("}");
         return sb.toString();
     }

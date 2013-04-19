@@ -242,10 +242,10 @@ public class UpdateCondition  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getName() != null) sb.append("Name: " + getName() + ", ");
-        if (getValue() != null) sb.append("Value: " + getValue() + ", ");
-        if (isExists() != null) sb.append("Exists: " + isExists() + ", ");
+        sb.append("{");    	
+        if (getName() != null) sb.append("Name: " + getName() + ",");    	
+        if (getValue() != null) sb.append("Value: " + getValue() + ",");    	
+        if (isExists() != null) sb.append("Exists: " + isExists() );
         sb.append("}");
         return sb.toString();
     }

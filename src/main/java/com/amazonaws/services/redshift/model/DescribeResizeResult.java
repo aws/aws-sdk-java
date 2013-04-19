@@ -466,14 +466,14 @@ public class DescribeResizeResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getTargetNodeType() != null) sb.append("TargetNodeType: " + getTargetNodeType() + ", ");
-        if (getTargetNumberOfNodes() != null) sb.append("TargetNumberOfNodes: " + getTargetNumberOfNodes() + ", ");
-        if (getTargetClusterType() != null) sb.append("TargetClusterType: " + getTargetClusterType() + ", ");
-        if (getStatus() != null) sb.append("Status: " + getStatus() + ", ");
-        if (getImportTablesCompleted() != null) sb.append("ImportTablesCompleted: " + getImportTablesCompleted() + ", ");
-        if (getImportTablesInProgress() != null) sb.append("ImportTablesInProgress: " + getImportTablesInProgress() + ", ");
-        if (getImportTablesNotStarted() != null) sb.append("ImportTablesNotStarted: " + getImportTablesNotStarted() + ", ");
+        sb.append("{");    	
+        if (getTargetNodeType() != null) sb.append("TargetNodeType: " + getTargetNodeType() + ",");    	
+        if (getTargetNumberOfNodes() != null) sb.append("TargetNumberOfNodes: " + getTargetNumberOfNodes() + ",");    	
+        if (getTargetClusterType() != null) sb.append("TargetClusterType: " + getTargetClusterType() + ",");    	
+        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");    	
+        if (getImportTablesCompleted() != null) sb.append("ImportTablesCompleted: " + getImportTablesCompleted() + ",");    	
+        if (getImportTablesInProgress() != null) sb.append("ImportTablesInProgress: " + getImportTablesInProgress() + ",");    	
+        if (getImportTablesNotStarted() != null) sb.append("ImportTablesNotStarted: " + getImportTablesNotStarted() );
         sb.append("}");
         return sb.toString();
     }

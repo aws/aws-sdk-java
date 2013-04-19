@@ -126,8 +126,8 @@ public class DescribeApplicationsRequest extends AmazonWebServiceRequest  implem
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getApplicationNames() != null) sb.append("ApplicationNames: " + getApplicationNames() + ", ");
+        sb.append("{");    	
+        if (getApplicationNames() != null) sb.append("ApplicationNames: " + getApplicationNames() );
         sb.append("}");
         return sb.toString();
     }

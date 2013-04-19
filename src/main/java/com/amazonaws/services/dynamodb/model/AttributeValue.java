@@ -25,6 +25,7 @@ import java.io.Serializable;
  * <code>BinarySet</code> .
  * </p>
  */
+@Deprecated
 public class AttributeValue  implements Serializable  {
 
     /**

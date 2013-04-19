@@ -107,8 +107,8 @@ public class DescribeCustomerGatewaysResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getCustomerGateways() != null) sb.append("CustomerGateways: " + getCustomerGateways() + ", ");
+        sb.append("{");    	
+        if (getCustomerGateways() != null) sb.append("CustomerGateways: " + getCustomerGateways() );
         sb.append("}");
         return sb.toString();
     }

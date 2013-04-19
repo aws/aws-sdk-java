@@ -29,6 +29,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.dynamodb.AmazonDynamoDB#deleteTable(DeleteTableRequest)
  */
+@Deprecated
 public class DeleteTableRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**

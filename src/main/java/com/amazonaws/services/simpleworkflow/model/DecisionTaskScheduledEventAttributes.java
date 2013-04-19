@@ -151,9 +151,9 @@ public class DecisionTaskScheduledEventAttributes  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getTaskList() != null) sb.append("TaskList: " + getTaskList() + ", ");
-        if (getStartToCloseTimeout() != null) sb.append("StartToCloseTimeout: " + getStartToCloseTimeout() + ", ");
+        sb.append("{");    	
+        if (getTaskList() != null) sb.append("TaskList: " + getTaskList() + ",");    	
+        if (getStartToCloseTimeout() != null) sb.append("StartToCloseTimeout: " + getStartToCloseTimeout() );
         sb.append("}");
         return sb.toString();
     }

@@ -111,9 +111,9 @@ public class InitiateJobResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getLocation() != null) sb.append("Location: " + getLocation() + ", ");
-        if (getJobId() != null) sb.append("JobId: " + getJobId() + ", ");
+        sb.append("{");    	
+        if (getLocation() != null) sb.append("Location: " + getLocation() + ",");    	
+        if (getJobId() != null) sb.append("JobId: " + getJobId() );
         sb.append("}");
         return sb.toString();
     }

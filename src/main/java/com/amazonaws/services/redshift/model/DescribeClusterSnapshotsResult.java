@@ -167,9 +167,9 @@ public class DescribeClusterSnapshotsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ", ");
-        if (getSnapshots() != null) sb.append("Snapshots: " + getSnapshots() + ", ");
+        sb.append("{");    	
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");    	
+        if (getSnapshots() != null) sb.append("Snapshots: " + getSnapshots() );
         sb.append("}");
         return sb.toString();
     }

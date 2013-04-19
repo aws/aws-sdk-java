@@ -14,10 +14,8 @@
  */
 package com.amazonaws.util;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.LinkedHashMap;
+import java.util.Map.Entry;
 
 import com.amazonaws.ResponseMetadata;
 
@@ -27,9 +25,8 @@ import com.amazonaws.ResponseMetadata;
  * entry is aged out once the max size has been reached.
  */
 public class ResponseMetadataCache {
-    private final int maxEntries;
-    private Map<Integer, ResponseMetadata> map;
-    private List<Object> objectList;
+    private final InternalCache internalCache;
+
 
     /**
      * Creates a new cache that will contain, at most the specified number of
@@ -39,10 +36,7 @@ public class ResponseMetadataCache {
      *            The maximum size of this cache.
      */
     public ResponseMetadataCache(int maxEntries) {
-        this.maxEntries = maxEntries;
-
-        objectList = new ArrayList<Object>(maxEntries);
-        map = new HashMap<Integer, ResponseMetadata>();
+        internalCache = new InternalCache(maxEntries);
     }
 
     /**
@@ -56,9 +50,7 @@ public class ResponseMetadataCache {
      */
     public synchronized void add(Object obj, ResponseMetadata metadata) {
         if (obj == null) return;
-
-        if (map.size() >= maxEntries) evictOldest();
-        store(System.identityHashCode(obj), metadata);
+        internalCache.put(System.identityHashCode(obj), metadata);
     }
 
     /**
@@ -76,15 +68,26 @@ public class ResponseMetadataCache {
         // on all platforms, but should be reasonable enough to use
         // for a few requests at a time.  We can always easily move
         // to our own unique IDs if needed.
-        return map.get(System.identityHashCode(obj));
+        return internalCache.get(System.identityHashCode(obj));
     }
 
-    private void evictOldest() {
-        map.remove(objectList.remove(0));
-    }
 
-    private void store(int id, ResponseMetadata metadata) {
-        map.put(id, metadata);
-        objectList.add(id);
+    /**
+     * Simple implementation of LinkedHashMap that overrides the
+     * <code>removeEldestEntry</code> method to turn LinkedHashMap into a
+     * LRU(ish) cache that automatically evicts old entries.
+     */
+    private static final class InternalCache extends LinkedHashMap<Integer, ResponseMetadata> {
+        private int maxSize;
+
+        public InternalCache(int maxSize) {
+            super(maxSize);
+            this.maxSize = maxSize;
+        }
+
+        @Override
+        protected boolean removeEldestEntry(Entry eldest) {
+            return size() > maxSize;
+        }
     }
 }

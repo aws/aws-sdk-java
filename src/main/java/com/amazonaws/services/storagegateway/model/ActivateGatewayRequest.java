@@ -75,7 +75,7 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest  implements 
      * region as the region in your <code>Host</code> header in the request.
      * For more information about available regions and endpoints for AWS
      * Storage Gateway, see <a
-     * .amazonwebservices.com/general/latest/gr/rande.html#sg_region">Regions
+     * href="http://docs.amazonwebservices.com/general/latest/gr/rande.html#sg_region">Regions
      * and Endpoints</a> in the <b>Amazon Web Services Glossary</b>.
      * <p><i>Valid Values</i>: "us-east-1", "us-west-1", "us-west-2",
      * "eu-west-1", "ap-northeast-1", "ap-southest-1", "sa-east-1"
@@ -348,7 +348,7 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest  implements 
      * region as the region in your <code>Host</code> header in the request.
      * For more information about available regions and endpoints for AWS
      * Storage Gateway, see <a
-     * .amazonwebservices.com/general/latest/gr/rande.html#sg_region">Regions
+     * href="http://docs.amazonwebservices.com/general/latest/gr/rande.html#sg_region">Regions
      * and Endpoints</a> in the <b>Amazon Web Services Glossary</b>.
      * <p><i>Valid Values</i>: "us-east-1", "us-west-1", "us-west-2",
      * "eu-west-1", "ap-northeast-1", "ap-southest-1", "sa-east-1"
@@ -361,7 +361,7 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest  implements 
      *         region as the region in your <code>Host</code> header in the request.
      *         For more information about available regions and endpoints for AWS
      *         Storage Gateway, see <a
-     *         .amazonwebservices.com/general/latest/gr/rande.html#sg_region">Regions
+     *         href="http://docs.amazonwebservices.com/general/latest/gr/rande.html#sg_region">Regions
      *         and Endpoints</a> in the <b>Amazon Web Services Glossary</b>.
      *         <p><i>Valid Values</i>: "us-east-1", "us-west-1", "us-west-2",
      *         "eu-west-1", "ap-northeast-1", "ap-southest-1", "sa-east-1"
@@ -376,7 +376,7 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest  implements 
      * region as the region in your <code>Host</code> header in the request.
      * For more information about available regions and endpoints for AWS
      * Storage Gateway, see <a
-     * .amazonwebservices.com/general/latest/gr/rande.html#sg_region">Regions
+     * href="http://docs.amazonwebservices.com/general/latest/gr/rande.html#sg_region">Regions
      * and Endpoints</a> in the <b>Amazon Web Services Glossary</b>.
      * <p><i>Valid Values</i>: "us-east-1", "us-west-1", "us-west-2",
      * "eu-west-1", "ap-northeast-1", "ap-southest-1", "sa-east-1"
@@ -389,7 +389,7 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest  implements 
      *         region as the region in your <code>Host</code> header in the request.
      *         For more information about available regions and endpoints for AWS
      *         Storage Gateway, see <a
-     *         .amazonwebservices.com/general/latest/gr/rande.html#sg_region">Regions
+     *         href="http://docs.amazonwebservices.com/general/latest/gr/rande.html#sg_region">Regions
      *         and Endpoints</a> in the <b>Amazon Web Services Glossary</b>.
      *         <p><i>Valid Values</i>: "us-east-1", "us-west-1", "us-west-2",
      *         "eu-west-1", "ap-northeast-1", "ap-southest-1", "sa-east-1"
@@ -404,7 +404,7 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest  implements 
      * region as the region in your <code>Host</code> header in the request.
      * For more information about available regions and endpoints for AWS
      * Storage Gateway, see <a
-     * .amazonwebservices.com/general/latest/gr/rande.html#sg_region">Regions
+     * href="http://docs.amazonwebservices.com/general/latest/gr/rande.html#sg_region">Regions
      * and Endpoints</a> in the <b>Amazon Web Services Glossary</b>.
      * <p><i>Valid Values</i>: "us-east-1", "us-west-1", "us-west-2",
      * "eu-west-1", "ap-northeast-1", "ap-southest-1", "sa-east-1"
@@ -419,7 +419,7 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest  implements 
      *         region as the region in your <code>Host</code> header in the request.
      *         For more information about available regions and endpoints for AWS
      *         Storage Gateway, see <a
-     *         .amazonwebservices.com/general/latest/gr/rande.html#sg_region">Regions
+     *         href="http://docs.amazonwebservices.com/general/latest/gr/rande.html#sg_region">Regions
      *         and Endpoints</a> in the <b>Amazon Web Services Glossary</b>.
      *         <p><i>Valid Values</i>: "us-east-1", "us-west-1", "us-west-2",
      *         "eu-west-1", "ap-northeast-1", "ap-southest-1", "sa-east-1"
@@ -557,12 +557,12 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest  implements 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getActivationKey() != null) sb.append("ActivationKey: " + getActivationKey() + ", ");
-        if (getGatewayName() != null) sb.append("GatewayName: " + getGatewayName() + ", ");
-        if (getGatewayTimezone() != null) sb.append("GatewayTimezone: " + getGatewayTimezone() + ", ");
-        if (getGatewayRegion() != null) sb.append("GatewayRegion: " + getGatewayRegion() + ", ");
-        if (getGatewayType() != null) sb.append("GatewayType: " + getGatewayType() + ", ");
+        sb.append("{");    	
+        if (getActivationKey() != null) sb.append("ActivationKey: " + getActivationKey() + ",");    	
+        if (getGatewayName() != null) sb.append("GatewayName: " + getGatewayName() + ",");    	
+        if (getGatewayTimezone() != null) sb.append("GatewayTimezone: " + getGatewayTimezone() + ",");    	
+        if (getGatewayRegion() != null) sb.append("GatewayRegion: " + getGatewayRegion() + ",");    	
+        if (getGatewayType() != null) sb.append("GatewayType: " + getGatewayType() );
         sb.append("}");
         return sb.toString();
     }

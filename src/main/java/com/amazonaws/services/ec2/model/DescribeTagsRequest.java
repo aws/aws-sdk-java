@@ -130,8 +130,8 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest  implements Ser
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getFilters() != null) sb.append("Filters: " + getFilters() + ", ");
+        sb.append("{");    	
+        if (getFilters() != null) sb.append("Filters: " + getFilters() );
         sb.append("}");
         return sb.toString();
     }

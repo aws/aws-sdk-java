@@ -146,9 +146,9 @@ public class DescribeCacheEngineVersionsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ", ");
-        if (getCacheEngineVersions() != null) sb.append("CacheEngineVersions: " + getCacheEngineVersions() + ", ");
+        sb.append("{");    	
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");    	
+        if (getCacheEngineVersions() != null) sb.append("CacheEngineVersions: " + getCacheEngineVersions() );
         sb.append("}");
         return sb.toString();
     }

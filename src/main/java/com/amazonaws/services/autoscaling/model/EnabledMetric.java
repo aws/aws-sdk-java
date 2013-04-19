@@ -143,9 +143,9 @@ public class EnabledMetric  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getMetric() != null) sb.append("Metric: " + getMetric() + ", ");
-        if (getGranularity() != null) sb.append("Granularity: " + getGranularity() + ", ");
+        sb.append("{");    	
+        if (getMetric() != null) sb.append("Metric: " + getMetric() + ",");    	
+        if (getGranularity() != null) sb.append("Granularity: " + getGranularity() );
         sb.append("}");
         return sb.toString();
     }

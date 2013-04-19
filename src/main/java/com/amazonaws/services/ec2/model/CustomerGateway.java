@@ -330,13 +330,13 @@ public class CustomerGateway  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getCustomerGatewayId() != null) sb.append("CustomerGatewayId: " + getCustomerGatewayId() + ", ");
-        if (getState() != null) sb.append("State: " + getState() + ", ");
-        if (getType() != null) sb.append("Type: " + getType() + ", ");
-        if (getIpAddress() != null) sb.append("IpAddress: " + getIpAddress() + ", ");
-        if (getBgpAsn() != null) sb.append("BgpAsn: " + getBgpAsn() + ", ");
-        if (getTags() != null) sb.append("Tags: " + getTags() + ", ");
+        sb.append("{");    	
+        if (getCustomerGatewayId() != null) sb.append("CustomerGatewayId: " + getCustomerGatewayId() + ",");    	
+        if (getState() != null) sb.append("State: " + getState() + ",");    	
+        if (getType() != null) sb.append("Type: " + getType() + ",");    	
+        if (getIpAddress() != null) sb.append("IpAddress: " + getIpAddress() + ",");    	
+        if (getBgpAsn() != null) sb.append("BgpAsn: " + getBgpAsn() + ",");    	
+        if (getTags() != null) sb.append("Tags: " + getTags() );
         sb.append("}");
         return sb.toString();
     }

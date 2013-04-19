@@ -18,6 +18,7 @@ import java.io.Serializable;
 /**
  * Provisioned Throughput Description
  */
+@Deprecated
 public class ProvisionedThroughputDescription  implements Serializable  {
 
     private java.util.Date lastIncreaseDateTime;

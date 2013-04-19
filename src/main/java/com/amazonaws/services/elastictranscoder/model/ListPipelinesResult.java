@@ -105,8 +105,8 @@ public class ListPipelinesResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getPipelines() != null) sb.append("Pipelines: " + getPipelines() + ", ");
+        sb.append("{");    	
+        if (getPipelines() != null) sb.append("Pipelines: " + getPipelines() );
         sb.append("}");
         return sb.toString();
     }

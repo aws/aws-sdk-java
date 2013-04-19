@@ -139,10 +139,10 @@ public class PriceScheduleSpecification  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getTerm() != null) sb.append("Term: " + getTerm() + ", ");
-        if (getPrice() != null) sb.append("Price: " + getPrice() + ", ");
-        if (getCurrencyCode() != null) sb.append("CurrencyCode: " + getCurrencyCode() + ", ");
+        sb.append("{");    	
+        if (getTerm() != null) sb.append("Term: " + getTerm() + ",");    	
+        if (getPrice() != null) sb.append("Price: " + getPrice() + ",");    	
+        if (getCurrencyCode() != null) sb.append("CurrencyCode: " + getCurrencyCode() );
         sb.append("}");
         return sb.toString();
     }

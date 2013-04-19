@@ -306,12 +306,12 @@ public class WorkflowTypeInfo  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getWorkflowType() != null) sb.append("WorkflowType: " + getWorkflowType() + ", ");
-        if (getStatus() != null) sb.append("Status: " + getStatus() + ", ");
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ", ");
-        if (getCreationDate() != null) sb.append("CreationDate: " + getCreationDate() + ", ");
-        if (getDeprecationDate() != null) sb.append("DeprecationDate: " + getDeprecationDate() + ", ");
+        sb.append("{");    	
+        if (getWorkflowType() != null) sb.append("WorkflowType: " + getWorkflowType() + ",");    	
+        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");    	
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");    	
+        if (getCreationDate() != null) sb.append("CreationDate: " + getCreationDate() + ",");    	
+        if (getDeprecationDate() != null) sb.append("DeprecationDate: " + getDeprecationDate() );
         sb.append("}");
         return sb.toString();
     }

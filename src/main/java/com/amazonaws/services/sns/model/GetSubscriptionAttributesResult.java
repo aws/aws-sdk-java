@@ -137,8 +137,8 @@ public class GetSubscriptionAttributesResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getAttributes() != null) sb.append("Attributes: " + getAttributes() + ", ");
+        sb.append("{");    	
+        if (getAttributes() != null) sb.append("Attributes: " + getAttributes() );
         sb.append("}");
         return sb.toString();
     }

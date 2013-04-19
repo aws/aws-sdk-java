@@ -58,7 +58,7 @@ public class Layer  implements Serializable  {
     /**
      * The ARN of the default IAM profile to be used for the layer's EC2
      * instances. For more information about IAM ARNs, see <a
-     * docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.
      */
     private String customInstanceProfileArn;
@@ -92,7 +92,7 @@ public class Layer  implements Serializable  {
 
     /**
      * Whether the layer has an automatically assigned <a
-     * zon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
      * IP address</a>.
      */
     private Boolean autoAssignElasticIps;
@@ -353,12 +353,12 @@ public class Layer  implements Serializable  {
     /**
      * The ARN of the default IAM profile to be used for the layer's EC2
      * instances. For more information about IAM ARNs, see <a
-     * docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.
      *
      * @return The ARN of the default IAM profile to be used for the layer's EC2
      *         instances. For more information about IAM ARNs, see <a
-     *         docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      *         Identifiers</a>.
      */
     public String getCustomInstanceProfileArn() {
@@ -368,12 +368,12 @@ public class Layer  implements Serializable  {
     /**
      * The ARN of the default IAM profile to be used for the layer's EC2
      * instances. For more information about IAM ARNs, see <a
-     * docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.
      *
      * @param customInstanceProfileArn The ARN of the default IAM profile to be used for the layer's EC2
      *         instances. For more information about IAM ARNs, see <a
-     *         docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      *         Identifiers</a>.
      */
     public void setCustomInstanceProfileArn(String customInstanceProfileArn) {
@@ -383,14 +383,14 @@ public class Layer  implements Serializable  {
     /**
      * The ARN of the default IAM profile to be used for the layer's EC2
      * instances. For more information about IAM ARNs, see <a
-     * docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param customInstanceProfileArn The ARN of the default IAM profile to be used for the layer's EC2
      *         instances. For more information about IAM ARNs, see <a
-     *         docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      *         Identifiers</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -739,11 +739,11 @@ public class Layer  implements Serializable  {
     
     /**
      * Whether the layer has an automatically assigned <a
-     * zon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
      * IP address</a>.
      *
      * @return Whether the layer has an automatically assigned <a
-     *         zon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
      *         IP address</a>.
      */
     public Boolean isAutoAssignElasticIps() {
@@ -752,11 +752,11 @@ public class Layer  implements Serializable  {
     
     /**
      * Whether the layer has an automatically assigned <a
-     * zon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
      * IP address</a>.
      *
      * @param autoAssignElasticIps Whether the layer has an automatically assigned <a
-     *         zon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
      *         IP address</a>.
      */
     public void setAutoAssignElasticIps(Boolean autoAssignElasticIps) {
@@ -765,13 +765,13 @@ public class Layer  implements Serializable  {
     
     /**
      * Whether the layer has an automatically assigned <a
-     * zon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
      * IP address</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param autoAssignElasticIps Whether the layer has an automatically assigned <a
-     *         zon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
      *         IP address</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -785,11 +785,11 @@ public class Layer  implements Serializable  {
     
     /**
      * Whether the layer has an automatically assigned <a
-     * zon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
      * IP address</a>.
      *
      * @return Whether the layer has an automatically assigned <a
-     *         zon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
      *         IP address</a>.
      */
     public Boolean getAutoAssignElasticIps() {
@@ -981,23 +981,23 @@ public class Layer  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getStackId() != null) sb.append("StackId: " + getStackId() + ", ");
-        if (getLayerId() != null) sb.append("LayerId: " + getLayerId() + ", ");
-        if (getType() != null) sb.append("Type: " + getType() + ", ");
-        if (getName() != null) sb.append("Name: " + getName() + ", ");
-        if (getShortname() != null) sb.append("Shortname: " + getShortname() + ", ");
-        if (getAttributes() != null) sb.append("Attributes: " + getAttributes() + ", ");
-        if (getCustomInstanceProfileArn() != null) sb.append("CustomInstanceProfileArn: " + getCustomInstanceProfileArn() + ", ");
-        if (getCustomSecurityGroupIds() != null) sb.append("CustomSecurityGroupIds: " + getCustomSecurityGroupIds() + ", ");
-        if (getDefaultSecurityGroupNames() != null) sb.append("DefaultSecurityGroupNames: " + getDefaultSecurityGroupNames() + ", ");
-        if (getPackages() != null) sb.append("Packages: " + getPackages() + ", ");
-        if (getVolumeConfigurations() != null) sb.append("VolumeConfigurations: " + getVolumeConfigurations() + ", ");
-        if (isEnableAutoHealing() != null) sb.append("EnableAutoHealing: " + isEnableAutoHealing() + ", ");
-        if (isAutoAssignElasticIps() != null) sb.append("AutoAssignElasticIps: " + isAutoAssignElasticIps() + ", ");
-        if (getDefaultRecipes() != null) sb.append("DefaultRecipes: " + getDefaultRecipes() + ", ");
-        if (getCustomRecipes() != null) sb.append("CustomRecipes: " + getCustomRecipes() + ", ");
-        if (getCreatedAt() != null) sb.append("CreatedAt: " + getCreatedAt() + ", ");
+        sb.append("{");    	
+        if (getStackId() != null) sb.append("StackId: " + getStackId() + ",");    	
+        if (getLayerId() != null) sb.append("LayerId: " + getLayerId() + ",");    	
+        if (getType() != null) sb.append("Type: " + getType() + ",");    	
+        if (getName() != null) sb.append("Name: " + getName() + ",");    	
+        if (getShortname() != null) sb.append("Shortname: " + getShortname() + ",");    	
+        if (getAttributes() != null) sb.append("Attributes: " + getAttributes() + ",");    	
+        if (getCustomInstanceProfileArn() != null) sb.append("CustomInstanceProfileArn: " + getCustomInstanceProfileArn() + ",");    	
+        if (getCustomSecurityGroupIds() != null) sb.append("CustomSecurityGroupIds: " + getCustomSecurityGroupIds() + ",");    	
+        if (getDefaultSecurityGroupNames() != null) sb.append("DefaultSecurityGroupNames: " + getDefaultSecurityGroupNames() + ",");    	
+        if (getPackages() != null) sb.append("Packages: " + getPackages() + ",");    	
+        if (getVolumeConfigurations() != null) sb.append("VolumeConfigurations: " + getVolumeConfigurations() + ",");    	
+        if (isEnableAutoHealing() != null) sb.append("EnableAutoHealing: " + isEnableAutoHealing() + ",");    	
+        if (isAutoAssignElasticIps() != null) sb.append("AutoAssignElasticIps: " + isAutoAssignElasticIps() + ",");    	
+        if (getDefaultRecipes() != null) sb.append("DefaultRecipes: " + getDefaultRecipes() + ",");    	
+        if (getCustomRecipes() != null) sb.append("CustomRecipes: " + getCustomRecipes() + ",");    	
+        if (getCreatedAt() != null) sb.append("CreatedAt: " + getCreatedAt() );
         sb.append("}");
         return sb.toString();
     }

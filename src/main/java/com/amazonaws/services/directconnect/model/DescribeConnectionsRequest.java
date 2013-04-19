@@ -79,8 +79,8 @@ public class DescribeConnectionsRequest extends AmazonWebServiceRequest  impleme
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getConnectionId() != null) sb.append("ConnectionId: " + getConnectionId() + ", ");
+        sb.append("{");    	
+        if (getConnectionId() != null) sb.append("ConnectionId: " + getConnectionId() );
         sb.append("}");
         return sb.toString();
     }

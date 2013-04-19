@@ -274,10 +274,10 @@ public class RespondDecisionTaskCompletedRequest extends AmazonWebServiceRequest
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getTaskToken() != null) sb.append("TaskToken: " + getTaskToken() + ", ");
-        if (getDecisions() != null) sb.append("Decisions: " + getDecisions() + ", ");
-        if (getExecutionContext() != null) sb.append("ExecutionContext: " + getExecutionContext() + ", ");
+        sb.append("{");    	
+        if (getTaskToken() != null) sb.append("TaskToken: " + getTaskToken() + ",");    	
+        if (getDecisions() != null) sb.append("Decisions: " + getDecisions() + ",");    	
+        if (getExecutionContext() != null) sb.append("ExecutionContext: " + getExecutionContext() );
         sb.append("}");
         return sb.toString();
     }

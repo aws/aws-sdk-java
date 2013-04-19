@@ -107,8 +107,8 @@ public class DescribeVirtualGatewaysResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getVirtualGateways() != null) sb.append("VirtualGateways: " + getVirtualGateways() + ", ");
+        sb.append("{");    	
+        if (getVirtualGateways() != null) sb.append("VirtualGateways: " + getVirtualGateways() );
         sb.append("}");
         return sb.toString();
     }

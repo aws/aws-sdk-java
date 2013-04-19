@@ -273,12 +273,12 @@ public class VolumeiSCSIAttributes  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getTargetARN() != null) sb.append("TargetARN: " + getTargetARN() + ", ");
-        if (getNetworkInterfaceId() != null) sb.append("NetworkInterfaceId: " + getNetworkInterfaceId() + ", ");
-        if (getNetworkInterfacePort() != null) sb.append("NetworkInterfacePort: " + getNetworkInterfacePort() + ", ");
-        if (getLunNumber() != null) sb.append("LunNumber: " + getLunNumber() + ", ");
-        if (isChapEnabled() != null) sb.append("ChapEnabled: " + isChapEnabled() + ", ");
+        sb.append("{");    	
+        if (getTargetARN() != null) sb.append("TargetARN: " + getTargetARN() + ",");    	
+        if (getNetworkInterfaceId() != null) sb.append("NetworkInterfaceId: " + getNetworkInterfaceId() + ",");    	
+        if (getNetworkInterfacePort() != null) sb.append("NetworkInterfacePort: " + getNetworkInterfacePort() + ",");    	
+        if (getLunNumber() != null) sb.append("LunNumber: " + getLunNumber() + ",");    	
+        if (isChapEnabled() != null) sb.append("ChapEnabled: " + isChapEnabled() );
         sb.append("}");
         return sb.toString();
     }

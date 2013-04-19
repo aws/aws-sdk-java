@@ -210,9 +210,9 @@ public class ChangeBatch  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getComment() != null) sb.append("Comment: " + getComment() + ", ");
-        if (getChanges() != null) sb.append("Changes: " + getChanges() + ", ");
+        sb.append("{");    	
+        if (getComment() != null) sb.append("Comment: " + getComment() + ",");    	
+        if (getChanges() != null) sb.append("Changes: " + getChanges() );
         sb.append("}");
         return sb.toString();
     }

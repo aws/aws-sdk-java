@@ -67,8 +67,8 @@ public class CreateInstanceExportTaskResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getExportTask() != null) sb.append("ExportTask: " + getExportTask() + ", ");
+        sb.append("{");    	
+        if (getExportTask() != null) sb.append("ExportTask: " + getExportTask() );
         sb.append("}");
         return sb.toString();
     }

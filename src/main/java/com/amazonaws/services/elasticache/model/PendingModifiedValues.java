@@ -214,10 +214,10 @@ public class PendingModifiedValues  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getNumCacheNodes() != null) sb.append("NumCacheNodes: " + getNumCacheNodes() + ", ");
-        if (getCacheNodeIdsToRemove() != null) sb.append("CacheNodeIdsToRemove: " + getCacheNodeIdsToRemove() + ", ");
-        if (getEngineVersion() != null) sb.append("EngineVersion: " + getEngineVersion() + ", ");
+        sb.append("{");    	
+        if (getNumCacheNodes() != null) sb.append("NumCacheNodes: " + getNumCacheNodes() + ",");    	
+        if (getCacheNodeIdsToRemove() != null) sb.append("CacheNodeIdsToRemove: " + getCacheNodeIdsToRemove() + ",");    	
+        if (getEngineVersion() != null) sb.append("EngineVersion: " + getEngineVersion() );
         sb.append("}");
         return sb.toString();
     }

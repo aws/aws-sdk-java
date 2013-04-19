@@ -99,8 +99,8 @@ public class ReportTaskRunnerHeartbeatResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (isTerminate() != null) sb.append("Terminate: " + isTerminate() + ", ");
+        sb.append("{");    	
+        if (isTerminate() != null) sb.append("Terminate: " + isTerminate() );
         sb.append("}");
         return sb.toString();
     }

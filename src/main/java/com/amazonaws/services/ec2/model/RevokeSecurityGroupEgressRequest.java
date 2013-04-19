@@ -414,15 +414,15 @@ public class RevokeSecurityGroupEgressRequest extends AmazonWebServiceRequest  i
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getGroupId() != null) sb.append("GroupId: " + getGroupId() + ", ");
-        if (getSourceSecurityGroupName() != null) sb.append("SourceSecurityGroupName: " + getSourceSecurityGroupName() + ", ");
-        if (getSourceSecurityGroupOwnerId() != null) sb.append("SourceSecurityGroupOwnerId: " + getSourceSecurityGroupOwnerId() + ", ");
-        if (getIpProtocol() != null) sb.append("IpProtocol: " + getIpProtocol() + ", ");
-        if (getFromPort() != null) sb.append("FromPort: " + getFromPort() + ", ");
-        if (getToPort() != null) sb.append("ToPort: " + getToPort() + ", ");
-        if (getCidrIp() != null) sb.append("CidrIp: " + getCidrIp() + ", ");
-        if (getIpPermissions() != null) sb.append("IpPermissions: " + getIpPermissions() + ", ");
+        sb.append("{");    	
+        if (getGroupId() != null) sb.append("GroupId: " + getGroupId() + ",");    	
+        if (getSourceSecurityGroupName() != null) sb.append("SourceSecurityGroupName: " + getSourceSecurityGroupName() + ",");    	
+        if (getSourceSecurityGroupOwnerId() != null) sb.append("SourceSecurityGroupOwnerId: " + getSourceSecurityGroupOwnerId() + ",");    	
+        if (getIpProtocol() != null) sb.append("IpProtocol: " + getIpProtocol() + ",");    	
+        if (getFromPort() != null) sb.append("FromPort: " + getFromPort() + ",");    	
+        if (getToPort() != null) sb.append("ToPort: " + getToPort() + ",");    	
+        if (getCidrIp() != null) sb.append("CidrIp: " + getCidrIp() + ",");    	
+        if (getIpPermissions() != null) sb.append("IpPermissions: " + getIpPermissions() );
         sb.append("}");
         return sb.toString();
     }

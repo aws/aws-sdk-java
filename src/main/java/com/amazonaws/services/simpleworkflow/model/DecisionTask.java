@@ -437,14 +437,14 @@ public class DecisionTask  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getTaskToken() != null) sb.append("TaskToken: " + getTaskToken() + ", ");
-        if (getStartedEventId() != null) sb.append("StartedEventId: " + getStartedEventId() + ", ");
-        if (getWorkflowExecution() != null) sb.append("WorkflowExecution: " + getWorkflowExecution() + ", ");
-        if (getWorkflowType() != null) sb.append("WorkflowType: " + getWorkflowType() + ", ");
-        if (getEvents() != null) sb.append("Events: " + getEvents() + ", ");
-        if (getNextPageToken() != null) sb.append("NextPageToken: " + getNextPageToken() + ", ");
-        if (getPreviousStartedEventId() != null) sb.append("PreviousStartedEventId: " + getPreviousStartedEventId() + ", ");
+        sb.append("{");    	
+        if (getTaskToken() != null) sb.append("TaskToken: " + getTaskToken() + ",");    	
+        if (getStartedEventId() != null) sb.append("StartedEventId: " + getStartedEventId() + ",");    	
+        if (getWorkflowExecution() != null) sb.append("WorkflowExecution: " + getWorkflowExecution() + ",");    	
+        if (getWorkflowType() != null) sb.append("WorkflowType: " + getWorkflowType() + ",");    	
+        if (getEvents() != null) sb.append("Events: " + getEvents() + ",");    	
+        if (getNextPageToken() != null) sb.append("NextPageToken: " + getNextPageToken() + ",");    	
+        if (getPreviousStartedEventId() != null) sb.append("PreviousStartedEventId: " + getPreviousStartedEventId() );
         sb.append("}");
         return sb.toString();
     }

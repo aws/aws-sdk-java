@@ -292,14 +292,14 @@ public class NetworkInterfaceAttachment  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getAttachmentId() != null) sb.append("AttachmentId: " + getAttachmentId() + ", ");
-        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ", ");
-        if (getInstanceOwnerId() != null) sb.append("InstanceOwnerId: " + getInstanceOwnerId() + ", ");
-        if (getDeviceIndex() != null) sb.append("DeviceIndex: " + getDeviceIndex() + ", ");
-        if (getStatus() != null) sb.append("Status: " + getStatus() + ", ");
-        if (getAttachTime() != null) sb.append("AttachTime: " + getAttachTime() + ", ");
-        if (isDeleteOnTermination() != null) sb.append("DeleteOnTermination: " + isDeleteOnTermination() + ", ");
+        sb.append("{");    	
+        if (getAttachmentId() != null) sb.append("AttachmentId: " + getAttachmentId() + ",");    	
+        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ",");    	
+        if (getInstanceOwnerId() != null) sb.append("InstanceOwnerId: " + getInstanceOwnerId() + ",");    	
+        if (getDeviceIndex() != null) sb.append("DeviceIndex: " + getDeviceIndex() + ",");    	
+        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");    	
+        if (getAttachTime() != null) sb.append("AttachTime: " + getAttachTime() + ",");    	
+        if (isDeleteOnTermination() != null) sb.append("DeleteOnTermination: " + isDeleteOnTermination() );
         sb.append("}");
         return sb.toString();
     }

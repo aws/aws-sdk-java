@@ -165,9 +165,9 @@ public class DescribeNotificationConfigurationsResult  implements Serializable  
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getNotificationConfigurations() != null) sb.append("NotificationConfigurations: " + getNotificationConfigurations() + ", ");
-        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() + ", ");
+        sb.append("{");    	
+        if (getNotificationConfigurations() != null) sb.append("NotificationConfigurations: " + getNotificationConfigurations() + ",");    	
+        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() );
         sb.append("}");
         return sb.toString();
     }

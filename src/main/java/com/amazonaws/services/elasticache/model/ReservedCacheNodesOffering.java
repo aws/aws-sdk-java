@@ -380,15 +380,15 @@ public class ReservedCacheNodesOffering  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getReservedCacheNodesOfferingId() != null) sb.append("ReservedCacheNodesOfferingId: " + getReservedCacheNodesOfferingId() + ", ");
-        if (getCacheNodeType() != null) sb.append("CacheNodeType: " + getCacheNodeType() + ", ");
-        if (getDuration() != null) sb.append("Duration: " + getDuration() + ", ");
-        if (getFixedPrice() != null) sb.append("FixedPrice: " + getFixedPrice() + ", ");
-        if (getUsagePrice() != null) sb.append("UsagePrice: " + getUsagePrice() + ", ");
-        if (getProductDescription() != null) sb.append("ProductDescription: " + getProductDescription() + ", ");
-        if (getOfferingType() != null) sb.append("OfferingType: " + getOfferingType() + ", ");
-        if (getRecurringCharges() != null) sb.append("RecurringCharges: " + getRecurringCharges() + ", ");
+        sb.append("{");    	
+        if (getReservedCacheNodesOfferingId() != null) sb.append("ReservedCacheNodesOfferingId: " + getReservedCacheNodesOfferingId() + ",");    	
+        if (getCacheNodeType() != null) sb.append("CacheNodeType: " + getCacheNodeType() + ",");    	
+        if (getDuration() != null) sb.append("Duration: " + getDuration() + ",");    	
+        if (getFixedPrice() != null) sb.append("FixedPrice: " + getFixedPrice() + ",");    	
+        if (getUsagePrice() != null) sb.append("UsagePrice: " + getUsagePrice() + ",");    	
+        if (getProductDescription() != null) sb.append("ProductDescription: " + getProductDescription() + ",");    	
+        if (getOfferingType() != null) sb.append("OfferingType: " + getOfferingType() + ",");    	
+        if (getRecurringCharges() != null) sb.append("RecurringCharges: " + getRecurringCharges() );
         sb.append("}");
         return sb.toString();
     }

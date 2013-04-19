@@ -107,8 +107,8 @@ public class DescribeConfigurationSettingsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getConfigurationSettings() != null) sb.append("ConfigurationSettings: " + getConfigurationSettings() + ", ");
+        sb.append("{");    	
+        if (getConfigurationSettings() != null) sb.append("ConfigurationSettings: " + getConfigurationSettings() );
         sb.append("}");
         return sb.toString();
     }

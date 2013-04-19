@@ -182,10 +182,10 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest  impleme
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getGroupName() != null) sb.append("GroupName: " + getGroupName() + ", ");
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ", ");
-        if (getVpcId() != null) sb.append("VpcId: " + getVpcId() + ", ");
+        sb.append("{");    	
+        if (getGroupName() != null) sb.append("GroupName: " + getGroupName() + ",");    	
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");    	
+        if (getVpcId() != null) sb.append("VpcId: " + getVpcId() );
         sb.append("}");
         return sb.toString();
     }

@@ -376,14 +376,14 @@ public class ListPartsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getMultipartUploadId() != null) sb.append("MultipartUploadId: " + getMultipartUploadId() + ", ");
-        if (getVaultARN() != null) sb.append("VaultARN: " + getVaultARN() + ", ");
-        if (getArchiveDescription() != null) sb.append("ArchiveDescription: " + getArchiveDescription() + ", ");
-        if (getPartSizeInBytes() != null) sb.append("PartSizeInBytes: " + getPartSizeInBytes() + ", ");
-        if (getCreationDate() != null) sb.append("CreationDate: " + getCreationDate() + ", ");
-        if (getParts() != null) sb.append("Parts: " + getParts() + ", ");
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ", ");
+        sb.append("{");    	
+        if (getMultipartUploadId() != null) sb.append("MultipartUploadId: " + getMultipartUploadId() + ",");    	
+        if (getVaultARN() != null) sb.append("VaultARN: " + getVaultARN() + ",");    	
+        if (getArchiveDescription() != null) sb.append("ArchiveDescription: " + getArchiveDescription() + ",");    	
+        if (getPartSizeInBytes() != null) sb.append("PartSizeInBytes: " + getPartSizeInBytes() + ",");    	
+        if (getCreationDate() != null) sb.append("CreationDate: " + getCreationDate() + ",");    	
+        if (getParts() != null) sb.append("Parts: " + getParts() + ",");    	
+        if (getMarker() != null) sb.append("Marker: " + getMarker() );
         sb.append("}");
         return sb.toString();
     }

@@ -588,16 +588,16 @@ public class ModifyImageAttributeRequest extends AmazonWebServiceRequest  implem
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getImageId() != null) sb.append("ImageId: " + getImageId() + ", ");
-        if (getAttribute() != null) sb.append("Attribute: " + getAttribute() + ", ");
-        if (getOperationType() != null) sb.append("OperationType: " + getOperationType() + ", ");
-        if (getUserIds() != null) sb.append("UserIds: " + getUserIds() + ", ");
-        if (getUserGroups() != null) sb.append("UserGroups: " + getUserGroups() + ", ");
-        if (getProductCodes() != null) sb.append("ProductCodes: " + getProductCodes() + ", ");
-        if (getValue() != null) sb.append("Value: " + getValue() + ", ");
-        if (getLaunchPermission() != null) sb.append("LaunchPermission: " + getLaunchPermission() + ", ");
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ", ");
+        sb.append("{");    	
+        if (getImageId() != null) sb.append("ImageId: " + getImageId() + ",");    	
+        if (getAttribute() != null) sb.append("Attribute: " + getAttribute() + ",");    	
+        if (getOperationType() != null) sb.append("OperationType: " + getOperationType() + ",");    	
+        if (getUserIds() != null) sb.append("UserIds: " + getUserIds() + ",");    	
+        if (getUserGroups() != null) sb.append("UserGroups: " + getUserGroups() + ",");    	
+        if (getProductCodes() != null) sb.append("ProductCodes: " + getProductCodes() + ",");    	
+        if (getValue() != null) sb.append("Value: " + getValue() + ",");    	
+        if (getLaunchPermission() != null) sb.append("LaunchPermission: " + getLaunchPermission() + ",");    	
+        if (getDescription() != null) sb.append("Description: " + getDescription() );
         sb.append("}");
         return sb.toString();
     }

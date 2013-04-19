@@ -203,9 +203,9 @@ public class DeleteIndexFieldRequest extends AmazonWebServiceRequest  implements
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getDomainName() != null) sb.append("DomainName: " + getDomainName() + ", ");
-        if (getIndexFieldName() != null) sb.append("IndexFieldName: " + getIndexFieldName() + ", ");
+        sb.append("{");    	
+        if (getDomainName() != null) sb.append("DomainName: " + getDomainName() + ",");    	
+        if (getIndexFieldName() != null) sb.append("IndexFieldName: " + getIndexFieldName() );
         sb.append("}");
         return sb.toString();
     }

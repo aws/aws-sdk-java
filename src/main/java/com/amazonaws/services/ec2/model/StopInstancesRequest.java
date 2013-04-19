@@ -212,9 +212,9 @@ public class StopInstancesRequest extends AmazonWebServiceRequest  implements Se
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getInstanceIds() != null) sb.append("InstanceIds: " + getInstanceIds() + ", ");
-        if (isForce() != null) sb.append("Force: " + isForce() + ", ");
+        sb.append("{");    	
+        if (getInstanceIds() != null) sb.append("InstanceIds: " + getInstanceIds() + ",");    	
+        if (isForce() != null) sb.append("Force: " + isForce() );
         sb.append("}");
         return sb.toString();
     }

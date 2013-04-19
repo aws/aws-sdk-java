@@ -209,9 +209,9 @@ public class SetTerminationProtectionRequest extends AmazonWebServiceRequest  im
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getJobFlowIds() != null) sb.append("JobFlowIds: " + getJobFlowIds() + ", ");
-        if (isTerminationProtected() != null) sb.append("TerminationProtected: " + isTerminationProtected() + ", ");
+        sb.append("{");    	
+        if (getJobFlowIds() != null) sb.append("JobFlowIds: " + getJobFlowIds() + ",");    	
+        if (isTerminationProtected() != null) sb.append("TerminationProtected: " + isTerminationProtected() );
         sb.append("}");
         return sb.toString();
     }

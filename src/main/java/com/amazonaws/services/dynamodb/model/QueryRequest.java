@@ -28,6 +28,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.dynamodb.AmazonDynamoDB#query(QueryRequest)
  */
+@Deprecated
 public class QueryRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**

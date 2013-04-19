@@ -37,6 +37,7 @@ import com.amazonaws.util.json.*;
 /**
  * Delete Table Request Marshaller
  */
+@Deprecated
 public class DeleteTableRequestMarshaller implements Marshaller<Request<DeleteTableRequest>, DeleteTableRequest> {
 
     

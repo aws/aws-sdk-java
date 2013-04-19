@@ -18,6 +18,7 @@ import java.io.Serializable;
 /**
  * Delete Item Result
  */
+@Deprecated
 public class DeleteItemResult  implements Serializable  {
 
     /**

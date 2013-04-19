@@ -127,8 +127,8 @@ public class DisableAlarmActionsRequest extends AmazonWebServiceRequest  impleme
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getAlarmNames() != null) sb.append("AlarmNames: " + getAlarmNames() + ", ");
+        sb.append("{");    	
+        if (getAlarmNames() != null) sb.append("AlarmNames: " + getAlarmNames() );
         sb.append("}");
         return sb.toString();
     }

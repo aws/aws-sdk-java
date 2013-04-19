@@ -30,7 +30,7 @@ public class CreateDistributionResult  implements Serializable  {
     /**
      * The fully qualified URI of the new distribution resource just created.
      * For example:
-     * ps://cloudfront.amazonaws.com/2010-11-01/distribution/EDFDVBD632BHDS5.
+     * https://cloudfront.amazonaws.com/2010-11-01/distribution/EDFDVBD632BHDS5.
      */
     private String location;
 
@@ -76,11 +76,11 @@ public class CreateDistributionResult  implements Serializable  {
     /**
      * The fully qualified URI of the new distribution resource just created.
      * For example:
-     * ps://cloudfront.amazonaws.com/2010-11-01/distribution/EDFDVBD632BHDS5.
+     * https://cloudfront.amazonaws.com/2010-11-01/distribution/EDFDVBD632BHDS5.
      *
      * @return The fully qualified URI of the new distribution resource just created.
      *         For example:
-     *         ps://cloudfront.amazonaws.com/2010-11-01/distribution/EDFDVBD632BHDS5.
+     *         https://cloudfront.amazonaws.com/2010-11-01/distribution/EDFDVBD632BHDS5.
      */
     public String getLocation() {
         return location;
@@ -89,11 +89,11 @@ public class CreateDistributionResult  implements Serializable  {
     /**
      * The fully qualified URI of the new distribution resource just created.
      * For example:
-     * ps://cloudfront.amazonaws.com/2010-11-01/distribution/EDFDVBD632BHDS5.
+     * https://cloudfront.amazonaws.com/2010-11-01/distribution/EDFDVBD632BHDS5.
      *
      * @param location The fully qualified URI of the new distribution resource just created.
      *         For example:
-     *         ps://cloudfront.amazonaws.com/2010-11-01/distribution/EDFDVBD632BHDS5.
+     *         https://cloudfront.amazonaws.com/2010-11-01/distribution/EDFDVBD632BHDS5.
      */
     public void setLocation(String location) {
         this.location = location;
@@ -102,13 +102,13 @@ public class CreateDistributionResult  implements Serializable  {
     /**
      * The fully qualified URI of the new distribution resource just created.
      * For example:
-     * ps://cloudfront.amazonaws.com/2010-11-01/distribution/EDFDVBD632BHDS5.
+     * https://cloudfront.amazonaws.com/2010-11-01/distribution/EDFDVBD632BHDS5.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param location The fully qualified URI of the new distribution resource just created.
      *         For example:
-     *         ps://cloudfront.amazonaws.com/2010-11-01/distribution/EDFDVBD632BHDS5.
+     *         https://cloudfront.amazonaws.com/2010-11-01/distribution/EDFDVBD632BHDS5.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -164,10 +164,10 @@ public class CreateDistributionResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getDistribution() != null) sb.append("Distribution: " + getDistribution() + ", ");
-        if (getLocation() != null) sb.append("Location: " + getLocation() + ", ");
-        if (getETag() != null) sb.append("ETag: " + getETag() + ", ");
+        sb.append("{");    	
+        if (getDistribution() != null) sb.append("Distribution: " + getDistribution() + ",");    	
+        if (getLocation() != null) sb.append("Location: " + getLocation() + ",");    	
+        if (getETag() != null) sb.append("ETag: " + getETag() );
         sb.append("}");
         return sb.toString();
     }

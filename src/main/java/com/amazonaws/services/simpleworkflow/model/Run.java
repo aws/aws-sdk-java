@@ -98,8 +98,8 @@ public class Run  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getRunId() != null) sb.append("RunId: " + getRunId() + ", ");
+        sb.append("{");    	
+        if (getRunId() != null) sb.append("RunId: " + getRunId() );
         sb.append("}");
         return sb.toString();
     }

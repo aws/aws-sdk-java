@@ -228,12 +228,12 @@ public class CacheEngineVersion  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getEngine() != null) sb.append("Engine: " + getEngine() + ", ");
-        if (getEngineVersion() != null) sb.append("EngineVersion: " + getEngineVersion() + ", ");
-        if (getCacheParameterGroupFamily() != null) sb.append("CacheParameterGroupFamily: " + getCacheParameterGroupFamily() + ", ");
-        if (getCacheEngineDescription() != null) sb.append("CacheEngineDescription: " + getCacheEngineDescription() + ", ");
-        if (getCacheEngineVersionDescription() != null) sb.append("CacheEngineVersionDescription: " + getCacheEngineVersionDescription() + ", ");
+        sb.append("{");    	
+        if (getEngine() != null) sb.append("Engine: " + getEngine() + ",");    	
+        if (getEngineVersion() != null) sb.append("EngineVersion: " + getEngineVersion() + ",");    	
+        if (getCacheParameterGroupFamily() != null) sb.append("CacheParameterGroupFamily: " + getCacheParameterGroupFamily() + ",");    	
+        if (getCacheEngineDescription() != null) sb.append("CacheEngineDescription: " + getCacheEngineDescription() + ",");    	
+        if (getCacheEngineVersionDescription() != null) sb.append("CacheEngineVersionDescription: " + getCacheEngineVersionDescription() );
         sb.append("}");
         return sb.toString();
     }

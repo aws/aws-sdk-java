@@ -112,9 +112,9 @@ public class PrivateIpAddressSpecification  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getPrivateIpAddress() != null) sb.append("PrivateIpAddress: " + getPrivateIpAddress() + ", ");
-        if (isPrimary() != null) sb.append("Primary: " + isPrimary() + ", ");
+        sb.append("{");    	
+        if (getPrivateIpAddress() != null) sb.append("PrivateIpAddress: " + getPrivateIpAddress() + ",");    	
+        if (isPrimary() != null) sb.append("Primary: " + isPrimary() );
         sb.append("}");
         return sb.toString();
     }

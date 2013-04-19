@@ -160,9 +160,9 @@ public class DescribeClusterSubnetGroupsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ", ");
-        if (getClusterSubnetGroups() != null) sb.append("ClusterSubnetGroups: " + getClusterSubnetGroups() + ", ");
+        sb.append("{");    	
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");    	
+        if (getClusterSubnetGroups() != null) sb.append("ClusterSubnetGroups: " + getClusterSubnetGroups() );
         sb.append("}");
         return sb.toString();
     }

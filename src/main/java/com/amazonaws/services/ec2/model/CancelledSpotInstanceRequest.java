@@ -104,9 +104,9 @@ public class CancelledSpotInstanceRequest  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getSpotInstanceRequestId() != null) sb.append("SpotInstanceRequestId: " + getSpotInstanceRequestId() + ", ");
-        if (getState() != null) sb.append("State: " + getState() + ", ");
+        sb.append("{");    	
+        if (getSpotInstanceRequestId() != null) sb.append("SpotInstanceRequestId: " + getSpotInstanceRequestId() + ",");    	
+        if (getState() != null) sb.append("State: " + getState() );
         sb.append("}");
         return sb.toString();
     }

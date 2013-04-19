@@ -111,8 +111,8 @@ public class ResourceRecord  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getValue() != null) sb.append("Value: " + getValue() + ", ");
+        sb.append("{");    	
+        if (getValue() != null) sb.append("Value: " + getValue() );
         sb.append("}");
         return sb.toString();
     }

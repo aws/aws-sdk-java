@@ -36,7 +36,7 @@ public class RecordMarkerFailedEventAttributes  implements Serializable  {
      * <note>If <b>cause</b> is set to OPERATION_NOT_PERMITTED, the decision
      * failed because it lacked sufficient permissions. For details and
      * example IAM policies, see <a
-     * aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
      * IAM to Manage Access to Amazon SWF Workflows</a>.</note>
      * <p>
      * <b>Constraints:</b><br/>
@@ -102,7 +102,7 @@ public class RecordMarkerFailedEventAttributes  implements Serializable  {
      * <note>If <b>cause</b> is set to OPERATION_NOT_PERMITTED, the decision
      * failed because it lacked sufficient permissions. For details and
      * example IAM policies, see <a
-     * aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
      * IAM to Manage Access to Amazon SWF Workflows</a>.</note>
      * <p>
      * <b>Constraints:</b><br/>
@@ -113,7 +113,7 @@ public class RecordMarkerFailedEventAttributes  implements Serializable  {
      *         <note>If <b>cause</b> is set to OPERATION_NOT_PERMITTED, the decision
      *         failed because it lacked sufficient permissions. For details and
      *         example IAM policies, see <a
-     *         aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+     *         href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
      *         IAM to Manage Access to Amazon SWF Workflows</a>.</note>
      *
      * @see RecordMarkerFailedCause
@@ -128,7 +128,7 @@ public class RecordMarkerFailedEventAttributes  implements Serializable  {
      * <note>If <b>cause</b> is set to OPERATION_NOT_PERMITTED, the decision
      * failed because it lacked sufficient permissions. For details and
      * example IAM policies, see <a
-     * aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
      * IAM to Manage Access to Amazon SWF Workflows</a>.</note>
      * <p>
      * <b>Constraints:</b><br/>
@@ -139,7 +139,7 @@ public class RecordMarkerFailedEventAttributes  implements Serializable  {
      *         <note>If <b>cause</b> is set to OPERATION_NOT_PERMITTED, the decision
      *         failed because it lacked sufficient permissions. For details and
      *         example IAM policies, see <a
-     *         aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+     *         href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
      *         IAM to Manage Access to Amazon SWF Workflows</a>.</note>
      *
      * @see RecordMarkerFailedCause
@@ -154,7 +154,7 @@ public class RecordMarkerFailedEventAttributes  implements Serializable  {
      * <note>If <b>cause</b> is set to OPERATION_NOT_PERMITTED, the decision
      * failed because it lacked sufficient permissions. For details and
      * example IAM policies, see <a
-     * aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
      * IAM to Manage Access to Amazon SWF Workflows</a>.</note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -167,7 +167,7 @@ public class RecordMarkerFailedEventAttributes  implements Serializable  {
      *         <note>If <b>cause</b> is set to OPERATION_NOT_PERMITTED, the decision
      *         failed because it lacked sufficient permissions. For details and
      *         example IAM policies, see <a
-     *         aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+     *         href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
      *         IAM to Manage Access to Amazon SWF Workflows</a>.</note>
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -187,7 +187,7 @@ public class RecordMarkerFailedEventAttributes  implements Serializable  {
      * <note>If <b>cause</b> is set to OPERATION_NOT_PERMITTED, the decision
      * failed because it lacked sufficient permissions. For details and
      * example IAM policies, see <a
-     * aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
      * IAM to Manage Access to Amazon SWF Workflows</a>.</note>
      * <p>
      * <b>Constraints:</b><br/>
@@ -198,7 +198,7 @@ public class RecordMarkerFailedEventAttributes  implements Serializable  {
      *         <note>If <b>cause</b> is set to OPERATION_NOT_PERMITTED, the decision
      *         failed because it lacked sufficient permissions. For details and
      *         example IAM policies, see <a
-     *         aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+     *         href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
      *         IAM to Manage Access to Amazon SWF Workflows</a>.</note>
      *
      * @see RecordMarkerFailedCause
@@ -213,7 +213,7 @@ public class RecordMarkerFailedEventAttributes  implements Serializable  {
      * <note>If <b>cause</b> is set to OPERATION_NOT_PERMITTED, the decision
      * failed because it lacked sufficient permissions. For details and
      * example IAM policies, see <a
-     * aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
      * IAM to Manage Access to Amazon SWF Workflows</a>.</note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -226,7 +226,7 @@ public class RecordMarkerFailedEventAttributes  implements Serializable  {
      *         <note>If <b>cause</b> is set to OPERATION_NOT_PERMITTED, the decision
      *         failed because it lacked sufficient permissions. For details and
      *         example IAM policies, see <a
-     *         aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+     *         href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
      *         IAM to Manage Access to Amazon SWF Workflows</a>.</note>
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -308,10 +308,10 @@ public class RecordMarkerFailedEventAttributes  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getMarkerName() != null) sb.append("MarkerName: " + getMarkerName() + ", ");
-        if (getCause() != null) sb.append("Cause: " + getCause() + ", ");
-        if (getDecisionTaskCompletedEventId() != null) sb.append("DecisionTaskCompletedEventId: " + getDecisionTaskCompletedEventId() + ", ");
+        sb.append("{");    	
+        if (getMarkerName() != null) sb.append("MarkerName: " + getMarkerName() + ",");    	
+        if (getCause() != null) sb.append("Cause: " + getCause() + ",");    	
+        if (getDecisionTaskCompletedEventId() != null) sb.append("DecisionTaskCompletedEventId: " + getDecisionTaskCompletedEventId() );
         sb.append("}");
         return sb.toString();
     }

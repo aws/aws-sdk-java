@@ -186,9 +186,9 @@ public class DeleteMessageBatchRequest extends AmazonWebServiceRequest  implemen
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getQueueUrl() != null) sb.append("QueueUrl: " + getQueueUrl() + ", ");
-        if (getEntries() != null) sb.append("Entries: " + getEntries() + ", ");
+        sb.append("{");    	
+        if (getQueueUrl() != null) sb.append("QueueUrl: " + getQueueUrl() + ",");    	
+        if (getEntries() != null) sb.append("Entries: " + getEntries() );
         sb.append("}");
         return sb.toString();
     }

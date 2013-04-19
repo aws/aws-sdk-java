@@ -138,9 +138,9 @@ public class InstanceStatusSummary  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getStatus() != null) sb.append("Status: " + getStatus() + ", ");
-        if (getDetails() != null) sb.append("Details: " + getDetails() + ", ");
+        sb.append("{");    	
+        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");    	
+        if (getDetails() != null) sb.append("Details: " + getDetails() );
         sb.append("}");
         return sb.toString();
     }

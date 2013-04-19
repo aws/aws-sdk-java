@@ -204,10 +204,10 @@ public class ChangeMessageVisibilityRequest extends AmazonWebServiceRequest  imp
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getQueueUrl() != null) sb.append("QueueUrl: " + getQueueUrl() + ", ");
-        if (getReceiptHandle() != null) sb.append("ReceiptHandle: " + getReceiptHandle() + ", ");
-        if (getVisibilityTimeout() != null) sb.append("VisibilityTimeout: " + getVisibilityTimeout() + ", ");
+        sb.append("{");    	
+        if (getQueueUrl() != null) sb.append("QueueUrl: " + getQueueUrl() + ",");    	
+        if (getReceiptHandle() != null) sb.append("ReceiptHandle: " + getReceiptHandle() + ",");    	
+        if (getVisibilityTimeout() != null) sb.append("VisibilityTimeout: " + getVisibilityTimeout() );
         sb.append("}");
         return sb.toString();
     }

@@ -189,10 +189,10 @@ public class DescribeDeploymentsRequest extends AmazonWebServiceRequest  impleme
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getStackId() != null) sb.append("StackId: " + getStackId() + ", ");
-        if (getAppId() != null) sb.append("AppId: " + getAppId() + ", ");
-        if (getDeploymentIds() != null) sb.append("DeploymentIds: " + getDeploymentIds() + ", ");
+        sb.append("{");    	
+        if (getStackId() != null) sb.append("StackId: " + getStackId() + ",");    	
+        if (getAppId() != null) sb.append("AppId: " + getAppId() + ",");    	
+        if (getDeploymentIds() != null) sb.append("DeploymentIds: " + getDeploymentIds() );
         sb.append("}");
         return sb.toString();
     }

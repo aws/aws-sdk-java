@@ -424,14 +424,14 @@ public class DescribeDBEngineVersionsRequest extends AmazonWebServiceRequest  im
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getEngine() != null) sb.append("Engine: " + getEngine() + ", ");
-        if (getEngineVersion() != null) sb.append("EngineVersion: " + getEngineVersion() + ", ");
-        if (getDBParameterGroupFamily() != null) sb.append("DBParameterGroupFamily: " + getDBParameterGroupFamily() + ", ");
-        if (getMaxRecords() != null) sb.append("MaxRecords: " + getMaxRecords() + ", ");
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ", ");
-        if (isDefaultOnly() != null) sb.append("DefaultOnly: " + isDefaultOnly() + ", ");
-        if (isListSupportedCharacterSets() != null) sb.append("ListSupportedCharacterSets: " + isListSupportedCharacterSets() + ", ");
+        sb.append("{");    	
+        if (getEngine() != null) sb.append("Engine: " + getEngine() + ",");    	
+        if (getEngineVersion() != null) sb.append("EngineVersion: " + getEngineVersion() + ",");    	
+        if (getDBParameterGroupFamily() != null) sb.append("DBParameterGroupFamily: " + getDBParameterGroupFamily() + ",");    	
+        if (getMaxRecords() != null) sb.append("MaxRecords: " + getMaxRecords() + ",");    	
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");    	
+        if (isDefaultOnly() != null) sb.append("DefaultOnly: " + isDefaultOnly() + ",");    	
+        if (isListSupportedCharacterSets() != null) sb.append("ListSupportedCharacterSets: " + isListSupportedCharacterSets() );
         sb.append("}");
         return sb.toString();
     }

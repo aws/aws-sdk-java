@@ -209,11 +209,11 @@ public class InstanceState  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ", ");
-        if (getState() != null) sb.append("State: " + getState() + ", ");
-        if (getReasonCode() != null) sb.append("ReasonCode: " + getReasonCode() + ", ");
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ", ");
+        sb.append("{");    	
+        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ",");    	
+        if (getState() != null) sb.append("State: " + getState() + ",");    	
+        if (getReasonCode() != null) sb.append("ReasonCode: " + getReasonCode() + ",");    	
+        if (getDescription() != null) sb.append("Description: " + getDescription() );
         sb.append("}");
         return sb.toString();
     }

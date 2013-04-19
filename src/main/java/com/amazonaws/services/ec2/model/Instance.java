@@ -77,7 +77,7 @@ public class Instance  implements Serializable  {
     /**
      * The instance type. For more information on instance types, please see
      * the <a
-     * "http://docs.amazonwebservices.com/AWSEC2/2009-07-15/DeveloperGuide/">
+     * href="http://docs.amazonwebservices.com/AWSEC2/2009-07-15/DeveloperGuide/">
      * Amazon Elastic Compute Cloud Developer Guide</a>.
      * <p>
      * <b>Constraints:</b><br/>
@@ -585,7 +585,7 @@ public class Instance  implements Serializable  {
     /**
      * The instance type. For more information on instance types, please see
      * the <a
-     * "http://docs.amazonwebservices.com/AWSEC2/2009-07-15/DeveloperGuide/">
+     * href="http://docs.amazonwebservices.com/AWSEC2/2009-07-15/DeveloperGuide/">
      * Amazon Elastic Compute Cloud Developer Guide</a>.
      * <p>
      * <b>Constraints:</b><br/>
@@ -593,7 +593,7 @@ public class Instance  implements Serializable  {
      *
      * @return The instance type. For more information on instance types, please see
      *         the <a
-     *         "http://docs.amazonwebservices.com/AWSEC2/2009-07-15/DeveloperGuide/">
+     *         href="http://docs.amazonwebservices.com/AWSEC2/2009-07-15/DeveloperGuide/">
      *         Amazon Elastic Compute Cloud Developer Guide</a>.
      *
      * @see InstanceType
@@ -605,7 +605,7 @@ public class Instance  implements Serializable  {
     /**
      * The instance type. For more information on instance types, please see
      * the <a
-     * "http://docs.amazonwebservices.com/AWSEC2/2009-07-15/DeveloperGuide/">
+     * href="http://docs.amazonwebservices.com/AWSEC2/2009-07-15/DeveloperGuide/">
      * Amazon Elastic Compute Cloud Developer Guide</a>.
      * <p>
      * <b>Constraints:</b><br/>
@@ -613,7 +613,7 @@ public class Instance  implements Serializable  {
      *
      * @param instanceType The instance type. For more information on instance types, please see
      *         the <a
-     *         "http://docs.amazonwebservices.com/AWSEC2/2009-07-15/DeveloperGuide/">
+     *         href="http://docs.amazonwebservices.com/AWSEC2/2009-07-15/DeveloperGuide/">
      *         Amazon Elastic Compute Cloud Developer Guide</a>.
      *
      * @see InstanceType
@@ -625,7 +625,7 @@ public class Instance  implements Serializable  {
     /**
      * The instance type. For more information on instance types, please see
      * the <a
-     * "http://docs.amazonwebservices.com/AWSEC2/2009-07-15/DeveloperGuide/">
+     * href="http://docs.amazonwebservices.com/AWSEC2/2009-07-15/DeveloperGuide/">
      * Amazon Elastic Compute Cloud Developer Guide</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -635,7 +635,7 @@ public class Instance  implements Serializable  {
      *
      * @param instanceType The instance type. For more information on instance types, please see
      *         the <a
-     *         "http://docs.amazonwebservices.com/AWSEC2/2009-07-15/DeveloperGuide/">
+     *         href="http://docs.amazonwebservices.com/AWSEC2/2009-07-15/DeveloperGuide/">
      *         Amazon Elastic Compute Cloud Developer Guide</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -652,7 +652,7 @@ public class Instance  implements Serializable  {
     /**
      * The instance type. For more information on instance types, please see
      * the <a
-     * "http://docs.amazonwebservices.com/AWSEC2/2009-07-15/DeveloperGuide/">
+     * href="http://docs.amazonwebservices.com/AWSEC2/2009-07-15/DeveloperGuide/">
      * Amazon Elastic Compute Cloud Developer Guide</a>.
      * <p>
      * <b>Constraints:</b><br/>
@@ -660,7 +660,7 @@ public class Instance  implements Serializable  {
      *
      * @param instanceType The instance type. For more information on instance types, please see
      *         the <a
-     *         "http://docs.amazonwebservices.com/AWSEC2/2009-07-15/DeveloperGuide/">
+     *         href="http://docs.amazonwebservices.com/AWSEC2/2009-07-15/DeveloperGuide/">
      *         Amazon Elastic Compute Cloud Developer Guide</a>.
      *
      * @see InstanceType
@@ -672,7 +672,7 @@ public class Instance  implements Serializable  {
     /**
      * The instance type. For more information on instance types, please see
      * the <a
-     * "http://docs.amazonwebservices.com/AWSEC2/2009-07-15/DeveloperGuide/">
+     * href="http://docs.amazonwebservices.com/AWSEC2/2009-07-15/DeveloperGuide/">
      * Amazon Elastic Compute Cloud Developer Guide</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -682,7 +682,7 @@ public class Instance  implements Serializable  {
      *
      * @param instanceType The instance type. For more information on instance types, please see
      *         the <a
-     *         "http://docs.amazonwebservices.com/AWSEC2/2009-07-15/DeveloperGuide/">
+     *         href="http://docs.amazonwebservices.com/AWSEC2/2009-07-15/DeveloperGuide/">
      *         Amazon Elastic Compute Cloud Developer Guide</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -1898,44 +1898,44 @@ public class Instance  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ", ");
-        if (getImageId() != null) sb.append("ImageId: " + getImageId() + ", ");
-        if (getState() != null) sb.append("State: " + getState() + ", ");
-        if (getPrivateDnsName() != null) sb.append("PrivateDnsName: " + getPrivateDnsName() + ", ");
-        if (getPublicDnsName() != null) sb.append("PublicDnsName: " + getPublicDnsName() + ", ");
-        if (getStateTransitionReason() != null) sb.append("StateTransitionReason: " + getStateTransitionReason() + ", ");
-        if (getKeyName() != null) sb.append("KeyName: " + getKeyName() + ", ");
-        if (getAmiLaunchIndex() != null) sb.append("AmiLaunchIndex: " + getAmiLaunchIndex() + ", ");
-        if (getProductCodes() != null) sb.append("ProductCodes: " + getProductCodes() + ", ");
-        if (getInstanceType() != null) sb.append("InstanceType: " + getInstanceType() + ", ");
-        if (getLaunchTime() != null) sb.append("LaunchTime: " + getLaunchTime() + ", ");
-        if (getPlacement() != null) sb.append("Placement: " + getPlacement() + ", ");
-        if (getKernelId() != null) sb.append("KernelId: " + getKernelId() + ", ");
-        if (getRamdiskId() != null) sb.append("RamdiskId: " + getRamdiskId() + ", ");
-        if (getPlatform() != null) sb.append("Platform: " + getPlatform() + ", ");
-        if (getMonitoring() != null) sb.append("Monitoring: " + getMonitoring() + ", ");
-        if (getSubnetId() != null) sb.append("SubnetId: " + getSubnetId() + ", ");
-        if (getVpcId() != null) sb.append("VpcId: " + getVpcId() + ", ");
-        if (getPrivateIpAddress() != null) sb.append("PrivateIpAddress: " + getPrivateIpAddress() + ", ");
-        if (getPublicIpAddress() != null) sb.append("PublicIpAddress: " + getPublicIpAddress() + ", ");
-        if (getStateReason() != null) sb.append("StateReason: " + getStateReason() + ", ");
-        if (getArchitecture() != null) sb.append("Architecture: " + getArchitecture() + ", ");
-        if (getRootDeviceType() != null) sb.append("RootDeviceType: " + getRootDeviceType() + ", ");
-        if (getRootDeviceName() != null) sb.append("RootDeviceName: " + getRootDeviceName() + ", ");
-        if (getBlockDeviceMappings() != null) sb.append("BlockDeviceMappings: " + getBlockDeviceMappings() + ", ");
-        if (getVirtualizationType() != null) sb.append("VirtualizationType: " + getVirtualizationType() + ", ");
-        if (getInstanceLifecycle() != null) sb.append("InstanceLifecycle: " + getInstanceLifecycle() + ", ");
-        if (getSpotInstanceRequestId() != null) sb.append("SpotInstanceRequestId: " + getSpotInstanceRequestId() + ", ");
-        if (getLicense() != null) sb.append("License: " + getLicense() + ", ");
-        if (getClientToken() != null) sb.append("ClientToken: " + getClientToken() + ", ");
-        if (getTags() != null) sb.append("Tags: " + getTags() + ", ");
-        if (getSecurityGroups() != null) sb.append("SecurityGroups: " + getSecurityGroups() + ", ");
-        if (isSourceDestCheck() != null) sb.append("SourceDestCheck: " + isSourceDestCheck() + ", ");
-        if (getHypervisor() != null) sb.append("Hypervisor: " + getHypervisor() + ", ");
-        if (getNetworkInterfaces() != null) sb.append("NetworkInterfaces: " + getNetworkInterfaces() + ", ");
-        if (getIamInstanceProfile() != null) sb.append("IamInstanceProfile: " + getIamInstanceProfile() + ", ");
-        if (isEbsOptimized() != null) sb.append("EbsOptimized: " + isEbsOptimized() + ", ");
+        sb.append("{");    	
+        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ",");    	
+        if (getImageId() != null) sb.append("ImageId: " + getImageId() + ",");    	
+        if (getState() != null) sb.append("State: " + getState() + ",");    	
+        if (getPrivateDnsName() != null) sb.append("PrivateDnsName: " + getPrivateDnsName() + ",");    	
+        if (getPublicDnsName() != null) sb.append("PublicDnsName: " + getPublicDnsName() + ",");    	
+        if (getStateTransitionReason() != null) sb.append("StateTransitionReason: " + getStateTransitionReason() + ",");    	
+        if (getKeyName() != null) sb.append("KeyName: " + getKeyName() + ",");    	
+        if (getAmiLaunchIndex() != null) sb.append("AmiLaunchIndex: " + getAmiLaunchIndex() + ",");    	
+        if (getProductCodes() != null) sb.append("ProductCodes: " + getProductCodes() + ",");    	
+        if (getInstanceType() != null) sb.append("InstanceType: " + getInstanceType() + ",");    	
+        if (getLaunchTime() != null) sb.append("LaunchTime: " + getLaunchTime() + ",");    	
+        if (getPlacement() != null) sb.append("Placement: " + getPlacement() + ",");    	
+        if (getKernelId() != null) sb.append("KernelId: " + getKernelId() + ",");    	
+        if (getRamdiskId() != null) sb.append("RamdiskId: " + getRamdiskId() + ",");    	
+        if (getPlatform() != null) sb.append("Platform: " + getPlatform() + ",");    	
+        if (getMonitoring() != null) sb.append("Monitoring: " + getMonitoring() + ",");    	
+        if (getSubnetId() != null) sb.append("SubnetId: " + getSubnetId() + ",");    	
+        if (getVpcId() != null) sb.append("VpcId: " + getVpcId() + ",");    	
+        if (getPrivateIpAddress() != null) sb.append("PrivateIpAddress: " + getPrivateIpAddress() + ",");    	
+        if (getPublicIpAddress() != null) sb.append("PublicIpAddress: " + getPublicIpAddress() + ",");    	
+        if (getStateReason() != null) sb.append("StateReason: " + getStateReason() + ",");    	
+        if (getArchitecture() != null) sb.append("Architecture: " + getArchitecture() + ",");    	
+        if (getRootDeviceType() != null) sb.append("RootDeviceType: " + getRootDeviceType() + ",");    	
+        if (getRootDeviceName() != null) sb.append("RootDeviceName: " + getRootDeviceName() + ",");    	
+        if (getBlockDeviceMappings() != null) sb.append("BlockDeviceMappings: " + getBlockDeviceMappings() + ",");    	
+        if (getVirtualizationType() != null) sb.append("VirtualizationType: " + getVirtualizationType() + ",");    	
+        if (getInstanceLifecycle() != null) sb.append("InstanceLifecycle: " + getInstanceLifecycle() + ",");    	
+        if (getSpotInstanceRequestId() != null) sb.append("SpotInstanceRequestId: " + getSpotInstanceRequestId() + ",");    	
+        if (getLicense() != null) sb.append("License: " + getLicense() + ",");    	
+        if (getClientToken() != null) sb.append("ClientToken: " + getClientToken() + ",");    	
+        if (getTags() != null) sb.append("Tags: " + getTags() + ",");    	
+        if (getSecurityGroups() != null) sb.append("SecurityGroups: " + getSecurityGroups() + ",");    	
+        if (isSourceDestCheck() != null) sb.append("SourceDestCheck: " + isSourceDestCheck() + ",");    	
+        if (getHypervisor() != null) sb.append("Hypervisor: " + getHypervisor() + ",");    	
+        if (getNetworkInterfaces() != null) sb.append("NetworkInterfaces: " + getNetworkInterfaces() + ",");    	
+        if (getIamInstanceProfile() != null) sb.append("IamInstanceProfile: " + getIamInstanceProfile() + ",");    	
+        if (isEbsOptimized() != null) sb.append("EbsOptimized: " + isEbsOptimized() );
         sb.append("}");
         return sb.toString();
     }

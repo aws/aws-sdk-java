@@ -263,10 +263,10 @@ public class ListVaultsRequest extends AmazonWebServiceRequest  implements Seria
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getAccountId() != null) sb.append("AccountId: " + getAccountId() + ", ");
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ", ");
-        if (getLimit() != null) sb.append("Limit: " + getLimit() + ", ");
+        sb.append("{");    	
+        if (getAccountId() != null) sb.append("AccountId: " + getAccountId() + ",");    	
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");    	
+        if (getLimit() != null) sb.append("Limit: " + getLimit() );
         sb.append("}");
         return sb.toString();
     }

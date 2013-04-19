@@ -525,13 +525,13 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest  imp
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getSnapshotId() != null) sb.append("SnapshotId: " + getSnapshotId() + ", ");
-        if (getAttribute() != null) sb.append("Attribute: " + getAttribute() + ", ");
-        if (getOperationType() != null) sb.append("OperationType: " + getOperationType() + ", ");
-        if (getUserIds() != null) sb.append("UserIds: " + getUserIds() + ", ");
-        if (getGroupNames() != null) sb.append("GroupNames: " + getGroupNames() + ", ");
-        if (getCreateVolumePermission() != null) sb.append("CreateVolumePermission: " + getCreateVolumePermission() + ", ");
+        sb.append("{");    	
+        if (getSnapshotId() != null) sb.append("SnapshotId: " + getSnapshotId() + ",");    	
+        if (getAttribute() != null) sb.append("Attribute: " + getAttribute() + ",");    	
+        if (getOperationType() != null) sb.append("OperationType: " + getOperationType() + ",");    	
+        if (getUserIds() != null) sb.append("UserIds: " + getUserIds() + ",");    	
+        if (getGroupNames() != null) sb.append("GroupNames: " + getGroupNames() + ",");    	
+        if (getCreateVolumePermission() != null) sb.append("CreateVolumePermission: " + getCreateVolumePermission() );
         sb.append("}");
         return sb.toString();
     }

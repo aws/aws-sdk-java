@@ -571,19 +571,19 @@ public class Deployment  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getDeploymentId() != null) sb.append("DeploymentId: " + getDeploymentId() + ", ");
-        if (getStackId() != null) sb.append("StackId: " + getStackId() + ", ");
-        if (getAppId() != null) sb.append("AppId: " + getAppId() + ", ");
-        if (getCreatedAt() != null) sb.append("CreatedAt: " + getCreatedAt() + ", ");
-        if (getCompletedAt() != null) sb.append("CompletedAt: " + getCompletedAt() + ", ");
-        if (getDuration() != null) sb.append("Duration: " + getDuration() + ", ");
-        if (getIamUserArn() != null) sb.append("IamUserArn: " + getIamUserArn() + ", ");
-        if (getComment() != null) sb.append("Comment: " + getComment() + ", ");
-        if (getCommand() != null) sb.append("Command: " + getCommand() + ", ");
-        if (getStatus() != null) sb.append("Status: " + getStatus() + ", ");
-        if (getCustomJson() != null) sb.append("CustomJson: " + getCustomJson() + ", ");
-        if (getInstanceIds() != null) sb.append("InstanceIds: " + getInstanceIds() + ", ");
+        sb.append("{");    	
+        if (getDeploymentId() != null) sb.append("DeploymentId: " + getDeploymentId() + ",");    	
+        if (getStackId() != null) sb.append("StackId: " + getStackId() + ",");    	
+        if (getAppId() != null) sb.append("AppId: " + getAppId() + ",");    	
+        if (getCreatedAt() != null) sb.append("CreatedAt: " + getCreatedAt() + ",");    	
+        if (getCompletedAt() != null) sb.append("CompletedAt: " + getCompletedAt() + ",");    	
+        if (getDuration() != null) sb.append("Duration: " + getDuration() + ",");    	
+        if (getIamUserArn() != null) sb.append("IamUserArn: " + getIamUserArn() + ",");    	
+        if (getComment() != null) sb.append("Comment: " + getComment() + ",");    	
+        if (getCommand() != null) sb.append("Command: " + getCommand() + ",");    	
+        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");    	
+        if (getCustomJson() != null) sb.append("CustomJson: " + getCustomJson() + ",");    	
+        if (getInstanceIds() != null) sb.append("InstanceIds: " + getInstanceIds() );
         sb.append("}");
         return sb.toString();
     }

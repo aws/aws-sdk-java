@@ -187,9 +187,9 @@ public class Filter  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getName() != null) sb.append("Name: " + getName() + ", ");
-        if (getValues() != null) sb.append("Values: " + getValues() + ", ");
+        sb.append("{");    	
+        if (getName() != null) sb.append("Name: " + getName() + ",");    	
+        if (getValues() != null) sb.append("Values: " + getValues() );
         sb.append("}");
         return sb.toString();
     }

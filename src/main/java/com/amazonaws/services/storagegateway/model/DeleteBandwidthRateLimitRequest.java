@@ -217,9 +217,9 @@ public class DeleteBandwidthRateLimitRequest extends AmazonWebServiceRequest  im
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getGatewayARN() != null) sb.append("GatewayARN: " + getGatewayARN() + ", ");
-        if (getBandwidthType() != null) sb.append("BandwidthType: " + getBandwidthType() + ", ");
+        sb.append("{");    	
+        if (getGatewayARN() != null) sb.append("GatewayARN: " + getGatewayARN() + ",");    	
+        if (getBandwidthType() != null) sb.append("BandwidthType: " + getBandwidthType() );
         sb.append("}");
         return sb.toString();
     }

@@ -216,10 +216,10 @@ public class SetDesiredCapacityRequest extends AmazonWebServiceRequest  implemen
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getAutoScalingGroupName() != null) sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ", ");
-        if (getDesiredCapacity() != null) sb.append("DesiredCapacity: " + getDesiredCapacity() + ", ");
-        if (isHonorCooldown() != null) sb.append("HonorCooldown: " + isHonorCooldown() + ", ");
+        sb.append("{");    	
+        if (getAutoScalingGroupName() != null) sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ",");    	
+        if (getDesiredCapacity() != null) sb.append("DesiredCapacity: " + getDesiredCapacity() + ",");    	
+        if (isHonorCooldown() != null) sb.append("HonorCooldown: " + isHonorCooldown() );
         sb.append("}");
         return sb.toString();
     }

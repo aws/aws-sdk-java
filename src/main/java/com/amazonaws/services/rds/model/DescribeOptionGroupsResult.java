@@ -27,6 +27,11 @@ public class DescribeOptionGroupsResult  implements Serializable  {
      */
     private java.util.List<OptionGroup> optionGroupsList;
 
+    /**
+     * An optional pagination token provided by a previous request. If this
+     * parameter is specified, the response includes only records beyond the
+     * marker, up to the value specified by <code>MaxRecords</code>.
+     */
     private String marker;
 
     /**
@@ -99,29 +104,41 @@ public class DescribeOptionGroupsResult  implements Serializable  {
     }
     
     /**
-     * Returns the value of the Marker property for this object.
+     * An optional pagination token provided by a previous request. If this
+     * parameter is specified, the response includes only records beyond the
+     * marker, up to the value specified by <code>MaxRecords</code>.
      *
-     * @return The value of the Marker property for this object.
+     * @return An optional pagination token provided by a previous request. If this
+     *         parameter is specified, the response includes only records beyond the
+     *         marker, up to the value specified by <code>MaxRecords</code>.
      */
     public String getMarker() {
         return marker;
     }
     
     /**
-     * Sets the value of the Marker property for this object.
+     * An optional pagination token provided by a previous request. If this
+     * parameter is specified, the response includes only records beyond the
+     * marker, up to the value specified by <code>MaxRecords</code>.
      *
-     * @param marker The new value for the Marker property for this object.
+     * @param marker An optional pagination token provided by a previous request. If this
+     *         parameter is specified, the response includes only records beyond the
+     *         marker, up to the value specified by <code>MaxRecords</code>.
      */
     public void setMarker(String marker) {
         this.marker = marker;
     }
     
     /**
-     * Sets the value of the Marker property for this object.
+     * An optional pagination token provided by a previous request. If this
+     * parameter is specified, the response includes only records beyond the
+     * marker, up to the value specified by <code>MaxRecords</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param marker The new value for the Marker property for this object.
+     * @param marker An optional pagination token provided by a previous request. If this
+     *         parameter is specified, the response includes only records beyond the
+     *         marker, up to the value specified by <code>MaxRecords</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -143,9 +160,9 @@ public class DescribeOptionGroupsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getOptionGroupsList() != null) sb.append("OptionGroupsList: " + getOptionGroupsList() + ", ");
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ", ");
+        sb.append("{");    	
+        if (getOptionGroupsList() != null) sb.append("OptionGroupsList: " + getOptionGroupsList() + ",");    	
+        if (getMarker() != null) sb.append("Marker: " + getMarker() );
         sb.append("}");
         return sb.toString();
     }

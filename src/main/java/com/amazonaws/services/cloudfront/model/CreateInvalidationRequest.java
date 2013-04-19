@@ -136,9 +136,9 @@ public class CreateInvalidationRequest extends AmazonWebServiceRequest  implemen
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getDistributionId() != null) sb.append("DistributionId: " + getDistributionId() + ", ");
-        if (getInvalidationBatch() != null) sb.append("InvalidationBatch: " + getInvalidationBatch() + ", ");
+        sb.append("{");    	
+        if (getDistributionId() != null) sb.append("DistributionId: " + getDistributionId() + ",");    	
+        if (getInvalidationBatch() != null) sb.append("InvalidationBatch: " + getInvalidationBatch() );
         sb.append("}");
         return sb.toString();
     }

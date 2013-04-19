@@ -285,10 +285,10 @@ public class UpdateGatewayInformationRequest extends AmazonWebServiceRequest  im
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getGatewayARN() != null) sb.append("GatewayARN: " + getGatewayARN() + ", ");
-        if (getGatewayName() != null) sb.append("GatewayName: " + getGatewayName() + ", ");
-        if (getGatewayTimezone() != null) sb.append("GatewayTimezone: " + getGatewayTimezone() + ", ");
+        sb.append("{");    	
+        if (getGatewayARN() != null) sb.append("GatewayARN: " + getGatewayARN() + ",");    	
+        if (getGatewayName() != null) sb.append("GatewayName: " + getGatewayName() + ",");    	
+        if (getGatewayTimezone() != null) sb.append("GatewayTimezone: " + getGatewayTimezone() );
         sb.append("}");
         return sb.toString();
     }

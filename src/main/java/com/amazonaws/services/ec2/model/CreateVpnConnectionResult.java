@@ -72,8 +72,8 @@ public class CreateVpnConnectionResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getVpnConnection() != null) sb.append("VpnConnection: " + getVpnConnection() + ", ");
+        sb.append("{");    	
+        if (getVpnConnection() != null) sb.append("VpnConnection: " + getVpnConnection() );
         sb.append("}");
         return sb.toString();
     }

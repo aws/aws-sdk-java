@@ -177,9 +177,9 @@ public class DescribeConversionTasksRequest extends AmazonWebServiceRequest  imp
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getFilters() != null) sb.append("Filters: " + getFilters() + ", ");
-        if (getConversionTaskIds() != null) sb.append("ConversionTaskIds: " + getConversionTaskIds() + ", ");
+        sb.append("{");    	
+        if (getFilters() != null) sb.append("Filters: " + getFilters() + ",");    	
+        if (getConversionTaskIds() != null) sb.append("ConversionTaskIds: " + getConversionTaskIds() );
         sb.append("}");
         return sb.toString();
     }

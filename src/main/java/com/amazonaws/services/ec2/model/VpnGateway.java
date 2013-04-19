@@ -351,13 +351,13 @@ public class VpnGateway  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getVpnGatewayId() != null) sb.append("VpnGatewayId: " + getVpnGatewayId() + ", ");
-        if (getState() != null) sb.append("State: " + getState() + ", ");
-        if (getType() != null) sb.append("Type: " + getType() + ", ");
-        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ", ");
-        if (getVpcAttachments() != null) sb.append("VpcAttachments: " + getVpcAttachments() + ", ");
-        if (getTags() != null) sb.append("Tags: " + getTags() + ", ");
+        sb.append("{");    	
+        if (getVpnGatewayId() != null) sb.append("VpnGatewayId: " + getVpnGatewayId() + ",");    	
+        if (getState() != null) sb.append("State: " + getState() + ",");    	
+        if (getType() != null) sb.append("Type: " + getType() + ",");    	
+        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");    	
+        if (getVpcAttachments() != null) sb.append("VpcAttachments: " + getVpcAttachments() + ",");    	
+        if (getTags() != null) sb.append("Tags: " + getTags() );
         sb.append("}");
         return sb.toString();
     }

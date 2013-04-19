@@ -494,13 +494,13 @@ public class IndexField  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getIndexFieldName() != null) sb.append("IndexFieldName: " + getIndexFieldName() + ", ");
-        if (getIndexFieldType() != null) sb.append("IndexFieldType: " + getIndexFieldType() + ", ");
-        if (getUIntOptions() != null) sb.append("UIntOptions: " + getUIntOptions() + ", ");
-        if (getLiteralOptions() != null) sb.append("LiteralOptions: " + getLiteralOptions() + ", ");
-        if (getTextOptions() != null) sb.append("TextOptions: " + getTextOptions() + ", ");
-        if (getSourceAttributes() != null) sb.append("SourceAttributes: " + getSourceAttributes() + ", ");
+        sb.append("{");    	
+        if (getIndexFieldName() != null) sb.append("IndexFieldName: " + getIndexFieldName() + ",");    	
+        if (getIndexFieldType() != null) sb.append("IndexFieldType: " + getIndexFieldType() + ",");    	
+        if (getUIntOptions() != null) sb.append("UIntOptions: " + getUIntOptions() + ",");    	
+        if (getLiteralOptions() != null) sb.append("LiteralOptions: " + getLiteralOptions() + ",");    	
+        if (getTextOptions() != null) sb.append("TextOptions: " + getTextOptions() + ",");    	
+        if (getSourceAttributes() != null) sb.append("SourceAttributes: " + getSourceAttributes() );
         sb.append("}");
         return sb.toString();
     }

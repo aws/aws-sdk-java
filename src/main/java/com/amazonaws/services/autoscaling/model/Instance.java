@@ -344,12 +344,12 @@ public class Instance  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ", ");
-        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ", ");
-        if (getLifecycleState() != null) sb.append("LifecycleState: " + getLifecycleState() + ", ");
-        if (getHealthStatus() != null) sb.append("HealthStatus: " + getHealthStatus() + ", ");
-        if (getLaunchConfigurationName() != null) sb.append("LaunchConfigurationName: " + getLaunchConfigurationName() + ", ");
+        sb.append("{");    	
+        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ",");    	
+        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");    	
+        if (getLifecycleState() != null) sb.append("LifecycleState: " + getLifecycleState() + ",");    	
+        if (getHealthStatus() != null) sb.append("HealthStatus: " + getHealthStatus() + ",");    	
+        if (getLaunchConfigurationName() != null) sb.append("LaunchConfigurationName: " + getLaunchConfigurationName() );
         sb.append("}");
         return sb.toString();
     }

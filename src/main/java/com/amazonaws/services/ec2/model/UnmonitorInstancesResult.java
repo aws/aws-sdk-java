@@ -116,8 +116,8 @@ public class UnmonitorInstancesResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getInstanceMonitorings() != null) sb.append("InstanceMonitorings: " + getInstanceMonitorings() + ", ");
+        sb.append("{");    	
+        if (getInstanceMonitorings() != null) sb.append("InstanceMonitorings: " + getInstanceMonitorings() );
         sb.append("}");
         return sb.toString();
     }

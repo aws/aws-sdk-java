@@ -169,9 +169,9 @@ public class DescribeClustersResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ", ");
-        if (getClusters() != null) sb.append("Clusters: " + getClusters() + ", ");
+        sb.append("{");    	
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");    	
+        if (getClusters() != null) sb.append("Clusters: " + getClusters() );
         sb.append("}");
         return sb.toString();
     }

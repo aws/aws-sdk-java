@@ -333,12 +333,12 @@ public class IpPermission  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getIpProtocol() != null) sb.append("IpProtocol: " + getIpProtocol() + ", ");
-        if (getFromPort() != null) sb.append("FromPort: " + getFromPort() + ", ");
-        if (getToPort() != null) sb.append("ToPort: " + getToPort() + ", ");
-        if (getUserIdGroupPairs() != null) sb.append("UserIdGroupPairs: " + getUserIdGroupPairs() + ", ");
-        if (getIpRanges() != null) sb.append("IpRanges: " + getIpRanges() + ", ");
+        sb.append("{");    	
+        if (getIpProtocol() != null) sb.append("IpProtocol: " + getIpProtocol() + ",");    	
+        if (getFromPort() != null) sb.append("FromPort: " + getFromPort() + ",");    	
+        if (getToPort() != null) sb.append("ToPort: " + getToPort() + ",");    	
+        if (getUserIdGroupPairs() != null) sb.append("UserIdGroupPairs: " + getUserIdGroupPairs() + ",");    	
+        if (getIpRanges() != null) sb.append("IpRanges: " + getIpRanges() );
         sb.append("}");
         return sb.toString();
     }

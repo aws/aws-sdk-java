@@ -811,17 +811,17 @@ public class WorkflowExecutionStartedEventAttributes  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getInput() != null) sb.append("Input: " + getInput() + ", ");
-        if (getExecutionStartToCloseTimeout() != null) sb.append("ExecutionStartToCloseTimeout: " + getExecutionStartToCloseTimeout() + ", ");
-        if (getTaskStartToCloseTimeout() != null) sb.append("TaskStartToCloseTimeout: " + getTaskStartToCloseTimeout() + ", ");
-        if (getChildPolicy() != null) sb.append("ChildPolicy: " + getChildPolicy() + ", ");
-        if (getTaskList() != null) sb.append("TaskList: " + getTaskList() + ", ");
-        if (getWorkflowType() != null) sb.append("WorkflowType: " + getWorkflowType() + ", ");
-        if (getTagList() != null) sb.append("TagList: " + getTagList() + ", ");
-        if (getContinuedExecutionRunId() != null) sb.append("ContinuedExecutionRunId: " + getContinuedExecutionRunId() + ", ");
-        if (getParentWorkflowExecution() != null) sb.append("ParentWorkflowExecution: " + getParentWorkflowExecution() + ", ");
-        if (getParentInitiatedEventId() != null) sb.append("ParentInitiatedEventId: " + getParentInitiatedEventId() + ", ");
+        sb.append("{");    	
+        if (getInput() != null) sb.append("Input: " + getInput() + ",");    	
+        if (getExecutionStartToCloseTimeout() != null) sb.append("ExecutionStartToCloseTimeout: " + getExecutionStartToCloseTimeout() + ",");    	
+        if (getTaskStartToCloseTimeout() != null) sb.append("TaskStartToCloseTimeout: " + getTaskStartToCloseTimeout() + ",");    	
+        if (getChildPolicy() != null) sb.append("ChildPolicy: " + getChildPolicy() + ",");    	
+        if (getTaskList() != null) sb.append("TaskList: " + getTaskList() + ",");    	
+        if (getWorkflowType() != null) sb.append("WorkflowType: " + getWorkflowType() + ",");    	
+        if (getTagList() != null) sb.append("TagList: " + getTagList() + ",");    	
+        if (getContinuedExecutionRunId() != null) sb.append("ContinuedExecutionRunId: " + getContinuedExecutionRunId() + ",");    	
+        if (getParentWorkflowExecution() != null) sb.append("ParentWorkflowExecution: " + getParentWorkflowExecution() + ",");    	
+        if (getParentInitiatedEventId() != null) sb.append("ParentInitiatedEventId: " + getParentInitiatedEventId() );
         sb.append("}");
         return sb.toString();
     }

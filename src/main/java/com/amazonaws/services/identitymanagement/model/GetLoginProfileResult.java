@@ -72,8 +72,8 @@ public class GetLoginProfileResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getLoginProfile() != null) sb.append("LoginProfile: " + getLoginProfile() + ", ");
+        sb.append("{");    	
+        if (getLoginProfile() != null) sb.append("LoginProfile: " + getLoginProfile() );
         sb.append("}");
         return sb.toString();
     }

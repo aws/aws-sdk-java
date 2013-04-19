@@ -160,9 +160,9 @@ public class DescribeDBInstancesResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ", ");
-        if (getDBInstances() != null) sb.append("DBInstances: " + getDBInstances() + ", ");
+        sb.append("{");    	
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");    	
+        if (getDBInstances() != null) sb.append("DBInstances: " + getDBInstances() );
         sb.append("}");
         return sb.toString();
     }

@@ -595,18 +595,18 @@ public class DistributionSummary  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getId() != null) sb.append("Id: " + getId() + ", ");
-        if (getStatus() != null) sb.append("Status: " + getStatus() + ", ");
-        if (getLastModifiedTime() != null) sb.append("LastModifiedTime: " + getLastModifiedTime() + ", ");
-        if (getDomainName() != null) sb.append("DomainName: " + getDomainName() + ", ");
-        if (getAliases() != null) sb.append("Aliases: " + getAliases() + ", ");
-        if (getOrigins() != null) sb.append("Origins: " + getOrigins() + ", ");
-        if (getDefaultCacheBehavior() != null) sb.append("DefaultCacheBehavior: " + getDefaultCacheBehavior() + ", ");
-        if (getCacheBehaviors() != null) sb.append("CacheBehaviors: " + getCacheBehaviors() + ", ");
-        if (getComment() != null) sb.append("Comment: " + getComment() + ", ");
-        if (getPriceClass() != null) sb.append("PriceClass: " + getPriceClass() + ", ");
-        if (isEnabled() != null) sb.append("Enabled: " + isEnabled() + ", ");
+        sb.append("{");    	
+        if (getId() != null) sb.append("Id: " + getId() + ",");    	
+        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");    	
+        if (getLastModifiedTime() != null) sb.append("LastModifiedTime: " + getLastModifiedTime() + ",");    	
+        if (getDomainName() != null) sb.append("DomainName: " + getDomainName() + ",");    	
+        if (getAliases() != null) sb.append("Aliases: " + getAliases() + ",");    	
+        if (getOrigins() != null) sb.append("Origins: " + getOrigins() + ",");    	
+        if (getDefaultCacheBehavior() != null) sb.append("DefaultCacheBehavior: " + getDefaultCacheBehavior() + ",");    	
+        if (getCacheBehaviors() != null) sb.append("CacheBehaviors: " + getCacheBehaviors() + ",");    	
+        if (getComment() != null) sb.append("Comment: " + getComment() + ",");    	
+        if (getPriceClass() != null) sb.append("PriceClass: " + getPriceClass() + ",");    	
+        if (isEnabled() != null) sb.append("Enabled: " + isEnabled() );
         sb.append("}");
         return sb.toString();
     }

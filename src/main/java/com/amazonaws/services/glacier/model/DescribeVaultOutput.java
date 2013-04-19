@@ -316,13 +316,13 @@ public class DescribeVaultOutput  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getVaultARN() != null) sb.append("VaultARN: " + getVaultARN() + ", ");
-        if (getVaultName() != null) sb.append("VaultName: " + getVaultName() + ", ");
-        if (getCreationDate() != null) sb.append("CreationDate: " + getCreationDate() + ", ");
-        if (getLastInventoryDate() != null) sb.append("LastInventoryDate: " + getLastInventoryDate() + ", ");
-        if (getNumberOfArchives() != null) sb.append("NumberOfArchives: " + getNumberOfArchives() + ", ");
-        if (getSizeInBytes() != null) sb.append("SizeInBytes: " + getSizeInBytes() + ", ");
+        sb.append("{");    	
+        if (getVaultARN() != null) sb.append("VaultARN: " + getVaultARN() + ",");    	
+        if (getVaultName() != null) sb.append("VaultName: " + getVaultName() + ",");    	
+        if (getCreationDate() != null) sb.append("CreationDate: " + getCreationDate() + ",");    	
+        if (getLastInventoryDate() != null) sb.append("LastInventoryDate: " + getLastInventoryDate() + ",");    	
+        if (getNumberOfArchives() != null) sb.append("NumberOfArchives: " + getNumberOfArchives() + ",");    	
+        if (getSizeInBytes() != null) sb.append("SizeInBytes: " + getSizeInBytes() );
         sb.append("}");
         return sb.toString();
     }

@@ -29,6 +29,7 @@ import java.io.Serializable;
  *
  * @see com.amazonaws.services.dynamodb.AmazonDynamoDB#getItem(GetItemRequest)
  */
+@Deprecated
 public class GetItemRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**

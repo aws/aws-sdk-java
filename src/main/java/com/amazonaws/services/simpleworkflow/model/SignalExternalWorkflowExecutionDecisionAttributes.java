@@ -334,12 +334,12 @@ public class SignalExternalWorkflowExecutionDecisionAttributes  implements Seria
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getWorkflowId() != null) sb.append("WorkflowId: " + getWorkflowId() + ", ");
-        if (getRunId() != null) sb.append("RunId: " + getRunId() + ", ");
-        if (getSignalName() != null) sb.append("SignalName: " + getSignalName() + ", ");
-        if (getInput() != null) sb.append("Input: " + getInput() + ", ");
-        if (getControl() != null) sb.append("Control: " + getControl() + ", ");
+        sb.append("{");    	
+        if (getWorkflowId() != null) sb.append("WorkflowId: " + getWorkflowId() + ",");    	
+        if (getRunId() != null) sb.append("RunId: " + getRunId() + ",");    	
+        if (getSignalName() != null) sb.append("SignalName: " + getSignalName() + ",");    	
+        if (getInput() != null) sb.append("Input: " + getInput() + ",");    	
+        if (getControl() != null) sb.append("Control: " + getControl() );
         sb.append("}");
         return sb.toString();
     }

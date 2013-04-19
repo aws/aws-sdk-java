@@ -19,9 +19,13 @@ import java.io.Serializable;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#deleteDBInstance(DeleteDBInstanceRequest) DeleteDBInstance operation}.
  * <p>
- * The DeleteDBInstance API deletes a previously provisioned RDS instance. A successful response from the web service indicates the request was received
- * correctly. If a final DBSnapshot is requested the status of the RDS instance will be "deleting" until the DBSnapshot is created. DescribeDBInstance is
- * used to monitor the status of this operation. This cannot be canceled or reverted once submitted.
+ * The DeleteDBInstance action deletes a previously provisioned DB instance. A successful response from the web service indicates the request was
+ * received correctly. When you delete a DB instance, all automated backups for that instance are deleted and cannot be recovered. Manual DB Snapshots of
+ * the DB instance to be deleted are not deleted.
+ * </p>
+ * <p>
+ * If a final DBSnapshot is requested the status of the RDS instance will be "deleting" until the DBSnapshot is created. DescribeDBInstance is used to
+ * monitor the status of this operation. This cannot be canceled or reverted once submitted.
  * </p>
  *
  * @see com.amazonaws.services.rds.AmazonRDS#deleteDBInstance(DeleteDBInstanceRequest)
@@ -304,10 +308,10 @@ public class DeleteDBInstanceRequest extends AmazonWebServiceRequest  implements
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getDBInstanceIdentifier() != null) sb.append("DBInstanceIdentifier: " + getDBInstanceIdentifier() + ", ");
-        if (isSkipFinalSnapshot() != null) sb.append("SkipFinalSnapshot: " + isSkipFinalSnapshot() + ", ");
-        if (getFinalDBSnapshotIdentifier() != null) sb.append("FinalDBSnapshotIdentifier: " + getFinalDBSnapshotIdentifier() + ", ");
+        sb.append("{");    	
+        if (getDBInstanceIdentifier() != null) sb.append("DBInstanceIdentifier: " + getDBInstanceIdentifier() + ",");    	
+        if (isSkipFinalSnapshot() != null) sb.append("SkipFinalSnapshot: " + isSkipFinalSnapshot() + ",");    	
+        if (getFinalDBSnapshotIdentifier() != null) sb.append("FinalDBSnapshotIdentifier: " + getFinalDBSnapshotIdentifier() );
         sb.append("}");
         return sb.toString();
     }

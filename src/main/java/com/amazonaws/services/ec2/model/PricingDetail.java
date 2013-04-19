@@ -103,9 +103,9 @@ public class PricingDetail  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getPrice() != null) sb.append("Price: " + getPrice() + ", ");
-        if (getCount() != null) sb.append("Count: " + getCount() + ", ");
+        sb.append("{");    	
+        if (getPrice() != null) sb.append("Price: " + getPrice() + ",");    	
+        if (getCount() != null) sb.append("Count: " + getCount() );
         sb.append("}");
         return sb.toString();
     }

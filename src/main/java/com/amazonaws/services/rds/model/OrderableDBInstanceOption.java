@@ -410,15 +410,15 @@ public class OrderableDBInstanceOption  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getEngine() != null) sb.append("Engine: " + getEngine() + ", ");
-        if (getEngineVersion() != null) sb.append("EngineVersion: " + getEngineVersion() + ", ");
-        if (getDBInstanceClass() != null) sb.append("DBInstanceClass: " + getDBInstanceClass() + ", ");
-        if (getLicenseModel() != null) sb.append("LicenseModel: " + getLicenseModel() + ", ");
-        if (getAvailabilityZones() != null) sb.append("AvailabilityZones: " + getAvailabilityZones() + ", ");
-        if (isMultiAZCapable() != null) sb.append("MultiAZCapable: " + isMultiAZCapable() + ", ");
-        if (isReadReplicaCapable() != null) sb.append("ReadReplicaCapable: " + isReadReplicaCapable() + ", ");
-        if (isVpc() != null) sb.append("Vpc: " + isVpc() + ", ");
+        sb.append("{");    	
+        if (getEngine() != null) sb.append("Engine: " + getEngine() + ",");    	
+        if (getEngineVersion() != null) sb.append("EngineVersion: " + getEngineVersion() + ",");    	
+        if (getDBInstanceClass() != null) sb.append("DBInstanceClass: " + getDBInstanceClass() + ",");    	
+        if (getLicenseModel() != null) sb.append("LicenseModel: " + getLicenseModel() + ",");    	
+        if (getAvailabilityZones() != null) sb.append("AvailabilityZones: " + getAvailabilityZones() + ",");    	
+        if (isMultiAZCapable() != null) sb.append("MultiAZCapable: " + isMultiAZCapable() + ",");    	
+        if (isReadReplicaCapable() != null) sb.append("ReadReplicaCapable: " + isReadReplicaCapable() + ",");    	
+        if (isVpc() != null) sb.append("Vpc: " + isVpc() );
         sb.append("}");
         return sb.toString();
     }

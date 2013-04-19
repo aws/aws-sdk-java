@@ -143,10 +143,10 @@ public class DescribeVpcAttributeRequest extends AmazonWebServiceRequest  implem
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getVpcId() != null) sb.append("VpcId: " + getVpcId() + ", ");
-        if (getEnableDnsSupport() != null) sb.append("EnableDnsSupport: " + getEnableDnsSupport() + ", ");
-        if (getEnableDnsHostnames() != null) sb.append("EnableDnsHostnames: " + getEnableDnsHostnames() + ", ");
+        sb.append("{");    	
+        if (getVpcId() != null) sb.append("VpcId: " + getVpcId() + ",");    	
+        if (getEnableDnsSupport() != null) sb.append("EnableDnsSupport: " + getEnableDnsSupport() + ",");    	
+        if (getEnableDnsHostnames() != null) sb.append("EnableDnsHostnames: " + getEnableDnsHostnames() );
         sb.append("}");
         return sb.toString();
     }

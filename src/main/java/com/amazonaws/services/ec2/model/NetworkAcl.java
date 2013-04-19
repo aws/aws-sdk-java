@@ -361,13 +361,13 @@ public class NetworkAcl  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getNetworkAclId() != null) sb.append("NetworkAclId: " + getNetworkAclId() + ", ");
-        if (getVpcId() != null) sb.append("VpcId: " + getVpcId() + ", ");
-        if (isDefault() != null) sb.append("IsDefault: " + isDefault() + ", ");
-        if (getEntries() != null) sb.append("Entries: " + getEntries() + ", ");
-        if (getAssociations() != null) sb.append("Associations: " + getAssociations() + ", ");
-        if (getTags() != null) sb.append("Tags: " + getTags() + ", ");
+        sb.append("{");    	
+        if (getNetworkAclId() != null) sb.append("NetworkAclId: " + getNetworkAclId() + ",");    	
+        if (getVpcId() != null) sb.append("VpcId: " + getVpcId() + ",");    	
+        if (isDefault() != null) sb.append("IsDefault: " + isDefault() + ",");    	
+        if (getEntries() != null) sb.append("Entries: " + getEntries() + ",");    	
+        if (getAssociations() != null) sb.append("Associations: " + getAssociations() + ",");    	
+        if (getTags() != null) sb.append("Tags: " + getTags() );
         sb.append("}");
         return sb.toString();
     }

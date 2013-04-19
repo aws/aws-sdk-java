@@ -116,8 +116,8 @@ public class DescribeServiceErrorsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getServiceErrors() != null) sb.append("ServiceErrors: " + getServiceErrors() + ", ");
+        sb.append("{");    	
+        if (getServiceErrors() != null) sb.append("ServiceErrors: " + getServiceErrors() );
         sb.append("}");
         return sb.toString();
     }

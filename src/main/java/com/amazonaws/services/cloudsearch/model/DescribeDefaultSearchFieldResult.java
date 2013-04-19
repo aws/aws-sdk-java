@@ -86,8 +86,8 @@ public class DescribeDefaultSearchFieldResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getDefaultSearchField() != null) sb.append("DefaultSearchField: " + getDefaultSearchField() + ", ");
+        sb.append("{");    	
+        if (getDefaultSearchField() != null) sb.append("DefaultSearchField: " + getDefaultSearchField() );
         sb.append("}");
         return sb.toString();
     }

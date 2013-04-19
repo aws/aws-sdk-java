@@ -30,7 +30,7 @@ public class CreateStreamingDistributionResult  implements Serializable  {
     /**
      * The fully qualified URI of the new streaming distribution resource
      * just created. For example:
-     * front.amazonaws.com/2010-11-01/streaming-distribution/EGTXBD79H29TRA8.
+     * https://cloudfront.amazonaws.com/2010-11-01/streaming-distribution/EGTXBD79H29TRA8.
      */
     private String location;
 
@@ -76,11 +76,11 @@ public class CreateStreamingDistributionResult  implements Serializable  {
     /**
      * The fully qualified URI of the new streaming distribution resource
      * just created. For example:
-     * front.amazonaws.com/2010-11-01/streaming-distribution/EGTXBD79H29TRA8.
+     * https://cloudfront.amazonaws.com/2010-11-01/streaming-distribution/EGTXBD79H29TRA8.
      *
      * @return The fully qualified URI of the new streaming distribution resource
      *         just created. For example:
-     *         front.amazonaws.com/2010-11-01/streaming-distribution/EGTXBD79H29TRA8.
+     *         https://cloudfront.amazonaws.com/2010-11-01/streaming-distribution/EGTXBD79H29TRA8.
      */
     public String getLocation() {
         return location;
@@ -89,11 +89,11 @@ public class CreateStreamingDistributionResult  implements Serializable  {
     /**
      * The fully qualified URI of the new streaming distribution resource
      * just created. For example:
-     * front.amazonaws.com/2010-11-01/streaming-distribution/EGTXBD79H29TRA8.
+     * https://cloudfront.amazonaws.com/2010-11-01/streaming-distribution/EGTXBD79H29TRA8.
      *
      * @param location The fully qualified URI of the new streaming distribution resource
      *         just created. For example:
-     *         front.amazonaws.com/2010-11-01/streaming-distribution/EGTXBD79H29TRA8.
+     *         https://cloudfront.amazonaws.com/2010-11-01/streaming-distribution/EGTXBD79H29TRA8.
      */
     public void setLocation(String location) {
         this.location = location;
@@ -102,13 +102,13 @@ public class CreateStreamingDistributionResult  implements Serializable  {
     /**
      * The fully qualified URI of the new streaming distribution resource
      * just created. For example:
-     * front.amazonaws.com/2010-11-01/streaming-distribution/EGTXBD79H29TRA8.
+     * https://cloudfront.amazonaws.com/2010-11-01/streaming-distribution/EGTXBD79H29TRA8.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param location The fully qualified URI of the new streaming distribution resource
      *         just created. For example:
-     *         front.amazonaws.com/2010-11-01/streaming-distribution/EGTXBD79H29TRA8.
+     *         https://cloudfront.amazonaws.com/2010-11-01/streaming-distribution/EGTXBD79H29TRA8.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -164,10 +164,10 @@ public class CreateStreamingDistributionResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getStreamingDistribution() != null) sb.append("StreamingDistribution: " + getStreamingDistribution() + ", ");
-        if (getLocation() != null) sb.append("Location: " + getLocation() + ", ");
-        if (getETag() != null) sb.append("ETag: " + getETag() + ", ");
+        sb.append("{");    	
+        if (getStreamingDistribution() != null) sb.append("StreamingDistribution: " + getStreamingDistribution() + ",");    	
+        if (getLocation() != null) sb.append("Location: " + getLocation() + ",");    	
+        if (getETag() != null) sb.append("ETag: " + getETag() );
         sb.append("}");
         return sb.toString();
     }

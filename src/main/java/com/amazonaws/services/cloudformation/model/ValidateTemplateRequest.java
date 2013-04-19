@@ -29,7 +29,7 @@ public class ValidateTemplateRequest extends AmazonWebServiceRequest  implements
     /**
      * String containing the template body. (For more information, go to the
      * <a
-     * p://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
+     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
      * CloudFormation User Guide</a>.) <p>Conditional: You must pass
      * <code>TemplateURL</code> or <code>TemplateBody</code>. If both are
      * passed, only <code>TemplateBody</code> is used.
@@ -43,7 +43,7 @@ public class ValidateTemplateRequest extends AmazonWebServiceRequest  implements
      * Location of file containing the template body. The URL must point to a
      * template (max size: 307,200 bytes) located in an S3 bucket in the same
      * region as the stack. For more information, go to the <a
-     * p://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
+     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
      * CloudFormation User Guide</a>. <p>Conditional: You must pass
      * <code>TemplateURL</code> or <code>TemplateBody</code>. If both are
      * passed, only <code>TemplateBody</code> is used.
@@ -56,7 +56,7 @@ public class ValidateTemplateRequest extends AmazonWebServiceRequest  implements
     /**
      * String containing the template body. (For more information, go to the
      * <a
-     * p://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
+     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
      * CloudFormation User Guide</a>.) <p>Conditional: You must pass
      * <code>TemplateURL</code> or <code>TemplateBody</code>. If both are
      * passed, only <code>TemplateBody</code> is used.
@@ -66,7 +66,7 @@ public class ValidateTemplateRequest extends AmazonWebServiceRequest  implements
      *
      * @return String containing the template body. (For more information, go to the
      *         <a
-     *         p://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
+     *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
      *         CloudFormation User Guide</a>.) <p>Conditional: You must pass
      *         <code>TemplateURL</code> or <code>TemplateBody</code>. If both are
      *         passed, only <code>TemplateBody</code> is used.
@@ -78,7 +78,7 @@ public class ValidateTemplateRequest extends AmazonWebServiceRequest  implements
     /**
      * String containing the template body. (For more information, go to the
      * <a
-     * p://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
+     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
      * CloudFormation User Guide</a>.) <p>Conditional: You must pass
      * <code>TemplateURL</code> or <code>TemplateBody</code>. If both are
      * passed, only <code>TemplateBody</code> is used.
@@ -88,7 +88,7 @@ public class ValidateTemplateRequest extends AmazonWebServiceRequest  implements
      *
      * @param templateBody String containing the template body. (For more information, go to the
      *         <a
-     *         p://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
+     *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
      *         CloudFormation User Guide</a>.) <p>Conditional: You must pass
      *         <code>TemplateURL</code> or <code>TemplateBody</code>. If both are
      *         passed, only <code>TemplateBody</code> is used.
@@ -100,7 +100,7 @@ public class ValidateTemplateRequest extends AmazonWebServiceRequest  implements
     /**
      * String containing the template body. (For more information, go to the
      * <a
-     * p://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
+     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
      * CloudFormation User Guide</a>.) <p>Conditional: You must pass
      * <code>TemplateURL</code> or <code>TemplateBody</code>. If both are
      * passed, only <code>TemplateBody</code> is used.
@@ -112,7 +112,7 @@ public class ValidateTemplateRequest extends AmazonWebServiceRequest  implements
      *
      * @param templateBody String containing the template body. (For more information, go to the
      *         <a
-     *         p://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
+     *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
      *         CloudFormation User Guide</a>.) <p>Conditional: You must pass
      *         <code>TemplateURL</code> or <code>TemplateBody</code>. If both are
      *         passed, only <code>TemplateBody</code> is used.
@@ -130,7 +130,7 @@ public class ValidateTemplateRequest extends AmazonWebServiceRequest  implements
      * Location of file containing the template body. The URL must point to a
      * template (max size: 307,200 bytes) located in an S3 bucket in the same
      * region as the stack. For more information, go to the <a
-     * p://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
+     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
      * CloudFormation User Guide</a>. <p>Conditional: You must pass
      * <code>TemplateURL</code> or <code>TemplateBody</code>. If both are
      * passed, only <code>TemplateBody</code> is used.
@@ -141,7 +141,7 @@ public class ValidateTemplateRequest extends AmazonWebServiceRequest  implements
      * @return Location of file containing the template body. The URL must point to a
      *         template (max size: 307,200 bytes) located in an S3 bucket in the same
      *         region as the stack. For more information, go to the <a
-     *         p://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
+     *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
      *         CloudFormation User Guide</a>. <p>Conditional: You must pass
      *         <code>TemplateURL</code> or <code>TemplateBody</code>. If both are
      *         passed, only <code>TemplateBody</code> is used.
@@ -154,7 +154,7 @@ public class ValidateTemplateRequest extends AmazonWebServiceRequest  implements
      * Location of file containing the template body. The URL must point to a
      * template (max size: 307,200 bytes) located in an S3 bucket in the same
      * region as the stack. For more information, go to the <a
-     * p://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
+     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
      * CloudFormation User Guide</a>. <p>Conditional: You must pass
      * <code>TemplateURL</code> or <code>TemplateBody</code>. If both are
      * passed, only <code>TemplateBody</code> is used.
@@ -165,7 +165,7 @@ public class ValidateTemplateRequest extends AmazonWebServiceRequest  implements
      * @param templateURL Location of file containing the template body. The URL must point to a
      *         template (max size: 307,200 bytes) located in an S3 bucket in the same
      *         region as the stack. For more information, go to the <a
-     *         p://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
+     *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
      *         CloudFormation User Guide</a>. <p>Conditional: You must pass
      *         <code>TemplateURL</code> or <code>TemplateBody</code>. If both are
      *         passed, only <code>TemplateBody</code> is used.
@@ -178,7 +178,7 @@ public class ValidateTemplateRequest extends AmazonWebServiceRequest  implements
      * Location of file containing the template body. The URL must point to a
      * template (max size: 307,200 bytes) located in an S3 bucket in the same
      * region as the stack. For more information, go to the <a
-     * p://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
+     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
      * CloudFormation User Guide</a>. <p>Conditional: You must pass
      * <code>TemplateURL</code> or <code>TemplateBody</code>. If both are
      * passed, only <code>TemplateBody</code> is used.
@@ -191,7 +191,7 @@ public class ValidateTemplateRequest extends AmazonWebServiceRequest  implements
      * @param templateURL Location of file containing the template body. The URL must point to a
      *         template (max size: 307,200 bytes) located in an S3 bucket in the same
      *         region as the stack. For more information, go to the <a
-     *         p://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
+     *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
      *         CloudFormation User Guide</a>. <p>Conditional: You must pass
      *         <code>TemplateURL</code> or <code>TemplateBody</code>. If both are
      *         passed, only <code>TemplateBody</code> is used.
@@ -216,9 +216,9 @@ public class ValidateTemplateRequest extends AmazonWebServiceRequest  implements
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getTemplateBody() != null) sb.append("TemplateBody: " + getTemplateBody() + ", ");
-        if (getTemplateURL() != null) sb.append("TemplateURL: " + getTemplateURL() + ", ");
+        sb.append("{");    	
+        if (getTemplateBody() != null) sb.append("TemplateBody: " + getTemplateBody() + ",");    	
+        if (getTemplateURL() != null) sb.append("TemplateURL: " + getTemplateURL() );
         sb.append("}");
         return sb.toString();
     }

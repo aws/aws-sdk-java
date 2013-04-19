@@ -151,9 +151,9 @@ public class ReleaseAddressRequest extends AmazonWebServiceRequest  implements S
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getPublicIp() != null) sb.append("PublicIp: " + getPublicIp() + ", ");
-        if (getAllocationId() != null) sb.append("AllocationId: " + getAllocationId() + ", ");
+        sb.append("{");    	
+        if (getPublicIp() != null) sb.append("PublicIp: " + getPublicIp() + ",");    	
+        if (getAllocationId() != null) sb.append("AllocationId: " + getAllocationId() );
         sb.append("}");
         return sb.toString();
     }

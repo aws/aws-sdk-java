@@ -116,8 +116,8 @@ public class DescribeDeploymentsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getDeployments() != null) sb.append("Deployments: " + getDeployments() + ", ");
+        sb.append("{");    	
+        if (getDeployments() != null) sb.append("Deployments: " + getDeployments() );
         sb.append("}");
         return sb.toString();
     }

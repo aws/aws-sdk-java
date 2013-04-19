@@ -18,6 +18,7 @@ import java.io.Serializable;
 /**
  * Batch Get Item Result
  */
+@Deprecated
 public class BatchGetItemResult  implements Serializable  {
 
     /**

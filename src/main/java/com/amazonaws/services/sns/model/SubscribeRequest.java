@@ -268,10 +268,10 @@ public class SubscribeRequest extends AmazonWebServiceRequest  implements Serial
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getTopicArn() != null) sb.append("TopicArn: " + getTopicArn() + ", ");
-        if (getProtocol() != null) sb.append("Protocol: " + getProtocol() + ", ");
-        if (getEndpoint() != null) sb.append("Endpoint: " + getEndpoint() + ", ");
+        sb.append("{");    	
+        if (getTopicArn() != null) sb.append("TopicArn: " + getTopicArn() + ",");    	
+        if (getProtocol() != null) sb.append("Protocol: " + getProtocol() + ",");    	
+        if (getEndpoint() != null) sb.append("Endpoint: " + getEndpoint() );
         sb.append("}");
         return sb.toString();
     }

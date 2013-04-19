@@ -135,8 +135,8 @@ public class CloseStatusFilter  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getStatus() != null) sb.append("Status: " + getStatus() + ", ");
+        sb.append("{");    	
+        if (getStatus() != null) sb.append("Status: " + getStatus() );
         sb.append("}");
         return sb.toString();
     }

@@ -186,10 +186,9 @@ public class DBInstance  implements Serializable  {
     private Integer iops;
 
     /**
-     * Specifies the name and status of the option group that this instance
-     * belongs to.
+     * Provides the list of option group memberships for this DB Instance.
      */
-    private OptionGroupMembership optionGroupMembership;
+    private java.util.List<OptionGroupMembership> optionGroupMemberships;
 
     /**
      * If present, specifies the name of the character set that this instance
@@ -203,6 +202,21 @@ public class DBInstance  implements Serializable  {
      */
     private String secondaryAvailabilityZone;
 
+    /**
+     * Specifies the accessibility options for the DB Instance. A value of
+     * true specifies an Internet-facing instance with a publicly resolvable
+     * DNS name, which resolves to a public IP address. A value of false
+     * specifies an internal instance with a DNS name that resolves to a
+     * private IP address. <p> Default: The default behavior varies depending
+     * on whether a VPC has been requested or not. The following list shows
+     * the default behavior in each case. <ul> <li><b>Default
+     * VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> <p> If no DB subnet
+     * group has been specified as part of the request and the
+     * PubliclyAccessible value has not been set, the DB instance will be
+     * publicly accessible. If a specific DB subnet group has been specified
+     * as part of the request and the PubliclyAccessible value has not been
+     * set, the DB instance will be private.
+     */
     private Boolean publiclyAccessible;
 
     /**
@@ -1394,44 +1408,73 @@ public class DBInstance  implements Serializable  {
     
     
     /**
-     * Specifies the name and status of the option group that this instance
-     * belongs to.
+     * Provides the list of option group memberships for this DB Instance.
      *
-     * @return Specifies the name and status of the option group that this instance
-     *         belongs to.
+     * @return Provides the list of option group memberships for this DB Instance.
      */
-    public OptionGroupMembership getOptionGroupMembership() {
-        return optionGroupMembership;
+    public java.util.List<OptionGroupMembership> getOptionGroupMemberships() {
+        
+        if (optionGroupMemberships == null) {
+            optionGroupMemberships = new java.util.ArrayList<OptionGroupMembership>();
+        }
+        return optionGroupMemberships;
     }
     
     /**
-     * Specifies the name and status of the option group that this instance
-     * belongs to.
+     * Provides the list of option group memberships for this DB Instance.
      *
-     * @param optionGroupMembership Specifies the name and status of the option group that this instance
-     *         belongs to.
+     * @param optionGroupMemberships Provides the list of option group memberships for this DB Instance.
      */
-    public void setOptionGroupMembership(OptionGroupMembership optionGroupMembership) {
-        this.optionGroupMembership = optionGroupMembership;
+    public void setOptionGroupMemberships(java.util.Collection<OptionGroupMembership> optionGroupMemberships) {
+        if (optionGroupMemberships == null) {
+            this.optionGroupMemberships = null;
+            return;
+        }
+
+        java.util.List<OptionGroupMembership> optionGroupMembershipsCopy = new java.util.ArrayList<OptionGroupMembership>(optionGroupMemberships.size());
+        optionGroupMembershipsCopy.addAll(optionGroupMemberships);
+        this.optionGroupMemberships = optionGroupMembershipsCopy;
     }
     
     /**
-     * Specifies the name and status of the option group that this instance
-     * belongs to.
+     * Provides the list of option group memberships for this DB Instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param optionGroupMembership Specifies the name and status of the option group that this instance
-     *         belongs to.
+     * @param optionGroupMemberships Provides the list of option group memberships for this DB Instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public DBInstance withOptionGroupMembership(OptionGroupMembership optionGroupMembership) {
-        this.optionGroupMembership = optionGroupMembership;
+    public DBInstance withOptionGroupMemberships(OptionGroupMembership... optionGroupMemberships) {
+        if (getOptionGroupMemberships() == null) setOptionGroupMemberships(new java.util.ArrayList<OptionGroupMembership>(optionGroupMemberships.length));
+        for (OptionGroupMembership value : optionGroupMemberships) {
+            getOptionGroupMemberships().add(value);
+        }
         return this;
     }
     
+    /**
+     * Provides the list of option group memberships for this DB Instance.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param optionGroupMemberships Provides the list of option group memberships for this DB Instance.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public DBInstance withOptionGroupMemberships(java.util.Collection<OptionGroupMembership> optionGroupMemberships) {
+        if (optionGroupMemberships == null) {
+            this.optionGroupMemberships = null;
+        } else {
+            java.util.List<OptionGroupMembership> optionGroupMembershipsCopy = new java.util.ArrayList<OptionGroupMembership>(optionGroupMemberships.size());
+            optionGroupMembershipsCopy.addAll(optionGroupMemberships);
+            this.optionGroupMemberships = optionGroupMembershipsCopy;
+        }
+
+        return this;
+    }
     
     /**
      * If present, specifies the name of the character set that this instance
@@ -1514,29 +1557,101 @@ public class DBInstance  implements Serializable  {
     
     
     /**
-     * Returns the value of the PubliclyAccessible property for this object.
+     * Specifies the accessibility options for the DB Instance. A value of
+     * true specifies an Internet-facing instance with a publicly resolvable
+     * DNS name, which resolves to a public IP address. A value of false
+     * specifies an internal instance with a DNS name that resolves to a
+     * private IP address. <p> Default: The default behavior varies depending
+     * on whether a VPC has been requested or not. The following list shows
+     * the default behavior in each case. <ul> <li><b>Default
+     * VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> <p> If no DB subnet
+     * group has been specified as part of the request and the
+     * PubliclyAccessible value has not been set, the DB instance will be
+     * publicly accessible. If a specific DB subnet group has been specified
+     * as part of the request and the PubliclyAccessible value has not been
+     * set, the DB instance will be private.
      *
-     * @return The value of the PubliclyAccessible property for this object.
+     * @return Specifies the accessibility options for the DB Instance. A value of
+     *         true specifies an Internet-facing instance with a publicly resolvable
+     *         DNS name, which resolves to a public IP address. A value of false
+     *         specifies an internal instance with a DNS name that resolves to a
+     *         private IP address. <p> Default: The default behavior varies depending
+     *         on whether a VPC has been requested or not. The following list shows
+     *         the default behavior in each case. <ul> <li><b>Default
+     *         VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> <p> If no DB subnet
+     *         group has been specified as part of the request and the
+     *         PubliclyAccessible value has not been set, the DB instance will be
+     *         publicly accessible. If a specific DB subnet group has been specified
+     *         as part of the request and the PubliclyAccessible value has not been
+     *         set, the DB instance will be private.
      */
     public Boolean isPubliclyAccessible() {
         return publiclyAccessible;
     }
     
     /**
-     * Sets the value of the PubliclyAccessible property for this object.
+     * Specifies the accessibility options for the DB Instance. A value of
+     * true specifies an Internet-facing instance with a publicly resolvable
+     * DNS name, which resolves to a public IP address. A value of false
+     * specifies an internal instance with a DNS name that resolves to a
+     * private IP address. <p> Default: The default behavior varies depending
+     * on whether a VPC has been requested or not. The following list shows
+     * the default behavior in each case. <ul> <li><b>Default
+     * VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> <p> If no DB subnet
+     * group has been specified as part of the request and the
+     * PubliclyAccessible value has not been set, the DB instance will be
+     * publicly accessible. If a specific DB subnet group has been specified
+     * as part of the request and the PubliclyAccessible value has not been
+     * set, the DB instance will be private.
      *
-     * @param publiclyAccessible The new value for the PubliclyAccessible property for this object.
+     * @param publiclyAccessible Specifies the accessibility options for the DB Instance. A value of
+     *         true specifies an Internet-facing instance with a publicly resolvable
+     *         DNS name, which resolves to a public IP address. A value of false
+     *         specifies an internal instance with a DNS name that resolves to a
+     *         private IP address. <p> Default: The default behavior varies depending
+     *         on whether a VPC has been requested or not. The following list shows
+     *         the default behavior in each case. <ul> <li><b>Default
+     *         VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> <p> If no DB subnet
+     *         group has been specified as part of the request and the
+     *         PubliclyAccessible value has not been set, the DB instance will be
+     *         publicly accessible. If a specific DB subnet group has been specified
+     *         as part of the request and the PubliclyAccessible value has not been
+     *         set, the DB instance will be private.
      */
     public void setPubliclyAccessible(Boolean publiclyAccessible) {
         this.publiclyAccessible = publiclyAccessible;
     }
     
     /**
-     * Sets the value of the PubliclyAccessible property for this object.
+     * Specifies the accessibility options for the DB Instance. A value of
+     * true specifies an Internet-facing instance with a publicly resolvable
+     * DNS name, which resolves to a public IP address. A value of false
+     * specifies an internal instance with a DNS name that resolves to a
+     * private IP address. <p> Default: The default behavior varies depending
+     * on whether a VPC has been requested or not. The following list shows
+     * the default behavior in each case. <ul> <li><b>Default
+     * VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> <p> If no DB subnet
+     * group has been specified as part of the request and the
+     * PubliclyAccessible value has not been set, the DB instance will be
+     * publicly accessible. If a specific DB subnet group has been specified
+     * as part of the request and the PubliclyAccessible value has not been
+     * set, the DB instance will be private.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param publiclyAccessible The new value for the PubliclyAccessible property for this object.
+     * @param publiclyAccessible Specifies the accessibility options for the DB Instance. A value of
+     *         true specifies an Internet-facing instance with a publicly resolvable
+     *         DNS name, which resolves to a public IP address. A value of false
+     *         specifies an internal instance with a DNS name that resolves to a
+     *         private IP address. <p> Default: The default behavior varies depending
+     *         on whether a VPC has been requested or not. The following list shows
+     *         the default behavior in each case. <ul> <li><b>Default
+     *         VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> <p> If no DB subnet
+     *         group has been specified as part of the request and the
+     *         PubliclyAccessible value has not been set, the DB instance will be
+     *         publicly accessible. If a specific DB subnet group has been specified
+     *         as part of the request and the PubliclyAccessible value has not been
+     *         set, the DB instance will be private.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -1548,9 +1663,33 @@ public class DBInstance  implements Serializable  {
     
     
     /**
-     * Returns the value of the PubliclyAccessible property for this object.
+     * Specifies the accessibility options for the DB Instance. A value of
+     * true specifies an Internet-facing instance with a publicly resolvable
+     * DNS name, which resolves to a public IP address. A value of false
+     * specifies an internal instance with a DNS name that resolves to a
+     * private IP address. <p> Default: The default behavior varies depending
+     * on whether a VPC has been requested or not. The following list shows
+     * the default behavior in each case. <ul> <li><b>Default
+     * VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> <p> If no DB subnet
+     * group has been specified as part of the request and the
+     * PubliclyAccessible value has not been set, the DB instance will be
+     * publicly accessible. If a specific DB subnet group has been specified
+     * as part of the request and the PubliclyAccessible value has not been
+     * set, the DB instance will be private.
      *
-     * @return The value of the PubliclyAccessible property for this object.
+     * @return Specifies the accessibility options for the DB Instance. A value of
+     *         true specifies an Internet-facing instance with a publicly resolvable
+     *         DNS name, which resolves to a public IP address. A value of false
+     *         specifies an internal instance with a DNS name that resolves to a
+     *         private IP address. <p> Default: The default behavior varies depending
+     *         on whether a VPC has been requested or not. The following list shows
+     *         the default behavior in each case. <ul> <li><b>Default
+     *         VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> <p> If no DB subnet
+     *         group has been specified as part of the request and the
+     *         PubliclyAccessible value has not been set, the DB instance will be
+     *         publicly accessible. If a specific DB subnet group has been specified
+     *         as part of the request and the PubliclyAccessible value has not been
+     *         set, the DB instance will be private.
      */
     public Boolean getPubliclyAccessible() {
         return publiclyAccessible;
@@ -1567,37 +1706,37 @@ public class DBInstance  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getDBInstanceIdentifier() != null) sb.append("DBInstanceIdentifier: " + getDBInstanceIdentifier() + ", ");
-        if (getDBInstanceClass() != null) sb.append("DBInstanceClass: " + getDBInstanceClass() + ", ");
-        if (getEngine() != null) sb.append("Engine: " + getEngine() + ", ");
-        if (getDBInstanceStatus() != null) sb.append("DBInstanceStatus: " + getDBInstanceStatus() + ", ");
-        if (getMasterUsername() != null) sb.append("MasterUsername: " + getMasterUsername() + ", ");
-        if (getDBName() != null) sb.append("DBName: " + getDBName() + ", ");
-        if (getEndpoint() != null) sb.append("Endpoint: " + getEndpoint() + ", ");
-        if (getAllocatedStorage() != null) sb.append("AllocatedStorage: " + getAllocatedStorage() + ", ");
-        if (getInstanceCreateTime() != null) sb.append("InstanceCreateTime: " + getInstanceCreateTime() + ", ");
-        if (getPreferredBackupWindow() != null) sb.append("PreferredBackupWindow: " + getPreferredBackupWindow() + ", ");
-        if (getBackupRetentionPeriod() != null) sb.append("BackupRetentionPeriod: " + getBackupRetentionPeriod() + ", ");
-        if (getDBSecurityGroups() != null) sb.append("DBSecurityGroups: " + getDBSecurityGroups() + ", ");
-        if (getVpcSecurityGroups() != null) sb.append("VpcSecurityGroups: " + getVpcSecurityGroups() + ", ");
-        if (getDBParameterGroups() != null) sb.append("DBParameterGroups: " + getDBParameterGroups() + ", ");
-        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ", ");
-        if (getDBSubnetGroup() != null) sb.append("DBSubnetGroup: " + getDBSubnetGroup() + ", ");
-        if (getPreferredMaintenanceWindow() != null) sb.append("PreferredMaintenanceWindow: " + getPreferredMaintenanceWindow() + ", ");
-        if (getPendingModifiedValues() != null) sb.append("PendingModifiedValues: " + getPendingModifiedValues() + ", ");
-        if (getLatestRestorableTime() != null) sb.append("LatestRestorableTime: " + getLatestRestorableTime() + ", ");
-        if (isMultiAZ() != null) sb.append("MultiAZ: " + isMultiAZ() + ", ");
-        if (getEngineVersion() != null) sb.append("EngineVersion: " + getEngineVersion() + ", ");
-        if (isAutoMinorVersionUpgrade() != null) sb.append("AutoMinorVersionUpgrade: " + isAutoMinorVersionUpgrade() + ", ");
-        if (getReadReplicaSourceDBInstanceIdentifier() != null) sb.append("ReadReplicaSourceDBInstanceIdentifier: " + getReadReplicaSourceDBInstanceIdentifier() + ", ");
-        if (getReadReplicaDBInstanceIdentifiers() != null) sb.append("ReadReplicaDBInstanceIdentifiers: " + getReadReplicaDBInstanceIdentifiers() + ", ");
-        if (getLicenseModel() != null) sb.append("LicenseModel: " + getLicenseModel() + ", ");
-        if (getIops() != null) sb.append("Iops: " + getIops() + ", ");
-        if (getOptionGroupMembership() != null) sb.append("OptionGroupMembership: " + getOptionGroupMembership() + ", ");
-        if (getCharacterSetName() != null) sb.append("CharacterSetName: " + getCharacterSetName() + ", ");
-        if (getSecondaryAvailabilityZone() != null) sb.append("SecondaryAvailabilityZone: " + getSecondaryAvailabilityZone() + ", ");
-        if (isPubliclyAccessible() != null) sb.append("PubliclyAccessible: " + isPubliclyAccessible() + ", ");
+        sb.append("{");    	
+        if (getDBInstanceIdentifier() != null) sb.append("DBInstanceIdentifier: " + getDBInstanceIdentifier() + ",");    	
+        if (getDBInstanceClass() != null) sb.append("DBInstanceClass: " + getDBInstanceClass() + ",");    	
+        if (getEngine() != null) sb.append("Engine: " + getEngine() + ",");    	
+        if (getDBInstanceStatus() != null) sb.append("DBInstanceStatus: " + getDBInstanceStatus() + ",");    	
+        if (getMasterUsername() != null) sb.append("MasterUsername: " + getMasterUsername() + ",");    	
+        if (getDBName() != null) sb.append("DBName: " + getDBName() + ",");    	
+        if (getEndpoint() != null) sb.append("Endpoint: " + getEndpoint() + ",");    	
+        if (getAllocatedStorage() != null) sb.append("AllocatedStorage: " + getAllocatedStorage() + ",");    	
+        if (getInstanceCreateTime() != null) sb.append("InstanceCreateTime: " + getInstanceCreateTime() + ",");    	
+        if (getPreferredBackupWindow() != null) sb.append("PreferredBackupWindow: " + getPreferredBackupWindow() + ",");    	
+        if (getBackupRetentionPeriod() != null) sb.append("BackupRetentionPeriod: " + getBackupRetentionPeriod() + ",");    	
+        if (getDBSecurityGroups() != null) sb.append("DBSecurityGroups: " + getDBSecurityGroups() + ",");    	
+        if (getVpcSecurityGroups() != null) sb.append("VpcSecurityGroups: " + getVpcSecurityGroups() + ",");    	
+        if (getDBParameterGroups() != null) sb.append("DBParameterGroups: " + getDBParameterGroups() + ",");    	
+        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");    	
+        if (getDBSubnetGroup() != null) sb.append("DBSubnetGroup: " + getDBSubnetGroup() + ",");    	
+        if (getPreferredMaintenanceWindow() != null) sb.append("PreferredMaintenanceWindow: " + getPreferredMaintenanceWindow() + ",");    	
+        if (getPendingModifiedValues() != null) sb.append("PendingModifiedValues: " + getPendingModifiedValues() + ",");    	
+        if (getLatestRestorableTime() != null) sb.append("LatestRestorableTime: " + getLatestRestorableTime() + ",");    	
+        if (isMultiAZ() != null) sb.append("MultiAZ: " + isMultiAZ() + ",");    	
+        if (getEngineVersion() != null) sb.append("EngineVersion: " + getEngineVersion() + ",");    	
+        if (isAutoMinorVersionUpgrade() != null) sb.append("AutoMinorVersionUpgrade: " + isAutoMinorVersionUpgrade() + ",");    	
+        if (getReadReplicaSourceDBInstanceIdentifier() != null) sb.append("ReadReplicaSourceDBInstanceIdentifier: " + getReadReplicaSourceDBInstanceIdentifier() + ",");    	
+        if (getReadReplicaDBInstanceIdentifiers() != null) sb.append("ReadReplicaDBInstanceIdentifiers: " + getReadReplicaDBInstanceIdentifiers() + ",");    	
+        if (getLicenseModel() != null) sb.append("LicenseModel: " + getLicenseModel() + ",");    	
+        if (getIops() != null) sb.append("Iops: " + getIops() + ",");    	
+        if (getOptionGroupMemberships() != null) sb.append("OptionGroupMemberships: " + getOptionGroupMemberships() + ",");    	
+        if (getCharacterSetName() != null) sb.append("CharacterSetName: " + getCharacterSetName() + ",");    	
+        if (getSecondaryAvailabilityZone() != null) sb.append("SecondaryAvailabilityZone: " + getSecondaryAvailabilityZone() + ",");    	
+        if (isPubliclyAccessible() != null) sb.append("PubliclyAccessible: " + isPubliclyAccessible() );
         sb.append("}");
         return sb.toString();
     }
@@ -1633,7 +1772,7 @@ public class DBInstance  implements Serializable  {
         hashCode = prime * hashCode + ((getReadReplicaDBInstanceIdentifiers() == null) ? 0 : getReadReplicaDBInstanceIdentifiers().hashCode()); 
         hashCode = prime * hashCode + ((getLicenseModel() == null) ? 0 : getLicenseModel().hashCode()); 
         hashCode = prime * hashCode + ((getIops() == null) ? 0 : getIops().hashCode()); 
-        hashCode = prime * hashCode + ((getOptionGroupMembership() == null) ? 0 : getOptionGroupMembership().hashCode()); 
+        hashCode = prime * hashCode + ((getOptionGroupMemberships() == null) ? 0 : getOptionGroupMemberships().hashCode()); 
         hashCode = prime * hashCode + ((getCharacterSetName() == null) ? 0 : getCharacterSetName().hashCode()); 
         hashCode = prime * hashCode + ((getSecondaryAvailabilityZone() == null) ? 0 : getSecondaryAvailabilityZone().hashCode()); 
         hashCode = prime * hashCode + ((isPubliclyAccessible() == null) ? 0 : isPubliclyAccessible().hashCode()); 
@@ -1700,8 +1839,8 @@ public class DBInstance  implements Serializable  {
         if (other.getLicenseModel() != null && other.getLicenseModel().equals(this.getLicenseModel()) == false) return false; 
         if (other.getIops() == null ^ this.getIops() == null) return false;
         if (other.getIops() != null && other.getIops().equals(this.getIops()) == false) return false; 
-        if (other.getOptionGroupMembership() == null ^ this.getOptionGroupMembership() == null) return false;
-        if (other.getOptionGroupMembership() != null && other.getOptionGroupMembership().equals(this.getOptionGroupMembership()) == false) return false; 
+        if (other.getOptionGroupMemberships() == null ^ this.getOptionGroupMemberships() == null) return false;
+        if (other.getOptionGroupMemberships() != null && other.getOptionGroupMemberships().equals(this.getOptionGroupMemberships()) == false) return false; 
         if (other.getCharacterSetName() == null ^ this.getCharacterSetName() == null) return false;
         if (other.getCharacterSetName() != null && other.getCharacterSetName().equals(this.getCharacterSetName()) == false) return false; 
         if (other.getSecondaryAvailabilityZone() == null ^ this.getSecondaryAvailabilityZone() == null) return false;

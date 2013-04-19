@@ -18,6 +18,7 @@ package com.amazonaws.services.dynamodb.datamodeling;
  * Generic exception for problems occuring when mapping DynamoDB items to Java
  * objects or vice versa. Excludes service exceptions.
  */
+@Deprecated
 public class DynamoDBMappingException extends RuntimeException {
 
     private static final long serialVersionUID = -4883173289978517967L;

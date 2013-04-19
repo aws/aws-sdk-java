@@ -55,6 +55,7 @@ import com.amazonaws.services.dynamodb.model.transform.*;
  * Amazon DynamoDB removes traditional scalability limitations on data storage while maintaining low latency and predictable performance.
  * </p>
  */
+@Deprecated
 public class AmazonDynamoDBClient extends AmazonWebServiceClient implements AmazonDynamoDB {
 
     /** Provider for AWS credentials. */
@@ -334,6 +335,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * @return The response from the BatchWriteItem service method, as
      *         returned by AmazonDynamoDB.
      * 
+     * @throws LimitExceededException
      * @throws ProvisionedThroughputExceededException
      * @throws InternalServerErrorException
      * @throws ResourceNotFoundException
@@ -382,6 +384,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * @return The response from the UpdateItem service method, as returned
      *         by AmazonDynamoDB.
      * 
+     * @throws LimitExceededException
      * @throws ProvisionedThroughputExceededException
      * @throws ConditionalCheckFailedException
      * @throws InternalServerErrorException
@@ -434,6 +437,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * @return The response from the PutItem service method, as returned by
      *         AmazonDynamoDB.
      * 
+     * @throws LimitExceededException
      * @throws ProvisionedThroughputExceededException
      * @throws ConditionalCheckFailedException
      * @throws InternalServerErrorException
@@ -730,6 +734,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * @return The response from the DeleteItem service method, as returned
      *         by AmazonDynamoDB.
      * 
+     * @throws LimitExceededException
      * @throws ProvisionedThroughputExceededException
      * @throws ConditionalCheckFailedException
      * @throws InternalServerErrorException

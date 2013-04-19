@@ -376,13 +376,13 @@ public class ApplicationDescription  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getApplicationName() != null) sb.append("ApplicationName: " + getApplicationName() + ", ");
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ", ");
-        if (getDateCreated() != null) sb.append("DateCreated: " + getDateCreated() + ", ");
-        if (getDateUpdated() != null) sb.append("DateUpdated: " + getDateUpdated() + ", ");
-        if (getVersions() != null) sb.append("Versions: " + getVersions() + ", ");
-        if (getConfigurationTemplates() != null) sb.append("ConfigurationTemplates: " + getConfigurationTemplates() + ", ");
+        sb.append("{");    	
+        if (getApplicationName() != null) sb.append("ApplicationName: " + getApplicationName() + ",");    	
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");    	
+        if (getDateCreated() != null) sb.append("DateCreated: " + getDateCreated() + ",");    	
+        if (getDateUpdated() != null) sb.append("DateUpdated: " + getDateUpdated() + ",");    	
+        if (getVersions() != null) sb.append("Versions: " + getVersions() + ",");    	
+        if (getConfigurationTemplates() != null) sb.append("ConfigurationTemplates: " + getConfigurationTemplates() );
         sb.append("}");
         return sb.toString();
     }

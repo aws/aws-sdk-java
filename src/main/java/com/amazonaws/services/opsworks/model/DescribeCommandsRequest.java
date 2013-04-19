@@ -189,10 +189,10 @@ public class DescribeCommandsRequest extends AmazonWebServiceRequest  implements
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getDeploymentId() != null) sb.append("DeploymentId: " + getDeploymentId() + ", ");
-        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ", ");
-        if (getCommandIds() != null) sb.append("CommandIds: " + getCommandIds() + ", ");
+        sb.append("{");    	
+        if (getDeploymentId() != null) sb.append("DeploymentId: " + getDeploymentId() + ",");    	
+        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ",");    	
+        if (getCommandIds() != null) sb.append("CommandIds: " + getCommandIds() );
         sb.append("}");
         return sb.toString();
     }

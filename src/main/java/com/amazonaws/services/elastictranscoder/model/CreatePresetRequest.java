@@ -339,13 +339,13 @@ public class CreatePresetRequest extends AmazonWebServiceRequest  implements Ser
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getName() != null) sb.append("Name: " + getName() + ", ");
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ", ");
-        if (getContainer() != null) sb.append("Container: " + getContainer() + ", ");
-        if (getVideo() != null) sb.append("Video: " + getVideo() + ", ");
-        if (getAudio() != null) sb.append("Audio: " + getAudio() + ", ");
-        if (getThumbnails() != null) sb.append("Thumbnails: " + getThumbnails() + ", ");
+        sb.append("{");    	
+        if (getName() != null) sb.append("Name: " + getName() + ",");    	
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");    	
+        if (getContainer() != null) sb.append("Container: " + getContainer() + ",");    	
+        if (getVideo() != null) sb.append("Video: " + getVideo() + ",");    	
+        if (getAudio() != null) sb.append("Audio: " + getAudio() + ",");    	
+        if (getThumbnails() != null) sb.append("Thumbnails: " + getThumbnails() );
         sb.append("}");
         return sb.toString();
     }

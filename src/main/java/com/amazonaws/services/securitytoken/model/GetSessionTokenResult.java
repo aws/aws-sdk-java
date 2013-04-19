@@ -72,8 +72,8 @@ public class GetSessionTokenResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getCredentials() != null) sb.append("Credentials: " + getCredentials() + ", ");
+        sb.append("{");    	
+        if (getCredentials() != null) sb.append("Credentials: " + getCredentials() );
         sb.append("}");
         return sb.toString();
     }

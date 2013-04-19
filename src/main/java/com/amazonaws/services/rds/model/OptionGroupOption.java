@@ -64,6 +64,17 @@ public class OptionGroupOption  implements Serializable  {
     private java.util.List<String> optionsDependedOn;
 
     /**
+     * Specifies whether the option is persistent in an option group.
+     */
+    private Boolean persistent;
+
+    /**
+     * Specifies the option settings that are available (and the default
+     * value) for each option in an option group.
+     */
+    private java.util.List<OptionGroupOptionSetting> optionGroupOptionSettings;
+
+    /**
      * The name of the option.
      *
      * @return The name of the option.
@@ -386,6 +397,126 @@ public class OptionGroupOption  implements Serializable  {
     }
     
     /**
+     * Specifies whether the option is persistent in an option group.
+     *
+     * @return Specifies whether the option is persistent in an option group.
+     */
+    public Boolean isPersistent() {
+        return persistent;
+    }
+    
+    /**
+     * Specifies whether the option is persistent in an option group.
+     *
+     * @param persistent Specifies whether the option is persistent in an option group.
+     */
+    public void setPersistent(Boolean persistent) {
+        this.persistent = persistent;
+    }
+    
+    /**
+     * Specifies whether the option is persistent in an option group.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param persistent Specifies whether the option is persistent in an option group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public OptionGroupOption withPersistent(Boolean persistent) {
+        this.persistent = persistent;
+        return this;
+    }
+    
+    
+    /**
+     * Specifies whether the option is persistent in an option group.
+     *
+     * @return Specifies whether the option is persistent in an option group.
+     */
+    public Boolean getPersistent() {
+        return persistent;
+    }
+    
+    /**
+     * Specifies the option settings that are available (and the default
+     * value) for each option in an option group.
+     *
+     * @return Specifies the option settings that are available (and the default
+     *         value) for each option in an option group.
+     */
+    public java.util.List<OptionGroupOptionSetting> getOptionGroupOptionSettings() {
+        
+        if (optionGroupOptionSettings == null) {
+            optionGroupOptionSettings = new java.util.ArrayList<OptionGroupOptionSetting>();
+        }
+        return optionGroupOptionSettings;
+    }
+    
+    /**
+     * Specifies the option settings that are available (and the default
+     * value) for each option in an option group.
+     *
+     * @param optionGroupOptionSettings Specifies the option settings that are available (and the default
+     *         value) for each option in an option group.
+     */
+    public void setOptionGroupOptionSettings(java.util.Collection<OptionGroupOptionSetting> optionGroupOptionSettings) {
+        if (optionGroupOptionSettings == null) {
+            this.optionGroupOptionSettings = null;
+            return;
+        }
+
+        java.util.List<OptionGroupOptionSetting> optionGroupOptionSettingsCopy = new java.util.ArrayList<OptionGroupOptionSetting>(optionGroupOptionSettings.size());
+        optionGroupOptionSettingsCopy.addAll(optionGroupOptionSettings);
+        this.optionGroupOptionSettings = optionGroupOptionSettingsCopy;
+    }
+    
+    /**
+     * Specifies the option settings that are available (and the default
+     * value) for each option in an option group.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param optionGroupOptionSettings Specifies the option settings that are available (and the default
+     *         value) for each option in an option group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public OptionGroupOption withOptionGroupOptionSettings(OptionGroupOptionSetting... optionGroupOptionSettings) {
+        if (getOptionGroupOptionSettings() == null) setOptionGroupOptionSettings(new java.util.ArrayList<OptionGroupOptionSetting>(optionGroupOptionSettings.length));
+        for (OptionGroupOptionSetting value : optionGroupOptionSettings) {
+            getOptionGroupOptionSettings().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * Specifies the option settings that are available (and the default
+     * value) for each option in an option group.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param optionGroupOptionSettings Specifies the option settings that are available (and the default
+     *         value) for each option in an option group.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public OptionGroupOption withOptionGroupOptionSettings(java.util.Collection<OptionGroupOptionSetting> optionGroupOptionSettings) {
+        if (optionGroupOptionSettings == null) {
+            this.optionGroupOptionSettings = null;
+        } else {
+            java.util.List<OptionGroupOptionSetting> optionGroupOptionSettingsCopy = new java.util.ArrayList<OptionGroupOptionSetting>(optionGroupOptionSettings.size());
+            optionGroupOptionSettingsCopy.addAll(optionGroupOptionSettings);
+            this.optionGroupOptionSettings = optionGroupOptionSettingsCopy;
+        }
+
+        return this;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -396,15 +527,17 @@ public class OptionGroupOption  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getName() != null) sb.append("Name: " + getName() + ", ");
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ", ");
-        if (getEngineName() != null) sb.append("EngineName: " + getEngineName() + ", ");
-        if (getMajorEngineVersion() != null) sb.append("MajorEngineVersion: " + getMajorEngineVersion() + ", ");
-        if (getMinimumRequiredMinorEngineVersion() != null) sb.append("MinimumRequiredMinorEngineVersion: " + getMinimumRequiredMinorEngineVersion() + ", ");
-        if (isPortRequired() != null) sb.append("PortRequired: " + isPortRequired() + ", ");
-        if (getDefaultPort() != null) sb.append("DefaultPort: " + getDefaultPort() + ", ");
-        if (getOptionsDependedOn() != null) sb.append("OptionsDependedOn: " + getOptionsDependedOn() + ", ");
+        sb.append("{");    	
+        if (getName() != null) sb.append("Name: " + getName() + ",");    	
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");    	
+        if (getEngineName() != null) sb.append("EngineName: " + getEngineName() + ",");    	
+        if (getMajorEngineVersion() != null) sb.append("MajorEngineVersion: " + getMajorEngineVersion() + ",");    	
+        if (getMinimumRequiredMinorEngineVersion() != null) sb.append("MinimumRequiredMinorEngineVersion: " + getMinimumRequiredMinorEngineVersion() + ",");    	
+        if (isPortRequired() != null) sb.append("PortRequired: " + isPortRequired() + ",");    	
+        if (getDefaultPort() != null) sb.append("DefaultPort: " + getDefaultPort() + ",");    	
+        if (getOptionsDependedOn() != null) sb.append("OptionsDependedOn: " + getOptionsDependedOn() + ",");    	
+        if (isPersistent() != null) sb.append("Persistent: " + isPersistent() + ",");    	
+        if (getOptionGroupOptionSettings() != null) sb.append("OptionGroupOptionSettings: " + getOptionGroupOptionSettings() );
         sb.append("}");
         return sb.toString();
     }
@@ -422,6 +555,8 @@ public class OptionGroupOption  implements Serializable  {
         hashCode = prime * hashCode + ((isPortRequired() == null) ? 0 : isPortRequired().hashCode()); 
         hashCode = prime * hashCode + ((getDefaultPort() == null) ? 0 : getDefaultPort().hashCode()); 
         hashCode = prime * hashCode + ((getOptionsDependedOn() == null) ? 0 : getOptionsDependedOn().hashCode()); 
+        hashCode = prime * hashCode + ((isPersistent() == null) ? 0 : isPersistent().hashCode()); 
+        hashCode = prime * hashCode + ((getOptionGroupOptionSettings() == null) ? 0 : getOptionGroupOptionSettings().hashCode()); 
         return hashCode;
     }
     
@@ -449,6 +584,10 @@ public class OptionGroupOption  implements Serializable  {
         if (other.getDefaultPort() != null && other.getDefaultPort().equals(this.getDefaultPort()) == false) return false; 
         if (other.getOptionsDependedOn() == null ^ this.getOptionsDependedOn() == null) return false;
         if (other.getOptionsDependedOn() != null && other.getOptionsDependedOn().equals(this.getOptionsDependedOn()) == false) return false; 
+        if (other.isPersistent() == null ^ this.isPersistent() == null) return false;
+        if (other.isPersistent() != null && other.isPersistent().equals(this.isPersistent()) == false) return false; 
+        if (other.getOptionGroupOptionSettings() == null ^ this.getOptionGroupOptionSettings() == null) return false;
+        if (other.getOptionGroupOptionSettings() != null && other.getOptionGroupOptionSettings().equals(this.getOptionGroupOptionSettings()) == false) return false; 
         return true;
     }
     

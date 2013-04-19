@@ -88,8 +88,8 @@ public class GetHealthCheckRequest extends AmazonWebServiceRequest  implements S
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getHealthCheckId() != null) sb.append("HealthCheckId: " + getHealthCheckId() + ", ");
+        sb.append("{");    	
+        if (getHealthCheckId() != null) sb.append("HealthCheckId: " + getHealthCheckId() );
         sb.append("}");
         return sb.toString();
     }

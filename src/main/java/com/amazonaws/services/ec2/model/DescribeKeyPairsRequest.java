@@ -36,7 +36,7 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest  implements
      * A list of filters used to match properties for KeyPairs. For a
      * complete reference to the available filter keys for this operation,
      * see the <a
-     * "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      * EC2 API reference</a>.
      */
     private java.util.List<Filter> filters;
@@ -114,13 +114,13 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest  implements
      * A list of filters used to match properties for KeyPairs. For a
      * complete reference to the available filter keys for this operation,
      * see the <a
-     * "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      * EC2 API reference</a>.
      *
      * @return A list of filters used to match properties for KeyPairs. For a
      *         complete reference to the available filter keys for this operation,
      *         see the <a
-     *         "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      *         EC2 API reference</a>.
      */
     public java.util.List<Filter> getFilters() {
@@ -135,13 +135,13 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest  implements
      * A list of filters used to match properties for KeyPairs. For a
      * complete reference to the available filter keys for this operation,
      * see the <a
-     * "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      * EC2 API reference</a>.
      *
      * @param filters A list of filters used to match properties for KeyPairs. For a
      *         complete reference to the available filter keys for this operation,
      *         see the <a
-     *         "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      *         EC2 API reference</a>.
      */
     public void setFilters(java.util.Collection<Filter> filters) {
@@ -159,7 +159,7 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest  implements
      * A list of filters used to match properties for KeyPairs. For a
      * complete reference to the available filter keys for this operation,
      * see the <a
-     * "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      * EC2 API reference</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -167,7 +167,7 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest  implements
      * @param filters A list of filters used to match properties for KeyPairs. For a
      *         complete reference to the available filter keys for this operation,
      *         see the <a
-     *         "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      *         EC2 API reference</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -185,7 +185,7 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest  implements
      * A list of filters used to match properties for KeyPairs. For a
      * complete reference to the available filter keys for this operation,
      * see the <a
-     * "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      * EC2 API reference</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -193,7 +193,7 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest  implements
      * @param filters A list of filters used to match properties for KeyPairs. For a
      *         complete reference to the available filter keys for this operation,
      *         see the <a
-     *         "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      *         EC2 API reference</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -222,9 +222,9 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest  implements
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getKeyNames() != null) sb.append("KeyNames: " + getKeyNames() + ", ");
-        if (getFilters() != null) sb.append("Filters: " + getFilters() + ", ");
+        sb.append("{");    	
+        if (getKeyNames() != null) sb.append("KeyNames: " + getKeyNames() + ",");    	
+        if (getFilters() != null) sb.append("Filters: " + getFilters() );
         sb.append("}");
         return sb.toString();
     }

@@ -281,11 +281,11 @@ public class SourceAttribute  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getSourceDataFunction() != null) sb.append("SourceDataFunction: " + getSourceDataFunction() + ", ");
-        if (getSourceDataCopy() != null) sb.append("SourceDataCopy: " + getSourceDataCopy() + ", ");
-        if (getSourceDataTrimTitle() != null) sb.append("SourceDataTrimTitle: " + getSourceDataTrimTitle() + ", ");
-        if (getSourceDataMap() != null) sb.append("SourceDataMap: " + getSourceDataMap() + ", ");
+        sb.append("{");    	
+        if (getSourceDataFunction() != null) sb.append("SourceDataFunction: " + getSourceDataFunction() + ",");    	
+        if (getSourceDataCopy() != null) sb.append("SourceDataCopy: " + getSourceDataCopy() + ",");    	
+        if (getSourceDataTrimTitle() != null) sb.append("SourceDataTrimTitle: " + getSourceDataTrimTitle() + ",");    	
+        if (getSourceDataMap() != null) sb.append("SourceDataMap: " + getSourceDataMap() );
         sb.append("}");
         return sb.toString();
     }

@@ -174,10 +174,10 @@ public class ConfigurationOptionSetting  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getNamespace() != null) sb.append("Namespace: " + getNamespace() + ", ");
-        if (getOptionName() != null) sb.append("OptionName: " + getOptionName() + ", ");
-        if (getValue() != null) sb.append("Value: " + getValue() + ", ");
+        sb.append("{");    	
+        if (getNamespace() != null) sb.append("Namespace: " + getNamespace() + ",");    	
+        if (getOptionName() != null) sb.append("OptionName: " + getOptionName() + ",");    	
+        if (getValue() != null) sb.append("Value: " + getValue() );
         sb.append("}");
         return sb.toString();
     }

@@ -172,10 +172,10 @@ public class DeleteInstanceRequest extends AmazonWebServiceRequest  implements S
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ", ");
-        if (isDeleteElasticIp() != null) sb.append("DeleteElasticIp: " + isDeleteElasticIp() + ", ");
-        if (isDeleteVolumes() != null) sb.append("DeleteVolumes: " + isDeleteVolumes() + ", ");
+        sb.append("{");    	
+        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ",");    	
+        if (isDeleteElasticIp() != null) sb.append("DeleteElasticIp: " + isDeleteElasticIp() + ",");    	
+        if (isDeleteVolumes() != null) sb.append("DeleteVolumes: " + isDeleteVolumes() );
         sb.append("}");
         return sb.toString();
     }

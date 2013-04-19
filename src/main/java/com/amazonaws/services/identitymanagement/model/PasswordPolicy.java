@@ -345,13 +345,13 @@ public class PasswordPolicy  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getMinimumPasswordLength() != null) sb.append("MinimumPasswordLength: " + getMinimumPasswordLength() + ", ");
-        if (isRequireSymbols() != null) sb.append("RequireSymbols: " + isRequireSymbols() + ", ");
-        if (isRequireNumbers() != null) sb.append("RequireNumbers: " + isRequireNumbers() + ", ");
-        if (isRequireUppercaseCharacters() != null) sb.append("RequireUppercaseCharacters: " + isRequireUppercaseCharacters() + ", ");
-        if (isRequireLowercaseCharacters() != null) sb.append("RequireLowercaseCharacters: " + isRequireLowercaseCharacters() + ", ");
-        if (isAllowUsersToChangePassword() != null) sb.append("AllowUsersToChangePassword: " + isAllowUsersToChangePassword() + ", ");
+        sb.append("{");    	
+        if (getMinimumPasswordLength() != null) sb.append("MinimumPasswordLength: " + getMinimumPasswordLength() + ",");    	
+        if (isRequireSymbols() != null) sb.append("RequireSymbols: " + isRequireSymbols() + ",");    	
+        if (isRequireNumbers() != null) sb.append("RequireNumbers: " + isRequireNumbers() + ",");    	
+        if (isRequireUppercaseCharacters() != null) sb.append("RequireUppercaseCharacters: " + isRequireUppercaseCharacters() + ",");    	
+        if (isRequireLowercaseCharacters() != null) sb.append("RequireLowercaseCharacters: " + isRequireLowercaseCharacters() + ",");    	
+        if (isAllowUsersToChangePassword() != null) sb.append("AllowUsersToChangePassword: " + isAllowUsersToChangePassword() );
         sb.append("}");
         return sb.toString();
     }

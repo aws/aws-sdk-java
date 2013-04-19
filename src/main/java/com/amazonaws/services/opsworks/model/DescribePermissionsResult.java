@@ -179,8 +179,8 @@ public class DescribePermissionsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getPermissions() != null) sb.append("Permissions: " + getPermissions() + ", ");
+        sb.append("{");    	
+        if (getPermissions() != null) sb.append("Permissions: " + getPermissions() );
         sb.append("}");
         return sb.toString();
     }

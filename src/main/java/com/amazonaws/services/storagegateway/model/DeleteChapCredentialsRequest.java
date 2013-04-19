@@ -157,9 +157,9 @@ public class DeleteChapCredentialsRequest extends AmazonWebServiceRequest  imple
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getTargetARN() != null) sb.append("TargetARN: " + getTargetARN() + ", ");
-        if (getInitiatorName() != null) sb.append("InitiatorName: " + getInitiatorName() + ", ");
+        sb.append("{");    	
+        if (getTargetARN() != null) sb.append("TargetARN: " + getTargetARN() + ",");    	
+        if (getInitiatorName() != null) sb.append("InitiatorName: " + getInitiatorName() );
         sb.append("}");
         return sb.toString();
     }

@@ -218,10 +218,10 @@ public class SetInstanceHealthRequest extends AmazonWebServiceRequest  implement
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ", ");
-        if (getHealthStatus() != null) sb.append("HealthStatus: " + getHealthStatus() + ", ");
-        if (isShouldRespectGracePeriod() != null) sb.append("ShouldRespectGracePeriod: " + isShouldRespectGracePeriod() + ", ");
+        sb.append("{");    	
+        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ",");    	
+        if (getHealthStatus() != null) sb.append("HealthStatus: " + getHealthStatus() + ",");    	
+        if (isShouldRespectGracePeriod() != null) sb.append("ShouldRespectGracePeriod: " + isShouldRespectGracePeriod() );
         sb.append("}");
         return sb.toString();
     }

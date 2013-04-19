@@ -273,11 +273,11 @@ public class ExportToS3TaskSpecification  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getDiskImageFormat() != null) sb.append("DiskImageFormat: " + getDiskImageFormat() + ", ");
-        if (getContainerFormat() != null) sb.append("ContainerFormat: " + getContainerFormat() + ", ");
-        if (getS3Bucket() != null) sb.append("S3Bucket: " + getS3Bucket() + ", ");
-        if (getS3Prefix() != null) sb.append("S3Prefix: " + getS3Prefix() + ", ");
+        sb.append("{");    	
+        if (getDiskImageFormat() != null) sb.append("DiskImageFormat: " + getDiskImageFormat() + ",");    	
+        if (getContainerFormat() != null) sb.append("ContainerFormat: " + getContainerFormat() + ",");    	
+        if (getS3Bucket() != null) sb.append("S3Bucket: " + getS3Bucket() + ",");    	
+        if (getS3Prefix() != null) sb.append("S3Prefix: " + getS3Prefix() );
         sb.append("}");
         return sb.toString();
     }

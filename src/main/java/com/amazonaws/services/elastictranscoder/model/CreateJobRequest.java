@@ -212,10 +212,10 @@ public class CreateJobRequest extends AmazonWebServiceRequest  implements Serial
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getPipelineId() != null) sb.append("PipelineId: " + getPipelineId() + ", ");
-        if (getInput() != null) sb.append("Input: " + getInput() + ", ");
-        if (getOutput() != null) sb.append("Output: " + getOutput() + ", ");
+        sb.append("{");    	
+        if (getPipelineId() != null) sb.append("PipelineId: " + getPipelineId() + ",");    	
+        if (getInput() != null) sb.append("Input: " + getInput() + ",");    	
+        if (getOutput() != null) sb.append("Output: " + getOutput() );
         sb.append("}");
         return sb.toString();
     }

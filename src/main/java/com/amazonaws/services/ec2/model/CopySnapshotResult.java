@@ -67,8 +67,8 @@ public class CopySnapshotResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getSnapshotId() != null) sb.append("SnapshotId: " + getSnapshotId() + ", ");
+        sb.append("{");    	
+        if (getSnapshotId() != null) sb.append("SnapshotId: " + getSnapshotId() );
         sb.append("}");
         return sb.toString();
     }

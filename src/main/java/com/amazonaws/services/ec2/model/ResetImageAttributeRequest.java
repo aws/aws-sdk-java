@@ -147,9 +147,9 @@ public class ResetImageAttributeRequest extends AmazonWebServiceRequest  impleme
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getImageId() != null) sb.append("ImageId: " + getImageId() + ", ");
-        if (getAttribute() != null) sb.append("Attribute: " + getAttribute() + ", ");
+        sb.append("{");    	
+        if (getImageId() != null) sb.append("ImageId: " + getImageId() + ",");    	
+        if (getAttribute() != null) sb.append("Attribute: " + getAttribute() );
         sb.append("}");
         return sb.toString();
     }

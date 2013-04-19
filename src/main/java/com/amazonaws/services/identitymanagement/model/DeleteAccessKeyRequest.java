@@ -178,9 +178,9 @@ public class DeleteAccessKeyRequest extends AmazonWebServiceRequest  implements 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getUserName() != null) sb.append("UserName: " + getUserName() + ", ");
-        if (getAccessKeyId() != null) sb.append("AccessKeyId: " + getAccessKeyId() + ", ");
+        sb.append("{");    	
+        if (getUserName() != null) sb.append("UserName: " + getUserName() + ",");    	
+        if (getAccessKeyId() != null) sb.append("AccessKeyId: " + getAccessKeyId() );
         sb.append("}");
         return sb.toString();
     }

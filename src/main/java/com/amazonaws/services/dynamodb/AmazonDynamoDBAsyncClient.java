@@ -42,6 +42,7 @@ import com.amazonaws.services.dynamodb.model.*;
  * Amazon DynamoDB removes traditional scalability limitations on data storage while maintaining low latency and predictable performance.
  * </p>
  */
+@Deprecated
 public class AmazonDynamoDBAsyncClient extends AmazonDynamoDBClient
         implements AmazonDynamoDBAsync {
 

@@ -286,10 +286,10 @@ public class DeleteClusterRequest extends AmazonWebServiceRequest  implements Se
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getClusterIdentifier() != null) sb.append("ClusterIdentifier: " + getClusterIdentifier() + ", ");
-        if (isSkipFinalClusterSnapshot() != null) sb.append("SkipFinalClusterSnapshot: " + isSkipFinalClusterSnapshot() + ", ");
-        if (getFinalClusterSnapshotIdentifier() != null) sb.append("FinalClusterSnapshotIdentifier: " + getFinalClusterSnapshotIdentifier() + ", ");
+        sb.append("{");    	
+        if (getClusterIdentifier() != null) sb.append("ClusterIdentifier: " + getClusterIdentifier() + ",");    	
+        if (isSkipFinalClusterSnapshot() != null) sb.append("SkipFinalClusterSnapshot: " + isSkipFinalClusterSnapshot() + ",");    	
+        if (getFinalClusterSnapshotIdentifier() != null) sb.append("FinalClusterSnapshotIdentifier: " + getFinalClusterSnapshotIdentifier() );
         sb.append("}");
         return sb.toString();
     }

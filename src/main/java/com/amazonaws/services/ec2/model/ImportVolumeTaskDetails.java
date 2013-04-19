@@ -211,12 +211,12 @@ public class ImportVolumeTaskDetails  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getBytesConverted() != null) sb.append("BytesConverted: " + getBytesConverted() + ", ");
-        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ", ");
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ", ");
-        if (getImage() != null) sb.append("Image: " + getImage() + ", ");
-        if (getVolume() != null) sb.append("Volume: " + getVolume() + ", ");
+        sb.append("{");    	
+        if (getBytesConverted() != null) sb.append("BytesConverted: " + getBytesConverted() + ",");    	
+        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");    	
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");    	
+        if (getImage() != null) sb.append("Image: " + getImage() + ",");    	
+        if (getVolume() != null) sb.append("Volume: " + getVolume() );
         sb.append("}");
         return sb.toString();
     }

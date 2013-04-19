@@ -98,8 +98,8 @@ public class GetRoleRequest extends AmazonWebServiceRequest  implements Serializ
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getRoleName() != null) sb.append("RoleName: " + getRoleName() + ", ");
+        sb.append("{");    	
+        if (getRoleName() != null) sb.append("RoleName: " + getRoleName() );
         sb.append("}");
         return sb.toString();
     }

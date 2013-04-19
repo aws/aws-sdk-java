@@ -152,9 +152,9 @@ public class InstanceExportDetails  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ", ");
-        if (getTargetEnvironment() != null) sb.append("TargetEnvironment: " + getTargetEnvironment() + ", ");
+        sb.append("{");    	
+        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ",");    	
+        if (getTargetEnvironment() != null) sb.append("TargetEnvironment: " + getTargetEnvironment() );
         sb.append("}");
         return sb.toString();
     }

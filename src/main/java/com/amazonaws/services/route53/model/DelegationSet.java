@@ -171,8 +171,8 @@ public class DelegationSet  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getNameServers() != null) sb.append("NameServers: " + getNameServers() + ", ");
+        sb.append("{");    	
+        if (getNameServers() != null) sb.append("NameServers: " + getNameServers() );
         sb.append("}");
         return sb.toString();
     }

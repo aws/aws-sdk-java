@@ -189,10 +189,10 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest  implements 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ", ");
-        if (getRaidArrayId() != null) sb.append("RaidArrayId: " + getRaidArrayId() + ", ");
-        if (getVolumeIds() != null) sb.append("VolumeIds: " + getVolumeIds() + ", ");
+        sb.append("{");    	
+        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ",");    	
+        if (getRaidArrayId() != null) sb.append("RaidArrayId: " + getRaidArrayId() + ",");    	
+        if (getVolumeIds() != null) sb.append("VolumeIds: " + getVolumeIds() );
         sb.append("}");
         return sb.toString();
     }

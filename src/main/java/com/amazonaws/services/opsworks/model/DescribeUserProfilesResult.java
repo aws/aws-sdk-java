@@ -107,8 +107,8 @@ public class DescribeUserProfilesResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getUserProfiles() != null) sb.append("UserProfiles: " + getUserProfiles() + ", ");
+        sb.append("{");    	
+        if (getUserProfiles() != null) sb.append("UserProfiles: " + getUserProfiles() );
         sb.append("}");
         return sb.toString();
     }

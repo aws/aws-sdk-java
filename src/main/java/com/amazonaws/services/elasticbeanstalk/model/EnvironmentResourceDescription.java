@@ -460,13 +460,13 @@ public class EnvironmentResourceDescription  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getEnvironmentName() != null) sb.append("EnvironmentName: " + getEnvironmentName() + ", ");
-        if (getAutoScalingGroups() != null) sb.append("AutoScalingGroups: " + getAutoScalingGroups() + ", ");
-        if (getInstances() != null) sb.append("Instances: " + getInstances() + ", ");
-        if (getLaunchConfigurations() != null) sb.append("LaunchConfigurations: " + getLaunchConfigurations() + ", ");
-        if (getLoadBalancers() != null) sb.append("LoadBalancers: " + getLoadBalancers() + ", ");
-        if (getTriggers() != null) sb.append("Triggers: " + getTriggers() + ", ");
+        sb.append("{");    	
+        if (getEnvironmentName() != null) sb.append("EnvironmentName: " + getEnvironmentName() + ",");    	
+        if (getAutoScalingGroups() != null) sb.append("AutoScalingGroups: " + getAutoScalingGroups() + ",");    	
+        if (getInstances() != null) sb.append("Instances: " + getInstances() + ",");    	
+        if (getLaunchConfigurations() != null) sb.append("LaunchConfigurations: " + getLaunchConfigurations() + ",");    	
+        if (getLoadBalancers() != null) sb.append("LoadBalancers: " + getLoadBalancers() + ",");    	
+        if (getTriggers() != null) sb.append("Triggers: " + getTriggers() );
         sb.append("}");
         return sb.toString();
     }

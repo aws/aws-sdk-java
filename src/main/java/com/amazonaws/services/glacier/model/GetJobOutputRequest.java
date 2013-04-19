@@ -336,11 +336,11 @@ public class GetJobOutputRequest extends AmazonWebServiceRequest  implements Ser
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getAccountId() != null) sb.append("AccountId: " + getAccountId() + ", ");
-        if (getVaultName() != null) sb.append("VaultName: " + getVaultName() + ", ");
-        if (getJobId() != null) sb.append("JobId: " + getJobId() + ", ");
-        if (getRange() != null) sb.append("Range: " + getRange() + ", ");
+        sb.append("{");    	
+        if (getAccountId() != null) sb.append("AccountId: " + getAccountId() + ",");    	
+        if (getVaultName() != null) sb.append("VaultName: " + getVaultName() + ",");    	
+        if (getJobId() != null) sb.append("JobId: " + getJobId() + ",");    	
+        if (getRange() != null) sb.append("Range: " + getRange() );
         sb.append("}");
         return sb.toString();
     }

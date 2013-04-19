@@ -72,8 +72,8 @@ public class DescribeInstanceAttributeResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getInstanceAttribute() != null) sb.append("InstanceAttribute: " + getInstanceAttribute() + ", ");
+        sb.append("{");    	
+        if (getInstanceAttribute() != null) sb.append("InstanceAttribute: " + getInstanceAttribute() );
         sb.append("}");
         return sb.toString();
     }

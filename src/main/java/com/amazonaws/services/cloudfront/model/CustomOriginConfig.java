@@ -202,10 +202,10 @@ public class CustomOriginConfig  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getHTTPPort() != null) sb.append("HTTPPort: " + getHTTPPort() + ", ");
-        if (getHTTPSPort() != null) sb.append("HTTPSPort: " + getHTTPSPort() + ", ");
-        if (getOriginProtocolPolicy() != null) sb.append("OriginProtocolPolicy: " + getOriginProtocolPolicy() + ", ");
+        sb.append("{");    	
+        if (getHTTPPort() != null) sb.append("HTTPPort: " + getHTTPPort() + ",");    	
+        if (getHTTPSPort() != null) sb.append("HTTPSPort: " + getHTTPSPort() + ",");    	
+        if (getOriginProtocolPolicy() != null) sb.append("OriginProtocolPolicy: " + getOriginProtocolPolicy() );
         sb.append("}");
         return sb.toString();
     }

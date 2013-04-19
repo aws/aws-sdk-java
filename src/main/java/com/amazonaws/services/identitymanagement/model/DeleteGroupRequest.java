@@ -111,8 +111,8 @@ public class DeleteGroupRequest extends AmazonWebServiceRequest  implements Seri
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getGroupName() != null) sb.append("GroupName: " + getGroupName() + ", ");
+        sb.append("{");    	
+        if (getGroupName() != null) sb.append("GroupName: " + getGroupName() );
         sb.append("}");
         return sb.toString();
     }

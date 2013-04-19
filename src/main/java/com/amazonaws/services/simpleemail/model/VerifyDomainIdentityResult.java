@@ -79,8 +79,8 @@ public class VerifyDomainIdentityResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getVerificationToken() != null) sb.append("VerificationToken: " + getVerificationToken() + ", ");
+        sb.append("{");    	
+        if (getVerificationToken() != null) sb.append("VerificationToken: " + getVerificationToken() );
         sb.append("}");
         return sb.toString();
     }

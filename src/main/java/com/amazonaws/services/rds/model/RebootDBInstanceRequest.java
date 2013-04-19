@@ -196,9 +196,9 @@ public class RebootDBInstanceRequest extends AmazonWebServiceRequest  implements
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getDBInstanceIdentifier() != null) sb.append("DBInstanceIdentifier: " + getDBInstanceIdentifier() + ", ");
-        if (isForceFailover() != null) sb.append("ForceFailover: " + isForceFailover() + ", ");
+        sb.append("{");    	
+        if (getDBInstanceIdentifier() != null) sb.append("DBInstanceIdentifier: " + getDBInstanceIdentifier() + ",");    	
+        if (isForceFailover() != null) sb.append("ForceFailover: " + isForceFailover() );
         sb.append("}");
         return sb.toString();
     }

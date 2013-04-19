@@ -440,15 +440,15 @@ public class DescribeOfferingDetailResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getOfferingId() != null) sb.append("OfferingId: " + getOfferingId() + ", ");
-        if (getRegion() != null) sb.append("Region: " + getRegion() + ", ");
-        if (getLocation() != null) sb.append("Location: " + getLocation() + ", ");
-        if (getOfferingName() != null) sb.append("OfferingName: " + getOfferingName() + ", ");
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ", ");
-        if (getBandwidth() != null) sb.append("Bandwidth: " + getBandwidth() + ", ");
-        if (getConnectionCosts() != null) sb.append("ConnectionCosts: " + getConnectionCosts() + ", ");
-        if (getOrderSteps() != null) sb.append("OrderSteps: " + getOrderSteps() + ", ");
+        sb.append("{");    	
+        if (getOfferingId() != null) sb.append("OfferingId: " + getOfferingId() + ",");    	
+        if (getRegion() != null) sb.append("Region: " + getRegion() + ",");    	
+        if (getLocation() != null) sb.append("Location: " + getLocation() + ",");    	
+        if (getOfferingName() != null) sb.append("OfferingName: " + getOfferingName() + ",");    	
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");    	
+        if (getBandwidth() != null) sb.append("Bandwidth: " + getBandwidth() + ",");    	
+        if (getConnectionCosts() != null) sb.append("ConnectionCosts: " + getConnectionCosts() + ",");    	
+        if (getOrderSteps() != null) sb.append("OrderSteps: " + getOrderSteps() );
         sb.append("}");
         return sb.toString();
     }

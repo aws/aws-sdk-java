@@ -115,8 +115,8 @@ public class DescribeLicensesResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getLicenses() != null) sb.append("Licenses: " + getLicenses() + ", ");
+        sb.append("{");    	
+        if (getLicenses() != null) sb.append("Licenses: " + getLicenses() );
         sb.append("}");
         return sb.toString();
     }

@@ -33,18 +33,28 @@ public class Option  implements Serializable  {
     private String optionDescription;
 
     /**
+     * Indicate if this option is persistent.
+     */
+    private Boolean persistent;
+
+    /**
      * If required, the port configured for this option to use.
      */
     private Integer port;
 
     /**
-     * If the Option requires access to a port, then this DB Security Group
+     * The option settings for this option.
+     */
+    private java.util.List<OptionSetting> optionSettings;
+
+    /**
+     * If the option requires access to a port, then this DB Security Group
      * allows access to the port.
      */
     private java.util.List<DBSecurityGroupMembership> dBSecurityGroupMemberships;
 
     /**
-     * If the Option requires access to a port, then this VPC Security Group
+     * If the option requires access to a port, then this VPC Security Group
      * allows access to the port.
      */
     private java.util.List<VpcSecurityGroupMembership> vpcSecurityGroupMemberships;
@@ -118,6 +128,49 @@ public class Option  implements Serializable  {
     
     
     /**
+     * Indicate if this option is persistent.
+     *
+     * @return Indicate if this option is persistent.
+     */
+    public Boolean isPersistent() {
+        return persistent;
+    }
+    
+    /**
+     * Indicate if this option is persistent.
+     *
+     * @param persistent Indicate if this option is persistent.
+     */
+    public void setPersistent(Boolean persistent) {
+        this.persistent = persistent;
+    }
+    
+    /**
+     * Indicate if this option is persistent.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param persistent Indicate if this option is persistent.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public Option withPersistent(Boolean persistent) {
+        this.persistent = persistent;
+        return this;
+    }
+    
+    
+    /**
+     * Indicate if this option is persistent.
+     *
+     * @return Indicate if this option is persistent.
+     */
+    public Boolean getPersistent() {
+        return persistent;
+    }
+    
+    /**
      * If required, the port configured for this option to use.
      *
      * @return If required, the port configured for this option to use.
@@ -152,10 +205,79 @@ public class Option  implements Serializable  {
     
     
     /**
-     * If the Option requires access to a port, then this DB Security Group
+     * The option settings for this option.
+     *
+     * @return The option settings for this option.
+     */
+    public java.util.List<OptionSetting> getOptionSettings() {
+        
+        if (optionSettings == null) {
+            optionSettings = new java.util.ArrayList<OptionSetting>();
+        }
+        return optionSettings;
+    }
+    
+    /**
+     * The option settings for this option.
+     *
+     * @param optionSettings The option settings for this option.
+     */
+    public void setOptionSettings(java.util.Collection<OptionSetting> optionSettings) {
+        if (optionSettings == null) {
+            this.optionSettings = null;
+            return;
+        }
+
+        java.util.List<OptionSetting> optionSettingsCopy = new java.util.ArrayList<OptionSetting>(optionSettings.size());
+        optionSettingsCopy.addAll(optionSettings);
+        this.optionSettings = optionSettingsCopy;
+    }
+    
+    /**
+     * The option settings for this option.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param optionSettings The option settings for this option.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public Option withOptionSettings(OptionSetting... optionSettings) {
+        if (getOptionSettings() == null) setOptionSettings(new java.util.ArrayList<OptionSetting>(optionSettings.length));
+        for (OptionSetting value : optionSettings) {
+            getOptionSettings().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * The option settings for this option.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param optionSettings The option settings for this option.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public Option withOptionSettings(java.util.Collection<OptionSetting> optionSettings) {
+        if (optionSettings == null) {
+            this.optionSettings = null;
+        } else {
+            java.util.List<OptionSetting> optionSettingsCopy = new java.util.ArrayList<OptionSetting>(optionSettings.size());
+            optionSettingsCopy.addAll(optionSettings);
+            this.optionSettings = optionSettingsCopy;
+        }
+
+        return this;
+    }
+    
+    /**
+     * If the option requires access to a port, then this DB Security Group
      * allows access to the port.
      *
-     * @return If the Option requires access to a port, then this DB Security Group
+     * @return If the option requires access to a port, then this DB Security Group
      *         allows access to the port.
      */
     public java.util.List<DBSecurityGroupMembership> getDBSecurityGroupMemberships() {
@@ -167,10 +289,10 @@ public class Option  implements Serializable  {
     }
     
     /**
-     * If the Option requires access to a port, then this DB Security Group
+     * If the option requires access to a port, then this DB Security Group
      * allows access to the port.
      *
-     * @param dBSecurityGroupMemberships If the Option requires access to a port, then this DB Security Group
+     * @param dBSecurityGroupMemberships If the option requires access to a port, then this DB Security Group
      *         allows access to the port.
      */
     public void setDBSecurityGroupMemberships(java.util.Collection<DBSecurityGroupMembership> dBSecurityGroupMemberships) {
@@ -185,12 +307,12 @@ public class Option  implements Serializable  {
     }
     
     /**
-     * If the Option requires access to a port, then this DB Security Group
+     * If the option requires access to a port, then this DB Security Group
      * allows access to the port.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBSecurityGroupMemberships If the Option requires access to a port, then this DB Security Group
+     * @param dBSecurityGroupMemberships If the option requires access to a port, then this DB Security Group
      *         allows access to the port.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -205,12 +327,12 @@ public class Option  implements Serializable  {
     }
     
     /**
-     * If the Option requires access to a port, then this DB Security Group
+     * If the option requires access to a port, then this DB Security Group
      * allows access to the port.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param dBSecurityGroupMemberships If the Option requires access to a port, then this DB Security Group
+     * @param dBSecurityGroupMemberships If the option requires access to a port, then this DB Security Group
      *         allows access to the port.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -229,10 +351,10 @@ public class Option  implements Serializable  {
     }
     
     /**
-     * If the Option requires access to a port, then this VPC Security Group
+     * If the option requires access to a port, then this VPC Security Group
      * allows access to the port.
      *
-     * @return If the Option requires access to a port, then this VPC Security Group
+     * @return If the option requires access to a port, then this VPC Security Group
      *         allows access to the port.
      */
     public java.util.List<VpcSecurityGroupMembership> getVpcSecurityGroupMemberships() {
@@ -244,10 +366,10 @@ public class Option  implements Serializable  {
     }
     
     /**
-     * If the Option requires access to a port, then this VPC Security Group
+     * If the option requires access to a port, then this VPC Security Group
      * allows access to the port.
      *
-     * @param vpcSecurityGroupMemberships If the Option requires access to a port, then this VPC Security Group
+     * @param vpcSecurityGroupMemberships If the option requires access to a port, then this VPC Security Group
      *         allows access to the port.
      */
     public void setVpcSecurityGroupMemberships(java.util.Collection<VpcSecurityGroupMembership> vpcSecurityGroupMemberships) {
@@ -262,12 +384,12 @@ public class Option  implements Serializable  {
     }
     
     /**
-     * If the Option requires access to a port, then this VPC Security Group
+     * If the option requires access to a port, then this VPC Security Group
      * allows access to the port.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpcSecurityGroupMemberships If the Option requires access to a port, then this VPC Security Group
+     * @param vpcSecurityGroupMemberships If the option requires access to a port, then this VPC Security Group
      *         allows access to the port.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -282,12 +404,12 @@ public class Option  implements Serializable  {
     }
     
     /**
-     * If the Option requires access to a port, then this VPC Security Group
+     * If the option requires access to a port, then this VPC Security Group
      * allows access to the port.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param vpcSecurityGroupMemberships If the Option requires access to a port, then this VPC Security Group
+     * @param vpcSecurityGroupMemberships If the option requires access to a port, then this VPC Security Group
      *         allows access to the port.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -316,12 +438,14 @@ public class Option  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getOptionName() != null) sb.append("OptionName: " + getOptionName() + ", ");
-        if (getOptionDescription() != null) sb.append("OptionDescription: " + getOptionDescription() + ", ");
-        if (getPort() != null) sb.append("Port: " + getPort() + ", ");
-        if (getDBSecurityGroupMemberships() != null) sb.append("DBSecurityGroupMemberships: " + getDBSecurityGroupMemberships() + ", ");
-        if (getVpcSecurityGroupMemberships() != null) sb.append("VpcSecurityGroupMemberships: " + getVpcSecurityGroupMemberships() + ", ");
+        sb.append("{");    	
+        if (getOptionName() != null) sb.append("OptionName: " + getOptionName() + ",");    	
+        if (getOptionDescription() != null) sb.append("OptionDescription: " + getOptionDescription() + ",");    	
+        if (isPersistent() != null) sb.append("Persistent: " + isPersistent() + ",");    	
+        if (getPort() != null) sb.append("Port: " + getPort() + ",");    	
+        if (getOptionSettings() != null) sb.append("OptionSettings: " + getOptionSettings() + ",");    	
+        if (getDBSecurityGroupMemberships() != null) sb.append("DBSecurityGroupMemberships: " + getDBSecurityGroupMemberships() + ",");    	
+        if (getVpcSecurityGroupMemberships() != null) sb.append("VpcSecurityGroupMemberships: " + getVpcSecurityGroupMemberships() );
         sb.append("}");
         return sb.toString();
     }
@@ -333,7 +457,9 @@ public class Option  implements Serializable  {
         
         hashCode = prime * hashCode + ((getOptionName() == null) ? 0 : getOptionName().hashCode()); 
         hashCode = prime * hashCode + ((getOptionDescription() == null) ? 0 : getOptionDescription().hashCode()); 
+        hashCode = prime * hashCode + ((isPersistent() == null) ? 0 : isPersistent().hashCode()); 
         hashCode = prime * hashCode + ((getPort() == null) ? 0 : getPort().hashCode()); 
+        hashCode = prime * hashCode + ((getOptionSettings() == null) ? 0 : getOptionSettings().hashCode()); 
         hashCode = prime * hashCode + ((getDBSecurityGroupMemberships() == null) ? 0 : getDBSecurityGroupMemberships().hashCode()); 
         hashCode = prime * hashCode + ((getVpcSecurityGroupMemberships() == null) ? 0 : getVpcSecurityGroupMemberships().hashCode()); 
         return hashCode;
@@ -351,8 +477,12 @@ public class Option  implements Serializable  {
         if (other.getOptionName() != null && other.getOptionName().equals(this.getOptionName()) == false) return false; 
         if (other.getOptionDescription() == null ^ this.getOptionDescription() == null) return false;
         if (other.getOptionDescription() != null && other.getOptionDescription().equals(this.getOptionDescription()) == false) return false; 
+        if (other.isPersistent() == null ^ this.isPersistent() == null) return false;
+        if (other.isPersistent() != null && other.isPersistent().equals(this.isPersistent()) == false) return false; 
         if (other.getPort() == null ^ this.getPort() == null) return false;
         if (other.getPort() != null && other.getPort().equals(this.getPort()) == false) return false; 
+        if (other.getOptionSettings() == null ^ this.getOptionSettings() == null) return false;
+        if (other.getOptionSettings() != null && other.getOptionSettings().equals(this.getOptionSettings()) == false) return false; 
         if (other.getDBSecurityGroupMemberships() == null ^ this.getDBSecurityGroupMemberships() == null) return false;
         if (other.getDBSecurityGroupMemberships() != null && other.getDBSecurityGroupMemberships().equals(this.getDBSecurityGroupMemberships()) == false) return false; 
         if (other.getVpcSecurityGroupMemberships() == null ^ this.getVpcSecurityGroupMemberships() == null) return false;

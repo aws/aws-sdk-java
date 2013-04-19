@@ -158,9 +158,9 @@ public class DescribePoliciesResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getScalingPolicies() != null) sb.append("ScalingPolicies: " + getScalingPolicies() + ", ");
-        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() + ", ");
+        sb.append("{");    	
+        if (getScalingPolicies() != null) sb.append("ScalingPolicies: " + getScalingPolicies() + ",");    	
+        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() );
         sb.append("}");
         return sb.toString();
     }

@@ -424,13 +424,13 @@ public class DescribeAlarmsRequest extends AmazonWebServiceRequest  implements S
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getAlarmNames() != null) sb.append("AlarmNames: " + getAlarmNames() + ", ");
-        if (getAlarmNamePrefix() != null) sb.append("AlarmNamePrefix: " + getAlarmNamePrefix() + ", ");
-        if (getStateValue() != null) sb.append("StateValue: " + getStateValue() + ", ");
-        if (getActionPrefix() != null) sb.append("ActionPrefix: " + getActionPrefix() + ", ");
-        if (getMaxRecords() != null) sb.append("MaxRecords: " + getMaxRecords() + ", ");
-        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() + ", ");
+        sb.append("{");    	
+        if (getAlarmNames() != null) sb.append("AlarmNames: " + getAlarmNames() + ",");    	
+        if (getAlarmNamePrefix() != null) sb.append("AlarmNamePrefix: " + getAlarmNamePrefix() + ",");    	
+        if (getStateValue() != null) sb.append("StateValue: " + getStateValue() + ",");    	
+        if (getActionPrefix() != null) sb.append("ActionPrefix: " + getActionPrefix() + ",");    	
+        if (getMaxRecords() != null) sb.append("MaxRecords: " + getMaxRecords() + ",");    	
+        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() );
         sb.append("}");
         return sb.toString();
     }

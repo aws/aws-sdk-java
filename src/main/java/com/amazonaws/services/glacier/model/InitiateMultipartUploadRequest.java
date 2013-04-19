@@ -343,11 +343,11 @@ public class InitiateMultipartUploadRequest extends AmazonWebServiceRequest  imp
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getAccountId() != null) sb.append("AccountId: " + getAccountId() + ", ");
-        if (getVaultName() != null) sb.append("VaultName: " + getVaultName() + ", ");
-        if (getArchiveDescription() != null) sb.append("ArchiveDescription: " + getArchiveDescription() + ", ");
-        if (getPartSize() != null) sb.append("PartSize: " + getPartSize() + ", ");
+        sb.append("{");    	
+        if (getAccountId() != null) sb.append("AccountId: " + getAccountId() + ",");    	
+        if (getVaultName() != null) sb.append("VaultName: " + getVaultName() + ",");    	
+        if (getArchiveDescription() != null) sb.append("ArchiveDescription: " + getArchiveDescription() + ",");    	
+        if (getPartSize() != null) sb.append("PartSize: " + getPartSize() );
         sb.append("}");
         return sb.toString();
     }

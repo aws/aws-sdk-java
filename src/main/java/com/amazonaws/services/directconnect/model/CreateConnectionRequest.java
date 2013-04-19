@@ -135,9 +135,9 @@ public class CreateConnectionRequest extends AmazonWebServiceRequest  implements
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getOfferingId() != null) sb.append("OfferingId: " + getOfferingId() + ", ");
-        if (getConnectionName() != null) sb.append("ConnectionName: " + getConnectionName() + ", ");
+        sb.append("{");    	
+        if (getOfferingId() != null) sb.append("OfferingId: " + getOfferingId() + ",");    	
+        if (getConnectionName() != null) sb.append("ConnectionName: " + getConnectionName() );
         sb.append("}");
         return sb.toString();
     }

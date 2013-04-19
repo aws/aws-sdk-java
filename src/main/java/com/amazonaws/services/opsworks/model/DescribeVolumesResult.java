@@ -107,8 +107,8 @@ public class DescribeVolumesResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getVolumes() != null) sb.append("Volumes: " + getVolumes() + ", ");
+        sb.append("{");    	
+        if (getVolumes() != null) sb.append("Volumes: " + getVolumes() );
         sb.append("}");
         return sb.toString();
     }

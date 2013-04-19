@@ -672,20 +672,20 @@ public class ReservedInstancesOffering  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getReservedInstancesOfferingId() != null) sb.append("ReservedInstancesOfferingId: " + getReservedInstancesOfferingId() + ", ");
-        if (getInstanceType() != null) sb.append("InstanceType: " + getInstanceType() + ", ");
-        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ", ");
-        if (getDuration() != null) sb.append("Duration: " + getDuration() + ", ");
-        if (getUsagePrice() != null) sb.append("UsagePrice: " + getUsagePrice() + ", ");
-        if (getFixedPrice() != null) sb.append("FixedPrice: " + getFixedPrice() + ", ");
-        if (getProductDescription() != null) sb.append("ProductDescription: " + getProductDescription() + ", ");
-        if (getInstanceTenancy() != null) sb.append("InstanceTenancy: " + getInstanceTenancy() + ", ");
-        if (getCurrencyCode() != null) sb.append("CurrencyCode: " + getCurrencyCode() + ", ");
-        if (getOfferingType() != null) sb.append("OfferingType: " + getOfferingType() + ", ");
-        if (getRecurringCharges() != null) sb.append("RecurringCharges: " + getRecurringCharges() + ", ");
-        if (isMarketplace() != null) sb.append("Marketplace: " + isMarketplace() + ", ");
-        if (getPricingDetails() != null) sb.append("PricingDetails: " + getPricingDetails() + ", ");
+        sb.append("{");    	
+        if (getReservedInstancesOfferingId() != null) sb.append("ReservedInstancesOfferingId: " + getReservedInstancesOfferingId() + ",");    	
+        if (getInstanceType() != null) sb.append("InstanceType: " + getInstanceType() + ",");    	
+        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");    	
+        if (getDuration() != null) sb.append("Duration: " + getDuration() + ",");    	
+        if (getUsagePrice() != null) sb.append("UsagePrice: " + getUsagePrice() + ",");    	
+        if (getFixedPrice() != null) sb.append("FixedPrice: " + getFixedPrice() + ",");    	
+        if (getProductDescription() != null) sb.append("ProductDescription: " + getProductDescription() + ",");    	
+        if (getInstanceTenancy() != null) sb.append("InstanceTenancy: " + getInstanceTenancy() + ",");    	
+        if (getCurrencyCode() != null) sb.append("CurrencyCode: " + getCurrencyCode() + ",");    	
+        if (getOfferingType() != null) sb.append("OfferingType: " + getOfferingType() + ",");    	
+        if (getRecurringCharges() != null) sb.append("RecurringCharges: " + getRecurringCharges() + ",");    	
+        if (isMarketplace() != null) sb.append("Marketplace: " + isMarketplace() + ",");    	
+        if (getPricingDetails() != null) sb.append("PricingDetails: " + getPricingDetails() );
         sb.append("}");
         return sb.toString();
     }

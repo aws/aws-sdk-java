@@ -175,9 +175,9 @@ public class DeleteRankExpressionRequest extends AmazonWebServiceRequest  implem
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getDomainName() != null) sb.append("DomainName: " + getDomainName() + ", ");
-        if (getRankName() != null) sb.append("RankName: " + getRankName() + ", ");
+        sb.append("{");    	
+        if (getDomainName() != null) sb.append("DomainName: " + getDomainName() + ",");    	
+        if (getRankName() != null) sb.append("RankName: " + getRankName() );
         sb.append("}");
         return sb.toString();
     }

@@ -38,7 +38,7 @@ public class DescribeEventSubscriptionsRequestMarshaller implements Marshaller<R
 
         Request<DescribeEventSubscriptionsRequest> request = new DefaultRequest<DescribeEventSubscriptionsRequest>(describeEventSubscriptionsRequest, "AmazonRDS");
         request.addParameter("Action", "DescribeEventSubscriptions");
-        request.addParameter("Version", "2013-01-10");
+        request.addParameter("Version", "2013-02-12");
 
         if (describeEventSubscriptionsRequest.getSubscriptionName() != null) {
             request.addParameter("SubscriptionName", StringUtils.fromString(describeEventSubscriptionsRequest.getSubscriptionName()));

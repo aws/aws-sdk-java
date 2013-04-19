@@ -179,9 +179,9 @@ public class PutMetricDataRequest extends AmazonWebServiceRequest  implements Se
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getNamespace() != null) sb.append("Namespace: " + getNamespace() + ", ");
-        if (getMetricData() != null) sb.append("MetricData: " + getMetricData() + ", ");
+        sb.append("{");    	
+        if (getNamespace() != null) sb.append("Namespace: " + getNamespace() + ",");    	
+        if (getMetricData() != null) sb.append("MetricData: " + getMetricData() );
         sb.append("}");
         return sb.toString();
     }

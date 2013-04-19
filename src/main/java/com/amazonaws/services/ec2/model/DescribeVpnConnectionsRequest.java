@@ -43,7 +43,7 @@ public class DescribeVpnConnectionsRequest extends AmazonWebServiceRequest  impl
      * A list of filters used to match properties for VPN Connections. For a
      * complete reference to the available filter keys for this operation,
      * see the <a
-     * "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      * EC2 API reference</a>.
      */
     private java.util.List<Filter> filters;
@@ -121,13 +121,13 @@ public class DescribeVpnConnectionsRequest extends AmazonWebServiceRequest  impl
      * A list of filters used to match properties for VPN Connections. For a
      * complete reference to the available filter keys for this operation,
      * see the <a
-     * "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      * EC2 API reference</a>.
      *
      * @return A list of filters used to match properties for VPN Connections. For a
      *         complete reference to the available filter keys for this operation,
      *         see the <a
-     *         "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      *         EC2 API reference</a>.
      */
     public java.util.List<Filter> getFilters() {
@@ -142,13 +142,13 @@ public class DescribeVpnConnectionsRequest extends AmazonWebServiceRequest  impl
      * A list of filters used to match properties for VPN Connections. For a
      * complete reference to the available filter keys for this operation,
      * see the <a
-     * "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      * EC2 API reference</a>.
      *
      * @param filters A list of filters used to match properties for VPN Connections. For a
      *         complete reference to the available filter keys for this operation,
      *         see the <a
-     *         "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      *         EC2 API reference</a>.
      */
     public void setFilters(java.util.Collection<Filter> filters) {
@@ -166,7 +166,7 @@ public class DescribeVpnConnectionsRequest extends AmazonWebServiceRequest  impl
      * A list of filters used to match properties for VPN Connections. For a
      * complete reference to the available filter keys for this operation,
      * see the <a
-     * "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      * EC2 API reference</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -174,7 +174,7 @@ public class DescribeVpnConnectionsRequest extends AmazonWebServiceRequest  impl
      * @param filters A list of filters used to match properties for VPN Connections. For a
      *         complete reference to the available filter keys for this operation,
      *         see the <a
-     *         "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      *         EC2 API reference</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -192,7 +192,7 @@ public class DescribeVpnConnectionsRequest extends AmazonWebServiceRequest  impl
      * A list of filters used to match properties for VPN Connections. For a
      * complete reference to the available filter keys for this operation,
      * see the <a
-     * "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      * EC2 API reference</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -200,7 +200,7 @@ public class DescribeVpnConnectionsRequest extends AmazonWebServiceRequest  impl
      * @param filters A list of filters used to match properties for VPN Connections. For a
      *         complete reference to the available filter keys for this operation,
      *         see the <a
-     *         "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      *         EC2 API reference</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -229,9 +229,9 @@ public class DescribeVpnConnectionsRequest extends AmazonWebServiceRequest  impl
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getVpnConnectionIds() != null) sb.append("VpnConnectionIds: " + getVpnConnectionIds() + ", ");
-        if (getFilters() != null) sb.append("Filters: " + getFilters() + ", ");
+        sb.append("{");    	
+        if (getVpnConnectionIds() != null) sb.append("VpnConnectionIds: " + getVpnConnectionIds() + ",");    	
+        if (getFilters() != null) sb.append("Filters: " + getFilters() );
         sb.append("}");
         return sb.toString();
     }

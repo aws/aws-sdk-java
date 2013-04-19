@@ -179,9 +179,9 @@ public class WorkflowTypeInfos  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getTypeInfos() != null) sb.append("TypeInfos: " + getTypeInfos() + ", ");
-        if (getNextPageToken() != null) sb.append("NextPageToken: " + getNextPageToken() + ", ");
+        sb.append("{");    	
+        if (getTypeInfos() != null) sb.append("TypeInfos: " + getTypeInfos() + ",");    	
+        if (getNextPageToken() != null) sb.append("NextPageToken: " + getNextPageToken() );
         sb.append("}");
         return sb.toString();
     }

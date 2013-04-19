@@ -513,15 +513,15 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest  implem
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getSpotPrice() != null) sb.append("SpotPrice: " + getSpotPrice() + ", ");
-        if (getInstanceCount() != null) sb.append("InstanceCount: " + getInstanceCount() + ", ");
-        if (getType() != null) sb.append("Type: " + getType() + ", ");
-        if (getValidFrom() != null) sb.append("ValidFrom: " + getValidFrom() + ", ");
-        if (getValidUntil() != null) sb.append("ValidUntil: " + getValidUntil() + ", ");
-        if (getLaunchGroup() != null) sb.append("LaunchGroup: " + getLaunchGroup() + ", ");
-        if (getAvailabilityZoneGroup() != null) sb.append("AvailabilityZoneGroup: " + getAvailabilityZoneGroup() + ", ");
-        if (getLaunchSpecification() != null) sb.append("LaunchSpecification: " + getLaunchSpecification() + ", ");
+        sb.append("{");    	
+        if (getSpotPrice() != null) sb.append("SpotPrice: " + getSpotPrice() + ",");    	
+        if (getInstanceCount() != null) sb.append("InstanceCount: " + getInstanceCount() + ",");    	
+        if (getType() != null) sb.append("Type: " + getType() + ",");    	
+        if (getValidFrom() != null) sb.append("ValidFrom: " + getValidFrom() + ",");    	
+        if (getValidUntil() != null) sb.append("ValidUntil: " + getValidUntil() + ",");    	
+        if (getLaunchGroup() != null) sb.append("LaunchGroup: " + getLaunchGroup() + ",");    	
+        if (getAvailabilityZoneGroup() != null) sb.append("AvailabilityZoneGroup: " + getAvailabilityZoneGroup() + ",");    	
+        if (getLaunchSpecification() != null) sb.append("LaunchSpecification: " + getLaunchSpecification() );
         sb.append("}");
         return sb.toString();
     }

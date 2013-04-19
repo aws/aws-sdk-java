@@ -372,12 +372,12 @@ public class AccessKey  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getUserName() != null) sb.append("UserName: " + getUserName() + ", ");
-        if (getAccessKeyId() != null) sb.append("AccessKeyId: " + getAccessKeyId() + ", ");
-        if (getStatus() != null) sb.append("Status: " + getStatus() + ", ");
-        if (getSecretAccessKey() != null) sb.append("SecretAccessKey: " + getSecretAccessKey() + ", ");
-        if (getCreateDate() != null) sb.append("CreateDate: " + getCreateDate() + ", ");
+        sb.append("{");    	
+        if (getUserName() != null) sb.append("UserName: " + getUserName() + ",");    	
+        if (getAccessKeyId() != null) sb.append("AccessKeyId: " + getAccessKeyId() + ",");    	
+        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");    	
+        if (getSecretAccessKey() != null) sb.append("SecretAccessKey: " + getSecretAccessKey() + ",");    	
+        if (getCreateDate() != null) sb.append("CreateDate: " + getCreateDate() );
         sb.append("}");
         return sb.toString();
     }

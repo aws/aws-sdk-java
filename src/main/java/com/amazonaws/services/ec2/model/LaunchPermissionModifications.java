@@ -173,9 +173,9 @@ public class LaunchPermissionModifications  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getAdd() != null) sb.append("Add: " + getAdd() + ", ");
-        if (getRemove() != null) sb.append("Remove: " + getRemove() + ", ");
+        sb.append("{");    	
+        if (getAdd() != null) sb.append("Add: " + getAdd() + ",");    	
+        if (getRemove() != null) sb.append("Remove: " + getRemove() );
         sb.append("}");
         return sb.toString();
     }

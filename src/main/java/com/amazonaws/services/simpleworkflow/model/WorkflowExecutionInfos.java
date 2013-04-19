@@ -172,9 +172,9 @@ public class WorkflowExecutionInfos  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getExecutionInfos() != null) sb.append("ExecutionInfos: " + getExecutionInfos() + ", ");
-        if (getNextPageToken() != null) sb.append("NextPageToken: " + getNextPageToken() + ", ");
+        sb.append("{");    	
+        if (getExecutionInfos() != null) sb.append("ExecutionInfos: " + getExecutionInfos() + ",");    	
+        if (getNextPageToken() != null) sb.append("NextPageToken: " + getNextPageToken() );
         sb.append("}");
         return sb.toString();
     }

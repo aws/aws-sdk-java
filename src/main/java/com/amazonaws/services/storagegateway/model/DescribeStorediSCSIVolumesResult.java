@@ -404,8 +404,8 @@ public class DescribeStorediSCSIVolumesResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getStorediSCSIVolumes() != null) sb.append("StorediSCSIVolumes: " + getStorediSCSIVolumes() + ", ");
+        sb.append("{");    	
+        if (getStorediSCSIVolumes() != null) sb.append("StorediSCSIVolumes: " + getStorediSCSIVolumes() );
         sb.append("}");
         return sb.toString();
     }

@@ -157,9 +157,9 @@ public class LBCookieStickinessPolicy  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getPolicyName() != null) sb.append("PolicyName: " + getPolicyName() + ", ");
-        if (getCookieExpirationPeriod() != null) sb.append("CookieExpirationPeriod: " + getCookieExpirationPeriod() + ", ");
+        sb.append("{");    	
+        if (getPolicyName() != null) sb.append("PolicyName: " + getPolicyName() + ",");    	
+        if (getCookieExpirationPeriod() != null) sb.append("CookieExpirationPeriod: " + getCookieExpirationPeriod() );
         sb.append("}");
         return sb.toString();
     }

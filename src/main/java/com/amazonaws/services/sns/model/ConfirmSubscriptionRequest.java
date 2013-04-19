@@ -231,10 +231,10 @@ public class ConfirmSubscriptionRequest extends AmazonWebServiceRequest  impleme
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getTopicArn() != null) sb.append("TopicArn: " + getTopicArn() + ", ");
-        if (getToken() != null) sb.append("Token: " + getToken() + ", ");
-        if (getAuthenticateOnUnsubscribe() != null) sb.append("AuthenticateOnUnsubscribe: " + getAuthenticateOnUnsubscribe() + ", ");
+        sb.append("{");    	
+        if (getTopicArn() != null) sb.append("TopicArn: " + getTopicArn() + ",");    	
+        if (getToken() != null) sb.append("Token: " + getToken() + ",");    	
+        if (getAuthenticateOnUnsubscribe() != null) sb.append("AuthenticateOnUnsubscribe: " + getAuthenticateOnUnsubscribe() );
         sb.append("}");
         return sb.toString();
     }

@@ -17,6 +17,7 @@ package com.amazonaws.services.dynamodb.model;
 /**
  * Attribute Action
  */
+@Deprecated
 public enum AttributeAction {
     
     ADD("ADD"),

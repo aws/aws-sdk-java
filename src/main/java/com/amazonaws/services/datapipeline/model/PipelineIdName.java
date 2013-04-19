@@ -150,9 +150,9 @@ public class PipelineIdName  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getId() != null) sb.append("Id: " + getId() + ", ");
-        if (getName() != null) sb.append("Name: " + getName() + ", ");
+        sb.append("{");    	
+        if (getId() != null) sb.append("Id: " + getId() + ",");    	
+        if (getName() != null) sb.append("Name: " + getName() );
         sb.append("}");
         return sb.toString();
     }

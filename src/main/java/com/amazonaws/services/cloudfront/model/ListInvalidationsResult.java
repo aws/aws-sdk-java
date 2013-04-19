@@ -72,8 +72,8 @@ public class ListInvalidationsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getInvalidationList() != null) sb.append("InvalidationList: " + getInvalidationList() + ", ");
+        sb.append("{");    	
+        if (getInvalidationList() != null) sb.append("InvalidationList: " + getInvalidationList() );
         sb.append("}");
         return sb.toString();
     }

@@ -67,8 +67,8 @@ public class CreateNetworkAclResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getNetworkAcl() != null) sb.append("NetworkAcl: " + getNetworkAcl() + ", ");
+        sb.append("{");    	
+        if (getNetworkAcl() != null) sb.append("NetworkAcl: " + getNetworkAcl() );
         sb.append("}");
         return sb.toString();
     }

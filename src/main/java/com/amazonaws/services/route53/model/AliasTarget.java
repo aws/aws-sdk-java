@@ -33,7 +33,7 @@ public class AliasTarget  implements Serializable  {
      * <i>Alias resource record sets only:</i> The value of the hosted zone
      * ID for the AWS resource. <p>For more information and an example, see
      * <a
-     * n.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
      * Alias Resource Record Sets</a> in the <i>Amazon Route 53 Developer
      * Guide</i>.
      * <p>
@@ -46,7 +46,7 @@ public class AliasTarget  implements Serializable  {
      * <i>Alias resource record sets only:</i> The external DNS name
      * associated with the AWS Resource. <p>For more information and an
      * example, see <a
-     * n.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
      * Alias Resource Record Sets</a> in the <i>Amazon Route 53 Developer
      * Guide</i>.
      * <p>
@@ -60,7 +60,7 @@ public class AliasTarget  implements Serializable  {
      * whether this Resource Record Set should respect the health status of
      * any health checks associated with the ALIAS target record which it is
      * linked to. <p>For more information and an example, see <a
-     * n.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
      * Alias Resource Record Sets</a> in the <i>Amazon Route 53 Developer
      * Guide</i>.
      */
@@ -80,13 +80,13 @@ public class AliasTarget  implements Serializable  {
      * @param hostedZoneId <i>Alias resource record sets only:</i> The value
      * of the hosted zone ID for the AWS resource. <p>For more information
      * and an example, see <a
-     * n.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
      * Alias Resource Record Sets</a> in the <i>Amazon Route 53 Developer
      * Guide</i>.
      * @param dNSName <i>Alias resource record sets only:</i> The external
      * DNS name associated with the AWS Resource. <p>For more information and
      * an example, see <a
-     * n.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
      * Alias Resource Record Sets</a> in the <i>Amazon Route 53 Developer
      * Guide</i>.
      */
@@ -101,7 +101,7 @@ public class AliasTarget  implements Serializable  {
      * <i>Alias resource record sets only:</i> The value of the hosted zone
      * ID for the AWS resource. <p>For more information and an example, see
      * <a
-     * n.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
      * Alias Resource Record Sets</a> in the <i>Amazon Route 53 Developer
      * Guide</i>.
      * <p>
@@ -111,7 +111,7 @@ public class AliasTarget  implements Serializable  {
      * @return <i>Alias resource record sets only:</i> The value of the hosted zone
      *         ID for the AWS resource. <p>For more information and an example, see
      *         <a
-     *         n.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
+     *         href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
      *         Alias Resource Record Sets</a> in the <i>Amazon Route 53 Developer
      *         Guide</i>.
      */
@@ -123,7 +123,7 @@ public class AliasTarget  implements Serializable  {
      * <i>Alias resource record sets only:</i> The value of the hosted zone
      * ID for the AWS resource. <p>For more information and an example, see
      * <a
-     * n.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
      * Alias Resource Record Sets</a> in the <i>Amazon Route 53 Developer
      * Guide</i>.
      * <p>
@@ -133,7 +133,7 @@ public class AliasTarget  implements Serializable  {
      * @param hostedZoneId <i>Alias resource record sets only:</i> The value of the hosted zone
      *         ID for the AWS resource. <p>For more information and an example, see
      *         <a
-     *         n.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
+     *         href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
      *         Alias Resource Record Sets</a> in the <i>Amazon Route 53 Developer
      *         Guide</i>.
      */
@@ -145,7 +145,7 @@ public class AliasTarget  implements Serializable  {
      * <i>Alias resource record sets only:</i> The value of the hosted zone
      * ID for the AWS resource. <p>For more information and an example, see
      * <a
-     * n.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
      * Alias Resource Record Sets</a> in the <i>Amazon Route 53 Developer
      * Guide</i>.
      * <p>
@@ -157,7 +157,7 @@ public class AliasTarget  implements Serializable  {
      * @param hostedZoneId <i>Alias resource record sets only:</i> The value of the hosted zone
      *         ID for the AWS resource. <p>For more information and an example, see
      *         <a
-     *         n.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
+     *         href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
      *         Alias Resource Record Sets</a> in the <i>Amazon Route 53 Developer
      *         Guide</i>.
      *
@@ -174,7 +174,7 @@ public class AliasTarget  implements Serializable  {
      * <i>Alias resource record sets only:</i> The external DNS name
      * associated with the AWS Resource. <p>For more information and an
      * example, see <a
-     * n.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
      * Alias Resource Record Sets</a> in the <i>Amazon Route 53 Developer
      * Guide</i>.
      * <p>
@@ -184,7 +184,7 @@ public class AliasTarget  implements Serializable  {
      * @return <i>Alias resource record sets only:</i> The external DNS name
      *         associated with the AWS Resource. <p>For more information and an
      *         example, see <a
-     *         n.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
+     *         href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
      *         Alias Resource Record Sets</a> in the <i>Amazon Route 53 Developer
      *         Guide</i>.
      */
@@ -196,7 +196,7 @@ public class AliasTarget  implements Serializable  {
      * <i>Alias resource record sets only:</i> The external DNS name
      * associated with the AWS Resource. <p>For more information and an
      * example, see <a
-     * n.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
      * Alias Resource Record Sets</a> in the <i>Amazon Route 53 Developer
      * Guide</i>.
      * <p>
@@ -206,7 +206,7 @@ public class AliasTarget  implements Serializable  {
      * @param dNSName <i>Alias resource record sets only:</i> The external DNS name
      *         associated with the AWS Resource. <p>For more information and an
      *         example, see <a
-     *         n.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
+     *         href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
      *         Alias Resource Record Sets</a> in the <i>Amazon Route 53 Developer
      *         Guide</i>.
      */
@@ -218,7 +218,7 @@ public class AliasTarget  implements Serializable  {
      * <i>Alias resource record sets only:</i> The external DNS name
      * associated with the AWS Resource. <p>For more information and an
      * example, see <a
-     * n.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
      * Alias Resource Record Sets</a> in the <i>Amazon Route 53 Developer
      * Guide</i>.
      * <p>
@@ -230,7 +230,7 @@ public class AliasTarget  implements Serializable  {
      * @param dNSName <i>Alias resource record sets only:</i> The external DNS name
      *         associated with the AWS Resource. <p>For more information and an
      *         example, see <a
-     *         n.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
+     *         href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
      *         Alias Resource Record Sets</a> in the <i>Amazon Route 53 Developer
      *         Guide</i>.
      *
@@ -248,7 +248,7 @@ public class AliasTarget  implements Serializable  {
      * whether this Resource Record Set should respect the health status of
      * any health checks associated with the ALIAS target record which it is
      * linked to. <p>For more information and an example, see <a
-     * n.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
      * Alias Resource Record Sets</a> in the <i>Amazon Route 53 Developer
      * Guide</i>.
      *
@@ -256,7 +256,7 @@ public class AliasTarget  implements Serializable  {
      *         whether this Resource Record Set should respect the health status of
      *         any health checks associated with the ALIAS target record which it is
      *         linked to. <p>For more information and an example, see <a
-     *         n.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
+     *         href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
      *         Alias Resource Record Sets</a> in the <i>Amazon Route 53 Developer
      *         Guide</i>.
      */
@@ -269,7 +269,7 @@ public class AliasTarget  implements Serializable  {
      * whether this Resource Record Set should respect the health status of
      * any health checks associated with the ALIAS target record which it is
      * linked to. <p>For more information and an example, see <a
-     * n.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
      * Alias Resource Record Sets</a> in the <i>Amazon Route 53 Developer
      * Guide</i>.
      *
@@ -277,7 +277,7 @@ public class AliasTarget  implements Serializable  {
      *         whether this Resource Record Set should respect the health status of
      *         any health checks associated with the ALIAS target record which it is
      *         linked to. <p>For more information and an example, see <a
-     *         n.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
+     *         href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
      *         Alias Resource Record Sets</a> in the <i>Amazon Route 53 Developer
      *         Guide</i>.
      */
@@ -290,7 +290,7 @@ public class AliasTarget  implements Serializable  {
      * whether this Resource Record Set should respect the health status of
      * any health checks associated with the ALIAS target record which it is
      * linked to. <p>For more information and an example, see <a
-     * n.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
      * Alias Resource Record Sets</a> in the <i>Amazon Route 53 Developer
      * Guide</i>.
      * <p>
@@ -300,7 +300,7 @@ public class AliasTarget  implements Serializable  {
      *         whether this Resource Record Set should respect the health status of
      *         any health checks associated with the ALIAS target record which it is
      *         linked to. <p>For more information and an example, see <a
-     *         n.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
+     *         href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
      *         Alias Resource Record Sets</a> in the <i>Amazon Route 53 Developer
      *         Guide</i>.
      *
@@ -318,7 +318,7 @@ public class AliasTarget  implements Serializable  {
      * whether this Resource Record Set should respect the health status of
      * any health checks associated with the ALIAS target record which it is
      * linked to. <p>For more information and an example, see <a
-     * n.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
+     * href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
      * Alias Resource Record Sets</a> in the <i>Amazon Route 53 Developer
      * Guide</i>.
      *
@@ -326,7 +326,7 @@ public class AliasTarget  implements Serializable  {
      *         whether this Resource Record Set should respect the health status of
      *         any health checks associated with the ALIAS target record which it is
      *         linked to. <p>For more information and an example, see <a
-     *         n.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
+     *         href="http://docs.aws.amazon.com/Route53/latest/DeveloperGuide/CreatingAliasRRSets.html">Creating
      *         Alias Resource Record Sets</a> in the <i>Amazon Route 53 Developer
      *         Guide</i>.
      */
@@ -345,10 +345,10 @@ public class AliasTarget  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getHostedZoneId() != null) sb.append("HostedZoneId: " + getHostedZoneId() + ", ");
-        if (getDNSName() != null) sb.append("DNSName: " + getDNSName() + ", ");
-        if (isEvaluateTargetHealth() != null) sb.append("EvaluateTargetHealth: " + isEvaluateTargetHealth() + ", ");
+        sb.append("{");    	
+        if (getHostedZoneId() != null) sb.append("HostedZoneId: " + getHostedZoneId() + ",");    	
+        if (getDNSName() != null) sb.append("DNSName: " + getDNSName() + ",");    	
+        if (isEvaluateTargetHealth() != null) sb.append("EvaluateTargetHealth: " + isEvaluateTargetHealth() );
         sb.append("}");
         return sb.toString();
     }

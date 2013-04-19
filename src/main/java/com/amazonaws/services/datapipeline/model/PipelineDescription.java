@@ -288,11 +288,11 @@ public class PipelineDescription  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getPipelineId() != null) sb.append("PipelineId: " + getPipelineId() + ", ");
-        if (getName() != null) sb.append("Name: " + getName() + ", ");
-        if (getFields() != null) sb.append("Fields: " + getFields() + ", ");
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ", ");
+        sb.append("{");    	
+        if (getPipelineId() != null) sb.append("PipelineId: " + getPipelineId() + ",");    	
+        if (getName() != null) sb.append("Name: " + getName() + ",");    	
+        if (getFields() != null) sb.append("Fields: " + getFields() + ",");    	
+        if (getDescription() != null) sb.append("Description: " + getDescription() );
         sb.append("}");
         return sb.toString();
     }

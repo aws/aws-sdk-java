@@ -316,13 +316,13 @@ public class ApplicationVersionDescription  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getApplicationName() != null) sb.append("ApplicationName: " + getApplicationName() + ", ");
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ", ");
-        if (getVersionLabel() != null) sb.append("VersionLabel: " + getVersionLabel() + ", ");
-        if (getSourceBundle() != null) sb.append("SourceBundle: " + getSourceBundle() + ", ");
-        if (getDateCreated() != null) sb.append("DateCreated: " + getDateCreated() + ", ");
-        if (getDateUpdated() != null) sb.append("DateUpdated: " + getDateUpdated() + ", ");
+        sb.append("{");    	
+        if (getApplicationName() != null) sb.append("ApplicationName: " + getApplicationName() + ",");    	
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");    	
+        if (getVersionLabel() != null) sb.append("VersionLabel: " + getVersionLabel() + ",");    	
+        if (getSourceBundle() != null) sb.append("SourceBundle: " + getSourceBundle() + ",");    	
+        if (getDateCreated() != null) sb.append("DateCreated: " + getDateCreated() + ",");    	
+        if (getDateUpdated() != null) sb.append("DateUpdated: " + getDateUpdated() );
         sb.append("}");
         return sb.toString();
     }

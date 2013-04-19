@@ -316,12 +316,12 @@ public class License  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getLicenseId() != null) sb.append("LicenseId: " + getLicenseId() + ", ");
-        if (getType() != null) sb.append("Type: " + getType() + ", ");
-        if (getPool() != null) sb.append("Pool: " + getPool() + ", ");
-        if (getCapacities() != null) sb.append("Capacities: " + getCapacities() + ", ");
-        if (getTags() != null) sb.append("Tags: " + getTags() + ", ");
+        sb.append("{");    	
+        if (getLicenseId() != null) sb.append("LicenseId: " + getLicenseId() + ",");    	
+        if (getType() != null) sb.append("Type: " + getType() + ",");    	
+        if (getPool() != null) sb.append("Pool: " + getPool() + ",");    	
+        if (getCapacities() != null) sb.append("Capacities: " + getCapacities() + ",");    	
+        if (getTags() != null) sb.append("Tags: " + getTags() );
         sb.append("}");
         return sb.toString();
     }

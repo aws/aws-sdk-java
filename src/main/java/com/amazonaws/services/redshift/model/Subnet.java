@@ -150,10 +150,10 @@ public class Subnet  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getSubnetIdentifier() != null) sb.append("SubnetIdentifier: " + getSubnetIdentifier() + ", ");
-        if (getSubnetAvailabilityZone() != null) sb.append("SubnetAvailabilityZone: " + getSubnetAvailabilityZone() + ", ");
-        if (getSubnetStatus() != null) sb.append("SubnetStatus: " + getSubnetStatus() + ", ");
+        sb.append("{");    	
+        if (getSubnetIdentifier() != null) sb.append("SubnetIdentifier: " + getSubnetIdentifier() + ",");    	
+        if (getSubnetAvailabilityZone() != null) sb.append("SubnetAvailabilityZone: " + getSubnetAvailabilityZone() + ",");    	
+        if (getSubnetStatus() != null) sb.append("SubnetStatus: " + getSubnetStatus() );
         sb.append("}");
         return sb.toString();
     }

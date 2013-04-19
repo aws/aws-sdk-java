@@ -202,10 +202,10 @@ public class WorkflowExecutionFailedEventAttributes  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getReason() != null) sb.append("Reason: " + getReason() + ", ");
-        if (getDetails() != null) sb.append("Details: " + getDetails() + ", ");
-        if (getDecisionTaskCompletedEventId() != null) sb.append("DecisionTaskCompletedEventId: " + getDecisionTaskCompletedEventId() + ", ");
+        sb.append("{");    	
+        if (getReason() != null) sb.append("Reason: " + getReason() + ",");    	
+        if (getDetails() != null) sb.append("Details: " + getDetails() + ",");    	
+        if (getDecisionTaskCompletedEventId() != null) sb.append("DecisionTaskCompletedEventId: " + getDecisionTaskCompletedEventId() );
         sb.append("}");
         return sb.toString();
     }

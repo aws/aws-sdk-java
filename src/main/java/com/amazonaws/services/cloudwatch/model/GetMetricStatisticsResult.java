@@ -146,9 +146,9 @@ public class GetMetricStatisticsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getLabel() != null) sb.append("Label: " + getLabel() + ", ");
-        if (getDatapoints() != null) sb.append("Datapoints: " + getDatapoints() + ", ");
+        sb.append("{");    	
+        if (getLabel() != null) sb.append("Label: " + getLabel() + ",");    	
+        if (getDatapoints() != null) sb.append("Datapoints: " + getDatapoints() );
         sb.append("}");
         return sb.toString();
     }

@@ -249,10 +249,10 @@ public class DeleteArchiveRequest extends AmazonWebServiceRequest  implements Se
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getAccountId() != null) sb.append("AccountId: " + getAccountId() + ", ");
-        if (getVaultName() != null) sb.append("VaultName: " + getVaultName() + ", ");
-        if (getArchiveId() != null) sb.append("ArchiveId: " + getArchiveId() + ", ");
+        sb.append("{");    	
+        if (getAccountId() != null) sb.append("AccountId: " + getAccountId() + ",");    	
+        if (getVaultName() != null) sb.append("VaultName: " + getVaultName() + ",");    	
+        if (getArchiveId() != null) sb.append("ArchiveId: " + getArchiveId() );
         sb.append("}");
         return sb.toString();
     }

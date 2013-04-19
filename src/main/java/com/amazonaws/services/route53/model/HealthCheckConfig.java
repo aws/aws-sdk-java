@@ -364,12 +364,12 @@ public class HealthCheckConfig  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getIPAddress() != null) sb.append("IPAddress: " + getIPAddress() + ", ");
-        if (getPort() != null) sb.append("Port: " + getPort() + ", ");
-        if (getType() != null) sb.append("Type: " + getType() + ", ");
-        if (getResourcePath() != null) sb.append("ResourcePath: " + getResourcePath() + ", ");
-        if (getFullyQualifiedDomainName() != null) sb.append("FullyQualifiedDomainName: " + getFullyQualifiedDomainName() + ", ");
+        sb.append("{");    	
+        if (getIPAddress() != null) sb.append("IPAddress: " + getIPAddress() + ",");    	
+        if (getPort() != null) sb.append("Port: " + getPort() + ",");    	
+        if (getType() != null) sb.append("Type: " + getType() + ",");    	
+        if (getResourcePath() != null) sb.append("ResourcePath: " + getResourcePath() + ",");    	
+        if (getFullyQualifiedDomainName() != null) sb.append("FullyQualifiedDomainName: " + getFullyQualifiedDomainName() );
         sb.append("}");
         return sb.toString();
     }

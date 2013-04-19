@@ -216,10 +216,10 @@ public class DescribeLaunchConfigurationsRequest extends AmazonWebServiceRequest
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getLaunchConfigurationNames() != null) sb.append("LaunchConfigurationNames: " + getLaunchConfigurationNames() + ", ");
-        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() + ", ");
-        if (getMaxRecords() != null) sb.append("MaxRecords: " + getMaxRecords() + ", ");
+        sb.append("{");    	
+        if (getLaunchConfigurationNames() != null) sb.append("LaunchConfigurationNames: " + getLaunchConfigurationNames() + ",");    	
+        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() + ",");    	
+        if (getMaxRecords() != null) sb.append("MaxRecords: " + getMaxRecords() );
         sb.append("}");
         return sb.toString();
     }

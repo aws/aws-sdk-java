@@ -116,8 +116,8 @@ public class DescribeRaidArraysResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getRaidArrays() != null) sb.append("RaidArrays: " + getRaidArrays() + ", ");
+        sb.append("{");    	
+        if (getRaidArrays() != null) sb.append("RaidArrays: " + getRaidArrays() );
         sb.append("}");
         return sb.toString();
     }

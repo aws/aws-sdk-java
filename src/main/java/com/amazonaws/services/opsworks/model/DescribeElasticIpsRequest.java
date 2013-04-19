@@ -150,9 +150,9 @@ public class DescribeElasticIpsRequest extends AmazonWebServiceRequest  implemen
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ", ");
-        if (getIps() != null) sb.append("Ips: " + getIps() + ", ");
+        sb.append("{");    	
+        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ",");    	
+        if (getIps() != null) sb.append("Ips: " + getIps() );
         sb.append("}");
         return sb.toString();
     }

@@ -236,12 +236,12 @@ public class Message  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getMessageId() != null) sb.append("MessageId: " + getMessageId() + ", ");
-        if (getReceiptHandle() != null) sb.append("ReceiptHandle: " + getReceiptHandle() + ", ");
-        if (getMD5OfBody() != null) sb.append("MD5OfBody: " + getMD5OfBody() + ", ");
-        if (getBody() != null) sb.append("Body: " + getBody() + ", ");
-        if (getAttributes() != null) sb.append("Attributes: " + getAttributes() + ", ");
+        sb.append("{");    	
+        if (getMessageId() != null) sb.append("MessageId: " + getMessageId() + ",");    	
+        if (getReceiptHandle() != null) sb.append("ReceiptHandle: " + getReceiptHandle() + ",");    	
+        if (getMD5OfBody() != null) sb.append("MD5OfBody: " + getMD5OfBody() + ",");    	
+        if (getBody() != null) sb.append("Body: " + getBody() + ",");    	
+        if (getAttributes() != null) sb.append("Attributes: " + getAttributes() );
         sb.append("}");
         return sb.toString();
     }

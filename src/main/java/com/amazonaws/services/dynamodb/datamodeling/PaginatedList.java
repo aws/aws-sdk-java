@@ -36,6 +36,7 @@ import com.amazonaws.services.dynamodb.AmazonDynamoDB;
  * @param <T>
  *            The domain object type stored in this list.
  */
+@Deprecated
 public abstract class PaginatedList<T> implements List<T> {
 
     private static final String UNMODIFIABLE_MESSAGE = "This is an unmodifiable list";

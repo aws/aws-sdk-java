@@ -107,8 +107,8 @@ public class DescribeAdjustmentTypesResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getAdjustmentTypes() != null) sb.append("AdjustmentTypes: " + getAdjustmentTypes() + ", ");
+        sb.append("{");    	
+        if (getAdjustmentTypes() != null) sb.append("AdjustmentTypes: " + getAdjustmentTypes() );
         sb.append("}");
         return sb.toString();
     }

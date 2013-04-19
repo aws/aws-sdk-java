@@ -480,13 +480,13 @@ public class ListWorkflowTypesRequest extends AmazonWebServiceRequest  implement
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getDomain() != null) sb.append("Domain: " + getDomain() + ", ");
-        if (getName() != null) sb.append("Name: " + getName() + ", ");
-        if (getRegistrationStatus() != null) sb.append("RegistrationStatus: " + getRegistrationStatus() + ", ");
-        if (getNextPageToken() != null) sb.append("NextPageToken: " + getNextPageToken() + ", ");
-        if (getMaximumPageSize() != null) sb.append("MaximumPageSize: " + getMaximumPageSize() + ", ");
-        if (isReverseOrder() != null) sb.append("ReverseOrder: " + isReverseOrder() + ", ");
+        sb.append("{");    	
+        if (getDomain() != null) sb.append("Domain: " + getDomain() + ",");    	
+        if (getName() != null) sb.append("Name: " + getName() + ",");    	
+        if (getRegistrationStatus() != null) sb.append("RegistrationStatus: " + getRegistrationStatus() + ",");    	
+        if (getNextPageToken() != null) sb.append("NextPageToken: " + getNextPageToken() + ",");    	
+        if (getMaximumPageSize() != null) sb.append("MaximumPageSize: " + getMaximumPageSize() + ",");    	
+        if (isReverseOrder() != null) sb.append("ReverseOrder: " + isReverseOrder() );
         sb.append("}");
         return sb.toString();
     }

@@ -136,9 +136,9 @@ public class GetInvalidationRequest extends AmazonWebServiceRequest  implements 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getDistributionId() != null) sb.append("DistributionId: " + getDistributionId() + ", ");
-        if (getId() != null) sb.append("Id: " + getId() + ", ");
+        sb.append("{");    	
+        if (getDistributionId() != null) sb.append("DistributionId: " + getDistributionId() + ",");    	
+        if (getId() != null) sb.append("Id: " + getId() );
         sb.append("}");
         return sb.toString();
     }

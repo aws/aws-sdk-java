@@ -186,10 +186,10 @@ public class SetSubscriptionAttributesRequest extends AmazonWebServiceRequest  i
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getSubscriptionArn() != null) sb.append("SubscriptionArn: " + getSubscriptionArn() + ", ");
-        if (getAttributeName() != null) sb.append("AttributeName: " + getAttributeName() + ", ");
-        if (getAttributeValue() != null) sb.append("AttributeValue: " + getAttributeValue() + ", ");
+        sb.append("{");    	
+        if (getSubscriptionArn() != null) sb.append("SubscriptionArn: " + getSubscriptionArn() + ",");    	
+        if (getAttributeName() != null) sb.append("AttributeName: " + getAttributeName() + ",");    	
+        if (getAttributeValue() != null) sb.append("AttributeValue: " + getAttributeValue() );
         sb.append("}");
         return sb.toString();
     }

@@ -17,6 +17,7 @@ package com.amazonaws.services.dynamodb.model;
 /**
  * Table Status
  */
+@Deprecated
 public enum TableStatus {
     
     CREATING("CREATING"),

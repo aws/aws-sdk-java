@@ -117,8 +117,8 @@ public class GetSendStatisticsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getSendDataPoints() != null) sb.append("SendDataPoints: " + getSendDataPoints() + ", ");
+        sb.append("{");    	
+        if (getSendDataPoints() != null) sb.append("SendDataPoints: " + getSendDataPoints() );
         sb.append("}");
         return sb.toString();
     }

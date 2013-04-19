@@ -702,23 +702,23 @@ public class SpotInstanceRequest  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getSpotInstanceRequestId() != null) sb.append("SpotInstanceRequestId: " + getSpotInstanceRequestId() + ", ");
-        if (getSpotPrice() != null) sb.append("SpotPrice: " + getSpotPrice() + ", ");
-        if (getType() != null) sb.append("Type: " + getType() + ", ");
-        if (getState() != null) sb.append("State: " + getState() + ", ");
-        if (getFault() != null) sb.append("Fault: " + getFault() + ", ");
-        if (getStatus() != null) sb.append("Status: " + getStatus() + ", ");
-        if (getValidFrom() != null) sb.append("ValidFrom: " + getValidFrom() + ", ");
-        if (getValidUntil() != null) sb.append("ValidUntil: " + getValidUntil() + ", ");
-        if (getLaunchGroup() != null) sb.append("LaunchGroup: " + getLaunchGroup() + ", ");
-        if (getAvailabilityZoneGroup() != null) sb.append("AvailabilityZoneGroup: " + getAvailabilityZoneGroup() + ", ");
-        if (getLaunchSpecification() != null) sb.append("LaunchSpecification: " + getLaunchSpecification() + ", ");
-        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ", ");
-        if (getCreateTime() != null) sb.append("CreateTime: " + getCreateTime() + ", ");
-        if (getProductDescription() != null) sb.append("ProductDescription: " + getProductDescription() + ", ");
-        if (getTags() != null) sb.append("Tags: " + getTags() + ", ");
-        if (getLaunchedAvailabilityZone() != null) sb.append("LaunchedAvailabilityZone: " + getLaunchedAvailabilityZone() + ", ");
+        sb.append("{");    	
+        if (getSpotInstanceRequestId() != null) sb.append("SpotInstanceRequestId: " + getSpotInstanceRequestId() + ",");    	
+        if (getSpotPrice() != null) sb.append("SpotPrice: " + getSpotPrice() + ",");    	
+        if (getType() != null) sb.append("Type: " + getType() + ",");    	
+        if (getState() != null) sb.append("State: " + getState() + ",");    	
+        if (getFault() != null) sb.append("Fault: " + getFault() + ",");    	
+        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");    	
+        if (getValidFrom() != null) sb.append("ValidFrom: " + getValidFrom() + ",");    	
+        if (getValidUntil() != null) sb.append("ValidUntil: " + getValidUntil() + ",");    	
+        if (getLaunchGroup() != null) sb.append("LaunchGroup: " + getLaunchGroup() + ",");    	
+        if (getAvailabilityZoneGroup() != null) sb.append("AvailabilityZoneGroup: " + getAvailabilityZoneGroup() + ",");    	
+        if (getLaunchSpecification() != null) sb.append("LaunchSpecification: " + getLaunchSpecification() + ",");    	
+        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ",");    	
+        if (getCreateTime() != null) sb.append("CreateTime: " + getCreateTime() + ",");    	
+        if (getProductDescription() != null) sb.append("ProductDescription: " + getProductDescription() + ",");    	
+        if (getTags() != null) sb.append("Tags: " + getTags() + ",");    	
+        if (getLaunchedAvailabilityZone() != null) sb.append("LaunchedAvailabilityZone: " + getLaunchedAvailabilityZone() );
         sb.append("}");
         return sb.toString();
     }

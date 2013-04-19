@@ -381,13 +381,13 @@ public class UploadArchiveRequest extends AmazonWebServiceRequest  implements Se
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getContentLength() != null) sb.append("ContentLength: " + getContentLength() + ", ");
-        if (getVaultName() != null) sb.append("VaultName: " + getVaultName() + ", ");
-        if (getAccountId() != null) sb.append("AccountId: " + getAccountId() + ", ");
-        if (getArchiveDescription() != null) sb.append("ArchiveDescription: " + getArchiveDescription() + ", ");
-        if (getChecksum() != null) sb.append("Checksum: " + getChecksum() + ", ");
-        if (getBody() != null) sb.append("Body: " + getBody() + ", ");
+        sb.append("{");    	
+        if (getContentLength() != null) sb.append("ContentLength: " + getContentLength() + ",");    	
+        if (getVaultName() != null) sb.append("VaultName: " + getVaultName() + ",");    	
+        if (getAccountId() != null) sb.append("AccountId: " + getAccountId() + ",");    	
+        if (getArchiveDescription() != null) sb.append("ArchiveDescription: " + getArchiveDescription() + ",");    	
+        if (getChecksum() != null) sb.append("Checksum: " + getChecksum() + ",");    	
+        if (getBody() != null) sb.append("Body: " + getBody() );
         sb.append("}");
         return sb.toString();
     }

@@ -37,6 +37,7 @@ import com.amazonaws.util.json.*;
 /**
  * Query Request Marshaller
  */
+@Deprecated
 public class QueryRequestMarshaller implements Marshaller<Request<QueryRequest>, QueryRequest> {
 
     

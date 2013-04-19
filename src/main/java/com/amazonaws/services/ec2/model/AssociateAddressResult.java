@@ -67,8 +67,8 @@ public class AssociateAddressResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getAssociationId() != null) sb.append("AssociationId: " + getAssociationId() + ", ");
+        sb.append("{");    	
+        if (getAssociationId() != null) sb.append("AssociationId: " + getAssociationId() );
         sb.append("}");
         return sb.toString();
     }

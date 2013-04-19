@@ -349,10 +349,10 @@ public class CreateHostedZoneRequest extends AmazonWebServiceRequest  implements
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getName() != null) sb.append("Name: " + getName() + ", ");
-        if (getCallerReference() != null) sb.append("CallerReference: " + getCallerReference() + ", ");
-        if (getHostedZoneConfig() != null) sb.append("HostedZoneConfig: " + getHostedZoneConfig() + ", ");
+        sb.append("{");    	
+        if (getName() != null) sb.append("Name: " + getName() + ",");    	
+        if (getCallerReference() != null) sb.append("CallerReference: " + getCallerReference() + ",");    	
+        if (getHostedZoneConfig() != null) sb.append("HostedZoneConfig: " + getHostedZoneConfig() );
         sb.append("}");
         return sb.toString();
     }

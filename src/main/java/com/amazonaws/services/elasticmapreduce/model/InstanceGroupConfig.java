@@ -468,13 +468,13 @@ public class InstanceGroupConfig  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getName() != null) sb.append("Name: " + getName() + ", ");
-        if (getMarket() != null) sb.append("Market: " + getMarket() + ", ");
-        if (getInstanceRole() != null) sb.append("InstanceRole: " + getInstanceRole() + ", ");
-        if (getBidPrice() != null) sb.append("BidPrice: " + getBidPrice() + ", ");
-        if (getInstanceType() != null) sb.append("InstanceType: " + getInstanceType() + ", ");
-        if (getInstanceCount() != null) sb.append("InstanceCount: " + getInstanceCount() + ", ");
+        sb.append("{");    	
+        if (getName() != null) sb.append("Name: " + getName() + ",");    	
+        if (getMarket() != null) sb.append("Market: " + getMarket() + ",");    	
+        if (getInstanceRole() != null) sb.append("InstanceRole: " + getInstanceRole() + ",");    	
+        if (getBidPrice() != null) sb.append("BidPrice: " + getBidPrice() + ",");    	
+        if (getInstanceType() != null) sb.append("InstanceType: " + getInstanceType() + ",");    	
+        if (getInstanceCount() != null) sb.append("InstanceCount: " + getInstanceCount() );
         sb.append("}");
         return sb.toString();
     }

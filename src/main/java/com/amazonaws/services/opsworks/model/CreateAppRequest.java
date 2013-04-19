@@ -537,16 +537,16 @@ public class CreateAppRequest extends AmazonWebServiceRequest  implements Serial
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getStackId() != null) sb.append("StackId: " + getStackId() + ", ");
-        if (getName() != null) sb.append("Name: " + getName() + ", ");
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ", ");
-        if (getType() != null) sb.append("Type: " + getType() + ", ");
-        if (getAppSource() != null) sb.append("AppSource: " + getAppSource() + ", ");
-        if (getDomains() != null) sb.append("Domains: " + getDomains() + ", ");
-        if (isEnableSsl() != null) sb.append("EnableSsl: " + isEnableSsl() + ", ");
-        if (getSslConfiguration() != null) sb.append("SslConfiguration: " + getSslConfiguration() + ", ");
-        if (getAttributes() != null) sb.append("Attributes: " + getAttributes() + ", ");
+        sb.append("{");    	
+        if (getStackId() != null) sb.append("StackId: " + getStackId() + ",");    	
+        if (getName() != null) sb.append("Name: " + getName() + ",");    	
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");    	
+        if (getType() != null) sb.append("Type: " + getType() + ",");    	
+        if (getAppSource() != null) sb.append("AppSource: " + getAppSource() + ",");    	
+        if (getDomains() != null) sb.append("Domains: " + getDomains() + ",");    	
+        if (isEnableSsl() != null) sb.append("EnableSsl: " + isEnableSsl() + ",");    	
+        if (getSslConfiguration() != null) sb.append("SslConfiguration: " + getSslConfiguration() + ",");    	
+        if (getAttributes() != null) sb.append("Attributes: " + getAttributes() );
         sb.append("}");
         return sb.toString();
     }

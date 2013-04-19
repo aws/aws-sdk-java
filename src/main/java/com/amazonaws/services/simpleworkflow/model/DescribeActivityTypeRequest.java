@@ -152,9 +152,9 @@ public class DescribeActivityTypeRequest extends AmazonWebServiceRequest  implem
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getDomain() != null) sb.append("Domain: " + getDomain() + ", ");
-        if (getActivityType() != null) sb.append("ActivityType: " + getActivityType() + ", ");
+        sb.append("{");    	
+        if (getDomain() != null) sb.append("Domain: " + getDomain() + ",");    	
+        if (getActivityType() != null) sb.append("ActivityType: " + getActivityType() );
         sb.append("}");
         return sb.toString();
     }

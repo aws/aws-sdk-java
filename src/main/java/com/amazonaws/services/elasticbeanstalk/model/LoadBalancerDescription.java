@@ -185,10 +185,10 @@ public class LoadBalancerDescription  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getLoadBalancerName() != null) sb.append("LoadBalancerName: " + getLoadBalancerName() + ", ");
-        if (getDomain() != null) sb.append("Domain: " + getDomain() + ", ");
-        if (getListeners() != null) sb.append("Listeners: " + getListeners() + ", ");
+        sb.append("{");    	
+        if (getLoadBalancerName() != null) sb.append("LoadBalancerName: " + getLoadBalancerName() + ",");    	
+        if (getDomain() != null) sb.append("Domain: " + getDomain() + ",");    	
+        if (getListeners() != null) sb.append("Listeners: " + getListeners() );
         sb.append("}");
         return sb.toString();
     }

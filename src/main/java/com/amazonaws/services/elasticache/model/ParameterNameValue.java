@@ -145,9 +145,9 @@ public class ParameterNameValue  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getParameterName() != null) sb.append("ParameterName: " + getParameterName() + ", ");
-        if (getParameterValue() != null) sb.append("ParameterValue: " + getParameterValue() + ", ");
+        sb.append("{");    	
+        if (getParameterName() != null) sb.append("ParameterName: " + getParameterName() + ",");    	
+        if (getParameterValue() != null) sb.append("ParameterValue: " + getParameterValue() );
         sb.append("}");
         return sb.toString();
     }

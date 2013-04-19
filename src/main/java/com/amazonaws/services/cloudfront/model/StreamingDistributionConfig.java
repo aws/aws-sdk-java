@@ -652,15 +652,15 @@ public class StreamingDistributionConfig  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getCallerReference() != null) sb.append("CallerReference: " + getCallerReference() + ", ");
-        if (getS3Origin() != null) sb.append("S3Origin: " + getS3Origin() + ", ");
-        if (getAliases() != null) sb.append("Aliases: " + getAliases() + ", ");
-        if (getComment() != null) sb.append("Comment: " + getComment() + ", ");
-        if (getLogging() != null) sb.append("Logging: " + getLogging() + ", ");
-        if (getTrustedSigners() != null) sb.append("TrustedSigners: " + getTrustedSigners() + ", ");
-        if (getPriceClass() != null) sb.append("PriceClass: " + getPriceClass() + ", ");
-        if (isEnabled() != null) sb.append("Enabled: " + isEnabled() + ", ");
+        sb.append("{");    	
+        if (getCallerReference() != null) sb.append("CallerReference: " + getCallerReference() + ",");    	
+        if (getS3Origin() != null) sb.append("S3Origin: " + getS3Origin() + ",");    	
+        if (getAliases() != null) sb.append("Aliases: " + getAliases() + ",");    	
+        if (getComment() != null) sb.append("Comment: " + getComment() + ",");    	
+        if (getLogging() != null) sb.append("Logging: " + getLogging() + ",");    	
+        if (getTrustedSigners() != null) sb.append("TrustedSigners: " + getTrustedSigners() + ",");    	
+        if (getPriceClass() != null) sb.append("PriceClass: " + getPriceClass() + ",");    	
+        if (isEnabled() != null) sb.append("Enabled: " + isEnabled() );
         sb.append("}");
         return sb.toString();
     }

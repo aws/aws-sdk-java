@@ -345,12 +345,12 @@ public class SendEmailRequest extends AmazonWebServiceRequest  implements Serial
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getSource() != null) sb.append("Source: " + getSource() + ", ");
-        if (getDestination() != null) sb.append("Destination: " + getDestination() + ", ");
-        if (getMessage() != null) sb.append("Message: " + getMessage() + ", ");
-        if (getReplyToAddresses() != null) sb.append("ReplyToAddresses: " + getReplyToAddresses() + ", ");
-        if (getReturnPath() != null) sb.append("ReturnPath: " + getReturnPath() + ", ");
+        sb.append("{");    	
+        if (getSource() != null) sb.append("Source: " + getSource() + ",");    	
+        if (getDestination() != null) sb.append("Destination: " + getDestination() + ",");    	
+        if (getMessage() != null) sb.append("Message: " + getMessage() + ",");    	
+        if (getReplyToAddresses() != null) sb.append("ReplyToAddresses: " + getReplyToAddresses() + ",");    	
+        if (getReturnPath() != null) sb.append("ReturnPath: " + getReturnPath() );
         sb.append("}");
         return sb.toString();
     }

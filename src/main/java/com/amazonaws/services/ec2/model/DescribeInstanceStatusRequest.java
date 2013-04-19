@@ -362,12 +362,12 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest  impl
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getInstanceIds() != null) sb.append("InstanceIds: " + getInstanceIds() + ", ");
-        if (getFilters() != null) sb.append("Filters: " + getFilters() + ", ");
-        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() + ", ");
-        if (getMaxResults() != null) sb.append("MaxResults: " + getMaxResults() + ", ");
-        if (isIncludeAllInstances() != null) sb.append("IncludeAllInstances: " + isIncludeAllInstances() + ", ");
+        sb.append("{");    	
+        if (getInstanceIds() != null) sb.append("InstanceIds: " + getInstanceIds() + ",");    	
+        if (getFilters() != null) sb.append("Filters: " + getFilters() + ",");    	
+        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() + ",");    	
+        if (getMaxResults() != null) sb.append("MaxResults: " + getMaxResults() + ",");    	
+        if (isIncludeAllInstances() != null) sb.append("IncludeAllInstances: " + isIncludeAllInstances() );
         sb.append("}");
         return sb.toString();
     }

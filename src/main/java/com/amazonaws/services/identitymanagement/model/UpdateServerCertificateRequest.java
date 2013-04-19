@@ -245,10 +245,10 @@ public class UpdateServerCertificateRequest extends AmazonWebServiceRequest  imp
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getServerCertificateName() != null) sb.append("ServerCertificateName: " + getServerCertificateName() + ", ");
-        if (getNewPath() != null) sb.append("NewPath: " + getNewPath() + ", ");
-        if (getNewServerCertificateName() != null) sb.append("NewServerCertificateName: " + getNewServerCertificateName() + ", ");
+        sb.append("{");    	
+        if (getServerCertificateName() != null) sb.append("ServerCertificateName: " + getServerCertificateName() + ",");    	
+        if (getNewPath() != null) sb.append("NewPath: " + getNewPath() + ",");    	
+        if (getNewServerCertificateName() != null) sb.append("NewServerCertificateName: " + getNewServerCertificateName() );
         sb.append("}");
         return sb.toString();
     }

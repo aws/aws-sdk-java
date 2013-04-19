@@ -409,11 +409,11 @@ public class ChangeInfo  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getId() != null) sb.append("Id: " + getId() + ", ");
-        if (getStatus() != null) sb.append("Status: " + getStatus() + ", ");
-        if (getSubmittedAt() != null) sb.append("SubmittedAt: " + getSubmittedAt() + ", ");
-        if (getComment() != null) sb.append("Comment: " + getComment() + ", ");
+        sb.append("{");    	
+        if (getId() != null) sb.append("Id: " + getId() + ",");    	
+        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");    	
+        if (getSubmittedAt() != null) sb.append("SubmittedAt: " + getSubmittedAt() + ",");    	
+        if (getComment() != null) sb.append("Comment: " + getComment() );
         sb.append("}");
         return sb.toString();
     }

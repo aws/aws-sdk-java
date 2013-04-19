@@ -20,6 +20,7 @@ import java.io.Serializable;
  * The item attributes from a response in a specific table, along with the read resources consumed on the table during the request.
  * </p>
  */
+@Deprecated
 public class BatchResponse  implements Serializable  {
 
     private java.util.List<java.util.Map<String,AttributeValue>> items;

@@ -218,10 +218,10 @@ public class PipelineObject  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getId() != null) sb.append("Id: " + getId() + ", ");
-        if (getName() != null) sb.append("Name: " + getName() + ", ");
-        if (getFields() != null) sb.append("Fields: " + getFields() + ", ");
+        sb.append("{");    	
+        if (getId() != null) sb.append("Id: " + getId() + ",");    	
+        if (getName() != null) sb.append("Name: " + getName() + ",");    	
+        if (getFields() != null) sb.append("Fields: " + getFields() );
         sb.append("}");
         return sb.toString();
     }

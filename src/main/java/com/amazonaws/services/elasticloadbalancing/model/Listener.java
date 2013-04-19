@@ -64,7 +64,7 @@ public class Listener  implements Serializable  {
     /**
      * The ARN string of the server certificate. To get the ARN of the server
      * certificate, call the AWS Identity and Access Management <a
-     * e/index.html?API_UploadServerCertificate.html">UploadServerCertificate
+     * href="http://docs.amazonwebservices.com/IAM/latest/APIReference/index.html?API_UploadServerCertificate.html">UploadServerCertificate
      * </a> API.
      */
     private String sSLCertificateId;
@@ -342,12 +342,12 @@ public class Listener  implements Serializable  {
     /**
      * The ARN string of the server certificate. To get the ARN of the server
      * certificate, call the AWS Identity and Access Management <a
-     * e/index.html?API_UploadServerCertificate.html">UploadServerCertificate
+     * href="http://docs.amazonwebservices.com/IAM/latest/APIReference/index.html?API_UploadServerCertificate.html">UploadServerCertificate
      * </a> API.
      *
      * @return The ARN string of the server certificate. To get the ARN of the server
      *         certificate, call the AWS Identity and Access Management <a
-     *         e/index.html?API_UploadServerCertificate.html">UploadServerCertificate
+     *         href="http://docs.amazonwebservices.com/IAM/latest/APIReference/index.html?API_UploadServerCertificate.html">UploadServerCertificate
      *         </a> API.
      */
     public String getSSLCertificateId() {
@@ -357,12 +357,12 @@ public class Listener  implements Serializable  {
     /**
      * The ARN string of the server certificate. To get the ARN of the server
      * certificate, call the AWS Identity and Access Management <a
-     * e/index.html?API_UploadServerCertificate.html">UploadServerCertificate
+     * href="http://docs.amazonwebservices.com/IAM/latest/APIReference/index.html?API_UploadServerCertificate.html">UploadServerCertificate
      * </a> API.
      *
      * @param sSLCertificateId The ARN string of the server certificate. To get the ARN of the server
      *         certificate, call the AWS Identity and Access Management <a
-     *         e/index.html?API_UploadServerCertificate.html">UploadServerCertificate
+     *         href="http://docs.amazonwebservices.com/IAM/latest/APIReference/index.html?API_UploadServerCertificate.html">UploadServerCertificate
      *         </a> API.
      */
     public void setSSLCertificateId(String sSLCertificateId) {
@@ -372,14 +372,14 @@ public class Listener  implements Serializable  {
     /**
      * The ARN string of the server certificate. To get the ARN of the server
      * certificate, call the AWS Identity and Access Management <a
-     * e/index.html?API_UploadServerCertificate.html">UploadServerCertificate
+     * href="http://docs.amazonwebservices.com/IAM/latest/APIReference/index.html?API_UploadServerCertificate.html">UploadServerCertificate
      * </a> API.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param sSLCertificateId The ARN string of the server certificate. To get the ARN of the server
      *         certificate, call the AWS Identity and Access Management <a
-     *         e/index.html?API_UploadServerCertificate.html">UploadServerCertificate
+     *         href="http://docs.amazonwebservices.com/IAM/latest/APIReference/index.html?API_UploadServerCertificate.html">UploadServerCertificate
      *         </a> API.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -402,12 +402,12 @@ public class Listener  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getProtocol() != null) sb.append("Protocol: " + getProtocol() + ", ");
-        if (getLoadBalancerPort() != null) sb.append("LoadBalancerPort: " + getLoadBalancerPort() + ", ");
-        if (getInstanceProtocol() != null) sb.append("InstanceProtocol: " + getInstanceProtocol() + ", ");
-        if (getInstancePort() != null) sb.append("InstancePort: " + getInstancePort() + ", ");
-        if (getSSLCertificateId() != null) sb.append("SSLCertificateId: " + getSSLCertificateId() + ", ");
+        sb.append("{");    	
+        if (getProtocol() != null) sb.append("Protocol: " + getProtocol() + ",");    	
+        if (getLoadBalancerPort() != null) sb.append("LoadBalancerPort: " + getLoadBalancerPort() + ",");    	
+        if (getInstanceProtocol() != null) sb.append("InstanceProtocol: " + getInstanceProtocol() + ",");    	
+        if (getInstancePort() != null) sb.append("InstancePort: " + getInstancePort() + ",");    	
+        if (getSSLCertificateId() != null) sb.append("SSLCertificateId: " + getSSLCertificateId() );
         sb.append("}");
         return sb.toString();
     }

@@ -144,9 +144,9 @@ public class CreatePresetResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getPreset() != null) sb.append("Preset: " + getPreset() + ", ");
-        if (getWarning() != null) sb.append("Warning: " + getWarning() + ", ");
+        sb.append("{");    	
+        if (getPreset() != null) sb.append("Preset: " + getPreset() + ",");    	
+        if (getWarning() != null) sb.append("Warning: " + getWarning() );
         sb.append("}");
         return sb.toString();
     }

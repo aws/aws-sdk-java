@@ -18,6 +18,7 @@ import java.io.Serializable;
 /**
  * Keys And Attributes
  */
+@Deprecated
 public class KeysAndAttributes  implements Serializable  {
 
     private java.util.List<Key> keys;

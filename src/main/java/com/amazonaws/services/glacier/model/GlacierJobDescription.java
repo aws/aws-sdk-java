@@ -846,23 +846,23 @@ public class GlacierJobDescription  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getJobId() != null) sb.append("JobId: " + getJobId() + ", ");
-        if (getJobDescription() != null) sb.append("JobDescription: " + getJobDescription() + ", ");
-        if (getAction() != null) sb.append("Action: " + getAction() + ", ");
-        if (getArchiveId() != null) sb.append("ArchiveId: " + getArchiveId() + ", ");
-        if (getVaultARN() != null) sb.append("VaultARN: " + getVaultARN() + ", ");
-        if (getCreationDate() != null) sb.append("CreationDate: " + getCreationDate() + ", ");
-        if (isCompleted() != null) sb.append("Completed: " + isCompleted() + ", ");
-        if (getStatusCode() != null) sb.append("StatusCode: " + getStatusCode() + ", ");
-        if (getStatusMessage() != null) sb.append("StatusMessage: " + getStatusMessage() + ", ");
-        if (getArchiveSizeInBytes() != null) sb.append("ArchiveSizeInBytes: " + getArchiveSizeInBytes() + ", ");
-        if (getInventorySizeInBytes() != null) sb.append("InventorySizeInBytes: " + getInventorySizeInBytes() + ", ");
-        if (getSNSTopic() != null) sb.append("SNSTopic: " + getSNSTopic() + ", ");
-        if (getCompletionDate() != null) sb.append("CompletionDate: " + getCompletionDate() + ", ");
-        if (getSHA256TreeHash() != null) sb.append("SHA256TreeHash: " + getSHA256TreeHash() + ", ");
-        if (getArchiveSHA256TreeHash() != null) sb.append("ArchiveSHA256TreeHash: " + getArchiveSHA256TreeHash() + ", ");
-        if (getRetrievalByteRange() != null) sb.append("RetrievalByteRange: " + getRetrievalByteRange() + ", ");
+        sb.append("{");    	
+        if (getJobId() != null) sb.append("JobId: " + getJobId() + ",");    	
+        if (getJobDescription() != null) sb.append("JobDescription: " + getJobDescription() + ",");    	
+        if (getAction() != null) sb.append("Action: " + getAction() + ",");    	
+        if (getArchiveId() != null) sb.append("ArchiveId: " + getArchiveId() + ",");    	
+        if (getVaultARN() != null) sb.append("VaultARN: " + getVaultARN() + ",");    	
+        if (getCreationDate() != null) sb.append("CreationDate: " + getCreationDate() + ",");    	
+        if (isCompleted() != null) sb.append("Completed: " + isCompleted() + ",");    	
+        if (getStatusCode() != null) sb.append("StatusCode: " + getStatusCode() + ",");    	
+        if (getStatusMessage() != null) sb.append("StatusMessage: " + getStatusMessage() + ",");    	
+        if (getArchiveSizeInBytes() != null) sb.append("ArchiveSizeInBytes: " + getArchiveSizeInBytes() + ",");    	
+        if (getInventorySizeInBytes() != null) sb.append("InventorySizeInBytes: " + getInventorySizeInBytes() + ",");    	
+        if (getSNSTopic() != null) sb.append("SNSTopic: " + getSNSTopic() + ",");    	
+        if (getCompletionDate() != null) sb.append("CompletionDate: " + getCompletionDate() + ",");    	
+        if (getSHA256TreeHash() != null) sb.append("SHA256TreeHash: " + getSHA256TreeHash() + ",");    	
+        if (getArchiveSHA256TreeHash() != null) sb.append("ArchiveSHA256TreeHash: " + getArchiveSHA256TreeHash() + ",");    	
+        if (getRetrievalByteRange() != null) sb.append("RetrievalByteRange: " + getRetrievalByteRange() );
         sb.append("}");
         return sb.toString();
     }

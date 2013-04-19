@@ -153,9 +153,9 @@ public class DescribeInstanceStatusResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getInstanceStatuses() != null) sb.append("InstanceStatuses: " + getInstanceStatuses() + ", ");
-        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() + ", ");
+        sb.append("{");    	
+        if (getInstanceStatuses() != null) sb.append("InstanceStatuses: " + getInstanceStatuses() + ",");    	
+        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() );
         sb.append("}");
         return sb.toString();
     }

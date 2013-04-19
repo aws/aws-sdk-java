@@ -72,8 +72,8 @@ public class DefineRankExpressionResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getRankExpression() != null) sb.append("RankExpression: " + getRankExpression() + ", ");
+        sb.append("{");    	
+        if (getRankExpression() != null) sb.append("RankExpression: " + getRankExpression() );
         sb.append("}");
         return sb.toString();
     }

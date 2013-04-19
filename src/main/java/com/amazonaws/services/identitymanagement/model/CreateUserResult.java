@@ -72,8 +72,8 @@ public class CreateUserResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getUser() != null) sb.append("User: " + getUser() + ", ");
+        sb.append("{");    	
+        if (getUser() != null) sb.append("User: " + getUser() );
         sb.append("}");
         return sb.toString();
     }

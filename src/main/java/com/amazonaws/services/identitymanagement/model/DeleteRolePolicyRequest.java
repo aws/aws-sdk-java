@@ -147,9 +147,9 @@ public class DeleteRolePolicyRequest extends AmazonWebServiceRequest  implements
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getRoleName() != null) sb.append("RoleName: " + getRoleName() + ", ");
-        if (getPolicyName() != null) sb.append("PolicyName: " + getPolicyName() + ", ");
+        sb.append("{");    	
+        if (getRoleName() != null) sb.append("RoleName: " + getRoleName() + ",");    	
+        if (getPolicyName() != null) sb.append("PolicyName: " + getPolicyName() );
         sb.append("}");
         return sb.toString();
     }

@@ -577,17 +577,17 @@ public class ActivityTaskScheduledEventAttributes  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getActivityType() != null) sb.append("ActivityType: " + getActivityType() + ", ");
-        if (getActivityId() != null) sb.append("ActivityId: " + getActivityId() + ", ");
-        if (getInput() != null) sb.append("Input: " + getInput() + ", ");
-        if (getControl() != null) sb.append("Control: " + getControl() + ", ");
-        if (getScheduleToStartTimeout() != null) sb.append("ScheduleToStartTimeout: " + getScheduleToStartTimeout() + ", ");
-        if (getScheduleToCloseTimeout() != null) sb.append("ScheduleToCloseTimeout: " + getScheduleToCloseTimeout() + ", ");
-        if (getStartToCloseTimeout() != null) sb.append("StartToCloseTimeout: " + getStartToCloseTimeout() + ", ");
-        if (getTaskList() != null) sb.append("TaskList: " + getTaskList() + ", ");
-        if (getDecisionTaskCompletedEventId() != null) sb.append("DecisionTaskCompletedEventId: " + getDecisionTaskCompletedEventId() + ", ");
-        if (getHeartbeatTimeout() != null) sb.append("HeartbeatTimeout: " + getHeartbeatTimeout() + ", ");
+        sb.append("{");    	
+        if (getActivityType() != null) sb.append("ActivityType: " + getActivityType() + ",");    	
+        if (getActivityId() != null) sb.append("ActivityId: " + getActivityId() + ",");    	
+        if (getInput() != null) sb.append("Input: " + getInput() + ",");    	
+        if (getControl() != null) sb.append("Control: " + getControl() + ",");    	
+        if (getScheduleToStartTimeout() != null) sb.append("ScheduleToStartTimeout: " + getScheduleToStartTimeout() + ",");    	
+        if (getScheduleToCloseTimeout() != null) sb.append("ScheduleToCloseTimeout: " + getScheduleToCloseTimeout() + ",");    	
+        if (getStartToCloseTimeout() != null) sb.append("StartToCloseTimeout: " + getStartToCloseTimeout() + ",");    	
+        if (getTaskList() != null) sb.append("TaskList: " + getTaskList() + ",");    	
+        if (getDecisionTaskCompletedEventId() != null) sb.append("DecisionTaskCompletedEventId: " + getDecisionTaskCompletedEventId() + ",");    	
+        if (getHeartbeatTimeout() != null) sb.append("HeartbeatTimeout: " + getHeartbeatTimeout() );
         sb.append("}");
         return sb.toString();
     }

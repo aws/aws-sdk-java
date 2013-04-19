@@ -256,12 +256,12 @@ public class PolicyAttributeTypeDescription  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getAttributeName() != null) sb.append("AttributeName: " + getAttributeName() + ", ");
-        if (getAttributeType() != null) sb.append("AttributeType: " + getAttributeType() + ", ");
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ", ");
-        if (getDefaultValue() != null) sb.append("DefaultValue: " + getDefaultValue() + ", ");
-        if (getCardinality() != null) sb.append("Cardinality: " + getCardinality() + ", ");
+        sb.append("{");    	
+        if (getAttributeName() != null) sb.append("AttributeName: " + getAttributeName() + ",");    	
+        if (getAttributeType() != null) sb.append("AttributeType: " + getAttributeType() + ",");    	
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");    	
+        if (getDefaultValue() != null) sb.append("DefaultValue: " + getDefaultValue() + ",");    	
+        if (getCardinality() != null) sb.append("Cardinality: " + getCardinality() );
         sb.append("}");
         return sb.toString();
     }

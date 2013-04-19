@@ -219,9 +219,9 @@ public class SuspendProcessesRequest extends AmazonWebServiceRequest  implements
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getAutoScalingGroupName() != null) sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ", ");
-        if (getScalingProcesses() != null) sb.append("ScalingProcesses: " + getScalingProcesses() + ", ");
+        sb.append("{");    	
+        if (getAutoScalingGroupName() != null) sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ",");    	
+        if (getScalingProcesses() != null) sb.append("ScalingProcesses: " + getScalingProcesses() );
         sb.append("}");
         return sb.toString();
     }

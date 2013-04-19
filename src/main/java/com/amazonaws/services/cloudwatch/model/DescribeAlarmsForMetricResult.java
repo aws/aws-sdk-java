@@ -107,8 +107,8 @@ public class DescribeAlarmsForMetricResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getMetricAlarms() != null) sb.append("MetricAlarms: " + getMetricAlarms() + ", ");
+        sb.append("{");    	
+        if (getMetricAlarms() != null) sb.append("MetricAlarms: " + getMetricAlarms() );
         sb.append("}");
         return sb.toString();
     }

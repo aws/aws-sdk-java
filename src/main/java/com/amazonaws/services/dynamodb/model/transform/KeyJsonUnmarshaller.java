@@ -28,6 +28,7 @@ import static org.codehaus.jackson.JsonToken.*;
 /**
  * Key JSON Unmarshaller
  */
+@Deprecated
 public class KeyJsonUnmarshaller implements Unmarshaller<Key, JsonUnmarshallerContext> {
 
     

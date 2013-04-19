@@ -21,6 +21,7 @@ import java.io.Serializable;
  * .
  * </p>
  */
+@Deprecated
 public class AttributeValueUpdate  implements Serializable  {
 
     /**

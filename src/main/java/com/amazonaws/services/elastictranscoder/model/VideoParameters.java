@@ -1131,15 +1131,15 @@ public class VideoParameters  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getCodec() != null) sb.append("Codec: " + getCodec() + ", ");
-        if (getCodecOptions() != null) sb.append("CodecOptions: " + getCodecOptions() + ", ");
-        if (getKeyframesMaxDist() != null) sb.append("KeyframesMaxDist: " + getKeyframesMaxDist() + ", ");
-        if (getFixedGOP() != null) sb.append("FixedGOP: " + getFixedGOP() + ", ");
-        if (getBitRate() != null) sb.append("BitRate: " + getBitRate() + ", ");
-        if (getFrameRate() != null) sb.append("FrameRate: " + getFrameRate() + ", ");
-        if (getResolution() != null) sb.append("Resolution: " + getResolution() + ", ");
-        if (getAspectRatio() != null) sb.append("AspectRatio: " + getAspectRatio() + ", ");
+        sb.append("{");    	
+        if (getCodec() != null) sb.append("Codec: " + getCodec() + ",");    	
+        if (getCodecOptions() != null) sb.append("CodecOptions: " + getCodecOptions() + ",");    	
+        if (getKeyframesMaxDist() != null) sb.append("KeyframesMaxDist: " + getKeyframesMaxDist() + ",");    	
+        if (getFixedGOP() != null) sb.append("FixedGOP: " + getFixedGOP() + ",");    	
+        if (getBitRate() != null) sb.append("BitRate: " + getBitRate() + ",");    	
+        if (getFrameRate() != null) sb.append("FrameRate: " + getFrameRate() + ",");    	
+        if (getResolution() != null) sb.append("Resolution: " + getResolution() + ",");    	
+        if (getAspectRatio() != null) sb.append("AspectRatio: " + getAspectRatio() );
         sb.append("}");
         return sb.toString();
     }

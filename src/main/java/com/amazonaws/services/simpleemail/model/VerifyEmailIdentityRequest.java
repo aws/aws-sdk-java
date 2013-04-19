@@ -76,8 +76,8 @@ public class VerifyEmailIdentityRequest extends AmazonWebServiceRequest  impleme
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getEmailAddress() != null) sb.append("EmailAddress: " + getEmailAddress() + ", ");
+        sb.append("{");    	
+        if (getEmailAddress() != null) sb.append("EmailAddress: " + getEmailAddress() );
         sb.append("}");
         return sb.toString();
     }

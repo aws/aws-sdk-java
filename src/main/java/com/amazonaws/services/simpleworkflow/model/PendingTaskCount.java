@@ -150,9 +150,9 @@ public class PendingTaskCount  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getCount() != null) sb.append("Count: " + getCount() + ", ");
-        if (isTruncated() != null) sb.append("Truncated: " + isTruncated() + ", ");
+        sb.append("{");    	
+        if (getCount() != null) sb.append("Count: " + getCount() + ",");    	
+        if (isTruncated() != null) sb.append("Truncated: " + isTruncated() );
         sb.append("}");
         return sb.toString();
     }

@@ -86,6 +86,18 @@ public class CopyPartResult implements ServerSideEncryptionResult {
     public void setETag(String etag) {
         this.etag = etag;
     }
+    
+    /**
+     * Returns an identifier which identifies the copy part by its part number
+     * and the entity tag computed from the part's data. This information is
+     * later needed to complete a multipart copy.
+     * 
+     * @return An identifier which identifies the copy part by its part number
+     *         and the entity tag computed from the part's data.
+     */
+    public PartETag getPartETag() {
+        return new PartETag(partNumber, etag);
+    }
 
     /**
      * Gets the date the newly copied part was last modified.

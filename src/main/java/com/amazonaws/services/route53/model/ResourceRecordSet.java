@@ -981,17 +981,17 @@ public class ResourceRecordSet  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getName() != null) sb.append("Name: " + getName() + ", ");
-        if (getType() != null) sb.append("Type: " + getType() + ", ");
-        if (getSetIdentifier() != null) sb.append("SetIdentifier: " + getSetIdentifier() + ", ");
-        if (getWeight() != null) sb.append("Weight: " + getWeight() + ", ");
-        if (getRegion() != null) sb.append("Region: " + getRegion() + ", ");
-        if (getFailover() != null) sb.append("Failover: " + getFailover() + ", ");
-        if (getTTL() != null) sb.append("TTL: " + getTTL() + ", ");
-        if (getResourceRecords() != null) sb.append("ResourceRecords: " + getResourceRecords() + ", ");
-        if (getAliasTarget() != null) sb.append("AliasTarget: " + getAliasTarget() + ", ");
-        if (getHealthCheckId() != null) sb.append("HealthCheckId: " + getHealthCheckId() + ", ");
+        sb.append("{");    	
+        if (getName() != null) sb.append("Name: " + getName() + ",");    	
+        if (getType() != null) sb.append("Type: " + getType() + ",");    	
+        if (getSetIdentifier() != null) sb.append("SetIdentifier: " + getSetIdentifier() + ",");    	
+        if (getWeight() != null) sb.append("Weight: " + getWeight() + ",");    	
+        if (getRegion() != null) sb.append("Region: " + getRegion() + ",");    	
+        if (getFailover() != null) sb.append("Failover: " + getFailover() + ",");    	
+        if (getTTL() != null) sb.append("TTL: " + getTTL() + ",");    	
+        if (getResourceRecords() != null) sb.append("ResourceRecords: " + getResourceRecords() + ",");    	
+        if (getAliasTarget() != null) sb.append("AliasTarget: " + getAliasTarget() + ",");    	
+        if (getHealthCheckId() != null) sb.append("HealthCheckId: " + getHealthCheckId() );
         sb.append("}");
         return sb.toString();
     }

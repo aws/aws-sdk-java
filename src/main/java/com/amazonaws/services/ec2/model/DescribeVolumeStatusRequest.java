@@ -251,11 +251,11 @@ public class DescribeVolumeStatusRequest extends AmazonWebServiceRequest  implem
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getVolumeIds() != null) sb.append("VolumeIds: " + getVolumeIds() + ", ");
-        if (getFilters() != null) sb.append("Filters: " + getFilters() + ", ");
-        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() + ", ");
-        if (getMaxResults() != null) sb.append("MaxResults: " + getMaxResults() + ", ");
+        sb.append("{");    	
+        if (getVolumeIds() != null) sb.append("VolumeIds: " + getVolumeIds() + ",");    	
+        if (getFilters() != null) sb.append("Filters: " + getFilters() + ",");    	
+        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() + ",");    	
+        if (getMaxResults() != null) sb.append("MaxResults: " + getMaxResults() );
         sb.append("}");
         return sb.toString();
     }

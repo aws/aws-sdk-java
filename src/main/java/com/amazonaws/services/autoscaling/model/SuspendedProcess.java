@@ -143,9 +143,9 @@ public class SuspendedProcess  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getProcessName() != null) sb.append("ProcessName: " + getProcessName() + ", ");
-        if (getSuspensionReason() != null) sb.append("SuspensionReason: " + getSuspensionReason() + ", ");
+        sb.append("{");    	
+        if (getProcessName() != null) sb.append("ProcessName: " + getProcessName() + ",");    	
+        if (getSuspensionReason() != null) sb.append("SuspensionReason: " + getSuspensionReason() );
         sb.append("}");
         return sb.toString();
     }

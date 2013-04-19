@@ -107,8 +107,8 @@ public class DescribeApplicationsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getApplications() != null) sb.append("Applications: " + getApplications() + ", ");
+        sb.append("{");    	
+        if (getApplications() != null) sb.append("Applications: " + getApplications() );
         sb.append("}");
         return sb.toString();
     }

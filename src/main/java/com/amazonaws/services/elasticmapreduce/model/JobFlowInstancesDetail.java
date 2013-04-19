@@ -835,20 +835,20 @@ public class JobFlowInstancesDetail  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getMasterInstanceType() != null) sb.append("MasterInstanceType: " + getMasterInstanceType() + ", ");
-        if (getMasterPublicDnsName() != null) sb.append("MasterPublicDnsName: " + getMasterPublicDnsName() + ", ");
-        if (getMasterInstanceId() != null) sb.append("MasterInstanceId: " + getMasterInstanceId() + ", ");
-        if (getSlaveInstanceType() != null) sb.append("SlaveInstanceType: " + getSlaveInstanceType() + ", ");
-        if (getInstanceCount() != null) sb.append("InstanceCount: " + getInstanceCount() + ", ");
-        if (getInstanceGroups() != null) sb.append("InstanceGroups: " + getInstanceGroups() + ", ");
-        if (getNormalizedInstanceHours() != null) sb.append("NormalizedInstanceHours: " + getNormalizedInstanceHours() + ", ");
-        if (getEc2KeyName() != null) sb.append("Ec2KeyName: " + getEc2KeyName() + ", ");
-        if (getEc2SubnetId() != null) sb.append("Ec2SubnetId: " + getEc2SubnetId() + ", ");
-        if (getPlacement() != null) sb.append("Placement: " + getPlacement() + ", ");
-        if (isKeepJobFlowAliveWhenNoSteps() != null) sb.append("KeepJobFlowAliveWhenNoSteps: " + isKeepJobFlowAliveWhenNoSteps() + ", ");
-        if (isTerminationProtected() != null) sb.append("TerminationProtected: " + isTerminationProtected() + ", ");
-        if (getHadoopVersion() != null) sb.append("HadoopVersion: " + getHadoopVersion() + ", ");
+        sb.append("{");    	
+        if (getMasterInstanceType() != null) sb.append("MasterInstanceType: " + getMasterInstanceType() + ",");    	
+        if (getMasterPublicDnsName() != null) sb.append("MasterPublicDnsName: " + getMasterPublicDnsName() + ",");    	
+        if (getMasterInstanceId() != null) sb.append("MasterInstanceId: " + getMasterInstanceId() + ",");    	
+        if (getSlaveInstanceType() != null) sb.append("SlaveInstanceType: " + getSlaveInstanceType() + ",");    	
+        if (getInstanceCount() != null) sb.append("InstanceCount: " + getInstanceCount() + ",");    	
+        if (getInstanceGroups() != null) sb.append("InstanceGroups: " + getInstanceGroups() + ",");    	
+        if (getNormalizedInstanceHours() != null) sb.append("NormalizedInstanceHours: " + getNormalizedInstanceHours() + ",");    	
+        if (getEc2KeyName() != null) sb.append("Ec2KeyName: " + getEc2KeyName() + ",");    	
+        if (getEc2SubnetId() != null) sb.append("Ec2SubnetId: " + getEc2SubnetId() + ",");    	
+        if (getPlacement() != null) sb.append("Placement: " + getPlacement() + ",");    	
+        if (isKeepJobFlowAliveWhenNoSteps() != null) sb.append("KeepJobFlowAliveWhenNoSteps: " + isKeepJobFlowAliveWhenNoSteps() + ",");    	
+        if (isTerminationProtected() != null) sb.append("TerminationProtected: " + isTerminationProtected() + ",");    	
+        if (getHadoopVersion() != null) sb.append("HadoopVersion: " + getHadoopVersion() );
         sb.append("}");
         return sb.toString();
     }

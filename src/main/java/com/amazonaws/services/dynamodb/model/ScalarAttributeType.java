@@ -17,6 +17,7 @@ package com.amazonaws.services.dynamodb.model;
 /**
  * Scalar Attribute Type
  */
+@Deprecated
 public enum ScalarAttributeType {
     
     S("S"),

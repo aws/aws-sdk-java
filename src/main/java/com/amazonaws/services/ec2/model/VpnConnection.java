@@ -575,17 +575,17 @@ public class VpnConnection  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getVpnConnectionId() != null) sb.append("VpnConnectionId: " + getVpnConnectionId() + ", ");
-        if (getState() != null) sb.append("State: " + getState() + ", ");
-        if (getCustomerGatewayConfiguration() != null) sb.append("CustomerGatewayConfiguration: " + getCustomerGatewayConfiguration() + ", ");
-        if (getType() != null) sb.append("Type: " + getType() + ", ");
-        if (getCustomerGatewayId() != null) sb.append("CustomerGatewayId: " + getCustomerGatewayId() + ", ");
-        if (getVpnGatewayId() != null) sb.append("VpnGatewayId: " + getVpnGatewayId() + ", ");
-        if (getTags() != null) sb.append("Tags: " + getTags() + ", ");
-        if (getVgwTelemetry() != null) sb.append("VgwTelemetry: " + getVgwTelemetry() + ", ");
-        if (getOptions() != null) sb.append("Options: " + getOptions() + ", ");
-        if (getRoutes() != null) sb.append("Routes: " + getRoutes() + ", ");
+        sb.append("{");    	
+        if (getVpnConnectionId() != null) sb.append("VpnConnectionId: " + getVpnConnectionId() + ",");    	
+        if (getState() != null) sb.append("State: " + getState() + ",");    	
+        if (getCustomerGatewayConfiguration() != null) sb.append("CustomerGatewayConfiguration: " + getCustomerGatewayConfiguration() + ",");    	
+        if (getType() != null) sb.append("Type: " + getType() + ",");    	
+        if (getCustomerGatewayId() != null) sb.append("CustomerGatewayId: " + getCustomerGatewayId() + ",");    	
+        if (getVpnGatewayId() != null) sb.append("VpnGatewayId: " + getVpnGatewayId() + ",");    	
+        if (getTags() != null) sb.append("Tags: " + getTags() + ",");    	
+        if (getVgwTelemetry() != null) sb.append("VgwTelemetry: " + getVgwTelemetry() + ",");    	
+        if (getOptions() != null) sb.append("Options: " + getOptions() + ",");    	
+        if (getRoutes() != null) sb.append("Routes: " + getRoutes() );
         sb.append("}");
         return sb.toString();
     }

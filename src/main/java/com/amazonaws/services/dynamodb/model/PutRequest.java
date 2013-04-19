@@ -20,6 +20,7 @@ import java.io.Serializable;
  * A container for a Put BatchWrite request
  * </p>
  */
+@Deprecated
 public class PutRequest  implements Serializable  {
 
     /**

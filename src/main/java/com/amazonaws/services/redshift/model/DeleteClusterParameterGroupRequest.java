@@ -93,8 +93,8 @@ public class DeleteClusterParameterGroupRequest extends AmazonWebServiceRequest 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getParameterGroupName() != null) sb.append("ParameterGroupName: " + getParameterGroupName() + ", ");
+        sb.append("{");    	
+        if (getParameterGroupName() != null) sb.append("ParameterGroupName: " + getParameterGroupName() );
         sb.append("}");
         return sb.toString();
     }

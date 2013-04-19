@@ -196,11 +196,11 @@ public class ConnectionCost  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getName() != null) sb.append("Name: " + getName() + ", ");
-        if (getUnit() != null) sb.append("Unit: " + getUnit() + ", ");
-        if (getCurrencyCode() != null) sb.append("CurrencyCode: " + getCurrencyCode() + ", ");
-        if (getAmount() != null) sb.append("Amount: " + getAmount() + ", ");
+        sb.append("{");    	
+        if (getName() != null) sb.append("Name: " + getName() + ",");    	
+        if (getUnit() != null) sb.append("Unit: " + getUnit() + ",");    	
+        if (getCurrencyCode() != null) sb.append("CurrencyCode: " + getCurrencyCode() + ",");    	
+        if (getAmount() != null) sb.append("Amount: " + getAmount() );
         sb.append("}");
         return sb.toString();
     }

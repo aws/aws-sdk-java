@@ -279,10 +279,10 @@ public class Policies  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getAppCookieStickinessPolicies() != null) sb.append("AppCookieStickinessPolicies: " + getAppCookieStickinessPolicies() + ", ");
-        if (getLBCookieStickinessPolicies() != null) sb.append("LBCookieStickinessPolicies: " + getLBCookieStickinessPolicies() + ", ");
-        if (getOtherPolicies() != null) sb.append("OtherPolicies: " + getOtherPolicies() + ", ");
+        sb.append("{");    	
+        if (getAppCookieStickinessPolicies() != null) sb.append("AppCookieStickinessPolicies: " + getAppCookieStickinessPolicies() + ",");    	
+        if (getLBCookieStickinessPolicies() != null) sb.append("LBCookieStickinessPolicies: " + getLBCookieStickinessPolicies() + ",");    	
+        if (getOtherPolicies() != null) sb.append("OtherPolicies: " + getOtherPolicies() );
         sb.append("}");
         return sb.toString();
     }

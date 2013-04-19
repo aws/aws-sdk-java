@@ -146,9 +146,9 @@ public class DescribeReservedNodesResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ", ");
-        if (getReservedNodes() != null) sb.append("ReservedNodes: " + getReservedNodes() + ", ");
+        sb.append("{");    	
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");    	
+        if (getReservedNodes() != null) sb.append("ReservedNodes: " + getReservedNodes() );
         sb.append("}");
         return sb.toString();
     }

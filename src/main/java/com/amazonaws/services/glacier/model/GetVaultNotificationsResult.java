@@ -72,8 +72,8 @@ public class GetVaultNotificationsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getVaultNotificationConfig() != null) sb.append("VaultNotificationConfig: " + getVaultNotificationConfig() + ", ");
+        sb.append("{");    	
+        if (getVaultNotificationConfig() != null) sb.append("VaultNotificationConfig: " + getVaultNotificationConfig() );
         sb.append("}");
         return sb.toString();
     }

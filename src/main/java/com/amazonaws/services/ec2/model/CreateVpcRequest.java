@@ -154,9 +154,9 @@ public class CreateVpcRequest extends AmazonWebServiceRequest  implements Serial
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getCidrBlock() != null) sb.append("CidrBlock: " + getCidrBlock() + ", ");
-        if (getInstanceTenancy() != null) sb.append("InstanceTenancy: " + getInstanceTenancy() + ", ");
+        sb.append("{");    	
+        if (getCidrBlock() != null) sb.append("CidrBlock: " + getCidrBlock() + ",");    	
+        if (getInstanceTenancy() != null) sb.append("InstanceTenancy: " + getInstanceTenancy() );
         sb.append("}");
         return sb.toString();
     }

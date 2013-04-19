@@ -72,8 +72,8 @@ public class CreateAccessKeyResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getAccessKey() != null) sb.append("AccessKey: " + getAccessKey() + ", ");
+        sb.append("{");    	
+        if (getAccessKey() != null) sb.append("AccessKey: " + getAccessKey() );
         sb.append("}");
         return sb.toString();
     }

@@ -19,6 +19,7 @@ package com.amazonaws.services.dynamodb.datamodeling;
  * Implementors provide methods to transform instances of a class to and from
  * Strings.
  */
+@Deprecated
 public interface DynamoDBMarshaller<T extends Object> {
 
     /**

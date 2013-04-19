@@ -218,10 +218,10 @@ public class RequestCancelWorkflowExecutionRequest extends AmazonWebServiceReque
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getDomain() != null) sb.append("Domain: " + getDomain() + ", ");
-        if (getWorkflowId() != null) sb.append("WorkflowId: " + getWorkflowId() + ", ");
-        if (getRunId() != null) sb.append("RunId: " + getRunId() + ", ");
+        sb.append("{");    	
+        if (getDomain() != null) sb.append("Domain: " + getDomain() + ",");    	
+        if (getWorkflowId() != null) sb.append("WorkflowId: " + getWorkflowId() + ",");    	
+        if (getRunId() != null) sb.append("RunId: " + getRunId() );
         sb.append("}");
         return sb.toString();
     }

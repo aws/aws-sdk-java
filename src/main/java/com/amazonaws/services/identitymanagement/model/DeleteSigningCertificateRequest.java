@@ -170,9 +170,9 @@ public class DeleteSigningCertificateRequest extends AmazonWebServiceRequest  im
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getUserName() != null) sb.append("UserName: " + getUserName() + ", ");
-        if (getCertificateId() != null) sb.append("CertificateId: " + getCertificateId() + ", ");
+        sb.append("{");    	
+        if (getUserName() != null) sb.append("UserName: " + getUserName() + ",");    	
+        if (getCertificateId() != null) sb.append("CertificateId: " + getCertificateId() );
         sb.append("}");
         return sb.toString();
     }

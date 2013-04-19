@@ -204,10 +204,10 @@ public class DecisionTaskCompletedEventAttributes  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getExecutionContext() != null) sb.append("ExecutionContext: " + getExecutionContext() + ", ");
-        if (getScheduledEventId() != null) sb.append("ScheduledEventId: " + getScheduledEventId() + ", ");
-        if (getStartedEventId() != null) sb.append("StartedEventId: " + getStartedEventId() + ", ");
+        sb.append("{");    	
+        if (getExecutionContext() != null) sb.append("ExecutionContext: " + getExecutionContext() + ",");    	
+        if (getScheduledEventId() != null) sb.append("ScheduledEventId: " + getScheduledEventId() + ",");    	
+        if (getStartedEventId() != null) sb.append("StartedEventId: " + getStartedEventId() );
         sb.append("}");
         return sb.toString();
     }

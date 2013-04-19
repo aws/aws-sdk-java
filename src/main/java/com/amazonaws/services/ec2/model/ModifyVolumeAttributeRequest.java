@@ -116,9 +116,9 @@ public class ModifyVolumeAttributeRequest extends AmazonWebServiceRequest  imple
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getVolumeId() != null) sb.append("VolumeId: " + getVolumeId() + ", ");
-        if (isAutoEnableIO() != null) sb.append("AutoEnableIO: " + isAutoEnableIO() + ", ");
+        sb.append("{");    	
+        if (getVolumeId() != null) sb.append("VolumeId: " + getVolumeId() + ",");    	
+        if (isAutoEnableIO() != null) sb.append("AutoEnableIO: " + isAutoEnableIO() );
         sb.append("}");
         return sb.toString();
     }

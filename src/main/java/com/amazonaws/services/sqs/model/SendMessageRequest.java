@@ -175,10 +175,10 @@ public class SendMessageRequest extends AmazonWebServiceRequest  implements Seri
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getQueueUrl() != null) sb.append("QueueUrl: " + getQueueUrl() + ", ");
-        if (getMessageBody() != null) sb.append("MessageBody: " + getMessageBody() + ", ");
-        if (getDelaySeconds() != null) sb.append("DelaySeconds: " + getDelaySeconds() + ", ");
+        sb.append("{");    	
+        if (getQueueUrl() != null) sb.append("QueueUrl: " + getQueueUrl() + ",");    	
+        if (getMessageBody() != null) sb.append("MessageBody: " + getMessageBody() + ",");    	
+        if (getDelaySeconds() != null) sb.append("DelaySeconds: " + getDelaySeconds() );
         sb.append("}");
         return sb.toString();
     }

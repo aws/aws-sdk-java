@@ -106,8 +106,8 @@ public class ListTagsForResourceResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getTagList() != null) sb.append("TagList: " + getTagList() + ", ");
+        sb.append("{");    	
+        if (getTagList() != null) sb.append("TagList: " + getTagList() );
         sb.append("}");
         return sb.toString();
     }

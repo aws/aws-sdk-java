@@ -135,15 +135,12 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest  implements
      * The weekly time range (in UTC) during which system maintenance can
      * occur. <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> <p> Default: A
      * 30-minute window selected at random from an 8-hour block of time per
-     * region, occurring on a random day of the week. The following list
-     * shows the time blocks for each region from which the default
-     * maintenance windows are assigned. <ul> <li><b>US-East (Northern
-     * Virginia) Region:</b> 03:00-11:00 UTC</li> <li><b>US-West (Northern
-     * California) Region:</b> 06:00-14:00 UTC</li> <li><b>EU (Ireland)
-     * Region:</b> 22:00-06:00 UTC</li> <li><b>Asia Pacific (Singapore)
-     * Region:</b> 14:00-22:00 UTC</li> <li><b>Asia Pacific (Tokyo) Region:
-     * </b> 17:00-03:00 UTC</li> </ul> <p>Valid Days: Mon, Tue, Wed, Thu,
-     * Fri, Sat, Sun <p>Constraints: Minimum 30-minute window.
+     * region, occurring on a random day of the week. To see the time blocks
+     * available, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
+     * Adjusting the Preferred Maintenance Window</a> in the Amazon RDS User
+     * Guide. <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
+     * <p>Constraints: Minimum 30-minute window.
      */
     private String preferredMaintenanceWindow;
 
@@ -244,6 +241,21 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest  implements
      */
     private String characterSetName;
 
+    /**
+     * Specifies the accessibility options for the DB Instance. A value of
+     * true specifies an Internet-facing instance with a publicly resolvable
+     * DNS name, which resolves to a public IP address. A value of false
+     * specifies an internal instance with a DNS name that resolves to a
+     * private IP address. <p> Default: The default behavior varies depending
+     * on whether a VPC has been requested or not. The following list shows
+     * the default behavior in each case. <ul> <li><b>Default
+     * VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> <p> If no DB subnet
+     * group has been specified as part of the request and the
+     * PubliclyAccessible value has not been set, the DB instance will be
+     * publicly accessible. If a specific DB subnet group has been specified
+     * as part of the request and the PubliclyAccessible value has not been
+     * set, the DB instance will be private.
+     */
     private Boolean publiclyAccessible;
 
     /**
@@ -1063,28 +1075,22 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest  implements
      * The weekly time range (in UTC) during which system maintenance can
      * occur. <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> <p> Default: A
      * 30-minute window selected at random from an 8-hour block of time per
-     * region, occurring on a random day of the week. The following list
-     * shows the time blocks for each region from which the default
-     * maintenance windows are assigned. <ul> <li><b>US-East (Northern
-     * Virginia) Region:</b> 03:00-11:00 UTC</li> <li><b>US-West (Northern
-     * California) Region:</b> 06:00-14:00 UTC</li> <li><b>EU (Ireland)
-     * Region:</b> 22:00-06:00 UTC</li> <li><b>Asia Pacific (Singapore)
-     * Region:</b> 14:00-22:00 UTC</li> <li><b>Asia Pacific (Tokyo) Region:
-     * </b> 17:00-03:00 UTC</li> </ul> <p>Valid Days: Mon, Tue, Wed, Thu,
-     * Fri, Sat, Sun <p>Constraints: Minimum 30-minute window.
+     * region, occurring on a random day of the week. To see the time blocks
+     * available, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
+     * Adjusting the Preferred Maintenance Window</a> in the Amazon RDS User
+     * Guide. <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
+     * <p>Constraints: Minimum 30-minute window.
      *
      * @return The weekly time range (in UTC) during which system maintenance can
      *         occur. <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> <p> Default: A
      *         30-minute window selected at random from an 8-hour block of time per
-     *         region, occurring on a random day of the week. The following list
-     *         shows the time blocks for each region from which the default
-     *         maintenance windows are assigned. <ul> <li><b>US-East (Northern
-     *         Virginia) Region:</b> 03:00-11:00 UTC</li> <li><b>US-West (Northern
-     *         California) Region:</b> 06:00-14:00 UTC</li> <li><b>EU (Ireland)
-     *         Region:</b> 22:00-06:00 UTC</li> <li><b>Asia Pacific (Singapore)
-     *         Region:</b> 14:00-22:00 UTC</li> <li><b>Asia Pacific (Tokyo) Region:
-     *         </b> 17:00-03:00 UTC</li> </ul> <p>Valid Days: Mon, Tue, Wed, Thu,
-     *         Fri, Sat, Sun <p>Constraints: Minimum 30-minute window.
+     *         region, occurring on a random day of the week. To see the time blocks
+     *         available, see <a
+     *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
+     *         Adjusting the Preferred Maintenance Window</a> in the Amazon RDS User
+     *         Guide. <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
+     *         <p>Constraints: Minimum 30-minute window.
      */
     public String getPreferredMaintenanceWindow() {
         return preferredMaintenanceWindow;
@@ -1094,28 +1100,22 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest  implements
      * The weekly time range (in UTC) during which system maintenance can
      * occur. <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> <p> Default: A
      * 30-minute window selected at random from an 8-hour block of time per
-     * region, occurring on a random day of the week. The following list
-     * shows the time blocks for each region from which the default
-     * maintenance windows are assigned. <ul> <li><b>US-East (Northern
-     * Virginia) Region:</b> 03:00-11:00 UTC</li> <li><b>US-West (Northern
-     * California) Region:</b> 06:00-14:00 UTC</li> <li><b>EU (Ireland)
-     * Region:</b> 22:00-06:00 UTC</li> <li><b>Asia Pacific (Singapore)
-     * Region:</b> 14:00-22:00 UTC</li> <li><b>Asia Pacific (Tokyo) Region:
-     * </b> 17:00-03:00 UTC</li> </ul> <p>Valid Days: Mon, Tue, Wed, Thu,
-     * Fri, Sat, Sun <p>Constraints: Minimum 30-minute window.
+     * region, occurring on a random day of the week. To see the time blocks
+     * available, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
+     * Adjusting the Preferred Maintenance Window</a> in the Amazon RDS User
+     * Guide. <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
+     * <p>Constraints: Minimum 30-minute window.
      *
      * @param preferredMaintenanceWindow The weekly time range (in UTC) during which system maintenance can
      *         occur. <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> <p> Default: A
      *         30-minute window selected at random from an 8-hour block of time per
-     *         region, occurring on a random day of the week. The following list
-     *         shows the time blocks for each region from which the default
-     *         maintenance windows are assigned. <ul> <li><b>US-East (Northern
-     *         Virginia) Region:</b> 03:00-11:00 UTC</li> <li><b>US-West (Northern
-     *         California) Region:</b> 06:00-14:00 UTC</li> <li><b>EU (Ireland)
-     *         Region:</b> 22:00-06:00 UTC</li> <li><b>Asia Pacific (Singapore)
-     *         Region:</b> 14:00-22:00 UTC</li> <li><b>Asia Pacific (Tokyo) Region:
-     *         </b> 17:00-03:00 UTC</li> </ul> <p>Valid Days: Mon, Tue, Wed, Thu,
-     *         Fri, Sat, Sun <p>Constraints: Minimum 30-minute window.
+     *         region, occurring on a random day of the week. To see the time blocks
+     *         available, see <a
+     *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
+     *         Adjusting the Preferred Maintenance Window</a> in the Amazon RDS User
+     *         Guide. <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
+     *         <p>Constraints: Minimum 30-minute window.
      */
     public void setPreferredMaintenanceWindow(String preferredMaintenanceWindow) {
         this.preferredMaintenanceWindow = preferredMaintenanceWindow;
@@ -1125,30 +1125,24 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest  implements
      * The weekly time range (in UTC) during which system maintenance can
      * occur. <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> <p> Default: A
      * 30-minute window selected at random from an 8-hour block of time per
-     * region, occurring on a random day of the week. The following list
-     * shows the time blocks for each region from which the default
-     * maintenance windows are assigned. <ul> <li><b>US-East (Northern
-     * Virginia) Region:</b> 03:00-11:00 UTC</li> <li><b>US-West (Northern
-     * California) Region:</b> 06:00-14:00 UTC</li> <li><b>EU (Ireland)
-     * Region:</b> 22:00-06:00 UTC</li> <li><b>Asia Pacific (Singapore)
-     * Region:</b> 14:00-22:00 UTC</li> <li><b>Asia Pacific (Tokyo) Region:
-     * </b> 17:00-03:00 UTC</li> </ul> <p>Valid Days: Mon, Tue, Wed, Thu,
-     * Fri, Sat, Sun <p>Constraints: Minimum 30-minute window.
+     * region, occurring on a random day of the week. To see the time blocks
+     * available, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
+     * Adjusting the Preferred Maintenance Window</a> in the Amazon RDS User
+     * Guide. <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
+     * <p>Constraints: Minimum 30-minute window.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param preferredMaintenanceWindow The weekly time range (in UTC) during which system maintenance can
      *         occur. <p> Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> <p> Default: A
      *         30-minute window selected at random from an 8-hour block of time per
-     *         region, occurring on a random day of the week. The following list
-     *         shows the time blocks for each region from which the default
-     *         maintenance windows are assigned. <ul> <li><b>US-East (Northern
-     *         Virginia) Region:</b> 03:00-11:00 UTC</li> <li><b>US-West (Northern
-     *         California) Region:</b> 06:00-14:00 UTC</li> <li><b>EU (Ireland)
-     *         Region:</b> 22:00-06:00 UTC</li> <li><b>Asia Pacific (Singapore)
-     *         Region:</b> 14:00-22:00 UTC</li> <li><b>Asia Pacific (Tokyo) Region:
-     *         </b> 17:00-03:00 UTC</li> </ul> <p>Valid Days: Mon, Tue, Wed, Thu,
-     *         Fri, Sat, Sun <p>Constraints: Minimum 30-minute window.
+     *         region, occurring on a random day of the week. To see the time blocks
+     *         available, see <a
+     *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
+     *         Adjusting the Preferred Maintenance Window</a> in the Amazon RDS User
+     *         Guide. <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat, Sun
+     *         <p>Constraints: Minimum 30-minute window.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -1812,29 +1806,101 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest  implements
     
     
     /**
-     * Returns the value of the PubliclyAccessible property for this object.
+     * Specifies the accessibility options for the DB Instance. A value of
+     * true specifies an Internet-facing instance with a publicly resolvable
+     * DNS name, which resolves to a public IP address. A value of false
+     * specifies an internal instance with a DNS name that resolves to a
+     * private IP address. <p> Default: The default behavior varies depending
+     * on whether a VPC has been requested or not. The following list shows
+     * the default behavior in each case. <ul> <li><b>Default
+     * VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> <p> If no DB subnet
+     * group has been specified as part of the request and the
+     * PubliclyAccessible value has not been set, the DB instance will be
+     * publicly accessible. If a specific DB subnet group has been specified
+     * as part of the request and the PubliclyAccessible value has not been
+     * set, the DB instance will be private.
      *
-     * @return The value of the PubliclyAccessible property for this object.
+     * @return Specifies the accessibility options for the DB Instance. A value of
+     *         true specifies an Internet-facing instance with a publicly resolvable
+     *         DNS name, which resolves to a public IP address. A value of false
+     *         specifies an internal instance with a DNS name that resolves to a
+     *         private IP address. <p> Default: The default behavior varies depending
+     *         on whether a VPC has been requested or not. The following list shows
+     *         the default behavior in each case. <ul> <li><b>Default
+     *         VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> <p> If no DB subnet
+     *         group has been specified as part of the request and the
+     *         PubliclyAccessible value has not been set, the DB instance will be
+     *         publicly accessible. If a specific DB subnet group has been specified
+     *         as part of the request and the PubliclyAccessible value has not been
+     *         set, the DB instance will be private.
      */
     public Boolean isPubliclyAccessible() {
         return publiclyAccessible;
     }
     
     /**
-     * Sets the value of the PubliclyAccessible property for this object.
+     * Specifies the accessibility options for the DB Instance. A value of
+     * true specifies an Internet-facing instance with a publicly resolvable
+     * DNS name, which resolves to a public IP address. A value of false
+     * specifies an internal instance with a DNS name that resolves to a
+     * private IP address. <p> Default: The default behavior varies depending
+     * on whether a VPC has been requested or not. The following list shows
+     * the default behavior in each case. <ul> <li><b>Default
+     * VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> <p> If no DB subnet
+     * group has been specified as part of the request and the
+     * PubliclyAccessible value has not been set, the DB instance will be
+     * publicly accessible. If a specific DB subnet group has been specified
+     * as part of the request and the PubliclyAccessible value has not been
+     * set, the DB instance will be private.
      *
-     * @param publiclyAccessible The new value for the PubliclyAccessible property for this object.
+     * @param publiclyAccessible Specifies the accessibility options for the DB Instance. A value of
+     *         true specifies an Internet-facing instance with a publicly resolvable
+     *         DNS name, which resolves to a public IP address. A value of false
+     *         specifies an internal instance with a DNS name that resolves to a
+     *         private IP address. <p> Default: The default behavior varies depending
+     *         on whether a VPC has been requested or not. The following list shows
+     *         the default behavior in each case. <ul> <li><b>Default
+     *         VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> <p> If no DB subnet
+     *         group has been specified as part of the request and the
+     *         PubliclyAccessible value has not been set, the DB instance will be
+     *         publicly accessible. If a specific DB subnet group has been specified
+     *         as part of the request and the PubliclyAccessible value has not been
+     *         set, the DB instance will be private.
      */
     public void setPubliclyAccessible(Boolean publiclyAccessible) {
         this.publiclyAccessible = publiclyAccessible;
     }
     
     /**
-     * Sets the value of the PubliclyAccessible property for this object.
+     * Specifies the accessibility options for the DB Instance. A value of
+     * true specifies an Internet-facing instance with a publicly resolvable
+     * DNS name, which resolves to a public IP address. A value of false
+     * specifies an internal instance with a DNS name that resolves to a
+     * private IP address. <p> Default: The default behavior varies depending
+     * on whether a VPC has been requested or not. The following list shows
+     * the default behavior in each case. <ul> <li><b>Default
+     * VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> <p> If no DB subnet
+     * group has been specified as part of the request and the
+     * PubliclyAccessible value has not been set, the DB instance will be
+     * publicly accessible. If a specific DB subnet group has been specified
+     * as part of the request and the PubliclyAccessible value has not been
+     * set, the DB instance will be private.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param publiclyAccessible The new value for the PubliclyAccessible property for this object.
+     * @param publiclyAccessible Specifies the accessibility options for the DB Instance. A value of
+     *         true specifies an Internet-facing instance with a publicly resolvable
+     *         DNS name, which resolves to a public IP address. A value of false
+     *         specifies an internal instance with a DNS name that resolves to a
+     *         private IP address. <p> Default: The default behavior varies depending
+     *         on whether a VPC has been requested or not. The following list shows
+     *         the default behavior in each case. <ul> <li><b>Default
+     *         VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> <p> If no DB subnet
+     *         group has been specified as part of the request and the
+     *         PubliclyAccessible value has not been set, the DB instance will be
+     *         publicly accessible. If a specific DB subnet group has been specified
+     *         as part of the request and the PubliclyAccessible value has not been
+     *         set, the DB instance will be private.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -1846,9 +1912,33 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest  implements
     
     
     /**
-     * Returns the value of the PubliclyAccessible property for this object.
+     * Specifies the accessibility options for the DB Instance. A value of
+     * true specifies an Internet-facing instance with a publicly resolvable
+     * DNS name, which resolves to a public IP address. A value of false
+     * specifies an internal instance with a DNS name that resolves to a
+     * private IP address. <p> Default: The default behavior varies depending
+     * on whether a VPC has been requested or not. The following list shows
+     * the default behavior in each case. <ul> <li><b>Default
+     * VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> <p> If no DB subnet
+     * group has been specified as part of the request and the
+     * PubliclyAccessible value has not been set, the DB instance will be
+     * publicly accessible. If a specific DB subnet group has been specified
+     * as part of the request and the PubliclyAccessible value has not been
+     * set, the DB instance will be private.
      *
-     * @return The value of the PubliclyAccessible property for this object.
+     * @return Specifies the accessibility options for the DB Instance. A value of
+     *         true specifies an Internet-facing instance with a publicly resolvable
+     *         DNS name, which resolves to a public IP address. A value of false
+     *         specifies an internal instance with a DNS name that resolves to a
+     *         private IP address. <p> Default: The default behavior varies depending
+     *         on whether a VPC has been requested or not. The following list shows
+     *         the default behavior in each case. <ul> <li><b>Default
+     *         VPC:</b>true</li> <li><b>VPC:</b>false</li> </ul> <p> If no DB subnet
+     *         group has been specified as part of the request and the
+     *         PubliclyAccessible value has not been set, the DB instance will be
+     *         publicly accessible. If a specific DB subnet group has been specified
+     *         as part of the request and the PubliclyAccessible value has not been
+     *         set, the DB instance will be private.
      */
     public Boolean getPubliclyAccessible() {
         return publiclyAccessible;
@@ -1865,31 +1955,31 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest  implements
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getDBName() != null) sb.append("DBName: " + getDBName() + ", ");
-        if (getDBInstanceIdentifier() != null) sb.append("DBInstanceIdentifier: " + getDBInstanceIdentifier() + ", ");
-        if (getAllocatedStorage() != null) sb.append("AllocatedStorage: " + getAllocatedStorage() + ", ");
-        if (getDBInstanceClass() != null) sb.append("DBInstanceClass: " + getDBInstanceClass() + ", ");
-        if (getEngine() != null) sb.append("Engine: " + getEngine() + ", ");
-        if (getMasterUsername() != null) sb.append("MasterUsername: " + getMasterUsername() + ", ");
-        if (getMasterUserPassword() != null) sb.append("MasterUserPassword: " + getMasterUserPassword() + ", ");
-        if (getDBSecurityGroups() != null) sb.append("DBSecurityGroups: " + getDBSecurityGroups() + ", ");
-        if (getVpcSecurityGroupIds() != null) sb.append("VpcSecurityGroupIds: " + getVpcSecurityGroupIds() + ", ");
-        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ", ");
-        if (getDBSubnetGroupName() != null) sb.append("DBSubnetGroupName: " + getDBSubnetGroupName() + ", ");
-        if (getPreferredMaintenanceWindow() != null) sb.append("PreferredMaintenanceWindow: " + getPreferredMaintenanceWindow() + ", ");
-        if (getDBParameterGroupName() != null) sb.append("DBParameterGroupName: " + getDBParameterGroupName() + ", ");
-        if (getBackupRetentionPeriod() != null) sb.append("BackupRetentionPeriod: " + getBackupRetentionPeriod() + ", ");
-        if (getPreferredBackupWindow() != null) sb.append("PreferredBackupWindow: " + getPreferredBackupWindow() + ", ");
-        if (getPort() != null) sb.append("Port: " + getPort() + ", ");
-        if (isMultiAZ() != null) sb.append("MultiAZ: " + isMultiAZ() + ", ");
-        if (getEngineVersion() != null) sb.append("EngineVersion: " + getEngineVersion() + ", ");
-        if (isAutoMinorVersionUpgrade() != null) sb.append("AutoMinorVersionUpgrade: " + isAutoMinorVersionUpgrade() + ", ");
-        if (getLicenseModel() != null) sb.append("LicenseModel: " + getLicenseModel() + ", ");
-        if (getIops() != null) sb.append("Iops: " + getIops() + ", ");
-        if (getOptionGroupName() != null) sb.append("OptionGroupName: " + getOptionGroupName() + ", ");
-        if (getCharacterSetName() != null) sb.append("CharacterSetName: " + getCharacterSetName() + ", ");
-        if (isPubliclyAccessible() != null) sb.append("PubliclyAccessible: " + isPubliclyAccessible() + ", ");
+        sb.append("{");    	
+        if (getDBName() != null) sb.append("DBName: " + getDBName() + ",");    	
+        if (getDBInstanceIdentifier() != null) sb.append("DBInstanceIdentifier: " + getDBInstanceIdentifier() + ",");    	
+        if (getAllocatedStorage() != null) sb.append("AllocatedStorage: " + getAllocatedStorage() + ",");    	
+        if (getDBInstanceClass() != null) sb.append("DBInstanceClass: " + getDBInstanceClass() + ",");    	
+        if (getEngine() != null) sb.append("Engine: " + getEngine() + ",");    	
+        if (getMasterUsername() != null) sb.append("MasterUsername: " + getMasterUsername() + ",");    	
+        if (getMasterUserPassword() != null) sb.append("MasterUserPassword: " + getMasterUserPassword() + ",");    	
+        if (getDBSecurityGroups() != null) sb.append("DBSecurityGroups: " + getDBSecurityGroups() + ",");    	
+        if (getVpcSecurityGroupIds() != null) sb.append("VpcSecurityGroupIds: " + getVpcSecurityGroupIds() + ",");    	
+        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");    	
+        if (getDBSubnetGroupName() != null) sb.append("DBSubnetGroupName: " + getDBSubnetGroupName() + ",");    	
+        if (getPreferredMaintenanceWindow() != null) sb.append("PreferredMaintenanceWindow: " + getPreferredMaintenanceWindow() + ",");    	
+        if (getDBParameterGroupName() != null) sb.append("DBParameterGroupName: " + getDBParameterGroupName() + ",");    	
+        if (getBackupRetentionPeriod() != null) sb.append("BackupRetentionPeriod: " + getBackupRetentionPeriod() + ",");    	
+        if (getPreferredBackupWindow() != null) sb.append("PreferredBackupWindow: " + getPreferredBackupWindow() + ",");    	
+        if (getPort() != null) sb.append("Port: " + getPort() + ",");    	
+        if (isMultiAZ() != null) sb.append("MultiAZ: " + isMultiAZ() + ",");    	
+        if (getEngineVersion() != null) sb.append("EngineVersion: " + getEngineVersion() + ",");    	
+        if (isAutoMinorVersionUpgrade() != null) sb.append("AutoMinorVersionUpgrade: " + isAutoMinorVersionUpgrade() + ",");    	
+        if (getLicenseModel() != null) sb.append("LicenseModel: " + getLicenseModel() + ",");    	
+        if (getIops() != null) sb.append("Iops: " + getIops() + ",");    	
+        if (getOptionGroupName() != null) sb.append("OptionGroupName: " + getOptionGroupName() + ",");    	
+        if (getCharacterSetName() != null) sb.append("CharacterSetName: " + getCharacterSetName() + ",");    	
+        if (isPubliclyAccessible() != null) sb.append("PubliclyAccessible: " + isPubliclyAccessible() );
         sb.append("}");
         return sb.toString();
     }

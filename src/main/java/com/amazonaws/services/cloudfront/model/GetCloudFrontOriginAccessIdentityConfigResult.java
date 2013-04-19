@@ -111,9 +111,9 @@ public class GetCloudFrontOriginAccessIdentityConfigResult  implements Serializa
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getCloudFrontOriginAccessIdentityConfig() != null) sb.append("CloudFrontOriginAccessIdentityConfig: " + getCloudFrontOriginAccessIdentityConfig() + ", ");
-        if (getETag() != null) sb.append("ETag: " + getETag() + ", ");
+        sb.append("{");    	
+        if (getCloudFrontOriginAccessIdentityConfig() != null) sb.append("CloudFrontOriginAccessIdentityConfig: " + getCloudFrontOriginAccessIdentityConfig() + ",");    	
+        if (getETag() != null) sb.append("ETag: " + getETag() );
         sb.append("}");
         return sb.toString();
     }

@@ -288,26 +288,19 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
             
     /**
      * <p>
-     * Creates a DB Instance that acts as a Read Replica of a source DB
-     * Instance.
-     * </p>
-     * <p>
-     * All Read Replica DB Instances are created as Single-AZ deployments
-     * with backups disabled. All other DB Instance attributes (including DB
-     * Security Groups and DB Parameter Groups) are inherited from the source
-     * DB Instance, except as specified below.
-     * </p>
-     * <p>
-     * <b>IMPORTANT:</b> The source DB Instance must have backup retention
-     * enabled.
+     * Revokes ingress from a DBSecurityGroup for previously authorized IP
+     * ranges or EC2 or VPC Security Groups. Required parameters for this API
+     * are one of CIDRIP, EC2SecurityGroupId for VPC, or
+     * (EC2SecurityGroupOwnerId and either EC2SecurityGroupName or
+     * EC2SecurityGroupId).
      * </p>
      *
-     * @param createDBInstanceReadReplicaRequest Container for the necessary
-     *           parameters to execute the CreateDBInstanceReadReplica operation on
+     * @param revokeDBSecurityGroupIngressRequest Container for the necessary
+     *           parameters to execute the RevokeDBSecurityGroupIngress operation on
      *           AmazonRDS.
      * 
      * @return A Java Future object containing the response from the
-     *         CreateDBInstanceReadReplica service method, as returned by AmazonRDS.
+     *         RevokeDBSecurityGroupIngress service method, as returned by AmazonRDS.
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -317,11 +310,11 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<DBInstance> createDBInstanceReadReplicaAsync(final CreateDBInstanceReadReplicaRequest createDBInstanceReadReplicaRequest) 
+    public Future<DBSecurityGroup> revokeDBSecurityGroupIngressAsync(final RevokeDBSecurityGroupIngressRequest revokeDBSecurityGroupIngressRequest) 
             throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DBInstance>() {
-            public DBInstance call() throws Exception {
-                return createDBInstanceReadReplica(createDBInstanceReadReplicaRequest);
+        return executorService.submit(new Callable<DBSecurityGroup>() {
+            public DBSecurityGroup call() throws Exception {
+                return revokeDBSecurityGroupIngress(revokeDBSecurityGroupIngressRequest);
 		    }
 		});
     }
@@ -329,22 +322,15 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
     
     /**
      * <p>
-     * Creates a DB Instance that acts as a Read Replica of a source DB
-     * Instance.
-     * </p>
-     * <p>
-     * All Read Replica DB Instances are created as Single-AZ deployments
-     * with backups disabled. All other DB Instance attributes (including DB
-     * Security Groups and DB Parameter Groups) are inherited from the source
-     * DB Instance, except as specified below.
-     * </p>
-     * <p>
-     * <b>IMPORTANT:</b> The source DB Instance must have backup retention
-     * enabled.
+     * Revokes ingress from a DBSecurityGroup for previously authorized IP
+     * ranges or EC2 or VPC Security Groups. Required parameters for this API
+     * are one of CIDRIP, EC2SecurityGroupId for VPC, or
+     * (EC2SecurityGroupOwnerId and either EC2SecurityGroupName or
+     * EC2SecurityGroupId).
      * </p>
      *
-     * @param createDBInstanceReadReplicaRequest Container for the necessary
-     *           parameters to execute the CreateDBInstanceReadReplica operation on
+     * @param revokeDBSecurityGroupIngressRequest Container for the necessary
+     *           parameters to execute the RevokeDBSecurityGroupIngress operation on
      *           AmazonRDS.
      * @param asyncHandler Asynchronous callback handler for events in the
      *           life-cycle of the request. Users could provide the implementation of
@@ -352,7 +338,7 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
      *           result or handle the exception.
      * 
      * @return A Java Future object containing the response from the
-     *         CreateDBInstanceReadReplica service method, as returned by AmazonRDS.
+     *         RevokeDBSecurityGroupIngress service method, as returned by AmazonRDS.
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -362,326 +348,20 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<DBInstance> createDBInstanceReadReplicaAsync(
-            final CreateDBInstanceReadReplicaRequest createDBInstanceReadReplicaRequest,
-            final AsyncHandler<CreateDBInstanceReadReplicaRequest, DBInstance> asyncHandler)
+    public Future<DBSecurityGroup> revokeDBSecurityGroupIngressAsync(
+            final RevokeDBSecurityGroupIngressRequest revokeDBSecurityGroupIngressRequest,
+            final AsyncHandler<RevokeDBSecurityGroupIngressRequest, DBSecurityGroup> asyncHandler)
                     throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DBInstance>() {
-            public DBInstance call() throws Exception {
-            	DBInstance result;
+        return executorService.submit(new Callable<DBSecurityGroup>() {
+            public DBSecurityGroup call() throws Exception {
+            	DBSecurityGroup result;
                 try {
-            		result = createDBInstanceReadReplica(createDBInstanceReadReplicaRequest);
+            		result = revokeDBSecurityGroupIngress(revokeDBSecurityGroupIngressRequest);
             	} catch (Exception ex) {
             	    asyncHandler.onError(ex);
     				throw ex;
             	}
-            	asyncHandler.onSuccess(createDBInstanceReadReplicaRequest, result);
-               	return result;
-		    }
-		});
-    }
-    
-    /**
-     * <p>
-     * Returns a list of DBParameterGroup descriptions. If a
-     * DBParameterGroupName is specified, the list will contain only the
-     * description of the specified DBParameterGroup.
-     * </p>
-     *
-     * @param describeDBParameterGroupsRequest Container for the necessary
-     *           parameters to execute the DescribeDBParameterGroups operation on
-     *           AmazonRDS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeDBParameterGroups service method, as returned by AmazonRDS.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DescribeDBParameterGroupsResult> describeDBParameterGroupsAsync(final DescribeDBParameterGroupsRequest describeDBParameterGroupsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DescribeDBParameterGroupsResult>() {
-            public DescribeDBParameterGroupsResult call() throws Exception {
-                return describeDBParameterGroups(describeDBParameterGroupsRequest);
-		    }
-		});
-    }
-
-    
-    /**
-     * <p>
-     * Returns a list of DBParameterGroup descriptions. If a
-     * DBParameterGroupName is specified, the list will contain only the
-     * description of the specified DBParameterGroup.
-     * </p>
-     *
-     * @param describeDBParameterGroupsRequest Container for the necessary
-     *           parameters to execute the DescribeDBParameterGroups operation on
-     *           AmazonRDS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeDBParameterGroups service method, as returned by AmazonRDS.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DescribeDBParameterGroupsResult> describeDBParameterGroupsAsync(
-            final DescribeDBParameterGroupsRequest describeDBParameterGroupsRequest,
-            final AsyncHandler<DescribeDBParameterGroupsRequest, DescribeDBParameterGroupsResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DescribeDBParameterGroupsResult>() {
-            public DescribeDBParameterGroupsResult call() throws Exception {
-            	DescribeDBParameterGroupsResult result;
-                try {
-            		result = describeDBParameterGroups(describeDBParameterGroupsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeDBParameterGroupsRequest, result);
-               	return result;
-		    }
-		});
-    }
-    
-    /**
-     * <p>
-     * Modifies an existing Option Group.
-     * </p>
-     *
-     * @param modifyOptionGroupRequest Container for the necessary parameters
-     *           to execute the ModifyOptionGroup operation on AmazonRDS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         ModifyOptionGroup service method, as returned by AmazonRDS.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<OptionGroup> modifyOptionGroupAsync(final ModifyOptionGroupRequest modifyOptionGroupRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<OptionGroup>() {
-            public OptionGroup call() throws Exception {
-                return modifyOptionGroup(modifyOptionGroupRequest);
-		    }
-		});
-    }
-
-    
-    /**
-     * <p>
-     * Modifies an existing Option Group.
-     * </p>
-     *
-     * @param modifyOptionGroupRequest Container for the necessary parameters
-     *           to execute the ModifyOptionGroup operation on AmazonRDS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         ModifyOptionGroup service method, as returned by AmazonRDS.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<OptionGroup> modifyOptionGroupAsync(
-            final ModifyOptionGroupRequest modifyOptionGroupRequest,
-            final AsyncHandler<ModifyOptionGroupRequest, OptionGroup> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<OptionGroup>() {
-            public OptionGroup call() throws Exception {
-            	OptionGroup result;
-                try {
-            		result = modifyOptionGroup(modifyOptionGroupRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(modifyOptionGroupRequest, result);
-               	return result;
-		    }
-		});
-    }
-    
-    /**
-     * <p>
-     * Creates a new DB instance.
-     * </p>
-     *
-     * @param createDBInstanceRequest Container for the necessary parameters
-     *           to execute the CreateDBInstance operation on AmazonRDS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         CreateDBInstance service method, as returned by AmazonRDS.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DBInstance> createDBInstanceAsync(final CreateDBInstanceRequest createDBInstanceRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DBInstance>() {
-            public DBInstance call() throws Exception {
-                return createDBInstance(createDBInstanceRequest);
-		    }
-		});
-    }
-
-    
-    /**
-     * <p>
-     * Creates a new DB instance.
-     * </p>
-     *
-     * @param createDBInstanceRequest Container for the necessary parameters
-     *           to execute the CreateDBInstance operation on AmazonRDS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         CreateDBInstance service method, as returned by AmazonRDS.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DBInstance> createDBInstanceAsync(
-            final CreateDBInstanceRequest createDBInstanceRequest,
-            final AsyncHandler<CreateDBInstanceRequest, DBInstance> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DBInstance>() {
-            public DBInstance call() throws Exception {
-            	DBInstance result;
-                try {
-            		result = createDBInstance(createDBInstanceRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(createDBInstanceRequest, result);
-               	return result;
-		    }
-		});
-    }
-    
-    /**
-     * <p>
-     * Modifies the parameters of a DBParameterGroup to the engine/system
-     * default value. To reset specific parameters submit a list of the
-     * following: ParameterName and ApplyMethod. To reset the entire
-     * DBParameterGroup specify the DBParameterGroup name and
-     * ResetAllParameters parameters. When resetting the entire group,
-     * dynamic parameters are updated immediately and static parameters are
-     * set to pending-reboot to take effect on the next DB instance restart
-     * or RebootDBInstance request.
-     * </p>
-     *
-     * @param resetDBParameterGroupRequest Container for the necessary
-     *           parameters to execute the ResetDBParameterGroup operation on
-     *           AmazonRDS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         ResetDBParameterGroup service method, as returned by AmazonRDS.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<ResetDBParameterGroupResult> resetDBParameterGroupAsync(final ResetDBParameterGroupRequest resetDBParameterGroupRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<ResetDBParameterGroupResult>() {
-            public ResetDBParameterGroupResult call() throws Exception {
-                return resetDBParameterGroup(resetDBParameterGroupRequest);
-		    }
-		});
-    }
-
-    
-    /**
-     * <p>
-     * Modifies the parameters of a DBParameterGroup to the engine/system
-     * default value. To reset specific parameters submit a list of the
-     * following: ParameterName and ApplyMethod. To reset the entire
-     * DBParameterGroup specify the DBParameterGroup name and
-     * ResetAllParameters parameters. When resetting the entire group,
-     * dynamic parameters are updated immediately and static parameters are
-     * set to pending-reboot to take effect on the next DB instance restart
-     * or RebootDBInstance request.
-     * </p>
-     *
-     * @param resetDBParameterGroupRequest Container for the necessary
-     *           parameters to execute the ResetDBParameterGroup operation on
-     *           AmazonRDS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         ResetDBParameterGroup service method, as returned by AmazonRDS.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<ResetDBParameterGroupResult> resetDBParameterGroupAsync(
-            final ResetDBParameterGroupRequest resetDBParameterGroupRequest,
-            final AsyncHandler<ResetDBParameterGroupRequest, ResetDBParameterGroupResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<ResetDBParameterGroupResult>() {
-            public ResetDBParameterGroupResult call() throws Exception {
-            	ResetDBParameterGroupResult result;
-                try {
-            		result = resetDBParameterGroup(resetDBParameterGroupRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(resetDBParameterGroupRequest, result);
+            	asyncHandler.onSuccess(revokeDBSecurityGroupIngressRequest, result);
                	return result;
 		    }
 		});
@@ -764,18 +444,15 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
     
     /**
      * <p>
-     * Deletes a DB subnet group.
-     * </p>
-     * <p>
-     * <b>NOTE:</b>The specified database subnet group must not be associated
-     * with any DB instances.
+     * Returns information about provisioned RDS instances. This API
+     * supports pagination.
      * </p>
      *
-     * @param deleteDBSubnetGroupRequest Container for the necessary
-     *           parameters to execute the DeleteDBSubnetGroup operation on AmazonRDS.
+     * @param describeDBInstancesRequest Container for the necessary
+     *           parameters to execute the DescribeDBInstances operation on AmazonRDS.
      * 
      * @return A Java Future object containing the response from the
-     *         DeleteDBSubnetGroup service method, as returned by AmazonRDS.
+     *         DescribeDBInstances service method, as returned by AmazonRDS.
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -785,12 +462,11 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<Void> deleteDBSubnetGroupAsync(final DeleteDBSubnetGroupRequest deleteDBSubnetGroupRequest) 
+    public Future<DescribeDBInstancesResult> describeDBInstancesAsync(final DescribeDBInstancesRequest describeDBInstancesRequest) 
             throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-                deleteDBSubnetGroup(deleteDBSubnetGroupRequest);
-                return null;
+        return executorService.submit(new Callable<DescribeDBInstancesResult>() {
+            public DescribeDBInstancesResult call() throws Exception {
+                return describeDBInstances(describeDBInstancesRequest);
 		    }
 		});
     }
@@ -798,22 +474,19 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
     
     /**
      * <p>
-     * Deletes a DB subnet group.
-     * </p>
-     * <p>
-     * <b>NOTE:</b>The specified database subnet group must not be associated
-     * with any DB instances.
+     * Returns information about provisioned RDS instances. This API
+     * supports pagination.
      * </p>
      *
-     * @param deleteDBSubnetGroupRequest Container for the necessary
-     *           parameters to execute the DeleteDBSubnetGroup operation on AmazonRDS.
+     * @param describeDBInstancesRequest Container for the necessary
+     *           parameters to execute the DescribeDBInstances operation on AmazonRDS.
      * @param asyncHandler Asynchronous callback handler for events in the
      *           life-cycle of the request. Users could provide the implementation of
      *           the four callback methods in this interface to process the operation
      *           result or handle the exception.
      * 
      * @return A Java Future object containing the response from the
-     *         DeleteDBSubnetGroup service method, as returned by AmazonRDS.
+     *         DescribeDBInstances service method, as returned by AmazonRDS.
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -823,450 +496,20 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<Void> deleteDBSubnetGroupAsync(
-            final DeleteDBSubnetGroupRequest deleteDBSubnetGroupRequest,
-            final AsyncHandler<DeleteDBSubnetGroupRequest, Void> asyncHandler)
+    public Future<DescribeDBInstancesResult> describeDBInstancesAsync(
+            final DescribeDBInstancesRequest describeDBInstancesRequest,
+            final AsyncHandler<DescribeDBInstancesRequest, DescribeDBInstancesResult> asyncHandler)
                     throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-            	try {
-            		deleteDBSubnetGroup(deleteDBSubnetGroupRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deleteDBSubnetGroupRequest, null);
-               	return null;
-		    }
-		});
-    }
-    
-    /**
-     * <p>
-     * Modifies an existing RDS event notification subscription. Note that
-     * you cannot modify the source identifiers using this call; to change
-     * source identifiers for a subscription, use the
-     * AddSourceIdentifierToSubscription and
-     * RemoveSourceIdentifierFromSubscription calls.
-     * </p>
-     * <p>
-     * You can see a list of the event categories for a given SourceType in
-     * the <a
-     * tp://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">
-     * Events </a> topic in the Amazon RDS User Guide or by using the
-     * <b>DescribeEventCategories</b> action.
-     * </p>
-     *
-     * @param modifyEventSubscriptionRequest Container for the necessary
-     *           parameters to execute the ModifyEventSubscription operation on
-     *           AmazonRDS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         ModifyEventSubscription service method, as returned by AmazonRDS.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<EventSubscription> modifyEventSubscriptionAsync(final ModifyEventSubscriptionRequest modifyEventSubscriptionRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<EventSubscription>() {
-            public EventSubscription call() throws Exception {
-                return modifyEventSubscription(modifyEventSubscriptionRequest);
-		    }
-		});
-    }
-
-    
-    /**
-     * <p>
-     * Modifies an existing RDS event notification subscription. Note that
-     * you cannot modify the source identifiers using this call; to change
-     * source identifiers for a subscription, use the
-     * AddSourceIdentifierToSubscription and
-     * RemoveSourceIdentifierFromSubscription calls.
-     * </p>
-     * <p>
-     * You can see a list of the event categories for a given SourceType in
-     * the <a
-     * tp://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">
-     * Events </a> topic in the Amazon RDS User Guide or by using the
-     * <b>DescribeEventCategories</b> action.
-     * </p>
-     *
-     * @param modifyEventSubscriptionRequest Container for the necessary
-     *           parameters to execute the ModifyEventSubscription operation on
-     *           AmazonRDS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         ModifyEventSubscription service method, as returned by AmazonRDS.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<EventSubscription> modifyEventSubscriptionAsync(
-            final ModifyEventSubscriptionRequest modifyEventSubscriptionRequest,
-            final AsyncHandler<ModifyEventSubscriptionRequest, EventSubscription> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<EventSubscription>() {
-            public EventSubscription call() throws Exception {
-            	EventSubscription result;
+        return executorService.submit(new Callable<DescribeDBInstancesResult>() {
+            public DescribeDBInstancesResult call() throws Exception {
+            	DescribeDBInstancesResult result;
                 try {
-            		result = modifyEventSubscription(modifyEventSubscriptionRequest);
+            		result = describeDBInstances(describeDBInstancesRequest);
             	} catch (Exception ex) {
             	    asyncHandler.onError(ex);
     				throw ex;
             	}
-            	asyncHandler.onSuccess(modifyEventSubscriptionRequest, result);
-               	return result;
-		    }
-		});
-    }
-    
-    /**
-     * <p>
-     * Copies the specified DBSnapshot. The source DBSnapshot must be in the
-     * "available" state.
-     * </p>
-     *
-     * @param copyDBSnapshotRequest Container for the necessary parameters to
-     *           execute the CopyDBSnapshot operation on AmazonRDS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         CopyDBSnapshot service method, as returned by AmazonRDS.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DBSnapshot> copyDBSnapshotAsync(final CopyDBSnapshotRequest copyDBSnapshotRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DBSnapshot>() {
-            public DBSnapshot call() throws Exception {
-                return copyDBSnapshot(copyDBSnapshotRequest);
-		    }
-		});
-    }
-
-    
-    /**
-     * <p>
-     * Copies the specified DBSnapshot. The source DBSnapshot must be in the
-     * "available" state.
-     * </p>
-     *
-     * @param copyDBSnapshotRequest Container for the necessary parameters to
-     *           execute the CopyDBSnapshot operation on AmazonRDS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         CopyDBSnapshot service method, as returned by AmazonRDS.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DBSnapshot> copyDBSnapshotAsync(
-            final CopyDBSnapshotRequest copyDBSnapshotRequest,
-            final AsyncHandler<CopyDBSnapshotRequest, DBSnapshot> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DBSnapshot>() {
-            public DBSnapshot call() throws Exception {
-            	DBSnapshot result;
-                try {
-            		result = copyDBSnapshot(copyDBSnapshotRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(copyDBSnapshotRequest, result);
-               	return result;
-		    }
-		});
-    }
-    
-    /**
-     * <p>
-     * Creates an RDS event notification subscription. This action requires a
-     * topic ARN (Amazon Resource Name) created by either the RDS console,
-     * the SNS console, or the SNS API. To obtain an ARN with SNS, you must
-     * create a topic in Amazon SNS and subscribe to the topic. The ARN is
-     * displayed in the SNS console.
-     * </p>
-     * <p>
-     * You can specify the type of source (SourceType) you want to be
-     * notified of, provide a list of RDS sources (SourceIds) that triggers
-     * the events, and provide a list of event categories (EventCategories)
-     * for events you want to be notified of. For example, you can specify
-     * SourceType = db-instance, SourceIds = mydbinstance1, mydbinstance2 and
-     * EventCategories = Availability, Backup.
-     * </p>
-     * <p>
-     * If you specify both the SourceType and SourceIds, such as SourceType =
-     * db-instance and SourceIdentifier = myDBInstance1, you will be notified
-     * of all the db-instance events for the specified source. If you specify
-     * a SourceType but do not specify a SourceIdentifier, you will receive
-     * notice of the events for that source type for all your RDS sources. If
-     * you do not specify either the SourceType nor the SourceIdentifier, you
-     * will be notified of events generated from all RDS sources belonging to
-     * your customer account.
-     * </p>
-     *
-     * @param createEventSubscriptionRequest Container for the necessary
-     *           parameters to execute the CreateEventSubscription operation on
-     *           AmazonRDS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         CreateEventSubscription service method, as returned by AmazonRDS.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<EventSubscription> createEventSubscriptionAsync(final CreateEventSubscriptionRequest createEventSubscriptionRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<EventSubscription>() {
-            public EventSubscription call() throws Exception {
-                return createEventSubscription(createEventSubscriptionRequest);
-		    }
-		});
-    }
-
-    
-    /**
-     * <p>
-     * Creates an RDS event notification subscription. This action requires a
-     * topic ARN (Amazon Resource Name) created by either the RDS console,
-     * the SNS console, or the SNS API. To obtain an ARN with SNS, you must
-     * create a topic in Amazon SNS and subscribe to the topic. The ARN is
-     * displayed in the SNS console.
-     * </p>
-     * <p>
-     * You can specify the type of source (SourceType) you want to be
-     * notified of, provide a list of RDS sources (SourceIds) that triggers
-     * the events, and provide a list of event categories (EventCategories)
-     * for events you want to be notified of. For example, you can specify
-     * SourceType = db-instance, SourceIds = mydbinstance1, mydbinstance2 and
-     * EventCategories = Availability, Backup.
-     * </p>
-     * <p>
-     * If you specify both the SourceType and SourceIds, such as SourceType =
-     * db-instance and SourceIdentifier = myDBInstance1, you will be notified
-     * of all the db-instance events for the specified source. If you specify
-     * a SourceType but do not specify a SourceIdentifier, you will receive
-     * notice of the events for that source type for all your RDS sources. If
-     * you do not specify either the SourceType nor the SourceIdentifier, you
-     * will be notified of events generated from all RDS sources belonging to
-     * your customer account.
-     * </p>
-     *
-     * @param createEventSubscriptionRequest Container for the necessary
-     *           parameters to execute the CreateEventSubscription operation on
-     *           AmazonRDS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         CreateEventSubscription service method, as returned by AmazonRDS.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<EventSubscription> createEventSubscriptionAsync(
-            final CreateEventSubscriptionRequest createEventSubscriptionRequest,
-            final AsyncHandler<CreateEventSubscriptionRequest, EventSubscription> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<EventSubscription>() {
-            public EventSubscription call() throws Exception {
-            	EventSubscription result;
-                try {
-            		result = createEventSubscription(createEventSubscriptionRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(createEventSubscriptionRequest, result);
-               	return result;
-		    }
-		});
-    }
-    
-    /**
-     * <p>
-     * Creates a new DB subnet group. DB subnet groups must contain at least
-     * one subnet in at least two AZs in the region.
-     * </p>
-     *
-     * @param createDBSubnetGroupRequest Container for the necessary
-     *           parameters to execute the CreateDBSubnetGroup operation on AmazonRDS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         CreateDBSubnetGroup service method, as returned by AmazonRDS.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DBSubnetGroup> createDBSubnetGroupAsync(final CreateDBSubnetGroupRequest createDBSubnetGroupRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DBSubnetGroup>() {
-            public DBSubnetGroup call() throws Exception {
-                return createDBSubnetGroup(createDBSubnetGroupRequest);
-		    }
-		});
-    }
-
-    
-    /**
-     * <p>
-     * Creates a new DB subnet group. DB subnet groups must contain at least
-     * one subnet in at least two AZs in the region.
-     * </p>
-     *
-     * @param createDBSubnetGroupRequest Container for the necessary
-     *           parameters to execute the CreateDBSubnetGroup operation on AmazonRDS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         CreateDBSubnetGroup service method, as returned by AmazonRDS.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DBSubnetGroup> createDBSubnetGroupAsync(
-            final CreateDBSubnetGroupRequest createDBSubnetGroupRequest,
-            final AsyncHandler<CreateDBSubnetGroupRequest, DBSubnetGroup> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DBSubnetGroup>() {
-            public DBSubnetGroup call() throws Exception {
-            	DBSubnetGroup result;
-                try {
-            		result = createDBSubnetGroup(createDBSubnetGroupRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(createDBSubnetGroupRequest, result);
-               	return result;
-		    }
-		});
-    }
-    
-    /**
-     * <p>
-     * Deletes an RDS event notification subscription.
-     * </p>
-     *
-     * @param deleteEventSubscriptionRequest Container for the necessary
-     *           parameters to execute the DeleteEventSubscription operation on
-     *           AmazonRDS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DeleteEventSubscription service method, as returned by AmazonRDS.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<EventSubscription> deleteEventSubscriptionAsync(final DeleteEventSubscriptionRequest deleteEventSubscriptionRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<EventSubscription>() {
-            public EventSubscription call() throws Exception {
-                return deleteEventSubscription(deleteEventSubscriptionRequest);
-		    }
-		});
-    }
-
-    
-    /**
-     * <p>
-     * Deletes an RDS event notification subscription.
-     * </p>
-     *
-     * @param deleteEventSubscriptionRequest Container for the necessary
-     *           parameters to execute the DeleteEventSubscription operation on
-     *           AmazonRDS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DeleteEventSubscription service method, as returned by AmazonRDS.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<EventSubscription> deleteEventSubscriptionAsync(
-            final DeleteEventSubscriptionRequest deleteEventSubscriptionRequest,
-            final AsyncHandler<DeleteEventSubscriptionRequest, EventSubscription> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<EventSubscription>() {
-            public EventSubscription call() throws Exception {
-            	EventSubscription result;
-                try {
-            		result = deleteEventSubscription(deleteEventSubscriptionRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deleteEventSubscriptionRequest, result);
+            	asyncHandler.onSuccess(describeDBInstancesRequest, result);
                	return result;
 		    }
 		});
@@ -1347,158 +590,6 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
     
     /**
      * <p>
-     * The DeleteDBInstance API deletes a previously provisioned RDS
-     * instance. A successful response from the web service indicates the
-     * request was received correctly. If a final DBSnapshot is requested the
-     * status of the RDS instance will be "deleting" until the DBSnapshot is
-     * created. DescribeDBInstance is used to monitor the status of this
-     * operation. This cannot be canceled or reverted once submitted.
-     * </p>
-     *
-     * @param deleteDBInstanceRequest Container for the necessary parameters
-     *           to execute the DeleteDBInstance operation on AmazonRDS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DeleteDBInstance service method, as returned by AmazonRDS.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DBInstance> deleteDBInstanceAsync(final DeleteDBInstanceRequest deleteDBInstanceRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DBInstance>() {
-            public DBInstance call() throws Exception {
-                return deleteDBInstance(deleteDBInstanceRequest);
-		    }
-		});
-    }
-
-    
-    /**
-     * <p>
-     * The DeleteDBInstance API deletes a previously provisioned RDS
-     * instance. A successful response from the web service indicates the
-     * request was received correctly. If a final DBSnapshot is requested the
-     * status of the RDS instance will be "deleting" until the DBSnapshot is
-     * created. DescribeDBInstance is used to monitor the status of this
-     * operation. This cannot be canceled or reverted once submitted.
-     * </p>
-     *
-     * @param deleteDBInstanceRequest Container for the necessary parameters
-     *           to execute the DeleteDBInstance operation on AmazonRDS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DeleteDBInstance service method, as returned by AmazonRDS.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DBInstance> deleteDBInstanceAsync(
-            final DeleteDBInstanceRequest deleteDBInstanceRequest,
-            final AsyncHandler<DeleteDBInstanceRequest, DBInstance> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DBInstance>() {
-            public DBInstance call() throws Exception {
-            	DBInstance result;
-                try {
-            		result = deleteDBInstance(deleteDBInstanceRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deleteDBInstanceRequest, result);
-               	return result;
-		    }
-		});
-    }
-    
-    /**
-     * <p>
-     * Returns information about DBSnapshots. This API supports pagination.
-     * </p>
-     *
-     * @param describeDBSnapshotsRequest Container for the necessary
-     *           parameters to execute the DescribeDBSnapshots operation on AmazonRDS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeDBSnapshots service method, as returned by AmazonRDS.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DescribeDBSnapshotsResult> describeDBSnapshotsAsync(final DescribeDBSnapshotsRequest describeDBSnapshotsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DescribeDBSnapshotsResult>() {
-            public DescribeDBSnapshotsResult call() throws Exception {
-                return describeDBSnapshots(describeDBSnapshotsRequest);
-		    }
-		});
-    }
-
-    
-    /**
-     * <p>
-     * Returns information about DBSnapshots. This API supports pagination.
-     * </p>
-     *
-     * @param describeDBSnapshotsRequest Container for the necessary
-     *           parameters to execute the DescribeDBSnapshots operation on AmazonRDS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeDBSnapshots service method, as returned by AmazonRDS.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DescribeDBSnapshotsResult> describeDBSnapshotsAsync(
-            final DescribeDBSnapshotsRequest describeDBSnapshotsRequest,
-            final AsyncHandler<DescribeDBSnapshotsRequest, DescribeDBSnapshotsResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DescribeDBSnapshotsResult>() {
-            public DescribeDBSnapshotsResult call() throws Exception {
-            	DescribeDBSnapshotsResult result;
-                try {
-            		result = describeDBSnapshots(describeDBSnapshotsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeDBSnapshotsRequest, result);
-               	return result;
-		    }
-		});
-    }
-    
-    /**
-     * <p>
      * Describes the available option groups.
      * </p>
      *
@@ -1570,18 +661,22 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
     
     /**
      * <p>
-     * Deletes a DBSnapshot.
+     * Returns a list of DBSecurityGroup descriptions. If a
+     * DBSecurityGroupName is specified, the list will contain only the
+     * descriptions of the specified DBSecurityGroup.
      * </p>
      * <p>
-     * <b>NOTE:</b>The DBSnapshot must be in the available state to be
-     * deleted.
+     * For an overview of CIDR ranges, go to the <a
+     * href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">
+     * Wikipedia Tutorial </a> .
      * </p>
      *
-     * @param deleteDBSnapshotRequest Container for the necessary parameters
-     *           to execute the DeleteDBSnapshot operation on AmazonRDS.
+     * @param describeDBSecurityGroupsRequest Container for the necessary
+     *           parameters to execute the DescribeDBSecurityGroups operation on
+     *           AmazonRDS.
      * 
      * @return A Java Future object containing the response from the
-     *         DeleteDBSnapshot service method, as returned by AmazonRDS.
+     *         DescribeDBSecurityGroups service method, as returned by AmazonRDS.
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1591,11 +686,11 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<DBSnapshot> deleteDBSnapshotAsync(final DeleteDBSnapshotRequest deleteDBSnapshotRequest) 
+    public Future<DescribeDBSecurityGroupsResult> describeDBSecurityGroupsAsync(final DescribeDBSecurityGroupsRequest describeDBSecurityGroupsRequest) 
             throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DBSnapshot>() {
-            public DBSnapshot call() throws Exception {
-                return deleteDBSnapshot(deleteDBSnapshotRequest);
+        return executorService.submit(new Callable<DescribeDBSecurityGroupsResult>() {
+            public DescribeDBSecurityGroupsResult call() throws Exception {
+                return describeDBSecurityGroups(describeDBSecurityGroupsRequest);
 		    }
 		});
     }
@@ -1603,22 +698,26 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
     
     /**
      * <p>
-     * Deletes a DBSnapshot.
+     * Returns a list of DBSecurityGroup descriptions. If a
+     * DBSecurityGroupName is specified, the list will contain only the
+     * descriptions of the specified DBSecurityGroup.
      * </p>
      * <p>
-     * <b>NOTE:</b>The DBSnapshot must be in the available state to be
-     * deleted.
+     * For an overview of CIDR ranges, go to the <a
+     * href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">
+     * Wikipedia Tutorial </a> .
      * </p>
      *
-     * @param deleteDBSnapshotRequest Container for the necessary parameters
-     *           to execute the DeleteDBSnapshot operation on AmazonRDS.
+     * @param describeDBSecurityGroupsRequest Container for the necessary
+     *           parameters to execute the DescribeDBSecurityGroups operation on
+     *           AmazonRDS.
      * @param asyncHandler Asynchronous callback handler for events in the
      *           life-cycle of the request. Users could provide the implementation of
      *           the four callback methods in this interface to process the operation
      *           result or handle the exception.
      * 
      * @return A Java Future object containing the response from the
-     *         DeleteDBSnapshot service method, as returned by AmazonRDS.
+     *         DescribeDBSecurityGroups service method, as returned by AmazonRDS.
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1628,20 +727,93 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<DBSnapshot> deleteDBSnapshotAsync(
-            final DeleteDBSnapshotRequest deleteDBSnapshotRequest,
-            final AsyncHandler<DeleteDBSnapshotRequest, DBSnapshot> asyncHandler)
+    public Future<DescribeDBSecurityGroupsResult> describeDBSecurityGroupsAsync(
+            final DescribeDBSecurityGroupsRequest describeDBSecurityGroupsRequest,
+            final AsyncHandler<DescribeDBSecurityGroupsRequest, DescribeDBSecurityGroupsResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeDBSecurityGroupsResult>() {
+            public DescribeDBSecurityGroupsResult call() throws Exception {
+            	DescribeDBSecurityGroupsResult result;
+                try {
+            		result = describeDBSecurityGroups(describeDBSecurityGroupsRequest);
+            	} catch (Exception ex) {
+            	    asyncHandler.onError(ex);
+    				throw ex;
+            	}
+            	asyncHandler.onSuccess(describeDBSecurityGroupsRequest, result);
+               	return result;
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Copies the specified DBSnapshot. The source DBSnapshot must be in the
+     * "available" state.
+     * </p>
+     *
+     * @param copyDBSnapshotRequest Container for the necessary parameters to
+     *           execute the CopyDBSnapshot operation on AmazonRDS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CopyDBSnapshot service method, as returned by AmazonRDS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DBSnapshot> copyDBSnapshotAsync(final CopyDBSnapshotRequest copyDBSnapshotRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DBSnapshot>() {
+            public DBSnapshot call() throws Exception {
+                return copyDBSnapshot(copyDBSnapshotRequest);
+		    }
+		});
+    }
+
+    
+    /**
+     * <p>
+     * Copies the specified DBSnapshot. The source DBSnapshot must be in the
+     * "available" state.
+     * </p>
+     *
+     * @param copyDBSnapshotRequest Container for the necessary parameters to
+     *           execute the CopyDBSnapshot operation on AmazonRDS.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CopyDBSnapshot service method, as returned by AmazonRDS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DBSnapshot> copyDBSnapshotAsync(
+            final CopyDBSnapshotRequest copyDBSnapshotRequest,
+            final AsyncHandler<CopyDBSnapshotRequest, DBSnapshot> asyncHandler)
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DBSnapshot>() {
             public DBSnapshot call() throws Exception {
             	DBSnapshot result;
                 try {
-            		result = deleteDBSnapshot(deleteDBSnapshotRequest);
+            		result = copyDBSnapshot(copyDBSnapshotRequest);
             	} catch (Exception ex) {
             	    asyncHandler.onError(ex);
     				throw ex;
             	}
-            	asyncHandler.onSuccess(deleteDBSnapshotRequest, result);
+            	asyncHandler.onSuccess(copyDBSnapshotRequest, result);
                	return result;
 		    }
 		});
@@ -1649,186 +821,16 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
     
     /**
      * <p>
-     * Returns events related to DB instances, DB security groups, DB
-     * Snapshots, and DB parameter groups for the past 14 days. Events
-     * specific to a particular DB Iinstance, DB security group, DB Snapshot,
-     * or DB parameter group can be obtained by providing the source
-     * identifier as a parameter. By default, the past hour of events are
-     * returned.
-     * </p>
-     * <p>
-     * You can see a list of event categories and source types in the <a
-     * tp://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">
-     * Events </a> topic in the Amazon RDS User Guide.
+     * Returns a list of orderable DB Instance options for the specified
+     * engine.
      * </p>
      *
-     * @param describeEventsRequest Container for the necessary parameters to
-     *           execute the DescribeEvents operation on AmazonRDS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeEvents service method, as returned by AmazonRDS.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DescribeEventsResult> describeEventsAsync(final DescribeEventsRequest describeEventsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DescribeEventsResult>() {
-            public DescribeEventsResult call() throws Exception {
-                return describeEvents(describeEventsRequest);
-		    }
-		});
-    }
-
-    
-    /**
-     * <p>
-     * Returns events related to DB instances, DB security groups, DB
-     * Snapshots, and DB parameter groups for the past 14 days. Events
-     * specific to a particular DB Iinstance, DB security group, DB Snapshot,
-     * or DB parameter group can be obtained by providing the source
-     * identifier as a parameter. By default, the past hour of events are
-     * returned.
-     * </p>
-     * <p>
-     * You can see a list of event categories and source types in the <a
-     * tp://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">
-     * Events </a> topic in the Amazon RDS User Guide.
-     * </p>
-     *
-     * @param describeEventsRequest Container for the necessary parameters to
-     *           execute the DescribeEvents operation on AmazonRDS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeEvents service method, as returned by AmazonRDS.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DescribeEventsResult> describeEventsAsync(
-            final DescribeEventsRequest describeEventsRequest,
-            final AsyncHandler<DescribeEventsRequest, DescribeEventsResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DescribeEventsResult>() {
-            public DescribeEventsResult call() throws Exception {
-            	DescribeEventsResult result;
-                try {
-            		result = describeEvents(describeEventsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeEventsRequest, result);
-               	return result;
-		    }
-		});
-    }
-    
-    /**
-     * <p>
-     * Creates a new DB Security Group. DB Security Groups control access to
-     * a DB Instance.
-     * </p>
-     *
-     * @param createDBSecurityGroupRequest Container for the necessary
-     *           parameters to execute the CreateDBSecurityGroup operation on
-     *           AmazonRDS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         CreateDBSecurityGroup service method, as returned by AmazonRDS.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DBSecurityGroup> createDBSecurityGroupAsync(final CreateDBSecurityGroupRequest createDBSecurityGroupRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DBSecurityGroup>() {
-            public DBSecurityGroup call() throws Exception {
-                return createDBSecurityGroup(createDBSecurityGroupRequest);
-		    }
-		});
-    }
-
-    
-    /**
-     * <p>
-     * Creates a new DB Security Group. DB Security Groups control access to
-     * a DB Instance.
-     * </p>
-     *
-     * @param createDBSecurityGroupRequest Container for the necessary
-     *           parameters to execute the CreateDBSecurityGroup operation on
-     *           AmazonRDS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         CreateDBSecurityGroup service method, as returned by AmazonRDS.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DBSecurityGroup> createDBSecurityGroupAsync(
-            final CreateDBSecurityGroupRequest createDBSecurityGroupRequest,
-            final AsyncHandler<CreateDBSecurityGroupRequest, DBSecurityGroup> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DBSecurityGroup>() {
-            public DBSecurityGroup call() throws Exception {
-            	DBSecurityGroup result;
-                try {
-            		result = createDBSecurityGroup(createDBSecurityGroupRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(createDBSecurityGroupRequest, result);
-               	return result;
-		    }
-		});
-    }
-    
-    /**
-     * <p>
-     * Restores a DB Instance to an arbitrary point-in-time. Users can
-     * restore to any point in time before the latestRestorableTime for up to
-     * backupRetentionPeriod days. The target database is created from the
-     * source database with the same configuration as the original database
-     * except that the DB instance is created with the default DB security
-     * group.
-     * </p>
-     *
-     * @param restoreDBInstanceToPointInTimeRequest Container for the
-     *           necessary parameters to execute the RestoreDBInstanceToPointInTime
+     * @param describeOrderableDBInstanceOptionsRequest Container for the
+     *           necessary parameters to execute the DescribeOrderableDBInstanceOptions
      *           operation on AmazonRDS.
      * 
      * @return A Java Future object containing the response from the
-     *         RestoreDBInstanceToPointInTime service method, as returned by
+     *         DescribeOrderableDBInstanceOptions service method, as returned by
      *         AmazonRDS.
      *
      * @throws AmazonClientException
@@ -1839,11 +841,11 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<DBInstance> restoreDBInstanceToPointInTimeAsync(final RestoreDBInstanceToPointInTimeRequest restoreDBInstanceToPointInTimeRequest) 
+    public Future<DescribeOrderableDBInstanceOptionsResult> describeOrderableDBInstanceOptionsAsync(final DescribeOrderableDBInstanceOptionsRequest describeOrderableDBInstanceOptionsRequest) 
             throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DBInstance>() {
-            public DBInstance call() throws Exception {
-                return restoreDBInstanceToPointInTime(restoreDBInstanceToPointInTimeRequest);
+        return executorService.submit(new Callable<DescribeOrderableDBInstanceOptionsResult>() {
+            public DescribeOrderableDBInstanceOptionsResult call() throws Exception {
+                return describeOrderableDBInstanceOptions(describeOrderableDBInstanceOptionsRequest);
 		    }
 		});
     }
@@ -1851,16 +853,12 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
     
     /**
      * <p>
-     * Restores a DB Instance to an arbitrary point-in-time. Users can
-     * restore to any point in time before the latestRestorableTime for up to
-     * backupRetentionPeriod days. The target database is created from the
-     * source database with the same configuration as the original database
-     * except that the DB instance is created with the default DB security
-     * group.
+     * Returns a list of orderable DB Instance options for the specified
+     * engine.
      * </p>
      *
-     * @param restoreDBInstanceToPointInTimeRequest Container for the
-     *           necessary parameters to execute the RestoreDBInstanceToPointInTime
+     * @param describeOrderableDBInstanceOptionsRequest Container for the
+     *           necessary parameters to execute the DescribeOrderableDBInstanceOptions
      *           operation on AmazonRDS.
      * @param asyncHandler Asynchronous callback handler for events in the
      *           life-cycle of the request. Users could provide the implementation of
@@ -1868,7 +866,7 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
      *           result or handle the exception.
      * 
      * @return A Java Future object containing the response from the
-     *         RestoreDBInstanceToPointInTime service method, as returned by
+     *         DescribeOrderableDBInstanceOptions service method, as returned by
      *         AmazonRDS.
      *
      * @throws AmazonClientException
@@ -1879,186 +877,20 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<DBInstance> restoreDBInstanceToPointInTimeAsync(
-            final RestoreDBInstanceToPointInTimeRequest restoreDBInstanceToPointInTimeRequest,
-            final AsyncHandler<RestoreDBInstanceToPointInTimeRequest, DBInstance> asyncHandler)
+    public Future<DescribeOrderableDBInstanceOptionsResult> describeOrderableDBInstanceOptionsAsync(
+            final DescribeOrderableDBInstanceOptionsRequest describeOrderableDBInstanceOptionsRequest,
+            final AsyncHandler<DescribeOrderableDBInstanceOptionsRequest, DescribeOrderableDBInstanceOptionsResult> asyncHandler)
                     throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DBInstance>() {
-            public DBInstance call() throws Exception {
-            	DBInstance result;
+        return executorService.submit(new Callable<DescribeOrderableDBInstanceOptionsResult>() {
+            public DescribeOrderableDBInstanceOptionsResult call() throws Exception {
+            	DescribeOrderableDBInstanceOptionsResult result;
                 try {
-            		result = restoreDBInstanceToPointInTime(restoreDBInstanceToPointInTimeRequest);
+            		result = describeOrderableDBInstanceOptions(describeOrderableDBInstanceOptionsRequest);
             	} catch (Exception ex) {
             	    asyncHandler.onError(ex);
     				throw ex;
             	}
-            	asyncHandler.onSuccess(restoreDBInstanceToPointInTimeRequest, result);
-               	return result;
-		    }
-		});
-    }
-    
-    /**
-     * <p>
-     * Returns the detailed parameter list for a particular
-     * DBParameterGroup.
-     * </p>
-     *
-     * @param describeDBParametersRequest Container for the necessary
-     *           parameters to execute the DescribeDBParameters operation on AmazonRDS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeDBParameters service method, as returned by AmazonRDS.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DescribeDBParametersResult> describeDBParametersAsync(final DescribeDBParametersRequest describeDBParametersRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DescribeDBParametersResult>() {
-            public DescribeDBParametersResult call() throws Exception {
-                return describeDBParameters(describeDBParametersRequest);
-		    }
-		});
-    }
-
-    
-    /**
-     * <p>
-     * Returns the detailed parameter list for a particular
-     * DBParameterGroup.
-     * </p>
-     *
-     * @param describeDBParametersRequest Container for the necessary
-     *           parameters to execute the DescribeDBParameters operation on AmazonRDS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeDBParameters service method, as returned by AmazonRDS.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DescribeDBParametersResult> describeDBParametersAsync(
-            final DescribeDBParametersRequest describeDBParametersRequest,
-            final AsyncHandler<DescribeDBParametersRequest, DescribeDBParametersResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DescribeDBParametersResult>() {
-            public DescribeDBParametersResult call() throws Exception {
-            	DescribeDBParametersResult result;
-                try {
-            		result = describeDBParameters(describeDBParametersRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeDBParametersRequest, result);
-               	return result;
-		    }
-		});
-    }
-    
-    /**
-     * <p>
-     * Creates a new DB Parameter Group.
-     * </p>
-     * <p>
-     * A DB Parameter Group is initially created with the default parameters
-     * for the database engine used by the DB Instance. To provide custom
-     * values for any of the parameters, you must modify the group after
-     * creating it using <i>ModifyDBParameterGroup</i> . Once you've created
-     * a DB Parameter Group, you need to associate it with your DB Instance
-     * using <i>ModifyDBInstance</i> . When you associate a new DB Parameter
-     * Group with a running DB Instance, you need to reboot the DB Instance
-     * for the new DB Parameter Group and associated settings to take effect.
-     * </p>
-     *
-     * @param createDBParameterGroupRequest Container for the necessary
-     *           parameters to execute the CreateDBParameterGroup operation on
-     *           AmazonRDS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         CreateDBParameterGroup service method, as returned by AmazonRDS.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DBParameterGroup> createDBParameterGroupAsync(final CreateDBParameterGroupRequest createDBParameterGroupRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DBParameterGroup>() {
-            public DBParameterGroup call() throws Exception {
-                return createDBParameterGroup(createDBParameterGroupRequest);
-		    }
-		});
-    }
-
-    
-    /**
-     * <p>
-     * Creates a new DB Parameter Group.
-     * </p>
-     * <p>
-     * A DB Parameter Group is initially created with the default parameters
-     * for the database engine used by the DB Instance. To provide custom
-     * values for any of the parameters, you must modify the group after
-     * creating it using <i>ModifyDBParameterGroup</i> . Once you've created
-     * a DB Parameter Group, you need to associate it with your DB Instance
-     * using <i>ModifyDBInstance</i> . When you associate a new DB Parameter
-     * Group with a running DB Instance, you need to reboot the DB Instance
-     * for the new DB Parameter Group and associated settings to take effect.
-     * </p>
-     *
-     * @param createDBParameterGroupRequest Container for the necessary
-     *           parameters to execute the CreateDBParameterGroup operation on
-     *           AmazonRDS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         CreateDBParameterGroup service method, as returned by AmazonRDS.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DBParameterGroup> createDBParameterGroupAsync(
-            final CreateDBParameterGroupRequest createDBParameterGroupRequest,
-            final AsyncHandler<CreateDBParameterGroupRequest, DBParameterGroup> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DBParameterGroup>() {
-            public DBParameterGroup call() throws Exception {
-            	DBParameterGroup result;
-                try {
-            		result = createDBParameterGroup(createDBParameterGroupRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(createDBParameterGroupRequest, result);
+            	asyncHandler.onSuccess(describeOrderableDBInstanceOptionsRequest, result);
                	return result;
 		    }
 		});
@@ -2212,22 +1044,25 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
     
     /**
      * <p>
-     * Returns a list of DBSecurityGroup descriptions. If a
-     * DBSecurityGroupName is specified, the list will contain only the
-     * descriptions of the specified DBSecurityGroup.
+     * The DeleteDBInstance action deletes a previously provisioned DB
+     * instance. A successful response from the web service indicates the
+     * request was received correctly. When you delete a DB instance, all
+     * automated backups for that instance are deleted and cannot be
+     * recovered. Manual DB Snapshots of the DB instance to be deleted are
+     * not deleted.
      * </p>
      * <p>
-     * For an overview of CIDR ranges, go to the <a
-     * href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">
-     * Wikipedia Tutorial </a> .
+     * If a final DBSnapshot is requested the status of the RDS instance
+     * will be "deleting" until the DBSnapshot is created. DescribeDBInstance
+     * is used to monitor the status of this operation. This cannot be
+     * canceled or reverted once submitted.
      * </p>
      *
-     * @param describeDBSecurityGroupsRequest Container for the necessary
-     *           parameters to execute the DescribeDBSecurityGroups operation on
-     *           AmazonRDS.
+     * @param deleteDBInstanceRequest Container for the necessary parameters
+     *           to execute the DeleteDBInstance operation on AmazonRDS.
      * 
      * @return A Java Future object containing the response from the
-     *         DescribeDBSecurityGroups service method, as returned by AmazonRDS.
+     *         DeleteDBInstance service method, as returned by AmazonRDS.
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2237,478 +1072,11 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<DescribeDBSecurityGroupsResult> describeDBSecurityGroupsAsync(final DescribeDBSecurityGroupsRequest describeDBSecurityGroupsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DescribeDBSecurityGroupsResult>() {
-            public DescribeDBSecurityGroupsResult call() throws Exception {
-                return describeDBSecurityGroups(describeDBSecurityGroupsRequest);
-		    }
-		});
-    }
-
-    
-    /**
-     * <p>
-     * Returns a list of DBSecurityGroup descriptions. If a
-     * DBSecurityGroupName is specified, the list will contain only the
-     * descriptions of the specified DBSecurityGroup.
-     * </p>
-     * <p>
-     * For an overview of CIDR ranges, go to the <a
-     * href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">
-     * Wikipedia Tutorial </a> .
-     * </p>
-     *
-     * @param describeDBSecurityGroupsRequest Container for the necessary
-     *           parameters to execute the DescribeDBSecurityGroups operation on
-     *           AmazonRDS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeDBSecurityGroups service method, as returned by AmazonRDS.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DescribeDBSecurityGroupsResult> describeDBSecurityGroupsAsync(
-            final DescribeDBSecurityGroupsRequest describeDBSecurityGroupsRequest,
-            final AsyncHandler<DescribeDBSecurityGroupsRequest, DescribeDBSecurityGroupsResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DescribeDBSecurityGroupsResult>() {
-            public DescribeDBSecurityGroupsResult call() throws Exception {
-            	DescribeDBSecurityGroupsResult result;
-                try {
-            		result = describeDBSecurityGroups(describeDBSecurityGroupsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeDBSecurityGroupsRequest, result);
-               	return result;
-		    }
-		});
-    }
-    
-    /**
-     * <p>
-     * Returns information about provisioned RDS instances. This API
-     * supports pagination.
-     * </p>
-     *
-     * @param describeDBInstancesRequest Container for the necessary
-     *           parameters to execute the DescribeDBInstances operation on AmazonRDS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeDBInstances service method, as returned by AmazonRDS.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DescribeDBInstancesResult> describeDBInstancesAsync(final DescribeDBInstancesRequest describeDBInstancesRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DescribeDBInstancesResult>() {
-            public DescribeDBInstancesResult call() throws Exception {
-                return describeDBInstances(describeDBInstancesRequest);
-		    }
-		});
-    }
-
-    
-    /**
-     * <p>
-     * Returns information about provisioned RDS instances. This API
-     * supports pagination.
-     * </p>
-     *
-     * @param describeDBInstancesRequest Container for the necessary
-     *           parameters to execute the DescribeDBInstances operation on AmazonRDS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeDBInstances service method, as returned by AmazonRDS.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DescribeDBInstancesResult> describeDBInstancesAsync(
-            final DescribeDBInstancesRequest describeDBInstancesRequest,
-            final AsyncHandler<DescribeDBInstancesRequest, DescribeDBInstancesResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DescribeDBInstancesResult>() {
-            public DescribeDBInstancesResult call() throws Exception {
-            	DescribeDBInstancesResult result;
-                try {
-            		result = describeDBInstances(describeDBInstancesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeDBInstancesRequest, result);
-               	return result;
-		    }
-		});
-    }
-    
-    /**
-     * <p>
-     * Lists all tags on a DB Instance.
-     * </p>
-     * <p>
-     * For an overview on tagging DB Instances, see <a
-     * azonwebservices.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html">
-     * DB Instance Tags. </a>
-     * </p>
-     *
-     * @param listTagsForResourceRequest Container for the necessary
-     *           parameters to execute the ListTagsForResource operation on AmazonRDS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         ListTagsForResource service method, as returned by AmazonRDS.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<ListTagsForResourceResult> listTagsForResourceAsync(final ListTagsForResourceRequest listTagsForResourceRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<ListTagsForResourceResult>() {
-            public ListTagsForResourceResult call() throws Exception {
-                return listTagsForResource(listTagsForResourceRequest);
-		    }
-		});
-    }
-
-    
-    /**
-     * <p>
-     * Lists all tags on a DB Instance.
-     * </p>
-     * <p>
-     * For an overview on tagging DB Instances, see <a
-     * azonwebservices.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html">
-     * DB Instance Tags. </a>
-     * </p>
-     *
-     * @param listTagsForResourceRequest Container for the necessary
-     *           parameters to execute the ListTagsForResource operation on AmazonRDS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         ListTagsForResource service method, as returned by AmazonRDS.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<ListTagsForResourceResult> listTagsForResourceAsync(
-            final ListTagsForResourceRequest listTagsForResourceRequest,
-            final AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<ListTagsForResourceResult>() {
-            public ListTagsForResourceResult call() throws Exception {
-            	ListTagsForResourceResult result;
-                try {
-            		result = listTagsForResource(listTagsForResourceRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(listTagsForResourceRequest, result);
-               	return result;
-		    }
-		});
-    }
-    
-    /**
-     * <p>
-     * Revokes ingress from a DBSecurityGroup for previously authorized IP
-     * ranges or EC2 or VPC Security Groups. Required parameters for this API
-     * are one of CIDRIP, EC2SecurityGroupId for VPC, or
-     * (EC2SecurityGroupOwnerId and either EC2SecurityGroupName or
-     * EC2SecurityGroupId).
-     * </p>
-     *
-     * @param revokeDBSecurityGroupIngressRequest Container for the necessary
-     *           parameters to execute the RevokeDBSecurityGroupIngress operation on
-     *           AmazonRDS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         RevokeDBSecurityGroupIngress service method, as returned by AmazonRDS.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DBSecurityGroup> revokeDBSecurityGroupIngressAsync(final RevokeDBSecurityGroupIngressRequest revokeDBSecurityGroupIngressRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DBSecurityGroup>() {
-            public DBSecurityGroup call() throws Exception {
-                return revokeDBSecurityGroupIngress(revokeDBSecurityGroupIngressRequest);
-		    }
-		});
-    }
-
-    
-    /**
-     * <p>
-     * Revokes ingress from a DBSecurityGroup for previously authorized IP
-     * ranges or EC2 or VPC Security Groups. Required parameters for this API
-     * are one of CIDRIP, EC2SecurityGroupId for VPC, or
-     * (EC2SecurityGroupOwnerId and either EC2SecurityGroupName or
-     * EC2SecurityGroupId).
-     * </p>
-     *
-     * @param revokeDBSecurityGroupIngressRequest Container for the necessary
-     *           parameters to execute the RevokeDBSecurityGroupIngress operation on
-     *           AmazonRDS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         RevokeDBSecurityGroupIngress service method, as returned by AmazonRDS.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DBSecurityGroup> revokeDBSecurityGroupIngressAsync(
-            final RevokeDBSecurityGroupIngressRequest revokeDBSecurityGroupIngressRequest,
-            final AsyncHandler<RevokeDBSecurityGroupIngressRequest, DBSecurityGroup> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DBSecurityGroup>() {
-            public DBSecurityGroup call() throws Exception {
-            	DBSecurityGroup result;
-                try {
-            		result = revokeDBSecurityGroupIngress(revokeDBSecurityGroupIngressRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(revokeDBSecurityGroupIngressRequest, result);
-               	return result;
-		    }
-		});
-    }
-    
-    /**
-     * <p>
-     * Returns information about reserved DB Instances for this account, or
-     * about a specified reserved DB Instance.
-     * </p>
-     *
-     * @param describeReservedDBInstancesRequest Container for the necessary
-     *           parameters to execute the DescribeReservedDBInstances operation on
-     *           AmazonRDS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeReservedDBInstances service method, as returned by AmazonRDS.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DescribeReservedDBInstancesResult> describeReservedDBInstancesAsync(final DescribeReservedDBInstancesRequest describeReservedDBInstancesRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DescribeReservedDBInstancesResult>() {
-            public DescribeReservedDBInstancesResult call() throws Exception {
-                return describeReservedDBInstances(describeReservedDBInstancesRequest);
-		    }
-		});
-    }
-
-    
-    /**
-     * <p>
-     * Returns information about reserved DB Instances for this account, or
-     * about a specified reserved DB Instance.
-     * </p>
-     *
-     * @param describeReservedDBInstancesRequest Container for the necessary
-     *           parameters to execute the DescribeReservedDBInstances operation on
-     *           AmazonRDS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeReservedDBInstances service method, as returned by AmazonRDS.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DescribeReservedDBInstancesResult> describeReservedDBInstancesAsync(
-            final DescribeReservedDBInstancesRequest describeReservedDBInstancesRequest,
-            final AsyncHandler<DescribeReservedDBInstancesRequest, DescribeReservedDBInstancesResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DescribeReservedDBInstancesResult>() {
-            public DescribeReservedDBInstancesResult call() throws Exception {
-            	DescribeReservedDBInstancesResult result;
-                try {
-            		result = describeReservedDBInstances(describeReservedDBInstancesRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeReservedDBInstancesRequest, result);
-               	return result;
-		    }
-		});
-    }
-    
-    /**
-     * <p>
-     * Creates a new Option Group.
-     * </p>
-     *
-     * @param createOptionGroupRequest Container for the necessary parameters
-     *           to execute the CreateOptionGroup operation on AmazonRDS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         CreateOptionGroup service method, as returned by AmazonRDS.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<OptionGroup> createOptionGroupAsync(final CreateOptionGroupRequest createOptionGroupRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<OptionGroup>() {
-            public OptionGroup call() throws Exception {
-                return createOptionGroup(createOptionGroupRequest);
-		    }
-		});
-    }
-
-    
-    /**
-     * <p>
-     * Creates a new Option Group.
-     * </p>
-     *
-     * @param createOptionGroupRequest Container for the necessary parameters
-     *           to execute the CreateOptionGroup operation on AmazonRDS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         CreateOptionGroup service method, as returned by AmazonRDS.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<OptionGroup> createOptionGroupAsync(
-            final CreateOptionGroupRequest createOptionGroupRequest,
-            final AsyncHandler<CreateOptionGroupRequest, OptionGroup> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<OptionGroup>() {
-            public OptionGroup call() throws Exception {
-            	OptionGroup result;
-                try {
-            		result = createOptionGroup(createOptionGroupRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(createOptionGroupRequest, result);
-               	return result;
-		    }
-		});
-    }
-    
-    /**
-     * <p>
-     * Reboots a previously provisioned RDS instance. This API results in
-     * the application of modified DBParameterGroup parameters with
-     * ApplyStatus of pending-reboot to the RDS instance. This action is
-     * taken as soon as possible, and results in a momentary outage to the
-     * RDS instance during which the RDS instance status is set to rebooting.
-     * If the RDS instance is configured for MultiAZ, it is possible that the
-     * reboot will be conducted through a failover. A DBInstance event is
-     * created when the reboot is completed.
-     * </p>
-     *
-     * @param rebootDBInstanceRequest Container for the necessary parameters
-     *           to execute the RebootDBInstance operation on AmazonRDS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         RebootDBInstance service method, as returned by AmazonRDS.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DBInstance> rebootDBInstanceAsync(final RebootDBInstanceRequest rebootDBInstanceRequest) 
+    public Future<DBInstance> deleteDBInstanceAsync(final DeleteDBInstanceRequest deleteDBInstanceRequest) 
             throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DBInstance>() {
             public DBInstance call() throws Exception {
-                return rebootDBInstance(rebootDBInstanceRequest);
+                return deleteDBInstance(deleteDBInstanceRequest);
 		    }
 		});
     }
@@ -2716,25 +1084,29 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
     
     /**
      * <p>
-     * Reboots a previously provisioned RDS instance. This API results in
-     * the application of modified DBParameterGroup parameters with
-     * ApplyStatus of pending-reboot to the RDS instance. This action is
-     * taken as soon as possible, and results in a momentary outage to the
-     * RDS instance during which the RDS instance status is set to rebooting.
-     * If the RDS instance is configured for MultiAZ, it is possible that the
-     * reboot will be conducted through a failover. A DBInstance event is
-     * created when the reboot is completed.
+     * The DeleteDBInstance action deletes a previously provisioned DB
+     * instance. A successful response from the web service indicates the
+     * request was received correctly. When you delete a DB instance, all
+     * automated backups for that instance are deleted and cannot be
+     * recovered. Manual DB Snapshots of the DB instance to be deleted are
+     * not deleted.
+     * </p>
+     * <p>
+     * If a final DBSnapshot is requested the status of the RDS instance
+     * will be "deleting" until the DBSnapshot is created. DescribeDBInstance
+     * is used to monitor the status of this operation. This cannot be
+     * canceled or reverted once submitted.
      * </p>
      *
-     * @param rebootDBInstanceRequest Container for the necessary parameters
-     *           to execute the RebootDBInstance operation on AmazonRDS.
+     * @param deleteDBInstanceRequest Container for the necessary parameters
+     *           to execute the DeleteDBInstance operation on AmazonRDS.
      * @param asyncHandler Asynchronous callback handler for events in the
      *           life-cycle of the request. Users could provide the implementation of
      *           the four callback methods in this interface to process the operation
      *           result or handle the exception.
      * 
      * @return A Java Future object containing the response from the
-     *         RebootDBInstance service method, as returned by AmazonRDS.
+     *         DeleteDBInstance service method, as returned by AmazonRDS.
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -2744,20 +1116,97 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<DBInstance> rebootDBInstanceAsync(
-            final RebootDBInstanceRequest rebootDBInstanceRequest,
-            final AsyncHandler<RebootDBInstanceRequest, DBInstance> asyncHandler)
+    public Future<DBInstance> deleteDBInstanceAsync(
+            final DeleteDBInstanceRequest deleteDBInstanceRequest,
+            final AsyncHandler<DeleteDBInstanceRequest, DBInstance> asyncHandler)
                     throws AmazonServiceException, AmazonClientException {
         return executorService.submit(new Callable<DBInstance>() {
             public DBInstance call() throws Exception {
             	DBInstance result;
                 try {
-            		result = rebootDBInstance(rebootDBInstanceRequest);
+            		result = deleteDBInstance(deleteDBInstanceRequest);
             	} catch (Exception ex) {
             	    asyncHandler.onError(ex);
     				throw ex;
             	}
-            	asyncHandler.onSuccess(rebootDBInstanceRequest, result);
+            	asyncHandler.onSuccess(deleteDBInstanceRequest, result);
+               	return result;
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Returns a list of DBParameterGroup descriptions. If a
+     * DBParameterGroupName is specified, the list will contain only the
+     * description of the specified DBParameterGroup.
+     * </p>
+     *
+     * @param describeDBParameterGroupsRequest Container for the necessary
+     *           parameters to execute the DescribeDBParameterGroups operation on
+     *           AmazonRDS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeDBParameterGroups service method, as returned by AmazonRDS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeDBParameterGroupsResult> describeDBParameterGroupsAsync(final DescribeDBParameterGroupsRequest describeDBParameterGroupsRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeDBParameterGroupsResult>() {
+            public DescribeDBParameterGroupsResult call() throws Exception {
+                return describeDBParameterGroups(describeDBParameterGroupsRequest);
+		    }
+		});
+    }
+
+    
+    /**
+     * <p>
+     * Returns a list of DBParameterGroup descriptions. If a
+     * DBParameterGroupName is specified, the list will contain only the
+     * description of the specified DBParameterGroup.
+     * </p>
+     *
+     * @param describeDBParameterGroupsRequest Container for the necessary
+     *           parameters to execute the DescribeDBParameterGroups operation on
+     *           AmazonRDS.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeDBParameterGroups service method, as returned by AmazonRDS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeDBParameterGroupsResult> describeDBParameterGroupsAsync(
+            final DescribeDBParameterGroupsRequest describeDBParameterGroupsRequest,
+            final AsyncHandler<DescribeDBParameterGroupsRequest, DescribeDBParameterGroupsResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeDBParameterGroupsResult>() {
+            public DescribeDBParameterGroupsResult call() throws Exception {
+            	DescribeDBParameterGroupsResult result;
+                try {
+            		result = describeDBParameterGroups(describeDBParameterGroupsRequest);
+            	} catch (Exception ex) {
+            	    asyncHandler.onError(ex);
+    				throw ex;
+            	}
+            	asyncHandler.onSuccess(describeDBParameterGroupsRequest, result);
                	return result;
 		    }
 		});
@@ -2833,237 +1282,6 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
     				throw ex;
             	}
             	asyncHandler.onSuccess(purchaseReservedDBInstancesOfferingRequest, result);
-               	return result;
-		    }
-		});
-    }
-    
-    /**
-     * <p>
-     * Removes metadata tags from a DB Instance.
-     * </p>
-     * <p>
-     * For an overview on tagging DB Instances, see <a
-     * azonwebservices.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html">
-     * DB Instance Tags. </a>
-     * </p>
-     *
-     * @param removeTagsFromResourceRequest Container for the necessary
-     *           parameters to execute the RemoveTagsFromResource operation on
-     *           AmazonRDS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         RemoveTagsFromResource service method, as returned by AmazonRDS.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> removeTagsFromResourceAsync(final RemoveTagsFromResourceRequest removeTagsFromResourceRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-                removeTagsFromResource(removeTagsFromResourceRequest);
-                return null;
-		    }
-		});
-    }
-
-    
-    /**
-     * <p>
-     * Removes metadata tags from a DB Instance.
-     * </p>
-     * <p>
-     * For an overview on tagging DB Instances, see <a
-     * azonwebservices.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html">
-     * DB Instance Tags. </a>
-     * </p>
-     *
-     * @param removeTagsFromResourceRequest Container for the necessary
-     *           parameters to execute the RemoveTagsFromResource operation on
-     *           AmazonRDS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         RemoveTagsFromResource service method, as returned by AmazonRDS.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> removeTagsFromResourceAsync(
-            final RemoveTagsFromResourceRequest removeTagsFromResourceRequest,
-            final AsyncHandler<RemoveTagsFromResourceRequest, Void> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-            	try {
-            		removeTagsFromResource(removeTagsFromResourceRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(removeTagsFromResourceRequest, null);
-               	return null;
-		    }
-		});
-    }
-    
-    /**
-     * <p>
-     * Deletes an existing Option Group.
-     * </p>
-     *
-     * @param deleteOptionGroupRequest Container for the necessary parameters
-     *           to execute the DeleteOptionGroup operation on AmazonRDS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DeleteOptionGroup service method, as returned by AmazonRDS.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> deleteOptionGroupAsync(final DeleteOptionGroupRequest deleteOptionGroupRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-                deleteOptionGroup(deleteOptionGroupRequest);
-                return null;
-		    }
-		});
-    }
-
-    
-    /**
-     * <p>
-     * Deletes an existing Option Group.
-     * </p>
-     *
-     * @param deleteOptionGroupRequest Container for the necessary parameters
-     *           to execute the DeleteOptionGroup operation on AmazonRDS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DeleteOptionGroup service method, as returned by AmazonRDS.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> deleteOptionGroupAsync(
-            final DeleteOptionGroupRequest deleteOptionGroupRequest,
-            final AsyncHandler<DeleteOptionGroupRequest, Void> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<Void>() {
-            public Void call() throws Exception {
-            	try {
-            		deleteOptionGroup(deleteOptionGroupRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(deleteOptionGroupRequest, null);
-               	return null;
-		    }
-		});
-    }
-    
-    /**
-     * <p>
-     * Removes a source identifier from an existing RDS event notification
-     * subscription.
-     * </p>
-     *
-     * @param removeSourceIdentifierFromSubscriptionRequest Container for the
-     *           necessary parameters to execute the
-     *           RemoveSourceIdentifierFromSubscription operation on AmazonRDS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         RemoveSourceIdentifierFromSubscription service method, as returned by
-     *         AmazonRDS.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<EventSubscription> removeSourceIdentifierFromSubscriptionAsync(final RemoveSourceIdentifierFromSubscriptionRequest removeSourceIdentifierFromSubscriptionRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<EventSubscription>() {
-            public EventSubscription call() throws Exception {
-                return removeSourceIdentifierFromSubscription(removeSourceIdentifierFromSubscriptionRequest);
-		    }
-		});
-    }
-
-    
-    /**
-     * <p>
-     * Removes a source identifier from an existing RDS event notification
-     * subscription.
-     * </p>
-     *
-     * @param removeSourceIdentifierFromSubscriptionRequest Container for the
-     *           necessary parameters to execute the
-     *           RemoveSourceIdentifierFromSubscription operation on AmazonRDS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         RemoveSourceIdentifierFromSubscription service method, as returned by
-     *         AmazonRDS.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<EventSubscription> removeSourceIdentifierFromSubscriptionAsync(
-            final RemoveSourceIdentifierFromSubscriptionRequest removeSourceIdentifierFromSubscriptionRequest,
-            final AsyncHandler<RemoveSourceIdentifierFromSubscriptionRequest, EventSubscription> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<EventSubscription>() {
-            public EventSubscription call() throws Exception {
-            	EventSubscription result;
-                try {
-            		result = removeSourceIdentifierFromSubscription(removeSourceIdentifierFromSubscriptionRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(removeSourceIdentifierFromSubscriptionRequest, result);
                	return result;
 		    }
 		});
@@ -3154,6 +1372,1375 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
     
     /**
      * <p>
+     * Deletes an RDS event notification subscription.
+     * </p>
+     *
+     * @param deleteEventSubscriptionRequest Container for the necessary
+     *           parameters to execute the DeleteEventSubscription operation on
+     *           AmazonRDS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeleteEventSubscription service method, as returned by AmazonRDS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<EventSubscription> deleteEventSubscriptionAsync(final DeleteEventSubscriptionRequest deleteEventSubscriptionRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<EventSubscription>() {
+            public EventSubscription call() throws Exception {
+                return deleteEventSubscription(deleteEventSubscriptionRequest);
+		    }
+		});
+    }
+
+    
+    /**
+     * <p>
+     * Deletes an RDS event notification subscription.
+     * </p>
+     *
+     * @param deleteEventSubscriptionRequest Container for the necessary
+     *           parameters to execute the DeleteEventSubscription operation on
+     *           AmazonRDS.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeleteEventSubscription service method, as returned by AmazonRDS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<EventSubscription> deleteEventSubscriptionAsync(
+            final DeleteEventSubscriptionRequest deleteEventSubscriptionRequest,
+            final AsyncHandler<DeleteEventSubscriptionRequest, EventSubscription> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<EventSubscription>() {
+            public EventSubscription call() throws Exception {
+            	EventSubscription result;
+                try {
+            		result = deleteEventSubscription(deleteEventSubscriptionRequest);
+            	} catch (Exception ex) {
+            	    asyncHandler.onError(ex);
+    				throw ex;
+            	}
+            	asyncHandler.onSuccess(deleteEventSubscriptionRequest, result);
+               	return result;
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Creates an RDS event notification subscription. This action requires a
+     * topic ARN (Amazon Resource Name) created by either the RDS console,
+     * the SNS console, or the SNS API. To obtain an ARN with SNS, you must
+     * create a topic in Amazon SNS and subscribe to the topic. The ARN is
+     * displayed in the SNS console.
+     * </p>
+     * <p>
+     * You can specify the type of source (SourceType) you want to be
+     * notified of, provide a list of RDS sources (SourceIds) that triggers
+     * the events, and provide a list of event categories (EventCategories)
+     * for events you want to be notified of. For example, you can specify
+     * SourceType = db-instance, SourceIds = mydbinstance1, mydbinstance2 and
+     * EventCategories = Availability, Backup.
+     * </p>
+     * <p>
+     * If you specify both the SourceType and SourceIds, such as SourceType =
+     * db-instance and SourceIdentifier = myDBInstance1, you will be notified
+     * of all the db-instance events for the specified source. If you specify
+     * a SourceType but do not specify a SourceIdentifier, you will receive
+     * notice of the events for that source type for all your RDS sources. If
+     * you do not specify either the SourceType nor the SourceIdentifier, you
+     * will be notified of events generated from all RDS sources belonging to
+     * your customer account.
+     * </p>
+     *
+     * @param createEventSubscriptionRequest Container for the necessary
+     *           parameters to execute the CreateEventSubscription operation on
+     *           AmazonRDS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreateEventSubscription service method, as returned by AmazonRDS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<EventSubscription> createEventSubscriptionAsync(final CreateEventSubscriptionRequest createEventSubscriptionRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<EventSubscription>() {
+            public EventSubscription call() throws Exception {
+                return createEventSubscription(createEventSubscriptionRequest);
+		    }
+		});
+    }
+
+    
+    /**
+     * <p>
+     * Creates an RDS event notification subscription. This action requires a
+     * topic ARN (Amazon Resource Name) created by either the RDS console,
+     * the SNS console, or the SNS API. To obtain an ARN with SNS, you must
+     * create a topic in Amazon SNS and subscribe to the topic. The ARN is
+     * displayed in the SNS console.
+     * </p>
+     * <p>
+     * You can specify the type of source (SourceType) you want to be
+     * notified of, provide a list of RDS sources (SourceIds) that triggers
+     * the events, and provide a list of event categories (EventCategories)
+     * for events you want to be notified of. For example, you can specify
+     * SourceType = db-instance, SourceIds = mydbinstance1, mydbinstance2 and
+     * EventCategories = Availability, Backup.
+     * </p>
+     * <p>
+     * If you specify both the SourceType and SourceIds, such as SourceType =
+     * db-instance and SourceIdentifier = myDBInstance1, you will be notified
+     * of all the db-instance events for the specified source. If you specify
+     * a SourceType but do not specify a SourceIdentifier, you will receive
+     * notice of the events for that source type for all your RDS sources. If
+     * you do not specify either the SourceType nor the SourceIdentifier, you
+     * will be notified of events generated from all RDS sources belonging to
+     * your customer account.
+     * </p>
+     *
+     * @param createEventSubscriptionRequest Container for the necessary
+     *           parameters to execute the CreateEventSubscription operation on
+     *           AmazonRDS.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreateEventSubscription service method, as returned by AmazonRDS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<EventSubscription> createEventSubscriptionAsync(
+            final CreateEventSubscriptionRequest createEventSubscriptionRequest,
+            final AsyncHandler<CreateEventSubscriptionRequest, EventSubscription> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<EventSubscription>() {
+            public EventSubscription call() throws Exception {
+            	EventSubscription result;
+                try {
+            		result = createEventSubscription(createEventSubscriptionRequest);
+            	} catch (Exception ex) {
+            	    asyncHandler.onError(ex);
+    				throw ex;
+            	}
+            	asyncHandler.onSuccess(createEventSubscriptionRequest, result);
+               	return result;
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Modifies the parameters of a DBParameterGroup to the engine/system
+     * default value. To reset specific parameters submit a list of the
+     * following: ParameterName and ApplyMethod. To reset the entire
+     * DBParameterGroup specify the DBParameterGroup name and
+     * ResetAllParameters parameters. When resetting the entire group,
+     * dynamic parameters are updated immediately and static parameters are
+     * set to pending-reboot to take effect on the next DB instance restart
+     * or RebootDBInstance request.
+     * </p>
+     *
+     * @param resetDBParameterGroupRequest Container for the necessary
+     *           parameters to execute the ResetDBParameterGroup operation on
+     *           AmazonRDS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ResetDBParameterGroup service method, as returned by AmazonRDS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ResetDBParameterGroupResult> resetDBParameterGroupAsync(final ResetDBParameterGroupRequest resetDBParameterGroupRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ResetDBParameterGroupResult>() {
+            public ResetDBParameterGroupResult call() throws Exception {
+                return resetDBParameterGroup(resetDBParameterGroupRequest);
+		    }
+		});
+    }
+
+    
+    /**
+     * <p>
+     * Modifies the parameters of a DBParameterGroup to the engine/system
+     * default value. To reset specific parameters submit a list of the
+     * following: ParameterName and ApplyMethod. To reset the entire
+     * DBParameterGroup specify the DBParameterGroup name and
+     * ResetAllParameters parameters. When resetting the entire group,
+     * dynamic parameters are updated immediately and static parameters are
+     * set to pending-reboot to take effect on the next DB instance restart
+     * or RebootDBInstance request.
+     * </p>
+     *
+     * @param resetDBParameterGroupRequest Container for the necessary
+     *           parameters to execute the ResetDBParameterGroup operation on
+     *           AmazonRDS.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ResetDBParameterGroup service method, as returned by AmazonRDS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ResetDBParameterGroupResult> resetDBParameterGroupAsync(
+            final ResetDBParameterGroupRequest resetDBParameterGroupRequest,
+            final AsyncHandler<ResetDBParameterGroupRequest, ResetDBParameterGroupResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ResetDBParameterGroupResult>() {
+            public ResetDBParameterGroupResult call() throws Exception {
+            	ResetDBParameterGroupResult result;
+                try {
+            		result = resetDBParameterGroup(resetDBParameterGroupRequest);
+            	} catch (Exception ex) {
+            	    asyncHandler.onError(ex);
+    				throw ex;
+            	}
+            	asyncHandler.onSuccess(resetDBParameterGroupRequest, result);
+               	return result;
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Creates a DBSnapshot. The source DBInstance must be in "available"
+     * state.
+     * </p>
+     *
+     * @param createDBSnapshotRequest Container for the necessary parameters
+     *           to execute the CreateDBSnapshot operation on AmazonRDS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreateDBSnapshot service method, as returned by AmazonRDS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DBSnapshot> createDBSnapshotAsync(final CreateDBSnapshotRequest createDBSnapshotRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DBSnapshot>() {
+            public DBSnapshot call() throws Exception {
+                return createDBSnapshot(createDBSnapshotRequest);
+		    }
+		});
+    }
+
+    
+    /**
+     * <p>
+     * Creates a DBSnapshot. The source DBInstance must be in "available"
+     * state.
+     * </p>
+     *
+     * @param createDBSnapshotRequest Container for the necessary parameters
+     *           to execute the CreateDBSnapshot operation on AmazonRDS.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreateDBSnapshot service method, as returned by AmazonRDS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DBSnapshot> createDBSnapshotAsync(
+            final CreateDBSnapshotRequest createDBSnapshotRequest,
+            final AsyncHandler<CreateDBSnapshotRequest, DBSnapshot> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DBSnapshot>() {
+            public DBSnapshot call() throws Exception {
+            	DBSnapshot result;
+                try {
+            		result = createDBSnapshot(createDBSnapshotRequest);
+            	} catch (Exception ex) {
+            	    asyncHandler.onError(ex);
+    				throw ex;
+            	}
+            	asyncHandler.onSuccess(createDBSnapshotRequest, result);
+               	return result;
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Deletes a DBSnapshot.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>The DBSnapshot must be in the available state to be
+     * deleted.
+     * </p>
+     *
+     * @param deleteDBSnapshotRequest Container for the necessary parameters
+     *           to execute the DeleteDBSnapshot operation on AmazonRDS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeleteDBSnapshot service method, as returned by AmazonRDS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DBSnapshot> deleteDBSnapshotAsync(final DeleteDBSnapshotRequest deleteDBSnapshotRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DBSnapshot>() {
+            public DBSnapshot call() throws Exception {
+                return deleteDBSnapshot(deleteDBSnapshotRequest);
+		    }
+		});
+    }
+
+    
+    /**
+     * <p>
+     * Deletes a DBSnapshot.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>The DBSnapshot must be in the available state to be
+     * deleted.
+     * </p>
+     *
+     * @param deleteDBSnapshotRequest Container for the necessary parameters
+     *           to execute the DeleteDBSnapshot operation on AmazonRDS.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeleteDBSnapshot service method, as returned by AmazonRDS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DBSnapshot> deleteDBSnapshotAsync(
+            final DeleteDBSnapshotRequest deleteDBSnapshotRequest,
+            final AsyncHandler<DeleteDBSnapshotRequest, DBSnapshot> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DBSnapshot>() {
+            public DBSnapshot call() throws Exception {
+            	DBSnapshot result;
+                try {
+            		result = deleteDBSnapshot(deleteDBSnapshotRequest);
+            	} catch (Exception ex) {
+            	    asyncHandler.onError(ex);
+    				throw ex;
+            	}
+            	asyncHandler.onSuccess(deleteDBSnapshotRequest, result);
+               	return result;
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Downloads the last line of the specified log file.
+     * </p>
+     *
+     * @param downloadDBLogFilePortionRequest Container for the necessary
+     *           parameters to execute the DownloadDBLogFilePortion operation on
+     *           AmazonRDS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DownloadDBLogFilePortion service method, as returned by AmazonRDS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DownloadDBLogFilePortionResult> downloadDBLogFilePortionAsync(final DownloadDBLogFilePortionRequest downloadDBLogFilePortionRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DownloadDBLogFilePortionResult>() {
+            public DownloadDBLogFilePortionResult call() throws Exception {
+                return downloadDBLogFilePortion(downloadDBLogFilePortionRequest);
+		    }
+		});
+    }
+
+    
+    /**
+     * <p>
+     * Downloads the last line of the specified log file.
+     * </p>
+     *
+     * @param downloadDBLogFilePortionRequest Container for the necessary
+     *           parameters to execute the DownloadDBLogFilePortion operation on
+     *           AmazonRDS.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DownloadDBLogFilePortion service method, as returned by AmazonRDS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DownloadDBLogFilePortionResult> downloadDBLogFilePortionAsync(
+            final DownloadDBLogFilePortionRequest downloadDBLogFilePortionRequest,
+            final AsyncHandler<DownloadDBLogFilePortionRequest, DownloadDBLogFilePortionResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DownloadDBLogFilePortionResult>() {
+            public DownloadDBLogFilePortionResult call() throws Exception {
+            	DownloadDBLogFilePortionResult result;
+                try {
+            		result = downloadDBLogFilePortion(downloadDBLogFilePortionRequest);
+            	} catch (Exception ex) {
+            	    asyncHandler.onError(ex);
+    				throw ex;
+            	}
+            	asyncHandler.onSuccess(downloadDBLogFilePortionRequest, result);
+               	return result;
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Creates a new DB subnet group. DB subnet groups must contain at least
+     * one subnet in at least two AZs in the region.
+     * </p>
+     *
+     * @param createDBSubnetGroupRequest Container for the necessary
+     *           parameters to execute the CreateDBSubnetGroup operation on AmazonRDS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreateDBSubnetGroup service method, as returned by AmazonRDS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DBSubnetGroup> createDBSubnetGroupAsync(final CreateDBSubnetGroupRequest createDBSubnetGroupRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DBSubnetGroup>() {
+            public DBSubnetGroup call() throws Exception {
+                return createDBSubnetGroup(createDBSubnetGroupRequest);
+		    }
+		});
+    }
+
+    
+    /**
+     * <p>
+     * Creates a new DB subnet group. DB subnet groups must contain at least
+     * one subnet in at least two AZs in the region.
+     * </p>
+     *
+     * @param createDBSubnetGroupRequest Container for the necessary
+     *           parameters to execute the CreateDBSubnetGroup operation on AmazonRDS.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreateDBSubnetGroup service method, as returned by AmazonRDS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DBSubnetGroup> createDBSubnetGroupAsync(
+            final CreateDBSubnetGroupRequest createDBSubnetGroupRequest,
+            final AsyncHandler<CreateDBSubnetGroupRequest, DBSubnetGroup> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DBSubnetGroup>() {
+            public DBSubnetGroup call() throws Exception {
+            	DBSubnetGroup result;
+                try {
+            		result = createDBSubnetGroup(createDBSubnetGroupRequest);
+            	} catch (Exception ex) {
+            	    asyncHandler.onError(ex);
+    				throw ex;
+            	}
+            	asyncHandler.onSuccess(createDBSubnetGroupRequest, result);
+               	return result;
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Modifies an existing RDS event notification subscription. Note that
+     * you cannot modify the source identifiers using this call; to change
+     * source identifiers for a subscription, use the
+     * AddSourceIdentifierToSubscription and
+     * RemoveSourceIdentifierFromSubscription calls.
+     * </p>
+     * <p>
+     * You can see a list of the event categories for a given SourceType in
+     * the <a
+     * tp://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">
+     * Events </a> topic in the Amazon RDS User Guide or by using the
+     * <b>DescribeEventCategories</b> action.
+     * </p>
+     *
+     * @param modifyEventSubscriptionRequest Container for the necessary
+     *           parameters to execute the ModifyEventSubscription operation on
+     *           AmazonRDS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ModifyEventSubscription service method, as returned by AmazonRDS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<EventSubscription> modifyEventSubscriptionAsync(final ModifyEventSubscriptionRequest modifyEventSubscriptionRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<EventSubscription>() {
+            public EventSubscription call() throws Exception {
+                return modifyEventSubscription(modifyEventSubscriptionRequest);
+		    }
+		});
+    }
+
+    
+    /**
+     * <p>
+     * Modifies an existing RDS event notification subscription. Note that
+     * you cannot modify the source identifiers using this call; to change
+     * source identifiers for a subscription, use the
+     * AddSourceIdentifierToSubscription and
+     * RemoveSourceIdentifierFromSubscription calls.
+     * </p>
+     * <p>
+     * You can see a list of the event categories for a given SourceType in
+     * the <a
+     * tp://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">
+     * Events </a> topic in the Amazon RDS User Guide or by using the
+     * <b>DescribeEventCategories</b> action.
+     * </p>
+     *
+     * @param modifyEventSubscriptionRequest Container for the necessary
+     *           parameters to execute the ModifyEventSubscription operation on
+     *           AmazonRDS.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ModifyEventSubscription service method, as returned by AmazonRDS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<EventSubscription> modifyEventSubscriptionAsync(
+            final ModifyEventSubscriptionRequest modifyEventSubscriptionRequest,
+            final AsyncHandler<ModifyEventSubscriptionRequest, EventSubscription> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<EventSubscription>() {
+            public EventSubscription call() throws Exception {
+            	EventSubscription result;
+                try {
+            		result = modifyEventSubscription(modifyEventSubscriptionRequest);
+            	} catch (Exception ex) {
+            	    asyncHandler.onError(ex);
+    				throw ex;
+            	}
+            	asyncHandler.onSuccess(modifyEventSubscriptionRequest, result);
+               	return result;
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Lists all tags on a DB Instance.
+     * </p>
+     * <p>
+     * For an overview on tagging DB Instances, see <a
+     * azonwebservices.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html">
+     * DB Instance Tags. </a>
+     * </p>
+     *
+     * @param listTagsForResourceRequest Container for the necessary
+     *           parameters to execute the ListTagsForResource operation on AmazonRDS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ListTagsForResource service method, as returned by AmazonRDS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ListTagsForResourceResult> listTagsForResourceAsync(final ListTagsForResourceRequest listTagsForResourceRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ListTagsForResourceResult>() {
+            public ListTagsForResourceResult call() throws Exception {
+                return listTagsForResource(listTagsForResourceRequest);
+		    }
+		});
+    }
+
+    
+    /**
+     * <p>
+     * Lists all tags on a DB Instance.
+     * </p>
+     * <p>
+     * For an overview on tagging DB Instances, see <a
+     * azonwebservices.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html">
+     * DB Instance Tags. </a>
+     * </p>
+     *
+     * @param listTagsForResourceRequest Container for the necessary
+     *           parameters to execute the ListTagsForResource operation on AmazonRDS.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ListTagsForResource service method, as returned by AmazonRDS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ListTagsForResourceResult> listTagsForResourceAsync(
+            final ListTagsForResourceRequest listTagsForResourceRequest,
+            final AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<ListTagsForResourceResult>() {
+            public ListTagsForResourceResult call() throws Exception {
+            	ListTagsForResourceResult result;
+                try {
+            		result = listTagsForResource(listTagsForResourceRequest);
+            	} catch (Exception ex) {
+            	    asyncHandler.onError(ex);
+    				throw ex;
+            	}
+            	asyncHandler.onSuccess(listTagsForResourceRequest, result);
+               	return result;
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Modifies an existing Option Group.
+     * </p>
+     *
+     * @param modifyOptionGroupRequest Container for the necessary parameters
+     *           to execute the ModifyOptionGroup operation on AmazonRDS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ModifyOptionGroup service method, as returned by AmazonRDS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<OptionGroup> modifyOptionGroupAsync(final ModifyOptionGroupRequest modifyOptionGroupRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<OptionGroup>() {
+            public OptionGroup call() throws Exception {
+                return modifyOptionGroup(modifyOptionGroupRequest);
+		    }
+		});
+    }
+
+    
+    /**
+     * <p>
+     * Modifies an existing Option Group.
+     * </p>
+     *
+     * @param modifyOptionGroupRequest Container for the necessary parameters
+     *           to execute the ModifyOptionGroup operation on AmazonRDS.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ModifyOptionGroup service method, as returned by AmazonRDS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<OptionGroup> modifyOptionGroupAsync(
+            final ModifyOptionGroupRequest modifyOptionGroupRequest,
+            final AsyncHandler<ModifyOptionGroupRequest, OptionGroup> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<OptionGroup>() {
+            public OptionGroup call() throws Exception {
+            	OptionGroup result;
+                try {
+            		result = modifyOptionGroup(modifyOptionGroupRequest);
+            	} catch (Exception ex) {
+            	    asyncHandler.onError(ex);
+    				throw ex;
+            	}
+            	asyncHandler.onSuccess(modifyOptionGroupRequest, result);
+               	return result;
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Lists all the subscription descriptions for a customer account. The
+     * description for a subscription includes SubscriptionName, SNSTopicARN,
+     * CustomerID, SourceType, SourceID, CreationTime, and Status.
+     * </p>
+     * <p>
+     * If you specify a SubscriptionName, lists the description for that
+     * subscription.
+     * </p>
+     *
+     * @param describeEventSubscriptionsRequest Container for the necessary
+     *           parameters to execute the DescribeEventSubscriptions operation on
+     *           AmazonRDS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeEventSubscriptions service method, as returned by AmazonRDS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeEventSubscriptionsResult> describeEventSubscriptionsAsync(final DescribeEventSubscriptionsRequest describeEventSubscriptionsRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeEventSubscriptionsResult>() {
+            public DescribeEventSubscriptionsResult call() throws Exception {
+                return describeEventSubscriptions(describeEventSubscriptionsRequest);
+		    }
+		});
+    }
+
+    
+    /**
+     * <p>
+     * Lists all the subscription descriptions for a customer account. The
+     * description for a subscription includes SubscriptionName, SNSTopicARN,
+     * CustomerID, SourceType, SourceID, CreationTime, and Status.
+     * </p>
+     * <p>
+     * If you specify a SubscriptionName, lists the description for that
+     * subscription.
+     * </p>
+     *
+     * @param describeEventSubscriptionsRequest Container for the necessary
+     *           parameters to execute the DescribeEventSubscriptions operation on
+     *           AmazonRDS.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeEventSubscriptions service method, as returned by AmazonRDS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeEventSubscriptionsResult> describeEventSubscriptionsAsync(
+            final DescribeEventSubscriptionsRequest describeEventSubscriptionsRequest,
+            final AsyncHandler<DescribeEventSubscriptionsRequest, DescribeEventSubscriptionsResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeEventSubscriptionsResult>() {
+            public DescribeEventSubscriptionsResult call() throws Exception {
+            	DescribeEventSubscriptionsResult result;
+                try {
+            		result = describeEventSubscriptions(describeEventSubscriptionsRequest);
+            	} catch (Exception ex) {
+            	    asyncHandler.onError(ex);
+    				throw ex;
+            	}
+            	asyncHandler.onSuccess(describeEventSubscriptionsRequest, result);
+               	return result;
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Creates a new Option Group. You can create up to 20 option groups.
+     * </p>
+     *
+     * @param createOptionGroupRequest Container for the necessary parameters
+     *           to execute the CreateOptionGroup operation on AmazonRDS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreateOptionGroup service method, as returned by AmazonRDS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<OptionGroup> createOptionGroupAsync(final CreateOptionGroupRequest createOptionGroupRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<OptionGroup>() {
+            public OptionGroup call() throws Exception {
+                return createOptionGroup(createOptionGroupRequest);
+		    }
+		});
+    }
+
+    
+    /**
+     * <p>
+     * Creates a new Option Group. You can create up to 20 option groups.
+     * </p>
+     *
+     * @param createOptionGroupRequest Container for the necessary parameters
+     *           to execute the CreateOptionGroup operation on AmazonRDS.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreateOptionGroup service method, as returned by AmazonRDS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<OptionGroup> createOptionGroupAsync(
+            final CreateOptionGroupRequest createOptionGroupRequest,
+            final AsyncHandler<CreateOptionGroupRequest, OptionGroup> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<OptionGroup>() {
+            public OptionGroup call() throws Exception {
+            	OptionGroup result;
+                try {
+            		result = createOptionGroup(createOptionGroupRequest);
+            	} catch (Exception ex) {
+            	    asyncHandler.onError(ex);
+    				throw ex;
+            	}
+            	asyncHandler.onSuccess(createOptionGroupRequest, result);
+               	return result;
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Returns a list of DB log files for the DB instance.
+     * </p>
+     *
+     * @param describeDBLogFilesRequest Container for the necessary
+     *           parameters to execute the DescribeDBLogFiles operation on AmazonRDS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeDBLogFiles service method, as returned by AmazonRDS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeDBLogFilesResult> describeDBLogFilesAsync(final DescribeDBLogFilesRequest describeDBLogFilesRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeDBLogFilesResult>() {
+            public DescribeDBLogFilesResult call() throws Exception {
+                return describeDBLogFiles(describeDBLogFilesRequest);
+		    }
+		});
+    }
+
+    
+    /**
+     * <p>
+     * Returns a list of DB log files for the DB instance.
+     * </p>
+     *
+     * @param describeDBLogFilesRequest Container for the necessary
+     *           parameters to execute the DescribeDBLogFiles operation on AmazonRDS.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeDBLogFiles service method, as returned by AmazonRDS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeDBLogFilesResult> describeDBLogFilesAsync(
+            final DescribeDBLogFilesRequest describeDBLogFilesRequest,
+            final AsyncHandler<DescribeDBLogFilesRequest, DescribeDBLogFilesResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeDBLogFilesResult>() {
+            public DescribeDBLogFilesResult call() throws Exception {
+            	DescribeDBLogFilesResult result;
+                try {
+            		result = describeDBLogFiles(describeDBLogFilesRequest);
+            	} catch (Exception ex) {
+            	    asyncHandler.onError(ex);
+    				throw ex;
+            	}
+            	asyncHandler.onSuccess(describeDBLogFilesRequest, result);
+               	return result;
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Modifies an existing DB subnet group. DB subnet groups must contain
+     * at least one subnet in at least two AZs in the region.
+     * </p>
+     *
+     * @param modifyDBSubnetGroupRequest Container for the necessary
+     *           parameters to execute the ModifyDBSubnetGroup operation on AmazonRDS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ModifyDBSubnetGroup service method, as returned by AmazonRDS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DBSubnetGroup> modifyDBSubnetGroupAsync(final ModifyDBSubnetGroupRequest modifyDBSubnetGroupRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DBSubnetGroup>() {
+            public DBSubnetGroup call() throws Exception {
+                return modifyDBSubnetGroup(modifyDBSubnetGroupRequest);
+		    }
+		});
+    }
+
+    
+    /**
+     * <p>
+     * Modifies an existing DB subnet group. DB subnet groups must contain
+     * at least one subnet in at least two AZs in the region.
+     * </p>
+     *
+     * @param modifyDBSubnetGroupRequest Container for the necessary
+     *           parameters to execute the ModifyDBSubnetGroup operation on AmazonRDS.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ModifyDBSubnetGroup service method, as returned by AmazonRDS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DBSubnetGroup> modifyDBSubnetGroupAsync(
+            final ModifyDBSubnetGroupRequest modifyDBSubnetGroupRequest,
+            final AsyncHandler<ModifyDBSubnetGroupRequest, DBSubnetGroup> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DBSubnetGroup>() {
+            public DBSubnetGroup call() throws Exception {
+            	DBSubnetGroup result;
+                try {
+            		result = modifyDBSubnetGroup(modifyDBSubnetGroupRequest);
+            	} catch (Exception ex) {
+            	    asyncHandler.onError(ex);
+    				throw ex;
+            	}
+            	asyncHandler.onSuccess(modifyDBSubnetGroupRequest, result);
+               	return result;
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Returns information about reserved DB Instances for this account, or
+     * about a specified reserved DB Instance.
+     * </p>
+     *
+     * @param describeReservedDBInstancesRequest Container for the necessary
+     *           parameters to execute the DescribeReservedDBInstances operation on
+     *           AmazonRDS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeReservedDBInstances service method, as returned by AmazonRDS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeReservedDBInstancesResult> describeReservedDBInstancesAsync(final DescribeReservedDBInstancesRequest describeReservedDBInstancesRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeReservedDBInstancesResult>() {
+            public DescribeReservedDBInstancesResult call() throws Exception {
+                return describeReservedDBInstances(describeReservedDBInstancesRequest);
+		    }
+		});
+    }
+
+    
+    /**
+     * <p>
+     * Returns information about reserved DB Instances for this account, or
+     * about a specified reserved DB Instance.
+     * </p>
+     *
+     * @param describeReservedDBInstancesRequest Container for the necessary
+     *           parameters to execute the DescribeReservedDBInstances operation on
+     *           AmazonRDS.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeReservedDBInstances service method, as returned by AmazonRDS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeReservedDBInstancesResult> describeReservedDBInstancesAsync(
+            final DescribeReservedDBInstancesRequest describeReservedDBInstancesRequest,
+            final AsyncHandler<DescribeReservedDBInstancesRequest, DescribeReservedDBInstancesResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeReservedDBInstancesResult>() {
+            public DescribeReservedDBInstancesResult call() throws Exception {
+            	DescribeReservedDBInstancesResult result;
+                try {
+            		result = describeReservedDBInstances(describeReservedDBInstancesRequest);
+            	} catch (Exception ex) {
+            	    asyncHandler.onError(ex);
+    				throw ex;
+            	}
+            	asyncHandler.onSuccess(describeReservedDBInstancesRequest, result);
+               	return result;
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Removes a source identifier from an existing RDS event notification
+     * subscription.
+     * </p>
+     *
+     * @param removeSourceIdentifierFromSubscriptionRequest Container for the
+     *           necessary parameters to execute the
+     *           RemoveSourceIdentifierFromSubscription operation on AmazonRDS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         RemoveSourceIdentifierFromSubscription service method, as returned by
+     *         AmazonRDS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<EventSubscription> removeSourceIdentifierFromSubscriptionAsync(final RemoveSourceIdentifierFromSubscriptionRequest removeSourceIdentifierFromSubscriptionRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<EventSubscription>() {
+            public EventSubscription call() throws Exception {
+                return removeSourceIdentifierFromSubscription(removeSourceIdentifierFromSubscriptionRequest);
+		    }
+		});
+    }
+
+    
+    /**
+     * <p>
+     * Removes a source identifier from an existing RDS event notification
+     * subscription.
+     * </p>
+     *
+     * @param removeSourceIdentifierFromSubscriptionRequest Container for the
+     *           necessary parameters to execute the
+     *           RemoveSourceIdentifierFromSubscription operation on AmazonRDS.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         RemoveSourceIdentifierFromSubscription service method, as returned by
+     *         AmazonRDS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<EventSubscription> removeSourceIdentifierFromSubscriptionAsync(
+            final RemoveSourceIdentifierFromSubscriptionRequest removeSourceIdentifierFromSubscriptionRequest,
+            final AsyncHandler<RemoveSourceIdentifierFromSubscriptionRequest, EventSubscription> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<EventSubscription>() {
+            public EventSubscription call() throws Exception {
+            	EventSubscription result;
+                try {
+            		result = removeSourceIdentifierFromSubscription(removeSourceIdentifierFromSubscriptionRequest);
+            	} catch (Exception ex) {
+            	    asyncHandler.onError(ex);
+    				throw ex;
+            	}
+            	asyncHandler.onSuccess(removeSourceIdentifierFromSubscriptionRequest, result);
+               	return result;
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Creates a DB Instance that acts as a Read Replica of a source DB
+     * Instance.
+     * </p>
+     * <p>
+     * All Read Replica DB Instances are created as Single-AZ deployments
+     * with backups disabled. All other DB Instance attributes (including DB
+     * Security Groups and DB Parameter Groups) are inherited from the source
+     * DB Instance, except as specified below.
+     * </p>
+     * <p>
+     * <b>IMPORTANT:</b> The source DB Instance must have backup retention
+     * enabled.
+     * </p>
+     *
+     * @param createDBInstanceReadReplicaRequest Container for the necessary
+     *           parameters to execute the CreateDBInstanceReadReplica operation on
+     *           AmazonRDS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreateDBInstanceReadReplica service method, as returned by AmazonRDS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DBInstance> createDBInstanceReadReplicaAsync(final CreateDBInstanceReadReplicaRequest createDBInstanceReadReplicaRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DBInstance>() {
+            public DBInstance call() throws Exception {
+                return createDBInstanceReadReplica(createDBInstanceReadReplicaRequest);
+		    }
+		});
+    }
+
+    
+    /**
+     * <p>
+     * Creates a DB Instance that acts as a Read Replica of a source DB
+     * Instance.
+     * </p>
+     * <p>
+     * All Read Replica DB Instances are created as Single-AZ deployments
+     * with backups disabled. All other DB Instance attributes (including DB
+     * Security Groups and DB Parameter Groups) are inherited from the source
+     * DB Instance, except as specified below.
+     * </p>
+     * <p>
+     * <b>IMPORTANT:</b> The source DB Instance must have backup retention
+     * enabled.
+     * </p>
+     *
+     * @param createDBInstanceReadReplicaRequest Container for the necessary
+     *           parameters to execute the CreateDBInstanceReadReplica operation on
+     *           AmazonRDS.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreateDBInstanceReadReplica service method, as returned by AmazonRDS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DBInstance> createDBInstanceReadReplicaAsync(
+            final CreateDBInstanceReadReplicaRequest createDBInstanceReadReplicaRequest,
+            final AsyncHandler<CreateDBInstanceReadReplicaRequest, DBInstance> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DBInstance>() {
+            public DBInstance call() throws Exception {
+            	DBInstance result;
+                try {
+            		result = createDBInstanceReadReplica(createDBInstanceReadReplicaRequest);
+            	} catch (Exception ex) {
+            	    asyncHandler.onError(ex);
+    				throw ex;
+            	}
+            	asyncHandler.onSuccess(createDBInstanceReadReplicaRequest, result);
+               	return result;
+		    }
+		});
+    }
+    
+    /**
+     * <p>
      * Displays a list of categories for all event source types, or, if
      * specified, for a specified source type. You can see a list of the
      * event categories and source types in the <a
@@ -3235,22 +2822,14 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
     
     /**
      * <p>
-     * Returns a list of DBSubnetGroup descriptions. If a DBSubnetGroupName
-     * is specified, the list will contain only the descriptions of the
-     * specified DBSubnetGroup.
-     * </p>
-     * <p>
-     * For an overview of CIDR ranges, go to the <a
-     * href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">
-     * Wikipedia Tutorial </a> .
+     * Deletes an existing Option Group.
      * </p>
      *
-     * @param describeDBSubnetGroupsRequest Container for the necessary
-     *           parameters to execute the DescribeDBSubnetGroups operation on
-     *           AmazonRDS.
+     * @param deleteOptionGroupRequest Container for the necessary parameters
+     *           to execute the DeleteOptionGroup operation on AmazonRDS.
      * 
      * @return A Java Future object containing the response from the
-     *         DescribeDBSubnetGroups service method, as returned by AmazonRDS.
+     *         DeleteOptionGroup service method, as returned by AmazonRDS.
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3260,11 +2839,12 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<DescribeDBSubnetGroupsResult> describeDBSubnetGroupsAsync(final DescribeDBSubnetGroupsRequest describeDBSubnetGroupsRequest) 
+    public Future<Void> deleteOptionGroupAsync(final DeleteOptionGroupRequest deleteOptionGroupRequest) 
             throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DescribeDBSubnetGroupsResult>() {
-            public DescribeDBSubnetGroupsResult call() throws Exception {
-                return describeDBSubnetGroups(describeDBSubnetGroupsRequest);
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                deleteOptionGroup(deleteOptionGroupRequest);
+                return null;
 		    }
 		});
     }
@@ -3272,26 +2852,18 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
     
     /**
      * <p>
-     * Returns a list of DBSubnetGroup descriptions. If a DBSubnetGroupName
-     * is specified, the list will contain only the descriptions of the
-     * specified DBSubnetGroup.
-     * </p>
-     * <p>
-     * For an overview of CIDR ranges, go to the <a
-     * href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">
-     * Wikipedia Tutorial </a> .
+     * Deletes an existing Option Group.
      * </p>
      *
-     * @param describeDBSubnetGroupsRequest Container for the necessary
-     *           parameters to execute the DescribeDBSubnetGroups operation on
-     *           AmazonRDS.
+     * @param deleteOptionGroupRequest Container for the necessary parameters
+     *           to execute the DeleteOptionGroup operation on AmazonRDS.
      * @param asyncHandler Asynchronous callback handler for events in the
      *           life-cycle of the request. Users could provide the implementation of
      *           the four callback methods in this interface to process the operation
      *           result or handle the exception.
      * 
      * @return A Java Future object containing the response from the
-     *         DescribeDBSubnetGroups service method, as returned by AmazonRDS.
+     *         DeleteOptionGroup service method, as returned by AmazonRDS.
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3301,21 +2873,20 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<DescribeDBSubnetGroupsResult> describeDBSubnetGroupsAsync(
-            final DescribeDBSubnetGroupsRequest describeDBSubnetGroupsRequest,
-            final AsyncHandler<DescribeDBSubnetGroupsRequest, DescribeDBSubnetGroupsResult> asyncHandler)
+    public Future<Void> deleteOptionGroupAsync(
+            final DeleteOptionGroupRequest deleteOptionGroupRequest,
+            final AsyncHandler<DeleteOptionGroupRequest, Void> asyncHandler)
                     throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DescribeDBSubnetGroupsResult>() {
-            public DescribeDBSubnetGroupsResult call() throws Exception {
-            	DescribeDBSubnetGroupsResult result;
-                try {
-            		result = describeDBSubnetGroups(describeDBSubnetGroupsRequest);
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+            	try {
+            		deleteOptionGroup(deleteOptionGroupRequest);
             	} catch (Exception ex) {
             	    asyncHandler.onError(ex);
     				throw ex;
             	}
-            	asyncHandler.onSuccess(describeDBSubnetGroupsRequest, result);
-               	return result;
+            	asyncHandler.onSuccess(deleteOptionGroupRequest, null);
+               	return null;
 		    }
 		});
     }
@@ -3433,15 +3004,18 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
     
     /**
      * <p>
-     * Modifies an existing DB subnet group. DB subnet groups must contain
-     * at least one subnet in at least two AZs in the region.
+     * Returns events related to DB Instances, DB Security Groups, DB
+     * Snapshots and DB Parameter Groups for the past 14 days. Events
+     * specific to a particular DB Instance, DB Security Group, database
+     * snapshot or DB Parameter Group can be obtained by providing the name
+     * as a parameter. By default, the past hour of events are returned.
      * </p>
      *
-     * @param modifyDBSubnetGroupRequest Container for the necessary
-     *           parameters to execute the ModifyDBSubnetGroup operation on AmazonRDS.
+     * @param describeEventsRequest Container for the necessary parameters to
+     *           execute the DescribeEvents operation on AmazonRDS.
      * 
      * @return A Java Future object containing the response from the
-     *         ModifyDBSubnetGroup service method, as returned by AmazonRDS.
+     *         DescribeEvents service method, as returned by AmazonRDS.
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3451,11 +3025,11 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<DBSubnetGroup> modifyDBSubnetGroupAsync(final ModifyDBSubnetGroupRequest modifyDBSubnetGroupRequest) 
+    public Future<DescribeEventsResult> describeEventsAsync(final DescribeEventsRequest describeEventsRequest) 
             throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DBSubnetGroup>() {
-            public DBSubnetGroup call() throws Exception {
-                return modifyDBSubnetGroup(modifyDBSubnetGroupRequest);
+        return executorService.submit(new Callable<DescribeEventsResult>() {
+            public DescribeEventsResult call() throws Exception {
+                return describeEvents(describeEventsRequest);
 		    }
 		});
     }
@@ -3463,19 +3037,22 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
     
     /**
      * <p>
-     * Modifies an existing DB subnet group. DB subnet groups must contain
-     * at least one subnet in at least two AZs in the region.
+     * Returns events related to DB Instances, DB Security Groups, DB
+     * Snapshots and DB Parameter Groups for the past 14 days. Events
+     * specific to a particular DB Instance, DB Security Group, database
+     * snapshot or DB Parameter Group can be obtained by providing the name
+     * as a parameter. By default, the past hour of events are returned.
      * </p>
      *
-     * @param modifyDBSubnetGroupRequest Container for the necessary
-     *           parameters to execute the ModifyDBSubnetGroup operation on AmazonRDS.
+     * @param describeEventsRequest Container for the necessary parameters to
+     *           execute the DescribeEvents operation on AmazonRDS.
      * @param asyncHandler Asynchronous callback handler for events in the
      *           life-cycle of the request. Users could provide the implementation of
      *           the four callback methods in this interface to process the operation
      *           result or handle the exception.
      * 
      * @return A Java Future object containing the response from the
-     *         ModifyDBSubnetGroup service method, as returned by AmazonRDS.
+     *         DescribeEvents service method, as returned by AmazonRDS.
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3485,20 +3062,488 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<DBSubnetGroup> modifyDBSubnetGroupAsync(
-            final ModifyDBSubnetGroupRequest modifyDBSubnetGroupRequest,
-            final AsyncHandler<ModifyDBSubnetGroupRequest, DBSubnetGroup> asyncHandler)
+    public Future<DescribeEventsResult> describeEventsAsync(
+            final DescribeEventsRequest describeEventsRequest,
+            final AsyncHandler<DescribeEventsRequest, DescribeEventsResult> asyncHandler)
                     throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DBSubnetGroup>() {
-            public DBSubnetGroup call() throws Exception {
-            	DBSubnetGroup result;
+        return executorService.submit(new Callable<DescribeEventsResult>() {
+            public DescribeEventsResult call() throws Exception {
+            	DescribeEventsResult result;
                 try {
-            		result = modifyDBSubnetGroup(modifyDBSubnetGroupRequest);
+            		result = describeEvents(describeEventsRequest);
             	} catch (Exception ex) {
             	    asyncHandler.onError(ex);
     				throw ex;
             	}
-            	asyncHandler.onSuccess(modifyDBSubnetGroupRequest, result);
+            	asyncHandler.onSuccess(describeEventsRequest, result);
+               	return result;
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Returns the detailed parameter list for a particular
+     * DBParameterGroup.
+     * </p>
+     *
+     * @param describeDBParametersRequest Container for the necessary
+     *           parameters to execute the DescribeDBParameters operation on AmazonRDS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeDBParameters service method, as returned by AmazonRDS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeDBParametersResult> describeDBParametersAsync(final DescribeDBParametersRequest describeDBParametersRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeDBParametersResult>() {
+            public DescribeDBParametersResult call() throws Exception {
+                return describeDBParameters(describeDBParametersRequest);
+		    }
+		});
+    }
+
+    
+    /**
+     * <p>
+     * Returns the detailed parameter list for a particular
+     * DBParameterGroup.
+     * </p>
+     *
+     * @param describeDBParametersRequest Container for the necessary
+     *           parameters to execute the DescribeDBParameters operation on AmazonRDS.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeDBParameters service method, as returned by AmazonRDS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeDBParametersResult> describeDBParametersAsync(
+            final DescribeDBParametersRequest describeDBParametersRequest,
+            final AsyncHandler<DescribeDBParametersRequest, DescribeDBParametersResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeDBParametersResult>() {
+            public DescribeDBParametersResult call() throws Exception {
+            	DescribeDBParametersResult result;
+                try {
+            		result = describeDBParameters(describeDBParametersRequest);
+            	} catch (Exception ex) {
+            	    asyncHandler.onError(ex);
+    				throw ex;
+            	}
+            	asyncHandler.onSuccess(describeDBParametersRequest, result);
+               	return result;
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Returns the default engine and system parameter information for the
+     * specified database engine.
+     * </p>
+     *
+     * @param describeEngineDefaultParametersRequest Container for the
+     *           necessary parameters to execute the DescribeEngineDefaultParameters
+     *           operation on AmazonRDS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeEngineDefaultParameters service method, as returned by
+     *         AmazonRDS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<EngineDefaults> describeEngineDefaultParametersAsync(final DescribeEngineDefaultParametersRequest describeEngineDefaultParametersRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<EngineDefaults>() {
+            public EngineDefaults call() throws Exception {
+                return describeEngineDefaultParameters(describeEngineDefaultParametersRequest);
+		    }
+		});
+    }
+
+    
+    /**
+     * <p>
+     * Returns the default engine and system parameter information for the
+     * specified database engine.
+     * </p>
+     *
+     * @param describeEngineDefaultParametersRequest Container for the
+     *           necessary parameters to execute the DescribeEngineDefaultParameters
+     *           operation on AmazonRDS.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeEngineDefaultParameters service method, as returned by
+     *         AmazonRDS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<EngineDefaults> describeEngineDefaultParametersAsync(
+            final DescribeEngineDefaultParametersRequest describeEngineDefaultParametersRequest,
+            final AsyncHandler<DescribeEngineDefaultParametersRequest, EngineDefaults> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<EngineDefaults>() {
+            public EngineDefaults call() throws Exception {
+            	EngineDefaults result;
+                try {
+            		result = describeEngineDefaultParameters(describeEngineDefaultParametersRequest);
+            	} catch (Exception ex) {
+            	    asyncHandler.onError(ex);
+    				throw ex;
+            	}
+            	asyncHandler.onSuccess(describeEngineDefaultParametersRequest, result);
+               	return result;
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Creates a new DB Security Group. DB Security Groups control access to
+     * a DB Instance.
+     * </p>
+     *
+     * @param createDBSecurityGroupRequest Container for the necessary
+     *           parameters to execute the CreateDBSecurityGroup operation on
+     *           AmazonRDS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreateDBSecurityGroup service method, as returned by AmazonRDS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DBSecurityGroup> createDBSecurityGroupAsync(final CreateDBSecurityGroupRequest createDBSecurityGroupRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DBSecurityGroup>() {
+            public DBSecurityGroup call() throws Exception {
+                return createDBSecurityGroup(createDBSecurityGroupRequest);
+		    }
+		});
+    }
+
+    
+    /**
+     * <p>
+     * Creates a new DB Security Group. DB Security Groups control access to
+     * a DB Instance.
+     * </p>
+     *
+     * @param createDBSecurityGroupRequest Container for the necessary
+     *           parameters to execute the CreateDBSecurityGroup operation on
+     *           AmazonRDS.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreateDBSecurityGroup service method, as returned by AmazonRDS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DBSecurityGroup> createDBSecurityGroupAsync(
+            final CreateDBSecurityGroupRequest createDBSecurityGroupRequest,
+            final AsyncHandler<CreateDBSecurityGroupRequest, DBSecurityGroup> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DBSecurityGroup>() {
+            public DBSecurityGroup call() throws Exception {
+            	DBSecurityGroup result;
+                try {
+            		result = createDBSecurityGroup(createDBSecurityGroupRequest);
+            	} catch (Exception ex) {
+            	    asyncHandler.onError(ex);
+    				throw ex;
+            	}
+            	asyncHandler.onSuccess(createDBSecurityGroupRequest, result);
+               	return result;
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Returns a list of DBSubnetGroup descriptions. If a DBSubnetGroupName
+     * is specified, the list will contain only the descriptions of the
+     * specified DBSubnetGroup.
+     * </p>
+     * <p>
+     * For an overview of CIDR ranges, go to the <a
+     * href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">
+     * Wikipedia Tutorial </a> .
+     * </p>
+     *
+     * @param describeDBSubnetGroupsRequest Container for the necessary
+     *           parameters to execute the DescribeDBSubnetGroups operation on
+     *           AmazonRDS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeDBSubnetGroups service method, as returned by AmazonRDS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeDBSubnetGroupsResult> describeDBSubnetGroupsAsync(final DescribeDBSubnetGroupsRequest describeDBSubnetGroupsRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeDBSubnetGroupsResult>() {
+            public DescribeDBSubnetGroupsResult call() throws Exception {
+                return describeDBSubnetGroups(describeDBSubnetGroupsRequest);
+		    }
+		});
+    }
+
+    
+    /**
+     * <p>
+     * Returns a list of DBSubnetGroup descriptions. If a DBSubnetGroupName
+     * is specified, the list will contain only the descriptions of the
+     * specified DBSubnetGroup.
+     * </p>
+     * <p>
+     * For an overview of CIDR ranges, go to the <a
+     * href="http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">
+     * Wikipedia Tutorial </a> .
+     * </p>
+     *
+     * @param describeDBSubnetGroupsRequest Container for the necessary
+     *           parameters to execute the DescribeDBSubnetGroups operation on
+     *           AmazonRDS.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeDBSubnetGroups service method, as returned by AmazonRDS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeDBSubnetGroupsResult> describeDBSubnetGroupsAsync(
+            final DescribeDBSubnetGroupsRequest describeDBSubnetGroupsRequest,
+            final AsyncHandler<DescribeDBSubnetGroupsRequest, DescribeDBSubnetGroupsResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeDBSubnetGroupsResult>() {
+            public DescribeDBSubnetGroupsResult call() throws Exception {
+            	DescribeDBSubnetGroupsResult result;
+                try {
+            		result = describeDBSubnetGroups(describeDBSubnetGroupsRequest);
+            	} catch (Exception ex) {
+            	    asyncHandler.onError(ex);
+    				throw ex;
+            	}
+            	asyncHandler.onSuccess(describeDBSubnetGroupsRequest, result);
+               	return result;
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Returns information about DBSnapshots. This API supports pagination.
+     * </p>
+     *
+     * @param describeDBSnapshotsRequest Container for the necessary
+     *           parameters to execute the DescribeDBSnapshots operation on AmazonRDS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeDBSnapshots service method, as returned by AmazonRDS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeDBSnapshotsResult> describeDBSnapshotsAsync(final DescribeDBSnapshotsRequest describeDBSnapshotsRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeDBSnapshotsResult>() {
+            public DescribeDBSnapshotsResult call() throws Exception {
+                return describeDBSnapshots(describeDBSnapshotsRequest);
+		    }
+		});
+    }
+
+    
+    /**
+     * <p>
+     * Returns information about DBSnapshots. This API supports pagination.
+     * </p>
+     *
+     * @param describeDBSnapshotsRequest Container for the necessary
+     *           parameters to execute the DescribeDBSnapshots operation on AmazonRDS.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeDBSnapshots service method, as returned by AmazonRDS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeDBSnapshotsResult> describeDBSnapshotsAsync(
+            final DescribeDBSnapshotsRequest describeDBSnapshotsRequest,
+            final AsyncHandler<DescribeDBSnapshotsRequest, DescribeDBSnapshotsResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeDBSnapshotsResult>() {
+            public DescribeDBSnapshotsResult call() throws Exception {
+            	DescribeDBSnapshotsResult result;
+                try {
+            		result = describeDBSnapshots(describeDBSnapshotsRequest);
+            	} catch (Exception ex) {
+            	    asyncHandler.onError(ex);
+    				throw ex;
+            	}
+            	asyncHandler.onSuccess(describeDBSnapshotsRequest, result);
+               	return result;
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Reboots a previously provisioned RDS instance. This API results in
+     * the application of modified DBParameterGroup parameters with
+     * ApplyStatus of pending-reboot to the RDS instance. This action is
+     * taken as soon as possible, and results in a momentary outage to the
+     * RDS instance during which the RDS instance status is set to rebooting.
+     * If the RDS instance is configured for MultiAZ, it is possible that the
+     * reboot will be conducted through a failover. A DBInstance event is
+     * created when the reboot is completed.
+     * </p>
+     *
+     * @param rebootDBInstanceRequest Container for the necessary parameters
+     *           to execute the RebootDBInstance operation on AmazonRDS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         RebootDBInstance service method, as returned by AmazonRDS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DBInstance> rebootDBInstanceAsync(final RebootDBInstanceRequest rebootDBInstanceRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DBInstance>() {
+            public DBInstance call() throws Exception {
+                return rebootDBInstance(rebootDBInstanceRequest);
+		    }
+		});
+    }
+
+    
+    /**
+     * <p>
+     * Reboots a previously provisioned RDS instance. This API results in
+     * the application of modified DBParameterGroup parameters with
+     * ApplyStatus of pending-reboot to the RDS instance. This action is
+     * taken as soon as possible, and results in a momentary outage to the
+     * RDS instance during which the RDS instance status is set to rebooting.
+     * If the RDS instance is configured for MultiAZ, it is possible that the
+     * reboot will be conducted through a failover. A DBInstance event is
+     * created when the reboot is completed.
+     * </p>
+     *
+     * @param rebootDBInstanceRequest Container for the necessary parameters
+     *           to execute the RebootDBInstance operation on AmazonRDS.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         RebootDBInstance service method, as returned by AmazonRDS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DBInstance> rebootDBInstanceAsync(
+            final RebootDBInstanceRequest rebootDBInstanceRequest,
+            final AsyncHandler<RebootDBInstanceRequest, DBInstance> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DBInstance>() {
+            public DBInstance call() throws Exception {
+            	DBInstance result;
+                try {
+            		result = rebootDBInstance(rebootDBInstanceRequest);
+            	} catch (Exception ex) {
+            	    asyncHandler.onError(ex);
+    				throw ex;
+            	}
+            	asyncHandler.onSuccess(rebootDBInstanceRequest, result);
                	return result;
 		    }
 		});
@@ -3587,17 +3632,25 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
     
     /**
      * <p>
-     * Adds a source identifier to an existing RDS event notification
-     * subscription.
+     * Creates a new DB Parameter Group.
+     * </p>
+     * <p>
+     * A DB Parameter Group is initially created with the default parameters
+     * for the database engine used by the DB Instance. To provide custom
+     * values for any of the parameters, you must modify the group after
+     * creating it using <i>ModifyDBParameterGroup</i> . Once you've created
+     * a DB Parameter Group, you need to associate it with your DB Instance
+     * using <i>ModifyDBInstance</i> . When you associate a new DB Parameter
+     * Group with a running DB Instance, you need to reboot the DB Instance
+     * for the new DB Parameter Group and associated settings to take effect.
      * </p>
      *
-     * @param addSourceIdentifierToSubscriptionRequest Container for the
-     *           necessary parameters to execute the AddSourceIdentifierToSubscription
-     *           operation on AmazonRDS.
+     * @param createDBParameterGroupRequest Container for the necessary
+     *           parameters to execute the CreateDBParameterGroup operation on
+     *           AmazonRDS.
      * 
      * @return A Java Future object containing the response from the
-     *         AddSourceIdentifierToSubscription service method, as returned by
-     *         AmazonRDS.
+     *         CreateDBParameterGroup service method, as returned by AmazonRDS.
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3607,11 +3660,11 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<EventSubscription> addSourceIdentifierToSubscriptionAsync(final AddSourceIdentifierToSubscriptionRequest addSourceIdentifierToSubscriptionRequest) 
+    public Future<DBParameterGroup> createDBParameterGroupAsync(final CreateDBParameterGroupRequest createDBParameterGroupRequest) 
             throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<EventSubscription>() {
-            public EventSubscription call() throws Exception {
-                return addSourceIdentifierToSubscription(addSourceIdentifierToSubscriptionRequest);
+        return executorService.submit(new Callable<DBParameterGroup>() {
+            public DBParameterGroup call() throws Exception {
+                return createDBParameterGroup(createDBParameterGroupRequest);
 		    }
 		});
     }
@@ -3619,86 +3672,21 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
     
     /**
      * <p>
-     * Adds a source identifier to an existing RDS event notification
-     * subscription.
+     * Creates a new DB Parameter Group.
      * </p>
-     *
-     * @param addSourceIdentifierToSubscriptionRequest Container for the
-     *           necessary parameters to execute the AddSourceIdentifierToSubscription
-     *           operation on AmazonRDS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         AddSourceIdentifierToSubscription service method, as returned by
-     *         AmazonRDS.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<EventSubscription> addSourceIdentifierToSubscriptionAsync(
-            final AddSourceIdentifierToSubscriptionRequest addSourceIdentifierToSubscriptionRequest,
-            final AsyncHandler<AddSourceIdentifierToSubscriptionRequest, EventSubscription> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<EventSubscription>() {
-            public EventSubscription call() throws Exception {
-            	EventSubscription result;
-                try {
-            		result = addSourceIdentifierToSubscription(addSourceIdentifierToSubscriptionRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(addSourceIdentifierToSubscriptionRequest, result);
-               	return result;
-		    }
-		});
-    }
-    
-    /**
      * <p>
-     * Describes all available options.
+     * A DB Parameter Group is initially created with the default parameters
+     * for the database engine used by the DB Instance. To provide custom
+     * values for any of the parameters, you must modify the group after
+     * creating it using <i>ModifyDBParameterGroup</i> . Once you've created
+     * a DB Parameter Group, you need to associate it with your DB Instance
+     * using <i>ModifyDBInstance</i> . When you associate a new DB Parameter
+     * Group with a running DB Instance, you need to reboot the DB Instance
+     * for the new DB Parameter Group and associated settings to take effect.
      * </p>
      *
-     * @param describeOptionGroupOptionsRequest Container for the necessary
-     *           parameters to execute the DescribeOptionGroupOptions operation on
-     *           AmazonRDS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeOptionGroupOptions service method, as returned by AmazonRDS.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DescribeOptionGroupOptionsResult> describeOptionGroupOptionsAsync(final DescribeOptionGroupOptionsRequest describeOptionGroupOptionsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DescribeOptionGroupOptionsResult>() {
-            public DescribeOptionGroupOptionsResult call() throws Exception {
-                return describeOptionGroupOptions(describeOptionGroupOptionsRequest);
-		    }
-		});
-    }
-
-    
-    /**
-     * <p>
-     * Describes all available options.
-     * </p>
-     *
-     * @param describeOptionGroupOptionsRequest Container for the necessary
-     *           parameters to execute the DescribeOptionGroupOptions operation on
+     * @param createDBParameterGroupRequest Container for the necessary
+     *           parameters to execute the CreateDBParameterGroup operation on
      *           AmazonRDS.
      * @param asyncHandler Asynchronous callback handler for events in the
      *           life-cycle of the request. Users could provide the implementation of
@@ -3706,7 +3694,7 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
      *           result or handle the exception.
      * 
      * @return A Java Future object containing the response from the
-     *         DescribeOptionGroupOptions service method, as returned by AmazonRDS.
+     *         CreateDBParameterGroup service method, as returned by AmazonRDS.
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -3716,20 +3704,20 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
      *             If an error response is returned by AmazonRDS indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<DescribeOptionGroupOptionsResult> describeOptionGroupOptionsAsync(
-            final DescribeOptionGroupOptionsRequest describeOptionGroupOptionsRequest,
-            final AsyncHandler<DescribeOptionGroupOptionsRequest, DescribeOptionGroupOptionsResult> asyncHandler)
+    public Future<DBParameterGroup> createDBParameterGroupAsync(
+            final CreateDBParameterGroupRequest createDBParameterGroupRequest,
+            final AsyncHandler<CreateDBParameterGroupRequest, DBParameterGroup> asyncHandler)
                     throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DescribeOptionGroupOptionsResult>() {
-            public DescribeOptionGroupOptionsResult call() throws Exception {
-            	DescribeOptionGroupOptionsResult result;
+        return executorService.submit(new Callable<DBParameterGroup>() {
+            public DBParameterGroup call() throws Exception {
+            	DBParameterGroup result;
                 try {
-            		result = describeOptionGroupOptions(describeOptionGroupOptionsRequest);
+            		result = createDBParameterGroup(createDBParameterGroupRequest);
             	} catch (Exception ex) {
             	    asyncHandler.onError(ex);
     				throw ex;
             	}
-            	asyncHandler.onSuccess(describeOptionGroupOptionsRequest, result);
+            	asyncHandler.onSuccess(createDBParameterGroupRequest, result);
                	return result;
 		    }
 		});
@@ -3811,6 +3799,247 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
     				throw ex;
             	}
             	asyncHandler.onSuccess(restoreDBInstanceFromDBSnapshotRequest, result);
+               	return result;
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Restores a DB Instance to an arbitrary point-in-time. Users can
+     * restore to any point in time before the latestRestorableTime for up to
+     * backupRetentionPeriod days. The target database is created from the
+     * source database with the same configuration as the original database
+     * except that the DB instance is created with the default DB security
+     * group.
+     * </p>
+     *
+     * @param restoreDBInstanceToPointInTimeRequest Container for the
+     *           necessary parameters to execute the RestoreDBInstanceToPointInTime
+     *           operation on AmazonRDS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         RestoreDBInstanceToPointInTime service method, as returned by
+     *         AmazonRDS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DBInstance> restoreDBInstanceToPointInTimeAsync(final RestoreDBInstanceToPointInTimeRequest restoreDBInstanceToPointInTimeRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DBInstance>() {
+            public DBInstance call() throws Exception {
+                return restoreDBInstanceToPointInTime(restoreDBInstanceToPointInTimeRequest);
+		    }
+		});
+    }
+
+    
+    /**
+     * <p>
+     * Restores a DB Instance to an arbitrary point-in-time. Users can
+     * restore to any point in time before the latestRestorableTime for up to
+     * backupRetentionPeriod days. The target database is created from the
+     * source database with the same configuration as the original database
+     * except that the DB instance is created with the default DB security
+     * group.
+     * </p>
+     *
+     * @param restoreDBInstanceToPointInTimeRequest Container for the
+     *           necessary parameters to execute the RestoreDBInstanceToPointInTime
+     *           operation on AmazonRDS.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         RestoreDBInstanceToPointInTime service method, as returned by
+     *         AmazonRDS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DBInstance> restoreDBInstanceToPointInTimeAsync(
+            final RestoreDBInstanceToPointInTimeRequest restoreDBInstanceToPointInTimeRequest,
+            final AsyncHandler<RestoreDBInstanceToPointInTimeRequest, DBInstance> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DBInstance>() {
+            public DBInstance call() throws Exception {
+            	DBInstance result;
+                try {
+            		result = restoreDBInstanceToPointInTime(restoreDBInstanceToPointInTimeRequest);
+            	} catch (Exception ex) {
+            	    asyncHandler.onError(ex);
+    				throw ex;
+            	}
+            	asyncHandler.onSuccess(restoreDBInstanceToPointInTimeRequest, result);
+               	return result;
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Removes metadata tags from a DB Instance.
+     * </p>
+     * <p>
+     * For an overview on tagging DB Instances, see <a
+     * azonwebservices.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html">
+     * DB Instance Tags. </a>
+     * </p>
+     *
+     * @param removeTagsFromResourceRequest Container for the necessary
+     *           parameters to execute the RemoveTagsFromResource operation on
+     *           AmazonRDS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         RemoveTagsFromResource service method, as returned by AmazonRDS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> removeTagsFromResourceAsync(final RemoveTagsFromResourceRequest removeTagsFromResourceRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                removeTagsFromResource(removeTagsFromResourceRequest);
+                return null;
+		    }
+		});
+    }
+
+    
+    /**
+     * <p>
+     * Removes metadata tags from a DB Instance.
+     * </p>
+     * <p>
+     * For an overview on tagging DB Instances, see <a
+     * azonwebservices.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html">
+     * DB Instance Tags. </a>
+     * </p>
+     *
+     * @param removeTagsFromResourceRequest Container for the necessary
+     *           parameters to execute the RemoveTagsFromResource operation on
+     *           AmazonRDS.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         RemoveTagsFromResource service method, as returned by AmazonRDS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> removeTagsFromResourceAsync(
+            final RemoveTagsFromResourceRequest removeTagsFromResourceRequest,
+            final AsyncHandler<RemoveTagsFromResourceRequest, Void> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+            	try {
+            		removeTagsFromResource(removeTagsFromResourceRequest);
+            	} catch (Exception ex) {
+            	    asyncHandler.onError(ex);
+    				throw ex;
+            	}
+            	asyncHandler.onSuccess(removeTagsFromResourceRequest, null);
+               	return null;
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Describes all available options.
+     * </p>
+     *
+     * @param describeOptionGroupOptionsRequest Container for the necessary
+     *           parameters to execute the DescribeOptionGroupOptions operation on
+     *           AmazonRDS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeOptionGroupOptions service method, as returned by AmazonRDS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeOptionGroupOptionsResult> describeOptionGroupOptionsAsync(final DescribeOptionGroupOptionsRequest describeOptionGroupOptionsRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeOptionGroupOptionsResult>() {
+            public DescribeOptionGroupOptionsResult call() throws Exception {
+                return describeOptionGroupOptions(describeOptionGroupOptionsRequest);
+		    }
+		});
+    }
+
+    
+    /**
+     * <p>
+     * Describes all available options.
+     * </p>
+     *
+     * @param describeOptionGroupOptionsRequest Container for the necessary
+     *           parameters to execute the DescribeOptionGroupOptions operation on
+     *           AmazonRDS.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeOptionGroupOptions service method, as returned by AmazonRDS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeOptionGroupOptionsResult> describeOptionGroupOptionsAsync(
+            final DescribeOptionGroupOptionsRequest describeOptionGroupOptionsRequest,
+            final AsyncHandler<DescribeOptionGroupOptionsRequest, DescribeOptionGroupOptionsResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DescribeOptionGroupOptionsResult>() {
+            public DescribeOptionGroupOptionsResult call() throws Exception {
+            	DescribeOptionGroupOptionsResult result;
+                try {
+            		result = describeOptionGroupOptions(describeOptionGroupOptionsRequest);
+            	} catch (Exception ex) {
+            	    asyncHandler.onError(ex);
+    				throw ex;
+            	}
+            	asyncHandler.onSuccess(describeOptionGroupOptionsRequest, result);
                	return result;
 		    }
 		});
@@ -3911,6 +4140,233 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
     
     /**
      * <p>
+     * Adds a source identifier to an existing RDS event notification
+     * subscription.
+     * </p>
+     *
+     * @param addSourceIdentifierToSubscriptionRequest Container for the
+     *           necessary parameters to execute the AddSourceIdentifierToSubscription
+     *           operation on AmazonRDS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         AddSourceIdentifierToSubscription service method, as returned by
+     *         AmazonRDS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<EventSubscription> addSourceIdentifierToSubscriptionAsync(final AddSourceIdentifierToSubscriptionRequest addSourceIdentifierToSubscriptionRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<EventSubscription>() {
+            public EventSubscription call() throws Exception {
+                return addSourceIdentifierToSubscription(addSourceIdentifierToSubscriptionRequest);
+		    }
+		});
+    }
+
+    
+    /**
+     * <p>
+     * Adds a source identifier to an existing RDS event notification
+     * subscription.
+     * </p>
+     *
+     * @param addSourceIdentifierToSubscriptionRequest Container for the
+     *           necessary parameters to execute the AddSourceIdentifierToSubscription
+     *           operation on AmazonRDS.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         AddSourceIdentifierToSubscription service method, as returned by
+     *         AmazonRDS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<EventSubscription> addSourceIdentifierToSubscriptionAsync(
+            final AddSourceIdentifierToSubscriptionRequest addSourceIdentifierToSubscriptionRequest,
+            final AsyncHandler<AddSourceIdentifierToSubscriptionRequest, EventSubscription> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<EventSubscription>() {
+            public EventSubscription call() throws Exception {
+            	EventSubscription result;
+                try {
+            		result = addSourceIdentifierToSubscription(addSourceIdentifierToSubscriptionRequest);
+            	} catch (Exception ex) {
+            	    asyncHandler.onError(ex);
+    				throw ex;
+            	}
+            	asyncHandler.onSuccess(addSourceIdentifierToSubscriptionRequest, result);
+               	return result;
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Creates a new DB instance.
+     * </p>
+     *
+     * @param createDBInstanceRequest Container for the necessary parameters
+     *           to execute the CreateDBInstance operation on AmazonRDS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreateDBInstance service method, as returned by AmazonRDS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DBInstance> createDBInstanceAsync(final CreateDBInstanceRequest createDBInstanceRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DBInstance>() {
+            public DBInstance call() throws Exception {
+                return createDBInstance(createDBInstanceRequest);
+		    }
+		});
+    }
+
+    
+    /**
+     * <p>
+     * Creates a new DB instance.
+     * </p>
+     *
+     * @param createDBInstanceRequest Container for the necessary parameters
+     *           to execute the CreateDBInstance operation on AmazonRDS.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreateDBInstance service method, as returned by AmazonRDS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DBInstance> createDBInstanceAsync(
+            final CreateDBInstanceRequest createDBInstanceRequest,
+            final AsyncHandler<CreateDBInstanceRequest, DBInstance> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<DBInstance>() {
+            public DBInstance call() throws Exception {
+            	DBInstance result;
+                try {
+            		result = createDBInstance(createDBInstanceRequest);
+            	} catch (Exception ex) {
+            	    asyncHandler.onError(ex);
+    				throw ex;
+            	}
+            	asyncHandler.onSuccess(createDBInstanceRequest, result);
+               	return result;
+		    }
+		});
+    }
+    
+    /**
+     * <p>
+     * Deletes a DB subnet group.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>The specified database subnet group must not be associated
+     * with any DB instances.
+     * </p>
+     *
+     * @param deleteDBSubnetGroupRequest Container for the necessary
+     *           parameters to execute the DeleteDBSubnetGroup operation on AmazonRDS.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeleteDBSubnetGroup service method, as returned by AmazonRDS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> deleteDBSubnetGroupAsync(final DeleteDBSubnetGroupRequest deleteDBSubnetGroupRequest) 
+            throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+                deleteDBSubnetGroup(deleteDBSubnetGroupRequest);
+                return null;
+		    }
+		});
+    }
+
+    
+    /**
+     * <p>
+     * Deletes a DB subnet group.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>The specified database subnet group must not be associated
+     * with any DB instances.
+     * </p>
+     *
+     * @param deleteDBSubnetGroupRequest Container for the necessary
+     *           parameters to execute the DeleteDBSubnetGroup operation on AmazonRDS.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeleteDBSubnetGroup service method, as returned by AmazonRDS.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonRDS indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> deleteDBSubnetGroupAsync(
+            final DeleteDBSubnetGroupRequest deleteDBSubnetGroupRequest,
+            final AsyncHandler<DeleteDBSubnetGroupRequest, Void> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException {
+        return executorService.submit(new Callable<Void>() {
+            public Void call() throws Exception {
+            	try {
+            		deleteDBSubnetGroup(deleteDBSubnetGroupRequest);
+            	} catch (Exception ex) {
+            	    asyncHandler.onError(ex);
+    				throw ex;
+            	}
+            	asyncHandler.onSuccess(deleteDBSubnetGroupRequest, null);
+               	return null;
+		    }
+		});
+    }
+    
+    /**
+     * <p>
      * Adds metadata tags to a DB Instance. These tags can also be used with
      * cost allocation reporting to track cost associated with a DB Instance.
      * </p>
@@ -3988,318 +4444,6 @@ public class AmazonRDSAsyncClient extends AmazonRDSClient
             	}
             	asyncHandler.onSuccess(addTagsToResourceRequest, null);
                	return null;
-		    }
-		});
-    }
-    
-    /**
-     * <p>
-     * Creates a DBSnapshot. The source DBInstance must be in "available"
-     * state.
-     * </p>
-     *
-     * @param createDBSnapshotRequest Container for the necessary parameters
-     *           to execute the CreateDBSnapshot operation on AmazonRDS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         CreateDBSnapshot service method, as returned by AmazonRDS.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DBSnapshot> createDBSnapshotAsync(final CreateDBSnapshotRequest createDBSnapshotRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DBSnapshot>() {
-            public DBSnapshot call() throws Exception {
-                return createDBSnapshot(createDBSnapshotRequest);
-		    }
-		});
-    }
-
-    
-    /**
-     * <p>
-     * Creates a DBSnapshot. The source DBInstance must be in "available"
-     * state.
-     * </p>
-     *
-     * @param createDBSnapshotRequest Container for the necessary parameters
-     *           to execute the CreateDBSnapshot operation on AmazonRDS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         CreateDBSnapshot service method, as returned by AmazonRDS.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DBSnapshot> createDBSnapshotAsync(
-            final CreateDBSnapshotRequest createDBSnapshotRequest,
-            final AsyncHandler<CreateDBSnapshotRequest, DBSnapshot> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DBSnapshot>() {
-            public DBSnapshot call() throws Exception {
-            	DBSnapshot result;
-                try {
-            		result = createDBSnapshot(createDBSnapshotRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(createDBSnapshotRequest, result);
-               	return result;
-		    }
-		});
-    }
-    
-    /**
-     * <p>
-     * Lists all the subscription descriptions for a customer account. The
-     * description for a subscription includes SubscriptionName, SNSTopicARN,
-     * CustomerID, SourceType, SourceID, CreationTime, and Status.
-     * </p>
-     * <p>
-     * If you specify a SubscriptionName, lists the description for that
-     * subscription.
-     * </p>
-     *
-     * @param describeEventSubscriptionsRequest Container for the necessary
-     *           parameters to execute the DescribeEventSubscriptions operation on
-     *           AmazonRDS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeEventSubscriptions service method, as returned by AmazonRDS.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DescribeEventSubscriptionsResult> describeEventSubscriptionsAsync(final DescribeEventSubscriptionsRequest describeEventSubscriptionsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DescribeEventSubscriptionsResult>() {
-            public DescribeEventSubscriptionsResult call() throws Exception {
-                return describeEventSubscriptions(describeEventSubscriptionsRequest);
-		    }
-		});
-    }
-
-    
-    /**
-     * <p>
-     * Lists all the subscription descriptions for a customer account. The
-     * description for a subscription includes SubscriptionName, SNSTopicARN,
-     * CustomerID, SourceType, SourceID, CreationTime, and Status.
-     * </p>
-     * <p>
-     * If you specify a SubscriptionName, lists the description for that
-     * subscription.
-     * </p>
-     *
-     * @param describeEventSubscriptionsRequest Container for the necessary
-     *           parameters to execute the DescribeEventSubscriptions operation on
-     *           AmazonRDS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeEventSubscriptions service method, as returned by AmazonRDS.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DescribeEventSubscriptionsResult> describeEventSubscriptionsAsync(
-            final DescribeEventSubscriptionsRequest describeEventSubscriptionsRequest,
-            final AsyncHandler<DescribeEventSubscriptionsRequest, DescribeEventSubscriptionsResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DescribeEventSubscriptionsResult>() {
-            public DescribeEventSubscriptionsResult call() throws Exception {
-            	DescribeEventSubscriptionsResult result;
-                try {
-            		result = describeEventSubscriptions(describeEventSubscriptionsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeEventSubscriptionsRequest, result);
-               	return result;
-		    }
-		});
-    }
-    
-    /**
-     * <p>
-     * Returns a list of orderable DB Instance options for the specified
-     * engine.
-     * </p>
-     *
-     * @param describeOrderableDBInstanceOptionsRequest Container for the
-     *           necessary parameters to execute the DescribeOrderableDBInstanceOptions
-     *           operation on AmazonRDS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeOrderableDBInstanceOptions service method, as returned by
-     *         AmazonRDS.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DescribeOrderableDBInstanceOptionsResult> describeOrderableDBInstanceOptionsAsync(final DescribeOrderableDBInstanceOptionsRequest describeOrderableDBInstanceOptionsRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DescribeOrderableDBInstanceOptionsResult>() {
-            public DescribeOrderableDBInstanceOptionsResult call() throws Exception {
-                return describeOrderableDBInstanceOptions(describeOrderableDBInstanceOptionsRequest);
-		    }
-		});
-    }
-
-    
-    /**
-     * <p>
-     * Returns a list of orderable DB Instance options for the specified
-     * engine.
-     * </p>
-     *
-     * @param describeOrderableDBInstanceOptionsRequest Container for the
-     *           necessary parameters to execute the DescribeOrderableDBInstanceOptions
-     *           operation on AmazonRDS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeOrderableDBInstanceOptions service method, as returned by
-     *         AmazonRDS.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DescribeOrderableDBInstanceOptionsResult> describeOrderableDBInstanceOptionsAsync(
-            final DescribeOrderableDBInstanceOptionsRequest describeOrderableDBInstanceOptionsRequest,
-            final AsyncHandler<DescribeOrderableDBInstanceOptionsRequest, DescribeOrderableDBInstanceOptionsResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<DescribeOrderableDBInstanceOptionsResult>() {
-            public DescribeOrderableDBInstanceOptionsResult call() throws Exception {
-            	DescribeOrderableDBInstanceOptionsResult result;
-                try {
-            		result = describeOrderableDBInstanceOptions(describeOrderableDBInstanceOptionsRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeOrderableDBInstanceOptionsRequest, result);
-               	return result;
-		    }
-		});
-    }
-    
-    /**
-     * <p>
-     * Returns the default engine and system parameter information for the
-     * specified database engine.
-     * </p>
-     *
-     * @param describeEngineDefaultParametersRequest Container for the
-     *           necessary parameters to execute the DescribeEngineDefaultParameters
-     *           operation on AmazonRDS.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeEngineDefaultParameters service method, as returned by
-     *         AmazonRDS.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<EngineDefaults> describeEngineDefaultParametersAsync(final DescribeEngineDefaultParametersRequest describeEngineDefaultParametersRequest) 
-            throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<EngineDefaults>() {
-            public EngineDefaults call() throws Exception {
-                return describeEngineDefaultParameters(describeEngineDefaultParametersRequest);
-		    }
-		});
-    }
-
-    
-    /**
-     * <p>
-     * Returns the default engine and system parameter information for the
-     * specified database engine.
-     * </p>
-     *
-     * @param describeEngineDefaultParametersRequest Container for the
-     *           necessary parameters to execute the DescribeEngineDefaultParameters
-     *           operation on AmazonRDS.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DescribeEngineDefaultParameters service method, as returned by
-     *         AmazonRDS.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonRDS indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<EngineDefaults> describeEngineDefaultParametersAsync(
-            final DescribeEngineDefaultParametersRequest describeEngineDefaultParametersRequest,
-            final AsyncHandler<DescribeEngineDefaultParametersRequest, EngineDefaults> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException {
-        return executorService.submit(new Callable<EngineDefaults>() {
-            public EngineDefaults call() throws Exception {
-            	EngineDefaults result;
-                try {
-            		result = describeEngineDefaultParameters(describeEngineDefaultParametersRequest);
-            	} catch (Exception ex) {
-            	    asyncHandler.onError(ex);
-    				throw ex;
-            	}
-            	asyncHandler.onSuccess(describeEngineDefaultParametersRequest, result);
-               	return result;
 		    }
 		});
     }

@@ -19,13 +19,9 @@ import java.io.Serializable;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.rds.AmazonRDS#describeEvents(DescribeEventsRequest) DescribeEvents operation}.
  * <p>
- * Returns events related to DB instances, DB security groups, DB Snapshots, and DB parameter groups for the past 14 days. Events specific to a
- * particular DB Iinstance, DB security group, DB Snapshot, or DB parameter group can be obtained by providing the source identifier as a parameter. By
- * default, the past hour of events are returned.
- * </p>
- * <p>
- * You can see a list of event categories and source types in the <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">
- * Events </a> topic in the Amazon RDS User Guide.
+ * Returns events related to DB Instances, DB Security Groups, DB Snapshots and DB Parameter Groups for the past 14 days. Events specific to a
+ * particular DB Instance, DB Security Group, database snapshot or DB Parameter Group can be obtained by providing the name as a parameter. By default,
+ * the past hour of events are returned.
  * </p>
  *
  * @see com.amazonaws.services.rds.AmazonRDS#describeEvents(DescribeEventsRequest)
@@ -622,15 +618,15 @@ public class DescribeEventsRequest extends AmazonWebServiceRequest  implements S
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getSourceIdentifier() != null) sb.append("SourceIdentifier: " + getSourceIdentifier() + ", ");
-        if (getSourceType() != null) sb.append("SourceType: " + getSourceType() + ", ");
-        if (getStartTime() != null) sb.append("StartTime: " + getStartTime() + ", ");
-        if (getEndTime() != null) sb.append("EndTime: " + getEndTime() + ", ");
-        if (getDuration() != null) sb.append("Duration: " + getDuration() + ", ");
-        if (getEventCategories() != null) sb.append("EventCategories: " + getEventCategories() + ", ");
-        if (getMaxRecords() != null) sb.append("MaxRecords: " + getMaxRecords() + ", ");
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ", ");
+        sb.append("{");    	
+        if (getSourceIdentifier() != null) sb.append("SourceIdentifier: " + getSourceIdentifier() + ",");    	
+        if (getSourceType() != null) sb.append("SourceType: " + getSourceType() + ",");    	
+        if (getStartTime() != null) sb.append("StartTime: " + getStartTime() + ",");    	
+        if (getEndTime() != null) sb.append("EndTime: " + getEndTime() + ",");    	
+        if (getDuration() != null) sb.append("Duration: " + getDuration() + ",");    	
+        if (getEventCategories() != null) sb.append("EventCategories: " + getEventCategories() + ",");    	
+        if (getMaxRecords() != null) sb.append("MaxRecords: " + getMaxRecords() + ",");    	
+        if (getMarker() != null) sb.append("Marker: " + getMarker() );
         sb.append("}");
         return sb.toString();
     }

@@ -113,8 +113,8 @@ public class GetIdentityNotificationAttributesRequest extends AmazonWebServiceRe
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getIdentities() != null) sb.append("Identities: " + getIdentities() + ", ");
+        sb.append("{");    	
+        if (getIdentities() != null) sb.append("Identities: " + getIdentities() );
         sb.append("}");
         return sb.toString();
     }

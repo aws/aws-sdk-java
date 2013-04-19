@@ -215,8 +215,8 @@ public class DescribeChapCredentialsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getChapCredentials() != null) sb.append("ChapCredentials: " + getChapCredentials() + ", ");
+        sb.append("{");    	
+        if (getChapCredentials() != null) sb.append("ChapCredentials: " + getChapCredentials() );
         sb.append("}");
         return sb.toString();
     }

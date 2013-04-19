@@ -72,8 +72,8 @@ public class RunInstancesResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getReservation() != null) sb.append("Reservation: " + getReservation() + ", ");
+        sb.append("{");    	
+        if (getReservation() != null) sb.append("Reservation: " + getReservation() );
         sb.append("}");
         return sb.toString();
     }

@@ -107,8 +107,8 @@ public class DescribeAddressesResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getAddresses() != null) sb.append("Addresses: " + getAddresses() + ", ");
+        sb.append("{");    	
+        if (getAddresses() != null) sb.append("Addresses: " + getAddresses() );
         sb.append("}");
         return sb.toString();
     }

@@ -239,11 +239,11 @@ public class Credentials  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getAccessKeyId() != null) sb.append("AccessKeyId: " + getAccessKeyId() + ", ");
-        if (getSecretAccessKey() != null) sb.append("SecretAccessKey: " + getSecretAccessKey() + ", ");
-        if (getSessionToken() != null) sb.append("SessionToken: " + getSessionToken() + ", ");
-        if (getExpiration() != null) sb.append("Expiration: " + getExpiration() + ", ");
+        sb.append("{");    	
+        if (getAccessKeyId() != null) sb.append("AccessKeyId: " + getAccessKeyId() + ",");    	
+        if (getSecretAccessKey() != null) sb.append("SecretAccessKey: " + getSecretAccessKey() + ",");    	
+        if (getSessionToken() != null) sb.append("SessionToken: " + getSessionToken() + ",");    	
+        if (getExpiration() != null) sb.append("Expiration: " + getExpiration() );
         sb.append("}");
         return sb.toString();
     }

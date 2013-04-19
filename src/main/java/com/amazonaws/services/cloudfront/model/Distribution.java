@@ -418,14 +418,14 @@ public class Distribution  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getId() != null) sb.append("Id: " + getId() + ", ");
-        if (getStatus() != null) sb.append("Status: " + getStatus() + ", ");
-        if (getLastModifiedTime() != null) sb.append("LastModifiedTime: " + getLastModifiedTime() + ", ");
-        if (getInProgressInvalidationBatches() != null) sb.append("InProgressInvalidationBatches: " + getInProgressInvalidationBatches() + ", ");
-        if (getDomainName() != null) sb.append("DomainName: " + getDomainName() + ", ");
-        if (getActiveTrustedSigners() != null) sb.append("ActiveTrustedSigners: " + getActiveTrustedSigners() + ", ");
-        if (getDistributionConfig() != null) sb.append("DistributionConfig: " + getDistributionConfig() + ", ");
+        sb.append("{");    	
+        if (getId() != null) sb.append("Id: " + getId() + ",");    	
+        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");    	
+        if (getLastModifiedTime() != null) sb.append("LastModifiedTime: " + getLastModifiedTime() + ",");    	
+        if (getInProgressInvalidationBatches() != null) sb.append("InProgressInvalidationBatches: " + getInProgressInvalidationBatches() + ",");    	
+        if (getDomainName() != null) sb.append("DomainName: " + getDomainName() + ",");    	
+        if (getActiveTrustedSigners() != null) sb.append("ActiveTrustedSigners: " + getActiveTrustedSigners() + ",");    	
+        if (getDistributionConfig() != null) sb.append("DistributionConfig: " + getDistributionConfig() );
         sb.append("}");
         return sb.toString();
     }

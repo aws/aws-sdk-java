@@ -179,9 +179,9 @@ public class ChangeMessageVisibilityBatchResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getSuccessful() != null) sb.append("Successful: " + getSuccessful() + ", ");
-        if (getFailed() != null) sb.append("Failed: " + getFailed() + ", ");
+        sb.append("{");    	
+        if (getSuccessful() != null) sb.append("Successful: " + getSuccessful() + ",");    	
+        if (getFailed() != null) sb.append("Failed: " + getFailed() );
         sb.append("}");
         return sb.toString();
     }

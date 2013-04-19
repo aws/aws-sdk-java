@@ -21,6 +21,7 @@ import com.amazonaws.AmazonServiceException;
  * This exception is thrown when the subscriber exceeded the limits on the number of objects or operations.
  * </p>
  */        
+@Deprecated
 public class LimitExceededException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;
     

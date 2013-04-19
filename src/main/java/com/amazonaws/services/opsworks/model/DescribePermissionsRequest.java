@@ -28,7 +28,7 @@ public class DescribePermissionsRequest extends AmazonWebServiceRequest  impleme
 
     /**
      * The user's IAM ARN. For more information about IAM ARNs, see <a
-     * docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.
      */
     private String iamUserArn;
@@ -40,11 +40,11 @@ public class DescribePermissionsRequest extends AmazonWebServiceRequest  impleme
 
     /**
      * The user's IAM ARN. For more information about IAM ARNs, see <a
-     * docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.
      *
      * @return The user's IAM ARN. For more information about IAM ARNs, see <a
-     *         docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      *         Identifiers</a>.
      */
     public String getIamUserArn() {
@@ -53,11 +53,11 @@ public class DescribePermissionsRequest extends AmazonWebServiceRequest  impleme
     
     /**
      * The user's IAM ARN. For more information about IAM ARNs, see <a
-     * docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.
      *
      * @param iamUserArn The user's IAM ARN. For more information about IAM ARNs, see <a
-     *         docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      *         Identifiers</a>.
      */
     public void setIamUserArn(String iamUserArn) {
@@ -66,13 +66,13 @@ public class DescribePermissionsRequest extends AmazonWebServiceRequest  impleme
     
     /**
      * The user's IAM ARN. For more information about IAM ARNs, see <a
-     * docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param iamUserArn The user's IAM ARN. For more information about IAM ARNs, see <a
-     *         docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      *         Identifiers</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -129,9 +129,9 @@ public class DescribePermissionsRequest extends AmazonWebServiceRequest  impleme
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getIamUserArn() != null) sb.append("IamUserArn: " + getIamUserArn() + ", ");
-        if (getStackId() != null) sb.append("StackId: " + getStackId() + ", ");
+        sb.append("{");    	
+        if (getIamUserArn() != null) sb.append("IamUserArn: " + getIamUserArn() + ",");    	
+        if (getStackId() != null) sb.append("StackId: " + getStackId() );
         sb.append("}");
         return sb.toString();
     }

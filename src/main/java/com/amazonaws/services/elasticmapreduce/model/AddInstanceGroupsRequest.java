@@ -187,9 +187,9 @@ public class AddInstanceGroupsRequest extends AmazonWebServiceRequest  implement
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getInstanceGroups() != null) sb.append("InstanceGroups: " + getInstanceGroups() + ", ");
-        if (getJobFlowId() != null) sb.append("JobFlowId: " + getJobFlowId() + ", ");
+        sb.append("{");    	
+        if (getInstanceGroups() != null) sb.append("InstanceGroups: " + getInstanceGroups() + ",");    	
+        if (getJobFlowId() != null) sb.append("JobFlowId: " + getJobFlowId() );
         sb.append("}");
         return sb.toString();
     }

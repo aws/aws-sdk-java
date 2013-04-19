@@ -150,10 +150,10 @@ public class Output  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getOutputKey() != null) sb.append("OutputKey: " + getOutputKey() + ", ");
-        if (getOutputValue() != null) sb.append("OutputValue: " + getOutputValue() + ", ");
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ", ");
+        sb.append("{");    	
+        if (getOutputKey() != null) sb.append("OutputKey: " + getOutputKey() + ",");    	
+        if (getOutputValue() != null) sb.append("OutputValue: " + getOutputValue() + ",");    	
+        if (getDescription() != null) sb.append("Description: " + getDescription() );
         sb.append("}");
         return sb.toString();
     }

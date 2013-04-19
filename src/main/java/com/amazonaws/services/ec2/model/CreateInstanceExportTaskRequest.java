@@ -228,11 +228,11 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest  im
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ", ");
-        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ", ");
-        if (getTargetEnvironment() != null) sb.append("TargetEnvironment: " + getTargetEnvironment() + ", ");
-        if (getExportToS3Task() != null) sb.append("ExportToS3Task: " + getExportToS3Task() + ", ");
+        sb.append("{");    	
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");    	
+        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ",");    	
+        if (getTargetEnvironment() != null) sb.append("TargetEnvironment: " + getTargetEnvironment() + ",");    	
+        if (getExportToS3Task() != null) sb.append("ExportToS3Task: " + getExportToS3Task() );
         sb.append("}");
         return sb.toString();
     }

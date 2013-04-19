@@ -116,8 +116,8 @@ public class DescribeLoadBasedAutoScalingResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getLoadBasedAutoScalingConfigurations() != null) sb.append("LoadBasedAutoScalingConfigurations: " + getLoadBasedAutoScalingConfigurations() + ", ");
+        sb.append("{");    	
+        if (getLoadBasedAutoScalingConfigurations() != null) sb.append("LoadBasedAutoScalingConfigurations: " + getLoadBasedAutoScalingConfigurations() );
         sb.append("}");
         return sb.toString();
     }

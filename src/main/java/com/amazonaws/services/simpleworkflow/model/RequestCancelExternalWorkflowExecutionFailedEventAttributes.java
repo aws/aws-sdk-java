@@ -45,7 +45,7 @@ public class RequestCancelExternalWorkflowExecutionFailedEventAttributes  implem
      * <note>If <b>cause</b> is set to OPERATION_NOT_PERMITTED, the decision
      * failed because it lacked sufficient permissions. For details and
      * example IAM policies, see <a
-     * aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
      * IAM to Manage Access to Amazon SWF Workflows</a>.</note>
      * <p>
      * <b>Constraints:</b><br/>
@@ -173,7 +173,7 @@ public class RequestCancelExternalWorkflowExecutionFailedEventAttributes  implem
      * <note>If <b>cause</b> is set to OPERATION_NOT_PERMITTED, the decision
      * failed because it lacked sufficient permissions. For details and
      * example IAM policies, see <a
-     * aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
      * IAM to Manage Access to Amazon SWF Workflows</a>.</note>
      * <p>
      * <b>Constraints:</b><br/>
@@ -184,7 +184,7 @@ public class RequestCancelExternalWorkflowExecutionFailedEventAttributes  implem
      *         <note>If <b>cause</b> is set to OPERATION_NOT_PERMITTED, the decision
      *         failed because it lacked sufficient permissions. For details and
      *         example IAM policies, see <a
-     *         aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+     *         href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
      *         IAM to Manage Access to Amazon SWF Workflows</a>.</note>
      *
      * @see RequestCancelExternalWorkflowExecutionFailedCause
@@ -199,7 +199,7 @@ public class RequestCancelExternalWorkflowExecutionFailedEventAttributes  implem
      * <note>If <b>cause</b> is set to OPERATION_NOT_PERMITTED, the decision
      * failed because it lacked sufficient permissions. For details and
      * example IAM policies, see <a
-     * aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
      * IAM to Manage Access to Amazon SWF Workflows</a>.</note>
      * <p>
      * <b>Constraints:</b><br/>
@@ -210,7 +210,7 @@ public class RequestCancelExternalWorkflowExecutionFailedEventAttributes  implem
      *         <note>If <b>cause</b> is set to OPERATION_NOT_PERMITTED, the decision
      *         failed because it lacked sufficient permissions. For details and
      *         example IAM policies, see <a
-     *         aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+     *         href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
      *         IAM to Manage Access to Amazon SWF Workflows</a>.</note>
      *
      * @see RequestCancelExternalWorkflowExecutionFailedCause
@@ -225,7 +225,7 @@ public class RequestCancelExternalWorkflowExecutionFailedEventAttributes  implem
      * <note>If <b>cause</b> is set to OPERATION_NOT_PERMITTED, the decision
      * failed because it lacked sufficient permissions. For details and
      * example IAM policies, see <a
-     * aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
      * IAM to Manage Access to Amazon SWF Workflows</a>.</note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -238,7 +238,7 @@ public class RequestCancelExternalWorkflowExecutionFailedEventAttributes  implem
      *         <note>If <b>cause</b> is set to OPERATION_NOT_PERMITTED, the decision
      *         failed because it lacked sufficient permissions. For details and
      *         example IAM policies, see <a
-     *         aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+     *         href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
      *         IAM to Manage Access to Amazon SWF Workflows</a>.</note>
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -258,7 +258,7 @@ public class RequestCancelExternalWorkflowExecutionFailedEventAttributes  implem
      * <note>If <b>cause</b> is set to OPERATION_NOT_PERMITTED, the decision
      * failed because it lacked sufficient permissions. For details and
      * example IAM policies, see <a
-     * aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
      * IAM to Manage Access to Amazon SWF Workflows</a>.</note>
      * <p>
      * <b>Constraints:</b><br/>
@@ -269,7 +269,7 @@ public class RequestCancelExternalWorkflowExecutionFailedEventAttributes  implem
      *         <note>If <b>cause</b> is set to OPERATION_NOT_PERMITTED, the decision
      *         failed because it lacked sufficient permissions. For details and
      *         example IAM policies, see <a
-     *         aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+     *         href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
      *         IAM to Manage Access to Amazon SWF Workflows</a>.</note>
      *
      * @see RequestCancelExternalWorkflowExecutionFailedCause
@@ -284,7 +284,7 @@ public class RequestCancelExternalWorkflowExecutionFailedEventAttributes  implem
      * <note>If <b>cause</b> is set to OPERATION_NOT_PERMITTED, the decision
      * failed because it lacked sufficient permissions. For details and
      * example IAM policies, see <a
-     * aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
      * IAM to Manage Access to Amazon SWF Workflows</a>.</note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -297,7 +297,7 @@ public class RequestCancelExternalWorkflowExecutionFailedEventAttributes  implem
      *         <note>If <b>cause</b> is set to OPERATION_NOT_PERMITTED, the decision
      *         failed because it lacked sufficient permissions. For details and
      *         example IAM policies, see <a
-     *         aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+     *         href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
      *         IAM to Manage Access to Amazon SWF Workflows</a>.</note>
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -492,13 +492,13 @@ public class RequestCancelExternalWorkflowExecutionFailedEventAttributes  implem
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getWorkflowId() != null) sb.append("WorkflowId: " + getWorkflowId() + ", ");
-        if (getRunId() != null) sb.append("RunId: " + getRunId() + ", ");
-        if (getCause() != null) sb.append("Cause: " + getCause() + ", ");
-        if (getInitiatedEventId() != null) sb.append("InitiatedEventId: " + getInitiatedEventId() + ", ");
-        if (getDecisionTaskCompletedEventId() != null) sb.append("DecisionTaskCompletedEventId: " + getDecisionTaskCompletedEventId() + ", ");
-        if (getControl() != null) sb.append("Control: " + getControl() + ", ");
+        sb.append("{");    	
+        if (getWorkflowId() != null) sb.append("WorkflowId: " + getWorkflowId() + ",");    	
+        if (getRunId() != null) sb.append("RunId: " + getRunId() + ",");    	
+        if (getCause() != null) sb.append("Cause: " + getCause() + ",");    	
+        if (getInitiatedEventId() != null) sb.append("InitiatedEventId: " + getInitiatedEventId() + ",");    	
+        if (getDecisionTaskCompletedEventId() != null) sb.append("DecisionTaskCompletedEventId: " + getDecisionTaskCompletedEventId() + ",");    	
+        if (getControl() != null) sb.append("Control: " + getControl() );
         sb.append("}");
         return sb.toString();
     }

@@ -24,7 +24,7 @@ public class AccessPoliciesStatus  implements Serializable  {
 
     /**
      * An IAM access policy as described in <a
-     * ervices.com/IAM/latest/UserGuide/index.html?AccessPolicyLanguage.html"
+     * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?AccessPolicyLanguage.html"
      * target="_blank">The Access Policy Language</a> in <i>Using AWS
      * Identity and Access Management</i>. The maximum size of an access
      * policy document is 100KB. <p>Example: <code>{"Statement":
@@ -45,7 +45,7 @@ public class AccessPoliciesStatus  implements Serializable  {
 
     /**
      * An IAM access policy as described in <a
-     * ervices.com/IAM/latest/UserGuide/index.html?AccessPolicyLanguage.html"
+     * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?AccessPolicyLanguage.html"
      * target="_blank">The Access Policy Language</a> in <i>Using AWS
      * Identity and Access Management</i>. The maximum size of an access
      * policy document is 100KB. <p>Example: <code>{"Statement":
@@ -57,7 +57,7 @@ public class AccessPoliciesStatus  implements Serializable  {
      * "IpAddress": { aws:SourceIp": ["203.0.113.1/32"] } }} ] }</code>
      *
      * @return An IAM access policy as described in <a
-     *         ervices.com/IAM/latest/UserGuide/index.html?AccessPolicyLanguage.html"
+     *         href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?AccessPolicyLanguage.html"
      *         target="_blank">The Access Policy Language</a> in <i>Using AWS
      *         Identity and Access Management</i>. The maximum size of an access
      *         policy document is 100KB. <p>Example: <code>{"Statement":
@@ -74,7 +74,7 @@ public class AccessPoliciesStatus  implements Serializable  {
     
     /**
      * An IAM access policy as described in <a
-     * ervices.com/IAM/latest/UserGuide/index.html?AccessPolicyLanguage.html"
+     * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?AccessPolicyLanguage.html"
      * target="_blank">The Access Policy Language</a> in <i>Using AWS
      * Identity and Access Management</i>. The maximum size of an access
      * policy document is 100KB. <p>Example: <code>{"Statement":
@@ -86,7 +86,7 @@ public class AccessPoliciesStatus  implements Serializable  {
      * "IpAddress": { aws:SourceIp": ["203.0.113.1/32"] } }} ] }</code>
      *
      * @param options An IAM access policy as described in <a
-     *         ervices.com/IAM/latest/UserGuide/index.html?AccessPolicyLanguage.html"
+     *         href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?AccessPolicyLanguage.html"
      *         target="_blank">The Access Policy Language</a> in <i>Using AWS
      *         Identity and Access Management</i>. The maximum size of an access
      *         policy document is 100KB. <p>Example: <code>{"Statement":
@@ -103,7 +103,7 @@ public class AccessPoliciesStatus  implements Serializable  {
     
     /**
      * An IAM access policy as described in <a
-     * ervices.com/IAM/latest/UserGuide/index.html?AccessPolicyLanguage.html"
+     * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?AccessPolicyLanguage.html"
      * target="_blank">The Access Policy Language</a> in <i>Using AWS
      * Identity and Access Management</i>. The maximum size of an access
      * policy document is 100KB. <p>Example: <code>{"Statement":
@@ -117,7 +117,7 @@ public class AccessPoliciesStatus  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param options An IAM access policy as described in <a
-     *         ervices.com/IAM/latest/UserGuide/index.html?AccessPolicyLanguage.html"
+     *         href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?AccessPolicyLanguage.html"
      *         target="_blank">The Access Policy Language</a> in <i>Using AWS
      *         Identity and Access Management</i>. The maximum size of an access
      *         policy document is 100KB. <p>Example: <code>{"Statement":
@@ -188,9 +188,9 @@ public class AccessPoliciesStatus  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getOptions() != null) sb.append("Options: " + getOptions() + ", ");
-        if (getStatus() != null) sb.append("Status: " + getStatus() + ", ");
+        sb.append("{");    	
+        if (getOptions() != null) sb.append("Options: " + getOptions() + ",");    	
+        if (getStatus() != null) sb.append("Status: " + getStatus() );
         sb.append("}");
         return sb.toString();
     }

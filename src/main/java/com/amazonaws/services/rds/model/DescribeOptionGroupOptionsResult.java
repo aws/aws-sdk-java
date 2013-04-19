@@ -23,7 +23,7 @@ import java.io.Serializable;
 public class DescribeOptionGroupOptionsResult  implements Serializable  {
 
     /**
-     * List of available options.
+     * List of available option group options.
      */
     private java.util.List<OptionGroupOption> optionGroupOptions;
 
@@ -35,9 +35,9 @@ public class DescribeOptionGroupOptionsResult  implements Serializable  {
     private String marker;
 
     /**
-     * List of available options.
+     * List of available option group options.
      *
-     * @return List of available options.
+     * @return List of available option group options.
      */
     public java.util.List<OptionGroupOption> getOptionGroupOptions() {
         
@@ -48,9 +48,9 @@ public class DescribeOptionGroupOptionsResult  implements Serializable  {
     }
     
     /**
-     * List of available options.
+     * List of available option group options.
      *
-     * @param optionGroupOptions List of available options.
+     * @param optionGroupOptions List of available option group options.
      */
     public void setOptionGroupOptions(java.util.Collection<OptionGroupOption> optionGroupOptions) {
         if (optionGroupOptions == null) {
@@ -64,11 +64,11 @@ public class DescribeOptionGroupOptionsResult  implements Serializable  {
     }
     
     /**
-     * List of available options.
+     * List of available option group options.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param optionGroupOptions List of available options.
+     * @param optionGroupOptions List of available option group options.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -82,11 +82,11 @@ public class DescribeOptionGroupOptionsResult  implements Serializable  {
     }
     
     /**
-     * List of available options.
+     * List of available option group options.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param optionGroupOptions List of available options.
+     * @param optionGroupOptions List of available option group options.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -160,9 +160,9 @@ public class DescribeOptionGroupOptionsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getOptionGroupOptions() != null) sb.append("OptionGroupOptions: " + getOptionGroupOptions() + ", ");
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ", ");
+        sb.append("{");    	
+        if (getOptionGroupOptions() != null) sb.append("OptionGroupOptions: " + getOptionGroupOptions() + ",");    	
+        if (getMarker() != null) sb.append("Marker: " + getMarker() );
         sb.append("}");
         return sb.toString();
     }

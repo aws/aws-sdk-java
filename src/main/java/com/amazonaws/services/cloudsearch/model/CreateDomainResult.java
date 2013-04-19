@@ -72,8 +72,8 @@ public class CreateDomainResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getDomainStatus() != null) sb.append("DomainStatus: " + getDomainStatus() + ", ");
+        sb.append("{");    	
+        if (getDomainStatus() != null) sb.append("DomainStatus: " + getDomainStatus() );
         sb.append("}");
         return sb.toString();
     }

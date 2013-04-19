@@ -107,8 +107,8 @@ public class CheckDNSAvailabilityRequest extends AmazonWebServiceRequest  implem
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getCNAMEPrefix() != null) sb.append("CNAMEPrefix: " + getCNAMEPrefix() + ", ");
+        sb.append("{");    	
+        if (getCNAMEPrefix() != null) sb.append("CNAMEPrefix: " + getCNAMEPrefix() );
         sb.append("}");
         return sb.toString();
     }

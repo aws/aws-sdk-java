@@ -163,9 +163,9 @@ public class ValidationError  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getId() != null) sb.append("Id: " + getId() + ", ");
-        if (getErrors() != null) sb.append("Errors: " + getErrors() + ", ");
+        sb.append("{");    	
+        if (getId() != null) sb.append("Id: " + getId() + ",");    	
+        if (getErrors() != null) sb.append("Errors: " + getErrors() );
         sb.append("}");
         return sb.toString();
     }

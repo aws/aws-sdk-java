@@ -241,10 +241,10 @@ public class PutNotificationConfigurationRequest extends AmazonWebServiceRequest
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getAutoScalingGroupName() != null) sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ", ");
-        if (getTopicARN() != null) sb.append("TopicARN: " + getTopicARN() + ", ");
-        if (getNotificationTypes() != null) sb.append("NotificationTypes: " + getNotificationTypes() + ", ");
+        sb.append("{");    	
+        if (getAutoScalingGroupName() != null) sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ",");    	
+        if (getTopicARN() != null) sb.append("TopicARN: " + getTopicARN() + ",");    	
+        if (getNotificationTypes() != null) sb.append("NotificationTypes: " + getNotificationTypes() );
         sb.append("}");
         return sb.toString();
     }

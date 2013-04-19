@@ -85,7 +85,7 @@ public class DBSnapshot  implements Serializable  {
     private java.util.Date instanceCreateTime;
 
     /**
-     * Provides the master username for the DB Instance.
+     * Provides the master username for the DB Snapshot.
      */
     private String masterUsername;
 
@@ -109,6 +109,11 @@ public class DBSnapshot  implements Serializable  {
      * the DB Instance at the time of the snapshot.
      */
     private Integer iops;
+
+    /**
+     * Provides the option group name for the DB Snapshot.
+     */
+    private String optionGroupName;
 
     /**
      * Specifies the identifier for the DB Snapshot.
@@ -469,29 +474,29 @@ public class DBSnapshot  implements Serializable  {
     
     
     /**
-     * Provides the master username for the DB Instance.
+     * Provides the master username for the DB Snapshot.
      *
-     * @return Provides the master username for the DB Instance.
+     * @return Provides the master username for the DB Snapshot.
      */
     public String getMasterUsername() {
         return masterUsername;
     }
     
     /**
-     * Provides the master username for the DB Instance.
+     * Provides the master username for the DB Snapshot.
      *
-     * @param masterUsername Provides the master username for the DB Instance.
+     * @param masterUsername Provides the master username for the DB Snapshot.
      */
     public void setMasterUsername(String masterUsername) {
         this.masterUsername = masterUsername;
     }
     
     /**
-     * Provides the master username for the DB Instance.
+     * Provides the master username for the DB Snapshot.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param masterUsername Provides the master username for the DB Instance.
+     * @param masterUsername Provides the master username for the DB Snapshot.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -645,6 +650,40 @@ public class DBSnapshot  implements Serializable  {
     
     
     /**
+     * Provides the option group name for the DB Snapshot.
+     *
+     * @return Provides the option group name for the DB Snapshot.
+     */
+    public String getOptionGroupName() {
+        return optionGroupName;
+    }
+    
+    /**
+     * Provides the option group name for the DB Snapshot.
+     *
+     * @param optionGroupName Provides the option group name for the DB Snapshot.
+     */
+    public void setOptionGroupName(String optionGroupName) {
+        this.optionGroupName = optionGroupName;
+    }
+    
+    /**
+     * Provides the option group name for the DB Snapshot.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param optionGroupName Provides the option group name for the DB Snapshot.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public DBSnapshot withOptionGroupName(String optionGroupName) {
+        this.optionGroupName = optionGroupName;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -655,22 +694,23 @@ public class DBSnapshot  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getDBSnapshotIdentifier() != null) sb.append("DBSnapshotIdentifier: " + getDBSnapshotIdentifier() + ", ");
-        if (getDBInstanceIdentifier() != null) sb.append("DBInstanceIdentifier: " + getDBInstanceIdentifier() + ", ");
-        if (getSnapshotCreateTime() != null) sb.append("SnapshotCreateTime: " + getSnapshotCreateTime() + ", ");
-        if (getEngine() != null) sb.append("Engine: " + getEngine() + ", ");
-        if (getAllocatedStorage() != null) sb.append("AllocatedStorage: " + getAllocatedStorage() + ", ");
-        if (getStatus() != null) sb.append("Status: " + getStatus() + ", ");
-        if (getPort() != null) sb.append("Port: " + getPort() + ", ");
-        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ", ");
-        if (getVpcId() != null) sb.append("VpcId: " + getVpcId() + ", ");
-        if (getInstanceCreateTime() != null) sb.append("InstanceCreateTime: " + getInstanceCreateTime() + ", ");
-        if (getMasterUsername() != null) sb.append("MasterUsername: " + getMasterUsername() + ", ");
-        if (getEngineVersion() != null) sb.append("EngineVersion: " + getEngineVersion() + ", ");
-        if (getLicenseModel() != null) sb.append("LicenseModel: " + getLicenseModel() + ", ");
-        if (getSnapshotType() != null) sb.append("SnapshotType: " + getSnapshotType() + ", ");
-        if (getIops() != null) sb.append("Iops: " + getIops() + ", ");
+        sb.append("{");    	
+        if (getDBSnapshotIdentifier() != null) sb.append("DBSnapshotIdentifier: " + getDBSnapshotIdentifier() + ",");    	
+        if (getDBInstanceIdentifier() != null) sb.append("DBInstanceIdentifier: " + getDBInstanceIdentifier() + ",");    	
+        if (getSnapshotCreateTime() != null) sb.append("SnapshotCreateTime: " + getSnapshotCreateTime() + ",");    	
+        if (getEngine() != null) sb.append("Engine: " + getEngine() + ",");    	
+        if (getAllocatedStorage() != null) sb.append("AllocatedStorage: " + getAllocatedStorage() + ",");    	
+        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");    	
+        if (getPort() != null) sb.append("Port: " + getPort() + ",");    	
+        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");    	
+        if (getVpcId() != null) sb.append("VpcId: " + getVpcId() + ",");    	
+        if (getInstanceCreateTime() != null) sb.append("InstanceCreateTime: " + getInstanceCreateTime() + ",");    	
+        if (getMasterUsername() != null) sb.append("MasterUsername: " + getMasterUsername() + ",");    	
+        if (getEngineVersion() != null) sb.append("EngineVersion: " + getEngineVersion() + ",");    	
+        if (getLicenseModel() != null) sb.append("LicenseModel: " + getLicenseModel() + ",");    	
+        if (getSnapshotType() != null) sb.append("SnapshotType: " + getSnapshotType() + ",");    	
+        if (getIops() != null) sb.append("Iops: " + getIops() + ",");    	
+        if (getOptionGroupName() != null) sb.append("OptionGroupName: " + getOptionGroupName() );
         sb.append("}");
         return sb.toString();
     }
@@ -695,6 +735,7 @@ public class DBSnapshot  implements Serializable  {
         hashCode = prime * hashCode + ((getLicenseModel() == null) ? 0 : getLicenseModel().hashCode()); 
         hashCode = prime * hashCode + ((getSnapshotType() == null) ? 0 : getSnapshotType().hashCode()); 
         hashCode = prime * hashCode + ((getIops() == null) ? 0 : getIops().hashCode()); 
+        hashCode = prime * hashCode + ((getOptionGroupName() == null) ? 0 : getOptionGroupName().hashCode()); 
         return hashCode;
     }
     
@@ -736,6 +777,8 @@ public class DBSnapshot  implements Serializable  {
         if (other.getSnapshotType() != null && other.getSnapshotType().equals(this.getSnapshotType()) == false) return false; 
         if (other.getIops() == null ^ this.getIops() == null) return false;
         if (other.getIops() != null && other.getIops().equals(this.getIops()) == false) return false; 
+        if (other.getOptionGroupName() == null ^ this.getOptionGroupName() == null) return false;
+        if (other.getOptionGroupName() != null && other.getOptionGroupName().equals(this.getOptionGroupName()) == false) return false; 
         return true;
     }
     

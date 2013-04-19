@@ -107,8 +107,8 @@ public class RegisterInstancesWithLoadBalancerResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getInstances() != null) sb.append("Instances: " + getInstances() + ", ");
+        sb.append("{");    	
+        if (getInstances() != null) sb.append("Instances: " + getInstances() );
         sb.append("}");
         return sb.toString();
     }

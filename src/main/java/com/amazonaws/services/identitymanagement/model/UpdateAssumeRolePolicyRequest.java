@@ -148,9 +148,9 @@ public class UpdateAssumeRolePolicyRequest extends AmazonWebServiceRequest  impl
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getRoleName() != null) sb.append("RoleName: " + getRoleName() + ", ");
-        if (getPolicyDocument() != null) sb.append("PolicyDocument: " + getPolicyDocument() + ", ");
+        sb.append("{");    	
+        if (getRoleName() != null) sb.append("RoleName: " + getRoleName() + ",");    	
+        if (getPolicyDocument() != null) sb.append("PolicyDocument: " + getPolicyDocument() );
         sb.append("}");
         return sb.toString();
     }

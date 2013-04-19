@@ -235,10 +235,10 @@ public class DescribeSnapshotAttributeResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getSnapshotId() != null) sb.append("SnapshotId: " + getSnapshotId() + ", ");
-        if (getCreateVolumePermissions() != null) sb.append("CreateVolumePermissions: " + getCreateVolumePermissions() + ", ");
-        if (getProductCodes() != null) sb.append("ProductCodes: " + getProductCodes() + ", ");
+        sb.append("{");    	
+        if (getSnapshotId() != null) sb.append("SnapshotId: " + getSnapshotId() + ",");    	
+        if (getCreateVolumePermissions() != null) sb.append("CreateVolumePermissions: " + getCreateVolumePermissions() + ",");    	
+        if (getProductCodes() != null) sb.append("ProductCodes: " + getProductCodes() );
         sb.append("}");
         return sb.toString();
     }

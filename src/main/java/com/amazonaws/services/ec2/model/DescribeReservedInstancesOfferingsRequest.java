@@ -56,7 +56,7 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * A list of filters used to match properties for
      * ReservedInstancesOfferings. For a complete reference to the available
      * filter keys for this operation, see the <a
-     * "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      * EC2 API reference</a>.
      */
     private java.util.List<Filter> filters;
@@ -309,13 +309,13 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * A list of filters used to match properties for
      * ReservedInstancesOfferings. For a complete reference to the available
      * filter keys for this operation, see the <a
-     * "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      * EC2 API reference</a>.
      *
      * @return A list of filters used to match properties for
      *         ReservedInstancesOfferings. For a complete reference to the available
      *         filter keys for this operation, see the <a
-     *         "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      *         EC2 API reference</a>.
      */
     public java.util.List<Filter> getFilters() {
@@ -330,13 +330,13 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * A list of filters used to match properties for
      * ReservedInstancesOfferings. For a complete reference to the available
      * filter keys for this operation, see the <a
-     * "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      * EC2 API reference</a>.
      *
      * @param filters A list of filters used to match properties for
      *         ReservedInstancesOfferings. For a complete reference to the available
      *         filter keys for this operation, see the <a
-     *         "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      *         EC2 API reference</a>.
      */
     public void setFilters(java.util.Collection<Filter> filters) {
@@ -354,7 +354,7 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * A list of filters used to match properties for
      * ReservedInstancesOfferings. For a complete reference to the available
      * filter keys for this operation, see the <a
-     * "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      * EC2 API reference</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -362,7 +362,7 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * @param filters A list of filters used to match properties for
      *         ReservedInstancesOfferings. For a complete reference to the available
      *         filter keys for this operation, see the <a
-     *         "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      *         EC2 API reference</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -380,7 +380,7 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * A list of filters used to match properties for
      * ReservedInstancesOfferings. For a complete reference to the available
      * filter keys for this operation, see the <a
-     * "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      * EC2 API reference</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -388,7 +388,7 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * @param filters A list of filters used to match properties for
      *         ReservedInstancesOfferings. For a complete reference to the available
      *         filter keys for this operation, see the <a
-     *         "http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
+     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      *         EC2 API reference</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -565,16 +565,16 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getReservedInstancesOfferingIds() != null) sb.append("ReservedInstancesOfferingIds: " + getReservedInstancesOfferingIds() + ", ");
-        if (getInstanceType() != null) sb.append("InstanceType: " + getInstanceType() + ", ");
-        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ", ");
-        if (getProductDescription() != null) sb.append("ProductDescription: " + getProductDescription() + ", ");
-        if (getFilters() != null) sb.append("Filters: " + getFilters() + ", ");
-        if (getInstanceTenancy() != null) sb.append("InstanceTenancy: " + getInstanceTenancy() + ", ");
-        if (getOfferingType() != null) sb.append("OfferingType: " + getOfferingType() + ", ");
-        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() + ", ");
-        if (getMaxResults() != null) sb.append("MaxResults: " + getMaxResults() + ", ");
+        sb.append("{");    	
+        if (getReservedInstancesOfferingIds() != null) sb.append("ReservedInstancesOfferingIds: " + getReservedInstancesOfferingIds() + ",");    	
+        if (getInstanceType() != null) sb.append("InstanceType: " + getInstanceType() + ",");    	
+        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");    	
+        if (getProductDescription() != null) sb.append("ProductDescription: " + getProductDescription() + ",");    	
+        if (getFilters() != null) sb.append("Filters: " + getFilters() + ",");    	
+        if (getInstanceTenancy() != null) sb.append("InstanceTenancy: " + getInstanceTenancy() + ",");    	
+        if (getOfferingType() != null) sb.append("OfferingType: " + getOfferingType() + ",");    	
+        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() + ",");    	
+        if (getMaxResults() != null) sb.append("MaxResults: " + getMaxResults() );
         sb.append("}");
         return sb.toString();
     }

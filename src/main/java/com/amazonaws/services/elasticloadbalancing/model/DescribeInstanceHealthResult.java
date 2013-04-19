@@ -107,8 +107,8 @@ public class DescribeInstanceHealthResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getInstanceStates() != null) sb.append("InstanceStates: " + getInstanceStates() + ", ");
+        sb.append("{");    	
+        if (getInstanceStates() != null) sb.append("InstanceStates: " + getInstanceStates() );
         sb.append("}");
         return sb.toString();
     }

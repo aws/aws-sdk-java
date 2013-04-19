@@ -72,8 +72,8 @@ public class DeleteIndexFieldResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getIndexField() != null) sb.append("IndexField: " + getIndexField() + ", ");
+        sb.append("{");    	
+        if (getIndexField() != null) sb.append("IndexField: " + getIndexField() );
         sb.append("}");
         return sb.toString();
     }

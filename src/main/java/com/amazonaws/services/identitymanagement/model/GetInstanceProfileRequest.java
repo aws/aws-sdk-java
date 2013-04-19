@@ -95,8 +95,8 @@ public class GetInstanceProfileRequest extends AmazonWebServiceRequest  implemen
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getInstanceProfileName() != null) sb.append("InstanceProfileName: " + getInstanceProfileName() + ", ");
+        sb.append("{");    	
+        if (getInstanceProfileName() != null) sb.append("InstanceProfileName: " + getInstanceProfileName() );
         sb.append("}");
         return sb.toString();
     }

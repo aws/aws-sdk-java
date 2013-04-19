@@ -111,9 +111,9 @@ public class Parameter  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getParameterKey() != null) sb.append("ParameterKey: " + getParameterKey() + ", ");
-        if (getParameterValue() != null) sb.append("ParameterValue: " + getParameterValue() + ", ");
+        sb.append("{");    	
+        if (getParameterKey() != null) sb.append("ParameterKey: " + getParameterKey() + ",");    	
+        if (getParameterValue() != null) sb.append("ParameterValue: " + getParameterValue() );
         sb.append("}");
         return sb.toString();
     }

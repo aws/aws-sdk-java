@@ -300,11 +300,11 @@ public class TestRoleRequest extends AmazonWebServiceRequest  implements Seriali
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getRole() != null) sb.append("Role: " + getRole() + ", ");
-        if (getInputBucket() != null) sb.append("InputBucket: " + getInputBucket() + ", ");
-        if (getOutputBucket() != null) sb.append("OutputBucket: " + getOutputBucket() + ", ");
-        if (getTopics() != null) sb.append("Topics: " + getTopics() + ", ");
+        sb.append("{");    	
+        if (getRole() != null) sb.append("Role: " + getRole() + ",");    	
+        if (getInputBucket() != null) sb.append("InputBucket: " + getInputBucket() + ",");    	
+        if (getOutputBucket() != null) sb.append("OutputBucket: " + getOutputBucket() + ",");    	
+        if (getTopics() != null) sb.append("Topics: " + getTopics() );
         sb.append("}");
         return sb.toString();
     }

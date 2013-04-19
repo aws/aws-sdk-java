@@ -153,9 +153,9 @@ public class RecordMarkerDecisionAttributes  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getMarkerName() != null) sb.append("MarkerName: " + getMarkerName() + ", ");
-        if (getDetails() != null) sb.append("Details: " + getDetails() + ", ");
+        sb.append("{");    	
+        if (getMarkerName() != null) sb.append("MarkerName: " + getMarkerName() + ",");    	
+        if (getDetails() != null) sb.append("Details: " + getDetails() );
         sb.append("}");
         return sb.toString();
     }

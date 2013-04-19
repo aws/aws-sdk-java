@@ -257,11 +257,11 @@ public class CreateLoadBalancerPolicyRequest extends AmazonWebServiceRequest  im
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getLoadBalancerName() != null) sb.append("LoadBalancerName: " + getLoadBalancerName() + ", ");
-        if (getPolicyName() != null) sb.append("PolicyName: " + getPolicyName() + ", ");
-        if (getPolicyTypeName() != null) sb.append("PolicyTypeName: " + getPolicyTypeName() + ", ");
-        if (getPolicyAttributes() != null) sb.append("PolicyAttributes: " + getPolicyAttributes() + ", ");
+        sb.append("{");    	
+        if (getLoadBalancerName() != null) sb.append("LoadBalancerName: " + getLoadBalancerName() + ",");    	
+        if (getPolicyName() != null) sb.append("PolicyName: " + getPolicyName() + ",");    	
+        if (getPolicyTypeName() != null) sb.append("PolicyTypeName: " + getPolicyTypeName() + ",");    	
+        if (getPolicyAttributes() != null) sb.append("PolicyAttributes: " + getPolicyAttributes() );
         sb.append("}");
         return sb.toString();
     }

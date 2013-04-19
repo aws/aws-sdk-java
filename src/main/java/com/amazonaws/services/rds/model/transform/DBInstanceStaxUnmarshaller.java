@@ -153,8 +153,8 @@ public class DBInstanceStaxUnmarshaller implements Unmarshaller<DBInstance, Stax
                     dBInstance.setIops(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
-                if (context.testExpression("OptionGroupMembership", targetDepth)) {
-                    dBInstance.setOptionGroupMembership(OptionGroupMembershipStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("OptionGroupMemberships/OptionGroupMembership", targetDepth)) {
+                    dBInstance.getOptionGroupMemberships().add(OptionGroupMembershipStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
                 if (context.testExpression("CharacterSetName", targetDepth)) {

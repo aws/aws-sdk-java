@@ -35,6 +35,7 @@ import com.amazonaws.services.dynamodb.model.QueryResult;
  *            The type of objects held in this list.
  * @see PaginatedList
  */
+@Deprecated
 public class PaginatedQueryList<T> extends PaginatedList<T> {
 
     /** The current query request */

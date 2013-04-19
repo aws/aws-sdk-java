@@ -143,9 +143,9 @@ public class DescribeReservedInstancesOfferingsResult  implements Serializable  
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getReservedInstancesOfferings() != null) sb.append("ReservedInstancesOfferings: " + getReservedInstancesOfferings() + ", ");
-        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() + ", ");
+        sb.append("{");    	
+        if (getReservedInstancesOfferings() != null) sb.append("ReservedInstancesOfferings: " + getReservedInstancesOfferings() + ",");    	
+        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() );
         sb.append("}");
         return sb.toString();
     }

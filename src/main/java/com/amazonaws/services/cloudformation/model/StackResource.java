@@ -45,7 +45,7 @@ public class StackResource  implements Serializable  {
 
     /**
      * Type of the resource. (For more information, go to the <a
-     * p://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
+     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
      * CloudFormation User Guide</a>.)
      */
     private String resourceType;
@@ -217,11 +217,11 @@ public class StackResource  implements Serializable  {
     
     /**
      * Type of the resource. (For more information, go to the <a
-     * p://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
+     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
      * CloudFormation User Guide</a>.)
      *
      * @return Type of the resource. (For more information, go to the <a
-     *         p://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
+     *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
      *         CloudFormation User Guide</a>.)
      */
     public String getResourceType() {
@@ -230,11 +230,11 @@ public class StackResource  implements Serializable  {
     
     /**
      * Type of the resource. (For more information, go to the <a
-     * p://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
+     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
      * CloudFormation User Guide</a>.)
      *
      * @param resourceType Type of the resource. (For more information, go to the <a
-     *         p://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
+     *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
      *         CloudFormation User Guide</a>.)
      */
     public void setResourceType(String resourceType) {
@@ -243,13 +243,13 @@ public class StackResource  implements Serializable  {
     
     /**
      * Type of the resource. (For more information, go to the <a
-     * p://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
+     * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
      * CloudFormation User Guide</a>.)
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param resourceType Type of the resource. (For more information, go to the <a
-     *         p://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
+     *         href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide">AWS
      *         CloudFormation User Guide</a>.)
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -457,16 +457,16 @@ public class StackResource  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getStackName() != null) sb.append("StackName: " + getStackName() + ", ");
-        if (getStackId() != null) sb.append("StackId: " + getStackId() + ", ");
-        if (getLogicalResourceId() != null) sb.append("LogicalResourceId: " + getLogicalResourceId() + ", ");
-        if (getPhysicalResourceId() != null) sb.append("PhysicalResourceId: " + getPhysicalResourceId() + ", ");
-        if (getResourceType() != null) sb.append("ResourceType: " + getResourceType() + ", ");
-        if (getTimestamp() != null) sb.append("Timestamp: " + getTimestamp() + ", ");
-        if (getResourceStatus() != null) sb.append("ResourceStatus: " + getResourceStatus() + ", ");
-        if (getResourceStatusReason() != null) sb.append("ResourceStatusReason: " + getResourceStatusReason() + ", ");
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ", ");
+        sb.append("{");    	
+        if (getStackName() != null) sb.append("StackName: " + getStackName() + ",");    	
+        if (getStackId() != null) sb.append("StackId: " + getStackId() + ",");    	
+        if (getLogicalResourceId() != null) sb.append("LogicalResourceId: " + getLogicalResourceId() + ",");    	
+        if (getPhysicalResourceId() != null) sb.append("PhysicalResourceId: " + getPhysicalResourceId() + ",");    	
+        if (getResourceType() != null) sb.append("ResourceType: " + getResourceType() + ",");    	
+        if (getTimestamp() != null) sb.append("Timestamp: " + getTimestamp() + ",");    	
+        if (getResourceStatus() != null) sb.append("ResourceStatus: " + getResourceStatus() + ",");    	
+        if (getResourceStatusReason() != null) sb.append("ResourceStatusReason: " + getResourceStatusReason() + ",");    	
+        if (getDescription() != null) sb.append("Description: " + getDescription() );
         sb.append("}");
         return sb.toString();
     }

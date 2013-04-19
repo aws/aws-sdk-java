@@ -78,6 +78,14 @@ public class OptionGroupOptionStaxUnmarshaller implements Unmarshaller<OptionGro
                     optionGroupOption.getOptionsDependedOn().add(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("Persistent", targetDepth)) {
+                    optionGroupOption.setPersistent(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+                if (context.testExpression("OptionGroupOptionSettings/OptionGroupOptionSetting", targetDepth)) {
+                    optionGroupOption.getOptionGroupOptionSettings().add(OptionGroupOptionSettingStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return optionGroupOption;

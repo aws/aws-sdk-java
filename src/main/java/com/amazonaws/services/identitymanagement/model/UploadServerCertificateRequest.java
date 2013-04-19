@@ -40,7 +40,7 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest  imp
     /**
      * The path for the server certificate. For more information about paths,
      * see <a
-     * ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      * Identity and Access Management</i>. <p>This parameter is optional. If
      * it is not included, it defaults to a slash (/).
@@ -118,7 +118,7 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest  imp
     /**
      * The path for the server certificate. For more information about paths,
      * see <a
-     * ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      * Identity and Access Management</i>. <p>This parameter is optional. If
      * it is not included, it defaults to a slash (/).
@@ -129,7 +129,7 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest  imp
      *
      * @return The path for the server certificate. For more information about paths,
      *         see <a
-     *         ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     *         href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i>. <p>This parameter is optional. If
      *         it is not included, it defaults to a slash (/).
@@ -141,7 +141,7 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest  imp
     /**
      * The path for the server certificate. For more information about paths,
      * see <a
-     * ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      * Identity and Access Management</i>. <p>This parameter is optional. If
      * it is not included, it defaults to a slash (/).
@@ -152,7 +152,7 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest  imp
      *
      * @param path The path for the server certificate. For more information about paths,
      *         see <a
-     *         ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     *         href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i>. <p>This parameter is optional. If
      *         it is not included, it defaults to a slash (/).
@@ -164,7 +164,7 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest  imp
     /**
      * The path for the server certificate. For more information about paths,
      * see <a
-     * ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     * href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      * Identity and Access Management</i>. <p>This parameter is optional. If
      * it is not included, it defaults to a slash (/).
@@ -177,7 +177,7 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest  imp
      *
      * @param path The path for the server certificate. For more information about paths,
      *         see <a
-     *         ebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
+     *         href="http://docs.amazonwebservices.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html"
      *         target="_blank">Identifiers for IAM Entities</a> in <i>Using AWS
      *         Identity and Access Management</i>. <p>This parameter is optional. If
      *         it is not included, it defaults to a slash (/).
@@ -398,12 +398,12 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest  imp
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getPath() != null) sb.append("Path: " + getPath() + ", ");
-        if (getServerCertificateName() != null) sb.append("ServerCertificateName: " + getServerCertificateName() + ", ");
-        if (getCertificateBody() != null) sb.append("CertificateBody: " + getCertificateBody() + ", ");
-        if (getPrivateKey() != null) sb.append("PrivateKey: " + getPrivateKey() + ", ");
-        if (getCertificateChain() != null) sb.append("CertificateChain: " + getCertificateChain() + ", ");
+        sb.append("{");    	
+        if (getPath() != null) sb.append("Path: " + getPath() + ",");    	
+        if (getServerCertificateName() != null) sb.append("ServerCertificateName: " + getServerCertificateName() + ",");    	
+        if (getCertificateBody() != null) sb.append("CertificateBody: " + getCertificateBody() + ",");    	
+        if (getPrivateKey() != null) sb.append("PrivateKey: " + getPrivateKey() + ",");    	
+        if (getCertificateChain() != null) sb.append("CertificateChain: " + getCertificateChain() );
         sb.append("}");
         return sb.toString();
     }

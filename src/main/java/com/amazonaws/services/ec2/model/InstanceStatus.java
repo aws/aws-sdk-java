@@ -296,13 +296,13 @@ public class InstanceStatus  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ", ");
-        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ", ");
-        if (getEvents() != null) sb.append("Events: " + getEvents() + ", ");
-        if (getInstanceState() != null) sb.append("InstanceState: " + getInstanceState() + ", ");
-        if (getSystemStatus() != null) sb.append("SystemStatus: " + getSystemStatus() + ", ");
-        if (getInstanceStatus() != null) sb.append("InstanceStatus: " + getInstanceStatus() + ", ");
+        sb.append("{");    	
+        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ",");    	
+        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");    	
+        if (getEvents() != null) sb.append("Events: " + getEvents() + ",");    	
+        if (getInstanceState() != null) sb.append("InstanceState: " + getInstanceState() + ",");    	
+        if (getSystemStatus() != null) sb.append("SystemStatus: " + getSystemStatus() + ",");    	
+        if (getInstanceStatus() != null) sb.append("InstanceStatus: " + getInstanceStatus() );
         sb.append("}");
         return sb.toString();
     }

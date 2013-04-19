@@ -154,10 +154,10 @@ public class CreateUserProfileRequest extends AmazonWebServiceRequest  implement
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getIamUserArn() != null) sb.append("IamUserArn: " + getIamUserArn() + ", ");
-        if (getSshUsername() != null) sb.append("SshUsername: " + getSshUsername() + ", ");
-        if (getSshPublicKey() != null) sb.append("SshPublicKey: " + getSshPublicKey() + ", ");
+        sb.append("{");    	
+        if (getIamUserArn() != null) sb.append("IamUserArn: " + getIamUserArn() + ",");    	
+        if (getSshUsername() != null) sb.append("SshUsername: " + getSshUsername() + ",");    	
+        if (getSshPublicKey() != null) sb.append("SshPublicKey: " + getSshPublicKey() );
         sb.append("}");
         return sb.toString();
     }

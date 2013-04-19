@@ -23,11 +23,6 @@ import java.io.Serializable;
 public class EventSubscription  implements Serializable  {
 
     /**
-     * Not used.
-     */
-    private String id;
-
-    /**
      * The AWS customer account associated with the RDS event notification
      * subscription.
      */
@@ -80,40 +75,6 @@ public class EventSubscription  implements Serializable  {
      */
     private Boolean enabled;
 
-    /**
-     * Not used.
-     *
-     * @return Not used.
-     */
-    public String getId() {
-        return id;
-    }
-    
-    /**
-     * Not used.
-     *
-     * @param id Not used.
-     */
-    public void setId(String id) {
-        this.id = id;
-    }
-    
-    /**
-     * Not used.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param id Not used.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     */
-    public EventSubscription withId(String id) {
-        this.id = id;
-        return this;
-    }
-    
-    
     /**
      * The AWS customer account associated with the RDS event notification
      * subscription.
@@ -562,17 +523,16 @@ public class EventSubscription  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getId() != null) sb.append("Id: " + getId() + ", ");
-        if (getCustomerAwsId() != null) sb.append("CustomerAwsId: " + getCustomerAwsId() + ", ");
-        if (getCustSubscriptionId() != null) sb.append("CustSubscriptionId: " + getCustSubscriptionId() + ", ");
-        if (getSnsTopicArn() != null) sb.append("SnsTopicArn: " + getSnsTopicArn() + ", ");
-        if (getStatus() != null) sb.append("Status: " + getStatus() + ", ");
-        if (getSubscriptionCreationTime() != null) sb.append("SubscriptionCreationTime: " + getSubscriptionCreationTime() + ", ");
-        if (getSourceType() != null) sb.append("SourceType: " + getSourceType() + ", ");
-        if (getSourceIdsList() != null) sb.append("SourceIdsList: " + getSourceIdsList() + ", ");
-        if (getEventCategoriesList() != null) sb.append("EventCategoriesList: " + getEventCategoriesList() + ", ");
-        if (isEnabled() != null) sb.append("Enabled: " + isEnabled() + ", ");
+        sb.append("{");    	
+        if (getCustomerAwsId() != null) sb.append("CustomerAwsId: " + getCustomerAwsId() + ",");    	
+        if (getCustSubscriptionId() != null) sb.append("CustSubscriptionId: " + getCustSubscriptionId() + ",");    	
+        if (getSnsTopicArn() != null) sb.append("SnsTopicArn: " + getSnsTopicArn() + ",");    	
+        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");    	
+        if (getSubscriptionCreationTime() != null) sb.append("SubscriptionCreationTime: " + getSubscriptionCreationTime() + ",");    	
+        if (getSourceType() != null) sb.append("SourceType: " + getSourceType() + ",");    	
+        if (getSourceIdsList() != null) sb.append("SourceIdsList: " + getSourceIdsList() + ",");    	
+        if (getEventCategoriesList() != null) sb.append("EventCategoriesList: " + getEventCategoriesList() + ",");    	
+        if (isEnabled() != null) sb.append("Enabled: " + isEnabled() );
         sb.append("}");
         return sb.toString();
     }
@@ -582,7 +542,6 @@ public class EventSubscription  implements Serializable  {
         final int prime = 31;
         int hashCode = 1;
         
-        hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode()); 
         hashCode = prime * hashCode + ((getCustomerAwsId() == null) ? 0 : getCustomerAwsId().hashCode()); 
         hashCode = prime * hashCode + ((getCustSubscriptionId() == null) ? 0 : getCustSubscriptionId().hashCode()); 
         hashCode = prime * hashCode + ((getSnsTopicArn() == null) ? 0 : getSnsTopicArn().hashCode()); 
@@ -603,8 +562,6 @@ public class EventSubscription  implements Serializable  {
         if (obj instanceof EventSubscription == false) return false;
         EventSubscription other = (EventSubscription)obj;
         
-        if (other.getId() == null ^ this.getId() == null) return false;
-        if (other.getId() != null && other.getId().equals(this.getId()) == false) return false; 
         if (other.getCustomerAwsId() == null ^ this.getCustomerAwsId() == null) return false;
         if (other.getCustomerAwsId() != null && other.getCustomerAwsId().equals(this.getCustomerAwsId()) == false) return false; 
         if (other.getCustSubscriptionId() == null ^ this.getCustSubscriptionId() == null) return false;

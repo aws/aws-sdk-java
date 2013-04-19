@@ -265,11 +265,11 @@ public class UpdateJobRequest extends AmazonWebServiceRequest  implements Serial
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getJobId() != null) sb.append("JobId: " + getJobId() + ", ");
-        if (getManifest() != null) sb.append("Manifest: " + getManifest() + ", ");
-        if (getJobType() != null) sb.append("JobType: " + getJobType() + ", ");
-        if (isValidateOnly() != null) sb.append("ValidateOnly: " + isValidateOnly() + ", ");
+        sb.append("{");    	
+        if (getJobId() != null) sb.append("JobId: " + getJobId() + ",");    	
+        if (getManifest() != null) sb.append("Manifest: " + getManifest() + ",");    	
+        if (getJobType() != null) sb.append("JobType: " + getJobType() + ",");    	
+        if (isValidateOnly() != null) sb.append("ValidateOnly: " + isValidateOnly() );
         sb.append("}");
         return sb.toString();
     }

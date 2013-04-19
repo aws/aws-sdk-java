@@ -53,7 +53,7 @@ public class JobFlowDetail  implements Serializable  {
      * The version of the AMI used to initialize Amazon EC2 instances in the
      * job flow. For a list of AMI versions currently supported by Amazon
      * ElasticMapReduce, go to <a
-     * perGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
+     * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
      * Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic
      * MapReduce Developer's Guide.</i>
      * <p>
@@ -279,7 +279,7 @@ public class JobFlowDetail  implements Serializable  {
      * The version of the AMI used to initialize Amazon EC2 instances in the
      * job flow. For a list of AMI versions currently supported by Amazon
      * ElasticMapReduce, go to <a
-     * perGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
+     * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
      * Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic
      * MapReduce Developer's Guide.</i>
      * <p>
@@ -290,7 +290,7 @@ public class JobFlowDetail  implements Serializable  {
      * @return The version of the AMI used to initialize Amazon EC2 instances in the
      *         job flow. For a list of AMI versions currently supported by Amazon
      *         ElasticMapReduce, go to <a
-     *         perGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
+     *         href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
      *         Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic
      *         MapReduce Developer's Guide.</i>
      */
@@ -302,7 +302,7 @@ public class JobFlowDetail  implements Serializable  {
      * The version of the AMI used to initialize Amazon EC2 instances in the
      * job flow. For a list of AMI versions currently supported by Amazon
      * ElasticMapReduce, go to <a
-     * perGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
+     * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
      * Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic
      * MapReduce Developer's Guide.</i>
      * <p>
@@ -313,7 +313,7 @@ public class JobFlowDetail  implements Serializable  {
      * @param amiVersion The version of the AMI used to initialize Amazon EC2 instances in the
      *         job flow. For a list of AMI versions currently supported by Amazon
      *         ElasticMapReduce, go to <a
-     *         perGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
+     *         href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
      *         Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic
      *         MapReduce Developer's Guide.</i>
      */
@@ -325,7 +325,7 @@ public class JobFlowDetail  implements Serializable  {
      * The version of the AMI used to initialize Amazon EC2 instances in the
      * job flow. For a list of AMI versions currently supported by Amazon
      * ElasticMapReduce, go to <a
-     * perGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
+     * href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
      * Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic
      * MapReduce Developer's Guide.</i>
      * <p>
@@ -338,7 +338,7 @@ public class JobFlowDetail  implements Serializable  {
      * @param amiVersion The version of the AMI used to initialize Amazon EC2 instances in the
      *         job flow. For a list of AMI versions currently supported by Amazon
      *         ElasticMapReduce, go to <a
-     *         perGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
+     *         href="http://docs.aws.amazon.com/ElasticMapReduce/latest/DeveloperGuide/EnvironmentConfig_AMIVersion.html#ami-versions-supported">AMI
      *         Versions Supported in Elastic MapReduce</a> in the <i>Amazon Elastic
      *         MapReduce Developer's Guide.</i>
      *
@@ -796,18 +796,18 @@ public class JobFlowDetail  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getJobFlowId() != null) sb.append("JobFlowId: " + getJobFlowId() + ", ");
-        if (getName() != null) sb.append("Name: " + getName() + ", ");
-        if (getLogUri() != null) sb.append("LogUri: " + getLogUri() + ", ");
-        if (getAmiVersion() != null) sb.append("AmiVersion: " + getAmiVersion() + ", ");
-        if (getExecutionStatusDetail() != null) sb.append("ExecutionStatusDetail: " + getExecutionStatusDetail() + ", ");
-        if (getInstances() != null) sb.append("Instances: " + getInstances() + ", ");
-        if (getSteps() != null) sb.append("Steps: " + getSteps() + ", ");
-        if (getBootstrapActions() != null) sb.append("BootstrapActions: " + getBootstrapActions() + ", ");
-        if (getSupportedProducts() != null) sb.append("SupportedProducts: " + getSupportedProducts() + ", ");
-        if (isVisibleToAllUsers() != null) sb.append("VisibleToAllUsers: " + isVisibleToAllUsers() + ", ");
-        if (getJobFlowRole() != null) sb.append("JobFlowRole: " + getJobFlowRole() + ", ");
+        sb.append("{");    	
+        if (getJobFlowId() != null) sb.append("JobFlowId: " + getJobFlowId() + ",");    	
+        if (getName() != null) sb.append("Name: " + getName() + ",");    	
+        if (getLogUri() != null) sb.append("LogUri: " + getLogUri() + ",");    	
+        if (getAmiVersion() != null) sb.append("AmiVersion: " + getAmiVersion() + ",");    	
+        if (getExecutionStatusDetail() != null) sb.append("ExecutionStatusDetail: " + getExecutionStatusDetail() + ",");    	
+        if (getInstances() != null) sb.append("Instances: " + getInstances() + ",");    	
+        if (getSteps() != null) sb.append("Steps: " + getSteps() + ",");    	
+        if (getBootstrapActions() != null) sb.append("BootstrapActions: " + getBootstrapActions() + ",");    	
+        if (getSupportedProducts() != null) sb.append("SupportedProducts: " + getSupportedProducts() + ",");    	
+        if (isVisibleToAllUsers() != null) sb.append("VisibleToAllUsers: " + isVisibleToAllUsers() + ",");    	
+        if (getJobFlowRole() != null) sb.append("JobFlowRole: " + getJobFlowRole() );
         sb.append("}");
         return sb.toString();
     }

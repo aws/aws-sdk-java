@@ -190,9 +190,9 @@ public class ListAvailableSolutionStacksResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getSolutionStacks() != null) sb.append("SolutionStacks: " + getSolutionStacks() + ", ");
-        if (getSolutionStackDetails() != null) sb.append("SolutionStackDetails: " + getSolutionStackDetails() + ", ");
+        sb.append("{");    	
+        if (getSolutionStacks() != null) sb.append("SolutionStacks: " + getSolutionStacks() + ",");    	
+        if (getSolutionStackDetails() != null) sb.append("SolutionStackDetails: " + getSolutionStackDetails() );
         sb.append("}");
         return sb.toString();
     }

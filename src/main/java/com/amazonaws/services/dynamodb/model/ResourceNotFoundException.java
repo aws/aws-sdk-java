@@ -21,6 +21,7 @@ import com.amazonaws.AmazonServiceException;
  * This exception is thrown when the resource which is being attempted to be changed is in use.
  * </p>
  */        
+@Deprecated
 public class ResourceNotFoundException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;
     

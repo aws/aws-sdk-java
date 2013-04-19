@@ -236,10 +236,10 @@ public class ResetClusterParameterGroupRequest extends AmazonWebServiceRequest  
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getParameterGroupName() != null) sb.append("ParameterGroupName: " + getParameterGroupName() + ", ");
-        if (isResetAllParameters() != null) sb.append("ResetAllParameters: " + isResetAllParameters() + ", ");
-        if (getParameters() != null) sb.append("Parameters: " + getParameters() + ", ");
+        sb.append("{");    	
+        if (getParameterGroupName() != null) sb.append("ParameterGroupName: " + getParameterGroupName() + ",");    	
+        if (isResetAllParameters() != null) sb.append("ResetAllParameters: " + isResetAllParameters() + ",");    	
+        if (getParameters() != null) sb.append("Parameters: " + getParameters() );
         sb.append("}");
         return sb.toString();
     }

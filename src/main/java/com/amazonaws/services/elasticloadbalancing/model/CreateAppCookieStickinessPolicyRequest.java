@@ -206,10 +206,10 @@ public class CreateAppCookieStickinessPolicyRequest extends AmazonWebServiceRequ
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getLoadBalancerName() != null) sb.append("LoadBalancerName: " + getLoadBalancerName() + ", ");
-        if (getPolicyName() != null) sb.append("PolicyName: " + getPolicyName() + ", ");
-        if (getCookieName() != null) sb.append("CookieName: " + getCookieName() + ", ");
+        sb.append("{");    	
+        if (getLoadBalancerName() != null) sb.append("LoadBalancerName: " + getLoadBalancerName() + ",");    	
+        if (getPolicyName() != null) sb.append("PolicyName: " + getPolicyName() + ",");    	
+        if (getCookieName() != null) sb.append("CookieName: " + getCookieName() );
         sb.append("}");
         return sb.toString();
     }

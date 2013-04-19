@@ -896,22 +896,22 @@ public class LaunchConfiguration  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getLaunchConfigurationName() != null) sb.append("LaunchConfigurationName: " + getLaunchConfigurationName() + ", ");
-        if (getLaunchConfigurationARN() != null) sb.append("LaunchConfigurationARN: " + getLaunchConfigurationARN() + ", ");
-        if (getImageId() != null) sb.append("ImageId: " + getImageId() + ", ");
-        if (getKeyName() != null) sb.append("KeyName: " + getKeyName() + ", ");
-        if (getSecurityGroups() != null) sb.append("SecurityGroups: " + getSecurityGroups() + ", ");
-        if (getUserData() != null) sb.append("UserData: " + getUserData() + ", ");
-        if (getInstanceType() != null) sb.append("InstanceType: " + getInstanceType() + ", ");
-        if (getKernelId() != null) sb.append("KernelId: " + getKernelId() + ", ");
-        if (getRamdiskId() != null) sb.append("RamdiskId: " + getRamdiskId() + ", ");
-        if (getBlockDeviceMappings() != null) sb.append("BlockDeviceMappings: " + getBlockDeviceMappings() + ", ");
-        if (getInstanceMonitoring() != null) sb.append("InstanceMonitoring: " + getInstanceMonitoring() + ", ");
-        if (getSpotPrice() != null) sb.append("SpotPrice: " + getSpotPrice() + ", ");
-        if (getIamInstanceProfile() != null) sb.append("IamInstanceProfile: " + getIamInstanceProfile() + ", ");
-        if (getCreatedTime() != null) sb.append("CreatedTime: " + getCreatedTime() + ", ");
-        if (isEbsOptimized() != null) sb.append("EbsOptimized: " + isEbsOptimized() + ", ");
+        sb.append("{");    	
+        if (getLaunchConfigurationName() != null) sb.append("LaunchConfigurationName: " + getLaunchConfigurationName() + ",");    	
+        if (getLaunchConfigurationARN() != null) sb.append("LaunchConfigurationARN: " + getLaunchConfigurationARN() + ",");    	
+        if (getImageId() != null) sb.append("ImageId: " + getImageId() + ",");    	
+        if (getKeyName() != null) sb.append("KeyName: " + getKeyName() + ",");    	
+        if (getSecurityGroups() != null) sb.append("SecurityGroups: " + getSecurityGroups() + ",");    	
+        if (getUserData() != null) sb.append("UserData: " + getUserData() + ",");    	
+        if (getInstanceType() != null) sb.append("InstanceType: " + getInstanceType() + ",");    	
+        if (getKernelId() != null) sb.append("KernelId: " + getKernelId() + ",");    	
+        if (getRamdiskId() != null) sb.append("RamdiskId: " + getRamdiskId() + ",");    	
+        if (getBlockDeviceMappings() != null) sb.append("BlockDeviceMappings: " + getBlockDeviceMappings() + ",");    	
+        if (getInstanceMonitoring() != null) sb.append("InstanceMonitoring: " + getInstanceMonitoring() + ",");    	
+        if (getSpotPrice() != null) sb.append("SpotPrice: " + getSpotPrice() + ",");    	
+        if (getIamInstanceProfile() != null) sb.append("IamInstanceProfile: " + getIamInstanceProfile() + ",");    	
+        if (getCreatedTime() != null) sb.append("CreatedTime: " + getCreatedTime() + ",");    	
+        if (isEbsOptimized() != null) sb.append("EbsOptimized: " + isEbsOptimized() );
         sb.append("}");
         return sb.toString();
     }

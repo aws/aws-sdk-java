@@ -111,9 +111,9 @@ public class ClusterParameterGroupStatus  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getParameterGroupName() != null) sb.append("ParameterGroupName: " + getParameterGroupName() + ", ");
-        if (getParameterApplyStatus() != null) sb.append("ParameterApplyStatus: " + getParameterApplyStatus() + ", ");
+        sb.append("{");    	
+        if (getParameterGroupName() != null) sb.append("ParameterGroupName: " + getParameterGroupName() + ",");    	
+        if (getParameterApplyStatus() != null) sb.append("ParameterApplyStatus: " + getParameterApplyStatus() );
         sb.append("}");
         return sb.toString();
     }

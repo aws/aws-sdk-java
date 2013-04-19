@@ -186,10 +186,10 @@ public class DescribeVolumeAttributeResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getVolumeId() != null) sb.append("VolumeId: " + getVolumeId() + ", ");
-        if (isAutoEnableIO() != null) sb.append("AutoEnableIO: " + isAutoEnableIO() + ", ");
-        if (getProductCodes() != null) sb.append("ProductCodes: " + getProductCodes() + ", ");
+        sb.append("{");    	
+        if (getVolumeId() != null) sb.append("VolumeId: " + getVolumeId() + ",");    	
+        if (isAutoEnableIO() != null) sb.append("AutoEnableIO: " + isAutoEnableIO() + ",");    	
+        if (getProductCodes() != null) sb.append("ProductCodes: " + getProductCodes() );
         sb.append("}");
         return sb.toString();
     }

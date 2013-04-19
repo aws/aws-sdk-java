@@ -375,11 +375,11 @@ public class ListDomainsRequest extends AmazonWebServiceRequest  implements Seri
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getNextPageToken() != null) sb.append("NextPageToken: " + getNextPageToken() + ", ");
-        if (getRegistrationStatus() != null) sb.append("RegistrationStatus: " + getRegistrationStatus() + ", ");
-        if (getMaximumPageSize() != null) sb.append("MaximumPageSize: " + getMaximumPageSize() + ", ");
-        if (isReverseOrder() != null) sb.append("ReverseOrder: " + isReverseOrder() + ", ");
+        sb.append("{");    	
+        if (getNextPageToken() != null) sb.append("NextPageToken: " + getNextPageToken() + ",");    	
+        if (getRegistrationStatus() != null) sb.append("RegistrationStatus: " + getRegistrationStatus() + ",");    	
+        if (getMaximumPageSize() != null) sb.append("MaximumPageSize: " + getMaximumPageSize() + ",");    	
+        if (isReverseOrder() != null) sb.append("ReverseOrder: " + isReverseOrder() );
         sb.append("}");
         return sb.toString();
     }

@@ -172,9 +172,9 @@ public class DomainInfos  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getDomainInfos() != null) sb.append("DomainInfos: " + getDomainInfos() + ", ");
-        if (getNextPageToken() != null) sb.append("NextPageToken: " + getNextPageToken() + ", ");
+        sb.append("{");    	
+        if (getDomainInfos() != null) sb.append("DomainInfos: " + getDomainInfos() + ",");    	
+        if (getNextPageToken() != null) sb.append("NextPageToken: " + getNextPageToken() );
         sb.append("}");
         return sb.toString();
     }

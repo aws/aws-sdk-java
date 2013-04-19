@@ -17,7 +17,9 @@ package com.amazonaws.services.rds.model;
 import com.amazonaws.AmazonServiceException;
 
 /**
- * AmazonRDS exception
+ * <p>
+ * The option group you are trying to create already exists.
+ * </p>
  */        
 public class OptionGroupAlreadyExistsException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;

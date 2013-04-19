@@ -34,6 +34,7 @@ import com.amazonaws.services.dynamodb.datamodeling.DynamoDBMapperConfig.TableNa
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
 @Inherited
+@Deprecated
 public @interface DynamoDBTable {
 
     /**

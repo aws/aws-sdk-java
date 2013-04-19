@@ -27,7 +27,7 @@ public class RawMessage  implements Serializable  {
      * format complies with Internet email standards regarding email header
      * fields, MIME types, MIME encoding, and base64 encoding (if necessary).
      * <p>For more information, go to the<a
-     * f="http://docs.amazonwebservices.com/ses/latest/DeveloperGuide">Amazon
+     * href="http://docs.amazonwebservices.com/ses/latest/DeveloperGuide">Amazon
      * SES Developer Guide</a>.
      */
     private java.nio.ByteBuffer data;
@@ -47,7 +47,7 @@ public class RawMessage  implements Serializable  {
      * the message format complies with Internet email standards regarding
      * email header fields, MIME types, MIME encoding, and base64 encoding
      * (if necessary). <p>For more information, go to the<a
-     * f="http://docs.amazonwebservices.com/ses/latest/DeveloperGuide">Amazon
+     * href="http://docs.amazonwebservices.com/ses/latest/DeveloperGuide">Amazon
      * SES Developer Guide</a>.
      */
     public RawMessage(java.nio.ByteBuffer data) {
@@ -61,14 +61,14 @@ public class RawMessage  implements Serializable  {
      * format complies with Internet email standards regarding email header
      * fields, MIME types, MIME encoding, and base64 encoding (if necessary).
      * <p>For more information, go to the<a
-     * f="http://docs.amazonwebservices.com/ses/latest/DeveloperGuide">Amazon
+     * href="http://docs.amazonwebservices.com/ses/latest/DeveloperGuide">Amazon
      * SES Developer Guide</a>.
      *
      * @return The raw data of the message. The client must ensure that the message
      *         format complies with Internet email standards regarding email header
      *         fields, MIME types, MIME encoding, and base64 encoding (if necessary).
      *         <p>For more information, go to the<a
-     *         f="http://docs.amazonwebservices.com/ses/latest/DeveloperGuide">Amazon
+     *         href="http://docs.amazonwebservices.com/ses/latest/DeveloperGuide">Amazon
      *         SES Developer Guide</a>.
      */
     public java.nio.ByteBuffer getData() {
@@ -80,14 +80,14 @@ public class RawMessage  implements Serializable  {
      * format complies with Internet email standards regarding email header
      * fields, MIME types, MIME encoding, and base64 encoding (if necessary).
      * <p>For more information, go to the<a
-     * f="http://docs.amazonwebservices.com/ses/latest/DeveloperGuide">Amazon
+     * href="http://docs.amazonwebservices.com/ses/latest/DeveloperGuide">Amazon
      * SES Developer Guide</a>.
      *
      * @param data The raw data of the message. The client must ensure that the message
      *         format complies with Internet email standards regarding email header
      *         fields, MIME types, MIME encoding, and base64 encoding (if necessary).
      *         <p>For more information, go to the<a
-     *         f="http://docs.amazonwebservices.com/ses/latest/DeveloperGuide">Amazon
+     *         href="http://docs.amazonwebservices.com/ses/latest/DeveloperGuide">Amazon
      *         SES Developer Guide</a>.
      */
     public void setData(java.nio.ByteBuffer data) {
@@ -99,7 +99,7 @@ public class RawMessage  implements Serializable  {
      * format complies with Internet email standards regarding email header
      * fields, MIME types, MIME encoding, and base64 encoding (if necessary).
      * <p>For more information, go to the<a
-     * f="http://docs.amazonwebservices.com/ses/latest/DeveloperGuide">Amazon
+     * href="http://docs.amazonwebservices.com/ses/latest/DeveloperGuide">Amazon
      * SES Developer Guide</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -108,7 +108,7 @@ public class RawMessage  implements Serializable  {
      *         format complies with Internet email standards regarding email header
      *         fields, MIME types, MIME encoding, and base64 encoding (if necessary).
      *         <p>For more information, go to the<a
-     *         f="http://docs.amazonwebservices.com/ses/latest/DeveloperGuide">Amazon
+     *         href="http://docs.amazonwebservices.com/ses/latest/DeveloperGuide">Amazon
      *         SES Developer Guide</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -131,8 +131,8 @@ public class RawMessage  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getData() != null) sb.append("Data: " + getData() + ", ");
+        sb.append("{");    	
+        if (getData() != null) sb.append("Data: " + getData() );
         sb.append("}");
         return sb.toString();
     }

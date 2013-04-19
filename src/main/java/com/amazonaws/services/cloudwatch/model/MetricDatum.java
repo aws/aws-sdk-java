@@ -424,13 +424,13 @@ public class MetricDatum  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getMetricName() != null) sb.append("MetricName: " + getMetricName() + ", ");
-        if (getDimensions() != null) sb.append("Dimensions: " + getDimensions() + ", ");
-        if (getTimestamp() != null) sb.append("Timestamp: " + getTimestamp() + ", ");
-        if (getValue() != null) sb.append("Value: " + getValue() + ", ");
-        if (getStatisticValues() != null) sb.append("StatisticValues: " + getStatisticValues() + ", ");
-        if (getUnit() != null) sb.append("Unit: " + getUnit() + ", ");
+        sb.append("{");    	
+        if (getMetricName() != null) sb.append("MetricName: " + getMetricName() + ",");    	
+        if (getDimensions() != null) sb.append("Dimensions: " + getDimensions() + ",");    	
+        if (getTimestamp() != null) sb.append("Timestamp: " + getTimestamp() + ",");    	
+        if (getValue() != null) sb.append("Value: " + getValue() + ",");    	
+        if (getStatisticValues() != null) sb.append("StatisticValues: " + getStatisticValues() + ",");    	
+        if (getUnit() != null) sb.append("Unit: " + getUnit() );
         sb.append("}");
         return sb.toString();
     }

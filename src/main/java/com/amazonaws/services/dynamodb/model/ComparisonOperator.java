@@ -17,6 +17,7 @@ package com.amazonaws.services.dynamodb.model;
 /**
  * Comparison Operator
  */
+@Deprecated
 public enum ComparisonOperator {
     
     EQ("EQ"),

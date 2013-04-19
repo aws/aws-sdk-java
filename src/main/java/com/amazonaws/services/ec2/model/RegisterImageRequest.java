@@ -480,15 +480,15 @@ public class RegisterImageRequest extends AmazonWebServiceRequest  implements Se
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getImageLocation() != null) sb.append("ImageLocation: " + getImageLocation() + ", ");
-        if (getName() != null) sb.append("Name: " + getName() + ", ");
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ", ");
-        if (getArchitecture() != null) sb.append("Architecture: " + getArchitecture() + ", ");
-        if (getKernelId() != null) sb.append("KernelId: " + getKernelId() + ", ");
-        if (getRamdiskId() != null) sb.append("RamdiskId: " + getRamdiskId() + ", ");
-        if (getRootDeviceName() != null) sb.append("RootDeviceName: " + getRootDeviceName() + ", ");
-        if (getBlockDeviceMappings() != null) sb.append("BlockDeviceMappings: " + getBlockDeviceMappings() + ", ");
+        sb.append("{");    	
+        if (getImageLocation() != null) sb.append("ImageLocation: " + getImageLocation() + ",");    	
+        if (getName() != null) sb.append("Name: " + getName() + ",");    	
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");    	
+        if (getArchitecture() != null) sb.append("Architecture: " + getArchitecture() + ",");    	
+        if (getKernelId() != null) sb.append("KernelId: " + getKernelId() + ",");    	
+        if (getRamdiskId() != null) sb.append("RamdiskId: " + getRamdiskId() + ",");    	
+        if (getRootDeviceName() != null) sb.append("RootDeviceName: " + getRootDeviceName() + ",");    	
+        if (getBlockDeviceMappings() != null) sb.append("BlockDeviceMappings: " + getBlockDeviceMappings() );
         sb.append("}");
         return sb.toString();
     }

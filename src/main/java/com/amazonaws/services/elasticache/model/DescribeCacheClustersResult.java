@@ -146,9 +146,9 @@ public class DescribeCacheClustersResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ", ");
-        if (getCacheClusters() != null) sb.append("CacheClusters: " + getCacheClusters() + ", ");
+        sb.append("{");    	
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");    	
+        if (getCacheClusters() != null) sb.append("CacheClusters: " + getCacheClusters() );
         sb.append("}");
         return sb.toString();
     }

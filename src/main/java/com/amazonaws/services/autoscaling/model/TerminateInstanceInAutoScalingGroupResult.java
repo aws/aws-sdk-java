@@ -72,8 +72,8 @@ public class TerminateInstanceInAutoScalingGroupResult  implements Serializable 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getActivity() != null) sb.append("Activity: " + getActivity() + ", ");
+        sb.append("{");    	
+        if (getActivity() != null) sb.append("Activity: " + getActivity() );
         sb.append("}");
         return sb.toString();
     }

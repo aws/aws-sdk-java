@@ -146,9 +146,9 @@ public class DescribeLoadBalancersResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getLoadBalancerDescriptions() != null) sb.append("LoadBalancerDescriptions: " + getLoadBalancerDescriptions() + ", ");
-        if (getNextMarker() != null) sb.append("NextMarker: " + getNextMarker() + ", ");
+        sb.append("{");    	
+        if (getLoadBalancerDescriptions() != null) sb.append("LoadBalancerDescriptions: " + getLoadBalancerDescriptions() + ",");    	
+        if (getNextMarker() != null) sb.append("NextMarker: " + getNextMarker() );
         sb.append("}");
         return sb.toString();
     }

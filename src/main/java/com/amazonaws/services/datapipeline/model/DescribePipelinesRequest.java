@@ -134,8 +134,8 @@ public class DescribePipelinesRequest extends AmazonWebServiceRequest  implement
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getPipelineIds() != null) sb.append("PipelineIds: " + getPipelineIds() + ", ");
+        sb.append("{");    	
+        if (getPipelineIds() != null) sb.append("PipelineIds: " + getPipelineIds() );
         sb.append("}");
         return sb.toString();
     }

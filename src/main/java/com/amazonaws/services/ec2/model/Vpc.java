@@ -371,14 +371,14 @@ public class Vpc  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getVpcId() != null) sb.append("VpcId: " + getVpcId() + ", ");
-        if (getState() != null) sb.append("State: " + getState() + ", ");
-        if (getCidrBlock() != null) sb.append("CidrBlock: " + getCidrBlock() + ", ");
-        if (getDhcpOptionsId() != null) sb.append("DhcpOptionsId: " + getDhcpOptionsId() + ", ");
-        if (getTags() != null) sb.append("Tags: " + getTags() + ", ");
-        if (getInstanceTenancy() != null) sb.append("InstanceTenancy: " + getInstanceTenancy() + ", ");
-        if (isDefault() != null) sb.append("IsDefault: " + isDefault() + ", ");
+        sb.append("{");    	
+        if (getVpcId() != null) sb.append("VpcId: " + getVpcId() + ",");    	
+        if (getState() != null) sb.append("State: " + getState() + ",");    	
+        if (getCidrBlock() != null) sb.append("CidrBlock: " + getCidrBlock() + ",");    	
+        if (getDhcpOptionsId() != null) sb.append("DhcpOptionsId: " + getDhcpOptionsId() + ",");    	
+        if (getTags() != null) sb.append("Tags: " + getTags() + ",");    	
+        if (getInstanceTenancy() != null) sb.append("InstanceTenancy: " + getInstanceTenancy() + ",");    	
+        if (isDefault() != null) sb.append("IsDefault: " + isDefault() );
         sb.append("}");
         return sb.toString();
     }

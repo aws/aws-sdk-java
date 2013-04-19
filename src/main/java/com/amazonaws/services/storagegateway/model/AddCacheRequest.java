@@ -202,9 +202,9 @@ public class AddCacheRequest extends AmazonWebServiceRequest  implements Seriali
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getGatewayARN() != null) sb.append("GatewayARN: " + getGatewayARN() + ", ");
-        if (getDiskIds() != null) sb.append("DiskIds: " + getDiskIds() + ", ");
+        sb.append("{");    	
+        if (getGatewayARN() != null) sb.append("GatewayARN: " + getGatewayARN() + ",");    	
+        if (getDiskIds() != null) sb.append("DiskIds: " + getDiskIds() );
         sb.append("}");
         return sb.toString();
     }

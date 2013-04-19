@@ -152,8 +152,8 @@ public class DescribeAutoScalingNotificationTypesResult  implements Serializable
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getAutoScalingNotificationTypes() != null) sb.append("AutoScalingNotificationTypes: " + getAutoScalingNotificationTypes() + ", ");
+        sb.append("{");    	
+        if (getAutoScalingNotificationTypes() != null) sb.append("AutoScalingNotificationTypes: " + getAutoScalingNotificationTypes() );
         sb.append("}");
         return sb.toString();
     }

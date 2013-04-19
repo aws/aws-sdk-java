@@ -189,10 +189,10 @@ public class SourceDataMap  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getSourceName() != null) sb.append("SourceName: " + getSourceName() + ", ");
-        if (getDefaultValue() != null) sb.append("DefaultValue: " + getDefaultValue() + ", ");
-        if (getCases() != null) sb.append("Cases: " + getCases() + ", ");
+        sb.append("{");    	
+        if (getSourceName() != null) sb.append("SourceName: " + getSourceName() + ",");    	
+        if (getDefaultValue() != null) sb.append("DefaultValue: " + getDefaultValue() + ",");    	
+        if (getCases() != null) sb.append("Cases: " + getCases() );
         sb.append("}");
         return sb.toString();
     }

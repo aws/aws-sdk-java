@@ -100,8 +100,8 @@ public class DeleteInstanceProfileRequest extends AmazonWebServiceRequest  imple
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getInstanceProfileName() != null) sb.append("InstanceProfileName: " + getInstanceProfileName() + ", ");
+        sb.append("{");    	
+        if (getInstanceProfileName() != null) sb.append("InstanceProfileName: " + getInstanceProfileName() );
         sb.append("}");
         return sb.toString();
     }

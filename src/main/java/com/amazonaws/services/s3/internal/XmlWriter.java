@@ -107,6 +107,8 @@ public class XmlWriter {
      *            appened.
      */
     private void appendEscapedString(String s, StringBuilder builder) {
+        if (s == null)
+            s = "";
         int pos;
         int start = 0;
         int len = s.length();

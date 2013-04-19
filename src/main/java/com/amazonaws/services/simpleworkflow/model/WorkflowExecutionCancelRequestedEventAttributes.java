@@ -291,10 +291,10 @@ public class WorkflowExecutionCancelRequestedEventAttributes  implements Seriali
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getExternalWorkflowExecution() != null) sb.append("ExternalWorkflowExecution: " + getExternalWorkflowExecution() + ", ");
-        if (getExternalInitiatedEventId() != null) sb.append("ExternalInitiatedEventId: " + getExternalInitiatedEventId() + ", ");
-        if (getCause() != null) sb.append("Cause: " + getCause() + ", ");
+        sb.append("{");    	
+        if (getExternalWorkflowExecution() != null) sb.append("ExternalWorkflowExecution: " + getExternalWorkflowExecution() + ",");    	
+        if (getExternalInitiatedEventId() != null) sb.append("ExternalInitiatedEventId: " + getExternalInitiatedEventId() + ",");    	
+        if (getCause() != null) sb.append("Cause: " + getCause() );
         sb.append("}");
         return sb.toString();
     }

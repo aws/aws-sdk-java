@@ -167,9 +167,9 @@ public class ListMultipartUploadsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getUploadsList() != null) sb.append("UploadsList: " + getUploadsList() + ", ");
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ", ");
+        sb.append("{");    	
+        if (getUploadsList() != null) sb.append("UploadsList: " + getUploadsList() + ",");    	
+        if (getMarker() != null) sb.append("Marker: " + getMarker() );
         sb.append("}");
         return sb.toString();
     }

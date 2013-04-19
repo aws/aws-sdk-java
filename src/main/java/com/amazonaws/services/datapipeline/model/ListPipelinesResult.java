@@ -260,10 +260,10 @@ public class ListPipelinesResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getPipelineIdList() != null) sb.append("PipelineIdList: " + getPipelineIdList() + ", ");
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ", ");
-        if (isHasMoreResults() != null) sb.append("HasMoreResults: " + isHasMoreResults() + ", ");
+        sb.append("{");    	
+        if (getPipelineIdList() != null) sb.append("PipelineIdList: " + getPipelineIdList() + ",");    	
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");    	
+        if (isHasMoreResults() != null) sb.append("HasMoreResults: " + isHasMoreResults() );
         sb.append("}");
         return sb.toString();
     }

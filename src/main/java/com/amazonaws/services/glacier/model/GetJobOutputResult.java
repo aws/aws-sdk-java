@@ -60,7 +60,7 @@ public class GetJobOutputResult  implements Serializable  {
 
     /**
      * Indicates the range units accepted. For more information, go to <a
-     * ="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html">RFC2616</a>.
+     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html">RFC2616</a>.
      */
     private String acceptRanges;
 
@@ -313,10 +313,10 @@ public class GetJobOutputResult  implements Serializable  {
     
     /**
      * Indicates the range units accepted. For more information, go to <a
-     * ="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html">RFC2616</a>.
+     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html">RFC2616</a>.
      *
      * @return Indicates the range units accepted. For more information, go to <a
-     *         ="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html">RFC2616</a>.
+     *         href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html">RFC2616</a>.
      */
     public String getAcceptRanges() {
         return acceptRanges;
@@ -324,10 +324,10 @@ public class GetJobOutputResult  implements Serializable  {
     
     /**
      * Indicates the range units accepted. For more information, go to <a
-     * ="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html">RFC2616</a>.
+     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html">RFC2616</a>.
      *
      * @param acceptRanges Indicates the range units accepted. For more information, go to <a
-     *         ="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html">RFC2616</a>.
+     *         href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html">RFC2616</a>.
      */
     public void setAcceptRanges(String acceptRanges) {
         this.acceptRanges = acceptRanges;
@@ -335,12 +335,12 @@ public class GetJobOutputResult  implements Serializable  {
     
     /**
      * Indicates the range units accepted. For more information, go to <a
-     * ="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html">RFC2616</a>.
+     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html">RFC2616</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param acceptRanges Indicates the range units accepted. For more information, go to <a
-     *         ="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html">RFC2616</a>.
+     *         href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html">RFC2616</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -460,14 +460,14 @@ public class GetJobOutputResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getBody() != null) sb.append("Body: " + getBody() + ", ");
-        if (getChecksum() != null) sb.append("Checksum: " + getChecksum() + ", ");
-        if (getStatus() != null) sb.append("Status: " + getStatus() + ", ");
-        if (getContentRange() != null) sb.append("ContentRange: " + getContentRange() + ", ");
-        if (getAcceptRanges() != null) sb.append("AcceptRanges: " + getAcceptRanges() + ", ");
-        if (getContentType() != null) sb.append("ContentType: " + getContentType() + ", ");
-        if (getArchiveDescription() != null) sb.append("ArchiveDescription: " + getArchiveDescription() + ", ");
+        sb.append("{");    	
+        if (getBody() != null) sb.append("Body: " + getBody() + ",");    	
+        if (getChecksum() != null) sb.append("Checksum: " + getChecksum() + ",");    	
+        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");    	
+        if (getContentRange() != null) sb.append("ContentRange: " + getContentRange() + ",");    	
+        if (getAcceptRanges() != null) sb.append("AcceptRanges: " + getAcceptRanges() + ",");    	
+        if (getContentType() != null) sb.append("ContentType: " + getContentType() + ",");    	
+        if (getArchiveDescription() != null) sb.append("ArchiveDescription: " + getArchiveDescription() );
         sb.append("}");
         return sb.toString();
     }

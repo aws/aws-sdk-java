@@ -107,8 +107,8 @@ public class DescribeApplicationVersionsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getApplicationVersions() != null) sb.append("ApplicationVersions: " + getApplicationVersions() + ", ");
+        sb.append("{");    	
+        if (getApplicationVersions() != null) sb.append("ApplicationVersions: " + getApplicationVersions() );
         sb.append("}");
         return sb.toString();
     }

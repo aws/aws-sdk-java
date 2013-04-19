@@ -138,9 +138,9 @@ public class ForwardedValues  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (isQueryString() != null) sb.append("QueryString: " + isQueryString() + ", ");
-        if (getCookies() != null) sb.append("Cookies: " + getCookies() + ", ");
+        sb.append("{");    	
+        if (isQueryString() != null) sb.append("QueryString: " + isQueryString() + ",");    	
+        if (getCookies() != null) sb.append("Cookies: " + getCookies() );
         sb.append("}");
         return sb.toString();
     }

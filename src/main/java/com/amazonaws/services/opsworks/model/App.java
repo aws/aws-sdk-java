@@ -571,18 +571,18 @@ public class App  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getAppId() != null) sb.append("AppId: " + getAppId() + ", ");
-        if (getStackId() != null) sb.append("StackId: " + getStackId() + ", ");
-        if (getName() != null) sb.append("Name: " + getName() + ", ");
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ", ");
-        if (getType() != null) sb.append("Type: " + getType() + ", ");
-        if (getAppSource() != null) sb.append("AppSource: " + getAppSource() + ", ");
-        if (getDomains() != null) sb.append("Domains: " + getDomains() + ", ");
-        if (isEnableSsl() != null) sb.append("EnableSsl: " + isEnableSsl() + ", ");
-        if (getSslConfiguration() != null) sb.append("SslConfiguration: " + getSslConfiguration() + ", ");
-        if (getAttributes() != null) sb.append("Attributes: " + getAttributes() + ", ");
-        if (getCreatedAt() != null) sb.append("CreatedAt: " + getCreatedAt() + ", ");
+        sb.append("{");    	
+        if (getAppId() != null) sb.append("AppId: " + getAppId() + ",");    	
+        if (getStackId() != null) sb.append("StackId: " + getStackId() + ",");    	
+        if (getName() != null) sb.append("Name: " + getName() + ",");    	
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");    	
+        if (getType() != null) sb.append("Type: " + getType() + ",");    	
+        if (getAppSource() != null) sb.append("AppSource: " + getAppSource() + ",");    	
+        if (getDomains() != null) sb.append("Domains: " + getDomains() + ",");    	
+        if (isEnableSsl() != null) sb.append("EnableSsl: " + isEnableSsl() + ",");    	
+        if (getSslConfiguration() != null) sb.append("SslConfiguration: " + getSslConfiguration() + ",");    	
+        if (getAttributes() != null) sb.append("Attributes: " + getAttributes() + ",");    	
+        if (getCreatedAt() != null) sb.append("CreatedAt: " + getCreatedAt() );
         sb.append("}");
         return sb.toString();
     }

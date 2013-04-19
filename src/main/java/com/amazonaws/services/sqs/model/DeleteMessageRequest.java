@@ -138,9 +138,9 @@ public class DeleteMessageRequest extends AmazonWebServiceRequest  implements Se
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getQueueUrl() != null) sb.append("QueueUrl: " + getQueueUrl() + ", ");
-        if (getReceiptHandle() != null) sb.append("ReceiptHandle: " + getReceiptHandle() + ", ");
+        sb.append("{");    	
+        if (getQueueUrl() != null) sb.append("QueueUrl: " + getQueueUrl() + ",");    	
+        if (getReceiptHandle() != null) sb.append("ReceiptHandle: " + getReceiptHandle() );
         sb.append("}");
         return sb.toString();
     }

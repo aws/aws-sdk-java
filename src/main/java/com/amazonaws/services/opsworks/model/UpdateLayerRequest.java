@@ -53,7 +53,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest  implements Seri
     /**
      * The ARN of an IAM profile to be used for all of the layer's EC2
      * instances. For more information about IAM ARNs, see <a
-     * docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.
      */
     private String customInstanceProfileArn;
@@ -82,7 +82,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest  implements Seri
 
     /**
      * Whether to automatically assign an <a
-     * zon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
      * IP address</a> to the layer.
      */
     private Boolean autoAssignElasticIps;
@@ -260,12 +260,12 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest  implements Seri
     /**
      * The ARN of an IAM profile to be used for all of the layer's EC2
      * instances. For more information about IAM ARNs, see <a
-     * docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.
      *
      * @return The ARN of an IAM profile to be used for all of the layer's EC2
      *         instances. For more information about IAM ARNs, see <a
-     *         docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      *         Identifiers</a>.
      */
     public String getCustomInstanceProfileArn() {
@@ -275,12 +275,12 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest  implements Seri
     /**
      * The ARN of an IAM profile to be used for all of the layer's EC2
      * instances. For more information about IAM ARNs, see <a
-     * docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.
      *
      * @param customInstanceProfileArn The ARN of an IAM profile to be used for all of the layer's EC2
      *         instances. For more information about IAM ARNs, see <a
-     *         docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      *         Identifiers</a>.
      */
     public void setCustomInstanceProfileArn(String customInstanceProfileArn) {
@@ -290,14 +290,14 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest  implements Seri
     /**
      * The ARN of an IAM profile to be used for all of the layer's EC2
      * instances. For more information about IAM ARNs, see <a
-     * docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      * Identifiers</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param customInstanceProfileArn The ARN of an IAM profile to be used for all of the layer's EC2
      *         instances. For more information about IAM ARNs, see <a
-     *         docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
      *         Identifiers</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -577,11 +577,11 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest  implements Seri
     
     /**
      * Whether to automatically assign an <a
-     * zon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
      * IP address</a> to the layer.
      *
      * @return Whether to automatically assign an <a
-     *         zon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
      *         IP address</a> to the layer.
      */
     public Boolean isAutoAssignElasticIps() {
@@ -590,11 +590,11 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest  implements Seri
     
     /**
      * Whether to automatically assign an <a
-     * zon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
      * IP address</a> to the layer.
      *
      * @param autoAssignElasticIps Whether to automatically assign an <a
-     *         zon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
      *         IP address</a> to the layer.
      */
     public void setAutoAssignElasticIps(Boolean autoAssignElasticIps) {
@@ -603,13 +603,13 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest  implements Seri
     
     /**
      * Whether to automatically assign an <a
-     * zon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
      * IP address</a> to the layer.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param autoAssignElasticIps Whether to automatically assign an <a
-     *         zon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
      *         IP address</a> to the layer.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -623,11 +623,11 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest  implements Seri
     
     /**
      * Whether to automatically assign an <a
-     * zon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
      * IP address</a> to the layer.
      *
      * @return Whether to automatically assign an <a
-     *         zon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
      *         IP address</a> to the layer.
      */
     public Boolean getAutoAssignElasticIps() {
@@ -685,18 +685,18 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest  implements Seri
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getLayerId() != null) sb.append("LayerId: " + getLayerId() + ", ");
-        if (getName() != null) sb.append("Name: " + getName() + ", ");
-        if (getShortname() != null) sb.append("Shortname: " + getShortname() + ", ");
-        if (getAttributes() != null) sb.append("Attributes: " + getAttributes() + ", ");
-        if (getCustomInstanceProfileArn() != null) sb.append("CustomInstanceProfileArn: " + getCustomInstanceProfileArn() + ", ");
-        if (getCustomSecurityGroupIds() != null) sb.append("CustomSecurityGroupIds: " + getCustomSecurityGroupIds() + ", ");
-        if (getPackages() != null) sb.append("Packages: " + getPackages() + ", ");
-        if (getVolumeConfigurations() != null) sb.append("VolumeConfigurations: " + getVolumeConfigurations() + ", ");
-        if (isEnableAutoHealing() != null) sb.append("EnableAutoHealing: " + isEnableAutoHealing() + ", ");
-        if (isAutoAssignElasticIps() != null) sb.append("AutoAssignElasticIps: " + isAutoAssignElasticIps() + ", ");
-        if (getCustomRecipes() != null) sb.append("CustomRecipes: " + getCustomRecipes() + ", ");
+        sb.append("{");    	
+        if (getLayerId() != null) sb.append("LayerId: " + getLayerId() + ",");    	
+        if (getName() != null) sb.append("Name: " + getName() + ",");    	
+        if (getShortname() != null) sb.append("Shortname: " + getShortname() + ",");    	
+        if (getAttributes() != null) sb.append("Attributes: " + getAttributes() + ",");    	
+        if (getCustomInstanceProfileArn() != null) sb.append("CustomInstanceProfileArn: " + getCustomInstanceProfileArn() + ",");    	
+        if (getCustomSecurityGroupIds() != null) sb.append("CustomSecurityGroupIds: " + getCustomSecurityGroupIds() + ",");    	
+        if (getPackages() != null) sb.append("Packages: " + getPackages() + ",");    	
+        if (getVolumeConfigurations() != null) sb.append("VolumeConfigurations: " + getVolumeConfigurations() + ",");    	
+        if (isEnableAutoHealing() != null) sb.append("EnableAutoHealing: " + isEnableAutoHealing() + ",");    	
+        if (isAutoAssignElasticIps() != null) sb.append("AutoAssignElasticIps: " + isAutoAssignElasticIps() + ",");    	
+        if (getCustomRecipes() != null) sb.append("CustomRecipes: " + getCustomRecipes() );
         sb.append("}");
         return sb.toString();
     }

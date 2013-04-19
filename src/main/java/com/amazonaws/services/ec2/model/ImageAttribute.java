@@ -411,14 +411,14 @@ public class ImageAttribute  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getImageId() != null) sb.append("ImageId: " + getImageId() + ", ");
-        if (getLaunchPermissions() != null) sb.append("LaunchPermissions: " + getLaunchPermissions() + ", ");
-        if (getProductCodes() != null) sb.append("ProductCodes: " + getProductCodes() + ", ");
-        if (getKernelId() != null) sb.append("KernelId: " + getKernelId() + ", ");
-        if (getRamdiskId() != null) sb.append("RamdiskId: " + getRamdiskId() + ", ");
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ", ");
-        if (getBlockDeviceMappings() != null) sb.append("BlockDeviceMappings: " + getBlockDeviceMappings() + ", ");
+        sb.append("{");    	
+        if (getImageId() != null) sb.append("ImageId: " + getImageId() + ",");    	
+        if (getLaunchPermissions() != null) sb.append("LaunchPermissions: " + getLaunchPermissions() + ",");    	
+        if (getProductCodes() != null) sb.append("ProductCodes: " + getProductCodes() + ",");    	
+        if (getKernelId() != null) sb.append("KernelId: " + getKernelId() + ",");    	
+        if (getRamdiskId() != null) sb.append("RamdiskId: " + getRamdiskId() + ",");    	
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");    	
+        if (getBlockDeviceMappings() != null) sb.append("BlockDeviceMappings: " + getBlockDeviceMappings() );
         sb.append("}");
         return sb.toString();
     }

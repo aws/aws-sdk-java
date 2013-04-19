@@ -21,6 +21,7 @@ import com.amazonaws.AmazonServiceException;
  * This exception is thrown when an expected value does not match what was found in the system.
  * </p>
  */        
+@Deprecated
 public class ConditionalCheckFailedException extends AmazonServiceException {
     private static final long serialVersionUID = 1L;
     

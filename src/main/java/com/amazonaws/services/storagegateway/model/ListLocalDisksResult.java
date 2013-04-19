@@ -178,9 +178,9 @@ public class ListLocalDisksResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getGatewayARN() != null) sb.append("GatewayARN: " + getGatewayARN() + ", ");
-        if (getDisks() != null) sb.append("Disks: " + getDisks() + ", ");
+        sb.append("{");    	
+        if (getGatewayARN() != null) sb.append("GatewayARN: " + getGatewayARN() + ",");    	
+        if (getDisks() != null) sb.append("Disks: " + getDisks() );
         sb.append("}");
         return sb.toString();
     }

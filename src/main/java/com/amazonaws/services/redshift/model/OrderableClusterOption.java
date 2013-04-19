@@ -224,11 +224,11 @@ public class OrderableClusterOption  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getClusterVersion() != null) sb.append("ClusterVersion: " + getClusterVersion() + ", ");
-        if (getClusterType() != null) sb.append("ClusterType: " + getClusterType() + ", ");
-        if (getNodeType() != null) sb.append("NodeType: " + getNodeType() + ", ");
-        if (getAvailabilityZones() != null) sb.append("AvailabilityZones: " + getAvailabilityZones() + ", ");
+        sb.append("{");    	
+        if (getClusterVersion() != null) sb.append("ClusterVersion: " + getClusterVersion() + ",");    	
+        if (getClusterType() != null) sb.append("ClusterType: " + getClusterType() + ",");    	
+        if (getNodeType() != null) sb.append("NodeType: " + getNodeType() + ",");    	
+        if (getAvailabilityZones() != null) sb.append("AvailabilityZones: " + getAvailabilityZones() );
         sb.append("}");
         return sb.toString();
     }

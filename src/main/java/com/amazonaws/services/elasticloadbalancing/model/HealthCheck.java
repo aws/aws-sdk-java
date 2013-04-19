@@ -457,12 +457,12 @@ public class HealthCheck  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getTarget() != null) sb.append("Target: " + getTarget() + ", ");
-        if (getInterval() != null) sb.append("Interval: " + getInterval() + ", ");
-        if (getTimeout() != null) sb.append("Timeout: " + getTimeout() + ", ");
-        if (getUnhealthyThreshold() != null) sb.append("UnhealthyThreshold: " + getUnhealthyThreshold() + ", ");
-        if (getHealthyThreshold() != null) sb.append("HealthyThreshold: " + getHealthyThreshold() + ", ");
+        sb.append("{");    	
+        if (getTarget() != null) sb.append("Target: " + getTarget() + ",");    	
+        if (getInterval() != null) sb.append("Interval: " + getInterval() + ",");    	
+        if (getTimeout() != null) sb.append("Timeout: " + getTimeout() + ",");    	
+        if (getUnhealthyThreshold() != null) sb.append("UnhealthyThreshold: " + getUnhealthyThreshold() + ",");    	
+        if (getHealthyThreshold() != null) sb.append("HealthyThreshold: " + getHealthyThreshold() );
         sb.append("}");
         return sb.toString();
     }

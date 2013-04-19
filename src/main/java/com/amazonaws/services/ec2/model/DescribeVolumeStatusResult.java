@@ -138,9 +138,9 @@ public class DescribeVolumeStatusResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getVolumeStatuses() != null) sb.append("VolumeStatuses: " + getVolumeStatuses() + ", ");
-        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() + ", ");
+        sb.append("{");    	
+        if (getVolumeStatuses() != null) sb.append("VolumeStatuses: " + getVolumeStatuses() + ",");    	
+        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() );
         sb.append("}");
         return sb.toString();
     }

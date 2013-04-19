@@ -322,10 +322,10 @@ public class IdentityDkimAttributes  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (isDkimEnabled() != null) sb.append("DkimEnabled: " + isDkimEnabled() + ", ");
-        if (getDkimVerificationStatus() != null) sb.append("DkimVerificationStatus: " + getDkimVerificationStatus() + ", ");
-        if (getDkimTokens() != null) sb.append("DkimTokens: " + getDkimTokens() + ", ");
+        sb.append("{");    	
+        if (isDkimEnabled() != null) sb.append("DkimEnabled: " + isDkimEnabled() + ",");    	
+        if (getDkimVerificationStatus() != null) sb.append("DkimVerificationStatus: " + getDkimVerificationStatus() + ",");    	
+        if (getDkimTokens() != null) sb.append("DkimTokens: " + getDkimTokens() );
         sb.append("}");
         return sb.toString();
     }

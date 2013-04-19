@@ -96,8 +96,8 @@ public class CreateKeyPairRequest extends AmazonWebServiceRequest  implements Se
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getKeyName() != null) sb.append("KeyName: " + getKeyName() + ", ");
+        sb.append("{");    	
+        if (getKeyName() != null) sb.append("KeyName: " + getKeyName() );
         sb.append("}");
         return sb.toString();
     }

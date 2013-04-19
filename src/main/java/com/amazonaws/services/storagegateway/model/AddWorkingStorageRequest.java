@@ -212,9 +212,9 @@ public class AddWorkingStorageRequest extends AmazonWebServiceRequest  implement
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getGatewayARN() != null) sb.append("GatewayARN: " + getGatewayARN() + ", ");
-        if (getDiskIds() != null) sb.append("DiskIds: " + getDiskIds() + ", ");
+        sb.append("{");    	
+        if (getGatewayARN() != null) sb.append("GatewayARN: " + getGatewayARN() + ",");    	
+        if (getDiskIds() != null) sb.append("DiskIds: " + getDiskIds() );
         sb.append("}");
         return sb.toString();
     }

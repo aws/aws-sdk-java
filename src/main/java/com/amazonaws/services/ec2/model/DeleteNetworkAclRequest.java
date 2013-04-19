@@ -77,8 +77,8 @@ public class DeleteNetworkAclRequest extends AmazonWebServiceRequest  implements
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getNetworkAclId() != null) sb.append("NetworkAclId: " + getNetworkAclId() + ", ");
+        sb.append("{");    	
+        if (getNetworkAclId() != null) sb.append("NetworkAclId: " + getNetworkAclId() );
         sb.append("}");
         return sb.toString();
     }

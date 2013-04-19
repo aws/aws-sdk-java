@@ -134,9 +134,9 @@ public class Content  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getData() != null) sb.append("Data: " + getData() + ", ");
-        if (getCharset() != null) sb.append("Charset: " + getCharset() + ", ");
+        sb.append("{");    	
+        if (getData() != null) sb.append("Data: " + getData() + ",");    	
+        if (getCharset() != null) sb.append("Charset: " + getCharset() );
         sb.append("}");
         return sb.toString();
     }

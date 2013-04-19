@@ -112,8 +112,8 @@ public class ReportTaskProgressRequest extends AmazonWebServiceRequest  implemen
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getTaskId() != null) sb.append("TaskId: " + getTaskId() + ", ");
+        sb.append("{");    	
+        if (getTaskId() != null) sb.append("TaskId: " + getTaskId() );
         sb.append("}");
         return sb.toString();
     }

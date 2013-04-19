@@ -102,8 +102,8 @@ public class DescribeConversionTasksResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getConversionTasks() != null) sb.append("ConversionTasks: " + getConversionTasks() + ", ");
+        sb.append("{");    	
+        if (getConversionTasks() != null) sb.append("ConversionTasks: " + getConversionTasks() );
         sb.append("}");
         return sb.toString();
     }

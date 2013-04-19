@@ -20,6 +20,7 @@ import java.io.Serializable;
  * A container for <code>BatchWriteItem</code> response
  * </p>
  */
+@Deprecated
 public class BatchWriteItemResult  implements Serializable  {
 
     /**

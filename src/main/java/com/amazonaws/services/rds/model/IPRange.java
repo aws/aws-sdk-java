@@ -124,9 +124,9 @@ public class IPRange  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getStatus() != null) sb.append("Status: " + getStatus() + ", ");
-        if (getCIDRIP() != null) sb.append("CIDRIP: " + getCIDRIP() + ", ");
+        sb.append("{");    	
+        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");    	
+        if (getCIDRIP() != null) sb.append("CIDRIP: " + getCIDRIP() );
         sb.append("}");
         return sb.toString();
     }

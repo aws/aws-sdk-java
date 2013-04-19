@@ -28,6 +28,7 @@ import static org.codehaus.jackson.JsonToken.*;
 /**
  * Batch Write Response JSON Unmarshaller
  */
+@Deprecated
 public class BatchWriteResponseJsonUnmarshaller implements Unmarshaller<BatchWriteResponse, JsonUnmarshallerContext> {
 
     

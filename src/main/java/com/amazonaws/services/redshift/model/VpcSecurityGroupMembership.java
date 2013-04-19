@@ -111,9 +111,9 @@ public class VpcSecurityGroupMembership  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getVpcSecurityGroupId() != null) sb.append("VpcSecurityGroupId: " + getVpcSecurityGroupId() + ", ");
-        if (getStatus() != null) sb.append("Status: " + getStatus() + ", ");
+        sb.append("{");    	
+        if (getVpcSecurityGroupId() != null) sb.append("VpcSecurityGroupId: " + getVpcSecurityGroupId() + ",");    	
+        if (getStatus() != null) sb.append("Status: " + getStatus() );
         sb.append("}");
         return sb.toString();
     }

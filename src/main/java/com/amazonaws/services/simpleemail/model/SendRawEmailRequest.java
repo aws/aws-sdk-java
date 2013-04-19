@@ -65,7 +65,7 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest  implements Ser
      * present.</li> <li>Each part of a multipart MIME message must be
      * formatted properly.</li> <li>MIME content types must be among those
      * supported by Amazon SES. Refer to the <a
-     * f="http://docs.amazonwebservices.com/ses/latest/DeveloperGuide">Amazon
+     * href="http://docs.amazonwebservices.com/ses/latest/DeveloperGuide">Amazon
      * SES Developer Guide</a> for more details. </li> <li>Content must be
      * base64-encoded, if MIME requires it.</li> </ul>
      */
@@ -89,7 +89,7 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest  implements Ser
      * multipart MIME message must be formatted properly.</li> <li>MIME
      * content types must be among those supported by Amazon SES. Refer to
      * the <a
-     * f="http://docs.amazonwebservices.com/ses/latest/DeveloperGuide">Amazon
+     * href="http://docs.amazonwebservices.com/ses/latest/DeveloperGuide">Amazon
      * SES Developer Guide</a> for more details. </li> <li>Content must be
      * base64-encoded, if MIME requires it.</li> </ul>
      */
@@ -233,7 +233,7 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest  implements Ser
      * present.</li> <li>Each part of a multipart MIME message must be
      * formatted properly.</li> <li>MIME content types must be among those
      * supported by Amazon SES. Refer to the <a
-     * f="http://docs.amazonwebservices.com/ses/latest/DeveloperGuide">Amazon
+     * href="http://docs.amazonwebservices.com/ses/latest/DeveloperGuide">Amazon
      * SES Developer Guide</a> for more details. </li> <li>Content must be
      * base64-encoded, if MIME requires it.</li> </ul>
      *
@@ -243,7 +243,7 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest  implements Ser
      *         present.</li> <li>Each part of a multipart MIME message must be
      *         formatted properly.</li> <li>MIME content types must be among those
      *         supported by Amazon SES. Refer to the <a
-     *         f="http://docs.amazonwebservices.com/ses/latest/DeveloperGuide">Amazon
+     *         href="http://docs.amazonwebservices.com/ses/latest/DeveloperGuide">Amazon
      *         SES Developer Guide</a> for more details. </li> <li>Content must be
      *         base64-encoded, if MIME requires it.</li> </ul>
      */
@@ -258,7 +258,7 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest  implements Ser
      * present.</li> <li>Each part of a multipart MIME message must be
      * formatted properly.</li> <li>MIME content types must be among those
      * supported by Amazon SES. Refer to the <a
-     * f="http://docs.amazonwebservices.com/ses/latest/DeveloperGuide">Amazon
+     * href="http://docs.amazonwebservices.com/ses/latest/DeveloperGuide">Amazon
      * SES Developer Guide</a> for more details. </li> <li>Content must be
      * base64-encoded, if MIME requires it.</li> </ul>
      *
@@ -268,7 +268,7 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest  implements Ser
      *         present.</li> <li>Each part of a multipart MIME message must be
      *         formatted properly.</li> <li>MIME content types must be among those
      *         supported by Amazon SES. Refer to the <a
-     *         f="http://docs.amazonwebservices.com/ses/latest/DeveloperGuide">Amazon
+     *         href="http://docs.amazonwebservices.com/ses/latest/DeveloperGuide">Amazon
      *         SES Developer Guide</a> for more details. </li> <li>Content must be
      *         base64-encoded, if MIME requires it.</li> </ul>
      */
@@ -283,7 +283,7 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest  implements Ser
      * present.</li> <li>Each part of a multipart MIME message must be
      * formatted properly.</li> <li>MIME content types must be among those
      * supported by Amazon SES. Refer to the <a
-     * f="http://docs.amazonwebservices.com/ses/latest/DeveloperGuide">Amazon
+     * href="http://docs.amazonwebservices.com/ses/latest/DeveloperGuide">Amazon
      * SES Developer Guide</a> for more details. </li> <li>Content must be
      * base64-encoded, if MIME requires it.</li> </ul>
      * <p>
@@ -295,7 +295,7 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest  implements Ser
      *         present.</li> <li>Each part of a multipart MIME message must be
      *         formatted properly.</li> <li>MIME content types must be among those
      *         supported by Amazon SES. Refer to the <a
-     *         f="http://docs.amazonwebservices.com/ses/latest/DeveloperGuide">Amazon
+     *         href="http://docs.amazonwebservices.com/ses/latest/DeveloperGuide">Amazon
      *         SES Developer Guide</a> for more details. </li> <li>Content must be
      *         base64-encoded, if MIME requires it.</li> </ul>
      *
@@ -319,10 +319,10 @@ public class SendRawEmailRequest extends AmazonWebServiceRequest  implements Ser
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getSource() != null) sb.append("Source: " + getSource() + ", ");
-        if (getDestinations() != null) sb.append("Destinations: " + getDestinations() + ", ");
-        if (getRawMessage() != null) sb.append("RawMessage: " + getRawMessage() + ", ");
+        sb.append("{");    	
+        if (getSource() != null) sb.append("Source: " + getSource() + ",");    	
+        if (getDestinations() != null) sb.append("Destinations: " + getDestinations() + ",");    	
+        if (getRawMessage() != null) sb.append("RawMessage: " + getRawMessage() );
         sb.append("}");
         return sb.toString();
     }

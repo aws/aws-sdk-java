@@ -102,8 +102,8 @@ public class CancelWorkflowExecutionDecisionAttributes  implements Serializable 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getDetails() != null) sb.append("Details: " + getDetails() + ", ");
+        sb.append("{");    	
+        if (getDetails() != null) sb.append("Details: " + getDetails() );
         sb.append("}");
         return sb.toString();
     }

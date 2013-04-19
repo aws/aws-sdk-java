@@ -184,9 +184,9 @@ public class CheckDNSAvailabilityResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (isAvailable() != null) sb.append("Available: " + isAvailable() + ", ");
-        if (getFullyQualifiedCNAME() != null) sb.append("FullyQualifiedCNAME: " + getFullyQualifiedCNAME() + ", ");
+        sb.append("{");    	
+        if (isAvailable() != null) sb.append("Available: " + isAvailable() + ",");    	
+        if (getFullyQualifiedCNAME() != null) sb.append("FullyQualifiedCNAME: " + getFullyQualifiedCNAME() );
         sb.append("}");
         return sb.toString();
     }

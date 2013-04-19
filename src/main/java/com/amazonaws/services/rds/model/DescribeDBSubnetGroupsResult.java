@@ -160,9 +160,9 @@ public class DescribeDBSubnetGroupsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ", ");
-        if (getDBSubnetGroups() != null) sb.append("DBSubnetGroups: " + getDBSubnetGroups() + ", ");
+        sb.append("{");    	
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");    	
+        if (getDBSubnetGroups() != null) sb.append("DBSubnetGroups: " + getDBSubnetGroups() );
         sb.append("}");
         return sb.toString();
     }

@@ -37,6 +37,7 @@ import com.amazonaws.util.json.*;
 /**
  * List Tables Request Marshaller
  */
+@Deprecated
 public class ListTablesRequestMarshaller implements Marshaller<Request<ListTablesRequest>, ListTablesRequest> {
 
     

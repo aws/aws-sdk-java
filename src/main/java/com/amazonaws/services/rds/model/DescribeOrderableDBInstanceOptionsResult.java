@@ -176,9 +176,9 @@ public class DescribeOrderableDBInstanceOptionsResult  implements Serializable  
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getOrderableDBInstanceOptions() != null) sb.append("OrderableDBInstanceOptions: " + getOrderableDBInstanceOptions() + ", ");
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ", ");
+        sb.append("{");    	
+        if (getOrderableDBInstanceOptions() != null) sb.append("OrderableDBInstanceOptions: " + getOrderableDBInstanceOptions() + ",");    	
+        if (getMarker() != null) sb.append("Marker: " + getMarker() );
         sb.append("}");
         return sb.toString();
     }

@@ -109,7 +109,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest  impl
     /**
      * The name of the cluster placement group, if applicable. For more
      * information, go to <a
-     * webservices.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">
+     * href="http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">
      * Using Cluster Instances</a> in the Amazon EC2 User Guide.
      * <p>
      * <b>Constraints:</b><br/>
@@ -136,7 +136,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest  impl
      * to select the instance to terminate. The policies are executed in the
      * order that they are listed. <p> For more information on creating a
      * termination policy for your Auto Scaling group, go to <a
-     * AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Instance
+     * href="http://docs.amazonwebservices.com/AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Instance
      * Termination Policy for Your Auto Scaling Group</a> in the the <i>Auto
      * Scaling Developer Guide</i>.
      */
@@ -558,7 +558,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest  impl
     /**
      * The name of the cluster placement group, if applicable. For more
      * information, go to <a
-     * webservices.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">
+     * href="http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">
      * Using Cluster Instances</a> in the Amazon EC2 User Guide.
      * <p>
      * <b>Constraints:</b><br/>
@@ -567,7 +567,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest  impl
      *
      * @return The name of the cluster placement group, if applicable. For more
      *         information, go to <a
-     *         webservices.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">
+     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">
      *         Using Cluster Instances</a> in the Amazon EC2 User Guide.
      */
     public String getPlacementGroup() {
@@ -577,7 +577,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest  impl
     /**
      * The name of the cluster placement group, if applicable. For more
      * information, go to <a
-     * webservices.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">
+     * href="http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">
      * Using Cluster Instances</a> in the Amazon EC2 User Guide.
      * <p>
      * <b>Constraints:</b><br/>
@@ -586,7 +586,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest  impl
      *
      * @param placementGroup The name of the cluster placement group, if applicable. For more
      *         information, go to <a
-     *         webservices.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">
+     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">
      *         Using Cluster Instances</a> in the Amazon EC2 User Guide.
      */
     public void setPlacementGroup(String placementGroup) {
@@ -596,7 +596,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest  impl
     /**
      * The name of the cluster placement group, if applicable. For more
      * information, go to <a
-     * webservices.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">
+     * href="http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">
      * Using Cluster Instances</a> in the Amazon EC2 User Guide.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -607,7 +607,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest  impl
      *
      * @param placementGroup The name of the cluster placement group, if applicable. For more
      *         information, go to <a
-     *         webservices.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">
+     *         href="http://docs.amazonwebservices.com/AWSEC2/latest/UserGuide/using_cluster_computing.html">
      *         Using Cluster Instances</a> in the Amazon EC2 User Guide.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -694,7 +694,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest  impl
      * to select the instance to terminate. The policies are executed in the
      * order that they are listed. <p> For more information on creating a
      * termination policy for your Auto Scaling group, go to <a
-     * AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Instance
+     * href="http://docs.amazonwebservices.com/AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Instance
      * Termination Policy for Your Auto Scaling Group</a> in the the <i>Auto
      * Scaling Developer Guide</i>.
      *
@@ -702,7 +702,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest  impl
      *         to select the instance to terminate. The policies are executed in the
      *         order that they are listed. <p> For more information on creating a
      *         termination policy for your Auto Scaling group, go to <a
-     *         AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Instance
+     *         href="http://docs.amazonwebservices.com/AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Instance
      *         Termination Policy for Your Auto Scaling Group</a> in the the <i>Auto
      *         Scaling Developer Guide</i>.
      */
@@ -719,7 +719,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest  impl
      * to select the instance to terminate. The policies are executed in the
      * order that they are listed. <p> For more information on creating a
      * termination policy for your Auto Scaling group, go to <a
-     * AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Instance
+     * href="http://docs.amazonwebservices.com/AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Instance
      * Termination Policy for Your Auto Scaling Group</a> in the the <i>Auto
      * Scaling Developer Guide</i>.
      *
@@ -727,7 +727,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest  impl
      *         to select the instance to terminate. The policies are executed in the
      *         order that they are listed. <p> For more information on creating a
      *         termination policy for your Auto Scaling group, go to <a
-     *         AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Instance
+     *         href="http://docs.amazonwebservices.com/AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Instance
      *         Termination Policy for Your Auto Scaling Group</a> in the the <i>Auto
      *         Scaling Developer Guide</i>.
      */
@@ -747,7 +747,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest  impl
      * to select the instance to terminate. The policies are executed in the
      * order that they are listed. <p> For more information on creating a
      * termination policy for your Auto Scaling group, go to <a
-     * AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Instance
+     * href="http://docs.amazonwebservices.com/AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Instance
      * Termination Policy for Your Auto Scaling Group</a> in the the <i>Auto
      * Scaling Developer Guide</i>.
      * <p>
@@ -757,7 +757,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest  impl
      *         to select the instance to terminate. The policies are executed in the
      *         order that they are listed. <p> For more information on creating a
      *         termination policy for your Auto Scaling group, go to <a
-     *         AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Instance
+     *         href="http://docs.amazonwebservices.com/AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Instance
      *         Termination Policy for Your Auto Scaling Group</a> in the the <i>Auto
      *         Scaling Developer Guide</i>.
      *
@@ -777,7 +777,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest  impl
      * to select the instance to terminate. The policies are executed in the
      * order that they are listed. <p> For more information on creating a
      * termination policy for your Auto Scaling group, go to <a
-     * AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Instance
+     * href="http://docs.amazonwebservices.com/AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Instance
      * Termination Policy for Your Auto Scaling Group</a> in the the <i>Auto
      * Scaling Developer Guide</i>.
      * <p>
@@ -787,7 +787,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest  impl
      *         to select the instance to terminate. The policies are executed in the
      *         order that they are listed. <p> For more information on creating a
      *         termination policy for your Auto Scaling group, go to <a
-     *         AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Instance
+     *         href="http://docs.amazonwebservices.com/AutoScaling/latest/DeveloperGuide/us-termination-policy.html">Instance
      *         Termination Policy for Your Auto Scaling Group</a> in the the <i>Auto
      *         Scaling Developer Guide</i>.
      *
@@ -817,19 +817,19 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest  impl
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getAutoScalingGroupName() != null) sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ", ");
-        if (getLaunchConfigurationName() != null) sb.append("LaunchConfigurationName: " + getLaunchConfigurationName() + ", ");
-        if (getMinSize() != null) sb.append("MinSize: " + getMinSize() + ", ");
-        if (getMaxSize() != null) sb.append("MaxSize: " + getMaxSize() + ", ");
-        if (getDesiredCapacity() != null) sb.append("DesiredCapacity: " + getDesiredCapacity() + ", ");
-        if (getDefaultCooldown() != null) sb.append("DefaultCooldown: " + getDefaultCooldown() + ", ");
-        if (getAvailabilityZones() != null) sb.append("AvailabilityZones: " + getAvailabilityZones() + ", ");
-        if (getHealthCheckType() != null) sb.append("HealthCheckType: " + getHealthCheckType() + ", ");
-        if (getHealthCheckGracePeriod() != null) sb.append("HealthCheckGracePeriod: " + getHealthCheckGracePeriod() + ", ");
-        if (getPlacementGroup() != null) sb.append("PlacementGroup: " + getPlacementGroup() + ", ");
-        if (getVPCZoneIdentifier() != null) sb.append("VPCZoneIdentifier: " + getVPCZoneIdentifier() + ", ");
-        if (getTerminationPolicies() != null) sb.append("TerminationPolicies: " + getTerminationPolicies() + ", ");
+        sb.append("{");    	
+        if (getAutoScalingGroupName() != null) sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ",");    	
+        if (getLaunchConfigurationName() != null) sb.append("LaunchConfigurationName: " + getLaunchConfigurationName() + ",");    	
+        if (getMinSize() != null) sb.append("MinSize: " + getMinSize() + ",");    	
+        if (getMaxSize() != null) sb.append("MaxSize: " + getMaxSize() + ",");    	
+        if (getDesiredCapacity() != null) sb.append("DesiredCapacity: " + getDesiredCapacity() + ",");    	
+        if (getDefaultCooldown() != null) sb.append("DefaultCooldown: " + getDefaultCooldown() + ",");    	
+        if (getAvailabilityZones() != null) sb.append("AvailabilityZones: " + getAvailabilityZones() + ",");    	
+        if (getHealthCheckType() != null) sb.append("HealthCheckType: " + getHealthCheckType() + ",");    	
+        if (getHealthCheckGracePeriod() != null) sb.append("HealthCheckGracePeriod: " + getHealthCheckGracePeriod() + ",");    	
+        if (getPlacementGroup() != null) sb.append("PlacementGroup: " + getPlacementGroup() + ",");    	
+        if (getVPCZoneIdentifier() != null) sb.append("VPCZoneIdentifier: " + getVPCZoneIdentifier() + ",");    	
+        if (getTerminationPolicies() != null) sb.append("TerminationPolicies: " + getTerminationPolicies() );
         sb.append("}");
         return sb.toString();
     }

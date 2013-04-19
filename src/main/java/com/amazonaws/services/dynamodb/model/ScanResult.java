@@ -18,6 +18,7 @@ import java.io.Serializable;
 /**
  * Scan Result
  */
+@Deprecated
 public class ScanResult  implements Serializable  {
 
     private java.util.List<java.util.Map<String,AttributeValue>> items;

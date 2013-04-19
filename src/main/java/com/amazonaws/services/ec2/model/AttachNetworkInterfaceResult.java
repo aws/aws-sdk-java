@@ -67,8 +67,8 @@ public class AttachNetworkInterfaceResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getAttachmentId() != null) sb.append("AttachmentId: " + getAttachmentId() + ", ");
+        sb.append("{");    	
+        if (getAttachmentId() != null) sb.append("AttachmentId: " + getAttachmentId() );
         sb.append("}");
         return sb.toString();
     }

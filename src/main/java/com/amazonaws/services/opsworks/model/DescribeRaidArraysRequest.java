@@ -150,9 +150,9 @@ public class DescribeRaidArraysRequest extends AmazonWebServiceRequest  implemen
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ", ");
-        if (getRaidArrayIds() != null) sb.append("RaidArrayIds: " + getRaidArrayIds() + ", ");
+        sb.append("{");    	
+        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ",");    	
+        if (getRaidArrayIds() != null) sb.append("RaidArrayIds: " + getRaidArrayIds() );
         sb.append("}");
         return sb.toString();
     }

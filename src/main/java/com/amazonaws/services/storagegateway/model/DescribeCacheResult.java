@@ -468,14 +468,14 @@ public class DescribeCacheResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getGatewayARN() != null) sb.append("GatewayARN: " + getGatewayARN() + ", ");
-        if (getDiskIds() != null) sb.append("DiskIds: " + getDiskIds() + ", ");
-        if (getCacheAllocatedInBytes() != null) sb.append("CacheAllocatedInBytes: " + getCacheAllocatedInBytes() + ", ");
-        if (getCacheUsedPercentage() != null) sb.append("CacheUsedPercentage: " + getCacheUsedPercentage() + ", ");
-        if (getCacheDirtyPercentage() != null) sb.append("CacheDirtyPercentage: " + getCacheDirtyPercentage() + ", ");
-        if (getCacheHitPercentage() != null) sb.append("CacheHitPercentage: " + getCacheHitPercentage() + ", ");
-        if (getCacheMissPercentage() != null) sb.append("CacheMissPercentage: " + getCacheMissPercentage() + ", ");
+        sb.append("{");    	
+        if (getGatewayARN() != null) sb.append("GatewayARN: " + getGatewayARN() + ",");    	
+        if (getDiskIds() != null) sb.append("DiskIds: " + getDiskIds() + ",");    	
+        if (getCacheAllocatedInBytes() != null) sb.append("CacheAllocatedInBytes: " + getCacheAllocatedInBytes() + ",");    	
+        if (getCacheUsedPercentage() != null) sb.append("CacheUsedPercentage: " + getCacheUsedPercentage() + ",");    	
+        if (getCacheDirtyPercentage() != null) sb.append("CacheDirtyPercentage: " + getCacheDirtyPercentage() + ",");    	
+        if (getCacheHitPercentage() != null) sb.append("CacheHitPercentage: " + getCacheHitPercentage() + ",");    	
+        if (getCacheMissPercentage() != null) sb.append("CacheMissPercentage: " + getCacheMissPercentage() );
         sb.append("}");
         return sb.toString();
     }

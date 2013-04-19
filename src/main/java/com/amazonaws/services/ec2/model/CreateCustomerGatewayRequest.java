@@ -204,10 +204,10 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest  imple
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getType() != null) sb.append("Type: " + getType() + ", ");
-        if (getPublicIp() != null) sb.append("PublicIp: " + getPublicIp() + ", ");
-        if (getBgpAsn() != null) sb.append("BgpAsn: " + getBgpAsn() + ", ");
+        sb.append("{");    	
+        if (getType() != null) sb.append("Type: " + getType() + ",");    	
+        if (getPublicIp() != null) sb.append("PublicIp: " + getPublicIp() + ",");    	
+        if (getBgpAsn() != null) sb.append("BgpAsn: " + getBgpAsn() );
         sb.append("}");
         return sb.toString();
     }

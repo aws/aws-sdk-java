@@ -107,8 +107,8 @@ public class ListVerifiedEmailAddressesResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getVerifiedEmailAddresses() != null) sb.append("VerifiedEmailAddresses: " + getVerifiedEmailAddresses() + ", ");
+        sb.append("{");    	
+        if (getVerifiedEmailAddresses() != null) sb.append("VerifiedEmailAddresses: " + getVerifiedEmailAddresses() );
         sb.append("}");
         return sb.toString();
     }

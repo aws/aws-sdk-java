@@ -219,10 +219,10 @@ public class Placement  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ", ");
-        if (getGroupName() != null) sb.append("GroupName: " + getGroupName() + ", ");
-        if (getTenancy() != null) sb.append("Tenancy: " + getTenancy() + ", ");
+        sb.append("{");    	
+        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");    	
+        if (getGroupName() != null) sb.append("GroupName: " + getGroupName() + ",");    	
+        if (getTenancy() != null) sb.append("Tenancy: " + getTenancy() );
         sb.append("}");
         return sb.toString();
     }

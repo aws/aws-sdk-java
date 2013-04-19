@@ -72,8 +72,8 @@ public class GetServerCertificateResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getServerCertificate() != null) sb.append("ServerCertificate: " + getServerCertificate() + ", ");
+        sb.append("{");    	
+        if (getServerCertificate() != null) sb.append("ServerCertificate: " + getServerCertificate() );
         sb.append("}");
         return sb.toString();
     }

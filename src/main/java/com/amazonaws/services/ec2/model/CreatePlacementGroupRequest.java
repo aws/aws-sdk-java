@@ -202,9 +202,9 @@ public class CreatePlacementGroupRequest extends AmazonWebServiceRequest  implem
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getGroupName() != null) sb.append("GroupName: " + getGroupName() + ", ");
-        if (getStrategy() != null) sb.append("Strategy: " + getStrategy() + ", ");
+        sb.append("{");    	
+        if (getGroupName() != null) sb.append("GroupName: " + getGroupName() + ",");    	
+        if (getStrategy() != null) sb.append("Strategy: " + getStrategy() );
         sb.append("}");
         return sb.toString();
     }

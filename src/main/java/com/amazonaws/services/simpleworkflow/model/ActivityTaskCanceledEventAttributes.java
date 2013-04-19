@@ -264,11 +264,11 @@ public class ActivityTaskCanceledEventAttributes  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getDetails() != null) sb.append("Details: " + getDetails() + ", ");
-        if (getScheduledEventId() != null) sb.append("ScheduledEventId: " + getScheduledEventId() + ", ");
-        if (getStartedEventId() != null) sb.append("StartedEventId: " + getStartedEventId() + ", ");
-        if (getLatestCancelRequestedEventId() != null) sb.append("LatestCancelRequestedEventId: " + getLatestCancelRequestedEventId() + ", ");
+        sb.append("{");    	
+        if (getDetails() != null) sb.append("Details: " + getDetails() + ",");    	
+        if (getScheduledEventId() != null) sb.append("ScheduledEventId: " + getScheduledEventId() + ",");    	
+        if (getStartedEventId() != null) sb.append("StartedEventId: " + getStartedEventId() + ",");    	
+        if (getLatestCancelRequestedEventId() != null) sb.append("LatestCancelRequestedEventId: " + getLatestCancelRequestedEventId() );
         sb.append("}");
         return sb.toString();
     }

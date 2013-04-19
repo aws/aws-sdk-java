@@ -21,6 +21,7 @@ import java.io.Serializable;
  * Both. This is enforced in the code.
  * </p>
  */
+@Deprecated
 public class WriteRequest  implements Serializable  {
 
     /**

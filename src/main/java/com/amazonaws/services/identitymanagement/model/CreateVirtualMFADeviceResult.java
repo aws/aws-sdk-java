@@ -72,8 +72,8 @@ public class CreateVirtualMFADeviceResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getVirtualMFADevice() != null) sb.append("VirtualMFADevice: " + getVirtualMFADevice() + ", ");
+        sb.append("{");    	
+        if (getVirtualMFADevice() != null) sb.append("VirtualMFADevice: " + getVirtualMFADevice() );
         sb.append("}");
         return sb.toString();
     }

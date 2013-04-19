@@ -76,8 +76,8 @@ public class DeleteUserProfileRequest extends AmazonWebServiceRequest  implement
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getIamUserArn() != null) sb.append("IamUserArn: " + getIamUserArn() + ", ");
+        sb.append("{");    	
+        if (getIamUserArn() != null) sb.append("IamUserArn: " + getIamUserArn() );
         sb.append("}");
         return sb.toString();
     }

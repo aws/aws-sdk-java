@@ -432,13 +432,13 @@ public class UploadMultipartPartRequest extends AmazonWebServiceRequest  impleme
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getAccountId() != null) sb.append("AccountId: " + getAccountId() + ", ");
-        if (getVaultName() != null) sb.append("VaultName: " + getVaultName() + ", ");
-        if (getUploadId() != null) sb.append("UploadId: " + getUploadId() + ", ");
-        if (getChecksum() != null) sb.append("Checksum: " + getChecksum() + ", ");
-        if (getRange() != null) sb.append("Range: " + getRange() + ", ");
-        if (getBody() != null) sb.append("Body: " + getBody() + ", ");
+        sb.append("{");    	
+        if (getAccountId() != null) sb.append("AccountId: " + getAccountId() + ",");    	
+        if (getVaultName() != null) sb.append("VaultName: " + getVaultName() + ",");    	
+        if (getUploadId() != null) sb.append("UploadId: " + getUploadId() + ",");    	
+        if (getChecksum() != null) sb.append("Checksum: " + getChecksum() + ",");    	
+        if (getRange() != null) sb.append("Range: " + getRange() + ",");    	
+        if (getBody() != null) sb.append("Body: " + getBody() );
         sb.append("}");
         return sb.toString();
     }

@@ -79,8 +79,8 @@ public class UploadMultipartPartResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");
-        if (getChecksum() != null) sb.append("Checksum: " + getChecksum() + ", ");
+        sb.append("{");    	
+        if (getChecksum() != null) sb.append("Checksum: " + getChecksum() );
         sb.append("}");
         return sb.toString();
     }
