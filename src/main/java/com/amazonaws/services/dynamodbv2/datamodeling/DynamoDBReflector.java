@@ -30,11 +30,14 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.SortedSet;
+import java.util.TreeSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
+
 
 import com.amazonaws.services.dynamodbv2.model.AttributeValue;
 import com.amazonaws.util.DateUtils;
@@ -93,7 +96,7 @@ public class DynamoDBReflector {
      */
     private boolean isRelevantGetter(Method m) {
         return (m.getName().startsWith("get") || m.getName().startsWith("is"))
-        		&& m.getParameterTypes().length == 0
+                && m.getParameterTypes().length == 0
                 && m.getDeclaringClass().getAnnotation(DynamoDBTable.class) != null
                 && !m.isAnnotationPresent(DynamoDBIgnore.class);
     }
@@ -122,7 +125,7 @@ public class DynamoDBReflector {
      * Returns all annotated {@link DynamoDBHashKey} and
      * {@link DynamoDBRangeKey} getters for the class given, throwing an
      * exception if there isn't one.
-     * 
+     *
      * TODO: caching
      */
     <T> Collection<Method> getKeyGetters(Class<T> clazz) {
@@ -133,11 +136,11 @@ public class DynamoDBReflector {
                 keyGetters.add(getter);
             }
         }
-        
+
         return keyGetters;
     }
 
-    
+
     /**
      * Returns the annotated {@link DynamoDBHashKey} getter for the class given,
      * throwing an exception if there isn't one.
@@ -180,6 +183,10 @@ public class DynamoDBReflector {
         return getter.isAnnotationPresent(DynamoDBMarshalling.class);
     }
 
+
+
+
+
     /**
      * Returns the argument unmarshaller used to unmarshall the getter / setter
      * pair given.
@@ -188,7 +195,7 @@ public class DynamoDBReflector {
      * requires checking it against all supported types. This is expensive, so
      * we cache a lookup table of getter method to argument unmarhsaller which
      * can be reused.
-     * 
+     *
      * @param toReturn
      *            The typed domain object being unmarshalled for the client
      * @param getter
@@ -207,32 +214,54 @@ public class DynamoDBReflector {
                 }
 
                 ArgumentUnmarshaller unmarshaller = null;
-                if ( isCustomMarshaller(getter) ) {
-                    unmarshaller = new SUnmarshaller() {
+                boolean isCollection = false;
 
-                        @Override
-                        public Object unmarshall(AttributeValue value) {
-                            return getCustomMarshalledValue(toReturn, getter, value);
-                        }
-                    };
+                if (Set.class.isAssignableFrom(paramType)) {
+                    isCollection = true;
+                    Type genericType = setter.getGenericParameterTypes()[0];
+                    if (genericType instanceof ParameterizedType) {
+                        paramType = (Class<?>) ((ParameterizedType) genericType).getActualTypeArguments()[0];
+                    }
+                }
+                else if ( Collection.class.isAssignableFrom(paramType) ) {
+                    throw new DynamoDBMappingException("Only java.util.Set collection types are permitted for "
+                            + DynamoDBAttribute.class);
+                }
+
+
+
+                if ( isCustomMarshaller(getter) ) {
+                    if (isCollection) {
+                        unmarshaller = new SSUnmarshaller() {
+
+                            @Override
+                            public Object unmarshall(AttributeValue value) {
+                                return getCustomMarshalledValueSet(toReturn, getter, value);
+                            }
+                        };
+                    } else {
+                        unmarshaller = new SUnmarshaller() {
+
+                            @Override
+                            public Object unmarshall(AttributeValue value) {
+                                return getCustomMarshalledValue(toReturn, getter, value);
+                            }
+                        };
+                    }
                 } else {
 
                     // If we're dealing with a collection, we need to get the
                     // underlying type out of it
-                    boolean isCollection = false;
-                    if ( Set.class.isAssignableFrom(paramType) ) {
-                        isCollection = true;
+
+                    if (isCollection) {
                         Type genericType = setter.getGenericParameterTypes()[0];
                         if ( genericType instanceof ParameterizedType ) {
-                        	if (((ParameterizedType) genericType).getActualTypeArguments()[0].toString().equals("byte[]")) {
-                        		paramType = byte[].class;
-                        	} else {
-                        		 paramType = (Class<?>) ((ParameterizedType) genericType).getActualTypeArguments()[0];
-                        	}
+                            if (((ParameterizedType) genericType).getActualTypeArguments()[0].toString().equals("byte[]")) {
+                                paramType = byte[].class;
+                            } else {
+                                paramType = (Class<?>) ((ParameterizedType) genericType).getActualTypeArguments()[0];
+                            }
                         }
-                    } else if ( Collection.class.isAssignableFrom(paramType) ) {
-                        throw new DynamoDBMappingException("Only java.util.Set collection types are permitted for "
-                                + DynamoDBAttribute.class);
                     }
 
                     if ( double.class.isAssignableFrom(paramType) || Double.class.isAssignableFrom(paramType) ) {
@@ -474,7 +503,7 @@ public class DynamoDBReflector {
                             };
                         } else {
                             unmarshaller = new SUnmarshaller() {
-                              
+
                                 @Override
                                 public Object unmarshall(AttributeValue value) throws ParseException {
                                     Calendar cal = GregorianCalendar.getInstance();
@@ -484,71 +513,71 @@ public class DynamoDBReflector {
                             };
                         }
                     } else if (ByteBuffer.class.isAssignableFrom(paramType)) {
-                    	  if ( isCollection ) {
-                    		  unmarshaller = new BSUnmarshaller() {
+                        if ( isCollection ) {
+                            unmarshaller = new BSUnmarshaller() {
 
-                                  @Override
-                                  public Object unmarshall(AttributeValue value) throws ParseException {
-                                	 Set<ByteBuffer> argument = new HashSet<ByteBuffer>();
-                                	 for (ByteBuffer b : value.getBS()) {
-                                	 argument.add(b);
-                                	 }
-                                     return argument;
-                                  }
-                              };
-                    	  } else {
-                    		  unmarshaller = new BUnmarshaller() {
-                    			  
-                                  @Override
-                                  public Object unmarshall(AttributeValue value) throws ParseException {
-                                      return value.getB();
-                                  }
-                              };
-                    	  }
-                    } else if (byte[].class.isAssignableFrom(paramType)) {
-                    	 if ( isCollection ) {
-                   		  unmarshaller = new BSUnmarshaller() {
-
-                                 @Override
-                                 public Object unmarshall(AttributeValue value) throws ParseException {
-                               	 Set<byte[]> argument = new HashSet<byte[]>();
-                               	 for (ByteBuffer b : value.getBS()) {
-                               		 byte[] bytes = null;
-                               		if (b.hasArray()) {
-                               			bytes = b.array();
-                               		} else {
-                               			bytes = new byte[b.limit()];
-                               			b.get(bytes, 0, bytes.length);
-                               		}
-                               		argument.add(bytes);
-                               	 }
+                                @Override
+                                public Object unmarshall(AttributeValue value) throws ParseException {
+                                    Set<ByteBuffer> argument = new HashSet<ByteBuffer>();
+                                    for (ByteBuffer b : value.getBS()) {
+                                        argument.add(b);
+                                    }
                                     return argument;
-                                 }
-                             };
-                   	  } else {
-                   		  unmarshaller = new BUnmarshaller() {
-                   			  
-                                 @Override
-                                 public Object unmarshall(AttributeValue value) throws ParseException {
-                                	 ByteBuffer byteBuffer = value.getB();
-                                	 byte[] bytes = null;
-                                	 if (byteBuffer.hasArray()) {
-                                			bytes = byteBuffer.array();
-                                		} else {
-                                			bytes = new byte[byteBuffer.limit()];
-                                			byteBuffer.get(bytes, 0, bytes.length);
-                                		}
-                                     return bytes;
-                                 }
-                             };
-                   	  }
+                                }
+                            };
+                        } else {
+                            unmarshaller = new BUnmarshaller() {
+
+                                @Override
+                                public Object unmarshall(AttributeValue value) throws ParseException {
+                                    return value.getB();
+                                }
+                            };
+                        }
+                    } else if (byte[].class.isAssignableFrom(paramType)) {
+                        if ( isCollection ) {
+                            unmarshaller = new BSUnmarshaller() {
+
+                                @Override
+                                public Object unmarshall(AttributeValue value) throws ParseException {
+                                    Set<byte[]> argument = new HashSet<byte[]>();
+                                    for (ByteBuffer b : value.getBS()) {
+                                        byte[] bytes = null;
+                                        if (b.hasArray()) {
+                                            bytes = b.array();
+                                        } else {
+                                            bytes = new byte[b.limit()];
+                                            b.get(bytes, 0, bytes.length);
+                                        }
+                                        argument.add(bytes);
+                                    }
+                                    return argument;
+                                }
+                            };
+                        } else {
+                            unmarshaller = new BUnmarshaller() {
+
+                                @Override
+                                public Object unmarshall(AttributeValue value) throws ParseException {
+                                    ByteBuffer byteBuffer = value.getB();
+                                    byte[] bytes = null;
+                                    if (byteBuffer.hasArray()) {
+                                        bytes = byteBuffer.array();
+                                    } else {
+                                        bytes = new byte[byteBuffer.limit()];
+                                        byteBuffer.get(bytes, 0, bytes.length);
+                                    }
+                                    return bytes;
+                                }
+                            };
+                        }
                     }
 
                     /*
                      * After checking all other supported types, enforce a
                      * String match
                      */
-                    else if ( !String.class.isAssignableFrom(paramType) ) {                	 
+                    else if ( !String.class.isAssignableFrom(paramType) ) {
                         throw new DynamoDBMappingException("Expected a String, but was " + paramType);
                     } else {
                         if ( isCollection ) {
@@ -603,6 +632,36 @@ public class DynamoDBReflector {
     }
 
     /**
+     * Marshalls the custom value given into the proper return type.
+     */
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    private <T> T getCustomMarshalledValueSet(T toReturn, Method getter, AttributeValue value) {
+        DynamoDBMarshalling annotation = getter.getAnnotation(DynamoDBMarshalling.class);
+        Class<? extends DynamoDBMarshaller<? extends Object>> marshallerClass = annotation.marshallerClass();
+
+        DynamoDBMarshaller marshaller;
+        try {
+            marshaller = marshallerClass.newInstance();
+        } catch (InstantiationException e) {
+            throw new DynamoDBMappingException("Couldn't instantiate marshaller of class " + marshallerClass, e);
+        } catch (IllegalAccessException e) {
+            throw new DynamoDBMappingException("Couldn't instantiate marshaller of class " + marshallerClass, e);
+        }
+
+
+
+        boolean sortedSet = SortedSet.class.isAssignableFrom(getter.getReturnType());
+        Type actualType = ((ParameterizedType)getter.getGenericReturnType()).getActualTypeArguments()[0];
+        Set<T> set = sortedSet ? new TreeSet<T>() : new HashSet<T>();
+
+        for (String part : value.getSS()) {
+            set.add((T) marshaller.unmarshall((Class)actualType, part));
+        }
+
+        return (T) set;
+    }
+
+    /**
      * Returns an attribute value for the getter method with a custom marshaller
      */
     @SuppressWarnings({ "rawtypes", "unchecked" })
@@ -626,6 +685,33 @@ public class DynamoDBReflector {
     }
 
     /**
+     * Returns an attribute value set for the getter method with a custom marshaller
+     */
+    @SuppressWarnings({ "rawtypes", "unchecked" })
+    private AttributeValue getCustomMarshallerAttributeValueSet(Method getter, Object getterReturnResult) {
+        DynamoDBMarshalling annotation = getter.getAnnotation(DynamoDBMarshalling.class);
+        Class<? extends DynamoDBMarshaller<? extends Object>> marshallerClass = annotation.marshallerClass();
+
+        DynamoDBMarshaller marshaller;
+        try {
+            marshaller = marshallerClass.newInstance();
+        } catch (InstantiationException e) {
+            throw new DynamoDBMappingException("Failed to instantiate custom marshaller for class " + marshallerClass, e);
+        } catch (IllegalAccessException e) {
+            throw new DynamoDBMappingException("Failed to instantiate custom marshaller for class " + marshallerClass, e);
+        }
+
+        boolean sortedSet = SortedSet.class.isAssignableFrom(getter.getReturnType());
+
+        Set<String> marshalledValues = sortedSet ? new TreeSet<String>() : new HashSet<String>();
+        for(Object unmarshalled : (Set) getterReturnResult) {
+            marshalledValues.add(marshaller.marshall(unmarshalled));
+        }
+
+        return new AttributeValue().withSS(marshalledValues);
+    }
+
+    /**
      * Returns a marshaller that knows how to provide an AttributeValue for the
      * result of the getter given.
      */
@@ -634,18 +720,26 @@ public class DynamoDBReflector {
         synchronized (argumentMarshallerCache) {
             if ( !argumentMarshallerCache.containsKey(getter) ) {
                 ArgumentMarshaller marshaller = null;
-
+                Class<?> returnType = getter.getReturnType();
                 if ( isCustomMarshaller(getter) ) {
-                    marshaller = new ArgumentMarshaller() {
+                    if (Set.class.isAssignableFrom(returnType)) {
+                        marshaller = new ArgumentMarshaller() {
 
-                        @Override
-                        public AttributeValue marshall(Object obj) {
-                            return getCustomerMarshallerAttributeValue(getter, obj);
-                        }
-                    };
+                            @Override
+                            public AttributeValue marshall(Object obj) {
+                                return getCustomMarshallerAttributeValueSet(getter, obj);
+                            }
+                        };
+                    } else {
+                        marshaller = new ArgumentMarshaller() {
+
+                            @Override
+                            public AttributeValue marshall(Object obj) {
+                                return getCustomerMarshallerAttributeValue(getter, obj);
+                            }
+                        };
+                    }
                 } else {
-
-                    Class<?> returnType = getter.getReturnType();
                     if ( Set.class.isAssignableFrom(returnType) ) {
                         Type genericType = getter.getGenericReturnType();
                         if ( genericType instanceof ParameterizedType ) {
@@ -710,29 +804,29 @@ public class DynamoDBReflector {
                                 }
                             };
                         } else if (ByteBuffer.class.isAssignableFrom(returnType)) {
-                        	 marshaller = new ArgumentMarshaller() {
+                            marshaller = new ArgumentMarshaller() {
 
-                                 @Override
-                                 public AttributeValue marshall(Object obj) {
-                                     List<ByteBuffer> attributes = new ArrayList<ByteBuffer>();
-                                     for ( Object o : (Set<?>) obj ) {
-                                         attributes.add((ByteBuffer) o);
-                                     }
-                                     return new AttributeValue().withBS(attributes);
-                                 }
-                             };
-                        } else if (byte[].class.isAssignableFrom(returnType)) { 
-                        	 marshaller = new ArgumentMarshaller() {
+                                @Override
+                                public AttributeValue marshall(Object obj) {
+                                    List<ByteBuffer> attributes = new ArrayList<ByteBuffer>();
+                                    for ( Object o : (Set<?>) obj ) {
+                                        attributes.add((ByteBuffer) o);
+                                    }
+                                    return new AttributeValue().withBS(attributes);
+                                }
+                            };
+                        } else if (byte[].class.isAssignableFrom(returnType)) {
+                            marshaller = new ArgumentMarshaller() {
 
-                                 @Override
-                                 public AttributeValue marshall(Object obj) {
-                                     List<ByteBuffer> attributes = new ArrayList<ByteBuffer>();
-                                     for ( Object o : (Set<?>) obj ) {
-                                         attributes.add(ByteBuffer.wrap((byte[])o));
-                                     }
-                                     return new AttributeValue().withBS(attributes);
-                                 }
-                             };
+                                @Override
+                                public AttributeValue marshall(Object obj) {
+                                    List<ByteBuffer> attributes = new ArrayList<ByteBuffer>();
+                                    for ( Object o : (Set<?>) obj ) {
+                                        attributes.add(ByteBuffer.wrap((byte[])o));
+                                    }
+                                    return new AttributeValue().withBS(attributes);
+                                }
+                            };
                         } else {
                             marshaller = new ArgumentMarshaller() {
 
@@ -799,7 +893,7 @@ public class DynamoDBReflector {
                                 }
                             };
                         } else if ( returnType == ByteBuffer.class ) {
-                        	marshaller = new ArgumentMarshaller() {
+                            marshaller = new ArgumentMarshaller() {
 
                                 @Override
                                 public AttributeValue marshall(Object obj) {
@@ -807,13 +901,13 @@ public class DynamoDBReflector {
                                 }
                             };
                         } else if ( returnType == byte[].class) {
-                        	 marshaller = new ArgumentMarshaller() {
+                            marshaller = new ArgumentMarshaller() {
 
-                                 @Override
-                                 public AttributeValue marshall(Object obj) {
-                                     return new AttributeValue().withB(ByteBuffer.wrap((byte[])obj));
-                                 }
-                             };
+                                @Override
+                                public AttributeValue marshall(Object obj) {
+                                    return new AttributeValue().withB(ByteBuffer.wrap((byte[])obj));
+                                }
+                            };
                         } else {
                             throw new DynamoDBMappingException("Unsupported type: " + returnType + " for " + getter);
                         }
@@ -862,7 +956,7 @@ public class DynamoDBReflector {
                 DynamoDBIndexRangeKey indexRangeKey = getter.getAnnotation(DynamoDBIndexRangeKey.class);
                 if ( indexRangeKey != null && indexRangeKey.attributeName() != null && indexRangeKey.attributeName().length() > 0 )
                     return indexRangeKey.attributeName();
-                
+
                 // Then an attribute
                 DynamoDBAttribute attribute = getter.getAnnotation(DynamoDBAttribute.class);
                 if ( attribute != null && attribute.attributeName() != null && attribute.attributeName().length() > 0 )
@@ -888,7 +982,7 @@ public class DynamoDBReflector {
                 attributeNameCache.put(getter, attributeName);
             }
         }
-        
+
         return attributeNameCache.get(getter);
     }
 
@@ -922,7 +1016,7 @@ public class DynamoDBReflector {
                 setterCache.put(getter, setter);
             }
         }
-        
+
         return setterCache.get(getter);
     }
 
@@ -1041,10 +1135,10 @@ public class DynamoDBReflector {
                                 && getter.isAnnotationPresent(DynamoDBVersionAttribute.class));
             }
         }
-        
+
         return versionAttributeGetterCache.get(getter);
     }
-    
+
     /**
      * Returns whether the method given is an assignable key getter.
      */
@@ -1055,20 +1149,20 @@ public class DynamoDBReflector {
                         getter,
                         getter.isAnnotationPresent(DynamoDBAutoGeneratedKey.class)
                                 && (getter.isAnnotationPresent(DynamoDBHashKey.class) || getter
-                                        .isAnnotationPresent(DynamoDBRangeKey.class)));
+                                .isAnnotationPresent(DynamoDBRangeKey.class)));
             }
         }
 
         return autoGeneratedKeyGetterCache.get(getter);
     }
-    
+
     /**
      * Returns the name of the range key.
      */
     String getPrimaryRangeKeyName(Class<?> clazz) {
-    	return getAttributeName(getRangeKeyGetter(clazz));
+        return getAttributeName(getRangeKeyGetter(clazz));
     }
-    
+
     /**
      * Returns the names of all the indexes that use the given index range key,
      * or null if the range key is not annotated with any index.
@@ -1076,47 +1170,47 @@ public class DynamoDBReflector {
     List<String> getIndexNameByIndexRangeKeyName(Class<?> clazz, String indexRangeKeyName) {
         synchronized (indexKeyNameToIndexNamesCache) {
             if ( !indexKeyNameToIndexNamesCache.isCached(clazz) ) {
-            	Map<String, List<String>> indexKeyNameToIndexNamesMap = new HashMap<String, List<String>>();
-            	for ( Method method : getRelevantGetters(clazz) ) {
+                Map<String, List<String>> indexKeyNameToIndexNamesMap = new HashMap<String, List<String>>();
+                for ( Method method : getRelevantGetters(clazz) ) {
                     if ( method.getParameterTypes().length == 0 && method.isAnnotationPresent(DynamoDBIndexRangeKey.class)) {
-                    	DynamoDBIndexRangeKey indexRangeKeyAnnotation = method.getAnnotation(DynamoDBIndexRangeKey.class);
-                    	String localSecondaryIndexName = indexRangeKeyAnnotation.localSecondaryIndexName();
-                    	String[] localSecondaryIndexNames = indexRangeKeyAnnotation.localSecondaryIndexNames();
-                    	if (localSecondaryIndexName.length() != 0 && localSecondaryIndexNames.length != 0) {
-                    		throw new DynamoDBMappingException("@DynamoDBIndexRangeKey annotation on getter " + method + " contains both localSecondaryIndexName and localSecondaryIndexNames.");
-                    	} else if (localSecondaryIndexName.length() == 0 && localSecondaryIndexNames.length == 0) {
-                    		throw new DynamoDBMappingException("@DynamoDBIndexRangeKey annotation on getter " + method + " doesn't contain index name.");
-                    	}
-                    	
-                    	String attributeName = getAttributeName(method);
-                    	if (localSecondaryIndexName.length() != 0) {
-                    		indexKeyNameToIndexNamesMap.put(attributeName, Collections.singletonList(localSecondaryIndexName));   		
-                    	} else {
-                    		indexKeyNameToIndexNamesMap.put(attributeName, Arrays.asList(localSecondaryIndexNames));   		
-                    	}
+                        DynamoDBIndexRangeKey indexRangeKeyAnnotation = method.getAnnotation(DynamoDBIndexRangeKey.class);
+                        String localSecondaryIndexName = indexRangeKeyAnnotation.localSecondaryIndexName();
+                        String[] localSecondaryIndexNames = indexRangeKeyAnnotation.localSecondaryIndexNames();
+                        if (localSecondaryIndexName.length() != 0 && localSecondaryIndexNames.length != 0) {
+                            throw new DynamoDBMappingException("@DynamoDBIndexRangeKey annotation on getter " + method + " contains both localSecondaryIndexName and localSecondaryIndexNames.");
+                        } else if (localSecondaryIndexName.length() == 0 && localSecondaryIndexNames.length == 0) {
+                            throw new DynamoDBMappingException("@DynamoDBIndexRangeKey annotation on getter " + method + " doesn't contain index name.");
+                        }
+
+                        String attributeName = getAttributeName(method);
+                        if (localSecondaryIndexName.length() != 0) {
+                            indexKeyNameToIndexNamesMap.put(attributeName, Collections.singletonList(localSecondaryIndexName));
+                        } else {
+                            indexKeyNameToIndexNamesMap.put(attributeName, Arrays.asList(localSecondaryIndexNames));
+                        }
                     }
                 }
-            	indexKeyNameToIndexNamesCache.cache(clazz, indexKeyNameToIndexNamesMap);
+                indexKeyNameToIndexNamesCache.cache(clazz, indexKeyNameToIndexNamesMap);
             }
         }
-        
+
         return indexKeyNameToIndexNamesCache.getIndexNames(clazz, indexRangeKeyName);
     }
-    
+
     private class IndexKeyNameToIndexNamesCache {
-    	private Map<Class<?>, Map<String, List<String>>> cacheMap = new HashMap<Class<?>, Map<String, List<String>>>();
-    	
-    	public boolean isCached(Class<?> clazz) {
-    		return cacheMap.containsKey(clazz);
-    	}
-    	
-    	public List<String> getIndexNames(Class<?> clazz, String indexKeyName) {
-    		return cacheMap.get(clazz).get(indexKeyName);
-    	}
-    	
-    	public Map<String, List<String>> cache(Class<?> clazz, Map<String, List<String>> indexKeyNameToIndexNamesMap) {
-    		return cacheMap.put(clazz, indexKeyNameToIndexNamesMap);
-    	}
+        private Map<Class<?>, Map<String, List<String>>> cacheMap = new HashMap<Class<?>, Map<String, List<String>>>();
+
+        public boolean isCached(Class<?> clazz) {
+            return cacheMap.containsKey(clazz);
+        }
+
+        public List<String> getIndexNames(Class<?> clazz, String indexKeyName) {
+            return cacheMap.get(clazz).get(indexKeyName);
+        }
+
+        public Map<String, List<String>> cache(Class<?> clazz, Map<String, List<String>> indexKeyNameToIndexNamesMap) {
+            return cacheMap.put(clazz, indexKeyNameToIndexNamesMap);
+        }
     }
-    
+
 }
