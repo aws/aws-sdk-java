@@ -1282,9 +1282,10 @@ public class DynamoDBMapper {
         Map<String, Condition> keyConditions = getHashKeyEqualsConditions(queryExpression.getHashKeyValues());
         
         Map<String, Condition> rangeKeyConditions = queryExpression.getRangeKeyConditions();
-        processRangeKeyConditions(clazz, queryRequest, rangeKeyConditions);
-        
-        keyConditions.putAll(rangeKeyConditions);
+        if (null != rangeKeyConditions) {
+        	processRangeKeyConditions(clazz, queryRequest, rangeKeyConditions);
+        	keyConditions.putAll(rangeKeyConditions);
+        }
         
         queryRequest.setKeyConditions(keyConditions);
         queryRequest.setScanIndexForward(queryExpression.isScanIndexForward());
