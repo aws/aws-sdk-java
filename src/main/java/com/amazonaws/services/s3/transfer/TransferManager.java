@@ -27,8 +27,8 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.ThreadPoolExecutor;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
@@ -126,7 +126,7 @@ public class TransferManager {
     /** Thread used for periodicially checking transfers and updating thier state. */
     private ScheduledExecutorService timedThreadPool = new ScheduledThreadPoolExecutor(1);
 
-    private static final Log log = LogFactory.getLog(TransferManager.class);
+    private static final Logger log = LoggerFactory.getLogger(TransferManager.class);
 
 
     /**

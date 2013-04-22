@@ -25,8 +25,8 @@ import java.util.SortedMap;
 import java.util.TreeMap;
 import java.util.UUID;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
@@ -47,7 +47,7 @@ public class AWS3Signer extends AbstractAWSSigner {
     private String overriddenDate;
 
     protected static final DateUtils dateUtils = new DateUtils();
-    private static final Log log = LogFactory.getLog(AWS3Signer.class);
+    private static final Logger log = LoggerFactory.getLogger(AWS3Signer.class);
 
 
     /**

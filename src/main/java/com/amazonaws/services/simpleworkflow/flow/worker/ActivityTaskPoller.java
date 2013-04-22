@@ -20,8 +20,8 @@ import java.util.concurrent.Semaphore;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.amazonaws.services.simpleworkflow.AmazonSimpleWorkflow;
 import com.amazonaws.services.simpleworkflow.flow.generic.ActivityImplementationFactory;
@@ -30,7 +30,7 @@ import com.amazonaws.services.simpleworkflow.model.WorkflowExecution;
 
 public class ActivityTaskPoller extends SynchronousActivityTaskPoller {
 
-    private static final Log log = LogFactory.getLog(ActivityTaskPoller.class);
+    private static final Logger log = LoggerFactory.getLogger(ActivityTaskPoller.class);
 
     private ThreadPoolExecutor taskExecutorService;
 

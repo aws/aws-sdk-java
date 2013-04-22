@@ -64,7 +64,7 @@ import com.amazonaws.services.simpleworkflow.model.TimerStartedEventAttributes;
 
 class DecisionsHelper {
 
-    //    private static final Log log = LogFactory.getLog(DecisionsHelper.class);
+    //    private static final Logger log = LoggerFactory.getLogger(DecisionsHelper.class);
 
     static final int MAXIMUM_DECISIONS_PER_COMPLETION = 100;
 

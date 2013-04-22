@@ -27,8 +27,8 @@ import java.util.Map;
 import javax.crypto.Cipher;
 import javax.crypto.SecretKey;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
@@ -78,7 +78,7 @@ public class AmazonS3EncryptionClient extends AmazonS3Client {
     private static final String USER_AGENT = AmazonS3EncryptionClient.class.getName() + "/" + VersionInfoUtils.getVersion();
 
     /** Shared logger for encryption client events */
-    private static Log log = LogFactory.getLog(AmazonS3EncryptionClient.class);
+    private static Logger log = LoggerFactory.getLogger(AmazonS3EncryptionClient.class);
 
     /** Map of data about in progress encrypted multipart uploads. */
     private Map<String, EncryptedUploadContext> currentMultipartUploadSecretKeys =

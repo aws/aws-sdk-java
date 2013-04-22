@@ -23,15 +23,15 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * A repeatable input stream for files. This input stream can be repeated an
  * unlimited number of times, without any limitation on when a repeat can occur.
  */
 public class RepeatableFileInputStream extends InputStream {
-    private static final Log log = LogFactory.getLog(RepeatableFileInputStream.class);
+    private static final Logger log = LoggerFactory.getLogger(RepeatableFileInputStream.class);
 
     private final File file;
     private FileInputStream fis = null;

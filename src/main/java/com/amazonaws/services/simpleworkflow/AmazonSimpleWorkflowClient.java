@@ -19,8 +19,8 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map.Entry;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.amazonaws.*;
 import com.amazonaws.regions.*;
@@ -346,7 +346,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
     /** Provider for AWS credentials. */
     private AWSCredentialsProvider awsCredentialsProvider;
 
-    private static final Log log = LogFactory.getLog(AmazonSimpleWorkflow.class);
+    private static final Logger log = LoggerFactory.getLogger(AmazonSimpleWorkflow.class);
 
     /**
      * List of exception unmarshallers for all AmazonSimpleWorkflow exceptions.

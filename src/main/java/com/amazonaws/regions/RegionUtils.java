@@ -24,8 +24,8 @@ import java.net.URL;
 import java.util.LinkedList;
 import java.util.List;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
@@ -48,7 +48,7 @@ public class RegionUtils {
     private static final String REGIONS_FILE_OVERRIDE = RegionUtils.class.getName() + ".fileOverride";
 
     // Use the same logger as the http client
-    private static final Log log = LogFactory.getLog("com.amazonaws.request");
+    private static final Logger log = LoggerFactory.getLogger("com.amazonaws.request");
     
     /**
      * Returns a list of the available AWS regions.

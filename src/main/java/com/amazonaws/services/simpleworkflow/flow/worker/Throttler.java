@@ -14,12 +14,12 @@
  */
 package com.amazonaws.services.simpleworkflow.flow.worker;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class Throttler {
 
-    private static final Log log = LogFactory.getLog(Throttler.class);
+    private static final Logger log = LoggerFactory.getLogger(Throttler.class);
     
     /**
      * Human readable name of the resource being throttled. 

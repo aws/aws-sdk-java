@@ -24,8 +24,8 @@ import java.util.Date;
 import java.util.Locale;
 
 import org.apache.commons.codec.binary.Base64;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.util.DateUtils;
@@ -36,7 +36,7 @@ public class SimpleTypeJsonUnmarshallers {
     private static DateUtils dateUtils = new DateUtils();
 
     /** Shared logger */
-    private static Log log = LogFactory.getLog(SimpleTypeJsonUnmarshallers.class);
+    private static Logger log = LoggerFactory.getLogger(SimpleTypeJsonUnmarshallers.class);
 
     /**
      * Unmarshaller for String values.

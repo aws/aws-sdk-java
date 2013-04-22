@@ -18,8 +18,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.apache.http.conn.ClientConnectionManager;
 
 /**
@@ -55,7 +55,7 @@ public class IdleConnectionReaper extends Thread {
     private static IdleConnectionReaper instance;
 
     /** Shared log for any errors during connection reaping. */
-    static final Log log = LogFactory.getLog(IdleConnectionReaper.class);
+    static final Logger log = LoggerFactory.getLogger(IdleConnectionReaper.class);
 
     /** Private constructor - singleton pattern. */
     private IdleConnectionReaper() {

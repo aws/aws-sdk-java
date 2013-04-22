@@ -17,8 +17,8 @@ package com.amazonaws.services.s3.transfer.internal;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.amazonaws.services.s3.model.ProgressEvent;
 import com.amazonaws.services.s3.model.ProgressListener;
@@ -26,7 +26,7 @@ import com.amazonaws.services.s3.model.ProgressListener;
 public class ProgressListenerChain implements ProgressListener {
     private final List<ProgressListener> listeners = new ArrayList<ProgressListener>();
 
-    private static final Log log = LogFactory.getLog(ProgressListenerChain.class);
+    private static final Logger log = LoggerFactory.getLogger(ProgressListenerChain.class);
     
     public ProgressListenerChain(ProgressListener... listeners) {
         for (ProgressListener listener : listeners) addProgressListener(listener);

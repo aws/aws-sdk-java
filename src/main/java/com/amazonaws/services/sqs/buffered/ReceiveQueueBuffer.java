@@ -24,8 +24,8 @@ import java.util.List;
 import java.util.concurrent.Executor;
 import java.util.concurrent.TimeUnit;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonWebServiceRequest;
@@ -54,7 +54,7 @@ import com.amazonaws.services.sqs.model.ReceiveMessageResult;
  * */
 public class ReceiveQueueBuffer {
     
-    private static Log log = LogFactory.getLog(ReceiveQueueBuffer.class);
+    private static Logger log = LoggerFactory.getLogger(ReceiveQueueBuffer.class);
     
     private final QueueBufferConfig config;
     
@@ -475,7 +475,7 @@ public class ReceiveQueueBuffer {
                     batchRequest.setEntries(entries);
                     sqsClient.changeMessageVisibilityBatch(batchRequest);
                 } catch (AmazonClientException e) {
-                    // Log and ignore.
+                    // Logger and ignore.
                     log.warn("ReceiveMessageBatchTask: changeMessageVisibility failed "    + e);
                 }
             }

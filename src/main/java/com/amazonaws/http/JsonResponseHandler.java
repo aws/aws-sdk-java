@@ -16,8 +16,8 @@ package com.amazonaws.http;
 
 import java.util.Map;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.codehaus.jackson.JsonFactory;
 import org.codehaus.jackson.JsonParser;
 
@@ -42,7 +42,7 @@ public class JsonResponseHandler<T> implements HttpResponseHandler<AmazonWebServ
     private Unmarshaller<T, JsonUnmarshallerContext> responseUnmarshaller;
 
     /** Shared logger for profiling information */
-    private static final Log log = LogFactory.getLog("com.amazonaws.request");
+    private static final Logger log = LoggerFactory.getLogger("com.amazonaws.request");
 
     private static JsonFactory jsonFactory = new JsonFactory();
 

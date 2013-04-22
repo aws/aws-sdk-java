@@ -35,8 +35,8 @@ import java.net.SocketException;
 
 import javax.net.ssl.SSLProtocolException;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
@@ -50,7 +50,7 @@ import com.amazonaws.util.Md5Utils;
  * General utility methods used throughout the AWS S3 Java client.
  */
 public class ServiceUtils {
-    private static final Log log = LogFactory.getLog(ServiceUtils.class);
+    private static final Logger log = LoggerFactory.getLogger(ServiceUtils.class);
 
     protected static final DateUtils dateUtils = new DateUtils();
 

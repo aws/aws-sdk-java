@@ -24,8 +24,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.SimpleTimeZone;
 
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.Request;
@@ -56,7 +56,7 @@ public class AWS4Signer extends AbstractAWSSigner {
     /** Date override for testing only */
     private Date overriddenDate;
 
-    private static final Log log = LogFactory.getLog(AWS4Signer.class);
+    private static final Logger log = LoggerFactory.getLogger(AWS4Signer.class);
 
 
     /* (non-Javadoc)
