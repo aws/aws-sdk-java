@@ -108,7 +108,7 @@ class HttpClientFactory {
             sr.register(http);
             sr.register(https);
         } catch (NoSuchAlgorithmException e) {
-            throw new AmazonClientException("Unable to access default SSL context");
+            throw new AmazonClientException("Unable to access default SSL context", e);
         }
 
         /*
@@ -180,7 +180,7 @@ class HttpClientFactory {
                 context.init(null, new TrustManager[] { new TrustingX509TrustManager() }, null);
                 return context;
             } catch (Exception e) {
-                throw new IOException(e.getMessage());
+                throw new IOException(e.getMessage(), e);
             }
         }
 
