@@ -324,7 +324,6 @@ public class ArchiveTransferManager {
 
         JobStatusMonitor jobStatusMonitor = null;
         String jobId = null;
-        long archiveSize = 0;
 
         try {
             if (credentialsProvider != null && clientConfiguration != null) {
@@ -344,9 +343,6 @@ public class ArchiveTransferManager {
                     .withJobParameters(jobParameters));
             jobId = archiveRetrievalResult.getJobId();
 
-            DescribeJobResult describeJobResult = glacier.describeJob(new DescribeJobRequest(accountId, vaultName, jobId));
-            archiveSize = describeJobResult.getArchiveSizeInBytes();
-
             jobStatusMonitor.waitForJobToComplete(jobId);
 
         } finally {
@@ -355,17 +351,22 @@ public class ArchiveTransferManager {
             }
         }
 
-        downloadJobOutputInMultipleChunks(accountId, vaultName, jobId, archiveSize, file);
+        downloadJobOutputInMultipleChunks(accountId, vaultName, jobId, file);
     }
 
-    private void downloadJobOutputInMultipleChunks(String accountId, String vaultName, String jobId, long archiveSize, File file) {
+    public void downloadJobOutputInMultipleChunks(String accountId, String vaultName, String jobId, File file) {
 
+        long archiveSize = 0;
         long chunkSize = DEFAULT_DOWNLOAD_CHUNK_SIZE;
         long currentPosition = 0;
         long endPosition = 0;
+
         RandomAccessFile output = null;
         String customizedChunkSize = null;
         customizedChunkSize = System.getProperty("com.amazonaws.services.glacier.transfer.downloadChunkSizeInMB");
+
+        DescribeJobResult describeJobResult = glacier.describeJob(new DescribeJobRequest(accountId, vaultName, jobId));
+        archiveSize = describeJobResult.getArchiveSizeInBytes();
 
         if (customizedChunkSize != null) {
             try {
@@ -514,54 +515,66 @@ public class ArchiveTransferManager {
         String uploadId = initiateResult.getUploadId();
 
         try {
-            List<byte[]> binaryChecksums = new LinkedList<byte[]>();
+	        List<byte[]> binaryChecksums = new LinkedList<byte[]>();
 
-            long currentPosition = 0;
-            while (currentPosition < file.length()) {
-                long length = partSize;
-                if (currentPosition + partSize > file.length()) {
-                    length = file.length() - currentPosition;
+	        long currentPosition = 0;
+	        while (currentPosition < file.length()) {
+	            long length = partSize;
+	            if (currentPosition + partSize > file.length()) {
+	                length = file.length() - currentPosition;
+	            }
+
+                Exception failedException = null;
+                boolean completed = false;
+                int tries = 0;
+
+                while(!completed && tries<5){
+                    tries++;
+                    InputStream inputSubStream = newInputSubstream(file, currentPosition, length);
+                    inputSubStream.mark(-1);
+                    String checksum = TreeHashGenerator.calculateTreeHash(inputSubStream);
+                    byte[] binaryChecksum = BinaryUtils.fromHex(checksum);
+                    inputSubStream.reset();
+                    try {
+                        glacier.uploadMultipartPart(new UploadMultipartPartRequest()
+                                .withAccountId(accountId)
+                                .withChecksum(checksum)
+                                .withBody(inputSubStream)
+                                .withRange("bytes " + currentPosition + "-" + (currentPosition + length - 1) + "/*")
+                                .withUploadId(uploadId)
+                                .withVaultName(vaultName));
+                        completed = true;
+                        binaryChecksums.add(binaryChecksum);
+                    } catch (Exception e){
+                        failedException = e;
+                    } finally {
+                        try {inputSubStream.close();} catch (Exception e) {}
+                    }
+                }
+                if(!completed && failedException!=null){
+                    throw failedException;
                 }
 
-                InputStream inputSubStream = newInputSubstream(file, currentPosition, length);
-                inputSubStream.mark(-1);
-                String checksum = TreeHashGenerator.calculateTreeHash(inputSubStream);
-                byte[] binaryChecksum = BinaryUtils.fromHex(checksum);
-                binaryChecksums.add(binaryChecksum);
-                inputSubStream.reset();
+	            currentPosition += partSize;
+	        }
 
-                try {
-                    glacier.uploadMultipartPart(new UploadMultipartPartRequest()
-                        .withAccountId(accountId)
-                        .withChecksum(checksum)
-                        .withBody(inputSubStream)
-                        .withRange("bytes " + currentPosition + "-" + (currentPosition + length - 1) + "/*")
-                        .withUploadId(uploadId)
-                        .withVaultName(vaultName));
-                } finally {
-                    try {inputSubStream.close();} catch (Exception e) {}
-                }
+	        String checksum = TreeHashGenerator.calculateTreeHash(binaryChecksums);
 
-                currentPosition += partSize;
-            }
+	        String archiveSize = Long.toString(file.length());
+	        CompleteMultipartUploadResult completeMultipartUploadResult =
+	            glacier.completeMultipartUpload(new CompleteMultipartUploadRequest()
+	                .withAccountId(accountId)
+	                .withArchiveSize(archiveSize)
+	                .withVaultName(vaultName)
+	                .withChecksum(checksum)
+	                .withUploadId(uploadId));
 
-            String checksum = TreeHashGenerator.calculateTreeHash(binaryChecksums);
-
-            String archiveSize = Long.toString(file.length());
-            CompleteMultipartUploadResult completeMultipartUploadResult =
-                glacier.completeMultipartUpload(new CompleteMultipartUploadRequest()
-                    .withAccountId(accountId)
-                    .withArchiveSize(archiveSize)
-                    .withVaultName(vaultName)
-                    .withChecksum(checksum)
-                    .withUploadId(uploadId));
-
-            String artifactId = completeMultipartUploadResult.getArchiveId();
-            return new UploadResult(artifactId);
-        } catch (Exception e) {
-            glacier.abortMultipartUpload(new AbortMultipartUploadRequest(accountId, vaultName, uploadId));
-            throw new AmazonClientException("Unable to finish the upload", e);
-        }
+	        String artifactId = completeMultipartUploadResult.getArchiveId();
+	        return new UploadResult(artifactId);
+		} catch (Exception e) {
+			glacier.abortMultipartUpload(new AbortMultipartUploadRequest(accountId, vaultName, uploadId));
+			throw new AmazonClientException("Unable to finish the upload", e);
+		}
     }
 
 
