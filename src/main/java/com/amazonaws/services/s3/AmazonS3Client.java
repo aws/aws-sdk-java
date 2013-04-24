@@ -1191,7 +1191,8 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         result.setServerSideEncryption(returnedMetadata.getServerSideEncryption());
         result.setExpirationTime(returnedMetadata.getExpirationTime());
         result.setExpirationTimeRuleId(returnedMetadata.getExpirationTimeRuleId());
-
+        result.setContentMd5(contentMd5);
+        
         return result;
     }
 
