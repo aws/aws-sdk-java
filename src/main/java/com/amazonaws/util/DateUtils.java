@@ -52,8 +52,8 @@ public class DateUtils {
         }
     };
 
-    /** Alternate ISO 8601 format without fractional seconds */
-    protected final ThreadLocal<SimpleDateFormat> localrfc822DateFormat = new ThreadLocal<SimpleDateFormat>() {
+    /** RFC 822 format */
+    protected final ThreadLocal<SimpleDateFormat> localRfc822DateFormat = new ThreadLocal<SimpleDateFormat>() {
         @Override
         protected SimpleDateFormat initialValue() {
             SimpleDateFormat dateFormat = new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss z", Locale.US);
@@ -114,7 +114,7 @@ public class DateUtils {
      *             If the date string could not be parsed.
      */
     public Date parseRfc822Date(String dateString) throws ParseException {
-        return localrfc822DateFormat.get().parse(dateString);
+        return localRfc822DateFormat.get().parse(dateString);
     }
 
     /**
@@ -126,7 +126,7 @@ public class DateUtils {
      * @return The RFC 822 string representing the specified date.
      */
     public String formatRfc822Date(Date date) {
-        return localrfc822DateFormat.get().format(date);
+        return localRfc822DateFormat.get().format(date);
     }
 
 }
