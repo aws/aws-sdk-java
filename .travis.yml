@@ -1,2 +1,3 @@
 language: java
+install: /bin/true
 script: mvn install -Dgpg.skip=true -DskipTests=true
