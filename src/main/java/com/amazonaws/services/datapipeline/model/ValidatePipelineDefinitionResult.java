@@ -24,9 +24,15 @@ public class ValidatePipelineDefinitionResult  implements Serializable  {
 
     /**
      * Lists the validation errors that were found by
-     * ValidatePipelineDefinition.
+     * <a>ValidatePipelineDefinition</a>.
      */
     private java.util.List<ValidationError> validationErrors;
+
+    /**
+     * Lists the validation warnings that were found by
+     * <a>ValidatePipelineDefinition</a>.
+     */
+    private java.util.List<ValidationWarning> validationWarnings;
 
     /**
      * If <code>True</code>, there were validation errors.
@@ -35,10 +41,10 @@ public class ValidatePipelineDefinitionResult  implements Serializable  {
 
     /**
      * Lists the validation errors that were found by
-     * ValidatePipelineDefinition.
+     * <a>ValidatePipelineDefinition</a>.
      *
      * @return Lists the validation errors that were found by
-     *         ValidatePipelineDefinition.
+     *         <a>ValidatePipelineDefinition</a>.
      */
     public java.util.List<ValidationError> getValidationErrors() {
         
@@ -50,10 +56,10 @@ public class ValidatePipelineDefinitionResult  implements Serializable  {
     
     /**
      * Lists the validation errors that were found by
-     * ValidatePipelineDefinition.
+     * <a>ValidatePipelineDefinition</a>.
      *
      * @param validationErrors Lists the validation errors that were found by
-     *         ValidatePipelineDefinition.
+     *         <a>ValidatePipelineDefinition</a>.
      */
     public void setValidationErrors(java.util.Collection<ValidationError> validationErrors) {
         if (validationErrors == null) {
@@ -68,12 +74,12 @@ public class ValidatePipelineDefinitionResult  implements Serializable  {
     
     /**
      * Lists the validation errors that were found by
-     * ValidatePipelineDefinition.
+     * <a>ValidatePipelineDefinition</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param validationErrors Lists the validation errors that were found by
-     *         ValidatePipelineDefinition.
+     *         <a>ValidatePipelineDefinition</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -88,12 +94,12 @@ public class ValidatePipelineDefinitionResult  implements Serializable  {
     
     /**
      * Lists the validation errors that were found by
-     * ValidatePipelineDefinition.
+     * <a>ValidatePipelineDefinition</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param validationErrors Lists the validation errors that were found by
-     *         ValidatePipelineDefinition.
+     *         <a>ValidatePipelineDefinition</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -105,6 +111,83 @@ public class ValidatePipelineDefinitionResult  implements Serializable  {
             java.util.List<ValidationError> validationErrorsCopy = new java.util.ArrayList<ValidationError>(validationErrors.size());
             validationErrorsCopy.addAll(validationErrors);
             this.validationErrors = validationErrorsCopy;
+        }
+
+        return this;
+    }
+    
+    /**
+     * Lists the validation warnings that were found by
+     * <a>ValidatePipelineDefinition</a>.
+     *
+     * @return Lists the validation warnings that were found by
+     *         <a>ValidatePipelineDefinition</a>.
+     */
+    public java.util.List<ValidationWarning> getValidationWarnings() {
+        
+        if (validationWarnings == null) {
+            validationWarnings = new java.util.ArrayList<ValidationWarning>();
+        }
+        return validationWarnings;
+    }
+    
+    /**
+     * Lists the validation warnings that were found by
+     * <a>ValidatePipelineDefinition</a>.
+     *
+     * @param validationWarnings Lists the validation warnings that were found by
+     *         <a>ValidatePipelineDefinition</a>.
+     */
+    public void setValidationWarnings(java.util.Collection<ValidationWarning> validationWarnings) {
+        if (validationWarnings == null) {
+            this.validationWarnings = null;
+            return;
+        }
+
+        java.util.List<ValidationWarning> validationWarningsCopy = new java.util.ArrayList<ValidationWarning>(validationWarnings.size());
+        validationWarningsCopy.addAll(validationWarnings);
+        this.validationWarnings = validationWarningsCopy;
+    }
+    
+    /**
+     * Lists the validation warnings that were found by
+     * <a>ValidatePipelineDefinition</a>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param validationWarnings Lists the validation warnings that were found by
+     *         <a>ValidatePipelineDefinition</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public ValidatePipelineDefinitionResult withValidationWarnings(ValidationWarning... validationWarnings) {
+        if (getValidationWarnings() == null) setValidationWarnings(new java.util.ArrayList<ValidationWarning>(validationWarnings.length));
+        for (ValidationWarning value : validationWarnings) {
+            getValidationWarnings().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * Lists the validation warnings that were found by
+     * <a>ValidatePipelineDefinition</a>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param validationWarnings Lists the validation warnings that were found by
+     *         <a>ValidatePipelineDefinition</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public ValidatePipelineDefinitionResult withValidationWarnings(java.util.Collection<ValidationWarning> validationWarnings) {
+        if (validationWarnings == null) {
+            this.validationWarnings = null;
+        } else {
+            java.util.List<ValidationWarning> validationWarningsCopy = new java.util.ArrayList<ValidationWarning>(validationWarnings.size());
+            validationWarningsCopy.addAll(validationWarnings);
+            this.validationWarnings = validationWarningsCopy;
         }
 
         return this;
@@ -166,6 +249,7 @@ public class ValidatePipelineDefinitionResult  implements Serializable  {
         StringBuilder sb = new StringBuilder();
         sb.append("{");    	
         if (getValidationErrors() != null) sb.append("ValidationErrors: " + getValidationErrors() + ",");    	
+        if (getValidationWarnings() != null) sb.append("ValidationWarnings: " + getValidationWarnings() + ",");    	
         if (isErrored() != null) sb.append("Errored: " + isErrored() );
         sb.append("}");
         return sb.toString();
@@ -177,6 +261,7 @@ public class ValidatePipelineDefinitionResult  implements Serializable  {
         int hashCode = 1;
         
         hashCode = prime * hashCode + ((getValidationErrors() == null) ? 0 : getValidationErrors().hashCode()); 
+        hashCode = prime * hashCode + ((getValidationWarnings() == null) ? 0 : getValidationWarnings().hashCode()); 
         hashCode = prime * hashCode + ((isErrored() == null) ? 0 : isErrored().hashCode()); 
         return hashCode;
     }
@@ -191,6 +276,8 @@ public class ValidatePipelineDefinitionResult  implements Serializable  {
         
         if (other.getValidationErrors() == null ^ this.getValidationErrors() == null) return false;
         if (other.getValidationErrors() != null && other.getValidationErrors().equals(this.getValidationErrors()) == false) return false; 
+        if (other.getValidationWarnings() == null ^ this.getValidationWarnings() == null) return false;
+        if (other.getValidationWarnings() != null && other.getValidationWarnings().equals(this.getValidationWarnings()) == false) return false; 
         if (other.isErrored() == null ^ this.isErrored() == null) return false;
         if (other.isErrored() != null && other.isErrored().equals(this.isErrored()) == false) return false; 
         return true;

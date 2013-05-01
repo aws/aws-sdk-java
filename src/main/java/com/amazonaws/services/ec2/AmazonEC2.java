@@ -65,7 +65,7 @@ public interface AmazonEC2 {
      * @throws IllegalArgumentException
      *             If any problems are detected with the specified endpoint.
      */
-    public void setEndpoint(String endpoint) throws java.lang.IllegalArgumentException;    
+    public void setEndpoint(String endpoint) throws java.lang.IllegalArgumentException;
 
     /**
      * An alternative to {@link AmazonEC2#setEndpoint(String)}, sets the
@@ -80,7 +80,7 @@ public interface AmazonEC2 {
      * client is created and before any service requests are made. Changing it
      * afterwards creates inevitable race conditions for any service requests in
      * transit or retrying.</b>
-     * 
+     *
      * @param region
      *            The region this client will communicate with. See
      *            {@link com.amazonaws.regions.Region#getRegion(com.amazonaws.regions.Regions)} for
@@ -92,7 +92,7 @@ public interface AmazonEC2 {
      * @see Region#getRegion(com.amazonaws.regions.Regions)
      * @see Region#createClient(Class, com.amazonaws.auth.AWSCredentialsProvider, ClientConfiguration)
      */
-    public void setRegion(com.amazonaws.regions.Region region) throws java.lang.IllegalArgumentException;    
+    public void setRegion(com.amazonaws.regions.Region region) throws java.lang.IllegalArgumentException;
 	
     /**
      * <p>
@@ -4315,19 +4315,6 @@ public interface AmazonEC2 {
      *             either a problem with the data in the request, or a server side issue.
      */
     public void deleteSecurityGroup() throws AmazonServiceException, AmazonClientException;
-    
-    /**
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonEC2 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void modifyVpcAttribute() throws AmazonServiceException, AmazonClientException;
     
     /**
      * <p>

@@ -24,7 +24,7 @@ public class PipelineIdName  implements Serializable  {
 
     /**
      * Identifier of the pipeline that was assigned by AWS Data Pipeline.
-     * This is a string of the form df-297EG78HU43EEXAMPLE.
+     * This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
@@ -43,14 +43,14 @@ public class PipelineIdName  implements Serializable  {
 
     /**
      * Identifier of the pipeline that was assigned by AWS Data Pipeline.
-     * This is a string of the form df-297EG78HU43EEXAMPLE.
+     * This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @return Identifier of the pipeline that was assigned by AWS Data Pipeline.
-     *         This is a string of the form df-297EG78HU43EEXAMPLE.
+     *         This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.
      */
     public String getId() {
         return id;
@@ -58,14 +58,14 @@ public class PipelineIdName  implements Serializable  {
     
     /**
      * Identifier of the pipeline that was assigned by AWS Data Pipeline.
-     * This is a string of the form df-297EG78HU43EEXAMPLE.
+     * This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 1024<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param id Identifier of the pipeline that was assigned by AWS Data Pipeline.
-     *         This is a string of the form df-297EG78HU43EEXAMPLE.
+     *         This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.
      */
     public void setId(String id) {
         this.id = id;
@@ -73,7 +73,7 @@ public class PipelineIdName  implements Serializable  {
     
     /**
      * Identifier of the pipeline that was assigned by AWS Data Pipeline.
-     * This is a string of the form df-297EG78HU43EEXAMPLE.
+     * This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -82,7 +82,7 @@ public class PipelineIdName  implements Serializable  {
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param id Identifier of the pipeline that was assigned by AWS Data Pipeline.
-     *         This is a string of the form df-297EG78HU43EEXAMPLE.
+     *         This is a string of the form <code>df-297EG78HU43EEXAMPLE</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

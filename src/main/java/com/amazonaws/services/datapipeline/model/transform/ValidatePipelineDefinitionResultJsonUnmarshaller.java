@@ -38,6 +38,7 @@ public class ValidatePipelineDefinitionResultJsonUnmarshaller implements Unmarsh
         
         
         int originalDepth = context.getCurrentDepth();
+        String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
 
         JsonToken token = context.currentToken;
@@ -51,12 +52,17 @@ public class ValidatePipelineDefinitionResultJsonUnmarshaller implements Unmarsh
                 if (context.testExpression("validationErrors", targetDepth)) {
                     validatePipelineDefinitionResult.setValidationErrors(new ListUnmarshaller<ValidationError>(ValidationErrorJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
+                if (context.testExpression("validationWarnings", targetDepth)) {
+                    validatePipelineDefinitionResult.setValidationWarnings(new ListUnmarshaller<ValidationWarning>(ValidationWarningJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
                 if (context.testExpression("errored", targetDepth)) {
                     context.nextToken();
                     validatePipelineDefinitionResult.setErrored(BooleanJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getCurrentDepth() <= originalDepth) break;
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
+                    if (context.getCurrentDepth() <= originalDepth) break;
+                }
             }
             
 

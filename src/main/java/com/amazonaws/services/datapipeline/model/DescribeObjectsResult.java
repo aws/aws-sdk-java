@@ -24,13 +24,13 @@ public class DescribeObjectsResult  implements Serializable  {
 
     /**
      * An array of object definitions that are returned by the call to
-     * DescribeObjects.
+     * <a>DescribeObjects</a>.
      */
     private java.util.List<PipelineObject> pipelineObjects;
 
     /**
      * The starting point for the next page of results. To view the next page
-     * of results, call DescribeObjects again with this marker value.
+     * of results, call <a>DescribeObjects</a> again with this marker value.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 1024<br/>
@@ -45,10 +45,10 @@ public class DescribeObjectsResult  implements Serializable  {
 
     /**
      * An array of object definitions that are returned by the call to
-     * DescribeObjects.
+     * <a>DescribeObjects</a>.
      *
      * @return An array of object definitions that are returned by the call to
-     *         DescribeObjects.
+     *         <a>DescribeObjects</a>.
      */
     public java.util.List<PipelineObject> getPipelineObjects() {
         
@@ -60,10 +60,10 @@ public class DescribeObjectsResult  implements Serializable  {
     
     /**
      * An array of object definitions that are returned by the call to
-     * DescribeObjects.
+     * <a>DescribeObjects</a>.
      *
      * @param pipelineObjects An array of object definitions that are returned by the call to
-     *         DescribeObjects.
+     *         <a>DescribeObjects</a>.
      */
     public void setPipelineObjects(java.util.Collection<PipelineObject> pipelineObjects) {
         if (pipelineObjects == null) {
@@ -78,12 +78,12 @@ public class DescribeObjectsResult  implements Serializable  {
     
     /**
      * An array of object definitions that are returned by the call to
-     * DescribeObjects.
+     * <a>DescribeObjects</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param pipelineObjects An array of object definitions that are returned by the call to
-     *         DescribeObjects.
+     *         <a>DescribeObjects</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -98,12 +98,12 @@ public class DescribeObjectsResult  implements Serializable  {
     
     /**
      * An array of object definitions that are returned by the call to
-     * DescribeObjects.
+     * <a>DescribeObjects</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param pipelineObjects An array of object definitions that are returned by the call to
-     *         DescribeObjects.
+     *         <a>DescribeObjects</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -122,14 +122,14 @@ public class DescribeObjectsResult  implements Serializable  {
     
     /**
      * The starting point for the next page of results. To view the next page
-     * of results, call DescribeObjects again with this marker value.
+     * of results, call <a>DescribeObjects</a> again with this marker value.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 1024<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @return The starting point for the next page of results. To view the next page
-     *         of results, call DescribeObjects again with this marker value.
+     *         of results, call <a>DescribeObjects</a> again with this marker value.
      */
     public String getMarker() {
         return marker;
@@ -137,14 +137,14 @@ public class DescribeObjectsResult  implements Serializable  {
     
     /**
      * The starting point for the next page of results. To view the next page
-     * of results, call DescribeObjects again with this marker value.
+     * of results, call <a>DescribeObjects</a> again with this marker value.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 1024<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param marker The starting point for the next page of results. To view the next page
-     *         of results, call DescribeObjects again with this marker value.
+     *         of results, call <a>DescribeObjects</a> again with this marker value.
      */
     public void setMarker(String marker) {
         this.marker = marker;
@@ -152,7 +152,7 @@ public class DescribeObjectsResult  implements Serializable  {
     
     /**
      * The starting point for the next page of results. To view the next page
-     * of results, call DescribeObjects again with this marker value.
+     * of results, call <a>DescribeObjects</a> again with this marker value.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -161,7 +161,7 @@ public class DescribeObjectsResult  implements Serializable  {
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param marker The starting point for the next page of results. To view the next page
-     *         of results, call DescribeObjects again with this marker value.
+     *         of results, call <a>DescribeObjects</a> again with this marker value.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

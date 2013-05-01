@@ -43,10 +43,10 @@ public class SetStatusRequest extends AmazonWebServiceRequest  implements Serial
     private java.util.List<String> objectIds;
 
     /**
-     * Specifies the status to be set on all the objects in objectIds. For
-     * components, this can be either <code>PAUSE</code> or
-     * <code>RESUME</code>. For instances, this can be either
-     * <code>CANCEL</code>, <code>RERUN</code>, or
+     * Specifies the status to be set on all the objects in
+     * <code>objectIds</code>. For components, this can be either
+     * <code>PAUSE</code> or <code>RESUME</code>. For instances, this can be
+     * either <code>CANCEL</code>, <code>RERUN</code>, or
      * <code>MARK_FINISHED</code>.
      * <p>
      * <b>Constraints:</b><br/>
@@ -179,20 +179,20 @@ public class SetStatusRequest extends AmazonWebServiceRequest  implements Serial
     }
     
     /**
-     * Specifies the status to be set on all the objects in objectIds. For
-     * components, this can be either <code>PAUSE</code> or
-     * <code>RESUME</code>. For instances, this can be either
-     * <code>CANCEL</code>, <code>RERUN</code>, or
+     * Specifies the status to be set on all the objects in
+     * <code>objectIds</code>. For components, this can be either
+     * <code>PAUSE</code> or <code>RESUME</code>. For instances, this can be
+     * either <code>CANCEL</code>, <code>RERUN</code>, or
      * <code>MARK_FINISHED</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 1024<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @return Specifies the status to be set on all the objects in objectIds. For
-     *         components, this can be either <code>PAUSE</code> or
-     *         <code>RESUME</code>. For instances, this can be either
-     *         <code>CANCEL</code>, <code>RERUN</code>, or
+     * @return Specifies the status to be set on all the objects in
+     *         <code>objectIds</code>. For components, this can be either
+     *         <code>PAUSE</code> or <code>RESUME</code>. For instances, this can be
+     *         either <code>CANCEL</code>, <code>RERUN</code>, or
      *         <code>MARK_FINISHED</code>.
      */
     public String getStatus() {
@@ -200,20 +200,20 @@ public class SetStatusRequest extends AmazonWebServiceRequest  implements Serial
     }
     
     /**
-     * Specifies the status to be set on all the objects in objectIds. For
-     * components, this can be either <code>PAUSE</code> or
-     * <code>RESUME</code>. For instances, this can be either
-     * <code>CANCEL</code>, <code>RERUN</code>, or
+     * Specifies the status to be set on all the objects in
+     * <code>objectIds</code>. For components, this can be either
+     * <code>PAUSE</code> or <code>RESUME</code>. For instances, this can be
+     * either <code>CANCEL</code>, <code>RERUN</code>, or
      * <code>MARK_FINISHED</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 1024<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param status Specifies the status to be set on all the objects in objectIds. For
-     *         components, this can be either <code>PAUSE</code> or
-     *         <code>RESUME</code>. For instances, this can be either
-     *         <code>CANCEL</code>, <code>RERUN</code>, or
+     * @param status Specifies the status to be set on all the objects in
+     *         <code>objectIds</code>. For components, this can be either
+     *         <code>PAUSE</code> or <code>RESUME</code>. For instances, this can be
+     *         either <code>CANCEL</code>, <code>RERUN</code>, or
      *         <code>MARK_FINISHED</code>.
      */
     public void setStatus(String status) {
@@ -221,10 +221,10 @@ public class SetStatusRequest extends AmazonWebServiceRequest  implements Serial
     }
     
     /**
-     * Specifies the status to be set on all the objects in objectIds. For
-     * components, this can be either <code>PAUSE</code> or
-     * <code>RESUME</code>. For instances, this can be either
-     * <code>CANCEL</code>, <code>RERUN</code>, or
+     * Specifies the status to be set on all the objects in
+     * <code>objectIds</code>. For components, this can be either
+     * <code>PAUSE</code> or <code>RESUME</code>. For instances, this can be
+     * either <code>CANCEL</code>, <code>RERUN</code>, or
      * <code>MARK_FINISHED</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -233,10 +233,10 @@ public class SetStatusRequest extends AmazonWebServiceRequest  implements Serial
      * <b>Length: </b>0 - 1024<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param status Specifies the status to be set on all the objects in objectIds. For
-     *         components, this can be either <code>PAUSE</code> or
-     *         <code>RESUME</code>. For instances, this can be either
-     *         <code>CANCEL</code>, <code>RERUN</code>, or
+     * @param status Specifies the status to be set on all the objects in
+     *         <code>objectIds</code>. For components, this can be either
+     *         <code>PAUSE</code> or <code>RESUME</code>. For instances, this can be
+     *         either <code>CANCEL</code>, <code>RERUN</code>, or
      *         <code>MARK_FINISHED</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 

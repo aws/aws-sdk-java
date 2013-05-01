@@ -23,25 +23,27 @@ import java.io.Serializable;
 public class Operator  implements Serializable  {
 
     /**
-     * The logical operation to be performed: equal (EQ), equal reference
-     * (REF_EQ), less than or equal (LE), greater than or equal (GE), or
-     * between (BETWEEN). Equal reference (REF_EQ) can be used only with
-     * reference fields. The other comparison types can be used only with
-     * String fields. The comparison types you can use apply only to certain
-     * object fields, as detailed below. <p> The comparison operators EQ and
-     * REF_EQ act on the following fields: <ul> <li>name</li>
-     * <li>@sphere</li> <li>parent</li> <li>@componentParent</li>
-     * <li>@instanceParent</li> <li>@status</li> <li>@scheduledStartTime</li>
-     * <li>@scheduledEndTime</li> <li>@actualStartTime</li>
-     * <li>@actualEndTime</li> </ul> <p> The comparison operators GE, LE, and
-     * BETWEEN act on the following fields: <ul> <li>@scheduledStartTime</li>
-     * <li>@scheduledEndTime</li> <li>@actualStartTime</li>
-     * <li>@actualEndTime</li> </ul> <p>Note that fields beginning with the
-     * at sign (@) are read-only and set by the web service. When you name
-     * fields, you should choose names containing only alpha-numeric values,
-     * as symbols may be reserved by AWS Data Pipeline. A best practice for
-     * user-defined fields that you add to a pipeline is to prefix their name
-     * with the string "my".
+     * The logical operation to be performed: equal (<code>EQ</code>), equal
+     * reference (<code>REF_EQ</code>), less than or equal (<code>LE</code>),
+     * greater than or equal (<code>GE</code>), or between
+     * (<code>BETWEEN</code>). Equal reference (<code>REF_EQ</code>) can be
+     * used only with reference fields. The other comparison types can be
+     * used only with String fields. The comparison types you can use apply
+     * only to certain object fields, as detailed below. <p> The comparison
+     * operators EQ and REF_EQ act on the following fields: <ul>
+     * <li>name</li> <li>@sphere</li> <li>parent</li>
+     * <li>@componentParent</li> <li>@instanceParent</li> <li>@status</li>
+     * <li>@scheduledStartTime</li> <li>@scheduledEndTime</li>
+     * <li>@actualStartTime</li> <li>@actualEndTime</li> </ul> <p> The
+     * comparison operators <code>GE</code>, <code>LE</code>, and
+     * <code>BETWEEN</code> act on the following fields: <ul>
+     * <li>@scheduledStartTime</li> <li>@scheduledEndTime</li>
+     * <li>@actualStartTime</li> <li>@actualEndTime</li> </ul> <p>Note that
+     * fields beginning with the at sign (@) are read-only and set by the web
+     * service. When you name fields, you should choose names containing only
+     * alpha-numeric values, as symbols may be reserved by AWS Data Pipeline.
+     * User-defined fields that you add to a pipeline should prefix their
+     * name with the string "my".
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>EQ, REF_EQ, LE, GE, BETWEEN
@@ -54,48 +56,52 @@ public class Operator  implements Serializable  {
     private java.util.List<String> values;
 
     /**
-     * The logical operation to be performed: equal (EQ), equal reference
-     * (REF_EQ), less than or equal (LE), greater than or equal (GE), or
-     * between (BETWEEN). Equal reference (REF_EQ) can be used only with
-     * reference fields. The other comparison types can be used only with
-     * String fields. The comparison types you can use apply only to certain
-     * object fields, as detailed below. <p> The comparison operators EQ and
-     * REF_EQ act on the following fields: <ul> <li>name</li>
-     * <li>@sphere</li> <li>parent</li> <li>@componentParent</li>
-     * <li>@instanceParent</li> <li>@status</li> <li>@scheduledStartTime</li>
-     * <li>@scheduledEndTime</li> <li>@actualStartTime</li>
-     * <li>@actualEndTime</li> </ul> <p> The comparison operators GE, LE, and
-     * BETWEEN act on the following fields: <ul> <li>@scheduledStartTime</li>
-     * <li>@scheduledEndTime</li> <li>@actualStartTime</li>
-     * <li>@actualEndTime</li> </ul> <p>Note that fields beginning with the
-     * at sign (@) are read-only and set by the web service. When you name
-     * fields, you should choose names containing only alpha-numeric values,
-     * as symbols may be reserved by AWS Data Pipeline. A best practice for
-     * user-defined fields that you add to a pipeline is to prefix their name
-     * with the string "my".
+     * The logical operation to be performed: equal (<code>EQ</code>), equal
+     * reference (<code>REF_EQ</code>), less than or equal (<code>LE</code>),
+     * greater than or equal (<code>GE</code>), or between
+     * (<code>BETWEEN</code>). Equal reference (<code>REF_EQ</code>) can be
+     * used only with reference fields. The other comparison types can be
+     * used only with String fields. The comparison types you can use apply
+     * only to certain object fields, as detailed below. <p> The comparison
+     * operators EQ and REF_EQ act on the following fields: <ul>
+     * <li>name</li> <li>@sphere</li> <li>parent</li>
+     * <li>@componentParent</li> <li>@instanceParent</li> <li>@status</li>
+     * <li>@scheduledStartTime</li> <li>@scheduledEndTime</li>
+     * <li>@actualStartTime</li> <li>@actualEndTime</li> </ul> <p> The
+     * comparison operators <code>GE</code>, <code>LE</code>, and
+     * <code>BETWEEN</code> act on the following fields: <ul>
+     * <li>@scheduledStartTime</li> <li>@scheduledEndTime</li>
+     * <li>@actualStartTime</li> <li>@actualEndTime</li> </ul> <p>Note that
+     * fields beginning with the at sign (@) are read-only and set by the web
+     * service. When you name fields, you should choose names containing only
+     * alpha-numeric values, as symbols may be reserved by AWS Data Pipeline.
+     * User-defined fields that you add to a pipeline should prefix their
+     * name with the string "my".
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>EQ, REF_EQ, LE, GE, BETWEEN
      *
-     * @return The logical operation to be performed: equal (EQ), equal reference
-     *         (REF_EQ), less than or equal (LE), greater than or equal (GE), or
-     *         between (BETWEEN). Equal reference (REF_EQ) can be used only with
-     *         reference fields. The other comparison types can be used only with
-     *         String fields. The comparison types you can use apply only to certain
-     *         object fields, as detailed below. <p> The comparison operators EQ and
-     *         REF_EQ act on the following fields: <ul> <li>name</li>
-     *         <li>@sphere</li> <li>parent</li> <li>@componentParent</li>
-     *         <li>@instanceParent</li> <li>@status</li> <li>@scheduledStartTime</li>
-     *         <li>@scheduledEndTime</li> <li>@actualStartTime</li>
-     *         <li>@actualEndTime</li> </ul> <p> The comparison operators GE, LE, and
-     *         BETWEEN act on the following fields: <ul> <li>@scheduledStartTime</li>
-     *         <li>@scheduledEndTime</li> <li>@actualStartTime</li>
-     *         <li>@actualEndTime</li> </ul> <p>Note that fields beginning with the
-     *         at sign (@) are read-only and set by the web service. When you name
-     *         fields, you should choose names containing only alpha-numeric values,
-     *         as symbols may be reserved by AWS Data Pipeline. A best practice for
-     *         user-defined fields that you add to a pipeline is to prefix their name
-     *         with the string "my".
+     * @return The logical operation to be performed: equal (<code>EQ</code>), equal
+     *         reference (<code>REF_EQ</code>), less than or equal (<code>LE</code>),
+     *         greater than or equal (<code>GE</code>), or between
+     *         (<code>BETWEEN</code>). Equal reference (<code>REF_EQ</code>) can be
+     *         used only with reference fields. The other comparison types can be
+     *         used only with String fields. The comparison types you can use apply
+     *         only to certain object fields, as detailed below. <p> The comparison
+     *         operators EQ and REF_EQ act on the following fields: <ul>
+     *         <li>name</li> <li>@sphere</li> <li>parent</li>
+     *         <li>@componentParent</li> <li>@instanceParent</li> <li>@status</li>
+     *         <li>@scheduledStartTime</li> <li>@scheduledEndTime</li>
+     *         <li>@actualStartTime</li> <li>@actualEndTime</li> </ul> <p> The
+     *         comparison operators <code>GE</code>, <code>LE</code>, and
+     *         <code>BETWEEN</code> act on the following fields: <ul>
+     *         <li>@scheduledStartTime</li> <li>@scheduledEndTime</li>
+     *         <li>@actualStartTime</li> <li>@actualEndTime</li> </ul> <p>Note that
+     *         fields beginning with the at sign (@) are read-only and set by the web
+     *         service. When you name fields, you should choose names containing only
+     *         alpha-numeric values, as symbols may be reserved by AWS Data Pipeline.
+     *         User-defined fields that you add to a pipeline should prefix their
+     *         name with the string "my".
      *
      * @see OperatorType
      */
@@ -104,48 +110,52 @@ public class Operator  implements Serializable  {
     }
     
     /**
-     * The logical operation to be performed: equal (EQ), equal reference
-     * (REF_EQ), less than or equal (LE), greater than or equal (GE), or
-     * between (BETWEEN). Equal reference (REF_EQ) can be used only with
-     * reference fields. The other comparison types can be used only with
-     * String fields. The comparison types you can use apply only to certain
-     * object fields, as detailed below. <p> The comparison operators EQ and
-     * REF_EQ act on the following fields: <ul> <li>name</li>
-     * <li>@sphere</li> <li>parent</li> <li>@componentParent</li>
-     * <li>@instanceParent</li> <li>@status</li> <li>@scheduledStartTime</li>
-     * <li>@scheduledEndTime</li> <li>@actualStartTime</li>
-     * <li>@actualEndTime</li> </ul> <p> The comparison operators GE, LE, and
-     * BETWEEN act on the following fields: <ul> <li>@scheduledStartTime</li>
-     * <li>@scheduledEndTime</li> <li>@actualStartTime</li>
-     * <li>@actualEndTime</li> </ul> <p>Note that fields beginning with the
-     * at sign (@) are read-only and set by the web service. When you name
-     * fields, you should choose names containing only alpha-numeric values,
-     * as symbols may be reserved by AWS Data Pipeline. A best practice for
-     * user-defined fields that you add to a pipeline is to prefix their name
-     * with the string "my".
+     * The logical operation to be performed: equal (<code>EQ</code>), equal
+     * reference (<code>REF_EQ</code>), less than or equal (<code>LE</code>),
+     * greater than or equal (<code>GE</code>), or between
+     * (<code>BETWEEN</code>). Equal reference (<code>REF_EQ</code>) can be
+     * used only with reference fields. The other comparison types can be
+     * used only with String fields. The comparison types you can use apply
+     * only to certain object fields, as detailed below. <p> The comparison
+     * operators EQ and REF_EQ act on the following fields: <ul>
+     * <li>name</li> <li>@sphere</li> <li>parent</li>
+     * <li>@componentParent</li> <li>@instanceParent</li> <li>@status</li>
+     * <li>@scheduledStartTime</li> <li>@scheduledEndTime</li>
+     * <li>@actualStartTime</li> <li>@actualEndTime</li> </ul> <p> The
+     * comparison operators <code>GE</code>, <code>LE</code>, and
+     * <code>BETWEEN</code> act on the following fields: <ul>
+     * <li>@scheduledStartTime</li> <li>@scheduledEndTime</li>
+     * <li>@actualStartTime</li> <li>@actualEndTime</li> </ul> <p>Note that
+     * fields beginning with the at sign (@) are read-only and set by the web
+     * service. When you name fields, you should choose names containing only
+     * alpha-numeric values, as symbols may be reserved by AWS Data Pipeline.
+     * User-defined fields that you add to a pipeline should prefix their
+     * name with the string "my".
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>EQ, REF_EQ, LE, GE, BETWEEN
      *
-     * @param type The logical operation to be performed: equal (EQ), equal reference
-     *         (REF_EQ), less than or equal (LE), greater than or equal (GE), or
-     *         between (BETWEEN). Equal reference (REF_EQ) can be used only with
-     *         reference fields. The other comparison types can be used only with
-     *         String fields. The comparison types you can use apply only to certain
-     *         object fields, as detailed below. <p> The comparison operators EQ and
-     *         REF_EQ act on the following fields: <ul> <li>name</li>
-     *         <li>@sphere</li> <li>parent</li> <li>@componentParent</li>
-     *         <li>@instanceParent</li> <li>@status</li> <li>@scheduledStartTime</li>
-     *         <li>@scheduledEndTime</li> <li>@actualStartTime</li>
-     *         <li>@actualEndTime</li> </ul> <p> The comparison operators GE, LE, and
-     *         BETWEEN act on the following fields: <ul> <li>@scheduledStartTime</li>
-     *         <li>@scheduledEndTime</li> <li>@actualStartTime</li>
-     *         <li>@actualEndTime</li> </ul> <p>Note that fields beginning with the
-     *         at sign (@) are read-only and set by the web service. When you name
-     *         fields, you should choose names containing only alpha-numeric values,
-     *         as symbols may be reserved by AWS Data Pipeline. A best practice for
-     *         user-defined fields that you add to a pipeline is to prefix their name
-     *         with the string "my".
+     * @param type The logical operation to be performed: equal (<code>EQ</code>), equal
+     *         reference (<code>REF_EQ</code>), less than or equal (<code>LE</code>),
+     *         greater than or equal (<code>GE</code>), or between
+     *         (<code>BETWEEN</code>). Equal reference (<code>REF_EQ</code>) can be
+     *         used only with reference fields. The other comparison types can be
+     *         used only with String fields. The comparison types you can use apply
+     *         only to certain object fields, as detailed below. <p> The comparison
+     *         operators EQ and REF_EQ act on the following fields: <ul>
+     *         <li>name</li> <li>@sphere</li> <li>parent</li>
+     *         <li>@componentParent</li> <li>@instanceParent</li> <li>@status</li>
+     *         <li>@scheduledStartTime</li> <li>@scheduledEndTime</li>
+     *         <li>@actualStartTime</li> <li>@actualEndTime</li> </ul> <p> The
+     *         comparison operators <code>GE</code>, <code>LE</code>, and
+     *         <code>BETWEEN</code> act on the following fields: <ul>
+     *         <li>@scheduledStartTime</li> <li>@scheduledEndTime</li>
+     *         <li>@actualStartTime</li> <li>@actualEndTime</li> </ul> <p>Note that
+     *         fields beginning with the at sign (@) are read-only and set by the web
+     *         service. When you name fields, you should choose names containing only
+     *         alpha-numeric values, as symbols may be reserved by AWS Data Pipeline.
+     *         User-defined fields that you add to a pipeline should prefix their
+     *         name with the string "my".
      *
      * @see OperatorType
      */
@@ -154,50 +164,54 @@ public class Operator  implements Serializable  {
     }
     
     /**
-     * The logical operation to be performed: equal (EQ), equal reference
-     * (REF_EQ), less than or equal (LE), greater than or equal (GE), or
-     * between (BETWEEN). Equal reference (REF_EQ) can be used only with
-     * reference fields. The other comparison types can be used only with
-     * String fields. The comparison types you can use apply only to certain
-     * object fields, as detailed below. <p> The comparison operators EQ and
-     * REF_EQ act on the following fields: <ul> <li>name</li>
-     * <li>@sphere</li> <li>parent</li> <li>@componentParent</li>
-     * <li>@instanceParent</li> <li>@status</li> <li>@scheduledStartTime</li>
-     * <li>@scheduledEndTime</li> <li>@actualStartTime</li>
-     * <li>@actualEndTime</li> </ul> <p> The comparison operators GE, LE, and
-     * BETWEEN act on the following fields: <ul> <li>@scheduledStartTime</li>
-     * <li>@scheduledEndTime</li> <li>@actualStartTime</li>
-     * <li>@actualEndTime</li> </ul> <p>Note that fields beginning with the
-     * at sign (@) are read-only and set by the web service. When you name
-     * fields, you should choose names containing only alpha-numeric values,
-     * as symbols may be reserved by AWS Data Pipeline. A best practice for
-     * user-defined fields that you add to a pipeline is to prefix their name
-     * with the string "my".
+     * The logical operation to be performed: equal (<code>EQ</code>), equal
+     * reference (<code>REF_EQ</code>), less than or equal (<code>LE</code>),
+     * greater than or equal (<code>GE</code>), or between
+     * (<code>BETWEEN</code>). Equal reference (<code>REF_EQ</code>) can be
+     * used only with reference fields. The other comparison types can be
+     * used only with String fields. The comparison types you can use apply
+     * only to certain object fields, as detailed below. <p> The comparison
+     * operators EQ and REF_EQ act on the following fields: <ul>
+     * <li>name</li> <li>@sphere</li> <li>parent</li>
+     * <li>@componentParent</li> <li>@instanceParent</li> <li>@status</li>
+     * <li>@scheduledStartTime</li> <li>@scheduledEndTime</li>
+     * <li>@actualStartTime</li> <li>@actualEndTime</li> </ul> <p> The
+     * comparison operators <code>GE</code>, <code>LE</code>, and
+     * <code>BETWEEN</code> act on the following fields: <ul>
+     * <li>@scheduledStartTime</li> <li>@scheduledEndTime</li>
+     * <li>@actualStartTime</li> <li>@actualEndTime</li> </ul> <p>Note that
+     * fields beginning with the at sign (@) are read-only and set by the web
+     * service. When you name fields, you should choose names containing only
+     * alpha-numeric values, as symbols may be reserved by AWS Data Pipeline.
+     * User-defined fields that you add to a pipeline should prefix their
+     * name with the string "my".
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>EQ, REF_EQ, LE, GE, BETWEEN
      *
-     * @param type The logical operation to be performed: equal (EQ), equal reference
-     *         (REF_EQ), less than or equal (LE), greater than or equal (GE), or
-     *         between (BETWEEN). Equal reference (REF_EQ) can be used only with
-     *         reference fields. The other comparison types can be used only with
-     *         String fields. The comparison types you can use apply only to certain
-     *         object fields, as detailed below. <p> The comparison operators EQ and
-     *         REF_EQ act on the following fields: <ul> <li>name</li>
-     *         <li>@sphere</li> <li>parent</li> <li>@componentParent</li>
-     *         <li>@instanceParent</li> <li>@status</li> <li>@scheduledStartTime</li>
-     *         <li>@scheduledEndTime</li> <li>@actualStartTime</li>
-     *         <li>@actualEndTime</li> </ul> <p> The comparison operators GE, LE, and
-     *         BETWEEN act on the following fields: <ul> <li>@scheduledStartTime</li>
-     *         <li>@scheduledEndTime</li> <li>@actualStartTime</li>
-     *         <li>@actualEndTime</li> </ul> <p>Note that fields beginning with the
-     *         at sign (@) are read-only and set by the web service. When you name
-     *         fields, you should choose names containing only alpha-numeric values,
-     *         as symbols may be reserved by AWS Data Pipeline. A best practice for
-     *         user-defined fields that you add to a pipeline is to prefix their name
-     *         with the string "my".
+     * @param type The logical operation to be performed: equal (<code>EQ</code>), equal
+     *         reference (<code>REF_EQ</code>), less than or equal (<code>LE</code>),
+     *         greater than or equal (<code>GE</code>), or between
+     *         (<code>BETWEEN</code>). Equal reference (<code>REF_EQ</code>) can be
+     *         used only with reference fields. The other comparison types can be
+     *         used only with String fields. The comparison types you can use apply
+     *         only to certain object fields, as detailed below. <p> The comparison
+     *         operators EQ and REF_EQ act on the following fields: <ul>
+     *         <li>name</li> <li>@sphere</li> <li>parent</li>
+     *         <li>@componentParent</li> <li>@instanceParent</li> <li>@status</li>
+     *         <li>@scheduledStartTime</li> <li>@scheduledEndTime</li>
+     *         <li>@actualStartTime</li> <li>@actualEndTime</li> </ul> <p> The
+     *         comparison operators <code>GE</code>, <code>LE</code>, and
+     *         <code>BETWEEN</code> act on the following fields: <ul>
+     *         <li>@scheduledStartTime</li> <li>@scheduledEndTime</li>
+     *         <li>@actualStartTime</li> <li>@actualEndTime</li> </ul> <p>Note that
+     *         fields beginning with the at sign (@) are read-only and set by the web
+     *         service. When you name fields, you should choose names containing only
+     *         alpha-numeric values, as symbols may be reserved by AWS Data Pipeline.
+     *         User-defined fields that you add to a pipeline should prefix their
+     *         name with the string "my".
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -211,48 +225,52 @@ public class Operator  implements Serializable  {
     
     
     /**
-     * The logical operation to be performed: equal (EQ), equal reference
-     * (REF_EQ), less than or equal (LE), greater than or equal (GE), or
-     * between (BETWEEN). Equal reference (REF_EQ) can be used only with
-     * reference fields. The other comparison types can be used only with
-     * String fields. The comparison types you can use apply only to certain
-     * object fields, as detailed below. <p> The comparison operators EQ and
-     * REF_EQ act on the following fields: <ul> <li>name</li>
-     * <li>@sphere</li> <li>parent</li> <li>@componentParent</li>
-     * <li>@instanceParent</li> <li>@status</li> <li>@scheduledStartTime</li>
-     * <li>@scheduledEndTime</li> <li>@actualStartTime</li>
-     * <li>@actualEndTime</li> </ul> <p> The comparison operators GE, LE, and
-     * BETWEEN act on the following fields: <ul> <li>@scheduledStartTime</li>
-     * <li>@scheduledEndTime</li> <li>@actualStartTime</li>
-     * <li>@actualEndTime</li> </ul> <p>Note that fields beginning with the
-     * at sign (@) are read-only and set by the web service. When you name
-     * fields, you should choose names containing only alpha-numeric values,
-     * as symbols may be reserved by AWS Data Pipeline. A best practice for
-     * user-defined fields that you add to a pipeline is to prefix their name
-     * with the string "my".
+     * The logical operation to be performed: equal (<code>EQ</code>), equal
+     * reference (<code>REF_EQ</code>), less than or equal (<code>LE</code>),
+     * greater than or equal (<code>GE</code>), or between
+     * (<code>BETWEEN</code>). Equal reference (<code>REF_EQ</code>) can be
+     * used only with reference fields. The other comparison types can be
+     * used only with String fields. The comparison types you can use apply
+     * only to certain object fields, as detailed below. <p> The comparison
+     * operators EQ and REF_EQ act on the following fields: <ul>
+     * <li>name</li> <li>@sphere</li> <li>parent</li>
+     * <li>@componentParent</li> <li>@instanceParent</li> <li>@status</li>
+     * <li>@scheduledStartTime</li> <li>@scheduledEndTime</li>
+     * <li>@actualStartTime</li> <li>@actualEndTime</li> </ul> <p> The
+     * comparison operators <code>GE</code>, <code>LE</code>, and
+     * <code>BETWEEN</code> act on the following fields: <ul>
+     * <li>@scheduledStartTime</li> <li>@scheduledEndTime</li>
+     * <li>@actualStartTime</li> <li>@actualEndTime</li> </ul> <p>Note that
+     * fields beginning with the at sign (@) are read-only and set by the web
+     * service. When you name fields, you should choose names containing only
+     * alpha-numeric values, as symbols may be reserved by AWS Data Pipeline.
+     * User-defined fields that you add to a pipeline should prefix their
+     * name with the string "my".
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>EQ, REF_EQ, LE, GE, BETWEEN
      *
-     * @param type The logical operation to be performed: equal (EQ), equal reference
-     *         (REF_EQ), less than or equal (LE), greater than or equal (GE), or
-     *         between (BETWEEN). Equal reference (REF_EQ) can be used only with
-     *         reference fields. The other comparison types can be used only with
-     *         String fields. The comparison types you can use apply only to certain
-     *         object fields, as detailed below. <p> The comparison operators EQ and
-     *         REF_EQ act on the following fields: <ul> <li>name</li>
-     *         <li>@sphere</li> <li>parent</li> <li>@componentParent</li>
-     *         <li>@instanceParent</li> <li>@status</li> <li>@scheduledStartTime</li>
-     *         <li>@scheduledEndTime</li> <li>@actualStartTime</li>
-     *         <li>@actualEndTime</li> </ul> <p> The comparison operators GE, LE, and
-     *         BETWEEN act on the following fields: <ul> <li>@scheduledStartTime</li>
-     *         <li>@scheduledEndTime</li> <li>@actualStartTime</li>
-     *         <li>@actualEndTime</li> </ul> <p>Note that fields beginning with the
-     *         at sign (@) are read-only and set by the web service. When you name
-     *         fields, you should choose names containing only alpha-numeric values,
-     *         as symbols may be reserved by AWS Data Pipeline. A best practice for
-     *         user-defined fields that you add to a pipeline is to prefix their name
-     *         with the string "my".
+     * @param type The logical operation to be performed: equal (<code>EQ</code>), equal
+     *         reference (<code>REF_EQ</code>), less than or equal (<code>LE</code>),
+     *         greater than or equal (<code>GE</code>), or between
+     *         (<code>BETWEEN</code>). Equal reference (<code>REF_EQ</code>) can be
+     *         used only with reference fields. The other comparison types can be
+     *         used only with String fields. The comparison types you can use apply
+     *         only to certain object fields, as detailed below. <p> The comparison
+     *         operators EQ and REF_EQ act on the following fields: <ul>
+     *         <li>name</li> <li>@sphere</li> <li>parent</li>
+     *         <li>@componentParent</li> <li>@instanceParent</li> <li>@status</li>
+     *         <li>@scheduledStartTime</li> <li>@scheduledEndTime</li>
+     *         <li>@actualStartTime</li> <li>@actualEndTime</li> </ul> <p> The
+     *         comparison operators <code>GE</code>, <code>LE</code>, and
+     *         <code>BETWEEN</code> act on the following fields: <ul>
+     *         <li>@scheduledStartTime</li> <li>@scheduledEndTime</li>
+     *         <li>@actualStartTime</li> <li>@actualEndTime</li> </ul> <p>Note that
+     *         fields beginning with the at sign (@) are read-only and set by the web
+     *         service. When you name fields, you should choose names containing only
+     *         alpha-numeric values, as symbols may be reserved by AWS Data Pipeline.
+     *         User-defined fields that you add to a pipeline should prefix their
+     *         name with the string "my".
      *
      * @see OperatorType
      */
@@ -261,50 +279,54 @@ public class Operator  implements Serializable  {
     }
     
     /**
-     * The logical operation to be performed: equal (EQ), equal reference
-     * (REF_EQ), less than or equal (LE), greater than or equal (GE), or
-     * between (BETWEEN). Equal reference (REF_EQ) can be used only with
-     * reference fields. The other comparison types can be used only with
-     * String fields. The comparison types you can use apply only to certain
-     * object fields, as detailed below. <p> The comparison operators EQ and
-     * REF_EQ act on the following fields: <ul> <li>name</li>
-     * <li>@sphere</li> <li>parent</li> <li>@componentParent</li>
-     * <li>@instanceParent</li> <li>@status</li> <li>@scheduledStartTime</li>
-     * <li>@scheduledEndTime</li> <li>@actualStartTime</li>
-     * <li>@actualEndTime</li> </ul> <p> The comparison operators GE, LE, and
-     * BETWEEN act on the following fields: <ul> <li>@scheduledStartTime</li>
-     * <li>@scheduledEndTime</li> <li>@actualStartTime</li>
-     * <li>@actualEndTime</li> </ul> <p>Note that fields beginning with the
-     * at sign (@) are read-only and set by the web service. When you name
-     * fields, you should choose names containing only alpha-numeric values,
-     * as symbols may be reserved by AWS Data Pipeline. A best practice for
-     * user-defined fields that you add to a pipeline is to prefix their name
-     * with the string "my".
+     * The logical operation to be performed: equal (<code>EQ</code>), equal
+     * reference (<code>REF_EQ</code>), less than or equal (<code>LE</code>),
+     * greater than or equal (<code>GE</code>), or between
+     * (<code>BETWEEN</code>). Equal reference (<code>REF_EQ</code>) can be
+     * used only with reference fields. The other comparison types can be
+     * used only with String fields. The comparison types you can use apply
+     * only to certain object fields, as detailed below. <p> The comparison
+     * operators EQ and REF_EQ act on the following fields: <ul>
+     * <li>name</li> <li>@sphere</li> <li>parent</li>
+     * <li>@componentParent</li> <li>@instanceParent</li> <li>@status</li>
+     * <li>@scheduledStartTime</li> <li>@scheduledEndTime</li>
+     * <li>@actualStartTime</li> <li>@actualEndTime</li> </ul> <p> The
+     * comparison operators <code>GE</code>, <code>LE</code>, and
+     * <code>BETWEEN</code> act on the following fields: <ul>
+     * <li>@scheduledStartTime</li> <li>@scheduledEndTime</li>
+     * <li>@actualStartTime</li> <li>@actualEndTime</li> </ul> <p>Note that
+     * fields beginning with the at sign (@) are read-only and set by the web
+     * service. When you name fields, you should choose names containing only
+     * alpha-numeric values, as symbols may be reserved by AWS Data Pipeline.
+     * User-defined fields that you add to a pipeline should prefix their
+     * name with the string "my".
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>EQ, REF_EQ, LE, GE, BETWEEN
      *
-     * @param type The logical operation to be performed: equal (EQ), equal reference
-     *         (REF_EQ), less than or equal (LE), greater than or equal (GE), or
-     *         between (BETWEEN). Equal reference (REF_EQ) can be used only with
-     *         reference fields. The other comparison types can be used only with
-     *         String fields. The comparison types you can use apply only to certain
-     *         object fields, as detailed below. <p> The comparison operators EQ and
-     *         REF_EQ act on the following fields: <ul> <li>name</li>
-     *         <li>@sphere</li> <li>parent</li> <li>@componentParent</li>
-     *         <li>@instanceParent</li> <li>@status</li> <li>@scheduledStartTime</li>
-     *         <li>@scheduledEndTime</li> <li>@actualStartTime</li>
-     *         <li>@actualEndTime</li> </ul> <p> The comparison operators GE, LE, and
-     *         BETWEEN act on the following fields: <ul> <li>@scheduledStartTime</li>
-     *         <li>@scheduledEndTime</li> <li>@actualStartTime</li>
-     *         <li>@actualEndTime</li> </ul> <p>Note that fields beginning with the
-     *         at sign (@) are read-only and set by the web service. When you name
-     *         fields, you should choose names containing only alpha-numeric values,
-     *         as symbols may be reserved by AWS Data Pipeline. A best practice for
-     *         user-defined fields that you add to a pipeline is to prefix their name
-     *         with the string "my".
+     * @param type The logical operation to be performed: equal (<code>EQ</code>), equal
+     *         reference (<code>REF_EQ</code>), less than or equal (<code>LE</code>),
+     *         greater than or equal (<code>GE</code>), or between
+     *         (<code>BETWEEN</code>). Equal reference (<code>REF_EQ</code>) can be
+     *         used only with reference fields. The other comparison types can be
+     *         used only with String fields. The comparison types you can use apply
+     *         only to certain object fields, as detailed below. <p> The comparison
+     *         operators EQ and REF_EQ act on the following fields: <ul>
+     *         <li>name</li> <li>@sphere</li> <li>parent</li>
+     *         <li>@componentParent</li> <li>@instanceParent</li> <li>@status</li>
+     *         <li>@scheduledStartTime</li> <li>@scheduledEndTime</li>
+     *         <li>@actualStartTime</li> <li>@actualEndTime</li> </ul> <p> The
+     *         comparison operators <code>GE</code>, <code>LE</code>, and
+     *         <code>BETWEEN</code> act on the following fields: <ul>
+     *         <li>@scheduledStartTime</li> <li>@scheduledEndTime</li>
+     *         <li>@actualStartTime</li> <li>@actualEndTime</li> </ul> <p>Note that
+     *         fields beginning with the at sign (@) are read-only and set by the web
+     *         service. When you name fields, you should choose names containing only
+     *         alpha-numeric values, as symbols may be reserved by AWS Data Pipeline.
+     *         User-defined fields that you add to a pipeline should prefix their
+     *         name with the string "my".
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

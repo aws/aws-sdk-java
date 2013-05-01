@@ -38,6 +38,7 @@ public class DescribeAppsResultJsonUnmarshaller implements Unmarshaller<Describe
         
         
         int originalDepth = context.getCurrentDepth();
+        String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
 
         JsonToken token = context.currentToken;
@@ -52,7 +53,9 @@ public class DescribeAppsResultJsonUnmarshaller implements Unmarshaller<Describe
                     describeAppsResult.setApps(new ListUnmarshaller<App>(AppJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getCurrentDepth() <= originalDepth) break;
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
+                    if (context.getCurrentDepth() <= originalDepth) break;
+                }
             }
             
 

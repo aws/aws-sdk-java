@@ -14,6 +14,7 @@
  */
 package com.amazonaws.transform;
 
+import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.util.json.JSONObject;
 
@@ -30,12 +31,18 @@ public class JsonErrorUnmarshaller extends AbstractErrorUnmarshaller<JSONObject>
 
     public AmazonServiceException unmarshall(JSONObject json) throws Exception {
         String message = parseMessage(json);
-
-        AmazonServiceException ase = newException(message);
-
         String errorCode = parseErrorCode(json);
-        ase.setErrorCode(errorCode);
-        return ase;
+        
+        if ((null == message || message.isEmpty()) && (null == errorCode || errorCode.isEmpty())) {
+        	/**
+        	 * Trigger the catch block in AmazonHttpClient.handleErrorResponse to handle 413 and 503 errors
+        	 */
+        	throw new AmazonClientException("Neither error message nor error code is found in the error response payload.");
+        } else {
+        	AmazonServiceException ase = newException(message);
+            ase.setErrorCode(errorCode);
+            return ase;
+        }
     }
 
     public String parseMessage(JSONObject json) throws Exception {

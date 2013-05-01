@@ -25,18 +25,18 @@ public class ReportTaskRunnerHeartbeatResult  implements Serializable  {
     /**
      * Indicates whether the calling task runner should terminate. If
      * <code>True</code>, the task runner that called
-     * ReportTaskRunnerHeartbeat should terminate.
+     * <a>ReportTaskRunnerHeartbeat</a> should terminate.
      */
     private Boolean terminate;
 
     /**
      * Indicates whether the calling task runner should terminate. If
      * <code>True</code>, the task runner that called
-     * ReportTaskRunnerHeartbeat should terminate.
+     * <a>ReportTaskRunnerHeartbeat</a> should terminate.
      *
      * @return Indicates whether the calling task runner should terminate. If
      *         <code>True</code>, the task runner that called
-     *         ReportTaskRunnerHeartbeat should terminate.
+     *         <a>ReportTaskRunnerHeartbeat</a> should terminate.
      */
     public Boolean isTerminate() {
         return terminate;
@@ -45,11 +45,11 @@ public class ReportTaskRunnerHeartbeatResult  implements Serializable  {
     /**
      * Indicates whether the calling task runner should terminate. If
      * <code>True</code>, the task runner that called
-     * ReportTaskRunnerHeartbeat should terminate.
+     * <a>ReportTaskRunnerHeartbeat</a> should terminate.
      *
      * @param terminate Indicates whether the calling task runner should terminate. If
      *         <code>True</code>, the task runner that called
-     *         ReportTaskRunnerHeartbeat should terminate.
+     *         <a>ReportTaskRunnerHeartbeat</a> should terminate.
      */
     public void setTerminate(Boolean terminate) {
         this.terminate = terminate;
@@ -58,13 +58,13 @@ public class ReportTaskRunnerHeartbeatResult  implements Serializable  {
     /**
      * Indicates whether the calling task runner should terminate. If
      * <code>True</code>, the task runner that called
-     * ReportTaskRunnerHeartbeat should terminate.
+     * <a>ReportTaskRunnerHeartbeat</a> should terminate.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param terminate Indicates whether the calling task runner should terminate. If
      *         <code>True</code>, the task runner that called
-     *         ReportTaskRunnerHeartbeat should terminate.
+     *         <a>ReportTaskRunnerHeartbeat</a> should terminate.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -78,11 +78,11 @@ public class ReportTaskRunnerHeartbeatResult  implements Serializable  {
     /**
      * Indicates whether the calling task runner should terminate. If
      * <code>True</code>, the task runner that called
-     * ReportTaskRunnerHeartbeat should terminate.
+     * <a>ReportTaskRunnerHeartbeat</a> should terminate.
      *
      * @return Indicates whether the calling task runner should terminate. If
      *         <code>True</code>, the task runner that called
-     *         ReportTaskRunnerHeartbeat should terminate.
+     *         <a>ReportTaskRunnerHeartbeat</a> should terminate.
      */
     public Boolean getTerminate() {
         return terminate;

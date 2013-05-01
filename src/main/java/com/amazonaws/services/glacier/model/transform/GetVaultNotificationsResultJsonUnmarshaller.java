@@ -38,6 +38,7 @@ public class GetVaultNotificationsResultJsonUnmarshaller implements Unmarshaller
         
         
         int originalDepth = context.getCurrentDepth();
+        String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
 
         JsonToken token = context.currentToken;

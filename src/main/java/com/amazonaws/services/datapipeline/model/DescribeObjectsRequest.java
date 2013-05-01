@@ -39,18 +39,22 @@ public class DescribeObjectsRequest extends AmazonWebServiceRequest  implements 
     /**
      * Identifiers of the pipeline objects that contain the definitions to be
      * described. You can pass as many as 25 identifiers in a single call to
-     * DescribeObjects
+     * DescribeObjects.
      */
     private java.util.List<String> objectIds;
 
+    /**
+     * Indicates whether any expressions in the object should be evaluated
+     * when the object descriptions are returned.
+     */
     private Boolean evaluateExpressions;
 
     /**
      * The starting point for the results to be returned. The first time you
-     * call DescribeObjects, this value should be empty. As long as the
-     * action returns <code>HasMoreResults</code> as <code>True</code>, you
-     * can call DescribeObjects again and pass the marker value from the
-     * response to retrieve the next set of results.
+     * call <a>DescribeObjects</a>, this value should be empty. As long as
+     * the action returns <code>HasMoreResults</code> as <code>True</code>,
+     * you can call <a>DescribeObjects</a> again and pass the marker value
+     * from the response to retrieve the next set of results.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 1024<br/>
@@ -107,11 +111,11 @@ public class DescribeObjectsRequest extends AmazonWebServiceRequest  implements 
     /**
      * Identifiers of the pipeline objects that contain the definitions to be
      * described. You can pass as many as 25 identifiers in a single call to
-     * DescribeObjects
+     * DescribeObjects.
      *
      * @return Identifiers of the pipeline objects that contain the definitions to be
      *         described. You can pass as many as 25 identifiers in a single call to
-     *         DescribeObjects
+     *         DescribeObjects.
      */
     public java.util.List<String> getObjectIds() {
         
@@ -124,11 +128,11 @@ public class DescribeObjectsRequest extends AmazonWebServiceRequest  implements 
     /**
      * Identifiers of the pipeline objects that contain the definitions to be
      * described. You can pass as many as 25 identifiers in a single call to
-     * DescribeObjects
+     * DescribeObjects.
      *
      * @param objectIds Identifiers of the pipeline objects that contain the definitions to be
      *         described. You can pass as many as 25 identifiers in a single call to
-     *         DescribeObjects
+     *         DescribeObjects.
      */
     public void setObjectIds(java.util.Collection<String> objectIds) {
         if (objectIds == null) {
@@ -144,13 +148,13 @@ public class DescribeObjectsRequest extends AmazonWebServiceRequest  implements 
     /**
      * Identifiers of the pipeline objects that contain the definitions to be
      * described. You can pass as many as 25 identifiers in a single call to
-     * DescribeObjects
+     * DescribeObjects.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param objectIds Identifiers of the pipeline objects that contain the definitions to be
      *         described. You can pass as many as 25 identifiers in a single call to
-     *         DescribeObjects
+     *         DescribeObjects.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -166,13 +170,13 @@ public class DescribeObjectsRequest extends AmazonWebServiceRequest  implements 
     /**
      * Identifiers of the pipeline objects that contain the definitions to be
      * described. You can pass as many as 25 identifiers in a single call to
-     * DescribeObjects
+     * DescribeObjects.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param objectIds Identifiers of the pipeline objects that contain the definitions to be
      *         described. You can pass as many as 25 identifiers in a single call to
-     *         DescribeObjects
+     *         DescribeObjects.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -190,29 +194,35 @@ public class DescribeObjectsRequest extends AmazonWebServiceRequest  implements 
     }
     
     /**
-     * Returns the value of the EvaluateExpressions property for this object.
+     * Indicates whether any expressions in the object should be evaluated
+     * when the object descriptions are returned.
      *
-     * @return The value of the EvaluateExpressions property for this object.
+     * @return Indicates whether any expressions in the object should be evaluated
+     *         when the object descriptions are returned.
      */
     public Boolean isEvaluateExpressions() {
         return evaluateExpressions;
     }
     
     /**
-     * Sets the value of the EvaluateExpressions property for this object.
+     * Indicates whether any expressions in the object should be evaluated
+     * when the object descriptions are returned.
      *
-     * @param evaluateExpressions The new value for the EvaluateExpressions property for this object.
+     * @param evaluateExpressions Indicates whether any expressions in the object should be evaluated
+     *         when the object descriptions are returned.
      */
     public void setEvaluateExpressions(Boolean evaluateExpressions) {
         this.evaluateExpressions = evaluateExpressions;
     }
     
     /**
-     * Sets the value of the EvaluateExpressions property for this object.
+     * Indicates whether any expressions in the object should be evaluated
+     * when the object descriptions are returned.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param evaluateExpressions The new value for the EvaluateExpressions property for this object.
+     * @param evaluateExpressions Indicates whether any expressions in the object should be evaluated
+     *         when the object descriptions are returned.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -224,9 +234,11 @@ public class DescribeObjectsRequest extends AmazonWebServiceRequest  implements 
     
     
     /**
-     * Returns the value of the EvaluateExpressions property for this object.
+     * Indicates whether any expressions in the object should be evaluated
+     * when the object descriptions are returned.
      *
-     * @return The value of the EvaluateExpressions property for this object.
+     * @return Indicates whether any expressions in the object should be evaluated
+     *         when the object descriptions are returned.
      */
     public Boolean getEvaluateExpressions() {
         return evaluateExpressions;
@@ -234,20 +246,20 @@ public class DescribeObjectsRequest extends AmazonWebServiceRequest  implements 
     
     /**
      * The starting point for the results to be returned. The first time you
-     * call DescribeObjects, this value should be empty. As long as the
-     * action returns <code>HasMoreResults</code> as <code>True</code>, you
-     * can call DescribeObjects again and pass the marker value from the
-     * response to retrieve the next set of results.
+     * call <a>DescribeObjects</a>, this value should be empty. As long as
+     * the action returns <code>HasMoreResults</code> as <code>True</code>,
+     * you can call <a>DescribeObjects</a> again and pass the marker value
+     * from the response to retrieve the next set of results.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 1024<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @return The starting point for the results to be returned. The first time you
-     *         call DescribeObjects, this value should be empty. As long as the
-     *         action returns <code>HasMoreResults</code> as <code>True</code>, you
-     *         can call DescribeObjects again and pass the marker value from the
-     *         response to retrieve the next set of results.
+     *         call <a>DescribeObjects</a>, this value should be empty. As long as
+     *         the action returns <code>HasMoreResults</code> as <code>True</code>,
+     *         you can call <a>DescribeObjects</a> again and pass the marker value
+     *         from the response to retrieve the next set of results.
      */
     public String getMarker() {
         return marker;
@@ -255,20 +267,20 @@ public class DescribeObjectsRequest extends AmazonWebServiceRequest  implements 
     
     /**
      * The starting point for the results to be returned. The first time you
-     * call DescribeObjects, this value should be empty. As long as the
-     * action returns <code>HasMoreResults</code> as <code>True</code>, you
-     * can call DescribeObjects again and pass the marker value from the
-     * response to retrieve the next set of results.
+     * call <a>DescribeObjects</a>, this value should be empty. As long as
+     * the action returns <code>HasMoreResults</code> as <code>True</code>,
+     * you can call <a>DescribeObjects</a> again and pass the marker value
+     * from the response to retrieve the next set of results.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 1024<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param marker The starting point for the results to be returned. The first time you
-     *         call DescribeObjects, this value should be empty. As long as the
-     *         action returns <code>HasMoreResults</code> as <code>True</code>, you
-     *         can call DescribeObjects again and pass the marker value from the
-     *         response to retrieve the next set of results.
+     *         call <a>DescribeObjects</a>, this value should be empty. As long as
+     *         the action returns <code>HasMoreResults</code> as <code>True</code>,
+     *         you can call <a>DescribeObjects</a> again and pass the marker value
+     *         from the response to retrieve the next set of results.
      */
     public void setMarker(String marker) {
         this.marker = marker;
@@ -276,10 +288,10 @@ public class DescribeObjectsRequest extends AmazonWebServiceRequest  implements 
     
     /**
      * The starting point for the results to be returned. The first time you
-     * call DescribeObjects, this value should be empty. As long as the
-     * action returns <code>HasMoreResults</code> as <code>True</code>, you
-     * can call DescribeObjects again and pass the marker value from the
-     * response to retrieve the next set of results.
+     * call <a>DescribeObjects</a>, this value should be empty. As long as
+     * the action returns <code>HasMoreResults</code> as <code>True</code>,
+     * you can call <a>DescribeObjects</a> again and pass the marker value
+     * from the response to retrieve the next set of results.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -288,10 +300,10 @@ public class DescribeObjectsRequest extends AmazonWebServiceRequest  implements 
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param marker The starting point for the results to be returned. The first time you
-     *         call DescribeObjects, this value should be empty. As long as the
-     *         action returns <code>HasMoreResults</code> as <code>True</code>, you
-     *         can call DescribeObjects again and pass the marker value from the
-     *         response to retrieve the next set of results.
+     *         call <a>DescribeObjects</a>, this value should be empty. As long as
+     *         the action returns <code>HasMoreResults</code> as <code>True</code>,
+     *         you can call <a>DescribeObjects</a> again and pass the marker value
+     *         from the response to retrieve the next set of results.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

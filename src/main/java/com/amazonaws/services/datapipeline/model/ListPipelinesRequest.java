@@ -28,10 +28,10 @@ public class ListPipelinesRequest extends AmazonWebServiceRequest  implements Se
 
     /**
      * The starting point for the results to be returned. The first time you
-     * call ListPipelines, this value should be empty. As long as the action
-     * returns <code>HasMoreResults</code> as <code>True</code>, you can call
-     * ListPipelines again and pass the marker value from the response to
-     * retrieve the next set of results.
+     * call <a>ListPipelines</a>, this value should be empty. As long as the
+     * action returns <code>HasMoreResults</code> as <code>True</code>, you
+     * can call <a>ListPipelines</a> again and pass the marker value from the
+     * response to retrieve the next set of results.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 1024<br/>
@@ -41,20 +41,20 @@ public class ListPipelinesRequest extends AmazonWebServiceRequest  implements Se
 
     /**
      * The starting point for the results to be returned. The first time you
-     * call ListPipelines, this value should be empty. As long as the action
-     * returns <code>HasMoreResults</code> as <code>True</code>, you can call
-     * ListPipelines again and pass the marker value from the response to
-     * retrieve the next set of results.
+     * call <a>ListPipelines</a>, this value should be empty. As long as the
+     * action returns <code>HasMoreResults</code> as <code>True</code>, you
+     * can call <a>ListPipelines</a> again and pass the marker value from the
+     * response to retrieve the next set of results.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 1024<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @return The starting point for the results to be returned. The first time you
-     *         call ListPipelines, this value should be empty. As long as the action
-     *         returns <code>HasMoreResults</code> as <code>True</code>, you can call
-     *         ListPipelines again and pass the marker value from the response to
-     *         retrieve the next set of results.
+     *         call <a>ListPipelines</a>, this value should be empty. As long as the
+     *         action returns <code>HasMoreResults</code> as <code>True</code>, you
+     *         can call <a>ListPipelines</a> again and pass the marker value from the
+     *         response to retrieve the next set of results.
      */
     public String getMarker() {
         return marker;
@@ -62,20 +62,20 @@ public class ListPipelinesRequest extends AmazonWebServiceRequest  implements Se
     
     /**
      * The starting point for the results to be returned. The first time you
-     * call ListPipelines, this value should be empty. As long as the action
-     * returns <code>HasMoreResults</code> as <code>True</code>, you can call
-     * ListPipelines again and pass the marker value from the response to
-     * retrieve the next set of results.
+     * call <a>ListPipelines</a>, this value should be empty. As long as the
+     * action returns <code>HasMoreResults</code> as <code>True</code>, you
+     * can call <a>ListPipelines</a> again and pass the marker value from the
+     * response to retrieve the next set of results.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 1024<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param marker The starting point for the results to be returned. The first time you
-     *         call ListPipelines, this value should be empty. As long as the action
-     *         returns <code>HasMoreResults</code> as <code>True</code>, you can call
-     *         ListPipelines again and pass the marker value from the response to
-     *         retrieve the next set of results.
+     *         call <a>ListPipelines</a>, this value should be empty. As long as the
+     *         action returns <code>HasMoreResults</code> as <code>True</code>, you
+     *         can call <a>ListPipelines</a> again and pass the marker value from the
+     *         response to retrieve the next set of results.
      */
     public void setMarker(String marker) {
         this.marker = marker;
@@ -83,10 +83,10 @@ public class ListPipelinesRequest extends AmazonWebServiceRequest  implements Se
     
     /**
      * The starting point for the results to be returned. The first time you
-     * call ListPipelines, this value should be empty. As long as the action
-     * returns <code>HasMoreResults</code> as <code>True</code>, you can call
-     * ListPipelines again and pass the marker value from the response to
-     * retrieve the next set of results.
+     * call <a>ListPipelines</a>, this value should be empty. As long as the
+     * action returns <code>HasMoreResults</code> as <code>True</code>, you
+     * can call <a>ListPipelines</a> again and pass the marker value from the
+     * response to retrieve the next set of results.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -95,10 +95,10 @@ public class ListPipelinesRequest extends AmazonWebServiceRequest  implements Se
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param marker The starting point for the results to be returned. The first time you
-     *         call ListPipelines, this value should be empty. As long as the action
-     *         returns <code>HasMoreResults</code> as <code>True</code>, you can call
-     *         ListPipelines again and pass the marker value from the response to
-     *         retrieve the next set of results.
+     *         call <a>ListPipelines</a>, this value should be empty. As long as the
+     *         action returns <code>HasMoreResults</code> as <code>True</code>, you
+     *         can call <a>ListPipelines</a> again and pass the marker value from the
+     *         response to retrieve the next set of results.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

@@ -31,7 +31,7 @@ public class InstanceIdentity  implements Serializable  {
     /**
      * A description of an Amazon EC2 instance that is generated when the
      * instance is launched and exposed to the instance via the instance
-     * meta-data service in the form of a JSON representation of an object.
+     * metadata service in the form of a JSON representation of an object.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 1024<br/>
@@ -52,7 +52,7 @@ public class InstanceIdentity  implements Serializable  {
     /**
      * A description of an Amazon EC2 instance that is generated when the
      * instance is launched and exposed to the instance via the instance
-     * meta-data service in the form of a JSON representation of an object.
+     * metadata service in the form of a JSON representation of an object.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 1024<br/>
@@ -60,7 +60,7 @@ public class InstanceIdentity  implements Serializable  {
      *
      * @return A description of an Amazon EC2 instance that is generated when the
      *         instance is launched and exposed to the instance via the instance
-     *         meta-data service in the form of a JSON representation of an object.
+     *         metadata service in the form of a JSON representation of an object.
      */
     public String getDocument() {
         return document;
@@ -69,7 +69,7 @@ public class InstanceIdentity  implements Serializable  {
     /**
      * A description of an Amazon EC2 instance that is generated when the
      * instance is launched and exposed to the instance via the instance
-     * meta-data service in the form of a JSON representation of an object.
+     * metadata service in the form of a JSON representation of an object.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 1024<br/>
@@ -77,7 +77,7 @@ public class InstanceIdentity  implements Serializable  {
      *
      * @param document A description of an Amazon EC2 instance that is generated when the
      *         instance is launched and exposed to the instance via the instance
-     *         meta-data service in the form of a JSON representation of an object.
+     *         metadata service in the form of a JSON representation of an object.
      */
     public void setDocument(String document) {
         this.document = document;
@@ -86,7 +86,7 @@ public class InstanceIdentity  implements Serializable  {
     /**
      * A description of an Amazon EC2 instance that is generated when the
      * instance is launched and exposed to the instance via the instance
-     * meta-data service in the form of a JSON representation of an object.
+     * metadata service in the form of a JSON representation of an object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -96,7 +96,7 @@ public class InstanceIdentity  implements Serializable  {
      *
      * @param document A description of an Amazon EC2 instance that is generated when the
      *         instance is launched and exposed to the instance via the instance
-     *         meta-data service in the form of a JSON representation of an object.
+     *         metadata service in the form of a JSON representation of an object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

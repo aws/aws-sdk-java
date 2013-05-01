@@ -76,7 +76,7 @@ public interface AmazonElasticLoadBalancing {
      * @throws IllegalArgumentException
      *             If any problems are detected with the specified endpoint.
      */
-    public void setEndpoint(String endpoint) throws java.lang.IllegalArgumentException;    
+    public void setEndpoint(String endpoint) throws java.lang.IllegalArgumentException;
 
     /**
      * An alternative to {@link AmazonElasticLoadBalancing#setEndpoint(String)}, sets the
@@ -91,7 +91,7 @@ public interface AmazonElasticLoadBalancing {
      * client is created and before any service requests are made. Changing it
      * afterwards creates inevitable race conditions for any service requests in
      * transit or retrying.</b>
-     * 
+     *
      * @param region
      *            The region this client will communicate with. See
      *            {@link Region#getRegion(com.amazonaws.regions.Regions)} for
@@ -103,7 +103,7 @@ public interface AmazonElasticLoadBalancing {
      * @see Region#getRegion(com.amazonaws.regions.Regions)
      * @see Region#createClient(Class, com.amazonaws.auth.AWSCredentialsProvider, ClientConfiguration)
      */
-    public void setRegion(Region region) throws java.lang.IllegalArgumentException;    
+    public void setRegion(Region region) throws java.lang.IllegalArgumentException;
 	
     /**
      * <p>

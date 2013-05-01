@@ -1,12 +1,12 @@
 /*
  * Copyright 2010-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
- * 
+ *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -58,7 +58,7 @@ public interface AmazonDynamoDB {
      * @throws IllegalArgumentException
      *             If any problems are detected with the specified endpoint.
      */
-    public void setEndpoint(String endpoint) throws java.lang.IllegalArgumentException;    
+    public void setEndpoint(String endpoint) throws java.lang.IllegalArgumentException;
 
     /**
      * An alternative to {@link AmazonDynamoDB#setEndpoint(String)}, sets the
@@ -73,7 +73,7 @@ public interface AmazonDynamoDB {
      * client is created and before any service requests are made. Changing it
      * afterwards creates inevitable race conditions for any service requests in
      * transit or retrying.</b>
-     * 
+     *
      * @param region
      *            The region this client will communicate with. See
      *            {@link Region#getRegion(com.amazonaws.regions.Regions)} for
@@ -85,8 +85,8 @@ public interface AmazonDynamoDB {
      * @see Region#getRegion(com.amazonaws.regions.Regions)
      * @see Region#createClient(Class, com.amazonaws.auth.AWSCredentialsProvider, ClientConfiguration)
      */
-    public void setRegion(Region region) throws java.lang.IllegalArgumentException;    
-	
+    public void setRegion(Region region) throws java.lang.IllegalArgumentException;
+
     /**
      * <p>
      * Retrieves a paginated list of table names created by the AWS Account
@@ -95,10 +95,10 @@ public interface AmazonDynamoDB {
      *
      * @param listTablesRequest Container for the necessary parameters to
      *           execute the ListTables service method on AmazonDynamoDB.
-     * 
+     *
      * @return The response from the ListTables service method, as returned
      *         by AmazonDynamoDB.
-     * 
+     *
      * @throws InternalServerErrorException
      *
      * @throws AmazonClientException
@@ -109,7 +109,7 @@ public interface AmazonDynamoDB {
      *             If an error response is returned by AmazonDynamoDB indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public ListTablesResult listTables(ListTablesRequest listTablesRequest) 
+    public ListTablesResult listTables(ListTablesRequest listTablesRequest)
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -126,10 +126,10 @@ public interface AmazonDynamoDB {
      *
      * @param queryRequest Container for the necessary parameters to execute
      *           the Query service method on AmazonDynamoDB.
-     * 
+     *
      * @return The response from the Query service method, as returned by
      *         AmazonDynamoDB.
-     * 
+     *
      * @throws ProvisionedThroughputExceededException
      * @throws InternalServerErrorException
      * @throws ResourceNotFoundException
@@ -142,7 +142,7 @@ public interface AmazonDynamoDB {
      *             If an error response is returned by AmazonDynamoDB indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public QueryResult query(QueryRequest queryRequest) 
+    public QueryResult query(QueryRequest queryRequest)
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -157,10 +157,10 @@ public interface AmazonDynamoDB {
      *
      * @param batchWriteItemRequest Container for the necessary parameters to
      *           execute the BatchWriteItem service method on AmazonDynamoDB.
-     * 
+     *
      * @return The response from the BatchWriteItem service method, as
      *         returned by AmazonDynamoDB.
-     * 
+     *
      * @throws LimitExceededException
      * @throws ProvisionedThroughputExceededException
      * @throws InternalServerErrorException
@@ -174,7 +174,7 @@ public interface AmazonDynamoDB {
      *             If an error response is returned by AmazonDynamoDB indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public BatchWriteItemResult batchWriteItem(BatchWriteItemRequest batchWriteItemRequest) 
+    public BatchWriteItemResult batchWriteItem(BatchWriteItemRequest batchWriteItemRequest)
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -189,10 +189,10 @@ public interface AmazonDynamoDB {
      *
      * @param updateItemRequest Container for the necessary parameters to
      *           execute the UpdateItem service method on AmazonDynamoDB.
-     * 
+     *
      * @return The response from the UpdateItem service method, as returned
      *         by AmazonDynamoDB.
-     * 
+     *
      * @throws LimitExceededException
      * @throws ProvisionedThroughputExceededException
      * @throws ConditionalCheckFailedException
@@ -207,7 +207,7 @@ public interface AmazonDynamoDB {
      *             If an error response is returned by AmazonDynamoDB indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public UpdateItemResult updateItem(UpdateItemRequest updateItemRequest) 
+    public UpdateItemResult updateItem(UpdateItemRequest updateItemRequest)
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -225,10 +225,10 @@ public interface AmazonDynamoDB {
      *
      * @param putItemRequest Container for the necessary parameters to
      *           execute the PutItem service method on AmazonDynamoDB.
-     * 
+     *
      * @return The response from the PutItem service method, as returned by
      *         AmazonDynamoDB.
-     * 
+     *
      * @throws LimitExceededException
      * @throws ProvisionedThroughputExceededException
      * @throws ConditionalCheckFailedException
@@ -243,7 +243,7 @@ public interface AmazonDynamoDB {
      *             If an error response is returned by AmazonDynamoDB indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public PutItemResult putItem(PutItemRequest putItemRequest) 
+    public PutItemResult putItem(PutItemRequest putItemRequest)
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -258,10 +258,10 @@ public interface AmazonDynamoDB {
      *
      * @param describeTableRequest Container for the necessary parameters to
      *           execute the DescribeTable service method on AmazonDynamoDB.
-     * 
+     *
      * @return The response from the DescribeTable service method, as
      *         returned by AmazonDynamoDB.
-     * 
+     *
      * @throws InternalServerErrorException
      * @throws ResourceNotFoundException
      *
@@ -273,7 +273,7 @@ public interface AmazonDynamoDB {
      *             If an error response is returned by AmazonDynamoDB indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DescribeTableResult describeTable(DescribeTableRequest describeTableRequest) 
+    public DescribeTableResult describeTable(DescribeTableRequest describeTableRequest)
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -287,10 +287,10 @@ public interface AmazonDynamoDB {
      *
      * @param scanRequest Container for the necessary parameters to execute
      *           the Scan service method on AmazonDynamoDB.
-     * 
+     *
      * @return The response from the Scan service method, as returned by
      *         AmazonDynamoDB.
-     * 
+     *
      * @throws ProvisionedThroughputExceededException
      * @throws InternalServerErrorException
      * @throws ResourceNotFoundException
@@ -303,7 +303,7 @@ public interface AmazonDynamoDB {
      *             If an error response is returned by AmazonDynamoDB indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public ScanResult scan(ScanRequest scanRequest) 
+    public ScanResult scan(ScanRequest scanRequest)
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -325,10 +325,10 @@ public interface AmazonDynamoDB {
      *
      * @param createTableRequest Container for the necessary parameters to
      *           execute the CreateTable service method on AmazonDynamoDB.
-     * 
+     *
      * @return The response from the CreateTable service method, as returned
      *         by AmazonDynamoDB.
-     * 
+     *
      * @throws ResourceInUseException
      * @throws LimitExceededException
      * @throws InternalServerErrorException
@@ -341,7 +341,7 @@ public interface AmazonDynamoDB {
      *             If an error response is returned by AmazonDynamoDB indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public CreateTableResult createTable(CreateTableRequest createTableRequest) 
+    public CreateTableResult createTable(CreateTableRequest createTableRequest)
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -355,10 +355,10 @@ public interface AmazonDynamoDB {
      *
      * @param updateTableRequest Container for the necessary parameters to
      *           execute the UpdateTable service method on AmazonDynamoDB.
-     * 
+     *
      * @return The response from the UpdateTable service method, as returned
      *         by AmazonDynamoDB.
-     * 
+     *
      * @throws ResourceInUseException
      * @throws LimitExceededException
      * @throws InternalServerErrorException
@@ -372,7 +372,7 @@ public interface AmazonDynamoDB {
      *             If an error response is returned by AmazonDynamoDB indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public UpdateTableResult updateTable(UpdateTableRequest updateTableRequest) 
+    public UpdateTableResult updateTable(UpdateTableRequest updateTableRequest)
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -389,10 +389,10 @@ public interface AmazonDynamoDB {
      *
      * @param deleteTableRequest Container for the necessary parameters to
      *           execute the DeleteTable service method on AmazonDynamoDB.
-     * 
+     *
      * @return The response from the DeleteTable service method, as returned
      *         by AmazonDynamoDB.
-     * 
+     *
      * @throws ResourceInUseException
      * @throws LimitExceededException
      * @throws InternalServerErrorException
@@ -406,7 +406,7 @@ public interface AmazonDynamoDB {
      *             If an error response is returned by AmazonDynamoDB indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DeleteTableResult deleteTable(DeleteTableRequest deleteTableRequest) 
+    public DeleteTableResult deleteTable(DeleteTableRequest deleteTableRequest)
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -420,10 +420,10 @@ public interface AmazonDynamoDB {
      *
      * @param deleteItemRequest Container for the necessary parameters to
      *           execute the DeleteItem service method on AmazonDynamoDB.
-     * 
+     *
      * @return The response from the DeleteItem service method, as returned
      *         by AmazonDynamoDB.
-     * 
+     *
      * @throws LimitExceededException
      * @throws ProvisionedThroughputExceededException
      * @throws ConditionalCheckFailedException
@@ -438,7 +438,7 @@ public interface AmazonDynamoDB {
      *             If an error response is returned by AmazonDynamoDB indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DeleteItemResult deleteItem(DeleteItemRequest deleteItemRequest) 
+    public DeleteItemResult deleteItem(DeleteItemRequest deleteItemRequest)
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -456,10 +456,10 @@ public interface AmazonDynamoDB {
      *
      * @param getItemRequest Container for the necessary parameters to
      *           execute the GetItem service method on AmazonDynamoDB.
-     * 
+     *
      * @return The response from the GetItem service method, as returned by
      *         AmazonDynamoDB.
-     * 
+     *
      * @throws ProvisionedThroughputExceededException
      * @throws InternalServerErrorException
      * @throws ResourceNotFoundException
@@ -472,7 +472,7 @@ public interface AmazonDynamoDB {
      *             If an error response is returned by AmazonDynamoDB indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public GetItemResult getItem(GetItemRequest getItemRequest) 
+    public GetItemResult getItem(GetItemRequest getItemRequest)
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -499,10 +499,10 @@ public interface AmazonDynamoDB {
      *
      * @param batchGetItemRequest Container for the necessary parameters to
      *           execute the BatchGetItem service method on AmazonDynamoDB.
-     * 
+     *
      * @return The response from the BatchGetItem service method, as returned
      *         by AmazonDynamoDB.
-     * 
+     *
      * @throws ProvisionedThroughputExceededException
      * @throws InternalServerErrorException
      * @throws ResourceNotFoundException
@@ -515,7 +515,7 @@ public interface AmazonDynamoDB {
      *             If an error response is returned by AmazonDynamoDB indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public BatchGetItemResult batchGetItem(BatchGetItemRequest batchGetItemRequest) 
+    public BatchGetItemResult batchGetItem(BatchGetItemRequest batchGetItemRequest)
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -523,10 +523,10 @@ public interface AmazonDynamoDB {
      * Retrieves a paginated list of table names created by the AWS Account
      * of the caller in the AWS Region (e.g. <code>us-east-1</code> ).
      * </p>
-     * 
+     *
      * @return The response from the ListTables service method, as returned
      *         by AmazonDynamoDB.
-     * 
+     *
      * @throws InternalServerErrorException
      *
      * @throws AmazonClientException
@@ -538,7 +538,7 @@ public interface AmazonDynamoDB {
      *             either a problem with the data in the request, or a server side issue.
      */
     public ListTablesResult listTables() throws AmazonServiceException, AmazonClientException;
-    
+
     /**
      * Shuts down this client object, releasing any resources that might be held
      * open. This is an optional method, and callers are not expected to call
@@ -547,7 +547,7 @@ public interface AmazonDynamoDB {
      * requests.
      */
     public void shutdown();
-    
+
     /**
      * Returns additional metadata for a previously executed successful request, typically used for
      * debugging issues where a service isn't acting as expected.  This data isn't considered part
@@ -567,4 +567,3 @@ public interface AmazonDynamoDB {
     public ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
 
 }
-        

@@ -38,6 +38,7 @@ public class DeleteSnapshotScheduleResultJsonUnmarshaller implements Unmarshalle
         
         
         int originalDepth = context.getCurrentDepth();
+        String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
 
         JsonToken token = context.currentToken;
@@ -53,7 +54,9 @@ public class DeleteSnapshotScheduleResultJsonUnmarshaller implements Unmarshalle
                     deleteSnapshotScheduleResult.setVolumeARN(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getCurrentDepth() <= originalDepth) break;
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
+                    if (context.getCurrentDepth() <= originalDepth) break;
+                }
             }
             
 

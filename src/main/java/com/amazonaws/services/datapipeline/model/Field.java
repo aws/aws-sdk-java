@@ -17,8 +17,8 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A key-value pair that describes a property of a pipeline object. The value is specified as either a string value (StringValue) or a reference to
- * another object (RefValue) but not as both.
+ * A key-value pair that describes a property of a pipeline object. The value is specified as either a string value ( <code>StringValue</code> ) or a
+ * reference to another object ( <code>RefValue</code> ) but not as both.
  * </p>
  */
 public class Field  implements Serializable  {

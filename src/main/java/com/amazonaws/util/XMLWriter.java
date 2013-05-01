@@ -112,7 +112,7 @@ public class XMLWriter {
      *         together.
      */
     public XMLWriter value(String s) {
-        append(s);
+        append(escapeXMLEntities(s));
         return this;
     }
 
@@ -127,7 +127,7 @@ public class XMLWriter {
      *         together.
      */
     public XMLWriter value(Date date) {
-        append(StringUtils.fromDate(date));
+        append(escapeXMLEntities(StringUtils.fromDate(date)));
         return this;
     }
 
@@ -143,7 +143,7 @@ public class XMLWriter {
      *         together.
      */
     public XMLWriter value(Object obj) {
-        append(obj.toString());
+        append(escapeXMLEntities(obj.toString()));
         return this;
     }
 
@@ -153,6 +153,27 @@ public class XMLWriter {
         } catch (IOException e) {
             throw new AmazonClientException("Unable to write XML document", e);
         }
+    }
+    
+    private String escapeXMLEntities(String s) {
+    	/** 
+    	 * Unescape any escaped characters.
+    	 */
+    	if (s.contains("&")) {
+        	s = s.replace("&quot;", "\"");
+        	s = s.replace("&apos;", "'");
+        	s = s.replace("&lt;", "<");
+        	s = s.replace("&gt;", ">");
+        	// Ampersands should always be the last to unescape
+        	s = s.replace("&amp;", "&");
+    	}
+    	// Ampersands should always be the first to escape
+    	s = s.replace("&", "&amp;");
+    	s = s.replace("\"", "&quot;");
+    	s = s.replace("'", "&apos;");
+    	s = s.replace("<", "&lt;");
+    	s = s.replace(">", "&gt;");
+    	return s;
     }
 
 }

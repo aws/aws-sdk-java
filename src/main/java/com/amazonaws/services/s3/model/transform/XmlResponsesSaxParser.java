@@ -109,14 +109,7 @@ public class XmlResponsesSaxParser {
         try {
             xr = XMLReaderFactory.createXMLReader();
         } catch (SAXException e) {
-            // oops, lets try doing this (needed in 1.4)
-            System.setProperty("org.xml.sax.driver", "org.apache.crimson.parser.XMLReaderImpl");
-            try {
-                // Try once more...
-                xr = XMLReaderFactory.createXMLReader();
-            } catch (SAXException e2) {
-                throw new AmazonClientException("Couldn't initialize a sax driver for the XMLReader");
-            }
+            throw new AmazonClientException("Couldn't initialize a SAX driver to create an XMLReader", e);
         }
     }
 
@@ -1368,22 +1361,22 @@ public class XmlResponsesSaxParser {
                 inErrorDocumentElement = true;
             } else if (name.equals("Key") && inErrorDocumentElement) {
             } else if (name.equals("RedirectAllRequestsTo")) {
-            	redirectAllRequestsTo = new RedirectRule();
-            	inRedirectAllRequestsTo = true;
+                redirectAllRequestsTo = new RedirectRule();
+                inRedirectAllRequestsTo = true;
             } else if (name.equals("RoutingRules")) {
-            	rules = new LinkedList<RoutingRule>();
-            	inRoutingRules = true;
+                rules = new LinkedList<RoutingRule>();
+                inRoutingRules = true;
             } else if (name.equals("RoutingRule") && inRoutingRules) {
-            	rule = new RoutingRule();
-            	inRoutingRule = true;
+                rule = new RoutingRule();
+                inRoutingRule = true;
             } else if (name.equals("Condition") && inRoutingRule) {
-            	condition = new RoutingRuleCondition();
-            	inCondition = true;
+                condition = new RoutingRuleCondition();
+                inCondition = true;
             } else if (name.equals("KeyPrefixEquals") && inCondition) {
             } else if (name.equals("HttpErrorCodeReturnedEquals") && inCondition) {
             } else if (name.equals("Redirect") && inRoutingRule) {
-            	redirect = new RedirectRule();
-            	inRedirect = true;
+                redirect = new RedirectRule();
+                inRedirect = true;
             } else if (name.equals("Protocol") && (inRedirect || inRedirectAllRequestsTo)) {
             } else if (name.equals("HostName") && (inRedirect || inRedirectAllRequestsTo)) {
             } else if (name.equals("ReplaceKeyPrefixWith") && (inRedirect || inRedirectAllRequestsTo)) {
@@ -1406,49 +1399,49 @@ public class XmlResponsesSaxParser {
             } else if (name.equals("Key") && inErrorDocumentElement) {
                 configuration.setErrorDocument(text.toString());
             } else if (name.equals("KeyPrefixEquals") && inCondition) {
-            	condition.setKeyPrefixEquals(text.toString());
+                condition.setKeyPrefixEquals(text.toString());
             } else if (name.equals("HttpErrorCodeReturnedEquals") && inCondition) {
-            	condition.setHttpErrorCodeReturnedEquals(text.toString());
+                condition.setHttpErrorCodeReturnedEquals(text.toString());
             } else if (name.equals("Condition") && inRoutingRule) {
                 rule.setCondition(condition);
                 inCondition = false;
                 condition = null;
             } else if (name.equals("Protocol") && inRedirect) {
-            	redirect.setProtocol(text.toString());
+                redirect.setProtocol(text.toString());
             } else if (name.equals("Protocol") && inRedirectAllRequestsTo) {
-            	redirectAllRequestsTo.setProtocol(text.toString());
+                redirectAllRequestsTo.setProtocol(text.toString());
             } else if (name.equals("HostName") && inRedirect) {
-            	redirect.setHostName(text.toString());
+                redirect.setHostName(text.toString());
             } else if (name.equals("HostName") && inRedirectAllRequestsTo) {
-            	redirectAllRequestsTo.setHostName(text.toString());
+                redirectAllRequestsTo.setHostName(text.toString());
             } else if (name.equals("ReplaceKeyPrefixWith") && inRedirect) {
-            	redirect.setReplaceKeyPrefixWith(text.toString());
+                redirect.setReplaceKeyPrefixWith(text.toString());
             } else if (name.equals("ReplaceKeyPrefixWith") && inRedirectAllRequestsTo) {
-            	redirectAllRequestsTo.setReplaceKeyPrefixWith(text.toString());
+                redirectAllRequestsTo.setReplaceKeyPrefixWith(text.toString());
             } else if (name.equals("ReplaceKeyWith") && inRedirect) {
-            	redirect.setReplaceKeyWith(text.toString());
+                redirect.setReplaceKeyWith(text.toString());
             } else if (name.equals("ReplaceKeyWith") && inRedirectAllRequestsTo) {
-            	redirectAllRequestsTo.setReplaceKeyWith(text.toString());
+                redirectAllRequestsTo.setReplaceKeyWith(text.toString());
             } else if (name.equals("HttpRedirectCode") && inRedirect) {
-            	redirect.setHttpRedirectCode(text.toString());
+                redirect.setHttpRedirectCode(text.toString());
             } else if (name.equals("HttpRedirectCode") && inRedirectAllRequestsTo) {
-            	redirectAllRequestsTo.setHttpRedirectCode(text.toString());
+                redirectAllRequestsTo.setHttpRedirectCode(text.toString());
             } else if (name.equals("Redirect") && inRoutingRule) {
-            	rule.setRedirect(redirect);
-            	inRedirect = false;
+                rule.setRedirect(redirect);
+                inRedirect = false;
                 redirect = null;
             } else if (name.equals("RoutingRule") && inRoutingRules) {
-            	rules.add(rule);
-            	rule = null;
-            	inRoutingRule = false;
+                rules.add(rule);
+                rule = null;
+                inRoutingRule = false;
             } else if (name.equals("RoutingRules")) {
-            	configuration.setRoutingRules(rules);
-            	rules = null;
-            	inRoutingRules = false;
+                configuration.setRoutingRules(rules);
+                rules = null;
+                inRoutingRules = false;
             } else if (name.equals("RedirectAllRequestsTo")) {
-            	configuration.setRedirectAllRequestsTo(redirectAllRequestsTo);
-            	inRedirectAllRequestsTo = false;
-            	redirectAllRequestsTo = null;
+                configuration.setRedirectAllRequestsTo(redirectAllRequestsTo);
+                inRedirectAllRequestsTo = false;
+                redirectAllRequestsTo = null;
             }
             text.setLength(0);
         }

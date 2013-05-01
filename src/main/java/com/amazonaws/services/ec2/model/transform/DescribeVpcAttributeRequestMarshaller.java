@@ -43,11 +43,8 @@ public class DescribeVpcAttributeRequestMarshaller implements Marshaller<Request
         if (describeVpcAttributeRequest.getVpcId() != null) {
             request.addParameter("VpcId", StringUtils.fromString(describeVpcAttributeRequest.getVpcId()));
         }
-        if (describeVpcAttributeRequest.getEnableDnsSupport() != null) {
-            request.addParameter("EnableDnsSupport", StringUtils.fromString(describeVpcAttributeRequest.getEnableDnsSupport()));
-        }
-        if (describeVpcAttributeRequest.getEnableDnsHostnames() != null) {
-            request.addParameter("EnableDnsHostnames", StringUtils.fromString(describeVpcAttributeRequest.getEnableDnsHostnames()));
+        if (describeVpcAttributeRequest.getAttribute() != null) {
+            request.addParameter("Attribute", StringUtils.fromString(describeVpcAttributeRequest.getAttribute()));
         }
 
 

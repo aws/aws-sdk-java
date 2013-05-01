@@ -35,7 +35,8 @@ public enum InstanceType {
     Hs18xlarge("hs1.8xlarge"),
     Cc14xlarge("cc1.4xlarge"),
     Cc28xlarge("cc2.8xlarge"),
-    Cg14xlarge("cg1.4xlarge");
+    Cg14xlarge("cg1.4xlarge"),
+    Cr18xlarge("cr1.8xlarge");
 
     private String value;
 
@@ -93,6 +94,8 @@ public enum InstanceType {
             return InstanceType.Cc28xlarge;
         } else if ("cg1.4xlarge".equals(value)) {
             return InstanceType.Cg14xlarge;
+        } else if ("cr1.8xlarge".equals(value)) {
+            return InstanceType.Cr18xlarge;
         } else {
             throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
         }

@@ -19,8 +19,9 @@ import java.io.Serializable;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.datapipeline.DataPipeline#reportTaskRunnerHeartbeat(ReportTaskRunnerHeartbeatRequest) ReportTaskRunnerHeartbeat operation}.
  * <p>
- * Task runners call ReportTaskRunnerHeartbeat to indicate that they are operational. In the case of AWS Data Pipeline Task Runner launched on a resource
- * managed by AWS Data Pipeline, the web service can use this call to detect when the task runner application has failed and restart a new instance.
+ * Task runners call ReportTaskRunnerHeartbeat every 15 minutes to indicate that they are operational. In the case of AWS Data Pipeline Task Runner
+ * launched on a resource managed by AWS Data Pipeline, the web service can use this call to detect when the task runner application has failed and
+ * restart a new instance.
  * </p>
  *
  * @see com.amazonaws.services.datapipeline.DataPipeline#reportTaskRunnerHeartbeat(ReportTaskRunnerHeartbeatRequest)
@@ -45,8 +46,9 @@ public class ReportTaskRunnerHeartbeatRequest extends AmazonWebServiceRequest  i
      * Indicates the type of task the task runner is configured to accept and
      * process. The worker group is set as a field on objects in the pipeline
      * when they are created. You can only specify a single value for
-     * workerGroup in the call to ReportTaskRunnerHeartbeat. There are no
-     * wildcard values permitted in workerGroup, the string must be an exact,
+     * <code>workerGroup</code> in the call to
+     * <a>ReportTaskRunnerHeartbeat</a>. There are no wildcard values
+     * permitted in <code>workerGroup</code>, the string must be an exact,
      * case-sensitive, match.
      * <p>
      * <b>Constraints:</b><br/>
@@ -144,8 +146,9 @@ public class ReportTaskRunnerHeartbeatRequest extends AmazonWebServiceRequest  i
      * Indicates the type of task the task runner is configured to accept and
      * process. The worker group is set as a field on objects in the pipeline
      * when they are created. You can only specify a single value for
-     * workerGroup in the call to ReportTaskRunnerHeartbeat. There are no
-     * wildcard values permitted in workerGroup, the string must be an exact,
+     * <code>workerGroup</code> in the call to
+     * <a>ReportTaskRunnerHeartbeat</a>. There are no wildcard values
+     * permitted in <code>workerGroup</code>, the string must be an exact,
      * case-sensitive, match.
      * <p>
      * <b>Constraints:</b><br/>
@@ -155,8 +158,9 @@ public class ReportTaskRunnerHeartbeatRequest extends AmazonWebServiceRequest  i
      * @return Indicates the type of task the task runner is configured to accept and
      *         process. The worker group is set as a field on objects in the pipeline
      *         when they are created. You can only specify a single value for
-     *         workerGroup in the call to ReportTaskRunnerHeartbeat. There are no
-     *         wildcard values permitted in workerGroup, the string must be an exact,
+     *         <code>workerGroup</code> in the call to
+     *         <a>ReportTaskRunnerHeartbeat</a>. There are no wildcard values
+     *         permitted in <code>workerGroup</code>, the string must be an exact,
      *         case-sensitive, match.
      */
     public String getWorkerGroup() {
@@ -167,8 +171,9 @@ public class ReportTaskRunnerHeartbeatRequest extends AmazonWebServiceRequest  i
      * Indicates the type of task the task runner is configured to accept and
      * process. The worker group is set as a field on objects in the pipeline
      * when they are created. You can only specify a single value for
-     * workerGroup in the call to ReportTaskRunnerHeartbeat. There are no
-     * wildcard values permitted in workerGroup, the string must be an exact,
+     * <code>workerGroup</code> in the call to
+     * <a>ReportTaskRunnerHeartbeat</a>. There are no wildcard values
+     * permitted in <code>workerGroup</code>, the string must be an exact,
      * case-sensitive, match.
      * <p>
      * <b>Constraints:</b><br/>
@@ -178,8 +183,9 @@ public class ReportTaskRunnerHeartbeatRequest extends AmazonWebServiceRequest  i
      * @param workerGroup Indicates the type of task the task runner is configured to accept and
      *         process. The worker group is set as a field on objects in the pipeline
      *         when they are created. You can only specify a single value for
-     *         workerGroup in the call to ReportTaskRunnerHeartbeat. There are no
-     *         wildcard values permitted in workerGroup, the string must be an exact,
+     *         <code>workerGroup</code> in the call to
+     *         <a>ReportTaskRunnerHeartbeat</a>. There are no wildcard values
+     *         permitted in <code>workerGroup</code>, the string must be an exact,
      *         case-sensitive, match.
      */
     public void setWorkerGroup(String workerGroup) {
@@ -190,8 +196,9 @@ public class ReportTaskRunnerHeartbeatRequest extends AmazonWebServiceRequest  i
      * Indicates the type of task the task runner is configured to accept and
      * process. The worker group is set as a field on objects in the pipeline
      * when they are created. You can only specify a single value for
-     * workerGroup in the call to ReportTaskRunnerHeartbeat. There are no
-     * wildcard values permitted in workerGroup, the string must be an exact,
+     * <code>workerGroup</code> in the call to
+     * <a>ReportTaskRunnerHeartbeat</a>. There are no wildcard values
+     * permitted in <code>workerGroup</code>, the string must be an exact,
      * case-sensitive, match.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -203,8 +210,9 @@ public class ReportTaskRunnerHeartbeatRequest extends AmazonWebServiceRequest  i
      * @param workerGroup Indicates the type of task the task runner is configured to accept and
      *         process. The worker group is set as a field on objects in the pipeline
      *         when they are created. You can only specify a single value for
-     *         workerGroup in the call to ReportTaskRunnerHeartbeat. There are no
-     *         wildcard values permitted in workerGroup, the string must be an exact,
+     *         <code>workerGroup</code> in the call to
+     *         <a>ReportTaskRunnerHeartbeat</a>. There are no wildcard values
+     *         permitted in <code>workerGroup</code>, the string must be an exact,
      *         case-sensitive, match.
      *
      * @return A reference to this updated object so that method calls can be chained 

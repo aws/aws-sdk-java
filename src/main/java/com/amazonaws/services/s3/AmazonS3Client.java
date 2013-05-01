@@ -340,7 +340,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         requestHandlers.addAll(chainFactory.newRequestHandlerChain(
                 "/com/amazonaws/services/s3/request.handlers"));
     }
-    
+
     /* (non-Javadoc)
      * @see com.amazonaws.AmazonWebServiceClient#getServiceAbbreviation()
      */
@@ -966,16 +966,16 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
         S3Object s3Object = ServiceUtils.retryableDownloadS3ObjectToFile(destinationFile, new ServiceUtils.RetryableS3DownloadTask() {
 
-			@Override
-			public S3Object getS3ObjectStream() {
-				return getObject(getObjectRequest);
-			}
+            @Override
+            public S3Object getS3ObjectStream() {
+                return getObject(getObjectRequest);
+            }
 
-			@Override
-			public boolean needIntegrityCheck() {
-				return getObjectRequest.getRange()== null;
-			}
-        	
+            @Override
+            public boolean needIntegrityCheck() {
+                return getObjectRequest.getRange()== null;
+            }
+
         });
         // getObject can return null if constraints were specified but not met
         if(s3Object==null)return null;
@@ -1192,7 +1192,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         result.setExpirationTime(returnedMetadata.getExpirationTime());
         result.setExpirationTimeRuleId(returnedMetadata.getExpirationTimeRuleId());
         result.setContentMd5(contentMd5);
-        
+
         return result;
     }
 

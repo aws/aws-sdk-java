@@ -351,11 +351,26 @@ public class ArchiveTransferManager {
             }
         }
 
-        downloadJobOutputInMultipleChunks(accountId, vaultName, jobId, file);
+        downloadJobOutput(accountId, vaultName, jobId, file);
     }
 
-    public void downloadJobOutputInMultipleChunks(String accountId, String vaultName, String jobId, File file) {
-
+    /**
+     * Downloads the job output for the specified job (which must be ready to
+     * download already), into the specified file. This method will request
+     * individual chunks of the data, one at a time, in order to handle any
+     * transient errors along the way.
+     *
+     * @param accountId
+     *            The account ID containing the job output to download (or null
+     *            if the current account shoudl be used).
+     * @param vaultName
+     *            The name of the vault from where the job was initiated.
+     * @param jobId
+     *            The ID of the job whose output is to be downloaded.
+     * @param file
+     *            The file to download the job output into.
+     */
+    public void downloadJobOutput(String accountId, String vaultName, String jobId, File file) {
         long archiveSize = 0;
         long chunkSize = DEFAULT_DOWNLOAD_CHUNK_SIZE;
         long currentPosition = 0;
@@ -515,14 +530,14 @@ public class ArchiveTransferManager {
         String uploadId = initiateResult.getUploadId();
 
         try {
-	        List<byte[]> binaryChecksums = new LinkedList<byte[]>();
+            List<byte[]> binaryChecksums = new LinkedList<byte[]>();
 
-	        long currentPosition = 0;
-	        while (currentPosition < file.length()) {
-	            long length = partSize;
-	            if (currentPosition + partSize > file.length()) {
-	                length = file.length() - currentPosition;
-	            }
+            long currentPosition = 0;
+            while (currentPosition < file.length()) {
+                long length = partSize;
+                if (currentPosition + partSize > file.length()) {
+                    length = file.length() - currentPosition;
+                }
 
                 Exception failedException = null;
                 boolean completed = false;
@@ -555,26 +570,26 @@ public class ArchiveTransferManager {
                     throw failedException;
                 }
 
-	            currentPosition += partSize;
-	        }
+                currentPosition += partSize;
+            }
 
-	        String checksum = TreeHashGenerator.calculateTreeHash(binaryChecksums);
+            String checksum = TreeHashGenerator.calculateTreeHash(binaryChecksums);
 
-	        String archiveSize = Long.toString(file.length());
-	        CompleteMultipartUploadResult completeMultipartUploadResult =
-	            glacier.completeMultipartUpload(new CompleteMultipartUploadRequest()
-	                .withAccountId(accountId)
-	                .withArchiveSize(archiveSize)
-	                .withVaultName(vaultName)
-	                .withChecksum(checksum)
-	                .withUploadId(uploadId));
+            String archiveSize = Long.toString(file.length());
+            CompleteMultipartUploadResult completeMultipartUploadResult =
+                glacier.completeMultipartUpload(new CompleteMultipartUploadRequest()
+                    .withAccountId(accountId)
+                    .withArchiveSize(archiveSize)
+                    .withVaultName(vaultName)
+                    .withChecksum(checksum)
+                    .withUploadId(uploadId));
 
-	        String artifactId = completeMultipartUploadResult.getArchiveId();
-	        return new UploadResult(artifactId);
-		} catch (Exception e) {
-			glacier.abortMultipartUpload(new AbortMultipartUploadRequest(accountId, vaultName, uploadId));
-			throw new AmazonClientException("Unable to finish the upload", e);
-		}
+            String artifactId = completeMultipartUploadResult.getArchiveId();
+            return new UploadResult(artifactId);
+        } catch (Exception e) {
+            glacier.abortMultipartUpload(new AbortMultipartUploadRequest(accountId, vaultName, uploadId));
+            throw new AmazonClientException("Unable to finish the upload", e);
+        }
     }
 
 

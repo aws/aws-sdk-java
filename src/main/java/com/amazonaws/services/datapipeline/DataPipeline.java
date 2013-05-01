@@ -43,12 +43,9 @@ import com.amazonaws.services.datapipeline.model.*;
  * (Amazon EMR). You can use AWS Data Pipeline Task Runner as your task runner, or you can write your own task runner to provide custom data management.
  * </p>
  * <p>
- * The AWS Data Pipeline API uses the Signature Version 4 protocol for signing requests. For information about how to sign a request with this protocol,
- * go to <a href="http://docs.amazonwebservices.com/general/latest/gr/signature-version-4.html"> Signature Version 4 Signing Process </a> . In the code
- * examples in this reference, the Signature Version 4 Request parameters are represented as AuthParams.
- * </p>
- * <p>
- * <i>Note: This is pre-release documentation and subject to change.</i>
+ * The AWS Data Pipeline API uses the Signature Version 4 protocol for signing requests. For more information about how to sign a request with this
+ * protocol, see <a href="http://docs.amazonwebservices.com/general/latest/gr/signature-version-4.html"> Signature Version 4 Signing Process </a> . In
+ * the code examples in this reference, the Signature Version 4 Request parameters are represented as AuthParams.
  * </p>
  */
 public interface DataPipeline {
@@ -81,7 +78,7 @@ public interface DataPipeline {
      * @throws IllegalArgumentException
      *             If any problems are detected with the specified endpoint.
      */
-    public void setEndpoint(String endpoint) throws java.lang.IllegalArgumentException;    
+    public void setEndpoint(String endpoint) throws java.lang.IllegalArgumentException;
 
     /**
      * An alternative to {@link DataPipeline#setEndpoint(String)}, sets the
@@ -96,7 +93,7 @@ public interface DataPipeline {
      * client is created and before any service requests are made. Changing it
      * afterwards creates inevitable race conditions for any service requests in
      * transit or retrying.</b>
-     * 
+     *
      * @param region
      *            The region this client will communicate with. See
      *            {@link Region#getRegion(com.amazonaws.regions.Regions)} for
@@ -108,7 +105,7 @@ public interface DataPipeline {
      * @see Region#getRegion(com.amazonaws.regions.Regions)
      * @see Region#createClient(Class, com.amazonaws.auth.AWSCredentialsProvider, ClientConfiguration)
      */
-    public void setRegion(Region region) throws java.lang.IllegalArgumentException;    
+    public void setRegion(Region region) throws java.lang.IllegalArgumentException;
 	
     /**
      * <p>
@@ -259,8 +256,8 @@ public interface DataPipeline {
      * during which time the first newly scheduled task is handed to the task
      * runner. To accomodate this, set the socket timeout in your task runner
      * to 90 seconds. The task runner should not call PollForTask again on
-     * the same workerGroup until it receives a response, and this may take
-     * up to 90 seconds.
+     * the same <code>workerGroup</code> until it receives a response, and
+     * this may take up to 90 seconds.
      * </p>
      *
      * @param pollForTaskRequest Container for the necessary parameters to
@@ -290,7 +287,7 @@ public interface DataPipeline {
      * of conditions.
      * </p>
      * <p>
-     * The objects returned by QueryResults are paginated and then filtered
+     * The objects returned by QueryObjects are paginated and then filtered
      * by the value you set for query. This means the action may return an
      * empty result set with a value set for marker. If
      * <code>HasMoreResults</code> is set to <code>True</code> , you should
@@ -565,11 +562,11 @@ public interface DataPipeline {
 
     /**
      * <p>
-     * Task runners call ReportTaskRunnerHeartbeat to indicate that they are
-     * operational. In the case of AWS Data Pipeline Task Runner launched on
-     * a resource managed by AWS Data Pipeline, the web service can use this
-     * call to detect when the task runner application has failed and restart
-     * a new instance.
+     * Task runners call ReportTaskRunnerHeartbeat every 15 minutes to
+     * indicate that they are operational. In the case of AWS Data Pipeline
+     * Task Runner launched on a resource managed by AWS Data Pipeline, the
+     * web service can use this call to detect when the task runner
+     * application has failed and restart a new instance.
      * </p>
      *
      * @param reportTaskRunnerHeartbeatRequest Container for the necessary

@@ -91,8 +91,8 @@ public class SetTaskStatusRequestMarshaller implements Marshaller<Request<SetTas
             if (setTaskStatusRequest.getTaskStatus() != null) {
                 jsonWriter.key("taskStatus").value(setTaskStatusRequest.getTaskStatus());
             }
-            if (setTaskStatusRequest.getErrorCode() != null) {
-                jsonWriter.key("errorCode").value(setTaskStatusRequest.getErrorCode());
+            if (setTaskStatusRequest.getErrorId() != null) {
+                jsonWriter.key("errorId").value(setTaskStatusRequest.getErrorId());
             }
             if (setTaskStatusRequest.getErrorMessage() != null) {
                 jsonWriter.key("errorMessage").value(setTaskStatusRequest.getErrorMessage());

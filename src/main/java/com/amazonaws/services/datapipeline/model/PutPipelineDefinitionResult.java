@@ -24,24 +24,30 @@ public class PutPipelineDefinitionResult  implements Serializable  {
 
     /**
      * A list of the validation errors that are associated with the objects
-     * defined in pipelineObjects.
+     * defined in <code>pipelineObjects</code>.
      */
     private java.util.List<ValidationError> validationErrors;
+
+    /**
+     * A list of the validation warnings that are associated with the objects
+     * defined in <code>pipelineObjects</code>.
+     */
+    private java.util.List<ValidationWarning> validationWarnings;
 
     /**
      * If <code>True</code>, there were validation errors. If errored is
      * <code>True</code>, the pipeline definition is stored but cannot be
      * activated until you correct the pipeline and call
-     * PutPipelineDefinition to commit the corrected pipeline.
+     * <a>PutPipelineDefinition</a> to commit the corrected pipeline.
      */
     private Boolean errored;
 
     /**
      * A list of the validation errors that are associated with the objects
-     * defined in pipelineObjects.
+     * defined in <code>pipelineObjects</code>.
      *
      * @return A list of the validation errors that are associated with the objects
-     *         defined in pipelineObjects.
+     *         defined in <code>pipelineObjects</code>.
      */
     public java.util.List<ValidationError> getValidationErrors() {
         
@@ -53,10 +59,10 @@ public class PutPipelineDefinitionResult  implements Serializable  {
     
     /**
      * A list of the validation errors that are associated with the objects
-     * defined in pipelineObjects.
+     * defined in <code>pipelineObjects</code>.
      *
      * @param validationErrors A list of the validation errors that are associated with the objects
-     *         defined in pipelineObjects.
+     *         defined in <code>pipelineObjects</code>.
      */
     public void setValidationErrors(java.util.Collection<ValidationError> validationErrors) {
         if (validationErrors == null) {
@@ -71,12 +77,12 @@ public class PutPipelineDefinitionResult  implements Serializable  {
     
     /**
      * A list of the validation errors that are associated with the objects
-     * defined in pipelineObjects.
+     * defined in <code>pipelineObjects</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param validationErrors A list of the validation errors that are associated with the objects
-     *         defined in pipelineObjects.
+     *         defined in <code>pipelineObjects</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -91,12 +97,12 @@ public class PutPipelineDefinitionResult  implements Serializable  {
     
     /**
      * A list of the validation errors that are associated with the objects
-     * defined in pipelineObjects.
+     * defined in <code>pipelineObjects</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param validationErrors A list of the validation errors that are associated with the objects
-     *         defined in pipelineObjects.
+     *         defined in <code>pipelineObjects</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -114,15 +120,92 @@ public class PutPipelineDefinitionResult  implements Serializable  {
     }
     
     /**
+     * A list of the validation warnings that are associated with the objects
+     * defined in <code>pipelineObjects</code>.
+     *
+     * @return A list of the validation warnings that are associated with the objects
+     *         defined in <code>pipelineObjects</code>.
+     */
+    public java.util.List<ValidationWarning> getValidationWarnings() {
+        
+        if (validationWarnings == null) {
+            validationWarnings = new java.util.ArrayList<ValidationWarning>();
+        }
+        return validationWarnings;
+    }
+    
+    /**
+     * A list of the validation warnings that are associated with the objects
+     * defined in <code>pipelineObjects</code>.
+     *
+     * @param validationWarnings A list of the validation warnings that are associated with the objects
+     *         defined in <code>pipelineObjects</code>.
+     */
+    public void setValidationWarnings(java.util.Collection<ValidationWarning> validationWarnings) {
+        if (validationWarnings == null) {
+            this.validationWarnings = null;
+            return;
+        }
+
+        java.util.List<ValidationWarning> validationWarningsCopy = new java.util.ArrayList<ValidationWarning>(validationWarnings.size());
+        validationWarningsCopy.addAll(validationWarnings);
+        this.validationWarnings = validationWarningsCopy;
+    }
+    
+    /**
+     * A list of the validation warnings that are associated with the objects
+     * defined in <code>pipelineObjects</code>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param validationWarnings A list of the validation warnings that are associated with the objects
+     *         defined in <code>pipelineObjects</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public PutPipelineDefinitionResult withValidationWarnings(ValidationWarning... validationWarnings) {
+        if (getValidationWarnings() == null) setValidationWarnings(new java.util.ArrayList<ValidationWarning>(validationWarnings.length));
+        for (ValidationWarning value : validationWarnings) {
+            getValidationWarnings().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * A list of the validation warnings that are associated with the objects
+     * defined in <code>pipelineObjects</code>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param validationWarnings A list of the validation warnings that are associated with the objects
+     *         defined in <code>pipelineObjects</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public PutPipelineDefinitionResult withValidationWarnings(java.util.Collection<ValidationWarning> validationWarnings) {
+        if (validationWarnings == null) {
+            this.validationWarnings = null;
+        } else {
+            java.util.List<ValidationWarning> validationWarningsCopy = new java.util.ArrayList<ValidationWarning>(validationWarnings.size());
+            validationWarningsCopy.addAll(validationWarnings);
+            this.validationWarnings = validationWarningsCopy;
+        }
+
+        return this;
+    }
+    
+    /**
      * If <code>True</code>, there were validation errors. If errored is
      * <code>True</code>, the pipeline definition is stored but cannot be
      * activated until you correct the pipeline and call
-     * PutPipelineDefinition to commit the corrected pipeline.
+     * <a>PutPipelineDefinition</a> to commit the corrected pipeline.
      *
      * @return If <code>True</code>, there were validation errors. If errored is
      *         <code>True</code>, the pipeline definition is stored but cannot be
      *         activated until you correct the pipeline and call
-     *         PutPipelineDefinition to commit the corrected pipeline.
+     *         <a>PutPipelineDefinition</a> to commit the corrected pipeline.
      */
     public Boolean isErrored() {
         return errored;
@@ -132,12 +215,12 @@ public class PutPipelineDefinitionResult  implements Serializable  {
      * If <code>True</code>, there were validation errors. If errored is
      * <code>True</code>, the pipeline definition is stored but cannot be
      * activated until you correct the pipeline and call
-     * PutPipelineDefinition to commit the corrected pipeline.
+     * <a>PutPipelineDefinition</a> to commit the corrected pipeline.
      *
      * @param errored If <code>True</code>, there were validation errors. If errored is
      *         <code>True</code>, the pipeline definition is stored but cannot be
      *         activated until you correct the pipeline and call
-     *         PutPipelineDefinition to commit the corrected pipeline.
+     *         <a>PutPipelineDefinition</a> to commit the corrected pipeline.
      */
     public void setErrored(Boolean errored) {
         this.errored = errored;
@@ -147,14 +230,14 @@ public class PutPipelineDefinitionResult  implements Serializable  {
      * If <code>True</code>, there were validation errors. If errored is
      * <code>True</code>, the pipeline definition is stored but cannot be
      * activated until you correct the pipeline and call
-     * PutPipelineDefinition to commit the corrected pipeline.
+     * <a>PutPipelineDefinition</a> to commit the corrected pipeline.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param errored If <code>True</code>, there were validation errors. If errored is
      *         <code>True</code>, the pipeline definition is stored but cannot be
      *         activated until you correct the pipeline and call
-     *         PutPipelineDefinition to commit the corrected pipeline.
+     *         <a>PutPipelineDefinition</a> to commit the corrected pipeline.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -169,12 +252,12 @@ public class PutPipelineDefinitionResult  implements Serializable  {
      * If <code>True</code>, there were validation errors. If errored is
      * <code>True</code>, the pipeline definition is stored but cannot be
      * activated until you correct the pipeline and call
-     * PutPipelineDefinition to commit the corrected pipeline.
+     * <a>PutPipelineDefinition</a> to commit the corrected pipeline.
      *
      * @return If <code>True</code>, there were validation errors. If errored is
      *         <code>True</code>, the pipeline definition is stored but cannot be
      *         activated until you correct the pipeline and call
-     *         PutPipelineDefinition to commit the corrected pipeline.
+     *         <a>PutPipelineDefinition</a> to commit the corrected pipeline.
      */
     public Boolean getErrored() {
         return errored;
@@ -193,6 +276,7 @@ public class PutPipelineDefinitionResult  implements Serializable  {
         StringBuilder sb = new StringBuilder();
         sb.append("{");    	
         if (getValidationErrors() != null) sb.append("ValidationErrors: " + getValidationErrors() + ",");    	
+        if (getValidationWarnings() != null) sb.append("ValidationWarnings: " + getValidationWarnings() + ",");    	
         if (isErrored() != null) sb.append("Errored: " + isErrored() );
         sb.append("}");
         return sb.toString();
@@ -204,6 +288,7 @@ public class PutPipelineDefinitionResult  implements Serializable  {
         int hashCode = 1;
         
         hashCode = prime * hashCode + ((getValidationErrors() == null) ? 0 : getValidationErrors().hashCode()); 
+        hashCode = prime * hashCode + ((getValidationWarnings() == null) ? 0 : getValidationWarnings().hashCode()); 
         hashCode = prime * hashCode + ((isErrored() == null) ? 0 : isErrored().hashCode()); 
         return hashCode;
     }
@@ -218,6 +303,8 @@ public class PutPipelineDefinitionResult  implements Serializable  {
         
         if (other.getValidationErrors() == null ^ this.getValidationErrors() == null) return false;
         if (other.getValidationErrors() != null && other.getValidationErrors().equals(this.getValidationErrors()) == false) return false; 
+        if (other.getValidationWarnings() == null ^ this.getValidationWarnings() == null) return false;
+        if (other.getValidationWarnings() != null && other.getValidationWarnings().equals(this.getValidationWarnings()) == false) return false; 
         if (other.isErrored() == null ^ this.isErrored() == null) return false;
         if (other.isErrored() != null && other.isErrored().equals(this.isErrored()) == false) return false; 
         return true;

@@ -25,12 +25,9 @@
  * (Amazon EMR). You can use AWS Data Pipeline Task Runner as your task runner, or you can write your own task runner to provide custom data management.
  * </p>
  * <p>
- * The AWS Data Pipeline API uses the Signature Version 4 protocol for signing requests. For information about how to sign a request with this protocol,
- * go to <a href="http://docs.amazonwebservices.com/general/latest/gr/signature-version-4.html"> Signature Version 4 Signing Process </a> . In the code
- * examples in this reference, the Signature Version 4 Request parameters are represented as AuthParams.
- * </p>
- * <p>
- * <i>Note: This is pre-release documentation and subject to change.</i>
+ * The AWS Data Pipeline API uses the Signature Version 4 protocol for signing requests. For more information about how to sign a request with this
+ * protocol, see <a href="http://docs.amazonwebservices.com/general/latest/gr/signature-version-4.html"> Signature Version 4 Signing Process </a> . In
+ * the code examples in this reference, the Signature Version 4 Request parameters are represented as AuthParams.
  * </p>
  */
  package com.amazonaws.services.datapipeline;

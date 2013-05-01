@@ -38,6 +38,7 @@ public class TimeBasedAutoScalingConfigurationJsonUnmarshaller implements Unmars
         
         
         int originalDepth = context.getCurrentDepth();
+        String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
 
         JsonToken token = context.currentToken;
@@ -57,7 +58,9 @@ public class TimeBasedAutoScalingConfigurationJsonUnmarshaller implements Unmars
                     timeBasedAutoScalingConfiguration.setAutoScalingSchedule(WeeklyAutoScalingScheduleJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getCurrentDepth() <= originalDepth) break;
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
+                    if (context.getCurrentDepth() <= originalDepth) break;
+                }
             }
             
 

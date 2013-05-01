@@ -41,6 +41,9 @@ public class JsonUnmarshallerContext {
 
     private String currentField;
 
+    // The string has been deleted from stackString when doing update on the stack
+    private String lastParsedParentElement;
+
     private Map<String, String> metadata = new HashMap<String, String>();
     private List<MetadataExpression> metadataExpressions = new ArrayList<MetadataExpression>();
 
@@ -141,6 +144,18 @@ public class JsonUnmarshallerContext {
         if (expression.equals("."))
             return true;
         return stackString.endsWith(expression);
+    }
+
+    /**
+     * This will return the last token when doing split by "/" on the
+     * stackString
+     */
+    public String getCurrentParentElement() {
+        String[] tokens = stackString.split("/");
+        if (tokens.length == 0) {
+            return "";
+        }
+        return tokens[tokens.length - 1];
     }
 
     /**
@@ -248,6 +263,7 @@ public class JsonUnmarshallerContext {
     }
 
     private void updateContext() throws IOException {
+        lastParsedParentElement = null;
         if (currentToken == null) return;
 
         if (currentToken == START_OBJECT || currentToken == START_ARRAY) {
@@ -262,7 +278,7 @@ public class JsonUnmarshallerContext {
                 boolean curlyBracketsMatch = currentToken == END_OBJECT && stack.peek().equals(START_OBJECT.asString());
                 if (squareBracketsMatch || curlyBracketsMatch) {
                 stack.pop();
-                stack.pop();
+                lastParsedParentElement = stack.pop();
                 }
             }
             currentField = null;
@@ -277,6 +293,14 @@ public class JsonUnmarshallerContext {
     @Override
     public String toString() {
         return stackString;
+    }
+
+    /**
+     * This will return the deleted string in stackString when doing update on
+     * the stack
+     */
+    public String getLastParsedParentElement() {
+        return lastParsedParentElement;
     }
 
     private void rebuildStackString() {

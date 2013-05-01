@@ -255,6 +255,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
         signer = new AWS4Signer();
         
+        signer.setServiceName("rds");
+        
 
         HandlerChainFactory chainFactory = new HandlerChainFactory();
 		requestHandlers.addAll(chainFactory.newRequestHandlerChain(

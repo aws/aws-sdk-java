@@ -38,6 +38,7 @@ public class TaskObjectJsonUnmarshaller implements Unmarshaller<TaskObject, Json
         
         
         int originalDepth = context.getCurrentDepth();
+        String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
 
         JsonToken token = context.currentToken;
@@ -64,7 +65,9 @@ public class TaskObjectJsonUnmarshaller implements Unmarshaller<TaskObject, Json
                     taskObject.setObjects(new MapUnmarshaller<String,PipelineObject>(StringJsonUnmarshaller.getInstance(), PipelineObjectJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getCurrentDepth() <= originalDepth) break;
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
+                    if (context.getCurrentDepth() <= originalDepth) break;
+                }
             }
             
 

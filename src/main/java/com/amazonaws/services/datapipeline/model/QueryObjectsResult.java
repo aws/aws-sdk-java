@@ -30,7 +30,7 @@ public class QueryObjectsResult  implements Serializable  {
     /**
      * The starting point for the results to be returned. As long as the
      * action returns <code>HasMoreResults</code> as <code>True</code>, you
-     * can call QueryObjects again and pass the marker value from the
+     * can call <a>QueryObjects</a> again and pass the marker value from the
      * response to retrieve the next set of results.
      * <p>
      * <b>Constraints:</b><br/>
@@ -41,7 +41,7 @@ public class QueryObjectsResult  implements Serializable  {
 
     /**
      * If <code>True</code>, there are more results that can be obtained by a
-     * subsequent call to QueryObjects.
+     * subsequent call to <a>QueryObjects</a>.
      */
     private Boolean hasMoreResults;
 
@@ -117,7 +117,7 @@ public class QueryObjectsResult  implements Serializable  {
     /**
      * The starting point for the results to be returned. As long as the
      * action returns <code>HasMoreResults</code> as <code>True</code>, you
-     * can call QueryObjects again and pass the marker value from the
+     * can call <a>QueryObjects</a> again and pass the marker value from the
      * response to retrieve the next set of results.
      * <p>
      * <b>Constraints:</b><br/>
@@ -126,7 +126,7 @@ public class QueryObjectsResult  implements Serializable  {
      *
      * @return The starting point for the results to be returned. As long as the
      *         action returns <code>HasMoreResults</code> as <code>True</code>, you
-     *         can call QueryObjects again and pass the marker value from the
+     *         can call <a>QueryObjects</a> again and pass the marker value from the
      *         response to retrieve the next set of results.
      */
     public String getMarker() {
@@ -136,7 +136,7 @@ public class QueryObjectsResult  implements Serializable  {
     /**
      * The starting point for the results to be returned. As long as the
      * action returns <code>HasMoreResults</code> as <code>True</code>, you
-     * can call QueryObjects again and pass the marker value from the
+     * can call <a>QueryObjects</a> again and pass the marker value from the
      * response to retrieve the next set of results.
      * <p>
      * <b>Constraints:</b><br/>
@@ -145,7 +145,7 @@ public class QueryObjectsResult  implements Serializable  {
      *
      * @param marker The starting point for the results to be returned. As long as the
      *         action returns <code>HasMoreResults</code> as <code>True</code>, you
-     *         can call QueryObjects again and pass the marker value from the
+     *         can call <a>QueryObjects</a> again and pass the marker value from the
      *         response to retrieve the next set of results.
      */
     public void setMarker(String marker) {
@@ -155,7 +155,7 @@ public class QueryObjectsResult  implements Serializable  {
     /**
      * The starting point for the results to be returned. As long as the
      * action returns <code>HasMoreResults</code> as <code>True</code>, you
-     * can call QueryObjects again and pass the marker value from the
+     * can call <a>QueryObjects</a> again and pass the marker value from the
      * response to retrieve the next set of results.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -166,7 +166,7 @@ public class QueryObjectsResult  implements Serializable  {
      *
      * @param marker The starting point for the results to be returned. As long as the
      *         action returns <code>HasMoreResults</code> as <code>True</code>, you
-     *         can call QueryObjects again and pass the marker value from the
+     *         can call <a>QueryObjects</a> again and pass the marker value from the
      *         response to retrieve the next set of results.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -180,10 +180,10 @@ public class QueryObjectsResult  implements Serializable  {
     
     /**
      * If <code>True</code>, there are more results that can be obtained by a
-     * subsequent call to QueryObjects.
+     * subsequent call to <a>QueryObjects</a>.
      *
      * @return If <code>True</code>, there are more results that can be obtained by a
-     *         subsequent call to QueryObjects.
+     *         subsequent call to <a>QueryObjects</a>.
      */
     public Boolean isHasMoreResults() {
         return hasMoreResults;
@@ -191,10 +191,10 @@ public class QueryObjectsResult  implements Serializable  {
     
     /**
      * If <code>True</code>, there are more results that can be obtained by a
-     * subsequent call to QueryObjects.
+     * subsequent call to <a>QueryObjects</a>.
      *
      * @param hasMoreResults If <code>True</code>, there are more results that can be obtained by a
-     *         subsequent call to QueryObjects.
+     *         subsequent call to <a>QueryObjects</a>.
      */
     public void setHasMoreResults(Boolean hasMoreResults) {
         this.hasMoreResults = hasMoreResults;
@@ -202,12 +202,12 @@ public class QueryObjectsResult  implements Serializable  {
     
     /**
      * If <code>True</code>, there are more results that can be obtained by a
-     * subsequent call to QueryObjects.
+     * subsequent call to <a>QueryObjects</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param hasMoreResults If <code>True</code>, there are more results that can be obtained by a
-     *         subsequent call to QueryObjects.
+     *         subsequent call to <a>QueryObjects</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -220,10 +220,10 @@ public class QueryObjectsResult  implements Serializable  {
     
     /**
      * If <code>True</code>, there are more results that can be obtained by a
-     * subsequent call to QueryObjects.
+     * subsequent call to <a>QueryObjects</a>.
      *
      * @return If <code>True</code>, there are more results that can be obtained by a
-     *         subsequent call to QueryObjects.
+     *         subsequent call to <a>QueryObjects</a>.
      */
     public Boolean getHasMoreResults() {
         return hasMoreResults;

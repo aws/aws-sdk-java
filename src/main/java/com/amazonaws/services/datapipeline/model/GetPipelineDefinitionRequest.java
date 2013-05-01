@@ -37,7 +37,11 @@ public class GetPipelineDefinitionRequest extends AmazonWebServiceRequest  imple
     private String pipelineId;
 
     /**
-     * The version of the pipeline definition to retrieve.
+     * The version of the pipeline definition to retrieve. This parameter
+     * accepts the values <code>latest</code> (default) and
+     * <code>active</code>. Where <code>latest</code> indicates the last
+     * definition saved to the pipeline and <code>active</code> indicates the
+     * last definition of the pipeline that was activated.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 1024<br/>
@@ -92,33 +96,53 @@ public class GetPipelineDefinitionRequest extends AmazonWebServiceRequest  imple
     
     
     /**
-     * The version of the pipeline definition to retrieve.
+     * The version of the pipeline definition to retrieve. This parameter
+     * accepts the values <code>latest</code> (default) and
+     * <code>active</code>. Where <code>latest</code> indicates the last
+     * definition saved to the pipeline and <code>active</code> indicates the
+     * last definition of the pipeline that was activated.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 1024<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @return The version of the pipeline definition to retrieve.
+     * @return The version of the pipeline definition to retrieve. This parameter
+     *         accepts the values <code>latest</code> (default) and
+     *         <code>active</code>. Where <code>latest</code> indicates the last
+     *         definition saved to the pipeline and <code>active</code> indicates the
+     *         last definition of the pipeline that was activated.
      */
     public String getVersion() {
         return version;
     }
     
     /**
-     * The version of the pipeline definition to retrieve.
+     * The version of the pipeline definition to retrieve. This parameter
+     * accepts the values <code>latest</code> (default) and
+     * <code>active</code>. Where <code>latest</code> indicates the last
+     * definition saved to the pipeline and <code>active</code> indicates the
+     * last definition of the pipeline that was activated.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 1024<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param version The version of the pipeline definition to retrieve.
+     * @param version The version of the pipeline definition to retrieve. This parameter
+     *         accepts the values <code>latest</code> (default) and
+     *         <code>active</code>. Where <code>latest</code> indicates the last
+     *         definition saved to the pipeline and <code>active</code> indicates the
+     *         last definition of the pipeline that was activated.
      */
     public void setVersion(String version) {
         this.version = version;
     }
     
     /**
-     * The version of the pipeline definition to retrieve.
+     * The version of the pipeline definition to retrieve. This parameter
+     * accepts the values <code>latest</code> (default) and
+     * <code>active</code>. Where <code>latest</code> indicates the last
+     * definition saved to the pipeline and <code>active</code> indicates the
+     * last definition of the pipeline that was activated.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -126,7 +150,11 @@ public class GetPipelineDefinitionRequest extends AmazonWebServiceRequest  imple
      * <b>Length: </b>0 - 1024<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
-     * @param version The version of the pipeline definition to retrieve.
+     * @param version The version of the pipeline definition to retrieve. This parameter
+     *         accepts the values <code>latest</code> (default) and
+     *         <code>active</code>. Where <code>latest</code> indicates the last
+     *         definition saved to the pipeline and <code>active</code> indicates the
+     *         last definition of the pipeline that was activated.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

@@ -26,9 +26,7 @@ public class DescribeVpcAttributeRequest extends AmazonWebServiceRequest  implem
 
     private String vpcId;
 
-    private String enableDnsSupport;
-
-    private String enableDnsHostnames;
+    private String attribute;
 
     /**
      * Returns the value of the VpcId property for this object.
@@ -65,72 +63,87 @@ public class DescribeVpcAttributeRequest extends AmazonWebServiceRequest  implem
     
     
     /**
-     * Returns the value of the EnableDnsSupport property for this object.
+     * Returns the value of the Attribute property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>enableDnsSupport, enableDnsHostnames
      *
-     * @return The value of the EnableDnsSupport property for this object.
+     * @return The value of the Attribute property for this object.
+     *
+     * @see VpcAttributeName
      */
-    public String getEnableDnsSupport() {
-        return enableDnsSupport;
+    public String getAttribute() {
+        return attribute;
     }
     
     /**
-     * Sets the value of the EnableDnsSupport property for this object.
+     * Sets the value of the Attribute property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>enableDnsSupport, enableDnsHostnames
      *
-     * @param enableDnsSupport The new value for the EnableDnsSupport property for this object.
+     * @param attribute The new value for the Attribute property for this object.
+     *
+     * @see VpcAttributeName
      */
-    public void setEnableDnsSupport(String enableDnsSupport) {
-        this.enableDnsSupport = enableDnsSupport;
+    public void setAttribute(String attribute) {
+        this.attribute = attribute;
     }
     
     /**
-     * Sets the value of the EnableDnsSupport property for this object.
+     * Sets the value of the Attribute property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>enableDnsSupport, enableDnsHostnames
      *
-     * @param enableDnsSupport The new value for the EnableDnsSupport property for this object.
+     * @param attribute The new value for the Attribute property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
+     *
+     * @see VpcAttributeName
      */
-    public DescribeVpcAttributeRequest withEnableDnsSupport(String enableDnsSupport) {
-        this.enableDnsSupport = enableDnsSupport;
+    public DescribeVpcAttributeRequest withAttribute(String attribute) {
+        this.attribute = attribute;
         return this;
     }
     
     
     /**
-     * Returns the value of the EnableDnsHostnames property for this object.
+     * Sets the value of the Attribute property for this object.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>enableDnsSupport, enableDnsHostnames
      *
-     * @return The value of the EnableDnsHostnames property for this object.
+     * @param attribute The new value for the Attribute property for this object.
+     *
+     * @see VpcAttributeName
      */
-    public String getEnableDnsHostnames() {
-        return enableDnsHostnames;
+    public void setAttribute(VpcAttributeName attribute) {
+        this.attribute = attribute.toString();
     }
     
     /**
-     * Sets the value of the EnableDnsHostnames property for this object.
-     *
-     * @param enableDnsHostnames The new value for the EnableDnsHostnames property for this object.
-     */
-    public void setEnableDnsHostnames(String enableDnsHostnames) {
-        this.enableDnsHostnames = enableDnsHostnames;
-    }
-    
-    /**
-     * Sets the value of the EnableDnsHostnames property for this object.
+     * Sets the value of the Attribute property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>enableDnsSupport, enableDnsHostnames
      *
-     * @param enableDnsHostnames The new value for the EnableDnsHostnames property for this object.
+     * @param attribute The new value for the Attribute property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
+     *
+     * @see VpcAttributeName
      */
-    public DescribeVpcAttributeRequest withEnableDnsHostnames(String enableDnsHostnames) {
-        this.enableDnsHostnames = enableDnsHostnames;
+    public DescribeVpcAttributeRequest withAttribute(VpcAttributeName attribute) {
+        this.attribute = attribute.toString();
         return this;
     }
-    
     
     /**
      * Returns a string representation of this object; useful for testing and
@@ -145,8 +158,7 @@ public class DescribeVpcAttributeRequest extends AmazonWebServiceRequest  implem
         StringBuilder sb = new StringBuilder();
         sb.append("{");    	
         if (getVpcId() != null) sb.append("VpcId: " + getVpcId() + ",");    	
-        if (getEnableDnsSupport() != null) sb.append("EnableDnsSupport: " + getEnableDnsSupport() + ",");    	
-        if (getEnableDnsHostnames() != null) sb.append("EnableDnsHostnames: " + getEnableDnsHostnames() );
+        if (getAttribute() != null) sb.append("Attribute: " + getAttribute() );
         sb.append("}");
         return sb.toString();
     }
@@ -157,8 +169,7 @@ public class DescribeVpcAttributeRequest extends AmazonWebServiceRequest  implem
         int hashCode = 1;
         
         hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode()); 
-        hashCode = prime * hashCode + ((getEnableDnsSupport() == null) ? 0 : getEnableDnsSupport().hashCode()); 
-        hashCode = prime * hashCode + ((getEnableDnsHostnames() == null) ? 0 : getEnableDnsHostnames().hashCode()); 
+        hashCode = prime * hashCode + ((getAttribute() == null) ? 0 : getAttribute().hashCode()); 
         return hashCode;
     }
     
@@ -172,10 +183,8 @@ public class DescribeVpcAttributeRequest extends AmazonWebServiceRequest  implem
         
         if (other.getVpcId() == null ^ this.getVpcId() == null) return false;
         if (other.getVpcId() != null && other.getVpcId().equals(this.getVpcId()) == false) return false; 
-        if (other.getEnableDnsSupport() == null ^ this.getEnableDnsSupport() == null) return false;
-        if (other.getEnableDnsSupport() != null && other.getEnableDnsSupport().equals(this.getEnableDnsSupport()) == false) return false; 
-        if (other.getEnableDnsHostnames() == null ^ this.getEnableDnsHostnames() == null) return false;
-        if (other.getEnableDnsHostnames() != null && other.getEnableDnsHostnames().equals(this.getEnableDnsHostnames()) == false) return false; 
+        if (other.getAttribute() == null ^ this.getAttribute() == null) return false;
+        if (other.getAttribute() != null && other.getAttribute().equals(this.getAttribute()) == false) return false; 
         return true;
     }
     

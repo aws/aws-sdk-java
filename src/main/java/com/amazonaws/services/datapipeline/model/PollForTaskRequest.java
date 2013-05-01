@@ -27,7 +27,7 @@ import java.io.Serializable;
  * If tasks are ready in the work queue, PollForTask returns a response immediately. If no tasks are available in the queue, PollForTask uses
  * long-polling and holds on to a poll connection for up to a 90 seconds during which time the first newly scheduled task is handed to the task runner.
  * To accomodate this, set the socket timeout in your task runner to 90 seconds. The task runner should not call PollForTask again on the same
- * workerGroup until it receives a response, and this may take up to 90 seconds.
+ * <code>workerGroup</code> until it receives a response, and this may take up to 90 seconds.
  * </p>
  *
  * @see com.amazonaws.services.datapipeline.DataPipeline#pollForTask(PollForTaskRequest)
@@ -38,9 +38,9 @@ public class PollForTaskRequest extends AmazonWebServiceRequest  implements Seri
      * Indicates the type of task the task runner is configured to accept and
      * process. The worker group is set as a field on objects in the pipeline
      * when they are created. You can only specify a single value for
-     * workerGroup in the call to PollForTask. There are no wildcard values
-     * permitted in workerGroup, the string must be an exact, case-sensitive,
-     * match.
+     * <code>workerGroup</code> in the call to <a>PollForTask</a>. There are
+     * no wildcard values permitted in <code>workerGroup</code>, the string
+     * must be an exact, case-sensitive, match.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 1024<br/>
@@ -74,9 +74,9 @@ public class PollForTaskRequest extends AmazonWebServiceRequest  implements Seri
      * Indicates the type of task the task runner is configured to accept and
      * process. The worker group is set as a field on objects in the pipeline
      * when they are created. You can only specify a single value for
-     * workerGroup in the call to PollForTask. There are no wildcard values
-     * permitted in workerGroup, the string must be an exact, case-sensitive,
-     * match.
+     * <code>workerGroup</code> in the call to <a>PollForTask</a>. There are
+     * no wildcard values permitted in <code>workerGroup</code>, the string
+     * must be an exact, case-sensitive, match.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 1024<br/>
@@ -85,9 +85,9 @@ public class PollForTaskRequest extends AmazonWebServiceRequest  implements Seri
      * @return Indicates the type of task the task runner is configured to accept and
      *         process. The worker group is set as a field on objects in the pipeline
      *         when they are created. You can only specify a single value for
-     *         workerGroup in the call to PollForTask. There are no wildcard values
-     *         permitted in workerGroup, the string must be an exact, case-sensitive,
-     *         match.
+     *         <code>workerGroup</code> in the call to <a>PollForTask</a>. There are
+     *         no wildcard values permitted in <code>workerGroup</code>, the string
+     *         must be an exact, case-sensitive, match.
      */
     public String getWorkerGroup() {
         return workerGroup;
@@ -97,9 +97,9 @@ public class PollForTaskRequest extends AmazonWebServiceRequest  implements Seri
      * Indicates the type of task the task runner is configured to accept and
      * process. The worker group is set as a field on objects in the pipeline
      * when they are created. You can only specify a single value for
-     * workerGroup in the call to PollForTask. There are no wildcard values
-     * permitted in workerGroup, the string must be an exact, case-sensitive,
-     * match.
+     * <code>workerGroup</code> in the call to <a>PollForTask</a>. There are
+     * no wildcard values permitted in <code>workerGroup</code>, the string
+     * must be an exact, case-sensitive, match.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 1024<br/>
@@ -108,9 +108,9 @@ public class PollForTaskRequest extends AmazonWebServiceRequest  implements Seri
      * @param workerGroup Indicates the type of task the task runner is configured to accept and
      *         process. The worker group is set as a field on objects in the pipeline
      *         when they are created. You can only specify a single value for
-     *         workerGroup in the call to PollForTask. There are no wildcard values
-     *         permitted in workerGroup, the string must be an exact, case-sensitive,
-     *         match.
+     *         <code>workerGroup</code> in the call to <a>PollForTask</a>. There are
+     *         no wildcard values permitted in <code>workerGroup</code>, the string
+     *         must be an exact, case-sensitive, match.
      */
     public void setWorkerGroup(String workerGroup) {
         this.workerGroup = workerGroup;
@@ -120,9 +120,9 @@ public class PollForTaskRequest extends AmazonWebServiceRequest  implements Seri
      * Indicates the type of task the task runner is configured to accept and
      * process. The worker group is set as a field on objects in the pipeline
      * when they are created. You can only specify a single value for
-     * workerGroup in the call to PollForTask. There are no wildcard values
-     * permitted in workerGroup, the string must be an exact, case-sensitive,
-     * match.
+     * <code>workerGroup</code> in the call to <a>PollForTask</a>. There are
+     * no wildcard values permitted in <code>workerGroup</code>, the string
+     * must be an exact, case-sensitive, match.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -133,9 +133,9 @@ public class PollForTaskRequest extends AmazonWebServiceRequest  implements Seri
      * @param workerGroup Indicates the type of task the task runner is configured to accept and
      *         process. The worker group is set as a field on objects in the pipeline
      *         when they are created. You can only specify a single value for
-     *         workerGroup in the call to PollForTask. There are no wildcard values
-     *         permitted in workerGroup, the string must be an exact, case-sensitive,
-     *         match.
+     *         <code>workerGroup</code> in the call to <a>PollForTask</a>. There are
+     *         no wildcard values permitted in <code>workerGroup</code>, the string
+     *         must be an exact, case-sensitive, match.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

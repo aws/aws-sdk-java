@@ -4,9 +4,9 @@
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
  * A copy of the License is located at
- * 
+ *
  *  http://aws.amazon.com/apache2.0
- * 
+ *
  * or in the "license" file accompanying this file. This file is distributed
  * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
  * express or implied. See the License for the specific language governing
@@ -25,7 +25,7 @@ import com.amazonaws.services.s3.internal.ServerSideEncryptionResult;
  * operation.
  * Use this request to access information about the new object created from the
  * <code>putObject</code> request, such as its ETag and optional version ID.
- * 
+ *
  * @see AmazonS3#putObject(String, String, java.io.File)
  * @see AmazonS3#putObject(String, String, java.io.InputStream, S3ObjectMetadata)
  * @see AmazonS3#putObject(PutObjectRequest)
@@ -41,13 +41,13 @@ public class PutObjectResult implements ServerSideEncryptionResult, ObjectExpira
 
     /** The ETag value of the new object */
     private String eTag;
-    
+
     /** The server side encryption algorithm of the new object */
     private String serverSideEncryption;
-    
+
     /** The time this object expires, or null if it has no expiration */
     private Date expirationTime;
-    
+
     /** The expiration rule for this object */
     private String expirationTimeRuleId;
 
@@ -55,26 +55,26 @@ public class PutObjectResult implements ServerSideEncryptionResult, ObjectExpira
     private String contentMd5;
 
     /**
-     * Gets the optional version ID of the newly uploaded object. This field will 
+     * Gets the optional version ID of the newly uploaded object. This field will
      * be set only if object versioning is enabled for the bucket the
      * object was uploaded to.
-     * 
+     *
      * @return The optional version ID of the newly uploaded object.
-     * 
+     *
      * @see PutObjectResult#setVersionId(String)
      */
     public String getVersionId() {
         return versionId;
     }
 
-    
+
     /**
      * Sets the optional version ID of the newly uploaded object.
-     * 
+     *
      * @param versionId
      *            The optional version ID of the newly uploaded object.
-     *            
-     * @see PutObjectResult#getVersionId()        
+     *
+     * @see PutObjectResult#getVersionId()
      */
     public void setVersionId(String versionId) {
         this.versionId = versionId;
@@ -82,9 +82,9 @@ public class PutObjectResult implements ServerSideEncryptionResult, ObjectExpira
 
     /**
      * Gets the ETag value for the newly created object.
-     * 
+     *
      * @return The ETag value for the new object.
-     * 
+     *
      * @see PutObjectResult#setETag(String)
      */
     public String getETag() {
@@ -94,11 +94,11 @@ public class PutObjectResult implements ServerSideEncryptionResult, ObjectExpira
     /**
      * Sets the ETag value for the new object that was created from the
      * associated <code>putObject</code> request.
-     * 
+     *
      * @param eTag
      *            The ETag value for the new object.
-     *            
-     * @see PutObjectResult#getETag()           
+     *
+     * @see PutObjectResult#getETag()
      */
     public void setETag(String eTag) {
         this.eTag = eTag;
@@ -114,7 +114,7 @@ public class PutObjectResult implements ServerSideEncryptionResult, ObjectExpira
 
     /**
      * Sets the server-side encryption algorithm for the newly created object.
-     * 
+     *
      * @param serverSideEncryption
      *            The server-side encryption algorithm for the new object.
      */
@@ -131,7 +131,7 @@ public class PutObjectResult implements ServerSideEncryptionResult, ObjectExpira
 
     /**
      * Sets the expiration time for the object.
-     * 
+     *
      * @param expirationTime
      *            The expiration time for the object.
      */
@@ -150,7 +150,7 @@ public class PutObjectResult implements ServerSideEncryptionResult, ObjectExpira
     /**
      * Sets the {@link BucketLifecycleConfiguration} rule ID for this object's
      * expiration
-     * 
+     *
      * @param expirationTimeRuleId
      *            The rule ID for this object's expiration
      */
@@ -160,18 +160,18 @@ public class PutObjectResult implements ServerSideEncryptionResult, ObjectExpira
 
     /**
      * Sets the content MD5.
-     * 
+     *
      * @param contentMd5
      *            The content MD5
      */
     public void setContentMd5(String contentMd5) {
-    	this.contentMd5 = contentMd5;
+        this.contentMd5 = contentMd5;
     }
 
     /**
      * Returns the content MD5.
      */
     public String getContentMd5() {
-    	return contentMd5;
+        return contentMd5;
     }
 }

@@ -38,6 +38,7 @@ public class ChapInfoJsonUnmarshaller implements Unmarshaller<ChapInfo, JsonUnma
         
         
         int originalDepth = context.getCurrentDepth();
+        String currentParentElement = context.getCurrentParentElement();
         int targetDepth = originalDepth + 1;
 
         JsonToken token = context.currentToken;
@@ -65,7 +66,9 @@ public class ChapInfoJsonUnmarshaller implements Unmarshaller<ChapInfo, JsonUnma
                     chapInfo.setSecretToAuthenticateTarget(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
-                if (context.getCurrentDepth() <= originalDepth) break;
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
+                    if (context.getCurrentDepth() <= originalDepth) break;
+                }
             }
             
 

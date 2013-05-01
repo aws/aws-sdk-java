@@ -32,8 +32,8 @@ public class ListPipelinesResult  implements Serializable  {
 
     /**
      * If not null, indicates the starting point for the set of pipeline
-     * identifiers that the next call to ListPipelines will retrieve. If
-     * null, there are no more pipeline identifiers. .
+     * identifiers that the next call to <a>ListPipelines</a> will retrieve.
+     * If null, there are no more pipeline identifiers.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 1024<br/>
@@ -43,7 +43,7 @@ public class ListPipelinesResult  implements Serializable  {
 
     /**
      * If <code>True</code>, there are more results that can be obtained by a
-     * subsequent call to ListPipelines.
+     * subsequent call to <a>ListPipelines</a>.
      */
     private Boolean hasMoreResults;
 
@@ -142,16 +142,16 @@ public class ListPipelinesResult  implements Serializable  {
     
     /**
      * If not null, indicates the starting point for the set of pipeline
-     * identifiers that the next call to ListPipelines will retrieve. If
-     * null, there are no more pipeline identifiers. .
+     * identifiers that the next call to <a>ListPipelines</a> will retrieve.
+     * If null, there are no more pipeline identifiers.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 1024<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @return If not null, indicates the starting point for the set of pipeline
-     *         identifiers that the next call to ListPipelines will retrieve. If
-     *         null, there are no more pipeline identifiers. .
+     *         identifiers that the next call to <a>ListPipelines</a> will retrieve.
+     *         If null, there are no more pipeline identifiers.
      */
     public String getMarker() {
         return marker;
@@ -159,16 +159,16 @@ public class ListPipelinesResult  implements Serializable  {
     
     /**
      * If not null, indicates the starting point for the set of pipeline
-     * identifiers that the next call to ListPipelines will retrieve. If
-     * null, there are no more pipeline identifiers. .
+     * identifiers that the next call to <a>ListPipelines</a> will retrieve.
+     * If null, there are no more pipeline identifiers.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 1024<br/>
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param marker If not null, indicates the starting point for the set of pipeline
-     *         identifiers that the next call to ListPipelines will retrieve. If
-     *         null, there are no more pipeline identifiers. .
+     *         identifiers that the next call to <a>ListPipelines</a> will retrieve.
+     *         If null, there are no more pipeline identifiers.
      */
     public void setMarker(String marker) {
         this.marker = marker;
@@ -176,8 +176,8 @@ public class ListPipelinesResult  implements Serializable  {
     
     /**
      * If not null, indicates the starting point for the set of pipeline
-     * identifiers that the next call to ListPipelines will retrieve. If
-     * null, there are no more pipeline identifiers. .
+     * identifiers that the next call to <a>ListPipelines</a> will retrieve.
+     * If null, there are no more pipeline identifiers.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -186,8 +186,8 @@ public class ListPipelinesResult  implements Serializable  {
      * <b>Pattern: </b>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDC00-\uDBFF\uDFFF\r\n\t]*<br/>
      *
      * @param marker If not null, indicates the starting point for the set of pipeline
-     *         identifiers that the next call to ListPipelines will retrieve. If
-     *         null, there are no more pipeline identifiers. .
+     *         identifiers that the next call to <a>ListPipelines</a> will retrieve.
+     *         If null, there are no more pipeline identifiers.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -200,10 +200,10 @@ public class ListPipelinesResult  implements Serializable  {
     
     /**
      * If <code>True</code>, there are more results that can be obtained by a
-     * subsequent call to ListPipelines.
+     * subsequent call to <a>ListPipelines</a>.
      *
      * @return If <code>True</code>, there are more results that can be obtained by a
-     *         subsequent call to ListPipelines.
+     *         subsequent call to <a>ListPipelines</a>.
      */
     public Boolean isHasMoreResults() {
         return hasMoreResults;
@@ -211,10 +211,10 @@ public class ListPipelinesResult  implements Serializable  {
     
     /**
      * If <code>True</code>, there are more results that can be obtained by a
-     * subsequent call to ListPipelines.
+     * subsequent call to <a>ListPipelines</a>.
      *
      * @param hasMoreResults If <code>True</code>, there are more results that can be obtained by a
-     *         subsequent call to ListPipelines.
+     *         subsequent call to <a>ListPipelines</a>.
      */
     public void setHasMoreResults(Boolean hasMoreResults) {
         this.hasMoreResults = hasMoreResults;
@@ -222,12 +222,12 @@ public class ListPipelinesResult  implements Serializable  {
     
     /**
      * If <code>True</code>, there are more results that can be obtained by a
-     * subsequent call to ListPipelines.
+     * subsequent call to <a>ListPipelines</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param hasMoreResults If <code>True</code>, there are more results that can be obtained by a
-     *         subsequent call to ListPipelines.
+     *         subsequent call to <a>ListPipelines</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -240,10 +240,10 @@ public class ListPipelinesResult  implements Serializable  {
     
     /**
      * If <code>True</code>, there are more results that can be obtained by a
-     * subsequent call to ListPipelines.
+     * subsequent call to <a>ListPipelines</a>.
      *
      * @return If <code>True</code>, there are more results that can be obtained by a
-     *         subsequent call to ListPipelines.
+     *         subsequent call to <a>ListPipelines</a>.
      */
     public Boolean getHasMoreResults() {
         return hasMoreResults;

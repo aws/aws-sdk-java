@@ -4881,21 +4881,6 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
     }
     
     /**
-     * 
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonEC2 indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public void modifyVpcAttribute() throws AmazonServiceException, AmazonClientException {
-        modifyVpcAttribute(new ModifyVpcAttributeRequest());
-    }
-    
-    /**
      * <p>
      * Describes the Spot Price history.
      * </p>
