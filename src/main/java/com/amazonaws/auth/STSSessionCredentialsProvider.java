@@ -105,6 +105,33 @@ public class STSSessionCredentialsProvider implements AWSCredentialsProvider {
         securityTokenService = new AWSSecurityTokenServiceClient(longLivedCredentialsProvider, clientConfiguration);
     }
 
+    /**
+     * Overrides the default endpoint for this provider ("https://sts.amazonaws.com").
+     * Callers can use this method to control which AWS region they want to work with.
+     * <p>
+     * Callers can pass in just the endpoint (ex: "sts.amazonaws.com") or a full
+     * URL, including the protocol (ex: "https://sts.amazonaws.com"). If the
+     * protocol is not specified here, the default protocol from this provider's
+     * {@link ClientConfiguration} will be used, which by default is HTTPS.
+     * <p>
+     * For more information on using AWS regions with the AWS SDK for Java, and
+     * a complete list of all available endpoints for all AWS services, see:
+     * <a href="http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912">
+     * http://developer.amazonwebservices.com/connect/entry.jspa?externalID=3912</a>
+     *
+     * @param endpoint
+     *            The endpoint (ex: "sts.amazonaws.com") or a full URL,
+     *            including the protocol (ex: "https://sts.amazonaws.com") of
+     *            the region specific AWS endpoint this provider will 
+     *            communicate with.
+     *
+     * @throws IllegalArgumentException
+     *             If any problems are detected with the specified endpoint.
+     */
+    public void setEndpoint(String endpoint) {
+        securityTokenService.setEndpoint(endpoint);
+    }
+  
     @Override
     public AWSCredentials getCredentials() {
         if (needsNewSession()) startSession();
