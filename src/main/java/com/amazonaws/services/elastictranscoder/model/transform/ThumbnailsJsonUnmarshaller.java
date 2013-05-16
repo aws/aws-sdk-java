@@ -65,6 +65,22 @@ public class ThumbnailsJsonUnmarshaller implements Unmarshaller<Thumbnails, Json
                     context.nextToken();
                     thumbnails.setAspectRatio(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("MaxWidth", targetDepth)) {
+                    context.nextToken();
+                    thumbnails.setMaxWidth(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("MaxHeight", targetDepth)) {
+                    context.nextToken();
+                    thumbnails.setMaxHeight(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("SizingPolicy", targetDepth)) {
+                    context.nextToken();
+                    thumbnails.setSizingPolicy(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("PaddingPolicy", targetDepth)) {
+                    context.nextToken();
+                    thumbnails.setPaddingPolicy(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth) break;

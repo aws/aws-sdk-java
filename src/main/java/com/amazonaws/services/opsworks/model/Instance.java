@@ -53,10 +53,13 @@ public class Instance  implements Serializable  {
     private java.util.List<String> securityGroupIds;
 
     /**
-     * The instance type, which can be one of the following: <ul>
-     * <li>m1.small</li> <li>m1.medium</li> <li>m1.large</li>
-     * <li>m1.xlarge</li> <li>c1.medium</li> <li>c1.xlarge</li>
-     * <li>m2.xlarge</li> <li>m2.2xlarge</li> <li>m2.4xlarge</li> </ul>
+     * The instance type. OpsWorks supports all instance types except Cluster
+     * Compute, Cluster GPU, and High Memory Cluster. For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+     * Families and Types</a>. The parameter values that specify the various
+     * types are in the API Name column of the Available Instance Types
+     * table.
      */
     private String instanceType;
 
@@ -110,14 +113,14 @@ public class Instance  implements Serializable  {
 
     /**
      * The instance <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"></a>Elastic
-     * IP address.
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+     * IP address </a>.
      */
     private String elasticIp;
 
     /**
      * The instance's auto scaling type, which has three possible values:
-     * <ul> <li><b>AlwaysRunning</b>: A 24x7 instance, which is not affected
+     * <ul> <li><b>AlwaysRunning</b>: A 24/7 instance, which is not affected
      * by auto scaling.</li> <li><b>TimeBasedAutoScaling</b>: A time-based
      * auto scaling instance, which is started and stopped based on a
      * specified schedule.</li> <li><b>LoadBasedAutoScaling</b>: A load-based
@@ -125,7 +128,7 @@ public class Instance  implements Serializable  {
      * metrics.</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>AlwaysRunning, TimeBasedAutoScaling, LoadBasedAutoScaling
+     * <b>Allowed Values: </b>load, timer
      */
     private String autoScalingType;
 
@@ -150,10 +153,33 @@ public class Instance  implements Serializable  {
     private String createdAt;
 
     /**
-     * The ID of the last service error. Call <a>DescribeServiceErrors</a>
-     * for details.
+     * The ID of the last service error. For more information, call
+     * <a>DescribeServiceErrors</a>.
      */
     private String lastServiceErrorId;
+
+    /**
+     * The instance architecture, "i386" or "x86_64".
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>x86_64, i386
+     */
+    private String architecture;
+
+    /**
+     * The instance root device type. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
+     * for the Root Device</a>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>ebs, instance-store
+     */
+    private String rootDeviceType;
+
+    /**
+     * The root device volume ID.
+     */
+    private String rootDeviceVolumeId;
 
     /**
      * The instance ID.
@@ -430,47 +456,65 @@ public class Instance  implements Serializable  {
     }
     
     /**
-     * The instance type, which can be one of the following: <ul>
-     * <li>m1.small</li> <li>m1.medium</li> <li>m1.large</li>
-     * <li>m1.xlarge</li> <li>c1.medium</li> <li>c1.xlarge</li>
-     * <li>m2.xlarge</li> <li>m2.2xlarge</li> <li>m2.4xlarge</li> </ul>
+     * The instance type. OpsWorks supports all instance types except Cluster
+     * Compute, Cluster GPU, and High Memory Cluster. For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+     * Families and Types</a>. The parameter values that specify the various
+     * types are in the API Name column of the Available Instance Types
+     * table.
      *
-     * @return The instance type, which can be one of the following: <ul>
-     *         <li>m1.small</li> <li>m1.medium</li> <li>m1.large</li>
-     *         <li>m1.xlarge</li> <li>c1.medium</li> <li>c1.xlarge</li>
-     *         <li>m2.xlarge</li> <li>m2.2xlarge</li> <li>m2.4xlarge</li> </ul>
+     * @return The instance type. OpsWorks supports all instance types except Cluster
+     *         Compute, Cluster GPU, and High Memory Cluster. For more information,
+     *         see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+     *         Families and Types</a>. The parameter values that specify the various
+     *         types are in the API Name column of the Available Instance Types
+     *         table.
      */
     public String getInstanceType() {
         return instanceType;
     }
     
     /**
-     * The instance type, which can be one of the following: <ul>
-     * <li>m1.small</li> <li>m1.medium</li> <li>m1.large</li>
-     * <li>m1.xlarge</li> <li>c1.medium</li> <li>c1.xlarge</li>
-     * <li>m2.xlarge</li> <li>m2.2xlarge</li> <li>m2.4xlarge</li> </ul>
+     * The instance type. OpsWorks supports all instance types except Cluster
+     * Compute, Cluster GPU, and High Memory Cluster. For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+     * Families and Types</a>. The parameter values that specify the various
+     * types are in the API Name column of the Available Instance Types
+     * table.
      *
-     * @param instanceType The instance type, which can be one of the following: <ul>
-     *         <li>m1.small</li> <li>m1.medium</li> <li>m1.large</li>
-     *         <li>m1.xlarge</li> <li>c1.medium</li> <li>c1.xlarge</li>
-     *         <li>m2.xlarge</li> <li>m2.2xlarge</li> <li>m2.4xlarge</li> </ul>
+     * @param instanceType The instance type. OpsWorks supports all instance types except Cluster
+     *         Compute, Cluster GPU, and High Memory Cluster. For more information,
+     *         see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+     *         Families and Types</a>. The parameter values that specify the various
+     *         types are in the API Name column of the Available Instance Types
+     *         table.
      */
     public void setInstanceType(String instanceType) {
         this.instanceType = instanceType;
     }
     
     /**
-     * The instance type, which can be one of the following: <ul>
-     * <li>m1.small</li> <li>m1.medium</li> <li>m1.large</li>
-     * <li>m1.xlarge</li> <li>c1.medium</li> <li>c1.xlarge</li>
-     * <li>m2.xlarge</li> <li>m2.2xlarge</li> <li>m2.4xlarge</li> </ul>
+     * The instance type. OpsWorks supports all instance types except Cluster
+     * Compute, Cluster GPU, and High Memory Cluster. For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+     * Families and Types</a>. The parameter values that specify the various
+     * types are in the API Name column of the Available Instance Types
+     * table.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceType The instance type, which can be one of the following: <ul>
-     *         <li>m1.small</li> <li>m1.medium</li> <li>m1.large</li>
-     *         <li>m1.xlarge</li> <li>c1.medium</li> <li>c1.xlarge</li>
-     *         <li>m2.xlarge</li> <li>m2.2xlarge</li> <li>m2.4xlarge</li> </ul>
+     * @param instanceType The instance type. OpsWorks supports all instance types except Cluster
+     *         Compute, Cluster GPU, and High Memory Cluster. For more information,
+     *         see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+     *         Families and Types</a>. The parameter values that specify the various
+     *         types are in the API Name column of the Available Instance Types
+     *         table.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -803,12 +847,12 @@ public class Instance  implements Serializable  {
     
     /**
      * The instance <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"></a>Elastic
-     * IP address.
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+     * IP address </a>.
      *
      * @return The instance <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"></a>Elastic
-     *         IP address.
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+     *         IP address </a>.
      */
     public String getElasticIp() {
         return elasticIp;
@@ -816,12 +860,12 @@ public class Instance  implements Serializable  {
     
     /**
      * The instance <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"></a>Elastic
-     * IP address.
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+     * IP address </a>.
      *
      * @param elasticIp The instance <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"></a>Elastic
-     *         IP address.
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+     *         IP address </a>.
      */
     public void setElasticIp(String elasticIp) {
         this.elasticIp = elasticIp;
@@ -829,14 +873,14 @@ public class Instance  implements Serializable  {
     
     /**
      * The instance <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"></a>Elastic
-     * IP address.
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+     * IP address </a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param elasticIp The instance <a
-     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html"></a>Elastic
-     *         IP address.
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+     *         IP address </a>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -849,7 +893,7 @@ public class Instance  implements Serializable  {
     
     /**
      * The instance's auto scaling type, which has three possible values:
-     * <ul> <li><b>AlwaysRunning</b>: A 24x7 instance, which is not affected
+     * <ul> <li><b>AlwaysRunning</b>: A 24/7 instance, which is not affected
      * by auto scaling.</li> <li><b>TimeBasedAutoScaling</b>: A time-based
      * auto scaling instance, which is started and stopped based on a
      * specified schedule.</li> <li><b>LoadBasedAutoScaling</b>: A load-based
@@ -857,10 +901,10 @@ public class Instance  implements Serializable  {
      * metrics.</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>AlwaysRunning, TimeBasedAutoScaling, LoadBasedAutoScaling
+     * <b>Allowed Values: </b>load, timer
      *
      * @return The instance's auto scaling type, which has three possible values:
-     *         <ul> <li><b>AlwaysRunning</b>: A 24x7 instance, which is not affected
+     *         <ul> <li><b>AlwaysRunning</b>: A 24/7 instance, which is not affected
      *         by auto scaling.</li> <li><b>TimeBasedAutoScaling</b>: A time-based
      *         auto scaling instance, which is started and stopped based on a
      *         specified schedule.</li> <li><b>LoadBasedAutoScaling</b>: A load-based
@@ -875,7 +919,7 @@ public class Instance  implements Serializable  {
     
     /**
      * The instance's auto scaling type, which has three possible values:
-     * <ul> <li><b>AlwaysRunning</b>: A 24x7 instance, which is not affected
+     * <ul> <li><b>AlwaysRunning</b>: A 24/7 instance, which is not affected
      * by auto scaling.</li> <li><b>TimeBasedAutoScaling</b>: A time-based
      * auto scaling instance, which is started and stopped based on a
      * specified schedule.</li> <li><b>LoadBasedAutoScaling</b>: A load-based
@@ -883,10 +927,10 @@ public class Instance  implements Serializable  {
      * metrics.</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>AlwaysRunning, TimeBasedAutoScaling, LoadBasedAutoScaling
+     * <b>Allowed Values: </b>load, timer
      *
      * @param autoScalingType The instance's auto scaling type, which has three possible values:
-     *         <ul> <li><b>AlwaysRunning</b>: A 24x7 instance, which is not affected
+     *         <ul> <li><b>AlwaysRunning</b>: A 24/7 instance, which is not affected
      *         by auto scaling.</li> <li><b>TimeBasedAutoScaling</b>: A time-based
      *         auto scaling instance, which is started and stopped based on a
      *         specified schedule.</li> <li><b>LoadBasedAutoScaling</b>: A load-based
@@ -901,7 +945,7 @@ public class Instance  implements Serializable  {
     
     /**
      * The instance's auto scaling type, which has three possible values:
-     * <ul> <li><b>AlwaysRunning</b>: A 24x7 instance, which is not affected
+     * <ul> <li><b>AlwaysRunning</b>: A 24/7 instance, which is not affected
      * by auto scaling.</li> <li><b>TimeBasedAutoScaling</b>: A time-based
      * auto scaling instance, which is started and stopped based on a
      * specified schedule.</li> <li><b>LoadBasedAutoScaling</b>: A load-based
@@ -911,10 +955,10 @@ public class Instance  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>AlwaysRunning, TimeBasedAutoScaling, LoadBasedAutoScaling
+     * <b>Allowed Values: </b>load, timer
      *
      * @param autoScalingType The instance's auto scaling type, which has three possible values:
-     *         <ul> <li><b>AlwaysRunning</b>: A 24x7 instance, which is not affected
+     *         <ul> <li><b>AlwaysRunning</b>: A 24/7 instance, which is not affected
      *         by auto scaling.</li> <li><b>TimeBasedAutoScaling</b>: A time-based
      *         auto scaling instance, which is started and stopped based on a
      *         specified schedule.</li> <li><b>LoadBasedAutoScaling</b>: A load-based
@@ -934,7 +978,7 @@ public class Instance  implements Serializable  {
     
     /**
      * The instance's auto scaling type, which has three possible values:
-     * <ul> <li><b>AlwaysRunning</b>: A 24x7 instance, which is not affected
+     * <ul> <li><b>AlwaysRunning</b>: A 24/7 instance, which is not affected
      * by auto scaling.</li> <li><b>TimeBasedAutoScaling</b>: A time-based
      * auto scaling instance, which is started and stopped based on a
      * specified schedule.</li> <li><b>LoadBasedAutoScaling</b>: A load-based
@@ -942,10 +986,10 @@ public class Instance  implements Serializable  {
      * metrics.</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>AlwaysRunning, TimeBasedAutoScaling, LoadBasedAutoScaling
+     * <b>Allowed Values: </b>load, timer
      *
      * @param autoScalingType The instance's auto scaling type, which has three possible values:
-     *         <ul> <li><b>AlwaysRunning</b>: A 24x7 instance, which is not affected
+     *         <ul> <li><b>AlwaysRunning</b>: A 24/7 instance, which is not affected
      *         by auto scaling.</li> <li><b>TimeBasedAutoScaling</b>: A time-based
      *         auto scaling instance, which is started and stopped based on a
      *         specified schedule.</li> <li><b>LoadBasedAutoScaling</b>: A load-based
@@ -960,7 +1004,7 @@ public class Instance  implements Serializable  {
     
     /**
      * The instance's auto scaling type, which has three possible values:
-     * <ul> <li><b>AlwaysRunning</b>: A 24x7 instance, which is not affected
+     * <ul> <li><b>AlwaysRunning</b>: A 24/7 instance, which is not affected
      * by auto scaling.</li> <li><b>TimeBasedAutoScaling</b>: A time-based
      * auto scaling instance, which is started and stopped based on a
      * specified schedule.</li> <li><b>LoadBasedAutoScaling</b>: A load-based
@@ -970,10 +1014,10 @@ public class Instance  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>AlwaysRunning, TimeBasedAutoScaling, LoadBasedAutoScaling
+     * <b>Allowed Values: </b>load, timer
      *
      * @param autoScalingType The instance's auto scaling type, which has three possible values:
-     *         <ul> <li><b>AlwaysRunning</b>: A 24x7 instance, which is not affected
+     *         <ul> <li><b>AlwaysRunning</b>: A 24/7 instance, which is not affected
      *         by auto scaling.</li> <li><b>TimeBasedAutoScaling</b>: A time-based
      *         auto scaling instance, which is started and stopped based on a
      *         specified schedule.</li> <li><b>LoadBasedAutoScaling</b>: A load-based
@@ -1127,41 +1171,261 @@ public class Instance  implements Serializable  {
     
     
     /**
-     * The ID of the last service error. Call <a>DescribeServiceErrors</a>
-     * for details.
+     * The ID of the last service error. For more information, call
+     * <a>DescribeServiceErrors</a>.
      *
-     * @return The ID of the last service error. Call <a>DescribeServiceErrors</a>
-     *         for details.
+     * @return The ID of the last service error. For more information, call
+     *         <a>DescribeServiceErrors</a>.
      */
     public String getLastServiceErrorId() {
         return lastServiceErrorId;
     }
     
     /**
-     * The ID of the last service error. Call <a>DescribeServiceErrors</a>
-     * for details.
+     * The ID of the last service error. For more information, call
+     * <a>DescribeServiceErrors</a>.
      *
-     * @param lastServiceErrorId The ID of the last service error. Call <a>DescribeServiceErrors</a>
-     *         for details.
+     * @param lastServiceErrorId The ID of the last service error. For more information, call
+     *         <a>DescribeServiceErrors</a>.
      */
     public void setLastServiceErrorId(String lastServiceErrorId) {
         this.lastServiceErrorId = lastServiceErrorId;
     }
     
     /**
-     * The ID of the last service error. Call <a>DescribeServiceErrors</a>
-     * for details.
+     * The ID of the last service error. For more information, call
+     * <a>DescribeServiceErrors</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param lastServiceErrorId The ID of the last service error. Call <a>DescribeServiceErrors</a>
-     *         for details.
+     * @param lastServiceErrorId The ID of the last service error. For more information, call
+     *         <a>DescribeServiceErrors</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
     public Instance withLastServiceErrorId(String lastServiceErrorId) {
         this.lastServiceErrorId = lastServiceErrorId;
+        return this;
+    }
+    
+    
+    /**
+     * The instance architecture, "i386" or "x86_64".
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>x86_64, i386
+     *
+     * @return The instance architecture, "i386" or "x86_64".
+     *
+     * @see Architecture
+     */
+    public String getArchitecture() {
+        return architecture;
+    }
+    
+    /**
+     * The instance architecture, "i386" or "x86_64".
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>x86_64, i386
+     *
+     * @param architecture The instance architecture, "i386" or "x86_64".
+     *
+     * @see Architecture
+     */
+    public void setArchitecture(String architecture) {
+        this.architecture = architecture;
+    }
+    
+    /**
+     * The instance architecture, "i386" or "x86_64".
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>x86_64, i386
+     *
+     * @param architecture The instance architecture, "i386" or "x86_64".
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see Architecture
+     */
+    public Instance withArchitecture(String architecture) {
+        this.architecture = architecture;
+        return this;
+    }
+    
+    
+    /**
+     * The instance architecture, "i386" or "x86_64".
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>x86_64, i386
+     *
+     * @param architecture The instance architecture, "i386" or "x86_64".
+     *
+     * @see Architecture
+     */
+    public void setArchitecture(Architecture architecture) {
+        this.architecture = architecture.toString();
+    }
+    
+    /**
+     * The instance architecture, "i386" or "x86_64".
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>x86_64, i386
+     *
+     * @param architecture The instance architecture, "i386" or "x86_64".
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see Architecture
+     */
+    public Instance withArchitecture(Architecture architecture) {
+        this.architecture = architecture.toString();
+        return this;
+    }
+    
+    /**
+     * The instance root device type. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
+     * for the Root Device</a>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>ebs, instance-store
+     *
+     * @return The instance root device type. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
+     *         for the Root Device</a>.
+     *
+     * @see RootDeviceType
+     */
+    public String getRootDeviceType() {
+        return rootDeviceType;
+    }
+    
+    /**
+     * The instance root device type. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
+     * for the Root Device</a>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>ebs, instance-store
+     *
+     * @param rootDeviceType The instance root device type. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
+     *         for the Root Device</a>.
+     *
+     * @see RootDeviceType
+     */
+    public void setRootDeviceType(String rootDeviceType) {
+        this.rootDeviceType = rootDeviceType;
+    }
+    
+    /**
+     * The instance root device type. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
+     * for the Root Device</a>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>ebs, instance-store
+     *
+     * @param rootDeviceType The instance root device type. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
+     *         for the Root Device</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see RootDeviceType
+     */
+    public Instance withRootDeviceType(String rootDeviceType) {
+        this.rootDeviceType = rootDeviceType;
+        return this;
+    }
+    
+    
+    /**
+     * The instance root device type. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
+     * for the Root Device</a>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>ebs, instance-store
+     *
+     * @param rootDeviceType The instance root device type. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
+     *         for the Root Device</a>.
+     *
+     * @see RootDeviceType
+     */
+    public void setRootDeviceType(RootDeviceType rootDeviceType) {
+        this.rootDeviceType = rootDeviceType.toString();
+    }
+    
+    /**
+     * The instance root device type. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
+     * for the Root Device</a>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>ebs, instance-store
+     *
+     * @param rootDeviceType The instance root device type. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
+     *         for the Root Device</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see RootDeviceType
+     */
+    public Instance withRootDeviceType(RootDeviceType rootDeviceType) {
+        this.rootDeviceType = rootDeviceType.toString();
+        return this;
+    }
+    
+    /**
+     * The root device volume ID.
+     *
+     * @return The root device volume ID.
+     */
+    public String getRootDeviceVolumeId() {
+        return rootDeviceVolumeId;
+    }
+    
+    /**
+     * The root device volume ID.
+     *
+     * @param rootDeviceVolumeId The root device volume ID.
+     */
+    public void setRootDeviceVolumeId(String rootDeviceVolumeId) {
+        this.rootDeviceVolumeId = rootDeviceVolumeId;
+    }
+    
+    /**
+     * The root device volume ID.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param rootDeviceVolumeId The root device volume ID.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public Instance withRootDeviceVolumeId(String rootDeviceVolumeId) {
+        this.rootDeviceVolumeId = rootDeviceVolumeId;
         return this;
     }
     
@@ -1199,7 +1463,10 @@ public class Instance  implements Serializable  {
         if (getSshHostRsaKeyFingerprint() != null) sb.append("SshHostRsaKeyFingerprint: " + getSshHostRsaKeyFingerprint() + ",");    	
         if (getSshHostDsaKeyFingerprint() != null) sb.append("SshHostDsaKeyFingerprint: " + getSshHostDsaKeyFingerprint() + ",");    	
         if (getCreatedAt() != null) sb.append("CreatedAt: " + getCreatedAt() + ",");    	
-        if (getLastServiceErrorId() != null) sb.append("LastServiceErrorId: " + getLastServiceErrorId() );
+        if (getLastServiceErrorId() != null) sb.append("LastServiceErrorId: " + getLastServiceErrorId() + ",");    	
+        if (getArchitecture() != null) sb.append("Architecture: " + getArchitecture() + ",");    	
+        if (getRootDeviceType() != null) sb.append("RootDeviceType: " + getRootDeviceType() + ",");    	
+        if (getRootDeviceVolumeId() != null) sb.append("RootDeviceVolumeId: " + getRootDeviceVolumeId() );
         sb.append("}");
         return sb.toString();
     }
@@ -1231,6 +1498,9 @@ public class Instance  implements Serializable  {
         hashCode = prime * hashCode + ((getSshHostDsaKeyFingerprint() == null) ? 0 : getSshHostDsaKeyFingerprint().hashCode()); 
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode()); 
         hashCode = prime * hashCode + ((getLastServiceErrorId() == null) ? 0 : getLastServiceErrorId().hashCode()); 
+        hashCode = prime * hashCode + ((getArchitecture() == null) ? 0 : getArchitecture().hashCode()); 
+        hashCode = prime * hashCode + ((getRootDeviceType() == null) ? 0 : getRootDeviceType().hashCode()); 
+        hashCode = prime * hashCode + ((getRootDeviceVolumeId() == null) ? 0 : getRootDeviceVolumeId().hashCode()); 
         return hashCode;
     }
     
@@ -1286,6 +1556,12 @@ public class Instance  implements Serializable  {
         if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false) return false; 
         if (other.getLastServiceErrorId() == null ^ this.getLastServiceErrorId() == null) return false;
         if (other.getLastServiceErrorId() != null && other.getLastServiceErrorId().equals(this.getLastServiceErrorId()) == false) return false; 
+        if (other.getArchitecture() == null ^ this.getArchitecture() == null) return false;
+        if (other.getArchitecture() != null && other.getArchitecture().equals(this.getArchitecture()) == false) return false; 
+        if (other.getRootDeviceType() == null ^ this.getRootDeviceType() == null) return false;
+        if (other.getRootDeviceType() != null && other.getRootDeviceType().equals(this.getRootDeviceType()) == false) return false; 
+        if (other.getRootDeviceVolumeId() == null ^ this.getRootDeviceVolumeId() == null) return false;
+        if (other.getRootDeviceVolumeId() != null && other.getRootDeviceVolumeId().equals(this.getRootDeviceVolumeId()) == false) return false; 
         return true;
     }
     

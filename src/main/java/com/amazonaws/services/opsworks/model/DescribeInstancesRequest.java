@@ -27,49 +27,62 @@ import java.io.Serializable;
 public class DescribeInstancesRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
-     * A stack ID.
+     * A stack ID. If you use this parameter, <code>DescribeInstances</code>
+     * returns descriptions of the instances associated with the specified
+     * stack.
      */
     private String stackId;
 
     /**
-     * A layer ID.
+     * A layer ID. If you use this parameter, <code>DescribeInstances</code>
+     * returns descriptions of the instances associated with the specified
+     * layer.
      */
     private String layerId;
 
     /**
-     * An app ID.
-     */
-    private String appId;
-
-    /**
-     * An array of instance IDs to be described.
+     * An array of instance IDs to be described. If you use this parameter,
+     * <code>DescribeInstances</code> returns a description of the specified
+     * instances. Otherwise, it returns a description of every instance.
      */
     private java.util.List<String> instanceIds;
 
     /**
-     * A stack ID.
+     * A stack ID. If you use this parameter, <code>DescribeInstances</code>
+     * returns descriptions of the instances associated with the specified
+     * stack.
      *
-     * @return A stack ID.
+     * @return A stack ID. If you use this parameter, <code>DescribeInstances</code>
+     *         returns descriptions of the instances associated with the specified
+     *         stack.
      */
     public String getStackId() {
         return stackId;
     }
     
     /**
-     * A stack ID.
+     * A stack ID. If you use this parameter, <code>DescribeInstances</code>
+     * returns descriptions of the instances associated with the specified
+     * stack.
      *
-     * @param stackId A stack ID.
+     * @param stackId A stack ID. If you use this parameter, <code>DescribeInstances</code>
+     *         returns descriptions of the instances associated with the specified
+     *         stack.
      */
     public void setStackId(String stackId) {
         this.stackId = stackId;
     }
     
     /**
-     * A stack ID.
+     * A stack ID. If you use this parameter, <code>DescribeInstances</code>
+     * returns descriptions of the instances associated with the specified
+     * stack.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param stackId A stack ID.
+     * @param stackId A stack ID. If you use this parameter, <code>DescribeInstances</code>
+     *         returns descriptions of the instances associated with the specified
+     *         stack.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -81,29 +94,41 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest  implement
     
     
     /**
-     * A layer ID.
+     * A layer ID. If you use this parameter, <code>DescribeInstances</code>
+     * returns descriptions of the instances associated with the specified
+     * layer.
      *
-     * @return A layer ID.
+     * @return A layer ID. If you use this parameter, <code>DescribeInstances</code>
+     *         returns descriptions of the instances associated with the specified
+     *         layer.
      */
     public String getLayerId() {
         return layerId;
     }
     
     /**
-     * A layer ID.
+     * A layer ID. If you use this parameter, <code>DescribeInstances</code>
+     * returns descriptions of the instances associated with the specified
+     * layer.
      *
-     * @param layerId A layer ID.
+     * @param layerId A layer ID. If you use this parameter, <code>DescribeInstances</code>
+     *         returns descriptions of the instances associated with the specified
+     *         layer.
      */
     public void setLayerId(String layerId) {
         this.layerId = layerId;
     }
     
     /**
-     * A layer ID.
+     * A layer ID. If you use this parameter, <code>DescribeInstances</code>
+     * returns descriptions of the instances associated with the specified
+     * layer.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param layerId A layer ID.
+     * @param layerId A layer ID. If you use this parameter, <code>DescribeInstances</code>
+     *         returns descriptions of the instances associated with the specified
+     *         layer.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -115,43 +140,13 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest  implement
     
     
     /**
-     * An app ID.
+     * An array of instance IDs to be described. If you use this parameter,
+     * <code>DescribeInstances</code> returns a description of the specified
+     * instances. Otherwise, it returns a description of every instance.
      *
-     * @return An app ID.
-     */
-    public String getAppId() {
-        return appId;
-    }
-    
-    /**
-     * An app ID.
-     *
-     * @param appId An app ID.
-     */
-    public void setAppId(String appId) {
-        this.appId = appId;
-    }
-    
-    /**
-     * An app ID.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param appId An app ID.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     */
-    public DescribeInstancesRequest withAppId(String appId) {
-        this.appId = appId;
-        return this;
-    }
-    
-    
-    /**
-     * An array of instance IDs to be described.
-     *
-     * @return An array of instance IDs to be described.
+     * @return An array of instance IDs to be described. If you use this parameter,
+     *         <code>DescribeInstances</code> returns a description of the specified
+     *         instances. Otherwise, it returns a description of every instance.
      */
     public java.util.List<String> getInstanceIds() {
         
@@ -162,9 +157,13 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest  implement
     }
     
     /**
-     * An array of instance IDs to be described.
+     * An array of instance IDs to be described. If you use this parameter,
+     * <code>DescribeInstances</code> returns a description of the specified
+     * instances. Otherwise, it returns a description of every instance.
      *
-     * @param instanceIds An array of instance IDs to be described.
+     * @param instanceIds An array of instance IDs to be described. If you use this parameter,
+     *         <code>DescribeInstances</code> returns a description of the specified
+     *         instances. Otherwise, it returns a description of every instance.
      */
     public void setInstanceIds(java.util.Collection<String> instanceIds) {
         if (instanceIds == null) {
@@ -178,11 +177,15 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest  implement
     }
     
     /**
-     * An array of instance IDs to be described.
+     * An array of instance IDs to be described. If you use this parameter,
+     * <code>DescribeInstances</code> returns a description of the specified
+     * instances. Otherwise, it returns a description of every instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceIds An array of instance IDs to be described.
+     * @param instanceIds An array of instance IDs to be described. If you use this parameter,
+     *         <code>DescribeInstances</code> returns a description of the specified
+     *         instances. Otherwise, it returns a description of every instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -196,11 +199,15 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest  implement
     }
     
     /**
-     * An array of instance IDs to be described.
+     * An array of instance IDs to be described. If you use this parameter,
+     * <code>DescribeInstances</code> returns a description of the specified
+     * instances. Otherwise, it returns a description of every instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceIds An array of instance IDs to be described.
+     * @param instanceIds An array of instance IDs to be described. If you use this parameter,
+     *         <code>DescribeInstances</code> returns a description of the specified
+     *         instances. Otherwise, it returns a description of every instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -231,7 +238,6 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest  implement
         sb.append("{");    	
         if (getStackId() != null) sb.append("StackId: " + getStackId() + ",");    	
         if (getLayerId() != null) sb.append("LayerId: " + getLayerId() + ",");    	
-        if (getAppId() != null) sb.append("AppId: " + getAppId() + ",");    	
         if (getInstanceIds() != null) sb.append("InstanceIds: " + getInstanceIds() );
         sb.append("}");
         return sb.toString();
@@ -244,7 +250,6 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest  implement
         
         hashCode = prime * hashCode + ((getStackId() == null) ? 0 : getStackId().hashCode()); 
         hashCode = prime * hashCode + ((getLayerId() == null) ? 0 : getLayerId().hashCode()); 
-        hashCode = prime * hashCode + ((getAppId() == null) ? 0 : getAppId().hashCode()); 
         hashCode = prime * hashCode + ((getInstanceIds() == null) ? 0 : getInstanceIds().hashCode()); 
         return hashCode;
     }
@@ -261,8 +266,6 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest  implement
         if (other.getStackId() != null && other.getStackId().equals(this.getStackId()) == false) return false; 
         if (other.getLayerId() == null ^ this.getLayerId() == null) return false;
         if (other.getLayerId() != null && other.getLayerId().equals(this.getLayerId()) == false) return false; 
-        if (other.getAppId() == null ^ this.getAppId() == null) return false;
-        if (other.getAppId() != null && other.getAppId().equals(this.getAppId()) == false) return false; 
         if (other.getInstanceIds() == null ^ this.getInstanceIds() == null) return false;
         if (other.getInstanceIds() != null && other.getInstanceIds().equals(this.getInstanceIds()) == false) return false; 
         return true;

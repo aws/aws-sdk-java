@@ -153,6 +153,9 @@ public class CreateStackRequestMarshaller implements Marshaller<Request<CreateSt
             if (createStackRequest.getDefaultSshKeyName() != null) {
                 jsonWriter.key("DefaultSshKeyName").value(createStackRequest.getDefaultSshKeyName());
             }
+            if (createStackRequest.getDefaultRootDeviceType() != null) {
+                jsonWriter.key("DefaultRootDeviceType").value(createStackRequest.getDefaultRootDeviceType());
+            }
 
           jsonWriter.endObject();
           

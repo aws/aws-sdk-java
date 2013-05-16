@@ -66,7 +66,7 @@ class HttpRequestFactory {
             } else if (!uri.endsWith("/")) {
                     uri += "/";
             }
-            uri += request.getResourcePath();
+            uri += HttpUtils.urlEncode(request.getResourcePath(), true);
         } else if (!uri.endsWith("/")) {
             uri += "/";
         }

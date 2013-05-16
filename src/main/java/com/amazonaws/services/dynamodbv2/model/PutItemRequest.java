@@ -41,7 +41,7 @@ import java.io.Serializable;
  * </p>
  * <p>
  * For more information about using this API, see <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDDItems.html">
- * Working with Items </a> of the <i>Amazon DynamoDB Developer Guide</i> .
+ * Working with Items </a> in the <i>Amazon DynamoDB Developer Guide</i> .
  * </p>
  *
  * @see com.amazonaws.services.dynamodbv2.AmazonDynamoDB#putItem(PutItemRequest)
@@ -66,7 +66,7 @@ public class PutItemRequest extends AmazonWebServiceRequest  implements Serializ
      * attribute definition. <p>For more information about primary keys, see
      * <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
-     * Key</a> of the <i>Amazon DynamoDB Developer Guide</i>. <p>Each element
+     * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>. <p>Each element
      * in the <i>Item</i> map is an <i>AttributeValue</i> object.
      */
     private java.util.Map<String,AttributeValue> item;
@@ -79,9 +79,9 @@ public class PutItemRequest extends AmazonWebServiceRequest  implements Serializ
      * if the attribute value already exists; or if the attribute value
      * exists and has a particular value before changing it. <p>Each item in
      * <i>Expected</i> represents an attribute name for Amazon DynamoDB to
-     * check, along with the following: <ul> <li> <p><i>Value</i>-the
+     * check, along with the following: <ul> <li> <p><i>Value</i> - The
      * attribute value for Amazon DynamoDB to check. </li> <li>
-     * <p><i>Exists</i>-causes Amazon DynamoDB to evaluate the value before
+     * <p><i>Exists</i> - Causes Amazon DynamoDB to evaluate the value before
      * attempting a conditional operation: <ul> <li> <p>If <i>Exists</i> is
      * <code>true</code>, Amazon DynamoDB will check to see if that attribute
      * value already exists in the table. If it is found, then the operation
@@ -111,12 +111,12 @@ public class PutItemRequest extends AmazonWebServiceRequest  implements Serializ
     /**
      * Use <i>ReturnValues</i> if you want to get the item attributes as they
      * appeared before they were updated with the <i>PutItem</i> request. For
-     * <i>PutItem</i>, the valid values are: <ul> <li>
-     * <p><code>NONE</code>-(default) If <i>ReturnValues</i> is not
-     * specified, or if its value is <code>NONE</code>, then nothing is
-     * returned. </li> <li> <p><code>ALL_OLD</code>-If <i>PutItem</i>
-     * overwrote an attribute name-value pair, then the content of the old
-     * item is returned. </li> </ul>
+     * <i>PutItem</i>, the valid values are: <ul> <li> <p><code>NONE</code> -
+     * If <i>ReturnValues</i> is not specified, or if its value is
+     * <code>NONE</code>, then nothing is returned. (This is the default for
+     * <i>ReturnValues</i>.) </li> <li> <p><code>ALL_OLD</code> - If
+     * <i>PutItem</i> overwrote an attribute name-value pair, then the
+     * content of the old item is returned. </li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>NONE, ALL_OLD, UPDATED_OLD, ALL_NEW, UPDATED_NEW
@@ -124,10 +124,9 @@ public class PutItemRequest extends AmazonWebServiceRequest  implements Serializ
     private String returnValues;
 
     /**
-     * Determines whether to include consumed capacity information in the
-     * output. If this is set to <code>TOTAL</code>, then this information is
-     * shown in the output; otherwise, the consumed capacity information is
-     * not shown.
+     * If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
+     * the response; if set to <code>NONE</code> (the default),
+     * <i>ConsumedCapacity</i> is not included.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>TOTAL, NONE
@@ -135,11 +134,10 @@ public class PutItemRequest extends AmazonWebServiceRequest  implements Serializ
     private String returnConsumedCapacity;
 
     /**
-     * Indicates whether to return statistics about item collections, if any,
-     * that were modified during the operation. The default for
-     * <i>ReturnItemCollectionMetrics</i> is <code>NONE</code>, meaning that
-     * no statistics will be returned. To obtain the statistics, set
-     * <i>ReturnItemCollectionMetrics</i> to <code>SIZE</code>.
+     * If set to <code>SIZE</code>, statistics about item collections, if
+     * any, that were modified during the operation are returned in the
+     * response. If set to <code>NONE</code> (the default), no statistics are
+     * returned..
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>SIZE, NONE
@@ -166,7 +164,7 @@ public class PutItemRequest extends AmazonWebServiceRequest  implements Serializ
      * the table's attribute definition. <p>For more information about
      * primary keys, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
-     * Key</a> of the <i>Amazon DynamoDB Developer Guide</i>. <p>Each element
+     * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>. <p>Each element
      * in the <i>Item</i> map is an <i>AttributeValue</i> object.
      */
     public PutItemRequest(String tableName, java.util.Map<String,AttributeValue> item) {
@@ -231,7 +229,7 @@ public class PutItemRequest extends AmazonWebServiceRequest  implements Serializ
      * attribute definition. <p>For more information about primary keys, see
      * <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
-     * Key</a> of the <i>Amazon DynamoDB Developer Guide</i>. <p>Each element
+     * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>. <p>Each element
      * in the <i>Item</i> map is an <i>AttributeValue</i> object.
      *
      * @return A map of attribute name/value pairs, one for each attribute. Only the
@@ -242,7 +240,7 @@ public class PutItemRequest extends AmazonWebServiceRequest  implements Serializ
      *         attribute definition. <p>For more information about primary keys, see
      *         <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
-     *         Key</a> of the <i>Amazon DynamoDB Developer Guide</i>. <p>Each element
+     *         Key</a> in the <i>Amazon DynamoDB Developer Guide</i>. <p>Each element
      *         in the <i>Item</i> map is an <i>AttributeValue</i> object.
      */
     public java.util.Map<String,AttributeValue> getItem() {
@@ -260,7 +258,7 @@ public class PutItemRequest extends AmazonWebServiceRequest  implements Serializ
      * attribute definition. <p>For more information about primary keys, see
      * <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
-     * Key</a> of the <i>Amazon DynamoDB Developer Guide</i>. <p>Each element
+     * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>. <p>Each element
      * in the <i>Item</i> map is an <i>AttributeValue</i> object.
      *
      * @param item A map of attribute name/value pairs, one for each attribute. Only the
@@ -271,7 +269,7 @@ public class PutItemRequest extends AmazonWebServiceRequest  implements Serializ
      *         attribute definition. <p>For more information about primary keys, see
      *         <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
-     *         Key</a> of the <i>Amazon DynamoDB Developer Guide</i>. <p>Each element
+     *         Key</a> in the <i>Amazon DynamoDB Developer Guide</i>. <p>Each element
      *         in the <i>Item</i> map is an <i>AttributeValue</i> object.
      */
     public void setItem(java.util.Map<String,AttributeValue> item) {
@@ -287,7 +285,7 @@ public class PutItemRequest extends AmazonWebServiceRequest  implements Serializ
      * attribute definition. <p>For more information about primary keys, see
      * <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
-     * Key</a> of the <i>Amazon DynamoDB Developer Guide</i>. <p>Each element
+     * Key</a> in the <i>Amazon DynamoDB Developer Guide</i>. <p>Each element
      * in the <i>Item</i> map is an <i>AttributeValue</i> object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -300,7 +298,7 @@ public class PutItemRequest extends AmazonWebServiceRequest  implements Serializ
      *         attribute definition. <p>For more information about primary keys, see
      *         <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html#DataModelPrimaryKey">Primary
-     *         Key</a> of the <i>Amazon DynamoDB Developer Guide</i>. <p>Each element
+     *         Key</a> in the <i>Amazon DynamoDB Developer Guide</i>. <p>Each element
      *         in the <i>Item</i> map is an <i>AttributeValue</i> object.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -319,9 +317,9 @@ public class PutItemRequest extends AmazonWebServiceRequest  implements Serializ
      * if the attribute value already exists; or if the attribute value
      * exists and has a particular value before changing it. <p>Each item in
      * <i>Expected</i> represents an attribute name for Amazon DynamoDB to
-     * check, along with the following: <ul> <li> <p><i>Value</i>-the
+     * check, along with the following: <ul> <li> <p><i>Value</i> - The
      * attribute value for Amazon DynamoDB to check. </li> <li>
-     * <p><i>Exists</i>-causes Amazon DynamoDB to evaluate the value before
+     * <p><i>Exists</i> - Causes Amazon DynamoDB to evaluate the value before
      * attempting a conditional operation: <ul> <li> <p>If <i>Exists</i> is
      * <code>true</code>, Amazon DynamoDB will check to see if that attribute
      * value already exists in the table. If it is found, then the operation
@@ -353,9 +351,9 @@ public class PutItemRequest extends AmazonWebServiceRequest  implements Serializ
      *         if the attribute value already exists; or if the attribute value
      *         exists and has a particular value before changing it. <p>Each item in
      *         <i>Expected</i> represents an attribute name for Amazon DynamoDB to
-     *         check, along with the following: <ul> <li> <p><i>Value</i>-the
+     *         check, along with the following: <ul> <li> <p><i>Value</i> - The
      *         attribute value for Amazon DynamoDB to check. </li> <li>
-     *         <p><i>Exists</i>-causes Amazon DynamoDB to evaluate the value before
+     *         <p><i>Exists</i> - Causes Amazon DynamoDB to evaluate the value before
      *         attempting a conditional operation: <ul> <li> <p>If <i>Exists</i> is
      *         <code>true</code>, Amazon DynamoDB will check to see if that attribute
      *         value already exists in the table. If it is found, then the operation
@@ -394,9 +392,9 @@ public class PutItemRequest extends AmazonWebServiceRequest  implements Serializ
      * if the attribute value already exists; or if the attribute value
      * exists and has a particular value before changing it. <p>Each item in
      * <i>Expected</i> represents an attribute name for Amazon DynamoDB to
-     * check, along with the following: <ul> <li> <p><i>Value</i>-the
+     * check, along with the following: <ul> <li> <p><i>Value</i> - The
      * attribute value for Amazon DynamoDB to check. </li> <li>
-     * <p><i>Exists</i>-causes Amazon DynamoDB to evaluate the value before
+     * <p><i>Exists</i> - Causes Amazon DynamoDB to evaluate the value before
      * attempting a conditional operation: <ul> <li> <p>If <i>Exists</i> is
      * <code>true</code>, Amazon DynamoDB will check to see if that attribute
      * value already exists in the table. If it is found, then the operation
@@ -428,9 +426,9 @@ public class PutItemRequest extends AmazonWebServiceRequest  implements Serializ
      *         if the attribute value already exists; or if the attribute value
      *         exists and has a particular value before changing it. <p>Each item in
      *         <i>Expected</i> represents an attribute name for Amazon DynamoDB to
-     *         check, along with the following: <ul> <li> <p><i>Value</i>-the
+     *         check, along with the following: <ul> <li> <p><i>Value</i> - The
      *         attribute value for Amazon DynamoDB to check. </li> <li>
-     *         <p><i>Exists</i>-causes Amazon DynamoDB to evaluate the value before
+     *         <p><i>Exists</i> - Causes Amazon DynamoDB to evaluate the value before
      *         attempting a conditional operation: <ul> <li> <p>If <i>Exists</i> is
      *         <code>true</code>, Amazon DynamoDB will check to see if that attribute
      *         value already exists in the table. If it is found, then the operation
@@ -467,9 +465,9 @@ public class PutItemRequest extends AmazonWebServiceRequest  implements Serializ
      * if the attribute value already exists; or if the attribute value
      * exists and has a particular value before changing it. <p>Each item in
      * <i>Expected</i> represents an attribute name for Amazon DynamoDB to
-     * check, along with the following: <ul> <li> <p><i>Value</i>-the
+     * check, along with the following: <ul> <li> <p><i>Value</i> - The
      * attribute value for Amazon DynamoDB to check. </li> <li>
-     * <p><i>Exists</i>-causes Amazon DynamoDB to evaluate the value before
+     * <p><i>Exists</i> - Causes Amazon DynamoDB to evaluate the value before
      * attempting a conditional operation: <ul> <li> <p>If <i>Exists</i> is
      * <code>true</code>, Amazon DynamoDB will check to see if that attribute
      * value already exists in the table. If it is found, then the operation
@@ -503,9 +501,9 @@ public class PutItemRequest extends AmazonWebServiceRequest  implements Serializ
      *         if the attribute value already exists; or if the attribute value
      *         exists and has a particular value before changing it. <p>Each item in
      *         <i>Expected</i> represents an attribute name for Amazon DynamoDB to
-     *         check, along with the following: <ul> <li> <p><i>Value</i>-the
+     *         check, along with the following: <ul> <li> <p><i>Value</i> - The
      *         attribute value for Amazon DynamoDB to check. </li> <li>
-     *         <p><i>Exists</i>-causes Amazon DynamoDB to evaluate the value before
+     *         <p><i>Exists</i> - Causes Amazon DynamoDB to evaluate the value before
      *         attempting a conditional operation: <ul> <li> <p>If <i>Exists</i> is
      *         <code>true</code>, Amazon DynamoDB will check to see if that attribute
      *         value already exists in the table. If it is found, then the operation
@@ -541,24 +539,24 @@ public class PutItemRequest extends AmazonWebServiceRequest  implements Serializ
     /**
      * Use <i>ReturnValues</i> if you want to get the item attributes as they
      * appeared before they were updated with the <i>PutItem</i> request. For
-     * <i>PutItem</i>, the valid values are: <ul> <li>
-     * <p><code>NONE</code>-(default) If <i>ReturnValues</i> is not
-     * specified, or if its value is <code>NONE</code>, then nothing is
-     * returned. </li> <li> <p><code>ALL_OLD</code>-If <i>PutItem</i>
-     * overwrote an attribute name-value pair, then the content of the old
-     * item is returned. </li> </ul>
+     * <i>PutItem</i>, the valid values are: <ul> <li> <p><code>NONE</code> -
+     * If <i>ReturnValues</i> is not specified, or if its value is
+     * <code>NONE</code>, then nothing is returned. (This is the default for
+     * <i>ReturnValues</i>.) </li> <li> <p><code>ALL_OLD</code> - If
+     * <i>PutItem</i> overwrote an attribute name-value pair, then the
+     * content of the old item is returned. </li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>NONE, ALL_OLD, UPDATED_OLD, ALL_NEW, UPDATED_NEW
      *
      * @return Use <i>ReturnValues</i> if you want to get the item attributes as they
      *         appeared before they were updated with the <i>PutItem</i> request. For
-     *         <i>PutItem</i>, the valid values are: <ul> <li>
-     *         <p><code>NONE</code>-(default) If <i>ReturnValues</i> is not
-     *         specified, or if its value is <code>NONE</code>, then nothing is
-     *         returned. </li> <li> <p><code>ALL_OLD</code>-If <i>PutItem</i>
-     *         overwrote an attribute name-value pair, then the content of the old
-     *         item is returned. </li> </ul>
+     *         <i>PutItem</i>, the valid values are: <ul> <li> <p><code>NONE</code> -
+     *         If <i>ReturnValues</i> is not specified, or if its value is
+     *         <code>NONE</code>, then nothing is returned. (This is the default for
+     *         <i>ReturnValues</i>.) </li> <li> <p><code>ALL_OLD</code> - If
+     *         <i>PutItem</i> overwrote an attribute name-value pair, then the
+     *         content of the old item is returned. </li> </ul>
      *
      * @see ReturnValue
      */
@@ -569,24 +567,24 @@ public class PutItemRequest extends AmazonWebServiceRequest  implements Serializ
     /**
      * Use <i>ReturnValues</i> if you want to get the item attributes as they
      * appeared before they were updated with the <i>PutItem</i> request. For
-     * <i>PutItem</i>, the valid values are: <ul> <li>
-     * <p><code>NONE</code>-(default) If <i>ReturnValues</i> is not
-     * specified, or if its value is <code>NONE</code>, then nothing is
-     * returned. </li> <li> <p><code>ALL_OLD</code>-If <i>PutItem</i>
-     * overwrote an attribute name-value pair, then the content of the old
-     * item is returned. </li> </ul>
+     * <i>PutItem</i>, the valid values are: <ul> <li> <p><code>NONE</code> -
+     * If <i>ReturnValues</i> is not specified, or if its value is
+     * <code>NONE</code>, then nothing is returned. (This is the default for
+     * <i>ReturnValues</i>.) </li> <li> <p><code>ALL_OLD</code> - If
+     * <i>PutItem</i> overwrote an attribute name-value pair, then the
+     * content of the old item is returned. </li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>NONE, ALL_OLD, UPDATED_OLD, ALL_NEW, UPDATED_NEW
      *
      * @param returnValues Use <i>ReturnValues</i> if you want to get the item attributes as they
      *         appeared before they were updated with the <i>PutItem</i> request. For
-     *         <i>PutItem</i>, the valid values are: <ul> <li>
-     *         <p><code>NONE</code>-(default) If <i>ReturnValues</i> is not
-     *         specified, or if its value is <code>NONE</code>, then nothing is
-     *         returned. </li> <li> <p><code>ALL_OLD</code>-If <i>PutItem</i>
-     *         overwrote an attribute name-value pair, then the content of the old
-     *         item is returned. </li> </ul>
+     *         <i>PutItem</i>, the valid values are: <ul> <li> <p><code>NONE</code> -
+     *         If <i>ReturnValues</i> is not specified, or if its value is
+     *         <code>NONE</code>, then nothing is returned. (This is the default for
+     *         <i>ReturnValues</i>.) </li> <li> <p><code>ALL_OLD</code> - If
+     *         <i>PutItem</i> overwrote an attribute name-value pair, then the
+     *         content of the old item is returned. </li> </ul>
      *
      * @see ReturnValue
      */
@@ -597,12 +595,12 @@ public class PutItemRequest extends AmazonWebServiceRequest  implements Serializ
     /**
      * Use <i>ReturnValues</i> if you want to get the item attributes as they
      * appeared before they were updated with the <i>PutItem</i> request. For
-     * <i>PutItem</i>, the valid values are: <ul> <li>
-     * <p><code>NONE</code>-(default) If <i>ReturnValues</i> is not
-     * specified, or if its value is <code>NONE</code>, then nothing is
-     * returned. </li> <li> <p><code>ALL_OLD</code>-If <i>PutItem</i>
-     * overwrote an attribute name-value pair, then the content of the old
-     * item is returned. </li> </ul>
+     * <i>PutItem</i>, the valid values are: <ul> <li> <p><code>NONE</code> -
+     * If <i>ReturnValues</i> is not specified, or if its value is
+     * <code>NONE</code>, then nothing is returned. (This is the default for
+     * <i>ReturnValues</i>.) </li> <li> <p><code>ALL_OLD</code> - If
+     * <i>PutItem</i> overwrote an attribute name-value pair, then the
+     * content of the old item is returned. </li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -611,12 +609,12 @@ public class PutItemRequest extends AmazonWebServiceRequest  implements Serializ
      *
      * @param returnValues Use <i>ReturnValues</i> if you want to get the item attributes as they
      *         appeared before they were updated with the <i>PutItem</i> request. For
-     *         <i>PutItem</i>, the valid values are: <ul> <li>
-     *         <p><code>NONE</code>-(default) If <i>ReturnValues</i> is not
-     *         specified, or if its value is <code>NONE</code>, then nothing is
-     *         returned. </li> <li> <p><code>ALL_OLD</code>-If <i>PutItem</i>
-     *         overwrote an attribute name-value pair, then the content of the old
-     *         item is returned. </li> </ul>
+     *         <i>PutItem</i>, the valid values are: <ul> <li> <p><code>NONE</code> -
+     *         If <i>ReturnValues</i> is not specified, or if its value is
+     *         <code>NONE</code>, then nothing is returned. (This is the default for
+     *         <i>ReturnValues</i>.) </li> <li> <p><code>ALL_OLD</code> - If
+     *         <i>PutItem</i> overwrote an attribute name-value pair, then the
+     *         content of the old item is returned. </li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -632,24 +630,24 @@ public class PutItemRequest extends AmazonWebServiceRequest  implements Serializ
     /**
      * Use <i>ReturnValues</i> if you want to get the item attributes as they
      * appeared before they were updated with the <i>PutItem</i> request. For
-     * <i>PutItem</i>, the valid values are: <ul> <li>
-     * <p><code>NONE</code>-(default) If <i>ReturnValues</i> is not
-     * specified, or if its value is <code>NONE</code>, then nothing is
-     * returned. </li> <li> <p><code>ALL_OLD</code>-If <i>PutItem</i>
-     * overwrote an attribute name-value pair, then the content of the old
-     * item is returned. </li> </ul>
+     * <i>PutItem</i>, the valid values are: <ul> <li> <p><code>NONE</code> -
+     * If <i>ReturnValues</i> is not specified, or if its value is
+     * <code>NONE</code>, then nothing is returned. (This is the default for
+     * <i>ReturnValues</i>.) </li> <li> <p><code>ALL_OLD</code> - If
+     * <i>PutItem</i> overwrote an attribute name-value pair, then the
+     * content of the old item is returned. </li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>NONE, ALL_OLD, UPDATED_OLD, ALL_NEW, UPDATED_NEW
      *
      * @param returnValues Use <i>ReturnValues</i> if you want to get the item attributes as they
      *         appeared before they were updated with the <i>PutItem</i> request. For
-     *         <i>PutItem</i>, the valid values are: <ul> <li>
-     *         <p><code>NONE</code>-(default) If <i>ReturnValues</i> is not
-     *         specified, or if its value is <code>NONE</code>, then nothing is
-     *         returned. </li> <li> <p><code>ALL_OLD</code>-If <i>PutItem</i>
-     *         overwrote an attribute name-value pair, then the content of the old
-     *         item is returned. </li> </ul>
+     *         <i>PutItem</i>, the valid values are: <ul> <li> <p><code>NONE</code> -
+     *         If <i>ReturnValues</i> is not specified, or if its value is
+     *         <code>NONE</code>, then nothing is returned. (This is the default for
+     *         <i>ReturnValues</i>.) </li> <li> <p><code>ALL_OLD</code> - If
+     *         <i>PutItem</i> overwrote an attribute name-value pair, then the
+     *         content of the old item is returned. </li> </ul>
      *
      * @see ReturnValue
      */
@@ -660,12 +658,12 @@ public class PutItemRequest extends AmazonWebServiceRequest  implements Serializ
     /**
      * Use <i>ReturnValues</i> if you want to get the item attributes as they
      * appeared before they were updated with the <i>PutItem</i> request. For
-     * <i>PutItem</i>, the valid values are: <ul> <li>
-     * <p><code>NONE</code>-(default) If <i>ReturnValues</i> is not
-     * specified, or if its value is <code>NONE</code>, then nothing is
-     * returned. </li> <li> <p><code>ALL_OLD</code>-If <i>PutItem</i>
-     * overwrote an attribute name-value pair, then the content of the old
-     * item is returned. </li> </ul>
+     * <i>PutItem</i>, the valid values are: <ul> <li> <p><code>NONE</code> -
+     * If <i>ReturnValues</i> is not specified, or if its value is
+     * <code>NONE</code>, then nothing is returned. (This is the default for
+     * <i>ReturnValues</i>.) </li> <li> <p><code>ALL_OLD</code> - If
+     * <i>PutItem</i> overwrote an attribute name-value pair, then the
+     * content of the old item is returned. </li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -674,12 +672,12 @@ public class PutItemRequest extends AmazonWebServiceRequest  implements Serializ
      *
      * @param returnValues Use <i>ReturnValues</i> if you want to get the item attributes as they
      *         appeared before they were updated with the <i>PutItem</i> request. For
-     *         <i>PutItem</i>, the valid values are: <ul> <li>
-     *         <p><code>NONE</code>-(default) If <i>ReturnValues</i> is not
-     *         specified, or if its value is <code>NONE</code>, then nothing is
-     *         returned. </li> <li> <p><code>ALL_OLD</code>-If <i>PutItem</i>
-     *         overwrote an attribute name-value pair, then the content of the old
-     *         item is returned. </li> </ul>
+     *         <i>PutItem</i>, the valid values are: <ul> <li> <p><code>NONE</code> -
+     *         If <i>ReturnValues</i> is not specified, or if its value is
+     *         <code>NONE</code>, then nothing is returned. (This is the default for
+     *         <i>ReturnValues</i>.) </li> <li> <p><code>ALL_OLD</code> - If
+     *         <i>PutItem</i> overwrote an attribute name-value pair, then the
+     *         content of the old item is returned. </li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -692,18 +690,16 @@ public class PutItemRequest extends AmazonWebServiceRequest  implements Serializ
     }
     
     /**
-     * Determines whether to include consumed capacity information in the
-     * output. If this is set to <code>TOTAL</code>, then this information is
-     * shown in the output; otherwise, the consumed capacity information is
-     * not shown.
+     * If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
+     * the response; if set to <code>NONE</code> (the default),
+     * <i>ConsumedCapacity</i> is not included.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>TOTAL, NONE
      *
-     * @return Determines whether to include consumed capacity information in the
-     *         output. If this is set to <code>TOTAL</code>, then this information is
-     *         shown in the output; otherwise, the consumed capacity information is
-     *         not shown.
+     * @return If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
+     *         the response; if set to <code>NONE</code> (the default),
+     *         <i>ConsumedCapacity</i> is not included.
      *
      * @see ReturnConsumedCapacity
      */
@@ -712,18 +708,16 @@ public class PutItemRequest extends AmazonWebServiceRequest  implements Serializ
     }
     
     /**
-     * Determines whether to include consumed capacity information in the
-     * output. If this is set to <code>TOTAL</code>, then this information is
-     * shown in the output; otherwise, the consumed capacity information is
-     * not shown.
+     * If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
+     * the response; if set to <code>NONE</code> (the default),
+     * <i>ConsumedCapacity</i> is not included.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>TOTAL, NONE
      *
-     * @param returnConsumedCapacity Determines whether to include consumed capacity information in the
-     *         output. If this is set to <code>TOTAL</code>, then this information is
-     *         shown in the output; otherwise, the consumed capacity information is
-     *         not shown.
+     * @param returnConsumedCapacity If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
+     *         the response; if set to <code>NONE</code> (the default),
+     *         <i>ConsumedCapacity</i> is not included.
      *
      * @see ReturnConsumedCapacity
      */
@@ -732,20 +726,18 @@ public class PutItemRequest extends AmazonWebServiceRequest  implements Serializ
     }
     
     /**
-     * Determines whether to include consumed capacity information in the
-     * output. If this is set to <code>TOTAL</code>, then this information is
-     * shown in the output; otherwise, the consumed capacity information is
-     * not shown.
+     * If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
+     * the response; if set to <code>NONE</code> (the default),
+     * <i>ConsumedCapacity</i> is not included.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>TOTAL, NONE
      *
-     * @param returnConsumedCapacity Determines whether to include consumed capacity information in the
-     *         output. If this is set to <code>TOTAL</code>, then this information is
-     *         shown in the output; otherwise, the consumed capacity information is
-     *         not shown.
+     * @param returnConsumedCapacity If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
+     *         the response; if set to <code>NONE</code> (the default),
+     *         <i>ConsumedCapacity</i> is not included.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -759,18 +751,16 @@ public class PutItemRequest extends AmazonWebServiceRequest  implements Serializ
     
     
     /**
-     * Determines whether to include consumed capacity information in the
-     * output. If this is set to <code>TOTAL</code>, then this information is
-     * shown in the output; otherwise, the consumed capacity information is
-     * not shown.
+     * If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
+     * the response; if set to <code>NONE</code> (the default),
+     * <i>ConsumedCapacity</i> is not included.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>TOTAL, NONE
      *
-     * @param returnConsumedCapacity Determines whether to include consumed capacity information in the
-     *         output. If this is set to <code>TOTAL</code>, then this information is
-     *         shown in the output; otherwise, the consumed capacity information is
-     *         not shown.
+     * @param returnConsumedCapacity If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
+     *         the response; if set to <code>NONE</code> (the default),
+     *         <i>ConsumedCapacity</i> is not included.
      *
      * @see ReturnConsumedCapacity
      */
@@ -779,20 +769,18 @@ public class PutItemRequest extends AmazonWebServiceRequest  implements Serializ
     }
     
     /**
-     * Determines whether to include consumed capacity information in the
-     * output. If this is set to <code>TOTAL</code>, then this information is
-     * shown in the output; otherwise, the consumed capacity information is
-     * not shown.
+     * If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
+     * the response; if set to <code>NONE</code> (the default),
+     * <i>ConsumedCapacity</i> is not included.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>TOTAL, NONE
      *
-     * @param returnConsumedCapacity Determines whether to include consumed capacity information in the
-     *         output. If this is set to <code>TOTAL</code>, then this information is
-     *         shown in the output; otherwise, the consumed capacity information is
-     *         not shown.
+     * @param returnConsumedCapacity If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
+     *         the response; if set to <code>NONE</code> (the default),
+     *         <i>ConsumedCapacity</i> is not included.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -805,20 +793,18 @@ public class PutItemRequest extends AmazonWebServiceRequest  implements Serializ
     }
     
     /**
-     * Indicates whether to return statistics about item collections, if any,
-     * that were modified during the operation. The default for
-     * <i>ReturnItemCollectionMetrics</i> is <code>NONE</code>, meaning that
-     * no statistics will be returned. To obtain the statistics, set
-     * <i>ReturnItemCollectionMetrics</i> to <code>SIZE</code>.
+     * If set to <code>SIZE</code>, statistics about item collections, if
+     * any, that were modified during the operation are returned in the
+     * response. If set to <code>NONE</code> (the default), no statistics are
+     * returned..
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>SIZE, NONE
      *
-     * @return Indicates whether to return statistics about item collections, if any,
-     *         that were modified during the operation. The default for
-     *         <i>ReturnItemCollectionMetrics</i> is <code>NONE</code>, meaning that
-     *         no statistics will be returned. To obtain the statistics, set
-     *         <i>ReturnItemCollectionMetrics</i> to <code>SIZE</code>.
+     * @return If set to <code>SIZE</code>, statistics about item collections, if
+     *         any, that were modified during the operation are returned in the
+     *         response. If set to <code>NONE</code> (the default), no statistics are
+     *         returned..
      *
      * @see ReturnItemCollectionMetrics
      */
@@ -827,20 +813,18 @@ public class PutItemRequest extends AmazonWebServiceRequest  implements Serializ
     }
     
     /**
-     * Indicates whether to return statistics about item collections, if any,
-     * that were modified during the operation. The default for
-     * <i>ReturnItemCollectionMetrics</i> is <code>NONE</code>, meaning that
-     * no statistics will be returned. To obtain the statistics, set
-     * <i>ReturnItemCollectionMetrics</i> to <code>SIZE</code>.
+     * If set to <code>SIZE</code>, statistics about item collections, if
+     * any, that were modified during the operation are returned in the
+     * response. If set to <code>NONE</code> (the default), no statistics are
+     * returned..
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>SIZE, NONE
      *
-     * @param returnItemCollectionMetrics Indicates whether to return statistics about item collections, if any,
-     *         that were modified during the operation. The default for
-     *         <i>ReturnItemCollectionMetrics</i> is <code>NONE</code>, meaning that
-     *         no statistics will be returned. To obtain the statistics, set
-     *         <i>ReturnItemCollectionMetrics</i> to <code>SIZE</code>.
+     * @param returnItemCollectionMetrics If set to <code>SIZE</code>, statistics about item collections, if
+     *         any, that were modified during the operation are returned in the
+     *         response. If set to <code>NONE</code> (the default), no statistics are
+     *         returned..
      *
      * @see ReturnItemCollectionMetrics
      */
@@ -849,22 +833,20 @@ public class PutItemRequest extends AmazonWebServiceRequest  implements Serializ
     }
     
     /**
-     * Indicates whether to return statistics about item collections, if any,
-     * that were modified during the operation. The default for
-     * <i>ReturnItemCollectionMetrics</i> is <code>NONE</code>, meaning that
-     * no statistics will be returned. To obtain the statistics, set
-     * <i>ReturnItemCollectionMetrics</i> to <code>SIZE</code>.
+     * If set to <code>SIZE</code>, statistics about item collections, if
+     * any, that were modified during the operation are returned in the
+     * response. If set to <code>NONE</code> (the default), no statistics are
+     * returned..
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>SIZE, NONE
      *
-     * @param returnItemCollectionMetrics Indicates whether to return statistics about item collections, if any,
-     *         that were modified during the operation. The default for
-     *         <i>ReturnItemCollectionMetrics</i> is <code>NONE</code>, meaning that
-     *         no statistics will be returned. To obtain the statistics, set
-     *         <i>ReturnItemCollectionMetrics</i> to <code>SIZE</code>.
+     * @param returnItemCollectionMetrics If set to <code>SIZE</code>, statistics about item collections, if
+     *         any, that were modified during the operation are returned in the
+     *         response. If set to <code>NONE</code> (the default), no statistics are
+     *         returned..
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -878,20 +860,18 @@ public class PutItemRequest extends AmazonWebServiceRequest  implements Serializ
     
     
     /**
-     * Indicates whether to return statistics about item collections, if any,
-     * that were modified during the operation. The default for
-     * <i>ReturnItemCollectionMetrics</i> is <code>NONE</code>, meaning that
-     * no statistics will be returned. To obtain the statistics, set
-     * <i>ReturnItemCollectionMetrics</i> to <code>SIZE</code>.
+     * If set to <code>SIZE</code>, statistics about item collections, if
+     * any, that were modified during the operation are returned in the
+     * response. If set to <code>NONE</code> (the default), no statistics are
+     * returned..
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>SIZE, NONE
      *
-     * @param returnItemCollectionMetrics Indicates whether to return statistics about item collections, if any,
-     *         that were modified during the operation. The default for
-     *         <i>ReturnItemCollectionMetrics</i> is <code>NONE</code>, meaning that
-     *         no statistics will be returned. To obtain the statistics, set
-     *         <i>ReturnItemCollectionMetrics</i> to <code>SIZE</code>.
+     * @param returnItemCollectionMetrics If set to <code>SIZE</code>, statistics about item collections, if
+     *         any, that were modified during the operation are returned in the
+     *         response. If set to <code>NONE</code> (the default), no statistics are
+     *         returned..
      *
      * @see ReturnItemCollectionMetrics
      */
@@ -900,22 +880,20 @@ public class PutItemRequest extends AmazonWebServiceRequest  implements Serializ
     }
     
     /**
-     * Indicates whether to return statistics about item collections, if any,
-     * that were modified during the operation. The default for
-     * <i>ReturnItemCollectionMetrics</i> is <code>NONE</code>, meaning that
-     * no statistics will be returned. To obtain the statistics, set
-     * <i>ReturnItemCollectionMetrics</i> to <code>SIZE</code>.
+     * If set to <code>SIZE</code>, statistics about item collections, if
+     * any, that were modified during the operation are returned in the
+     * response. If set to <code>NONE</code> (the default), no statistics are
+     * returned..
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>SIZE, NONE
      *
-     * @param returnItemCollectionMetrics Indicates whether to return statistics about item collections, if any,
-     *         that were modified during the operation. The default for
-     *         <i>ReturnItemCollectionMetrics</i> is <code>NONE</code>, meaning that
-     *         no statistics will be returned. To obtain the statistics, set
-     *         <i>ReturnItemCollectionMetrics</i> to <code>SIZE</code>.
+     * @param returnItemCollectionMetrics If set to <code>SIZE</code>, statistics about item collections, if
+     *         any, that were modified during the operation are returned in the
+     *         response. If set to <code>NONE</code> (the default), no statistics are
+     *         returned..
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

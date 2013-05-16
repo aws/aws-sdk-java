@@ -88,6 +88,9 @@ public class CreateAppRequestMarshaller implements Marshaller<Request<CreateAppR
             if (createAppRequest.getStackId() != null) {
                 jsonWriter.key("StackId").value(createAppRequest.getStackId());
             }
+            if (createAppRequest.getShortname() != null) {
+                jsonWriter.key("Shortname").value(createAppRequest.getShortname());
+            }
             if (createAppRequest.getName() != null) {
                 jsonWriter.key("Name").value(createAppRequest.getName());
             }

@@ -17,7 +17,7 @@ import java.io.Serializable;
 
 /**
  * <p>
- * OpsWorks supports five life-cycle events, <b>setup</b> ,
+ * OpsWorks supports five lifecycle events, <b>setup</b> ,
  * <b>configuration</b> ,
  * <b>deploy</b> ,
  * <b>undeploy</b> , and <b>shutdown</b> .

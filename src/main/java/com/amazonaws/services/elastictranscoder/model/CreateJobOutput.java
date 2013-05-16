@@ -70,8 +70,8 @@ public class CreateJobOutput  implements Serializable  {
     /**
      * The number of degrees clockwise by which you want Elastic Transcoder
      * to rotate the output relative to the input. Enter one of the following
-     * values: <p><code>auto</code>, <code>0</code>, <code>90</code>,
-     * <code>180</code>, <code>270</code> <p> The value <code>auto</code>
+     * values: <code>auto</code>, <code>0</code>, <code>90</code>,
+     * <code>180</code>, <code>270</code>. The value <code>auto</code>
      * generally works only if the file that you're transcoding contains
      * rotation metadata.
      * <p>
@@ -89,6 +89,17 @@ public class CreateJobOutput  implements Serializable  {
      * <b>Pattern: </b>^\d{13}-\w{6}$<br/>
      */
     private String presetId;
+
+    /**
+     * If you specify a preset in <code>PresetId</code> for which the value
+     * of <code>Container</code> is ts (MPEG-TS), SegmentDuration is the
+     * duration of each .ts file in seconds. The range of valid values is 1
+     * to 60 seconds.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Pattern: </b>^\d{1,5}([.]\d{0,5})?$<br/>
+     */
+    private String segmentDuration;
 
     /**
      * The name to assign to the transcoded file. Elastic Transcoder saves
@@ -365,8 +376,8 @@ public class CreateJobOutput  implements Serializable  {
     /**
      * The number of degrees clockwise by which you want Elastic Transcoder
      * to rotate the output relative to the input. Enter one of the following
-     * values: <p><code>auto</code>, <code>0</code>, <code>90</code>,
-     * <code>180</code>, <code>270</code> <p> The value <code>auto</code>
+     * values: <code>auto</code>, <code>0</code>, <code>90</code>,
+     * <code>180</code>, <code>270</code>. The value <code>auto</code>
      * generally works only if the file that you're transcoding contains
      * rotation metadata.
      * <p>
@@ -375,8 +386,8 @@ public class CreateJobOutput  implements Serializable  {
      *
      * @return The number of degrees clockwise by which you want Elastic Transcoder
      *         to rotate the output relative to the input. Enter one of the following
-     *         values: <p><code>auto</code>, <code>0</code>, <code>90</code>,
-     *         <code>180</code>, <code>270</code> <p> The value <code>auto</code>
+     *         values: <code>auto</code>, <code>0</code>, <code>90</code>,
+     *         <code>180</code>, <code>270</code>. The value <code>auto</code>
      *         generally works only if the file that you're transcoding contains
      *         rotation metadata.
      */
@@ -387,8 +398,8 @@ public class CreateJobOutput  implements Serializable  {
     /**
      * The number of degrees clockwise by which you want Elastic Transcoder
      * to rotate the output relative to the input. Enter one of the following
-     * values: <p><code>auto</code>, <code>0</code>, <code>90</code>,
-     * <code>180</code>, <code>270</code> <p> The value <code>auto</code>
+     * values: <code>auto</code>, <code>0</code>, <code>90</code>,
+     * <code>180</code>, <code>270</code>. The value <code>auto</code>
      * generally works only if the file that you're transcoding contains
      * rotation metadata.
      * <p>
@@ -397,8 +408,8 @@ public class CreateJobOutput  implements Serializable  {
      *
      * @param rotate The number of degrees clockwise by which you want Elastic Transcoder
      *         to rotate the output relative to the input. Enter one of the following
-     *         values: <p><code>auto</code>, <code>0</code>, <code>90</code>,
-     *         <code>180</code>, <code>270</code> <p> The value <code>auto</code>
+     *         values: <code>auto</code>, <code>0</code>, <code>90</code>,
+     *         <code>180</code>, <code>270</code>. The value <code>auto</code>
      *         generally works only if the file that you're transcoding contains
      *         rotation metadata.
      */
@@ -409,8 +420,8 @@ public class CreateJobOutput  implements Serializable  {
     /**
      * The number of degrees clockwise by which you want Elastic Transcoder
      * to rotate the output relative to the input. Enter one of the following
-     * values: <p><code>auto</code>, <code>0</code>, <code>90</code>,
-     * <code>180</code>, <code>270</code> <p> The value <code>auto</code>
+     * values: <code>auto</code>, <code>0</code>, <code>90</code>,
+     * <code>180</code>, <code>270</code>. The value <code>auto</code>
      * generally works only if the file that you're transcoding contains
      * rotation metadata.
      * <p>
@@ -421,8 +432,8 @@ public class CreateJobOutput  implements Serializable  {
      *
      * @param rotate The number of degrees clockwise by which you want Elastic Transcoder
      *         to rotate the output relative to the input. Enter one of the following
-     *         values: <p><code>auto</code>, <code>0</code>, <code>90</code>,
-     *         <code>180</code>, <code>270</code> <p> The value <code>auto</code>
+     *         values: <code>auto</code>, <code>0</code>, <code>90</code>,
+     *         <code>180</code>, <code>270</code>. The value <code>auto</code>
      *         generally works only if the file that you're transcoding contains
      *         rotation metadata.
      *
@@ -491,6 +502,67 @@ public class CreateJobOutput  implements Serializable  {
     
     
     /**
+     * If you specify a preset in <code>PresetId</code> for which the value
+     * of <code>Container</code> is ts (MPEG-TS), SegmentDuration is the
+     * duration of each .ts file in seconds. The range of valid values is 1
+     * to 60 seconds.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Pattern: </b>^\d{1,5}([.]\d{0,5})?$<br/>
+     *
+     * @return If you specify a preset in <code>PresetId</code> for which the value
+     *         of <code>Container</code> is ts (MPEG-TS), SegmentDuration is the
+     *         duration of each .ts file in seconds. The range of valid values is 1
+     *         to 60 seconds.
+     */
+    public String getSegmentDuration() {
+        return segmentDuration;
+    }
+    
+    /**
+     * If you specify a preset in <code>PresetId</code> for which the value
+     * of <code>Container</code> is ts (MPEG-TS), SegmentDuration is the
+     * duration of each .ts file in seconds. The range of valid values is 1
+     * to 60 seconds.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Pattern: </b>^\d{1,5}([.]\d{0,5})?$<br/>
+     *
+     * @param segmentDuration If you specify a preset in <code>PresetId</code> for which the value
+     *         of <code>Container</code> is ts (MPEG-TS), SegmentDuration is the
+     *         duration of each .ts file in seconds. The range of valid values is 1
+     *         to 60 seconds.
+     */
+    public void setSegmentDuration(String segmentDuration) {
+        this.segmentDuration = segmentDuration;
+    }
+    
+    /**
+     * If you specify a preset in <code>PresetId</code> for which the value
+     * of <code>Container</code> is ts (MPEG-TS), SegmentDuration is the
+     * duration of each .ts file in seconds. The range of valid values is 1
+     * to 60 seconds.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Pattern: </b>^\d{1,5}([.]\d{0,5})?$<br/>
+     *
+     * @param segmentDuration If you specify a preset in <code>PresetId</code> for which the value
+     *         of <code>Container</code> is ts (MPEG-TS), SegmentDuration is the
+     *         duration of each .ts file in seconds. The range of valid values is 1
+     *         to 60 seconds.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public CreateJobOutput withSegmentDuration(String segmentDuration) {
+        this.segmentDuration = segmentDuration;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -505,7 +577,8 @@ public class CreateJobOutput  implements Serializable  {
         if (getKey() != null) sb.append("Key: " + getKey() + ",");    	
         if (getThumbnailPattern() != null) sb.append("ThumbnailPattern: " + getThumbnailPattern() + ",");    	
         if (getRotate() != null) sb.append("Rotate: " + getRotate() + ",");    	
-        if (getPresetId() != null) sb.append("PresetId: " + getPresetId() );
+        if (getPresetId() != null) sb.append("PresetId: " + getPresetId() + ",");    	
+        if (getSegmentDuration() != null) sb.append("SegmentDuration: " + getSegmentDuration() );
         sb.append("}");
         return sb.toString();
     }
@@ -519,6 +592,7 @@ public class CreateJobOutput  implements Serializable  {
         hashCode = prime * hashCode + ((getThumbnailPattern() == null) ? 0 : getThumbnailPattern().hashCode()); 
         hashCode = prime * hashCode + ((getRotate() == null) ? 0 : getRotate().hashCode()); 
         hashCode = prime * hashCode + ((getPresetId() == null) ? 0 : getPresetId().hashCode()); 
+        hashCode = prime * hashCode + ((getSegmentDuration() == null) ? 0 : getSegmentDuration().hashCode()); 
         return hashCode;
     }
     
@@ -538,6 +612,8 @@ public class CreateJobOutput  implements Serializable  {
         if (other.getRotate() != null && other.getRotate().equals(this.getRotate()) == false) return false; 
         if (other.getPresetId() == null ^ this.getPresetId() == null) return false;
         if (other.getPresetId() != null && other.getPresetId().equals(this.getPresetId()) == false) return false; 
+        if (other.getSegmentDuration() == null ^ this.getSegmentDuration() == null) return false;
+        if (other.getSegmentDuration() != null && other.getSegmentDuration().equals(this.getSegmentDuration()) == false) return false; 
         return true;
     }
     

@@ -80,6 +80,26 @@ public class VideoParametersJsonUnmarshaller implements Unmarshaller<VideoParame
                     context.nextToken();
                     videoParameters.setAspectRatio(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("MaxWidth", targetDepth)) {
+                    context.nextToken();
+                    videoParameters.setMaxWidth(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("MaxHeight", targetDepth)) {
+                    context.nextToken();
+                    videoParameters.setMaxHeight(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("DisplayAspectRatio", targetDepth)) {
+                    context.nextToken();
+                    videoParameters.setDisplayAspectRatio(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("SizingPolicy", targetDepth)) {
+                    context.nextToken();
+                    videoParameters.setSizingPolicy(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("PaddingPolicy", targetDepth)) {
+                    context.nextToken();
+                    videoParameters.setPaddingPolicy(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth) break;

@@ -59,7 +59,7 @@ public class CreatePresetRequest extends AmazonWebServiceRequest  implements Ser
      * <code>mp4</code>.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>^mp4$<br/>
+     * <b>Pattern: </b>(^mp4$)|(^ts$)|(^webm$)<br/>
      */
     private String container;
 
@@ -69,7 +69,7 @@ public class CreatePresetRequest extends AmazonWebServiceRequest  implements Ser
     private VideoParameters video;
 
     /**
-     * A section of the request body that specifies the audio parameters
+     * A section of the request body that specifies the audio parameters.
      */
     private AudioParameters audio;
 
@@ -176,7 +176,7 @@ public class CreatePresetRequest extends AmazonWebServiceRequest  implements Ser
      * <code>mp4</code>.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>^mp4$<br/>
+     * <b>Pattern: </b>(^mp4$)|(^ts$)|(^webm$)<br/>
      *
      * @return The container type for the output file. This value must be
      *         <code>mp4</code>.
@@ -190,7 +190,7 @@ public class CreatePresetRequest extends AmazonWebServiceRequest  implements Ser
      * <code>mp4</code>.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>^mp4$<br/>
+     * <b>Pattern: </b>(^mp4$)|(^ts$)|(^webm$)<br/>
      *
      * @param container The container type for the output file. This value must be
      *         <code>mp4</code>.
@@ -206,7 +206,7 @@ public class CreatePresetRequest extends AmazonWebServiceRequest  implements Ser
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>^mp4$<br/>
+     * <b>Pattern: </b>(^mp4$)|(^ts$)|(^webm$)<br/>
      *
      * @param container The container type for the output file. This value must be
      *         <code>mp4</code>.
@@ -255,29 +255,29 @@ public class CreatePresetRequest extends AmazonWebServiceRequest  implements Ser
     
     
     /**
-     * A section of the request body that specifies the audio parameters
+     * A section of the request body that specifies the audio parameters.
      *
-     * @return A section of the request body that specifies the audio parameters
+     * @return A section of the request body that specifies the audio parameters.
      */
     public AudioParameters getAudio() {
         return audio;
     }
     
     /**
-     * A section of the request body that specifies the audio parameters
+     * A section of the request body that specifies the audio parameters.
      *
-     * @param audio A section of the request body that specifies the audio parameters
+     * @param audio A section of the request body that specifies the audio parameters.
      */
     public void setAudio(AudioParameters audio) {
         this.audio = audio;
     }
     
     /**
-     * A section of the request body that specifies the audio parameters
+     * A section of the request body that specifies the audio parameters.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param audio A section of the request body that specifies the audio parameters
+     * @param audio A section of the request body that specifies the audio parameters.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

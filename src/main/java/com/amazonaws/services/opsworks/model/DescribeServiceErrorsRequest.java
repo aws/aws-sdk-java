@@ -27,44 +27,62 @@ import java.io.Serializable;
 public class DescribeServiceErrorsRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
-     * The stack ID.
+     * The stack ID. If you use this parameter,
+     * <code>DescribeServiceErrors</code> returns descriptions of the errors
+     * associated with the specified stack.
      */
     private String stackId;
 
     /**
-     * The instance ID.
+     * The instance ID. If you use this parameter,
+     * <code>DescribeServiceErrors</code> returns descriptions of the errors
+     * associated with the specified instance.
      */
     private String instanceId;
 
     /**
-     * An array of service error IDs to be described.
+     * An array of service error IDs. If you use this parameter,
+     * <code>DescribeServiceErrors</code> returns descriptions of the
+     * specified errors. Otherwise, it returns a description of every error.
      */
     private java.util.List<String> serviceErrorIds;
 
     /**
-     * The stack ID.
+     * The stack ID. If you use this parameter,
+     * <code>DescribeServiceErrors</code> returns descriptions of the errors
+     * associated with the specified stack.
      *
-     * @return The stack ID.
+     * @return The stack ID. If you use this parameter,
+     *         <code>DescribeServiceErrors</code> returns descriptions of the errors
+     *         associated with the specified stack.
      */
     public String getStackId() {
         return stackId;
     }
     
     /**
-     * The stack ID.
+     * The stack ID. If you use this parameter,
+     * <code>DescribeServiceErrors</code> returns descriptions of the errors
+     * associated with the specified stack.
      *
-     * @param stackId The stack ID.
+     * @param stackId The stack ID. If you use this parameter,
+     *         <code>DescribeServiceErrors</code> returns descriptions of the errors
+     *         associated with the specified stack.
      */
     public void setStackId(String stackId) {
         this.stackId = stackId;
     }
     
     /**
-     * The stack ID.
+     * The stack ID. If you use this parameter,
+     * <code>DescribeServiceErrors</code> returns descriptions of the errors
+     * associated with the specified stack.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param stackId The stack ID.
+     * @param stackId The stack ID. If you use this parameter,
+     *         <code>DescribeServiceErrors</code> returns descriptions of the errors
+     *         associated with the specified stack.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -76,29 +94,41 @@ public class DescribeServiceErrorsRequest extends AmazonWebServiceRequest  imple
     
     
     /**
-     * The instance ID.
+     * The instance ID. If you use this parameter,
+     * <code>DescribeServiceErrors</code> returns descriptions of the errors
+     * associated with the specified instance.
      *
-     * @return The instance ID.
+     * @return The instance ID. If you use this parameter,
+     *         <code>DescribeServiceErrors</code> returns descriptions of the errors
+     *         associated with the specified instance.
      */
     public String getInstanceId() {
         return instanceId;
     }
     
     /**
-     * The instance ID.
+     * The instance ID. If you use this parameter,
+     * <code>DescribeServiceErrors</code> returns descriptions of the errors
+     * associated with the specified instance.
      *
-     * @param instanceId The instance ID.
+     * @param instanceId The instance ID. If you use this parameter,
+     *         <code>DescribeServiceErrors</code> returns descriptions of the errors
+     *         associated with the specified instance.
      */
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
     
     /**
-     * The instance ID.
+     * The instance ID. If you use this parameter,
+     * <code>DescribeServiceErrors</code> returns descriptions of the errors
+     * associated with the specified instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceId The instance ID.
+     * @param instanceId The instance ID. If you use this parameter,
+     *         <code>DescribeServiceErrors</code> returns descriptions of the errors
+     *         associated with the specified instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -110,9 +140,13 @@ public class DescribeServiceErrorsRequest extends AmazonWebServiceRequest  imple
     
     
     /**
-     * An array of service error IDs to be described.
+     * An array of service error IDs. If you use this parameter,
+     * <code>DescribeServiceErrors</code> returns descriptions of the
+     * specified errors. Otherwise, it returns a description of every error.
      *
-     * @return An array of service error IDs to be described.
+     * @return An array of service error IDs. If you use this parameter,
+     *         <code>DescribeServiceErrors</code> returns descriptions of the
+     *         specified errors. Otherwise, it returns a description of every error.
      */
     public java.util.List<String> getServiceErrorIds() {
         
@@ -123,9 +157,13 @@ public class DescribeServiceErrorsRequest extends AmazonWebServiceRequest  imple
     }
     
     /**
-     * An array of service error IDs to be described.
+     * An array of service error IDs. If you use this parameter,
+     * <code>DescribeServiceErrors</code> returns descriptions of the
+     * specified errors. Otherwise, it returns a description of every error.
      *
-     * @param serviceErrorIds An array of service error IDs to be described.
+     * @param serviceErrorIds An array of service error IDs. If you use this parameter,
+     *         <code>DescribeServiceErrors</code> returns descriptions of the
+     *         specified errors. Otherwise, it returns a description of every error.
      */
     public void setServiceErrorIds(java.util.Collection<String> serviceErrorIds) {
         if (serviceErrorIds == null) {
@@ -139,11 +177,15 @@ public class DescribeServiceErrorsRequest extends AmazonWebServiceRequest  imple
     }
     
     /**
-     * An array of service error IDs to be described.
+     * An array of service error IDs. If you use this parameter,
+     * <code>DescribeServiceErrors</code> returns descriptions of the
+     * specified errors. Otherwise, it returns a description of every error.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param serviceErrorIds An array of service error IDs to be described.
+     * @param serviceErrorIds An array of service error IDs. If you use this parameter,
+     *         <code>DescribeServiceErrors</code> returns descriptions of the
+     *         specified errors. Otherwise, it returns a description of every error.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -157,11 +199,15 @@ public class DescribeServiceErrorsRequest extends AmazonWebServiceRequest  imple
     }
     
     /**
-     * An array of service error IDs to be described.
+     * An array of service error IDs. If you use this parameter,
+     * <code>DescribeServiceErrors</code> returns descriptions of the
+     * specified errors. Otherwise, it returns a description of every error.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param serviceErrorIds An array of service error IDs to be described.
+     * @param serviceErrorIds An array of service error IDs. If you use this parameter,
+     *         <code>DescribeServiceErrors</code> returns descriptions of the
+     *         specified errors. Otherwise, it returns a description of every error.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

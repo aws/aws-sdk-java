@@ -27,39 +27,55 @@ import java.io.Serializable;
 public class DescribeRaidArraysRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
-     * The instance ID.
+     * The instance ID. If you use this parameter,
+     * <code>DescribeRaidArrays</code> returns descriptions of the RAID
+     * arrays associated with the specified instance.
      */
     private String instanceId;
 
     /**
-     * An array of RAID array IDs to be described.
+     * An array of RAID array IDs. If you use this parameter,
+     * <code>DescribeRaidArrays</code> returns descriptions of the specified
+     * arrays. Otherwise, it returns a description of every array.
      */
     private java.util.List<String> raidArrayIds;
 
     /**
-     * The instance ID.
+     * The instance ID. If you use this parameter,
+     * <code>DescribeRaidArrays</code> returns descriptions of the RAID
+     * arrays associated with the specified instance.
      *
-     * @return The instance ID.
+     * @return The instance ID. If you use this parameter,
+     *         <code>DescribeRaidArrays</code> returns descriptions of the RAID
+     *         arrays associated with the specified instance.
      */
     public String getInstanceId() {
         return instanceId;
     }
     
     /**
-     * The instance ID.
+     * The instance ID. If you use this parameter,
+     * <code>DescribeRaidArrays</code> returns descriptions of the RAID
+     * arrays associated with the specified instance.
      *
-     * @param instanceId The instance ID.
+     * @param instanceId The instance ID. If you use this parameter,
+     *         <code>DescribeRaidArrays</code> returns descriptions of the RAID
+     *         arrays associated with the specified instance.
      */
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
     
     /**
-     * The instance ID.
+     * The instance ID. If you use this parameter,
+     * <code>DescribeRaidArrays</code> returns descriptions of the RAID
+     * arrays associated with the specified instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceId The instance ID.
+     * @param instanceId The instance ID. If you use this parameter,
+     *         <code>DescribeRaidArrays</code> returns descriptions of the RAID
+     *         arrays associated with the specified instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -71,9 +87,13 @@ public class DescribeRaidArraysRequest extends AmazonWebServiceRequest  implemen
     
     
     /**
-     * An array of RAID array IDs to be described.
+     * An array of RAID array IDs. If you use this parameter,
+     * <code>DescribeRaidArrays</code> returns descriptions of the specified
+     * arrays. Otherwise, it returns a description of every array.
      *
-     * @return An array of RAID array IDs to be described.
+     * @return An array of RAID array IDs. If you use this parameter,
+     *         <code>DescribeRaidArrays</code> returns descriptions of the specified
+     *         arrays. Otherwise, it returns a description of every array.
      */
     public java.util.List<String> getRaidArrayIds() {
         
@@ -84,9 +104,13 @@ public class DescribeRaidArraysRequest extends AmazonWebServiceRequest  implemen
     }
     
     /**
-     * An array of RAID array IDs to be described.
+     * An array of RAID array IDs. If you use this parameter,
+     * <code>DescribeRaidArrays</code> returns descriptions of the specified
+     * arrays. Otherwise, it returns a description of every array.
      *
-     * @param raidArrayIds An array of RAID array IDs to be described.
+     * @param raidArrayIds An array of RAID array IDs. If you use this parameter,
+     *         <code>DescribeRaidArrays</code> returns descriptions of the specified
+     *         arrays. Otherwise, it returns a description of every array.
      */
     public void setRaidArrayIds(java.util.Collection<String> raidArrayIds) {
         if (raidArrayIds == null) {
@@ -100,11 +124,15 @@ public class DescribeRaidArraysRequest extends AmazonWebServiceRequest  implemen
     }
     
     /**
-     * An array of RAID array IDs to be described.
+     * An array of RAID array IDs. If you use this parameter,
+     * <code>DescribeRaidArrays</code> returns descriptions of the specified
+     * arrays. Otherwise, it returns a description of every array.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param raidArrayIds An array of RAID array IDs to be described.
+     * @param raidArrayIds An array of RAID array IDs. If you use this parameter,
+     *         <code>DescribeRaidArrays</code> returns descriptions of the specified
+     *         arrays. Otherwise, it returns a description of every array.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -118,11 +146,15 @@ public class DescribeRaidArraysRequest extends AmazonWebServiceRequest  implemen
     }
     
     /**
-     * An array of RAID array IDs to be described.
+     * An array of RAID array IDs. If you use this parameter,
+     * <code>DescribeRaidArrays</code> returns descriptions of the specified
+     * arrays. Otherwise, it returns a description of every array.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param raidArrayIds An array of RAID array IDs to be described.
+     * @param raidArrayIds An array of RAID array IDs. If you use this parameter,
+     *         <code>DescribeRaidArrays</code> returns descriptions of the specified
+     *         arrays. Otherwise, it returns a description of every array.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

@@ -85,20 +85,24 @@ public interface AmazonElasticTranscoder {
 	
     /**
      * <p>
-     * To delete a pipeline, send a DELETE request to the
-     * <code>/2012-09-25/pipelines/[pipelineId] </code> resource.
+     * To pause or reactivate a pipeline, so the pipeline stops or restarts
+     * processing jobs, update the status for the pipeline. Send a POST
+     * request to the <code>/2012-09-25/pipelines/[pipelineId]/status</code>
+     * resource.
      * </p>
      * <p>
-     * You can only delete a pipeline that has never been used or that is
-     * not currently in use (doesn't contain any active jobs). If the
-     * pipeline is currently in use, <code>DeletePipeline</code> returns an
-     * error.
+     * Changing the pipeline status is useful if you want to cancel one or
+     * more jobs. You can't cancel jobs after Elastic Transcoder has started
+     * processing them; if you pause the pipeline to which you submitted the
+     * jobs, you have more time to get the job IDs for the jobs that you want
+     * to cancel, and to send a CancelJob request.
      * </p>
      *
-     * @param deletePipelineRequest Container for the necessary parameters to
-     *           execute the DeletePipeline service method on AmazonElasticTranscoder.
+     * @param updatePipelineStatusRequest Container for the necessary
+     *           parameters to execute the UpdatePipelineStatus service method on
+     *           AmazonElasticTranscoder.
      * 
-     * @return The response from the DeletePipeline service method, as
+     * @return The response from the UpdatePipelineStatus service method, as
      *         returned by AmazonElasticTranscoder.
      * 
      * @throws ResourceNotFoundException
@@ -106,6 +110,7 @@ public interface AmazonElasticTranscoder {
      * @throws ResourceInUseException
      * @throws InternalServiceException
      * @throws ValidationException
+     * @throws IncompatibleVersionException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -115,32 +120,34 @@ public interface AmazonElasticTranscoder {
      *             If an error response is returned by AmazonElasticTranscoder indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public DeletePipelineResult deletePipeline(DeletePipelineRequest deletePipelineRequest) 
+    public UpdatePipelineStatusResult updatePipelineStatus(UpdatePipelineStatusRequest updatePipelineStatusRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
      * <p>
-     * To delete a job, send a DELETE request to the
-     * <code>/2012-09-25/jobs/[jobId] </code> resource.
+     * To update Amazon Simple Notification Service (Amazon SNS)
+     * notifications for a pipeline, send a POST request to the
+     * <code>/2012-09-25/pipelines/[pipelineId]/notifications</code>
+     * resource.
      * </p>
      * <p>
-     * <b>NOTE:</b>You can only cancel a job that has a status of Submitted.
-     * To prevent a pipeline from starting to process a job while you're
-     * getting the job identifier, use UpdatePipelineStatus to temporarily
-     * pause the pipeline.
+     * When you update notifications for a pipeline, Elastic Transcoder
+     * returns the values that you specified in the request.
      * </p>
      *
-     * @param cancelJobRequest Container for the necessary parameters to
-     *           execute the CancelJob service method on AmazonElasticTranscoder.
+     * @param updatePipelineNotificationsRequest Container for the necessary
+     *           parameters to execute the UpdatePipelineNotifications service method
+     *           on AmazonElasticTranscoder.
      * 
-     * @return The response from the CancelJob service method, as returned by
-     *         AmazonElasticTranscoder.
+     * @return The response from the UpdatePipelineNotifications service
+     *         method, as returned by AmazonElasticTranscoder.
      * 
      * @throws ResourceNotFoundException
      * @throws AccessDeniedException
      * @throws ResourceInUseException
      * @throws InternalServiceException
      * @throws ValidationException
+     * @throws IncompatibleVersionException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -150,24 +157,26 @@ public interface AmazonElasticTranscoder {
      *             If an error response is returned by AmazonElasticTranscoder indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public CancelJobResult cancelJob(CancelJobRequest cancelJobRequest) 
+    public UpdatePipelineNotificationsResult updatePipelineNotifications(UpdatePipelineNotificationsRequest updatePipelineNotificationsRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
      * <p>
-     * To get a list of all presets associated with the current AWS account,
-     * send a GET request to the <code>/2012-09-25/presets</code> resource.
+     * To get detailed information about a job, send a GET request to the
+     * <code>/2012-09-25/jobs/[jobId] </code> resource.
      * </p>
      *
-     * @param listPresetsRequest Container for the necessary parameters to
-     *           execute the ListPresets service method on AmazonElasticTranscoder.
+     * @param readJobRequest Container for the necessary parameters to
+     *           execute the ReadJob service method on AmazonElasticTranscoder.
      * 
-     * @return The response from the ListPresets service method, as returned
-     *         by AmazonElasticTranscoder.
+     * @return The response from the ReadJob service method, as returned by
+     *         AmazonElasticTranscoder.
      * 
+     * @throws ResourceNotFoundException
      * @throws AccessDeniedException
      * @throws InternalServiceException
      * @throws ValidationException
+     * @throws IncompatibleVersionException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -177,7 +186,7 @@ public interface AmazonElasticTranscoder {
      *             If an error response is returned by AmazonElasticTranscoder indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public ListPresetsResult listPresets(ListPresetsRequest listPresetsRequest) 
+    public ReadJobResult readJob(ReadJobRequest readJobRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -203,6 +212,7 @@ public interface AmazonElasticTranscoder {
      * @throws AccessDeniedException
      * @throws InternalServiceException
      * @throws ValidationException
+     * @throws IncompatibleVersionException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -213,6 +223,35 @@ public interface AmazonElasticTranscoder {
      *             either a problem with the data in the request, or a server side issue.
      */
     public ListJobsByStatusResult listJobsByStatus(ListJobsByStatusRequest listJobsByStatusRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * To get detailed information about a preset, send a GET request to the
+     * <code>/2012-09-25/presets/[presetId] </code> resource.
+     * </p>
+     *
+     * @param readPresetRequest Container for the necessary parameters to
+     *           execute the ReadPreset service method on AmazonElasticTranscoder.
+     * 
+     * @return The response from the ReadPreset service method, as returned
+     *         by AmazonElasticTranscoder.
+     * 
+     * @throws ResourceNotFoundException
+     * @throws AccessDeniedException
+     * @throws InternalServiceException
+     * @throws ValidationException
+     * @throws IncompatibleVersionException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElasticTranscoder indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ReadPresetResult readPreset(ReadPresetRequest readPresetRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -232,6 +271,7 @@ public interface AmazonElasticTranscoder {
      * @throws InternalServiceException
      * @throws LimitExceededException
      * @throws ValidationException
+     * @throws IncompatibleVersionException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -242,6 +282,132 @@ public interface AmazonElasticTranscoder {
      *             either a problem with the data in the request, or a server side issue.
      */
     public CreatePipelineResult createPipeline(CreatePipelineRequest createPipelineRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * To cancel a job, send a DELETE request to the
+     * <code>/2012-09-25/jobs/[jobId] </code> resource.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>You can only cancel a job that has a status of Submitted.
+     * To prevent a pipeline from starting to process a job while you're
+     * getting the job identifier, use UpdatePipelineStatus to temporarily
+     * pause the pipeline.
+     * </p>
+     *
+     * @param cancelJobRequest Container for the necessary parameters to
+     *           execute the CancelJob service method on AmazonElasticTranscoder.
+     * 
+     * @return The response from the CancelJob service method, as returned by
+     *         AmazonElasticTranscoder.
+     * 
+     * @throws ResourceNotFoundException
+     * @throws AccessDeniedException
+     * @throws ResourceInUseException
+     * @throws InternalServiceException
+     * @throws ValidationException
+     * @throws IncompatibleVersionException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElasticTranscoder indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public CancelJobResult cancelJob(CancelJobRequest cancelJobRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     *
+     * @param updatePipelineRequest Container for the necessary parameters to
+     *           execute the UpdatePipeline service method on AmazonElasticTranscoder.
+     * 
+     * @return The response from the UpdatePipeline service method, as
+     *         returned by AmazonElasticTranscoder.
+     * 
+     * @throws AccessDeniedException
+     * @throws ResourceNotFoundException
+     * @throws ResourceInUseException
+     * @throws InternalServiceException
+     * @throws ValidationException
+     * @throws IncompatibleVersionException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElasticTranscoder indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public UpdatePipelineResult updatePipeline(UpdatePipelineRequest updatePipelineRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * To get a list of all presets associated with the current AWS account,
+     * send a GET request to the <code>/2012-09-25/presets</code> resource.
+     * </p>
+     *
+     * @param listPresetsRequest Container for the necessary parameters to
+     *           execute the ListPresets service method on AmazonElasticTranscoder.
+     * 
+     * @return The response from the ListPresets service method, as returned
+     *         by AmazonElasticTranscoder.
+     * 
+     * @throws AccessDeniedException
+     * @throws InternalServiceException
+     * @throws ValidationException
+     * @throws IncompatibleVersionException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElasticTranscoder indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ListPresetsResult listPresets(ListPresetsRequest listPresetsRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * To delete a pipeline, send a DELETE request to the
+     * <code>/2012-09-25/pipelines/[pipelineId] </code> resource.
+     * </p>
+     * <p>
+     * You can only delete a pipeline that has never been used or that is
+     * not currently in use (doesn't contain any active jobs). If the
+     * pipeline is currently in use, <code>DeletePipeline</code> returns an
+     * error.
+     * </p>
+     *
+     * @param deletePipelineRequest Container for the necessary parameters to
+     *           execute the DeletePipeline service method on AmazonElasticTranscoder.
+     * 
+     * @return The response from the DeletePipeline service method, as
+     *         returned by AmazonElasticTranscoder.
+     * 
+     * @throws ResourceNotFoundException
+     * @throws AccessDeniedException
+     * @throws ResourceInUseException
+     * @throws InternalServiceException
+     * @throws ValidationException
+     * @throws IncompatibleVersionException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElasticTranscoder indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DeletePipelineResult deletePipeline(DeletePipelineRequest deletePipelineRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -269,6 +435,7 @@ public interface AmazonElasticTranscoder {
      * @throws AccessDeniedException
      * @throws InternalServiceException
      * @throws ValidationException
+     * @throws IncompatibleVersionException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -297,6 +464,7 @@ public interface AmazonElasticTranscoder {
      * @throws AccessDeniedException
      * @throws InternalServiceException
      * @throws ValidationException
+     * @throws IncompatibleVersionException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -307,149 +475,6 @@ public interface AmazonElasticTranscoder {
      *             either a problem with the data in the request, or a server side issue.
      */
     public ListPipelinesResult listPipelines(ListPipelinesRequest listPipelinesRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * To update Amazon Simple Notification Service (Amazon SNS)
-     * notifications for a pipeline, send a POST request to the
-     * <code>/2012-09-25/pipelines/[pipelineId]/notifications</code>
-     * resource.
-     * </p>
-     * <p>
-     * When you update notifications for a pipeline, Elastic Transcoder
-     * returns the values that you specified in the request.
-     * </p>
-     *
-     * @param updatePipelineNotificationsRequest Container for the necessary
-     *           parameters to execute the UpdatePipelineNotifications service method
-     *           on AmazonElasticTranscoder.
-     * 
-     * @return The response from the UpdatePipelineNotifications service
-     *         method, as returned by AmazonElasticTranscoder.
-     * 
-     * @throws ResourceNotFoundException
-     * @throws AccessDeniedException
-     * @throws ResourceInUseException
-     * @throws InternalServiceException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonElasticTranscoder indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public UpdatePipelineNotificationsResult updatePipelineNotifications(UpdatePipelineNotificationsRequest updatePipelineNotificationsRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * To get a list of the jobs currently in a pipeline, send a GET request
-     * to the <code>/2012-09-25/jobsByPipeline/[pipelineId] </code> resource.
-     * </p>
-     * <p>
-     * Elastic Transcoder returns all of the jobs currently in the specified
-     * pipeline. The response body contains one element for each job that
-     * satisfies the search criteria.
-     * </p>
-     *
-     * @param listJobsByPipelineRequest Container for the necessary
-     *           parameters to execute the ListJobsByPipeline service method on
-     *           AmazonElasticTranscoder.
-     * 
-     * @return The response from the ListJobsByPipeline service method, as
-     *         returned by AmazonElasticTranscoder.
-     * 
-     * @throws ResourceNotFoundException
-     * @throws AccessDeniedException
-     * @throws InternalServiceException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonElasticTranscoder indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public ListJobsByPipelineResult listJobsByPipeline(ListJobsByPipelineRequest listJobsByPipelineRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * To create a job, send a POST request to the
-     * <code>/2012-09-25/jobs</code> resource.
-     * </p>
-     * <p>
-     * When you create a job, Elastic Transcoder returns JSON data that
-     * includes the values that you specified plus information about the job
-     * that is created.
-     * </p>
-     *
-     * @param createJobRequest Container for the necessary parameters to
-     *           execute the CreateJob service method on AmazonElasticTranscoder.
-     * 
-     * @return The response from the CreateJob service method, as returned by
-     *         AmazonElasticTranscoder.
-     * 
-     * @throws ResourceNotFoundException
-     * @throws AccessDeniedException
-     * @throws InternalServiceException
-     * @throws LimitExceededException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonElasticTranscoder indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public CreateJobResult createJob(CreateJobRequest createJobRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * To pause or reactivate a pipeline, so the pipeline stops or restarts
-     * processing jobs, update the status for the pipeline. Send a POST
-     * request to the <code>/2012-09-25/pipelines/[pipelineId]/status</code>
-     * resource.
-     * </p>
-     * <p>
-     * Changing the pipeline status is useful if you want to cancel one or
-     * more jobs. You can't cancel jobs after Elastic Transcoder has started
-     * processing them; if you pause the pipeline to which you submitted the
-     * jobs, you have more time to get the job IDs for the jobs that you want
-     * to cancel, and to send a CancelJob request.
-     * </p>
-     *
-     * @param updatePipelineStatusRequest Container for the necessary
-     *           parameters to execute the UpdatePipelineStatus service method on
-     *           AmazonElasticTranscoder.
-     * 
-     * @return The response from the UpdatePipelineStatus service method, as
-     *         returned by AmazonElasticTranscoder.
-     * 
-     * @throws ResourceNotFoundException
-     * @throws AccessDeniedException
-     * @throws ResourceInUseException
-     * @throws InternalServiceException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonElasticTranscoder indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public UpdatePipelineStatusResult updatePipelineStatus(UpdatePipelineStatusRequest updatePipelineStatusRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -468,6 +493,7 @@ public interface AmazonElasticTranscoder {
      * @throws AccessDeniedException
      * @throws InternalServiceException
      * @throws ValidationException
+     * @throws IncompatibleVersionException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -478,65 +504,6 @@ public interface AmazonElasticTranscoder {
      *             either a problem with the data in the request, or a server side issue.
      */
     public ReadPipelineResult readPipeline(ReadPipelineRequest readPipelineRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * To get detailed information about a job, send a GET request to the
-     * <code>/2012-09-25/jobs/[jobId] </code> resource.
-     * </p>
-     *
-     * @param readJobRequest Container for the necessary parameters to
-     *           execute the ReadJob service method on AmazonElasticTranscoder.
-     * 
-     * @return The response from the ReadJob service method, as returned by
-     *         AmazonElasticTranscoder.
-     * 
-     * @throws ResourceNotFoundException
-     * @throws AccessDeniedException
-     * @throws InternalServiceException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonElasticTranscoder indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public ReadJobResult readJob(ReadJobRequest readJobRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * To delete a preset, send a DELETE request to the
-     * <code>/2012-09-25/presets/[presetId] </code> resource.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> If the preset has been used, you cannot delete it.
-     * </p>
-     *
-     * @param deletePresetRequest Container for the necessary parameters to
-     *           execute the DeletePreset service method on AmazonElasticTranscoder.
-     * 
-     * @return The response from the DeletePreset service method, as returned
-     *         by AmazonElasticTranscoder.
-     * 
-     * @throws ResourceNotFoundException
-     * @throws AccessDeniedException
-     * @throws InternalServiceException
-     * @throws ValidationException
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonElasticTranscoder indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public DeletePresetResult deletePreset(DeletePresetRequest deletePresetRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -572,7 +539,9 @@ public interface AmazonElasticTranscoder {
      * 
      * @throws AccessDeniedException
      * @throws InternalServiceException
+     * @throws LimitExceededException
      * @throws ValidationException
+     * @throws IncompatibleVersionException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -587,20 +556,24 @@ public interface AmazonElasticTranscoder {
 
     /**
      * <p>
-     * To get detailed information about a preset, send a GET request to the
+     * To delete a preset, send a DELETE request to the
      * <code>/2012-09-25/presets/[presetId] </code> resource.
      * </p>
+     * <p>
+     * <b>NOTE:</b> If the preset has been used, you cannot delete it.
+     * </p>
      *
-     * @param readPresetRequest Container for the necessary parameters to
-     *           execute the ReadPreset service method on AmazonElasticTranscoder.
+     * @param deletePresetRequest Container for the necessary parameters to
+     *           execute the DeletePreset service method on AmazonElasticTranscoder.
      * 
-     * @return The response from the ReadPreset service method, as returned
+     * @return The response from the DeletePreset service method, as returned
      *         by AmazonElasticTranscoder.
      * 
      * @throws ResourceNotFoundException
      * @throws AccessDeniedException
      * @throws InternalServiceException
      * @throws ValidationException
+     * @throws IncompatibleVersionException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -610,9 +583,291 @@ public interface AmazonElasticTranscoder {
      *             If an error response is returned by AmazonElasticTranscoder indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public ReadPresetResult readPreset(ReadPresetRequest readPresetRequest) 
+    public DeletePresetResult deletePreset(DeletePresetRequest deletePresetRequest) 
             throws AmazonServiceException, AmazonClientException;
 
+    /**
+     * <p>
+     * To create a job, send a POST request to the
+     * <code>/2012-09-25/jobs</code> resource.
+     * </p>
+     * <p>
+     * When you create a job, Elastic Transcoder returns JSON data that
+     * includes the values that you specified plus information about the job
+     * that is created.
+     * </p>
+     * <p>
+     * If you have specified more than one output for your jobs (for example,
+     * one output for the Kindle Fire and another output for the Apple iPhone
+     * 4s), you currently must use the Elastic Transcoder API to list the
+     * jobs (as opposed to the AWS Console).
+     * </p>
+     *
+     * @param createJobRequest Container for the necessary parameters to
+     *           execute the CreateJob service method on AmazonElasticTranscoder.
+     * 
+     * @return The response from the CreateJob service method, as returned by
+     *         AmazonElasticTranscoder.
+     * 
+     * @throws ResourceNotFoundException
+     * @throws AccessDeniedException
+     * @throws InternalServiceException
+     * @throws LimitExceededException
+     * @throws ValidationException
+     * @throws IncompatibleVersionException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElasticTranscoder indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public CreateJobResult createJob(CreateJobRequest createJobRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * To get a list of the jobs currently in a pipeline, send a GET request
+     * to the <code>/2012-09-25/jobsByPipeline/[pipelineId] </code> resource.
+     * </p>
+     * <p>
+     * Elastic Transcoder returns all of the jobs currently in the specified
+     * pipeline. The response body contains one element for each job that
+     * satisfies the search criteria.
+     * </p>
+     *
+     * @param listJobsByPipelineRequest Container for the necessary
+     *           parameters to execute the ListJobsByPipeline service method on
+     *           AmazonElasticTranscoder.
+     * 
+     * @return The response from the ListJobsByPipeline service method, as
+     *         returned by AmazonElasticTranscoder.
+     * 
+     * @throws ResourceNotFoundException
+     * @throws AccessDeniedException
+     * @throws InternalServiceException
+     * @throws ValidationException
+     * @throws IncompatibleVersionException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElasticTranscoder indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ListJobsByPipelineResult listJobsByPipeline(ListJobsByPipelineRequest listJobsByPipelineRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * To pause or reactivate a pipeline, so the pipeline stops or restarts
+     * processing jobs, update the status for the pipeline. Send a POST
+     * request to the <code>/2012-09-25/pipelines/[pipelineId]/status</code>
+     * resource.
+     * </p>
+     * <p>
+     * Changing the pipeline status is useful if you want to cancel one or
+     * more jobs. You can't cancel jobs after Elastic Transcoder has started
+     * processing them; if you pause the pipeline to which you submitted the
+     * jobs, you have more time to get the job IDs for the jobs that you want
+     * to cancel, and to send a CancelJob request.
+     * </p>
+     * 
+     * @return The response from the UpdatePipelineStatus service method, as
+     *         returned by AmazonElasticTranscoder.
+     * 
+     * @throws ResourceNotFoundException
+     * @throws AccessDeniedException
+     * @throws ResourceInUseException
+     * @throws InternalServiceException
+     * @throws ValidationException
+     * @throws IncompatibleVersionException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElasticTranscoder indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public UpdatePipelineStatusResult updatePipelineStatus() throws AmazonServiceException, AmazonClientException;
+    
+    /**
+     * <p>
+     * To update Amazon Simple Notification Service (Amazon SNS)
+     * notifications for a pipeline, send a POST request to the
+     * <code>/2012-09-25/pipelines/[pipelineId]/notifications</code>
+     * resource.
+     * </p>
+     * <p>
+     * When you update notifications for a pipeline, Elastic Transcoder
+     * returns the values that you specified in the request.
+     * </p>
+     * 
+     * @return The response from the UpdatePipelineNotifications service
+     *         method, as returned by AmazonElasticTranscoder.
+     * 
+     * @throws ResourceNotFoundException
+     * @throws AccessDeniedException
+     * @throws ResourceInUseException
+     * @throws InternalServiceException
+     * @throws ValidationException
+     * @throws IncompatibleVersionException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElasticTranscoder indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public UpdatePipelineNotificationsResult updatePipelineNotifications() throws AmazonServiceException, AmazonClientException;
+    
+    /**
+     * <p>
+     * To get detailed information about a job, send a GET request to the
+     * <code>/2012-09-25/jobs/[jobId] </code> resource.
+     * </p>
+     * 
+     * @return The response from the ReadJob service method, as returned by
+     *         AmazonElasticTranscoder.
+     * 
+     * @throws ResourceNotFoundException
+     * @throws AccessDeniedException
+     * @throws InternalServiceException
+     * @throws ValidationException
+     * @throws IncompatibleVersionException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElasticTranscoder indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ReadJobResult readJob() throws AmazonServiceException, AmazonClientException;
+    
+    /**
+     * <p>
+     * To get a list of the jobs that have a specified status, send a GET
+     * request to the <code>/2012-09-25/jobsByStatus/[status] </code>
+     * resource.
+     * </p>
+     * <p>
+     * Elastic Transcoder returns all of the jobs that have the specified
+     * status. The response body contains one element for each job that
+     * satisfies the search criteria.
+     * </p>
+     * 
+     * @return The response from the ListJobsByStatus service method, as
+     *         returned by AmazonElasticTranscoder.
+     * 
+     * @throws ResourceNotFoundException
+     * @throws AccessDeniedException
+     * @throws InternalServiceException
+     * @throws ValidationException
+     * @throws IncompatibleVersionException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElasticTranscoder indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ListJobsByStatusResult listJobsByStatus() throws AmazonServiceException, AmazonClientException;
+    
+    /**
+     * <p>
+     * To get detailed information about a preset, send a GET request to the
+     * <code>/2012-09-25/presets/[presetId] </code> resource.
+     * </p>
+     * 
+     * @return The response from the ReadPreset service method, as returned
+     *         by AmazonElasticTranscoder.
+     * 
+     * @throws ResourceNotFoundException
+     * @throws AccessDeniedException
+     * @throws InternalServiceException
+     * @throws ValidationException
+     * @throws IncompatibleVersionException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElasticTranscoder indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ReadPresetResult readPreset() throws AmazonServiceException, AmazonClientException;
+    
+    /**
+     * <p>
+     * To create a pipeline, send a POST request to the
+     * <code>2012-09-25/pipelines</code> resource.
+     * </p>
+     * 
+     * @return The response from the CreatePipeline service method, as
+     *         returned by AmazonElasticTranscoder.
+     * 
+     * @throws AccessDeniedException
+     * @throws ResourceNotFoundException
+     * @throws InternalServiceException
+     * @throws LimitExceededException
+     * @throws ValidationException
+     * @throws IncompatibleVersionException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElasticTranscoder indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public CreatePipelineResult createPipeline() throws AmazonServiceException, AmazonClientException;
+    
+    /**
+     * <p>
+     * To cancel a job, send a DELETE request to the
+     * <code>/2012-09-25/jobs/[jobId] </code> resource.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>You can only cancel a job that has a status of Submitted.
+     * To prevent a pipeline from starting to process a job while you're
+     * getting the job identifier, use UpdatePipelineStatus to temporarily
+     * pause the pipeline.
+     * </p>
+     * 
+     * @return The response from the CancelJob service method, as returned by
+     *         AmazonElasticTranscoder.
+     * 
+     * @throws ResourceNotFoundException
+     * @throws AccessDeniedException
+     * @throws ResourceInUseException
+     * @throws InternalServiceException
+     * @throws ValidationException
+     * @throws IncompatibleVersionException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElasticTranscoder indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public CancelJobResult cancelJob() throws AmazonServiceException, AmazonClientException;
+    
     /**
      * <p>
      * To get a list of all presets associated with the current AWS account,
@@ -625,6 +880,7 @@ public interface AmazonElasticTranscoder {
      * @throws AccessDeniedException
      * @throws InternalServiceException
      * @throws ValidationException
+     * @throws IncompatibleVersionException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -635,6 +891,72 @@ public interface AmazonElasticTranscoder {
      *             either a problem with the data in the request, or a server side issue.
      */
     public ListPresetsResult listPresets() throws AmazonServiceException, AmazonClientException;
+    
+    /**
+     * <p>
+     * To delete a pipeline, send a DELETE request to the
+     * <code>/2012-09-25/pipelines/[pipelineId] </code> resource.
+     * </p>
+     * <p>
+     * You can only delete a pipeline that has never been used or that is
+     * not currently in use (doesn't contain any active jobs). If the
+     * pipeline is currently in use, <code>DeletePipeline</code> returns an
+     * error.
+     * </p>
+     * 
+     * @return The response from the DeletePipeline service method, as
+     *         returned by AmazonElasticTranscoder.
+     * 
+     * @throws ResourceNotFoundException
+     * @throws AccessDeniedException
+     * @throws ResourceInUseException
+     * @throws InternalServiceException
+     * @throws ValidationException
+     * @throws IncompatibleVersionException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElasticTranscoder indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DeletePipelineResult deletePipeline() throws AmazonServiceException, AmazonClientException;
+    
+    /**
+     * <p>
+     * To test the IAM role that's used by Elastic Transcoder to create the
+     * pipeline, send a POST request to the
+     * <code>/2012-09-25/roleTests</code> resource.
+     * </p>
+     * <p>
+     * The <code>TestRole</code> action lets you determine whether the IAM
+     * role you are using has sufficient permissions to let Elastic
+     * Transcoder perform tasks associated with the transcoding process. The
+     * action attempts to assume the specified IAM role, checks read access
+     * to the input and output buckets, and tries to send a test notification
+     * to Amazon SNS topics that you specify.
+     * </p>
+     * 
+     * @return The response from the TestRole service method, as returned by
+     *         AmazonElasticTranscoder.
+     * 
+     * @throws ResourceNotFoundException
+     * @throws AccessDeniedException
+     * @throws InternalServiceException
+     * @throws ValidationException
+     * @throws IncompatibleVersionException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElasticTranscoder indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public TestRoleResult testRole() throws AmazonServiceException, AmazonClientException;
     
     /**
      * <p>
@@ -649,6 +971,7 @@ public interface AmazonElasticTranscoder {
      * @throws AccessDeniedException
      * @throws InternalServiceException
      * @throws ValidationException
+     * @throws IncompatibleVersionException
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -659,6 +982,170 @@ public interface AmazonElasticTranscoder {
      *             either a problem with the data in the request, or a server side issue.
      */
     public ListPipelinesResult listPipelines() throws AmazonServiceException, AmazonClientException;
+    
+    /**
+     * <p>
+     * To get detailed information about a pipeline, send a GET request to
+     * the <code>/2012-09-25/pipelines/[pipelineId] </code> resource.
+     * </p>
+     * 
+     * @return The response from the ReadPipeline service method, as returned
+     *         by AmazonElasticTranscoder.
+     * 
+     * @throws ResourceNotFoundException
+     * @throws AccessDeniedException
+     * @throws InternalServiceException
+     * @throws ValidationException
+     * @throws IncompatibleVersionException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElasticTranscoder indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ReadPipelineResult readPipeline() throws AmazonServiceException, AmazonClientException;
+    
+    /**
+     * <p>
+     * To create a preset, send a POST request to the
+     * <code>/2012-09-25/presets</code> resource.
+     * </p>
+     * <p>
+     * <b>IMPORTANT:</b>Elastic Transcoder checks the settings that you
+     * specify to ensure that they meet Elastic Transcoder requirements and
+     * to determine whether they comply with H.264 standards. If your
+     * settings are not valid for Elastic Transcoder, Elastic Transcoder
+     * returns an HTTP 400 response (ValidationException) and does not create
+     * the preset. If the settings are valid for Elastic Transcoder but
+     * aren't strictly compliant with the H.264 standard, Elastic Transcoder
+     * creates the preset and returns a warning message in the response. This
+     * helps you determine whether your settings comply with the H.264
+     * standard while giving you greater flexibility with respect to the
+     * video that Elastic Transcoder produces.
+     * </p>
+     * <p>
+     * Elastic Transcoder uses the H.264 video-compression format. For more
+     * information, see the International Telecommunication Union publication
+     * <i>Recommendation ITU-T H.264: Advanced video coding for generic
+     * audiovisual services</i> .
+     * </p>
+     * 
+     * @return The response from the CreatePreset service method, as returned
+     *         by AmazonElasticTranscoder.
+     * 
+     * @throws AccessDeniedException
+     * @throws InternalServiceException
+     * @throws LimitExceededException
+     * @throws ValidationException
+     * @throws IncompatibleVersionException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElasticTranscoder indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public CreatePresetResult createPreset() throws AmazonServiceException, AmazonClientException;
+    
+    /**
+     * <p>
+     * To delete a preset, send a DELETE request to the
+     * <code>/2012-09-25/presets/[presetId] </code> resource.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> If the preset has been used, you cannot delete it.
+     * </p>
+     * 
+     * @return The response from the DeletePreset service method, as returned
+     *         by AmazonElasticTranscoder.
+     * 
+     * @throws ResourceNotFoundException
+     * @throws AccessDeniedException
+     * @throws InternalServiceException
+     * @throws ValidationException
+     * @throws IncompatibleVersionException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElasticTranscoder indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public DeletePresetResult deletePreset() throws AmazonServiceException, AmazonClientException;
+    
+    /**
+     * <p>
+     * To create a job, send a POST request to the
+     * <code>/2012-09-25/jobs</code> resource.
+     * </p>
+     * <p>
+     * When you create a job, Elastic Transcoder returns JSON data that
+     * includes the values that you specified plus information about the job
+     * that is created.
+     * </p>
+     * <p>
+     * If you have specified more than one output for your jobs (for example,
+     * one output for the Kindle Fire and another output for the Apple iPhone
+     * 4s), you currently must use the Elastic Transcoder API to list the
+     * jobs (as opposed to the AWS Console).
+     * </p>
+     * 
+     * @return The response from the CreateJob service method, as returned by
+     *         AmazonElasticTranscoder.
+     * 
+     * @throws ResourceNotFoundException
+     * @throws AccessDeniedException
+     * @throws InternalServiceException
+     * @throws LimitExceededException
+     * @throws ValidationException
+     * @throws IncompatibleVersionException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElasticTranscoder indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public CreateJobResult createJob() throws AmazonServiceException, AmazonClientException;
+    
+    /**
+     * <p>
+     * To get a list of the jobs currently in a pipeline, send a GET request
+     * to the <code>/2012-09-25/jobsByPipeline/[pipelineId] </code> resource.
+     * </p>
+     * <p>
+     * Elastic Transcoder returns all of the jobs currently in the specified
+     * pipeline. The response body contains one element for each job that
+     * satisfies the search criteria.
+     * </p>
+     * 
+     * @return The response from the ListJobsByPipeline service method, as
+     *         returned by AmazonElasticTranscoder.
+     * 
+     * @throws ResourceNotFoundException
+     * @throws AccessDeniedException
+     * @throws InternalServiceException
+     * @throws ValidationException
+     * @throws IncompatibleVersionException
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElasticTranscoder indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public ListJobsByPipelineResult listJobsByPipeline() throws AmazonServiceException, AmazonClientException;
     
     /**
      * Shuts down this client object, releasing any resources that might be held

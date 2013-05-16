@@ -117,6 +117,104 @@ public class CreatePipelineRequestMarshaller implements Marshaller<Request<Creat
                 }
                 jsonWriter.endObject();
             }
+            PipelineOutputConfig contentConfig = createPipelineRequest.getContentConfig();
+            if (contentConfig != null) {
+
+                jsonWriter.key("ContentConfig");
+                jsonWriter.object();
+
+                if (contentConfig.getBucket() != null) {
+                    jsonWriter.key("Bucket").value(contentConfig.getBucket());
+                }
+                if (contentConfig.getStorageClass() != null) {
+                    jsonWriter.key("StorageClass").value(contentConfig.getStorageClass());
+                }
+
+                java.util.List<Permission> permissionsList = contentConfig.getPermissions();
+                if (permissionsList != null && permissionsList.size() > 0) {
+
+                    jsonWriter.key("Permissions");
+                    jsonWriter.array();
+
+                    for (Permission permissionsListValue : permissionsList) {
+                        if (permissionsListValue != null) {
+                            jsonWriter.object();
+                            if (permissionsListValue.getGranteeType() != null) {
+                                jsonWriter.key("GranteeType").value(permissionsListValue.getGranteeType());
+                            }
+                            if (permissionsListValue.getGrantee() != null) {
+                                jsonWriter.key("Grantee").value(permissionsListValue.getGrantee());
+                            }
+
+                            java.util.List<String> accessList = permissionsListValue.getAccess();
+                            if (accessList != null && accessList.size() > 0) {
+
+                                jsonWriter.key("Access");
+                                jsonWriter.array();
+
+                                for (String accessListValue : accessList) {
+                                    if (accessListValue != null) {
+                                        jsonWriter.value(accessListValue);
+                                    }
+                                }
+                                jsonWriter.endArray();
+                            }
+                            jsonWriter.endObject();
+                        }
+                    }
+                    jsonWriter.endArray();
+                }
+                jsonWriter.endObject();
+            }
+            PipelineOutputConfig thumbnailConfig = createPipelineRequest.getThumbnailConfig();
+            if (thumbnailConfig != null) {
+
+                jsonWriter.key("ThumbnailConfig");
+                jsonWriter.object();
+
+                if (thumbnailConfig.getBucket() != null) {
+                    jsonWriter.key("Bucket").value(thumbnailConfig.getBucket());
+                }
+                if (thumbnailConfig.getStorageClass() != null) {
+                    jsonWriter.key("StorageClass").value(thumbnailConfig.getStorageClass());
+                }
+
+                java.util.List<Permission> permissionsList = thumbnailConfig.getPermissions();
+                if (permissionsList != null && permissionsList.size() > 0) {
+
+                    jsonWriter.key("Permissions");
+                    jsonWriter.array();
+
+                    for (Permission permissionsListValue : permissionsList) {
+                        if (permissionsListValue != null) {
+                            jsonWriter.object();
+                            if (permissionsListValue.getGranteeType() != null) {
+                                jsonWriter.key("GranteeType").value(permissionsListValue.getGranteeType());
+                            }
+                            if (permissionsListValue.getGrantee() != null) {
+                                jsonWriter.key("Grantee").value(permissionsListValue.getGrantee());
+                            }
+
+                            java.util.List<String> accessList = permissionsListValue.getAccess();
+                            if (accessList != null && accessList.size() > 0) {
+
+                                jsonWriter.key("Access");
+                                jsonWriter.array();
+
+                                for (String accessListValue : accessList) {
+                                    if (accessListValue != null) {
+                                        jsonWriter.value(accessListValue);
+                                    }
+                                }
+                                jsonWriter.endArray();
+                            }
+                            jsonWriter.endObject();
+                        }
+                    }
+                    jsonWriter.endArray();
+                }
+                jsonWriter.endObject();
+            }
 
           jsonWriter.endObject();
           

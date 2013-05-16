@@ -19,7 +19,8 @@ import java.io.Serializable;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.opsworks.AWSOpsWorks#createApp(CreateAppRequest) CreateApp operation}.
  * <p>
- * Creates an app for a specified stack.
+ * Creates an app for a specified stack. For more information, see <a
+ * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html"> Creating Apps </a> .
  * </p>
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#createApp(CreateAppRequest)
@@ -30,6 +31,11 @@ public class CreateAppRequest extends AmazonWebServiceRequest  implements Serial
      * The stack ID.
      */
     private String stackId;
+
+    /**
+     * The app's short name.
+     */
+    private String shortname;
 
     /**
      * The app name.
@@ -59,7 +65,7 @@ public class CreateAppRequest extends AmazonWebServiceRequest  implements Serial
 
     /**
      * The app virtual host settings, with multiple domains separated by
-     * commas. For example: <code>'www.mysite.com, mysite.com'</code>
+     * commas. For example: <code>'www.example.com, example.com'</code>
      */
     private java.util.List<String> domains;
 
@@ -109,6 +115,40 @@ public class CreateAppRequest extends AmazonWebServiceRequest  implements Serial
      */
     public CreateAppRequest withStackId(String stackId) {
         this.stackId = stackId;
+        return this;
+    }
+    
+    
+    /**
+     * The app's short name.
+     *
+     * @return The app's short name.
+     */
+    public String getShortname() {
+        return shortname;
+    }
+    
+    /**
+     * The app's short name.
+     *
+     * @param shortname The app's short name.
+     */
+    public void setShortname(String shortname) {
+        this.shortname = shortname;
+    }
+    
+    /**
+     * The app's short name.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param shortname The app's short name.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public CreateAppRequest withShortname(String shortname) {
+        this.shortname = shortname;
         return this;
     }
     
@@ -330,10 +370,10 @@ public class CreateAppRequest extends AmazonWebServiceRequest  implements Serial
     
     /**
      * The app virtual host settings, with multiple domains separated by
-     * commas. For example: <code>'www.mysite.com, mysite.com'</code>
+     * commas. For example: <code>'www.example.com, example.com'</code>
      *
      * @return The app virtual host settings, with multiple domains separated by
-     *         commas. For example: <code>'www.mysite.com, mysite.com'</code>
+     *         commas. For example: <code>'www.example.com, example.com'</code>
      */
     public java.util.List<String> getDomains() {
         
@@ -345,10 +385,10 @@ public class CreateAppRequest extends AmazonWebServiceRequest  implements Serial
     
     /**
      * The app virtual host settings, with multiple domains separated by
-     * commas. For example: <code>'www.mysite.com, mysite.com'</code>
+     * commas. For example: <code>'www.example.com, example.com'</code>
      *
      * @param domains The app virtual host settings, with multiple domains separated by
-     *         commas. For example: <code>'www.mysite.com, mysite.com'</code>
+     *         commas. For example: <code>'www.example.com, example.com'</code>
      */
     public void setDomains(java.util.Collection<String> domains) {
         if (domains == null) {
@@ -363,12 +403,12 @@ public class CreateAppRequest extends AmazonWebServiceRequest  implements Serial
     
     /**
      * The app virtual host settings, with multiple domains separated by
-     * commas. For example: <code>'www.mysite.com, mysite.com'</code>
+     * commas. For example: <code>'www.example.com, example.com'</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param domains The app virtual host settings, with multiple domains separated by
-     *         commas. For example: <code>'www.mysite.com, mysite.com'</code>
+     *         commas. For example: <code>'www.example.com, example.com'</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -383,12 +423,12 @@ public class CreateAppRequest extends AmazonWebServiceRequest  implements Serial
     
     /**
      * The app virtual host settings, with multiple domains separated by
-     * commas. For example: <code>'www.mysite.com, mysite.com'</code>
+     * commas. For example: <code>'www.example.com, example.com'</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param domains The app virtual host settings, with multiple domains separated by
-     *         commas. For example: <code>'www.mysite.com, mysite.com'</code>
+     *         commas. For example: <code>'www.example.com, example.com'</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -539,6 +579,7 @@ public class CreateAppRequest extends AmazonWebServiceRequest  implements Serial
         StringBuilder sb = new StringBuilder();
         sb.append("{");    	
         if (getStackId() != null) sb.append("StackId: " + getStackId() + ",");    	
+        if (getShortname() != null) sb.append("Shortname: " + getShortname() + ",");    	
         if (getName() != null) sb.append("Name: " + getName() + ",");    	
         if (getDescription() != null) sb.append("Description: " + getDescription() + ",");    	
         if (getType() != null) sb.append("Type: " + getType() + ",");    	
@@ -557,6 +598,7 @@ public class CreateAppRequest extends AmazonWebServiceRequest  implements Serial
         int hashCode = 1;
         
         hashCode = prime * hashCode + ((getStackId() == null) ? 0 : getStackId().hashCode()); 
+        hashCode = prime * hashCode + ((getShortname() == null) ? 0 : getShortname().hashCode()); 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode()); 
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode()); 
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode()); 
@@ -578,6 +620,8 @@ public class CreateAppRequest extends AmazonWebServiceRequest  implements Serial
         
         if (other.getStackId() == null ^ this.getStackId() == null) return false;
         if (other.getStackId() != null && other.getStackId().equals(this.getStackId()) == false) return false; 
+        if (other.getShortname() == null ^ this.getShortname() == null) return false;
+        if (other.getShortname() != null && other.getShortname().equals(this.getShortname()) == false) return false; 
         if (other.getName() == null ^ this.getName() == null) return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false) return false; 
         if (other.getDescription() == null ^ this.getDescription() == null) return false;

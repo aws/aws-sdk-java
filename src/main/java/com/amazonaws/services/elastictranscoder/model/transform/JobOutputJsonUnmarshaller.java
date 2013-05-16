@@ -49,6 +49,10 @@ public class JobOutputJsonUnmarshaller implements Unmarshaller<JobOutput, JsonUn
 
             
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("Id", targetDepth)) {
+                    context.nextToken();
+                    jobOutput.setId(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("Key", targetDepth)) {
                     context.nextToken();
                     jobOutput.setKey(StringJsonUnmarshaller.getInstance().unmarshall(context));
@@ -65,6 +69,10 @@ public class JobOutputJsonUnmarshaller implements Unmarshaller<JobOutput, JsonUn
                     context.nextToken();
                     jobOutput.setPresetId(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("SegmentDuration", targetDepth)) {
+                    context.nextToken();
+                    jobOutput.setSegmentDuration(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
                     jobOutput.setStatus(StringJsonUnmarshaller.getInstance().unmarshall(context));
@@ -72,6 +80,18 @@ public class JobOutputJsonUnmarshaller implements Unmarshaller<JobOutput, JsonUn
                 if (context.testExpression("StatusDetail", targetDepth)) {
                     context.nextToken();
                     jobOutput.setStatusDetail(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("Duration", targetDepth)) {
+                    context.nextToken();
+                    jobOutput.setDuration(LongJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("Width", targetDepth)) {
+                    context.nextToken();
+                    jobOutput.setWidth(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("Height", targetDepth)) {
+                    context.nextToken();
+                    jobOutput.setHeight(IntegerJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

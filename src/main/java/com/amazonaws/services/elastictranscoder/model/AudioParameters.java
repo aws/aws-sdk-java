@@ -25,7 +25,7 @@ public class AudioParameters  implements Serializable  {
      * <code>AAC</code>.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^AAC$)<br/>
+     * <b>Pattern: </b>(^AAC$)|(^vorbis$)<br/>
      */
     private String codec;
 
@@ -66,7 +66,7 @@ public class AudioParameters  implements Serializable  {
      * <code>AAC</code>.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^AAC$)<br/>
+     * <b>Pattern: </b>(^AAC$)|(^vorbis$)<br/>
      *
      * @return The audio codec for the output file. This value must be
      *         <code>AAC</code>.
@@ -80,7 +80,7 @@ public class AudioParameters  implements Serializable  {
      * <code>AAC</code>.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^AAC$)<br/>
+     * <b>Pattern: </b>(^AAC$)|(^vorbis$)<br/>
      *
      * @param codec The audio codec for the output file. This value must be
      *         <code>AAC</code>.
@@ -96,7 +96,7 @@ public class AudioParameters  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^AAC$)<br/>
+     * <b>Pattern: </b>(^AAC$)|(^vorbis$)<br/>
      *
      * @param codec The audio codec for the output file. This value must be
      *         <code>AAC</code>.

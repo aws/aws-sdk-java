@@ -50,10 +50,58 @@ public class Job  implements Serializable  {
     private JobInput input;
 
     /**
-     * A section of the request or response body that provides information
-     * about the transcoded (target) file.
+     * If you specified one output for a job, information about that output.
+     * If you specified multiple outputs for a job, the Output object lists
+     * information about the first output. This duplicates the information
+     * that is listed for the first output in the Outputs object.
+     * <p><important>Outputs recommended instead.</important> A section of
+     * the request or response body that provides information about the
+     * transcoded (target) file.
      */
     private JobOutput output;
+
+    /**
+     * Information about the output files. We recommend that you use the
+     * <code>Outputs</code> syntax for all jobs, even when you want Elastic
+     * Transcoder to transcode a file into only one format. Do not use both
+     * the <code>Outputs</code> and <code>Output</code> syntaxes in the same
+     * request. You can create a maximum of 30 outputs per job. <p> If you
+     * specify more than one output for a job, Elastic Transcoder creates the
+     * files for each output in the order in which you specify them in the
+     * job.
+     */
+    private java.util.List<JobOutput> outputs;
+
+    /**
+     * The value, if any, that you want Elastic Transcoder to prepend to the
+     * names of all files that this job creates, including output files,
+     * thumbnails, and playlists. We recommend that you add a / or some other
+     * delimiter to the end of the <code>OutputKeyPrefix</code>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 255<br/>
+     */
+    private String outputKeyPrefix;
+
+    /**
+     * <important>Outputs in MPEG-TS format only.</important>If you specify a
+     * preset in <code>PresetId</code> for which the value of
+     * <code>Container</code> is ts (MPEG-TS), <code>Playlists</code>
+     * contains information about the master playlists that you want Elastic
+     * Transcoder to create. <p>We recommend that you create only one master
+     * playlist. The maximum number of master playlists in a job is 30.
+     */
+    private java.util.List<Playlist> playlists;
+
+    /**
+     * The status of the job: <code>Submitted</code>,
+     * <code>Progressing</code>, <code>l</code>, <code>Canceled</code>, or
+     * <code>Error</code>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Pattern: </b>(^Submitted$)|(^Progressing$)|(^Complete$)|(^Canceled$)|(^Error$)<br/>
+     */
+    private String status;
 
     /**
      * The identifier that Elastic Transcoder assigned to the job. You use
@@ -212,41 +260,421 @@ public class Job  implements Serializable  {
     
     
     /**
-     * A section of the request or response body that provides information
-     * about the transcoded (target) file.
+     * If you specified one output for a job, information about that output.
+     * If you specified multiple outputs for a job, the Output object lists
+     * information about the first output. This duplicates the information
+     * that is listed for the first output in the Outputs object.
+     * <p><important>Outputs recommended instead.</important> A section of
+     * the request or response body that provides information about the
+     * transcoded (target) file.
      *
-     * @return A section of the request or response body that provides information
-     *         about the transcoded (target) file.
+     * @return If you specified one output for a job, information about that output.
+     *         If you specified multiple outputs for a job, the Output object lists
+     *         information about the first output. This duplicates the information
+     *         that is listed for the first output in the Outputs object.
+     *         <p><important>Outputs recommended instead.</important> A section of
+     *         the request or response body that provides information about the
+     *         transcoded (target) file.
      */
     public JobOutput getOutput() {
         return output;
     }
     
     /**
-     * A section of the request or response body that provides information
-     * about the transcoded (target) file.
+     * If you specified one output for a job, information about that output.
+     * If you specified multiple outputs for a job, the Output object lists
+     * information about the first output. This duplicates the information
+     * that is listed for the first output in the Outputs object.
+     * <p><important>Outputs recommended instead.</important> A section of
+     * the request or response body that provides information about the
+     * transcoded (target) file.
      *
-     * @param output A section of the request or response body that provides information
-     *         about the transcoded (target) file.
+     * @param output If you specified one output for a job, information about that output.
+     *         If you specified multiple outputs for a job, the Output object lists
+     *         information about the first output. This duplicates the information
+     *         that is listed for the first output in the Outputs object.
+     *         <p><important>Outputs recommended instead.</important> A section of
+     *         the request or response body that provides information about the
+     *         transcoded (target) file.
      */
     public void setOutput(JobOutput output) {
         this.output = output;
     }
     
     /**
-     * A section of the request or response body that provides information
-     * about the transcoded (target) file.
+     * If you specified one output for a job, information about that output.
+     * If you specified multiple outputs for a job, the Output object lists
+     * information about the first output. This duplicates the information
+     * that is listed for the first output in the Outputs object.
+     * <p><important>Outputs recommended instead.</important> A section of
+     * the request or response body that provides information about the
+     * transcoded (target) file.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param output A section of the request or response body that provides information
-     *         about the transcoded (target) file.
+     * @param output If you specified one output for a job, information about that output.
+     *         If you specified multiple outputs for a job, the Output object lists
+     *         information about the first output. This duplicates the information
+     *         that is listed for the first output in the Outputs object.
+     *         <p><important>Outputs recommended instead.</important> A section of
+     *         the request or response body that provides information about the
+     *         transcoded (target) file.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
     public Job withOutput(JobOutput output) {
         this.output = output;
+        return this;
+    }
+    
+    
+    /**
+     * Information about the output files. We recommend that you use the
+     * <code>Outputs</code> syntax for all jobs, even when you want Elastic
+     * Transcoder to transcode a file into only one format. Do not use both
+     * the <code>Outputs</code> and <code>Output</code> syntaxes in the same
+     * request. You can create a maximum of 30 outputs per job. <p> If you
+     * specify more than one output for a job, Elastic Transcoder creates the
+     * files for each output in the order in which you specify them in the
+     * job.
+     *
+     * @return Information about the output files. We recommend that you use the
+     *         <code>Outputs</code> syntax for all jobs, even when you want Elastic
+     *         Transcoder to transcode a file into only one format. Do not use both
+     *         the <code>Outputs</code> and <code>Output</code> syntaxes in the same
+     *         request. You can create a maximum of 30 outputs per job. <p> If you
+     *         specify more than one output for a job, Elastic Transcoder creates the
+     *         files for each output in the order in which you specify them in the
+     *         job.
+     */
+    public java.util.List<JobOutput> getOutputs() {
+        
+        if (outputs == null) {
+            outputs = new java.util.ArrayList<JobOutput>();
+        }
+        return outputs;
+    }
+    
+    /**
+     * Information about the output files. We recommend that you use the
+     * <code>Outputs</code> syntax for all jobs, even when you want Elastic
+     * Transcoder to transcode a file into only one format. Do not use both
+     * the <code>Outputs</code> and <code>Output</code> syntaxes in the same
+     * request. You can create a maximum of 30 outputs per job. <p> If you
+     * specify more than one output for a job, Elastic Transcoder creates the
+     * files for each output in the order in which you specify them in the
+     * job.
+     *
+     * @param outputs Information about the output files. We recommend that you use the
+     *         <code>Outputs</code> syntax for all jobs, even when you want Elastic
+     *         Transcoder to transcode a file into only one format. Do not use both
+     *         the <code>Outputs</code> and <code>Output</code> syntaxes in the same
+     *         request. You can create a maximum of 30 outputs per job. <p> If you
+     *         specify more than one output for a job, Elastic Transcoder creates the
+     *         files for each output in the order in which you specify them in the
+     *         job.
+     */
+    public void setOutputs(java.util.Collection<JobOutput> outputs) {
+        if (outputs == null) {
+            this.outputs = null;
+            return;
+        }
+
+        java.util.List<JobOutput> outputsCopy = new java.util.ArrayList<JobOutput>(outputs.size());
+        outputsCopy.addAll(outputs);
+        this.outputs = outputsCopy;
+    }
+    
+    /**
+     * Information about the output files. We recommend that you use the
+     * <code>Outputs</code> syntax for all jobs, even when you want Elastic
+     * Transcoder to transcode a file into only one format. Do not use both
+     * the <code>Outputs</code> and <code>Output</code> syntaxes in the same
+     * request. You can create a maximum of 30 outputs per job. <p> If you
+     * specify more than one output for a job, Elastic Transcoder creates the
+     * files for each output in the order in which you specify them in the
+     * job.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param outputs Information about the output files. We recommend that you use the
+     *         <code>Outputs</code> syntax for all jobs, even when you want Elastic
+     *         Transcoder to transcode a file into only one format. Do not use both
+     *         the <code>Outputs</code> and <code>Output</code> syntaxes in the same
+     *         request. You can create a maximum of 30 outputs per job. <p> If you
+     *         specify more than one output for a job, Elastic Transcoder creates the
+     *         files for each output in the order in which you specify them in the
+     *         job.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public Job withOutputs(JobOutput... outputs) {
+        if (getOutputs() == null) setOutputs(new java.util.ArrayList<JobOutput>(outputs.length));
+        for (JobOutput value : outputs) {
+            getOutputs().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * Information about the output files. We recommend that you use the
+     * <code>Outputs</code> syntax for all jobs, even when you want Elastic
+     * Transcoder to transcode a file into only one format. Do not use both
+     * the <code>Outputs</code> and <code>Output</code> syntaxes in the same
+     * request. You can create a maximum of 30 outputs per job. <p> If you
+     * specify more than one output for a job, Elastic Transcoder creates the
+     * files for each output in the order in which you specify them in the
+     * job.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param outputs Information about the output files. We recommend that you use the
+     *         <code>Outputs</code> syntax for all jobs, even when you want Elastic
+     *         Transcoder to transcode a file into only one format. Do not use both
+     *         the <code>Outputs</code> and <code>Output</code> syntaxes in the same
+     *         request. You can create a maximum of 30 outputs per job. <p> If you
+     *         specify more than one output for a job, Elastic Transcoder creates the
+     *         files for each output in the order in which you specify them in the
+     *         job.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public Job withOutputs(java.util.Collection<JobOutput> outputs) {
+        if (outputs == null) {
+            this.outputs = null;
+        } else {
+            java.util.List<JobOutput> outputsCopy = new java.util.ArrayList<JobOutput>(outputs.size());
+            outputsCopy.addAll(outputs);
+            this.outputs = outputsCopy;
+        }
+
+        return this;
+    }
+    
+    /**
+     * The value, if any, that you want Elastic Transcoder to prepend to the
+     * names of all files that this job creates, including output files,
+     * thumbnails, and playlists. We recommend that you add a / or some other
+     * delimiter to the end of the <code>OutputKeyPrefix</code>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 255<br/>
+     *
+     * @return The value, if any, that you want Elastic Transcoder to prepend to the
+     *         names of all files that this job creates, including output files,
+     *         thumbnails, and playlists. We recommend that you add a / or some other
+     *         delimiter to the end of the <code>OutputKeyPrefix</code>.
+     */
+    public String getOutputKeyPrefix() {
+        return outputKeyPrefix;
+    }
+    
+    /**
+     * The value, if any, that you want Elastic Transcoder to prepend to the
+     * names of all files that this job creates, including output files,
+     * thumbnails, and playlists. We recommend that you add a / or some other
+     * delimiter to the end of the <code>OutputKeyPrefix</code>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 255<br/>
+     *
+     * @param outputKeyPrefix The value, if any, that you want Elastic Transcoder to prepend to the
+     *         names of all files that this job creates, including output files,
+     *         thumbnails, and playlists. We recommend that you add a / or some other
+     *         delimiter to the end of the <code>OutputKeyPrefix</code>.
+     */
+    public void setOutputKeyPrefix(String outputKeyPrefix) {
+        this.outputKeyPrefix = outputKeyPrefix;
+    }
+    
+    /**
+     * The value, if any, that you want Elastic Transcoder to prepend to the
+     * names of all files that this job creates, including output files,
+     * thumbnails, and playlists. We recommend that you add a / or some other
+     * delimiter to the end of the <code>OutputKeyPrefix</code>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>1 - 255<br/>
+     *
+     * @param outputKeyPrefix The value, if any, that you want Elastic Transcoder to prepend to the
+     *         names of all files that this job creates, including output files,
+     *         thumbnails, and playlists. We recommend that you add a / or some other
+     *         delimiter to the end of the <code>OutputKeyPrefix</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public Job withOutputKeyPrefix(String outputKeyPrefix) {
+        this.outputKeyPrefix = outputKeyPrefix;
+        return this;
+    }
+    
+    
+    /**
+     * <important>Outputs in MPEG-TS format only.</important>If you specify a
+     * preset in <code>PresetId</code> for which the value of
+     * <code>Container</code> is ts (MPEG-TS), <code>Playlists</code>
+     * contains information about the master playlists that you want Elastic
+     * Transcoder to create. <p>We recommend that you create only one master
+     * playlist. The maximum number of master playlists in a job is 30.
+     *
+     * @return <important>Outputs in MPEG-TS format only.</important>If you specify a
+     *         preset in <code>PresetId</code> for which the value of
+     *         <code>Container</code> is ts (MPEG-TS), <code>Playlists</code>
+     *         contains information about the master playlists that you want Elastic
+     *         Transcoder to create. <p>We recommend that you create only one master
+     *         playlist. The maximum number of master playlists in a job is 30.
+     */
+    public java.util.List<Playlist> getPlaylists() {
+        
+        if (playlists == null) {
+            playlists = new java.util.ArrayList<Playlist>();
+        }
+        return playlists;
+    }
+    
+    /**
+     * <important>Outputs in MPEG-TS format only.</important>If you specify a
+     * preset in <code>PresetId</code> for which the value of
+     * <code>Container</code> is ts (MPEG-TS), <code>Playlists</code>
+     * contains information about the master playlists that you want Elastic
+     * Transcoder to create. <p>We recommend that you create only one master
+     * playlist. The maximum number of master playlists in a job is 30.
+     *
+     * @param playlists <important>Outputs in MPEG-TS format only.</important>If you specify a
+     *         preset in <code>PresetId</code> for which the value of
+     *         <code>Container</code> is ts (MPEG-TS), <code>Playlists</code>
+     *         contains information about the master playlists that you want Elastic
+     *         Transcoder to create. <p>We recommend that you create only one master
+     *         playlist. The maximum number of master playlists in a job is 30.
+     */
+    public void setPlaylists(java.util.Collection<Playlist> playlists) {
+        if (playlists == null) {
+            this.playlists = null;
+            return;
+        }
+
+        java.util.List<Playlist> playlistsCopy = new java.util.ArrayList<Playlist>(playlists.size());
+        playlistsCopy.addAll(playlists);
+        this.playlists = playlistsCopy;
+    }
+    
+    /**
+     * <important>Outputs in MPEG-TS format only.</important>If you specify a
+     * preset in <code>PresetId</code> for which the value of
+     * <code>Container</code> is ts (MPEG-TS), <code>Playlists</code>
+     * contains information about the master playlists that you want Elastic
+     * Transcoder to create. <p>We recommend that you create only one master
+     * playlist. The maximum number of master playlists in a job is 30.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param playlists <important>Outputs in MPEG-TS format only.</important>If you specify a
+     *         preset in <code>PresetId</code> for which the value of
+     *         <code>Container</code> is ts (MPEG-TS), <code>Playlists</code>
+     *         contains information about the master playlists that you want Elastic
+     *         Transcoder to create. <p>We recommend that you create only one master
+     *         playlist. The maximum number of master playlists in a job is 30.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public Job withPlaylists(Playlist... playlists) {
+        if (getPlaylists() == null) setPlaylists(new java.util.ArrayList<Playlist>(playlists.length));
+        for (Playlist value : playlists) {
+            getPlaylists().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * <important>Outputs in MPEG-TS format only.</important>If you specify a
+     * preset in <code>PresetId</code> for which the value of
+     * <code>Container</code> is ts (MPEG-TS), <code>Playlists</code>
+     * contains information about the master playlists that you want Elastic
+     * Transcoder to create. <p>We recommend that you create only one master
+     * playlist. The maximum number of master playlists in a job is 30.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param playlists <important>Outputs in MPEG-TS format only.</important>If you specify a
+     *         preset in <code>PresetId</code> for which the value of
+     *         <code>Container</code> is ts (MPEG-TS), <code>Playlists</code>
+     *         contains information about the master playlists that you want Elastic
+     *         Transcoder to create. <p>We recommend that you create only one master
+     *         playlist. The maximum number of master playlists in a job is 30.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public Job withPlaylists(java.util.Collection<Playlist> playlists) {
+        if (playlists == null) {
+            this.playlists = null;
+        } else {
+            java.util.List<Playlist> playlistsCopy = new java.util.ArrayList<Playlist>(playlists.size());
+            playlistsCopy.addAll(playlists);
+            this.playlists = playlistsCopy;
+        }
+
+        return this;
+    }
+    
+    /**
+     * The status of the job: <code>Submitted</code>,
+     * <code>Progressing</code>, <code>l</code>, <code>Canceled</code>, or
+     * <code>Error</code>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Pattern: </b>(^Submitted$)|(^Progressing$)|(^Complete$)|(^Canceled$)|(^Error$)<br/>
+     *
+     * @return The status of the job: <code>Submitted</code>,
+     *         <code>Progressing</code>, <code>l</code>, <code>Canceled</code>, or
+     *         <code>Error</code>.
+     */
+    public String getStatus() {
+        return status;
+    }
+    
+    /**
+     * The status of the job: <code>Submitted</code>,
+     * <code>Progressing</code>, <code>l</code>, <code>Canceled</code>, or
+     * <code>Error</code>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Pattern: </b>(^Submitted$)|(^Progressing$)|(^Complete$)|(^Canceled$)|(^Error$)<br/>
+     *
+     * @param status The status of the job: <code>Submitted</code>,
+     *         <code>Progressing</code>, <code>l</code>, <code>Canceled</code>, or
+     *         <code>Error</code>.
+     */
+    public void setStatus(String status) {
+        this.status = status;
+    }
+    
+    /**
+     * The status of the job: <code>Submitted</code>,
+     * <code>Progressing</code>, <code>l</code>, <code>Canceled</code>, or
+     * <code>Error</code>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Pattern: </b>(^Submitted$)|(^Progressing$)|(^Complete$)|(^Canceled$)|(^Error$)<br/>
+     *
+     * @param status The status of the job: <code>Submitted</code>,
+     *         <code>Progressing</code>, <code>l</code>, <code>Canceled</code>, or
+     *         <code>Error</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public Job withStatus(String status) {
+        this.status = status;
         return this;
     }
     
@@ -266,7 +694,11 @@ public class Job  implements Serializable  {
         if (getId() != null) sb.append("Id: " + getId() + ",");    	
         if (getPipelineId() != null) sb.append("PipelineId: " + getPipelineId() + ",");    	
         if (getInput() != null) sb.append("Input: " + getInput() + ",");    	
-        if (getOutput() != null) sb.append("Output: " + getOutput() );
+        if (getOutput() != null) sb.append("Output: " + getOutput() + ",");    	
+        if (getOutputs() != null) sb.append("Outputs: " + getOutputs() + ",");    	
+        if (getOutputKeyPrefix() != null) sb.append("OutputKeyPrefix: " + getOutputKeyPrefix() + ",");    	
+        if (getPlaylists() != null) sb.append("Playlists: " + getPlaylists() + ",");    	
+        if (getStatus() != null) sb.append("Status: " + getStatus() );
         sb.append("}");
         return sb.toString();
     }
@@ -280,6 +712,10 @@ public class Job  implements Serializable  {
         hashCode = prime * hashCode + ((getPipelineId() == null) ? 0 : getPipelineId().hashCode()); 
         hashCode = prime * hashCode + ((getInput() == null) ? 0 : getInput().hashCode()); 
         hashCode = prime * hashCode + ((getOutput() == null) ? 0 : getOutput().hashCode()); 
+        hashCode = prime * hashCode + ((getOutputs() == null) ? 0 : getOutputs().hashCode()); 
+        hashCode = prime * hashCode + ((getOutputKeyPrefix() == null) ? 0 : getOutputKeyPrefix().hashCode()); 
+        hashCode = prime * hashCode + ((getPlaylists() == null) ? 0 : getPlaylists().hashCode()); 
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode()); 
         return hashCode;
     }
     
@@ -299,6 +735,14 @@ public class Job  implements Serializable  {
         if (other.getInput() != null && other.getInput().equals(this.getInput()) == false) return false; 
         if (other.getOutput() == null ^ this.getOutput() == null) return false;
         if (other.getOutput() != null && other.getOutput().equals(this.getOutput()) == false) return false; 
+        if (other.getOutputs() == null ^ this.getOutputs() == null) return false;
+        if (other.getOutputs() != null && other.getOutputs().equals(this.getOutputs()) == false) return false; 
+        if (other.getOutputKeyPrefix() == null ^ this.getOutputKeyPrefix() == null) return false;
+        if (other.getOutputKeyPrefix() != null && other.getOutputKeyPrefix().equals(this.getOutputKeyPrefix()) == false) return false; 
+        if (other.getPlaylists() == null ^ this.getPlaylists() == null) return false;
+        if (other.getPlaylists() != null && other.getPlaylists().equals(this.getPlaylists()) == false) return false; 
+        if (other.getStatus() == null ^ this.getStatus() == null) return false;
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false) return false; 
         return true;
     }
     

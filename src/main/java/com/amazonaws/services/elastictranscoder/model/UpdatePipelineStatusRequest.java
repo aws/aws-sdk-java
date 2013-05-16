@@ -41,10 +41,9 @@ public class UpdatePipelineStatusRequest extends AmazonWebServiceRequest  implem
     private String id;
 
     /**
-     * The new status of the pipeline: <ul> <li> <code>active</code>: Enable
-     * the pipeline, so it starts processing jobs. </li> <li>
-     * <code>paused</code>: Disable the pipeline, so it stops processing
-     * jobs. </li> </ul>
+     * The desired status of the pipeline: <ul> <li> <code>Active</code>: The
+     * pipeline is processing jobs.</li> <li> <code>Paused</code>: The
+     * pipeline is not currently processing jobs.</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>(^Active$)|(^Paused$)<br/>
@@ -95,56 +94,50 @@ public class UpdatePipelineStatusRequest extends AmazonWebServiceRequest  implem
     
     
     /**
-     * The new status of the pipeline: <ul> <li> <code>active</code>: Enable
-     * the pipeline, so it starts processing jobs. </li> <li>
-     * <code>paused</code>: Disable the pipeline, so it stops processing
-     * jobs. </li> </ul>
+     * The desired status of the pipeline: <ul> <li> <code>Active</code>: The
+     * pipeline is processing jobs.</li> <li> <code>Paused</code>: The
+     * pipeline is not currently processing jobs.</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>(^Active$)|(^Paused$)<br/>
      *
-     * @return The new status of the pipeline: <ul> <li> <code>active</code>: Enable
-     *         the pipeline, so it starts processing jobs. </li> <li>
-     *         <code>paused</code>: Disable the pipeline, so it stops processing
-     *         jobs. </li> </ul>
+     * @return The desired status of the pipeline: <ul> <li> <code>Active</code>: The
+     *         pipeline is processing jobs.</li> <li> <code>Paused</code>: The
+     *         pipeline is not currently processing jobs.</li> </ul>
      */
     public String getStatus() {
         return status;
     }
     
     /**
-     * The new status of the pipeline: <ul> <li> <code>active</code>: Enable
-     * the pipeline, so it starts processing jobs. </li> <li>
-     * <code>paused</code>: Disable the pipeline, so it stops processing
-     * jobs. </li> </ul>
+     * The desired status of the pipeline: <ul> <li> <code>Active</code>: The
+     * pipeline is processing jobs.</li> <li> <code>Paused</code>: The
+     * pipeline is not currently processing jobs.</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>(^Active$)|(^Paused$)<br/>
      *
-     * @param status The new status of the pipeline: <ul> <li> <code>active</code>: Enable
-     *         the pipeline, so it starts processing jobs. </li> <li>
-     *         <code>paused</code>: Disable the pipeline, so it stops processing
-     *         jobs. </li> </ul>
+     * @param status The desired status of the pipeline: <ul> <li> <code>Active</code>: The
+     *         pipeline is processing jobs.</li> <li> <code>Paused</code>: The
+     *         pipeline is not currently processing jobs.</li> </ul>
      */
     public void setStatus(String status) {
         this.status = status;
     }
     
     /**
-     * The new status of the pipeline: <ul> <li> <code>active</code>: Enable
-     * the pipeline, so it starts processing jobs. </li> <li>
-     * <code>paused</code>: Disable the pipeline, so it stops processing
-     * jobs. </li> </ul>
+     * The desired status of the pipeline: <ul> <li> <code>Active</code>: The
+     * pipeline is processing jobs.</li> <li> <code>Paused</code>: The
+     * pipeline is not currently processing jobs.</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>(^Active$)|(^Paused$)<br/>
      *
-     * @param status The new status of the pipeline: <ul> <li> <code>active</code>: Enable
-     *         the pipeline, so it starts processing jobs. </li> <li>
-     *         <code>paused</code>: Disable the pipeline, so it stops processing
-     *         jobs. </li> </ul>
+     * @param status The desired status of the pipeline: <ul> <li> <code>Active</code>: The
+     *         pipeline is processing jobs.</li> <li> <code>Paused</code>: The
+     *         pipeline is not currently processing jobs.</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

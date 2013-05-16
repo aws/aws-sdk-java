@@ -32,7 +32,9 @@ public class DescribeLayersRequest extends AmazonWebServiceRequest  implements S
     private String stackId;
 
     /**
-     * An array of layer IDs that specify the layers to be described.
+     * An array of layer IDs that specify the layers to be described. If you
+     * omit this parameter, <code>DescribeLayers</code> returns a description
+     * of every layer in the specified stack.
      */
     private java.util.List<String> layerIds;
 
@@ -71,9 +73,13 @@ public class DescribeLayersRequest extends AmazonWebServiceRequest  implements S
     
     
     /**
-     * An array of layer IDs that specify the layers to be described.
+     * An array of layer IDs that specify the layers to be described. If you
+     * omit this parameter, <code>DescribeLayers</code> returns a description
+     * of every layer in the specified stack.
      *
-     * @return An array of layer IDs that specify the layers to be described.
+     * @return An array of layer IDs that specify the layers to be described. If you
+     *         omit this parameter, <code>DescribeLayers</code> returns a description
+     *         of every layer in the specified stack.
      */
     public java.util.List<String> getLayerIds() {
         
@@ -84,9 +90,13 @@ public class DescribeLayersRequest extends AmazonWebServiceRequest  implements S
     }
     
     /**
-     * An array of layer IDs that specify the layers to be described.
+     * An array of layer IDs that specify the layers to be described. If you
+     * omit this parameter, <code>DescribeLayers</code> returns a description
+     * of every layer in the specified stack.
      *
-     * @param layerIds An array of layer IDs that specify the layers to be described.
+     * @param layerIds An array of layer IDs that specify the layers to be described. If you
+     *         omit this parameter, <code>DescribeLayers</code> returns a description
+     *         of every layer in the specified stack.
      */
     public void setLayerIds(java.util.Collection<String> layerIds) {
         if (layerIds == null) {
@@ -100,11 +110,15 @@ public class DescribeLayersRequest extends AmazonWebServiceRequest  implements S
     }
     
     /**
-     * An array of layer IDs that specify the layers to be described.
+     * An array of layer IDs that specify the layers to be described. If you
+     * omit this parameter, <code>DescribeLayers</code> returns a description
+     * of every layer in the specified stack.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param layerIds An array of layer IDs that specify the layers to be described.
+     * @param layerIds An array of layer IDs that specify the layers to be described. If you
+     *         omit this parameter, <code>DescribeLayers</code> returns a description
+     *         of every layer in the specified stack.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -118,11 +132,15 @@ public class DescribeLayersRequest extends AmazonWebServiceRequest  implements S
     }
     
     /**
-     * An array of layer IDs that specify the layers to be described.
+     * An array of layer IDs that specify the layers to be described. If you
+     * omit this parameter, <code>DescribeLayers</code> returns a description
+     * of every layer in the specified stack.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param layerIds An array of layer IDs that specify the layers to be described.
+     * @param layerIds An array of layer IDs that specify the layers to be described. If you
+     *         omit this parameter, <code>DescribeLayers</code> returns a description
+     *         of every layer in the specified stack.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

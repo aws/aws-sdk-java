@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.opsworks.AWSOpsWorks#describePermissions(DescribePermissionsRequest) DescribePermissions operation}.
  * <p>
- * Describes the permissions for a specified stack. You must specify at least one of the two request values.
+ * Describes the permissions for a specified stack.
  * </p>
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#describePermissions(DescribePermissionsRequest)

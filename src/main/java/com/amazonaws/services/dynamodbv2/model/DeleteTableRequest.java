@@ -36,6 +36,9 @@ import java.io.Serializable;
  * does not delete the other.
  * </p>
  * <p>
+ * When you delete a table, any local secondary indexes on that table are also deleted.
+ * </p>
+ * <p>
  * Use the <i>DescribeTable</i> API to check the status of the table.
  * </p>
  *

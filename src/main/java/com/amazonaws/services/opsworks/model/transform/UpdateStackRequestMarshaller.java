@@ -153,6 +153,9 @@ public class UpdateStackRequestMarshaller implements Marshaller<Request<UpdateSt
             if (updateStackRequest.getDefaultSshKeyName() != null) {
                 jsonWriter.key("DefaultSshKeyName").value(updateStackRequest.getDefaultSshKeyName());
             }
+            if (updateStackRequest.getDefaultRootDeviceType() != null) {
+                jsonWriter.key("DefaultRootDeviceType").value(updateStackRequest.getDefaultRootDeviceType());
+            }
 
           jsonWriter.endObject();
           

@@ -18,10 +18,11 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * Your request rate is too high, or the request is too large. The AWS SDKs for Amazon DynamoDB automatically retry requests that receive this exception;
- * therefore, your request will eventually succeed, unless the request is too large or your retry queue is too large to finish. Reduce the frequency of
- * requests, using the strategies listed in <a href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#APIRetries">
- * Error Retries and Exponential Backoff </a> of the <i>Amazon DynamoDB Developer Guide</i> .
+ * The request rate is too high, or the request is too large, for the available throughput to accommodate. The AWS SDKs automatically retry requests that
+ * receive this exception; therefore, your request will eventually succeed, unless the request is too large or your retry queue is too large to finish.
+ * Reduce the frequency of requests by using the strategies listed in <a
+ * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ErrorHandling.html#APIRetries"> Error Retries and Exponential Backoff </a> in
+ * the <i>Amazon DynamoDB Developer Guide</i> .
  * </p>
  */        
 public class ProvisionedThroughputExceededException extends AmazonServiceException {

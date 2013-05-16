@@ -30,7 +30,7 @@ import com.amazonaws.services.opsworks.model.*;
 public interface AWSOpsWorksAsync extends AWSOpsWorks {
     /**
      * <p>
-     * Updates a specified user's SSH name and public key.
+     * Updates a specified user profile.
      * </p>
      *
      * @param updateUserProfileRequest Container for the necessary parameters
@@ -52,7 +52,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
 
     /**
      * <p>
-     * Updates a specified user's SSH name and public key.
+     * Updates a specified user profile.
      * </p>
      *
      * @param updateUserProfileRequest Container for the necessary parameters
@@ -79,7 +79,9 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
 
     /**
      * <p>
-     * Creates a new stack.
+     * Creates a new stack. For more information, see <a
+     * ocs.aws.amazon.com/opsworks/latest/userguide/workingstacks-edit.html">
+     * Create a New Stack </a> .
      * </p>
      *
      * @param createStackRequest Container for the necessary parameters to
@@ -101,7 +103,9 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
 
     /**
      * <p>
-     * Creates a new stack.
+     * Creates a new stack. For more information, see <a
+     * ocs.aws.amazon.com/opsworks/latest/userguide/workingstacks-edit.html">
+     * Create a New Stack </a> .
      * </p>
      *
      * @param createStackRequest Container for the necessary parameters to
@@ -128,7 +132,9 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
 
     /**
      * <p>
-     * Reboots a specified instance.
+     * Reboots a specified instance. For more information, see <a
+     * .amazon.com/opsworks/latest/userguide/workinginstances-starting.html">
+     * Starting, Stopping, and Rebooting Instances </a> .
      * </p>
      *
      * @param rebootInstanceRequest Container for the necessary parameters to
@@ -150,7 +156,9 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
 
     /**
      * <p>
-     * Reboots a specified instance.
+     * Reboots a specified instance. For more information, see <a
+     * .amazon.com/opsworks/latest/userguide/workinginstances-starting.html">
+     * Starting, Stopping, and Rebooting Instances </a> .
      * </p>
      *
      * @param rebootInstanceRequest Container for the necessary parameters to
@@ -177,7 +185,9 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
 
     /**
      * <p>
-     * Specifies a stack's permissions.
+     * Specifies a stack's permissions. For more information, see <a
+     * //docs.aws.amazon.com/opsworks/latest/userguide/workingsecurity.html">
+     * Security and Permissions </a> .
      * </p>
      *
      * @param setPermissionRequest Container for the necessary parameters to
@@ -199,7 +209,9 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
 
     /**
      * <p>
-     * Specifies a stack's permissions.
+     * Specifies a stack's permissions. For more information, see <a
+     * //docs.aws.amazon.com/opsworks/latest/userguide/workingsecurity.html">
+     * Security and Permissions </a> .
      * </p>
      *
      * @param setPermissionRequest Container for the necessary parameters to
@@ -277,8 +289,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
 
     /**
      * <p>
-     * Describes the permissions for a specified stack. You must specify at
-     * least one of the two request values.
+     * Describes the permissions for a specified stack.
      * </p>
      *
      * @param describePermissionsRequest Container for the necessary
@@ -301,8 +312,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
 
     /**
      * <p>
-     * Describes the permissions for a specified stack. You must specify at
-     * least one of the two request values.
+     * Describes the permissions for a specified stack.
      * </p>
      *
      * @param describePermissionsRequest Container for the necessary
@@ -330,7 +340,10 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
 
     /**
      * <p>
-     * Deletes a specified instance.
+     * Deletes a specified instance. You must stop an instance before you can
+     * delete it. For more information, see <a
+     * ws.amazon.com/opsworks/latest/userguide/workinginstances-delete.html">
+     * Deleting Instances </a> .
      * </p>
      *
      * @param deleteInstanceRequest Container for the necessary parameters to
@@ -352,7 +365,10 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
 
     /**
      * <p>
-     * Deletes a specified instance.
+     * Deletes a specified instance. You must stop an instance before you can
+     * delete it. For more information, see <a
+     * ws.amazon.com/opsworks/latest/userguide/workinginstances-delete.html">
+     * Deleting Instances </a> .
      * </p>
      *
      * @param deleteInstanceRequest Container for the necessary parameters to
@@ -379,7 +395,9 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
 
     /**
      * <p>
-     * Creates a clone of a specified stack.
+     * Creates a clone of a specified stack. For more information, see <a
+     * .aws.amazon.com/opsworks/latest/userguide/workingstacks-cloning.html">
+     * Clone a Stack </a> .
      * </p>
      *
      * @param cloneStackRequest Container for the necessary parameters to
@@ -401,7 +419,9 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
 
     /**
      * <p>
-     * Creates a clone of a specified stack.
+     * Creates a clone of a specified stack. For more information, see <a
+     * .aws.amazon.com/opsworks/latest/userguide/workingstacks-cloning.html">
+     * Clone a Stack </a> .
      * </p>
      *
      * @param cloneStackRequest Container for the necessary parameters to
@@ -428,7 +448,9 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
 
     /**
      * <p>
-     * Creates an instance in a specified stack.
+     * Creates an instance in a specified stack. For more information, see <a
+     * s.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html">
+     * Adding an Instance to a Layer </a> .
      * </p>
      *
      * @param createInstanceRequest Container for the necessary parameters to
@@ -450,7 +472,9 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
 
     /**
      * <p>
-     * Creates an instance in a specified stack.
+     * Creates an instance in a specified stack. For more information, see <a
+     * s.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html">
+     * Adding an Instance to a Layer </a> .
      * </p>
      *
      * @param createInstanceRequest Container for the necessary parameters to
@@ -479,7 +503,10 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * <p>
      * Stops a specified instance. When you stop a standard instance, the
      * data disappears and must be reinstalled when you restart the instance.
-     * You can stop an Amazon EBS-backed instance without losing data.
+     * You can stop an Amazon EBS-backed instance without losing data. For
+     * more information, see <a
+     * .amazon.com/opsworks/latest/userguide/workinginstances-starting.html">
+     * Starting, Stopping, and Rebooting Instances </a> .
      * </p>
      *
      * @param stopInstanceRequest Container for the necessary parameters to
@@ -503,7 +530,10 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * <p>
      * Stops a specified instance. When you stop a standard instance, the
      * data disappears and must be reinstalled when you restart the instance.
-     * You can stop an Amazon EBS-backed instance without losing data.
+     * You can stop an Amazon EBS-backed instance without losing data. For
+     * more information, see <a
+     * .amazon.com/opsworks/latest/userguide/workinginstances-starting.html">
+     * Starting, Stopping, and Rebooting Instances </a> .
      * </p>
      *
      * @param stopInstanceRequest Container for the necessary parameters to
@@ -526,6 +556,57 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      */
     public Future<Void> stopInstanceAsync(StopInstanceRequest stopInstanceRequest,
             AsyncHandler<StopInstanceRequest, Void> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Detaches a specified Elastic Load Balancing instance from it's layer.
+     * </p>
+     *
+     * @param detachElasticLoadBalancerRequest Container for the necessary
+     *           parameters to execute the DetachElasticLoadBalancer operation on
+     *           AWSOpsWorks.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DetachElasticLoadBalancer service method, as returned by AWSOpsWorks.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> detachElasticLoadBalancerAsync(DetachElasticLoadBalancerRequest detachElasticLoadBalancerRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Detaches a specified Elastic Load Balancing instance from it's layer.
+     * </p>
+     *
+     * @param detachElasticLoadBalancerRequest Container for the necessary
+     *           parameters to execute the DetachElasticLoadBalancer operation on
+     *           AWSOpsWorks.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DetachElasticLoadBalancer service method, as returned by AWSOpsWorks.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> detachElasticLoadBalancerAsync(DetachElasticLoadBalancerRequest detachElasticLoadBalancerRequest,
+            AsyncHandler<DetachElasticLoadBalancerRequest, Void> asyncHandler)
                     throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -628,6 +709,67 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
 
     /**
      * <p>
+     * Attaches an Elastic Load Balancing instance to a specified layer.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>You must create the Elastic Load Balancing instance
+     * separately, by using the Elastic Load Balancing console, API, or CLI.
+     * For more information, see Elastic Load Balancing Developer Guide.
+     * </p>
+     *
+     * @param attachElasticLoadBalancerRequest Container for the necessary
+     *           parameters to execute the AttachElasticLoadBalancer operation on
+     *           AWSOpsWorks.
+     * 
+     * @return A Java Future object containing the response from the
+     *         AttachElasticLoadBalancer service method, as returned by AWSOpsWorks.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> attachElasticLoadBalancerAsync(AttachElasticLoadBalancerRequest attachElasticLoadBalancerRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Attaches an Elastic Load Balancing instance to a specified layer.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>You must create the Elastic Load Balancing instance
+     * separately, by using the Elastic Load Balancing console, API, or CLI.
+     * For more information, see Elastic Load Balancing Developer Guide.
+     * </p>
+     *
+     * @param attachElasticLoadBalancerRequest Container for the necessary
+     *           parameters to execute the AttachElasticLoadBalancer operation on
+     *           AWSOpsWorks.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         AttachElasticLoadBalancer service method, as returned by AWSOpsWorks.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> attachElasticLoadBalancerAsync(AttachElasticLoadBalancerRequest attachElasticLoadBalancerRequest,
+            AsyncHandler<AttachElasticLoadBalancerRequest, Void> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
      * Describes the results of specified commands.
      * </p>
      *
@@ -726,7 +868,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
 
     /**
      * <p>
-     * Creates a new user.
+     * Creates a new user profile.
      * </p>
      *
      * @param createUserProfileRequest Container for the necessary parameters
@@ -748,7 +890,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
 
     /**
      * <p>
-     * Creates a new user.
+     * Creates a new user profile.
      * </p>
      *
      * @param createUserProfileRequest Container for the necessary parameters
@@ -980,7 +1122,9 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
     /**
      * <p>
      * Specify the load-based auto scaling configuration for a specified
-     * layer.
+     * layer. For more information, see <a
+     * azon.com/opsworks/latest/userguide/workinginstances-autoscaling.html">
+     * Managing Load with Time-based and Load-based Instances </a> .
      * </p>
      * <p>
      * <b>NOTE:</b>To use load-based auto scaling, you must create a set of
@@ -1010,7 +1154,9 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
     /**
      * <p>
      * Specify the load-based auto scaling configuration for a specified
-     * layer.
+     * layer. For more information, see <a
+     * azon.com/opsworks/latest/userguide/workinginstances-autoscaling.html">
+     * Managing Load with Time-based and Load-based Instances </a> .
      * </p>
      * <p>
      * <b>NOTE:</b>To use load-based auto scaling, you must create a set of
@@ -1044,8 +1190,63 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
 
     /**
      * <p>
-     * Deletes a specified layer. You must first remove all associated
-     * instances.
+     * Describes a stack's Elastic Load Balancing instances.
+     * </p>
+     *
+     * @param describeElasticLoadBalancersRequest Container for the necessary
+     *           parameters to execute the DescribeElasticLoadBalancers operation on
+     *           AWSOpsWorks.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeElasticLoadBalancers service method, as returned by
+     *         AWSOpsWorks.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeElasticLoadBalancersResult> describeElasticLoadBalancersAsync(DescribeElasticLoadBalancersRequest describeElasticLoadBalancersRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Describes a stack's Elastic Load Balancing instances.
+     * </p>
+     *
+     * @param describeElasticLoadBalancersRequest Container for the necessary
+     *           parameters to execute the DescribeElasticLoadBalancers operation on
+     *           AWSOpsWorks.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DescribeElasticLoadBalancers service method, as returned by
+     *         AWSOpsWorks.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DescribeElasticLoadBalancersResult> describeElasticLoadBalancersAsync(DescribeElasticLoadBalancersRequest describeElasticLoadBalancersRequest,
+            AsyncHandler<DescribeElasticLoadBalancersRequest, DescribeElasticLoadBalancersResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Deletes a specified layer. You must first stop and then delete all
+     * associated instances. For more information, see <a
+     * mazon.com/opsworks/latest/userguide/workinglayers-basics-delete.html">
+     * How to Delete a Layer </a> .
      * </p>
      *
      * @param deleteLayerRequest Container for the necessary parameters to
@@ -1067,8 +1268,10 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
 
     /**
      * <p>
-     * Deletes a specified layer. You must first remove all associated
-     * instances.
+     * Deletes a specified layer. You must first stop and then delete all
+     * associated instances. For more information, see <a
+     * mazon.com/opsworks/latest/userguide/workinglayers-basics-delete.html">
+     * How to Delete a Layer </a> .
      * </p>
      *
      * @param deleteLayerRequest Container for the necessary parameters to
@@ -1091,6 +1294,63 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      */
     public Future<Void> deleteLayerAsync(DeleteLayerRequest deleteLayerRequest,
             AsyncHandler<DeleteLayerRequest, Void> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Specify the time-based auto scaling configuration for a specified
+     * instance. For more information, see <a
+     * azon.com/opsworks/latest/userguide/workinginstances-autoscaling.html">
+     * Managing Load with Time-based and Load-based Instances </a> .
+     * </p>
+     *
+     * @param setTimeBasedAutoScalingRequest Container for the necessary
+     *           parameters to execute the SetTimeBasedAutoScaling operation on
+     *           AWSOpsWorks.
+     * 
+     * @return A Java Future object containing the response from the
+     *         SetTimeBasedAutoScaling service method, as returned by AWSOpsWorks.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> setTimeBasedAutoScalingAsync(SetTimeBasedAutoScalingRequest setTimeBasedAutoScalingRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * Specify the time-based auto scaling configuration for a specified
+     * instance. For more information, see <a
+     * azon.com/opsworks/latest/userguide/workinginstances-autoscaling.html">
+     * Managing Load with Time-based and Load-based Instances </a> .
+     * </p>
+     *
+     * @param setTimeBasedAutoScalingRequest Container for the necessary
+     *           parameters to execute the SetTimeBasedAutoScaling operation on
+     *           AWSOpsWorks.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         SetTimeBasedAutoScaling service method, as returned by AWSOpsWorks.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AWSOpsWorks indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<Void> setTimeBasedAutoScalingAsync(SetTimeBasedAutoScalingRequest setTimeBasedAutoScalingRequest,
+            AsyncHandler<SetTimeBasedAutoScalingRequest, Void> asyncHandler)
                     throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -1144,60 +1404,9 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
 
     /**
      * <p>
-     * Specify the time-based auto scaling configuration for a specified
-     * instance.
-     * </p>
-     *
-     * @param setTimeBasedAutoScalingRequest Container for the necessary
-     *           parameters to execute the SetTimeBasedAutoScaling operation on
-     *           AWSOpsWorks.
-     * 
-     * @return A Java Future object containing the response from the
-     *         SetTimeBasedAutoScaling service method, as returned by AWSOpsWorks.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> setTimeBasedAutoScalingAsync(SetTimeBasedAutoScalingRequest setTimeBasedAutoScalingRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Specify the time-based auto scaling configuration for a specified
-     * instance.
-     * </p>
-     *
-     * @param setTimeBasedAutoScalingRequest Container for the necessary
-     *           parameters to execute the SetTimeBasedAutoScaling operation on
-     *           AWSOpsWorks.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         SetTimeBasedAutoScaling service method, as returned by AWSOpsWorks.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AWSOpsWorks indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<Void> setTimeBasedAutoScalingAsync(SetTimeBasedAutoScalingRequest setTimeBasedAutoScalingRequest,
-            AsyncHandler<SetTimeBasedAutoScalingRequest, Void> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * Creates an app for a specified stack.
+     * Creates an app for a specified stack. For more information, see <a
+     * s.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">
+     * Creating Apps </a> .
      * </p>
      *
      * @param createAppRequest Container for the necessary parameters to
@@ -1219,7 +1428,9 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
 
     /**
      * <p>
-     * Creates an app for a specified stack.
+     * Creates an app for a specified stack. For more information, see <a
+     * s.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">
+     * Creating Apps </a> .
      * </p>
      *
      * @param createAppRequest Container for the necessary parameters to
@@ -1301,7 +1512,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
 
     /**
      * <p>
-     * Deletes a user.
+     * Deletes a user profile.
      * </p>
      *
      * @param deleteUserProfileRequest Container for the necessary parameters
@@ -1323,7 +1534,7 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
 
     /**
      * <p>
-     * Deletes a user.
+     * Deletes a user profile.
      * </p>
      *
      * @param deleteUserProfileRequest Container for the necessary parameters
@@ -1601,7 +1812,9 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
 
     /**
      * <p>
-     * Starts a specified instance.
+     * Starts a specified instance. For more information, see <a
+     * .amazon.com/opsworks/latest/userguide/workinginstances-starting.html">
+     * Starting, Stopping, and Rebooting Instances </a> .
      * </p>
      *
      * @param startInstanceRequest Container for the necessary parameters to
@@ -1623,7 +1836,9 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
 
     /**
      * <p>
-     * Starts a specified instance.
+     * Starts a specified instance. For more information, see <a
+     * .amazon.com/opsworks/latest/userguide/workinginstances-starting.html">
+     * Starting, Stopping, and Rebooting Instances </a> .
      * </p>
      *
      * @param startInstanceRequest Container for the necessary parameters to
@@ -1801,7 +2016,17 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
 
     /**
      * <p>
-     * Creates a layer.
+     * Creates a layer. For more information, see <a
+     * mazon.com/opsworks/latest/userguide/workinglayers-basics-create.html">
+     * How to Create a Layer </a> .
+     * </p>
+     * <p>
+     * <b>NOTE:</b>You should use CreateLayer for non-custom layer types such
+     * as PHP App Server only if the stack does not have an existing layer of
+     * that type. A stack can have at most one instance of each non-custom
+     * layer; if you attempt to create a second instance, CreateLayer fails.
+     * A stack can have an arbitrary number of custom layers, so you can call
+     * CreateLayer as many times as you like for that layer type.
      * </p>
      *
      * @param createLayerRequest Container for the necessary parameters to
@@ -1823,7 +2048,17 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
 
     /**
      * <p>
-     * Creates a layer.
+     * Creates a layer. For more information, see <a
+     * mazon.com/opsworks/latest/userguide/workinglayers-basics-create.html">
+     * How to Create a Layer </a> .
+     * </p>
+     * <p>
+     * <b>NOTE:</b>You should use CreateLayer for non-custom layer types such
+     * as PHP App Server only if the stack does not have an existing layer of
+     * that type. A stack can have at most one instance of each non-custom
+     * layer; if you attempt to create a second instance, CreateLayer fails.
+     * A stack can have an arbitrary number of custom layers, so you can call
+     * CreateLayer as many times as you like for that layer type.
      * </p>
      *
      * @param createLayerRequest Container for the necessary parameters to
@@ -1850,8 +2085,10 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
 
     /**
      * <p>
-     * Deletes a specified stack. You must first delete all instances and
-     * layers.
+     * Deletes a specified stack. You must first delete all instances,
+     * layers, and apps. For more information, see <a
+     * aws.amazon.com/opsworks/latest/userguide/workingstacks-shutting.html">
+     * Shut Down a Stack </a> .
      * </p>
      *
      * @param deleteStackRequest Container for the necessary parameters to
@@ -1873,8 +2110,10 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
 
     /**
      * <p>
-     * Deletes a specified stack. You must first delete all instances and
-     * layers.
+     * Deletes a specified stack. You must first delete all instances,
+     * layers, and apps. For more information, see <a
+     * aws.amazon.com/opsworks/latest/userguide/workingstacks-shutting.html">
+     * Shut Down a Stack </a> .
      * </p>
      *
      * @param deleteStackRequest Container for the necessary parameters to
@@ -2010,6 +2249,13 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * not raise an event.</li>
      * 
      * </ul>
+     * <p>
+     * For more information, see <a
+     * .aws.amazon.com/opsworks/latest/userguide/workingapps-deploying.html">
+     * Deploying Apps </a> and <a
+     * aws.amazon.com/opsworks/latest/userguide/workingstacks-commands.html">
+     * Run Stack Commands </a> .
+     * </p>
      *
      * @param createDeploymentRequest Container for the necessary parameters
      *           to execute the CreateDeployment operation on AWSOpsWorks.
@@ -2041,6 +2287,13 @@ public interface AWSOpsWorksAsync extends AWSOpsWorks {
      * not raise an event.</li>
      * 
      * </ul>
+     * <p>
+     * For more information, see <a
+     * .aws.amazon.com/opsworks/latest/userguide/workingapps-deploying.html">
+     * Deploying Apps </a> and <a
+     * aws.amazon.com/opsworks/latest/userguide/workingstacks-commands.html">
+     * Run Stack Commands </a> .
+     * </p>
      *
      * @param createDeploymentRequest Container for the necessary parameters
      *           to execute the CreateDeployment operation on AWSOpsWorks.

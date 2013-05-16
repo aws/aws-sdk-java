@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2013 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -38,25 +38,25 @@ import com.amazonaws.util.HttpUtils;
  */
 public class AWS4Signer extends AbstractAWSSigner {
 
-    private static final String ALGORITHM = "AWS4-HMAC-SHA256";
-    private static final String TERMINATOR = "aws4_request";
+    protected static final String ALGORITHM = "AWS4-HMAC-SHA256";
+    protected static final String TERMINATOR = "aws4_request";
 
     /**
      * Service name override for use when the endpoint can't be used to
      * determine the service name.
      */
-    private String serviceName;
+    protected String serviceName;
 
     /**
      * Region name override for use when the endpoint can't be used to
      * determine the region name.
      */
-    private String regionName;
+    protected String regionName;
 
     /** Date override for testing only */
-    private Date overriddenDate;
+    protected Date overriddenDate;
 
-    private static final Log log = LogFactory.getLog(AWS4Signer.class);
+    protected static final Log log = LogFactory.getLog(AWS4Signer.class);
 
 
     /* (non-Javadoc)
@@ -73,28 +73,8 @@ public class AWS4Signer extends AbstractAWSSigner {
             addSessionCredentials(request, (AWSSessionCredentials) sanitizedCredentials);
         }
 
-        SimpleDateFormat dateStampFormat = new SimpleDateFormat("yyyyMMdd");
-        dateStampFormat.setTimeZone(new SimpleTimeZone(0, "UTC"));
-
-        SimpleDateFormat dateTimeFormat = new SimpleDateFormat("yyyyMMdd'T'HHmmss'Z'");
-        dateTimeFormat.setTimeZone(new SimpleTimeZone(0, "UTC"));
-
-        String regionName  = extractRegionName(request.getEndpoint());
-        String serviceName = extractServiceName(request.getEndpoint());
-
-        // AWS4 requires that we sign the Host header so we
-        // have to have it in the request by the time we sign.
-        String hostHeader = request.getEndpoint().getHost();
-        if (HttpUtils.isUsingNonDefaultPort(request.getEndpoint())) {
-            hostHeader += ":" + request.getEndpoint().getPort();
-        }
-        request.addHeader("Host", hostHeader);
-
-        Date date = getSignatureDate(request.getTimeOffset());
-        if (overriddenDate != null) date = overriddenDate;
-
-        String dateTime  = dateTimeFormat.format(date);
-        String dateStamp = dateStampFormat.format(date);
+        addHostHeader(request);
+        String scope =  getScope(request);
 
         InputStream payloadStream = getBinaryRequestPayloadStream(request);
         payloadStream.mark(-1);
@@ -105,36 +85,12 @@ public class AWS4Signer extends AbstractAWSSigner {
             throw new AmazonClientException("Unable to reset stream after calculating AWS4 signature", e);
         }
 
-        request.addHeader("X-Amz-Date", dateTime);
+        request.addHeader("X-Amz-Date", getDateTimeStamp(getDateFromRequest(request)));
         request.addHeader("x-amz-content-sha256", contentSha256);
 
-        String canonicalRequest =
-                request.getHttpMethod().toString() + "\n" +
-                        super.getCanonicalizedResourcePath(request.getResourcePath()) + "\n" +
-                        getCanonicalizedQueryString(request) + "\n" +
-                        getCanonicalizedHeaderString(request) + "\n" +
-                        getSignedHeadersString(request) + "\n" +
-                        contentSha256;
-
-        log.debug("AWS4 Canonical Request: '\"" + canonicalRequest + "\"");
-
-        String scope = dateStamp + "/" + regionName + "/" + serviceName + "/" + TERMINATOR;
         String signingCredentials = sanitizedCredentials.getAWSAccessKeyId() + "/" + scope;
-        String stringToSign =
-                ALGORITHM + "\n" +
-                        dateTime + "\n" +
-                        scope + "\n" +
-                        BinaryUtils.toHex(hash(canonicalRequest));
-        log.debug("AWS4 String to Sign: '\"" + stringToSign + "\"");
 
-        // AWS4 uses a series of derived keys, formed by hashing different pieces of data
-        byte[] kSecret  = ("AWS4" + sanitizedCredentials.getAWSSecretKey()).getBytes();
-        byte[] kDate    = sign(dateStamp, kSecret, SigningAlgorithm.HmacSHA256);
-        byte[] kRegion  = sign(regionName, kDate, SigningAlgorithm.HmacSHA256);
-        byte[] kService = sign(serviceName, kRegion, SigningAlgorithm.HmacSHA256);
-        byte[] kSigning = sign(TERMINATOR, kService, SigningAlgorithm.HmacSHA256);
-
-        byte[] signature = sign(stringToSign.getBytes(), kSigning, SigningAlgorithm.HmacSHA256);
+        byte[] signature = computeSignature(request, ALGORITHM, contentSha256, sanitizedCredentials);
 
         String credentialsAuthorizationHeader =
                 "Credential=" + signingCredentials;
@@ -184,13 +140,13 @@ public class AWS4Signer extends AbstractAWSSigner {
         request.addHeader("x-amz-security-token", credentials.getSessionToken());
     }
 
-    private String extractRegionName(URI endpoint) {
+    protected String extractRegionName(URI endpoint) {
         if (regionName != null) return regionName;
 
         return AwsHostNameUtils.parseRegionName(endpoint);
     }
 
-    private String extractServiceName(URI endpoint) {
+    protected String extractServiceName(URI endpoint) {
         if (serviceName != null) return serviceName;
 
         return AwsHostNameUtils.parseServiceName(endpoint);
@@ -201,7 +157,7 @@ public class AWS4Signer extends AbstractAWSSigner {
         this.overriddenDate = overriddenDate;
     }
 
-    private String getCanonicalizedHeaderString(Request<?> request) {
+    protected String getCanonicalizedHeaderString(Request<?> request) {
         List<String> sortedHeaders = new ArrayList<String>();
         sortedHeaders.addAll(request.getHeaders().keySet());
         Collections.sort(sortedHeaders, String.CASE_INSENSITIVE_ORDER);
@@ -215,7 +171,7 @@ public class AWS4Signer extends AbstractAWSSigner {
         return buffer.toString();
     }
 
-    private String getSignedHeadersString(Request<?> request) {
+    protected String getSignedHeadersString(Request<?> request) {
         List<String> sortedHeaders = new ArrayList<String>();
         sortedHeaders.addAll(request.getHeaders().keySet());
         Collections.sort(sortedHeaders, String.CASE_INSENSITIVE_ORDER);
@@ -227,6 +183,94 @@ public class AWS4Signer extends AbstractAWSSigner {
         }
 
         return buffer.toString();
+    }
+
+    protected String getCanonicalRequest(Request<?> request, String contentSha256) {
+        String canonicalRequest =
+                request.getHttpMethod().toString() + "\n" +
+                        getCanonicalizedResourcePath(request.getResourcePath()) + "\n" +
+                        getCanonicalizedQueryString(request) + "\n" +
+                        getCanonicalizedHeaderString(request) + "\n" +
+                        getSignedHeadersString(request) + "\n" +
+                        contentSha256;
+        log.debug("AWS4 Canonical Request: '\"" + canonicalRequest + "\"");
+        return canonicalRequest;
+    }
+
+    protected String getStringToSign(String algorithm, String dateTime, String scope, String canonicalRequest) {
+        String stringToSign =
+                algorithm + "\n" +
+                        dateTime + "\n" +
+                        scope + "\n" +
+                        BinaryUtils.toHex(hash(canonicalRequest));
+        log.debug("AWS4 String to Sign: '\"" + stringToSign + "\"");
+        return stringToSign;
+    }
+
+
+    protected byte[] computeSignature(Request<?> request, String algorithm, String contentSha256, AWSCredentials sanitizedCredentials) {
+
+        String regionName = extractRegionName(request.getEndpoint());
+        String serviceName = extractServiceName(request.getEndpoint());
+
+        Date date = getDateFromRequest(request);
+        String dateTime = getDateTimeStamp(date);
+        String dateStamp = getDateStamp(date);
+        String scope =  dateStamp + "/" + regionName + "/" + serviceName + "/" + TERMINATOR;
+
+        String stringToSign = getStringToSign(algorithm, dateTime, scope, getCanonicalRequest(request,contentSha256 ));
+
+        // AWS4 uses a series of derived keys, formed by hashing different
+        // pieces of data
+        byte[] kSecret = ("AWS4" + sanitizedCredentials.getAWSSecretKey()).getBytes();
+        byte[] kDate = sign(dateStamp, kSecret, SigningAlgorithm.HmacSHA256);
+        byte[] kRegion = sign(regionName, kDate, SigningAlgorithm.HmacSHA256);
+        byte[] kService = sign(serviceName, kRegion, SigningAlgorithm.HmacSHA256);
+        byte[] kSigning = sign(TERMINATOR, kService, SigningAlgorithm.HmacSHA256);
+
+        byte[] signature = sign(stringToSign.getBytes(), kSigning, SigningAlgorithm.HmacSHA256);
+        return signature;
+    }
+
+    protected String getDateTimeStamp(Date date) {
+        SimpleDateFormat dateTimeFormat;
+        dateTimeFormat = new SimpleDateFormat("yyyyMMdd'T'HHmmss'Z'");
+        dateTimeFormat.setTimeZone(new SimpleTimeZone(0, "UTC"));
+        return dateTimeFormat.format(date);
+    }
+
+    protected String getDateStamp(Date date) {
+        SimpleDateFormat dateStampFormat;
+        dateStampFormat = new SimpleDateFormat("yyyyMMdd");
+        dateStampFormat.setTimeZone(new SimpleTimeZone(0, "UTC"));
+        return dateStampFormat.format(date);
+    }
+
+    protected Date getDateFromRequest(Request<?> request) {
+        Date date = getSignatureDate(request.getTimeOffset());
+        if (overriddenDate != null) date = overriddenDate;
+        return date;
+    }
+
+
+    protected void addHostHeader(Request<?> request) {
+        // AWS4 requires that we sign the Host header so we
+        // have to have it in the request by the time we sign.
+        String hostHeader = request.getEndpoint().getHost();
+        if (HttpUtils.isUsingNonDefaultPort(request.getEndpoint())) {
+            hostHeader += ":" + request.getEndpoint().getPort();
+        }
+        request.addHeader("Host", hostHeader);
+    }
+
+    protected String getScope(Request<?> request) {
+        String regionName = extractRegionName(request.getEndpoint());
+        String serviceName = extractServiceName(request.getEndpoint());
+
+        Date date = getDateFromRequest(request);
+        String dateStamp = getDateStamp(date);
+        String scope =  dateStamp + "/" + regionName + "/" + serviceName + "/" + TERMINATOR;
+        return scope;
     }
 
 }

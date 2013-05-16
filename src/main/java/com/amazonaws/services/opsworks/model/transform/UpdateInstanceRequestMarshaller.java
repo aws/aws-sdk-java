@@ -117,6 +117,9 @@ public class UpdateInstanceRequestMarshaller implements Marshaller<Request<Updat
             if (updateInstanceRequest.getSshKeyName() != null) {
                 jsonWriter.key("SshKeyName").value(updateInstanceRequest.getSshKeyName());
             }
+            if (updateInstanceRequest.getArchitecture() != null) {
+                jsonWriter.key("Architecture").value(updateInstanceRequest.getArchitecture());
+            }
 
           jsonWriter.endObject();
           

@@ -53,6 +53,10 @@ public class PipelineJsonUnmarshaller implements Unmarshaller<Pipeline, JsonUnma
                     context.nextToken();
                     pipeline.setId(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("Arn", targetDepth)) {
+                    context.nextToken();
+                    pipeline.setArn(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
                     pipeline.setName(StringJsonUnmarshaller.getInstance().unmarshall(context));
@@ -76,6 +80,14 @@ public class PipelineJsonUnmarshaller implements Unmarshaller<Pipeline, JsonUnma
                 if (context.testExpression("Notifications", targetDepth)) {
                     context.nextToken();
                     pipeline.setNotifications(NotificationsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("ContentConfig", targetDepth)) {
+                    context.nextToken();
+                    pipeline.setContentConfig(PipelineOutputConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("ThumbnailConfig", targetDepth)) {
+                    context.nextToken();
+                    pipeline.setThumbnailConfig(PipelineOutputConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

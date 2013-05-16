@@ -34,7 +34,7 @@ public class ListJobsByStatusRequest extends AmazonWebServiceRequest  implements
      * To get information about all of the jobs associated with the current
      * AWS account that have a given status, specify the following status:
      * <code>Submitted</code>, <code>Progressing</code>,
-     * <code>Completed</code>, <code>Canceled</code>, or <code>Error</code>.
+     * <code>Complete</code>, <code>Canceled</code>, or <code>Error</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>(^Submitted$)|(^Progressing$)|(^Complete$)|(^Canceled$)|(^Error$)<br/>
@@ -65,7 +65,7 @@ public class ListJobsByStatusRequest extends AmazonWebServiceRequest  implements
      * To get information about all of the jobs associated with the current
      * AWS account that have a given status, specify the following status:
      * <code>Submitted</code>, <code>Progressing</code>,
-     * <code>Completed</code>, <code>Canceled</code>, or <code>Error</code>.
+     * <code>Complete</code>, <code>Canceled</code>, or <code>Error</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>(^Submitted$)|(^Progressing$)|(^Complete$)|(^Canceled$)|(^Error$)<br/>
@@ -73,7 +73,7 @@ public class ListJobsByStatusRequest extends AmazonWebServiceRequest  implements
      * @return To get information about all of the jobs associated with the current
      *         AWS account that have a given status, specify the following status:
      *         <code>Submitted</code>, <code>Progressing</code>,
-     *         <code>Completed</code>, <code>Canceled</code>, or <code>Error</code>.
+     *         <code>Complete</code>, <code>Canceled</code>, or <code>Error</code>.
      */
     public String getStatus() {
         return status;
@@ -83,7 +83,7 @@ public class ListJobsByStatusRequest extends AmazonWebServiceRequest  implements
      * To get information about all of the jobs associated with the current
      * AWS account that have a given status, specify the following status:
      * <code>Submitted</code>, <code>Progressing</code>,
-     * <code>Completed</code>, <code>Canceled</code>, or <code>Error</code>.
+     * <code>Complete</code>, <code>Canceled</code>, or <code>Error</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>(^Submitted$)|(^Progressing$)|(^Complete$)|(^Canceled$)|(^Error$)<br/>
@@ -91,7 +91,7 @@ public class ListJobsByStatusRequest extends AmazonWebServiceRequest  implements
      * @param status To get information about all of the jobs associated with the current
      *         AWS account that have a given status, specify the following status:
      *         <code>Submitted</code>, <code>Progressing</code>,
-     *         <code>Completed</code>, <code>Canceled</code>, or <code>Error</code>.
+     *         <code>Complete</code>, <code>Canceled</code>, or <code>Error</code>.
      */
     public void setStatus(String status) {
         this.status = status;
@@ -101,7 +101,7 @@ public class ListJobsByStatusRequest extends AmazonWebServiceRequest  implements
      * To get information about all of the jobs associated with the current
      * AWS account that have a given status, specify the following status:
      * <code>Submitted</code>, <code>Progressing</code>,
-     * <code>Completed</code>, <code>Canceled</code>, or <code>Error</code>.
+     * <code>Complete</code>, <code>Canceled</code>, or <code>Error</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -111,7 +111,7 @@ public class ListJobsByStatusRequest extends AmazonWebServiceRequest  implements
      * @param status To get information about all of the jobs associated with the current
      *         AWS account that have a given status, specify the following status:
      *         <code>Submitted</code>, <code>Progressing</code>,
-     *         <code>Completed</code>, <code>Canceled</code>, or <code>Error</code>.
+     *         <code>Complete</code>, <code>Canceled</code>, or <code>Error</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

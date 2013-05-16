@@ -173,6 +173,9 @@ public class CloneStackRequestMarshaller implements Marshaller<Request<CloneStac
                 }
                 jsonWriter.endArray();
             }
+            if (cloneStackRequest.getDefaultRootDeviceType() != null) {
+                jsonWriter.key("DefaultRootDeviceType").value(cloneStackRequest.getDefaultRootDeviceType());
+            }
 
           jsonWriter.endObject();
           

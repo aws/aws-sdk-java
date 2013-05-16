@@ -55,7 +55,7 @@ import com.amazonaws.auth.policy.internal.JsonPolicyWriter;
 public class Policy {
 
     /** The default policy version */
-    private static final String DEFAULT_POLICY_VERSION = "2008-10-17";
+    private static final String DEFAULT_POLICY_VERSION = "2012-10-17";
 
     private String id;
     private String version = DEFAULT_POLICY_VERSION;

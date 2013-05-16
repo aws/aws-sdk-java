@@ -20,7 +20,8 @@ import java.io.Serializable;
  * Container for the parameters to the {@link com.amazonaws.services.opsworks.AWSOpsWorks#stopInstance(StopInstanceRequest) StopInstance operation}.
  * <p>
  * Stops a specified instance. When you stop a standard instance, the data disappears and must be reinstalled when you restart the instance. You can stop
- * an Amazon EBS-backed instance without losing data.
+ * an Amazon EBS-backed instance without losing data. For more information, see <a
+ * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-starting.html"> Starting, Stopping, and Rebooting Instances </a> .
  * </p>
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#stopInstance(StopInstanceRequest)

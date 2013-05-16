@@ -40,7 +40,7 @@ public class ProvisionedThroughputDescription  implements Serializable  {
      * this UTC calendar day. For current maximums on provisioned throughput
      * decreases, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
-     * of the <i>Amazon DynamoDB Developer Guide</i>.
+     * in the <i>Amazon DynamoDB Developer Guide</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - <br/>
@@ -154,7 +154,7 @@ public class ProvisionedThroughputDescription  implements Serializable  {
      * this UTC calendar day. For current maximums on provisioned throughput
      * decreases, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
-     * of the <i>Amazon DynamoDB Developer Guide</i>.
+     * in the <i>Amazon DynamoDB Developer Guide</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - <br/>
@@ -163,7 +163,7 @@ public class ProvisionedThroughputDescription  implements Serializable  {
      *         this UTC calendar day. For current maximums on provisioned throughput
      *         decreases, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
-     *         of the <i>Amazon DynamoDB Developer Guide</i>.
+     *         in the <i>Amazon DynamoDB Developer Guide</i>.
      */
     public Long getNumberOfDecreasesToday() {
         return numberOfDecreasesToday;
@@ -174,7 +174,7 @@ public class ProvisionedThroughputDescription  implements Serializable  {
      * this UTC calendar day. For current maximums on provisioned throughput
      * decreases, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
-     * of the <i>Amazon DynamoDB Developer Guide</i>.
+     * in the <i>Amazon DynamoDB Developer Guide</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - <br/>
@@ -183,7 +183,7 @@ public class ProvisionedThroughputDescription  implements Serializable  {
      *         this UTC calendar day. For current maximums on provisioned throughput
      *         decreases, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
-     *         of the <i>Amazon DynamoDB Developer Guide</i>.
+     *         in the <i>Amazon DynamoDB Developer Guide</i>.
      */
     public void setNumberOfDecreasesToday(Long numberOfDecreasesToday) {
         this.numberOfDecreasesToday = numberOfDecreasesToday;
@@ -194,7 +194,7 @@ public class ProvisionedThroughputDescription  implements Serializable  {
      * this UTC calendar day. For current maximums on provisioned throughput
      * decreases, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
-     * of the <i>Amazon DynamoDB Developer Guide</i>.
+     * in the <i>Amazon DynamoDB Developer Guide</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -205,7 +205,7 @@ public class ProvisionedThroughputDescription  implements Serializable  {
      *         this UTC calendar day. For current maximums on provisioned throughput
      *         decreases, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
-     *         of the <i>Amazon DynamoDB Developer Guide</i>.
+     *         in the <i>Amazon DynamoDB Developer Guide</i>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

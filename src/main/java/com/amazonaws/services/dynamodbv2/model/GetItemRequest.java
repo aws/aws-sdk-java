@@ -65,10 +65,9 @@ public class GetItemRequest extends AmazonWebServiceRequest  implements Serializ
     private Boolean consistentRead;
 
     /**
-     * Determines whether to include consumed capacity information in the
-     * output. If this is set to <code>TOTAL</code>, then this information is
-     * shown in the output; otherwise, the consumed capacity information is
-     * not shown.
+     * If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
+     * the response; if set to <code>NONE</code> (the default),
+     * <i>ConsumedCapacity</i> is not included.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>TOTAL, NONE
@@ -338,18 +337,16 @@ public class GetItemRequest extends AmazonWebServiceRequest  implements Serializ
     }
     
     /**
-     * Determines whether to include consumed capacity information in the
-     * output. If this is set to <code>TOTAL</code>, then this information is
-     * shown in the output; otherwise, the consumed capacity information is
-     * not shown.
+     * If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
+     * the response; if set to <code>NONE</code> (the default),
+     * <i>ConsumedCapacity</i> is not included.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>TOTAL, NONE
      *
-     * @return Determines whether to include consumed capacity information in the
-     *         output. If this is set to <code>TOTAL</code>, then this information is
-     *         shown in the output; otherwise, the consumed capacity information is
-     *         not shown.
+     * @return If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
+     *         the response; if set to <code>NONE</code> (the default),
+     *         <i>ConsumedCapacity</i> is not included.
      *
      * @see ReturnConsumedCapacity
      */
@@ -358,18 +355,16 @@ public class GetItemRequest extends AmazonWebServiceRequest  implements Serializ
     }
     
     /**
-     * Determines whether to include consumed capacity information in the
-     * output. If this is set to <code>TOTAL</code>, then this information is
-     * shown in the output; otherwise, the consumed capacity information is
-     * not shown.
+     * If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
+     * the response; if set to <code>NONE</code> (the default),
+     * <i>ConsumedCapacity</i> is not included.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>TOTAL, NONE
      *
-     * @param returnConsumedCapacity Determines whether to include consumed capacity information in the
-     *         output. If this is set to <code>TOTAL</code>, then this information is
-     *         shown in the output; otherwise, the consumed capacity information is
-     *         not shown.
+     * @param returnConsumedCapacity If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
+     *         the response; if set to <code>NONE</code> (the default),
+     *         <i>ConsumedCapacity</i> is not included.
      *
      * @see ReturnConsumedCapacity
      */
@@ -378,20 +373,18 @@ public class GetItemRequest extends AmazonWebServiceRequest  implements Serializ
     }
     
     /**
-     * Determines whether to include consumed capacity information in the
-     * output. If this is set to <code>TOTAL</code>, then this information is
-     * shown in the output; otherwise, the consumed capacity information is
-     * not shown.
+     * If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
+     * the response; if set to <code>NONE</code> (the default),
+     * <i>ConsumedCapacity</i> is not included.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>TOTAL, NONE
      *
-     * @param returnConsumedCapacity Determines whether to include consumed capacity information in the
-     *         output. If this is set to <code>TOTAL</code>, then this information is
-     *         shown in the output; otherwise, the consumed capacity information is
-     *         not shown.
+     * @param returnConsumedCapacity If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
+     *         the response; if set to <code>NONE</code> (the default),
+     *         <i>ConsumedCapacity</i> is not included.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -405,18 +398,16 @@ public class GetItemRequest extends AmazonWebServiceRequest  implements Serializ
     
     
     /**
-     * Determines whether to include consumed capacity information in the
-     * output. If this is set to <code>TOTAL</code>, then this information is
-     * shown in the output; otherwise, the consumed capacity information is
-     * not shown.
+     * If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
+     * the response; if set to <code>NONE</code> (the default),
+     * <i>ConsumedCapacity</i> is not included.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>TOTAL, NONE
      *
-     * @param returnConsumedCapacity Determines whether to include consumed capacity information in the
-     *         output. If this is set to <code>TOTAL</code>, then this information is
-     *         shown in the output; otherwise, the consumed capacity information is
-     *         not shown.
+     * @param returnConsumedCapacity If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
+     *         the response; if set to <code>NONE</code> (the default),
+     *         <i>ConsumedCapacity</i> is not included.
      *
      * @see ReturnConsumedCapacity
      */
@@ -425,20 +416,18 @@ public class GetItemRequest extends AmazonWebServiceRequest  implements Serializ
     }
     
     /**
-     * Determines whether to include consumed capacity information in the
-     * output. If this is set to <code>TOTAL</code>, then this information is
-     * shown in the output; otherwise, the consumed capacity information is
-     * not shown.
+     * If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
+     * the response; if set to <code>NONE</code> (the default),
+     * <i>ConsumedCapacity</i> is not included.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>TOTAL, NONE
      *
-     * @param returnConsumedCapacity Determines whether to include consumed capacity information in the
-     *         output. If this is set to <code>TOTAL</code>, then this information is
-     *         shown in the output; otherwise, the consumed capacity information is
-     *         not shown.
+     * @param returnConsumedCapacity If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
+     *         the response; if set to <code>NONE</code> (the default),
+     *         <i>ConsumedCapacity</i> is not included.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

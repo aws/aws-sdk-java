@@ -91,9 +91,6 @@ public class DescribeInstancesRequestMarshaller implements Marshaller<Request<De
             if (describeInstancesRequest.getLayerId() != null) {
                 jsonWriter.key("LayerId").value(describeInstancesRequest.getLayerId());
             }
-            if (describeInstancesRequest.getAppId() != null) {
-                jsonWriter.key("AppId").value(describeInstancesRequest.getAppId());
-            }
 
             java.util.List<String> instanceIdsList = describeInstancesRequest.getInstanceIds();
             if (instanceIdsList != null && instanceIdsList.size() > 0) {

@@ -17,17 +17,27 @@ import java.io.Serializable;
 
 /**
  * <p>
- * A section of the request or response body that provides information about the transcoded (target) file.
+ * <p>
+ * <b>IMPORTANT:</b>Outputs recommended instead.
+ * </p>
+ * If you specified one output for a job, information about that output. If you specified multiple outputs for a job, the <code>Output</code> object
+ * lists information about the first output. This duplicates the information that is listed for the first output in the <code>Outputs</code> object.
  * </p>
  */
 public class JobOutput  implements Serializable  {
 
     /**
+     * A sequential counter, starting with 1, that identifies an output among
+     * the outputs from the current job. In the Output syntax, this value is
+     * always 1.
+     */
+    private String id;
+
+    /**
      * The name to assign to the transcoded file. Elastic Transcoder saves
      * the file in the Amazon S3 bucket specified by the
      * <code>OutputBucket</code> object in the pipeline that is specified by
-     * the pipeline ID. If a file with the specified name already exists in
-     * the output bucket, the job fails.
+     * the pipeline ID.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
@@ -83,9 +93,13 @@ public class JobOutput  implements Serializable  {
     private String rotate;
 
     /**
-     * The <code>Id</code> of the preset to use for this job. The preset
-     * determines the audio, video, and thumbnail settings that Elastic
-     * Transcoder uses for transcoding.
+     * The value of the <code>Id</code> object for the preset that you want
+     * to use for this job. The preset determines the audio, video, and
+     * thumbnail settings that Elastic Transcoder uses for transcoding. To
+     * use a preset that you created, specify the preset ID that Elastic
+     * Transcoder returned in the response when you created the preset. You
+     * can also use the Elastic Transcoder system presets, which you can get
+     * with <code>ListPresets</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>^\d{13}-\w{6}$<br/>
@@ -93,9 +107,44 @@ public class JobOutput  implements Serializable  {
     private String presetId;
 
     /**
-     * Status of the job. The value of <code>Status</code> is one of the
-     * following: <code>Submitted</code>, <code>Progressing</code>,
-     * <code>Completed</code>, <code>Canceled</code>, or <code>Error</code>.
+     * <important>(Outputs in MPEG-TS format only.</important>If you specify
+     * a preset in <code>PresetId</code> for which the value of
+     * <code>Container</code>is <code>ts</code> (MPEG-TS),
+     * <code>SegmentDuration</code> is the maximum duration of each .ts file
+     * in seconds. The range of valid values is 1 to 60 seconds. If the
+     * duration of the video is not evenly divisible by
+     * <code>SegmentDuration</code>, the duration of the last segment is the
+     * remainder of total length/SegmentDuration. Elastic Transcoder creates
+     * an output-specific playlist for each output that you specify in
+     * OutputKeys. To add an output to the master playlist for this job,
+     * include it in <code>OutputKeys</code>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Pattern: </b>^\d{1,5}([.]\d{0,5})?$<br/>
+     */
+    private String segmentDuration;
+
+    /**
+     * The status of one output in a job. If you specified only one output
+     * for the job, <code>Outputs:Status</code> is always the same as
+     * <code>Job:Status</code>. If you specified more than one output: <ul>
+     * <li><code>Job:Status</code> and <code>Outputs:Status</code> for all of
+     * the outputs is Submitted until Elastic Transcoder starts to process
+     * the first output.</li> <li>When Elastic Transcoder starts to process
+     * the first output, <code>Outputs:Status</code> for that output and
+     * <code>Job:Status</code> both change to Progressing. For each output,
+     * the value of <code>Outputs:Status</code> remains Submitted until
+     * Elastic Transcoder starts to process the output.</li> <li>Job:Status
+     * remains Progressing until all of the outputs reach a terminal status,
+     * either Complete or Error.</li> <li>When all of the outputs reach a
+     * terminal status, <code>Job:Status</code> changes to Complete only if
+     * <code>Outputs:Status</code> for all of the outputs is
+     * <code>Complete</code>. If <code>Outputs:Status</code> for one or more
+     * outputs is <code>Error</code>, the terminal status for
+     * <code>Job:Status</code> is also <code>Error</code>.</li> </ul> The
+     * value of <code>Status</code> is one of the following:
+     * <code>Submitted</code>, <code>Progressing</code>,
+     * <code>Complete</code>, <code>Canceled</code>, or <code>Error</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>(^Submitted$)|(^Progressing$)|(^Complete$)|(^Canceled$)|(^Error$)<br/>
@@ -111,11 +160,71 @@ public class JobOutput  implements Serializable  {
     private String statusDetail;
 
     /**
+     * Duration of the output file, in seconds.
+     */
+    private Long duration;
+
+    /**
+     * Specifies the width of the output file in pixels.
+     */
+    private Integer width;
+
+    /**
+     * Height of the output file, in pixels.
+     */
+    private Integer height;
+
+    /**
+     * A sequential counter, starting with 1, that identifies an output among
+     * the outputs from the current job. In the Output syntax, this value is
+     * always 1.
+     *
+     * @return A sequential counter, starting with 1, that identifies an output among
+     *         the outputs from the current job. In the Output syntax, this value is
+     *         always 1.
+     */
+    public String getId() {
+        return id;
+    }
+    
+    /**
+     * A sequential counter, starting with 1, that identifies an output among
+     * the outputs from the current job. In the Output syntax, this value is
+     * always 1.
+     *
+     * @param id A sequential counter, starting with 1, that identifies an output among
+     *         the outputs from the current job. In the Output syntax, this value is
+     *         always 1.
+     */
+    public void setId(String id) {
+        this.id = id;
+    }
+    
+    /**
+     * A sequential counter, starting with 1, that identifies an output among
+     * the outputs from the current job. In the Output syntax, this value is
+     * always 1.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param id A sequential counter, starting with 1, that identifies an output among
+     *         the outputs from the current job. In the Output syntax, this value is
+     *         always 1.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public JobOutput withId(String id) {
+        this.id = id;
+        return this;
+    }
+    
+    
+    /**
      * The name to assign to the transcoded file. Elastic Transcoder saves
      * the file in the Amazon S3 bucket specified by the
      * <code>OutputBucket</code> object in the pipeline that is specified by
-     * the pipeline ID. If a file with the specified name already exists in
-     * the output bucket, the job fails.
+     * the pipeline ID.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
@@ -123,8 +232,7 @@ public class JobOutput  implements Serializable  {
      * @return The name to assign to the transcoded file. Elastic Transcoder saves
      *         the file in the Amazon S3 bucket specified by the
      *         <code>OutputBucket</code> object in the pipeline that is specified by
-     *         the pipeline ID. If a file with the specified name already exists in
-     *         the output bucket, the job fails.
+     *         the pipeline ID.
      */
     public String getKey() {
         return key;
@@ -134,8 +242,7 @@ public class JobOutput  implements Serializable  {
      * The name to assign to the transcoded file. Elastic Transcoder saves
      * the file in the Amazon S3 bucket specified by the
      * <code>OutputBucket</code> object in the pipeline that is specified by
-     * the pipeline ID. If a file with the specified name already exists in
-     * the output bucket, the job fails.
+     * the pipeline ID.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 255<br/>
@@ -143,8 +250,7 @@ public class JobOutput  implements Serializable  {
      * @param key The name to assign to the transcoded file. Elastic Transcoder saves
      *         the file in the Amazon S3 bucket specified by the
      *         <code>OutputBucket</code> object in the pipeline that is specified by
-     *         the pipeline ID. If a file with the specified name already exists in
-     *         the output bucket, the job fails.
+     *         the pipeline ID.
      */
     public void setKey(String key) {
         this.key = key;
@@ -154,8 +260,7 @@ public class JobOutput  implements Serializable  {
      * The name to assign to the transcoded file. Elastic Transcoder saves
      * the file in the Amazon S3 bucket specified by the
      * <code>OutputBucket</code> object in the pipeline that is specified by
-     * the pipeline ID. If a file with the specified name already exists in
-     * the output bucket, the job fails.
+     * the pipeline ID.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -165,8 +270,7 @@ public class JobOutput  implements Serializable  {
      * @param key The name to assign to the transcoded file. Elastic Transcoder saves
      *         the file in the Amazon S3 bucket specified by the
      *         <code>OutputBucket</code> object in the pipeline that is specified by
-     *         the pipeline ID. If a file with the specified name already exists in
-     *         the output bucket, the job fails.
+     *         the pipeline ID.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -456,50 +560,74 @@ public class JobOutput  implements Serializable  {
     
     
     /**
-     * The <code>Id</code> of the preset to use for this job. The preset
-     * determines the audio, video, and thumbnail settings that Elastic
-     * Transcoder uses for transcoding.
+     * The value of the <code>Id</code> object for the preset that you want
+     * to use for this job. The preset determines the audio, video, and
+     * thumbnail settings that Elastic Transcoder uses for transcoding. To
+     * use a preset that you created, specify the preset ID that Elastic
+     * Transcoder returned in the response when you created the preset. You
+     * can also use the Elastic Transcoder system presets, which you can get
+     * with <code>ListPresets</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>^\d{13}-\w{6}$<br/>
      *
-     * @return The <code>Id</code> of the preset to use for this job. The preset
-     *         determines the audio, video, and thumbnail settings that Elastic
-     *         Transcoder uses for transcoding.
+     * @return The value of the <code>Id</code> object for the preset that you want
+     *         to use for this job. The preset determines the audio, video, and
+     *         thumbnail settings that Elastic Transcoder uses for transcoding. To
+     *         use a preset that you created, specify the preset ID that Elastic
+     *         Transcoder returned in the response when you created the preset. You
+     *         can also use the Elastic Transcoder system presets, which you can get
+     *         with <code>ListPresets</code>.
      */
     public String getPresetId() {
         return presetId;
     }
     
     /**
-     * The <code>Id</code> of the preset to use for this job. The preset
-     * determines the audio, video, and thumbnail settings that Elastic
-     * Transcoder uses for transcoding.
+     * The value of the <code>Id</code> object for the preset that you want
+     * to use for this job. The preset determines the audio, video, and
+     * thumbnail settings that Elastic Transcoder uses for transcoding. To
+     * use a preset that you created, specify the preset ID that Elastic
+     * Transcoder returned in the response when you created the preset. You
+     * can also use the Elastic Transcoder system presets, which you can get
+     * with <code>ListPresets</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>^\d{13}-\w{6}$<br/>
      *
-     * @param presetId The <code>Id</code> of the preset to use for this job. The preset
-     *         determines the audio, video, and thumbnail settings that Elastic
-     *         Transcoder uses for transcoding.
+     * @param presetId The value of the <code>Id</code> object for the preset that you want
+     *         to use for this job. The preset determines the audio, video, and
+     *         thumbnail settings that Elastic Transcoder uses for transcoding. To
+     *         use a preset that you created, specify the preset ID that Elastic
+     *         Transcoder returned in the response when you created the preset. You
+     *         can also use the Elastic Transcoder system presets, which you can get
+     *         with <code>ListPresets</code>.
      */
     public void setPresetId(String presetId) {
         this.presetId = presetId;
     }
     
     /**
-     * The <code>Id</code> of the preset to use for this job. The preset
-     * determines the audio, video, and thumbnail settings that Elastic
-     * Transcoder uses for transcoding.
+     * The value of the <code>Id</code> object for the preset that you want
+     * to use for this job. The preset determines the audio, video, and
+     * thumbnail settings that Elastic Transcoder uses for transcoding. To
+     * use a preset that you created, specify the preset ID that Elastic
+     * Transcoder returned in the response when you created the preset. You
+     * can also use the Elastic Transcoder system presets, which you can get
+     * with <code>ListPresets</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>^\d{13}-\w{6}$<br/>
      *
-     * @param presetId The <code>Id</code> of the preset to use for this job. The preset
-     *         determines the audio, video, and thumbnail settings that Elastic
-     *         Transcoder uses for transcoding.
+     * @param presetId The value of the <code>Id</code> object for the preset that you want
+     *         to use for this job. The preset determines the audio, video, and
+     *         thumbnail settings that Elastic Transcoder uses for transcoding. To
+     *         use a preset that you created, specify the preset ID that Elastic
+     *         Transcoder returned in the response when you created the preset. You
+     *         can also use the Elastic Transcoder system presets, which you can get
+     *         with <code>ListPresets</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -511,50 +639,255 @@ public class JobOutput  implements Serializable  {
     
     
     /**
-     * Status of the job. The value of <code>Status</code> is one of the
-     * following: <code>Submitted</code>, <code>Progressing</code>,
-     * <code>Completed</code>, <code>Canceled</code>, or <code>Error</code>.
+     * <important>(Outputs in MPEG-TS format only.</important>If you specify
+     * a preset in <code>PresetId</code> for which the value of
+     * <code>Container</code>is <code>ts</code> (MPEG-TS),
+     * <code>SegmentDuration</code> is the maximum duration of each .ts file
+     * in seconds. The range of valid values is 1 to 60 seconds. If the
+     * duration of the video is not evenly divisible by
+     * <code>SegmentDuration</code>, the duration of the last segment is the
+     * remainder of total length/SegmentDuration. Elastic Transcoder creates
+     * an output-specific playlist for each output that you specify in
+     * OutputKeys. To add an output to the master playlist for this job,
+     * include it in <code>OutputKeys</code>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Pattern: </b>^\d{1,5}([.]\d{0,5})?$<br/>
+     *
+     * @return <important>(Outputs in MPEG-TS format only.</important>If you specify
+     *         a preset in <code>PresetId</code> for which the value of
+     *         <code>Container</code>is <code>ts</code> (MPEG-TS),
+     *         <code>SegmentDuration</code> is the maximum duration of each .ts file
+     *         in seconds. The range of valid values is 1 to 60 seconds. If the
+     *         duration of the video is not evenly divisible by
+     *         <code>SegmentDuration</code>, the duration of the last segment is the
+     *         remainder of total length/SegmentDuration. Elastic Transcoder creates
+     *         an output-specific playlist for each output that you specify in
+     *         OutputKeys. To add an output to the master playlist for this job,
+     *         include it in <code>OutputKeys</code>.
+     */
+    public String getSegmentDuration() {
+        return segmentDuration;
+    }
+    
+    /**
+     * <important>(Outputs in MPEG-TS format only.</important>If you specify
+     * a preset in <code>PresetId</code> for which the value of
+     * <code>Container</code>is <code>ts</code> (MPEG-TS),
+     * <code>SegmentDuration</code> is the maximum duration of each .ts file
+     * in seconds. The range of valid values is 1 to 60 seconds. If the
+     * duration of the video is not evenly divisible by
+     * <code>SegmentDuration</code>, the duration of the last segment is the
+     * remainder of total length/SegmentDuration. Elastic Transcoder creates
+     * an output-specific playlist for each output that you specify in
+     * OutputKeys. To add an output to the master playlist for this job,
+     * include it in <code>OutputKeys</code>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Pattern: </b>^\d{1,5}([.]\d{0,5})?$<br/>
+     *
+     * @param segmentDuration <important>(Outputs in MPEG-TS format only.</important>If you specify
+     *         a preset in <code>PresetId</code> for which the value of
+     *         <code>Container</code>is <code>ts</code> (MPEG-TS),
+     *         <code>SegmentDuration</code> is the maximum duration of each .ts file
+     *         in seconds. The range of valid values is 1 to 60 seconds. If the
+     *         duration of the video is not evenly divisible by
+     *         <code>SegmentDuration</code>, the duration of the last segment is the
+     *         remainder of total length/SegmentDuration. Elastic Transcoder creates
+     *         an output-specific playlist for each output that you specify in
+     *         OutputKeys. To add an output to the master playlist for this job,
+     *         include it in <code>OutputKeys</code>.
+     */
+    public void setSegmentDuration(String segmentDuration) {
+        this.segmentDuration = segmentDuration;
+    }
+    
+    /**
+     * <important>(Outputs in MPEG-TS format only.</important>If you specify
+     * a preset in <code>PresetId</code> for which the value of
+     * <code>Container</code>is <code>ts</code> (MPEG-TS),
+     * <code>SegmentDuration</code> is the maximum duration of each .ts file
+     * in seconds. The range of valid values is 1 to 60 seconds. If the
+     * duration of the video is not evenly divisible by
+     * <code>SegmentDuration</code>, the duration of the last segment is the
+     * remainder of total length/SegmentDuration. Elastic Transcoder creates
+     * an output-specific playlist for each output that you specify in
+     * OutputKeys. To add an output to the master playlist for this job,
+     * include it in <code>OutputKeys</code>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Pattern: </b>^\d{1,5}([.]\d{0,5})?$<br/>
+     *
+     * @param segmentDuration <important>(Outputs in MPEG-TS format only.</important>If you specify
+     *         a preset in <code>PresetId</code> for which the value of
+     *         <code>Container</code>is <code>ts</code> (MPEG-TS),
+     *         <code>SegmentDuration</code> is the maximum duration of each .ts file
+     *         in seconds. The range of valid values is 1 to 60 seconds. If the
+     *         duration of the video is not evenly divisible by
+     *         <code>SegmentDuration</code>, the duration of the last segment is the
+     *         remainder of total length/SegmentDuration. Elastic Transcoder creates
+     *         an output-specific playlist for each output that you specify in
+     *         OutputKeys. To add an output to the master playlist for this job,
+     *         include it in <code>OutputKeys</code>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public JobOutput withSegmentDuration(String segmentDuration) {
+        this.segmentDuration = segmentDuration;
+        return this;
+    }
+    
+    
+    /**
+     * The status of one output in a job. If you specified only one output
+     * for the job, <code>Outputs:Status</code> is always the same as
+     * <code>Job:Status</code>. If you specified more than one output: <ul>
+     * <li><code>Job:Status</code> and <code>Outputs:Status</code> for all of
+     * the outputs is Submitted until Elastic Transcoder starts to process
+     * the first output.</li> <li>When Elastic Transcoder starts to process
+     * the first output, <code>Outputs:Status</code> for that output and
+     * <code>Job:Status</code> both change to Progressing. For each output,
+     * the value of <code>Outputs:Status</code> remains Submitted until
+     * Elastic Transcoder starts to process the output.</li> <li>Job:Status
+     * remains Progressing until all of the outputs reach a terminal status,
+     * either Complete or Error.</li> <li>When all of the outputs reach a
+     * terminal status, <code>Job:Status</code> changes to Complete only if
+     * <code>Outputs:Status</code> for all of the outputs is
+     * <code>Complete</code>. If <code>Outputs:Status</code> for one or more
+     * outputs is <code>Error</code>, the terminal status for
+     * <code>Job:Status</code> is also <code>Error</code>.</li> </ul> The
+     * value of <code>Status</code> is one of the following:
+     * <code>Submitted</code>, <code>Progressing</code>,
+     * <code>Complete</code>, <code>Canceled</code>, or <code>Error</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>(^Submitted$)|(^Progressing$)|(^Complete$)|(^Canceled$)|(^Error$)<br/>
      *
-     * @return Status of the job. The value of <code>Status</code> is one of the
-     *         following: <code>Submitted</code>, <code>Progressing</code>,
-     *         <code>Completed</code>, <code>Canceled</code>, or <code>Error</code>.
+     * @return The status of one output in a job. If you specified only one output
+     *         for the job, <code>Outputs:Status</code> is always the same as
+     *         <code>Job:Status</code>. If you specified more than one output: <ul>
+     *         <li><code>Job:Status</code> and <code>Outputs:Status</code> for all of
+     *         the outputs is Submitted until Elastic Transcoder starts to process
+     *         the first output.</li> <li>When Elastic Transcoder starts to process
+     *         the first output, <code>Outputs:Status</code> for that output and
+     *         <code>Job:Status</code> both change to Progressing. For each output,
+     *         the value of <code>Outputs:Status</code> remains Submitted until
+     *         Elastic Transcoder starts to process the output.</li> <li>Job:Status
+     *         remains Progressing until all of the outputs reach a terminal status,
+     *         either Complete or Error.</li> <li>When all of the outputs reach a
+     *         terminal status, <code>Job:Status</code> changes to Complete only if
+     *         <code>Outputs:Status</code> for all of the outputs is
+     *         <code>Complete</code>. If <code>Outputs:Status</code> for one or more
+     *         outputs is <code>Error</code>, the terminal status for
+     *         <code>Job:Status</code> is also <code>Error</code>.</li> </ul> The
+     *         value of <code>Status</code> is one of the following:
+     *         <code>Submitted</code>, <code>Progressing</code>,
+     *         <code>Complete</code>, <code>Canceled</code>, or <code>Error</code>.
      */
     public String getStatus() {
         return status;
     }
     
     /**
-     * Status of the job. The value of <code>Status</code> is one of the
-     * following: <code>Submitted</code>, <code>Progressing</code>,
-     * <code>Completed</code>, <code>Canceled</code>, or <code>Error</code>.
+     * The status of one output in a job. If you specified only one output
+     * for the job, <code>Outputs:Status</code> is always the same as
+     * <code>Job:Status</code>. If you specified more than one output: <ul>
+     * <li><code>Job:Status</code> and <code>Outputs:Status</code> for all of
+     * the outputs is Submitted until Elastic Transcoder starts to process
+     * the first output.</li> <li>When Elastic Transcoder starts to process
+     * the first output, <code>Outputs:Status</code> for that output and
+     * <code>Job:Status</code> both change to Progressing. For each output,
+     * the value of <code>Outputs:Status</code> remains Submitted until
+     * Elastic Transcoder starts to process the output.</li> <li>Job:Status
+     * remains Progressing until all of the outputs reach a terminal status,
+     * either Complete or Error.</li> <li>When all of the outputs reach a
+     * terminal status, <code>Job:Status</code> changes to Complete only if
+     * <code>Outputs:Status</code> for all of the outputs is
+     * <code>Complete</code>. If <code>Outputs:Status</code> for one or more
+     * outputs is <code>Error</code>, the terminal status for
+     * <code>Job:Status</code> is also <code>Error</code>.</li> </ul> The
+     * value of <code>Status</code> is one of the following:
+     * <code>Submitted</code>, <code>Progressing</code>,
+     * <code>Complete</code>, <code>Canceled</code>, or <code>Error</code>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>(^Submitted$)|(^Progressing$)|(^Complete$)|(^Canceled$)|(^Error$)<br/>
      *
-     * @param status Status of the job. The value of <code>Status</code> is one of the
-     *         following: <code>Submitted</code>, <code>Progressing</code>,
-     *         <code>Completed</code>, <code>Canceled</code>, or <code>Error</code>.
+     * @param status The status of one output in a job. If you specified only one output
+     *         for the job, <code>Outputs:Status</code> is always the same as
+     *         <code>Job:Status</code>. If you specified more than one output: <ul>
+     *         <li><code>Job:Status</code> and <code>Outputs:Status</code> for all of
+     *         the outputs is Submitted until Elastic Transcoder starts to process
+     *         the first output.</li> <li>When Elastic Transcoder starts to process
+     *         the first output, <code>Outputs:Status</code> for that output and
+     *         <code>Job:Status</code> both change to Progressing. For each output,
+     *         the value of <code>Outputs:Status</code> remains Submitted until
+     *         Elastic Transcoder starts to process the output.</li> <li>Job:Status
+     *         remains Progressing until all of the outputs reach a terminal status,
+     *         either Complete or Error.</li> <li>When all of the outputs reach a
+     *         terminal status, <code>Job:Status</code> changes to Complete only if
+     *         <code>Outputs:Status</code> for all of the outputs is
+     *         <code>Complete</code>. If <code>Outputs:Status</code> for one or more
+     *         outputs is <code>Error</code>, the terminal status for
+     *         <code>Job:Status</code> is also <code>Error</code>.</li> </ul> The
+     *         value of <code>Status</code> is one of the following:
+     *         <code>Submitted</code>, <code>Progressing</code>,
+     *         <code>Complete</code>, <code>Canceled</code>, or <code>Error</code>.
      */
     public void setStatus(String status) {
         this.status = status;
     }
     
     /**
-     * Status of the job. The value of <code>Status</code> is one of the
-     * following: <code>Submitted</code>, <code>Progressing</code>,
-     * <code>Completed</code>, <code>Canceled</code>, or <code>Error</code>.
+     * The status of one output in a job. If you specified only one output
+     * for the job, <code>Outputs:Status</code> is always the same as
+     * <code>Job:Status</code>. If you specified more than one output: <ul>
+     * <li><code>Job:Status</code> and <code>Outputs:Status</code> for all of
+     * the outputs is Submitted until Elastic Transcoder starts to process
+     * the first output.</li> <li>When Elastic Transcoder starts to process
+     * the first output, <code>Outputs:Status</code> for that output and
+     * <code>Job:Status</code> both change to Progressing. For each output,
+     * the value of <code>Outputs:Status</code> remains Submitted until
+     * Elastic Transcoder starts to process the output.</li> <li>Job:Status
+     * remains Progressing until all of the outputs reach a terminal status,
+     * either Complete or Error.</li> <li>When all of the outputs reach a
+     * terminal status, <code>Job:Status</code> changes to Complete only if
+     * <code>Outputs:Status</code> for all of the outputs is
+     * <code>Complete</code>. If <code>Outputs:Status</code> for one or more
+     * outputs is <code>Error</code>, the terminal status for
+     * <code>Job:Status</code> is also <code>Error</code>.</li> </ul> The
+     * value of <code>Status</code> is one of the following:
+     * <code>Submitted</code>, <code>Progressing</code>,
+     * <code>Complete</code>, <code>Canceled</code>, or <code>Error</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Pattern: </b>(^Submitted$)|(^Progressing$)|(^Complete$)|(^Canceled$)|(^Error$)<br/>
      *
-     * @param status Status of the job. The value of <code>Status</code> is one of the
-     *         following: <code>Submitted</code>, <code>Progressing</code>,
-     *         <code>Completed</code>, <code>Canceled</code>, or <code>Error</code>.
+     * @param status The status of one output in a job. If you specified only one output
+     *         for the job, <code>Outputs:Status</code> is always the same as
+     *         <code>Job:Status</code>. If you specified more than one output: <ul>
+     *         <li><code>Job:Status</code> and <code>Outputs:Status</code> for all of
+     *         the outputs is Submitted until Elastic Transcoder starts to process
+     *         the first output.</li> <li>When Elastic Transcoder starts to process
+     *         the first output, <code>Outputs:Status</code> for that output and
+     *         <code>Job:Status</code> both change to Progressing. For each output,
+     *         the value of <code>Outputs:Status</code> remains Submitted until
+     *         Elastic Transcoder starts to process the output.</li> <li>Job:Status
+     *         remains Progressing until all of the outputs reach a terminal status,
+     *         either Complete or Error.</li> <li>When all of the outputs reach a
+     *         terminal status, <code>Job:Status</code> changes to Complete only if
+     *         <code>Outputs:Status</code> for all of the outputs is
+     *         <code>Complete</code>. If <code>Outputs:Status</code> for one or more
+     *         outputs is <code>Error</code>, the terminal status for
+     *         <code>Job:Status</code> is also <code>Error</code>.</li> </ul> The
+     *         value of <code>Status</code> is one of the following:
+     *         <code>Submitted</code>, <code>Progressing</code>,
+     *         <code>Complete</code>, <code>Canceled</code>, or <code>Error</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -609,6 +942,108 @@ public class JobOutput  implements Serializable  {
     
     
     /**
+     * Duration of the output file, in seconds.
+     *
+     * @return Duration of the output file, in seconds.
+     */
+    public Long getDuration() {
+        return duration;
+    }
+    
+    /**
+     * Duration of the output file, in seconds.
+     *
+     * @param duration Duration of the output file, in seconds.
+     */
+    public void setDuration(Long duration) {
+        this.duration = duration;
+    }
+    
+    /**
+     * Duration of the output file, in seconds.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param duration Duration of the output file, in seconds.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public JobOutput withDuration(Long duration) {
+        this.duration = duration;
+        return this;
+    }
+    
+    
+    /**
+     * Specifies the width of the output file in pixels.
+     *
+     * @return Specifies the width of the output file in pixels.
+     */
+    public Integer getWidth() {
+        return width;
+    }
+    
+    /**
+     * Specifies the width of the output file in pixels.
+     *
+     * @param width Specifies the width of the output file in pixels.
+     */
+    public void setWidth(Integer width) {
+        this.width = width;
+    }
+    
+    /**
+     * Specifies the width of the output file in pixels.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param width Specifies the width of the output file in pixels.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public JobOutput withWidth(Integer width) {
+        this.width = width;
+        return this;
+    }
+    
+    
+    /**
+     * Height of the output file, in pixels.
+     *
+     * @return Height of the output file, in pixels.
+     */
+    public Integer getHeight() {
+        return height;
+    }
+    
+    /**
+     * Height of the output file, in pixels.
+     *
+     * @param height Height of the output file, in pixels.
+     */
+    public void setHeight(Integer height) {
+        this.height = height;
+    }
+    
+    /**
+     * Height of the output file, in pixels.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param height Height of the output file, in pixels.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public JobOutput withHeight(Integer height) {
+        this.height = height;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -620,12 +1055,17 @@ public class JobOutput  implements Serializable  {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");    	
+        if (getId() != null) sb.append("Id: " + getId() + ",");    	
         if (getKey() != null) sb.append("Key: " + getKey() + ",");    	
         if (getThumbnailPattern() != null) sb.append("ThumbnailPattern: " + getThumbnailPattern() + ",");    	
         if (getRotate() != null) sb.append("Rotate: " + getRotate() + ",");    	
         if (getPresetId() != null) sb.append("PresetId: " + getPresetId() + ",");    	
+        if (getSegmentDuration() != null) sb.append("SegmentDuration: " + getSegmentDuration() + ",");    	
         if (getStatus() != null) sb.append("Status: " + getStatus() + ",");    	
-        if (getStatusDetail() != null) sb.append("StatusDetail: " + getStatusDetail() );
+        if (getStatusDetail() != null) sb.append("StatusDetail: " + getStatusDetail() + ",");    	
+        if (getDuration() != null) sb.append("Duration: " + getDuration() + ",");    	
+        if (getWidth() != null) sb.append("Width: " + getWidth() + ",");    	
+        if (getHeight() != null) sb.append("Height: " + getHeight() );
         sb.append("}");
         return sb.toString();
     }
@@ -635,12 +1075,17 @@ public class JobOutput  implements Serializable  {
         final int prime = 31;
         int hashCode = 1;
         
+        hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode()); 
         hashCode = prime * hashCode + ((getKey() == null) ? 0 : getKey().hashCode()); 
         hashCode = prime * hashCode + ((getThumbnailPattern() == null) ? 0 : getThumbnailPattern().hashCode()); 
         hashCode = prime * hashCode + ((getRotate() == null) ? 0 : getRotate().hashCode()); 
         hashCode = prime * hashCode + ((getPresetId() == null) ? 0 : getPresetId().hashCode()); 
+        hashCode = prime * hashCode + ((getSegmentDuration() == null) ? 0 : getSegmentDuration().hashCode()); 
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode()); 
         hashCode = prime * hashCode + ((getStatusDetail() == null) ? 0 : getStatusDetail().hashCode()); 
+        hashCode = prime * hashCode + ((getDuration() == null) ? 0 : getDuration().hashCode()); 
+        hashCode = prime * hashCode + ((getWidth() == null) ? 0 : getWidth().hashCode()); 
+        hashCode = prime * hashCode + ((getHeight() == null) ? 0 : getHeight().hashCode()); 
         return hashCode;
     }
     
@@ -652,6 +1097,8 @@ public class JobOutput  implements Serializable  {
         if (obj instanceof JobOutput == false) return false;
         JobOutput other = (JobOutput)obj;
         
+        if (other.getId() == null ^ this.getId() == null) return false;
+        if (other.getId() != null && other.getId().equals(this.getId()) == false) return false; 
         if (other.getKey() == null ^ this.getKey() == null) return false;
         if (other.getKey() != null && other.getKey().equals(this.getKey()) == false) return false; 
         if (other.getThumbnailPattern() == null ^ this.getThumbnailPattern() == null) return false;
@@ -660,10 +1107,18 @@ public class JobOutput  implements Serializable  {
         if (other.getRotate() != null && other.getRotate().equals(this.getRotate()) == false) return false; 
         if (other.getPresetId() == null ^ this.getPresetId() == null) return false;
         if (other.getPresetId() != null && other.getPresetId().equals(this.getPresetId()) == false) return false; 
+        if (other.getSegmentDuration() == null ^ this.getSegmentDuration() == null) return false;
+        if (other.getSegmentDuration() != null && other.getSegmentDuration().equals(this.getSegmentDuration()) == false) return false; 
         if (other.getStatus() == null ^ this.getStatus() == null) return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false) return false; 
         if (other.getStatusDetail() == null ^ this.getStatusDetail() == null) return false;
         if (other.getStatusDetail() != null && other.getStatusDetail().equals(this.getStatusDetail()) == false) return false; 
+        if (other.getDuration() == null ^ this.getDuration() == null) return false;
+        if (other.getDuration() != null && other.getDuration().equals(this.getDuration()) == false) return false; 
+        if (other.getWidth() == null ^ this.getWidth() == null) return false;
+        if (other.getWidth() != null && other.getWidth().equals(this.getWidth()) == false) return false; 
+        if (other.getHeight() == null ^ this.getHeight() == null) return false;
+        if (other.getHeight() != null && other.getHeight().equals(this.getHeight()) == false) return false; 
         return true;
     }
     

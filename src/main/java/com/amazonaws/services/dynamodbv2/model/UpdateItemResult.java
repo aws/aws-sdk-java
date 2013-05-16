@@ -23,10 +23,10 @@ import java.io.Serializable;
 public class UpdateItemResult  implements Serializable  {
 
     /**
-     * A map of attribute values as they appeard before the <i>UpdateItem</i>
-     * operation, but only if <i>ReturnValues</i> was specified as something
-     * other than <code>NONE</code> in the request. Each element represents
-     * one attribute.
+     * A map of attribute values as they appeared before the
+     * <i>UpdateItem</i> operation, but only if <i>ReturnValues</i> was
+     * specified as something other than <code>NONE</code> in the request.
+     * Each element represents one attribute.
      */
     private java.util.Map<String,AttributeValue> attributes;
 
@@ -36,7 +36,7 @@ public class UpdateItemResult  implements Serializable  {
      * returned if it was asked for in the request. For more information, see
      * <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
-     * Throughput</a> of the <i>Amazon DynamoDB Developer Guide</i>.
+     * Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
     private ConsumedCapacity consumedCapacity;
 
@@ -49,15 +49,15 @@ public class UpdateItemResult  implements Serializable  {
     private ItemCollectionMetrics itemCollectionMetrics;
 
     /**
-     * A map of attribute values as they appeard before the <i>UpdateItem</i>
-     * operation, but only if <i>ReturnValues</i> was specified as something
-     * other than <code>NONE</code> in the request. Each element represents
-     * one attribute.
+     * A map of attribute values as they appeared before the
+     * <i>UpdateItem</i> operation, but only if <i>ReturnValues</i> was
+     * specified as something other than <code>NONE</code> in the request.
+     * Each element represents one attribute.
      *
-     * @return A map of attribute values as they appeard before the <i>UpdateItem</i>
-     *         operation, but only if <i>ReturnValues</i> was specified as something
-     *         other than <code>NONE</code> in the request. Each element represents
-     *         one attribute.
+     * @return A map of attribute values as they appeared before the
+     *         <i>UpdateItem</i> operation, but only if <i>ReturnValues</i> was
+     *         specified as something other than <code>NONE</code> in the request.
+     *         Each element represents one attribute.
      */
     public java.util.Map<String,AttributeValue> getAttributes() {
         
@@ -66,32 +66,32 @@ public class UpdateItemResult  implements Serializable  {
     }
     
     /**
-     * A map of attribute values as they appeard before the <i>UpdateItem</i>
-     * operation, but only if <i>ReturnValues</i> was specified as something
-     * other than <code>NONE</code> in the request. Each element represents
-     * one attribute.
+     * A map of attribute values as they appeared before the
+     * <i>UpdateItem</i> operation, but only if <i>ReturnValues</i> was
+     * specified as something other than <code>NONE</code> in the request.
+     * Each element represents one attribute.
      *
-     * @param attributes A map of attribute values as they appeard before the <i>UpdateItem</i>
-     *         operation, but only if <i>ReturnValues</i> was specified as something
-     *         other than <code>NONE</code> in the request. Each element represents
-     *         one attribute.
+     * @param attributes A map of attribute values as they appeared before the
+     *         <i>UpdateItem</i> operation, but only if <i>ReturnValues</i> was
+     *         specified as something other than <code>NONE</code> in the request.
+     *         Each element represents one attribute.
      */
     public void setAttributes(java.util.Map<String,AttributeValue> attributes) {
         this.attributes = attributes;
     }
     
     /**
-     * A map of attribute values as they appeard before the <i>UpdateItem</i>
-     * operation, but only if <i>ReturnValues</i> was specified as something
-     * other than <code>NONE</code> in the request. Each element represents
-     * one attribute.
+     * A map of attribute values as they appeared before the
+     * <i>UpdateItem</i> operation, but only if <i>ReturnValues</i> was
+     * specified as something other than <code>NONE</code> in the request.
+     * Each element represents one attribute.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param attributes A map of attribute values as they appeard before the <i>UpdateItem</i>
-     *         operation, but only if <i>ReturnValues</i> was specified as something
-     *         other than <code>NONE</code> in the request. Each element represents
-     *         one attribute.
+     * @param attributes A map of attribute values as they appeared before the
+     *         <i>UpdateItem</i> operation, but only if <i>ReturnValues</i> was
+     *         specified as something other than <code>NONE</code> in the request.
+     *         Each element represents one attribute.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -107,14 +107,14 @@ public class UpdateItemResult  implements Serializable  {
      * returned if it was asked for in the request. For more information, see
      * <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
-     * Throughput</a> of the <i>Amazon DynamoDB Developer Guide</i>.
+     * Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      *
      * @return The table name that consumed provisioned throughput, and the number of
      *         capacity units consumed by it. <i>ConsumedCapacity</i> is only
      *         returned if it was asked for in the request. For more information, see
      *         <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
-     *         Throughput</a> of the <i>Amazon DynamoDB Developer Guide</i>.
+     *         Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
     public ConsumedCapacity getConsumedCapacity() {
         return consumedCapacity;
@@ -126,14 +126,14 @@ public class UpdateItemResult  implements Serializable  {
      * returned if it was asked for in the request. For more information, see
      * <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
-     * Throughput</a> of the <i>Amazon DynamoDB Developer Guide</i>.
+     * Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      *
      * @param consumedCapacity The table name that consumed provisioned throughput, and the number of
      *         capacity units consumed by it. <i>ConsumedCapacity</i> is only
      *         returned if it was asked for in the request. For more information, see
      *         <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
-     *         Throughput</a> of the <i>Amazon DynamoDB Developer Guide</i>.
+     *         Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
     public void setConsumedCapacity(ConsumedCapacity consumedCapacity) {
         this.consumedCapacity = consumedCapacity;
@@ -145,7 +145,7 @@ public class UpdateItemResult  implements Serializable  {
      * returned if it was asked for in the request. For more information, see
      * <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
-     * Throughput</a> of the <i>Amazon DynamoDB Developer Guide</i>.
+     * Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -154,7 +154,7 @@ public class UpdateItemResult  implements Serializable  {
      *         returned if it was asked for in the request. For more information, see
      *         <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
-     *         Throughput</a> of the <i>Amazon DynamoDB Developer Guide</i>.
+     *         Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

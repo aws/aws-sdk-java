@@ -19,7 +19,8 @@ import java.io.Serializable;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.opsworks.AWSOpsWorks#rebootInstance(RebootInstanceRequest) RebootInstance operation}.
  * <p>
- * Reboots a specified instance.
+ * Reboots a specified instance. For more information, see <a
+ * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-starting.html"> Starting, Stopping, and Rebooting Instances </a> .
  * </p>
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#rebootInstance(RebootInstanceRequest)

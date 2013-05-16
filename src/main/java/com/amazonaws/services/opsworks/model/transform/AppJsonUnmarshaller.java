@@ -57,6 +57,10 @@ public class AppJsonUnmarshaller implements Unmarshaller<App, JsonUnmarshallerCo
                     context.nextToken();
                     app.setStackId(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("Shortname", targetDepth)) {
+                    context.nextToken();
+                    app.setShortname(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
                     app.setName(StringJsonUnmarshaller.getInstance().unmarshall(context));

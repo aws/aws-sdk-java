@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.opsworks.AWSOpsWorks#createUserProfile(CreateUserProfileRequest) CreateUserProfile operation}.
  * <p>
- * Creates a new user.
+ * Creates a new user profile.
  * </p>
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#createUserProfile(CreateUserProfileRequest)

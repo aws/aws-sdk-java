@@ -19,7 +19,8 @@ import java.io.Serializable;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.opsworks.AWSOpsWorks#deleteInstance(DeleteInstanceRequest) DeleteInstance operation}.
  * <p>
- * Deletes a specified instance.
+ * Deletes a specified instance. You must stop an instance before you can delete it. For more information, see <a
+ * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-delete.html"> Deleting Instances </a> .
  * </p>
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#deleteInstance(DeleteInstanceRequest)

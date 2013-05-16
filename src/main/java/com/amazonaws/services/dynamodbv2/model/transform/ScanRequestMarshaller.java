@@ -257,6 +257,12 @@ public class ScanRequestMarshaller implements Marshaller<Request<ScanRequest>, S
             if (scanRequest.getReturnConsumedCapacity() != null) {
                 jsonWriter.key("ReturnConsumedCapacity").value(scanRequest.getReturnConsumedCapacity());
             }
+            if (scanRequest.getTotalSegments() != null) {
+                jsonWriter.key("TotalSegments").value(scanRequest.getTotalSegments());
+            }
+            if (scanRequest.getSegment() != null) {
+                jsonWriter.key("Segment").value(scanRequest.getSegment());
+            }
 
           jsonWriter.endObject();
           

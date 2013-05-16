@@ -50,7 +50,7 @@ public class Preset  implements Serializable  {
      * <code>mp4</code>.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>^mp4$<br/>
+     * <b>Pattern: </b>(^mp4$)|(^ts$)|(^webm$)<br/>
      */
     private String container;
 
@@ -222,7 +222,7 @@ public class Preset  implements Serializable  {
      * <code>mp4</code>.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>^mp4$<br/>
+     * <b>Pattern: </b>(^mp4$)|(^ts$)|(^webm$)<br/>
      *
      * @return The container type for the output file. This value must be
      *         <code>mp4</code>.
@@ -236,7 +236,7 @@ public class Preset  implements Serializable  {
      * <code>mp4</code>.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>^mp4$<br/>
+     * <b>Pattern: </b>(^mp4$)|(^ts$)|(^webm$)<br/>
      *
      * @param container The container type for the output file. This value must be
      *         <code>mp4</code>.
@@ -252,7 +252,7 @@ public class Preset  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>^mp4$<br/>
+     * <b>Pattern: </b>(^mp4$)|(^ts$)|(^webm$)<br/>
      *
      * @param container The container type for the output file. This value must be
      *         <code>mp4</code>.

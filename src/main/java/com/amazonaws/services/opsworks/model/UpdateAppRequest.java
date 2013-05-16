@@ -56,7 +56,7 @@ public class UpdateAppRequest extends AmazonWebServiceRequest  implements Serial
 
     /**
      * The app's virtual host settings, with multiple domains separated by
-     * commas. For example: <code>'www.mysite.com, mysite.com'</code>
+     * commas. For example: <code>'www.example.com, example.com'</code>
      */
     private java.util.List<String> domains;
 
@@ -297,10 +297,10 @@ public class UpdateAppRequest extends AmazonWebServiceRequest  implements Serial
     
     /**
      * The app's virtual host settings, with multiple domains separated by
-     * commas. For example: <code>'www.mysite.com, mysite.com'</code>
+     * commas. For example: <code>'www.example.com, example.com'</code>
      *
      * @return The app's virtual host settings, with multiple domains separated by
-     *         commas. For example: <code>'www.mysite.com, mysite.com'</code>
+     *         commas. For example: <code>'www.example.com, example.com'</code>
      */
     public java.util.List<String> getDomains() {
         
@@ -312,10 +312,10 @@ public class UpdateAppRequest extends AmazonWebServiceRequest  implements Serial
     
     /**
      * The app's virtual host settings, with multiple domains separated by
-     * commas. For example: <code>'www.mysite.com, mysite.com'</code>
+     * commas. For example: <code>'www.example.com, example.com'</code>
      *
      * @param domains The app's virtual host settings, with multiple domains separated by
-     *         commas. For example: <code>'www.mysite.com, mysite.com'</code>
+     *         commas. For example: <code>'www.example.com, example.com'</code>
      */
     public void setDomains(java.util.Collection<String> domains) {
         if (domains == null) {
@@ -330,12 +330,12 @@ public class UpdateAppRequest extends AmazonWebServiceRequest  implements Serial
     
     /**
      * The app's virtual host settings, with multiple domains separated by
-     * commas. For example: <code>'www.mysite.com, mysite.com'</code>
+     * commas. For example: <code>'www.example.com, example.com'</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param domains The app's virtual host settings, with multiple domains separated by
-     *         commas. For example: <code>'www.mysite.com, mysite.com'</code>
+     *         commas. For example: <code>'www.example.com, example.com'</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -350,12 +350,12 @@ public class UpdateAppRequest extends AmazonWebServiceRequest  implements Serial
     
     /**
      * The app's virtual host settings, with multiple domains separated by
-     * commas. For example: <code>'www.mysite.com, mysite.com'</code>
+     * commas. For example: <code>'www.example.com, example.com'</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param domains The app's virtual host settings, with multiple domains separated by
-     *         commas. For example: <code>'www.mysite.com, mysite.com'</code>
+     *         commas. For example: <code>'www.example.com, example.com'</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

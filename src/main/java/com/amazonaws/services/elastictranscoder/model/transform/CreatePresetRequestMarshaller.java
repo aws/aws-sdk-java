@@ -133,6 +133,21 @@ public class CreatePresetRequestMarshaller implements Marshaller<Request<CreateP
                 if (video.getAspectRatio() != null) {
                     jsonWriter.key("AspectRatio").value(video.getAspectRatio());
                 }
+                if (video.getMaxWidth() != null) {
+                    jsonWriter.key("MaxWidth").value(video.getMaxWidth());
+                }
+                if (video.getMaxHeight() != null) {
+                    jsonWriter.key("MaxHeight").value(video.getMaxHeight());
+                }
+                if (video.getDisplayAspectRatio() != null) {
+                    jsonWriter.key("DisplayAspectRatio").value(video.getDisplayAspectRatio());
+                }
+                if (video.getSizingPolicy() != null) {
+                    jsonWriter.key("SizingPolicy").value(video.getSizingPolicy());
+                }
+                if (video.getPaddingPolicy() != null) {
+                    jsonWriter.key("PaddingPolicy").value(video.getPaddingPolicy());
+                }
                 jsonWriter.endObject();
             }
             AudioParameters audio = createPresetRequest.getAudio();
@@ -172,6 +187,18 @@ public class CreatePresetRequestMarshaller implements Marshaller<Request<CreateP
                 }
                 if (thumbnails.getAspectRatio() != null) {
                     jsonWriter.key("AspectRatio").value(thumbnails.getAspectRatio());
+                }
+                if (thumbnails.getMaxWidth() != null) {
+                    jsonWriter.key("MaxWidth").value(thumbnails.getMaxWidth());
+                }
+                if (thumbnails.getMaxHeight() != null) {
+                    jsonWriter.key("MaxHeight").value(thumbnails.getMaxHeight());
+                }
+                if (thumbnails.getSizingPolicy() != null) {
+                    jsonWriter.key("SizingPolicy").value(thumbnails.getSizingPolicy());
+                }
+                if (thumbnails.getPaddingPolicy() != null) {
+                    jsonWriter.key("PaddingPolicy").value(thumbnails.getPaddingPolicy());
                 }
                 jsonWriter.endObject();
             }

@@ -19,7 +19,13 @@ import java.io.Serializable;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.opsworks.AWSOpsWorks#createLayer(CreateLayerRequest) CreateLayer operation}.
  * <p>
- * Creates a layer.
+ * Creates a layer. For more information, see <a href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-create.html"> How to
+ * Create a Layer </a> .
+ * </p>
+ * <p>
+ * <b>NOTE:</b>You should use CreateLayer for non-custom layer types such as PHP App Server only if the stack does not have an existing layer of that
+ * type. A stack can have at most one instance of each non-custom layer; if you attempt to create a second instance, CreateLayer fails. A stack can have
+ * an arbitrary number of custom layers, so you can call CreateLayer as many times as you like for that layer type.
  * </p>
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#createLayer(CreateLayerRequest)
@@ -33,7 +39,16 @@ public class CreateLayerRequest extends AmazonWebServiceRequest  implements Seri
 
     /**
      * The layer type. A stack cannot have more than one layer of the same
-     * type.
+     * type. This parameter must be set to one of the following: <ul> <li>lb:
+     * An HAProxy layer</li> <li>web: A Static Web Server layer</li>
+     * <li>rails-app: A Rails App Server layer</li> <li>php-app: A PHP App
+     * Server layer</li> <li>nodejs-app: A Node.js App Server layer</li>
+     * <li>memcached: A Memcached layer</li> <li>db-master: A MySQL
+     * layer</li> <li>monitoring-master: A Ganglia layer</li> <li>custom: A
+     * custom layer</li> </ul>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>lb, web, php-app, rails-app, nodejs-app, memcached, db-master, monitoring-master, custom
      */
     private String type;
 
@@ -136,10 +151,27 @@ public class CreateLayerRequest extends AmazonWebServiceRequest  implements Seri
     
     /**
      * The layer type. A stack cannot have more than one layer of the same
-     * type.
+     * type. This parameter must be set to one of the following: <ul> <li>lb:
+     * An HAProxy layer</li> <li>web: A Static Web Server layer</li>
+     * <li>rails-app: A Rails App Server layer</li> <li>php-app: A PHP App
+     * Server layer</li> <li>nodejs-app: A Node.js App Server layer</li>
+     * <li>memcached: A Memcached layer</li> <li>db-master: A MySQL
+     * layer</li> <li>monitoring-master: A Ganglia layer</li> <li>custom: A
+     * custom layer</li> </ul>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>lb, web, php-app, rails-app, nodejs-app, memcached, db-master, monitoring-master, custom
      *
      * @return The layer type. A stack cannot have more than one layer of the same
-     *         type.
+     *         type. This parameter must be set to one of the following: <ul> <li>lb:
+     *         An HAProxy layer</li> <li>web: A Static Web Server layer</li>
+     *         <li>rails-app: A Rails App Server layer</li> <li>php-app: A PHP App
+     *         Server layer</li> <li>nodejs-app: A Node.js App Server layer</li>
+     *         <li>memcached: A Memcached layer</li> <li>db-master: A MySQL
+     *         layer</li> <li>monitoring-master: A Ganglia layer</li> <li>custom: A
+     *         custom layer</li> </ul>
+     *
+     * @see LayerType
      */
     public String getType() {
         return type;
@@ -147,10 +179,27 @@ public class CreateLayerRequest extends AmazonWebServiceRequest  implements Seri
     
     /**
      * The layer type. A stack cannot have more than one layer of the same
-     * type.
+     * type. This parameter must be set to one of the following: <ul> <li>lb:
+     * An HAProxy layer</li> <li>web: A Static Web Server layer</li>
+     * <li>rails-app: A Rails App Server layer</li> <li>php-app: A PHP App
+     * Server layer</li> <li>nodejs-app: A Node.js App Server layer</li>
+     * <li>memcached: A Memcached layer</li> <li>db-master: A MySQL
+     * layer</li> <li>monitoring-master: A Ganglia layer</li> <li>custom: A
+     * custom layer</li> </ul>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>lb, web, php-app, rails-app, nodejs-app, memcached, db-master, monitoring-master, custom
      *
      * @param type The layer type. A stack cannot have more than one layer of the same
-     *         type.
+     *         type. This parameter must be set to one of the following: <ul> <li>lb:
+     *         An HAProxy layer</li> <li>web: A Static Web Server layer</li>
+     *         <li>rails-app: A Rails App Server layer</li> <li>php-app: A PHP App
+     *         Server layer</li> <li>nodejs-app: A Node.js App Server layer</li>
+     *         <li>memcached: A Memcached layer</li> <li>db-master: A MySQL
+     *         layer</li> <li>monitoring-master: A Ganglia layer</li> <li>custom: A
+     *         custom layer</li> </ul>
+     *
+     * @see LayerType
      */
     public void setType(String type) {
         this.type = type;
@@ -158,21 +207,100 @@ public class CreateLayerRequest extends AmazonWebServiceRequest  implements Seri
     
     /**
      * The layer type. A stack cannot have more than one layer of the same
-     * type.
+     * type. This parameter must be set to one of the following: <ul> <li>lb:
+     * An HAProxy layer</li> <li>web: A Static Web Server layer</li>
+     * <li>rails-app: A Rails App Server layer</li> <li>php-app: A PHP App
+     * Server layer</li> <li>nodejs-app: A Node.js App Server layer</li>
+     * <li>memcached: A Memcached layer</li> <li>db-master: A MySQL
+     * layer</li> <li>monitoring-master: A Ganglia layer</li> <li>custom: A
+     * custom layer</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>lb, web, php-app, rails-app, nodejs-app, memcached, db-master, monitoring-master, custom
      *
      * @param type The layer type. A stack cannot have more than one layer of the same
-     *         type.
+     *         type. This parameter must be set to one of the following: <ul> <li>lb:
+     *         An HAProxy layer</li> <li>web: A Static Web Server layer</li>
+     *         <li>rails-app: A Rails App Server layer</li> <li>php-app: A PHP App
+     *         Server layer</li> <li>nodejs-app: A Node.js App Server layer</li>
+     *         <li>memcached: A Memcached layer</li> <li>db-master: A MySQL
+     *         layer</li> <li>monitoring-master: A Ganglia layer</li> <li>custom: A
+     *         custom layer</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
+     *
+     * @see LayerType
      */
     public CreateLayerRequest withType(String type) {
         this.type = type;
         return this;
     }
     
+    
+    /**
+     * The layer type. A stack cannot have more than one layer of the same
+     * type. This parameter must be set to one of the following: <ul> <li>lb:
+     * An HAProxy layer</li> <li>web: A Static Web Server layer</li>
+     * <li>rails-app: A Rails App Server layer</li> <li>php-app: A PHP App
+     * Server layer</li> <li>nodejs-app: A Node.js App Server layer</li>
+     * <li>memcached: A Memcached layer</li> <li>db-master: A MySQL
+     * layer</li> <li>monitoring-master: A Ganglia layer</li> <li>custom: A
+     * custom layer</li> </ul>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>lb, web, php-app, rails-app, nodejs-app, memcached, db-master, monitoring-master, custom
+     *
+     * @param type The layer type. A stack cannot have more than one layer of the same
+     *         type. This parameter must be set to one of the following: <ul> <li>lb:
+     *         An HAProxy layer</li> <li>web: A Static Web Server layer</li>
+     *         <li>rails-app: A Rails App Server layer</li> <li>php-app: A PHP App
+     *         Server layer</li> <li>nodejs-app: A Node.js App Server layer</li>
+     *         <li>memcached: A Memcached layer</li> <li>db-master: A MySQL
+     *         layer</li> <li>monitoring-master: A Ganglia layer</li> <li>custom: A
+     *         custom layer</li> </ul>
+     *
+     * @see LayerType
+     */
+    public void setType(LayerType type) {
+        this.type = type.toString();
+    }
+    
+    /**
+     * The layer type. A stack cannot have more than one layer of the same
+     * type. This parameter must be set to one of the following: <ul> <li>lb:
+     * An HAProxy layer</li> <li>web: A Static Web Server layer</li>
+     * <li>rails-app: A Rails App Server layer</li> <li>php-app: A PHP App
+     * Server layer</li> <li>nodejs-app: A Node.js App Server layer</li>
+     * <li>memcached: A Memcached layer</li> <li>db-master: A MySQL
+     * layer</li> <li>monitoring-master: A Ganglia layer</li> <li>custom: A
+     * custom layer</li> </ul>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>lb, web, php-app, rails-app, nodejs-app, memcached, db-master, monitoring-master, custom
+     *
+     * @param type The layer type. A stack cannot have more than one layer of the same
+     *         type. This parameter must be set to one of the following: <ul> <li>lb:
+     *         An HAProxy layer</li> <li>web: A Static Web Server layer</li>
+     *         <li>rails-app: A Rails App Server layer</li> <li>php-app: A PHP App
+     *         Server layer</li> <li>nodejs-app: A Node.js App Server layer</li>
+     *         <li>memcached: A Memcached layer</li> <li>db-master: A MySQL
+     *         layer</li> <li>monitoring-master: A Ganglia layer</li> <li>custom: A
+     *         custom layer</li> </ul>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see LayerType
+     */
+    public CreateLayerRequest withType(LayerType type) {
+        this.type = type.toString();
+        return this;
+    }
     
     /**
      * The layer name, which is used by the console.

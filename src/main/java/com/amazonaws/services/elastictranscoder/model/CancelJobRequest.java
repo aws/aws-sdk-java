@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.elastictranscoder.AmazonElasticTranscoder#cancelJob(CancelJobRequest) CancelJob operation}.
  * <p>
- * To delete a job, send a DELETE request to the <code>/2012-09-25/jobs/[jobId] </code> resource.
+ * To cancel a job, send a DELETE request to the <code>/2012-09-25/jobs/[jobId] </code> resource.
  * </p>
  * <p>
  * <b>NOTE:</b>You can only cancel a job that has a status of Submitted. To prevent a pipeline from starting to process a job while you're getting the

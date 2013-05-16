@@ -135,6 +135,18 @@ public class InstanceJsonUnmarshaller implements Unmarshaller<Instance, JsonUnma
                     context.nextToken();
                     instance.setLastServiceErrorId(StringJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("Architecture", targetDepth)) {
+                    context.nextToken();
+                    instance.setArchitecture(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("RootDeviceType", targetDepth)) {
+                    context.nextToken();
+                    instance.setRootDeviceType(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("RootDeviceVolumeId", targetDepth)) {
+                    context.nextToken();
+                    instance.setRootDeviceVolumeId(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth) break;

@@ -69,9 +69,8 @@ public class Command  implements Serializable  {
     private String logUrl;
 
     /**
-     * The command type: <ul> <li>shutdown</li> <li>setup</li>
-     * <li>configure</li> <li>deploy</li> <li>rollback</li> <li>start</li>
-     * <li>stop</li> <li>restart</li> <li>undeploy</li>
+     * The command type: <ul> <li>deploy</li> <li>rollback</li>
+     * <li>start</li> <li>stop</li> <li>restart</li> <li>undeploy</li>
      * <li>update_dependencies</li> <li>install_dependencies</li>
      * <li>update_custom_cookbooks</li> <li>execute_recipes</li> </ul>
      */
@@ -390,15 +389,13 @@ public class Command  implements Serializable  {
     
     
     /**
-     * The command type: <ul> <li>shutdown</li> <li>setup</li>
-     * <li>configure</li> <li>deploy</li> <li>rollback</li> <li>start</li>
-     * <li>stop</li> <li>restart</li> <li>undeploy</li>
+     * The command type: <ul> <li>deploy</li> <li>rollback</li>
+     * <li>start</li> <li>stop</li> <li>restart</li> <li>undeploy</li>
      * <li>update_dependencies</li> <li>install_dependencies</li>
      * <li>update_custom_cookbooks</li> <li>execute_recipes</li> </ul>
      *
-     * @return The command type: <ul> <li>shutdown</li> <li>setup</li>
-     *         <li>configure</li> <li>deploy</li> <li>rollback</li> <li>start</li>
-     *         <li>stop</li> <li>restart</li> <li>undeploy</li>
+     * @return The command type: <ul> <li>deploy</li> <li>rollback</li>
+     *         <li>start</li> <li>stop</li> <li>restart</li> <li>undeploy</li>
      *         <li>update_dependencies</li> <li>install_dependencies</li>
      *         <li>update_custom_cookbooks</li> <li>execute_recipes</li> </ul>
      */
@@ -407,15 +404,13 @@ public class Command  implements Serializable  {
     }
     
     /**
-     * The command type: <ul> <li>shutdown</li> <li>setup</li>
-     * <li>configure</li> <li>deploy</li> <li>rollback</li> <li>start</li>
-     * <li>stop</li> <li>restart</li> <li>undeploy</li>
+     * The command type: <ul> <li>deploy</li> <li>rollback</li>
+     * <li>start</li> <li>stop</li> <li>restart</li> <li>undeploy</li>
      * <li>update_dependencies</li> <li>install_dependencies</li>
      * <li>update_custom_cookbooks</li> <li>execute_recipes</li> </ul>
      *
-     * @param type The command type: <ul> <li>shutdown</li> <li>setup</li>
-     *         <li>configure</li> <li>deploy</li> <li>rollback</li> <li>start</li>
-     *         <li>stop</li> <li>restart</li> <li>undeploy</li>
+     * @param type The command type: <ul> <li>deploy</li> <li>rollback</li>
+     *         <li>start</li> <li>stop</li> <li>restart</li> <li>undeploy</li>
      *         <li>update_dependencies</li> <li>install_dependencies</li>
      *         <li>update_custom_cookbooks</li> <li>execute_recipes</li> </ul>
      */
@@ -424,17 +419,15 @@ public class Command  implements Serializable  {
     }
     
     /**
-     * The command type: <ul> <li>shutdown</li> <li>setup</li>
-     * <li>configure</li> <li>deploy</li> <li>rollback</li> <li>start</li>
-     * <li>stop</li> <li>restart</li> <li>undeploy</li>
+     * The command type: <ul> <li>deploy</li> <li>rollback</li>
+     * <li>start</li> <li>stop</li> <li>restart</li> <li>undeploy</li>
      * <li>update_dependencies</li> <li>install_dependencies</li>
      * <li>update_custom_cookbooks</li> <li>execute_recipes</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param type The command type: <ul> <li>shutdown</li> <li>setup</li>
-     *         <li>configure</li> <li>deploy</li> <li>rollback</li> <li>start</li>
-     *         <li>stop</li> <li>restart</li> <li>undeploy</li>
+     * @param type The command type: <ul> <li>deploy</li> <li>rollback</li>
+     *         <li>start</li> <li>stop</li> <li>restart</li> <li>undeploy</li>
      *         <li>update_dependencies</li> <li>install_dependencies</li>
      *         <li>update_custom_cookbooks</li> <li>execute_recipes</li> </ul>
      *

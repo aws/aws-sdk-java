@@ -21,7 +21,7 @@ import java.io.Serializable;
  * </p>
  * <p>
  * For current minimum and maximum provisioned throughput values, see <a
- * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html"> Limits </a> of the <i>Amazon DynamoDB Developer Guide</i> .
+ * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html"> Limits </a> in the <i>Amazon DynamoDB Developer Guide</i> .
  * </p>
  */
 public class ProvisionedThroughput  implements Serializable  {
@@ -31,7 +31,7 @@ public class ProvisionedThroughput  implements Serializable  {
      * before Amazon DynamoDB returns a <i>ThrottlingException</i>. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDDTables.html#ProvisionedThroughput">Specifying
-     * Read and Write Requirements</a> of the <i>Amazon DynamoDB Developer
+     * Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer
      * Guide</i>.
      * <p>
      * <b>Constraints:</b><br/>
@@ -44,7 +44,7 @@ public class ProvisionedThroughput  implements Serializable  {
      * DynamoDB returns a <i>ThrottlingException</i>. For more information,
      * see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDDTables.html#ProvisionedThroughput">Specifying
-     * Read and Write Requirements</a> of the <i>Amazon DynamoDB Developer
+     * Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer
      * Guide</i>.
      * <p>
      * <b>Constraints:</b><br/>
@@ -57,7 +57,7 @@ public class ProvisionedThroughput  implements Serializable  {
      * before Amazon DynamoDB returns a <i>ThrottlingException</i>. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDDTables.html#ProvisionedThroughput">Specifying
-     * Read and Write Requirements</a> of the <i>Amazon DynamoDB Developer
+     * Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer
      * Guide</i>.
      * <p>
      * <b>Constraints:</b><br/>
@@ -67,7 +67,7 @@ public class ProvisionedThroughput  implements Serializable  {
      *         before Amazon DynamoDB returns a <i>ThrottlingException</i>. For more
      *         information, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDDTables.html#ProvisionedThroughput">Specifying
-     *         Read and Write Requirements</a> of the <i>Amazon DynamoDB Developer
+     *         Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer
      *         Guide</i>.
      */
     public Long getReadCapacityUnits() {
@@ -79,7 +79,7 @@ public class ProvisionedThroughput  implements Serializable  {
      * before Amazon DynamoDB returns a <i>ThrottlingException</i>. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDDTables.html#ProvisionedThroughput">Specifying
-     * Read and Write Requirements</a> of the <i>Amazon DynamoDB Developer
+     * Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer
      * Guide</i>.
      * <p>
      * <b>Constraints:</b><br/>
@@ -89,7 +89,7 @@ public class ProvisionedThroughput  implements Serializable  {
      *         before Amazon DynamoDB returns a <i>ThrottlingException</i>. For more
      *         information, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDDTables.html#ProvisionedThroughput">Specifying
-     *         Read and Write Requirements</a> of the <i>Amazon DynamoDB Developer
+     *         Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer
      *         Guide</i>.
      */
     public void setReadCapacityUnits(Long readCapacityUnits) {
@@ -101,7 +101,7 @@ public class ProvisionedThroughput  implements Serializable  {
      * before Amazon DynamoDB returns a <i>ThrottlingException</i>. For more
      * information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDDTables.html#ProvisionedThroughput">Specifying
-     * Read and Write Requirements</a> of the <i>Amazon DynamoDB Developer
+     * Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer
      * Guide</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -113,7 +113,7 @@ public class ProvisionedThroughput  implements Serializable  {
      *         before Amazon DynamoDB returns a <i>ThrottlingException</i>. For more
      *         information, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDDTables.html#ProvisionedThroughput">Specifying
-     *         Read and Write Requirements</a> of the <i>Amazon DynamoDB Developer
+     *         Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer
      *         Guide</i>.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -130,7 +130,7 @@ public class ProvisionedThroughput  implements Serializable  {
      * DynamoDB returns a <i>ThrottlingException</i>. For more information,
      * see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDDTables.html#ProvisionedThroughput">Specifying
-     * Read and Write Requirements</a> of the <i>Amazon DynamoDB Developer
+     * Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer
      * Guide</i>.
      * <p>
      * <b>Constraints:</b><br/>
@@ -140,7 +140,7 @@ public class ProvisionedThroughput  implements Serializable  {
      *         DynamoDB returns a <i>ThrottlingException</i>. For more information,
      *         see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDDTables.html#ProvisionedThroughput">Specifying
-     *         Read and Write Requirements</a> of the <i>Amazon DynamoDB Developer
+     *         Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer
      *         Guide</i>.
      */
     public Long getWriteCapacityUnits() {
@@ -152,7 +152,7 @@ public class ProvisionedThroughput  implements Serializable  {
      * DynamoDB returns a <i>ThrottlingException</i>. For more information,
      * see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDDTables.html#ProvisionedThroughput">Specifying
-     * Read and Write Requirements</a> of the <i>Amazon DynamoDB Developer
+     * Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer
      * Guide</i>.
      * <p>
      * <b>Constraints:</b><br/>
@@ -162,7 +162,7 @@ public class ProvisionedThroughput  implements Serializable  {
      *         DynamoDB returns a <i>ThrottlingException</i>. For more information,
      *         see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDDTables.html#ProvisionedThroughput">Specifying
-     *         Read and Write Requirements</a> of the <i>Amazon DynamoDB Developer
+     *         Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer
      *         Guide</i>.
      */
     public void setWriteCapacityUnits(Long writeCapacityUnits) {
@@ -174,7 +174,7 @@ public class ProvisionedThroughput  implements Serializable  {
      * DynamoDB returns a <i>ThrottlingException</i>. For more information,
      * see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDDTables.html#ProvisionedThroughput">Specifying
-     * Read and Write Requirements</a> of the <i>Amazon DynamoDB Developer
+     * Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer
      * Guide</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
@@ -186,7 +186,7 @@ public class ProvisionedThroughput  implements Serializable  {
      *         DynamoDB returns a <i>ThrottlingException</i>. For more information,
      *         see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithDDTables.html#ProvisionedThroughput">Specifying
-     *         Read and Write Requirements</a> of the <i>Amazon DynamoDB Developer
+     *         Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer
      *         Guide</i>.
      *
      * @return A reference to this updated object so that method calls can be chained 

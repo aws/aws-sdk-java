@@ -19,9 +19,8 @@ package com.amazonaws.services.opsworks.model;
  */
 public enum AutoScalingType {
     
-    AlwaysRunning("AlwaysRunning"),
-    TimeBasedAutoScaling("TimeBasedAutoScaling"),
-    LoadBasedAutoScaling("LoadBasedAutoScaling");
+    Load("load"),
+    Timer("timer");
 
     private String value;
 
@@ -45,12 +44,10 @@ public enum AutoScalingType {
         if (value == null || "".equals(value)) {
             throw new IllegalArgumentException("Value cannot be null or empty!");
         
-        } else if ("AlwaysRunning".equals(value)) {
-            return AutoScalingType.AlwaysRunning;
-        } else if ("TimeBasedAutoScaling".equals(value)) {
-            return AutoScalingType.TimeBasedAutoScaling;
-        } else if ("LoadBasedAutoScaling".equals(value)) {
-            return AutoScalingType.LoadBasedAutoScaling;
+        } else if ("load".equals(value)) {
+            return AutoScalingType.Load;
+        } else if ("timer".equals(value)) {
+            return AutoScalingType.Timer;
         } else {
             throw new IllegalArgumentException("Cannot create enum from " + value + " value!");
         }

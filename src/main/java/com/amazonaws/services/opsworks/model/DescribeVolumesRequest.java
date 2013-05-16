@@ -27,44 +27,62 @@ import java.io.Serializable;
 public class DescribeVolumesRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
-     * The instance ID.
+     * The instance ID. If you use this parameter,
+     * <code>DescribeVolumes</code> returns descriptions of the volumes
+     * associated with the specified instance.
      */
     private String instanceId;
 
     /**
-     * The RAID array ID.
+     * The RAID array ID. If you use this parameter,
+     * <code>DescribeVolumes</code> returns descriptions of the volumes
+     * associated with the specified RAID array.
      */
     private String raidArrayId;
 
     /**
-     * Am array of volume IDs to be described.
+     * Am array of volume IDs. If you use this parameter,
+     * <code>DescribeVolumes</code> returns descriptions of the specified
+     * volumes. Otherwise, it returns a description of every volume.
      */
     private java.util.List<String> volumeIds;
 
     /**
-     * The instance ID.
+     * The instance ID. If you use this parameter,
+     * <code>DescribeVolumes</code> returns descriptions of the volumes
+     * associated with the specified instance.
      *
-     * @return The instance ID.
+     * @return The instance ID. If you use this parameter,
+     *         <code>DescribeVolumes</code> returns descriptions of the volumes
+     *         associated with the specified instance.
      */
     public String getInstanceId() {
         return instanceId;
     }
     
     /**
-     * The instance ID.
+     * The instance ID. If you use this parameter,
+     * <code>DescribeVolumes</code> returns descriptions of the volumes
+     * associated with the specified instance.
      *
-     * @param instanceId The instance ID.
+     * @param instanceId The instance ID. If you use this parameter,
+     *         <code>DescribeVolumes</code> returns descriptions of the volumes
+     *         associated with the specified instance.
      */
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
     
     /**
-     * The instance ID.
+     * The instance ID. If you use this parameter,
+     * <code>DescribeVolumes</code> returns descriptions of the volumes
+     * associated with the specified instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceId The instance ID.
+     * @param instanceId The instance ID. If you use this parameter,
+     *         <code>DescribeVolumes</code> returns descriptions of the volumes
+     *         associated with the specified instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -76,29 +94,41 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest  implements 
     
     
     /**
-     * The RAID array ID.
+     * The RAID array ID. If you use this parameter,
+     * <code>DescribeVolumes</code> returns descriptions of the volumes
+     * associated with the specified RAID array.
      *
-     * @return The RAID array ID.
+     * @return The RAID array ID. If you use this parameter,
+     *         <code>DescribeVolumes</code> returns descriptions of the volumes
+     *         associated with the specified RAID array.
      */
     public String getRaidArrayId() {
         return raidArrayId;
     }
     
     /**
-     * The RAID array ID.
+     * The RAID array ID. If you use this parameter,
+     * <code>DescribeVolumes</code> returns descriptions of the volumes
+     * associated with the specified RAID array.
      *
-     * @param raidArrayId The RAID array ID.
+     * @param raidArrayId The RAID array ID. If you use this parameter,
+     *         <code>DescribeVolumes</code> returns descriptions of the volumes
+     *         associated with the specified RAID array.
      */
     public void setRaidArrayId(String raidArrayId) {
         this.raidArrayId = raidArrayId;
     }
     
     /**
-     * The RAID array ID.
+     * The RAID array ID. If you use this parameter,
+     * <code>DescribeVolumes</code> returns descriptions of the volumes
+     * associated with the specified RAID array.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param raidArrayId The RAID array ID.
+     * @param raidArrayId The RAID array ID. If you use this parameter,
+     *         <code>DescribeVolumes</code> returns descriptions of the volumes
+     *         associated with the specified RAID array.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -110,9 +140,13 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest  implements 
     
     
     /**
-     * Am array of volume IDs to be described.
+     * Am array of volume IDs. If you use this parameter,
+     * <code>DescribeVolumes</code> returns descriptions of the specified
+     * volumes. Otherwise, it returns a description of every volume.
      *
-     * @return Am array of volume IDs to be described.
+     * @return Am array of volume IDs. If you use this parameter,
+     *         <code>DescribeVolumes</code> returns descriptions of the specified
+     *         volumes. Otherwise, it returns a description of every volume.
      */
     public java.util.List<String> getVolumeIds() {
         
@@ -123,9 +157,13 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest  implements 
     }
     
     /**
-     * Am array of volume IDs to be described.
+     * Am array of volume IDs. If you use this parameter,
+     * <code>DescribeVolumes</code> returns descriptions of the specified
+     * volumes. Otherwise, it returns a description of every volume.
      *
-     * @param volumeIds Am array of volume IDs to be described.
+     * @param volumeIds Am array of volume IDs. If you use this parameter,
+     *         <code>DescribeVolumes</code> returns descriptions of the specified
+     *         volumes. Otherwise, it returns a description of every volume.
      */
     public void setVolumeIds(java.util.Collection<String> volumeIds) {
         if (volumeIds == null) {
@@ -139,11 +177,15 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest  implements 
     }
     
     /**
-     * Am array of volume IDs to be described.
+     * Am array of volume IDs. If you use this parameter,
+     * <code>DescribeVolumes</code> returns descriptions of the specified
+     * volumes. Otherwise, it returns a description of every volume.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param volumeIds Am array of volume IDs to be described.
+     * @param volumeIds Am array of volume IDs. If you use this parameter,
+     *         <code>DescribeVolumes</code> returns descriptions of the specified
+     *         volumes. Otherwise, it returns a description of every volume.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -157,11 +199,15 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest  implements 
     }
     
     /**
-     * Am array of volume IDs to be described.
+     * Am array of volume IDs. If you use this parameter,
+     * <code>DescribeVolumes</code> returns descriptions of the specified
+     * volumes. Otherwise, it returns a description of every volume.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param volumeIds Am array of volume IDs to be described.
+     * @param volumeIds Am array of volume IDs. If you use this parameter,
+     *         <code>DescribeVolumes</code> returns descriptions of the specified
+     *         volumes. Otherwise, it returns a description of every volume.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

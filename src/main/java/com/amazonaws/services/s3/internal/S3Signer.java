@@ -93,10 +93,12 @@ public class S3Signer extends AbstractAWSSigner {
         	addSessionCredentials(request, (AWSSessionCredentials) sanitizedCredentials);
         }
 
+        String encodedResourcePath = ServiceUtils.urlEncode(resourcePath);
+
         Date date = getSignatureDate(request.getTimeOffset());
         request.addHeader(Headers.DATE, ServiceUtils.formatRfc822Date(date));
         String canonicalString = RestUtils.makeS3CanonicalString(
-                httpVerb, resourcePath, request, null);
+                httpVerb, encodedResourcePath, request, null);
         log.debug("Calculated string to sign:\n\"" + canonicalString + "\"");
 
         String signature = super.signAndBase64Encode(canonicalString, sanitizedCredentials.getAWSSecretKey(), SigningAlgorithm.HmacSHA1);

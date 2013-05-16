@@ -391,7 +391,7 @@ public class ClientConfiguration {
 	}
 
 	/**
-	 * Sets the optional Windows domain name for configuration an NTML proxy.
+	 * Sets the optional Windows domain name for configuration an NTLM proxy.
 	 * If you aren't using a Windows NTLM proxy, you do not need to set this
 	 * field.
 	 *
@@ -404,7 +404,7 @@ public class ClientConfiguration {
 	}
 
 	/**
-	 * Sets the optional Windows domain name for configuration an NTML proxy and
+	 * Sets the optional Windows domain name for configuration an NTLM proxy and
 	 * returns a reference to this updated ClientConfiguration object so that
 	 * additional method calls can be chained together. If you aren't using a
 	 * Windows NTLM proxy, you do not need to set this field.

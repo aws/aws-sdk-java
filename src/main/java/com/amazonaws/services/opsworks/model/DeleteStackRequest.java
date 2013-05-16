@@ -19,7 +19,8 @@ import java.io.Serializable;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.opsworks.AWSOpsWorks#deleteStack(DeleteStackRequest) DeleteStack operation}.
  * <p>
- * Deletes a specified stack. You must first delete all instances and layers.
+ * Deletes a specified stack. You must first delete all instances, layers, and apps. For more information, see <a
+ * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-shutting.html"> Shut Down a Stack </a> .
  * </p>
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#deleteStack(DeleteStackRequest)

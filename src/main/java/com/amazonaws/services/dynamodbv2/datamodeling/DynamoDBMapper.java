@@ -22,6 +22,7 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -633,7 +634,7 @@ public class DynamoDBMapper {
                     .withExpected(expectedValues)));
         } else {
             db.updateItem(applyUserAgent(new UpdateItemRequest().withTableName(tableName).withKey(key)
-                    .withAttributeUpdates(transformAttributeUpdates(clazz, updateValues)).withExpected(expectedValues)));
+                    .withAttributeUpdates(transformAttributeUpdates(clazz, key, updateValues)).withExpected(expectedValues)));
         }
 
         /*
@@ -1114,6 +1115,67 @@ public class DynamoDBMapper {
     }
     
     /**
+	 * Scans through an Amazon DynamoDB table on logically partitioned segments
+	 * in parallel and returns the matching results in one unmodifiable list of
+	 * instantiated objects, using the default configuration.
+	 * 
+	 * @see DynamoDBMapper#parallelScan(Class, DynamoDBScanExpression,int,
+	 *      DynamoDBMapperConfig)
+	 */
+    public <T> PaginatedParallelScanList<T> parallelScan(Class<T> clazz, DynamoDBScanExpression scanExpression, int totalSegments) {
+        return parallelScan(clazz, scanExpression, totalSegments, config);
+    }
+    
+	/**
+	 * Scans through an Amazon DynamoDB table on logically partitioned segments
+	 * in parallel. This method will create a thread pool of the specified size,
+	 * and each thread will issue scan requests for its assigned segment,
+	 * following the returned continuation token, until the end of its segment.
+	 * Callers should be responsible for setting the appropriate number of total
+	 * segments. More scan segments would result in better performance but more
+	 * consumed capacity of the table. The results are returned in one
+	 * unmodifiable list of instantiated objects. The table to scan is
+	 * determined by looking at the annotations on the specified class, which
+	 * declares where to store the object data in Amazon DynamoDB, and the scan
+	 * expression parameter allows the caller to filter results and control how
+	 * the scan is executed.
+	 * <p>
+	 * Callers should be aware that the returned list is unmodifiable, and any
+	 * attempts to modify the list will result in an
+	 * UnsupportedOperationException.
+	 * <p>
+	 * The unmodifiable list returned is lazily loaded when possible, so calls
+	 * to DynamoDB will be made only as needed.
+	 * 
+	 * @param <T>
+	 *            The type of the objects being returned.
+	 * @param clazz
+	 *            The class annotated with DynamoDB annotations describing how
+	 *            to store the object data in Amazon DynamoDB.
+	 * @param scanExpression
+	 *            Details on how to run the scan, including any filters to apply
+	 *            to limit results.
+	 * @param totalSegments
+	 *            Number of total parallel scan segments. 
+	 *            <b>Range: </b>1 - 4096
+	 * @param config
+	 *            The configuration to use for this scan, which overrides the
+	 *            default provided at object construction.
+	 * @return An unmodifiable list of the objects constructed from the results
+	 *         of the scan operation.
+	 * @see PaginatedParallelScanList
+	 */
+    public <T> PaginatedParallelScanList<T> parallelScan(Class<T> clazz, DynamoDBScanExpression scanExpression, int totalSegments, DynamoDBMapperConfig config) {
+        config = mergeConfig(config);
+
+        // Create hard copies of the original scan request with difference segment number.
+        List<ScanRequest> parallelScanRequests = createParallelScanRequestsFromExpression(clazz, scanExpression, totalSegments, config);
+        ParallelScanTask parallelScanTask = new ParallelScanTask(this, db, parallelScanRequests);
+
+        return new PaginatedParallelScanList<T>(this, clazz, db, parallelScanTask);
+    }
+    
+    /**
      * Scans through an Amazon DynamoDB table and returns a single page of matching
      * results. The table to scan is determined by looking at the annotations on
      * the specified class, which declares where to store the object data in AWS
@@ -1363,6 +1425,17 @@ public class DynamoDBMapper {
 
         return scanRequest;
     }
+    
+    private List<ScanRequest> createParallelScanRequestsFromExpression(Class<?> clazz, DynamoDBScanExpression scanExpression, int totalSegments, DynamoDBMapperConfig config) {
+    	if (totalSegments < 1)
+			throw new IllegalArgumentException("Parallel scan should have at least one scan segment.");
+    	List<ScanRequest> parallelScanRequests= new LinkedList<ScanRequest>();
+        for (int segment = 0; segment < totalSegments; segment++) {
+        	ScanRequest scanRequest = createScanRequestFromExpression(clazz, scanExpression, config);
+        	parallelScanRequests.add(scanRequest.withSegment(segment).withTotalSegments(totalSegments));
+        }
+        return parallelScanRequests;
+    }
 
     private <T> QueryRequest  createQueryRequestFromExpression(Class<T> clazz, DynamoDBQueryExpression<T> queryExpression, DynamoDBMapperConfig config) {
         QueryRequest queryRequest = new QueryRequest();
@@ -1502,9 +1575,32 @@ public class DynamoDBMapper {
     }
     
     private Map<String, AttributeValueUpdate> transformAttributeUpdates(Class<?> clazz,
+            Map<String, AttributeValue> keys,
             Map<String, AttributeValueUpdate> updateValues) {
         Map<String, AttributeValue> item = convertToItem(updateValues);
+        
+        HashSet<String> keysAdded = new HashSet<String>();
+        for (Map.Entry<String, AttributeValue> e : keys.entrySet()) {
+            if (!item.containsKey(e.getKey())) {
+                keysAdded.add(e.getKey());
+                item.put(e.getKey(), e.getValue());
+            }
+        }
+        boolean hashKeyAdded = false;
+        boolean rangeKeyAdded = false;
+        String hashKey = reflector.getAttributeName(reflector.getHashKeyGetter(clazz));
+        if (!item.containsKey(hashKey)) {
+            item.put(hashKey, keys.get(hashKey));
+            hashKeyAdded = true;
+        }
+
         item = transformAttributes(clazz, item);
+
+        // Remove the keys if we added them before.
+        for (String key : keysAdded) {
+            item.remove(key);
+        }
+
         for(String key: item.keySet()) {
             if (updateValues.containsKey(key)) {
                 updateValues.get(key).getValue()

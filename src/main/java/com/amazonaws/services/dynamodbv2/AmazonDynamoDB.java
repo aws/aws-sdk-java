@@ -99,6 +99,14 @@ public interface AmazonDynamoDB {
      * <p>
      * The result set is eventually consistent.
      * </p>
+     * <p>
+     * By default, <i>Scan</i> operations proceed sequentially; however, for
+     * faster performance on large tables, applications can request a
+     * parallel <i>Scan</i> by specifying the <i>Segment</i> and
+     * <i>TotalSegments</i> parameters. For more information, see <a
+     * odb/latest/developerguide/QueryAndScan.html#QueryAndScanParallelScan">
+     * Parallel Scan </a> in the <i>Amazon DynamoDB Developer Guide</i> .
+     * </p>
      *
      * @param scanRequest Container for the necessary parameters to execute
      *           the Scan service method on AmazonDynamoDBv2.
@@ -131,7 +139,7 @@ public interface AmazonDynamoDB {
      * The provisioned throughput values can be upgraded or downgraded based
      * on the maximums and minimums listed in the <a
      * docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">
-     * Limits </a> section of the <i>Amazon DynamoDB Developer Guide</i> .
+     * Limits </a> section in the <i>Amazon DynamoDB Developer Guide</i> .
      * </p>
      * <p>
      * The table must be in the <code>ACTIVE</code> state for this operation
@@ -199,6 +207,10 @@ public interface AmazonDynamoDB {
      * do not share any data; deleting one does not delete the other.
      * </p>
      * <p>
+     * When you delete a table, any local secondary indexes on that table are
+     * also deleted.
+     * </p>
+     * <p>
      * Use the <i>DescribeTable</i> API to check the status of the table.
      * </p>
      *
@@ -226,125 +238,92 @@ public interface AmazonDynamoDB {
 
     /**
      * <p>
-     * This operation enables you to put or delete several items across
-     * multiple tables in a single API call.
+     * The <i>BatchWriteItem</i> operation puts or deletes multiple items in
+     * one or more tables. A single call to <i>BatchWriteItem</i> can write
+     * up to 1 MB of data, which can comprise as many as 25 put or delete
+     * requests. Individual items to be written can be as large as 64 KB.
      * </p>
      * <p>
-     * To upload one item, you can use the <i>PutItem</i> API and to delete
-     * one item, you can use the <i>DeleteItem</i> API. However, when you
-     * want to upload or delete large amounts of data, such as uploading
-     * large amounts of data from Amazon Elastic MapReduce (EMR) or migrate
-     * data from another database into Amazon DynamoDB, this API offers an
-     * efficient alternative.
+     * <b>NOTE:</b> BatchWriteItem cannot update items. To update items, use
+     * the UpdateItem API.
+     * </p>
+     * <p>
+     * The individual <i>PutItem</i> and <i>DeleteItem</i> operations
+     * specified in <i>BatchWriteItem</i> are atomic; however
+     * <i>BatchWriteItem</i> as a whole is not. If any requested operations
+     * fail because the table's provisioned throughput is exceeded or an
+     * internal processing failure occurs, the failed operations are returned
+     * in the <i>UnprocessedItems</i> response parameter. You can investigate
+     * and optionally resend the requests. Typically, you would call
+     * <i>BatchWriteItem</i> in a loop. Each iteration would check for
+     * unprocessed items and submit a new <i>BatchWriteItem</i> request with
+     * those unprocessed items until all items have been processed.
+     * </p>
+     * <p>
+     * To write one item, you can use the <i>PutItem</i> operation; to delete
+     * one item, you can use the <i>DeleteItem</i> operation.
+     * </p>
+     * <p>
+     * With <i>BatchWriteItem</i> , you can efficiently write or delete large
+     * amounts of data, such as from Amazon Elastic MapReduce (EMR), or copy
+     * data from another database into Amazon DynamoDB. In order to improve
+     * performance with these large-scale operations, <i>BatchWriteItem</i>
+     * does not behave in the same way as individual <i>PutItem</i> and
+     * <i>DeleteItem</i> calls would For example, you cannot specify
+     * conditions on individual put and delete requests, and
+     * <i>BatchWriteItem</i> does not return deleted items in the response.
      * </p>
      * <p>
      * If you use a programming language that supports concurrency, such as
-     * Java, you can use threads to upload items in parallel. This adds
-     * complexity in your application to handle the threads. With other
-     * languages that don't support threading, such as PHP, you must upload
-     * or delete items one at a time. In both situations, the
-     * <i>BatchWriteItem</i> API provides an alternative where the API
-     * performs the specified put and delete operations in parallel, giving
-     * you the power of the thread pool approach without having to introduce
-     * complexity in your application.
+     * Java, you can use threads to write items in parallel. Your application
+     * must include the necessary logic to manage the threads.
      * </p>
      * <p>
-     * Note that each individual put and delete specified in a
-     * <i>BatchWriteItem</i> operation costs the same in terms of consumed
-     * capacity units, however, the API performs the specified operations in
-     * parallel giving you lower latency. Delete operations on non-existent
-     * items consume 1 write capacity unit.
+     * With languages that don't support threading, such as PHP,
+     * <i>BatchWriteItem</i> will write or delete the specified items one at
+     * a time. In both situations, <i>BatchWriteItem</i> provides an
+     * alternative where the API performs the specified put and delete
+     * operations in parallel, giving you the power of the thread pool
+     * approach without having to introduce complexity into your application.
      * </p>
      * <p>
-     * When using this API, note the following limitations:
+     * Parallel processing reduces latency, but each specified put and delete
+     * request consumes the same number of write capacity units whether it is
+     * processed in parallel or not. Delete operations on nonexistent items
+     * consume one write capacity unit.
+     * </p>
+     * <p>
+     * If one or more of the following is true, Amazon DynamoDB rejects the
+     * entire batch write operation:
      * </p>
      * 
      * <ul>
      * <li> <p>
-     * <i>Maximum operations in a single request-</i> You can specify a
-     * total of up to 25 put or delete operations; however, the total request
-     * size cannot exceed 1 MB (the HTTP payload).
+     * One or more tables specified in the <i>BatchWriteItem</i> request does
+     * not exist.
      * </p>
      * </li>
      * <li> <p>
-     * You can use the <i>BatchWriteItem</i> operation only to put and delete
-     * items. You cannot use it to update existing items.
+     * Primary key attributes specified on an item in the request do not
+     * match those in the corresponding table's primary key schema.
      * </p>
      * </li>
      * <li> <p>
-     * <i>Not an atomic operation-</i> The individual <i>PutItem</i> and
-     * <i>DeleteItem</i> operations specified in <i>BatchWriteItem</i> are
-     * atomic; however <i>BatchWriteItem</i> as a whole is a "best-effort"
-     * operation and not an atomic operation. That is, in a
-     * <i>BatchWriteItem</i> request, some operations might succeed and
-     * others might fail. The failed operations are returned in
-     * <i>UnprocessedItems</i> in the response. Some of these failures might
-     * be because you exceeded the provisioned throughput configured for the
-     * table or a transient failure such as a network error. You can
-     * investigate and optionally resend the requests. Typically, you call
-     * <i>BatchWriteItem</i> in a loop and in each iteration check for
-     * unprocessed items, and submit a new <i>BatchWriteItem</i> request with
-     * those unprocessed items.
-     * </p>
-     * </li>
-     * <li> <p>
-     * <i>Does not return any items-</i> The <i>BatchWriteItem</i> is
-     * designed for uploading large amounts of data efficiently. It does not
-     * provide some of the sophistication offered by APIs such as
-     * <i>PutItem</i> and <i>DeleteItem</i> . For example, the
-     * <i>DeleteItem</i> API supports <i>ReturnValues</i> in the request body
-     * to request the deleted item in the response. The <i>BatchWriteItem</i>
-     * operation does not return any items in the response.
-     * </p>
-     * </li>
-     * <li> <p>
-     * Unlike the <i>PutItem</i> and <i>DeleteItem</i> APIs,
-     * <i>BatchWriteItem</i> does not allow you to specify conditions on
-     * individual write requests in the operation.
-     * </p>
-     * </li>
-     * <li> <p>
-     * Attribute values must not be null; string and binary type attributes
-     * must have lengths greater than zero; and set type attributes must not
-     * be empty. Requests that have empty values will be rejected with a
-     * <i>ValidationException</i> .
-     * </p>
-     * </li>
-     * 
-     * </ul>
-     * <p>
-     * Amazon DynamoDB rejects the entire batch write operation if any one of
-     * the following is true:
-     * <ul>
-     * <li> <p>
-     * If one or more tables specified in the <i>BatchWriteItem</i> request
-     * does not exist.
-     * </p>
-     * </li>
-     * <li> <p>
-     * If primary key attributes specified on an item in the request does not
-     * match the corresponding table's primary key schema.
-     * </p>
-     * </li>
-     * <li> <p>
-     * If you try to perform multiple operations on the same item in the same
+     * You try to perform multiple operations on the same item in the same
      * <i>BatchWriteItem</i> request. For example, you cannot put and delete
      * the same item in the same <i>BatchWriteItem</i> request.
      * </p>
      * </li>
      * <li> <p>
-     * If the total request size exceeds the 1 MB request size (the HTTP
-     * payload) limit.
+     * The total request size exceeds 1 MB.
      * </p>
      * </li>
      * <li> <p>
-     * If any individual item in a batch exceeds the 64 KB item size limit.
+     * Any individual item in a batch exceeds 64 KB.
      * </p>
      * </li>
      * 
      * </ul>
-     * 
-     * </p>
      *
      * @param batchWriteItemRequest Container for the necessary parameters to
      *           execute the BatchWriteItem service method on AmazonDynamoDBv2.
@@ -604,7 +583,7 @@ public interface AmazonDynamoDB {
      * <p>
      * For more information about using this API, see <a
      * zon.com/amazondynamodb/latest/developerguide/WorkingWithDDItems.html">
-     * Working with Items </a> of the <i>Amazon DynamoDB Developer
+     * Working with Items </a> in the <i>Amazon DynamoDB Developer
      * Guide</i> .
      * </p>
      *
@@ -704,41 +683,55 @@ public interface AmazonDynamoDB {
 
     /**
      * <p>
-     * The <i>BatchGetItem</i> operation returns the attributes for multiple
-     * items from multiple tables using their primary keys. The maximum
-     * number of items that can be retrieved for a single operation is 100.
-     * Also, the number of items retrieved is constrained by a 1 MB size
-     * limit. If the response size limit is exceeded or a partial result is
-     * returned because the table???s provisioned throughput is exceeded, or
-     * because of an internal processing failure, Amazon DynamoDB returns an
-     * <i>UnprocessedKeys</i> value so you can retry the operation starting
-     * with the next item to get. Amazon DynamoDB automatically adjusts the
-     * number of items returned per page to enforce this limit. For example,
-     * even if you ask to retrieve 100 items, but each individual item is 50
-     * KB in size, the system returns 20 items and an appropriate
-     * <i>UnprocessedKeys</i> value so you can get the next page of results.
-     * If desired, your application can include its own logic to assemble the
-     * pages of results into one set.
+     * The <i>BatchGetItem</i> operation returns the attributes of one or
+     * more items from one or more tables. You identify requested items by
+     * primary key.
      * </p>
      * <p>
-     * If no items could be processed because of insufficient provisioned
-     * throughput on each of the tables involved in the request, Amazon
-     * DynamoDB returns a <i>ProvisionedThroughputExceededException</i> .
+     * A single operation can retrieve up to 1 MB of data, which can comprise
+     * as many as 100 items. <i>BatchGetItem</i> will return a partial result
+     * if the response size limit is exceeded, the table's provisioned
+     * throughput is exceeded, or an internal processing failure occurs. If a
+     * partial result is returned, the operation returns a value for
+     * <i>UnprocessedKeys</i> . You can use this value to retry the operation
+     * starting with the next item to get.
      * </p>
      * <p>
-     * <b>NOTE:</b> By default, BatchGetItem performs eventually consistent
-     * reads on every table in the request. You can set ConsistentRead to
-     * true, on a per-table basis, if you want consistent reads instead.
-     * BatchGetItem fetches items in parallel to minimize response latencies.
+     * For example, if you ask to retrieve 100 items, but each individual
+     * item is 50 KB in size, the system returns 20 items (1 MB) and an
+     * appropriate <i>UnprocessedKeys</i> value so you can get the next page
+     * of results. If desired, your application can include its own logic to
+     * assemble the pages of results into one dataset.
+     * </p>
+     * <p>
+     * If no items can be processed because of insufficient provisioned
+     * throughput on each of the tables involved in the request,
+     * <i>BatchGetItem</i> throws
+     * <i>ProvisionedThroughputExceededException</i> .
+     * </p>
+     * <p>
+     * By default, <i>BatchGetItem</i> performs eventually consistent reads
+     * on every table in the request. If you want strongly consistent reads
+     * instead, you can set <i>ConsistentRead</i> to <code>true</code> for
+     * any or all tables.
+     * </p>
+     * <p>
+     * In order to minimize response latency, <i>BatchGetItem</i> fetches
+     * items in parallel.
+     * </p>
+     * <p>
      * When designing your application, keep in mind that Amazon DynamoDB
-     * does not guarantee how attributes are ordered in the returned
-     * response. Include the primary key values in the AttributesToGet for
-     * the items in your request to help parse the response by item. If the
-     * requested items do not exist, nothing is returned in the response for
-     * those items. Requests for non-existent items consume the minimum read
-     * capacity units according to the type of read. For more information,
-     * see Capacity Units Calculations of the Amazon DynamoDB Developer
-     * Guide.
+     * does not return attributes in any particular order. To help parse the
+     * response by item, include the primary key values for the items in your
+     * request in the <i>AttributesToGet</i> parameter.
+     * </p>
+     * <p>
+     * If a requested item does not exist, it is not returned in the result.
+     * Requests for nonexistent items consume the minimum read capacity units
+     * according to the type of read. For more information, see <a
+     * est/developerguide/WorkingWithDDTables.html#CapacityUnitCalculations">
+     * Capacity Units Calculations </a> in the <i>Amazon DynamoDB Developer
+     * Guide</i> .
      * </p>
      *
      * @param batchGetItemRequest Container for the necessary parameters to

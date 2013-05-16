@@ -58,27 +58,27 @@ public class UpdateItemRequest extends AmazonWebServiceRequest  implements Seria
      * Requests with empty values will be rejected with a
      * <i>ValidationException</i>. <p>Each <i>AttributeUpdates</i> element
      * consists of an attribute name to modify, along with the following:
-     * <ul> <li> <p><i>Value</i>-the new value, if applicable, for this
-     * attribute. </li> <li> <p><i>Action</i>-specifies how to perform the
+     * <ul> <li> <p><i>Value</i> - The new value, if applicable, for this
+     * attribute. </li> <li> <p><i>Action</i> - Specifies how to perform the
      * update. Valid values for <i>Action</i> are <code>PUT</code>,
      * <code>DELETE</code>, and <code>ADD</code>. The behavior depends on
      * whether the specified primary key already exists in the table. <p>
      * <b>If an item with the specified <i>Key</i> is found in the table:</b>
-     * <ul> <li> <p><code>PUT</code>-Adds the specified attribute to the
+     * <ul> <li> <p><code>PUT</code> - Adds the specified attribute to the
      * item. If the attribute already exists, it is replaced by the new
-     * value. </li> <li> <p><code>DELETE</code>-If no value is specified, the
-     * attribute and its value are removed from the item. The data type of
-     * the specified value must match the existing value's data type. <p>If a
-     * <i>set</i> of values is specified, then those values are subtracted
-     * from the old set. For example, if the attribute value was the set
-     * <code>[a,b,c]</code> and the <i>DELETE</i> action specified
+     * value. </li> <li> <p><code>DELETE</code> - If no value is specified,
+     * the attribute and its value are removed from the item. The data type
+     * of the specified value must match the existing value's data type.
+     * <p>If a <i>set</i> of values is specified, then those values are
+     * subtracted from the old set. For example, if the attribute value was
+     * the set <code>[a,b,c]</code> and the <i>DELETE</i> action specified
      * <code>[a,c]</code>, then the final attribute value would be
      * <code>[b]</code>. Specifying an empty set is an error. </li> <li>
-     * <p><code>ADD</code>-If the attribute does not already exist, then the
-     * attribute and its values are added to the item. If the attribute does
-     * exist, then the behavior of <code>ADD</code> depends on the data type
-     * of the attribute: <ul> <li> <p>If the existing attribute is a number,
-     * and if <i>Value</i> is also a number, then the <i>Value</i> is
+     * <p><code>ADD</code> - If the attribute does not already exist, then
+     * the attribute and its values are added to the item. If the attribute
+     * does exist, then the behavior of <code>ADD</code> depends on the data
+     * type of the attribute: <ul> <li> <p>If the existing attribute is a
+     * number, and if <i>Value</i> is also a number, then the <i>Value</i> is
      * mathematically added to the existing attribute. If <i>Value</i> is a
      * negative number, then it is subtracted from the existing attribute.
      * <note> <p> If you use <code>ADD</code> to increment or decrement a
@@ -109,12 +109,12 @@ public class UpdateItemRequest extends AmazonWebServiceRequest  implements Seria
      * for an existing attribute whose data type is number or is a set. Do
      * not use <code>ADD</code> for any other data types. </li> </ul> <p>
      * <b>If no item with the specified <i>Key</i> is found:</b> <ul> <li>
-     * <p><code>PUT</code>-Amazon DynamoDB creates a new item with the
+     * <p><code>PUT</code> - Amazon DynamoDB creates a new item with the
      * specified primary key, and then adds the attribute. </li> <li>
-     * <p><code>DELETE</code>-Nothing happens; there is no attribute to
-     * delete. </li> <li> <p><code>ADD</code>-Amazon DynamoDB creates an item
-     * with the supplied primary key and number (or set of numbers) for the
-     * attribute value. The only data types allowed are number and number
+     * <p><code>DELETE</code> - Nothing happens; there is no attribute to
+     * delete. </li> <li> <p><code>ADD</code> - Amazon DynamoDB creates an
+     * item with the supplied primary key and number (or set of numbers) for
+     * the attribute value. The only data types allowed are number and number
      * set; no other data types can be specified. </li> </ul> </li> </ul>
      * <p>If you specify any attributes that are part of an index key, then
      * the data types for those attributes must match those of the schema in
@@ -130,9 +130,9 @@ public class UpdateItemRequest extends AmazonWebServiceRequest  implements Seria
      * if the attribute value already exists; or if the attribute value
      * exists and has a particular value before changing it. <p>Each item in
      * <i>Expected</i> represents an attribute name for Amazon DynamoDB to
-     * check, along with the following: <ul> <li> <p><i>Value</i>-the
+     * check, along with the following: <ul> <li> <p><i>Value</i> - The
      * attribute value for Amazon DynamoDB to check. </li> <li>
-     * <p><i>Exists</i>-causes Amazon DynamoDB to evaluate the value before
+     * <p><i>Exists</i> - Causes Amazon DynamoDB to evaluate the value before
      * attempting a conditional operation: <ul> <li> <p>If <i>Exists</i> is
      * <code>true</code>, Amazon DynamoDB will check to see if that attribute
      * value already exists in the table. If it is found, then the operation
@@ -163,15 +163,16 @@ public class UpdateItemRequest extends AmazonWebServiceRequest  implements Seria
      * Use <i>ReturnValues</i> if you want to get the item attributes as they
      * appeared either before or after they were updated. For
      * <i>UpdateItem</i>, the valid values are: <ul> <li>
-     * <p><code>NONE</code>-(default) If <i>ReturnValues</i> is not
-     * specified, or if its value is <code>NONE</code>, then nothing is
-     * returned. </li> <li> <p><code>ALL_OLD</code>-If <i>UpdateItem</i>
-     * overwrote an attribute name-value pair, then the content of the old
-     * item is returned. </li> <li> <p><code>UPDATED_OLD</code>-The old
-     * versions of only the updated attributes are returned. </li> <li>
-     * <p><code>ALL_NEW</code>-All of the attributes of the new version of
-     * the item are returned. </li> <li> <p><code>UPDATED_NEW</code>-The new
-     * versions of only the updated attributes are returned. </li> </ul>
+     * <p><code>NONE</code> - If <i>ReturnValues</i> is not specified, or if
+     * its value is <code>NONE</code>, then nothing is returned. (This is the
+     * default for <i>ReturnValues</i>.) </li> <li> <p><code>ALL_OLD</code> -
+     * If <i>UpdateItem</i> overwrote an attribute name-value pair, then the
+     * content of the old item is returned. </li> <li>
+     * <p><code>UPDATED_OLD</code> - The old versions of only the updated
+     * attributes are returned. </li> <li> <p><code>ALL_NEW</code> - All of
+     * the attributes of the new version of the item are returned. </li> <li>
+     * <p><code>UPDATED_NEW</code> - The new versions of only the updated
+     * attributes are returned. </li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>NONE, ALL_OLD, UPDATED_OLD, ALL_NEW, UPDATED_NEW
@@ -179,10 +180,9 @@ public class UpdateItemRequest extends AmazonWebServiceRequest  implements Seria
     private String returnValues;
 
     /**
-     * Determines whether to include consumed capacity information in the
-     * output. If this is set to <code>TOTAL</code>, then this information is
-     * shown in the output; otherwise, the consumed capacity information is
-     * not shown.
+     * If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
+     * the response; if set to <code>NONE</code> (the default),
+     * <i>ConsumedCapacity</i> is not included.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>TOTAL, NONE
@@ -190,11 +190,10 @@ public class UpdateItemRequest extends AmazonWebServiceRequest  implements Seria
     private String returnConsumedCapacity;
 
     /**
-     * Indicates whether to return statistics about item collections, if any,
-     * that were modified during the operation. The default for
-     * <i>ReturnItemCollectionMetrics</i> is <code>NONE</code>, meaning that
-     * no statistics will be returned. To obtain the statistics, set
-     * <i>ReturnItemCollectionMetrics</i> to <code>SIZE</code>.
+     * If set to <code>SIZE</code>, statistics about item collections, if
+     * any, that were modified during the operation are returned in the
+     * response. If set to <code>NONE</code> (the default), no statistics are
+     * returned..
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>SIZE, NONE
@@ -226,27 +225,27 @@ public class UpdateItemRequest extends AmazonWebServiceRequest  implements Seria
      * empty. Requests with empty values will be rejected with a
      * <i>ValidationException</i>. <p>Each <i>AttributeUpdates</i> element
      * consists of an attribute name to modify, along with the following:
-     * <ul> <li> <p><i>Value</i>-the new value, if applicable, for this
-     * attribute. </li> <li> <p><i>Action</i>-specifies how to perform the
+     * <ul> <li> <p><i>Value</i> - The new value, if applicable, for this
+     * attribute. </li> <li> <p><i>Action</i> - Specifies how to perform the
      * update. Valid values for <i>Action</i> are <code>PUT</code>,
      * <code>DELETE</code>, and <code>ADD</code>. The behavior depends on
      * whether the specified primary key already exists in the table. <p>
      * <b>If an item with the specified <i>Key</i> is found in the table:</b>
-     * <ul> <li> <p><code>PUT</code>-Adds the specified attribute to the
+     * <ul> <li> <p><code>PUT</code> - Adds the specified attribute to the
      * item. If the attribute already exists, it is replaced by the new
-     * value. </li> <li> <p><code>DELETE</code>-If no value is specified, the
-     * attribute and its value are removed from the item. The data type of
-     * the specified value must match the existing value's data type. <p>If a
-     * <i>set</i> of values is specified, then those values are subtracted
-     * from the old set. For example, if the attribute value was the set
-     * <code>[a,b,c]</code> and the <i>DELETE</i> action specified
+     * value. </li> <li> <p><code>DELETE</code> - If no value is specified,
+     * the attribute and its value are removed from the item. The data type
+     * of the specified value must match the existing value's data type.
+     * <p>If a <i>set</i> of values is specified, then those values are
+     * subtracted from the old set. For example, if the attribute value was
+     * the set <code>[a,b,c]</code> and the <i>DELETE</i> action specified
      * <code>[a,c]</code>, then the final attribute value would be
      * <code>[b]</code>. Specifying an empty set is an error. </li> <li>
-     * <p><code>ADD</code>-If the attribute does not already exist, then the
-     * attribute and its values are added to the item. If the attribute does
-     * exist, then the behavior of <code>ADD</code> depends on the data type
-     * of the attribute: <ul> <li> <p>If the existing attribute is a number,
-     * and if <i>Value</i> is also a number, then the <i>Value</i> is
+     * <p><code>ADD</code> - If the attribute does not already exist, then
+     * the attribute and its values are added to the item. If the attribute
+     * does exist, then the behavior of <code>ADD</code> depends on the data
+     * type of the attribute: <ul> <li> <p>If the existing attribute is a
+     * number, and if <i>Value</i> is also a number, then the <i>Value</i> is
      * mathematically added to the existing attribute. If <i>Value</i> is a
      * negative number, then it is subtracted from the existing attribute.
      * <note> <p> If you use <code>ADD</code> to increment or decrement a
@@ -277,12 +276,12 @@ public class UpdateItemRequest extends AmazonWebServiceRequest  implements Seria
      * for an existing attribute whose data type is number or is a set. Do
      * not use <code>ADD</code> for any other data types. </li> </ul> <p>
      * <b>If no item with the specified <i>Key</i> is found:</b> <ul> <li>
-     * <p><code>PUT</code>-Amazon DynamoDB creates a new item with the
+     * <p><code>PUT</code> - Amazon DynamoDB creates a new item with the
      * specified primary key, and then adds the attribute. </li> <li>
-     * <p><code>DELETE</code>-Nothing happens; there is no attribute to
-     * delete. </li> <li> <p><code>ADD</code>-Amazon DynamoDB creates an item
-     * with the supplied primary key and number (or set of numbers) for the
-     * attribute value. The only data types allowed are number and number
+     * <p><code>DELETE</code> - Nothing happens; there is no attribute to
+     * delete. </li> <li> <p><code>ADD</code> - Amazon DynamoDB creates an
+     * item with the supplied primary key and number (or set of numbers) for
+     * the attribute value. The only data types allowed are number and number
      * set; no other data types can be specified. </li> </ul> </li> </ul>
      * <p>If you specify any attributes that are part of an index key, then
      * the data types for those attributes must match those of the schema in
@@ -395,27 +394,27 @@ public class UpdateItemRequest extends AmazonWebServiceRequest  implements Seria
      * Requests with empty values will be rejected with a
      * <i>ValidationException</i>. <p>Each <i>AttributeUpdates</i> element
      * consists of an attribute name to modify, along with the following:
-     * <ul> <li> <p><i>Value</i>-the new value, if applicable, for this
-     * attribute. </li> <li> <p><i>Action</i>-specifies how to perform the
+     * <ul> <li> <p><i>Value</i> - The new value, if applicable, for this
+     * attribute. </li> <li> <p><i>Action</i> - Specifies how to perform the
      * update. Valid values for <i>Action</i> are <code>PUT</code>,
      * <code>DELETE</code>, and <code>ADD</code>. The behavior depends on
      * whether the specified primary key already exists in the table. <p>
      * <b>If an item with the specified <i>Key</i> is found in the table:</b>
-     * <ul> <li> <p><code>PUT</code>-Adds the specified attribute to the
+     * <ul> <li> <p><code>PUT</code> - Adds the specified attribute to the
      * item. If the attribute already exists, it is replaced by the new
-     * value. </li> <li> <p><code>DELETE</code>-If no value is specified, the
-     * attribute and its value are removed from the item. The data type of
-     * the specified value must match the existing value's data type. <p>If a
-     * <i>set</i> of values is specified, then those values are subtracted
-     * from the old set. For example, if the attribute value was the set
-     * <code>[a,b,c]</code> and the <i>DELETE</i> action specified
+     * value. </li> <li> <p><code>DELETE</code> - If no value is specified,
+     * the attribute and its value are removed from the item. The data type
+     * of the specified value must match the existing value's data type.
+     * <p>If a <i>set</i> of values is specified, then those values are
+     * subtracted from the old set. For example, if the attribute value was
+     * the set <code>[a,b,c]</code> and the <i>DELETE</i> action specified
      * <code>[a,c]</code>, then the final attribute value would be
      * <code>[b]</code>. Specifying an empty set is an error. </li> <li>
-     * <p><code>ADD</code>-If the attribute does not already exist, then the
-     * attribute and its values are added to the item. If the attribute does
-     * exist, then the behavior of <code>ADD</code> depends on the data type
-     * of the attribute: <ul> <li> <p>If the existing attribute is a number,
-     * and if <i>Value</i> is also a number, then the <i>Value</i> is
+     * <p><code>ADD</code> - If the attribute does not already exist, then
+     * the attribute and its values are added to the item. If the attribute
+     * does exist, then the behavior of <code>ADD</code> depends on the data
+     * type of the attribute: <ul> <li> <p>If the existing attribute is a
+     * number, and if <i>Value</i> is also a number, then the <i>Value</i> is
      * mathematically added to the existing attribute. If <i>Value</i> is a
      * negative number, then it is subtracted from the existing attribute.
      * <note> <p> If you use <code>ADD</code> to increment or decrement a
@@ -446,12 +445,12 @@ public class UpdateItemRequest extends AmazonWebServiceRequest  implements Seria
      * for an existing attribute whose data type is number or is a set. Do
      * not use <code>ADD</code> for any other data types. </li> </ul> <p>
      * <b>If no item with the specified <i>Key</i> is found:</b> <ul> <li>
-     * <p><code>PUT</code>-Amazon DynamoDB creates a new item with the
+     * <p><code>PUT</code> - Amazon DynamoDB creates a new item with the
      * specified primary key, and then adds the attribute. </li> <li>
-     * <p><code>DELETE</code>-Nothing happens; there is no attribute to
-     * delete. </li> <li> <p><code>ADD</code>-Amazon DynamoDB creates an item
-     * with the supplied primary key and number (or set of numbers) for the
-     * attribute value. The only data types allowed are number and number
+     * <p><code>DELETE</code> - Nothing happens; there is no attribute to
+     * delete. </li> <li> <p><code>ADD</code> - Amazon DynamoDB creates an
+     * item with the supplied primary key and number (or set of numbers) for
+     * the attribute value. The only data types allowed are number and number
      * set; no other data types can be specified. </li> </ul> </li> </ul>
      * <p>If you specify any attributes that are part of an index key, then
      * the data types for those attributes must match those of the schema in
@@ -468,27 +467,27 @@ public class UpdateItemRequest extends AmazonWebServiceRequest  implements Seria
      *         Requests with empty values will be rejected with a
      *         <i>ValidationException</i>. <p>Each <i>AttributeUpdates</i> element
      *         consists of an attribute name to modify, along with the following:
-     *         <ul> <li> <p><i>Value</i>-the new value, if applicable, for this
-     *         attribute. </li> <li> <p><i>Action</i>-specifies how to perform the
+     *         <ul> <li> <p><i>Value</i> - The new value, if applicable, for this
+     *         attribute. </li> <li> <p><i>Action</i> - Specifies how to perform the
      *         update. Valid values for <i>Action</i> are <code>PUT</code>,
      *         <code>DELETE</code>, and <code>ADD</code>. The behavior depends on
      *         whether the specified primary key already exists in the table. <p>
      *         <b>If an item with the specified <i>Key</i> is found in the table:</b>
-     *         <ul> <li> <p><code>PUT</code>-Adds the specified attribute to the
+     *         <ul> <li> <p><code>PUT</code> - Adds the specified attribute to the
      *         item. If the attribute already exists, it is replaced by the new
-     *         value. </li> <li> <p><code>DELETE</code>-If no value is specified, the
-     *         attribute and its value are removed from the item. The data type of
-     *         the specified value must match the existing value's data type. <p>If a
-     *         <i>set</i> of values is specified, then those values are subtracted
-     *         from the old set. For example, if the attribute value was the set
-     *         <code>[a,b,c]</code> and the <i>DELETE</i> action specified
+     *         value. </li> <li> <p><code>DELETE</code> - If no value is specified,
+     *         the attribute and its value are removed from the item. The data type
+     *         of the specified value must match the existing value's data type.
+     *         <p>If a <i>set</i> of values is specified, then those values are
+     *         subtracted from the old set. For example, if the attribute value was
+     *         the set <code>[a,b,c]</code> and the <i>DELETE</i> action specified
      *         <code>[a,c]</code>, then the final attribute value would be
      *         <code>[b]</code>. Specifying an empty set is an error. </li> <li>
-     *         <p><code>ADD</code>-If the attribute does not already exist, then the
-     *         attribute and its values are added to the item. If the attribute does
-     *         exist, then the behavior of <code>ADD</code> depends on the data type
-     *         of the attribute: <ul> <li> <p>If the existing attribute is a number,
-     *         and if <i>Value</i> is also a number, then the <i>Value</i> is
+     *         <p><code>ADD</code> - If the attribute does not already exist, then
+     *         the attribute and its values are added to the item. If the attribute
+     *         does exist, then the behavior of <code>ADD</code> depends on the data
+     *         type of the attribute: <ul> <li> <p>If the existing attribute is a
+     *         number, and if <i>Value</i> is also a number, then the <i>Value</i> is
      *         mathematically added to the existing attribute. If <i>Value</i> is a
      *         negative number, then it is subtracted from the existing attribute.
      *         <note> <p> If you use <code>ADD</code> to increment or decrement a
@@ -519,12 +518,12 @@ public class UpdateItemRequest extends AmazonWebServiceRequest  implements Seria
      *         for an existing attribute whose data type is number or is a set. Do
      *         not use <code>ADD</code> for any other data types. </li> </ul> <p>
      *         <b>If no item with the specified <i>Key</i> is found:</b> <ul> <li>
-     *         <p><code>PUT</code>-Amazon DynamoDB creates a new item with the
+     *         <p><code>PUT</code> - Amazon DynamoDB creates a new item with the
      *         specified primary key, and then adds the attribute. </li> <li>
-     *         <p><code>DELETE</code>-Nothing happens; there is no attribute to
-     *         delete. </li> <li> <p><code>ADD</code>-Amazon DynamoDB creates an item
-     *         with the supplied primary key and number (or set of numbers) for the
-     *         attribute value. The only data types allowed are number and number
+     *         <p><code>DELETE</code> - Nothing happens; there is no attribute to
+     *         delete. </li> <li> <p><code>ADD</code> - Amazon DynamoDB creates an
+     *         item with the supplied primary key and number (or set of numbers) for
+     *         the attribute value. The only data types allowed are number and number
      *         set; no other data types can be specified. </li> </ul> </li> </ul>
      *         <p>If you specify any attributes that are part of an index key, then
      *         the data types for those attributes must match those of the schema in
@@ -548,27 +547,27 @@ public class UpdateItemRequest extends AmazonWebServiceRequest  implements Seria
      * Requests with empty values will be rejected with a
      * <i>ValidationException</i>. <p>Each <i>AttributeUpdates</i> element
      * consists of an attribute name to modify, along with the following:
-     * <ul> <li> <p><i>Value</i>-the new value, if applicable, for this
-     * attribute. </li> <li> <p><i>Action</i>-specifies how to perform the
+     * <ul> <li> <p><i>Value</i> - The new value, if applicable, for this
+     * attribute. </li> <li> <p><i>Action</i> - Specifies how to perform the
      * update. Valid values for <i>Action</i> are <code>PUT</code>,
      * <code>DELETE</code>, and <code>ADD</code>. The behavior depends on
      * whether the specified primary key already exists in the table. <p>
      * <b>If an item with the specified <i>Key</i> is found in the table:</b>
-     * <ul> <li> <p><code>PUT</code>-Adds the specified attribute to the
+     * <ul> <li> <p><code>PUT</code> - Adds the specified attribute to the
      * item. If the attribute already exists, it is replaced by the new
-     * value. </li> <li> <p><code>DELETE</code>-If no value is specified, the
-     * attribute and its value are removed from the item. The data type of
-     * the specified value must match the existing value's data type. <p>If a
-     * <i>set</i> of values is specified, then those values are subtracted
-     * from the old set. For example, if the attribute value was the set
-     * <code>[a,b,c]</code> and the <i>DELETE</i> action specified
+     * value. </li> <li> <p><code>DELETE</code> - If no value is specified,
+     * the attribute and its value are removed from the item. The data type
+     * of the specified value must match the existing value's data type.
+     * <p>If a <i>set</i> of values is specified, then those values are
+     * subtracted from the old set. For example, if the attribute value was
+     * the set <code>[a,b,c]</code> and the <i>DELETE</i> action specified
      * <code>[a,c]</code>, then the final attribute value would be
      * <code>[b]</code>. Specifying an empty set is an error. </li> <li>
-     * <p><code>ADD</code>-If the attribute does not already exist, then the
-     * attribute and its values are added to the item. If the attribute does
-     * exist, then the behavior of <code>ADD</code> depends on the data type
-     * of the attribute: <ul> <li> <p>If the existing attribute is a number,
-     * and if <i>Value</i> is also a number, then the <i>Value</i> is
+     * <p><code>ADD</code> - If the attribute does not already exist, then
+     * the attribute and its values are added to the item. If the attribute
+     * does exist, then the behavior of <code>ADD</code> depends on the data
+     * type of the attribute: <ul> <li> <p>If the existing attribute is a
+     * number, and if <i>Value</i> is also a number, then the <i>Value</i> is
      * mathematically added to the existing attribute. If <i>Value</i> is a
      * negative number, then it is subtracted from the existing attribute.
      * <note> <p> If you use <code>ADD</code> to increment or decrement a
@@ -599,12 +598,12 @@ public class UpdateItemRequest extends AmazonWebServiceRequest  implements Seria
      * for an existing attribute whose data type is number or is a set. Do
      * not use <code>ADD</code> for any other data types. </li> </ul> <p>
      * <b>If no item with the specified <i>Key</i> is found:</b> <ul> <li>
-     * <p><code>PUT</code>-Amazon DynamoDB creates a new item with the
+     * <p><code>PUT</code> - Amazon DynamoDB creates a new item with the
      * specified primary key, and then adds the attribute. </li> <li>
-     * <p><code>DELETE</code>-Nothing happens; there is no attribute to
-     * delete. </li> <li> <p><code>ADD</code>-Amazon DynamoDB creates an item
-     * with the supplied primary key and number (or set of numbers) for the
-     * attribute value. The only data types allowed are number and number
+     * <p><code>DELETE</code> - Nothing happens; there is no attribute to
+     * delete. </li> <li> <p><code>ADD</code> - Amazon DynamoDB creates an
+     * item with the supplied primary key and number (or set of numbers) for
+     * the attribute value. The only data types allowed are number and number
      * set; no other data types can be specified. </li> </ul> </li> </ul>
      * <p>If you specify any attributes that are part of an index key, then
      * the data types for those attributes must match those of the schema in
@@ -621,27 +620,27 @@ public class UpdateItemRequest extends AmazonWebServiceRequest  implements Seria
      *         Requests with empty values will be rejected with a
      *         <i>ValidationException</i>. <p>Each <i>AttributeUpdates</i> element
      *         consists of an attribute name to modify, along with the following:
-     *         <ul> <li> <p><i>Value</i>-the new value, if applicable, for this
-     *         attribute. </li> <li> <p><i>Action</i>-specifies how to perform the
+     *         <ul> <li> <p><i>Value</i> - The new value, if applicable, for this
+     *         attribute. </li> <li> <p><i>Action</i> - Specifies how to perform the
      *         update. Valid values for <i>Action</i> are <code>PUT</code>,
      *         <code>DELETE</code>, and <code>ADD</code>. The behavior depends on
      *         whether the specified primary key already exists in the table. <p>
      *         <b>If an item with the specified <i>Key</i> is found in the table:</b>
-     *         <ul> <li> <p><code>PUT</code>-Adds the specified attribute to the
+     *         <ul> <li> <p><code>PUT</code> - Adds the specified attribute to the
      *         item. If the attribute already exists, it is replaced by the new
-     *         value. </li> <li> <p><code>DELETE</code>-If no value is specified, the
-     *         attribute and its value are removed from the item. The data type of
-     *         the specified value must match the existing value's data type. <p>If a
-     *         <i>set</i> of values is specified, then those values are subtracted
-     *         from the old set. For example, if the attribute value was the set
-     *         <code>[a,b,c]</code> and the <i>DELETE</i> action specified
+     *         value. </li> <li> <p><code>DELETE</code> - If no value is specified,
+     *         the attribute and its value are removed from the item. The data type
+     *         of the specified value must match the existing value's data type.
+     *         <p>If a <i>set</i> of values is specified, then those values are
+     *         subtracted from the old set. For example, if the attribute value was
+     *         the set <code>[a,b,c]</code> and the <i>DELETE</i> action specified
      *         <code>[a,c]</code>, then the final attribute value would be
      *         <code>[b]</code>. Specifying an empty set is an error. </li> <li>
-     *         <p><code>ADD</code>-If the attribute does not already exist, then the
-     *         attribute and its values are added to the item. If the attribute does
-     *         exist, then the behavior of <code>ADD</code> depends on the data type
-     *         of the attribute: <ul> <li> <p>If the existing attribute is a number,
-     *         and if <i>Value</i> is also a number, then the <i>Value</i> is
+     *         <p><code>ADD</code> - If the attribute does not already exist, then
+     *         the attribute and its values are added to the item. If the attribute
+     *         does exist, then the behavior of <code>ADD</code> depends on the data
+     *         type of the attribute: <ul> <li> <p>If the existing attribute is a
+     *         number, and if <i>Value</i> is also a number, then the <i>Value</i> is
      *         mathematically added to the existing attribute. If <i>Value</i> is a
      *         negative number, then it is subtracted from the existing attribute.
      *         <note> <p> If you use <code>ADD</code> to increment or decrement a
@@ -672,12 +671,12 @@ public class UpdateItemRequest extends AmazonWebServiceRequest  implements Seria
      *         for an existing attribute whose data type is number or is a set. Do
      *         not use <code>ADD</code> for any other data types. </li> </ul> <p>
      *         <b>If no item with the specified <i>Key</i> is found:</b> <ul> <li>
-     *         <p><code>PUT</code>-Amazon DynamoDB creates a new item with the
+     *         <p><code>PUT</code> - Amazon DynamoDB creates a new item with the
      *         specified primary key, and then adds the attribute. </li> <li>
-     *         <p><code>DELETE</code>-Nothing happens; there is no attribute to
-     *         delete. </li> <li> <p><code>ADD</code>-Amazon DynamoDB creates an item
-     *         with the supplied primary key and number (or set of numbers) for the
-     *         attribute value. The only data types allowed are number and number
+     *         <p><code>DELETE</code> - Nothing happens; there is no attribute to
+     *         delete. </li> <li> <p><code>ADD</code> - Amazon DynamoDB creates an
+     *         item with the supplied primary key and number (or set of numbers) for
+     *         the attribute value. The only data types allowed are number and number
      *         set; no other data types can be specified. </li> </ul> </li> </ul>
      *         <p>If you specify any attributes that are part of an index key, then
      *         the data types for those attributes must match those of the schema in
@@ -699,27 +698,27 @@ public class UpdateItemRequest extends AmazonWebServiceRequest  implements Seria
      * Requests with empty values will be rejected with a
      * <i>ValidationException</i>. <p>Each <i>AttributeUpdates</i> element
      * consists of an attribute name to modify, along with the following:
-     * <ul> <li> <p><i>Value</i>-the new value, if applicable, for this
-     * attribute. </li> <li> <p><i>Action</i>-specifies how to perform the
+     * <ul> <li> <p><i>Value</i> - The new value, if applicable, for this
+     * attribute. </li> <li> <p><i>Action</i> - Specifies how to perform the
      * update. Valid values for <i>Action</i> are <code>PUT</code>,
      * <code>DELETE</code>, and <code>ADD</code>. The behavior depends on
      * whether the specified primary key already exists in the table. <p>
      * <b>If an item with the specified <i>Key</i> is found in the table:</b>
-     * <ul> <li> <p><code>PUT</code>-Adds the specified attribute to the
+     * <ul> <li> <p><code>PUT</code> - Adds the specified attribute to the
      * item. If the attribute already exists, it is replaced by the new
-     * value. </li> <li> <p><code>DELETE</code>-If no value is specified, the
-     * attribute and its value are removed from the item. The data type of
-     * the specified value must match the existing value's data type. <p>If a
-     * <i>set</i> of values is specified, then those values are subtracted
-     * from the old set. For example, if the attribute value was the set
-     * <code>[a,b,c]</code> and the <i>DELETE</i> action specified
+     * value. </li> <li> <p><code>DELETE</code> - If no value is specified,
+     * the attribute and its value are removed from the item. The data type
+     * of the specified value must match the existing value's data type.
+     * <p>If a <i>set</i> of values is specified, then those values are
+     * subtracted from the old set. For example, if the attribute value was
+     * the set <code>[a,b,c]</code> and the <i>DELETE</i> action specified
      * <code>[a,c]</code>, then the final attribute value would be
      * <code>[b]</code>. Specifying an empty set is an error. </li> <li>
-     * <p><code>ADD</code>-If the attribute does not already exist, then the
-     * attribute and its values are added to the item. If the attribute does
-     * exist, then the behavior of <code>ADD</code> depends on the data type
-     * of the attribute: <ul> <li> <p>If the existing attribute is a number,
-     * and if <i>Value</i> is also a number, then the <i>Value</i> is
+     * <p><code>ADD</code> - If the attribute does not already exist, then
+     * the attribute and its values are added to the item. If the attribute
+     * does exist, then the behavior of <code>ADD</code> depends on the data
+     * type of the attribute: <ul> <li> <p>If the existing attribute is a
+     * number, and if <i>Value</i> is also a number, then the <i>Value</i> is
      * mathematically added to the existing attribute. If <i>Value</i> is a
      * negative number, then it is subtracted from the existing attribute.
      * <note> <p> If you use <code>ADD</code> to increment or decrement a
@@ -750,12 +749,12 @@ public class UpdateItemRequest extends AmazonWebServiceRequest  implements Seria
      * for an existing attribute whose data type is number or is a set. Do
      * not use <code>ADD</code> for any other data types. </li> </ul> <p>
      * <b>If no item with the specified <i>Key</i> is found:</b> <ul> <li>
-     * <p><code>PUT</code>-Amazon DynamoDB creates a new item with the
+     * <p><code>PUT</code> - Amazon DynamoDB creates a new item with the
      * specified primary key, and then adds the attribute. </li> <li>
-     * <p><code>DELETE</code>-Nothing happens; there is no attribute to
-     * delete. </li> <li> <p><code>ADD</code>-Amazon DynamoDB creates an item
-     * with the supplied primary key and number (or set of numbers) for the
-     * attribute value. The only data types allowed are number and number
+     * <p><code>DELETE</code> - Nothing happens; there is no attribute to
+     * delete. </li> <li> <p><code>ADD</code> - Amazon DynamoDB creates an
+     * item with the supplied primary key and number (or set of numbers) for
+     * the attribute value. The only data types allowed are number and number
      * set; no other data types can be specified. </li> </ul> </li> </ul>
      * <p>If you specify any attributes that are part of an index key, then
      * the data types for those attributes must match those of the schema in
@@ -774,27 +773,27 @@ public class UpdateItemRequest extends AmazonWebServiceRequest  implements Seria
      *         Requests with empty values will be rejected with a
      *         <i>ValidationException</i>. <p>Each <i>AttributeUpdates</i> element
      *         consists of an attribute name to modify, along with the following:
-     *         <ul> <li> <p><i>Value</i>-the new value, if applicable, for this
-     *         attribute. </li> <li> <p><i>Action</i>-specifies how to perform the
+     *         <ul> <li> <p><i>Value</i> - The new value, if applicable, for this
+     *         attribute. </li> <li> <p><i>Action</i> - Specifies how to perform the
      *         update. Valid values for <i>Action</i> are <code>PUT</code>,
      *         <code>DELETE</code>, and <code>ADD</code>. The behavior depends on
      *         whether the specified primary key already exists in the table. <p>
      *         <b>If an item with the specified <i>Key</i> is found in the table:</b>
-     *         <ul> <li> <p><code>PUT</code>-Adds the specified attribute to the
+     *         <ul> <li> <p><code>PUT</code> - Adds the specified attribute to the
      *         item. If the attribute already exists, it is replaced by the new
-     *         value. </li> <li> <p><code>DELETE</code>-If no value is specified, the
-     *         attribute and its value are removed from the item. The data type of
-     *         the specified value must match the existing value's data type. <p>If a
-     *         <i>set</i> of values is specified, then those values are subtracted
-     *         from the old set. For example, if the attribute value was the set
-     *         <code>[a,b,c]</code> and the <i>DELETE</i> action specified
+     *         value. </li> <li> <p><code>DELETE</code> - If no value is specified,
+     *         the attribute and its value are removed from the item. The data type
+     *         of the specified value must match the existing value's data type.
+     *         <p>If a <i>set</i> of values is specified, then those values are
+     *         subtracted from the old set. For example, if the attribute value was
+     *         the set <code>[a,b,c]</code> and the <i>DELETE</i> action specified
      *         <code>[a,c]</code>, then the final attribute value would be
      *         <code>[b]</code>. Specifying an empty set is an error. </li> <li>
-     *         <p><code>ADD</code>-If the attribute does not already exist, then the
-     *         attribute and its values are added to the item. If the attribute does
-     *         exist, then the behavior of <code>ADD</code> depends on the data type
-     *         of the attribute: <ul> <li> <p>If the existing attribute is a number,
-     *         and if <i>Value</i> is also a number, then the <i>Value</i> is
+     *         <p><code>ADD</code> - If the attribute does not already exist, then
+     *         the attribute and its values are added to the item. If the attribute
+     *         does exist, then the behavior of <code>ADD</code> depends on the data
+     *         type of the attribute: <ul> <li> <p>If the existing attribute is a
+     *         number, and if <i>Value</i> is also a number, then the <i>Value</i> is
      *         mathematically added to the existing attribute. If <i>Value</i> is a
      *         negative number, then it is subtracted from the existing attribute.
      *         <note> <p> If you use <code>ADD</code> to increment or decrement a
@@ -825,12 +824,12 @@ public class UpdateItemRequest extends AmazonWebServiceRequest  implements Seria
      *         for an existing attribute whose data type is number or is a set. Do
      *         not use <code>ADD</code> for any other data types. </li> </ul> <p>
      *         <b>If no item with the specified <i>Key</i> is found:</b> <ul> <li>
-     *         <p><code>PUT</code>-Amazon DynamoDB creates a new item with the
+     *         <p><code>PUT</code> - Amazon DynamoDB creates a new item with the
      *         specified primary key, and then adds the attribute. </li> <li>
-     *         <p><code>DELETE</code>-Nothing happens; there is no attribute to
-     *         delete. </li> <li> <p><code>ADD</code>-Amazon DynamoDB creates an item
-     *         with the supplied primary key and number (or set of numbers) for the
-     *         attribute value. The only data types allowed are number and number
+     *         <p><code>DELETE</code> - Nothing happens; there is no attribute to
+     *         delete. </li> <li> <p><code>ADD</code> - Amazon DynamoDB creates an
+     *         item with the supplied primary key and number (or set of numbers) for
+     *         the attribute value. The only data types allowed are number and number
      *         set; no other data types can be specified. </li> </ul> </li> </ul>
      *         <p>If you specify any attributes that are part of an index key, then
      *         the data types for those attributes must match those of the schema in
@@ -852,9 +851,9 @@ public class UpdateItemRequest extends AmazonWebServiceRequest  implements Seria
      * if the attribute value already exists; or if the attribute value
      * exists and has a particular value before changing it. <p>Each item in
      * <i>Expected</i> represents an attribute name for Amazon DynamoDB to
-     * check, along with the following: <ul> <li> <p><i>Value</i>-the
+     * check, along with the following: <ul> <li> <p><i>Value</i> - The
      * attribute value for Amazon DynamoDB to check. </li> <li>
-     * <p><i>Exists</i>-causes Amazon DynamoDB to evaluate the value before
+     * <p><i>Exists</i> - Causes Amazon DynamoDB to evaluate the value before
      * attempting a conditional operation: <ul> <li> <p>If <i>Exists</i> is
      * <code>true</code>, Amazon DynamoDB will check to see if that attribute
      * value already exists in the table. If it is found, then the operation
@@ -886,9 +885,9 @@ public class UpdateItemRequest extends AmazonWebServiceRequest  implements Seria
      *         if the attribute value already exists; or if the attribute value
      *         exists and has a particular value before changing it. <p>Each item in
      *         <i>Expected</i> represents an attribute name for Amazon DynamoDB to
-     *         check, along with the following: <ul> <li> <p><i>Value</i>-the
+     *         check, along with the following: <ul> <li> <p><i>Value</i> - The
      *         attribute value for Amazon DynamoDB to check. </li> <li>
-     *         <p><i>Exists</i>-causes Amazon DynamoDB to evaluate the value before
+     *         <p><i>Exists</i> - Causes Amazon DynamoDB to evaluate the value before
      *         attempting a conditional operation: <ul> <li> <p>If <i>Exists</i> is
      *         <code>true</code>, Amazon DynamoDB will check to see if that attribute
      *         value already exists in the table. If it is found, then the operation
@@ -927,9 +926,9 @@ public class UpdateItemRequest extends AmazonWebServiceRequest  implements Seria
      * if the attribute value already exists; or if the attribute value
      * exists and has a particular value before changing it. <p>Each item in
      * <i>Expected</i> represents an attribute name for Amazon DynamoDB to
-     * check, along with the following: <ul> <li> <p><i>Value</i>-the
+     * check, along with the following: <ul> <li> <p><i>Value</i> - The
      * attribute value for Amazon DynamoDB to check. </li> <li>
-     * <p><i>Exists</i>-causes Amazon DynamoDB to evaluate the value before
+     * <p><i>Exists</i> - Causes Amazon DynamoDB to evaluate the value before
      * attempting a conditional operation: <ul> <li> <p>If <i>Exists</i> is
      * <code>true</code>, Amazon DynamoDB will check to see if that attribute
      * value already exists in the table. If it is found, then the operation
@@ -961,9 +960,9 @@ public class UpdateItemRequest extends AmazonWebServiceRequest  implements Seria
      *         if the attribute value already exists; or if the attribute value
      *         exists and has a particular value before changing it. <p>Each item in
      *         <i>Expected</i> represents an attribute name for Amazon DynamoDB to
-     *         check, along with the following: <ul> <li> <p><i>Value</i>-the
+     *         check, along with the following: <ul> <li> <p><i>Value</i> - The
      *         attribute value for Amazon DynamoDB to check. </li> <li>
-     *         <p><i>Exists</i>-causes Amazon DynamoDB to evaluate the value before
+     *         <p><i>Exists</i> - Causes Amazon DynamoDB to evaluate the value before
      *         attempting a conditional operation: <ul> <li> <p>If <i>Exists</i> is
      *         <code>true</code>, Amazon DynamoDB will check to see if that attribute
      *         value already exists in the table. If it is found, then the operation
@@ -1000,9 +999,9 @@ public class UpdateItemRequest extends AmazonWebServiceRequest  implements Seria
      * if the attribute value already exists; or if the attribute value
      * exists and has a particular value before changing it. <p>Each item in
      * <i>Expected</i> represents an attribute name for Amazon DynamoDB to
-     * check, along with the following: <ul> <li> <p><i>Value</i>-the
+     * check, along with the following: <ul> <li> <p><i>Value</i> - The
      * attribute value for Amazon DynamoDB to check. </li> <li>
-     * <p><i>Exists</i>-causes Amazon DynamoDB to evaluate the value before
+     * <p><i>Exists</i> - Causes Amazon DynamoDB to evaluate the value before
      * attempting a conditional operation: <ul> <li> <p>If <i>Exists</i> is
      * <code>true</code>, Amazon DynamoDB will check to see if that attribute
      * value already exists in the table. If it is found, then the operation
@@ -1036,9 +1035,9 @@ public class UpdateItemRequest extends AmazonWebServiceRequest  implements Seria
      *         if the attribute value already exists; or if the attribute value
      *         exists and has a particular value before changing it. <p>Each item in
      *         <i>Expected</i> represents an attribute name for Amazon DynamoDB to
-     *         check, along with the following: <ul> <li> <p><i>Value</i>-the
+     *         check, along with the following: <ul> <li> <p><i>Value</i> - The
      *         attribute value for Amazon DynamoDB to check. </li> <li>
-     *         <p><i>Exists</i>-causes Amazon DynamoDB to evaluate the value before
+     *         <p><i>Exists</i> - Causes Amazon DynamoDB to evaluate the value before
      *         attempting a conditional operation: <ul> <li> <p>If <i>Exists</i> is
      *         <code>true</code>, Amazon DynamoDB will check to see if that attribute
      *         value already exists in the table. If it is found, then the operation
@@ -1075,15 +1074,16 @@ public class UpdateItemRequest extends AmazonWebServiceRequest  implements Seria
      * Use <i>ReturnValues</i> if you want to get the item attributes as they
      * appeared either before or after they were updated. For
      * <i>UpdateItem</i>, the valid values are: <ul> <li>
-     * <p><code>NONE</code>-(default) If <i>ReturnValues</i> is not
-     * specified, or if its value is <code>NONE</code>, then nothing is
-     * returned. </li> <li> <p><code>ALL_OLD</code>-If <i>UpdateItem</i>
-     * overwrote an attribute name-value pair, then the content of the old
-     * item is returned. </li> <li> <p><code>UPDATED_OLD</code>-The old
-     * versions of only the updated attributes are returned. </li> <li>
-     * <p><code>ALL_NEW</code>-All of the attributes of the new version of
-     * the item are returned. </li> <li> <p><code>UPDATED_NEW</code>-The new
-     * versions of only the updated attributes are returned. </li> </ul>
+     * <p><code>NONE</code> - If <i>ReturnValues</i> is not specified, or if
+     * its value is <code>NONE</code>, then nothing is returned. (This is the
+     * default for <i>ReturnValues</i>.) </li> <li> <p><code>ALL_OLD</code> -
+     * If <i>UpdateItem</i> overwrote an attribute name-value pair, then the
+     * content of the old item is returned. </li> <li>
+     * <p><code>UPDATED_OLD</code> - The old versions of only the updated
+     * attributes are returned. </li> <li> <p><code>ALL_NEW</code> - All of
+     * the attributes of the new version of the item are returned. </li> <li>
+     * <p><code>UPDATED_NEW</code> - The new versions of only the updated
+     * attributes are returned. </li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>NONE, ALL_OLD, UPDATED_OLD, ALL_NEW, UPDATED_NEW
@@ -1091,15 +1091,16 @@ public class UpdateItemRequest extends AmazonWebServiceRequest  implements Seria
      * @return Use <i>ReturnValues</i> if you want to get the item attributes as they
      *         appeared either before or after they were updated. For
      *         <i>UpdateItem</i>, the valid values are: <ul> <li>
-     *         <p><code>NONE</code>-(default) If <i>ReturnValues</i> is not
-     *         specified, or if its value is <code>NONE</code>, then nothing is
-     *         returned. </li> <li> <p><code>ALL_OLD</code>-If <i>UpdateItem</i>
-     *         overwrote an attribute name-value pair, then the content of the old
-     *         item is returned. </li> <li> <p><code>UPDATED_OLD</code>-The old
-     *         versions of only the updated attributes are returned. </li> <li>
-     *         <p><code>ALL_NEW</code>-All of the attributes of the new version of
-     *         the item are returned. </li> <li> <p><code>UPDATED_NEW</code>-The new
-     *         versions of only the updated attributes are returned. </li> </ul>
+     *         <p><code>NONE</code> - If <i>ReturnValues</i> is not specified, or if
+     *         its value is <code>NONE</code>, then nothing is returned. (This is the
+     *         default for <i>ReturnValues</i>.) </li> <li> <p><code>ALL_OLD</code> -
+     *         If <i>UpdateItem</i> overwrote an attribute name-value pair, then the
+     *         content of the old item is returned. </li> <li>
+     *         <p><code>UPDATED_OLD</code> - The old versions of only the updated
+     *         attributes are returned. </li> <li> <p><code>ALL_NEW</code> - All of
+     *         the attributes of the new version of the item are returned. </li> <li>
+     *         <p><code>UPDATED_NEW</code> - The new versions of only the updated
+     *         attributes are returned. </li> </ul>
      *
      * @see ReturnValue
      */
@@ -1111,15 +1112,16 @@ public class UpdateItemRequest extends AmazonWebServiceRequest  implements Seria
      * Use <i>ReturnValues</i> if you want to get the item attributes as they
      * appeared either before or after they were updated. For
      * <i>UpdateItem</i>, the valid values are: <ul> <li>
-     * <p><code>NONE</code>-(default) If <i>ReturnValues</i> is not
-     * specified, or if its value is <code>NONE</code>, then nothing is
-     * returned. </li> <li> <p><code>ALL_OLD</code>-If <i>UpdateItem</i>
-     * overwrote an attribute name-value pair, then the content of the old
-     * item is returned. </li> <li> <p><code>UPDATED_OLD</code>-The old
-     * versions of only the updated attributes are returned. </li> <li>
-     * <p><code>ALL_NEW</code>-All of the attributes of the new version of
-     * the item are returned. </li> <li> <p><code>UPDATED_NEW</code>-The new
-     * versions of only the updated attributes are returned. </li> </ul>
+     * <p><code>NONE</code> - If <i>ReturnValues</i> is not specified, or if
+     * its value is <code>NONE</code>, then nothing is returned. (This is the
+     * default for <i>ReturnValues</i>.) </li> <li> <p><code>ALL_OLD</code> -
+     * If <i>UpdateItem</i> overwrote an attribute name-value pair, then the
+     * content of the old item is returned. </li> <li>
+     * <p><code>UPDATED_OLD</code> - The old versions of only the updated
+     * attributes are returned. </li> <li> <p><code>ALL_NEW</code> - All of
+     * the attributes of the new version of the item are returned. </li> <li>
+     * <p><code>UPDATED_NEW</code> - The new versions of only the updated
+     * attributes are returned. </li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>NONE, ALL_OLD, UPDATED_OLD, ALL_NEW, UPDATED_NEW
@@ -1127,15 +1129,16 @@ public class UpdateItemRequest extends AmazonWebServiceRequest  implements Seria
      * @param returnValues Use <i>ReturnValues</i> if you want to get the item attributes as they
      *         appeared either before or after they were updated. For
      *         <i>UpdateItem</i>, the valid values are: <ul> <li>
-     *         <p><code>NONE</code>-(default) If <i>ReturnValues</i> is not
-     *         specified, or if its value is <code>NONE</code>, then nothing is
-     *         returned. </li> <li> <p><code>ALL_OLD</code>-If <i>UpdateItem</i>
-     *         overwrote an attribute name-value pair, then the content of the old
-     *         item is returned. </li> <li> <p><code>UPDATED_OLD</code>-The old
-     *         versions of only the updated attributes are returned. </li> <li>
-     *         <p><code>ALL_NEW</code>-All of the attributes of the new version of
-     *         the item are returned. </li> <li> <p><code>UPDATED_NEW</code>-The new
-     *         versions of only the updated attributes are returned. </li> </ul>
+     *         <p><code>NONE</code> - If <i>ReturnValues</i> is not specified, or if
+     *         its value is <code>NONE</code>, then nothing is returned. (This is the
+     *         default for <i>ReturnValues</i>.) </li> <li> <p><code>ALL_OLD</code> -
+     *         If <i>UpdateItem</i> overwrote an attribute name-value pair, then the
+     *         content of the old item is returned. </li> <li>
+     *         <p><code>UPDATED_OLD</code> - The old versions of only the updated
+     *         attributes are returned. </li> <li> <p><code>ALL_NEW</code> - All of
+     *         the attributes of the new version of the item are returned. </li> <li>
+     *         <p><code>UPDATED_NEW</code> - The new versions of only the updated
+     *         attributes are returned. </li> </ul>
      *
      * @see ReturnValue
      */
@@ -1147,15 +1150,16 @@ public class UpdateItemRequest extends AmazonWebServiceRequest  implements Seria
      * Use <i>ReturnValues</i> if you want to get the item attributes as they
      * appeared either before or after they were updated. For
      * <i>UpdateItem</i>, the valid values are: <ul> <li>
-     * <p><code>NONE</code>-(default) If <i>ReturnValues</i> is not
-     * specified, or if its value is <code>NONE</code>, then nothing is
-     * returned. </li> <li> <p><code>ALL_OLD</code>-If <i>UpdateItem</i>
-     * overwrote an attribute name-value pair, then the content of the old
-     * item is returned. </li> <li> <p><code>UPDATED_OLD</code>-The old
-     * versions of only the updated attributes are returned. </li> <li>
-     * <p><code>ALL_NEW</code>-All of the attributes of the new version of
-     * the item are returned. </li> <li> <p><code>UPDATED_NEW</code>-The new
-     * versions of only the updated attributes are returned. </li> </ul>
+     * <p><code>NONE</code> - If <i>ReturnValues</i> is not specified, or if
+     * its value is <code>NONE</code>, then nothing is returned. (This is the
+     * default for <i>ReturnValues</i>.) </li> <li> <p><code>ALL_OLD</code> -
+     * If <i>UpdateItem</i> overwrote an attribute name-value pair, then the
+     * content of the old item is returned. </li> <li>
+     * <p><code>UPDATED_OLD</code> - The old versions of only the updated
+     * attributes are returned. </li> <li> <p><code>ALL_NEW</code> - All of
+     * the attributes of the new version of the item are returned. </li> <li>
+     * <p><code>UPDATED_NEW</code> - The new versions of only the updated
+     * attributes are returned. </li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -1165,15 +1169,16 @@ public class UpdateItemRequest extends AmazonWebServiceRequest  implements Seria
      * @param returnValues Use <i>ReturnValues</i> if you want to get the item attributes as they
      *         appeared either before or after they were updated. For
      *         <i>UpdateItem</i>, the valid values are: <ul> <li>
-     *         <p><code>NONE</code>-(default) If <i>ReturnValues</i> is not
-     *         specified, or if its value is <code>NONE</code>, then nothing is
-     *         returned. </li> <li> <p><code>ALL_OLD</code>-If <i>UpdateItem</i>
-     *         overwrote an attribute name-value pair, then the content of the old
-     *         item is returned. </li> <li> <p><code>UPDATED_OLD</code>-The old
-     *         versions of only the updated attributes are returned. </li> <li>
-     *         <p><code>ALL_NEW</code>-All of the attributes of the new version of
-     *         the item are returned. </li> <li> <p><code>UPDATED_NEW</code>-The new
-     *         versions of only the updated attributes are returned. </li> </ul>
+     *         <p><code>NONE</code> - If <i>ReturnValues</i> is not specified, or if
+     *         its value is <code>NONE</code>, then nothing is returned. (This is the
+     *         default for <i>ReturnValues</i>.) </li> <li> <p><code>ALL_OLD</code> -
+     *         If <i>UpdateItem</i> overwrote an attribute name-value pair, then the
+     *         content of the old item is returned. </li> <li>
+     *         <p><code>UPDATED_OLD</code> - The old versions of only the updated
+     *         attributes are returned. </li> <li> <p><code>ALL_NEW</code> - All of
+     *         the attributes of the new version of the item are returned. </li> <li>
+     *         <p><code>UPDATED_NEW</code> - The new versions of only the updated
+     *         attributes are returned. </li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -1190,15 +1195,16 @@ public class UpdateItemRequest extends AmazonWebServiceRequest  implements Seria
      * Use <i>ReturnValues</i> if you want to get the item attributes as they
      * appeared either before or after they were updated. For
      * <i>UpdateItem</i>, the valid values are: <ul> <li>
-     * <p><code>NONE</code>-(default) If <i>ReturnValues</i> is not
-     * specified, or if its value is <code>NONE</code>, then nothing is
-     * returned. </li> <li> <p><code>ALL_OLD</code>-If <i>UpdateItem</i>
-     * overwrote an attribute name-value pair, then the content of the old
-     * item is returned. </li> <li> <p><code>UPDATED_OLD</code>-The old
-     * versions of only the updated attributes are returned. </li> <li>
-     * <p><code>ALL_NEW</code>-All of the attributes of the new version of
-     * the item are returned. </li> <li> <p><code>UPDATED_NEW</code>-The new
-     * versions of only the updated attributes are returned. </li> </ul>
+     * <p><code>NONE</code> - If <i>ReturnValues</i> is not specified, or if
+     * its value is <code>NONE</code>, then nothing is returned. (This is the
+     * default for <i>ReturnValues</i>.) </li> <li> <p><code>ALL_OLD</code> -
+     * If <i>UpdateItem</i> overwrote an attribute name-value pair, then the
+     * content of the old item is returned. </li> <li>
+     * <p><code>UPDATED_OLD</code> - The old versions of only the updated
+     * attributes are returned. </li> <li> <p><code>ALL_NEW</code> - All of
+     * the attributes of the new version of the item are returned. </li> <li>
+     * <p><code>UPDATED_NEW</code> - The new versions of only the updated
+     * attributes are returned. </li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>NONE, ALL_OLD, UPDATED_OLD, ALL_NEW, UPDATED_NEW
@@ -1206,15 +1212,16 @@ public class UpdateItemRequest extends AmazonWebServiceRequest  implements Seria
      * @param returnValues Use <i>ReturnValues</i> if you want to get the item attributes as they
      *         appeared either before or after they were updated. For
      *         <i>UpdateItem</i>, the valid values are: <ul> <li>
-     *         <p><code>NONE</code>-(default) If <i>ReturnValues</i> is not
-     *         specified, or if its value is <code>NONE</code>, then nothing is
-     *         returned. </li> <li> <p><code>ALL_OLD</code>-If <i>UpdateItem</i>
-     *         overwrote an attribute name-value pair, then the content of the old
-     *         item is returned. </li> <li> <p><code>UPDATED_OLD</code>-The old
-     *         versions of only the updated attributes are returned. </li> <li>
-     *         <p><code>ALL_NEW</code>-All of the attributes of the new version of
-     *         the item are returned. </li> <li> <p><code>UPDATED_NEW</code>-The new
-     *         versions of only the updated attributes are returned. </li> </ul>
+     *         <p><code>NONE</code> - If <i>ReturnValues</i> is not specified, or if
+     *         its value is <code>NONE</code>, then nothing is returned. (This is the
+     *         default for <i>ReturnValues</i>.) </li> <li> <p><code>ALL_OLD</code> -
+     *         If <i>UpdateItem</i> overwrote an attribute name-value pair, then the
+     *         content of the old item is returned. </li> <li>
+     *         <p><code>UPDATED_OLD</code> - The old versions of only the updated
+     *         attributes are returned. </li> <li> <p><code>ALL_NEW</code> - All of
+     *         the attributes of the new version of the item are returned. </li> <li>
+     *         <p><code>UPDATED_NEW</code> - The new versions of only the updated
+     *         attributes are returned. </li> </ul>
      *
      * @see ReturnValue
      */
@@ -1226,15 +1233,16 @@ public class UpdateItemRequest extends AmazonWebServiceRequest  implements Seria
      * Use <i>ReturnValues</i> if you want to get the item attributes as they
      * appeared either before or after they were updated. For
      * <i>UpdateItem</i>, the valid values are: <ul> <li>
-     * <p><code>NONE</code>-(default) If <i>ReturnValues</i> is not
-     * specified, or if its value is <code>NONE</code>, then nothing is
-     * returned. </li> <li> <p><code>ALL_OLD</code>-If <i>UpdateItem</i>
-     * overwrote an attribute name-value pair, then the content of the old
-     * item is returned. </li> <li> <p><code>UPDATED_OLD</code>-The old
-     * versions of only the updated attributes are returned. </li> <li>
-     * <p><code>ALL_NEW</code>-All of the attributes of the new version of
-     * the item are returned. </li> <li> <p><code>UPDATED_NEW</code>-The new
-     * versions of only the updated attributes are returned. </li> </ul>
+     * <p><code>NONE</code> - If <i>ReturnValues</i> is not specified, or if
+     * its value is <code>NONE</code>, then nothing is returned. (This is the
+     * default for <i>ReturnValues</i>.) </li> <li> <p><code>ALL_OLD</code> -
+     * If <i>UpdateItem</i> overwrote an attribute name-value pair, then the
+     * content of the old item is returned. </li> <li>
+     * <p><code>UPDATED_OLD</code> - The old versions of only the updated
+     * attributes are returned. </li> <li> <p><code>ALL_NEW</code> - All of
+     * the attributes of the new version of the item are returned. </li> <li>
+     * <p><code>UPDATED_NEW</code> - The new versions of only the updated
+     * attributes are returned. </li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -1244,15 +1252,16 @@ public class UpdateItemRequest extends AmazonWebServiceRequest  implements Seria
      * @param returnValues Use <i>ReturnValues</i> if you want to get the item attributes as they
      *         appeared either before or after they were updated. For
      *         <i>UpdateItem</i>, the valid values are: <ul> <li>
-     *         <p><code>NONE</code>-(default) If <i>ReturnValues</i> is not
-     *         specified, or if its value is <code>NONE</code>, then nothing is
-     *         returned. </li> <li> <p><code>ALL_OLD</code>-If <i>UpdateItem</i>
-     *         overwrote an attribute name-value pair, then the content of the old
-     *         item is returned. </li> <li> <p><code>UPDATED_OLD</code>-The old
-     *         versions of only the updated attributes are returned. </li> <li>
-     *         <p><code>ALL_NEW</code>-All of the attributes of the new version of
-     *         the item are returned. </li> <li> <p><code>UPDATED_NEW</code>-The new
-     *         versions of only the updated attributes are returned. </li> </ul>
+     *         <p><code>NONE</code> - If <i>ReturnValues</i> is not specified, or if
+     *         its value is <code>NONE</code>, then nothing is returned. (This is the
+     *         default for <i>ReturnValues</i>.) </li> <li> <p><code>ALL_OLD</code> -
+     *         If <i>UpdateItem</i> overwrote an attribute name-value pair, then the
+     *         content of the old item is returned. </li> <li>
+     *         <p><code>UPDATED_OLD</code> - The old versions of only the updated
+     *         attributes are returned. </li> <li> <p><code>ALL_NEW</code> - All of
+     *         the attributes of the new version of the item are returned. </li> <li>
+     *         <p><code>UPDATED_NEW</code> - The new versions of only the updated
+     *         attributes are returned. </li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -1265,18 +1274,16 @@ public class UpdateItemRequest extends AmazonWebServiceRequest  implements Seria
     }
     
     /**
-     * Determines whether to include consumed capacity information in the
-     * output. If this is set to <code>TOTAL</code>, then this information is
-     * shown in the output; otherwise, the consumed capacity information is
-     * not shown.
+     * If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
+     * the response; if set to <code>NONE</code> (the default),
+     * <i>ConsumedCapacity</i> is not included.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>TOTAL, NONE
      *
-     * @return Determines whether to include consumed capacity information in the
-     *         output. If this is set to <code>TOTAL</code>, then this information is
-     *         shown in the output; otherwise, the consumed capacity information is
-     *         not shown.
+     * @return If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
+     *         the response; if set to <code>NONE</code> (the default),
+     *         <i>ConsumedCapacity</i> is not included.
      *
      * @see ReturnConsumedCapacity
      */
@@ -1285,18 +1292,16 @@ public class UpdateItemRequest extends AmazonWebServiceRequest  implements Seria
     }
     
     /**
-     * Determines whether to include consumed capacity information in the
-     * output. If this is set to <code>TOTAL</code>, then this information is
-     * shown in the output; otherwise, the consumed capacity information is
-     * not shown.
+     * If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
+     * the response; if set to <code>NONE</code> (the default),
+     * <i>ConsumedCapacity</i> is not included.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>TOTAL, NONE
      *
-     * @param returnConsumedCapacity Determines whether to include consumed capacity information in the
-     *         output. If this is set to <code>TOTAL</code>, then this information is
-     *         shown in the output; otherwise, the consumed capacity information is
-     *         not shown.
+     * @param returnConsumedCapacity If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
+     *         the response; if set to <code>NONE</code> (the default),
+     *         <i>ConsumedCapacity</i> is not included.
      *
      * @see ReturnConsumedCapacity
      */
@@ -1305,20 +1310,18 @@ public class UpdateItemRequest extends AmazonWebServiceRequest  implements Seria
     }
     
     /**
-     * Determines whether to include consumed capacity information in the
-     * output. If this is set to <code>TOTAL</code>, then this information is
-     * shown in the output; otherwise, the consumed capacity information is
-     * not shown.
+     * If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
+     * the response; if set to <code>NONE</code> (the default),
+     * <i>ConsumedCapacity</i> is not included.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>TOTAL, NONE
      *
-     * @param returnConsumedCapacity Determines whether to include consumed capacity information in the
-     *         output. If this is set to <code>TOTAL</code>, then this information is
-     *         shown in the output; otherwise, the consumed capacity information is
-     *         not shown.
+     * @param returnConsumedCapacity If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
+     *         the response; if set to <code>NONE</code> (the default),
+     *         <i>ConsumedCapacity</i> is not included.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -1332,18 +1335,16 @@ public class UpdateItemRequest extends AmazonWebServiceRequest  implements Seria
     
     
     /**
-     * Determines whether to include consumed capacity information in the
-     * output. If this is set to <code>TOTAL</code>, then this information is
-     * shown in the output; otherwise, the consumed capacity information is
-     * not shown.
+     * If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
+     * the response; if set to <code>NONE</code> (the default),
+     * <i>ConsumedCapacity</i> is not included.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>TOTAL, NONE
      *
-     * @param returnConsumedCapacity Determines whether to include consumed capacity information in the
-     *         output. If this is set to <code>TOTAL</code>, then this information is
-     *         shown in the output; otherwise, the consumed capacity information is
-     *         not shown.
+     * @param returnConsumedCapacity If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
+     *         the response; if set to <code>NONE</code> (the default),
+     *         <i>ConsumedCapacity</i> is not included.
      *
      * @see ReturnConsumedCapacity
      */
@@ -1352,20 +1353,18 @@ public class UpdateItemRequest extends AmazonWebServiceRequest  implements Seria
     }
     
     /**
-     * Determines whether to include consumed capacity information in the
-     * output. If this is set to <code>TOTAL</code>, then this information is
-     * shown in the output; otherwise, the consumed capacity information is
-     * not shown.
+     * If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
+     * the response; if set to <code>NONE</code> (the default),
+     * <i>ConsumedCapacity</i> is not included.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>TOTAL, NONE
      *
-     * @param returnConsumedCapacity Determines whether to include consumed capacity information in the
-     *         output. If this is set to <code>TOTAL</code>, then this information is
-     *         shown in the output; otherwise, the consumed capacity information is
-     *         not shown.
+     * @param returnConsumedCapacity If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
+     *         the response; if set to <code>NONE</code> (the default),
+     *         <i>ConsumedCapacity</i> is not included.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -1378,20 +1377,18 @@ public class UpdateItemRequest extends AmazonWebServiceRequest  implements Seria
     }
     
     /**
-     * Indicates whether to return statistics about item collections, if any,
-     * that were modified during the operation. The default for
-     * <i>ReturnItemCollectionMetrics</i> is <code>NONE</code>, meaning that
-     * no statistics will be returned. To obtain the statistics, set
-     * <i>ReturnItemCollectionMetrics</i> to <code>SIZE</code>.
+     * If set to <code>SIZE</code>, statistics about item collections, if
+     * any, that were modified during the operation are returned in the
+     * response. If set to <code>NONE</code> (the default), no statistics are
+     * returned..
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>SIZE, NONE
      *
-     * @return Indicates whether to return statistics about item collections, if any,
-     *         that were modified during the operation. The default for
-     *         <i>ReturnItemCollectionMetrics</i> is <code>NONE</code>, meaning that
-     *         no statistics will be returned. To obtain the statistics, set
-     *         <i>ReturnItemCollectionMetrics</i> to <code>SIZE</code>.
+     * @return If set to <code>SIZE</code>, statistics about item collections, if
+     *         any, that were modified during the operation are returned in the
+     *         response. If set to <code>NONE</code> (the default), no statistics are
+     *         returned..
      *
      * @see ReturnItemCollectionMetrics
      */
@@ -1400,20 +1397,18 @@ public class UpdateItemRequest extends AmazonWebServiceRequest  implements Seria
     }
     
     /**
-     * Indicates whether to return statistics about item collections, if any,
-     * that were modified during the operation. The default for
-     * <i>ReturnItemCollectionMetrics</i> is <code>NONE</code>, meaning that
-     * no statistics will be returned. To obtain the statistics, set
-     * <i>ReturnItemCollectionMetrics</i> to <code>SIZE</code>.
+     * If set to <code>SIZE</code>, statistics about item collections, if
+     * any, that were modified during the operation are returned in the
+     * response. If set to <code>NONE</code> (the default), no statistics are
+     * returned..
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>SIZE, NONE
      *
-     * @param returnItemCollectionMetrics Indicates whether to return statistics about item collections, if any,
-     *         that were modified during the operation. The default for
-     *         <i>ReturnItemCollectionMetrics</i> is <code>NONE</code>, meaning that
-     *         no statistics will be returned. To obtain the statistics, set
-     *         <i>ReturnItemCollectionMetrics</i> to <code>SIZE</code>.
+     * @param returnItemCollectionMetrics If set to <code>SIZE</code>, statistics about item collections, if
+     *         any, that were modified during the operation are returned in the
+     *         response. If set to <code>NONE</code> (the default), no statistics are
+     *         returned..
      *
      * @see ReturnItemCollectionMetrics
      */
@@ -1422,22 +1417,20 @@ public class UpdateItemRequest extends AmazonWebServiceRequest  implements Seria
     }
     
     /**
-     * Indicates whether to return statistics about item collections, if any,
-     * that were modified during the operation. The default for
-     * <i>ReturnItemCollectionMetrics</i> is <code>NONE</code>, meaning that
-     * no statistics will be returned. To obtain the statistics, set
-     * <i>ReturnItemCollectionMetrics</i> to <code>SIZE</code>.
+     * If set to <code>SIZE</code>, statistics about item collections, if
+     * any, that were modified during the operation are returned in the
+     * response. If set to <code>NONE</code> (the default), no statistics are
+     * returned..
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>SIZE, NONE
      *
-     * @param returnItemCollectionMetrics Indicates whether to return statistics about item collections, if any,
-     *         that were modified during the operation. The default for
-     *         <i>ReturnItemCollectionMetrics</i> is <code>NONE</code>, meaning that
-     *         no statistics will be returned. To obtain the statistics, set
-     *         <i>ReturnItemCollectionMetrics</i> to <code>SIZE</code>.
+     * @param returnItemCollectionMetrics If set to <code>SIZE</code>, statistics about item collections, if
+     *         any, that were modified during the operation are returned in the
+     *         response. If set to <code>NONE</code> (the default), no statistics are
+     *         returned..
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -1451,20 +1444,18 @@ public class UpdateItemRequest extends AmazonWebServiceRequest  implements Seria
     
     
     /**
-     * Indicates whether to return statistics about item collections, if any,
-     * that were modified during the operation. The default for
-     * <i>ReturnItemCollectionMetrics</i> is <code>NONE</code>, meaning that
-     * no statistics will be returned. To obtain the statistics, set
-     * <i>ReturnItemCollectionMetrics</i> to <code>SIZE</code>.
+     * If set to <code>SIZE</code>, statistics about item collections, if
+     * any, that were modified during the operation are returned in the
+     * response. If set to <code>NONE</code> (the default), no statistics are
+     * returned..
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>SIZE, NONE
      *
-     * @param returnItemCollectionMetrics Indicates whether to return statistics about item collections, if any,
-     *         that were modified during the operation. The default for
-     *         <i>ReturnItemCollectionMetrics</i> is <code>NONE</code>, meaning that
-     *         no statistics will be returned. To obtain the statistics, set
-     *         <i>ReturnItemCollectionMetrics</i> to <code>SIZE</code>.
+     * @param returnItemCollectionMetrics If set to <code>SIZE</code>, statistics about item collections, if
+     *         any, that were modified during the operation are returned in the
+     *         response. If set to <code>NONE</code> (the default), no statistics are
+     *         returned..
      *
      * @see ReturnItemCollectionMetrics
      */
@@ -1473,22 +1464,20 @@ public class UpdateItemRequest extends AmazonWebServiceRequest  implements Seria
     }
     
     /**
-     * Indicates whether to return statistics about item collections, if any,
-     * that were modified during the operation. The default for
-     * <i>ReturnItemCollectionMetrics</i> is <code>NONE</code>, meaning that
-     * no statistics will be returned. To obtain the statistics, set
-     * <i>ReturnItemCollectionMetrics</i> to <code>SIZE</code>.
+     * If set to <code>SIZE</code>, statistics about item collections, if
+     * any, that were modified during the operation are returned in the
+     * response. If set to <code>NONE</code> (the default), no statistics are
+     * returned..
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>SIZE, NONE
      *
-     * @param returnItemCollectionMetrics Indicates whether to return statistics about item collections, if any,
-     *         that were modified during the operation. The default for
-     *         <i>ReturnItemCollectionMetrics</i> is <code>NONE</code>, meaning that
-     *         no statistics will be returned. To obtain the statistics, set
-     *         <i>ReturnItemCollectionMetrics</i> to <code>SIZE</code>.
+     * @param returnItemCollectionMetrics If set to <code>SIZE</code>, statistics about item collections, if
+     *         any, that were modified during the operation are returned in the
+     *         response. If set to <code>NONE</code> (the default), no statistics are
+     *         returned..
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

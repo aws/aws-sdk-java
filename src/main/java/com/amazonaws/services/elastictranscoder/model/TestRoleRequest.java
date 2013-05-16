@@ -62,6 +62,9 @@ public class TestRoleRequest extends AmazonWebServiceRequest  implements Seriali
     /**
      * The ARNs of one or more Amazon Simple Notification Service (Amazon
      * SNS) topics that you want the action to send a test notification to.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 30<br/>
      */
     private java.util.List<String> topics;
 
@@ -215,6 +218,9 @@ public class TestRoleRequest extends AmazonWebServiceRequest  implements Seriali
     /**
      * The ARNs of one or more Amazon Simple Notification Service (Amazon
      * SNS) topics that you want the action to send a test notification to.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 30<br/>
      *
      * @return The ARNs of one or more Amazon Simple Notification Service (Amazon
      *         SNS) topics that you want the action to send a test notification to.
@@ -230,6 +236,9 @@ public class TestRoleRequest extends AmazonWebServiceRequest  implements Seriali
     /**
      * The ARNs of one or more Amazon Simple Notification Service (Amazon
      * SNS) topics that you want the action to send a test notification to.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 30<br/>
      *
      * @param topics The ARNs of one or more Amazon Simple Notification Service (Amazon
      *         SNS) topics that you want the action to send a test notification to.
@@ -250,6 +259,9 @@ public class TestRoleRequest extends AmazonWebServiceRequest  implements Seriali
      * SNS) topics that you want the action to send a test notification to.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 30<br/>
      *
      * @param topics The ARNs of one or more Amazon Simple Notification Service (Amazon
      *         SNS) topics that you want the action to send a test notification to.
@@ -270,6 +282,9 @@ public class TestRoleRequest extends AmazonWebServiceRequest  implements Seriali
      * SNS) topics that you want the action to send a test notification to.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Length: </b>0 - 30<br/>
      *
      * @param topics The ARNs of one or more Amazon Simple Notification Service (Amazon
      *         SNS) topics that you want the action to send a test notification to.

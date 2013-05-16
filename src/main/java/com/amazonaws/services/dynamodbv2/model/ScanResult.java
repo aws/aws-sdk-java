@@ -40,7 +40,7 @@ public class ScanResult  implements Serializable  {
      * <i>Count</i> results indicates an inefficient <i>Scan</i> operation.
      * For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count
-     * and ScannedCount</a> of the <i>Amazon DynamoDB Developer Guide</i>.
+     * and ScannedCount</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
     private Integer scannedCount;
 
@@ -49,7 +49,9 @@ public class ScanResult  implements Serializable  {
      * the previous result set. Use this value to start a new operation,
      * excluding this value in the new request. <p><i>LastEvaluatedKey</i> is
      * null when the entire result set is complete (in other words, when the
-     * operation processed the "last page" of results).
+     * operation processed the "last page" of results). <p>If there are no
+     * remaining table or segment items to be scanned,
+     * <i>LastEvaluatedKey</i> is returned as null.
      */
     private java.util.Map<String,AttributeValue> lastEvaluatedKey;
 
@@ -59,7 +61,7 @@ public class ScanResult  implements Serializable  {
      * returned if it was asked for in the request. For more information, see
      * <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
-     * Throughput</a> of the <i>Amazon DynamoDB Developer Guide</i>.
+     * Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
     private ConsumedCapacity consumedCapacity;
 
@@ -185,14 +187,14 @@ public class ScanResult  implements Serializable  {
      * <i>Count</i> results indicates an inefficient <i>Scan</i> operation.
      * For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count
-     * and ScannedCount</a> of the <i>Amazon DynamoDB Developer Guide</i>.
+     * and ScannedCount</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      *
      * @return The number of items in the complete scan, before any filters are
      *         applied. A high <i>ScannedCount</i> value with few, or no,
      *         <i>Count</i> results indicates an inefficient <i>Scan</i> operation.
      *         For more information, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count
-     *         and ScannedCount</a> of the <i>Amazon DynamoDB Developer Guide</i>.
+     *         and ScannedCount</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
     public Integer getScannedCount() {
         return scannedCount;
@@ -204,14 +206,14 @@ public class ScanResult  implements Serializable  {
      * <i>Count</i> results indicates an inefficient <i>Scan</i> operation.
      * For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count
-     * and ScannedCount</a> of the <i>Amazon DynamoDB Developer Guide</i>.
+     * and ScannedCount</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      *
      * @param scannedCount The number of items in the complete scan, before any filters are
      *         applied. A high <i>ScannedCount</i> value with few, or no,
      *         <i>Count</i> results indicates an inefficient <i>Scan</i> operation.
      *         For more information, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count
-     *         and ScannedCount</a> of the <i>Amazon DynamoDB Developer Guide</i>.
+     *         and ScannedCount</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
     public void setScannedCount(Integer scannedCount) {
         this.scannedCount = scannedCount;
@@ -223,7 +225,7 @@ public class ScanResult  implements Serializable  {
      * <i>Count</i> results indicates an inefficient <i>Scan</i> operation.
      * For more information, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count
-     * and ScannedCount</a> of the <i>Amazon DynamoDB Developer Guide</i>.
+     * and ScannedCount</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -232,7 +234,7 @@ public class ScanResult  implements Serializable  {
      *         <i>Count</i> results indicates an inefficient <i>Scan</i> operation.
      *         For more information, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html#Count">Count
-     *         and ScannedCount</a> of the <i>Amazon DynamoDB Developer Guide</i>.
+     *         and ScannedCount</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -248,13 +250,17 @@ public class ScanResult  implements Serializable  {
      * the previous result set. Use this value to start a new operation,
      * excluding this value in the new request. <p><i>LastEvaluatedKey</i> is
      * null when the entire result set is complete (in other words, when the
-     * operation processed the "last page" of results).
+     * operation processed the "last page" of results). <p>If there are no
+     * remaining table or segment items to be scanned,
+     * <i>LastEvaluatedKey</i> is returned as null.
      *
      * @return The primary key of the item where the operation stopped, inclusive of
      *         the previous result set. Use this value to start a new operation,
      *         excluding this value in the new request. <p><i>LastEvaluatedKey</i> is
      *         null when the entire result set is complete (in other words, when the
-     *         operation processed the "last page" of results).
+     *         operation processed the "last page" of results). <p>If there are no
+     *         remaining table or segment items to be scanned,
+     *         <i>LastEvaluatedKey</i> is returned as null.
      */
     public java.util.Map<String,AttributeValue> getLastEvaluatedKey() {
         
@@ -267,13 +273,17 @@ public class ScanResult  implements Serializable  {
      * the previous result set. Use this value to start a new operation,
      * excluding this value in the new request. <p><i>LastEvaluatedKey</i> is
      * null when the entire result set is complete (in other words, when the
-     * operation processed the "last page" of results).
+     * operation processed the "last page" of results). <p>If there are no
+     * remaining table or segment items to be scanned,
+     * <i>LastEvaluatedKey</i> is returned as null.
      *
      * @param lastEvaluatedKey The primary key of the item where the operation stopped, inclusive of
      *         the previous result set. Use this value to start a new operation,
      *         excluding this value in the new request. <p><i>LastEvaluatedKey</i> is
      *         null when the entire result set is complete (in other words, when the
-     *         operation processed the "last page" of results).
+     *         operation processed the "last page" of results). <p>If there are no
+     *         remaining table or segment items to be scanned,
+     *         <i>LastEvaluatedKey</i> is returned as null.
      */
     public void setLastEvaluatedKey(java.util.Map<String,AttributeValue> lastEvaluatedKey) {
         this.lastEvaluatedKey = lastEvaluatedKey;
@@ -284,7 +294,9 @@ public class ScanResult  implements Serializable  {
      * the previous result set. Use this value to start a new operation,
      * excluding this value in the new request. <p><i>LastEvaluatedKey</i> is
      * null when the entire result set is complete (in other words, when the
-     * operation processed the "last page" of results).
+     * operation processed the "last page" of results). <p>If there are no
+     * remaining table or segment items to be scanned,
+     * <i>LastEvaluatedKey</i> is returned as null.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -292,7 +304,9 @@ public class ScanResult  implements Serializable  {
      *         the previous result set. Use this value to start a new operation,
      *         excluding this value in the new request. <p><i>LastEvaluatedKey</i> is
      *         null when the entire result set is complete (in other words, when the
-     *         operation processed the "last page" of results).
+     *         operation processed the "last page" of results). <p>If there are no
+     *         remaining table or segment items to be scanned,
+     *         <i>LastEvaluatedKey</i> is returned as null.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -308,14 +322,14 @@ public class ScanResult  implements Serializable  {
      * returned if it was asked for in the request. For more information, see
      * <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
-     * Throughput</a> of the <i>Amazon DynamoDB Developer Guide</i>.
+     * Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      *
      * @return The table name that consumed provisioned throughput, and the number of
      *         capacity units consumed by it. <i>ConsumedCapacity</i> is only
      *         returned if it was asked for in the request. For more information, see
      *         <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
-     *         Throughput</a> of the <i>Amazon DynamoDB Developer Guide</i>.
+     *         Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
     public ConsumedCapacity getConsumedCapacity() {
         return consumedCapacity;
@@ -327,14 +341,14 @@ public class ScanResult  implements Serializable  {
      * returned if it was asked for in the request. For more information, see
      * <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
-     * Throughput</a> of the <i>Amazon DynamoDB Developer Guide</i>.
+     * Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      *
      * @param consumedCapacity The table name that consumed provisioned throughput, and the number of
      *         capacity units consumed by it. <i>ConsumedCapacity</i> is only
      *         returned if it was asked for in the request. For more information, see
      *         <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
-     *         Throughput</a> of the <i>Amazon DynamoDB Developer Guide</i>.
+     *         Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
     public void setConsumedCapacity(ConsumedCapacity consumedCapacity) {
         this.consumedCapacity = consumedCapacity;
@@ -346,7 +360,7 @@ public class ScanResult  implements Serializable  {
      * returned if it was asked for in the request. For more information, see
      * <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
-     * Throughput</a> of the <i>Amazon DynamoDB Developer Guide</i>.
+     * Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -355,7 +369,7 @@ public class ScanResult  implements Serializable  {
      *         returned if it was asked for in the request. For more information, see
      *         <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
-     *         Throughput</a> of the <i>Amazon DynamoDB Developer Guide</i>.
+     *         Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

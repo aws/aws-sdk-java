@@ -79,9 +79,9 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      * <code>SPECIFIC_ATTRIBUTES</code> : Returns only the attributes listed
      * in <i>AttributesToGet</i>. This is equivalent to specifying
      * <i>AttributesToGet</i> without specifying any value for <i>Select</i>.
-     * <p>If you are querying an index and only request attributes that are
-     * projected into that index, the operation will consult the index and
-     * bypass the table. If any of the requested attributes are not projected
+     * <p>If you are querying an index and request only attributes that are
+     * projected into that index, the operation will read only the index and
+     * not the table. If any of the requested attributes are not projected
      * into the index, Amazon DynamoDB will need to fetch each matching item
      * from the table. This extra fetching incurs additional throughput cost
      * and latency. </li> </ul> <p>When neither <i>Select</i> nor
@@ -103,9 +103,9 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      * The names of one or more attributes to retrieve. If no attribute names
      * are specified, then all attributes will be returned. If any of the
      * requested attributes are not found, they will not appear in the
-     * result. <p>If you are querying an index and only request attributes
-     * that are projected into that index, the operation will consult the
-     * index and bypass the table. If any of the requested attributes are not
+     * result. <p>If you are querying an index and request only attributes
+     * that are projected into that index, the operation will read only the
+     * index and not the table. If any of the requested attributes are not
      * projected into the index, Amazon DynamoDB will need to fetch each
      * matching item from the table. This extra fetching incurs additional
      * throughput cost and latency. <p>You cannot use both
@@ -132,7 +132,7 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      * <i>LastEvaluatedKey</i> to apply in a subsequent operation to continue
      * the operation. For more information see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
-     * and Scan</a> of the <i>Amazon DynamoDB Developer Guide</i>.
+     * and Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - <br/>
@@ -158,7 +158,7 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      * other words, all of the conditions must be met in order for an item to
      * appear in the results results. <p>Each <i>KeyConditions</i> element
      * consists of an attribute name to compare, along with the following:
-     * <ul> <li><p><i>AttributeValueList</i>-One or more values to evaluate
+     * <ul> <li><p><i>AttributeValueList</i> - One or more values to evaluate
      * against the supplied attribute. This list contains exactly one value,
      * except for a <code>BETWEEN</code> or <code>IN</code> comparison, in
      * which case the list contains two values. <note> <p>For type Number,
@@ -170,13 +170,13 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      * <p>For Binary, Amazon DynamoDB treats each byte of the binary data as
      * unsigned when it compares binary values, for example when evaluating
-     * query expressions. </note> </li> <li><p><i>ComparisonOperator</i>-A
+     * query expressions. </note> </li> <li><p><i>ComparisonOperator</i> - A
      * comparator for evaluating attributes. For example, equals, greater
      * than, less than, etc. <p>Valid comparison operators for Query:
      * <p><code>EQ | LE | LT | GE | GT | BEGINS_WITH | BETWEEN</code> <p>For
      * information on specifying data types in JSON, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
-     * Data Format</a> of the <i>Amazon DynamoDB Developer Guide</i>. <p>The
+     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>. <p>The
      * following are descriptions of each comparison operator. <ul> <li>
      * <p><code>EQ</code> : Equal. <p><i>AttributeValueList</i> can contain
      * only one <i>AttributeValue</i> of type String, Number, or Binary (not
@@ -244,22 +244,17 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
     private Boolean scanIndexForward;
 
     /**
-     * The primary key of the item from which to continue an earlier
-     * operation. An earlier operation might provide this value as the
-     * <i>LastEvaluatedKey</i> if that operation was interrupted before
-     * completion; either because of the result set size or because of the
-     * setting for <i>Limit</i>. The <i>LastEvaluatedKey</i> can be passed
-     * back in a new request to continue the operation from that point.
-     * <p>The data type for <i>ExclusiveStartKey</i> must be String, Number
-     * or Binary. No set data types are allowed.
+     * The primary key of the first item that this operation will evaluate.
+     * Use the value that was returned for <i>LastEvaluatedKey</i> in the
+     * previous operation. <p>The data type for <i>ExclusiveStartKey</i> must
+     * be String, Number or Binary. No set data types are allowed.
      */
     private java.util.Map<String,AttributeValue> exclusiveStartKey;
 
     /**
-     * Determines whether to include consumed capacity information in the
-     * output. If this is set to <code>TOTAL</code>, then this information is
-     * shown in the output; otherwise, the consumed capacity information is
-     * not shown.
+     * If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
+     * the response; if set to <code>NONE</code> (the default),
+     * <i>ConsumedCapacity</i> is not included.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>TOTAL, NONE
@@ -378,9 +373,9 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      * <code>SPECIFIC_ATTRIBUTES</code> : Returns only the attributes listed
      * in <i>AttributesToGet</i>. This is equivalent to specifying
      * <i>AttributesToGet</i> without specifying any value for <i>Select</i>.
-     * <p>If you are querying an index and only request attributes that are
-     * projected into that index, the operation will consult the index and
-     * bypass the table. If any of the requested attributes are not projected
+     * <p>If you are querying an index and request only attributes that are
+     * projected into that index, the operation will read only the index and
+     * not the table. If any of the requested attributes are not projected
      * into the index, Amazon DynamoDB will need to fetch each matching item
      * from the table. This extra fetching incurs additional throughput cost
      * and latency. </li> </ul> <p>When neither <i>Select</i> nor
@@ -415,9 +410,9 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      *         <code>SPECIFIC_ATTRIBUTES</code> : Returns only the attributes listed
      *         in <i>AttributesToGet</i>. This is equivalent to specifying
      *         <i>AttributesToGet</i> without specifying any value for <i>Select</i>.
-     *         <p>If you are querying an index and only request attributes that are
-     *         projected into that index, the operation will consult the index and
-     *         bypass the table. If any of the requested attributes are not projected
+     *         <p>If you are querying an index and request only attributes that are
+     *         projected into that index, the operation will read only the index and
+     *         not the table. If any of the requested attributes are not projected
      *         into the index, Amazon DynamoDB will need to fetch each matching item
      *         from the table. This extra fetching incurs additional throughput cost
      *         and latency. </li> </ul> <p>When neither <i>Select</i> nor
@@ -456,9 +451,9 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      * <code>SPECIFIC_ATTRIBUTES</code> : Returns only the attributes listed
      * in <i>AttributesToGet</i>. This is equivalent to specifying
      * <i>AttributesToGet</i> without specifying any value for <i>Select</i>.
-     * <p>If you are querying an index and only request attributes that are
-     * projected into that index, the operation will consult the index and
-     * bypass the table. If any of the requested attributes are not projected
+     * <p>If you are querying an index and request only attributes that are
+     * projected into that index, the operation will read only the index and
+     * not the table. If any of the requested attributes are not projected
      * into the index, Amazon DynamoDB will need to fetch each matching item
      * from the table. This extra fetching incurs additional throughput cost
      * and latency. </li> </ul> <p>When neither <i>Select</i> nor
@@ -493,9 +488,9 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      *         <code>SPECIFIC_ATTRIBUTES</code> : Returns only the attributes listed
      *         in <i>AttributesToGet</i>. This is equivalent to specifying
      *         <i>AttributesToGet</i> without specifying any value for <i>Select</i>.
-     *         <p>If you are querying an index and only request attributes that are
-     *         projected into that index, the operation will consult the index and
-     *         bypass the table. If any of the requested attributes are not projected
+     *         <p>If you are querying an index and request only attributes that are
+     *         projected into that index, the operation will read only the index and
+     *         not the table. If any of the requested attributes are not projected
      *         into the index, Amazon DynamoDB will need to fetch each matching item
      *         from the table. This extra fetching incurs additional throughput cost
      *         and latency. </li> </ul> <p>When neither <i>Select</i> nor
@@ -534,9 +529,9 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      * <code>SPECIFIC_ATTRIBUTES</code> : Returns only the attributes listed
      * in <i>AttributesToGet</i>. This is equivalent to specifying
      * <i>AttributesToGet</i> without specifying any value for <i>Select</i>.
-     * <p>If you are querying an index and only request attributes that are
-     * projected into that index, the operation will consult the index and
-     * bypass the table. If any of the requested attributes are not projected
+     * <p>If you are querying an index and request only attributes that are
+     * projected into that index, the operation will read only the index and
+     * not the table. If any of the requested attributes are not projected
      * into the index, Amazon DynamoDB will need to fetch each matching item
      * from the table. This extra fetching incurs additional throughput cost
      * and latency. </li> </ul> <p>When neither <i>Select</i> nor
@@ -573,9 +568,9 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      *         <code>SPECIFIC_ATTRIBUTES</code> : Returns only the attributes listed
      *         in <i>AttributesToGet</i>. This is equivalent to specifying
      *         <i>AttributesToGet</i> without specifying any value for <i>Select</i>.
-     *         <p>If you are querying an index and only request attributes that are
-     *         projected into that index, the operation will consult the index and
-     *         bypass the table. If any of the requested attributes are not projected
+     *         <p>If you are querying an index and request only attributes that are
+     *         projected into that index, the operation will read only the index and
+     *         not the table. If any of the requested attributes are not projected
      *         into the index, Amazon DynamoDB will need to fetch each matching item
      *         from the table. This extra fetching incurs additional throughput cost
      *         and latency. </li> </ul> <p>When neither <i>Select</i> nor
@@ -619,9 +614,9 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      * <code>SPECIFIC_ATTRIBUTES</code> : Returns only the attributes listed
      * in <i>AttributesToGet</i>. This is equivalent to specifying
      * <i>AttributesToGet</i> without specifying any value for <i>Select</i>.
-     * <p>If you are querying an index and only request attributes that are
-     * projected into that index, the operation will consult the index and
-     * bypass the table. If any of the requested attributes are not projected
+     * <p>If you are querying an index and request only attributes that are
+     * projected into that index, the operation will read only the index and
+     * not the table. If any of the requested attributes are not projected
      * into the index, Amazon DynamoDB will need to fetch each matching item
      * from the table. This extra fetching incurs additional throughput cost
      * and latency. </li> </ul> <p>When neither <i>Select</i> nor
@@ -656,9 +651,9 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      *         <code>SPECIFIC_ATTRIBUTES</code> : Returns only the attributes listed
      *         in <i>AttributesToGet</i>. This is equivalent to specifying
      *         <i>AttributesToGet</i> without specifying any value for <i>Select</i>.
-     *         <p>If you are querying an index and only request attributes that are
-     *         projected into that index, the operation will consult the index and
-     *         bypass the table. If any of the requested attributes are not projected
+     *         <p>If you are querying an index and request only attributes that are
+     *         projected into that index, the operation will read only the index and
+     *         not the table. If any of the requested attributes are not projected
      *         into the index, Amazon DynamoDB will need to fetch each matching item
      *         from the table. This extra fetching incurs additional throughput cost
      *         and latency. </li> </ul> <p>When neither <i>Select</i> nor
@@ -697,9 +692,9 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      * <code>SPECIFIC_ATTRIBUTES</code> : Returns only the attributes listed
      * in <i>AttributesToGet</i>. This is equivalent to specifying
      * <i>AttributesToGet</i> without specifying any value for <i>Select</i>.
-     * <p>If you are querying an index and only request attributes that are
-     * projected into that index, the operation will consult the index and
-     * bypass the table. If any of the requested attributes are not projected
+     * <p>If you are querying an index and request only attributes that are
+     * projected into that index, the operation will read only the index and
+     * not the table. If any of the requested attributes are not projected
      * into the index, Amazon DynamoDB will need to fetch each matching item
      * from the table. This extra fetching incurs additional throughput cost
      * and latency. </li> </ul> <p>When neither <i>Select</i> nor
@@ -736,9 +731,9 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      *         <code>SPECIFIC_ATTRIBUTES</code> : Returns only the attributes listed
      *         in <i>AttributesToGet</i>. This is equivalent to specifying
      *         <i>AttributesToGet</i> without specifying any value for <i>Select</i>.
-     *         <p>If you are querying an index and only request attributes that are
-     *         projected into that index, the operation will consult the index and
-     *         bypass the table. If any of the requested attributes are not projected
+     *         <p>If you are querying an index and request only attributes that are
+     *         projected into that index, the operation will read only the index and
+     *         not the table. If any of the requested attributes are not projected
      *         into the index, Amazon DynamoDB will need to fetch each matching item
      *         from the table. This extra fetching incurs additional throughput cost
      *         and latency. </li> </ul> <p>When neither <i>Select</i> nor
@@ -765,9 +760,9 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      * The names of one or more attributes to retrieve. If no attribute names
      * are specified, then all attributes will be returned. If any of the
      * requested attributes are not found, they will not appear in the
-     * result. <p>If you are querying an index and only request attributes
-     * that are projected into that index, the operation will consult the
-     * index and bypass the table. If any of the requested attributes are not
+     * result. <p>If you are querying an index and request only attributes
+     * that are projected into that index, the operation will read only the
+     * index and not the table. If any of the requested attributes are not
      * projected into the index, Amazon DynamoDB will need to fetch each
      * matching item from the table. This extra fetching incurs additional
      * throughput cost and latency. <p>You cannot use both
@@ -783,9 +778,9 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      * @return The names of one or more attributes to retrieve. If no attribute names
      *         are specified, then all attributes will be returned. If any of the
      *         requested attributes are not found, they will not appear in the
-     *         result. <p>If you are querying an index and only request attributes
-     *         that are projected into that index, the operation will consult the
-     *         index and bypass the table. If any of the requested attributes are not
+     *         result. <p>If you are querying an index and request only attributes
+     *         that are projected into that index, the operation will read only the
+     *         index and not the table. If any of the requested attributes are not
      *         projected into the index, Amazon DynamoDB will need to fetch each
      *         matching item from the table. This extra fetching incurs additional
      *         throughput cost and latency. <p>You cannot use both
@@ -804,9 +799,9 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      * The names of one or more attributes to retrieve. If no attribute names
      * are specified, then all attributes will be returned. If any of the
      * requested attributes are not found, they will not appear in the
-     * result. <p>If you are querying an index and only request attributes
-     * that are projected into that index, the operation will consult the
-     * index and bypass the table. If any of the requested attributes are not
+     * result. <p>If you are querying an index and request only attributes
+     * that are projected into that index, the operation will read only the
+     * index and not the table. If any of the requested attributes are not
      * projected into the index, Amazon DynamoDB will need to fetch each
      * matching item from the table. This extra fetching incurs additional
      * throughput cost and latency. <p>You cannot use both
@@ -822,9 +817,9 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      * @param attributesToGet The names of one or more attributes to retrieve. If no attribute names
      *         are specified, then all attributes will be returned. If any of the
      *         requested attributes are not found, they will not appear in the
-     *         result. <p>If you are querying an index and only request attributes
-     *         that are projected into that index, the operation will consult the
-     *         index and bypass the table. If any of the requested attributes are not
+     *         result. <p>If you are querying an index and request only attributes
+     *         that are projected into that index, the operation will read only the
+     *         index and not the table. If any of the requested attributes are not
      *         projected into the index, Amazon DynamoDB will need to fetch each
      *         matching item from the table. This extra fetching incurs additional
      *         throughput cost and latency. <p>You cannot use both
@@ -849,9 +844,9 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      * The names of one or more attributes to retrieve. If no attribute names
      * are specified, then all attributes will be returned. If any of the
      * requested attributes are not found, they will not appear in the
-     * result. <p>If you are querying an index and only request attributes
-     * that are projected into that index, the operation will consult the
-     * index and bypass the table. If any of the requested attributes are not
+     * result. <p>If you are querying an index and request only attributes
+     * that are projected into that index, the operation will read only the
+     * index and not the table. If any of the requested attributes are not
      * projected into the index, Amazon DynamoDB will need to fetch each
      * matching item from the table. This extra fetching incurs additional
      * throughput cost and latency. <p>You cannot use both
@@ -869,9 +864,9 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      * @param attributesToGet The names of one or more attributes to retrieve. If no attribute names
      *         are specified, then all attributes will be returned. If any of the
      *         requested attributes are not found, they will not appear in the
-     *         result. <p>If you are querying an index and only request attributes
-     *         that are projected into that index, the operation will consult the
-     *         index and bypass the table. If any of the requested attributes are not
+     *         result. <p>If you are querying an index and request only attributes
+     *         that are projected into that index, the operation will read only the
+     *         index and not the table. If any of the requested attributes are not
      *         projected into the index, Amazon DynamoDB will need to fetch each
      *         matching item from the table. This extra fetching incurs additional
      *         throughput cost and latency. <p>You cannot use both
@@ -896,9 +891,9 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      * The names of one or more attributes to retrieve. If no attribute names
      * are specified, then all attributes will be returned. If any of the
      * requested attributes are not found, they will not appear in the
-     * result. <p>If you are querying an index and only request attributes
-     * that are projected into that index, the operation will consult the
-     * index and bypass the table. If any of the requested attributes are not
+     * result. <p>If you are querying an index and request only attributes
+     * that are projected into that index, the operation will read only the
+     * index and not the table. If any of the requested attributes are not
      * projected into the index, Amazon DynamoDB will need to fetch each
      * matching item from the table. This extra fetching incurs additional
      * throughput cost and latency. <p>You cannot use both
@@ -916,9 +911,9 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      * @param attributesToGet The names of one or more attributes to retrieve. If no attribute names
      *         are specified, then all attributes will be returned. If any of the
      *         requested attributes are not found, they will not appear in the
-     *         result. <p>If you are querying an index and only request attributes
-     *         that are projected into that index, the operation will consult the
-     *         index and bypass the table. If any of the requested attributes are not
+     *         result. <p>If you are querying an index and request only attributes
+     *         that are projected into that index, the operation will read only the
+     *         index and not the table. If any of the requested attributes are not
      *         projected into the index, Amazon DynamoDB will need to fetch each
      *         matching item from the table. This extra fetching incurs additional
      *         throughput cost and latency. <p>You cannot use both
@@ -955,7 +950,7 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      * <i>LastEvaluatedKey</i> to apply in a subsequent operation to continue
      * the operation. For more information see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
-     * and Scan</a> of the <i>Amazon DynamoDB Developer Guide</i>.
+     * and Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - <br/>
@@ -971,7 +966,7 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      *         <i>LastEvaluatedKey</i> to apply in a subsequent operation to continue
      *         the operation. For more information see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
-     *         and Scan</a> of the <i>Amazon DynamoDB Developer Guide</i>.
+     *         and Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
     public Integer getLimit() {
         return limit;
@@ -989,7 +984,7 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      * <i>LastEvaluatedKey</i> to apply in a subsequent operation to continue
      * the operation. For more information see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
-     * and Scan</a> of the <i>Amazon DynamoDB Developer Guide</i>.
+     * and Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>1 - <br/>
@@ -1005,7 +1000,7 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      *         <i>LastEvaluatedKey</i> to apply in a subsequent operation to continue
      *         the operation. For more information see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
-     *         and Scan</a> of the <i>Amazon DynamoDB Developer Guide</i>.
+     *         and Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
     public void setLimit(Integer limit) {
         this.limit = limit;
@@ -1023,7 +1018,7 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      * <i>LastEvaluatedKey</i> to apply in a subsequent operation to continue
      * the operation. For more information see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
-     * and Scan</a> of the <i>Amazon DynamoDB Developer Guide</i>.
+     * and Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -1041,7 +1036,7 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      *         <i>LastEvaluatedKey</i> to apply in a subsequent operation to continue
      *         the operation. For more information see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/QueryAndScan.html">Query
-     *         and Scan</a> of the <i>Amazon DynamoDB Developer Guide</i>.
+     *         and Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -1116,7 +1111,7 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      * other words, all of the conditions must be met in order for an item to
      * appear in the results results. <p>Each <i>KeyConditions</i> element
      * consists of an attribute name to compare, along with the following:
-     * <ul> <li><p><i>AttributeValueList</i>-One or more values to evaluate
+     * <ul> <li><p><i>AttributeValueList</i> - One or more values to evaluate
      * against the supplied attribute. This list contains exactly one value,
      * except for a <code>BETWEEN</code> or <code>IN</code> comparison, in
      * which case the list contains two values. <note> <p>For type Number,
@@ -1128,13 +1123,13 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      * <p>For Binary, Amazon DynamoDB treats each byte of the binary data as
      * unsigned when it compares binary values, for example when evaluating
-     * query expressions. </note> </li> <li><p><i>ComparisonOperator</i>-A
+     * query expressions. </note> </li> <li><p><i>ComparisonOperator</i> - A
      * comparator for evaluating attributes. For example, equals, greater
      * than, less than, etc. <p>Valid comparison operators for Query:
      * <p><code>EQ | LE | LT | GE | GT | BEGINS_WITH | BETWEEN</code> <p>For
      * information on specifying data types in JSON, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
-     * Data Format</a> of the <i>Amazon DynamoDB Developer Guide</i>. <p>The
+     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>. <p>The
      * following are descriptions of each comparison operator. <ul> <li>
      * <p><code>EQ</code> : Equal. <p><i>AttributeValueList</i> can contain
      * only one <i>AttributeValue</i> of type String, Number, or Binary (not
@@ -1199,7 +1194,7 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      *         other words, all of the conditions must be met in order for an item to
      *         appear in the results results. <p>Each <i>KeyConditions</i> element
      *         consists of an attribute name to compare, along with the following:
-     *         <ul> <li><p><i>AttributeValueList</i>-One or more values to evaluate
+     *         <ul> <li><p><i>AttributeValueList</i> - One or more values to evaluate
      *         against the supplied attribute. This list contains exactly one value,
      *         except for a <code>BETWEEN</code> or <code>IN</code> comparison, in
      *         which case the list contains two values. <note> <p>For type Number,
@@ -1211,13 +1206,13 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      *         href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      *         <p>For Binary, Amazon DynamoDB treats each byte of the binary data as
      *         unsigned when it compares binary values, for example when evaluating
-     *         query expressions. </note> </li> <li><p><i>ComparisonOperator</i>-A
+     *         query expressions. </note> </li> <li><p><i>ComparisonOperator</i> - A
      *         comparator for evaluating attributes. For example, equals, greater
      *         than, less than, etc. <p>Valid comparison operators for Query:
      *         <p><code>EQ | LE | LT | GE | GT | BEGINS_WITH | BETWEEN</code> <p>For
      *         information on specifying data types in JSON, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
-     *         Data Format</a> of the <i>Amazon DynamoDB Developer Guide</i>. <p>The
+     *         Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>. <p>The
      *         following are descriptions of each comparison operator. <ul> <li>
      *         <p><code>EQ</code> : Equal. <p><i>AttributeValueList</i> can contain
      *         only one <i>AttributeValue</i> of type String, Number, or Binary (not
@@ -1289,7 +1284,7 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      * other words, all of the conditions must be met in order for an item to
      * appear in the results results. <p>Each <i>KeyConditions</i> element
      * consists of an attribute name to compare, along with the following:
-     * <ul> <li><p><i>AttributeValueList</i>-One or more values to evaluate
+     * <ul> <li><p><i>AttributeValueList</i> - One or more values to evaluate
      * against the supplied attribute. This list contains exactly one value,
      * except for a <code>BETWEEN</code> or <code>IN</code> comparison, in
      * which case the list contains two values. <note> <p>For type Number,
@@ -1301,13 +1296,13 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      * <p>For Binary, Amazon DynamoDB treats each byte of the binary data as
      * unsigned when it compares binary values, for example when evaluating
-     * query expressions. </note> </li> <li><p><i>ComparisonOperator</i>-A
+     * query expressions. </note> </li> <li><p><i>ComparisonOperator</i> - A
      * comparator for evaluating attributes. For example, equals, greater
      * than, less than, etc. <p>Valid comparison operators for Query:
      * <p><code>EQ | LE | LT | GE | GT | BEGINS_WITH | BETWEEN</code> <p>For
      * information on specifying data types in JSON, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
-     * Data Format</a> of the <i>Amazon DynamoDB Developer Guide</i>. <p>The
+     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>. <p>The
      * following are descriptions of each comparison operator. <ul> <li>
      * <p><code>EQ</code> : Equal. <p><i>AttributeValueList</i> can contain
      * only one <i>AttributeValue</i> of type String, Number, or Binary (not
@@ -1372,7 +1367,7 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      *         other words, all of the conditions must be met in order for an item to
      *         appear in the results results. <p>Each <i>KeyConditions</i> element
      *         consists of an attribute name to compare, along with the following:
-     *         <ul> <li><p><i>AttributeValueList</i>-One or more values to evaluate
+     *         <ul> <li><p><i>AttributeValueList</i> - One or more values to evaluate
      *         against the supplied attribute. This list contains exactly one value,
      *         except for a <code>BETWEEN</code> or <code>IN</code> comparison, in
      *         which case the list contains two values. <note> <p>For type Number,
@@ -1384,13 +1379,13 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      *         href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      *         <p>For Binary, Amazon DynamoDB treats each byte of the binary data as
      *         unsigned when it compares binary values, for example when evaluating
-     *         query expressions. </note> </li> <li><p><i>ComparisonOperator</i>-A
+     *         query expressions. </note> </li> <li><p><i>ComparisonOperator</i> - A
      *         comparator for evaluating attributes. For example, equals, greater
      *         than, less than, etc. <p>Valid comparison operators for Query:
      *         <p><code>EQ | LE | LT | GE | GT | BEGINS_WITH | BETWEEN</code> <p>For
      *         information on specifying data types in JSON, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
-     *         Data Format</a> of the <i>Amazon DynamoDB Developer Guide</i>. <p>The
+     *         Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>. <p>The
      *         following are descriptions of each comparison operator. <ul> <li>
      *         <p><code>EQ</code> : Equal. <p><i>AttributeValueList</i> can contain
      *         only one <i>AttributeValue</i> of type String, Number, or Binary (not
@@ -1460,7 +1455,7 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      * other words, all of the conditions must be met in order for an item to
      * appear in the results results. <p>Each <i>KeyConditions</i> element
      * consists of an attribute name to compare, along with the following:
-     * <ul> <li><p><i>AttributeValueList</i>-One or more values to evaluate
+     * <ul> <li><p><i>AttributeValueList</i> - One or more values to evaluate
      * against the supplied attribute. This list contains exactly one value,
      * except for a <code>BETWEEN</code> or <code>IN</code> comparison, in
      * which case the list contains two values. <note> <p>For type Number,
@@ -1472,13 +1467,13 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      * href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      * <p>For Binary, Amazon DynamoDB treats each byte of the binary data as
      * unsigned when it compares binary values, for example when evaluating
-     * query expressions. </note> </li> <li><p><i>ComparisonOperator</i>-A
+     * query expressions. </note> </li> <li><p><i>ComparisonOperator</i> - A
      * comparator for evaluating attributes. For example, equals, greater
      * than, less than, etc. <p>Valid comparison operators for Query:
      * <p><code>EQ | LE | LT | GE | GT | BEGINS_WITH | BETWEEN</code> <p>For
      * information on specifying data types in JSON, see <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
-     * Data Format</a> of the <i>Amazon DynamoDB Developer Guide</i>. <p>The
+     * Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>. <p>The
      * following are descriptions of each comparison operator. <ul> <li>
      * <p><code>EQ</code> : Equal. <p><i>AttributeValueList</i> can contain
      * only one <i>AttributeValue</i> of type String, Number, or Binary (not
@@ -1545,7 +1540,7 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      *         other words, all of the conditions must be met in order for an item to
      *         appear in the results results. <p>Each <i>KeyConditions</i> element
      *         consists of an attribute name to compare, along with the following:
-     *         <ul> <li><p><i>AttributeValueList</i>-One or more values to evaluate
+     *         <ul> <li><p><i>AttributeValueList</i> - One or more values to evaluate
      *         against the supplied attribute. This list contains exactly one value,
      *         except for a <code>BETWEEN</code> or <code>IN</code> comparison, in
      *         which case the list contains two values. <note> <p>For type Number,
@@ -1557,13 +1552,13 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      *         href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
      *         <p>For Binary, Amazon DynamoDB treats each byte of the binary data as
      *         unsigned when it compares binary values, for example when evaluating
-     *         query expressions. </note> </li> <li><p><i>ComparisonOperator</i>-A
+     *         query expressions. </note> </li> <li><p><i>ComparisonOperator</i> - A
      *         comparator for evaluating attributes. For example, equals, greater
      *         than, less than, etc. <p>Valid comparison operators for Query:
      *         <p><code>EQ | LE | LT | GE | GT | BEGINS_WITH | BETWEEN</code> <p>For
      *         information on specifying data types in JSON, see <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataFormat.html">JSON
-     *         Data Format</a> of the <i>Amazon DynamoDB Developer Guide</i>. <p>The
+     *         Data Format</a> in the <i>Amazon DynamoDB Developer Guide</i>. <p>The
      *         following are descriptions of each comparison operator. <ul> <li>
      *         <p><code>EQ</code> : Equal. <p><i>AttributeValueList</i> can contain
      *         only one <i>AttributeValue</i> of type String, Number, or Binary (not
@@ -1724,23 +1719,15 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
     }
     
     /**
-     * The primary key of the item from which to continue an earlier
-     * operation. An earlier operation might provide this value as the
-     * <i>LastEvaluatedKey</i> if that operation was interrupted before
-     * completion; either because of the result set size or because of the
-     * setting for <i>Limit</i>. The <i>LastEvaluatedKey</i> can be passed
-     * back in a new request to continue the operation from that point.
-     * <p>The data type for <i>ExclusiveStartKey</i> must be String, Number
-     * or Binary. No set data types are allowed.
+     * The primary key of the first item that this operation will evaluate.
+     * Use the value that was returned for <i>LastEvaluatedKey</i> in the
+     * previous operation. <p>The data type for <i>ExclusiveStartKey</i> must
+     * be String, Number or Binary. No set data types are allowed.
      *
-     * @return The primary key of the item from which to continue an earlier
-     *         operation. An earlier operation might provide this value as the
-     *         <i>LastEvaluatedKey</i> if that operation was interrupted before
-     *         completion; either because of the result set size or because of the
-     *         setting for <i>Limit</i>. The <i>LastEvaluatedKey</i> can be passed
-     *         back in a new request to continue the operation from that point.
-     *         <p>The data type for <i>ExclusiveStartKey</i> must be String, Number
-     *         or Binary. No set data types are allowed.
+     * @return The primary key of the first item that this operation will evaluate.
+     *         Use the value that was returned for <i>LastEvaluatedKey</i> in the
+     *         previous operation. <p>The data type for <i>ExclusiveStartKey</i> must
+     *         be String, Number or Binary. No set data types are allowed.
      */
     public java.util.Map<String,AttributeValue> getExclusiveStartKey() {
         
@@ -1749,48 +1736,32 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
     }
     
     /**
-     * The primary key of the item from which to continue an earlier
-     * operation. An earlier operation might provide this value as the
-     * <i>LastEvaluatedKey</i> if that operation was interrupted before
-     * completion; either because of the result set size or because of the
-     * setting for <i>Limit</i>. The <i>LastEvaluatedKey</i> can be passed
-     * back in a new request to continue the operation from that point.
-     * <p>The data type for <i>ExclusiveStartKey</i> must be String, Number
-     * or Binary. No set data types are allowed.
+     * The primary key of the first item that this operation will evaluate.
+     * Use the value that was returned for <i>LastEvaluatedKey</i> in the
+     * previous operation. <p>The data type for <i>ExclusiveStartKey</i> must
+     * be String, Number or Binary. No set data types are allowed.
      *
-     * @param exclusiveStartKey The primary key of the item from which to continue an earlier
-     *         operation. An earlier operation might provide this value as the
-     *         <i>LastEvaluatedKey</i> if that operation was interrupted before
-     *         completion; either because of the result set size or because of the
-     *         setting for <i>Limit</i>. The <i>LastEvaluatedKey</i> can be passed
-     *         back in a new request to continue the operation from that point.
-     *         <p>The data type for <i>ExclusiveStartKey</i> must be String, Number
-     *         or Binary. No set data types are allowed.
+     * @param exclusiveStartKey The primary key of the first item that this operation will evaluate.
+     *         Use the value that was returned for <i>LastEvaluatedKey</i> in the
+     *         previous operation. <p>The data type for <i>ExclusiveStartKey</i> must
+     *         be String, Number or Binary. No set data types are allowed.
      */
     public void setExclusiveStartKey(java.util.Map<String,AttributeValue> exclusiveStartKey) {
         this.exclusiveStartKey = exclusiveStartKey;
     }
     
     /**
-     * The primary key of the item from which to continue an earlier
-     * operation. An earlier operation might provide this value as the
-     * <i>LastEvaluatedKey</i> if that operation was interrupted before
-     * completion; either because of the result set size or because of the
-     * setting for <i>Limit</i>. The <i>LastEvaluatedKey</i> can be passed
-     * back in a new request to continue the operation from that point.
-     * <p>The data type for <i>ExclusiveStartKey</i> must be String, Number
-     * or Binary. No set data types are allowed.
+     * The primary key of the first item that this operation will evaluate.
+     * Use the value that was returned for <i>LastEvaluatedKey</i> in the
+     * previous operation. <p>The data type for <i>ExclusiveStartKey</i> must
+     * be String, Number or Binary. No set data types are allowed.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param exclusiveStartKey The primary key of the item from which to continue an earlier
-     *         operation. An earlier operation might provide this value as the
-     *         <i>LastEvaluatedKey</i> if that operation was interrupted before
-     *         completion; either because of the result set size or because of the
-     *         setting for <i>Limit</i>. The <i>LastEvaluatedKey</i> can be passed
-     *         back in a new request to continue the operation from that point.
-     *         <p>The data type for <i>ExclusiveStartKey</i> must be String, Number
-     *         or Binary. No set data types are allowed.
+     * @param exclusiveStartKey The primary key of the first item that this operation will evaluate.
+     *         Use the value that was returned for <i>LastEvaluatedKey</i> in the
+     *         previous operation. <p>The data type for <i>ExclusiveStartKey</i> must
+     *         be String, Number or Binary. No set data types are allowed.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -1801,18 +1772,16 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
     }
     
     /**
-     * Determines whether to include consumed capacity information in the
-     * output. If this is set to <code>TOTAL</code>, then this information is
-     * shown in the output; otherwise, the consumed capacity information is
-     * not shown.
+     * If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
+     * the response; if set to <code>NONE</code> (the default),
+     * <i>ConsumedCapacity</i> is not included.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>TOTAL, NONE
      *
-     * @return Determines whether to include consumed capacity information in the
-     *         output. If this is set to <code>TOTAL</code>, then this information is
-     *         shown in the output; otherwise, the consumed capacity information is
-     *         not shown.
+     * @return If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
+     *         the response; if set to <code>NONE</code> (the default),
+     *         <i>ConsumedCapacity</i> is not included.
      *
      * @see ReturnConsumedCapacity
      */
@@ -1821,18 +1790,16 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
     }
     
     /**
-     * Determines whether to include consumed capacity information in the
-     * output. If this is set to <code>TOTAL</code>, then this information is
-     * shown in the output; otherwise, the consumed capacity information is
-     * not shown.
+     * If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
+     * the response; if set to <code>NONE</code> (the default),
+     * <i>ConsumedCapacity</i> is not included.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>TOTAL, NONE
      *
-     * @param returnConsumedCapacity Determines whether to include consumed capacity information in the
-     *         output. If this is set to <code>TOTAL</code>, then this information is
-     *         shown in the output; otherwise, the consumed capacity information is
-     *         not shown.
+     * @param returnConsumedCapacity If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
+     *         the response; if set to <code>NONE</code> (the default),
+     *         <i>ConsumedCapacity</i> is not included.
      *
      * @see ReturnConsumedCapacity
      */
@@ -1841,20 +1808,18 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
     }
     
     /**
-     * Determines whether to include consumed capacity information in the
-     * output. If this is set to <code>TOTAL</code>, then this information is
-     * shown in the output; otherwise, the consumed capacity information is
-     * not shown.
+     * If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
+     * the response; if set to <code>NONE</code> (the default),
+     * <i>ConsumedCapacity</i> is not included.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>TOTAL, NONE
      *
-     * @param returnConsumedCapacity Determines whether to include consumed capacity information in the
-     *         output. If this is set to <code>TOTAL</code>, then this information is
-     *         shown in the output; otherwise, the consumed capacity information is
-     *         not shown.
+     * @param returnConsumedCapacity If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
+     *         the response; if set to <code>NONE</code> (the default),
+     *         <i>ConsumedCapacity</i> is not included.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -1868,18 +1833,16 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
     
     
     /**
-     * Determines whether to include consumed capacity information in the
-     * output. If this is set to <code>TOTAL</code>, then this information is
-     * shown in the output; otherwise, the consumed capacity information is
-     * not shown.
+     * If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
+     * the response; if set to <code>NONE</code> (the default),
+     * <i>ConsumedCapacity</i> is not included.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>TOTAL, NONE
      *
-     * @param returnConsumedCapacity Determines whether to include consumed capacity information in the
-     *         output. If this is set to <code>TOTAL</code>, then this information is
-     *         shown in the output; otherwise, the consumed capacity information is
-     *         not shown.
+     * @param returnConsumedCapacity If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
+     *         the response; if set to <code>NONE</code> (the default),
+     *         <i>ConsumedCapacity</i> is not included.
      *
      * @see ReturnConsumedCapacity
      */
@@ -1888,20 +1851,18 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
     }
     
     /**
-     * Determines whether to include consumed capacity information in the
-     * output. If this is set to <code>TOTAL</code>, then this information is
-     * shown in the output; otherwise, the consumed capacity information is
-     * not shown.
+     * If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
+     * the response; if set to <code>NONE</code> (the default),
+     * <i>ConsumedCapacity</i> is not included.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>TOTAL, NONE
      *
-     * @param returnConsumedCapacity Determines whether to include consumed capacity information in the
-     *         output. If this is set to <code>TOTAL</code>, then this information is
-     *         shown in the output; otherwise, the consumed capacity information is
-     *         not shown.
+     * @param returnConsumedCapacity If set to <code>TOTAL</code>, <i>ConsumedCapacity</i> is included in
+     *         the response; if set to <code>NONE</code> (the default),
+     *         <i>ConsumedCapacity</i> is not included.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

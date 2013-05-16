@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.opsworks.AWSOpsWorks#setLoadBasedAutoScaling(SetLoadBasedAutoScalingRequest) SetLoadBasedAutoScaling operation}.
  * <p>
- * Specify the load-based auto scaling configuration for a specified layer.
+ * Specify the load-based auto scaling configuration for a specified layer. For more information, see <a
+ * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-autoscaling.html"> Managing Load with Time-based and Load-based Instances
+ * </a> .
  * </p>
  * <p>
  * <b>NOTE:</b>To use load-based auto scaling, you must create a set of load-based auto scaling instances. Load-based auto scaling operates only on the

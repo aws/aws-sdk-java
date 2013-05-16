@@ -25,8 +25,15 @@ public class AwsHostNameUtils {
 
         String serviceAndRegion = host.substring(0, host.indexOf(".amazonaws.com"));
 
+
+        // S3 is different from other services, which supports virtual host and
+        // use '-' as separator, the host may look like
+        // 'bucketName.s3-us-west-2.amazonaws.com'
+        if (serviceAndRegion.contains("s3-")) {
+            return serviceAndRegion.substring(serviceAndRegion.lastIndexOf("s3-") + 3);
+        }
+
         char separator = '.';
-        if (serviceAndRegion.startsWith("s3")) separator = '-';
 
         if (serviceAndRegion.indexOf(separator) == -1) return "us-east-1";
 
@@ -46,8 +53,14 @@ public class AwsHostNameUtils {
 
         String serviceAndRegion = host.substring(0, host.indexOf(".amazonaws.com"));
 
+        // S3 is different from other services, which supports virtual host and
+        // use '-' as separator, the host may look like
+        // 'bucketName.s3-us-west-2.amazonaws.com'
+        if (serviceAndRegion.contains("s3-")) {
+            return "s3";
+        }
+
         char separator = '.';
-        if (serviceAndRegion.startsWith("s3")) separator = '-';
 
         // If we don't detect a separator between service name and region, then
         // assume that the region is not included in the hostname, and it's only

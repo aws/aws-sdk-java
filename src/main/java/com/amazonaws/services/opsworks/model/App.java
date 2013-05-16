@@ -33,6 +33,11 @@ public class App  implements Serializable  {
     private String stackId;
 
     /**
+     * The app's short name.
+     */
+    private String shortname;
+
+    /**
      * The app name.
      */
     private String name;
@@ -57,7 +62,7 @@ public class App  implements Serializable  {
 
     /**
      * The app vhost settings, with multiple domains separated by commas. For
-     * example: <code>'www.mysite.com, mysite.com'</code>
+     * example: <code>'www.example.com, example.com'</code>
      */
     private java.util.List<String> domains;
 
@@ -145,6 +150,40 @@ public class App  implements Serializable  {
      */
     public App withStackId(String stackId) {
         this.stackId = stackId;
+        return this;
+    }
+    
+    
+    /**
+     * The app's short name.
+     *
+     * @return The app's short name.
+     */
+    public String getShortname() {
+        return shortname;
+    }
+    
+    /**
+     * The app's short name.
+     *
+     * @param shortname The app's short name.
+     */
+    public void setShortname(String shortname) {
+        this.shortname = shortname;
+    }
+    
+    /**
+     * The app's short name.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param shortname The app's short name.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public App withShortname(String shortname) {
+        this.shortname = shortname;
         return this;
     }
     
@@ -336,10 +375,10 @@ public class App  implements Serializable  {
     
     /**
      * The app vhost settings, with multiple domains separated by commas. For
-     * example: <code>'www.mysite.com, mysite.com'</code>
+     * example: <code>'www.example.com, example.com'</code>
      *
      * @return The app vhost settings, with multiple domains separated by commas. For
-     *         example: <code>'www.mysite.com, mysite.com'</code>
+     *         example: <code>'www.example.com, example.com'</code>
      */
     public java.util.List<String> getDomains() {
         
@@ -351,10 +390,10 @@ public class App  implements Serializable  {
     
     /**
      * The app vhost settings, with multiple domains separated by commas. For
-     * example: <code>'www.mysite.com, mysite.com'</code>
+     * example: <code>'www.example.com, example.com'</code>
      *
      * @param domains The app vhost settings, with multiple domains separated by commas. For
-     *         example: <code>'www.mysite.com, mysite.com'</code>
+     *         example: <code>'www.example.com, example.com'</code>
      */
     public void setDomains(java.util.Collection<String> domains) {
         if (domains == null) {
@@ -369,12 +408,12 @@ public class App  implements Serializable  {
     
     /**
      * The app vhost settings, with multiple domains separated by commas. For
-     * example: <code>'www.mysite.com, mysite.com'</code>
+     * example: <code>'www.example.com, example.com'</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param domains The app vhost settings, with multiple domains separated by commas. For
-     *         example: <code>'www.mysite.com, mysite.com'</code>
+     *         example: <code>'www.example.com, example.com'</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -389,12 +428,12 @@ public class App  implements Serializable  {
     
     /**
      * The app vhost settings, with multiple domains separated by commas. For
-     * example: <code>'www.mysite.com, mysite.com'</code>
+     * example: <code>'www.example.com, example.com'</code>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param domains The app vhost settings, with multiple domains separated by commas. For
-     *         example: <code>'www.mysite.com, mysite.com'</code>
+     *         example: <code>'www.example.com, example.com'</code>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -574,6 +613,7 @@ public class App  implements Serializable  {
         sb.append("{");    	
         if (getAppId() != null) sb.append("AppId: " + getAppId() + ",");    	
         if (getStackId() != null) sb.append("StackId: " + getStackId() + ",");    	
+        if (getShortname() != null) sb.append("Shortname: " + getShortname() + ",");    	
         if (getName() != null) sb.append("Name: " + getName() + ",");    	
         if (getDescription() != null) sb.append("Description: " + getDescription() + ",");    	
         if (getType() != null) sb.append("Type: " + getType() + ",");    	
@@ -594,6 +634,7 @@ public class App  implements Serializable  {
         
         hashCode = prime * hashCode + ((getAppId() == null) ? 0 : getAppId().hashCode()); 
         hashCode = prime * hashCode + ((getStackId() == null) ? 0 : getStackId().hashCode()); 
+        hashCode = prime * hashCode + ((getShortname() == null) ? 0 : getShortname().hashCode()); 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode()); 
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode()); 
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode()); 
@@ -618,6 +659,8 @@ public class App  implements Serializable  {
         if (other.getAppId() != null && other.getAppId().equals(this.getAppId()) == false) return false; 
         if (other.getStackId() == null ^ this.getStackId() == null) return false;
         if (other.getStackId() != null && other.getStackId().equals(this.getStackId()) == false) return false; 
+        if (other.getShortname() == null ^ this.getShortname() == null) return false;
+        if (other.getShortname() != null && other.getShortname().equals(this.getShortname()) == false) return false; 
         if (other.getName() == null ^ this.getName() == null) return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false) return false; 
         if (other.getDescription() == null ^ this.getDescription() == null) return false;

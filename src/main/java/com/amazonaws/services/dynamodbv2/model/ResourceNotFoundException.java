@@ -18,8 +18,8 @@ import com.amazonaws.AmazonServiceException;
 
 /**
  * <p>
- * The operation tried to access a nonexistent resource. For example, you tried to access a table which does not exist, or is too early in the
- * <code>CREATING</code> process.
+ * The operation tried to access a nonexistent table or index. The resource may not be specified correctly, or its status may not be <code>ACTIVE</code>
+ * .
  * </p>
  */        
 public class ResourceNotFoundException extends AmazonServiceException {

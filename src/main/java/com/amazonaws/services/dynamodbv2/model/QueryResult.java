@@ -49,7 +49,7 @@ public class QueryResult  implements Serializable  {
      * returned if it was asked for in the request. For more information, see
      * <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
-     * Throughput</a> of the <i>Amazon DynamoDB Developer Guide</i>.
+     * Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
     private ConsumedCapacity consumedCapacity;
 
@@ -234,14 +234,14 @@ public class QueryResult  implements Serializable  {
      * returned if it was asked for in the request. For more information, see
      * <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
-     * Throughput</a> of the <i>Amazon DynamoDB Developer Guide</i>.
+     * Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      *
      * @return The table name that consumed provisioned throughput, and the number of
      *         capacity units consumed by it. <i>ConsumedCapacity</i> is only
      *         returned if it was asked for in the request. For more information, see
      *         <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
-     *         Throughput</a> of the <i>Amazon DynamoDB Developer Guide</i>.
+     *         Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
     public ConsumedCapacity getConsumedCapacity() {
         return consumedCapacity;
@@ -253,14 +253,14 @@ public class QueryResult  implements Serializable  {
      * returned if it was asked for in the request. For more information, see
      * <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
-     * Throughput</a> of the <i>Amazon DynamoDB Developer Guide</i>.
+     * Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      *
      * @param consumedCapacity The table name that consumed provisioned throughput, and the number of
      *         capacity units consumed by it. <i>ConsumedCapacity</i> is only
      *         returned if it was asked for in the request. For more information, see
      *         <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
-     *         Throughput</a> of the <i>Amazon DynamoDB Developer Guide</i>.
+     *         Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
     public void setConsumedCapacity(ConsumedCapacity consumedCapacity) {
         this.consumedCapacity = consumedCapacity;
@@ -272,7 +272,7 @@ public class QueryResult  implements Serializable  {
      * returned if it was asked for in the request. For more information, see
      * <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
-     * Throughput</a> of the <i>Amazon DynamoDB Developer Guide</i>.
+     * Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -281,7 +281,7 @@ public class QueryResult  implements Serializable  {
      *         returned if it was asked for in the request. For more information, see
      *         <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
-     *         Throughput</a> of the <i>Amazon DynamoDB Developer Guide</i>.
+     *         Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

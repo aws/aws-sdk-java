@@ -27,39 +27,56 @@ import java.io.Serializable;
 public class DescribeElasticIpsRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
-     * The instance ID.
+     * The instance ID. If you include this parameter,
+     * <code>DescribeElasticIps</code> returns a description of the Elastic
+     * IP addresses associated with the specified instance.
      */
     private String instanceId;
 
     /**
-     * An array of Elastic IP addresses to be described.
+     * An array of Elastic IP addresses to be described. If you include this
+     * parameter, <code>DescribeElasticIps</code> returns a description of
+     * the specified Elastic IP addresses. Otherwise, it returns a
+     * description of every Elastic IP address.
      */
     private java.util.List<String> ips;
 
     /**
-     * The instance ID.
+     * The instance ID. If you include this parameter,
+     * <code>DescribeElasticIps</code> returns a description of the Elastic
+     * IP addresses associated with the specified instance.
      *
-     * @return The instance ID.
+     * @return The instance ID. If you include this parameter,
+     *         <code>DescribeElasticIps</code> returns a description of the Elastic
+     *         IP addresses associated with the specified instance.
      */
     public String getInstanceId() {
         return instanceId;
     }
     
     /**
-     * The instance ID.
+     * The instance ID. If you include this parameter,
+     * <code>DescribeElasticIps</code> returns a description of the Elastic
+     * IP addresses associated with the specified instance.
      *
-     * @param instanceId The instance ID.
+     * @param instanceId The instance ID. If you include this parameter,
+     *         <code>DescribeElasticIps</code> returns a description of the Elastic
+     *         IP addresses associated with the specified instance.
      */
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
     
     /**
-     * The instance ID.
+     * The instance ID. If you include this parameter,
+     * <code>DescribeElasticIps</code> returns a description of the Elastic
+     * IP addresses associated with the specified instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceId The instance ID.
+     * @param instanceId The instance ID. If you include this parameter,
+     *         <code>DescribeElasticIps</code> returns a description of the Elastic
+     *         IP addresses associated with the specified instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -71,9 +88,15 @@ public class DescribeElasticIpsRequest extends AmazonWebServiceRequest  implemen
     
     
     /**
-     * An array of Elastic IP addresses to be described.
+     * An array of Elastic IP addresses to be described. If you include this
+     * parameter, <code>DescribeElasticIps</code> returns a description of
+     * the specified Elastic IP addresses. Otherwise, it returns a
+     * description of every Elastic IP address.
      *
-     * @return An array of Elastic IP addresses to be described.
+     * @return An array of Elastic IP addresses to be described. If you include this
+     *         parameter, <code>DescribeElasticIps</code> returns a description of
+     *         the specified Elastic IP addresses. Otherwise, it returns a
+     *         description of every Elastic IP address.
      */
     public java.util.List<String> getIps() {
         
@@ -84,9 +107,15 @@ public class DescribeElasticIpsRequest extends AmazonWebServiceRequest  implemen
     }
     
     /**
-     * An array of Elastic IP addresses to be described.
+     * An array of Elastic IP addresses to be described. If you include this
+     * parameter, <code>DescribeElasticIps</code> returns a description of
+     * the specified Elastic IP addresses. Otherwise, it returns a
+     * description of every Elastic IP address.
      *
-     * @param ips An array of Elastic IP addresses to be described.
+     * @param ips An array of Elastic IP addresses to be described. If you include this
+     *         parameter, <code>DescribeElasticIps</code> returns a description of
+     *         the specified Elastic IP addresses. Otherwise, it returns a
+     *         description of every Elastic IP address.
      */
     public void setIps(java.util.Collection<String> ips) {
         if (ips == null) {
@@ -100,11 +129,17 @@ public class DescribeElasticIpsRequest extends AmazonWebServiceRequest  implemen
     }
     
     /**
-     * An array of Elastic IP addresses to be described.
+     * An array of Elastic IP addresses to be described. If you include this
+     * parameter, <code>DescribeElasticIps</code> returns a description of
+     * the specified Elastic IP addresses. Otherwise, it returns a
+     * description of every Elastic IP address.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param ips An array of Elastic IP addresses to be described.
+     * @param ips An array of Elastic IP addresses to be described. If you include this
+     *         parameter, <code>DescribeElasticIps</code> returns a description of
+     *         the specified Elastic IP addresses. Otherwise, it returns a
+     *         description of every Elastic IP address.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -118,11 +153,17 @@ public class DescribeElasticIpsRequest extends AmazonWebServiceRequest  implemen
     }
     
     /**
-     * An array of Elastic IP addresses to be described.
+     * An array of Elastic IP addresses to be described. If you include this
+     * parameter, <code>DescribeElasticIps</code> returns a description of
+     * the specified Elastic IP addresses. Otherwise, it returns a
+     * description of every Elastic IP address.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param ips An array of Elastic IP addresses to be described.
+     * @param ips An array of Elastic IP addresses to be described. If you include this
+     *         parameter, <code>DescribeElasticIps</code> returns a description of
+     *         the specified Elastic IP addresses. Otherwise, it returns a
+     *         description of every Elastic IP address.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

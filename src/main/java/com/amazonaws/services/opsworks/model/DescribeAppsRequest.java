@@ -27,46 +27,48 @@ import java.io.Serializable;
 public class DescribeAppsRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
-     * The app stack ID. <!-- Could this be more than one stack ID for more
-     * than one app? Or is it 'An array of app stack IDs.'? -->
+     * The app stack ID. If you use this parameter, <code>DescribeApps</code>
+     * returns a description of the apps in the specified stack.
      */
     private String stackId;
 
     /**
-     * An array of app IDs for the apps to be described.
+     * An array of app IDs for the apps to be described. If you use this
+     * parameter, <code>DescribeApps</code> returns a description of the
+     * specified apps. Otherwise, it returns a description of every app.
      */
     private java.util.List<String> appIds;
 
     /**
-     * The app stack ID. <!-- Could this be more than one stack ID for more
-     * than one app? Or is it 'An array of app stack IDs.'? -->
+     * The app stack ID. If you use this parameter, <code>DescribeApps</code>
+     * returns a description of the apps in the specified stack.
      *
-     * @return The app stack ID. <!-- Could this be more than one stack ID for more
-     *         than one app? Or is it 'An array of app stack IDs.'? -->
+     * @return The app stack ID. If you use this parameter, <code>DescribeApps</code>
+     *         returns a description of the apps in the specified stack.
      */
     public String getStackId() {
         return stackId;
     }
     
     /**
-     * The app stack ID. <!-- Could this be more than one stack ID for more
-     * than one app? Or is it 'An array of app stack IDs.'? -->
+     * The app stack ID. If you use this parameter, <code>DescribeApps</code>
+     * returns a description of the apps in the specified stack.
      *
-     * @param stackId The app stack ID. <!-- Could this be more than one stack ID for more
-     *         than one app? Or is it 'An array of app stack IDs.'? -->
+     * @param stackId The app stack ID. If you use this parameter, <code>DescribeApps</code>
+     *         returns a description of the apps in the specified stack.
      */
     public void setStackId(String stackId) {
         this.stackId = stackId;
     }
     
     /**
-     * The app stack ID. <!-- Could this be more than one stack ID for more
-     * than one app? Or is it 'An array of app stack IDs.'? -->
+     * The app stack ID. If you use this parameter, <code>DescribeApps</code>
+     * returns a description of the apps in the specified stack.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param stackId The app stack ID. <!-- Could this be more than one stack ID for more
-     *         than one app? Or is it 'An array of app stack IDs.'? -->
+     * @param stackId The app stack ID. If you use this parameter, <code>DescribeApps</code>
+     *         returns a description of the apps in the specified stack.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -78,9 +80,13 @@ public class DescribeAppsRequest extends AmazonWebServiceRequest  implements Ser
     
     
     /**
-     * An array of app IDs for the apps to be described.
+     * An array of app IDs for the apps to be described. If you use this
+     * parameter, <code>DescribeApps</code> returns a description of the
+     * specified apps. Otherwise, it returns a description of every app.
      *
-     * @return An array of app IDs for the apps to be described.
+     * @return An array of app IDs for the apps to be described. If you use this
+     *         parameter, <code>DescribeApps</code> returns a description of the
+     *         specified apps. Otherwise, it returns a description of every app.
      */
     public java.util.List<String> getAppIds() {
         
@@ -91,9 +97,13 @@ public class DescribeAppsRequest extends AmazonWebServiceRequest  implements Ser
     }
     
     /**
-     * An array of app IDs for the apps to be described.
+     * An array of app IDs for the apps to be described. If you use this
+     * parameter, <code>DescribeApps</code> returns a description of the
+     * specified apps. Otherwise, it returns a description of every app.
      *
-     * @param appIds An array of app IDs for the apps to be described.
+     * @param appIds An array of app IDs for the apps to be described. If you use this
+     *         parameter, <code>DescribeApps</code> returns a description of the
+     *         specified apps. Otherwise, it returns a description of every app.
      */
     public void setAppIds(java.util.Collection<String> appIds) {
         if (appIds == null) {
@@ -107,11 +117,15 @@ public class DescribeAppsRequest extends AmazonWebServiceRequest  implements Ser
     }
     
     /**
-     * An array of app IDs for the apps to be described.
+     * An array of app IDs for the apps to be described. If you use this
+     * parameter, <code>DescribeApps</code> returns a description of the
+     * specified apps. Otherwise, it returns a description of every app.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param appIds An array of app IDs for the apps to be described.
+     * @param appIds An array of app IDs for the apps to be described. If you use this
+     *         parameter, <code>DescribeApps</code> returns a description of the
+     *         specified apps. Otherwise, it returns a description of every app.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -125,11 +139,15 @@ public class DescribeAppsRequest extends AmazonWebServiceRequest  implements Ser
     }
     
     /**
-     * An array of app IDs for the apps to be described.
+     * An array of app IDs for the apps to be described. If you use this
+     * parameter, <code>DescribeApps</code> returns a description of the
+     * specified apps. Otherwise, it returns a description of every app.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param appIds An array of app IDs for the apps to be described.
+     * @param appIds An array of app IDs for the apps to be described. If you use this
+     *         parameter, <code>DescribeApps</code> returns a description of the
+     *         specified apps. Otherwise, it returns a description of every app.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

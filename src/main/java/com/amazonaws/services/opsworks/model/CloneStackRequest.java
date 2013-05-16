@@ -19,7 +19,8 @@ import java.io.Serializable;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.opsworks.AWSOpsWorks#cloneStack(CloneStackRequest) CloneStack operation}.
  * <p>
- * Creates a clone of a specified stack.
+ * Creates a clone of a specified stack. For more information, see <a
+ * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-cloning.html"> Clone a Stack </a> .
  * </p>
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#cloneStack(CloneStackRequest)
@@ -40,7 +41,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest  implements Seria
      * The cloned stack AWS region, such as "us-east-1". For more information
      * about AWS regions, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
-     * and Endpoints</a>
+     * and Endpoints</a>.
      */
     private String region;
 
@@ -59,7 +60,10 @@ public class CloneStackRequest extends AmazonWebServiceRequest  implements Seria
      * programmatically by calling <a>DescribePermissions</a>. For more
      * information about IAM ARNs, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-     * Identifiers</a>.
+     * Identifiers</a>. <note>You must set this parameter to a valid service
+     * role ARN or the action will fail; there is no default value. You can
+     * specify the source stack's service role ARN, if you prefer, but you
+     * must do so explicitly.</note>
      */
     private String serviceRoleArn;
 
@@ -104,7 +108,9 @@ public class CloneStackRequest extends AmazonWebServiceRequest  implements Seria
      * override the corresponding default stack configuration JSON values.
      * The string should be in the following format and must escape
      * characters such as '"'.: <code>"{\"key1\": \"value1\", \"key2\":
-     * \"value2\",...}"</code>
+     * \"value2\",...}"</code> <p>For more information on custom JSON, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">.
+     * Use Custom JSON to Modify the Stack Configuration JSON</a>
      */
     private String customJson;
 
@@ -115,7 +121,11 @@ public class CloneStackRequest extends AmazonWebServiceRequest  implements Seria
 
     /**
      * Contains the information required to retrieve an app or cookbook from
-     * a repository.
+     * a repository. For more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Creating
+     * Apps</a> or <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-installingcustom.html">Custom
+     * Recipes and Cookbooks</a>.
      */
     private Source customCookbooksSource;
 
@@ -134,6 +144,18 @@ public class CloneStackRequest extends AmazonWebServiceRequest  implements Seria
      * A list of source stack app IDs to be included in the cloned stack.
      */
     private java.util.List<String> cloneAppIds;
+
+    /**
+     * The default root device type. This value is used by default for all
+     * instances in the cloned stack, but you can override it when you create
+     * an instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
+     * for the Root Device</a>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>ebs, instance-store
+     */
+    private String defaultRootDeviceType;
 
     /**
      * The source stack ID.
@@ -207,12 +229,12 @@ public class CloneStackRequest extends AmazonWebServiceRequest  implements Seria
      * The cloned stack AWS region, such as "us-east-1". For more information
      * about AWS regions, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
-     * and Endpoints</a>
+     * and Endpoints</a>.
      *
      * @return The cloned stack AWS region, such as "us-east-1". For more information
      *         about AWS regions, see <a
      *         href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
-     *         and Endpoints</a>
+     *         and Endpoints</a>.
      */
     public String getRegion() {
         return region;
@@ -222,12 +244,12 @@ public class CloneStackRequest extends AmazonWebServiceRequest  implements Seria
      * The cloned stack AWS region, such as "us-east-1". For more information
      * about AWS regions, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
-     * and Endpoints</a>
+     * and Endpoints</a>.
      *
      * @param region The cloned stack AWS region, such as "us-east-1". For more information
      *         about AWS regions, see <a
      *         href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
-     *         and Endpoints</a>
+     *         and Endpoints</a>.
      */
     public void setRegion(String region) {
         this.region = region;
@@ -237,14 +259,14 @@ public class CloneStackRequest extends AmazonWebServiceRequest  implements Seria
      * The cloned stack AWS region, such as "us-east-1". For more information
      * about AWS regions, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
-     * and Endpoints</a>
+     * and Endpoints</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param region The cloned stack AWS region, such as "us-east-1". For more information
      *         about AWS regions, see <a
      *         href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
-     *         and Endpoints</a>
+     *         and Endpoints</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -308,7 +330,10 @@ public class CloneStackRequest extends AmazonWebServiceRequest  implements Seria
      * programmatically by calling <a>DescribePermissions</a>. For more
      * information about IAM ARNs, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-     * Identifiers</a>.
+     * Identifiers</a>. <note>You must set this parameter to a valid service
+     * role ARN or the action will fail; there is no default value. You can
+     * specify the source stack's service role ARN, if you prefer, but you
+     * must do so explicitly.</note>
      *
      * @return The stack AWS Identity and Access Management (IAM) role, which allows
      *         OpsWorks to work with AWS resources on your behalf. You must set this
@@ -318,7 +343,10 @@ public class CloneStackRequest extends AmazonWebServiceRequest  implements Seria
      *         programmatically by calling <a>DescribePermissions</a>. For more
      *         information about IAM ARNs, see <a
      *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-     *         Identifiers</a>.
+     *         Identifiers</a>. <note>You must set this parameter to a valid service
+     *         role ARN or the action will fail; there is no default value. You can
+     *         specify the source stack's service role ARN, if you prefer, but you
+     *         must do so explicitly.</note>
      */
     public String getServiceRoleArn() {
         return serviceRoleArn;
@@ -333,7 +361,10 @@ public class CloneStackRequest extends AmazonWebServiceRequest  implements Seria
      * programmatically by calling <a>DescribePermissions</a>. For more
      * information about IAM ARNs, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-     * Identifiers</a>.
+     * Identifiers</a>. <note>You must set this parameter to a valid service
+     * role ARN or the action will fail; there is no default value. You can
+     * specify the source stack's service role ARN, if you prefer, but you
+     * must do so explicitly.</note>
      *
      * @param serviceRoleArn The stack AWS Identity and Access Management (IAM) role, which allows
      *         OpsWorks to work with AWS resources on your behalf. You must set this
@@ -343,7 +374,10 @@ public class CloneStackRequest extends AmazonWebServiceRequest  implements Seria
      *         programmatically by calling <a>DescribePermissions</a>. For more
      *         information about IAM ARNs, see <a
      *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-     *         Identifiers</a>.
+     *         Identifiers</a>. <note>You must set this parameter to a valid service
+     *         role ARN or the action will fail; there is no default value. You can
+     *         specify the source stack's service role ARN, if you prefer, but you
+     *         must do so explicitly.</note>
      */
     public void setServiceRoleArn(String serviceRoleArn) {
         this.serviceRoleArn = serviceRoleArn;
@@ -358,7 +392,10 @@ public class CloneStackRequest extends AmazonWebServiceRequest  implements Seria
      * programmatically by calling <a>DescribePermissions</a>. For more
      * information about IAM ARNs, see <a
      * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-     * Identifiers</a>.
+     * Identifiers</a>. <note>You must set this parameter to a valid service
+     * role ARN or the action will fail; there is no default value. You can
+     * specify the source stack's service role ARN, if you prefer, but you
+     * must do so explicitly.</note>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -370,7 +407,10 @@ public class CloneStackRequest extends AmazonWebServiceRequest  implements Seria
      *         programmatically by calling <a>DescribePermissions</a>. For more
      *         information about IAM ARNs, see <a
      *         href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-     *         Identifiers</a>.
+     *         Identifiers</a>. <note>You must set this parameter to a valid service
+     *         role ARN or the action will fail; there is no default value. You can
+     *         specify the source stack's service role ARN, if you prefer, but you
+     *         must do so explicitly.</note>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -618,13 +658,17 @@ public class CloneStackRequest extends AmazonWebServiceRequest  implements Seria
      * override the corresponding default stack configuration JSON values.
      * The string should be in the following format and must escape
      * characters such as '"'.: <code>"{\"key1\": \"value1\", \"key2\":
-     * \"value2\",...}"</code>
+     * \"value2\",...}"</code> <p>For more information on custom JSON, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">.
+     * Use Custom JSON to Modify the Stack Configuration JSON</a>
      *
      * @return A string that contains user-defined, custom JSON. It is used to
      *         override the corresponding default stack configuration JSON values.
      *         The string should be in the following format and must escape
      *         characters such as '"'.: <code>"{\"key1\": \"value1\", \"key2\":
-     *         \"value2\",...}"</code>
+     *         \"value2\",...}"</code> <p>For more information on custom JSON, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">.
+     *         Use Custom JSON to Modify the Stack Configuration JSON</a>
      */
     public String getCustomJson() {
         return customJson;
@@ -635,13 +679,17 @@ public class CloneStackRequest extends AmazonWebServiceRequest  implements Seria
      * override the corresponding default stack configuration JSON values.
      * The string should be in the following format and must escape
      * characters such as '"'.: <code>"{\"key1\": \"value1\", \"key2\":
-     * \"value2\",...}"</code>
+     * \"value2\",...}"</code> <p>For more information on custom JSON, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">.
+     * Use Custom JSON to Modify the Stack Configuration JSON</a>
      *
      * @param customJson A string that contains user-defined, custom JSON. It is used to
      *         override the corresponding default stack configuration JSON values.
      *         The string should be in the following format and must escape
      *         characters such as '"'.: <code>"{\"key1\": \"value1\", \"key2\":
-     *         \"value2\",...}"</code>
+     *         \"value2\",...}"</code> <p>For more information on custom JSON, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">.
+     *         Use Custom JSON to Modify the Stack Configuration JSON</a>
      */
     public void setCustomJson(String customJson) {
         this.customJson = customJson;
@@ -652,7 +700,9 @@ public class CloneStackRequest extends AmazonWebServiceRequest  implements Seria
      * override the corresponding default stack configuration JSON values.
      * The string should be in the following format and must escape
      * characters such as '"'.: <code>"{\"key1\": \"value1\", \"key2\":
-     * \"value2\",...}"</code>
+     * \"value2\",...}"</code> <p>For more information on custom JSON, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">.
+     * Use Custom JSON to Modify the Stack Configuration JSON</a>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -660,7 +710,9 @@ public class CloneStackRequest extends AmazonWebServiceRequest  implements Seria
      *         override the corresponding default stack configuration JSON values.
      *         The string should be in the following format and must escape
      *         characters such as '"'.: <code>"{\"key1\": \"value1\", \"key2\":
-     *         \"value2\",...}"</code>
+     *         \"value2\",...}"</code> <p>For more information on custom JSON, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">.
+     *         Use Custom JSON to Modify the Stack Configuration JSON</a>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -716,10 +768,18 @@ public class CloneStackRequest extends AmazonWebServiceRequest  implements Seria
     
     /**
      * Contains the information required to retrieve an app or cookbook from
-     * a repository.
+     * a repository. For more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Creating
+     * Apps</a> or <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-installingcustom.html">Custom
+     * Recipes and Cookbooks</a>.
      *
      * @return Contains the information required to retrieve an app or cookbook from
-     *         a repository.
+     *         a repository. For more information, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Creating
+     *         Apps</a> or <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-installingcustom.html">Custom
+     *         Recipes and Cookbooks</a>.
      */
     public Source getCustomCookbooksSource() {
         return customCookbooksSource;
@@ -727,10 +787,18 @@ public class CloneStackRequest extends AmazonWebServiceRequest  implements Seria
     
     /**
      * Contains the information required to retrieve an app or cookbook from
-     * a repository.
+     * a repository. For more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Creating
+     * Apps</a> or <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-installingcustom.html">Custom
+     * Recipes and Cookbooks</a>.
      *
      * @param customCookbooksSource Contains the information required to retrieve an app or cookbook from
-     *         a repository.
+     *         a repository. For more information, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Creating
+     *         Apps</a> or <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-installingcustom.html">Custom
+     *         Recipes and Cookbooks</a>.
      */
     public void setCustomCookbooksSource(Source customCookbooksSource) {
         this.customCookbooksSource = customCookbooksSource;
@@ -738,12 +806,20 @@ public class CloneStackRequest extends AmazonWebServiceRequest  implements Seria
     
     /**
      * Contains the information required to retrieve an app or cookbook from
-     * a repository.
+     * a repository. For more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Creating
+     * Apps</a> or <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-installingcustom.html">Custom
+     * Recipes and Cookbooks</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param customCookbooksSource Contains the information required to retrieve an app or cookbook from
-     *         a repository.
+     *         a repository. For more information, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Creating
+     *         Apps</a> or <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-installingcustom.html">Custom
+     *         Recipes and Cookbooks</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -907,6 +983,129 @@ public class CloneStackRequest extends AmazonWebServiceRequest  implements Seria
     }
     
     /**
+     * The default root device type. This value is used by default for all
+     * instances in the cloned stack, but you can override it when you create
+     * an instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
+     * for the Root Device</a>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>ebs, instance-store
+     *
+     * @return The default root device type. This value is used by default for all
+     *         instances in the cloned stack, but you can override it when you create
+     *         an instance. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
+     *         for the Root Device</a>.
+     *
+     * @see RootDeviceType
+     */
+    public String getDefaultRootDeviceType() {
+        return defaultRootDeviceType;
+    }
+    
+    /**
+     * The default root device type. This value is used by default for all
+     * instances in the cloned stack, but you can override it when you create
+     * an instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
+     * for the Root Device</a>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>ebs, instance-store
+     *
+     * @param defaultRootDeviceType The default root device type. This value is used by default for all
+     *         instances in the cloned stack, but you can override it when you create
+     *         an instance. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
+     *         for the Root Device</a>.
+     *
+     * @see RootDeviceType
+     */
+    public void setDefaultRootDeviceType(String defaultRootDeviceType) {
+        this.defaultRootDeviceType = defaultRootDeviceType;
+    }
+    
+    /**
+     * The default root device type. This value is used by default for all
+     * instances in the cloned stack, but you can override it when you create
+     * an instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
+     * for the Root Device</a>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>ebs, instance-store
+     *
+     * @param defaultRootDeviceType The default root device type. This value is used by default for all
+     *         instances in the cloned stack, but you can override it when you create
+     *         an instance. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
+     *         for the Root Device</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see RootDeviceType
+     */
+    public CloneStackRequest withDefaultRootDeviceType(String defaultRootDeviceType) {
+        this.defaultRootDeviceType = defaultRootDeviceType;
+        return this;
+    }
+    
+    
+    /**
+     * The default root device type. This value is used by default for all
+     * instances in the cloned stack, but you can override it when you create
+     * an instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
+     * for the Root Device</a>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>ebs, instance-store
+     *
+     * @param defaultRootDeviceType The default root device type. This value is used by default for all
+     *         instances in the cloned stack, but you can override it when you create
+     *         an instance. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
+     *         for the Root Device</a>.
+     *
+     * @see RootDeviceType
+     */
+    public void setDefaultRootDeviceType(RootDeviceType defaultRootDeviceType) {
+        this.defaultRootDeviceType = defaultRootDeviceType.toString();
+    }
+    
+    /**
+     * The default root device type. This value is used by default for all
+     * instances in the cloned stack, but you can override it when you create
+     * an instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
+     * for the Root Device</a>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>ebs, instance-store
+     *
+     * @param defaultRootDeviceType The default root device type. This value is used by default for all
+     *         instances in the cloned stack, but you can override it when you create
+     *         an instance. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
+     *         for the Root Device</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see RootDeviceType
+     */
+    public CloneStackRequest withDefaultRootDeviceType(RootDeviceType defaultRootDeviceType) {
+        this.defaultRootDeviceType = defaultRootDeviceType.toString();
+        return this;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -932,7 +1131,8 @@ public class CloneStackRequest extends AmazonWebServiceRequest  implements Seria
         if (getCustomCookbooksSource() != null) sb.append("CustomCookbooksSource: " + getCustomCookbooksSource() + ",");    	
         if (getDefaultSshKeyName() != null) sb.append("DefaultSshKeyName: " + getDefaultSshKeyName() + ",");    	
         if (isClonePermissions() != null) sb.append("ClonePermissions: " + isClonePermissions() + ",");    	
-        if (getCloneAppIds() != null) sb.append("CloneAppIds: " + getCloneAppIds() );
+        if (getCloneAppIds() != null) sb.append("CloneAppIds: " + getCloneAppIds() + ",");    	
+        if (getDefaultRootDeviceType() != null) sb.append("DefaultRootDeviceType: " + getDefaultRootDeviceType() );
         sb.append("}");
         return sb.toString();
     }
@@ -957,6 +1157,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest  implements Seria
         hashCode = prime * hashCode + ((getDefaultSshKeyName() == null) ? 0 : getDefaultSshKeyName().hashCode()); 
         hashCode = prime * hashCode + ((isClonePermissions() == null) ? 0 : isClonePermissions().hashCode()); 
         hashCode = prime * hashCode + ((getCloneAppIds() == null) ? 0 : getCloneAppIds().hashCode()); 
+        hashCode = prime * hashCode + ((getDefaultRootDeviceType() == null) ? 0 : getDefaultRootDeviceType().hashCode()); 
         return hashCode;
     }
     
@@ -998,6 +1199,8 @@ public class CloneStackRequest extends AmazonWebServiceRequest  implements Seria
         if (other.isClonePermissions() != null && other.isClonePermissions().equals(this.isClonePermissions()) == false) return false; 
         if (other.getCloneAppIds() == null ^ this.getCloneAppIds() == null) return false;
         if (other.getCloneAppIds() != null && other.getCloneAppIds().equals(this.getCloneAppIds()) == false) return false; 
+        if (other.getDefaultRootDeviceType() == null ^ this.getDefaultRootDeviceType() == null) return false;
+        if (other.getDefaultRootDeviceType() != null && other.getDefaultRootDeviceType().equals(this.getDefaultRootDeviceType()) == false) return false; 
         return true;
     }
     

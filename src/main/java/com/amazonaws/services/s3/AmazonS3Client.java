@@ -2533,9 +2533,9 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
 
     protected Signer createSigner(Request<?> request, String bucketName, String key) {
         String resourcePath =
-            "/" +
-            ((bucketName != null) ? bucketName + "/" : "") +
-            ((key != null) ? ServiceUtils.urlEncode(key) : "");
+                "/" +
+                ((bucketName != null) ? bucketName + "/" : "") +
+                ((key != null) ? key : "");
 
         return new S3Signer(request.getHttpMethod().toString(), resourcePath);
     }
@@ -2908,18 +2908,12 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
              && bucketNameUtils.isDNSBucketName(bucketName)
              && !validIP(endpoint.getHost()) ) {
             request.setEndpoint(convertToVirtualHostEndpoint(bucketName));
-            request.setResourcePath(ServiceUtils.urlEncode(key));
+            request.setResourcePath(key);
         } else {
             request.setEndpoint(endpoint);
 
             if (bucketName != null) {
-                /*
-                 * We don't URL encode the bucket name, since it shouldn't
-                 * contain any characters that need to be encoded based on
-                 * Amazon S3's naming restrictions.
-                 */
-                request.setResourcePath(bucketName + "/"
-                        + (key != null ? ServiceUtils.urlEncode(key) : ""));
+                request.setResourcePath(bucketName + "/" + (key != null ? key : ""));
             }
         }
 

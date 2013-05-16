@@ -35,9 +35,9 @@ public class KeysAndAttributes  implements Serializable  {
      * Represents one or more attributes to retrieve from the table or index.
      * If no attribute names are specified then all attributes will be
      * returned. If any of the specified attributes are not found, they will
-     * not appear in the result. <p>If you are querying an index and only
-     * request attributes that are projected into that index, the operation
-     * will consult the index and bypass the table. If any of the requested
+     * not appear in the result. <p>If you are querying an index and request
+     * only attributes that are projected into that index, the operation will
+     * read only the index and not the table. If any of the requested
      * attributes are not projected into the index, Amazon DynamoDB will need
      * to fetch each matching item from the table. This extra fetching incurs
      * additional throughput cost and latency.
@@ -144,9 +144,9 @@ public class KeysAndAttributes  implements Serializable  {
      * Represents one or more attributes to retrieve from the table or index.
      * If no attribute names are specified then all attributes will be
      * returned. If any of the specified attributes are not found, they will
-     * not appear in the result. <p>If you are querying an index and only
-     * request attributes that are projected into that index, the operation
-     * will consult the index and bypass the table. If any of the requested
+     * not appear in the result. <p>If you are querying an index and request
+     * only attributes that are projected into that index, the operation will
+     * read only the index and not the table. If any of the requested
      * attributes are not projected into the index, Amazon DynamoDB will need
      * to fetch each matching item from the table. This extra fetching incurs
      * additional throughput cost and latency.
@@ -157,9 +157,9 @@ public class KeysAndAttributes  implements Serializable  {
      * @return Represents one or more attributes to retrieve from the table or index.
      *         If no attribute names are specified then all attributes will be
      *         returned. If any of the specified attributes are not found, they will
-     *         not appear in the result. <p>If you are querying an index and only
-     *         request attributes that are projected into that index, the operation
-     *         will consult the index and bypass the table. If any of the requested
+     *         not appear in the result. <p>If you are querying an index and request
+     *         only attributes that are projected into that index, the operation will
+     *         read only the index and not the table. If any of the requested
      *         attributes are not projected into the index, Amazon DynamoDB will need
      *         to fetch each matching item from the table. This extra fetching incurs
      *         additional throughput cost and latency.
@@ -173,9 +173,9 @@ public class KeysAndAttributes  implements Serializable  {
      * Represents one or more attributes to retrieve from the table or index.
      * If no attribute names are specified then all attributes will be
      * returned. If any of the specified attributes are not found, they will
-     * not appear in the result. <p>If you are querying an index and only
-     * request attributes that are projected into that index, the operation
-     * will consult the index and bypass the table. If any of the requested
+     * not appear in the result. <p>If you are querying an index and request
+     * only attributes that are projected into that index, the operation will
+     * read only the index and not the table. If any of the requested
      * attributes are not projected into the index, Amazon DynamoDB will need
      * to fetch each matching item from the table. This extra fetching incurs
      * additional throughput cost and latency.
@@ -186,9 +186,9 @@ public class KeysAndAttributes  implements Serializable  {
      * @param attributesToGet Represents one or more attributes to retrieve from the table or index.
      *         If no attribute names are specified then all attributes will be
      *         returned. If any of the specified attributes are not found, they will
-     *         not appear in the result. <p>If you are querying an index and only
-     *         request attributes that are projected into that index, the operation
-     *         will consult the index and bypass the table. If any of the requested
+     *         not appear in the result. <p>If you are querying an index and request
+     *         only attributes that are projected into that index, the operation will
+     *         read only the index and not the table. If any of the requested
      *         attributes are not projected into the index, Amazon DynamoDB will need
      *         to fetch each matching item from the table. This extra fetching incurs
      *         additional throughput cost and latency.
@@ -208,9 +208,9 @@ public class KeysAndAttributes  implements Serializable  {
      * Represents one or more attributes to retrieve from the table or index.
      * If no attribute names are specified then all attributes will be
      * returned. If any of the specified attributes are not found, they will
-     * not appear in the result. <p>If you are querying an index and only
-     * request attributes that are projected into that index, the operation
-     * will consult the index and bypass the table. If any of the requested
+     * not appear in the result. <p>If you are querying an index and request
+     * only attributes that are projected into that index, the operation will
+     * read only the index and not the table. If any of the requested
      * attributes are not projected into the index, Amazon DynamoDB will need
      * to fetch each matching item from the table. This extra fetching incurs
      * additional throughput cost and latency.
@@ -223,9 +223,9 @@ public class KeysAndAttributes  implements Serializable  {
      * @param attributesToGet Represents one or more attributes to retrieve from the table or index.
      *         If no attribute names are specified then all attributes will be
      *         returned. If any of the specified attributes are not found, they will
-     *         not appear in the result. <p>If you are querying an index and only
-     *         request attributes that are projected into that index, the operation
-     *         will consult the index and bypass the table. If any of the requested
+     *         not appear in the result. <p>If you are querying an index and request
+     *         only attributes that are projected into that index, the operation will
+     *         read only the index and not the table. If any of the requested
      *         attributes are not projected into the index, Amazon DynamoDB will need
      *         to fetch each matching item from the table. This extra fetching incurs
      *         additional throughput cost and latency.
@@ -245,9 +245,9 @@ public class KeysAndAttributes  implements Serializable  {
      * Represents one or more attributes to retrieve from the table or index.
      * If no attribute names are specified then all attributes will be
      * returned. If any of the specified attributes are not found, they will
-     * not appear in the result. <p>If you are querying an index and only
-     * request attributes that are projected into that index, the operation
-     * will consult the index and bypass the table. If any of the requested
+     * not appear in the result. <p>If you are querying an index and request
+     * only attributes that are projected into that index, the operation will
+     * read only the index and not the table. If any of the requested
      * attributes are not projected into the index, Amazon DynamoDB will need
      * to fetch each matching item from the table. This extra fetching incurs
      * additional throughput cost and latency.
@@ -260,9 +260,9 @@ public class KeysAndAttributes  implements Serializable  {
      * @param attributesToGet Represents one or more attributes to retrieve from the table or index.
      *         If no attribute names are specified then all attributes will be
      *         returned. If any of the specified attributes are not found, they will
-     *         not appear in the result. <p>If you are querying an index and only
-     *         request attributes that are projected into that index, the operation
-     *         will consult the index and bypass the table. If any of the requested
+     *         not appear in the result. <p>If you are querying an index and request
+     *         only attributes that are projected into that index, the operation will
+     *         read only the index and not the table. If any of the requested
      *         attributes are not projected into the index, Amazon DynamoDB will need
      *         to fetch each matching item from the table. This extra fetching incurs
      *         additional throughput cost and latency.

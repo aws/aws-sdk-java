@@ -32,21 +32,26 @@ import com.amazonaws.services.elastictranscoder.model.*;
 public interface AmazonElasticTranscoderAsync extends AmazonElasticTranscoder {
     /**
      * <p>
-     * To delete a pipeline, send a DELETE request to the
-     * <code>/2012-09-25/pipelines/[pipelineId] </code> resource.
+     * To pause or reactivate a pipeline, so the pipeline stops or restarts
+     * processing jobs, update the status for the pipeline. Send a POST
+     * request to the <code>/2012-09-25/pipelines/[pipelineId]/status</code>
+     * resource.
      * </p>
      * <p>
-     * You can only delete a pipeline that has never been used or that is
-     * not currently in use (doesn't contain any active jobs). If the
-     * pipeline is currently in use, <code>DeletePipeline</code> returns an
-     * error.
+     * Changing the pipeline status is useful if you want to cancel one or
+     * more jobs. You can't cancel jobs after Elastic Transcoder has started
+     * processing them; if you pause the pipeline to which you submitted the
+     * jobs, you have more time to get the job IDs for the jobs that you want
+     * to cancel, and to send a CancelJob request.
      * </p>
      *
-     * @param deletePipelineRequest Container for the necessary parameters to
-     *           execute the DeletePipeline operation on AmazonElasticTranscoder.
+     * @param updatePipelineStatusRequest Container for the necessary
+     *           parameters to execute the UpdatePipelineStatus operation on
+     *           AmazonElasticTranscoder.
      * 
      * @return A Java Future object containing the response from the
-     *         DeletePipeline service method, as returned by AmazonElasticTranscoder.
+     *         UpdatePipelineStatus service method, as returned by
+     *         AmazonElasticTranscoder.
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -56,30 +61,35 @@ public interface AmazonElasticTranscoderAsync extends AmazonElasticTranscoder {
      *             If an error response is returned by AmazonElasticTranscoder indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<DeletePipelineResult> deletePipelineAsync(DeletePipelineRequest deletePipelineRequest) 
+    public Future<UpdatePipelineStatusResult> updatePipelineStatusAsync(UpdatePipelineStatusRequest updatePipelineStatusRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
      * <p>
-     * To delete a pipeline, send a DELETE request to the
-     * <code>/2012-09-25/pipelines/[pipelineId] </code> resource.
+     * To pause or reactivate a pipeline, so the pipeline stops or restarts
+     * processing jobs, update the status for the pipeline. Send a POST
+     * request to the <code>/2012-09-25/pipelines/[pipelineId]/status</code>
+     * resource.
      * </p>
      * <p>
-     * You can only delete a pipeline that has never been used or that is
-     * not currently in use (doesn't contain any active jobs). If the
-     * pipeline is currently in use, <code>DeletePipeline</code> returns an
-     * error.
+     * Changing the pipeline status is useful if you want to cancel one or
+     * more jobs. You can't cancel jobs after Elastic Transcoder has started
+     * processing them; if you pause the pipeline to which you submitted the
+     * jobs, you have more time to get the job IDs for the jobs that you want
+     * to cancel, and to send a CancelJob request.
      * </p>
      *
-     * @param deletePipelineRequest Container for the necessary parameters to
-     *           execute the DeletePipeline operation on AmazonElasticTranscoder.
+     * @param updatePipelineStatusRequest Container for the necessary
+     *           parameters to execute the UpdatePipelineStatus operation on
+     *           AmazonElasticTranscoder.
      * @param asyncHandler Asynchronous callback handler for events in the
      *           life-cycle of the request. Users could provide the implementation of
      *           the four callback methods in this interface to process the operation
      *           result or handle the exception.
      * 
      * @return A Java Future object containing the response from the
-     *         DeletePipeline service method, as returned by AmazonElasticTranscoder.
+     *         UpdatePipelineStatus service method, as returned by
+     *         AmazonElasticTranscoder.
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -89,27 +99,29 @@ public interface AmazonElasticTranscoderAsync extends AmazonElasticTranscoder {
      *             If an error response is returned by AmazonElasticTranscoder indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<DeletePipelineResult> deletePipelineAsync(DeletePipelineRequest deletePipelineRequest,
-            AsyncHandler<DeletePipelineRequest, DeletePipelineResult> asyncHandler)
+    public Future<UpdatePipelineStatusResult> updatePipelineStatusAsync(UpdatePipelineStatusRequest updatePipelineStatusRequest,
+            AsyncHandler<UpdatePipelineStatusRequest, UpdatePipelineStatusResult> asyncHandler)
                     throws AmazonServiceException, AmazonClientException;
 
     /**
      * <p>
-     * To delete a job, send a DELETE request to the
-     * <code>/2012-09-25/jobs/[jobId] </code> resource.
+     * To update Amazon Simple Notification Service (Amazon SNS)
+     * notifications for a pipeline, send a POST request to the
+     * <code>/2012-09-25/pipelines/[pipelineId]/notifications</code>
+     * resource.
      * </p>
      * <p>
-     * <b>NOTE:</b>You can only cancel a job that has a status of Submitted.
-     * To prevent a pipeline from starting to process a job while you're
-     * getting the job identifier, use UpdatePipelineStatus to temporarily
-     * pause the pipeline.
+     * When you update notifications for a pipeline, Elastic Transcoder
+     * returns the values that you specified in the request.
      * </p>
      *
-     * @param cancelJobRequest Container for the necessary parameters to
-     *           execute the CancelJob operation on AmazonElasticTranscoder.
+     * @param updatePipelineNotificationsRequest Container for the necessary
+     *           parameters to execute the UpdatePipelineNotifications operation on
+     *           AmazonElasticTranscoder.
      * 
      * @return A Java Future object containing the response from the
-     *         CancelJob service method, as returned by AmazonElasticTranscoder.
+     *         UpdatePipelineNotifications service method, as returned by
+     *         AmazonElasticTranscoder.
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -119,30 +131,32 @@ public interface AmazonElasticTranscoderAsync extends AmazonElasticTranscoder {
      *             If an error response is returned by AmazonElasticTranscoder indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<CancelJobResult> cancelJobAsync(CancelJobRequest cancelJobRequest) 
+    public Future<UpdatePipelineNotificationsResult> updatePipelineNotificationsAsync(UpdatePipelineNotificationsRequest updatePipelineNotificationsRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
      * <p>
-     * To delete a job, send a DELETE request to the
-     * <code>/2012-09-25/jobs/[jobId] </code> resource.
+     * To update Amazon Simple Notification Service (Amazon SNS)
+     * notifications for a pipeline, send a POST request to the
+     * <code>/2012-09-25/pipelines/[pipelineId]/notifications</code>
+     * resource.
      * </p>
      * <p>
-     * <b>NOTE:</b>You can only cancel a job that has a status of Submitted.
-     * To prevent a pipeline from starting to process a job while you're
-     * getting the job identifier, use UpdatePipelineStatus to temporarily
-     * pause the pipeline.
+     * When you update notifications for a pipeline, Elastic Transcoder
+     * returns the values that you specified in the request.
      * </p>
      *
-     * @param cancelJobRequest Container for the necessary parameters to
-     *           execute the CancelJob operation on AmazonElasticTranscoder.
+     * @param updatePipelineNotificationsRequest Container for the necessary
+     *           parameters to execute the UpdatePipelineNotifications operation on
+     *           AmazonElasticTranscoder.
      * @param asyncHandler Asynchronous callback handler for events in the
      *           life-cycle of the request. Users could provide the implementation of
      *           the four callback methods in this interface to process the operation
      *           result or handle the exception.
      * 
      * @return A Java Future object containing the response from the
-     *         CancelJob service method, as returned by AmazonElasticTranscoder.
+     *         UpdatePipelineNotifications service method, as returned by
+     *         AmazonElasticTranscoder.
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -152,21 +166,21 @@ public interface AmazonElasticTranscoderAsync extends AmazonElasticTranscoder {
      *             If an error response is returned by AmazonElasticTranscoder indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<CancelJobResult> cancelJobAsync(CancelJobRequest cancelJobRequest,
-            AsyncHandler<CancelJobRequest, CancelJobResult> asyncHandler)
+    public Future<UpdatePipelineNotificationsResult> updatePipelineNotificationsAsync(UpdatePipelineNotificationsRequest updatePipelineNotificationsRequest,
+            AsyncHandler<UpdatePipelineNotificationsRequest, UpdatePipelineNotificationsResult> asyncHandler)
                     throws AmazonServiceException, AmazonClientException;
 
     /**
      * <p>
-     * To get a list of all presets associated with the current AWS account,
-     * send a GET request to the <code>/2012-09-25/presets</code> resource.
+     * To get detailed information about a job, send a GET request to the
+     * <code>/2012-09-25/jobs/[jobId] </code> resource.
      * </p>
      *
-     * @param listPresetsRequest Container for the necessary parameters to
-     *           execute the ListPresets operation on AmazonElasticTranscoder.
+     * @param readJobRequest Container for the necessary parameters to
+     *           execute the ReadJob operation on AmazonElasticTranscoder.
      * 
-     * @return A Java Future object containing the response from the
-     *         ListPresets service method, as returned by AmazonElasticTranscoder.
+     * @return A Java Future object containing the response from the ReadJob
+     *         service method, as returned by AmazonElasticTranscoder.
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -176,24 +190,24 @@ public interface AmazonElasticTranscoderAsync extends AmazonElasticTranscoder {
      *             If an error response is returned by AmazonElasticTranscoder indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<ListPresetsResult> listPresetsAsync(ListPresetsRequest listPresetsRequest) 
+    public Future<ReadJobResult> readJobAsync(ReadJobRequest readJobRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
      * <p>
-     * To get a list of all presets associated with the current AWS account,
-     * send a GET request to the <code>/2012-09-25/presets</code> resource.
+     * To get detailed information about a job, send a GET request to the
+     * <code>/2012-09-25/jobs/[jobId] </code> resource.
      * </p>
      *
-     * @param listPresetsRequest Container for the necessary parameters to
-     *           execute the ListPresets operation on AmazonElasticTranscoder.
+     * @param readJobRequest Container for the necessary parameters to
+     *           execute the ReadJob operation on AmazonElasticTranscoder.
      * @param asyncHandler Asynchronous callback handler for events in the
      *           life-cycle of the request. Users could provide the implementation of
      *           the four callback methods in this interface to process the operation
      *           result or handle the exception.
      * 
-     * @return A Java Future object containing the response from the
-     *         ListPresets service method, as returned by AmazonElasticTranscoder.
+     * @return A Java Future object containing the response from the ReadJob
+     *         service method, as returned by AmazonElasticTranscoder.
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -203,8 +217,8 @@ public interface AmazonElasticTranscoderAsync extends AmazonElasticTranscoder {
      *             If an error response is returned by AmazonElasticTranscoder indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<ListPresetsResult> listPresetsAsync(ListPresetsRequest listPresetsRequest,
-            AsyncHandler<ListPresetsRequest, ListPresetsResult> asyncHandler)
+    public Future<ReadJobResult> readJobAsync(ReadJobRequest readJobRequest,
+            AsyncHandler<ReadJobRequest, ReadJobResult> asyncHandler)
                     throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -274,6 +288,57 @@ public interface AmazonElasticTranscoderAsync extends AmazonElasticTranscoder {
 
     /**
      * <p>
+     * To get detailed information about a preset, send a GET request to the
+     * <code>/2012-09-25/presets/[presetId] </code> resource.
+     * </p>
+     *
+     * @param readPresetRequest Container for the necessary parameters to
+     *           execute the ReadPreset operation on AmazonElasticTranscoder.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ReadPreset service method, as returned by AmazonElasticTranscoder.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElasticTranscoder indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ReadPresetResult> readPresetAsync(ReadPresetRequest readPresetRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * To get detailed information about a preset, send a GET request to the
+     * <code>/2012-09-25/presets/[presetId] </code> resource.
+     * </p>
+     *
+     * @param readPresetRequest Container for the necessary parameters to
+     *           execute the ReadPreset operation on AmazonElasticTranscoder.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ReadPreset service method, as returned by AmazonElasticTranscoder.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElasticTranscoder indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ReadPresetResult> readPresetAsync(ReadPresetRequest readPresetRequest,
+            AsyncHandler<ReadPresetRequest, ReadPresetResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
      * To create a pipeline, send a POST request to the
      * <code>2012-09-25/pipelines</code> resource.
      * </p>
@@ -321,6 +386,226 @@ public interface AmazonElasticTranscoderAsync extends AmazonElasticTranscoder {
      */
     public Future<CreatePipelineResult> createPipelineAsync(CreatePipelineRequest createPipelineRequest,
             AsyncHandler<CreatePipelineRequest, CreatePipelineResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * To cancel a job, send a DELETE request to the
+     * <code>/2012-09-25/jobs/[jobId] </code> resource.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>You can only cancel a job that has a status of Submitted.
+     * To prevent a pipeline from starting to process a job while you're
+     * getting the job identifier, use UpdatePipelineStatus to temporarily
+     * pause the pipeline.
+     * </p>
+     *
+     * @param cancelJobRequest Container for the necessary parameters to
+     *           execute the CancelJob operation on AmazonElasticTranscoder.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CancelJob service method, as returned by AmazonElasticTranscoder.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElasticTranscoder indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<CancelJobResult> cancelJobAsync(CancelJobRequest cancelJobRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * To cancel a job, send a DELETE request to the
+     * <code>/2012-09-25/jobs/[jobId] </code> resource.
+     * </p>
+     * <p>
+     * <b>NOTE:</b>You can only cancel a job that has a status of Submitted.
+     * To prevent a pipeline from starting to process a job while you're
+     * getting the job identifier, use UpdatePipelineStatus to temporarily
+     * pause the pipeline.
+     * </p>
+     *
+     * @param cancelJobRequest Container for the necessary parameters to
+     *           execute the CancelJob operation on AmazonElasticTranscoder.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CancelJob service method, as returned by AmazonElasticTranscoder.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElasticTranscoder indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<CancelJobResult> cancelJobAsync(CancelJobRequest cancelJobRequest,
+            AsyncHandler<CancelJobRequest, CancelJobResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException;
+
+    /**
+     *
+     * @param updatePipelineRequest Container for the necessary parameters to
+     *           execute the UpdatePipeline operation on AmazonElasticTranscoder.
+     * 
+     * @return A Java Future object containing the response from the
+     *         UpdatePipeline service method, as returned by AmazonElasticTranscoder.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElasticTranscoder indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<UpdatePipelineResult> updatePipelineAsync(UpdatePipelineRequest updatePipelineRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     *
+     * @param updatePipelineRequest Container for the necessary parameters to
+     *           execute the UpdatePipeline operation on AmazonElasticTranscoder.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         UpdatePipeline service method, as returned by AmazonElasticTranscoder.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElasticTranscoder indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<UpdatePipelineResult> updatePipelineAsync(UpdatePipelineRequest updatePipelineRequest,
+            AsyncHandler<UpdatePipelineRequest, UpdatePipelineResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * To get a list of all presets associated with the current AWS account,
+     * send a GET request to the <code>/2012-09-25/presets</code> resource.
+     * </p>
+     *
+     * @param listPresetsRequest Container for the necessary parameters to
+     *           execute the ListPresets operation on AmazonElasticTranscoder.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ListPresets service method, as returned by AmazonElasticTranscoder.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElasticTranscoder indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ListPresetsResult> listPresetsAsync(ListPresetsRequest listPresetsRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * To get a list of all presets associated with the current AWS account,
+     * send a GET request to the <code>/2012-09-25/presets</code> resource.
+     * </p>
+     *
+     * @param listPresetsRequest Container for the necessary parameters to
+     *           execute the ListPresets operation on AmazonElasticTranscoder.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ListPresets service method, as returned by AmazonElasticTranscoder.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElasticTranscoder indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ListPresetsResult> listPresetsAsync(ListPresetsRequest listPresetsRequest,
+            AsyncHandler<ListPresetsRequest, ListPresetsResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * To delete a pipeline, send a DELETE request to the
+     * <code>/2012-09-25/pipelines/[pipelineId] </code> resource.
+     * </p>
+     * <p>
+     * You can only delete a pipeline that has never been used or that is
+     * not currently in use (doesn't contain any active jobs). If the
+     * pipeline is currently in use, <code>DeletePipeline</code> returns an
+     * error.
+     * </p>
+     *
+     * @param deletePipelineRequest Container for the necessary parameters to
+     *           execute the DeletePipeline operation on AmazonElasticTranscoder.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeletePipeline service method, as returned by AmazonElasticTranscoder.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElasticTranscoder indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DeletePipelineResult> deletePipelineAsync(DeletePipelineRequest deletePipelineRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * To delete a pipeline, send a DELETE request to the
+     * <code>/2012-09-25/pipelines/[pipelineId] </code> resource.
+     * </p>
+     * <p>
+     * You can only delete a pipeline that has never been used or that is
+     * not currently in use (doesn't contain any active jobs). If the
+     * pipeline is currently in use, <code>DeletePipeline</code> returns an
+     * error.
+     * </p>
+     *
+     * @param deletePipelineRequest Container for the necessary parameters to
+     *           execute the DeletePipeline operation on AmazonElasticTranscoder.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         DeletePipeline service method, as returned by AmazonElasticTranscoder.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElasticTranscoder indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<DeletePipelineResult> deletePipelineAsync(DeletePipelineRequest deletePipelineRequest,
+            AsyncHandler<DeletePipelineRequest, DeletePipelineResult> asyncHandler)
                     throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -447,272 +732,6 @@ public interface AmazonElasticTranscoderAsync extends AmazonElasticTranscoder {
 
     /**
      * <p>
-     * To update Amazon Simple Notification Service (Amazon SNS)
-     * notifications for a pipeline, send a POST request to the
-     * <code>/2012-09-25/pipelines/[pipelineId]/notifications</code>
-     * resource.
-     * </p>
-     * <p>
-     * When you update notifications for a pipeline, Elastic Transcoder
-     * returns the values that you specified in the request.
-     * </p>
-     *
-     * @param updatePipelineNotificationsRequest Container for the necessary
-     *           parameters to execute the UpdatePipelineNotifications operation on
-     *           AmazonElasticTranscoder.
-     * 
-     * @return A Java Future object containing the response from the
-     *         UpdatePipelineNotifications service method, as returned by
-     *         AmazonElasticTranscoder.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonElasticTranscoder indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<UpdatePipelineNotificationsResult> updatePipelineNotificationsAsync(UpdatePipelineNotificationsRequest updatePipelineNotificationsRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * To update Amazon Simple Notification Service (Amazon SNS)
-     * notifications for a pipeline, send a POST request to the
-     * <code>/2012-09-25/pipelines/[pipelineId]/notifications</code>
-     * resource.
-     * </p>
-     * <p>
-     * When you update notifications for a pipeline, Elastic Transcoder
-     * returns the values that you specified in the request.
-     * </p>
-     *
-     * @param updatePipelineNotificationsRequest Container for the necessary
-     *           parameters to execute the UpdatePipelineNotifications operation on
-     *           AmazonElasticTranscoder.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         UpdatePipelineNotifications service method, as returned by
-     *         AmazonElasticTranscoder.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonElasticTranscoder indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<UpdatePipelineNotificationsResult> updatePipelineNotificationsAsync(UpdatePipelineNotificationsRequest updatePipelineNotificationsRequest,
-            AsyncHandler<UpdatePipelineNotificationsRequest, UpdatePipelineNotificationsResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * To get a list of the jobs currently in a pipeline, send a GET request
-     * to the <code>/2012-09-25/jobsByPipeline/[pipelineId] </code> resource.
-     * </p>
-     * <p>
-     * Elastic Transcoder returns all of the jobs currently in the specified
-     * pipeline. The response body contains one element for each job that
-     * satisfies the search criteria.
-     * </p>
-     *
-     * @param listJobsByPipelineRequest Container for the necessary
-     *           parameters to execute the ListJobsByPipeline operation on
-     *           AmazonElasticTranscoder.
-     * 
-     * @return A Java Future object containing the response from the
-     *         ListJobsByPipeline service method, as returned by
-     *         AmazonElasticTranscoder.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonElasticTranscoder indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<ListJobsByPipelineResult> listJobsByPipelineAsync(ListJobsByPipelineRequest listJobsByPipelineRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * To get a list of the jobs currently in a pipeline, send a GET request
-     * to the <code>/2012-09-25/jobsByPipeline/[pipelineId] </code> resource.
-     * </p>
-     * <p>
-     * Elastic Transcoder returns all of the jobs currently in the specified
-     * pipeline. The response body contains one element for each job that
-     * satisfies the search criteria.
-     * </p>
-     *
-     * @param listJobsByPipelineRequest Container for the necessary
-     *           parameters to execute the ListJobsByPipeline operation on
-     *           AmazonElasticTranscoder.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         ListJobsByPipeline service method, as returned by
-     *         AmazonElasticTranscoder.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonElasticTranscoder indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<ListJobsByPipelineResult> listJobsByPipelineAsync(ListJobsByPipelineRequest listJobsByPipelineRequest,
-            AsyncHandler<ListJobsByPipelineRequest, ListJobsByPipelineResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * To create a job, send a POST request to the
-     * <code>/2012-09-25/jobs</code> resource.
-     * </p>
-     * <p>
-     * When you create a job, Elastic Transcoder returns JSON data that
-     * includes the values that you specified plus information about the job
-     * that is created.
-     * </p>
-     *
-     * @param createJobRequest Container for the necessary parameters to
-     *           execute the CreateJob operation on AmazonElasticTranscoder.
-     * 
-     * @return A Java Future object containing the response from the
-     *         CreateJob service method, as returned by AmazonElasticTranscoder.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonElasticTranscoder indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<CreateJobResult> createJobAsync(CreateJobRequest createJobRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * To create a job, send a POST request to the
-     * <code>/2012-09-25/jobs</code> resource.
-     * </p>
-     * <p>
-     * When you create a job, Elastic Transcoder returns JSON data that
-     * includes the values that you specified plus information about the job
-     * that is created.
-     * </p>
-     *
-     * @param createJobRequest Container for the necessary parameters to
-     *           execute the CreateJob operation on AmazonElasticTranscoder.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         CreateJob service method, as returned by AmazonElasticTranscoder.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonElasticTranscoder indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<CreateJobResult> createJobAsync(CreateJobRequest createJobRequest,
-            AsyncHandler<CreateJobRequest, CreateJobResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * To pause or reactivate a pipeline, so the pipeline stops or restarts
-     * processing jobs, update the status for the pipeline. Send a POST
-     * request to the <code>/2012-09-25/pipelines/[pipelineId]/status</code>
-     * resource.
-     * </p>
-     * <p>
-     * Changing the pipeline status is useful if you want to cancel one or
-     * more jobs. You can't cancel jobs after Elastic Transcoder has started
-     * processing them; if you pause the pipeline to which you submitted the
-     * jobs, you have more time to get the job IDs for the jobs that you want
-     * to cancel, and to send a CancelJob request.
-     * </p>
-     *
-     * @param updatePipelineStatusRequest Container for the necessary
-     *           parameters to execute the UpdatePipelineStatus operation on
-     *           AmazonElasticTranscoder.
-     * 
-     * @return A Java Future object containing the response from the
-     *         UpdatePipelineStatus service method, as returned by
-     *         AmazonElasticTranscoder.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonElasticTranscoder indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<UpdatePipelineStatusResult> updatePipelineStatusAsync(UpdatePipelineStatusRequest updatePipelineStatusRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * To pause or reactivate a pipeline, so the pipeline stops or restarts
-     * processing jobs, update the status for the pipeline. Send a POST
-     * request to the <code>/2012-09-25/pipelines/[pipelineId]/status</code>
-     * resource.
-     * </p>
-     * <p>
-     * Changing the pipeline status is useful if you want to cancel one or
-     * more jobs. You can't cancel jobs after Elastic Transcoder has started
-     * processing them; if you pause the pipeline to which you submitted the
-     * jobs, you have more time to get the job IDs for the jobs that you want
-     * to cancel, and to send a CancelJob request.
-     * </p>
-     *
-     * @param updatePipelineStatusRequest Container for the necessary
-     *           parameters to execute the UpdatePipelineStatus operation on
-     *           AmazonElasticTranscoder.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         UpdatePipelineStatus service method, as returned by
-     *         AmazonElasticTranscoder.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonElasticTranscoder indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<UpdatePipelineStatusResult> updatePipelineStatusAsync(UpdatePipelineStatusRequest updatePipelineStatusRequest,
-            AsyncHandler<UpdatePipelineStatusRequest, UpdatePipelineStatusResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
      * To get detailed information about a pipeline, send a GET request to
      * the <code>/2012-09-25/pipelines/[pipelineId] </code> resource.
      * </p>
@@ -760,114 +779,6 @@ public interface AmazonElasticTranscoderAsync extends AmazonElasticTranscoder {
      */
     public Future<ReadPipelineResult> readPipelineAsync(ReadPipelineRequest readPipelineRequest,
             AsyncHandler<ReadPipelineRequest, ReadPipelineResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * To get detailed information about a job, send a GET request to the
-     * <code>/2012-09-25/jobs/[jobId] </code> resource.
-     * </p>
-     *
-     * @param readJobRequest Container for the necessary parameters to
-     *           execute the ReadJob operation on AmazonElasticTranscoder.
-     * 
-     * @return A Java Future object containing the response from the ReadJob
-     *         service method, as returned by AmazonElasticTranscoder.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonElasticTranscoder indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<ReadJobResult> readJobAsync(ReadJobRequest readJobRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * To get detailed information about a job, send a GET request to the
-     * <code>/2012-09-25/jobs/[jobId] </code> resource.
-     * </p>
-     *
-     * @param readJobRequest Container for the necessary parameters to
-     *           execute the ReadJob operation on AmazonElasticTranscoder.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the ReadJob
-     *         service method, as returned by AmazonElasticTranscoder.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonElasticTranscoder indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<ReadJobResult> readJobAsync(ReadJobRequest readJobRequest,
-            AsyncHandler<ReadJobRequest, ReadJobResult> asyncHandler)
-                    throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * To delete a preset, send a DELETE request to the
-     * <code>/2012-09-25/presets/[presetId] </code> resource.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> If the preset has been used, you cannot delete it.
-     * </p>
-     *
-     * @param deletePresetRequest Container for the necessary parameters to
-     *           execute the DeletePreset operation on AmazonElasticTranscoder.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DeletePreset service method, as returned by AmazonElasticTranscoder.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonElasticTranscoder indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DeletePresetResult> deletePresetAsync(DeletePresetRequest deletePresetRequest) 
-            throws AmazonServiceException, AmazonClientException;
-
-    /**
-     * <p>
-     * To delete a preset, send a DELETE request to the
-     * <code>/2012-09-25/presets/[presetId] </code> resource.
-     * </p>
-     * <p>
-     * <b>NOTE:</b> If the preset has been used, you cannot delete it.
-     * </p>
-     *
-     * @param deletePresetRequest Container for the necessary parameters to
-     *           execute the DeletePreset operation on AmazonElasticTranscoder.
-     * @param asyncHandler Asynchronous callback handler for events in the
-     *           life-cycle of the request. Users could provide the implementation of
-     *           the four callback methods in this interface to process the operation
-     *           result or handle the exception.
-     * 
-     * @return A Java Future object containing the response from the
-     *         DeletePreset service method, as returned by AmazonElasticTranscoder.
-     *
-     * @throws AmazonClientException
-     *             If any internal errors are encountered inside the client while
-     *             attempting to make the request or handle the response.  For example
-     *             if a network connection is not available.
-     * @throws AmazonServiceException
-     *             If an error response is returned by AmazonElasticTranscoder indicating
-     *             either a problem with the data in the request, or a server side issue.
-     */
-    public Future<DeletePresetResult> deletePresetAsync(DeletePresetRequest deletePresetRequest,
-            AsyncHandler<DeletePresetRequest, DeletePresetResult> asyncHandler)
                     throws AmazonServiceException, AmazonClientException;
 
     /**
@@ -961,15 +872,18 @@ public interface AmazonElasticTranscoderAsync extends AmazonElasticTranscoder {
 
     /**
      * <p>
-     * To get detailed information about a preset, send a GET request to the
+     * To delete a preset, send a DELETE request to the
      * <code>/2012-09-25/presets/[presetId] </code> resource.
      * </p>
+     * <p>
+     * <b>NOTE:</b> If the preset has been used, you cannot delete it.
+     * </p>
      *
-     * @param readPresetRequest Container for the necessary parameters to
-     *           execute the ReadPreset operation on AmazonElasticTranscoder.
+     * @param deletePresetRequest Container for the necessary parameters to
+     *           execute the DeletePreset operation on AmazonElasticTranscoder.
      * 
      * @return A Java Future object containing the response from the
-     *         ReadPreset service method, as returned by AmazonElasticTranscoder.
+     *         DeletePreset service method, as returned by AmazonElasticTranscoder.
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -979,24 +893,27 @@ public interface AmazonElasticTranscoderAsync extends AmazonElasticTranscoder {
      *             If an error response is returned by AmazonElasticTranscoder indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<ReadPresetResult> readPresetAsync(ReadPresetRequest readPresetRequest) 
+    public Future<DeletePresetResult> deletePresetAsync(DeletePresetRequest deletePresetRequest) 
             throws AmazonServiceException, AmazonClientException;
 
     /**
      * <p>
-     * To get detailed information about a preset, send a GET request to the
+     * To delete a preset, send a DELETE request to the
      * <code>/2012-09-25/presets/[presetId] </code> resource.
      * </p>
+     * <p>
+     * <b>NOTE:</b> If the preset has been used, you cannot delete it.
+     * </p>
      *
-     * @param readPresetRequest Container for the necessary parameters to
-     *           execute the ReadPreset operation on AmazonElasticTranscoder.
+     * @param deletePresetRequest Container for the necessary parameters to
+     *           execute the DeletePreset operation on AmazonElasticTranscoder.
      * @param asyncHandler Asynchronous callback handler for events in the
      *           life-cycle of the request. Users could provide the implementation of
      *           the four callback methods in this interface to process the operation
      *           result or handle the exception.
      * 
      * @return A Java Future object containing the response from the
-     *         ReadPreset service method, as returned by AmazonElasticTranscoder.
+     *         DeletePreset service method, as returned by AmazonElasticTranscoder.
      *
      * @throws AmazonClientException
      *             If any internal errors are encountered inside the client while
@@ -1006,8 +923,146 @@ public interface AmazonElasticTranscoderAsync extends AmazonElasticTranscoder {
      *             If an error response is returned by AmazonElasticTranscoder indicating
      *             either a problem with the data in the request, or a server side issue.
      */
-    public Future<ReadPresetResult> readPresetAsync(ReadPresetRequest readPresetRequest,
-            AsyncHandler<ReadPresetRequest, ReadPresetResult> asyncHandler)
+    public Future<DeletePresetResult> deletePresetAsync(DeletePresetRequest deletePresetRequest,
+            AsyncHandler<DeletePresetRequest, DeletePresetResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * To create a job, send a POST request to the
+     * <code>/2012-09-25/jobs</code> resource.
+     * </p>
+     * <p>
+     * When you create a job, Elastic Transcoder returns JSON data that
+     * includes the values that you specified plus information about the job
+     * that is created.
+     * </p>
+     * <p>
+     * If you have specified more than one output for your jobs (for example,
+     * one output for the Kindle Fire and another output for the Apple iPhone
+     * 4s), you currently must use the Elastic Transcoder API to list the
+     * jobs (as opposed to the AWS Console).
+     * </p>
+     *
+     * @param createJobRequest Container for the necessary parameters to
+     *           execute the CreateJob operation on AmazonElasticTranscoder.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreateJob service method, as returned by AmazonElasticTranscoder.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElasticTranscoder indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<CreateJobResult> createJobAsync(CreateJobRequest createJobRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * To create a job, send a POST request to the
+     * <code>/2012-09-25/jobs</code> resource.
+     * </p>
+     * <p>
+     * When you create a job, Elastic Transcoder returns JSON data that
+     * includes the values that you specified plus information about the job
+     * that is created.
+     * </p>
+     * <p>
+     * If you have specified more than one output for your jobs (for example,
+     * one output for the Kindle Fire and another output for the Apple iPhone
+     * 4s), you currently must use the Elastic Transcoder API to list the
+     * jobs (as opposed to the AWS Console).
+     * </p>
+     *
+     * @param createJobRequest Container for the necessary parameters to
+     *           execute the CreateJob operation on AmazonElasticTranscoder.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         CreateJob service method, as returned by AmazonElasticTranscoder.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElasticTranscoder indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<CreateJobResult> createJobAsync(CreateJobRequest createJobRequest,
+            AsyncHandler<CreateJobRequest, CreateJobResult> asyncHandler)
+                    throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * To get a list of the jobs currently in a pipeline, send a GET request
+     * to the <code>/2012-09-25/jobsByPipeline/[pipelineId] </code> resource.
+     * </p>
+     * <p>
+     * Elastic Transcoder returns all of the jobs currently in the specified
+     * pipeline. The response body contains one element for each job that
+     * satisfies the search criteria.
+     * </p>
+     *
+     * @param listJobsByPipelineRequest Container for the necessary
+     *           parameters to execute the ListJobsByPipeline operation on
+     *           AmazonElasticTranscoder.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ListJobsByPipeline service method, as returned by
+     *         AmazonElasticTranscoder.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElasticTranscoder indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ListJobsByPipelineResult> listJobsByPipelineAsync(ListJobsByPipelineRequest listJobsByPipelineRequest) 
+            throws AmazonServiceException, AmazonClientException;
+
+    /**
+     * <p>
+     * To get a list of the jobs currently in a pipeline, send a GET request
+     * to the <code>/2012-09-25/jobsByPipeline/[pipelineId] </code> resource.
+     * </p>
+     * <p>
+     * Elastic Transcoder returns all of the jobs currently in the specified
+     * pipeline. The response body contains one element for each job that
+     * satisfies the search criteria.
+     * </p>
+     *
+     * @param listJobsByPipelineRequest Container for the necessary
+     *           parameters to execute the ListJobsByPipeline operation on
+     *           AmazonElasticTranscoder.
+     * @param asyncHandler Asynchronous callback handler for events in the
+     *           life-cycle of the request. Users could provide the implementation of
+     *           the four callback methods in this interface to process the operation
+     *           result or handle the exception.
+     * 
+     * @return A Java Future object containing the response from the
+     *         ListJobsByPipeline service method, as returned by
+     *         AmazonElasticTranscoder.
+     *
+     * @throws AmazonClientException
+     *             If any internal errors are encountered inside the client while
+     *             attempting to make the request or handle the response.  For example
+     *             if a network connection is not available.
+     * @throws AmazonServiceException
+     *             If an error response is returned by AmazonElasticTranscoder indicating
+     *             either a problem with the data in the request, or a server side issue.
+     */
+    public Future<ListJobsByPipelineResult> listJobsByPipelineAsync(ListJobsByPipelineRequest listJobsByPipelineRequest,
+            AsyncHandler<ListJobsByPipelineRequest, ListJobsByPipelineResult> asyncHandler)
                     throws AmazonServiceException, AmazonClientException;
 
 }

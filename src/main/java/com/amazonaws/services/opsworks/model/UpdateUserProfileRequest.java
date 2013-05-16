@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.opsworks.AWSOpsWorks#updateUserProfile(UpdateUserProfileRequest) UpdateUserProfile operation}.
  * <p>
- * Updates a specified user's SSH name and public key.
+ * Updates a specified user profile.
  * </p>
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#updateUserProfile(UpdateUserProfileRequest)

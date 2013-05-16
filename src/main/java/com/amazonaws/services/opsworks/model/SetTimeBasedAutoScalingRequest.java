@@ -19,7 +19,9 @@ import java.io.Serializable;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.opsworks.AWSOpsWorks#setTimeBasedAutoScaling(SetTimeBasedAutoScalingRequest) SetTimeBasedAutoScaling operation}.
  * <p>
- * Specify the time-based auto scaling configuration for a specified instance.
+ * Specify the time-based auto scaling configuration for a specified instance. For more information, see <a
+ * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-autoscaling.html"> Managing Load with Time-based and Load-based Instances
+ * </a> .
  * </p>
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#setTimeBasedAutoScaling(SetTimeBasedAutoScalingRequest)

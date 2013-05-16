@@ -64,7 +64,7 @@ public class RaidArray  implements Serializable  {
     private String mountPoint;
 
     /**
-     * The array's AWS Availability Zone. For more information, see <a
+     * The array's Availability Zone. For more information, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
      * and Endpoints</a>.
      */
@@ -354,11 +354,11 @@ public class RaidArray  implements Serializable  {
     
     
     /**
-     * The array's AWS Availability Zone. For more information, see <a
+     * The array's Availability Zone. For more information, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
      * and Endpoints</a>.
      *
-     * @return The array's AWS Availability Zone. For more information, see <a
+     * @return The array's Availability Zone. For more information, see <a
      *         href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
      *         and Endpoints</a>.
      */
@@ -367,11 +367,11 @@ public class RaidArray  implements Serializable  {
     }
     
     /**
-     * The array's AWS Availability Zone. For more information, see <a
+     * The array's Availability Zone. For more information, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
      * and Endpoints</a>.
      *
-     * @param availabilityZone The array's AWS Availability Zone. For more information, see <a
+     * @param availabilityZone The array's Availability Zone. For more information, see <a
      *         href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
      *         and Endpoints</a>.
      */
@@ -380,13 +380,13 @@ public class RaidArray  implements Serializable  {
     }
     
     /**
-     * The array's AWS Availability Zone. For more information, see <a
+     * The array's Availability Zone. For more information, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
      * and Endpoints</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param availabilityZone The array's AWS Availability Zone. For more information, see <a
+     * @param availabilityZone The array's Availability Zone. For more information, see <a
      *         href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
      *         and Endpoints</a>.
      *

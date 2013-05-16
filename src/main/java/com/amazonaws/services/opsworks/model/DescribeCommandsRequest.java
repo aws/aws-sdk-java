@@ -27,44 +27,62 @@ import java.io.Serializable;
 public class DescribeCommandsRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
-     * The deployment ID.
+     * The deployment ID. If you include this parameter,
+     * <code>DescribeCommands</code> returns a description of the commands
+     * associated with the specified deployment.
      */
     private String deploymentId;
 
     /**
-     * The instance ID.
+     * The instance ID. If you include this parameter,
+     * <code>DescribeCommands</code> returns a description of the commands
+     * associated with the specified instance.
      */
     private String instanceId;
 
     /**
-     * An array of IDs for the commands to be described.
+     * An array of command IDs. If you include this parameter,
+     * <code>DescribeCommands</code> returns a description of the specified
+     * commands. Otherwise, it returns a description of every command.
      */
     private java.util.List<String> commandIds;
 
     /**
-     * The deployment ID.
+     * The deployment ID. If you include this parameter,
+     * <code>DescribeCommands</code> returns a description of the commands
+     * associated with the specified deployment.
      *
-     * @return The deployment ID.
+     * @return The deployment ID. If you include this parameter,
+     *         <code>DescribeCommands</code> returns a description of the commands
+     *         associated with the specified deployment.
      */
     public String getDeploymentId() {
         return deploymentId;
     }
     
     /**
-     * The deployment ID.
+     * The deployment ID. If you include this parameter,
+     * <code>DescribeCommands</code> returns a description of the commands
+     * associated with the specified deployment.
      *
-     * @param deploymentId The deployment ID.
+     * @param deploymentId The deployment ID. If you include this parameter,
+     *         <code>DescribeCommands</code> returns a description of the commands
+     *         associated with the specified deployment.
      */
     public void setDeploymentId(String deploymentId) {
         this.deploymentId = deploymentId;
     }
     
     /**
-     * The deployment ID.
+     * The deployment ID. If you include this parameter,
+     * <code>DescribeCommands</code> returns a description of the commands
+     * associated with the specified deployment.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param deploymentId The deployment ID.
+     * @param deploymentId The deployment ID. If you include this parameter,
+     *         <code>DescribeCommands</code> returns a description of the commands
+     *         associated with the specified deployment.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -76,29 +94,41 @@ public class DescribeCommandsRequest extends AmazonWebServiceRequest  implements
     
     
     /**
-     * The instance ID.
+     * The instance ID. If you include this parameter,
+     * <code>DescribeCommands</code> returns a description of the commands
+     * associated with the specified instance.
      *
-     * @return The instance ID.
+     * @return The instance ID. If you include this parameter,
+     *         <code>DescribeCommands</code> returns a description of the commands
+     *         associated with the specified instance.
      */
     public String getInstanceId() {
         return instanceId;
     }
     
     /**
-     * The instance ID.
+     * The instance ID. If you include this parameter,
+     * <code>DescribeCommands</code> returns a description of the commands
+     * associated with the specified instance.
      *
-     * @param instanceId The instance ID.
+     * @param instanceId The instance ID. If you include this parameter,
+     *         <code>DescribeCommands</code> returns a description of the commands
+     *         associated with the specified instance.
      */
     public void setInstanceId(String instanceId) {
         this.instanceId = instanceId;
     }
     
     /**
-     * The instance ID.
+     * The instance ID. If you include this parameter,
+     * <code>DescribeCommands</code> returns a description of the commands
+     * associated with the specified instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceId The instance ID.
+     * @param instanceId The instance ID. If you include this parameter,
+     *         <code>DescribeCommands</code> returns a description of the commands
+     *         associated with the specified instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -110,9 +140,13 @@ public class DescribeCommandsRequest extends AmazonWebServiceRequest  implements
     
     
     /**
-     * An array of IDs for the commands to be described.
+     * An array of command IDs. If you include this parameter,
+     * <code>DescribeCommands</code> returns a description of the specified
+     * commands. Otherwise, it returns a description of every command.
      *
-     * @return An array of IDs for the commands to be described.
+     * @return An array of command IDs. If you include this parameter,
+     *         <code>DescribeCommands</code> returns a description of the specified
+     *         commands. Otherwise, it returns a description of every command.
      */
     public java.util.List<String> getCommandIds() {
         
@@ -123,9 +157,13 @@ public class DescribeCommandsRequest extends AmazonWebServiceRequest  implements
     }
     
     /**
-     * An array of IDs for the commands to be described.
+     * An array of command IDs. If you include this parameter,
+     * <code>DescribeCommands</code> returns a description of the specified
+     * commands. Otherwise, it returns a description of every command.
      *
-     * @param commandIds An array of IDs for the commands to be described.
+     * @param commandIds An array of command IDs. If you include this parameter,
+     *         <code>DescribeCommands</code> returns a description of the specified
+     *         commands. Otherwise, it returns a description of every command.
      */
     public void setCommandIds(java.util.Collection<String> commandIds) {
         if (commandIds == null) {
@@ -139,11 +177,15 @@ public class DescribeCommandsRequest extends AmazonWebServiceRequest  implements
     }
     
     /**
-     * An array of IDs for the commands to be described.
+     * An array of command IDs. If you include this parameter,
+     * <code>DescribeCommands</code> returns a description of the specified
+     * commands. Otherwise, it returns a description of every command.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param commandIds An array of IDs for the commands to be described.
+     * @param commandIds An array of command IDs. If you include this parameter,
+     *         <code>DescribeCommands</code> returns a description of the specified
+     *         commands. Otherwise, it returns a description of every command.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -157,11 +199,15 @@ public class DescribeCommandsRequest extends AmazonWebServiceRequest  implements
     }
     
     /**
-     * An array of IDs for the commands to be described.
+     * An array of command IDs. If you include this parameter,
+     * <code>DescribeCommands</code> returns a description of the specified
+     * commands. Otherwise, it returns a description of every command.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param commandIds An array of IDs for the commands to be described.
+     * @param commandIds An array of command IDs. If you include this parameter,
+     *         <code>DescribeCommands</code> returns a description of the specified
+     *         commands. Otherwise, it returns a description of every command.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

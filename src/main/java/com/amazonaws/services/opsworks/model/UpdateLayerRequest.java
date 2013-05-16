@@ -37,7 +37,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest  implements Seri
     private String name;
 
     /**
-     * The layer short name, which is used internally by OpsWorks, by Chef.
+     * The layer short name, which is used internally by OpsWorksand by Chef.
      * The shortname is also used as the name for the directory where your
      * app files are installed. It can have a maximum of 200 characters and
      * must be in the following format: /\A[a-z0-9\-\_\.]+\Z/.
@@ -162,12 +162,12 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest  implements Seri
     
     
     /**
-     * The layer short name, which is used internally by OpsWorks, by Chef.
+     * The layer short name, which is used internally by OpsWorksand by Chef.
      * The shortname is also used as the name for the directory where your
      * app files are installed. It can have a maximum of 200 characters and
      * must be in the following format: /\A[a-z0-9\-\_\.]+\Z/.
      *
-     * @return The layer short name, which is used internally by OpsWorks, by Chef.
+     * @return The layer short name, which is used internally by OpsWorksand by Chef.
      *         The shortname is also used as the name for the directory where your
      *         app files are installed. It can have a maximum of 200 characters and
      *         must be in the following format: /\A[a-z0-9\-\_\.]+\Z/.
@@ -177,12 +177,12 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest  implements Seri
     }
     
     /**
-     * The layer short name, which is used internally by OpsWorks, by Chef.
+     * The layer short name, which is used internally by OpsWorksand by Chef.
      * The shortname is also used as the name for the directory where your
      * app files are installed. It can have a maximum of 200 characters and
      * must be in the following format: /\A[a-z0-9\-\_\.]+\Z/.
      *
-     * @param shortname The layer short name, which is used internally by OpsWorks, by Chef.
+     * @param shortname The layer short name, which is used internally by OpsWorksand by Chef.
      *         The shortname is also used as the name for the directory where your
      *         app files are installed. It can have a maximum of 200 characters and
      *         must be in the following format: /\A[a-z0-9\-\_\.]+\Z/.
@@ -192,14 +192,14 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest  implements Seri
     }
     
     /**
-     * The layer short name, which is used internally by OpsWorks, by Chef.
+     * The layer short name, which is used internally by OpsWorksand by Chef.
      * The shortname is also used as the name for the directory where your
      * app files are installed. It can have a maximum of 200 characters and
      * must be in the following format: /\A[a-z0-9\-\_\.]+\Z/.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param shortname The layer short name, which is used internally by OpsWorks, by Chef.
+     * @param shortname The layer short name, which is used internally by OpsWorksand by Chef.
      *         The shortname is also used as the name for the directory where your
      *         app files are installed. It can have a maximum of 200 characters and
      *         must be in the following format: /\A[a-z0-9\-\_\.]+\Z/.

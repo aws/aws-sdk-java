@@ -17,7 +17,9 @@ import java.io.Serializable;
 
 /**
  * <p>
- * Contains the information required to retrieve an app or cookbook from a repository.
+ * Contains the information required to retrieve an app or cookbook from a repository. For more information, see <a
+ * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html"> Creating Apps </a> or <a
+ * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-installingcustom.html"> Custom Recipes and Cookbooks </a> .
  * </p>
  */
 public class Source  implements Serializable  {
@@ -36,12 +38,18 @@ public class Source  implements Serializable  {
     private String url;
 
     /**
-     * The user name.
+     * This parameter depends on the repository type. <ul> <li>For Amazon S3
+     * bundles, set <code>Username</code> to the appropriate AWS access
+     * key.</li> <li>For HTTP bundles, Git repositories, and Subversion
+     * repositories, set <code>Username</code> to the user name.</li> </ul>
      */
     private String username;
 
     /**
-     * The repository's password.
+     * This parameter depends on the repository type. <ul> <li>For Amazon S3
+     * bundles, set <code>Password</code> to the appropriate AWS secret
+     * key.</li> <li>For HTTP bundles, Git repositories, and Subversion
+     * repositories, set <code>Password</code> to the password.</li> </ul>
      */
     private String password;
 
@@ -176,29 +184,47 @@ public class Source  implements Serializable  {
     
     
     /**
-     * The user name.
+     * This parameter depends on the repository type. <ul> <li>For Amazon S3
+     * bundles, set <code>Username</code> to the appropriate AWS access
+     * key.</li> <li>For HTTP bundles, Git repositories, and Subversion
+     * repositories, set <code>Username</code> to the user name.</li> </ul>
      *
-     * @return The user name.
+     * @return This parameter depends on the repository type. <ul> <li>For Amazon S3
+     *         bundles, set <code>Username</code> to the appropriate AWS access
+     *         key.</li> <li>For HTTP bundles, Git repositories, and Subversion
+     *         repositories, set <code>Username</code> to the user name.</li> </ul>
      */
     public String getUsername() {
         return username;
     }
     
     /**
-     * The user name.
+     * This parameter depends on the repository type. <ul> <li>For Amazon S3
+     * bundles, set <code>Username</code> to the appropriate AWS access
+     * key.</li> <li>For HTTP bundles, Git repositories, and Subversion
+     * repositories, set <code>Username</code> to the user name.</li> </ul>
      *
-     * @param username The user name.
+     * @param username This parameter depends on the repository type. <ul> <li>For Amazon S3
+     *         bundles, set <code>Username</code> to the appropriate AWS access
+     *         key.</li> <li>For HTTP bundles, Git repositories, and Subversion
+     *         repositories, set <code>Username</code> to the user name.</li> </ul>
      */
     public void setUsername(String username) {
         this.username = username;
     }
     
     /**
-     * The user name.
+     * This parameter depends on the repository type. <ul> <li>For Amazon S3
+     * bundles, set <code>Username</code> to the appropriate AWS access
+     * key.</li> <li>For HTTP bundles, Git repositories, and Subversion
+     * repositories, set <code>Username</code> to the user name.</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param username The user name.
+     * @param username This parameter depends on the repository type. <ul> <li>For Amazon S3
+     *         bundles, set <code>Username</code> to the appropriate AWS access
+     *         key.</li> <li>For HTTP bundles, Git repositories, and Subversion
+     *         repositories, set <code>Username</code> to the user name.</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -210,29 +236,47 @@ public class Source  implements Serializable  {
     
     
     /**
-     * The repository's password.
+     * This parameter depends on the repository type. <ul> <li>For Amazon S3
+     * bundles, set <code>Password</code> to the appropriate AWS secret
+     * key.</li> <li>For HTTP bundles, Git repositories, and Subversion
+     * repositories, set <code>Password</code> to the password.</li> </ul>
      *
-     * @return The repository's password.
+     * @return This parameter depends on the repository type. <ul> <li>For Amazon S3
+     *         bundles, set <code>Password</code> to the appropriate AWS secret
+     *         key.</li> <li>For HTTP bundles, Git repositories, and Subversion
+     *         repositories, set <code>Password</code> to the password.</li> </ul>
      */
     public String getPassword() {
         return password;
     }
     
     /**
-     * The repository's password.
+     * This parameter depends on the repository type. <ul> <li>For Amazon S3
+     * bundles, set <code>Password</code> to the appropriate AWS secret
+     * key.</li> <li>For HTTP bundles, Git repositories, and Subversion
+     * repositories, set <code>Password</code> to the password.</li> </ul>
      *
-     * @param password The repository's password.
+     * @param password This parameter depends on the repository type. <ul> <li>For Amazon S3
+     *         bundles, set <code>Password</code> to the appropriate AWS secret
+     *         key.</li> <li>For HTTP bundles, Git repositories, and Subversion
+     *         repositories, set <code>Password</code> to the password.</li> </ul>
      */
     public void setPassword(String password) {
         this.password = password;
     }
     
     /**
-     * The repository's password.
+     * This parameter depends on the repository type. <ul> <li>For Amazon S3
+     * bundles, set <code>Password</code> to the appropriate AWS secret
+     * key.</li> <li>For HTTP bundles, Git repositories, and Subversion
+     * repositories, set <code>Password</code> to the password.</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param password The repository's password.
+     * @param password This parameter depends on the repository type. <ul> <li>For Amazon S3
+     *         bundles, set <code>Password</code> to the appropriate AWS secret
+     *         key.</li> <li>For HTTP bundles, Git repositories, and Subversion
+     *         repositories, set <code>Password</code> to the password.</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

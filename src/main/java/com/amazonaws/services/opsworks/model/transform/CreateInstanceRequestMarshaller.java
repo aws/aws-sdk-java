@@ -120,6 +120,12 @@ public class CreateInstanceRequestMarshaller implements Marshaller<Request<Creat
             if (createInstanceRequest.getAvailabilityZone() != null) {
                 jsonWriter.key("AvailabilityZone").value(createInstanceRequest.getAvailabilityZone());
             }
+            if (createInstanceRequest.getArchitecture() != null) {
+                jsonWriter.key("Architecture").value(createInstanceRequest.getArchitecture());
+            }
+            if (createInstanceRequest.getRootDeviceType() != null) {
+                jsonWriter.key("RootDeviceType").value(createInstanceRequest.getRootDeviceType());
+            }
 
           jsonWriter.endObject();
           

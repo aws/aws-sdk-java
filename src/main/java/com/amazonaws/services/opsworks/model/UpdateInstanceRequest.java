@@ -37,16 +37,19 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest  implements S
     private java.util.List<String> layerIds;
 
     /**
-     * The instance type, which can be one of the following: <ul>
-     * <li>m1.small</li> <li>m1.medium</li> <li>m1.large</li>
-     * <li>m1.xlarge</li> <li>c1.medium</li> <li>c1.xlarge</li>
-     * <li>m2.xlarge</li> <li>m2.2xlarge</li> <li>m2.4xlarge</li> </ul>
+     * The instance type. OpsWorks supports all instance types except Cluster
+     * Compute, Cluster GPU, and High Memory Cluster. For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+     * Families and Types</a>. The parameter values that you use to specify
+     * the various types are in the API Name column of the Available Instance
+     * Types table.
      */
     private String instanceType;
 
     /**
      * The instance's auto scaling type, which has three possible values:
-     * <ul> <li><b>AlwaysRunning</b>: A 24x7 instance, which is not affected
+     * <ul> <li><b>AlwaysRunning</b>: A 24/7 instance, which is not affected
      * by auto scaling.</li> <li><b>TimeBasedAutoScaling</b>: A time-based
      * auto scaling instance, which is started and stopped based on a
      * specified schedule.</li> <li><b>LoadBasedAutoScaling</b>: A load-based
@@ -54,7 +57,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest  implements S
      * metrics.</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>AlwaysRunning, TimeBasedAutoScaling, LoadBasedAutoScaling
+     * <b>Allowed Values: </b>load, timer
      */
     private String autoScalingType;
 
@@ -72,6 +75,18 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest  implements S
      * The instance SSH key name.
      */
     private String sshKeyName;
+
+    /**
+     * The instance architecture. Instance types do not necessarily support
+     * both architectures. For a list of the architectures that are supported
+     * by the different instance types, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+     * Families and Types</a>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>x86_64, i386
+     */
+    private String architecture;
 
     /**
      * The instance ID.
@@ -177,47 +192,65 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest  implements S
     }
     
     /**
-     * The instance type, which can be one of the following: <ul>
-     * <li>m1.small</li> <li>m1.medium</li> <li>m1.large</li>
-     * <li>m1.xlarge</li> <li>c1.medium</li> <li>c1.xlarge</li>
-     * <li>m2.xlarge</li> <li>m2.2xlarge</li> <li>m2.4xlarge</li> </ul>
+     * The instance type. OpsWorks supports all instance types except Cluster
+     * Compute, Cluster GPU, and High Memory Cluster. For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+     * Families and Types</a>. The parameter values that you use to specify
+     * the various types are in the API Name column of the Available Instance
+     * Types table.
      *
-     * @return The instance type, which can be one of the following: <ul>
-     *         <li>m1.small</li> <li>m1.medium</li> <li>m1.large</li>
-     *         <li>m1.xlarge</li> <li>c1.medium</li> <li>c1.xlarge</li>
-     *         <li>m2.xlarge</li> <li>m2.2xlarge</li> <li>m2.4xlarge</li> </ul>
+     * @return The instance type. OpsWorks supports all instance types except Cluster
+     *         Compute, Cluster GPU, and High Memory Cluster. For more information,
+     *         see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+     *         Families and Types</a>. The parameter values that you use to specify
+     *         the various types are in the API Name column of the Available Instance
+     *         Types table.
      */
     public String getInstanceType() {
         return instanceType;
     }
     
     /**
-     * The instance type, which can be one of the following: <ul>
-     * <li>m1.small</li> <li>m1.medium</li> <li>m1.large</li>
-     * <li>m1.xlarge</li> <li>c1.medium</li> <li>c1.xlarge</li>
-     * <li>m2.xlarge</li> <li>m2.2xlarge</li> <li>m2.4xlarge</li> </ul>
+     * The instance type. OpsWorks supports all instance types except Cluster
+     * Compute, Cluster GPU, and High Memory Cluster. For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+     * Families and Types</a>. The parameter values that you use to specify
+     * the various types are in the API Name column of the Available Instance
+     * Types table.
      *
-     * @param instanceType The instance type, which can be one of the following: <ul>
-     *         <li>m1.small</li> <li>m1.medium</li> <li>m1.large</li>
-     *         <li>m1.xlarge</li> <li>c1.medium</li> <li>c1.xlarge</li>
-     *         <li>m2.xlarge</li> <li>m2.2xlarge</li> <li>m2.4xlarge</li> </ul>
+     * @param instanceType The instance type. OpsWorks supports all instance types except Cluster
+     *         Compute, Cluster GPU, and High Memory Cluster. For more information,
+     *         see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+     *         Families and Types</a>. The parameter values that you use to specify
+     *         the various types are in the API Name column of the Available Instance
+     *         Types table.
      */
     public void setInstanceType(String instanceType) {
         this.instanceType = instanceType;
     }
     
     /**
-     * The instance type, which can be one of the following: <ul>
-     * <li>m1.small</li> <li>m1.medium</li> <li>m1.large</li>
-     * <li>m1.xlarge</li> <li>c1.medium</li> <li>c1.xlarge</li>
-     * <li>m2.xlarge</li> <li>m2.2xlarge</li> <li>m2.4xlarge</li> </ul>
+     * The instance type. OpsWorks supports all instance types except Cluster
+     * Compute, Cluster GPU, and High Memory Cluster. For more information,
+     * see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+     * Families and Types</a>. The parameter values that you use to specify
+     * the various types are in the API Name column of the Available Instance
+     * Types table.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param instanceType The instance type, which can be one of the following: <ul>
-     *         <li>m1.small</li> <li>m1.medium</li> <li>m1.large</li>
-     *         <li>m1.xlarge</li> <li>c1.medium</li> <li>c1.xlarge</li>
-     *         <li>m2.xlarge</li> <li>m2.2xlarge</li> <li>m2.4xlarge</li> </ul>
+     * @param instanceType The instance type. OpsWorks supports all instance types except Cluster
+     *         Compute, Cluster GPU, and High Memory Cluster. For more information,
+     *         see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+     *         Families and Types</a>. The parameter values that you use to specify
+     *         the various types are in the API Name column of the Available Instance
+     *         Types table.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -230,7 +263,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest  implements S
     
     /**
      * The instance's auto scaling type, which has three possible values:
-     * <ul> <li><b>AlwaysRunning</b>: A 24x7 instance, which is not affected
+     * <ul> <li><b>AlwaysRunning</b>: A 24/7 instance, which is not affected
      * by auto scaling.</li> <li><b>TimeBasedAutoScaling</b>: A time-based
      * auto scaling instance, which is started and stopped based on a
      * specified schedule.</li> <li><b>LoadBasedAutoScaling</b>: A load-based
@@ -238,10 +271,10 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest  implements S
      * metrics.</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>AlwaysRunning, TimeBasedAutoScaling, LoadBasedAutoScaling
+     * <b>Allowed Values: </b>load, timer
      *
      * @return The instance's auto scaling type, which has three possible values:
-     *         <ul> <li><b>AlwaysRunning</b>: A 24x7 instance, which is not affected
+     *         <ul> <li><b>AlwaysRunning</b>: A 24/7 instance, which is not affected
      *         by auto scaling.</li> <li><b>TimeBasedAutoScaling</b>: A time-based
      *         auto scaling instance, which is started and stopped based on a
      *         specified schedule.</li> <li><b>LoadBasedAutoScaling</b>: A load-based
@@ -256,7 +289,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest  implements S
     
     /**
      * The instance's auto scaling type, which has three possible values:
-     * <ul> <li><b>AlwaysRunning</b>: A 24x7 instance, which is not affected
+     * <ul> <li><b>AlwaysRunning</b>: A 24/7 instance, which is not affected
      * by auto scaling.</li> <li><b>TimeBasedAutoScaling</b>: A time-based
      * auto scaling instance, which is started and stopped based on a
      * specified schedule.</li> <li><b>LoadBasedAutoScaling</b>: A load-based
@@ -264,10 +297,10 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest  implements S
      * metrics.</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>AlwaysRunning, TimeBasedAutoScaling, LoadBasedAutoScaling
+     * <b>Allowed Values: </b>load, timer
      *
      * @param autoScalingType The instance's auto scaling type, which has three possible values:
-     *         <ul> <li><b>AlwaysRunning</b>: A 24x7 instance, which is not affected
+     *         <ul> <li><b>AlwaysRunning</b>: A 24/7 instance, which is not affected
      *         by auto scaling.</li> <li><b>TimeBasedAutoScaling</b>: A time-based
      *         auto scaling instance, which is started and stopped based on a
      *         specified schedule.</li> <li><b>LoadBasedAutoScaling</b>: A load-based
@@ -282,7 +315,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest  implements S
     
     /**
      * The instance's auto scaling type, which has three possible values:
-     * <ul> <li><b>AlwaysRunning</b>: A 24x7 instance, which is not affected
+     * <ul> <li><b>AlwaysRunning</b>: A 24/7 instance, which is not affected
      * by auto scaling.</li> <li><b>TimeBasedAutoScaling</b>: A time-based
      * auto scaling instance, which is started and stopped based on a
      * specified schedule.</li> <li><b>LoadBasedAutoScaling</b>: A load-based
@@ -292,10 +325,10 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest  implements S
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>AlwaysRunning, TimeBasedAutoScaling, LoadBasedAutoScaling
+     * <b>Allowed Values: </b>load, timer
      *
      * @param autoScalingType The instance's auto scaling type, which has three possible values:
-     *         <ul> <li><b>AlwaysRunning</b>: A 24x7 instance, which is not affected
+     *         <ul> <li><b>AlwaysRunning</b>: A 24/7 instance, which is not affected
      *         by auto scaling.</li> <li><b>TimeBasedAutoScaling</b>: A time-based
      *         auto scaling instance, which is started and stopped based on a
      *         specified schedule.</li> <li><b>LoadBasedAutoScaling</b>: A load-based
@@ -315,7 +348,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest  implements S
     
     /**
      * The instance's auto scaling type, which has three possible values:
-     * <ul> <li><b>AlwaysRunning</b>: A 24x7 instance, which is not affected
+     * <ul> <li><b>AlwaysRunning</b>: A 24/7 instance, which is not affected
      * by auto scaling.</li> <li><b>TimeBasedAutoScaling</b>: A time-based
      * auto scaling instance, which is started and stopped based on a
      * specified schedule.</li> <li><b>LoadBasedAutoScaling</b>: A load-based
@@ -323,10 +356,10 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest  implements S
      * metrics.</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>AlwaysRunning, TimeBasedAutoScaling, LoadBasedAutoScaling
+     * <b>Allowed Values: </b>load, timer
      *
      * @param autoScalingType The instance's auto scaling type, which has three possible values:
-     *         <ul> <li><b>AlwaysRunning</b>: A 24x7 instance, which is not affected
+     *         <ul> <li><b>AlwaysRunning</b>: A 24/7 instance, which is not affected
      *         by auto scaling.</li> <li><b>TimeBasedAutoScaling</b>: A time-based
      *         auto scaling instance, which is started and stopped based on a
      *         specified schedule.</li> <li><b>LoadBasedAutoScaling</b>: A load-based
@@ -341,7 +374,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest  implements S
     
     /**
      * The instance's auto scaling type, which has three possible values:
-     * <ul> <li><b>AlwaysRunning</b>: A 24x7 instance, which is not affected
+     * <ul> <li><b>AlwaysRunning</b>: A 24/7 instance, which is not affected
      * by auto scaling.</li> <li><b>TimeBasedAutoScaling</b>: A time-based
      * auto scaling instance, which is started and stopped based on a
      * specified schedule.</li> <li><b>LoadBasedAutoScaling</b>: A load-based
@@ -351,10 +384,10 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest  implements S
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Allowed Values: </b>AlwaysRunning, TimeBasedAutoScaling, LoadBasedAutoScaling
+     * <b>Allowed Values: </b>load, timer
      *
      * @param autoScalingType The instance's auto scaling type, which has three possible values:
-     *         <ul> <li><b>AlwaysRunning</b>: A 24x7 instance, which is not affected
+     *         <ul> <li><b>AlwaysRunning</b>: A 24/7 instance, which is not affected
      *         by auto scaling.</li> <li><b>TimeBasedAutoScaling</b>: A time-based
      *         auto scaling instance, which is started and stopped based on a
      *         specified schedule.</li> <li><b>LoadBasedAutoScaling</b>: A load-based
@@ -474,6 +507,129 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest  implements S
     
     
     /**
+     * The instance architecture. Instance types do not necessarily support
+     * both architectures. For a list of the architectures that are supported
+     * by the different instance types, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+     * Families and Types</a>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>x86_64, i386
+     *
+     * @return The instance architecture. Instance types do not necessarily support
+     *         both architectures. For a list of the architectures that are supported
+     *         by the different instance types, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+     *         Families and Types</a>.
+     *
+     * @see Architecture
+     */
+    public String getArchitecture() {
+        return architecture;
+    }
+    
+    /**
+     * The instance architecture. Instance types do not necessarily support
+     * both architectures. For a list of the architectures that are supported
+     * by the different instance types, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+     * Families and Types</a>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>x86_64, i386
+     *
+     * @param architecture The instance architecture. Instance types do not necessarily support
+     *         both architectures. For a list of the architectures that are supported
+     *         by the different instance types, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+     *         Families and Types</a>.
+     *
+     * @see Architecture
+     */
+    public void setArchitecture(String architecture) {
+        this.architecture = architecture;
+    }
+    
+    /**
+     * The instance architecture. Instance types do not necessarily support
+     * both architectures. For a list of the architectures that are supported
+     * by the different instance types, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+     * Families and Types</a>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>x86_64, i386
+     *
+     * @param architecture The instance architecture. Instance types do not necessarily support
+     *         both architectures. For a list of the architectures that are supported
+     *         by the different instance types, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+     *         Families and Types</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see Architecture
+     */
+    public UpdateInstanceRequest withArchitecture(String architecture) {
+        this.architecture = architecture;
+        return this;
+    }
+    
+    
+    /**
+     * The instance architecture. Instance types do not necessarily support
+     * both architectures. For a list of the architectures that are supported
+     * by the different instance types, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+     * Families and Types</a>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>x86_64, i386
+     *
+     * @param architecture The instance architecture. Instance types do not necessarily support
+     *         both architectures. For a list of the architectures that are supported
+     *         by the different instance types, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+     *         Families and Types</a>.
+     *
+     * @see Architecture
+     */
+    public void setArchitecture(Architecture architecture) {
+        this.architecture = architecture.toString();
+    }
+    
+    /**
+     * The instance architecture. Instance types do not necessarily support
+     * both architectures. For a list of the architectures that are supported
+     * by the different instance types, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+     * Families and Types</a>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>x86_64, i386
+     *
+     * @param architecture The instance architecture. Instance types do not necessarily support
+     *         both architectures. For a list of the architectures that are supported
+     *         by the different instance types, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+     *         Families and Types</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see Architecture
+     */
+    public UpdateInstanceRequest withArchitecture(Architecture architecture) {
+        this.architecture = architecture.toString();
+        return this;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -491,7 +647,8 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest  implements S
         if (getAutoScalingType() != null) sb.append("AutoScalingType: " + getAutoScalingType() + ",");    	
         if (getHostname() != null) sb.append("Hostname: " + getHostname() + ",");    	
         if (getOs() != null) sb.append("Os: " + getOs() + ",");    	
-        if (getSshKeyName() != null) sb.append("SshKeyName: " + getSshKeyName() );
+        if (getSshKeyName() != null) sb.append("SshKeyName: " + getSshKeyName() + ",");    	
+        if (getArchitecture() != null) sb.append("Architecture: " + getArchitecture() );
         sb.append("}");
         return sb.toString();
     }
@@ -508,6 +665,7 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest  implements S
         hashCode = prime * hashCode + ((getHostname() == null) ? 0 : getHostname().hashCode()); 
         hashCode = prime * hashCode + ((getOs() == null) ? 0 : getOs().hashCode()); 
         hashCode = prime * hashCode + ((getSshKeyName() == null) ? 0 : getSshKeyName().hashCode()); 
+        hashCode = prime * hashCode + ((getArchitecture() == null) ? 0 : getArchitecture().hashCode()); 
         return hashCode;
     }
     
@@ -533,6 +691,8 @@ public class UpdateInstanceRequest extends AmazonWebServiceRequest  implements S
         if (other.getOs() != null && other.getOs().equals(this.getOs()) == false) return false; 
         if (other.getSshKeyName() == null ^ this.getSshKeyName() == null) return false;
         if (other.getSshKeyName() != null && other.getSshKeyName().equals(this.getSshKeyName()) == false) return false; 
+        if (other.getArchitecture() == null ^ this.getArchitecture() == null) return false;
+        if (other.getArchitecture() != null && other.getArchitecture().equals(this.getArchitecture()) == false) return false; 
         return true;
     }
     

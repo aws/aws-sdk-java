@@ -5,3 +5,4 @@ jdk:
   - openjdk6
 install: /bin/true
 script: mvn install --quiet -Dgpg.skip=true -DskipTests=true
+

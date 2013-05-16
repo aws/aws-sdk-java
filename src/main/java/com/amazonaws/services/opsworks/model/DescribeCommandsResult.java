@@ -23,16 +23,16 @@ import java.io.Serializable;
 public class DescribeCommandsResult  implements Serializable  {
 
     /**
-     * An array of <c>InstanceCommand</c> objects that describe each of the
+     * An array of <code>Command</code> objects that describe each of the
      * specified commands.
      */
     private java.util.List<Command> commands;
 
     /**
-     * An array of <c>InstanceCommand</c> objects that describe each of the
+     * An array of <code>Command</code> objects that describe each of the
      * specified commands.
      *
-     * @return An array of <c>InstanceCommand</c> objects that describe each of the
+     * @return An array of <code>Command</code> objects that describe each of the
      *         specified commands.
      */
     public java.util.List<Command> getCommands() {
@@ -44,10 +44,10 @@ public class DescribeCommandsResult  implements Serializable  {
     }
     
     /**
-     * An array of <c>InstanceCommand</c> objects that describe each of the
+     * An array of <code>Command</code> objects that describe each of the
      * specified commands.
      *
-     * @param commands An array of <c>InstanceCommand</c> objects that describe each of the
+     * @param commands An array of <code>Command</code> objects that describe each of the
      *         specified commands.
      */
     public void setCommands(java.util.Collection<Command> commands) {
@@ -62,12 +62,12 @@ public class DescribeCommandsResult  implements Serializable  {
     }
     
     /**
-     * An array of <c>InstanceCommand</c> objects that describe each of the
+     * An array of <code>Command</code> objects that describe each of the
      * specified commands.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param commands An array of <c>InstanceCommand</c> objects that describe each of the
+     * @param commands An array of <code>Command</code> objects that describe each of the
      *         specified commands.
      *
      * @return A reference to this updated object so that method calls can be chained 
@@ -82,12 +82,12 @@ public class DescribeCommandsResult  implements Serializable  {
     }
     
     /**
-     * An array of <c>InstanceCommand</c> objects that describe each of the
+     * An array of <code>Command</code> objects that describe each of the
      * specified commands.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param commands An array of <c>InstanceCommand</c> objects that describe each of the
+     * @param commands An array of <code>Command</code> objects that describe each of the
      *         specified commands.
      *
      * @return A reference to this updated object so that method calls can be chained 

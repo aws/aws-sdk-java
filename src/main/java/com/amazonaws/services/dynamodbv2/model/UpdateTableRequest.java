@@ -24,7 +24,7 @@ import java.io.Serializable;
  * </p>
  * <p>
  * The provisioned throughput values can be upgraded or downgraded based on the maximums and minimums listed in the <a
- * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html"> Limits </a> section of the <i>Amazon DynamoDB Developer
+ * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html"> Limits </a> section in the <i>Amazon DynamoDB Developer
  * Guide</i> .
  * </p>
  * <p>
@@ -57,7 +57,7 @@ public class UpdateTableRequest extends AmazonWebServiceRequest  implements Seri
      * <p>For current minimum and maximum provisioned throughput values, see
      * <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
-     * of the <i>Amazon DynamoDB Developer Guide</i>.
+     * in the <i>Amazon DynamoDB Developer Guide</i>.
      */
     private ProvisionedThroughput provisionedThroughput;
 
@@ -113,14 +113,14 @@ public class UpdateTableRequest extends AmazonWebServiceRequest  implements Seri
      * <p>For current minimum and maximum provisioned throughput values, see
      * <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
-     * of the <i>Amazon DynamoDB Developer Guide</i>.
+     * in the <i>Amazon DynamoDB Developer Guide</i>.
      *
      * @return The provisioned throughput settings for the specified table. The
      *         settings can be modified using the <i>UpdateTable</i> operation.
      *         <p>For current minimum and maximum provisioned throughput values, see
      *         <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
-     *         of the <i>Amazon DynamoDB Developer Guide</i>.
+     *         in the <i>Amazon DynamoDB Developer Guide</i>.
      */
     public ProvisionedThroughput getProvisionedThroughput() {
         return provisionedThroughput;
@@ -132,14 +132,14 @@ public class UpdateTableRequest extends AmazonWebServiceRequest  implements Seri
      * <p>For current minimum and maximum provisioned throughput values, see
      * <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
-     * of the <i>Amazon DynamoDB Developer Guide</i>.
+     * in the <i>Amazon DynamoDB Developer Guide</i>.
      *
      * @param provisionedThroughput The provisioned throughput settings for the specified table. The
      *         settings can be modified using the <i>UpdateTable</i> operation.
      *         <p>For current minimum and maximum provisioned throughput values, see
      *         <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
-     *         of the <i>Amazon DynamoDB Developer Guide</i>.
+     *         in the <i>Amazon DynamoDB Developer Guide</i>.
      */
     public void setProvisionedThroughput(ProvisionedThroughput provisionedThroughput) {
         this.provisionedThroughput = provisionedThroughput;
@@ -151,7 +151,7 @@ public class UpdateTableRequest extends AmazonWebServiceRequest  implements Seri
      * <p>For current minimum and maximum provisioned throughput values, see
      * <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
-     * of the <i>Amazon DynamoDB Developer Guide</i>.
+     * in the <i>Amazon DynamoDB Developer Guide</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -160,7 +160,7 @@ public class UpdateTableRequest extends AmazonWebServiceRequest  implements Seri
      *         <p>For current minimum and maximum provisioned throughput values, see
      *         <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
-     *         of the <i>Amazon DynamoDB Developer Guide</i>.
+     *         in the <i>Amazon DynamoDB Developer Guide</i>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

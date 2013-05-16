@@ -27,14 +27,20 @@ import java.io.Serializable;
 public class DescribeStacksRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
-     * An array of stack IDs that specify the stacks to be described.
+     * An array of stack IDs that specify the stacks to be described. If you
+     * omit this parameter, <code>DescribeStacks</code> returns a description
+     * of every stack.
      */
     private java.util.List<String> stackIds;
 
     /**
-     * An array of stack IDs that specify the stacks to be described.
+     * An array of stack IDs that specify the stacks to be described. If you
+     * omit this parameter, <code>DescribeStacks</code> returns a description
+     * of every stack.
      *
-     * @return An array of stack IDs that specify the stacks to be described.
+     * @return An array of stack IDs that specify the stacks to be described. If you
+     *         omit this parameter, <code>DescribeStacks</code> returns a description
+     *         of every stack.
      */
     public java.util.List<String> getStackIds() {
         
@@ -45,9 +51,13 @@ public class DescribeStacksRequest extends AmazonWebServiceRequest  implements S
     }
     
     /**
-     * An array of stack IDs that specify the stacks to be described.
+     * An array of stack IDs that specify the stacks to be described. If you
+     * omit this parameter, <code>DescribeStacks</code> returns a description
+     * of every stack.
      *
-     * @param stackIds An array of stack IDs that specify the stacks to be described.
+     * @param stackIds An array of stack IDs that specify the stacks to be described. If you
+     *         omit this parameter, <code>DescribeStacks</code> returns a description
+     *         of every stack.
      */
     public void setStackIds(java.util.Collection<String> stackIds) {
         if (stackIds == null) {
@@ -61,11 +71,15 @@ public class DescribeStacksRequest extends AmazonWebServiceRequest  implements S
     }
     
     /**
-     * An array of stack IDs that specify the stacks to be described.
+     * An array of stack IDs that specify the stacks to be described. If you
+     * omit this parameter, <code>DescribeStacks</code> returns a description
+     * of every stack.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param stackIds An array of stack IDs that specify the stacks to be described.
+     * @param stackIds An array of stack IDs that specify the stacks to be described. If you
+     *         omit this parameter, <code>DescribeStacks</code> returns a description
+     *         of every stack.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -79,11 +93,15 @@ public class DescribeStacksRequest extends AmazonWebServiceRequest  implements S
     }
     
     /**
-     * An array of stack IDs that specify the stacks to be described.
+     * An array of stack IDs that specify the stacks to be described. If you
+     * omit this parameter, <code>DescribeStacks</code> returns a description
+     * of every stack.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param stackIds An array of stack IDs that specify the stacks to be described.
+     * @param stackIds An array of stack IDs that specify the stacks to be described. If you
+     *         omit this parameter, <code>DescribeStacks</code> returns a description
+     *         of every stack.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

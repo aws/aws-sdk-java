@@ -16,7 +16,9 @@ package com.amazonaws.services.elastictranscoder.model;
 import java.io.Serializable;
 
 /**
- * 
+ * <p>
+ * Information about the file that you're transcoding.
+ * </p>
  */
 public class JobInput  implements Serializable  {
 
@@ -50,16 +52,11 @@ public class JobInput  implements Serializable  {
     private String frameRate;
 
     /**
-     * The resolution, in pixels, of the input file. If you want Elastic
-     * Transcoder to automatically detect the resolution of the input file,
-     * specify <code>auto</code>. If you want to specify the resolution for
-     * the input file, enter values in the format <i>width in pixels</i> by
-     * <i>height in pixels</i>. <p>If you specify a value other than
-     * <code>auto</code>, Elastic Transcoder disables automatic detection of
-     * the resolution.
+     * This value must be <code>auto</code>, which causes Elastic Transcoder
+     * to automatically detect the resolution of the input file.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^auto$)|(^\d+x\d+$)<br/>
+     * <b>Pattern: </b>(^auto$)|(^\d{1,5}x\d{1,5}$)<br/>
      */
     private String resolution;
 
@@ -103,7 +100,7 @@ public class JobInput  implements Serializable  {
      * <code>vob</code>, <code>wav</code>, <code>webm</code>
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^auto$)|(^3gp$)|(^asf$)|(^avi$)|(^divx$)|(^flv$)|(^mkv$)|(^mov$)|(^mp4$)|(^mpeg$)|(^mpeg-ps$)|(^mpeg-ts$)|(^mxf$)|(^ogg$)|(^vob$)|(^wav$)|(^webm$)<br/>
+     * <b>Pattern: </b>(^auto$)|(^3gp$)|(^asf$)|(^avi$)|(^divx$)|(^flv$)|(^mkv$)|(^mov$)|(^mp4$)|(^mpeg$)|(^mpeg-ps$)|(^mpeg-ts$)|(^mxf$)|(^ogg$)|(^ts$)|(^vob$)|(^wav$)|(^webm$)<br/>
      */
     private String container;
 
@@ -272,74 +269,44 @@ public class JobInput  implements Serializable  {
     
     
     /**
-     * The resolution, in pixels, of the input file. If you want Elastic
-     * Transcoder to automatically detect the resolution of the input file,
-     * specify <code>auto</code>. If you want to specify the resolution for
-     * the input file, enter values in the format <i>width in pixels</i> by
-     * <i>height in pixels</i>. <p>If you specify a value other than
-     * <code>auto</code>, Elastic Transcoder disables automatic detection of
-     * the resolution.
+     * This value must be <code>auto</code>, which causes Elastic Transcoder
+     * to automatically detect the resolution of the input file.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^auto$)|(^\d+x\d+$)<br/>
+     * <b>Pattern: </b>(^auto$)|(^\d{1,5}x\d{1,5}$)<br/>
      *
-     * @return The resolution, in pixels, of the input file. If you want Elastic
-     *         Transcoder to automatically detect the resolution of the input file,
-     *         specify <code>auto</code>. If you want to specify the resolution for
-     *         the input file, enter values in the format <i>width in pixels</i> by
-     *         <i>height in pixels</i>. <p>If you specify a value other than
-     *         <code>auto</code>, Elastic Transcoder disables automatic detection of
-     *         the resolution.
+     * @return This value must be <code>auto</code>, which causes Elastic Transcoder
+     *         to automatically detect the resolution of the input file.
      */
     public String getResolution() {
         return resolution;
     }
     
     /**
-     * The resolution, in pixels, of the input file. If you want Elastic
-     * Transcoder to automatically detect the resolution of the input file,
-     * specify <code>auto</code>. If you want to specify the resolution for
-     * the input file, enter values in the format <i>width in pixels</i> by
-     * <i>height in pixels</i>. <p>If you specify a value other than
-     * <code>auto</code>, Elastic Transcoder disables automatic detection of
-     * the resolution.
+     * This value must be <code>auto</code>, which causes Elastic Transcoder
+     * to automatically detect the resolution of the input file.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^auto$)|(^\d+x\d+$)<br/>
+     * <b>Pattern: </b>(^auto$)|(^\d{1,5}x\d{1,5}$)<br/>
      *
-     * @param resolution The resolution, in pixels, of the input file. If you want Elastic
-     *         Transcoder to automatically detect the resolution of the input file,
-     *         specify <code>auto</code>. If you want to specify the resolution for
-     *         the input file, enter values in the format <i>width in pixels</i> by
-     *         <i>height in pixels</i>. <p>If you specify a value other than
-     *         <code>auto</code>, Elastic Transcoder disables automatic detection of
-     *         the resolution.
+     * @param resolution This value must be <code>auto</code>, which causes Elastic Transcoder
+     *         to automatically detect the resolution of the input file.
      */
     public void setResolution(String resolution) {
         this.resolution = resolution;
     }
     
     /**
-     * The resolution, in pixels, of the input file. If you want Elastic
-     * Transcoder to automatically detect the resolution of the input file,
-     * specify <code>auto</code>. If you want to specify the resolution for
-     * the input file, enter values in the format <i>width in pixels</i> by
-     * <i>height in pixels</i>. <p>If you specify a value other than
-     * <code>auto</code>, Elastic Transcoder disables automatic detection of
-     * the resolution.
+     * This value must be <code>auto</code>, which causes Elastic Transcoder
+     * to automatically detect the resolution of the input file.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^auto$)|(^\d+x\d+$)<br/>
+     * <b>Pattern: </b>(^auto$)|(^\d{1,5}x\d{1,5}$)<br/>
      *
-     * @param resolution The resolution, in pixels, of the input file. If you want Elastic
-     *         Transcoder to automatically detect the resolution of the input file,
-     *         specify <code>auto</code>. If you want to specify the resolution for
-     *         the input file, enter values in the format <i>width in pixels</i> by
-     *         <i>height in pixels</i>. <p>If you specify a value other than
-     *         <code>auto</code>, Elastic Transcoder disables automatic detection of
-     *         the resolution.
+     * @param resolution This value must be <code>auto</code>, which causes Elastic Transcoder
+     *         to automatically detect the resolution of the input file.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -520,7 +487,7 @@ public class JobInput  implements Serializable  {
      * <code>vob</code>, <code>wav</code>, <code>webm</code>
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^auto$)|(^3gp$)|(^asf$)|(^avi$)|(^divx$)|(^flv$)|(^mkv$)|(^mov$)|(^mp4$)|(^mpeg$)|(^mpeg-ps$)|(^mpeg-ts$)|(^mxf$)|(^ogg$)|(^vob$)|(^wav$)|(^webm$)<br/>
+     * <b>Pattern: </b>(^auto$)|(^3gp$)|(^asf$)|(^avi$)|(^divx$)|(^flv$)|(^mkv$)|(^mov$)|(^mp4$)|(^mpeg$)|(^mpeg-ps$)|(^mpeg-ts$)|(^mxf$)|(^ogg$)|(^ts$)|(^vob$)|(^wav$)|(^webm$)<br/>
      *
      * @return The container type for the input file. If you want Elastic Transcoder
      *         to automatically detect the container type of the input file, specify
@@ -548,7 +515,7 @@ public class JobInput  implements Serializable  {
      * <code>vob</code>, <code>wav</code>, <code>webm</code>
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^auto$)|(^3gp$)|(^asf$)|(^avi$)|(^divx$)|(^flv$)|(^mkv$)|(^mov$)|(^mp4$)|(^mpeg$)|(^mpeg-ps$)|(^mpeg-ts$)|(^mxf$)|(^ogg$)|(^vob$)|(^wav$)|(^webm$)<br/>
+     * <b>Pattern: </b>(^auto$)|(^3gp$)|(^asf$)|(^avi$)|(^divx$)|(^flv$)|(^mkv$)|(^mov$)|(^mp4$)|(^mpeg$)|(^mpeg-ps$)|(^mpeg-ts$)|(^mxf$)|(^ogg$)|(^ts$)|(^vob$)|(^wav$)|(^webm$)<br/>
      *
      * @param container The container type for the input file. If you want Elastic Transcoder
      *         to automatically detect the container type of the input file, specify
@@ -578,7 +545,7 @@ public class JobInput  implements Serializable  {
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
      * <b>Constraints:</b><br/>
-     * <b>Pattern: </b>(^auto$)|(^3gp$)|(^asf$)|(^avi$)|(^divx$)|(^flv$)|(^mkv$)|(^mov$)|(^mp4$)|(^mpeg$)|(^mpeg-ps$)|(^mpeg-ts$)|(^mxf$)|(^ogg$)|(^vob$)|(^wav$)|(^webm$)<br/>
+     * <b>Pattern: </b>(^auto$)|(^3gp$)|(^asf$)|(^avi$)|(^divx$)|(^flv$)|(^mkv$)|(^mov$)|(^mp4$)|(^mpeg$)|(^mpeg-ps$)|(^mpeg-ts$)|(^mxf$)|(^ogg$)|(^ts$)|(^vob$)|(^wav$)|(^webm$)<br/>
      *
      * @param container The container type for the input file. If you want Elastic Transcoder
      *         to automatically detect the container type of the input file, specify

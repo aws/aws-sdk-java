@@ -37,7 +37,7 @@ public class DeleteItemResult  implements Serializable  {
      * returned if it was asked for in the request. For more information, see
      * <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
-     * Throughput</a> of the <i>Amazon DynamoDB Developer Guide</i>.
+     * Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
     private ConsumedCapacity consumedCapacity;
 
@@ -47,9 +47,9 @@ public class DeleteItemResult  implements Serializable  {
      * asked for in the request. If the table does not have any secondary
      * indexes, this information is not returned in the response. <p>Each
      * <i>ItemCollectionMetrics</i> element consists of: <ul>
-     * <li><p><i>ItemCollectionKey</i>-the hash key value of the item
+     * <li><p><i>ItemCollectionKey</i> - The hash key value of the item
      * collection. This is the same as the hash key of the item.</li>
-     * <li><p><i>SizeEstimateRange</i>-an estimate of item collection size,
+     * <li><p><i>SizeEstimateRange</i> - An estimate of item collection size,
      * measured in gigabytes. This is a two-element array containing a lower
      * bound and an upper bound for the estimate. The estimate includes the
      * size of all the items in the table, plus the size of all attributes
@@ -125,14 +125,14 @@ public class DeleteItemResult  implements Serializable  {
      * returned if it was asked for in the request. For more information, see
      * <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
-     * Throughput</a> of the <i>Amazon DynamoDB Developer Guide</i>.
+     * Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      *
      * @return The table name that consumed provisioned throughput, and the number of
      *         capacity units consumed by it. <i>ConsumedCapacity</i> is only
      *         returned if it was asked for in the request. For more information, see
      *         <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
-     *         Throughput</a> of the <i>Amazon DynamoDB Developer Guide</i>.
+     *         Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
     public ConsumedCapacity getConsumedCapacity() {
         return consumedCapacity;
@@ -144,14 +144,14 @@ public class DeleteItemResult  implements Serializable  {
      * returned if it was asked for in the request. For more information, see
      * <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
-     * Throughput</a> of the <i>Amazon DynamoDB Developer Guide</i>.
+     * Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      *
      * @param consumedCapacity The table name that consumed provisioned throughput, and the number of
      *         capacity units consumed by it. <i>ConsumedCapacity</i> is only
      *         returned if it was asked for in the request. For more information, see
      *         <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
-     *         Throughput</a> of the <i>Amazon DynamoDB Developer Guide</i>.
+     *         Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
     public void setConsumedCapacity(ConsumedCapacity consumedCapacity) {
         this.consumedCapacity = consumedCapacity;
@@ -163,7 +163,7 @@ public class DeleteItemResult  implements Serializable  {
      * returned if it was asked for in the request. For more information, see
      * <a
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
-     * Throughput</a> of the <i>Amazon DynamoDB Developer Guide</i>.
+     * Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -172,7 +172,7 @@ public class DeleteItemResult  implements Serializable  {
      *         returned if it was asked for in the request. For more information, see
      *         <a
      *         href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
-     *         Throughput</a> of the <i>Amazon DynamoDB Developer Guide</i>.
+     *         Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -189,9 +189,9 @@ public class DeleteItemResult  implements Serializable  {
      * asked for in the request. If the table does not have any secondary
      * indexes, this information is not returned in the response. <p>Each
      * <i>ItemCollectionMetrics</i> element consists of: <ul>
-     * <li><p><i>ItemCollectionKey</i>-the hash key value of the item
+     * <li><p><i>ItemCollectionKey</i> - The hash key value of the item
      * collection. This is the same as the hash key of the item.</li>
-     * <li><p><i>SizeEstimateRange</i>-an estimate of item collection size,
+     * <li><p><i>SizeEstimateRange</i> - An estimate of item collection size,
      * measured in gigabytes. This is a two-element array containing a lower
      * bound and an upper bound for the estimate. The estimate includes the
      * size of all the items in the table, plus the size of all attributes
@@ -205,9 +205,9 @@ public class DeleteItemResult  implements Serializable  {
      *         asked for in the request. If the table does not have any secondary
      *         indexes, this information is not returned in the response. <p>Each
      *         <i>ItemCollectionMetrics</i> element consists of: <ul>
-     *         <li><p><i>ItemCollectionKey</i>-the hash key value of the item
+     *         <li><p><i>ItemCollectionKey</i> - The hash key value of the item
      *         collection. This is the same as the hash key of the item.</li>
-     *         <li><p><i>SizeEstimateRange</i>-an estimate of item collection size,
+     *         <li><p><i>SizeEstimateRange</i> - An estimate of item collection size,
      *         measured in gigabytes. This is a two-element array containing a lower
      *         bound and an upper bound for the estimate. The estimate includes the
      *         size of all the items in the table, plus the size of all attributes
@@ -226,9 +226,9 @@ public class DeleteItemResult  implements Serializable  {
      * asked for in the request. If the table does not have any secondary
      * indexes, this information is not returned in the response. <p>Each
      * <i>ItemCollectionMetrics</i> element consists of: <ul>
-     * <li><p><i>ItemCollectionKey</i>-the hash key value of the item
+     * <li><p><i>ItemCollectionKey</i> - The hash key value of the item
      * collection. This is the same as the hash key of the item.</li>
-     * <li><p><i>SizeEstimateRange</i>-an estimate of item collection size,
+     * <li><p><i>SizeEstimateRange</i> - An estimate of item collection size,
      * measured in gigabytes. This is a two-element array containing a lower
      * bound and an upper bound for the estimate. The estimate includes the
      * size of all the items in the table, plus the size of all attributes
@@ -242,9 +242,9 @@ public class DeleteItemResult  implements Serializable  {
      *         asked for in the request. If the table does not have any secondary
      *         indexes, this information is not returned in the response. <p>Each
      *         <i>ItemCollectionMetrics</i> element consists of: <ul>
-     *         <li><p><i>ItemCollectionKey</i>-the hash key value of the item
+     *         <li><p><i>ItemCollectionKey</i> - The hash key value of the item
      *         collection. This is the same as the hash key of the item.</li>
-     *         <li><p><i>SizeEstimateRange</i>-an estimate of item collection size,
+     *         <li><p><i>SizeEstimateRange</i> - An estimate of item collection size,
      *         measured in gigabytes. This is a two-element array containing a lower
      *         bound and an upper bound for the estimate. The estimate includes the
      *         size of all the items in the table, plus the size of all attributes
@@ -263,9 +263,9 @@ public class DeleteItemResult  implements Serializable  {
      * asked for in the request. If the table does not have any secondary
      * indexes, this information is not returned in the response. <p>Each
      * <i>ItemCollectionMetrics</i> element consists of: <ul>
-     * <li><p><i>ItemCollectionKey</i>-the hash key value of the item
+     * <li><p><i>ItemCollectionKey</i> - The hash key value of the item
      * collection. This is the same as the hash key of the item.</li>
-     * <li><p><i>SizeEstimateRange</i>-an estimate of item collection size,
+     * <li><p><i>SizeEstimateRange</i> - An estimate of item collection size,
      * measured in gigabytes. This is a two-element array containing a lower
      * bound and an upper bound for the estimate. The estimate includes the
      * size of all the items in the table, plus the size of all attributes
@@ -281,9 +281,9 @@ public class DeleteItemResult  implements Serializable  {
      *         asked for in the request. If the table does not have any secondary
      *         indexes, this information is not returned in the response. <p>Each
      *         <i>ItemCollectionMetrics</i> element consists of: <ul>
-     *         <li><p><i>ItemCollectionKey</i>-the hash key value of the item
+     *         <li><p><i>ItemCollectionKey</i> - The hash key value of the item
      *         collection. This is the same as the hash key of the item.</li>
-     *         <li><p><i>SizeEstimateRange</i>-an estimate of item collection size,
+     *         <li><p><i>SizeEstimateRange</i> - An estimate of item collection size,
      *         measured in gigabytes. This is a two-element array containing a lower
      *         bound and an upper bound for the estimate. The estimate includes the
      *         size of all the items in the table, plus the size of all attributes

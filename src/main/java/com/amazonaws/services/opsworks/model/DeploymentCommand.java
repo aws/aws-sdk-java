@@ -31,19 +31,16 @@ public class DeploymentCommand  implements Serializable  {
      * dependencies.</li> <li><code></code>update_custom_cookbooks: Update
      * the stack's custom cookbooks.</li>
      * <li><code></code>update_dependencies: Update the stack's
-     * dependencies.</li> <li><code>shutdown</code>: Run the shutdown
-     * recipes.</li> <li><code>setup</code>: Run the setup recipes.</li>
-     * <li><code>configure</code>: Run the configure recipes.</li> </ul>
-     * <p>For apps, the available commands are: <ul> <li><code>deploy</code>:
-     * Deploy the app.</li> <li><code>rollback</code> Roll the app back to
-     * the previous version. When you update an app, OpsWorks stores the
-     * previous version, up to a maximum of five versions. You can use this
-     * command to roll an app back as many as four versions.</li>
-     * <li><code>start</code>: Start the app's web or application
-     * server.</li> <li><code>stop</code>: Stop the app's web or application
-     * server.</li> <li><code>restart</code>: Restart the app's web or
-     * application server.</li> <li><code>undeploy</code>: Undeploy the
-     * app.</li> </ul>
+     * dependencies.</li> </ul> <p>For apps, the available commands are: <ul>
+     * <li><code>deploy</code>: Deploy the app.</li>
+     * <li><code>rollback</code> Roll the app back to the previous version.
+     * When you update an app, OpsWorks stores the previous version, up to a
+     * maximum of five versions. You can use this command to roll an app back
+     * as many as four versions.</li> <li><code>start</code>: Start the app's
+     * web or application server.</li> <li><code>stop</code>: Stop the app's
+     * web or application server.</li> <li><code>restart</code>: Restart the
+     * app's web or application server.</li> <li><code>undeploy</code>:
+     * Undeploy the app.</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>install_dependencies, update_dependencies, update_custom_cookbooks, execute_recipes, deploy, rollback, start, stop, restart, undeploy
@@ -66,19 +63,16 @@ public class DeploymentCommand  implements Serializable  {
      * dependencies.</li> <li><code></code>update_custom_cookbooks: Update
      * the stack's custom cookbooks.</li>
      * <li><code></code>update_dependencies: Update the stack's
-     * dependencies.</li> <li><code>shutdown</code>: Run the shutdown
-     * recipes.</li> <li><code>setup</code>: Run the setup recipes.</li>
-     * <li><code>configure</code>: Run the configure recipes.</li> </ul>
-     * <p>For apps, the available commands are: <ul> <li><code>deploy</code>:
-     * Deploy the app.</li> <li><code>rollback</code> Roll the app back to
-     * the previous version. When you update an app, OpsWorks stores the
-     * previous version, up to a maximum of five versions. You can use this
-     * command to roll an app back as many as four versions.</li>
-     * <li><code>start</code>: Start the app's web or application
-     * server.</li> <li><code>stop</code>: Stop the app's web or application
-     * server.</li> <li><code>restart</code>: Restart the app's web or
-     * application server.</li> <li><code>undeploy</code>: Undeploy the
-     * app.</li> </ul>
+     * dependencies.</li> </ul> <p>For apps, the available commands are: <ul>
+     * <li><code>deploy</code>: Deploy the app.</li>
+     * <li><code>rollback</code> Roll the app back to the previous version.
+     * When you update an app, OpsWorks stores the previous version, up to a
+     * maximum of five versions. You can use this command to roll an app back
+     * as many as four versions.</li> <li><code>start</code>: Start the app's
+     * web or application server.</li> <li><code>stop</code>: Stop the app's
+     * web or application server.</li> <li><code>restart</code>: Restart the
+     * app's web or application server.</li> <li><code>undeploy</code>:
+     * Undeploy the app.</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>install_dependencies, update_dependencies, update_custom_cookbooks, execute_recipes, deploy, rollback, start, stop, restart, undeploy
@@ -91,19 +85,16 @@ public class DeploymentCommand  implements Serializable  {
      *         dependencies.</li> <li><code></code>update_custom_cookbooks: Update
      *         the stack's custom cookbooks.</li>
      *         <li><code></code>update_dependencies: Update the stack's
-     *         dependencies.</li> <li><code>shutdown</code>: Run the shutdown
-     *         recipes.</li> <li><code>setup</code>: Run the setup recipes.</li>
-     *         <li><code>configure</code>: Run the configure recipes.</li> </ul>
-     *         <p>For apps, the available commands are: <ul> <li><code>deploy</code>:
-     *         Deploy the app.</li> <li><code>rollback</code> Roll the app back to
-     *         the previous version. When you update an app, OpsWorks stores the
-     *         previous version, up to a maximum of five versions. You can use this
-     *         command to roll an app back as many as four versions.</li>
-     *         <li><code>start</code>: Start the app's web or application
-     *         server.</li> <li><code>stop</code>: Stop the app's web or application
-     *         server.</li> <li><code>restart</code>: Restart the app's web or
-     *         application server.</li> <li><code>undeploy</code>: Undeploy the
-     *         app.</li> </ul>
+     *         dependencies.</li> </ul> <p>For apps, the available commands are: <ul>
+     *         <li><code>deploy</code>: Deploy the app.</li>
+     *         <li><code>rollback</code> Roll the app back to the previous version.
+     *         When you update an app, OpsWorks stores the previous version, up to a
+     *         maximum of five versions. You can use this command to roll an app back
+     *         as many as four versions.</li> <li><code>start</code>: Start the app's
+     *         web or application server.</li> <li><code>stop</code>: Stop the app's
+     *         web or application server.</li> <li><code>restart</code>: Restart the
+     *         app's web or application server.</li> <li><code>undeploy</code>:
+     *         Undeploy the app.</li> </ul>
      *
      * @see DeploymentCommandName
      */
@@ -120,19 +111,16 @@ public class DeploymentCommand  implements Serializable  {
      * dependencies.</li> <li><code></code>update_custom_cookbooks: Update
      * the stack's custom cookbooks.</li>
      * <li><code></code>update_dependencies: Update the stack's
-     * dependencies.</li> <li><code>shutdown</code>: Run the shutdown
-     * recipes.</li> <li><code>setup</code>: Run the setup recipes.</li>
-     * <li><code>configure</code>: Run the configure recipes.</li> </ul>
-     * <p>For apps, the available commands are: <ul> <li><code>deploy</code>:
-     * Deploy the app.</li> <li><code>rollback</code> Roll the app back to
-     * the previous version. When you update an app, OpsWorks stores the
-     * previous version, up to a maximum of five versions. You can use this
-     * command to roll an app back as many as four versions.</li>
-     * <li><code>start</code>: Start the app's web or application
-     * server.</li> <li><code>stop</code>: Stop the app's web or application
-     * server.</li> <li><code>restart</code>: Restart the app's web or
-     * application server.</li> <li><code>undeploy</code>: Undeploy the
-     * app.</li> </ul>
+     * dependencies.</li> </ul> <p>For apps, the available commands are: <ul>
+     * <li><code>deploy</code>: Deploy the app.</li>
+     * <li><code>rollback</code> Roll the app back to the previous version.
+     * When you update an app, OpsWorks stores the previous version, up to a
+     * maximum of five versions. You can use this command to roll an app back
+     * as many as four versions.</li> <li><code>start</code>: Start the app's
+     * web or application server.</li> <li><code>stop</code>: Stop the app's
+     * web or application server.</li> <li><code>restart</code>: Restart the
+     * app's web or application server.</li> <li><code>undeploy</code>:
+     * Undeploy the app.</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>install_dependencies, update_dependencies, update_custom_cookbooks, execute_recipes, deploy, rollback, start, stop, restart, undeploy
@@ -145,19 +133,16 @@ public class DeploymentCommand  implements Serializable  {
      *         dependencies.</li> <li><code></code>update_custom_cookbooks: Update
      *         the stack's custom cookbooks.</li>
      *         <li><code></code>update_dependencies: Update the stack's
-     *         dependencies.</li> <li><code>shutdown</code>: Run the shutdown
-     *         recipes.</li> <li><code>setup</code>: Run the setup recipes.</li>
-     *         <li><code>configure</code>: Run the configure recipes.</li> </ul>
-     *         <p>For apps, the available commands are: <ul> <li><code>deploy</code>:
-     *         Deploy the app.</li> <li><code>rollback</code> Roll the app back to
-     *         the previous version. When you update an app, OpsWorks stores the
-     *         previous version, up to a maximum of five versions. You can use this
-     *         command to roll an app back as many as four versions.</li>
-     *         <li><code>start</code>: Start the app's web or application
-     *         server.</li> <li><code>stop</code>: Stop the app's web or application
-     *         server.</li> <li><code>restart</code>: Restart the app's web or
-     *         application server.</li> <li><code>undeploy</code>: Undeploy the
-     *         app.</li> </ul>
+     *         dependencies.</li> </ul> <p>For apps, the available commands are: <ul>
+     *         <li><code>deploy</code>: Deploy the app.</li>
+     *         <li><code>rollback</code> Roll the app back to the previous version.
+     *         When you update an app, OpsWorks stores the previous version, up to a
+     *         maximum of five versions. You can use this command to roll an app back
+     *         as many as four versions.</li> <li><code>start</code>: Start the app's
+     *         web or application server.</li> <li><code>stop</code>: Stop the app's
+     *         web or application server.</li> <li><code>restart</code>: Restart the
+     *         app's web or application server.</li> <li><code>undeploy</code>:
+     *         Undeploy the app.</li> </ul>
      *
      * @see DeploymentCommandName
      */
@@ -174,19 +159,16 @@ public class DeploymentCommand  implements Serializable  {
      * dependencies.</li> <li><code></code>update_custom_cookbooks: Update
      * the stack's custom cookbooks.</li>
      * <li><code></code>update_dependencies: Update the stack's
-     * dependencies.</li> <li><code>shutdown</code>: Run the shutdown
-     * recipes.</li> <li><code>setup</code>: Run the setup recipes.</li>
-     * <li><code>configure</code>: Run the configure recipes.</li> </ul>
-     * <p>For apps, the available commands are: <ul> <li><code>deploy</code>:
-     * Deploy the app.</li> <li><code>rollback</code> Roll the app back to
-     * the previous version. When you update an app, OpsWorks stores the
-     * previous version, up to a maximum of five versions. You can use this
-     * command to roll an app back as many as four versions.</li>
-     * <li><code>start</code>: Start the app's web or application
-     * server.</li> <li><code>stop</code>: Stop the app's web or application
-     * server.</li> <li><code>restart</code>: Restart the app's web or
-     * application server.</li> <li><code>undeploy</code>: Undeploy the
-     * app.</li> </ul>
+     * dependencies.</li> </ul> <p>For apps, the available commands are: <ul>
+     * <li><code>deploy</code>: Deploy the app.</li>
+     * <li><code>rollback</code> Roll the app back to the previous version.
+     * When you update an app, OpsWorks stores the previous version, up to a
+     * maximum of five versions. You can use this command to roll an app back
+     * as many as four versions.</li> <li><code>start</code>: Start the app's
+     * web or application server.</li> <li><code>stop</code>: Stop the app's
+     * web or application server.</li> <li><code>restart</code>: Restart the
+     * app's web or application server.</li> <li><code>undeploy</code>:
+     * Undeploy the app.</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -201,19 +183,16 @@ public class DeploymentCommand  implements Serializable  {
      *         dependencies.</li> <li><code></code>update_custom_cookbooks: Update
      *         the stack's custom cookbooks.</li>
      *         <li><code></code>update_dependencies: Update the stack's
-     *         dependencies.</li> <li><code>shutdown</code>: Run the shutdown
-     *         recipes.</li> <li><code>setup</code>: Run the setup recipes.</li>
-     *         <li><code>configure</code>: Run the configure recipes.</li> </ul>
-     *         <p>For apps, the available commands are: <ul> <li><code>deploy</code>:
-     *         Deploy the app.</li> <li><code>rollback</code> Roll the app back to
-     *         the previous version. When you update an app, OpsWorks stores the
-     *         previous version, up to a maximum of five versions. You can use this
-     *         command to roll an app back as many as four versions.</li>
-     *         <li><code>start</code>: Start the app's web or application
-     *         server.</li> <li><code>stop</code>: Stop the app's web or application
-     *         server.</li> <li><code>restart</code>: Restart the app's web or
-     *         application server.</li> <li><code>undeploy</code>: Undeploy the
-     *         app.</li> </ul>
+     *         dependencies.</li> </ul> <p>For apps, the available commands are: <ul>
+     *         <li><code>deploy</code>: Deploy the app.</li>
+     *         <li><code>rollback</code> Roll the app back to the previous version.
+     *         When you update an app, OpsWorks stores the previous version, up to a
+     *         maximum of five versions. You can use this command to roll an app back
+     *         as many as four versions.</li> <li><code>start</code>: Start the app's
+     *         web or application server.</li> <li><code>stop</code>: Stop the app's
+     *         web or application server.</li> <li><code>restart</code>: Restart the
+     *         app's web or application server.</li> <li><code>undeploy</code>:
+     *         Undeploy the app.</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -235,19 +214,16 @@ public class DeploymentCommand  implements Serializable  {
      * dependencies.</li> <li><code></code>update_custom_cookbooks: Update
      * the stack's custom cookbooks.</li>
      * <li><code></code>update_dependencies: Update the stack's
-     * dependencies.</li> <li><code>shutdown</code>: Run the shutdown
-     * recipes.</li> <li><code>setup</code>: Run the setup recipes.</li>
-     * <li><code>configure</code>: Run the configure recipes.</li> </ul>
-     * <p>For apps, the available commands are: <ul> <li><code>deploy</code>:
-     * Deploy the app.</li> <li><code>rollback</code> Roll the app back to
-     * the previous version. When you update an app, OpsWorks stores the
-     * previous version, up to a maximum of five versions. You can use this
-     * command to roll an app back as many as four versions.</li>
-     * <li><code>start</code>: Start the app's web or application
-     * server.</li> <li><code>stop</code>: Stop the app's web or application
-     * server.</li> <li><code>restart</code>: Restart the app's web or
-     * application server.</li> <li><code>undeploy</code>: Undeploy the
-     * app.</li> </ul>
+     * dependencies.</li> </ul> <p>For apps, the available commands are: <ul>
+     * <li><code>deploy</code>: Deploy the app.</li>
+     * <li><code>rollback</code> Roll the app back to the previous version.
+     * When you update an app, OpsWorks stores the previous version, up to a
+     * maximum of five versions. You can use this command to roll an app back
+     * as many as four versions.</li> <li><code>start</code>: Start the app's
+     * web or application server.</li> <li><code>stop</code>: Stop the app's
+     * web or application server.</li> <li><code>restart</code>: Restart the
+     * app's web or application server.</li> <li><code>undeploy</code>:
+     * Undeploy the app.</li> </ul>
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Allowed Values: </b>install_dependencies, update_dependencies, update_custom_cookbooks, execute_recipes, deploy, rollback, start, stop, restart, undeploy
@@ -260,19 +236,16 @@ public class DeploymentCommand  implements Serializable  {
      *         dependencies.</li> <li><code></code>update_custom_cookbooks: Update
      *         the stack's custom cookbooks.</li>
      *         <li><code></code>update_dependencies: Update the stack's
-     *         dependencies.</li> <li><code>shutdown</code>: Run the shutdown
-     *         recipes.</li> <li><code>setup</code>: Run the setup recipes.</li>
-     *         <li><code>configure</code>: Run the configure recipes.</li> </ul>
-     *         <p>For apps, the available commands are: <ul> <li><code>deploy</code>:
-     *         Deploy the app.</li> <li><code>rollback</code> Roll the app back to
-     *         the previous version. When you update an app, OpsWorks stores the
-     *         previous version, up to a maximum of five versions. You can use this
-     *         command to roll an app back as many as four versions.</li>
-     *         <li><code>start</code>: Start the app's web or application
-     *         server.</li> <li><code>stop</code>: Stop the app's web or application
-     *         server.</li> <li><code>restart</code>: Restart the app's web or
-     *         application server.</li> <li><code>undeploy</code>: Undeploy the
-     *         app.</li> </ul>
+     *         dependencies.</li> </ul> <p>For apps, the available commands are: <ul>
+     *         <li><code>deploy</code>: Deploy the app.</li>
+     *         <li><code>rollback</code> Roll the app back to the previous version.
+     *         When you update an app, OpsWorks stores the previous version, up to a
+     *         maximum of five versions. You can use this command to roll an app back
+     *         as many as four versions.</li> <li><code>start</code>: Start the app's
+     *         web or application server.</li> <li><code>stop</code>: Stop the app's
+     *         web or application server.</li> <li><code>restart</code>: Restart the
+     *         app's web or application server.</li> <li><code>undeploy</code>:
+     *         Undeploy the app.</li> </ul>
      *
      * @see DeploymentCommandName
      */
@@ -289,19 +262,16 @@ public class DeploymentCommand  implements Serializable  {
      * dependencies.</li> <li><code></code>update_custom_cookbooks: Update
      * the stack's custom cookbooks.</li>
      * <li><code></code>update_dependencies: Update the stack's
-     * dependencies.</li> <li><code>shutdown</code>: Run the shutdown
-     * recipes.</li> <li><code>setup</code>: Run the setup recipes.</li>
-     * <li><code>configure</code>: Run the configure recipes.</li> </ul>
-     * <p>For apps, the available commands are: <ul> <li><code>deploy</code>:
-     * Deploy the app.</li> <li><code>rollback</code> Roll the app back to
-     * the previous version. When you update an app, OpsWorks stores the
-     * previous version, up to a maximum of five versions. You can use this
-     * command to roll an app back as many as four versions.</li>
-     * <li><code>start</code>: Start the app's web or application
-     * server.</li> <li><code>stop</code>: Stop the app's web or application
-     * server.</li> <li><code>restart</code>: Restart the app's web or
-     * application server.</li> <li><code>undeploy</code>: Undeploy the
-     * app.</li> </ul>
+     * dependencies.</li> </ul> <p>For apps, the available commands are: <ul>
+     * <li><code>deploy</code>: Deploy the app.</li>
+     * <li><code>rollback</code> Roll the app back to the previous version.
+     * When you update an app, OpsWorks stores the previous version, up to a
+     * maximum of five versions. You can use this command to roll an app back
+     * as many as four versions.</li> <li><code>start</code>: Start the app's
+     * web or application server.</li> <li><code>stop</code>: Stop the app's
+     * web or application server.</li> <li><code>restart</code>: Restart the
+     * app's web or application server.</li> <li><code>undeploy</code>:
+     * Undeploy the app.</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -316,19 +286,16 @@ public class DeploymentCommand  implements Serializable  {
      *         dependencies.</li> <li><code></code>update_custom_cookbooks: Update
      *         the stack's custom cookbooks.</li>
      *         <li><code></code>update_dependencies: Update the stack's
-     *         dependencies.</li> <li><code>shutdown</code>: Run the shutdown
-     *         recipes.</li> <li><code>setup</code>: Run the setup recipes.</li>
-     *         <li><code>configure</code>: Run the configure recipes.</li> </ul>
-     *         <p>For apps, the available commands are: <ul> <li><code>deploy</code>:
-     *         Deploy the app.</li> <li><code>rollback</code> Roll the app back to
-     *         the previous version. When you update an app, OpsWorks stores the
-     *         previous version, up to a maximum of five versions. You can use this
-     *         command to roll an app back as many as four versions.</li>
-     *         <li><code>start</code>: Start the app's web or application
-     *         server.</li> <li><code>stop</code>: Stop the app's web or application
-     *         server.</li> <li><code>restart</code>: Restart the app's web or
-     *         application server.</li> <li><code>undeploy</code>: Undeploy the
-     *         app.</li> </ul>
+     *         dependencies.</li> </ul> <p>For apps, the available commands are: <ul>
+     *         <li><code>deploy</code>: Deploy the app.</li>
+     *         <li><code>rollback</code> Roll the app back to the previous version.
+     *         When you update an app, OpsWorks stores the previous version, up to a
+     *         maximum of five versions. You can use this command to roll an app back
+     *         as many as four versions.</li> <li><code>start</code>: Start the app's
+     *         web or application server.</li> <li><code>stop</code>: Stop the app's
+     *         web or application server.</li> <li><code>restart</code>: Restart the
+     *         app's web or application server.</li> <li><code>undeploy</code>:
+     *         Undeploy the app.</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

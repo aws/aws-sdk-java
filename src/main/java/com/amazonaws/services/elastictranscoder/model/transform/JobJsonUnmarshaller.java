@@ -65,6 +65,20 @@ public class JobJsonUnmarshaller implements Unmarshaller<Job, JsonUnmarshallerCo
                     context.nextToken();
                     job.setOutput(JobOutputJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("Outputs", targetDepth)) {
+                    job.setOutputs(new ListUnmarshaller<JobOutput>(JobOutputJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("OutputKeyPrefix", targetDepth)) {
+                    context.nextToken();
+                    job.setOutputKeyPrefix(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("Playlists", targetDepth)) {
+                    job.setPlaylists(new ListUnmarshaller<Playlist>(PlaylistJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("Status", targetDepth)) {
+                    context.nextToken();
+                    job.setStatus(StringJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth) break;

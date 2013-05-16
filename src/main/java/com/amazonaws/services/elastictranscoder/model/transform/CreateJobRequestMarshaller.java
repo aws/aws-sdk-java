@@ -132,7 +132,78 @@ public class CreateJobRequestMarshaller implements Marshaller<Request<CreateJobR
                 if (output.getPresetId() != null) {
                     jsonWriter.key("PresetId").value(output.getPresetId());
                 }
+                if (output.getSegmentDuration() != null) {
+                    jsonWriter.key("SegmentDuration").value(output.getSegmentDuration());
+                }
                 jsonWriter.endObject();
+            }
+
+            java.util.List<CreateJobOutput> outputsList = createJobRequest.getOutputs();
+            if (outputsList != null && outputsList.size() > 0) {
+
+                jsonWriter.key("Outputs");
+                jsonWriter.array();
+
+                for (CreateJobOutput outputsListValue : outputsList) {
+                    if (outputsListValue != null) {
+                        jsonWriter.object();
+                        if (outputsListValue.getKey() != null) {
+                            jsonWriter.key("Key").value(outputsListValue.getKey());
+                        }
+                        if (outputsListValue.getThumbnailPattern() != null) {
+                            jsonWriter.key("ThumbnailPattern").value(outputsListValue.getThumbnailPattern());
+                        }
+                        if (outputsListValue.getRotate() != null) {
+                            jsonWriter.key("Rotate").value(outputsListValue.getRotate());
+                        }
+                        if (outputsListValue.getPresetId() != null) {
+                            jsonWriter.key("PresetId").value(outputsListValue.getPresetId());
+                        }
+                        if (outputsListValue.getSegmentDuration() != null) {
+                            jsonWriter.key("SegmentDuration").value(outputsListValue.getSegmentDuration());
+                        }
+                        jsonWriter.endObject();
+                    }
+                }
+                jsonWriter.endArray();
+            }
+            if (createJobRequest.getOutputKeyPrefix() != null) {
+                jsonWriter.key("OutputKeyPrefix").value(createJobRequest.getOutputKeyPrefix());
+            }
+
+            java.util.List<CreateJobPlaylist> playlistsList = createJobRequest.getPlaylists();
+            if (playlistsList != null && playlistsList.size() > 0) {
+
+                jsonWriter.key("Playlists");
+                jsonWriter.array();
+
+                for (CreateJobPlaylist playlistsListValue : playlistsList) {
+                    if (playlistsListValue != null) {
+                        jsonWriter.object();
+                        if (playlistsListValue.getName() != null) {
+                            jsonWriter.key("Name").value(playlistsListValue.getName());
+                        }
+                        if (playlistsListValue.getFormat() != null) {
+                            jsonWriter.key("Format").value(playlistsListValue.getFormat());
+                        }
+
+                        java.util.List<String> outputKeysList = playlistsListValue.getOutputKeys();
+                        if (outputKeysList != null && outputKeysList.size() > 0) {
+
+                            jsonWriter.key("OutputKeys");
+                            jsonWriter.array();
+
+                            for (String outputKeysListValue : outputKeysList) {
+                                if (outputKeysListValue != null) {
+                                    jsonWriter.value(outputKeysListValue);
+                                }
+                            }
+                            jsonWriter.endArray();
+                        }
+                        jsonWriter.endObject();
+                    }
+                }
+                jsonWriter.endArray();
             }
 
           jsonWriter.endObject();

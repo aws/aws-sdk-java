@@ -19,7 +19,7 @@ import java.io.Serializable;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.opsworks.AWSOpsWorks#deleteUserProfile(DeleteUserProfileRequest) DeleteUserProfile operation}.
  * <p>
- * Deletes a user.
+ * Deletes a user profile.
  * </p>
  *
  * @see com.amazonaws.services.opsworks.AWSOpsWorks#deleteUserProfile(DeleteUserProfileRequest)

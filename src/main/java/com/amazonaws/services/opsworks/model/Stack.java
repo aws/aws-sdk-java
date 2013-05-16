@@ -81,7 +81,9 @@ public class Stack  implements Serializable  {
      * override the corresponding default stack configuration JSON values.
      * The string should be in the following format and must escape
      * characters such as '"'.: <code>"{\"key1\": \"value1\", \"key2\":
-     * \"value2\",...}"</code>
+     * \"value2\",...}"</code> <p>For more information on custom JSON, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">
+     * Use Custom JSON to Modify the Stack Configuration JSON</a>.
      */
     private String customJson;
 
@@ -92,7 +94,11 @@ public class Stack  implements Serializable  {
 
     /**
      * Contains the information required to retrieve an app or cookbook from
-     * a repository.
+     * a repository. For more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Creating
+     * Apps</a> or <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-installingcustom.html">Custom
+     * Recipes and Cookbooks</a>.
      */
     private Source customCookbooksSource;
 
@@ -106,6 +112,18 @@ public class Stack  implements Serializable  {
      * Date when the stack was created.
      */
     private String createdAt;
+
+    /**
+     * The default root device type. This value is used by default for all
+     * instances in the cloned stack, but you can override it when you create
+     * an instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
+     * for the Root Device</a>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>ebs, instance-store
+     */
+    private String defaultRootDeviceType;
 
     /**
      * The stack ID.
@@ -476,13 +494,17 @@ public class Stack  implements Serializable  {
      * override the corresponding default stack configuration JSON values.
      * The string should be in the following format and must escape
      * characters such as '"'.: <code>"{\"key1\": \"value1\", \"key2\":
-     * \"value2\",...}"</code>
+     * \"value2\",...}"</code> <p>For more information on custom JSON, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">
+     * Use Custom JSON to Modify the Stack Configuration JSON</a>.
      *
      * @return A string that contains user-defined, custom JSON. It is used to
      *         override the corresponding default stack configuration JSON values.
      *         The string should be in the following format and must escape
      *         characters such as '"'.: <code>"{\"key1\": \"value1\", \"key2\":
-     *         \"value2\",...}"</code>
+     *         \"value2\",...}"</code> <p>For more information on custom JSON, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">
+     *         Use Custom JSON to Modify the Stack Configuration JSON</a>.
      */
     public String getCustomJson() {
         return customJson;
@@ -493,13 +515,17 @@ public class Stack  implements Serializable  {
      * override the corresponding default stack configuration JSON values.
      * The string should be in the following format and must escape
      * characters such as '"'.: <code>"{\"key1\": \"value1\", \"key2\":
-     * \"value2\",...}"</code>
+     * \"value2\",...}"</code> <p>For more information on custom JSON, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">
+     * Use Custom JSON to Modify the Stack Configuration JSON</a>.
      *
      * @param customJson A string that contains user-defined, custom JSON. It is used to
      *         override the corresponding default stack configuration JSON values.
      *         The string should be in the following format and must escape
      *         characters such as '"'.: <code>"{\"key1\": \"value1\", \"key2\":
-     *         \"value2\",...}"</code>
+     *         \"value2\",...}"</code> <p>For more information on custom JSON, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">
+     *         Use Custom JSON to Modify the Stack Configuration JSON</a>.
      */
     public void setCustomJson(String customJson) {
         this.customJson = customJson;
@@ -510,7 +536,9 @@ public class Stack  implements Serializable  {
      * override the corresponding default stack configuration JSON values.
      * The string should be in the following format and must escape
      * characters such as '"'.: <code>"{\"key1\": \"value1\", \"key2\":
-     * \"value2\",...}"</code>
+     * \"value2\",...}"</code> <p>For more information on custom JSON, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">
+     * Use Custom JSON to Modify the Stack Configuration JSON</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -518,7 +546,9 @@ public class Stack  implements Serializable  {
      *         override the corresponding default stack configuration JSON values.
      *         The string should be in the following format and must escape
      *         characters such as '"'.: <code>"{\"key1\": \"value1\", \"key2\":
-     *         \"value2\",...}"</code>
+     *         \"value2\",...}"</code> <p>For more information on custom JSON, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html">
+     *         Use Custom JSON to Modify the Stack Configuration JSON</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -574,10 +604,18 @@ public class Stack  implements Serializable  {
     
     /**
      * Contains the information required to retrieve an app or cookbook from
-     * a repository.
+     * a repository. For more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Creating
+     * Apps</a> or <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-installingcustom.html">Custom
+     * Recipes and Cookbooks</a>.
      *
      * @return Contains the information required to retrieve an app or cookbook from
-     *         a repository.
+     *         a repository. For more information, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Creating
+     *         Apps</a> or <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-installingcustom.html">Custom
+     *         Recipes and Cookbooks</a>.
      */
     public Source getCustomCookbooksSource() {
         return customCookbooksSource;
@@ -585,10 +623,18 @@ public class Stack  implements Serializable  {
     
     /**
      * Contains the information required to retrieve an app or cookbook from
-     * a repository.
+     * a repository. For more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Creating
+     * Apps</a> or <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-installingcustom.html">Custom
+     * Recipes and Cookbooks</a>.
      *
      * @param customCookbooksSource Contains the information required to retrieve an app or cookbook from
-     *         a repository.
+     *         a repository. For more information, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Creating
+     *         Apps</a> or <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-installingcustom.html">Custom
+     *         Recipes and Cookbooks</a>.
      */
     public void setCustomCookbooksSource(Source customCookbooksSource) {
         this.customCookbooksSource = customCookbooksSource;
@@ -596,12 +642,20 @@ public class Stack  implements Serializable  {
     
     /**
      * Contains the information required to retrieve an app or cookbook from
-     * a repository.
+     * a repository. For more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Creating
+     * Apps</a> or <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-installingcustom.html">Custom
+     * Recipes and Cookbooks</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param customCookbooksSource Contains the information required to retrieve an app or cookbook from
-     *         a repository.
+     *         a repository. For more information, see <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Creating
+     *         Apps</a> or <a
+     *         href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-installingcustom.html">Custom
+     *         Recipes and Cookbooks</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -687,6 +741,129 @@ public class Stack  implements Serializable  {
     
     
     /**
+     * The default root device type. This value is used by default for all
+     * instances in the cloned stack, but you can override it when you create
+     * an instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
+     * for the Root Device</a>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>ebs, instance-store
+     *
+     * @return The default root device type. This value is used by default for all
+     *         instances in the cloned stack, but you can override it when you create
+     *         an instance. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
+     *         for the Root Device</a>.
+     *
+     * @see RootDeviceType
+     */
+    public String getDefaultRootDeviceType() {
+        return defaultRootDeviceType;
+    }
+    
+    /**
+     * The default root device type. This value is used by default for all
+     * instances in the cloned stack, but you can override it when you create
+     * an instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
+     * for the Root Device</a>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>ebs, instance-store
+     *
+     * @param defaultRootDeviceType The default root device type. This value is used by default for all
+     *         instances in the cloned stack, but you can override it when you create
+     *         an instance. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
+     *         for the Root Device</a>.
+     *
+     * @see RootDeviceType
+     */
+    public void setDefaultRootDeviceType(String defaultRootDeviceType) {
+        this.defaultRootDeviceType = defaultRootDeviceType;
+    }
+    
+    /**
+     * The default root device type. This value is used by default for all
+     * instances in the cloned stack, but you can override it when you create
+     * an instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
+     * for the Root Device</a>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>ebs, instance-store
+     *
+     * @param defaultRootDeviceType The default root device type. This value is used by default for all
+     *         instances in the cloned stack, but you can override it when you create
+     *         an instance. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
+     *         for the Root Device</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see RootDeviceType
+     */
+    public Stack withDefaultRootDeviceType(String defaultRootDeviceType) {
+        this.defaultRootDeviceType = defaultRootDeviceType;
+        return this;
+    }
+    
+    
+    /**
+     * The default root device type. This value is used by default for all
+     * instances in the cloned stack, but you can override it when you create
+     * an instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
+     * for the Root Device</a>.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>ebs, instance-store
+     *
+     * @param defaultRootDeviceType The default root device type. This value is used by default for all
+     *         instances in the cloned stack, but you can override it when you create
+     *         an instance. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
+     *         for the Root Device</a>.
+     *
+     * @see RootDeviceType
+     */
+    public void setDefaultRootDeviceType(RootDeviceType defaultRootDeviceType) {
+        this.defaultRootDeviceType = defaultRootDeviceType.toString();
+    }
+    
+    /**
+     * The default root device type. This value is used by default for all
+     * instances in the cloned stack, but you can override it when you create
+     * an instance. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
+     * for the Root Device</a>.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>ebs, instance-store
+     *
+     * @param defaultRootDeviceType The default root device type. This value is used by default for all
+     *         instances in the cloned stack, but you can override it when you create
+     *         an instance. For more information, see <a
+     *         href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
+     *         for the Root Device</a>.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see RootDeviceType
+     */
+    public Stack withDefaultRootDeviceType(RootDeviceType defaultRootDeviceType) {
+        this.defaultRootDeviceType = defaultRootDeviceType.toString();
+        return this;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -711,7 +888,8 @@ public class Stack  implements Serializable  {
         if (isUseCustomCookbooks() != null) sb.append("UseCustomCookbooks: " + isUseCustomCookbooks() + ",");    	
         if (getCustomCookbooksSource() != null) sb.append("CustomCookbooksSource: " + getCustomCookbooksSource() + ",");    	
         if (getDefaultSshKeyName() != null) sb.append("DefaultSshKeyName: " + getDefaultSshKeyName() + ",");    	
-        if (getCreatedAt() != null) sb.append("CreatedAt: " + getCreatedAt() );
+        if (getCreatedAt() != null) sb.append("CreatedAt: " + getCreatedAt() + ",");    	
+        if (getDefaultRootDeviceType() != null) sb.append("DefaultRootDeviceType: " + getDefaultRootDeviceType() );
         sb.append("}");
         return sb.toString();
     }
@@ -735,6 +913,7 @@ public class Stack  implements Serializable  {
         hashCode = prime * hashCode + ((getCustomCookbooksSource() == null) ? 0 : getCustomCookbooksSource().hashCode()); 
         hashCode = prime * hashCode + ((getDefaultSshKeyName() == null) ? 0 : getDefaultSshKeyName().hashCode()); 
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode()); 
+        hashCode = prime * hashCode + ((getDefaultRootDeviceType() == null) ? 0 : getDefaultRootDeviceType().hashCode()); 
         return hashCode;
     }
     
@@ -774,6 +953,8 @@ public class Stack  implements Serializable  {
         if (other.getDefaultSshKeyName() != null && other.getDefaultSshKeyName().equals(this.getDefaultSshKeyName()) == false) return false; 
         if (other.getCreatedAt() == null ^ this.getCreatedAt() == null) return false;
         if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false) return false; 
+        if (other.getDefaultRootDeviceType() == null ^ this.getDefaultRootDeviceType() == null) return false;
+        if (other.getDefaultRootDeviceType() != null && other.getDefaultRootDeviceType().equals(this.getDefaultRootDeviceType()) == false) return false; 
         return true;
     }
     

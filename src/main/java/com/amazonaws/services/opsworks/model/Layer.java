@@ -37,6 +37,9 @@ public class Layer  implements Serializable  {
      * <li>Custom</li> <li>GangliaMonitoringMaster</li> <li>HaProxy</li>
      * <li>MemcachedServer</li> <li>MySqlMaster</li> <li>NodeJsAppServer</li>
      * <li>PhpAppServer</li> <li>RailsAppServer</li> <li>WebServer</li> </ul>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>lb, web, php-app, rails-app, nodejs-app, memcached, db-master, monitoring-master, custom
      */
     private String type;
 
@@ -98,7 +101,7 @@ public class Layer  implements Serializable  {
     private Boolean autoAssignElasticIps;
 
     /**
-     * OpsWorks supports five life-cycle events, <b>setup</b>,
+     * OpsWorks supports five lifecycle events, <b>setup</b>,
      * <b>configuration</b>, <b>deploy</b>, <b>undeploy</b>, and
      * <b>shutdown</b>. For each layer, OpsWorks runs a set of standard
      * recipes for each event. In addition, you can provide custom recipes
@@ -197,11 +200,16 @@ public class Layer  implements Serializable  {
      * <li>Custom</li> <li>GangliaMonitoringMaster</li> <li>HaProxy</li>
      * <li>MemcachedServer</li> <li>MySqlMaster</li> <li>NodeJsAppServer</li>
      * <li>PhpAppServer</li> <li>RailsAppServer</li> <li>WebServer</li> </ul>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>lb, web, php-app, rails-app, nodejs-app, memcached, db-master, monitoring-master, custom
      *
      * @return The layer type, which must be one of the following: <ul>
      *         <li>Custom</li> <li>GangliaMonitoringMaster</li> <li>HaProxy</li>
      *         <li>MemcachedServer</li> <li>MySqlMaster</li> <li>NodeJsAppServer</li>
      *         <li>PhpAppServer</li> <li>RailsAppServer</li> <li>WebServer</li> </ul>
+     *
+     * @see LayerType
      */
     public String getType() {
         return type;
@@ -212,11 +220,16 @@ public class Layer  implements Serializable  {
      * <li>Custom</li> <li>GangliaMonitoringMaster</li> <li>HaProxy</li>
      * <li>MemcachedServer</li> <li>MySqlMaster</li> <li>NodeJsAppServer</li>
      * <li>PhpAppServer</li> <li>RailsAppServer</li> <li>WebServer</li> </ul>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>lb, web, php-app, rails-app, nodejs-app, memcached, db-master, monitoring-master, custom
      *
      * @param type The layer type, which must be one of the following: <ul>
      *         <li>Custom</li> <li>GangliaMonitoringMaster</li> <li>HaProxy</li>
      *         <li>MemcachedServer</li> <li>MySqlMaster</li> <li>NodeJsAppServer</li>
      *         <li>PhpAppServer</li> <li>RailsAppServer</li> <li>WebServer</li> </ul>
+     *
+     * @see LayerType
      */
     public void setType(String type) {
         this.type = type;
@@ -229,6 +242,9 @@ public class Layer  implements Serializable  {
      * <li>PhpAppServer</li> <li>RailsAppServer</li> <li>WebServer</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>lb, web, php-app, rails-app, nodejs-app, memcached, db-master, monitoring-master, custom
      *
      * @param type The layer type, which must be one of the following: <ul>
      *         <li>Custom</li> <li>GangliaMonitoringMaster</li> <li>HaProxy</li>
@@ -237,12 +253,60 @@ public class Layer  implements Serializable  {
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
+     *
+     * @see LayerType
      */
     public Layer withType(String type) {
         this.type = type;
         return this;
     }
     
+    
+    /**
+     * The layer type, which must be one of the following: <ul>
+     * <li>Custom</li> <li>GangliaMonitoringMaster</li> <li>HaProxy</li>
+     * <li>MemcachedServer</li> <li>MySqlMaster</li> <li>NodeJsAppServer</li>
+     * <li>PhpAppServer</li> <li>RailsAppServer</li> <li>WebServer</li> </ul>
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>lb, web, php-app, rails-app, nodejs-app, memcached, db-master, monitoring-master, custom
+     *
+     * @param type The layer type, which must be one of the following: <ul>
+     *         <li>Custom</li> <li>GangliaMonitoringMaster</li> <li>HaProxy</li>
+     *         <li>MemcachedServer</li> <li>MySqlMaster</li> <li>NodeJsAppServer</li>
+     *         <li>PhpAppServer</li> <li>RailsAppServer</li> <li>WebServer</li> </ul>
+     *
+     * @see LayerType
+     */
+    public void setType(LayerType type) {
+        this.type = type.toString();
+    }
+    
+    /**
+     * The layer type, which must be one of the following: <ul>
+     * <li>Custom</li> <li>GangliaMonitoringMaster</li> <li>HaProxy</li>
+     * <li>MemcachedServer</li> <li>MySqlMaster</li> <li>NodeJsAppServer</li>
+     * <li>PhpAppServer</li> <li>RailsAppServer</li> <li>WebServer</li> </ul>
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     * <p>
+     * <b>Constraints:</b><br/>
+     * <b>Allowed Values: </b>lb, web, php-app, rails-app, nodejs-app, memcached, db-master, monitoring-master, custom
+     *
+     * @param type The layer type, which must be one of the following: <ul>
+     *         <li>Custom</li> <li>GangliaMonitoringMaster</li> <li>HaProxy</li>
+     *         <li>MemcachedServer</li> <li>MySqlMaster</li> <li>NodeJsAppServer</li>
+     *         <li>PhpAppServer</li> <li>RailsAppServer</li> <li>WebServer</li> </ul>
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     *
+     * @see LayerType
+     */
+    public Layer withType(LayerType type) {
+        this.type = type.toString();
+        return this;
+    }
     
     /**
      * The layer name.
@@ -797,7 +861,7 @@ public class Layer  implements Serializable  {
     }
     
     /**
-     * OpsWorks supports five life-cycle events, <b>setup</b>,
+     * OpsWorks supports five lifecycle events, <b>setup</b>,
      * <b>configuration</b>, <b>deploy</b>, <b>undeploy</b>, and
      * <b>shutdown</b>. For each layer, OpsWorks runs a set of standard
      * recipes for each event. In addition, you can provide custom recipes
@@ -810,7 +874,7 @@ public class Layer  implements Serializable  {
      * example: phpapp2::dbsetup specifies the dbsetup.rb recipe in the
      * repository's phpapp2 folder.
      *
-     * @return OpsWorks supports five life-cycle events, <b>setup</b>,
+     * @return OpsWorks supports five lifecycle events, <b>setup</b>,
      *         <b>configuration</b>, <b>deploy</b>, <b>undeploy</b>, and
      *         <b>shutdown</b>. For each layer, OpsWorks runs a set of standard
      *         recipes for each event. In addition, you can provide custom recipes
@@ -828,7 +892,7 @@ public class Layer  implements Serializable  {
     }
     
     /**
-     * OpsWorks supports five life-cycle events, <b>setup</b>,
+     * OpsWorks supports five lifecycle events, <b>setup</b>,
      * <b>configuration</b>, <b>deploy</b>, <b>undeploy</b>, and
      * <b>shutdown</b>. For each layer, OpsWorks runs a set of standard
      * recipes for each event. In addition, you can provide custom recipes
@@ -841,7 +905,7 @@ public class Layer  implements Serializable  {
      * example: phpapp2::dbsetup specifies the dbsetup.rb recipe in the
      * repository's phpapp2 folder.
      *
-     * @param defaultRecipes OpsWorks supports five life-cycle events, <b>setup</b>,
+     * @param defaultRecipes OpsWorks supports five lifecycle events, <b>setup</b>,
      *         <b>configuration</b>, <b>deploy</b>, <b>undeploy</b>, and
      *         <b>shutdown</b>. For each layer, OpsWorks runs a set of standard
      *         recipes for each event. In addition, you can provide custom recipes
@@ -859,7 +923,7 @@ public class Layer  implements Serializable  {
     }
     
     /**
-     * OpsWorks supports five life-cycle events, <b>setup</b>,
+     * OpsWorks supports five lifecycle events, <b>setup</b>,
      * <b>configuration</b>, <b>deploy</b>, <b>undeploy</b>, and
      * <b>shutdown</b>. For each layer, OpsWorks runs a set of standard
      * recipes for each event. In addition, you can provide custom recipes
@@ -874,7 +938,7 @@ public class Layer  implements Serializable  {
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param defaultRecipes OpsWorks supports five life-cycle events, <b>setup</b>,
+     * @param defaultRecipes OpsWorks supports five lifecycle events, <b>setup</b>,
      *         <b>configuration</b>, <b>deploy</b>, <b>undeploy</b>, and
      *         <b>shutdown</b>. For each layer, OpsWorks runs a set of standard
      *         recipes for each event. In addition, you can provide custom recipes
