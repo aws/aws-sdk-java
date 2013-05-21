@@ -26,8 +26,9 @@ class ConnectionManagerFactory {
         ThreadSafeClientConnManager connectionManager = new ThreadSafeClientConnManager();
         connectionManager.setDefaultMaxPerRoute(config.getMaxConnections());
         connectionManager.setMaxTotal(config.getMaxConnections());
-
-        IdleConnectionReaper.registerConnectionManager(connectionManager);
+        if (config.useReaper()) {
+            IdleConnectionReaper.registerConnectionManager(connectionManager);
+        }
         return connectionManager;
     }
 }
