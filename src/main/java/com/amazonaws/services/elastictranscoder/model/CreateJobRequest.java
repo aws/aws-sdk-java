@@ -244,9 +244,6 @@ public class CreateJobRequest extends AmazonWebServiceRequest  implements Serial
      */
     public java.util.List<CreateJobOutput> getOutputs() {
         
-        if (outputs == null) {
-            outputs = new java.util.ArrayList<CreateJobOutput>();
-        }
         return outputs;
     }
     
@@ -400,9 +397,6 @@ public class CreateJobRequest extends AmazonWebServiceRequest  implements Serial
      */
     public java.util.List<CreateJobPlaylist> getPlaylists() {
         
-        if (playlists == null) {
-            playlists = new java.util.ArrayList<CreateJobPlaylist>();
-        }
         return playlists;
     }
     

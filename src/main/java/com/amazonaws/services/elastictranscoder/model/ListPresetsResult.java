@@ -32,9 +32,6 @@ public class ListPresetsResult  implements Serializable  {
      */
     public java.util.List<Preset> getPresets() {
         
-        if (presets == null) {
-            presets = new java.util.ArrayList<Preset>();
-        }
         return presets;
     }
     

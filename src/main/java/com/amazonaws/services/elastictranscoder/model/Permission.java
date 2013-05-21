@@ -140,9 +140,6 @@ public class Permission  implements Serializable  {
      */
     public java.util.List<String> getAccess() {
         
-        if (access == null) {
-            access = new java.util.ArrayList<String>();
-        }
         return access;
     }
     

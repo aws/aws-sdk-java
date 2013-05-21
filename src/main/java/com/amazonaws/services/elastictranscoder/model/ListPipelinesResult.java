@@ -32,9 +32,6 @@ public class ListPipelinesResult  implements Serializable  {
      */
     public java.util.List<Pipeline> getPipelines() {
         
-        if (pipelines == null) {
-            pipelines = new java.util.ArrayList<Pipeline>();
-        }
         return pipelines;
     }
     

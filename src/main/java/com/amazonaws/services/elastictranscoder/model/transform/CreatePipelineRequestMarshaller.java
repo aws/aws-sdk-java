@@ -131,7 +131,7 @@ public class CreatePipelineRequestMarshaller implements Marshaller<Request<Creat
                 }
 
                 java.util.List<Permission> permissionsList = contentConfig.getPermissions();
-                if (permissionsList != null && permissionsList.size() > 0) {
+                if (permissionsList != null) {
 
                     jsonWriter.key("Permissions");
                     jsonWriter.array();
@@ -147,7 +147,7 @@ public class CreatePipelineRequestMarshaller implements Marshaller<Request<Creat
                             }
 
                             java.util.List<String> accessList = permissionsListValue.getAccess();
-                            if (accessList != null && accessList.size() > 0) {
+                            if (accessList != null) {
 
                                 jsonWriter.key("Access");
                                 jsonWriter.array();
@@ -180,7 +180,7 @@ public class CreatePipelineRequestMarshaller implements Marshaller<Request<Creat
                 }
 
                 java.util.List<Permission> permissionsList = thumbnailConfig.getPermissions();
-                if (permissionsList != null && permissionsList.size() > 0) {
+                if (permissionsList != null) {
 
                     jsonWriter.key("Permissions");
                     jsonWriter.array();
@@ -196,7 +196,7 @@ public class CreatePipelineRequestMarshaller implements Marshaller<Request<Creat
                             }
 
                             java.util.List<String> accessList = permissionsListValue.getAccess();
-                            if (accessList != null && accessList.size() > 0) {
+                            if (accessList != null) {
 
                                 jsonWriter.key("Access");
                                 jsonWriter.array();

@@ -140,9 +140,6 @@ public class PipelineOutputConfig  implements Serializable  {
      */
     public java.util.List<Permission> getPermissions() {
         
-        if (permissions == null) {
-            permissions = new java.util.ArrayList<Permission>();
-        }
         return permissions;
     }
     

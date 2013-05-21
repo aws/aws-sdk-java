@@ -46,9 +46,6 @@ public class ListJobsByPipelineResult  implements Serializable  {
      */
     public java.util.List<Job> getJobs() {
         
-        if (jobs == null) {
-            jobs = new java.util.ArrayList<Job>();
-        }
         return jobs;
     }
     

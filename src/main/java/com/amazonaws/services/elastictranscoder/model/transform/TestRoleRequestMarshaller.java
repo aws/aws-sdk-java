@@ -96,7 +96,7 @@ public class TestRoleRequestMarshaller implements Marshaller<Request<TestRoleReq
             }
 
             java.util.List<String> topicsList = testRoleRequest.getTopics();
-            if (topicsList != null && topicsList.size() > 0) {
+            if (topicsList != null) {
 
                 jsonWriter.key("Topics");
                 jsonWriter.array();

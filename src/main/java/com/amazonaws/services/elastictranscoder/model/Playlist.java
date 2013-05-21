@@ -156,9 +156,6 @@ public class Playlist  implements Serializable  {
      */
     public java.util.List<String> getOutputKeys() {
         
-        if (outputKeys == null) {
-            outputKeys = new java.util.ArrayList<String>();
-        }
         return outputKeys;
     }
     

@@ -350,9 +350,6 @@ public class Job  implements Serializable  {
      */
     public java.util.List<JobOutput> getOutputs() {
         
-        if (outputs == null) {
-            outputs = new java.util.ArrayList<JobOutput>();
-        }
         return outputs;
     }
     
@@ -532,9 +529,6 @@ public class Job  implements Serializable  {
      */
     public java.util.List<Playlist> getPlaylists() {
         
-        if (playlists == null) {
-            playlists = new java.util.ArrayList<Playlist>();
-        }
         return playlists;
     }
     

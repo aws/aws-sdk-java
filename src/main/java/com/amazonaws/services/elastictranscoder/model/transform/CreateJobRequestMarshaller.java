@@ -139,7 +139,7 @@ public class CreateJobRequestMarshaller implements Marshaller<Request<CreateJobR
             }
 
             java.util.List<CreateJobOutput> outputsList = createJobRequest.getOutputs();
-            if (outputsList != null && outputsList.size() > 0) {
+            if (outputsList != null) {
 
                 jsonWriter.key("Outputs");
                 jsonWriter.array();
@@ -172,7 +172,7 @@ public class CreateJobRequestMarshaller implements Marshaller<Request<CreateJobR
             }
 
             java.util.List<CreateJobPlaylist> playlistsList = createJobRequest.getPlaylists();
-            if (playlistsList != null && playlistsList.size() > 0) {
+            if (playlistsList != null) {
 
                 jsonWriter.key("Playlists");
                 jsonWriter.array();
@@ -188,7 +188,7 @@ public class CreateJobRequestMarshaller implements Marshaller<Request<CreateJobR
                         }
 
                         java.util.List<String> outputKeysList = playlistsListValue.getOutputKeys();
-                        if (outputKeysList != null && outputKeysList.size() > 0) {
+                        if (outputKeysList != null) {
 
                             jsonWriter.key("OutputKeys");
                             jsonWriter.array();

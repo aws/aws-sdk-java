@@ -404,9 +404,6 @@ public class VideoParameters  implements Serializable  {
      */
     public java.util.Map<String,String> getCodecOptions() {
         
-        if (codecOptions == null) {
-            codecOptions = new java.util.HashMap<String,String>();
-        }
         return codecOptions;
 
     }

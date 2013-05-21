@@ -227,9 +227,6 @@ public class TestRoleRequest extends AmazonWebServiceRequest  implements Seriali
      */
     public java.util.List<String> getTopics() {
         
-        if (topics == null) {
-            topics = new java.util.ArrayList<String>();
-        }
         return topics;
     }
     

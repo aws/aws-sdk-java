@@ -96,9 +96,6 @@ public class TestRoleResult  implements Serializable  {
      */
     public java.util.List<String> getMessages() {
         
-        if (messages == null) {
-            messages = new java.util.ArrayList<String>();
-        }
         return messages;
     }
     
