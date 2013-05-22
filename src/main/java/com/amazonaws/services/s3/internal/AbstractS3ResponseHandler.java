@@ -15,6 +15,7 @@
 package com.amazonaws.services.s3.internal;
 
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -126,10 +127,17 @@ public abstract class AbstractS3ResponseHandler<T>
             } else if (key.equals(Headers.ETAG)) {
                 metadata.setHeader(key, ServiceUtils.removeQuotes(header.getValue()));
             } else if (key.equals(Headers.EXPIRES)) {
+                // First try parsing it as a value HTTP Date string as specified in RFC 2616.
                 try {
-                    metadata.setExpirationTime(new Date(Long.parseLong(header.getValue())));
-                } catch (NumberFormatException pe) {
-                    log.warn("Unable to parse expiration time: " + header.getValue(), pe);
+                    metadata.setExpirationTime(
+                          new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss zzz").parse(header.getValue()));
+                } catch (ParseException pe) {
+                     // Ignore and see if it is in Epoch integer format
+                    try {
+                        metadata.setExpirationTime(new Date(Long.parseLong(header.getValue())));
+                    } catch (NumberFormatException nfe) {
+                        log.warn("Unable to parse expiration time: " + header.getValue(), nfe);
+                    }
                 }
             } else if (key.equals(Headers.EXPIRATION)) {
                 new ObjectExpirationHeaderHandler<ObjectMetadata>().handle(metadata, response);
