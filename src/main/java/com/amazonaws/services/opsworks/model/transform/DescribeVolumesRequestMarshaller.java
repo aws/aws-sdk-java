@@ -93,7 +93,7 @@ public class DescribeVolumesRequestMarshaller implements Marshaller<Request<Desc
             }
 
             java.util.List<String> volumeIdsList = describeVolumesRequest.getVolumeIds();
-            if (volumeIdsList != null && volumeIdsList.size() > 0) {
+            if (volumeIdsList != null) {
 
                 jsonWriter.key("VolumeIds");
                 jsonWriter.array();

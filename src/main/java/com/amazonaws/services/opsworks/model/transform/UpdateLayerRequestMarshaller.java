@@ -111,7 +111,7 @@ public class UpdateLayerRequestMarshaller implements Marshaller<Request<UpdateLa
             }
 
             java.util.List<String> customSecurityGroupIdsList = updateLayerRequest.getCustomSecurityGroupIds();
-            if (customSecurityGroupIdsList != null && customSecurityGroupIdsList.size() > 0) {
+            if (customSecurityGroupIdsList != null) {
 
                 jsonWriter.key("CustomSecurityGroupIds");
                 jsonWriter.array();
@@ -125,7 +125,7 @@ public class UpdateLayerRequestMarshaller implements Marshaller<Request<UpdateLa
             }
 
             java.util.List<String> packagesList = updateLayerRequest.getPackages();
-            if (packagesList != null && packagesList.size() > 0) {
+            if (packagesList != null) {
 
                 jsonWriter.key("Packages");
                 jsonWriter.array();
@@ -139,7 +139,7 @@ public class UpdateLayerRequestMarshaller implements Marshaller<Request<UpdateLa
             }
 
             java.util.List<VolumeConfiguration> volumeConfigurationsList = updateLayerRequest.getVolumeConfigurations();
-            if (volumeConfigurationsList != null && volumeConfigurationsList.size() > 0) {
+            if (volumeConfigurationsList != null) {
 
                 jsonWriter.key("VolumeConfigurations");
                 jsonWriter.array();
@@ -178,7 +178,7 @@ public class UpdateLayerRequestMarshaller implements Marshaller<Request<UpdateLa
 
 
                 java.util.List<String> setupList = customRecipes.getSetup();
-                if (setupList != null && setupList.size() > 0) {
+                if (setupList != null) {
 
                     jsonWriter.key("Setup");
                     jsonWriter.array();
@@ -192,7 +192,7 @@ public class UpdateLayerRequestMarshaller implements Marshaller<Request<UpdateLa
                 }
 
                 java.util.List<String> configureList = customRecipes.getConfigure();
-                if (configureList != null && configureList.size() > 0) {
+                if (configureList != null) {
 
                     jsonWriter.key("Configure");
                     jsonWriter.array();
@@ -206,7 +206,7 @@ public class UpdateLayerRequestMarshaller implements Marshaller<Request<UpdateLa
                 }
 
                 java.util.List<String> deployList = customRecipes.getDeploy();
-                if (deployList != null && deployList.size() > 0) {
+                if (deployList != null) {
 
                     jsonWriter.key("Deploy");
                     jsonWriter.array();
@@ -220,7 +220,7 @@ public class UpdateLayerRequestMarshaller implements Marshaller<Request<UpdateLa
                 }
 
                 java.util.List<String> undeployList = customRecipes.getUndeploy();
-                if (undeployList != null && undeployList.size() > 0) {
+                if (undeployList != null) {
 
                     jsonWriter.key("Undeploy");
                     jsonWriter.array();
@@ -234,7 +234,7 @@ public class UpdateLayerRequestMarshaller implements Marshaller<Request<UpdateLa
                 }
 
                 java.util.List<String> shutdownList = customRecipes.getShutdown();
-                if (shutdownList != null && shutdownList.size() > 0) {
+                if (shutdownList != null) {
 
                     jsonWriter.key("Shutdown");
                     jsonWriter.array();

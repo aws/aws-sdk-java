@@ -90,7 +90,7 @@ public class AddCacheRequestMarshaller implements Marshaller<Request<AddCacheReq
             }
 
             java.util.List<String> diskIdsList = addCacheRequest.getDiskIds();
-            if (diskIdsList != null && diskIdsList.size() > 0) {
+            if (diskIdsList != null) {
 
                 jsonWriter.key("DiskIds");
                 jsonWriter.array();

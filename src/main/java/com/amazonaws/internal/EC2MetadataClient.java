@@ -22,6 +22,8 @@ import java.net.URL;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
+import com.amazonaws.AmazonClientException;
+
 /**
  * Simple client for accessing the Amazon EC2 Instance Metadata Service.
  */
@@ -74,8 +76,10 @@ public class EC2MetadataClient {
      * @throws IOException
      *             If any problems were encountered while connecting to metadata
      *             service for the requested resource path.
+     * @throws AmazonClientException
+     *             If the requested metadata service is not found.
      */
-    private String readResource(String resourcePath) throws IOException {
+    public String readResource(String resourcePath) throws IOException, AmazonClientException {
         URL url = getEc2MetadataServiceUrlForResource(resourcePath);
         log.debug("Connecting to EC2 instance metadata service at URL: " + url.toString());
 
@@ -103,6 +107,9 @@ public class EC2MetadataClient {
      *             If any problems ocurred while reading the response.
      */
     private String readResponse(HttpURLConnection connection) throws IOException {
+    	if (connection.getResponseCode() == HttpURLConnection.HTTP_NOT_FOUND)
+    		throw new AmazonClientException("The requested metadata is not found at " + connection.getURL());
+    	
         InputStream inputStream = connection.getInputStream();
 
         try {

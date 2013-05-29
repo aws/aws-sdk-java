@@ -90,7 +90,7 @@ public class DescribeRaidArraysRequestMarshaller implements Marshaller<Request<D
             }
 
             java.util.List<String> raidArrayIdsList = describeRaidArraysRequest.getRaidArrayIds();
-            if (raidArrayIdsList != null && raidArrayIdsList.size() > 0) {
+            if (raidArrayIdsList != null) {
 
                 jsonWriter.key("RaidArrayIds");
                 jsonWriter.array();

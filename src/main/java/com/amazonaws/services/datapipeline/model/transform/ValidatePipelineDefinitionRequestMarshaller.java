@@ -90,7 +90,7 @@ public class ValidatePipelineDefinitionRequestMarshaller implements Marshaller<R
             }
 
             java.util.List<PipelineObject> pipelineObjectsList = validatePipelineDefinitionRequest.getPipelineObjects();
-            if (pipelineObjectsList != null && pipelineObjectsList.size() > 0) {
+            if (pipelineObjectsList != null) {
 
                 jsonWriter.key("pipelineObjects");
                 jsonWriter.array();
@@ -106,7 +106,7 @@ public class ValidatePipelineDefinitionRequestMarshaller implements Marshaller<R
                         }
 
                         java.util.List<Field> fieldsList = pipelineObjectsListValue.getFields();
-                        if (fieldsList != null && fieldsList.size() > 0) {
+                        if (fieldsList != null) {
 
                             jsonWriter.key("fields");
                             jsonWriter.array();

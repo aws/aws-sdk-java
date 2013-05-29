@@ -95,7 +95,7 @@ public class SetVaultNotificationsRequestMarshaller implements Marshaller<Reques
                 }
 
                 java.util.List<String> eventsList = vaultNotificationConfig.getEvents();
-                if (eventsList != null && eventsList.size() > 0) {
+                if (eventsList != null) {
 
                     jsonWriter.key("Events");
                     jsonWriter.array();

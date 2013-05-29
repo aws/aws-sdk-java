@@ -87,7 +87,7 @@ public class DescribeUserProfilesRequestMarshaller implements Marshaller<Request
           
 
             java.util.List<String> iamUserArnsList = describeUserProfilesRequest.getIamUserArns();
-            if (iamUserArnsList != null && iamUserArnsList.size() > 0) {
+            if (iamUserArnsList != null) {
 
                 jsonWriter.key("IamUserArns");
                 jsonWriter.array();

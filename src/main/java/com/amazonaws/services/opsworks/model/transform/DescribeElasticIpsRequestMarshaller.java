@@ -90,7 +90,7 @@ public class DescribeElasticIpsRequestMarshaller implements Marshaller<Request<D
             }
 
             java.util.List<String> ipsList = describeElasticIpsRequest.getIps();
-            if (ipsList != null && ipsList.size() > 0) {
+            if (ipsList != null) {
 
                 jsonWriter.key("Ips");
                 jsonWriter.array();

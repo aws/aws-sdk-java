@@ -28,15 +28,17 @@ public class GetFederationTokenResult  implements Serializable  {
     private Credentials credentials;
 
     /**
-     * Identifiers for the federated user associated with the credentials.
-     * You can use the federated user's ARN in your resource policies.
+     * Identifiers for the federated user associated with the credentials
+     * (such as <code>arn:aws:sts::123456789012:federated-user/Bob</code> or
+     * <code>123456789012:Bob</code>). You can use the federated user's ARN
+     * in your resource policies like in an Amazon S3 bucket policy.
      */
     private FederatedUser federatedUser;
 
     /**
      * A percentage value indicating the size of the policy in packed form.
-     * Policies for which the packed size is greater than 100% of the allowed
-     * value are rejected by the service.
+     * The service rejects policies for which the packed size is greater than
+     * 100 percent of the allowed value.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - <br/>
@@ -78,35 +80,47 @@ public class GetFederationTokenResult  implements Serializable  {
     
     
     /**
-     * Identifiers for the federated user associated with the credentials.
-     * You can use the federated user's ARN in your resource policies.
+     * Identifiers for the federated user associated with the credentials
+     * (such as <code>arn:aws:sts::123456789012:federated-user/Bob</code> or
+     * <code>123456789012:Bob</code>). You can use the federated user's ARN
+     * in your resource policies like in an Amazon S3 bucket policy.
      *
-     * @return Identifiers for the federated user associated with the credentials.
-     *         You can use the federated user's ARN in your resource policies.
+     * @return Identifiers for the federated user associated with the credentials
+     *         (such as <code>arn:aws:sts::123456789012:federated-user/Bob</code> or
+     *         <code>123456789012:Bob</code>). You can use the federated user's ARN
+     *         in your resource policies like in an Amazon S3 bucket policy.
      */
     public FederatedUser getFederatedUser() {
         return federatedUser;
     }
     
     /**
-     * Identifiers for the federated user associated with the credentials.
-     * You can use the federated user's ARN in your resource policies.
+     * Identifiers for the federated user associated with the credentials
+     * (such as <code>arn:aws:sts::123456789012:federated-user/Bob</code> or
+     * <code>123456789012:Bob</code>). You can use the federated user's ARN
+     * in your resource policies like in an Amazon S3 bucket policy.
      *
-     * @param federatedUser Identifiers for the federated user associated with the credentials.
-     *         You can use the federated user's ARN in your resource policies.
+     * @param federatedUser Identifiers for the federated user associated with the credentials
+     *         (such as <code>arn:aws:sts::123456789012:federated-user/Bob</code> or
+     *         <code>123456789012:Bob</code>). You can use the federated user's ARN
+     *         in your resource policies like in an Amazon S3 bucket policy.
      */
     public void setFederatedUser(FederatedUser federatedUser) {
         this.federatedUser = federatedUser;
     }
     
     /**
-     * Identifiers for the federated user associated with the credentials.
-     * You can use the federated user's ARN in your resource policies.
+     * Identifiers for the federated user associated with the credentials
+     * (such as <code>arn:aws:sts::123456789012:federated-user/Bob</code> or
+     * <code>123456789012:Bob</code>). You can use the federated user's ARN
+     * in your resource policies like in an Amazon S3 bucket policy.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param federatedUser Identifiers for the federated user associated with the credentials.
-     *         You can use the federated user's ARN in your resource policies.
+     * @param federatedUser Identifiers for the federated user associated with the credentials
+     *         (such as <code>arn:aws:sts::123456789012:federated-user/Bob</code> or
+     *         <code>123456789012:Bob</code>). You can use the federated user's ARN
+     *         in your resource policies like in an Amazon S3 bucket policy.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -119,15 +133,15 @@ public class GetFederationTokenResult  implements Serializable  {
     
     /**
      * A percentage value indicating the size of the policy in packed form.
-     * Policies for which the packed size is greater than 100% of the allowed
-     * value are rejected by the service.
+     * The service rejects policies for which the packed size is greater than
+     * 100 percent of the allowed value.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - <br/>
      *
      * @return A percentage value indicating the size of the policy in packed form.
-     *         Policies for which the packed size is greater than 100% of the allowed
-     *         value are rejected by the service.
+     *         The service rejects policies for which the packed size is greater than
+     *         100 percent of the allowed value.
      */
     public Integer getPackedPolicySize() {
         return packedPolicySize;
@@ -135,15 +149,15 @@ public class GetFederationTokenResult  implements Serializable  {
     
     /**
      * A percentage value indicating the size of the policy in packed form.
-     * Policies for which the packed size is greater than 100% of the allowed
-     * value are rejected by the service.
+     * The service rejects policies for which the packed size is greater than
+     * 100 percent of the allowed value.
      * <p>
      * <b>Constraints:</b><br/>
      * <b>Range: </b>0 - <br/>
      *
      * @param packedPolicySize A percentage value indicating the size of the policy in packed form.
-     *         Policies for which the packed size is greater than 100% of the allowed
-     *         value are rejected by the service.
+     *         The service rejects policies for which the packed size is greater than
+     *         100 percent of the allowed value.
      */
     public void setPackedPolicySize(Integer packedPolicySize) {
         this.packedPolicySize = packedPolicySize;
@@ -151,8 +165,8 @@ public class GetFederationTokenResult  implements Serializable  {
     
     /**
      * A percentage value indicating the size of the policy in packed form.
-     * Policies for which the packed size is greater than 100% of the allowed
-     * value are rejected by the service.
+     * The service rejects policies for which the packed size is greater than
+     * 100 percent of the allowed value.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      * <p>
@@ -160,8 +174,8 @@ public class GetFederationTokenResult  implements Serializable  {
      * <b>Range: </b>0 - <br/>
      *
      * @param packedPolicySize A percentage value indicating the size of the policy in packed form.
-     *         Policies for which the packed size is greater than 100% of the allowed
-     *         value are rejected by the service.
+     *         The service rejects policies for which the packed size is greater than
+     *         100 percent of the allowed value.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

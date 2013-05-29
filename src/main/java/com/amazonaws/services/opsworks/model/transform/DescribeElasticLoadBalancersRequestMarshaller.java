@@ -90,7 +90,7 @@ public class DescribeElasticLoadBalancersRequestMarshaller implements Marshaller
             }
 
             java.util.List<String> layerIdsList = describeElasticLoadBalancersRequest.getLayerIds();
-            if (layerIdsList != null && layerIdsList.size() > 0) {
+            if (layerIdsList != null) {
 
                 jsonWriter.key("LayerIds");
                 jsonWriter.array();

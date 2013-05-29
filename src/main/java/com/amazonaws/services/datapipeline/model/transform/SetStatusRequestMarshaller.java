@@ -90,7 +90,7 @@ public class SetStatusRequestMarshaller implements Marshaller<Request<SetStatusR
             }
 
             java.util.List<String> objectIdsList = setStatusRequest.getObjectIds();
-            if (objectIdsList != null && objectIdsList.size() > 0) {
+            if (objectIdsList != null) {
 
                 jsonWriter.key("objectIds");
                 jsonWriter.array();

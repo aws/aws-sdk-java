@@ -93,7 +93,7 @@ public class DescribeInstancesRequestMarshaller implements Marshaller<Request<De
             }
 
             java.util.List<String> instanceIdsList = describeInstancesRequest.getInstanceIds();
-            if (instanceIdsList != null && instanceIdsList.size() > 0) {
+            if (instanceIdsList != null) {
 
                 jsonWriter.key("InstanceIds");
                 jsonWriter.array();

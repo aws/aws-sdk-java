@@ -87,7 +87,7 @@ public class DescribeLoadBasedAutoScalingRequestMarshaller implements Marshaller
           
 
             java.util.List<String> layerIdsList = describeLoadBasedAutoScalingRequest.getLayerIds();
-            if (layerIdsList != null && layerIdsList.size() > 0) {
+            if (layerIdsList != null) {
 
                 jsonWriter.key("LayerIds");
                 jsonWriter.array();

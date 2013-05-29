@@ -93,7 +93,7 @@ public class DescribeDeploymentsRequestMarshaller implements Marshaller<Request<
             }
 
             java.util.List<String> deploymentIdsList = describeDeploymentsRequest.getDeploymentIds();
-            if (deploymentIdsList != null && deploymentIdsList.size() > 0) {
+            if (deploymentIdsList != null) {
 
                 jsonWriter.key("DeploymentIds");
                 jsonWriter.array();

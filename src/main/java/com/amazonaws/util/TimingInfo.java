@@ -101,7 +101,12 @@ public class TimingInfo {
             return null;
         }
         
-        return getSubMeasurement(subMeasurementName, subMeasurementsByName.size()-1);
+        List<TimingInfo> timings = subMeasurementsByName.get(subMeasurementName);
+        if (timings == null || timings.size() == 0) {
+            return null;
+        }
+        
+        return timings.get(timings.size() - 1);
     }
 
     public List<TimingInfo> getAllSubMeasurements(String subMeasurementName) {

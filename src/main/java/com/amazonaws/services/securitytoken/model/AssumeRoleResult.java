@@ -23,19 +23,18 @@ import java.io.Serializable;
 public class AssumeRoleResult  implements Serializable  {
 
     /**
-     * The temporary security credentials, which includes an Access Key ID, a
-     * Secret Access Key, and a security token.
+     * The temporary security credentials, which include an access key ID, a
+     * secret access key, and a security token.
      */
     private Credentials credentials;
 
     /**
-     * The Amazon Resource Name (ARN) and the assumed role ID for the
-     * temporary security credentials. The ARN and the role ID are
-     * identifiers for the temporary security credentials so that you can
-     * refer to the temporary credentials in a policy. For example, if you
-     * want to build a policy that applies to these temporary credentials,
-     * you would specify the <code>AssumedRoleUser</code> ARN or role ID in
-     * that policy.
+     * The Amazon Resource Name (ARN) and the assumed role ID, which are
+     * identifiers that you can use to refer to the resulting temporary
+     * security credentials. For example, you can reference these credentials
+     * as a principal in a resource-based policy by using the ARN or assumed
+     * role ID. The ARN and ID include the <code>RoleSessionName</code> that
+     * you specified when you called <code>AssumeRole</code>.
      */
     private AssumedRoleUser assumedRoleUser;
 
@@ -50,35 +49,35 @@ public class AssumeRoleResult  implements Serializable  {
     private Integer packedPolicySize;
 
     /**
-     * The temporary security credentials, which includes an Access Key ID, a
-     * Secret Access Key, and a security token.
+     * The temporary security credentials, which include an access key ID, a
+     * secret access key, and a security token.
      *
-     * @return The temporary security credentials, which includes an Access Key ID, a
-     *         Secret Access Key, and a security token.
+     * @return The temporary security credentials, which include an access key ID, a
+     *         secret access key, and a security token.
      */
     public Credentials getCredentials() {
         return credentials;
     }
     
     /**
-     * The temporary security credentials, which includes an Access Key ID, a
-     * Secret Access Key, and a security token.
+     * The temporary security credentials, which include an access key ID, a
+     * secret access key, and a security token.
      *
-     * @param credentials The temporary security credentials, which includes an Access Key ID, a
-     *         Secret Access Key, and a security token.
+     * @param credentials The temporary security credentials, which include an access key ID, a
+     *         secret access key, and a security token.
      */
     public void setCredentials(Credentials credentials) {
         this.credentials = credentials;
     }
     
     /**
-     * The temporary security credentials, which includes an Access Key ID, a
-     * Secret Access Key, and a security token.
+     * The temporary security credentials, which include an access key ID, a
+     * secret access key, and a security token.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param credentials The temporary security credentials, which includes an Access Key ID, a
-     *         Secret Access Key, and a security token.
+     * @param credentials The temporary security credentials, which include an access key ID, a
+     *         secret access key, and a security token.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -90,65 +89,59 @@ public class AssumeRoleResult  implements Serializable  {
     
     
     /**
-     * The Amazon Resource Name (ARN) and the assumed role ID for the
-     * temporary security credentials. The ARN and the role ID are
-     * identifiers for the temporary security credentials so that you can
-     * refer to the temporary credentials in a policy. For example, if you
-     * want to build a policy that applies to these temporary credentials,
-     * you would specify the <code>AssumedRoleUser</code> ARN or role ID in
-     * that policy.
+     * The Amazon Resource Name (ARN) and the assumed role ID, which are
+     * identifiers that you can use to refer to the resulting temporary
+     * security credentials. For example, you can reference these credentials
+     * as a principal in a resource-based policy by using the ARN or assumed
+     * role ID. The ARN and ID include the <code>RoleSessionName</code> that
+     * you specified when you called <code>AssumeRole</code>.
      *
-     * @return The Amazon Resource Name (ARN) and the assumed role ID for the
-     *         temporary security credentials. The ARN and the role ID are
-     *         identifiers for the temporary security credentials so that you can
-     *         refer to the temporary credentials in a policy. For example, if you
-     *         want to build a policy that applies to these temporary credentials,
-     *         you would specify the <code>AssumedRoleUser</code> ARN or role ID in
-     *         that policy.
+     * @return The Amazon Resource Name (ARN) and the assumed role ID, which are
+     *         identifiers that you can use to refer to the resulting temporary
+     *         security credentials. For example, you can reference these credentials
+     *         as a principal in a resource-based policy by using the ARN or assumed
+     *         role ID. The ARN and ID include the <code>RoleSessionName</code> that
+     *         you specified when you called <code>AssumeRole</code>.
      */
     public AssumedRoleUser getAssumedRoleUser() {
         return assumedRoleUser;
     }
     
     /**
-     * The Amazon Resource Name (ARN) and the assumed role ID for the
-     * temporary security credentials. The ARN and the role ID are
-     * identifiers for the temporary security credentials so that you can
-     * refer to the temporary credentials in a policy. For example, if you
-     * want to build a policy that applies to these temporary credentials,
-     * you would specify the <code>AssumedRoleUser</code> ARN or role ID in
-     * that policy.
+     * The Amazon Resource Name (ARN) and the assumed role ID, which are
+     * identifiers that you can use to refer to the resulting temporary
+     * security credentials. For example, you can reference these credentials
+     * as a principal in a resource-based policy by using the ARN or assumed
+     * role ID. The ARN and ID include the <code>RoleSessionName</code> that
+     * you specified when you called <code>AssumeRole</code>.
      *
-     * @param assumedRoleUser The Amazon Resource Name (ARN) and the assumed role ID for the
-     *         temporary security credentials. The ARN and the role ID are
-     *         identifiers for the temporary security credentials so that you can
-     *         refer to the temporary credentials in a policy. For example, if you
-     *         want to build a policy that applies to these temporary credentials,
-     *         you would specify the <code>AssumedRoleUser</code> ARN or role ID in
-     *         that policy.
+     * @param assumedRoleUser The Amazon Resource Name (ARN) and the assumed role ID, which are
+     *         identifiers that you can use to refer to the resulting temporary
+     *         security credentials. For example, you can reference these credentials
+     *         as a principal in a resource-based policy by using the ARN or assumed
+     *         role ID. The ARN and ID include the <code>RoleSessionName</code> that
+     *         you specified when you called <code>AssumeRole</code>.
      */
     public void setAssumedRoleUser(AssumedRoleUser assumedRoleUser) {
         this.assumedRoleUser = assumedRoleUser;
     }
     
     /**
-     * The Amazon Resource Name (ARN) and the assumed role ID for the
-     * temporary security credentials. The ARN and the role ID are
-     * identifiers for the temporary security credentials so that you can
-     * refer to the temporary credentials in a policy. For example, if you
-     * want to build a policy that applies to these temporary credentials,
-     * you would specify the <code>AssumedRoleUser</code> ARN or role ID in
-     * that policy.
+     * The Amazon Resource Name (ARN) and the assumed role ID, which are
+     * identifiers that you can use to refer to the resulting temporary
+     * security credentials. For example, you can reference these credentials
+     * as a principal in a resource-based policy by using the ARN or assumed
+     * role ID. The ARN and ID include the <code>RoleSessionName</code> that
+     * you specified when you called <code>AssumeRole</code>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param assumedRoleUser The Amazon Resource Name (ARN) and the assumed role ID for the
-     *         temporary security credentials. The ARN and the role ID are
-     *         identifiers for the temporary security credentials so that you can
-     *         refer to the temporary credentials in a policy. For example, if you
-     *         want to build a policy that applies to these temporary credentials,
-     *         you would specify the <code>AssumedRoleUser</code> ARN or role ID in
-     *         that policy.
+     * @param assumedRoleUser The Amazon Resource Name (ARN) and the assumed role ID, which are
+     *         identifiers that you can use to refer to the resulting temporary
+     *         security credentials. For example, you can reference these credentials
+     *         as a principal in a resource-based policy by using the ARN or assumed
+     *         role ID. The ARN and ID include the <code>RoleSessionName</code> that
+     *         you specified when you called <code>AssumeRole</code>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

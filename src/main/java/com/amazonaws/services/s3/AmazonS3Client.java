@@ -22,6 +22,7 @@ import java.io.InputStream;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
 import java.util.Collection;
@@ -46,6 +47,7 @@ import com.amazonaws.ClientConfiguration;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.HttpMethod;
 import com.amazonaws.Request;
+import com.amazonaws.util.*;
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSCredentialsProvider;
 import com.amazonaws.auth.AWSCredentialsProviderChain;
@@ -64,6 +66,7 @@ import com.amazonaws.services.s3.internal.Constants;
 import com.amazonaws.services.s3.internal.DeleteObjectsResponse;
 import com.amazonaws.services.s3.internal.InputSubstream;
 import com.amazonaws.services.s3.internal.MD5DigestCalculatingInputStream;
+import com.amazonaws.services.s3.internal.DigestValidationInputStream;
 import com.amazonaws.services.s3.internal.Mimetypes;
 import com.amazonaws.services.s3.internal.ObjectExpirationHeaderHandler;
 import com.amazonaws.services.s3.internal.ProgressReportingInputStream;
@@ -611,19 +614,23 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
          */
         if ( region == null ) {
             String endpoint = this.endpoint.getHost();
-            if ( endpoint.contains("us-west-1") ) {
+            if ( endpoint.contains(Region.US_West.toString()) ) {
                 region = Region.US_West.toString();
-            } else if ( endpoint.contains("us-west-2") ) {
+            } else if ( endpoint.contains(Region.US_West_2.toString()) ) {
                 region = Region.US_West_2.toString();
+            } else if (endpoint.contains("us-gov-west-1")){
+            	region = Region.US_GovCloud.toString();
             } else if ( endpoint.contains("eu-west-1") ) {
                 region = Region.EU_Ireland.toString();
-            } else if ( endpoint.contains("ap-southeast-1") ) {
+            } else if ( endpoint.contains(Region.AP_Singapore.toString()) ) {
                 region = Region.AP_Singapore.toString();
-            } else if ( endpoint.contains("ap-northeast-1") ) {
+            } else if ( endpoint.contains(Region.AP_Sydney.toString()) ) {
+                region = Region.AP_Sydney.toString();
+            }else if ( endpoint.contains(Region.AP_Tokyo.toString()) ) {
                 region = Region.AP_Tokyo.toString();
-            } else if ( endpoint.contains("sa-east-1") ) {
-                region = Region.SA_SaoPaulo.toString();
-            }
+            } else if ( endpoint.contains(Region.SA_SaoPaulo.toString()) ) {
+                region = Region.SA_SaoPaulo.toString();                
+            } 
         }
 
         /*
@@ -918,25 +925,33 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             s3Object.setBucketName(getObjectRequest.getBucketName());
             s3Object.setKey(getObjectRequest.getKey());
 
+            S3ObjectInputStream input = s3Object.getObjectContent();
             if (progressListener != null) {
-                S3ObjectInputStream input = s3Object.getObjectContent();
                 ProgressReportingInputStream progressReportingInputStream = new ProgressReportingInputStream(input, progressListener);
                 progressReportingInputStream.setFireCompletedEvent(true);
                 input = new S3ObjectInputStream(progressReportingInputStream, input.getHttpRequest());
-                s3Object.setObjectContent(input);
                 fireProgressEvent(progressListener, ProgressEvent.STARTED_EVENT_CODE);
             }
 
-            /*
-             * TODO: It'd be nice to check the integrity of the data was received from S3,
-             *       but we'd have to read off the stream and buffer the contents somewhere
-             *       in order to do that.
-             *
-             *       We could consider adding an option for this in the future, or wrapping
-             *       the InputStream in another implementation of FilterInputStream that
-             *       would calculate the checksum when the user reads the data and then
-             *       notify them somehow if there was a problem.
-             */
+            if (getObjectRequest.getRange() == null && System.getProperty("com.amazonaws.services.s3.disableGetObjectMD5Validation") == null) {
+                byte[] serverSideHash = null;
+                String etag = s3Object.getObjectMetadata().getETag();
+                if (etag != null && ServiceUtils.isMultipartUploadETag(etag) == false) {
+                    serverSideHash = BinaryUtils.fromHex(s3Object.getObjectMetadata().getETag());
+                    DigestValidationInputStream inputStreamWithMD5DigestValidation;
+                    try {
+                        MessageDigest digest = MessageDigest.getInstance("MD5");
+                        inputStreamWithMD5DigestValidation = new DigestValidationInputStream(input, digest, serverSideHash);
+                        input = new S3ObjectInputStream(inputStreamWithMD5DigestValidation, input.getHttpRequest());
+                    } catch (NoSuchAlgorithmException e) {
+                        log.warn("No MD5 digest algorithm available.  Unable to calculate "
+                                    + "checksum and verify data integrity.", e);
+                    }
+                }
+            }
+
+            s3Object.setObjectContent(input);
+
             return s3Object;
         } catch (AmazonS3Exception ase) {
             /*
@@ -2634,9 +2649,9 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
             }
         }
 
-        Date expirationTime = metadata.getExpirationTime();
-        if (expirationTime != null) {
-            request.addHeader(Headers.EXPIRES, String.valueOf((expirationTime.getTime() - System.currentTimeMillis())));
+        Date httpExpiresDate = metadata.getHttpExpiresDate();
+        if (httpExpiresDate != null) {
+            request.addHeader(Headers.EXPIRES, new DateUtils().formatRfc822Date(httpExpiresDate));
         }
 
         Map<String, String> userMetadata = metadata.getUserMetadata();

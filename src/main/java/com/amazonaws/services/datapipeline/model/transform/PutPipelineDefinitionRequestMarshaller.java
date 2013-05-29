@@ -90,7 +90,7 @@ public class PutPipelineDefinitionRequestMarshaller implements Marshaller<Reques
             }
 
             java.util.List<PipelineObject> pipelineObjectsList = putPipelineDefinitionRequest.getPipelineObjects();
-            if (pipelineObjectsList != null && pipelineObjectsList.size() > 0) {
+            if (pipelineObjectsList != null) {
 
                 jsonWriter.key("pipelineObjects");
                 jsonWriter.array();
@@ -106,7 +106,7 @@ public class PutPipelineDefinitionRequestMarshaller implements Marshaller<Reques
                         }
 
                         java.util.List<Field> fieldsList = pipelineObjectsListValue.getFields();
-                        if (fieldsList != null && fieldsList.size() > 0) {
+                        if (fieldsList != null) {
 
                             jsonWriter.key("fields");
                             jsonWriter.array();

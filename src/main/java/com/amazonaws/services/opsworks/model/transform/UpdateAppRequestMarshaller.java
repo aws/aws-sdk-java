@@ -125,7 +125,7 @@ public class UpdateAppRequestMarshaller implements Marshaller<Request<UpdateAppR
             }
 
             java.util.List<String> domainsList = updateAppRequest.getDomains();
-            if (domainsList != null && domainsList.size() > 0) {
+            if (domainsList != null) {
 
                 jsonWriter.key("Domains");
                 jsonWriter.array();

@@ -87,7 +87,7 @@ public class DescribeStacksRequestMarshaller implements Marshaller<Request<Descr
           
 
             java.util.List<String> stackIdsList = describeStacksRequest.getStackIds();
-            if (stackIdsList != null && stackIdsList.size() > 0) {
+            if (stackIdsList != null) {
 
                 jsonWriter.key("StackIds");
                 jsonWriter.array();

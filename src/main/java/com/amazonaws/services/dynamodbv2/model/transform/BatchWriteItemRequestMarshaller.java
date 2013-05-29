@@ -121,7 +121,7 @@ public class BatchWriteItemRequestMarshaller implements Marshaller<Request<Batch
                                                 }
 
                                                 java.util.List<String> sSList = itemListValue.getValue().getSS();
-                                                if (sSList != null && sSList.size() > 0) {
+                                                if (sSList != null) {
 
                                                     jsonWriter.key("SS");
                                                     jsonWriter.array();
@@ -135,7 +135,7 @@ public class BatchWriteItemRequestMarshaller implements Marshaller<Request<Batch
                                                 }
 
                                                 java.util.List<String> nSList = itemListValue.getValue().getNS();
-                                                if (nSList != null && nSList.size() > 0) {
+                                                if (nSList != null) {
 
                                                     jsonWriter.key("NS");
                                                     jsonWriter.array();
@@ -149,7 +149,7 @@ public class BatchWriteItemRequestMarshaller implements Marshaller<Request<Batch
                                                 }
 
                                                 java.util.List<java.nio.ByteBuffer> bSList = itemListValue.getValue().getBS();
-                                                if (bSList != null && bSList.size() > 0) {
+                                                if (bSList != null) {
 
                                                     jsonWriter.key("BS");
                                                     jsonWriter.array();
@@ -193,7 +193,7 @@ public class BatchWriteItemRequestMarshaller implements Marshaller<Request<Batch
                                                 }
 
                                                 java.util.List<String> sSList = keyListValue.getValue().getSS();
-                                                if (sSList != null && sSList.size() > 0) {
+                                                if (sSList != null) {
 
                                                     jsonWriter.key("SS");
                                                     jsonWriter.array();
@@ -207,7 +207,7 @@ public class BatchWriteItemRequestMarshaller implements Marshaller<Request<Batch
                                                 }
 
                                                 java.util.List<String> nSList = keyListValue.getValue().getNS();
-                                                if (nSList != null && nSList.size() > 0) {
+                                                if (nSList != null) {
 
                                                     jsonWriter.key("NS");
                                                     jsonWriter.array();
@@ -221,7 +221,7 @@ public class BatchWriteItemRequestMarshaller implements Marshaller<Request<Batch
                                                 }
 
                                                 java.util.List<java.nio.ByteBuffer> bSList = keyListValue.getValue().getBS();
-                                                if (bSList != null && bSList.size() > 0) {
+                                                if (bSList != null) {
 
                                                     jsonWriter.key("BS");
                                                     jsonWriter.array();

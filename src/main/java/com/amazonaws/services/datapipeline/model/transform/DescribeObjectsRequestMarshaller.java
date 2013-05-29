@@ -90,7 +90,7 @@ public class DescribeObjectsRequestMarshaller implements Marshaller<Request<Desc
             }
 
             java.util.List<String> objectIdsList = describeObjectsRequest.getObjectIds();
-            if (objectIdsList != null && objectIdsList.size() > 0) {
+            if (objectIdsList != null) {
 
                 jsonWriter.key("objectIds");
                 jsonWriter.array();

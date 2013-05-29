@@ -32,7 +32,7 @@ public class Credentials  implements Serializable  {
     private String accessKeyId;
 
     /**
-     * The Secret Access Key to sign requests.
+     * The secret access key to sign requests.
      */
     private String secretAccessKey;
 
@@ -60,7 +60,7 @@ public class Credentials  implements Serializable  {
      * 
      * @param accessKeyId AccessKeyId ID that identifies the temporary
      * credentials.
-     * @param secretAccessKey The Secret Access Key to sign requests.
+     * @param secretAccessKey The secret access key to sign requests.
      * @param sessionToken The security token that users must pass to the
      * service API to use the temporary credentials.
      * @param expiration The date on which these credentials expire.
@@ -121,29 +121,29 @@ public class Credentials  implements Serializable  {
     
     
     /**
-     * The Secret Access Key to sign requests.
+     * The secret access key to sign requests.
      *
-     * @return The Secret Access Key to sign requests.
+     * @return The secret access key to sign requests.
      */
     public String getSecretAccessKey() {
         return secretAccessKey;
     }
     
     /**
-     * The Secret Access Key to sign requests.
+     * The secret access key to sign requests.
      *
-     * @param secretAccessKey The Secret Access Key to sign requests.
+     * @param secretAccessKey The secret access key to sign requests.
      */
     public void setSecretAccessKey(String secretAccessKey) {
         this.secretAccessKey = secretAccessKey;
     }
     
     /**
-     * The Secret Access Key to sign requests.
+     * The secret access key to sign requests.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param secretAccessKey The Secret Access Key to sign requests.
+     * @param secretAccessKey The secret access key to sign requests.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 

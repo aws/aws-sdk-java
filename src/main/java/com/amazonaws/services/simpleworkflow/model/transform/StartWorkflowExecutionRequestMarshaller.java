@@ -124,7 +124,7 @@ public class StartWorkflowExecutionRequestMarshaller implements Marshaller<Reque
             }
 
             java.util.List<String> tagListList = startWorkflowExecutionRequest.getTagList();
-            if (tagListList != null && tagListList.size() > 0) {
+            if (tagListList != null) {
 
                 jsonWriter.key("tagList");
                 jsonWriter.array();

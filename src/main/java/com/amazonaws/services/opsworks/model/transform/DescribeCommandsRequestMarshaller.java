@@ -93,7 +93,7 @@ public class DescribeCommandsRequestMarshaller implements Marshaller<Request<Des
             }
 
             java.util.List<String> commandIdsList = describeCommandsRequest.getCommandIds();
-            if (commandIdsList != null && commandIdsList.size() > 0) {
+            if (commandIdsList != null) {
 
                 jsonWriter.key("CommandIds");
                 jsonWriter.array();

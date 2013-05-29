@@ -72,6 +72,12 @@ public enum Region {
      * </p>
      */
     US_West_2("us-west-2"),
+    
+    /**
+     * The US GovCloud Region. This region uses Amazon S3 servers located in the Northwestern 
+     * region of the United States. 
+     */
+    US_GovCloud("s3-us-gov-west-1"),
 
     /**
      * The EU (Ireland) Amazon S3 Region. This region uses Amazon S3 servers located
@@ -131,7 +137,7 @@ public enum Region {
      * </p>
      */
     SA_SaoPaulo("sa-east-1");
-
+    
 
     /** The unique ID representing each region. */
     private final String regionId;

@@ -102,7 +102,7 @@ public class CreateCaseRequestMarshaller implements Marshaller<Request<CreateCas
             }
 
             java.util.List<String> ccEmailAddressesList = createCaseRequest.getCcEmailAddresses();
-            if (ccEmailAddressesList != null && ccEmailAddressesList.size() > 0) {
+            if (ccEmailAddressesList != null) {
 
                 jsonWriter.key("ccEmailAddresses");
                 jsonWriter.array();

@@ -114,7 +114,7 @@ public class CreatePublicVirtualInterfaceRequestMarshaller implements Marshaller
                 }
 
                 java.util.List<RouteFilterPrefix> routeFilterPrefixesList = newPublicVirtualInterface.getRouteFilterPrefixes();
-                if (routeFilterPrefixesList != null && routeFilterPrefixesList.size() > 0) {
+                if (routeFilterPrefixesList != null) {
 
                     jsonWriter.key("routeFilterPrefixes");
                     jsonWriter.array();

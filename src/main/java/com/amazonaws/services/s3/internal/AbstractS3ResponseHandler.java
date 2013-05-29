@@ -32,6 +32,7 @@ import com.amazonaws.http.HttpResponseHandler;
 import com.amazonaws.services.s3.Headers;
 import com.amazonaws.services.s3.S3ResponseMetadata;
 import com.amazonaws.services.s3.model.ObjectMetadata;
+import com.amazonaws.util.DateUtils;
 
 /**
  * Abstract HTTP response handler for Amazon S3 responses. Provides common
@@ -127,9 +128,9 @@ public abstract class AbstractS3ResponseHandler<T>
                 metadata.setHeader(key, ServiceUtils.removeQuotes(header.getValue()));
             } else if (key.equals(Headers.EXPIRES)) {
                 try {
-                    metadata.setExpirationTime(new Date(Long.parseLong(header.getValue())));
-                } catch (NumberFormatException pe) {
-                    log.warn("Unable to parse expiration time: " + header.getValue(), pe);
+                    metadata.setHttpExpiresDate(new DateUtils().parseRfc822Date(header.getValue()));
+                } catch (ParseException pe) {
+                    log.warn("Unable to parse http expiration date: " + header.getValue(), pe);
                 }
             } else if (key.equals(Headers.EXPIRATION)) {
                 new ObjectExpirationHeaderHandler<ObjectMetadata>().handle(metadata, response);

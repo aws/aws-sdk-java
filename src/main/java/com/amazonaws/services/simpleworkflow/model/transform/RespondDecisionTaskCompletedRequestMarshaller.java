@@ -90,7 +90,7 @@ public class RespondDecisionTaskCompletedRequestMarshaller implements Marshaller
             }
 
             java.util.List<Decision> decisionsList = respondDecisionTaskCompletedRequest.getDecisions();
-            if (decisionsList != null && decisionsList.size() > 0) {
+            if (decisionsList != null) {
 
                 jsonWriter.key("decisions");
                 jsonWriter.array();
@@ -233,7 +233,7 @@ public class RespondDecisionTaskCompletedRequestMarshaller implements Marshaller
                             }
 
                             java.util.List<String> tagListList = continueAsNewWorkflowExecutionDecisionAttributes.getTagList();
-                            if (tagListList != null && tagListList.size() > 0) {
+                            if (tagListList != null) {
 
                                 jsonWriter.key("tagList");
                                 jsonWriter.array();
@@ -383,7 +383,7 @@ public class RespondDecisionTaskCompletedRequestMarshaller implements Marshaller
                             }
 
                             java.util.List<String> tagListList = startChildWorkflowExecutionDecisionAttributes.getTagList();
-                            if (tagListList != null && tagListList.size() > 0) {
+                            if (tagListList != null) {
 
                                 jsonWriter.key("tagList");
                                 jsonWriter.array();

@@ -90,7 +90,7 @@ public class AddUploadBufferRequestMarshaller implements Marshaller<Request<AddU
             }
 
             java.util.List<String> diskIdsList = addUploadBufferRequest.getDiskIds();
-            if (diskIdsList != null && diskIdsList.size() > 0) {
+            if (diskIdsList != null) {
 
                 jsonWriter.key("DiskIds");
                 jsonWriter.array();

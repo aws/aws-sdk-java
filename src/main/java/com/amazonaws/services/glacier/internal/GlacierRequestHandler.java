@@ -25,20 +25,23 @@ import com.amazonaws.services.glacier.model.UploadArchiveRequest;
 import com.amazonaws.services.glacier.model.UploadMultipartPartRequest;
 
 public class GlacierRequestHandler extends AbstractRequestHandler {
-	
+
 	private static final List<String> PARAMETERS = Arrays.asList(new String[] {"vaults"});
-	
+
     @Override
     public void beforeRequest(Request<?> request) {
 
     	// Plug in the default account ID ('-') if none has been specified
-    	
+
     	if (!startsWithUserId(request)) {
     		String resourcePath = request.getResourcePath();
     		request.setResourcePath(resourcePath.replaceFirst("/", "/-/"));
     	}
-    	
+
         request.addHeader("x-amz-glacier-version", "2012-06-01");
+
+        //  "x-amz-content-sha256" header is required for sig v4 for some streaming operations
+        request.addHeader("x-amz-content-sha256", "required");
 
         if (request.getOriginalRequest() instanceof UploadArchiveRequest) {
            String contentLength = request.getHeaders().remove("x-amz-content-length");
@@ -71,7 +74,7 @@ public class GlacierRequestHandler extends AbstractRequestHandler {
             }
         }
     }
-    
+
 	private boolean startsWithUserId(Request<?> request) {
 		for (String parameter : PARAMETERS)
 			if (request.getResourcePath().startsWith("/" + parameter)) {

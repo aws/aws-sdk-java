@@ -161,7 +161,7 @@ public class CloneStackRequestMarshaller implements Marshaller<Request<CloneStac
             }
 
             java.util.List<String> cloneAppIdsList = cloneStackRequest.getCloneAppIds();
-            if (cloneAppIdsList != null && cloneAppIdsList.size() > 0) {
+            if (cloneAppIdsList != null) {
 
                 jsonWriter.key("CloneAppIds");
                 jsonWriter.array();

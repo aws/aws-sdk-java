@@ -142,13 +142,22 @@ public class AmazonHttpClient {
      * cert hostname wildcards are evaulated more liberally).
      */
     public void disableStrictHostnameVerification() {
+    	
+    	/*
+         * If SSL cert checking for endpoints is disabled, we don't need
+         * to do any changes to the SSL context. 
+         */
+    	if (System.getProperty("com.amazonaws.sdk.disableCertChecking") != null) {
+    		return;        		
+    	}
+    	
         try {
             SchemeRegistry schemeRegistry = httpClient.getConnectionManager().getSchemeRegistry();
 
             SSLSocketFactory sf = new SSLSocketFactory(
                     SSLContext.getDefault(),
                     SSLSocketFactory.BROWSER_COMPATIBLE_HOSTNAME_VERIFIER);
-            Scheme https = new Scheme("https", 443, sf);
+			Scheme https = new Scheme("https", 443, sf);
 
             schemeRegistry.register(https);
         } catch (NoSuchAlgorithmException e) {

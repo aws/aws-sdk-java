@@ -96,7 +96,7 @@ public class QueryObjectsRequestMarshaller implements Marshaller<Request<QueryOb
 
 
                 java.util.List<Selector> selectorsList = query.getSelectors();
-                if (selectorsList != null && selectorsList.size() > 0) {
+                if (selectorsList != null) {
 
                     jsonWriter.key("selectors");
                     jsonWriter.array();
@@ -118,7 +118,7 @@ public class QueryObjectsRequestMarshaller implements Marshaller<Request<QueryOb
                                 }
 
                                 java.util.List<String> valuesList = operator.getValues();
-                                if (valuesList != null && valuesList.size() > 0) {
+                                if (valuesList != null) {
 
                                     jsonWriter.key("values");
                                     jsonWriter.array();

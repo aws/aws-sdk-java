@@ -95,7 +95,7 @@ public class BatchGetItemRequestMarshaller implements Marshaller<Request<BatchGe
                         jsonWriter.object();
 
                         java.util.List<java.util.Map<String,AttributeValue>> keysList = requestItemsListValue.getValue().getKeys();
-                        if (keysList != null && keysList.size() > 0) {
+                        if (keysList != null) {
 
                             jsonWriter.key("Keys");
                             jsonWriter.array();
@@ -119,7 +119,7 @@ public class BatchGetItemRequestMarshaller implements Marshaller<Request<BatchGe
                                                 }
 
                                                 java.util.List<String> sSList = memberListValue.getValue().getSS();
-                                                if (sSList != null && sSList.size() > 0) {
+                                                if (sSList != null) {
 
                                                     jsonWriter.key("SS");
                                                     jsonWriter.array();
@@ -133,7 +133,7 @@ public class BatchGetItemRequestMarshaller implements Marshaller<Request<BatchGe
                                                 }
 
                                                 java.util.List<String> nSList = memberListValue.getValue().getNS();
-                                                if (nSList != null && nSList.size() > 0) {
+                                                if (nSList != null) {
 
                                                     jsonWriter.key("NS");
                                                     jsonWriter.array();
@@ -147,7 +147,7 @@ public class BatchGetItemRequestMarshaller implements Marshaller<Request<BatchGe
                                                 }
 
                                                 java.util.List<java.nio.ByteBuffer> bSList = memberListValue.getValue().getBS();
-                                                if (bSList != null && bSList.size() > 0) {
+                                                if (bSList != null) {
 
                                                     jsonWriter.key("BS");
                                                     jsonWriter.array();
@@ -169,7 +169,7 @@ public class BatchGetItemRequestMarshaller implements Marshaller<Request<BatchGe
                         }
 
                         java.util.List<String> attributesToGetList = requestItemsListValue.getValue().getAttributesToGet();
-                        if (attributesToGetList != null && attributesToGetList.size() > 0) {
+                        if (attributesToGetList != null) {
 
                             jsonWriter.key("AttributesToGet");
                             jsonWriter.array();

@@ -90,7 +90,7 @@ public class DescribeAppsRequestMarshaller implements Marshaller<Request<Describ
             }
 
             java.util.List<String> appIdsList = describeAppsRequest.getAppIds();
-            if (appIdsList != null && appIdsList.size() > 0) {
+            if (appIdsList != null) {
 
                 jsonWriter.key("AppIds");
                 jsonWriter.array();

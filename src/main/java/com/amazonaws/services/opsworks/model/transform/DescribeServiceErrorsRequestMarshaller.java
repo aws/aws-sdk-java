@@ -93,7 +93,7 @@ public class DescribeServiceErrorsRequestMarshaller implements Marshaller<Reques
             }
 
             java.util.List<String> serviceErrorIdsList = describeServiceErrorsRequest.getServiceErrorIds();
-            if (serviceErrorIdsList != null && serviceErrorIdsList.size() > 0) {
+            if (serviceErrorIdsList != null) {
 
                 jsonWriter.key("ServiceErrorIds");
                 jsonWriter.array();

@@ -128,7 +128,7 @@ public class CreateAppRequestMarshaller implements Marshaller<Request<CreateAppR
             }
 
             java.util.List<String> domainsList = createAppRequest.getDomains();
-            if (domainsList != null && domainsList.size() > 0) {
+            if (domainsList != null) {
 
                 jsonWriter.key("Domains");
                 jsonWriter.array();

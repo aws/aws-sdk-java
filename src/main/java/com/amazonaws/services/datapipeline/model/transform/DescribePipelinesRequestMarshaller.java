@@ -87,7 +87,7 @@ public class DescribePipelinesRequestMarshaller implements Marshaller<Request<De
           
 
             java.util.List<String> pipelineIdsList = describePipelinesRequest.getPipelineIds();
-            if (pipelineIdsList != null && pipelineIdsList.size() > 0) {
+            if (pipelineIdsList != null) {
 
                 jsonWriter.key("pipelineIds");
                 jsonWriter.array();

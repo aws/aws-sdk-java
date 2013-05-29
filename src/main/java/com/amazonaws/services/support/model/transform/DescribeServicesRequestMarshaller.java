@@ -87,7 +87,7 @@ public class DescribeServicesRequestMarshaller implements Marshaller<Request<Des
           
 
             java.util.List<String> serviceCodeListList = describeServicesRequest.getServiceCodeList();
-            if (serviceCodeListList != null && serviceCodeListList.size() > 0) {
+            if (serviceCodeListList != null) {
 
                 jsonWriter.key("serviceCodeList");
                 jsonWriter.array();

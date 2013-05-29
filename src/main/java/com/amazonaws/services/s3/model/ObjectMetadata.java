@@ -53,6 +53,11 @@ public class ObjectMetadata implements ServerSideEncryptionResult, ObjectExpirat
     public static final String AES_256_SERVER_SIDE_ENCRYPTION = "AES256";
 
     /**
+     * The date when the object is no longer cacheable.
+     */
+    private Date httpExpiresDate;
+
+    /**
      * The time this object expires, or null if it has no expiration.
      * <p>
      * This and the expiration time rule aren't stored in the metadata map
@@ -600,9 +605,9 @@ public class ObjectMetadata implements ServerSideEncryptionResult, ObjectExpirat
     }
 
     /**
-     * Sets the expiration time for the object. Note: the expiration date is
-     * represented by S3 as a time delta into the future, not an absolute time
-     * stamp.
+     * For internal use only. This will *not* set the object's expiration time,
+     * and is only used to set the value in the object after receiving the value
+     * in a response from S3.
      *
      * @param expirationTime
      *            The expiration time for the object.
@@ -665,6 +670,20 @@ public class ObjectMetadata implements ServerSideEncryptionResult, ObjectExpirat
      */
     public Boolean getOngoingRestore() {
         return this.ongoingRestore;
+    }
+
+    /**
+     *  Set the date when the object is no longer cacheable.
+     */
+    public void setHttpExpiresDate(Date httpExpiresDate) {
+        this.httpExpiresDate = httpExpiresDate;
+    }
+
+    /**
+     *  Returns the date when the object is no longer cacheable.
+     */
+    public Date getHttpExpiresDate() {
+        return httpExpiresDate;
     }
 
 }

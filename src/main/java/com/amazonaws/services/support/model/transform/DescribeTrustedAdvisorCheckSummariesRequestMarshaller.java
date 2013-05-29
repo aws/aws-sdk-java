@@ -87,7 +87,7 @@ public class DescribeTrustedAdvisorCheckSummariesRequestMarshaller implements Ma
           
 
             java.util.List<String> checkIdsList = describeTrustedAdvisorCheckSummariesRequest.getCheckIds();
-            if (checkIdsList != null && checkIdsList.size() > 0) {
+            if (checkIdsList != null) {
 
                 jsonWriter.key("checkIds");
                 jsonWriter.array();

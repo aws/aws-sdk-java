@@ -93,7 +93,7 @@ public class CreateDeploymentRequestMarshaller implements Marshaller<Request<Cre
             }
 
             java.util.List<String> instanceIdsList = createDeploymentRequest.getInstanceIds();
-            if (instanceIdsList != null && instanceIdsList.size() > 0) {
+            if (instanceIdsList != null) {
 
                 jsonWriter.key("InstanceIds");
                 jsonWriter.array();

@@ -87,7 +87,7 @@ public class DescribeCasesRequestMarshaller implements Marshaller<Request<Descri
           
 
             java.util.List<String> caseIdListList = describeCasesRequest.getCaseIdList();
-            if (caseIdListList != null && caseIdListList.size() > 0) {
+            if (caseIdListList != null) {
 
                 jsonWriter.key("caseIdList");
                 jsonWriter.array();

@@ -107,7 +107,7 @@ public class GetItemRequestMarshaller implements Marshaller<Request<GetItemReque
                         }
 
                         java.util.List<String> sSList = keyListValue.getValue().getSS();
-                        if (sSList != null && sSList.size() > 0) {
+                        if (sSList != null) {
 
                             jsonWriter.key("SS");
                             jsonWriter.array();
@@ -121,7 +121,7 @@ public class GetItemRequestMarshaller implements Marshaller<Request<GetItemReque
                         }
 
                         java.util.List<String> nSList = keyListValue.getValue().getNS();
-                        if (nSList != null && nSList.size() > 0) {
+                        if (nSList != null) {
 
                             jsonWriter.key("NS");
                             jsonWriter.array();
@@ -135,7 +135,7 @@ public class GetItemRequestMarshaller implements Marshaller<Request<GetItemReque
                         }
 
                         java.util.List<java.nio.ByteBuffer> bSList = keyListValue.getValue().getBS();
-                        if (bSList != null && bSList.size() > 0) {
+                        if (bSList != null) {
 
                             jsonWriter.key("BS");
                             jsonWriter.array();
@@ -154,7 +154,7 @@ public class GetItemRequestMarshaller implements Marshaller<Request<GetItemReque
             }
 
             java.util.List<String> attributesToGetList = getItemRequest.getAttributesToGet();
-            if (attributesToGetList != null && attributesToGetList.size() > 0) {
+            if (attributesToGetList != null) {
 
                 jsonWriter.key("AttributesToGet");
                 jsonWriter.array();

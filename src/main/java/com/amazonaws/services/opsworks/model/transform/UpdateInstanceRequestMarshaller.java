@@ -90,7 +90,7 @@ public class UpdateInstanceRequestMarshaller implements Marshaller<Request<Updat
             }
 
             java.util.List<String> layerIdsList = updateInstanceRequest.getLayerIds();
-            if (layerIdsList != null && layerIdsList.size() > 0) {
+            if (layerIdsList != null) {
 
                 jsonWriter.key("LayerIds");
                 jsonWriter.array();

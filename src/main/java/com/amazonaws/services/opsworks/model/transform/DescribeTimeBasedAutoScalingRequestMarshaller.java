@@ -87,7 +87,7 @@ public class DescribeTimeBasedAutoScalingRequestMarshaller implements Marshaller
           
 
             java.util.List<String> instanceIdsList = describeTimeBasedAutoScalingRequest.getInstanceIds();
-            if (instanceIdsList != null && instanceIdsList.size() > 0) {
+            if (instanceIdsList != null) {
 
                 jsonWriter.key("InstanceIds");
                 jsonWriter.array();

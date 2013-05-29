@@ -87,7 +87,7 @@ public class DescribeStorediSCSIVolumesRequestMarshaller implements Marshaller<R
           
 
             java.util.List<String> volumeARNsList = describeStorediSCSIVolumesRequest.getVolumeARNs();
-            if (volumeARNsList != null && volumeARNsList.size() > 0) {
+            if (volumeARNsList != null) {
 
                 jsonWriter.key("VolumeARNs");
                 jsonWriter.array();

@@ -90,7 +90,7 @@ public class DescribeLayersRequestMarshaller implements Marshaller<Request<Descr
             }
 
             java.util.List<String> layerIdsList = describeLayersRequest.getLayerIds();
-            if (layerIdsList != null && layerIdsList.size() > 0) {
+            if (layerIdsList != null) {
 
                 jsonWriter.key("LayerIds");
                 jsonWriter.array();

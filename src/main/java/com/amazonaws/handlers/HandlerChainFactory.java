@@ -15,6 +15,7 @@
 package com.amazonaws.handlers;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
@@ -40,12 +41,13 @@ public class HandlerChainFactory {
      */
     public List<RequestHandler> newRequestHandlerChain(String resource) {
         List<RequestHandler> handlers = new ArrayList<RequestHandler>();
+        BufferedReader reader = null;
 
         try {
             InputStream input = getClass().getResourceAsStream(resource);
             if (input == null) return handlers;
 
-            BufferedReader reader = new BufferedReader(new InputStreamReader(input));
+            reader = new BufferedReader(new InputStreamReader(input));
             while (true) {
                 String requestHandlerClassName = reader.readLine();
                 if (requestHandlerClassName == null) break;
@@ -65,7 +67,14 @@ public class HandlerChainFactory {
         } catch (Exception e) {
             throw new AmazonClientException("Unable to instantiate request handler chain for client: "
                     + e.getMessage(), e);
-        }
+        } finally {
+			try {
+				if (reader != null) {
+					reader.close();
+				}
+			} catch (IOException e) {
+			}
+		}
 
         return handlers;
     }

@@ -93,7 +93,7 @@ public class AddCommunicationToCaseRequestMarshaller implements Marshaller<Reque
             }
 
             java.util.List<String> ccEmailAddressesList = addCommunicationToCaseRequest.getCcEmailAddresses();
-            if (ccEmailAddressesList != null && ccEmailAddressesList.size() > 0) {
+            if (ccEmailAddressesList != null) {
 
                 jsonWriter.key("ccEmailAddresses");
                 jsonWriter.array();

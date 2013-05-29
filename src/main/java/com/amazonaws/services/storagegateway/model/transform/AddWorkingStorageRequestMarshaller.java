@@ -90,7 +90,7 @@ public class AddWorkingStorageRequestMarshaller implements Marshaller<Request<Ad
             }
 
             java.util.List<String> diskIdsList = addWorkingStorageRequest.getDiskIds();
-            if (diskIdsList != null && diskIdsList.size() > 0) {
+            if (diskIdsList != null) {
 
                 jsonWriter.key("DiskIds");
                 jsonWriter.array();

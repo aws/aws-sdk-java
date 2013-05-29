@@ -1,2 +1,3 @@
 com.amazonaws.services.sqs.QueueUrlHandler
 com.amazonaws.services.sqs.internal.SQSRequestHandler
+com.amazonaws.services.sqs.MessageMD5ChecksumHandler

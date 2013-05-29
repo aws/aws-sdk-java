@@ -90,7 +90,7 @@ public class CreateInstanceRequestMarshaller implements Marshaller<Request<Creat
             }
 
             java.util.List<String> layerIdsList = createInstanceRequest.getLayerIds();
-            if (layerIdsList != null && layerIdsList.size() > 0) {
+            if (layerIdsList != null) {
 
                 jsonWriter.key("LayerIds");
                 jsonWriter.array();
