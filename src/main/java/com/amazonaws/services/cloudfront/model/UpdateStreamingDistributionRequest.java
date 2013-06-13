@@ -48,6 +48,8 @@ public class UpdateStreamingDistributionRequest extends AmazonWebServiceRequest 
      */
     public UpdateStreamingDistributionRequest() {}
     
+
+
     /**
      * Constructs a new UpdateStreamingDistributionRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -61,9 +63,9 @@ public class UpdateStreamingDistributionRequest extends AmazonWebServiceRequest 
      * E2QWRUHAPOMQZL.
      */
     public UpdateStreamingDistributionRequest(StreamingDistributionConfig streamingDistributionConfig, String id, String ifMatch) {
-        this.streamingDistributionConfig = streamingDistributionConfig;
-        this.id = id;
-        this.ifMatch = ifMatch;
+        setStreamingDistributionConfig(streamingDistributionConfig);
+        setId(id);
+        setIfMatch(ifMatch);
     }
 
     
@@ -187,9 +189,9 @@ public class UpdateStreamingDistributionRequest extends AmazonWebServiceRequest 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getStreamingDistributionConfig() != null) sb.append("StreamingDistributionConfig: " + getStreamingDistributionConfig() + ",");    	
-        if (getId() != null) sb.append("Id: " + getId() + ",");    	
+        sb.append("{");
+        if (getStreamingDistributionConfig() != null) sb.append("StreamingDistributionConfig: " + getStreamingDistributionConfig() + ",");
+        if (getId() != null) sb.append("Id: " + getId() + ",");
         if (getIfMatch() != null) sb.append("IfMatch: " + getIfMatch() );
         sb.append("}");
         return sb.toString();

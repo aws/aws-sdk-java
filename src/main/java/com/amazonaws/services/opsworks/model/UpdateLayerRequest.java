@@ -61,19 +61,19 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest  implements Seri
     /**
      * An array containing the layer's custom security group IDs.
      */
-    private java.util.List<String> customSecurityGroupIds;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> customSecurityGroupIds;
 
     /**
      * An array of <code>Package</code> objects that describe the layer's
      * packages.
      */
-    private java.util.List<String> packages;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> packages;
 
     /**
      * A <code>VolumeConfigurations</code> object that describes the layer's
      * Amazon EBS volumes.
      */
-    private java.util.List<VolumeConfiguration> volumeConfigurations;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<VolumeConfiguration> volumeConfigurations;
 
     /**
      * Whether to disable auto healing for the layer.
@@ -317,7 +317,8 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest  implements Seri
     public java.util.List<String> getCustomSecurityGroupIds() {
         
         if (customSecurityGroupIds == null) {
-            customSecurityGroupIds = new java.util.ArrayList<String>();
+              customSecurityGroupIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              customSecurityGroupIds.setAutoConstruct(true);
         }
         return customSecurityGroupIds;
     }
@@ -332,8 +333,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest  implements Seri
             this.customSecurityGroupIds = null;
             return;
         }
-
-        java.util.List<String> customSecurityGroupIdsCopy = new java.util.ArrayList<String>(customSecurityGroupIds.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> customSecurityGroupIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(customSecurityGroupIds.size());
         customSecurityGroupIdsCopy.addAll(customSecurityGroupIds);
         this.customSecurityGroupIds = customSecurityGroupIdsCopy;
     }
@@ -370,7 +370,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest  implements Seri
         if (customSecurityGroupIds == null) {
             this.customSecurityGroupIds = null;
         } else {
-            java.util.List<String> customSecurityGroupIdsCopy = new java.util.ArrayList<String>(customSecurityGroupIds.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> customSecurityGroupIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(customSecurityGroupIds.size());
             customSecurityGroupIdsCopy.addAll(customSecurityGroupIds);
             this.customSecurityGroupIds = customSecurityGroupIdsCopy;
         }
@@ -388,7 +388,8 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest  implements Seri
     public java.util.List<String> getPackages() {
         
         if (packages == null) {
-            packages = new java.util.ArrayList<String>();
+              packages = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              packages.setAutoConstruct(true);
         }
         return packages;
     }
@@ -405,8 +406,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest  implements Seri
             this.packages = null;
             return;
         }
-
-        java.util.List<String> packagesCopy = new java.util.ArrayList<String>(packages.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> packagesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(packages.size());
         packagesCopy.addAll(packages);
         this.packages = packagesCopy;
     }
@@ -447,7 +447,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest  implements Seri
         if (packages == null) {
             this.packages = null;
         } else {
-            java.util.List<String> packagesCopy = new java.util.ArrayList<String>(packages.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> packagesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(packages.size());
             packagesCopy.addAll(packages);
             this.packages = packagesCopy;
         }
@@ -465,7 +465,8 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest  implements Seri
     public java.util.List<VolumeConfiguration> getVolumeConfigurations() {
         
         if (volumeConfigurations == null) {
-            volumeConfigurations = new java.util.ArrayList<VolumeConfiguration>();
+              volumeConfigurations = new com.amazonaws.internal.ListWithAutoConstructFlag<VolumeConfiguration>();
+              volumeConfigurations.setAutoConstruct(true);
         }
         return volumeConfigurations;
     }
@@ -482,8 +483,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest  implements Seri
             this.volumeConfigurations = null;
             return;
         }
-
-        java.util.List<VolumeConfiguration> volumeConfigurationsCopy = new java.util.ArrayList<VolumeConfiguration>(volumeConfigurations.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<VolumeConfiguration> volumeConfigurationsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<VolumeConfiguration>(volumeConfigurations.size());
         volumeConfigurationsCopy.addAll(volumeConfigurations);
         this.volumeConfigurations = volumeConfigurationsCopy;
     }
@@ -524,7 +524,7 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest  implements Seri
         if (volumeConfigurations == null) {
             this.volumeConfigurations = null;
         } else {
-            java.util.List<VolumeConfiguration> volumeConfigurationsCopy = new java.util.ArrayList<VolumeConfiguration>(volumeConfigurations.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<VolumeConfiguration> volumeConfigurationsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<VolumeConfiguration>(volumeConfigurations.size());
             volumeConfigurationsCopy.addAll(volumeConfigurations);
             this.volumeConfigurations = volumeConfigurationsCopy;
         }
@@ -685,17 +685,17 @@ public class UpdateLayerRequest extends AmazonWebServiceRequest  implements Seri
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getLayerId() != null) sb.append("LayerId: " + getLayerId() + ",");    	
-        if (getName() != null) sb.append("Name: " + getName() + ",");    	
-        if (getShortname() != null) sb.append("Shortname: " + getShortname() + ",");    	
-        if (getAttributes() != null) sb.append("Attributes: " + getAttributes() + ",");    	
-        if (getCustomInstanceProfileArn() != null) sb.append("CustomInstanceProfileArn: " + getCustomInstanceProfileArn() + ",");    	
-        if (getCustomSecurityGroupIds() != null) sb.append("CustomSecurityGroupIds: " + getCustomSecurityGroupIds() + ",");    	
-        if (getPackages() != null) sb.append("Packages: " + getPackages() + ",");    	
-        if (getVolumeConfigurations() != null) sb.append("VolumeConfigurations: " + getVolumeConfigurations() + ",");    	
-        if (isEnableAutoHealing() != null) sb.append("EnableAutoHealing: " + isEnableAutoHealing() + ",");    	
-        if (isAutoAssignElasticIps() != null) sb.append("AutoAssignElasticIps: " + isAutoAssignElasticIps() + ",");    	
+        sb.append("{");
+        if (getLayerId() != null) sb.append("LayerId: " + getLayerId() + ",");
+        if (getName() != null) sb.append("Name: " + getName() + ",");
+        if (getShortname() != null) sb.append("Shortname: " + getShortname() + ",");
+        if (getAttributes() != null) sb.append("Attributes: " + getAttributes() + ",");
+        if (getCustomInstanceProfileArn() != null) sb.append("CustomInstanceProfileArn: " + getCustomInstanceProfileArn() + ",");
+        if (getCustomSecurityGroupIds() != null) sb.append("CustomSecurityGroupIds: " + getCustomSecurityGroupIds() + ",");
+        if (getPackages() != null) sb.append("Packages: " + getPackages() + ",");
+        if (getVolumeConfigurations() != null) sb.append("VolumeConfigurations: " + getVolumeConfigurations() + ",");
+        if (isEnableAutoHealing() != null) sb.append("EnableAutoHealing: " + isEnableAutoHealing() + ",");
+        if (isAutoAssignElasticIps() != null) sb.append("AutoAssignElasticIps: " + isAutoAssignElasticIps() + ",");
         if (getCustomRecipes() != null) sb.append("CustomRecipes: " + getCustomRecipes() );
         sb.append("}");
         return sb.toString();

@@ -451,11 +451,11 @@ public class DefaultCacheBehavior  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getTargetOriginId() != null) sb.append("TargetOriginId: " + getTargetOriginId() + ",");    	
-        if (getForwardedValues() != null) sb.append("ForwardedValues: " + getForwardedValues() + ",");    	
-        if (getTrustedSigners() != null) sb.append("TrustedSigners: " + getTrustedSigners() + ",");    	
-        if (getViewerProtocolPolicy() != null) sb.append("ViewerProtocolPolicy: " + getViewerProtocolPolicy() + ",");    	
+        sb.append("{");
+        if (getTargetOriginId() != null) sb.append("TargetOriginId: " + getTargetOriginId() + ",");
+        if (getForwardedValues() != null) sb.append("ForwardedValues: " + getForwardedValues() + ",");
+        if (getTrustedSigners() != null) sb.append("TrustedSigners: " + getTrustedSigners() + ",");
+        if (getViewerProtocolPolicy() != null) sb.append("ViewerProtocolPolicy: " + getViewerProtocolPolicy() + ",");
         if (getMinTTL() != null) sb.append("MinTTL: " + getMinTTL() );
         sb.append("}");
         return sb.toString();

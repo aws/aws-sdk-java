@@ -71,6 +71,8 @@ public class DescribeJobRequest extends AmazonWebServiceRequest  implements Seri
      */
     public DescribeJobRequest() {}
     
+
+
     /**
      * Constructs a new DescribeJobRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -85,13 +87,15 @@ public class DescribeJobRequest extends AmazonWebServiceRequest  implements Seri
      * @param jobId The ID of the job to describe.
      */
     public DescribeJobRequest(String accountId, String vaultName, String jobId) {
-        this.accountId = accountId;
-        this.vaultName = vaultName;
-        this.jobId = jobId;
+        setAccountId(accountId);
+        setVaultName(vaultName);
+        setJobId(jobId);
     }
 
     
     
+
+
     /**
      * Constructs a new DescribeJobRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -101,8 +105,8 @@ public class DescribeJobRequest extends AmazonWebServiceRequest  implements Seri
      * @param jobId The ID of the job to describe.
      */
     public DescribeJobRequest(String vaultName, String jobId) {
-        this.vaultName = vaultName;
-        this.jobId = jobId;
+        setVaultName(vaultName);
+        setJobId(jobId);
     }
 
     
@@ -244,9 +248,9 @@ public class DescribeJobRequest extends AmazonWebServiceRequest  implements Seri
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getAccountId() != null) sb.append("AccountId: " + getAccountId() + ",");    	
-        if (getVaultName() != null) sb.append("VaultName: " + getVaultName() + ",");    	
+        sb.append("{");
+        if (getAccountId() != null) sb.append("AccountId: " + getAccountId() + ",");
+        if (getVaultName() != null) sb.append("VaultName: " + getVaultName() + ",");
         if (getJobId() != null) sb.append("JobId: " + getJobId() );
         sb.append("}");
         return sb.toString();

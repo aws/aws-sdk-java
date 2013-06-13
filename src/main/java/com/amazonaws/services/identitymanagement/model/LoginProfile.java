@@ -46,6 +46,8 @@ public class LoginProfile  implements Serializable  {
      */
     public LoginProfile() {}
     
+
+
     /**
      * Constructs a new LoginProfile object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -56,8 +58,8 @@ public class LoginProfile  implements Serializable  {
      * @param createDate The date when the password for the user was created.
      */
     public LoginProfile(String userName, java.util.Date createDate) {
-        this.userName = userName;
-        this.createDate = createDate;
+        setUserName(userName);
+        setCreateDate(createDate);
     }
 
     
@@ -159,8 +161,8 @@ public class LoginProfile  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getUserName() != null) sb.append("UserName: " + getUserName() + ",");    	
+        sb.append("{");
+        if (getUserName() != null) sb.append("UserName: " + getUserName() + ",");
         if (getCreateDate() != null) sb.append("CreateDate: " + getCreateDate() );
         sb.append("}");
         return sb.toString();

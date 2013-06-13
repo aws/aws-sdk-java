@@ -29,7 +29,7 @@ public class TableDescription  implements Serializable  {
      * <li> <p><i>AttributeName</i> - The name of the attribute. </li> <li>
      * <p><i>AttributeType</i> - The data type for the attribute. </li> </ul>
      */
-    private java.util.List<AttributeDefinition> attributeDefinitions;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<AttributeDefinition> attributeDefinitions;
 
     /**
      * The name of the table.
@@ -52,7 +52,7 @@ public class TableDescription  implements Serializable  {
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 2<br/>
      */
-    private java.util.List<KeySchemaElement> keySchema;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<KeySchemaElement> keySchema;
 
     /**
      * Represents the current state of the table: <ul> <li>
@@ -131,7 +131,7 @@ public class TableDescription  implements Serializable  {
      * <code>DELETING</code> state, no information about indexes will be
      * returned.
      */
-    private java.util.List<LocalSecondaryIndexDescription> localSecondaryIndexes;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<LocalSecondaryIndexDescription> localSecondaryIndexes;
 
     /**
      * Default constructor for a new TableDescription object.  Callers should use the
@@ -175,8 +175,7 @@ public class TableDescription  implements Serializable  {
             this.attributeDefinitions = null;
             return;
         }
-
-        java.util.List<AttributeDefinition> attributeDefinitionsCopy = new java.util.ArrayList<AttributeDefinition>(attributeDefinitions.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<AttributeDefinition> attributeDefinitionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<AttributeDefinition>(attributeDefinitions.size());
         attributeDefinitionsCopy.addAll(attributeDefinitions);
         this.attributeDefinitions = attributeDefinitionsCopy;
     }
@@ -229,7 +228,7 @@ public class TableDescription  implements Serializable  {
         if (attributeDefinitions == null) {
             this.attributeDefinitions = null;
         } else {
-            java.util.List<AttributeDefinition> attributeDefinitionsCopy = new java.util.ArrayList<AttributeDefinition>(attributeDefinitions.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<AttributeDefinition> attributeDefinitionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<AttributeDefinition>(attributeDefinitions.size());
             attributeDefinitionsCopy.addAll(attributeDefinitions);
             this.attributeDefinitions = attributeDefinitionsCopy;
         }
@@ -333,8 +332,7 @@ public class TableDescription  implements Serializable  {
             this.keySchema = null;
             return;
         }
-
-        java.util.List<KeySchemaElement> keySchemaCopy = new java.util.ArrayList<KeySchemaElement>(keySchema.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<KeySchemaElement> keySchemaCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<KeySchemaElement>(keySchema.size());
         keySchemaCopy.addAll(keySchema);
         this.keySchema = keySchemaCopy;
     }
@@ -401,7 +399,7 @@ public class TableDescription  implements Serializable  {
         if (keySchema == null) {
             this.keySchema = null;
         } else {
-            java.util.List<KeySchemaElement> keySchemaCopy = new java.util.ArrayList<KeySchemaElement>(keySchema.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<KeySchemaElement> keySchemaCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<KeySchemaElement>(keySchema.size());
             keySchemaCopy.addAll(keySchema);
             this.keySchema = keySchemaCopy;
         }
@@ -882,8 +880,7 @@ public class TableDescription  implements Serializable  {
             this.localSecondaryIndexes = null;
             return;
         }
-
-        java.util.List<LocalSecondaryIndexDescription> localSecondaryIndexesCopy = new java.util.ArrayList<LocalSecondaryIndexDescription>(localSecondaryIndexes.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<LocalSecondaryIndexDescription> localSecondaryIndexesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<LocalSecondaryIndexDescription>(localSecondaryIndexes.size());
         localSecondaryIndexesCopy.addAll(localSecondaryIndexes);
         this.localSecondaryIndexes = localSecondaryIndexesCopy;
     }
@@ -1052,7 +1049,7 @@ public class TableDescription  implements Serializable  {
         if (localSecondaryIndexes == null) {
             this.localSecondaryIndexes = null;
         } else {
-            java.util.List<LocalSecondaryIndexDescription> localSecondaryIndexesCopy = new java.util.ArrayList<LocalSecondaryIndexDescription>(localSecondaryIndexes.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<LocalSecondaryIndexDescription> localSecondaryIndexesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<LocalSecondaryIndexDescription>(localSecondaryIndexes.size());
             localSecondaryIndexesCopy.addAll(localSecondaryIndexes);
             this.localSecondaryIndexes = localSecondaryIndexesCopy;
         }
@@ -1071,15 +1068,15 @@ public class TableDescription  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getAttributeDefinitions() != null) sb.append("AttributeDefinitions: " + getAttributeDefinitions() + ",");    	
-        if (getTableName() != null) sb.append("TableName: " + getTableName() + ",");    	
-        if (getKeySchema() != null) sb.append("KeySchema: " + getKeySchema() + ",");    	
-        if (getTableStatus() != null) sb.append("TableStatus: " + getTableStatus() + ",");    	
-        if (getCreationDateTime() != null) sb.append("CreationDateTime: " + getCreationDateTime() + ",");    	
-        if (getProvisionedThroughput() != null) sb.append("ProvisionedThroughput: " + getProvisionedThroughput() + ",");    	
-        if (getTableSizeBytes() != null) sb.append("TableSizeBytes: " + getTableSizeBytes() + ",");    	
-        if (getItemCount() != null) sb.append("ItemCount: " + getItemCount() + ",");    	
+        sb.append("{");
+        if (getAttributeDefinitions() != null) sb.append("AttributeDefinitions: " + getAttributeDefinitions() + ",");
+        if (getTableName() != null) sb.append("TableName: " + getTableName() + ",");
+        if (getKeySchema() != null) sb.append("KeySchema: " + getKeySchema() + ",");
+        if (getTableStatus() != null) sb.append("TableStatus: " + getTableStatus() + ",");
+        if (getCreationDateTime() != null) sb.append("CreationDateTime: " + getCreationDateTime() + ",");
+        if (getProvisionedThroughput() != null) sb.append("ProvisionedThroughput: " + getProvisionedThroughput() + ",");
+        if (getTableSizeBytes() != null) sb.append("TableSizeBytes: " + getTableSizeBytes() + ",");
+        if (getItemCount() != null) sb.append("ItemCount: " + getItemCount() + ",");
         if (getLocalSecondaryIndexes() != null) sb.append("LocalSecondaryIndexes: " + getLocalSecondaryIndexes() );
         sb.append("}");
         return sb.toString();

@@ -783,18 +783,18 @@ public class DomainStatus  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getDomainId() != null) sb.append("DomainId: " + getDomainId() + ",");    	
-        if (getDomainName() != null) sb.append("DomainName: " + getDomainName() + ",");    	
-        if (isCreated() != null) sb.append("Created: " + isCreated() + ",");    	
-        if (isDeleted() != null) sb.append("Deleted: " + isDeleted() + ",");    	
-        if (getNumSearchableDocs() != null) sb.append("NumSearchableDocs: " + getNumSearchableDocs() + ",");    	
-        if (getDocService() != null) sb.append("DocService: " + getDocService() + ",");    	
-        if (getSearchService() != null) sb.append("SearchService: " + getSearchService() + ",");    	
-        if (isRequiresIndexDocuments() != null) sb.append("RequiresIndexDocuments: " + isRequiresIndexDocuments() + ",");    	
-        if (isProcessing() != null) sb.append("Processing: " + isProcessing() + ",");    	
-        if (getSearchInstanceType() != null) sb.append("SearchInstanceType: " + getSearchInstanceType() + ",");    	
-        if (getSearchPartitionCount() != null) sb.append("SearchPartitionCount: " + getSearchPartitionCount() + ",");    	
+        sb.append("{");
+        if (getDomainId() != null) sb.append("DomainId: " + getDomainId() + ",");
+        if (getDomainName() != null) sb.append("DomainName: " + getDomainName() + ",");
+        if (isCreated() != null) sb.append("Created: " + isCreated() + ",");
+        if (isDeleted() != null) sb.append("Deleted: " + isDeleted() + ",");
+        if (getNumSearchableDocs() != null) sb.append("NumSearchableDocs: " + getNumSearchableDocs() + ",");
+        if (getDocService() != null) sb.append("DocService: " + getDocService() + ",");
+        if (getSearchService() != null) sb.append("SearchService: " + getSearchService() + ",");
+        if (isRequiresIndexDocuments() != null) sb.append("RequiresIndexDocuments: " + isRequiresIndexDocuments() + ",");
+        if (isProcessing() != null) sb.append("Processing: " + isProcessing() + ",");
+        if (getSearchInstanceType() != null) sb.append("SearchInstanceType: " + getSearchInstanceType() + ",");
+        if (getSearchPartitionCount() != null) sb.append("SearchPartitionCount: " + getSearchPartitionCount() + ",");
         if (getSearchInstanceCount() != null) sb.append("SearchInstanceCount: " + getSearchInstanceCount() );
         sb.append("}");
         return sb.toString();

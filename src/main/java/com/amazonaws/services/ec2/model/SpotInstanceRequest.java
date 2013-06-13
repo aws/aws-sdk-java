@@ -54,7 +54,7 @@ public class SpotInstanceRequest  implements Serializable  {
     /**
      * A list of tags for this spot instance request.
      */
-    private java.util.List<Tag> tags;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
 
     /**
      * The Availability Zone in which the bid is launched.
@@ -596,7 +596,8 @@ public class SpotInstanceRequest  implements Serializable  {
     public java.util.List<Tag> getTags() {
         
         if (tags == null) {
-            tags = new java.util.ArrayList<Tag>();
+              tags = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>();
+              tags.setAutoConstruct(true);
         }
         return tags;
     }
@@ -611,8 +612,7 @@ public class SpotInstanceRequest  implements Serializable  {
             this.tags = null;
             return;
         }
-
-        java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>(tags.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
         tagsCopy.addAll(tags);
         this.tags = tagsCopy;
     }
@@ -649,7 +649,7 @@ public class SpotInstanceRequest  implements Serializable  {
         if (tags == null) {
             this.tags = null;
         } else {
-            java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>(tags.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
             tagsCopy.addAll(tags);
             this.tags = tagsCopy;
         }
@@ -702,22 +702,22 @@ public class SpotInstanceRequest  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getSpotInstanceRequestId() != null) sb.append("SpotInstanceRequestId: " + getSpotInstanceRequestId() + ",");    	
-        if (getSpotPrice() != null) sb.append("SpotPrice: " + getSpotPrice() + ",");    	
-        if (getType() != null) sb.append("Type: " + getType() + ",");    	
-        if (getState() != null) sb.append("State: " + getState() + ",");    	
-        if (getFault() != null) sb.append("Fault: " + getFault() + ",");    	
-        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");    	
-        if (getValidFrom() != null) sb.append("ValidFrom: " + getValidFrom() + ",");    	
-        if (getValidUntil() != null) sb.append("ValidUntil: " + getValidUntil() + ",");    	
-        if (getLaunchGroup() != null) sb.append("LaunchGroup: " + getLaunchGroup() + ",");    	
-        if (getAvailabilityZoneGroup() != null) sb.append("AvailabilityZoneGroup: " + getAvailabilityZoneGroup() + ",");    	
-        if (getLaunchSpecification() != null) sb.append("LaunchSpecification: " + getLaunchSpecification() + ",");    	
-        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ",");    	
-        if (getCreateTime() != null) sb.append("CreateTime: " + getCreateTime() + ",");    	
-        if (getProductDescription() != null) sb.append("ProductDescription: " + getProductDescription() + ",");    	
-        if (getTags() != null) sb.append("Tags: " + getTags() + ",");    	
+        sb.append("{");
+        if (getSpotInstanceRequestId() != null) sb.append("SpotInstanceRequestId: " + getSpotInstanceRequestId() + ",");
+        if (getSpotPrice() != null) sb.append("SpotPrice: " + getSpotPrice() + ",");
+        if (getType() != null) sb.append("Type: " + getType() + ",");
+        if (getState() != null) sb.append("State: " + getState() + ",");
+        if (getFault() != null) sb.append("Fault: " + getFault() + ",");
+        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");
+        if (getValidFrom() != null) sb.append("ValidFrom: " + getValidFrom() + ",");
+        if (getValidUntil() != null) sb.append("ValidUntil: " + getValidUntil() + ",");
+        if (getLaunchGroup() != null) sb.append("LaunchGroup: " + getLaunchGroup() + ",");
+        if (getAvailabilityZoneGroup() != null) sb.append("AvailabilityZoneGroup: " + getAvailabilityZoneGroup() + ",");
+        if (getLaunchSpecification() != null) sb.append("LaunchSpecification: " + getLaunchSpecification() + ",");
+        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ",");
+        if (getCreateTime() != null) sb.append("CreateTime: " + getCreateTime() + ",");
+        if (getProductDescription() != null) sb.append("ProductDescription: " + getProductDescription() + ",");
+        if (getTags() != null) sb.append("Tags: " + getTags() + ",");
         if (getLaunchedAvailabilityZone() != null) sb.append("LaunchedAvailabilityZone: " + getLaunchedAvailabilityZone() );
         sb.append("}");
         return sb.toString();

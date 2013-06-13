@@ -27,7 +27,7 @@ public class MonitorInstancesResult  implements Serializable  {
      * A list of updated monitoring information for the instances specified
      * in the request.
      */
-    private java.util.List<InstanceMonitoring> instanceMonitorings;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<InstanceMonitoring> instanceMonitorings;
 
     /**
      * A list of updated monitoring information for the instances specified
@@ -39,7 +39,8 @@ public class MonitorInstancesResult  implements Serializable  {
     public java.util.List<InstanceMonitoring> getInstanceMonitorings() {
         
         if (instanceMonitorings == null) {
-            instanceMonitorings = new java.util.ArrayList<InstanceMonitoring>();
+              instanceMonitorings = new com.amazonaws.internal.ListWithAutoConstructFlag<InstanceMonitoring>();
+              instanceMonitorings.setAutoConstruct(true);
         }
         return instanceMonitorings;
     }
@@ -56,8 +57,7 @@ public class MonitorInstancesResult  implements Serializable  {
             this.instanceMonitorings = null;
             return;
         }
-
-        java.util.List<InstanceMonitoring> instanceMonitoringsCopy = new java.util.ArrayList<InstanceMonitoring>(instanceMonitorings.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<InstanceMonitoring> instanceMonitoringsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<InstanceMonitoring>(instanceMonitorings.size());
         instanceMonitoringsCopy.addAll(instanceMonitorings);
         this.instanceMonitorings = instanceMonitoringsCopy;
     }
@@ -98,7 +98,7 @@ public class MonitorInstancesResult  implements Serializable  {
         if (instanceMonitorings == null) {
             this.instanceMonitorings = null;
         } else {
-            java.util.List<InstanceMonitoring> instanceMonitoringsCopy = new java.util.ArrayList<InstanceMonitoring>(instanceMonitorings.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<InstanceMonitoring> instanceMonitoringsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<InstanceMonitoring>(instanceMonitorings.size());
             instanceMonitoringsCopy.addAll(instanceMonitorings);
             this.instanceMonitorings = instanceMonitoringsCopy;
         }
@@ -117,7 +117,7 @@ public class MonitorInstancesResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getInstanceMonitorings() != null) sb.append("InstanceMonitorings: " + getInstanceMonitorings() );
         sb.append("}");
         return sb.toString();

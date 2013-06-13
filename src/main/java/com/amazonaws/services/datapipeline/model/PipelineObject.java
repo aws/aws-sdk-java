@@ -44,7 +44,7 @@ public class PipelineObject  implements Serializable  {
     /**
      * Key-value pairs that define the properties of the object.
      */
-    private java.util.List<Field> fields;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Field> fields;
 
     /**
      * Identifier of the object.
@@ -146,7 +146,8 @@ public class PipelineObject  implements Serializable  {
     public java.util.List<Field> getFields() {
         
         if (fields == null) {
-            fields = new java.util.ArrayList<Field>();
+              fields = new com.amazonaws.internal.ListWithAutoConstructFlag<Field>();
+              fields.setAutoConstruct(true);
         }
         return fields;
     }
@@ -161,8 +162,7 @@ public class PipelineObject  implements Serializable  {
             this.fields = null;
             return;
         }
-
-        java.util.List<Field> fieldsCopy = new java.util.ArrayList<Field>(fields.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Field> fieldsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Field>(fields.size());
         fieldsCopy.addAll(fields);
         this.fields = fieldsCopy;
     }
@@ -199,7 +199,7 @@ public class PipelineObject  implements Serializable  {
         if (fields == null) {
             this.fields = null;
         } else {
-            java.util.List<Field> fieldsCopy = new java.util.ArrayList<Field>(fields.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Field> fieldsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Field>(fields.size());
             fieldsCopy.addAll(fields);
             this.fields = fieldsCopy;
         }
@@ -218,9 +218,9 @@ public class PipelineObject  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getId() != null) sb.append("Id: " + getId() + ",");    	
-        if (getName() != null) sb.append("Name: " + getName() + ",");    	
+        sb.append("{");
+        if (getId() != null) sb.append("Id: " + getId() + ",");
+        if (getName() != null) sb.append("Name: " + getName() + ",");
         if (getFields() != null) sb.append("Fields: " + getFields() );
         sb.append("}");
         return sb.toString();

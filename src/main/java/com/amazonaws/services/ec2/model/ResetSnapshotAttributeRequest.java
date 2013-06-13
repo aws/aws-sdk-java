@@ -46,6 +46,8 @@ public class ResetSnapshotAttributeRequest extends AmazonWebServiceRequest  impl
      */
     public ResetSnapshotAttributeRequest() {}
     
+
+
     /**
      * Constructs a new ResetSnapshotAttributeRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -57,8 +59,8 @@ public class ResetSnapshotAttributeRequest extends AmazonWebServiceRequest  impl
      * attribute names: <code>createVolumePermission</code>
      */
     public ResetSnapshotAttributeRequest(String snapshotId, String attribute) {
-        this.snapshotId = snapshotId;
-        this.attribute = attribute;
+        setSnapshotId(snapshotId);
+        setAttribute(attribute);
     }
 
     
@@ -216,8 +218,8 @@ public class ResetSnapshotAttributeRequest extends AmazonWebServiceRequest  impl
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getSnapshotId() != null) sb.append("SnapshotId: " + getSnapshotId() + ",");    	
+        sb.append("{");
+        if (getSnapshotId() != null) sb.append("SnapshotId: " + getSnapshotId() + ",");
         if (getAttribute() != null) sb.append("Attribute: " + getAttribute() );
         sb.append("}");
         return sb.toString();

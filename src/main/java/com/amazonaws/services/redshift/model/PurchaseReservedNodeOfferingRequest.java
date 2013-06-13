@@ -138,8 +138,8 @@ public class PurchaseReservedNodeOfferingRequest extends AmazonWebServiceRequest
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getReservedNodeOfferingId() != null) sb.append("ReservedNodeOfferingId: " + getReservedNodeOfferingId() + ",");    	
+        sb.append("{");
+        if (getReservedNodeOfferingId() != null) sb.append("ReservedNodeOfferingId: " + getReservedNodeOfferingId() + ",");
         if (getNodeCount() != null) sb.append("NodeCount: " + getNodeCount() );
         sb.append("}");
         return sb.toString();

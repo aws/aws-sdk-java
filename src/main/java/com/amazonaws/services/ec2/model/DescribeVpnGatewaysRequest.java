@@ -42,7 +42,7 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest  impleme
      * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      * EC2 API reference</a>.
      */
-    private java.util.List<String> vpnGatewayIds;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> vpnGatewayIds;
 
     /**
      * A list of filters used to match properties for VPN Gateways. For a
@@ -51,7 +51,7 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest  impleme
      * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      * EC2 API reference</a>.
      */
-    private java.util.List<Filter> filters;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filters;
 
     /**
      * A list of filters used to match properties for VPN Gateways. For a
@@ -69,7 +69,8 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest  impleme
     public java.util.List<String> getVpnGatewayIds() {
         
         if (vpnGatewayIds == null) {
-            vpnGatewayIds = new java.util.ArrayList<String>();
+              vpnGatewayIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              vpnGatewayIds.setAutoConstruct(true);
         }
         return vpnGatewayIds;
     }
@@ -92,8 +93,7 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest  impleme
             this.vpnGatewayIds = null;
             return;
         }
-
-        java.util.List<String> vpnGatewayIdsCopy = new java.util.ArrayList<String>(vpnGatewayIds.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> vpnGatewayIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(vpnGatewayIds.size());
         vpnGatewayIdsCopy.addAll(vpnGatewayIds);
         this.vpnGatewayIds = vpnGatewayIdsCopy;
     }
@@ -146,7 +146,7 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest  impleme
         if (vpnGatewayIds == null) {
             this.vpnGatewayIds = null;
         } else {
-            java.util.List<String> vpnGatewayIdsCopy = new java.util.ArrayList<String>(vpnGatewayIds.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> vpnGatewayIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(vpnGatewayIds.size());
             vpnGatewayIdsCopy.addAll(vpnGatewayIds);
             this.vpnGatewayIds = vpnGatewayIdsCopy;
         }
@@ -170,7 +170,8 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest  impleme
     public java.util.List<Filter> getFilters() {
         
         if (filters == null) {
-            filters = new java.util.ArrayList<Filter>();
+              filters = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>();
+              filters.setAutoConstruct(true);
         }
         return filters;
     }
@@ -193,8 +194,7 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest  impleme
             this.filters = null;
             return;
         }
-
-        java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>(filters.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filtersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>(filters.size());
         filtersCopy.addAll(filters);
         this.filters = filtersCopy;
     }
@@ -247,7 +247,7 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest  impleme
         if (filters == null) {
             this.filters = null;
         } else {
-            java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>(filters.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filtersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>(filters.size());
             filtersCopy.addAll(filters);
             this.filters = filtersCopy;
         }
@@ -266,8 +266,8 @@ public class DescribeVpnGatewaysRequest extends AmazonWebServiceRequest  impleme
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getVpnGatewayIds() != null) sb.append("VpnGatewayIds: " + getVpnGatewayIds() + ",");    	
+        sb.append("{");
+        if (getVpnGatewayIds() != null) sb.append("VpnGatewayIds: " + getVpnGatewayIds() + ",");
         if (getFilters() != null) sb.append("Filters: " + getFilters() );
         sb.append("}");
         return sb.toString();

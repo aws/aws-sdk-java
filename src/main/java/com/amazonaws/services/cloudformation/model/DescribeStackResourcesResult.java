@@ -25,7 +25,7 @@ public class DescribeStackResourcesResult  implements Serializable  {
     /**
      * A list of <code>StackResource</code> structures.
      */
-    private java.util.List<StackResource> stackResources;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<StackResource> stackResources;
 
     /**
      * A list of <code>StackResource</code> structures.
@@ -35,7 +35,8 @@ public class DescribeStackResourcesResult  implements Serializable  {
     public java.util.List<StackResource> getStackResources() {
         
         if (stackResources == null) {
-            stackResources = new java.util.ArrayList<StackResource>();
+              stackResources = new com.amazonaws.internal.ListWithAutoConstructFlag<StackResource>();
+              stackResources.setAutoConstruct(true);
         }
         return stackResources;
     }
@@ -50,8 +51,7 @@ public class DescribeStackResourcesResult  implements Serializable  {
             this.stackResources = null;
             return;
         }
-
-        java.util.List<StackResource> stackResourcesCopy = new java.util.ArrayList<StackResource>(stackResources.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<StackResource> stackResourcesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<StackResource>(stackResources.size());
         stackResourcesCopy.addAll(stackResources);
         this.stackResources = stackResourcesCopy;
     }
@@ -88,7 +88,7 @@ public class DescribeStackResourcesResult  implements Serializable  {
         if (stackResources == null) {
             this.stackResources = null;
         } else {
-            java.util.List<StackResource> stackResourcesCopy = new java.util.ArrayList<StackResource>(stackResources.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<StackResource> stackResourcesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<StackResource>(stackResources.size());
             stackResourcesCopy.addAll(stackResources);
             this.stackResources = stackResourcesCopy;
         }
@@ -107,7 +107,7 @@ public class DescribeStackResourcesResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getStackResources() != null) sb.append("StackResources: " + getStackResources() );
         sb.append("}");
         return sb.toString();

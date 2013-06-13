@@ -43,6 +43,8 @@ public class DeleteApplicationRequest extends AmazonWebServiceRequest  implement
      */
     public DeleteApplicationRequest() {}
     
+
+
     /**
      * Constructs a new DeleteApplicationRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -51,7 +53,7 @@ public class DeleteApplicationRequest extends AmazonWebServiceRequest  implement
      * @param applicationName The name of the application to delete.
      */
     public DeleteApplicationRequest(String applicationName) {
-        this.applicationName = applicationName;
+        setApplicationName(applicationName);
     }
 
     
@@ -110,7 +112,7 @@ public class DeleteApplicationRequest extends AmazonWebServiceRequest  implement
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getApplicationName() != null) sb.append("ApplicationName: " + getApplicationName() );
         sb.append("}");
         return sb.toString();

@@ -88,7 +88,7 @@ public class EvaluateExpressionResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getEvaluatedExpression() != null) sb.append("EvaluatedExpression: " + getEvaluatedExpression() );
         sb.append("}");
         return sb.toString();

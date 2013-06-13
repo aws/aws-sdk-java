@@ -29,7 +29,7 @@ public class DescribeDomainsRequest extends AmazonWebServiceRequest  implements 
     /**
      * Limits the DescribeDomains response to the specified search domains.
      */
-    private java.util.List<String> domainNames;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> domainNames;
 
     /**
      * Limits the DescribeDomains response to the specified search domains.
@@ -39,7 +39,8 @@ public class DescribeDomainsRequest extends AmazonWebServiceRequest  implements 
     public java.util.List<String> getDomainNames() {
         
         if (domainNames == null) {
-            domainNames = new java.util.ArrayList<String>();
+              domainNames = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              domainNames.setAutoConstruct(true);
         }
         return domainNames;
     }
@@ -54,8 +55,7 @@ public class DescribeDomainsRequest extends AmazonWebServiceRequest  implements 
             this.domainNames = null;
             return;
         }
-
-        java.util.List<String> domainNamesCopy = new java.util.ArrayList<String>(domainNames.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> domainNamesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(domainNames.size());
         domainNamesCopy.addAll(domainNames);
         this.domainNames = domainNamesCopy;
     }
@@ -92,7 +92,7 @@ public class DescribeDomainsRequest extends AmazonWebServiceRequest  implements 
         if (domainNames == null) {
             this.domainNames = null;
         } else {
-            java.util.List<String> domainNamesCopy = new java.util.ArrayList<String>(domainNames.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> domainNamesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(domainNames.size());
             domainNamesCopy.addAll(domainNames);
             this.domainNames = domainNamesCopy;
         }
@@ -111,7 +111,7 @@ public class DescribeDomainsRequest extends AmazonWebServiceRequest  implements 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getDomainNames() != null) sb.append("DomainNames: " + getDomainNames() );
         sb.append("}");
         return sb.toString();

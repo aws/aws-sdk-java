@@ -44,6 +44,8 @@ public class ConfigureHealthCheckRequest extends AmazonWebServiceRequest  implem
      */
     public ConfigureHealthCheckRequest() {}
     
+
+
     /**
      * Constructs a new ConfigureHealthCheckRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -55,8 +57,8 @@ public class ConfigureHealthCheckRequest extends AmazonWebServiceRequest  implem
      * information for the new healthcheck.
      */
     public ConfigureHealthCheckRequest(String loadBalancerName, HealthCheck healthCheck) {
-        this.loadBalancerName = loadBalancerName;
-        this.healthCheck = healthCheck;
+        setLoadBalancerName(loadBalancerName);
+        setHealthCheck(healthCheck);
     }
 
     
@@ -152,8 +154,8 @@ public class ConfigureHealthCheckRequest extends AmazonWebServiceRequest  implem
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getLoadBalancerName() != null) sb.append("LoadBalancerName: " + getLoadBalancerName() + ",");    	
+        sb.append("{");
+        if (getLoadBalancerName() != null) sb.append("LoadBalancerName: " + getLoadBalancerName() + ",");
         if (getHealthCheck() != null) sb.append("HealthCheck: " + getHealthCheck() );
         sb.append("}");
         return sb.toString();

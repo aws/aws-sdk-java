@@ -312,9 +312,9 @@ public class DeleteItemResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getAttributes() != null) sb.append("Attributes: " + getAttributes() + ",");    	
-        if (getConsumedCapacity() != null) sb.append("ConsumedCapacity: " + getConsumedCapacity() + ",");    	
+        sb.append("{");
+        if (getAttributes() != null) sb.append("Attributes: " + getAttributes() + ",");
+        if (getConsumedCapacity() != null) sb.append("ConsumedCapacity: " + getConsumedCapacity() + ",");
         if (getItemCollectionMetrics() != null) sb.append("ItemCollectionMetrics: " + getItemCollectionMetrics() );
         sb.append("}");
         return sb.toString();

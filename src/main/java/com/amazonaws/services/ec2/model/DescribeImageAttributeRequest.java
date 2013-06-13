@@ -44,6 +44,8 @@ public class DescribeImageAttributeRequest extends AmazonWebServiceRequest  impl
      */
     public DescribeImageAttributeRequest() {}
     
+
+
     /**
      * Constructs a new DescribeImageAttributeRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -56,8 +58,8 @@ public class DescribeImageAttributeRequest extends AmazonWebServiceRequest  impl
      * <code>blockDeviceMapping</code>
      */
     public DescribeImageAttributeRequest(String imageId, String attribute) {
-        this.imageId = imageId;
-        this.attribute = attribute;
+        setImageId(imageId);
+        setAttribute(attribute);
     }
 
     
@@ -153,8 +155,8 @@ public class DescribeImageAttributeRequest extends AmazonWebServiceRequest  impl
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getImageId() != null) sb.append("ImageId: " + getImageId() + ",");    	
+        sb.append("{");
+        if (getImageId() != null) sb.append("ImageId: " + getImageId() + ",");
         if (getAttribute() != null) sb.append("Attribute: " + getAttribute() );
         sb.append("}");
         return sb.toString();

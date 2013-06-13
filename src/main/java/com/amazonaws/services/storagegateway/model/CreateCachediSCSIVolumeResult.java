@@ -148,8 +148,8 @@ public class CreateCachediSCSIVolumeResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getVolumeARN() != null) sb.append("VolumeARN: " + getVolumeARN() + ",");    	
+        sb.append("{");
+        if (getVolumeARN() != null) sb.append("VolumeARN: " + getVolumeARN() + ",");
         if (getTargetARN() != null) sb.append("TargetARN: " + getTargetARN() );
         sb.append("}");
         return sb.toString();

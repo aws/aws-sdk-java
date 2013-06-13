@@ -32,7 +32,7 @@ public class DescribeDBInstancesResult  implements Serializable  {
     /**
      * A list of <a>DBInstance</a> instances.
      */
-    private java.util.List<DBInstance> dBInstances;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<DBInstance> dBInstances;
 
     /**
      * An optional pagination token provided by a previous request. If this
@@ -88,7 +88,8 @@ public class DescribeDBInstancesResult  implements Serializable  {
     public java.util.List<DBInstance> getDBInstances() {
         
         if (dBInstances == null) {
-            dBInstances = new java.util.ArrayList<DBInstance>();
+              dBInstances = new com.amazonaws.internal.ListWithAutoConstructFlag<DBInstance>();
+              dBInstances.setAutoConstruct(true);
         }
         return dBInstances;
     }
@@ -103,8 +104,7 @@ public class DescribeDBInstancesResult  implements Serializable  {
             this.dBInstances = null;
             return;
         }
-
-        java.util.List<DBInstance> dBInstancesCopy = new java.util.ArrayList<DBInstance>(dBInstances.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<DBInstance> dBInstancesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<DBInstance>(dBInstances.size());
         dBInstancesCopy.addAll(dBInstances);
         this.dBInstances = dBInstancesCopy;
     }
@@ -141,7 +141,7 @@ public class DescribeDBInstancesResult  implements Serializable  {
         if (dBInstances == null) {
             this.dBInstances = null;
         } else {
-            java.util.List<DBInstance> dBInstancesCopy = new java.util.ArrayList<DBInstance>(dBInstances.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<DBInstance> dBInstancesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<DBInstance>(dBInstances.size());
             dBInstancesCopy.addAll(dBInstances);
             this.dBInstances = dBInstancesCopy;
         }
@@ -160,8 +160,8 @@ public class DescribeDBInstancesResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");    	
+        sb.append("{");
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");
         if (getDBInstances() != null) sb.append("DBInstances: " + getDBInstances() );
         sb.append("}");
         return sb.toString();

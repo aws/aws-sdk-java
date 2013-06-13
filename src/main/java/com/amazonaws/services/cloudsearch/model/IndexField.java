@@ -73,7 +73,7 @@ public class IndexField  implements Serializable  {
      * be applied to the source data when populating the index field. You can
      * configure a maximum of 20 sources for an <code>IndexField</code>.
      */
-    private java.util.List<SourceAttribute> sourceAttributes;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<SourceAttribute> sourceAttributes;
 
     /**
      * The name of a field in the search index. Field names must begin with a
@@ -392,7 +392,8 @@ public class IndexField  implements Serializable  {
     public java.util.List<SourceAttribute> getSourceAttributes() {
         
         if (sourceAttributes == null) {
-            sourceAttributes = new java.util.ArrayList<SourceAttribute>();
+              sourceAttributes = new com.amazonaws.internal.ListWithAutoConstructFlag<SourceAttribute>();
+              sourceAttributes.setAutoConstruct(true);
         }
         return sourceAttributes;
     }
@@ -417,8 +418,7 @@ public class IndexField  implements Serializable  {
             this.sourceAttributes = null;
             return;
         }
-
-        java.util.List<SourceAttribute> sourceAttributesCopy = new java.util.ArrayList<SourceAttribute>(sourceAttributes.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<SourceAttribute> sourceAttributesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<SourceAttribute>(sourceAttributes.size());
         sourceAttributesCopy.addAll(sourceAttributes);
         this.sourceAttributes = sourceAttributesCopy;
     }
@@ -475,7 +475,7 @@ public class IndexField  implements Serializable  {
         if (sourceAttributes == null) {
             this.sourceAttributes = null;
         } else {
-            java.util.List<SourceAttribute> sourceAttributesCopy = new java.util.ArrayList<SourceAttribute>(sourceAttributes.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<SourceAttribute> sourceAttributesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<SourceAttribute>(sourceAttributes.size());
             sourceAttributesCopy.addAll(sourceAttributes);
             this.sourceAttributes = sourceAttributesCopy;
         }
@@ -494,12 +494,12 @@ public class IndexField  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getIndexFieldName() != null) sb.append("IndexFieldName: " + getIndexFieldName() + ",");    	
-        if (getIndexFieldType() != null) sb.append("IndexFieldType: " + getIndexFieldType() + ",");    	
-        if (getUIntOptions() != null) sb.append("UIntOptions: " + getUIntOptions() + ",");    	
-        if (getLiteralOptions() != null) sb.append("LiteralOptions: " + getLiteralOptions() + ",");    	
-        if (getTextOptions() != null) sb.append("TextOptions: " + getTextOptions() + ",");    	
+        sb.append("{");
+        if (getIndexFieldName() != null) sb.append("IndexFieldName: " + getIndexFieldName() + ",");
+        if (getIndexFieldType() != null) sb.append("IndexFieldType: " + getIndexFieldType() + ",");
+        if (getUIntOptions() != null) sb.append("UIntOptions: " + getUIntOptions() + ",");
+        if (getLiteralOptions() != null) sb.append("LiteralOptions: " + getLiteralOptions() + ",");
+        if (getTextOptions() != null) sb.append("TextOptions: " + getTextOptions() + ",");
         if (getSourceAttributes() != null) sb.append("SourceAttributes: " + getSourceAttributes() );
         sb.append("}");
         return sb.toString();

@@ -913,19 +913,19 @@ public class CreateStackRequest extends AmazonWebServiceRequest  implements Seri
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getName() != null) sb.append("Name: " + getName() + ",");    	
-        if (getRegion() != null) sb.append("Region: " + getRegion() + ",");    	
-        if (getAttributes() != null) sb.append("Attributes: " + getAttributes() + ",");    	
-        if (getServiceRoleArn() != null) sb.append("ServiceRoleArn: " + getServiceRoleArn() + ",");    	
-        if (getDefaultInstanceProfileArn() != null) sb.append("DefaultInstanceProfileArn: " + getDefaultInstanceProfileArn() + ",");    	
-        if (getDefaultOs() != null) sb.append("DefaultOs: " + getDefaultOs() + ",");    	
-        if (getHostnameTheme() != null) sb.append("HostnameTheme: " + getHostnameTheme() + ",");    	
-        if (getDefaultAvailabilityZone() != null) sb.append("DefaultAvailabilityZone: " + getDefaultAvailabilityZone() + ",");    	
-        if (getCustomJson() != null) sb.append("CustomJson: " + getCustomJson() + ",");    	
-        if (isUseCustomCookbooks() != null) sb.append("UseCustomCookbooks: " + isUseCustomCookbooks() + ",");    	
-        if (getCustomCookbooksSource() != null) sb.append("CustomCookbooksSource: " + getCustomCookbooksSource() + ",");    	
-        if (getDefaultSshKeyName() != null) sb.append("DefaultSshKeyName: " + getDefaultSshKeyName() + ",");    	
+        sb.append("{");
+        if (getName() != null) sb.append("Name: " + getName() + ",");
+        if (getRegion() != null) sb.append("Region: " + getRegion() + ",");
+        if (getAttributes() != null) sb.append("Attributes: " + getAttributes() + ",");
+        if (getServiceRoleArn() != null) sb.append("ServiceRoleArn: " + getServiceRoleArn() + ",");
+        if (getDefaultInstanceProfileArn() != null) sb.append("DefaultInstanceProfileArn: " + getDefaultInstanceProfileArn() + ",");
+        if (getDefaultOs() != null) sb.append("DefaultOs: " + getDefaultOs() + ",");
+        if (getHostnameTheme() != null) sb.append("HostnameTheme: " + getHostnameTheme() + ",");
+        if (getDefaultAvailabilityZone() != null) sb.append("DefaultAvailabilityZone: " + getDefaultAvailabilityZone() + ",");
+        if (getCustomJson() != null) sb.append("CustomJson: " + getCustomJson() + ",");
+        if (isUseCustomCookbooks() != null) sb.append("UseCustomCookbooks: " + isUseCustomCookbooks() + ",");
+        if (getCustomCookbooksSource() != null) sb.append("CustomCookbooksSource: " + getCustomCookbooksSource() + ",");
+        if (getDefaultSshKeyName() != null) sb.append("DefaultSshKeyName: " + getDefaultSshKeyName() + ",");
         if (getDefaultRootDeviceType() != null) sb.append("DefaultRootDeviceType: " + getDefaultRootDeviceType() );
         sb.append("}");
         return sb.toString();

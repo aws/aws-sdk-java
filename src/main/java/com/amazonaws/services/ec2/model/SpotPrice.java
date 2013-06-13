@@ -260,11 +260,11 @@ public class SpotPrice  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getInstanceType() != null) sb.append("InstanceType: " + getInstanceType() + ",");    	
-        if (getProductDescription() != null) sb.append("ProductDescription: " + getProductDescription() + ",");    	
-        if (getSpotPrice() != null) sb.append("SpotPrice: " + getSpotPrice() + ",");    	
-        if (getTimestamp() != null) sb.append("Timestamp: " + getTimestamp() + ",");    	
+        sb.append("{");
+        if (getInstanceType() != null) sb.append("InstanceType: " + getInstanceType() + ",");
+        if (getProductDescription() != null) sb.append("ProductDescription: " + getProductDescription() + ",");
+        if (getSpotPrice() != null) sb.append("SpotPrice: " + getSpotPrice() + ",");
+        if (getTimestamp() != null) sb.append("Timestamp: " + getTimestamp() + ",");
         if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() );
         sb.append("}");
         return sb.toString();

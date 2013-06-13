@@ -190,10 +190,10 @@ public class StatisticSet  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getSampleCount() != null) sb.append("SampleCount: " + getSampleCount() + ",");    	
-        if (getSum() != null) sb.append("Sum: " + getSum() + ",");    	
-        if (getMinimum() != null) sb.append("Minimum: " + getMinimum() + ",");    	
+        sb.append("{");
+        if (getSampleCount() != null) sb.append("SampleCount: " + getSampleCount() + ",");
+        if (getSum() != null) sb.append("Sum: " + getSum() + ",");
+        if (getMinimum() != null) sb.append("Minimum: " + getMinimum() + ",");
         if (getMaximum() != null) sb.append("Maximum: " + getMaximum() );
         sb.append("}");
         return sb.toString();

@@ -61,7 +61,7 @@ public class ModifyEventSubscriptionRequest extends AmazonWebServiceRequest  imp
      * topic in the Amazon RDS User Guide or by using the
      * <b>DescribeEventCategories</b> action.
      */
-    private java.util.List<String> eventCategories;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> eventCategories;
 
     /**
      * A Boolean value; set to <b>true</b> to activate the subscription.
@@ -224,7 +224,8 @@ public class ModifyEventSubscriptionRequest extends AmazonWebServiceRequest  imp
     public java.util.List<String> getEventCategories() {
         
         if (eventCategories == null) {
-            eventCategories = new java.util.ArrayList<String>();
+              eventCategories = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              eventCategories.setAutoConstruct(true);
         }
         return eventCategories;
     }
@@ -249,8 +250,7 @@ public class ModifyEventSubscriptionRequest extends AmazonWebServiceRequest  imp
             this.eventCategories = null;
             return;
         }
-
-        java.util.List<String> eventCategoriesCopy = new java.util.ArrayList<String>(eventCategories.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> eventCategoriesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(eventCategories.size());
         eventCategoriesCopy.addAll(eventCategories);
         this.eventCategories = eventCategoriesCopy;
     }
@@ -307,7 +307,7 @@ public class ModifyEventSubscriptionRequest extends AmazonWebServiceRequest  imp
         if (eventCategories == null) {
             this.eventCategories = null;
         } else {
-            java.util.List<String> eventCategoriesCopy = new java.util.ArrayList<String>(eventCategories.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> eventCategoriesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(eventCategories.size());
             eventCategoriesCopy.addAll(eventCategories);
             this.eventCategories = eventCategoriesCopy;
         }
@@ -369,11 +369,11 @@ public class ModifyEventSubscriptionRequest extends AmazonWebServiceRequest  imp
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getSubscriptionName() != null) sb.append("SubscriptionName: " + getSubscriptionName() + ",");    	
-        if (getSnsTopicArn() != null) sb.append("SnsTopicArn: " + getSnsTopicArn() + ",");    	
-        if (getSourceType() != null) sb.append("SourceType: " + getSourceType() + ",");    	
-        if (getEventCategories() != null) sb.append("EventCategories: " + getEventCategories() + ",");    	
+        sb.append("{");
+        if (getSubscriptionName() != null) sb.append("SubscriptionName: " + getSubscriptionName() + ",");
+        if (getSnsTopicArn() != null) sb.append("SnsTopicArn: " + getSnsTopicArn() + ",");
+        if (getSourceType() != null) sb.append("SourceType: " + getSourceType() + ",");
+        if (getEventCategories() != null) sb.append("EventCategories: " + getEventCategories() + ",");
         if (isEnabled() != null) sb.append("Enabled: " + isEnabled() );
         sb.append("}");
         return sb.toString();

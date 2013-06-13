@@ -157,8 +157,8 @@ public class VirtualGateway  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getVirtualGatewayId() != null) sb.append("VirtualGatewayId: " + getVirtualGatewayId() + ",");    	
+        sb.append("{");
+        if (getVirtualGatewayId() != null) sb.append("VirtualGatewayId: " + getVirtualGatewayId() + ",");
         if (getVirtualGatewayState() != null) sb.append("VirtualGatewayState: " + getVirtualGatewayState() );
         sb.append("}");
         return sb.toString();

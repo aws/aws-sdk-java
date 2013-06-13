@@ -33,7 +33,7 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest  i
     /**
      * A list of the availability zone names to describe.
      */
-    private java.util.List<String> zoneNames;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> zoneNames;
 
     /**
      * A list of filters used to match properties for AvailabilityZones. For
@@ -42,7 +42,7 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest  i
      * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      * EC2 API reference</a>.
      */
-    private java.util.List<Filter> filters;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filters;
 
     /**
      * A list of the availability zone names to describe.
@@ -52,7 +52,8 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest  i
     public java.util.List<String> getZoneNames() {
         
         if (zoneNames == null) {
-            zoneNames = new java.util.ArrayList<String>();
+              zoneNames = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              zoneNames.setAutoConstruct(true);
         }
         return zoneNames;
     }
@@ -67,8 +68,7 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest  i
             this.zoneNames = null;
             return;
         }
-
-        java.util.List<String> zoneNamesCopy = new java.util.ArrayList<String>(zoneNames.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> zoneNamesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(zoneNames.size());
         zoneNamesCopy.addAll(zoneNames);
         this.zoneNames = zoneNamesCopy;
     }
@@ -105,7 +105,7 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest  i
         if (zoneNames == null) {
             this.zoneNames = null;
         } else {
-            java.util.List<String> zoneNamesCopy = new java.util.ArrayList<String>(zoneNames.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> zoneNamesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(zoneNames.size());
             zoneNamesCopy.addAll(zoneNames);
             this.zoneNames = zoneNamesCopy;
         }
@@ -129,7 +129,8 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest  i
     public java.util.List<Filter> getFilters() {
         
         if (filters == null) {
-            filters = new java.util.ArrayList<Filter>();
+              filters = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>();
+              filters.setAutoConstruct(true);
         }
         return filters;
     }
@@ -152,8 +153,7 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest  i
             this.filters = null;
             return;
         }
-
-        java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>(filters.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filtersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>(filters.size());
         filtersCopy.addAll(filters);
         this.filters = filtersCopy;
     }
@@ -206,7 +206,7 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest  i
         if (filters == null) {
             this.filters = null;
         } else {
-            java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>(filters.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filtersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>(filters.size());
             filtersCopy.addAll(filters);
             this.filters = filtersCopy;
         }
@@ -225,8 +225,8 @@ public class DescribeAvailabilityZonesRequest extends AmazonWebServiceRequest  i
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getZoneNames() != null) sb.append("ZoneNames: " + getZoneNames() + ",");    	
+        sb.append("{");
+        if (getZoneNames() != null) sb.append("ZoneNames: " + getZoneNames() + ",");
         if (getFilters() != null) sb.append("Filters: " + getFilters() );
         sb.append("}");
         return sb.toString();

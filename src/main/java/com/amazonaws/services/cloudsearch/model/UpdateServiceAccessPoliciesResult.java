@@ -79,7 +79,7 @@ public class UpdateServiceAccessPoliciesResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getAccessPolicies() != null) sb.append("AccessPolicies: " + getAccessPolicies() );
         sb.append("}");
         return sb.toString();

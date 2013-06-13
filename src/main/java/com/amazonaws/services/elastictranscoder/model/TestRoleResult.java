@@ -34,7 +34,7 @@ public class TestRoleResult  implements Serializable  {
      * value is an array of one or more error messages that were generated
      * during the test process.
      */
-    private java.util.List<String> messages;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> messages;
 
     /**
      * If the operation is successful, this value is <code>true</code>;
@@ -96,6 +96,10 @@ public class TestRoleResult  implements Serializable  {
      */
     public java.util.List<String> getMessages() {
         
+        if (messages == null) {
+              messages = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              messages.setAutoConstruct(true);
+        }
         return messages;
     }
     
@@ -113,8 +117,7 @@ public class TestRoleResult  implements Serializable  {
             this.messages = null;
             return;
         }
-
-        java.util.List<String> messagesCopy = new java.util.ArrayList<String>(messages.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> messagesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(messages.size());
         messagesCopy.addAll(messages);
         this.messages = messagesCopy;
     }
@@ -159,7 +162,7 @@ public class TestRoleResult  implements Serializable  {
         if (messages == null) {
             this.messages = null;
         } else {
-            java.util.List<String> messagesCopy = new java.util.ArrayList<String>(messages.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> messagesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(messages.size());
             messagesCopy.addAll(messages);
             this.messages = messagesCopy;
         }
@@ -178,8 +181,8 @@ public class TestRoleResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getSuccess() != null) sb.append("Success: " + getSuccess() + ",");    	
+        sb.append("{");
+        if (getSuccess() != null) sb.append("Success: " + getSuccess() + ",");
         if (getMessages() != null) sb.append("Messages: " + getMessages() );
         sb.append("}");
         return sb.toString();

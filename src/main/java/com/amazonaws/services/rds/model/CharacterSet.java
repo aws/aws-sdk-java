@@ -111,8 +111,8 @@ public class CharacterSet  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getCharacterSetName() != null) sb.append("CharacterSetName: " + getCharacterSetName() + ",");    	
+        sb.append("{");
+        if (getCharacterSetName() != null) sb.append("CharacterSetName: " + getCharacterSetName() + ",");
         if (getCharacterSetDescription() != null) sb.append("CharacterSetDescription: " + getCharacterSetDescription() );
         sb.append("}");
         return sb.toString();

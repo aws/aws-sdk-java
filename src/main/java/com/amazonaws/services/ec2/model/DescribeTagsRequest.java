@@ -29,7 +29,7 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest  implements Ser
     /**
      * A list of filters used to match properties for tags.
      */
-    private java.util.List<Filter> filters;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filters;
 
     /**
      * Default constructor for a new DescribeTagsRequest object.  Callers should use the
@@ -37,6 +37,8 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest  implements Ser
      */
     public DescribeTagsRequest() {}
     
+
+
     /**
      * Constructs a new DescribeTagsRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -45,7 +47,7 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest  implements Ser
      * @param filters A list of filters used to match properties for tags.
      */
     public DescribeTagsRequest(java.util.List<Filter> filters) {
-        this.filters = filters;
+        setFilters(filters);
     }
 
     
@@ -58,7 +60,8 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest  implements Ser
     public java.util.List<Filter> getFilters() {
         
         if (filters == null) {
-            filters = new java.util.ArrayList<Filter>();
+              filters = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>();
+              filters.setAutoConstruct(true);
         }
         return filters;
     }
@@ -73,8 +76,7 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest  implements Ser
             this.filters = null;
             return;
         }
-
-        java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>(filters.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filtersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>(filters.size());
         filtersCopy.addAll(filters);
         this.filters = filtersCopy;
     }
@@ -111,7 +113,7 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest  implements Ser
         if (filters == null) {
             this.filters = null;
         } else {
-            java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>(filters.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filtersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>(filters.size());
             filtersCopy.addAll(filters);
             this.filters = filtersCopy;
         }
@@ -130,7 +132,7 @@ public class DescribeTagsRequest extends AmazonWebServiceRequest  implements Ser
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getFilters() != null) sb.append("Filters: " + getFilters() );
         sb.append("}");
         return sb.toString();

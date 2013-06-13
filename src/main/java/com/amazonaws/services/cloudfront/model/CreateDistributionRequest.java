@@ -37,6 +37,8 @@ public class CreateDistributionRequest extends AmazonWebServiceRequest  implemen
      */
     public CreateDistributionRequest() {}
     
+
+
     /**
      * Constructs a new CreateDistributionRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -46,7 +48,7 @@ public class CreateDistributionRequest extends AmazonWebServiceRequest  implemen
      * information.
      */
     public CreateDistributionRequest(DistributionConfig distributionConfig) {
-        this.distributionConfig = distributionConfig;
+        setDistributionConfig(distributionConfig);
     }
 
     
@@ -96,7 +98,7 @@ public class CreateDistributionRequest extends AmazonWebServiceRequest  implemen
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getDistributionConfig() != null) sb.append("DistributionConfig: " + getDistributionConfig() );
         sb.append("}");
         return sb.toString();

@@ -52,7 +52,7 @@ public class ListPartsResult  implements Serializable  {
     /**
      * A list of the part sizes of the multipart upload.
      */
-    private java.util.List<PartListElement> parts;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<PartListElement> parts;
 
     /**
      * An opaque string that represents where to continue pagination of the
@@ -252,7 +252,8 @@ public class ListPartsResult  implements Serializable  {
     public java.util.List<PartListElement> getParts() {
         
         if (parts == null) {
-            parts = new java.util.ArrayList<PartListElement>();
+              parts = new com.amazonaws.internal.ListWithAutoConstructFlag<PartListElement>();
+              parts.setAutoConstruct(true);
         }
         return parts;
     }
@@ -267,8 +268,7 @@ public class ListPartsResult  implements Serializable  {
             this.parts = null;
             return;
         }
-
-        java.util.List<PartListElement> partsCopy = new java.util.ArrayList<PartListElement>(parts.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<PartListElement> partsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<PartListElement>(parts.size());
         partsCopy.addAll(parts);
         this.parts = partsCopy;
     }
@@ -305,7 +305,7 @@ public class ListPartsResult  implements Serializable  {
         if (parts == null) {
             this.parts = null;
         } else {
-            java.util.List<PartListElement> partsCopy = new java.util.ArrayList<PartListElement>(parts.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<PartListElement> partsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<PartListElement>(parts.size());
             partsCopy.addAll(parts);
             this.parts = partsCopy;
         }
@@ -376,13 +376,13 @@ public class ListPartsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getMultipartUploadId() != null) sb.append("MultipartUploadId: " + getMultipartUploadId() + ",");    	
-        if (getVaultARN() != null) sb.append("VaultARN: " + getVaultARN() + ",");    	
-        if (getArchiveDescription() != null) sb.append("ArchiveDescription: " + getArchiveDescription() + ",");    	
-        if (getPartSizeInBytes() != null) sb.append("PartSizeInBytes: " + getPartSizeInBytes() + ",");    	
-        if (getCreationDate() != null) sb.append("CreationDate: " + getCreationDate() + ",");    	
-        if (getParts() != null) sb.append("Parts: " + getParts() + ",");    	
+        sb.append("{");
+        if (getMultipartUploadId() != null) sb.append("MultipartUploadId: " + getMultipartUploadId() + ",");
+        if (getVaultARN() != null) sb.append("VaultARN: " + getVaultARN() + ",");
+        if (getArchiveDescription() != null) sb.append("ArchiveDescription: " + getArchiveDescription() + ",");
+        if (getPartSizeInBytes() != null) sb.append("PartSizeInBytes: " + getPartSizeInBytes() + ",");
+        if (getCreationDate() != null) sb.append("CreationDate: " + getCreationDate() + ",");
+        if (getParts() != null) sb.append("Parts: " + getParts() + ",");
         if (getMarker() != null) sb.append("Marker: " + getMarker() );
         sb.append("}");
         return sb.toString();

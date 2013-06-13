@@ -124,8 +124,8 @@ public class PartListElement  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getRangeInBytes() != null) sb.append("RangeInBytes: " + getRangeInBytes() + ",");    	
+        sb.append("{");
+        if (getRangeInBytes() != null) sb.append("RangeInBytes: " + getRangeInBytes() + ",");
         if (getSHA256TreeHash() != null) sb.append("SHA256TreeHash: " + getSHA256TreeHash() );
         sb.append("}");
         return sb.toString();

@@ -50,6 +50,8 @@ public class FederatedUser  implements Serializable  {
      */
     public FederatedUser() {}
     
+
+
     /**
      * Constructs a new FederatedUser object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -64,8 +66,8 @@ public class FederatedUser  implements Serializable  {
      * target="_blank">Identifiers for IAM Entities</a> in <i>Using IAM</i>.
      */
     public FederatedUser(String federatedUserId, String arn) {
-        this.federatedUserId = federatedUserId;
-        this.arn = arn;
+        setFederatedUserId(federatedUserId);
+        setArn(arn);
     }
 
     
@@ -200,8 +202,8 @@ public class FederatedUser  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getFederatedUserId() != null) sb.append("FederatedUserId: " + getFederatedUserId() + ",");    	
+        sb.append("{");
+        if (getFederatedUserId() != null) sb.append("FederatedUserId: " + getFederatedUserId() + ",");
         if (getArn() != null) sb.append("Arn: " + getArn() );
         sb.append("}");
         return sb.toString();

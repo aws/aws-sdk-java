@@ -185,9 +185,9 @@ public class TrustedAdvisorCheckRefreshStatus  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getCheckId() != null) sb.append("CheckId: " + getCheckId() + ",");    	
-        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");    	
+        sb.append("{");
+        if (getCheckId() != null) sb.append("CheckId: " + getCheckId() + ",");
+        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");
         if (getMillisUntilNextRefreshable() != null) sb.append("MillisUntilNextRefreshable: " + getMillisUntilNextRefreshable() );
         sb.append("}");
         return sb.toString();

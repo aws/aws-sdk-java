@@ -52,7 +52,7 @@ public class CreateImageRequest extends AmazonWebServiceRequest  implements Seri
      */
     private Boolean noReboot;
 
-    private java.util.List<BlockDeviceMapping> blockDeviceMappings;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<BlockDeviceMapping> blockDeviceMappings;
 
     /**
      * Default constructor for a new CreateImageRequest object.  Callers should use the
@@ -60,6 +60,8 @@ public class CreateImageRequest extends AmazonWebServiceRequest  implements Seri
      */
     public CreateImageRequest() {}
     
+
+
     /**
      * Constructs a new CreateImageRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -70,8 +72,8 @@ public class CreateImageRequest extends AmazonWebServiceRequest  implements Seri
      * @param name The name for the new AMI being created.
      */
     public CreateImageRequest(String instanceId, String name) {
-        this.instanceId = instanceId;
-        this.name = name;
+        setInstanceId(instanceId);
+        setName(name);
     }
 
     
@@ -269,7 +271,8 @@ public class CreateImageRequest extends AmazonWebServiceRequest  implements Seri
     public java.util.List<BlockDeviceMapping> getBlockDeviceMappings() {
         
         if (blockDeviceMappings == null) {
-            blockDeviceMappings = new java.util.ArrayList<BlockDeviceMapping>();
+              blockDeviceMappings = new com.amazonaws.internal.ListWithAutoConstructFlag<BlockDeviceMapping>();
+              blockDeviceMappings.setAutoConstruct(true);
         }
         return blockDeviceMappings;
     }
@@ -284,8 +287,7 @@ public class CreateImageRequest extends AmazonWebServiceRequest  implements Seri
             this.blockDeviceMappings = null;
             return;
         }
-
-        java.util.List<BlockDeviceMapping> blockDeviceMappingsCopy = new java.util.ArrayList<BlockDeviceMapping>(blockDeviceMappings.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<BlockDeviceMapping> blockDeviceMappingsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<BlockDeviceMapping>(blockDeviceMappings.size());
         blockDeviceMappingsCopy.addAll(blockDeviceMappings);
         this.blockDeviceMappings = blockDeviceMappingsCopy;
     }
@@ -322,7 +324,7 @@ public class CreateImageRequest extends AmazonWebServiceRequest  implements Seri
         if (blockDeviceMappings == null) {
             this.blockDeviceMappings = null;
         } else {
-            java.util.List<BlockDeviceMapping> blockDeviceMappingsCopy = new java.util.ArrayList<BlockDeviceMapping>(blockDeviceMappings.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<BlockDeviceMapping> blockDeviceMappingsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<BlockDeviceMapping>(blockDeviceMappings.size());
             blockDeviceMappingsCopy.addAll(blockDeviceMappings);
             this.blockDeviceMappings = blockDeviceMappingsCopy;
         }
@@ -341,11 +343,11 @@ public class CreateImageRequest extends AmazonWebServiceRequest  implements Seri
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ",");    	
-        if (getName() != null) sb.append("Name: " + getName() + ",");    	
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");    	
-        if (isNoReboot() != null) sb.append("NoReboot: " + isNoReboot() + ",");    	
+        sb.append("{");
+        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ",");
+        if (getName() != null) sb.append("Name: " + getName() + ",");
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");
+        if (isNoReboot() != null) sb.append("NoReboot: " + isNoReboot() + ",");
         if (getBlockDeviceMappings() != null) sb.append("BlockDeviceMappings: " + getBlockDeviceMappings() );
         sb.append("}");
         return sb.toString();

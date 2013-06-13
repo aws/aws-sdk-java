@@ -108,8 +108,8 @@ public class GroupIdentifier  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getGroupName() != null) sb.append("GroupName: " + getGroupName() + ",");    	
+        sb.append("{");
+        if (getGroupName() != null) sb.append("GroupName: " + getGroupName() + ",");
         if (getGroupId() != null) sb.append("GroupId: " + getGroupId() );
         sb.append("}");
         return sb.toString();

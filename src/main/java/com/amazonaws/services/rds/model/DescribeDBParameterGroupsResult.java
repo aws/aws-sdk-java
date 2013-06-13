@@ -32,7 +32,7 @@ public class DescribeDBParameterGroupsResult  implements Serializable  {
     /**
      * A list of <a>DBParameterGroup</a> instances.
      */
-    private java.util.List<DBParameterGroup> dBParameterGroups;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<DBParameterGroup> dBParameterGroups;
 
     /**
      * An optional pagination token provided by a previous request. If this
@@ -88,7 +88,8 @@ public class DescribeDBParameterGroupsResult  implements Serializable  {
     public java.util.List<DBParameterGroup> getDBParameterGroups() {
         
         if (dBParameterGroups == null) {
-            dBParameterGroups = new java.util.ArrayList<DBParameterGroup>();
+              dBParameterGroups = new com.amazonaws.internal.ListWithAutoConstructFlag<DBParameterGroup>();
+              dBParameterGroups.setAutoConstruct(true);
         }
         return dBParameterGroups;
     }
@@ -103,8 +104,7 @@ public class DescribeDBParameterGroupsResult  implements Serializable  {
             this.dBParameterGroups = null;
             return;
         }
-
-        java.util.List<DBParameterGroup> dBParameterGroupsCopy = new java.util.ArrayList<DBParameterGroup>(dBParameterGroups.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<DBParameterGroup> dBParameterGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<DBParameterGroup>(dBParameterGroups.size());
         dBParameterGroupsCopy.addAll(dBParameterGroups);
         this.dBParameterGroups = dBParameterGroupsCopy;
     }
@@ -141,7 +141,7 @@ public class DescribeDBParameterGroupsResult  implements Serializable  {
         if (dBParameterGroups == null) {
             this.dBParameterGroups = null;
         } else {
-            java.util.List<DBParameterGroup> dBParameterGroupsCopy = new java.util.ArrayList<DBParameterGroup>(dBParameterGroups.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<DBParameterGroup> dBParameterGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<DBParameterGroup>(dBParameterGroups.size());
             dBParameterGroupsCopy.addAll(dBParameterGroups);
             this.dBParameterGroups = dBParameterGroupsCopy;
         }
@@ -160,8 +160,8 @@ public class DescribeDBParameterGroupsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");    	
+        sb.append("{");
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");
         if (getDBParameterGroups() != null) sb.append("DBParameterGroups: " + getDBParameterGroups() );
         sb.append("}");
         return sb.toString();

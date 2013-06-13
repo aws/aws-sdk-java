@@ -25,7 +25,7 @@ public class ListGroupsForUserResult  implements Serializable  {
     /**
      * A list of groups.
      */
-    private java.util.List<Group> groups;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Group> groups;
 
     /**
      * A flag that indicates whether there are more groups to list. If your
@@ -54,7 +54,8 @@ public class ListGroupsForUserResult  implements Serializable  {
     public java.util.List<Group> getGroups() {
         
         if (groups == null) {
-            groups = new java.util.ArrayList<Group>();
+              groups = new com.amazonaws.internal.ListWithAutoConstructFlag<Group>();
+              groups.setAutoConstruct(true);
         }
         return groups;
     }
@@ -69,8 +70,7 @@ public class ListGroupsForUserResult  implements Serializable  {
             this.groups = null;
             return;
         }
-
-        java.util.List<Group> groupsCopy = new java.util.ArrayList<Group>(groups.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Group> groupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Group>(groups.size());
         groupsCopy.addAll(groups);
         this.groups = groupsCopy;
     }
@@ -107,7 +107,7 @@ public class ListGroupsForUserResult  implements Serializable  {
         if (groups == null) {
             this.groups = null;
         } else {
-            java.util.List<Group> groupsCopy = new java.util.ArrayList<Group>(groups.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Group> groupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Group>(groups.size());
             groupsCopy.addAll(groups);
             this.groups = groupsCopy;
         }
@@ -251,9 +251,9 @@ public class ListGroupsForUserResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getGroups() != null) sb.append("Groups: " + getGroups() + ",");    	
-        if (isTruncated() != null) sb.append("IsTruncated: " + isTruncated() + ",");    	
+        sb.append("{");
+        if (getGroups() != null) sb.append("Groups: " + getGroups() + ",");
+        if (isTruncated() != null) sb.append("IsTruncated: " + isTruncated() + ",");
         if (getMarker() != null) sb.append("Marker: " + getMarker() );
         sb.append("}");
         return sb.toString();

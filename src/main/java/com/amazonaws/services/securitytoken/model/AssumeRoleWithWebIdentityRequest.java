@@ -542,12 +542,12 @@ public class AssumeRoleWithWebIdentityRequest extends AmazonWebServiceRequest  i
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getRoleArn() != null) sb.append("RoleArn: " + getRoleArn() + ",");    	
-        if (getRoleSessionName() != null) sb.append("RoleSessionName: " + getRoleSessionName() + ",");    	
-        if (getWebIdentityToken() != null) sb.append("WebIdentityToken: " + getWebIdentityToken() + ",");    	
-        if (getProviderId() != null) sb.append("ProviderId: " + getProviderId() + ",");    	
-        if (getPolicy() != null) sb.append("Policy: " + getPolicy() + ",");    	
+        sb.append("{");
+        if (getRoleArn() != null) sb.append("RoleArn: " + getRoleArn() + ",");
+        if (getRoleSessionName() != null) sb.append("RoleSessionName: " + getRoleSessionName() + ",");
+        if (getWebIdentityToken() != null) sb.append("WebIdentityToken: " + getWebIdentityToken() + ",");
+        if (getProviderId() != null) sb.append("ProviderId: " + getProviderId() + ",");
+        if (getPolicy() != null) sb.append("Policy: " + getPolicy() + ",");
         if (getDurationSeconds() != null) sb.append("DurationSeconds: " + getDurationSeconds() );
         sb.append("}");
         return sb.toString();

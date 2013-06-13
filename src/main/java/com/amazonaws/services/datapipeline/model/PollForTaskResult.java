@@ -114,7 +114,7 @@ public class PollForTaskResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getTaskObject() != null) sb.append("TaskObject: " + getTaskObject() );
         sb.append("}");
         return sb.toString();

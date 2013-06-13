@@ -25,7 +25,7 @@ public class DescribeServicesResult  implements Serializable  {
     /**
      * JSON-formatted list of AWS services.
      */
-    private java.util.List<Service> services;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Service> services;
 
     /**
      * JSON-formatted list of AWS services.
@@ -35,7 +35,8 @@ public class DescribeServicesResult  implements Serializable  {
     public java.util.List<Service> getServices() {
         
         if (services == null) {
-            services = new java.util.ArrayList<Service>();
+              services = new com.amazonaws.internal.ListWithAutoConstructFlag<Service>();
+              services.setAutoConstruct(true);
         }
         return services;
     }
@@ -50,8 +51,7 @@ public class DescribeServicesResult  implements Serializable  {
             this.services = null;
             return;
         }
-
-        java.util.List<Service> servicesCopy = new java.util.ArrayList<Service>(services.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Service> servicesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Service>(services.size());
         servicesCopy.addAll(services);
         this.services = servicesCopy;
     }
@@ -88,7 +88,7 @@ public class DescribeServicesResult  implements Serializable  {
         if (services == null) {
             this.services = null;
         } else {
-            java.util.List<Service> servicesCopy = new java.util.ArrayList<Service>(services.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Service> servicesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Service>(services.size());
             servicesCopy.addAll(services);
             this.services = servicesCopy;
         }
@@ -107,7 +107,7 @@ public class DescribeServicesResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getServices() != null) sb.append("Services: " + getServices() );
         sb.append("}");
         return sb.toString();

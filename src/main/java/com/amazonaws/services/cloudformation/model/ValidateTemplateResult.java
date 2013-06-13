@@ -25,7 +25,7 @@ public class ValidateTemplateResult  implements Serializable  {
     /**
      * A list of <code>TemplateParameter</code> structures.
      */
-    private java.util.List<TemplateParameter> parameters;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<TemplateParameter> parameters;
 
     /**
      * The description found within the template.
@@ -40,7 +40,7 @@ public class ValidateTemplateResult  implements Serializable  {
      * actions with your template; otherwise, those actions return an
      * InsufficientCapabilities error.
      */
-    private java.util.List<String> capabilities;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> capabilities;
 
     /**
      * The capabilities reason found within the template.
@@ -55,7 +55,8 @@ public class ValidateTemplateResult  implements Serializable  {
     public java.util.List<TemplateParameter> getParameters() {
         
         if (parameters == null) {
-            parameters = new java.util.ArrayList<TemplateParameter>();
+              parameters = new com.amazonaws.internal.ListWithAutoConstructFlag<TemplateParameter>();
+              parameters.setAutoConstruct(true);
         }
         return parameters;
     }
@@ -70,8 +71,7 @@ public class ValidateTemplateResult  implements Serializable  {
             this.parameters = null;
             return;
         }
-
-        java.util.List<TemplateParameter> parametersCopy = new java.util.ArrayList<TemplateParameter>(parameters.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<TemplateParameter> parametersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<TemplateParameter>(parameters.size());
         parametersCopy.addAll(parameters);
         this.parameters = parametersCopy;
     }
@@ -108,7 +108,7 @@ public class ValidateTemplateResult  implements Serializable  {
         if (parameters == null) {
             this.parameters = null;
         } else {
-            java.util.List<TemplateParameter> parametersCopy = new java.util.ArrayList<TemplateParameter>(parameters.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<TemplateParameter> parametersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<TemplateParameter>(parameters.size());
             parametersCopy.addAll(parameters);
             this.parameters = parametersCopy;
         }
@@ -168,7 +168,8 @@ public class ValidateTemplateResult  implements Serializable  {
     public java.util.List<String> getCapabilities() {
         
         if (capabilities == null) {
-            capabilities = new java.util.ArrayList<String>();
+              capabilities = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              capabilities.setAutoConstruct(true);
         }
         return capabilities;
     }
@@ -193,8 +194,7 @@ public class ValidateTemplateResult  implements Serializable  {
             this.capabilities = null;
             return;
         }
-
-        java.util.List<String> capabilitiesCopy = new java.util.ArrayList<String>(capabilities.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> capabilitiesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(capabilities.size());
         capabilitiesCopy.addAll(capabilities);
         this.capabilities = capabilitiesCopy;
     }
@@ -251,7 +251,7 @@ public class ValidateTemplateResult  implements Serializable  {
         if (capabilities == null) {
             this.capabilities = null;
         } else {
-            java.util.List<String> capabilitiesCopy = new java.util.ArrayList<String>(capabilities.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> capabilitiesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(capabilities.size());
             capabilitiesCopy.addAll(capabilities);
             this.capabilities = capabilitiesCopy;
         }
@@ -304,10 +304,10 @@ public class ValidateTemplateResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getParameters() != null) sb.append("Parameters: " + getParameters() + ",");    	
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");    	
-        if (getCapabilities() != null) sb.append("Capabilities: " + getCapabilities() + ",");    	
+        sb.append("{");
+        if (getParameters() != null) sb.append("Parameters: " + getParameters() + ",");
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");
+        if (getCapabilities() != null) sb.append("Capabilities: " + getCapabilities() + ",");
         if (getCapabilitiesReason() != null) sb.append("CapabilitiesReason: " + getCapabilitiesReason() );
         sb.append("}");
         return sb.toString();

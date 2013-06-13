@@ -112,6 +112,8 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      */
     public CreateDBInstanceReadReplicaRequest() {}
     
+
+
     /**
      * Constructs a new CreateDBInstanceReadReplicaRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -127,8 +129,8 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
      * Instance.
      */
     public CreateDBInstanceReadReplicaRequest(String dBInstanceIdentifier, String sourceDBInstanceIdentifier) {
-        this.dBInstanceIdentifier = dBInstanceIdentifier;
-        this.sourceDBInstanceIdentifier = sourceDBInstanceIdentifier;
+        setDBInstanceIdentifier(dBInstanceIdentifier);
+        setSourceDBInstanceIdentifier(sourceDBInstanceIdentifier);
     }
 
     
@@ -664,15 +666,15 @@ public class CreateDBInstanceReadReplicaRequest extends AmazonWebServiceRequest 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getDBInstanceIdentifier() != null) sb.append("DBInstanceIdentifier: " + getDBInstanceIdentifier() + ",");    	
-        if (getSourceDBInstanceIdentifier() != null) sb.append("SourceDBInstanceIdentifier: " + getSourceDBInstanceIdentifier() + ",");    	
-        if (getDBInstanceClass() != null) sb.append("DBInstanceClass: " + getDBInstanceClass() + ",");    	
-        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");    	
-        if (getPort() != null) sb.append("Port: " + getPort() + ",");    	
-        if (isAutoMinorVersionUpgrade() != null) sb.append("AutoMinorVersionUpgrade: " + isAutoMinorVersionUpgrade() + ",");    	
-        if (getIops() != null) sb.append("Iops: " + getIops() + ",");    	
-        if (getOptionGroupName() != null) sb.append("OptionGroupName: " + getOptionGroupName() + ",");    	
+        sb.append("{");
+        if (getDBInstanceIdentifier() != null) sb.append("DBInstanceIdentifier: " + getDBInstanceIdentifier() + ",");
+        if (getSourceDBInstanceIdentifier() != null) sb.append("SourceDBInstanceIdentifier: " + getSourceDBInstanceIdentifier() + ",");
+        if (getDBInstanceClass() != null) sb.append("DBInstanceClass: " + getDBInstanceClass() + ",");
+        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");
+        if (getPort() != null) sb.append("Port: " + getPort() + ",");
+        if (isAutoMinorVersionUpgrade() != null) sb.append("AutoMinorVersionUpgrade: " + isAutoMinorVersionUpgrade() + ",");
+        if (getIops() != null) sb.append("Iops: " + getIops() + ",");
+        if (getOptionGroupName() != null) sb.append("OptionGroupName: " + getOptionGroupName() + ",");
         if (isPubliclyAccessible() != null) sb.append("PubliclyAccessible: " + isPubliclyAccessible() );
         sb.append("}");
         return sb.toString();

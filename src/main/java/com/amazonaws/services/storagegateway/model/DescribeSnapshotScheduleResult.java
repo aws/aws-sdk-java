@@ -369,11 +369,11 @@ public class DescribeSnapshotScheduleResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getVolumeARN() != null) sb.append("VolumeARN: " + getVolumeARN() + ",");    	
-        if (getStartAt() != null) sb.append("StartAt: " + getStartAt() + ",");    	
-        if (getRecurrenceInHours() != null) sb.append("RecurrenceInHours: " + getRecurrenceInHours() + ",");    	
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");    	
+        sb.append("{");
+        if (getVolumeARN() != null) sb.append("VolumeARN: " + getVolumeARN() + ",");
+        if (getStartAt() != null) sb.append("StartAt: " + getStartAt() + ",");
+        if (getRecurrenceInHours() != null) sb.append("RecurrenceInHours: " + getRecurrenceInHours() + ",");
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");
         if (getTimezone() != null) sb.append("Timezone: " + getTimezone() );
         sb.append("}");
         return sb.toString();

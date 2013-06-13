@@ -24,9 +24,9 @@ import java.io.Serializable;
  */
 public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest  implements Serializable  {
 
-    private java.util.List<String> networkInterfaceIds;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> networkInterfaceIds;
 
-    private java.util.List<Filter> filters;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filters;
 
     /**
      * Returns the value of the NetworkInterfaceIds property for this object.
@@ -36,7 +36,8 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest  i
     public java.util.List<String> getNetworkInterfaceIds() {
         
         if (networkInterfaceIds == null) {
-            networkInterfaceIds = new java.util.ArrayList<String>();
+              networkInterfaceIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              networkInterfaceIds.setAutoConstruct(true);
         }
         return networkInterfaceIds;
     }
@@ -51,8 +52,7 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest  i
             this.networkInterfaceIds = null;
             return;
         }
-
-        java.util.List<String> networkInterfaceIdsCopy = new java.util.ArrayList<String>(networkInterfaceIds.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> networkInterfaceIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(networkInterfaceIds.size());
         networkInterfaceIdsCopy.addAll(networkInterfaceIds);
         this.networkInterfaceIds = networkInterfaceIdsCopy;
     }
@@ -89,7 +89,7 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest  i
         if (networkInterfaceIds == null) {
             this.networkInterfaceIds = null;
         } else {
-            java.util.List<String> networkInterfaceIdsCopy = new java.util.ArrayList<String>(networkInterfaceIds.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> networkInterfaceIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(networkInterfaceIds.size());
             networkInterfaceIdsCopy.addAll(networkInterfaceIds);
             this.networkInterfaceIds = networkInterfaceIdsCopy;
         }
@@ -105,7 +105,8 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest  i
     public java.util.List<Filter> getFilters() {
         
         if (filters == null) {
-            filters = new java.util.ArrayList<Filter>();
+              filters = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>();
+              filters.setAutoConstruct(true);
         }
         return filters;
     }
@@ -120,8 +121,7 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest  i
             this.filters = null;
             return;
         }
-
-        java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>(filters.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filtersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>(filters.size());
         filtersCopy.addAll(filters);
         this.filters = filtersCopy;
     }
@@ -158,7 +158,7 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest  i
         if (filters == null) {
             this.filters = null;
         } else {
-            java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>(filters.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filtersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>(filters.size());
             filtersCopy.addAll(filters);
             this.filters = filtersCopy;
         }
@@ -177,8 +177,8 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest  i
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getNetworkInterfaceIds() != null) sb.append("NetworkInterfaceIds: " + getNetworkInterfaceIds() + ",");    	
+        sb.append("{");
+        if (getNetworkInterfaceIds() != null) sb.append("NetworkInterfaceIds: " + getNetworkInterfaceIds() + ",");
         if (getFilters() != null) sb.append("Filters: " + getFilters() );
         sb.append("}");
         return sb.toString();

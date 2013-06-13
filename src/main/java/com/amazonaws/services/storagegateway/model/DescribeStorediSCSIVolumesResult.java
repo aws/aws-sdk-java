@@ -58,7 +58,7 @@ public class DescribeStorediSCSIVolumesResult  implements Serializable  {
      * type of the volume. Currently, on STORED volumes are supported. </li>
      * </ul>
      */
-    private java.util.List<StorediSCSIVolume> storediSCSIVolumes;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<StorediSCSIVolume> storediSCSIVolumes;
 
     /**
      * Describes a single unit of output from
@@ -134,7 +134,8 @@ public class DescribeStorediSCSIVolumesResult  implements Serializable  {
     public java.util.List<StorediSCSIVolume> getStorediSCSIVolumes() {
         
         if (storediSCSIVolumes == null) {
-            storediSCSIVolumes = new java.util.ArrayList<StorediSCSIVolume>();
+              storediSCSIVolumes = new com.amazonaws.internal.ListWithAutoConstructFlag<StorediSCSIVolume>();
+              storediSCSIVolumes.setAutoConstruct(true);
         }
         return storediSCSIVolumes;
     }
@@ -215,8 +216,7 @@ public class DescribeStorediSCSIVolumesResult  implements Serializable  {
             this.storediSCSIVolumes = null;
             return;
         }
-
-        java.util.List<StorediSCSIVolume> storediSCSIVolumesCopy = new java.util.ArrayList<StorediSCSIVolume>(storediSCSIVolumes.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<StorediSCSIVolume> storediSCSIVolumesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<StorediSCSIVolume>(storediSCSIVolumes.size());
         storediSCSIVolumesCopy.addAll(storediSCSIVolumes);
         this.storediSCSIVolumes = storediSCSIVolumesCopy;
     }
@@ -385,7 +385,7 @@ public class DescribeStorediSCSIVolumesResult  implements Serializable  {
         if (storediSCSIVolumes == null) {
             this.storediSCSIVolumes = null;
         } else {
-            java.util.List<StorediSCSIVolume> storediSCSIVolumesCopy = new java.util.ArrayList<StorediSCSIVolume>(storediSCSIVolumes.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<StorediSCSIVolume> storediSCSIVolumesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<StorediSCSIVolume>(storediSCSIVolumes.size());
             storediSCSIVolumesCopy.addAll(storediSCSIVolumes);
             this.storediSCSIVolumes = storediSCSIVolumesCopy;
         }
@@ -404,7 +404,7 @@ public class DescribeStorediSCSIVolumesResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getStorediSCSIVolumes() != null) sb.append("StorediSCSIVolumes: " + getStorediSCSIVolumes() );
         sb.append("}");
         return sb.toString();

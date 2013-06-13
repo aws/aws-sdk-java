@@ -170,8 +170,8 @@ public class InstanceIdentity  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getDocument() != null) sb.append("Document: " + getDocument() + ",");    	
+        sb.append("{");
+        if (getDocument() != null) sb.append("Document: " + getDocument() + ",");
         if (getSignature() != null) sb.append("Signature: " + getSignature() );
         sb.append("}");
         return sb.toString();

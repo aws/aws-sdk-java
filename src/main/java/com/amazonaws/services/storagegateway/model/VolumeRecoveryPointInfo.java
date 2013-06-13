@@ -229,10 +229,10 @@ public class VolumeRecoveryPointInfo  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getVolumeARN() != null) sb.append("VolumeARN: " + getVolumeARN() + ",");    	
-        if (getVolumeSizeInBytes() != null) sb.append("VolumeSizeInBytes: " + getVolumeSizeInBytes() + ",");    	
-        if (getVolumeUsageInBytes() != null) sb.append("VolumeUsageInBytes: " + getVolumeUsageInBytes() + ",");    	
+        sb.append("{");
+        if (getVolumeARN() != null) sb.append("VolumeARN: " + getVolumeARN() + ",");
+        if (getVolumeSizeInBytes() != null) sb.append("VolumeSizeInBytes: " + getVolumeSizeInBytes() + ",");
+        if (getVolumeUsageInBytes() != null) sb.append("VolumeUsageInBytes: " + getVolumeUsageInBytes() + ",");
         if (getVolumeRecoveryPointTime() != null) sb.append("VolumeRecoveryPointTime: " + getVolumeRecoveryPointTime() );
         sb.append("}");
         return sb.toString();

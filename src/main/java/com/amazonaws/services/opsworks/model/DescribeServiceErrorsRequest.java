@@ -45,7 +45,7 @@ public class DescribeServiceErrorsRequest extends AmazonWebServiceRequest  imple
      * <code>DescribeServiceErrors</code> returns descriptions of the
      * specified errors. Otherwise, it returns a description of every error.
      */
-    private java.util.List<String> serviceErrorIds;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> serviceErrorIds;
 
     /**
      * The stack ID. If you use this parameter,
@@ -151,7 +151,8 @@ public class DescribeServiceErrorsRequest extends AmazonWebServiceRequest  imple
     public java.util.List<String> getServiceErrorIds() {
         
         if (serviceErrorIds == null) {
-            serviceErrorIds = new java.util.ArrayList<String>();
+              serviceErrorIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              serviceErrorIds.setAutoConstruct(true);
         }
         return serviceErrorIds;
     }
@@ -170,8 +171,7 @@ public class DescribeServiceErrorsRequest extends AmazonWebServiceRequest  imple
             this.serviceErrorIds = null;
             return;
         }
-
-        java.util.List<String> serviceErrorIdsCopy = new java.util.ArrayList<String>(serviceErrorIds.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> serviceErrorIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(serviceErrorIds.size());
         serviceErrorIdsCopy.addAll(serviceErrorIds);
         this.serviceErrorIds = serviceErrorIdsCopy;
     }
@@ -216,7 +216,7 @@ public class DescribeServiceErrorsRequest extends AmazonWebServiceRequest  imple
         if (serviceErrorIds == null) {
             this.serviceErrorIds = null;
         } else {
-            java.util.List<String> serviceErrorIdsCopy = new java.util.ArrayList<String>(serviceErrorIds.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> serviceErrorIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(serviceErrorIds.size());
             serviceErrorIdsCopy.addAll(serviceErrorIds);
             this.serviceErrorIds = serviceErrorIdsCopy;
         }
@@ -235,9 +235,9 @@ public class DescribeServiceErrorsRequest extends AmazonWebServiceRequest  imple
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getStackId() != null) sb.append("StackId: " + getStackId() + ",");    	
-        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ",");    	
+        sb.append("{");
+        if (getStackId() != null) sb.append("StackId: " + getStackId() + ",");
+        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ",");
         if (getServiceErrorIds() != null) sb.append("ServiceErrorIds: " + getServiceErrorIds() );
         sb.append("}");
         return sb.toString();

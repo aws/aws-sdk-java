@@ -239,9 +239,9 @@ public class CreateRoleRequest extends AmazonWebServiceRequest  implements Seria
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getPath() != null) sb.append("Path: " + getPath() + ",");    	
-        if (getRoleName() != null) sb.append("RoleName: " + getRoleName() + ",");    	
+        sb.append("{");
+        if (getPath() != null) sb.append("Path: " + getPath() + ",");
+        if (getRoleName() != null) sb.append("RoleName: " + getRoleName() + ",");
         if (getAssumeRolePolicyDocument() != null) sb.append("AssumeRolePolicyDocument: " + getAssumeRolePolicyDocument() );
         sb.append("}");
         return sb.toString();

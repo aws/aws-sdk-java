@@ -314,7 +314,7 @@ public class GetAccountSummaryResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getSummaryMap() != null) sb.append("SummaryMap: " + getSummaryMap() );
         sb.append("}");
         return sb.toString();

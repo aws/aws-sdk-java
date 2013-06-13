@@ -24,7 +24,7 @@ public class ListJobsByPipelineResult  implements Serializable  {
      * An array of <code>Job</code> objects that are in the specified
      * pipeline.
      */
-    private java.util.List<Job> jobs;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Job> jobs;
 
     /**
      * A value that you use to access the second and subsequent pages of
@@ -46,6 +46,10 @@ public class ListJobsByPipelineResult  implements Serializable  {
      */
     public java.util.List<Job> getJobs() {
         
+        if (jobs == null) {
+              jobs = new com.amazonaws.internal.ListWithAutoConstructFlag<Job>();
+              jobs.setAutoConstruct(true);
+        }
         return jobs;
     }
     
@@ -61,8 +65,7 @@ public class ListJobsByPipelineResult  implements Serializable  {
             this.jobs = null;
             return;
         }
-
-        java.util.List<Job> jobsCopy = new java.util.ArrayList<Job>(jobs.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Job> jobsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Job>(jobs.size());
         jobsCopy.addAll(jobs);
         this.jobs = jobsCopy;
     }
@@ -103,7 +106,7 @@ public class ListJobsByPipelineResult  implements Serializable  {
         if (jobs == null) {
             this.jobs = null;
         } else {
-            java.util.List<Job> jobsCopy = new java.util.ArrayList<Job>(jobs.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Job> jobsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Job>(jobs.size());
             jobsCopy.addAll(jobs);
             this.jobs = jobsCopy;
         }
@@ -183,8 +186,8 @@ public class ListJobsByPipelineResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getJobs() != null) sb.append("Jobs: " + getJobs() + ",");    	
+        sb.append("{");
+        if (getJobs() != null) sb.append("Jobs: " + getJobs() + ",");
         if (getNextPageToken() != null) sb.append("NextPageToken: " + getNextPageToken() );
         sb.append("}");
         return sb.toString();

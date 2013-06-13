@@ -150,9 +150,9 @@ public class InstanceStateChange  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ",");    	
-        if (getCurrentState() != null) sb.append("CurrentState: " + getCurrentState() + ",");    	
+        sb.append("{");
+        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ",");
+        if (getCurrentState() != null) sb.append("CurrentState: " + getCurrentState() + ",");
         if (getPreviousState() != null) sb.append("PreviousState: " + getPreviousState() );
         sb.append("}");
         return sb.toString();

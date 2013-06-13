@@ -174,8 +174,8 @@ public class UpdateDefaultSearchFieldRequest extends AmazonWebServiceRequest  im
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getDomainName() != null) sb.append("DomainName: " + getDomainName() + ",");    	
+        sb.append("{");
+        if (getDomainName() != null) sb.append("DomainName: " + getDomainName() + ",");
         if (getDefaultSearchField() != null) sb.append("DefaultSearchField: " + getDefaultSearchField() );
         sb.append("}");
         return sb.toString();

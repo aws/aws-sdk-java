@@ -23,13 +23,13 @@ public class SendMessageBatchResult  implements Serializable  {
     /**
      * A list of <a>SendMessageBatchResultEntry</a>s.
      */
-    private java.util.List<SendMessageBatchResultEntry> successful;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<SendMessageBatchResultEntry> successful;
 
     /**
      * A list of <a>BatchResultErrorEntry</a>s with the error detail about
      * each message that could not be enqueued.
      */
-    private java.util.List<BatchResultErrorEntry> failed;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<BatchResultErrorEntry> failed;
 
     /**
      * A list of <a>SendMessageBatchResultEntry</a>s.
@@ -39,7 +39,8 @@ public class SendMessageBatchResult  implements Serializable  {
     public java.util.List<SendMessageBatchResultEntry> getSuccessful() {
         
         if (successful == null) {
-            successful = new java.util.ArrayList<SendMessageBatchResultEntry>();
+              successful = new com.amazonaws.internal.ListWithAutoConstructFlag<SendMessageBatchResultEntry>();
+              successful.setAutoConstruct(true);
         }
         return successful;
     }
@@ -54,8 +55,7 @@ public class SendMessageBatchResult  implements Serializable  {
             this.successful = null;
             return;
         }
-
-        java.util.List<SendMessageBatchResultEntry> successfulCopy = new java.util.ArrayList<SendMessageBatchResultEntry>(successful.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<SendMessageBatchResultEntry> successfulCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<SendMessageBatchResultEntry>(successful.size());
         successfulCopy.addAll(successful);
         this.successful = successfulCopy;
     }
@@ -92,7 +92,7 @@ public class SendMessageBatchResult  implements Serializable  {
         if (successful == null) {
             this.successful = null;
         } else {
-            java.util.List<SendMessageBatchResultEntry> successfulCopy = new java.util.ArrayList<SendMessageBatchResultEntry>(successful.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<SendMessageBatchResultEntry> successfulCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<SendMessageBatchResultEntry>(successful.size());
             successfulCopy.addAll(successful);
             this.successful = successfulCopy;
         }
@@ -110,7 +110,8 @@ public class SendMessageBatchResult  implements Serializable  {
     public java.util.List<BatchResultErrorEntry> getFailed() {
         
         if (failed == null) {
-            failed = new java.util.ArrayList<BatchResultErrorEntry>();
+              failed = new com.amazonaws.internal.ListWithAutoConstructFlag<BatchResultErrorEntry>();
+              failed.setAutoConstruct(true);
         }
         return failed;
     }
@@ -127,8 +128,7 @@ public class SendMessageBatchResult  implements Serializable  {
             this.failed = null;
             return;
         }
-
-        java.util.List<BatchResultErrorEntry> failedCopy = new java.util.ArrayList<BatchResultErrorEntry>(failed.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<BatchResultErrorEntry> failedCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<BatchResultErrorEntry>(failed.size());
         failedCopy.addAll(failed);
         this.failed = failedCopy;
     }
@@ -169,7 +169,7 @@ public class SendMessageBatchResult  implements Serializable  {
         if (failed == null) {
             this.failed = null;
         } else {
-            java.util.List<BatchResultErrorEntry> failedCopy = new java.util.ArrayList<BatchResultErrorEntry>(failed.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<BatchResultErrorEntry> failedCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<BatchResultErrorEntry>(failed.size());
             failedCopy.addAll(failed);
             this.failed = failedCopy;
         }
@@ -188,8 +188,8 @@ public class SendMessageBatchResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getSuccessful() != null) sb.append("Successful: " + getSuccessful() + ",");    	
+        sb.append("{");
+        if (getSuccessful() != null) sb.append("Successful: " + getSuccessful() + ",");
         if (getFailed() != null) sb.append("Failed: " + getFailed() );
         sb.append("}");
         return sb.toString();

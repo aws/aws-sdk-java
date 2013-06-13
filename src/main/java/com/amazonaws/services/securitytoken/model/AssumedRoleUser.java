@@ -181,8 +181,8 @@ public class AssumedRoleUser  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getAssumedRoleId() != null) sb.append("AssumedRoleId: " + getAssumedRoleId() + ",");    	
+        sb.append("{");
+        if (getAssumedRoleId() != null) sb.append("AssumedRoleId: " + getAssumedRoleId() + ",");
         if (getArn() != null) sb.append("Arn: " + getArn() );
         sb.append("}");
         return sb.toString();

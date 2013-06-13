@@ -86,8 +86,8 @@ public class DescribeCasesRequestMarshaller implements Marshaller<Request<Descri
           jsonWriter.object();
           
 
-            java.util.List<String> caseIdListList = describeCasesRequest.getCaseIdList();
-            if (caseIdListList != null) {
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> caseIdListList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(describeCasesRequest.getCaseIdList());
+            if (caseIdListList != null && !(caseIdListList.isAutoConstruct() && caseIdListList.isEmpty())) {
 
                 jsonWriter.key("caseIdList");
                 jsonWriter.array();

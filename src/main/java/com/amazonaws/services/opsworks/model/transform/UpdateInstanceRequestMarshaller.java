@@ -89,8 +89,8 @@ public class UpdateInstanceRequestMarshaller implements Marshaller<Request<Updat
                 jsonWriter.key("InstanceId").value(updateInstanceRequest.getInstanceId());
             }
 
-            java.util.List<String> layerIdsList = updateInstanceRequest.getLayerIds();
-            if (layerIdsList != null) {
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> layerIdsList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(updateInstanceRequest.getLayerIds());
+            if (layerIdsList != null && !(layerIdsList.isAutoConstruct() && layerIdsList.isEmpty())) {
 
                 jsonWriter.key("LayerIds");
                 jsonWriter.array();

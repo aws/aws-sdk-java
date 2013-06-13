@@ -25,7 +25,7 @@ public class ListServerCertificatesResult  implements Serializable  {
     /**
      * A list of server certificates.
      */
-    private java.util.List<ServerCertificateMetadata> serverCertificateMetadataList;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<ServerCertificateMetadata> serverCertificateMetadataList;
 
     /**
      * A flag that indicates whether there are more server certificates to
@@ -54,7 +54,8 @@ public class ListServerCertificatesResult  implements Serializable  {
     public java.util.List<ServerCertificateMetadata> getServerCertificateMetadataList() {
         
         if (serverCertificateMetadataList == null) {
-            serverCertificateMetadataList = new java.util.ArrayList<ServerCertificateMetadata>();
+              serverCertificateMetadataList = new com.amazonaws.internal.ListWithAutoConstructFlag<ServerCertificateMetadata>();
+              serverCertificateMetadataList.setAutoConstruct(true);
         }
         return serverCertificateMetadataList;
     }
@@ -69,8 +70,7 @@ public class ListServerCertificatesResult  implements Serializable  {
             this.serverCertificateMetadataList = null;
             return;
         }
-
-        java.util.List<ServerCertificateMetadata> serverCertificateMetadataListCopy = new java.util.ArrayList<ServerCertificateMetadata>(serverCertificateMetadataList.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<ServerCertificateMetadata> serverCertificateMetadataListCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ServerCertificateMetadata>(serverCertificateMetadataList.size());
         serverCertificateMetadataListCopy.addAll(serverCertificateMetadataList);
         this.serverCertificateMetadataList = serverCertificateMetadataListCopy;
     }
@@ -107,7 +107,7 @@ public class ListServerCertificatesResult  implements Serializable  {
         if (serverCertificateMetadataList == null) {
             this.serverCertificateMetadataList = null;
         } else {
-            java.util.List<ServerCertificateMetadata> serverCertificateMetadataListCopy = new java.util.ArrayList<ServerCertificateMetadata>(serverCertificateMetadataList.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<ServerCertificateMetadata> serverCertificateMetadataListCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ServerCertificateMetadata>(serverCertificateMetadataList.size());
             serverCertificateMetadataListCopy.addAll(serverCertificateMetadataList);
             this.serverCertificateMetadataList = serverCertificateMetadataListCopy;
         }
@@ -251,9 +251,9 @@ public class ListServerCertificatesResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getServerCertificateMetadataList() != null) sb.append("ServerCertificateMetadataList: " + getServerCertificateMetadataList() + ",");    	
-        if (isTruncated() != null) sb.append("IsTruncated: " + isTruncated() + ",");    	
+        sb.append("{");
+        if (getServerCertificateMetadataList() != null) sb.append("ServerCertificateMetadataList: " + getServerCertificateMetadataList() + ",");
+        if (isTruncated() != null) sb.append("IsTruncated: " + isTruncated() + ",");
         if (getMarker() != null) sb.append("Marker: " + getMarker() );
         sb.append("}");
         return sb.toString();

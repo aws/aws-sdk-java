@@ -43,6 +43,8 @@ public class DeleteLoadBalancerPolicyRequest extends AmazonWebServiceRequest  im
      */
     public DeleteLoadBalancerPolicyRequest() {}
     
+
+
     /**
      * Constructs a new DeleteLoadBalancerPolicyRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -53,8 +55,8 @@ public class DeleteLoadBalancerPolicyRequest extends AmazonWebServiceRequest  im
      * @param policyName The mnemonic name for the policy being deleted.
      */
     public DeleteLoadBalancerPolicyRequest(String loadBalancerName, String policyName) {
-        this.loadBalancerName = loadBalancerName;
-        this.policyName = policyName;
+        setLoadBalancerName(loadBalancerName);
+        setPolicyName(policyName);
     }
 
     
@@ -144,8 +146,8 @@ public class DeleteLoadBalancerPolicyRequest extends AmazonWebServiceRequest  im
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getLoadBalancerName() != null) sb.append("LoadBalancerName: " + getLoadBalancerName() + ",");    	
+        sb.append("{");
+        if (getLoadBalancerName() != null) sb.append("LoadBalancerName: " + getLoadBalancerName() + ",");
         if (getPolicyName() != null) sb.append("PolicyName: " + getPolicyName() );
         sb.append("}");
         return sb.toString();

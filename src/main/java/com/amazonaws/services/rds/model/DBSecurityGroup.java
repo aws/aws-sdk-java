@@ -56,12 +56,12 @@ public class DBSecurityGroup  implements Serializable  {
     /**
      * Contains a list of <a>EC2SecurityGroup</a> elements.
      */
-    private java.util.List<EC2SecurityGroup> eC2SecurityGroups;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<EC2SecurityGroup> eC2SecurityGroups;
 
     /**
      * Contains a list of <a>IPRange</a> elements.
      */
-    private java.util.List<IPRange> iPRanges;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<IPRange> iPRanges;
 
     /**
      * Provides the AWS ID of the owner of a specific DB Security Group.
@@ -207,7 +207,8 @@ public class DBSecurityGroup  implements Serializable  {
     public java.util.List<EC2SecurityGroup> getEC2SecurityGroups() {
         
         if (eC2SecurityGroups == null) {
-            eC2SecurityGroups = new java.util.ArrayList<EC2SecurityGroup>();
+              eC2SecurityGroups = new com.amazonaws.internal.ListWithAutoConstructFlag<EC2SecurityGroup>();
+              eC2SecurityGroups.setAutoConstruct(true);
         }
         return eC2SecurityGroups;
     }
@@ -222,8 +223,7 @@ public class DBSecurityGroup  implements Serializable  {
             this.eC2SecurityGroups = null;
             return;
         }
-
-        java.util.List<EC2SecurityGroup> eC2SecurityGroupsCopy = new java.util.ArrayList<EC2SecurityGroup>(eC2SecurityGroups.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<EC2SecurityGroup> eC2SecurityGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<EC2SecurityGroup>(eC2SecurityGroups.size());
         eC2SecurityGroupsCopy.addAll(eC2SecurityGroups);
         this.eC2SecurityGroups = eC2SecurityGroupsCopy;
     }
@@ -260,7 +260,7 @@ public class DBSecurityGroup  implements Serializable  {
         if (eC2SecurityGroups == null) {
             this.eC2SecurityGroups = null;
         } else {
-            java.util.List<EC2SecurityGroup> eC2SecurityGroupsCopy = new java.util.ArrayList<EC2SecurityGroup>(eC2SecurityGroups.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<EC2SecurityGroup> eC2SecurityGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<EC2SecurityGroup>(eC2SecurityGroups.size());
             eC2SecurityGroupsCopy.addAll(eC2SecurityGroups);
             this.eC2SecurityGroups = eC2SecurityGroupsCopy;
         }
@@ -276,7 +276,8 @@ public class DBSecurityGroup  implements Serializable  {
     public java.util.List<IPRange> getIPRanges() {
         
         if (iPRanges == null) {
-            iPRanges = new java.util.ArrayList<IPRange>();
+              iPRanges = new com.amazonaws.internal.ListWithAutoConstructFlag<IPRange>();
+              iPRanges.setAutoConstruct(true);
         }
         return iPRanges;
     }
@@ -291,8 +292,7 @@ public class DBSecurityGroup  implements Serializable  {
             this.iPRanges = null;
             return;
         }
-
-        java.util.List<IPRange> iPRangesCopy = new java.util.ArrayList<IPRange>(iPRanges.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<IPRange> iPRangesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<IPRange>(iPRanges.size());
         iPRangesCopy.addAll(iPRanges);
         this.iPRanges = iPRangesCopy;
     }
@@ -329,7 +329,7 @@ public class DBSecurityGroup  implements Serializable  {
         if (iPRanges == null) {
             this.iPRanges = null;
         } else {
-            java.util.List<IPRange> iPRangesCopy = new java.util.ArrayList<IPRange>(iPRanges.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<IPRange> iPRangesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<IPRange>(iPRanges.size());
             iPRangesCopy.addAll(iPRanges);
             this.iPRanges = iPRangesCopy;
         }
@@ -348,12 +348,12 @@ public class DBSecurityGroup  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getOwnerId() != null) sb.append("OwnerId: " + getOwnerId() + ",");    	
-        if (getDBSecurityGroupName() != null) sb.append("DBSecurityGroupName: " + getDBSecurityGroupName() + ",");    	
-        if (getDBSecurityGroupDescription() != null) sb.append("DBSecurityGroupDescription: " + getDBSecurityGroupDescription() + ",");    	
-        if (getVpcId() != null) sb.append("VpcId: " + getVpcId() + ",");    	
-        if (getEC2SecurityGroups() != null) sb.append("EC2SecurityGroups: " + getEC2SecurityGroups() + ",");    	
+        sb.append("{");
+        if (getOwnerId() != null) sb.append("OwnerId: " + getOwnerId() + ",");
+        if (getDBSecurityGroupName() != null) sb.append("DBSecurityGroupName: " + getDBSecurityGroupName() + ",");
+        if (getDBSecurityGroupDescription() != null) sb.append("DBSecurityGroupDescription: " + getDBSecurityGroupDescription() + ",");
+        if (getVpcId() != null) sb.append("VpcId: " + getVpcId() + ",");
+        if (getEC2SecurityGroups() != null) sb.append("EC2SecurityGroups: " + getEC2SecurityGroups() + ",");
         if (getIPRanges() != null) sb.append("IPRanges: " + getIPRanges() );
         sb.append("}");
         return sb.toString();

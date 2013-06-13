@@ -32,7 +32,7 @@ public class DescribeReservedNodeOfferingsResult  implements Serializable  {
     /**
      * A list of reserved node offerings.
      */
-    private java.util.List<ReservedNodeOffering> reservedNodeOfferings;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<ReservedNodeOffering> reservedNodeOfferings;
 
     /**
      * An optional marker returned by a previous
@@ -88,7 +88,8 @@ public class DescribeReservedNodeOfferingsResult  implements Serializable  {
     public java.util.List<ReservedNodeOffering> getReservedNodeOfferings() {
         
         if (reservedNodeOfferings == null) {
-            reservedNodeOfferings = new java.util.ArrayList<ReservedNodeOffering>();
+              reservedNodeOfferings = new com.amazonaws.internal.ListWithAutoConstructFlag<ReservedNodeOffering>();
+              reservedNodeOfferings.setAutoConstruct(true);
         }
         return reservedNodeOfferings;
     }
@@ -103,8 +104,7 @@ public class DescribeReservedNodeOfferingsResult  implements Serializable  {
             this.reservedNodeOfferings = null;
             return;
         }
-
-        java.util.List<ReservedNodeOffering> reservedNodeOfferingsCopy = new java.util.ArrayList<ReservedNodeOffering>(reservedNodeOfferings.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<ReservedNodeOffering> reservedNodeOfferingsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ReservedNodeOffering>(reservedNodeOfferings.size());
         reservedNodeOfferingsCopy.addAll(reservedNodeOfferings);
         this.reservedNodeOfferings = reservedNodeOfferingsCopy;
     }
@@ -141,7 +141,7 @@ public class DescribeReservedNodeOfferingsResult  implements Serializable  {
         if (reservedNodeOfferings == null) {
             this.reservedNodeOfferings = null;
         } else {
-            java.util.List<ReservedNodeOffering> reservedNodeOfferingsCopy = new java.util.ArrayList<ReservedNodeOffering>(reservedNodeOfferings.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<ReservedNodeOffering> reservedNodeOfferingsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ReservedNodeOffering>(reservedNodeOfferings.size());
             reservedNodeOfferingsCopy.addAll(reservedNodeOfferings);
             this.reservedNodeOfferings = reservedNodeOfferingsCopy;
         }
@@ -160,8 +160,8 @@ public class DescribeReservedNodeOfferingsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");    	
+        sb.append("{");
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");
         if (getReservedNodeOfferings() != null) sb.append("ReservedNodeOfferings: " + getReservedNodeOfferings() );
         sb.append("}");
         return sb.toString();

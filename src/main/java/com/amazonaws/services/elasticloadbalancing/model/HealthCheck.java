@@ -84,6 +84,8 @@ public class HealthCheck  implements Serializable  {
      */
     public HealthCheck() {}
     
+
+
     /**
      * Constructs a new HealthCheck object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -117,11 +119,11 @@ public class HealthCheck  implements Serializable  {
      * <i>Healthy</i> state.
      */
     public HealthCheck(String target, Integer interval, Integer timeout, Integer unhealthyThreshold, Integer healthyThreshold) {
-        this.target = target;
-        this.interval = interval;
-        this.timeout = timeout;
-        this.unhealthyThreshold = unhealthyThreshold;
-        this.healthyThreshold = healthyThreshold;
+        setTarget(target);
+        setInterval(interval);
+        setTimeout(timeout);
+        setUnhealthyThreshold(unhealthyThreshold);
+        setHealthyThreshold(healthyThreshold);
     }
 
     
@@ -457,11 +459,11 @@ public class HealthCheck  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getTarget() != null) sb.append("Target: " + getTarget() + ",");    	
-        if (getInterval() != null) sb.append("Interval: " + getInterval() + ",");    	
-        if (getTimeout() != null) sb.append("Timeout: " + getTimeout() + ",");    	
-        if (getUnhealthyThreshold() != null) sb.append("UnhealthyThreshold: " + getUnhealthyThreshold() + ",");    	
+        sb.append("{");
+        if (getTarget() != null) sb.append("Target: " + getTarget() + ",");
+        if (getInterval() != null) sb.append("Interval: " + getInterval() + ",");
+        if (getTimeout() != null) sb.append("Timeout: " + getTimeout() + ",");
+        if (getUnhealthyThreshold() != null) sb.append("UnhealthyThreshold: " + getUnhealthyThreshold() + ",");
         if (getHealthyThreshold() != null) sb.append("HealthyThreshold: " + getHealthyThreshold() );
         sb.append("}");
         return sb.toString();

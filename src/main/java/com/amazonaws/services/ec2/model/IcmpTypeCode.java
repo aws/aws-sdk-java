@@ -137,8 +137,8 @@ public class IcmpTypeCode  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getType() != null) sb.append("Type: " + getType() + ",");    	
+        sb.append("{");
+        if (getType() != null) sb.append("Type: " + getType() + ",");
         if (getCode() != null) sb.append("Code: " + getCode() );
         sb.append("}");
         return sb.toString();

@@ -29,7 +29,7 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest  implement
     /**
      * The optional list of Elastic IP addresses to describe.
      */
-    private java.util.List<String> publicIps;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> publicIps;
 
     /**
      * A list of filters used to match properties for Addresses. For a
@@ -38,9 +38,9 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest  implement
      * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      * EC2 API reference</a>.
      */
-    private java.util.List<Filter> filters;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filters;
 
-    private java.util.List<String> allocationIds;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> allocationIds;
 
     /**
      * The optional list of Elastic IP addresses to describe.
@@ -50,7 +50,8 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest  implement
     public java.util.List<String> getPublicIps() {
         
         if (publicIps == null) {
-            publicIps = new java.util.ArrayList<String>();
+              publicIps = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              publicIps.setAutoConstruct(true);
         }
         return publicIps;
     }
@@ -65,8 +66,7 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest  implement
             this.publicIps = null;
             return;
         }
-
-        java.util.List<String> publicIpsCopy = new java.util.ArrayList<String>(publicIps.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> publicIpsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(publicIps.size());
         publicIpsCopy.addAll(publicIps);
         this.publicIps = publicIpsCopy;
     }
@@ -103,7 +103,7 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest  implement
         if (publicIps == null) {
             this.publicIps = null;
         } else {
-            java.util.List<String> publicIpsCopy = new java.util.ArrayList<String>(publicIps.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> publicIpsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(publicIps.size());
             publicIpsCopy.addAll(publicIps);
             this.publicIps = publicIpsCopy;
         }
@@ -127,7 +127,8 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest  implement
     public java.util.List<Filter> getFilters() {
         
         if (filters == null) {
-            filters = new java.util.ArrayList<Filter>();
+              filters = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>();
+              filters.setAutoConstruct(true);
         }
         return filters;
     }
@@ -150,8 +151,7 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest  implement
             this.filters = null;
             return;
         }
-
-        java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>(filters.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filtersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>(filters.size());
         filtersCopy.addAll(filters);
         this.filters = filtersCopy;
     }
@@ -204,7 +204,7 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest  implement
         if (filters == null) {
             this.filters = null;
         } else {
-            java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>(filters.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filtersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>(filters.size());
             filtersCopy.addAll(filters);
             this.filters = filtersCopy;
         }
@@ -220,7 +220,8 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest  implement
     public java.util.List<String> getAllocationIds() {
         
         if (allocationIds == null) {
-            allocationIds = new java.util.ArrayList<String>();
+              allocationIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              allocationIds.setAutoConstruct(true);
         }
         return allocationIds;
     }
@@ -235,8 +236,7 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest  implement
             this.allocationIds = null;
             return;
         }
-
-        java.util.List<String> allocationIdsCopy = new java.util.ArrayList<String>(allocationIds.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> allocationIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(allocationIds.size());
         allocationIdsCopy.addAll(allocationIds);
         this.allocationIds = allocationIdsCopy;
     }
@@ -273,7 +273,7 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest  implement
         if (allocationIds == null) {
             this.allocationIds = null;
         } else {
-            java.util.List<String> allocationIdsCopy = new java.util.ArrayList<String>(allocationIds.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> allocationIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(allocationIds.size());
             allocationIdsCopy.addAll(allocationIds);
             this.allocationIds = allocationIdsCopy;
         }
@@ -292,9 +292,9 @@ public class DescribeAddressesRequest extends AmazonWebServiceRequest  implement
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getPublicIps() != null) sb.append("PublicIps: " + getPublicIps() + ",");    	
-        if (getFilters() != null) sb.append("Filters: " + getFilters() + ",");    	
+        sb.append("{");
+        if (getPublicIps() != null) sb.append("PublicIps: " + getPublicIps() + ",");
+        if (getFilters() != null) sb.append("Filters: " + getFilters() + ",");
         if (getAllocationIds() != null) sb.append("AllocationIds: " + getAllocationIds() );
         sb.append("}");
         return sb.toString();

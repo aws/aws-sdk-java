@@ -105,6 +105,8 @@ public class AttributeValueUpdate  implements Serializable  {
      */
     public AttributeValueUpdate() {}
     
+
+
     /**
      * Constructs a new AttributeValueUpdate object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -170,8 +172,8 @@ public class AttributeValueUpdate  implements Serializable  {
      * set; no other data types can be specified. </li> </ul>
      */
     public AttributeValueUpdate(AttributeValue value, String action) {
-        this.value = value;
-        this.action = action;
+        setValue(value);
+        setAction(action);
     }
 
     
@@ -929,8 +931,8 @@ public class AttributeValueUpdate  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getValue() != null) sb.append("Value: " + getValue() + ",");    	
+        sb.append("{");
+        if (getValue() != null) sb.append("Value: " + getValue() + ",");
         if (getAction() != null) sb.append("Action: " + getAction() );
         sb.append("}");
         return sb.toString();

@@ -98,6 +98,8 @@ public class User  implements Serializable  {
      */
     public User() {}
     
+
+
     /**
      * Constructs a new User object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -121,11 +123,11 @@ public class User  implements Serializable  {
      * @param createDate The date when the user was created.
      */
     public User(String path, String userName, String userId, String arn, java.util.Date createDate) {
-        this.path = path;
-        this.userName = userName;
-        this.userId = userId;
-        this.arn = arn;
-        this.createDate = createDate;
+        setPath(path);
+        setUserName(userName);
+        setUserId(userId);
+        setArn(arn);
+        setCreateDate(createDate);
     }
 
     
@@ -422,11 +424,11 @@ public class User  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getPath() != null) sb.append("Path: " + getPath() + ",");    	
-        if (getUserName() != null) sb.append("UserName: " + getUserName() + ",");    	
-        if (getUserId() != null) sb.append("UserId: " + getUserId() + ",");    	
-        if (getArn() != null) sb.append("Arn: " + getArn() + ",");    	
+        sb.append("{");
+        if (getPath() != null) sb.append("Path: " + getPath() + ",");
+        if (getUserName() != null) sb.append("UserName: " + getUserName() + ",");
+        if (getUserId() != null) sb.append("UserId: " + getUserId() + ",");
+        if (getArn() != null) sb.append("Arn: " + getArn() + ",");
         if (getCreateDate() != null) sb.append("CreateDate: " + getCreateDate() );
         sb.append("}");
         return sb.toString();

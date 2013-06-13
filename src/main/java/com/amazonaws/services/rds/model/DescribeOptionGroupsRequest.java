@@ -309,11 +309,11 @@ public class DescribeOptionGroupsRequest extends AmazonWebServiceRequest  implem
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getOptionGroupName() != null) sb.append("OptionGroupName: " + getOptionGroupName() + ",");    	
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");    	
-        if (getMaxRecords() != null) sb.append("MaxRecords: " + getMaxRecords() + ",");    	
-        if (getEngineName() != null) sb.append("EngineName: " + getEngineName() + ",");    	
+        sb.append("{");
+        if (getOptionGroupName() != null) sb.append("OptionGroupName: " + getOptionGroupName() + ",");
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");
+        if (getMaxRecords() != null) sb.append("MaxRecords: " + getMaxRecords() + ",");
+        if (getEngineName() != null) sb.append("EngineName: " + getEngineName() + ",");
         if (getMajorEngineVersion() != null) sb.append("MajorEngineVersion: " + getMajorEngineVersion() );
         sb.append("}");
         return sb.toString();

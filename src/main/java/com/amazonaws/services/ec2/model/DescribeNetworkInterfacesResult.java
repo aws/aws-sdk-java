@@ -20,7 +20,7 @@ import java.io.Serializable;
  */
 public class DescribeNetworkInterfacesResult  implements Serializable  {
 
-    private java.util.List<NetworkInterface> networkInterfaces;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<NetworkInterface> networkInterfaces;
 
     /**
      * Returns the value of the NetworkInterfaces property for this object.
@@ -30,7 +30,8 @@ public class DescribeNetworkInterfacesResult  implements Serializable  {
     public java.util.List<NetworkInterface> getNetworkInterfaces() {
         
         if (networkInterfaces == null) {
-            networkInterfaces = new java.util.ArrayList<NetworkInterface>();
+              networkInterfaces = new com.amazonaws.internal.ListWithAutoConstructFlag<NetworkInterface>();
+              networkInterfaces.setAutoConstruct(true);
         }
         return networkInterfaces;
     }
@@ -45,8 +46,7 @@ public class DescribeNetworkInterfacesResult  implements Serializable  {
             this.networkInterfaces = null;
             return;
         }
-
-        java.util.List<NetworkInterface> networkInterfacesCopy = new java.util.ArrayList<NetworkInterface>(networkInterfaces.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<NetworkInterface> networkInterfacesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<NetworkInterface>(networkInterfaces.size());
         networkInterfacesCopy.addAll(networkInterfaces);
         this.networkInterfaces = networkInterfacesCopy;
     }
@@ -83,7 +83,7 @@ public class DescribeNetworkInterfacesResult  implements Serializable  {
         if (networkInterfaces == null) {
             this.networkInterfaces = null;
         } else {
-            java.util.List<NetworkInterface> networkInterfacesCopy = new java.util.ArrayList<NetworkInterface>(networkInterfaces.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<NetworkInterface> networkInterfacesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<NetworkInterface>(networkInterfaces.size());
             networkInterfacesCopy.addAll(networkInterfaces);
             this.networkInterfaces = networkInterfacesCopy;
         }
@@ -102,7 +102,7 @@ public class DescribeNetworkInterfacesResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getNetworkInterfaces() != null) sb.append("NetworkInterfaces: " + getNetworkInterfaces() );
         sb.append("}");
         return sb.toString();

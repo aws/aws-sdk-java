@@ -38,7 +38,7 @@ public class RestoreDBInstanceFromDBSnapshotRequestMarshaller implements Marshal
 
         Request<RestoreDBInstanceFromDBSnapshotRequest> request = new DefaultRequest<RestoreDBInstanceFromDBSnapshotRequest>(restoreDBInstanceFromDBSnapshotRequest, "AmazonRDS");
         request.addParameter("Action", "RestoreDBInstanceFromDBSnapshot");
-        request.addParameter("Version", "2013-02-12");
+        request.addParameter("Version", "2013-05-15");
 
         if (restoreDBInstanceFromDBSnapshotRequest.getDBInstanceIdentifier() != null) {
             request.addParameter("DBInstanceIdentifier", StringUtils.fromString(restoreDBInstanceFromDBSnapshotRequest.getDBInstanceIdentifier()));

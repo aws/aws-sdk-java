@@ -53,6 +53,8 @@ public class DeleteEnvironmentConfigurationRequest extends AmazonWebServiceReque
      */
     public DeleteEnvironmentConfigurationRequest() {}
     
+
+
     /**
      * Constructs a new DeleteEnvironmentConfigurationRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -64,8 +66,8 @@ public class DeleteEnvironmentConfigurationRequest extends AmazonWebServiceReque
      * configuration from.
      */
     public DeleteEnvironmentConfigurationRequest(String applicationName, String environmentName) {
-        this.applicationName = applicationName;
-        this.environmentName = environmentName;
+        setApplicationName(applicationName);
+        setEnvironmentName(environmentName);
     }
 
     
@@ -167,8 +169,8 @@ public class DeleteEnvironmentConfigurationRequest extends AmazonWebServiceReque
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getApplicationName() != null) sb.append("ApplicationName: " + getApplicationName() + ",");    	
+        sb.append("{");
+        if (getApplicationName() != null) sb.append("ApplicationName: " + getApplicationName() + ",");
         if (getEnvironmentName() != null) sb.append("EnvironmentName: " + getEnvironmentName() );
         sb.append("}");
         return sb.toString();

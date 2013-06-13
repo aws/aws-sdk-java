@@ -20,7 +20,7 @@ import java.io.Serializable;
  */
 public class CancelSpotInstanceRequestsResult  implements Serializable  {
 
-    private java.util.List<CancelledSpotInstanceRequest> cancelledSpotInstanceRequests;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<CancelledSpotInstanceRequest> cancelledSpotInstanceRequests;
 
     /**
      * Returns the value of the CancelledSpotInstanceRequests property for
@@ -32,7 +32,8 @@ public class CancelSpotInstanceRequestsResult  implements Serializable  {
     public java.util.List<CancelledSpotInstanceRequest> getCancelledSpotInstanceRequests() {
         
         if (cancelledSpotInstanceRequests == null) {
-            cancelledSpotInstanceRequests = new java.util.ArrayList<CancelledSpotInstanceRequest>();
+              cancelledSpotInstanceRequests = new com.amazonaws.internal.ListWithAutoConstructFlag<CancelledSpotInstanceRequest>();
+              cancelledSpotInstanceRequests.setAutoConstruct(true);
         }
         return cancelledSpotInstanceRequests;
     }
@@ -49,8 +50,7 @@ public class CancelSpotInstanceRequestsResult  implements Serializable  {
             this.cancelledSpotInstanceRequests = null;
             return;
         }
-
-        java.util.List<CancelledSpotInstanceRequest> cancelledSpotInstanceRequestsCopy = new java.util.ArrayList<CancelledSpotInstanceRequest>(cancelledSpotInstanceRequests.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<CancelledSpotInstanceRequest> cancelledSpotInstanceRequestsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<CancelledSpotInstanceRequest>(cancelledSpotInstanceRequests.size());
         cancelledSpotInstanceRequestsCopy.addAll(cancelledSpotInstanceRequests);
         this.cancelledSpotInstanceRequests = cancelledSpotInstanceRequestsCopy;
     }
@@ -91,7 +91,7 @@ public class CancelSpotInstanceRequestsResult  implements Serializable  {
         if (cancelledSpotInstanceRequests == null) {
             this.cancelledSpotInstanceRequests = null;
         } else {
-            java.util.List<CancelledSpotInstanceRequest> cancelledSpotInstanceRequestsCopy = new java.util.ArrayList<CancelledSpotInstanceRequest>(cancelledSpotInstanceRequests.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<CancelledSpotInstanceRequest> cancelledSpotInstanceRequestsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<CancelledSpotInstanceRequest>(cancelledSpotInstanceRequests.size());
             cancelledSpotInstanceRequestsCopy.addAll(cancelledSpotInstanceRequests);
             this.cancelledSpotInstanceRequests = cancelledSpotInstanceRequestsCopy;
         }
@@ -110,7 +110,7 @@ public class CancelSpotInstanceRequestsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getCancelledSpotInstanceRequests() != null) sb.append("CancelledSpotInstanceRequests: " + getCancelledSpotInstanceRequests() );
         sb.append("}");
         return sb.toString();

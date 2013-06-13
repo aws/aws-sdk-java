@@ -161,8 +161,8 @@ public class CreateClusterSnapshotRequest extends AmazonWebServiceRequest  imple
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getSnapshotIdentifier() != null) sb.append("SnapshotIdentifier: " + getSnapshotIdentifier() + ",");    	
+        sb.append("{");
+        if (getSnapshotIdentifier() != null) sb.append("SnapshotIdentifier: " + getSnapshotIdentifier() + ",");
         if (getClusterIdentifier() != null) sb.append("ClusterIdentifier: " + getClusterIdentifier() );
         sb.append("}");
         return sb.toString();

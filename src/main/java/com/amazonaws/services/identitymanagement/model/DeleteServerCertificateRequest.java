@@ -47,6 +47,8 @@ public class DeleteServerCertificateRequest extends AmazonWebServiceRequest  imp
      */
     public DeleteServerCertificateRequest() {}
     
+
+
     /**
      * Constructs a new DeleteServerCertificateRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -56,7 +58,7 @@ public class DeleteServerCertificateRequest extends AmazonWebServiceRequest  imp
      * want to delete.
      */
     public DeleteServerCertificateRequest(String serverCertificateName) {
-        this.serverCertificateName = serverCertificateName;
+        setServerCertificateName(serverCertificateName);
     }
 
     
@@ -118,7 +120,7 @@ public class DeleteServerCertificateRequest extends AmazonWebServiceRequest  imp
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getServerCertificateName() != null) sb.append("ServerCertificateName: " + getServerCertificateName() );
         sb.append("}");
         return sb.toString();

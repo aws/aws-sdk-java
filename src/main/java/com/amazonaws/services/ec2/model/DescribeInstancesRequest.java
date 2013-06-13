@@ -37,7 +37,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest  implement
     /**
      * An optional list of the instances to describe.
      */
-    private java.util.List<String> instanceIds;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> instanceIds;
 
     /**
      * A list of filters used to match properties for Instances. For a
@@ -46,7 +46,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest  implement
      * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/index.html?ApiReference-query-DescribeInstances.html">Amazon
      * EC2 API reference</a>.
      */
-    private java.util.List<Filter> filters;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filters;
 
     /**
      * An optional list of the instances to describe.
@@ -56,7 +56,8 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest  implement
     public java.util.List<String> getInstanceIds() {
         
         if (instanceIds == null) {
-            instanceIds = new java.util.ArrayList<String>();
+              instanceIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              instanceIds.setAutoConstruct(true);
         }
         return instanceIds;
     }
@@ -71,8 +72,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest  implement
             this.instanceIds = null;
             return;
         }
-
-        java.util.List<String> instanceIdsCopy = new java.util.ArrayList<String>(instanceIds.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> instanceIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(instanceIds.size());
         instanceIdsCopy.addAll(instanceIds);
         this.instanceIds = instanceIdsCopy;
     }
@@ -109,7 +109,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest  implement
         if (instanceIds == null) {
             this.instanceIds = null;
         } else {
-            java.util.List<String> instanceIdsCopy = new java.util.ArrayList<String>(instanceIds.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> instanceIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(instanceIds.size());
             instanceIdsCopy.addAll(instanceIds);
             this.instanceIds = instanceIdsCopy;
         }
@@ -133,7 +133,8 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest  implement
     public java.util.List<Filter> getFilters() {
         
         if (filters == null) {
-            filters = new java.util.ArrayList<Filter>();
+              filters = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>();
+              filters.setAutoConstruct(true);
         }
         return filters;
     }
@@ -156,8 +157,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest  implement
             this.filters = null;
             return;
         }
-
-        java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>(filters.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filtersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>(filters.size());
         filtersCopy.addAll(filters);
         this.filters = filtersCopy;
     }
@@ -210,7 +210,7 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest  implement
         if (filters == null) {
             this.filters = null;
         } else {
-            java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>(filters.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filtersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>(filters.size());
             filtersCopy.addAll(filters);
             this.filters = filtersCopy;
         }
@@ -229,8 +229,8 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest  implement
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getInstanceIds() != null) sb.append("InstanceIds: " + getInstanceIds() + ",");    	
+        sb.append("{");
+        if (getInstanceIds() != null) sb.append("InstanceIds: " + getInstanceIds() + ",");
         if (getFilters() != null) sb.append("Filters: " + getFilters() );
         sb.append("}");
         return sb.toString();

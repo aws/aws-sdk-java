@@ -94,8 +94,8 @@ public class SetVaultNotificationsRequestMarshaller implements Marshaller<Reques
                     jsonWriter.key("SNSTopic").value(vaultNotificationConfig.getSNSTopic());
                 }
 
-                java.util.List<String> eventsList = vaultNotificationConfig.getEvents();
-                if (eventsList != null) {
+                com.amazonaws.internal.ListWithAutoConstructFlag<String> eventsList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(vaultNotificationConfig.getEvents());
+                if (eventsList != null && !(eventsList.isAutoConstruct() && eventsList.isEmpty())) {
 
                     jsonWriter.key("Events");
                     jsonWriter.array();

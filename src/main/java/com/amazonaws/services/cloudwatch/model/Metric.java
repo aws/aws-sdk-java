@@ -46,7 +46,7 @@ public class Metric  implements Serializable  {
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 10<br/>
      */
-    private java.util.List<Dimension> dimensions;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Dimension> dimensions;
 
     /**
      * The namespace of the metric.
@@ -148,7 +148,8 @@ public class Metric  implements Serializable  {
     public java.util.List<Dimension> getDimensions() {
         
         if (dimensions == null) {
-            dimensions = new java.util.ArrayList<Dimension>();
+              dimensions = new com.amazonaws.internal.ListWithAutoConstructFlag<Dimension>();
+              dimensions.setAutoConstruct(true);
         }
         return dimensions;
     }
@@ -166,8 +167,7 @@ public class Metric  implements Serializable  {
             this.dimensions = null;
             return;
         }
-
-        java.util.List<Dimension> dimensionsCopy = new java.util.ArrayList<Dimension>(dimensions.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Dimension> dimensionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Dimension>(dimensions.size());
         dimensionsCopy.addAll(dimensions);
         this.dimensions = dimensionsCopy;
     }
@@ -210,7 +210,7 @@ public class Metric  implements Serializable  {
         if (dimensions == null) {
             this.dimensions = null;
         } else {
-            java.util.List<Dimension> dimensionsCopy = new java.util.ArrayList<Dimension>(dimensions.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Dimension> dimensionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Dimension>(dimensions.size());
             dimensionsCopy.addAll(dimensions);
             this.dimensions = dimensionsCopy;
         }
@@ -229,9 +229,9 @@ public class Metric  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getNamespace() != null) sb.append("Namespace: " + getNamespace() + ",");    	
-        if (getMetricName() != null) sb.append("MetricName: " + getMetricName() + ",");    	
+        sb.append("{");
+        if (getNamespace() != null) sb.append("Namespace: " + getNamespace() + ",");
+        if (getMetricName() != null) sb.append("MetricName: " + getMetricName() + ",");
         if (getDimensions() != null) sb.append("Dimensions: " + getDimensions() );
         sb.append("}");
         return sb.toString();

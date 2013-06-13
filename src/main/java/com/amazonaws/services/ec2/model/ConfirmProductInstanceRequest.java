@@ -47,6 +47,8 @@ public class ConfirmProductInstanceRequest extends AmazonWebServiceRequest  impl
      */
     public ConfirmProductInstanceRequest() {}
     
+
+
     /**
      * Constructs a new ConfirmProductInstanceRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -56,8 +58,8 @@ public class ConfirmProductInstanceRequest extends AmazonWebServiceRequest  impl
      * @param instanceId The ID of the instance to confirm.
      */
     public ConfirmProductInstanceRequest(String productCode, String instanceId) {
-        this.productCode = productCode;
-        this.instanceId = instanceId;
+        setProductCode(productCode);
+        setInstanceId(instanceId);
     }
 
     
@@ -141,8 +143,8 @@ public class ConfirmProductInstanceRequest extends AmazonWebServiceRequest  impl
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getProductCode() != null) sb.append("ProductCode: " + getProductCode() + ",");    	
+        sb.append("{");
+        if (getProductCode() != null) sb.append("ProductCode: " + getProductCode() + ",");
         if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() );
         sb.append("}");
         return sb.toString();

@@ -51,6 +51,8 @@ public class PlacementGroup  implements Serializable  {
      */
     public PlacementGroup() {}
     
+
+
     /**
      * Constructs a new PlacementGroup object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -59,7 +61,7 @@ public class PlacementGroup  implements Serializable  {
      * @param groupName The name of this <code>PlacementGroup</code>.
      */
     public PlacementGroup(String groupName) {
-        this.groupName = groupName;
+        setGroupName(groupName);
     }
 
     
@@ -285,9 +287,9 @@ public class PlacementGroup  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getGroupName() != null) sb.append("GroupName: " + getGroupName() + ",");    	
-        if (getStrategy() != null) sb.append("Strategy: " + getStrategy() + ",");    	
+        sb.append("{");
+        if (getGroupName() != null) sb.append("GroupName: " + getGroupName() + ",");
+        if (getStrategy() != null) sb.append("Strategy: " + getStrategy() + ",");
         if (getState() != null) sb.append("State: " + getState() );
         sb.append("}");
         return sb.toString();

@@ -22,9 +22,9 @@ public class InternetGateway  implements Serializable  {
 
     private String internetGatewayId;
 
-    private java.util.List<InternetGatewayAttachment> attachments;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<InternetGatewayAttachment> attachments;
 
-    private java.util.List<Tag> tags;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
 
     /**
      * Returns the value of the InternetGatewayId property for this object.
@@ -68,7 +68,8 @@ public class InternetGateway  implements Serializable  {
     public java.util.List<InternetGatewayAttachment> getAttachments() {
         
         if (attachments == null) {
-            attachments = new java.util.ArrayList<InternetGatewayAttachment>();
+              attachments = new com.amazonaws.internal.ListWithAutoConstructFlag<InternetGatewayAttachment>();
+              attachments.setAutoConstruct(true);
         }
         return attachments;
     }
@@ -83,8 +84,7 @@ public class InternetGateway  implements Serializable  {
             this.attachments = null;
             return;
         }
-
-        java.util.List<InternetGatewayAttachment> attachmentsCopy = new java.util.ArrayList<InternetGatewayAttachment>(attachments.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<InternetGatewayAttachment> attachmentsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<InternetGatewayAttachment>(attachments.size());
         attachmentsCopy.addAll(attachments);
         this.attachments = attachmentsCopy;
     }
@@ -121,7 +121,7 @@ public class InternetGateway  implements Serializable  {
         if (attachments == null) {
             this.attachments = null;
         } else {
-            java.util.List<InternetGatewayAttachment> attachmentsCopy = new java.util.ArrayList<InternetGatewayAttachment>(attachments.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<InternetGatewayAttachment> attachmentsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<InternetGatewayAttachment>(attachments.size());
             attachmentsCopy.addAll(attachments);
             this.attachments = attachmentsCopy;
         }
@@ -137,7 +137,8 @@ public class InternetGateway  implements Serializable  {
     public java.util.List<Tag> getTags() {
         
         if (tags == null) {
-            tags = new java.util.ArrayList<Tag>();
+              tags = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>();
+              tags.setAutoConstruct(true);
         }
         return tags;
     }
@@ -152,8 +153,7 @@ public class InternetGateway  implements Serializable  {
             this.tags = null;
             return;
         }
-
-        java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>(tags.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
         tagsCopy.addAll(tags);
         this.tags = tagsCopy;
     }
@@ -190,7 +190,7 @@ public class InternetGateway  implements Serializable  {
         if (tags == null) {
             this.tags = null;
         } else {
-            java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>(tags.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
             tagsCopy.addAll(tags);
             this.tags = tagsCopy;
         }
@@ -209,9 +209,9 @@ public class InternetGateway  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getInternetGatewayId() != null) sb.append("InternetGatewayId: " + getInternetGatewayId() + ",");    	
-        if (getAttachments() != null) sb.append("Attachments: " + getAttachments() + ",");    	
+        sb.append("{");
+        if (getInternetGatewayId() != null) sb.append("InternetGatewayId: " + getInternetGatewayId() + ",");
+        if (getAttachments() != null) sb.append("Attachments: " + getAttachments() + ",");
         if (getTags() != null) sb.append("Tags: " + getTags() );
         sb.append("}");
         return sb.toString();

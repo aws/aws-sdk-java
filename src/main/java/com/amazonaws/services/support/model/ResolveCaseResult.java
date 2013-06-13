@@ -125,8 +125,8 @@ public class ResolveCaseResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getInitialCaseStatus() != null) sb.append("InitialCaseStatus: " + getInitialCaseStatus() + ",");    	
+        sb.append("{");
+        if (getInitialCaseStatus() != null) sb.append("InitialCaseStatus: " + getInitialCaseStatus() + ",");
         if (getFinalCaseStatus() != null) sb.append("FinalCaseStatus: " + getFinalCaseStatus() );
         sb.append("}");
         return sb.toString();

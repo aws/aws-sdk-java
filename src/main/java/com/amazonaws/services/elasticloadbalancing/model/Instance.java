@@ -33,6 +33,8 @@ public class Instance  implements Serializable  {
      */
     public Instance() {}
     
+
+
     /**
      * Constructs a new Instance object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -41,7 +43,7 @@ public class Instance  implements Serializable  {
      * @param instanceId Provides an EC2 instance ID.
      */
     public Instance(String instanceId) {
-        this.instanceId = instanceId;
+        setInstanceId(instanceId);
     }
 
     
@@ -91,7 +93,7 @@ public class Instance  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() );
         sb.append("}");
         return sb.toString();

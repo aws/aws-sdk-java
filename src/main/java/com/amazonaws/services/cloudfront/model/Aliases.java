@@ -31,7 +31,7 @@ public class Aliases  implements Serializable  {
      * Optional: A complex type that contains CNAME elements, if any, for
      * this distribution. If Quantity is 0, you can omit Items.
      */
-    private java.util.List<String> items;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> items;
 
     /**
      * The number of CNAMEs, if any, for this distribution.
@@ -77,7 +77,8 @@ public class Aliases  implements Serializable  {
     public java.util.List<String> getItems() {
         
         if (items == null) {
-            items = new java.util.ArrayList<String>();
+              items = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              items.setAutoConstruct(true);
         }
         return items;
     }
@@ -94,8 +95,7 @@ public class Aliases  implements Serializable  {
             this.items = null;
             return;
         }
-
-        java.util.List<String> itemsCopy = new java.util.ArrayList<String>(items.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> itemsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(items.size());
         itemsCopy.addAll(items);
         this.items = itemsCopy;
     }
@@ -136,7 +136,7 @@ public class Aliases  implements Serializable  {
         if (items == null) {
             this.items = null;
         } else {
-            java.util.List<String> itemsCopy = new java.util.ArrayList<String>(items.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> itemsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(items.size());
             itemsCopy.addAll(items);
             this.items = itemsCopy;
         }
@@ -155,8 +155,8 @@ public class Aliases  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getQuantity() != null) sb.append("Quantity: " + getQuantity() + ",");    	
+        sb.append("{");
+        if (getQuantity() != null) sb.append("Quantity: " + getQuantity() + ",");
         if (getItems() != null) sb.append("Items: " + getItems() );
         sb.append("}");
         return sb.toString();

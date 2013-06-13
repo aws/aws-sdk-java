@@ -164,8 +164,8 @@ public class CopyDBSnapshotRequest extends AmazonWebServiceRequest  implements S
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getSourceDBSnapshotIdentifier() != null) sb.append("SourceDBSnapshotIdentifier: " + getSourceDBSnapshotIdentifier() + ",");    	
+        sb.append("{");
+        if (getSourceDBSnapshotIdentifier() != null) sb.append("SourceDBSnapshotIdentifier: " + getSourceDBSnapshotIdentifier() + ",");
         if (getTargetDBSnapshotIdentifier() != null) sb.append("TargetDBSnapshotIdentifier: " + getTargetDBSnapshotIdentifier() );
         sb.append("}");
         return sb.toString();

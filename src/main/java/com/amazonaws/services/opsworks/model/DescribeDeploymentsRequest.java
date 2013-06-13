@@ -46,7 +46,7 @@ public class DescribeDeploymentsRequest extends AmazonWebServiceRequest  impleme
      * the specified deployments. Otherwise, it returns a description of
      * every deployment.
      */
-    private java.util.List<String> deploymentIds;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> deploymentIds;
 
     /**
      * The stack ID. If you include this parameter,
@@ -154,7 +154,8 @@ public class DescribeDeploymentsRequest extends AmazonWebServiceRequest  impleme
     public java.util.List<String> getDeploymentIds() {
         
         if (deploymentIds == null) {
-            deploymentIds = new java.util.ArrayList<String>();
+              deploymentIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              deploymentIds.setAutoConstruct(true);
         }
         return deploymentIds;
     }
@@ -175,8 +176,7 @@ public class DescribeDeploymentsRequest extends AmazonWebServiceRequest  impleme
             this.deploymentIds = null;
             return;
         }
-
-        java.util.List<String> deploymentIdsCopy = new java.util.ArrayList<String>(deploymentIds.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> deploymentIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(deploymentIds.size());
         deploymentIdsCopy.addAll(deploymentIds);
         this.deploymentIds = deploymentIdsCopy;
     }
@@ -225,7 +225,7 @@ public class DescribeDeploymentsRequest extends AmazonWebServiceRequest  impleme
         if (deploymentIds == null) {
             this.deploymentIds = null;
         } else {
-            java.util.List<String> deploymentIdsCopy = new java.util.ArrayList<String>(deploymentIds.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> deploymentIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(deploymentIds.size());
             deploymentIdsCopy.addAll(deploymentIds);
             this.deploymentIds = deploymentIdsCopy;
         }
@@ -244,9 +244,9 @@ public class DescribeDeploymentsRequest extends AmazonWebServiceRequest  impleme
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getStackId() != null) sb.append("StackId: " + getStackId() + ",");    	
-        if (getAppId() != null) sb.append("AppId: " + getAppId() + ",");    	
+        sb.append("{");
+        if (getStackId() != null) sb.append("StackId: " + getStackId() + ",");
+        if (getAppId() != null) sb.append("AppId: " + getAppId() + ",");
         if (getDeploymentIds() != null) sb.append("DeploymentIds: " + getDeploymentIds() );
         sb.append("}");
         return sb.toString();

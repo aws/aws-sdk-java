@@ -38,7 +38,7 @@ public class ApplySecurityGroupsToLoadBalancerRequest extends AmazonWebServiceRe
      * VPC. The security group IDs must be provided as the ID and not the
      * security group name (For example, sg-1234).
      */
-    private java.util.List<String> securityGroups;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> securityGroups;
 
     /**
      * The name associated with the LoadBalancer. The name must be unique
@@ -92,7 +92,8 @@ public class ApplySecurityGroupsToLoadBalancerRequest extends AmazonWebServiceRe
     public java.util.List<String> getSecurityGroups() {
         
         if (securityGroups == null) {
-            securityGroups = new java.util.ArrayList<String>();
+              securityGroups = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              securityGroups.setAutoConstruct(true);
         }
         return securityGroups;
     }
@@ -111,8 +112,7 @@ public class ApplySecurityGroupsToLoadBalancerRequest extends AmazonWebServiceRe
             this.securityGroups = null;
             return;
         }
-
-        java.util.List<String> securityGroupsCopy = new java.util.ArrayList<String>(securityGroups.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> securityGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(securityGroups.size());
         securityGroupsCopy.addAll(securityGroups);
         this.securityGroups = securityGroupsCopy;
     }
@@ -157,7 +157,7 @@ public class ApplySecurityGroupsToLoadBalancerRequest extends AmazonWebServiceRe
         if (securityGroups == null) {
             this.securityGroups = null;
         } else {
-            java.util.List<String> securityGroupsCopy = new java.util.ArrayList<String>(securityGroups.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> securityGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(securityGroups.size());
             securityGroupsCopy.addAll(securityGroups);
             this.securityGroups = securityGroupsCopy;
         }
@@ -176,8 +176,8 @@ public class ApplySecurityGroupsToLoadBalancerRequest extends AmazonWebServiceRe
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getLoadBalancerName() != null) sb.append("LoadBalancerName: " + getLoadBalancerName() + ",");    	
+        sb.append("{");
+        if (getLoadBalancerName() != null) sb.append("LoadBalancerName: " + getLoadBalancerName() + ",");
         if (getSecurityGroups() != null) sb.append("SecurityGroups: " + getSecurityGroups() );
         sb.append("}");
         return sb.toString();

@@ -86,7 +86,7 @@ public class DescribeTrustedAdvisorCheckResultResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getResult() != null) sb.append("Result: " + getResult() );
         sb.append("}");
         return sb.toString();

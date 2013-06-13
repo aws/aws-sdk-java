@@ -368,8 +368,8 @@ public class DeploymentCommand  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getName() != null) sb.append("Name: " + getName() + ",");    	
+        sb.append("{");
+        if (getName() != null) sb.append("Name: " + getName() + ",");
         if (getArgs() != null) sb.append("Args: " + getArgs() );
         sb.append("}");
         return sb.toString();

@@ -175,9 +175,9 @@ public class DownloadDBLogFilePortionResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getLogFileData() != null) sb.append("LogFileData: " + getLogFileData() + ",");    	
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");    	
+        sb.append("{");
+        if (getLogFileData() != null) sb.append("LogFileData: " + getLogFileData() + ",");
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");
         if (isAdditionalDataPending() != null) sb.append("AdditionalDataPending: " + isAdditionalDataPending() );
         sb.append("}");
         return sb.toString();

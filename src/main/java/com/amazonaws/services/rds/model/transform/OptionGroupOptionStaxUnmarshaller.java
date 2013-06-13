@@ -82,6 +82,10 @@ public class OptionGroupOptionStaxUnmarshaller implements Unmarshaller<OptionGro
                     optionGroupOption.setPersistent(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("Permanent", targetDepth)) {
+                    optionGroupOption.setPermanent(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
                 if (context.testExpression("OptionGroupOptionSettings/OptionGroupOptionSetting", targetDepth)) {
                     optionGroupOption.getOptionGroupOptionSettings().add(OptionGroupOptionSettingStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

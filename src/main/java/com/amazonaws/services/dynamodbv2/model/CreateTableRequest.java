@@ -43,7 +43,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest  implements Seri
      * An array of attributes that describe the key schema for the table and
      * indexes.
      */
-    private java.util.List<AttributeDefinition> attributeDefinitions;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<AttributeDefinition> attributeDefinitions;
 
     /**
      * The name of the table to create.
@@ -77,7 +77,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest  implements Seri
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 2<br/>
      */
-    private java.util.List<KeySchemaElement> keySchema;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<KeySchemaElement> keySchema;
 
     /**
      * One or more secondary indexes (the maximum is five) to be created on
@@ -106,7 +106,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest  implements Seri
      * two different indexes, this counts as two distinct attributes when
      * determining the total. </li> </ul> </li> </ul>
      */
-    private java.util.List<LocalSecondaryIndex> localSecondaryIndexes;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<LocalSecondaryIndex> localSecondaryIndexes;
 
     /**
      * The provisioned throughput settings for the specified table. The
@@ -124,6 +124,8 @@ public class CreateTableRequest extends AmazonWebServiceRequest  implements Seri
      */
     public CreateTableRequest() {}
     
+
+
     /**
      * Constructs a new CreateTableRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -150,8 +152,8 @@ public class CreateTableRequest extends AmazonWebServiceRequest  implements Seri
      * the Primary Key</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      */
     public CreateTableRequest(String tableName, java.util.List<KeySchemaElement> keySchema) {
-        this.tableName = tableName;
-        this.keySchema = keySchema;
+        setTableName(tableName);
+        setKeySchema(keySchema);
     }
 
     
@@ -180,8 +182,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest  implements Seri
             this.attributeDefinitions = null;
             return;
         }
-
-        java.util.List<AttributeDefinition> attributeDefinitionsCopy = new java.util.ArrayList<AttributeDefinition>(attributeDefinitions.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<AttributeDefinition> attributeDefinitionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<AttributeDefinition>(attributeDefinitions.size());
         attributeDefinitionsCopy.addAll(attributeDefinitions);
         this.attributeDefinitions = attributeDefinitionsCopy;
     }
@@ -222,7 +223,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest  implements Seri
         if (attributeDefinitions == null) {
             this.attributeDefinitions = null;
         } else {
-            java.util.List<AttributeDefinition> attributeDefinitionsCopy = new java.util.ArrayList<AttributeDefinition>(attributeDefinitions.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<AttributeDefinition> attributeDefinitionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<AttributeDefinition>(attributeDefinitions.size());
             attributeDefinitionsCopy.addAll(attributeDefinitions);
             this.attributeDefinitions = attributeDefinitionsCopy;
         }
@@ -370,8 +371,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest  implements Seri
             this.keySchema = null;
             return;
         }
-
-        java.util.List<KeySchemaElement> keySchemaCopy = new java.util.ArrayList<KeySchemaElement>(keySchema.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<KeySchemaElement> keySchemaCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<KeySchemaElement>(keySchema.size());
         keySchemaCopy.addAll(keySchema);
         this.keySchema = keySchemaCopy;
     }
@@ -482,7 +482,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest  implements Seri
         if (keySchema == null) {
             this.keySchema = null;
         } else {
-            java.util.List<KeySchemaElement> keySchemaCopy = new java.util.ArrayList<KeySchemaElement>(keySchema.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<KeySchemaElement> keySchemaCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<KeySchemaElement>(keySchema.size());
             keySchemaCopy.addAll(keySchema);
             this.keySchema = keySchemaCopy;
         }
@@ -606,8 +606,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest  implements Seri
             this.localSecondaryIndexes = null;
             return;
         }
-
-        java.util.List<LocalSecondaryIndex> localSecondaryIndexesCopy = new java.util.ArrayList<LocalSecondaryIndex>(localSecondaryIndexes.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<LocalSecondaryIndex> localSecondaryIndexesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<LocalSecondaryIndex>(localSecondaryIndexes.size());
         localSecondaryIndexesCopy.addAll(localSecondaryIndexes);
         this.localSecondaryIndexes = localSecondaryIndexesCopy;
     }
@@ -740,7 +739,7 @@ public class CreateTableRequest extends AmazonWebServiceRequest  implements Seri
         if (localSecondaryIndexes == null) {
             this.localSecondaryIndexes = null;
         } else {
-            java.util.List<LocalSecondaryIndex> localSecondaryIndexesCopy = new java.util.ArrayList<LocalSecondaryIndex>(localSecondaryIndexes.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<LocalSecondaryIndex> localSecondaryIndexesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<LocalSecondaryIndex>(localSecondaryIndexes.size());
             localSecondaryIndexesCopy.addAll(localSecondaryIndexes);
             this.localSecondaryIndexes = localSecondaryIndexesCopy;
         }
@@ -823,11 +822,11 @@ public class CreateTableRequest extends AmazonWebServiceRequest  implements Seri
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getAttributeDefinitions() != null) sb.append("AttributeDefinitions: " + getAttributeDefinitions() + ",");    	
-        if (getTableName() != null) sb.append("TableName: " + getTableName() + ",");    	
-        if (getKeySchema() != null) sb.append("KeySchema: " + getKeySchema() + ",");    	
-        if (getLocalSecondaryIndexes() != null) sb.append("LocalSecondaryIndexes: " + getLocalSecondaryIndexes() + ",");    	
+        sb.append("{");
+        if (getAttributeDefinitions() != null) sb.append("AttributeDefinitions: " + getAttributeDefinitions() + ",");
+        if (getTableName() != null) sb.append("TableName: " + getTableName() + ",");
+        if (getKeySchema() != null) sb.append("KeySchema: " + getKeySchema() + ",");
+        if (getLocalSecondaryIndexes() != null) sb.append("LocalSecondaryIndexes: " + getLocalSecondaryIndexes() + ",");
         if (getProvisionedThroughput() != null) sb.append("ProvisionedThroughput: " + getProvisionedThroughput() );
         sb.append("}");
         return sb.toString();

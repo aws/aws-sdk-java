@@ -38,6 +38,8 @@ public class DeleteDhcpOptionsRequest extends AmazonWebServiceRequest  implement
      */
     public DeleteDhcpOptionsRequest() {}
     
+
+
     /**
      * Constructs a new DeleteDhcpOptionsRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -46,7 +48,7 @@ public class DeleteDhcpOptionsRequest extends AmazonWebServiceRequest  implement
      * @param dhcpOptionsId The ID of the DHCP options set to delete.
      */
     public DeleteDhcpOptionsRequest(String dhcpOptionsId) {
-        this.dhcpOptionsId = dhcpOptionsId;
+        setDhcpOptionsId(dhcpOptionsId);
     }
 
     
@@ -96,7 +98,7 @@ public class DeleteDhcpOptionsRequest extends AmazonWebServiceRequest  implement
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getDhcpOptionsId() != null) sb.append("DhcpOptionsId: " + getDhcpOptionsId() );
         sb.append("}");
         return sb.toString();

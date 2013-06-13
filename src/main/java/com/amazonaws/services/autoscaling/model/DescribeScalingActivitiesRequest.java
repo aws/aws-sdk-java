@@ -42,7 +42,7 @@ public class DescribeScalingActivitiesRequest extends AmazonWebServiceRequest  i
      * than 50 items. If unknown activities are requested, they are ignored
      * with no error.
      */
-    private java.util.List<String> activityIds;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> activityIds;
 
     /**
      * The name of the <a>AutoScalingGroup</a>.
@@ -88,7 +88,8 @@ public class DescribeScalingActivitiesRequest extends AmazonWebServiceRequest  i
     public java.util.List<String> getActivityIds() {
         
         if (activityIds == null) {
-            activityIds = new java.util.ArrayList<String>();
+              activityIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              activityIds.setAutoConstruct(true);
         }
         return activityIds;
     }
@@ -113,8 +114,7 @@ public class DescribeScalingActivitiesRequest extends AmazonWebServiceRequest  i
             this.activityIds = null;
             return;
         }
-
-        java.util.List<String> activityIdsCopy = new java.util.ArrayList<String>(activityIds.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> activityIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(activityIds.size());
         activityIdsCopy.addAll(activityIds);
         this.activityIds = activityIdsCopy;
     }
@@ -171,7 +171,7 @@ public class DescribeScalingActivitiesRequest extends AmazonWebServiceRequest  i
         if (activityIds == null) {
             this.activityIds = null;
         } else {
-            java.util.List<String> activityIdsCopy = new java.util.ArrayList<String>(activityIds.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> activityIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(activityIds.size());
             activityIdsCopy.addAll(activityIds);
             this.activityIds = activityIdsCopy;
         }
@@ -328,10 +328,10 @@ public class DescribeScalingActivitiesRequest extends AmazonWebServiceRequest  i
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getActivityIds() != null) sb.append("ActivityIds: " + getActivityIds() + ",");    	
-        if (getAutoScalingGroupName() != null) sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ",");    	
-        if (getMaxRecords() != null) sb.append("MaxRecords: " + getMaxRecords() + ",");    	
+        sb.append("{");
+        if (getActivityIds() != null) sb.append("ActivityIds: " + getActivityIds() + ",");
+        if (getAutoScalingGroupName() != null) sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ",");
+        if (getMaxRecords() != null) sb.append("MaxRecords: " + getMaxRecords() + ",");
         if (getNextToken() != null) sb.append("NextToken: " + getNextToken() );
         sb.append("}");
         return sb.toString();

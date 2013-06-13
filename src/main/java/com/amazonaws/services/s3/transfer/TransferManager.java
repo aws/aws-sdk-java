@@ -727,14 +727,67 @@ public class TransferManager {
      *            appropriate concatenation to the key prefix.
      */
     public MultipleFileUpload uploadDirectory(String bucketName, String virtualDirectoryKeyPrefix, File directory, boolean includeSubdirectories) {
-
-        if ( directory == null || !directory.exists() || !directory.isDirectory() ) {
+    	return uploadDirectory(bucketName, virtualDirectoryKeyPrefix, directory, includeSubdirectories, null);
+    }
+    
+    /**
+     * Uploads all files in the directory given to the bucket named, optionally
+     * recursing for all subdirectories.
+     * <p>
+     * S3 will overwrite any existing objects that happen to have the same key,
+     * just as when uploading individual files, so use with caution.
+     *
+     * @param bucketName
+     *            The name of the bucket to upload objects to.
+     * @param virtualDirectoryKeyPrefix
+     *            The key prefix of the virtual directory to upload to. Use the
+     *            null or empty string to upload files to the root of the
+     *            bucket.
+     * @param directory
+     *            The directory to upload.    			           
+     * @param includeSubdirectories
+     *            Whether to include subdirectories in the upload. If true,
+     *            files found in subdirectories will be included with an
+     *            appropriate concatenation to the key prefix.
+     * @param metadataProvider
+     * 			  A callback of type <code>ObjectMetadataProvider</code> which 
+     *            is used to provide metadata for each file being uploaded.
+     */
+    public MultipleFileUpload uploadDirectory(String bucketName, String virtualDirectoryKeyPrefix, File directory, boolean includeSubdirectories, ObjectMetadataProvider metadataProvider) {
+    	if ( directory == null || !directory.exists() || !directory.isDirectory() ) {
             throw new IllegalArgumentException("Must provide a directory to upload");
         }
 
         List<File> files = new LinkedList<File>();
         listFiles(directory, files, includeSubdirectories);
-        return uploadFileList(bucketName, virtualDirectoryKeyPrefix, directory, files);
+        
+        return uploadFileList(bucketName, virtualDirectoryKeyPrefix, directory, files, metadataProvider);
+    }
+    
+    /**
+     * Uploads all specified files to the bucket named, constructing
+     * relative keys depending on the commonParentDirectory given.
+     * <p>
+     * S3 will overwrite any existing objects that happen to have the same key,
+     * just as when uploading individual files, so use with caution.
+     *
+     * @param bucketName
+     *            The name of the bucket to upload objects to.
+     * @param virtualDirectoryKeyPrefix
+     *            The key prefix of the virtual directory to upload to. Use the
+     *            null or empty string to upload files to the root of the
+     *            bucket.
+     * @param directory
+     *            The common parent directory of files to upload. The keys
+     *            of the files in the list of files are constructed relative to
+     *            this directory and the virtualDirectoryKeyPrefix.
+     * @param files
+     *            A list of files to upload. The keys of the files are
+     *            calculated relative to the common parent directory and the
+     *            virtualDirectoryKeyPrefix.
+     */
+    public MultipleFileUpload uploadFileList(String bucketName, String virtualDirectoryKeyPrefix, File directory, List<File> files) {    	
+    	return uploadFileList(bucketName, virtualDirectoryKeyPrefix, directory, files, null);
     }
 
     /**
@@ -758,8 +811,11 @@ public class TransferManager {
      *            A list of files to upload. The keys of the files are
      *            calculated relative to the common parent directory and the
      *            virtualDirectoryKeyPrefix.
+     * @param metadataProvider
+     * 			  A callback of type <code>ObjectMetadataProvider</code> which 
+     *            is used to provide metadata for each file being uploaded.
      */
-    public MultipleFileUpload uploadFileList(String bucketName, String virtualDirectoryKeyPrefix, File directory, List<File> files) {
+    public MultipleFileUpload uploadFileList(String bucketName, String virtualDirectoryKeyPrefix, File directory, List<File> files,ObjectMetadataProvider metadataProvider) {
 
         if ( directory == null || !directory.exists() || !directory.isDirectory() ) {
             throw new IllegalArgumentException("Must provide a common base directory for uploaded files");
@@ -793,8 +849,17 @@ public class TransferManager {
                 totalSize += f.length();
                 String key = f.getAbsolutePath().substring(directory.getAbsolutePath().length() + 1)
                         .replaceAll("\\\\", "/");
+                
+                ObjectMetadata metadata=new ObjectMetadata();
+                
+                // Invoke the callback if it's present.
+                // The callback allows the user to customize the metadata for each file being uploaded.
+                if(metadataProvider!=null){
+                	  metadataProvider.provideObjectMetadata(f,metadata);
+                }
+                
                 uploads.add((UploadImpl) upload(
-                        new PutObjectRequest(bucketName, virtualDirectoryKeyPrefix + key, f).withProgressListener(listener),
+                        new PutObjectRequest(bucketName, virtualDirectoryKeyPrefix + key, f).withMetadata(metadata).withProgressListener(listener),
                         stateChangeListener));
             }
         }

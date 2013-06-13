@@ -104,7 +104,7 @@ public class CreateConfigurationTemplateResult  implements Serializable  {
      * A list of the configuration options and their values in this
      * configuration set.
      */
-    private java.util.List<ConfigurationOptionSetting> optionSettings;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<ConfigurationOptionSetting> optionSettings;
 
     /**
      * The name of the solution stack this configuration set uses.
@@ -674,7 +674,8 @@ public class CreateConfigurationTemplateResult  implements Serializable  {
     public java.util.List<ConfigurationOptionSetting> getOptionSettings() {
         
         if (optionSettings == null) {
-            optionSettings = new java.util.ArrayList<ConfigurationOptionSetting>();
+              optionSettings = new com.amazonaws.internal.ListWithAutoConstructFlag<ConfigurationOptionSetting>();
+              optionSettings.setAutoConstruct(true);
         }
         return optionSettings;
     }
@@ -691,8 +692,7 @@ public class CreateConfigurationTemplateResult  implements Serializable  {
             this.optionSettings = null;
             return;
         }
-
-        java.util.List<ConfigurationOptionSetting> optionSettingsCopy = new java.util.ArrayList<ConfigurationOptionSetting>(optionSettings.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<ConfigurationOptionSetting> optionSettingsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ConfigurationOptionSetting>(optionSettings.size());
         optionSettingsCopy.addAll(optionSettings);
         this.optionSettings = optionSettingsCopy;
     }
@@ -733,7 +733,7 @@ public class CreateConfigurationTemplateResult  implements Serializable  {
         if (optionSettings == null) {
             this.optionSettings = null;
         } else {
-            java.util.List<ConfigurationOptionSetting> optionSettingsCopy = new java.util.ArrayList<ConfigurationOptionSetting>(optionSettings.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<ConfigurationOptionSetting> optionSettingsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ConfigurationOptionSetting>(optionSettings.size());
             optionSettingsCopy.addAll(optionSettings);
             this.optionSettings = optionSettingsCopy;
         }
@@ -752,15 +752,15 @@ public class CreateConfigurationTemplateResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getSolutionStackName() != null) sb.append("SolutionStackName: " + getSolutionStackName() + ",");    	
-        if (getApplicationName() != null) sb.append("ApplicationName: " + getApplicationName() + ",");    	
-        if (getTemplateName() != null) sb.append("TemplateName: " + getTemplateName() + ",");    	
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");    	
-        if (getEnvironmentName() != null) sb.append("EnvironmentName: " + getEnvironmentName() + ",");    	
-        if (getDeploymentStatus() != null) sb.append("DeploymentStatus: " + getDeploymentStatus() + ",");    	
-        if (getDateCreated() != null) sb.append("DateCreated: " + getDateCreated() + ",");    	
-        if (getDateUpdated() != null) sb.append("DateUpdated: " + getDateUpdated() + ",");    	
+        sb.append("{");
+        if (getSolutionStackName() != null) sb.append("SolutionStackName: " + getSolutionStackName() + ",");
+        if (getApplicationName() != null) sb.append("ApplicationName: " + getApplicationName() + ",");
+        if (getTemplateName() != null) sb.append("TemplateName: " + getTemplateName() + ",");
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");
+        if (getEnvironmentName() != null) sb.append("EnvironmentName: " + getEnvironmentName() + ",");
+        if (getDeploymentStatus() != null) sb.append("DeploymentStatus: " + getDeploymentStatus() + ",");
+        if (getDateCreated() != null) sb.append("DateCreated: " + getDateCreated() + ",");
+        if (getDateUpdated() != null) sb.append("DateUpdated: " + getDateUpdated() + ",");
         if (getOptionSettings() != null) sb.append("OptionSettings: " + getOptionSettings() );
         sb.append("}");
         return sb.toString();

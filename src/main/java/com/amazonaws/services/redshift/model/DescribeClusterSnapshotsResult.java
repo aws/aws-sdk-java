@@ -33,7 +33,7 @@ public class DescribeClusterSnapshotsResult  implements Serializable  {
     /**
      * A list of <a>Snapshot</a> instances.
      */
-    private java.util.List<Snapshot> snapshots;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Snapshot> snapshots;
 
     /**
      * A marker that indicates the first snapshot that a subsequent
@@ -95,7 +95,8 @@ public class DescribeClusterSnapshotsResult  implements Serializable  {
     public java.util.List<Snapshot> getSnapshots() {
         
         if (snapshots == null) {
-            snapshots = new java.util.ArrayList<Snapshot>();
+              snapshots = new com.amazonaws.internal.ListWithAutoConstructFlag<Snapshot>();
+              snapshots.setAutoConstruct(true);
         }
         return snapshots;
     }
@@ -110,8 +111,7 @@ public class DescribeClusterSnapshotsResult  implements Serializable  {
             this.snapshots = null;
             return;
         }
-
-        java.util.List<Snapshot> snapshotsCopy = new java.util.ArrayList<Snapshot>(snapshots.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Snapshot> snapshotsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Snapshot>(snapshots.size());
         snapshotsCopy.addAll(snapshots);
         this.snapshots = snapshotsCopy;
     }
@@ -148,7 +148,7 @@ public class DescribeClusterSnapshotsResult  implements Serializable  {
         if (snapshots == null) {
             this.snapshots = null;
         } else {
-            java.util.List<Snapshot> snapshotsCopy = new java.util.ArrayList<Snapshot>(snapshots.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Snapshot> snapshotsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Snapshot>(snapshots.size());
             snapshotsCopy.addAll(snapshots);
             this.snapshots = snapshotsCopy;
         }
@@ -167,8 +167,8 @@ public class DescribeClusterSnapshotsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");    	
+        sb.append("{");
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");
         if (getSnapshots() != null) sb.append("Snapshots: " + getSnapshots() );
         sb.append("}");
         return sb.toString();

@@ -142,22 +142,22 @@ public class AmazonHttpClient {
      * cert hostname wildcards are evaulated more liberally).
      */
     public void disableStrictHostnameVerification() {
-    	
-    	/*
+
+        /*
          * If SSL cert checking for endpoints is disabled, we don't need
-         * to do any changes to the SSL context. 
+         * to do any changes to the SSL context.
          */
-    	if (System.getProperty("com.amazonaws.sdk.disableCertChecking") != null) {
-    		return;        		
-    	}
-    	
+        if (System.getProperty("com.amazonaws.sdk.disableCertChecking") != null) {
+            return;
+        }
+
         try {
             SchemeRegistry schemeRegistry = httpClient.getConnectionManager().getSchemeRegistry();
 
             SSLSocketFactory sf = new SSLSocketFactory(
                     SSLContext.getDefault(),
                     SSLSocketFactory.BROWSER_COMPATIBLE_HOSTNAME_VERIFIER);
-			Scheme https = new Scheme("https", 443, sf);
+            Scheme https = new Scheme("https", 443, sf);
 
             schemeRegistry.register(https);
         } catch (NoSuchAlgorithmException e) {
@@ -242,7 +242,7 @@ public class AmazonHttpClient {
 
 
         // Apply whatever request options we know how to handle, such as user-agent.
-        applyRequestData(request);
+        setUserAgent(request);
 
         int retryCount = 0;
         URI redirectedURI = null;
@@ -409,21 +409,27 @@ public class AmazonHttpClient {
             throw new AmazonClientException(
                     "Encountered an exception and couldn't reset the stream to retry", cause);
         }
-    }   
+    }
 
     /**
-     * Applies any additional options set in the request.
+     * Sets a User-Agent for the specified request, taking into account
+     * any custom data.
      */
-    private void applyRequestData(Request<?> request) {
-        if ( config.getUserAgent() != null ) {
-            request.addHeader("User-Agent", config.getUserAgent());
+    private void setUserAgent(Request<?> request) {
+        String userAgent = config.getUserAgent();
+        if (!(userAgent.equals(ClientConfiguration.DEFAULT_USER_AGENT))) {
+            userAgent += ", " + ClientConfiguration.DEFAULT_USER_AGENT;
+        }
+
+        if ( userAgent != null ) {
+            request.addHeader("User-Agent", userAgent);
         }
 
         if ( request.getOriginalRequest() != null && request.getOriginalRequest().getRequestClientOptions() != null
                 && request.getOriginalRequest().getRequestClientOptions().getClientMarker() != null ) {
             request.addHeader(
                     "User-Agent",
-                    createUserAgentString(config.getUserAgent(), request.getOriginalRequest().getRequestClientOptions()
+                    createUserAgentString(userAgent, request.getOriginalRequest().getRequestClientOptions()
                             .getClientMarker()));
         }
     }

@@ -25,7 +25,7 @@ public class DescribeStacksResult  implements Serializable  {
     /**
      * A list of stack structures.
      */
-    private java.util.List<Stack> stacks;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Stack> stacks;
 
     private String nextToken;
 
@@ -37,7 +37,8 @@ public class DescribeStacksResult  implements Serializable  {
     public java.util.List<Stack> getStacks() {
         
         if (stacks == null) {
-            stacks = new java.util.ArrayList<Stack>();
+              stacks = new com.amazonaws.internal.ListWithAutoConstructFlag<Stack>();
+              stacks.setAutoConstruct(true);
         }
         return stacks;
     }
@@ -52,8 +53,7 @@ public class DescribeStacksResult  implements Serializable  {
             this.stacks = null;
             return;
         }
-
-        java.util.List<Stack> stacksCopy = new java.util.ArrayList<Stack>(stacks.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Stack> stacksCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Stack>(stacks.size());
         stacksCopy.addAll(stacks);
         this.stacks = stacksCopy;
     }
@@ -90,7 +90,7 @@ public class DescribeStacksResult  implements Serializable  {
         if (stacks == null) {
             this.stacks = null;
         } else {
-            java.util.List<Stack> stacksCopy = new java.util.ArrayList<Stack>(stacks.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Stack> stacksCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Stack>(stacks.size());
             stacksCopy.addAll(stacks);
             this.stacks = stacksCopy;
         }
@@ -152,8 +152,8 @@ public class DescribeStacksResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getStacks() != null) sb.append("Stacks: " + getStacks() + ",");    	
+        sb.append("{");
+        if (getStacks() != null) sb.append("Stacks: " + getStacks() + ",");
         if (getNextToken() != null) sb.append("NextToken: " + getNextToken() );
         sb.append("}");
         return sb.toString();

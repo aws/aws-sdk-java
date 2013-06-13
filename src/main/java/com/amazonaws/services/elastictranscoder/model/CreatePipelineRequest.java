@@ -1338,13 +1338,13 @@ public class CreatePipelineRequest extends AmazonWebServiceRequest  implements S
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getName() != null) sb.append("Name: " + getName() + ",");    	
-        if (getInputBucket() != null) sb.append("InputBucket: " + getInputBucket() + ",");    	
-        if (getOutputBucket() != null) sb.append("OutputBucket: " + getOutputBucket() + ",");    	
-        if (getRole() != null) sb.append("Role: " + getRole() + ",");    	
-        if (getNotifications() != null) sb.append("Notifications: " + getNotifications() + ",");    	
-        if (getContentConfig() != null) sb.append("ContentConfig: " + getContentConfig() + ",");    	
+        sb.append("{");
+        if (getName() != null) sb.append("Name: " + getName() + ",");
+        if (getInputBucket() != null) sb.append("InputBucket: " + getInputBucket() + ",");
+        if (getOutputBucket() != null) sb.append("OutputBucket: " + getOutputBucket() + ",");
+        if (getRole() != null) sb.append("Role: " + getRole() + ",");
+        if (getNotifications() != null) sb.append("Notifications: " + getNotifications() + ",");
+        if (getContentConfig() != null) sb.append("ContentConfig: " + getContentConfig() + ",");
         if (getThumbnailConfig() != null) sb.append("ThumbnailConfig: " + getThumbnailConfig() );
         sb.append("}");
         return sb.toString();

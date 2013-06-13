@@ -72,7 +72,7 @@ public class DescribeImageAttributeResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getImageAttribute() != null) sb.append("ImageAttribute: " + getImageAttribute() );
         sb.append("}");
         return sb.toString();

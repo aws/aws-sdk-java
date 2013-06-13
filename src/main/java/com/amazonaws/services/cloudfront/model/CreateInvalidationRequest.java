@@ -42,6 +42,8 @@ public class CreateInvalidationRequest extends AmazonWebServiceRequest  implemen
      */
     public CreateInvalidationRequest() {}
     
+
+
     /**
      * Constructs a new CreateInvalidationRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -51,8 +53,8 @@ public class CreateInvalidationRequest extends AmazonWebServiceRequest  implemen
      * @param invalidationBatch The batch information for the invalidation.
      */
     public CreateInvalidationRequest(String distributionId, InvalidationBatch invalidationBatch) {
-        this.distributionId = distributionId;
-        this.invalidationBatch = invalidationBatch;
+        setDistributionId(distributionId);
+        setInvalidationBatch(invalidationBatch);
     }
 
     
@@ -136,8 +138,8 @@ public class CreateInvalidationRequest extends AmazonWebServiceRequest  implemen
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getDistributionId() != null) sb.append("DistributionId: " + getDistributionId() + ",");    	
+        sb.append("{");
+        if (getDistributionId() != null) sb.append("DistributionId: " + getDistributionId() + ",");
         if (getInvalidationBatch() != null) sb.append("InvalidationBatch: " + getInvalidationBatch() );
         sb.append("}");
         return sb.toString();

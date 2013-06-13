@@ -40,7 +40,7 @@ public class DescribeCasesRequest extends AmazonWebServiceRequest  implements Se
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 100<br/>
      */
-    private java.util.List<String> caseIdList;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> caseIdList;
 
     /**
      * String that corresponds to the ID value displayed for a case in the
@@ -100,7 +100,8 @@ public class DescribeCasesRequest extends AmazonWebServiceRequest  implements Se
     public java.util.List<String> getCaseIdList() {
         
         if (caseIdList == null) {
-            caseIdList = new java.util.ArrayList<String>();
+              caseIdList = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              caseIdList.setAutoConstruct(true);
         }
         return caseIdList;
     }
@@ -120,8 +121,7 @@ public class DescribeCasesRequest extends AmazonWebServiceRequest  implements Se
             this.caseIdList = null;
             return;
         }
-
-        java.util.List<String> caseIdListCopy = new java.util.ArrayList<String>(caseIdList.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> caseIdListCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(caseIdList.size());
         caseIdListCopy.addAll(caseIdList);
         this.caseIdList = caseIdListCopy;
     }
@@ -168,7 +168,7 @@ public class DescribeCasesRequest extends AmazonWebServiceRequest  implements Se
         if (caseIdList == null) {
             this.caseIdList = null;
         } else {
-            java.util.List<String> caseIdListCopy = new java.util.ArrayList<String>(caseIdList.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> caseIdListCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(caseIdList.size());
             caseIdListCopy.addAll(caseIdList);
             this.caseIdList = caseIdListCopy;
         }
@@ -489,14 +489,14 @@ public class DescribeCasesRequest extends AmazonWebServiceRequest  implements Se
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getCaseIdList() != null) sb.append("CaseIdList: " + getCaseIdList() + ",");    	
-        if (getDisplayId() != null) sb.append("DisplayId: " + getDisplayId() + ",");    	
-        if (getAfterTime() != null) sb.append("AfterTime: " + getAfterTime() + ",");    	
-        if (getBeforeTime() != null) sb.append("BeforeTime: " + getBeforeTime() + ",");    	
-        if (isIncludeResolvedCases() != null) sb.append("IncludeResolvedCases: " + isIncludeResolvedCases() + ",");    	
-        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() + ",");    	
-        if (getMaxResults() != null) sb.append("MaxResults: " + getMaxResults() + ",");    	
+        sb.append("{");
+        if (getCaseIdList() != null) sb.append("CaseIdList: " + getCaseIdList() + ",");
+        if (getDisplayId() != null) sb.append("DisplayId: " + getDisplayId() + ",");
+        if (getAfterTime() != null) sb.append("AfterTime: " + getAfterTime() + ",");
+        if (getBeforeTime() != null) sb.append("BeforeTime: " + getBeforeTime() + ",");
+        if (isIncludeResolvedCases() != null) sb.append("IncludeResolvedCases: " + isIncludeResolvedCases() + ",");
+        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() + ",");
+        if (getMaxResults() != null) sb.append("MaxResults: " + getMaxResults() + ",");
         if (getLanguage() != null) sb.append("Language: " + getLanguage() );
         sb.append("}");
         return sb.toString();

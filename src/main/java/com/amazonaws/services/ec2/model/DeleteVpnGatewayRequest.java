@@ -39,6 +39,8 @@ public class DeleteVpnGatewayRequest extends AmazonWebServiceRequest  implements
      */
     public DeleteVpnGatewayRequest() {}
     
+
+
     /**
      * Constructs a new DeleteVpnGatewayRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -47,7 +49,7 @@ public class DeleteVpnGatewayRequest extends AmazonWebServiceRequest  implements
      * @param vpnGatewayId The ID of the VPN gateway to delete.
      */
     public DeleteVpnGatewayRequest(String vpnGatewayId) {
-        this.vpnGatewayId = vpnGatewayId;
+        setVpnGatewayId(vpnGatewayId);
     }
 
     
@@ -97,7 +99,7 @@ public class DeleteVpnGatewayRequest extends AmazonWebServiceRequest  implements
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getVpnGatewayId() != null) sb.append("VpnGatewayId: " + getVpnGatewayId() );
         sb.append("}");
         return sb.toString();

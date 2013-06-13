@@ -25,7 +25,7 @@ public class ListVaultsResult  implements Serializable  {
     /**
      * List of vaults.
      */
-    private java.util.List<DescribeVaultOutput> vaultList;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<DescribeVaultOutput> vaultList;
 
     /**
      * The vault ARN at which to continue pagination of the results. You use
@@ -42,7 +42,8 @@ public class ListVaultsResult  implements Serializable  {
     public java.util.List<DescribeVaultOutput> getVaultList() {
         
         if (vaultList == null) {
-            vaultList = new java.util.ArrayList<DescribeVaultOutput>();
+              vaultList = new com.amazonaws.internal.ListWithAutoConstructFlag<DescribeVaultOutput>();
+              vaultList.setAutoConstruct(true);
         }
         return vaultList;
     }
@@ -57,8 +58,7 @@ public class ListVaultsResult  implements Serializable  {
             this.vaultList = null;
             return;
         }
-
-        java.util.List<DescribeVaultOutput> vaultListCopy = new java.util.ArrayList<DescribeVaultOutput>(vaultList.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<DescribeVaultOutput> vaultListCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<DescribeVaultOutput>(vaultList.size());
         vaultListCopy.addAll(vaultList);
         this.vaultList = vaultListCopy;
     }
@@ -95,7 +95,7 @@ public class ListVaultsResult  implements Serializable  {
         if (vaultList == null) {
             this.vaultList = null;
         } else {
-            java.util.List<DescribeVaultOutput> vaultListCopy = new java.util.ArrayList<DescribeVaultOutput>(vaultList.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<DescribeVaultOutput> vaultListCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<DescribeVaultOutput>(vaultList.size());
             vaultListCopy.addAll(vaultList);
             this.vaultList = vaultListCopy;
         }
@@ -160,8 +160,8 @@ public class ListVaultsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getVaultList() != null) sb.append("VaultList: " + getVaultList() + ",");    	
+        sb.append("{");
+        if (getVaultList() != null) sb.append("VaultList: " + getVaultList() + ",");
         if (getMarker() != null) sb.append("Marker: " + getMarker() );
         sb.append("}");
         return sb.toString();

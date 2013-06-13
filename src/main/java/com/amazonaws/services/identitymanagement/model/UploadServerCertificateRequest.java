@@ -95,6 +95,8 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest  imp
      */
     public UploadServerCertificateRequest() {}
     
+
+
     /**
      * Constructs a new UploadServerCertificateRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -108,9 +110,9 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest  imp
      * format.
      */
     public UploadServerCertificateRequest(String serverCertificateName, String certificateBody, String privateKey) {
-        this.serverCertificateName = serverCertificateName;
-        this.certificateBody = certificateBody;
-        this.privateKey = privateKey;
+        setServerCertificateName(serverCertificateName);
+        setCertificateBody(certificateBody);
+        setPrivateKey(privateKey);
     }
 
     
@@ -398,11 +400,11 @@ public class UploadServerCertificateRequest extends AmazonWebServiceRequest  imp
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getPath() != null) sb.append("Path: " + getPath() + ",");    	
-        if (getServerCertificateName() != null) sb.append("ServerCertificateName: " + getServerCertificateName() + ",");    	
-        if (getCertificateBody() != null) sb.append("CertificateBody: " + getCertificateBody() + ",");    	
-        if (getPrivateKey() != null) sb.append("PrivateKey: " + getPrivateKey() + ",");    	
+        sb.append("{");
+        if (getPath() != null) sb.append("Path: " + getPath() + ",");
+        if (getServerCertificateName() != null) sb.append("ServerCertificateName: " + getServerCertificateName() + ",");
+        if (getCertificateBody() != null) sb.append("CertificateBody: " + getCertificateBody() + ",");
+        if (getPrivateKey() != null) sb.append("PrivateKey: " + getPrivateKey() + ",");
         if (getCertificateChain() != null) sb.append("CertificateChain: " + getCertificateChain() );
         sb.append("}");
         return sb.toString();

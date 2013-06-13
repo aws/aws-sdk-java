@@ -285,9 +285,9 @@ public class PollForTaskRequest extends AmazonWebServiceRequest  implements Seri
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getWorkerGroup() != null) sb.append("WorkerGroup: " + getWorkerGroup() + ",");    	
-        if (getHostname() != null) sb.append("Hostname: " + getHostname() + ",");    	
+        sb.append("{");
+        if (getWorkerGroup() != null) sb.append("WorkerGroup: " + getWorkerGroup() + ",");
+        if (getHostname() != null) sb.append("Hostname: " + getHostname() + ",");
         if (getInstanceIdentity() != null) sb.append("InstanceIdentity: " + getInstanceIdentity() );
         sb.append("}");
         return sb.toString();

@@ -41,6 +41,8 @@ public class DeleteCustomerGatewayRequest extends AmazonWebServiceRequest  imple
      */
     public DeleteCustomerGatewayRequest() {}
     
+
+
     /**
      * Constructs a new DeleteCustomerGatewayRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -49,7 +51,7 @@ public class DeleteCustomerGatewayRequest extends AmazonWebServiceRequest  imple
      * @param customerGatewayId The ID of the customer gateway to delete.
      */
     public DeleteCustomerGatewayRequest(String customerGatewayId) {
-        this.customerGatewayId = customerGatewayId;
+        setCustomerGatewayId(customerGatewayId);
     }
 
     
@@ -99,7 +101,7 @@ public class DeleteCustomerGatewayRequest extends AmazonWebServiceRequest  imple
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getCustomerGatewayId() != null) sb.append("CustomerGatewayId: " + getCustomerGatewayId() );
         sb.append("}");
         return sb.toString();

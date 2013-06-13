@@ -158,7 +158,7 @@ public class ProcessType  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getProcessName() != null) sb.append("ProcessName: " + getProcessName() );
         sb.append("}");
         return sb.toString();

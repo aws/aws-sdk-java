@@ -111,8 +111,8 @@ public class GetHostnameSuggestionResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getLayerId() != null) sb.append("LayerId: " + getLayerId() + ",");    	
+        sb.append("{");
+        if (getLayerId() != null) sb.append("LayerId: " + getLayerId() + ",");
         if (getHostname() != null) sb.append("Hostname: " + getHostname() );
         sb.append("}");
         return sb.toString();

@@ -381,14 +381,14 @@ public class Address  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ",");    	
-        if (getPublicIp() != null) sb.append("PublicIp: " + getPublicIp() + ",");    	
-        if (getAllocationId() != null) sb.append("AllocationId: " + getAllocationId() + ",");    	
-        if (getAssociationId() != null) sb.append("AssociationId: " + getAssociationId() + ",");    	
-        if (getDomain() != null) sb.append("Domain: " + getDomain() + ",");    	
-        if (getNetworkInterfaceId() != null) sb.append("NetworkInterfaceId: " + getNetworkInterfaceId() + ",");    	
-        if (getNetworkInterfaceOwnerId() != null) sb.append("NetworkInterfaceOwnerId: " + getNetworkInterfaceOwnerId() + ",");    	
+        sb.append("{");
+        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ",");
+        if (getPublicIp() != null) sb.append("PublicIp: " + getPublicIp() + ",");
+        if (getAllocationId() != null) sb.append("AllocationId: " + getAllocationId() + ",");
+        if (getAssociationId() != null) sb.append("AssociationId: " + getAssociationId() + ",");
+        if (getDomain() != null) sb.append("Domain: " + getDomain() + ",");
+        if (getNetworkInterfaceId() != null) sb.append("NetworkInterfaceId: " + getNetworkInterfaceId() + ",");
+        if (getNetworkInterfaceOwnerId() != null) sb.append("NetworkInterfaceOwnerId: " + getNetworkInterfaceOwnerId() + ",");
         if (getPrivateIpAddress() != null) sb.append("PrivateIpAddress: " + getPrivateIpAddress() );
         sb.append("}");
         return sb.toString();

@@ -100,6 +100,8 @@ public class CompleteMultipartUploadRequest extends AmazonWebServiceRequest  imp
      */
     public CompleteMultipartUploadRequest() {}
     
+
+
     /**
      * Constructs a new CompleteMultipartUploadRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -117,14 +119,16 @@ public class CompleteMultipartUploadRequest extends AmazonWebServiceRequest  imp
      * returns an error and the request fails.
      */
     public CompleteMultipartUploadRequest(String vaultName, String uploadId, String archiveSize, String checksum) {
-        this.vaultName = vaultName;
-        this.uploadId = uploadId;
-        this.archiveSize = archiveSize;
-        this.checksum = checksum;
+        setVaultName(vaultName);
+        setUploadId(uploadId);
+        setArchiveSize(archiveSize);
+        setChecksum(checksum);
     }
 
     
     
+
+
     /**
      * Constructs a new CompleteMultipartUploadRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -147,11 +151,11 @@ public class CompleteMultipartUploadRequest extends AmazonWebServiceRequest  imp
      * returns an error and the request fails.
      */
     public CompleteMultipartUploadRequest(String accountId, String vaultName, String uploadId, String archiveSize, String checksum) {
-        this.accountId = accountId;
-        this.vaultName = vaultName;
-        this.uploadId = uploadId;
-        this.archiveSize = archiveSize;
-        this.checksum = checksum;
+        setAccountId(accountId);
+        setVaultName(vaultName);
+        setUploadId(uploadId);
+        setArchiveSize(archiveSize);
+        setChecksum(checksum);
     }
 
     
@@ -391,11 +395,11 @@ public class CompleteMultipartUploadRequest extends AmazonWebServiceRequest  imp
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getAccountId() != null) sb.append("AccountId: " + getAccountId() + ",");    	
-        if (getVaultName() != null) sb.append("VaultName: " + getVaultName() + ",");    	
-        if (getUploadId() != null) sb.append("UploadId: " + getUploadId() + ",");    	
-        if (getArchiveSize() != null) sb.append("ArchiveSize: " + getArchiveSize() + ",");    	
+        sb.append("{");
+        if (getAccountId() != null) sb.append("AccountId: " + getAccountId() + ",");
+        if (getVaultName() != null) sb.append("VaultName: " + getVaultName() + ",");
+        if (getUploadId() != null) sb.append("UploadId: " + getUploadId() + ",");
+        if (getArchiveSize() != null) sb.append("ArchiveSize: " + getArchiveSize() + ",");
         if (getChecksum() != null) sb.append("Checksum: " + getChecksum() );
         sb.append("}");
         return sb.toString();

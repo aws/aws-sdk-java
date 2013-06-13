@@ -45,7 +45,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest  implements 
      * <code>DescribeVolumes</code> returns descriptions of the specified
      * volumes. Otherwise, it returns a description of every volume.
      */
-    private java.util.List<String> volumeIds;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> volumeIds;
 
     /**
      * The instance ID. If you use this parameter,
@@ -151,7 +151,8 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest  implements 
     public java.util.List<String> getVolumeIds() {
         
         if (volumeIds == null) {
-            volumeIds = new java.util.ArrayList<String>();
+              volumeIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              volumeIds.setAutoConstruct(true);
         }
         return volumeIds;
     }
@@ -170,8 +171,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest  implements 
             this.volumeIds = null;
             return;
         }
-
-        java.util.List<String> volumeIdsCopy = new java.util.ArrayList<String>(volumeIds.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> volumeIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(volumeIds.size());
         volumeIdsCopy.addAll(volumeIds);
         this.volumeIds = volumeIdsCopy;
     }
@@ -216,7 +216,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest  implements 
         if (volumeIds == null) {
             this.volumeIds = null;
         } else {
-            java.util.List<String> volumeIdsCopy = new java.util.ArrayList<String>(volumeIds.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> volumeIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(volumeIds.size());
             volumeIdsCopy.addAll(volumeIds);
             this.volumeIds = volumeIdsCopy;
         }
@@ -235,9 +235,9 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest  implements 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ",");    	
-        if (getRaidArrayId() != null) sb.append("RaidArrayId: " + getRaidArrayId() + ",");    	
+        sb.append("{");
+        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ",");
+        if (getRaidArrayId() != null) sb.append("RaidArrayId: " + getRaidArrayId() + ",");
         if (getVolumeIds() != null) sb.append("VolumeIds: " + getVolumeIds() );
         sb.append("}");
         return sb.toString();

@@ -154,8 +154,8 @@ public class GetItemResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getItem() != null) sb.append("Item: " + getItem() + ",");    	
+        sb.append("{");
+        if (getItem() != null) sb.append("Item: " + getItem() + ",");
         if (getConsumedCapacity() != null) sb.append("ConsumedCapacity: " + getConsumedCapacity() );
         sb.append("}");
         return sb.toString();

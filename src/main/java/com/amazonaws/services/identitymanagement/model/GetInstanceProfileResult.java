@@ -72,7 +72,7 @@ public class GetInstanceProfileResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getInstanceProfile() != null) sb.append("InstanceProfile: " + getInstanceProfile() );
         sb.append("}");
         return sb.toString();

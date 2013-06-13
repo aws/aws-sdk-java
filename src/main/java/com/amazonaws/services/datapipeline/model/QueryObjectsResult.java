@@ -25,7 +25,7 @@ public class QueryObjectsResult  implements Serializable  {
     /**
      * A list of identifiers that match the query selectors.
      */
-    private java.util.List<String> ids;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> ids;
 
     /**
      * The starting point for the results to be returned. As long as the
@@ -53,7 +53,8 @@ public class QueryObjectsResult  implements Serializable  {
     public java.util.List<String> getIds() {
         
         if (ids == null) {
-            ids = new java.util.ArrayList<String>();
+              ids = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              ids.setAutoConstruct(true);
         }
         return ids;
     }
@@ -68,8 +69,7 @@ public class QueryObjectsResult  implements Serializable  {
             this.ids = null;
             return;
         }
-
-        java.util.List<String> idsCopy = new java.util.ArrayList<String>(ids.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> idsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(ids.size());
         idsCopy.addAll(ids);
         this.ids = idsCopy;
     }
@@ -106,7 +106,7 @@ public class QueryObjectsResult  implements Serializable  {
         if (ids == null) {
             this.ids = null;
         } else {
-            java.util.List<String> idsCopy = new java.util.ArrayList<String>(ids.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> idsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(ids.size());
             idsCopy.addAll(ids);
             this.ids = idsCopy;
         }
@@ -240,9 +240,9 @@ public class QueryObjectsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getIds() != null) sb.append("Ids: " + getIds() + ",");    	
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");    	
+        sb.append("{");
+        if (getIds() != null) sb.append("Ids: " + getIds() + ",");
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");
         if (isHasMoreResults() != null) sb.append("HasMoreResults: " + isHasMoreResults() );
         sb.append("}");
         return sb.toString();

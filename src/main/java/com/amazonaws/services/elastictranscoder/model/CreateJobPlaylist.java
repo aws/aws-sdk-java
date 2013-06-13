@@ -51,7 +51,7 @@ public class CreateJobPlaylist  implements Serializable  {
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 30<br/>
      */
-    private java.util.List<String> outputKeys;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> outputKeys;
 
     /**
      * The name that you want Elastic Transcoder to assign to the master
@@ -191,6 +191,10 @@ public class CreateJobPlaylist  implements Serializable  {
      */
     public java.util.List<String> getOutputKeys() {
         
+        if (outputKeys == null) {
+              outputKeys = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              outputKeys.setAutoConstruct(true);
+        }
         return outputKeys;
     }
     
@@ -213,8 +217,7 @@ public class CreateJobPlaylist  implements Serializable  {
             this.outputKeys = null;
             return;
         }
-
-        java.util.List<String> outputKeysCopy = new java.util.ArrayList<String>(outputKeys.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> outputKeysCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(outputKeys.size());
         outputKeysCopy.addAll(outputKeys);
         this.outputKeys = outputKeysCopy;
     }
@@ -269,7 +272,7 @@ public class CreateJobPlaylist  implements Serializable  {
         if (outputKeys == null) {
             this.outputKeys = null;
         } else {
-            java.util.List<String> outputKeysCopy = new java.util.ArrayList<String>(outputKeys.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> outputKeysCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(outputKeys.size());
             outputKeysCopy.addAll(outputKeys);
             this.outputKeys = outputKeysCopy;
         }
@@ -288,9 +291,9 @@ public class CreateJobPlaylist  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getName() != null) sb.append("Name: " + getName() + ",");    	
-        if (getFormat() != null) sb.append("Format: " + getFormat() + ",");    	
+        sb.append("{");
+        if (getName() != null) sb.append("Name: " + getName() + ",");
+        if (getFormat() != null) sb.append("Format: " + getFormat() + ",");
         if (getOutputKeys() != null) sb.append("OutputKeys: " + getOutputKeys() );
         sb.append("}");
         return sb.toString();

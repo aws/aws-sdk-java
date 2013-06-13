@@ -61,7 +61,7 @@ public class ValidateConfigurationSettingsRequest extends AmazonWebServiceReques
     /**
      * A list of the options and desired values to evaluate.
      */
-    private java.util.List<ConfigurationOptionSetting> optionSettings;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<ConfigurationOptionSetting> optionSettings;
 
     /**
      * Default constructor for a new ValidateConfigurationSettingsRequest object.  Callers should use the
@@ -69,6 +69,8 @@ public class ValidateConfigurationSettingsRequest extends AmazonWebServiceReques
      */
     public ValidateConfigurationSettingsRequest() {}
     
+
+
     /**
      * Constructs a new ValidateConfigurationSettingsRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -80,8 +82,8 @@ public class ValidateConfigurationSettingsRequest extends AmazonWebServiceReques
      * evaluate.
      */
     public ValidateConfigurationSettingsRequest(String applicationName, java.util.List<ConfigurationOptionSetting> optionSettings) {
-        this.applicationName = applicationName;
-        this.optionSettings = optionSettings;
+        setApplicationName(applicationName);
+        setOptionSettings(optionSettings);
     }
 
     
@@ -253,7 +255,8 @@ public class ValidateConfigurationSettingsRequest extends AmazonWebServiceReques
     public java.util.List<ConfigurationOptionSetting> getOptionSettings() {
         
         if (optionSettings == null) {
-            optionSettings = new java.util.ArrayList<ConfigurationOptionSetting>();
+              optionSettings = new com.amazonaws.internal.ListWithAutoConstructFlag<ConfigurationOptionSetting>();
+              optionSettings.setAutoConstruct(true);
         }
         return optionSettings;
     }
@@ -268,8 +271,7 @@ public class ValidateConfigurationSettingsRequest extends AmazonWebServiceReques
             this.optionSettings = null;
             return;
         }
-
-        java.util.List<ConfigurationOptionSetting> optionSettingsCopy = new java.util.ArrayList<ConfigurationOptionSetting>(optionSettings.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<ConfigurationOptionSetting> optionSettingsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ConfigurationOptionSetting>(optionSettings.size());
         optionSettingsCopy.addAll(optionSettings);
         this.optionSettings = optionSettingsCopy;
     }
@@ -306,7 +308,7 @@ public class ValidateConfigurationSettingsRequest extends AmazonWebServiceReques
         if (optionSettings == null) {
             this.optionSettings = null;
         } else {
-            java.util.List<ConfigurationOptionSetting> optionSettingsCopy = new java.util.ArrayList<ConfigurationOptionSetting>(optionSettings.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<ConfigurationOptionSetting> optionSettingsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ConfigurationOptionSetting>(optionSettings.size());
             optionSettingsCopy.addAll(optionSettings);
             this.optionSettings = optionSettingsCopy;
         }
@@ -325,10 +327,10 @@ public class ValidateConfigurationSettingsRequest extends AmazonWebServiceReques
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getApplicationName() != null) sb.append("ApplicationName: " + getApplicationName() + ",");    	
-        if (getTemplateName() != null) sb.append("TemplateName: " + getTemplateName() + ",");    	
-        if (getEnvironmentName() != null) sb.append("EnvironmentName: " + getEnvironmentName() + ",");    	
+        sb.append("{");
+        if (getApplicationName() != null) sb.append("ApplicationName: " + getApplicationName() + ",");
+        if (getTemplateName() != null) sb.append("TemplateName: " + getTemplateName() + ",");
+        if (getEnvironmentName() != null) sb.append("EnvironmentName: " + getEnvironmentName() + ",");
         if (getOptionSettings() != null) sb.append("OptionSettings: " + getOptionSettings() );
         sb.append("}");
         return sb.toString();

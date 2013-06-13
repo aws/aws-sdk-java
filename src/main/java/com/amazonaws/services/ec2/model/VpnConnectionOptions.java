@@ -76,7 +76,7 @@ public class VpnConnectionOptions  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (isStaticRoutesOnly() != null) sb.append("StaticRoutesOnly: " + isStaticRoutesOnly() );
         sb.append("}");
         return sb.toString();

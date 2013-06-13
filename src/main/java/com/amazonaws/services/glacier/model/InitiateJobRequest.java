@@ -123,6 +123,8 @@ public class InitiateJobRequest extends AmazonWebServiceRequest  implements Seri
      */
     public InitiateJobRequest() {}
     
+
+
     /**
      * Constructs a new InitiateJobRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -132,12 +134,14 @@ public class InitiateJobRequest extends AmazonWebServiceRequest  implements Seri
      * @param jobParameters Provides options for specifying job information.
      */
     public InitiateJobRequest(String vaultName, JobParameters jobParameters) {
-        this.vaultName = vaultName;
-        this.jobParameters = jobParameters;
+        setVaultName(vaultName);
+        setJobParameters(jobParameters);
     }
 
     
     
+
+
     /**
      * Constructs a new InitiateJobRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -152,9 +156,9 @@ public class InitiateJobRequest extends AmazonWebServiceRequest  implements Seri
      * @param jobParameters Provides options for specifying job information.
      */
     public InitiateJobRequest(String accountId, String vaultName, JobParameters jobParameters) {
-        this.accountId = accountId;
-        this.vaultName = vaultName;
-        this.jobParameters = jobParameters;
+        setAccountId(accountId);
+        setVaultName(vaultName);
+        setJobParameters(jobParameters);
     }
 
     
@@ -296,9 +300,9 @@ public class InitiateJobRequest extends AmazonWebServiceRequest  implements Seri
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getAccountId() != null) sb.append("AccountId: " + getAccountId() + ",");    	
-        if (getVaultName() != null) sb.append("VaultName: " + getVaultName() + ",");    	
+        sb.append("{");
+        if (getAccountId() != null) sb.append("AccountId: " + getAccountId() + ",");
+        if (getVaultName() != null) sb.append("VaultName: " + getVaultName() + ",");
         if (getJobParameters() != null) sb.append("JobParameters: " + getJobParameters() );
         sb.append("}");
         return sb.toString();

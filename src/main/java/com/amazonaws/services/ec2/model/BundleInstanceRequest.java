@@ -43,6 +43,8 @@ public class BundleInstanceRequest extends AmazonWebServiceRequest  implements S
      */
     public BundleInstanceRequest() {}
     
+
+
     /**
      * Constructs a new BundleInstanceRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -52,8 +54,8 @@ public class BundleInstanceRequest extends AmazonWebServiceRequest  implements S
      * @param storage
      */
     public BundleInstanceRequest(String instanceId, Storage storage) {
-        this.instanceId = instanceId;
-        this.storage = storage;
+        setInstanceId(instanceId);
+        setStorage(storage);
     }
 
     
@@ -137,8 +139,8 @@ public class BundleInstanceRequest extends AmazonWebServiceRequest  implements S
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ",");    	
+        sb.append("{");
+        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ",");
         if (getStorage() != null) sb.append("Storage: " + getStorage() );
         sb.append("}");
         return sb.toString();

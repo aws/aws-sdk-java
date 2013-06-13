@@ -89,8 +89,8 @@ public class AddUploadBufferRequestMarshaller implements Marshaller<Request<AddU
                 jsonWriter.key("GatewayARN").value(addUploadBufferRequest.getGatewayARN());
             }
 
-            java.util.List<String> diskIdsList = addUploadBufferRequest.getDiskIds();
-            if (diskIdsList != null) {
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> diskIdsList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(addUploadBufferRequest.getDiskIds());
+            if (diskIdsList != null && !(diskIdsList.isAutoConstruct() && diskIdsList.isEmpty())) {
 
                 jsonWriter.key("DiskIds");
                 jsonWriter.array();

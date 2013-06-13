@@ -55,6 +55,8 @@ public class ServerCertificate  implements Serializable  {
      */
     public ServerCertificate() {}
     
+
+
     /**
      * Constructs a new ServerCertificate object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -65,8 +67,8 @@ public class ServerCertificate  implements Serializable  {
      * @param certificateBody The contents of the public key certificate.
      */
     public ServerCertificate(ServerCertificateMetadata serverCertificateMetadata, String certificateBody) {
-        this.serverCertificateMetadata = serverCertificateMetadata;
-        this.certificateBody = certificateBody;
+        setServerCertificateMetadata(serverCertificateMetadata);
+        setCertificateBody(certificateBody);
     }
 
     
@@ -214,9 +216,9 @@ public class ServerCertificate  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getServerCertificateMetadata() != null) sb.append("ServerCertificateMetadata: " + getServerCertificateMetadata() + ",");    	
-        if (getCertificateBody() != null) sb.append("CertificateBody: " + getCertificateBody() + ",");    	
+        sb.append("{");
+        if (getServerCertificateMetadata() != null) sb.append("ServerCertificateMetadata: " + getServerCertificateMetadata() + ",");
+        if (getCertificateBody() != null) sb.append("CertificateBody: " + getCertificateBody() + ",");
         if (getCertificateChain() != null) sb.append("CertificateChain: " + getCertificateChain() );
         sb.append("}");
         return sb.toString();

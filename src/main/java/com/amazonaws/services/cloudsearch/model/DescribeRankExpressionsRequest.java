@@ -44,7 +44,7 @@ public class DescribeRankExpressionsRequest extends AmazonWebServiceRequest  imp
      * Limits the <code>DescribeRankExpressions</code> response to the
      * specified fields.
      */
-    private java.util.List<String> rankNames;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> rankNames;
 
     /**
      * A string that represents the name of a domain. Domain names must be
@@ -126,7 +126,8 @@ public class DescribeRankExpressionsRequest extends AmazonWebServiceRequest  imp
     public java.util.List<String> getRankNames() {
         
         if (rankNames == null) {
-            rankNames = new java.util.ArrayList<String>();
+              rankNames = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              rankNames.setAutoConstruct(true);
         }
         return rankNames;
     }
@@ -143,8 +144,7 @@ public class DescribeRankExpressionsRequest extends AmazonWebServiceRequest  imp
             this.rankNames = null;
             return;
         }
-
-        java.util.List<String> rankNamesCopy = new java.util.ArrayList<String>(rankNames.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> rankNamesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(rankNames.size());
         rankNamesCopy.addAll(rankNames);
         this.rankNames = rankNamesCopy;
     }
@@ -185,7 +185,7 @@ public class DescribeRankExpressionsRequest extends AmazonWebServiceRequest  imp
         if (rankNames == null) {
             this.rankNames = null;
         } else {
-            java.util.List<String> rankNamesCopy = new java.util.ArrayList<String>(rankNames.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> rankNamesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(rankNames.size());
             rankNamesCopy.addAll(rankNames);
             this.rankNames = rankNamesCopy;
         }
@@ -204,8 +204,8 @@ public class DescribeRankExpressionsRequest extends AmazonWebServiceRequest  imp
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getDomainName() != null) sb.append("DomainName: " + getDomainName() + ",");    	
+        sb.append("{");
+        if (getDomainName() != null) sb.append("DomainName: " + getDomainName() + ",");
         if (getRankNames() != null) sb.append("RankNames: " + getRankNames() );
         sb.append("}");
         return sb.toString();

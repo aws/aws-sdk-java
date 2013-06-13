@@ -77,7 +77,7 @@ public class BatchWriteItemResult  implements Serializable  {
      * provisioned throughput. </li> <li> <p><i>CapacityUnits</i> - The total
      * number of capacity units consumed. </li> </ul>
      */
-    private java.util.List<ConsumedCapacity> consumedCapacity;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<ConsumedCapacity> consumedCapacity;
 
     /**
      * A map of tables and requests against those tables that were not
@@ -406,8 +406,7 @@ public class BatchWriteItemResult  implements Serializable  {
             this.consumedCapacity = null;
             return;
         }
-
-        java.util.List<ConsumedCapacity> consumedCapacityCopy = new java.util.ArrayList<ConsumedCapacity>(consumedCapacity.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<ConsumedCapacity> consumedCapacityCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ConsumedCapacity>(consumedCapacity.size());
         consumedCapacityCopy.addAll(consumedCapacity);
         this.consumedCapacity = consumedCapacityCopy;
     }
@@ -456,7 +455,7 @@ public class BatchWriteItemResult  implements Serializable  {
         if (consumedCapacity == null) {
             this.consumedCapacity = null;
         } else {
-            java.util.List<ConsumedCapacity> consumedCapacityCopy = new java.util.ArrayList<ConsumedCapacity>(consumedCapacity.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<ConsumedCapacity> consumedCapacityCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ConsumedCapacity>(consumedCapacity.size());
             consumedCapacityCopy.addAll(consumedCapacity);
             this.consumedCapacity = consumedCapacityCopy;
         }
@@ -475,9 +474,9 @@ public class BatchWriteItemResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getUnprocessedItems() != null) sb.append("UnprocessedItems: " + getUnprocessedItems() + ",");    	
-        if (getItemCollectionMetrics() != null) sb.append("ItemCollectionMetrics: " + getItemCollectionMetrics() + ",");    	
+        sb.append("{");
+        if (getUnprocessedItems() != null) sb.append("UnprocessedItems: " + getUnprocessedItems() + ",");
+        if (getItemCollectionMetrics() != null) sb.append("ItemCollectionMetrics: " + getItemCollectionMetrics() + ",");
         if (getConsumedCapacity() != null) sb.append("ConsumedCapacity: " + getConsumedCapacity() );
         sb.append("}");
         return sb.toString();

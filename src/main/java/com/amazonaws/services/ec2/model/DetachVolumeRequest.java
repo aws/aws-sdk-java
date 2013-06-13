@@ -60,6 +60,8 @@ public class DetachVolumeRequest extends AmazonWebServiceRequest  implements Ser
      */
     public DetachVolumeRequest() {}
     
+
+
     /**
      * Constructs a new DetachVolumeRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -68,7 +70,7 @@ public class DetachVolumeRequest extends AmazonWebServiceRequest  implements Ser
      * @param volumeId The ID of the volume to detach.
      */
     public DetachVolumeRequest(String volumeId) {
-        this.volumeId = volumeId;
+        setVolumeId(volumeId);
     }
 
     
@@ -291,10 +293,10 @@ public class DetachVolumeRequest extends AmazonWebServiceRequest  implements Ser
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getVolumeId() != null) sb.append("VolumeId: " + getVolumeId() + ",");    	
-        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ",");    	
-        if (getDevice() != null) sb.append("Device: " + getDevice() + ",");    	
+        sb.append("{");
+        if (getVolumeId() != null) sb.append("VolumeId: " + getVolumeId() + ",");
+        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ",");
+        if (getDevice() != null) sb.append("Device: " + getDevice() + ",");
         if (isForce() != null) sb.append("Force: " + isForce() );
         sb.append("}");
         return sb.toString();

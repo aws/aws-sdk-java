@@ -117,8 +117,8 @@ public class OptionSpecification  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getNamespace() != null) sb.append("Namespace: " + getNamespace() + ",");    	
+        sb.append("{");
+        if (getNamespace() != null) sb.append("Namespace: " + getNamespace() + ",");
         if (getOptionName() != null) sb.append("OptionName: " + getOptionName() );
         sb.append("}");
         return sb.toString();

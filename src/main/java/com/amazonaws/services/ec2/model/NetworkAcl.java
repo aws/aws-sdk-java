@@ -26,11 +26,11 @@ public class NetworkAcl  implements Serializable  {
 
     private Boolean isDefault;
 
-    private java.util.List<NetworkAclEntry> entries;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<NetworkAclEntry> entries;
 
-    private java.util.List<NetworkAclAssociation> associations;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<NetworkAclAssociation> associations;
 
-    private java.util.List<Tag> tags;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
 
     /**
      * Returns the value of the NetworkAclId property for this object.
@@ -151,7 +151,8 @@ public class NetworkAcl  implements Serializable  {
     public java.util.List<NetworkAclEntry> getEntries() {
         
         if (entries == null) {
-            entries = new java.util.ArrayList<NetworkAclEntry>();
+              entries = new com.amazonaws.internal.ListWithAutoConstructFlag<NetworkAclEntry>();
+              entries.setAutoConstruct(true);
         }
         return entries;
     }
@@ -166,8 +167,7 @@ public class NetworkAcl  implements Serializable  {
             this.entries = null;
             return;
         }
-
-        java.util.List<NetworkAclEntry> entriesCopy = new java.util.ArrayList<NetworkAclEntry>(entries.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<NetworkAclEntry> entriesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<NetworkAclEntry>(entries.size());
         entriesCopy.addAll(entries);
         this.entries = entriesCopy;
     }
@@ -204,7 +204,7 @@ public class NetworkAcl  implements Serializable  {
         if (entries == null) {
             this.entries = null;
         } else {
-            java.util.List<NetworkAclEntry> entriesCopy = new java.util.ArrayList<NetworkAclEntry>(entries.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<NetworkAclEntry> entriesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<NetworkAclEntry>(entries.size());
             entriesCopy.addAll(entries);
             this.entries = entriesCopy;
         }
@@ -220,7 +220,8 @@ public class NetworkAcl  implements Serializable  {
     public java.util.List<NetworkAclAssociation> getAssociations() {
         
         if (associations == null) {
-            associations = new java.util.ArrayList<NetworkAclAssociation>();
+              associations = new com.amazonaws.internal.ListWithAutoConstructFlag<NetworkAclAssociation>();
+              associations.setAutoConstruct(true);
         }
         return associations;
     }
@@ -235,8 +236,7 @@ public class NetworkAcl  implements Serializable  {
             this.associations = null;
             return;
         }
-
-        java.util.List<NetworkAclAssociation> associationsCopy = new java.util.ArrayList<NetworkAclAssociation>(associations.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<NetworkAclAssociation> associationsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<NetworkAclAssociation>(associations.size());
         associationsCopy.addAll(associations);
         this.associations = associationsCopy;
     }
@@ -273,7 +273,7 @@ public class NetworkAcl  implements Serializable  {
         if (associations == null) {
             this.associations = null;
         } else {
-            java.util.List<NetworkAclAssociation> associationsCopy = new java.util.ArrayList<NetworkAclAssociation>(associations.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<NetworkAclAssociation> associationsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<NetworkAclAssociation>(associations.size());
             associationsCopy.addAll(associations);
             this.associations = associationsCopy;
         }
@@ -289,7 +289,8 @@ public class NetworkAcl  implements Serializable  {
     public java.util.List<Tag> getTags() {
         
         if (tags == null) {
-            tags = new java.util.ArrayList<Tag>();
+              tags = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>();
+              tags.setAutoConstruct(true);
         }
         return tags;
     }
@@ -304,8 +305,7 @@ public class NetworkAcl  implements Serializable  {
             this.tags = null;
             return;
         }
-
-        java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>(tags.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
         tagsCopy.addAll(tags);
         this.tags = tagsCopy;
     }
@@ -342,7 +342,7 @@ public class NetworkAcl  implements Serializable  {
         if (tags == null) {
             this.tags = null;
         } else {
-            java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>(tags.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
             tagsCopy.addAll(tags);
             this.tags = tagsCopy;
         }
@@ -361,12 +361,12 @@ public class NetworkAcl  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getNetworkAclId() != null) sb.append("NetworkAclId: " + getNetworkAclId() + ",");    	
-        if (getVpcId() != null) sb.append("VpcId: " + getVpcId() + ",");    	
-        if (isDefault() != null) sb.append("IsDefault: " + isDefault() + ",");    	
-        if (getEntries() != null) sb.append("Entries: " + getEntries() + ",");    	
-        if (getAssociations() != null) sb.append("Associations: " + getAssociations() + ",");    	
+        sb.append("{");
+        if (getNetworkAclId() != null) sb.append("NetworkAclId: " + getNetworkAclId() + ",");
+        if (getVpcId() != null) sb.append("VpcId: " + getVpcId() + ",");
+        if (isDefault() != null) sb.append("IsDefault: " + isDefault() + ",");
+        if (getEntries() != null) sb.append("Entries: " + getEntries() + ",");
+        if (getAssociations() != null) sb.append("Associations: " + getAssociations() + ",");
         if (getTags() != null) sb.append("Tags: " + getTags() );
         sb.append("}");
         return sb.toString();

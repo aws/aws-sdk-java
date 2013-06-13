@@ -72,7 +72,7 @@ public class DescribeGatewayInformationResult  implements Serializable  {
      * A <a>NetworkInterface</a> array that contains descriptions of the
      * gateway network interfaces.
      */
-    private java.util.List<NetworkInterface> gatewayNetworkInterfaces;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<NetworkInterface> gatewayNetworkInterfaces;
 
     /**
      * TBD
@@ -388,7 +388,8 @@ public class DescribeGatewayInformationResult  implements Serializable  {
     public java.util.List<NetworkInterface> getGatewayNetworkInterfaces() {
         
         if (gatewayNetworkInterfaces == null) {
-            gatewayNetworkInterfaces = new java.util.ArrayList<NetworkInterface>();
+              gatewayNetworkInterfaces = new com.amazonaws.internal.ListWithAutoConstructFlag<NetworkInterface>();
+              gatewayNetworkInterfaces.setAutoConstruct(true);
         }
         return gatewayNetworkInterfaces;
     }
@@ -405,8 +406,7 @@ public class DescribeGatewayInformationResult  implements Serializable  {
             this.gatewayNetworkInterfaces = null;
             return;
         }
-
-        java.util.List<NetworkInterface> gatewayNetworkInterfacesCopy = new java.util.ArrayList<NetworkInterface>(gatewayNetworkInterfaces.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<NetworkInterface> gatewayNetworkInterfacesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<NetworkInterface>(gatewayNetworkInterfaces.size());
         gatewayNetworkInterfacesCopy.addAll(gatewayNetworkInterfaces);
         this.gatewayNetworkInterfaces = gatewayNetworkInterfacesCopy;
     }
@@ -447,7 +447,7 @@ public class DescribeGatewayInformationResult  implements Serializable  {
         if (gatewayNetworkInterfaces == null) {
             this.gatewayNetworkInterfaces = null;
         } else {
-            java.util.List<NetworkInterface> gatewayNetworkInterfacesCopy = new java.util.ArrayList<NetworkInterface>(gatewayNetworkInterfaces.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<NetworkInterface> gatewayNetworkInterfacesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<NetworkInterface>(gatewayNetworkInterfaces.size());
             gatewayNetworkInterfacesCopy.addAll(gatewayNetworkInterfaces);
             this.gatewayNetworkInterfaces = gatewayNetworkInterfacesCopy;
         }
@@ -616,13 +616,13 @@ public class DescribeGatewayInformationResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getGatewayARN() != null) sb.append("GatewayARN: " + getGatewayARN() + ",");    	
-        if (getGatewayId() != null) sb.append("GatewayId: " + getGatewayId() + ",");    	
-        if (getGatewayTimezone() != null) sb.append("GatewayTimezone: " + getGatewayTimezone() + ",");    	
-        if (getGatewayState() != null) sb.append("GatewayState: " + getGatewayState() + ",");    	
-        if (getGatewayNetworkInterfaces() != null) sb.append("GatewayNetworkInterfaces: " + getGatewayNetworkInterfaces() + ",");    	
-        if (getGatewayType() != null) sb.append("GatewayType: " + getGatewayType() + ",");    	
+        sb.append("{");
+        if (getGatewayARN() != null) sb.append("GatewayARN: " + getGatewayARN() + ",");
+        if (getGatewayId() != null) sb.append("GatewayId: " + getGatewayId() + ",");
+        if (getGatewayTimezone() != null) sb.append("GatewayTimezone: " + getGatewayTimezone() + ",");
+        if (getGatewayState() != null) sb.append("GatewayState: " + getGatewayState() + ",");
+        if (getGatewayNetworkInterfaces() != null) sb.append("GatewayNetworkInterfaces: " + getGatewayNetworkInterfaces() + ",");
+        if (getGatewayType() != null) sb.append("GatewayType: " + getGatewayType() + ",");
         if (getNextUpdateAvailabilityDate() != null) sb.append("NextUpdateAvailabilityDate: " + getNextUpdateAvailabilityDate() );
         sb.append("}");
         return sb.toString();

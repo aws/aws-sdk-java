@@ -37,6 +37,8 @@ public class GetCloudFrontOriginAccessIdentityRequest extends AmazonWebServiceRe
      */
     public GetCloudFrontOriginAccessIdentityRequest() {}
     
+
+
     /**
      * Constructs a new GetCloudFrontOriginAccessIdentityRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -45,7 +47,7 @@ public class GetCloudFrontOriginAccessIdentityRequest extends AmazonWebServiceRe
      * @param id The identity's id.
      */
     public GetCloudFrontOriginAccessIdentityRequest(String id) {
-        this.id = id;
+        setId(id);
     }
 
     
@@ -95,7 +97,7 @@ public class GetCloudFrontOriginAccessIdentityRequest extends AmazonWebServiceRe
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getId() != null) sb.append("Id: " + getId() );
         sb.append("}");
         return sb.toString();

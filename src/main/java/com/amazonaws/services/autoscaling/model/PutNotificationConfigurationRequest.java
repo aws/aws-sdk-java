@@ -53,7 +53,7 @@ public class PutNotificationConfigurationRequest extends AmazonWebServiceRequest
      * The type of events that will trigger the notification. For more
      * information, go to <a>DescribeAutoScalingNotificationTypes</a>.
      */
-    private java.util.List<String> notificationTypes;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> notificationTypes;
 
     /**
      * The name of the Auto Scaling group.
@@ -163,7 +163,8 @@ public class PutNotificationConfigurationRequest extends AmazonWebServiceRequest
     public java.util.List<String> getNotificationTypes() {
         
         if (notificationTypes == null) {
-            notificationTypes = new java.util.ArrayList<String>();
+              notificationTypes = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              notificationTypes.setAutoConstruct(true);
         }
         return notificationTypes;
     }
@@ -180,8 +181,7 @@ public class PutNotificationConfigurationRequest extends AmazonWebServiceRequest
             this.notificationTypes = null;
             return;
         }
-
-        java.util.List<String> notificationTypesCopy = new java.util.ArrayList<String>(notificationTypes.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> notificationTypesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(notificationTypes.size());
         notificationTypesCopy.addAll(notificationTypes);
         this.notificationTypes = notificationTypesCopy;
     }
@@ -222,7 +222,7 @@ public class PutNotificationConfigurationRequest extends AmazonWebServiceRequest
         if (notificationTypes == null) {
             this.notificationTypes = null;
         } else {
-            java.util.List<String> notificationTypesCopy = new java.util.ArrayList<String>(notificationTypes.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> notificationTypesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(notificationTypes.size());
             notificationTypesCopy.addAll(notificationTypes);
             this.notificationTypes = notificationTypesCopy;
         }
@@ -241,9 +241,9 @@ public class PutNotificationConfigurationRequest extends AmazonWebServiceRequest
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getAutoScalingGroupName() != null) sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ",");    	
-        if (getTopicARN() != null) sb.append("TopicARN: " + getTopicARN() + ",");    	
+        sb.append("{");
+        if (getAutoScalingGroupName() != null) sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ",");
+        if (getTopicARN() != null) sb.append("TopicARN: " + getTopicARN() + ",");
         if (getNotificationTypes() != null) sb.append("NotificationTypes: " + getNotificationTypes() );
         sb.append("}");
         return sb.toString();

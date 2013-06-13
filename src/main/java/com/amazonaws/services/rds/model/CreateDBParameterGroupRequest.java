@@ -60,6 +60,8 @@ public class CreateDBParameterGroupRequest extends AmazonWebServiceRequest  impl
      */
     public CreateDBParameterGroupRequest() {}
     
+
+
     /**
      * Constructs a new CreateDBParameterGroupRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -78,9 +80,9 @@ public class CreateDBParameterGroupRequest extends AmazonWebServiceRequest  impl
      * @param description The description for the DB Parameter Group.
      */
     public CreateDBParameterGroupRequest(String dBParameterGroupName, String dBParameterGroupFamily, String description) {
-        this.dBParameterGroupName = dBParameterGroupName;
-        this.dBParameterGroupFamily = dBParameterGroupFamily;
-        this.description = description;
+        setDBParameterGroupName(dBParameterGroupName);
+        setDBParameterGroupFamily(dBParameterGroupFamily);
+        setDescription(description);
     }
 
     
@@ -240,9 +242,9 @@ public class CreateDBParameterGroupRequest extends AmazonWebServiceRequest  impl
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getDBParameterGroupName() != null) sb.append("DBParameterGroupName: " + getDBParameterGroupName() + ",");    	
-        if (getDBParameterGroupFamily() != null) sb.append("DBParameterGroupFamily: " + getDBParameterGroupFamily() + ",");    	
+        sb.append("{");
+        if (getDBParameterGroupName() != null) sb.append("DBParameterGroupName: " + getDBParameterGroupName() + ",");
+        if (getDBParameterGroupFamily() != null) sb.append("DBParameterGroupFamily: " + getDBParameterGroupFamily() + ",");
         if (getDescription() != null) sb.append("Description: " + getDescription() );
         sb.append("}");
         return sb.toString();

@@ -38,6 +38,8 @@ public class PolicyAttribute  implements Serializable  {
      */
     public PolicyAttribute() {}
     
+
+
     /**
      * Constructs a new PolicyAttribute object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -49,8 +51,8 @@ public class PolicyAttribute  implements Serializable  {
      * policy.
      */
     public PolicyAttribute(String attributeName, String attributeValue) {
-        this.attributeName = attributeName;
-        this.attributeValue = attributeValue;
+        setAttributeName(attributeName);
+        setAttributeValue(attributeValue);
     }
 
     
@@ -134,8 +136,8 @@ public class PolicyAttribute  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getAttributeName() != null) sb.append("AttributeName: " + getAttributeName() + ",");    	
+        sb.append("{");
+        if (getAttributeName() != null) sb.append("AttributeName: " + getAttributeName() + ",");
         if (getAttributeValue() != null) sb.append("AttributeValue: " + getAttributeValue() );
         sb.append("}");
         return sb.toString();

@@ -80,7 +80,7 @@ public class CancelUpdateStackRequest extends AmazonWebServiceRequest  implement
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getStackName() != null) sb.append("StackName: " + getStackName() );
         sb.append("}");
         return sb.toString();

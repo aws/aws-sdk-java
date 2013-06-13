@@ -43,6 +43,8 @@ public class SetQueueAttributesRequest extends AmazonWebServiceRequest  implemen
      */
     public SetQueueAttributesRequest() {}
     
+
+
     /**
      * Constructs a new SetQueueAttributesRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -52,8 +54,8 @@ public class SetQueueAttributesRequest extends AmazonWebServiceRequest  implemen
      * @param attributes A map of attributes to set.
      */
     public SetQueueAttributesRequest(String queueUrl, java.util.Map<String,String> attributes) {
-        this.queueUrl = queueUrl;
-        this.attributes = attributes;
+        setQueueUrl(queueUrl);
+        setAttributes(attributes);
     }
 
     
@@ -141,8 +143,8 @@ public class SetQueueAttributesRequest extends AmazonWebServiceRequest  implemen
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getQueueUrl() != null) sb.append("QueueUrl: " + getQueueUrl() + ",");    	
+        sb.append("{");
+        if (getQueueUrl() != null) sb.append("QueueUrl: " + getQueueUrl() + ",");
         if (getAttributes() != null) sb.append("Attributes: " + getAttributes() );
         sb.append("}");
         return sb.toString();

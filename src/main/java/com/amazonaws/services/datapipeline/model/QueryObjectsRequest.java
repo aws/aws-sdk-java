@@ -355,11 +355,11 @@ public class QueryObjectsRequest extends AmazonWebServiceRequest  implements Ser
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getPipelineId() != null) sb.append("PipelineId: " + getPipelineId() + ",");    	
-        if (getQuery() != null) sb.append("Query: " + getQuery() + ",");    	
-        if (getSphere() != null) sb.append("Sphere: " + getSphere() + ",");    	
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");    	
+        sb.append("{");
+        if (getPipelineId() != null) sb.append("PipelineId: " + getPipelineId() + ",");
+        if (getQuery() != null) sb.append("Query: " + getQuery() + ",");
+        if (getSphere() != null) sb.append("Sphere: " + getSphere() + ",");
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");
         if (getLimit() != null) sb.append("Limit: " + getLimit() );
         sb.append("}");
         return sb.toString();

@@ -75,7 +75,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest  implements Seri
      * A list of <code>Parameter</code> structures that specify input
      * parameters for the stack.
      */
-    private java.util.List<Parameter> parameters;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Parameter> parameters;
 
     /**
      * The list of capabilities that you want to allow in the stack. If your
@@ -92,7 +92,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest  implements Seri
      * and <a
      * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
      */
-    private java.util.List<String> capabilities;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> capabilities;
 
     /**
      * The name or stack ID of the stack to update. <note> Must contain only
@@ -302,7 +302,8 @@ public class UpdateStackRequest extends AmazonWebServiceRequest  implements Seri
     public java.util.List<Parameter> getParameters() {
         
         if (parameters == null) {
-            parameters = new java.util.ArrayList<Parameter>();
+              parameters = new com.amazonaws.internal.ListWithAutoConstructFlag<Parameter>();
+              parameters.setAutoConstruct(true);
         }
         return parameters;
     }
@@ -319,8 +320,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest  implements Seri
             this.parameters = null;
             return;
         }
-
-        java.util.List<Parameter> parametersCopy = new java.util.ArrayList<Parameter>(parameters.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Parameter> parametersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Parameter>(parameters.size());
         parametersCopy.addAll(parameters);
         this.parameters = parametersCopy;
     }
@@ -361,7 +361,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest  implements Seri
         if (parameters == null) {
             this.parameters = null;
         } else {
-            java.util.List<Parameter> parametersCopy = new java.util.ArrayList<Parameter>(parameters.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Parameter> parametersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Parameter>(parameters.size());
             parametersCopy.addAll(parameters);
             this.parameters = parametersCopy;
         }
@@ -401,7 +401,8 @@ public class UpdateStackRequest extends AmazonWebServiceRequest  implements Seri
     public java.util.List<String> getCapabilities() {
         
         if (capabilities == null) {
-            capabilities = new java.util.ArrayList<String>();
+              capabilities = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              capabilities.setAutoConstruct(true);
         }
         return capabilities;
     }
@@ -440,8 +441,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest  implements Seri
             this.capabilities = null;
             return;
         }
-
-        java.util.List<String> capabilitiesCopy = new java.util.ArrayList<String>(capabilities.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> capabilitiesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(capabilities.size());
         capabilitiesCopy.addAll(capabilities);
         this.capabilities = capabilitiesCopy;
     }
@@ -526,7 +526,7 @@ public class UpdateStackRequest extends AmazonWebServiceRequest  implements Seri
         if (capabilities == null) {
             this.capabilities = null;
         } else {
-            java.util.List<String> capabilitiesCopy = new java.util.ArrayList<String>(capabilities.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> capabilitiesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(capabilities.size());
             capabilitiesCopy.addAll(capabilities);
             this.capabilities = capabilitiesCopy;
         }
@@ -545,11 +545,11 @@ public class UpdateStackRequest extends AmazonWebServiceRequest  implements Seri
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getStackName() != null) sb.append("StackName: " + getStackName() + ",");    	
-        if (getTemplateBody() != null) sb.append("TemplateBody: " + getTemplateBody() + ",");    	
-        if (getTemplateURL() != null) sb.append("TemplateURL: " + getTemplateURL() + ",");    	
-        if (getParameters() != null) sb.append("Parameters: " + getParameters() + ",");    	
+        sb.append("{");
+        if (getStackName() != null) sb.append("StackName: " + getStackName() + ",");
+        if (getTemplateBody() != null) sb.append("TemplateBody: " + getTemplateBody() + ",");
+        if (getTemplateURL() != null) sb.append("TemplateURL: " + getTemplateURL() + ",");
+        if (getParameters() != null) sb.append("Parameters: " + getParameters() + ",");
         if (getCapabilities() != null) sb.append("Capabilities: " + getCapabilities() );
         sb.append("}");
         return sb.toString();

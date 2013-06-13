@@ -25,7 +25,7 @@ public class ListAccessKeysResult  implements Serializable  {
     /**
      * A list of access key metadata.
      */
-    private java.util.List<AccessKeyMetadata> accessKeyMetadata;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<AccessKeyMetadata> accessKeyMetadata;
 
     /**
      * A flag that indicates whether there are more keys to list. If your
@@ -54,7 +54,8 @@ public class ListAccessKeysResult  implements Serializable  {
     public java.util.List<AccessKeyMetadata> getAccessKeyMetadata() {
         
         if (accessKeyMetadata == null) {
-            accessKeyMetadata = new java.util.ArrayList<AccessKeyMetadata>();
+              accessKeyMetadata = new com.amazonaws.internal.ListWithAutoConstructFlag<AccessKeyMetadata>();
+              accessKeyMetadata.setAutoConstruct(true);
         }
         return accessKeyMetadata;
     }
@@ -69,8 +70,7 @@ public class ListAccessKeysResult  implements Serializable  {
             this.accessKeyMetadata = null;
             return;
         }
-
-        java.util.List<AccessKeyMetadata> accessKeyMetadataCopy = new java.util.ArrayList<AccessKeyMetadata>(accessKeyMetadata.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<AccessKeyMetadata> accessKeyMetadataCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<AccessKeyMetadata>(accessKeyMetadata.size());
         accessKeyMetadataCopy.addAll(accessKeyMetadata);
         this.accessKeyMetadata = accessKeyMetadataCopy;
     }
@@ -107,7 +107,7 @@ public class ListAccessKeysResult  implements Serializable  {
         if (accessKeyMetadata == null) {
             this.accessKeyMetadata = null;
         } else {
-            java.util.List<AccessKeyMetadata> accessKeyMetadataCopy = new java.util.ArrayList<AccessKeyMetadata>(accessKeyMetadata.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<AccessKeyMetadata> accessKeyMetadataCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<AccessKeyMetadata>(accessKeyMetadata.size());
             accessKeyMetadataCopy.addAll(accessKeyMetadata);
             this.accessKeyMetadata = accessKeyMetadataCopy;
         }
@@ -251,9 +251,9 @@ public class ListAccessKeysResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getAccessKeyMetadata() != null) sb.append("AccessKeyMetadata: " + getAccessKeyMetadata() + ",");    	
-        if (isTruncated() != null) sb.append("IsTruncated: " + isTruncated() + ",");    	
+        sb.append("{");
+        if (getAccessKeyMetadata() != null) sb.append("AccessKeyMetadata: " + getAccessKeyMetadata() + ",");
+        if (isTruncated() != null) sb.append("IsTruncated: " + isTruncated() + ",");
         if (getMarker() != null) sb.append("Marker: " + getMarker() );
         sb.append("}");
         return sb.toString();

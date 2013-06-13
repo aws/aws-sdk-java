@@ -37,7 +37,7 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest  implements Ser
     /**
      * The ID of a VPC you want information about.
      */
-    private java.util.List<String> vpcIds;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> vpcIds;
 
     /**
      * A list of filters used to match properties for VPCs. For a complete
@@ -45,7 +45,7 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest  implements Ser
      * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      * EC2 API reference</a>.
      */
-    private java.util.List<Filter> filters;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filters;
 
     /**
      * The ID of a VPC you want information about.
@@ -55,7 +55,8 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest  implements Ser
     public java.util.List<String> getVpcIds() {
         
         if (vpcIds == null) {
-            vpcIds = new java.util.ArrayList<String>();
+              vpcIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              vpcIds.setAutoConstruct(true);
         }
         return vpcIds;
     }
@@ -70,8 +71,7 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest  implements Ser
             this.vpcIds = null;
             return;
         }
-
-        java.util.List<String> vpcIdsCopy = new java.util.ArrayList<String>(vpcIds.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> vpcIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(vpcIds.size());
         vpcIdsCopy.addAll(vpcIds);
         this.vpcIds = vpcIdsCopy;
     }
@@ -108,7 +108,7 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest  implements Ser
         if (vpcIds == null) {
             this.vpcIds = null;
         } else {
-            java.util.List<String> vpcIdsCopy = new java.util.ArrayList<String>(vpcIds.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> vpcIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(vpcIds.size());
             vpcIdsCopy.addAll(vpcIds);
             this.vpcIds = vpcIdsCopy;
         }
@@ -130,7 +130,8 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest  implements Ser
     public java.util.List<Filter> getFilters() {
         
         if (filters == null) {
-            filters = new java.util.ArrayList<Filter>();
+              filters = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>();
+              filters.setAutoConstruct(true);
         }
         return filters;
     }
@@ -151,8 +152,7 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest  implements Ser
             this.filters = null;
             return;
         }
-
-        java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>(filters.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filtersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>(filters.size());
         filtersCopy.addAll(filters);
         this.filters = filtersCopy;
     }
@@ -201,7 +201,7 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest  implements Ser
         if (filters == null) {
             this.filters = null;
         } else {
-            java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>(filters.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filtersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>(filters.size());
             filtersCopy.addAll(filters);
             this.filters = filtersCopy;
         }
@@ -220,8 +220,8 @@ public class DescribeVpcsRequest extends AmazonWebServiceRequest  implements Ser
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getVpcIds() != null) sb.append("VpcIds: " + getVpcIds() + ",");    	
+        sb.append("{");
+        if (getVpcIds() != null) sb.append("VpcIds: " + getVpcIds() + ",");
         if (getFilters() != null) sb.append("Filters: " + getFilters() );
         sb.append("}");
         return sb.toString();

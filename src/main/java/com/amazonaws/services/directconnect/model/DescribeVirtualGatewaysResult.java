@@ -25,7 +25,7 @@ public class DescribeVirtualGatewaysResult  implements Serializable  {
     /**
      * A list of virtual gateways.
      */
-    private java.util.List<VirtualGateway> virtualGateways;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<VirtualGateway> virtualGateways;
 
     /**
      * A list of virtual gateways.
@@ -35,7 +35,8 @@ public class DescribeVirtualGatewaysResult  implements Serializable  {
     public java.util.List<VirtualGateway> getVirtualGateways() {
         
         if (virtualGateways == null) {
-            virtualGateways = new java.util.ArrayList<VirtualGateway>();
+              virtualGateways = new com.amazonaws.internal.ListWithAutoConstructFlag<VirtualGateway>();
+              virtualGateways.setAutoConstruct(true);
         }
         return virtualGateways;
     }
@@ -50,8 +51,7 @@ public class DescribeVirtualGatewaysResult  implements Serializable  {
             this.virtualGateways = null;
             return;
         }
-
-        java.util.List<VirtualGateway> virtualGatewaysCopy = new java.util.ArrayList<VirtualGateway>(virtualGateways.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<VirtualGateway> virtualGatewaysCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<VirtualGateway>(virtualGateways.size());
         virtualGatewaysCopy.addAll(virtualGateways);
         this.virtualGateways = virtualGatewaysCopy;
     }
@@ -88,7 +88,7 @@ public class DescribeVirtualGatewaysResult  implements Serializable  {
         if (virtualGateways == null) {
             this.virtualGateways = null;
         } else {
-            java.util.List<VirtualGateway> virtualGatewaysCopy = new java.util.ArrayList<VirtualGateway>(virtualGateways.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<VirtualGateway> virtualGatewaysCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<VirtualGateway>(virtualGateways.size());
             virtualGatewaysCopy.addAll(virtualGateways);
             this.virtualGateways = virtualGatewaysCopy;
         }
@@ -107,7 +107,7 @@ public class DescribeVirtualGatewaysResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getVirtualGateways() != null) sb.append("VirtualGateways: " + getVirtualGateways() );
         sb.append("}");
         return sb.toString();

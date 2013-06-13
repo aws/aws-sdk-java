@@ -209,10 +209,10 @@ public class Invalidation  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getId() != null) sb.append("Id: " + getId() + ",");    	
-        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");    	
-        if (getCreateTime() != null) sb.append("CreateTime: " + getCreateTime() + ",");    	
+        sb.append("{");
+        if (getId() != null) sb.append("Id: " + getId() + ",");
+        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");
+        if (getCreateTime() != null) sb.append("CreateTime: " + getCreateTime() + ",");
         if (getInvalidationBatch() != null) sb.append("InvalidationBatch: " + getInvalidationBatch() );
         sb.append("}");
         return sb.toString();

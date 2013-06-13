@@ -51,7 +51,7 @@ public class PutMetricDataRequest extends AmazonWebServiceRequest  implements Se
     /**
      * A list of data describing the metric.
      */
-    private java.util.List<MetricDatum> metricData;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<MetricDatum> metricData;
 
     /**
      * The namespace for the metric data.
@@ -107,7 +107,8 @@ public class PutMetricDataRequest extends AmazonWebServiceRequest  implements Se
     public java.util.List<MetricDatum> getMetricData() {
         
         if (metricData == null) {
-            metricData = new java.util.ArrayList<MetricDatum>();
+              metricData = new com.amazonaws.internal.ListWithAutoConstructFlag<MetricDatum>();
+              metricData.setAutoConstruct(true);
         }
         return metricData;
     }
@@ -122,8 +123,7 @@ public class PutMetricDataRequest extends AmazonWebServiceRequest  implements Se
             this.metricData = null;
             return;
         }
-
-        java.util.List<MetricDatum> metricDataCopy = new java.util.ArrayList<MetricDatum>(metricData.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<MetricDatum> metricDataCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<MetricDatum>(metricData.size());
         metricDataCopy.addAll(metricData);
         this.metricData = metricDataCopy;
     }
@@ -160,7 +160,7 @@ public class PutMetricDataRequest extends AmazonWebServiceRequest  implements Se
         if (metricData == null) {
             this.metricData = null;
         } else {
-            java.util.List<MetricDatum> metricDataCopy = new java.util.ArrayList<MetricDatum>(metricData.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<MetricDatum> metricDataCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<MetricDatum>(metricData.size());
             metricDataCopy.addAll(metricData);
             this.metricData = metricDataCopy;
         }
@@ -179,8 +179,8 @@ public class PutMetricDataRequest extends AmazonWebServiceRequest  implements Se
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getNamespace() != null) sb.append("Namespace: " + getNamespace() + ",");    	
+        sb.append("{");
+        if (getNamespace() != null) sb.append("Namespace: " + getNamespace() + ",");
         if (getMetricData() != null) sb.append("MetricData: " + getMetricData() );
         sb.append("}");
         return sb.toString();

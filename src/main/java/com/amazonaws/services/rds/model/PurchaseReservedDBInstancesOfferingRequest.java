@@ -49,6 +49,8 @@ public class PurchaseReservedDBInstancesOfferingRequest extends AmazonWebService
      */
     public PurchaseReservedDBInstancesOfferingRequest() {}
     
+
+
     /**
      * Constructs a new PurchaseReservedDBInstancesOfferingRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -59,7 +61,7 @@ public class PurchaseReservedDBInstancesOfferingRequest extends AmazonWebService
      * 438012d3-4052-4cc7-b2e3-8d3372e0e706
      */
     public PurchaseReservedDBInstancesOfferingRequest(String reservedDBInstancesOfferingId) {
-        this.reservedDBInstancesOfferingId = reservedDBInstancesOfferingId;
+        setReservedDBInstancesOfferingId(reservedDBInstancesOfferingId);
     }
 
     
@@ -189,9 +191,9 @@ public class PurchaseReservedDBInstancesOfferingRequest extends AmazonWebService
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getReservedDBInstancesOfferingId() != null) sb.append("ReservedDBInstancesOfferingId: " + getReservedDBInstancesOfferingId() + ",");    	
-        if (getReservedDBInstanceId() != null) sb.append("ReservedDBInstanceId: " + getReservedDBInstanceId() + ",");    	
+        sb.append("{");
+        if (getReservedDBInstancesOfferingId() != null) sb.append("ReservedDBInstancesOfferingId: " + getReservedDBInstancesOfferingId() + ",");
+        if (getReservedDBInstanceId() != null) sb.append("ReservedDBInstanceId: " + getReservedDBInstanceId() + ",");
         if (getDBInstanceCount() != null) sb.append("DBInstanceCount: " + getDBInstanceCount() );
         sb.append("}");
         return sb.toString();

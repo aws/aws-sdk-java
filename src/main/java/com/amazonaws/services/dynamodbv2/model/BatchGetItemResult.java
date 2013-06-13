@@ -61,7 +61,7 @@ public class BatchGetItemResult  implements Serializable  {
      * the provisioned throughput. </li> <li> <p><i>CapacityUnits</i> - The
      * total number of capacity units consumed. </li> </ul>
      */
-    private java.util.List<ConsumedCapacity> consumedCapacity;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<ConsumedCapacity> consumedCapacity;
 
     /**
      * A map of table name to a list of items. Each object in
@@ -294,8 +294,7 @@ public class BatchGetItemResult  implements Serializable  {
             this.consumedCapacity = null;
             return;
         }
-
-        java.util.List<ConsumedCapacity> consumedCapacityCopy = new java.util.ArrayList<ConsumedCapacity>(consumedCapacity.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<ConsumedCapacity> consumedCapacityCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ConsumedCapacity>(consumedCapacity.size());
         consumedCapacityCopy.addAll(consumedCapacity);
         this.consumedCapacity = consumedCapacityCopy;
     }
@@ -344,7 +343,7 @@ public class BatchGetItemResult  implements Serializable  {
         if (consumedCapacity == null) {
             this.consumedCapacity = null;
         } else {
-            java.util.List<ConsumedCapacity> consumedCapacityCopy = new java.util.ArrayList<ConsumedCapacity>(consumedCapacity.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<ConsumedCapacity> consumedCapacityCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ConsumedCapacity>(consumedCapacity.size());
             consumedCapacityCopy.addAll(consumedCapacity);
             this.consumedCapacity = consumedCapacityCopy;
         }
@@ -363,9 +362,9 @@ public class BatchGetItemResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getResponses() != null) sb.append("Responses: " + getResponses() + ",");    	
-        if (getUnprocessedKeys() != null) sb.append("UnprocessedKeys: " + getUnprocessedKeys() + ",");    	
+        sb.append("{");
+        if (getResponses() != null) sb.append("Responses: " + getResponses() + ",");
+        if (getUnprocessedKeys() != null) sb.append("UnprocessedKeys: " + getUnprocessedKeys() + ",");
         if (getConsumedCapacity() != null) sb.append("ConsumedCapacity: " + getConsumedCapacity() );
         sb.append("}");
         return sb.toString();

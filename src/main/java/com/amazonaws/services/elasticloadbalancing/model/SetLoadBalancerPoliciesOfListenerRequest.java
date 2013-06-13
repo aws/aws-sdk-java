@@ -43,7 +43,7 @@ public class SetLoadBalancerPoliciesOfListenerRequest extends AmazonWebServiceRe
      * list can have at most one policy. If the list is empty, the current
      * policy is removed from the listener.
      */
-    private java.util.List<String> policyNames;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> policyNames;
 
     /**
      * Default constructor for a new SetLoadBalancerPoliciesOfListenerRequest object.  Callers should use the
@@ -51,6 +51,8 @@ public class SetLoadBalancerPoliciesOfListenerRequest extends AmazonWebServiceRe
      */
     public SetLoadBalancerPoliciesOfListenerRequest() {}
     
+
+
     /**
      * Constructs a new SetLoadBalancerPoliciesOfListenerRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -65,9 +67,9 @@ public class SetLoadBalancerPoliciesOfListenerRequest extends AmazonWebServiceRe
      * is empty, the current policy is removed from the listener.
      */
     public SetLoadBalancerPoliciesOfListenerRequest(String loadBalancerName, Integer loadBalancerPort, java.util.List<String> policyNames) {
-        this.loadBalancerName = loadBalancerName;
-        this.loadBalancerPort = loadBalancerPort;
-        this.policyNames = policyNames;
+        setLoadBalancerName(loadBalancerName);
+        setLoadBalancerPort(loadBalancerPort);
+        setPolicyNames(policyNames);
     }
 
     
@@ -164,7 +166,8 @@ public class SetLoadBalancerPoliciesOfListenerRequest extends AmazonWebServiceRe
     public java.util.List<String> getPolicyNames() {
         
         if (policyNames == null) {
-            policyNames = new java.util.ArrayList<String>();
+              policyNames = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              policyNames.setAutoConstruct(true);
         }
         return policyNames;
     }
@@ -183,8 +186,7 @@ public class SetLoadBalancerPoliciesOfListenerRequest extends AmazonWebServiceRe
             this.policyNames = null;
             return;
         }
-
-        java.util.List<String> policyNamesCopy = new java.util.ArrayList<String>(policyNames.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> policyNamesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(policyNames.size());
         policyNamesCopy.addAll(policyNames);
         this.policyNames = policyNamesCopy;
     }
@@ -229,7 +231,7 @@ public class SetLoadBalancerPoliciesOfListenerRequest extends AmazonWebServiceRe
         if (policyNames == null) {
             this.policyNames = null;
         } else {
-            java.util.List<String> policyNamesCopy = new java.util.ArrayList<String>(policyNames.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> policyNamesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(policyNames.size());
             policyNamesCopy.addAll(policyNames);
             this.policyNames = policyNamesCopy;
         }
@@ -248,9 +250,9 @@ public class SetLoadBalancerPoliciesOfListenerRequest extends AmazonWebServiceRe
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getLoadBalancerName() != null) sb.append("LoadBalancerName: " + getLoadBalancerName() + ",");    	
-        if (getLoadBalancerPort() != null) sb.append("LoadBalancerPort: " + getLoadBalancerPort() + ",");    	
+        sb.append("{");
+        if (getLoadBalancerName() != null) sb.append("LoadBalancerName: " + getLoadBalancerName() + ",");
+        if (getLoadBalancerPort() != null) sb.append("LoadBalancerPort: " + getLoadBalancerPort() + ",");
         if (getPolicyNames() != null) sb.append("PolicyNames: " + getPolicyNames() );
         sb.append("}");
         return sb.toString();

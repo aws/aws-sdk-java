@@ -25,7 +25,7 @@ public class DescribeConnectionsResult  implements Serializable  {
     /**
      * A list of connections.
      */
-    private java.util.List<Connection> connections;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Connection> connections;
 
     /**
      * A list of connections.
@@ -35,7 +35,8 @@ public class DescribeConnectionsResult  implements Serializable  {
     public java.util.List<Connection> getConnections() {
         
         if (connections == null) {
-            connections = new java.util.ArrayList<Connection>();
+              connections = new com.amazonaws.internal.ListWithAutoConstructFlag<Connection>();
+              connections.setAutoConstruct(true);
         }
         return connections;
     }
@@ -50,8 +51,7 @@ public class DescribeConnectionsResult  implements Serializable  {
             this.connections = null;
             return;
         }
-
-        java.util.List<Connection> connectionsCopy = new java.util.ArrayList<Connection>(connections.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Connection> connectionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Connection>(connections.size());
         connectionsCopy.addAll(connections);
         this.connections = connectionsCopy;
     }
@@ -88,7 +88,7 @@ public class DescribeConnectionsResult  implements Serializable  {
         if (connections == null) {
             this.connections = null;
         } else {
-            java.util.List<Connection> connectionsCopy = new java.util.ArrayList<Connection>(connections.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Connection> connectionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Connection>(connections.size());
             connectionsCopy.addAll(connections);
             this.connections = connectionsCopy;
         }
@@ -107,7 +107,7 @@ public class DescribeConnectionsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getConnections() != null) sb.append("Connections: " + getConnections() );
         sb.append("}");
         return sb.toString();

@@ -49,6 +49,8 @@ public class DescribeInstanceAttributeRequest extends AmazonWebServiceRequest  i
      */
     public DescribeInstanceAttributeRequest() {}
     
+
+
     /**
      * Constructs a new DescribeInstanceAttributeRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -64,8 +66,8 @@ public class DescribeInstanceAttributeRequest extends AmazonWebServiceRequest  i
      * <code>rootDeviceName</code>, <code>blockDeviceMapping</code>
      */
     public DescribeInstanceAttributeRequest(String instanceId, String attribute) {
-        this.instanceId = instanceId;
-        this.attribute = attribute;
+        setInstanceId(instanceId);
+        setAttribute(attribute);
     }
 
     
@@ -257,8 +259,8 @@ public class DescribeInstanceAttributeRequest extends AmazonWebServiceRequest  i
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ",");    	
+        sb.append("{");
+        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ",");
         if (getAttribute() != null) sb.append("Attribute: " + getAttribute() );
         sb.append("}");
         return sb.toString();

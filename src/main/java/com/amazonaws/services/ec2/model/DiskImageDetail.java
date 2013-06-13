@@ -139,9 +139,9 @@ public class DiskImageDetail  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getFormat() != null) sb.append("Format: " + getFormat() + ",");    	
-        if (getBytes() != null) sb.append("Bytes: " + getBytes() + ",");    	
+        sb.append("{");
+        if (getFormat() != null) sb.append("Format: " + getFormat() + ",");
+        if (getBytes() != null) sb.append("Bytes: " + getBytes() + ",");
         if (getImportManifestUrl() != null) sb.append("ImportManifestUrl: " + getImportManifestUrl() );
         sb.append("}");
         return sb.toString();

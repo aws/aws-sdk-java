@@ -377,12 +377,12 @@ public class Disk  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getDiskId() != null) sb.append("DiskId: " + getDiskId() + ",");    	
-        if (getDiskPath() != null) sb.append("DiskPath: " + getDiskPath() + ",");    	
-        if (getDiskNode() != null) sb.append("DiskNode: " + getDiskNode() + ",");    	
-        if (getDiskSizeInBytes() != null) sb.append("DiskSizeInBytes: " + getDiskSizeInBytes() + ",");    	
-        if (getDiskAllocationType() != null) sb.append("DiskAllocationType: " + getDiskAllocationType() + ",");    	
+        sb.append("{");
+        if (getDiskId() != null) sb.append("DiskId: " + getDiskId() + ",");
+        if (getDiskPath() != null) sb.append("DiskPath: " + getDiskPath() + ",");
+        if (getDiskNode() != null) sb.append("DiskNode: " + getDiskNode() + ",");
+        if (getDiskSizeInBytes() != null) sb.append("DiskSizeInBytes: " + getDiskSizeInBytes() + ",");
+        if (getDiskAllocationType() != null) sb.append("DiskAllocationType: " + getDiskAllocationType() + ",");
         if (getDiskAllocationResource() != null) sb.append("DiskAllocationResource: " + getDiskAllocationResource() );
         sb.append("}");
         return sb.toString();

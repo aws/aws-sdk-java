@@ -184,10 +184,10 @@ public class InstancePrivateIpAddress  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getPrivateIpAddress() != null) sb.append("PrivateIpAddress: " + getPrivateIpAddress() + ",");    	
-        if (getPrivateDnsName() != null) sb.append("PrivateDnsName: " + getPrivateDnsName() + ",");    	
-        if (isPrimary() != null) sb.append("Primary: " + isPrimary() + ",");    	
+        sb.append("{");
+        if (getPrivateIpAddress() != null) sb.append("PrivateIpAddress: " + getPrivateIpAddress() + ",");
+        if (getPrivateDnsName() != null) sb.append("PrivateDnsName: " + getPrivateDnsName() + ",");
+        if (isPrimary() != null) sb.append("Primary: " + isPrimary() + ",");
         if (getAssociation() != null) sb.append("Association: " + getAssociation() );
         sb.append("}");
         return sb.toString();

@@ -79,11 +79,11 @@ public class ReservedInstancesOffering  implements Serializable  {
     /**
      * The recurring charge tag assigned to the resource.
      */
-    private java.util.List<RecurringCharge> recurringCharges;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<RecurringCharge> recurringCharges;
 
     private Boolean marketplace;
 
-    private java.util.List<PricingDetail> pricingDetails;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<PricingDetail> pricingDetails;
 
     /**
      * The unique ID of this Reserved Instances offering.
@@ -488,7 +488,8 @@ public class ReservedInstancesOffering  implements Serializable  {
     public java.util.List<RecurringCharge> getRecurringCharges() {
         
         if (recurringCharges == null) {
-            recurringCharges = new java.util.ArrayList<RecurringCharge>();
+              recurringCharges = new com.amazonaws.internal.ListWithAutoConstructFlag<RecurringCharge>();
+              recurringCharges.setAutoConstruct(true);
         }
         return recurringCharges;
     }
@@ -503,8 +504,7 @@ public class ReservedInstancesOffering  implements Serializable  {
             this.recurringCharges = null;
             return;
         }
-
-        java.util.List<RecurringCharge> recurringChargesCopy = new java.util.ArrayList<RecurringCharge>(recurringCharges.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<RecurringCharge> recurringChargesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<RecurringCharge>(recurringCharges.size());
         recurringChargesCopy.addAll(recurringCharges);
         this.recurringCharges = recurringChargesCopy;
     }
@@ -541,7 +541,7 @@ public class ReservedInstancesOffering  implements Serializable  {
         if (recurringCharges == null) {
             this.recurringCharges = null;
         } else {
-            java.util.List<RecurringCharge> recurringChargesCopy = new java.util.ArrayList<RecurringCharge>(recurringCharges.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<RecurringCharge> recurringChargesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<RecurringCharge>(recurringCharges.size());
             recurringChargesCopy.addAll(recurringCharges);
             this.recurringCharges = recurringChargesCopy;
         }
@@ -600,7 +600,8 @@ public class ReservedInstancesOffering  implements Serializable  {
     public java.util.List<PricingDetail> getPricingDetails() {
         
         if (pricingDetails == null) {
-            pricingDetails = new java.util.ArrayList<PricingDetail>();
+              pricingDetails = new com.amazonaws.internal.ListWithAutoConstructFlag<PricingDetail>();
+              pricingDetails.setAutoConstruct(true);
         }
         return pricingDetails;
     }
@@ -615,8 +616,7 @@ public class ReservedInstancesOffering  implements Serializable  {
             this.pricingDetails = null;
             return;
         }
-
-        java.util.List<PricingDetail> pricingDetailsCopy = new java.util.ArrayList<PricingDetail>(pricingDetails.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<PricingDetail> pricingDetailsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<PricingDetail>(pricingDetails.size());
         pricingDetailsCopy.addAll(pricingDetails);
         this.pricingDetails = pricingDetailsCopy;
     }
@@ -653,7 +653,7 @@ public class ReservedInstancesOffering  implements Serializable  {
         if (pricingDetails == null) {
             this.pricingDetails = null;
         } else {
-            java.util.List<PricingDetail> pricingDetailsCopy = new java.util.ArrayList<PricingDetail>(pricingDetails.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<PricingDetail> pricingDetailsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<PricingDetail>(pricingDetails.size());
             pricingDetailsCopy.addAll(pricingDetails);
             this.pricingDetails = pricingDetailsCopy;
         }
@@ -672,19 +672,19 @@ public class ReservedInstancesOffering  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getReservedInstancesOfferingId() != null) sb.append("ReservedInstancesOfferingId: " + getReservedInstancesOfferingId() + ",");    	
-        if (getInstanceType() != null) sb.append("InstanceType: " + getInstanceType() + ",");    	
-        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");    	
-        if (getDuration() != null) sb.append("Duration: " + getDuration() + ",");    	
-        if (getUsagePrice() != null) sb.append("UsagePrice: " + getUsagePrice() + ",");    	
-        if (getFixedPrice() != null) sb.append("FixedPrice: " + getFixedPrice() + ",");    	
-        if (getProductDescription() != null) sb.append("ProductDescription: " + getProductDescription() + ",");    	
-        if (getInstanceTenancy() != null) sb.append("InstanceTenancy: " + getInstanceTenancy() + ",");    	
-        if (getCurrencyCode() != null) sb.append("CurrencyCode: " + getCurrencyCode() + ",");    	
-        if (getOfferingType() != null) sb.append("OfferingType: " + getOfferingType() + ",");    	
-        if (getRecurringCharges() != null) sb.append("RecurringCharges: " + getRecurringCharges() + ",");    	
-        if (isMarketplace() != null) sb.append("Marketplace: " + isMarketplace() + ",");    	
+        sb.append("{");
+        if (getReservedInstancesOfferingId() != null) sb.append("ReservedInstancesOfferingId: " + getReservedInstancesOfferingId() + ",");
+        if (getInstanceType() != null) sb.append("InstanceType: " + getInstanceType() + ",");
+        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");
+        if (getDuration() != null) sb.append("Duration: " + getDuration() + ",");
+        if (getUsagePrice() != null) sb.append("UsagePrice: " + getUsagePrice() + ",");
+        if (getFixedPrice() != null) sb.append("FixedPrice: " + getFixedPrice() + ",");
+        if (getProductDescription() != null) sb.append("ProductDescription: " + getProductDescription() + ",");
+        if (getInstanceTenancy() != null) sb.append("InstanceTenancy: " + getInstanceTenancy() + ",");
+        if (getCurrencyCode() != null) sb.append("CurrencyCode: " + getCurrencyCode() + ",");
+        if (getOfferingType() != null) sb.append("OfferingType: " + getOfferingType() + ",");
+        if (getRecurringCharges() != null) sb.append("RecurringCharges: " + getRecurringCharges() + ",");
+        if (isMarketplace() != null) sb.append("Marketplace: " + isMarketplace() + ",");
         if (getPricingDetails() != null) sb.append("PricingDetails: " + getPricingDetails() );
         sb.append("}");
         return sb.toString();

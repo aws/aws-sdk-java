@@ -25,7 +25,7 @@ public class DescribeTagsResult  implements Serializable  {
     /**
      * The list of tags.
      */
-    private java.util.List<TagDescription> tags;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<TagDescription> tags;
 
     /**
      * A string used to mark the start of the next batch of returned results.
@@ -43,7 +43,8 @@ public class DescribeTagsResult  implements Serializable  {
     public java.util.List<TagDescription> getTags() {
         
         if (tags == null) {
-            tags = new java.util.ArrayList<TagDescription>();
+              tags = new com.amazonaws.internal.ListWithAutoConstructFlag<TagDescription>();
+              tags.setAutoConstruct(true);
         }
         return tags;
     }
@@ -58,8 +59,7 @@ public class DescribeTagsResult  implements Serializable  {
             this.tags = null;
             return;
         }
-
-        java.util.List<TagDescription> tagsCopy = new java.util.ArrayList<TagDescription>(tags.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<TagDescription> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<TagDescription>(tags.size());
         tagsCopy.addAll(tags);
         this.tags = tagsCopy;
     }
@@ -96,7 +96,7 @@ public class DescribeTagsResult  implements Serializable  {
         if (tags == null) {
             this.tags = null;
         } else {
-            java.util.List<TagDescription> tagsCopy = new java.util.ArrayList<TagDescription>(tags.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<TagDescription> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<TagDescription>(tags.size());
             tagsCopy.addAll(tags);
             this.tags = tagsCopy;
         }
@@ -158,8 +158,8 @@ public class DescribeTagsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getTags() != null) sb.append("Tags: " + getTags() + ",");    	
+        sb.append("{");
+        if (getTags() != null) sb.append("Tags: " + getTags() + ",");
         if (getNextToken() != null) sb.append("NextToken: " + getNextToken() );
         sb.append("}");
         return sb.toString();

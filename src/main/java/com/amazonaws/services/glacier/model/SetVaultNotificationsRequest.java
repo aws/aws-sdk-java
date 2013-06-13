@@ -81,6 +81,8 @@ public class SetVaultNotificationsRequest extends AmazonWebServiceRequest  imple
      */
     public SetVaultNotificationsRequest() {}
     
+
+
     /**
      * Constructs a new SetVaultNotificationsRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -91,12 +93,14 @@ public class SetVaultNotificationsRequest extends AmazonWebServiceRequest  imple
      * notification configuration.
      */
     public SetVaultNotificationsRequest(String vaultName, VaultNotificationConfig vaultNotificationConfig) {
-        this.vaultName = vaultName;
-        this.vaultNotificationConfig = vaultNotificationConfig;
+        setVaultName(vaultName);
+        setVaultNotificationConfig(vaultNotificationConfig);
     }
 
     
     
+
+
     /**
      * Constructs a new SetVaultNotificationsRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -112,9 +116,9 @@ public class SetVaultNotificationsRequest extends AmazonWebServiceRequest  imple
      * notification configuration.
      */
     public SetVaultNotificationsRequest(String accountId, String vaultName, VaultNotificationConfig vaultNotificationConfig) {
-        this.accountId = accountId;
-        this.vaultName = vaultName;
-        this.vaultNotificationConfig = vaultNotificationConfig;
+        setAccountId(accountId);
+        setVaultName(vaultName);
+        setVaultNotificationConfig(vaultNotificationConfig);
     }
 
     
@@ -256,9 +260,9 @@ public class SetVaultNotificationsRequest extends AmazonWebServiceRequest  imple
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getAccountId() != null) sb.append("AccountId: " + getAccountId() + ",");    	
-        if (getVaultName() != null) sb.append("VaultName: " + getVaultName() + ",");    	
+        sb.append("{");
+        if (getAccountId() != null) sb.append("AccountId: " + getAccountId() + ",");
+        if (getVaultName() != null) sb.append("VaultName: " + getVaultName() + ",");
         if (getVaultNotificationConfig() != null) sb.append("VaultNotificationConfig: " + getVaultNotificationConfig() );
         sb.append("}");
         return sb.toString();

@@ -42,7 +42,7 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest  impleme
     /**
      * One or more network ACL IDs.
      */
-    private java.util.List<String> networkAclIds;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> networkAclIds;
 
     /**
      * A list of filters used to match properties for Network ACLs. For a
@@ -51,7 +51,7 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest  impleme
      * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      * EC2 API reference</a>.
      */
-    private java.util.List<Filter> filters;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filters;
 
     /**
      * One or more network ACL IDs.
@@ -61,7 +61,8 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest  impleme
     public java.util.List<String> getNetworkAclIds() {
         
         if (networkAclIds == null) {
-            networkAclIds = new java.util.ArrayList<String>();
+              networkAclIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              networkAclIds.setAutoConstruct(true);
         }
         return networkAclIds;
     }
@@ -76,8 +77,7 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest  impleme
             this.networkAclIds = null;
             return;
         }
-
-        java.util.List<String> networkAclIdsCopy = new java.util.ArrayList<String>(networkAclIds.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> networkAclIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(networkAclIds.size());
         networkAclIdsCopy.addAll(networkAclIds);
         this.networkAclIds = networkAclIdsCopy;
     }
@@ -114,7 +114,7 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest  impleme
         if (networkAclIds == null) {
             this.networkAclIds = null;
         } else {
-            java.util.List<String> networkAclIdsCopy = new java.util.ArrayList<String>(networkAclIds.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> networkAclIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(networkAclIds.size());
             networkAclIdsCopy.addAll(networkAclIds);
             this.networkAclIds = networkAclIdsCopy;
         }
@@ -138,7 +138,8 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest  impleme
     public java.util.List<Filter> getFilters() {
         
         if (filters == null) {
-            filters = new java.util.ArrayList<Filter>();
+              filters = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>();
+              filters.setAutoConstruct(true);
         }
         return filters;
     }
@@ -161,8 +162,7 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest  impleme
             this.filters = null;
             return;
         }
-
-        java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>(filters.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filtersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>(filters.size());
         filtersCopy.addAll(filters);
         this.filters = filtersCopy;
     }
@@ -215,7 +215,7 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest  impleme
         if (filters == null) {
             this.filters = null;
         } else {
-            java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>(filters.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filtersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>(filters.size());
             filtersCopy.addAll(filters);
             this.filters = filtersCopy;
         }
@@ -234,8 +234,8 @@ public class DescribeNetworkAclsRequest extends AmazonWebServiceRequest  impleme
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getNetworkAclIds() != null) sb.append("NetworkAclIds: " + getNetworkAclIds() + ",");    	
+        sb.append("{");
+        if (getNetworkAclIds() != null) sb.append("NetworkAclIds: " + getNetworkAclIds() + ",");
         if (getFilters() != null) sb.append("Filters: " + getFilters() );
         sb.append("}");
         return sb.toString();

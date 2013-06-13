@@ -25,7 +25,7 @@ public class DescribeRankExpressionsResult  implements Serializable  {
     /**
      * The rank expressions configured for the domain.
      */
-    private java.util.List<RankExpressionStatus> rankExpressions;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<RankExpressionStatus> rankExpressions;
 
     /**
      * The rank expressions configured for the domain.
@@ -35,7 +35,8 @@ public class DescribeRankExpressionsResult  implements Serializable  {
     public java.util.List<RankExpressionStatus> getRankExpressions() {
         
         if (rankExpressions == null) {
-            rankExpressions = new java.util.ArrayList<RankExpressionStatus>();
+              rankExpressions = new com.amazonaws.internal.ListWithAutoConstructFlag<RankExpressionStatus>();
+              rankExpressions.setAutoConstruct(true);
         }
         return rankExpressions;
     }
@@ -50,8 +51,7 @@ public class DescribeRankExpressionsResult  implements Serializable  {
             this.rankExpressions = null;
             return;
         }
-
-        java.util.List<RankExpressionStatus> rankExpressionsCopy = new java.util.ArrayList<RankExpressionStatus>(rankExpressions.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<RankExpressionStatus> rankExpressionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<RankExpressionStatus>(rankExpressions.size());
         rankExpressionsCopy.addAll(rankExpressions);
         this.rankExpressions = rankExpressionsCopy;
     }
@@ -88,7 +88,7 @@ public class DescribeRankExpressionsResult  implements Serializable  {
         if (rankExpressions == null) {
             this.rankExpressions = null;
         } else {
-            java.util.List<RankExpressionStatus> rankExpressionsCopy = new java.util.ArrayList<RankExpressionStatus>(rankExpressions.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<RankExpressionStatus> rankExpressionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<RankExpressionStatus>(rankExpressions.size());
             rankExpressionsCopy.addAll(rankExpressions);
             this.rankExpressions = rankExpressionsCopy;
         }
@@ -107,7 +107,7 @@ public class DescribeRankExpressionsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getRankExpressions() != null) sb.append("RankExpressions: " + getRankExpressions() );
         sb.append("}");
         return sb.toString();

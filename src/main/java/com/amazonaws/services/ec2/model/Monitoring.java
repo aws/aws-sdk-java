@@ -79,7 +79,7 @@ public class Monitoring  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getState() != null) sb.append("State: " + getState() );
         sb.append("}");
         return sb.toString();

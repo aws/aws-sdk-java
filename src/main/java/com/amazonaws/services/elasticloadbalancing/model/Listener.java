@@ -75,6 +75,8 @@ public class Listener  implements Serializable  {
      */
     public Listener() {}
     
+
+
     /**
      * Constructs a new Listener object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -91,9 +93,9 @@ public class Listener  implements Serializable  {
      * the LoadBalancer.
      */
     public Listener(String protocol, Integer loadBalancerPort, Integer instancePort) {
-        this.protocol = protocol;
-        this.loadBalancerPort = loadBalancerPort;
-        this.instancePort = instancePort;
+        setProtocol(protocol);
+        setLoadBalancerPort(loadBalancerPort);
+        setInstancePort(instancePort);
     }
 
     
@@ -402,11 +404,11 @@ public class Listener  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getProtocol() != null) sb.append("Protocol: " + getProtocol() + ",");    	
-        if (getLoadBalancerPort() != null) sb.append("LoadBalancerPort: " + getLoadBalancerPort() + ",");    	
-        if (getInstanceProtocol() != null) sb.append("InstanceProtocol: " + getInstanceProtocol() + ",");    	
-        if (getInstancePort() != null) sb.append("InstancePort: " + getInstancePort() + ",");    	
+        sb.append("{");
+        if (getProtocol() != null) sb.append("Protocol: " + getProtocol() + ",");
+        if (getLoadBalancerPort() != null) sb.append("LoadBalancerPort: " + getLoadBalancerPort() + ",");
+        if (getInstanceProtocol() != null) sb.append("InstanceProtocol: " + getInstanceProtocol() + ",");
+        if (getInstancePort() != null) sb.append("InstancePort: " + getInstancePort() + ",");
         if (getSSLCertificateId() != null) sb.append("SSLCertificateId: " + getSSLCertificateId() );
         sb.append("}");
         return sb.toString();

@@ -49,7 +49,7 @@ public class CreateLoadBalancerPolicyRequest extends AmazonWebServiceRequest  im
     /**
      * A list of attributes associated with the policy being created.
      */
-    private java.util.List<PolicyAttribute> policyAttributes;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<PolicyAttribute> policyAttributes;
 
     /**
      * The name associated with the LoadBalancer for which the policy is
@@ -185,7 +185,8 @@ public class CreateLoadBalancerPolicyRequest extends AmazonWebServiceRequest  im
     public java.util.List<PolicyAttribute> getPolicyAttributes() {
         
         if (policyAttributes == null) {
-            policyAttributes = new java.util.ArrayList<PolicyAttribute>();
+              policyAttributes = new com.amazonaws.internal.ListWithAutoConstructFlag<PolicyAttribute>();
+              policyAttributes.setAutoConstruct(true);
         }
         return policyAttributes;
     }
@@ -200,8 +201,7 @@ public class CreateLoadBalancerPolicyRequest extends AmazonWebServiceRequest  im
             this.policyAttributes = null;
             return;
         }
-
-        java.util.List<PolicyAttribute> policyAttributesCopy = new java.util.ArrayList<PolicyAttribute>(policyAttributes.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<PolicyAttribute> policyAttributesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<PolicyAttribute>(policyAttributes.size());
         policyAttributesCopy.addAll(policyAttributes);
         this.policyAttributes = policyAttributesCopy;
     }
@@ -238,7 +238,7 @@ public class CreateLoadBalancerPolicyRequest extends AmazonWebServiceRequest  im
         if (policyAttributes == null) {
             this.policyAttributes = null;
         } else {
-            java.util.List<PolicyAttribute> policyAttributesCopy = new java.util.ArrayList<PolicyAttribute>(policyAttributes.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<PolicyAttribute> policyAttributesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<PolicyAttribute>(policyAttributes.size());
             policyAttributesCopy.addAll(policyAttributes);
             this.policyAttributes = policyAttributesCopy;
         }
@@ -257,10 +257,10 @@ public class CreateLoadBalancerPolicyRequest extends AmazonWebServiceRequest  im
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getLoadBalancerName() != null) sb.append("LoadBalancerName: " + getLoadBalancerName() + ",");    	
-        if (getPolicyName() != null) sb.append("PolicyName: " + getPolicyName() + ",");    	
-        if (getPolicyTypeName() != null) sb.append("PolicyTypeName: " + getPolicyTypeName() + ",");    	
+        sb.append("{");
+        if (getLoadBalancerName() != null) sb.append("LoadBalancerName: " + getLoadBalancerName() + ",");
+        if (getPolicyName() != null) sb.append("PolicyName: " + getPolicyName() + ",");
+        if (getPolicyTypeName() != null) sb.append("PolicyTypeName: " + getPolicyTypeName() + ",");
         if (getPolicyAttributes() != null) sb.append("PolicyAttributes: " + getPolicyAttributes() );
         sb.append("}");
         return sb.toString();

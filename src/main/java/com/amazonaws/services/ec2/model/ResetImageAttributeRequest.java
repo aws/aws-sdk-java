@@ -46,6 +46,8 @@ public class ResetImageAttributeRequest extends AmazonWebServiceRequest  impleme
      */
     public ResetImageAttributeRequest() {}
     
+
+
     /**
      * Constructs a new ResetImageAttributeRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -56,8 +58,8 @@ public class ResetImageAttributeRequest extends AmazonWebServiceRequest  impleme
      * attribute names: <code>launchPermission</code>
      */
     public ResetImageAttributeRequest(String imageId, String attribute) {
-        this.imageId = imageId;
-        this.attribute = attribute;
+        setImageId(imageId);
+        setAttribute(attribute);
     }
 
     
@@ -147,8 +149,8 @@ public class ResetImageAttributeRequest extends AmazonWebServiceRequest  impleme
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getImageId() != null) sb.append("ImageId: " + getImageId() + ",");    	
+        sb.append("{");
+        if (getImageId() != null) sb.append("ImageId: " + getImageId() + ",");
         if (getAttribute() != null) sb.append("Attribute: " + getAttribute() );
         sb.append("}");
         return sb.toString();

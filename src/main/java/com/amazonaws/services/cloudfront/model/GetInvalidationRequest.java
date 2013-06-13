@@ -42,6 +42,8 @@ public class GetInvalidationRequest extends AmazonWebServiceRequest  implements 
      */
     public GetInvalidationRequest() {}
     
+
+
     /**
      * Constructs a new GetInvalidationRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -51,8 +53,8 @@ public class GetInvalidationRequest extends AmazonWebServiceRequest  implements 
      * @param id The invalidation's id.
      */
     public GetInvalidationRequest(String distributionId, String id) {
-        this.distributionId = distributionId;
-        this.id = id;
+        setDistributionId(distributionId);
+        setId(id);
     }
 
     
@@ -136,8 +138,8 @@ public class GetInvalidationRequest extends AmazonWebServiceRequest  implements 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getDistributionId() != null) sb.append("DistributionId: " + getDistributionId() + ",");    	
+        sb.append("{");
+        if (getDistributionId() != null) sb.append("DistributionId: " + getDistributionId() + ",");
         if (getId() != null) sb.append("Id: " + getId() );
         sb.append("}");
         return sb.toString();

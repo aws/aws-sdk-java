@@ -211,11 +211,11 @@ public class VolumeStatusEvent  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getEventType() != null) sb.append("EventType: " + getEventType() + ",");    	
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");    	
-        if (getNotBefore() != null) sb.append("NotBefore: " + getNotBefore() + ",");    	
-        if (getNotAfter() != null) sb.append("NotAfter: " + getNotAfter() + ",");    	
+        sb.append("{");
+        if (getEventType() != null) sb.append("EventType: " + getEventType() + ",");
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");
+        if (getNotBefore() != null) sb.append("NotBefore: " + getNotBefore() + ",");
+        if (getNotAfter() != null) sb.append("NotAfter: " + getNotAfter() + ",");
         if (getEventId() != null) sb.append("EventId: " + getEventId() );
         sb.append("}");
         return sb.toString();

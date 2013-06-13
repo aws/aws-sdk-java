@@ -58,6 +58,8 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest  implements
      */
     public AssociateAddressRequest() {}
     
+
+
     /**
      * Constructs a new AssociateAddressRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -67,8 +69,8 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest  implements
      * @param publicIp IP address that you are assigning to the instance.
      */
     public AssociateAddressRequest(String instanceId, String publicIp) {
-        this.instanceId = instanceId;
-        this.publicIp = publicIp;
+        setInstanceId(instanceId);
+        setPublicIp(publicIp);
     }
 
     
@@ -303,12 +305,12 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest  implements
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ",");    	
-        if (getPublicIp() != null) sb.append("PublicIp: " + getPublicIp() + ",");    	
-        if (getAllocationId() != null) sb.append("AllocationId: " + getAllocationId() + ",");    	
-        if (getNetworkInterfaceId() != null) sb.append("NetworkInterfaceId: " + getNetworkInterfaceId() + ",");    	
-        if (getPrivateIpAddress() != null) sb.append("PrivateIpAddress: " + getPrivateIpAddress() + ",");    	
+        sb.append("{");
+        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ",");
+        if (getPublicIp() != null) sb.append("PublicIp: " + getPublicIp() + ",");
+        if (getAllocationId() != null) sb.append("AllocationId: " + getAllocationId() + ",");
+        if (getNetworkInterfaceId() != null) sb.append("NetworkInterfaceId: " + getNetworkInterfaceId() + ",");
+        if (getPrivateIpAddress() != null) sb.append("PrivateIpAddress: " + getPrivateIpAddress() + ",");
         if (isAllowReassociation() != null) sb.append("AllowReassociation: " + isAllowReassociation() );
         sb.append("}");
         return sb.toString();

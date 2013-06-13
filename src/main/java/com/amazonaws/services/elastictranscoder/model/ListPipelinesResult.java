@@ -23,7 +23,7 @@ public class ListPipelinesResult  implements Serializable  {
     /**
      * An array of <code>Pipeline</code> objects.
      */
-    private java.util.List<Pipeline> pipelines;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Pipeline> pipelines;
 
     /**
      * An array of <code>Pipeline</code> objects.
@@ -32,6 +32,10 @@ public class ListPipelinesResult  implements Serializable  {
      */
     public java.util.List<Pipeline> getPipelines() {
         
+        if (pipelines == null) {
+              pipelines = new com.amazonaws.internal.ListWithAutoConstructFlag<Pipeline>();
+              pipelines.setAutoConstruct(true);
+        }
         return pipelines;
     }
     
@@ -45,8 +49,7 @@ public class ListPipelinesResult  implements Serializable  {
             this.pipelines = null;
             return;
         }
-
-        java.util.List<Pipeline> pipelinesCopy = new java.util.ArrayList<Pipeline>(pipelines.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Pipeline> pipelinesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Pipeline>(pipelines.size());
         pipelinesCopy.addAll(pipelines);
         this.pipelines = pipelinesCopy;
     }
@@ -83,7 +86,7 @@ public class ListPipelinesResult  implements Serializable  {
         if (pipelines == null) {
             this.pipelines = null;
         } else {
-            java.util.List<Pipeline> pipelinesCopy = new java.util.ArrayList<Pipeline>(pipelines.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Pipeline> pipelinesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Pipeline>(pipelines.size());
             pipelinesCopy.addAll(pipelines);
             this.pipelines = pipelinesCopy;
         }
@@ -102,7 +105,7 @@ public class ListPipelinesResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getPipelines() != null) sb.append("Pipelines: " + getPipelines() );
         sb.append("}");
         return sb.toString();

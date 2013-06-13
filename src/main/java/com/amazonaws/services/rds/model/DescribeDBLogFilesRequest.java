@@ -43,7 +43,7 @@ public class DescribeDBLogFilesRequest extends AmazonWebServiceRequest  implemen
 
     /**
      * Filters the available log files for files written since the specified
-     * date.
+     * date, in POSIX timestamp format.
      */
     private Long fileLastWritten;
 
@@ -168,10 +168,10 @@ public class DescribeDBLogFilesRequest extends AmazonWebServiceRequest  implemen
     
     /**
      * Filters the available log files for files written since the specified
-     * date.
+     * date, in POSIX timestamp format.
      *
      * @return Filters the available log files for files written since the specified
-     *         date.
+     *         date, in POSIX timestamp format.
      */
     public Long getFileLastWritten() {
         return fileLastWritten;
@@ -179,10 +179,10 @@ public class DescribeDBLogFilesRequest extends AmazonWebServiceRequest  implemen
     
     /**
      * Filters the available log files for files written since the specified
-     * date.
+     * date, in POSIX timestamp format.
      *
      * @param fileLastWritten Filters the available log files for files written since the specified
-     *         date.
+     *         date, in POSIX timestamp format.
      */
     public void setFileLastWritten(Long fileLastWritten) {
         this.fileLastWritten = fileLastWritten;
@@ -190,12 +190,12 @@ public class DescribeDBLogFilesRequest extends AmazonWebServiceRequest  implemen
     
     /**
      * Filters the available log files for files written since the specified
-     * date.
+     * date, in POSIX timestamp format.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param fileLastWritten Filters the available log files for files written since the specified
-     *         date.
+     *         date, in POSIX timestamp format.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -355,12 +355,12 @@ public class DescribeDBLogFilesRequest extends AmazonWebServiceRequest  implemen
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getDBInstanceIdentifier() != null) sb.append("DBInstanceIdentifier: " + getDBInstanceIdentifier() + ",");    	
-        if (getFilenameContains() != null) sb.append("FilenameContains: " + getFilenameContains() + ",");    	
-        if (getFileLastWritten() != null) sb.append("FileLastWritten: " + getFileLastWritten() + ",");    	
-        if (getFileSize() != null) sb.append("FileSize: " + getFileSize() + ",");    	
-        if (getMaxRecords() != null) sb.append("MaxRecords: " + getMaxRecords() + ",");    	
+        sb.append("{");
+        if (getDBInstanceIdentifier() != null) sb.append("DBInstanceIdentifier: " + getDBInstanceIdentifier() + ",");
+        if (getFilenameContains() != null) sb.append("FilenameContains: " + getFilenameContains() + ",");
+        if (getFileLastWritten() != null) sb.append("FileLastWritten: " + getFileLastWritten() + ",");
+        if (getFileSize() != null) sb.append("FileSize: " + getFileSize() + ",");
+        if (getMaxRecords() != null) sb.append("MaxRecords: " + getMaxRecords() + ",");
         if (getMarker() != null) sb.append("Marker: " + getMarker() );
         sb.append("}");
         return sb.toString();

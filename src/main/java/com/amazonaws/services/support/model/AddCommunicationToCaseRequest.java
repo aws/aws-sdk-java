@@ -57,7 +57,7 @@ public class AddCommunicationToCaseRequest extends AmazonWebServiceRequest  impl
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 10<br/>
      */
-    private java.util.List<String> ccEmailAddresses;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> ccEmailAddresses;
 
     /**
      * String that indicates the AWS Support caseID requested or returned in
@@ -167,7 +167,8 @@ public class AddCommunicationToCaseRequest extends AmazonWebServiceRequest  impl
     public java.util.List<String> getCcEmailAddresses() {
         
         if (ccEmailAddresses == null) {
-            ccEmailAddresses = new java.util.ArrayList<String>();
+              ccEmailAddresses = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              ccEmailAddresses.setAutoConstruct(true);
         }
         return ccEmailAddresses;
     }
@@ -187,8 +188,7 @@ public class AddCommunicationToCaseRequest extends AmazonWebServiceRequest  impl
             this.ccEmailAddresses = null;
             return;
         }
-
-        java.util.List<String> ccEmailAddressesCopy = new java.util.ArrayList<String>(ccEmailAddresses.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> ccEmailAddressesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(ccEmailAddresses.size());
         ccEmailAddressesCopy.addAll(ccEmailAddresses);
         this.ccEmailAddresses = ccEmailAddressesCopy;
     }
@@ -235,7 +235,7 @@ public class AddCommunicationToCaseRequest extends AmazonWebServiceRequest  impl
         if (ccEmailAddresses == null) {
             this.ccEmailAddresses = null;
         } else {
-            java.util.List<String> ccEmailAddressesCopy = new java.util.ArrayList<String>(ccEmailAddresses.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> ccEmailAddressesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(ccEmailAddresses.size());
             ccEmailAddressesCopy.addAll(ccEmailAddresses);
             this.ccEmailAddresses = ccEmailAddressesCopy;
         }
@@ -254,9 +254,9 @@ public class AddCommunicationToCaseRequest extends AmazonWebServiceRequest  impl
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getCaseId() != null) sb.append("CaseId: " + getCaseId() + ",");    	
-        if (getCommunicationBody() != null) sb.append("CommunicationBody: " + getCommunicationBody() + ",");    	
+        sb.append("{");
+        if (getCaseId() != null) sb.append("CaseId: " + getCaseId() + ",");
+        if (getCommunicationBody() != null) sb.append("CommunicationBody: " + getCommunicationBody() + ",");
         if (getCcEmailAddresses() != null) sb.append("CcEmailAddresses: " + getCcEmailAddresses() );
         sb.append("}");
         return sb.toString();

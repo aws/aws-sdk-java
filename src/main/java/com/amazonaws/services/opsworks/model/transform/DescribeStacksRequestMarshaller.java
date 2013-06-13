@@ -86,8 +86,8 @@ public class DescribeStacksRequestMarshaller implements Marshaller<Request<Descr
           jsonWriter.object();
           
 
-            java.util.List<String> stackIdsList = describeStacksRequest.getStackIds();
-            if (stackIdsList != null) {
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> stackIdsList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(describeStacksRequest.getStackIds());
+            if (stackIdsList != null && !(stackIdsList.isAutoConstruct() && stackIdsList.isEmpty())) {
 
                 jsonWriter.key("StackIds");
                 jsonWriter.array();

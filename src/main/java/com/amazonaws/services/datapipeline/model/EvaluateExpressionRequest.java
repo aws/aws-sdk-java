@@ -202,9 +202,9 @@ public class EvaluateExpressionRequest extends AmazonWebServiceRequest  implemen
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getPipelineId() != null) sb.append("PipelineId: " + getPipelineId() + ",");    	
-        if (getObjectId() != null) sb.append("ObjectId: " + getObjectId() + ",");    	
+        sb.append("{");
+        if (getPipelineId() != null) sb.append("PipelineId: " + getPipelineId() + ",");
+        if (getObjectId() != null) sb.append("ObjectId: " + getObjectId() + ",");
         if (getExpression() != null) sb.append("Expression: " + getExpression() );
         sb.append("}");
         return sb.toString();

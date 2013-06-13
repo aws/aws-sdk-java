@@ -31,7 +31,7 @@ public class DescribeTrustedAdvisorCheckRefreshStatusesResult  implements Serial
      * for execution. </li> <li><b>abandoned</b>. An error has prevented the
      * check from refreshing. </li> </ul>
      */
-    private java.util.List<TrustedAdvisorCheckRefreshStatus> statuses;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<TrustedAdvisorCheckRefreshStatus> statuses;
 
     /**
      * List of the statuses of the Trusted Advisor checks you've specified
@@ -53,7 +53,8 @@ public class DescribeTrustedAdvisorCheckRefreshStatusesResult  implements Serial
     public java.util.List<TrustedAdvisorCheckRefreshStatus> getStatuses() {
         
         if (statuses == null) {
-            statuses = new java.util.ArrayList<TrustedAdvisorCheckRefreshStatus>();
+              statuses = new com.amazonaws.internal.ListWithAutoConstructFlag<TrustedAdvisorCheckRefreshStatus>();
+              statuses.setAutoConstruct(true);
         }
         return statuses;
     }
@@ -80,8 +81,7 @@ public class DescribeTrustedAdvisorCheckRefreshStatusesResult  implements Serial
             this.statuses = null;
             return;
         }
-
-        java.util.List<TrustedAdvisorCheckRefreshStatus> statusesCopy = new java.util.ArrayList<TrustedAdvisorCheckRefreshStatus>(statuses.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<TrustedAdvisorCheckRefreshStatus> statusesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<TrustedAdvisorCheckRefreshStatus>(statuses.size());
         statusesCopy.addAll(statuses);
         this.statuses = statusesCopy;
     }
@@ -142,7 +142,7 @@ public class DescribeTrustedAdvisorCheckRefreshStatusesResult  implements Serial
         if (statuses == null) {
             this.statuses = null;
         } else {
-            java.util.List<TrustedAdvisorCheckRefreshStatus> statusesCopy = new java.util.ArrayList<TrustedAdvisorCheckRefreshStatus>(statuses.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<TrustedAdvisorCheckRefreshStatus> statusesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<TrustedAdvisorCheckRefreshStatus>(statuses.size());
             statusesCopy.addAll(statuses);
             this.statuses = statusesCopy;
         }
@@ -161,7 +161,7 @@ public class DescribeTrustedAdvisorCheckRefreshStatusesResult  implements Serial
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getStatuses() != null) sb.append("Statuses: " + getStatuses() );
         sb.append("}");
         return sb.toString();

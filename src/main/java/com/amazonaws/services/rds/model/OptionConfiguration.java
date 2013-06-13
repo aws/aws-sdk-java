@@ -35,18 +35,18 @@ public class OptionConfiguration  implements Serializable  {
     /**
      * A list of DBSecurityGroupMemebrship name strings used for this option.
      */
-    private java.util.List<String> dBSecurityGroupMemberships;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> dBSecurityGroupMemberships;
 
     /**
      * A list of VpcSecurityGroupMemebrship name strings used for this
      * option.
      */
-    private java.util.List<String> vpcSecurityGroupMemberships;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> vpcSecurityGroupMemberships;
 
     /**
      * The option settings to include in an option group.
      */
-    private java.util.List<OptionSetting> optionSettings;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<OptionSetting> optionSettings;
 
     /**
      * The configuration of options to include in a group.
@@ -124,7 +124,8 @@ public class OptionConfiguration  implements Serializable  {
     public java.util.List<String> getDBSecurityGroupMemberships() {
         
         if (dBSecurityGroupMemberships == null) {
-            dBSecurityGroupMemberships = new java.util.ArrayList<String>();
+              dBSecurityGroupMemberships = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              dBSecurityGroupMemberships.setAutoConstruct(true);
         }
         return dBSecurityGroupMemberships;
     }
@@ -139,8 +140,7 @@ public class OptionConfiguration  implements Serializable  {
             this.dBSecurityGroupMemberships = null;
             return;
         }
-
-        java.util.List<String> dBSecurityGroupMembershipsCopy = new java.util.ArrayList<String>(dBSecurityGroupMemberships.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> dBSecurityGroupMembershipsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(dBSecurityGroupMemberships.size());
         dBSecurityGroupMembershipsCopy.addAll(dBSecurityGroupMemberships);
         this.dBSecurityGroupMemberships = dBSecurityGroupMembershipsCopy;
     }
@@ -177,7 +177,7 @@ public class OptionConfiguration  implements Serializable  {
         if (dBSecurityGroupMemberships == null) {
             this.dBSecurityGroupMemberships = null;
         } else {
-            java.util.List<String> dBSecurityGroupMembershipsCopy = new java.util.ArrayList<String>(dBSecurityGroupMemberships.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> dBSecurityGroupMembershipsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(dBSecurityGroupMemberships.size());
             dBSecurityGroupMembershipsCopy.addAll(dBSecurityGroupMemberships);
             this.dBSecurityGroupMemberships = dBSecurityGroupMembershipsCopy;
         }
@@ -195,7 +195,8 @@ public class OptionConfiguration  implements Serializable  {
     public java.util.List<String> getVpcSecurityGroupMemberships() {
         
         if (vpcSecurityGroupMemberships == null) {
-            vpcSecurityGroupMemberships = new java.util.ArrayList<String>();
+              vpcSecurityGroupMemberships = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              vpcSecurityGroupMemberships.setAutoConstruct(true);
         }
         return vpcSecurityGroupMemberships;
     }
@@ -212,8 +213,7 @@ public class OptionConfiguration  implements Serializable  {
             this.vpcSecurityGroupMemberships = null;
             return;
         }
-
-        java.util.List<String> vpcSecurityGroupMembershipsCopy = new java.util.ArrayList<String>(vpcSecurityGroupMemberships.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> vpcSecurityGroupMembershipsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(vpcSecurityGroupMemberships.size());
         vpcSecurityGroupMembershipsCopy.addAll(vpcSecurityGroupMemberships);
         this.vpcSecurityGroupMemberships = vpcSecurityGroupMembershipsCopy;
     }
@@ -254,7 +254,7 @@ public class OptionConfiguration  implements Serializable  {
         if (vpcSecurityGroupMemberships == null) {
             this.vpcSecurityGroupMemberships = null;
         } else {
-            java.util.List<String> vpcSecurityGroupMembershipsCopy = new java.util.ArrayList<String>(vpcSecurityGroupMemberships.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> vpcSecurityGroupMembershipsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(vpcSecurityGroupMemberships.size());
             vpcSecurityGroupMembershipsCopy.addAll(vpcSecurityGroupMemberships);
             this.vpcSecurityGroupMemberships = vpcSecurityGroupMembershipsCopy;
         }
@@ -270,7 +270,8 @@ public class OptionConfiguration  implements Serializable  {
     public java.util.List<OptionSetting> getOptionSettings() {
         
         if (optionSettings == null) {
-            optionSettings = new java.util.ArrayList<OptionSetting>();
+              optionSettings = new com.amazonaws.internal.ListWithAutoConstructFlag<OptionSetting>();
+              optionSettings.setAutoConstruct(true);
         }
         return optionSettings;
     }
@@ -285,8 +286,7 @@ public class OptionConfiguration  implements Serializable  {
             this.optionSettings = null;
             return;
         }
-
-        java.util.List<OptionSetting> optionSettingsCopy = new java.util.ArrayList<OptionSetting>(optionSettings.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<OptionSetting> optionSettingsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<OptionSetting>(optionSettings.size());
         optionSettingsCopy.addAll(optionSettings);
         this.optionSettings = optionSettingsCopy;
     }
@@ -323,7 +323,7 @@ public class OptionConfiguration  implements Serializable  {
         if (optionSettings == null) {
             this.optionSettings = null;
         } else {
-            java.util.List<OptionSetting> optionSettingsCopy = new java.util.ArrayList<OptionSetting>(optionSettings.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<OptionSetting> optionSettingsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<OptionSetting>(optionSettings.size());
             optionSettingsCopy.addAll(optionSettings);
             this.optionSettings = optionSettingsCopy;
         }
@@ -342,11 +342,11 @@ public class OptionConfiguration  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getOptionName() != null) sb.append("OptionName: " + getOptionName() + ",");    	
-        if (getPort() != null) sb.append("Port: " + getPort() + ",");    	
-        if (getDBSecurityGroupMemberships() != null) sb.append("DBSecurityGroupMemberships: " + getDBSecurityGroupMemberships() + ",");    	
-        if (getVpcSecurityGroupMemberships() != null) sb.append("VpcSecurityGroupMemberships: " + getVpcSecurityGroupMemberships() + ",");    	
+        sb.append("{");
+        if (getOptionName() != null) sb.append("OptionName: " + getOptionName() + ",");
+        if (getPort() != null) sb.append("Port: " + getPort() + ",");
+        if (getDBSecurityGroupMemberships() != null) sb.append("DBSecurityGroupMemberships: " + getDBSecurityGroupMemberships() + ",");
+        if (getVpcSecurityGroupMemberships() != null) sb.append("VpcSecurityGroupMemberships: " + getVpcSecurityGroupMemberships() + ",");
         if (getOptionSettings() != null) sb.append("OptionSettings: " + getOptionSettings() );
         sb.append("}");
         return sb.toString();

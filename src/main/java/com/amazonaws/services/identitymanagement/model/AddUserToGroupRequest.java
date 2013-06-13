@@ -50,6 +50,8 @@ public class AddUserToGroupRequest extends AmazonWebServiceRequest  implements S
      */
     public AddUserToGroupRequest() {}
     
+
+
     /**
      * Constructs a new AddUserToGroupRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -59,8 +61,8 @@ public class AddUserToGroupRequest extends AmazonWebServiceRequest  implements S
      * @param userName Name of the user to add.
      */
     public AddUserToGroupRequest(String groupName, String userName) {
-        this.groupName = groupName;
-        this.userName = userName;
+        setGroupName(groupName);
+        setUserName(userName);
     }
 
     
@@ -168,8 +170,8 @@ public class AddUserToGroupRequest extends AmazonWebServiceRequest  implements S
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getGroupName() != null) sb.append("GroupName: " + getGroupName() + ",");    	
+        sb.append("{");
+        if (getGroupName() != null) sb.append("GroupName: " + getGroupName() + ",");
         if (getUserName() != null) sb.append("UserName: " + getUserName() );
         sb.append("}");
         return sb.toString();

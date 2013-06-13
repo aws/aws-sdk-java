@@ -22,7 +22,7 @@ public class VolumeStatusInfo  implements Serializable  {
 
     private String status;
 
-    private java.util.List<VolumeStatusDetails> details;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<VolumeStatusDetails> details;
 
     /**
      * Returns the value of the Status property for this object.
@@ -66,7 +66,8 @@ public class VolumeStatusInfo  implements Serializable  {
     public java.util.List<VolumeStatusDetails> getDetails() {
         
         if (details == null) {
-            details = new java.util.ArrayList<VolumeStatusDetails>();
+              details = new com.amazonaws.internal.ListWithAutoConstructFlag<VolumeStatusDetails>();
+              details.setAutoConstruct(true);
         }
         return details;
     }
@@ -81,8 +82,7 @@ public class VolumeStatusInfo  implements Serializable  {
             this.details = null;
             return;
         }
-
-        java.util.List<VolumeStatusDetails> detailsCopy = new java.util.ArrayList<VolumeStatusDetails>(details.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<VolumeStatusDetails> detailsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<VolumeStatusDetails>(details.size());
         detailsCopy.addAll(details);
         this.details = detailsCopy;
     }
@@ -119,7 +119,7 @@ public class VolumeStatusInfo  implements Serializable  {
         if (details == null) {
             this.details = null;
         } else {
-            java.util.List<VolumeStatusDetails> detailsCopy = new java.util.ArrayList<VolumeStatusDetails>(details.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<VolumeStatusDetails> detailsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<VolumeStatusDetails>(details.size());
             detailsCopy.addAll(details);
             this.details = detailsCopy;
         }
@@ -138,8 +138,8 @@ public class VolumeStatusInfo  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");    	
+        sb.append("{");
+        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");
         if (getDetails() != null) sb.append("Details: " + getDetails() );
         sb.append("}");
         return sb.toString();

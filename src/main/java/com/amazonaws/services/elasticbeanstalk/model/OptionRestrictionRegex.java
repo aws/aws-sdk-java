@@ -124,8 +124,8 @@ public class OptionRestrictionRegex  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getPattern() != null) sb.append("Pattern: " + getPattern() + ",");    	
+        sb.append("{");
+        if (getPattern() != null) sb.append("Pattern: " + getPattern() + ",");
         if (getLabel() != null) sb.append("Label: " + getLabel() );
         sb.append("}");
         return sb.toString();

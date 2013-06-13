@@ -268,10 +268,10 @@ public class Notifications  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getProgressing() != null) sb.append("Progressing: " + getProgressing() + ",");    	
-        if (getCompleted() != null) sb.append("Completed: " + getCompleted() + ",");    	
-        if (getWarning() != null) sb.append("Warning: " + getWarning() + ",");    	
+        sb.append("{");
+        if (getProgressing() != null) sb.append("Progressing: " + getProgressing() + ",");
+        if (getCompleted() != null) sb.append("Completed: " + getCompleted() + ",");
+        if (getWarning() != null) sb.append("Warning: " + getWarning() + ",");
         if (getError() != null) sb.append("Error: " + getError() );
         sb.append("}");
         return sb.toString();

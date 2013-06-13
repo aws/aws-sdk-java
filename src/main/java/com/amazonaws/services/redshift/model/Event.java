@@ -241,10 +241,10 @@ public class Event  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getSourceIdentifier() != null) sb.append("SourceIdentifier: " + getSourceIdentifier() + ",");    	
-        if (getSourceType() != null) sb.append("SourceType: " + getSourceType() + ",");    	
-        if (getMessage() != null) sb.append("Message: " + getMessage() + ",");    	
+        sb.append("{");
+        if (getSourceIdentifier() != null) sb.append("SourceIdentifier: " + getSourceIdentifier() + ",");
+        if (getSourceType() != null) sb.append("SourceType: " + getSourceType() + ",");
+        if (getMessage() != null) sb.append("Message: " + getMessage() + ",");
         if (getDate() != null) sb.append("Date: " + getDate() );
         sb.append("}");
         return sb.toString();

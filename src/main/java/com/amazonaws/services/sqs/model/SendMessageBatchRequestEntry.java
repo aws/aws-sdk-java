@@ -45,6 +45,8 @@ public class SendMessageBatchRequestEntry  implements Serializable  {
      */
     public SendMessageBatchRequestEntry() {}
     
+
+
     /**
      * Constructs a new SendMessageBatchRequestEntry object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -56,8 +58,8 @@ public class SendMessageBatchRequestEntry  implements Serializable  {
      * @param messageBody Body of the message.
      */
     public SendMessageBatchRequestEntry(String id, String messageBody) {
-        this.id = id;
-        this.messageBody = messageBody;
+        setId(id);
+        setMessageBody(messageBody);
     }
 
     
@@ -187,9 +189,9 @@ public class SendMessageBatchRequestEntry  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getId() != null) sb.append("Id: " + getId() + ",");    	
-        if (getMessageBody() != null) sb.append("MessageBody: " + getMessageBody() + ",");    	
+        sb.append("{");
+        if (getId() != null) sb.append("Id: " + getId() + ",");
+        if (getMessageBody() != null) sb.append("MessageBody: " + getMessageBody() + ",");
         if (getDelaySeconds() != null) sb.append("DelaySeconds: " + getDelaySeconds() );
         sb.append("}");
         return sb.toString();

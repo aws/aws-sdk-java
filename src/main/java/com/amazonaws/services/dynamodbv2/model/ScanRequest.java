@@ -59,7 +59,7 @@ public class ScanRequest extends AmazonWebServiceRequest  implements Serializabl
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
      */
-    private java.util.List<String> attributesToGet;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> attributesToGet;
 
     /**
      * The maximum number of items to evaluate (not necessarily the number of
@@ -295,6 +295,8 @@ public class ScanRequest extends AmazonWebServiceRequest  implements Serializabl
      */
     public ScanRequest() {}
     
+
+
     /**
      * Constructs a new ScanRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -303,7 +305,7 @@ public class ScanRequest extends AmazonWebServiceRequest  implements Serializabl
      * @param tableName The name of the table containing the requested items.
      */
     public ScanRequest(String tableName) {
-        this.tableName = tableName;
+        setTableName(tableName);
     }
 
     
@@ -392,8 +394,7 @@ public class ScanRequest extends AmazonWebServiceRequest  implements Serializabl
             this.attributesToGet = null;
             return;
         }
-
-        java.util.List<String> attributesToGetCopy = new java.util.ArrayList<String>(attributesToGet.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> attributesToGetCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(attributesToGet.size());
         attributesToGetCopy.addAll(attributesToGet);
         this.attributesToGet = attributesToGetCopy;
     }
@@ -448,7 +449,7 @@ public class ScanRequest extends AmazonWebServiceRequest  implements Serializabl
         if (attributesToGet == null) {
             this.attributesToGet = null;
         } else {
-            java.util.List<String> attributesToGetCopy = new java.util.ArrayList<String>(attributesToGet.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> attributesToGetCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(attributesToGet.size());
             attributesToGetCopy.addAll(attributesToGet);
             this.attributesToGet = attributesToGetCopy;
         }
@@ -2032,15 +2033,15 @@ public class ScanRequest extends AmazonWebServiceRequest  implements Serializabl
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getTableName() != null) sb.append("TableName: " + getTableName() + ",");    	
-        if (getAttributesToGet() != null) sb.append("AttributesToGet: " + getAttributesToGet() + ",");    	
-        if (getLimit() != null) sb.append("Limit: " + getLimit() + ",");    	
-        if (getSelect() != null) sb.append("Select: " + getSelect() + ",");    	
-        if (getScanFilter() != null) sb.append("ScanFilter: " + getScanFilter() + ",");    	
-        if (getExclusiveStartKey() != null) sb.append("ExclusiveStartKey: " + getExclusiveStartKey() + ",");    	
-        if (getReturnConsumedCapacity() != null) sb.append("ReturnConsumedCapacity: " + getReturnConsumedCapacity() + ",");    	
-        if (getTotalSegments() != null) sb.append("TotalSegments: " + getTotalSegments() + ",");    	
+        sb.append("{");
+        if (getTableName() != null) sb.append("TableName: " + getTableName() + ",");
+        if (getAttributesToGet() != null) sb.append("AttributesToGet: " + getAttributesToGet() + ",");
+        if (getLimit() != null) sb.append("Limit: " + getLimit() + ",");
+        if (getSelect() != null) sb.append("Select: " + getSelect() + ",");
+        if (getScanFilter() != null) sb.append("ScanFilter: " + getScanFilter() + ",");
+        if (getExclusiveStartKey() != null) sb.append("ExclusiveStartKey: " + getExclusiveStartKey() + ",");
+        if (getReturnConsumedCapacity() != null) sb.append("ReturnConsumedCapacity: " + getReturnConsumedCapacity() + ",");
+        if (getTotalSegments() != null) sb.append("TotalSegments: " + getTotalSegments() + ",");
         if (getSegment() != null) sb.append("Segment: " + getSegment() );
         sb.append("}");
         return sb.toString();

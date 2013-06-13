@@ -217,10 +217,10 @@ public class LicenseCapacity  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getCapacity() != null) sb.append("Capacity: " + getCapacity() + ",");    	
-        if (getInstanceCapacity() != null) sb.append("InstanceCapacity: " + getInstanceCapacity() + ",");    	
-        if (getState() != null) sb.append("State: " + getState() + ",");    	
+        sb.append("{");
+        if (getCapacity() != null) sb.append("Capacity: " + getCapacity() + ",");
+        if (getInstanceCapacity() != null) sb.append("InstanceCapacity: " + getInstanceCapacity() + ",");
+        if (getState() != null) sb.append("State: " + getState() + ",");
         if (getEarliestAllowedDeactivationTime() != null) sb.append("EarliestAllowedDeactivationTime: " + getEarliestAllowedDeactivationTime() );
         sb.append("}");
         return sb.toString();

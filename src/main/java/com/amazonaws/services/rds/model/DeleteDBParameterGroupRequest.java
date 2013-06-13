@@ -43,6 +43,8 @@ public class DeleteDBParameterGroupRequest extends AmazonWebServiceRequest  impl
      */
     public DeleteDBParameterGroupRequest() {}
     
+
+
     /**
      * Constructs a new DeleteDBParameterGroupRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -54,7 +56,7 @@ public class DeleteDBParameterGroupRequest extends AmazonWebServiceRequest  impl
      * <li>Cannot be associated with any DB Instances</li> </ul>
      */
     public DeleteDBParameterGroupRequest(String dBParameterGroupName) {
-        this.dBParameterGroupName = dBParameterGroupName;
+        setDBParameterGroupName(dBParameterGroupName);
     }
 
     
@@ -122,7 +124,7 @@ public class DeleteDBParameterGroupRequest extends AmazonWebServiceRequest  impl
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getDBParameterGroupName() != null) sb.append("DBParameterGroupName: " + getDBParameterGroupName() );
         sb.append("}");
         return sb.toString();

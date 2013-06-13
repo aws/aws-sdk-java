@@ -46,6 +46,8 @@ public class PurchaseReservedInstancesOfferingRequest extends AmazonWebServiceRe
      */
     public PurchaseReservedInstancesOfferingRequest() {}
     
+
+
     /**
      * Constructs a new PurchaseReservedInstancesOfferingRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -56,8 +58,8 @@ public class PurchaseReservedInstancesOfferingRequest extends AmazonWebServiceRe
      * @param instanceCount The number of Reserved Instances to purchase.
      */
     public PurchaseReservedInstancesOfferingRequest(String reservedInstancesOfferingId, Integer instanceCount) {
-        this.reservedInstancesOfferingId = reservedInstancesOfferingId;
-        this.instanceCount = instanceCount;
+        setReservedInstancesOfferingId(reservedInstancesOfferingId);
+        setInstanceCount(instanceCount);
     }
 
     
@@ -175,9 +177,9 @@ public class PurchaseReservedInstancesOfferingRequest extends AmazonWebServiceRe
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getReservedInstancesOfferingId() != null) sb.append("ReservedInstancesOfferingId: " + getReservedInstancesOfferingId() + ",");    	
-        if (getInstanceCount() != null) sb.append("InstanceCount: " + getInstanceCount() + ",");    	
+        sb.append("{");
+        if (getReservedInstancesOfferingId() != null) sb.append("ReservedInstancesOfferingId: " + getReservedInstancesOfferingId() + ",");
+        if (getInstanceCount() != null) sb.append("InstanceCount: " + getInstanceCount() + ",");
         if (getLimitPrice() != null) sb.append("LimitPrice: " + getLimitPrice() );
         sb.append("}");
         return sb.toString();

@@ -517,16 +517,16 @@ public class StackResourceDetail  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getStackName() != null) sb.append("StackName: " + getStackName() + ",");    	
-        if (getStackId() != null) sb.append("StackId: " + getStackId() + ",");    	
-        if (getLogicalResourceId() != null) sb.append("LogicalResourceId: " + getLogicalResourceId() + ",");    	
-        if (getPhysicalResourceId() != null) sb.append("PhysicalResourceId: " + getPhysicalResourceId() + ",");    	
-        if (getResourceType() != null) sb.append("ResourceType: " + getResourceType() + ",");    	
-        if (getLastUpdatedTimestamp() != null) sb.append("LastUpdatedTimestamp: " + getLastUpdatedTimestamp() + ",");    	
-        if (getResourceStatus() != null) sb.append("ResourceStatus: " + getResourceStatus() + ",");    	
-        if (getResourceStatusReason() != null) sb.append("ResourceStatusReason: " + getResourceStatusReason() + ",");    	
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");    	
+        sb.append("{");
+        if (getStackName() != null) sb.append("StackName: " + getStackName() + ",");
+        if (getStackId() != null) sb.append("StackId: " + getStackId() + ",");
+        if (getLogicalResourceId() != null) sb.append("LogicalResourceId: " + getLogicalResourceId() + ",");
+        if (getPhysicalResourceId() != null) sb.append("PhysicalResourceId: " + getPhysicalResourceId() + ",");
+        if (getResourceType() != null) sb.append("ResourceType: " + getResourceType() + ",");
+        if (getLastUpdatedTimestamp() != null) sb.append("LastUpdatedTimestamp: " + getLastUpdatedTimestamp() + ",");
+        if (getResourceStatus() != null) sb.append("ResourceStatus: " + getResourceStatus() + ",");
+        if (getResourceStatusReason() != null) sb.append("ResourceStatusReason: " + getResourceStatusReason() + ",");
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");
         if (getMetadata() != null) sb.append("Metadata: " + getMetadata() );
         sb.append("}");
         return sb.toString();

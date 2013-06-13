@@ -29,7 +29,7 @@ public class UnmonitorInstancesRequest extends AmazonWebServiceRequest  implemen
     /**
      * The list of Amazon EC2 instances on which to disable monitoring.
      */
-    private java.util.List<String> instanceIds;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> instanceIds;
 
     /**
      * Default constructor for a new UnmonitorInstancesRequest object.  Callers should use the
@@ -37,6 +37,8 @@ public class UnmonitorInstancesRequest extends AmazonWebServiceRequest  implemen
      */
     public UnmonitorInstancesRequest() {}
     
+
+
     /**
      * Constructs a new UnmonitorInstancesRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -46,7 +48,7 @@ public class UnmonitorInstancesRequest extends AmazonWebServiceRequest  implemen
      * disable monitoring.
      */
     public UnmonitorInstancesRequest(java.util.List<String> instanceIds) {
-        this.instanceIds = instanceIds;
+        setInstanceIds(instanceIds);
     }
 
     
@@ -59,7 +61,8 @@ public class UnmonitorInstancesRequest extends AmazonWebServiceRequest  implemen
     public java.util.List<String> getInstanceIds() {
         
         if (instanceIds == null) {
-            instanceIds = new java.util.ArrayList<String>();
+              instanceIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              instanceIds.setAutoConstruct(true);
         }
         return instanceIds;
     }
@@ -74,8 +77,7 @@ public class UnmonitorInstancesRequest extends AmazonWebServiceRequest  implemen
             this.instanceIds = null;
             return;
         }
-
-        java.util.List<String> instanceIdsCopy = new java.util.ArrayList<String>(instanceIds.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> instanceIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(instanceIds.size());
         instanceIdsCopy.addAll(instanceIds);
         this.instanceIds = instanceIdsCopy;
     }
@@ -112,7 +114,7 @@ public class UnmonitorInstancesRequest extends AmazonWebServiceRequest  implemen
         if (instanceIds == null) {
             this.instanceIds = null;
         } else {
-            java.util.List<String> instanceIdsCopy = new java.util.ArrayList<String>(instanceIds.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> instanceIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(instanceIds.size());
             instanceIdsCopy.addAll(instanceIds);
             this.instanceIds = instanceIdsCopy;
         }
@@ -131,7 +133,7 @@ public class UnmonitorInstancesRequest extends AmazonWebServiceRequest  implemen
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getInstanceIds() != null) sb.append("InstanceIds: " + getInstanceIds() );
         sb.append("}");
         return sb.toString();

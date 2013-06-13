@@ -235,10 +235,10 @@ public class CreateOptionGroupRequest extends AmazonWebServiceRequest  implement
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getOptionGroupName() != null) sb.append("OptionGroupName: " + getOptionGroupName() + ",");    	
-        if (getEngineName() != null) sb.append("EngineName: " + getEngineName() + ",");    	
-        if (getMajorEngineVersion() != null) sb.append("MajorEngineVersion: " + getMajorEngineVersion() + ",");    	
+        sb.append("{");
+        if (getOptionGroupName() != null) sb.append("OptionGroupName: " + getOptionGroupName() + ",");
+        if (getEngineName() != null) sb.append("EngineName: " + getEngineName() + ",");
+        if (getMajorEngineVersion() != null) sb.append("MajorEngineVersion: " + getMajorEngineVersion() + ",");
         if (getOptionGroupDescription() != null) sb.append("OptionGroupDescription: " + getOptionGroupDescription() );
         sb.append("}");
         return sb.toString();

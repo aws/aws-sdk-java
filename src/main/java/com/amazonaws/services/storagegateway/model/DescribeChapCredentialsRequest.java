@@ -103,7 +103,7 @@ public class DescribeChapCredentialsRequest extends AmazonWebServiceRequest  imp
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getTargetARN() != null) sb.append("TargetARN: " + getTargetARN() );
         sb.append("}");
         return sb.toString();

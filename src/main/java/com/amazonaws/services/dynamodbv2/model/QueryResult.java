@@ -27,7 +27,7 @@ public class QueryResult  implements Serializable  {
      * element in this array consists of an attribute name and the value for
      * that attribute.
      */
-    private java.util.List<java.util.Map<String,AttributeValue>> items;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<java.util.Map<String,AttributeValue>> items;
 
     /**
      * The number of items in the response.
@@ -81,8 +81,7 @@ public class QueryResult  implements Serializable  {
             this.items = null;
             return;
         }
-
-        java.util.List<java.util.Map<String,AttributeValue>> itemsCopy = new java.util.ArrayList<java.util.Map<String,AttributeValue>>(items.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<java.util.Map<String,AttributeValue>> itemsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<java.util.Map<String,AttributeValue>>(items.size());
         itemsCopy.addAll(items);
         this.items = itemsCopy;
     }
@@ -127,7 +126,7 @@ public class QueryResult  implements Serializable  {
         if (items == null) {
             this.items = null;
         } else {
-            java.util.List<java.util.Map<String,AttributeValue>> itemsCopy = new java.util.ArrayList<java.util.Map<String,AttributeValue>>(items.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<java.util.Map<String,AttributeValue>> itemsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<java.util.Map<String,AttributeValue>>(items.size());
             itemsCopy.addAll(items);
             this.items = itemsCopy;
         }
@@ -303,10 +302,10 @@ public class QueryResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getItems() != null) sb.append("Items: " + getItems() + ",");    	
-        if (getCount() != null) sb.append("Count: " + getCount() + ",");    	
-        if (getLastEvaluatedKey() != null) sb.append("LastEvaluatedKey: " + getLastEvaluatedKey() + ",");    	
+        sb.append("{");
+        if (getItems() != null) sb.append("Items: " + getItems() + ",");
+        if (getCount() != null) sb.append("Count: " + getCount() + ",");
+        if (getLastEvaluatedKey() != null) sb.append("LastEvaluatedKey: " + getLastEvaluatedKey() + ",");
         if (getConsumedCapacity() != null) sb.append("ConsumedCapacity: " + getConsumedCapacity() );
         sb.append("}");
         return sb.toString();

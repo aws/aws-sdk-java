@@ -37,6 +37,8 @@ public class DeletePlacementGroupRequest extends AmazonWebServiceRequest  implem
      */
     public DeletePlacementGroupRequest() {}
     
+
+
     /**
      * Constructs a new DeletePlacementGroupRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -46,7 +48,7 @@ public class DeletePlacementGroupRequest extends AmazonWebServiceRequest  implem
      * delete.
      */
     public DeletePlacementGroupRequest(String groupName) {
-        this.groupName = groupName;
+        setGroupName(groupName);
     }
 
     
@@ -96,7 +98,7 @@ public class DeletePlacementGroupRequest extends AmazonWebServiceRequest  implem
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getGroupName() != null) sb.append("GroupName: " + getGroupName() );
         sb.append("}");
         return sb.toString();

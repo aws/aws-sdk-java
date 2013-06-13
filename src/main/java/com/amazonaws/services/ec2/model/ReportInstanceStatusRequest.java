@@ -24,7 +24,7 @@ import java.io.Serializable;
  */
 public class ReportInstanceStatusRequest extends AmazonWebServiceRequest  implements Serializable  {
 
-    private java.util.List<String> instances;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> instances;
 
     private String status;
 
@@ -32,7 +32,7 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest  implem
 
     private java.util.Date endTime;
 
-    private java.util.List<String> reasonCodes;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> reasonCodes;
 
     private String description;
 
@@ -44,7 +44,8 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest  implem
     public java.util.List<String> getInstances() {
         
         if (instances == null) {
-            instances = new java.util.ArrayList<String>();
+              instances = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              instances.setAutoConstruct(true);
         }
         return instances;
     }
@@ -59,8 +60,7 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest  implem
             this.instances = null;
             return;
         }
-
-        java.util.List<String> instancesCopy = new java.util.ArrayList<String>(instances.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> instancesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(instances.size());
         instancesCopy.addAll(instances);
         this.instances = instancesCopy;
     }
@@ -97,7 +97,7 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest  implem
         if (instances == null) {
             this.instances = null;
         } else {
-            java.util.List<String> instancesCopy = new java.util.ArrayList<String>(instances.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> instancesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(instances.size());
             instancesCopy.addAll(instances);
             this.instances = instancesCopy;
         }
@@ -215,7 +215,8 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest  implem
     public java.util.List<String> getReasonCodes() {
         
         if (reasonCodes == null) {
-            reasonCodes = new java.util.ArrayList<String>();
+              reasonCodes = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              reasonCodes.setAutoConstruct(true);
         }
         return reasonCodes;
     }
@@ -230,8 +231,7 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest  implem
             this.reasonCodes = null;
             return;
         }
-
-        java.util.List<String> reasonCodesCopy = new java.util.ArrayList<String>(reasonCodes.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> reasonCodesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(reasonCodes.size());
         reasonCodesCopy.addAll(reasonCodes);
         this.reasonCodes = reasonCodesCopy;
     }
@@ -268,7 +268,7 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest  implem
         if (reasonCodes == null) {
             this.reasonCodes = null;
         } else {
-            java.util.List<String> reasonCodesCopy = new java.util.ArrayList<String>(reasonCodes.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> reasonCodesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(reasonCodes.size());
             reasonCodesCopy.addAll(reasonCodes);
             this.reasonCodes = reasonCodesCopy;
         }
@@ -321,12 +321,12 @@ public class ReportInstanceStatusRequest extends AmazonWebServiceRequest  implem
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getInstances() != null) sb.append("Instances: " + getInstances() + ",");    	
-        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");    	
-        if (getStartTime() != null) sb.append("StartTime: " + getStartTime() + ",");    	
-        if (getEndTime() != null) sb.append("EndTime: " + getEndTime() + ",");    	
-        if (getReasonCodes() != null) sb.append("ReasonCodes: " + getReasonCodes() + ",");    	
+        sb.append("{");
+        if (getInstances() != null) sb.append("Instances: " + getInstances() + ",");
+        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");
+        if (getStartTime() != null) sb.append("StartTime: " + getStartTime() + ",");
+        if (getEndTime() != null) sb.append("EndTime: " + getEndTime() + ",");
+        if (getReasonCodes() != null) sb.append("ReasonCodes: " + getReasonCodes() + ",");
         if (getDescription() != null) sb.append("Description: " + getDescription() );
         sb.append("}");
         return sb.toString();

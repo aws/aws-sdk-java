@@ -504,12 +504,12 @@ public class CreateStorediSCSIVolumeRequest extends AmazonWebServiceRequest  imp
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getGatewayARN() != null) sb.append("GatewayARN: " + getGatewayARN() + ",");    	
-        if (getDiskId() != null) sb.append("DiskId: " + getDiskId() + ",");    	
-        if (getSnapshotId() != null) sb.append("SnapshotId: " + getSnapshotId() + ",");    	
-        if (isPreserveExistingData() != null) sb.append("PreserveExistingData: " + isPreserveExistingData() + ",");    	
-        if (getTargetName() != null) sb.append("TargetName: " + getTargetName() + ",");    	
+        sb.append("{");
+        if (getGatewayARN() != null) sb.append("GatewayARN: " + getGatewayARN() + ",");
+        if (getDiskId() != null) sb.append("DiskId: " + getDiskId() + ",");
+        if (getSnapshotId() != null) sb.append("SnapshotId: " + getSnapshotId() + ",");
+        if (isPreserveExistingData() != null) sb.append("PreserveExistingData: " + isPreserveExistingData() + ",");
+        if (getTargetName() != null) sb.append("TargetName: " + getTargetName() + ",");
         if (getNetworkInterfaceId() != null) sb.append("NetworkInterfaceId: " + getNetworkInterfaceId() );
         sb.append("}");
         return sb.toString();

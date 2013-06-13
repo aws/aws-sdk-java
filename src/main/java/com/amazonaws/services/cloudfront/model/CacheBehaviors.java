@@ -31,7 +31,7 @@ public class CacheBehaviors  implements Serializable  {
      * Optional: A complex type that contains cache behaviors for this
      * distribution. If Quantity is 0, you can omit Items.
      */
-    private java.util.List<CacheBehavior> items;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<CacheBehavior> items;
 
     /**
      * The number of cache behaviors for this distribution.
@@ -77,7 +77,8 @@ public class CacheBehaviors  implements Serializable  {
     public java.util.List<CacheBehavior> getItems() {
         
         if (items == null) {
-            items = new java.util.ArrayList<CacheBehavior>();
+              items = new com.amazonaws.internal.ListWithAutoConstructFlag<CacheBehavior>();
+              items.setAutoConstruct(true);
         }
         return items;
     }
@@ -94,8 +95,7 @@ public class CacheBehaviors  implements Serializable  {
             this.items = null;
             return;
         }
-
-        java.util.List<CacheBehavior> itemsCopy = new java.util.ArrayList<CacheBehavior>(items.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<CacheBehavior> itemsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<CacheBehavior>(items.size());
         itemsCopy.addAll(items);
         this.items = itemsCopy;
     }
@@ -136,7 +136,7 @@ public class CacheBehaviors  implements Serializable  {
         if (items == null) {
             this.items = null;
         } else {
-            java.util.List<CacheBehavior> itemsCopy = new java.util.ArrayList<CacheBehavior>(items.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<CacheBehavior> itemsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<CacheBehavior>(items.size());
             itemsCopy.addAll(items);
             this.items = itemsCopy;
         }
@@ -155,8 +155,8 @@ public class CacheBehaviors  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getQuantity() != null) sb.append("Quantity: " + getQuantity() + ",");    	
+        sb.append("{");
+        if (getQuantity() != null) sb.append("Quantity: " + getQuantity() + ",");
         if (getItems() != null) sb.append("Items: " + getItems() );
         sb.append("}");
         return sb.toString();

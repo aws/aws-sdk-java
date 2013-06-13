@@ -61,13 +61,13 @@ public class EventSubscription  implements Serializable  {
     /**
      * A list of source Ids for the RDS event notification subscription.
      */
-    private java.util.List<String> sourceIdsList;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> sourceIdsList;
 
     /**
      * A list of event categories for the RDS event notification
      * subscription.
      */
-    private java.util.List<String> eventCategoriesList;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> eventCategoriesList;
 
     /**
      * A Boolean value indicating if the subscription is enabled. True
@@ -323,7 +323,8 @@ public class EventSubscription  implements Serializable  {
     public java.util.List<String> getSourceIdsList() {
         
         if (sourceIdsList == null) {
-            sourceIdsList = new java.util.ArrayList<String>();
+              sourceIdsList = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              sourceIdsList.setAutoConstruct(true);
         }
         return sourceIdsList;
     }
@@ -338,8 +339,7 @@ public class EventSubscription  implements Serializable  {
             this.sourceIdsList = null;
             return;
         }
-
-        java.util.List<String> sourceIdsListCopy = new java.util.ArrayList<String>(sourceIdsList.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> sourceIdsListCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(sourceIdsList.size());
         sourceIdsListCopy.addAll(sourceIdsList);
         this.sourceIdsList = sourceIdsListCopy;
     }
@@ -376,7 +376,7 @@ public class EventSubscription  implements Serializable  {
         if (sourceIdsList == null) {
             this.sourceIdsList = null;
         } else {
-            java.util.List<String> sourceIdsListCopy = new java.util.ArrayList<String>(sourceIdsList.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> sourceIdsListCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(sourceIdsList.size());
             sourceIdsListCopy.addAll(sourceIdsList);
             this.sourceIdsList = sourceIdsListCopy;
         }
@@ -394,7 +394,8 @@ public class EventSubscription  implements Serializable  {
     public java.util.List<String> getEventCategoriesList() {
         
         if (eventCategoriesList == null) {
-            eventCategoriesList = new java.util.ArrayList<String>();
+              eventCategoriesList = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              eventCategoriesList.setAutoConstruct(true);
         }
         return eventCategoriesList;
     }
@@ -411,8 +412,7 @@ public class EventSubscription  implements Serializable  {
             this.eventCategoriesList = null;
             return;
         }
-
-        java.util.List<String> eventCategoriesListCopy = new java.util.ArrayList<String>(eventCategoriesList.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> eventCategoriesListCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(eventCategoriesList.size());
         eventCategoriesListCopy.addAll(eventCategoriesList);
         this.eventCategoriesList = eventCategoriesListCopy;
     }
@@ -453,7 +453,7 @@ public class EventSubscription  implements Serializable  {
         if (eventCategoriesList == null) {
             this.eventCategoriesList = null;
         } else {
-            java.util.List<String> eventCategoriesListCopy = new java.util.ArrayList<String>(eventCategoriesList.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> eventCategoriesListCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(eventCategoriesList.size());
             eventCategoriesListCopy.addAll(eventCategoriesList);
             this.eventCategoriesList = eventCategoriesListCopy;
         }
@@ -523,15 +523,15 @@ public class EventSubscription  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getCustomerAwsId() != null) sb.append("CustomerAwsId: " + getCustomerAwsId() + ",");    	
-        if (getCustSubscriptionId() != null) sb.append("CustSubscriptionId: " + getCustSubscriptionId() + ",");    	
-        if (getSnsTopicArn() != null) sb.append("SnsTopicArn: " + getSnsTopicArn() + ",");    	
-        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");    	
-        if (getSubscriptionCreationTime() != null) sb.append("SubscriptionCreationTime: " + getSubscriptionCreationTime() + ",");    	
-        if (getSourceType() != null) sb.append("SourceType: " + getSourceType() + ",");    	
-        if (getSourceIdsList() != null) sb.append("SourceIdsList: " + getSourceIdsList() + ",");    	
-        if (getEventCategoriesList() != null) sb.append("EventCategoriesList: " + getEventCategoriesList() + ",");    	
+        sb.append("{");
+        if (getCustomerAwsId() != null) sb.append("CustomerAwsId: " + getCustomerAwsId() + ",");
+        if (getCustSubscriptionId() != null) sb.append("CustSubscriptionId: " + getCustSubscriptionId() + ",");
+        if (getSnsTopicArn() != null) sb.append("SnsTopicArn: " + getSnsTopicArn() + ",");
+        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");
+        if (getSubscriptionCreationTime() != null) sb.append("SubscriptionCreationTime: " + getSubscriptionCreationTime() + ",");
+        if (getSourceType() != null) sb.append("SourceType: " + getSourceType() + ",");
+        if (getSourceIdsList() != null) sb.append("SourceIdsList: " + getSourceIdsList() + ",");
+        if (getEventCategoriesList() != null) sb.append("EventCategoriesList: " + getEventCategoriesList() + ",");
         if (isEnabled() != null) sb.append("Enabled: " + isEnabled() );
         sb.append("}");
         return sb.toString();

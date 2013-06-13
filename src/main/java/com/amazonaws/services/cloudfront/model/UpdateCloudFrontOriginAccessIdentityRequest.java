@@ -48,6 +48,8 @@ public class UpdateCloudFrontOriginAccessIdentityRequest extends AmazonWebServic
      */
     public UpdateCloudFrontOriginAccessIdentityRequest() {}
     
+
+
     /**
      * Constructs a new UpdateCloudFrontOriginAccessIdentityRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -60,9 +62,9 @@ public class UpdateCloudFrontOriginAccessIdentityRequest extends AmazonWebServic
      * retrieving the identity's configuration. For example: E2QWRUHAPOMQZL.
      */
     public UpdateCloudFrontOriginAccessIdentityRequest(CloudFrontOriginAccessIdentityConfig cloudFrontOriginAccessIdentityConfig, String id, String ifMatch) {
-        this.cloudFrontOriginAccessIdentityConfig = cloudFrontOriginAccessIdentityConfig;
-        this.id = id;
-        this.ifMatch = ifMatch;
+        setCloudFrontOriginAccessIdentityConfig(cloudFrontOriginAccessIdentityConfig);
+        setId(id);
+        setIfMatch(ifMatch);
     }
 
     
@@ -186,9 +188,9 @@ public class UpdateCloudFrontOriginAccessIdentityRequest extends AmazonWebServic
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getCloudFrontOriginAccessIdentityConfig() != null) sb.append("CloudFrontOriginAccessIdentityConfig: " + getCloudFrontOriginAccessIdentityConfig() + ",");    	
-        if (getId() != null) sb.append("Id: " + getId() + ",");    	
+        sb.append("{");
+        if (getCloudFrontOriginAccessIdentityConfig() != null) sb.append("CloudFrontOriginAccessIdentityConfig: " + getCloudFrontOriginAccessIdentityConfig() + ",");
+        if (getId() != null) sb.append("Id: " + getId() + ",");
         if (getIfMatch() != null) sb.append("IfMatch: " + getIfMatch() );
         sb.append("}");
         return sb.toString();

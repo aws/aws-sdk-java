@@ -557,11 +557,11 @@ public class ActivateGatewayRequest extends AmazonWebServiceRequest  implements 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getActivationKey() != null) sb.append("ActivationKey: " + getActivationKey() + ",");    	
-        if (getGatewayName() != null) sb.append("GatewayName: " + getGatewayName() + ",");    	
-        if (getGatewayTimezone() != null) sb.append("GatewayTimezone: " + getGatewayTimezone() + ",");    	
-        if (getGatewayRegion() != null) sb.append("GatewayRegion: " + getGatewayRegion() + ",");    	
+        sb.append("{");
+        if (getActivationKey() != null) sb.append("ActivationKey: " + getActivationKey() + ",");
+        if (getGatewayName() != null) sb.append("GatewayName: " + getGatewayName() + ",");
+        if (getGatewayTimezone() != null) sb.append("GatewayTimezone: " + getGatewayTimezone() + ",");
+        if (getGatewayRegion() != null) sb.append("GatewayRegion: " + getGatewayRegion() + ",");
         if (getGatewayType() != null) sb.append("GatewayType: " + getGatewayType() );
         sb.append("}");
         return sb.toString();

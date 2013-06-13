@@ -58,7 +58,7 @@ public class DBEngineVersion  implements Serializable  {
      * A list of the character sets supported by this engine for the
      * <code>CharacterSetName</code> parameter of the CreateDBInstance API.
      */
-    private java.util.List<CharacterSet> supportedCharacterSets;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<CharacterSet> supportedCharacterSets;
 
     /**
      * Default constructor for a new DBEngineVersion object.  Callers should use the
@@ -292,7 +292,8 @@ public class DBEngineVersion  implements Serializable  {
     public java.util.List<CharacterSet> getSupportedCharacterSets() {
         
         if (supportedCharacterSets == null) {
-            supportedCharacterSets = new java.util.ArrayList<CharacterSet>();
+              supportedCharacterSets = new com.amazonaws.internal.ListWithAutoConstructFlag<CharacterSet>();
+              supportedCharacterSets.setAutoConstruct(true);
         }
         return supportedCharacterSets;
     }
@@ -309,8 +310,7 @@ public class DBEngineVersion  implements Serializable  {
             this.supportedCharacterSets = null;
             return;
         }
-
-        java.util.List<CharacterSet> supportedCharacterSetsCopy = new java.util.ArrayList<CharacterSet>(supportedCharacterSets.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<CharacterSet> supportedCharacterSetsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<CharacterSet>(supportedCharacterSets.size());
         supportedCharacterSetsCopy.addAll(supportedCharacterSets);
         this.supportedCharacterSets = supportedCharacterSetsCopy;
     }
@@ -351,7 +351,7 @@ public class DBEngineVersion  implements Serializable  {
         if (supportedCharacterSets == null) {
             this.supportedCharacterSets = null;
         } else {
-            java.util.List<CharacterSet> supportedCharacterSetsCopy = new java.util.ArrayList<CharacterSet>(supportedCharacterSets.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<CharacterSet> supportedCharacterSetsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<CharacterSet>(supportedCharacterSets.size());
             supportedCharacterSetsCopy.addAll(supportedCharacterSets);
             this.supportedCharacterSets = supportedCharacterSetsCopy;
         }
@@ -370,13 +370,13 @@ public class DBEngineVersion  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getEngine() != null) sb.append("Engine: " + getEngine() + ",");    	
-        if (getEngineVersion() != null) sb.append("EngineVersion: " + getEngineVersion() + ",");    	
-        if (getDBParameterGroupFamily() != null) sb.append("DBParameterGroupFamily: " + getDBParameterGroupFamily() + ",");    	
-        if (getDBEngineDescription() != null) sb.append("DBEngineDescription: " + getDBEngineDescription() + ",");    	
-        if (getDBEngineVersionDescription() != null) sb.append("DBEngineVersionDescription: " + getDBEngineVersionDescription() + ",");    	
-        if (getDefaultCharacterSet() != null) sb.append("DefaultCharacterSet: " + getDefaultCharacterSet() + ",");    	
+        sb.append("{");
+        if (getEngine() != null) sb.append("Engine: " + getEngine() + ",");
+        if (getEngineVersion() != null) sb.append("EngineVersion: " + getEngineVersion() + ",");
+        if (getDBParameterGroupFamily() != null) sb.append("DBParameterGroupFamily: " + getDBParameterGroupFamily() + ",");
+        if (getDBEngineDescription() != null) sb.append("DBEngineDescription: " + getDBEngineDescription() + ",");
+        if (getDBEngineVersionDescription() != null) sb.append("DBEngineVersionDescription: " + getDBEngineVersionDescription() + ",");
+        if (getDefaultCharacterSet() != null) sb.append("DefaultCharacterSet: " + getDefaultCharacterSet() + ",");
         if (getSupportedCharacterSets() != null) sb.append("SupportedCharacterSets: " + getSupportedCharacterSets() );
         sb.append("}");
         return sb.toString();

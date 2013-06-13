@@ -33,7 +33,7 @@ public class Origins  implements Serializable  {
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
      */
-    private java.util.List<Origin> items;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Origin> items;
 
     /**
      * The number of origins for this distribution.
@@ -80,7 +80,8 @@ public class Origins  implements Serializable  {
     public java.util.List<Origin> getItems() {
         
         if (items == null) {
-            items = new java.util.ArrayList<Origin>();
+              items = new com.amazonaws.internal.ListWithAutoConstructFlag<Origin>();
+              items.setAutoConstruct(true);
         }
         return items;
     }
@@ -98,8 +99,7 @@ public class Origins  implements Serializable  {
             this.items = null;
             return;
         }
-
-        java.util.List<Origin> itemsCopy = new java.util.ArrayList<Origin>(items.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Origin> itemsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Origin>(items.size());
         itemsCopy.addAll(items);
         this.items = itemsCopy;
     }
@@ -142,7 +142,7 @@ public class Origins  implements Serializable  {
         if (items == null) {
             this.items = null;
         } else {
-            java.util.List<Origin> itemsCopy = new java.util.ArrayList<Origin>(items.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Origin> itemsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Origin>(items.size());
             itemsCopy.addAll(items);
             this.items = itemsCopy;
         }
@@ -161,8 +161,8 @@ public class Origins  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getQuantity() != null) sb.append("Quantity: " + getQuantity() + ",");    	
+        sb.append("{");
+        if (getQuantity() != null) sb.append("Quantity: " + getQuantity() + ",");
         if (getItems() != null) sb.append("Items: " + getItems() );
         sb.append("}");
         return sb.toString();

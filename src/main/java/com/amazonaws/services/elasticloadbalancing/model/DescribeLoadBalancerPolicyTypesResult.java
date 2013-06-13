@@ -27,7 +27,7 @@ public class DescribeLoadBalancerPolicyTypesResult  implements Serializable  {
      * type. If no policy type names are specified, returns the description
      * of all the policy types defined by Elastic Load Balancing service.
      */
-    private java.util.List<PolicyTypeDescription> policyTypeDescriptions;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<PolicyTypeDescription> policyTypeDescriptions;
 
     /**
      * List of policy type description structures of the specified policy
@@ -41,7 +41,8 @@ public class DescribeLoadBalancerPolicyTypesResult  implements Serializable  {
     public java.util.List<PolicyTypeDescription> getPolicyTypeDescriptions() {
         
         if (policyTypeDescriptions == null) {
-            policyTypeDescriptions = new java.util.ArrayList<PolicyTypeDescription>();
+              policyTypeDescriptions = new com.amazonaws.internal.ListWithAutoConstructFlag<PolicyTypeDescription>();
+              policyTypeDescriptions.setAutoConstruct(true);
         }
         return policyTypeDescriptions;
     }
@@ -60,8 +61,7 @@ public class DescribeLoadBalancerPolicyTypesResult  implements Serializable  {
             this.policyTypeDescriptions = null;
             return;
         }
-
-        java.util.List<PolicyTypeDescription> policyTypeDescriptionsCopy = new java.util.ArrayList<PolicyTypeDescription>(policyTypeDescriptions.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<PolicyTypeDescription> policyTypeDescriptionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<PolicyTypeDescription>(policyTypeDescriptions.size());
         policyTypeDescriptionsCopy.addAll(policyTypeDescriptions);
         this.policyTypeDescriptions = policyTypeDescriptionsCopy;
     }
@@ -106,7 +106,7 @@ public class DescribeLoadBalancerPolicyTypesResult  implements Serializable  {
         if (policyTypeDescriptions == null) {
             this.policyTypeDescriptions = null;
         } else {
-            java.util.List<PolicyTypeDescription> policyTypeDescriptionsCopy = new java.util.ArrayList<PolicyTypeDescription>(policyTypeDescriptions.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<PolicyTypeDescription> policyTypeDescriptionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<PolicyTypeDescription>(policyTypeDescriptions.size());
             policyTypeDescriptionsCopy.addAll(policyTypeDescriptions);
             this.policyTypeDescriptions = policyTypeDescriptionsCopy;
         }
@@ -125,7 +125,7 @@ public class DescribeLoadBalancerPolicyTypesResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getPolicyTypeDescriptions() != null) sb.append("PolicyTypeDescriptions: " + getPolicyTypeDescriptions() );
         sb.append("}");
         return sb.toString();

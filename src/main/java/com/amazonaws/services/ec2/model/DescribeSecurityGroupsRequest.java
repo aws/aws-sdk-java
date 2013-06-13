@@ -33,9 +33,9 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest  impl
     /**
      * The optional list of Amazon EC2 security groups to describe.
      */
-    private java.util.List<String> groupNames;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> groupNames;
 
-    private java.util.List<String> groupIds;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> groupIds;
 
     /**
      * A list of filters used to match properties for SecurityGroups. For a
@@ -44,7 +44,7 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest  impl
      * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      * EC2 API reference</a>.
      */
-    private java.util.List<Filter> filters;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filters;
 
     /**
      * The optional list of Amazon EC2 security groups to describe.
@@ -54,7 +54,8 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest  impl
     public java.util.List<String> getGroupNames() {
         
         if (groupNames == null) {
-            groupNames = new java.util.ArrayList<String>();
+              groupNames = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              groupNames.setAutoConstruct(true);
         }
         return groupNames;
     }
@@ -69,8 +70,7 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest  impl
             this.groupNames = null;
             return;
         }
-
-        java.util.List<String> groupNamesCopy = new java.util.ArrayList<String>(groupNames.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> groupNamesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(groupNames.size());
         groupNamesCopy.addAll(groupNames);
         this.groupNames = groupNamesCopy;
     }
@@ -107,7 +107,7 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest  impl
         if (groupNames == null) {
             this.groupNames = null;
         } else {
-            java.util.List<String> groupNamesCopy = new java.util.ArrayList<String>(groupNames.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> groupNamesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(groupNames.size());
             groupNamesCopy.addAll(groupNames);
             this.groupNames = groupNamesCopy;
         }
@@ -123,7 +123,8 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest  impl
     public java.util.List<String> getGroupIds() {
         
         if (groupIds == null) {
-            groupIds = new java.util.ArrayList<String>();
+              groupIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              groupIds.setAutoConstruct(true);
         }
         return groupIds;
     }
@@ -138,8 +139,7 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest  impl
             this.groupIds = null;
             return;
         }
-
-        java.util.List<String> groupIdsCopy = new java.util.ArrayList<String>(groupIds.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> groupIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(groupIds.size());
         groupIdsCopy.addAll(groupIds);
         this.groupIds = groupIdsCopy;
     }
@@ -176,7 +176,7 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest  impl
         if (groupIds == null) {
             this.groupIds = null;
         } else {
-            java.util.List<String> groupIdsCopy = new java.util.ArrayList<String>(groupIds.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> groupIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(groupIds.size());
             groupIdsCopy.addAll(groupIds);
             this.groupIds = groupIdsCopy;
         }
@@ -200,7 +200,8 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest  impl
     public java.util.List<Filter> getFilters() {
         
         if (filters == null) {
-            filters = new java.util.ArrayList<Filter>();
+              filters = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>();
+              filters.setAutoConstruct(true);
         }
         return filters;
     }
@@ -223,8 +224,7 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest  impl
             this.filters = null;
             return;
         }
-
-        java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>(filters.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filtersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>(filters.size());
         filtersCopy.addAll(filters);
         this.filters = filtersCopy;
     }
@@ -277,7 +277,7 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest  impl
         if (filters == null) {
             this.filters = null;
         } else {
-            java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>(filters.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filtersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>(filters.size());
             filtersCopy.addAll(filters);
             this.filters = filtersCopy;
         }
@@ -296,9 +296,9 @@ public class DescribeSecurityGroupsRequest extends AmazonWebServiceRequest  impl
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getGroupNames() != null) sb.append("GroupNames: " + getGroupNames() + ",");    	
-        if (getGroupIds() != null) sb.append("GroupIds: " + getGroupIds() + ",");    	
+        sb.append("{");
+        if (getGroupNames() != null) sb.append("GroupNames: " + getGroupNames() + ",");
+        if (getGroupIds() != null) sb.append("GroupIds: " + getGroupIds() + ",");
         if (getFilters() != null) sb.append("Filters: " + getFilters() );
         sb.append("}");
         return sb.toString();

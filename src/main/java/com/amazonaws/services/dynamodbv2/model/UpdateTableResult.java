@@ -72,7 +72,7 @@ public class UpdateTableResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getTableDescription() != null) sb.append("TableDescription: " + getTableDescription() );
         sb.append("}");
         return sb.toString();

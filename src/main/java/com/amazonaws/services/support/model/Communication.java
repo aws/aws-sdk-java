@@ -210,10 +210,10 @@ public class Communication  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getCaseId() != null) sb.append("CaseId: " + getCaseId() + ",");    	
-        if (getBody() != null) sb.append("Body: " + getBody() + ",");    	
-        if (getSubmittedBy() != null) sb.append("SubmittedBy: " + getSubmittedBy() + ",");    	
+        sb.append("{");
+        if (getCaseId() != null) sb.append("CaseId: " + getCaseId() + ",");
+        if (getBody() != null) sb.append("Body: " + getBody() + ",");
+        if (getSubmittedBy() != null) sb.append("SubmittedBy: " + getSubmittedBy() + ",");
         if (getTimeCreated() != null) sb.append("TimeCreated: " + getTimeCreated() );
         sb.append("}");
         return sb.toString();

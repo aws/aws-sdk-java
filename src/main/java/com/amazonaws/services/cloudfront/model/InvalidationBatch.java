@@ -53,6 +53,8 @@ public class InvalidationBatch  implements Serializable  {
      */
     public InvalidationBatch() {}
     
+
+
     /**
      * Constructs a new InvalidationBatch object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -77,12 +79,14 @@ public class InvalidationBatch  implements Serializable  {
      * CloudFront returns an InvalidationBatchAlreadyExists error.
      */
     public InvalidationBatch(Paths paths, String callerReference) {
-        this.paths = paths;
-        this.callerReference = callerReference;
+        setPaths(paths);
+        setCallerReference(callerReference);
     }
 
     
     
+
+
     /**
      * Constructs a new InvalidationBatch object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -100,7 +104,7 @@ public class InvalidationBatch  implements Serializable  {
      * CloudFront returns an InvalidationBatchAlreadyExists error.
      */
     public InvalidationBatch(String callerReference) {
-        this.callerReference = callerReference;
+        setCallerReference(callerReference);
     }
 
     
@@ -274,8 +278,8 @@ public class InvalidationBatch  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getPaths() != null) sb.append("Paths: " + getPaths() + ",");    	
+        sb.append("{");
+        if (getPaths() != null) sb.append("Paths: " + getPaths() + ",");
         if (getCallerReference() != null) sb.append("CallerReference: " + getCallerReference() );
         sb.append("}");
         return sb.toString();

@@ -25,7 +25,7 @@ public class DescribeImagesResult  implements Serializable  {
     /**
      * The list of the described AMIs.
      */
-    private java.util.List<Image> images;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Image> images;
 
     /**
      * The list of the described AMIs.
@@ -35,7 +35,8 @@ public class DescribeImagesResult  implements Serializable  {
     public java.util.List<Image> getImages() {
         
         if (images == null) {
-            images = new java.util.ArrayList<Image>();
+              images = new com.amazonaws.internal.ListWithAutoConstructFlag<Image>();
+              images.setAutoConstruct(true);
         }
         return images;
     }
@@ -50,8 +51,7 @@ public class DescribeImagesResult  implements Serializable  {
             this.images = null;
             return;
         }
-
-        java.util.List<Image> imagesCopy = new java.util.ArrayList<Image>(images.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Image> imagesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Image>(images.size());
         imagesCopy.addAll(images);
         this.images = imagesCopy;
     }
@@ -88,7 +88,7 @@ public class DescribeImagesResult  implements Serializable  {
         if (images == null) {
             this.images = null;
         } else {
-            java.util.List<Image> imagesCopy = new java.util.ArrayList<Image>(images.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Image> imagesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Image>(images.size());
             imagesCopy.addAll(images);
             this.images = imagesCopy;
         }
@@ -107,7 +107,7 @@ public class DescribeImagesResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getImages() != null) sb.append("Images: " + getImages() );
         sb.append("}");
         return sb.toString();

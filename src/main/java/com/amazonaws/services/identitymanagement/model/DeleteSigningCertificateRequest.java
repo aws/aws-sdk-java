@@ -54,6 +54,8 @@ public class DeleteSigningCertificateRequest extends AmazonWebServiceRequest  im
      */
     public DeleteSigningCertificateRequest() {}
     
+
+
     /**
      * Constructs a new DeleteSigningCertificateRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -62,7 +64,7 @@ public class DeleteSigningCertificateRequest extends AmazonWebServiceRequest  im
      * @param certificateId ID of the signing certificate to delete.
      */
     public DeleteSigningCertificateRequest(String certificateId) {
-        this.certificateId = certificateId;
+        setCertificateId(certificateId);
     }
 
     
@@ -170,8 +172,8 @@ public class DeleteSigningCertificateRequest extends AmazonWebServiceRequest  im
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getUserName() != null) sb.append("UserName: " + getUserName() + ",");    	
+        sb.append("{");
+        if (getUserName() != null) sb.append("UserName: " + getUserName() + ",");
         if (getCertificateId() != null) sb.append("CertificateId: " + getCertificateId() );
         sb.append("}");
         return sb.toString();

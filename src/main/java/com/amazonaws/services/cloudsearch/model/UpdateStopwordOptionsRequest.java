@@ -181,8 +181,8 @@ public class UpdateStopwordOptionsRequest extends AmazonWebServiceRequest  imple
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getDomainName() != null) sb.append("DomainName: " + getDomainName() + ",");    	
+        sb.append("{");
+        if (getDomainName() != null) sb.append("DomainName: " + getDomainName() + ",");
         if (getStopwords() != null) sb.append("Stopwords: " + getStopwords() );
         sb.append("}");
         return sb.toString();

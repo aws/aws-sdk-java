@@ -216,8 +216,8 @@ public class ValidateTemplateRequest extends AmazonWebServiceRequest  implements
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getTemplateBody() != null) sb.append("TemplateBody: " + getTemplateBody() + ",");    	
+        sb.append("{");
+        if (getTemplateBody() != null) sb.append("TemplateBody: " + getTemplateBody() + ",");
         if (getTemplateURL() != null) sb.append("TemplateURL: " + getTemplateURL() );
         sb.append("}");
         return sb.toString();

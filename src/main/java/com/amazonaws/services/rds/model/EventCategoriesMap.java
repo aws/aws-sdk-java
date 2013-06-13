@@ -30,7 +30,7 @@ public class EventCategoriesMap  implements Serializable  {
     /**
      * The event categories for the specified source type
      */
-    private java.util.List<String> eventCategories;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> eventCategories;
 
     /**
      * The source type that the returned categories belong to
@@ -74,7 +74,8 @@ public class EventCategoriesMap  implements Serializable  {
     public java.util.List<String> getEventCategories() {
         
         if (eventCategories == null) {
-            eventCategories = new java.util.ArrayList<String>();
+              eventCategories = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              eventCategories.setAutoConstruct(true);
         }
         return eventCategories;
     }
@@ -89,8 +90,7 @@ public class EventCategoriesMap  implements Serializable  {
             this.eventCategories = null;
             return;
         }
-
-        java.util.List<String> eventCategoriesCopy = new java.util.ArrayList<String>(eventCategories.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> eventCategoriesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(eventCategories.size());
         eventCategoriesCopy.addAll(eventCategories);
         this.eventCategories = eventCategoriesCopy;
     }
@@ -127,7 +127,7 @@ public class EventCategoriesMap  implements Serializable  {
         if (eventCategories == null) {
             this.eventCategories = null;
         } else {
-            java.util.List<String> eventCategoriesCopy = new java.util.ArrayList<String>(eventCategories.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> eventCategoriesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(eventCategories.size());
             eventCategoriesCopy.addAll(eventCategories);
             this.eventCategories = eventCategoriesCopy;
         }
@@ -146,8 +146,8 @@ public class EventCategoriesMap  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getSourceType() != null) sb.append("SourceType: " + getSourceType() + ",");    	
+        sb.append("{");
+        if (getSourceType() != null) sb.append("SourceType: " + getSourceType() + ",");
         if (getEventCategories() != null) sb.append("EventCategories: " + getEventCategories() );
         sb.append("}");
         return sb.toString();

@@ -257,8 +257,8 @@ public class UpdatePipelineNotificationsRequest extends AmazonWebServiceRequest 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getId() != null) sb.append("Id: " + getId() + ",");    	
+        sb.append("{");
+        if (getId() != null) sb.append("Id: " + getId() + ",");
         if (getNotifications() != null) sb.append("Notifications: " + getNotifications() );
         sb.append("}");
         return sb.toString();

@@ -32,7 +32,7 @@ public class VaultNotificationConfig  implements Serializable  {
      * A list of one or more events for which Amazon Glacier will send a
      * notification to the specified Amazon SNS topic.
      */
-    private java.util.List<String> events;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> events;
 
     /**
      * Default constructor for a new VaultNotificationConfig object.  Callers should use the
@@ -40,6 +40,8 @@ public class VaultNotificationConfig  implements Serializable  {
      */
     public VaultNotificationConfig() {}
     
+
+
     /**
      * Constructs a new VaultNotificationConfig object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -51,8 +53,8 @@ public class VaultNotificationConfig  implements Serializable  {
      * will send a notification to the specified Amazon SNS topic.
      */
     public VaultNotificationConfig(String sNSTopic, java.util.List<String> events) {
-        this.sNSTopic = sNSTopic;
-        this.events = events;
+        setSNSTopic(sNSTopic);
+        setEvents(events);
     }
 
     
@@ -107,7 +109,8 @@ public class VaultNotificationConfig  implements Serializable  {
     public java.util.List<String> getEvents() {
         
         if (events == null) {
-            events = new java.util.ArrayList<String>();
+              events = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              events.setAutoConstruct(true);
         }
         return events;
     }
@@ -124,8 +127,7 @@ public class VaultNotificationConfig  implements Serializable  {
             this.events = null;
             return;
         }
-
-        java.util.List<String> eventsCopy = new java.util.ArrayList<String>(events.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> eventsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(events.size());
         eventsCopy.addAll(events);
         this.events = eventsCopy;
     }
@@ -166,7 +168,7 @@ public class VaultNotificationConfig  implements Serializable  {
         if (events == null) {
             this.events = null;
         } else {
-            java.util.List<String> eventsCopy = new java.util.ArrayList<String>(events.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> eventsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(events.size());
             eventsCopy.addAll(events);
             this.events = eventsCopy;
         }
@@ -185,8 +187,8 @@ public class VaultNotificationConfig  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getSNSTopic() != null) sb.append("SNSTopic: " + getSNSTopic() + ",");    	
+        sb.append("{");
+        if (getSNSTopic() != null) sb.append("SNSTopic: " + getSNSTopic() + ",");
         if (getEvents() != null) sb.append("Events: " + getEvents() );
         sb.append("}");
         return sb.toString();

@@ -25,7 +25,7 @@ public class DescribeIndexFieldsResult  implements Serializable  {
     /**
      * The index fields configured for the domain.
      */
-    private java.util.List<IndexFieldStatus> indexFields;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<IndexFieldStatus> indexFields;
 
     /**
      * The index fields configured for the domain.
@@ -35,7 +35,8 @@ public class DescribeIndexFieldsResult  implements Serializable  {
     public java.util.List<IndexFieldStatus> getIndexFields() {
         
         if (indexFields == null) {
-            indexFields = new java.util.ArrayList<IndexFieldStatus>();
+              indexFields = new com.amazonaws.internal.ListWithAutoConstructFlag<IndexFieldStatus>();
+              indexFields.setAutoConstruct(true);
         }
         return indexFields;
     }
@@ -50,8 +51,7 @@ public class DescribeIndexFieldsResult  implements Serializable  {
             this.indexFields = null;
             return;
         }
-
-        java.util.List<IndexFieldStatus> indexFieldsCopy = new java.util.ArrayList<IndexFieldStatus>(indexFields.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<IndexFieldStatus> indexFieldsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<IndexFieldStatus>(indexFields.size());
         indexFieldsCopy.addAll(indexFields);
         this.indexFields = indexFieldsCopy;
     }
@@ -88,7 +88,7 @@ public class DescribeIndexFieldsResult  implements Serializable  {
         if (indexFields == null) {
             this.indexFields = null;
         } else {
-            java.util.List<IndexFieldStatus> indexFieldsCopy = new java.util.ArrayList<IndexFieldStatus>(indexFields.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<IndexFieldStatus> indexFieldsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<IndexFieldStatus>(indexFields.size());
             indexFieldsCopy.addAll(indexFields);
             this.indexFields = indexFieldsCopy;
         }
@@ -107,7 +107,7 @@ public class DescribeIndexFieldsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getIndexFields() != null) sb.append("IndexFields: " + getIndexFields() );
         sb.append("}");
         return sb.toString();

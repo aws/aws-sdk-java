@@ -114,8 +114,8 @@ public class KeyPairInfo  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getKeyName() != null) sb.append("KeyName: " + getKeyName() + ",");    	
+        sb.append("{");
+        if (getKeyName() != null) sb.append("KeyName: " + getKeyName() + ",");
         if (getKeyFingerprint() != null) sb.append("KeyFingerprint: " + getKeyFingerprint() );
         sb.append("}");
         return sb.toString();

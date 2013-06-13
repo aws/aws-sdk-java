@@ -60,7 +60,7 @@ public class Offering  implements Serializable  {
     /**
      * A list of connection costs.
      */
-    private java.util.List<ConnectionCost> connectionCosts;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<ConnectionCost> connectionCosts;
 
     /**
      * The ID of the offering. <p>Example: us-west-1_EqSV5_1G <p>Default:
@@ -304,7 +304,8 @@ public class Offering  implements Serializable  {
     public java.util.List<ConnectionCost> getConnectionCosts() {
         
         if (connectionCosts == null) {
-            connectionCosts = new java.util.ArrayList<ConnectionCost>();
+              connectionCosts = new com.amazonaws.internal.ListWithAutoConstructFlag<ConnectionCost>();
+              connectionCosts.setAutoConstruct(true);
         }
         return connectionCosts;
     }
@@ -319,8 +320,7 @@ public class Offering  implements Serializable  {
             this.connectionCosts = null;
             return;
         }
-
-        java.util.List<ConnectionCost> connectionCostsCopy = new java.util.ArrayList<ConnectionCost>(connectionCosts.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<ConnectionCost> connectionCostsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ConnectionCost>(connectionCosts.size());
         connectionCostsCopy.addAll(connectionCosts);
         this.connectionCosts = connectionCostsCopy;
     }
@@ -357,7 +357,7 @@ public class Offering  implements Serializable  {
         if (connectionCosts == null) {
             this.connectionCosts = null;
         } else {
-            java.util.List<ConnectionCost> connectionCostsCopy = new java.util.ArrayList<ConnectionCost>(connectionCosts.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<ConnectionCost> connectionCostsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ConnectionCost>(connectionCosts.size());
             connectionCostsCopy.addAll(connectionCosts);
             this.connectionCosts = connectionCostsCopy;
         }
@@ -376,13 +376,13 @@ public class Offering  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getOfferingId() != null) sb.append("OfferingId: " + getOfferingId() + ",");    	
-        if (getRegion() != null) sb.append("Region: " + getRegion() + ",");    	
-        if (getLocation() != null) sb.append("Location: " + getLocation() + ",");    	
-        if (getOfferingName() != null) sb.append("OfferingName: " + getOfferingName() + ",");    	
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");    	
-        if (getBandwidth() != null) sb.append("Bandwidth: " + getBandwidth() + ",");    	
+        sb.append("{");
+        if (getOfferingId() != null) sb.append("OfferingId: " + getOfferingId() + ",");
+        if (getRegion() != null) sb.append("Region: " + getRegion() + ",");
+        if (getLocation() != null) sb.append("Location: " + getLocation() + ",");
+        if (getOfferingName() != null) sb.append("OfferingName: " + getOfferingName() + ",");
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");
+        if (getBandwidth() != null) sb.append("Bandwidth: " + getBandwidth() + ",");
         if (getConnectionCosts() != null) sb.append("ConnectionCosts: " + getConnectionCosts() );
         sb.append("}");
         return sb.toString();

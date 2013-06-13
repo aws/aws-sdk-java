@@ -72,7 +72,7 @@ public class CreateApplicationResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getApplication() != null) sb.append("Application: " + getApplication() );
         sb.append("}");
         return sb.toString();

@@ -72,7 +72,7 @@ public class CreateVpnGatewayResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getVpnGateway() != null) sb.append("VpnGateway: " + getVpnGateway() );
         sb.append("}");
         return sb.toString();

@@ -60,7 +60,7 @@ public class TrustedAdvisorCheckResult  implements Serializable  {
     /**
      * List of AWS resources flagged by the Trusted Advisor check.
      */
-    private java.util.List<TrustedAdvisorResourceDetail> flaggedResources;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<TrustedAdvisorResourceDetail> flaggedResources;
 
     /**
      * Unique identifier for a Trusted Advisor check.
@@ -276,7 +276,8 @@ public class TrustedAdvisorCheckResult  implements Serializable  {
     public java.util.List<TrustedAdvisorResourceDetail> getFlaggedResources() {
         
         if (flaggedResources == null) {
-            flaggedResources = new java.util.ArrayList<TrustedAdvisorResourceDetail>();
+              flaggedResources = new com.amazonaws.internal.ListWithAutoConstructFlag<TrustedAdvisorResourceDetail>();
+              flaggedResources.setAutoConstruct(true);
         }
         return flaggedResources;
     }
@@ -291,8 +292,7 @@ public class TrustedAdvisorCheckResult  implements Serializable  {
             this.flaggedResources = null;
             return;
         }
-
-        java.util.List<TrustedAdvisorResourceDetail> flaggedResourcesCopy = new java.util.ArrayList<TrustedAdvisorResourceDetail>(flaggedResources.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<TrustedAdvisorResourceDetail> flaggedResourcesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<TrustedAdvisorResourceDetail>(flaggedResources.size());
         flaggedResourcesCopy.addAll(flaggedResources);
         this.flaggedResources = flaggedResourcesCopy;
     }
@@ -329,7 +329,7 @@ public class TrustedAdvisorCheckResult  implements Serializable  {
         if (flaggedResources == null) {
             this.flaggedResources = null;
         } else {
-            java.util.List<TrustedAdvisorResourceDetail> flaggedResourcesCopy = new java.util.ArrayList<TrustedAdvisorResourceDetail>(flaggedResources.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<TrustedAdvisorResourceDetail> flaggedResourcesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<TrustedAdvisorResourceDetail>(flaggedResources.size());
             flaggedResourcesCopy.addAll(flaggedResources);
             this.flaggedResources = flaggedResourcesCopy;
         }
@@ -348,12 +348,12 @@ public class TrustedAdvisorCheckResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getCheckId() != null) sb.append("CheckId: " + getCheckId() + ",");    	
-        if (getTimestamp() != null) sb.append("Timestamp: " + getTimestamp() + ",");    	
-        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");    	
-        if (getResourcesSummary() != null) sb.append("ResourcesSummary: " + getResourcesSummary() + ",");    	
-        if (getCategorySpecificSummary() != null) sb.append("CategorySpecificSummary: " + getCategorySpecificSummary() + ",");    	
+        sb.append("{");
+        if (getCheckId() != null) sb.append("CheckId: " + getCheckId() + ",");
+        if (getTimestamp() != null) sb.append("Timestamp: " + getTimestamp() + ",");
+        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");
+        if (getResourcesSummary() != null) sb.append("ResourcesSummary: " + getResourcesSummary() + ",");
+        if (getCategorySpecificSummary() != null) sb.append("CategorySpecificSummary: " + getCategorySpecificSummary() + ",");
         if (getFlaggedResources() != null) sb.append("FlaggedResources: " + getFlaggedResources() );
         sb.append("}");
         return sb.toString();

@@ -32,7 +32,7 @@ public class DescribeReservedDBInstancesResult  implements Serializable  {
     /**
      * A list of of reserved DB Instances.
      */
-    private java.util.List<ReservedDBInstance> reservedDBInstances;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<ReservedDBInstance> reservedDBInstances;
 
     /**
      * An optional pagination token provided by a previous request. If this
@@ -88,7 +88,8 @@ public class DescribeReservedDBInstancesResult  implements Serializable  {
     public java.util.List<ReservedDBInstance> getReservedDBInstances() {
         
         if (reservedDBInstances == null) {
-            reservedDBInstances = new java.util.ArrayList<ReservedDBInstance>();
+              reservedDBInstances = new com.amazonaws.internal.ListWithAutoConstructFlag<ReservedDBInstance>();
+              reservedDBInstances.setAutoConstruct(true);
         }
         return reservedDBInstances;
     }
@@ -103,8 +104,7 @@ public class DescribeReservedDBInstancesResult  implements Serializable  {
             this.reservedDBInstances = null;
             return;
         }
-
-        java.util.List<ReservedDBInstance> reservedDBInstancesCopy = new java.util.ArrayList<ReservedDBInstance>(reservedDBInstances.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<ReservedDBInstance> reservedDBInstancesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ReservedDBInstance>(reservedDBInstances.size());
         reservedDBInstancesCopy.addAll(reservedDBInstances);
         this.reservedDBInstances = reservedDBInstancesCopy;
     }
@@ -141,7 +141,7 @@ public class DescribeReservedDBInstancesResult  implements Serializable  {
         if (reservedDBInstances == null) {
             this.reservedDBInstances = null;
         } else {
-            java.util.List<ReservedDBInstance> reservedDBInstancesCopy = new java.util.ArrayList<ReservedDBInstance>(reservedDBInstances.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<ReservedDBInstance> reservedDBInstancesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ReservedDBInstance>(reservedDBInstances.size());
             reservedDBInstancesCopy.addAll(reservedDBInstances);
             this.reservedDBInstances = reservedDBInstancesCopy;
         }
@@ -160,8 +160,8 @@ public class DescribeReservedDBInstancesResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");    	
+        sb.append("{");
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");
         if (getReservedDBInstances() != null) sb.append("ReservedDBInstances: " + getReservedDBInstances() );
         sb.append("}");
         return sb.toString();

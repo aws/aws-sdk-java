@@ -37,7 +37,7 @@ public class MetricDatum  implements Serializable  {
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 10<br/>
      */
-    private java.util.List<Dimension> dimensions;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Dimension> dimensions;
 
     /**
      * The time stamp used for the metric. If not specified, the default
@@ -122,7 +122,8 @@ public class MetricDatum  implements Serializable  {
     public java.util.List<Dimension> getDimensions() {
         
         if (dimensions == null) {
-            dimensions = new java.util.ArrayList<Dimension>();
+              dimensions = new com.amazonaws.internal.ListWithAutoConstructFlag<Dimension>();
+              dimensions.setAutoConstruct(true);
         }
         return dimensions;
     }
@@ -140,8 +141,7 @@ public class MetricDatum  implements Serializable  {
             this.dimensions = null;
             return;
         }
-
-        java.util.List<Dimension> dimensionsCopy = new java.util.ArrayList<Dimension>(dimensions.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Dimension> dimensionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Dimension>(dimensions.size());
         dimensionsCopy.addAll(dimensions);
         this.dimensions = dimensionsCopy;
     }
@@ -184,7 +184,7 @@ public class MetricDatum  implements Serializable  {
         if (dimensions == null) {
             this.dimensions = null;
         } else {
-            java.util.List<Dimension> dimensionsCopy = new java.util.ArrayList<Dimension>(dimensions.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Dimension> dimensionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Dimension>(dimensions.size());
             dimensionsCopy.addAll(dimensions);
             this.dimensions = dimensionsCopy;
         }
@@ -424,12 +424,12 @@ public class MetricDatum  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getMetricName() != null) sb.append("MetricName: " + getMetricName() + ",");    	
-        if (getDimensions() != null) sb.append("Dimensions: " + getDimensions() + ",");    	
-        if (getTimestamp() != null) sb.append("Timestamp: " + getTimestamp() + ",");    	
-        if (getValue() != null) sb.append("Value: " + getValue() + ",");    	
-        if (getStatisticValues() != null) sb.append("StatisticValues: " + getStatisticValues() + ",");    	
+        sb.append("{");
+        if (getMetricName() != null) sb.append("MetricName: " + getMetricName() + ",");
+        if (getDimensions() != null) sb.append("Dimensions: " + getDimensions() + ",");
+        if (getTimestamp() != null) sb.append("Timestamp: " + getTimestamp() + ",");
+        if (getValue() != null) sb.append("Value: " + getValue() + ",");
+        if (getStatisticValues() != null) sb.append("StatisticValues: " + getStatisticValues() + ",");
         if (getUnit() != null) sb.append("Unit: " + getUnit() );
         sb.append("}");
         return sb.toString();

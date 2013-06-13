@@ -39,7 +39,7 @@ public class DescribeServicesRequest extends AmazonWebServiceRequest  implements
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 100<br/>
      */
-    private java.util.List<String> serviceCodeList;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> serviceCodeList;
 
     /**
      * Specifies the ISO 639-1 code for the language in which AWS provides
@@ -60,7 +60,8 @@ public class DescribeServicesRequest extends AmazonWebServiceRequest  implements
     public java.util.List<String> getServiceCodeList() {
         
         if (serviceCodeList == null) {
-            serviceCodeList = new java.util.ArrayList<String>();
+              serviceCodeList = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              serviceCodeList.setAutoConstruct(true);
         }
         return serviceCodeList;
     }
@@ -78,8 +79,7 @@ public class DescribeServicesRequest extends AmazonWebServiceRequest  implements
             this.serviceCodeList = null;
             return;
         }
-
-        java.util.List<String> serviceCodeListCopy = new java.util.ArrayList<String>(serviceCodeList.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> serviceCodeListCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(serviceCodeList.size());
         serviceCodeListCopy.addAll(serviceCodeList);
         this.serviceCodeList = serviceCodeListCopy;
     }
@@ -122,7 +122,7 @@ public class DescribeServicesRequest extends AmazonWebServiceRequest  implements
         if (serviceCodeList == null) {
             this.serviceCodeList = null;
         } else {
-            java.util.List<String> serviceCodeListCopy = new java.util.ArrayList<String>(serviceCodeList.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> serviceCodeListCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(serviceCodeList.size());
             serviceCodeListCopy.addAll(serviceCodeList);
             this.serviceCodeList = serviceCodeListCopy;
         }
@@ -193,8 +193,8 @@ public class DescribeServicesRequest extends AmazonWebServiceRequest  implements
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getServiceCodeList() != null) sb.append("ServiceCodeList: " + getServiceCodeList() + ",");    	
+        sb.append("{");
+        if (getServiceCodeList() != null) sb.append("ServiceCodeList: " + getServiceCodeList() + ",");
         if (getLanguage() != null) sb.append("Language: " + getLanguage() );
         sb.append("}");
         return sb.toString();

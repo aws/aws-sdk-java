@@ -48,6 +48,8 @@ public class UpdateDistributionRequest extends AmazonWebServiceRequest  implemen
      */
     public UpdateDistributionRequest() {}
     
+
+
     /**
      * Constructs a new UpdateDistributionRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -61,9 +63,9 @@ public class UpdateDistributionRequest extends AmazonWebServiceRequest  implemen
      * E2QWRUHAPOMQZL.
      */
     public UpdateDistributionRequest(DistributionConfig distributionConfig, String id, String ifMatch) {
-        this.distributionConfig = distributionConfig;
-        this.id = id;
-        this.ifMatch = ifMatch;
+        setDistributionConfig(distributionConfig);
+        setId(id);
+        setIfMatch(ifMatch);
     }
 
     
@@ -187,9 +189,9 @@ public class UpdateDistributionRequest extends AmazonWebServiceRequest  implemen
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getDistributionConfig() != null) sb.append("DistributionConfig: " + getDistributionConfig() + ",");    	
-        if (getId() != null) sb.append("Id: " + getId() + ",");    	
+        sb.append("{");
+        if (getDistributionConfig() != null) sb.append("DistributionConfig: " + getDistributionConfig() + ",");
+        if (getId() != null) sb.append("Id: " + getId() + ",");
         if (getIfMatch() != null) sb.append("IfMatch: " + getIfMatch() );
         sb.append("}");
         return sb.toString();

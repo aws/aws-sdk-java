@@ -71,6 +71,8 @@ public class PutUserPolicyRequest extends AmazonWebServiceRequest  implements Se
      */
     public PutUserPolicyRequest() {}
     
+
+
     /**
      * Constructs a new PutUserPolicyRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -81,9 +83,9 @@ public class PutUserPolicyRequest extends AmazonWebServiceRequest  implements Se
      * @param policyDocument The policy document.
      */
     public PutUserPolicyRequest(String userName, String policyName, String policyDocument) {
-        this.userName = userName;
-        this.policyName = policyName;
-        this.policyDocument = policyDocument;
+        setUserName(userName);
+        setPolicyName(policyName);
+        setPolicyDocument(policyDocument);
     }
 
     
@@ -237,9 +239,9 @@ public class PutUserPolicyRequest extends AmazonWebServiceRequest  implements Se
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getUserName() != null) sb.append("UserName: " + getUserName() + ",");    	
-        if (getPolicyName() != null) sb.append("PolicyName: " + getPolicyName() + ",");    	
+        sb.append("{");
+        if (getUserName() != null) sb.append("UserName: " + getUserName() + ",");
+        if (getPolicyName() != null) sb.append("PolicyName: " + getPolicyName() + ",");
         if (getPolicyDocument() != null) sb.append("PolicyDocument: " + getPolicyDocument() );
         sb.append("}");
         return sb.toString();

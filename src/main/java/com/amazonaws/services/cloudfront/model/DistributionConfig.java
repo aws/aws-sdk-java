@@ -104,11 +104,19 @@ public class DistributionConfig  implements Serializable  {
     private Boolean enabled;
 
     /**
+     * A complex type that contains information about viewer certificates for
+     * this distribution.
+     */
+    private ViewerCertificate viewerCertificate;
+
+    /**
      * Default constructor for a new DistributionConfig object.  Callers should use the
      * setter or fluent setter (with...) methods to initialize this object after creating it.
      */
     public DistributionConfig() {}
     
+
+
     /**
      * Constructs a new DistributionConfig object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -129,8 +137,8 @@ public class DistributionConfig  implements Serializable  {
      * requests for content.
      */
     public DistributionConfig(String callerReference, Boolean enabled) {
-        this.callerReference = callerReference;
-        this.enabled = enabled;
+        setCallerReference(callerReference);
+        setEnabled(enabled);
     }
 
     
@@ -708,6 +716,46 @@ public class DistributionConfig  implements Serializable  {
     }
     
     /**
+     * A complex type that contains information about viewer certificates for
+     * this distribution.
+     *
+     * @return A complex type that contains information about viewer certificates for
+     *         this distribution.
+     */
+    public ViewerCertificate getViewerCertificate() {
+        return viewerCertificate;
+    }
+    
+    /**
+     * A complex type that contains information about viewer certificates for
+     * this distribution.
+     *
+     * @param viewerCertificate A complex type that contains information about viewer certificates for
+     *         this distribution.
+     */
+    public void setViewerCertificate(ViewerCertificate viewerCertificate) {
+        this.viewerCertificate = viewerCertificate;
+    }
+    
+    /**
+     * A complex type that contains information about viewer certificates for
+     * this distribution.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param viewerCertificate A complex type that contains information about viewer certificates for
+     *         this distribution.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public DistributionConfig withViewerCertificate(ViewerCertificate viewerCertificate) {
+        this.viewerCertificate = viewerCertificate;
+        return this;
+    }
+    
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -718,17 +766,18 @@ public class DistributionConfig  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getCallerReference() != null) sb.append("CallerReference: " + getCallerReference() + ",");    	
-        if (getAliases() != null) sb.append("Aliases: " + getAliases() + ",");    	
-        if (getDefaultRootObject() != null) sb.append("DefaultRootObject: " + getDefaultRootObject() + ",");    	
-        if (getOrigins() != null) sb.append("Origins: " + getOrigins() + ",");    	
-        if (getDefaultCacheBehavior() != null) sb.append("DefaultCacheBehavior: " + getDefaultCacheBehavior() + ",");    	
-        if (getCacheBehaviors() != null) sb.append("CacheBehaviors: " + getCacheBehaviors() + ",");    	
-        if (getComment() != null) sb.append("Comment: " + getComment() + ",");    	
-        if (getLogging() != null) sb.append("Logging: " + getLogging() + ",");    	
-        if (getPriceClass() != null) sb.append("PriceClass: " + getPriceClass() + ",");    	
-        if (isEnabled() != null) sb.append("Enabled: " + isEnabled() );
+        sb.append("{");
+        if (getCallerReference() != null) sb.append("CallerReference: " + getCallerReference() + ",");
+        if (getAliases() != null) sb.append("Aliases: " + getAliases() + ",");
+        if (getDefaultRootObject() != null) sb.append("DefaultRootObject: " + getDefaultRootObject() + ",");
+        if (getOrigins() != null) sb.append("Origins: " + getOrigins() + ",");
+        if (getDefaultCacheBehavior() != null) sb.append("DefaultCacheBehavior: " + getDefaultCacheBehavior() + ",");
+        if (getCacheBehaviors() != null) sb.append("CacheBehaviors: " + getCacheBehaviors() + ",");
+        if (getComment() != null) sb.append("Comment: " + getComment() + ",");
+        if (getLogging() != null) sb.append("Logging: " + getLogging() + ",");
+        if (getPriceClass() != null) sb.append("PriceClass: " + getPriceClass() + ",");
+        if (isEnabled() != null) sb.append("Enabled: " + isEnabled() + ",");
+        if (getViewerCertificate() != null) sb.append("ViewerCertificate: " + getViewerCertificate() );
         sb.append("}");
         return sb.toString();
     }
@@ -748,6 +797,7 @@ public class DistributionConfig  implements Serializable  {
         hashCode = prime * hashCode + ((getLogging() == null) ? 0 : getLogging().hashCode()); 
         hashCode = prime * hashCode + ((getPriceClass() == null) ? 0 : getPriceClass().hashCode()); 
         hashCode = prime * hashCode + ((isEnabled() == null) ? 0 : isEnabled().hashCode()); 
+        hashCode = prime * hashCode + ((getViewerCertificate() == null) ? 0 : getViewerCertificate().hashCode()); 
         return hashCode;
     }
     
@@ -779,6 +829,8 @@ public class DistributionConfig  implements Serializable  {
         if (other.getPriceClass() != null && other.getPriceClass().equals(this.getPriceClass()) == false) return false; 
         if (other.isEnabled() == null ^ this.isEnabled() == null) return false;
         if (other.isEnabled() != null && other.isEnabled().equals(this.isEnabled()) == false) return false; 
+        if (other.getViewerCertificate() == null ^ this.getViewerCertificate() == null) return false;
+        if (other.getViewerCertificate() != null && other.getViewerCertificate().equals(this.getViewerCertificate()) == false) return false; 
         return true;
     }
     

@@ -26,7 +26,7 @@ public class DescribeCommunicationsResult  implements Serializable  {
      * Contains a list of <a href="API_Communication.html"
      * title="Communication">Communications</a> objects.
      */
-    private java.util.List<Communication> communications;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Communication> communications;
 
     /**
      * Defines a resumption point for pagination.
@@ -43,7 +43,8 @@ public class DescribeCommunicationsResult  implements Serializable  {
     public java.util.List<Communication> getCommunications() {
         
         if (communications == null) {
-            communications = new java.util.ArrayList<Communication>();
+              communications = new com.amazonaws.internal.ListWithAutoConstructFlag<Communication>();
+              communications.setAutoConstruct(true);
         }
         return communications;
     }
@@ -60,8 +61,7 @@ public class DescribeCommunicationsResult  implements Serializable  {
             this.communications = null;
             return;
         }
-
-        java.util.List<Communication> communicationsCopy = new java.util.ArrayList<Communication>(communications.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Communication> communicationsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Communication>(communications.size());
         communicationsCopy.addAll(communications);
         this.communications = communicationsCopy;
     }
@@ -102,7 +102,7 @@ public class DescribeCommunicationsResult  implements Serializable  {
         if (communications == null) {
             this.communications = null;
         } else {
-            java.util.List<Communication> communicationsCopy = new java.util.ArrayList<Communication>(communications.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Communication> communicationsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Communication>(communications.size());
             communicationsCopy.addAll(communications);
             this.communications = communicationsCopy;
         }
@@ -155,8 +155,8 @@ public class DescribeCommunicationsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getCommunications() != null) sb.append("Communications: " + getCommunications() + ",");    	
+        sb.append("{");
+        if (getCommunications() != null) sb.append("Communications: " + getCommunications() + ",");
         if (getNextToken() != null) sb.append("NextToken: " + getNextToken() );
         sb.append("}");
         return sb.toString();

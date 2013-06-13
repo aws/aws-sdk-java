@@ -28,7 +28,7 @@ public class ListPipelinesResult  implements Serializable  {
      * pipelines, you can use these identifiers to call
      * <a>DescribePipelines</a> and <a>GetPipelineDefinition</a>.
      */
-    private java.util.List<PipelineIdName> pipelineIdList;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<PipelineIdName> pipelineIdList;
 
     /**
      * If not null, indicates the starting point for the set of pipeline
@@ -61,7 +61,8 @@ public class ListPipelinesResult  implements Serializable  {
     public java.util.List<PipelineIdName> getPipelineIdList() {
         
         if (pipelineIdList == null) {
-            pipelineIdList = new java.util.ArrayList<PipelineIdName>();
+              pipelineIdList = new com.amazonaws.internal.ListWithAutoConstructFlag<PipelineIdName>();
+              pipelineIdList.setAutoConstruct(true);
         }
         return pipelineIdList;
     }
@@ -82,8 +83,7 @@ public class ListPipelinesResult  implements Serializable  {
             this.pipelineIdList = null;
             return;
         }
-
-        java.util.List<PipelineIdName> pipelineIdListCopy = new java.util.ArrayList<PipelineIdName>(pipelineIdList.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<PipelineIdName> pipelineIdListCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<PipelineIdName>(pipelineIdList.size());
         pipelineIdListCopy.addAll(pipelineIdList);
         this.pipelineIdList = pipelineIdListCopy;
     }
@@ -132,7 +132,7 @@ public class ListPipelinesResult  implements Serializable  {
         if (pipelineIdList == null) {
             this.pipelineIdList = null;
         } else {
-            java.util.List<PipelineIdName> pipelineIdListCopy = new java.util.ArrayList<PipelineIdName>(pipelineIdList.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<PipelineIdName> pipelineIdListCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<PipelineIdName>(pipelineIdList.size());
             pipelineIdListCopy.addAll(pipelineIdList);
             this.pipelineIdList = pipelineIdListCopy;
         }
@@ -260,9 +260,9 @@ public class ListPipelinesResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getPipelineIdList() != null) sb.append("PipelineIdList: " + getPipelineIdList() + ",");    	
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");    	
+        sb.append("{");
+        if (getPipelineIdList() != null) sb.append("PipelineIdList: " + getPipelineIdList() + ",");
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");
         if (isHasMoreResults() != null) sb.append("HasMoreResults: " + isHasMoreResults() );
         sb.append("}");
         return sb.toString();

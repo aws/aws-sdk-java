@@ -26,7 +26,7 @@ public class DescribeOrderableDBInstanceOptionsResult  implements Serializable  
      * An <a>OrderableDBInstanceOption</a> structure containing information
      * about orderable options for the DB Instance.
      */
-    private java.util.List<OrderableDBInstanceOption> orderableDBInstanceOptions;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<OrderableDBInstanceOption> orderableDBInstanceOptions;
 
     /**
      * An optional pagination token provided by a previous
@@ -46,7 +46,8 @@ public class DescribeOrderableDBInstanceOptionsResult  implements Serializable  
     public java.util.List<OrderableDBInstanceOption> getOrderableDBInstanceOptions() {
         
         if (orderableDBInstanceOptions == null) {
-            orderableDBInstanceOptions = new java.util.ArrayList<OrderableDBInstanceOption>();
+              orderableDBInstanceOptions = new com.amazonaws.internal.ListWithAutoConstructFlag<OrderableDBInstanceOption>();
+              orderableDBInstanceOptions.setAutoConstruct(true);
         }
         return orderableDBInstanceOptions;
     }
@@ -63,8 +64,7 @@ public class DescribeOrderableDBInstanceOptionsResult  implements Serializable  
             this.orderableDBInstanceOptions = null;
             return;
         }
-
-        java.util.List<OrderableDBInstanceOption> orderableDBInstanceOptionsCopy = new java.util.ArrayList<OrderableDBInstanceOption>(orderableDBInstanceOptions.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<OrderableDBInstanceOption> orderableDBInstanceOptionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<OrderableDBInstanceOption>(orderableDBInstanceOptions.size());
         orderableDBInstanceOptionsCopy.addAll(orderableDBInstanceOptions);
         this.orderableDBInstanceOptions = orderableDBInstanceOptionsCopy;
     }
@@ -105,7 +105,7 @@ public class DescribeOrderableDBInstanceOptionsResult  implements Serializable  
         if (orderableDBInstanceOptions == null) {
             this.orderableDBInstanceOptions = null;
         } else {
-            java.util.List<OrderableDBInstanceOption> orderableDBInstanceOptionsCopy = new java.util.ArrayList<OrderableDBInstanceOption>(orderableDBInstanceOptions.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<OrderableDBInstanceOption> orderableDBInstanceOptionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<OrderableDBInstanceOption>(orderableDBInstanceOptions.size());
             orderableDBInstanceOptionsCopy.addAll(orderableDBInstanceOptions);
             this.orderableDBInstanceOptions = orderableDBInstanceOptionsCopy;
         }
@@ -176,8 +176,8 @@ public class DescribeOrderableDBInstanceOptionsResult  implements Serializable  
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getOrderableDBInstanceOptions() != null) sb.append("OrderableDBInstanceOptions: " + getOrderableDBInstanceOptions() + ",");    	
+        sb.append("{");
+        if (getOrderableDBInstanceOptions() != null) sb.append("OrderableDBInstanceOptions: " + getOrderableDBInstanceOptions() + ",");
         if (getMarker() != null) sb.append("Marker: " + getMarker() );
         sb.append("}");
         return sb.toString();

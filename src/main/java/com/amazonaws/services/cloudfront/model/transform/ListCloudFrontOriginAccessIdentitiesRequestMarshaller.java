@@ -44,7 +44,7 @@ public class ListCloudFrontOriginAccessIdentitiesRequestMarshaller implements Ma
         Request<ListCloudFrontOriginAccessIdentitiesRequest> request = new DefaultRequest<ListCloudFrontOriginAccessIdentitiesRequest>(listCloudFrontOriginAccessIdentitiesRequest, "AmazonCloudFront");
         request.setHttpMethod(HttpMethodName.GET);
 
-        String uriResourcePath = "2012-07-01/origin-access-identity/cloudfront?Marker={Marker}&MaxItems={MaxItems}"; 
+        String uriResourcePath = "2013-05-12/origin-access-identity/cloudfront?Marker={Marker}&MaxItems={MaxItems}"; 
         uriResourcePath = uriResourcePath.replace("{Marker}", getString(listCloudFrontOriginAccessIdentitiesRequest.getMarker())); 
         uriResourcePath = uriResourcePath.replace("{MaxItems}", getString(listCloudFrontOriginAccessIdentitiesRequest.getMaxItems())); 
 

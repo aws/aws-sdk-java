@@ -25,7 +25,7 @@ public class DescribeApplicationsResult  implements Serializable  {
     /**
      * This parameter contains a list of <a>ApplicationDescription</a>.
      */
-    private java.util.List<ApplicationDescription> applications;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<ApplicationDescription> applications;
 
     /**
      * This parameter contains a list of <a>ApplicationDescription</a>.
@@ -35,7 +35,8 @@ public class DescribeApplicationsResult  implements Serializable  {
     public java.util.List<ApplicationDescription> getApplications() {
         
         if (applications == null) {
-            applications = new java.util.ArrayList<ApplicationDescription>();
+              applications = new com.amazonaws.internal.ListWithAutoConstructFlag<ApplicationDescription>();
+              applications.setAutoConstruct(true);
         }
         return applications;
     }
@@ -50,8 +51,7 @@ public class DescribeApplicationsResult  implements Serializable  {
             this.applications = null;
             return;
         }
-
-        java.util.List<ApplicationDescription> applicationsCopy = new java.util.ArrayList<ApplicationDescription>(applications.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<ApplicationDescription> applicationsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ApplicationDescription>(applications.size());
         applicationsCopy.addAll(applications);
         this.applications = applicationsCopy;
     }
@@ -88,7 +88,7 @@ public class DescribeApplicationsResult  implements Serializable  {
         if (applications == null) {
             this.applications = null;
         } else {
-            java.util.List<ApplicationDescription> applicationsCopy = new java.util.ArrayList<ApplicationDescription>(applications.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<ApplicationDescription> applicationsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ApplicationDescription>(applications.size());
             applicationsCopy.addAll(applications);
             this.applications = applicationsCopy;
         }
@@ -107,7 +107,7 @@ public class DescribeApplicationsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getApplications() != null) sb.append("Applications: " + getApplications() );
         sb.append("}");
         return sb.toString();

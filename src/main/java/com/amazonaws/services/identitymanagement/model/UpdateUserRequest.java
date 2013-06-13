@@ -71,6 +71,8 @@ public class UpdateUserRequest extends AmazonWebServiceRequest  implements Seria
      */
     public UpdateUserRequest() {}
     
+
+
     /**
      * Constructs a new UpdateUserRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -80,7 +82,7 @@ public class UpdateUserRequest extends AmazonWebServiceRequest  implements Seria
      * name of the user, this is the original user name.
      */
     public UpdateUserRequest(String userName) {
-        this.userName = userName;
+        setUserName(userName);
     }
 
     
@@ -252,9 +254,9 @@ public class UpdateUserRequest extends AmazonWebServiceRequest  implements Seria
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getUserName() != null) sb.append("UserName: " + getUserName() + ",");    	
-        if (getNewPath() != null) sb.append("NewPath: " + getNewPath() + ",");    	
+        sb.append("{");
+        if (getUserName() != null) sb.append("UserName: " + getUserName() + ",");
+        if (getNewPath() != null) sb.append("NewPath: " + getNewPath() + ",");
         if (getNewUserName() != null) sb.append("NewUserName: " + getNewUserName() );
         sb.append("}");
         return sb.toString();

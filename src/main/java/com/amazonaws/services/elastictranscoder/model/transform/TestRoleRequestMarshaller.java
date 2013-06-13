@@ -95,8 +95,8 @@ public class TestRoleRequestMarshaller implements Marshaller<Request<TestRoleReq
                 jsonWriter.key("OutputBucket").value(testRoleRequest.getOutputBucket());
             }
 
-            java.util.List<String> topicsList = testRoleRequest.getTopics();
-            if (topicsList != null) {
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> topicsList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(testRoleRequest.getTopics());
+            if (topicsList != null && !(topicsList.isAutoConstruct() && topicsList.isEmpty())) {
 
                 jsonWriter.key("Topics");
                 jsonWriter.array();

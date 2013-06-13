@@ -150,6 +150,8 @@ public class PutItemRequest extends AmazonWebServiceRequest  implements Serializ
      */
     public PutItemRequest() {}
     
+
+
     /**
      * Constructs a new PutItemRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -168,8 +170,8 @@ public class PutItemRequest extends AmazonWebServiceRequest  implements Serializ
      * in the <i>Item</i> map is an <i>AttributeValue</i> object.
      */
     public PutItemRequest(String tableName, java.util.Map<String,AttributeValue> item) {
-        this.tableName = tableName;
-        this.item = item;
+        setTableName(tableName);
+        setItem(item);
     }
 
     
@@ -916,12 +918,12 @@ public class PutItemRequest extends AmazonWebServiceRequest  implements Serializ
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getTableName() != null) sb.append("TableName: " + getTableName() + ",");    	
-        if (getItem() != null) sb.append("Item: " + getItem() + ",");    	
-        if (getExpected() != null) sb.append("Expected: " + getExpected() + ",");    	
-        if (getReturnValues() != null) sb.append("ReturnValues: " + getReturnValues() + ",");    	
-        if (getReturnConsumedCapacity() != null) sb.append("ReturnConsumedCapacity: " + getReturnConsumedCapacity() + ",");    	
+        sb.append("{");
+        if (getTableName() != null) sb.append("TableName: " + getTableName() + ",");
+        if (getItem() != null) sb.append("Item: " + getItem() + ",");
+        if (getExpected() != null) sb.append("Expected: " + getExpected() + ",");
+        if (getReturnValues() != null) sb.append("ReturnValues: " + getReturnValues() + ",");
+        if (getReturnConsumedCapacity() != null) sb.append("ReturnConsumedCapacity: " + getReturnConsumedCapacity() + ",");
         if (getReturnItemCollectionMetrics() != null) sb.append("ReturnItemCollectionMetrics: " + getReturnItemCollectionMetrics() );
         sb.append("}");
         return sb.toString();

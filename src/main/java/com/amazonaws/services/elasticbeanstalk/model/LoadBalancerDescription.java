@@ -35,7 +35,7 @@ public class LoadBalancerDescription  implements Serializable  {
     /**
      * A list of Listeners used by the LoadBalancer.
      */
-    private java.util.List<Listener> listeners;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Listener> listeners;
 
     /**
      * The name of the LoadBalancer.
@@ -113,7 +113,8 @@ public class LoadBalancerDescription  implements Serializable  {
     public java.util.List<Listener> getListeners() {
         
         if (listeners == null) {
-            listeners = new java.util.ArrayList<Listener>();
+              listeners = new com.amazonaws.internal.ListWithAutoConstructFlag<Listener>();
+              listeners.setAutoConstruct(true);
         }
         return listeners;
     }
@@ -128,8 +129,7 @@ public class LoadBalancerDescription  implements Serializable  {
             this.listeners = null;
             return;
         }
-
-        java.util.List<Listener> listenersCopy = new java.util.ArrayList<Listener>(listeners.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Listener> listenersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Listener>(listeners.size());
         listenersCopy.addAll(listeners);
         this.listeners = listenersCopy;
     }
@@ -166,7 +166,7 @@ public class LoadBalancerDescription  implements Serializable  {
         if (listeners == null) {
             this.listeners = null;
         } else {
-            java.util.List<Listener> listenersCopy = new java.util.ArrayList<Listener>(listeners.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Listener> listenersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Listener>(listeners.size());
             listenersCopy.addAll(listeners);
             this.listeners = listenersCopy;
         }
@@ -185,9 +185,9 @@ public class LoadBalancerDescription  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getLoadBalancerName() != null) sb.append("LoadBalancerName: " + getLoadBalancerName() + ",");    	
-        if (getDomain() != null) sb.append("Domain: " + getDomain() + ",");    	
+        sb.append("{");
+        if (getLoadBalancerName() != null) sb.append("LoadBalancerName: " + getLoadBalancerName() + ",");
+        if (getDomain() != null) sb.append("Domain: " + getDomain() + ",");
         if (getListeners() != null) sb.append("Listeners: " + getListeners() );
         sb.append("}");
         return sb.toString();

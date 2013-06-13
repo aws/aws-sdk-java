@@ -838,14 +838,14 @@ public class Thumbnails  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getFormat() != null) sb.append("Format: " + getFormat() + ",");    	
-        if (getInterval() != null) sb.append("Interval: " + getInterval() + ",");    	
-        if (getResolution() != null) sb.append("Resolution: " + getResolution() + ",");    	
-        if (getAspectRatio() != null) sb.append("AspectRatio: " + getAspectRatio() + ",");    	
-        if (getMaxWidth() != null) sb.append("MaxWidth: " + getMaxWidth() + ",");    	
-        if (getMaxHeight() != null) sb.append("MaxHeight: " + getMaxHeight() + ",");    	
-        if (getSizingPolicy() != null) sb.append("SizingPolicy: " + getSizingPolicy() + ",");    	
+        sb.append("{");
+        if (getFormat() != null) sb.append("Format: " + getFormat() + ",");
+        if (getInterval() != null) sb.append("Interval: " + getInterval() + ",");
+        if (getResolution() != null) sb.append("Resolution: " + getResolution() + ",");
+        if (getAspectRatio() != null) sb.append("AspectRatio: " + getAspectRatio() + ",");
+        if (getMaxWidth() != null) sb.append("MaxWidth: " + getMaxWidth() + ",");
+        if (getMaxHeight() != null) sb.append("MaxHeight: " + getMaxHeight() + ",");
+        if (getSizingPolicy() != null) sb.append("SizingPolicy: " + getSizingPolicy() + ",");
         if (getPaddingPolicy() != null) sb.append("PaddingPolicy: " + getPaddingPolicy() );
         sb.append("}");
         return sb.toString();

@@ -56,7 +56,7 @@ public class DBSubnetGroup  implements Serializable  {
     /**
      * Contains a list of <a>Subnet</a> elements.
      */
-    private java.util.List<Subnet> subnets;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Subnet> subnets;
 
     /**
      * Specifies the name of the DB Subnet Group.
@@ -202,7 +202,8 @@ public class DBSubnetGroup  implements Serializable  {
     public java.util.List<Subnet> getSubnets() {
         
         if (subnets == null) {
-            subnets = new java.util.ArrayList<Subnet>();
+              subnets = new com.amazonaws.internal.ListWithAutoConstructFlag<Subnet>();
+              subnets.setAutoConstruct(true);
         }
         return subnets;
     }
@@ -217,8 +218,7 @@ public class DBSubnetGroup  implements Serializable  {
             this.subnets = null;
             return;
         }
-
-        java.util.List<Subnet> subnetsCopy = new java.util.ArrayList<Subnet>(subnets.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Subnet> subnetsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Subnet>(subnets.size());
         subnetsCopy.addAll(subnets);
         this.subnets = subnetsCopy;
     }
@@ -255,7 +255,7 @@ public class DBSubnetGroup  implements Serializable  {
         if (subnets == null) {
             this.subnets = null;
         } else {
-            java.util.List<Subnet> subnetsCopy = new java.util.ArrayList<Subnet>(subnets.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Subnet> subnetsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Subnet>(subnets.size());
             subnetsCopy.addAll(subnets);
             this.subnets = subnetsCopy;
         }
@@ -274,11 +274,11 @@ public class DBSubnetGroup  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getDBSubnetGroupName() != null) sb.append("DBSubnetGroupName: " + getDBSubnetGroupName() + ",");    	
-        if (getDBSubnetGroupDescription() != null) sb.append("DBSubnetGroupDescription: " + getDBSubnetGroupDescription() + ",");    	
-        if (getVpcId() != null) sb.append("VpcId: " + getVpcId() + ",");    	
-        if (getSubnetGroupStatus() != null) sb.append("SubnetGroupStatus: " + getSubnetGroupStatus() + ",");    	
+        sb.append("{");
+        if (getDBSubnetGroupName() != null) sb.append("DBSubnetGroupName: " + getDBSubnetGroupName() + ",");
+        if (getDBSubnetGroupDescription() != null) sb.append("DBSubnetGroupDescription: " + getDBSubnetGroupDescription() + ",");
+        if (getVpcId() != null) sb.append("VpcId: " + getVpcId() + ",");
+        if (getSubnetGroupStatus() != null) sb.append("SubnetGroupStatus: " + getSubnetGroupStatus() + ",");
         if (getSubnets() != null) sb.append("Subnets: " + getSubnets() );
         sb.append("}");
         return sb.toString();

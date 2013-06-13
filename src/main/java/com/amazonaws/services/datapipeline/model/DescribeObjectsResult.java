@@ -26,7 +26,7 @@ public class DescribeObjectsResult  implements Serializable  {
      * An array of object definitions that are returned by the call to
      * <a>DescribeObjects</a>.
      */
-    private java.util.List<PipelineObject> pipelineObjects;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<PipelineObject> pipelineObjects;
 
     /**
      * The starting point for the next page of results. To view the next page
@@ -53,7 +53,8 @@ public class DescribeObjectsResult  implements Serializable  {
     public java.util.List<PipelineObject> getPipelineObjects() {
         
         if (pipelineObjects == null) {
-            pipelineObjects = new java.util.ArrayList<PipelineObject>();
+              pipelineObjects = new com.amazonaws.internal.ListWithAutoConstructFlag<PipelineObject>();
+              pipelineObjects.setAutoConstruct(true);
         }
         return pipelineObjects;
     }
@@ -70,8 +71,7 @@ public class DescribeObjectsResult  implements Serializable  {
             this.pipelineObjects = null;
             return;
         }
-
-        java.util.List<PipelineObject> pipelineObjectsCopy = new java.util.ArrayList<PipelineObject>(pipelineObjects.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<PipelineObject> pipelineObjectsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<PipelineObject>(pipelineObjects.size());
         pipelineObjectsCopy.addAll(pipelineObjects);
         this.pipelineObjects = pipelineObjectsCopy;
     }
@@ -112,7 +112,7 @@ public class DescribeObjectsResult  implements Serializable  {
         if (pipelineObjects == null) {
             this.pipelineObjects = null;
         } else {
-            java.util.List<PipelineObject> pipelineObjectsCopy = new java.util.ArrayList<PipelineObject>(pipelineObjects.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<PipelineObject> pipelineObjectsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<PipelineObject>(pipelineObjects.size());
             pipelineObjectsCopy.addAll(pipelineObjects);
             this.pipelineObjects = pipelineObjectsCopy;
         }
@@ -226,9 +226,9 @@ public class DescribeObjectsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getPipelineObjects() != null) sb.append("PipelineObjects: " + getPipelineObjects() + ",");    	
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");    	
+        sb.append("{");
+        if (getPipelineObjects() != null) sb.append("PipelineObjects: " + getPipelineObjects() + ",");
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");
         if (isHasMoreResults() != null) sb.append("HasMoreResults: " + isHasMoreResults() );
         sb.append("}");
         return sb.toString();

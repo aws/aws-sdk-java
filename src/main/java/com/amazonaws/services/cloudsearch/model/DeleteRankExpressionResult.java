@@ -72,7 +72,7 @@ public class DeleteRankExpressionResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getRankExpression() != null) sb.append("RankExpression: " + getRankExpression() );
         sb.append("}");
         return sb.toString();

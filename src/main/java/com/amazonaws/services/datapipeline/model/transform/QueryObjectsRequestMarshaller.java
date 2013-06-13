@@ -95,8 +95,8 @@ public class QueryObjectsRequestMarshaller implements Marshaller<Request<QueryOb
                 jsonWriter.object();
 
 
-                java.util.List<Selector> selectorsList = query.getSelectors();
-                if (selectorsList != null) {
+                com.amazonaws.internal.ListWithAutoConstructFlag<Selector> selectorsList = (com.amazonaws.internal.ListWithAutoConstructFlag<Selector>)(query.getSelectors());
+                if (selectorsList != null && !(selectorsList.isAutoConstruct() && selectorsList.isEmpty())) {
 
                     jsonWriter.key("selectors");
                     jsonWriter.array();
@@ -117,8 +117,8 @@ public class QueryObjectsRequestMarshaller implements Marshaller<Request<QueryOb
                                     jsonWriter.key("type").value(operator.getType());
                                 }
 
-                                java.util.List<String> valuesList = operator.getValues();
-                                if (valuesList != null) {
+                                com.amazonaws.internal.ListWithAutoConstructFlag<String> valuesList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(operator.getValues());
+                                if (valuesList != null && !(valuesList.isAutoConstruct() && valuesList.isEmpty())) {
 
                                     jsonWriter.key("values");
                                     jsonWriter.array();

@@ -107,7 +107,7 @@ public class CaseDetails  implements Serializable  {
      * List of email addresses that are copied in any communication about the
      * case.
      */
-    private java.util.List<String> ccEmailAddresses;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> ccEmailAddresses;
 
     /**
      * Specifies the ISO 639-1 code for the language in which AWS provides
@@ -533,7 +533,8 @@ public class CaseDetails  implements Serializable  {
     public java.util.List<String> getCcEmailAddresses() {
         
         if (ccEmailAddresses == null) {
-            ccEmailAddresses = new java.util.ArrayList<String>();
+              ccEmailAddresses = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              ccEmailAddresses.setAutoConstruct(true);
         }
         return ccEmailAddresses;
     }
@@ -550,8 +551,7 @@ public class CaseDetails  implements Serializable  {
             this.ccEmailAddresses = null;
             return;
         }
-
-        java.util.List<String> ccEmailAddressesCopy = new java.util.ArrayList<String>(ccEmailAddresses.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> ccEmailAddressesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(ccEmailAddresses.size());
         ccEmailAddressesCopy.addAll(ccEmailAddresses);
         this.ccEmailAddresses = ccEmailAddressesCopy;
     }
@@ -592,7 +592,7 @@ public class CaseDetails  implements Serializable  {
         if (ccEmailAddresses == null) {
             this.ccEmailAddresses = null;
         } else {
-            java.util.List<String> ccEmailAddressesCopy = new java.util.ArrayList<String>(ccEmailAddresses.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> ccEmailAddressesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(ccEmailAddresses.size());
             ccEmailAddressesCopy.addAll(ccEmailAddresses);
             this.ccEmailAddresses = ccEmailAddressesCopy;
         }
@@ -663,18 +663,18 @@ public class CaseDetails  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getCaseId() != null) sb.append("CaseId: " + getCaseId() + ",");    	
-        if (getDisplayId() != null) sb.append("DisplayId: " + getDisplayId() + ",");    	
-        if (getSubject() != null) sb.append("Subject: " + getSubject() + ",");    	
-        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");    	
-        if (getServiceCode() != null) sb.append("ServiceCode: " + getServiceCode() + ",");    	
-        if (getCategoryCode() != null) sb.append("CategoryCode: " + getCategoryCode() + ",");    	
-        if (getSeverityCode() != null) sb.append("SeverityCode: " + getSeverityCode() + ",");    	
-        if (getSubmittedBy() != null) sb.append("SubmittedBy: " + getSubmittedBy() + ",");    	
-        if (getTimeCreated() != null) sb.append("TimeCreated: " + getTimeCreated() + ",");    	
-        if (getRecentCommunications() != null) sb.append("RecentCommunications: " + getRecentCommunications() + ",");    	
-        if (getCcEmailAddresses() != null) sb.append("CcEmailAddresses: " + getCcEmailAddresses() + ",");    	
+        sb.append("{");
+        if (getCaseId() != null) sb.append("CaseId: " + getCaseId() + ",");
+        if (getDisplayId() != null) sb.append("DisplayId: " + getDisplayId() + ",");
+        if (getSubject() != null) sb.append("Subject: " + getSubject() + ",");
+        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");
+        if (getServiceCode() != null) sb.append("ServiceCode: " + getServiceCode() + ",");
+        if (getCategoryCode() != null) sb.append("CategoryCode: " + getCategoryCode() + ",");
+        if (getSeverityCode() != null) sb.append("SeverityCode: " + getSeverityCode() + ",");
+        if (getSubmittedBy() != null) sb.append("SubmittedBy: " + getSubmittedBy() + ",");
+        if (getTimeCreated() != null) sb.append("TimeCreated: " + getTimeCreated() + ",");
+        if (getRecentCommunications() != null) sb.append("RecentCommunications: " + getRecentCommunications() + ",");
+        if (getCcEmailAddresses() != null) sb.append("CcEmailAddresses: " + getCcEmailAddresses() + ",");
         if (getLanguage() != null) sb.append("Language: " + getLanguage() );
         sb.append("}");
         return sb.toString();

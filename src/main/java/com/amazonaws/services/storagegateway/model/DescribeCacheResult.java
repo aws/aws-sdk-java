@@ -50,7 +50,7 @@ public class DescribeCacheResult  implements Serializable  {
      * maximum length of 300). If no local disks are configured as cache,
      * then the <code>DiskIds</code> array is empty.
      */
-    private java.util.List<String> diskIds;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> diskIds;
 
     /**
      * The size allocated, in bytes, for the cache. If no cache is defined
@@ -160,7 +160,8 @@ public class DescribeCacheResult  implements Serializable  {
     public java.util.List<String> getDiskIds() {
         
         if (diskIds == null) {
-            diskIds = new java.util.ArrayList<String>();
+              diskIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              diskIds.setAutoConstruct(true);
         }
         return diskIds;
     }
@@ -181,8 +182,7 @@ public class DescribeCacheResult  implements Serializable  {
             this.diskIds = null;
             return;
         }
-
-        java.util.List<String> diskIdsCopy = new java.util.ArrayList<String>(diskIds.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> diskIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(diskIds.size());
         diskIdsCopy.addAll(diskIds);
         this.diskIds = diskIdsCopy;
     }
@@ -231,7 +231,7 @@ public class DescribeCacheResult  implements Serializable  {
         if (diskIds == null) {
             this.diskIds = null;
         } else {
-            java.util.List<String> diskIdsCopy = new java.util.ArrayList<String>(diskIds.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> diskIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(diskIds.size());
             diskIdsCopy.addAll(diskIds);
             this.diskIds = diskIdsCopy;
         }
@@ -468,13 +468,13 @@ public class DescribeCacheResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getGatewayARN() != null) sb.append("GatewayARN: " + getGatewayARN() + ",");    	
-        if (getDiskIds() != null) sb.append("DiskIds: " + getDiskIds() + ",");    	
-        if (getCacheAllocatedInBytes() != null) sb.append("CacheAllocatedInBytes: " + getCacheAllocatedInBytes() + ",");    	
-        if (getCacheUsedPercentage() != null) sb.append("CacheUsedPercentage: " + getCacheUsedPercentage() + ",");    	
-        if (getCacheDirtyPercentage() != null) sb.append("CacheDirtyPercentage: " + getCacheDirtyPercentage() + ",");    	
-        if (getCacheHitPercentage() != null) sb.append("CacheHitPercentage: " + getCacheHitPercentage() + ",");    	
+        sb.append("{");
+        if (getGatewayARN() != null) sb.append("GatewayARN: " + getGatewayARN() + ",");
+        if (getDiskIds() != null) sb.append("DiskIds: " + getDiskIds() + ",");
+        if (getCacheAllocatedInBytes() != null) sb.append("CacheAllocatedInBytes: " + getCacheAllocatedInBytes() + ",");
+        if (getCacheUsedPercentage() != null) sb.append("CacheUsedPercentage: " + getCacheUsedPercentage() + ",");
+        if (getCacheDirtyPercentage() != null) sb.append("CacheDirtyPercentage: " + getCacheDirtyPercentage() + ",");
+        if (getCacheHitPercentage() != null) sb.append("CacheHitPercentage: " + getCacheHitPercentage() + ",");
         if (getCacheMissPercentage() != null) sb.append("CacheMissPercentage: " + getCacheMissPercentage() );
         sb.append("}");
         return sb.toString();

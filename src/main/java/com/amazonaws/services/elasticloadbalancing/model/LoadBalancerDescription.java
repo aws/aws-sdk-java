@@ -57,7 +57,7 @@ public class LoadBalancerDescription  implements Serializable  {
      * PolicyNames are returned in a list of tuples in the
      * ListenerDescriptions element.
      */
-    private java.util.List<ListenerDescription> listenerDescriptions;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<ListenerDescription> listenerDescriptions;
 
     /**
      * Provides a list of policies defined for the LoadBalancer.
@@ -67,17 +67,17 @@ public class LoadBalancerDescription  implements Serializable  {
     /**
      * Contains a list of back-end server descriptions.
      */
-    private java.util.List<BackendServerDescription> backendServerDescriptions;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<BackendServerDescription> backendServerDescriptions;
 
     /**
      * Specifies a list of Availability Zones.
      */
-    private java.util.List<String> availabilityZones;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> availabilityZones;
 
     /**
      * Provides a list of VPC subnet IDs for the LoadBalancer.
      */
-    private java.util.List<String> subnets;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> subnets;
 
     /**
      * Provides the ID of the VPC attached to the LoadBalancer.
@@ -87,7 +87,7 @@ public class LoadBalancerDescription  implements Serializable  {
     /**
      * Provides a list of EC2 instance IDs for the LoadBalancer.
      */
-    private java.util.List<Instance> instances;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Instance> instances;
 
     /**
      * Specifies information regarding the various health probes conducted on
@@ -107,7 +107,7 @@ public class LoadBalancerDescription  implements Serializable  {
     /**
      * The security groups the LoadBalancer is a member of (VPC only).
      */
-    private java.util.List<String> securityGroups;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> securityGroups;
 
     /**
      * Provides the date and time the LoadBalancer was created.
@@ -338,7 +338,8 @@ public class LoadBalancerDescription  implements Serializable  {
     public java.util.List<ListenerDescription> getListenerDescriptions() {
         
         if (listenerDescriptions == null) {
-            listenerDescriptions = new java.util.ArrayList<ListenerDescription>();
+              listenerDescriptions = new com.amazonaws.internal.ListWithAutoConstructFlag<ListenerDescription>();
+              listenerDescriptions.setAutoConstruct(true);
         }
         return listenerDescriptions;
     }
@@ -357,8 +358,7 @@ public class LoadBalancerDescription  implements Serializable  {
             this.listenerDescriptions = null;
             return;
         }
-
-        java.util.List<ListenerDescription> listenerDescriptionsCopy = new java.util.ArrayList<ListenerDescription>(listenerDescriptions.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<ListenerDescription> listenerDescriptionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ListenerDescription>(listenerDescriptions.size());
         listenerDescriptionsCopy.addAll(listenerDescriptions);
         this.listenerDescriptions = listenerDescriptionsCopy;
     }
@@ -403,7 +403,7 @@ public class LoadBalancerDescription  implements Serializable  {
         if (listenerDescriptions == null) {
             this.listenerDescriptions = null;
         } else {
-            java.util.List<ListenerDescription> listenerDescriptionsCopy = new java.util.ArrayList<ListenerDescription>(listenerDescriptions.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<ListenerDescription> listenerDescriptionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ListenerDescription>(listenerDescriptions.size());
             listenerDescriptionsCopy.addAll(listenerDescriptions);
             this.listenerDescriptions = listenerDescriptionsCopy;
         }
@@ -453,7 +453,8 @@ public class LoadBalancerDescription  implements Serializable  {
     public java.util.List<BackendServerDescription> getBackendServerDescriptions() {
         
         if (backendServerDescriptions == null) {
-            backendServerDescriptions = new java.util.ArrayList<BackendServerDescription>();
+              backendServerDescriptions = new com.amazonaws.internal.ListWithAutoConstructFlag<BackendServerDescription>();
+              backendServerDescriptions.setAutoConstruct(true);
         }
         return backendServerDescriptions;
     }
@@ -468,8 +469,7 @@ public class LoadBalancerDescription  implements Serializable  {
             this.backendServerDescriptions = null;
             return;
         }
-
-        java.util.List<BackendServerDescription> backendServerDescriptionsCopy = new java.util.ArrayList<BackendServerDescription>(backendServerDescriptions.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<BackendServerDescription> backendServerDescriptionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<BackendServerDescription>(backendServerDescriptions.size());
         backendServerDescriptionsCopy.addAll(backendServerDescriptions);
         this.backendServerDescriptions = backendServerDescriptionsCopy;
     }
@@ -506,7 +506,7 @@ public class LoadBalancerDescription  implements Serializable  {
         if (backendServerDescriptions == null) {
             this.backendServerDescriptions = null;
         } else {
-            java.util.List<BackendServerDescription> backendServerDescriptionsCopy = new java.util.ArrayList<BackendServerDescription>(backendServerDescriptions.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<BackendServerDescription> backendServerDescriptionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<BackendServerDescription>(backendServerDescriptions.size());
             backendServerDescriptionsCopy.addAll(backendServerDescriptions);
             this.backendServerDescriptions = backendServerDescriptionsCopy;
         }
@@ -522,7 +522,8 @@ public class LoadBalancerDescription  implements Serializable  {
     public java.util.List<String> getAvailabilityZones() {
         
         if (availabilityZones == null) {
-            availabilityZones = new java.util.ArrayList<String>();
+              availabilityZones = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              availabilityZones.setAutoConstruct(true);
         }
         return availabilityZones;
     }
@@ -537,8 +538,7 @@ public class LoadBalancerDescription  implements Serializable  {
             this.availabilityZones = null;
             return;
         }
-
-        java.util.List<String> availabilityZonesCopy = new java.util.ArrayList<String>(availabilityZones.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> availabilityZonesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(availabilityZones.size());
         availabilityZonesCopy.addAll(availabilityZones);
         this.availabilityZones = availabilityZonesCopy;
     }
@@ -575,7 +575,7 @@ public class LoadBalancerDescription  implements Serializable  {
         if (availabilityZones == null) {
             this.availabilityZones = null;
         } else {
-            java.util.List<String> availabilityZonesCopy = new java.util.ArrayList<String>(availabilityZones.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> availabilityZonesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(availabilityZones.size());
             availabilityZonesCopy.addAll(availabilityZones);
             this.availabilityZones = availabilityZonesCopy;
         }
@@ -591,7 +591,8 @@ public class LoadBalancerDescription  implements Serializable  {
     public java.util.List<String> getSubnets() {
         
         if (subnets == null) {
-            subnets = new java.util.ArrayList<String>();
+              subnets = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              subnets.setAutoConstruct(true);
         }
         return subnets;
     }
@@ -606,8 +607,7 @@ public class LoadBalancerDescription  implements Serializable  {
             this.subnets = null;
             return;
         }
-
-        java.util.List<String> subnetsCopy = new java.util.ArrayList<String>(subnets.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> subnetsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(subnets.size());
         subnetsCopy.addAll(subnets);
         this.subnets = subnetsCopy;
     }
@@ -644,7 +644,7 @@ public class LoadBalancerDescription  implements Serializable  {
         if (subnets == null) {
             this.subnets = null;
         } else {
-            java.util.List<String> subnetsCopy = new java.util.ArrayList<String>(subnets.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> subnetsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(subnets.size());
             subnetsCopy.addAll(subnets);
             this.subnets = subnetsCopy;
         }
@@ -694,7 +694,8 @@ public class LoadBalancerDescription  implements Serializable  {
     public java.util.List<Instance> getInstances() {
         
         if (instances == null) {
-            instances = new java.util.ArrayList<Instance>();
+              instances = new com.amazonaws.internal.ListWithAutoConstructFlag<Instance>();
+              instances.setAutoConstruct(true);
         }
         return instances;
     }
@@ -709,8 +710,7 @@ public class LoadBalancerDescription  implements Serializable  {
             this.instances = null;
             return;
         }
-
-        java.util.List<Instance> instancesCopy = new java.util.ArrayList<Instance>(instances.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Instance> instancesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Instance>(instances.size());
         instancesCopy.addAll(instances);
         this.instances = instancesCopy;
     }
@@ -747,7 +747,7 @@ public class LoadBalancerDescription  implements Serializable  {
         if (instances == null) {
             this.instances = null;
         } else {
-            java.util.List<Instance> instancesCopy = new java.util.ArrayList<Instance>(instances.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Instance> instancesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Instance>(instances.size());
             instancesCopy.addAll(instances);
             this.instances = instancesCopy;
         }
@@ -861,7 +861,8 @@ public class LoadBalancerDescription  implements Serializable  {
     public java.util.List<String> getSecurityGroups() {
         
         if (securityGroups == null) {
-            securityGroups = new java.util.ArrayList<String>();
+              securityGroups = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              securityGroups.setAutoConstruct(true);
         }
         return securityGroups;
     }
@@ -876,8 +877,7 @@ public class LoadBalancerDescription  implements Serializable  {
             this.securityGroups = null;
             return;
         }
-
-        java.util.List<String> securityGroupsCopy = new java.util.ArrayList<String>(securityGroups.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> securityGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(securityGroups.size());
         securityGroupsCopy.addAll(securityGroups);
         this.securityGroups = securityGroupsCopy;
     }
@@ -914,7 +914,7 @@ public class LoadBalancerDescription  implements Serializable  {
         if (securityGroups == null) {
             this.securityGroups = null;
         } else {
-            java.util.List<String> securityGroupsCopy = new java.util.ArrayList<String>(securityGroups.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> securityGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(securityGroups.size());
             securityGroupsCopy.addAll(securityGroups);
             this.securityGroups = securityGroupsCopy;
         }
@@ -1031,22 +1031,22 @@ public class LoadBalancerDescription  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getLoadBalancerName() != null) sb.append("LoadBalancerName: " + getLoadBalancerName() + ",");    	
-        if (getDNSName() != null) sb.append("DNSName: " + getDNSName() + ",");    	
-        if (getCanonicalHostedZoneName() != null) sb.append("CanonicalHostedZoneName: " + getCanonicalHostedZoneName() + ",");    	
-        if (getCanonicalHostedZoneNameID() != null) sb.append("CanonicalHostedZoneNameID: " + getCanonicalHostedZoneNameID() + ",");    	
-        if (getListenerDescriptions() != null) sb.append("ListenerDescriptions: " + getListenerDescriptions() + ",");    	
-        if (getPolicies() != null) sb.append("Policies: " + getPolicies() + ",");    	
-        if (getBackendServerDescriptions() != null) sb.append("BackendServerDescriptions: " + getBackendServerDescriptions() + ",");    	
-        if (getAvailabilityZones() != null) sb.append("AvailabilityZones: " + getAvailabilityZones() + ",");    	
-        if (getSubnets() != null) sb.append("Subnets: " + getSubnets() + ",");    	
-        if (getVPCId() != null) sb.append("VPCId: " + getVPCId() + ",");    	
-        if (getInstances() != null) sb.append("Instances: " + getInstances() + ",");    	
-        if (getHealthCheck() != null) sb.append("HealthCheck: " + getHealthCheck() + ",");    	
-        if (getSourceSecurityGroup() != null) sb.append("SourceSecurityGroup: " + getSourceSecurityGroup() + ",");    	
-        if (getSecurityGroups() != null) sb.append("SecurityGroups: " + getSecurityGroups() + ",");    	
-        if (getCreatedTime() != null) sb.append("CreatedTime: " + getCreatedTime() + ",");    	
+        sb.append("{");
+        if (getLoadBalancerName() != null) sb.append("LoadBalancerName: " + getLoadBalancerName() + ",");
+        if (getDNSName() != null) sb.append("DNSName: " + getDNSName() + ",");
+        if (getCanonicalHostedZoneName() != null) sb.append("CanonicalHostedZoneName: " + getCanonicalHostedZoneName() + ",");
+        if (getCanonicalHostedZoneNameID() != null) sb.append("CanonicalHostedZoneNameID: " + getCanonicalHostedZoneNameID() + ",");
+        if (getListenerDescriptions() != null) sb.append("ListenerDescriptions: " + getListenerDescriptions() + ",");
+        if (getPolicies() != null) sb.append("Policies: " + getPolicies() + ",");
+        if (getBackendServerDescriptions() != null) sb.append("BackendServerDescriptions: " + getBackendServerDescriptions() + ",");
+        if (getAvailabilityZones() != null) sb.append("AvailabilityZones: " + getAvailabilityZones() + ",");
+        if (getSubnets() != null) sb.append("Subnets: " + getSubnets() + ",");
+        if (getVPCId() != null) sb.append("VPCId: " + getVPCId() + ",");
+        if (getInstances() != null) sb.append("Instances: " + getInstances() + ",");
+        if (getHealthCheck() != null) sb.append("HealthCheck: " + getHealthCheck() + ",");
+        if (getSourceSecurityGroup() != null) sb.append("SourceSecurityGroup: " + getSourceSecurityGroup() + ",");
+        if (getSecurityGroups() != null) sb.append("SecurityGroups: " + getSecurityGroups() + ",");
+        if (getCreatedTime() != null) sb.append("CreatedTime: " + getCreatedTime() + ",");
         if (getScheme() != null) sb.append("Scheme: " + getScheme() );
         sb.append("}");
         return sb.toString();

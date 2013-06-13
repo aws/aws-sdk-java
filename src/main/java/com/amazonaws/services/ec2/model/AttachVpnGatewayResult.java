@@ -72,7 +72,7 @@ public class AttachVpnGatewayResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getVpcAttachement() != null) sb.append("VpcAttachement: " + getVpcAttachement() );
         sb.append("}");
         return sb.toString();

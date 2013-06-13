@@ -59,6 +59,8 @@ public class CreateUserRequest extends AmazonWebServiceRequest  implements Seria
      */
     public CreateUserRequest() {}
     
+
+
     /**
      * Constructs a new CreateUserRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -67,7 +69,7 @@ public class CreateUserRequest extends AmazonWebServiceRequest  implements Seria
      * @param userName Name of the user to create.
      */
     public CreateUserRequest(String userName) {
-        this.userName = userName;
+        setUserName(userName);
     }
 
     
@@ -199,8 +201,8 @@ public class CreateUserRequest extends AmazonWebServiceRequest  implements Seria
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getPath() != null) sb.append("Path: " + getPath() + ",");    	
+        sb.append("{");
+        if (getPath() != null) sb.append("Path: " + getPath() + ",");
         if (getUserName() != null) sb.append("UserName: " + getUserName() );
         sb.append("}");
         return sb.toString();

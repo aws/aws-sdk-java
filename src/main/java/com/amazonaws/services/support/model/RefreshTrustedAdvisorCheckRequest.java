@@ -78,7 +78,7 @@ public class RefreshTrustedAdvisorCheckRequest extends AmazonWebServiceRequest  
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getCheckId() != null) sb.append("CheckId: " + getCheckId() );
         sb.append("}");
         return sb.toString();

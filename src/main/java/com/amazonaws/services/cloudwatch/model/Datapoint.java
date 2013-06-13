@@ -365,13 +365,13 @@ public class Datapoint  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getTimestamp() != null) sb.append("Timestamp: " + getTimestamp() + ",");    	
-        if (getSampleCount() != null) sb.append("SampleCount: " + getSampleCount() + ",");    	
-        if (getAverage() != null) sb.append("Average: " + getAverage() + ",");    	
-        if (getSum() != null) sb.append("Sum: " + getSum() + ",");    	
-        if (getMinimum() != null) sb.append("Minimum: " + getMinimum() + ",");    	
-        if (getMaximum() != null) sb.append("Maximum: " + getMaximum() + ",");    	
+        sb.append("{");
+        if (getTimestamp() != null) sb.append("Timestamp: " + getTimestamp() + ",");
+        if (getSampleCount() != null) sb.append("SampleCount: " + getSampleCount() + ",");
+        if (getAverage() != null) sb.append("Average: " + getAverage() + ",");
+        if (getSum() != null) sb.append("Sum: " + getSum() + ",");
+        if (getMinimum() != null) sb.append("Minimum: " + getMinimum() + ",");
+        if (getMaximum() != null) sb.append("Maximum: " + getMaximum() + ",");
         if (getUnit() != null) sb.append("Unit: " + getUnit() );
         sb.append("}");
         return sb.toString();

@@ -451,16 +451,16 @@ public class Command  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getCommandId() != null) sb.append("CommandId: " + getCommandId() + ",");    	
-        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ",");    	
-        if (getDeploymentId() != null) sb.append("DeploymentId: " + getDeploymentId() + ",");    	
-        if (getCreatedAt() != null) sb.append("CreatedAt: " + getCreatedAt() + ",");    	
-        if (getAcknowledgedAt() != null) sb.append("AcknowledgedAt: " + getAcknowledgedAt() + ",");    	
-        if (getCompletedAt() != null) sb.append("CompletedAt: " + getCompletedAt() + ",");    	
-        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");    	
-        if (getExitCode() != null) sb.append("ExitCode: " + getExitCode() + ",");    	
-        if (getLogUrl() != null) sb.append("LogUrl: " + getLogUrl() + ",");    	
+        sb.append("{");
+        if (getCommandId() != null) sb.append("CommandId: " + getCommandId() + ",");
+        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ",");
+        if (getDeploymentId() != null) sb.append("DeploymentId: " + getDeploymentId() + ",");
+        if (getCreatedAt() != null) sb.append("CreatedAt: " + getCreatedAt() + ",");
+        if (getAcknowledgedAt() != null) sb.append("AcknowledgedAt: " + getAcknowledgedAt() + ",");
+        if (getCompletedAt() != null) sb.append("CompletedAt: " + getCompletedAt() + ",");
+        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");
+        if (getExitCode() != null) sb.append("ExitCode: " + getExitCode() + ",");
+        if (getLogUrl() != null) sb.append("LogUrl: " + getLogUrl() + ",");
         if (getType() != null) sb.append("Type: " + getType() );
         sb.append("}");
         return sb.toString();

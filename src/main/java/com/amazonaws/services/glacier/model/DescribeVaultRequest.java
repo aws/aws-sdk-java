@@ -64,6 +64,8 @@ public class DescribeVaultRequest extends AmazonWebServiceRequest  implements Se
      */
     public DescribeVaultRequest() {}
     
+
+
     /**
      * Constructs a new DescribeVaultRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -72,11 +74,13 @@ public class DescribeVaultRequest extends AmazonWebServiceRequest  implements Se
      * @param vaultName The name of the vault.
      */
     public DescribeVaultRequest(String vaultName) {
-        this.vaultName = vaultName;
+        setVaultName(vaultName);
     }
 
     
     
+
+
     /**
      * Constructs a new DescribeVaultRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -90,8 +94,8 @@ public class DescribeVaultRequest extends AmazonWebServiceRequest  implements Se
      * @param vaultName The name of the vault.
      */
     public DescribeVaultRequest(String accountId, String vaultName) {
-        this.accountId = accountId;
-        this.vaultName = vaultName;
+        setAccountId(accountId);
+        setVaultName(vaultName);
     }
 
     
@@ -199,8 +203,8 @@ public class DescribeVaultRequest extends AmazonWebServiceRequest  implements Se
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getAccountId() != null) sb.append("AccountId: " + getAccountId() + ",");    	
+        sb.append("{");
+        if (getAccountId() != null) sb.append("AccountId: " + getAccountId() + ",");
         if (getVaultName() != null) sb.append("VaultName: " + getVaultName() );
         sb.append("}");
         return sb.toString();

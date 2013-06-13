@@ -61,6 +61,8 @@ public class UploadSigningCertificateRequest extends AmazonWebServiceRequest  im
      */
     public UploadSigningCertificateRequest() {}
     
+
+
     /**
      * Constructs a new UploadSigningCertificateRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -69,7 +71,7 @@ public class UploadSigningCertificateRequest extends AmazonWebServiceRequest  im
      * @param certificateBody The contents of the signing certificate.
      */
     public UploadSigningCertificateRequest(String certificateBody) {
-        this.certificateBody = certificateBody;
+        setCertificateBody(certificateBody);
     }
 
     
@@ -177,8 +179,8 @@ public class UploadSigningCertificateRequest extends AmazonWebServiceRequest  im
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getUserName() != null) sb.append("UserName: " + getUserName() + ",");    	
+        sb.append("{");
+        if (getUserName() != null) sb.append("UserName: " + getUserName() + ",");
         if (getCertificateBody() != null) sb.append("CertificateBody: " + getCertificateBody() );
         sb.append("}");
         return sb.toString();

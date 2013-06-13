@@ -33,7 +33,7 @@ import java.io.Serializable;
  */
 public class DescribeDhcpOptionsRequest extends AmazonWebServiceRequest  implements Serializable  {
 
-    private java.util.List<String> dhcpOptionsIds;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> dhcpOptionsIds;
 
     /**
      * A list of filters used to match properties for DhcpOptions. For a
@@ -42,7 +42,7 @@ public class DescribeDhcpOptionsRequest extends AmazonWebServiceRequest  impleme
      * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      * EC2 API reference</a>.
      */
-    private java.util.List<Filter> filters;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filters;
 
     /**
      * Returns the value of the DhcpOptionsIds property for this object.
@@ -52,7 +52,8 @@ public class DescribeDhcpOptionsRequest extends AmazonWebServiceRequest  impleme
     public java.util.List<String> getDhcpOptionsIds() {
         
         if (dhcpOptionsIds == null) {
-            dhcpOptionsIds = new java.util.ArrayList<String>();
+              dhcpOptionsIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              dhcpOptionsIds.setAutoConstruct(true);
         }
         return dhcpOptionsIds;
     }
@@ -67,8 +68,7 @@ public class DescribeDhcpOptionsRequest extends AmazonWebServiceRequest  impleme
             this.dhcpOptionsIds = null;
             return;
         }
-
-        java.util.List<String> dhcpOptionsIdsCopy = new java.util.ArrayList<String>(dhcpOptionsIds.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> dhcpOptionsIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(dhcpOptionsIds.size());
         dhcpOptionsIdsCopy.addAll(dhcpOptionsIds);
         this.dhcpOptionsIds = dhcpOptionsIdsCopy;
     }
@@ -105,7 +105,7 @@ public class DescribeDhcpOptionsRequest extends AmazonWebServiceRequest  impleme
         if (dhcpOptionsIds == null) {
             this.dhcpOptionsIds = null;
         } else {
-            java.util.List<String> dhcpOptionsIdsCopy = new java.util.ArrayList<String>(dhcpOptionsIds.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> dhcpOptionsIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(dhcpOptionsIds.size());
             dhcpOptionsIdsCopy.addAll(dhcpOptionsIds);
             this.dhcpOptionsIds = dhcpOptionsIdsCopy;
         }
@@ -129,7 +129,8 @@ public class DescribeDhcpOptionsRequest extends AmazonWebServiceRequest  impleme
     public java.util.List<Filter> getFilters() {
         
         if (filters == null) {
-            filters = new java.util.ArrayList<Filter>();
+              filters = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>();
+              filters.setAutoConstruct(true);
         }
         return filters;
     }
@@ -152,8 +153,7 @@ public class DescribeDhcpOptionsRequest extends AmazonWebServiceRequest  impleme
             this.filters = null;
             return;
         }
-
-        java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>(filters.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filtersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>(filters.size());
         filtersCopy.addAll(filters);
         this.filters = filtersCopy;
     }
@@ -206,7 +206,7 @@ public class DescribeDhcpOptionsRequest extends AmazonWebServiceRequest  impleme
         if (filters == null) {
             this.filters = null;
         } else {
-            java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>(filters.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filtersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>(filters.size());
             filtersCopy.addAll(filters);
             this.filters = filtersCopy;
         }
@@ -225,8 +225,8 @@ public class DescribeDhcpOptionsRequest extends AmazonWebServiceRequest  impleme
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getDhcpOptionsIds() != null) sb.append("DhcpOptionsIds: " + getDhcpOptionsIds() + ",");    	
+        sb.append("{");
+        if (getDhcpOptionsIds() != null) sb.append("DhcpOptionsIds: " + getDhcpOptionsIds() + ",");
         if (getFilters() != null) sb.append("Filters: " + getFilters() );
         sb.append("}");
         return sb.toString();

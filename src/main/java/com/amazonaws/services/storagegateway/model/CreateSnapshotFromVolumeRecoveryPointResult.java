@@ -223,9 +223,9 @@ public class CreateSnapshotFromVolumeRecoveryPointResult  implements Serializabl
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getSnapshotId() != null) sb.append("SnapshotId: " + getSnapshotId() + ",");    	
-        if (getVolumeARN() != null) sb.append("VolumeARN: " + getVolumeARN() + ",");    	
+        sb.append("{");
+        if (getSnapshotId() != null) sb.append("SnapshotId: " + getSnapshotId() + ",");
+        if (getVolumeARN() != null) sb.append("VolumeARN: " + getVolumeARN() + ",");
         if (getVolumeRecoveryPointTime() != null) sb.append("VolumeRecoveryPointTime: " + getVolumeRecoveryPointTime() );
         sb.append("}");
         return sb.toString();

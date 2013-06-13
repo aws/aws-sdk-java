@@ -25,7 +25,7 @@ public class DescribeVolumesResult  implements Serializable  {
     /**
      * An array of volume IDs.
      */
-    private java.util.List<Volume> volumes;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Volume> volumes;
 
     /**
      * An array of volume IDs.
@@ -35,7 +35,8 @@ public class DescribeVolumesResult  implements Serializable  {
     public java.util.List<Volume> getVolumes() {
         
         if (volumes == null) {
-            volumes = new java.util.ArrayList<Volume>();
+              volumes = new com.amazonaws.internal.ListWithAutoConstructFlag<Volume>();
+              volumes.setAutoConstruct(true);
         }
         return volumes;
     }
@@ -50,8 +51,7 @@ public class DescribeVolumesResult  implements Serializable  {
             this.volumes = null;
             return;
         }
-
-        java.util.List<Volume> volumesCopy = new java.util.ArrayList<Volume>(volumes.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Volume> volumesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Volume>(volumes.size());
         volumesCopy.addAll(volumes);
         this.volumes = volumesCopy;
     }
@@ -88,7 +88,7 @@ public class DescribeVolumesResult  implements Serializable  {
         if (volumes == null) {
             this.volumes = null;
         } else {
-            java.util.List<Volume> volumesCopy = new java.util.ArrayList<Volume>(volumes.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Volume> volumesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Volume>(volumes.size());
             volumesCopy.addAll(volumes);
             this.volumes = volumesCopy;
         }
@@ -107,7 +107,7 @@ public class DescribeVolumesResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getVolumes() != null) sb.append("Volumes: " + getVolumes() );
         sb.append("}");
         return sb.toString();

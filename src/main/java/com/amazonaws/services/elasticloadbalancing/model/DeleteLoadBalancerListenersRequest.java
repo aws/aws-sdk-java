@@ -35,7 +35,7 @@ public class DeleteLoadBalancerListenersRequest extends AmazonWebServiceRequest 
      * The client port number(s) of the LoadBalancerListener(s) to be
      * removed.
      */
-    private java.util.List<Integer> loadBalancerPorts;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Integer> loadBalancerPorts;
 
     /**
      * Default constructor for a new DeleteLoadBalancerListenersRequest object.  Callers should use the
@@ -43,6 +43,8 @@ public class DeleteLoadBalancerListenersRequest extends AmazonWebServiceRequest 
      */
     public DeleteLoadBalancerListenersRequest() {}
     
+
+
     /**
      * Constructs a new DeleteLoadBalancerListenersRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -54,8 +56,8 @@ public class DeleteLoadBalancerListenersRequest extends AmazonWebServiceRequest 
      * LoadBalancerListener(s) to be removed.
      */
     public DeleteLoadBalancerListenersRequest(String loadBalancerName, java.util.List<Integer> loadBalancerPorts) {
-        this.loadBalancerName = loadBalancerName;
-        this.loadBalancerPorts = loadBalancerPorts;
+        setLoadBalancerName(loadBalancerName);
+        setLoadBalancerPorts(loadBalancerPorts);
     }
 
     
@@ -104,7 +106,8 @@ public class DeleteLoadBalancerListenersRequest extends AmazonWebServiceRequest 
     public java.util.List<Integer> getLoadBalancerPorts() {
         
         if (loadBalancerPorts == null) {
-            loadBalancerPorts = new java.util.ArrayList<Integer>();
+              loadBalancerPorts = new com.amazonaws.internal.ListWithAutoConstructFlag<Integer>();
+              loadBalancerPorts.setAutoConstruct(true);
         }
         return loadBalancerPorts;
     }
@@ -121,8 +124,7 @@ public class DeleteLoadBalancerListenersRequest extends AmazonWebServiceRequest 
             this.loadBalancerPorts = null;
             return;
         }
-
-        java.util.List<Integer> loadBalancerPortsCopy = new java.util.ArrayList<Integer>(loadBalancerPorts.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Integer> loadBalancerPortsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Integer>(loadBalancerPorts.size());
         loadBalancerPortsCopy.addAll(loadBalancerPorts);
         this.loadBalancerPorts = loadBalancerPortsCopy;
     }
@@ -163,7 +165,7 @@ public class DeleteLoadBalancerListenersRequest extends AmazonWebServiceRequest 
         if (loadBalancerPorts == null) {
             this.loadBalancerPorts = null;
         } else {
-            java.util.List<Integer> loadBalancerPortsCopy = new java.util.ArrayList<Integer>(loadBalancerPorts.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Integer> loadBalancerPortsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Integer>(loadBalancerPorts.size());
             loadBalancerPortsCopy.addAll(loadBalancerPorts);
             this.loadBalancerPorts = loadBalancerPortsCopy;
         }
@@ -182,8 +184,8 @@ public class DeleteLoadBalancerListenersRequest extends AmazonWebServiceRequest 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getLoadBalancerName() != null) sb.append("LoadBalancerName: " + getLoadBalancerName() + ",");    	
+        sb.append("{");
+        if (getLoadBalancerName() != null) sb.append("LoadBalancerName: " + getLoadBalancerName() + ",");
         if (getLoadBalancerPorts() != null) sb.append("LoadBalancerPorts: " + getLoadBalancerPorts() );
         sb.append("}");
         return sb.toString();

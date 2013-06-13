@@ -43,7 +43,7 @@ public class Service  implements Serializable  {
      * to AWS Support when you call <a href="API_CreateCase.html"
      * title="CreateCase">CreateCase</a>.
      */
-    private java.util.List<Category> categories;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Category> categories;
 
     /**
      * JSON-formatted string that represents a code for an AWS service
@@ -153,7 +153,8 @@ public class Service  implements Serializable  {
     public java.util.List<Category> getCategories() {
         
         if (categories == null) {
-            categories = new java.util.ArrayList<Category>();
+              categories = new com.amazonaws.internal.ListWithAutoConstructFlag<Category>();
+              categories.setAutoConstruct(true);
         }
         return categories;
     }
@@ -176,8 +177,7 @@ public class Service  implements Serializable  {
             this.categories = null;
             return;
         }
-
-        java.util.List<Category> categoriesCopy = new java.util.ArrayList<Category>(categories.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Category> categoriesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Category>(categories.size());
         categoriesCopy.addAll(categories);
         this.categories = categoriesCopy;
     }
@@ -230,7 +230,7 @@ public class Service  implements Serializable  {
         if (categories == null) {
             this.categories = null;
         } else {
-            java.util.List<Category> categoriesCopy = new java.util.ArrayList<Category>(categories.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Category> categoriesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Category>(categories.size());
             categoriesCopy.addAll(categories);
             this.categories = categoriesCopy;
         }
@@ -249,9 +249,9 @@ public class Service  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getCode() != null) sb.append("Code: " + getCode() + ",");    	
-        if (getName() != null) sb.append("Name: " + getName() + ",");    	
+        sb.append("{");
+        if (getCode() != null) sb.append("Code: " + getCode() + ",");
+        if (getName() != null) sb.append("Name: " + getName() + ",");
         if (getCategories() != null) sb.append("Categories: " + getCategories() );
         sb.append("}");
         return sb.toString();

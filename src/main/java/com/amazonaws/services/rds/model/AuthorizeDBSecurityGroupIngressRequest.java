@@ -78,6 +78,8 @@ public class AuthorizeDBSecurityGroupIngressRequest extends AmazonWebServiceRequ
      */
     public AuthorizeDBSecurityGroupIngressRequest() {}
     
+
+
     /**
      * Constructs a new AuthorizeDBSecurityGroupIngressRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -87,7 +89,7 @@ public class AuthorizeDBSecurityGroupIngressRequest extends AmazonWebServiceRequ
      * authorization to.
      */
     public AuthorizeDBSecurityGroupIngressRequest(String dBSecurityGroupName) {
-        this.dBSecurityGroupName = dBSecurityGroupName;
+        setDBSecurityGroupName(dBSecurityGroupName);
     }
 
     
@@ -339,11 +341,11 @@ public class AuthorizeDBSecurityGroupIngressRequest extends AmazonWebServiceRequ
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getDBSecurityGroupName() != null) sb.append("DBSecurityGroupName: " + getDBSecurityGroupName() + ",");    	
-        if (getCIDRIP() != null) sb.append("CIDRIP: " + getCIDRIP() + ",");    	
-        if (getEC2SecurityGroupName() != null) sb.append("EC2SecurityGroupName: " + getEC2SecurityGroupName() + ",");    	
-        if (getEC2SecurityGroupId() != null) sb.append("EC2SecurityGroupId: " + getEC2SecurityGroupId() + ",");    	
+        sb.append("{");
+        if (getDBSecurityGroupName() != null) sb.append("DBSecurityGroupName: " + getDBSecurityGroupName() + ",");
+        if (getCIDRIP() != null) sb.append("CIDRIP: " + getCIDRIP() + ",");
+        if (getEC2SecurityGroupName() != null) sb.append("EC2SecurityGroupName: " + getEC2SecurityGroupName() + ",");
+        if (getEC2SecurityGroupId() != null) sb.append("EC2SecurityGroupId: " + getEC2SecurityGroupId() + ",");
         if (getEC2SecurityGroupOwnerId() != null) sb.append("EC2SecurityGroupOwnerId: " + getEC2SecurityGroupOwnerId() );
         sb.append("}");
         return sb.toString();

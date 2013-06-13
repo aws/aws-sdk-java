@@ -138,8 +138,8 @@ public class CreateJobRequestMarshaller implements Marshaller<Request<CreateJobR
                 jsonWriter.endObject();
             }
 
-            java.util.List<CreateJobOutput> outputsList = createJobRequest.getOutputs();
-            if (outputsList != null) {
+            com.amazonaws.internal.ListWithAutoConstructFlag<CreateJobOutput> outputsList = (com.amazonaws.internal.ListWithAutoConstructFlag<CreateJobOutput>)(createJobRequest.getOutputs());
+            if (outputsList != null && !(outputsList.isAutoConstruct() && outputsList.isEmpty())) {
 
                 jsonWriter.key("Outputs");
                 jsonWriter.array();
@@ -171,8 +171,8 @@ public class CreateJobRequestMarshaller implements Marshaller<Request<CreateJobR
                 jsonWriter.key("OutputKeyPrefix").value(createJobRequest.getOutputKeyPrefix());
             }
 
-            java.util.List<CreateJobPlaylist> playlistsList = createJobRequest.getPlaylists();
-            if (playlistsList != null) {
+            com.amazonaws.internal.ListWithAutoConstructFlag<CreateJobPlaylist> playlistsList = (com.amazonaws.internal.ListWithAutoConstructFlag<CreateJobPlaylist>)(createJobRequest.getPlaylists());
+            if (playlistsList != null && !(playlistsList.isAutoConstruct() && playlistsList.isEmpty())) {
 
                 jsonWriter.key("Playlists");
                 jsonWriter.array();
@@ -187,8 +187,8 @@ public class CreateJobRequestMarshaller implements Marshaller<Request<CreateJobR
                             jsonWriter.key("Format").value(playlistsListValue.getFormat());
                         }
 
-                        java.util.List<String> outputKeysList = playlistsListValue.getOutputKeys();
-                        if (outputKeysList != null) {
+                        com.amazonaws.internal.ListWithAutoConstructFlag<String> outputKeysList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(playlistsListValue.getOutputKeys());
+                        if (outputKeysList != null && !(outputKeysList.isAutoConstruct() && outputKeysList.isEmpty())) {
 
                             jsonWriter.key("OutputKeys");
                             jsonWriter.array();

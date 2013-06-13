@@ -433,11 +433,11 @@ public class SetTaskStatusRequest extends AmazonWebServiceRequest  implements Se
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getTaskId() != null) sb.append("TaskId: " + getTaskId() + ",");    	
-        if (getTaskStatus() != null) sb.append("TaskStatus: " + getTaskStatus() + ",");    	
-        if (getErrorId() != null) sb.append("ErrorId: " + getErrorId() + ",");    	
-        if (getErrorMessage() != null) sb.append("ErrorMessage: " + getErrorMessage() + ",");    	
+        sb.append("{");
+        if (getTaskId() != null) sb.append("TaskId: " + getTaskId() + ",");
+        if (getTaskStatus() != null) sb.append("TaskStatus: " + getTaskStatus() + ",");
+        if (getErrorId() != null) sb.append("ErrorId: " + getErrorId() + ",");
+        if (getErrorMessage() != null) sb.append("ErrorMessage: " + getErrorMessage() + ",");
         if (getErrorStackTrace() != null) sb.append("ErrorStackTrace: " + getErrorStackTrace() );
         sb.append("}");
         return sb.toString();

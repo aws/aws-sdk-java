@@ -51,13 +51,13 @@ public class ApplicationDescription  implements Serializable  {
     /**
      * The names of the versions for this application.
      */
-    private java.util.List<String> versions;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> versions;
 
     /**
      * The names of the configuration templates associated with this
      * application.
      */
-    private java.util.List<String> configurationTemplates;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> configurationTemplates;
 
     /**
      * Default constructor for a new ApplicationDescription object.  Callers should use the
@@ -227,7 +227,8 @@ public class ApplicationDescription  implements Serializable  {
     public java.util.List<String> getVersions() {
         
         if (versions == null) {
-            versions = new java.util.ArrayList<String>();
+              versions = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              versions.setAutoConstruct(true);
         }
         return versions;
     }
@@ -242,8 +243,7 @@ public class ApplicationDescription  implements Serializable  {
             this.versions = null;
             return;
         }
-
-        java.util.List<String> versionsCopy = new java.util.ArrayList<String>(versions.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> versionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(versions.size());
         versionsCopy.addAll(versions);
         this.versions = versionsCopy;
     }
@@ -280,7 +280,7 @@ public class ApplicationDescription  implements Serializable  {
         if (versions == null) {
             this.versions = null;
         } else {
-            java.util.List<String> versionsCopy = new java.util.ArrayList<String>(versions.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> versionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(versions.size());
             versionsCopy.addAll(versions);
             this.versions = versionsCopy;
         }
@@ -298,7 +298,8 @@ public class ApplicationDescription  implements Serializable  {
     public java.util.List<String> getConfigurationTemplates() {
         
         if (configurationTemplates == null) {
-            configurationTemplates = new java.util.ArrayList<String>();
+              configurationTemplates = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              configurationTemplates.setAutoConstruct(true);
         }
         return configurationTemplates;
     }
@@ -315,8 +316,7 @@ public class ApplicationDescription  implements Serializable  {
             this.configurationTemplates = null;
             return;
         }
-
-        java.util.List<String> configurationTemplatesCopy = new java.util.ArrayList<String>(configurationTemplates.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> configurationTemplatesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(configurationTemplates.size());
         configurationTemplatesCopy.addAll(configurationTemplates);
         this.configurationTemplates = configurationTemplatesCopy;
     }
@@ -357,7 +357,7 @@ public class ApplicationDescription  implements Serializable  {
         if (configurationTemplates == null) {
             this.configurationTemplates = null;
         } else {
-            java.util.List<String> configurationTemplatesCopy = new java.util.ArrayList<String>(configurationTemplates.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> configurationTemplatesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(configurationTemplates.size());
             configurationTemplatesCopy.addAll(configurationTemplates);
             this.configurationTemplates = configurationTemplatesCopy;
         }
@@ -376,12 +376,12 @@ public class ApplicationDescription  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getApplicationName() != null) sb.append("ApplicationName: " + getApplicationName() + ",");    	
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");    	
-        if (getDateCreated() != null) sb.append("DateCreated: " + getDateCreated() + ",");    	
-        if (getDateUpdated() != null) sb.append("DateUpdated: " + getDateUpdated() + ",");    	
-        if (getVersions() != null) sb.append("Versions: " + getVersions() + ",");    	
+        sb.append("{");
+        if (getApplicationName() != null) sb.append("ApplicationName: " + getApplicationName() + ",");
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");
+        if (getDateCreated() != null) sb.append("DateCreated: " + getDateCreated() + ",");
+        if (getDateUpdated() != null) sb.append("DateUpdated: " + getDateUpdated() + ",");
+        if (getVersions() != null) sb.append("Versions: " + getVersions() + ",");
         if (getConfigurationTemplates() != null) sb.append("ConfigurationTemplates: " + getConfigurationTemplates() );
         sb.append("}");
         return sb.toString();

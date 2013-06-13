@@ -86,8 +86,8 @@ public class DescribeTrustedAdvisorCheckSummariesRequestMarshaller implements Ma
           jsonWriter.object();
           
 
-            java.util.List<String> checkIdsList = describeTrustedAdvisorCheckSummariesRequest.getCheckIds();
-            if (checkIdsList != null) {
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> checkIdsList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(describeTrustedAdvisorCheckSummariesRequest.getCheckIds());
+            if (checkIdsList != null && !(checkIdsList.isAutoConstruct() && checkIdsList.isEmpty())) {
 
                 jsonWriter.key("checkIds");
                 jsonWriter.array();

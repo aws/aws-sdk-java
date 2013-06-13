@@ -17,9 +17,8 @@
  * <p>
  * This is the <i>Amazon RDS API Reference</i> . It contains a comprehensive description of all Amazon RDS Query APIs and data types. Note that this API
  * is asynchronous and some actions may require polling to determine when an action has been applied. See the parameter description to determine if a
- * change is applied immediately or on the next instance reboot or during the maintenance window. To get started with Amazon RDS, go to the <a
- * href="http://docs.amazonwebservices.com/AmazonRDS/latest/GettingStartedGuide/"> Amazon RDS Getting Started Guide </a> . For more information on Amazon
- * RDS concepts and usage scenarios, go to the <a href="http://docs.amazonwebservices.com/AmazonRDS/latest/UserGuide/"> Amazon RDS User Guide </a> .
+ * change is applied immediately or on the next instance reboot or during the maintenance window. For more information on Amazon RDS concepts and usage
+ * scenarios, go to the <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/"> Amazon RDS User Guide </a> .
  * </p>
  */
  package com.amazonaws.services.rds;

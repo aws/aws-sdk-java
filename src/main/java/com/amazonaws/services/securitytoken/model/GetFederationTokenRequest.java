@@ -96,6 +96,8 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest  implemen
      */
     public GetFederationTokenRequest() {}
     
+
+
     /**
      * Constructs a new GetFederationTokenRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -108,7 +110,7 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest  implemen
      * policy.
      */
     public GetFederationTokenRequest(String name) {
-        this.name = name;
+        setName(name);
     }
 
     
@@ -349,9 +351,9 @@ public class GetFederationTokenRequest extends AmazonWebServiceRequest  implemen
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getName() != null) sb.append("Name: " + getName() + ",");    	
-        if (getPolicy() != null) sb.append("Policy: " + getPolicy() + ",");    	
+        sb.append("{");
+        if (getName() != null) sb.append("Name: " + getName() + ",");
+        if (getPolicy() != null) sb.append("Policy: " + getPolicy() + ",");
         if (getDurationSeconds() != null) sb.append("DurationSeconds: " + getDurationSeconds() );
         sb.append("}");
         return sb.toString();

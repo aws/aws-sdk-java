@@ -40,7 +40,7 @@ public class LocalSecondaryIndex  implements Serializable  {
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 2<br/>
      */
-    private java.util.List<KeySchemaElement> keySchema;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<KeySchemaElement> keySchema;
 
     /**
      * Represents attributes that are copied (projected) from the table into
@@ -135,8 +135,7 @@ public class LocalSecondaryIndex  implements Serializable  {
             this.keySchema = null;
             return;
         }
-
-        java.util.List<KeySchemaElement> keySchemaCopy = new java.util.ArrayList<KeySchemaElement>(keySchema.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<KeySchemaElement> keySchemaCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<KeySchemaElement>(keySchema.size());
         keySchemaCopy.addAll(keySchema);
         this.keySchema = keySchemaCopy;
     }
@@ -187,7 +186,7 @@ public class LocalSecondaryIndex  implements Serializable  {
         if (keySchema == null) {
             this.keySchema = null;
         } else {
-            java.util.List<KeySchemaElement> keySchemaCopy = new java.util.ArrayList<KeySchemaElement>(keySchema.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<KeySchemaElement> keySchemaCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<KeySchemaElement>(keySchema.size());
             keySchemaCopy.addAll(keySchema);
             this.keySchema = keySchemaCopy;
         }
@@ -252,9 +251,9 @@ public class LocalSecondaryIndex  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getIndexName() != null) sb.append("IndexName: " + getIndexName() + ",");    	
-        if (getKeySchema() != null) sb.append("KeySchema: " + getKeySchema() + ",");    	
+        sb.append("{");
+        if (getIndexName() != null) sb.append("IndexName: " + getIndexName() + ",");
+        if (getKeySchema() != null) sb.append("KeySchema: " + getKeySchema() + ",");
         if (getProjection() != null) sb.append("Projection: " + getProjection() );
         sb.append("}");
         return sb.toString();

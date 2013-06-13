@@ -20,7 +20,7 @@ import java.io.Serializable;
  */
 public class DescribeNetworkAclsResult  implements Serializable  {
 
-    private java.util.List<NetworkAcl> networkAcls;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<NetworkAcl> networkAcls;
 
     /**
      * Returns the value of the NetworkAcls property for this object.
@@ -30,7 +30,8 @@ public class DescribeNetworkAclsResult  implements Serializable  {
     public java.util.List<NetworkAcl> getNetworkAcls() {
         
         if (networkAcls == null) {
-            networkAcls = new java.util.ArrayList<NetworkAcl>();
+              networkAcls = new com.amazonaws.internal.ListWithAutoConstructFlag<NetworkAcl>();
+              networkAcls.setAutoConstruct(true);
         }
         return networkAcls;
     }
@@ -45,8 +46,7 @@ public class DescribeNetworkAclsResult  implements Serializable  {
             this.networkAcls = null;
             return;
         }
-
-        java.util.List<NetworkAcl> networkAclsCopy = new java.util.ArrayList<NetworkAcl>(networkAcls.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<NetworkAcl> networkAclsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<NetworkAcl>(networkAcls.size());
         networkAclsCopy.addAll(networkAcls);
         this.networkAcls = networkAclsCopy;
     }
@@ -83,7 +83,7 @@ public class DescribeNetworkAclsResult  implements Serializable  {
         if (networkAcls == null) {
             this.networkAcls = null;
         } else {
-            java.util.List<NetworkAcl> networkAclsCopy = new java.util.ArrayList<NetworkAcl>(networkAcls.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<NetworkAcl> networkAclsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<NetworkAcl>(networkAcls.size());
             networkAclsCopy.addAll(networkAcls);
             this.networkAcls = networkAclsCopy;
         }
@@ -102,7 +102,7 @@ public class DescribeNetworkAclsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getNetworkAcls() != null) sb.append("NetworkAcls: " + getNetworkAcls() );
         sb.append("}");
         return sb.toString();

@@ -65,7 +65,7 @@ public class CreateJobRequest extends AmazonWebServiceRequest  implements Serial
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 30<br/>
      */
-    private java.util.List<CreateJobOutput> outputs;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<CreateJobOutput> outputs;
 
     /**
      * The value, if any, that you want Elastic Transcoder to prepend to the
@@ -87,7 +87,7 @@ public class CreateJobRequest extends AmazonWebServiceRequest  implements Serial
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 30<br/>
      */
-    private java.util.List<CreateJobPlaylist> playlists;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<CreateJobPlaylist> playlists;
 
     /**
      * The <code>Id</code> of the pipeline that you want Elastic Transcoder
@@ -244,6 +244,10 @@ public class CreateJobRequest extends AmazonWebServiceRequest  implements Serial
      */
     public java.util.List<CreateJobOutput> getOutputs() {
         
+        if (outputs == null) {
+              outputs = new com.amazonaws.internal.ListWithAutoConstructFlag<CreateJobOutput>();
+              outputs.setAutoConstruct(true);
+        }
         return outputs;
     }
     
@@ -264,8 +268,7 @@ public class CreateJobRequest extends AmazonWebServiceRequest  implements Serial
             this.outputs = null;
             return;
         }
-
-        java.util.List<CreateJobOutput> outputsCopy = new java.util.ArrayList<CreateJobOutput>(outputs.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<CreateJobOutput> outputsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<CreateJobOutput>(outputs.size());
         outputsCopy.addAll(outputs);
         this.outputs = outputsCopy;
     }
@@ -316,7 +319,7 @@ public class CreateJobRequest extends AmazonWebServiceRequest  implements Serial
         if (outputs == null) {
             this.outputs = null;
         } else {
-            java.util.List<CreateJobOutput> outputsCopy = new java.util.ArrayList<CreateJobOutput>(outputs.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<CreateJobOutput> outputsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<CreateJobOutput>(outputs.size());
             outputsCopy.addAll(outputs);
             this.outputs = outputsCopy;
         }
@@ -397,6 +400,10 @@ public class CreateJobRequest extends AmazonWebServiceRequest  implements Serial
      */
     public java.util.List<CreateJobPlaylist> getPlaylists() {
         
+        if (playlists == null) {
+              playlists = new com.amazonaws.internal.ListWithAutoConstructFlag<CreateJobPlaylist>();
+              playlists.setAutoConstruct(true);
+        }
         return playlists;
     }
     
@@ -421,8 +428,7 @@ public class CreateJobRequest extends AmazonWebServiceRequest  implements Serial
             this.playlists = null;
             return;
         }
-
-        java.util.List<CreateJobPlaylist> playlistsCopy = new java.util.ArrayList<CreateJobPlaylist>(playlists.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<CreateJobPlaylist> playlistsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<CreateJobPlaylist>(playlists.size());
         playlistsCopy.addAll(playlists);
         this.playlists = playlistsCopy;
     }
@@ -481,7 +487,7 @@ public class CreateJobRequest extends AmazonWebServiceRequest  implements Serial
         if (playlists == null) {
             this.playlists = null;
         } else {
-            java.util.List<CreateJobPlaylist> playlistsCopy = new java.util.ArrayList<CreateJobPlaylist>(playlists.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<CreateJobPlaylist> playlistsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<CreateJobPlaylist>(playlists.size());
             playlistsCopy.addAll(playlists);
             this.playlists = playlistsCopy;
         }
@@ -500,12 +506,12 @@ public class CreateJobRequest extends AmazonWebServiceRequest  implements Serial
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getPipelineId() != null) sb.append("PipelineId: " + getPipelineId() + ",");    	
-        if (getInput() != null) sb.append("Input: " + getInput() + ",");    	
-        if (getOutput() != null) sb.append("Output: " + getOutput() + ",");    	
-        if (getOutputs() != null) sb.append("Outputs: " + getOutputs() + ",");    	
-        if (getOutputKeyPrefix() != null) sb.append("OutputKeyPrefix: " + getOutputKeyPrefix() + ",");    	
+        sb.append("{");
+        if (getPipelineId() != null) sb.append("PipelineId: " + getPipelineId() + ",");
+        if (getInput() != null) sb.append("Input: " + getInput() + ",");
+        if (getOutput() != null) sb.append("Output: " + getOutput() + ",");
+        if (getOutputs() != null) sb.append("Outputs: " + getOutputs() + ",");
+        if (getOutputKeyPrefix() != null) sb.append("OutputKeyPrefix: " + getOutputKeyPrefix() + ",");
         if (getPlaylists() != null) sb.append("Playlists: " + getPlaylists() );
         sb.append("}");
         return sb.toString();

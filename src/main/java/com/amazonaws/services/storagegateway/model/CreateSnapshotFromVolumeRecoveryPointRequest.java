@@ -189,8 +189,8 @@ public class CreateSnapshotFromVolumeRecoveryPointRequest extends AmazonWebServi
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getVolumeARN() != null) sb.append("VolumeARN: " + getVolumeARN() + ",");    	
+        sb.append("{");
+        if (getVolumeARN() != null) sb.append("VolumeARN: " + getVolumeARN() + ",");
         if (getSnapshotDescription() != null) sb.append("SnapshotDescription: " + getSnapshotDescription() );
         sb.append("}");
         return sb.toString();

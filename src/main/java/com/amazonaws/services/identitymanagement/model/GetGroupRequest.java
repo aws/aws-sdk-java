@@ -65,6 +65,8 @@ public class GetGroupRequest extends AmazonWebServiceRequest  implements Seriali
      */
     public GetGroupRequest() {}
     
+
+
     /**
      * Constructs a new GetGroupRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -73,7 +75,7 @@ public class GetGroupRequest extends AmazonWebServiceRequest  implements Seriali
      * @param groupName Name of the group.
      */
     public GetGroupRequest(String groupName) {
-        this.groupName = groupName;
+        setGroupName(groupName);
     }
 
     
@@ -260,9 +262,9 @@ public class GetGroupRequest extends AmazonWebServiceRequest  implements Seriali
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getGroupName() != null) sb.append("GroupName: " + getGroupName() + ",");    	
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");    	
+        sb.append("{");
+        if (getGroupName() != null) sb.append("GroupName: " + getGroupName() + ",");
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");
         if (getMaxItems() != null) sb.append("MaxItems: " + getMaxItems() );
         sb.append("}");
         return sb.toString();

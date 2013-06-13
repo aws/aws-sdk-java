@@ -103,8 +103,8 @@ public class IamInstanceProfile  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getArn() != null) sb.append("Arn: " + getArn() + ",");    	
+        sb.append("{");
+        if (getArn() != null) sb.append("Arn: " + getArn() + ",");
         if (getId() != null) sb.append("Id: " + getId() );
         sb.append("}");
         return sb.toString();

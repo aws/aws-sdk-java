@@ -101,6 +101,8 @@ public class GetJobOutputRequest extends AmazonWebServiceRequest  implements Ser
      */
     public GetJobOutputRequest() {}
     
+
+
     /**
      * Constructs a new GetJobOutputRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -114,13 +116,15 @@ public class GetJobOutputRequest extends AmazonWebServiceRequest  implements Ser
      * entire output.
      */
     public GetJobOutputRequest(String vaultName, String jobId, String range) {
-        this.vaultName = vaultName;
-        this.jobId = jobId;
-        this.range = range;
+        setVaultName(vaultName);
+        setJobId(jobId);
+        setRange(range);
     }
 
     
     
+
+
     /**
      * Constructs a new GetJobOutputRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -139,10 +143,10 @@ public class GetJobOutputRequest extends AmazonWebServiceRequest  implements Ser
      * entire output.
      */
     public GetJobOutputRequest(String accountId, String vaultName, String jobId, String range) {
-        this.accountId = accountId;
-        this.vaultName = vaultName;
-        this.jobId = jobId;
-        this.range = range;
+        setAccountId(accountId);
+        setVaultName(vaultName);
+        setJobId(jobId);
+        setRange(range);
     }
 
     
@@ -336,10 +340,10 @@ public class GetJobOutputRequest extends AmazonWebServiceRequest  implements Ser
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getAccountId() != null) sb.append("AccountId: " + getAccountId() + ",");    	
-        if (getVaultName() != null) sb.append("VaultName: " + getVaultName() + ",");    	
-        if (getJobId() != null) sb.append("JobId: " + getJobId() + ",");    	
+        sb.append("{");
+        if (getAccountId() != null) sb.append("AccountId: " + getAccountId() + ",");
+        if (getVaultName() != null) sb.append("VaultName: " + getVaultName() + ",");
+        if (getJobId() != null) sb.append("JobId: " + getJobId() + ",");
         if (getRange() != null) sb.append("Range: " + getRange() );
         sb.append("}");
         return sb.toString();

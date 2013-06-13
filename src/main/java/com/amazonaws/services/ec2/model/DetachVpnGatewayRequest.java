@@ -46,6 +46,8 @@ public class DetachVpnGatewayRequest extends AmazonWebServiceRequest  implements
      */
     public DetachVpnGatewayRequest() {}
     
+
+
     /**
      * Constructs a new DetachVpnGatewayRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -55,8 +57,8 @@ public class DetachVpnGatewayRequest extends AmazonWebServiceRequest  implements
      * @param vpcId The ID of the VPC to detach the VPN gateway from.
      */
     public DetachVpnGatewayRequest(String vpnGatewayId, String vpcId) {
-        this.vpnGatewayId = vpnGatewayId;
-        this.vpcId = vpcId;
+        setVpnGatewayId(vpnGatewayId);
+        setVpcId(vpcId);
     }
 
     
@@ -140,8 +142,8 @@ public class DetachVpnGatewayRequest extends AmazonWebServiceRequest  implements
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getVpnGatewayId() != null) sb.append("VpnGatewayId: " + getVpnGatewayId() + ",");    	
+        sb.append("{");
+        if (getVpnGatewayId() != null) sb.append("VpnGatewayId: " + getVpnGatewayId() + ",");
         if (getVpcId() != null) sb.append("VpcId: " + getVpcId() );
         sb.append("}");
         return sb.toString();

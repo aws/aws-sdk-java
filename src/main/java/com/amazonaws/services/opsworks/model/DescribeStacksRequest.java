@@ -31,7 +31,7 @@ public class DescribeStacksRequest extends AmazonWebServiceRequest  implements S
      * omit this parameter, <code>DescribeStacks</code> returns a description
      * of every stack.
      */
-    private java.util.List<String> stackIds;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> stackIds;
 
     /**
      * An array of stack IDs that specify the stacks to be described. If you
@@ -45,7 +45,8 @@ public class DescribeStacksRequest extends AmazonWebServiceRequest  implements S
     public java.util.List<String> getStackIds() {
         
         if (stackIds == null) {
-            stackIds = new java.util.ArrayList<String>();
+              stackIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              stackIds.setAutoConstruct(true);
         }
         return stackIds;
     }
@@ -64,8 +65,7 @@ public class DescribeStacksRequest extends AmazonWebServiceRequest  implements S
             this.stackIds = null;
             return;
         }
-
-        java.util.List<String> stackIdsCopy = new java.util.ArrayList<String>(stackIds.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> stackIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(stackIds.size());
         stackIdsCopy.addAll(stackIds);
         this.stackIds = stackIdsCopy;
     }
@@ -110,7 +110,7 @@ public class DescribeStacksRequest extends AmazonWebServiceRequest  implements S
         if (stackIds == null) {
             this.stackIds = null;
         } else {
-            java.util.List<String> stackIdsCopy = new java.util.ArrayList<String>(stackIds.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> stackIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(stackIds.size());
             stackIdsCopy.addAll(stackIds);
             this.stackIds = stackIdsCopy;
         }
@@ -129,7 +129,7 @@ public class DescribeStacksRequest extends AmazonWebServiceRequest  implements S
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getStackIds() != null) sb.append("StackIds: " + getStackIds() );
         sb.append("}");
         return sb.toString();

@@ -89,8 +89,8 @@ public class DescribeLayersRequestMarshaller implements Marshaller<Request<Descr
                 jsonWriter.key("StackId").value(describeLayersRequest.getStackId());
             }
 
-            java.util.List<String> layerIdsList = describeLayersRequest.getLayerIds();
-            if (layerIdsList != null) {
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> layerIdsList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(describeLayersRequest.getLayerIds());
+            if (layerIdsList != null && !(layerIdsList.isAutoConstruct() && layerIdsList.isEmpty())) {
 
                 jsonWriter.key("LayerIds");
                 jsonWriter.array();

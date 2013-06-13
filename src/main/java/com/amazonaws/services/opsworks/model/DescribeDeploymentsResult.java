@@ -26,7 +26,7 @@ public class DescribeDeploymentsResult  implements Serializable  {
      * An array of <code>Deployment</code> objects that describe the
      * deployments.
      */
-    private java.util.List<Deployment> deployments;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Deployment> deployments;
 
     /**
      * An array of <code>Deployment</code> objects that describe the
@@ -38,7 +38,8 @@ public class DescribeDeploymentsResult  implements Serializable  {
     public java.util.List<Deployment> getDeployments() {
         
         if (deployments == null) {
-            deployments = new java.util.ArrayList<Deployment>();
+              deployments = new com.amazonaws.internal.ListWithAutoConstructFlag<Deployment>();
+              deployments.setAutoConstruct(true);
         }
         return deployments;
     }
@@ -55,8 +56,7 @@ public class DescribeDeploymentsResult  implements Serializable  {
             this.deployments = null;
             return;
         }
-
-        java.util.List<Deployment> deploymentsCopy = new java.util.ArrayList<Deployment>(deployments.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Deployment> deploymentsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Deployment>(deployments.size());
         deploymentsCopy.addAll(deployments);
         this.deployments = deploymentsCopy;
     }
@@ -97,7 +97,7 @@ public class DescribeDeploymentsResult  implements Serializable  {
         if (deployments == null) {
             this.deployments = null;
         } else {
-            java.util.List<Deployment> deploymentsCopy = new java.util.ArrayList<Deployment>(deployments.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Deployment> deploymentsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Deployment>(deployments.size());
             deploymentsCopy.addAll(deployments);
             this.deployments = deploymentsCopy;
         }
@@ -116,7 +116,7 @@ public class DescribeDeploymentsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getDeployments() != null) sb.append("Deployments: " + getDeployments() );
         sb.append("}");
         return sb.toString();

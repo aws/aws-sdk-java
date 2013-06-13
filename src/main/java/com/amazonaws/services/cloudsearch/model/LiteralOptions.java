@@ -237,10 +237,10 @@ public class LiteralOptions  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getDefaultValue() != null) sb.append("DefaultValue: " + getDefaultValue() + ",");    	
-        if (isSearchEnabled() != null) sb.append("SearchEnabled: " + isSearchEnabled() + ",");    	
-        if (isFacetEnabled() != null) sb.append("FacetEnabled: " + isFacetEnabled() + ",");    	
+        sb.append("{");
+        if (getDefaultValue() != null) sb.append("DefaultValue: " + getDefaultValue() + ",");
+        if (isSearchEnabled() != null) sb.append("SearchEnabled: " + isSearchEnabled() + ",");
+        if (isFacetEnabled() != null) sb.append("FacetEnabled: " + isFacetEnabled() + ",");
         if (isResultEnabled() != null) sb.append("ResultEnabled: " + isResultEnabled() );
         sb.append("}");
         return sb.toString();

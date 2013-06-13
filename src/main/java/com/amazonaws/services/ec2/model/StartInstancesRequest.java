@@ -35,7 +35,7 @@ public class StartInstancesRequest extends AmazonWebServiceRequest  implements S
     /**
      * The list of Amazon EC2 instances to start.
      */
-    private java.util.List<String> instanceIds;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> instanceIds;
 
     private String additionalInfo;
 
@@ -45,6 +45,8 @@ public class StartInstancesRequest extends AmazonWebServiceRequest  implements S
      */
     public StartInstancesRequest() {}
     
+
+
     /**
      * Constructs a new StartInstancesRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -53,7 +55,7 @@ public class StartInstancesRequest extends AmazonWebServiceRequest  implements S
      * @param instanceIds The list of Amazon EC2 instances to start.
      */
     public StartInstancesRequest(java.util.List<String> instanceIds) {
-        this.instanceIds = instanceIds;
+        setInstanceIds(instanceIds);
     }
 
     
@@ -66,7 +68,8 @@ public class StartInstancesRequest extends AmazonWebServiceRequest  implements S
     public java.util.List<String> getInstanceIds() {
         
         if (instanceIds == null) {
-            instanceIds = new java.util.ArrayList<String>();
+              instanceIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              instanceIds.setAutoConstruct(true);
         }
         return instanceIds;
     }
@@ -81,8 +84,7 @@ public class StartInstancesRequest extends AmazonWebServiceRequest  implements S
             this.instanceIds = null;
             return;
         }
-
-        java.util.List<String> instanceIdsCopy = new java.util.ArrayList<String>(instanceIds.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> instanceIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(instanceIds.size());
         instanceIdsCopy.addAll(instanceIds);
         this.instanceIds = instanceIdsCopy;
     }
@@ -119,7 +121,7 @@ public class StartInstancesRequest extends AmazonWebServiceRequest  implements S
         if (instanceIds == null) {
             this.instanceIds = null;
         } else {
-            java.util.List<String> instanceIdsCopy = new java.util.ArrayList<String>(instanceIds.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> instanceIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(instanceIds.size());
             instanceIdsCopy.addAll(instanceIds);
             this.instanceIds = instanceIdsCopy;
         }
@@ -172,8 +174,8 @@ public class StartInstancesRequest extends AmazonWebServiceRequest  implements S
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getInstanceIds() != null) sb.append("InstanceIds: " + getInstanceIds() + ",");    	
+        sb.append("{");
+        if (getInstanceIds() != null) sb.append("InstanceIds: " + getInstanceIds() + ",");
         if (getAdditionalInfo() != null) sb.append("AdditionalInfo: " + getAdditionalInfo() );
         sb.append("}");
         return sb.toString();

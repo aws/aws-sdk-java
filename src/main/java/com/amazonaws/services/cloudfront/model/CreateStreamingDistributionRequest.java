@@ -37,6 +37,8 @@ public class CreateStreamingDistributionRequest extends AmazonWebServiceRequest 
      */
     public CreateStreamingDistributionRequest() {}
     
+
+
     /**
      * Constructs a new CreateStreamingDistributionRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -46,7 +48,7 @@ public class CreateStreamingDistributionRequest extends AmazonWebServiceRequest 
      * configuration information.
      */
     public CreateStreamingDistributionRequest(StreamingDistributionConfig streamingDistributionConfig) {
-        this.streamingDistributionConfig = streamingDistributionConfig;
+        setStreamingDistributionConfig(streamingDistributionConfig);
     }
 
     
@@ -96,7 +98,7 @@ public class CreateStreamingDistributionRequest extends AmazonWebServiceRequest 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getStreamingDistributionConfig() != null) sb.append("StreamingDistributionConfig: " + getStreamingDistributionConfig() );
         sb.append("}");
         return sb.toString();

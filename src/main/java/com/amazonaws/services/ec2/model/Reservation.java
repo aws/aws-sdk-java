@@ -42,18 +42,18 @@ public class Reservation  implements Serializable  {
      * The list of security groups requested for the instances in this
      * reservation.
      */
-    private java.util.List<GroupIdentifier> groups;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<GroupIdentifier> groups;
 
     /**
      * The list of security groups requested for the instances in this
      * reservation.
      */
-    private java.util.List<String> groupNames;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> groupNames;
 
     /**
      * The list of Amazon EC2 instances included in this reservation.
      */
-    private java.util.List<Instance> instances;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Instance> instances;
 
     /**
      * The unique ID of this reservation.
@@ -173,7 +173,8 @@ public class Reservation  implements Serializable  {
     public java.util.List<GroupIdentifier> getGroups() {
         
         if (groups == null) {
-            groups = new java.util.ArrayList<GroupIdentifier>();
+              groups = new com.amazonaws.internal.ListWithAutoConstructFlag<GroupIdentifier>();
+              groups.setAutoConstruct(true);
         }
         return groups;
     }
@@ -190,8 +191,7 @@ public class Reservation  implements Serializable  {
             this.groups = null;
             return;
         }
-
-        java.util.List<GroupIdentifier> groupsCopy = new java.util.ArrayList<GroupIdentifier>(groups.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<GroupIdentifier> groupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<GroupIdentifier>(groups.size());
         groupsCopy.addAll(groups);
         this.groups = groupsCopy;
     }
@@ -232,7 +232,7 @@ public class Reservation  implements Serializable  {
         if (groups == null) {
             this.groups = null;
         } else {
-            java.util.List<GroupIdentifier> groupsCopy = new java.util.ArrayList<GroupIdentifier>(groups.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<GroupIdentifier> groupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<GroupIdentifier>(groups.size());
             groupsCopy.addAll(groups);
             this.groups = groupsCopy;
         }
@@ -250,7 +250,8 @@ public class Reservation  implements Serializable  {
     public java.util.List<String> getGroupNames() {
         
         if (groupNames == null) {
-            groupNames = new java.util.ArrayList<String>();
+              groupNames = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              groupNames.setAutoConstruct(true);
         }
         return groupNames;
     }
@@ -267,8 +268,7 @@ public class Reservation  implements Serializable  {
             this.groupNames = null;
             return;
         }
-
-        java.util.List<String> groupNamesCopy = new java.util.ArrayList<String>(groupNames.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> groupNamesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(groupNames.size());
         groupNamesCopy.addAll(groupNames);
         this.groupNames = groupNamesCopy;
     }
@@ -309,7 +309,7 @@ public class Reservation  implements Serializable  {
         if (groupNames == null) {
             this.groupNames = null;
         } else {
-            java.util.List<String> groupNamesCopy = new java.util.ArrayList<String>(groupNames.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> groupNamesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(groupNames.size());
             groupNamesCopy.addAll(groupNames);
             this.groupNames = groupNamesCopy;
         }
@@ -325,7 +325,8 @@ public class Reservation  implements Serializable  {
     public java.util.List<Instance> getInstances() {
         
         if (instances == null) {
-            instances = new java.util.ArrayList<Instance>();
+              instances = new com.amazonaws.internal.ListWithAutoConstructFlag<Instance>();
+              instances.setAutoConstruct(true);
         }
         return instances;
     }
@@ -340,8 +341,7 @@ public class Reservation  implements Serializable  {
             this.instances = null;
             return;
         }
-
-        java.util.List<Instance> instancesCopy = new java.util.ArrayList<Instance>(instances.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Instance> instancesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Instance>(instances.size());
         instancesCopy.addAll(instances);
         this.instances = instancesCopy;
     }
@@ -378,7 +378,7 @@ public class Reservation  implements Serializable  {
         if (instances == null) {
             this.instances = null;
         } else {
-            java.util.List<Instance> instancesCopy = new java.util.ArrayList<Instance>(instances.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Instance> instancesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Instance>(instances.size());
             instancesCopy.addAll(instances);
             this.instances = instancesCopy;
         }
@@ -397,12 +397,12 @@ public class Reservation  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getReservationId() != null) sb.append("ReservationId: " + getReservationId() + ",");    	
-        if (getOwnerId() != null) sb.append("OwnerId: " + getOwnerId() + ",");    	
-        if (getRequesterId() != null) sb.append("RequesterId: " + getRequesterId() + ",");    	
-        if (getGroups() != null) sb.append("Groups: " + getGroups() + ",");    	
-        if (getGroupNames() != null) sb.append("GroupNames: " + getGroupNames() + ",");    	
+        sb.append("{");
+        if (getReservationId() != null) sb.append("ReservationId: " + getReservationId() + ",");
+        if (getOwnerId() != null) sb.append("OwnerId: " + getOwnerId() + ",");
+        if (getRequesterId() != null) sb.append("RequesterId: " + getRequesterId() + ",");
+        if (getGroups() != null) sb.append("Groups: " + getGroups() + ",");
+        if (getGroupNames() != null) sb.append("GroupNames: " + getGroupNames() + ",");
         if (getInstances() != null) sb.append("Instances: " + getInstances() );
         sb.append("}");
         return sb.toString();

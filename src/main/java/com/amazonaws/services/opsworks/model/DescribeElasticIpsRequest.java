@@ -39,7 +39,7 @@ public class DescribeElasticIpsRequest extends AmazonWebServiceRequest  implemen
      * the specified Elastic IP addresses. Otherwise, it returns a
      * description of every Elastic IP address.
      */
-    private java.util.List<String> ips;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> ips;
 
     /**
      * The instance ID. If you include this parameter,
@@ -101,7 +101,8 @@ public class DescribeElasticIpsRequest extends AmazonWebServiceRequest  implemen
     public java.util.List<String> getIps() {
         
         if (ips == null) {
-            ips = new java.util.ArrayList<String>();
+              ips = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              ips.setAutoConstruct(true);
         }
         return ips;
     }
@@ -122,8 +123,7 @@ public class DescribeElasticIpsRequest extends AmazonWebServiceRequest  implemen
             this.ips = null;
             return;
         }
-
-        java.util.List<String> ipsCopy = new java.util.ArrayList<String>(ips.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> ipsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(ips.size());
         ipsCopy.addAll(ips);
         this.ips = ipsCopy;
     }
@@ -172,7 +172,7 @@ public class DescribeElasticIpsRequest extends AmazonWebServiceRequest  implemen
         if (ips == null) {
             this.ips = null;
         } else {
-            java.util.List<String> ipsCopy = new java.util.ArrayList<String>(ips.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> ipsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(ips.size());
             ipsCopy.addAll(ips);
             this.ips = ipsCopy;
         }
@@ -191,8 +191,8 @@ public class DescribeElasticIpsRequest extends AmazonWebServiceRequest  implemen
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ",");    	
+        sb.append("{");
+        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ",");
         if (getIps() != null) sb.append("Ips: " + getIps() );
         sb.append("}");
         return sb.toString();

@@ -50,6 +50,8 @@ public class RemoveUserFromGroupRequest extends AmazonWebServiceRequest  impleme
      */
     public RemoveUserFromGroupRequest() {}
     
+
+
     /**
      * Constructs a new RemoveUserFromGroupRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -59,8 +61,8 @@ public class RemoveUserFromGroupRequest extends AmazonWebServiceRequest  impleme
      * @param userName Name of the user to remove.
      */
     public RemoveUserFromGroupRequest(String groupName, String userName) {
-        this.groupName = groupName;
-        this.userName = userName;
+        setGroupName(groupName);
+        setUserName(userName);
     }
 
     
@@ -168,8 +170,8 @@ public class RemoveUserFromGroupRequest extends AmazonWebServiceRequest  impleme
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getGroupName() != null) sb.append("GroupName: " + getGroupName() + ",");    	
+        sb.append("{");
+        if (getGroupName() != null) sb.append("GroupName: " + getGroupName() + ",");
         if (getUserName() != null) sb.append("UserName: " + getUserName() );
         sb.append("}");
         return sb.toString();

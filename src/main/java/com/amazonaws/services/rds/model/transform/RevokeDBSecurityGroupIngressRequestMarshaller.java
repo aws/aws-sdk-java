@@ -38,7 +38,7 @@ public class RevokeDBSecurityGroupIngressRequestMarshaller implements Marshaller
 
         Request<RevokeDBSecurityGroupIngressRequest> request = new DefaultRequest<RevokeDBSecurityGroupIngressRequest>(revokeDBSecurityGroupIngressRequest, "AmazonRDS");
         request.addParameter("Action", "RevokeDBSecurityGroupIngress");
-        request.addParameter("Version", "2013-02-12");
+        request.addParameter("Version", "2013-05-15");
 
         if (revokeDBSecurityGroupIngressRequest.getDBSecurityGroupName() != null) {
             request.addParameter("DBSecurityGroupName", StringUtils.fromString(revokeDBSecurityGroupIngressRequest.getDBSecurityGroupName()));

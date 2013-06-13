@@ -118,8 +118,8 @@ public class GetStreamingDistributionResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getStreamingDistribution() != null) sb.append("StreamingDistribution: " + getStreamingDistribution() + ",");    	
+        sb.append("{");
+        if (getStreamingDistribution() != null) sb.append("StreamingDistribution: " + getStreamingDistribution() + ",");
         if (getETag() != null) sb.append("ETag: " + getETag() );
         sb.append("}");
         return sb.toString();

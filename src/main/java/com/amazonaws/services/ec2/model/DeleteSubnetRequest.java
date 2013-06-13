@@ -37,6 +37,8 @@ public class DeleteSubnetRequest extends AmazonWebServiceRequest  implements Ser
      */
     public DeleteSubnetRequest() {}
     
+
+
     /**
      * Constructs a new DeleteSubnetRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -45,7 +47,7 @@ public class DeleteSubnetRequest extends AmazonWebServiceRequest  implements Ser
      * @param subnetId The ID of the subnet you want to delete.
      */
     public DeleteSubnetRequest(String subnetId) {
-        this.subnetId = subnetId;
+        setSubnetId(subnetId);
     }
 
     
@@ -95,7 +97,7 @@ public class DeleteSubnetRequest extends AmazonWebServiceRequest  implements Ser
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getSubnetId() != null) sb.append("SubnetId: " + getSubnetId() );
         sb.append("}");
         return sb.toString();

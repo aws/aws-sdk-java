@@ -49,7 +49,7 @@ public class TrustedAdvisorCheckDescription  implements Serializable  {
      * title="TrustedAdvisorResourceDetail">TrustedAdvisorResourceDetail</a>
      * objects for a Trusted Advisor check.
      */
-    private java.util.List<String> metadata;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> metadata;
 
     /**
      * Unique identifier for a specific Trusted Advisor check description.
@@ -207,7 +207,8 @@ public class TrustedAdvisorCheckDescription  implements Serializable  {
     public java.util.List<String> getMetadata() {
         
         if (metadata == null) {
-            metadata = new java.util.ArrayList<String>();
+              metadata = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              metadata.setAutoConstruct(true);
         }
         return metadata;
     }
@@ -228,8 +229,7 @@ public class TrustedAdvisorCheckDescription  implements Serializable  {
             this.metadata = null;
             return;
         }
-
-        java.util.List<String> metadataCopy = new java.util.ArrayList<String>(metadata.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> metadataCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(metadata.size());
         metadataCopy.addAll(metadata);
         this.metadata = metadataCopy;
     }
@@ -278,7 +278,7 @@ public class TrustedAdvisorCheckDescription  implements Serializable  {
         if (metadata == null) {
             this.metadata = null;
         } else {
-            java.util.List<String> metadataCopy = new java.util.ArrayList<String>(metadata.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> metadataCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(metadata.size());
             metadataCopy.addAll(metadata);
             this.metadata = metadataCopy;
         }
@@ -297,11 +297,11 @@ public class TrustedAdvisorCheckDescription  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getId() != null) sb.append("Id: " + getId() + ",");    	
-        if (getName() != null) sb.append("Name: " + getName() + ",");    	
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");    	
-        if (getCategory() != null) sb.append("Category: " + getCategory() + ",");    	
+        sb.append("{");
+        if (getId() != null) sb.append("Id: " + getId() + ",");
+        if (getName() != null) sb.append("Name: " + getName() + ",");
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");
+        if (getCategory() != null) sb.append("Category: " + getCategory() + ",");
         if (getMetadata() != null) sb.append("Metadata: " + getMetadata() );
         sb.append("}");
         return sb.toString();

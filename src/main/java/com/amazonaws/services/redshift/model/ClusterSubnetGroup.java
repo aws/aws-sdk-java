@@ -47,7 +47,7 @@ public class ClusterSubnetGroup  implements Serializable  {
     /**
      * A list of the VPC <a>Subnet</a> elements.
      */
-    private java.util.List<Subnet> subnets;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Subnet> subnets;
 
     /**
      * The name of the cluster subnet group.
@@ -205,7 +205,8 @@ public class ClusterSubnetGroup  implements Serializable  {
     public java.util.List<Subnet> getSubnets() {
         
         if (subnets == null) {
-            subnets = new java.util.ArrayList<Subnet>();
+              subnets = new com.amazonaws.internal.ListWithAutoConstructFlag<Subnet>();
+              subnets.setAutoConstruct(true);
         }
         return subnets;
     }
@@ -220,8 +221,7 @@ public class ClusterSubnetGroup  implements Serializable  {
             this.subnets = null;
             return;
         }
-
-        java.util.List<Subnet> subnetsCopy = new java.util.ArrayList<Subnet>(subnets.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Subnet> subnetsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Subnet>(subnets.size());
         subnetsCopy.addAll(subnets);
         this.subnets = subnetsCopy;
     }
@@ -258,7 +258,7 @@ public class ClusterSubnetGroup  implements Serializable  {
         if (subnets == null) {
             this.subnets = null;
         } else {
-            java.util.List<Subnet> subnetsCopy = new java.util.ArrayList<Subnet>(subnets.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Subnet> subnetsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Subnet>(subnets.size());
             subnetsCopy.addAll(subnets);
             this.subnets = subnetsCopy;
         }
@@ -277,11 +277,11 @@ public class ClusterSubnetGroup  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getClusterSubnetGroupName() != null) sb.append("ClusterSubnetGroupName: " + getClusterSubnetGroupName() + ",");    	
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");    	
-        if (getVpcId() != null) sb.append("VpcId: " + getVpcId() + ",");    	
-        if (getSubnetGroupStatus() != null) sb.append("SubnetGroupStatus: " + getSubnetGroupStatus() + ",");    	
+        sb.append("{");
+        if (getClusterSubnetGroupName() != null) sb.append("ClusterSubnetGroupName: " + getClusterSubnetGroupName() + ",");
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");
+        if (getVpcId() != null) sb.append("VpcId: " + getVpcId() + ",");
+        if (getSubnetGroupStatus() != null) sb.append("SubnetGroupStatus: " + getSubnetGroupStatus() + ",");
         if (getSubnets() != null) sb.append("Subnets: " + getSubnets() );
         sb.append("}");
         return sb.toString();

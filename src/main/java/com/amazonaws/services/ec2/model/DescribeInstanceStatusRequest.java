@@ -75,12 +75,12 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest  impl
      * The list of instance IDs. If not specified, all instances are
      * described.
      */
-    private java.util.List<String> instanceIds;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> instanceIds;
 
     /**
      * The list of filters to limit returned results.
      */
-    private java.util.List<Filter> filters;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filters;
 
     /**
      * A string specifying the next paginated set of results to return.
@@ -104,7 +104,8 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest  impl
     public java.util.List<String> getInstanceIds() {
         
         if (instanceIds == null) {
-            instanceIds = new java.util.ArrayList<String>();
+              instanceIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              instanceIds.setAutoConstruct(true);
         }
         return instanceIds;
     }
@@ -121,8 +122,7 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest  impl
             this.instanceIds = null;
             return;
         }
-
-        java.util.List<String> instanceIdsCopy = new java.util.ArrayList<String>(instanceIds.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> instanceIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(instanceIds.size());
         instanceIdsCopy.addAll(instanceIds);
         this.instanceIds = instanceIdsCopy;
     }
@@ -163,7 +163,7 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest  impl
         if (instanceIds == null) {
             this.instanceIds = null;
         } else {
-            java.util.List<String> instanceIdsCopy = new java.util.ArrayList<String>(instanceIds.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> instanceIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(instanceIds.size());
             instanceIdsCopy.addAll(instanceIds);
             this.instanceIds = instanceIdsCopy;
         }
@@ -179,7 +179,8 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest  impl
     public java.util.List<Filter> getFilters() {
         
         if (filters == null) {
-            filters = new java.util.ArrayList<Filter>();
+              filters = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>();
+              filters.setAutoConstruct(true);
         }
         return filters;
     }
@@ -194,8 +195,7 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest  impl
             this.filters = null;
             return;
         }
-
-        java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>(filters.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filtersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>(filters.size());
         filtersCopy.addAll(filters);
         this.filters = filtersCopy;
     }
@@ -232,7 +232,7 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest  impl
         if (filters == null) {
             this.filters = null;
         } else {
-            java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>(filters.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filtersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>(filters.size());
             filtersCopy.addAll(filters);
             this.filters = filtersCopy;
         }
@@ -362,11 +362,11 @@ public class DescribeInstanceStatusRequest extends AmazonWebServiceRequest  impl
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getInstanceIds() != null) sb.append("InstanceIds: " + getInstanceIds() + ",");    	
-        if (getFilters() != null) sb.append("Filters: " + getFilters() + ",");    	
-        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() + ",");    	
-        if (getMaxResults() != null) sb.append("MaxResults: " + getMaxResults() + ",");    	
+        sb.append("{");
+        if (getInstanceIds() != null) sb.append("InstanceIds: " + getInstanceIds() + ",");
+        if (getFilters() != null) sb.append("Filters: " + getFilters() + ",");
+        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() + ",");
+        if (getMaxResults() != null) sb.append("MaxResults: " + getMaxResults() + ",");
         if (isIncludeAllInstances() != null) sb.append("IncludeAllInstances: " + isIncludeAllInstances() );
         sb.append("}");
         return sb.toString();

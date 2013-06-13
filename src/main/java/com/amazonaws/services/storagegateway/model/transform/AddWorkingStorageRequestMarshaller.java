@@ -89,8 +89,8 @@ public class AddWorkingStorageRequestMarshaller implements Marshaller<Request<Ad
                 jsonWriter.key("GatewayARN").value(addWorkingStorageRequest.getGatewayARN());
             }
 
-            java.util.List<String> diskIdsList = addWorkingStorageRequest.getDiskIds();
-            if (diskIdsList != null) {
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> diskIdsList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(addWorkingStorageRequest.getDiskIds());
+            if (diskIdsList != null && !(diskIdsList.isAutoConstruct() && diskIdsList.isEmpty())) {
 
                 jsonWriter.key("DiskIds");
                 jsonWriter.array();

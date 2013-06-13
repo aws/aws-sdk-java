@@ -37,6 +37,8 @@ public class CreateCloudFrontOriginAccessIdentityRequest extends AmazonWebServic
      */
     public CreateCloudFrontOriginAccessIdentityRequest() {}
     
+
+
     /**
      * Constructs a new CreateCloudFrontOriginAccessIdentityRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -46,7 +48,7 @@ public class CreateCloudFrontOriginAccessIdentityRequest extends AmazonWebServic
      * identity's configuration information.
      */
     public CreateCloudFrontOriginAccessIdentityRequest(CloudFrontOriginAccessIdentityConfig cloudFrontOriginAccessIdentityConfig) {
-        this.cloudFrontOriginAccessIdentityConfig = cloudFrontOriginAccessIdentityConfig;
+        setCloudFrontOriginAccessIdentityConfig(cloudFrontOriginAccessIdentityConfig);
     }
 
     
@@ -96,7 +98,7 @@ public class CreateCloudFrontOriginAccessIdentityRequest extends AmazonWebServic
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getCloudFrontOriginAccessIdentityConfig() != null) sb.append("CloudFrontOriginAccessIdentityConfig: " + getCloudFrontOriginAccessIdentityConfig() );
         sb.append("}");
         return sb.toString();

@@ -111,8 +111,8 @@ public class VpcAttachment  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getVpcId() != null) sb.append("VpcId: " + getVpcId() + ",");    	
+        sb.append("{");
+        if (getVpcId() != null) sb.append("VpcId: " + getVpcId() + ",");
         if (getState() != null) sb.append("State: " + getState() );
         sb.append("}");
         return sb.toString();

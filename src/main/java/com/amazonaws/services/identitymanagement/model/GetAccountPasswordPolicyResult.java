@@ -86,7 +86,7 @@ public class GetAccountPasswordPolicyResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getPasswordPolicy() != null) sb.append("PasswordPolicy: " + getPasswordPolicy() );
         sb.append("}");
         return sb.toString();

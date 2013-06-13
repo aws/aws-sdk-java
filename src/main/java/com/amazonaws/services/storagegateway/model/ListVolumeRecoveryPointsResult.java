@@ -42,7 +42,7 @@ public class ListVolumeRecoveryPointsResult  implements Serializable  {
      * describes a recovery point. If no recovery points are defined for the
      * volume, then <i>VolumeRecoveryPointInfos</i> is an empty array "[]"
      */
-    private java.util.List<VolumeRecoveryPointInfo> volumeRecoveryPointInfos;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<VolumeRecoveryPointInfo> volumeRecoveryPointInfos;
 
     /**
      * The Amazon Resource Name (ARN) of the activated gateway whose local
@@ -105,7 +105,8 @@ public class ListVolumeRecoveryPointsResult  implements Serializable  {
     public java.util.List<VolumeRecoveryPointInfo> getVolumeRecoveryPointInfos() {
         
         if (volumeRecoveryPointInfos == null) {
-            volumeRecoveryPointInfos = new java.util.ArrayList<VolumeRecoveryPointInfo>();
+              volumeRecoveryPointInfos = new com.amazonaws.internal.ListWithAutoConstructFlag<VolumeRecoveryPointInfo>();
+              volumeRecoveryPointInfos.setAutoConstruct(true);
         }
         return volumeRecoveryPointInfos;
     }
@@ -124,8 +125,7 @@ public class ListVolumeRecoveryPointsResult  implements Serializable  {
             this.volumeRecoveryPointInfos = null;
             return;
         }
-
-        java.util.List<VolumeRecoveryPointInfo> volumeRecoveryPointInfosCopy = new java.util.ArrayList<VolumeRecoveryPointInfo>(volumeRecoveryPointInfos.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<VolumeRecoveryPointInfo> volumeRecoveryPointInfosCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<VolumeRecoveryPointInfo>(volumeRecoveryPointInfos.size());
         volumeRecoveryPointInfosCopy.addAll(volumeRecoveryPointInfos);
         this.volumeRecoveryPointInfos = volumeRecoveryPointInfosCopy;
     }
@@ -170,7 +170,7 @@ public class ListVolumeRecoveryPointsResult  implements Serializable  {
         if (volumeRecoveryPointInfos == null) {
             this.volumeRecoveryPointInfos = null;
         } else {
-            java.util.List<VolumeRecoveryPointInfo> volumeRecoveryPointInfosCopy = new java.util.ArrayList<VolumeRecoveryPointInfo>(volumeRecoveryPointInfos.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<VolumeRecoveryPointInfo> volumeRecoveryPointInfosCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<VolumeRecoveryPointInfo>(volumeRecoveryPointInfos.size());
             volumeRecoveryPointInfosCopy.addAll(volumeRecoveryPointInfos);
             this.volumeRecoveryPointInfos = volumeRecoveryPointInfosCopy;
         }
@@ -189,8 +189,8 @@ public class ListVolumeRecoveryPointsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getGatewayARN() != null) sb.append("GatewayARN: " + getGatewayARN() + ",");    	
+        sb.append("{");
+        if (getGatewayARN() != null) sb.append("GatewayARN: " + getGatewayARN() + ",");
         if (getVolumeRecoveryPointInfos() != null) sb.append("VolumeRecoveryPointInfos: " + getVolumeRecoveryPointInfos() );
         sb.append("}");
         return sb.toString();

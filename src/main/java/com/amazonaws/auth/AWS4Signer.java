@@ -74,11 +74,14 @@ public class AWS4Signer extends AbstractAWSSigner {
         }
 
         addHostHeader(request);
-        String scope =  getScope(request);
+
+        Date date = getDateFromRequest(request);
+
+        String scope =  getScope(request, date);
 
         String contentSha256 = calculateContentHash(request);
 
-        request.addHeader("X-Amz-Date", getDateTimeStamp(getDateFromRequest(request)));
+        request.addHeader("X-Amz-Date", getDateTimeStamp(date));
 
         if (request.getHeaders().get("x-amz-content-sha256") != null && request.getHeaders().get("x-amz-content-sha256").equals("required")) {
             request.addHeader("x-amz-content-sha256", contentSha256);
@@ -86,7 +89,7 @@ public class AWS4Signer extends AbstractAWSSigner {
 
         String signingCredentials = sanitizedCredentials.getAWSAccessKeyId() + "/" + scope;
 
-        HeaderSigningResult headerSigningResult = computeSignature(request, ALGORITHM, contentSha256, sanitizedCredentials);
+        HeaderSigningResult headerSigningResult = computeSignature(request, date, ALGORITHM, contentSha256, sanitizedCredentials);
 
         String credentialsAuthorizationHeader =
                 "Credential=" + signingCredentials;
@@ -206,12 +209,11 @@ public class AWS4Signer extends AbstractAWSSigner {
     }
 
 
-    protected HeaderSigningResult computeSignature(Request<?> request, String algorithm, String contentSha256, AWSCredentials sanitizedCredentials) {
+    protected HeaderSigningResult computeSignature(Request<?> request, Date date, String algorithm, String contentSha256, AWSCredentials sanitizedCredentials) {
 
         String regionName = extractRegionName(request.getEndpoint());
         String serviceName = extractServiceName(request.getEndpoint());
 
-        Date date = getDateFromRequest(request);
         String dateTime = getDateTimeStamp(date);
         String dateStamp = getDateStamp(date);
         String scope =  dateStamp + "/" + regionName + "/" + serviceName + "/" + TERMINATOR;
@@ -261,11 +263,10 @@ public class AWS4Signer extends AbstractAWSSigner {
         request.addHeader("Host", hostHeader);
     }
 
-    protected String getScope(Request<?> request) {
+    protected String getScope(Request<?> request, Date date) {
         String regionName = extractRegionName(request.getEndpoint());
         String serviceName = extractServiceName(request.getEndpoint());
 
-        Date date = getDateFromRequest(request);
         String dateStamp = getDateStamp(date);
         String scope =  dateStamp + "/" + regionName + "/" + serviceName + "/" + TERMINATOR;
         return scope;

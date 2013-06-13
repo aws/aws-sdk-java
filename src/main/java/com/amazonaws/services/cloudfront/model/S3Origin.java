@@ -38,6 +38,8 @@ public class S3Origin  implements Serializable  {
      */
     public S3Origin() {}
     
+
+
     /**
      * Constructs a new S3Origin object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -46,11 +48,13 @@ public class S3Origin  implements Serializable  {
      * @param domainName The DNS name of the S3 origin.
      */
     public S3Origin(String domainName) {
-        this.domainName = domainName;
+        setDomainName(domainName);
     }
 
     
     
+
+
     /**
      * Constructs a new S3Origin object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -60,8 +64,8 @@ public class S3Origin  implements Serializable  {
      * @param originAccessIdentity Your S3 origin's origin access identity.
      */
     public S3Origin(String domainName, String originAccessIdentity) {
-        this.domainName = domainName;
-        this.originAccessIdentity = originAccessIdentity;
+        setDomainName(domainName);
+        setOriginAccessIdentity(originAccessIdentity);
     }
 
     
@@ -145,8 +149,8 @@ public class S3Origin  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getDomainName() != null) sb.append("DomainName: " + getDomainName() + ",");    	
+        sb.append("{");
+        if (getDomainName() != null) sb.append("DomainName: " + getDomainName() + ",");
         if (getOriginAccessIdentity() != null) sb.append("OriginAccessIdentity: " + getOriginAccessIdentity() );
         sb.append("}");
         return sb.toString();

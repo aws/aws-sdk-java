@@ -83,7 +83,7 @@ public class DescribeOfferingDetailRequest extends AmazonWebServiceRequest  impl
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getOfferingId() != null) sb.append("OfferingId: " + getOfferingId() );
         sb.append("}");
         return sb.toString();

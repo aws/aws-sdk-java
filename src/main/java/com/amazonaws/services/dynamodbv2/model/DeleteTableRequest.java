@@ -61,6 +61,8 @@ public class DeleteTableRequest extends AmazonWebServiceRequest  implements Seri
      */
     public DeleteTableRequest() {}
     
+
+
     /**
      * Constructs a new DeleteTableRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -69,7 +71,7 @@ public class DeleteTableRequest extends AmazonWebServiceRequest  implements Seri
      * @param tableName The name of the table to delete.
      */
     public DeleteTableRequest(String tableName) {
-        this.tableName = tableName;
+        setTableName(tableName);
     }
 
     
@@ -131,7 +133,7 @@ public class DeleteTableRequest extends AmazonWebServiceRequest  implements Seri
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getTableName() != null) sb.append("TableName: " + getTableName() );
         sb.append("}");
         return sb.toString();

@@ -51,7 +51,21 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest  implements
      * supplied must be at least 10% greater than the current value. Values
      * that are not at least 10% greater than the existing value are rounded
      * up so that they are 10% greater than the current value. <p><b>SQL
-     * Server</b> <p>Cannot be modified.
+     * Server</b> <p>Cannot be modified. <p> If you choose to migrate your DB
+     * instance from using standard storage to using Provisioned IOPS, or
+     * from using Provisioned IOPS to using standard storage, the process can
+     * take time. The duration of the migration depends on several factors
+     * such as database load, storage size, storage type (standard or
+     * Provisioned IOPS), amount of IOPS provisioned (if any), and the number
+     * of prior scale storage operations. Typical migration times are under
+     * 24 hours, but the process can take up to several days in some cases.
+     * During the migration, the DB instance will be available for use, but
+     * may experience performance degradation. While the migration takes
+     * place, nightly backups for the instance will be suspended. No other
+     * Amazon RDS operations can take place for the instance, including
+     * modifying the instance, rebooting the instance, deleting the instance,
+     * creating a read replica for the instance, and creating a DB snapshot
+     * of the instance.
      */
     private Integer allocatedStorage;
 
@@ -77,7 +91,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest  implements
      * must be a letter</li> <li>Cannot end with a hyphen or contain two
      * consecutive hyphens</li> </ul>
      */
-    private java.util.List<String> dBSecurityGroups;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> dBSecurityGroups;
 
     /**
      * A list of EC2 VPC Security Groups to authorize on this DB Instance.
@@ -86,7 +100,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest  implements
      * <li>First character must be a letter</li> <li>Cannot end with a hyphen
      * or contain two consecutive hyphens</li> </ul>
      */
-    private java.util.List<String> vpcSecurityGroupIds;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> vpcSecurityGroupIds;
 
     /**
      * Specifies whether or not the modifications in this request and any
@@ -224,7 +238,21 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest  implements
      * Value supplied must be at least 10% greater than the current value.
      * Values that are not at least 10% greater than the existing value are
      * rounded up so that they are 10% greater than the current value.
-     * <p>Type: Integer
+     * <p>Type: Integer <p> If you choose to migrate your DB instance from
+     * using standard storage to using Provisioned IOPS, or from using
+     * Provisioned IOPS to using standard storage, the process can take time.
+     * The duration of the migration depends on several factors such as
+     * database load, storage size, storage type (standard or Provisioned
+     * IOPS), amount of IOPS provisioned (if any), and the number of prior
+     * scale storage operations. Typical migration times are under 24 hours,
+     * but the process can take up to several days in some cases. During the
+     * migration, the DB instance will be available for use, but may
+     * experience performance degradation. While the migration takes place,
+     * nightly backups for the instance will be suspended. No other Amazon
+     * RDS operations can take place for the instance, including modifying
+     * the instance, rebooting the instance, deleting the instance, creating
+     * a read replica for the instance, and creating a DB snapshot of the
+     * instance.
      */
     private Integer iops;
 
@@ -236,7 +264,13 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest  implements
      * is set to <code>true</code> for this request. If the parameter change
      * results in an option group that enables OEM, this change can cause a
      * brief (sub-second) period during which new connections are rejected
-     * but existing connections are not interrupted.
+     * but existing connections are not interrupted. <p> <!-- Note that
+     * persistent options, such as the TDE_SQLServer option for Microsoft SQL
+     * Server, cannot be removed from an option group while DB instances are
+     * associated with the option group. --> Permanent options, such as the
+     * TDE option for Oracle Advanced Security TDE, cannot be removed from an
+     * option group, and that option group cannot be removed from a DB
+     * instance once it is associated with a DB instance
      */
     private String optionGroupName;
 
@@ -255,6 +289,8 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest  implements
      */
     public ModifyDBInstanceRequest() {}
     
+
+
     /**
      * Constructs a new ModifyDBInstanceRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -268,7 +304,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest  implements
      * hyphens</li> </ul>
      */
     public ModifyDBInstanceRequest(String dBInstanceIdentifier) {
-        this.dBInstanceIdentifier = dBInstanceIdentifier;
+        setDBInstanceIdentifier(dBInstanceIdentifier);
     }
 
     
@@ -351,7 +387,21 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest  implements
      * supplied must be at least 10% greater than the current value. Values
      * that are not at least 10% greater than the existing value are rounded
      * up so that they are 10% greater than the current value. <p><b>SQL
-     * Server</b> <p>Cannot be modified.
+     * Server</b> <p>Cannot be modified. <p> If you choose to migrate your DB
+     * instance from using standard storage to using Provisioned IOPS, or
+     * from using Provisioned IOPS to using standard storage, the process can
+     * take time. The duration of the migration depends on several factors
+     * such as database load, storage size, storage type (standard or
+     * Provisioned IOPS), amount of IOPS provisioned (if any), and the number
+     * of prior scale storage operations. Typical migration times are under
+     * 24 hours, but the process can take up to several days in some cases.
+     * During the migration, the DB instance will be available for use, but
+     * may experience performance degradation. While the migration takes
+     * place, nightly backups for the instance will be suspended. No other
+     * Amazon RDS operations can take place for the instance, including
+     * modifying the instance, rebooting the instance, deleting the instance,
+     * creating a read replica for the instance, and creating a DB snapshot
+     * of the instance.
      *
      * @return The new storage capacity of the RDS instance. Changing this parameter
      *         does not result in an outage and the change is applied during the next
@@ -366,7 +416,21 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest  implements
      *         supplied must be at least 10% greater than the current value. Values
      *         that are not at least 10% greater than the existing value are rounded
      *         up so that they are 10% greater than the current value. <p><b>SQL
-     *         Server</b> <p>Cannot be modified.
+     *         Server</b> <p>Cannot be modified. <p> If you choose to migrate your DB
+     *         instance from using standard storage to using Provisioned IOPS, or
+     *         from using Provisioned IOPS to using standard storage, the process can
+     *         take time. The duration of the migration depends on several factors
+     *         such as database load, storage size, storage type (standard or
+     *         Provisioned IOPS), amount of IOPS provisioned (if any), and the number
+     *         of prior scale storage operations. Typical migration times are under
+     *         24 hours, but the process can take up to several days in some cases.
+     *         During the migration, the DB instance will be available for use, but
+     *         may experience performance degradation. While the migration takes
+     *         place, nightly backups for the instance will be suspended. No other
+     *         Amazon RDS operations can take place for the instance, including
+     *         modifying the instance, rebooting the instance, deleting the instance,
+     *         creating a read replica for the instance, and creating a DB snapshot
+     *         of the instance.
      */
     public Integer getAllocatedStorage() {
         return allocatedStorage;
@@ -386,7 +450,21 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest  implements
      * supplied must be at least 10% greater than the current value. Values
      * that are not at least 10% greater than the existing value are rounded
      * up so that they are 10% greater than the current value. <p><b>SQL
-     * Server</b> <p>Cannot be modified.
+     * Server</b> <p>Cannot be modified. <p> If you choose to migrate your DB
+     * instance from using standard storage to using Provisioned IOPS, or
+     * from using Provisioned IOPS to using standard storage, the process can
+     * take time. The duration of the migration depends on several factors
+     * such as database load, storage size, storage type (standard or
+     * Provisioned IOPS), amount of IOPS provisioned (if any), and the number
+     * of prior scale storage operations. Typical migration times are under
+     * 24 hours, but the process can take up to several days in some cases.
+     * During the migration, the DB instance will be available for use, but
+     * may experience performance degradation. While the migration takes
+     * place, nightly backups for the instance will be suspended. No other
+     * Amazon RDS operations can take place for the instance, including
+     * modifying the instance, rebooting the instance, deleting the instance,
+     * creating a read replica for the instance, and creating a DB snapshot
+     * of the instance.
      *
      * @param allocatedStorage The new storage capacity of the RDS instance. Changing this parameter
      *         does not result in an outage and the change is applied during the next
@@ -401,7 +479,21 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest  implements
      *         supplied must be at least 10% greater than the current value. Values
      *         that are not at least 10% greater than the existing value are rounded
      *         up so that they are 10% greater than the current value. <p><b>SQL
-     *         Server</b> <p>Cannot be modified.
+     *         Server</b> <p>Cannot be modified. <p> If you choose to migrate your DB
+     *         instance from using standard storage to using Provisioned IOPS, or
+     *         from using Provisioned IOPS to using standard storage, the process can
+     *         take time. The duration of the migration depends on several factors
+     *         such as database load, storage size, storage type (standard or
+     *         Provisioned IOPS), amount of IOPS provisioned (if any), and the number
+     *         of prior scale storage operations. Typical migration times are under
+     *         24 hours, but the process can take up to several days in some cases.
+     *         During the migration, the DB instance will be available for use, but
+     *         may experience performance degradation. While the migration takes
+     *         place, nightly backups for the instance will be suspended. No other
+     *         Amazon RDS operations can take place for the instance, including
+     *         modifying the instance, rebooting the instance, deleting the instance,
+     *         creating a read replica for the instance, and creating a DB snapshot
+     *         of the instance.
      */
     public void setAllocatedStorage(Integer allocatedStorage) {
         this.allocatedStorage = allocatedStorage;
@@ -421,7 +513,21 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest  implements
      * supplied must be at least 10% greater than the current value. Values
      * that are not at least 10% greater than the existing value are rounded
      * up so that they are 10% greater than the current value. <p><b>SQL
-     * Server</b> <p>Cannot be modified.
+     * Server</b> <p>Cannot be modified. <p> If you choose to migrate your DB
+     * instance from using standard storage to using Provisioned IOPS, or
+     * from using Provisioned IOPS to using standard storage, the process can
+     * take time. The duration of the migration depends on several factors
+     * such as database load, storage size, storage type (standard or
+     * Provisioned IOPS), amount of IOPS provisioned (if any), and the number
+     * of prior scale storage operations. Typical migration times are under
+     * 24 hours, but the process can take up to several days in some cases.
+     * During the migration, the DB instance will be available for use, but
+     * may experience performance degradation. While the migration takes
+     * place, nightly backups for the instance will be suspended. No other
+     * Amazon RDS operations can take place for the instance, including
+     * modifying the instance, rebooting the instance, deleting the instance,
+     * creating a read replica for the instance, and creating a DB snapshot
+     * of the instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -438,7 +544,21 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest  implements
      *         supplied must be at least 10% greater than the current value. Values
      *         that are not at least 10% greater than the existing value are rounded
      *         up so that they are 10% greater than the current value. <p><b>SQL
-     *         Server</b> <p>Cannot be modified.
+     *         Server</b> <p>Cannot be modified. <p> If you choose to migrate your DB
+     *         instance from using standard storage to using Provisioned IOPS, or
+     *         from using Provisioned IOPS to using standard storage, the process can
+     *         take time. The duration of the migration depends on several factors
+     *         such as database load, storage size, storage type (standard or
+     *         Provisioned IOPS), amount of IOPS provisioned (if any), and the number
+     *         of prior scale storage operations. Typical migration times are under
+     *         24 hours, but the process can take up to several days in some cases.
+     *         During the migration, the DB instance will be available for use, but
+     *         may experience performance degradation. While the migration takes
+     *         place, nightly backups for the instance will be suspended. No other
+     *         Amazon RDS operations can take place for the instance, including
+     *         modifying the instance, rebooting the instance, deleting the instance,
+     *         creating a read replica for the instance, and creating a DB snapshot
+     *         of the instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -555,7 +675,8 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest  implements
     public java.util.List<String> getDBSecurityGroups() {
         
         if (dBSecurityGroups == null) {
-            dBSecurityGroups = new java.util.ArrayList<String>();
+              dBSecurityGroups = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              dBSecurityGroups.setAutoConstruct(true);
         }
         return dBSecurityGroups;
     }
@@ -580,8 +701,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest  implements
             this.dBSecurityGroups = null;
             return;
         }
-
-        java.util.List<String> dBSecurityGroupsCopy = new java.util.ArrayList<String>(dBSecurityGroups.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> dBSecurityGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(dBSecurityGroups.size());
         dBSecurityGroupsCopy.addAll(dBSecurityGroups);
         this.dBSecurityGroups = dBSecurityGroupsCopy;
     }
@@ -638,7 +758,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest  implements
         if (dBSecurityGroups == null) {
             this.dBSecurityGroups = null;
         } else {
-            java.util.List<String> dBSecurityGroupsCopy = new java.util.ArrayList<String>(dBSecurityGroups.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> dBSecurityGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(dBSecurityGroups.size());
             dBSecurityGroupsCopy.addAll(dBSecurityGroups);
             this.dBSecurityGroups = dBSecurityGroupsCopy;
         }
@@ -662,7 +782,8 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest  implements
     public java.util.List<String> getVpcSecurityGroupIds() {
         
         if (vpcSecurityGroupIds == null) {
-            vpcSecurityGroupIds = new java.util.ArrayList<String>();
+              vpcSecurityGroupIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              vpcSecurityGroupIds.setAutoConstruct(true);
         }
         return vpcSecurityGroupIds;
     }
@@ -685,8 +806,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest  implements
             this.vpcSecurityGroupIds = null;
             return;
         }
-
-        java.util.List<String> vpcSecurityGroupIdsCopy = new java.util.ArrayList<String>(vpcSecurityGroupIds.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> vpcSecurityGroupIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(vpcSecurityGroupIds.size());
         vpcSecurityGroupIdsCopy.addAll(vpcSecurityGroupIds);
         this.vpcSecurityGroupIds = vpcSecurityGroupIdsCopy;
     }
@@ -739,7 +859,7 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest  implements
         if (vpcSecurityGroupIds == null) {
             this.vpcSecurityGroupIds = null;
         } else {
-            java.util.List<String> vpcSecurityGroupIdsCopy = new java.util.ArrayList<String>(vpcSecurityGroupIds.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> vpcSecurityGroupIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(vpcSecurityGroupIds.size());
             vpcSecurityGroupIdsCopy.addAll(vpcSecurityGroupIds);
             this.vpcSecurityGroupIds = vpcSecurityGroupIdsCopy;
         }
@@ -1640,7 +1760,21 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest  implements
      * Value supplied must be at least 10% greater than the current value.
      * Values that are not at least 10% greater than the existing value are
      * rounded up so that they are 10% greater than the current value.
-     * <p>Type: Integer
+     * <p>Type: Integer <p> If you choose to migrate your DB instance from
+     * using standard storage to using Provisioned IOPS, or from using
+     * Provisioned IOPS to using standard storage, the process can take time.
+     * The duration of the migration depends on several factors such as
+     * database load, storage size, storage type (standard or Provisioned
+     * IOPS), amount of IOPS provisioned (if any), and the number of prior
+     * scale storage operations. Typical migration times are under 24 hours,
+     * but the process can take up to several days in some cases. During the
+     * migration, the DB instance will be available for use, but may
+     * experience performance degradation. While the migration takes place,
+     * nightly backups for the instance will be suspended. No other Amazon
+     * RDS operations can take place for the instance, including modifying
+     * the instance, rebooting the instance, deleting the instance, creating
+     * a read replica for the instance, and creating a DB snapshot of the
+     * instance.
      *
      * @return The new Provisioned IOPS (I/O operations per second) value for the RDS
      *         instance. Changing this parameter does not result in an outage and the
@@ -1650,7 +1784,21 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest  implements
      *         Value supplied must be at least 10% greater than the current value.
      *         Values that are not at least 10% greater than the existing value are
      *         rounded up so that they are 10% greater than the current value.
-     *         <p>Type: Integer
+     *         <p>Type: Integer <p> If you choose to migrate your DB instance from
+     *         using standard storage to using Provisioned IOPS, or from using
+     *         Provisioned IOPS to using standard storage, the process can take time.
+     *         The duration of the migration depends on several factors such as
+     *         database load, storage size, storage type (standard or Provisioned
+     *         IOPS), amount of IOPS provisioned (if any), and the number of prior
+     *         scale storage operations. Typical migration times are under 24 hours,
+     *         but the process can take up to several days in some cases. During the
+     *         migration, the DB instance will be available for use, but may
+     *         experience performance degradation. While the migration takes place,
+     *         nightly backups for the instance will be suspended. No other Amazon
+     *         RDS operations can take place for the instance, including modifying
+     *         the instance, rebooting the instance, deleting the instance, creating
+     *         a read replica for the instance, and creating a DB snapshot of the
+     *         instance.
      */
     public Integer getIops() {
         return iops;
@@ -1665,7 +1813,21 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest  implements
      * Value supplied must be at least 10% greater than the current value.
      * Values that are not at least 10% greater than the existing value are
      * rounded up so that they are 10% greater than the current value.
-     * <p>Type: Integer
+     * <p>Type: Integer <p> If you choose to migrate your DB instance from
+     * using standard storage to using Provisioned IOPS, or from using
+     * Provisioned IOPS to using standard storage, the process can take time.
+     * The duration of the migration depends on several factors such as
+     * database load, storage size, storage type (standard or Provisioned
+     * IOPS), amount of IOPS provisioned (if any), and the number of prior
+     * scale storage operations. Typical migration times are under 24 hours,
+     * but the process can take up to several days in some cases. During the
+     * migration, the DB instance will be available for use, but may
+     * experience performance degradation. While the migration takes place,
+     * nightly backups for the instance will be suspended. No other Amazon
+     * RDS operations can take place for the instance, including modifying
+     * the instance, rebooting the instance, deleting the instance, creating
+     * a read replica for the instance, and creating a DB snapshot of the
+     * instance.
      *
      * @param iops The new Provisioned IOPS (I/O operations per second) value for the RDS
      *         instance. Changing this parameter does not result in an outage and the
@@ -1675,7 +1837,21 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest  implements
      *         Value supplied must be at least 10% greater than the current value.
      *         Values that are not at least 10% greater than the existing value are
      *         rounded up so that they are 10% greater than the current value.
-     *         <p>Type: Integer
+     *         <p>Type: Integer <p> If you choose to migrate your DB instance from
+     *         using standard storage to using Provisioned IOPS, or from using
+     *         Provisioned IOPS to using standard storage, the process can take time.
+     *         The duration of the migration depends on several factors such as
+     *         database load, storage size, storage type (standard or Provisioned
+     *         IOPS), amount of IOPS provisioned (if any), and the number of prior
+     *         scale storage operations. Typical migration times are under 24 hours,
+     *         but the process can take up to several days in some cases. During the
+     *         migration, the DB instance will be available for use, but may
+     *         experience performance degradation. While the migration takes place,
+     *         nightly backups for the instance will be suspended. No other Amazon
+     *         RDS operations can take place for the instance, including modifying
+     *         the instance, rebooting the instance, deleting the instance, creating
+     *         a read replica for the instance, and creating a DB snapshot of the
+     *         instance.
      */
     public void setIops(Integer iops) {
         this.iops = iops;
@@ -1690,7 +1866,21 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest  implements
      * Value supplied must be at least 10% greater than the current value.
      * Values that are not at least 10% greater than the existing value are
      * rounded up so that they are 10% greater than the current value.
-     * <p>Type: Integer
+     * <p>Type: Integer <p> If you choose to migrate your DB instance from
+     * using standard storage to using Provisioned IOPS, or from using
+     * Provisioned IOPS to using standard storage, the process can take time.
+     * The duration of the migration depends on several factors such as
+     * database load, storage size, storage type (standard or Provisioned
+     * IOPS), amount of IOPS provisioned (if any), and the number of prior
+     * scale storage operations. Typical migration times are under 24 hours,
+     * but the process can take up to several days in some cases. During the
+     * migration, the DB instance will be available for use, but may
+     * experience performance degradation. While the migration takes place,
+     * nightly backups for the instance will be suspended. No other Amazon
+     * RDS operations can take place for the instance, including modifying
+     * the instance, rebooting the instance, deleting the instance, creating
+     * a read replica for the instance, and creating a DB snapshot of the
+     * instance.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -1702,7 +1892,21 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest  implements
      *         Value supplied must be at least 10% greater than the current value.
      *         Values that are not at least 10% greater than the existing value are
      *         rounded up so that they are 10% greater than the current value.
-     *         <p>Type: Integer
+     *         <p>Type: Integer <p> If you choose to migrate your DB instance from
+     *         using standard storage to using Provisioned IOPS, or from using
+     *         Provisioned IOPS to using standard storage, the process can take time.
+     *         The duration of the migration depends on several factors such as
+     *         database load, storage size, storage type (standard or Provisioned
+     *         IOPS), amount of IOPS provisioned (if any), and the number of prior
+     *         scale storage operations. Typical migration times are under 24 hours,
+     *         but the process can take up to several days in some cases. During the
+     *         migration, the DB instance will be available for use, but may
+     *         experience performance degradation. While the migration takes place,
+     *         nightly backups for the instance will be suspended. No other Amazon
+     *         RDS operations can take place for the instance, including modifying
+     *         the instance, rebooting the instance, deleting the instance, creating
+     *         a read replica for the instance, and creating a DB snapshot of the
+     *         instance.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -1721,7 +1925,13 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest  implements
      * is set to <code>true</code> for this request. If the parameter change
      * results in an option group that enables OEM, this change can cause a
      * brief (sub-second) period during which new connections are rejected
-     * but existing connections are not interrupted.
+     * but existing connections are not interrupted. <p> <!-- Note that
+     * persistent options, such as the TDE_SQLServer option for Microsoft SQL
+     * Server, cannot be removed from an option group while DB instances are
+     * associated with the option group. --> Permanent options, such as the
+     * TDE option for Oracle Advanced Security TDE, cannot be removed from an
+     * option group, and that option group cannot be removed from a DB
+     * instance once it is associated with a DB instance
      *
      * @return Indicates that the DB Instance should be associated with the specified
      *         option group. Changing this parameter does not result in an outage
@@ -1730,7 +1940,13 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest  implements
      *         is set to <code>true</code> for this request. If the parameter change
      *         results in an option group that enables OEM, this change can cause a
      *         brief (sub-second) period during which new connections are rejected
-     *         but existing connections are not interrupted.
+     *         but existing connections are not interrupted. <p> <!-- Note that
+     *         persistent options, such as the TDE_SQLServer option for Microsoft SQL
+     *         Server, cannot be removed from an option group while DB instances are
+     *         associated with the option group. --> Permanent options, such as the
+     *         TDE option for Oracle Advanced Security TDE, cannot be removed from an
+     *         option group, and that option group cannot be removed from a DB
+     *         instance once it is associated with a DB instance
      */
     public String getOptionGroupName() {
         return optionGroupName;
@@ -1744,7 +1960,13 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest  implements
      * is set to <code>true</code> for this request. If the parameter change
      * results in an option group that enables OEM, this change can cause a
      * brief (sub-second) period during which new connections are rejected
-     * but existing connections are not interrupted.
+     * but existing connections are not interrupted. <p> <!-- Note that
+     * persistent options, such as the TDE_SQLServer option for Microsoft SQL
+     * Server, cannot be removed from an option group while DB instances are
+     * associated with the option group. --> Permanent options, such as the
+     * TDE option for Oracle Advanced Security TDE, cannot be removed from an
+     * option group, and that option group cannot be removed from a DB
+     * instance once it is associated with a DB instance
      *
      * @param optionGroupName Indicates that the DB Instance should be associated with the specified
      *         option group. Changing this parameter does not result in an outage
@@ -1753,7 +1975,13 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest  implements
      *         is set to <code>true</code> for this request. If the parameter change
      *         results in an option group that enables OEM, this change can cause a
      *         brief (sub-second) period during which new connections are rejected
-     *         but existing connections are not interrupted.
+     *         but existing connections are not interrupted. <p> <!-- Note that
+     *         persistent options, such as the TDE_SQLServer option for Microsoft SQL
+     *         Server, cannot be removed from an option group while DB instances are
+     *         associated with the option group. --> Permanent options, such as the
+     *         TDE option for Oracle Advanced Security TDE, cannot be removed from an
+     *         option group, and that option group cannot be removed from a DB
+     *         instance once it is associated with a DB instance
      */
     public void setOptionGroupName(String optionGroupName) {
         this.optionGroupName = optionGroupName;
@@ -1767,7 +1995,13 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest  implements
      * is set to <code>true</code> for this request. If the parameter change
      * results in an option group that enables OEM, this change can cause a
      * brief (sub-second) period during which new connections are rejected
-     * but existing connections are not interrupted.
+     * but existing connections are not interrupted. <p> <!-- Note that
+     * persistent options, such as the TDE_SQLServer option for Microsoft SQL
+     * Server, cannot be removed from an option group while DB instances are
+     * associated with the option group. --> Permanent options, such as the
+     * TDE option for Oracle Advanced Security TDE, cannot be removed from an
+     * option group, and that option group cannot be removed from a DB
+     * instance once it is associated with a DB instance
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -1778,7 +2012,13 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest  implements
      *         is set to <code>true</code> for this request. If the parameter change
      *         results in an option group that enables OEM, this change can cause a
      *         brief (sub-second) period during which new connections are rejected
-     *         but existing connections are not interrupted.
+     *         but existing connections are not interrupted. <p> <!-- Note that
+     *         persistent options, such as the TDE_SQLServer option for Microsoft SQL
+     *         Server, cannot be removed from an option group while DB instances are
+     *         associated with the option group. --> Permanent options, such as the
+     *         TDE option for Oracle Advanced Security TDE, cannot be removed from an
+     *         option group, and that option group cannot be removed from a DB
+     *         instance once it is associated with a DB instance
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -1858,24 +2098,24 @@ public class ModifyDBInstanceRequest extends AmazonWebServiceRequest  implements
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getDBInstanceIdentifier() != null) sb.append("DBInstanceIdentifier: " + getDBInstanceIdentifier() + ",");    	
-        if (getAllocatedStorage() != null) sb.append("AllocatedStorage: " + getAllocatedStorage() + ",");    	
-        if (getDBInstanceClass() != null) sb.append("DBInstanceClass: " + getDBInstanceClass() + ",");    	
-        if (getDBSecurityGroups() != null) sb.append("DBSecurityGroups: " + getDBSecurityGroups() + ",");    	
-        if (getVpcSecurityGroupIds() != null) sb.append("VpcSecurityGroupIds: " + getVpcSecurityGroupIds() + ",");    	
-        if (isApplyImmediately() != null) sb.append("ApplyImmediately: " + isApplyImmediately() + ",");    	
-        if (getMasterUserPassword() != null) sb.append("MasterUserPassword: " + getMasterUserPassword() + ",");    	
-        if (getDBParameterGroupName() != null) sb.append("DBParameterGroupName: " + getDBParameterGroupName() + ",");    	
-        if (getBackupRetentionPeriod() != null) sb.append("BackupRetentionPeriod: " + getBackupRetentionPeriod() + ",");    	
-        if (getPreferredBackupWindow() != null) sb.append("PreferredBackupWindow: " + getPreferredBackupWindow() + ",");    	
-        if (getPreferredMaintenanceWindow() != null) sb.append("PreferredMaintenanceWindow: " + getPreferredMaintenanceWindow() + ",");    	
-        if (isMultiAZ() != null) sb.append("MultiAZ: " + isMultiAZ() + ",");    	
-        if (getEngineVersion() != null) sb.append("EngineVersion: " + getEngineVersion() + ",");    	
-        if (isAllowMajorVersionUpgrade() != null) sb.append("AllowMajorVersionUpgrade: " + isAllowMajorVersionUpgrade() + ",");    	
-        if (isAutoMinorVersionUpgrade() != null) sb.append("AutoMinorVersionUpgrade: " + isAutoMinorVersionUpgrade() + ",");    	
-        if (getIops() != null) sb.append("Iops: " + getIops() + ",");    	
-        if (getOptionGroupName() != null) sb.append("OptionGroupName: " + getOptionGroupName() + ",");    	
+        sb.append("{");
+        if (getDBInstanceIdentifier() != null) sb.append("DBInstanceIdentifier: " + getDBInstanceIdentifier() + ",");
+        if (getAllocatedStorage() != null) sb.append("AllocatedStorage: " + getAllocatedStorage() + ",");
+        if (getDBInstanceClass() != null) sb.append("DBInstanceClass: " + getDBInstanceClass() + ",");
+        if (getDBSecurityGroups() != null) sb.append("DBSecurityGroups: " + getDBSecurityGroups() + ",");
+        if (getVpcSecurityGroupIds() != null) sb.append("VpcSecurityGroupIds: " + getVpcSecurityGroupIds() + ",");
+        if (isApplyImmediately() != null) sb.append("ApplyImmediately: " + isApplyImmediately() + ",");
+        if (getMasterUserPassword() != null) sb.append("MasterUserPassword: " + getMasterUserPassword() + ",");
+        if (getDBParameterGroupName() != null) sb.append("DBParameterGroupName: " + getDBParameterGroupName() + ",");
+        if (getBackupRetentionPeriod() != null) sb.append("BackupRetentionPeriod: " + getBackupRetentionPeriod() + ",");
+        if (getPreferredBackupWindow() != null) sb.append("PreferredBackupWindow: " + getPreferredBackupWindow() + ",");
+        if (getPreferredMaintenanceWindow() != null) sb.append("PreferredMaintenanceWindow: " + getPreferredMaintenanceWindow() + ",");
+        if (isMultiAZ() != null) sb.append("MultiAZ: " + isMultiAZ() + ",");
+        if (getEngineVersion() != null) sb.append("EngineVersion: " + getEngineVersion() + ",");
+        if (isAllowMajorVersionUpgrade() != null) sb.append("AllowMajorVersionUpgrade: " + isAllowMajorVersionUpgrade() + ",");
+        if (isAutoMinorVersionUpgrade() != null) sb.append("AutoMinorVersionUpgrade: " + isAutoMinorVersionUpgrade() + ",");
+        if (getIops() != null) sb.append("Iops: " + getIops() + ",");
+        if (getOptionGroupName() != null) sb.append("OptionGroupName: " + getOptionGroupName() + ",");
         if (getNewDBInstanceIdentifier() != null) sb.append("NewDBInstanceIdentifier: " + getNewDBInstanceIdentifier() );
         sb.append("}");
         return sb.toString();

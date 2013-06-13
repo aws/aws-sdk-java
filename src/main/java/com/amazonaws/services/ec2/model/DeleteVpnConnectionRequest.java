@@ -44,6 +44,8 @@ public class DeleteVpnConnectionRequest extends AmazonWebServiceRequest  impleme
      */
     public DeleteVpnConnectionRequest() {}
     
+
+
     /**
      * Constructs a new DeleteVpnConnectionRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -52,7 +54,7 @@ public class DeleteVpnConnectionRequest extends AmazonWebServiceRequest  impleme
      * @param vpnConnectionId The ID of the VPN connection to delete
      */
     public DeleteVpnConnectionRequest(String vpnConnectionId) {
-        this.vpnConnectionId = vpnConnectionId;
+        setVpnConnectionId(vpnConnectionId);
     }
 
     
@@ -102,7 +104,7 @@ public class DeleteVpnConnectionRequest extends AmazonWebServiceRequest  impleme
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getVpnConnectionId() != null) sb.append("VpnConnectionId: " + getVpnConnectionId() );
         sb.append("}");
         return sb.toString();

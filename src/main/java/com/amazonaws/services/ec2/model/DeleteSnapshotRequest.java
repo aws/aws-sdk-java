@@ -38,6 +38,8 @@ public class DeleteSnapshotRequest extends AmazonWebServiceRequest  implements S
      */
     public DeleteSnapshotRequest() {}
     
+
+
     /**
      * Constructs a new DeleteSnapshotRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -46,7 +48,7 @@ public class DeleteSnapshotRequest extends AmazonWebServiceRequest  implements S
      * @param snapshotId The ID of the snapshot to delete.
      */
     public DeleteSnapshotRequest(String snapshotId) {
-        this.snapshotId = snapshotId;
+        setSnapshotId(snapshotId);
     }
 
     
@@ -96,7 +98,7 @@ public class DeleteSnapshotRequest extends AmazonWebServiceRequest  implements S
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getSnapshotId() != null) sb.append("SnapshotId: " + getSnapshotId() );
         sb.append("}");
         return sb.toString();

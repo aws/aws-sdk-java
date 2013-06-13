@@ -164,9 +164,9 @@ public class CreateDistributionResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getDistribution() != null) sb.append("Distribution: " + getDistribution() + ",");    	
-        if (getLocation() != null) sb.append("Location: " + getLocation() + ",");    	
+        sb.append("{");
+        if (getDistribution() != null) sb.append("Distribution: " + getDistribution() + ",");
+        if (getLocation() != null) sb.append("Location: " + getLocation() + ",");
         if (getETag() != null) sb.append("ETag: " + getETag() );
         sb.append("}");
         return sb.toString();

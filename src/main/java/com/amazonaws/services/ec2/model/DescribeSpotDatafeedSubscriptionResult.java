@@ -70,7 +70,7 @@ public class DescribeSpotDatafeedSubscriptionResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getSpotDatafeedSubscription() != null) sb.append("SpotDatafeedSubscription: " + getSpotDatafeedSubscription() );
         sb.append("}");
         return sb.toString();

@@ -70,6 +70,8 @@ public class UpdateSigningCertificateRequest extends AmazonWebServiceRequest  im
      */
     public UpdateSigningCertificateRequest() {}
     
+
+
     /**
      * Constructs a new UpdateSigningCertificateRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -82,8 +84,8 @@ public class UpdateSigningCertificateRequest extends AmazonWebServiceRequest  im
      * AWS, while <code>Inactive</code> means the certificate cannot be used.
      */
     public UpdateSigningCertificateRequest(String certificateId, String status) {
-        this.certificateId = certificateId;
-        this.status = status;
+        setCertificateId(certificateId);
+        setStatus(status);
     }
 
     
@@ -310,9 +312,9 @@ public class UpdateSigningCertificateRequest extends AmazonWebServiceRequest  im
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getUserName() != null) sb.append("UserName: " + getUserName() + ",");    	
-        if (getCertificateId() != null) sb.append("CertificateId: " + getCertificateId() + ",");    	
+        sb.append("{");
+        if (getUserName() != null) sb.append("UserName: " + getUserName() + ",");
+        if (getCertificateId() != null) sb.append("CertificateId: " + getCertificateId() + ",");
         if (getStatus() != null) sb.append("Status: " + getStatus() );
         sb.append("}");
         return sb.toString();

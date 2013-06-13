@@ -38,7 +38,7 @@ public class CreateDBInstanceRequestMarshaller implements Marshaller<Request<Cre
 
         Request<CreateDBInstanceRequest> request = new DefaultRequest<CreateDBInstanceRequest>(createDBInstanceRequest, "AmazonRDS");
         request.addParameter("Action", "CreateDBInstance");
-        request.addParameter("Version", "2013-02-12");
+        request.addParameter("Version", "2013-05-15");
 
         if (createDBInstanceRequest.getDBName() != null) {
             request.addParameter("DBName", StringUtils.fromString(createDBInstanceRequest.getDBName()));

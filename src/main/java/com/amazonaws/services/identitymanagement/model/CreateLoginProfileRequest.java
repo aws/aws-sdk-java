@@ -52,6 +52,8 @@ public class CreateLoginProfileRequest extends AmazonWebServiceRequest  implemen
      */
     public CreateLoginProfileRequest() {}
     
+
+
     /**
      * Constructs a new CreateLoginProfileRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -61,8 +63,8 @@ public class CreateLoginProfileRequest extends AmazonWebServiceRequest  implemen
      * @param password The new password for the user name.
      */
     public CreateLoginProfileRequest(String userName, String password) {
-        this.userName = userName;
-        this.password = password;
+        setUserName(userName);
+        setPassword(password);
     }
 
     
@@ -170,8 +172,8 @@ public class CreateLoginProfileRequest extends AmazonWebServiceRequest  implemen
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getUserName() != null) sb.append("UserName: " + getUserName() + ",");    	
+        sb.append("{");
+        if (getUserName() != null) sb.append("UserName: " + getUserName() + ",");
         if (getPassword() != null) sb.append("Password: " + getPassword() );
         sb.append("}");
         return sb.toString();

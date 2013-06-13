@@ -42,7 +42,7 @@ public class CreateDBSubnetGroupRequest extends AmazonWebServiceRequest  impleme
     /**
      * The EC2 Subnet IDs for the DB Subnet Group.
      */
-    private java.util.List<String> subnetIds;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> subnetIds;
 
     /**
      * The name for the DB Subnet Group. This value is stored as a lowercase
@@ -138,7 +138,8 @@ public class CreateDBSubnetGroupRequest extends AmazonWebServiceRequest  impleme
     public java.util.List<String> getSubnetIds() {
         
         if (subnetIds == null) {
-            subnetIds = new java.util.ArrayList<String>();
+              subnetIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              subnetIds.setAutoConstruct(true);
         }
         return subnetIds;
     }
@@ -153,8 +154,7 @@ public class CreateDBSubnetGroupRequest extends AmazonWebServiceRequest  impleme
             this.subnetIds = null;
             return;
         }
-
-        java.util.List<String> subnetIdsCopy = new java.util.ArrayList<String>(subnetIds.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> subnetIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(subnetIds.size());
         subnetIdsCopy.addAll(subnetIds);
         this.subnetIds = subnetIdsCopy;
     }
@@ -191,7 +191,7 @@ public class CreateDBSubnetGroupRequest extends AmazonWebServiceRequest  impleme
         if (subnetIds == null) {
             this.subnetIds = null;
         } else {
-            java.util.List<String> subnetIdsCopy = new java.util.ArrayList<String>(subnetIds.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> subnetIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(subnetIds.size());
             subnetIdsCopy.addAll(subnetIds);
             this.subnetIds = subnetIdsCopy;
         }
@@ -210,9 +210,9 @@ public class CreateDBSubnetGroupRequest extends AmazonWebServiceRequest  impleme
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getDBSubnetGroupName() != null) sb.append("DBSubnetGroupName: " + getDBSubnetGroupName() + ",");    	
-        if (getDBSubnetGroupDescription() != null) sb.append("DBSubnetGroupDescription: " + getDBSubnetGroupDescription() + ",");    	
+        sb.append("{");
+        if (getDBSubnetGroupName() != null) sb.append("DBSubnetGroupName: " + getDBSubnetGroupName() + ",");
+        if (getDBSubnetGroupDescription() != null) sb.append("DBSubnetGroupDescription: " + getDBSubnetGroupDescription() + ",");
         if (getSubnetIds() != null) sb.append("SubnetIds: " + getSubnetIds() );
         sb.append("}");
         return sb.toString();

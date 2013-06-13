@@ -156,8 +156,8 @@ public class RemoveRoleFromInstanceProfileRequest extends AmazonWebServiceReques
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getInstanceProfileName() != null) sb.append("InstanceProfileName: " + getInstanceProfileName() + ",");    	
+        sb.append("{");
+        if (getInstanceProfileName() != null) sb.append("InstanceProfileName: " + getInstanceProfileName() + ",");
         if (getRoleName() != null) sb.append("RoleName: " + getRoleName() );
         sb.append("}");
         return sb.toString();

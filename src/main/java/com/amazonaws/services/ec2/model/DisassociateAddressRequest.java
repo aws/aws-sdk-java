@@ -44,6 +44,8 @@ public class DisassociateAddressRequest extends AmazonWebServiceRequest  impleme
      */
     public DisassociateAddressRequest() {}
     
+
+
     /**
      * Constructs a new DisassociateAddressRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -53,7 +55,7 @@ public class DisassociateAddressRequest extends AmazonWebServiceRequest  impleme
      * from the instance.
      */
     public DisassociateAddressRequest(String publicIp) {
-        this.publicIp = publicIp;
+        setPublicIp(publicIp);
     }
 
     
@@ -143,8 +145,8 @@ public class DisassociateAddressRequest extends AmazonWebServiceRequest  impleme
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getPublicIp() != null) sb.append("PublicIp: " + getPublicIp() + ",");    	
+        sb.append("{");
+        if (getPublicIp() != null) sb.append("PublicIp: " + getPublicIp() + ",");
         if (getAssociationId() != null) sb.append("AssociationId: " + getAssociationId() );
         sb.append("}");
         return sb.toString();

@@ -79,7 +79,7 @@ public class UpdateStopwordOptionsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getStopwords() != null) sb.append("Stopwords: " + getStopwords() );
         sb.append("}");
         return sb.toString();

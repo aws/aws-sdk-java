@@ -73,7 +73,7 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest  impleme
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 10<br/>
      */
-    private java.util.List<Dimension> dimensions;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Dimension> dimensions;
 
     /**
      * The time stamp to use for determining the first datapoint to return.
@@ -109,7 +109,7 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest  impleme
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - 5<br/>
      */
-    private java.util.List<String> statistics;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> statistics;
 
     /**
      * The unit for the metric.
@@ -219,7 +219,8 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest  impleme
     public java.util.List<Dimension> getDimensions() {
         
         if (dimensions == null) {
-            dimensions = new java.util.ArrayList<Dimension>();
+              dimensions = new com.amazonaws.internal.ListWithAutoConstructFlag<Dimension>();
+              dimensions.setAutoConstruct(true);
         }
         return dimensions;
     }
@@ -237,8 +238,7 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest  impleme
             this.dimensions = null;
             return;
         }
-
-        java.util.List<Dimension> dimensionsCopy = new java.util.ArrayList<Dimension>(dimensions.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Dimension> dimensionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Dimension>(dimensions.size());
         dimensionsCopy.addAll(dimensions);
         this.dimensions = dimensionsCopy;
     }
@@ -281,7 +281,7 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest  impleme
         if (dimensions == null) {
             this.dimensions = null;
         } else {
-            java.util.List<Dimension> dimensionsCopy = new java.util.ArrayList<Dimension>(dimensions.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Dimension> dimensionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Dimension>(dimensions.size());
             dimensionsCopy.addAll(dimensions);
             this.dimensions = dimensionsCopy;
         }
@@ -471,7 +471,8 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest  impleme
     public java.util.List<String> getStatistics() {
         
         if (statistics == null) {
-            statistics = new java.util.ArrayList<String>();
+              statistics = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              statistics.setAutoConstruct(true);
         }
         return statistics;
     }
@@ -489,8 +490,7 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest  impleme
             this.statistics = null;
             return;
         }
-
-        java.util.List<String> statisticsCopy = new java.util.ArrayList<String>(statistics.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> statisticsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(statistics.size());
         statisticsCopy.addAll(statistics);
         this.statistics = statisticsCopy;
     }
@@ -533,7 +533,7 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest  impleme
         if (statistics == null) {
             this.statistics = null;
         } else {
-            java.util.List<String> statisticsCopy = new java.util.ArrayList<String>(statistics.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> statisticsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(statistics.size());
             statisticsCopy.addAll(statistics);
             this.statistics = statisticsCopy;
         }
@@ -635,14 +635,14 @@ public class GetMetricStatisticsRequest extends AmazonWebServiceRequest  impleme
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getNamespace() != null) sb.append("Namespace: " + getNamespace() + ",");    	
-        if (getMetricName() != null) sb.append("MetricName: " + getMetricName() + ",");    	
-        if (getDimensions() != null) sb.append("Dimensions: " + getDimensions() + ",");    	
-        if (getStartTime() != null) sb.append("StartTime: " + getStartTime() + ",");    	
-        if (getEndTime() != null) sb.append("EndTime: " + getEndTime() + ",");    	
-        if (getPeriod() != null) sb.append("Period: " + getPeriod() + ",");    	
-        if (getStatistics() != null) sb.append("Statistics: " + getStatistics() + ",");    	
+        sb.append("{");
+        if (getNamespace() != null) sb.append("Namespace: " + getNamespace() + ",");
+        if (getMetricName() != null) sb.append("MetricName: " + getMetricName() + ",");
+        if (getDimensions() != null) sb.append("Dimensions: " + getDimensions() + ",");
+        if (getStartTime() != null) sb.append("StartTime: " + getStartTime() + ",");
+        if (getEndTime() != null) sb.append("EndTime: " + getEndTime() + ",");
+        if (getPeriod() != null) sb.append("Period: " + getPeriod() + ",");
+        if (getStatistics() != null) sb.append("Statistics: " + getStatistics() + ",");
         if (getUnit() != null) sb.append("Unit: " + getUnit() );
         sb.append("}");
         return sb.toString();

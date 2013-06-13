@@ -192,8 +192,8 @@ public class KeySchemaElement  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getAttributeName() != null) sb.append("AttributeName: " + getAttributeName() + ",");    	
+        sb.append("{");
+        if (getAttributeName() != null) sb.append("AttributeName: " + getAttributeName() + ",");
         if (getKeyType() != null) sb.append("KeyType: " + getKeyType() );
         sb.append("}");
         return sb.toString();

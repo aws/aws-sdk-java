@@ -63,7 +63,7 @@ public class LaunchConfiguration  implements Serializable  {
      * A description of the security groups to associate with the Amazon EC2
      * instances.
      */
-    private java.util.List<String> securityGroups;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> securityGroups;
 
     /**
      * The user data available to the launched Amazon EC2 instances.
@@ -105,7 +105,7 @@ public class LaunchConfiguration  implements Serializable  {
      * Specifies how block devices are exposed to the instance. Each mapping
      * is made up of a <i>virtualName</i> and a <i>deviceName</i>.
      */
-    private java.util.List<BlockDeviceMapping> blockDeviceMappings;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<BlockDeviceMapping> blockDeviceMappings;
 
     /**
      * Controls whether instances in this group are launched with detailed
@@ -339,7 +339,8 @@ public class LaunchConfiguration  implements Serializable  {
     public java.util.List<String> getSecurityGroups() {
         
         if (securityGroups == null) {
-            securityGroups = new java.util.ArrayList<String>();
+              securityGroups = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              securityGroups.setAutoConstruct(true);
         }
         return securityGroups;
     }
@@ -356,8 +357,7 @@ public class LaunchConfiguration  implements Serializable  {
             this.securityGroups = null;
             return;
         }
-
-        java.util.List<String> securityGroupsCopy = new java.util.ArrayList<String>(securityGroups.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> securityGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(securityGroups.size());
         securityGroupsCopy.addAll(securityGroups);
         this.securityGroups = securityGroupsCopy;
     }
@@ -398,7 +398,7 @@ public class LaunchConfiguration  implements Serializable  {
         if (securityGroups == null) {
             this.securityGroups = null;
         } else {
-            java.util.List<String> securityGroupsCopy = new java.util.ArrayList<String>(securityGroups.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> securityGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(securityGroups.size());
             securityGroupsCopy.addAll(securityGroups);
             this.securityGroups = securityGroupsCopy;
         }
@@ -600,7 +600,8 @@ public class LaunchConfiguration  implements Serializable  {
     public java.util.List<BlockDeviceMapping> getBlockDeviceMappings() {
         
         if (blockDeviceMappings == null) {
-            blockDeviceMappings = new java.util.ArrayList<BlockDeviceMapping>();
+              blockDeviceMappings = new com.amazonaws.internal.ListWithAutoConstructFlag<BlockDeviceMapping>();
+              blockDeviceMappings.setAutoConstruct(true);
         }
         return blockDeviceMappings;
     }
@@ -617,8 +618,7 @@ public class LaunchConfiguration  implements Serializable  {
             this.blockDeviceMappings = null;
             return;
         }
-
-        java.util.List<BlockDeviceMapping> blockDeviceMappingsCopy = new java.util.ArrayList<BlockDeviceMapping>(blockDeviceMappings.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<BlockDeviceMapping> blockDeviceMappingsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<BlockDeviceMapping>(blockDeviceMappings.size());
         blockDeviceMappingsCopy.addAll(blockDeviceMappings);
         this.blockDeviceMappings = blockDeviceMappingsCopy;
     }
@@ -659,7 +659,7 @@ public class LaunchConfiguration  implements Serializable  {
         if (blockDeviceMappings == null) {
             this.blockDeviceMappings = null;
         } else {
-            java.util.List<BlockDeviceMapping> blockDeviceMappingsCopy = new java.util.ArrayList<BlockDeviceMapping>(blockDeviceMappings.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<BlockDeviceMapping> blockDeviceMappingsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<BlockDeviceMapping>(blockDeviceMappings.size());
             blockDeviceMappingsCopy.addAll(blockDeviceMappings);
             this.blockDeviceMappings = blockDeviceMappingsCopy;
         }
@@ -896,21 +896,21 @@ public class LaunchConfiguration  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getLaunchConfigurationName() != null) sb.append("LaunchConfigurationName: " + getLaunchConfigurationName() + ",");    	
-        if (getLaunchConfigurationARN() != null) sb.append("LaunchConfigurationARN: " + getLaunchConfigurationARN() + ",");    	
-        if (getImageId() != null) sb.append("ImageId: " + getImageId() + ",");    	
-        if (getKeyName() != null) sb.append("KeyName: " + getKeyName() + ",");    	
-        if (getSecurityGroups() != null) sb.append("SecurityGroups: " + getSecurityGroups() + ",");    	
-        if (getUserData() != null) sb.append("UserData: " + getUserData() + ",");    	
-        if (getInstanceType() != null) sb.append("InstanceType: " + getInstanceType() + ",");    	
-        if (getKernelId() != null) sb.append("KernelId: " + getKernelId() + ",");    	
-        if (getRamdiskId() != null) sb.append("RamdiskId: " + getRamdiskId() + ",");    	
-        if (getBlockDeviceMappings() != null) sb.append("BlockDeviceMappings: " + getBlockDeviceMappings() + ",");    	
-        if (getInstanceMonitoring() != null) sb.append("InstanceMonitoring: " + getInstanceMonitoring() + ",");    	
-        if (getSpotPrice() != null) sb.append("SpotPrice: " + getSpotPrice() + ",");    	
-        if (getIamInstanceProfile() != null) sb.append("IamInstanceProfile: " + getIamInstanceProfile() + ",");    	
-        if (getCreatedTime() != null) sb.append("CreatedTime: " + getCreatedTime() + ",");    	
+        sb.append("{");
+        if (getLaunchConfigurationName() != null) sb.append("LaunchConfigurationName: " + getLaunchConfigurationName() + ",");
+        if (getLaunchConfigurationARN() != null) sb.append("LaunchConfigurationARN: " + getLaunchConfigurationARN() + ",");
+        if (getImageId() != null) sb.append("ImageId: " + getImageId() + ",");
+        if (getKeyName() != null) sb.append("KeyName: " + getKeyName() + ",");
+        if (getSecurityGroups() != null) sb.append("SecurityGroups: " + getSecurityGroups() + ",");
+        if (getUserData() != null) sb.append("UserData: " + getUserData() + ",");
+        if (getInstanceType() != null) sb.append("InstanceType: " + getInstanceType() + ",");
+        if (getKernelId() != null) sb.append("KernelId: " + getKernelId() + ",");
+        if (getRamdiskId() != null) sb.append("RamdiskId: " + getRamdiskId() + ",");
+        if (getBlockDeviceMappings() != null) sb.append("BlockDeviceMappings: " + getBlockDeviceMappings() + ",");
+        if (getInstanceMonitoring() != null) sb.append("InstanceMonitoring: " + getInstanceMonitoring() + ",");
+        if (getSpotPrice() != null) sb.append("SpotPrice: " + getSpotPrice() + ",");
+        if (getIamInstanceProfile() != null) sb.append("IamInstanceProfile: " + getIamInstanceProfile() + ",");
+        if (getCreatedTime() != null) sb.append("CreatedTime: " + getCreatedTime() + ",");
         if (isEbsOptimized() != null) sb.append("EbsOptimized: " + isEbsOptimized() );
         sb.append("}");
         return sb.toString();

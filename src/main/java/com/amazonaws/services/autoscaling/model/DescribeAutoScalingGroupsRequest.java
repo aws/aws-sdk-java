@@ -34,7 +34,7 @@ public class DescribeAutoScalingGroupsRequest extends AmazonWebServiceRequest  i
     /**
      * A list of Auto Scaling group names.
      */
-    private java.util.List<String> autoScalingGroupNames;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> autoScalingGroupNames;
 
     /**
      * A string that marks the start of the next batch of returned results.
@@ -60,7 +60,8 @@ public class DescribeAutoScalingGroupsRequest extends AmazonWebServiceRequest  i
     public java.util.List<String> getAutoScalingGroupNames() {
         
         if (autoScalingGroupNames == null) {
-            autoScalingGroupNames = new java.util.ArrayList<String>();
+              autoScalingGroupNames = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              autoScalingGroupNames.setAutoConstruct(true);
         }
         return autoScalingGroupNames;
     }
@@ -75,8 +76,7 @@ public class DescribeAutoScalingGroupsRequest extends AmazonWebServiceRequest  i
             this.autoScalingGroupNames = null;
             return;
         }
-
-        java.util.List<String> autoScalingGroupNamesCopy = new java.util.ArrayList<String>(autoScalingGroupNames.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> autoScalingGroupNamesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(autoScalingGroupNames.size());
         autoScalingGroupNamesCopy.addAll(autoScalingGroupNames);
         this.autoScalingGroupNames = autoScalingGroupNamesCopy;
     }
@@ -113,7 +113,7 @@ public class DescribeAutoScalingGroupsRequest extends AmazonWebServiceRequest  i
         if (autoScalingGroupNames == null) {
             this.autoScalingGroupNames = null;
         } else {
-            java.util.List<String> autoScalingGroupNamesCopy = new java.util.ArrayList<String>(autoScalingGroupNames.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> autoScalingGroupNamesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(autoScalingGroupNames.size());
             autoScalingGroupNamesCopy.addAll(autoScalingGroupNames);
             this.autoScalingGroupNames = autoScalingGroupNamesCopy;
         }
@@ -218,9 +218,9 @@ public class DescribeAutoScalingGroupsRequest extends AmazonWebServiceRequest  i
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getAutoScalingGroupNames() != null) sb.append("AutoScalingGroupNames: " + getAutoScalingGroupNames() + ",");    	
-        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() + ",");    	
+        sb.append("{");
+        if (getAutoScalingGroupNames() != null) sb.append("AutoScalingGroupNames: " + getAutoScalingGroupNames() + ",");
+        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() + ",");
         if (getMaxRecords() != null) sb.append("MaxRecords: " + getMaxRecords() );
         sb.append("}");
         return sb.toString();

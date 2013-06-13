@@ -120,8 +120,8 @@ public class BatchWriteItemRequestMarshaller implements Marshaller<Request<Batch
                                                     jsonWriter.key("B").value(itemListValue.getValue().getB());
                                                 }
 
-                                                java.util.List<String> sSList = itemListValue.getValue().getSS();
-                                                if (sSList != null) {
+                                                com.amazonaws.internal.ListWithAutoConstructFlag<String> sSList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(itemListValue.getValue().getSS());
+                                                if (sSList != null && !(sSList.isAutoConstruct() && sSList.isEmpty())) {
 
                                                     jsonWriter.key("SS");
                                                     jsonWriter.array();
@@ -134,8 +134,8 @@ public class BatchWriteItemRequestMarshaller implements Marshaller<Request<Batch
                                                     jsonWriter.endArray();
                                                 }
 
-                                                java.util.List<String> nSList = itemListValue.getValue().getNS();
-                                                if (nSList != null) {
+                                                com.amazonaws.internal.ListWithAutoConstructFlag<String> nSList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(itemListValue.getValue().getNS());
+                                                if (nSList != null && !(nSList.isAutoConstruct() && nSList.isEmpty())) {
 
                                                     jsonWriter.key("NS");
                                                     jsonWriter.array();
@@ -148,8 +148,8 @@ public class BatchWriteItemRequestMarshaller implements Marshaller<Request<Batch
                                                     jsonWriter.endArray();
                                                 }
 
-                                                java.util.List<java.nio.ByteBuffer> bSList = itemListValue.getValue().getBS();
-                                                if (bSList != null) {
+                                                com.amazonaws.internal.ListWithAutoConstructFlag<java.nio.ByteBuffer> bSList = (com.amazonaws.internal.ListWithAutoConstructFlag<java.nio.ByteBuffer>)(itemListValue.getValue().getBS());
+                                                if (bSList != null && !(bSList.isAutoConstruct() && bSList.isEmpty())) {
 
                                                     jsonWriter.key("BS");
                                                     jsonWriter.array();
@@ -192,8 +192,8 @@ public class BatchWriteItemRequestMarshaller implements Marshaller<Request<Batch
                                                     jsonWriter.key("B").value(keyListValue.getValue().getB());
                                                 }
 
-                                                java.util.List<String> sSList = keyListValue.getValue().getSS();
-                                                if (sSList != null) {
+                                                com.amazonaws.internal.ListWithAutoConstructFlag<String> sSList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(keyListValue.getValue().getSS());
+                                                if (sSList != null && !(sSList.isAutoConstruct() && sSList.isEmpty())) {
 
                                                     jsonWriter.key("SS");
                                                     jsonWriter.array();
@@ -206,8 +206,8 @@ public class BatchWriteItemRequestMarshaller implements Marshaller<Request<Batch
                                                     jsonWriter.endArray();
                                                 }
 
-                                                java.util.List<String> nSList = keyListValue.getValue().getNS();
-                                                if (nSList != null) {
+                                                com.amazonaws.internal.ListWithAutoConstructFlag<String> nSList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(keyListValue.getValue().getNS());
+                                                if (nSList != null && !(nSList.isAutoConstruct() && nSList.isEmpty())) {
 
                                                     jsonWriter.key("NS");
                                                     jsonWriter.array();
@@ -220,8 +220,8 @@ public class BatchWriteItemRequestMarshaller implements Marshaller<Request<Batch
                                                     jsonWriter.endArray();
                                                 }
 
-                                                java.util.List<java.nio.ByteBuffer> bSList = keyListValue.getValue().getBS();
-                                                if (bSList != null) {
+                                                com.amazonaws.internal.ListWithAutoConstructFlag<java.nio.ByteBuffer> bSList = (com.amazonaws.internal.ListWithAutoConstructFlag<java.nio.ByteBuffer>)(keyListValue.getValue().getBS());
+                                                if (bSList != null && !(bSList.isAutoConstruct() && bSList.isEmpty())) {
 
                                                     jsonWriter.key("BS");
                                                     jsonWriter.array();

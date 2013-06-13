@@ -89,8 +89,8 @@ public class AddCacheRequestMarshaller implements Marshaller<Request<AddCacheReq
                 jsonWriter.key("GatewayARN").value(addCacheRequest.getGatewayARN());
             }
 
-            java.util.List<String> diskIdsList = addCacheRequest.getDiskIds();
-            if (diskIdsList != null) {
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> diskIdsList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(addCacheRequest.getDiskIds());
+            if (diskIdsList != null && !(diskIdsList.isAutoConstruct() && diskIdsList.isEmpty())) {
 
                 jsonWriter.key("DiskIds");
                 jsonWriter.array();

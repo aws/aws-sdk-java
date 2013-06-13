@@ -113,8 +113,8 @@ public class CreatePublicVirtualInterfaceRequestMarshaller implements Marshaller
                     jsonWriter.key("customerAddress").value(newPublicVirtualInterface.getCustomerAddress());
                 }
 
-                java.util.List<RouteFilterPrefix> routeFilterPrefixesList = newPublicVirtualInterface.getRouteFilterPrefixes();
-                if (routeFilterPrefixesList != null) {
+                com.amazonaws.internal.ListWithAutoConstructFlag<RouteFilterPrefix> routeFilterPrefixesList = (com.amazonaws.internal.ListWithAutoConstructFlag<RouteFilterPrefix>)(newPublicVirtualInterface.getRouteFilterPrefixes());
+                if (routeFilterPrefixesList != null && !(routeFilterPrefixesList.isAutoConstruct() && routeFilterPrefixesList.isEmpty())) {
 
                     jsonWriter.key("routeFilterPrefixes");
                     jsonWriter.array();

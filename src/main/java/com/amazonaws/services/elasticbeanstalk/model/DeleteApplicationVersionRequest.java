@@ -61,6 +61,8 @@ public class DeleteApplicationVersionRequest extends AmazonWebServiceRequest  im
      */
     public DeleteApplicationVersionRequest() {}
     
+
+
     /**
      * Constructs a new DeleteApplicationVersionRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -71,8 +73,8 @@ public class DeleteApplicationVersionRequest extends AmazonWebServiceRequest  im
      * @param versionLabel The label of the version to delete.
      */
     public DeleteApplicationVersionRequest(String applicationName, String versionLabel) {
-        this.applicationName = applicationName;
-        this.versionLabel = versionLabel;
+        setApplicationName(applicationName);
+        setVersionLabel(versionLabel);
     }
 
     
@@ -257,9 +259,9 @@ public class DeleteApplicationVersionRequest extends AmazonWebServiceRequest  im
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getApplicationName() != null) sb.append("ApplicationName: " + getApplicationName() + ",");    	
-        if (getVersionLabel() != null) sb.append("VersionLabel: " + getVersionLabel() + ",");    	
+        sb.append("{");
+        if (getApplicationName() != null) sb.append("ApplicationName: " + getApplicationName() + ",");
+        if (getVersionLabel() != null) sb.append("VersionLabel: " + getVersionLabel() + ",");
         if (isDeleteSourceBundle() != null) sb.append("DeleteSourceBundle: " + isDeleteSourceBundle() );
         sb.append("}");
         return sb.toString();

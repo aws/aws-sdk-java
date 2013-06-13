@@ -31,7 +31,7 @@ public class DescribeLicensesRequest extends AmazonWebServiceRequest  implements
      * Specifies the license registration for which details are to be
      * returned.
      */
-    private java.util.List<String> licenseIds;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> licenseIds;
 
     /**
      * A list of filters used to match properties for Licenses. For a
@@ -40,7 +40,7 @@ public class DescribeLicensesRequest extends AmazonWebServiceRequest  implements
      * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      * EC2 API reference</a>.
      */
-    private java.util.List<Filter> filters;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filters;
 
     /**
      * Specifies the license registration for which details are to be
@@ -52,7 +52,8 @@ public class DescribeLicensesRequest extends AmazonWebServiceRequest  implements
     public java.util.List<String> getLicenseIds() {
         
         if (licenseIds == null) {
-            licenseIds = new java.util.ArrayList<String>();
+              licenseIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              licenseIds.setAutoConstruct(true);
         }
         return licenseIds;
     }
@@ -69,8 +70,7 @@ public class DescribeLicensesRequest extends AmazonWebServiceRequest  implements
             this.licenseIds = null;
             return;
         }
-
-        java.util.List<String> licenseIdsCopy = new java.util.ArrayList<String>(licenseIds.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> licenseIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(licenseIds.size());
         licenseIdsCopy.addAll(licenseIds);
         this.licenseIds = licenseIdsCopy;
     }
@@ -111,7 +111,7 @@ public class DescribeLicensesRequest extends AmazonWebServiceRequest  implements
         if (licenseIds == null) {
             this.licenseIds = null;
         } else {
-            java.util.List<String> licenseIdsCopy = new java.util.ArrayList<String>(licenseIds.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> licenseIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(licenseIds.size());
             licenseIdsCopy.addAll(licenseIds);
             this.licenseIds = licenseIdsCopy;
         }
@@ -135,7 +135,8 @@ public class DescribeLicensesRequest extends AmazonWebServiceRequest  implements
     public java.util.List<Filter> getFilters() {
         
         if (filters == null) {
-            filters = new java.util.ArrayList<Filter>();
+              filters = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>();
+              filters.setAutoConstruct(true);
         }
         return filters;
     }
@@ -158,8 +159,7 @@ public class DescribeLicensesRequest extends AmazonWebServiceRequest  implements
             this.filters = null;
             return;
         }
-
-        java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>(filters.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filtersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>(filters.size());
         filtersCopy.addAll(filters);
         this.filters = filtersCopy;
     }
@@ -212,7 +212,7 @@ public class DescribeLicensesRequest extends AmazonWebServiceRequest  implements
         if (filters == null) {
             this.filters = null;
         } else {
-            java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>(filters.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filtersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>(filters.size());
             filtersCopy.addAll(filters);
             this.filters = filtersCopy;
         }
@@ -231,8 +231,8 @@ public class DescribeLicensesRequest extends AmazonWebServiceRequest  implements
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getLicenseIds() != null) sb.append("LicenseIds: " + getLicenseIds() + ",");    	
+        sb.append("{");
+        if (getLicenseIds() != null) sb.append("LicenseIds: " + getLicenseIds() + ",");
         if (getFilters() != null) sb.append("Filters: " + getFilters() );
         sb.append("}");
         return sb.toString();

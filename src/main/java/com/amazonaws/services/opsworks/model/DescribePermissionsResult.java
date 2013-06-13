@@ -33,7 +33,7 @@ public class DescribePermissionsResult  implements Serializable  {
      * single <code>Permission</code> object with permissions for the
      * specified stack and IAM ARN.</li> </ul>
      */
-    private java.util.List<Permission> permissions;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Permission> permissions;
 
     /**
      * An array of <code>Permission</code> objects that describe the stack
@@ -59,7 +59,8 @@ public class DescribePermissionsResult  implements Serializable  {
     public java.util.List<Permission> getPermissions() {
         
         if (permissions == null) {
-            permissions = new java.util.ArrayList<Permission>();
+              permissions = new com.amazonaws.internal.ListWithAutoConstructFlag<Permission>();
+              permissions.setAutoConstruct(true);
         }
         return permissions;
     }
@@ -90,8 +91,7 @@ public class DescribePermissionsResult  implements Serializable  {
             this.permissions = null;
             return;
         }
-
-        java.util.List<Permission> permissionsCopy = new java.util.ArrayList<Permission>(permissions.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Permission> permissionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Permission>(permissions.size());
         permissionsCopy.addAll(permissions);
         this.permissions = permissionsCopy;
     }
@@ -160,7 +160,7 @@ public class DescribePermissionsResult  implements Serializable  {
         if (permissions == null) {
             this.permissions = null;
         } else {
-            java.util.List<Permission> permissionsCopy = new java.util.ArrayList<Permission>(permissions.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Permission> permissionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Permission>(permissions.size());
             permissionsCopy.addAll(permissions);
             this.permissions = permissionsCopy;
         }
@@ -179,7 +179,7 @@ public class DescribePermissionsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getPermissions() != null) sb.append("Permissions: " + getPermissions() );
         sb.append("}");
         return sb.toString();

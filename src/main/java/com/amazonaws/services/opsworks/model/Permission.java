@@ -228,10 +228,10 @@ public class Permission  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getStackId() != null) sb.append("StackId: " + getStackId() + ",");    	
-        if (getIamUserArn() != null) sb.append("IamUserArn: " + getIamUserArn() + ",");    	
-        if (isAllowSsh() != null) sb.append("AllowSsh: " + isAllowSsh() + ",");    	
+        sb.append("{");
+        if (getStackId() != null) sb.append("StackId: " + getStackId() + ",");
+        if (getIamUserArn() != null) sb.append("IamUserArn: " + getIamUserArn() + ",");
+        if (isAllowSsh() != null) sb.append("AllowSsh: " + isAllowSsh() + ",");
         if (isAllowSudo() != null) sb.append("AllowSudo: " + isAllowSudo() );
         sb.append("}");
         return sb.toString();

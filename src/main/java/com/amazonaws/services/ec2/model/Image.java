@@ -57,7 +57,7 @@ public class Image  implements Serializable  {
     /**
      * Product codes of the AMI.
      */
-    private java.util.List<ProductCode> productCodes;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<ProductCode> productCodes;
 
     /**
      * The architecture of the image.
@@ -121,14 +121,14 @@ public class Image  implements Serializable  {
     /**
      * Specifies how block devices are exposed to the instance.
      */
-    private java.util.List<BlockDeviceMapping> blockDeviceMappings;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<BlockDeviceMapping> blockDeviceMappings;
 
     private String virtualizationType;
 
     /**
      * A list of tags for the Image.
      */
-    private java.util.List<Tag> tags;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
 
     private String hypervisor;
 
@@ -406,7 +406,8 @@ public class Image  implements Serializable  {
     public java.util.List<ProductCode> getProductCodes() {
         
         if (productCodes == null) {
-            productCodes = new java.util.ArrayList<ProductCode>();
+              productCodes = new com.amazonaws.internal.ListWithAutoConstructFlag<ProductCode>();
+              productCodes.setAutoConstruct(true);
         }
         return productCodes;
     }
@@ -421,8 +422,7 @@ public class Image  implements Serializable  {
             this.productCodes = null;
             return;
         }
-
-        java.util.List<ProductCode> productCodesCopy = new java.util.ArrayList<ProductCode>(productCodes.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<ProductCode> productCodesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ProductCode>(productCodes.size());
         productCodesCopy.addAll(productCodes);
         this.productCodes = productCodesCopy;
     }
@@ -459,7 +459,7 @@ public class Image  implements Serializable  {
         if (productCodes == null) {
             this.productCodes = null;
         } else {
-            java.util.List<ProductCode> productCodesCopy = new java.util.ArrayList<ProductCode>(productCodes.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<ProductCode> productCodesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ProductCode>(productCodes.size());
             productCodesCopy.addAll(productCodes);
             this.productCodes = productCodesCopy;
         }
@@ -873,7 +873,8 @@ public class Image  implements Serializable  {
     public java.util.List<BlockDeviceMapping> getBlockDeviceMappings() {
         
         if (blockDeviceMappings == null) {
-            blockDeviceMappings = new java.util.ArrayList<BlockDeviceMapping>();
+              blockDeviceMappings = new com.amazonaws.internal.ListWithAutoConstructFlag<BlockDeviceMapping>();
+              blockDeviceMappings.setAutoConstruct(true);
         }
         return blockDeviceMappings;
     }
@@ -888,8 +889,7 @@ public class Image  implements Serializable  {
             this.blockDeviceMappings = null;
             return;
         }
-
-        java.util.List<BlockDeviceMapping> blockDeviceMappingsCopy = new java.util.ArrayList<BlockDeviceMapping>(blockDeviceMappings.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<BlockDeviceMapping> blockDeviceMappingsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<BlockDeviceMapping>(blockDeviceMappings.size());
         blockDeviceMappingsCopy.addAll(blockDeviceMappings);
         this.blockDeviceMappings = blockDeviceMappingsCopy;
     }
@@ -926,7 +926,7 @@ public class Image  implements Serializable  {
         if (blockDeviceMappings == null) {
             this.blockDeviceMappings = null;
         } else {
-            java.util.List<BlockDeviceMapping> blockDeviceMappingsCopy = new java.util.ArrayList<BlockDeviceMapping>(blockDeviceMappings.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<BlockDeviceMapping> blockDeviceMappingsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<BlockDeviceMapping>(blockDeviceMappings.size());
             blockDeviceMappingsCopy.addAll(blockDeviceMappings);
             this.blockDeviceMappings = blockDeviceMappingsCopy;
         }
@@ -1025,7 +1025,8 @@ public class Image  implements Serializable  {
     public java.util.List<Tag> getTags() {
         
         if (tags == null) {
-            tags = new java.util.ArrayList<Tag>();
+              tags = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>();
+              tags.setAutoConstruct(true);
         }
         return tags;
     }
@@ -1040,8 +1041,7 @@ public class Image  implements Serializable  {
             this.tags = null;
             return;
         }
-
-        java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>(tags.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
         tagsCopy.addAll(tags);
         this.tags = tagsCopy;
     }
@@ -1078,7 +1078,7 @@ public class Image  implements Serializable  {
         if (tags == null) {
             this.tags = null;
         } else {
-            java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>(tags.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
             tagsCopy.addAll(tags);
             this.tags = tagsCopy;
         }
@@ -1180,27 +1180,27 @@ public class Image  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getImageId() != null) sb.append("ImageId: " + getImageId() + ",");    	
-        if (getImageLocation() != null) sb.append("ImageLocation: " + getImageLocation() + ",");    	
-        if (getState() != null) sb.append("State: " + getState() + ",");    	
-        if (getOwnerId() != null) sb.append("OwnerId: " + getOwnerId() + ",");    	
-        if (isPublic() != null) sb.append("Public: " + isPublic() + ",");    	
-        if (getProductCodes() != null) sb.append("ProductCodes: " + getProductCodes() + ",");    	
-        if (getArchitecture() != null) sb.append("Architecture: " + getArchitecture() + ",");    	
-        if (getImageType() != null) sb.append("ImageType: " + getImageType() + ",");    	
-        if (getKernelId() != null) sb.append("KernelId: " + getKernelId() + ",");    	
-        if (getRamdiskId() != null) sb.append("RamdiskId: " + getRamdiskId() + ",");    	
-        if (getPlatform() != null) sb.append("Platform: " + getPlatform() + ",");    	
-        if (getStateReason() != null) sb.append("StateReason: " + getStateReason() + ",");    	
-        if (getImageOwnerAlias() != null) sb.append("ImageOwnerAlias: " + getImageOwnerAlias() + ",");    	
-        if (getName() != null) sb.append("Name: " + getName() + ",");    	
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");    	
-        if (getRootDeviceType() != null) sb.append("RootDeviceType: " + getRootDeviceType() + ",");    	
-        if (getRootDeviceName() != null) sb.append("RootDeviceName: " + getRootDeviceName() + ",");    	
-        if (getBlockDeviceMappings() != null) sb.append("BlockDeviceMappings: " + getBlockDeviceMappings() + ",");    	
-        if (getVirtualizationType() != null) sb.append("VirtualizationType: " + getVirtualizationType() + ",");    	
-        if (getTags() != null) sb.append("Tags: " + getTags() + ",");    	
+        sb.append("{");
+        if (getImageId() != null) sb.append("ImageId: " + getImageId() + ",");
+        if (getImageLocation() != null) sb.append("ImageLocation: " + getImageLocation() + ",");
+        if (getState() != null) sb.append("State: " + getState() + ",");
+        if (getOwnerId() != null) sb.append("OwnerId: " + getOwnerId() + ",");
+        if (isPublic() != null) sb.append("Public: " + isPublic() + ",");
+        if (getProductCodes() != null) sb.append("ProductCodes: " + getProductCodes() + ",");
+        if (getArchitecture() != null) sb.append("Architecture: " + getArchitecture() + ",");
+        if (getImageType() != null) sb.append("ImageType: " + getImageType() + ",");
+        if (getKernelId() != null) sb.append("KernelId: " + getKernelId() + ",");
+        if (getRamdiskId() != null) sb.append("RamdiskId: " + getRamdiskId() + ",");
+        if (getPlatform() != null) sb.append("Platform: " + getPlatform() + ",");
+        if (getStateReason() != null) sb.append("StateReason: " + getStateReason() + ",");
+        if (getImageOwnerAlias() != null) sb.append("ImageOwnerAlias: " + getImageOwnerAlias() + ",");
+        if (getName() != null) sb.append("Name: " + getName() + ",");
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");
+        if (getRootDeviceType() != null) sb.append("RootDeviceType: " + getRootDeviceType() + ",");
+        if (getRootDeviceName() != null) sb.append("RootDeviceName: " + getRootDeviceName() + ",");
+        if (getBlockDeviceMappings() != null) sb.append("BlockDeviceMappings: " + getBlockDeviceMappings() + ",");
+        if (getVirtualizationType() != null) sb.append("VirtualizationType: " + getVirtualizationType() + ",");
+        if (getTags() != null) sb.append("Tags: " + getTags() + ",");
         if (getHypervisor() != null) sb.append("Hypervisor: " + getHypervisor() );
         sb.append("}");
         return sb.toString();

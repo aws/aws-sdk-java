@@ -210,8 +210,8 @@ public class CookiePreference  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getForward() != null) sb.append("Forward: " + getForward() + ",");    	
+        sb.append("{");
+        if (getForward() != null) sb.append("Forward: " + getForward() + ",");
         if (getWhitelistedNames() != null) sb.append("WhitelistedNames: " + getWhitelistedNames() );
         sb.append("}");
         return sb.toString();

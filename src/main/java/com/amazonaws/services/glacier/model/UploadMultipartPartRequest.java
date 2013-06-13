@@ -113,6 +113,8 @@ public class UploadMultipartPartRequest extends AmazonWebServiceRequest  impleme
      */
     public UploadMultipartPartRequest() {}
     
+
+
     /**
      * Constructs a new UploadMultipartPartRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -129,15 +131,17 @@ public class UploadMultipartPartRequest extends AmazonWebServiceRequest  impleme
      * @param body The data to upload.
      */
     public UploadMultipartPartRequest(String vaultName, String uploadId, String checksum, String range, java.io.InputStream body) {
-        this.vaultName = vaultName;
-        this.uploadId = uploadId;
-        this.checksum = checksum;
-        this.range = range;
-        this.body = body;
+        setVaultName(vaultName);
+        setUploadId(uploadId);
+        setChecksum(checksum);
+        setRange(range);
+        setBody(body);
     }
 
     
     
+
+
     /**
      * Constructs a new UploadMultipartPartRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -159,12 +163,12 @@ public class UploadMultipartPartRequest extends AmazonWebServiceRequest  impleme
      * @param body The data to upload.
      */
     public UploadMultipartPartRequest(String accountId, String vaultName, String uploadId, String checksum, String range, java.io.InputStream body) {
-        this.accountId = accountId;
-        this.vaultName = vaultName;
-        this.uploadId = uploadId;
-        this.checksum = checksum;
-        this.range = range;
-        this.body = body;
+        setAccountId(accountId);
+        setVaultName(vaultName);
+        setUploadId(uploadId);
+        setChecksum(checksum);
+        setRange(range);
+        setBody(body);
     }
 
     
@@ -432,12 +436,12 @@ public class UploadMultipartPartRequest extends AmazonWebServiceRequest  impleme
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getAccountId() != null) sb.append("AccountId: " + getAccountId() + ",");    	
-        if (getVaultName() != null) sb.append("VaultName: " + getVaultName() + ",");    	
-        if (getUploadId() != null) sb.append("UploadId: " + getUploadId() + ",");    	
-        if (getChecksum() != null) sb.append("Checksum: " + getChecksum() + ",");    	
-        if (getRange() != null) sb.append("Range: " + getRange() + ",");    	
+        sb.append("{");
+        if (getAccountId() != null) sb.append("AccountId: " + getAccountId() + ",");
+        if (getVaultName() != null) sb.append("VaultName: " + getVaultName() + ",");
+        if (getUploadId() != null) sb.append("UploadId: " + getUploadId() + ",");
+        if (getChecksum() != null) sb.append("Checksum: " + getChecksum() + ",");
+        if (getRange() != null) sb.append("Range: " + getRange() + ",");
         if (getBody() != null) sb.append("Body: " + getBody() );
         sb.append("}");
         return sb.toString();

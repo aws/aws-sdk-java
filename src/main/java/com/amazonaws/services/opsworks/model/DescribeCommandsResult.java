@@ -26,7 +26,7 @@ public class DescribeCommandsResult  implements Serializable  {
      * An array of <code>Command</code> objects that describe each of the
      * specified commands.
      */
-    private java.util.List<Command> commands;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Command> commands;
 
     /**
      * An array of <code>Command</code> objects that describe each of the
@@ -38,7 +38,8 @@ public class DescribeCommandsResult  implements Serializable  {
     public java.util.List<Command> getCommands() {
         
         if (commands == null) {
-            commands = new java.util.ArrayList<Command>();
+              commands = new com.amazonaws.internal.ListWithAutoConstructFlag<Command>();
+              commands.setAutoConstruct(true);
         }
         return commands;
     }
@@ -55,8 +56,7 @@ public class DescribeCommandsResult  implements Serializable  {
             this.commands = null;
             return;
         }
-
-        java.util.List<Command> commandsCopy = new java.util.ArrayList<Command>(commands.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Command> commandsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Command>(commands.size());
         commandsCopy.addAll(commands);
         this.commands = commandsCopy;
     }
@@ -97,7 +97,7 @@ public class DescribeCommandsResult  implements Serializable  {
         if (commands == null) {
             this.commands = null;
         } else {
-            java.util.List<Command> commandsCopy = new java.util.ArrayList<Command>(commands.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Command> commandsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Command>(commands.size());
             commandsCopy.addAll(commands);
             this.commands = commandsCopy;
         }
@@ -116,7 +116,7 @@ public class DescribeCommandsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getCommands() != null) sb.append("Commands: " + getCommands() );
         sb.append("}");
         return sb.toString();

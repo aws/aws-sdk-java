@@ -39,6 +39,8 @@ public class CancelBundleTaskRequest extends AmazonWebServiceRequest  implements
      */
     public CancelBundleTaskRequest() {}
     
+
+
     /**
      * Constructs a new CancelBundleTaskRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -47,7 +49,7 @@ public class CancelBundleTaskRequest extends AmazonWebServiceRequest  implements
      * @param bundleId The ID of the bundle task to cancel.
      */
     public CancelBundleTaskRequest(String bundleId) {
-        this.bundleId = bundleId;
+        setBundleId(bundleId);
     }
 
     
@@ -97,7 +99,7 @@ public class CancelBundleTaskRequest extends AmazonWebServiceRequest  implements
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getBundleId() != null) sb.append("BundleId: " + getBundleId() );
         sb.append("}");
         return sb.toString();

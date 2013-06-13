@@ -72,7 +72,7 @@ public class DescribeTableResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getTable() != null) sb.append("Table: " + getTable() );
         sb.append("}");
         return sb.toString();

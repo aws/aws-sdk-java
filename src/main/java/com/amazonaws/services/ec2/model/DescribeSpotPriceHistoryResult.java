@@ -20,7 +20,7 @@ import java.io.Serializable;
  */
 public class DescribeSpotPriceHistoryResult  implements Serializable  {
 
-    private java.util.List<SpotPrice> spotPriceHistory;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<SpotPrice> spotPriceHistory;
 
     /**
      * The string marking the next set of results returned. Displays empty if
@@ -36,7 +36,8 @@ public class DescribeSpotPriceHistoryResult  implements Serializable  {
     public java.util.List<SpotPrice> getSpotPriceHistory() {
         
         if (spotPriceHistory == null) {
-            spotPriceHistory = new java.util.ArrayList<SpotPrice>();
+              spotPriceHistory = new com.amazonaws.internal.ListWithAutoConstructFlag<SpotPrice>();
+              spotPriceHistory.setAutoConstruct(true);
         }
         return spotPriceHistory;
     }
@@ -51,8 +52,7 @@ public class DescribeSpotPriceHistoryResult  implements Serializable  {
             this.spotPriceHistory = null;
             return;
         }
-
-        java.util.List<SpotPrice> spotPriceHistoryCopy = new java.util.ArrayList<SpotPrice>(spotPriceHistory.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<SpotPrice> spotPriceHistoryCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<SpotPrice>(spotPriceHistory.size());
         spotPriceHistoryCopy.addAll(spotPriceHistory);
         this.spotPriceHistory = spotPriceHistoryCopy;
     }
@@ -89,7 +89,7 @@ public class DescribeSpotPriceHistoryResult  implements Serializable  {
         if (spotPriceHistory == null) {
             this.spotPriceHistory = null;
         } else {
-            java.util.List<SpotPrice> spotPriceHistoryCopy = new java.util.ArrayList<SpotPrice>(spotPriceHistory.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<SpotPrice> spotPriceHistoryCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<SpotPrice>(spotPriceHistory.size());
             spotPriceHistoryCopy.addAll(spotPriceHistory);
             this.spotPriceHistory = spotPriceHistoryCopy;
         }
@@ -148,8 +148,8 @@ public class DescribeSpotPriceHistoryResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getSpotPriceHistory() != null) sb.append("SpotPriceHistory: " + getSpotPriceHistory() + ",");    	
+        sb.append("{");
+        if (getSpotPriceHistory() != null) sb.append("SpotPriceHistory: " + getSpotPriceHistory() + ",");
         if (getNextToken() != null) sb.append("NextToken: " + getNextToken() );
         sb.append("}");
         return sb.toString();

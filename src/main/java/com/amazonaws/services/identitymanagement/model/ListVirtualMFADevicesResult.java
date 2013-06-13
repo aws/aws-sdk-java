@@ -22,7 +22,7 @@ import java.io.Serializable;
  */
 public class ListVirtualMFADevicesResult  implements Serializable  {
 
-    private java.util.List<VirtualMFADevice> virtualMFADevices;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<VirtualMFADevice> virtualMFADevices;
 
     /**
      * A flag that indicates whether there are more items to list. If your
@@ -51,7 +51,8 @@ public class ListVirtualMFADevicesResult  implements Serializable  {
     public java.util.List<VirtualMFADevice> getVirtualMFADevices() {
         
         if (virtualMFADevices == null) {
-            virtualMFADevices = new java.util.ArrayList<VirtualMFADevice>();
+              virtualMFADevices = new com.amazonaws.internal.ListWithAutoConstructFlag<VirtualMFADevice>();
+              virtualMFADevices.setAutoConstruct(true);
         }
         return virtualMFADevices;
     }
@@ -66,8 +67,7 @@ public class ListVirtualMFADevicesResult  implements Serializable  {
             this.virtualMFADevices = null;
             return;
         }
-
-        java.util.List<VirtualMFADevice> virtualMFADevicesCopy = new java.util.ArrayList<VirtualMFADevice>(virtualMFADevices.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<VirtualMFADevice> virtualMFADevicesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<VirtualMFADevice>(virtualMFADevices.size());
         virtualMFADevicesCopy.addAll(virtualMFADevices);
         this.virtualMFADevices = virtualMFADevicesCopy;
     }
@@ -104,7 +104,7 @@ public class ListVirtualMFADevicesResult  implements Serializable  {
         if (virtualMFADevices == null) {
             this.virtualMFADevices = null;
         } else {
-            java.util.List<VirtualMFADevice> virtualMFADevicesCopy = new java.util.ArrayList<VirtualMFADevice>(virtualMFADevices.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<VirtualMFADevice> virtualMFADevicesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<VirtualMFADevice>(virtualMFADevices.size());
             virtualMFADevicesCopy.addAll(virtualMFADevices);
             this.virtualMFADevices = virtualMFADevicesCopy;
         }
@@ -248,9 +248,9 @@ public class ListVirtualMFADevicesResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getVirtualMFADevices() != null) sb.append("VirtualMFADevices: " + getVirtualMFADevices() + ",");    	
-        if (isTruncated() != null) sb.append("IsTruncated: " + isTruncated() + ",");    	
+        sb.append("{");
+        if (getVirtualMFADevices() != null) sb.append("VirtualMFADevices: " + getVirtualMFADevices() + ",");
+        if (isTruncated() != null) sb.append("IsTruncated: " + isTruncated() + ",");
         if (getMarker() != null) sb.append("Marker: " + getMarker() );
         sb.append("}");
         return sb.toString();

@@ -33,7 +33,7 @@ public class DescribeTrustedAdvisorCheckSummariesRequest extends AmazonWebServic
     /**
      * Unique identifier for a Trusted Advisor check.
      */
-    private java.util.List<String> checkIds;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> checkIds;
 
     /**
      * Unique identifier for a Trusted Advisor check.
@@ -43,7 +43,8 @@ public class DescribeTrustedAdvisorCheckSummariesRequest extends AmazonWebServic
     public java.util.List<String> getCheckIds() {
         
         if (checkIds == null) {
-            checkIds = new java.util.ArrayList<String>();
+              checkIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              checkIds.setAutoConstruct(true);
         }
         return checkIds;
     }
@@ -58,8 +59,7 @@ public class DescribeTrustedAdvisorCheckSummariesRequest extends AmazonWebServic
             this.checkIds = null;
             return;
         }
-
-        java.util.List<String> checkIdsCopy = new java.util.ArrayList<String>(checkIds.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> checkIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(checkIds.size());
         checkIdsCopy.addAll(checkIds);
         this.checkIds = checkIdsCopy;
     }
@@ -96,7 +96,7 @@ public class DescribeTrustedAdvisorCheckSummariesRequest extends AmazonWebServic
         if (checkIds == null) {
             this.checkIds = null;
         } else {
-            java.util.List<String> checkIdsCopy = new java.util.ArrayList<String>(checkIds.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> checkIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(checkIds.size());
             checkIdsCopy.addAll(checkIds);
             this.checkIds = checkIdsCopy;
         }
@@ -115,7 +115,7 @@ public class DescribeTrustedAdvisorCheckSummariesRequest extends AmazonWebServic
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getCheckIds() != null) sb.append("CheckIds: " + getCheckIds() );
         sb.append("}");
         return sb.toString();

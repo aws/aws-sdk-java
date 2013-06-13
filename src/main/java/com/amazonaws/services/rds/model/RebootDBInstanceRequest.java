@@ -51,6 +51,8 @@ public class RebootDBInstanceRequest extends AmazonWebServiceRequest  implements
      */
     public RebootDBInstanceRequest() {}
     
+
+
     /**
      * Constructs a new RebootDBInstanceRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -63,7 +65,7 @@ public class RebootDBInstanceRequest extends AmazonWebServiceRequest  implements
      * contain two consecutive hyphens</li> </ul>
      */
     public RebootDBInstanceRequest(String dBInstanceIdentifier) {
-        this.dBInstanceIdentifier = dBInstanceIdentifier;
+        setDBInstanceIdentifier(dBInstanceIdentifier);
     }
 
     
@@ -196,8 +198,8 @@ public class RebootDBInstanceRequest extends AmazonWebServiceRequest  implements
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getDBInstanceIdentifier() != null) sb.append("DBInstanceIdentifier: " + getDBInstanceIdentifier() + ",");    	
+        sb.append("{");
+        if (getDBInstanceIdentifier() != null) sb.append("DBInstanceIdentifier: " + getDBInstanceIdentifier() + ",");
         if (isForceFailover() != null) sb.append("ForceFailover: " + isForceFailover() );
         sb.append("}");
         return sb.toString();

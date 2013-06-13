@@ -673,16 +673,16 @@ public class StorediSCSIVolume  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getVolumeARN() != null) sb.append("VolumeARN: " + getVolumeARN() + ",");    	
-        if (getVolumeId() != null) sb.append("VolumeId: " + getVolumeId() + ",");    	
-        if (getVolumeType() != null) sb.append("VolumeType: " + getVolumeType() + ",");    	
-        if (getVolumeStatus() != null) sb.append("VolumeStatus: " + getVolumeStatus() + ",");    	
-        if (getVolumeSizeInBytes() != null) sb.append("VolumeSizeInBytes: " + getVolumeSizeInBytes() + ",");    	
-        if (getVolumeProgress() != null) sb.append("VolumeProgress: " + getVolumeProgress() + ",");    	
-        if (getVolumeDiskId() != null) sb.append("VolumeDiskId: " + getVolumeDiskId() + ",");    	
-        if (getSourceSnapshotId() != null) sb.append("SourceSnapshotId: " + getSourceSnapshotId() + ",");    	
-        if (isPreservedExistingData() != null) sb.append("PreservedExistingData: " + isPreservedExistingData() + ",");    	
+        sb.append("{");
+        if (getVolumeARN() != null) sb.append("VolumeARN: " + getVolumeARN() + ",");
+        if (getVolumeId() != null) sb.append("VolumeId: " + getVolumeId() + ",");
+        if (getVolumeType() != null) sb.append("VolumeType: " + getVolumeType() + ",");
+        if (getVolumeStatus() != null) sb.append("VolumeStatus: " + getVolumeStatus() + ",");
+        if (getVolumeSizeInBytes() != null) sb.append("VolumeSizeInBytes: " + getVolumeSizeInBytes() + ",");
+        if (getVolumeProgress() != null) sb.append("VolumeProgress: " + getVolumeProgress() + ",");
+        if (getVolumeDiskId() != null) sb.append("VolumeDiskId: " + getVolumeDiskId() + ",");
+        if (getSourceSnapshotId() != null) sb.append("SourceSnapshotId: " + getSourceSnapshotId() + ",");
+        if (isPreservedExistingData() != null) sb.append("PreservedExistingData: " + isPreservedExistingData() + ",");
         if (getVolumeiSCSIAttributes() != null) sb.append("VolumeiSCSIAttributes: " + getVolumeiSCSIAttributes() );
         sb.append("}");
         return sb.toString();

@@ -139,9 +139,9 @@ public class InstanceNetworkInterfaceAssociation  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getPublicIp() != null) sb.append("PublicIp: " + getPublicIp() + ",");    	
-        if (getPublicDnsName() != null) sb.append("PublicDnsName: " + getPublicDnsName() + ",");    	
+        sb.append("{");
+        if (getPublicIp() != null) sb.append("PublicIp: " + getPublicIp() + ",");
+        if (getPublicDnsName() != null) sb.append("PublicDnsName: " + getPublicDnsName() + ",");
         if (getIpOwnerId() != null) sb.append("IpOwnerId: " + getIpOwnerId() );
         sb.append("}");
         return sb.toString();

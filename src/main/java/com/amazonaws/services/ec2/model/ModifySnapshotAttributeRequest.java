@@ -53,7 +53,7 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest  imp
      * <code>createVolumePermission</code> attribute is being modified.
      * </note>
      */
-    private java.util.List<String> userIds;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> userIds;
 
     /**
      * The AWS group names to add to or remove from the list of groups that
@@ -62,7 +62,7 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest  imp
      * <code>createVolumePermission</code> attribute is being modified.
      * </note>
      */
-    private java.util.List<String> groupNames;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> groupNames;
 
     private CreateVolumePermissionModifications createVolumePermission;
 
@@ -72,6 +72,8 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest  imp
      */
     public ModifySnapshotAttributeRequest() {}
     
+
+
     /**
      * Constructs a new ModifySnapshotAttributeRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -85,9 +87,9 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest  imp
      * Available operation names: <code>add</code>, <code>remove</code>
      */
     public ModifySnapshotAttributeRequest(String snapshotId, String attribute, String operationType) {
-        this.snapshotId = snapshotId;
-        this.attribute = attribute;
-        this.operationType = operationType;
+        setSnapshotId(snapshotId);
+        setAttribute(attribute);
+        setOperationType(operationType);
     }
 
     
@@ -293,7 +295,8 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest  imp
     public java.util.List<String> getUserIds() {
         
         if (userIds == null) {
-            userIds = new java.util.ArrayList<String>();
+              userIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              userIds.setAutoConstruct(true);
         }
         return userIds;
     }
@@ -316,8 +319,7 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest  imp
             this.userIds = null;
             return;
         }
-
-        java.util.List<String> userIdsCopy = new java.util.ArrayList<String>(userIds.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> userIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(userIds.size());
         userIdsCopy.addAll(userIds);
         this.userIds = userIdsCopy;
     }
@@ -370,7 +372,7 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest  imp
         if (userIds == null) {
             this.userIds = null;
         } else {
-            java.util.List<String> userIdsCopy = new java.util.ArrayList<String>(userIds.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> userIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(userIds.size());
             userIdsCopy.addAll(userIds);
             this.userIds = userIdsCopy;
         }
@@ -394,7 +396,8 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest  imp
     public java.util.List<String> getGroupNames() {
         
         if (groupNames == null) {
-            groupNames = new java.util.ArrayList<String>();
+              groupNames = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              groupNames.setAutoConstruct(true);
         }
         return groupNames;
     }
@@ -417,8 +420,7 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest  imp
             this.groupNames = null;
             return;
         }
-
-        java.util.List<String> groupNamesCopy = new java.util.ArrayList<String>(groupNames.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> groupNamesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(groupNames.size());
         groupNamesCopy.addAll(groupNames);
         this.groupNames = groupNamesCopy;
     }
@@ -471,7 +473,7 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest  imp
         if (groupNames == null) {
             this.groupNames = null;
         } else {
-            java.util.List<String> groupNamesCopy = new java.util.ArrayList<String>(groupNames.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> groupNamesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(groupNames.size());
             groupNamesCopy.addAll(groupNames);
             this.groupNames = groupNamesCopy;
         }
@@ -525,12 +527,12 @@ public class ModifySnapshotAttributeRequest extends AmazonWebServiceRequest  imp
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getSnapshotId() != null) sb.append("SnapshotId: " + getSnapshotId() + ",");    	
-        if (getAttribute() != null) sb.append("Attribute: " + getAttribute() + ",");    	
-        if (getOperationType() != null) sb.append("OperationType: " + getOperationType() + ",");    	
-        if (getUserIds() != null) sb.append("UserIds: " + getUserIds() + ",");    	
-        if (getGroupNames() != null) sb.append("GroupNames: " + getGroupNames() + ",");    	
+        sb.append("{");
+        if (getSnapshotId() != null) sb.append("SnapshotId: " + getSnapshotId() + ",");
+        if (getAttribute() != null) sb.append("Attribute: " + getAttribute() + ",");
+        if (getOperationType() != null) sb.append("OperationType: " + getOperationType() + ",");
+        if (getUserIds() != null) sb.append("UserIds: " + getUserIds() + ",");
+        if (getGroupNames() != null) sb.append("GroupNames: " + getGroupNames() + ",");
         if (getCreateVolumePermission() != null) sb.append("CreateVolumePermission: " + getCreateVolumePermission() );
         sb.append("}");
         return sb.toString();

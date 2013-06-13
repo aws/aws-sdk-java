@@ -143,7 +143,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest  implements Seria
     /**
      * A list of source stack app IDs to be included in the cloned stack.
      */
-    private java.util.List<String> cloneAppIds;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> cloneAppIds;
 
     /**
      * The default root device type. This value is used by default for all
@@ -921,7 +921,8 @@ public class CloneStackRequest extends AmazonWebServiceRequest  implements Seria
     public java.util.List<String> getCloneAppIds() {
         
         if (cloneAppIds == null) {
-            cloneAppIds = new java.util.ArrayList<String>();
+              cloneAppIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              cloneAppIds.setAutoConstruct(true);
         }
         return cloneAppIds;
     }
@@ -936,8 +937,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest  implements Seria
             this.cloneAppIds = null;
             return;
         }
-
-        java.util.List<String> cloneAppIdsCopy = new java.util.ArrayList<String>(cloneAppIds.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> cloneAppIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(cloneAppIds.size());
         cloneAppIdsCopy.addAll(cloneAppIds);
         this.cloneAppIds = cloneAppIdsCopy;
     }
@@ -974,7 +974,7 @@ public class CloneStackRequest extends AmazonWebServiceRequest  implements Seria
         if (cloneAppIds == null) {
             this.cloneAppIds = null;
         } else {
-            java.util.List<String> cloneAppIdsCopy = new java.util.ArrayList<String>(cloneAppIds.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> cloneAppIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(cloneAppIds.size());
             cloneAppIdsCopy.addAll(cloneAppIds);
             this.cloneAppIds = cloneAppIdsCopy;
         }
@@ -1116,22 +1116,22 @@ public class CloneStackRequest extends AmazonWebServiceRequest  implements Seria
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getSourceStackId() != null) sb.append("SourceStackId: " + getSourceStackId() + ",");    	
-        if (getName() != null) sb.append("Name: " + getName() + ",");    	
-        if (getRegion() != null) sb.append("Region: " + getRegion() + ",");    	
-        if (getAttributes() != null) sb.append("Attributes: " + getAttributes() + ",");    	
-        if (getServiceRoleArn() != null) sb.append("ServiceRoleArn: " + getServiceRoleArn() + ",");    	
-        if (getDefaultInstanceProfileArn() != null) sb.append("DefaultInstanceProfileArn: " + getDefaultInstanceProfileArn() + ",");    	
-        if (getDefaultOs() != null) sb.append("DefaultOs: " + getDefaultOs() + ",");    	
-        if (getHostnameTheme() != null) sb.append("HostnameTheme: " + getHostnameTheme() + ",");    	
-        if (getDefaultAvailabilityZone() != null) sb.append("DefaultAvailabilityZone: " + getDefaultAvailabilityZone() + ",");    	
-        if (getCustomJson() != null) sb.append("CustomJson: " + getCustomJson() + ",");    	
-        if (isUseCustomCookbooks() != null) sb.append("UseCustomCookbooks: " + isUseCustomCookbooks() + ",");    	
-        if (getCustomCookbooksSource() != null) sb.append("CustomCookbooksSource: " + getCustomCookbooksSource() + ",");    	
-        if (getDefaultSshKeyName() != null) sb.append("DefaultSshKeyName: " + getDefaultSshKeyName() + ",");    	
-        if (isClonePermissions() != null) sb.append("ClonePermissions: " + isClonePermissions() + ",");    	
-        if (getCloneAppIds() != null) sb.append("CloneAppIds: " + getCloneAppIds() + ",");    	
+        sb.append("{");
+        if (getSourceStackId() != null) sb.append("SourceStackId: " + getSourceStackId() + ",");
+        if (getName() != null) sb.append("Name: " + getName() + ",");
+        if (getRegion() != null) sb.append("Region: " + getRegion() + ",");
+        if (getAttributes() != null) sb.append("Attributes: " + getAttributes() + ",");
+        if (getServiceRoleArn() != null) sb.append("ServiceRoleArn: " + getServiceRoleArn() + ",");
+        if (getDefaultInstanceProfileArn() != null) sb.append("DefaultInstanceProfileArn: " + getDefaultInstanceProfileArn() + ",");
+        if (getDefaultOs() != null) sb.append("DefaultOs: " + getDefaultOs() + ",");
+        if (getHostnameTheme() != null) sb.append("HostnameTheme: " + getHostnameTheme() + ",");
+        if (getDefaultAvailabilityZone() != null) sb.append("DefaultAvailabilityZone: " + getDefaultAvailabilityZone() + ",");
+        if (getCustomJson() != null) sb.append("CustomJson: " + getCustomJson() + ",");
+        if (isUseCustomCookbooks() != null) sb.append("UseCustomCookbooks: " + isUseCustomCookbooks() + ",");
+        if (getCustomCookbooksSource() != null) sb.append("CustomCookbooksSource: " + getCustomCookbooksSource() + ",");
+        if (getDefaultSshKeyName() != null) sb.append("DefaultSshKeyName: " + getDefaultSshKeyName() + ",");
+        if (isClonePermissions() != null) sb.append("ClonePermissions: " + isClonePermissions() + ",");
+        if (getCloneAppIds() != null) sb.append("CloneAppIds: " + getCloneAppIds() + ",");
         if (getDefaultRootDeviceType() != null) sb.append("DefaultRootDeviceType: " + getDefaultRootDeviceType() );
         sb.append("}");
         return sb.toString();

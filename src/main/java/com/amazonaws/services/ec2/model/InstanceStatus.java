@@ -35,7 +35,7 @@ public class InstanceStatus  implements Serializable  {
     /**
      * Events that affect the status of the associated Amazon EC2 instance.
      */
-    private java.util.List<InstanceStatusEvent> events;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<InstanceStatusEvent> events;
 
     /**
      * Represents the state of an Amazon EC2 instance.
@@ -122,7 +122,8 @@ public class InstanceStatus  implements Serializable  {
     public java.util.List<InstanceStatusEvent> getEvents() {
         
         if (events == null) {
-            events = new java.util.ArrayList<InstanceStatusEvent>();
+              events = new com.amazonaws.internal.ListWithAutoConstructFlag<InstanceStatusEvent>();
+              events.setAutoConstruct(true);
         }
         return events;
     }
@@ -137,8 +138,7 @@ public class InstanceStatus  implements Serializable  {
             this.events = null;
             return;
         }
-
-        java.util.List<InstanceStatusEvent> eventsCopy = new java.util.ArrayList<InstanceStatusEvent>(events.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<InstanceStatusEvent> eventsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<InstanceStatusEvent>(events.size());
         eventsCopy.addAll(events);
         this.events = eventsCopy;
     }
@@ -175,7 +175,7 @@ public class InstanceStatus  implements Serializable  {
         if (events == null) {
             this.events = null;
         } else {
-            java.util.List<InstanceStatusEvent> eventsCopy = new java.util.ArrayList<InstanceStatusEvent>(events.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<InstanceStatusEvent> eventsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<InstanceStatusEvent>(events.size());
             eventsCopy.addAll(events);
             this.events = eventsCopy;
         }
@@ -296,12 +296,12 @@ public class InstanceStatus  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ",");    	
-        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");    	
-        if (getEvents() != null) sb.append("Events: " + getEvents() + ",");    	
-        if (getInstanceState() != null) sb.append("InstanceState: " + getInstanceState() + ",");    	
-        if (getSystemStatus() != null) sb.append("SystemStatus: " + getSystemStatus() + ",");    	
+        sb.append("{");
+        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ",");
+        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");
+        if (getEvents() != null) sb.append("Events: " + getEvents() + ",");
+        if (getInstanceState() != null) sb.append("InstanceState: " + getInstanceState() + ",");
+        if (getSystemStatus() != null) sb.append("SystemStatus: " + getSystemStatus() + ",");
         if (getInstanceStatus() != null) sb.append("InstanceStatus: " + getInstanceStatus() );
         sb.append("}");
         return sb.toString();

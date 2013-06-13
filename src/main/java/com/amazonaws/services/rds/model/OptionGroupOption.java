@@ -61,18 +61,28 @@ public class OptionGroupOption  implements Serializable  {
     /**
      * List of all options that are prerequisites for this option.
      */
-    private java.util.List<String> optionsDependedOn;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> optionsDependedOn;
 
     /**
-     * Specifies whether the option is persistent in an option group.
+     * A persistent option cannot be removed from the option group once the
+     * option group is used, but this option can be removed from the db
+     * instance while modifying the related data and assigning another option
+     * group without this option.
      */
     private Boolean persistent;
+
+    /**
+     * A permanent option cannot be removed from the option group once the
+     * option group is used, and it cannot be removed from the db instance
+     * after assigning an option group with this permanent option.
+     */
+    private Boolean permanent;
 
     /**
      * Specifies the option settings that are available (and the default
      * value) for each option in an option group.
      */
-    private java.util.List<OptionGroupOptionSetting> optionGroupOptionSettings;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<OptionGroupOptionSetting> optionGroupOptionSettings;
 
     /**
      * The name of the option.
@@ -335,7 +345,8 @@ public class OptionGroupOption  implements Serializable  {
     public java.util.List<String> getOptionsDependedOn() {
         
         if (optionsDependedOn == null) {
-            optionsDependedOn = new java.util.ArrayList<String>();
+              optionsDependedOn = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              optionsDependedOn.setAutoConstruct(true);
         }
         return optionsDependedOn;
     }
@@ -350,8 +361,7 @@ public class OptionGroupOption  implements Serializable  {
             this.optionsDependedOn = null;
             return;
         }
-
-        java.util.List<String> optionsDependedOnCopy = new java.util.ArrayList<String>(optionsDependedOn.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> optionsDependedOnCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(optionsDependedOn.size());
         optionsDependedOnCopy.addAll(optionsDependedOn);
         this.optionsDependedOn = optionsDependedOnCopy;
     }
@@ -388,7 +398,7 @@ public class OptionGroupOption  implements Serializable  {
         if (optionsDependedOn == null) {
             this.optionsDependedOn = null;
         } else {
-            java.util.List<String> optionsDependedOnCopy = new java.util.ArrayList<String>(optionsDependedOn.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> optionsDependedOnCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(optionsDependedOn.size());
             optionsDependedOnCopy.addAll(optionsDependedOn);
             this.optionsDependedOn = optionsDependedOnCopy;
         }
@@ -397,29 +407,47 @@ public class OptionGroupOption  implements Serializable  {
     }
     
     /**
-     * Specifies whether the option is persistent in an option group.
+     * A persistent option cannot be removed from the option group once the
+     * option group is used, but this option can be removed from the db
+     * instance while modifying the related data and assigning another option
+     * group without this option.
      *
-     * @return Specifies whether the option is persistent in an option group.
+     * @return A persistent option cannot be removed from the option group once the
+     *         option group is used, but this option can be removed from the db
+     *         instance while modifying the related data and assigning another option
+     *         group without this option.
      */
     public Boolean isPersistent() {
         return persistent;
     }
     
     /**
-     * Specifies whether the option is persistent in an option group.
+     * A persistent option cannot be removed from the option group once the
+     * option group is used, but this option can be removed from the db
+     * instance while modifying the related data and assigning another option
+     * group without this option.
      *
-     * @param persistent Specifies whether the option is persistent in an option group.
+     * @param persistent A persistent option cannot be removed from the option group once the
+     *         option group is used, but this option can be removed from the db
+     *         instance while modifying the related data and assigning another option
+     *         group without this option.
      */
     public void setPersistent(Boolean persistent) {
         this.persistent = persistent;
     }
     
     /**
-     * Specifies whether the option is persistent in an option group.
+     * A persistent option cannot be removed from the option group once the
+     * option group is used, but this option can be removed from the db
+     * instance while modifying the related data and assigning another option
+     * group without this option.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param persistent Specifies whether the option is persistent in an option group.
+     * @param persistent A persistent option cannot be removed from the option group once the
+     *         option group is used, but this option can be removed from the db
+     *         instance while modifying the related data and assigning another option
+     *         group without this option.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -431,12 +459,77 @@ public class OptionGroupOption  implements Serializable  {
     
     
     /**
-     * Specifies whether the option is persistent in an option group.
+     * A persistent option cannot be removed from the option group once the
+     * option group is used, but this option can be removed from the db
+     * instance while modifying the related data and assigning another option
+     * group without this option.
      *
-     * @return Specifies whether the option is persistent in an option group.
+     * @return A persistent option cannot be removed from the option group once the
+     *         option group is used, but this option can be removed from the db
+     *         instance while modifying the related data and assigning another option
+     *         group without this option.
      */
     public Boolean getPersistent() {
         return persistent;
+    }
+    
+    /**
+     * A permanent option cannot be removed from the option group once the
+     * option group is used, and it cannot be removed from the db instance
+     * after assigning an option group with this permanent option.
+     *
+     * @return A permanent option cannot be removed from the option group once the
+     *         option group is used, and it cannot be removed from the db instance
+     *         after assigning an option group with this permanent option.
+     */
+    public Boolean isPermanent() {
+        return permanent;
+    }
+    
+    /**
+     * A permanent option cannot be removed from the option group once the
+     * option group is used, and it cannot be removed from the db instance
+     * after assigning an option group with this permanent option.
+     *
+     * @param permanent A permanent option cannot be removed from the option group once the
+     *         option group is used, and it cannot be removed from the db instance
+     *         after assigning an option group with this permanent option.
+     */
+    public void setPermanent(Boolean permanent) {
+        this.permanent = permanent;
+    }
+    
+    /**
+     * A permanent option cannot be removed from the option group once the
+     * option group is used, and it cannot be removed from the db instance
+     * after assigning an option group with this permanent option.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param permanent A permanent option cannot be removed from the option group once the
+     *         option group is used, and it cannot be removed from the db instance
+     *         after assigning an option group with this permanent option.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public OptionGroupOption withPermanent(Boolean permanent) {
+        this.permanent = permanent;
+        return this;
+    }
+    
+    
+    /**
+     * A permanent option cannot be removed from the option group once the
+     * option group is used, and it cannot be removed from the db instance
+     * after assigning an option group with this permanent option.
+     *
+     * @return A permanent option cannot be removed from the option group once the
+     *         option group is used, and it cannot be removed from the db instance
+     *         after assigning an option group with this permanent option.
+     */
+    public Boolean getPermanent() {
+        return permanent;
     }
     
     /**
@@ -449,7 +542,8 @@ public class OptionGroupOption  implements Serializable  {
     public java.util.List<OptionGroupOptionSetting> getOptionGroupOptionSettings() {
         
         if (optionGroupOptionSettings == null) {
-            optionGroupOptionSettings = new java.util.ArrayList<OptionGroupOptionSetting>();
+              optionGroupOptionSettings = new com.amazonaws.internal.ListWithAutoConstructFlag<OptionGroupOptionSetting>();
+              optionGroupOptionSettings.setAutoConstruct(true);
         }
         return optionGroupOptionSettings;
     }
@@ -466,8 +560,7 @@ public class OptionGroupOption  implements Serializable  {
             this.optionGroupOptionSettings = null;
             return;
         }
-
-        java.util.List<OptionGroupOptionSetting> optionGroupOptionSettingsCopy = new java.util.ArrayList<OptionGroupOptionSetting>(optionGroupOptionSettings.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<OptionGroupOptionSetting> optionGroupOptionSettingsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<OptionGroupOptionSetting>(optionGroupOptionSettings.size());
         optionGroupOptionSettingsCopy.addAll(optionGroupOptionSettings);
         this.optionGroupOptionSettings = optionGroupOptionSettingsCopy;
     }
@@ -508,7 +601,7 @@ public class OptionGroupOption  implements Serializable  {
         if (optionGroupOptionSettings == null) {
             this.optionGroupOptionSettings = null;
         } else {
-            java.util.List<OptionGroupOptionSetting> optionGroupOptionSettingsCopy = new java.util.ArrayList<OptionGroupOptionSetting>(optionGroupOptionSettings.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<OptionGroupOptionSetting> optionGroupOptionSettingsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<OptionGroupOptionSetting>(optionGroupOptionSettings.size());
             optionGroupOptionSettingsCopy.addAll(optionGroupOptionSettings);
             this.optionGroupOptionSettings = optionGroupOptionSettingsCopy;
         }
@@ -527,16 +620,17 @@ public class OptionGroupOption  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getName() != null) sb.append("Name: " + getName() + ",");    	
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");    	
-        if (getEngineName() != null) sb.append("EngineName: " + getEngineName() + ",");    	
-        if (getMajorEngineVersion() != null) sb.append("MajorEngineVersion: " + getMajorEngineVersion() + ",");    	
-        if (getMinimumRequiredMinorEngineVersion() != null) sb.append("MinimumRequiredMinorEngineVersion: " + getMinimumRequiredMinorEngineVersion() + ",");    	
-        if (isPortRequired() != null) sb.append("PortRequired: " + isPortRequired() + ",");    	
-        if (getDefaultPort() != null) sb.append("DefaultPort: " + getDefaultPort() + ",");    	
-        if (getOptionsDependedOn() != null) sb.append("OptionsDependedOn: " + getOptionsDependedOn() + ",");    	
-        if (isPersistent() != null) sb.append("Persistent: " + isPersistent() + ",");    	
+        sb.append("{");
+        if (getName() != null) sb.append("Name: " + getName() + ",");
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");
+        if (getEngineName() != null) sb.append("EngineName: " + getEngineName() + ",");
+        if (getMajorEngineVersion() != null) sb.append("MajorEngineVersion: " + getMajorEngineVersion() + ",");
+        if (getMinimumRequiredMinorEngineVersion() != null) sb.append("MinimumRequiredMinorEngineVersion: " + getMinimumRequiredMinorEngineVersion() + ",");
+        if (isPortRequired() != null) sb.append("PortRequired: " + isPortRequired() + ",");
+        if (getDefaultPort() != null) sb.append("DefaultPort: " + getDefaultPort() + ",");
+        if (getOptionsDependedOn() != null) sb.append("OptionsDependedOn: " + getOptionsDependedOn() + ",");
+        if (isPersistent() != null) sb.append("Persistent: " + isPersistent() + ",");
+        if (isPermanent() != null) sb.append("Permanent: " + isPermanent() + ",");
         if (getOptionGroupOptionSettings() != null) sb.append("OptionGroupOptionSettings: " + getOptionGroupOptionSettings() );
         sb.append("}");
         return sb.toString();
@@ -556,6 +650,7 @@ public class OptionGroupOption  implements Serializable  {
         hashCode = prime * hashCode + ((getDefaultPort() == null) ? 0 : getDefaultPort().hashCode()); 
         hashCode = prime * hashCode + ((getOptionsDependedOn() == null) ? 0 : getOptionsDependedOn().hashCode()); 
         hashCode = prime * hashCode + ((isPersistent() == null) ? 0 : isPersistent().hashCode()); 
+        hashCode = prime * hashCode + ((isPermanent() == null) ? 0 : isPermanent().hashCode()); 
         hashCode = prime * hashCode + ((getOptionGroupOptionSettings() == null) ? 0 : getOptionGroupOptionSettings().hashCode()); 
         return hashCode;
     }
@@ -586,6 +681,8 @@ public class OptionGroupOption  implements Serializable  {
         if (other.getOptionsDependedOn() != null && other.getOptionsDependedOn().equals(this.getOptionsDependedOn()) == false) return false; 
         if (other.isPersistent() == null ^ this.isPersistent() == null) return false;
         if (other.isPersistent() != null && other.isPersistent().equals(this.isPersistent()) == false) return false; 
+        if (other.isPermanent() == null ^ this.isPermanent() == null) return false;
+        if (other.isPermanent() != null && other.isPermanent().equals(this.isPermanent()) == false) return false; 
         if (other.getOptionGroupOptionSettings() == null ^ this.getOptionGroupOptionSettings() == null) return false;
         if (other.getOptionGroupOptionSettings() != null && other.getOptionGroupOptionSettings().equals(this.getOptionGroupOptionSettings()) == false) return false; 
         return true;

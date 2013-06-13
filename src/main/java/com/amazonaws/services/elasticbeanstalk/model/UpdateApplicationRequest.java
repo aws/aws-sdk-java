@@ -55,6 +55,8 @@ public class UpdateApplicationRequest extends AmazonWebServiceRequest  implement
      */
     public UpdateApplicationRequest() {}
     
+
+
     /**
      * Constructs a new UpdateApplicationRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -65,7 +67,7 @@ public class UpdateApplicationRequest extends AmazonWebServiceRequest  implement
      * <code>InvalidParameterValue</code> error.
      */
     public UpdateApplicationRequest(String applicationName) {
-        this.applicationName = applicationName;
+        setApplicationName(applicationName);
     }
 
     
@@ -185,8 +187,8 @@ public class UpdateApplicationRequest extends AmazonWebServiceRequest  implement
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getApplicationName() != null) sb.append("ApplicationName: " + getApplicationName() + ",");    	
+        sb.append("{");
+        if (getApplicationName() != null) sb.append("ApplicationName: " + getApplicationName() + ",");
         if (getDescription() != null) sb.append("Description: " + getDescription() );
         sb.append("}");
         return sb.toString();

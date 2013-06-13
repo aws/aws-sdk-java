@@ -108,7 +108,7 @@ public class CreatePrivateVirtualInterfaceResult  implements Serializable  {
     /**
      * A list of route filter prefixes.
      */
-    private java.util.List<RouteFilterPrefix> routeFilterPrefixes;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<RouteFilterPrefix> routeFilterPrefixes;
 
     /**
      * ID of the virtual interface. <p>Example: dxvif-123dfg56 <p>Default:
@@ -739,7 +739,8 @@ public class CreatePrivateVirtualInterfaceResult  implements Serializable  {
     public java.util.List<RouteFilterPrefix> getRouteFilterPrefixes() {
         
         if (routeFilterPrefixes == null) {
-            routeFilterPrefixes = new java.util.ArrayList<RouteFilterPrefix>();
+              routeFilterPrefixes = new com.amazonaws.internal.ListWithAutoConstructFlag<RouteFilterPrefix>();
+              routeFilterPrefixes.setAutoConstruct(true);
         }
         return routeFilterPrefixes;
     }
@@ -754,8 +755,7 @@ public class CreatePrivateVirtualInterfaceResult  implements Serializable  {
             this.routeFilterPrefixes = null;
             return;
         }
-
-        java.util.List<RouteFilterPrefix> routeFilterPrefixesCopy = new java.util.ArrayList<RouteFilterPrefix>(routeFilterPrefixes.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<RouteFilterPrefix> routeFilterPrefixesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<RouteFilterPrefix>(routeFilterPrefixes.size());
         routeFilterPrefixesCopy.addAll(routeFilterPrefixes);
         this.routeFilterPrefixes = routeFilterPrefixesCopy;
     }
@@ -792,7 +792,7 @@ public class CreatePrivateVirtualInterfaceResult  implements Serializable  {
         if (routeFilterPrefixes == null) {
             this.routeFilterPrefixes = null;
         } else {
-            java.util.List<RouteFilterPrefix> routeFilterPrefixesCopy = new java.util.ArrayList<RouteFilterPrefix>(routeFilterPrefixes.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<RouteFilterPrefix> routeFilterPrefixesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<RouteFilterPrefix>(routeFilterPrefixes.size());
             routeFilterPrefixesCopy.addAll(routeFilterPrefixes);
             this.routeFilterPrefixes = routeFilterPrefixesCopy;
         }
@@ -811,20 +811,20 @@ public class CreatePrivateVirtualInterfaceResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getVirtualInterfaceId() != null) sb.append("VirtualInterfaceId: " + getVirtualInterfaceId() + ",");    	
-        if (getLocation() != null) sb.append("Location: " + getLocation() + ",");    	
-        if (getConnectionId() != null) sb.append("ConnectionId: " + getConnectionId() + ",");    	
-        if (getVirtualInterfaceType() != null) sb.append("VirtualInterfaceType: " + getVirtualInterfaceType() + ",");    	
-        if (getVirtualInterfaceName() != null) sb.append("VirtualInterfaceName: " + getVirtualInterfaceName() + ",");    	
-        if (getVlan() != null) sb.append("Vlan: " + getVlan() + ",");    	
-        if (getAsn() != null) sb.append("Asn: " + getAsn() + ",");    	
-        if (getAuthKey() != null) sb.append("AuthKey: " + getAuthKey() + ",");    	
-        if (getAmazonAddress() != null) sb.append("AmazonAddress: " + getAmazonAddress() + ",");    	
-        if (getCustomerAddress() != null) sb.append("CustomerAddress: " + getCustomerAddress() + ",");    	
-        if (getVirtualInterfaceState() != null) sb.append("VirtualInterfaceState: " + getVirtualInterfaceState() + ",");    	
-        if (getCustomerRouterConfig() != null) sb.append("CustomerRouterConfig: " + getCustomerRouterConfig() + ",");    	
-        if (getVirtualGatewayId() != null) sb.append("VirtualGatewayId: " + getVirtualGatewayId() + ",");    	
+        sb.append("{");
+        if (getVirtualInterfaceId() != null) sb.append("VirtualInterfaceId: " + getVirtualInterfaceId() + ",");
+        if (getLocation() != null) sb.append("Location: " + getLocation() + ",");
+        if (getConnectionId() != null) sb.append("ConnectionId: " + getConnectionId() + ",");
+        if (getVirtualInterfaceType() != null) sb.append("VirtualInterfaceType: " + getVirtualInterfaceType() + ",");
+        if (getVirtualInterfaceName() != null) sb.append("VirtualInterfaceName: " + getVirtualInterfaceName() + ",");
+        if (getVlan() != null) sb.append("Vlan: " + getVlan() + ",");
+        if (getAsn() != null) sb.append("Asn: " + getAsn() + ",");
+        if (getAuthKey() != null) sb.append("AuthKey: " + getAuthKey() + ",");
+        if (getAmazonAddress() != null) sb.append("AmazonAddress: " + getAmazonAddress() + ",");
+        if (getCustomerAddress() != null) sb.append("CustomerAddress: " + getCustomerAddress() + ",");
+        if (getVirtualInterfaceState() != null) sb.append("VirtualInterfaceState: " + getVirtualInterfaceState() + ",");
+        if (getCustomerRouterConfig() != null) sb.append("CustomerRouterConfig: " + getCustomerRouterConfig() + ",");
+        if (getVirtualGatewayId() != null) sb.append("VirtualGatewayId: " + getVirtualGatewayId() + ",");
         if (getRouteFilterPrefixes() != null) sb.append("RouteFilterPrefixes: " + getRouteFilterPrefixes() );
         sb.append("}");
         return sb.toString();

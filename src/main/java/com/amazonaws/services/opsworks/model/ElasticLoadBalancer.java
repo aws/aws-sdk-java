@@ -50,13 +50,13 @@ public class ElasticLoadBalancer  implements Serializable  {
     /**
      * The instance's Availability Zones.
      */
-    private java.util.List<String> availabilityZones;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> availabilityZones;
 
     /**
      * A list of the EC2 instances that the Elastic Load Balancing instance
      * is managing traffic for.
      */
-    private java.util.List<String> ec2InstanceIds;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> ec2InstanceIds;
 
     /**
      * The Elastic Load Balancing instance's name.
@@ -236,7 +236,8 @@ public class ElasticLoadBalancer  implements Serializable  {
     public java.util.List<String> getAvailabilityZones() {
         
         if (availabilityZones == null) {
-            availabilityZones = new java.util.ArrayList<String>();
+              availabilityZones = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              availabilityZones.setAutoConstruct(true);
         }
         return availabilityZones;
     }
@@ -251,8 +252,7 @@ public class ElasticLoadBalancer  implements Serializable  {
             this.availabilityZones = null;
             return;
         }
-
-        java.util.List<String> availabilityZonesCopy = new java.util.ArrayList<String>(availabilityZones.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> availabilityZonesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(availabilityZones.size());
         availabilityZonesCopy.addAll(availabilityZones);
         this.availabilityZones = availabilityZonesCopy;
     }
@@ -289,7 +289,7 @@ public class ElasticLoadBalancer  implements Serializable  {
         if (availabilityZones == null) {
             this.availabilityZones = null;
         } else {
-            java.util.List<String> availabilityZonesCopy = new java.util.ArrayList<String>(availabilityZones.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> availabilityZonesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(availabilityZones.size());
             availabilityZonesCopy.addAll(availabilityZones);
             this.availabilityZones = availabilityZonesCopy;
         }
@@ -307,7 +307,8 @@ public class ElasticLoadBalancer  implements Serializable  {
     public java.util.List<String> getEc2InstanceIds() {
         
         if (ec2InstanceIds == null) {
-            ec2InstanceIds = new java.util.ArrayList<String>();
+              ec2InstanceIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              ec2InstanceIds.setAutoConstruct(true);
         }
         return ec2InstanceIds;
     }
@@ -324,8 +325,7 @@ public class ElasticLoadBalancer  implements Serializable  {
             this.ec2InstanceIds = null;
             return;
         }
-
-        java.util.List<String> ec2InstanceIdsCopy = new java.util.ArrayList<String>(ec2InstanceIds.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> ec2InstanceIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(ec2InstanceIds.size());
         ec2InstanceIdsCopy.addAll(ec2InstanceIds);
         this.ec2InstanceIds = ec2InstanceIdsCopy;
     }
@@ -366,7 +366,7 @@ public class ElasticLoadBalancer  implements Serializable  {
         if (ec2InstanceIds == null) {
             this.ec2InstanceIds = null;
         } else {
-            java.util.List<String> ec2InstanceIdsCopy = new java.util.ArrayList<String>(ec2InstanceIds.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> ec2InstanceIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(ec2InstanceIds.size());
             ec2InstanceIdsCopy.addAll(ec2InstanceIds);
             this.ec2InstanceIds = ec2InstanceIdsCopy;
         }
@@ -385,13 +385,13 @@ public class ElasticLoadBalancer  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getElasticLoadBalancerName() != null) sb.append("ElasticLoadBalancerName: " + getElasticLoadBalancerName() + ",");    	
-        if (getRegion() != null) sb.append("Region: " + getRegion() + ",");    	
-        if (getDnsName() != null) sb.append("DnsName: " + getDnsName() + ",");    	
-        if (getStackId() != null) sb.append("StackId: " + getStackId() + ",");    	
-        if (getLayerId() != null) sb.append("LayerId: " + getLayerId() + ",");    	
-        if (getAvailabilityZones() != null) sb.append("AvailabilityZones: " + getAvailabilityZones() + ",");    	
+        sb.append("{");
+        if (getElasticLoadBalancerName() != null) sb.append("ElasticLoadBalancerName: " + getElasticLoadBalancerName() + ",");
+        if (getRegion() != null) sb.append("Region: " + getRegion() + ",");
+        if (getDnsName() != null) sb.append("DnsName: " + getDnsName() + ",");
+        if (getStackId() != null) sb.append("StackId: " + getStackId() + ",");
+        if (getLayerId() != null) sb.append("LayerId: " + getLayerId() + ",");
+        if (getAvailabilityZones() != null) sb.append("AvailabilityZones: " + getAvailabilityZones() + ",");
         if (getEc2InstanceIds() != null) sb.append("Ec2InstanceIds: " + getEc2InstanceIds() );
         sb.append("}");
         return sb.toString();

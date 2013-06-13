@@ -70,6 +70,8 @@ public class UpdateAccessKeyRequest extends AmazonWebServiceRequest  implements 
      */
     public UpdateAccessKeyRequest() {}
     
+
+
     /**
      * Constructs a new UpdateAccessKeyRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -82,8 +84,8 @@ public class UpdateAccessKeyRequest extends AmazonWebServiceRequest  implements 
      * while <code>Inactive</code> means the key cannot be used.
      */
     public UpdateAccessKeyRequest(String accessKeyId, String status) {
-        this.accessKeyId = accessKeyId;
-        this.status = status;
+        setAccessKeyId(accessKeyId);
+        setStatus(status);
     }
 
     
@@ -310,9 +312,9 @@ public class UpdateAccessKeyRequest extends AmazonWebServiceRequest  implements 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getUserName() != null) sb.append("UserName: " + getUserName() + ",");    	
-        if (getAccessKeyId() != null) sb.append("AccessKeyId: " + getAccessKeyId() + ",");    	
+        sb.append("{");
+        if (getUserName() != null) sb.append("UserName: " + getUserName() + ",");
+        if (getAccessKeyId() != null) sb.append("AccessKeyId: " + getAccessKeyId() + ",");
         if (getStatus() != null) sb.append("Status: " + getStatus() );
         sb.append("}");
         return sb.toString();

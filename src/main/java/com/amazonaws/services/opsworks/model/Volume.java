@@ -497,17 +497,17 @@ public class Volume  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getVolumeId() != null) sb.append("VolumeId: " + getVolumeId() + ",");    	
-        if (getEc2VolumeId() != null) sb.append("Ec2VolumeId: " + getEc2VolumeId() + ",");    	
-        if (getName() != null) sb.append("Name: " + getName() + ",");    	
-        if (getRaidArrayId() != null) sb.append("RaidArrayId: " + getRaidArrayId() + ",");    	
-        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ",");    	
-        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");    	
-        if (getSize() != null) sb.append("Size: " + getSize() + ",");    	
-        if (getDevice() != null) sb.append("Device: " + getDevice() + ",");    	
-        if (getMountPoint() != null) sb.append("MountPoint: " + getMountPoint() + ",");    	
-        if (getRegion() != null) sb.append("Region: " + getRegion() + ",");    	
+        sb.append("{");
+        if (getVolumeId() != null) sb.append("VolumeId: " + getVolumeId() + ",");
+        if (getEc2VolumeId() != null) sb.append("Ec2VolumeId: " + getEc2VolumeId() + ",");
+        if (getName() != null) sb.append("Name: " + getName() + ",");
+        if (getRaidArrayId() != null) sb.append("RaidArrayId: " + getRaidArrayId() + ",");
+        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ",");
+        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");
+        if (getSize() != null) sb.append("Size: " + getSize() + ",");
+        if (getDevice() != null) sb.append("Device: " + getDevice() + ",");
+        if (getMountPoint() != null) sb.append("MountPoint: " + getMountPoint() + ",");
+        if (getRegion() != null) sb.append("Region: " + getRegion() + ",");
         if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() );
         sb.append("}");
         return sb.toString();

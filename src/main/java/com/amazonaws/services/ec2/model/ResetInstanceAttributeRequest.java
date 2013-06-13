@@ -46,6 +46,8 @@ public class ResetInstanceAttributeRequest extends AmazonWebServiceRequest  impl
      */
     public ResetInstanceAttributeRequest() {}
     
+
+
     /**
      * Constructs a new ResetInstanceAttributeRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -57,8 +59,8 @@ public class ResetInstanceAttributeRequest extends AmazonWebServiceRequest  impl
      * attribute names: <code>kernel</code>, <code>ramdisk</code>
      */
     public ResetInstanceAttributeRequest(String instanceId, String attribute) {
-        this.instanceId = instanceId;
-        this.attribute = attribute;
+        setInstanceId(instanceId);
+        setAttribute(attribute);
     }
 
     
@@ -216,8 +218,8 @@ public class ResetInstanceAttributeRequest extends AmazonWebServiceRequest  impl
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ",");    	
+        sb.append("{");
+        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ",");
         if (getAttribute() != null) sb.append("Attribute: " + getAttribute() );
         sb.append("}");
         return sb.toString();

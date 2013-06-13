@@ -38,13 +38,13 @@ public class InstanceNetworkInterface  implements Serializable  {
 
     private Boolean sourceDestCheck;
 
-    private java.util.List<GroupIdentifier> groups;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<GroupIdentifier> groups;
 
     private InstanceNetworkInterfaceAttachment attachment;
 
     private InstanceNetworkInterfaceAssociation association;
 
-    private java.util.List<InstancePrivateIpAddress> privateIpAddresses;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<InstancePrivateIpAddress> privateIpAddresses;
 
     /**
      * Returns the value of the NetworkInterfaceId property for this object.
@@ -369,7 +369,8 @@ public class InstanceNetworkInterface  implements Serializable  {
     public java.util.List<GroupIdentifier> getGroups() {
         
         if (groups == null) {
-            groups = new java.util.ArrayList<GroupIdentifier>();
+              groups = new com.amazonaws.internal.ListWithAutoConstructFlag<GroupIdentifier>();
+              groups.setAutoConstruct(true);
         }
         return groups;
     }
@@ -384,8 +385,7 @@ public class InstanceNetworkInterface  implements Serializable  {
             this.groups = null;
             return;
         }
-
-        java.util.List<GroupIdentifier> groupsCopy = new java.util.ArrayList<GroupIdentifier>(groups.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<GroupIdentifier> groupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<GroupIdentifier>(groups.size());
         groupsCopy.addAll(groups);
         this.groups = groupsCopy;
     }
@@ -422,7 +422,7 @@ public class InstanceNetworkInterface  implements Serializable  {
         if (groups == null) {
             this.groups = null;
         } else {
-            java.util.List<GroupIdentifier> groupsCopy = new java.util.ArrayList<GroupIdentifier>(groups.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<GroupIdentifier> groupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<GroupIdentifier>(groups.size());
             groupsCopy.addAll(groups);
             this.groups = groupsCopy;
         }
@@ -506,7 +506,8 @@ public class InstanceNetworkInterface  implements Serializable  {
     public java.util.List<InstancePrivateIpAddress> getPrivateIpAddresses() {
         
         if (privateIpAddresses == null) {
-            privateIpAddresses = new java.util.ArrayList<InstancePrivateIpAddress>();
+              privateIpAddresses = new com.amazonaws.internal.ListWithAutoConstructFlag<InstancePrivateIpAddress>();
+              privateIpAddresses.setAutoConstruct(true);
         }
         return privateIpAddresses;
     }
@@ -521,8 +522,7 @@ public class InstanceNetworkInterface  implements Serializable  {
             this.privateIpAddresses = null;
             return;
         }
-
-        java.util.List<InstancePrivateIpAddress> privateIpAddressesCopy = new java.util.ArrayList<InstancePrivateIpAddress>(privateIpAddresses.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<InstancePrivateIpAddress> privateIpAddressesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<InstancePrivateIpAddress>(privateIpAddresses.size());
         privateIpAddressesCopy.addAll(privateIpAddresses);
         this.privateIpAddresses = privateIpAddressesCopy;
     }
@@ -559,7 +559,7 @@ public class InstanceNetworkInterface  implements Serializable  {
         if (privateIpAddresses == null) {
             this.privateIpAddresses = null;
         } else {
-            java.util.List<InstancePrivateIpAddress> privateIpAddressesCopy = new java.util.ArrayList<InstancePrivateIpAddress>(privateIpAddresses.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<InstancePrivateIpAddress> privateIpAddressesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<InstancePrivateIpAddress>(privateIpAddresses.size());
             privateIpAddressesCopy.addAll(privateIpAddresses);
             this.privateIpAddresses = privateIpAddressesCopy;
         }
@@ -578,19 +578,19 @@ public class InstanceNetworkInterface  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getNetworkInterfaceId() != null) sb.append("NetworkInterfaceId: " + getNetworkInterfaceId() + ",");    	
-        if (getSubnetId() != null) sb.append("SubnetId: " + getSubnetId() + ",");    	
-        if (getVpcId() != null) sb.append("VpcId: " + getVpcId() + ",");    	
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");    	
-        if (getOwnerId() != null) sb.append("OwnerId: " + getOwnerId() + ",");    	
-        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");    	
-        if (getPrivateIpAddress() != null) sb.append("PrivateIpAddress: " + getPrivateIpAddress() + ",");    	
-        if (getPrivateDnsName() != null) sb.append("PrivateDnsName: " + getPrivateDnsName() + ",");    	
-        if (isSourceDestCheck() != null) sb.append("SourceDestCheck: " + isSourceDestCheck() + ",");    	
-        if (getGroups() != null) sb.append("Groups: " + getGroups() + ",");    	
-        if (getAttachment() != null) sb.append("Attachment: " + getAttachment() + ",");    	
-        if (getAssociation() != null) sb.append("Association: " + getAssociation() + ",");    	
+        sb.append("{");
+        if (getNetworkInterfaceId() != null) sb.append("NetworkInterfaceId: " + getNetworkInterfaceId() + ",");
+        if (getSubnetId() != null) sb.append("SubnetId: " + getSubnetId() + ",");
+        if (getVpcId() != null) sb.append("VpcId: " + getVpcId() + ",");
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");
+        if (getOwnerId() != null) sb.append("OwnerId: " + getOwnerId() + ",");
+        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");
+        if (getPrivateIpAddress() != null) sb.append("PrivateIpAddress: " + getPrivateIpAddress() + ",");
+        if (getPrivateDnsName() != null) sb.append("PrivateDnsName: " + getPrivateDnsName() + ",");
+        if (isSourceDestCheck() != null) sb.append("SourceDestCheck: " + isSourceDestCheck() + ",");
+        if (getGroups() != null) sb.append("Groups: " + getGroups() + ",");
+        if (getAttachment() != null) sb.append("Attachment: " + getAttachment() + ",");
+        if (getAssociation() != null) sb.append("Association: " + getAssociation() + ",");
         if (getPrivateIpAddresses() != null) sb.append("PrivateIpAddresses: " + getPrivateIpAddresses() );
         sb.append("}");
         return sb.toString();

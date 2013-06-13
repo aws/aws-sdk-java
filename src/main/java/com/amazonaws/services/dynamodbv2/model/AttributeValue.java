@@ -40,17 +40,17 @@ public class AttributeValue  implements Serializable  {
     /**
      * Represents a String set data type
      */
-    private java.util.List<String> sS;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> sS;
 
     /**
      * Represents a Number set data type
      */
-    private java.util.List<String> nS;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> nS;
 
     /**
      * Represents a Binary set data type
      */
-    private java.util.List<java.nio.ByteBuffer> bS;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<java.nio.ByteBuffer> bS;
 
     /**
      * Default constructor for a new AttributeValue object.  Callers should use the
@@ -58,6 +58,8 @@ public class AttributeValue  implements Serializable  {
      */
     public AttributeValue() {}
     
+
+
     /**
      * Constructs a new AttributeValue object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -66,11 +68,13 @@ public class AttributeValue  implements Serializable  {
      * @param s Represents a String data type
      */
     public AttributeValue(String s) {
-        this.s = s;
+        setS(s);
     }
 
     
     
+
+
     /**
      * Constructs a new AttributeValue object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -79,7 +83,7 @@ public class AttributeValue  implements Serializable  {
      * @param sS Represents a String set data type
      */
     public AttributeValue(java.util.List<String> sS) {
-        this.sS = sS;
+        setSS(sS);
     }
 
     
@@ -206,8 +210,7 @@ public class AttributeValue  implements Serializable  {
             this.sS = null;
             return;
         }
-
-        java.util.List<String> sSCopy = new java.util.ArrayList<String>(sS.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> sSCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(sS.size());
         sSCopy.addAll(sS);
         this.sS = sSCopy;
     }
@@ -244,7 +247,7 @@ public class AttributeValue  implements Serializable  {
         if (sS == null) {
             this.sS = null;
         } else {
-            java.util.List<String> sSCopy = new java.util.ArrayList<String>(sS.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> sSCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(sS.size());
             sSCopy.addAll(sS);
             this.sS = sSCopy;
         }
@@ -272,8 +275,7 @@ public class AttributeValue  implements Serializable  {
             this.nS = null;
             return;
         }
-
-        java.util.List<String> nSCopy = new java.util.ArrayList<String>(nS.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> nSCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(nS.size());
         nSCopy.addAll(nS);
         this.nS = nSCopy;
     }
@@ -310,7 +312,7 @@ public class AttributeValue  implements Serializable  {
         if (nS == null) {
             this.nS = null;
         } else {
-            java.util.List<String> nSCopy = new java.util.ArrayList<String>(nS.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> nSCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(nS.size());
             nSCopy.addAll(nS);
             this.nS = nSCopy;
         }
@@ -338,8 +340,7 @@ public class AttributeValue  implements Serializable  {
             this.bS = null;
             return;
         }
-
-        java.util.List<java.nio.ByteBuffer> bSCopy = new java.util.ArrayList<java.nio.ByteBuffer>(bS.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<java.nio.ByteBuffer> bSCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<java.nio.ByteBuffer>(bS.size());
         bSCopy.addAll(bS);
         this.bS = bSCopy;
     }
@@ -376,7 +377,7 @@ public class AttributeValue  implements Serializable  {
         if (bS == null) {
             this.bS = null;
         } else {
-            java.util.List<java.nio.ByteBuffer> bSCopy = new java.util.ArrayList<java.nio.ByteBuffer>(bS.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<java.nio.ByteBuffer> bSCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<java.nio.ByteBuffer>(bS.size());
             bSCopy.addAll(bS);
             this.bS = bSCopy;
         }
@@ -395,12 +396,12 @@ public class AttributeValue  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getS() != null) sb.append("S: " + getS() + ",");    	
-        if (getN() != null) sb.append("N: " + getN() + ",");    	
-        if (getB() != null) sb.append("B: " + getB() + ",");    	
-        if (getSS() != null) sb.append("SS: " + getSS() + ",");    	
-        if (getNS() != null) sb.append("NS: " + getNS() + ",");    	
+        sb.append("{");
+        if (getS() != null) sb.append("S: " + getS() + ",");
+        if (getN() != null) sb.append("N: " + getN() + ",");
+        if (getB() != null) sb.append("B: " + getB() + ",");
+        if (getSS() != null) sb.append("SS: " + getSS() + ",");
+        if (getNS() != null) sb.append("NS: " + getNS() + ",");
         if (getBS() != null) sb.append("BS: " + getBS() );
         sb.append("}");
         return sb.toString();

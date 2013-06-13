@@ -43,6 +43,8 @@ public class CreateAccountAliasRequest extends AmazonWebServiceRequest  implemen
      */
     public CreateAccountAliasRequest() {}
     
+
+
     /**
      * Constructs a new CreateAccountAliasRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -51,7 +53,7 @@ public class CreateAccountAliasRequest extends AmazonWebServiceRequest  implemen
      * @param accountAlias Name of the account alias to create.
      */
     public CreateAccountAliasRequest(String accountAlias) {
-        this.accountAlias = accountAlias;
+        setAccountAlias(accountAlias);
     }
 
     
@@ -113,7 +115,7 @@ public class CreateAccountAliasRequest extends AmazonWebServiceRequest  implemen
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getAccountAlias() != null) sb.append("AccountAlias: " + getAccountAlias() );
         sb.append("}");
         return sb.toString();

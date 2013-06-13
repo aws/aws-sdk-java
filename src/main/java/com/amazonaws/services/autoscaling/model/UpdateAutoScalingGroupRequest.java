@@ -87,7 +87,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest  impl
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
      */
-    private java.util.List<String> availabilityZones;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> availabilityZones;
 
     /**
      * The service of interest for the health status check, either "EC2" for
@@ -140,7 +140,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest  impl
      * Termination Policy for Your Auto Scaling Group</a> in the the <i>Auto
      * Scaling Developer Guide</i>.
      */
-    private java.util.List<String> terminationPolicies;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> terminationPolicies;
 
     /**
      * The name of the Auto Scaling group.
@@ -387,7 +387,8 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest  impl
     public java.util.List<String> getAvailabilityZones() {
         
         if (availabilityZones == null) {
-            availabilityZones = new java.util.ArrayList<String>();
+              availabilityZones = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              availabilityZones.setAutoConstruct(true);
         }
         return availabilityZones;
     }
@@ -405,8 +406,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest  impl
             this.availabilityZones = null;
             return;
         }
-
-        java.util.List<String> availabilityZonesCopy = new java.util.ArrayList<String>(availabilityZones.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> availabilityZonesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(availabilityZones.size());
         availabilityZonesCopy.addAll(availabilityZones);
         this.availabilityZones = availabilityZonesCopy;
     }
@@ -449,7 +449,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest  impl
         if (availabilityZones == null) {
             this.availabilityZones = null;
         } else {
-            java.util.List<String> availabilityZonesCopy = new java.util.ArrayList<String>(availabilityZones.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> availabilityZonesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(availabilityZones.size());
             availabilityZonesCopy.addAll(availabilityZones);
             this.availabilityZones = availabilityZonesCopy;
         }
@@ -709,7 +709,8 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest  impl
     public java.util.List<String> getTerminationPolicies() {
         
         if (terminationPolicies == null) {
-            terminationPolicies = new java.util.ArrayList<String>();
+              terminationPolicies = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              terminationPolicies.setAutoConstruct(true);
         }
         return terminationPolicies;
     }
@@ -736,8 +737,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest  impl
             this.terminationPolicies = null;
             return;
         }
-
-        java.util.List<String> terminationPoliciesCopy = new java.util.ArrayList<String>(terminationPolicies.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> terminationPoliciesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(terminationPolicies.size());
         terminationPoliciesCopy.addAll(terminationPolicies);
         this.terminationPolicies = terminationPoliciesCopy;
     }
@@ -798,7 +798,7 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest  impl
         if (terminationPolicies == null) {
             this.terminationPolicies = null;
         } else {
-            java.util.List<String> terminationPoliciesCopy = new java.util.ArrayList<String>(terminationPolicies.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> terminationPoliciesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(terminationPolicies.size());
             terminationPoliciesCopy.addAll(terminationPolicies);
             this.terminationPolicies = terminationPoliciesCopy;
         }
@@ -817,18 +817,18 @@ public class UpdateAutoScalingGroupRequest extends AmazonWebServiceRequest  impl
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getAutoScalingGroupName() != null) sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ",");    	
-        if (getLaunchConfigurationName() != null) sb.append("LaunchConfigurationName: " + getLaunchConfigurationName() + ",");    	
-        if (getMinSize() != null) sb.append("MinSize: " + getMinSize() + ",");    	
-        if (getMaxSize() != null) sb.append("MaxSize: " + getMaxSize() + ",");    	
-        if (getDesiredCapacity() != null) sb.append("DesiredCapacity: " + getDesiredCapacity() + ",");    	
-        if (getDefaultCooldown() != null) sb.append("DefaultCooldown: " + getDefaultCooldown() + ",");    	
-        if (getAvailabilityZones() != null) sb.append("AvailabilityZones: " + getAvailabilityZones() + ",");    	
-        if (getHealthCheckType() != null) sb.append("HealthCheckType: " + getHealthCheckType() + ",");    	
-        if (getHealthCheckGracePeriod() != null) sb.append("HealthCheckGracePeriod: " + getHealthCheckGracePeriod() + ",");    	
-        if (getPlacementGroup() != null) sb.append("PlacementGroup: " + getPlacementGroup() + ",");    	
-        if (getVPCZoneIdentifier() != null) sb.append("VPCZoneIdentifier: " + getVPCZoneIdentifier() + ",");    	
+        sb.append("{");
+        if (getAutoScalingGroupName() != null) sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ",");
+        if (getLaunchConfigurationName() != null) sb.append("LaunchConfigurationName: " + getLaunchConfigurationName() + ",");
+        if (getMinSize() != null) sb.append("MinSize: " + getMinSize() + ",");
+        if (getMaxSize() != null) sb.append("MaxSize: " + getMaxSize() + ",");
+        if (getDesiredCapacity() != null) sb.append("DesiredCapacity: " + getDesiredCapacity() + ",");
+        if (getDefaultCooldown() != null) sb.append("DefaultCooldown: " + getDefaultCooldown() + ",");
+        if (getAvailabilityZones() != null) sb.append("AvailabilityZones: " + getAvailabilityZones() + ",");
+        if (getHealthCheckType() != null) sb.append("HealthCheckType: " + getHealthCheckType() + ",");
+        if (getHealthCheckGracePeriod() != null) sb.append("HealthCheckGracePeriod: " + getHealthCheckGracePeriod() + ",");
+        if (getPlacementGroup() != null) sb.append("PlacementGroup: " + getPlacementGroup() + ",");
+        if (getVPCZoneIdentifier() != null) sb.append("VPCZoneIdentifier: " + getVPCZoneIdentifier() + ",");
         if (getTerminationPolicies() != null) sb.append("TerminationPolicies: " + getTerminationPolicies() );
         sb.append("}");
         return sb.toString();

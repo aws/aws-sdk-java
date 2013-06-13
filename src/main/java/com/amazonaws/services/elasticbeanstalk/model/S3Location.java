@@ -44,6 +44,8 @@ public class S3Location  implements Serializable  {
      */
     public S3Location() {}
     
+
+
     /**
      * Constructs a new S3Location object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -53,8 +55,8 @@ public class S3Location  implements Serializable  {
      * @param s3Key The Amazon S3 key where the data is located.
      */
     public S3Location(String s3Bucket, String s3Key) {
-        this.s3Bucket = s3Bucket;
-        this.s3Key = s3Key;
+        setS3Bucket(s3Bucket);
+        setS3Key(s3Key);
     }
 
     
@@ -156,8 +158,8 @@ public class S3Location  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getS3Bucket() != null) sb.append("S3Bucket: " + getS3Bucket() + ",");    	
+        sb.append("{");
+        if (getS3Bucket() != null) sb.append("S3Bucket: " + getS3Bucket() + ",");
         if (getS3Key() != null) sb.append("S3Key: " + getS3Key() );
         sb.append("}");
         return sb.toString();

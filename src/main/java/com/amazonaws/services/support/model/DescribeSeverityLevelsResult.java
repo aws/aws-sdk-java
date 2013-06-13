@@ -26,7 +26,7 @@ public class DescribeSeverityLevelsResult  implements Serializable  {
      * List of available severity levels for the support case. Available
      * severity levels are defined by your service level agreement with AWS.
      */
-    private java.util.List<SeverityLevel> severityLevels;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<SeverityLevel> severityLevels;
 
     /**
      * List of available severity levels for the support case. Available
@@ -38,7 +38,8 @@ public class DescribeSeverityLevelsResult  implements Serializable  {
     public java.util.List<SeverityLevel> getSeverityLevels() {
         
         if (severityLevels == null) {
-            severityLevels = new java.util.ArrayList<SeverityLevel>();
+              severityLevels = new com.amazonaws.internal.ListWithAutoConstructFlag<SeverityLevel>();
+              severityLevels.setAutoConstruct(true);
         }
         return severityLevels;
     }
@@ -55,8 +56,7 @@ public class DescribeSeverityLevelsResult  implements Serializable  {
             this.severityLevels = null;
             return;
         }
-
-        java.util.List<SeverityLevel> severityLevelsCopy = new java.util.ArrayList<SeverityLevel>(severityLevels.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<SeverityLevel> severityLevelsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<SeverityLevel>(severityLevels.size());
         severityLevelsCopy.addAll(severityLevels);
         this.severityLevels = severityLevelsCopy;
     }
@@ -97,7 +97,7 @@ public class DescribeSeverityLevelsResult  implements Serializable  {
         if (severityLevels == null) {
             this.severityLevels = null;
         } else {
-            java.util.List<SeverityLevel> severityLevelsCopy = new java.util.ArrayList<SeverityLevel>(severityLevels.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<SeverityLevel> severityLevelsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<SeverityLevel>(severityLevels.size());
             severityLevelsCopy.addAll(severityLevels);
             this.severityLevels = severityLevelsCopy;
         }
@@ -116,7 +116,7 @@ public class DescribeSeverityLevelsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getSeverityLevels() != null) sb.append("SeverityLevels: " + getSeverityLevels() );
         sb.append("}");
         return sb.toString();

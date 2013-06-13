@@ -41,6 +41,8 @@ public class GetConsoleOutputRequest extends AmazonWebServiceRequest  implements
      */
     public GetConsoleOutputRequest() {}
     
+
+
     /**
      * Constructs a new GetConsoleOutputRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -50,7 +52,7 @@ public class GetConsoleOutputRequest extends AmazonWebServiceRequest  implements
      * output.
      */
     public GetConsoleOutputRequest(String instanceId) {
-        this.instanceId = instanceId;
+        setInstanceId(instanceId);
     }
 
     
@@ -100,7 +102,7 @@ public class GetConsoleOutputRequest extends AmazonWebServiceRequest  implements
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() );
         sb.append("}");
         return sb.toString();

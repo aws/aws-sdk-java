@@ -67,7 +67,7 @@ public class ReplaceNetworkAclAssociationResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getNewAssociationId() != null) sb.append("NewAssociationId: " + getNewAssociationId() );
         sb.append("}");
         return sb.toString();

@@ -20,7 +20,7 @@ import java.io.Serializable;
  */
 public class DescribeReservedInstancesListingsResult  implements Serializable  {
 
-    private java.util.List<ReservedInstancesListing> reservedInstancesListings;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<ReservedInstancesListing> reservedInstancesListings;
 
     /**
      * Returns the value of the ReservedInstancesListings property for this
@@ -31,7 +31,8 @@ public class DescribeReservedInstancesListingsResult  implements Serializable  {
     public java.util.List<ReservedInstancesListing> getReservedInstancesListings() {
         
         if (reservedInstancesListings == null) {
-            reservedInstancesListings = new java.util.ArrayList<ReservedInstancesListing>();
+              reservedInstancesListings = new com.amazonaws.internal.ListWithAutoConstructFlag<ReservedInstancesListing>();
+              reservedInstancesListings.setAutoConstruct(true);
         }
         return reservedInstancesListings;
     }
@@ -48,8 +49,7 @@ public class DescribeReservedInstancesListingsResult  implements Serializable  {
             this.reservedInstancesListings = null;
             return;
         }
-
-        java.util.List<ReservedInstancesListing> reservedInstancesListingsCopy = new java.util.ArrayList<ReservedInstancesListing>(reservedInstancesListings.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<ReservedInstancesListing> reservedInstancesListingsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ReservedInstancesListing>(reservedInstancesListings.size());
         reservedInstancesListingsCopy.addAll(reservedInstancesListings);
         this.reservedInstancesListings = reservedInstancesListingsCopy;
     }
@@ -90,7 +90,7 @@ public class DescribeReservedInstancesListingsResult  implements Serializable  {
         if (reservedInstancesListings == null) {
             this.reservedInstancesListings = null;
         } else {
-            java.util.List<ReservedInstancesListing> reservedInstancesListingsCopy = new java.util.ArrayList<ReservedInstancesListing>(reservedInstancesListings.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<ReservedInstancesListing> reservedInstancesListingsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ReservedInstancesListing>(reservedInstancesListings.size());
             reservedInstancesListingsCopy.addAll(reservedInstancesListings);
             this.reservedInstancesListings = reservedInstancesListingsCopy;
         }
@@ -109,7 +109,7 @@ public class DescribeReservedInstancesListingsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getReservedInstancesListings() != null) sb.append("ReservedInstancesListings: " + getReservedInstancesListings() );
         sb.append("}");
         return sb.toString();

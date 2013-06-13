@@ -30,11 +30,11 @@ public class InstanceNetworkInterfaceSpecification  implements Serializable  {
 
     private String privateIpAddress;
 
-    private java.util.List<String> groups;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> groups;
 
     private Boolean deleteOnTermination;
 
-    private java.util.List<PrivateIpAddressSpecification> privateIpAddresses;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<PrivateIpAddressSpecification> privateIpAddresses;
 
     private Integer secondaryPrivateIpAddressCount;
 
@@ -216,7 +216,8 @@ public class InstanceNetworkInterfaceSpecification  implements Serializable  {
     public java.util.List<String> getGroups() {
         
         if (groups == null) {
-            groups = new java.util.ArrayList<String>();
+              groups = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              groups.setAutoConstruct(true);
         }
         return groups;
     }
@@ -231,8 +232,7 @@ public class InstanceNetworkInterfaceSpecification  implements Serializable  {
             this.groups = null;
             return;
         }
-
-        java.util.List<String> groupsCopy = new java.util.ArrayList<String>(groups.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> groupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(groups.size());
         groupsCopy.addAll(groups);
         this.groups = groupsCopy;
     }
@@ -269,7 +269,7 @@ public class InstanceNetworkInterfaceSpecification  implements Serializable  {
         if (groups == null) {
             this.groups = null;
         } else {
-            java.util.List<String> groupsCopy = new java.util.ArrayList<String>(groups.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> groupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(groups.size());
             groupsCopy.addAll(groups);
             this.groups = groupsCopy;
         }
@@ -328,7 +328,8 @@ public class InstanceNetworkInterfaceSpecification  implements Serializable  {
     public java.util.List<PrivateIpAddressSpecification> getPrivateIpAddresses() {
         
         if (privateIpAddresses == null) {
-            privateIpAddresses = new java.util.ArrayList<PrivateIpAddressSpecification>();
+              privateIpAddresses = new com.amazonaws.internal.ListWithAutoConstructFlag<PrivateIpAddressSpecification>();
+              privateIpAddresses.setAutoConstruct(true);
         }
         return privateIpAddresses;
     }
@@ -343,8 +344,7 @@ public class InstanceNetworkInterfaceSpecification  implements Serializable  {
             this.privateIpAddresses = null;
             return;
         }
-
-        java.util.List<PrivateIpAddressSpecification> privateIpAddressesCopy = new java.util.ArrayList<PrivateIpAddressSpecification>(privateIpAddresses.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<PrivateIpAddressSpecification> privateIpAddressesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<PrivateIpAddressSpecification>(privateIpAddresses.size());
         privateIpAddressesCopy.addAll(privateIpAddresses);
         this.privateIpAddresses = privateIpAddressesCopy;
     }
@@ -381,7 +381,7 @@ public class InstanceNetworkInterfaceSpecification  implements Serializable  {
         if (privateIpAddresses == null) {
             this.privateIpAddresses = null;
         } else {
-            java.util.List<PrivateIpAddressSpecification> privateIpAddressesCopy = new java.util.ArrayList<PrivateIpAddressSpecification>(privateIpAddresses.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<PrivateIpAddressSpecification> privateIpAddressesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<PrivateIpAddressSpecification>(privateIpAddresses.size());
             privateIpAddressesCopy.addAll(privateIpAddresses);
             this.privateIpAddresses = privateIpAddressesCopy;
         }
@@ -440,15 +440,15 @@ public class InstanceNetworkInterfaceSpecification  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getNetworkInterfaceId() != null) sb.append("NetworkInterfaceId: " + getNetworkInterfaceId() + ",");    	
-        if (getDeviceIndex() != null) sb.append("DeviceIndex: " + getDeviceIndex() + ",");    	
-        if (getSubnetId() != null) sb.append("SubnetId: " + getSubnetId() + ",");    	
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");    	
-        if (getPrivateIpAddress() != null) sb.append("PrivateIpAddress: " + getPrivateIpAddress() + ",");    	
-        if (getGroups() != null) sb.append("Groups: " + getGroups() + ",");    	
-        if (isDeleteOnTermination() != null) sb.append("DeleteOnTermination: " + isDeleteOnTermination() + ",");    	
-        if (getPrivateIpAddresses() != null) sb.append("PrivateIpAddresses: " + getPrivateIpAddresses() + ",");    	
+        sb.append("{");
+        if (getNetworkInterfaceId() != null) sb.append("NetworkInterfaceId: " + getNetworkInterfaceId() + ",");
+        if (getDeviceIndex() != null) sb.append("DeviceIndex: " + getDeviceIndex() + ",");
+        if (getSubnetId() != null) sb.append("SubnetId: " + getSubnetId() + ",");
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");
+        if (getPrivateIpAddress() != null) sb.append("PrivateIpAddress: " + getPrivateIpAddress() + ",");
+        if (getGroups() != null) sb.append("Groups: " + getGroups() + ",");
+        if (isDeleteOnTermination() != null) sb.append("DeleteOnTermination: " + isDeleteOnTermination() + ",");
+        if (getPrivateIpAddresses() != null) sb.append("PrivateIpAddresses: " + getPrivateIpAddresses() + ",");
         if (getSecondaryPrivateIpAddressCount() != null) sb.append("SecondaryPrivateIpAddressCount: " + getSecondaryPrivateIpAddressCount() );
         sb.append("}");
         return sb.toString();

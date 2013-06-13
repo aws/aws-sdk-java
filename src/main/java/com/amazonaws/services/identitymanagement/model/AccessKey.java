@@ -68,6 +68,8 @@ public class AccessKey  implements Serializable  {
      */
     public AccessKey() {}
     
+
+
     /**
      * Constructs a new AccessKey object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -81,10 +83,10 @@ public class AccessKey  implements Serializable  {
      * @param secretAccessKey The secret key used to sign requests.
      */
     public AccessKey(String userName, String accessKeyId, String status, String secretAccessKey) {
-        this.userName = userName;
-        this.accessKeyId = accessKeyId;
-        this.status = status;
-        this.secretAccessKey = secretAccessKey;
+        setUserName(userName);
+        setAccessKeyId(accessKeyId);
+        setStatus(status);
+        setSecretAccessKey(secretAccessKey);
     }
 
     
@@ -372,11 +374,11 @@ public class AccessKey  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getUserName() != null) sb.append("UserName: " + getUserName() + ",");    	
-        if (getAccessKeyId() != null) sb.append("AccessKeyId: " + getAccessKeyId() + ",");    	
-        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");    	
-        if (getSecretAccessKey() != null) sb.append("SecretAccessKey: " + getSecretAccessKey() + ",");    	
+        sb.append("{");
+        if (getUserName() != null) sb.append("UserName: " + getUserName() + ",");
+        if (getAccessKeyId() != null) sb.append("AccessKeyId: " + getAccessKeyId() + ",");
+        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");
+        if (getSecretAccessKey() != null) sb.append("SecretAccessKey: " + getSecretAccessKey() + ",");
         if (getCreateDate() != null) sb.append("CreateDate: " + getCreateDate() );
         sb.append("}");
         return sb.toString();

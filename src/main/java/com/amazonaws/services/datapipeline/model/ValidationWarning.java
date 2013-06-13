@@ -35,7 +35,7 @@ public class ValidationWarning  implements Serializable  {
     /**
      * A description of the validation warning.
      */
-    private java.util.List<String> warnings;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> warnings;
 
     /**
      * The identifier of the object that contains the validation warning.
@@ -91,7 +91,8 @@ public class ValidationWarning  implements Serializable  {
     public java.util.List<String> getWarnings() {
         
         if (warnings == null) {
-            warnings = new java.util.ArrayList<String>();
+              warnings = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              warnings.setAutoConstruct(true);
         }
         return warnings;
     }
@@ -106,8 +107,7 @@ public class ValidationWarning  implements Serializable  {
             this.warnings = null;
             return;
         }
-
-        java.util.List<String> warningsCopy = new java.util.ArrayList<String>(warnings.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> warningsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(warnings.size());
         warningsCopy.addAll(warnings);
         this.warnings = warningsCopy;
     }
@@ -144,7 +144,7 @@ public class ValidationWarning  implements Serializable  {
         if (warnings == null) {
             this.warnings = null;
         } else {
-            java.util.List<String> warningsCopy = new java.util.ArrayList<String>(warnings.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> warningsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(warnings.size());
             warningsCopy.addAll(warnings);
             this.warnings = warningsCopy;
         }
@@ -163,8 +163,8 @@ public class ValidationWarning  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getId() != null) sb.append("Id: " + getId() + ",");    	
+        sb.append("{");
+        if (getId() != null) sb.append("Id: " + getId() + ",");
         if (getWarnings() != null) sb.append("Warnings: " + getWarnings() );
         sb.append("}");
         return sb.toString();

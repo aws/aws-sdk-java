@@ -96,6 +96,8 @@ public class UploadArchiveRequest extends AmazonWebServiceRequest  implements Se
      */
     public UploadArchiveRequest() {}
     
+
+
     /**
      * Constructs a new UploadArchiveRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -108,14 +110,16 @@ public class UploadArchiveRequest extends AmazonWebServiceRequest  implements Se
      * @param body The data to upload.
      */
     public UploadArchiveRequest(String vaultName, String archiveDescription, String checksum, java.io.InputStream body) {
-        this.vaultName = vaultName;
-        this.archiveDescription = archiveDescription;
-        this.checksum = checksum;
-        this.body = body;
+        setVaultName(vaultName);
+        setArchiveDescription(archiveDescription);
+        setChecksum(checksum);
+        setBody(body);
     }
 
     
     
+
+
     /**
      * Constructs a new UploadArchiveRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -133,11 +137,11 @@ public class UploadArchiveRequest extends AmazonWebServiceRequest  implements Se
      * @param body The data to upload.
      */
     public UploadArchiveRequest(String vaultName, String accountId, String archiveDescription, String checksum, java.io.InputStream body) {
-        this.vaultName = vaultName;
-        this.accountId = accountId;
-        this.archiveDescription = archiveDescription;
-        this.checksum = checksum;
-        this.body = body;
+        setVaultName(vaultName);
+        setAccountId(accountId);
+        setArchiveDescription(archiveDescription);
+        setChecksum(checksum);
+        setBody(body);
     }
 
     
@@ -381,12 +385,12 @@ public class UploadArchiveRequest extends AmazonWebServiceRequest  implements Se
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getContentLength() != null) sb.append("ContentLength: " + getContentLength() + ",");    	
-        if (getVaultName() != null) sb.append("VaultName: " + getVaultName() + ",");    	
-        if (getAccountId() != null) sb.append("AccountId: " + getAccountId() + ",");    	
-        if (getArchiveDescription() != null) sb.append("ArchiveDescription: " + getArchiveDescription() + ",");    	
-        if (getChecksum() != null) sb.append("Checksum: " + getChecksum() + ",");    	
+        sb.append("{");
+        if (getContentLength() != null) sb.append("ContentLength: " + getContentLength() + ",");
+        if (getVaultName() != null) sb.append("VaultName: " + getVaultName() + ",");
+        if (getAccountId() != null) sb.append("AccountId: " + getAccountId() + ",");
+        if (getArchiveDescription() != null) sb.append("ArchiveDescription: " + getArchiveDescription() + ",");
+        if (getChecksum() != null) sb.append("Checksum: " + getChecksum() + ",");
         if (getBody() != null) sb.append("Body: " + getBody() );
         sb.append("}");
         return sb.toString();

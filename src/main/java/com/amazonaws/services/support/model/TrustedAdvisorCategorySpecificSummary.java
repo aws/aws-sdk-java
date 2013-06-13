@@ -86,7 +86,7 @@ public class TrustedAdvisorCategorySpecificSummary  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getCostOptimizing() != null) sb.append("CostOptimizing: " + getCostOptimizing() );
         sb.append("}");
         return sb.toString();

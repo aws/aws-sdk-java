@@ -95,7 +95,7 @@ public class CreatePipelineResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getPipelineId() != null) sb.append("PipelineId: " + getPipelineId() );
         sb.append("}");
         return sb.toString();

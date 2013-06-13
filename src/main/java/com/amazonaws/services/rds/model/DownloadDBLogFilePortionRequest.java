@@ -235,10 +235,10 @@ public class DownloadDBLogFilePortionRequest extends AmazonWebServiceRequest  im
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getDBInstanceIdentifier() != null) sb.append("DBInstanceIdentifier: " + getDBInstanceIdentifier() + ",");    	
-        if (getLogFileName() != null) sb.append("LogFileName: " + getLogFileName() + ",");    	
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");    	
+        sb.append("{");
+        if (getDBInstanceIdentifier() != null) sb.append("DBInstanceIdentifier: " + getDBInstanceIdentifier() + ",");
+        if (getLogFileName() != null) sb.append("LogFileName: " + getLogFileName() + ",");
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");
         if (getNumberOfLines() != null) sb.append("NumberOfLines: " + getNumberOfLines() );
         sb.append("}");
         return sb.toString();

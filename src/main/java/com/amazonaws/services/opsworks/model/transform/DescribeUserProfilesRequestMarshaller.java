@@ -86,8 +86,8 @@ public class DescribeUserProfilesRequestMarshaller implements Marshaller<Request
           jsonWriter.object();
           
 
-            java.util.List<String> iamUserArnsList = describeUserProfilesRequest.getIamUserArns();
-            if (iamUserArnsList != null) {
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> iamUserArnsList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(describeUserProfilesRequest.getIamUserArns());
+            if (iamUserArnsList != null && !(iamUserArnsList.isAutoConstruct() && iamUserArnsList.isEmpty())) {
 
                 jsonWriter.key("IamUserArns");
                 jsonWriter.array();

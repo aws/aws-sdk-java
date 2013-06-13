@@ -72,14 +72,14 @@ public class UpdateConfigurationTemplateRequest extends AmazonWebServiceRequest 
      * A list of configuration option settings to update with the new
      * specified option value.
      */
-    private java.util.List<ConfigurationOptionSetting> optionSettings;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<ConfigurationOptionSetting> optionSettings;
 
     /**
      * A list of configuration options to remove from the configuration set.
      * <p> Constraint: You can remove only <code>UserDefined</code>
      * configuration options.
      */
-    private java.util.List<OptionSpecification> optionsToRemove;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<OptionSpecification> optionsToRemove;
 
     /**
      * Default constructor for a new UpdateConfigurationTemplateRequest object.  Callers should use the
@@ -87,6 +87,8 @@ public class UpdateConfigurationTemplateRequest extends AmazonWebServiceRequest 
      */
     public UpdateConfigurationTemplateRequest() {}
     
+
+
     /**
      * Constructs a new UpdateConfigurationTemplateRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -102,8 +104,8 @@ public class UpdateConfigurationTemplateRequest extends AmazonWebServiceRequest 
      * <code>InvalidParameterValue</code> error.
      */
     public UpdateConfigurationTemplateRequest(String applicationName, String templateName) {
-        this.applicationName = applicationName;
-        this.templateName = templateName;
+        setApplicationName(applicationName);
+        setTemplateName(templateName);
     }
 
     
@@ -283,7 +285,8 @@ public class UpdateConfigurationTemplateRequest extends AmazonWebServiceRequest 
     public java.util.List<ConfigurationOptionSetting> getOptionSettings() {
         
         if (optionSettings == null) {
-            optionSettings = new java.util.ArrayList<ConfigurationOptionSetting>();
+              optionSettings = new com.amazonaws.internal.ListWithAutoConstructFlag<ConfigurationOptionSetting>();
+              optionSettings.setAutoConstruct(true);
         }
         return optionSettings;
     }
@@ -300,8 +303,7 @@ public class UpdateConfigurationTemplateRequest extends AmazonWebServiceRequest 
             this.optionSettings = null;
             return;
         }
-
-        java.util.List<ConfigurationOptionSetting> optionSettingsCopy = new java.util.ArrayList<ConfigurationOptionSetting>(optionSettings.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<ConfigurationOptionSetting> optionSettingsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ConfigurationOptionSetting>(optionSettings.size());
         optionSettingsCopy.addAll(optionSettings);
         this.optionSettings = optionSettingsCopy;
     }
@@ -342,7 +344,7 @@ public class UpdateConfigurationTemplateRequest extends AmazonWebServiceRequest 
         if (optionSettings == null) {
             this.optionSettings = null;
         } else {
-            java.util.List<ConfigurationOptionSetting> optionSettingsCopy = new java.util.ArrayList<ConfigurationOptionSetting>(optionSettings.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<ConfigurationOptionSetting> optionSettingsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ConfigurationOptionSetting>(optionSettings.size());
             optionSettingsCopy.addAll(optionSettings);
             this.optionSettings = optionSettingsCopy;
         }
@@ -362,7 +364,8 @@ public class UpdateConfigurationTemplateRequest extends AmazonWebServiceRequest 
     public java.util.List<OptionSpecification> getOptionsToRemove() {
         
         if (optionsToRemove == null) {
-            optionsToRemove = new java.util.ArrayList<OptionSpecification>();
+              optionsToRemove = new com.amazonaws.internal.ListWithAutoConstructFlag<OptionSpecification>();
+              optionsToRemove.setAutoConstruct(true);
         }
         return optionsToRemove;
     }
@@ -381,8 +384,7 @@ public class UpdateConfigurationTemplateRequest extends AmazonWebServiceRequest 
             this.optionsToRemove = null;
             return;
         }
-
-        java.util.List<OptionSpecification> optionsToRemoveCopy = new java.util.ArrayList<OptionSpecification>(optionsToRemove.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<OptionSpecification> optionsToRemoveCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<OptionSpecification>(optionsToRemove.size());
         optionsToRemoveCopy.addAll(optionsToRemove);
         this.optionsToRemove = optionsToRemoveCopy;
     }
@@ -427,7 +429,7 @@ public class UpdateConfigurationTemplateRequest extends AmazonWebServiceRequest 
         if (optionsToRemove == null) {
             this.optionsToRemove = null;
         } else {
-            java.util.List<OptionSpecification> optionsToRemoveCopy = new java.util.ArrayList<OptionSpecification>(optionsToRemove.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<OptionSpecification> optionsToRemoveCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<OptionSpecification>(optionsToRemove.size());
             optionsToRemoveCopy.addAll(optionsToRemove);
             this.optionsToRemove = optionsToRemoveCopy;
         }
@@ -446,11 +448,11 @@ public class UpdateConfigurationTemplateRequest extends AmazonWebServiceRequest 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getApplicationName() != null) sb.append("ApplicationName: " + getApplicationName() + ",");    	
-        if (getTemplateName() != null) sb.append("TemplateName: " + getTemplateName() + ",");    	
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");    	
-        if (getOptionSettings() != null) sb.append("OptionSettings: " + getOptionSettings() + ",");    	
+        sb.append("{");
+        if (getApplicationName() != null) sb.append("ApplicationName: " + getApplicationName() + ",");
+        if (getTemplateName() != null) sb.append("TemplateName: " + getTemplateName() + ",");
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");
+        if (getOptionSettings() != null) sb.append("OptionSettings: " + getOptionSettings() + ",");
         if (getOptionsToRemove() != null) sb.append("OptionsToRemove: " + getOptionsToRemove() );
         sb.append("}");
         return sb.toString();

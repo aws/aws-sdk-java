@@ -58,12 +58,12 @@ public class Volume  implements Serializable  {
     /**
      * Information on what this volume is attached to.
      */
-    private java.util.List<VolumeAttachment> attachments;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<VolumeAttachment> attachments;
 
     /**
      * A list of tags for the Volume.
      */
-    private java.util.List<Tag> tags;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
 
     private String volumeType;
 
@@ -330,7 +330,8 @@ public class Volume  implements Serializable  {
     public java.util.List<VolumeAttachment> getAttachments() {
         
         if (attachments == null) {
-            attachments = new java.util.ArrayList<VolumeAttachment>();
+              attachments = new com.amazonaws.internal.ListWithAutoConstructFlag<VolumeAttachment>();
+              attachments.setAutoConstruct(true);
         }
         return attachments;
     }
@@ -345,8 +346,7 @@ public class Volume  implements Serializable  {
             this.attachments = null;
             return;
         }
-
-        java.util.List<VolumeAttachment> attachmentsCopy = new java.util.ArrayList<VolumeAttachment>(attachments.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<VolumeAttachment> attachmentsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<VolumeAttachment>(attachments.size());
         attachmentsCopy.addAll(attachments);
         this.attachments = attachmentsCopy;
     }
@@ -383,7 +383,7 @@ public class Volume  implements Serializable  {
         if (attachments == null) {
             this.attachments = null;
         } else {
-            java.util.List<VolumeAttachment> attachmentsCopy = new java.util.ArrayList<VolumeAttachment>(attachments.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<VolumeAttachment> attachmentsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<VolumeAttachment>(attachments.size());
             attachmentsCopy.addAll(attachments);
             this.attachments = attachmentsCopy;
         }
@@ -399,7 +399,8 @@ public class Volume  implements Serializable  {
     public java.util.List<Tag> getTags() {
         
         if (tags == null) {
-            tags = new java.util.ArrayList<Tag>();
+              tags = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>();
+              tags.setAutoConstruct(true);
         }
         return tags;
     }
@@ -414,8 +415,7 @@ public class Volume  implements Serializable  {
             this.tags = null;
             return;
         }
-
-        java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>(tags.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
         tagsCopy.addAll(tags);
         this.tags = tagsCopy;
     }
@@ -452,7 +452,7 @@ public class Volume  implements Serializable  {
         if (tags == null) {
             this.tags = null;
         } else {
-            java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>(tags.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
             tagsCopy.addAll(tags);
             this.tags = tagsCopy;
         }
@@ -588,16 +588,16 @@ public class Volume  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getVolumeId() != null) sb.append("VolumeId: " + getVolumeId() + ",");    	
-        if (getSize() != null) sb.append("Size: " + getSize() + ",");    	
-        if (getSnapshotId() != null) sb.append("SnapshotId: " + getSnapshotId() + ",");    	
-        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");    	
-        if (getState() != null) sb.append("State: " + getState() + ",");    	
-        if (getCreateTime() != null) sb.append("CreateTime: " + getCreateTime() + ",");    	
-        if (getAttachments() != null) sb.append("Attachments: " + getAttachments() + ",");    	
-        if (getTags() != null) sb.append("Tags: " + getTags() + ",");    	
-        if (getVolumeType() != null) sb.append("VolumeType: " + getVolumeType() + ",");    	
+        sb.append("{");
+        if (getVolumeId() != null) sb.append("VolumeId: " + getVolumeId() + ",");
+        if (getSize() != null) sb.append("Size: " + getSize() + ",");
+        if (getSnapshotId() != null) sb.append("SnapshotId: " + getSnapshotId() + ",");
+        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");
+        if (getState() != null) sb.append("State: " + getState() + ",");
+        if (getCreateTime() != null) sb.append("CreateTime: " + getCreateTime() + ",");
+        if (getAttachments() != null) sb.append("Attachments: " + getAttachments() + ",");
+        if (getTags() != null) sb.append("Tags: " + getTags() + ",");
+        if (getVolumeType() != null) sb.append("VolumeType: " + getVolumeType() + ",");
         if (getIops() != null) sb.append("Iops: " + getIops() );
         sb.append("}");
         return sb.toString();

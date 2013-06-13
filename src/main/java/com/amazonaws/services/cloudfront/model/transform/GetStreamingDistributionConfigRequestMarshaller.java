@@ -44,7 +44,7 @@ public class GetStreamingDistributionConfigRequestMarshaller implements Marshall
         Request<GetStreamingDistributionConfigRequest> request = new DefaultRequest<GetStreamingDistributionConfigRequest>(getStreamingDistributionConfigRequest, "AmazonCloudFront");
         request.setHttpMethod(HttpMethodName.GET);
 
-        String uriResourcePath = "2012-07-01/streaming-distribution/{Id}/config"; 
+        String uriResourcePath = "2013-05-12/streaming-distribution/{Id}/config"; 
         uriResourcePath = uriResourcePath.replace("{Id}", getString(getStreamingDistributionConfigRequest.getId())); 
 
         if (uriResourcePath.contains("?")) {

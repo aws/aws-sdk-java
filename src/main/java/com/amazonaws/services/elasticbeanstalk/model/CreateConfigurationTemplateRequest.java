@@ -109,7 +109,7 @@ public class CreateConfigurationTemplateRequest extends AmazonWebServiceRequest 
      * option to the requested value. The new value overrides the value
      * obtained from the solution stack or the source configuration template.
      */
-    private java.util.List<ConfigurationOptionSetting> optionSettings;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<ConfigurationOptionSetting> optionSettings;
 
     /**
      * Default constructor for a new CreateConfigurationTemplateRequest object.  Callers should use the
@@ -117,6 +117,8 @@ public class CreateConfigurationTemplateRequest extends AmazonWebServiceRequest 
      */
     public CreateConfigurationTemplateRequest() {}
     
+
+
     /**
      * Constructs a new CreateConfigurationTemplateRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -132,8 +134,8 @@ public class CreateConfigurationTemplateRequest extends AmazonWebServiceRequest 
      * Beanstalk returns an <code>InvalidParameterValue</code> error.
      */
     public CreateConfigurationTemplateRequest(String applicationName, String templateName) {
-        this.applicationName = applicationName;
-        this.templateName = templateName;
+        setApplicationName(applicationName);
+        setTemplateName(templateName);
     }
 
     
@@ -540,7 +542,8 @@ public class CreateConfigurationTemplateRequest extends AmazonWebServiceRequest 
     public java.util.List<ConfigurationOptionSetting> getOptionSettings() {
         
         if (optionSettings == null) {
-            optionSettings = new java.util.ArrayList<ConfigurationOptionSetting>();
+              optionSettings = new com.amazonaws.internal.ListWithAutoConstructFlag<ConfigurationOptionSetting>();
+              optionSettings.setAutoConstruct(true);
         }
         return optionSettings;
     }
@@ -559,8 +562,7 @@ public class CreateConfigurationTemplateRequest extends AmazonWebServiceRequest 
             this.optionSettings = null;
             return;
         }
-
-        java.util.List<ConfigurationOptionSetting> optionSettingsCopy = new java.util.ArrayList<ConfigurationOptionSetting>(optionSettings.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<ConfigurationOptionSetting> optionSettingsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ConfigurationOptionSetting>(optionSettings.size());
         optionSettingsCopy.addAll(optionSettings);
         this.optionSettings = optionSettingsCopy;
     }
@@ -605,7 +607,7 @@ public class CreateConfigurationTemplateRequest extends AmazonWebServiceRequest 
         if (optionSettings == null) {
             this.optionSettings = null;
         } else {
-            java.util.List<ConfigurationOptionSetting> optionSettingsCopy = new java.util.ArrayList<ConfigurationOptionSetting>(optionSettings.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<ConfigurationOptionSetting> optionSettingsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ConfigurationOptionSetting>(optionSettings.size());
             optionSettingsCopy.addAll(optionSettings);
             this.optionSettings = optionSettingsCopy;
         }
@@ -624,13 +626,13 @@ public class CreateConfigurationTemplateRequest extends AmazonWebServiceRequest 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getApplicationName() != null) sb.append("ApplicationName: " + getApplicationName() + ",");    	
-        if (getTemplateName() != null) sb.append("TemplateName: " + getTemplateName() + ",");    	
-        if (getSolutionStackName() != null) sb.append("SolutionStackName: " + getSolutionStackName() + ",");    	
-        if (getSourceConfiguration() != null) sb.append("SourceConfiguration: " + getSourceConfiguration() + ",");    	
-        if (getEnvironmentId() != null) sb.append("EnvironmentId: " + getEnvironmentId() + ",");    	
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");    	
+        sb.append("{");
+        if (getApplicationName() != null) sb.append("ApplicationName: " + getApplicationName() + ",");
+        if (getTemplateName() != null) sb.append("TemplateName: " + getTemplateName() + ",");
+        if (getSolutionStackName() != null) sb.append("SolutionStackName: " + getSolutionStackName() + ",");
+        if (getSourceConfiguration() != null) sb.append("SourceConfiguration: " + getSourceConfiguration() + ",");
+        if (getEnvironmentId() != null) sb.append("EnvironmentId: " + getEnvironmentId() + ",");
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");
         if (getOptionSettings() != null) sb.append("OptionSettings: " + getOptionSettings() );
         sb.append("}");
         return sb.toString();

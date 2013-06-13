@@ -30,7 +30,7 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest  implements
     /**
      * The optional list of key pair names to describe.
      */
-    private java.util.List<String> keyNames;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> keyNames;
 
     /**
      * A list of filters used to match properties for KeyPairs. For a
@@ -39,7 +39,7 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest  implements
      * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      * EC2 API reference</a>.
      */
-    private java.util.List<Filter> filters;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filters;
 
     /**
      * The optional list of key pair names to describe.
@@ -49,7 +49,8 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest  implements
     public java.util.List<String> getKeyNames() {
         
         if (keyNames == null) {
-            keyNames = new java.util.ArrayList<String>();
+              keyNames = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              keyNames.setAutoConstruct(true);
         }
         return keyNames;
     }
@@ -64,8 +65,7 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest  implements
             this.keyNames = null;
             return;
         }
-
-        java.util.List<String> keyNamesCopy = new java.util.ArrayList<String>(keyNames.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> keyNamesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(keyNames.size());
         keyNamesCopy.addAll(keyNames);
         this.keyNames = keyNamesCopy;
     }
@@ -102,7 +102,7 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest  implements
         if (keyNames == null) {
             this.keyNames = null;
         } else {
-            java.util.List<String> keyNamesCopy = new java.util.ArrayList<String>(keyNames.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> keyNamesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(keyNames.size());
             keyNamesCopy.addAll(keyNames);
             this.keyNames = keyNamesCopy;
         }
@@ -126,7 +126,8 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest  implements
     public java.util.List<Filter> getFilters() {
         
         if (filters == null) {
-            filters = new java.util.ArrayList<Filter>();
+              filters = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>();
+              filters.setAutoConstruct(true);
         }
         return filters;
     }
@@ -149,8 +150,7 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest  implements
             this.filters = null;
             return;
         }
-
-        java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>(filters.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filtersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>(filters.size());
         filtersCopy.addAll(filters);
         this.filters = filtersCopy;
     }
@@ -203,7 +203,7 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest  implements
         if (filters == null) {
             this.filters = null;
         } else {
-            java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>(filters.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filtersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>(filters.size());
             filtersCopy.addAll(filters);
             this.filters = filtersCopy;
         }
@@ -222,8 +222,8 @@ public class DescribeKeyPairsRequest extends AmazonWebServiceRequest  implements
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getKeyNames() != null) sb.append("KeyNames: " + getKeyNames() + ",");    	
+        sb.append("{");
+        if (getKeyNames() != null) sb.append("KeyNames: " + getKeyNames() + ",");
         if (getFilters() != null) sb.append("Filters: " + getFilters() );
         sb.append("}");
         return sb.toString();

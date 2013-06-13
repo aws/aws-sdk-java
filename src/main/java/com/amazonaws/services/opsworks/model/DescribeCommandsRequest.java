@@ -45,7 +45,7 @@ public class DescribeCommandsRequest extends AmazonWebServiceRequest  implements
      * <code>DescribeCommands</code> returns a description of the specified
      * commands. Otherwise, it returns a description of every command.
      */
-    private java.util.List<String> commandIds;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> commandIds;
 
     /**
      * The deployment ID. If you include this parameter,
@@ -151,7 +151,8 @@ public class DescribeCommandsRequest extends AmazonWebServiceRequest  implements
     public java.util.List<String> getCommandIds() {
         
         if (commandIds == null) {
-            commandIds = new java.util.ArrayList<String>();
+              commandIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              commandIds.setAutoConstruct(true);
         }
         return commandIds;
     }
@@ -170,8 +171,7 @@ public class DescribeCommandsRequest extends AmazonWebServiceRequest  implements
             this.commandIds = null;
             return;
         }
-
-        java.util.List<String> commandIdsCopy = new java.util.ArrayList<String>(commandIds.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> commandIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(commandIds.size());
         commandIdsCopy.addAll(commandIds);
         this.commandIds = commandIdsCopy;
     }
@@ -216,7 +216,7 @@ public class DescribeCommandsRequest extends AmazonWebServiceRequest  implements
         if (commandIds == null) {
             this.commandIds = null;
         } else {
-            java.util.List<String> commandIdsCopy = new java.util.ArrayList<String>(commandIds.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> commandIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(commandIds.size());
             commandIdsCopy.addAll(commandIds);
             this.commandIds = commandIdsCopy;
         }
@@ -235,9 +235,9 @@ public class DescribeCommandsRequest extends AmazonWebServiceRequest  implements
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getDeploymentId() != null) sb.append("DeploymentId: " + getDeploymentId() + ",");    	
-        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ",");    	
+        sb.append("{");
+        if (getDeploymentId() != null) sb.append("DeploymentId: " + getDeploymentId() + ",");
+        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ",");
         if (getCommandIds() != null) sb.append("CommandIds: " + getCommandIds() );
         sb.append("}");
         return sb.toString();

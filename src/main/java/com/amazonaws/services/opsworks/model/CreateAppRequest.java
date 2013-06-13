@@ -67,7 +67,7 @@ public class CreateAppRequest extends AmazonWebServiceRequest  implements Serial
      * The app virtual host settings, with multiple domains separated by
      * commas. For example: <code>'www.example.com, example.com'</code>
      */
-    private java.util.List<String> domains;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> domains;
 
     /**
      * Whether to enable SSL for the app.
@@ -378,7 +378,8 @@ public class CreateAppRequest extends AmazonWebServiceRequest  implements Serial
     public java.util.List<String> getDomains() {
         
         if (domains == null) {
-            domains = new java.util.ArrayList<String>();
+              domains = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              domains.setAutoConstruct(true);
         }
         return domains;
     }
@@ -395,8 +396,7 @@ public class CreateAppRequest extends AmazonWebServiceRequest  implements Serial
             this.domains = null;
             return;
         }
-
-        java.util.List<String> domainsCopy = new java.util.ArrayList<String>(domains.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> domainsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(domains.size());
         domainsCopy.addAll(domains);
         this.domains = domainsCopy;
     }
@@ -437,7 +437,7 @@ public class CreateAppRequest extends AmazonWebServiceRequest  implements Serial
         if (domains == null) {
             this.domains = null;
         } else {
-            java.util.List<String> domainsCopy = new java.util.ArrayList<String>(domains.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> domainsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(domains.size());
             domainsCopy.addAll(domains);
             this.domains = domainsCopy;
         }
@@ -577,16 +577,16 @@ public class CreateAppRequest extends AmazonWebServiceRequest  implements Serial
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getStackId() != null) sb.append("StackId: " + getStackId() + ",");    	
-        if (getShortname() != null) sb.append("Shortname: " + getShortname() + ",");    	
-        if (getName() != null) sb.append("Name: " + getName() + ",");    	
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");    	
-        if (getType() != null) sb.append("Type: " + getType() + ",");    	
-        if (getAppSource() != null) sb.append("AppSource: " + getAppSource() + ",");    	
-        if (getDomains() != null) sb.append("Domains: " + getDomains() + ",");    	
-        if (isEnableSsl() != null) sb.append("EnableSsl: " + isEnableSsl() + ",");    	
-        if (getSslConfiguration() != null) sb.append("SslConfiguration: " + getSslConfiguration() + ",");    	
+        sb.append("{");
+        if (getStackId() != null) sb.append("StackId: " + getStackId() + ",");
+        if (getShortname() != null) sb.append("Shortname: " + getShortname() + ",");
+        if (getName() != null) sb.append("Name: " + getName() + ",");
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");
+        if (getType() != null) sb.append("Type: " + getType() + ",");
+        if (getAppSource() != null) sb.append("AppSource: " + getAppSource() + ",");
+        if (getDomains() != null) sb.append("Domains: " + getDomains() + ",");
+        if (isEnableSsl() != null) sb.append("EnableSsl: " + isEnableSsl() + ",");
+        if (getSslConfiguration() != null) sb.append("SslConfiguration: " + getSslConfiguration() + ",");
         if (getAttributes() != null) sb.append("Attributes: " + getAttributes() );
         sb.append("}");
         return sb.toString();

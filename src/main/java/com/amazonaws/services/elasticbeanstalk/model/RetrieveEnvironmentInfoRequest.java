@@ -69,6 +69,8 @@ public class RetrieveEnvironmentInfoRequest extends AmazonWebServiceRequest  imp
      */
     public RetrieveEnvironmentInfoRequest() {}
     
+
+
     /**
      * Constructs a new RetrieveEnvironmentInfoRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -77,7 +79,7 @@ public class RetrieveEnvironmentInfoRequest extends AmazonWebServiceRequest  imp
      * @param infoType The type of information to retrieve.
      */
     public RetrieveEnvironmentInfoRequest(String infoType) {
-        this.infoType = infoType;
+        setInfoType(infoType);
     }
 
     
@@ -312,9 +314,9 @@ public class RetrieveEnvironmentInfoRequest extends AmazonWebServiceRequest  imp
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getEnvironmentId() != null) sb.append("EnvironmentId: " + getEnvironmentId() + ",");    	
-        if (getEnvironmentName() != null) sb.append("EnvironmentName: " + getEnvironmentName() + ",");    	
+        sb.append("{");
+        if (getEnvironmentId() != null) sb.append("EnvironmentId: " + getEnvironmentId() + ",");
+        if (getEnvironmentName() != null) sb.append("EnvironmentName: " + getEnvironmentName() + ",");
         if (getInfoType() != null) sb.append("InfoType: " + getInfoType() );
         sb.append("}");
         return sb.toString();

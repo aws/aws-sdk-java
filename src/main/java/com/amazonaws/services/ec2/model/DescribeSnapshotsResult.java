@@ -25,7 +25,7 @@ public class DescribeSnapshotsResult  implements Serializable  {
     /**
      * The list of described EBS snapshots.
      */
-    private java.util.List<Snapshot> snapshots;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Snapshot> snapshots;
 
     /**
      * The list of described EBS snapshots.
@@ -35,7 +35,8 @@ public class DescribeSnapshotsResult  implements Serializable  {
     public java.util.List<Snapshot> getSnapshots() {
         
         if (snapshots == null) {
-            snapshots = new java.util.ArrayList<Snapshot>();
+              snapshots = new com.amazonaws.internal.ListWithAutoConstructFlag<Snapshot>();
+              snapshots.setAutoConstruct(true);
         }
         return snapshots;
     }
@@ -50,8 +51,7 @@ public class DescribeSnapshotsResult  implements Serializable  {
             this.snapshots = null;
             return;
         }
-
-        java.util.List<Snapshot> snapshotsCopy = new java.util.ArrayList<Snapshot>(snapshots.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Snapshot> snapshotsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Snapshot>(snapshots.size());
         snapshotsCopy.addAll(snapshots);
         this.snapshots = snapshotsCopy;
     }
@@ -88,7 +88,7 @@ public class DescribeSnapshotsResult  implements Serializable  {
         if (snapshots == null) {
             this.snapshots = null;
         } else {
-            java.util.List<Snapshot> snapshotsCopy = new java.util.ArrayList<Snapshot>(snapshots.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Snapshot> snapshotsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Snapshot>(snapshots.size());
             snapshotsCopy.addAll(snapshots);
             this.snapshots = snapshotsCopy;
         }
@@ -107,7 +107,7 @@ public class DescribeSnapshotsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getSnapshots() != null) sb.append("Snapshots: " + getSnapshots() );
         sb.append("}");
         return sb.toString();

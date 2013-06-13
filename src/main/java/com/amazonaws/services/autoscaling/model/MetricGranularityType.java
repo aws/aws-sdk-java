@@ -88,7 +88,7 @@ public class MetricGranularityType  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getGranularity() != null) sb.append("Granularity: " + getGranularity() );
         sb.append("}");
         return sb.toString();

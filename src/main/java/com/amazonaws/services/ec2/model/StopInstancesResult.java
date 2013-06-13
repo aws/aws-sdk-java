@@ -26,7 +26,7 @@ public class StopInstancesResult  implements Serializable  {
      * The list of the stopping instances and details on how their state has
      * changed.
      */
-    private java.util.List<InstanceStateChange> stoppingInstances;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<InstanceStateChange> stoppingInstances;
 
     /**
      * The list of the stopping instances and details on how their state has
@@ -38,7 +38,8 @@ public class StopInstancesResult  implements Serializable  {
     public java.util.List<InstanceStateChange> getStoppingInstances() {
         
         if (stoppingInstances == null) {
-            stoppingInstances = new java.util.ArrayList<InstanceStateChange>();
+              stoppingInstances = new com.amazonaws.internal.ListWithAutoConstructFlag<InstanceStateChange>();
+              stoppingInstances.setAutoConstruct(true);
         }
         return stoppingInstances;
     }
@@ -55,8 +56,7 @@ public class StopInstancesResult  implements Serializable  {
             this.stoppingInstances = null;
             return;
         }
-
-        java.util.List<InstanceStateChange> stoppingInstancesCopy = new java.util.ArrayList<InstanceStateChange>(stoppingInstances.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<InstanceStateChange> stoppingInstancesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<InstanceStateChange>(stoppingInstances.size());
         stoppingInstancesCopy.addAll(stoppingInstances);
         this.stoppingInstances = stoppingInstancesCopy;
     }
@@ -97,7 +97,7 @@ public class StopInstancesResult  implements Serializable  {
         if (stoppingInstances == null) {
             this.stoppingInstances = null;
         } else {
-            java.util.List<InstanceStateChange> stoppingInstancesCopy = new java.util.ArrayList<InstanceStateChange>(stoppingInstances.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<InstanceStateChange> stoppingInstancesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<InstanceStateChange>(stoppingInstances.size());
             stoppingInstancesCopy.addAll(stoppingInstances);
             this.stoppingInstances = stoppingInstancesCopy;
         }
@@ -116,7 +116,7 @@ public class StopInstancesResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getStoppingInstances() != null) sb.append("StoppingInstances: " + getStoppingInstances() );
         sb.append("}");
         return sb.toString();

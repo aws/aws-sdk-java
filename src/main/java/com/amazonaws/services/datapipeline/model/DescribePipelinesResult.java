@@ -25,7 +25,7 @@ public class DescribePipelinesResult  implements Serializable  {
     /**
      * An array of descriptions returned for the specified pipelines.
      */
-    private java.util.List<PipelineDescription> pipelineDescriptionList;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<PipelineDescription> pipelineDescriptionList;
 
     /**
      * An array of descriptions returned for the specified pipelines.
@@ -35,7 +35,8 @@ public class DescribePipelinesResult  implements Serializable  {
     public java.util.List<PipelineDescription> getPipelineDescriptionList() {
         
         if (pipelineDescriptionList == null) {
-            pipelineDescriptionList = new java.util.ArrayList<PipelineDescription>();
+              pipelineDescriptionList = new com.amazonaws.internal.ListWithAutoConstructFlag<PipelineDescription>();
+              pipelineDescriptionList.setAutoConstruct(true);
         }
         return pipelineDescriptionList;
     }
@@ -50,8 +51,7 @@ public class DescribePipelinesResult  implements Serializable  {
             this.pipelineDescriptionList = null;
             return;
         }
-
-        java.util.List<PipelineDescription> pipelineDescriptionListCopy = new java.util.ArrayList<PipelineDescription>(pipelineDescriptionList.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<PipelineDescription> pipelineDescriptionListCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<PipelineDescription>(pipelineDescriptionList.size());
         pipelineDescriptionListCopy.addAll(pipelineDescriptionList);
         this.pipelineDescriptionList = pipelineDescriptionListCopy;
     }
@@ -88,7 +88,7 @@ public class DescribePipelinesResult  implements Serializable  {
         if (pipelineDescriptionList == null) {
             this.pipelineDescriptionList = null;
         } else {
-            java.util.List<PipelineDescription> pipelineDescriptionListCopy = new java.util.ArrayList<PipelineDescription>(pipelineDescriptionList.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<PipelineDescription> pipelineDescriptionListCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<PipelineDescription>(pipelineDescriptionList.size());
             pipelineDescriptionListCopy.addAll(pipelineDescriptionList);
             this.pipelineDescriptionList = pipelineDescriptionListCopy;
         }
@@ -107,7 +107,7 @@ public class DescribePipelinesResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getPipelineDescriptionList() != null) sb.append("PipelineDescriptionList: " + getPipelineDescriptionList() );
         sb.append("}");
         return sb.toString();

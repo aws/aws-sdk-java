@@ -103,18 +103,18 @@ public class DBInstance  implements Serializable  {
      * <code>DBSecurityGroup.Name</code> and
      * <code>DBSecurityGroup.Status</code> subelements.
      */
-    private java.util.List<DBSecurityGroupMembership> dBSecurityGroups;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<DBSecurityGroupMembership> dBSecurityGroups;
 
     /**
      * Provides List of VPC security group elements that the DB Instance
      * belongs to.
      */
-    private java.util.List<VpcSecurityGroupMembership> vpcSecurityGroups;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<VpcSecurityGroupMembership> vpcSecurityGroups;
 
     /**
      * Provides the list of DB Parameter Groups applied to this DB Instance.
      */
-    private java.util.List<DBParameterGroupStatus> dBParameterGroups;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<DBParameterGroupStatus> dBParameterGroups;
 
     /**
      * Specifies the name of the Availability Zone the DB Instance is located
@@ -173,7 +173,7 @@ public class DBInstance  implements Serializable  {
      * Contains one or more identifiers of the Read Replicas associated with
      * this DB Instance.
      */
-    private java.util.List<String> readReplicaDBInstanceIdentifiers;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> readReplicaDBInstanceIdentifiers;
 
     /**
      * License model information for this DB Instance.
@@ -188,7 +188,7 @@ public class DBInstance  implements Serializable  {
     /**
      * Provides the list of option group memberships for this DB Instance.
      */
-    private java.util.List<OptionGroupMembership> optionGroupMemberships;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<OptionGroupMembership> optionGroupMemberships;
 
     /**
      * If present, specifies the name of the character set that this instance
@@ -218,6 +218,12 @@ public class DBInstance  implements Serializable  {
      * set, the DB instance will be private.
      */
     private Boolean publiclyAccessible;
+
+    /**
+     * The status of a Read Replica. If the instance is not a for a read
+     * replica, this will be blank.
+     */
+    private com.amazonaws.internal.ListWithAutoConstructFlag<DBInstanceStatusInfo> statusInfos;
 
     /**
      * Contains a user-supplied database identifier. This is the unique key
@@ -671,7 +677,8 @@ public class DBInstance  implements Serializable  {
     public java.util.List<DBSecurityGroupMembership> getDBSecurityGroups() {
         
         if (dBSecurityGroups == null) {
-            dBSecurityGroups = new java.util.ArrayList<DBSecurityGroupMembership>();
+              dBSecurityGroups = new com.amazonaws.internal.ListWithAutoConstructFlag<DBSecurityGroupMembership>();
+              dBSecurityGroups.setAutoConstruct(true);
         }
         return dBSecurityGroups;
     }
@@ -690,8 +697,7 @@ public class DBInstance  implements Serializable  {
             this.dBSecurityGroups = null;
             return;
         }
-
-        java.util.List<DBSecurityGroupMembership> dBSecurityGroupsCopy = new java.util.ArrayList<DBSecurityGroupMembership>(dBSecurityGroups.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<DBSecurityGroupMembership> dBSecurityGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<DBSecurityGroupMembership>(dBSecurityGroups.size());
         dBSecurityGroupsCopy.addAll(dBSecurityGroups);
         this.dBSecurityGroups = dBSecurityGroupsCopy;
     }
@@ -736,7 +742,7 @@ public class DBInstance  implements Serializable  {
         if (dBSecurityGroups == null) {
             this.dBSecurityGroups = null;
         } else {
-            java.util.List<DBSecurityGroupMembership> dBSecurityGroupsCopy = new java.util.ArrayList<DBSecurityGroupMembership>(dBSecurityGroups.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<DBSecurityGroupMembership> dBSecurityGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<DBSecurityGroupMembership>(dBSecurityGroups.size());
             dBSecurityGroupsCopy.addAll(dBSecurityGroups);
             this.dBSecurityGroups = dBSecurityGroupsCopy;
         }
@@ -754,7 +760,8 @@ public class DBInstance  implements Serializable  {
     public java.util.List<VpcSecurityGroupMembership> getVpcSecurityGroups() {
         
         if (vpcSecurityGroups == null) {
-            vpcSecurityGroups = new java.util.ArrayList<VpcSecurityGroupMembership>();
+              vpcSecurityGroups = new com.amazonaws.internal.ListWithAutoConstructFlag<VpcSecurityGroupMembership>();
+              vpcSecurityGroups.setAutoConstruct(true);
         }
         return vpcSecurityGroups;
     }
@@ -771,8 +778,7 @@ public class DBInstance  implements Serializable  {
             this.vpcSecurityGroups = null;
             return;
         }
-
-        java.util.List<VpcSecurityGroupMembership> vpcSecurityGroupsCopy = new java.util.ArrayList<VpcSecurityGroupMembership>(vpcSecurityGroups.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<VpcSecurityGroupMembership> vpcSecurityGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<VpcSecurityGroupMembership>(vpcSecurityGroups.size());
         vpcSecurityGroupsCopy.addAll(vpcSecurityGroups);
         this.vpcSecurityGroups = vpcSecurityGroupsCopy;
     }
@@ -813,7 +819,7 @@ public class DBInstance  implements Serializable  {
         if (vpcSecurityGroups == null) {
             this.vpcSecurityGroups = null;
         } else {
-            java.util.List<VpcSecurityGroupMembership> vpcSecurityGroupsCopy = new java.util.ArrayList<VpcSecurityGroupMembership>(vpcSecurityGroups.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<VpcSecurityGroupMembership> vpcSecurityGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<VpcSecurityGroupMembership>(vpcSecurityGroups.size());
             vpcSecurityGroupsCopy.addAll(vpcSecurityGroups);
             this.vpcSecurityGroups = vpcSecurityGroupsCopy;
         }
@@ -829,7 +835,8 @@ public class DBInstance  implements Serializable  {
     public java.util.List<DBParameterGroupStatus> getDBParameterGroups() {
         
         if (dBParameterGroups == null) {
-            dBParameterGroups = new java.util.ArrayList<DBParameterGroupStatus>();
+              dBParameterGroups = new com.amazonaws.internal.ListWithAutoConstructFlag<DBParameterGroupStatus>();
+              dBParameterGroups.setAutoConstruct(true);
         }
         return dBParameterGroups;
     }
@@ -844,8 +851,7 @@ public class DBInstance  implements Serializable  {
             this.dBParameterGroups = null;
             return;
         }
-
-        java.util.List<DBParameterGroupStatus> dBParameterGroupsCopy = new java.util.ArrayList<DBParameterGroupStatus>(dBParameterGroups.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<DBParameterGroupStatus> dBParameterGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<DBParameterGroupStatus>(dBParameterGroups.size());
         dBParameterGroupsCopy.addAll(dBParameterGroups);
         this.dBParameterGroups = dBParameterGroupsCopy;
     }
@@ -882,7 +888,7 @@ public class DBInstance  implements Serializable  {
         if (dBParameterGroups == null) {
             this.dBParameterGroups = null;
         } else {
-            java.util.List<DBParameterGroupStatus> dBParameterGroupsCopy = new java.util.ArrayList<DBParameterGroupStatus>(dBParameterGroups.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<DBParameterGroupStatus> dBParameterGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<DBParameterGroupStatus>(dBParameterGroups.size());
             dBParameterGroupsCopy.addAll(dBParameterGroups);
             this.dBParameterGroups = dBParameterGroupsCopy;
         }
@@ -1272,7 +1278,8 @@ public class DBInstance  implements Serializable  {
     public java.util.List<String> getReadReplicaDBInstanceIdentifiers() {
         
         if (readReplicaDBInstanceIdentifiers == null) {
-            readReplicaDBInstanceIdentifiers = new java.util.ArrayList<String>();
+              readReplicaDBInstanceIdentifiers = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              readReplicaDBInstanceIdentifiers.setAutoConstruct(true);
         }
         return readReplicaDBInstanceIdentifiers;
     }
@@ -1289,8 +1296,7 @@ public class DBInstance  implements Serializable  {
             this.readReplicaDBInstanceIdentifiers = null;
             return;
         }
-
-        java.util.List<String> readReplicaDBInstanceIdentifiersCopy = new java.util.ArrayList<String>(readReplicaDBInstanceIdentifiers.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> readReplicaDBInstanceIdentifiersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(readReplicaDBInstanceIdentifiers.size());
         readReplicaDBInstanceIdentifiersCopy.addAll(readReplicaDBInstanceIdentifiers);
         this.readReplicaDBInstanceIdentifiers = readReplicaDBInstanceIdentifiersCopy;
     }
@@ -1331,7 +1337,7 @@ public class DBInstance  implements Serializable  {
         if (readReplicaDBInstanceIdentifiers == null) {
             this.readReplicaDBInstanceIdentifiers = null;
         } else {
-            java.util.List<String> readReplicaDBInstanceIdentifiersCopy = new java.util.ArrayList<String>(readReplicaDBInstanceIdentifiers.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> readReplicaDBInstanceIdentifiersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(readReplicaDBInstanceIdentifiers.size());
             readReplicaDBInstanceIdentifiersCopy.addAll(readReplicaDBInstanceIdentifiers);
             this.readReplicaDBInstanceIdentifiers = readReplicaDBInstanceIdentifiersCopy;
         }
@@ -1415,7 +1421,8 @@ public class DBInstance  implements Serializable  {
     public java.util.List<OptionGroupMembership> getOptionGroupMemberships() {
         
         if (optionGroupMemberships == null) {
-            optionGroupMemberships = new java.util.ArrayList<OptionGroupMembership>();
+              optionGroupMemberships = new com.amazonaws.internal.ListWithAutoConstructFlag<OptionGroupMembership>();
+              optionGroupMemberships.setAutoConstruct(true);
         }
         return optionGroupMemberships;
     }
@@ -1430,8 +1437,7 @@ public class DBInstance  implements Serializable  {
             this.optionGroupMemberships = null;
             return;
         }
-
-        java.util.List<OptionGroupMembership> optionGroupMembershipsCopy = new java.util.ArrayList<OptionGroupMembership>(optionGroupMemberships.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<OptionGroupMembership> optionGroupMembershipsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<OptionGroupMembership>(optionGroupMemberships.size());
         optionGroupMembershipsCopy.addAll(optionGroupMemberships);
         this.optionGroupMemberships = optionGroupMembershipsCopy;
     }
@@ -1468,7 +1474,7 @@ public class DBInstance  implements Serializable  {
         if (optionGroupMemberships == null) {
             this.optionGroupMemberships = null;
         } else {
-            java.util.List<OptionGroupMembership> optionGroupMembershipsCopy = new java.util.ArrayList<OptionGroupMembership>(optionGroupMemberships.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<OptionGroupMembership> optionGroupMembershipsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<OptionGroupMembership>(optionGroupMemberships.size());
             optionGroupMembershipsCopy.addAll(optionGroupMemberships);
             this.optionGroupMemberships = optionGroupMembershipsCopy;
         }
@@ -1696,6 +1702,83 @@ public class DBInstance  implements Serializable  {
     }
     
     /**
+     * The status of a Read Replica. If the instance is not a for a read
+     * replica, this will be blank.
+     *
+     * @return The status of a Read Replica. If the instance is not a for a read
+     *         replica, this will be blank.
+     */
+    public java.util.List<DBInstanceStatusInfo> getStatusInfos() {
+        
+        if (statusInfos == null) {
+              statusInfos = new com.amazonaws.internal.ListWithAutoConstructFlag<DBInstanceStatusInfo>();
+              statusInfos.setAutoConstruct(true);
+        }
+        return statusInfos;
+    }
+    
+    /**
+     * The status of a Read Replica. If the instance is not a for a read
+     * replica, this will be blank.
+     *
+     * @param statusInfos The status of a Read Replica. If the instance is not a for a read
+     *         replica, this will be blank.
+     */
+    public void setStatusInfos(java.util.Collection<DBInstanceStatusInfo> statusInfos) {
+        if (statusInfos == null) {
+            this.statusInfos = null;
+            return;
+        }
+        com.amazonaws.internal.ListWithAutoConstructFlag<DBInstanceStatusInfo> statusInfosCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<DBInstanceStatusInfo>(statusInfos.size());
+        statusInfosCopy.addAll(statusInfos);
+        this.statusInfos = statusInfosCopy;
+    }
+    
+    /**
+     * The status of a Read Replica. If the instance is not a for a read
+     * replica, this will be blank.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param statusInfos The status of a Read Replica. If the instance is not a for a read
+     *         replica, this will be blank.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public DBInstance withStatusInfos(DBInstanceStatusInfo... statusInfos) {
+        if (getStatusInfos() == null) setStatusInfos(new java.util.ArrayList<DBInstanceStatusInfo>(statusInfos.length));
+        for (DBInstanceStatusInfo value : statusInfos) {
+            getStatusInfos().add(value);
+        }
+        return this;
+    }
+    
+    /**
+     * The status of a Read Replica. If the instance is not a for a read
+     * replica, this will be blank.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param statusInfos The status of a Read Replica. If the instance is not a for a read
+     *         replica, this will be blank.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public DBInstance withStatusInfos(java.util.Collection<DBInstanceStatusInfo> statusInfos) {
+        if (statusInfos == null) {
+            this.statusInfos = null;
+        } else {
+            com.amazonaws.internal.ListWithAutoConstructFlag<DBInstanceStatusInfo> statusInfosCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<DBInstanceStatusInfo>(statusInfos.size());
+            statusInfosCopy.addAll(statusInfos);
+            this.statusInfos = statusInfosCopy;
+        }
+
+        return this;
+    }
+    
+    /**
      * Returns a string representation of this object; useful for testing and
      * debugging.
      *
@@ -1706,37 +1789,38 @@ public class DBInstance  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getDBInstanceIdentifier() != null) sb.append("DBInstanceIdentifier: " + getDBInstanceIdentifier() + ",");    	
-        if (getDBInstanceClass() != null) sb.append("DBInstanceClass: " + getDBInstanceClass() + ",");    	
-        if (getEngine() != null) sb.append("Engine: " + getEngine() + ",");    	
-        if (getDBInstanceStatus() != null) sb.append("DBInstanceStatus: " + getDBInstanceStatus() + ",");    	
-        if (getMasterUsername() != null) sb.append("MasterUsername: " + getMasterUsername() + ",");    	
-        if (getDBName() != null) sb.append("DBName: " + getDBName() + ",");    	
-        if (getEndpoint() != null) sb.append("Endpoint: " + getEndpoint() + ",");    	
-        if (getAllocatedStorage() != null) sb.append("AllocatedStorage: " + getAllocatedStorage() + ",");    	
-        if (getInstanceCreateTime() != null) sb.append("InstanceCreateTime: " + getInstanceCreateTime() + ",");    	
-        if (getPreferredBackupWindow() != null) sb.append("PreferredBackupWindow: " + getPreferredBackupWindow() + ",");    	
-        if (getBackupRetentionPeriod() != null) sb.append("BackupRetentionPeriod: " + getBackupRetentionPeriod() + ",");    	
-        if (getDBSecurityGroups() != null) sb.append("DBSecurityGroups: " + getDBSecurityGroups() + ",");    	
-        if (getVpcSecurityGroups() != null) sb.append("VpcSecurityGroups: " + getVpcSecurityGroups() + ",");    	
-        if (getDBParameterGroups() != null) sb.append("DBParameterGroups: " + getDBParameterGroups() + ",");    	
-        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");    	
-        if (getDBSubnetGroup() != null) sb.append("DBSubnetGroup: " + getDBSubnetGroup() + ",");    	
-        if (getPreferredMaintenanceWindow() != null) sb.append("PreferredMaintenanceWindow: " + getPreferredMaintenanceWindow() + ",");    	
-        if (getPendingModifiedValues() != null) sb.append("PendingModifiedValues: " + getPendingModifiedValues() + ",");    	
-        if (getLatestRestorableTime() != null) sb.append("LatestRestorableTime: " + getLatestRestorableTime() + ",");    	
-        if (isMultiAZ() != null) sb.append("MultiAZ: " + isMultiAZ() + ",");    	
-        if (getEngineVersion() != null) sb.append("EngineVersion: " + getEngineVersion() + ",");    	
-        if (isAutoMinorVersionUpgrade() != null) sb.append("AutoMinorVersionUpgrade: " + isAutoMinorVersionUpgrade() + ",");    	
-        if (getReadReplicaSourceDBInstanceIdentifier() != null) sb.append("ReadReplicaSourceDBInstanceIdentifier: " + getReadReplicaSourceDBInstanceIdentifier() + ",");    	
-        if (getReadReplicaDBInstanceIdentifiers() != null) sb.append("ReadReplicaDBInstanceIdentifiers: " + getReadReplicaDBInstanceIdentifiers() + ",");    	
-        if (getLicenseModel() != null) sb.append("LicenseModel: " + getLicenseModel() + ",");    	
-        if (getIops() != null) sb.append("Iops: " + getIops() + ",");    	
-        if (getOptionGroupMemberships() != null) sb.append("OptionGroupMemberships: " + getOptionGroupMemberships() + ",");    	
-        if (getCharacterSetName() != null) sb.append("CharacterSetName: " + getCharacterSetName() + ",");    	
-        if (getSecondaryAvailabilityZone() != null) sb.append("SecondaryAvailabilityZone: " + getSecondaryAvailabilityZone() + ",");    	
-        if (isPubliclyAccessible() != null) sb.append("PubliclyAccessible: " + isPubliclyAccessible() );
+        sb.append("{");
+        if (getDBInstanceIdentifier() != null) sb.append("DBInstanceIdentifier: " + getDBInstanceIdentifier() + ",");
+        if (getDBInstanceClass() != null) sb.append("DBInstanceClass: " + getDBInstanceClass() + ",");
+        if (getEngine() != null) sb.append("Engine: " + getEngine() + ",");
+        if (getDBInstanceStatus() != null) sb.append("DBInstanceStatus: " + getDBInstanceStatus() + ",");
+        if (getMasterUsername() != null) sb.append("MasterUsername: " + getMasterUsername() + ",");
+        if (getDBName() != null) sb.append("DBName: " + getDBName() + ",");
+        if (getEndpoint() != null) sb.append("Endpoint: " + getEndpoint() + ",");
+        if (getAllocatedStorage() != null) sb.append("AllocatedStorage: " + getAllocatedStorage() + ",");
+        if (getInstanceCreateTime() != null) sb.append("InstanceCreateTime: " + getInstanceCreateTime() + ",");
+        if (getPreferredBackupWindow() != null) sb.append("PreferredBackupWindow: " + getPreferredBackupWindow() + ",");
+        if (getBackupRetentionPeriod() != null) sb.append("BackupRetentionPeriod: " + getBackupRetentionPeriod() + ",");
+        if (getDBSecurityGroups() != null) sb.append("DBSecurityGroups: " + getDBSecurityGroups() + ",");
+        if (getVpcSecurityGroups() != null) sb.append("VpcSecurityGroups: " + getVpcSecurityGroups() + ",");
+        if (getDBParameterGroups() != null) sb.append("DBParameterGroups: " + getDBParameterGroups() + ",");
+        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");
+        if (getDBSubnetGroup() != null) sb.append("DBSubnetGroup: " + getDBSubnetGroup() + ",");
+        if (getPreferredMaintenanceWindow() != null) sb.append("PreferredMaintenanceWindow: " + getPreferredMaintenanceWindow() + ",");
+        if (getPendingModifiedValues() != null) sb.append("PendingModifiedValues: " + getPendingModifiedValues() + ",");
+        if (getLatestRestorableTime() != null) sb.append("LatestRestorableTime: " + getLatestRestorableTime() + ",");
+        if (isMultiAZ() != null) sb.append("MultiAZ: " + isMultiAZ() + ",");
+        if (getEngineVersion() != null) sb.append("EngineVersion: " + getEngineVersion() + ",");
+        if (isAutoMinorVersionUpgrade() != null) sb.append("AutoMinorVersionUpgrade: " + isAutoMinorVersionUpgrade() + ",");
+        if (getReadReplicaSourceDBInstanceIdentifier() != null) sb.append("ReadReplicaSourceDBInstanceIdentifier: " + getReadReplicaSourceDBInstanceIdentifier() + ",");
+        if (getReadReplicaDBInstanceIdentifiers() != null) sb.append("ReadReplicaDBInstanceIdentifiers: " + getReadReplicaDBInstanceIdentifiers() + ",");
+        if (getLicenseModel() != null) sb.append("LicenseModel: " + getLicenseModel() + ",");
+        if (getIops() != null) sb.append("Iops: " + getIops() + ",");
+        if (getOptionGroupMemberships() != null) sb.append("OptionGroupMemberships: " + getOptionGroupMemberships() + ",");
+        if (getCharacterSetName() != null) sb.append("CharacterSetName: " + getCharacterSetName() + ",");
+        if (getSecondaryAvailabilityZone() != null) sb.append("SecondaryAvailabilityZone: " + getSecondaryAvailabilityZone() + ",");
+        if (isPubliclyAccessible() != null) sb.append("PubliclyAccessible: " + isPubliclyAccessible() + ",");
+        if (getStatusInfos() != null) sb.append("StatusInfos: " + getStatusInfos() );
         sb.append("}");
         return sb.toString();
     }
@@ -1776,6 +1860,7 @@ public class DBInstance  implements Serializable  {
         hashCode = prime * hashCode + ((getCharacterSetName() == null) ? 0 : getCharacterSetName().hashCode()); 
         hashCode = prime * hashCode + ((getSecondaryAvailabilityZone() == null) ? 0 : getSecondaryAvailabilityZone().hashCode()); 
         hashCode = prime * hashCode + ((isPubliclyAccessible() == null) ? 0 : isPubliclyAccessible().hashCode()); 
+        hashCode = prime * hashCode + ((getStatusInfos() == null) ? 0 : getStatusInfos().hashCode()); 
         return hashCode;
     }
     
@@ -1847,6 +1932,8 @@ public class DBInstance  implements Serializable  {
         if (other.getSecondaryAvailabilityZone() != null && other.getSecondaryAvailabilityZone().equals(this.getSecondaryAvailabilityZone()) == false) return false; 
         if (other.isPubliclyAccessible() == null ^ this.isPubliclyAccessible() == null) return false;
         if (other.isPubliclyAccessible() != null && other.isPubliclyAccessible().equals(this.isPubliclyAccessible()) == false) return false; 
+        if (other.getStatusInfos() == null ^ this.getStatusInfos() == null) return false;
+        if (other.getStatusInfos() != null && other.getStatusInfos().equals(this.getStatusInfos()) == false) return false; 
         return true;
     }
     

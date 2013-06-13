@@ -62,7 +62,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest  implements S
      * An optional list of the AMI IDs to describe. If not specified, all
      * AMIs will be described.
      */
-    private java.util.List<String> imageIds;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> imageIds;
 
     /**
      * The optional list of owners for the described AMIs. The IDs amazon,
@@ -70,7 +70,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest  implements S
      * owned by the user, and AMIs for which the user has explicit launch
      * permissions, respectively.
      */
-    private java.util.List<String> owners;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> owners;
 
     /**
      * The optional list of users with explicit launch permissions for the
@@ -78,7 +78,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest  implements S
      * return AMIs for which the sender of the request has explicit launch
      * permissions, or 'all' to return AMIs with public launch permissions.
      */
-    private java.util.List<String> executableUsers;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> executableUsers;
 
     /**
      * A list of filters used to match properties for Images. For a complete
@@ -86,7 +86,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest  implements S
      * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      * EC2 API reference</a>.
      */
-    private java.util.List<Filter> filters;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filters;
 
     /**
      * An optional list of the AMI IDs to describe. If not specified, all
@@ -98,7 +98,8 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest  implements S
     public java.util.List<String> getImageIds() {
         
         if (imageIds == null) {
-            imageIds = new java.util.ArrayList<String>();
+              imageIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              imageIds.setAutoConstruct(true);
         }
         return imageIds;
     }
@@ -115,8 +116,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest  implements S
             this.imageIds = null;
             return;
         }
-
-        java.util.List<String> imageIdsCopy = new java.util.ArrayList<String>(imageIds.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> imageIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(imageIds.size());
         imageIdsCopy.addAll(imageIds);
         this.imageIds = imageIdsCopy;
     }
@@ -157,7 +157,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest  implements S
         if (imageIds == null) {
             this.imageIds = null;
         } else {
-            java.util.List<String> imageIdsCopy = new java.util.ArrayList<String>(imageIds.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> imageIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(imageIds.size());
             imageIdsCopy.addAll(imageIds);
             this.imageIds = imageIdsCopy;
         }
@@ -179,7 +179,8 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest  implements S
     public java.util.List<String> getOwners() {
         
         if (owners == null) {
-            owners = new java.util.ArrayList<String>();
+              owners = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              owners.setAutoConstruct(true);
         }
         return owners;
     }
@@ -200,8 +201,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest  implements S
             this.owners = null;
             return;
         }
-
-        java.util.List<String> ownersCopy = new java.util.ArrayList<String>(owners.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> ownersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(owners.size());
         ownersCopy.addAll(owners);
         this.owners = ownersCopy;
     }
@@ -250,7 +250,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest  implements S
         if (owners == null) {
             this.owners = null;
         } else {
-            java.util.List<String> ownersCopy = new java.util.ArrayList<String>(owners.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> ownersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(owners.size());
             ownersCopy.addAll(owners);
             this.owners = ownersCopy;
         }
@@ -272,7 +272,8 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest  implements S
     public java.util.List<String> getExecutableUsers() {
         
         if (executableUsers == null) {
-            executableUsers = new java.util.ArrayList<String>();
+              executableUsers = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              executableUsers.setAutoConstruct(true);
         }
         return executableUsers;
     }
@@ -293,8 +294,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest  implements S
             this.executableUsers = null;
             return;
         }
-
-        java.util.List<String> executableUsersCopy = new java.util.ArrayList<String>(executableUsers.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> executableUsersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(executableUsers.size());
         executableUsersCopy.addAll(executableUsers);
         this.executableUsers = executableUsersCopy;
     }
@@ -343,7 +343,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest  implements S
         if (executableUsers == null) {
             this.executableUsers = null;
         } else {
-            java.util.List<String> executableUsersCopy = new java.util.ArrayList<String>(executableUsers.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> executableUsersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(executableUsers.size());
             executableUsersCopy.addAll(executableUsers);
             this.executableUsers = executableUsersCopy;
         }
@@ -365,7 +365,8 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest  implements S
     public java.util.List<Filter> getFilters() {
         
         if (filters == null) {
-            filters = new java.util.ArrayList<Filter>();
+              filters = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>();
+              filters.setAutoConstruct(true);
         }
         return filters;
     }
@@ -386,8 +387,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest  implements S
             this.filters = null;
             return;
         }
-
-        java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>(filters.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filtersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>(filters.size());
         filtersCopy.addAll(filters);
         this.filters = filtersCopy;
     }
@@ -436,7 +436,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest  implements S
         if (filters == null) {
             this.filters = null;
         } else {
-            java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>(filters.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filtersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>(filters.size());
             filtersCopy.addAll(filters);
             this.filters = filtersCopy;
         }
@@ -455,10 +455,10 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest  implements S
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getImageIds() != null) sb.append("ImageIds: " + getImageIds() + ",");    	
-        if (getOwners() != null) sb.append("Owners: " + getOwners() + ",");    	
-        if (getExecutableUsers() != null) sb.append("ExecutableUsers: " + getExecutableUsers() + ",");    	
+        sb.append("{");
+        if (getImageIds() != null) sb.append("ImageIds: " + getImageIds() + ",");
+        if (getOwners() != null) sb.append("Owners: " + getOwners() + ",");
+        if (getExecutableUsers() != null) sb.append("ExecutableUsers: " + getExecutableUsers() + ",");
         if (getFilters() != null) sb.append("Filters: " + getFilters() );
         sb.append("}");
         return sb.toString();

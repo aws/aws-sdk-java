@@ -349,11 +349,11 @@ public class ProvisionedThroughputDescription  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getLastIncreaseDateTime() != null) sb.append("LastIncreaseDateTime: " + getLastIncreaseDateTime() + ",");    	
-        if (getLastDecreaseDateTime() != null) sb.append("LastDecreaseDateTime: " + getLastDecreaseDateTime() + ",");    	
-        if (getNumberOfDecreasesToday() != null) sb.append("NumberOfDecreasesToday: " + getNumberOfDecreasesToday() + ",");    	
-        if (getReadCapacityUnits() != null) sb.append("ReadCapacityUnits: " + getReadCapacityUnits() + ",");    	
+        sb.append("{");
+        if (getLastIncreaseDateTime() != null) sb.append("LastIncreaseDateTime: " + getLastIncreaseDateTime() + ",");
+        if (getLastDecreaseDateTime() != null) sb.append("LastDecreaseDateTime: " + getLastDecreaseDateTime() + ",");
+        if (getNumberOfDecreasesToday() != null) sb.append("NumberOfDecreasesToday: " + getNumberOfDecreasesToday() + ",");
+        if (getReadCapacityUnits() != null) sb.append("ReadCapacityUnits: " + getReadCapacityUnits() + ",");
         if (getWriteCapacityUnits() != null) sb.append("WriteCapacityUnits: " + getWriteCapacityUnits() );
         sb.append("}");
         return sb.toString();

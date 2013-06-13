@@ -32,7 +32,7 @@ public class DescribeReservedDBInstancesOfferingsResult  implements Serializable
     /**
      * A list of reserved DB Instance offerings.
      */
-    private java.util.List<ReservedDBInstancesOffering> reservedDBInstancesOfferings;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<ReservedDBInstancesOffering> reservedDBInstancesOfferings;
 
     /**
      * An optional pagination token provided by a previous request. If this
@@ -88,7 +88,8 @@ public class DescribeReservedDBInstancesOfferingsResult  implements Serializable
     public java.util.List<ReservedDBInstancesOffering> getReservedDBInstancesOfferings() {
         
         if (reservedDBInstancesOfferings == null) {
-            reservedDBInstancesOfferings = new java.util.ArrayList<ReservedDBInstancesOffering>();
+              reservedDBInstancesOfferings = new com.amazonaws.internal.ListWithAutoConstructFlag<ReservedDBInstancesOffering>();
+              reservedDBInstancesOfferings.setAutoConstruct(true);
         }
         return reservedDBInstancesOfferings;
     }
@@ -103,8 +104,7 @@ public class DescribeReservedDBInstancesOfferingsResult  implements Serializable
             this.reservedDBInstancesOfferings = null;
             return;
         }
-
-        java.util.List<ReservedDBInstancesOffering> reservedDBInstancesOfferingsCopy = new java.util.ArrayList<ReservedDBInstancesOffering>(reservedDBInstancesOfferings.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<ReservedDBInstancesOffering> reservedDBInstancesOfferingsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ReservedDBInstancesOffering>(reservedDBInstancesOfferings.size());
         reservedDBInstancesOfferingsCopy.addAll(reservedDBInstancesOfferings);
         this.reservedDBInstancesOfferings = reservedDBInstancesOfferingsCopy;
     }
@@ -141,7 +141,7 @@ public class DescribeReservedDBInstancesOfferingsResult  implements Serializable
         if (reservedDBInstancesOfferings == null) {
             this.reservedDBInstancesOfferings = null;
         } else {
-            java.util.List<ReservedDBInstancesOffering> reservedDBInstancesOfferingsCopy = new java.util.ArrayList<ReservedDBInstancesOffering>(reservedDBInstancesOfferings.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<ReservedDBInstancesOffering> reservedDBInstancesOfferingsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ReservedDBInstancesOffering>(reservedDBInstancesOfferings.size());
             reservedDBInstancesOfferingsCopy.addAll(reservedDBInstancesOfferings);
             this.reservedDBInstancesOfferings = reservedDBInstancesOfferingsCopy;
         }
@@ -160,8 +160,8 @@ public class DescribeReservedDBInstancesOfferingsResult  implements Serializable
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");    	
+        sb.append("{");
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");
         if (getReservedDBInstancesOfferings() != null) sb.append("ReservedDBInstancesOfferings: " + getReservedDBInstancesOfferings() );
         sb.append("}");
         return sb.toString();

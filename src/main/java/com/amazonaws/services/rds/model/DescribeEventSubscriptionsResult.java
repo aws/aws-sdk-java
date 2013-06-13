@@ -33,7 +33,7 @@ public class DescribeEventSubscriptionsResult  implements Serializable  {
     /**
      * A list of EventSubscriptions data types.
      */
-    private java.util.List<EventSubscription> eventSubscriptionsList;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<EventSubscription> eventSubscriptionsList;
 
     /**
      * An optional pagination token provided by a previous
@@ -95,7 +95,8 @@ public class DescribeEventSubscriptionsResult  implements Serializable  {
     public java.util.List<EventSubscription> getEventSubscriptionsList() {
         
         if (eventSubscriptionsList == null) {
-            eventSubscriptionsList = new java.util.ArrayList<EventSubscription>();
+              eventSubscriptionsList = new com.amazonaws.internal.ListWithAutoConstructFlag<EventSubscription>();
+              eventSubscriptionsList.setAutoConstruct(true);
         }
         return eventSubscriptionsList;
     }
@@ -110,8 +111,7 @@ public class DescribeEventSubscriptionsResult  implements Serializable  {
             this.eventSubscriptionsList = null;
             return;
         }
-
-        java.util.List<EventSubscription> eventSubscriptionsListCopy = new java.util.ArrayList<EventSubscription>(eventSubscriptionsList.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<EventSubscription> eventSubscriptionsListCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<EventSubscription>(eventSubscriptionsList.size());
         eventSubscriptionsListCopy.addAll(eventSubscriptionsList);
         this.eventSubscriptionsList = eventSubscriptionsListCopy;
     }
@@ -148,7 +148,7 @@ public class DescribeEventSubscriptionsResult  implements Serializable  {
         if (eventSubscriptionsList == null) {
             this.eventSubscriptionsList = null;
         } else {
-            java.util.List<EventSubscription> eventSubscriptionsListCopy = new java.util.ArrayList<EventSubscription>(eventSubscriptionsList.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<EventSubscription> eventSubscriptionsListCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<EventSubscription>(eventSubscriptionsList.size());
             eventSubscriptionsListCopy.addAll(eventSubscriptionsList);
             this.eventSubscriptionsList = eventSubscriptionsListCopy;
         }
@@ -167,8 +167,8 @@ public class DescribeEventSubscriptionsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");    	
+        sb.append("{");
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");
         if (getEventSubscriptionsList() != null) sb.append("EventSubscriptionsList: " + getEventSubscriptionsList() );
         sb.append("}");
         return sb.toString();

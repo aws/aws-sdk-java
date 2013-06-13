@@ -20,7 +20,7 @@ import java.io.Serializable;
  */
 public class DescribeSpotInstanceRequestsResult  implements Serializable  {
 
-    private java.util.List<SpotInstanceRequest> spotInstanceRequests;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<SpotInstanceRequest> spotInstanceRequests;
 
     /**
      * Returns the value of the SpotInstanceRequests property for this
@@ -31,7 +31,8 @@ public class DescribeSpotInstanceRequestsResult  implements Serializable  {
     public java.util.List<SpotInstanceRequest> getSpotInstanceRequests() {
         
         if (spotInstanceRequests == null) {
-            spotInstanceRequests = new java.util.ArrayList<SpotInstanceRequest>();
+              spotInstanceRequests = new com.amazonaws.internal.ListWithAutoConstructFlag<SpotInstanceRequest>();
+              spotInstanceRequests.setAutoConstruct(true);
         }
         return spotInstanceRequests;
     }
@@ -46,8 +47,7 @@ public class DescribeSpotInstanceRequestsResult  implements Serializable  {
             this.spotInstanceRequests = null;
             return;
         }
-
-        java.util.List<SpotInstanceRequest> spotInstanceRequestsCopy = new java.util.ArrayList<SpotInstanceRequest>(spotInstanceRequests.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<SpotInstanceRequest> spotInstanceRequestsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<SpotInstanceRequest>(spotInstanceRequests.size());
         spotInstanceRequestsCopy.addAll(spotInstanceRequests);
         this.spotInstanceRequests = spotInstanceRequestsCopy;
     }
@@ -84,7 +84,7 @@ public class DescribeSpotInstanceRequestsResult  implements Serializable  {
         if (spotInstanceRequests == null) {
             this.spotInstanceRequests = null;
         } else {
-            java.util.List<SpotInstanceRequest> spotInstanceRequestsCopy = new java.util.ArrayList<SpotInstanceRequest>(spotInstanceRequests.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<SpotInstanceRequest> spotInstanceRequestsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<SpotInstanceRequest>(spotInstanceRequests.size());
             spotInstanceRequestsCopy.addAll(spotInstanceRequests);
             this.spotInstanceRequests = spotInstanceRequestsCopy;
         }
@@ -103,7 +103,7 @@ public class DescribeSpotInstanceRequestsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getSpotInstanceRequests() != null) sb.append("SpotInstanceRequests: " + getSpotInstanceRequests() );
         sb.append("}");
         return sb.toString();

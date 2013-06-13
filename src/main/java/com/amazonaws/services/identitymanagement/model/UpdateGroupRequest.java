@@ -71,6 +71,8 @@ public class UpdateGroupRequest extends AmazonWebServiceRequest  implements Seri
      */
     public UpdateGroupRequest() {}
     
+
+
     /**
      * Constructs a new UpdateGroupRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -80,7 +82,7 @@ public class UpdateGroupRequest extends AmazonWebServiceRequest  implements Seri
      * name of the group, this is the original name.
      */
     public UpdateGroupRequest(String groupName) {
-        this.groupName = groupName;
+        setGroupName(groupName);
     }
 
     
@@ -252,9 +254,9 @@ public class UpdateGroupRequest extends AmazonWebServiceRequest  implements Seri
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getGroupName() != null) sb.append("GroupName: " + getGroupName() + ",");    	
-        if (getNewPath() != null) sb.append("NewPath: " + getNewPath() + ",");    	
+        sb.append("{");
+        if (getGroupName() != null) sb.append("GroupName: " + getGroupName() + ",");
+        if (getNewPath() != null) sb.append("NewPath: " + getNewPath() + ",");
         if (getNewGroupName() != null) sb.append("NewGroupName: " + getNewGroupName() );
         sb.append("}");
         return sb.toString();

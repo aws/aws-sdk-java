@@ -27,7 +27,7 @@ public class DescribeTrustedAdvisorChecksResult  implements Serializable  {
      * href="API_DescribeTrustedAdvisorChecks.html"
      * title="DescribeTrustedAdvisorChecks">DescribeTrustedAdvisorChecks</a>
      */
-    private java.util.List<TrustedAdvisorCheckDescription> checks;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<TrustedAdvisorCheckDescription> checks;
 
     /**
      * List of the checks returned by calling <a
@@ -41,7 +41,8 @@ public class DescribeTrustedAdvisorChecksResult  implements Serializable  {
     public java.util.List<TrustedAdvisorCheckDescription> getChecks() {
         
         if (checks == null) {
-            checks = new java.util.ArrayList<TrustedAdvisorCheckDescription>();
+              checks = new com.amazonaws.internal.ListWithAutoConstructFlag<TrustedAdvisorCheckDescription>();
+              checks.setAutoConstruct(true);
         }
         return checks;
     }
@@ -60,8 +61,7 @@ public class DescribeTrustedAdvisorChecksResult  implements Serializable  {
             this.checks = null;
             return;
         }
-
-        java.util.List<TrustedAdvisorCheckDescription> checksCopy = new java.util.ArrayList<TrustedAdvisorCheckDescription>(checks.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<TrustedAdvisorCheckDescription> checksCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<TrustedAdvisorCheckDescription>(checks.size());
         checksCopy.addAll(checks);
         this.checks = checksCopy;
     }
@@ -106,7 +106,7 @@ public class DescribeTrustedAdvisorChecksResult  implements Serializable  {
         if (checks == null) {
             this.checks = null;
         } else {
-            java.util.List<TrustedAdvisorCheckDescription> checksCopy = new java.util.ArrayList<TrustedAdvisorCheckDescription>(checks.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<TrustedAdvisorCheckDescription> checksCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<TrustedAdvisorCheckDescription>(checks.size());
             checksCopy.addAll(checks);
             this.checks = checksCopy;
         }
@@ -125,7 +125,7 @@ public class DescribeTrustedAdvisorChecksResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getChecks() != null) sb.append("Checks: " + getChecks() );
         sb.append("}");
         return sb.toString();

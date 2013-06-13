@@ -157,9 +157,9 @@ public class SslConfiguration  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getCertificate() != null) sb.append("Certificate: " + getCertificate() + ",");    	
-        if (getPrivateKey() != null) sb.append("PrivateKey: " + getPrivateKey() + ",");    	
+        sb.append("{");
+        if (getCertificate() != null) sb.append("Certificate: " + getCertificate() + ",");
+        if (getPrivateKey() != null) sb.append("PrivateKey: " + getPrivateKey() + ",");
         if (getChain() != null) sb.append("Chain: " + getChain() );
         sb.append("}");
         return sb.toString();

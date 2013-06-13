@@ -55,6 +55,8 @@ public class DeleteAccessKeyRequest extends AmazonWebServiceRequest  implements 
      */
     public DeleteAccessKeyRequest() {}
     
+
+
     /**
      * Constructs a new DeleteAccessKeyRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -64,7 +66,7 @@ public class DeleteAccessKeyRequest extends AmazonWebServiceRequest  implements 
      * Access Key you want to delete.
      */
     public DeleteAccessKeyRequest(String accessKeyId) {
-        this.accessKeyId = accessKeyId;
+        setAccessKeyId(accessKeyId);
     }
 
     
@@ -178,8 +180,8 @@ public class DeleteAccessKeyRequest extends AmazonWebServiceRequest  implements 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getUserName() != null) sb.append("UserName: " + getUserName() + ",");    	
+        sb.append("{");
+        if (getUserName() != null) sb.append("UserName: " + getUserName() + ",");
         if (getAccessKeyId() != null) sb.append("AccessKeyId: " + getAccessKeyId() );
         sb.append("}");
         return sb.toString();

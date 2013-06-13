@@ -108,8 +108,8 @@ public class ProductCode  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getProductCodeId() != null) sb.append("ProductCodeId: " + getProductCodeId() + ",");    	
+        sb.append("{");
+        if (getProductCodeId() != null) sb.append("ProductCodeId: " + getProductCodeId() + ",");
         if (getProductCodeType() != null) sb.append("ProductCodeType: " + getProductCodeType() );
         sb.append("}");
         return sb.toString();

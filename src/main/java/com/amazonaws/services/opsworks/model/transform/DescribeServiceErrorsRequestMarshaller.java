@@ -92,8 +92,8 @@ public class DescribeServiceErrorsRequestMarshaller implements Marshaller<Reques
                 jsonWriter.key("InstanceId").value(describeServiceErrorsRequest.getInstanceId());
             }
 
-            java.util.List<String> serviceErrorIdsList = describeServiceErrorsRequest.getServiceErrorIds();
-            if (serviceErrorIdsList != null) {
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> serviceErrorIdsList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(describeServiceErrorsRequest.getServiceErrorIds());
+            if (serviceErrorIdsList != null && !(serviceErrorIdsList.isAutoConstruct() && serviceErrorIdsList.isEmpty())) {
 
                 jsonWriter.key("ServiceErrorIds");
                 jsonWriter.array();

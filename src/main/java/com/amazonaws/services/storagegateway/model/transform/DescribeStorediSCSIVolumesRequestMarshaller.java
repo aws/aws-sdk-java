@@ -86,8 +86,8 @@ public class DescribeStorediSCSIVolumesRequestMarshaller implements Marshaller<R
           jsonWriter.object();
           
 
-            java.util.List<String> volumeARNsList = describeStorediSCSIVolumesRequest.getVolumeARNs();
-            if (volumeARNsList != null) {
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> volumeARNsList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(describeStorediSCSIVolumesRequest.getVolumeARNs());
+            if (volumeARNsList != null && !(volumeARNsList.isAutoConstruct() && volumeARNsList.isEmpty())) {
 
                 jsonWriter.key("VolumeARNs");
                 jsonWriter.array();

@@ -40,7 +40,7 @@ public class OrderableClusterOption  implements Serializable  {
     /**
      * A list of availability zones for the orderable cluster.
      */
-    private java.util.List<AvailabilityZone> availabilityZones;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<AvailabilityZone> availabilityZones;
 
     /**
      * The version of the orderable cluster.
@@ -152,7 +152,8 @@ public class OrderableClusterOption  implements Serializable  {
     public java.util.List<AvailabilityZone> getAvailabilityZones() {
         
         if (availabilityZones == null) {
-            availabilityZones = new java.util.ArrayList<AvailabilityZone>();
+              availabilityZones = new com.amazonaws.internal.ListWithAutoConstructFlag<AvailabilityZone>();
+              availabilityZones.setAutoConstruct(true);
         }
         return availabilityZones;
     }
@@ -167,8 +168,7 @@ public class OrderableClusterOption  implements Serializable  {
             this.availabilityZones = null;
             return;
         }
-
-        java.util.List<AvailabilityZone> availabilityZonesCopy = new java.util.ArrayList<AvailabilityZone>(availabilityZones.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<AvailabilityZone> availabilityZonesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<AvailabilityZone>(availabilityZones.size());
         availabilityZonesCopy.addAll(availabilityZones);
         this.availabilityZones = availabilityZonesCopy;
     }
@@ -205,7 +205,7 @@ public class OrderableClusterOption  implements Serializable  {
         if (availabilityZones == null) {
             this.availabilityZones = null;
         } else {
-            java.util.List<AvailabilityZone> availabilityZonesCopy = new java.util.ArrayList<AvailabilityZone>(availabilityZones.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<AvailabilityZone> availabilityZonesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<AvailabilityZone>(availabilityZones.size());
             availabilityZonesCopy.addAll(availabilityZones);
             this.availabilityZones = availabilityZonesCopy;
         }
@@ -224,10 +224,10 @@ public class OrderableClusterOption  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getClusterVersion() != null) sb.append("ClusterVersion: " + getClusterVersion() + ",");    	
-        if (getClusterType() != null) sb.append("ClusterType: " + getClusterType() + ",");    	
-        if (getNodeType() != null) sb.append("NodeType: " + getNodeType() + ",");    	
+        sb.append("{");
+        if (getClusterVersion() != null) sb.append("ClusterVersion: " + getClusterVersion() + ",");
+        if (getClusterType() != null) sb.append("ClusterType: " + getClusterType() + ",");
+        if (getNodeType() != null) sb.append("NodeType: " + getNodeType() + ",");
         if (getAvailabilityZones() != null) sb.append("AvailabilityZones: " + getAvailabilityZones() );
         sb.append("}");
         return sb.toString();

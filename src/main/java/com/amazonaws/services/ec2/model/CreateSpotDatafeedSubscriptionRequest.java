@@ -47,6 +47,8 @@ public class CreateSpotDatafeedSubscriptionRequest extends AmazonWebServiceReque
      */
     public CreateSpotDatafeedSubscriptionRequest() {}
     
+
+
     /**
      * Constructs a new CreateSpotDatafeedSubscriptionRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -56,7 +58,7 @@ public class CreateSpotDatafeedSubscriptionRequest extends AmazonWebServiceReque
      * datafeed.
      */
     public CreateSpotDatafeedSubscriptionRequest(String bucket) {
-        this.bucket = bucket;
+        setBucket(bucket);
     }
 
     
@@ -140,8 +142,8 @@ public class CreateSpotDatafeedSubscriptionRequest extends AmazonWebServiceReque
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getBucket() != null) sb.append("Bucket: " + getBucket() + ",");    	
+        sb.append("{");
+        if (getBucket() != null) sb.append("Bucket: " + getBucket() + ",");
         if (getPrefix() != null) sb.append("Prefix: " + getPrefix() );
         sb.append("}");
         return sb.toString();

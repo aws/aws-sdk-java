@@ -64,6 +64,8 @@ public class ExpectedAttributeValue  implements Serializable  {
      */
     public ExpectedAttributeValue() {}
     
+
+
     /**
      * Constructs a new ExpectedAttributeValue object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -73,11 +75,13 @@ public class ExpectedAttributeValue  implements Serializable  {
      * and only one, of the elements.
      */
     public ExpectedAttributeValue(AttributeValue value) {
-        this.value = value;
+        setValue(value);
     }
 
     
     
+
+
     /**
      * Constructs a new ExpectedAttributeValue object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -109,7 +113,7 @@ public class ExpectedAttributeValue  implements Serializable  {
      * Otherwise, the conditional operation will fail.
      */
     public ExpectedAttributeValue(Boolean exists) {
-        this.exists = exists;
+        setExists(exists);
     }
 
     
@@ -392,8 +396,8 @@ public class ExpectedAttributeValue  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getValue() != null) sb.append("Value: " + getValue() + ",");    	
+        sb.append("{");
+        if (getValue() != null) sb.append("Value: " + getValue() + ",");
         if (isExists() != null) sb.append("Exists: " + isExists() );
         sb.append("}");
         return sb.toString();

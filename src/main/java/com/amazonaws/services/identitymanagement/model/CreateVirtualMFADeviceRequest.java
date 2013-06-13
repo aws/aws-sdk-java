@@ -203,8 +203,8 @@ public class CreateVirtualMFADeviceRequest extends AmazonWebServiceRequest  impl
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getPath() != null) sb.append("Path: " + getPath() + ",");    	
+        sb.append("{");
+        if (getPath() != null) sb.append("Path: " + getPath() + ",");
         if (getVirtualMFADeviceName() != null) sb.append("VirtualMFADeviceName: " + getVirtualMFADeviceName() );
         sb.append("}");
         return sb.toString();

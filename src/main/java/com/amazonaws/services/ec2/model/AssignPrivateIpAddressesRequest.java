@@ -26,7 +26,7 @@ public class AssignPrivateIpAddressesRequest extends AmazonWebServiceRequest  im
 
     private String networkInterfaceId;
 
-    private java.util.List<String> privateIpAddresses;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> privateIpAddresses;
 
     private Integer secondaryPrivateIpAddressCount;
 
@@ -74,7 +74,8 @@ public class AssignPrivateIpAddressesRequest extends AmazonWebServiceRequest  im
     public java.util.List<String> getPrivateIpAddresses() {
         
         if (privateIpAddresses == null) {
-            privateIpAddresses = new java.util.ArrayList<String>();
+              privateIpAddresses = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              privateIpAddresses.setAutoConstruct(true);
         }
         return privateIpAddresses;
     }
@@ -89,8 +90,7 @@ public class AssignPrivateIpAddressesRequest extends AmazonWebServiceRequest  im
             this.privateIpAddresses = null;
             return;
         }
-
-        java.util.List<String> privateIpAddressesCopy = new java.util.ArrayList<String>(privateIpAddresses.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> privateIpAddressesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(privateIpAddresses.size());
         privateIpAddressesCopy.addAll(privateIpAddresses);
         this.privateIpAddresses = privateIpAddressesCopy;
     }
@@ -127,7 +127,7 @@ public class AssignPrivateIpAddressesRequest extends AmazonWebServiceRequest  im
         if (privateIpAddresses == null) {
             this.privateIpAddresses = null;
         } else {
-            java.util.List<String> privateIpAddressesCopy = new java.util.ArrayList<String>(privateIpAddresses.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> privateIpAddressesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(privateIpAddresses.size());
             privateIpAddressesCopy.addAll(privateIpAddresses);
             this.privateIpAddresses = privateIpAddressesCopy;
         }
@@ -229,10 +229,10 @@ public class AssignPrivateIpAddressesRequest extends AmazonWebServiceRequest  im
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getNetworkInterfaceId() != null) sb.append("NetworkInterfaceId: " + getNetworkInterfaceId() + ",");    	
-        if (getPrivateIpAddresses() != null) sb.append("PrivateIpAddresses: " + getPrivateIpAddresses() + ",");    	
-        if (getSecondaryPrivateIpAddressCount() != null) sb.append("SecondaryPrivateIpAddressCount: " + getSecondaryPrivateIpAddressCount() + ",");    	
+        sb.append("{");
+        if (getNetworkInterfaceId() != null) sb.append("NetworkInterfaceId: " + getNetworkInterfaceId() + ",");
+        if (getPrivateIpAddresses() != null) sb.append("PrivateIpAddresses: " + getPrivateIpAddresses() + ",");
+        if (getSecondaryPrivateIpAddressCount() != null) sb.append("SecondaryPrivateIpAddressCount: " + getSecondaryPrivateIpAddressCount() + ",");
         if (isAllowReassignment() != null) sb.append("AllowReassignment: " + isAllowReassignment() );
         sb.append("}");
         return sb.toString();

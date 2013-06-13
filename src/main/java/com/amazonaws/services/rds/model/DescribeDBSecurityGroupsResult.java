@@ -32,7 +32,7 @@ public class DescribeDBSecurityGroupsResult  implements Serializable  {
     /**
      * A list of <a>DBSecurityGroup</a> instances.
      */
-    private java.util.List<DBSecurityGroup> dBSecurityGroups;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<DBSecurityGroup> dBSecurityGroups;
 
     /**
      * An optional pagination token provided by a previous request. If this
@@ -88,7 +88,8 @@ public class DescribeDBSecurityGroupsResult  implements Serializable  {
     public java.util.List<DBSecurityGroup> getDBSecurityGroups() {
         
         if (dBSecurityGroups == null) {
-            dBSecurityGroups = new java.util.ArrayList<DBSecurityGroup>();
+              dBSecurityGroups = new com.amazonaws.internal.ListWithAutoConstructFlag<DBSecurityGroup>();
+              dBSecurityGroups.setAutoConstruct(true);
         }
         return dBSecurityGroups;
     }
@@ -103,8 +104,7 @@ public class DescribeDBSecurityGroupsResult  implements Serializable  {
             this.dBSecurityGroups = null;
             return;
         }
-
-        java.util.List<DBSecurityGroup> dBSecurityGroupsCopy = new java.util.ArrayList<DBSecurityGroup>(dBSecurityGroups.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<DBSecurityGroup> dBSecurityGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<DBSecurityGroup>(dBSecurityGroups.size());
         dBSecurityGroupsCopy.addAll(dBSecurityGroups);
         this.dBSecurityGroups = dBSecurityGroupsCopy;
     }
@@ -141,7 +141,7 @@ public class DescribeDBSecurityGroupsResult  implements Serializable  {
         if (dBSecurityGroups == null) {
             this.dBSecurityGroups = null;
         } else {
-            java.util.List<DBSecurityGroup> dBSecurityGroupsCopy = new java.util.ArrayList<DBSecurityGroup>(dBSecurityGroups.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<DBSecurityGroup> dBSecurityGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<DBSecurityGroup>(dBSecurityGroups.size());
             dBSecurityGroupsCopy.addAll(dBSecurityGroups);
             this.dBSecurityGroups = dBSecurityGroupsCopy;
         }
@@ -160,8 +160,8 @@ public class DescribeDBSecurityGroupsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");    	
+        sb.append("{");
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");
         if (getDBSecurityGroups() != null) sb.append("DBSecurityGroups: " + getDBSecurityGroups() );
         sb.append("}");
         return sb.toString();

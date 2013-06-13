@@ -36,7 +36,7 @@ public class DescribePipelinesRequest extends AmazonWebServiceRequest  implement
      * identifiers in a single call to <a>DescribePipelines</a>. You can
      * obtain pipeline identifiers by calling <a>ListPipelines</a>.
      */
-    private java.util.List<String> pipelineIds;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> pipelineIds;
 
     /**
      * Identifiers of the pipelines to describe. You can pass as many as 25
@@ -50,7 +50,8 @@ public class DescribePipelinesRequest extends AmazonWebServiceRequest  implement
     public java.util.List<String> getPipelineIds() {
         
         if (pipelineIds == null) {
-            pipelineIds = new java.util.ArrayList<String>();
+              pipelineIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              pipelineIds.setAutoConstruct(true);
         }
         return pipelineIds;
     }
@@ -69,8 +70,7 @@ public class DescribePipelinesRequest extends AmazonWebServiceRequest  implement
             this.pipelineIds = null;
             return;
         }
-
-        java.util.List<String> pipelineIdsCopy = new java.util.ArrayList<String>(pipelineIds.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> pipelineIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(pipelineIds.size());
         pipelineIdsCopy.addAll(pipelineIds);
         this.pipelineIds = pipelineIdsCopy;
     }
@@ -115,7 +115,7 @@ public class DescribePipelinesRequest extends AmazonWebServiceRequest  implement
         if (pipelineIds == null) {
             this.pipelineIds = null;
         } else {
-            java.util.List<String> pipelineIdsCopy = new java.util.ArrayList<String>(pipelineIds.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> pipelineIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(pipelineIds.size());
             pipelineIdsCopy.addAll(pipelineIds);
             this.pipelineIds = pipelineIdsCopy;
         }
@@ -134,7 +134,7 @@ public class DescribePipelinesRequest extends AmazonWebServiceRequest  implement
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getPipelineIds() != null) sb.append("PipelineIds: " + getPipelineIds() );
         sb.append("}");
         return sb.toString();

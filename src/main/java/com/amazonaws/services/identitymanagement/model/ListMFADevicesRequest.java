@@ -68,6 +68,8 @@ public class ListMFADevicesRequest extends AmazonWebServiceRequest  implements S
      */
     public ListMFADevicesRequest() {}
     
+
+
     /**
      * Constructs a new ListMFADevicesRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -76,7 +78,7 @@ public class ListMFADevicesRequest extends AmazonWebServiceRequest  implements S
      * @param userName Name of the user whose MFA devices you want to list.
      */
     public ListMFADevicesRequest(String userName) {
-        this.userName = userName;
+        setUserName(userName);
     }
 
     
@@ -263,9 +265,9 @@ public class ListMFADevicesRequest extends AmazonWebServiceRequest  implements S
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getUserName() != null) sb.append("UserName: " + getUserName() + ",");    	
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");    	
+        sb.append("{");
+        if (getUserName() != null) sb.append("UserName: " + getUserName() + ",");
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");
         if (getMaxItems() != null) sb.append("MaxItems: " + getMaxItems() );
         sb.append("}");
         return sb.toString();

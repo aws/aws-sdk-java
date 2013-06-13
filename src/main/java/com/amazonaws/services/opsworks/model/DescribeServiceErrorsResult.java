@@ -26,7 +26,7 @@ public class DescribeServiceErrorsResult  implements Serializable  {
      * An array of <code>ServiceError</code> objects that describe the
      * specified service errors.
      */
-    private java.util.List<ServiceError> serviceErrors;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<ServiceError> serviceErrors;
 
     /**
      * An array of <code>ServiceError</code> objects that describe the
@@ -38,7 +38,8 @@ public class DescribeServiceErrorsResult  implements Serializable  {
     public java.util.List<ServiceError> getServiceErrors() {
         
         if (serviceErrors == null) {
-            serviceErrors = new java.util.ArrayList<ServiceError>();
+              serviceErrors = new com.amazonaws.internal.ListWithAutoConstructFlag<ServiceError>();
+              serviceErrors.setAutoConstruct(true);
         }
         return serviceErrors;
     }
@@ -55,8 +56,7 @@ public class DescribeServiceErrorsResult  implements Serializable  {
             this.serviceErrors = null;
             return;
         }
-
-        java.util.List<ServiceError> serviceErrorsCopy = new java.util.ArrayList<ServiceError>(serviceErrors.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<ServiceError> serviceErrorsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ServiceError>(serviceErrors.size());
         serviceErrorsCopy.addAll(serviceErrors);
         this.serviceErrors = serviceErrorsCopy;
     }
@@ -97,7 +97,7 @@ public class DescribeServiceErrorsResult  implements Serializable  {
         if (serviceErrors == null) {
             this.serviceErrors = null;
         } else {
-            java.util.List<ServiceError> serviceErrorsCopy = new java.util.ArrayList<ServiceError>(serviceErrors.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<ServiceError> serviceErrorsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ServiceError>(serviceErrors.size());
             serviceErrorsCopy.addAll(serviceErrors);
             this.serviceErrors = serviceErrorsCopy;
         }
@@ -116,7 +116,7 @@ public class DescribeServiceErrorsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getServiceErrors() != null) sb.append("ServiceErrors: " + getServiceErrors() );
         sb.append("}");
         return sb.toString();

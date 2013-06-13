@@ -58,7 +58,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest  imp
      * being modified. <p> Only valid when blockDeviceMapping is specified as
      * the attribute being modified.
      */
-    private java.util.List<InstanceBlockDeviceMappingSpecification> blockDeviceMappings;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<InstanceBlockDeviceMappingSpecification> blockDeviceMappings;
 
     /**
      * Boolean value
@@ -95,7 +95,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest  imp
      */
     private String instanceInitiatedShutdownBehavior;
 
-    private java.util.List<String> groups;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> groups;
 
     /**
      * Boolean value
@@ -108,6 +108,8 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest  imp
      */
     public ModifyInstanceAttributeRequest() {}
     
+
+
     /**
      * Constructs a new ModifyInstanceAttributeRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -123,8 +125,8 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest  imp
      * <code>rootDevice</code>, <code>blockDeviceMapping</code>
      */
     public ModifyInstanceAttributeRequest(String instanceId, String attribute) {
-        this.instanceId = instanceId;
-        this.attribute = attribute;
+        setInstanceId(instanceId);
+        setAttribute(attribute);
     }
 
     
@@ -385,7 +387,8 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest  imp
     public java.util.List<InstanceBlockDeviceMappingSpecification> getBlockDeviceMappings() {
         
         if (blockDeviceMappings == null) {
-            blockDeviceMappings = new java.util.ArrayList<InstanceBlockDeviceMappingSpecification>();
+              blockDeviceMappings = new com.amazonaws.internal.ListWithAutoConstructFlag<InstanceBlockDeviceMappingSpecification>();
+              blockDeviceMappings.setAutoConstruct(true);
         }
         return blockDeviceMappings;
     }
@@ -404,8 +407,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest  imp
             this.blockDeviceMappings = null;
             return;
         }
-
-        java.util.List<InstanceBlockDeviceMappingSpecification> blockDeviceMappingsCopy = new java.util.ArrayList<InstanceBlockDeviceMappingSpecification>(blockDeviceMappings.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<InstanceBlockDeviceMappingSpecification> blockDeviceMappingsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<InstanceBlockDeviceMappingSpecification>(blockDeviceMappings.size());
         blockDeviceMappingsCopy.addAll(blockDeviceMappings);
         this.blockDeviceMappings = blockDeviceMappingsCopy;
     }
@@ -450,7 +452,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest  imp
         if (blockDeviceMappings == null) {
             this.blockDeviceMappings = null;
         } else {
-            java.util.List<InstanceBlockDeviceMappingSpecification> blockDeviceMappingsCopy = new java.util.ArrayList<InstanceBlockDeviceMappingSpecification>(blockDeviceMappings.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<InstanceBlockDeviceMappingSpecification> blockDeviceMappingsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<InstanceBlockDeviceMappingSpecification>(blockDeviceMappings.size());
             blockDeviceMappingsCopy.addAll(blockDeviceMappings);
             this.blockDeviceMappings = blockDeviceMappingsCopy;
         }
@@ -722,7 +724,8 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest  imp
     public java.util.List<String> getGroups() {
         
         if (groups == null) {
-            groups = new java.util.ArrayList<String>();
+              groups = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              groups.setAutoConstruct(true);
         }
         return groups;
     }
@@ -737,8 +740,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest  imp
             this.groups = null;
             return;
         }
-
-        java.util.List<String> groupsCopy = new java.util.ArrayList<String>(groups.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> groupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(groups.size());
         groupsCopy.addAll(groups);
         this.groups = groupsCopy;
     }
@@ -775,7 +777,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest  imp
         if (groups == null) {
             this.groups = null;
         } else {
-            java.util.List<String> groupsCopy = new java.util.ArrayList<String>(groups.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> groupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(groups.size());
             groupsCopy.addAll(groups);
             this.groups = groupsCopy;
         }
@@ -837,19 +839,19 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest  imp
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ",");    	
-        if (getAttribute() != null) sb.append("Attribute: " + getAttribute() + ",");    	
-        if (getValue() != null) sb.append("Value: " + getValue() + ",");    	
-        if (getBlockDeviceMappings() != null) sb.append("BlockDeviceMappings: " + getBlockDeviceMappings() + ",");    	
-        if (isSourceDestCheck() != null) sb.append("SourceDestCheck: " + isSourceDestCheck() + ",");    	
-        if (isDisableApiTermination() != null) sb.append("DisableApiTermination: " + isDisableApiTermination() + ",");    	
-        if (getInstanceType() != null) sb.append("InstanceType: " + getInstanceType() + ",");    	
-        if (getKernel() != null) sb.append("Kernel: " + getKernel() + ",");    	
-        if (getRamdisk() != null) sb.append("Ramdisk: " + getRamdisk() + ",");    	
-        if (getUserData() != null) sb.append("UserData: " + getUserData() + ",");    	
-        if (getInstanceInitiatedShutdownBehavior() != null) sb.append("InstanceInitiatedShutdownBehavior: " + getInstanceInitiatedShutdownBehavior() + ",");    	
-        if (getGroups() != null) sb.append("Groups: " + getGroups() + ",");    	
+        sb.append("{");
+        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ",");
+        if (getAttribute() != null) sb.append("Attribute: " + getAttribute() + ",");
+        if (getValue() != null) sb.append("Value: " + getValue() + ",");
+        if (getBlockDeviceMappings() != null) sb.append("BlockDeviceMappings: " + getBlockDeviceMappings() + ",");
+        if (isSourceDestCheck() != null) sb.append("SourceDestCheck: " + isSourceDestCheck() + ",");
+        if (isDisableApiTermination() != null) sb.append("DisableApiTermination: " + isDisableApiTermination() + ",");
+        if (getInstanceType() != null) sb.append("InstanceType: " + getInstanceType() + ",");
+        if (getKernel() != null) sb.append("Kernel: " + getKernel() + ",");
+        if (getRamdisk() != null) sb.append("Ramdisk: " + getRamdisk() + ",");
+        if (getUserData() != null) sb.append("UserData: " + getUserData() + ",");
+        if (getInstanceInitiatedShutdownBehavior() != null) sb.append("InstanceInitiatedShutdownBehavior: " + getInstanceInitiatedShutdownBehavior() + ",");
+        if (getGroups() != null) sb.append("Groups: " + getGroups() + ",");
         if (isEbsOptimized() != null) sb.append("EbsOptimized: " + isEbsOptimized() );
         sb.append("}");
         return sb.toString();

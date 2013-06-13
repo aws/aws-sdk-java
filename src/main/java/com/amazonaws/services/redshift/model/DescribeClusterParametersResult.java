@@ -26,7 +26,7 @@ public class DescribeClusterParametersResult  implements Serializable  {
      * A list of <a>Parameter</a> instances. Each instance lists the
      * parameters of one cluster parameter group.
      */
-    private java.util.List<Parameter> parameters;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Parameter> parameters;
 
     /**
      * A marker that indicates the first parameter group that a subsequent
@@ -46,7 +46,8 @@ public class DescribeClusterParametersResult  implements Serializable  {
     public java.util.List<Parameter> getParameters() {
         
         if (parameters == null) {
-            parameters = new java.util.ArrayList<Parameter>();
+              parameters = new com.amazonaws.internal.ListWithAutoConstructFlag<Parameter>();
+              parameters.setAutoConstruct(true);
         }
         return parameters;
     }
@@ -63,8 +64,7 @@ public class DescribeClusterParametersResult  implements Serializable  {
             this.parameters = null;
             return;
         }
-
-        java.util.List<Parameter> parametersCopy = new java.util.ArrayList<Parameter>(parameters.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Parameter> parametersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Parameter>(parameters.size());
         parametersCopy.addAll(parameters);
         this.parameters = parametersCopy;
     }
@@ -105,7 +105,7 @@ public class DescribeClusterParametersResult  implements Serializable  {
         if (parameters == null) {
             this.parameters = null;
         } else {
-            java.util.List<Parameter> parametersCopy = new java.util.ArrayList<Parameter>(parameters.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Parameter> parametersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Parameter>(parameters.size());
             parametersCopy.addAll(parameters);
             this.parameters = parametersCopy;
         }
@@ -176,8 +176,8 @@ public class DescribeClusterParametersResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getParameters() != null) sb.append("Parameters: " + getParameters() + ",");    	
+        sb.append("{");
+        if (getParameters() != null) sb.append("Parameters: " + getParameters() + ",");
         if (getMarker() != null) sb.append("Marker: " + getMarker() );
         sb.append("}");
         return sb.toString();

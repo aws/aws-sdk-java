@@ -43,7 +43,7 @@ public class ListStacksRequest extends AmazonWebServiceRequest  implements Seria
      * complete list of stack status codes, see the <code>StackStatus</code>
      * parameter of the <a>Stack</a> data type.
      */
-    private java.util.List<String> stackStatusFilters;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> stackStatusFilters;
 
     /**
      * String that identifies the start of the next list of stacks, if there
@@ -108,7 +108,8 @@ public class ListStacksRequest extends AmazonWebServiceRequest  implements Seria
     public java.util.List<String> getStackStatusFilters() {
         
         if (stackStatusFilters == null) {
-            stackStatusFilters = new java.util.ArrayList<String>();
+              stackStatusFilters = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              stackStatusFilters.setAutoConstruct(true);
         }
         return stackStatusFilters;
     }
@@ -129,8 +130,7 @@ public class ListStacksRequest extends AmazonWebServiceRequest  implements Seria
             this.stackStatusFilters = null;
             return;
         }
-
-        java.util.List<String> stackStatusFiltersCopy = new java.util.ArrayList<String>(stackStatusFilters.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> stackStatusFiltersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(stackStatusFilters.size());
         stackStatusFiltersCopy.addAll(stackStatusFilters);
         this.stackStatusFilters = stackStatusFiltersCopy;
     }
@@ -179,7 +179,7 @@ public class ListStacksRequest extends AmazonWebServiceRequest  implements Seria
         if (stackStatusFilters == null) {
             this.stackStatusFilters = null;
         } else {
-            java.util.List<String> stackStatusFiltersCopy = new java.util.ArrayList<String>(stackStatusFilters.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> stackStatusFiltersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(stackStatusFilters.size());
             stackStatusFiltersCopy.addAll(stackStatusFilters);
             this.stackStatusFilters = stackStatusFiltersCopy;
         }
@@ -198,8 +198,8 @@ public class ListStacksRequest extends AmazonWebServiceRequest  implements Seria
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() + ",");    	
+        sb.append("{");
+        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() + ",");
         if (getStackStatusFilters() != null) sb.append("StackStatusFilters: " + getStackStatusFilters() );
         sb.append("}");
         return sb.toString();

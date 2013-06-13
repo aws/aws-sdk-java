@@ -36,7 +36,7 @@ public class DescribeLayersRequest extends AmazonWebServiceRequest  implements S
      * omit this parameter, <code>DescribeLayers</code> returns a description
      * of every layer in the specified stack.
      */
-    private java.util.List<String> layerIds;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> layerIds;
 
     /**
      * The stack ID.
@@ -84,7 +84,8 @@ public class DescribeLayersRequest extends AmazonWebServiceRequest  implements S
     public java.util.List<String> getLayerIds() {
         
         if (layerIds == null) {
-            layerIds = new java.util.ArrayList<String>();
+              layerIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              layerIds.setAutoConstruct(true);
         }
         return layerIds;
     }
@@ -103,8 +104,7 @@ public class DescribeLayersRequest extends AmazonWebServiceRequest  implements S
             this.layerIds = null;
             return;
         }
-
-        java.util.List<String> layerIdsCopy = new java.util.ArrayList<String>(layerIds.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> layerIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(layerIds.size());
         layerIdsCopy.addAll(layerIds);
         this.layerIds = layerIdsCopy;
     }
@@ -149,7 +149,7 @@ public class DescribeLayersRequest extends AmazonWebServiceRequest  implements S
         if (layerIds == null) {
             this.layerIds = null;
         } else {
-            java.util.List<String> layerIdsCopy = new java.util.ArrayList<String>(layerIds.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> layerIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(layerIds.size());
             layerIdsCopy.addAll(layerIds);
             this.layerIds = layerIdsCopy;
         }
@@ -168,8 +168,8 @@ public class DescribeLayersRequest extends AmazonWebServiceRequest  implements S
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getStackId() != null) sb.append("StackId: " + getStackId() + ",");    	
+        sb.append("{");
+        if (getStackId() != null) sb.append("StackId: " + getStackId() + ",");
         if (getLayerIds() != null) sb.append("LayerIds: " + getLayerIds() );
         sb.append("}");
         return sb.toString();

@@ -38,6 +38,11 @@ public class Option  implements Serializable  {
     private Boolean persistent;
 
     /**
+     * Indicate if this option is permanent.
+     */
+    private Boolean permanent;
+
+    /**
      * If required, the port configured for this option to use.
      */
     private Integer port;
@@ -45,19 +50,19 @@ public class Option  implements Serializable  {
     /**
      * The option settings for this option.
      */
-    private java.util.List<OptionSetting> optionSettings;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<OptionSetting> optionSettings;
 
     /**
      * If the option requires access to a port, then this DB Security Group
      * allows access to the port.
      */
-    private java.util.List<DBSecurityGroupMembership> dBSecurityGroupMemberships;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<DBSecurityGroupMembership> dBSecurityGroupMemberships;
 
     /**
      * If the option requires access to a port, then this VPC Security Group
      * allows access to the port.
      */
-    private java.util.List<VpcSecurityGroupMembership> vpcSecurityGroupMemberships;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<VpcSecurityGroupMembership> vpcSecurityGroupMemberships;
 
     /**
      * The name of the option.
@@ -171,6 +176,49 @@ public class Option  implements Serializable  {
     }
     
     /**
+     * Indicate if this option is permanent.
+     *
+     * @return Indicate if this option is permanent.
+     */
+    public Boolean isPermanent() {
+        return permanent;
+    }
+    
+    /**
+     * Indicate if this option is permanent.
+     *
+     * @param permanent Indicate if this option is permanent.
+     */
+    public void setPermanent(Boolean permanent) {
+        this.permanent = permanent;
+    }
+    
+    /**
+     * Indicate if this option is permanent.
+     * <p>
+     * Returns a reference to this object so that method calls can be chained together.
+     *
+     * @param permanent Indicate if this option is permanent.
+     *
+     * @return A reference to this updated object so that method calls can be chained 
+     *         together. 
+     */
+    public Option withPermanent(Boolean permanent) {
+        this.permanent = permanent;
+        return this;
+    }
+    
+    
+    /**
+     * Indicate if this option is permanent.
+     *
+     * @return Indicate if this option is permanent.
+     */
+    public Boolean getPermanent() {
+        return permanent;
+    }
+    
+    /**
      * If required, the port configured for this option to use.
      *
      * @return If required, the port configured for this option to use.
@@ -212,7 +260,8 @@ public class Option  implements Serializable  {
     public java.util.List<OptionSetting> getOptionSettings() {
         
         if (optionSettings == null) {
-            optionSettings = new java.util.ArrayList<OptionSetting>();
+              optionSettings = new com.amazonaws.internal.ListWithAutoConstructFlag<OptionSetting>();
+              optionSettings.setAutoConstruct(true);
         }
         return optionSettings;
     }
@@ -227,8 +276,7 @@ public class Option  implements Serializable  {
             this.optionSettings = null;
             return;
         }
-
-        java.util.List<OptionSetting> optionSettingsCopy = new java.util.ArrayList<OptionSetting>(optionSettings.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<OptionSetting> optionSettingsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<OptionSetting>(optionSettings.size());
         optionSettingsCopy.addAll(optionSettings);
         this.optionSettings = optionSettingsCopy;
     }
@@ -265,7 +313,7 @@ public class Option  implements Serializable  {
         if (optionSettings == null) {
             this.optionSettings = null;
         } else {
-            java.util.List<OptionSetting> optionSettingsCopy = new java.util.ArrayList<OptionSetting>(optionSettings.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<OptionSetting> optionSettingsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<OptionSetting>(optionSettings.size());
             optionSettingsCopy.addAll(optionSettings);
             this.optionSettings = optionSettingsCopy;
         }
@@ -283,7 +331,8 @@ public class Option  implements Serializable  {
     public java.util.List<DBSecurityGroupMembership> getDBSecurityGroupMemberships() {
         
         if (dBSecurityGroupMemberships == null) {
-            dBSecurityGroupMemberships = new java.util.ArrayList<DBSecurityGroupMembership>();
+              dBSecurityGroupMemberships = new com.amazonaws.internal.ListWithAutoConstructFlag<DBSecurityGroupMembership>();
+              dBSecurityGroupMemberships.setAutoConstruct(true);
         }
         return dBSecurityGroupMemberships;
     }
@@ -300,8 +349,7 @@ public class Option  implements Serializable  {
             this.dBSecurityGroupMemberships = null;
             return;
         }
-
-        java.util.List<DBSecurityGroupMembership> dBSecurityGroupMembershipsCopy = new java.util.ArrayList<DBSecurityGroupMembership>(dBSecurityGroupMemberships.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<DBSecurityGroupMembership> dBSecurityGroupMembershipsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<DBSecurityGroupMembership>(dBSecurityGroupMemberships.size());
         dBSecurityGroupMembershipsCopy.addAll(dBSecurityGroupMemberships);
         this.dBSecurityGroupMemberships = dBSecurityGroupMembershipsCopy;
     }
@@ -342,7 +390,7 @@ public class Option  implements Serializable  {
         if (dBSecurityGroupMemberships == null) {
             this.dBSecurityGroupMemberships = null;
         } else {
-            java.util.List<DBSecurityGroupMembership> dBSecurityGroupMembershipsCopy = new java.util.ArrayList<DBSecurityGroupMembership>(dBSecurityGroupMemberships.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<DBSecurityGroupMembership> dBSecurityGroupMembershipsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<DBSecurityGroupMembership>(dBSecurityGroupMemberships.size());
             dBSecurityGroupMembershipsCopy.addAll(dBSecurityGroupMemberships);
             this.dBSecurityGroupMemberships = dBSecurityGroupMembershipsCopy;
         }
@@ -360,7 +408,8 @@ public class Option  implements Serializable  {
     public java.util.List<VpcSecurityGroupMembership> getVpcSecurityGroupMemberships() {
         
         if (vpcSecurityGroupMemberships == null) {
-            vpcSecurityGroupMemberships = new java.util.ArrayList<VpcSecurityGroupMembership>();
+              vpcSecurityGroupMemberships = new com.amazonaws.internal.ListWithAutoConstructFlag<VpcSecurityGroupMembership>();
+              vpcSecurityGroupMemberships.setAutoConstruct(true);
         }
         return vpcSecurityGroupMemberships;
     }
@@ -377,8 +426,7 @@ public class Option  implements Serializable  {
             this.vpcSecurityGroupMemberships = null;
             return;
         }
-
-        java.util.List<VpcSecurityGroupMembership> vpcSecurityGroupMembershipsCopy = new java.util.ArrayList<VpcSecurityGroupMembership>(vpcSecurityGroupMemberships.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<VpcSecurityGroupMembership> vpcSecurityGroupMembershipsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<VpcSecurityGroupMembership>(vpcSecurityGroupMemberships.size());
         vpcSecurityGroupMembershipsCopy.addAll(vpcSecurityGroupMemberships);
         this.vpcSecurityGroupMemberships = vpcSecurityGroupMembershipsCopy;
     }
@@ -419,7 +467,7 @@ public class Option  implements Serializable  {
         if (vpcSecurityGroupMemberships == null) {
             this.vpcSecurityGroupMemberships = null;
         } else {
-            java.util.List<VpcSecurityGroupMembership> vpcSecurityGroupMembershipsCopy = new java.util.ArrayList<VpcSecurityGroupMembership>(vpcSecurityGroupMemberships.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<VpcSecurityGroupMembership> vpcSecurityGroupMembershipsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<VpcSecurityGroupMembership>(vpcSecurityGroupMemberships.size());
             vpcSecurityGroupMembershipsCopy.addAll(vpcSecurityGroupMemberships);
             this.vpcSecurityGroupMemberships = vpcSecurityGroupMembershipsCopy;
         }
@@ -438,13 +486,14 @@ public class Option  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getOptionName() != null) sb.append("OptionName: " + getOptionName() + ",");    	
-        if (getOptionDescription() != null) sb.append("OptionDescription: " + getOptionDescription() + ",");    	
-        if (isPersistent() != null) sb.append("Persistent: " + isPersistent() + ",");    	
-        if (getPort() != null) sb.append("Port: " + getPort() + ",");    	
-        if (getOptionSettings() != null) sb.append("OptionSettings: " + getOptionSettings() + ",");    	
-        if (getDBSecurityGroupMemberships() != null) sb.append("DBSecurityGroupMemberships: " + getDBSecurityGroupMemberships() + ",");    	
+        sb.append("{");
+        if (getOptionName() != null) sb.append("OptionName: " + getOptionName() + ",");
+        if (getOptionDescription() != null) sb.append("OptionDescription: " + getOptionDescription() + ",");
+        if (isPersistent() != null) sb.append("Persistent: " + isPersistent() + ",");
+        if (isPermanent() != null) sb.append("Permanent: " + isPermanent() + ",");
+        if (getPort() != null) sb.append("Port: " + getPort() + ",");
+        if (getOptionSettings() != null) sb.append("OptionSettings: " + getOptionSettings() + ",");
+        if (getDBSecurityGroupMemberships() != null) sb.append("DBSecurityGroupMemberships: " + getDBSecurityGroupMemberships() + ",");
         if (getVpcSecurityGroupMemberships() != null) sb.append("VpcSecurityGroupMemberships: " + getVpcSecurityGroupMemberships() );
         sb.append("}");
         return sb.toString();
@@ -458,6 +507,7 @@ public class Option  implements Serializable  {
         hashCode = prime * hashCode + ((getOptionName() == null) ? 0 : getOptionName().hashCode()); 
         hashCode = prime * hashCode + ((getOptionDescription() == null) ? 0 : getOptionDescription().hashCode()); 
         hashCode = prime * hashCode + ((isPersistent() == null) ? 0 : isPersistent().hashCode()); 
+        hashCode = prime * hashCode + ((isPermanent() == null) ? 0 : isPermanent().hashCode()); 
         hashCode = prime * hashCode + ((getPort() == null) ? 0 : getPort().hashCode()); 
         hashCode = prime * hashCode + ((getOptionSettings() == null) ? 0 : getOptionSettings().hashCode()); 
         hashCode = prime * hashCode + ((getDBSecurityGroupMemberships() == null) ? 0 : getDBSecurityGroupMemberships().hashCode()); 
@@ -479,6 +529,8 @@ public class Option  implements Serializable  {
         if (other.getOptionDescription() != null && other.getOptionDescription().equals(this.getOptionDescription()) == false) return false; 
         if (other.isPersistent() == null ^ this.isPersistent() == null) return false;
         if (other.isPersistent() != null && other.isPersistent().equals(this.isPersistent()) == false) return false; 
+        if (other.isPermanent() == null ^ this.isPermanent() == null) return false;
+        if (other.isPermanent() != null && other.isPermanent().equals(this.isPermanent()) == false) return false; 
         if (other.getPort() == null ^ this.getPort() == null) return false;
         if (other.getPort() != null && other.getPort().equals(this.getPort()) == false) return false; 
         if (other.getOptionSettings() == null ^ this.getOptionSettings() == null) return false;

@@ -58,12 +58,12 @@ public class AddPermissionRequest extends AmazonWebServiceRequest  implements Se
      * who will be given permission. The principal must have an AWS account,
      * but does not need to be signed up for Amazon SQS.
      */
-    private java.util.List<String> aWSAccountIds;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> aWSAccountIds;
 
     /**
      * The action the client wants to allow for the specified principal.
      */
-    private java.util.List<String> actions;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> actions;
 
     /**
      * Default constructor for a new AddPermissionRequest object.  Callers should use the
@@ -71,6 +71,8 @@ public class AddPermissionRequest extends AmazonWebServiceRequest  implements Se
      */
     public AddPermissionRequest() {}
     
+
+
     /**
      * Constructs a new AddPermissionRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -89,10 +91,10 @@ public class AddPermissionRequest extends AmazonWebServiceRequest  implements Se
      * principal.
      */
     public AddPermissionRequest(String queueUrl, String label, java.util.List<String> aWSAccountIds, java.util.List<String> actions) {
-        this.queueUrl = queueUrl;
-        this.label = label;
-        this.aWSAccountIds = aWSAccountIds;
-        this.actions = actions;
+        setQueueUrl(queueUrl);
+        setLabel(label);
+        setAWSAccountIds(aWSAccountIds);
+        setActions(actions);
     }
 
     
@@ -191,7 +193,8 @@ public class AddPermissionRequest extends AmazonWebServiceRequest  implements Se
     public java.util.List<String> getAWSAccountIds() {
         
         if (aWSAccountIds == null) {
-            aWSAccountIds = new java.util.ArrayList<String>();
+              aWSAccountIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              aWSAccountIds.setAutoConstruct(true);
         }
         return aWSAccountIds;
     }
@@ -212,8 +215,7 @@ public class AddPermissionRequest extends AmazonWebServiceRequest  implements Se
             this.aWSAccountIds = null;
             return;
         }
-
-        java.util.List<String> aWSAccountIdsCopy = new java.util.ArrayList<String>(aWSAccountIds.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> aWSAccountIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(aWSAccountIds.size());
         aWSAccountIdsCopy.addAll(aWSAccountIds);
         this.aWSAccountIds = aWSAccountIdsCopy;
     }
@@ -262,7 +264,7 @@ public class AddPermissionRequest extends AmazonWebServiceRequest  implements Se
         if (aWSAccountIds == null) {
             this.aWSAccountIds = null;
         } else {
-            java.util.List<String> aWSAccountIdsCopy = new java.util.ArrayList<String>(aWSAccountIds.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> aWSAccountIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(aWSAccountIds.size());
             aWSAccountIdsCopy.addAll(aWSAccountIds);
             this.aWSAccountIds = aWSAccountIdsCopy;
         }
@@ -278,7 +280,8 @@ public class AddPermissionRequest extends AmazonWebServiceRequest  implements Se
     public java.util.List<String> getActions() {
         
         if (actions == null) {
-            actions = new java.util.ArrayList<String>();
+              actions = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              actions.setAutoConstruct(true);
         }
         return actions;
     }
@@ -293,8 +296,7 @@ public class AddPermissionRequest extends AmazonWebServiceRequest  implements Se
             this.actions = null;
             return;
         }
-
-        java.util.List<String> actionsCopy = new java.util.ArrayList<String>(actions.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> actionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(actions.size());
         actionsCopy.addAll(actions);
         this.actions = actionsCopy;
     }
@@ -331,7 +333,7 @@ public class AddPermissionRequest extends AmazonWebServiceRequest  implements Se
         if (actions == null) {
             this.actions = null;
         } else {
-            java.util.List<String> actionsCopy = new java.util.ArrayList<String>(actions.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> actionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(actions.size());
             actionsCopy.addAll(actions);
             this.actions = actionsCopy;
         }
@@ -350,10 +352,10 @@ public class AddPermissionRequest extends AmazonWebServiceRequest  implements Se
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getQueueUrl() != null) sb.append("QueueUrl: " + getQueueUrl() + ",");    	
-        if (getLabel() != null) sb.append("Label: " + getLabel() + ",");    	
-        if (getAWSAccountIds() != null) sb.append("AWSAccountIds: " + getAWSAccountIds() + ",");    	
+        sb.append("{");
+        if (getQueueUrl() != null) sb.append("QueueUrl: " + getQueueUrl() + ",");
+        if (getLabel() != null) sb.append("Label: " + getLabel() + ",");
+        if (getAWSAccountIds() != null) sb.append("AWSAccountIds: " + getAWSAccountIds() + ",");
         if (getActions() != null) sb.append("Actions: " + getActions() );
         sb.append("}");
         return sb.toString();

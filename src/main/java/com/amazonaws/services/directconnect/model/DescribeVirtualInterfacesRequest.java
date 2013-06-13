@@ -126,8 +126,8 @@ public class DescribeVirtualInterfacesRequest extends AmazonWebServiceRequest  i
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getConnectionId() != null) sb.append("ConnectionId: " + getConnectionId() + ",");    	
+        sb.append("{");
+        if (getConnectionId() != null) sb.append("ConnectionId: " + getConnectionId() + ",");
         if (getVirtualInterfaceId() != null) sb.append("VirtualInterfaceId: " + getVirtualInterfaceId() );
         sb.append("}");
         return sb.toString();

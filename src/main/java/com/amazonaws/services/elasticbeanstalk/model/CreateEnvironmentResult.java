@@ -1056,20 +1056,20 @@ public class CreateEnvironmentResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getEnvironmentName() != null) sb.append("EnvironmentName: " + getEnvironmentName() + ",");    	
-        if (getEnvironmentId() != null) sb.append("EnvironmentId: " + getEnvironmentId() + ",");    	
-        if (getApplicationName() != null) sb.append("ApplicationName: " + getApplicationName() + ",");    	
-        if (getVersionLabel() != null) sb.append("VersionLabel: " + getVersionLabel() + ",");    	
-        if (getSolutionStackName() != null) sb.append("SolutionStackName: " + getSolutionStackName() + ",");    	
-        if (getTemplateName() != null) sb.append("TemplateName: " + getTemplateName() + ",");    	
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");    	
-        if (getEndpointURL() != null) sb.append("EndpointURL: " + getEndpointURL() + ",");    	
-        if (getCNAME() != null) sb.append("CNAME: " + getCNAME() + ",");    	
-        if (getDateCreated() != null) sb.append("DateCreated: " + getDateCreated() + ",");    	
-        if (getDateUpdated() != null) sb.append("DateUpdated: " + getDateUpdated() + ",");    	
-        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");    	
-        if (getHealth() != null) sb.append("Health: " + getHealth() + ",");    	
+        sb.append("{");
+        if (getEnvironmentName() != null) sb.append("EnvironmentName: " + getEnvironmentName() + ",");
+        if (getEnvironmentId() != null) sb.append("EnvironmentId: " + getEnvironmentId() + ",");
+        if (getApplicationName() != null) sb.append("ApplicationName: " + getApplicationName() + ",");
+        if (getVersionLabel() != null) sb.append("VersionLabel: " + getVersionLabel() + ",");
+        if (getSolutionStackName() != null) sb.append("SolutionStackName: " + getSolutionStackName() + ",");
+        if (getTemplateName() != null) sb.append("TemplateName: " + getTemplateName() + ",");
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");
+        if (getEndpointURL() != null) sb.append("EndpointURL: " + getEndpointURL() + ",");
+        if (getCNAME() != null) sb.append("CNAME: " + getCNAME() + ",");
+        if (getDateCreated() != null) sb.append("DateCreated: " + getDateCreated() + ",");
+        if (getDateUpdated() != null) sb.append("DateUpdated: " + getDateUpdated() + ",");
+        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");
+        if (getHealth() != null) sb.append("Health: " + getHealth() + ",");
         if (getResources() != null) sb.append("Resources: " + getResources() );
         sb.append("}");
         return sb.toString();

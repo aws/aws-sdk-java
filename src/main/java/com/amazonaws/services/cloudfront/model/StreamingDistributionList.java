@@ -57,7 +57,7 @@ public class StreamingDistributionList  implements Serializable  {
      * A complex type that contains one StreamingDistributionSummary element
      * for each distribution that was created by the current AWS account.
      */
-    private java.util.List<StreamingDistributionSummary> items;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<StreamingDistributionSummary> items;
 
     /**
      * Default constructor for a new StreamingDistributionList object.  Callers should use the
@@ -296,7 +296,8 @@ public class StreamingDistributionList  implements Serializable  {
     public java.util.List<StreamingDistributionSummary> getItems() {
         
         if (items == null) {
-            items = new java.util.ArrayList<StreamingDistributionSummary>();
+              items = new com.amazonaws.internal.ListWithAutoConstructFlag<StreamingDistributionSummary>();
+              items.setAutoConstruct(true);
         }
         return items;
     }
@@ -313,8 +314,7 @@ public class StreamingDistributionList  implements Serializable  {
             this.items = null;
             return;
         }
-
-        java.util.List<StreamingDistributionSummary> itemsCopy = new java.util.ArrayList<StreamingDistributionSummary>(items.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<StreamingDistributionSummary> itemsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<StreamingDistributionSummary>(items.size());
         itemsCopy.addAll(items);
         this.items = itemsCopy;
     }
@@ -355,7 +355,7 @@ public class StreamingDistributionList  implements Serializable  {
         if (items == null) {
             this.items = null;
         } else {
-            java.util.List<StreamingDistributionSummary> itemsCopy = new java.util.ArrayList<StreamingDistributionSummary>(items.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<StreamingDistributionSummary> itemsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<StreamingDistributionSummary>(items.size());
             itemsCopy.addAll(items);
             this.items = itemsCopy;
         }
@@ -374,12 +374,12 @@ public class StreamingDistributionList  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");    	
-        if (getNextMarker() != null) sb.append("NextMarker: " + getNextMarker() + ",");    	
-        if (getMaxItems() != null) sb.append("MaxItems: " + getMaxItems() + ",");    	
-        if (isTruncated() != null) sb.append("IsTruncated: " + isTruncated() + ",");    	
-        if (getQuantity() != null) sb.append("Quantity: " + getQuantity() + ",");    	
+        sb.append("{");
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");
+        if (getNextMarker() != null) sb.append("NextMarker: " + getNextMarker() + ",");
+        if (getMaxItems() != null) sb.append("MaxItems: " + getMaxItems() + ",");
+        if (isTruncated() != null) sb.append("IsTruncated: " + isTruncated() + ",");
+        if (getQuantity() != null) sb.append("Quantity: " + getQuantity() + ",");
         if (getItems() != null) sb.append("Items: " + getItems() );
         sb.append("}");
         return sb.toString();

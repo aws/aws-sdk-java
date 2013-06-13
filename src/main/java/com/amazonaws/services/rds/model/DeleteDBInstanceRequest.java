@@ -68,6 +68,8 @@ public class DeleteDBInstanceRequest extends AmazonWebServiceRequest  implements
      */
     public DeleteDBInstanceRequest() {}
     
+
+
     /**
      * Constructs a new DeleteDBInstanceRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -81,7 +83,7 @@ public class DeleteDBInstanceRequest extends AmazonWebServiceRequest  implements
      * </ul>
      */
     public DeleteDBInstanceRequest(String dBInstanceIdentifier) {
-        this.dBInstanceIdentifier = dBInstanceIdentifier;
+        setDBInstanceIdentifier(dBInstanceIdentifier);
     }
 
     
@@ -308,9 +310,9 @@ public class DeleteDBInstanceRequest extends AmazonWebServiceRequest  implements
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getDBInstanceIdentifier() != null) sb.append("DBInstanceIdentifier: " + getDBInstanceIdentifier() + ",");    	
-        if (isSkipFinalSnapshot() != null) sb.append("SkipFinalSnapshot: " + isSkipFinalSnapshot() + ",");    	
+        sb.append("{");
+        if (getDBInstanceIdentifier() != null) sb.append("DBInstanceIdentifier: " + getDBInstanceIdentifier() + ",");
+        if (isSkipFinalSnapshot() != null) sb.append("SkipFinalSnapshot: " + isSkipFinalSnapshot() + ",");
         if (getFinalDBSnapshotIdentifier() != null) sb.append("FinalDBSnapshotIdentifier: " + getFinalDBSnapshotIdentifier() );
         sb.append("}");
         return sb.toString();

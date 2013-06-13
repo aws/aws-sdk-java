@@ -70,7 +70,7 @@ public class GetQueueUrlResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getQueueUrl() != null) sb.append("QueueUrl: " + getQueueUrl() );
         sb.append("}");
         return sb.toString();

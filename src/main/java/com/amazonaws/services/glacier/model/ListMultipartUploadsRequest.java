@@ -88,6 +88,8 @@ public class ListMultipartUploadsRequest extends AmazonWebServiceRequest  implem
      */
     public ListMultipartUploadsRequest() {}
     
+
+
     /**
      * Constructs a new ListMultipartUploadsRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -96,11 +98,13 @@ public class ListMultipartUploadsRequest extends AmazonWebServiceRequest  implem
      * @param vaultName The name of the vault.
      */
     public ListMultipartUploadsRequest(String vaultName) {
-        this.vaultName = vaultName;
+        setVaultName(vaultName);
     }
 
     
     
+
+
     /**
      * Constructs a new ListMultipartUploadsRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -114,8 +118,8 @@ public class ListMultipartUploadsRequest extends AmazonWebServiceRequest  implem
      * @param vaultName The name of the vault.
      */
     public ListMultipartUploadsRequest(String accountId, String vaultName) {
-        this.accountId = accountId;
-        this.vaultName = vaultName;
+        setAccountId(accountId);
+        setVaultName(vaultName);
     }
 
     
@@ -327,10 +331,10 @@ public class ListMultipartUploadsRequest extends AmazonWebServiceRequest  implem
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getAccountId() != null) sb.append("AccountId: " + getAccountId() + ",");    	
-        if (getVaultName() != null) sb.append("VaultName: " + getVaultName() + ",");    	
-        if (getUploadIdMarker() != null) sb.append("UploadIdMarker: " + getUploadIdMarker() + ",");    	
+        sb.append("{");
+        if (getAccountId() != null) sb.append("AccountId: " + getAccountId() + ",");
+        if (getVaultName() != null) sb.append("VaultName: " + getVaultName() + ",");
+        if (getUploadIdMarker() != null) sb.append("UploadIdMarker: " + getUploadIdMarker() + ",");
         if (getLimit() != null) sb.append("Limit: " + getLimit() );
         sb.append("}");
         return sb.toString();

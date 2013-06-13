@@ -577,12 +577,12 @@ public class JobInput  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getKey() != null) sb.append("Key: " + getKey() + ",");    	
-        if (getFrameRate() != null) sb.append("FrameRate: " + getFrameRate() + ",");    	
-        if (getResolution() != null) sb.append("Resolution: " + getResolution() + ",");    	
-        if (getAspectRatio() != null) sb.append("AspectRatio: " + getAspectRatio() + ",");    	
-        if (getInterlaced() != null) sb.append("Interlaced: " + getInterlaced() + ",");    	
+        sb.append("{");
+        if (getKey() != null) sb.append("Key: " + getKey() + ",");
+        if (getFrameRate() != null) sb.append("FrameRate: " + getFrameRate() + ",");
+        if (getResolution() != null) sb.append("Resolution: " + getResolution() + ",");
+        if (getAspectRatio() != null) sb.append("AspectRatio: " + getAspectRatio() + ",");
+        if (getInterlaced() != null) sb.append("Interlaced: " + getInterlaced() + ",");
         if (getContainer() != null) sb.append("Container: " + getContainer() );
         sb.append("}");
         return sb.toString();

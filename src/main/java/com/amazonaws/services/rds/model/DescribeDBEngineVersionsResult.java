@@ -32,7 +32,7 @@ public class DescribeDBEngineVersionsResult  implements Serializable  {
     /**
      * A list of <code>DBEngineVersion</code> elements.
      */
-    private java.util.List<DBEngineVersion> dBEngineVersions;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<DBEngineVersion> dBEngineVersions;
 
     /**
      * An optional pagination token provided by a previous request. If this
@@ -88,7 +88,8 @@ public class DescribeDBEngineVersionsResult  implements Serializable  {
     public java.util.List<DBEngineVersion> getDBEngineVersions() {
         
         if (dBEngineVersions == null) {
-            dBEngineVersions = new java.util.ArrayList<DBEngineVersion>();
+              dBEngineVersions = new com.amazonaws.internal.ListWithAutoConstructFlag<DBEngineVersion>();
+              dBEngineVersions.setAutoConstruct(true);
         }
         return dBEngineVersions;
     }
@@ -103,8 +104,7 @@ public class DescribeDBEngineVersionsResult  implements Serializable  {
             this.dBEngineVersions = null;
             return;
         }
-
-        java.util.List<DBEngineVersion> dBEngineVersionsCopy = new java.util.ArrayList<DBEngineVersion>(dBEngineVersions.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<DBEngineVersion> dBEngineVersionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<DBEngineVersion>(dBEngineVersions.size());
         dBEngineVersionsCopy.addAll(dBEngineVersions);
         this.dBEngineVersions = dBEngineVersionsCopy;
     }
@@ -141,7 +141,7 @@ public class DescribeDBEngineVersionsResult  implements Serializable  {
         if (dBEngineVersions == null) {
             this.dBEngineVersions = null;
         } else {
-            java.util.List<DBEngineVersion> dBEngineVersionsCopy = new java.util.ArrayList<DBEngineVersion>(dBEngineVersions.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<DBEngineVersion> dBEngineVersionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<DBEngineVersion>(dBEngineVersions.size());
             dBEngineVersionsCopy.addAll(dBEngineVersions);
             this.dBEngineVersions = dBEngineVersionsCopy;
         }
@@ -160,8 +160,8 @@ public class DescribeDBEngineVersionsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");    	
+        sb.append("{");
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");
         if (getDBEngineVersions() != null) sb.append("DBEngineVersions: " + getDBEngineVersions() );
         sb.append("}");
         return sb.toString();

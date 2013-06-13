@@ -51,6 +51,8 @@ public class CreateQueueRequest extends AmazonWebServiceRequest  implements Seri
      */
     public CreateQueueRequest() {}
     
+
+
     /**
      * Constructs a new CreateQueueRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -59,7 +61,7 @@ public class CreateQueueRequest extends AmazonWebServiceRequest  implements Seri
      * @param queueName The name for the queue to be created.
      */
     public CreateQueueRequest(String queueName) {
-        this.queueName = queueName;
+        setQueueName(queueName);
     }
 
     
@@ -147,8 +149,8 @@ public class CreateQueueRequest extends AmazonWebServiceRequest  implements Seri
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getQueueName() != null) sb.append("QueueName: " + getQueueName() + ",");    	
+        sb.append("{");
+        if (getQueueName() != null) sb.append("QueueName: " + getQueueName() + ",");
         if (getAttributes() != null) sb.append("Attributes: " + getAttributes() );
         sb.append("}");
         return sb.toString();

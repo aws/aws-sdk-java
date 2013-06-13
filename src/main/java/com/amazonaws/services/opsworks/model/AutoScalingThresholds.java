@@ -383,12 +383,12 @@ public class AutoScalingThresholds  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getInstanceCount() != null) sb.append("InstanceCount: " + getInstanceCount() + ",");    	
-        if (getThresholdsWaitTime() != null) sb.append("ThresholdsWaitTime: " + getThresholdsWaitTime() + ",");    	
-        if (getIgnoreMetricsTime() != null) sb.append("IgnoreMetricsTime: " + getIgnoreMetricsTime() + ",");    	
-        if (getCpuThreshold() != null) sb.append("CpuThreshold: " + getCpuThreshold() + ",");    	
-        if (getMemoryThreshold() != null) sb.append("MemoryThreshold: " + getMemoryThreshold() + ",");    	
+        sb.append("{");
+        if (getInstanceCount() != null) sb.append("InstanceCount: " + getInstanceCount() + ",");
+        if (getThresholdsWaitTime() != null) sb.append("ThresholdsWaitTime: " + getThresholdsWaitTime() + ",");
+        if (getIgnoreMetricsTime() != null) sb.append("IgnoreMetricsTime: " + getIgnoreMetricsTime() + ",");
+        if (getCpuThreshold() != null) sb.append("CpuThreshold: " + getCpuThreshold() + ",");
+        if (getMemoryThreshold() != null) sb.append("MemoryThreshold: " + getMemoryThreshold() + ",");
         if (getLoadThreshold() != null) sb.append("LoadThreshold: " + getLoadThreshold() );
         sb.append("}");
         return sb.toString();

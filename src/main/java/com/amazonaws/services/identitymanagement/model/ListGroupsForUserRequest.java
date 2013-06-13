@@ -67,6 +67,8 @@ public class ListGroupsForUserRequest extends AmazonWebServiceRequest  implement
      */
     public ListGroupsForUserRequest() {}
     
+
+
     /**
      * Constructs a new ListGroupsForUserRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -75,7 +77,7 @@ public class ListGroupsForUserRequest extends AmazonWebServiceRequest  implement
      * @param userName The name of the user to list groups for.
      */
     public ListGroupsForUserRequest(String userName) {
-        this.userName = userName;
+        setUserName(userName);
     }
 
     
@@ -262,9 +264,9 @@ public class ListGroupsForUserRequest extends AmazonWebServiceRequest  implement
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getUserName() != null) sb.append("UserName: " + getUserName() + ",");    	
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");    	
+        sb.append("{");
+        if (getUserName() != null) sb.append("UserName: " + getUserName() + ",");
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");
         if (getMaxItems() != null) sb.append("MaxItems: " + getMaxItems() );
         sb.append("}");
         return sb.toString();

@@ -94,7 +94,7 @@ public class DeleteRequest  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getKey() != null) sb.append("Key: " + getKey() );
         sb.append("}");
         return sb.toString();

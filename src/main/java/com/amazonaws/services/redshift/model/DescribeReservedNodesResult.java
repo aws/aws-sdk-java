@@ -30,7 +30,7 @@ public class DescribeReservedNodesResult  implements Serializable  {
     /**
      * The list of reserved nodes.
      */
-    private java.util.List<ReservedNode> reservedNodes;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<ReservedNode> reservedNodes;
 
     /**
      * A marker that can be used to retrieve paginated results.
@@ -74,7 +74,8 @@ public class DescribeReservedNodesResult  implements Serializable  {
     public java.util.List<ReservedNode> getReservedNodes() {
         
         if (reservedNodes == null) {
-            reservedNodes = new java.util.ArrayList<ReservedNode>();
+              reservedNodes = new com.amazonaws.internal.ListWithAutoConstructFlag<ReservedNode>();
+              reservedNodes.setAutoConstruct(true);
         }
         return reservedNodes;
     }
@@ -89,8 +90,7 @@ public class DescribeReservedNodesResult  implements Serializable  {
             this.reservedNodes = null;
             return;
         }
-
-        java.util.List<ReservedNode> reservedNodesCopy = new java.util.ArrayList<ReservedNode>(reservedNodes.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<ReservedNode> reservedNodesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ReservedNode>(reservedNodes.size());
         reservedNodesCopy.addAll(reservedNodes);
         this.reservedNodes = reservedNodesCopy;
     }
@@ -127,7 +127,7 @@ public class DescribeReservedNodesResult  implements Serializable  {
         if (reservedNodes == null) {
             this.reservedNodes = null;
         } else {
-            java.util.List<ReservedNode> reservedNodesCopy = new java.util.ArrayList<ReservedNode>(reservedNodes.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<ReservedNode> reservedNodesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ReservedNode>(reservedNodes.size());
             reservedNodesCopy.addAll(reservedNodes);
             this.reservedNodes = reservedNodesCopy;
         }
@@ -146,8 +146,8 @@ public class DescribeReservedNodesResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");    	
+        sb.append("{");
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");
         if (getReservedNodes() != null) sb.append("ReservedNodes: " + getReservedNodes() );
         sb.append("}");
         return sb.toString();

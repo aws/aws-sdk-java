@@ -54,7 +54,7 @@ public class ListVolumesResult  implements Serializable  {
      * iSCSI volume. If no volumes are defined for the gateway, then
      * <code>VolumeInfos</code> is an empty array "[]".
      */
-    private java.util.List<VolumeInfo> volumeInfos;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<VolumeInfo> volumeInfos;
 
     /**
      * The Amazon Resource Name (ARN) of the gateway. Use the
@@ -178,7 +178,8 @@ public class ListVolumesResult  implements Serializable  {
     public java.util.List<VolumeInfo> getVolumeInfos() {
         
         if (volumeInfos == null) {
-            volumeInfos = new java.util.ArrayList<VolumeInfo>();
+              volumeInfos = new com.amazonaws.internal.ListWithAutoConstructFlag<VolumeInfo>();
+              volumeInfos.setAutoConstruct(true);
         }
         return volumeInfos;
     }
@@ -197,8 +198,7 @@ public class ListVolumesResult  implements Serializable  {
             this.volumeInfos = null;
             return;
         }
-
-        java.util.List<VolumeInfo> volumeInfosCopy = new java.util.ArrayList<VolumeInfo>(volumeInfos.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<VolumeInfo> volumeInfosCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<VolumeInfo>(volumeInfos.size());
         volumeInfosCopy.addAll(volumeInfos);
         this.volumeInfos = volumeInfosCopy;
     }
@@ -243,7 +243,7 @@ public class ListVolumesResult  implements Serializable  {
         if (volumeInfos == null) {
             this.volumeInfos = null;
         } else {
-            java.util.List<VolumeInfo> volumeInfosCopy = new java.util.ArrayList<VolumeInfo>(volumeInfos.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<VolumeInfo> volumeInfosCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<VolumeInfo>(volumeInfos.size());
             volumeInfosCopy.addAll(volumeInfos);
             this.volumeInfos = volumeInfosCopy;
         }
@@ -262,9 +262,9 @@ public class ListVolumesResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getGatewayARN() != null) sb.append("GatewayARN: " + getGatewayARN() + ",");    	
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");    	
+        sb.append("{");
+        if (getGatewayARN() != null) sb.append("GatewayARN: " + getGatewayARN() + ",");
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");
         if (getVolumeInfos() != null) sb.append("VolumeInfos: " + getVolumeInfos() );
         sb.append("}");
         return sb.toString();

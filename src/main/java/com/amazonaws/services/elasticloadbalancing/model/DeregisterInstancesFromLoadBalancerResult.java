@@ -26,7 +26,7 @@ public class DeregisterInstancesFromLoadBalancerResult  implements Serializable 
      * An updated list of remaining instances registered with the
      * LoadBalancer.
      */
-    private java.util.List<Instance> instances;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Instance> instances;
 
     /**
      * An updated list of remaining instances registered with the
@@ -38,7 +38,8 @@ public class DeregisterInstancesFromLoadBalancerResult  implements Serializable 
     public java.util.List<Instance> getInstances() {
         
         if (instances == null) {
-            instances = new java.util.ArrayList<Instance>();
+              instances = new com.amazonaws.internal.ListWithAutoConstructFlag<Instance>();
+              instances.setAutoConstruct(true);
         }
         return instances;
     }
@@ -55,8 +56,7 @@ public class DeregisterInstancesFromLoadBalancerResult  implements Serializable 
             this.instances = null;
             return;
         }
-
-        java.util.List<Instance> instancesCopy = new java.util.ArrayList<Instance>(instances.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Instance> instancesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Instance>(instances.size());
         instancesCopy.addAll(instances);
         this.instances = instancesCopy;
     }
@@ -97,7 +97,7 @@ public class DeregisterInstancesFromLoadBalancerResult  implements Serializable 
         if (instances == null) {
             this.instances = null;
         } else {
-            java.util.List<Instance> instancesCopy = new java.util.ArrayList<Instance>(instances.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Instance> instancesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Instance>(instances.size());
             instancesCopy.addAll(instances);
             this.instances = instancesCopy;
         }
@@ -116,7 +116,7 @@ public class DeregisterInstancesFromLoadBalancerResult  implements Serializable 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getInstances() != null) sb.append("Instances: " + getInstances() );
         sb.append("}");
         return sb.toString();

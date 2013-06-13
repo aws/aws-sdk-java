@@ -46,6 +46,8 @@ public class DeleteLoginProfileRequest extends AmazonWebServiceRequest  implemen
      */
     public DeleteLoginProfileRequest() {}
     
+
+
     /**
      * Constructs a new DeleteLoginProfileRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -54,7 +56,7 @@ public class DeleteLoginProfileRequest extends AmazonWebServiceRequest  implemen
      * @param userName Name of the user whose password you want to delete.
      */
     public DeleteLoginProfileRequest(String userName) {
-        this.userName = userName;
+        setUserName(userName);
     }
 
     
@@ -116,7 +118,7 @@ public class DeleteLoginProfileRequest extends AmazonWebServiceRequest  implemen
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getUserName() != null) sb.append("UserName: " + getUserName() );
         sb.append("}");
         return sb.toString();

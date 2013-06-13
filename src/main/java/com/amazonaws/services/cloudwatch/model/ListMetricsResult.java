@@ -25,7 +25,7 @@ public class ListMetricsResult  implements Serializable  {
     /**
      * A list of metrics used to generate statistics for an AWS account.
      */
-    private java.util.List<Metric> metrics;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Metric> metrics;
 
     /**
      * A string that marks the start of the next batch of returned results.
@@ -40,7 +40,8 @@ public class ListMetricsResult  implements Serializable  {
     public java.util.List<Metric> getMetrics() {
         
         if (metrics == null) {
-            metrics = new java.util.ArrayList<Metric>();
+              metrics = new com.amazonaws.internal.ListWithAutoConstructFlag<Metric>();
+              metrics.setAutoConstruct(true);
         }
         return metrics;
     }
@@ -55,8 +56,7 @@ public class ListMetricsResult  implements Serializable  {
             this.metrics = null;
             return;
         }
-
-        java.util.List<Metric> metricsCopy = new java.util.ArrayList<Metric>(metrics.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Metric> metricsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Metric>(metrics.size());
         metricsCopy.addAll(metrics);
         this.metrics = metricsCopy;
     }
@@ -93,7 +93,7 @@ public class ListMetricsResult  implements Serializable  {
         if (metrics == null) {
             this.metrics = null;
         } else {
-            java.util.List<Metric> metricsCopy = new java.util.ArrayList<Metric>(metrics.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Metric> metricsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Metric>(metrics.size());
             metricsCopy.addAll(metrics);
             this.metrics = metricsCopy;
         }
@@ -146,8 +146,8 @@ public class ListMetricsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getMetrics() != null) sb.append("Metrics: " + getMetrics() + ",");    	
+        sb.append("{");
+        if (getMetrics() != null) sb.append("Metrics: " + getMetrics() + ",");
         if (getNextToken() != null) sb.append("NextToken: " + getNextToken() );
         sb.append("}");
         return sb.toString();

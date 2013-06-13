@@ -88,6 +88,10 @@ public class DistributionSummaryStaxUnmarshaller implements Unmarshaller<Distrib
                     distributionSummary.setEnabled(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("ViewerCertificate", targetDepth)) {
+                    distributionSummary.setViewerCertificate(ViewerCertificateStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return distributionSummary;

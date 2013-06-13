@@ -29,7 +29,7 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest  implements 
     /**
      * The optional list of regions to describe.
      */
-    private java.util.List<String> regionNames;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> regionNames;
 
     /**
      * A list of filters used to match properties for Regions. For a complete
@@ -37,7 +37,7 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest  implements 
      * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      * EC2 API reference</a>.
      */
-    private java.util.List<Filter> filters;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filters;
 
     /**
      * The optional list of regions to describe.
@@ -47,7 +47,8 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest  implements 
     public java.util.List<String> getRegionNames() {
         
         if (regionNames == null) {
-            regionNames = new java.util.ArrayList<String>();
+              regionNames = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              regionNames.setAutoConstruct(true);
         }
         return regionNames;
     }
@@ -62,8 +63,7 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest  implements 
             this.regionNames = null;
             return;
         }
-
-        java.util.List<String> regionNamesCopy = new java.util.ArrayList<String>(regionNames.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> regionNamesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(regionNames.size());
         regionNamesCopy.addAll(regionNames);
         this.regionNames = regionNamesCopy;
     }
@@ -100,7 +100,7 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest  implements 
         if (regionNames == null) {
             this.regionNames = null;
         } else {
-            java.util.List<String> regionNamesCopy = new java.util.ArrayList<String>(regionNames.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> regionNamesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(regionNames.size());
             regionNamesCopy.addAll(regionNames);
             this.regionNames = regionNamesCopy;
         }
@@ -122,7 +122,8 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest  implements 
     public java.util.List<Filter> getFilters() {
         
         if (filters == null) {
-            filters = new java.util.ArrayList<Filter>();
+              filters = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>();
+              filters.setAutoConstruct(true);
         }
         return filters;
     }
@@ -143,8 +144,7 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest  implements 
             this.filters = null;
             return;
         }
-
-        java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>(filters.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filtersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>(filters.size());
         filtersCopy.addAll(filters);
         this.filters = filtersCopy;
     }
@@ -193,7 +193,7 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest  implements 
         if (filters == null) {
             this.filters = null;
         } else {
-            java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>(filters.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filtersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>(filters.size());
             filtersCopy.addAll(filters);
             this.filters = filtersCopy;
         }
@@ -212,8 +212,8 @@ public class DescribeRegionsRequest extends AmazonWebServiceRequest  implements 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getRegionNames() != null) sb.append("RegionNames: " + getRegionNames() + ",");    	
+        sb.append("{");
+        if (getRegionNames() != null) sb.append("RegionNames: " + getRegionNames() + ",");
         if (getFilters() != null) sb.append("Filters: " + getFilters() );
         sb.append("}");
         return sb.toString();

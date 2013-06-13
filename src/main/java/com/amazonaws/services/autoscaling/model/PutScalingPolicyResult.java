@@ -88,7 +88,7 @@ public class PutScalingPolicyResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getPolicyARN() != null) sb.append("PolicyARN: " + getPolicyARN() );
         sb.append("}");
         return sb.toString();

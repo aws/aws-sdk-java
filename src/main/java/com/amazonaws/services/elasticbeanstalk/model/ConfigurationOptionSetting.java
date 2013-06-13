@@ -43,6 +43,8 @@ public class ConfigurationOptionSetting  implements Serializable  {
      */
     public ConfigurationOptionSetting() {}
     
+
+
     /**
      * Constructs a new ConfigurationOptionSetting object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -54,9 +56,9 @@ public class ConfigurationOptionSetting  implements Serializable  {
      * @param value The current value for the configuration option.
      */
     public ConfigurationOptionSetting(String namespace, String optionName, String value) {
-        this.namespace = namespace;
-        this.optionName = optionName;
-        this.value = value;
+        setNamespace(namespace);
+        setOptionName(optionName);
+        setValue(value);
     }
 
     
@@ -174,9 +176,9 @@ public class ConfigurationOptionSetting  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getNamespace() != null) sb.append("Namespace: " + getNamespace() + ",");    	
-        if (getOptionName() != null) sb.append("OptionName: " + getOptionName() + ",");    	
+        sb.append("{");
+        if (getNamespace() != null) sb.append("Namespace: " + getNamespace() + ",");
+        if (getOptionName() != null) sb.append("OptionName: " + getOptionName() + ",");
         if (getValue() != null) sb.append("Value: " + getValue() );
         sb.append("}");
         return sb.toString();

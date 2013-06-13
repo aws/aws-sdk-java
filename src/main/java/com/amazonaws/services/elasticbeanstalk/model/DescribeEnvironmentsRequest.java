@@ -50,13 +50,13 @@ public class DescribeEnvironmentsRequest extends AmazonWebServiceRequest  implem
      * If specified, AWS Elastic Beanstalk restricts the returned
      * descriptions to include only those that have the specified IDs.
      */
-    private java.util.List<String> environmentIds;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> environmentIds;
 
     /**
      * If specified, AWS Elastic Beanstalk restricts the returned
      * descriptions to include only those that have the specified names.
      */
-    private java.util.List<String> environmentNames;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> environmentNames;
 
     /**
      * Indicates whether to include deleted environments: <p>
@@ -199,7 +199,8 @@ public class DescribeEnvironmentsRequest extends AmazonWebServiceRequest  implem
     public java.util.List<String> getEnvironmentIds() {
         
         if (environmentIds == null) {
-            environmentIds = new java.util.ArrayList<String>();
+              environmentIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              environmentIds.setAutoConstruct(true);
         }
         return environmentIds;
     }
@@ -216,8 +217,7 @@ public class DescribeEnvironmentsRequest extends AmazonWebServiceRequest  implem
             this.environmentIds = null;
             return;
         }
-
-        java.util.List<String> environmentIdsCopy = new java.util.ArrayList<String>(environmentIds.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> environmentIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(environmentIds.size());
         environmentIdsCopy.addAll(environmentIds);
         this.environmentIds = environmentIdsCopy;
     }
@@ -258,7 +258,7 @@ public class DescribeEnvironmentsRequest extends AmazonWebServiceRequest  implem
         if (environmentIds == null) {
             this.environmentIds = null;
         } else {
-            java.util.List<String> environmentIdsCopy = new java.util.ArrayList<String>(environmentIds.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> environmentIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(environmentIds.size());
             environmentIdsCopy.addAll(environmentIds);
             this.environmentIds = environmentIdsCopy;
         }
@@ -276,7 +276,8 @@ public class DescribeEnvironmentsRequest extends AmazonWebServiceRequest  implem
     public java.util.List<String> getEnvironmentNames() {
         
         if (environmentNames == null) {
-            environmentNames = new java.util.ArrayList<String>();
+              environmentNames = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              environmentNames.setAutoConstruct(true);
         }
         return environmentNames;
     }
@@ -293,8 +294,7 @@ public class DescribeEnvironmentsRequest extends AmazonWebServiceRequest  implem
             this.environmentNames = null;
             return;
         }
-
-        java.util.List<String> environmentNamesCopy = new java.util.ArrayList<String>(environmentNames.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> environmentNamesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(environmentNames.size());
         environmentNamesCopy.addAll(environmentNames);
         this.environmentNames = environmentNamesCopy;
     }
@@ -335,7 +335,7 @@ public class DescribeEnvironmentsRequest extends AmazonWebServiceRequest  implem
         if (environmentNames == null) {
             this.environmentNames = null;
         } else {
-            java.util.List<String> environmentNamesCopy = new java.util.ArrayList<String>(environmentNames.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> environmentNamesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(environmentNames.size());
             environmentNamesCopy.addAll(environmentNames);
             this.environmentNames = environmentNamesCopy;
         }
@@ -467,12 +467,12 @@ public class DescribeEnvironmentsRequest extends AmazonWebServiceRequest  implem
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getApplicationName() != null) sb.append("ApplicationName: " + getApplicationName() + ",");    	
-        if (getVersionLabel() != null) sb.append("VersionLabel: " + getVersionLabel() + ",");    	
-        if (getEnvironmentIds() != null) sb.append("EnvironmentIds: " + getEnvironmentIds() + ",");    	
-        if (getEnvironmentNames() != null) sb.append("EnvironmentNames: " + getEnvironmentNames() + ",");    	
-        if (isIncludeDeleted() != null) sb.append("IncludeDeleted: " + isIncludeDeleted() + ",");    	
+        sb.append("{");
+        if (getApplicationName() != null) sb.append("ApplicationName: " + getApplicationName() + ",");
+        if (getVersionLabel() != null) sb.append("VersionLabel: " + getVersionLabel() + ",");
+        if (getEnvironmentIds() != null) sb.append("EnvironmentIds: " + getEnvironmentIds() + ",");
+        if (getEnvironmentNames() != null) sb.append("EnvironmentNames: " + getEnvironmentNames() + ",");
+        if (isIncludeDeleted() != null) sb.append("IncludeDeleted: " + isIncludeDeleted() + ",");
         if (getIncludedDeletedBackTo() != null) sb.append("IncludedDeletedBackTo: " + getIncludedDeletedBackTo() );
         sb.append("}");
         return sb.toString();

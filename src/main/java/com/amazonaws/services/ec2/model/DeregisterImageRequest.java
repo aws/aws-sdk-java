@@ -37,6 +37,8 @@ public class DeregisterImageRequest extends AmazonWebServiceRequest  implements 
      */
     public DeregisterImageRequest() {}
     
+
+
     /**
      * Constructs a new DeregisterImageRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -45,7 +47,7 @@ public class DeregisterImageRequest extends AmazonWebServiceRequest  implements 
      * @param imageId The ID of the AMI to deregister.
      */
     public DeregisterImageRequest(String imageId) {
-        this.imageId = imageId;
+        setImageId(imageId);
     }
 
     
@@ -95,7 +97,7 @@ public class DeregisterImageRequest extends AmazonWebServiceRequest  implements 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getImageId() != null) sb.append("ImageId: " + getImageId() );
         sb.append("}");
         return sb.toString();

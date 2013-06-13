@@ -25,7 +25,7 @@ public class DescribeAppsResult  implements Serializable  {
     /**
      * An array of <code>App</code> objects that describe the specified apps.
      */
-    private java.util.List<App> apps;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<App> apps;
 
     /**
      * An array of <code>App</code> objects that describe the specified apps.
@@ -35,7 +35,8 @@ public class DescribeAppsResult  implements Serializable  {
     public java.util.List<App> getApps() {
         
         if (apps == null) {
-            apps = new java.util.ArrayList<App>();
+              apps = new com.amazonaws.internal.ListWithAutoConstructFlag<App>();
+              apps.setAutoConstruct(true);
         }
         return apps;
     }
@@ -50,8 +51,7 @@ public class DescribeAppsResult  implements Serializable  {
             this.apps = null;
             return;
         }
-
-        java.util.List<App> appsCopy = new java.util.ArrayList<App>(apps.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<App> appsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<App>(apps.size());
         appsCopy.addAll(apps);
         this.apps = appsCopy;
     }
@@ -88,7 +88,7 @@ public class DescribeAppsResult  implements Serializable  {
         if (apps == null) {
             this.apps = null;
         } else {
-            java.util.List<App> appsCopy = new java.util.ArrayList<App>(apps.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<App> appsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<App>(apps.size());
             appsCopy.addAll(apps);
             this.apps = appsCopy;
         }
@@ -107,7 +107,7 @@ public class DescribeAppsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getApps() != null) sb.append("Apps: " + getApps() );
         sb.append("}");
         return sb.toString();

@@ -44,7 +44,7 @@ public class CreateDistributionRequestMarshaller implements Marshaller<Request<C
         Request<CreateDistributionRequest> request = new DefaultRequest<CreateDistributionRequest>(createDistributionRequest, "AmazonCloudFront");
         request.setHttpMethod(HttpMethodName.POST);
 
-        String uriResourcePath = "2012-07-01/distribution"; 
+        String uriResourcePath = "2013-05-12/distribution"; 
 
         if (uriResourcePath.contains("?")) {
             String queryString = uriResourcePath.substring(uriResourcePath.indexOf("?") + 1);
@@ -64,7 +64,7 @@ public class CreateDistributionRequestMarshaller implements Marshaller<Request<C
 
         
             StringWriter stringWriter = new StringWriter();
-            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2012-07-01/");
+            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2013-05-12/");
 
             
                     if (createDistributionRequest != null) {
@@ -404,6 +404,19 @@ public class CreateDistributionRequestMarshaller implements Marshaller<Request<C
                 }
                 if (distributionConfigDistributionConfig.isEnabled() != null) {
                     xmlWriter.startElement("Enabled").value(distributionConfigDistributionConfig.isEnabled()).endElement();
+                }
+                if (distributionConfigDistributionConfig != null) {
+                    ViewerCertificate viewerCertificateViewerCertificate = distributionConfigDistributionConfig.getViewerCertificate();
+                    if (viewerCertificateViewerCertificate != null) {
+                        xmlWriter.startElement("ViewerCertificate");
+                        if (viewerCertificateViewerCertificate.getIAMCertificateId() != null) {
+                            xmlWriter.startElement("IAMCertificateId").value(viewerCertificateViewerCertificate.getIAMCertificateId()).endElement();
+                        }
+                        if (viewerCertificateViewerCertificate.isCloudFrontDefaultCertificate() != null) {
+                            xmlWriter.startElement("CloudFrontDefaultCertificate").value(viewerCertificateViewerCertificate.isCloudFrontDefaultCertificate()).endElement();
+                        }
+                        xmlWriter.endElement();
+                    }
                 }
                 xmlWriter.endElement();
             }

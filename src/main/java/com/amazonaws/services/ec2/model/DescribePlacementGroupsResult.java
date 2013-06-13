@@ -24,7 +24,7 @@ public class DescribePlacementGroupsResult  implements Serializable  {
     /**
      * Contains information about the specified <code>PlacementGroups</code>.
      */
-    private java.util.List<PlacementGroup> placementGroups;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<PlacementGroup> placementGroups;
 
     /**
      * Contains information about the specified <code>PlacementGroups</code>.
@@ -34,7 +34,8 @@ public class DescribePlacementGroupsResult  implements Serializable  {
     public java.util.List<PlacementGroup> getPlacementGroups() {
         
         if (placementGroups == null) {
-            placementGroups = new java.util.ArrayList<PlacementGroup>();
+              placementGroups = new com.amazonaws.internal.ListWithAutoConstructFlag<PlacementGroup>();
+              placementGroups.setAutoConstruct(true);
         }
         return placementGroups;
     }
@@ -49,8 +50,7 @@ public class DescribePlacementGroupsResult  implements Serializable  {
             this.placementGroups = null;
             return;
         }
-
-        java.util.List<PlacementGroup> placementGroupsCopy = new java.util.ArrayList<PlacementGroup>(placementGroups.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<PlacementGroup> placementGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<PlacementGroup>(placementGroups.size());
         placementGroupsCopy.addAll(placementGroups);
         this.placementGroups = placementGroupsCopy;
     }
@@ -87,7 +87,7 @@ public class DescribePlacementGroupsResult  implements Serializable  {
         if (placementGroups == null) {
             this.placementGroups = null;
         } else {
-            java.util.List<PlacementGroup> placementGroupsCopy = new java.util.ArrayList<PlacementGroup>(placementGroups.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<PlacementGroup> placementGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<PlacementGroup>(placementGroups.size());
             placementGroupsCopy.addAll(placementGroups);
             this.placementGroups = placementGroupsCopy;
         }
@@ -106,7 +106,7 @@ public class DescribePlacementGroupsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getPlacementGroups() != null) sb.append("PlacementGroups: " + getPlacementGroups() );
         sb.append("}");
         return sb.toString();

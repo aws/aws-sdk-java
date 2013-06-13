@@ -318,11 +318,11 @@ public class VirtualMFADevice  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getSerialNumber() != null) sb.append("SerialNumber: " + getSerialNumber() + ",");    	
-        if (getBase32StringSeed() != null) sb.append("Base32StringSeed: " + getBase32StringSeed() + ",");    	
-        if (getQRCodePNG() != null) sb.append("QRCodePNG: " + getQRCodePNG() + ",");    	
-        if (getUser() != null) sb.append("User: " + getUser() + ",");    	
+        sb.append("{");
+        if (getSerialNumber() != null) sb.append("SerialNumber: " + getSerialNumber() + ",");
+        if (getBase32StringSeed() != null) sb.append("Base32StringSeed: " + getBase32StringSeed() + ",");
+        if (getQRCodePNG() != null) sb.append("QRCodePNG: " + getQRCodePNG() + ",");
+        if (getUser() != null) sb.append("User: " + getUser() + ",");
         if (getEnableDate() != null) sb.append("EnableDate: " + getEnableDate() );
         sb.append("}");
         return sb.toString();

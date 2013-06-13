@@ -23,7 +23,7 @@ public class ListQueuesResult  implements Serializable  {
     /**
      * A list of queue URLs, up to 1000 entries.
      */
-    private java.util.List<String> queueUrls;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> queueUrls;
 
     /**
      * A list of queue URLs, up to 1000 entries.
@@ -33,7 +33,8 @@ public class ListQueuesResult  implements Serializable  {
     public java.util.List<String> getQueueUrls() {
         
         if (queueUrls == null) {
-            queueUrls = new java.util.ArrayList<String>();
+              queueUrls = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              queueUrls.setAutoConstruct(true);
         }
         return queueUrls;
     }
@@ -48,8 +49,7 @@ public class ListQueuesResult  implements Serializable  {
             this.queueUrls = null;
             return;
         }
-
-        java.util.List<String> queueUrlsCopy = new java.util.ArrayList<String>(queueUrls.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> queueUrlsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(queueUrls.size());
         queueUrlsCopy.addAll(queueUrls);
         this.queueUrls = queueUrlsCopy;
     }
@@ -86,7 +86,7 @@ public class ListQueuesResult  implements Serializable  {
         if (queueUrls == null) {
             this.queueUrls = null;
         } else {
-            java.util.List<String> queueUrlsCopy = new java.util.ArrayList<String>(queueUrls.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> queueUrlsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(queueUrls.size());
             queueUrlsCopy.addAll(queueUrls);
             this.queueUrls = queueUrlsCopy;
         }
@@ -105,7 +105,7 @@ public class ListQueuesResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getQueueUrls() != null) sb.append("QueueUrls: " + getQueueUrls() );
         sb.append("}");
         return sb.toString();

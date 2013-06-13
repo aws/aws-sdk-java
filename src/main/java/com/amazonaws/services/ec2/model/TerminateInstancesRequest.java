@@ -33,7 +33,7 @@ public class TerminateInstancesRequest extends AmazonWebServiceRequest  implemen
     /**
      * The list of instances to terminate.
      */
-    private java.util.List<String> instanceIds;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> instanceIds;
 
     /**
      * Default constructor for a new TerminateInstancesRequest object.  Callers should use the
@@ -41,6 +41,8 @@ public class TerminateInstancesRequest extends AmazonWebServiceRequest  implemen
      */
     public TerminateInstancesRequest() {}
     
+
+
     /**
      * Constructs a new TerminateInstancesRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -49,7 +51,7 @@ public class TerminateInstancesRequest extends AmazonWebServiceRequest  implemen
      * @param instanceIds The list of instances to terminate.
      */
     public TerminateInstancesRequest(java.util.List<String> instanceIds) {
-        this.instanceIds = instanceIds;
+        setInstanceIds(instanceIds);
     }
 
     
@@ -62,7 +64,8 @@ public class TerminateInstancesRequest extends AmazonWebServiceRequest  implemen
     public java.util.List<String> getInstanceIds() {
         
         if (instanceIds == null) {
-            instanceIds = new java.util.ArrayList<String>();
+              instanceIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              instanceIds.setAutoConstruct(true);
         }
         return instanceIds;
     }
@@ -77,8 +80,7 @@ public class TerminateInstancesRequest extends AmazonWebServiceRequest  implemen
             this.instanceIds = null;
             return;
         }
-
-        java.util.List<String> instanceIdsCopy = new java.util.ArrayList<String>(instanceIds.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> instanceIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(instanceIds.size());
         instanceIdsCopy.addAll(instanceIds);
         this.instanceIds = instanceIdsCopy;
     }
@@ -115,7 +117,7 @@ public class TerminateInstancesRequest extends AmazonWebServiceRequest  implemen
         if (instanceIds == null) {
             this.instanceIds = null;
         } else {
-            java.util.List<String> instanceIdsCopy = new java.util.ArrayList<String>(instanceIds.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> instanceIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(instanceIds.size());
             instanceIdsCopy.addAll(instanceIds);
             this.instanceIds = instanceIdsCopy;
         }
@@ -134,7 +136,7 @@ public class TerminateInstancesRequest extends AmazonWebServiceRequest  implemen
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getInstanceIds() != null) sb.append("InstanceIds: " + getInstanceIds() );
         sb.append("}");
         return sb.toString();

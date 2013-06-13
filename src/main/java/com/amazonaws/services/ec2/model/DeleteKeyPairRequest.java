@@ -37,6 +37,8 @@ public class DeleteKeyPairRequest extends AmazonWebServiceRequest  implements Se
      */
     public DeleteKeyPairRequest() {}
     
+
+
     /**
      * Constructs a new DeleteKeyPairRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -45,7 +47,7 @@ public class DeleteKeyPairRequest extends AmazonWebServiceRequest  implements Se
      * @param keyName The name of the Amazon EC2 key pair to delete.
      */
     public DeleteKeyPairRequest(String keyName) {
-        this.keyName = keyName;
+        setKeyName(keyName);
     }
 
     
@@ -95,7 +97,7 @@ public class DeleteKeyPairRequest extends AmazonWebServiceRequest  implements Se
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getKeyName() != null) sb.append("KeyName: " + getKeyName() );
         sb.append("}");
         return sb.toString();

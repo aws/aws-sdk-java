@@ -67,7 +67,7 @@ public class CreateSecurityGroupResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getGroupId() != null) sb.append("GroupId: " + getGroupId() );
         sb.append("}");
         return sb.toString();

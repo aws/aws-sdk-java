@@ -25,7 +25,7 @@ public class DescribeDBLogFilesResult  implements Serializable  {
     /**
      * The DB log files returned.
      */
-    private java.util.List<DescribeDBLogFilesDetails> describeDBLogFiles;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<DescribeDBLogFilesDetails> describeDBLogFiles;
 
     /**
      * An optional paging token.
@@ -40,7 +40,8 @@ public class DescribeDBLogFilesResult  implements Serializable  {
     public java.util.List<DescribeDBLogFilesDetails> getDescribeDBLogFiles() {
         
         if (describeDBLogFiles == null) {
-            describeDBLogFiles = new java.util.ArrayList<DescribeDBLogFilesDetails>();
+              describeDBLogFiles = new com.amazonaws.internal.ListWithAutoConstructFlag<DescribeDBLogFilesDetails>();
+              describeDBLogFiles.setAutoConstruct(true);
         }
         return describeDBLogFiles;
     }
@@ -55,8 +56,7 @@ public class DescribeDBLogFilesResult  implements Serializable  {
             this.describeDBLogFiles = null;
             return;
         }
-
-        java.util.List<DescribeDBLogFilesDetails> describeDBLogFilesCopy = new java.util.ArrayList<DescribeDBLogFilesDetails>(describeDBLogFiles.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<DescribeDBLogFilesDetails> describeDBLogFilesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<DescribeDBLogFilesDetails>(describeDBLogFiles.size());
         describeDBLogFilesCopy.addAll(describeDBLogFiles);
         this.describeDBLogFiles = describeDBLogFilesCopy;
     }
@@ -93,7 +93,7 @@ public class DescribeDBLogFilesResult  implements Serializable  {
         if (describeDBLogFiles == null) {
             this.describeDBLogFiles = null;
         } else {
-            java.util.List<DescribeDBLogFilesDetails> describeDBLogFilesCopy = new java.util.ArrayList<DescribeDBLogFilesDetails>(describeDBLogFiles.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<DescribeDBLogFilesDetails> describeDBLogFilesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<DescribeDBLogFilesDetails>(describeDBLogFiles.size());
             describeDBLogFilesCopy.addAll(describeDBLogFiles);
             this.describeDBLogFiles = describeDBLogFilesCopy;
         }
@@ -146,8 +146,8 @@ public class DescribeDBLogFilesResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getDescribeDBLogFiles() != null) sb.append("DescribeDBLogFiles: " + getDescribeDBLogFiles() + ",");    	
+        sb.append("{");
+        if (getDescribeDBLogFiles() != null) sb.append("DescribeDBLogFiles: " + getDescribeDBLogFiles() + ",");
         if (getMarker() != null) sb.append("Marker: " + getMarker() );
         sb.append("}");
         return sb.toString();

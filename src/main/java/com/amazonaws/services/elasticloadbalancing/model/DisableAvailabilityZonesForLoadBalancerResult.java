@@ -25,7 +25,7 @@ public class DisableAvailabilityZonesForLoadBalancerResult  implements Serializa
     /**
      * A list of updated Availability Zones for the LoadBalancer.
      */
-    private java.util.List<String> availabilityZones;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> availabilityZones;
 
     /**
      * A list of updated Availability Zones for the LoadBalancer.
@@ -35,7 +35,8 @@ public class DisableAvailabilityZonesForLoadBalancerResult  implements Serializa
     public java.util.List<String> getAvailabilityZones() {
         
         if (availabilityZones == null) {
-            availabilityZones = new java.util.ArrayList<String>();
+              availabilityZones = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              availabilityZones.setAutoConstruct(true);
         }
         return availabilityZones;
     }
@@ -50,8 +51,7 @@ public class DisableAvailabilityZonesForLoadBalancerResult  implements Serializa
             this.availabilityZones = null;
             return;
         }
-
-        java.util.List<String> availabilityZonesCopy = new java.util.ArrayList<String>(availabilityZones.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> availabilityZonesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(availabilityZones.size());
         availabilityZonesCopy.addAll(availabilityZones);
         this.availabilityZones = availabilityZonesCopy;
     }
@@ -88,7 +88,7 @@ public class DisableAvailabilityZonesForLoadBalancerResult  implements Serializa
         if (availabilityZones == null) {
             this.availabilityZones = null;
         } else {
-            java.util.List<String> availabilityZonesCopy = new java.util.ArrayList<String>(availabilityZones.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> availabilityZonesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(availabilityZones.size());
             availabilityZonesCopy.addAll(availabilityZones);
             this.availabilityZones = availabilityZonesCopy;
         }
@@ -107,7 +107,7 @@ public class DisableAvailabilityZonesForLoadBalancerResult  implements Serializa
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getAvailabilityZones() != null) sb.append("AvailabilityZones: " + getAvailabilityZones() );
         sb.append("}");
         return sb.toString();

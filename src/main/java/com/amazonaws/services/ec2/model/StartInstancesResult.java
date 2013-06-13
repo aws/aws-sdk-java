@@ -26,7 +26,7 @@ public class StartInstancesResult  implements Serializable  {
      * The list of the starting instances and details on how their state has
      * changed.
      */
-    private java.util.List<InstanceStateChange> startingInstances;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<InstanceStateChange> startingInstances;
 
     /**
      * The list of the starting instances and details on how their state has
@@ -38,7 +38,8 @@ public class StartInstancesResult  implements Serializable  {
     public java.util.List<InstanceStateChange> getStartingInstances() {
         
         if (startingInstances == null) {
-            startingInstances = new java.util.ArrayList<InstanceStateChange>();
+              startingInstances = new com.amazonaws.internal.ListWithAutoConstructFlag<InstanceStateChange>();
+              startingInstances.setAutoConstruct(true);
         }
         return startingInstances;
     }
@@ -55,8 +56,7 @@ public class StartInstancesResult  implements Serializable  {
             this.startingInstances = null;
             return;
         }
-
-        java.util.List<InstanceStateChange> startingInstancesCopy = new java.util.ArrayList<InstanceStateChange>(startingInstances.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<InstanceStateChange> startingInstancesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<InstanceStateChange>(startingInstances.size());
         startingInstancesCopy.addAll(startingInstances);
         this.startingInstances = startingInstancesCopy;
     }
@@ -97,7 +97,7 @@ public class StartInstancesResult  implements Serializable  {
         if (startingInstances == null) {
             this.startingInstances = null;
         } else {
-            java.util.List<InstanceStateChange> startingInstancesCopy = new java.util.ArrayList<InstanceStateChange>(startingInstances.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<InstanceStateChange> startingInstancesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<InstanceStateChange>(startingInstances.size());
             startingInstancesCopy.addAll(startingInstances);
             this.startingInstances = startingInstancesCopy;
         }
@@ -116,7 +116,7 @@ public class StartInstancesResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getStartingInstances() != null) sb.append("StartingInstances: " + getStartingInstances() );
         sb.append("}");
         return sb.toString();

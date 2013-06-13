@@ -25,7 +25,7 @@ public class DescribeAlarmsForMetricResult  implements Serializable  {
     /**
      * A list of information for each alarm with the specified metric.
      */
-    private java.util.List<MetricAlarm> metricAlarms;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<MetricAlarm> metricAlarms;
 
     /**
      * A list of information for each alarm with the specified metric.
@@ -35,7 +35,8 @@ public class DescribeAlarmsForMetricResult  implements Serializable  {
     public java.util.List<MetricAlarm> getMetricAlarms() {
         
         if (metricAlarms == null) {
-            metricAlarms = new java.util.ArrayList<MetricAlarm>();
+              metricAlarms = new com.amazonaws.internal.ListWithAutoConstructFlag<MetricAlarm>();
+              metricAlarms.setAutoConstruct(true);
         }
         return metricAlarms;
     }
@@ -50,8 +51,7 @@ public class DescribeAlarmsForMetricResult  implements Serializable  {
             this.metricAlarms = null;
             return;
         }
-
-        java.util.List<MetricAlarm> metricAlarmsCopy = new java.util.ArrayList<MetricAlarm>(metricAlarms.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<MetricAlarm> metricAlarmsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<MetricAlarm>(metricAlarms.size());
         metricAlarmsCopy.addAll(metricAlarms);
         this.metricAlarms = metricAlarmsCopy;
     }
@@ -88,7 +88,7 @@ public class DescribeAlarmsForMetricResult  implements Serializable  {
         if (metricAlarms == null) {
             this.metricAlarms = null;
         } else {
-            java.util.List<MetricAlarm> metricAlarmsCopy = new java.util.ArrayList<MetricAlarm>(metricAlarms.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<MetricAlarm> metricAlarmsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<MetricAlarm>(metricAlarms.size());
             metricAlarmsCopy.addAll(metricAlarms);
             this.metricAlarms = metricAlarmsCopy;
         }
@@ -107,7 +107,7 @@ public class DescribeAlarmsForMetricResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getMetricAlarms() != null) sb.append("MetricAlarms: " + getMetricAlarms() );
         sb.append("}");
         return sb.toString();

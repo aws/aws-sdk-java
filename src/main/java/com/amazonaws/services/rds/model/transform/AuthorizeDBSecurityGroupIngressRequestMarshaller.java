@@ -38,7 +38,7 @@ public class AuthorizeDBSecurityGroupIngressRequestMarshaller implements Marshal
 
         Request<AuthorizeDBSecurityGroupIngressRequest> request = new DefaultRequest<AuthorizeDBSecurityGroupIngressRequest>(authorizeDBSecurityGroupIngressRequest, "AmazonRDS");
         request.addParameter("Action", "AuthorizeDBSecurityGroupIngress");
-        request.addParameter("Version", "2013-02-12");
+        request.addParameter("Version", "2013-05-15");
 
         if (authorizeDBSecurityGroupIngressRequest.getDBSecurityGroupName() != null) {
             request.addParameter("DBSecurityGroupName", StringUtils.fromString(authorizeDBSecurityGroupIngressRequest.getDBSecurityGroupName()));

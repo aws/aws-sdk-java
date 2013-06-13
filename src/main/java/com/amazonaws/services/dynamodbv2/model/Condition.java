@@ -51,7 +51,7 @@ public class Condition  implements Serializable  {
      * unsigned when it compares binary values, for example when evaluating
      * query expressions. </note>
      */
-    private java.util.List<AttributeValue> attributeValueList;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<AttributeValue> attributeValueList;
 
     /**
      * Represents a comparator for evaluating attributes. For example,
@@ -222,8 +222,7 @@ public class Condition  implements Serializable  {
             this.attributeValueList = null;
             return;
         }
-
-        java.util.List<AttributeValue> attributeValueListCopy = new java.util.ArrayList<AttributeValue>(attributeValueList.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<AttributeValue> attributeValueListCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<AttributeValue>(attributeValueList.size());
         attributeValueListCopy.addAll(attributeValueList);
         this.attributeValueList = attributeValueListCopy;
     }
@@ -304,7 +303,7 @@ public class Condition  implements Serializable  {
         if (attributeValueList == null) {
             this.attributeValueList = null;
         } else {
-            java.util.List<AttributeValue> attributeValueListCopy = new java.util.ArrayList<AttributeValue>(attributeValueList.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<AttributeValue> attributeValueListCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<AttributeValue>(attributeValueList.size());
             attributeValueListCopy.addAll(attributeValueList);
             this.attributeValueList = attributeValueListCopy;
         }
@@ -1316,8 +1315,8 @@ public class Condition  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getAttributeValueList() != null) sb.append("AttributeValueList: " + getAttributeValueList() + ",");    	
+        sb.append("{");
+        if (getAttributeValueList() != null) sb.append("AttributeValueList: " + getAttributeValueList() + ",");
         if (getComparisonOperator() != null) sb.append("ComparisonOperator: " + getComparisonOperator() );
         sb.append("}");
         return sb.toString();

@@ -46,6 +46,8 @@ public class DescribeSnapshotAttributeRequest extends AmazonWebServiceRequest  i
      */
     public DescribeSnapshotAttributeRequest() {}
     
+
+
     /**
      * Constructs a new DescribeSnapshotAttributeRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -57,8 +59,8 @@ public class DescribeSnapshotAttributeRequest extends AmazonWebServiceRequest  i
      * Available attribute names: createVolumePermission
      */
     public DescribeSnapshotAttributeRequest(String snapshotId, String attribute) {
-        this.snapshotId = snapshotId;
-        this.attribute = attribute;
+        setSnapshotId(snapshotId);
+        setAttribute(attribute);
     }
 
     
@@ -216,8 +218,8 @@ public class DescribeSnapshotAttributeRequest extends AmazonWebServiceRequest  i
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getSnapshotId() != null) sb.append("SnapshotId: " + getSnapshotId() + ",");    	
+        sb.append("{");
+        if (getSnapshotId() != null) sb.append("SnapshotId: " + getSnapshotId() + ",");
         if (getAttribute() != null) sb.append("Attribute: " + getAttribute() );
         sb.append("}");
         return sb.toString();

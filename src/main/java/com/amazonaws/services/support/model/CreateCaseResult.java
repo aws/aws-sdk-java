@@ -86,7 +86,7 @@ public class CreateCaseResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getCaseId() != null) sb.append("CaseId: " + getCaseId() );
         sb.append("}");
         return sb.toString();

@@ -99,7 +99,7 @@ public class AddCommunicationToCaseResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (isResult() != null) sb.append("Result: " + isResult() );
         sb.append("}");
         return sb.toString();

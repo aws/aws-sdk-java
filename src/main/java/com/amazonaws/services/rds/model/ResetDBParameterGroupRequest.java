@@ -56,7 +56,7 @@ public class ResetDBParameterGroupRequest extends AmazonWebServiceRequest  imple
      * when DB Instance reboots. <p><b>Oracle</b> <p>Valid Values (for Apply
      * method): <code>pending-reboot</code>
      */
-    private java.util.List<Parameter> parameters;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Parameter> parameters;
 
     /**
      * Default constructor for a new ResetDBParameterGroupRequest object.  Callers should use the
@@ -64,6 +64,8 @@ public class ResetDBParameterGroupRequest extends AmazonWebServiceRequest  imple
      */
     public ResetDBParameterGroupRequest() {}
     
+
+
     /**
      * Constructs a new ResetDBParameterGroupRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -75,7 +77,7 @@ public class ResetDBParameterGroupRequest extends AmazonWebServiceRequest  imple
      * or contain two consecutive hyphens</li> </ul>
      */
     public ResetDBParameterGroupRequest(String dBParameterGroupName) {
-        this.dBParameterGroupName = dBParameterGroupName;
+        setDBParameterGroupName(dBParameterGroupName);
     }
 
     
@@ -217,7 +219,8 @@ public class ResetDBParameterGroupRequest extends AmazonWebServiceRequest  imple
     public java.util.List<Parameter> getParameters() {
         
         if (parameters == null) {
-            parameters = new java.util.ArrayList<Parameter>();
+              parameters = new com.amazonaws.internal.ListWithAutoConstructFlag<Parameter>();
+              parameters.setAutoConstruct(true);
         }
         return parameters;
     }
@@ -250,8 +253,7 @@ public class ResetDBParameterGroupRequest extends AmazonWebServiceRequest  imple
             this.parameters = null;
             return;
         }
-
-        java.util.List<Parameter> parametersCopy = new java.util.ArrayList<Parameter>(parameters.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Parameter> parametersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Parameter>(parameters.size());
         parametersCopy.addAll(parameters);
         this.parameters = parametersCopy;
     }
@@ -324,7 +326,7 @@ public class ResetDBParameterGroupRequest extends AmazonWebServiceRequest  imple
         if (parameters == null) {
             this.parameters = null;
         } else {
-            java.util.List<Parameter> parametersCopy = new java.util.ArrayList<Parameter>(parameters.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Parameter> parametersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Parameter>(parameters.size());
             parametersCopy.addAll(parameters);
             this.parameters = parametersCopy;
         }
@@ -343,9 +345,9 @@ public class ResetDBParameterGroupRequest extends AmazonWebServiceRequest  imple
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getDBParameterGroupName() != null) sb.append("DBParameterGroupName: " + getDBParameterGroupName() + ",");    	
-        if (isResetAllParameters() != null) sb.append("ResetAllParameters: " + isResetAllParameters() + ",");    	
+        sb.append("{");
+        if (getDBParameterGroupName() != null) sb.append("DBParameterGroupName: " + getDBParameterGroupName() + ",");
+        if (isResetAllParameters() != null) sb.append("ResetAllParameters: " + isResetAllParameters() + ",");
         if (getParameters() != null) sb.append("Parameters: " + getParameters() );
         sb.append("}");
         return sb.toString();

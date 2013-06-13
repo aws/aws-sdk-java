@@ -37,6 +37,8 @@ public class GetDistributionRequest extends AmazonWebServiceRequest  implements 
      */
     public GetDistributionRequest() {}
     
+
+
     /**
      * Constructs a new GetDistributionRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -45,7 +47,7 @@ public class GetDistributionRequest extends AmazonWebServiceRequest  implements 
      * @param id The distribution's id.
      */
     public GetDistributionRequest(String id) {
-        this.id = id;
+        setId(id);
     }
 
     
@@ -95,7 +97,7 @@ public class GetDistributionRequest extends AmazonWebServiceRequest  implements 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getId() != null) sb.append("Id: " + getId() );
         sb.append("}");
         return sb.toString();

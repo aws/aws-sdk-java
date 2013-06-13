@@ -86,8 +86,8 @@ public class DescribeTrustedAdvisorCheckRefreshStatusesRequestMarshaller impleme
           jsonWriter.object();
           
 
-            java.util.List<String> checkIdsList = describeTrustedAdvisorCheckRefreshStatusesRequest.getCheckIds();
-            if (checkIdsList != null) {
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> checkIdsList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(describeTrustedAdvisorCheckRefreshStatusesRequest.getCheckIds());
+            if (checkIdsList != null && !(checkIdsList.isAutoConstruct() && checkIdsList.isEmpty())) {
 
                 jsonWriter.key("checkIds");
                 jsonWriter.array();

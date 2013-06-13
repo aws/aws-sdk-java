@@ -48,7 +48,7 @@ public class DescribeUploadBufferResult  implements Serializable  {
      * configured as working storage, then the <code>DiskIds</code> array is
      * empty.
      */
-    private java.util.List<String> diskIds;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> diskIds;
 
     /**
      * The total upload buffer in bytes in use by the gateway. If no upload
@@ -139,7 +139,8 @@ public class DescribeUploadBufferResult  implements Serializable  {
     public java.util.List<String> getDiskIds() {
         
         if (diskIds == null) {
-            diskIds = new java.util.ArrayList<String>();
+              diskIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              diskIds.setAutoConstruct(true);
         }
         return diskIds;
     }
@@ -162,8 +163,7 @@ public class DescribeUploadBufferResult  implements Serializable  {
             this.diskIds = null;
             return;
         }
-
-        java.util.List<String> diskIdsCopy = new java.util.ArrayList<String>(diskIds.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> diskIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(diskIds.size());
         diskIdsCopy.addAll(diskIds);
         this.diskIds = diskIdsCopy;
     }
@@ -216,7 +216,7 @@ public class DescribeUploadBufferResult  implements Serializable  {
         if (diskIds == null) {
             this.diskIds = null;
         } else {
-            java.util.List<String> diskIdsCopy = new java.util.ArrayList<String>(diskIds.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> diskIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(diskIds.size());
             diskIdsCopy.addAll(diskIds);
             this.diskIds = diskIdsCopy;
         }
@@ -315,10 +315,10 @@ public class DescribeUploadBufferResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getGatewayARN() != null) sb.append("GatewayARN: " + getGatewayARN() + ",");    	
-        if (getDiskIds() != null) sb.append("DiskIds: " + getDiskIds() + ",");    	
-        if (getUploadBufferUsedInBytes() != null) sb.append("UploadBufferUsedInBytes: " + getUploadBufferUsedInBytes() + ",");    	
+        sb.append("{");
+        if (getGatewayARN() != null) sb.append("GatewayARN: " + getGatewayARN() + ",");
+        if (getDiskIds() != null) sb.append("DiskIds: " + getDiskIds() + ",");
+        if (getUploadBufferUsedInBytes() != null) sb.append("UploadBufferUsedInBytes: " + getUploadBufferUsedInBytes() + ",");
         if (getUploadBufferAllocatedInBytes() != null) sb.append("UploadBufferAllocatedInBytes: " + getUploadBufferAllocatedInBytes() );
         sb.append("}");
         return sb.toString();

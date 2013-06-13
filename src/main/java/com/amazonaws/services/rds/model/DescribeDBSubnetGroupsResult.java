@@ -32,7 +32,7 @@ public class DescribeDBSubnetGroupsResult  implements Serializable  {
     /**
      * A list of <a>DBSubnetGroup</a> instances.
      */
-    private java.util.List<DBSubnetGroup> dBSubnetGroups;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<DBSubnetGroup> dBSubnetGroups;
 
     /**
      * An optional pagination token provided by a previous request. If this
@@ -88,7 +88,8 @@ public class DescribeDBSubnetGroupsResult  implements Serializable  {
     public java.util.List<DBSubnetGroup> getDBSubnetGroups() {
         
         if (dBSubnetGroups == null) {
-            dBSubnetGroups = new java.util.ArrayList<DBSubnetGroup>();
+              dBSubnetGroups = new com.amazonaws.internal.ListWithAutoConstructFlag<DBSubnetGroup>();
+              dBSubnetGroups.setAutoConstruct(true);
         }
         return dBSubnetGroups;
     }
@@ -103,8 +104,7 @@ public class DescribeDBSubnetGroupsResult  implements Serializable  {
             this.dBSubnetGroups = null;
             return;
         }
-
-        java.util.List<DBSubnetGroup> dBSubnetGroupsCopy = new java.util.ArrayList<DBSubnetGroup>(dBSubnetGroups.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<DBSubnetGroup> dBSubnetGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<DBSubnetGroup>(dBSubnetGroups.size());
         dBSubnetGroupsCopy.addAll(dBSubnetGroups);
         this.dBSubnetGroups = dBSubnetGroupsCopy;
     }
@@ -141,7 +141,7 @@ public class DescribeDBSubnetGroupsResult  implements Serializable  {
         if (dBSubnetGroups == null) {
             this.dBSubnetGroups = null;
         } else {
-            java.util.List<DBSubnetGroup> dBSubnetGroupsCopy = new java.util.ArrayList<DBSubnetGroup>(dBSubnetGroups.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<DBSubnetGroup> dBSubnetGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<DBSubnetGroup>(dBSubnetGroups.size());
             dBSubnetGroupsCopy.addAll(dBSubnetGroups);
             this.dBSubnetGroups = dBSubnetGroupsCopy;
         }
@@ -160,8 +160,8 @@ public class DescribeDBSubnetGroupsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");    	
+        sb.append("{");
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");
         if (getDBSubnetGroups() != null) sb.append("DBSubnetGroups: " + getDBSubnetGroups() );
         sb.append("}");
         return sb.toString();

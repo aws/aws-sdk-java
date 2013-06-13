@@ -55,6 +55,8 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest  implements Ser
      */
     public CreateSubnetRequest() {}
     
+
+
     /**
      * Constructs a new CreateSubnetRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -64,8 +66,8 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest  implements Ser
      * @param cidrBlock The CIDR block the subnet is to cover.
      */
     public CreateSubnetRequest(String vpcId, String cidrBlock) {
-        this.vpcId = vpcId;
-        this.cidrBlock = cidrBlock;
+        setVpcId(vpcId);
+        setCidrBlock(cidrBlock);
     }
 
     
@@ -183,9 +185,9 @@ public class CreateSubnetRequest extends AmazonWebServiceRequest  implements Ser
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getVpcId() != null) sb.append("VpcId: " + getVpcId() + ",");    	
-        if (getCidrBlock() != null) sb.append("CidrBlock: " + getCidrBlock() + ",");    	
+        sb.append("{");
+        if (getVpcId() != null) sb.append("VpcId: " + getVpcId() + ",");
+        if (getCidrBlock() != null) sb.append("CidrBlock: " + getCidrBlock() + ",");
         if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() );
         sb.append("}");
         return sb.toString();

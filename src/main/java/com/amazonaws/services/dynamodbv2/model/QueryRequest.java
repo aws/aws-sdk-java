@@ -118,7 +118,7 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
      */
-    private java.util.List<String> attributesToGet;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> attributesToGet;
 
     /**
      * The maximum number of items to evaluate (not necessarily the number of
@@ -834,8 +834,7 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
             this.attributesToGet = null;
             return;
         }
-
-        java.util.List<String> attributesToGetCopy = new java.util.ArrayList<String>(attributesToGet.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> attributesToGetCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(attributesToGet.size());
         attributesToGetCopy.addAll(attributesToGet);
         this.attributesToGet = attributesToGetCopy;
     }
@@ -930,7 +929,7 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
         if (attributesToGet == null) {
             this.attributesToGet = null;
         } else {
-            java.util.List<String> attributesToGetCopy = new java.util.ArrayList<String>(attributesToGet.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> attributesToGetCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(attributesToGet.size());
             attributesToGetCopy.addAll(attributesToGet);
             this.attributesToGet = attributesToGetCopy;
         }
@@ -1885,16 +1884,16 @@ public class QueryRequest extends AmazonWebServiceRequest  implements Serializab
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getTableName() != null) sb.append("TableName: " + getTableName() + ",");    	
-        if (getIndexName() != null) sb.append("IndexName: " + getIndexName() + ",");    	
-        if (getSelect() != null) sb.append("Select: " + getSelect() + ",");    	
-        if (getAttributesToGet() != null) sb.append("AttributesToGet: " + getAttributesToGet() + ",");    	
-        if (getLimit() != null) sb.append("Limit: " + getLimit() + ",");    	
-        if (isConsistentRead() != null) sb.append("ConsistentRead: " + isConsistentRead() + ",");    	
-        if (getKeyConditions() != null) sb.append("KeyConditions: " + getKeyConditions() + ",");    	
-        if (isScanIndexForward() != null) sb.append("ScanIndexForward: " + isScanIndexForward() + ",");    	
-        if (getExclusiveStartKey() != null) sb.append("ExclusiveStartKey: " + getExclusiveStartKey() + ",");    	
+        sb.append("{");
+        if (getTableName() != null) sb.append("TableName: " + getTableName() + ",");
+        if (getIndexName() != null) sb.append("IndexName: " + getIndexName() + ",");
+        if (getSelect() != null) sb.append("Select: " + getSelect() + ",");
+        if (getAttributesToGet() != null) sb.append("AttributesToGet: " + getAttributesToGet() + ",");
+        if (getLimit() != null) sb.append("Limit: " + getLimit() + ",");
+        if (isConsistentRead() != null) sb.append("ConsistentRead: " + isConsistentRead() + ",");
+        if (getKeyConditions() != null) sb.append("KeyConditions: " + getKeyConditions() + ",");
+        if (isScanIndexForward() != null) sb.append("ScanIndexForward: " + isScanIndexForward() + ",");
+        if (getExclusiveStartKey() != null) sb.append("ExclusiveStartKey: " + getExclusiveStartKey() + ",");
         if (getReturnConsumedCapacity() != null) sb.append("ReturnConsumedCapacity: " + getReturnConsumedCapacity() );
         sb.append("}");
         return sb.toString();

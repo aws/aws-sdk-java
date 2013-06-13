@@ -101,8 +101,8 @@ public class CreateCaseRequestMarshaller implements Marshaller<Request<CreateCas
                 jsonWriter.key("communicationBody").value(createCaseRequest.getCommunicationBody());
             }
 
-            java.util.List<String> ccEmailAddressesList = createCaseRequest.getCcEmailAddresses();
-            if (ccEmailAddressesList != null) {
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> ccEmailAddressesList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(createCaseRequest.getCcEmailAddresses());
+            if (ccEmailAddressesList != null && !(ccEmailAddressesList.isAutoConstruct() && ccEmailAddressesList.isEmpty())) {
 
                 jsonWriter.key("ccEmailAddresses");
                 jsonWriter.array();

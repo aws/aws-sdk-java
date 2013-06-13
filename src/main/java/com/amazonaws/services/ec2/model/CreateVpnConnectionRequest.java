@@ -60,6 +60,8 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest  impleme
      */
     public CreateVpnConnectionRequest() {}
     
+
+
     /**
      * Constructs a new CreateVpnConnectionRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -70,9 +72,9 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest  impleme
      * @param vpnGatewayId The ID of the VPN gateway.
      */
     public CreateVpnConnectionRequest(String type, String customerGatewayId, String vpnGatewayId) {
-        this.type = type;
-        this.customerGatewayId = customerGatewayId;
-        this.vpnGatewayId = vpnGatewayId;
+        setType(type);
+        setCustomerGatewayId(customerGatewayId);
+        setVpnGatewayId(vpnGatewayId);
     }
 
     
@@ -224,10 +226,10 @@ public class CreateVpnConnectionRequest extends AmazonWebServiceRequest  impleme
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getType() != null) sb.append("Type: " + getType() + ",");    	
-        if (getCustomerGatewayId() != null) sb.append("CustomerGatewayId: " + getCustomerGatewayId() + ",");    	
-        if (getVpnGatewayId() != null) sb.append("VpnGatewayId: " + getVpnGatewayId() + ",");    	
+        sb.append("{");
+        if (getType() != null) sb.append("Type: " + getType() + ",");
+        if (getCustomerGatewayId() != null) sb.append("CustomerGatewayId: " + getCustomerGatewayId() + ",");
+        if (getVpnGatewayId() != null) sb.append("VpnGatewayId: " + getVpnGatewayId() + ",");
         if (getOptions() != null) sb.append("Options: " + getOptions() );
         sb.append("}");
         return sb.toString();

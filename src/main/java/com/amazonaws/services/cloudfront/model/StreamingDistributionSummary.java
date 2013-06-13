@@ -619,16 +619,16 @@ public class StreamingDistributionSummary  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getId() != null) sb.append("Id: " + getId() + ",");    	
-        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");    	
-        if (getLastModifiedTime() != null) sb.append("LastModifiedTime: " + getLastModifiedTime() + ",");    	
-        if (getDomainName() != null) sb.append("DomainName: " + getDomainName() + ",");    	
-        if (getS3Origin() != null) sb.append("S3Origin: " + getS3Origin() + ",");    	
-        if (getAliases() != null) sb.append("Aliases: " + getAliases() + ",");    	
-        if (getTrustedSigners() != null) sb.append("TrustedSigners: " + getTrustedSigners() + ",");    	
-        if (getComment() != null) sb.append("Comment: " + getComment() + ",");    	
-        if (getPriceClass() != null) sb.append("PriceClass: " + getPriceClass() + ",");    	
+        sb.append("{");
+        if (getId() != null) sb.append("Id: " + getId() + ",");
+        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");
+        if (getLastModifiedTime() != null) sb.append("LastModifiedTime: " + getLastModifiedTime() + ",");
+        if (getDomainName() != null) sb.append("DomainName: " + getDomainName() + ",");
+        if (getS3Origin() != null) sb.append("S3Origin: " + getS3Origin() + ",");
+        if (getAliases() != null) sb.append("Aliases: " + getAliases() + ",");
+        if (getTrustedSigners() != null) sb.append("TrustedSigners: " + getTrustedSigners() + ",");
+        if (getComment() != null) sb.append("Comment: " + getComment() + ",");
+        if (getPriceClass() != null) sb.append("PriceClass: " + getPriceClass() + ",");
         if (isEnabled() != null) sb.append("Enabled: " + isEnabled() );
         sb.append("}");
         return sb.toString();

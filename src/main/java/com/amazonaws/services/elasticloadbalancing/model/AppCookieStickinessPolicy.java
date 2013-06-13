@@ -39,6 +39,8 @@ public class AppCookieStickinessPolicy  implements Serializable  {
      */
     public AppCookieStickinessPolicy() {}
     
+
+
     /**
      * Constructs a new AppCookieStickinessPolicy object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -50,8 +52,8 @@ public class AppCookieStickinessPolicy  implements Serializable  {
      * stickiness.
      */
     public AppCookieStickinessPolicy(String policyName, String cookieName) {
-        this.policyName = policyName;
-        this.cookieName = cookieName;
+        setPolicyName(policyName);
+        setCookieName(cookieName);
     }
 
     
@@ -141,8 +143,8 @@ public class AppCookieStickinessPolicy  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getPolicyName() != null) sb.append("PolicyName: " + getPolicyName() + ",");    	
+        sb.append("{");
+        if (getPolicyName() != null) sb.append("PolicyName: " + getPolicyName() + ",");
         if (getCookieName() != null) sb.append("CookieName: " + getCookieName() );
         sb.append("}");
         return sb.toString();

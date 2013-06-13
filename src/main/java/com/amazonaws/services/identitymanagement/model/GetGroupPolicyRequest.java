@@ -51,6 +51,8 @@ public class GetGroupPolicyRequest extends AmazonWebServiceRequest  implements S
      */
     public GetGroupPolicyRequest() {}
     
+
+
     /**
      * Constructs a new GetGroupPolicyRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -60,8 +62,8 @@ public class GetGroupPolicyRequest extends AmazonWebServiceRequest  implements S
      * @param policyName Name of the policy document to get.
      */
     public GetGroupPolicyRequest(String groupName, String policyName) {
-        this.groupName = groupName;
-        this.policyName = policyName;
+        setGroupName(groupName);
+        setPolicyName(policyName);
     }
 
     
@@ -169,8 +171,8 @@ public class GetGroupPolicyRequest extends AmazonWebServiceRequest  implements S
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getGroupName() != null) sb.append("GroupName: " + getGroupName() + ",");    	
+        sb.append("{");
+        if (getGroupName() != null) sb.append("GroupName: " + getGroupName() + ",");
         if (getPolicyName() != null) sb.append("PolicyName: " + getPolicyName() );
         sb.append("}");
         return sb.toString();

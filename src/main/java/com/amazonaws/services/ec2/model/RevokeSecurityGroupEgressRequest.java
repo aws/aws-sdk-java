@@ -78,7 +78,7 @@ public class RevokeSecurityGroupEgressRequest extends AmazonWebServiceRequest  i
      * Specifying permissions through IP permissions is the preferred way of
      * authorizing permissions since it offers more flexibility and control.
      */
-    private java.util.List<IpPermission> ipPermissions;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<IpPermission> ipPermissions;
 
     /**
      * ID of the VPC security group to modify.
@@ -330,7 +330,8 @@ public class RevokeSecurityGroupEgressRequest extends AmazonWebServiceRequest  i
     public java.util.List<IpPermission> getIpPermissions() {
         
         if (ipPermissions == null) {
-            ipPermissions = new java.util.ArrayList<IpPermission>();
+              ipPermissions = new com.amazonaws.internal.ListWithAutoConstructFlag<IpPermission>();
+              ipPermissions.setAutoConstruct(true);
         }
         return ipPermissions;
     }
@@ -349,8 +350,7 @@ public class RevokeSecurityGroupEgressRequest extends AmazonWebServiceRequest  i
             this.ipPermissions = null;
             return;
         }
-
-        java.util.List<IpPermission> ipPermissionsCopy = new java.util.ArrayList<IpPermission>(ipPermissions.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<IpPermission> ipPermissionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<IpPermission>(ipPermissions.size());
         ipPermissionsCopy.addAll(ipPermissions);
         this.ipPermissions = ipPermissionsCopy;
     }
@@ -395,7 +395,7 @@ public class RevokeSecurityGroupEgressRequest extends AmazonWebServiceRequest  i
         if (ipPermissions == null) {
             this.ipPermissions = null;
         } else {
-            java.util.List<IpPermission> ipPermissionsCopy = new java.util.ArrayList<IpPermission>(ipPermissions.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<IpPermission> ipPermissionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<IpPermission>(ipPermissions.size());
             ipPermissionsCopy.addAll(ipPermissions);
             this.ipPermissions = ipPermissionsCopy;
         }
@@ -414,14 +414,14 @@ public class RevokeSecurityGroupEgressRequest extends AmazonWebServiceRequest  i
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getGroupId() != null) sb.append("GroupId: " + getGroupId() + ",");    	
-        if (getSourceSecurityGroupName() != null) sb.append("SourceSecurityGroupName: " + getSourceSecurityGroupName() + ",");    	
-        if (getSourceSecurityGroupOwnerId() != null) sb.append("SourceSecurityGroupOwnerId: " + getSourceSecurityGroupOwnerId() + ",");    	
-        if (getIpProtocol() != null) sb.append("IpProtocol: " + getIpProtocol() + ",");    	
-        if (getFromPort() != null) sb.append("FromPort: " + getFromPort() + ",");    	
-        if (getToPort() != null) sb.append("ToPort: " + getToPort() + ",");    	
-        if (getCidrIp() != null) sb.append("CidrIp: " + getCidrIp() + ",");    	
+        sb.append("{");
+        if (getGroupId() != null) sb.append("GroupId: " + getGroupId() + ",");
+        if (getSourceSecurityGroupName() != null) sb.append("SourceSecurityGroupName: " + getSourceSecurityGroupName() + ",");
+        if (getSourceSecurityGroupOwnerId() != null) sb.append("SourceSecurityGroupOwnerId: " + getSourceSecurityGroupOwnerId() + ",");
+        if (getIpProtocol() != null) sb.append("IpProtocol: " + getIpProtocol() + ",");
+        if (getFromPort() != null) sb.append("FromPort: " + getFromPort() + ",");
+        if (getToPort() != null) sb.append("ToPort: " + getToPort() + ",");
+        if (getCidrIp() != null) sb.append("CidrIp: " + getCidrIp() + ",");
         if (getIpPermissions() != null) sb.append("IpPermissions: " + getIpPermissions() );
         sb.append("}");
         return sb.toString();

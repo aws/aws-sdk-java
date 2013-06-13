@@ -329,10 +329,10 @@ public class SwapEnvironmentCNAMEsRequest extends AmazonWebServiceRequest  imple
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getSourceEnvironmentId() != null) sb.append("SourceEnvironmentId: " + getSourceEnvironmentId() + ",");    	
-        if (getSourceEnvironmentName() != null) sb.append("SourceEnvironmentName: " + getSourceEnvironmentName() + ",");    	
-        if (getDestinationEnvironmentId() != null) sb.append("DestinationEnvironmentId: " + getDestinationEnvironmentId() + ",");    	
+        sb.append("{");
+        if (getSourceEnvironmentId() != null) sb.append("SourceEnvironmentId: " + getSourceEnvironmentId() + ",");
+        if (getSourceEnvironmentName() != null) sb.append("SourceEnvironmentName: " + getSourceEnvironmentName() + ",");
+        if (getDestinationEnvironmentId() != null) sb.append("DestinationEnvironmentId: " + getDestinationEnvironmentId() + ",");
         if (getDestinationEnvironmentName() != null) sb.append("DestinationEnvironmentName: " + getDestinationEnvironmentName() );
         sb.append("}");
         return sb.toString();

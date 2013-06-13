@@ -32,9 +32,9 @@ public class LaunchSpecification  implements Serializable  {
      */
     private String keyName;
 
-    private java.util.List<GroupIdentifier> allSecurityGroups;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<GroupIdentifier> allSecurityGroups;
 
-    private java.util.List<String> securityGroups;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> securityGroups;
 
     /**
      * Optional data, specific to a user's application, to provide in the
@@ -79,7 +79,7 @@ public class LaunchSpecification  implements Serializable  {
      * Specifies how block devices are exposed to the instance. Each mapping
      * is made up of a virtualName and a deviceName.
      */
-    private java.util.List<BlockDeviceMapping> blockDeviceMappings;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<BlockDeviceMapping> blockDeviceMappings;
 
     /**
      * Enables monitoring for the instance.
@@ -92,7 +92,7 @@ public class LaunchSpecification  implements Serializable  {
      */
     private String subnetId;
 
-    private java.util.List<InstanceNetworkInterfaceSpecification> networkInterfaces;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<InstanceNetworkInterfaceSpecification> networkInterfaces;
 
     private IamInstanceProfileSpecification iamInstanceProfile;
 
@@ -174,7 +174,8 @@ public class LaunchSpecification  implements Serializable  {
     public java.util.List<GroupIdentifier> getAllSecurityGroups() {
         
         if (allSecurityGroups == null) {
-            allSecurityGroups = new java.util.ArrayList<GroupIdentifier>();
+              allSecurityGroups = new com.amazonaws.internal.ListWithAutoConstructFlag<GroupIdentifier>();
+              allSecurityGroups.setAutoConstruct(true);
         }
         return allSecurityGroups;
     }
@@ -189,8 +190,7 @@ public class LaunchSpecification  implements Serializable  {
             this.allSecurityGroups = null;
             return;
         }
-
-        java.util.List<GroupIdentifier> allSecurityGroupsCopy = new java.util.ArrayList<GroupIdentifier>(allSecurityGroups.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<GroupIdentifier> allSecurityGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<GroupIdentifier>(allSecurityGroups.size());
         allSecurityGroupsCopy.addAll(allSecurityGroups);
         this.allSecurityGroups = allSecurityGroupsCopy;
     }
@@ -227,7 +227,7 @@ public class LaunchSpecification  implements Serializable  {
         if (allSecurityGroups == null) {
             this.allSecurityGroups = null;
         } else {
-            java.util.List<GroupIdentifier> allSecurityGroupsCopy = new java.util.ArrayList<GroupIdentifier>(allSecurityGroups.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<GroupIdentifier> allSecurityGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<GroupIdentifier>(allSecurityGroups.size());
             allSecurityGroupsCopy.addAll(allSecurityGroups);
             this.allSecurityGroups = allSecurityGroupsCopy;
         }
@@ -243,7 +243,8 @@ public class LaunchSpecification  implements Serializable  {
     public java.util.List<String> getSecurityGroups() {
         
         if (securityGroups == null) {
-            securityGroups = new java.util.ArrayList<String>();
+              securityGroups = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              securityGroups.setAutoConstruct(true);
         }
         return securityGroups;
     }
@@ -258,8 +259,7 @@ public class LaunchSpecification  implements Serializable  {
             this.securityGroups = null;
             return;
         }
-
-        java.util.List<String> securityGroupsCopy = new java.util.ArrayList<String>(securityGroups.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> securityGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(securityGroups.size());
         securityGroupsCopy.addAll(securityGroups);
         this.securityGroups = securityGroupsCopy;
     }
@@ -296,7 +296,7 @@ public class LaunchSpecification  implements Serializable  {
         if (securityGroups == null) {
             this.securityGroups = null;
         } else {
-            java.util.List<String> securityGroupsCopy = new java.util.ArrayList<String>(securityGroups.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> securityGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(securityGroups.size());
             securityGroupsCopy.addAll(securityGroups);
             this.securityGroups = securityGroupsCopy;
         }
@@ -603,7 +603,8 @@ public class LaunchSpecification  implements Serializable  {
     public java.util.List<BlockDeviceMapping> getBlockDeviceMappings() {
         
         if (blockDeviceMappings == null) {
-            blockDeviceMappings = new java.util.ArrayList<BlockDeviceMapping>();
+              blockDeviceMappings = new com.amazonaws.internal.ListWithAutoConstructFlag<BlockDeviceMapping>();
+              blockDeviceMappings.setAutoConstruct(true);
         }
         return blockDeviceMappings;
     }
@@ -620,8 +621,7 @@ public class LaunchSpecification  implements Serializable  {
             this.blockDeviceMappings = null;
             return;
         }
-
-        java.util.List<BlockDeviceMapping> blockDeviceMappingsCopy = new java.util.ArrayList<BlockDeviceMapping>(blockDeviceMappings.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<BlockDeviceMapping> blockDeviceMappingsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<BlockDeviceMapping>(blockDeviceMappings.size());
         blockDeviceMappingsCopy.addAll(blockDeviceMappings);
         this.blockDeviceMappings = blockDeviceMappingsCopy;
     }
@@ -662,7 +662,7 @@ public class LaunchSpecification  implements Serializable  {
         if (blockDeviceMappings == null) {
             this.blockDeviceMappings = null;
         } else {
-            java.util.List<BlockDeviceMapping> blockDeviceMappingsCopy = new java.util.ArrayList<BlockDeviceMapping>(blockDeviceMappings.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<BlockDeviceMapping> blockDeviceMappingsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<BlockDeviceMapping>(blockDeviceMappings.size());
             blockDeviceMappingsCopy.addAll(blockDeviceMappings);
             this.blockDeviceMappings = blockDeviceMappingsCopy;
         }
@@ -761,7 +761,8 @@ public class LaunchSpecification  implements Serializable  {
     public java.util.List<InstanceNetworkInterfaceSpecification> getNetworkInterfaces() {
         
         if (networkInterfaces == null) {
-            networkInterfaces = new java.util.ArrayList<InstanceNetworkInterfaceSpecification>();
+              networkInterfaces = new com.amazonaws.internal.ListWithAutoConstructFlag<InstanceNetworkInterfaceSpecification>();
+              networkInterfaces.setAutoConstruct(true);
         }
         return networkInterfaces;
     }
@@ -776,8 +777,7 @@ public class LaunchSpecification  implements Serializable  {
             this.networkInterfaces = null;
             return;
         }
-
-        java.util.List<InstanceNetworkInterfaceSpecification> networkInterfacesCopy = new java.util.ArrayList<InstanceNetworkInterfaceSpecification>(networkInterfaces.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<InstanceNetworkInterfaceSpecification> networkInterfacesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<InstanceNetworkInterfaceSpecification>(networkInterfaces.size());
         networkInterfacesCopy.addAll(networkInterfaces);
         this.networkInterfaces = networkInterfacesCopy;
     }
@@ -814,7 +814,7 @@ public class LaunchSpecification  implements Serializable  {
         if (networkInterfaces == null) {
             this.networkInterfaces = null;
         } else {
-            java.util.List<InstanceNetworkInterfaceSpecification> networkInterfacesCopy = new java.util.ArrayList<InstanceNetworkInterfaceSpecification>(networkInterfaces.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<InstanceNetworkInterfaceSpecification> networkInterfacesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<InstanceNetworkInterfaceSpecification>(networkInterfaces.size());
             networkInterfacesCopy.addAll(networkInterfaces);
             this.networkInterfaces = networkInterfacesCopy;
         }
@@ -910,22 +910,22 @@ public class LaunchSpecification  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getImageId() != null) sb.append("ImageId: " + getImageId() + ",");    	
-        if (getKeyName() != null) sb.append("KeyName: " + getKeyName() + ",");    	
-        if (getAllSecurityGroups() != null) sb.append("AllSecurityGroups: " + getAllSecurityGroups() + ",");    	
-        if (getSecurityGroups() != null) sb.append("SecurityGroups: " + getSecurityGroups() + ",");    	
-        if (getUserData() != null) sb.append("UserData: " + getUserData() + ",");    	
-        if (getAddressingType() != null) sb.append("AddressingType: " + getAddressingType() + ",");    	
-        if (getInstanceType() != null) sb.append("InstanceType: " + getInstanceType() + ",");    	
-        if (getPlacement() != null) sb.append("Placement: " + getPlacement() + ",");    	
-        if (getKernelId() != null) sb.append("KernelId: " + getKernelId() + ",");    	
-        if (getRamdiskId() != null) sb.append("RamdiskId: " + getRamdiskId() + ",");    	
-        if (getBlockDeviceMappings() != null) sb.append("BlockDeviceMappings: " + getBlockDeviceMappings() + ",");    	
-        if (isMonitoringEnabled() != null) sb.append("MonitoringEnabled: " + isMonitoringEnabled() + ",");    	
-        if (getSubnetId() != null) sb.append("SubnetId: " + getSubnetId() + ",");    	
-        if (getNetworkInterfaces() != null) sb.append("NetworkInterfaces: " + getNetworkInterfaces() + ",");    	
-        if (getIamInstanceProfile() != null) sb.append("IamInstanceProfile: " + getIamInstanceProfile() + ",");    	
+        sb.append("{");
+        if (getImageId() != null) sb.append("ImageId: " + getImageId() + ",");
+        if (getKeyName() != null) sb.append("KeyName: " + getKeyName() + ",");
+        if (getAllSecurityGroups() != null) sb.append("AllSecurityGroups: " + getAllSecurityGroups() + ",");
+        if (getSecurityGroups() != null) sb.append("SecurityGroups: " + getSecurityGroups() + ",");
+        if (getUserData() != null) sb.append("UserData: " + getUserData() + ",");
+        if (getAddressingType() != null) sb.append("AddressingType: " + getAddressingType() + ",");
+        if (getInstanceType() != null) sb.append("InstanceType: " + getInstanceType() + ",");
+        if (getPlacement() != null) sb.append("Placement: " + getPlacement() + ",");
+        if (getKernelId() != null) sb.append("KernelId: " + getKernelId() + ",");
+        if (getRamdiskId() != null) sb.append("RamdiskId: " + getRamdiskId() + ",");
+        if (getBlockDeviceMappings() != null) sb.append("BlockDeviceMappings: " + getBlockDeviceMappings() + ",");
+        if (isMonitoringEnabled() != null) sb.append("MonitoringEnabled: " + isMonitoringEnabled() + ",");
+        if (getSubnetId() != null) sb.append("SubnetId: " + getSubnetId() + ",");
+        if (getNetworkInterfaces() != null) sb.append("NetworkInterfaces: " + getNetworkInterfaces() + ",");
+        if (getIamInstanceProfile() != null) sb.append("IamInstanceProfile: " + getIamInstanceProfile() + ",");
         if (isEbsOptimized() != null) sb.append("EbsOptimized: " + isEbsOptimized() );
         sb.append("}");
         return sb.toString();

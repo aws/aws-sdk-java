@@ -32,7 +32,7 @@ public class DescribeTrustedAdvisorCheckRefreshStatusesRequest extends AmazonWeb
      * values by calling <a href="API_DescribeTrustedAdviserChecks.html"
      * title="DescribeTrustedAdvisorChecks">DescribeTrustedAdvisorChecks</a>.
      */
-    private java.util.List<String> checkIds;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> checkIds;
 
     /**
      * List of the <i>CheckId</i> values for the Trusted Advisor checks for
@@ -48,7 +48,8 @@ public class DescribeTrustedAdvisorCheckRefreshStatusesRequest extends AmazonWeb
     public java.util.List<String> getCheckIds() {
         
         if (checkIds == null) {
-            checkIds = new java.util.ArrayList<String>();
+              checkIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              checkIds.setAutoConstruct(true);
         }
         return checkIds;
     }
@@ -69,8 +70,7 @@ public class DescribeTrustedAdvisorCheckRefreshStatusesRequest extends AmazonWeb
             this.checkIds = null;
             return;
         }
-
-        java.util.List<String> checkIdsCopy = new java.util.ArrayList<String>(checkIds.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> checkIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(checkIds.size());
         checkIdsCopy.addAll(checkIds);
         this.checkIds = checkIdsCopy;
     }
@@ -119,7 +119,7 @@ public class DescribeTrustedAdvisorCheckRefreshStatusesRequest extends AmazonWeb
         if (checkIds == null) {
             this.checkIds = null;
         } else {
-            java.util.List<String> checkIdsCopy = new java.util.ArrayList<String>(checkIds.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> checkIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(checkIds.size());
             checkIdsCopy.addAll(checkIds);
             this.checkIds = checkIdsCopy;
         }
@@ -138,7 +138,7 @@ public class DescribeTrustedAdvisorCheckRefreshStatusesRequest extends AmazonWeb
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getCheckIds() != null) sb.append("CheckIds: " + getCheckIds() );
         sb.append("}");
         return sb.toString();

@@ -33,7 +33,7 @@ public class DescribeAlarmsRequest extends AmazonWebServiceRequest  implements S
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 100<br/>
      */
-    private java.util.List<String> alarmNames;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> alarmNames;
 
     /**
      * The alarm name prefix. <code>AlarmNames</code> cannot be specified if
@@ -85,7 +85,8 @@ public class DescribeAlarmsRequest extends AmazonWebServiceRequest  implements S
     public java.util.List<String> getAlarmNames() {
         
         if (alarmNames == null) {
-            alarmNames = new java.util.ArrayList<String>();
+              alarmNames = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              alarmNames.setAutoConstruct(true);
         }
         return alarmNames;
     }
@@ -103,8 +104,7 @@ public class DescribeAlarmsRequest extends AmazonWebServiceRequest  implements S
             this.alarmNames = null;
             return;
         }
-
-        java.util.List<String> alarmNamesCopy = new java.util.ArrayList<String>(alarmNames.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> alarmNamesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(alarmNames.size());
         alarmNamesCopy.addAll(alarmNames);
         this.alarmNames = alarmNamesCopy;
     }
@@ -147,7 +147,7 @@ public class DescribeAlarmsRequest extends AmazonWebServiceRequest  implements S
         if (alarmNames == null) {
             this.alarmNames = null;
         } else {
-            java.util.List<String> alarmNamesCopy = new java.util.ArrayList<String>(alarmNames.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> alarmNamesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(alarmNames.size());
             alarmNamesCopy.addAll(alarmNames);
             this.alarmNames = alarmNamesCopy;
         }
@@ -424,12 +424,12 @@ public class DescribeAlarmsRequest extends AmazonWebServiceRequest  implements S
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getAlarmNames() != null) sb.append("AlarmNames: " + getAlarmNames() + ",");    	
-        if (getAlarmNamePrefix() != null) sb.append("AlarmNamePrefix: " + getAlarmNamePrefix() + ",");    	
-        if (getStateValue() != null) sb.append("StateValue: " + getStateValue() + ",");    	
-        if (getActionPrefix() != null) sb.append("ActionPrefix: " + getActionPrefix() + ",");    	
-        if (getMaxRecords() != null) sb.append("MaxRecords: " + getMaxRecords() + ",");    	
+        sb.append("{");
+        if (getAlarmNames() != null) sb.append("AlarmNames: " + getAlarmNames() + ",");
+        if (getAlarmNamePrefix() != null) sb.append("AlarmNamePrefix: " + getAlarmNamePrefix() + ",");
+        if (getStateValue() != null) sb.append("StateValue: " + getStateValue() + ",");
+        if (getActionPrefix() != null) sb.append("ActionPrefix: " + getActionPrefix() + ",");
+        if (getMaxRecords() != null) sb.append("MaxRecords: " + getMaxRecords() + ",");
         if (getNextToken() != null) sb.append("NextToken: " + getNextToken() );
         sb.append("}");
         return sb.toString();

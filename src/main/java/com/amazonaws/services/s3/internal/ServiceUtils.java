@@ -313,9 +313,10 @@ public class ServiceUtils {
      */
     public static S3Object retryableDownloadS3ObjectToFile (File file, RetryableS3DownloadTask retryableS3DownloadTask) {
         boolean hasRetried = false;
-        boolean needRetry = false;
+        boolean needRetry;
         S3Object s3Object;
         do {
+        	needRetry = false;
             s3Object = retryableS3DownloadTask.getS3ObjectStream();
             if ( s3Object == null )
                 return null;

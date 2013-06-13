@@ -58,6 +58,8 @@ public class ImportKeyPairRequest extends AmazonWebServiceRequest  implements Se
      */
     public ImportKeyPairRequest() {}
     
+
+
     /**
      * Constructs a new ImportKeyPairRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -68,8 +70,8 @@ public class ImportKeyPairRequest extends AmazonWebServiceRequest  implements Se
      * imported.
      */
     public ImportKeyPairRequest(String keyName, String publicKeyMaterial) {
-        this.keyName = keyName;
-        this.publicKeyMaterial = publicKeyMaterial;
+        setKeyName(keyName);
+        setPublicKeyMaterial(publicKeyMaterial);
     }
 
     
@@ -153,8 +155,8 @@ public class ImportKeyPairRequest extends AmazonWebServiceRequest  implements Se
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getKeyName() != null) sb.append("KeyName: " + getKeyName() + ",");    	
+        sb.append("{");
+        if (getKeyName() != null) sb.append("KeyName: " + getKeyName() + ",");
         if (getPublicKeyMaterial() != null) sb.append("PublicKeyMaterial: " + getPublicKeyMaterial() );
         sb.append("}");
         return sb.toString();

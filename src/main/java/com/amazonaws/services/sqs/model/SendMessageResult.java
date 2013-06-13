@@ -137,8 +137,8 @@ public class SendMessageResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getMD5OfMessageBody() != null) sb.append("MD5OfMessageBody: " + getMD5OfMessageBody() + ",");    	
+        sb.append("{");
+        if (getMD5OfMessageBody() != null) sb.append("MD5OfMessageBody: " + getMD5OfMessageBody() + ",");
         if (getMessageId() != null) sb.append("MessageId: " + getMessageId() );
         sb.append("}");
         return sb.toString();

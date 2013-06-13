@@ -41,6 +41,8 @@ public class DeleteDBSnapshotRequest extends AmazonWebServiceRequest  implements
      */
     public DeleteDBSnapshotRequest() {}
     
+
+
     /**
      * Constructs a new DeleteDBSnapshotRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -51,7 +53,7 @@ public class DeleteDBSnapshotRequest extends AmazonWebServiceRequest  implements
      * <code>available</code> state.
      */
     public DeleteDBSnapshotRequest(String dBSnapshotIdentifier) {
-        this.dBSnapshotIdentifier = dBSnapshotIdentifier;
+        setDBSnapshotIdentifier(dBSnapshotIdentifier);
     }
 
     
@@ -107,7 +109,7 @@ public class DeleteDBSnapshotRequest extends AmazonWebServiceRequest  implements
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getDBSnapshotIdentifier() != null) sb.append("DBSnapshotIdentifier: " + getDBSnapshotIdentifier() );
         sb.append("}");
         return sb.toString();

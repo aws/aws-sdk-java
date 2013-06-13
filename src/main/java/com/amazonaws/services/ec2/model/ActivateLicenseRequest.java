@@ -42,6 +42,8 @@ public class ActivateLicenseRequest extends AmazonWebServiceRequest  implements 
      */
     public ActivateLicenseRequest() {}
     
+
+
     /**
      * Constructs a new ActivateLicenseRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -53,8 +55,8 @@ public class ActivateLicenseRequest extends AmazonWebServiceRequest  implements 
      * activate.
      */
     public ActivateLicenseRequest(String licenseId, Integer capacity) {
-        this.licenseId = licenseId;
-        this.capacity = capacity;
+        setLicenseId(licenseId);
+        setCapacity(capacity);
     }
 
     
@@ -138,8 +140,8 @@ public class ActivateLicenseRequest extends AmazonWebServiceRequest  implements 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getLicenseId() != null) sb.append("LicenseId: " + getLicenseId() + ",");    	
+        sb.append("{");
+        if (getLicenseId() != null) sb.append("LicenseId: " + getLicenseId() + ",");
         if (getCapacity() != null) sb.append("Capacity: " + getCapacity() );
         sb.append("}");
         return sb.toString();

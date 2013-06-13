@@ -107,6 +107,8 @@ public class ListJobsRequest extends AmazonWebServiceRequest  implements Seriali
      */
     public ListJobsRequest() {}
     
+
+
     /**
      * Constructs a new ListJobsRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -115,11 +117,13 @@ public class ListJobsRequest extends AmazonWebServiceRequest  implements Seriali
      * @param vaultName The name of the vault.
      */
     public ListJobsRequest(String vaultName) {
-        this.vaultName = vaultName;
+        setVaultName(vaultName);
     }
 
     
     
+
+
     /**
      * Constructs a new ListJobsRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -133,8 +137,8 @@ public class ListJobsRequest extends AmazonWebServiceRequest  implements Seriali
      * @param vaultName The name of the vault.
      */
     public ListJobsRequest(String accountId, String vaultName) {
-        this.accountId = accountId;
-        this.vaultName = vaultName;
+        setAccountId(accountId);
+        setVaultName(vaultName);
     }
 
     
@@ -426,12 +430,12 @@ public class ListJobsRequest extends AmazonWebServiceRequest  implements Seriali
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getAccountId() != null) sb.append("AccountId: " + getAccountId() + ",");    	
-        if (getVaultName() != null) sb.append("VaultName: " + getVaultName() + ",");    	
-        if (getLimit() != null) sb.append("Limit: " + getLimit() + ",");    	
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");    	
-        if (getStatuscode() != null) sb.append("Statuscode: " + getStatuscode() + ",");    	
+        sb.append("{");
+        if (getAccountId() != null) sb.append("AccountId: " + getAccountId() + ",");
+        if (getVaultName() != null) sb.append("VaultName: " + getVaultName() + ",");
+        if (getLimit() != null) sb.append("Limit: " + getLimit() + ",");
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");
+        if (getStatuscode() != null) sb.append("Statuscode: " + getStatuscode() + ",");
         if (getCompleted() != null) sb.append("Completed: " + getCompleted() );
         sb.append("}");
         return sb.toString();

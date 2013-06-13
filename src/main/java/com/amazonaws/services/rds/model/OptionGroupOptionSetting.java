@@ -286,12 +286,12 @@ public class OptionGroupOptionSetting  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getSettingName() != null) sb.append("SettingName: " + getSettingName() + ",");    	
-        if (getSettingDescription() != null) sb.append("SettingDescription: " + getSettingDescription() + ",");    	
-        if (getDefaultValue() != null) sb.append("DefaultValue: " + getDefaultValue() + ",");    	
-        if (getApplyType() != null) sb.append("ApplyType: " + getApplyType() + ",");    	
-        if (getAllowedValues() != null) sb.append("AllowedValues: " + getAllowedValues() + ",");    	
+        sb.append("{");
+        if (getSettingName() != null) sb.append("SettingName: " + getSettingName() + ",");
+        if (getSettingDescription() != null) sb.append("SettingDescription: " + getSettingDescription() + ",");
+        if (getDefaultValue() != null) sb.append("DefaultValue: " + getDefaultValue() + ",");
+        if (getApplyType() != null) sb.append("ApplyType: " + getApplyType() + ",");
+        if (getAllowedValues() != null) sb.append("AllowedValues: " + getAllowedValues() + ",");
         if (isModifiable() != null) sb.append("IsModifiable: " + isModifiable() );
         sb.append("}");
         return sb.toString();

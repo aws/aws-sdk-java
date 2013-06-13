@@ -460,13 +460,13 @@ public class GetJobOutputResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getBody() != null) sb.append("Body: " + getBody() + ",");    	
-        if (getChecksum() != null) sb.append("Checksum: " + getChecksum() + ",");    	
-        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");    	
-        if (getContentRange() != null) sb.append("ContentRange: " + getContentRange() + ",");    	
-        if (getAcceptRanges() != null) sb.append("AcceptRanges: " + getAcceptRanges() + ",");    	
-        if (getContentType() != null) sb.append("ContentType: " + getContentType() + ",");    	
+        sb.append("{");
+        if (getBody() != null) sb.append("Body: " + getBody() + ",");
+        if (getChecksum() != null) sb.append("Checksum: " + getChecksum() + ",");
+        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");
+        if (getContentRange() != null) sb.append("ContentRange: " + getContentRange() + ",");
+        if (getAcceptRanges() != null) sb.append("AcceptRanges: " + getAcceptRanges() + ",");
+        if (getContentType() != null) sb.append("ContentType: " + getContentType() + ",");
         if (getArchiveDescription() != null) sb.append("ArchiveDescription: " + getArchiveDescription() );
         sb.append("}");
         return sb.toString();

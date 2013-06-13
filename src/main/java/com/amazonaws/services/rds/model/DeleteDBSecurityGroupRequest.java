@@ -44,6 +44,8 @@ public class DeleteDBSecurityGroupRequest extends AmazonWebServiceRequest  imple
      */
     public DeleteDBSecurityGroupRequest() {}
     
+
+
     /**
      * Constructs a new DeleteDBSecurityGroupRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -56,7 +58,7 @@ public class DeleteDBSecurityGroupRequest extends AmazonWebServiceRequest  imple
      * end with a hyphen or contain two consecutive hyphens</li> </ul>
      */
     public DeleteDBSecurityGroupRequest(String dBSecurityGroupName) {
-        this.dBSecurityGroupName = dBSecurityGroupName;
+        setDBSecurityGroupName(dBSecurityGroupName);
     }
 
     
@@ -130,7 +132,7 @@ public class DeleteDBSecurityGroupRequest extends AmazonWebServiceRequest  imple
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getDBSecurityGroupName() != null) sb.append("DBSecurityGroupName: " + getDBSecurityGroupName() );
         sb.append("}");
         return sb.toString();

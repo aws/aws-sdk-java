@@ -79,7 +79,7 @@ public class DescribeSynonymOptionsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getSynonyms() != null) sb.append("Synonyms: " + getSynonyms() );
         sb.append("}");
         return sb.toString();

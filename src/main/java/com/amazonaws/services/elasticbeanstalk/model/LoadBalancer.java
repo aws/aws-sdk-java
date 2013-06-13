@@ -78,7 +78,7 @@ public class LoadBalancer  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getName() != null) sb.append("Name: " + getName() );
         sb.append("}");
         return sb.toString();

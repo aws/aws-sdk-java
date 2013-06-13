@@ -46,6 +46,8 @@ public class CreatePlacementGroupRequest extends AmazonWebServiceRequest  implem
      */
     public CreatePlacementGroupRequest() {}
     
+
+
     /**
      * Constructs a new CreatePlacementGroupRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -55,8 +57,8 @@ public class CreatePlacementGroupRequest extends AmazonWebServiceRequest  implem
      * @param strategy The <code>PlacementGroup</code> strategy.
      */
     public CreatePlacementGroupRequest(String groupName, String strategy) {
-        this.groupName = groupName;
-        this.strategy = strategy;
+        setGroupName(groupName);
+        setStrategy(strategy);
     }
 
     
@@ -202,8 +204,8 @@ public class CreatePlacementGroupRequest extends AmazonWebServiceRequest  implem
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getGroupName() != null) sb.append("GroupName: " + getGroupName() + ",");    	
+        sb.append("{");
+        if (getGroupName() != null) sb.append("GroupName: " + getGroupName() + ",");
         if (getStrategy() != null) sb.append("Strategy: " + getStrategy() );
         sb.append("}");
         return sb.toString();

@@ -124,8 +124,8 @@ public class UpdateAppRequestMarshaller implements Marshaller<Request<UpdateAppR
                 jsonWriter.endObject();
             }
 
-            java.util.List<String> domainsList = updateAppRequest.getDomains();
-            if (domainsList != null) {
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> domainsList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(updateAppRequest.getDomains());
+            if (domainsList != null && !(domainsList.isAutoConstruct() && domainsList.isEmpty())) {
 
                 jsonWriter.key("Domains");
                 jsonWriter.array();

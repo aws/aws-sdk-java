@@ -30,12 +30,12 @@ public class DescribeMetricCollectionTypesResult  implements Serializable  {
      * <li><p>GroupTerminatingInstances</li> <li><p>GroupTotalInstances</li>
      * </ul>
      */
-    private java.util.List<MetricCollectionType> metrics;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<MetricCollectionType> metrics;
 
     /**
      * A list of granularities for the listed Metrics.
      */
-    private java.util.List<MetricGranularityType> granularities;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<MetricGranularityType> granularities;
 
     /**
      * The list of Metrics collected.The following metrics are supported:
@@ -55,7 +55,8 @@ public class DescribeMetricCollectionTypesResult  implements Serializable  {
     public java.util.List<MetricCollectionType> getMetrics() {
         
         if (metrics == null) {
-            metrics = new java.util.ArrayList<MetricCollectionType>();
+              metrics = new com.amazonaws.internal.ListWithAutoConstructFlag<MetricCollectionType>();
+              metrics.setAutoConstruct(true);
         }
         return metrics;
     }
@@ -80,8 +81,7 @@ public class DescribeMetricCollectionTypesResult  implements Serializable  {
             this.metrics = null;
             return;
         }
-
-        java.util.List<MetricCollectionType> metricsCopy = new java.util.ArrayList<MetricCollectionType>(metrics.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<MetricCollectionType> metricsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<MetricCollectionType>(metrics.size());
         metricsCopy.addAll(metrics);
         this.metrics = metricsCopy;
     }
@@ -138,7 +138,7 @@ public class DescribeMetricCollectionTypesResult  implements Serializable  {
         if (metrics == null) {
             this.metrics = null;
         } else {
-            java.util.List<MetricCollectionType> metricsCopy = new java.util.ArrayList<MetricCollectionType>(metrics.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<MetricCollectionType> metricsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<MetricCollectionType>(metrics.size());
             metricsCopy.addAll(metrics);
             this.metrics = metricsCopy;
         }
@@ -154,7 +154,8 @@ public class DescribeMetricCollectionTypesResult  implements Serializable  {
     public java.util.List<MetricGranularityType> getGranularities() {
         
         if (granularities == null) {
-            granularities = new java.util.ArrayList<MetricGranularityType>();
+              granularities = new com.amazonaws.internal.ListWithAutoConstructFlag<MetricGranularityType>();
+              granularities.setAutoConstruct(true);
         }
         return granularities;
     }
@@ -169,8 +170,7 @@ public class DescribeMetricCollectionTypesResult  implements Serializable  {
             this.granularities = null;
             return;
         }
-
-        java.util.List<MetricGranularityType> granularitiesCopy = new java.util.ArrayList<MetricGranularityType>(granularities.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<MetricGranularityType> granularitiesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<MetricGranularityType>(granularities.size());
         granularitiesCopy.addAll(granularities);
         this.granularities = granularitiesCopy;
     }
@@ -207,7 +207,7 @@ public class DescribeMetricCollectionTypesResult  implements Serializable  {
         if (granularities == null) {
             this.granularities = null;
         } else {
-            java.util.List<MetricGranularityType> granularitiesCopy = new java.util.ArrayList<MetricGranularityType>(granularities.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<MetricGranularityType> granularitiesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<MetricGranularityType>(granularities.size());
             granularitiesCopy.addAll(granularities);
             this.granularities = granularitiesCopy;
         }
@@ -226,8 +226,8 @@ public class DescribeMetricCollectionTypesResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getMetrics() != null) sb.append("Metrics: " + getMetrics() + ",");    	
+        sb.append("{");
+        if (getMetrics() != null) sb.append("Metrics: " + getMetrics() + ",");
         if (getGranularities() != null) sb.append("Granularities: " + getGranularities() );
         sb.append("}");
         return sb.toString();

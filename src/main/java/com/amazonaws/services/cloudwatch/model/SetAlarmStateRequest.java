@@ -304,10 +304,10 @@ public class SetAlarmStateRequest extends AmazonWebServiceRequest  implements Se
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getAlarmName() != null) sb.append("AlarmName: " + getAlarmName() + ",");    	
-        if (getStateValue() != null) sb.append("StateValue: " + getStateValue() + ",");    	
-        if (getStateReason() != null) sb.append("StateReason: " + getStateReason() + ",");    	
+        sb.append("{");
+        if (getAlarmName() != null) sb.append("AlarmName: " + getAlarmName() + ",");
+        if (getStateValue() != null) sb.append("StateValue: " + getStateValue() + ",");
+        if (getStateReason() != null) sb.append("StateReason: " + getStateReason() + ",");
         if (getStateReasonData() != null) sb.append("StateReasonData: " + getStateReasonData() );
         sb.append("}");
         return sb.toString();

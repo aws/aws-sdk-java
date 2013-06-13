@@ -26,7 +26,7 @@ public class DetachLoadBalancerFromSubnetsResult  implements Serializable  {
      * A list of subnet IDs removed from the configured set of subnets for
      * the LoadBalancer.
      */
-    private java.util.List<String> subnets;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> subnets;
 
     /**
      * A list of subnet IDs removed from the configured set of subnets for
@@ -38,7 +38,8 @@ public class DetachLoadBalancerFromSubnetsResult  implements Serializable  {
     public java.util.List<String> getSubnets() {
         
         if (subnets == null) {
-            subnets = new java.util.ArrayList<String>();
+              subnets = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              subnets.setAutoConstruct(true);
         }
         return subnets;
     }
@@ -55,8 +56,7 @@ public class DetachLoadBalancerFromSubnetsResult  implements Serializable  {
             this.subnets = null;
             return;
         }
-
-        java.util.List<String> subnetsCopy = new java.util.ArrayList<String>(subnets.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> subnetsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(subnets.size());
         subnetsCopy.addAll(subnets);
         this.subnets = subnetsCopy;
     }
@@ -97,7 +97,7 @@ public class DetachLoadBalancerFromSubnetsResult  implements Serializable  {
         if (subnets == null) {
             this.subnets = null;
         } else {
-            java.util.List<String> subnetsCopy = new java.util.ArrayList<String>(subnets.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> subnetsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(subnets.size());
             subnetsCopy.addAll(subnets);
             this.subnets = subnetsCopy;
         }
@@ -116,7 +116,7 @@ public class DetachLoadBalancerFromSubnetsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getSubnets() != null) sb.append("Subnets: " + getSubnets() );
         sb.append("}");
         return sb.toString();

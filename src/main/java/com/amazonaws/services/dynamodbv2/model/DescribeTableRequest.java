@@ -93,7 +93,7 @@ public class DescribeTableRequest extends AmazonWebServiceRequest  implements Se
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getTableName() != null) sb.append("TableName: " + getTableName() );
         sb.append("}");
         return sb.toString();

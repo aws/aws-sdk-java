@@ -26,7 +26,7 @@ public class IndexDocumentsResult  implements Serializable  {
      * The names of the fields that are currently being processed due to an
      * <code>IndexDocuments</code> action.
      */
-    private java.util.List<String> fieldNames;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> fieldNames;
 
     /**
      * The names of the fields that are currently being processed due to an
@@ -38,7 +38,8 @@ public class IndexDocumentsResult  implements Serializable  {
     public java.util.List<String> getFieldNames() {
         
         if (fieldNames == null) {
-            fieldNames = new java.util.ArrayList<String>();
+              fieldNames = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              fieldNames.setAutoConstruct(true);
         }
         return fieldNames;
     }
@@ -55,8 +56,7 @@ public class IndexDocumentsResult  implements Serializable  {
             this.fieldNames = null;
             return;
         }
-
-        java.util.List<String> fieldNamesCopy = new java.util.ArrayList<String>(fieldNames.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> fieldNamesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(fieldNames.size());
         fieldNamesCopy.addAll(fieldNames);
         this.fieldNames = fieldNamesCopy;
     }
@@ -97,7 +97,7 @@ public class IndexDocumentsResult  implements Serializable  {
         if (fieldNames == null) {
             this.fieldNames = null;
         } else {
-            java.util.List<String> fieldNamesCopy = new java.util.ArrayList<String>(fieldNames.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> fieldNamesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(fieldNames.size());
             fieldNamesCopy.addAll(fieldNames);
             this.fieldNames = fieldNamesCopy;
         }
@@ -116,7 +116,7 @@ public class IndexDocumentsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getFieldNames() != null) sb.append("FieldNames: " + getFieldNames() );
         sb.append("}");
         return sb.toString();

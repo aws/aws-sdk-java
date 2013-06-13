@@ -131,6 +131,8 @@ public class DeleteItemRequest extends AmazonWebServiceRequest  implements Seria
      */
     public DeleteItemRequest() {}
     
+
+
     /**
      * Constructs a new DeleteItemRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -141,8 +143,8 @@ public class DeleteItemRequest extends AmazonWebServiceRequest  implements Seria
      * representing the primary key of the item to delete.
      */
     public DeleteItemRequest(String tableName, java.util.Map<String,AttributeValue> key) {
-        this.tableName = tableName;
-        this.key = key;
+        setTableName(tableName);
+        setKey(key);
     }
 
     
@@ -831,12 +833,12 @@ public class DeleteItemRequest extends AmazonWebServiceRequest  implements Seria
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getTableName() != null) sb.append("TableName: " + getTableName() + ",");    	
-        if (getKey() != null) sb.append("Key: " + getKey() + ",");    	
-        if (getExpected() != null) sb.append("Expected: " + getExpected() + ",");    	
-        if (getReturnValues() != null) sb.append("ReturnValues: " + getReturnValues() + ",");    	
-        if (getReturnConsumedCapacity() != null) sb.append("ReturnConsumedCapacity: " + getReturnConsumedCapacity() + ",");    	
+        sb.append("{");
+        if (getTableName() != null) sb.append("TableName: " + getTableName() + ",");
+        if (getKey() != null) sb.append("Key: " + getKey() + ",");
+        if (getExpected() != null) sb.append("Expected: " + getExpected() + ",");
+        if (getReturnValues() != null) sb.append("ReturnValues: " + getReturnValues() + ",");
+        if (getReturnConsumedCapacity() != null) sb.append("ReturnConsumedCapacity: " + getReturnConsumedCapacity() + ",");
         if (getReturnItemCollectionMetrics() != null) sb.append("ReturnItemCollectionMetrics: " + getReturnItemCollectionMetrics() );
         sb.append("}");
         return sb.toString();

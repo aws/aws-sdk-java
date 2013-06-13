@@ -72,7 +72,7 @@ public class Storage  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getS3() != null) sb.append("S3: " + getS3() );
         sb.append("}");
         return sb.toString();

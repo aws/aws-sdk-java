@@ -25,7 +25,7 @@ public class DescribeAutoScalingGroupsResult  implements Serializable  {
     /**
      * A list of Auto Scaling groups.
      */
-    private java.util.List<AutoScalingGroup> autoScalingGroups;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<AutoScalingGroup> autoScalingGroups;
 
     /**
      * A string that marks the start of the next batch of returned results.
@@ -43,7 +43,8 @@ public class DescribeAutoScalingGroupsResult  implements Serializable  {
     public java.util.List<AutoScalingGroup> getAutoScalingGroups() {
         
         if (autoScalingGroups == null) {
-            autoScalingGroups = new java.util.ArrayList<AutoScalingGroup>();
+              autoScalingGroups = new com.amazonaws.internal.ListWithAutoConstructFlag<AutoScalingGroup>();
+              autoScalingGroups.setAutoConstruct(true);
         }
         return autoScalingGroups;
     }
@@ -58,8 +59,7 @@ public class DescribeAutoScalingGroupsResult  implements Serializable  {
             this.autoScalingGroups = null;
             return;
         }
-
-        java.util.List<AutoScalingGroup> autoScalingGroupsCopy = new java.util.ArrayList<AutoScalingGroup>(autoScalingGroups.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<AutoScalingGroup> autoScalingGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<AutoScalingGroup>(autoScalingGroups.size());
         autoScalingGroupsCopy.addAll(autoScalingGroups);
         this.autoScalingGroups = autoScalingGroupsCopy;
     }
@@ -96,7 +96,7 @@ public class DescribeAutoScalingGroupsResult  implements Serializable  {
         if (autoScalingGroups == null) {
             this.autoScalingGroups = null;
         } else {
-            java.util.List<AutoScalingGroup> autoScalingGroupsCopy = new java.util.ArrayList<AutoScalingGroup>(autoScalingGroups.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<AutoScalingGroup> autoScalingGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<AutoScalingGroup>(autoScalingGroups.size());
             autoScalingGroupsCopy.addAll(autoScalingGroups);
             this.autoScalingGroups = autoScalingGroupsCopy;
         }
@@ -158,8 +158,8 @@ public class DescribeAutoScalingGroupsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getAutoScalingGroups() != null) sb.append("AutoScalingGroups: " + getAutoScalingGroups() + ",");    	
+        sb.append("{");
+        if (getAutoScalingGroups() != null) sb.append("AutoScalingGroups: " + getAutoScalingGroups() + ",");
         if (getNextToken() != null) sb.append("NextToken: " + getNextToken() );
         sb.append("}");
         return sb.toString();

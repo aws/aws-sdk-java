@@ -50,6 +50,8 @@ public class CreateDBSnapshotRequest extends AmazonWebServiceRequest  implements
      */
     public CreateDBSnapshotRequest() {}
     
+
+
     /**
      * Constructs a new CreateDBSnapshotRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -69,8 +71,8 @@ public class CreateDBSnapshotRequest extends AmazonWebServiceRequest  implements
      * hyphens</li> </ul>
      */
     public CreateDBSnapshotRequest(String dBSnapshotIdentifier, String dBInstanceIdentifier) {
-        this.dBSnapshotIdentifier = dBSnapshotIdentifier;
-        this.dBInstanceIdentifier = dBInstanceIdentifier;
+        setDBSnapshotIdentifier(dBSnapshotIdentifier);
+        setDBInstanceIdentifier(dBInstanceIdentifier);
     }
 
     
@@ -202,8 +204,8 @@ public class CreateDBSnapshotRequest extends AmazonWebServiceRequest  implements
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getDBSnapshotIdentifier() != null) sb.append("DBSnapshotIdentifier: " + getDBSnapshotIdentifier() + ",");    	
+        sb.append("{");
+        if (getDBSnapshotIdentifier() != null) sb.append("DBSnapshotIdentifier: " + getDBSnapshotIdentifier() + ",");
         if (getDBInstanceIdentifier() != null) sb.append("DBInstanceIdentifier: " + getDBInstanceIdentifier() );
         sb.append("}");
         return sb.toString();

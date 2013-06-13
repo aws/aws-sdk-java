@@ -66,6 +66,8 @@ public class DeleteVaultRequest extends AmazonWebServiceRequest  implements Seri
      */
     public DeleteVaultRequest() {}
     
+
+
     /**
      * Constructs a new DeleteVaultRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -74,11 +76,13 @@ public class DeleteVaultRequest extends AmazonWebServiceRequest  implements Seri
      * @param vaultName The name of the vault.
      */
     public DeleteVaultRequest(String vaultName) {
-        this.vaultName = vaultName;
+        setVaultName(vaultName);
     }
 
     
     
+
+
     /**
      * Constructs a new DeleteVaultRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -92,8 +96,8 @@ public class DeleteVaultRequest extends AmazonWebServiceRequest  implements Seri
      * @param vaultName The name of the vault.
      */
     public DeleteVaultRequest(String accountId, String vaultName) {
-        this.accountId = accountId;
-        this.vaultName = vaultName;
+        setAccountId(accountId);
+        setVaultName(vaultName);
     }
 
     
@@ -201,8 +205,8 @@ public class DeleteVaultRequest extends AmazonWebServiceRequest  implements Seri
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getAccountId() != null) sb.append("AccountId: " + getAccountId() + ",");    	
+        sb.append("{");
+        if (getAccountId() != null) sb.append("AccountId: " + getAccountId() + ",");
         if (getVaultName() != null) sb.append("VaultName: " + getVaultName() );
         sb.append("}");
         return sb.toString();

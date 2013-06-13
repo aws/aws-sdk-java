@@ -32,11 +32,11 @@ public class ReservedInstancesListing  implements Serializable  {
 
     private String statusMessage;
 
-    private java.util.List<InstanceCount> instanceCounts;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<InstanceCount> instanceCounts;
 
-    private java.util.List<PriceSchedule> priceSchedules;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<PriceSchedule> priceSchedules;
 
-    private java.util.List<Tag> tags;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
 
     private String clientToken;
 
@@ -257,7 +257,8 @@ public class ReservedInstancesListing  implements Serializable  {
     public java.util.List<InstanceCount> getInstanceCounts() {
         
         if (instanceCounts == null) {
-            instanceCounts = new java.util.ArrayList<InstanceCount>();
+              instanceCounts = new com.amazonaws.internal.ListWithAutoConstructFlag<InstanceCount>();
+              instanceCounts.setAutoConstruct(true);
         }
         return instanceCounts;
     }
@@ -272,8 +273,7 @@ public class ReservedInstancesListing  implements Serializable  {
             this.instanceCounts = null;
             return;
         }
-
-        java.util.List<InstanceCount> instanceCountsCopy = new java.util.ArrayList<InstanceCount>(instanceCounts.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<InstanceCount> instanceCountsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<InstanceCount>(instanceCounts.size());
         instanceCountsCopy.addAll(instanceCounts);
         this.instanceCounts = instanceCountsCopy;
     }
@@ -310,7 +310,7 @@ public class ReservedInstancesListing  implements Serializable  {
         if (instanceCounts == null) {
             this.instanceCounts = null;
         } else {
-            java.util.List<InstanceCount> instanceCountsCopy = new java.util.ArrayList<InstanceCount>(instanceCounts.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<InstanceCount> instanceCountsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<InstanceCount>(instanceCounts.size());
             instanceCountsCopy.addAll(instanceCounts);
             this.instanceCounts = instanceCountsCopy;
         }
@@ -326,7 +326,8 @@ public class ReservedInstancesListing  implements Serializable  {
     public java.util.List<PriceSchedule> getPriceSchedules() {
         
         if (priceSchedules == null) {
-            priceSchedules = new java.util.ArrayList<PriceSchedule>();
+              priceSchedules = new com.amazonaws.internal.ListWithAutoConstructFlag<PriceSchedule>();
+              priceSchedules.setAutoConstruct(true);
         }
         return priceSchedules;
     }
@@ -341,8 +342,7 @@ public class ReservedInstancesListing  implements Serializable  {
             this.priceSchedules = null;
             return;
         }
-
-        java.util.List<PriceSchedule> priceSchedulesCopy = new java.util.ArrayList<PriceSchedule>(priceSchedules.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<PriceSchedule> priceSchedulesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<PriceSchedule>(priceSchedules.size());
         priceSchedulesCopy.addAll(priceSchedules);
         this.priceSchedules = priceSchedulesCopy;
     }
@@ -379,7 +379,7 @@ public class ReservedInstancesListing  implements Serializable  {
         if (priceSchedules == null) {
             this.priceSchedules = null;
         } else {
-            java.util.List<PriceSchedule> priceSchedulesCopy = new java.util.ArrayList<PriceSchedule>(priceSchedules.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<PriceSchedule> priceSchedulesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<PriceSchedule>(priceSchedules.size());
             priceSchedulesCopy.addAll(priceSchedules);
             this.priceSchedules = priceSchedulesCopy;
         }
@@ -395,7 +395,8 @@ public class ReservedInstancesListing  implements Serializable  {
     public java.util.List<Tag> getTags() {
         
         if (tags == null) {
-            tags = new java.util.ArrayList<Tag>();
+              tags = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>();
+              tags.setAutoConstruct(true);
         }
         return tags;
     }
@@ -410,8 +411,7 @@ public class ReservedInstancesListing  implements Serializable  {
             this.tags = null;
             return;
         }
-
-        java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>(tags.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
         tagsCopy.addAll(tags);
         this.tags = tagsCopy;
     }
@@ -448,7 +448,7 @@ public class ReservedInstancesListing  implements Serializable  {
         if (tags == null) {
             this.tags = null;
         } else {
-            java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>(tags.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
             tagsCopy.addAll(tags);
             this.tags = tagsCopy;
         }
@@ -501,16 +501,16 @@ public class ReservedInstancesListing  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getReservedInstancesListingId() != null) sb.append("ReservedInstancesListingId: " + getReservedInstancesListingId() + ",");    	
-        if (getReservedInstancesId() != null) sb.append("ReservedInstancesId: " + getReservedInstancesId() + ",");    	
-        if (getCreateDate() != null) sb.append("CreateDate: " + getCreateDate() + ",");    	
-        if (getUpdateDate() != null) sb.append("UpdateDate: " + getUpdateDate() + ",");    	
-        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");    	
-        if (getStatusMessage() != null) sb.append("StatusMessage: " + getStatusMessage() + ",");    	
-        if (getInstanceCounts() != null) sb.append("InstanceCounts: " + getInstanceCounts() + ",");    	
-        if (getPriceSchedules() != null) sb.append("PriceSchedules: " + getPriceSchedules() + ",");    	
-        if (getTags() != null) sb.append("Tags: " + getTags() + ",");    	
+        sb.append("{");
+        if (getReservedInstancesListingId() != null) sb.append("ReservedInstancesListingId: " + getReservedInstancesListingId() + ",");
+        if (getReservedInstancesId() != null) sb.append("ReservedInstancesId: " + getReservedInstancesId() + ",");
+        if (getCreateDate() != null) sb.append("CreateDate: " + getCreateDate() + ",");
+        if (getUpdateDate() != null) sb.append("UpdateDate: " + getUpdateDate() + ",");
+        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");
+        if (getStatusMessage() != null) sb.append("StatusMessage: " + getStatusMessage() + ",");
+        if (getInstanceCounts() != null) sb.append("InstanceCounts: " + getInstanceCounts() + ",");
+        if (getPriceSchedules() != null) sb.append("PriceSchedules: " + getPriceSchedules() + ",");
+        if (getTags() != null) sb.append("Tags: " + getTags() + ",");
         if (getClientToken() != null) sb.append("ClientToken: " + getClientToken() );
         sb.append("}");
         return sb.toString();

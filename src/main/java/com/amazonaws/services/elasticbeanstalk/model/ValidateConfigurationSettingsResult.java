@@ -25,7 +25,7 @@ public class ValidateConfigurationSettingsResult  implements Serializable  {
     /**
      * A list of <a>ValidationMessage</a>.
      */
-    private java.util.List<ValidationMessage> messages;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<ValidationMessage> messages;
 
     /**
      * A list of <a>ValidationMessage</a>.
@@ -35,7 +35,8 @@ public class ValidateConfigurationSettingsResult  implements Serializable  {
     public java.util.List<ValidationMessage> getMessages() {
         
         if (messages == null) {
-            messages = new java.util.ArrayList<ValidationMessage>();
+              messages = new com.amazonaws.internal.ListWithAutoConstructFlag<ValidationMessage>();
+              messages.setAutoConstruct(true);
         }
         return messages;
     }
@@ -50,8 +51,7 @@ public class ValidateConfigurationSettingsResult  implements Serializable  {
             this.messages = null;
             return;
         }
-
-        java.util.List<ValidationMessage> messagesCopy = new java.util.ArrayList<ValidationMessage>(messages.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<ValidationMessage> messagesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ValidationMessage>(messages.size());
         messagesCopy.addAll(messages);
         this.messages = messagesCopy;
     }
@@ -88,7 +88,7 @@ public class ValidateConfigurationSettingsResult  implements Serializable  {
         if (messages == null) {
             this.messages = null;
         } else {
-            java.util.List<ValidationMessage> messagesCopy = new java.util.ArrayList<ValidationMessage>(messages.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<ValidationMessage> messagesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ValidationMessage>(messages.size());
             messagesCopy.addAll(messages);
             this.messages = messagesCopy;
         }
@@ -107,7 +107,7 @@ public class ValidateConfigurationSettingsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getMessages() != null) sb.append("Messages: " + getMessages() );
         sb.append("}");
         return sb.toString();

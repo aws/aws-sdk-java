@@ -89,8 +89,8 @@ public class DescribeElasticLoadBalancersRequestMarshaller implements Marshaller
                 jsonWriter.key("StackId").value(describeElasticLoadBalancersRequest.getStackId());
             }
 
-            java.util.List<String> layerIdsList = describeElasticLoadBalancersRequest.getLayerIds();
-            if (layerIdsList != null) {
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> layerIdsList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(describeElasticLoadBalancersRequest.getLayerIds());
+            if (layerIdsList != null && !(layerIdsList.isAutoConstruct() && layerIdsList.isEmpty())) {
 
                 jsonWriter.key("LayerIds");
                 jsonWriter.array();

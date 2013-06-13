@@ -30,14 +30,14 @@ public class DeleteTagsRequest extends AmazonWebServiceRequest  implements Seria
      * A list of one or more resource IDs. This could be the ID of an AMI, an
      * instance, an EBS volume, or snapshot, etc.
      */
-    private java.util.List<String> resources;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> resources;
 
     /**
      * The tags to delete from the specified resources. Each tag item
      * consists of a key-value pair. <p> If a tag is specified without a
      * value, the tag and all of its values are deleted.
      */
-    private java.util.List<Tag> tags;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
 
     /**
      * Default constructor for a new DeleteTagsRequest object.  Callers should use the
@@ -45,6 +45,8 @@ public class DeleteTagsRequest extends AmazonWebServiceRequest  implements Seria
      */
     public DeleteTagsRequest() {}
     
+
+
     /**
      * Constructs a new DeleteTagsRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -54,7 +56,7 @@ public class DeleteTagsRequest extends AmazonWebServiceRequest  implements Seria
      * ID of an AMI, an instance, an EBS volume, or snapshot, etc.
      */
     public DeleteTagsRequest(java.util.List<String> resources) {
-        this.resources = resources;
+        setResources(resources);
     }
 
     
@@ -69,7 +71,8 @@ public class DeleteTagsRequest extends AmazonWebServiceRequest  implements Seria
     public java.util.List<String> getResources() {
         
         if (resources == null) {
-            resources = new java.util.ArrayList<String>();
+              resources = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              resources.setAutoConstruct(true);
         }
         return resources;
     }
@@ -86,8 +89,7 @@ public class DeleteTagsRequest extends AmazonWebServiceRequest  implements Seria
             this.resources = null;
             return;
         }
-
-        java.util.List<String> resourcesCopy = new java.util.ArrayList<String>(resources.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> resourcesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(resources.size());
         resourcesCopy.addAll(resources);
         this.resources = resourcesCopy;
     }
@@ -128,7 +130,7 @@ public class DeleteTagsRequest extends AmazonWebServiceRequest  implements Seria
         if (resources == null) {
             this.resources = null;
         } else {
-            java.util.List<String> resourcesCopy = new java.util.ArrayList<String>(resources.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> resourcesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(resources.size());
             resourcesCopy.addAll(resources);
             this.resources = resourcesCopy;
         }
@@ -148,7 +150,8 @@ public class DeleteTagsRequest extends AmazonWebServiceRequest  implements Seria
     public java.util.List<Tag> getTags() {
         
         if (tags == null) {
-            tags = new java.util.ArrayList<Tag>();
+              tags = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>();
+              tags.setAutoConstruct(true);
         }
         return tags;
     }
@@ -167,8 +170,7 @@ public class DeleteTagsRequest extends AmazonWebServiceRequest  implements Seria
             this.tags = null;
             return;
         }
-
-        java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>(tags.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
         tagsCopy.addAll(tags);
         this.tags = tagsCopy;
     }
@@ -213,7 +215,7 @@ public class DeleteTagsRequest extends AmazonWebServiceRequest  implements Seria
         if (tags == null) {
             this.tags = null;
         } else {
-            java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>(tags.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
             tagsCopy.addAll(tags);
             this.tags = tagsCopy;
         }
@@ -232,8 +234,8 @@ public class DeleteTagsRequest extends AmazonWebServiceRequest  implements Seria
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getResources() != null) sb.append("Resources: " + getResources() + ",");    	
+        sb.append("{");
+        if (getResources() != null) sb.append("Resources: " + getResources() + ",");
         if (getTags() != null) sb.append("Tags: " + getTags() );
         sb.append("}");
         return sb.toString();

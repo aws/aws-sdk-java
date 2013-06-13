@@ -136,6 +136,13 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
 
     /**
      * The name of the option group to be used for the restored DB instance.
+     * <p> <!-- Note that persistent options, such as the TDE_SQLServer
+     * option for Microsoft SQL Server, cannot be removed from an option
+     * group while DB instances are associated with the option group. -->
+     * Permanent options, such as the TDE option for Oracle Advanced Security
+     * TDE, cannot be removed from an option group, and that option group
+     * cannot be removed from a DB instance once it is associated with a DB
+     * instance
      */
     private String optionGroupName;
 
@@ -145,6 +152,8 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      */
     public RestoreDBInstanceFromDBSnapshotRequest() {}
     
+
+
     /**
      * Constructs a new RestoreDBInstanceFromDBSnapshotRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -163,8 +172,8 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
      * <code>my-snapshot-id</code>
      */
     public RestoreDBInstanceFromDBSnapshotRequest(String dBInstanceIdentifier, String dBSnapshotIdentifier) {
-        this.dBInstanceIdentifier = dBInstanceIdentifier;
-        this.dBSnapshotIdentifier = dBSnapshotIdentifier;
+        setDBInstanceIdentifier(dBInstanceIdentifier);
+        setDBSnapshotIdentifier(dBSnapshotIdentifier);
     }
 
     
@@ -922,8 +931,22 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     
     /**
      * The name of the option group to be used for the restored DB instance.
+     * <p> <!-- Note that persistent options, such as the TDE_SQLServer
+     * option for Microsoft SQL Server, cannot be removed from an option
+     * group while DB instances are associated with the option group. -->
+     * Permanent options, such as the TDE option for Oracle Advanced Security
+     * TDE, cannot be removed from an option group, and that option group
+     * cannot be removed from a DB instance once it is associated with a DB
+     * instance
      *
      * @return The name of the option group to be used for the restored DB instance.
+     *         <p> <!-- Note that persistent options, such as the TDE_SQLServer
+     *         option for Microsoft SQL Server, cannot be removed from an option
+     *         group while DB instances are associated with the option group. -->
+     *         Permanent options, such as the TDE option for Oracle Advanced Security
+     *         TDE, cannot be removed from an option group, and that option group
+     *         cannot be removed from a DB instance once it is associated with a DB
+     *         instance
      */
     public String getOptionGroupName() {
         return optionGroupName;
@@ -931,8 +954,22 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     
     /**
      * The name of the option group to be used for the restored DB instance.
+     * <p> <!-- Note that persistent options, such as the TDE_SQLServer
+     * option for Microsoft SQL Server, cannot be removed from an option
+     * group while DB instances are associated with the option group. -->
+     * Permanent options, such as the TDE option for Oracle Advanced Security
+     * TDE, cannot be removed from an option group, and that option group
+     * cannot be removed from a DB instance once it is associated with a DB
+     * instance
      *
      * @param optionGroupName The name of the option group to be used for the restored DB instance.
+     *         <p> <!-- Note that persistent options, such as the TDE_SQLServer
+     *         option for Microsoft SQL Server, cannot be removed from an option
+     *         group while DB instances are associated with the option group. -->
+     *         Permanent options, such as the TDE option for Oracle Advanced Security
+     *         TDE, cannot be removed from an option group, and that option group
+     *         cannot be removed from a DB instance once it is associated with a DB
+     *         instance
      */
     public void setOptionGroupName(String optionGroupName) {
         this.optionGroupName = optionGroupName;
@@ -940,10 +977,24 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     
     /**
      * The name of the option group to be used for the restored DB instance.
+     * <p> <!-- Note that persistent options, such as the TDE_SQLServer
+     * option for Microsoft SQL Server, cannot be removed from an option
+     * group while DB instances are associated with the option group. -->
+     * Permanent options, such as the TDE option for Oracle Advanced Security
+     * TDE, cannot be removed from an option group, and that option group
+     * cannot be removed from a DB instance once it is associated with a DB
+     * instance
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param optionGroupName The name of the option group to be used for the restored DB instance.
+     *         <p> <!-- Note that persistent options, such as the TDE_SQLServer
+     *         option for Microsoft SQL Server, cannot be removed from an option
+     *         group while DB instances are associated with the option group. -->
+     *         Permanent options, such as the TDE option for Oracle Advanced Security
+     *         TDE, cannot be removed from an option group, and that option group
+     *         cannot be removed from a DB instance once it is associated with a DB
+     *         instance
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -965,20 +1016,20 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends AmazonWebServiceRequ
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getDBInstanceIdentifier() != null) sb.append("DBInstanceIdentifier: " + getDBInstanceIdentifier() + ",");    	
-        if (getDBSnapshotIdentifier() != null) sb.append("DBSnapshotIdentifier: " + getDBSnapshotIdentifier() + ",");    	
-        if (getDBInstanceClass() != null) sb.append("DBInstanceClass: " + getDBInstanceClass() + ",");    	
-        if (getPort() != null) sb.append("Port: " + getPort() + ",");    	
-        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");    	
-        if (getDBSubnetGroupName() != null) sb.append("DBSubnetGroupName: " + getDBSubnetGroupName() + ",");    	
-        if (isMultiAZ() != null) sb.append("MultiAZ: " + isMultiAZ() + ",");    	
-        if (isPubliclyAccessible() != null) sb.append("PubliclyAccessible: " + isPubliclyAccessible() + ",");    	
-        if (isAutoMinorVersionUpgrade() != null) sb.append("AutoMinorVersionUpgrade: " + isAutoMinorVersionUpgrade() + ",");    	
-        if (getLicenseModel() != null) sb.append("LicenseModel: " + getLicenseModel() + ",");    	
-        if (getDBName() != null) sb.append("DBName: " + getDBName() + ",");    	
-        if (getEngine() != null) sb.append("Engine: " + getEngine() + ",");    	
-        if (getIops() != null) sb.append("Iops: " + getIops() + ",");    	
+        sb.append("{");
+        if (getDBInstanceIdentifier() != null) sb.append("DBInstanceIdentifier: " + getDBInstanceIdentifier() + ",");
+        if (getDBSnapshotIdentifier() != null) sb.append("DBSnapshotIdentifier: " + getDBSnapshotIdentifier() + ",");
+        if (getDBInstanceClass() != null) sb.append("DBInstanceClass: " + getDBInstanceClass() + ",");
+        if (getPort() != null) sb.append("Port: " + getPort() + ",");
+        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");
+        if (getDBSubnetGroupName() != null) sb.append("DBSubnetGroupName: " + getDBSubnetGroupName() + ",");
+        if (isMultiAZ() != null) sb.append("MultiAZ: " + isMultiAZ() + ",");
+        if (isPubliclyAccessible() != null) sb.append("PubliclyAccessible: " + isPubliclyAccessible() + ",");
+        if (isAutoMinorVersionUpgrade() != null) sb.append("AutoMinorVersionUpgrade: " + isAutoMinorVersionUpgrade() + ",");
+        if (getLicenseModel() != null) sb.append("LicenseModel: " + getLicenseModel() + ",");
+        if (getDBName() != null) sb.append("DBName: " + getDBName() + ",");
+        if (getEngine() != null) sb.append("Engine: " + getEngine() + ",");
+        if (getIops() != null) sb.append("Iops: " + getIops() + ",");
         if (getOptionGroupName() != null) sb.append("OptionGroupName: " + getOptionGroupName() );
         sb.append("}");
         return sb.toString();

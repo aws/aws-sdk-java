@@ -25,7 +25,7 @@ public class DescribeEnvironmentsResult  implements Serializable  {
     /**
      * Returns an <a>EnvironmentDescription</a> list.
      */
-    private java.util.List<EnvironmentDescription> environments;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<EnvironmentDescription> environments;
 
     /**
      * Returns an <a>EnvironmentDescription</a> list.
@@ -35,7 +35,8 @@ public class DescribeEnvironmentsResult  implements Serializable  {
     public java.util.List<EnvironmentDescription> getEnvironments() {
         
         if (environments == null) {
-            environments = new java.util.ArrayList<EnvironmentDescription>();
+              environments = new com.amazonaws.internal.ListWithAutoConstructFlag<EnvironmentDescription>();
+              environments.setAutoConstruct(true);
         }
         return environments;
     }
@@ -50,8 +51,7 @@ public class DescribeEnvironmentsResult  implements Serializable  {
             this.environments = null;
             return;
         }
-
-        java.util.List<EnvironmentDescription> environmentsCopy = new java.util.ArrayList<EnvironmentDescription>(environments.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<EnvironmentDescription> environmentsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<EnvironmentDescription>(environments.size());
         environmentsCopy.addAll(environments);
         this.environments = environmentsCopy;
     }
@@ -88,7 +88,7 @@ public class DescribeEnvironmentsResult  implements Serializable  {
         if (environments == null) {
             this.environments = null;
         } else {
-            java.util.List<EnvironmentDescription> environmentsCopy = new java.util.ArrayList<EnvironmentDescription>(environments.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<EnvironmentDescription> environmentsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<EnvironmentDescription>(environments.size());
             environmentsCopy.addAll(environments);
             this.environments = environmentsCopy;
         }
@@ -107,7 +107,7 @@ public class DescribeEnvironmentsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getEnvironments() != null) sb.append("Environments: " + getEnvironments() );
         sb.append("}");
         return sb.toString();

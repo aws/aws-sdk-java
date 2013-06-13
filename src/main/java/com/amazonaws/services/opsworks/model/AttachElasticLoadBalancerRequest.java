@@ -126,8 +126,8 @@ public class AttachElasticLoadBalancerRequest extends AmazonWebServiceRequest  i
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getElasticLoadBalancerName() != null) sb.append("ElasticLoadBalancerName: " + getElasticLoadBalancerName() + ",");    	
+        sb.append("{");
+        if (getElasticLoadBalancerName() != null) sb.append("ElasticLoadBalancerName: " + getElasticLoadBalancerName() + ",");
         if (getLayerId() != null) sb.append("LayerId: " + getLayerId() );
         sb.append("}");
         return sb.toString();

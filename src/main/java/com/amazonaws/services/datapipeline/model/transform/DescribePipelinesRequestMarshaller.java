@@ -86,8 +86,8 @@ public class DescribePipelinesRequestMarshaller implements Marshaller<Request<De
           jsonWriter.object();
           
 
-            java.util.List<String> pipelineIdsList = describePipelinesRequest.getPipelineIds();
-            if (pipelineIdsList != null) {
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> pipelineIdsList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(describePipelinesRequest.getPipelineIds());
+            if (pipelineIdsList != null && !(pipelineIdsList.isAutoConstruct() && pipelineIdsList.isEmpty())) {
 
                 jsonWriter.key("pipelineIds");
                 jsonWriter.array();

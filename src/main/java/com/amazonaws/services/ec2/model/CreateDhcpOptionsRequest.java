@@ -31,7 +31,7 @@ public class CreateDhcpOptionsRequest extends AmazonWebServiceRequest  implement
     /**
      * A set of one or more DHCP configurations.
      */
-    private java.util.List<DhcpConfiguration> dhcpConfigurations;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<DhcpConfiguration> dhcpConfigurations;
 
     /**
      * Default constructor for a new CreateDhcpOptionsRequest object.  Callers should use the
@@ -39,6 +39,8 @@ public class CreateDhcpOptionsRequest extends AmazonWebServiceRequest  implement
      */
     public CreateDhcpOptionsRequest() {}
     
+
+
     /**
      * Constructs a new CreateDhcpOptionsRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -47,7 +49,7 @@ public class CreateDhcpOptionsRequest extends AmazonWebServiceRequest  implement
      * @param dhcpConfigurations A set of one or more DHCP configurations.
      */
     public CreateDhcpOptionsRequest(java.util.List<DhcpConfiguration> dhcpConfigurations) {
-        this.dhcpConfigurations = dhcpConfigurations;
+        setDhcpConfigurations(dhcpConfigurations);
     }
 
     
@@ -60,7 +62,8 @@ public class CreateDhcpOptionsRequest extends AmazonWebServiceRequest  implement
     public java.util.List<DhcpConfiguration> getDhcpConfigurations() {
         
         if (dhcpConfigurations == null) {
-            dhcpConfigurations = new java.util.ArrayList<DhcpConfiguration>();
+              dhcpConfigurations = new com.amazonaws.internal.ListWithAutoConstructFlag<DhcpConfiguration>();
+              dhcpConfigurations.setAutoConstruct(true);
         }
         return dhcpConfigurations;
     }
@@ -75,8 +78,7 @@ public class CreateDhcpOptionsRequest extends AmazonWebServiceRequest  implement
             this.dhcpConfigurations = null;
             return;
         }
-
-        java.util.List<DhcpConfiguration> dhcpConfigurationsCopy = new java.util.ArrayList<DhcpConfiguration>(dhcpConfigurations.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<DhcpConfiguration> dhcpConfigurationsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<DhcpConfiguration>(dhcpConfigurations.size());
         dhcpConfigurationsCopy.addAll(dhcpConfigurations);
         this.dhcpConfigurations = dhcpConfigurationsCopy;
     }
@@ -113,7 +115,7 @@ public class CreateDhcpOptionsRequest extends AmazonWebServiceRequest  implement
         if (dhcpConfigurations == null) {
             this.dhcpConfigurations = null;
         } else {
-            java.util.List<DhcpConfiguration> dhcpConfigurationsCopy = new java.util.ArrayList<DhcpConfiguration>(dhcpConfigurations.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<DhcpConfiguration> dhcpConfigurationsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<DhcpConfiguration>(dhcpConfigurations.size());
             dhcpConfigurationsCopy.addAll(dhcpConfigurations);
             this.dhcpConfigurations = dhcpConfigurationsCopy;
         }
@@ -132,7 +134,7 @@ public class CreateDhcpOptionsRequest extends AmazonWebServiceRequest  implement
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getDhcpConfigurations() != null) sb.append("DhcpConfigurations: " + getDhcpConfigurations() );
         sb.append("}");
         return sb.toString();

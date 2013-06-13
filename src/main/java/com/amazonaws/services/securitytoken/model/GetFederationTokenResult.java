@@ -197,9 +197,9 @@ public class GetFederationTokenResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getCredentials() != null) sb.append("Credentials: " + getCredentials() + ",");    	
-        if (getFederatedUser() != null) sb.append("FederatedUser: " + getFederatedUser() + ",");    	
+        sb.append("{");
+        if (getCredentials() != null) sb.append("Credentials: " + getCredentials() + ",");
+        if (getFederatedUser() != null) sb.append("FederatedUser: " + getFederatedUser() + ",");
         if (getPackedPolicySize() != null) sb.append("PackedPolicySize: " + getPackedPolicySize() );
         sb.append("}");
         return sb.toString();

@@ -20,7 +20,7 @@ import java.io.Serializable;
  */
 public class ImportInstanceTaskDetails  implements Serializable  {
 
-    private java.util.List<ImportInstanceVolumeDetailItem> volumes;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<ImportInstanceVolumeDetailItem> volumes;
 
     private String instanceId;
 
@@ -36,7 +36,8 @@ public class ImportInstanceTaskDetails  implements Serializable  {
     public java.util.List<ImportInstanceVolumeDetailItem> getVolumes() {
         
         if (volumes == null) {
-            volumes = new java.util.ArrayList<ImportInstanceVolumeDetailItem>();
+              volumes = new com.amazonaws.internal.ListWithAutoConstructFlag<ImportInstanceVolumeDetailItem>();
+              volumes.setAutoConstruct(true);
         }
         return volumes;
     }
@@ -51,8 +52,7 @@ public class ImportInstanceTaskDetails  implements Serializable  {
             this.volumes = null;
             return;
         }
-
-        java.util.List<ImportInstanceVolumeDetailItem> volumesCopy = new java.util.ArrayList<ImportInstanceVolumeDetailItem>(volumes.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<ImportInstanceVolumeDetailItem> volumesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ImportInstanceVolumeDetailItem>(volumes.size());
         volumesCopy.addAll(volumes);
         this.volumes = volumesCopy;
     }
@@ -89,7 +89,7 @@ public class ImportInstanceTaskDetails  implements Serializable  {
         if (volumes == null) {
             this.volumes = null;
         } else {
-            java.util.List<ImportInstanceVolumeDetailItem> volumesCopy = new java.util.ArrayList<ImportInstanceVolumeDetailItem>(volumes.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<ImportInstanceVolumeDetailItem> volumesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ImportInstanceVolumeDetailItem>(volumes.size());
             volumesCopy.addAll(volumes);
             this.volumes = volumesCopy;
         }
@@ -210,10 +210,10 @@ public class ImportInstanceTaskDetails  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getVolumes() != null) sb.append("Volumes: " + getVolumes() + ",");    	
-        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ",");    	
-        if (getPlatform() != null) sb.append("Platform: " + getPlatform() + ",");    	
+        sb.append("{");
+        if (getVolumes() != null) sb.append("Volumes: " + getVolumes() + ",");
+        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ",");
+        if (getPlatform() != null) sb.append("Platform: " + getPlatform() + ",");
         if (getDescription() != null) sb.append("Description: " + getDescription() );
         sb.append("}");
         return sb.toString();

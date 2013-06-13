@@ -89,8 +89,8 @@ public class DescribeRaidArraysRequestMarshaller implements Marshaller<Request<D
                 jsonWriter.key("InstanceId").value(describeRaidArraysRequest.getInstanceId());
             }
 
-            java.util.List<String> raidArrayIdsList = describeRaidArraysRequest.getRaidArrayIds();
-            if (raidArrayIdsList != null) {
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> raidArrayIdsList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(describeRaidArraysRequest.getRaidArrayIds());
+            if (raidArrayIdsList != null && !(raidArrayIdsList.isAutoConstruct() && raidArrayIdsList.isEmpty())) {
 
                 jsonWriter.key("RaidArrayIds");
                 jsonWriter.array();

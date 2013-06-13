@@ -77,7 +77,7 @@ public class DeleteInternetGatewayRequest extends AmazonWebServiceRequest  imple
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getInternetGatewayId() != null) sb.append("InternetGatewayId: " + getInternetGatewayId() );
         sb.append("}");
         return sb.toString();

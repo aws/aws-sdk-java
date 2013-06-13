@@ -37,7 +37,7 @@ public class DescribeAppsRequest extends AmazonWebServiceRequest  implements Ser
      * parameter, <code>DescribeApps</code> returns a description of the
      * specified apps. Otherwise, it returns a description of every app.
      */
-    private java.util.List<String> appIds;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> appIds;
 
     /**
      * The app stack ID. If you use this parameter, <code>DescribeApps</code>
@@ -91,7 +91,8 @@ public class DescribeAppsRequest extends AmazonWebServiceRequest  implements Ser
     public java.util.List<String> getAppIds() {
         
         if (appIds == null) {
-            appIds = new java.util.ArrayList<String>();
+              appIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              appIds.setAutoConstruct(true);
         }
         return appIds;
     }
@@ -110,8 +111,7 @@ public class DescribeAppsRequest extends AmazonWebServiceRequest  implements Ser
             this.appIds = null;
             return;
         }
-
-        java.util.List<String> appIdsCopy = new java.util.ArrayList<String>(appIds.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> appIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(appIds.size());
         appIdsCopy.addAll(appIds);
         this.appIds = appIdsCopy;
     }
@@ -156,7 +156,7 @@ public class DescribeAppsRequest extends AmazonWebServiceRequest  implements Ser
         if (appIds == null) {
             this.appIds = null;
         } else {
-            java.util.List<String> appIdsCopy = new java.util.ArrayList<String>(appIds.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> appIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(appIds.size());
             appIdsCopy.addAll(appIds);
             this.appIds = appIdsCopy;
         }
@@ -175,8 +175,8 @@ public class DescribeAppsRequest extends AmazonWebServiceRequest  implements Ser
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getStackId() != null) sb.append("StackId: " + getStackId() + ",");    	
+        sb.append("{");
+        if (getStackId() != null) sb.append("StackId: " + getStackId() + ",");
         if (getAppIds() != null) sb.append("AppIds: " + getAppIds() );
         sb.append("}");
         return sb.toString();

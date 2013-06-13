@@ -45,12 +45,12 @@ public class Instance  implements Serializable  {
     /**
      * An array containing the instance layer IDs.
      */
-    private java.util.List<String> layerIds;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> layerIds;
 
     /**
      * An array containing the instance security group IDs.
      */
-    private java.util.List<String> securityGroupIds;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> securityGroupIds;
 
     /**
      * The instance type. OpsWorks supports all instance types except Cluster
@@ -325,7 +325,8 @@ public class Instance  implements Serializable  {
     public java.util.List<String> getLayerIds() {
         
         if (layerIds == null) {
-            layerIds = new java.util.ArrayList<String>();
+              layerIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              layerIds.setAutoConstruct(true);
         }
         return layerIds;
     }
@@ -340,8 +341,7 @@ public class Instance  implements Serializable  {
             this.layerIds = null;
             return;
         }
-
-        java.util.List<String> layerIdsCopy = new java.util.ArrayList<String>(layerIds.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> layerIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(layerIds.size());
         layerIdsCopy.addAll(layerIds);
         this.layerIds = layerIdsCopy;
     }
@@ -378,7 +378,7 @@ public class Instance  implements Serializable  {
         if (layerIds == null) {
             this.layerIds = null;
         } else {
-            java.util.List<String> layerIdsCopy = new java.util.ArrayList<String>(layerIds.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> layerIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(layerIds.size());
             layerIdsCopy.addAll(layerIds);
             this.layerIds = layerIdsCopy;
         }
@@ -394,7 +394,8 @@ public class Instance  implements Serializable  {
     public java.util.List<String> getSecurityGroupIds() {
         
         if (securityGroupIds == null) {
-            securityGroupIds = new java.util.ArrayList<String>();
+              securityGroupIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              securityGroupIds.setAutoConstruct(true);
         }
         return securityGroupIds;
     }
@@ -409,8 +410,7 @@ public class Instance  implements Serializable  {
             this.securityGroupIds = null;
             return;
         }
-
-        java.util.List<String> securityGroupIdsCopy = new java.util.ArrayList<String>(securityGroupIds.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> securityGroupIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(securityGroupIds.size());
         securityGroupIdsCopy.addAll(securityGroupIds);
         this.securityGroupIds = securityGroupIdsCopy;
     }
@@ -447,7 +447,7 @@ public class Instance  implements Serializable  {
         if (securityGroupIds == null) {
             this.securityGroupIds = null;
         } else {
-            java.util.List<String> securityGroupIdsCopy = new java.util.ArrayList<String>(securityGroupIds.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> securityGroupIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(securityGroupIds.size());
             securityGroupIdsCopy.addAll(securityGroupIds);
             this.securityGroupIds = securityGroupIdsCopy;
         }
@@ -1441,31 +1441,31 @@ public class Instance  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ",");    	
-        if (getEc2InstanceId() != null) sb.append("Ec2InstanceId: " + getEc2InstanceId() + ",");    	
-        if (getHostname() != null) sb.append("Hostname: " + getHostname() + ",");    	
-        if (getStackId() != null) sb.append("StackId: " + getStackId() + ",");    	
-        if (getLayerIds() != null) sb.append("LayerIds: " + getLayerIds() + ",");    	
-        if (getSecurityGroupIds() != null) sb.append("SecurityGroupIds: " + getSecurityGroupIds() + ",");    	
-        if (getInstanceType() != null) sb.append("InstanceType: " + getInstanceType() + ",");    	
-        if (getInstanceProfileArn() != null) sb.append("InstanceProfileArn: " + getInstanceProfileArn() + ",");    	
-        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");    	
-        if (getOs() != null) sb.append("Os: " + getOs() + ",");    	
-        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");    	
-        if (getPublicDns() != null) sb.append("PublicDns: " + getPublicDns() + ",");    	
-        if (getPrivateDns() != null) sb.append("PrivateDns: " + getPrivateDns() + ",");    	
-        if (getPublicIp() != null) sb.append("PublicIp: " + getPublicIp() + ",");    	
-        if (getPrivateIp() != null) sb.append("PrivateIp: " + getPrivateIp() + ",");    	
-        if (getElasticIp() != null) sb.append("ElasticIp: " + getElasticIp() + ",");    	
-        if (getAutoScalingType() != null) sb.append("AutoScalingType: " + getAutoScalingType() + ",");    	
-        if (getSshKeyName() != null) sb.append("SshKeyName: " + getSshKeyName() + ",");    	
-        if (getSshHostRsaKeyFingerprint() != null) sb.append("SshHostRsaKeyFingerprint: " + getSshHostRsaKeyFingerprint() + ",");    	
-        if (getSshHostDsaKeyFingerprint() != null) sb.append("SshHostDsaKeyFingerprint: " + getSshHostDsaKeyFingerprint() + ",");    	
-        if (getCreatedAt() != null) sb.append("CreatedAt: " + getCreatedAt() + ",");    	
-        if (getLastServiceErrorId() != null) sb.append("LastServiceErrorId: " + getLastServiceErrorId() + ",");    	
-        if (getArchitecture() != null) sb.append("Architecture: " + getArchitecture() + ",");    	
-        if (getRootDeviceType() != null) sb.append("RootDeviceType: " + getRootDeviceType() + ",");    	
+        sb.append("{");
+        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ",");
+        if (getEc2InstanceId() != null) sb.append("Ec2InstanceId: " + getEc2InstanceId() + ",");
+        if (getHostname() != null) sb.append("Hostname: " + getHostname() + ",");
+        if (getStackId() != null) sb.append("StackId: " + getStackId() + ",");
+        if (getLayerIds() != null) sb.append("LayerIds: " + getLayerIds() + ",");
+        if (getSecurityGroupIds() != null) sb.append("SecurityGroupIds: " + getSecurityGroupIds() + ",");
+        if (getInstanceType() != null) sb.append("InstanceType: " + getInstanceType() + ",");
+        if (getInstanceProfileArn() != null) sb.append("InstanceProfileArn: " + getInstanceProfileArn() + ",");
+        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");
+        if (getOs() != null) sb.append("Os: " + getOs() + ",");
+        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");
+        if (getPublicDns() != null) sb.append("PublicDns: " + getPublicDns() + ",");
+        if (getPrivateDns() != null) sb.append("PrivateDns: " + getPrivateDns() + ",");
+        if (getPublicIp() != null) sb.append("PublicIp: " + getPublicIp() + ",");
+        if (getPrivateIp() != null) sb.append("PrivateIp: " + getPrivateIp() + ",");
+        if (getElasticIp() != null) sb.append("ElasticIp: " + getElasticIp() + ",");
+        if (getAutoScalingType() != null) sb.append("AutoScalingType: " + getAutoScalingType() + ",");
+        if (getSshKeyName() != null) sb.append("SshKeyName: " + getSshKeyName() + ",");
+        if (getSshHostRsaKeyFingerprint() != null) sb.append("SshHostRsaKeyFingerprint: " + getSshHostRsaKeyFingerprint() + ",");
+        if (getSshHostDsaKeyFingerprint() != null) sb.append("SshHostDsaKeyFingerprint: " + getSshHostDsaKeyFingerprint() + ",");
+        if (getCreatedAt() != null) sb.append("CreatedAt: " + getCreatedAt() + ",");
+        if (getLastServiceErrorId() != null) sb.append("LastServiceErrorId: " + getLastServiceErrorId() + ",");
+        if (getArchitecture() != null) sb.append("Architecture: " + getArchitecture() + ",");
+        if (getRootDeviceType() != null) sb.append("RootDeviceType: " + getRootDeviceType() + ",");
         if (getRootDeviceVolumeId() != null) sb.append("RootDeviceVolumeId: " + getRootDeviceVolumeId() );
         sb.append("}");
         return sb.toString();

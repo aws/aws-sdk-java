@@ -444,16 +444,16 @@ public class RaidArray  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getRaidArrayId() != null) sb.append("RaidArrayId: " + getRaidArrayId() + ",");    	
-        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ",");    	
-        if (getName() != null) sb.append("Name: " + getName() + ",");    	
-        if (getRaidLevel() != null) sb.append("RaidLevel: " + getRaidLevel() + ",");    	
-        if (getNumberOfDisks() != null) sb.append("NumberOfDisks: " + getNumberOfDisks() + ",");    	
-        if (getSize() != null) sb.append("Size: " + getSize() + ",");    	
-        if (getDevice() != null) sb.append("Device: " + getDevice() + ",");    	
-        if (getMountPoint() != null) sb.append("MountPoint: " + getMountPoint() + ",");    	
-        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");    	
+        sb.append("{");
+        if (getRaidArrayId() != null) sb.append("RaidArrayId: " + getRaidArrayId() + ",");
+        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ",");
+        if (getName() != null) sb.append("Name: " + getName() + ",");
+        if (getRaidLevel() != null) sb.append("RaidLevel: " + getRaidLevel() + ",");
+        if (getNumberOfDisks() != null) sb.append("NumberOfDisks: " + getNumberOfDisks() + ",");
+        if (getSize() != null) sb.append("Size: " + getSize() + ",");
+        if (getDevice() != null) sb.append("Device: " + getDevice() + ",");
+        if (getMountPoint() != null) sb.append("MountPoint: " + getMountPoint() + ",");
+        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");
         if (getCreatedAt() != null) sb.append("CreatedAt: " + getCreatedAt() );
         sb.append("}");
         return sb.toString();

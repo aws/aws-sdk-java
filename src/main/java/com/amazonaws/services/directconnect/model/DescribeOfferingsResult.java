@@ -25,7 +25,7 @@ public class DescribeOfferingsResult  implements Serializable  {
     /**
      * A list of offerings.
      */
-    private java.util.List<Offering> offerings;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Offering> offerings;
 
     /**
      * A list of offerings.
@@ -35,7 +35,8 @@ public class DescribeOfferingsResult  implements Serializable  {
     public java.util.List<Offering> getOfferings() {
         
         if (offerings == null) {
-            offerings = new java.util.ArrayList<Offering>();
+              offerings = new com.amazonaws.internal.ListWithAutoConstructFlag<Offering>();
+              offerings.setAutoConstruct(true);
         }
         return offerings;
     }
@@ -50,8 +51,7 @@ public class DescribeOfferingsResult  implements Serializable  {
             this.offerings = null;
             return;
         }
-
-        java.util.List<Offering> offeringsCopy = new java.util.ArrayList<Offering>(offerings.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Offering> offeringsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Offering>(offerings.size());
         offeringsCopy.addAll(offerings);
         this.offerings = offeringsCopy;
     }
@@ -88,7 +88,7 @@ public class DescribeOfferingsResult  implements Serializable  {
         if (offerings == null) {
             this.offerings = null;
         } else {
-            java.util.List<Offering> offeringsCopy = new java.util.ArrayList<Offering>(offerings.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Offering> offeringsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Offering>(offerings.size());
             offeringsCopy.addAll(offerings);
             this.offerings = offeringsCopy;
         }
@@ -107,7 +107,7 @@ public class DescribeOfferingsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getOfferings() != null) sb.append("Offerings: " + getOfferings() );
         sb.append("}");
         return sb.toString();

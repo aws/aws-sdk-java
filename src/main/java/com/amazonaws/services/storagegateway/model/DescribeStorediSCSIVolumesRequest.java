@@ -33,7 +33,7 @@ public class DescribeStorediSCSIVolumesRequest extends AmazonWebServiceRequest  
      * must from the same gateway. Use <a>ListVolumes</a> to get volume ARNs
      * for a gateway.
      */
-    private java.util.List<String> volumeARNs;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> volumeARNs;
 
     /**
      * An array of strings where each string represents the Amazon Resource
@@ -49,7 +49,8 @@ public class DescribeStorediSCSIVolumesRequest extends AmazonWebServiceRequest  
     public java.util.List<String> getVolumeARNs() {
         
         if (volumeARNs == null) {
-            volumeARNs = new java.util.ArrayList<String>();
+              volumeARNs = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              volumeARNs.setAutoConstruct(true);
         }
         return volumeARNs;
     }
@@ -70,8 +71,7 @@ public class DescribeStorediSCSIVolumesRequest extends AmazonWebServiceRequest  
             this.volumeARNs = null;
             return;
         }
-
-        java.util.List<String> volumeARNsCopy = new java.util.ArrayList<String>(volumeARNs.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> volumeARNsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(volumeARNs.size());
         volumeARNsCopy.addAll(volumeARNs);
         this.volumeARNs = volumeARNsCopy;
     }
@@ -120,7 +120,7 @@ public class DescribeStorediSCSIVolumesRequest extends AmazonWebServiceRequest  
         if (volumeARNs == null) {
             this.volumeARNs = null;
         } else {
-            java.util.List<String> volumeARNsCopy = new java.util.ArrayList<String>(volumeARNs.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> volumeARNsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(volumeARNs.size());
             volumeARNsCopy.addAll(volumeARNs);
             this.volumeARNs = volumeARNsCopy;
         }
@@ -139,7 +139,7 @@ public class DescribeStorediSCSIVolumesRequest extends AmazonWebServiceRequest  
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getVolumeARNs() != null) sb.append("VolumeARNs: " + getVolumeARNs() );
         sb.append("}");
         return sb.toString();

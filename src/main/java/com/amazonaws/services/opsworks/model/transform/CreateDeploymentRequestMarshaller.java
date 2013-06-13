@@ -92,8 +92,8 @@ public class CreateDeploymentRequestMarshaller implements Marshaller<Request<Cre
                 jsonWriter.key("AppId").value(createDeploymentRequest.getAppId());
             }
 
-            java.util.List<String> instanceIdsList = createDeploymentRequest.getInstanceIds();
-            if (instanceIdsList != null) {
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> instanceIdsList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(createDeploymentRequest.getInstanceIds());
+            if (instanceIdsList != null && !(instanceIdsList.isAutoConstruct() && instanceIdsList.isEmpty())) {
 
                 jsonWriter.key("InstanceIds");
                 jsonWriter.array();
@@ -121,6 +121,13 @@ public class CreateDeploymentRequestMarshaller implements Marshaller<Request<Cre
                         if (argsListValue.getValue() != null) {
                             jsonWriter.key(argsListValue.getKey());
 
+                            jsonWriter.array();
+                            for (String valueListValue : argsListValue.getValue()) {
+                                if (valueListValue != null) {
+                                    jsonWriter.value(valueListValue);
+                                }
+                            }
+                            jsonWriter.endArray();
                         }
                     }
                     jsonWriter.endObject();

@@ -54,7 +54,7 @@ public class NewPublicVirtualInterface  implements Serializable  {
     /**
      * A list of route filter prefixes.
      */
-    private java.util.List<RouteFilterPrefix> routeFilterPrefixes;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<RouteFilterPrefix> routeFilterPrefixes;
 
     /**
      * The name of the virtual interface assigned by the customer <p>Example:
@@ -280,7 +280,8 @@ public class NewPublicVirtualInterface  implements Serializable  {
     public java.util.List<RouteFilterPrefix> getRouteFilterPrefixes() {
         
         if (routeFilterPrefixes == null) {
-            routeFilterPrefixes = new java.util.ArrayList<RouteFilterPrefix>();
+              routeFilterPrefixes = new com.amazonaws.internal.ListWithAutoConstructFlag<RouteFilterPrefix>();
+              routeFilterPrefixes.setAutoConstruct(true);
         }
         return routeFilterPrefixes;
     }
@@ -295,8 +296,7 @@ public class NewPublicVirtualInterface  implements Serializable  {
             this.routeFilterPrefixes = null;
             return;
         }
-
-        java.util.List<RouteFilterPrefix> routeFilterPrefixesCopy = new java.util.ArrayList<RouteFilterPrefix>(routeFilterPrefixes.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<RouteFilterPrefix> routeFilterPrefixesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<RouteFilterPrefix>(routeFilterPrefixes.size());
         routeFilterPrefixesCopy.addAll(routeFilterPrefixes);
         this.routeFilterPrefixes = routeFilterPrefixesCopy;
     }
@@ -333,7 +333,7 @@ public class NewPublicVirtualInterface  implements Serializable  {
         if (routeFilterPrefixes == null) {
             this.routeFilterPrefixes = null;
         } else {
-            java.util.List<RouteFilterPrefix> routeFilterPrefixesCopy = new java.util.ArrayList<RouteFilterPrefix>(routeFilterPrefixes.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<RouteFilterPrefix> routeFilterPrefixesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<RouteFilterPrefix>(routeFilterPrefixes.size());
             routeFilterPrefixesCopy.addAll(routeFilterPrefixes);
             this.routeFilterPrefixes = routeFilterPrefixesCopy;
         }
@@ -352,13 +352,13 @@ public class NewPublicVirtualInterface  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getVirtualInterfaceName() != null) sb.append("VirtualInterfaceName: " + getVirtualInterfaceName() + ",");    	
-        if (getVlan() != null) sb.append("Vlan: " + getVlan() + ",");    	
-        if (getAsn() != null) sb.append("Asn: " + getAsn() + ",");    	
-        if (getAuthKey() != null) sb.append("AuthKey: " + getAuthKey() + ",");    	
-        if (getAmazonAddress() != null) sb.append("AmazonAddress: " + getAmazonAddress() + ",");    	
-        if (getCustomerAddress() != null) sb.append("CustomerAddress: " + getCustomerAddress() + ",");    	
+        sb.append("{");
+        if (getVirtualInterfaceName() != null) sb.append("VirtualInterfaceName: " + getVirtualInterfaceName() + ",");
+        if (getVlan() != null) sb.append("Vlan: " + getVlan() + ",");
+        if (getAsn() != null) sb.append("Asn: " + getAsn() + ",");
+        if (getAuthKey() != null) sb.append("AuthKey: " + getAuthKey() + ",");
+        if (getAmazonAddress() != null) sb.append("AmazonAddress: " + getAmazonAddress() + ",");
+        if (getCustomerAddress() != null) sb.append("CustomerAddress: " + getCustomerAddress() + ",");
         if (getRouteFilterPrefixes() != null) sb.append("RouteFilterPrefixes: " + getRouteFilterPrefixes() );
         sb.append("}");
         return sb.toString();

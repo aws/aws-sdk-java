@@ -267,12 +267,12 @@ public class ServiceError  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getServiceErrorId() != null) sb.append("ServiceErrorId: " + getServiceErrorId() + ",");    	
-        if (getStackId() != null) sb.append("StackId: " + getStackId() + ",");    	
-        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ",");    	
-        if (getType() != null) sb.append("Type: " + getType() + ",");    	
-        if (getMessage() != null) sb.append("Message: " + getMessage() + ",");    	
+        sb.append("{");
+        if (getServiceErrorId() != null) sb.append("ServiceErrorId: " + getServiceErrorId() + ",");
+        if (getStackId() != null) sb.append("StackId: " + getStackId() + ",");
+        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ",");
+        if (getType() != null) sb.append("Type: " + getType() + ",");
+        if (getMessage() != null) sb.append("Message: " + getMessage() + ",");
         if (getCreatedAt() != null) sb.append("CreatedAt: " + getCreatedAt() );
         sb.append("}");
         return sb.toString();

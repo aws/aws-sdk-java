@@ -23,7 +23,7 @@ public class ListPresetsResult  implements Serializable  {
     /**
      * An array of <code>Preset</code> objects.
      */
-    private java.util.List<Preset> presets;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Preset> presets;
 
     /**
      * An array of <code>Preset</code> objects.
@@ -32,6 +32,10 @@ public class ListPresetsResult  implements Serializable  {
      */
     public java.util.List<Preset> getPresets() {
         
+        if (presets == null) {
+              presets = new com.amazonaws.internal.ListWithAutoConstructFlag<Preset>();
+              presets.setAutoConstruct(true);
+        }
         return presets;
     }
     
@@ -45,8 +49,7 @@ public class ListPresetsResult  implements Serializable  {
             this.presets = null;
             return;
         }
-
-        java.util.List<Preset> presetsCopy = new java.util.ArrayList<Preset>(presets.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Preset> presetsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Preset>(presets.size());
         presetsCopy.addAll(presets);
         this.presets = presetsCopy;
     }
@@ -83,7 +86,7 @@ public class ListPresetsResult  implements Serializable  {
         if (presets == null) {
             this.presets = null;
         } else {
-            java.util.List<Preset> presetsCopy = new java.util.ArrayList<Preset>(presets.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Preset> presetsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Preset>(presets.size());
             presetsCopy.addAll(presets);
             this.presets = presetsCopy;
         }
@@ -102,7 +105,7 @@ public class ListPresetsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getPresets() != null) sb.append("Presets: " + getPresets() );
         sb.append("}");
         return sb.toString();

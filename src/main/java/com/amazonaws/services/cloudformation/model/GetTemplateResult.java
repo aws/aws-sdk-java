@@ -105,7 +105,7 @@ public class GetTemplateResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getTemplateBody() != null) sb.append("TemplateBody: " + getTemplateBody() );
         sb.append("}");
         return sb.toString();

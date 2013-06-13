@@ -70,6 +70,8 @@ public class JobParameters  implements Serializable  {
      */
     public JobParameters() {}
     
+
+
     /**
      * Constructs a new JobParameters object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -93,10 +95,10 @@ public class JobParameters  implements Serializable  {
      * values 32���126 decimal or 0x20���0x7E hexadecimal.
      */
     public JobParameters(String format, String type, String archiveId, String description) {
-        this.format = format;
-        this.type = type;
-        this.archiveId = archiveId;
-        this.description = description;
+        setFormat(format);
+        setType(type);
+        setArchiveId(archiveId);
+        setDescription(description);
     }
 
     
@@ -406,12 +408,12 @@ public class JobParameters  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getFormat() != null) sb.append("Format: " + getFormat() + ",");    	
-        if (getType() != null) sb.append("Type: " + getType() + ",");    	
-        if (getArchiveId() != null) sb.append("ArchiveId: " + getArchiveId() + ",");    	
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");    	
-        if (getSNSTopic() != null) sb.append("SNSTopic: " + getSNSTopic() + ",");    	
+        sb.append("{");
+        if (getFormat() != null) sb.append("Format: " + getFormat() + ",");
+        if (getType() != null) sb.append("Type: " + getType() + ",");
+        if (getArchiveId() != null) sb.append("ArchiveId: " + getArchiveId() + ",");
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");
+        if (getSNSTopic() != null) sb.append("SNSTopic: " + getSNSTopic() + ",");
         if (getRetrievalByteRange() != null) sb.append("RetrievalByteRange: " + getRetrievalByteRange() );
         sb.append("}");
         return sb.toString();

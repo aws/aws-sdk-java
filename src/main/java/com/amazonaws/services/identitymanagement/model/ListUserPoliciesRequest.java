@@ -67,6 +67,8 @@ public class ListUserPoliciesRequest extends AmazonWebServiceRequest  implements
      */
     public ListUserPoliciesRequest() {}
     
+
+
     /**
      * Constructs a new ListUserPoliciesRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -75,7 +77,7 @@ public class ListUserPoliciesRequest extends AmazonWebServiceRequest  implements
      * @param userName The name of the user to list policies for.
      */
     public ListUserPoliciesRequest(String userName) {
-        this.userName = userName;
+        setUserName(userName);
     }
 
     
@@ -262,9 +264,9 @@ public class ListUserPoliciesRequest extends AmazonWebServiceRequest  implements
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getUserName() != null) sb.append("UserName: " + getUserName() + ",");    	
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");    	
+        sb.append("{");
+        if (getUserName() != null) sb.append("UserName: " + getUserName() + ",");
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");
         if (getMaxItems() != null) sb.append("MaxItems: " + getMaxItems() );
         sb.append("}");
         return sb.toString();

@@ -70,7 +70,7 @@ public class DescribeConfigurationOptionsRequest extends AmazonWebServiceRequest
      * If specified, restricts the descriptions to only the specified
      * options.
      */
-    private java.util.List<OptionSpecification> options;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<OptionSpecification> options;
 
     /**
      * Default constructor for a new DescribeConfigurationOptionsRequest object.  Callers should use the
@@ -296,7 +296,8 @@ public class DescribeConfigurationOptionsRequest extends AmazonWebServiceRequest
     public java.util.List<OptionSpecification> getOptions() {
         
         if (options == null) {
-            options = new java.util.ArrayList<OptionSpecification>();
+              options = new com.amazonaws.internal.ListWithAutoConstructFlag<OptionSpecification>();
+              options.setAutoConstruct(true);
         }
         return options;
     }
@@ -313,8 +314,7 @@ public class DescribeConfigurationOptionsRequest extends AmazonWebServiceRequest
             this.options = null;
             return;
         }
-
-        java.util.List<OptionSpecification> optionsCopy = new java.util.ArrayList<OptionSpecification>(options.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<OptionSpecification> optionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<OptionSpecification>(options.size());
         optionsCopy.addAll(options);
         this.options = optionsCopy;
     }
@@ -355,7 +355,7 @@ public class DescribeConfigurationOptionsRequest extends AmazonWebServiceRequest
         if (options == null) {
             this.options = null;
         } else {
-            java.util.List<OptionSpecification> optionsCopy = new java.util.ArrayList<OptionSpecification>(options.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<OptionSpecification> optionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<OptionSpecification>(options.size());
             optionsCopy.addAll(options);
             this.options = optionsCopy;
         }
@@ -374,11 +374,11 @@ public class DescribeConfigurationOptionsRequest extends AmazonWebServiceRequest
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getApplicationName() != null) sb.append("ApplicationName: " + getApplicationName() + ",");    	
-        if (getTemplateName() != null) sb.append("TemplateName: " + getTemplateName() + ",");    	
-        if (getEnvironmentName() != null) sb.append("EnvironmentName: " + getEnvironmentName() + ",");    	
-        if (getSolutionStackName() != null) sb.append("SolutionStackName: " + getSolutionStackName() + ",");    	
+        sb.append("{");
+        if (getApplicationName() != null) sb.append("ApplicationName: " + getApplicationName() + ",");
+        if (getTemplateName() != null) sb.append("TemplateName: " + getTemplateName() + ",");
+        if (getEnvironmentName() != null) sb.append("EnvironmentName: " + getEnvironmentName() + ",");
+        if (getSolutionStackName() != null) sb.append("SolutionStackName: " + getSolutionStackName() + ",");
         if (getOptions() != null) sb.append("Options: " + getOptions() );
         sb.append("}");
         return sb.toString();

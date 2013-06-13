@@ -23,7 +23,7 @@ public class ReceiveMessageResult  implements Serializable  {
     /**
      * A list of messages.
      */
-    private java.util.List<Message> messages;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Message> messages;
 
     /**
      * A list of messages.
@@ -33,7 +33,8 @@ public class ReceiveMessageResult  implements Serializable  {
     public java.util.List<Message> getMessages() {
         
         if (messages == null) {
-            messages = new java.util.ArrayList<Message>();
+              messages = new com.amazonaws.internal.ListWithAutoConstructFlag<Message>();
+              messages.setAutoConstruct(true);
         }
         return messages;
     }
@@ -48,8 +49,7 @@ public class ReceiveMessageResult  implements Serializable  {
             this.messages = null;
             return;
         }
-
-        java.util.List<Message> messagesCopy = new java.util.ArrayList<Message>(messages.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Message> messagesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Message>(messages.size());
         messagesCopy.addAll(messages);
         this.messages = messagesCopy;
     }
@@ -86,7 +86,7 @@ public class ReceiveMessageResult  implements Serializable  {
         if (messages == null) {
             this.messages = null;
         } else {
-            java.util.List<Message> messagesCopy = new java.util.ArrayList<Message>(messages.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Message> messagesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Message>(messages.size());
             messagesCopy.addAll(messages);
             this.messages = messagesCopy;
         }
@@ -105,7 +105,7 @@ public class ReceiveMessageResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getMessages() != null) sb.append("Messages: " + getMessages() );
         sb.append("}");
         return sb.toString();

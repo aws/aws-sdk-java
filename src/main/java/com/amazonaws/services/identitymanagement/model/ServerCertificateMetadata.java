@@ -83,6 +83,8 @@ public class ServerCertificateMetadata  implements Serializable  {
      */
     public ServerCertificateMetadata() {}
     
+
+
     /**
      * Constructs a new ServerCertificateMetadata object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -108,10 +110,10 @@ public class ServerCertificateMetadata  implements Serializable  {
      * Identity and Access Management</i>.
      */
     public ServerCertificateMetadata(String path, String serverCertificateName, String serverCertificateId, String arn) {
-        this.path = path;
-        this.serverCertificateName = serverCertificateName;
-        this.serverCertificateId = serverCertificateId;
-        this.arn = arn;
+        setPath(path);
+        setServerCertificateName(serverCertificateName);
+        setServerCertificateId(serverCertificateId);
+        setArn(arn);
     }
 
     
@@ -414,11 +416,11 @@ public class ServerCertificateMetadata  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getPath() != null) sb.append("Path: " + getPath() + ",");    	
-        if (getServerCertificateName() != null) sb.append("ServerCertificateName: " + getServerCertificateName() + ",");    	
-        if (getServerCertificateId() != null) sb.append("ServerCertificateId: " + getServerCertificateId() + ",");    	
-        if (getArn() != null) sb.append("Arn: " + getArn() + ",");    	
+        sb.append("{");
+        if (getPath() != null) sb.append("Path: " + getPath() + ",");
+        if (getServerCertificateName() != null) sb.append("ServerCertificateName: " + getServerCertificateName() + ",");
+        if (getServerCertificateId() != null) sb.append("ServerCertificateId: " + getServerCertificateId() + ",");
+        if (getArn() != null) sb.append("Arn: " + getArn() + ",");
         if (getUploadDate() != null) sb.append("UploadDate: " + getUploadDate() );
         sb.append("}");
         return sb.toString();

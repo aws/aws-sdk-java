@@ -47,6 +47,8 @@ public class CreateSnapshotRequest extends AmazonWebServiceRequest  implements S
      */
     public CreateSnapshotRequest() {}
     
+
+
     /**
      * Constructs a new CreateSnapshotRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -57,8 +59,8 @@ public class CreateSnapshotRequest extends AmazonWebServiceRequest  implements S
      * @param description The description for the new snapshot.
      */
     public CreateSnapshotRequest(String volumeId, String description) {
-        this.volumeId = volumeId;
-        this.description = description;
+        setVolumeId(volumeId);
+        setDescription(description);
     }
 
     
@@ -142,8 +144,8 @@ public class CreateSnapshotRequest extends AmazonWebServiceRequest  implements S
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getVolumeId() != null) sb.append("VolumeId: " + getVolumeId() + ",");    	
+        sb.append("{");
+        if (getVolumeId() != null) sb.append("VolumeId: " + getVolumeId() + ",");
         if (getDescription() != null) sb.append("Description: " + getDescription() );
         sb.append("}");
         return sb.toString();

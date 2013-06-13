@@ -42,7 +42,7 @@ public class DescribeInternetGatewaysRequest extends AmazonWebServiceRequest  im
     /**
      * One or more Internet gateway IDs.
      */
-    private java.util.List<String> internetGatewayIds;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> internetGatewayIds;
 
     /**
      * A list of filters used to match properties for Internet Gateways. For
@@ -51,7 +51,7 @@ public class DescribeInternetGatewaysRequest extends AmazonWebServiceRequest  im
      * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      * EC2 API reference</a>.
      */
-    private java.util.List<Filter> filters;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filters;
 
     /**
      * One or more Internet gateway IDs.
@@ -61,7 +61,8 @@ public class DescribeInternetGatewaysRequest extends AmazonWebServiceRequest  im
     public java.util.List<String> getInternetGatewayIds() {
         
         if (internetGatewayIds == null) {
-            internetGatewayIds = new java.util.ArrayList<String>();
+              internetGatewayIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              internetGatewayIds.setAutoConstruct(true);
         }
         return internetGatewayIds;
     }
@@ -76,8 +77,7 @@ public class DescribeInternetGatewaysRequest extends AmazonWebServiceRequest  im
             this.internetGatewayIds = null;
             return;
         }
-
-        java.util.List<String> internetGatewayIdsCopy = new java.util.ArrayList<String>(internetGatewayIds.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> internetGatewayIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(internetGatewayIds.size());
         internetGatewayIdsCopy.addAll(internetGatewayIds);
         this.internetGatewayIds = internetGatewayIdsCopy;
     }
@@ -114,7 +114,7 @@ public class DescribeInternetGatewaysRequest extends AmazonWebServiceRequest  im
         if (internetGatewayIds == null) {
             this.internetGatewayIds = null;
         } else {
-            java.util.List<String> internetGatewayIdsCopy = new java.util.ArrayList<String>(internetGatewayIds.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> internetGatewayIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(internetGatewayIds.size());
             internetGatewayIdsCopy.addAll(internetGatewayIds);
             this.internetGatewayIds = internetGatewayIdsCopy;
         }
@@ -138,7 +138,8 @@ public class DescribeInternetGatewaysRequest extends AmazonWebServiceRequest  im
     public java.util.List<Filter> getFilters() {
         
         if (filters == null) {
-            filters = new java.util.ArrayList<Filter>();
+              filters = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>();
+              filters.setAutoConstruct(true);
         }
         return filters;
     }
@@ -161,8 +162,7 @@ public class DescribeInternetGatewaysRequest extends AmazonWebServiceRequest  im
             this.filters = null;
             return;
         }
-
-        java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>(filters.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filtersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>(filters.size());
         filtersCopy.addAll(filters);
         this.filters = filtersCopy;
     }
@@ -215,7 +215,7 @@ public class DescribeInternetGatewaysRequest extends AmazonWebServiceRequest  im
         if (filters == null) {
             this.filters = null;
         } else {
-            java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>(filters.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filtersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>(filters.size());
             filtersCopy.addAll(filters);
             this.filters = filtersCopy;
         }
@@ -234,8 +234,8 @@ public class DescribeInternetGatewaysRequest extends AmazonWebServiceRequest  im
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getInternetGatewayIds() != null) sb.append("InternetGatewayIds: " + getInternetGatewayIds() + ",");    	
+        sb.append("{");
+        if (getInternetGatewayIds() != null) sb.append("InternetGatewayIds: " + getInternetGatewayIds() + ",");
         if (getFilters() != null) sb.append("Filters: " + getFilters() );
         sb.append("}");
         return sb.toString();

@@ -41,6 +41,8 @@ public class LBCookieStickinessPolicy  implements Serializable  {
      */
     public LBCookieStickinessPolicy() {}
     
+
+
     /**
      * Constructs a new LBCookieStickinessPolicy object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -54,8 +56,8 @@ public class LBCookieStickinessPolicy  implements Serializable  {
      * the browser session.
      */
     public LBCookieStickinessPolicy(String policyName, Long cookieExpirationPeriod) {
-        this.policyName = policyName;
-        this.cookieExpirationPeriod = cookieExpirationPeriod;
+        setPolicyName(policyName);
+        setCookieExpirationPeriod(cookieExpirationPeriod);
     }
 
     
@@ -157,8 +159,8 @@ public class LBCookieStickinessPolicy  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getPolicyName() != null) sb.append("PolicyName: " + getPolicyName() + ",");    	
+        sb.append("{");
+        if (getPolicyName() != null) sb.append("PolicyName: " + getPolicyName() + ",");
         if (getCookieExpirationPeriod() != null) sb.append("CookieExpirationPeriod: " + getCookieExpirationPeriod() );
         sb.append("}");
         return sb.toString();

@@ -65,6 +65,8 @@ public class GetVaultNotificationsRequest extends AmazonWebServiceRequest  imple
      */
     public GetVaultNotificationsRequest() {}
     
+
+
     /**
      * Constructs a new GetVaultNotificationsRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -73,11 +75,13 @@ public class GetVaultNotificationsRequest extends AmazonWebServiceRequest  imple
      * @param vaultName The name of the vault.
      */
     public GetVaultNotificationsRequest(String vaultName) {
-        this.vaultName = vaultName;
+        setVaultName(vaultName);
     }
 
     
     
+
+
     /**
      * Constructs a new GetVaultNotificationsRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -91,8 +95,8 @@ public class GetVaultNotificationsRequest extends AmazonWebServiceRequest  imple
      * @param vaultName The name of the vault.
      */
     public GetVaultNotificationsRequest(String accountId, String vaultName) {
-        this.accountId = accountId;
-        this.vaultName = vaultName;
+        setAccountId(accountId);
+        setVaultName(vaultName);
     }
 
     
@@ -200,8 +204,8 @@ public class GetVaultNotificationsRequest extends AmazonWebServiceRequest  imple
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getAccountId() != null) sb.append("AccountId: " + getAccountId() + ",");    	
+        sb.append("{");
+        if (getAccountId() != null) sb.append("AccountId: " + getAccountId() + ",");
         if (getVaultName() != null) sb.append("VaultName: " + getVaultName() );
         sb.append("}");
         return sb.toString();

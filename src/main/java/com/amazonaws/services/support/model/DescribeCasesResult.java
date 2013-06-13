@@ -26,7 +26,7 @@ public class DescribeCasesResult  implements Serializable  {
      * Array of <a href="API_CaseDetails.html"
      * title="CaseDetails">CaseDetails</a> objects.
      */
-    private java.util.List<CaseDetails> cases;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<CaseDetails> cases;
 
     /**
      * Defines a resumption point for pagination.
@@ -43,7 +43,8 @@ public class DescribeCasesResult  implements Serializable  {
     public java.util.List<CaseDetails> getCases() {
         
         if (cases == null) {
-            cases = new java.util.ArrayList<CaseDetails>();
+              cases = new com.amazonaws.internal.ListWithAutoConstructFlag<CaseDetails>();
+              cases.setAutoConstruct(true);
         }
         return cases;
     }
@@ -60,8 +61,7 @@ public class DescribeCasesResult  implements Serializable  {
             this.cases = null;
             return;
         }
-
-        java.util.List<CaseDetails> casesCopy = new java.util.ArrayList<CaseDetails>(cases.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<CaseDetails> casesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<CaseDetails>(cases.size());
         casesCopy.addAll(cases);
         this.cases = casesCopy;
     }
@@ -102,7 +102,7 @@ public class DescribeCasesResult  implements Serializable  {
         if (cases == null) {
             this.cases = null;
         } else {
-            java.util.List<CaseDetails> casesCopy = new java.util.ArrayList<CaseDetails>(cases.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<CaseDetails> casesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<CaseDetails>(cases.size());
             casesCopy.addAll(cases);
             this.cases = casesCopy;
         }
@@ -155,8 +155,8 @@ public class DescribeCasesResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getCases() != null) sb.append("Cases: " + getCases() + ",");    	
+        sb.append("{");
+        if (getCases() != null) sb.append("Cases: " + getCases() + ",");
         if (getNextToken() != null) sb.append("NextToken: " + getNextToken() );
         sb.append("}");
         return sb.toString();

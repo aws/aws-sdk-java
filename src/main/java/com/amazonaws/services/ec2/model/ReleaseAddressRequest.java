@@ -52,6 +52,8 @@ public class ReleaseAddressRequest extends AmazonWebServiceRequest  implements S
      */
     public ReleaseAddressRequest() {}
     
+
+
     /**
      * Constructs a new ReleaseAddressRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -61,7 +63,7 @@ public class ReleaseAddressRequest extends AmazonWebServiceRequest  implements S
      * your account.
      */
     public ReleaseAddressRequest(String publicIp) {
-        this.publicIp = publicIp;
+        setPublicIp(publicIp);
     }
 
     
@@ -151,8 +153,8 @@ public class ReleaseAddressRequest extends AmazonWebServiceRequest  implements S
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getPublicIp() != null) sb.append("PublicIp: " + getPublicIp() + ",");    	
+        sb.append("{");
+        if (getPublicIp() != null) sb.append("PublicIp: " + getPublicIp() + ",");
         if (getAllocationId() != null) sb.append("AllocationId: " + getAllocationId() );
         sb.append("}");
         return sb.toString();

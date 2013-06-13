@@ -25,7 +25,7 @@ public class DescribePoliciesResult  implements Serializable  {
     /**
      * A list of scaling policies.
      */
-    private java.util.List<ScalingPolicy> scalingPolicies;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<ScalingPolicy> scalingPolicies;
 
     /**
      * A string that marks the start of the next batch of returned results.
@@ -43,7 +43,8 @@ public class DescribePoliciesResult  implements Serializable  {
     public java.util.List<ScalingPolicy> getScalingPolicies() {
         
         if (scalingPolicies == null) {
-            scalingPolicies = new java.util.ArrayList<ScalingPolicy>();
+              scalingPolicies = new com.amazonaws.internal.ListWithAutoConstructFlag<ScalingPolicy>();
+              scalingPolicies.setAutoConstruct(true);
         }
         return scalingPolicies;
     }
@@ -58,8 +59,7 @@ public class DescribePoliciesResult  implements Serializable  {
             this.scalingPolicies = null;
             return;
         }
-
-        java.util.List<ScalingPolicy> scalingPoliciesCopy = new java.util.ArrayList<ScalingPolicy>(scalingPolicies.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<ScalingPolicy> scalingPoliciesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ScalingPolicy>(scalingPolicies.size());
         scalingPoliciesCopy.addAll(scalingPolicies);
         this.scalingPolicies = scalingPoliciesCopy;
     }
@@ -96,7 +96,7 @@ public class DescribePoliciesResult  implements Serializable  {
         if (scalingPolicies == null) {
             this.scalingPolicies = null;
         } else {
-            java.util.List<ScalingPolicy> scalingPoliciesCopy = new java.util.ArrayList<ScalingPolicy>(scalingPolicies.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<ScalingPolicy> scalingPoliciesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ScalingPolicy>(scalingPolicies.size());
             scalingPoliciesCopy.addAll(scalingPolicies);
             this.scalingPolicies = scalingPoliciesCopy;
         }
@@ -158,8 +158,8 @@ public class DescribePoliciesResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getScalingPolicies() != null) sb.append("ScalingPolicies: " + getScalingPolicies() + ",");    	
+        sb.append("{");
+        if (getScalingPolicies() != null) sb.append("ScalingPolicies: " + getScalingPolicies() + ",");
         if (getNextToken() != null) sb.append("NextToken: " + getNextToken() );
         sb.append("}");
         return sb.toString();

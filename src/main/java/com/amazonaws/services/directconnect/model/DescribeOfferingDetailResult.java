@@ -56,12 +56,12 @@ public class DescribeOfferingDetailResult  implements Serializable  {
     /**
      * A list of connection costs.
      */
-    private java.util.List<ConnectionCost> connectionCosts;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<ConnectionCost> connectionCosts;
 
     /**
      * A list of offering order steps.
      */
-    private java.util.List<OfferingOrderStep> orderSteps;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<OfferingOrderStep> orderSteps;
 
     /**
      * The ID of the offering. <p>Example: us-west-1_EqSV5_1G <p>Default:
@@ -299,7 +299,8 @@ public class DescribeOfferingDetailResult  implements Serializable  {
     public java.util.List<ConnectionCost> getConnectionCosts() {
         
         if (connectionCosts == null) {
-            connectionCosts = new java.util.ArrayList<ConnectionCost>();
+              connectionCosts = new com.amazonaws.internal.ListWithAutoConstructFlag<ConnectionCost>();
+              connectionCosts.setAutoConstruct(true);
         }
         return connectionCosts;
     }
@@ -314,8 +315,7 @@ public class DescribeOfferingDetailResult  implements Serializable  {
             this.connectionCosts = null;
             return;
         }
-
-        java.util.List<ConnectionCost> connectionCostsCopy = new java.util.ArrayList<ConnectionCost>(connectionCosts.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<ConnectionCost> connectionCostsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ConnectionCost>(connectionCosts.size());
         connectionCostsCopy.addAll(connectionCosts);
         this.connectionCosts = connectionCostsCopy;
     }
@@ -352,7 +352,7 @@ public class DescribeOfferingDetailResult  implements Serializable  {
         if (connectionCosts == null) {
             this.connectionCosts = null;
         } else {
-            java.util.List<ConnectionCost> connectionCostsCopy = new java.util.ArrayList<ConnectionCost>(connectionCosts.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<ConnectionCost> connectionCostsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ConnectionCost>(connectionCosts.size());
             connectionCostsCopy.addAll(connectionCosts);
             this.connectionCosts = connectionCostsCopy;
         }
@@ -368,7 +368,8 @@ public class DescribeOfferingDetailResult  implements Serializable  {
     public java.util.List<OfferingOrderStep> getOrderSteps() {
         
         if (orderSteps == null) {
-            orderSteps = new java.util.ArrayList<OfferingOrderStep>();
+              orderSteps = new com.amazonaws.internal.ListWithAutoConstructFlag<OfferingOrderStep>();
+              orderSteps.setAutoConstruct(true);
         }
         return orderSteps;
     }
@@ -383,8 +384,7 @@ public class DescribeOfferingDetailResult  implements Serializable  {
             this.orderSteps = null;
             return;
         }
-
-        java.util.List<OfferingOrderStep> orderStepsCopy = new java.util.ArrayList<OfferingOrderStep>(orderSteps.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<OfferingOrderStep> orderStepsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<OfferingOrderStep>(orderSteps.size());
         orderStepsCopy.addAll(orderSteps);
         this.orderSteps = orderStepsCopy;
     }
@@ -421,7 +421,7 @@ public class DescribeOfferingDetailResult  implements Serializable  {
         if (orderSteps == null) {
             this.orderSteps = null;
         } else {
-            java.util.List<OfferingOrderStep> orderStepsCopy = new java.util.ArrayList<OfferingOrderStep>(orderSteps.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<OfferingOrderStep> orderStepsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<OfferingOrderStep>(orderSteps.size());
             orderStepsCopy.addAll(orderSteps);
             this.orderSteps = orderStepsCopy;
         }
@@ -440,14 +440,14 @@ public class DescribeOfferingDetailResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getOfferingId() != null) sb.append("OfferingId: " + getOfferingId() + ",");    	
-        if (getRegion() != null) sb.append("Region: " + getRegion() + ",");    	
-        if (getLocation() != null) sb.append("Location: " + getLocation() + ",");    	
-        if (getOfferingName() != null) sb.append("OfferingName: " + getOfferingName() + ",");    	
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");    	
-        if (getBandwidth() != null) sb.append("Bandwidth: " + getBandwidth() + ",");    	
-        if (getConnectionCosts() != null) sb.append("ConnectionCosts: " + getConnectionCosts() + ",");    	
+        sb.append("{");
+        if (getOfferingId() != null) sb.append("OfferingId: " + getOfferingId() + ",");
+        if (getRegion() != null) sb.append("Region: " + getRegion() + ",");
+        if (getLocation() != null) sb.append("Location: " + getLocation() + ",");
+        if (getOfferingName() != null) sb.append("OfferingName: " + getOfferingName() + ",");
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");
+        if (getBandwidth() != null) sb.append("Bandwidth: " + getBandwidth() + ",");
+        if (getConnectionCosts() != null) sb.append("ConnectionCosts: " + getConnectionCosts() + ",");
         if (getOrderSteps() != null) sb.append("OrderSteps: " + getOrderSteps() );
         sb.append("}");
         return sb.toString();

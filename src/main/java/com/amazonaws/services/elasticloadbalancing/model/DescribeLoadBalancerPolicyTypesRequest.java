@@ -33,7 +33,7 @@ public class DescribeLoadBalancerPolicyTypesRequest extends AmazonWebServiceRequ
      * returns the description of all the policy types defined by Elastic
      * Load Balancing service.
      */
-    private java.util.List<String> policyTypeNames;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> policyTypeNames;
 
     /**
      * Specifies the name of the policy types. If no names are specified,
@@ -47,7 +47,8 @@ public class DescribeLoadBalancerPolicyTypesRequest extends AmazonWebServiceRequ
     public java.util.List<String> getPolicyTypeNames() {
         
         if (policyTypeNames == null) {
-            policyTypeNames = new java.util.ArrayList<String>();
+              policyTypeNames = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              policyTypeNames.setAutoConstruct(true);
         }
         return policyTypeNames;
     }
@@ -66,8 +67,7 @@ public class DescribeLoadBalancerPolicyTypesRequest extends AmazonWebServiceRequ
             this.policyTypeNames = null;
             return;
         }
-
-        java.util.List<String> policyTypeNamesCopy = new java.util.ArrayList<String>(policyTypeNames.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> policyTypeNamesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(policyTypeNames.size());
         policyTypeNamesCopy.addAll(policyTypeNames);
         this.policyTypeNames = policyTypeNamesCopy;
     }
@@ -112,7 +112,7 @@ public class DescribeLoadBalancerPolicyTypesRequest extends AmazonWebServiceRequ
         if (policyTypeNames == null) {
             this.policyTypeNames = null;
         } else {
-            java.util.List<String> policyTypeNamesCopy = new java.util.ArrayList<String>(policyTypeNames.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> policyTypeNamesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(policyTypeNames.size());
             policyTypeNamesCopy.addAll(policyTypeNames);
             this.policyTypeNames = policyTypeNamesCopy;
         }
@@ -131,7 +131,7 @@ public class DescribeLoadBalancerPolicyTypesRequest extends AmazonWebServiceRequ
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getPolicyTypeNames() != null) sb.append("PolicyTypeNames: " + getPolicyTypeNames() );
         sb.append("}");
         return sb.toString();

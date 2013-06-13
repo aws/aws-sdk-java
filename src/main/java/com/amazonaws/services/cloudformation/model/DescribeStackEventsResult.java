@@ -25,7 +25,7 @@ public class DescribeStackEventsResult  implements Serializable  {
     /**
      * A list of <code>StackEvents</code> structures.
      */
-    private java.util.List<StackEvent> stackEvents;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<StackEvent> stackEvents;
 
     /**
      * String that identifies the start of the next list of events, if there
@@ -44,7 +44,8 @@ public class DescribeStackEventsResult  implements Serializable  {
     public java.util.List<StackEvent> getStackEvents() {
         
         if (stackEvents == null) {
-            stackEvents = new java.util.ArrayList<StackEvent>();
+              stackEvents = new com.amazonaws.internal.ListWithAutoConstructFlag<StackEvent>();
+              stackEvents.setAutoConstruct(true);
         }
         return stackEvents;
     }
@@ -59,8 +60,7 @@ public class DescribeStackEventsResult  implements Serializable  {
             this.stackEvents = null;
             return;
         }
-
-        java.util.List<StackEvent> stackEventsCopy = new java.util.ArrayList<StackEvent>(stackEvents.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<StackEvent> stackEventsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<StackEvent>(stackEvents.size());
         stackEventsCopy.addAll(stackEvents);
         this.stackEvents = stackEventsCopy;
     }
@@ -97,7 +97,7 @@ public class DescribeStackEventsResult  implements Serializable  {
         if (stackEvents == null) {
             this.stackEvents = null;
         } else {
-            java.util.List<StackEvent> stackEventsCopy = new java.util.ArrayList<StackEvent>(stackEvents.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<StackEvent> stackEventsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<StackEvent>(stackEvents.size());
             stackEventsCopy.addAll(stackEvents);
             this.stackEvents = stackEventsCopy;
         }
@@ -165,8 +165,8 @@ public class DescribeStackEventsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getStackEvents() != null) sb.append("StackEvents: " + getStackEvents() + ",");    	
+        sb.append("{");
+        if (getStackEvents() != null) sb.append("StackEvents: " + getStackEvents() + ",");
         if (getNextToken() != null) sb.append("NextToken: " + getNextToken() );
         sb.append("}");
         return sb.toString();

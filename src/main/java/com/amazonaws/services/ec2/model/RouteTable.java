@@ -24,13 +24,13 @@ public class RouteTable  implements Serializable  {
 
     private String vpcId;
 
-    private java.util.List<Route> routes;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Route> routes;
 
-    private java.util.List<RouteTableAssociation> associations;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<RouteTableAssociation> associations;
 
-    private java.util.List<Tag> tags;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
 
-    private java.util.List<PropagatingVgw> propagatingVgws;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<PropagatingVgw> propagatingVgws;
 
     /**
      * Returns the value of the RouteTableId property for this object.
@@ -108,7 +108,8 @@ public class RouteTable  implements Serializable  {
     public java.util.List<Route> getRoutes() {
         
         if (routes == null) {
-            routes = new java.util.ArrayList<Route>();
+              routes = new com.amazonaws.internal.ListWithAutoConstructFlag<Route>();
+              routes.setAutoConstruct(true);
         }
         return routes;
     }
@@ -123,8 +124,7 @@ public class RouteTable  implements Serializable  {
             this.routes = null;
             return;
         }
-
-        java.util.List<Route> routesCopy = new java.util.ArrayList<Route>(routes.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Route> routesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Route>(routes.size());
         routesCopy.addAll(routes);
         this.routes = routesCopy;
     }
@@ -161,7 +161,7 @@ public class RouteTable  implements Serializable  {
         if (routes == null) {
             this.routes = null;
         } else {
-            java.util.List<Route> routesCopy = new java.util.ArrayList<Route>(routes.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Route> routesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Route>(routes.size());
             routesCopy.addAll(routes);
             this.routes = routesCopy;
         }
@@ -177,7 +177,8 @@ public class RouteTable  implements Serializable  {
     public java.util.List<RouteTableAssociation> getAssociations() {
         
         if (associations == null) {
-            associations = new java.util.ArrayList<RouteTableAssociation>();
+              associations = new com.amazonaws.internal.ListWithAutoConstructFlag<RouteTableAssociation>();
+              associations.setAutoConstruct(true);
         }
         return associations;
     }
@@ -192,8 +193,7 @@ public class RouteTable  implements Serializable  {
             this.associations = null;
             return;
         }
-
-        java.util.List<RouteTableAssociation> associationsCopy = new java.util.ArrayList<RouteTableAssociation>(associations.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<RouteTableAssociation> associationsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<RouteTableAssociation>(associations.size());
         associationsCopy.addAll(associations);
         this.associations = associationsCopy;
     }
@@ -230,7 +230,7 @@ public class RouteTable  implements Serializable  {
         if (associations == null) {
             this.associations = null;
         } else {
-            java.util.List<RouteTableAssociation> associationsCopy = new java.util.ArrayList<RouteTableAssociation>(associations.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<RouteTableAssociation> associationsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<RouteTableAssociation>(associations.size());
             associationsCopy.addAll(associations);
             this.associations = associationsCopy;
         }
@@ -246,7 +246,8 @@ public class RouteTable  implements Serializable  {
     public java.util.List<Tag> getTags() {
         
         if (tags == null) {
-            tags = new java.util.ArrayList<Tag>();
+              tags = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>();
+              tags.setAutoConstruct(true);
         }
         return tags;
     }
@@ -261,8 +262,7 @@ public class RouteTable  implements Serializable  {
             this.tags = null;
             return;
         }
-
-        java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>(tags.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
         tagsCopy.addAll(tags);
         this.tags = tagsCopy;
     }
@@ -299,7 +299,7 @@ public class RouteTable  implements Serializable  {
         if (tags == null) {
             this.tags = null;
         } else {
-            java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>(tags.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
             tagsCopy.addAll(tags);
             this.tags = tagsCopy;
         }
@@ -315,7 +315,8 @@ public class RouteTable  implements Serializable  {
     public java.util.List<PropagatingVgw> getPropagatingVgws() {
         
         if (propagatingVgws == null) {
-            propagatingVgws = new java.util.ArrayList<PropagatingVgw>();
+              propagatingVgws = new com.amazonaws.internal.ListWithAutoConstructFlag<PropagatingVgw>();
+              propagatingVgws.setAutoConstruct(true);
         }
         return propagatingVgws;
     }
@@ -330,8 +331,7 @@ public class RouteTable  implements Serializable  {
             this.propagatingVgws = null;
             return;
         }
-
-        java.util.List<PropagatingVgw> propagatingVgwsCopy = new java.util.ArrayList<PropagatingVgw>(propagatingVgws.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<PropagatingVgw> propagatingVgwsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<PropagatingVgw>(propagatingVgws.size());
         propagatingVgwsCopy.addAll(propagatingVgws);
         this.propagatingVgws = propagatingVgwsCopy;
     }
@@ -368,7 +368,7 @@ public class RouteTable  implements Serializable  {
         if (propagatingVgws == null) {
             this.propagatingVgws = null;
         } else {
-            java.util.List<PropagatingVgw> propagatingVgwsCopy = new java.util.ArrayList<PropagatingVgw>(propagatingVgws.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<PropagatingVgw> propagatingVgwsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<PropagatingVgw>(propagatingVgws.size());
             propagatingVgwsCopy.addAll(propagatingVgws);
             this.propagatingVgws = propagatingVgwsCopy;
         }
@@ -387,12 +387,12 @@ public class RouteTable  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getRouteTableId() != null) sb.append("RouteTableId: " + getRouteTableId() + ",");    	
-        if (getVpcId() != null) sb.append("VpcId: " + getVpcId() + ",");    	
-        if (getRoutes() != null) sb.append("Routes: " + getRoutes() + ",");    	
-        if (getAssociations() != null) sb.append("Associations: " + getAssociations() + ",");    	
-        if (getTags() != null) sb.append("Tags: " + getTags() + ",");    	
+        sb.append("{");
+        if (getRouteTableId() != null) sb.append("RouteTableId: " + getRouteTableId() + ",");
+        if (getVpcId() != null) sb.append("VpcId: " + getVpcId() + ",");
+        if (getRoutes() != null) sb.append("Routes: " + getRoutes() + ",");
+        if (getAssociations() != null) sb.append("Associations: " + getAssociations() + ",");
+        if (getTags() != null) sb.append("Tags: " + getTags() + ",");
         if (getPropagatingVgws() != null) sb.append("PropagatingVgws: " + getPropagatingVgws() );
         sb.append("}");
         return sb.toString();

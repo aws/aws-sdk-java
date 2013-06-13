@@ -50,6 +50,8 @@ public class DeleteLoadBalancerRequest extends AmazonWebServiceRequest  implemen
      */
     public DeleteLoadBalancerRequest() {}
     
+
+
     /**
      * Constructs a new DeleteLoadBalancerRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -59,7 +61,7 @@ public class DeleteLoadBalancerRequest extends AmazonWebServiceRequest  implemen
      * name must be unique within the client AWS account.
      */
     public DeleteLoadBalancerRequest(String loadBalancerName) {
-        this.loadBalancerName = loadBalancerName;
+        setLoadBalancerName(loadBalancerName);
     }
 
     
@@ -115,7 +117,7 @@ public class DeleteLoadBalancerRequest extends AmazonWebServiceRequest  implemen
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getLoadBalancerName() != null) sb.append("LoadBalancerName: " + getLoadBalancerName() );
         sb.append("}");
         return sb.toString();

@@ -25,7 +25,7 @@ public class DescribeBundleTasksResult  implements Serializable  {
     /**
      * The list of described bundle tasks.
      */
-    private java.util.List<BundleTask> bundleTasks;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<BundleTask> bundleTasks;
 
     /**
      * The list of described bundle tasks.
@@ -35,7 +35,8 @@ public class DescribeBundleTasksResult  implements Serializable  {
     public java.util.List<BundleTask> getBundleTasks() {
         
         if (bundleTasks == null) {
-            bundleTasks = new java.util.ArrayList<BundleTask>();
+              bundleTasks = new com.amazonaws.internal.ListWithAutoConstructFlag<BundleTask>();
+              bundleTasks.setAutoConstruct(true);
         }
         return bundleTasks;
     }
@@ -50,8 +51,7 @@ public class DescribeBundleTasksResult  implements Serializable  {
             this.bundleTasks = null;
             return;
         }
-
-        java.util.List<BundleTask> bundleTasksCopy = new java.util.ArrayList<BundleTask>(bundleTasks.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<BundleTask> bundleTasksCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<BundleTask>(bundleTasks.size());
         bundleTasksCopy.addAll(bundleTasks);
         this.bundleTasks = bundleTasksCopy;
     }
@@ -88,7 +88,7 @@ public class DescribeBundleTasksResult  implements Serializable  {
         if (bundleTasks == null) {
             this.bundleTasks = null;
         } else {
-            java.util.List<BundleTask> bundleTasksCopy = new java.util.ArrayList<BundleTask>(bundleTasks.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<BundleTask> bundleTasksCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<BundleTask>(bundleTasks.size());
             bundleTasksCopy.addAll(bundleTasks);
             this.bundleTasks = bundleTasksCopy;
         }
@@ -107,7 +107,7 @@ public class DescribeBundleTasksResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getBundleTasks() != null) sb.append("BundleTasks: " + getBundleTasks() );
         sb.append("}");
         return sb.toString();

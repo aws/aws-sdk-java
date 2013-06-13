@@ -47,7 +47,7 @@ public class DeleteCloudFrontOriginAccessIdentityRequestMarshaller implements Ma
         	request.addHeader("If-Match", StringUtils.fromString(deleteCloudFrontOriginAccessIdentityRequest.getIfMatch()));
         
 
-        String uriResourcePath = "2012-07-01/origin-access-identity/cloudfront/{Id}"; 
+        String uriResourcePath = "2013-05-12/origin-access-identity/cloudfront/{Id}"; 
         uriResourcePath = uriResourcePath.replace("{Id}", getString(deleteCloudFrontOriginAccessIdentityRequest.getId())); 
 
         if (uriResourcePath.contains("?")) {

@@ -26,9 +26,9 @@ import java.io.Serializable;
  */
 public class DescribeVolumeStatusRequest extends AmazonWebServiceRequest  implements Serializable  {
 
-    private java.util.List<String> volumeIds;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> volumeIds;
 
-    private java.util.List<Filter> filters;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filters;
 
     private String nextToken;
 
@@ -42,7 +42,8 @@ public class DescribeVolumeStatusRequest extends AmazonWebServiceRequest  implem
     public java.util.List<String> getVolumeIds() {
         
         if (volumeIds == null) {
-            volumeIds = new java.util.ArrayList<String>();
+              volumeIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              volumeIds.setAutoConstruct(true);
         }
         return volumeIds;
     }
@@ -57,8 +58,7 @@ public class DescribeVolumeStatusRequest extends AmazonWebServiceRequest  implem
             this.volumeIds = null;
             return;
         }
-
-        java.util.List<String> volumeIdsCopy = new java.util.ArrayList<String>(volumeIds.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> volumeIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(volumeIds.size());
         volumeIdsCopy.addAll(volumeIds);
         this.volumeIds = volumeIdsCopy;
     }
@@ -95,7 +95,7 @@ public class DescribeVolumeStatusRequest extends AmazonWebServiceRequest  implem
         if (volumeIds == null) {
             this.volumeIds = null;
         } else {
-            java.util.List<String> volumeIdsCopy = new java.util.ArrayList<String>(volumeIds.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> volumeIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(volumeIds.size());
             volumeIdsCopy.addAll(volumeIds);
             this.volumeIds = volumeIdsCopy;
         }
@@ -111,7 +111,8 @@ public class DescribeVolumeStatusRequest extends AmazonWebServiceRequest  implem
     public java.util.List<Filter> getFilters() {
         
         if (filters == null) {
-            filters = new java.util.ArrayList<Filter>();
+              filters = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>();
+              filters.setAutoConstruct(true);
         }
         return filters;
     }
@@ -126,8 +127,7 @@ public class DescribeVolumeStatusRequest extends AmazonWebServiceRequest  implem
             this.filters = null;
             return;
         }
-
-        java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>(filters.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filtersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>(filters.size());
         filtersCopy.addAll(filters);
         this.filters = filtersCopy;
     }
@@ -164,7 +164,7 @@ public class DescribeVolumeStatusRequest extends AmazonWebServiceRequest  implem
         if (filters == null) {
             this.filters = null;
         } else {
-            java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>(filters.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filtersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>(filters.size());
             filtersCopy.addAll(filters);
             this.filters = filtersCopy;
         }
@@ -251,10 +251,10 @@ public class DescribeVolumeStatusRequest extends AmazonWebServiceRequest  implem
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getVolumeIds() != null) sb.append("VolumeIds: " + getVolumeIds() + ",");    	
-        if (getFilters() != null) sb.append("Filters: " + getFilters() + ",");    	
-        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() + ",");    	
+        sb.append("{");
+        if (getVolumeIds() != null) sb.append("VolumeIds: " + getVolumeIds() + ",");
+        if (getFilters() != null) sb.append("Filters: " + getFilters() + ",");
+        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() + ",");
         if (getMaxResults() != null) sb.append("MaxResults: " + getMaxResults() );
         sb.append("}");
         return sb.toString();

@@ -73,6 +73,8 @@ public class ListVaultsRequest extends AmazonWebServiceRequest  implements Seria
      */
     public ListVaultsRequest() {}
     
+
+
     /**
      * Constructs a new ListVaultsRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -85,11 +87,13 @@ public class ListVaultsRequest extends AmazonWebServiceRequest  implements Seria
      * do not include hyphens in it.
      */
     public ListVaultsRequest(String accountId) {
-        this.accountId = accountId;
+        setAccountId(accountId);
     }
 
     
     
+
+
     /**
      * Constructs a new ListVaultsRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -107,9 +111,9 @@ public class ListVaultsRequest extends AmazonWebServiceRequest  implements Seria
      * 1,000 items.
      */
     public ListVaultsRequest(String accountId, String marker, String limit) {
-        this.accountId = accountId;
-        this.marker = marker;
-        this.limit = limit;
+        setAccountId(accountId);
+        setMarker(marker);
+        setLimit(limit);
     }
 
     
@@ -263,9 +267,9 @@ public class ListVaultsRequest extends AmazonWebServiceRequest  implements Seria
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getAccountId() != null) sb.append("AccountId: " + getAccountId() + ",");    	
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");    	
+        sb.append("{");
+        if (getAccountId() != null) sb.append("AccountId: " + getAccountId() + ",");
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");
         if (getLimit() != null) sb.append("Limit: " + getLimit() );
         sb.append("}");
         return sb.toString();

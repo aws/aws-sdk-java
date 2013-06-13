@@ -199,9 +199,9 @@ public class Field  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getKey() != null) sb.append("Key: " + getKey() + ",");    	
-        if (getStringValue() != null) sb.append("StringValue: " + getStringValue() + ",");    	
+        sb.append("{");
+        if (getKey() != null) sb.append("Key: " + getKey() + ",");
+        if (getStringValue() != null) sb.append("StringValue: " + getStringValue() + ",");
         if (getRefValue() != null) sb.append("RefValue: " + getRefValue() );
         sb.append("}");
         return sb.toString();

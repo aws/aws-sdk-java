@@ -43,7 +43,7 @@ public class SetLoadBalancerPoliciesForBackendServerRequest extends AmazonWebSer
      * List of policy names to be set. If the list is empty, then all current
      * polices are removed from the back-end server.
      */
-    private java.util.List<String> policyNames;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> policyNames;
 
     /**
      * The mnemonic name associated with the LoadBalancer. This name must be
@@ -129,7 +129,8 @@ public class SetLoadBalancerPoliciesForBackendServerRequest extends AmazonWebSer
     public java.util.List<String> getPolicyNames() {
         
         if (policyNames == null) {
-            policyNames = new java.util.ArrayList<String>();
+              policyNames = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              policyNames.setAutoConstruct(true);
         }
         return policyNames;
     }
@@ -146,8 +147,7 @@ public class SetLoadBalancerPoliciesForBackendServerRequest extends AmazonWebSer
             this.policyNames = null;
             return;
         }
-
-        java.util.List<String> policyNamesCopy = new java.util.ArrayList<String>(policyNames.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> policyNamesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(policyNames.size());
         policyNamesCopy.addAll(policyNames);
         this.policyNames = policyNamesCopy;
     }
@@ -188,7 +188,7 @@ public class SetLoadBalancerPoliciesForBackendServerRequest extends AmazonWebSer
         if (policyNames == null) {
             this.policyNames = null;
         } else {
-            java.util.List<String> policyNamesCopy = new java.util.ArrayList<String>(policyNames.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> policyNamesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(policyNames.size());
             policyNamesCopy.addAll(policyNames);
             this.policyNames = policyNamesCopy;
         }
@@ -207,9 +207,9 @@ public class SetLoadBalancerPoliciesForBackendServerRequest extends AmazonWebSer
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getLoadBalancerName() != null) sb.append("LoadBalancerName: " + getLoadBalancerName() + ",");    	
-        if (getInstancePort() != null) sb.append("InstancePort: " + getInstancePort() + ",");    	
+        sb.append("{");
+        if (getLoadBalancerName() != null) sb.append("LoadBalancerName: " + getLoadBalancerName() + ",");
+        if (getInstancePort() != null) sb.append("InstancePort: " + getInstancePort() + ",");
         if (getPolicyNames() != null) sb.append("PolicyNames: " + getPolicyNames() );
         sb.append("}");
         return sb.toString();

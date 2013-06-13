@@ -47,12 +47,12 @@ public class VpnGateway  implements Serializable  {
     /**
      * Contains information about the VPCs attached to the VPN gateway.
      */
-    private java.util.List<VpcAttachment> vpcAttachments;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<VpcAttachment> vpcAttachments;
 
     /**
      * A list of tags for the VpnGateway.
      */
-    private java.util.List<Tag> tags;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
 
     /**
      * Specifies the ID of the VPN gateway.
@@ -210,7 +210,8 @@ public class VpnGateway  implements Serializable  {
     public java.util.List<VpcAttachment> getVpcAttachments() {
         
         if (vpcAttachments == null) {
-            vpcAttachments = new java.util.ArrayList<VpcAttachment>();
+              vpcAttachments = new com.amazonaws.internal.ListWithAutoConstructFlag<VpcAttachment>();
+              vpcAttachments.setAutoConstruct(true);
         }
         return vpcAttachments;
     }
@@ -225,8 +226,7 @@ public class VpnGateway  implements Serializable  {
             this.vpcAttachments = null;
             return;
         }
-
-        java.util.List<VpcAttachment> vpcAttachmentsCopy = new java.util.ArrayList<VpcAttachment>(vpcAttachments.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<VpcAttachment> vpcAttachmentsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<VpcAttachment>(vpcAttachments.size());
         vpcAttachmentsCopy.addAll(vpcAttachments);
         this.vpcAttachments = vpcAttachmentsCopy;
     }
@@ -263,7 +263,7 @@ public class VpnGateway  implements Serializable  {
         if (vpcAttachments == null) {
             this.vpcAttachments = null;
         } else {
-            java.util.List<VpcAttachment> vpcAttachmentsCopy = new java.util.ArrayList<VpcAttachment>(vpcAttachments.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<VpcAttachment> vpcAttachmentsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<VpcAttachment>(vpcAttachments.size());
             vpcAttachmentsCopy.addAll(vpcAttachments);
             this.vpcAttachments = vpcAttachmentsCopy;
         }
@@ -279,7 +279,8 @@ public class VpnGateway  implements Serializable  {
     public java.util.List<Tag> getTags() {
         
         if (tags == null) {
-            tags = new java.util.ArrayList<Tag>();
+              tags = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>();
+              tags.setAutoConstruct(true);
         }
         return tags;
     }
@@ -294,8 +295,7 @@ public class VpnGateway  implements Serializable  {
             this.tags = null;
             return;
         }
-
-        java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>(tags.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
         tagsCopy.addAll(tags);
         this.tags = tagsCopy;
     }
@@ -332,7 +332,7 @@ public class VpnGateway  implements Serializable  {
         if (tags == null) {
             this.tags = null;
         } else {
-            java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>(tags.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
             tagsCopy.addAll(tags);
             this.tags = tagsCopy;
         }
@@ -351,12 +351,12 @@ public class VpnGateway  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getVpnGatewayId() != null) sb.append("VpnGatewayId: " + getVpnGatewayId() + ",");    	
-        if (getState() != null) sb.append("State: " + getState() + ",");    	
-        if (getType() != null) sb.append("Type: " + getType() + ",");    	
-        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");    	
-        if (getVpcAttachments() != null) sb.append("VpcAttachments: " + getVpcAttachments() + ",");    	
+        sb.append("{");
+        if (getVpnGatewayId() != null) sb.append("VpnGatewayId: " + getVpnGatewayId() + ",");
+        if (getState() != null) sb.append("State: " + getState() + ",");
+        if (getType() != null) sb.append("Type: " + getType() + ",");
+        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");
+        if (getVpcAttachments() != null) sb.append("VpcAttachments: " + getVpcAttachments() + ",");
         if (getTags() != null) sb.append("Tags: " + getTags() );
         sb.append("}");
         return sb.toString();

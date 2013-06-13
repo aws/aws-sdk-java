@@ -22,8 +22,8 @@ import java.io.Serializable;
  * Adds metadata tags to a DB Instance. These tags can also be used with cost allocation reporting to track cost associated with a DB Instance.
  * </p>
  * <p>
- * For an overview on tagging DB Instances, see <a href="http://docs.amazonwebservices.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html"> DB Instance
- * Tags. </a>
+ * For an overview on tagging DB Instances, see <a href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Tagging.html"> DB Instance Tags.
+ * </a>
  * </p>
  *
  * @see com.amazonaws.services.rds.AmazonRDS#addTagsToResource(AddTagsToResourceRequest)
@@ -31,39 +31,60 @@ import java.io.Serializable;
 public class AddTagsToResourceRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
-     * The DB Instance the tags will be added to.
+     * The DB Instance the tags will be added to. This value is an Amazon
+     * Resource Name (ARN). For information about creating an ARN, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
+     * Constructing an RDS Amazon Resource Name (ARN)</a>.
      */
     private String resourceName;
 
     /**
      * The tags to be assigned to the DB Instance.
      */
-    private java.util.List<Tag> tags;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
 
     /**
-     * The DB Instance the tags will be added to.
+     * The DB Instance the tags will be added to. This value is an Amazon
+     * Resource Name (ARN). For information about creating an ARN, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
+     * Constructing an RDS Amazon Resource Name (ARN)</a>.
      *
-     * @return The DB Instance the tags will be added to.
+     * @return The DB Instance the tags will be added to. This value is an Amazon
+     *         Resource Name (ARN). For information about creating an ARN, see <a
+     *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
+     *         Constructing an RDS Amazon Resource Name (ARN)</a>.
      */
     public String getResourceName() {
         return resourceName;
     }
     
     /**
-     * The DB Instance the tags will be added to.
+     * The DB Instance the tags will be added to. This value is an Amazon
+     * Resource Name (ARN). For information about creating an ARN, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
+     * Constructing an RDS Amazon Resource Name (ARN)</a>.
      *
-     * @param resourceName The DB Instance the tags will be added to.
+     * @param resourceName The DB Instance the tags will be added to. This value is an Amazon
+     *         Resource Name (ARN). For information about creating an ARN, see <a
+     *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
+     *         Constructing an RDS Amazon Resource Name (ARN)</a>.
      */
     public void setResourceName(String resourceName) {
         this.resourceName = resourceName;
     }
     
     /**
-     * The DB Instance the tags will be added to.
+     * The DB Instance the tags will be added to. This value is an Amazon
+     * Resource Name (ARN). For information about creating an ARN, see <a
+     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
+     * Constructing an RDS Amazon Resource Name (ARN)</a>.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param resourceName The DB Instance the tags will be added to.
+     * @param resourceName The DB Instance the tags will be added to. This value is an Amazon
+     *         Resource Name (ARN). For information about creating an ARN, see <a
+     *         href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html#USER_Tagging.ARN">
+     *         Constructing an RDS Amazon Resource Name (ARN)</a>.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -82,7 +103,8 @@ public class AddTagsToResourceRequest extends AmazonWebServiceRequest  implement
     public java.util.List<Tag> getTags() {
         
         if (tags == null) {
-            tags = new java.util.ArrayList<Tag>();
+              tags = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>();
+              tags.setAutoConstruct(true);
         }
         return tags;
     }
@@ -97,8 +119,7 @@ public class AddTagsToResourceRequest extends AmazonWebServiceRequest  implement
             this.tags = null;
             return;
         }
-
-        java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>(tags.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
         tagsCopy.addAll(tags);
         this.tags = tagsCopy;
     }
@@ -135,7 +156,7 @@ public class AddTagsToResourceRequest extends AmazonWebServiceRequest  implement
         if (tags == null) {
             this.tags = null;
         } else {
-            java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>(tags.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
             tagsCopy.addAll(tags);
             this.tags = tagsCopy;
         }
@@ -154,8 +175,8 @@ public class AddTagsToResourceRequest extends AmazonWebServiceRequest  implement
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getResourceName() != null) sb.append("ResourceName: " + getResourceName() + ",");    	
+        sb.append("{");
+        if (getResourceName() != null) sb.append("ResourceName: " + getResourceName() + ",");
         if (getTags() != null) sb.append("Tags: " + getTags() );
         sb.append("}");
         return sb.toString();

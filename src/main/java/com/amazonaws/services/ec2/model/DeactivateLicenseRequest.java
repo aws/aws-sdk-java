@@ -43,6 +43,8 @@ public class DeactivateLicenseRequest extends AmazonWebServiceRequest  implement
      */
     public DeactivateLicenseRequest() {}
     
+
+
     /**
      * Constructs a new DeactivateLicenseRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -54,8 +56,8 @@ public class DeactivateLicenseRequest extends AmazonWebServiceRequest  implement
      * the license.
      */
     public DeactivateLicenseRequest(String licenseId, Integer capacity) {
-        this.licenseId = licenseId;
-        this.capacity = capacity;
+        setLicenseId(licenseId);
+        setCapacity(capacity);
     }
 
     
@@ -139,8 +141,8 @@ public class DeactivateLicenseRequest extends AmazonWebServiceRequest  implement
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getLicenseId() != null) sb.append("LicenseId: " + getLicenseId() + ",");    	
+        sb.append("{");
+        if (getLicenseId() != null) sb.append("LicenseId: " + getLicenseId() + ",");
         if (getCapacity() != null) sb.append("Capacity: " + getCapacity() );
         sb.append("}");
         return sb.toString();

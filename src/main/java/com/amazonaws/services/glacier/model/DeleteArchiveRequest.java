@@ -76,6 +76,8 @@ public class DeleteArchiveRequest extends AmazonWebServiceRequest  implements Se
      */
     public DeleteArchiveRequest() {}
     
+
+
     /**
      * Constructs a new DeleteArchiveRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -85,12 +87,14 @@ public class DeleteArchiveRequest extends AmazonWebServiceRequest  implements Se
      * @param archiveId The ID of the archive to delete.
      */
     public DeleteArchiveRequest(String vaultName, String archiveId) {
-        this.vaultName = vaultName;
-        this.archiveId = archiveId;
+        setVaultName(vaultName);
+        setArchiveId(archiveId);
     }
 
     
     
+
+
     /**
      * Constructs a new DeleteArchiveRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -105,9 +109,9 @@ public class DeleteArchiveRequest extends AmazonWebServiceRequest  implements Se
      * @param archiveId The ID of the archive to delete.
      */
     public DeleteArchiveRequest(String accountId, String vaultName, String archiveId) {
-        this.accountId = accountId;
-        this.vaultName = vaultName;
-        this.archiveId = archiveId;
+        setAccountId(accountId);
+        setVaultName(vaultName);
+        setArchiveId(archiveId);
     }
 
     
@@ -249,9 +253,9 @@ public class DeleteArchiveRequest extends AmazonWebServiceRequest  implements Se
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getAccountId() != null) sb.append("AccountId: " + getAccountId() + ",");    	
-        if (getVaultName() != null) sb.append("VaultName: " + getVaultName() + ",");    	
+        sb.append("{");
+        if (getAccountId() != null) sb.append("AccountId: " + getAccountId() + ",");
+        if (getVaultName() != null) sb.append("VaultName: " + getVaultName() + ",");
         if (getArchiveId() != null) sb.append("ArchiveId: " + getArchiveId() );
         sb.append("}");
         return sb.toString();

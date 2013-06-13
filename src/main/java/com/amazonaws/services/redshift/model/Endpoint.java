@@ -111,8 +111,8 @@ public class Endpoint  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getAddress() != null) sb.append("Address: " + getAddress() + ",");    	
+        sb.append("{");
+        if (getAddress() != null) sb.append("Address: " + getAddress() + ",");
         if (getPort() != null) sb.append("Port: " + getPort() );
         sb.append("}");
         return sb.toString();

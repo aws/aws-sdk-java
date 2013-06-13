@@ -140,8 +140,8 @@ public class ServiceEndpoint  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getArn() != null) sb.append("Arn: " + getArn() + ",");    	
+        sb.append("{");
+        if (getArn() != null) sb.append("Arn: " + getArn() + ",");
         if (getEndpoint() != null) sb.append("Endpoint: " + getEndpoint() );
         sb.append("}");
         return sb.toString();

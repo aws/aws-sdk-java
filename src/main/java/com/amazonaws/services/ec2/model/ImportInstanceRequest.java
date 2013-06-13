@@ -28,7 +28,7 @@ public class ImportInstanceRequest extends AmazonWebServiceRequest  implements S
 
     private ImportInstanceLaunchSpecification launchSpecification;
 
-    private java.util.List<DiskImage> diskImages;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<DiskImage> diskImages;
 
     private String platform;
 
@@ -108,7 +108,8 @@ public class ImportInstanceRequest extends AmazonWebServiceRequest  implements S
     public java.util.List<DiskImage> getDiskImages() {
         
         if (diskImages == null) {
-            diskImages = new java.util.ArrayList<DiskImage>();
+              diskImages = new com.amazonaws.internal.ListWithAutoConstructFlag<DiskImage>();
+              diskImages.setAutoConstruct(true);
         }
         return diskImages;
     }
@@ -123,8 +124,7 @@ public class ImportInstanceRequest extends AmazonWebServiceRequest  implements S
             this.diskImages = null;
             return;
         }
-
-        java.util.List<DiskImage> diskImagesCopy = new java.util.ArrayList<DiskImage>(diskImages.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<DiskImage> diskImagesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<DiskImage>(diskImages.size());
         diskImagesCopy.addAll(diskImages);
         this.diskImages = diskImagesCopy;
     }
@@ -161,7 +161,7 @@ public class ImportInstanceRequest extends AmazonWebServiceRequest  implements S
         if (diskImages == null) {
             this.diskImages = null;
         } else {
-            java.util.List<DiskImage> diskImagesCopy = new java.util.ArrayList<DiskImage>(diskImages.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<DiskImage> diskImagesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<DiskImage>(diskImages.size());
             diskImagesCopy.addAll(diskImages);
             this.diskImages = diskImagesCopy;
         }
@@ -214,10 +214,10 @@ public class ImportInstanceRequest extends AmazonWebServiceRequest  implements S
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");    	
-        if (getLaunchSpecification() != null) sb.append("LaunchSpecification: " + getLaunchSpecification() + ",");    	
-        if (getDiskImages() != null) sb.append("DiskImages: " + getDiskImages() + ",");    	
+        sb.append("{");
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");
+        if (getLaunchSpecification() != null) sb.append("LaunchSpecification: " + getLaunchSpecification() + ",");
+        if (getDiskImages() != null) sb.append("DiskImages: " + getDiskImages() + ",");
         if (getPlatform() != null) sb.append("Platform: " + getPlatform() );
         sb.append("}");
         return sb.toString();

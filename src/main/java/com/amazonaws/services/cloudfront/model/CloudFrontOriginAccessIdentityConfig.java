@@ -49,6 +49,8 @@ public class CloudFrontOriginAccessIdentityConfig  implements Serializable  {
      */
     public CloudFrontOriginAccessIdentityConfig() {}
     
+
+
     /**
      * Constructs a new CloudFrontOriginAccessIdentityConfig object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -68,7 +70,7 @@ public class CloudFrontOriginAccessIdentityConfig  implements Serializable  {
      * CloudFrontOriginAccessIdentityAlreadyExists error.
      */
     public CloudFrontOriginAccessIdentityConfig(String callerReference) {
-        this.callerReference = callerReference;
+        setCallerReference(callerReference);
     }
 
     
@@ -218,8 +220,8 @@ public class CloudFrontOriginAccessIdentityConfig  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getCallerReference() != null) sb.append("CallerReference: " + getCallerReference() + ",");    	
+        sb.append("{");
+        if (getCallerReference() != null) sb.append("CallerReference: " + getCallerReference() + ",");
         if (getComment() != null) sb.append("Comment: " + getComment() );
         sb.append("}");
         return sb.toString();

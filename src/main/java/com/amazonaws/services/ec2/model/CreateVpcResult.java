@@ -72,7 +72,7 @@ public class CreateVpcResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getVpc() != null) sb.append("Vpc: " + getVpc() );
         sb.append("}");
         return sb.toString();

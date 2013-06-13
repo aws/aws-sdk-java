@@ -37,6 +37,8 @@ public class GetStreamingDistributionConfigRequest extends AmazonWebServiceReque
      */
     public GetStreamingDistributionConfigRequest() {}
     
+
+
     /**
      * Constructs a new GetStreamingDistributionConfigRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -45,7 +47,7 @@ public class GetStreamingDistributionConfigRequest extends AmazonWebServiceReque
      * @param id The streaming distribution's id.
      */
     public GetStreamingDistributionConfigRequest(String id) {
-        this.id = id;
+        setId(id);
     }
 
     
@@ -95,7 +97,7 @@ public class GetStreamingDistributionConfigRequest extends AmazonWebServiceReque
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getId() != null) sb.append("Id: " + getId() );
         sb.append("}");
         return sb.toString();

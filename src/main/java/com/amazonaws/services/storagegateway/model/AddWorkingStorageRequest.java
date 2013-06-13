@@ -51,7 +51,7 @@ public class AddWorkingStorageRequest extends AmazonWebServiceRequest  implement
      * length of 300. You can get the disk IDs from the <a>ListLocalDisks</a>
      * API.
      */
-    private java.util.List<String> diskIds;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> diskIds;
 
     /**
      * The Amazon Resource Name (ARN) of the gateway. Use the
@@ -122,7 +122,8 @@ public class AddWorkingStorageRequest extends AmazonWebServiceRequest  implement
     public java.util.List<String> getDiskIds() {
         
         if (diskIds == null) {
-            diskIds = new java.util.ArrayList<String>();
+              diskIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              diskIds.setAutoConstruct(true);
         }
         return diskIds;
     }
@@ -143,8 +144,7 @@ public class AddWorkingStorageRequest extends AmazonWebServiceRequest  implement
             this.diskIds = null;
             return;
         }
-
-        java.util.List<String> diskIdsCopy = new java.util.ArrayList<String>(diskIds.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> diskIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(diskIds.size());
         diskIdsCopy.addAll(diskIds);
         this.diskIds = diskIdsCopy;
     }
@@ -193,7 +193,7 @@ public class AddWorkingStorageRequest extends AmazonWebServiceRequest  implement
         if (diskIds == null) {
             this.diskIds = null;
         } else {
-            java.util.List<String> diskIdsCopy = new java.util.ArrayList<String>(diskIds.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> diskIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(diskIds.size());
             diskIdsCopy.addAll(diskIds);
             this.diskIds = diskIdsCopy;
         }
@@ -212,8 +212,8 @@ public class AddWorkingStorageRequest extends AmazonWebServiceRequest  implement
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getGatewayARN() != null) sb.append("GatewayARN: " + getGatewayARN() + ",");    	
+        sb.append("{");
+        if (getGatewayARN() != null) sb.append("GatewayARN: " + getGatewayARN() + ",");
         if (getDiskIds() != null) sb.append("DiskIds: " + getDiskIds() );
         sb.append("}");
         return sb.toString();

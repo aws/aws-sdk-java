@@ -58,6 +58,10 @@ public class OptionStaxUnmarshaller implements Unmarshaller<Option, StaxUnmarsha
                     option.setPersistent(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("Permanent", targetDepth)) {
+                    option.setPermanent(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
                 if (context.testExpression("Port", targetDepth)) {
                     option.setPort(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

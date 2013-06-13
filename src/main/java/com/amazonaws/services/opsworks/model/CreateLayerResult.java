@@ -72,7 +72,7 @@ public class CreateLayerResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getLayerId() != null) sb.append("LayerId: " + getLayerId() );
         sb.append("}");
         return sb.toString();

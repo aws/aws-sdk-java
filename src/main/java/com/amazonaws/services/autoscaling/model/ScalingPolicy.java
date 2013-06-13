@@ -78,7 +78,7 @@ public class ScalingPolicy  implements Serializable  {
     /**
      * A list of CloudWatch Alarms related to the policy.
      */
-    private java.util.List<Alarm> alarms;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Alarm> alarms;
 
     /**
      * Changes the <code>DesiredCapacity</code> of the Auto Scaling group by
@@ -388,7 +388,8 @@ public class ScalingPolicy  implements Serializable  {
     public java.util.List<Alarm> getAlarms() {
         
         if (alarms == null) {
-            alarms = new java.util.ArrayList<Alarm>();
+              alarms = new com.amazonaws.internal.ListWithAutoConstructFlag<Alarm>();
+              alarms.setAutoConstruct(true);
         }
         return alarms;
     }
@@ -403,8 +404,7 @@ public class ScalingPolicy  implements Serializable  {
             this.alarms = null;
             return;
         }
-
-        java.util.List<Alarm> alarmsCopy = new java.util.ArrayList<Alarm>(alarms.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Alarm> alarmsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Alarm>(alarms.size());
         alarmsCopy.addAll(alarms);
         this.alarms = alarmsCopy;
     }
@@ -441,7 +441,7 @@ public class ScalingPolicy  implements Serializable  {
         if (alarms == null) {
             this.alarms = null;
         } else {
-            java.util.List<Alarm> alarmsCopy = new java.util.ArrayList<Alarm>(alarms.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Alarm> alarmsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Alarm>(alarms.size());
             alarmsCopy.addAll(alarms);
             this.alarms = alarmsCopy;
         }
@@ -500,14 +500,14 @@ public class ScalingPolicy  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getAutoScalingGroupName() != null) sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ",");    	
-        if (getPolicyName() != null) sb.append("PolicyName: " + getPolicyName() + ",");    	
-        if (getScalingAdjustment() != null) sb.append("ScalingAdjustment: " + getScalingAdjustment() + ",");    	
-        if (getAdjustmentType() != null) sb.append("AdjustmentType: " + getAdjustmentType() + ",");    	
-        if (getCooldown() != null) sb.append("Cooldown: " + getCooldown() + ",");    	
-        if (getPolicyARN() != null) sb.append("PolicyARN: " + getPolicyARN() + ",");    	
-        if (getAlarms() != null) sb.append("Alarms: " + getAlarms() + ",");    	
+        sb.append("{");
+        if (getAutoScalingGroupName() != null) sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ",");
+        if (getPolicyName() != null) sb.append("PolicyName: " + getPolicyName() + ",");
+        if (getScalingAdjustment() != null) sb.append("ScalingAdjustment: " + getScalingAdjustment() + ",");
+        if (getAdjustmentType() != null) sb.append("AdjustmentType: " + getAdjustmentType() + ",");
+        if (getCooldown() != null) sb.append("Cooldown: " + getCooldown() + ",");
+        if (getPolicyARN() != null) sb.append("PolicyARN: " + getPolicyARN() + ",");
+        if (getAlarms() != null) sb.append("Alarms: " + getAlarms() + ",");
         if (getMinAdjustmentStep() != null) sb.append("MinAdjustmentStep: " + getMinAdjustmentStep() );
         sb.append("}");
         return sb.toString();

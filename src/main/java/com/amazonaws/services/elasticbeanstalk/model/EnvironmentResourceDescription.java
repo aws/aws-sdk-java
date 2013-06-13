@@ -33,27 +33,27 @@ public class EnvironmentResourceDescription  implements Serializable  {
     /**
      * The <code>AutoScalingGroups</code> used by this environment.
      */
-    private java.util.List<AutoScalingGroup> autoScalingGroups;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<AutoScalingGroup> autoScalingGroups;
 
     /**
      * The Amazon EC2 instances used by this environment.
      */
-    private java.util.List<Instance> instances;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Instance> instances;
 
     /**
      * The Auto Scaling launch configurations in use by this environment.
      */
-    private java.util.List<LaunchConfiguration> launchConfigurations;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<LaunchConfiguration> launchConfigurations;
 
     /**
      * The LoadBalancers in use by this environment.
      */
-    private java.util.List<LoadBalancer> loadBalancers;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<LoadBalancer> loadBalancers;
 
     /**
      * The <code>AutoScaling</code> triggers in use by this environment.
      */
-    private java.util.List<Trigger> triggers;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Trigger> triggers;
 
     /**
      * Default constructor for a new EnvironmentResourceDescription object.  Callers should use the
@@ -112,7 +112,8 @@ public class EnvironmentResourceDescription  implements Serializable  {
     public java.util.List<AutoScalingGroup> getAutoScalingGroups() {
         
         if (autoScalingGroups == null) {
-            autoScalingGroups = new java.util.ArrayList<AutoScalingGroup>();
+              autoScalingGroups = new com.amazonaws.internal.ListWithAutoConstructFlag<AutoScalingGroup>();
+              autoScalingGroups.setAutoConstruct(true);
         }
         return autoScalingGroups;
     }
@@ -127,8 +128,7 @@ public class EnvironmentResourceDescription  implements Serializable  {
             this.autoScalingGroups = null;
             return;
         }
-
-        java.util.List<AutoScalingGroup> autoScalingGroupsCopy = new java.util.ArrayList<AutoScalingGroup>(autoScalingGroups.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<AutoScalingGroup> autoScalingGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<AutoScalingGroup>(autoScalingGroups.size());
         autoScalingGroupsCopy.addAll(autoScalingGroups);
         this.autoScalingGroups = autoScalingGroupsCopy;
     }
@@ -165,7 +165,7 @@ public class EnvironmentResourceDescription  implements Serializable  {
         if (autoScalingGroups == null) {
             this.autoScalingGroups = null;
         } else {
-            java.util.List<AutoScalingGroup> autoScalingGroupsCopy = new java.util.ArrayList<AutoScalingGroup>(autoScalingGroups.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<AutoScalingGroup> autoScalingGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<AutoScalingGroup>(autoScalingGroups.size());
             autoScalingGroupsCopy.addAll(autoScalingGroups);
             this.autoScalingGroups = autoScalingGroupsCopy;
         }
@@ -181,7 +181,8 @@ public class EnvironmentResourceDescription  implements Serializable  {
     public java.util.List<Instance> getInstances() {
         
         if (instances == null) {
-            instances = new java.util.ArrayList<Instance>();
+              instances = new com.amazonaws.internal.ListWithAutoConstructFlag<Instance>();
+              instances.setAutoConstruct(true);
         }
         return instances;
     }
@@ -196,8 +197,7 @@ public class EnvironmentResourceDescription  implements Serializable  {
             this.instances = null;
             return;
         }
-
-        java.util.List<Instance> instancesCopy = new java.util.ArrayList<Instance>(instances.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Instance> instancesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Instance>(instances.size());
         instancesCopy.addAll(instances);
         this.instances = instancesCopy;
     }
@@ -234,7 +234,7 @@ public class EnvironmentResourceDescription  implements Serializable  {
         if (instances == null) {
             this.instances = null;
         } else {
-            java.util.List<Instance> instancesCopy = new java.util.ArrayList<Instance>(instances.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Instance> instancesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Instance>(instances.size());
             instancesCopy.addAll(instances);
             this.instances = instancesCopy;
         }
@@ -250,7 +250,8 @@ public class EnvironmentResourceDescription  implements Serializable  {
     public java.util.List<LaunchConfiguration> getLaunchConfigurations() {
         
         if (launchConfigurations == null) {
-            launchConfigurations = new java.util.ArrayList<LaunchConfiguration>();
+              launchConfigurations = new com.amazonaws.internal.ListWithAutoConstructFlag<LaunchConfiguration>();
+              launchConfigurations.setAutoConstruct(true);
         }
         return launchConfigurations;
     }
@@ -265,8 +266,7 @@ public class EnvironmentResourceDescription  implements Serializable  {
             this.launchConfigurations = null;
             return;
         }
-
-        java.util.List<LaunchConfiguration> launchConfigurationsCopy = new java.util.ArrayList<LaunchConfiguration>(launchConfigurations.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<LaunchConfiguration> launchConfigurationsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<LaunchConfiguration>(launchConfigurations.size());
         launchConfigurationsCopy.addAll(launchConfigurations);
         this.launchConfigurations = launchConfigurationsCopy;
     }
@@ -303,7 +303,7 @@ public class EnvironmentResourceDescription  implements Serializable  {
         if (launchConfigurations == null) {
             this.launchConfigurations = null;
         } else {
-            java.util.List<LaunchConfiguration> launchConfigurationsCopy = new java.util.ArrayList<LaunchConfiguration>(launchConfigurations.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<LaunchConfiguration> launchConfigurationsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<LaunchConfiguration>(launchConfigurations.size());
             launchConfigurationsCopy.addAll(launchConfigurations);
             this.launchConfigurations = launchConfigurationsCopy;
         }
@@ -319,7 +319,8 @@ public class EnvironmentResourceDescription  implements Serializable  {
     public java.util.List<LoadBalancer> getLoadBalancers() {
         
         if (loadBalancers == null) {
-            loadBalancers = new java.util.ArrayList<LoadBalancer>();
+              loadBalancers = new com.amazonaws.internal.ListWithAutoConstructFlag<LoadBalancer>();
+              loadBalancers.setAutoConstruct(true);
         }
         return loadBalancers;
     }
@@ -334,8 +335,7 @@ public class EnvironmentResourceDescription  implements Serializable  {
             this.loadBalancers = null;
             return;
         }
-
-        java.util.List<LoadBalancer> loadBalancersCopy = new java.util.ArrayList<LoadBalancer>(loadBalancers.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<LoadBalancer> loadBalancersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<LoadBalancer>(loadBalancers.size());
         loadBalancersCopy.addAll(loadBalancers);
         this.loadBalancers = loadBalancersCopy;
     }
@@ -372,7 +372,7 @@ public class EnvironmentResourceDescription  implements Serializable  {
         if (loadBalancers == null) {
             this.loadBalancers = null;
         } else {
-            java.util.List<LoadBalancer> loadBalancersCopy = new java.util.ArrayList<LoadBalancer>(loadBalancers.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<LoadBalancer> loadBalancersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<LoadBalancer>(loadBalancers.size());
             loadBalancersCopy.addAll(loadBalancers);
             this.loadBalancers = loadBalancersCopy;
         }
@@ -388,7 +388,8 @@ public class EnvironmentResourceDescription  implements Serializable  {
     public java.util.List<Trigger> getTriggers() {
         
         if (triggers == null) {
-            triggers = new java.util.ArrayList<Trigger>();
+              triggers = new com.amazonaws.internal.ListWithAutoConstructFlag<Trigger>();
+              triggers.setAutoConstruct(true);
         }
         return triggers;
     }
@@ -403,8 +404,7 @@ public class EnvironmentResourceDescription  implements Serializable  {
             this.triggers = null;
             return;
         }
-
-        java.util.List<Trigger> triggersCopy = new java.util.ArrayList<Trigger>(triggers.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Trigger> triggersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Trigger>(triggers.size());
         triggersCopy.addAll(triggers);
         this.triggers = triggersCopy;
     }
@@ -441,7 +441,7 @@ public class EnvironmentResourceDescription  implements Serializable  {
         if (triggers == null) {
             this.triggers = null;
         } else {
-            java.util.List<Trigger> triggersCopy = new java.util.ArrayList<Trigger>(triggers.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Trigger> triggersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Trigger>(triggers.size());
             triggersCopy.addAll(triggers);
             this.triggers = triggersCopy;
         }
@@ -460,12 +460,12 @@ public class EnvironmentResourceDescription  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getEnvironmentName() != null) sb.append("EnvironmentName: " + getEnvironmentName() + ",");    	
-        if (getAutoScalingGroups() != null) sb.append("AutoScalingGroups: " + getAutoScalingGroups() + ",");    	
-        if (getInstances() != null) sb.append("Instances: " + getInstances() + ",");    	
-        if (getLaunchConfigurations() != null) sb.append("LaunchConfigurations: " + getLaunchConfigurations() + ",");    	
-        if (getLoadBalancers() != null) sb.append("LoadBalancers: " + getLoadBalancers() + ",");    	
+        sb.append("{");
+        if (getEnvironmentName() != null) sb.append("EnvironmentName: " + getEnvironmentName() + ",");
+        if (getAutoScalingGroups() != null) sb.append("AutoScalingGroups: " + getAutoScalingGroups() + ",");
+        if (getInstances() != null) sb.append("Instances: " + getInstances() + ",");
+        if (getLaunchConfigurations() != null) sb.append("LaunchConfigurations: " + getLaunchConfigurations() + ",");
+        if (getLoadBalancers() != null) sb.append("LoadBalancers: " + getLoadBalancers() + ",");
         if (getTriggers() != null) sb.append("Triggers: " + getTriggers() );
         sb.append("}");
         return sb.toString();

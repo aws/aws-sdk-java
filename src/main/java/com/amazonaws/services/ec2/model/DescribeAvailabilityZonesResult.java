@@ -25,7 +25,7 @@ public class DescribeAvailabilityZonesResult  implements Serializable  {
     /**
      * The list of described Amazon EC2 availability zones.
      */
-    private java.util.List<AvailabilityZone> availabilityZones;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<AvailabilityZone> availabilityZones;
 
     /**
      * The list of described Amazon EC2 availability zones.
@@ -35,7 +35,8 @@ public class DescribeAvailabilityZonesResult  implements Serializable  {
     public java.util.List<AvailabilityZone> getAvailabilityZones() {
         
         if (availabilityZones == null) {
-            availabilityZones = new java.util.ArrayList<AvailabilityZone>();
+              availabilityZones = new com.amazonaws.internal.ListWithAutoConstructFlag<AvailabilityZone>();
+              availabilityZones.setAutoConstruct(true);
         }
         return availabilityZones;
     }
@@ -50,8 +51,7 @@ public class DescribeAvailabilityZonesResult  implements Serializable  {
             this.availabilityZones = null;
             return;
         }
-
-        java.util.List<AvailabilityZone> availabilityZonesCopy = new java.util.ArrayList<AvailabilityZone>(availabilityZones.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<AvailabilityZone> availabilityZonesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<AvailabilityZone>(availabilityZones.size());
         availabilityZonesCopy.addAll(availabilityZones);
         this.availabilityZones = availabilityZonesCopy;
     }
@@ -88,7 +88,7 @@ public class DescribeAvailabilityZonesResult  implements Serializable  {
         if (availabilityZones == null) {
             this.availabilityZones = null;
         } else {
-            java.util.List<AvailabilityZone> availabilityZonesCopy = new java.util.ArrayList<AvailabilityZone>(availabilityZones.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<AvailabilityZone> availabilityZonesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<AvailabilityZone>(availabilityZones.size());
             availabilityZonesCopy.addAll(availabilityZones);
             this.availabilityZones = availabilityZonesCopy;
         }
@@ -107,7 +107,7 @@ public class DescribeAvailabilityZonesResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getAvailabilityZones() != null) sb.append("AvailabilityZones: " + getAvailabilityZones() );
         sb.append("}");
         return sb.toString();

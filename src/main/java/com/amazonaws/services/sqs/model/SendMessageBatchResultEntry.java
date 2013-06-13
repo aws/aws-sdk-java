@@ -178,9 +178,9 @@ public class SendMessageBatchResultEntry  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getId() != null) sb.append("Id: " + getId() + ",");    	
-        if (getMessageId() != null) sb.append("MessageId: " + getMessageId() + ",");    	
+        sb.append("{");
+        if (getId() != null) sb.append("Id: " + getId() + ",");
+        if (getMessageId() != null) sb.append("MessageId: " + getMessageId() + ",");
         if (getMD5OfMessageBody() != null) sb.append("MD5OfMessageBody: " + getMD5OfMessageBody() );
         sb.append("}");
         return sb.toString();

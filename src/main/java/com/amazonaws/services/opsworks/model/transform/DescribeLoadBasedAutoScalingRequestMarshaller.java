@@ -86,8 +86,8 @@ public class DescribeLoadBasedAutoScalingRequestMarshaller implements Marshaller
           jsonWriter.object();
           
 
-            java.util.List<String> layerIdsList = describeLoadBasedAutoScalingRequest.getLayerIds();
-            if (layerIdsList != null) {
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> layerIdsList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(describeLoadBasedAutoScalingRequest.getLayerIds());
+            if (layerIdsList != null && !(layerIdsList.isAutoConstruct() && layerIdsList.isEmpty())) {
 
                 jsonWriter.key("LayerIds");
                 jsonWriter.array();

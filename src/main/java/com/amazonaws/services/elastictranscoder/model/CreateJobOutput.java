@@ -573,11 +573,11 @@ public class CreateJobOutput  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getKey() != null) sb.append("Key: " + getKey() + ",");    	
-        if (getThumbnailPattern() != null) sb.append("ThumbnailPattern: " + getThumbnailPattern() + ",");    	
-        if (getRotate() != null) sb.append("Rotate: " + getRotate() + ",");    	
-        if (getPresetId() != null) sb.append("PresetId: " + getPresetId() + ",");    	
+        sb.append("{");
+        if (getKey() != null) sb.append("Key: " + getKey() + ",");
+        if (getThumbnailPattern() != null) sb.append("ThumbnailPattern: " + getThumbnailPattern() + ",");
+        if (getRotate() != null) sb.append("Rotate: " + getRotate() + ",");
+        if (getPresetId() != null) sb.append("PresetId: " + getPresetId() + ",");
         if (getSegmentDuration() != null) sb.append("SegmentDuration: " + getSegmentDuration() );
         sb.append("}");
         return sb.toString();

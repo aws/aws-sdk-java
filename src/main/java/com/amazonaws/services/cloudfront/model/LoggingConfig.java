@@ -64,6 +64,8 @@ public class LoggingConfig  implements Serializable  {
      */
     public LoggingConfig() {}
     
+
+
     /**
      * Constructs a new LoggingConfig object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -78,8 +80,8 @@ public class LoggingConfig  implements Serializable  {
      * the Logging element.
      */
     public LoggingConfig(String bucket, String prefix) {
-        this.bucket = bucket;
-        this.prefix = prefix;
+        setBucket(bucket);
+        setPrefix(prefix);
     }
 
     
@@ -369,10 +371,10 @@ public class LoggingConfig  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (isEnabled() != null) sb.append("Enabled: " + isEnabled() + ",");    	
-        if (isIncludeCookies() != null) sb.append("IncludeCookies: " + isIncludeCookies() + ",");    	
-        if (getBucket() != null) sb.append("Bucket: " + getBucket() + ",");    	
+        sb.append("{");
+        if (isEnabled() != null) sb.append("Enabled: " + isEnabled() + ",");
+        if (isIncludeCookies() != null) sb.append("IncludeCookies: " + isIncludeCookies() + ",");
+        if (getBucket() != null) sb.append("Bucket: " + getBucket() + ",");
         if (getPrefix() != null) sb.append("Prefix: " + getPrefix() );
         sb.append("}");
         return sb.toString();

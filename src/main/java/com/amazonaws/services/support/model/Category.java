@@ -111,8 +111,8 @@ public class Category  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getCode() != null) sb.append("Code: " + getCode() + ",");    	
+        sb.append("{");
+        if (getCode() != null) sb.append("Code: " + getCode() + ",");
         if (getName() != null) sb.append("Name: " + getName() );
         sb.append("}");
         return sb.toString();

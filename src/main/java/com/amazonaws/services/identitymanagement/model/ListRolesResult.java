@@ -25,7 +25,7 @@ public class ListRolesResult  implements Serializable  {
     /**
      * A list of roles.
      */
-    private java.util.List<Role> roles;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Role> roles;
 
     /**
      * A flag that indicates whether there are more roles to list. If your
@@ -54,7 +54,8 @@ public class ListRolesResult  implements Serializable  {
     public java.util.List<Role> getRoles() {
         
         if (roles == null) {
-            roles = new java.util.ArrayList<Role>();
+              roles = new com.amazonaws.internal.ListWithAutoConstructFlag<Role>();
+              roles.setAutoConstruct(true);
         }
         return roles;
     }
@@ -69,8 +70,7 @@ public class ListRolesResult  implements Serializable  {
             this.roles = null;
             return;
         }
-
-        java.util.List<Role> rolesCopy = new java.util.ArrayList<Role>(roles.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Role> rolesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Role>(roles.size());
         rolesCopy.addAll(roles);
         this.roles = rolesCopy;
     }
@@ -107,7 +107,7 @@ public class ListRolesResult  implements Serializable  {
         if (roles == null) {
             this.roles = null;
         } else {
-            java.util.List<Role> rolesCopy = new java.util.ArrayList<Role>(roles.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Role> rolesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Role>(roles.size());
             rolesCopy.addAll(roles);
             this.roles = rolesCopy;
         }
@@ -251,9 +251,9 @@ public class ListRolesResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getRoles() != null) sb.append("Roles: " + getRoles() + ",");    	
-        if (isTruncated() != null) sb.append("IsTruncated: " + isTruncated() + ",");    	
+        sb.append("{");
+        if (getRoles() != null) sb.append("Roles: " + getRoles() + ",");
+        if (isTruncated() != null) sb.append("IsTruncated: " + isTruncated() + ",");
         if (getMarker() != null) sb.append("Marker: " + getMarker() );
         sb.append("}");
         return sb.toString();

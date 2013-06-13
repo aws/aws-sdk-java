@@ -80,6 +80,8 @@ public class DescribeConfigurationSettingsRequest extends AmazonWebServiceReques
      */
     public DescribeConfigurationSettingsRequest() {}
     
+
+
     /**
      * Constructs a new DescribeConfigurationSettingsRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -89,7 +91,7 @@ public class DescribeConfigurationSettingsRequest extends AmazonWebServiceReques
      * configuration template.
      */
     public DescribeConfigurationSettingsRequest(String applicationName) {
-        this.applicationName = applicationName;
+        setApplicationName(applicationName);
     }
 
     
@@ -294,9 +296,9 @@ public class DescribeConfigurationSettingsRequest extends AmazonWebServiceReques
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getApplicationName() != null) sb.append("ApplicationName: " + getApplicationName() + ",");    	
-        if (getTemplateName() != null) sb.append("TemplateName: " + getTemplateName() + ",");    	
+        sb.append("{");
+        if (getApplicationName() != null) sb.append("ApplicationName: " + getApplicationName() + ",");
+        if (getTemplateName() != null) sb.append("TemplateName: " + getTemplateName() + ",");
         if (getEnvironmentName() != null) sb.append("EnvironmentName: " + getEnvironmentName() );
         sb.append("}");
         return sb.toString();

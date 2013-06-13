@@ -40,6 +40,8 @@ public class CheckDNSAvailabilityRequest extends AmazonWebServiceRequest  implem
      */
     public CheckDNSAvailabilityRequest() {}
     
+
+
     /**
      * Constructs a new CheckDNSAvailabilityRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -48,7 +50,7 @@ public class CheckDNSAvailabilityRequest extends AmazonWebServiceRequest  implem
      * @param cNAMEPrefix The prefix used when this CNAME is reserved.
      */
     public CheckDNSAvailabilityRequest(String cNAMEPrefix) {
-        this.cNAMEPrefix = cNAMEPrefix;
+        setCNAMEPrefix(cNAMEPrefix);
     }
 
     
@@ -107,7 +109,7 @@ public class CheckDNSAvailabilityRequest extends AmazonWebServiceRequest  implem
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getCNAMEPrefix() != null) sb.append("CNAMEPrefix: " + getCNAMEPrefix() );
         sb.append("}");
         return sb.toString();

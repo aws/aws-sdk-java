@@ -203,10 +203,10 @@ public class VolumeConfiguration  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getMountPoint() != null) sb.append("MountPoint: " + getMountPoint() + ",");    	
-        if (getRaidLevel() != null) sb.append("RaidLevel: " + getRaidLevel() + ",");    	
-        if (getNumberOfDisks() != null) sb.append("NumberOfDisks: " + getNumberOfDisks() + ",");    	
+        sb.append("{");
+        if (getMountPoint() != null) sb.append("MountPoint: " + getMountPoint() + ",");
+        if (getRaidLevel() != null) sb.append("RaidLevel: " + getRaidLevel() + ",");
+        if (getNumberOfDisks() != null) sb.append("NumberOfDisks: " + getNumberOfDisks() + ",");
         if (getSize() != null) sb.append("Size: " + getSize() );
         sb.append("}");
         return sb.toString();

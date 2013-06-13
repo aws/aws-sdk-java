@@ -86,8 +86,8 @@ public class DescribeTimeBasedAutoScalingRequestMarshaller implements Marshaller
           jsonWriter.object();
           
 
-            java.util.List<String> instanceIdsList = describeTimeBasedAutoScalingRequest.getInstanceIds();
-            if (instanceIdsList != null) {
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> instanceIdsList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(describeTimeBasedAutoScalingRequest.getInstanceIds());
+            if (instanceIdsList != null && !(instanceIdsList.isAutoConstruct() && instanceIdsList.isEmpty())) {
 
                 jsonWriter.key("InstanceIds");
                 jsonWriter.array();

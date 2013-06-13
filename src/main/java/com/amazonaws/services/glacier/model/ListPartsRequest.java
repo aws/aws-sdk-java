@@ -87,6 +87,8 @@ public class ListPartsRequest extends AmazonWebServiceRequest  implements Serial
      */
     public ListPartsRequest() {}
     
+
+
     /**
      * Constructs a new ListPartsRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -96,12 +98,14 @@ public class ListPartsRequest extends AmazonWebServiceRequest  implements Serial
      * @param uploadId The upload ID of the multipart upload.
      */
     public ListPartsRequest(String vaultName, String uploadId) {
-        this.vaultName = vaultName;
-        this.uploadId = uploadId;
+        setVaultName(vaultName);
+        setUploadId(uploadId);
     }
 
     
     
+
+
     /**
      * Constructs a new ListPartsRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -116,9 +120,9 @@ public class ListPartsRequest extends AmazonWebServiceRequest  implements Serial
      * @param uploadId The upload ID of the multipart upload.
      */
     public ListPartsRequest(String accountId, String vaultName, String uploadId) {
-        this.accountId = accountId;
-        this.vaultName = vaultName;
-        this.uploadId = uploadId;
+        setAccountId(accountId);
+        setVaultName(vaultName);
+        setUploadId(uploadId);
     }
 
     
@@ -364,11 +368,11 @@ public class ListPartsRequest extends AmazonWebServiceRequest  implements Serial
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getAccountId() != null) sb.append("AccountId: " + getAccountId() + ",");    	
-        if (getVaultName() != null) sb.append("VaultName: " + getVaultName() + ",");    	
-        if (getUploadId() != null) sb.append("UploadId: " + getUploadId() + ",");    	
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");    	
+        sb.append("{");
+        if (getAccountId() != null) sb.append("AccountId: " + getAccountId() + ",");
+        if (getVaultName() != null) sb.append("VaultName: " + getVaultName() + ",");
+        if (getUploadId() != null) sb.append("UploadId: " + getUploadId() + ",");
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");
         if (getLimit() != null) sb.append("Limit: " + getLimit() );
         sb.append("}");
         return sb.toString();

@@ -25,7 +25,7 @@ public class DescribeOptionGroupsResult  implements Serializable  {
     /**
      * List of option groups.
      */
-    private java.util.List<OptionGroup> optionGroupsList;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<OptionGroup> optionGroupsList;
 
     /**
      * An optional pagination token provided by a previous request. If this
@@ -42,7 +42,8 @@ public class DescribeOptionGroupsResult  implements Serializable  {
     public java.util.List<OptionGroup> getOptionGroupsList() {
         
         if (optionGroupsList == null) {
-            optionGroupsList = new java.util.ArrayList<OptionGroup>();
+              optionGroupsList = new com.amazonaws.internal.ListWithAutoConstructFlag<OptionGroup>();
+              optionGroupsList.setAutoConstruct(true);
         }
         return optionGroupsList;
     }
@@ -57,8 +58,7 @@ public class DescribeOptionGroupsResult  implements Serializable  {
             this.optionGroupsList = null;
             return;
         }
-
-        java.util.List<OptionGroup> optionGroupsListCopy = new java.util.ArrayList<OptionGroup>(optionGroupsList.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<OptionGroup> optionGroupsListCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<OptionGroup>(optionGroupsList.size());
         optionGroupsListCopy.addAll(optionGroupsList);
         this.optionGroupsList = optionGroupsListCopy;
     }
@@ -95,7 +95,7 @@ public class DescribeOptionGroupsResult  implements Serializable  {
         if (optionGroupsList == null) {
             this.optionGroupsList = null;
         } else {
-            java.util.List<OptionGroup> optionGroupsListCopy = new java.util.ArrayList<OptionGroup>(optionGroupsList.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<OptionGroup> optionGroupsListCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<OptionGroup>(optionGroupsList.size());
             optionGroupsListCopy.addAll(optionGroupsList);
             this.optionGroupsList = optionGroupsListCopy;
         }
@@ -160,8 +160,8 @@ public class DescribeOptionGroupsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getOptionGroupsList() != null) sb.append("OptionGroupsList: " + getOptionGroupsList() + ",");    	
+        sb.append("{");
+        if (getOptionGroupsList() != null) sb.append("OptionGroupsList: " + getOptionGroupsList() + ",");
         if (getMarker() != null) sb.append("Marker: " + getMarker() );
         sb.append("}");
         return sb.toString();

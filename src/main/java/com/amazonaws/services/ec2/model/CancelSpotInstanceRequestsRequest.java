@@ -38,7 +38,7 @@ public class CancelSpotInstanceRequestsRequest extends AmazonWebServiceRequest  
     /**
      * Specifies the ID of the Spot Instance request.
      */
-    private java.util.List<String> spotInstanceRequestIds;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> spotInstanceRequestIds;
 
     /**
      * Default constructor for a new CancelSpotInstanceRequestsRequest object.  Callers should use the
@@ -46,6 +46,8 @@ public class CancelSpotInstanceRequestsRequest extends AmazonWebServiceRequest  
      */
     public CancelSpotInstanceRequestsRequest() {}
     
+
+
     /**
      * Constructs a new CancelSpotInstanceRequestsRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -55,7 +57,7 @@ public class CancelSpotInstanceRequestsRequest extends AmazonWebServiceRequest  
      * request.
      */
     public CancelSpotInstanceRequestsRequest(java.util.List<String> spotInstanceRequestIds) {
-        this.spotInstanceRequestIds = spotInstanceRequestIds;
+        setSpotInstanceRequestIds(spotInstanceRequestIds);
     }
 
     
@@ -68,7 +70,8 @@ public class CancelSpotInstanceRequestsRequest extends AmazonWebServiceRequest  
     public java.util.List<String> getSpotInstanceRequestIds() {
         
         if (spotInstanceRequestIds == null) {
-            spotInstanceRequestIds = new java.util.ArrayList<String>();
+              spotInstanceRequestIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              spotInstanceRequestIds.setAutoConstruct(true);
         }
         return spotInstanceRequestIds;
     }
@@ -83,8 +86,7 @@ public class CancelSpotInstanceRequestsRequest extends AmazonWebServiceRequest  
             this.spotInstanceRequestIds = null;
             return;
         }
-
-        java.util.List<String> spotInstanceRequestIdsCopy = new java.util.ArrayList<String>(spotInstanceRequestIds.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> spotInstanceRequestIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(spotInstanceRequestIds.size());
         spotInstanceRequestIdsCopy.addAll(spotInstanceRequestIds);
         this.spotInstanceRequestIds = spotInstanceRequestIdsCopy;
     }
@@ -121,7 +123,7 @@ public class CancelSpotInstanceRequestsRequest extends AmazonWebServiceRequest  
         if (spotInstanceRequestIds == null) {
             this.spotInstanceRequestIds = null;
         } else {
-            java.util.List<String> spotInstanceRequestIdsCopy = new java.util.ArrayList<String>(spotInstanceRequestIds.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> spotInstanceRequestIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(spotInstanceRequestIds.size());
             spotInstanceRequestIdsCopy.addAll(spotInstanceRequestIds);
             this.spotInstanceRequestIds = spotInstanceRequestIdsCopy;
         }
@@ -140,7 +142,7 @@ public class CancelSpotInstanceRequestsRequest extends AmazonWebServiceRequest  
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getSpotInstanceRequestIds() != null) sb.append("SpotInstanceRequestIds: " + getSpotInstanceRequestIds() );
         sb.append("}");
         return sb.toString();

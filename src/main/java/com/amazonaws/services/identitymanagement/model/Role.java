@@ -460,12 +460,12 @@ public class Role  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getPath() != null) sb.append("Path: " + getPath() + ",");    	
-        if (getRoleName() != null) sb.append("RoleName: " + getRoleName() + ",");    	
-        if (getRoleId() != null) sb.append("RoleId: " + getRoleId() + ",");    	
-        if (getArn() != null) sb.append("Arn: " + getArn() + ",");    	
-        if (getCreateDate() != null) sb.append("CreateDate: " + getCreateDate() + ",");    	
+        sb.append("{");
+        if (getPath() != null) sb.append("Path: " + getPath() + ",");
+        if (getRoleName() != null) sb.append("RoleName: " + getRoleName() + ",");
+        if (getRoleId() != null) sb.append("RoleId: " + getRoleId() + ",");
+        if (getArn() != null) sb.append("Arn: " + getArn() + ",");
+        if (getCreateDate() != null) sb.append("CreateDate: " + getCreateDate() + ",");
         if (getAssumeRolePolicyDocument() != null) sb.append("AssumeRolePolicyDocument: " + getAssumeRolePolicyDocument() );
         sb.append("}");
         return sb.toString();

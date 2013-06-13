@@ -146,8 +146,8 @@ public class StemmingOptionsStatus  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getOptions() != null) sb.append("Options: " + getOptions() + ",");    	
+        sb.append("{");
+        if (getOptions() != null) sb.append("Options: " + getOptions() + ",");
         if (getStatus() != null) sb.append("Status: " + getStatus() );
         sb.append("}");
         return sb.toString();

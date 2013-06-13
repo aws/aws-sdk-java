@@ -38,7 +38,7 @@ public class DescribeEventCategoriesRequestMarshaller implements Marshaller<Requ
 
         Request<DescribeEventCategoriesRequest> request = new DefaultRequest<DescribeEventCategoriesRequest>(describeEventCategoriesRequest, "AmazonRDS");
         request.addParameter("Action", "DescribeEventCategories");
-        request.addParameter("Version", "2013-02-12");
+        request.addParameter("Version", "2013-05-15");
 
         if (describeEventCategoriesRequest.getSourceType() != null) {
             request.addParameter("SourceType", StringUtils.fromString(describeEventCategoriesRequest.getSourceType()));

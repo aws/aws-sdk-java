@@ -247,10 +247,10 @@ public class EnvironmentInfoDescription  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getInfoType() != null) sb.append("InfoType: " + getInfoType() + ",");    	
-        if (getEc2InstanceId() != null) sb.append("Ec2InstanceId: " + getEc2InstanceId() + ",");    	
-        if (getSampleTimestamp() != null) sb.append("SampleTimestamp: " + getSampleTimestamp() + ",");    	
+        sb.append("{");
+        if (getInfoType() != null) sb.append("InfoType: " + getInfoType() + ",");
+        if (getEc2InstanceId() != null) sb.append("Ec2InstanceId: " + getEc2InstanceId() + ",");
+        if (getSampleTimestamp() != null) sb.append("SampleTimestamp: " + getSampleTimestamp() + ",");
         if (getMessage() != null) sb.append("Message: " + getMessage() );
         sb.append("}");
         return sb.toString();

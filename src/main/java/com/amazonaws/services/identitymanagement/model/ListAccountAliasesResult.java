@@ -25,7 +25,7 @@ public class ListAccountAliasesResult  implements Serializable  {
     /**
      * A list of aliases associated with the account.
      */
-    private java.util.List<String> accountAliases;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> accountAliases;
 
     /**
      * A flag that indicates whether there are more account aliases to list.
@@ -55,7 +55,8 @@ public class ListAccountAliasesResult  implements Serializable  {
     public java.util.List<String> getAccountAliases() {
         
         if (accountAliases == null) {
-            accountAliases = new java.util.ArrayList<String>();
+              accountAliases = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              accountAliases.setAutoConstruct(true);
         }
         return accountAliases;
     }
@@ -70,8 +71,7 @@ public class ListAccountAliasesResult  implements Serializable  {
             this.accountAliases = null;
             return;
         }
-
-        java.util.List<String> accountAliasesCopy = new java.util.ArrayList<String>(accountAliases.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> accountAliasesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(accountAliases.size());
         accountAliasesCopy.addAll(accountAliases);
         this.accountAliases = accountAliasesCopy;
     }
@@ -108,7 +108,7 @@ public class ListAccountAliasesResult  implements Serializable  {
         if (accountAliases == null) {
             this.accountAliases = null;
         } else {
-            java.util.List<String> accountAliasesCopy = new java.util.ArrayList<String>(accountAliases.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> accountAliasesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(accountAliases.size());
             accountAliasesCopy.addAll(accountAliases);
             this.accountAliases = accountAliasesCopy;
         }
@@ -258,9 +258,9 @@ public class ListAccountAliasesResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getAccountAliases() != null) sb.append("AccountAliases: " + getAccountAliases() + ",");    	
-        if (isTruncated() != null) sb.append("IsTruncated: " + isTruncated() + ",");    	
+        sb.append("{");
+        if (getAccountAliases() != null) sb.append("AccountAliases: " + getAccountAliases() + ",");
+        if (isTruncated() != null) sb.append("IsTruncated: " + isTruncated() + ",");
         if (getMarker() != null) sb.append("Marker: " + getMarker() );
         sb.append("}");
         return sb.toString();

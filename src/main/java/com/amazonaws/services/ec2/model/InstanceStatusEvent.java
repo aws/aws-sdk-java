@@ -196,10 +196,10 @@ public class InstanceStatusEvent  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getCode() != null) sb.append("Code: " + getCode() + ",");    	
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");    	
-        if (getNotBefore() != null) sb.append("NotBefore: " + getNotBefore() + ",");    	
+        sb.append("{");
+        if (getCode() != null) sb.append("Code: " + getCode() + ",");
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");
+        if (getNotBefore() != null) sb.append("NotBefore: " + getNotBefore() + ",");
         if (getNotAfter() != null) sb.append("NotAfter: " + getNotAfter() );
         sb.append("}");
         return sb.toString();

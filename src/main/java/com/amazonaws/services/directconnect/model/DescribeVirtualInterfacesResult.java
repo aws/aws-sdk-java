@@ -25,7 +25,7 @@ public class DescribeVirtualInterfacesResult  implements Serializable  {
     /**
      * A list of virtual interfaces.
      */
-    private java.util.List<VirtualInterface> virtualInterfaces;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<VirtualInterface> virtualInterfaces;
 
     /**
      * A list of virtual interfaces.
@@ -35,7 +35,8 @@ public class DescribeVirtualInterfacesResult  implements Serializable  {
     public java.util.List<VirtualInterface> getVirtualInterfaces() {
         
         if (virtualInterfaces == null) {
-            virtualInterfaces = new java.util.ArrayList<VirtualInterface>();
+              virtualInterfaces = new com.amazonaws.internal.ListWithAutoConstructFlag<VirtualInterface>();
+              virtualInterfaces.setAutoConstruct(true);
         }
         return virtualInterfaces;
     }
@@ -50,8 +51,7 @@ public class DescribeVirtualInterfacesResult  implements Serializable  {
             this.virtualInterfaces = null;
             return;
         }
-
-        java.util.List<VirtualInterface> virtualInterfacesCopy = new java.util.ArrayList<VirtualInterface>(virtualInterfaces.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<VirtualInterface> virtualInterfacesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<VirtualInterface>(virtualInterfaces.size());
         virtualInterfacesCopy.addAll(virtualInterfaces);
         this.virtualInterfaces = virtualInterfacesCopy;
     }
@@ -88,7 +88,7 @@ public class DescribeVirtualInterfacesResult  implements Serializable  {
         if (virtualInterfaces == null) {
             this.virtualInterfaces = null;
         } else {
-            java.util.List<VirtualInterface> virtualInterfacesCopy = new java.util.ArrayList<VirtualInterface>(virtualInterfaces.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<VirtualInterface> virtualInterfacesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<VirtualInterface>(virtualInterfaces.size());
             virtualInterfacesCopy.addAll(virtualInterfaces);
             this.virtualInterfaces = virtualInterfacesCopy;
         }
@@ -107,7 +107,7 @@ public class DescribeVirtualInterfacesResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getVirtualInterfaces() != null) sb.append("VirtualInterfaces: " + getVirtualInterfaces() );
         sb.append("}");
         return sb.toString();

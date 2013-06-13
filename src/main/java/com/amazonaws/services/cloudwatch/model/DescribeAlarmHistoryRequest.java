@@ -358,12 +358,12 @@ public class DescribeAlarmHistoryRequest extends AmazonWebServiceRequest  implem
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getAlarmName() != null) sb.append("AlarmName: " + getAlarmName() + ",");    	
-        if (getHistoryItemType() != null) sb.append("HistoryItemType: " + getHistoryItemType() + ",");    	
-        if (getStartDate() != null) sb.append("StartDate: " + getStartDate() + ",");    	
-        if (getEndDate() != null) sb.append("EndDate: " + getEndDate() + ",");    	
-        if (getMaxRecords() != null) sb.append("MaxRecords: " + getMaxRecords() + ",");    	
+        sb.append("{");
+        if (getAlarmName() != null) sb.append("AlarmName: " + getAlarmName() + ",");
+        if (getHistoryItemType() != null) sb.append("HistoryItemType: " + getHistoryItemType() + ",");
+        if (getStartDate() != null) sb.append("StartDate: " + getStartDate() + ",");
+        if (getEndDate() != null) sb.append("EndDate: " + getEndDate() + ",");
+        if (getMaxRecords() != null) sb.append("MaxRecords: " + getMaxRecords() + ",");
         if (getNextToken() != null) sb.append("NextToken: " + getNextToken() );
         sb.append("}");
         return sb.toString();

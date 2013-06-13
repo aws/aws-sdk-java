@@ -20,7 +20,7 @@ import java.io.Serializable;
  */
 public class DescribeInternetGatewaysResult  implements Serializable  {
 
-    private java.util.List<InternetGateway> internetGateways;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<InternetGateway> internetGateways;
 
     /**
      * Returns the value of the InternetGateways property for this object.
@@ -30,7 +30,8 @@ public class DescribeInternetGatewaysResult  implements Serializable  {
     public java.util.List<InternetGateway> getInternetGateways() {
         
         if (internetGateways == null) {
-            internetGateways = new java.util.ArrayList<InternetGateway>();
+              internetGateways = new com.amazonaws.internal.ListWithAutoConstructFlag<InternetGateway>();
+              internetGateways.setAutoConstruct(true);
         }
         return internetGateways;
     }
@@ -45,8 +46,7 @@ public class DescribeInternetGatewaysResult  implements Serializable  {
             this.internetGateways = null;
             return;
         }
-
-        java.util.List<InternetGateway> internetGatewaysCopy = new java.util.ArrayList<InternetGateway>(internetGateways.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<InternetGateway> internetGatewaysCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<InternetGateway>(internetGateways.size());
         internetGatewaysCopy.addAll(internetGateways);
         this.internetGateways = internetGatewaysCopy;
     }
@@ -83,7 +83,7 @@ public class DescribeInternetGatewaysResult  implements Serializable  {
         if (internetGateways == null) {
             this.internetGateways = null;
         } else {
-            java.util.List<InternetGateway> internetGatewaysCopy = new java.util.ArrayList<InternetGateway>(internetGateways.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<InternetGateway> internetGatewaysCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<InternetGateway>(internetGateways.size());
             internetGatewaysCopy.addAll(internetGateways);
             this.internetGateways = internetGatewaysCopy;
         }
@@ -102,7 +102,7 @@ public class DescribeInternetGatewaysResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getInternetGateways() != null) sb.append("InternetGateways: " + getInternetGateways() );
         sb.append("}");
         return sb.toString();

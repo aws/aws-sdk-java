@@ -29,7 +29,7 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest  i
     /**
      * The optional list of Reserved Instance IDs to describe.
      */
-    private java.util.List<String> reservedInstancesIds;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> reservedInstancesIds;
 
     /**
      * A list of filters used to match properties for ReservedInstances. For
@@ -38,7 +38,7 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest  i
      * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      * EC2 API reference</a>.
      */
-    private java.util.List<Filter> filters;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filters;
 
     /**
      * The Reserved Instance offering type.
@@ -53,7 +53,8 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest  i
     public java.util.List<String> getReservedInstancesIds() {
         
         if (reservedInstancesIds == null) {
-            reservedInstancesIds = new java.util.ArrayList<String>();
+              reservedInstancesIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              reservedInstancesIds.setAutoConstruct(true);
         }
         return reservedInstancesIds;
     }
@@ -68,8 +69,7 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest  i
             this.reservedInstancesIds = null;
             return;
         }
-
-        java.util.List<String> reservedInstancesIdsCopy = new java.util.ArrayList<String>(reservedInstancesIds.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> reservedInstancesIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(reservedInstancesIds.size());
         reservedInstancesIdsCopy.addAll(reservedInstancesIds);
         this.reservedInstancesIds = reservedInstancesIdsCopy;
     }
@@ -106,7 +106,7 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest  i
         if (reservedInstancesIds == null) {
             this.reservedInstancesIds = null;
         } else {
-            java.util.List<String> reservedInstancesIdsCopy = new java.util.ArrayList<String>(reservedInstancesIds.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> reservedInstancesIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(reservedInstancesIds.size());
             reservedInstancesIdsCopy.addAll(reservedInstancesIds);
             this.reservedInstancesIds = reservedInstancesIdsCopy;
         }
@@ -130,7 +130,8 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest  i
     public java.util.List<Filter> getFilters() {
         
         if (filters == null) {
-            filters = new java.util.ArrayList<Filter>();
+              filters = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>();
+              filters.setAutoConstruct(true);
         }
         return filters;
     }
@@ -153,8 +154,7 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest  i
             this.filters = null;
             return;
         }
-
-        java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>(filters.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filtersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>(filters.size());
         filtersCopy.addAll(filters);
         this.filters = filtersCopy;
     }
@@ -207,7 +207,7 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest  i
         if (filters == null) {
             this.filters = null;
         } else {
-            java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>(filters.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filtersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>(filters.size());
             filtersCopy.addAll(filters);
             this.filters = filtersCopy;
         }
@@ -260,9 +260,9 @@ public class DescribeReservedInstancesRequest extends AmazonWebServiceRequest  i
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getReservedInstancesIds() != null) sb.append("ReservedInstancesIds: " + getReservedInstancesIds() + ",");    	
-        if (getFilters() != null) sb.append("Filters: " + getFilters() + ",");    	
+        sb.append("{");
+        if (getReservedInstancesIds() != null) sb.append("ReservedInstancesIds: " + getReservedInstancesIds() + ",");
+        if (getFilters() != null) sb.append("Filters: " + getFilters() + ",");
         if (getOfferingType() != null) sb.append("OfferingType: " + getOfferingType() );
         sb.append("}");
         return sb.toString();

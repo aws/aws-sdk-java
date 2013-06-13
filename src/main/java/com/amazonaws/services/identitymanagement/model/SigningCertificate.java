@@ -73,6 +73,8 @@ public class SigningCertificate  implements Serializable  {
      */
     public SigningCertificate() {}
     
+
+
     /**
      * Constructs a new SigningCertificate object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -87,10 +89,10 @@ public class SigningCertificate  implements Serializable  {
      * <code>Inactive</code> means it is not.
      */
     public SigningCertificate(String userName, String certificateId, String certificateBody, String status) {
-        this.userName = userName;
-        this.certificateId = certificateId;
-        this.certificateBody = certificateBody;
-        this.status = status;
+        setUserName(userName);
+        setCertificateId(certificateId);
+        setCertificateBody(certificateBody);
+        setStatus(status);
     }
 
     
@@ -401,11 +403,11 @@ public class SigningCertificate  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getUserName() != null) sb.append("UserName: " + getUserName() + ",");    	
-        if (getCertificateId() != null) sb.append("CertificateId: " + getCertificateId() + ",");    	
-        if (getCertificateBody() != null) sb.append("CertificateBody: " + getCertificateBody() + ",");    	
-        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");    	
+        sb.append("{");
+        if (getUserName() != null) sb.append("UserName: " + getUserName() + ",");
+        if (getCertificateId() != null) sb.append("CertificateId: " + getCertificateId() + ",");
+        if (getCertificateBody() != null) sb.append("CertificateBody: " + getCertificateBody() + ",");
+        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");
         if (getUploadDate() != null) sb.append("UploadDate: " + getUploadDate() );
         sb.append("}");
         return sb.toString();

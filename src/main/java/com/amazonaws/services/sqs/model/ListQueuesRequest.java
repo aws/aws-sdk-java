@@ -38,6 +38,8 @@ public class ListQueuesRequest extends AmazonWebServiceRequest  implements Seria
      */
     public ListQueuesRequest() {}
     
+
+
     /**
      * Constructs a new ListQueuesRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -48,7 +50,7 @@ public class ListQueuesRequest extends AmazonWebServiceRequest  implements Seria
      * returned.
      */
     public ListQueuesRequest(String queueNamePrefix) {
-        this.queueNamePrefix = queueNamePrefix;
+        setQueueNamePrefix(queueNamePrefix);
     }
 
     
@@ -104,7 +106,7 @@ public class ListQueuesRequest extends AmazonWebServiceRequest  implements Seria
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getQueueNamePrefix() != null) sb.append("QueueNamePrefix: " + getQueueNamePrefix() );
         sb.append("}");
         return sb.toString();

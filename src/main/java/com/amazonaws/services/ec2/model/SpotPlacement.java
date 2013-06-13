@@ -41,6 +41,8 @@ public class SpotPlacement  implements Serializable  {
      */
     public SpotPlacement() {}
     
+
+
     /**
      * Constructs a new SpotPlacement object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -50,7 +52,7 @@ public class SpotPlacement  implements Serializable  {
      * instance runs.
      */
     public SpotPlacement(String availabilityZone) {
-        this.availabilityZone = availabilityZone;
+        setAvailabilityZone(availabilityZone);
     }
 
     
@@ -152,8 +154,8 @@ public class SpotPlacement  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");    	
+        sb.append("{");
+        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");
         if (getGroupName() != null) sb.append("GroupName: " + getGroupName() );
         sb.append("}");
         return sb.toString();

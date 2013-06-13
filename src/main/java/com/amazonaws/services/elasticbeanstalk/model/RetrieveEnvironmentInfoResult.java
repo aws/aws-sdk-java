@@ -25,7 +25,7 @@ public class RetrieveEnvironmentInfoResult  implements Serializable  {
     /**
      * The <a>EnvironmentInfoDescription</a> of the environment.
      */
-    private java.util.List<EnvironmentInfoDescription> environmentInfo;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<EnvironmentInfoDescription> environmentInfo;
 
     /**
      * The <a>EnvironmentInfoDescription</a> of the environment.
@@ -35,7 +35,8 @@ public class RetrieveEnvironmentInfoResult  implements Serializable  {
     public java.util.List<EnvironmentInfoDescription> getEnvironmentInfo() {
         
         if (environmentInfo == null) {
-            environmentInfo = new java.util.ArrayList<EnvironmentInfoDescription>();
+              environmentInfo = new com.amazonaws.internal.ListWithAutoConstructFlag<EnvironmentInfoDescription>();
+              environmentInfo.setAutoConstruct(true);
         }
         return environmentInfo;
     }
@@ -50,8 +51,7 @@ public class RetrieveEnvironmentInfoResult  implements Serializable  {
             this.environmentInfo = null;
             return;
         }
-
-        java.util.List<EnvironmentInfoDescription> environmentInfoCopy = new java.util.ArrayList<EnvironmentInfoDescription>(environmentInfo.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<EnvironmentInfoDescription> environmentInfoCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<EnvironmentInfoDescription>(environmentInfo.size());
         environmentInfoCopy.addAll(environmentInfo);
         this.environmentInfo = environmentInfoCopy;
     }
@@ -88,7 +88,7 @@ public class RetrieveEnvironmentInfoResult  implements Serializable  {
         if (environmentInfo == null) {
             this.environmentInfo = null;
         } else {
-            java.util.List<EnvironmentInfoDescription> environmentInfoCopy = new java.util.ArrayList<EnvironmentInfoDescription>(environmentInfo.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<EnvironmentInfoDescription> environmentInfoCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<EnvironmentInfoDescription>(environmentInfo.size());
             environmentInfoCopy.addAll(environmentInfo);
             this.environmentInfo = environmentInfoCopy;
         }
@@ -107,7 +107,7 @@ public class RetrieveEnvironmentInfoResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getEnvironmentInfo() != null) sb.append("EnvironmentInfo: " + getEnvironmentInfo() );
         sb.append("}");
         return sb.toString();

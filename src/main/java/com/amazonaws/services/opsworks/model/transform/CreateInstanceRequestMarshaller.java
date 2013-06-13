@@ -89,8 +89,8 @@ public class CreateInstanceRequestMarshaller implements Marshaller<Request<Creat
                 jsonWriter.key("StackId").value(createInstanceRequest.getStackId());
             }
 
-            java.util.List<String> layerIdsList = createInstanceRequest.getLayerIds();
-            if (layerIdsList != null) {
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> layerIdsList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(createInstanceRequest.getLayerIds());
+            if (layerIdsList != null && !(layerIdsList.isAutoConstruct() && layerIdsList.isEmpty())) {
 
                 jsonWriter.key("LayerIds");
                 jsonWriter.array();

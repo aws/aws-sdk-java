@@ -38,6 +38,8 @@ public class DeleteVpcRequest extends AmazonWebServiceRequest  implements Serial
      */
     public DeleteVpcRequest() {}
     
+
+
     /**
      * Constructs a new DeleteVpcRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -46,7 +48,7 @@ public class DeleteVpcRequest extends AmazonWebServiceRequest  implements Serial
      * @param vpcId The ID of the VPC you want to delete.
      */
     public DeleteVpcRequest(String vpcId) {
-        this.vpcId = vpcId;
+        setVpcId(vpcId);
     }
 
     
@@ -96,7 +98,7 @@ public class DeleteVpcRequest extends AmazonWebServiceRequest  implements Serial
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getVpcId() != null) sb.append("VpcId: " + getVpcId() );
         sb.append("}");
         return sb.toString();

@@ -43,7 +43,7 @@ public class DescribeIndexFieldsRequest extends AmazonWebServiceRequest  impleme
      * Limits the <code>DescribeIndexFields</code> response to the specified
      * fields.
      */
-    private java.util.List<String> fieldNames;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> fieldNames;
 
     /**
      * A string that represents the name of a domain. Domain names must be
@@ -125,7 +125,8 @@ public class DescribeIndexFieldsRequest extends AmazonWebServiceRequest  impleme
     public java.util.List<String> getFieldNames() {
         
         if (fieldNames == null) {
-            fieldNames = new java.util.ArrayList<String>();
+              fieldNames = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              fieldNames.setAutoConstruct(true);
         }
         return fieldNames;
     }
@@ -142,8 +143,7 @@ public class DescribeIndexFieldsRequest extends AmazonWebServiceRequest  impleme
             this.fieldNames = null;
             return;
         }
-
-        java.util.List<String> fieldNamesCopy = new java.util.ArrayList<String>(fieldNames.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> fieldNamesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(fieldNames.size());
         fieldNamesCopy.addAll(fieldNames);
         this.fieldNames = fieldNamesCopy;
     }
@@ -184,7 +184,7 @@ public class DescribeIndexFieldsRequest extends AmazonWebServiceRequest  impleme
         if (fieldNames == null) {
             this.fieldNames = null;
         } else {
-            java.util.List<String> fieldNamesCopy = new java.util.ArrayList<String>(fieldNames.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> fieldNamesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(fieldNames.size());
             fieldNamesCopy.addAll(fieldNames);
             this.fieldNames = fieldNamesCopy;
         }
@@ -203,8 +203,8 @@ public class DescribeIndexFieldsRequest extends AmazonWebServiceRequest  impleme
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getDomainName() != null) sb.append("DomainName: " + getDomainName() + ",");    	
+        sb.append("{");
+        if (getDomainName() != null) sb.append("DomainName: " + getDomainName() + ",");
         if (getFieldNames() != null) sb.append("FieldNames: " + getFieldNames() );
         sb.append("}");
         return sb.toString();

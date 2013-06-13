@@ -57,7 +57,7 @@ public class DescribeAlarmsForMetricRequest extends AmazonWebServiceRequest  imp
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 10<br/>
      */
-    private java.util.List<Dimension> dimensions;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Dimension> dimensions;
 
     /**
      * The period in seconds over which the statistic is applied.
@@ -258,7 +258,8 @@ public class DescribeAlarmsForMetricRequest extends AmazonWebServiceRequest  imp
     public java.util.List<Dimension> getDimensions() {
         
         if (dimensions == null) {
-            dimensions = new java.util.ArrayList<Dimension>();
+              dimensions = new com.amazonaws.internal.ListWithAutoConstructFlag<Dimension>();
+              dimensions.setAutoConstruct(true);
         }
         return dimensions;
     }
@@ -276,8 +277,7 @@ public class DescribeAlarmsForMetricRequest extends AmazonWebServiceRequest  imp
             this.dimensions = null;
             return;
         }
-
-        java.util.List<Dimension> dimensionsCopy = new java.util.ArrayList<Dimension>(dimensions.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Dimension> dimensionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Dimension>(dimensions.size());
         dimensionsCopy.addAll(dimensions);
         this.dimensions = dimensionsCopy;
     }
@@ -320,7 +320,7 @@ public class DescribeAlarmsForMetricRequest extends AmazonWebServiceRequest  imp
         if (dimensions == null) {
             this.dimensions = null;
         } else {
-            java.util.List<Dimension> dimensionsCopy = new java.util.ArrayList<Dimension>(dimensions.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Dimension> dimensionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Dimension>(dimensions.size());
             dimensionsCopy.addAll(dimensions);
             this.dimensions = dimensionsCopy;
         }
@@ -465,12 +465,12 @@ public class DescribeAlarmsForMetricRequest extends AmazonWebServiceRequest  imp
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getMetricName() != null) sb.append("MetricName: " + getMetricName() + ",");    	
-        if (getNamespace() != null) sb.append("Namespace: " + getNamespace() + ",");    	
-        if (getStatistic() != null) sb.append("Statistic: " + getStatistic() + ",");    	
-        if (getDimensions() != null) sb.append("Dimensions: " + getDimensions() + ",");    	
-        if (getPeriod() != null) sb.append("Period: " + getPeriod() + ",");    	
+        sb.append("{");
+        if (getMetricName() != null) sb.append("MetricName: " + getMetricName() + ",");
+        if (getNamespace() != null) sb.append("Namespace: " + getNamespace() + ",");
+        if (getStatistic() != null) sb.append("Statistic: " + getStatistic() + ",");
+        if (getDimensions() != null) sb.append("Dimensions: " + getDimensions() + ",");
+        if (getPeriod() != null) sb.append("Period: " + getPeriod() + ",");
         if (getUnit() != null) sb.append("Unit: " + getUnit() );
         sb.append("}");
         return sb.toString();

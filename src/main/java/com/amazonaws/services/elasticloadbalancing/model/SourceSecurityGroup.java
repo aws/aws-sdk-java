@@ -156,8 +156,8 @@ public class SourceSecurityGroup  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getOwnerAlias() != null) sb.append("OwnerAlias: " + getOwnerAlias() + ",");    	
+        sb.append("{");
+        if (getOwnerAlias() != null) sb.append("OwnerAlias: " + getOwnerAlias() + ",");
         if (getGroupName() != null) sb.append("GroupName: " + getGroupName() );
         sb.append("}");
         return sb.toString();

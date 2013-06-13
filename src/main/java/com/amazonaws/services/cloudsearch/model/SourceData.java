@@ -146,8 +146,8 @@ public class SourceData  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getSourceName() != null) sb.append("SourceName: " + getSourceName() + ",");    	
+        sb.append("{");
+        if (getSourceName() != null) sb.append("SourceName: " + getSourceName() + ",");
         if (getDefaultValue() != null) sb.append("DefaultValue: " + getDefaultValue() );
         sb.append("}");
         return sb.toString();

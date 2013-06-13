@@ -542,15 +542,15 @@ public class PutScheduledUpdateGroupActionRequest extends AmazonWebServiceReques
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getAutoScalingGroupName() != null) sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ",");    	
-        if (getScheduledActionName() != null) sb.append("ScheduledActionName: " + getScheduledActionName() + ",");    	
-        if (getTime() != null) sb.append("Time: " + getTime() + ",");    	
-        if (getStartTime() != null) sb.append("StartTime: " + getStartTime() + ",");    	
-        if (getEndTime() != null) sb.append("EndTime: " + getEndTime() + ",");    	
-        if (getRecurrence() != null) sb.append("Recurrence: " + getRecurrence() + ",");    	
-        if (getMinSize() != null) sb.append("MinSize: " + getMinSize() + ",");    	
-        if (getMaxSize() != null) sb.append("MaxSize: " + getMaxSize() + ",");    	
+        sb.append("{");
+        if (getAutoScalingGroupName() != null) sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ",");
+        if (getScheduledActionName() != null) sb.append("ScheduledActionName: " + getScheduledActionName() + ",");
+        if (getTime() != null) sb.append("Time: " + getTime() + ",");
+        if (getStartTime() != null) sb.append("StartTime: " + getStartTime() + ",");
+        if (getEndTime() != null) sb.append("EndTime: " + getEndTime() + ",");
+        if (getRecurrence() != null) sb.append("Recurrence: " + getRecurrence() + ",");
+        if (getMinSize() != null) sb.append("MinSize: " + getMinSize() + ",");
+        if (getMaxSize() != null) sb.append("MaxSize: " + getMaxSize() + ",");
         if (getDesiredCapacity() != null) sb.append("DesiredCapacity: " + getDesiredCapacity() );
         sb.append("}");
         return sb.toString();

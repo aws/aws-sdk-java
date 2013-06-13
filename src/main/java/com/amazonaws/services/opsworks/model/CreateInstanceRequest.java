@@ -35,7 +35,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest  implements S
     /**
      * An array that contains the instance layer IDs.
      */
-    private java.util.List<String> layerIds;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> layerIds;
 
     /**
      * The instance type. OpsWorks supports all instance types except Cluster
@@ -152,7 +152,8 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest  implements S
     public java.util.List<String> getLayerIds() {
         
         if (layerIds == null) {
-            layerIds = new java.util.ArrayList<String>();
+              layerIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              layerIds.setAutoConstruct(true);
         }
         return layerIds;
     }
@@ -167,8 +168,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest  implements S
             this.layerIds = null;
             return;
         }
-
-        java.util.List<String> layerIdsCopy = new java.util.ArrayList<String>(layerIds.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> layerIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(layerIds.size());
         layerIdsCopy.addAll(layerIds);
         this.layerIds = layerIdsCopy;
     }
@@ -205,7 +205,7 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest  implements S
         if (layerIds == null) {
             this.layerIds = null;
         } else {
-            java.util.List<String> layerIdsCopy = new java.util.ArrayList<String>(layerIds.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> layerIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(layerIds.size());
             layerIdsCopy.addAll(layerIds);
             this.layerIds = layerIdsCopy;
         }
@@ -847,16 +847,16 @@ public class CreateInstanceRequest extends AmazonWebServiceRequest  implements S
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getStackId() != null) sb.append("StackId: " + getStackId() + ",");    	
-        if (getLayerIds() != null) sb.append("LayerIds: " + getLayerIds() + ",");    	
-        if (getInstanceType() != null) sb.append("InstanceType: " + getInstanceType() + ",");    	
-        if (getAutoScalingType() != null) sb.append("AutoScalingType: " + getAutoScalingType() + ",");    	
-        if (getHostname() != null) sb.append("Hostname: " + getHostname() + ",");    	
-        if (getOs() != null) sb.append("Os: " + getOs() + ",");    	
-        if (getSshKeyName() != null) sb.append("SshKeyName: " + getSshKeyName() + ",");    	
-        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");    	
-        if (getArchitecture() != null) sb.append("Architecture: " + getArchitecture() + ",");    	
+        sb.append("{");
+        if (getStackId() != null) sb.append("StackId: " + getStackId() + ",");
+        if (getLayerIds() != null) sb.append("LayerIds: " + getLayerIds() + ",");
+        if (getInstanceType() != null) sb.append("InstanceType: " + getInstanceType() + ",");
+        if (getAutoScalingType() != null) sb.append("AutoScalingType: " + getAutoScalingType() + ",");
+        if (getHostname() != null) sb.append("Hostname: " + getHostname() + ",");
+        if (getOs() != null) sb.append("Os: " + getOs() + ",");
+        if (getSshKeyName() != null) sb.append("SshKeyName: " + getSshKeyName() + ",");
+        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");
+        if (getArchitecture() != null) sb.append("Architecture: " + getArchitecture() + ",");
         if (getRootDeviceType() != null) sb.append("RootDeviceType: " + getRootDeviceType() );
         sb.append("}");
         return sb.toString();

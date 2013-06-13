@@ -119,13 +119,13 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest  implement
      * environment. These override the values obtained from the solution
      * stack or the configuration template.
      */
-    private java.util.List<ConfigurationOptionSetting> optionSettings;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<ConfigurationOptionSetting> optionSettings;
 
     /**
      * A list of custom user-defined configuration options to remove from the
      * configuration set for this new environment.
      */
-    private java.util.List<OptionSpecification> optionsToRemove;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<OptionSpecification> optionsToRemove;
 
     /**
      * Default constructor for a new CreateEnvironmentRequest object.  Callers should use the
@@ -133,6 +133,8 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest  implement
      */
     public CreateEnvironmentRequest() {}
     
+
+
     /**
      * Constructs a new CreateEnvironmentRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -153,8 +155,8 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest  implement
      * for your application.
      */
     public CreateEnvironmentRequest(String applicationName, String environmentName) {
-        this.applicationName = applicationName;
-        this.environmentName = environmentName;
+        setApplicationName(applicationName);
+        setEnvironmentName(environmentName);
     }
 
     
@@ -660,7 +662,8 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest  implement
     public java.util.List<ConfigurationOptionSetting> getOptionSettings() {
         
         if (optionSettings == null) {
-            optionSettings = new java.util.ArrayList<ConfigurationOptionSetting>();
+              optionSettings = new com.amazonaws.internal.ListWithAutoConstructFlag<ConfigurationOptionSetting>();
+              optionSettings.setAutoConstruct(true);
         }
         return optionSettings;
     }
@@ -681,8 +684,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest  implement
             this.optionSettings = null;
             return;
         }
-
-        java.util.List<ConfigurationOptionSetting> optionSettingsCopy = new java.util.ArrayList<ConfigurationOptionSetting>(optionSettings.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<ConfigurationOptionSetting> optionSettingsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ConfigurationOptionSetting>(optionSettings.size());
         optionSettingsCopy.addAll(optionSettings);
         this.optionSettings = optionSettingsCopy;
     }
@@ -731,7 +733,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest  implement
         if (optionSettings == null) {
             this.optionSettings = null;
         } else {
-            java.util.List<ConfigurationOptionSetting> optionSettingsCopy = new java.util.ArrayList<ConfigurationOptionSetting>(optionSettings.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<ConfigurationOptionSetting> optionSettingsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ConfigurationOptionSetting>(optionSettings.size());
             optionSettingsCopy.addAll(optionSettings);
             this.optionSettings = optionSettingsCopy;
         }
@@ -749,7 +751,8 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest  implement
     public java.util.List<OptionSpecification> getOptionsToRemove() {
         
         if (optionsToRemove == null) {
-            optionsToRemove = new java.util.ArrayList<OptionSpecification>();
+              optionsToRemove = new com.amazonaws.internal.ListWithAutoConstructFlag<OptionSpecification>();
+              optionsToRemove.setAutoConstruct(true);
         }
         return optionsToRemove;
     }
@@ -766,8 +769,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest  implement
             this.optionsToRemove = null;
             return;
         }
-
-        java.util.List<OptionSpecification> optionsToRemoveCopy = new java.util.ArrayList<OptionSpecification>(optionsToRemove.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<OptionSpecification> optionsToRemoveCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<OptionSpecification>(optionsToRemove.size());
         optionsToRemoveCopy.addAll(optionsToRemove);
         this.optionsToRemove = optionsToRemoveCopy;
     }
@@ -808,7 +810,7 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest  implement
         if (optionsToRemove == null) {
             this.optionsToRemove = null;
         } else {
-            java.util.List<OptionSpecification> optionsToRemoveCopy = new java.util.ArrayList<OptionSpecification>(optionsToRemove.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<OptionSpecification> optionsToRemoveCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<OptionSpecification>(optionsToRemove.size());
             optionsToRemoveCopy.addAll(optionsToRemove);
             this.optionsToRemove = optionsToRemoveCopy;
         }
@@ -827,15 +829,15 @@ public class CreateEnvironmentRequest extends AmazonWebServiceRequest  implement
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getApplicationName() != null) sb.append("ApplicationName: " + getApplicationName() + ",");    	
-        if (getVersionLabel() != null) sb.append("VersionLabel: " + getVersionLabel() + ",");    	
-        if (getEnvironmentName() != null) sb.append("EnvironmentName: " + getEnvironmentName() + ",");    	
-        if (getTemplateName() != null) sb.append("TemplateName: " + getTemplateName() + ",");    	
-        if (getSolutionStackName() != null) sb.append("SolutionStackName: " + getSolutionStackName() + ",");    	
-        if (getCNAMEPrefix() != null) sb.append("CNAMEPrefix: " + getCNAMEPrefix() + ",");    	
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");    	
-        if (getOptionSettings() != null) sb.append("OptionSettings: " + getOptionSettings() + ",");    	
+        sb.append("{");
+        if (getApplicationName() != null) sb.append("ApplicationName: " + getApplicationName() + ",");
+        if (getVersionLabel() != null) sb.append("VersionLabel: " + getVersionLabel() + ",");
+        if (getEnvironmentName() != null) sb.append("EnvironmentName: " + getEnvironmentName() + ",");
+        if (getTemplateName() != null) sb.append("TemplateName: " + getTemplateName() + ",");
+        if (getSolutionStackName() != null) sb.append("SolutionStackName: " + getSolutionStackName() + ",");
+        if (getCNAMEPrefix() != null) sb.append("CNAMEPrefix: " + getCNAMEPrefix() + ",");
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");
+        if (getOptionSettings() != null) sb.append("OptionSettings: " + getOptionSettings() + ",");
         if (getOptionsToRemove() != null) sb.append("OptionsToRemove: " + getOptionsToRemove() );
         sb.append("}");
         return sb.toString();

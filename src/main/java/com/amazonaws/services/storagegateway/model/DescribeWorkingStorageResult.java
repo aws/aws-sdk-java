@@ -46,7 +46,7 @@ public class DescribeWorkingStorageResult  implements Serializable  {
      * length of 1 and maximum length of 300). If no local disks are
      * configured as working storage, then the DiskIds array is empty.
      */
-    private java.util.List<String> diskIds;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> diskIds;
 
     /**
      * The total working storage in bytes in use by the gateway. If no
@@ -129,7 +129,8 @@ public class DescribeWorkingStorageResult  implements Serializable  {
     public java.util.List<String> getDiskIds() {
         
         if (diskIds == null) {
-            diskIds = new java.util.ArrayList<String>();
+              diskIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              diskIds.setAutoConstruct(true);
         }
         return diskIds;
     }
@@ -150,8 +151,7 @@ public class DescribeWorkingStorageResult  implements Serializable  {
             this.diskIds = null;
             return;
         }
-
-        java.util.List<String> diskIdsCopy = new java.util.ArrayList<String>(diskIds.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> diskIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(diskIds.size());
         diskIdsCopy.addAll(diskIds);
         this.diskIds = diskIdsCopy;
     }
@@ -200,7 +200,7 @@ public class DescribeWorkingStorageResult  implements Serializable  {
         if (diskIds == null) {
             this.diskIds = null;
         } else {
-            java.util.List<String> diskIdsCopy = new java.util.ArrayList<String>(diskIds.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> diskIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(diskIds.size());
             diskIdsCopy.addAll(diskIds);
             this.diskIds = diskIdsCopy;
         }
@@ -299,10 +299,10 @@ public class DescribeWorkingStorageResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getGatewayARN() != null) sb.append("GatewayARN: " + getGatewayARN() + ",");    	
-        if (getDiskIds() != null) sb.append("DiskIds: " + getDiskIds() + ",");    	
-        if (getWorkingStorageUsedInBytes() != null) sb.append("WorkingStorageUsedInBytes: " + getWorkingStorageUsedInBytes() + ",");    	
+        sb.append("{");
+        if (getGatewayARN() != null) sb.append("GatewayARN: " + getGatewayARN() + ",");
+        if (getDiskIds() != null) sb.append("DiskIds: " + getDiskIds() + ",");
+        if (getWorkingStorageUsedInBytes() != null) sb.append("WorkingStorageUsedInBytes: " + getWorkingStorageUsedInBytes() + ",");
         if (getWorkingStorageAllocatedInBytes() != null) sb.append("WorkingStorageAllocatedInBytes: " + getWorkingStorageAllocatedInBytes() );
         sb.append("}");
         return sb.toString();

@@ -60,6 +60,8 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest  imple
      */
     public CreateCustomerGatewayRequest() {}
     
+
+
     /**
      * Constructs a new CreateCustomerGatewayRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -72,9 +74,9 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest  imple
      * Autonomous System Number (ASN).
      */
     public CreateCustomerGatewayRequest(String type, String publicIp, Integer bgpAsn) {
-        this.type = type;
-        this.publicIp = publicIp;
-        this.bgpAsn = bgpAsn;
+        setType(type);
+        setPublicIp(publicIp);
+        setBgpAsn(bgpAsn);
     }
 
     
@@ -204,9 +206,9 @@ public class CreateCustomerGatewayRequest extends AmazonWebServiceRequest  imple
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getType() != null) sb.append("Type: " + getType() + ",");    	
-        if (getPublicIp() != null) sb.append("PublicIp: " + getPublicIp() + ",");    	
+        sb.append("{");
+        if (getType() != null) sb.append("Type: " + getType() + ",");
+        if (getPublicIp() != null) sb.append("PublicIp: " + getPublicIp() + ",");
         if (getBgpAsn() != null) sb.append("BgpAsn: " + getBgpAsn() );
         sb.append("}");
         return sb.toString();

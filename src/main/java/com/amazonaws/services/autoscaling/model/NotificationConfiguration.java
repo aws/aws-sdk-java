@@ -205,9 +205,9 @@ public class NotificationConfiguration  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getAutoScalingGroupName() != null) sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ",");    	
-        if (getTopicARN() != null) sb.append("TopicARN: " + getTopicARN() + ",");    	
+        sb.append("{");
+        if (getAutoScalingGroupName() != null) sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ",");
+        if (getTopicARN() != null) sb.append("TopicARN: " + getTopicARN() + ",");
         if (getNotificationType() != null) sb.append("NotificationType: " + getNotificationType() );
         sb.append("}");
         return sb.toString();

@@ -182,9 +182,9 @@ public class BlockDeviceMapping  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getVirtualName() != null) sb.append("VirtualName: " + getVirtualName() + ",");    	
-        if (getDeviceName() != null) sb.append("DeviceName: " + getDeviceName() + ",");    	
+        sb.append("{");
+        if (getVirtualName() != null) sb.append("VirtualName: " + getVirtualName() + ",");
+        if (getDeviceName() != null) sb.append("DeviceName: " + getDeviceName() + ",");
         if (getEbs() != null) sb.append("Ebs: " + getEbs() );
         sb.append("}");
         return sb.toString();

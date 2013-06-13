@@ -31,7 +31,7 @@ public class ListGatewaysResult  implements Serializable  {
     /**
      * An array of <a>GatewayInfo</a> objects.
      */
-    private java.util.List<GatewayInfo> gateways;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<GatewayInfo> gateways;
 
     /**
      * Use the marker in your next request to fetch the next set of gateways
@@ -51,7 +51,8 @@ public class ListGatewaysResult  implements Serializable  {
     public java.util.List<GatewayInfo> getGateways() {
         
         if (gateways == null) {
-            gateways = new java.util.ArrayList<GatewayInfo>();
+              gateways = new com.amazonaws.internal.ListWithAutoConstructFlag<GatewayInfo>();
+              gateways.setAutoConstruct(true);
         }
         return gateways;
     }
@@ -66,8 +67,7 @@ public class ListGatewaysResult  implements Serializable  {
             this.gateways = null;
             return;
         }
-
-        java.util.List<GatewayInfo> gatewaysCopy = new java.util.ArrayList<GatewayInfo>(gateways.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<GatewayInfo> gatewaysCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<GatewayInfo>(gateways.size());
         gatewaysCopy.addAll(gateways);
         this.gateways = gatewaysCopy;
     }
@@ -104,7 +104,7 @@ public class ListGatewaysResult  implements Serializable  {
         if (gateways == null) {
             this.gateways = null;
         } else {
-            java.util.List<GatewayInfo> gatewaysCopy = new java.util.ArrayList<GatewayInfo>(gateways.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<GatewayInfo> gatewaysCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<GatewayInfo>(gateways.size());
             gatewaysCopy.addAll(gateways);
             this.gateways = gatewaysCopy;
         }
@@ -178,8 +178,8 @@ public class ListGatewaysResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getGateways() != null) sb.append("Gateways: " + getGateways() + ",");    	
+        sb.append("{");
+        if (getGateways() != null) sb.append("Gateways: " + getGateways() + ",");
         if (getMarker() != null) sb.append("Marker: " + getMarker() );
         sb.append("}");
         return sb.toString();

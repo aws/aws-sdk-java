@@ -28,7 +28,7 @@ public class DescribeScheduledActionsResult  implements Serializable  {
     /**
      * A list of scheduled actions designed to update an Auto Scaling group.
      */
-    private java.util.List<ScheduledUpdateGroupAction> scheduledUpdateGroupActions;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<ScheduledUpdateGroupAction> scheduledUpdateGroupActions;
 
     /**
      * A string that marks the start of the next batch of returned results.
@@ -46,7 +46,8 @@ public class DescribeScheduledActionsResult  implements Serializable  {
     public java.util.List<ScheduledUpdateGroupAction> getScheduledUpdateGroupActions() {
         
         if (scheduledUpdateGroupActions == null) {
-            scheduledUpdateGroupActions = new java.util.ArrayList<ScheduledUpdateGroupAction>();
+              scheduledUpdateGroupActions = new com.amazonaws.internal.ListWithAutoConstructFlag<ScheduledUpdateGroupAction>();
+              scheduledUpdateGroupActions.setAutoConstruct(true);
         }
         return scheduledUpdateGroupActions;
     }
@@ -61,8 +62,7 @@ public class DescribeScheduledActionsResult  implements Serializable  {
             this.scheduledUpdateGroupActions = null;
             return;
         }
-
-        java.util.List<ScheduledUpdateGroupAction> scheduledUpdateGroupActionsCopy = new java.util.ArrayList<ScheduledUpdateGroupAction>(scheduledUpdateGroupActions.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<ScheduledUpdateGroupAction> scheduledUpdateGroupActionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ScheduledUpdateGroupAction>(scheduledUpdateGroupActions.size());
         scheduledUpdateGroupActionsCopy.addAll(scheduledUpdateGroupActions);
         this.scheduledUpdateGroupActions = scheduledUpdateGroupActionsCopy;
     }
@@ -99,7 +99,7 @@ public class DescribeScheduledActionsResult  implements Serializable  {
         if (scheduledUpdateGroupActions == null) {
             this.scheduledUpdateGroupActions = null;
         } else {
-            java.util.List<ScheduledUpdateGroupAction> scheduledUpdateGroupActionsCopy = new java.util.ArrayList<ScheduledUpdateGroupAction>(scheduledUpdateGroupActions.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<ScheduledUpdateGroupAction> scheduledUpdateGroupActionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ScheduledUpdateGroupAction>(scheduledUpdateGroupActions.size());
             scheduledUpdateGroupActionsCopy.addAll(scheduledUpdateGroupActions);
             this.scheduledUpdateGroupActions = scheduledUpdateGroupActionsCopy;
         }
@@ -161,8 +161,8 @@ public class DescribeScheduledActionsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getScheduledUpdateGroupActions() != null) sb.append("ScheduledUpdateGroupActions: " + getScheduledUpdateGroupActions() + ",");    	
+        sb.append("{");
+        if (getScheduledUpdateGroupActions() != null) sb.append("ScheduledUpdateGroupActions: " + getScheduledUpdateGroupActions() + ",");
         if (getNextToken() != null) sb.append("NextToken: " + getNextToken() );
         sb.append("}");
         return sb.toString();

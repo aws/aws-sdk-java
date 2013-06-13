@@ -214,8 +214,8 @@ public class VolumeInfo  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getVolumeARN() != null) sb.append("VolumeARN: " + getVolumeARN() + ",");    	
+        sb.append("{");
+        if (getVolumeARN() != null) sb.append("VolumeARN: " + getVolumeARN() + ",");
         if (getVolumeType() != null) sb.append("VolumeType: " + getVolumeType() );
         sb.append("}");
         return sb.toString();

@@ -111,8 +111,8 @@ public class Region  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getRegionName() != null) sb.append("RegionName: " + getRegionName() + ",");    	
+        sb.append("{");
+        if (getRegionName() != null) sb.append("RegionName: " + getRegionName() + ",");
         if (getEndpoint() != null) sb.append("Endpoint: " + getEndpoint() );
         sb.append("}");
         return sb.toString();

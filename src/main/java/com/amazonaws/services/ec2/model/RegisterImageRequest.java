@@ -82,7 +82,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest  implements Se
      * block devices (ex: EBS volumes and ephemeral drives) will be exposed
      * on instances launched from the new image.
      */
-    private java.util.List<BlockDeviceMapping> blockDeviceMappings;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<BlockDeviceMapping> blockDeviceMappings;
 
     /**
      * Default constructor for a new RegisterImageRequest object.  Callers should use the
@@ -90,6 +90,8 @@ public class RegisterImageRequest extends AmazonWebServiceRequest  implements Se
      */
     public RegisterImageRequest() {}
     
+
+
     /**
      * Constructs a new RegisterImageRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -99,7 +101,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest  implements Se
      * storage.
      */
     public RegisterImageRequest(String imageLocation) {
-        this.imageLocation = imageLocation;
+        setImageLocation(imageLocation);
     }
 
     
@@ -396,7 +398,8 @@ public class RegisterImageRequest extends AmazonWebServiceRequest  implements Se
     public java.util.List<BlockDeviceMapping> getBlockDeviceMappings() {
         
         if (blockDeviceMappings == null) {
-            blockDeviceMappings = new java.util.ArrayList<BlockDeviceMapping>();
+              blockDeviceMappings = new com.amazonaws.internal.ListWithAutoConstructFlag<BlockDeviceMapping>();
+              blockDeviceMappings.setAutoConstruct(true);
         }
         return blockDeviceMappings;
     }
@@ -415,8 +418,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest  implements Se
             this.blockDeviceMappings = null;
             return;
         }
-
-        java.util.List<BlockDeviceMapping> blockDeviceMappingsCopy = new java.util.ArrayList<BlockDeviceMapping>(blockDeviceMappings.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<BlockDeviceMapping> blockDeviceMappingsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<BlockDeviceMapping>(blockDeviceMappings.size());
         blockDeviceMappingsCopy.addAll(blockDeviceMappings);
         this.blockDeviceMappings = blockDeviceMappingsCopy;
     }
@@ -461,7 +463,7 @@ public class RegisterImageRequest extends AmazonWebServiceRequest  implements Se
         if (blockDeviceMappings == null) {
             this.blockDeviceMappings = null;
         } else {
-            java.util.List<BlockDeviceMapping> blockDeviceMappingsCopy = new java.util.ArrayList<BlockDeviceMapping>(blockDeviceMappings.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<BlockDeviceMapping> blockDeviceMappingsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<BlockDeviceMapping>(blockDeviceMappings.size());
             blockDeviceMappingsCopy.addAll(blockDeviceMappings);
             this.blockDeviceMappings = blockDeviceMappingsCopy;
         }
@@ -480,14 +482,14 @@ public class RegisterImageRequest extends AmazonWebServiceRequest  implements Se
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getImageLocation() != null) sb.append("ImageLocation: " + getImageLocation() + ",");    	
-        if (getName() != null) sb.append("Name: " + getName() + ",");    	
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");    	
-        if (getArchitecture() != null) sb.append("Architecture: " + getArchitecture() + ",");    	
-        if (getKernelId() != null) sb.append("KernelId: " + getKernelId() + ",");    	
-        if (getRamdiskId() != null) sb.append("RamdiskId: " + getRamdiskId() + ",");    	
-        if (getRootDeviceName() != null) sb.append("RootDeviceName: " + getRootDeviceName() + ",");    	
+        sb.append("{");
+        if (getImageLocation() != null) sb.append("ImageLocation: " + getImageLocation() + ",");
+        if (getName() != null) sb.append("Name: " + getName() + ",");
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");
+        if (getArchitecture() != null) sb.append("Architecture: " + getArchitecture() + ",");
+        if (getKernelId() != null) sb.append("KernelId: " + getKernelId() + ",");
+        if (getRamdiskId() != null) sb.append("RamdiskId: " + getRamdiskId() + ",");
+        if (getRootDeviceName() != null) sb.append("RootDeviceName: " + getRootDeviceName() + ",");
         if (getBlockDeviceMappings() != null) sb.append("BlockDeviceMappings: " + getBlockDeviceMappings() );
         sb.append("}");
         return sb.toString();

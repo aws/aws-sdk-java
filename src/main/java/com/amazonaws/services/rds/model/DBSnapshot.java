@@ -694,22 +694,22 @@ public class DBSnapshot  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getDBSnapshotIdentifier() != null) sb.append("DBSnapshotIdentifier: " + getDBSnapshotIdentifier() + ",");    	
-        if (getDBInstanceIdentifier() != null) sb.append("DBInstanceIdentifier: " + getDBInstanceIdentifier() + ",");    	
-        if (getSnapshotCreateTime() != null) sb.append("SnapshotCreateTime: " + getSnapshotCreateTime() + ",");    	
-        if (getEngine() != null) sb.append("Engine: " + getEngine() + ",");    	
-        if (getAllocatedStorage() != null) sb.append("AllocatedStorage: " + getAllocatedStorage() + ",");    	
-        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");    	
-        if (getPort() != null) sb.append("Port: " + getPort() + ",");    	
-        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");    	
-        if (getVpcId() != null) sb.append("VpcId: " + getVpcId() + ",");    	
-        if (getInstanceCreateTime() != null) sb.append("InstanceCreateTime: " + getInstanceCreateTime() + ",");    	
-        if (getMasterUsername() != null) sb.append("MasterUsername: " + getMasterUsername() + ",");    	
-        if (getEngineVersion() != null) sb.append("EngineVersion: " + getEngineVersion() + ",");    	
-        if (getLicenseModel() != null) sb.append("LicenseModel: " + getLicenseModel() + ",");    	
-        if (getSnapshotType() != null) sb.append("SnapshotType: " + getSnapshotType() + ",");    	
-        if (getIops() != null) sb.append("Iops: " + getIops() + ",");    	
+        sb.append("{");
+        if (getDBSnapshotIdentifier() != null) sb.append("DBSnapshotIdentifier: " + getDBSnapshotIdentifier() + ",");
+        if (getDBInstanceIdentifier() != null) sb.append("DBInstanceIdentifier: " + getDBInstanceIdentifier() + ",");
+        if (getSnapshotCreateTime() != null) sb.append("SnapshotCreateTime: " + getSnapshotCreateTime() + ",");
+        if (getEngine() != null) sb.append("Engine: " + getEngine() + ",");
+        if (getAllocatedStorage() != null) sb.append("AllocatedStorage: " + getAllocatedStorage() + ",");
+        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");
+        if (getPort() != null) sb.append("Port: " + getPort() + ",");
+        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");
+        if (getVpcId() != null) sb.append("VpcId: " + getVpcId() + ",");
+        if (getInstanceCreateTime() != null) sb.append("InstanceCreateTime: " + getInstanceCreateTime() + ",");
+        if (getMasterUsername() != null) sb.append("MasterUsername: " + getMasterUsername() + ",");
+        if (getEngineVersion() != null) sb.append("EngineVersion: " + getEngineVersion() + ",");
+        if (getLicenseModel() != null) sb.append("LicenseModel: " + getLicenseModel() + ",");
+        if (getSnapshotType() != null) sb.append("SnapshotType: " + getSnapshotType() + ",");
+        if (getIops() != null) sb.append("Iops: " + getIops() + ",");
         if (getOptionGroupName() != null) sb.append("OptionGroupName: " + getOptionGroupName() );
         sb.append("}");
         return sb.toString();

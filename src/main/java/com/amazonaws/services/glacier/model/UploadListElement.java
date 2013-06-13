@@ -255,11 +255,11 @@ public class UploadListElement  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getMultipartUploadId() != null) sb.append("MultipartUploadId: " + getMultipartUploadId() + ",");    	
-        if (getVaultARN() != null) sb.append("VaultARN: " + getVaultARN() + ",");    	
-        if (getArchiveDescription() != null) sb.append("ArchiveDescription: " + getArchiveDescription() + ",");    	
-        if (getPartSizeInBytes() != null) sb.append("PartSizeInBytes: " + getPartSizeInBytes() + ",");    	
+        sb.append("{");
+        if (getMultipartUploadId() != null) sb.append("MultipartUploadId: " + getMultipartUploadId() + ",");
+        if (getVaultARN() != null) sb.append("VaultARN: " + getVaultARN() + ",");
+        if (getArchiveDescription() != null) sb.append("ArchiveDescription: " + getArchiveDescription() + ",");
+        if (getPartSizeInBytes() != null) sb.append("PartSizeInBytes: " + getPartSizeInBytes() + ",");
         if (getCreationDate() != null) sb.append("CreationDate: " + getCreationDate() );
         sb.append("}");
         return sb.toString();

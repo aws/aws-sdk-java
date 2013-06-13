@@ -99,7 +99,7 @@ public class InstanceProfile  implements Serializable  {
     /**
      * The role associated with the instance profile.
      */
-    private java.util.List<Role> roles;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Role> roles;
 
     /**
      * Path to the instance profile. For more information about paths, see <a
@@ -390,7 +390,8 @@ public class InstanceProfile  implements Serializable  {
     public java.util.List<Role> getRoles() {
         
         if (roles == null) {
-            roles = new java.util.ArrayList<Role>();
+              roles = new com.amazonaws.internal.ListWithAutoConstructFlag<Role>();
+              roles.setAutoConstruct(true);
         }
         return roles;
     }
@@ -405,8 +406,7 @@ public class InstanceProfile  implements Serializable  {
             this.roles = null;
             return;
         }
-
-        java.util.List<Role> rolesCopy = new java.util.ArrayList<Role>(roles.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Role> rolesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Role>(roles.size());
         rolesCopy.addAll(roles);
         this.roles = rolesCopy;
     }
@@ -443,7 +443,7 @@ public class InstanceProfile  implements Serializable  {
         if (roles == null) {
             this.roles = null;
         } else {
-            java.util.List<Role> rolesCopy = new java.util.ArrayList<Role>(roles.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Role> rolesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Role>(roles.size());
             rolesCopy.addAll(roles);
             this.roles = rolesCopy;
         }
@@ -462,12 +462,12 @@ public class InstanceProfile  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getPath() != null) sb.append("Path: " + getPath() + ",");    	
-        if (getInstanceProfileName() != null) sb.append("InstanceProfileName: " + getInstanceProfileName() + ",");    	
-        if (getInstanceProfileId() != null) sb.append("InstanceProfileId: " + getInstanceProfileId() + ",");    	
-        if (getArn() != null) sb.append("Arn: " + getArn() + ",");    	
-        if (getCreateDate() != null) sb.append("CreateDate: " + getCreateDate() + ",");    	
+        sb.append("{");
+        if (getPath() != null) sb.append("Path: " + getPath() + ",");
+        if (getInstanceProfileName() != null) sb.append("InstanceProfileName: " + getInstanceProfileName() + ",");
+        if (getInstanceProfileId() != null) sb.append("InstanceProfileId: " + getInstanceProfileId() + ",");
+        if (getArn() != null) sb.append("Arn: " + getArn() + ",");
+        if (getCreateDate() != null) sb.append("CreateDate: " + getCreateDate() + ",");
         if (getRoles() != null) sb.append("Roles: " + getRoles() );
         sb.append("}");
         return sb.toString();

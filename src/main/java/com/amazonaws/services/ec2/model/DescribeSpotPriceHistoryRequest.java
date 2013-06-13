@@ -48,12 +48,12 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest  im
     /**
      * Specifies the instance type to return.
      */
-    private java.util.List<String> instanceTypes;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> instanceTypes;
 
     /**
      * The description of the AMI.
      */
-    private java.util.List<String> productDescriptions;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> productDescriptions;
 
     /**
      * A list of filters used to match properties for SpotPriceHistory. For a
@@ -62,7 +62,7 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest  im
      * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      * EC2 API reference</a>.
      */
-    private java.util.List<Filter> filters;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filters;
 
     /**
      * Filters the results by availability zone (ex: 'us-east-1a').
@@ -155,7 +155,8 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest  im
     public java.util.List<String> getInstanceTypes() {
         
         if (instanceTypes == null) {
-            instanceTypes = new java.util.ArrayList<String>();
+              instanceTypes = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              instanceTypes.setAutoConstruct(true);
         }
         return instanceTypes;
     }
@@ -170,8 +171,7 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest  im
             this.instanceTypes = null;
             return;
         }
-
-        java.util.List<String> instanceTypesCopy = new java.util.ArrayList<String>(instanceTypes.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> instanceTypesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(instanceTypes.size());
         instanceTypesCopy.addAll(instanceTypes);
         this.instanceTypes = instanceTypesCopy;
     }
@@ -208,7 +208,7 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest  im
         if (instanceTypes == null) {
             this.instanceTypes = null;
         } else {
-            java.util.List<String> instanceTypesCopy = new java.util.ArrayList<String>(instanceTypes.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> instanceTypesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(instanceTypes.size());
             instanceTypesCopy.addAll(instanceTypes);
             this.instanceTypes = instanceTypesCopy;
         }
@@ -224,7 +224,8 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest  im
     public java.util.List<String> getProductDescriptions() {
         
         if (productDescriptions == null) {
-            productDescriptions = new java.util.ArrayList<String>();
+              productDescriptions = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              productDescriptions.setAutoConstruct(true);
         }
         return productDescriptions;
     }
@@ -239,8 +240,7 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest  im
             this.productDescriptions = null;
             return;
         }
-
-        java.util.List<String> productDescriptionsCopy = new java.util.ArrayList<String>(productDescriptions.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> productDescriptionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(productDescriptions.size());
         productDescriptionsCopy.addAll(productDescriptions);
         this.productDescriptions = productDescriptionsCopy;
     }
@@ -277,7 +277,7 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest  im
         if (productDescriptions == null) {
             this.productDescriptions = null;
         } else {
-            java.util.List<String> productDescriptionsCopy = new java.util.ArrayList<String>(productDescriptions.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> productDescriptionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(productDescriptions.size());
             productDescriptionsCopy.addAll(productDescriptions);
             this.productDescriptions = productDescriptionsCopy;
         }
@@ -301,7 +301,8 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest  im
     public java.util.List<Filter> getFilters() {
         
         if (filters == null) {
-            filters = new java.util.ArrayList<Filter>();
+              filters = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>();
+              filters.setAutoConstruct(true);
         }
         return filters;
     }
@@ -324,8 +325,7 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest  im
             this.filters = null;
             return;
         }
-
-        java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>(filters.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filtersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>(filters.size());
         filtersCopy.addAll(filters);
         this.filters = filtersCopy;
     }
@@ -378,7 +378,7 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest  im
         if (filters == null) {
             this.filters = null;
         } else {
-            java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>(filters.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filtersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>(filters.size());
             filtersCopy.addAll(filters);
             this.filters = filtersCopy;
         }
@@ -499,14 +499,14 @@ public class DescribeSpotPriceHistoryRequest extends AmazonWebServiceRequest  im
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getStartTime() != null) sb.append("StartTime: " + getStartTime() + ",");    	
-        if (getEndTime() != null) sb.append("EndTime: " + getEndTime() + ",");    	
-        if (getInstanceTypes() != null) sb.append("InstanceTypes: " + getInstanceTypes() + ",");    	
-        if (getProductDescriptions() != null) sb.append("ProductDescriptions: " + getProductDescriptions() + ",");    	
-        if (getFilters() != null) sb.append("Filters: " + getFilters() + ",");    	
-        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");    	
-        if (getMaxResults() != null) sb.append("MaxResults: " + getMaxResults() + ",");    	
+        sb.append("{");
+        if (getStartTime() != null) sb.append("StartTime: " + getStartTime() + ",");
+        if (getEndTime() != null) sb.append("EndTime: " + getEndTime() + ",");
+        if (getInstanceTypes() != null) sb.append("InstanceTypes: " + getInstanceTypes() + ",");
+        if (getProductDescriptions() != null) sb.append("ProductDescriptions: " + getProductDescriptions() + ",");
+        if (getFilters() != null) sb.append("Filters: " + getFilters() + ",");
+        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");
+        if (getMaxResults() != null) sb.append("MaxResults: " + getMaxResults() + ",");
         if (getNextToken() != null) sb.append("NextToken: " + getNextToken() );
         sb.append("}");
         return sb.toString();

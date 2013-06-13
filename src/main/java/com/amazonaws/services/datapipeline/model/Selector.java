@@ -155,8 +155,8 @@ public class Selector  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getFieldName() != null) sb.append("FieldName: " + getFieldName() + ",");    	
+        sb.append("{");
+        if (getFieldName() != null) sb.append("FieldName: " + getFieldName() + ",");
         if (getOperator() != null) sb.append("Operator: " + getOperator() );
         sb.append("}");
         return sb.toString();

@@ -51,6 +51,8 @@ public class AttachVolumeRequest extends AmazonWebServiceRequest  implements Ser
      */
     public AttachVolumeRequest() {}
     
+
+
     /**
      * Constructs a new AttachVolumeRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -66,9 +68,9 @@ public class AttachVolumeRequest extends AmazonWebServiceRequest  implements Ser
      * (e.g., <code>/dev/sdh</code>).
      */
     public AttachVolumeRequest(String volumeId, String instanceId, String device) {
-        this.volumeId = volumeId;
-        this.instanceId = instanceId;
-        this.device = device;
+        setVolumeId(volumeId);
+        setInstanceId(instanceId);
+        setDevice(device);
     }
 
     
@@ -210,9 +212,9 @@ public class AttachVolumeRequest extends AmazonWebServiceRequest  implements Ser
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getVolumeId() != null) sb.append("VolumeId: " + getVolumeId() + ",");    	
-        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ",");    	
+        sb.append("{");
+        if (getVolumeId() != null) sb.append("VolumeId: " + getVolumeId() + ",");
+        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ",");
         if (getDevice() != null) sb.append("Device: " + getDevice() );
         sb.append("}");
         return sb.toString();

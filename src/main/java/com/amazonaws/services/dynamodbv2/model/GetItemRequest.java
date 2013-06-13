@@ -56,7 +56,7 @@ public class GetItemRequest extends AmazonWebServiceRequest  implements Serializ
      * <b>Constraints:</b><br/>
      * <b>Length: </b>1 - <br/>
      */
-    private java.util.List<String> attributesToGet;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> attributesToGet;
 
     /**
      * If set to <code>true</code>, then the operation uses strongly
@@ -80,6 +80,8 @@ public class GetItemRequest extends AmazonWebServiceRequest  implements Serializ
      */
     public GetItemRequest() {}
     
+
+
     /**
      * Constructs a new GetItemRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -90,8 +92,8 @@ public class GetItemRequest extends AmazonWebServiceRequest  implements Serializ
      * representing the primary key of the item to retrieve.
      */
     public GetItemRequest(String tableName, java.util.Map<String,AttributeValue> key) {
-        this.tableName = tableName;
-        this.key = key;
+        setTableName(tableName);
+        setKey(key);
     }
 
     
@@ -221,8 +223,7 @@ public class GetItemRequest extends AmazonWebServiceRequest  implements Serializ
             this.attributesToGet = null;
             return;
         }
-
-        java.util.List<String> attributesToGetCopy = new java.util.ArrayList<String>(attributesToGet.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> attributesToGetCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(attributesToGet.size());
         attributesToGetCopy.addAll(attributesToGet);
         this.attributesToGet = attributesToGetCopy;
     }
@@ -277,7 +278,7 @@ public class GetItemRequest extends AmazonWebServiceRequest  implements Serializ
         if (attributesToGet == null) {
             this.attributesToGet = null;
         } else {
-            java.util.List<String> attributesToGetCopy = new java.util.ArrayList<String>(attributesToGet.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> attributesToGetCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(attributesToGet.size());
             attributesToGetCopy.addAll(attributesToGet);
             this.attributesToGet = attributesToGetCopy;
         }
@@ -450,11 +451,11 @@ public class GetItemRequest extends AmazonWebServiceRequest  implements Serializ
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getTableName() != null) sb.append("TableName: " + getTableName() + ",");    	
-        if (getKey() != null) sb.append("Key: " + getKey() + ",");    	
-        if (getAttributesToGet() != null) sb.append("AttributesToGet: " + getAttributesToGet() + ",");    	
-        if (isConsistentRead() != null) sb.append("ConsistentRead: " + isConsistentRead() + ",");    	
+        sb.append("{");
+        if (getTableName() != null) sb.append("TableName: " + getTableName() + ",");
+        if (getKey() != null) sb.append("Key: " + getKey() + ",");
+        if (getAttributesToGet() != null) sb.append("AttributesToGet: " + getAttributesToGet() + ",");
+        if (isConsistentRead() != null) sb.append("ConsistentRead: " + isConsistentRead() + ",");
         if (getReturnConsumedCapacity() != null) sb.append("ReturnConsumedCapacity: " + getReturnConsumedCapacity() );
         sb.append("}");
         return sb.toString();

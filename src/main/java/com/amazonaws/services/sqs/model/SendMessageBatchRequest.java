@@ -35,7 +35,7 @@ public class SendMessageBatchRequest extends AmazonWebServiceRequest  implements
     /**
      * A list of <a>SendMessageBatchRequestEntry</a>s.
      */
-    private java.util.List<SendMessageBatchRequestEntry> entries;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<SendMessageBatchRequestEntry> entries;
 
     /**
      * Default constructor for a new SendMessageBatchRequest object.  Callers should use the
@@ -43,6 +43,8 @@ public class SendMessageBatchRequest extends AmazonWebServiceRequest  implements
      */
     public SendMessageBatchRequest() {}
     
+
+
     /**
      * Constructs a new SendMessageBatchRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -51,11 +53,13 @@ public class SendMessageBatchRequest extends AmazonWebServiceRequest  implements
      * @param queueUrl The URL of the SQS queue to take action on.
      */
     public SendMessageBatchRequest(String queueUrl) {
-        this.queueUrl = queueUrl;
+        setQueueUrl(queueUrl);
     }
 
     
     
+
+
     /**
      * Constructs a new SendMessageBatchRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -65,8 +69,8 @@ public class SendMessageBatchRequest extends AmazonWebServiceRequest  implements
      * @param entries A list of <a>SendMessageBatchRequestEntry</a>s.
      */
     public SendMessageBatchRequest(String queueUrl, java.util.List<SendMessageBatchRequestEntry> entries) {
-        this.queueUrl = queueUrl;
-        this.entries = entries;
+        setQueueUrl(queueUrl);
+        setEntries(entries);
     }
 
     
@@ -113,7 +117,8 @@ public class SendMessageBatchRequest extends AmazonWebServiceRequest  implements
     public java.util.List<SendMessageBatchRequestEntry> getEntries() {
         
         if (entries == null) {
-            entries = new java.util.ArrayList<SendMessageBatchRequestEntry>();
+              entries = new com.amazonaws.internal.ListWithAutoConstructFlag<SendMessageBatchRequestEntry>();
+              entries.setAutoConstruct(true);
         }
         return entries;
     }
@@ -128,8 +133,7 @@ public class SendMessageBatchRequest extends AmazonWebServiceRequest  implements
             this.entries = null;
             return;
         }
-
-        java.util.List<SendMessageBatchRequestEntry> entriesCopy = new java.util.ArrayList<SendMessageBatchRequestEntry>(entries.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<SendMessageBatchRequestEntry> entriesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<SendMessageBatchRequestEntry>(entries.size());
         entriesCopy.addAll(entries);
         this.entries = entriesCopy;
     }
@@ -166,7 +170,7 @@ public class SendMessageBatchRequest extends AmazonWebServiceRequest  implements
         if (entries == null) {
             this.entries = null;
         } else {
-            java.util.List<SendMessageBatchRequestEntry> entriesCopy = new java.util.ArrayList<SendMessageBatchRequestEntry>(entries.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<SendMessageBatchRequestEntry> entriesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<SendMessageBatchRequestEntry>(entries.size());
             entriesCopy.addAll(entries);
             this.entries = entriesCopy;
         }
@@ -185,8 +189,8 @@ public class SendMessageBatchRequest extends AmazonWebServiceRequest  implements
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getQueueUrl() != null) sb.append("QueueUrl: " + getQueueUrl() + ",");    	
+        sb.append("{");
+        if (getQueueUrl() != null) sb.append("QueueUrl: " + getQueueUrl() + ",");
         if (getEntries() != null) sb.append("Entries: " + getEntries() );
         sb.append("}");
         return sb.toString();

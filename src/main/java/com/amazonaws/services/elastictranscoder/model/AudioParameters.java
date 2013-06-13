@@ -298,10 +298,10 @@ public class AudioParameters  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getCodec() != null) sb.append("Codec: " + getCodec() + ",");    	
-        if (getSampleRate() != null) sb.append("SampleRate: " + getSampleRate() + ",");    	
-        if (getBitRate() != null) sb.append("BitRate: " + getBitRate() + ",");    	
+        sb.append("{");
+        if (getCodec() != null) sb.append("Codec: " + getCodec() + ",");
+        if (getSampleRate() != null) sb.append("SampleRate: " + getSampleRate() + ",");
+        if (getBitRate() != null) sb.append("BitRate: " + getBitRate() + ",");
         if (getChannels() != null) sb.append("Channels: " + getChannels() );
         sb.append("}");
         return sb.toString();

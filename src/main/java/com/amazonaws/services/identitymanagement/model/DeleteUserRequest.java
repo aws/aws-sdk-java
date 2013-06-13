@@ -41,6 +41,8 @@ public class DeleteUserRequest extends AmazonWebServiceRequest  implements Seria
      */
     public DeleteUserRequest() {}
     
+
+
     /**
      * Constructs a new DeleteUserRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -49,7 +51,7 @@ public class DeleteUserRequest extends AmazonWebServiceRequest  implements Seria
      * @param userName Name of the user to delete.
      */
     public DeleteUserRequest(String userName) {
-        this.userName = userName;
+        setUserName(userName);
     }
 
     
@@ -111,7 +113,7 @@ public class DeleteUserRequest extends AmazonWebServiceRequest  implements Seria
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getUserName() != null) sb.append("UserName: " + getUserName() );
         sb.append("}");
         return sb.toString();

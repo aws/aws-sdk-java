@@ -248,9 +248,9 @@ public class StreamingLoggingConfig  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (isEnabled() != null) sb.append("Enabled: " + isEnabled() + ",");    	
-        if (getBucket() != null) sb.append("Bucket: " + getBucket() + ",");    	
+        sb.append("{");
+        if (isEnabled() != null) sb.append("Enabled: " + isEnabled() + ",");
+        if (getBucket() != null) sb.append("Bucket: " + getBucket() + ",");
         if (getPrefix() != null) sb.append("Prefix: " + getPrefix() );
         sb.append("}");
         return sb.toString();

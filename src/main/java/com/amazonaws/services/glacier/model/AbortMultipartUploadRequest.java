@@ -72,6 +72,8 @@ public class AbortMultipartUploadRequest extends AmazonWebServiceRequest  implem
      */
     public AbortMultipartUploadRequest() {}
     
+
+
     /**
      * Constructs a new AbortMultipartUploadRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -81,12 +83,14 @@ public class AbortMultipartUploadRequest extends AmazonWebServiceRequest  implem
      * @param uploadId The upload ID of the multipart upload to delete.
      */
     public AbortMultipartUploadRequest(String vaultName, String uploadId) {
-        this.vaultName = vaultName;
-        this.uploadId = uploadId;
+        setVaultName(vaultName);
+        setUploadId(uploadId);
     }
 
     
     
+
+
     /**
      * Constructs a new AbortMultipartUploadRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -101,9 +105,9 @@ public class AbortMultipartUploadRequest extends AmazonWebServiceRequest  implem
      * @param uploadId The upload ID of the multipart upload to delete.
      */
     public AbortMultipartUploadRequest(String accountId, String vaultName, String uploadId) {
-        this.accountId = accountId;
-        this.vaultName = vaultName;
-        this.uploadId = uploadId;
+        setAccountId(accountId);
+        setVaultName(vaultName);
+        setUploadId(uploadId);
     }
 
     
@@ -245,9 +249,9 @@ public class AbortMultipartUploadRequest extends AmazonWebServiceRequest  implem
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getAccountId() != null) sb.append("AccountId: " + getAccountId() + ",");    	
-        if (getVaultName() != null) sb.append("VaultName: " + getVaultName() + ",");    	
+        sb.append("{");
+        if (getAccountId() != null) sb.append("AccountId: " + getAccountId() + ",");
+        if (getVaultName() != null) sb.append("VaultName: " + getVaultName() + ",");
         if (getUploadId() != null) sb.append("UploadId: " + getUploadId() );
         sb.append("}");
         return sb.toString();

@@ -513,9 +513,9 @@ public class BatchWriteItemRequest extends AmazonWebServiceRequest  implements S
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getRequestItems() != null) sb.append("RequestItems: " + getRequestItems() + ",");    	
-        if (getReturnConsumedCapacity() != null) sb.append("ReturnConsumedCapacity: " + getReturnConsumedCapacity() + ",");    	
+        sb.append("{");
+        if (getRequestItems() != null) sb.append("RequestItems: " + getRequestItems() + ",");
+        if (getReturnConsumedCapacity() != null) sb.append("ReturnConsumedCapacity: " + getReturnConsumedCapacity() + ",");
         if (getReturnItemCollectionMetrics() != null) sb.append("ReturnItemCollectionMetrics: " + getReturnItemCollectionMetrics() );
         sb.append("}");
         return sb.toString();

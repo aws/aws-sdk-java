@@ -43,7 +43,7 @@ public class DescribeScheduledActionsRequest extends AmazonWebServiceRequest  im
      * name is provided, the results are limited to that group. If unknown
      * scheduled actions are requested, they are ignored with no error.
      */
-    private java.util.List<String> scheduledActionNames;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> scheduledActionNames;
 
     /**
      * The earliest scheduled start time to return. If scheduled action names
@@ -135,7 +135,8 @@ public class DescribeScheduledActionsRequest extends AmazonWebServiceRequest  im
     public java.util.List<String> getScheduledActionNames() {
         
         if (scheduledActionNames == null) {
-            scheduledActionNames = new java.util.ArrayList<String>();
+              scheduledActionNames = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              scheduledActionNames.setAutoConstruct(true);
         }
         return scheduledActionNames;
     }
@@ -158,8 +159,7 @@ public class DescribeScheduledActionsRequest extends AmazonWebServiceRequest  im
             this.scheduledActionNames = null;
             return;
         }
-
-        java.util.List<String> scheduledActionNamesCopy = new java.util.ArrayList<String>(scheduledActionNames.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> scheduledActionNamesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(scheduledActionNames.size());
         scheduledActionNamesCopy.addAll(scheduledActionNames);
         this.scheduledActionNames = scheduledActionNamesCopy;
     }
@@ -212,7 +212,7 @@ public class DescribeScheduledActionsRequest extends AmazonWebServiceRequest  im
         if (scheduledActionNames == null) {
             this.scheduledActionNames = null;
         } else {
-            java.util.List<String> scheduledActionNamesCopy = new java.util.ArrayList<String>(scheduledActionNames.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> scheduledActionNamesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(scheduledActionNames.size());
             scheduledActionNamesCopy.addAll(scheduledActionNames);
             this.scheduledActionNames = scheduledActionNamesCopy;
         }
@@ -397,12 +397,12 @@ public class DescribeScheduledActionsRequest extends AmazonWebServiceRequest  im
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getAutoScalingGroupName() != null) sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ",");    	
-        if (getScheduledActionNames() != null) sb.append("ScheduledActionNames: " + getScheduledActionNames() + ",");    	
-        if (getStartTime() != null) sb.append("StartTime: " + getStartTime() + ",");    	
-        if (getEndTime() != null) sb.append("EndTime: " + getEndTime() + ",");    	
-        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() + ",");    	
+        sb.append("{");
+        if (getAutoScalingGroupName() != null) sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ",");
+        if (getScheduledActionNames() != null) sb.append("ScheduledActionNames: " + getScheduledActionNames() + ",");
+        if (getStartTime() != null) sb.append("StartTime: " + getStartTime() + ",");
+        if (getEndTime() != null) sb.append("EndTime: " + getEndTime() + ",");
+        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() + ",");
         if (getMaxRecords() != null) sb.append("MaxRecords: " + getMaxRecords() );
         sb.append("}");
         return sb.toString();

@@ -30,7 +30,7 @@ public class DhcpConfiguration  implements Serializable  {
     /**
      * Contains a set of values for a DHCP option.
      */
-    private java.util.List<String> values;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> values;
 
     /**
      * Contains the name of a DHCP option.
@@ -74,7 +74,8 @@ public class DhcpConfiguration  implements Serializable  {
     public java.util.List<String> getValues() {
         
         if (values == null) {
-            values = new java.util.ArrayList<String>();
+              values = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              values.setAutoConstruct(true);
         }
         return values;
     }
@@ -89,8 +90,7 @@ public class DhcpConfiguration  implements Serializable  {
             this.values = null;
             return;
         }
-
-        java.util.List<String> valuesCopy = new java.util.ArrayList<String>(values.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> valuesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(values.size());
         valuesCopy.addAll(values);
         this.values = valuesCopy;
     }
@@ -127,7 +127,7 @@ public class DhcpConfiguration  implements Serializable  {
         if (values == null) {
             this.values = null;
         } else {
-            java.util.List<String> valuesCopy = new java.util.ArrayList<String>(values.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> valuesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(values.size());
             valuesCopy.addAll(values);
             this.values = valuesCopy;
         }
@@ -146,8 +146,8 @@ public class DhcpConfiguration  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getKey() != null) sb.append("Key: " + getKey() + ",");    	
+        sb.append("{");
+        if (getKey() != null) sb.append("Key: " + getKey() + ",");
         if (getValues() != null) sb.append("Values: " + getValues() );
         sb.append("}");
         return sb.toString();

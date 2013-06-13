@@ -98,7 +98,7 @@ public class UpdateSnapshotScheduleResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getVolumeARN() != null) sb.append("VolumeARN: " + getVolumeARN() );
         sb.append("}");
         return sb.toString();

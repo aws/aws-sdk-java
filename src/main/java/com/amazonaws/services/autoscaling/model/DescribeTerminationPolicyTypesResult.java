@@ -28,7 +28,7 @@ public class DescribeTerminationPolicyTypesResult  implements Serializable  {
      * <code>NewestInstance</code>, <code>ClosestToNextInstanceHour</code>,
      * <code>Default</code>
      */
-    private java.util.List<String> terminationPolicyTypes;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> terminationPolicyTypes;
 
     /**
      * Termination policies supported by Auto Scaling. They are:
@@ -44,7 +44,8 @@ public class DescribeTerminationPolicyTypesResult  implements Serializable  {
     public java.util.List<String> getTerminationPolicyTypes() {
         
         if (terminationPolicyTypes == null) {
-            terminationPolicyTypes = new java.util.ArrayList<String>();
+              terminationPolicyTypes = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              terminationPolicyTypes.setAutoConstruct(true);
         }
         return terminationPolicyTypes;
     }
@@ -65,8 +66,7 @@ public class DescribeTerminationPolicyTypesResult  implements Serializable  {
             this.terminationPolicyTypes = null;
             return;
         }
-
-        java.util.List<String> terminationPolicyTypesCopy = new java.util.ArrayList<String>(terminationPolicyTypes.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> terminationPolicyTypesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(terminationPolicyTypes.size());
         terminationPolicyTypesCopy.addAll(terminationPolicyTypes);
         this.terminationPolicyTypes = terminationPolicyTypesCopy;
     }
@@ -115,7 +115,7 @@ public class DescribeTerminationPolicyTypesResult  implements Serializable  {
         if (terminationPolicyTypes == null) {
             this.terminationPolicyTypes = null;
         } else {
-            java.util.List<String> terminationPolicyTypesCopy = new java.util.ArrayList<String>(terminationPolicyTypes.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> terminationPolicyTypesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(terminationPolicyTypes.size());
             terminationPolicyTypesCopy.addAll(terminationPolicyTypes);
             this.terminationPolicyTypes = terminationPolicyTypesCopy;
         }
@@ -134,7 +134,7 @@ public class DescribeTerminationPolicyTypesResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getTerminationPolicyTypes() != null) sb.append("TerminationPolicyTypes: " + getTerminationPolicyTypes() );
         sb.append("}");
         return sb.toString();

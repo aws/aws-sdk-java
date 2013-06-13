@@ -111,8 +111,8 @@ public class StateReason  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getCode() != null) sb.append("Code: " + getCode() + ",");    	
+        sb.append("{");
+        if (getCode() != null) sb.append("Code: " + getCode() + ",");
         if (getMessage() != null) sb.append("Message: " + getMessage() );
         sb.append("}");
         return sb.toString();

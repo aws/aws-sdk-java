@@ -79,7 +79,7 @@ public class UpdateStemmingOptionsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getStems() != null) sb.append("Stems: " + getStems() );
         sb.append("}");
         return sb.toString();

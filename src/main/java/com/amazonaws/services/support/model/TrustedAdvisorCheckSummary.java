@@ -311,12 +311,12 @@ public class TrustedAdvisorCheckSummary  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getCheckId() != null) sb.append("CheckId: " + getCheckId() + ",");    	
-        if (getTimestamp() != null) sb.append("Timestamp: " + getTimestamp() + ",");    	
-        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");    	
-        if (isHasFlaggedResources() != null) sb.append("HasFlaggedResources: " + isHasFlaggedResources() + ",");    	
-        if (getResourcesSummary() != null) sb.append("ResourcesSummary: " + getResourcesSummary() + ",");    	
+        sb.append("{");
+        if (getCheckId() != null) sb.append("CheckId: " + getCheckId() + ",");
+        if (getTimestamp() != null) sb.append("Timestamp: " + getTimestamp() + ",");
+        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");
+        if (isHasFlaggedResources() != null) sb.append("HasFlaggedResources: " + isHasFlaggedResources() + ",");
+        if (getResourcesSummary() != null) sb.append("ResourcesSummary: " + getResourcesSummary() + ",");
         if (getCategorySpecificSummary() != null) sb.append("CategorySpecificSummary: " + getCategorySpecificSummary() );
         sb.append("}");
         return sb.toString();

@@ -50,6 +50,8 @@ public class DeleteGroupPolicyRequest extends AmazonWebServiceRequest  implement
      */
     public DeleteGroupPolicyRequest() {}
     
+
+
     /**
      * Constructs a new DeleteGroupPolicyRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -59,8 +61,8 @@ public class DeleteGroupPolicyRequest extends AmazonWebServiceRequest  implement
      * @param policyName Name of the policy document to delete.
      */
     public DeleteGroupPolicyRequest(String groupName, String policyName) {
-        this.groupName = groupName;
-        this.policyName = policyName;
+        setGroupName(groupName);
+        setPolicyName(policyName);
     }
 
     
@@ -168,8 +170,8 @@ public class DeleteGroupPolicyRequest extends AmazonWebServiceRequest  implement
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getGroupName() != null) sb.append("GroupName: " + getGroupName() + ",");    	
+        sb.append("{");
+        if (getGroupName() != null) sb.append("GroupName: " + getGroupName() + ",");
         if (getPolicyName() != null) sb.append("PolicyName: " + getPolicyName() );
         sb.append("}");
         return sb.toString();

@@ -45,7 +45,7 @@ public class PipelineDescription  implements Serializable  {
      * A list of read-only fields that contain metadata about the pipeline:
      * @userId, @accountId, and @pipelineState.
      */
-    private java.util.List<Field> fields;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Field> fields;
 
     /**
      * Description of the pipeline.
@@ -164,7 +164,8 @@ public class PipelineDescription  implements Serializable  {
     public java.util.List<Field> getFields() {
         
         if (fields == null) {
-            fields = new java.util.ArrayList<Field>();
+              fields = new com.amazonaws.internal.ListWithAutoConstructFlag<Field>();
+              fields.setAutoConstruct(true);
         }
         return fields;
     }
@@ -181,8 +182,7 @@ public class PipelineDescription  implements Serializable  {
             this.fields = null;
             return;
         }
-
-        java.util.List<Field> fieldsCopy = new java.util.ArrayList<Field>(fields.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Field> fieldsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Field>(fields.size());
         fieldsCopy.addAll(fields);
         this.fields = fieldsCopy;
     }
@@ -223,7 +223,7 @@ public class PipelineDescription  implements Serializable  {
         if (fields == null) {
             this.fields = null;
         } else {
-            java.util.List<Field> fieldsCopy = new java.util.ArrayList<Field>(fields.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Field> fieldsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Field>(fields.size());
             fieldsCopy.addAll(fields);
             this.fields = fieldsCopy;
         }
@@ -288,10 +288,10 @@ public class PipelineDescription  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getPipelineId() != null) sb.append("PipelineId: " + getPipelineId() + ",");    	
-        if (getName() != null) sb.append("Name: " + getName() + ",");    	
-        if (getFields() != null) sb.append("Fields: " + getFields() + ",");    	
+        sb.append("{");
+        if (getPipelineId() != null) sb.append("PipelineId: " + getPipelineId() + ",");
+        if (getName() != null) sb.append("Name: " + getName() + ",");
+        if (getFields() != null) sb.append("Fields: " + getFields() + ",");
         if (getDescription() != null) sb.append("Description: " + getDescription() );
         sb.append("}");
         return sb.toString();

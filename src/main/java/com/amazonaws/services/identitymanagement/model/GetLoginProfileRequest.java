@@ -41,6 +41,8 @@ public class GetLoginProfileRequest extends AmazonWebServiceRequest  implements 
      */
     public GetLoginProfileRequest() {}
     
+
+
     /**
      * Constructs a new GetLoginProfileRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -50,7 +52,7 @@ public class GetLoginProfileRequest extends AmazonWebServiceRequest  implements 
      * retrieve.
      */
     public GetLoginProfileRequest(String userName) {
-        this.userName = userName;
+        setUserName(userName);
     }
 
     
@@ -112,7 +114,7 @@ public class GetLoginProfileRequest extends AmazonWebServiceRequest  implements 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getUserName() != null) sb.append("UserName: " + getUserName() );
         sb.append("}");
         return sb.toString();

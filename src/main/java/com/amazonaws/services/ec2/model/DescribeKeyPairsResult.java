@@ -25,7 +25,7 @@ public class DescribeKeyPairsResult  implements Serializable  {
     /**
      * The list of described key pairs.
      */
-    private java.util.List<KeyPairInfo> keyPairs;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<KeyPairInfo> keyPairs;
 
     /**
      * The list of described key pairs.
@@ -35,7 +35,8 @@ public class DescribeKeyPairsResult  implements Serializable  {
     public java.util.List<KeyPairInfo> getKeyPairs() {
         
         if (keyPairs == null) {
-            keyPairs = new java.util.ArrayList<KeyPairInfo>();
+              keyPairs = new com.amazonaws.internal.ListWithAutoConstructFlag<KeyPairInfo>();
+              keyPairs.setAutoConstruct(true);
         }
         return keyPairs;
     }
@@ -50,8 +51,7 @@ public class DescribeKeyPairsResult  implements Serializable  {
             this.keyPairs = null;
             return;
         }
-
-        java.util.List<KeyPairInfo> keyPairsCopy = new java.util.ArrayList<KeyPairInfo>(keyPairs.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<KeyPairInfo> keyPairsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<KeyPairInfo>(keyPairs.size());
         keyPairsCopy.addAll(keyPairs);
         this.keyPairs = keyPairsCopy;
     }
@@ -88,7 +88,7 @@ public class DescribeKeyPairsResult  implements Serializable  {
         if (keyPairs == null) {
             this.keyPairs = null;
         } else {
-            java.util.List<KeyPairInfo> keyPairsCopy = new java.util.ArrayList<KeyPairInfo>(keyPairs.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<KeyPairInfo> keyPairsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<KeyPairInfo>(keyPairs.size());
             keyPairsCopy.addAll(keyPairs);
             this.keyPairs = keyPairsCopy;
         }
@@ -107,7 +107,7 @@ public class DescribeKeyPairsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getKeyPairs() != null) sb.append("KeyPairs: " + getKeyPairs() );
         sb.append("}");
         return sb.toString();

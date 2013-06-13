@@ -26,7 +26,7 @@ public class UnassignPrivateIpAddressesRequest extends AmazonWebServiceRequest  
 
     private String networkInterfaceId;
 
-    private java.util.List<String> privateIpAddresses;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> privateIpAddresses;
 
     /**
      * Returns the value of the NetworkInterfaceId property for this object.
@@ -70,7 +70,8 @@ public class UnassignPrivateIpAddressesRequest extends AmazonWebServiceRequest  
     public java.util.List<String> getPrivateIpAddresses() {
         
         if (privateIpAddresses == null) {
-            privateIpAddresses = new java.util.ArrayList<String>();
+              privateIpAddresses = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              privateIpAddresses.setAutoConstruct(true);
         }
         return privateIpAddresses;
     }
@@ -85,8 +86,7 @@ public class UnassignPrivateIpAddressesRequest extends AmazonWebServiceRequest  
             this.privateIpAddresses = null;
             return;
         }
-
-        java.util.List<String> privateIpAddressesCopy = new java.util.ArrayList<String>(privateIpAddresses.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> privateIpAddressesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(privateIpAddresses.size());
         privateIpAddressesCopy.addAll(privateIpAddresses);
         this.privateIpAddresses = privateIpAddressesCopy;
     }
@@ -123,7 +123,7 @@ public class UnassignPrivateIpAddressesRequest extends AmazonWebServiceRequest  
         if (privateIpAddresses == null) {
             this.privateIpAddresses = null;
         } else {
-            java.util.List<String> privateIpAddressesCopy = new java.util.ArrayList<String>(privateIpAddresses.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> privateIpAddressesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(privateIpAddresses.size());
             privateIpAddressesCopy.addAll(privateIpAddresses);
             this.privateIpAddresses = privateIpAddressesCopy;
         }
@@ -142,8 +142,8 @@ public class UnassignPrivateIpAddressesRequest extends AmazonWebServiceRequest  
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getNetworkInterfaceId() != null) sb.append("NetworkInterfaceId: " + getNetworkInterfaceId() + ",");    	
+        sb.append("{");
+        if (getNetworkInterfaceId() != null) sb.append("NetworkInterfaceId: " + getNetworkInterfaceId() + ",");
         if (getPrivateIpAddresses() != null) sb.append("PrivateIpAddresses: " + getPrivateIpAddresses() );
         sb.append("}");
         return sb.toString();

@@ -38,6 +38,8 @@ public class CreateKeyPairRequest extends AmazonWebServiceRequest  implements Se
      */
     public CreateKeyPairRequest() {}
     
+
+
     /**
      * Constructs a new CreateKeyPairRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -46,7 +48,7 @@ public class CreateKeyPairRequest extends AmazonWebServiceRequest  implements Se
      * @param keyName The unique name for the new key pair.
      */
     public CreateKeyPairRequest(String keyName) {
-        this.keyName = keyName;
+        setKeyName(keyName);
     }
 
     
@@ -96,7 +98,7 @@ public class CreateKeyPairRequest extends AmazonWebServiceRequest  implements Se
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getKeyName() != null) sb.append("KeyName: " + getKeyName() );
         sb.append("}");
         return sb.toString();

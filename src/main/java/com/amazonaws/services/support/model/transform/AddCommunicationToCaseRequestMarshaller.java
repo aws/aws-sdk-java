@@ -92,8 +92,8 @@ public class AddCommunicationToCaseRequestMarshaller implements Marshaller<Reque
                 jsonWriter.key("communicationBody").value(addCommunicationToCaseRequest.getCommunicationBody());
             }
 
-            java.util.List<String> ccEmailAddressesList = addCommunicationToCaseRequest.getCcEmailAddresses();
-            if (ccEmailAddressesList != null) {
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> ccEmailAddressesList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(addCommunicationToCaseRequest.getCcEmailAddresses());
+            if (ccEmailAddressesList != null && !(ccEmailAddressesList.isAutoConstruct() && ccEmailAddressesList.isEmpty())) {
 
                 jsonWriter.key("ccEmailAddresses");
                 jsonWriter.array();

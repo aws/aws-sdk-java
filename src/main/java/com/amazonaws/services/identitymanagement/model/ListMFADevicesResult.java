@@ -25,7 +25,7 @@ public class ListMFADevicesResult  implements Serializable  {
     /**
      * A list of MFA devices.
      */
-    private java.util.List<MFADevice> mFADevices;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<MFADevice> mFADevices;
 
     /**
      * A flag that indicates whether there are more MFA devices to list. If
@@ -54,7 +54,8 @@ public class ListMFADevicesResult  implements Serializable  {
     public java.util.List<MFADevice> getMFADevices() {
         
         if (mFADevices == null) {
-            mFADevices = new java.util.ArrayList<MFADevice>();
+              mFADevices = new com.amazonaws.internal.ListWithAutoConstructFlag<MFADevice>();
+              mFADevices.setAutoConstruct(true);
         }
         return mFADevices;
     }
@@ -69,8 +70,7 @@ public class ListMFADevicesResult  implements Serializable  {
             this.mFADevices = null;
             return;
         }
-
-        java.util.List<MFADevice> mFADevicesCopy = new java.util.ArrayList<MFADevice>(mFADevices.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<MFADevice> mFADevicesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<MFADevice>(mFADevices.size());
         mFADevicesCopy.addAll(mFADevices);
         this.mFADevices = mFADevicesCopy;
     }
@@ -107,7 +107,7 @@ public class ListMFADevicesResult  implements Serializable  {
         if (mFADevices == null) {
             this.mFADevices = null;
         } else {
-            java.util.List<MFADevice> mFADevicesCopy = new java.util.ArrayList<MFADevice>(mFADevices.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<MFADevice> mFADevicesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<MFADevice>(mFADevices.size());
             mFADevicesCopy.addAll(mFADevices);
             this.mFADevices = mFADevicesCopy;
         }
@@ -251,9 +251,9 @@ public class ListMFADevicesResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getMFADevices() != null) sb.append("MFADevices: " + getMFADevices() + ",");    	
-        if (isTruncated() != null) sb.append("IsTruncated: " + isTruncated() + ",");    	
+        sb.append("{");
+        if (getMFADevices() != null) sb.append("MFADevices: " + getMFADevices() + ",");
+        if (isTruncated() != null) sb.append("IsTruncated: " + isTruncated() + ",");
         if (getMarker() != null) sb.append("Marker: " + getMarker() );
         sb.append("}");
         return sb.toString();

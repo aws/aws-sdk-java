@@ -168,8 +168,8 @@ public class StorageGatewayError  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getErrorCode() != null) sb.append("ErrorCode: " + getErrorCode() + ",");    	
+        sb.append("{");
+        if (getErrorCode() != null) sb.append("ErrorCode: " + getErrorCode() + ",");
         if (getErrorDetails() != null) sb.append("ErrorDetails: " + getErrorDetails() );
         sb.append("}");
         return sb.toString();

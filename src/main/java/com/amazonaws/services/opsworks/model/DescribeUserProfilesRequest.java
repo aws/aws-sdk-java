@@ -29,7 +29,7 @@ public class DescribeUserProfilesRequest extends AmazonWebServiceRequest  implem
     /**
      * An array of IAM user ARNs that identify the users to be described.
      */
-    private java.util.List<String> iamUserArns;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> iamUserArns;
 
     /**
      * An array of IAM user ARNs that identify the users to be described.
@@ -39,7 +39,8 @@ public class DescribeUserProfilesRequest extends AmazonWebServiceRequest  implem
     public java.util.List<String> getIamUserArns() {
         
         if (iamUserArns == null) {
-            iamUserArns = new java.util.ArrayList<String>();
+              iamUserArns = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              iamUserArns.setAutoConstruct(true);
         }
         return iamUserArns;
     }
@@ -54,8 +55,7 @@ public class DescribeUserProfilesRequest extends AmazonWebServiceRequest  implem
             this.iamUserArns = null;
             return;
         }
-
-        java.util.List<String> iamUserArnsCopy = new java.util.ArrayList<String>(iamUserArns.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> iamUserArnsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(iamUserArns.size());
         iamUserArnsCopy.addAll(iamUserArns);
         this.iamUserArns = iamUserArnsCopy;
     }
@@ -92,7 +92,7 @@ public class DescribeUserProfilesRequest extends AmazonWebServiceRequest  implem
         if (iamUserArns == null) {
             this.iamUserArns = null;
         } else {
-            java.util.List<String> iamUserArnsCopy = new java.util.ArrayList<String>(iamUserArns.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> iamUserArnsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(iamUserArns.size());
             iamUserArnsCopy.addAll(iamUserArns);
             this.iamUserArns = iamUserArnsCopy;
         }
@@ -111,7 +111,7 @@ public class DescribeUserProfilesRequest extends AmazonWebServiceRequest  implem
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getIamUserArns() != null) sb.append("IamUserArns: " + getIamUserArns() );
         sb.append("}");
         return sb.toString();

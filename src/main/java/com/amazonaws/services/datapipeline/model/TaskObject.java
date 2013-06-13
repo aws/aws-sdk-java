@@ -262,10 +262,10 @@ public class TaskObject  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getTaskId() != null) sb.append("TaskId: " + getTaskId() + ",");    	
-        if (getPipelineId() != null) sb.append("PipelineId: " + getPipelineId() + ",");    	
-        if (getAttemptId() != null) sb.append("AttemptId: " + getAttemptId() + ",");    	
+        sb.append("{");
+        if (getTaskId() != null) sb.append("TaskId: " + getTaskId() + ",");
+        if (getPipelineId() != null) sb.append("PipelineId: " + getPipelineId() + ",");
+        if (getAttemptId() != null) sb.append("AttemptId: " + getAttemptId() + ",");
         if (getObjects() != null) sb.append("Objects: " + getObjects() );
         sb.append("}");
         return sb.toString();

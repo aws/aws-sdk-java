@@ -42,6 +42,8 @@ public class GetQueueUrlRequest extends AmazonWebServiceRequest  implements Seri
      */
     public GetQueueUrlRequest() {}
     
+
+
     /**
      * Constructs a new GetQueueUrlRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -50,7 +52,7 @@ public class GetQueueUrlRequest extends AmazonWebServiceRequest  implements Seri
      * @param queueName The name of the queue whose URL must be fetched.
      */
     public GetQueueUrlRequest(String queueName) {
-        this.queueName = queueName;
+        setQueueName(queueName);
     }
 
     
@@ -134,8 +136,8 @@ public class GetQueueUrlRequest extends AmazonWebServiceRequest  implements Seri
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getQueueName() != null) sb.append("QueueName: " + getQueueName() + ",");    	
+        sb.append("{");
+        if (getQueueName() != null) sb.append("QueueName: " + getQueueName() + ",");
         if (getQueueOwnerAWSAccountId() != null) sb.append("QueueOwnerAWSAccountId: " + getQueueOwnerAWSAccountId() );
         sb.append("}");
         return sb.toString();

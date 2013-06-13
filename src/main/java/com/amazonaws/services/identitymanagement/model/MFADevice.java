@@ -55,6 +55,8 @@ public class MFADevice  implements Serializable  {
      */
     public MFADevice() {}
     
+
+
     /**
      * Constructs a new MFADevice object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -67,9 +69,9 @@ public class MFADevice  implements Serializable  {
      * user.
      */
     public MFADevice(String userName, String serialNumber, java.util.Date enableDate) {
-        this.userName = userName;
-        this.serialNumber = serialNumber;
-        this.enableDate = enableDate;
+        setUserName(userName);
+        setSerialNumber(serialNumber);
+        setEnableDate(enableDate);
     }
 
     
@@ -217,9 +219,9 @@ public class MFADevice  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getUserName() != null) sb.append("UserName: " + getUserName() + ",");    	
-        if (getSerialNumber() != null) sb.append("SerialNumber: " + getSerialNumber() + ",");    	
+        sb.append("{");
+        if (getUserName() != null) sb.append("UserName: " + getUserName() + ",");
+        if (getSerialNumber() != null) sb.append("SerialNumber: " + getSerialNumber() + ",");
         if (getEnableDate() != null) sb.append("EnableDate: " + getEnableDate() );
         sb.append("}");
         return sb.toString();

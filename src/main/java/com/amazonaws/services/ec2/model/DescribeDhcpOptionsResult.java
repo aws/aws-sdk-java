@@ -20,7 +20,7 @@ import java.io.Serializable;
  */
 public class DescribeDhcpOptionsResult  implements Serializable  {
 
-    private java.util.List<DhcpOptions> dhcpOptions;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<DhcpOptions> dhcpOptions;
 
     /**
      * Returns the value of the DhcpOptions property for this object.
@@ -30,7 +30,8 @@ public class DescribeDhcpOptionsResult  implements Serializable  {
     public java.util.List<DhcpOptions> getDhcpOptions() {
         
         if (dhcpOptions == null) {
-            dhcpOptions = new java.util.ArrayList<DhcpOptions>();
+              dhcpOptions = new com.amazonaws.internal.ListWithAutoConstructFlag<DhcpOptions>();
+              dhcpOptions.setAutoConstruct(true);
         }
         return dhcpOptions;
     }
@@ -45,8 +46,7 @@ public class DescribeDhcpOptionsResult  implements Serializable  {
             this.dhcpOptions = null;
             return;
         }
-
-        java.util.List<DhcpOptions> dhcpOptionsCopy = new java.util.ArrayList<DhcpOptions>(dhcpOptions.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<DhcpOptions> dhcpOptionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<DhcpOptions>(dhcpOptions.size());
         dhcpOptionsCopy.addAll(dhcpOptions);
         this.dhcpOptions = dhcpOptionsCopy;
     }
@@ -83,7 +83,7 @@ public class DescribeDhcpOptionsResult  implements Serializable  {
         if (dhcpOptions == null) {
             this.dhcpOptions = null;
         } else {
-            java.util.List<DhcpOptions> dhcpOptionsCopy = new java.util.ArrayList<DhcpOptions>(dhcpOptions.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<DhcpOptions> dhcpOptionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<DhcpOptions>(dhcpOptions.size());
             dhcpOptionsCopy.addAll(dhcpOptions);
             this.dhcpOptions = dhcpOptionsCopy;
         }
@@ -102,7 +102,7 @@ public class DescribeDhcpOptionsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getDhcpOptions() != null) sb.append("DhcpOptions: " + getDhcpOptions() );
         sb.append("}");
         return sb.toString();

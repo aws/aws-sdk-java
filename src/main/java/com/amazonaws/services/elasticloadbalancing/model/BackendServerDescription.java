@@ -33,7 +33,7 @@ public class BackendServerDescription  implements Serializable  {
     /**
      * Provides a list of policy names enabled for the back-end server.
      */
-    private java.util.List<String> policyNames;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> policyNames;
 
     /**
      * Provides the port on which the back-end server is listening.
@@ -86,7 +86,8 @@ public class BackendServerDescription  implements Serializable  {
     public java.util.List<String> getPolicyNames() {
         
         if (policyNames == null) {
-            policyNames = new java.util.ArrayList<String>();
+              policyNames = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              policyNames.setAutoConstruct(true);
         }
         return policyNames;
     }
@@ -101,8 +102,7 @@ public class BackendServerDescription  implements Serializable  {
             this.policyNames = null;
             return;
         }
-
-        java.util.List<String> policyNamesCopy = new java.util.ArrayList<String>(policyNames.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> policyNamesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(policyNames.size());
         policyNamesCopy.addAll(policyNames);
         this.policyNames = policyNamesCopy;
     }
@@ -139,7 +139,7 @@ public class BackendServerDescription  implements Serializable  {
         if (policyNames == null) {
             this.policyNames = null;
         } else {
-            java.util.List<String> policyNamesCopy = new java.util.ArrayList<String>(policyNames.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> policyNamesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(policyNames.size());
             policyNamesCopy.addAll(policyNames);
             this.policyNames = policyNamesCopy;
         }
@@ -158,8 +158,8 @@ public class BackendServerDescription  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getInstancePort() != null) sb.append("InstancePort: " + getInstancePort() + ",");    	
+        sb.append("{");
+        if (getInstancePort() != null) sb.append("InstancePort: " + getInstancePort() + ",");
         if (getPolicyNames() != null) sb.append("PolicyNames: " + getPolicyNames() );
         sb.append("}");
         return sb.toString();

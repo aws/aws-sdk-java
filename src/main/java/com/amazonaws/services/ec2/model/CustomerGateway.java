@@ -54,7 +54,7 @@ public class CustomerGateway  implements Serializable  {
     /**
      * A list of tags for the CustomerGateway.
      */
-    private java.util.List<Tag> tags;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
 
     /**
      * Specifies the ID of the customer gateway.
@@ -258,7 +258,8 @@ public class CustomerGateway  implements Serializable  {
     public java.util.List<Tag> getTags() {
         
         if (tags == null) {
-            tags = new java.util.ArrayList<Tag>();
+              tags = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>();
+              tags.setAutoConstruct(true);
         }
         return tags;
     }
@@ -273,8 +274,7 @@ public class CustomerGateway  implements Serializable  {
             this.tags = null;
             return;
         }
-
-        java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>(tags.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
         tagsCopy.addAll(tags);
         this.tags = tagsCopy;
     }
@@ -311,7 +311,7 @@ public class CustomerGateway  implements Serializable  {
         if (tags == null) {
             this.tags = null;
         } else {
-            java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>(tags.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
             tagsCopy.addAll(tags);
             this.tags = tagsCopy;
         }
@@ -330,12 +330,12 @@ public class CustomerGateway  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getCustomerGatewayId() != null) sb.append("CustomerGatewayId: " + getCustomerGatewayId() + ",");    	
-        if (getState() != null) sb.append("State: " + getState() + ",");    	
-        if (getType() != null) sb.append("Type: " + getType() + ",");    	
-        if (getIpAddress() != null) sb.append("IpAddress: " + getIpAddress() + ",");    	
-        if (getBgpAsn() != null) sb.append("BgpAsn: " + getBgpAsn() + ",");    	
+        sb.append("{");
+        if (getCustomerGatewayId() != null) sb.append("CustomerGatewayId: " + getCustomerGatewayId() + ",");
+        if (getState() != null) sb.append("State: " + getState() + ",");
+        if (getType() != null) sb.append("Type: " + getType() + ",");
+        if (getIpAddress() != null) sb.append("IpAddress: " + getIpAddress() + ",");
+        if (getBgpAsn() != null) sb.append("BgpAsn: " + getBgpAsn() + ",");
         if (getTags() != null) sb.append("Tags: " + getTags() );
         sb.append("}");
         return sb.toString();

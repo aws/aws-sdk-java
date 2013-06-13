@@ -418,12 +418,12 @@ public class PutScalingPolicyRequest extends AmazonWebServiceRequest  implements
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getAutoScalingGroupName() != null) sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ",");    	
-        if (getPolicyName() != null) sb.append("PolicyName: " + getPolicyName() + ",");    	
-        if (getScalingAdjustment() != null) sb.append("ScalingAdjustment: " + getScalingAdjustment() + ",");    	
-        if (getAdjustmentType() != null) sb.append("AdjustmentType: " + getAdjustmentType() + ",");    	
-        if (getCooldown() != null) sb.append("Cooldown: " + getCooldown() + ",");    	
+        sb.append("{");
+        if (getAutoScalingGroupName() != null) sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ",");
+        if (getPolicyName() != null) sb.append("PolicyName: " + getPolicyName() + ",");
+        if (getScalingAdjustment() != null) sb.append("ScalingAdjustment: " + getScalingAdjustment() + ",");
+        if (getAdjustmentType() != null) sb.append("AdjustmentType: " + getAdjustmentType() + ",");
+        if (getCooldown() != null) sb.append("Cooldown: " + getCooldown() + ",");
         if (getMinAdjustmentStep() != null) sb.append("MinAdjustmentStep: " + getMinAdjustmentStep() );
         sb.append("}");
         return sb.toString();

@@ -150,9 +150,9 @@ public class ClusterVersion  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getClusterVersion() != null) sb.append("ClusterVersion: " + getClusterVersion() + ",");    	
-        if (getClusterParameterGroupFamily() != null) sb.append("ClusterParameterGroupFamily: " + getClusterParameterGroupFamily() + ",");    	
+        sb.append("{");
+        if (getClusterVersion() != null) sb.append("ClusterVersion: " + getClusterVersion() + ",");
+        if (getClusterParameterGroupFamily() != null) sb.append("ClusterParameterGroupFamily: " + getClusterParameterGroupFamily() + ",");
         if (getDescription() != null) sb.append("Description: " + getDescription() );
         sb.append("}");
         return sb.toString();

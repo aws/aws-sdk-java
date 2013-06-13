@@ -105,7 +105,7 @@ public class ConfigurationOptionDescription  implements Serializable  {
      * If specified, values for the configuration option are selected from
      * this list.
      */
-    private java.util.List<String> valueOptions;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> valueOptions;
 
     /**
      * If specified, the configuration option must be a numeric value greater
@@ -769,7 +769,8 @@ public class ConfigurationOptionDescription  implements Serializable  {
     public java.util.List<String> getValueOptions() {
         
         if (valueOptions == null) {
-            valueOptions = new java.util.ArrayList<String>();
+              valueOptions = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              valueOptions.setAutoConstruct(true);
         }
         return valueOptions;
     }
@@ -786,8 +787,7 @@ public class ConfigurationOptionDescription  implements Serializable  {
             this.valueOptions = null;
             return;
         }
-
-        java.util.List<String> valueOptionsCopy = new java.util.ArrayList<String>(valueOptions.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> valueOptionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(valueOptions.size());
         valueOptionsCopy.addAll(valueOptions);
         this.valueOptions = valueOptionsCopy;
     }
@@ -828,7 +828,7 @@ public class ConfigurationOptionDescription  implements Serializable  {
         if (valueOptions == null) {
             this.valueOptions = null;
         } else {
-            java.util.List<String> valueOptionsCopy = new java.util.ArrayList<String>(valueOptions.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> valueOptionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(valueOptions.size());
             valueOptionsCopy.addAll(valueOptions);
             this.valueOptions = valueOptionsCopy;
         }
@@ -1007,17 +1007,17 @@ public class ConfigurationOptionDescription  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getNamespace() != null) sb.append("Namespace: " + getNamespace() + ",");    	
-        if (getName() != null) sb.append("Name: " + getName() + ",");    	
-        if (getDefaultValue() != null) sb.append("DefaultValue: " + getDefaultValue() + ",");    	
-        if (getChangeSeverity() != null) sb.append("ChangeSeverity: " + getChangeSeverity() + ",");    	
-        if (isUserDefined() != null) sb.append("UserDefined: " + isUserDefined() + ",");    	
-        if (getValueType() != null) sb.append("ValueType: " + getValueType() + ",");    	
-        if (getValueOptions() != null) sb.append("ValueOptions: " + getValueOptions() + ",");    	
-        if (getMinValue() != null) sb.append("MinValue: " + getMinValue() + ",");    	
-        if (getMaxValue() != null) sb.append("MaxValue: " + getMaxValue() + ",");    	
-        if (getMaxLength() != null) sb.append("MaxLength: " + getMaxLength() + ",");    	
+        sb.append("{");
+        if (getNamespace() != null) sb.append("Namespace: " + getNamespace() + ",");
+        if (getName() != null) sb.append("Name: " + getName() + ",");
+        if (getDefaultValue() != null) sb.append("DefaultValue: " + getDefaultValue() + ",");
+        if (getChangeSeverity() != null) sb.append("ChangeSeverity: " + getChangeSeverity() + ",");
+        if (isUserDefined() != null) sb.append("UserDefined: " + isUserDefined() + ",");
+        if (getValueType() != null) sb.append("ValueType: " + getValueType() + ",");
+        if (getValueOptions() != null) sb.append("ValueOptions: " + getValueOptions() + ",");
+        if (getMinValue() != null) sb.append("MinValue: " + getMinValue() + ",");
+        if (getMaxValue() != null) sb.append("MaxValue: " + getMaxValue() + ",");
+        if (getMaxLength() != null) sb.append("MaxLength: " + getMaxLength() + ",");
         if (getRegex() != null) sb.append("Regex: " + getRegex() );
         sb.append("}");
         return sb.toString();

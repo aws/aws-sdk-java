@@ -23,12 +23,12 @@ public class DeleteMessageBatchResult  implements Serializable  {
     /**
      * A list of <a>DeleteMessageBatchResultEntry</a>s.
      */
-    private java.util.List<DeleteMessageBatchResultEntry> successful;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<DeleteMessageBatchResultEntry> successful;
 
     /**
      * A list of <a>BatchResultErrorEntry</a>s.
      */
-    private java.util.List<BatchResultErrorEntry> failed;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<BatchResultErrorEntry> failed;
 
     /**
      * A list of <a>DeleteMessageBatchResultEntry</a>s.
@@ -38,7 +38,8 @@ public class DeleteMessageBatchResult  implements Serializable  {
     public java.util.List<DeleteMessageBatchResultEntry> getSuccessful() {
         
         if (successful == null) {
-            successful = new java.util.ArrayList<DeleteMessageBatchResultEntry>();
+              successful = new com.amazonaws.internal.ListWithAutoConstructFlag<DeleteMessageBatchResultEntry>();
+              successful.setAutoConstruct(true);
         }
         return successful;
     }
@@ -53,8 +54,7 @@ public class DeleteMessageBatchResult  implements Serializable  {
             this.successful = null;
             return;
         }
-
-        java.util.List<DeleteMessageBatchResultEntry> successfulCopy = new java.util.ArrayList<DeleteMessageBatchResultEntry>(successful.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<DeleteMessageBatchResultEntry> successfulCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<DeleteMessageBatchResultEntry>(successful.size());
         successfulCopy.addAll(successful);
         this.successful = successfulCopy;
     }
@@ -91,7 +91,7 @@ public class DeleteMessageBatchResult  implements Serializable  {
         if (successful == null) {
             this.successful = null;
         } else {
-            java.util.List<DeleteMessageBatchResultEntry> successfulCopy = new java.util.ArrayList<DeleteMessageBatchResultEntry>(successful.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<DeleteMessageBatchResultEntry> successfulCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<DeleteMessageBatchResultEntry>(successful.size());
             successfulCopy.addAll(successful);
             this.successful = successfulCopy;
         }
@@ -107,7 +107,8 @@ public class DeleteMessageBatchResult  implements Serializable  {
     public java.util.List<BatchResultErrorEntry> getFailed() {
         
         if (failed == null) {
-            failed = new java.util.ArrayList<BatchResultErrorEntry>();
+              failed = new com.amazonaws.internal.ListWithAutoConstructFlag<BatchResultErrorEntry>();
+              failed.setAutoConstruct(true);
         }
         return failed;
     }
@@ -122,8 +123,7 @@ public class DeleteMessageBatchResult  implements Serializable  {
             this.failed = null;
             return;
         }
-
-        java.util.List<BatchResultErrorEntry> failedCopy = new java.util.ArrayList<BatchResultErrorEntry>(failed.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<BatchResultErrorEntry> failedCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<BatchResultErrorEntry>(failed.size());
         failedCopy.addAll(failed);
         this.failed = failedCopy;
     }
@@ -160,7 +160,7 @@ public class DeleteMessageBatchResult  implements Serializable  {
         if (failed == null) {
             this.failed = null;
         } else {
-            java.util.List<BatchResultErrorEntry> failedCopy = new java.util.ArrayList<BatchResultErrorEntry>(failed.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<BatchResultErrorEntry> failedCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<BatchResultErrorEntry>(failed.size());
             failedCopy.addAll(failed);
             this.failed = failedCopy;
         }
@@ -179,8 +179,8 @@ public class DeleteMessageBatchResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getSuccessful() != null) sb.append("Successful: " + getSuccessful() + ",");    	
+        sb.append("{");
+        if (getSuccessful() != null) sb.append("Successful: " + getSuccessful() + ",");
         if (getFailed() != null) sb.append("Failed: " + getFailed() );
         sb.append("}");
         return sb.toString();

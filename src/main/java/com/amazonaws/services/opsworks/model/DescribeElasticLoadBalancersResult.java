@@ -26,7 +26,7 @@ public class DescribeElasticLoadBalancersResult  implements Serializable  {
      * A list of <code>ElasticLoadBalancer</code> objects that describe the
      * specified Elastic Load Balancing instances.
      */
-    private java.util.List<ElasticLoadBalancer> elasticLoadBalancers;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<ElasticLoadBalancer> elasticLoadBalancers;
 
     /**
      * A list of <code>ElasticLoadBalancer</code> objects that describe the
@@ -38,7 +38,8 @@ public class DescribeElasticLoadBalancersResult  implements Serializable  {
     public java.util.List<ElasticLoadBalancer> getElasticLoadBalancers() {
         
         if (elasticLoadBalancers == null) {
-            elasticLoadBalancers = new java.util.ArrayList<ElasticLoadBalancer>();
+              elasticLoadBalancers = new com.amazonaws.internal.ListWithAutoConstructFlag<ElasticLoadBalancer>();
+              elasticLoadBalancers.setAutoConstruct(true);
         }
         return elasticLoadBalancers;
     }
@@ -55,8 +56,7 @@ public class DescribeElasticLoadBalancersResult  implements Serializable  {
             this.elasticLoadBalancers = null;
             return;
         }
-
-        java.util.List<ElasticLoadBalancer> elasticLoadBalancersCopy = new java.util.ArrayList<ElasticLoadBalancer>(elasticLoadBalancers.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<ElasticLoadBalancer> elasticLoadBalancersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ElasticLoadBalancer>(elasticLoadBalancers.size());
         elasticLoadBalancersCopy.addAll(elasticLoadBalancers);
         this.elasticLoadBalancers = elasticLoadBalancersCopy;
     }
@@ -97,7 +97,7 @@ public class DescribeElasticLoadBalancersResult  implements Serializable  {
         if (elasticLoadBalancers == null) {
             this.elasticLoadBalancers = null;
         } else {
-            java.util.List<ElasticLoadBalancer> elasticLoadBalancersCopy = new java.util.ArrayList<ElasticLoadBalancer>(elasticLoadBalancers.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<ElasticLoadBalancer> elasticLoadBalancersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ElasticLoadBalancer>(elasticLoadBalancers.size());
             elasticLoadBalancersCopy.addAll(elasticLoadBalancers);
             this.elasticLoadBalancers = elasticLoadBalancersCopy;
         }
@@ -116,7 +116,7 @@ public class DescribeElasticLoadBalancersResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getElasticLoadBalancers() != null) sb.append("ElasticLoadBalancers: " + getElasticLoadBalancers() );
         sb.append("}");
         return sb.toString();

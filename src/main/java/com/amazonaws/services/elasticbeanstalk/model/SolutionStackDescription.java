@@ -33,7 +33,7 @@ public class SolutionStackDescription  implements Serializable  {
     /**
      * The permitted file types allowed for a solution stack.
      */
-    private java.util.List<String> permittedFileTypes;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> permittedFileTypes;
 
     /**
      * The name of the solution stack.
@@ -86,7 +86,8 @@ public class SolutionStackDescription  implements Serializable  {
     public java.util.List<String> getPermittedFileTypes() {
         
         if (permittedFileTypes == null) {
-            permittedFileTypes = new java.util.ArrayList<String>();
+              permittedFileTypes = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              permittedFileTypes.setAutoConstruct(true);
         }
         return permittedFileTypes;
     }
@@ -101,8 +102,7 @@ public class SolutionStackDescription  implements Serializable  {
             this.permittedFileTypes = null;
             return;
         }
-
-        java.util.List<String> permittedFileTypesCopy = new java.util.ArrayList<String>(permittedFileTypes.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> permittedFileTypesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(permittedFileTypes.size());
         permittedFileTypesCopy.addAll(permittedFileTypes);
         this.permittedFileTypes = permittedFileTypesCopy;
     }
@@ -139,7 +139,7 @@ public class SolutionStackDescription  implements Serializable  {
         if (permittedFileTypes == null) {
             this.permittedFileTypes = null;
         } else {
-            java.util.List<String> permittedFileTypesCopy = new java.util.ArrayList<String>(permittedFileTypes.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> permittedFileTypesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(permittedFileTypes.size());
             permittedFileTypesCopy.addAll(permittedFileTypes);
             this.permittedFileTypes = permittedFileTypesCopy;
         }
@@ -158,8 +158,8 @@ public class SolutionStackDescription  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getSolutionStackName() != null) sb.append("SolutionStackName: " + getSolutionStackName() + ",");    	
+        sb.append("{");
+        if (getSolutionStackName() != null) sb.append("SolutionStackName: " + getSolutionStackName() + ",");
         if (getPermittedFileTypes() != null) sb.append("PermittedFileTypes: " + getPermittedFileTypes() );
         sb.append("}");
         return sb.toString();

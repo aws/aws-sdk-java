@@ -37,6 +37,8 @@ public class GetCloudFrontOriginAccessIdentityConfigRequest extends AmazonWebSer
      */
     public GetCloudFrontOriginAccessIdentityConfigRequest() {}
     
+
+
     /**
      * Constructs a new GetCloudFrontOriginAccessIdentityConfigRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -45,7 +47,7 @@ public class GetCloudFrontOriginAccessIdentityConfigRequest extends AmazonWebSer
      * @param id The identity's id.
      */
     public GetCloudFrontOriginAccessIdentityConfigRequest(String id) {
-        this.id = id;
+        setId(id);
     }
 
     
@@ -95,7 +97,7 @@ public class GetCloudFrontOriginAccessIdentityConfigRequest extends AmazonWebSer
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getId() != null) sb.append("Id: " + getId() );
         sb.append("}");
         return sb.toString();

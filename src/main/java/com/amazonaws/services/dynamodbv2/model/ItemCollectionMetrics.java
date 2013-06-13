@@ -39,7 +39,7 @@ public class ItemCollectionMetrics  implements Serializable  {
      * subject to change over time; therefore, do not rely on the precision
      * or accuracy of the estimate.
      */
-    private java.util.List<Double> sizeEstimateRangeGB;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Double> sizeEstimateRangeGB;
 
     /**
      * The hash key value of the item collection. This is the same as the
@@ -130,8 +130,7 @@ public class ItemCollectionMetrics  implements Serializable  {
             this.sizeEstimateRangeGB = null;
             return;
         }
-
-        java.util.List<Double> sizeEstimateRangeGBCopy = new java.util.ArrayList<Double>(sizeEstimateRangeGB.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Double> sizeEstimateRangeGBCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Double>(sizeEstimateRangeGB.size());
         sizeEstimateRangeGBCopy.addAll(sizeEstimateRangeGB);
         this.sizeEstimateRangeGB = sizeEstimateRangeGBCopy;
     }
@@ -196,7 +195,7 @@ public class ItemCollectionMetrics  implements Serializable  {
         if (sizeEstimateRangeGB == null) {
             this.sizeEstimateRangeGB = null;
         } else {
-            java.util.List<Double> sizeEstimateRangeGBCopy = new java.util.ArrayList<Double>(sizeEstimateRangeGB.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Double> sizeEstimateRangeGBCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Double>(sizeEstimateRangeGB.size());
             sizeEstimateRangeGBCopy.addAll(sizeEstimateRangeGB);
             this.sizeEstimateRangeGB = sizeEstimateRangeGBCopy;
         }
@@ -215,8 +214,8 @@ public class ItemCollectionMetrics  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getItemCollectionKey() != null) sb.append("ItemCollectionKey: " + getItemCollectionKey() + ",");    	
+        sb.append("{");
+        if (getItemCollectionKey() != null) sb.append("ItemCollectionKey: " + getItemCollectionKey() + ",");
         if (getSizeEstimateRangeGB() != null) sb.append("SizeEstimateRangeGB: " + getSizeEstimateRangeGB() );
         sb.append("}");
         return sb.toString();

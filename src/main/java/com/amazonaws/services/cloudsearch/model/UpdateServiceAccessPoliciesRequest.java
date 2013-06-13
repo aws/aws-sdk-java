@@ -229,8 +229,8 @@ public class UpdateServiceAccessPoliciesRequest extends AmazonWebServiceRequest 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getDomainName() != null) sb.append("DomainName: " + getDomainName() + ",");    	
+        sb.append("{");
+        if (getDomainName() != null) sb.append("DomainName: " + getDomainName() + ",");
         if (getAccessPolicies() != null) sb.append("AccessPolicies: " + getAccessPolicies() );
         sb.append("}");
         return sb.toString();

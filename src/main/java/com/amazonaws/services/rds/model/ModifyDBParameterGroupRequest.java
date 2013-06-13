@@ -51,7 +51,7 @@ public class ModifyDBParameterGroupRequest extends AmazonWebServiceRequest  impl
      * You can use the pending-reboot value for both dynamic and static
      * parameters, and changes are applied when DB Instance reboots. </note>
      */
-    private java.util.List<Parameter> parameters;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Parameter> parameters;
 
     /**
      * Default constructor for a new ModifyDBParameterGroupRequest object.  Callers should use the
@@ -59,6 +59,8 @@ public class ModifyDBParameterGroupRequest extends AmazonWebServiceRequest  impl
      */
     public ModifyDBParameterGroupRequest() {}
     
+
+
     /**
      * Constructs a new ModifyDBParameterGroupRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -80,8 +82,8 @@ public class ModifyDBParameterGroupRequest extends AmazonWebServiceRequest  impl
      * Instance reboots. </note>
      */
     public ModifyDBParameterGroupRequest(String dBParameterGroupName, java.util.List<Parameter> parameters) {
-        this.dBParameterGroupName = dBParameterGroupName;
-        this.parameters = parameters;
+        setDBParameterGroupName(dBParameterGroupName);
+        setParameters(parameters);
     }
 
     
@@ -166,7 +168,8 @@ public class ModifyDBParameterGroupRequest extends AmazonWebServiceRequest  impl
     public java.util.List<Parameter> getParameters() {
         
         if (parameters == null) {
-            parameters = new java.util.ArrayList<Parameter>();
+              parameters = new com.amazonaws.internal.ListWithAutoConstructFlag<Parameter>();
+              parameters.setAutoConstruct(true);
         }
         return parameters;
     }
@@ -195,8 +198,7 @@ public class ModifyDBParameterGroupRequest extends AmazonWebServiceRequest  impl
             this.parameters = null;
             return;
         }
-
-        java.util.List<Parameter> parametersCopy = new java.util.ArrayList<Parameter>(parameters.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Parameter> parametersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Parameter>(parameters.size());
         parametersCopy.addAll(parameters);
         this.parameters = parametersCopy;
     }
@@ -261,7 +263,7 @@ public class ModifyDBParameterGroupRequest extends AmazonWebServiceRequest  impl
         if (parameters == null) {
             this.parameters = null;
         } else {
-            java.util.List<Parameter> parametersCopy = new java.util.ArrayList<Parameter>(parameters.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Parameter> parametersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Parameter>(parameters.size());
             parametersCopy.addAll(parameters);
             this.parameters = parametersCopy;
         }
@@ -280,8 +282,8 @@ public class ModifyDBParameterGroupRequest extends AmazonWebServiceRequest  impl
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getDBParameterGroupName() != null) sb.append("DBParameterGroupName: " + getDBParameterGroupName() + ",");    	
+        sb.append("{");
+        if (getDBParameterGroupName() != null) sb.append("DBParameterGroupName: " + getDBParameterGroupName() + ",");
         if (getParameters() != null) sb.append("Parameters: " + getParameters() );
         sb.append("}");
         return sb.toString();

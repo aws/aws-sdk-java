@@ -64,7 +64,7 @@ public class App  implements Serializable  {
      * The app vhost settings, with multiple domains separated by commas. For
      * example: <code>'www.example.com, example.com'</code>
      */
-    private java.util.List<String> domains;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> domains;
 
     /**
      * Whether to enable SSL for the app.
@@ -383,7 +383,8 @@ public class App  implements Serializable  {
     public java.util.List<String> getDomains() {
         
         if (domains == null) {
-            domains = new java.util.ArrayList<String>();
+              domains = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              domains.setAutoConstruct(true);
         }
         return domains;
     }
@@ -400,8 +401,7 @@ public class App  implements Serializable  {
             this.domains = null;
             return;
         }
-
-        java.util.List<String> domainsCopy = new java.util.ArrayList<String>(domains.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> domainsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(domains.size());
         domainsCopy.addAll(domains);
         this.domains = domainsCopy;
     }
@@ -442,7 +442,7 @@ public class App  implements Serializable  {
         if (domains == null) {
             this.domains = null;
         } else {
-            java.util.List<String> domainsCopy = new java.util.ArrayList<String>(domains.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> domainsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(domains.size());
             domainsCopy.addAll(domains);
             this.domains = domainsCopy;
         }
@@ -610,18 +610,18 @@ public class App  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getAppId() != null) sb.append("AppId: " + getAppId() + ",");    	
-        if (getStackId() != null) sb.append("StackId: " + getStackId() + ",");    	
-        if (getShortname() != null) sb.append("Shortname: " + getShortname() + ",");    	
-        if (getName() != null) sb.append("Name: " + getName() + ",");    	
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");    	
-        if (getType() != null) sb.append("Type: " + getType() + ",");    	
-        if (getAppSource() != null) sb.append("AppSource: " + getAppSource() + ",");    	
-        if (getDomains() != null) sb.append("Domains: " + getDomains() + ",");    	
-        if (isEnableSsl() != null) sb.append("EnableSsl: " + isEnableSsl() + ",");    	
-        if (getSslConfiguration() != null) sb.append("SslConfiguration: " + getSslConfiguration() + ",");    	
-        if (getAttributes() != null) sb.append("Attributes: " + getAttributes() + ",");    	
+        sb.append("{");
+        if (getAppId() != null) sb.append("AppId: " + getAppId() + ",");
+        if (getStackId() != null) sb.append("StackId: " + getStackId() + ",");
+        if (getShortname() != null) sb.append("Shortname: " + getShortname() + ",");
+        if (getName() != null) sb.append("Name: " + getName() + ",");
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");
+        if (getType() != null) sb.append("Type: " + getType() + ",");
+        if (getAppSource() != null) sb.append("AppSource: " + getAppSource() + ",");
+        if (getDomains() != null) sb.append("Domains: " + getDomains() + ",");
+        if (isEnableSsl() != null) sb.append("EnableSsl: " + isEnableSsl() + ",");
+        if (getSslConfiguration() != null) sb.append("SslConfiguration: " + getSslConfiguration() + ",");
+        if (getAttributes() != null) sb.append("Attributes: " + getAttributes() + ",");
         if (getCreatedAt() != null) sb.append("CreatedAt: " + getCreatedAt() );
         sb.append("}");
         return sb.toString();

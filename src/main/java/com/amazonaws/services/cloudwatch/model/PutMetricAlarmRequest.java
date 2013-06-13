@@ -67,7 +67,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest  implements S
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 5<br/>
      */
-    private java.util.List<String> oKActions;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> oKActions;
 
     /**
      * The list of actions to execute when this alarm transitions into an
@@ -79,7 +79,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest  implements S
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 5<br/>
      */
-    private java.util.List<String> alarmActions;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> alarmActions;
 
     /**
      * The list of actions to execute when this alarm transitions into an
@@ -91,7 +91,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest  implements S
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 5<br/>
      */
-    private java.util.List<String> insufficientDataActions;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> insufficientDataActions;
 
     /**
      * The name for the alarm's associated metric.
@@ -124,7 +124,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest  implements S
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 10<br/>
      */
-    private java.util.List<Dimension> dimensions;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Dimension> dimensions;
 
     /**
      * The period in seconds over which the specified statistic is applied.
@@ -328,7 +328,8 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest  implements S
     public java.util.List<String> getOKActions() {
         
         if (oKActions == null) {
-            oKActions = new java.util.ArrayList<String>();
+              oKActions = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              oKActions.setAutoConstruct(true);
         }
         return oKActions;
     }
@@ -354,8 +355,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest  implements S
             this.oKActions = null;
             return;
         }
-
-        java.util.List<String> oKActionsCopy = new java.util.ArrayList<String>(oKActions.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> oKActionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(oKActions.size());
         oKActionsCopy.addAll(oKActions);
         this.oKActions = oKActionsCopy;
     }
@@ -414,7 +414,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest  implements S
         if (oKActions == null) {
             this.oKActions = null;
         } else {
-            java.util.List<String> oKActionsCopy = new java.util.ArrayList<String>(oKActions.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> oKActionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(oKActions.size());
             oKActionsCopy.addAll(oKActions);
             this.oKActions = oKActionsCopy;
         }
@@ -441,7 +441,8 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest  implements S
     public java.util.List<String> getAlarmActions() {
         
         if (alarmActions == null) {
-            alarmActions = new java.util.ArrayList<String>();
+              alarmActions = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              alarmActions.setAutoConstruct(true);
         }
         return alarmActions;
     }
@@ -467,8 +468,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest  implements S
             this.alarmActions = null;
             return;
         }
-
-        java.util.List<String> alarmActionsCopy = new java.util.ArrayList<String>(alarmActions.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> alarmActionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(alarmActions.size());
         alarmActionsCopy.addAll(alarmActions);
         this.alarmActions = alarmActionsCopy;
     }
@@ -527,7 +527,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest  implements S
         if (alarmActions == null) {
             this.alarmActions = null;
         } else {
-            java.util.List<String> alarmActionsCopy = new java.util.ArrayList<String>(alarmActions.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> alarmActionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(alarmActions.size());
             alarmActionsCopy.addAll(alarmActions);
             this.alarmActions = alarmActionsCopy;
         }
@@ -554,7 +554,8 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest  implements S
     public java.util.List<String> getInsufficientDataActions() {
         
         if (insufficientDataActions == null) {
-            insufficientDataActions = new java.util.ArrayList<String>();
+              insufficientDataActions = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              insufficientDataActions.setAutoConstruct(true);
         }
         return insufficientDataActions;
     }
@@ -580,8 +581,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest  implements S
             this.insufficientDataActions = null;
             return;
         }
-
-        java.util.List<String> insufficientDataActionsCopy = new java.util.ArrayList<String>(insufficientDataActions.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> insufficientDataActionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(insufficientDataActions.size());
         insufficientDataActionsCopy.addAll(insufficientDataActions);
         this.insufficientDataActions = insufficientDataActionsCopy;
     }
@@ -640,7 +640,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest  implements S
         if (insufficientDataActions == null) {
             this.insufficientDataActions = null;
         } else {
-            java.util.List<String> insufficientDataActionsCopy = new java.util.ArrayList<String>(insufficientDataActions.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> insufficientDataActionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(insufficientDataActions.size());
             insufficientDataActionsCopy.addAll(insufficientDataActions);
             this.insufficientDataActions = insufficientDataActionsCopy;
         }
@@ -831,7 +831,8 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest  implements S
     public java.util.List<Dimension> getDimensions() {
         
         if (dimensions == null) {
-            dimensions = new java.util.ArrayList<Dimension>();
+              dimensions = new com.amazonaws.internal.ListWithAutoConstructFlag<Dimension>();
+              dimensions.setAutoConstruct(true);
         }
         return dimensions;
     }
@@ -849,8 +850,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest  implements S
             this.dimensions = null;
             return;
         }
-
-        java.util.List<Dimension> dimensionsCopy = new java.util.ArrayList<Dimension>(dimensions.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Dimension> dimensionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Dimension>(dimensions.size());
         dimensionsCopy.addAll(dimensions);
         this.dimensions = dimensionsCopy;
     }
@@ -893,7 +893,7 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest  implements S
         if (dimensions == null) {
             this.dimensions = null;
         } else {
-            java.util.List<Dimension> dimensionsCopy = new java.util.ArrayList<Dimension>(dimensions.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Dimension> dimensionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Dimension>(dimensions.size());
             dimensionsCopy.addAll(dimensions);
             this.dimensions = dimensionsCopy;
         }
@@ -1224,21 +1224,21 @@ public class PutMetricAlarmRequest extends AmazonWebServiceRequest  implements S
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getAlarmName() != null) sb.append("AlarmName: " + getAlarmName() + ",");    	
-        if (getAlarmDescription() != null) sb.append("AlarmDescription: " + getAlarmDescription() + ",");    	
-        if (isActionsEnabled() != null) sb.append("ActionsEnabled: " + isActionsEnabled() + ",");    	
-        if (getOKActions() != null) sb.append("OKActions: " + getOKActions() + ",");    	
-        if (getAlarmActions() != null) sb.append("AlarmActions: " + getAlarmActions() + ",");    	
-        if (getInsufficientDataActions() != null) sb.append("InsufficientDataActions: " + getInsufficientDataActions() + ",");    	
-        if (getMetricName() != null) sb.append("MetricName: " + getMetricName() + ",");    	
-        if (getNamespace() != null) sb.append("Namespace: " + getNamespace() + ",");    	
-        if (getStatistic() != null) sb.append("Statistic: " + getStatistic() + ",");    	
-        if (getDimensions() != null) sb.append("Dimensions: " + getDimensions() + ",");    	
-        if (getPeriod() != null) sb.append("Period: " + getPeriod() + ",");    	
-        if (getUnit() != null) sb.append("Unit: " + getUnit() + ",");    	
-        if (getEvaluationPeriods() != null) sb.append("EvaluationPeriods: " + getEvaluationPeriods() + ",");    	
-        if (getThreshold() != null) sb.append("Threshold: " + getThreshold() + ",");    	
+        sb.append("{");
+        if (getAlarmName() != null) sb.append("AlarmName: " + getAlarmName() + ",");
+        if (getAlarmDescription() != null) sb.append("AlarmDescription: " + getAlarmDescription() + ",");
+        if (isActionsEnabled() != null) sb.append("ActionsEnabled: " + isActionsEnabled() + ",");
+        if (getOKActions() != null) sb.append("OKActions: " + getOKActions() + ",");
+        if (getAlarmActions() != null) sb.append("AlarmActions: " + getAlarmActions() + ",");
+        if (getInsufficientDataActions() != null) sb.append("InsufficientDataActions: " + getInsufficientDataActions() + ",");
+        if (getMetricName() != null) sb.append("MetricName: " + getMetricName() + ",");
+        if (getNamespace() != null) sb.append("Namespace: " + getNamespace() + ",");
+        if (getStatistic() != null) sb.append("Statistic: " + getStatistic() + ",");
+        if (getDimensions() != null) sb.append("Dimensions: " + getDimensions() + ",");
+        if (getPeriod() != null) sb.append("Period: " + getPeriod() + ",");
+        if (getUnit() != null) sb.append("Unit: " + getUnit() + ",");
+        if (getEvaluationPeriods() != null) sb.append("EvaluationPeriods: " + getEvaluationPeriods() + ",");
+        if (getThreshold() != null) sb.append("Threshold: " + getThreshold() + ",");
         if (getComparisonOperator() != null) sb.append("ComparisonOperator: " + getComparisonOperator() );
         sb.append("}");
         return sb.toString();

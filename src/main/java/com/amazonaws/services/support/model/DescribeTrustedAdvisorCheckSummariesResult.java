@@ -30,7 +30,7 @@ public class DescribeTrustedAdvisorCheckSummariesResult  implements Serializable
      * title="DescribeTrustedAdvisorCheckSummaries">DescribeTrustedAdvisorCheckSummaries</a>
      * request.
      */
-    private java.util.List<TrustedAdvisorCheckSummary> summaries;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<TrustedAdvisorCheckSummary> summaries;
 
     /**
      * List of <a href="API_TrustedAdvisorCheckSummary.html"
@@ -50,7 +50,8 @@ public class DescribeTrustedAdvisorCheckSummariesResult  implements Serializable
     public java.util.List<TrustedAdvisorCheckSummary> getSummaries() {
         
         if (summaries == null) {
-            summaries = new java.util.ArrayList<TrustedAdvisorCheckSummary>();
+              summaries = new com.amazonaws.internal.ListWithAutoConstructFlag<TrustedAdvisorCheckSummary>();
+              summaries.setAutoConstruct(true);
         }
         return summaries;
     }
@@ -75,8 +76,7 @@ public class DescribeTrustedAdvisorCheckSummariesResult  implements Serializable
             this.summaries = null;
             return;
         }
-
-        java.util.List<TrustedAdvisorCheckSummary> summariesCopy = new java.util.ArrayList<TrustedAdvisorCheckSummary>(summaries.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<TrustedAdvisorCheckSummary> summariesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<TrustedAdvisorCheckSummary>(summaries.size());
         summariesCopy.addAll(summaries);
         this.summaries = summariesCopy;
     }
@@ -133,7 +133,7 @@ public class DescribeTrustedAdvisorCheckSummariesResult  implements Serializable
         if (summaries == null) {
             this.summaries = null;
         } else {
-            java.util.List<TrustedAdvisorCheckSummary> summariesCopy = new java.util.ArrayList<TrustedAdvisorCheckSummary>(summaries.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<TrustedAdvisorCheckSummary> summariesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<TrustedAdvisorCheckSummary>(summaries.size());
             summariesCopy.addAll(summaries);
             this.summaries = summariesCopy;
         }
@@ -152,7 +152,7 @@ public class DescribeTrustedAdvisorCheckSummariesResult  implements Serializable
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getSummaries() != null) sb.append("Summaries: " + getSummaries() );
         sb.append("}");
         return sb.toString();

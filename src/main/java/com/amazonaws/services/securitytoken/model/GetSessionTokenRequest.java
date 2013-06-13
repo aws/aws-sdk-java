@@ -348,9 +348,9 @@ public class GetSessionTokenRequest extends AmazonWebServiceRequest  implements 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getDurationSeconds() != null) sb.append("DurationSeconds: " + getDurationSeconds() + ",");    	
-        if (getSerialNumber() != null) sb.append("SerialNumber: " + getSerialNumber() + ",");    	
+        sb.append("{");
+        if (getDurationSeconds() != null) sb.append("DurationSeconds: " + getDurationSeconds() + ",");
+        if (getSerialNumber() != null) sb.append("SerialNumber: " + getSerialNumber() + ",");
         if (getTokenCode() != null) sb.append("TokenCode: " + getTokenCode() );
         sb.append("}");
         return sb.toString();

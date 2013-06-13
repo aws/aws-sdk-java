@@ -86,7 +86,7 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest  
      * IP permissions is the preferred way of revoking permissions since it
      * offers more flexibility and control.
      */
-    private java.util.List<IpPermission> ipPermissions;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<IpPermission> ipPermissions;
 
     /**
      * Default constructor for a new RevokeSecurityGroupIngressRequest object.  Callers should use the
@@ -94,6 +94,8 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest  
      */
     public RevokeSecurityGroupIngressRequest() {}
     
+
+
     /**
      * Constructs a new RevokeSecurityGroupIngressRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -109,8 +111,8 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest  
      * permissions since it offers more flexibility and control.
      */
     public RevokeSecurityGroupIngressRequest(String groupName, java.util.List<IpPermission> ipPermissions) {
-        this.groupName = groupName;
-        this.ipPermissions = ipPermissions;
+        setGroupName(groupName);
+        setIpPermissions(ipPermissions);
     }
 
     
@@ -427,7 +429,8 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest  
     public java.util.List<IpPermission> getIpPermissions() {
         
         if (ipPermissions == null) {
-            ipPermissions = new java.util.ArrayList<IpPermission>();
+              ipPermissions = new com.amazonaws.internal.ListWithAutoConstructFlag<IpPermission>();
+              ipPermissions.setAutoConstruct(true);
         }
         return ipPermissions;
     }
@@ -450,8 +453,7 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest  
             this.ipPermissions = null;
             return;
         }
-
-        java.util.List<IpPermission> ipPermissionsCopy = new java.util.ArrayList<IpPermission>(ipPermissions.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<IpPermission> ipPermissionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<IpPermission>(ipPermissions.size());
         ipPermissionsCopy.addAll(ipPermissions);
         this.ipPermissions = ipPermissionsCopy;
     }
@@ -504,7 +506,7 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest  
         if (ipPermissions == null) {
             this.ipPermissions = null;
         } else {
-            java.util.List<IpPermission> ipPermissionsCopy = new java.util.ArrayList<IpPermission>(ipPermissions.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<IpPermission> ipPermissionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<IpPermission>(ipPermissions.size());
             ipPermissionsCopy.addAll(ipPermissions);
             this.ipPermissions = ipPermissionsCopy;
         }
@@ -523,15 +525,15 @@ public class RevokeSecurityGroupIngressRequest extends AmazonWebServiceRequest  
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getGroupName() != null) sb.append("GroupName: " + getGroupName() + ",");    	
-        if (getGroupId() != null) sb.append("GroupId: " + getGroupId() + ",");    	
-        if (getSourceSecurityGroupName() != null) sb.append("SourceSecurityGroupName: " + getSourceSecurityGroupName() + ",");    	
-        if (getSourceSecurityGroupOwnerId() != null) sb.append("SourceSecurityGroupOwnerId: " + getSourceSecurityGroupOwnerId() + ",");    	
-        if (getIpProtocol() != null) sb.append("IpProtocol: " + getIpProtocol() + ",");    	
-        if (getFromPort() != null) sb.append("FromPort: " + getFromPort() + ",");    	
-        if (getToPort() != null) sb.append("ToPort: " + getToPort() + ",");    	
-        if (getCidrIp() != null) sb.append("CidrIp: " + getCidrIp() + ",");    	
+        sb.append("{");
+        if (getGroupName() != null) sb.append("GroupName: " + getGroupName() + ",");
+        if (getGroupId() != null) sb.append("GroupId: " + getGroupId() + ",");
+        if (getSourceSecurityGroupName() != null) sb.append("SourceSecurityGroupName: " + getSourceSecurityGroupName() + ",");
+        if (getSourceSecurityGroupOwnerId() != null) sb.append("SourceSecurityGroupOwnerId: " + getSourceSecurityGroupOwnerId() + ",");
+        if (getIpProtocol() != null) sb.append("IpProtocol: " + getIpProtocol() + ",");
+        if (getFromPort() != null) sb.append("FromPort: " + getFromPort() + ",");
+        if (getToPort() != null) sb.append("ToPort: " + getToPort() + ",");
+        if (getCidrIp() != null) sb.append("CidrIp: " + getCidrIp() + ",");
         if (getIpPermissions() != null) sb.append("IpPermissions: " + getIpPermissions() );
         sb.append("}");
         return sb.toString();

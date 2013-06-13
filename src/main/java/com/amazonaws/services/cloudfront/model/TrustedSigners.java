@@ -42,7 +42,7 @@ public class TrustedSigners  implements Serializable  {
      * Optional: A complex type that contains trusted signers for this cache
      * behavior. If Quantity is 0, you can omit Items.
      */
-    private java.util.List<String> items;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> items;
 
     /**
      * Default constructor for a new TrustedSigners object.  Callers should use the
@@ -50,6 +50,8 @@ public class TrustedSigners  implements Serializable  {
      */
     public TrustedSigners() {}
     
+
+
     /**
      * Constructs a new TrustedSigners object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -59,7 +61,7 @@ public class TrustedSigners  implements Serializable  {
      * for this cache behavior. If Quantity is 0, you can omit Items.
      */
     public TrustedSigners(java.util.List<String> items) {
-        this.items = items;
+        setItems(items);
     }
 
     
@@ -159,7 +161,8 @@ public class TrustedSigners  implements Serializable  {
     public java.util.List<String> getItems() {
         
         if (items == null) {
-            items = new java.util.ArrayList<String>();
+              items = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              items.setAutoConstruct(true);
         }
         return items;
     }
@@ -176,8 +179,7 @@ public class TrustedSigners  implements Serializable  {
             this.items = null;
             return;
         }
-
-        java.util.List<String> itemsCopy = new java.util.ArrayList<String>(items.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> itemsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(items.size());
         itemsCopy.addAll(items);
         this.items = itemsCopy;
     }
@@ -218,7 +220,7 @@ public class TrustedSigners  implements Serializable  {
         if (items == null) {
             this.items = null;
         } else {
-            java.util.List<String> itemsCopy = new java.util.ArrayList<String>(items.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> itemsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(items.size());
             itemsCopy.addAll(items);
             this.items = itemsCopy;
         }
@@ -237,9 +239,9 @@ public class TrustedSigners  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (isEnabled() != null) sb.append("Enabled: " + isEnabled() + ",");    	
-        if (getQuantity() != null) sb.append("Quantity: " + getQuantity() + ",");    	
+        sb.append("{");
+        if (isEnabled() != null) sb.append("Enabled: " + isEnabled() + ",");
+        if (getQuantity() != null) sb.append("Quantity: " + getQuantity() + ",");
         if (getItems() != null) sb.append("Items: " + getItems() );
         sb.append("}");
         return sb.toString();

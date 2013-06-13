@@ -85,9 +85,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest  implements Ser
      * The names of the security groups into which the instances will be
      * launched.
      */
-    private java.util.List<String> securityGroups;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> securityGroups;
 
-    private java.util.List<String> securityGroupIds;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> securityGroupIds;
 
     /**
      * Specifies additional information to make available to the instance(s).
@@ -126,7 +126,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest  implements Ser
      * Specifies how block devices are exposed to the instance. Each mapping
      * is made up of a virtualName and a deviceName.
      */
-    private java.util.List<BlockDeviceMapping> blockDeviceMappings;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<BlockDeviceMapping> blockDeviceMappings;
 
     /**
      * Enables monitoring for the instance.
@@ -172,9 +172,12 @@ public class RunInstancesRequest extends AmazonWebServiceRequest  implements Ser
      */
     private String clientToken;
 
+    /**
+     * Do not use. Reserved for internal use.
+     */
     private String additionalInfo;
 
-    private java.util.List<InstanceNetworkInterfaceSpecification> networkInterfaces;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<InstanceNetworkInterfaceSpecification> networkInterfaces;
 
     private IamInstanceProfileSpecification iamInstanceProfile;
 
@@ -186,6 +189,8 @@ public class RunInstancesRequest extends AmazonWebServiceRequest  implements Ser
      */
     public RunInstancesRequest() {}
     
+
+
     /**
      * Constructs a new RunInstancesRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -201,9 +206,9 @@ public class RunInstancesRequest extends AmazonWebServiceRequest  implements Ser
      * number allowed for your account (default: 20).
      */
     public RunInstancesRequest(String imageId, Integer minCount, Integer maxCount) {
-        this.imageId = imageId;
-        this.minCount = minCount;
-        this.maxCount = maxCount;
+        setImageId(imageId);
+        setMinCount(minCount);
+        setMaxCount(maxCount);
     }
 
     
@@ -378,7 +383,8 @@ public class RunInstancesRequest extends AmazonWebServiceRequest  implements Ser
     public java.util.List<String> getSecurityGroups() {
         
         if (securityGroups == null) {
-            securityGroups = new java.util.ArrayList<String>();
+              securityGroups = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              securityGroups.setAutoConstruct(true);
         }
         return securityGroups;
     }
@@ -395,8 +401,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest  implements Ser
             this.securityGroups = null;
             return;
         }
-
-        java.util.List<String> securityGroupsCopy = new java.util.ArrayList<String>(securityGroups.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> securityGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(securityGroups.size());
         securityGroupsCopy.addAll(securityGroups);
         this.securityGroups = securityGroupsCopy;
     }
@@ -437,7 +442,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest  implements Ser
         if (securityGroups == null) {
             this.securityGroups = null;
         } else {
-            java.util.List<String> securityGroupsCopy = new java.util.ArrayList<String>(securityGroups.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> securityGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(securityGroups.size());
             securityGroupsCopy.addAll(securityGroups);
             this.securityGroups = securityGroupsCopy;
         }
@@ -453,7 +458,8 @@ public class RunInstancesRequest extends AmazonWebServiceRequest  implements Ser
     public java.util.List<String> getSecurityGroupIds() {
         
         if (securityGroupIds == null) {
-            securityGroupIds = new java.util.ArrayList<String>();
+              securityGroupIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              securityGroupIds.setAutoConstruct(true);
         }
         return securityGroupIds;
     }
@@ -468,8 +474,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest  implements Ser
             this.securityGroupIds = null;
             return;
         }
-
-        java.util.List<String> securityGroupIdsCopy = new java.util.ArrayList<String>(securityGroupIds.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> securityGroupIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(securityGroupIds.size());
         securityGroupIdsCopy.addAll(securityGroupIds);
         this.securityGroupIds = securityGroupIdsCopy;
     }
@@ -506,7 +511,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest  implements Ser
         if (securityGroupIds == null) {
             this.securityGroupIds = null;
         } else {
-            java.util.List<String> securityGroupIdsCopy = new java.util.ArrayList<String>(securityGroupIds.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> securityGroupIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(securityGroupIds.size());
             securityGroupIdsCopy.addAll(securityGroupIds);
             this.securityGroupIds = securityGroupIdsCopy;
         }
@@ -773,7 +778,8 @@ public class RunInstancesRequest extends AmazonWebServiceRequest  implements Ser
     public java.util.List<BlockDeviceMapping> getBlockDeviceMappings() {
         
         if (blockDeviceMappings == null) {
-            blockDeviceMappings = new java.util.ArrayList<BlockDeviceMapping>();
+              blockDeviceMappings = new com.amazonaws.internal.ListWithAutoConstructFlag<BlockDeviceMapping>();
+              blockDeviceMappings.setAutoConstruct(true);
         }
         return blockDeviceMappings;
     }
@@ -790,8 +796,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest  implements Ser
             this.blockDeviceMappings = null;
             return;
         }
-
-        java.util.List<BlockDeviceMapping> blockDeviceMappingsCopy = new java.util.ArrayList<BlockDeviceMapping>(blockDeviceMappings.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<BlockDeviceMapping> blockDeviceMappingsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<BlockDeviceMapping>(blockDeviceMappings.size());
         blockDeviceMappingsCopy.addAll(blockDeviceMappings);
         this.blockDeviceMappings = blockDeviceMappingsCopy;
     }
@@ -832,7 +837,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest  implements Ser
         if (blockDeviceMappings == null) {
             this.blockDeviceMappings = null;
         } else {
-            java.util.List<BlockDeviceMapping> blockDeviceMappingsCopy = new java.util.ArrayList<BlockDeviceMapping>(blockDeviceMappings.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<BlockDeviceMapping> blockDeviceMappingsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<BlockDeviceMapping>(blockDeviceMappings.size());
             blockDeviceMappingsCopy.addAll(blockDeviceMappings);
             this.blockDeviceMappings = blockDeviceMappingsCopy;
         }
@@ -1155,29 +1160,29 @@ public class RunInstancesRequest extends AmazonWebServiceRequest  implements Ser
     
     
     /**
-     * Returns the value of the AdditionalInfo property for this object.
+     * Do not use. Reserved for internal use.
      *
-     * @return The value of the AdditionalInfo property for this object.
+     * @return Do not use. Reserved for internal use.
      */
     public String getAdditionalInfo() {
         return additionalInfo;
     }
     
     /**
-     * Sets the value of the AdditionalInfo property for this object.
+     * Do not use. Reserved for internal use.
      *
-     * @param additionalInfo The new value for the AdditionalInfo property for this object.
+     * @param additionalInfo Do not use. Reserved for internal use.
      */
     public void setAdditionalInfo(String additionalInfo) {
         this.additionalInfo = additionalInfo;
     }
     
     /**
-     * Sets the value of the AdditionalInfo property for this object.
+     * Do not use. Reserved for internal use.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param additionalInfo The new value for the AdditionalInfo property for this object.
+     * @param additionalInfo Do not use. Reserved for internal use.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -1196,7 +1201,8 @@ public class RunInstancesRequest extends AmazonWebServiceRequest  implements Ser
     public java.util.List<InstanceNetworkInterfaceSpecification> getNetworkInterfaces() {
         
         if (networkInterfaces == null) {
-            networkInterfaces = new java.util.ArrayList<InstanceNetworkInterfaceSpecification>();
+              networkInterfaces = new com.amazonaws.internal.ListWithAutoConstructFlag<InstanceNetworkInterfaceSpecification>();
+              networkInterfaces.setAutoConstruct(true);
         }
         return networkInterfaces;
     }
@@ -1211,8 +1217,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest  implements Ser
             this.networkInterfaces = null;
             return;
         }
-
-        java.util.List<InstanceNetworkInterfaceSpecification> networkInterfacesCopy = new java.util.ArrayList<InstanceNetworkInterfaceSpecification>(networkInterfaces.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<InstanceNetworkInterfaceSpecification> networkInterfacesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<InstanceNetworkInterfaceSpecification>(networkInterfaces.size());
         networkInterfacesCopy.addAll(networkInterfaces);
         this.networkInterfaces = networkInterfacesCopy;
     }
@@ -1249,7 +1254,7 @@ public class RunInstancesRequest extends AmazonWebServiceRequest  implements Ser
         if (networkInterfaces == null) {
             this.networkInterfaces = null;
         } else {
-            java.util.List<InstanceNetworkInterfaceSpecification> networkInterfacesCopy = new java.util.ArrayList<InstanceNetworkInterfaceSpecification>(networkInterfaces.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<InstanceNetworkInterfaceSpecification> networkInterfacesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<InstanceNetworkInterfaceSpecification>(networkInterfaces.size());
             networkInterfacesCopy.addAll(networkInterfaces);
             this.networkInterfaces = networkInterfacesCopy;
         }
@@ -1345,29 +1350,29 @@ public class RunInstancesRequest extends AmazonWebServiceRequest  implements Ser
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getImageId() != null) sb.append("ImageId: " + getImageId() + ",");    	
-        if (getMinCount() != null) sb.append("MinCount: " + getMinCount() + ",");    	
-        if (getMaxCount() != null) sb.append("MaxCount: " + getMaxCount() + ",");    	
-        if (getKeyName() != null) sb.append("KeyName: " + getKeyName() + ",");    	
-        if (getSecurityGroups() != null) sb.append("SecurityGroups: " + getSecurityGroups() + ",");    	
-        if (getSecurityGroupIds() != null) sb.append("SecurityGroupIds: " + getSecurityGroupIds() + ",");    	
-        if (getUserData() != null) sb.append("UserData: " + getUserData() + ",");    	
-        if (getInstanceType() != null) sb.append("InstanceType: " + getInstanceType() + ",");    	
-        if (getPlacement() != null) sb.append("Placement: " + getPlacement() + ",");    	
-        if (getKernelId() != null) sb.append("KernelId: " + getKernelId() + ",");    	
-        if (getRamdiskId() != null) sb.append("RamdiskId: " + getRamdiskId() + ",");    	
-        if (getBlockDeviceMappings() != null) sb.append("BlockDeviceMappings: " + getBlockDeviceMappings() + ",");    	
-        if (isMonitoring() != null) sb.append("Monitoring: " + isMonitoring() + ",");    	
-        if (getSubnetId() != null) sb.append("SubnetId: " + getSubnetId() + ",");    	
-        if (isDisableApiTermination() != null) sb.append("DisableApiTermination: " + isDisableApiTermination() + ",");    	
-        if (getInstanceInitiatedShutdownBehavior() != null) sb.append("InstanceInitiatedShutdownBehavior: " + getInstanceInitiatedShutdownBehavior() + ",");    	
-        if (getLicense() != null) sb.append("License: " + getLicense() + ",");    	
-        if (getPrivateIpAddress() != null) sb.append("PrivateIpAddress: " + getPrivateIpAddress() + ",");    	
-        if (getClientToken() != null) sb.append("ClientToken: " + getClientToken() + ",");    	
-        if (getAdditionalInfo() != null) sb.append("AdditionalInfo: " + getAdditionalInfo() + ",");    	
-        if (getNetworkInterfaces() != null) sb.append("NetworkInterfaces: " + getNetworkInterfaces() + ",");    	
-        if (getIamInstanceProfile() != null) sb.append("IamInstanceProfile: " + getIamInstanceProfile() + ",");    	
+        sb.append("{");
+        if (getImageId() != null) sb.append("ImageId: " + getImageId() + ",");
+        if (getMinCount() != null) sb.append("MinCount: " + getMinCount() + ",");
+        if (getMaxCount() != null) sb.append("MaxCount: " + getMaxCount() + ",");
+        if (getKeyName() != null) sb.append("KeyName: " + getKeyName() + ",");
+        if (getSecurityGroups() != null) sb.append("SecurityGroups: " + getSecurityGroups() + ",");
+        if (getSecurityGroupIds() != null) sb.append("SecurityGroupIds: " + getSecurityGroupIds() + ",");
+        if (getUserData() != null) sb.append("UserData: " + getUserData() + ",");
+        if (getInstanceType() != null) sb.append("InstanceType: " + getInstanceType() + ",");
+        if (getPlacement() != null) sb.append("Placement: " + getPlacement() + ",");
+        if (getKernelId() != null) sb.append("KernelId: " + getKernelId() + ",");
+        if (getRamdiskId() != null) sb.append("RamdiskId: " + getRamdiskId() + ",");
+        if (getBlockDeviceMappings() != null) sb.append("BlockDeviceMappings: " + getBlockDeviceMappings() + ",");
+        if (isMonitoring() != null) sb.append("Monitoring: " + isMonitoring() + ",");
+        if (getSubnetId() != null) sb.append("SubnetId: " + getSubnetId() + ",");
+        if (isDisableApiTermination() != null) sb.append("DisableApiTermination: " + isDisableApiTermination() + ",");
+        if (getInstanceInitiatedShutdownBehavior() != null) sb.append("InstanceInitiatedShutdownBehavior: " + getInstanceInitiatedShutdownBehavior() + ",");
+        if (getLicense() != null) sb.append("License: " + getLicense() + ",");
+        if (getPrivateIpAddress() != null) sb.append("PrivateIpAddress: " + getPrivateIpAddress() + ",");
+        if (getClientToken() != null) sb.append("ClientToken: " + getClientToken() + ",");
+        if (getAdditionalInfo() != null) sb.append("AdditionalInfo: " + getAdditionalInfo() + ",");
+        if (getNetworkInterfaces() != null) sb.append("NetworkInterfaces: " + getNetworkInterfaces() + ",");
+        if (getIamInstanceProfile() != null) sb.append("IamInstanceProfile: " + getIamInstanceProfile() + ",");
         if (isEbsOptimized() != null) sb.append("EbsOptimized: " + isEbsOptimized() );
         sb.append("}");
         return sb.toString();

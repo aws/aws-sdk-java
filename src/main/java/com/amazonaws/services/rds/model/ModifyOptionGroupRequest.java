@@ -27,7 +27,13 @@ import java.io.Serializable;
 public class ModifyOptionGroupRequest extends AmazonWebServiceRequest  implements Serializable  {
 
     /**
-     * The name of the option group to be modified.
+     * The name of the option group to be modified. <p> <!-- Note that
+     * persistent options, such as the TDE_SQLServer option for Microsoft SQL
+     * Server, cannot be removed from an option group while DB instances are
+     * associated with the option group. --> Permanent options, such as the
+     * TDE option for Oracle Advanced Security TDE, cannot be removed from an
+     * option group, and that option group cannot be removed from a DB
+     * instance once it is associated with a DB instance
      */
     private String optionGroupName;
 
@@ -36,12 +42,12 @@ public class ModifyOptionGroupRequest extends AmazonWebServiceRequest  implement
      * present, the specified configuration is used to update the existing
      * configuration.
      */
-    private java.util.List<OptionConfiguration> optionsToInclude;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<OptionConfiguration> optionsToInclude;
 
     /**
      * Options in this list are removed from the Option Group.
      */
-    private java.util.List<String> optionsToRemove;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> optionsToRemove;
 
     /**
      * Indicates whether the changes should be applied immediately, or during
@@ -51,29 +57,65 @@ public class ModifyOptionGroupRequest extends AmazonWebServiceRequest  implement
     private Boolean applyImmediately;
 
     /**
-     * The name of the option group to be modified.
+     * The name of the option group to be modified. <p> <!-- Note that
+     * persistent options, such as the TDE_SQLServer option for Microsoft SQL
+     * Server, cannot be removed from an option group while DB instances are
+     * associated with the option group. --> Permanent options, such as the
+     * TDE option for Oracle Advanced Security TDE, cannot be removed from an
+     * option group, and that option group cannot be removed from a DB
+     * instance once it is associated with a DB instance
      *
-     * @return The name of the option group to be modified.
+     * @return The name of the option group to be modified. <p> <!-- Note that
+     *         persistent options, such as the TDE_SQLServer option for Microsoft SQL
+     *         Server, cannot be removed from an option group while DB instances are
+     *         associated with the option group. --> Permanent options, such as the
+     *         TDE option for Oracle Advanced Security TDE, cannot be removed from an
+     *         option group, and that option group cannot be removed from a DB
+     *         instance once it is associated with a DB instance
      */
     public String getOptionGroupName() {
         return optionGroupName;
     }
     
     /**
-     * The name of the option group to be modified.
+     * The name of the option group to be modified. <p> <!-- Note that
+     * persistent options, such as the TDE_SQLServer option for Microsoft SQL
+     * Server, cannot be removed from an option group while DB instances are
+     * associated with the option group. --> Permanent options, such as the
+     * TDE option for Oracle Advanced Security TDE, cannot be removed from an
+     * option group, and that option group cannot be removed from a DB
+     * instance once it is associated with a DB instance
      *
-     * @param optionGroupName The name of the option group to be modified.
+     * @param optionGroupName The name of the option group to be modified. <p> <!-- Note that
+     *         persistent options, such as the TDE_SQLServer option for Microsoft SQL
+     *         Server, cannot be removed from an option group while DB instances are
+     *         associated with the option group. --> Permanent options, such as the
+     *         TDE option for Oracle Advanced Security TDE, cannot be removed from an
+     *         option group, and that option group cannot be removed from a DB
+     *         instance once it is associated with a DB instance
      */
     public void setOptionGroupName(String optionGroupName) {
         this.optionGroupName = optionGroupName;
     }
     
     /**
-     * The name of the option group to be modified.
+     * The name of the option group to be modified. <p> <!-- Note that
+     * persistent options, such as the TDE_SQLServer option for Microsoft SQL
+     * Server, cannot be removed from an option group while DB instances are
+     * associated with the option group. --> Permanent options, such as the
+     * TDE option for Oracle Advanced Security TDE, cannot be removed from an
+     * option group, and that option group cannot be removed from a DB
+     * instance once it is associated with a DB instance
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param optionGroupName The name of the option group to be modified.
+     * @param optionGroupName The name of the option group to be modified. <p> <!-- Note that
+     *         persistent options, such as the TDE_SQLServer option for Microsoft SQL
+     *         Server, cannot be removed from an option group while DB instances are
+     *         associated with the option group. --> Permanent options, such as the
+     *         TDE option for Oracle Advanced Security TDE, cannot be removed from an
+     *         option group, and that option group cannot be removed from a DB
+     *         instance once it is associated with a DB instance
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -96,7 +138,8 @@ public class ModifyOptionGroupRequest extends AmazonWebServiceRequest  implement
     public java.util.List<OptionConfiguration> getOptionsToInclude() {
         
         if (optionsToInclude == null) {
-            optionsToInclude = new java.util.ArrayList<OptionConfiguration>();
+              optionsToInclude = new com.amazonaws.internal.ListWithAutoConstructFlag<OptionConfiguration>();
+              optionsToInclude.setAutoConstruct(true);
         }
         return optionsToInclude;
     }
@@ -115,8 +158,7 @@ public class ModifyOptionGroupRequest extends AmazonWebServiceRequest  implement
             this.optionsToInclude = null;
             return;
         }
-
-        java.util.List<OptionConfiguration> optionsToIncludeCopy = new java.util.ArrayList<OptionConfiguration>(optionsToInclude.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<OptionConfiguration> optionsToIncludeCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<OptionConfiguration>(optionsToInclude.size());
         optionsToIncludeCopy.addAll(optionsToInclude);
         this.optionsToInclude = optionsToIncludeCopy;
     }
@@ -161,7 +203,7 @@ public class ModifyOptionGroupRequest extends AmazonWebServiceRequest  implement
         if (optionsToInclude == null) {
             this.optionsToInclude = null;
         } else {
-            java.util.List<OptionConfiguration> optionsToIncludeCopy = new java.util.ArrayList<OptionConfiguration>(optionsToInclude.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<OptionConfiguration> optionsToIncludeCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<OptionConfiguration>(optionsToInclude.size());
             optionsToIncludeCopy.addAll(optionsToInclude);
             this.optionsToInclude = optionsToIncludeCopy;
         }
@@ -177,7 +219,8 @@ public class ModifyOptionGroupRequest extends AmazonWebServiceRequest  implement
     public java.util.List<String> getOptionsToRemove() {
         
         if (optionsToRemove == null) {
-            optionsToRemove = new java.util.ArrayList<String>();
+              optionsToRemove = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              optionsToRemove.setAutoConstruct(true);
         }
         return optionsToRemove;
     }
@@ -192,8 +235,7 @@ public class ModifyOptionGroupRequest extends AmazonWebServiceRequest  implement
             this.optionsToRemove = null;
             return;
         }
-
-        java.util.List<String> optionsToRemoveCopy = new java.util.ArrayList<String>(optionsToRemove.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> optionsToRemoveCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(optionsToRemove.size());
         optionsToRemoveCopy.addAll(optionsToRemove);
         this.optionsToRemove = optionsToRemoveCopy;
     }
@@ -230,7 +272,7 @@ public class ModifyOptionGroupRequest extends AmazonWebServiceRequest  implement
         if (optionsToRemove == null) {
             this.optionsToRemove = null;
         } else {
-            java.util.List<String> optionsToRemoveCopy = new java.util.ArrayList<String>(optionsToRemove.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> optionsToRemoveCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(optionsToRemove.size());
             optionsToRemoveCopy.addAll(optionsToRemove);
             this.optionsToRemove = optionsToRemoveCopy;
         }
@@ -308,10 +350,10 @@ public class ModifyOptionGroupRequest extends AmazonWebServiceRequest  implement
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getOptionGroupName() != null) sb.append("OptionGroupName: " + getOptionGroupName() + ",");    	
-        if (getOptionsToInclude() != null) sb.append("OptionsToInclude: " + getOptionsToInclude() + ",");    	
-        if (getOptionsToRemove() != null) sb.append("OptionsToRemove: " + getOptionsToRemove() + ",");    	
+        sb.append("{");
+        if (getOptionGroupName() != null) sb.append("OptionGroupName: " + getOptionGroupName() + ",");
+        if (getOptionsToInclude() != null) sb.append("OptionsToInclude: " + getOptionsToInclude() + ",");
+        if (getOptionsToRemove() != null) sb.append("OptionsToRemove: " + getOptionsToRemove() + ",");
         if (isApplyImmediately() != null) sb.append("ApplyImmediately: " + isApplyImmediately() );
         sb.append("}");
         return sb.toString();

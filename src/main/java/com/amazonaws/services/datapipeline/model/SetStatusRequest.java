@@ -40,7 +40,7 @@ public class SetStatusRequest extends AmazonWebServiceRequest  implements Serial
      * Identifies an array of objects. The corresponding objects can be
      * either physical or components, but not a mix of both types.
      */
-    private java.util.List<String> objectIds;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> objectIds;
 
     /**
      * Specifies the status to be set on all the objects in
@@ -111,7 +111,8 @@ public class SetStatusRequest extends AmazonWebServiceRequest  implements Serial
     public java.util.List<String> getObjectIds() {
         
         if (objectIds == null) {
-            objectIds = new java.util.ArrayList<String>();
+              objectIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              objectIds.setAutoConstruct(true);
         }
         return objectIds;
     }
@@ -128,8 +129,7 @@ public class SetStatusRequest extends AmazonWebServiceRequest  implements Serial
             this.objectIds = null;
             return;
         }
-
-        java.util.List<String> objectIdsCopy = new java.util.ArrayList<String>(objectIds.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> objectIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(objectIds.size());
         objectIdsCopy.addAll(objectIds);
         this.objectIds = objectIdsCopy;
     }
@@ -170,7 +170,7 @@ public class SetStatusRequest extends AmazonWebServiceRequest  implements Serial
         if (objectIds == null) {
             this.objectIds = null;
         } else {
-            java.util.List<String> objectIdsCopy = new java.util.ArrayList<String>(objectIds.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> objectIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(objectIds.size());
             objectIdsCopy.addAll(objectIds);
             this.objectIds = objectIdsCopy;
         }
@@ -259,9 +259,9 @@ public class SetStatusRequest extends AmazonWebServiceRequest  implements Serial
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getPipelineId() != null) sb.append("PipelineId: " + getPipelineId() + ",");    	
-        if (getObjectIds() != null) sb.append("ObjectIds: " + getObjectIds() + ",");    	
+        sb.append("{");
+        if (getPipelineId() != null) sb.append("PipelineId: " + getPipelineId() + ",");
+        if (getObjectIds() != null) sb.append("ObjectIds: " + getObjectIds() + ",");
         if (getStatus() != null) sb.append("Status: " + getStatus() );
         sb.append("}");
         return sb.toString();

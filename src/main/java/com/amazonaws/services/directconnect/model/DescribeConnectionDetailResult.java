@@ -69,12 +69,12 @@ public class DescribeConnectionDetailResult  implements Serializable  {
     /**
      * A list of connection costs.
      */
-    private java.util.List<ConnectionCost> connectionCosts;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<ConnectionCost> connectionCosts;
 
     /**
      * A list of connection order steps.
      */
-    private java.util.List<ConnectionOrderStep> orderSteps;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<ConnectionOrderStep> orderSteps;
 
     /**
      * ID of the connection. <p>Example: dxcon-fg5678gh <p>Default: None
@@ -435,7 +435,8 @@ public class DescribeConnectionDetailResult  implements Serializable  {
     public java.util.List<ConnectionCost> getConnectionCosts() {
         
         if (connectionCosts == null) {
-            connectionCosts = new java.util.ArrayList<ConnectionCost>();
+              connectionCosts = new com.amazonaws.internal.ListWithAutoConstructFlag<ConnectionCost>();
+              connectionCosts.setAutoConstruct(true);
         }
         return connectionCosts;
     }
@@ -450,8 +451,7 @@ public class DescribeConnectionDetailResult  implements Serializable  {
             this.connectionCosts = null;
             return;
         }
-
-        java.util.List<ConnectionCost> connectionCostsCopy = new java.util.ArrayList<ConnectionCost>(connectionCosts.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<ConnectionCost> connectionCostsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ConnectionCost>(connectionCosts.size());
         connectionCostsCopy.addAll(connectionCosts);
         this.connectionCosts = connectionCostsCopy;
     }
@@ -488,7 +488,7 @@ public class DescribeConnectionDetailResult  implements Serializable  {
         if (connectionCosts == null) {
             this.connectionCosts = null;
         } else {
-            java.util.List<ConnectionCost> connectionCostsCopy = new java.util.ArrayList<ConnectionCost>(connectionCosts.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<ConnectionCost> connectionCostsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ConnectionCost>(connectionCosts.size());
             connectionCostsCopy.addAll(connectionCosts);
             this.connectionCosts = connectionCostsCopy;
         }
@@ -504,7 +504,8 @@ public class DescribeConnectionDetailResult  implements Serializable  {
     public java.util.List<ConnectionOrderStep> getOrderSteps() {
         
         if (orderSteps == null) {
-            orderSteps = new java.util.ArrayList<ConnectionOrderStep>();
+              orderSteps = new com.amazonaws.internal.ListWithAutoConstructFlag<ConnectionOrderStep>();
+              orderSteps.setAutoConstruct(true);
         }
         return orderSteps;
     }
@@ -519,8 +520,7 @@ public class DescribeConnectionDetailResult  implements Serializable  {
             this.orderSteps = null;
             return;
         }
-
-        java.util.List<ConnectionOrderStep> orderStepsCopy = new java.util.ArrayList<ConnectionOrderStep>(orderSteps.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<ConnectionOrderStep> orderStepsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ConnectionOrderStep>(orderSteps.size());
         orderStepsCopy.addAll(orderSteps);
         this.orderSteps = orderStepsCopy;
     }
@@ -557,7 +557,7 @@ public class DescribeConnectionDetailResult  implements Serializable  {
         if (orderSteps == null) {
             this.orderSteps = null;
         } else {
-            java.util.List<ConnectionOrderStep> orderStepsCopy = new java.util.ArrayList<ConnectionOrderStep>(orderSteps.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<ConnectionOrderStep> orderStepsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ConnectionOrderStep>(orderSteps.size());
             orderStepsCopy.addAll(orderSteps);
             this.orderSteps = orderStepsCopy;
         }
@@ -576,14 +576,14 @@ public class DescribeConnectionDetailResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getConnectionId() != null) sb.append("ConnectionId: " + getConnectionId() + ",");    	
-        if (getConnectionName() != null) sb.append("ConnectionName: " + getConnectionName() + ",");    	
-        if (getConnectionState() != null) sb.append("ConnectionState: " + getConnectionState() + ",");    	
-        if (getRegion() != null) sb.append("Region: " + getRegion() + ",");    	
-        if (getLocation() != null) sb.append("Location: " + getLocation() + ",");    	
-        if (getBandwidth() != null) sb.append("Bandwidth: " + getBandwidth() + ",");    	
-        if (getConnectionCosts() != null) sb.append("ConnectionCosts: " + getConnectionCosts() + ",");    	
+        sb.append("{");
+        if (getConnectionId() != null) sb.append("ConnectionId: " + getConnectionId() + ",");
+        if (getConnectionName() != null) sb.append("ConnectionName: " + getConnectionName() + ",");
+        if (getConnectionState() != null) sb.append("ConnectionState: " + getConnectionState() + ",");
+        if (getRegion() != null) sb.append("Region: " + getRegion() + ",");
+        if (getLocation() != null) sb.append("Location: " + getLocation() + ",");
+        if (getBandwidth() != null) sb.append("Bandwidth: " + getBandwidth() + ",");
+        if (getConnectionCosts() != null) sb.append("ConnectionCosts: " + getConnectionCosts() + ",");
         if (getOrderSteps() != null) sb.append("OrderSteps: " + getOrderSteps() );
         sb.append("}");
         return sb.toString();

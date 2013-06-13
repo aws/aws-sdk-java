@@ -103,7 +103,7 @@ public class DeleteVirtualMFADeviceRequest extends AmazonWebServiceRequest  impl
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getSerialNumber() != null) sb.append("SerialNumber: " + getSerialNumber() );
         sb.append("}");
         return sb.toString();

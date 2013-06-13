@@ -94,6 +94,8 @@ public class CreateApplicationVersionRequest extends AmazonWebServiceRequest  im
      */
     public CreateApplicationVersionRequest() {}
     
+
+
     /**
      * Constructs a new CreateApplicationVersionRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -109,8 +111,8 @@ public class CreateApplicationVersionRequest extends AmazonWebServiceRequest  im
      * Beanstalk returns an <code>InvalidParameterValue</code> error.
      */
     public CreateApplicationVersionRequest(String applicationName, String versionLabel) {
-        this.applicationName = applicationName;
-        this.versionLabel = versionLabel;
+        setApplicationName(applicationName);
+        setVersionLabel(versionLabel);
     }
 
     
@@ -500,11 +502,11 @@ public class CreateApplicationVersionRequest extends AmazonWebServiceRequest  im
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getApplicationName() != null) sb.append("ApplicationName: " + getApplicationName() + ",");    	
-        if (getVersionLabel() != null) sb.append("VersionLabel: " + getVersionLabel() + ",");    	
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");    	
-        if (getSourceBundle() != null) sb.append("SourceBundle: " + getSourceBundle() + ",");    	
+        sb.append("{");
+        if (getApplicationName() != null) sb.append("ApplicationName: " + getApplicationName() + ",");
+        if (getVersionLabel() != null) sb.append("VersionLabel: " + getVersionLabel() + ",");
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");
+        if (getSourceBundle() != null) sb.append("SourceBundle: " + getSourceBundle() + ",");
         if (isAutoCreateApplication() != null) sb.append("AutoCreateApplication: " + isAutoCreateApplication() );
         sb.append("}");
         return sb.toString();

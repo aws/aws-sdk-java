@@ -75,6 +75,8 @@ public class Distribution  implements Serializable  {
      */
     public Distribution() {}
     
+
+
     /**
      * Constructs a new Distribution object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -90,9 +92,9 @@ public class Distribution  implements Serializable  {
      * For example: d604721fxaaqy9.cloudfront.net.
      */
     public Distribution(String id, String status, String domainName) {
-        this.id = id;
-        this.status = status;
-        this.domainName = domainName;
+        setId(id);
+        setStatus(status);
+        setDomainName(domainName);
     }
 
     
@@ -418,13 +420,13 @@ public class Distribution  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getId() != null) sb.append("Id: " + getId() + ",");    	
-        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");    	
-        if (getLastModifiedTime() != null) sb.append("LastModifiedTime: " + getLastModifiedTime() + ",");    	
-        if (getInProgressInvalidationBatches() != null) sb.append("InProgressInvalidationBatches: " + getInProgressInvalidationBatches() + ",");    	
-        if (getDomainName() != null) sb.append("DomainName: " + getDomainName() + ",");    	
-        if (getActiveTrustedSigners() != null) sb.append("ActiveTrustedSigners: " + getActiveTrustedSigners() + ",");    	
+        sb.append("{");
+        if (getId() != null) sb.append("Id: " + getId() + ",");
+        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");
+        if (getLastModifiedTime() != null) sb.append("LastModifiedTime: " + getLastModifiedTime() + ",");
+        if (getInProgressInvalidationBatches() != null) sb.append("InProgressInvalidationBatches: " + getInProgressInvalidationBatches() + ",");
+        if (getDomainName() != null) sb.append("DomainName: " + getDomainName() + ",");
+        if (getActiveTrustedSigners() != null) sb.append("ActiveTrustedSigners: " + getActiveTrustedSigners() + ",");
         if (getDistributionConfig() != null) sb.append("DistributionConfig: " + getDistributionConfig() );
         sb.append("}");
         return sb.toString();

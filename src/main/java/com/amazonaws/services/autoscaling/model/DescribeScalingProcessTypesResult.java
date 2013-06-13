@@ -25,7 +25,7 @@ public class DescribeScalingProcessTypesResult  implements Serializable  {
     /**
      * A list of <a>ProcessType</a> names.
      */
-    private java.util.List<ProcessType> processes;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<ProcessType> processes;
 
     /**
      * A list of <a>ProcessType</a> names.
@@ -35,7 +35,8 @@ public class DescribeScalingProcessTypesResult  implements Serializable  {
     public java.util.List<ProcessType> getProcesses() {
         
         if (processes == null) {
-            processes = new java.util.ArrayList<ProcessType>();
+              processes = new com.amazonaws.internal.ListWithAutoConstructFlag<ProcessType>();
+              processes.setAutoConstruct(true);
         }
         return processes;
     }
@@ -50,8 +51,7 @@ public class DescribeScalingProcessTypesResult  implements Serializable  {
             this.processes = null;
             return;
         }
-
-        java.util.List<ProcessType> processesCopy = new java.util.ArrayList<ProcessType>(processes.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<ProcessType> processesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ProcessType>(processes.size());
         processesCopy.addAll(processes);
         this.processes = processesCopy;
     }
@@ -88,7 +88,7 @@ public class DescribeScalingProcessTypesResult  implements Serializable  {
         if (processes == null) {
             this.processes = null;
         } else {
-            java.util.List<ProcessType> processesCopy = new java.util.ArrayList<ProcessType>(processes.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<ProcessType> processesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ProcessType>(processes.size());
             processesCopy.addAll(processes);
             this.processes = processesCopy;
         }
@@ -107,7 +107,7 @@ public class DescribeScalingProcessTypesResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getProcesses() != null) sb.append("Processes: " + getProcesses() );
         sb.append("}");
         return sb.toString();

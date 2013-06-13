@@ -32,7 +32,7 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * An optional list of the unique IDs of the Reserved Instance offerings
      * to describe.
      */
-    private java.util.List<String> reservedInstancesOfferingIds;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> reservedInstancesOfferingIds;
 
     /**
      * The instance type on which the Reserved Instance can be used.
@@ -59,7 +59,7 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
      * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      * EC2 API reference</a>.
      */
-    private java.util.List<Filter> filters;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filters;
 
     /**
      * The tenancy of the Reserved Instance offering. A Reserved Instance
@@ -87,7 +87,8 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
     public java.util.List<String> getReservedInstancesOfferingIds() {
         
         if (reservedInstancesOfferingIds == null) {
-            reservedInstancesOfferingIds = new java.util.ArrayList<String>();
+              reservedInstancesOfferingIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              reservedInstancesOfferingIds.setAutoConstruct(true);
         }
         return reservedInstancesOfferingIds;
     }
@@ -104,8 +105,7 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
             this.reservedInstancesOfferingIds = null;
             return;
         }
-
-        java.util.List<String> reservedInstancesOfferingIdsCopy = new java.util.ArrayList<String>(reservedInstancesOfferingIds.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> reservedInstancesOfferingIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(reservedInstancesOfferingIds.size());
         reservedInstancesOfferingIdsCopy.addAll(reservedInstancesOfferingIds);
         this.reservedInstancesOfferingIds = reservedInstancesOfferingIdsCopy;
     }
@@ -146,7 +146,7 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
         if (reservedInstancesOfferingIds == null) {
             this.reservedInstancesOfferingIds = null;
         } else {
-            java.util.List<String> reservedInstancesOfferingIdsCopy = new java.util.ArrayList<String>(reservedInstancesOfferingIds.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> reservedInstancesOfferingIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(reservedInstancesOfferingIds.size());
             reservedInstancesOfferingIdsCopy.addAll(reservedInstancesOfferingIds);
             this.reservedInstancesOfferingIds = reservedInstancesOfferingIdsCopy;
         }
@@ -321,7 +321,8 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
     public java.util.List<Filter> getFilters() {
         
         if (filters == null) {
-            filters = new java.util.ArrayList<Filter>();
+              filters = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>();
+              filters.setAutoConstruct(true);
         }
         return filters;
     }
@@ -344,8 +345,7 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
             this.filters = null;
             return;
         }
-
-        java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>(filters.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filtersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>(filters.size());
         filtersCopy.addAll(filters);
         this.filters = filtersCopy;
     }
@@ -398,7 +398,7 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
         if (filters == null) {
             this.filters = null;
         } else {
-            java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>(filters.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filtersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>(filters.size());
             filtersCopy.addAll(filters);
             this.filters = filtersCopy;
         }
@@ -565,15 +565,15 @@ public class DescribeReservedInstancesOfferingsRequest extends AmazonWebServiceR
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getReservedInstancesOfferingIds() != null) sb.append("ReservedInstancesOfferingIds: " + getReservedInstancesOfferingIds() + ",");    	
-        if (getInstanceType() != null) sb.append("InstanceType: " + getInstanceType() + ",");    	
-        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");    	
-        if (getProductDescription() != null) sb.append("ProductDescription: " + getProductDescription() + ",");    	
-        if (getFilters() != null) sb.append("Filters: " + getFilters() + ",");    	
-        if (getInstanceTenancy() != null) sb.append("InstanceTenancy: " + getInstanceTenancy() + ",");    	
-        if (getOfferingType() != null) sb.append("OfferingType: " + getOfferingType() + ",");    	
-        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() + ",");    	
+        sb.append("{");
+        if (getReservedInstancesOfferingIds() != null) sb.append("ReservedInstancesOfferingIds: " + getReservedInstancesOfferingIds() + ",");
+        if (getInstanceType() != null) sb.append("InstanceType: " + getInstanceType() + ",");
+        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");
+        if (getProductDescription() != null) sb.append("ProductDescription: " + getProductDescription() + ",");
+        if (getFilters() != null) sb.append("Filters: " + getFilters() + ",");
+        if (getInstanceTenancy() != null) sb.append("InstanceTenancy: " + getInstanceTenancy() + ",");
+        if (getOfferingType() != null) sb.append("OfferingType: " + getOfferingType() + ",");
+        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() + ",");
         if (getMaxResults() != null) sb.append("MaxResults: " + getMaxResults() );
         sb.append("}");
         return sb.toString();

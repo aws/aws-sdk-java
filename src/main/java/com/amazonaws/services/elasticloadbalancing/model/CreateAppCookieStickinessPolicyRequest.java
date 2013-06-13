@@ -62,6 +62,8 @@ public class CreateAppCookieStickinessPolicyRequest extends AmazonWebServiceRequ
      */
     public CreateAppCookieStickinessPolicyRequest() {}
     
+
+
     /**
      * Constructs a new CreateAppCookieStickinessPolicyRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -74,9 +76,9 @@ public class CreateAppCookieStickinessPolicyRequest extends AmazonWebServiceRequ
      * @param cookieName Name of the application cookie used for stickiness.
      */
     public CreateAppCookieStickinessPolicyRequest(String loadBalancerName, String policyName, String cookieName) {
-        this.loadBalancerName = loadBalancerName;
-        this.policyName = policyName;
-        this.cookieName = cookieName;
+        setLoadBalancerName(loadBalancerName);
+        setPolicyName(policyName);
+        setCookieName(cookieName);
     }
 
     
@@ -206,9 +208,9 @@ public class CreateAppCookieStickinessPolicyRequest extends AmazonWebServiceRequ
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getLoadBalancerName() != null) sb.append("LoadBalancerName: " + getLoadBalancerName() + ",");    	
-        if (getPolicyName() != null) sb.append("PolicyName: " + getPolicyName() + ",");    	
+        sb.append("{");
+        if (getLoadBalancerName() != null) sb.append("LoadBalancerName: " + getLoadBalancerName() + ",");
+        if (getPolicyName() != null) sb.append("PolicyName: " + getPolicyName() + ",");
         if (getCookieName() != null) sb.append("CookieName: " + getCookieName() );
         sb.append("}");
         return sb.toString();

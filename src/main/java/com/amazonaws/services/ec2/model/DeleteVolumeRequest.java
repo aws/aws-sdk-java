@@ -37,6 +37,8 @@ public class DeleteVolumeRequest extends AmazonWebServiceRequest  implements Ser
      */
     public DeleteVolumeRequest() {}
     
+
+
     /**
      * Constructs a new DeleteVolumeRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -45,7 +47,7 @@ public class DeleteVolumeRequest extends AmazonWebServiceRequest  implements Ser
      * @param volumeId The ID of the EBS volume to delete.
      */
     public DeleteVolumeRequest(String volumeId) {
-        this.volumeId = volumeId;
+        setVolumeId(volumeId);
     }
 
     
@@ -95,7 +97,7 @@ public class DeleteVolumeRequest extends AmazonWebServiceRequest  implements Ser
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getVolumeId() != null) sb.append("VolumeId: " + getVolumeId() );
         sb.append("}");
         return sb.toString();

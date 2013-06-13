@@ -89,8 +89,8 @@ public class DescribeAppsRequestMarshaller implements Marshaller<Request<Describ
                 jsonWriter.key("StackId").value(describeAppsRequest.getStackId());
             }
 
-            java.util.List<String> appIdsList = describeAppsRequest.getAppIds();
-            if (appIdsList != null) {
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> appIdsList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(describeAppsRequest.getAppIds());
+            if (appIdsList != null && !(appIdsList.isAutoConstruct() && appIdsList.isEmpty())) {
 
                 jsonWriter.key("AppIds");
                 jsonWriter.array();

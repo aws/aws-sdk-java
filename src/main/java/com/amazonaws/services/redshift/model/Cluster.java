@@ -82,20 +82,20 @@ public class Cluster  implements Serializable  {
      * Clusters that are created in a VPC use VPC security groups, which are
      * listed by the <b>VpcSecurityGroups</b> parameter.
      */
-    private java.util.List<ClusterSecurityGroupMembership> clusterSecurityGroups;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<ClusterSecurityGroupMembership> clusterSecurityGroups;
 
     /**
      * A list of Virtual Private Cloud (VPC) security groups that are
      * associated with the cluster. This parameter is returned only if the
      * cluster is in a VPC.
      */
-    private java.util.List<VpcSecurityGroupMembership> vpcSecurityGroups;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<VpcSecurityGroupMembership> vpcSecurityGroups;
 
     /**
      * The list of cluster parameter groups that are associated with this
      * cluster.
      */
-    private java.util.List<ClusterParameterGroupStatus> clusterParameterGroups;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<ClusterParameterGroupStatus> clusterParameterGroups;
 
     /**
      * The name of the subnet group that is associated with the cluster. This
@@ -516,7 +516,8 @@ public class Cluster  implements Serializable  {
     public java.util.List<ClusterSecurityGroupMembership> getClusterSecurityGroups() {
         
         if (clusterSecurityGroups == null) {
-            clusterSecurityGroups = new java.util.ArrayList<ClusterSecurityGroupMembership>();
+              clusterSecurityGroups = new com.amazonaws.internal.ListWithAutoConstructFlag<ClusterSecurityGroupMembership>();
+              clusterSecurityGroups.setAutoConstruct(true);
         }
         return clusterSecurityGroups;
     }
@@ -543,8 +544,7 @@ public class Cluster  implements Serializable  {
             this.clusterSecurityGroups = null;
             return;
         }
-
-        java.util.List<ClusterSecurityGroupMembership> clusterSecurityGroupsCopy = new java.util.ArrayList<ClusterSecurityGroupMembership>(clusterSecurityGroups.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<ClusterSecurityGroupMembership> clusterSecurityGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ClusterSecurityGroupMembership>(clusterSecurityGroups.size());
         clusterSecurityGroupsCopy.addAll(clusterSecurityGroups);
         this.clusterSecurityGroups = clusterSecurityGroupsCopy;
     }
@@ -605,7 +605,7 @@ public class Cluster  implements Serializable  {
         if (clusterSecurityGroups == null) {
             this.clusterSecurityGroups = null;
         } else {
-            java.util.List<ClusterSecurityGroupMembership> clusterSecurityGroupsCopy = new java.util.ArrayList<ClusterSecurityGroupMembership>(clusterSecurityGroups.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<ClusterSecurityGroupMembership> clusterSecurityGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ClusterSecurityGroupMembership>(clusterSecurityGroups.size());
             clusterSecurityGroupsCopy.addAll(clusterSecurityGroups);
             this.clusterSecurityGroups = clusterSecurityGroupsCopy;
         }
@@ -625,7 +625,8 @@ public class Cluster  implements Serializable  {
     public java.util.List<VpcSecurityGroupMembership> getVpcSecurityGroups() {
         
         if (vpcSecurityGroups == null) {
-            vpcSecurityGroups = new java.util.ArrayList<VpcSecurityGroupMembership>();
+              vpcSecurityGroups = new com.amazonaws.internal.ListWithAutoConstructFlag<VpcSecurityGroupMembership>();
+              vpcSecurityGroups.setAutoConstruct(true);
         }
         return vpcSecurityGroups;
     }
@@ -644,8 +645,7 @@ public class Cluster  implements Serializable  {
             this.vpcSecurityGroups = null;
             return;
         }
-
-        java.util.List<VpcSecurityGroupMembership> vpcSecurityGroupsCopy = new java.util.ArrayList<VpcSecurityGroupMembership>(vpcSecurityGroups.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<VpcSecurityGroupMembership> vpcSecurityGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<VpcSecurityGroupMembership>(vpcSecurityGroups.size());
         vpcSecurityGroupsCopy.addAll(vpcSecurityGroups);
         this.vpcSecurityGroups = vpcSecurityGroupsCopy;
     }
@@ -690,7 +690,7 @@ public class Cluster  implements Serializable  {
         if (vpcSecurityGroups == null) {
             this.vpcSecurityGroups = null;
         } else {
-            java.util.List<VpcSecurityGroupMembership> vpcSecurityGroupsCopy = new java.util.ArrayList<VpcSecurityGroupMembership>(vpcSecurityGroups.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<VpcSecurityGroupMembership> vpcSecurityGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<VpcSecurityGroupMembership>(vpcSecurityGroups.size());
             vpcSecurityGroupsCopy.addAll(vpcSecurityGroups);
             this.vpcSecurityGroups = vpcSecurityGroupsCopy;
         }
@@ -708,7 +708,8 @@ public class Cluster  implements Serializable  {
     public java.util.List<ClusterParameterGroupStatus> getClusterParameterGroups() {
         
         if (clusterParameterGroups == null) {
-            clusterParameterGroups = new java.util.ArrayList<ClusterParameterGroupStatus>();
+              clusterParameterGroups = new com.amazonaws.internal.ListWithAutoConstructFlag<ClusterParameterGroupStatus>();
+              clusterParameterGroups.setAutoConstruct(true);
         }
         return clusterParameterGroups;
     }
@@ -725,8 +726,7 @@ public class Cluster  implements Serializable  {
             this.clusterParameterGroups = null;
             return;
         }
-
-        java.util.List<ClusterParameterGroupStatus> clusterParameterGroupsCopy = new java.util.ArrayList<ClusterParameterGroupStatus>(clusterParameterGroups.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<ClusterParameterGroupStatus> clusterParameterGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ClusterParameterGroupStatus>(clusterParameterGroups.size());
         clusterParameterGroupsCopy.addAll(clusterParameterGroups);
         this.clusterParameterGroups = clusterParameterGroupsCopy;
     }
@@ -767,7 +767,7 @@ public class Cluster  implements Serializable  {
         if (clusterParameterGroups == null) {
             this.clusterParameterGroups = null;
         } else {
-            java.util.List<ClusterParameterGroupStatus> clusterParameterGroupsCopy = new java.util.ArrayList<ClusterParameterGroupStatus>(clusterParameterGroups.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<ClusterParameterGroupStatus> clusterParameterGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ClusterParameterGroupStatus>(clusterParameterGroups.size());
             clusterParameterGroupsCopy.addAll(clusterParameterGroups);
             this.clusterParameterGroups = clusterParameterGroupsCopy;
         }
@@ -1199,28 +1199,28 @@ public class Cluster  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getClusterIdentifier() != null) sb.append("ClusterIdentifier: " + getClusterIdentifier() + ",");    	
-        if (getNodeType() != null) sb.append("NodeType: " + getNodeType() + ",");    	
-        if (getClusterStatus() != null) sb.append("ClusterStatus: " + getClusterStatus() + ",");    	
-        if (getModifyStatus() != null) sb.append("ModifyStatus: " + getModifyStatus() + ",");    	
-        if (getMasterUsername() != null) sb.append("MasterUsername: " + getMasterUsername() + ",");    	
-        if (getDBName() != null) sb.append("DBName: " + getDBName() + ",");    	
-        if (getEndpoint() != null) sb.append("Endpoint: " + getEndpoint() + ",");    	
-        if (getClusterCreateTime() != null) sb.append("ClusterCreateTime: " + getClusterCreateTime() + ",");    	
-        if (getAutomatedSnapshotRetentionPeriod() != null) sb.append("AutomatedSnapshotRetentionPeriod: " + getAutomatedSnapshotRetentionPeriod() + ",");    	
-        if (getClusterSecurityGroups() != null) sb.append("ClusterSecurityGroups: " + getClusterSecurityGroups() + ",");    	
-        if (getVpcSecurityGroups() != null) sb.append("VpcSecurityGroups: " + getVpcSecurityGroups() + ",");    	
-        if (getClusterParameterGroups() != null) sb.append("ClusterParameterGroups: " + getClusterParameterGroups() + ",");    	
-        if (getClusterSubnetGroupName() != null) sb.append("ClusterSubnetGroupName: " + getClusterSubnetGroupName() + ",");    	
-        if (getVpcId() != null) sb.append("VpcId: " + getVpcId() + ",");    	
-        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");    	
-        if (getPreferredMaintenanceWindow() != null) sb.append("PreferredMaintenanceWindow: " + getPreferredMaintenanceWindow() + ",");    	
-        if (getPendingModifiedValues() != null) sb.append("PendingModifiedValues: " + getPendingModifiedValues() + ",");    	
-        if (getClusterVersion() != null) sb.append("ClusterVersion: " + getClusterVersion() + ",");    	
-        if (isAllowVersionUpgrade() != null) sb.append("AllowVersionUpgrade: " + isAllowVersionUpgrade() + ",");    	
-        if (getNumberOfNodes() != null) sb.append("NumberOfNodes: " + getNumberOfNodes() + ",");    	
-        if (isPubliclyAccessible() != null) sb.append("PubliclyAccessible: " + isPubliclyAccessible() + ",");    	
+        sb.append("{");
+        if (getClusterIdentifier() != null) sb.append("ClusterIdentifier: " + getClusterIdentifier() + ",");
+        if (getNodeType() != null) sb.append("NodeType: " + getNodeType() + ",");
+        if (getClusterStatus() != null) sb.append("ClusterStatus: " + getClusterStatus() + ",");
+        if (getModifyStatus() != null) sb.append("ModifyStatus: " + getModifyStatus() + ",");
+        if (getMasterUsername() != null) sb.append("MasterUsername: " + getMasterUsername() + ",");
+        if (getDBName() != null) sb.append("DBName: " + getDBName() + ",");
+        if (getEndpoint() != null) sb.append("Endpoint: " + getEndpoint() + ",");
+        if (getClusterCreateTime() != null) sb.append("ClusterCreateTime: " + getClusterCreateTime() + ",");
+        if (getAutomatedSnapshotRetentionPeriod() != null) sb.append("AutomatedSnapshotRetentionPeriod: " + getAutomatedSnapshotRetentionPeriod() + ",");
+        if (getClusterSecurityGroups() != null) sb.append("ClusterSecurityGroups: " + getClusterSecurityGroups() + ",");
+        if (getVpcSecurityGroups() != null) sb.append("VpcSecurityGroups: " + getVpcSecurityGroups() + ",");
+        if (getClusterParameterGroups() != null) sb.append("ClusterParameterGroups: " + getClusterParameterGroups() + ",");
+        if (getClusterSubnetGroupName() != null) sb.append("ClusterSubnetGroupName: " + getClusterSubnetGroupName() + ",");
+        if (getVpcId() != null) sb.append("VpcId: " + getVpcId() + ",");
+        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");
+        if (getPreferredMaintenanceWindow() != null) sb.append("PreferredMaintenanceWindow: " + getPreferredMaintenanceWindow() + ",");
+        if (getPendingModifiedValues() != null) sb.append("PendingModifiedValues: " + getPendingModifiedValues() + ",");
+        if (getClusterVersion() != null) sb.append("ClusterVersion: " + getClusterVersion() + ",");
+        if (isAllowVersionUpgrade() != null) sb.append("AllowVersionUpgrade: " + isAllowVersionUpgrade() + ",");
+        if (getNumberOfNodes() != null) sb.append("NumberOfNodes: " + getNumberOfNodes() + ",");
+        if (isPubliclyAccessible() != null) sb.append("PubliclyAccessible: " + isPubliclyAccessible() + ",");
         if (isEncrypted() != null) sb.append("Encrypted: " + isEncrypted() );
         sb.append("}");
         return sb.toString();

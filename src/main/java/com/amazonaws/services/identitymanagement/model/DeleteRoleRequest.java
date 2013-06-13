@@ -97,7 +97,7 @@ public class DeleteRoleRequest extends AmazonWebServiceRequest  implements Seria
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getRoleName() != null) sb.append("RoleName: " + getRoleName() );
         sb.append("}");
         return sb.toString();

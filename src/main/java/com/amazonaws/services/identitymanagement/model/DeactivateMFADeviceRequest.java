@@ -51,6 +51,8 @@ public class DeactivateMFADeviceRequest extends AmazonWebServiceRequest  impleme
      */
     public DeactivateMFADeviceRequest() {}
     
+
+
     /**
      * Constructs a new DeactivateMFADeviceRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -62,8 +64,8 @@ public class DeactivateMFADeviceRequest extends AmazonWebServiceRequest  impleme
      * device. For virtual MFA devices, the serial number is the device ARN.
      */
     public DeactivateMFADeviceRequest(String userName, String serialNumber) {
-        this.userName = userName;
-        this.serialNumber = serialNumber;
+        setUserName(userName);
+        setSerialNumber(serialNumber);
     }
 
     
@@ -177,8 +179,8 @@ public class DeactivateMFADeviceRequest extends AmazonWebServiceRequest  impleme
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getUserName() != null) sb.append("UserName: " + getUserName() + ",");    	
+        sb.append("{");
+        if (getUserName() != null) sb.append("UserName: " + getUserName() + ",");
         if (getSerialNumber() != null) sb.append("SerialNumber: " + getSerialNumber() );
         sb.append("}");
         return sb.toString();

@@ -215,11 +215,11 @@ public class CopyImageRequest extends AmazonWebServiceRequest  implements Serial
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getSourceRegion() != null) sb.append("SourceRegion: " + getSourceRegion() + ",");    	
-        if (getSourceImageId() != null) sb.append("SourceImageId: " + getSourceImageId() + ",");    	
-        if (getName() != null) sb.append("Name: " + getName() + ",");    	
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");    	
+        sb.append("{");
+        if (getSourceRegion() != null) sb.append("SourceRegion: " + getSourceRegion() + ",");
+        if (getSourceImageId() != null) sb.append("SourceImageId: " + getSourceImageId() + ",");
+        if (getName() != null) sb.append("Name: " + getName() + ",");
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");
         if (getClientToken() != null) sb.append("ClientToken: " + getClientToken() );
         sb.append("}");
         return sb.toString();

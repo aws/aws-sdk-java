@@ -50,6 +50,8 @@ public class UpdateLoginProfileRequest extends AmazonWebServiceRequest  implemen
      */
     public UpdateLoginProfileRequest() {}
     
+
+
     /**
      * Constructs a new UpdateLoginProfileRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -58,7 +60,7 @@ public class UpdateLoginProfileRequest extends AmazonWebServiceRequest  implemen
      * @param userName Name of the user whose password you want to update.
      */
     public UpdateLoginProfileRequest(String userName) {
-        this.userName = userName;
+        setUserName(userName);
     }
 
     
@@ -166,8 +168,8 @@ public class UpdateLoginProfileRequest extends AmazonWebServiceRequest  implemen
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getUserName() != null) sb.append("UserName: " + getUserName() + ",");    	
+        sb.append("{");
+        if (getUserName() != null) sb.append("UserName: " + getUserName() + ",");
         if (getPassword() != null) sb.append("Password: " + getPassword() );
         sb.append("}");
         return sb.toString();

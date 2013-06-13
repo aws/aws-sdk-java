@@ -270,11 +270,11 @@ public class DescribeCommunicationsRequest extends AmazonWebServiceRequest  impl
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getCaseId() != null) sb.append("CaseId: " + getCaseId() + ",");    	
-        if (getBeforeTime() != null) sb.append("BeforeTime: " + getBeforeTime() + ",");    	
-        if (getAfterTime() != null) sb.append("AfterTime: " + getAfterTime() + ",");    	
-        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() + ",");    	
+        sb.append("{");
+        if (getCaseId() != null) sb.append("CaseId: " + getCaseId() + ",");
+        if (getBeforeTime() != null) sb.append("BeforeTime: " + getBeforeTime() + ",");
+        if (getAfterTime() != null) sb.append("AfterTime: " + getAfterTime() + ",");
+        if (getNextToken() != null) sb.append("NextToken: " + getNextToken() + ",");
         if (getMaxResults() != null) sb.append("MaxResults: " + getMaxResults() );
         sb.append("}");
         return sb.toString();

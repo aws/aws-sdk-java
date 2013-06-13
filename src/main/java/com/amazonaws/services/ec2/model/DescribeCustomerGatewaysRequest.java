@@ -33,7 +33,7 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest  im
     /**
      * A set of one or more customer gateway IDs.
      */
-    private java.util.List<String> customerGatewayIds;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> customerGatewayIds;
 
     /**
      * A list of filters used to match properties for Customer Gateways. For
@@ -42,7 +42,7 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest  im
      * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      * EC2 API reference</a>.
      */
-    private java.util.List<Filter> filters;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filters;
 
     /**
      * A set of one or more customer gateway IDs.
@@ -52,7 +52,8 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest  im
     public java.util.List<String> getCustomerGatewayIds() {
         
         if (customerGatewayIds == null) {
-            customerGatewayIds = new java.util.ArrayList<String>();
+              customerGatewayIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              customerGatewayIds.setAutoConstruct(true);
         }
         return customerGatewayIds;
     }
@@ -67,8 +68,7 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest  im
             this.customerGatewayIds = null;
             return;
         }
-
-        java.util.List<String> customerGatewayIdsCopy = new java.util.ArrayList<String>(customerGatewayIds.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> customerGatewayIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(customerGatewayIds.size());
         customerGatewayIdsCopy.addAll(customerGatewayIds);
         this.customerGatewayIds = customerGatewayIdsCopy;
     }
@@ -105,7 +105,7 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest  im
         if (customerGatewayIds == null) {
             this.customerGatewayIds = null;
         } else {
-            java.util.List<String> customerGatewayIdsCopy = new java.util.ArrayList<String>(customerGatewayIds.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> customerGatewayIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(customerGatewayIds.size());
             customerGatewayIdsCopy.addAll(customerGatewayIds);
             this.customerGatewayIds = customerGatewayIdsCopy;
         }
@@ -129,7 +129,8 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest  im
     public java.util.List<Filter> getFilters() {
         
         if (filters == null) {
-            filters = new java.util.ArrayList<Filter>();
+              filters = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>();
+              filters.setAutoConstruct(true);
         }
         return filters;
     }
@@ -152,8 +153,7 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest  im
             this.filters = null;
             return;
         }
-
-        java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>(filters.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filtersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>(filters.size());
         filtersCopy.addAll(filters);
         this.filters = filtersCopy;
     }
@@ -206,7 +206,7 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest  im
         if (filters == null) {
             this.filters = null;
         } else {
-            java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>(filters.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filtersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>(filters.size());
             filtersCopy.addAll(filters);
             this.filters = filtersCopy;
         }
@@ -225,8 +225,8 @@ public class DescribeCustomerGatewaysRequest extends AmazonWebServiceRequest  im
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getCustomerGatewayIds() != null) sb.append("CustomerGatewayIds: " + getCustomerGatewayIds() + ",");    	
+        sb.append("{");
+        if (getCustomerGatewayIds() != null) sb.append("CustomerGatewayIds: " + getCustomerGatewayIds() + ",");
         if (getFilters() != null) sb.append("Filters: " + getFilters() );
         sb.append("}");
         return sb.toString();

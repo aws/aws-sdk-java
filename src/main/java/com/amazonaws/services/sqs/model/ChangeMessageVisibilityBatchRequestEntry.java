@@ -45,6 +45,8 @@ public class ChangeMessageVisibilityBatchRequestEntry  implements Serializable  
      */
     public ChangeMessageVisibilityBatchRequestEntry() {}
     
+
+
     /**
      * Constructs a new ChangeMessageVisibilityBatchRequestEntry object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -56,8 +58,8 @@ public class ChangeMessageVisibilityBatchRequestEntry  implements Serializable  
      * @param receiptHandle A receipt handle.
      */
     public ChangeMessageVisibilityBatchRequestEntry(String id, String receiptHandle) {
-        this.id = id;
-        this.receiptHandle = receiptHandle;
+        setId(id);
+        setReceiptHandle(receiptHandle);
     }
 
     
@@ -187,9 +189,9 @@ public class ChangeMessageVisibilityBatchRequestEntry  implements Serializable  
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getId() != null) sb.append("Id: " + getId() + ",");    	
-        if (getReceiptHandle() != null) sb.append("ReceiptHandle: " + getReceiptHandle() + ",");    	
+        sb.append("{");
+        if (getId() != null) sb.append("Id: " + getId() + ",");
+        if (getReceiptHandle() != null) sb.append("ReceiptHandle: " + getReceiptHandle() + ",");
         if (getVisibilityTimeout() != null) sb.append("VisibilityTimeout: " + getVisibilityTimeout() );
         sb.append("}");
         return sb.toString();

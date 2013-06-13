@@ -26,7 +26,7 @@ public class DescribeRaidArraysResult  implements Serializable  {
      * A <code>RaidArrays</code> object that describes the specified RAID
      * arrays.
      */
-    private java.util.List<RaidArray> raidArrays;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<RaidArray> raidArrays;
 
     /**
      * A <code>RaidArrays</code> object that describes the specified RAID
@@ -38,7 +38,8 @@ public class DescribeRaidArraysResult  implements Serializable  {
     public java.util.List<RaidArray> getRaidArrays() {
         
         if (raidArrays == null) {
-            raidArrays = new java.util.ArrayList<RaidArray>();
+              raidArrays = new com.amazonaws.internal.ListWithAutoConstructFlag<RaidArray>();
+              raidArrays.setAutoConstruct(true);
         }
         return raidArrays;
     }
@@ -55,8 +56,7 @@ public class DescribeRaidArraysResult  implements Serializable  {
             this.raidArrays = null;
             return;
         }
-
-        java.util.List<RaidArray> raidArraysCopy = new java.util.ArrayList<RaidArray>(raidArrays.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<RaidArray> raidArraysCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<RaidArray>(raidArrays.size());
         raidArraysCopy.addAll(raidArrays);
         this.raidArrays = raidArraysCopy;
     }
@@ -97,7 +97,7 @@ public class DescribeRaidArraysResult  implements Serializable  {
         if (raidArrays == null) {
             this.raidArrays = null;
         } else {
-            java.util.List<RaidArray> raidArraysCopy = new java.util.ArrayList<RaidArray>(raidArrays.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<RaidArray> raidArraysCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<RaidArray>(raidArrays.size());
             raidArraysCopy.addAll(raidArrays);
             this.raidArrays = raidArraysCopy;
         }
@@ -116,7 +116,7 @@ public class DescribeRaidArraysResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getRaidArrays() != null) sb.append("RaidArrays: " + getRaidArrays() );
         sb.append("}");
         return sb.toString();

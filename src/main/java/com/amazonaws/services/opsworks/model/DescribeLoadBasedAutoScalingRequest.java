@@ -29,7 +29,7 @@ public class DescribeLoadBasedAutoScalingRequest extends AmazonWebServiceRequest
     /**
      * An array of layer IDs.
      */
-    private java.util.List<String> layerIds;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> layerIds;
 
     /**
      * An array of layer IDs.
@@ -39,7 +39,8 @@ public class DescribeLoadBasedAutoScalingRequest extends AmazonWebServiceRequest
     public java.util.List<String> getLayerIds() {
         
         if (layerIds == null) {
-            layerIds = new java.util.ArrayList<String>();
+              layerIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              layerIds.setAutoConstruct(true);
         }
         return layerIds;
     }
@@ -54,8 +55,7 @@ public class DescribeLoadBasedAutoScalingRequest extends AmazonWebServiceRequest
             this.layerIds = null;
             return;
         }
-
-        java.util.List<String> layerIdsCopy = new java.util.ArrayList<String>(layerIds.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> layerIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(layerIds.size());
         layerIdsCopy.addAll(layerIds);
         this.layerIds = layerIdsCopy;
     }
@@ -92,7 +92,7 @@ public class DescribeLoadBasedAutoScalingRequest extends AmazonWebServiceRequest
         if (layerIds == null) {
             this.layerIds = null;
         } else {
-            java.util.List<String> layerIdsCopy = new java.util.ArrayList<String>(layerIds.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> layerIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(layerIds.size());
             layerIdsCopy.addAll(layerIds);
             this.layerIds = layerIdsCopy;
         }
@@ -111,7 +111,7 @@ public class DescribeLoadBasedAutoScalingRequest extends AmazonWebServiceRequest
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getLayerIds() != null) sb.append("LayerIds: " + getLayerIds() );
         sb.append("}");
         return sb.toString();

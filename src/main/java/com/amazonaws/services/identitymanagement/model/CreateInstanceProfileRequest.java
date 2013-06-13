@@ -188,8 +188,8 @@ public class CreateInstanceProfileRequest extends AmazonWebServiceRequest  imple
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getInstanceProfileName() != null) sb.append("InstanceProfileName: " + getInstanceProfileName() + ",");    	
+        sb.append("{");
+        if (getInstanceProfileName() != null) sb.append("InstanceProfileName: " + getInstanceProfileName() + ",");
         if (getPath() != null) sb.append("Path: " + getPath() );
         sb.append("}");
         return sb.toString();

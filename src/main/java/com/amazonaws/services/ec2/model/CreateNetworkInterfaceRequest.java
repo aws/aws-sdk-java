@@ -30,9 +30,9 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest  impl
 
     private String privateIpAddress;
 
-    private java.util.List<String> groups;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> groups;
 
-    private java.util.List<PrivateIpAddressSpecification> privateIpAddresses;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<PrivateIpAddressSpecification> privateIpAddresses;
 
     private Integer secondaryPrivateIpAddressCount;
 
@@ -146,7 +146,8 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest  impl
     public java.util.List<String> getGroups() {
         
         if (groups == null) {
-            groups = new java.util.ArrayList<String>();
+              groups = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              groups.setAutoConstruct(true);
         }
         return groups;
     }
@@ -161,8 +162,7 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest  impl
             this.groups = null;
             return;
         }
-
-        java.util.List<String> groupsCopy = new java.util.ArrayList<String>(groups.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> groupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(groups.size());
         groupsCopy.addAll(groups);
         this.groups = groupsCopy;
     }
@@ -199,7 +199,7 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest  impl
         if (groups == null) {
             this.groups = null;
         } else {
-            java.util.List<String> groupsCopy = new java.util.ArrayList<String>(groups.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> groupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(groups.size());
             groupsCopy.addAll(groups);
             this.groups = groupsCopy;
         }
@@ -215,7 +215,8 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest  impl
     public java.util.List<PrivateIpAddressSpecification> getPrivateIpAddresses() {
         
         if (privateIpAddresses == null) {
-            privateIpAddresses = new java.util.ArrayList<PrivateIpAddressSpecification>();
+              privateIpAddresses = new com.amazonaws.internal.ListWithAutoConstructFlag<PrivateIpAddressSpecification>();
+              privateIpAddresses.setAutoConstruct(true);
         }
         return privateIpAddresses;
     }
@@ -230,8 +231,7 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest  impl
             this.privateIpAddresses = null;
             return;
         }
-
-        java.util.List<PrivateIpAddressSpecification> privateIpAddressesCopy = new java.util.ArrayList<PrivateIpAddressSpecification>(privateIpAddresses.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<PrivateIpAddressSpecification> privateIpAddressesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<PrivateIpAddressSpecification>(privateIpAddresses.size());
         privateIpAddressesCopy.addAll(privateIpAddresses);
         this.privateIpAddresses = privateIpAddressesCopy;
     }
@@ -268,7 +268,7 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest  impl
         if (privateIpAddresses == null) {
             this.privateIpAddresses = null;
         } else {
-            java.util.List<PrivateIpAddressSpecification> privateIpAddressesCopy = new java.util.ArrayList<PrivateIpAddressSpecification>(privateIpAddresses.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<PrivateIpAddressSpecification> privateIpAddressesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<PrivateIpAddressSpecification>(privateIpAddresses.size());
             privateIpAddressesCopy.addAll(privateIpAddresses);
             this.privateIpAddresses = privateIpAddressesCopy;
         }
@@ -327,12 +327,12 @@ public class CreateNetworkInterfaceRequest extends AmazonWebServiceRequest  impl
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getSubnetId() != null) sb.append("SubnetId: " + getSubnetId() + ",");    	
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");    	
-        if (getPrivateIpAddress() != null) sb.append("PrivateIpAddress: " + getPrivateIpAddress() + ",");    	
-        if (getGroups() != null) sb.append("Groups: " + getGroups() + ",");    	
-        if (getPrivateIpAddresses() != null) sb.append("PrivateIpAddresses: " + getPrivateIpAddresses() + ",");    	
+        sb.append("{");
+        if (getSubnetId() != null) sb.append("SubnetId: " + getSubnetId() + ",");
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");
+        if (getPrivateIpAddress() != null) sb.append("PrivateIpAddress: " + getPrivateIpAddress() + ",");
+        if (getGroups() != null) sb.append("Groups: " + getGroups() + ",");
+        if (getPrivateIpAddresses() != null) sb.append("PrivateIpAddresses: " + getPrivateIpAddresses() + ",");
         if (getSecondaryPrivateIpAddressCount() != null) sb.append("SecondaryPrivateIpAddressCount: " + getSecondaryPrivateIpAddressCount() );
         sb.append("}");
         return sb.toString();

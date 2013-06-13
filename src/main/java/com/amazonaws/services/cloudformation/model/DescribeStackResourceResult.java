@@ -79,7 +79,7 @@ public class DescribeStackResourceResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getStackResourceDetail() != null) sb.append("StackResourceDetail: " + getStackResourceDetail() );
         sb.append("}");
         return sb.toString();

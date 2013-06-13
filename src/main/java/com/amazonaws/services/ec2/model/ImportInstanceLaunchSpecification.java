@@ -22,7 +22,7 @@ public class ImportInstanceLaunchSpecification  implements Serializable  {
 
     private String architecture;
 
-    private java.util.List<String> securityGroups;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> groupNames;
 
     private String additionalInfo;
 
@@ -36,13 +36,9 @@ public class ImportInstanceLaunchSpecification  implements Serializable  {
      */
     private Placement placement;
 
-    private java.util.List<BlockDeviceMapping> blockDeviceMappings;
-
     private Boolean monitoring;
 
     private String subnetId;
-
-    private Boolean disableApiTermination;
 
     private String instanceInitiatedShutdownBehavior;
 
@@ -83,69 +79,69 @@ public class ImportInstanceLaunchSpecification  implements Serializable  {
     
     
     /**
-     * Returns the value of the SecurityGroups property for this object.
+     * Returns the value of the GroupNames property for this object.
      *
-     * @return The value of the SecurityGroups property for this object.
+     * @return The value of the GroupNames property for this object.
      */
-    public java.util.List<String> getSecurityGroups() {
+    public java.util.List<String> getGroupNames() {
         
-        if (securityGroups == null) {
-            securityGroups = new java.util.ArrayList<String>();
+        if (groupNames == null) {
+              groupNames = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              groupNames.setAutoConstruct(true);
         }
-        return securityGroups;
+        return groupNames;
     }
     
     /**
-     * Sets the value of the SecurityGroups property for this object.
+     * Sets the value of the GroupNames property for this object.
      *
-     * @param securityGroups The new value for the SecurityGroups property for this object.
+     * @param groupNames The new value for the GroupNames property for this object.
      */
-    public void setSecurityGroups(java.util.Collection<String> securityGroups) {
-        if (securityGroups == null) {
-            this.securityGroups = null;
+    public void setGroupNames(java.util.Collection<String> groupNames) {
+        if (groupNames == null) {
+            this.groupNames = null;
             return;
         }
-
-        java.util.List<String> securityGroupsCopy = new java.util.ArrayList<String>(securityGroups.size());
-        securityGroupsCopy.addAll(securityGroups);
-        this.securityGroups = securityGroupsCopy;
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> groupNamesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(groupNames.size());
+        groupNamesCopy.addAll(groupNames);
+        this.groupNames = groupNamesCopy;
     }
     
     /**
-     * Sets the value of the SecurityGroups property for this object.
+     * Sets the value of the GroupNames property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param securityGroups The new value for the SecurityGroups property for this object.
+     * @param groupNames The new value for the GroupNames property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public ImportInstanceLaunchSpecification withSecurityGroups(String... securityGroups) {
-        if (getSecurityGroups() == null) setSecurityGroups(new java.util.ArrayList<String>(securityGroups.length));
-        for (String value : securityGroups) {
-            getSecurityGroups().add(value);
+    public ImportInstanceLaunchSpecification withGroupNames(String... groupNames) {
+        if (getGroupNames() == null) setGroupNames(new java.util.ArrayList<String>(groupNames.length));
+        for (String value : groupNames) {
+            getGroupNames().add(value);
         }
         return this;
     }
     
     /**
-     * Sets the value of the SecurityGroups property for this object.
+     * Sets the value of the GroupNames property for this object.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param securityGroups The new value for the SecurityGroups property for this object.
+     * @param groupNames The new value for the GroupNames property for this object.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
      */
-    public ImportInstanceLaunchSpecification withSecurityGroups(java.util.Collection<String> securityGroups) {
-        if (securityGroups == null) {
-            this.securityGroups = null;
+    public ImportInstanceLaunchSpecification withGroupNames(java.util.Collection<String> groupNames) {
+        if (groupNames == null) {
+            this.groupNames = null;
         } else {
-            java.util.List<String> securityGroupsCopy = new java.util.ArrayList<String>(securityGroups.size());
-            securityGroupsCopy.addAll(securityGroups);
-            this.securityGroups = securityGroupsCopy;
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> groupNamesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(groupNames.size());
+            groupNamesCopy.addAll(groupNames);
+            this.groupNames = groupNamesCopy;
         }
 
         return this;
@@ -343,75 +339,6 @@ public class ImportInstanceLaunchSpecification  implements Serializable  {
     
     
     /**
-     * Returns the value of the BlockDeviceMappings property for this object.
-     *
-     * @return The value of the BlockDeviceMappings property for this object.
-     */
-    public java.util.List<BlockDeviceMapping> getBlockDeviceMappings() {
-        
-        if (blockDeviceMappings == null) {
-            blockDeviceMappings = new java.util.ArrayList<BlockDeviceMapping>();
-        }
-        return blockDeviceMappings;
-    }
-    
-    /**
-     * Sets the value of the BlockDeviceMappings property for this object.
-     *
-     * @param blockDeviceMappings The new value for the BlockDeviceMappings property for this object.
-     */
-    public void setBlockDeviceMappings(java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
-        if (blockDeviceMappings == null) {
-            this.blockDeviceMappings = null;
-            return;
-        }
-
-        java.util.List<BlockDeviceMapping> blockDeviceMappingsCopy = new java.util.ArrayList<BlockDeviceMapping>(blockDeviceMappings.size());
-        blockDeviceMappingsCopy.addAll(blockDeviceMappings);
-        this.blockDeviceMappings = blockDeviceMappingsCopy;
-    }
-    
-    /**
-     * Sets the value of the BlockDeviceMappings property for this object.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param blockDeviceMappings The new value for the BlockDeviceMappings property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     */
-    public ImportInstanceLaunchSpecification withBlockDeviceMappings(BlockDeviceMapping... blockDeviceMappings) {
-        if (getBlockDeviceMappings() == null) setBlockDeviceMappings(new java.util.ArrayList<BlockDeviceMapping>(blockDeviceMappings.length));
-        for (BlockDeviceMapping value : blockDeviceMappings) {
-            getBlockDeviceMappings().add(value);
-        }
-        return this;
-    }
-    
-    /**
-     * Sets the value of the BlockDeviceMappings property for this object.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param blockDeviceMappings The new value for the BlockDeviceMappings property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     */
-    public ImportInstanceLaunchSpecification withBlockDeviceMappings(java.util.Collection<BlockDeviceMapping> blockDeviceMappings) {
-        if (blockDeviceMappings == null) {
-            this.blockDeviceMappings = null;
-        } else {
-            java.util.List<BlockDeviceMapping> blockDeviceMappingsCopy = new java.util.ArrayList<BlockDeviceMapping>(blockDeviceMappings.size());
-            blockDeviceMappingsCopy.addAll(blockDeviceMappings);
-            this.blockDeviceMappings = blockDeviceMappingsCopy;
-        }
-
-        return this;
-    }
-    
-    /**
      * Returns the value of the Monitoring property for this object.
      *
      * @return The value of the Monitoring property for this object.
@@ -487,51 +414,6 @@ public class ImportInstanceLaunchSpecification  implements Serializable  {
         return this;
     }
     
-    
-    /**
-     * Returns the value of the DisableApiTermination property for this
-     * object.
-     *
-     * @return The value of the DisableApiTermination property for this object.
-     */
-    public Boolean isDisableApiTermination() {
-        return disableApiTermination;
-    }
-    
-    /**
-     * Sets the value of the DisableApiTermination property for this object.
-     *
-     * @param disableApiTermination The new value for the DisableApiTermination property for this object.
-     */
-    public void setDisableApiTermination(Boolean disableApiTermination) {
-        this.disableApiTermination = disableApiTermination;
-    }
-    
-    /**
-     * Sets the value of the DisableApiTermination property for this object.
-     * <p>
-     * Returns a reference to this object so that method calls can be chained together.
-     *
-     * @param disableApiTermination The new value for the DisableApiTermination property for this object.
-     *
-     * @return A reference to this updated object so that method calls can be chained 
-     *         together. 
-     */
-    public ImportInstanceLaunchSpecification withDisableApiTermination(Boolean disableApiTermination) {
-        this.disableApiTermination = disableApiTermination;
-        return this;
-    }
-    
-    
-    /**
-     * Returns the value of the DisableApiTermination property for this
-     * object.
-     *
-     * @return The value of the DisableApiTermination property for this object.
-     */
-    public Boolean getDisableApiTermination() {
-        return disableApiTermination;
-    }
     
     /**
      * Returns the value of the InstanceInitiatedShutdownBehavior property
@@ -618,18 +500,16 @@ public class ImportInstanceLaunchSpecification  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getArchitecture() != null) sb.append("Architecture: " + getArchitecture() + ",");    	
-        if (getSecurityGroups() != null) sb.append("SecurityGroups: " + getSecurityGroups() + ",");    	
-        if (getAdditionalInfo() != null) sb.append("AdditionalInfo: " + getAdditionalInfo() + ",");    	
-        if (getUserData() != null) sb.append("UserData: " + getUserData() + ",");    	
-        if (getInstanceType() != null) sb.append("InstanceType: " + getInstanceType() + ",");    	
-        if (getPlacement() != null) sb.append("Placement: " + getPlacement() + ",");    	
-        if (getBlockDeviceMappings() != null) sb.append("BlockDeviceMappings: " + getBlockDeviceMappings() + ",");    	
-        if (isMonitoring() != null) sb.append("Monitoring: " + isMonitoring() + ",");    	
-        if (getSubnetId() != null) sb.append("SubnetId: " + getSubnetId() + ",");    	
-        if (isDisableApiTermination() != null) sb.append("DisableApiTermination: " + isDisableApiTermination() + ",");    	
-        if (getInstanceInitiatedShutdownBehavior() != null) sb.append("InstanceInitiatedShutdownBehavior: " + getInstanceInitiatedShutdownBehavior() + ",");    	
+        sb.append("{");
+        if (getArchitecture() != null) sb.append("Architecture: " + getArchitecture() + ",");
+        if (getGroupNames() != null) sb.append("GroupNames: " + getGroupNames() + ",");
+        if (getAdditionalInfo() != null) sb.append("AdditionalInfo: " + getAdditionalInfo() + ",");
+        if (getUserData() != null) sb.append("UserData: " + getUserData() + ",");
+        if (getInstanceType() != null) sb.append("InstanceType: " + getInstanceType() + ",");
+        if (getPlacement() != null) sb.append("Placement: " + getPlacement() + ",");
+        if (isMonitoring() != null) sb.append("Monitoring: " + isMonitoring() + ",");
+        if (getSubnetId() != null) sb.append("SubnetId: " + getSubnetId() + ",");
+        if (getInstanceInitiatedShutdownBehavior() != null) sb.append("InstanceInitiatedShutdownBehavior: " + getInstanceInitiatedShutdownBehavior() + ",");
         if (getPrivateIpAddress() != null) sb.append("PrivateIpAddress: " + getPrivateIpAddress() );
         sb.append("}");
         return sb.toString();
@@ -641,15 +521,13 @@ public class ImportInstanceLaunchSpecification  implements Serializable  {
         int hashCode = 1;
         
         hashCode = prime * hashCode + ((getArchitecture() == null) ? 0 : getArchitecture().hashCode()); 
-        hashCode = prime * hashCode + ((getSecurityGroups() == null) ? 0 : getSecurityGroups().hashCode()); 
+        hashCode = prime * hashCode + ((getGroupNames() == null) ? 0 : getGroupNames().hashCode()); 
         hashCode = prime * hashCode + ((getAdditionalInfo() == null) ? 0 : getAdditionalInfo().hashCode()); 
         hashCode = prime * hashCode + ((getUserData() == null) ? 0 : getUserData().hashCode()); 
         hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode()); 
         hashCode = prime * hashCode + ((getPlacement() == null) ? 0 : getPlacement().hashCode()); 
-        hashCode = prime * hashCode + ((getBlockDeviceMappings() == null) ? 0 : getBlockDeviceMappings().hashCode()); 
         hashCode = prime * hashCode + ((isMonitoring() == null) ? 0 : isMonitoring().hashCode()); 
         hashCode = prime * hashCode + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode()); 
-        hashCode = prime * hashCode + ((isDisableApiTermination() == null) ? 0 : isDisableApiTermination().hashCode()); 
         hashCode = prime * hashCode + ((getInstanceInitiatedShutdownBehavior() == null) ? 0 : getInstanceInitiatedShutdownBehavior().hashCode()); 
         hashCode = prime * hashCode + ((getPrivateIpAddress() == null) ? 0 : getPrivateIpAddress().hashCode()); 
         return hashCode;
@@ -665,8 +543,8 @@ public class ImportInstanceLaunchSpecification  implements Serializable  {
         
         if (other.getArchitecture() == null ^ this.getArchitecture() == null) return false;
         if (other.getArchitecture() != null && other.getArchitecture().equals(this.getArchitecture()) == false) return false; 
-        if (other.getSecurityGroups() == null ^ this.getSecurityGroups() == null) return false;
-        if (other.getSecurityGroups() != null && other.getSecurityGroups().equals(this.getSecurityGroups()) == false) return false; 
+        if (other.getGroupNames() == null ^ this.getGroupNames() == null) return false;
+        if (other.getGroupNames() != null && other.getGroupNames().equals(this.getGroupNames()) == false) return false; 
         if (other.getAdditionalInfo() == null ^ this.getAdditionalInfo() == null) return false;
         if (other.getAdditionalInfo() != null && other.getAdditionalInfo().equals(this.getAdditionalInfo()) == false) return false; 
         if (other.getUserData() == null ^ this.getUserData() == null) return false;
@@ -675,14 +553,10 @@ public class ImportInstanceLaunchSpecification  implements Serializable  {
         if (other.getInstanceType() != null && other.getInstanceType().equals(this.getInstanceType()) == false) return false; 
         if (other.getPlacement() == null ^ this.getPlacement() == null) return false;
         if (other.getPlacement() != null && other.getPlacement().equals(this.getPlacement()) == false) return false; 
-        if (other.getBlockDeviceMappings() == null ^ this.getBlockDeviceMappings() == null) return false;
-        if (other.getBlockDeviceMappings() != null && other.getBlockDeviceMappings().equals(this.getBlockDeviceMappings()) == false) return false; 
         if (other.isMonitoring() == null ^ this.isMonitoring() == null) return false;
         if (other.isMonitoring() != null && other.isMonitoring().equals(this.isMonitoring()) == false) return false; 
         if (other.getSubnetId() == null ^ this.getSubnetId() == null) return false;
         if (other.getSubnetId() != null && other.getSubnetId().equals(this.getSubnetId()) == false) return false; 
-        if (other.isDisableApiTermination() == null ^ this.isDisableApiTermination() == null) return false;
-        if (other.isDisableApiTermination() != null && other.isDisableApiTermination().equals(this.isDisableApiTermination()) == false) return false; 
         if (other.getInstanceInitiatedShutdownBehavior() == null ^ this.getInstanceInitiatedShutdownBehavior() == null) return false;
         if (other.getInstanceInitiatedShutdownBehavior() != null && other.getInstanceInitiatedShutdownBehavior().equals(this.getInstanceInitiatedShutdownBehavior()) == false) return false; 
         if (other.getPrivateIpAddress() == null ^ this.getPrivateIpAddress() == null) return false;

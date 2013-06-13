@@ -108,7 +108,7 @@ public class PutRequest  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getItem() != null) sb.append("Item: " + getItem() );
         sb.append("}");
         return sb.toString();

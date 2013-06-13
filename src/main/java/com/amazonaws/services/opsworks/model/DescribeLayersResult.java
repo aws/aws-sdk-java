@@ -25,7 +25,7 @@ public class DescribeLayersResult  implements Serializable  {
     /**
      * An array of <code>Layer</code> objects that describe the layers.
      */
-    private java.util.List<Layer> layers;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Layer> layers;
 
     /**
      * An array of <code>Layer</code> objects that describe the layers.
@@ -35,7 +35,8 @@ public class DescribeLayersResult  implements Serializable  {
     public java.util.List<Layer> getLayers() {
         
         if (layers == null) {
-            layers = new java.util.ArrayList<Layer>();
+              layers = new com.amazonaws.internal.ListWithAutoConstructFlag<Layer>();
+              layers.setAutoConstruct(true);
         }
         return layers;
     }
@@ -50,8 +51,7 @@ public class DescribeLayersResult  implements Serializable  {
             this.layers = null;
             return;
         }
-
-        java.util.List<Layer> layersCopy = new java.util.ArrayList<Layer>(layers.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Layer> layersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Layer>(layers.size());
         layersCopy.addAll(layers);
         this.layers = layersCopy;
     }
@@ -88,7 +88,7 @@ public class DescribeLayersResult  implements Serializable  {
         if (layers == null) {
             this.layers = null;
         } else {
-            java.util.List<Layer> layersCopy = new java.util.ArrayList<Layer>(layers.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Layer> layersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Layer>(layers.size());
             layersCopy.addAll(layers);
             this.layers = layersCopy;
         }
@@ -107,7 +107,7 @@ public class DescribeLayersResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getLayers() != null) sb.append("Layers: " + getLayers() );
         sb.append("}");
         return sb.toString();

@@ -42,7 +42,7 @@ public class Permission  implements Serializable  {
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 30<br/>
      */
-    private java.util.List<String> access;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> access;
 
     /**
      * 
@@ -140,6 +140,10 @@ public class Permission  implements Serializable  {
      */
     public java.util.List<String> getAccess() {
         
+        if (access == null) {
+              access = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              access.setAutoConstruct(true);
+        }
         return access;
     }
     
@@ -156,8 +160,7 @@ public class Permission  implements Serializable  {
             this.access = null;
             return;
         }
-
-        java.util.List<String> accessCopy = new java.util.ArrayList<String>(access.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> accessCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(access.size());
         accessCopy.addAll(access);
         this.access = accessCopy;
     }
@@ -200,7 +203,7 @@ public class Permission  implements Serializable  {
         if (access == null) {
             this.access = null;
         } else {
-            java.util.List<String> accessCopy = new java.util.ArrayList<String>(access.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> accessCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(access.size());
             accessCopy.addAll(access);
             this.access = accessCopy;
         }
@@ -219,9 +222,9 @@ public class Permission  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getGranteeType() != null) sb.append("GranteeType: " + getGranteeType() + ",");    	
-        if (getGrantee() != null) sb.append("Grantee: " + getGrantee() + ",");    	
+        sb.append("{");
+        if (getGranteeType() != null) sb.append("GranteeType: " + getGranteeType() + ",");
+        if (getGrantee() != null) sb.append("Grantee: " + getGrantee() + ",");
         if (getAccess() != null) sb.append("Access: " + getAccess() );
         sb.append("}");
         return sb.toString();

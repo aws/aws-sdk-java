@@ -26,7 +26,7 @@ public class Query  implements Serializable  {
      * List of selectors that define the query. An object must satisfy all of
      * the selectors to match the query.
      */
-    private java.util.List<Selector> selectors;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Selector> selectors;
 
     /**
      * List of selectors that define the query. An object must satisfy all of
@@ -38,7 +38,8 @@ public class Query  implements Serializable  {
     public java.util.List<Selector> getSelectors() {
         
         if (selectors == null) {
-            selectors = new java.util.ArrayList<Selector>();
+              selectors = new com.amazonaws.internal.ListWithAutoConstructFlag<Selector>();
+              selectors.setAutoConstruct(true);
         }
         return selectors;
     }
@@ -55,8 +56,7 @@ public class Query  implements Serializable  {
             this.selectors = null;
             return;
         }
-
-        java.util.List<Selector> selectorsCopy = new java.util.ArrayList<Selector>(selectors.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Selector> selectorsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Selector>(selectors.size());
         selectorsCopy.addAll(selectors);
         this.selectors = selectorsCopy;
     }
@@ -97,7 +97,7 @@ public class Query  implements Serializable  {
         if (selectors == null) {
             this.selectors = null;
         } else {
-            java.util.List<Selector> selectorsCopy = new java.util.ArrayList<Selector>(selectors.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Selector> selectorsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Selector>(selectors.size());
             selectorsCopy.addAll(selectors);
             this.selectors = selectorsCopy;
         }
@@ -116,7 +116,7 @@ public class Query  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getSelectors() != null) sb.append("Selectors: " + getSelectors() );
         sb.append("}");
         return sb.toString();

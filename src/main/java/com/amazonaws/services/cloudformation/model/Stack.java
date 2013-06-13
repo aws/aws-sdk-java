@@ -40,7 +40,7 @@ public class Stack  implements Serializable  {
     /**
      * A list of <code>Parameter</code> structures.
      */
-    private java.util.List<Parameter> parameters;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Parameter> parameters;
 
     /**
      * Time at which the stack was created.
@@ -79,7 +79,7 @@ public class Stack  implements Serializable  {
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 5<br/>
      */
-    private java.util.List<String> notificationARNs;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> notificationARNs;
 
     /**
      * The amount of time within which stack creation should complete.
@@ -92,18 +92,18 @@ public class Stack  implements Serializable  {
     /**
      * The capabilities allowed in the stack.
      */
-    private java.util.List<String> capabilities;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> capabilities;
 
     /**
      * A list of output structures.
      */
-    private java.util.List<Output> outputs;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Output> outputs;
 
     /**
      * A list of <code>Tag</code>s that specify cost allocation information
      * for the stack.
      */
-    private java.util.List<Tag> tags;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
 
     /**
      * Unique identifier of the stack.
@@ -215,7 +215,8 @@ public class Stack  implements Serializable  {
     public java.util.List<Parameter> getParameters() {
         
         if (parameters == null) {
-            parameters = new java.util.ArrayList<Parameter>();
+              parameters = new com.amazonaws.internal.ListWithAutoConstructFlag<Parameter>();
+              parameters.setAutoConstruct(true);
         }
         return parameters;
     }
@@ -230,8 +231,7 @@ public class Stack  implements Serializable  {
             this.parameters = null;
             return;
         }
-
-        java.util.List<Parameter> parametersCopy = new java.util.ArrayList<Parameter>(parameters.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Parameter> parametersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Parameter>(parameters.size());
         parametersCopy.addAll(parameters);
         this.parameters = parametersCopy;
     }
@@ -268,7 +268,7 @@ public class Stack  implements Serializable  {
         if (parameters == null) {
             this.parameters = null;
         } else {
-            java.util.List<Parameter> parametersCopy = new java.util.ArrayList<Parameter>(parameters.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Parameter> parametersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Parameter>(parameters.size());
             parametersCopy.addAll(parameters);
             this.parameters = parametersCopy;
         }
@@ -537,7 +537,8 @@ public class Stack  implements Serializable  {
     public java.util.List<String> getNotificationARNs() {
         
         if (notificationARNs == null) {
-            notificationARNs = new java.util.ArrayList<String>();
+              notificationARNs = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              notificationARNs.setAutoConstruct(true);
         }
         return notificationARNs;
     }
@@ -555,8 +556,7 @@ public class Stack  implements Serializable  {
             this.notificationARNs = null;
             return;
         }
-
-        java.util.List<String> notificationARNsCopy = new java.util.ArrayList<String>(notificationARNs.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> notificationARNsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(notificationARNs.size());
         notificationARNsCopy.addAll(notificationARNs);
         this.notificationARNs = notificationARNsCopy;
     }
@@ -599,7 +599,7 @@ public class Stack  implements Serializable  {
         if (notificationARNs == null) {
             this.notificationARNs = null;
         } else {
-            java.util.List<String> notificationARNsCopy = new java.util.ArrayList<String>(notificationARNs.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> notificationARNsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(notificationARNs.size());
             notificationARNsCopy.addAll(notificationARNs);
             this.notificationARNs = notificationARNsCopy;
         }
@@ -658,7 +658,8 @@ public class Stack  implements Serializable  {
     public java.util.List<String> getCapabilities() {
         
         if (capabilities == null) {
-            capabilities = new java.util.ArrayList<String>();
+              capabilities = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              capabilities.setAutoConstruct(true);
         }
         return capabilities;
     }
@@ -673,8 +674,7 @@ public class Stack  implements Serializable  {
             this.capabilities = null;
             return;
         }
-
-        java.util.List<String> capabilitiesCopy = new java.util.ArrayList<String>(capabilities.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> capabilitiesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(capabilities.size());
         capabilitiesCopy.addAll(capabilities);
         this.capabilities = capabilitiesCopy;
     }
@@ -711,7 +711,7 @@ public class Stack  implements Serializable  {
         if (capabilities == null) {
             this.capabilities = null;
         } else {
-            java.util.List<String> capabilitiesCopy = new java.util.ArrayList<String>(capabilities.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> capabilitiesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(capabilities.size());
             capabilitiesCopy.addAll(capabilities);
             this.capabilities = capabilitiesCopy;
         }
@@ -727,7 +727,8 @@ public class Stack  implements Serializable  {
     public java.util.List<Output> getOutputs() {
         
         if (outputs == null) {
-            outputs = new java.util.ArrayList<Output>();
+              outputs = new com.amazonaws.internal.ListWithAutoConstructFlag<Output>();
+              outputs.setAutoConstruct(true);
         }
         return outputs;
     }
@@ -742,8 +743,7 @@ public class Stack  implements Serializable  {
             this.outputs = null;
             return;
         }
-
-        java.util.List<Output> outputsCopy = new java.util.ArrayList<Output>(outputs.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Output> outputsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Output>(outputs.size());
         outputsCopy.addAll(outputs);
         this.outputs = outputsCopy;
     }
@@ -780,7 +780,7 @@ public class Stack  implements Serializable  {
         if (outputs == null) {
             this.outputs = null;
         } else {
-            java.util.List<Output> outputsCopy = new java.util.ArrayList<Output>(outputs.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Output> outputsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Output>(outputs.size());
             outputsCopy.addAll(outputs);
             this.outputs = outputsCopy;
         }
@@ -798,7 +798,8 @@ public class Stack  implements Serializable  {
     public java.util.List<Tag> getTags() {
         
         if (tags == null) {
-            tags = new java.util.ArrayList<Tag>();
+              tags = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>();
+              tags.setAutoConstruct(true);
         }
         return tags;
     }
@@ -815,8 +816,7 @@ public class Stack  implements Serializable  {
             this.tags = null;
             return;
         }
-
-        java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>(tags.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
         tagsCopy.addAll(tags);
         this.tags = tagsCopy;
     }
@@ -857,7 +857,7 @@ public class Stack  implements Serializable  {
         if (tags == null) {
             this.tags = null;
         } else {
-            java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>(tags.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
             tagsCopy.addAll(tags);
             this.tags = tagsCopy;
         }
@@ -876,20 +876,20 @@ public class Stack  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getStackId() != null) sb.append("StackId: " + getStackId() + ",");    	
-        if (getStackName() != null) sb.append("StackName: " + getStackName() + ",");    	
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");    	
-        if (getParameters() != null) sb.append("Parameters: " + getParameters() + ",");    	
-        if (getCreationTime() != null) sb.append("CreationTime: " + getCreationTime() + ",");    	
-        if (getLastUpdatedTime() != null) sb.append("LastUpdatedTime: " + getLastUpdatedTime() + ",");    	
-        if (getStackStatus() != null) sb.append("StackStatus: " + getStackStatus() + ",");    	
-        if (getStackStatusReason() != null) sb.append("StackStatusReason: " + getStackStatusReason() + ",");    	
-        if (isDisableRollback() != null) sb.append("DisableRollback: " + isDisableRollback() + ",");    	
-        if (getNotificationARNs() != null) sb.append("NotificationARNs: " + getNotificationARNs() + ",");    	
-        if (getTimeoutInMinutes() != null) sb.append("TimeoutInMinutes: " + getTimeoutInMinutes() + ",");    	
-        if (getCapabilities() != null) sb.append("Capabilities: " + getCapabilities() + ",");    	
-        if (getOutputs() != null) sb.append("Outputs: " + getOutputs() + ",");    	
+        sb.append("{");
+        if (getStackId() != null) sb.append("StackId: " + getStackId() + ",");
+        if (getStackName() != null) sb.append("StackName: " + getStackName() + ",");
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");
+        if (getParameters() != null) sb.append("Parameters: " + getParameters() + ",");
+        if (getCreationTime() != null) sb.append("CreationTime: " + getCreationTime() + ",");
+        if (getLastUpdatedTime() != null) sb.append("LastUpdatedTime: " + getLastUpdatedTime() + ",");
+        if (getStackStatus() != null) sb.append("StackStatus: " + getStackStatus() + ",");
+        if (getStackStatusReason() != null) sb.append("StackStatusReason: " + getStackStatusReason() + ",");
+        if (isDisableRollback() != null) sb.append("DisableRollback: " + isDisableRollback() + ",");
+        if (getNotificationARNs() != null) sb.append("NotificationARNs: " + getNotificationARNs() + ",");
+        if (getTimeoutInMinutes() != null) sb.append("TimeoutInMinutes: " + getTimeoutInMinutes() + ",");
+        if (getCapabilities() != null) sb.append("Capabilities: " + getCapabilities() + ",");
+        if (getOutputs() != null) sb.append("Outputs: " + getOutputs() + ",");
         if (getTags() != null) sb.append("Tags: " + getTags() );
         sb.append("}");
         return sb.toString();

@@ -89,6 +89,8 @@ public class Group  implements Serializable  {
      */
     public Group() {}
     
+
+
     /**
      * Constructs a new Group object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -113,11 +115,11 @@ public class Group  implements Serializable  {
      * @param createDate The date when the group was created.
      */
     public Group(String path, String groupName, String groupId, String arn, java.util.Date createDate) {
-        this.path = path;
-        this.groupName = groupName;
-        this.groupId = groupId;
-        this.arn = arn;
-        this.createDate = createDate;
+        setPath(path);
+        setGroupName(groupName);
+        setGroupId(groupId);
+        setArn(arn);
+        setCreateDate(createDate);
     }
 
     
@@ -414,11 +416,11 @@ public class Group  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getPath() != null) sb.append("Path: " + getPath() + ",");    	
-        if (getGroupName() != null) sb.append("GroupName: " + getGroupName() + ",");    	
-        if (getGroupId() != null) sb.append("GroupId: " + getGroupId() + ",");    	
-        if (getArn() != null) sb.append("Arn: " + getArn() + ",");    	
+        sb.append("{");
+        if (getPath() != null) sb.append("Path: " + getPath() + ",");
+        if (getGroupName() != null) sb.append("GroupName: " + getGroupName() + ",");
+        if (getGroupId() != null) sb.append("GroupId: " + getGroupId() + ",");
+        if (getArn() != null) sb.append("Arn: " + getArn() + ",");
         if (getCreateDate() != null) sb.append("CreateDate: " + getCreateDate() );
         sb.append("}");
         return sb.toString();

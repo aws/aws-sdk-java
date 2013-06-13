@@ -63,6 +63,8 @@ public class UpdateApplicationVersionRequest extends AmazonWebServiceRequest  im
      */
     public UpdateApplicationVersionRequest() {}
     
+
+
     /**
      * Constructs a new UpdateApplicationVersionRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -78,8 +80,8 @@ public class UpdateApplicationVersionRequest extends AmazonWebServiceRequest  im
      * <code>InvalidParameterValue</code> error.
      */
     public UpdateApplicationVersionRequest(String applicationName, String versionLabel) {
-        this.applicationName = applicationName;
-        this.versionLabel = versionLabel;
+        setApplicationName(applicationName);
+        setVersionLabel(versionLabel);
     }
 
     
@@ -248,9 +250,9 @@ public class UpdateApplicationVersionRequest extends AmazonWebServiceRequest  im
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getApplicationName() != null) sb.append("ApplicationName: " + getApplicationName() + ",");    	
-        if (getVersionLabel() != null) sb.append("VersionLabel: " + getVersionLabel() + ",");    	
+        sb.append("{");
+        if (getApplicationName() != null) sb.append("ApplicationName: " + getApplicationName() + ",");
+        if (getVersionLabel() != null) sb.append("VersionLabel: " + getVersionLabel() + ",");
         if (getDescription() != null) sb.append("Description: " + getDescription() );
         sb.append("}");
         return sb.toString();

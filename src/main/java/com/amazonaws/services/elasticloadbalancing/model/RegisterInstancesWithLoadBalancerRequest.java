@@ -56,7 +56,7 @@ public class RegisterInstancesWithLoadBalancerRequest extends AmazonWebServiceRe
      * you've restarted. To de-register your instances from load balancer,
      * use <a>DeregisterInstancesFromLoadBalancer</a> action.</note>
      */
-    private java.util.List<Instance> instances;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Instance> instances;
 
     /**
      * Default constructor for a new RegisterInstancesWithLoadBalancerRequest object.  Callers should use the
@@ -64,6 +64,8 @@ public class RegisterInstancesWithLoadBalancerRequest extends AmazonWebServiceRe
      */
     public RegisterInstancesWithLoadBalancerRequest() {}
     
+
+
     /**
      * Constructs a new RegisterInstancesWithLoadBalancerRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -83,8 +85,8 @@ public class RegisterInstancesWithLoadBalancerRequest extends AmazonWebServiceRe
      * action.</note>
      */
     public RegisterInstancesWithLoadBalancerRequest(String loadBalancerName, java.util.List<Instance> instances) {
-        this.loadBalancerName = loadBalancerName;
-        this.instances = instances;
+        setLoadBalancerName(loadBalancerName);
+        setInstances(instances);
     }
 
     
@@ -153,7 +155,8 @@ public class RegisterInstancesWithLoadBalancerRequest extends AmazonWebServiceRe
     public java.util.List<Instance> getInstances() {
         
         if (instances == null) {
-            instances = new java.util.ArrayList<Instance>();
+              instances = new com.amazonaws.internal.ListWithAutoConstructFlag<Instance>();
+              instances.setAutoConstruct(true);
         }
         return instances;
     }
@@ -184,8 +187,7 @@ public class RegisterInstancesWithLoadBalancerRequest extends AmazonWebServiceRe
             this.instances = null;
             return;
         }
-
-        java.util.List<Instance> instancesCopy = new java.util.ArrayList<Instance>(instances.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Instance> instancesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Instance>(instances.size());
         instancesCopy.addAll(instances);
         this.instances = instancesCopy;
     }
@@ -254,7 +256,7 @@ public class RegisterInstancesWithLoadBalancerRequest extends AmazonWebServiceRe
         if (instances == null) {
             this.instances = null;
         } else {
-            java.util.List<Instance> instancesCopy = new java.util.ArrayList<Instance>(instances.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Instance> instancesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Instance>(instances.size());
             instancesCopy.addAll(instances);
             this.instances = instancesCopy;
         }
@@ -273,8 +275,8 @@ public class RegisterInstancesWithLoadBalancerRequest extends AmazonWebServiceRe
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getLoadBalancerName() != null) sb.append("LoadBalancerName: " + getLoadBalancerName() + ",");    	
+        sb.append("{");
+        if (getLoadBalancerName() != null) sb.append("LoadBalancerName: " + getLoadBalancerName() + ",");
         if (getInstances() != null) sb.append("Instances: " + getInstances() );
         sb.append("}");
         return sb.toString();

@@ -40,7 +40,7 @@ public class DescribeApplicationVersionsRequest extends AmazonWebServiceRequest 
      * If specified, restricts the returned descriptions to only include ones
      * that have the specified version labels.
      */
-    private java.util.List<String> versionLabels;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> versionLabels;
 
     /**
      * Default constructor for a new DescribeApplicationVersionsRequest object.  Callers should use the
@@ -113,7 +113,8 @@ public class DescribeApplicationVersionsRequest extends AmazonWebServiceRequest 
     public java.util.List<String> getVersionLabels() {
         
         if (versionLabels == null) {
-            versionLabels = new java.util.ArrayList<String>();
+              versionLabels = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              versionLabels.setAutoConstruct(true);
         }
         return versionLabels;
     }
@@ -130,8 +131,7 @@ public class DescribeApplicationVersionsRequest extends AmazonWebServiceRequest 
             this.versionLabels = null;
             return;
         }
-
-        java.util.List<String> versionLabelsCopy = new java.util.ArrayList<String>(versionLabels.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> versionLabelsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(versionLabels.size());
         versionLabelsCopy.addAll(versionLabels);
         this.versionLabels = versionLabelsCopy;
     }
@@ -172,7 +172,7 @@ public class DescribeApplicationVersionsRequest extends AmazonWebServiceRequest 
         if (versionLabels == null) {
             this.versionLabels = null;
         } else {
-            java.util.List<String> versionLabelsCopy = new java.util.ArrayList<String>(versionLabels.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> versionLabelsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(versionLabels.size());
             versionLabelsCopy.addAll(versionLabels);
             this.versionLabels = versionLabelsCopy;
         }
@@ -191,8 +191,8 @@ public class DescribeApplicationVersionsRequest extends AmazonWebServiceRequest 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getApplicationName() != null) sb.append("ApplicationName: " + getApplicationName() + ",");    	
+        sb.append("{");
+        if (getApplicationName() != null) sb.append("ApplicationName: " + getApplicationName() + ",");
         if (getVersionLabels() != null) sb.append("VersionLabels: " + getVersionLabels() );
         sb.append("}");
         return sb.toString();

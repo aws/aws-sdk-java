@@ -41,7 +41,7 @@ public class ModifyClusterSubnetGroupRequest extends AmazonWebServiceRequest  im
      * An array of VPC subnet IDs. A maximum of 20 subnets can be modified in
      * a single request.
      */
-    private java.util.List<String> subnetIds;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> subnetIds;
 
     /**
      * The name of the subnet group to be modified.
@@ -121,7 +121,8 @@ public class ModifyClusterSubnetGroupRequest extends AmazonWebServiceRequest  im
     public java.util.List<String> getSubnetIds() {
         
         if (subnetIds == null) {
-            subnetIds = new java.util.ArrayList<String>();
+              subnetIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              subnetIds.setAutoConstruct(true);
         }
         return subnetIds;
     }
@@ -138,8 +139,7 @@ public class ModifyClusterSubnetGroupRequest extends AmazonWebServiceRequest  im
             this.subnetIds = null;
             return;
         }
-
-        java.util.List<String> subnetIdsCopy = new java.util.ArrayList<String>(subnetIds.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> subnetIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(subnetIds.size());
         subnetIdsCopy.addAll(subnetIds);
         this.subnetIds = subnetIdsCopy;
     }
@@ -180,7 +180,7 @@ public class ModifyClusterSubnetGroupRequest extends AmazonWebServiceRequest  im
         if (subnetIds == null) {
             this.subnetIds = null;
         } else {
-            java.util.List<String> subnetIdsCopy = new java.util.ArrayList<String>(subnetIds.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> subnetIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(subnetIds.size());
             subnetIdsCopy.addAll(subnetIds);
             this.subnetIds = subnetIdsCopy;
         }
@@ -199,9 +199,9 @@ public class ModifyClusterSubnetGroupRequest extends AmazonWebServiceRequest  im
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getClusterSubnetGroupName() != null) sb.append("ClusterSubnetGroupName: " + getClusterSubnetGroupName() + ",");    	
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");    	
+        sb.append("{");
+        if (getClusterSubnetGroupName() != null) sb.append("ClusterSubnetGroupName: " + getClusterSubnetGroupName() + ",");
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");
         if (getSubnetIds() != null) sb.append("SubnetIds: " + getSubnetIds() );
         sb.append("}");
         return sb.toString();

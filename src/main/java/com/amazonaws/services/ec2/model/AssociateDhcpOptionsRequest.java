@@ -46,6 +46,8 @@ public class AssociateDhcpOptionsRequest extends AmazonWebServiceRequest  implem
      */
     public AssociateDhcpOptionsRequest() {}
     
+
+
     /**
      * Constructs a new AssociateDhcpOptionsRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -54,7 +56,7 @@ public class AssociateDhcpOptionsRequest extends AmazonWebServiceRequest  implem
      * @param vpcId The ID of the VPC to associate the DHCP options with.
      */
     public AssociateDhcpOptionsRequest(String vpcId) {
-        this.vpcId = vpcId;
+        setVpcId(vpcId);
     }
 
     
@@ -144,8 +146,8 @@ public class AssociateDhcpOptionsRequest extends AmazonWebServiceRequest  implem
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getDhcpOptionsId() != null) sb.append("DhcpOptionsId: " + getDhcpOptionsId() + ",");    	
+        sb.append("{");
+        if (getDhcpOptionsId() != null) sb.append("DhcpOptionsId: " + getDhcpOptionsId() + ",");
         if (getVpcId() != null) sb.append("VpcId: " + getVpcId() );
         sb.append("}");
         return sb.toString();

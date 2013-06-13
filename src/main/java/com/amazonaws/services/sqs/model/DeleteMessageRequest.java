@@ -43,6 +43,8 @@ public class DeleteMessageRequest extends AmazonWebServiceRequest  implements Se
      */
     public DeleteMessageRequest() {}
     
+
+
     /**
      * Constructs a new DeleteMessageRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -53,8 +55,8 @@ public class DeleteMessageRequest extends AmazonWebServiceRequest  implements Se
      * delete.
      */
     public DeleteMessageRequest(String queueUrl, String receiptHandle) {
-        this.queueUrl = queueUrl;
-        this.receiptHandle = receiptHandle;
+        setQueueUrl(queueUrl);
+        setReceiptHandle(receiptHandle);
     }
 
     
@@ -138,8 +140,8 @@ public class DeleteMessageRequest extends AmazonWebServiceRequest  implements Se
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getQueueUrl() != null) sb.append("QueueUrl: " + getQueueUrl() + ",");    	
+        sb.append("{");
+        if (getQueueUrl() != null) sb.append("QueueUrl: " + getQueueUrl() + ",");
         if (getReceiptHandle() != null) sb.append("ReceiptHandle: " + getReceiptHandle() );
         sb.append("}");
         return sb.toString();

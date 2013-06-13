@@ -42,12 +42,12 @@ public class License  implements Serializable  {
      * licenses are in use, how many are available, how many Amazon EC2
      * instances can be supported, etc.
      */
-    private java.util.List<LicenseCapacity> capacities;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<LicenseCapacity> capacities;
 
     /**
      * A list of tags for the License.
      */
-    private java.util.List<Tag> tags;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
 
     /**
      * The unique ID identifying the license.
@@ -163,7 +163,8 @@ public class License  implements Serializable  {
     public java.util.List<LicenseCapacity> getCapacities() {
         
         if (capacities == null) {
-            capacities = new java.util.ArrayList<LicenseCapacity>();
+              capacities = new com.amazonaws.internal.ListWithAutoConstructFlag<LicenseCapacity>();
+              capacities.setAutoConstruct(true);
         }
         return capacities;
     }
@@ -182,8 +183,7 @@ public class License  implements Serializable  {
             this.capacities = null;
             return;
         }
-
-        java.util.List<LicenseCapacity> capacitiesCopy = new java.util.ArrayList<LicenseCapacity>(capacities.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<LicenseCapacity> capacitiesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<LicenseCapacity>(capacities.size());
         capacitiesCopy.addAll(capacities);
         this.capacities = capacitiesCopy;
     }
@@ -228,7 +228,7 @@ public class License  implements Serializable  {
         if (capacities == null) {
             this.capacities = null;
         } else {
-            java.util.List<LicenseCapacity> capacitiesCopy = new java.util.ArrayList<LicenseCapacity>(capacities.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<LicenseCapacity> capacitiesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<LicenseCapacity>(capacities.size());
             capacitiesCopy.addAll(capacities);
             this.capacities = capacitiesCopy;
         }
@@ -244,7 +244,8 @@ public class License  implements Serializable  {
     public java.util.List<Tag> getTags() {
         
         if (tags == null) {
-            tags = new java.util.ArrayList<Tag>();
+              tags = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>();
+              tags.setAutoConstruct(true);
         }
         return tags;
     }
@@ -259,8 +260,7 @@ public class License  implements Serializable  {
             this.tags = null;
             return;
         }
-
-        java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>(tags.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
         tagsCopy.addAll(tags);
         this.tags = tagsCopy;
     }
@@ -297,7 +297,7 @@ public class License  implements Serializable  {
         if (tags == null) {
             this.tags = null;
         } else {
-            java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>(tags.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
             tagsCopy.addAll(tags);
             this.tags = tagsCopy;
         }
@@ -316,11 +316,11 @@ public class License  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getLicenseId() != null) sb.append("LicenseId: " + getLicenseId() + ",");    	
-        if (getType() != null) sb.append("Type: " + getType() + ",");    	
-        if (getPool() != null) sb.append("Pool: " + getPool() + ",");    	
-        if (getCapacities() != null) sb.append("Capacities: " + getCapacities() + ",");    	
+        sb.append("{");
+        if (getLicenseId() != null) sb.append("LicenseId: " + getLicenseId() + ",");
+        if (getType() != null) sb.append("Type: " + getType() + ",");
+        if (getPool() != null) sb.append("Pool: " + getPool() + ",");
+        if (getCapacities() != null) sb.append("Capacities: " + getCapacities() + ",");
         if (getTags() != null) sb.append("Tags: " + getTags() );
         sb.append("}");
         return sb.toString();

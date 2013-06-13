@@ -25,7 +25,7 @@ public class DescribeUserProfilesResult  implements Serializable  {
     /**
      * A <code>Users</code> object that describes the specified users.
      */
-    private java.util.List<UserProfile> userProfiles;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<UserProfile> userProfiles;
 
     /**
      * A <code>Users</code> object that describes the specified users.
@@ -35,7 +35,8 @@ public class DescribeUserProfilesResult  implements Serializable  {
     public java.util.List<UserProfile> getUserProfiles() {
         
         if (userProfiles == null) {
-            userProfiles = new java.util.ArrayList<UserProfile>();
+              userProfiles = new com.amazonaws.internal.ListWithAutoConstructFlag<UserProfile>();
+              userProfiles.setAutoConstruct(true);
         }
         return userProfiles;
     }
@@ -50,8 +51,7 @@ public class DescribeUserProfilesResult  implements Serializable  {
             this.userProfiles = null;
             return;
         }
-
-        java.util.List<UserProfile> userProfilesCopy = new java.util.ArrayList<UserProfile>(userProfiles.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<UserProfile> userProfilesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<UserProfile>(userProfiles.size());
         userProfilesCopy.addAll(userProfiles);
         this.userProfiles = userProfilesCopy;
     }
@@ -88,7 +88,7 @@ public class DescribeUserProfilesResult  implements Serializable  {
         if (userProfiles == null) {
             this.userProfiles = null;
         } else {
-            java.util.List<UserProfile> userProfilesCopy = new java.util.ArrayList<UserProfile>(userProfiles.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<UserProfile> userProfilesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<UserProfile>(userProfiles.size());
             userProfilesCopy.addAll(userProfiles);
             this.userProfiles = userProfilesCopy;
         }
@@ -107,7 +107,7 @@ public class DescribeUserProfilesResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getUserProfiles() != null) sb.append("UserProfiles: " + getUserProfiles() );
         sb.append("}");
         return sb.toString();

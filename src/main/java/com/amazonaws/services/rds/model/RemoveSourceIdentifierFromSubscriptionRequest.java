@@ -136,8 +136,8 @@ public class RemoveSourceIdentifierFromSubscriptionRequest extends AmazonWebServ
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getSubscriptionName() != null) sb.append("SubscriptionName: " + getSubscriptionName() + ",");    	
+        sb.append("{");
+        if (getSubscriptionName() != null) sb.append("SubscriptionName: " + getSubscriptionName() + ",");
         if (getSourceIdentifier() != null) sb.append("SourceIdentifier: " + getSourceIdentifier() );
         sb.append("}");
         return sb.toString();

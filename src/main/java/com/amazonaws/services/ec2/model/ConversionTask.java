@@ -32,7 +32,7 @@ public class ConversionTask  implements Serializable  {
 
     private String statusMessage;
 
-    private java.util.List<Tag> tags;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
 
     /**
      * Returns the value of the ConversionTaskId property for this object.
@@ -246,7 +246,8 @@ public class ConversionTask  implements Serializable  {
     public java.util.List<Tag> getTags() {
         
         if (tags == null) {
-            tags = new java.util.ArrayList<Tag>();
+              tags = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>();
+              tags.setAutoConstruct(true);
         }
         return tags;
     }
@@ -261,8 +262,7 @@ public class ConversionTask  implements Serializable  {
             this.tags = null;
             return;
         }
-
-        java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>(tags.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
         tagsCopy.addAll(tags);
         this.tags = tagsCopy;
     }
@@ -299,7 +299,7 @@ public class ConversionTask  implements Serializable  {
         if (tags == null) {
             this.tags = null;
         } else {
-            java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>(tags.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
             tagsCopy.addAll(tags);
             this.tags = tagsCopy;
         }
@@ -318,13 +318,13 @@ public class ConversionTask  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getConversionTaskId() != null) sb.append("ConversionTaskId: " + getConversionTaskId() + ",");    	
-        if (getExpirationTime() != null) sb.append("ExpirationTime: " + getExpirationTime() + ",");    	
-        if (getImportInstance() != null) sb.append("ImportInstance: " + getImportInstance() + ",");    	
-        if (getImportVolume() != null) sb.append("ImportVolume: " + getImportVolume() + ",");    	
-        if (getState() != null) sb.append("State: " + getState() + ",");    	
-        if (getStatusMessage() != null) sb.append("StatusMessage: " + getStatusMessage() + ",");    	
+        sb.append("{");
+        if (getConversionTaskId() != null) sb.append("ConversionTaskId: " + getConversionTaskId() + ",");
+        if (getExpirationTime() != null) sb.append("ExpirationTime: " + getExpirationTime() + ",");
+        if (getImportInstance() != null) sb.append("ImportInstance: " + getImportInstance() + ",");
+        if (getImportVolume() != null) sb.append("ImportVolume: " + getImportVolume() + ",");
+        if (getState() != null) sb.append("State: " + getState() + ",");
+        if (getStatusMessage() != null) sb.append("StatusMessage: " + getStatusMessage() + ",");
         if (getTags() != null) sb.append("Tags: " + getTags() );
         sb.append("}");
         return sb.toString();

@@ -34,7 +34,7 @@ public class DescribeLoadBalancersRequest extends AmazonWebServiceRequest  imple
     /**
      * A list of names associated with the LoadBalancers at creation time.
      */
-    private java.util.List<String> loadBalancerNames;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> loadBalancerNames;
 
     /**
      * An optional parameter reserved for future use.
@@ -47,6 +47,8 @@ public class DescribeLoadBalancersRequest extends AmazonWebServiceRequest  imple
      */
     public DescribeLoadBalancersRequest() {}
     
+
+
     /**
      * Constructs a new DescribeLoadBalancersRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -56,7 +58,7 @@ public class DescribeLoadBalancersRequest extends AmazonWebServiceRequest  imple
      * LoadBalancers at creation time.
      */
     public DescribeLoadBalancersRequest(java.util.List<String> loadBalancerNames) {
-        this.loadBalancerNames = loadBalancerNames;
+        setLoadBalancerNames(loadBalancerNames);
     }
 
     
@@ -69,7 +71,8 @@ public class DescribeLoadBalancersRequest extends AmazonWebServiceRequest  imple
     public java.util.List<String> getLoadBalancerNames() {
         
         if (loadBalancerNames == null) {
-            loadBalancerNames = new java.util.ArrayList<String>();
+              loadBalancerNames = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              loadBalancerNames.setAutoConstruct(true);
         }
         return loadBalancerNames;
     }
@@ -84,8 +87,7 @@ public class DescribeLoadBalancersRequest extends AmazonWebServiceRequest  imple
             this.loadBalancerNames = null;
             return;
         }
-
-        java.util.List<String> loadBalancerNamesCopy = new java.util.ArrayList<String>(loadBalancerNames.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> loadBalancerNamesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(loadBalancerNames.size());
         loadBalancerNamesCopy.addAll(loadBalancerNames);
         this.loadBalancerNames = loadBalancerNamesCopy;
     }
@@ -122,7 +124,7 @@ public class DescribeLoadBalancersRequest extends AmazonWebServiceRequest  imple
         if (loadBalancerNames == null) {
             this.loadBalancerNames = null;
         } else {
-            java.util.List<String> loadBalancerNamesCopy = new java.util.ArrayList<String>(loadBalancerNames.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> loadBalancerNamesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(loadBalancerNames.size());
             loadBalancerNamesCopy.addAll(loadBalancerNames);
             this.loadBalancerNames = loadBalancerNamesCopy;
         }
@@ -175,8 +177,8 @@ public class DescribeLoadBalancersRequest extends AmazonWebServiceRequest  imple
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getLoadBalancerNames() != null) sb.append("LoadBalancerNames: " + getLoadBalancerNames() + ",");    	
+        sb.append("{");
+        if (getLoadBalancerNames() != null) sb.append("LoadBalancerNames: " + getLoadBalancerNames() + ",");
         if (getMarker() != null) sb.append("Marker: " + getMarker() );
         sb.append("}");
         return sb.toString();

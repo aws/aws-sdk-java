@@ -52,6 +52,8 @@ public class DeleteConfigurationTemplateRequest extends AmazonWebServiceRequest 
      */
     public DeleteConfigurationTemplateRequest() {}
     
+
+
     /**
      * Constructs a new DeleteConfigurationTemplateRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -62,8 +64,8 @@ public class DeleteConfigurationTemplateRequest extends AmazonWebServiceRequest 
      * @param templateName The name of the configuration template to delete.
      */
     public DeleteConfigurationTemplateRequest(String applicationName, String templateName) {
-        this.applicationName = applicationName;
-        this.templateName = templateName;
+        setApplicationName(applicationName);
+        setTemplateName(templateName);
     }
 
     
@@ -165,8 +167,8 @@ public class DeleteConfigurationTemplateRequest extends AmazonWebServiceRequest 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getApplicationName() != null) sb.append("ApplicationName: " + getApplicationName() + ",");    	
+        sb.append("{");
+        if (getApplicationName() != null) sb.append("ApplicationName: " + getApplicationName() + ",");
         if (getTemplateName() != null) sb.append("TemplateName: " + getTemplateName() );
         sb.append("}");
         return sb.toString();

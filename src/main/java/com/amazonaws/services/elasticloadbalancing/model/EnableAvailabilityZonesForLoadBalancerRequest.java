@@ -44,7 +44,7 @@ public class EnableAvailabilityZonesForLoadBalancerRequest extends AmazonWebServ
      * A list of new Availability Zones for the LoadBalancer. Each
      * Availability Zone must be in the same Region as the LoadBalancer.
      */
-    private java.util.List<String> availabilityZones;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> availabilityZones;
 
     /**
      * Default constructor for a new EnableAvailabilityZonesForLoadBalancerRequest object.  Callers should use the
@@ -52,6 +52,8 @@ public class EnableAvailabilityZonesForLoadBalancerRequest extends AmazonWebServ
      */
     public EnableAvailabilityZonesForLoadBalancerRequest() {}
     
+
+
     /**
      * Constructs a new EnableAvailabilityZonesForLoadBalancerRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -64,8 +66,8 @@ public class EnableAvailabilityZonesForLoadBalancerRequest extends AmazonWebServ
      * LoadBalancer.
      */
     public EnableAvailabilityZonesForLoadBalancerRequest(String loadBalancerName, java.util.List<String> availabilityZones) {
-        this.loadBalancerName = loadBalancerName;
-        this.availabilityZones = availabilityZones;
+        setLoadBalancerName(loadBalancerName);
+        setAvailabilityZones(availabilityZones);
     }
 
     
@@ -120,7 +122,8 @@ public class EnableAvailabilityZonesForLoadBalancerRequest extends AmazonWebServ
     public java.util.List<String> getAvailabilityZones() {
         
         if (availabilityZones == null) {
-            availabilityZones = new java.util.ArrayList<String>();
+              availabilityZones = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              availabilityZones.setAutoConstruct(true);
         }
         return availabilityZones;
     }
@@ -137,8 +140,7 @@ public class EnableAvailabilityZonesForLoadBalancerRequest extends AmazonWebServ
             this.availabilityZones = null;
             return;
         }
-
-        java.util.List<String> availabilityZonesCopy = new java.util.ArrayList<String>(availabilityZones.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> availabilityZonesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(availabilityZones.size());
         availabilityZonesCopy.addAll(availabilityZones);
         this.availabilityZones = availabilityZonesCopy;
     }
@@ -179,7 +181,7 @@ public class EnableAvailabilityZonesForLoadBalancerRequest extends AmazonWebServ
         if (availabilityZones == null) {
             this.availabilityZones = null;
         } else {
-            java.util.List<String> availabilityZonesCopy = new java.util.ArrayList<String>(availabilityZones.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> availabilityZonesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(availabilityZones.size());
             availabilityZonesCopy.addAll(availabilityZones);
             this.availabilityZones = availabilityZonesCopy;
         }
@@ -198,8 +200,8 @@ public class EnableAvailabilityZonesForLoadBalancerRequest extends AmazonWebServ
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getLoadBalancerName() != null) sb.append("LoadBalancerName: " + getLoadBalancerName() + ",");    	
+        sb.append("{");
+        if (getLoadBalancerName() != null) sb.append("LoadBalancerName: " + getLoadBalancerName() + ",");
         if (getAvailabilityZones() != null) sb.append("AvailabilityZones: " + getAvailabilityZones() );
         sb.append("}");
         return sb.toString();

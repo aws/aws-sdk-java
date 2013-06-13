@@ -20,7 +20,7 @@ import java.io.Serializable;
  */
 public class DescribeAccountAttributesResult  implements Serializable  {
 
-    private java.util.List<AccountAttribute> accountAttributes;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<AccountAttribute> accountAttributes;
 
     /**
      * Returns the value of the AccountAttributes property for this object.
@@ -30,7 +30,8 @@ public class DescribeAccountAttributesResult  implements Serializable  {
     public java.util.List<AccountAttribute> getAccountAttributes() {
         
         if (accountAttributes == null) {
-            accountAttributes = new java.util.ArrayList<AccountAttribute>();
+              accountAttributes = new com.amazonaws.internal.ListWithAutoConstructFlag<AccountAttribute>();
+              accountAttributes.setAutoConstruct(true);
         }
         return accountAttributes;
     }
@@ -45,8 +46,7 @@ public class DescribeAccountAttributesResult  implements Serializable  {
             this.accountAttributes = null;
             return;
         }
-
-        java.util.List<AccountAttribute> accountAttributesCopy = new java.util.ArrayList<AccountAttribute>(accountAttributes.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<AccountAttribute> accountAttributesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<AccountAttribute>(accountAttributes.size());
         accountAttributesCopy.addAll(accountAttributes);
         this.accountAttributes = accountAttributesCopy;
     }
@@ -83,7 +83,7 @@ public class DescribeAccountAttributesResult  implements Serializable  {
         if (accountAttributes == null) {
             this.accountAttributes = null;
         } else {
-            java.util.List<AccountAttribute> accountAttributesCopy = new java.util.ArrayList<AccountAttribute>(accountAttributes.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<AccountAttribute> accountAttributesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<AccountAttribute>(accountAttributes.size());
             accountAttributesCopy.addAll(accountAttributes);
             this.accountAttributes = accountAttributesCopy;
         }
@@ -102,7 +102,7 @@ public class DescribeAccountAttributesResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getAccountAttributes() != null) sb.append("AccountAttributes: " + getAccountAttributes() );
         sb.append("}");
         return sb.toString();

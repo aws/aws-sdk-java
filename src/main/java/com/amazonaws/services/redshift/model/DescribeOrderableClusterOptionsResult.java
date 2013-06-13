@@ -26,7 +26,7 @@ public class DescribeOrderableClusterOptionsResult  implements Serializable  {
      * An <a>OrderableClusterOption</a> structure containing information
      * about orderable options for the Cluster.
      */
-    private java.util.List<OrderableClusterOption> orderableClusterOptions;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<OrderableClusterOption> orderableClusterOptions;
 
     /**
      * A marker that can be used to retrieve paginated results.
@@ -43,7 +43,8 @@ public class DescribeOrderableClusterOptionsResult  implements Serializable  {
     public java.util.List<OrderableClusterOption> getOrderableClusterOptions() {
         
         if (orderableClusterOptions == null) {
-            orderableClusterOptions = new java.util.ArrayList<OrderableClusterOption>();
+              orderableClusterOptions = new com.amazonaws.internal.ListWithAutoConstructFlag<OrderableClusterOption>();
+              orderableClusterOptions.setAutoConstruct(true);
         }
         return orderableClusterOptions;
     }
@@ -60,8 +61,7 @@ public class DescribeOrderableClusterOptionsResult  implements Serializable  {
             this.orderableClusterOptions = null;
             return;
         }
-
-        java.util.List<OrderableClusterOption> orderableClusterOptionsCopy = new java.util.ArrayList<OrderableClusterOption>(orderableClusterOptions.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<OrderableClusterOption> orderableClusterOptionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<OrderableClusterOption>(orderableClusterOptions.size());
         orderableClusterOptionsCopy.addAll(orderableClusterOptions);
         this.orderableClusterOptions = orderableClusterOptionsCopy;
     }
@@ -102,7 +102,7 @@ public class DescribeOrderableClusterOptionsResult  implements Serializable  {
         if (orderableClusterOptions == null) {
             this.orderableClusterOptions = null;
         } else {
-            java.util.List<OrderableClusterOption> orderableClusterOptionsCopy = new java.util.ArrayList<OrderableClusterOption>(orderableClusterOptions.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<OrderableClusterOption> orderableClusterOptionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<OrderableClusterOption>(orderableClusterOptions.size());
             orderableClusterOptionsCopy.addAll(orderableClusterOptions);
             this.orderableClusterOptions = orderableClusterOptionsCopy;
         }
@@ -155,8 +155,8 @@ public class DescribeOrderableClusterOptionsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getOrderableClusterOptions() != null) sb.append("OrderableClusterOptions: " + getOrderableClusterOptions() + ",");    	
+        sb.append("{");
+        if (getOrderableClusterOptions() != null) sb.append("OrderableClusterOptions: " + getOrderableClusterOptions() + ",");
         if (getMarker() != null) sb.append("Marker: " + getMarker() );
         sb.append("}");
         return sb.toString();

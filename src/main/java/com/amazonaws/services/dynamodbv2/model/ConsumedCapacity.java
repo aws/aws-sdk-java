@@ -130,8 +130,8 @@ public class ConsumedCapacity  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getTableName() != null) sb.append("TableName: " + getTableName() + ",");    	
+        sb.append("{");
+        if (getTableName() != null) sb.append("TableName: " + getTableName() + ",");
         if (getCapacityUnits() != null) sb.append("CapacityUnits: " + getCapacityUnits() );
         sb.append("}");
         return sb.toString();

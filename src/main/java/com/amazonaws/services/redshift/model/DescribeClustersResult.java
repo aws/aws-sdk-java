@@ -33,7 +33,7 @@ public class DescribeClustersResult  implements Serializable  {
      * A list of <a>Cluster</a> objects, where each object describes one
      * cluster.
      */
-    private java.util.List<Cluster> clusters;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Cluster> clusters;
 
     /**
      * A marker at which to continue listing clusters in a new request. A
@@ -91,7 +91,8 @@ public class DescribeClustersResult  implements Serializable  {
     public java.util.List<Cluster> getClusters() {
         
         if (clusters == null) {
-            clusters = new java.util.ArrayList<Cluster>();
+              clusters = new com.amazonaws.internal.ListWithAutoConstructFlag<Cluster>();
+              clusters.setAutoConstruct(true);
         }
         return clusters;
     }
@@ -108,8 +109,7 @@ public class DescribeClustersResult  implements Serializable  {
             this.clusters = null;
             return;
         }
-
-        java.util.List<Cluster> clustersCopy = new java.util.ArrayList<Cluster>(clusters.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Cluster> clustersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Cluster>(clusters.size());
         clustersCopy.addAll(clusters);
         this.clusters = clustersCopy;
     }
@@ -150,7 +150,7 @@ public class DescribeClustersResult  implements Serializable  {
         if (clusters == null) {
             this.clusters = null;
         } else {
-            java.util.List<Cluster> clustersCopy = new java.util.ArrayList<Cluster>(clusters.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Cluster> clustersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Cluster>(clusters.size());
             clustersCopy.addAll(clusters);
             this.clusters = clustersCopy;
         }
@@ -169,8 +169,8 @@ public class DescribeClustersResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");    	
+        sb.append("{");
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");
         if (getClusters() != null) sb.append("Clusters: " + getClusters() );
         sb.append("}");
         return sb.toString();

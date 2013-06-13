@@ -25,13 +25,13 @@ public class ListAvailableSolutionStacksResult  implements Serializable  {
     /**
      * A list of available solution stacks.
      */
-    private java.util.List<String> solutionStacks;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> solutionStacks;
 
     /**
      * A list of available solution stacks and their
      * <a>SolutionStackDescription</a>.
      */
-    private java.util.List<SolutionStackDescription> solutionStackDetails;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<SolutionStackDescription> solutionStackDetails;
 
     /**
      * A list of available solution stacks.
@@ -41,7 +41,8 @@ public class ListAvailableSolutionStacksResult  implements Serializable  {
     public java.util.List<String> getSolutionStacks() {
         
         if (solutionStacks == null) {
-            solutionStacks = new java.util.ArrayList<String>();
+              solutionStacks = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              solutionStacks.setAutoConstruct(true);
         }
         return solutionStacks;
     }
@@ -56,8 +57,7 @@ public class ListAvailableSolutionStacksResult  implements Serializable  {
             this.solutionStacks = null;
             return;
         }
-
-        java.util.List<String> solutionStacksCopy = new java.util.ArrayList<String>(solutionStacks.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> solutionStacksCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(solutionStacks.size());
         solutionStacksCopy.addAll(solutionStacks);
         this.solutionStacks = solutionStacksCopy;
     }
@@ -94,7 +94,7 @@ public class ListAvailableSolutionStacksResult  implements Serializable  {
         if (solutionStacks == null) {
             this.solutionStacks = null;
         } else {
-            java.util.List<String> solutionStacksCopy = new java.util.ArrayList<String>(solutionStacks.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> solutionStacksCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(solutionStacks.size());
             solutionStacksCopy.addAll(solutionStacks);
             this.solutionStacks = solutionStacksCopy;
         }
@@ -112,7 +112,8 @@ public class ListAvailableSolutionStacksResult  implements Serializable  {
     public java.util.List<SolutionStackDescription> getSolutionStackDetails() {
         
         if (solutionStackDetails == null) {
-            solutionStackDetails = new java.util.ArrayList<SolutionStackDescription>();
+              solutionStackDetails = new com.amazonaws.internal.ListWithAutoConstructFlag<SolutionStackDescription>();
+              solutionStackDetails.setAutoConstruct(true);
         }
         return solutionStackDetails;
     }
@@ -129,8 +130,7 @@ public class ListAvailableSolutionStacksResult  implements Serializable  {
             this.solutionStackDetails = null;
             return;
         }
-
-        java.util.List<SolutionStackDescription> solutionStackDetailsCopy = new java.util.ArrayList<SolutionStackDescription>(solutionStackDetails.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<SolutionStackDescription> solutionStackDetailsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<SolutionStackDescription>(solutionStackDetails.size());
         solutionStackDetailsCopy.addAll(solutionStackDetails);
         this.solutionStackDetails = solutionStackDetailsCopy;
     }
@@ -171,7 +171,7 @@ public class ListAvailableSolutionStacksResult  implements Serializable  {
         if (solutionStackDetails == null) {
             this.solutionStackDetails = null;
         } else {
-            java.util.List<SolutionStackDescription> solutionStackDetailsCopy = new java.util.ArrayList<SolutionStackDescription>(solutionStackDetails.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<SolutionStackDescription> solutionStackDetailsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<SolutionStackDescription>(solutionStackDetails.size());
             solutionStackDetailsCopy.addAll(solutionStackDetails);
             this.solutionStackDetails = solutionStackDetailsCopy;
         }
@@ -190,8 +190,8 @@ public class ListAvailableSolutionStacksResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getSolutionStacks() != null) sb.append("SolutionStacks: " + getSolutionStacks() + ",");    	
+        sb.append("{");
+        if (getSolutionStacks() != null) sb.append("SolutionStacks: " + getSolutionStacks() + ",");
         if (getSolutionStackDetails() != null) sb.append("SolutionStackDetails: " + getSolutionStackDetails() );
         sb.append("}");
         return sb.toString();

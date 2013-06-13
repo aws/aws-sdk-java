@@ -72,7 +72,7 @@ public class ListCloudFrontOriginAccessIdentitiesResult  implements Serializable
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getCloudFrontOriginAccessIdentityList() != null) sb.append("CloudFrontOriginAccessIdentityList: " + getCloudFrontOriginAccessIdentityList() );
         sb.append("}");
         return sb.toString();

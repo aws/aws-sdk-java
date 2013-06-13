@@ -146,8 +146,8 @@ public class Signer  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getAwsAccountNumber() != null) sb.append("AwsAccountNumber: " + getAwsAccountNumber() + ",");    	
+        sb.append("{");
+        if (getAwsAccountNumber() != null) sb.append("AwsAccountNumber: " + getAwsAccountNumber() + ",");
         if (getKeyPairIds() != null) sb.append("KeyPairIds: " + getKeyPairIds() );
         sb.append("}");
         return sb.toString();

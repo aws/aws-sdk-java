@@ -89,8 +89,8 @@ public class SetStatusRequestMarshaller implements Marshaller<Request<SetStatusR
                 jsonWriter.key("pipelineId").value(setStatusRequest.getPipelineId());
             }
 
-            java.util.List<String> objectIdsList = setStatusRequest.getObjectIds();
-            if (objectIdsList != null) {
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> objectIdsList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(setStatusRequest.getObjectIds());
+            if (objectIdsList != null && !(objectIdsList.isAutoConstruct() && objectIdsList.isEmpty())) {
 
                 jsonWriter.key("objectIds");
                 jsonWriter.array();

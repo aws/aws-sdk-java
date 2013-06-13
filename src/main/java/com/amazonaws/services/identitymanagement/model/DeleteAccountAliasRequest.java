@@ -43,6 +43,8 @@ public class DeleteAccountAliasRequest extends AmazonWebServiceRequest  implemen
      */
     public DeleteAccountAliasRequest() {}
     
+
+
     /**
      * Constructs a new DeleteAccountAliasRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -51,7 +53,7 @@ public class DeleteAccountAliasRequest extends AmazonWebServiceRequest  implemen
      * @param accountAlias Name of the account alias to delete.
      */
     public DeleteAccountAliasRequest(String accountAlias) {
-        this.accountAlias = accountAlias;
+        setAccountAlias(accountAlias);
     }
 
     
@@ -113,7 +115,7 @@ public class DeleteAccountAliasRequest extends AmazonWebServiceRequest  implemen
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getAccountAlias() != null) sb.append("AccountAlias: " + getAccountAlias() );
         sb.append("}");
         return sb.toString();

@@ -77,7 +77,7 @@ public class ReadPresetResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getPreset() != null) sb.append("Preset: " + getPreset() );
         sb.append("}");
         return sb.toString();

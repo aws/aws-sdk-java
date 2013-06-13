@@ -267,10 +267,10 @@ public class Origin  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getId() != null) sb.append("Id: " + getId() + ",");    	
-        if (getDomainName() != null) sb.append("DomainName: " + getDomainName() + ",");    	
-        if (getS3OriginConfig() != null) sb.append("S3OriginConfig: " + getS3OriginConfig() + ",");    	
+        sb.append("{");
+        if (getId() != null) sb.append("Id: " + getId() + ",");
+        if (getDomainName() != null) sb.append("DomainName: " + getDomainName() + ",");
+        if (getS3OriginConfig() != null) sb.append("S3OriginConfig: " + getS3OriginConfig() + ",");
         if (getCustomOriginConfig() != null) sb.append("CustomOriginConfig: " + getCustomOriginConfig() );
         sb.append("}");
         return sb.toString();

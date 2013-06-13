@@ -72,7 +72,7 @@ public class DefineIndexFieldResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getIndexField() != null) sb.append("IndexField: " + getIndexField() );
         sb.append("}");
         return sb.toString();

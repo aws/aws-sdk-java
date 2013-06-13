@@ -49,7 +49,7 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest  implements S
      * ApproximateFirstReceiveTimestamp, ApproximateReceiveCount,
      * SentTimestamp].
      */
-    private java.util.List<String> attributeNames;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> attributeNames;
 
     /**
      * The maximum number of messages to return. Amazon SQS never returns
@@ -78,6 +78,8 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest  implements S
      */
     public ReceiveMessageRequest() {}
     
+
+
     /**
      * Constructs a new ReceiveMessageRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -86,7 +88,7 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest  implements S
      * @param queueUrl The URL of the SQS queue to take action on.
      */
     public ReceiveMessageRequest(String queueUrl) {
-        this.queueUrl = queueUrl;
+        setQueueUrl(queueUrl);
     }
 
     
@@ -139,7 +141,8 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest  implements S
     public java.util.List<String> getAttributeNames() {
         
         if (attributeNames == null) {
-            attributeNames = new java.util.ArrayList<String>();
+              attributeNames = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              attributeNames.setAutoConstruct(true);
         }
         return attributeNames;
     }
@@ -160,8 +163,7 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest  implements S
             this.attributeNames = null;
             return;
         }
-
-        java.util.List<String> attributeNamesCopy = new java.util.ArrayList<String>(attributeNames.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> attributeNamesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(attributeNames.size());
         attributeNamesCopy.addAll(attributeNames);
         this.attributeNames = attributeNamesCopy;
     }
@@ -210,7 +212,7 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest  implements S
         if (attributeNames == null) {
             this.attributeNames = null;
         } else {
-            java.util.List<String> attributeNamesCopy = new java.util.ArrayList<String>(attributeNames.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> attributeNamesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(attributeNames.size());
             attributeNamesCopy.addAll(attributeNames);
             this.attributeNames = attributeNamesCopy;
         }
@@ -367,11 +369,11 @@ public class ReceiveMessageRequest extends AmazonWebServiceRequest  implements S
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getQueueUrl() != null) sb.append("QueueUrl: " + getQueueUrl() + ",");    	
-        if (getAttributeNames() != null) sb.append("AttributeNames: " + getAttributeNames() + ",");    	
-        if (getMaxNumberOfMessages() != null) sb.append("MaxNumberOfMessages: " + getMaxNumberOfMessages() + ",");    	
-        if (getVisibilityTimeout() != null) sb.append("VisibilityTimeout: " + getVisibilityTimeout() + ",");    	
+        sb.append("{");
+        if (getQueueUrl() != null) sb.append("QueueUrl: " + getQueueUrl() + ",");
+        if (getAttributeNames() != null) sb.append("AttributeNames: " + getAttributeNames() + ",");
+        if (getMaxNumberOfMessages() != null) sb.append("MaxNumberOfMessages: " + getMaxNumberOfMessages() + ",");
+        if (getVisibilityTimeout() != null) sb.append("VisibilityTimeout: " + getVisibilityTimeout() + ",");
         if (getWaitTimeSeconds() != null) sb.append("WaitTimeSeconds: " + getWaitTimeSeconds() );
         sb.append("}");
         return sb.toString();

@@ -41,7 +41,7 @@ public class DescribeObjectsRequest extends AmazonWebServiceRequest  implements 
      * described. You can pass as many as 25 identifiers in a single call to
      * DescribeObjects.
      */
-    private java.util.List<String> objectIds;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> objectIds;
 
     /**
      * Indicates whether any expressions in the object should be evaluated
@@ -120,7 +120,8 @@ public class DescribeObjectsRequest extends AmazonWebServiceRequest  implements 
     public java.util.List<String> getObjectIds() {
         
         if (objectIds == null) {
-            objectIds = new java.util.ArrayList<String>();
+              objectIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              objectIds.setAutoConstruct(true);
         }
         return objectIds;
     }
@@ -139,8 +140,7 @@ public class DescribeObjectsRequest extends AmazonWebServiceRequest  implements 
             this.objectIds = null;
             return;
         }
-
-        java.util.List<String> objectIdsCopy = new java.util.ArrayList<String>(objectIds.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> objectIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(objectIds.size());
         objectIdsCopy.addAll(objectIds);
         this.objectIds = objectIdsCopy;
     }
@@ -185,7 +185,7 @@ public class DescribeObjectsRequest extends AmazonWebServiceRequest  implements 
         if (objectIds == null) {
             this.objectIds = null;
         } else {
-            java.util.List<String> objectIdsCopy = new java.util.ArrayList<String>(objectIds.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> objectIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(objectIds.size());
             objectIdsCopy.addAll(objectIds);
             this.objectIds = objectIdsCopy;
         }
@@ -325,10 +325,10 @@ public class DescribeObjectsRequest extends AmazonWebServiceRequest  implements 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getPipelineId() != null) sb.append("PipelineId: " + getPipelineId() + ",");    	
-        if (getObjectIds() != null) sb.append("ObjectIds: " + getObjectIds() + ",");    	
-        if (isEvaluateExpressions() != null) sb.append("EvaluateExpressions: " + isEvaluateExpressions() + ",");    	
+        sb.append("{");
+        if (getPipelineId() != null) sb.append("PipelineId: " + getPipelineId() + ",");
+        if (getObjectIds() != null) sb.append("ObjectIds: " + getObjectIds() + ",");
+        if (isEvaluateExpressions() != null) sb.append("EvaluateExpressions: " + isEvaluateExpressions() + ",");
         if (getMarker() != null) sb.append("Marker: " + getMarker() );
         sb.append("}");
         return sb.toString();

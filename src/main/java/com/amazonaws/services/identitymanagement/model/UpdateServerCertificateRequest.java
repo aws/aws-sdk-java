@@ -70,6 +70,8 @@ public class UpdateServerCertificateRequest extends AmazonWebServiceRequest  imp
      */
     public UpdateServerCertificateRequest() {}
     
+
+
     /**
      * Constructs a new UpdateServerCertificateRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -79,7 +81,7 @@ public class UpdateServerCertificateRequest extends AmazonWebServiceRequest  imp
      * you want to update.
      */
     public UpdateServerCertificateRequest(String serverCertificateName) {
-        this.serverCertificateName = serverCertificateName;
+        setServerCertificateName(serverCertificateName);
     }
 
     
@@ -245,9 +247,9 @@ public class UpdateServerCertificateRequest extends AmazonWebServiceRequest  imp
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getServerCertificateName() != null) sb.append("ServerCertificateName: " + getServerCertificateName() + ",");    	
-        if (getNewPath() != null) sb.append("NewPath: " + getNewPath() + ",");    	
+        sb.append("{");
+        if (getServerCertificateName() != null) sb.append("ServerCertificateName: " + getServerCertificateName() + ",");
+        if (getNewPath() != null) sb.append("NewPath: " + getNewPath() + ",");
         if (getNewServerCertificateName() != null) sb.append("NewServerCertificateName: " + getNewServerCertificateName() );
         sb.append("}");
         return sb.toString();

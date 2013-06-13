@@ -104,14 +104,14 @@ public class CreateClusterRequest extends AmazonWebServiceRequest  implements Se
      * A list of security groups to be associated with this cluster. <p>
      * Default: The default cluster security group for Amazon Redshift.
      */
-    private java.util.List<String> clusterSecurityGroups;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> clusterSecurityGroups;
 
     /**
      * A list of Virtual Private Cloud (VPC) security groups to be associated
      * with the cluster. <p>Default: The default VPC security group is
      * associated with the cluster.
      */
-    private java.util.List<String> vpcSecurityGroupIds;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> vpcSecurityGroupIds;
 
     /**
      * The name of a cluster subnet group to be associated with this cluster.
@@ -672,7 +672,8 @@ public class CreateClusterRequest extends AmazonWebServiceRequest  implements Se
     public java.util.List<String> getClusterSecurityGroups() {
         
         if (clusterSecurityGroups == null) {
-            clusterSecurityGroups = new java.util.ArrayList<String>();
+              clusterSecurityGroups = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              clusterSecurityGroups.setAutoConstruct(true);
         }
         return clusterSecurityGroups;
     }
@@ -689,8 +690,7 @@ public class CreateClusterRequest extends AmazonWebServiceRequest  implements Se
             this.clusterSecurityGroups = null;
             return;
         }
-
-        java.util.List<String> clusterSecurityGroupsCopy = new java.util.ArrayList<String>(clusterSecurityGroups.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> clusterSecurityGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(clusterSecurityGroups.size());
         clusterSecurityGroupsCopy.addAll(clusterSecurityGroups);
         this.clusterSecurityGroups = clusterSecurityGroupsCopy;
     }
@@ -731,7 +731,7 @@ public class CreateClusterRequest extends AmazonWebServiceRequest  implements Se
         if (clusterSecurityGroups == null) {
             this.clusterSecurityGroups = null;
         } else {
-            java.util.List<String> clusterSecurityGroupsCopy = new java.util.ArrayList<String>(clusterSecurityGroups.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> clusterSecurityGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(clusterSecurityGroups.size());
             clusterSecurityGroupsCopy.addAll(clusterSecurityGroups);
             this.clusterSecurityGroups = clusterSecurityGroupsCopy;
         }
@@ -751,7 +751,8 @@ public class CreateClusterRequest extends AmazonWebServiceRequest  implements Se
     public java.util.List<String> getVpcSecurityGroupIds() {
         
         if (vpcSecurityGroupIds == null) {
-            vpcSecurityGroupIds = new java.util.ArrayList<String>();
+              vpcSecurityGroupIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              vpcSecurityGroupIds.setAutoConstruct(true);
         }
         return vpcSecurityGroupIds;
     }
@@ -770,8 +771,7 @@ public class CreateClusterRequest extends AmazonWebServiceRequest  implements Se
             this.vpcSecurityGroupIds = null;
             return;
         }
-
-        java.util.List<String> vpcSecurityGroupIdsCopy = new java.util.ArrayList<String>(vpcSecurityGroupIds.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> vpcSecurityGroupIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(vpcSecurityGroupIds.size());
         vpcSecurityGroupIdsCopy.addAll(vpcSecurityGroupIds);
         this.vpcSecurityGroupIds = vpcSecurityGroupIdsCopy;
     }
@@ -816,7 +816,7 @@ public class CreateClusterRequest extends AmazonWebServiceRequest  implements Se
         if (vpcSecurityGroupIds == null) {
             this.vpcSecurityGroupIds = null;
         } else {
-            java.util.List<String> vpcSecurityGroupIdsCopy = new java.util.ArrayList<String>(vpcSecurityGroupIds.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> vpcSecurityGroupIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(vpcSecurityGroupIds.size());
             vpcSecurityGroupIdsCopy.addAll(vpcSecurityGroupIds);
             this.vpcSecurityGroupIds = vpcSecurityGroupIdsCopy;
         }
@@ -1586,25 +1586,25 @@ public class CreateClusterRequest extends AmazonWebServiceRequest  implements Se
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getDBName() != null) sb.append("DBName: " + getDBName() + ",");    	
-        if (getClusterIdentifier() != null) sb.append("ClusterIdentifier: " + getClusterIdentifier() + ",");    	
-        if (getClusterType() != null) sb.append("ClusterType: " + getClusterType() + ",");    	
-        if (getNodeType() != null) sb.append("NodeType: " + getNodeType() + ",");    	
-        if (getMasterUsername() != null) sb.append("MasterUsername: " + getMasterUsername() + ",");    	
-        if (getMasterUserPassword() != null) sb.append("MasterUserPassword: " + getMasterUserPassword() + ",");    	
-        if (getClusterSecurityGroups() != null) sb.append("ClusterSecurityGroups: " + getClusterSecurityGroups() + ",");    	
-        if (getVpcSecurityGroupIds() != null) sb.append("VpcSecurityGroupIds: " + getVpcSecurityGroupIds() + ",");    	
-        if (getClusterSubnetGroupName() != null) sb.append("ClusterSubnetGroupName: " + getClusterSubnetGroupName() + ",");    	
-        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");    	
-        if (getPreferredMaintenanceWindow() != null) sb.append("PreferredMaintenanceWindow: " + getPreferredMaintenanceWindow() + ",");    	
-        if (getClusterParameterGroupName() != null) sb.append("ClusterParameterGroupName: " + getClusterParameterGroupName() + ",");    	
-        if (getAutomatedSnapshotRetentionPeriod() != null) sb.append("AutomatedSnapshotRetentionPeriod: " + getAutomatedSnapshotRetentionPeriod() + ",");    	
-        if (getPort() != null) sb.append("Port: " + getPort() + ",");    	
-        if (getClusterVersion() != null) sb.append("ClusterVersion: " + getClusterVersion() + ",");    	
-        if (isAllowVersionUpgrade() != null) sb.append("AllowVersionUpgrade: " + isAllowVersionUpgrade() + ",");    	
-        if (getNumberOfNodes() != null) sb.append("NumberOfNodes: " + getNumberOfNodes() + ",");    	
-        if (isPubliclyAccessible() != null) sb.append("PubliclyAccessible: " + isPubliclyAccessible() + ",");    	
+        sb.append("{");
+        if (getDBName() != null) sb.append("DBName: " + getDBName() + ",");
+        if (getClusterIdentifier() != null) sb.append("ClusterIdentifier: " + getClusterIdentifier() + ",");
+        if (getClusterType() != null) sb.append("ClusterType: " + getClusterType() + ",");
+        if (getNodeType() != null) sb.append("NodeType: " + getNodeType() + ",");
+        if (getMasterUsername() != null) sb.append("MasterUsername: " + getMasterUsername() + ",");
+        if (getMasterUserPassword() != null) sb.append("MasterUserPassword: " + getMasterUserPassword() + ",");
+        if (getClusterSecurityGroups() != null) sb.append("ClusterSecurityGroups: " + getClusterSecurityGroups() + ",");
+        if (getVpcSecurityGroupIds() != null) sb.append("VpcSecurityGroupIds: " + getVpcSecurityGroupIds() + ",");
+        if (getClusterSubnetGroupName() != null) sb.append("ClusterSubnetGroupName: " + getClusterSubnetGroupName() + ",");
+        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");
+        if (getPreferredMaintenanceWindow() != null) sb.append("PreferredMaintenanceWindow: " + getPreferredMaintenanceWindow() + ",");
+        if (getClusterParameterGroupName() != null) sb.append("ClusterParameterGroupName: " + getClusterParameterGroupName() + ",");
+        if (getAutomatedSnapshotRetentionPeriod() != null) sb.append("AutomatedSnapshotRetentionPeriod: " + getAutomatedSnapshotRetentionPeriod() + ",");
+        if (getPort() != null) sb.append("Port: " + getPort() + ",");
+        if (getClusterVersion() != null) sb.append("ClusterVersion: " + getClusterVersion() + ",");
+        if (isAllowVersionUpgrade() != null) sb.append("AllowVersionUpgrade: " + isAllowVersionUpgrade() + ",");
+        if (getNumberOfNodes() != null) sb.append("NumberOfNodes: " + getNumberOfNodes() + ",");
+        if (isPubliclyAccessible() != null) sb.append("PubliclyAccessible: " + isPubliclyAccessible() + ",");
         if (isEncrypted() != null) sb.append("Encrypted: " + isEncrypted() );
         sb.append("}");
         return sb.toString();

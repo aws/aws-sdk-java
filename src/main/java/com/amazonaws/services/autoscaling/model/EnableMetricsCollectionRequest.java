@@ -50,7 +50,7 @@ public class EnableMetricsCollectionRequest extends AmazonWebServiceRequest  imp
      * <li><p>GroupTerminatingInstances</li> <li><p>GroupTotalInstances</li>
      * </ul>
      */
-    private java.util.List<String> metrics;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> metrics;
 
     /**
      * The granularity to associate with the metrics to collect. Currently,
@@ -128,7 +128,8 @@ public class EnableMetricsCollectionRequest extends AmazonWebServiceRequest  imp
     public java.util.List<String> getMetrics() {
         
         if (metrics == null) {
-            metrics = new java.util.ArrayList<String>();
+              metrics = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              metrics.setAutoConstruct(true);
         }
         return metrics;
     }
@@ -155,8 +156,7 @@ public class EnableMetricsCollectionRequest extends AmazonWebServiceRequest  imp
             this.metrics = null;
             return;
         }
-
-        java.util.List<String> metricsCopy = new java.util.ArrayList<String>(metrics.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> metricsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(metrics.size());
         metricsCopy.addAll(metrics);
         this.metrics = metricsCopy;
     }
@@ -217,7 +217,7 @@ public class EnableMetricsCollectionRequest extends AmazonWebServiceRequest  imp
         if (metrics == null) {
             this.metrics = null;
         } else {
-            java.util.List<String> metricsCopy = new java.util.ArrayList<String>(metrics.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> metricsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(metrics.size());
             metricsCopy.addAll(metrics);
             this.metrics = metricsCopy;
         }
@@ -288,9 +288,9 @@ public class EnableMetricsCollectionRequest extends AmazonWebServiceRequest  imp
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getAutoScalingGroupName() != null) sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ",");    	
-        if (getMetrics() != null) sb.append("Metrics: " + getMetrics() + ",");    	
+        sb.append("{");
+        if (getAutoScalingGroupName() != null) sb.append("AutoScalingGroupName: " + getAutoScalingGroupName() + ",");
+        if (getMetrics() != null) sb.append("Metrics: " + getMetrics() + ",");
         if (getGranularity() != null) sb.append("Granularity: " + getGranularity() );
         sb.append("}");
         return sb.toString();

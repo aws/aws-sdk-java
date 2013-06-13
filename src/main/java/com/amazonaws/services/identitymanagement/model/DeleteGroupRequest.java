@@ -41,6 +41,8 @@ public class DeleteGroupRequest extends AmazonWebServiceRequest  implements Seri
      */
     public DeleteGroupRequest() {}
     
+
+
     /**
      * Constructs a new DeleteGroupRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -49,7 +51,7 @@ public class DeleteGroupRequest extends AmazonWebServiceRequest  implements Seri
      * @param groupName Name of the group to delete.
      */
     public DeleteGroupRequest(String groupName) {
-        this.groupName = groupName;
+        setGroupName(groupName);
     }
 
     
@@ -111,7 +113,7 @@ public class DeleteGroupRequest extends AmazonWebServiceRequest  implements Seri
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getGroupName() != null) sb.append("GroupName: " + getGroupName() );
         sb.append("}");
         return sb.toString();

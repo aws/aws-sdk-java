@@ -70,15 +70,8 @@ class HttpClientFactory {
      * @return The new, configured HttpClient.
      */
     public HttpClient createHttpClient(ClientConfiguration config) {
-        /* Form User-Agent information */
-        String userAgent = config.getUserAgent();
-        if (!(userAgent.equals(ClientConfiguration.DEFAULT_USER_AGENT))) {
-            userAgent += ", " + ClientConfiguration.DEFAULT_USER_AGENT;
-        }
-
         /* Set HTTP client parameters */
         HttpParams httpClientParams = new BasicHttpParams();
-        HttpProtocolParams.setUserAgent(httpClientParams, userAgent);
         HttpConnectionParams.setConnectionTimeout(httpClientParams, config.getConnectionTimeout());
         HttpConnectionParams.setSoTimeout(httpClientParams, config.getSocketTimeout());
         HttpConnectionParams.setStaleCheckingEnabled(httpClientParams, true);

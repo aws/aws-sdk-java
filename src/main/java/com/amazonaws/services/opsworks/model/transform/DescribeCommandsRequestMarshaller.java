@@ -92,8 +92,8 @@ public class DescribeCommandsRequestMarshaller implements Marshaller<Request<Des
                 jsonWriter.key("InstanceId").value(describeCommandsRequest.getInstanceId());
             }
 
-            java.util.List<String> commandIdsList = describeCommandsRequest.getCommandIds();
-            if (commandIdsList != null) {
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> commandIdsList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(describeCommandsRequest.getCommandIds());
+            if (commandIdsList != null && !(commandIdsList.isAutoConstruct() && commandIdsList.isEmpty())) {
 
                 jsonWriter.key("CommandIds");
                 jsonWriter.array();

@@ -2086,7 +2086,7 @@ public class AmazonS3Client extends AmazonWebServiceClient implements AmazonS3 {
         }
 
         if (generatePresignedUrlRequest.getContentType() != null) {
-            request.addHeader("content-type", generatePresignedUrlRequest.getContentType());
+            request.addHeader(Headers.CONTENT_TYPE, generatePresignedUrlRequest.getContentType());
         }
 
         addResponseHeaderParameters(request, generatePresignedUrlRequest.getResponseHeaders());

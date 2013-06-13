@@ -24,7 +24,7 @@ import java.io.Serializable;
  */
 public class DescribeExportTasksRequest extends AmazonWebServiceRequest  implements Serializable  {
 
-    private java.util.List<String> exportTaskIds;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> exportTaskIds;
 
     /**
      * Returns the value of the ExportTaskIds property for this object.
@@ -34,7 +34,8 @@ public class DescribeExportTasksRequest extends AmazonWebServiceRequest  impleme
     public java.util.List<String> getExportTaskIds() {
         
         if (exportTaskIds == null) {
-            exportTaskIds = new java.util.ArrayList<String>();
+              exportTaskIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              exportTaskIds.setAutoConstruct(true);
         }
         return exportTaskIds;
     }
@@ -49,8 +50,7 @@ public class DescribeExportTasksRequest extends AmazonWebServiceRequest  impleme
             this.exportTaskIds = null;
             return;
         }
-
-        java.util.List<String> exportTaskIdsCopy = new java.util.ArrayList<String>(exportTaskIds.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> exportTaskIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(exportTaskIds.size());
         exportTaskIdsCopy.addAll(exportTaskIds);
         this.exportTaskIds = exportTaskIdsCopy;
     }
@@ -87,7 +87,7 @@ public class DescribeExportTasksRequest extends AmazonWebServiceRequest  impleme
         if (exportTaskIds == null) {
             this.exportTaskIds = null;
         } else {
-            java.util.List<String> exportTaskIdsCopy = new java.util.ArrayList<String>(exportTaskIds.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> exportTaskIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(exportTaskIds.size());
             exportTaskIdsCopy.addAll(exportTaskIds);
             this.exportTaskIds = exportTaskIdsCopy;
         }
@@ -106,7 +106,7 @@ public class DescribeExportTasksRequest extends AmazonWebServiceRequest  impleme
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getExportTaskIds() != null) sb.append("ExportTaskIds: " + getExportTaskIds() );
         sb.append("}");
         return sb.toString();

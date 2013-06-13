@@ -160,8 +160,8 @@ public class CloneStackRequestMarshaller implements Marshaller<Request<CloneStac
                 jsonWriter.key("ClonePermissions").value(cloneStackRequest.isClonePermissions());
             }
 
-            java.util.List<String> cloneAppIdsList = cloneStackRequest.getCloneAppIds();
-            if (cloneAppIdsList != null) {
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> cloneAppIdsList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(cloneStackRequest.getCloneAppIds());
+            if (cloneAppIdsList != null && !(cloneAppIdsList.isAutoConstruct() && cloneAppIdsList.isEmpty())) {
 
                 jsonWriter.key("CloneAppIds");
                 jsonWriter.array();

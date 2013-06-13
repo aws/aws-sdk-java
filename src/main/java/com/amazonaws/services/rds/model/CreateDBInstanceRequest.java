@@ -106,14 +106,14 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest  implements
      * A list of DB Security Groups to associate with this DB Instance. <p>
      * Default: The default DB Security Group for the database engine.
      */
-    private java.util.List<String> dBSecurityGroups;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> dBSecurityGroups;
 
     /**
      * A list of EC2 VPC Security Groups to associate with this DB Instance.
      * <p> Default: The default EC2 VPC Security Group for the DB Subnet
      * group's VPC.
      */
-    private java.util.List<String> vpcSecurityGroupIds;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> vpcSecurityGroupIds;
 
     /**
      * The EC2 Availability Zone that the database instance will be created
@@ -231,7 +231,13 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest  implements
 
     /**
      * Indicates that the DB Instance should be associated with the specified
-     * option group.
+     * option group. <p> <!-- Note that persistent options, such as the
+     * TDE_SQLServer option for Microsoft SQL Server, cannot be removed from
+     * an option group while DB instances are associated with the option
+     * group. --> Permanent options, such as the TDE option for Oracle
+     * Advanced Security TDE, cannot be removed from an option group, and
+     * that option group cannot be removed from a DB instance once it is
+     * associated with a DB instance
      */
     private String optionGroupName;
 
@@ -264,6 +270,8 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest  implements
      */
     public CreateDBInstanceRequest() {}
     
+
+
     /**
      * Constructs a new CreateDBInstanceRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -311,12 +319,12 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest  implements
      * Constraints: Must contain from 8 to 128 alphanumeric characters.
      */
     public CreateDBInstanceRequest(String dBInstanceIdentifier, Integer allocatedStorage, String dBInstanceClass, String engine, String masterUsername, String masterUserPassword) {
-        this.dBInstanceIdentifier = dBInstanceIdentifier;
-        this.allocatedStorage = allocatedStorage;
-        this.dBInstanceClass = dBInstanceClass;
-        this.engine = engine;
-        this.masterUsername = masterUsername;
-        this.masterUserPassword = masterUserPassword;
+        setDBInstanceIdentifier(dBInstanceIdentifier);
+        setAllocatedStorage(allocatedStorage);
+        setDBInstanceClass(dBInstanceClass);
+        setEngine(engine);
+        setMasterUsername(masterUsername);
+        setMasterUserPassword(masterUserPassword);
     }
 
     
@@ -815,7 +823,8 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest  implements
     public java.util.List<String> getDBSecurityGroups() {
         
         if (dBSecurityGroups == null) {
-            dBSecurityGroups = new java.util.ArrayList<String>();
+              dBSecurityGroups = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              dBSecurityGroups.setAutoConstruct(true);
         }
         return dBSecurityGroups;
     }
@@ -832,8 +841,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest  implements
             this.dBSecurityGroups = null;
             return;
         }
-
-        java.util.List<String> dBSecurityGroupsCopy = new java.util.ArrayList<String>(dBSecurityGroups.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> dBSecurityGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(dBSecurityGroups.size());
         dBSecurityGroupsCopy.addAll(dBSecurityGroups);
         this.dBSecurityGroups = dBSecurityGroupsCopy;
     }
@@ -874,7 +882,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest  implements
         if (dBSecurityGroups == null) {
             this.dBSecurityGroups = null;
         } else {
-            java.util.List<String> dBSecurityGroupsCopy = new java.util.ArrayList<String>(dBSecurityGroups.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> dBSecurityGroupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(dBSecurityGroups.size());
             dBSecurityGroupsCopy.addAll(dBSecurityGroups);
             this.dBSecurityGroups = dBSecurityGroupsCopy;
         }
@@ -894,7 +902,8 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest  implements
     public java.util.List<String> getVpcSecurityGroupIds() {
         
         if (vpcSecurityGroupIds == null) {
-            vpcSecurityGroupIds = new java.util.ArrayList<String>();
+              vpcSecurityGroupIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              vpcSecurityGroupIds.setAutoConstruct(true);
         }
         return vpcSecurityGroupIds;
     }
@@ -913,8 +922,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest  implements
             this.vpcSecurityGroupIds = null;
             return;
         }
-
-        java.util.List<String> vpcSecurityGroupIdsCopy = new java.util.ArrayList<String>(vpcSecurityGroupIds.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> vpcSecurityGroupIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(vpcSecurityGroupIds.size());
         vpcSecurityGroupIdsCopy.addAll(vpcSecurityGroupIds);
         this.vpcSecurityGroupIds = vpcSecurityGroupIdsCopy;
     }
@@ -959,7 +967,7 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest  implements
         if (vpcSecurityGroupIds == null) {
             this.vpcSecurityGroupIds = null;
         } else {
-            java.util.List<String> vpcSecurityGroupIdsCopy = new java.util.ArrayList<String>(vpcSecurityGroupIds.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> vpcSecurityGroupIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(vpcSecurityGroupIds.size());
             vpcSecurityGroupIdsCopy.addAll(vpcSecurityGroupIds);
             this.vpcSecurityGroupIds = vpcSecurityGroupIdsCopy;
         }
@@ -1727,10 +1735,22 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest  implements
     
     /**
      * Indicates that the DB Instance should be associated with the specified
-     * option group.
+     * option group. <p> <!-- Note that persistent options, such as the
+     * TDE_SQLServer option for Microsoft SQL Server, cannot be removed from
+     * an option group while DB instances are associated with the option
+     * group. --> Permanent options, such as the TDE option for Oracle
+     * Advanced Security TDE, cannot be removed from an option group, and
+     * that option group cannot be removed from a DB instance once it is
+     * associated with a DB instance
      *
      * @return Indicates that the DB Instance should be associated with the specified
-     *         option group.
+     *         option group. <p> <!-- Note that persistent options, such as the
+     *         TDE_SQLServer option for Microsoft SQL Server, cannot be removed from
+     *         an option group while DB instances are associated with the option
+     *         group. --> Permanent options, such as the TDE option for Oracle
+     *         Advanced Security TDE, cannot be removed from an option group, and
+     *         that option group cannot be removed from a DB instance once it is
+     *         associated with a DB instance
      */
     public String getOptionGroupName() {
         return optionGroupName;
@@ -1738,10 +1758,22 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest  implements
     
     /**
      * Indicates that the DB Instance should be associated with the specified
-     * option group.
+     * option group. <p> <!-- Note that persistent options, such as the
+     * TDE_SQLServer option for Microsoft SQL Server, cannot be removed from
+     * an option group while DB instances are associated with the option
+     * group. --> Permanent options, such as the TDE option for Oracle
+     * Advanced Security TDE, cannot be removed from an option group, and
+     * that option group cannot be removed from a DB instance once it is
+     * associated with a DB instance
      *
      * @param optionGroupName Indicates that the DB Instance should be associated with the specified
-     *         option group.
+     *         option group. <p> <!-- Note that persistent options, such as the
+     *         TDE_SQLServer option for Microsoft SQL Server, cannot be removed from
+     *         an option group while DB instances are associated with the option
+     *         group. --> Permanent options, such as the TDE option for Oracle
+     *         Advanced Security TDE, cannot be removed from an option group, and
+     *         that option group cannot be removed from a DB instance once it is
+     *         associated with a DB instance
      */
     public void setOptionGroupName(String optionGroupName) {
         this.optionGroupName = optionGroupName;
@@ -1749,12 +1781,24 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest  implements
     
     /**
      * Indicates that the DB Instance should be associated with the specified
-     * option group.
+     * option group. <p> <!-- Note that persistent options, such as the
+     * TDE_SQLServer option for Microsoft SQL Server, cannot be removed from
+     * an option group while DB instances are associated with the option
+     * group. --> Permanent options, such as the TDE option for Oracle
+     * Advanced Security TDE, cannot be removed from an option group, and
+     * that option group cannot be removed from a DB instance once it is
+     * associated with a DB instance
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param optionGroupName Indicates that the DB Instance should be associated with the specified
-     *         option group.
+     *         option group. <p> <!-- Note that persistent options, such as the
+     *         TDE_SQLServer option for Microsoft SQL Server, cannot be removed from
+     *         an option group while DB instances are associated with the option
+     *         group. --> Permanent options, such as the TDE option for Oracle
+     *         Advanced Security TDE, cannot be removed from an option group, and
+     *         that option group cannot be removed from a DB instance once it is
+     *         associated with a DB instance
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -1955,30 +1999,30 @@ public class CreateDBInstanceRequest extends AmazonWebServiceRequest  implements
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getDBName() != null) sb.append("DBName: " + getDBName() + ",");    	
-        if (getDBInstanceIdentifier() != null) sb.append("DBInstanceIdentifier: " + getDBInstanceIdentifier() + ",");    	
-        if (getAllocatedStorage() != null) sb.append("AllocatedStorage: " + getAllocatedStorage() + ",");    	
-        if (getDBInstanceClass() != null) sb.append("DBInstanceClass: " + getDBInstanceClass() + ",");    	
-        if (getEngine() != null) sb.append("Engine: " + getEngine() + ",");    	
-        if (getMasterUsername() != null) sb.append("MasterUsername: " + getMasterUsername() + ",");    	
-        if (getMasterUserPassword() != null) sb.append("MasterUserPassword: " + getMasterUserPassword() + ",");    	
-        if (getDBSecurityGroups() != null) sb.append("DBSecurityGroups: " + getDBSecurityGroups() + ",");    	
-        if (getVpcSecurityGroupIds() != null) sb.append("VpcSecurityGroupIds: " + getVpcSecurityGroupIds() + ",");    	
-        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");    	
-        if (getDBSubnetGroupName() != null) sb.append("DBSubnetGroupName: " + getDBSubnetGroupName() + ",");    	
-        if (getPreferredMaintenanceWindow() != null) sb.append("PreferredMaintenanceWindow: " + getPreferredMaintenanceWindow() + ",");    	
-        if (getDBParameterGroupName() != null) sb.append("DBParameterGroupName: " + getDBParameterGroupName() + ",");    	
-        if (getBackupRetentionPeriod() != null) sb.append("BackupRetentionPeriod: " + getBackupRetentionPeriod() + ",");    	
-        if (getPreferredBackupWindow() != null) sb.append("PreferredBackupWindow: " + getPreferredBackupWindow() + ",");    	
-        if (getPort() != null) sb.append("Port: " + getPort() + ",");    	
-        if (isMultiAZ() != null) sb.append("MultiAZ: " + isMultiAZ() + ",");    	
-        if (getEngineVersion() != null) sb.append("EngineVersion: " + getEngineVersion() + ",");    	
-        if (isAutoMinorVersionUpgrade() != null) sb.append("AutoMinorVersionUpgrade: " + isAutoMinorVersionUpgrade() + ",");    	
-        if (getLicenseModel() != null) sb.append("LicenseModel: " + getLicenseModel() + ",");    	
-        if (getIops() != null) sb.append("Iops: " + getIops() + ",");    	
-        if (getOptionGroupName() != null) sb.append("OptionGroupName: " + getOptionGroupName() + ",");    	
-        if (getCharacterSetName() != null) sb.append("CharacterSetName: " + getCharacterSetName() + ",");    	
+        sb.append("{");
+        if (getDBName() != null) sb.append("DBName: " + getDBName() + ",");
+        if (getDBInstanceIdentifier() != null) sb.append("DBInstanceIdentifier: " + getDBInstanceIdentifier() + ",");
+        if (getAllocatedStorage() != null) sb.append("AllocatedStorage: " + getAllocatedStorage() + ",");
+        if (getDBInstanceClass() != null) sb.append("DBInstanceClass: " + getDBInstanceClass() + ",");
+        if (getEngine() != null) sb.append("Engine: " + getEngine() + ",");
+        if (getMasterUsername() != null) sb.append("MasterUsername: " + getMasterUsername() + ",");
+        if (getMasterUserPassword() != null) sb.append("MasterUserPassword: " + getMasterUserPassword() + ",");
+        if (getDBSecurityGroups() != null) sb.append("DBSecurityGroups: " + getDBSecurityGroups() + ",");
+        if (getVpcSecurityGroupIds() != null) sb.append("VpcSecurityGroupIds: " + getVpcSecurityGroupIds() + ",");
+        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");
+        if (getDBSubnetGroupName() != null) sb.append("DBSubnetGroupName: " + getDBSubnetGroupName() + ",");
+        if (getPreferredMaintenanceWindow() != null) sb.append("PreferredMaintenanceWindow: " + getPreferredMaintenanceWindow() + ",");
+        if (getDBParameterGroupName() != null) sb.append("DBParameterGroupName: " + getDBParameterGroupName() + ",");
+        if (getBackupRetentionPeriod() != null) sb.append("BackupRetentionPeriod: " + getBackupRetentionPeriod() + ",");
+        if (getPreferredBackupWindow() != null) sb.append("PreferredBackupWindow: " + getPreferredBackupWindow() + ",");
+        if (getPort() != null) sb.append("Port: " + getPort() + ",");
+        if (isMultiAZ() != null) sb.append("MultiAZ: " + isMultiAZ() + ",");
+        if (getEngineVersion() != null) sb.append("EngineVersion: " + getEngineVersion() + ",");
+        if (isAutoMinorVersionUpgrade() != null) sb.append("AutoMinorVersionUpgrade: " + isAutoMinorVersionUpgrade() + ",");
+        if (getLicenseModel() != null) sb.append("LicenseModel: " + getLicenseModel() + ",");
+        if (getIops() != null) sb.append("Iops: " + getIops() + ",");
+        if (getOptionGroupName() != null) sb.append("OptionGroupName: " + getOptionGroupName() + ",");
+        if (getCharacterSetName() != null) sb.append("CharacterSetName: " + getCharacterSetName() + ",");
         if (isPubliclyAccessible() != null) sb.append("PubliclyAccessible: " + isPubliclyAccessible() );
         sb.append("}");
         return sb.toString();

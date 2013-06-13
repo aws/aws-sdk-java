@@ -189,10 +189,10 @@ public class RouteTableAssociation  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getRouteTableAssociationId() != null) sb.append("RouteTableAssociationId: " + getRouteTableAssociationId() + ",");    	
-        if (getRouteTableId() != null) sb.append("RouteTableId: " + getRouteTableId() + ",");    	
-        if (getSubnetId() != null) sb.append("SubnetId: " + getSubnetId() + ",");    	
+        sb.append("{");
+        if (getRouteTableAssociationId() != null) sb.append("RouteTableAssociationId: " + getRouteTableAssociationId() + ",");
+        if (getRouteTableId() != null) sb.append("RouteTableId: " + getRouteTableId() + ",");
+        if (getSubnetId() != null) sb.append("SubnetId: " + getSubnetId() + ",");
         if (isMain() != null) sb.append("Main: " + isMain() );
         sb.append("}");
         return sb.toString();

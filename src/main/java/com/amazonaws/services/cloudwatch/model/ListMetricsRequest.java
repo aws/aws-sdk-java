@@ -58,7 +58,7 @@ public class ListMetricsRequest extends AmazonWebServiceRequest  implements Seri
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 10<br/>
      */
-    private java.util.List<DimensionFilter> dimensions;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<DimensionFilter> dimensions;
 
     /**
      * The token returned by a previous call to indicate that there is more
@@ -166,7 +166,8 @@ public class ListMetricsRequest extends AmazonWebServiceRequest  implements Seri
     public java.util.List<DimensionFilter> getDimensions() {
         
         if (dimensions == null) {
-            dimensions = new java.util.ArrayList<DimensionFilter>();
+              dimensions = new com.amazonaws.internal.ListWithAutoConstructFlag<DimensionFilter>();
+              dimensions.setAutoConstruct(true);
         }
         return dimensions;
     }
@@ -184,8 +185,7 @@ public class ListMetricsRequest extends AmazonWebServiceRequest  implements Seri
             this.dimensions = null;
             return;
         }
-
-        java.util.List<DimensionFilter> dimensionsCopy = new java.util.ArrayList<DimensionFilter>(dimensions.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<DimensionFilter> dimensionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<DimensionFilter>(dimensions.size());
         dimensionsCopy.addAll(dimensions);
         this.dimensions = dimensionsCopy;
     }
@@ -228,7 +228,7 @@ public class ListMetricsRequest extends AmazonWebServiceRequest  implements Seri
         if (dimensions == null) {
             this.dimensions = null;
         } else {
-            java.util.List<DimensionFilter> dimensionsCopy = new java.util.ArrayList<DimensionFilter>(dimensions.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<DimensionFilter> dimensionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<DimensionFilter>(dimensions.size());
             dimensionsCopy.addAll(dimensions);
             this.dimensions = dimensionsCopy;
         }
@@ -287,10 +287,10 @@ public class ListMetricsRequest extends AmazonWebServiceRequest  implements Seri
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getNamespace() != null) sb.append("Namespace: " + getNamespace() + ",");    	
-        if (getMetricName() != null) sb.append("MetricName: " + getMetricName() + ",");    	
-        if (getDimensions() != null) sb.append("Dimensions: " + getDimensions() + ",");    	
+        sb.append("{");
+        if (getNamespace() != null) sb.append("Namespace: " + getNamespace() + ",");
+        if (getMetricName() != null) sb.append("MetricName: " + getMetricName() + ",");
+        if (getDimensions() != null) sb.append("Dimensions: " + getDimensions() + ",");
         if (getNextToken() != null) sb.append("NextToken: " + getNextToken() );
         sb.append("}");
         return sb.toString();

@@ -486,11 +486,11 @@ public class AssumeRoleRequest extends AmazonWebServiceRequest  implements Seria
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getRoleArn() != null) sb.append("RoleArn: " + getRoleArn() + ",");    	
-        if (getRoleSessionName() != null) sb.append("RoleSessionName: " + getRoleSessionName() + ",");    	
-        if (getPolicy() != null) sb.append("Policy: " + getPolicy() + ",");    	
-        if (getDurationSeconds() != null) sb.append("DurationSeconds: " + getDurationSeconds() + ",");    	
+        sb.append("{");
+        if (getRoleArn() != null) sb.append("RoleArn: " + getRoleArn() + ",");
+        if (getRoleSessionName() != null) sb.append("RoleSessionName: " + getRoleSessionName() + ",");
+        if (getPolicy() != null) sb.append("Policy: " + getPolicy() + ",");
+        if (getDurationSeconds() != null) sb.append("DurationSeconds: " + getDurationSeconds() + ",");
         if (getExternalId() != null) sb.append("ExternalId: " + getExternalId() );
         sb.append("}");
         return sb.toString();

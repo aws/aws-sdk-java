@@ -25,7 +25,7 @@ public class DescribeAdjustmentTypesResult  implements Serializable  {
     /**
      * A list of specific policy adjustment types.
      */
-    private java.util.List<AdjustmentType> adjustmentTypes;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<AdjustmentType> adjustmentTypes;
 
     /**
      * A list of specific policy adjustment types.
@@ -35,7 +35,8 @@ public class DescribeAdjustmentTypesResult  implements Serializable  {
     public java.util.List<AdjustmentType> getAdjustmentTypes() {
         
         if (adjustmentTypes == null) {
-            adjustmentTypes = new java.util.ArrayList<AdjustmentType>();
+              adjustmentTypes = new com.amazonaws.internal.ListWithAutoConstructFlag<AdjustmentType>();
+              adjustmentTypes.setAutoConstruct(true);
         }
         return adjustmentTypes;
     }
@@ -50,8 +51,7 @@ public class DescribeAdjustmentTypesResult  implements Serializable  {
             this.adjustmentTypes = null;
             return;
         }
-
-        java.util.List<AdjustmentType> adjustmentTypesCopy = new java.util.ArrayList<AdjustmentType>(adjustmentTypes.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<AdjustmentType> adjustmentTypesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<AdjustmentType>(adjustmentTypes.size());
         adjustmentTypesCopy.addAll(adjustmentTypes);
         this.adjustmentTypes = adjustmentTypesCopy;
     }
@@ -88,7 +88,7 @@ public class DescribeAdjustmentTypesResult  implements Serializable  {
         if (adjustmentTypes == null) {
             this.adjustmentTypes = null;
         } else {
-            java.util.List<AdjustmentType> adjustmentTypesCopy = new java.util.ArrayList<AdjustmentType>(adjustmentTypes.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<AdjustmentType> adjustmentTypesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<AdjustmentType>(adjustmentTypes.size());
             adjustmentTypesCopy.addAll(adjustmentTypes);
             this.adjustmentTypes = adjustmentTypesCopy;
         }
@@ -107,7 +107,7 @@ public class DescribeAdjustmentTypesResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getAdjustmentTypes() != null) sb.append("AdjustmentTypes: " + getAdjustmentTypes() );
         sb.append("}");
         return sb.toString();

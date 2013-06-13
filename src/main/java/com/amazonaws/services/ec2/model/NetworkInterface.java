@@ -46,15 +46,15 @@ public class NetworkInterface  implements Serializable  {
 
     private Boolean sourceDestCheck;
 
-    private java.util.List<GroupIdentifier> groups;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<GroupIdentifier> groups;
 
     private NetworkInterfaceAttachment attachment;
 
     private NetworkInterfaceAssociation association;
 
-    private java.util.List<Tag> tagSet;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagSet;
 
-    private java.util.List<NetworkInterfacePrivateIpAddress> privateIpAddresses;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<NetworkInterfacePrivateIpAddress> privateIpAddresses;
 
     /**
      * Returns the value of the NetworkInterfaceId property for this object.
@@ -524,7 +524,8 @@ public class NetworkInterface  implements Serializable  {
     public java.util.List<GroupIdentifier> getGroups() {
         
         if (groups == null) {
-            groups = new java.util.ArrayList<GroupIdentifier>();
+              groups = new com.amazonaws.internal.ListWithAutoConstructFlag<GroupIdentifier>();
+              groups.setAutoConstruct(true);
         }
         return groups;
     }
@@ -539,8 +540,7 @@ public class NetworkInterface  implements Serializable  {
             this.groups = null;
             return;
         }
-
-        java.util.List<GroupIdentifier> groupsCopy = new java.util.ArrayList<GroupIdentifier>(groups.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<GroupIdentifier> groupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<GroupIdentifier>(groups.size());
         groupsCopy.addAll(groups);
         this.groups = groupsCopy;
     }
@@ -577,7 +577,7 @@ public class NetworkInterface  implements Serializable  {
         if (groups == null) {
             this.groups = null;
         } else {
-            java.util.List<GroupIdentifier> groupsCopy = new java.util.ArrayList<GroupIdentifier>(groups.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<GroupIdentifier> groupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<GroupIdentifier>(groups.size());
             groupsCopy.addAll(groups);
             this.groups = groupsCopy;
         }
@@ -661,7 +661,8 @@ public class NetworkInterface  implements Serializable  {
     public java.util.List<Tag> getTagSet() {
         
         if (tagSet == null) {
-            tagSet = new java.util.ArrayList<Tag>();
+              tagSet = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>();
+              tagSet.setAutoConstruct(true);
         }
         return tagSet;
     }
@@ -676,8 +677,7 @@ public class NetworkInterface  implements Serializable  {
             this.tagSet = null;
             return;
         }
-
-        java.util.List<Tag> tagSetCopy = new java.util.ArrayList<Tag>(tagSet.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagSetCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tagSet.size());
         tagSetCopy.addAll(tagSet);
         this.tagSet = tagSetCopy;
     }
@@ -714,7 +714,7 @@ public class NetworkInterface  implements Serializable  {
         if (tagSet == null) {
             this.tagSet = null;
         } else {
-            java.util.List<Tag> tagSetCopy = new java.util.ArrayList<Tag>(tagSet.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagSetCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tagSet.size());
             tagSetCopy.addAll(tagSet);
             this.tagSet = tagSetCopy;
         }
@@ -730,7 +730,8 @@ public class NetworkInterface  implements Serializable  {
     public java.util.List<NetworkInterfacePrivateIpAddress> getPrivateIpAddresses() {
         
         if (privateIpAddresses == null) {
-            privateIpAddresses = new java.util.ArrayList<NetworkInterfacePrivateIpAddress>();
+              privateIpAddresses = new com.amazonaws.internal.ListWithAutoConstructFlag<NetworkInterfacePrivateIpAddress>();
+              privateIpAddresses.setAutoConstruct(true);
         }
         return privateIpAddresses;
     }
@@ -745,8 +746,7 @@ public class NetworkInterface  implements Serializable  {
             this.privateIpAddresses = null;
             return;
         }
-
-        java.util.List<NetworkInterfacePrivateIpAddress> privateIpAddressesCopy = new java.util.ArrayList<NetworkInterfacePrivateIpAddress>(privateIpAddresses.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<NetworkInterfacePrivateIpAddress> privateIpAddressesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<NetworkInterfacePrivateIpAddress>(privateIpAddresses.size());
         privateIpAddressesCopy.addAll(privateIpAddresses);
         this.privateIpAddresses = privateIpAddressesCopy;
     }
@@ -783,7 +783,7 @@ public class NetworkInterface  implements Serializable  {
         if (privateIpAddresses == null) {
             this.privateIpAddresses = null;
         } else {
-            java.util.List<NetworkInterfacePrivateIpAddress> privateIpAddressesCopy = new java.util.ArrayList<NetworkInterfacePrivateIpAddress>(privateIpAddresses.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<NetworkInterfacePrivateIpAddress> privateIpAddressesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<NetworkInterfacePrivateIpAddress>(privateIpAddresses.size());
             privateIpAddressesCopy.addAll(privateIpAddresses);
             this.privateIpAddresses = privateIpAddressesCopy;
         }
@@ -802,24 +802,24 @@ public class NetworkInterface  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getNetworkInterfaceId() != null) sb.append("NetworkInterfaceId: " + getNetworkInterfaceId() + ",");    	
-        if (getSubnetId() != null) sb.append("SubnetId: " + getSubnetId() + ",");    	
-        if (getVpcId() != null) sb.append("VpcId: " + getVpcId() + ",");    	
-        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");    	
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");    	
-        if (getOwnerId() != null) sb.append("OwnerId: " + getOwnerId() + ",");    	
-        if (getRequesterId() != null) sb.append("RequesterId: " + getRequesterId() + ",");    	
-        if (isRequesterManaged() != null) sb.append("RequesterManaged: " + isRequesterManaged() + ",");    	
-        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");    	
-        if (getMacAddress() != null) sb.append("MacAddress: " + getMacAddress() + ",");    	
-        if (getPrivateIpAddress() != null) sb.append("PrivateIpAddress: " + getPrivateIpAddress() + ",");    	
-        if (getPrivateDnsName() != null) sb.append("PrivateDnsName: " + getPrivateDnsName() + ",");    	
-        if (isSourceDestCheck() != null) sb.append("SourceDestCheck: " + isSourceDestCheck() + ",");    	
-        if (getGroups() != null) sb.append("Groups: " + getGroups() + ",");    	
-        if (getAttachment() != null) sb.append("Attachment: " + getAttachment() + ",");    	
-        if (getAssociation() != null) sb.append("Association: " + getAssociation() + ",");    	
-        if (getTagSet() != null) sb.append("TagSet: " + getTagSet() + ",");    	
+        sb.append("{");
+        if (getNetworkInterfaceId() != null) sb.append("NetworkInterfaceId: " + getNetworkInterfaceId() + ",");
+        if (getSubnetId() != null) sb.append("SubnetId: " + getSubnetId() + ",");
+        if (getVpcId() != null) sb.append("VpcId: " + getVpcId() + ",");
+        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");
+        if (getOwnerId() != null) sb.append("OwnerId: " + getOwnerId() + ",");
+        if (getRequesterId() != null) sb.append("RequesterId: " + getRequesterId() + ",");
+        if (isRequesterManaged() != null) sb.append("RequesterManaged: " + isRequesterManaged() + ",");
+        if (getStatus() != null) sb.append("Status: " + getStatus() + ",");
+        if (getMacAddress() != null) sb.append("MacAddress: " + getMacAddress() + ",");
+        if (getPrivateIpAddress() != null) sb.append("PrivateIpAddress: " + getPrivateIpAddress() + ",");
+        if (getPrivateDnsName() != null) sb.append("PrivateDnsName: " + getPrivateDnsName() + ",");
+        if (isSourceDestCheck() != null) sb.append("SourceDestCheck: " + isSourceDestCheck() + ",");
+        if (getGroups() != null) sb.append("Groups: " + getGroups() + ",");
+        if (getAttachment() != null) sb.append("Attachment: " + getAttachment() + ",");
+        if (getAssociation() != null) sb.append("Association: " + getAssociation() + ",");
+        if (getTagSet() != null) sb.append("TagSet: " + getTagSet() + ",");
         if (getPrivateIpAddresses() != null) sb.append("PrivateIpAddresses: " + getPrivateIpAddresses() );
         sb.append("}");
         return sb.toString();

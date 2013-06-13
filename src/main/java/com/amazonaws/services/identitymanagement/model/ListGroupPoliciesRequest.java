@@ -67,6 +67,8 @@ public class ListGroupPoliciesRequest extends AmazonWebServiceRequest  implement
      */
     public ListGroupPoliciesRequest() {}
     
+
+
     /**
      * Constructs a new ListGroupPoliciesRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -75,7 +77,7 @@ public class ListGroupPoliciesRequest extends AmazonWebServiceRequest  implement
      * @param groupName The name of the group to list policies for.
      */
     public ListGroupPoliciesRequest(String groupName) {
-        this.groupName = groupName;
+        setGroupName(groupName);
     }
 
     
@@ -262,9 +264,9 @@ public class ListGroupPoliciesRequest extends AmazonWebServiceRequest  implement
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getGroupName() != null) sb.append("GroupName: " + getGroupName() + ",");    	
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");    	
+        sb.append("{");
+        if (getGroupName() != null) sb.append("GroupName: " + getGroupName() + ",");
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");
         if (getMaxItems() != null) sb.append("MaxItems: " + getMaxItems() );
         sb.append("}");
         return sb.toString();

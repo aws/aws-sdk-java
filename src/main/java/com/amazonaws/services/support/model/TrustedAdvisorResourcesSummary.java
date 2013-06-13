@@ -217,10 +217,10 @@ public class TrustedAdvisorResourcesSummary  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getResourcesProcessed() != null) sb.append("ResourcesProcessed: " + getResourcesProcessed() + ",");    	
-        if (getResourcesFlagged() != null) sb.append("ResourcesFlagged: " + getResourcesFlagged() + ",");    	
-        if (getResourcesIgnored() != null) sb.append("ResourcesIgnored: " + getResourcesIgnored() + ",");    	
+        sb.append("{");
+        if (getResourcesProcessed() != null) sb.append("ResourcesProcessed: " + getResourcesProcessed() + ",");
+        if (getResourcesFlagged() != null) sb.append("ResourcesFlagged: " + getResourcesFlagged() + ",");
+        if (getResourcesIgnored() != null) sb.append("ResourcesIgnored: " + getResourcesIgnored() + ",");
         if (getResourcesSuppressed() != null) sb.append("ResourcesSuppressed: " + getResourcesSuppressed() );
         sb.append("}");
         return sb.toString();

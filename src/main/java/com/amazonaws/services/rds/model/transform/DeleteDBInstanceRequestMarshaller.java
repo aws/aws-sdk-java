@@ -38,7 +38,7 @@ public class DeleteDBInstanceRequestMarshaller implements Marshaller<Request<Del
 
         Request<DeleteDBInstanceRequest> request = new DefaultRequest<DeleteDBInstanceRequest>(deleteDBInstanceRequest, "AmazonRDS");
         request.addParameter("Action", "DeleteDBInstance");
-        request.addParameter("Version", "2013-02-12");
+        request.addParameter("Version", "2013-05-15");
 
         if (deleteDBInstanceRequest.getDBInstanceIdentifier() != null) {
             request.addParameter("DBInstanceIdentifier", StringUtils.fromString(deleteDBInstanceRequest.getDBInstanceIdentifier()));

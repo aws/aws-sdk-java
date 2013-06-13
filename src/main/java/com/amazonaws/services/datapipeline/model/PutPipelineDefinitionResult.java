@@ -26,13 +26,13 @@ public class PutPipelineDefinitionResult  implements Serializable  {
      * A list of the validation errors that are associated with the objects
      * defined in <code>pipelineObjects</code>.
      */
-    private java.util.List<ValidationError> validationErrors;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<ValidationError> validationErrors;
 
     /**
      * A list of the validation warnings that are associated with the objects
      * defined in <code>pipelineObjects</code>.
      */
-    private java.util.List<ValidationWarning> validationWarnings;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<ValidationWarning> validationWarnings;
 
     /**
      * If <code>True</code>, there were validation errors. If errored is
@@ -52,7 +52,8 @@ public class PutPipelineDefinitionResult  implements Serializable  {
     public java.util.List<ValidationError> getValidationErrors() {
         
         if (validationErrors == null) {
-            validationErrors = new java.util.ArrayList<ValidationError>();
+              validationErrors = new com.amazonaws.internal.ListWithAutoConstructFlag<ValidationError>();
+              validationErrors.setAutoConstruct(true);
         }
         return validationErrors;
     }
@@ -69,8 +70,7 @@ public class PutPipelineDefinitionResult  implements Serializable  {
             this.validationErrors = null;
             return;
         }
-
-        java.util.List<ValidationError> validationErrorsCopy = new java.util.ArrayList<ValidationError>(validationErrors.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<ValidationError> validationErrorsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ValidationError>(validationErrors.size());
         validationErrorsCopy.addAll(validationErrors);
         this.validationErrors = validationErrorsCopy;
     }
@@ -111,7 +111,7 @@ public class PutPipelineDefinitionResult  implements Serializable  {
         if (validationErrors == null) {
             this.validationErrors = null;
         } else {
-            java.util.List<ValidationError> validationErrorsCopy = new java.util.ArrayList<ValidationError>(validationErrors.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<ValidationError> validationErrorsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ValidationError>(validationErrors.size());
             validationErrorsCopy.addAll(validationErrors);
             this.validationErrors = validationErrorsCopy;
         }
@@ -129,7 +129,8 @@ public class PutPipelineDefinitionResult  implements Serializable  {
     public java.util.List<ValidationWarning> getValidationWarnings() {
         
         if (validationWarnings == null) {
-            validationWarnings = new java.util.ArrayList<ValidationWarning>();
+              validationWarnings = new com.amazonaws.internal.ListWithAutoConstructFlag<ValidationWarning>();
+              validationWarnings.setAutoConstruct(true);
         }
         return validationWarnings;
     }
@@ -146,8 +147,7 @@ public class PutPipelineDefinitionResult  implements Serializable  {
             this.validationWarnings = null;
             return;
         }
-
-        java.util.List<ValidationWarning> validationWarningsCopy = new java.util.ArrayList<ValidationWarning>(validationWarnings.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<ValidationWarning> validationWarningsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ValidationWarning>(validationWarnings.size());
         validationWarningsCopy.addAll(validationWarnings);
         this.validationWarnings = validationWarningsCopy;
     }
@@ -188,7 +188,7 @@ public class PutPipelineDefinitionResult  implements Serializable  {
         if (validationWarnings == null) {
             this.validationWarnings = null;
         } else {
-            java.util.List<ValidationWarning> validationWarningsCopy = new java.util.ArrayList<ValidationWarning>(validationWarnings.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<ValidationWarning> validationWarningsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ValidationWarning>(validationWarnings.size());
             validationWarningsCopy.addAll(validationWarnings);
             this.validationWarnings = validationWarningsCopy;
         }
@@ -274,9 +274,9 @@ public class PutPipelineDefinitionResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getValidationErrors() != null) sb.append("ValidationErrors: " + getValidationErrors() + ",");    	
-        if (getValidationWarnings() != null) sb.append("ValidationWarnings: " + getValidationWarnings() + ",");    	
+        sb.append("{");
+        if (getValidationErrors() != null) sb.append("ValidationErrors: " + getValidationErrors() + ",");
+        if (getValidationWarnings() != null) sb.append("ValidationWarnings: " + getValidationWarnings() + ",");
         if (isErrored() != null) sb.append("Errored: " + isErrored() );
         sb.append("}");
         return sb.toString();

@@ -37,7 +37,7 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest  implements 
     /**
      * A set of one or more subnet IDs.
      */
-    private java.util.List<String> subnetIds;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> subnetIds;
 
     /**
      * A list of filters used to match properties for Subnets. For a complete
@@ -45,7 +45,7 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest  implements 
      * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      * EC2 API reference</a>.
      */
-    private java.util.List<Filter> filters;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filters;
 
     /**
      * A set of one or more subnet IDs.
@@ -55,7 +55,8 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest  implements 
     public java.util.List<String> getSubnetIds() {
         
         if (subnetIds == null) {
-            subnetIds = new java.util.ArrayList<String>();
+              subnetIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              subnetIds.setAutoConstruct(true);
         }
         return subnetIds;
     }
@@ -70,8 +71,7 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest  implements 
             this.subnetIds = null;
             return;
         }
-
-        java.util.List<String> subnetIdsCopy = new java.util.ArrayList<String>(subnetIds.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> subnetIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(subnetIds.size());
         subnetIdsCopy.addAll(subnetIds);
         this.subnetIds = subnetIdsCopy;
     }
@@ -108,7 +108,7 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest  implements 
         if (subnetIds == null) {
             this.subnetIds = null;
         } else {
-            java.util.List<String> subnetIdsCopy = new java.util.ArrayList<String>(subnetIds.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> subnetIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(subnetIds.size());
             subnetIdsCopy.addAll(subnetIds);
             this.subnetIds = subnetIdsCopy;
         }
@@ -130,7 +130,8 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest  implements 
     public java.util.List<Filter> getFilters() {
         
         if (filters == null) {
-            filters = new java.util.ArrayList<Filter>();
+              filters = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>();
+              filters.setAutoConstruct(true);
         }
         return filters;
     }
@@ -151,8 +152,7 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest  implements 
             this.filters = null;
             return;
         }
-
-        java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>(filters.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filtersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>(filters.size());
         filtersCopy.addAll(filters);
         this.filters = filtersCopy;
     }
@@ -201,7 +201,7 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest  implements 
         if (filters == null) {
             this.filters = null;
         } else {
-            java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>(filters.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filtersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>(filters.size());
             filtersCopy.addAll(filters);
             this.filters = filtersCopy;
         }
@@ -220,8 +220,8 @@ public class DescribeSubnetsRequest extends AmazonWebServiceRequest  implements 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getSubnetIds() != null) sb.append("SubnetIds: " + getSubnetIds() + ",");    	
+        sb.append("{");
+        if (getSubnetIds() != null) sb.append("SubnetIds: " + getSubnetIds() + ",");
         if (getFilters() != null) sb.append("Filters: " + getFilters() );
         sb.append("}");
         return sb.toString();

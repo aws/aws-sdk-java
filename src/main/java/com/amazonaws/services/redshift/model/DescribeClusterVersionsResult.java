@@ -30,7 +30,7 @@ public class DescribeClusterVersionsResult  implements Serializable  {
     /**
      * A list of <code>Version</code> elements.
      */
-    private java.util.List<ClusterVersion> clusterVersions;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<ClusterVersion> clusterVersions;
 
     /**
      * The identifier returned to allow retrieval of paginated results.
@@ -74,7 +74,8 @@ public class DescribeClusterVersionsResult  implements Serializable  {
     public java.util.List<ClusterVersion> getClusterVersions() {
         
         if (clusterVersions == null) {
-            clusterVersions = new java.util.ArrayList<ClusterVersion>();
+              clusterVersions = new com.amazonaws.internal.ListWithAutoConstructFlag<ClusterVersion>();
+              clusterVersions.setAutoConstruct(true);
         }
         return clusterVersions;
     }
@@ -89,8 +90,7 @@ public class DescribeClusterVersionsResult  implements Serializable  {
             this.clusterVersions = null;
             return;
         }
-
-        java.util.List<ClusterVersion> clusterVersionsCopy = new java.util.ArrayList<ClusterVersion>(clusterVersions.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<ClusterVersion> clusterVersionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ClusterVersion>(clusterVersions.size());
         clusterVersionsCopy.addAll(clusterVersions);
         this.clusterVersions = clusterVersionsCopy;
     }
@@ -127,7 +127,7 @@ public class DescribeClusterVersionsResult  implements Serializable  {
         if (clusterVersions == null) {
             this.clusterVersions = null;
         } else {
-            java.util.List<ClusterVersion> clusterVersionsCopy = new java.util.ArrayList<ClusterVersion>(clusterVersions.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<ClusterVersion> clusterVersionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ClusterVersion>(clusterVersions.size());
             clusterVersionsCopy.addAll(clusterVersions);
             this.clusterVersions = clusterVersionsCopy;
         }
@@ -146,8 +146,8 @@ public class DescribeClusterVersionsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");    	
+        sb.append("{");
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");
         if (getClusterVersions() != null) sb.append("ClusterVersions: " + getClusterVersions() );
         sb.append("}");
         return sb.toString();

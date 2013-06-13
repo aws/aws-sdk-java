@@ -25,7 +25,7 @@ public class DescribeCustomerGatewaysResult  implements Serializable  {
     /**
      * 
      */
-    private java.util.List<CustomerGateway> customerGateways;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<CustomerGateway> customerGateways;
 
     /**
      * 
@@ -35,7 +35,8 @@ public class DescribeCustomerGatewaysResult  implements Serializable  {
     public java.util.List<CustomerGateway> getCustomerGateways() {
         
         if (customerGateways == null) {
-            customerGateways = new java.util.ArrayList<CustomerGateway>();
+              customerGateways = new com.amazonaws.internal.ListWithAutoConstructFlag<CustomerGateway>();
+              customerGateways.setAutoConstruct(true);
         }
         return customerGateways;
     }
@@ -50,8 +51,7 @@ public class DescribeCustomerGatewaysResult  implements Serializable  {
             this.customerGateways = null;
             return;
         }
-
-        java.util.List<CustomerGateway> customerGatewaysCopy = new java.util.ArrayList<CustomerGateway>(customerGateways.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<CustomerGateway> customerGatewaysCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<CustomerGateway>(customerGateways.size());
         customerGatewaysCopy.addAll(customerGateways);
         this.customerGateways = customerGatewaysCopy;
     }
@@ -88,7 +88,7 @@ public class DescribeCustomerGatewaysResult  implements Serializable  {
         if (customerGateways == null) {
             this.customerGateways = null;
         } else {
-            java.util.List<CustomerGateway> customerGatewaysCopy = new java.util.ArrayList<CustomerGateway>(customerGateways.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<CustomerGateway> customerGatewaysCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<CustomerGateway>(customerGateways.size());
             customerGatewaysCopy.addAll(customerGateways);
             this.customerGateways = customerGatewaysCopy;
         }
@@ -107,7 +107,7 @@ public class DescribeCustomerGatewaysResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getCustomerGateways() != null) sb.append("CustomerGateways: " + getCustomerGateways() );
         sb.append("}");
         return sb.toString();

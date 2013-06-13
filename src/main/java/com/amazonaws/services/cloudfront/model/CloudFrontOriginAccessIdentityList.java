@@ -58,7 +58,7 @@ public class CloudFrontOriginAccessIdentityList  implements Serializable  {
      * element for each origin access identity that was created by the
      * current AWS account.
      */
-    private java.util.List<CloudFrontOriginAccessIdentitySummary> items;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<CloudFrontOriginAccessIdentitySummary> items;
 
     /**
      * Default constructor for a new CloudFrontOriginAccessIdentityList object.  Callers should use the
@@ -299,7 +299,8 @@ public class CloudFrontOriginAccessIdentityList  implements Serializable  {
     public java.util.List<CloudFrontOriginAccessIdentitySummary> getItems() {
         
         if (items == null) {
-            items = new java.util.ArrayList<CloudFrontOriginAccessIdentitySummary>();
+              items = new com.amazonaws.internal.ListWithAutoConstructFlag<CloudFrontOriginAccessIdentitySummary>();
+              items.setAutoConstruct(true);
         }
         return items;
     }
@@ -318,8 +319,7 @@ public class CloudFrontOriginAccessIdentityList  implements Serializable  {
             this.items = null;
             return;
         }
-
-        java.util.List<CloudFrontOriginAccessIdentitySummary> itemsCopy = new java.util.ArrayList<CloudFrontOriginAccessIdentitySummary>(items.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<CloudFrontOriginAccessIdentitySummary> itemsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<CloudFrontOriginAccessIdentitySummary>(items.size());
         itemsCopy.addAll(items);
         this.items = itemsCopy;
     }
@@ -364,7 +364,7 @@ public class CloudFrontOriginAccessIdentityList  implements Serializable  {
         if (items == null) {
             this.items = null;
         } else {
-            java.util.List<CloudFrontOriginAccessIdentitySummary> itemsCopy = new java.util.ArrayList<CloudFrontOriginAccessIdentitySummary>(items.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<CloudFrontOriginAccessIdentitySummary> itemsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<CloudFrontOriginAccessIdentitySummary>(items.size());
             itemsCopy.addAll(items);
             this.items = itemsCopy;
         }
@@ -383,12 +383,12 @@ public class CloudFrontOriginAccessIdentityList  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");    	
-        if (getNextMarker() != null) sb.append("NextMarker: " + getNextMarker() + ",");    	
-        if (getMaxItems() != null) sb.append("MaxItems: " + getMaxItems() + ",");    	
-        if (isTruncated() != null) sb.append("IsTruncated: " + isTruncated() + ",");    	
-        if (getQuantity() != null) sb.append("Quantity: " + getQuantity() + ",");    	
+        sb.append("{");
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");
+        if (getNextMarker() != null) sb.append("NextMarker: " + getNextMarker() + ",");
+        if (getMaxItems() != null) sb.append("MaxItems: " + getMaxItems() + ",");
+        if (isTruncated() != null) sb.append("IsTruncated: " + isTruncated() + ",");
+        if (getQuantity() != null) sb.append("Quantity: " + getQuantity() + ",");
         if (getItems() != null) sb.append("Items: " + getItems() );
         sb.append("}");
         return sb.toString();

@@ -125,8 +125,8 @@ public class TrustedAdvisorCostOptimizingSummary  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getEstimatedMonthlySavings() != null) sb.append("EstimatedMonthlySavings: " + getEstimatedMonthlySavings() + ",");    	
+        sb.append("{");
+        if (getEstimatedMonthlySavings() != null) sb.append("EstimatedMonthlySavings: " + getEstimatedMonthlySavings() + ",");
         if (getEstimatedPercentMonthlySavings() != null) sb.append("EstimatedPercentMonthlySavings: " + getEstimatedPercentMonthlySavings() );
         sb.append("}");
         return sb.toString();

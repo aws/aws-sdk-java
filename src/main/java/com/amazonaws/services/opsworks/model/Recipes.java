@@ -36,31 +36,31 @@ public class Recipes  implements Serializable  {
      * An array of custom recipe names to be run following a
      * <code>setup</code> event.
      */
-    private java.util.List<String> setup;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> setup;
 
     /**
      * An array of custom recipe names to be run following a
      * <code>configure</code> event.
      */
-    private java.util.List<String> configure;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> configure;
 
     /**
      * An array of custom recipe names to be run following a
      * <code>deploy</code> event.
      */
-    private java.util.List<String> deploy;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> deploy;
 
     /**
      * An array of custom recipe names to be run following a
      * <code>undeploy</code> event.
      */
-    private java.util.List<String> undeploy;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> undeploy;
 
     /**
      * An array of custom recipe names to be run following a
      * <code>shutdown</code> event.
      */
-    private java.util.List<String> shutdown;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> shutdown;
 
     /**
      * An array of custom recipe names to be run following a
@@ -72,7 +72,8 @@ public class Recipes  implements Serializable  {
     public java.util.List<String> getSetup() {
         
         if (setup == null) {
-            setup = new java.util.ArrayList<String>();
+              setup = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              setup.setAutoConstruct(true);
         }
         return setup;
     }
@@ -89,8 +90,7 @@ public class Recipes  implements Serializable  {
             this.setup = null;
             return;
         }
-
-        java.util.List<String> setupCopy = new java.util.ArrayList<String>(setup.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> setupCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(setup.size());
         setupCopy.addAll(setup);
         this.setup = setupCopy;
     }
@@ -131,7 +131,7 @@ public class Recipes  implements Serializable  {
         if (setup == null) {
             this.setup = null;
         } else {
-            java.util.List<String> setupCopy = new java.util.ArrayList<String>(setup.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> setupCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(setup.size());
             setupCopy.addAll(setup);
             this.setup = setupCopy;
         }
@@ -149,7 +149,8 @@ public class Recipes  implements Serializable  {
     public java.util.List<String> getConfigure() {
         
         if (configure == null) {
-            configure = new java.util.ArrayList<String>();
+              configure = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              configure.setAutoConstruct(true);
         }
         return configure;
     }
@@ -166,8 +167,7 @@ public class Recipes  implements Serializable  {
             this.configure = null;
             return;
         }
-
-        java.util.List<String> configureCopy = new java.util.ArrayList<String>(configure.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> configureCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(configure.size());
         configureCopy.addAll(configure);
         this.configure = configureCopy;
     }
@@ -208,7 +208,7 @@ public class Recipes  implements Serializable  {
         if (configure == null) {
             this.configure = null;
         } else {
-            java.util.List<String> configureCopy = new java.util.ArrayList<String>(configure.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> configureCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(configure.size());
             configureCopy.addAll(configure);
             this.configure = configureCopy;
         }
@@ -226,7 +226,8 @@ public class Recipes  implements Serializable  {
     public java.util.List<String> getDeploy() {
         
         if (deploy == null) {
-            deploy = new java.util.ArrayList<String>();
+              deploy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              deploy.setAutoConstruct(true);
         }
         return deploy;
     }
@@ -243,8 +244,7 @@ public class Recipes  implements Serializable  {
             this.deploy = null;
             return;
         }
-
-        java.util.List<String> deployCopy = new java.util.ArrayList<String>(deploy.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> deployCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(deploy.size());
         deployCopy.addAll(deploy);
         this.deploy = deployCopy;
     }
@@ -285,7 +285,7 @@ public class Recipes  implements Serializable  {
         if (deploy == null) {
             this.deploy = null;
         } else {
-            java.util.List<String> deployCopy = new java.util.ArrayList<String>(deploy.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> deployCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(deploy.size());
             deployCopy.addAll(deploy);
             this.deploy = deployCopy;
         }
@@ -303,7 +303,8 @@ public class Recipes  implements Serializable  {
     public java.util.List<String> getUndeploy() {
         
         if (undeploy == null) {
-            undeploy = new java.util.ArrayList<String>();
+              undeploy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              undeploy.setAutoConstruct(true);
         }
         return undeploy;
     }
@@ -320,8 +321,7 @@ public class Recipes  implements Serializable  {
             this.undeploy = null;
             return;
         }
-
-        java.util.List<String> undeployCopy = new java.util.ArrayList<String>(undeploy.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> undeployCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(undeploy.size());
         undeployCopy.addAll(undeploy);
         this.undeploy = undeployCopy;
     }
@@ -362,7 +362,7 @@ public class Recipes  implements Serializable  {
         if (undeploy == null) {
             this.undeploy = null;
         } else {
-            java.util.List<String> undeployCopy = new java.util.ArrayList<String>(undeploy.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> undeployCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(undeploy.size());
             undeployCopy.addAll(undeploy);
             this.undeploy = undeployCopy;
         }
@@ -380,7 +380,8 @@ public class Recipes  implements Serializable  {
     public java.util.List<String> getShutdown() {
         
         if (shutdown == null) {
-            shutdown = new java.util.ArrayList<String>();
+              shutdown = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              shutdown.setAutoConstruct(true);
         }
         return shutdown;
     }
@@ -397,8 +398,7 @@ public class Recipes  implements Serializable  {
             this.shutdown = null;
             return;
         }
-
-        java.util.List<String> shutdownCopy = new java.util.ArrayList<String>(shutdown.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> shutdownCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(shutdown.size());
         shutdownCopy.addAll(shutdown);
         this.shutdown = shutdownCopy;
     }
@@ -439,7 +439,7 @@ public class Recipes  implements Serializable  {
         if (shutdown == null) {
             this.shutdown = null;
         } else {
-            java.util.List<String> shutdownCopy = new java.util.ArrayList<String>(shutdown.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> shutdownCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(shutdown.size());
             shutdownCopy.addAll(shutdown);
             this.shutdown = shutdownCopy;
         }
@@ -458,11 +458,11 @@ public class Recipes  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getSetup() != null) sb.append("Setup: " + getSetup() + ",");    	
-        if (getConfigure() != null) sb.append("Configure: " + getConfigure() + ",");    	
-        if (getDeploy() != null) sb.append("Deploy: " + getDeploy() + ",");    	
-        if (getUndeploy() != null) sb.append("Undeploy: " + getUndeploy() + ",");    	
+        sb.append("{");
+        if (getSetup() != null) sb.append("Setup: " + getSetup() + ",");
+        if (getConfigure() != null) sb.append("Configure: " + getConfigure() + ",");
+        if (getDeploy() != null) sb.append("Deploy: " + getDeploy() + ",");
+        if (getUndeploy() != null) sb.append("Undeploy: " + getUndeploy() + ",");
         if (getShutdown() != null) sb.append("Shutdown: " + getShutdown() );
         sb.append("}");
         return sb.toString();

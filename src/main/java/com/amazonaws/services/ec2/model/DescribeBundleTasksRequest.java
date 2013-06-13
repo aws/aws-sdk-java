@@ -30,7 +30,7 @@ public class DescribeBundleTasksRequest extends AmazonWebServiceRequest  impleme
     /**
      * The list of bundle task IDs to describe.
      */
-    private java.util.List<String> bundleIds;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> bundleIds;
 
     /**
      * A list of filters used to match properties for BundleTasks. For a
@@ -39,7 +39,7 @@ public class DescribeBundleTasksRequest extends AmazonWebServiceRequest  impleme
      * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      * EC2 API reference</a>.
      */
-    private java.util.List<Filter> filters;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filters;
 
     /**
      * The list of bundle task IDs to describe.
@@ -49,7 +49,8 @@ public class DescribeBundleTasksRequest extends AmazonWebServiceRequest  impleme
     public java.util.List<String> getBundleIds() {
         
         if (bundleIds == null) {
-            bundleIds = new java.util.ArrayList<String>();
+              bundleIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              bundleIds.setAutoConstruct(true);
         }
         return bundleIds;
     }
@@ -64,8 +65,7 @@ public class DescribeBundleTasksRequest extends AmazonWebServiceRequest  impleme
             this.bundleIds = null;
             return;
         }
-
-        java.util.List<String> bundleIdsCopy = new java.util.ArrayList<String>(bundleIds.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> bundleIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(bundleIds.size());
         bundleIdsCopy.addAll(bundleIds);
         this.bundleIds = bundleIdsCopy;
     }
@@ -102,7 +102,7 @@ public class DescribeBundleTasksRequest extends AmazonWebServiceRequest  impleme
         if (bundleIds == null) {
             this.bundleIds = null;
         } else {
-            java.util.List<String> bundleIdsCopy = new java.util.ArrayList<String>(bundleIds.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> bundleIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(bundleIds.size());
             bundleIdsCopy.addAll(bundleIds);
             this.bundleIds = bundleIdsCopy;
         }
@@ -126,7 +126,8 @@ public class DescribeBundleTasksRequest extends AmazonWebServiceRequest  impleme
     public java.util.List<Filter> getFilters() {
         
         if (filters == null) {
-            filters = new java.util.ArrayList<Filter>();
+              filters = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>();
+              filters.setAutoConstruct(true);
         }
         return filters;
     }
@@ -149,8 +150,7 @@ public class DescribeBundleTasksRequest extends AmazonWebServiceRequest  impleme
             this.filters = null;
             return;
         }
-
-        java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>(filters.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filtersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>(filters.size());
         filtersCopy.addAll(filters);
         this.filters = filtersCopy;
     }
@@ -203,7 +203,7 @@ public class DescribeBundleTasksRequest extends AmazonWebServiceRequest  impleme
         if (filters == null) {
             this.filters = null;
         } else {
-            java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>(filters.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filtersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>(filters.size());
             filtersCopy.addAll(filters);
             this.filters = filtersCopy;
         }
@@ -222,8 +222,8 @@ public class DescribeBundleTasksRequest extends AmazonWebServiceRequest  impleme
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getBundleIds() != null) sb.append("BundleIds: " + getBundleIds() + ",");    	
+        sb.append("{");
+        if (getBundleIds() != null) sb.append("BundleIds: " + getBundleIds() + ",");
         if (getFilters() != null) sb.append("Filters: " + getFilters() );
         sb.append("}");
         return sb.toString();

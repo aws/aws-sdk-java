@@ -33,7 +33,7 @@ public class DescribeConfigurationOptionsResult  implements Serializable  {
     /**
      * A list of <a>ConfigurationOptionDescription</a>.
      */
-    private java.util.List<ConfigurationOptionDescription> options;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<ConfigurationOptionDescription> options;
 
     /**
      * The name of the solution stack these configuration options belong to.
@@ -86,7 +86,8 @@ public class DescribeConfigurationOptionsResult  implements Serializable  {
     public java.util.List<ConfigurationOptionDescription> getOptions() {
         
         if (options == null) {
-            options = new java.util.ArrayList<ConfigurationOptionDescription>();
+              options = new com.amazonaws.internal.ListWithAutoConstructFlag<ConfigurationOptionDescription>();
+              options.setAutoConstruct(true);
         }
         return options;
     }
@@ -101,8 +102,7 @@ public class DescribeConfigurationOptionsResult  implements Serializable  {
             this.options = null;
             return;
         }
-
-        java.util.List<ConfigurationOptionDescription> optionsCopy = new java.util.ArrayList<ConfigurationOptionDescription>(options.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<ConfigurationOptionDescription> optionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ConfigurationOptionDescription>(options.size());
         optionsCopy.addAll(options);
         this.options = optionsCopy;
     }
@@ -139,7 +139,7 @@ public class DescribeConfigurationOptionsResult  implements Serializable  {
         if (options == null) {
             this.options = null;
         } else {
-            java.util.List<ConfigurationOptionDescription> optionsCopy = new java.util.ArrayList<ConfigurationOptionDescription>(options.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<ConfigurationOptionDescription> optionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ConfigurationOptionDescription>(options.size());
             optionsCopy.addAll(options);
             this.options = optionsCopy;
         }
@@ -158,8 +158,8 @@ public class DescribeConfigurationOptionsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getSolutionStackName() != null) sb.append("SolutionStackName: " + getSolutionStackName() + ",");    	
+        sb.append("{");
+        if (getSolutionStackName() != null) sb.append("SolutionStackName: " + getSolutionStackName() + ",");
         if (getOptions() != null) sb.append("Options: " + getOptions() );
         sb.append("}");
         return sb.toString();

@@ -55,6 +55,8 @@ public class ListInvalidationsRequest extends AmazonWebServiceRequest  implement
      */
     public ListInvalidationsRequest() {}
     
+
+
     /**
      * Constructs a new ListInvalidationsRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -63,7 +65,7 @@ public class ListInvalidationsRequest extends AmazonWebServiceRequest  implement
      * @param distributionId The distribution's id.
      */
     public ListInvalidationsRequest(String distributionId) {
-        this.distributionId = distributionId;
+        setDistributionId(distributionId);
     }
 
     
@@ -229,9 +231,9 @@ public class ListInvalidationsRequest extends AmazonWebServiceRequest  implement
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getDistributionId() != null) sb.append("DistributionId: " + getDistributionId() + ",");    	
-        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");    	
+        sb.append("{");
+        if (getDistributionId() != null) sb.append("DistributionId: " + getDistributionId() + ",");
+        if (getMarker() != null) sb.append("Marker: " + getMarker() + ",");
         if (getMaxItems() != null) sb.append("MaxItems: " + getMaxItems() );
         sb.append("}");
         return sb.toString();

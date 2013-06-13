@@ -317,11 +317,11 @@ public class AlarmHistoryItem  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getAlarmName() != null) sb.append("AlarmName: " + getAlarmName() + ",");    	
-        if (getTimestamp() != null) sb.append("Timestamp: " + getTimestamp() + ",");    	
-        if (getHistoryItemType() != null) sb.append("HistoryItemType: " + getHistoryItemType() + ",");    	
-        if (getHistorySummary() != null) sb.append("HistorySummary: " + getHistorySummary() + ",");    	
+        sb.append("{");
+        if (getAlarmName() != null) sb.append("AlarmName: " + getAlarmName() + ",");
+        if (getTimestamp() != null) sb.append("Timestamp: " + getTimestamp() + ",");
+        if (getHistoryItemType() != null) sb.append("HistoryItemType: " + getHistoryItemType() + ",");
+        if (getHistorySummary() != null) sb.append("HistorySummary: " + getHistorySummary() + ",");
         if (getHistoryData() != null) sb.append("HistoryData: " + getHistoryData() );
         sb.append("}");
         return sb.toString();

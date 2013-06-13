@@ -24,7 +24,7 @@ public class ListTagsForResourceResult  implements Serializable  {
     /**
      * List of tags returned by the ListTagsForResource operation.
      */
-    private java.util.List<Tag> tagList;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagList;
 
     /**
      * List of tags returned by the ListTagsForResource operation.
@@ -34,7 +34,8 @@ public class ListTagsForResourceResult  implements Serializable  {
     public java.util.List<Tag> getTagList() {
         
         if (tagList == null) {
-            tagList = new java.util.ArrayList<Tag>();
+              tagList = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>();
+              tagList.setAutoConstruct(true);
         }
         return tagList;
     }
@@ -49,8 +50,7 @@ public class ListTagsForResourceResult  implements Serializable  {
             this.tagList = null;
             return;
         }
-
-        java.util.List<Tag> tagListCopy = new java.util.ArrayList<Tag>(tagList.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagListCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tagList.size());
         tagListCopy.addAll(tagList);
         this.tagList = tagListCopy;
     }
@@ -87,7 +87,7 @@ public class ListTagsForResourceResult  implements Serializable  {
         if (tagList == null) {
             this.tagList = null;
         } else {
-            java.util.List<Tag> tagListCopy = new java.util.ArrayList<Tag>(tagList.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagListCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tagList.size());
             tagListCopy.addAll(tagList);
             this.tagList = tagListCopy;
         }
@@ -106,7 +106,7 @@ public class ListTagsForResourceResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getTagList() != null) sb.append("TagList: " + getTagList() );
         sb.append("}");
         return sb.toString();

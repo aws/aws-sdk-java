@@ -42,7 +42,7 @@ public class PipelineOutputConfig  implements Serializable  {
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 30<br/>
      */
-    private java.util.List<Permission> permissions;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Permission> permissions;
 
     /**
      * 
@@ -140,6 +140,10 @@ public class PipelineOutputConfig  implements Serializable  {
      */
     public java.util.List<Permission> getPermissions() {
         
+        if (permissions == null) {
+              permissions = new com.amazonaws.internal.ListWithAutoConstructFlag<Permission>();
+              permissions.setAutoConstruct(true);
+        }
         return permissions;
     }
     
@@ -156,8 +160,7 @@ public class PipelineOutputConfig  implements Serializable  {
             this.permissions = null;
             return;
         }
-
-        java.util.List<Permission> permissionsCopy = new java.util.ArrayList<Permission>(permissions.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Permission> permissionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Permission>(permissions.size());
         permissionsCopy.addAll(permissions);
         this.permissions = permissionsCopy;
     }
@@ -200,7 +203,7 @@ public class PipelineOutputConfig  implements Serializable  {
         if (permissions == null) {
             this.permissions = null;
         } else {
-            java.util.List<Permission> permissionsCopy = new java.util.ArrayList<Permission>(permissions.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Permission> permissionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Permission>(permissions.size());
             permissionsCopy.addAll(permissions);
             this.permissions = permissionsCopy;
         }
@@ -219,9 +222,9 @@ public class PipelineOutputConfig  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getBucket() != null) sb.append("Bucket: " + getBucket() + ",");    	
-        if (getStorageClass() != null) sb.append("StorageClass: " + getStorageClass() + ",");    	
+        sb.append("{");
+        if (getBucket() != null) sb.append("Bucket: " + getBucket() + ",");
+        if (getStorageClass() != null) sb.append("StorageClass: " + getStorageClass() + ",");
         if (getPermissions() != null) sb.append("Permissions: " + getPermissions() );
         sb.append("}");
         return sb.toString();

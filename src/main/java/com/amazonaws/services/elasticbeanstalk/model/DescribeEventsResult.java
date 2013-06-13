@@ -25,7 +25,7 @@ public class DescribeEventsResult  implements Serializable  {
     /**
      * A list of <a>EventDescription</a>.
      */
-    private java.util.List<EventDescription> events;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<EventDescription> events;
 
     /**
      * If returned, this indicates that there are more results to obtain. Use
@@ -42,7 +42,8 @@ public class DescribeEventsResult  implements Serializable  {
     public java.util.List<EventDescription> getEvents() {
         
         if (events == null) {
-            events = new java.util.ArrayList<EventDescription>();
+              events = new com.amazonaws.internal.ListWithAutoConstructFlag<EventDescription>();
+              events.setAutoConstruct(true);
         }
         return events;
     }
@@ -57,8 +58,7 @@ public class DescribeEventsResult  implements Serializable  {
             this.events = null;
             return;
         }
-
-        java.util.List<EventDescription> eventsCopy = new java.util.ArrayList<EventDescription>(events.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<EventDescription> eventsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<EventDescription>(events.size());
         eventsCopy.addAll(events);
         this.events = eventsCopy;
     }
@@ -95,7 +95,7 @@ public class DescribeEventsResult  implements Serializable  {
         if (events == null) {
             this.events = null;
         } else {
-            java.util.List<EventDescription> eventsCopy = new java.util.ArrayList<EventDescription>(events.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<EventDescription> eventsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<EventDescription>(events.size());
             eventsCopy.addAll(events);
             this.events = eventsCopy;
         }
@@ -160,8 +160,8 @@ public class DescribeEventsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getEvents() != null) sb.append("Events: " + getEvents() + ",");    	
+        sb.append("{");
+        if (getEvents() != null) sb.append("Events: " + getEvents() + ",");
         if (getNextToken() != null) sb.append("NextToken: " + getNextToken() );
         sb.append("}");
         return sb.toString();

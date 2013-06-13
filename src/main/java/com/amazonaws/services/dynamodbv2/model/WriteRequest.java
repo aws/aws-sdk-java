@@ -112,8 +112,8 @@ public class WriteRequest  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getPutRequest() != null) sb.append("PutRequest: " + getPutRequest() + ",");    	
+        sb.append("{");
+        if (getPutRequest() != null) sb.append("PutRequest: " + getPutRequest() + ",");
         if (getDeleteRequest() != null) sb.append("DeleteRequest: " + getDeleteRequest() );
         sb.append("}");
         return sb.toString();

@@ -84,6 +84,10 @@ public class DistributionConfigStaxUnmarshaller implements Unmarshaller<Distribu
                     distributionConfig.setEnabled(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+                if (context.testExpression("ViewerCertificate", targetDepth)) {
+                    distributionConfig.setViewerCertificate(ViewerCertificateStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return distributionConfig;

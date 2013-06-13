@@ -256,11 +256,11 @@ public class S3Storage  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getBucket() != null) sb.append("Bucket: " + getBucket() + ",");    	
-        if (getPrefix() != null) sb.append("Prefix: " + getPrefix() + ",");    	
-        if (getAWSAccessKeyId() != null) sb.append("AWSAccessKeyId: " + getAWSAccessKeyId() + ",");    	
-        if (getUploadPolicy() != null) sb.append("UploadPolicy: " + getUploadPolicy() + ",");    	
+        sb.append("{");
+        if (getBucket() != null) sb.append("Bucket: " + getBucket() + ",");
+        if (getPrefix() != null) sb.append("Prefix: " + getPrefix() + ",");
+        if (getAWSAccessKeyId() != null) sb.append("AWSAccessKeyId: " + getAWSAccessKeyId() + ",");
+        if (getUploadPolicy() != null) sb.append("UploadPolicy: " + getUploadPolicy() + ",");
         if (getUploadPolicySignature() != null) sb.append("UploadPolicySignature: " + getUploadPolicySignature() );
         sb.append("}");
         return sb.toString();

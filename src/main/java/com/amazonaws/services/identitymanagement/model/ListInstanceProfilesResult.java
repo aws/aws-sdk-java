@@ -25,7 +25,7 @@ public class ListInstanceProfilesResult  implements Serializable  {
     /**
      * A list of instance profiles.
      */
-    private java.util.List<InstanceProfile> instanceProfiles;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<InstanceProfile> instanceProfiles;
 
     /**
      * A flag that indicates whether there are more instance profiles to
@@ -54,7 +54,8 @@ public class ListInstanceProfilesResult  implements Serializable  {
     public java.util.List<InstanceProfile> getInstanceProfiles() {
         
         if (instanceProfiles == null) {
-            instanceProfiles = new java.util.ArrayList<InstanceProfile>();
+              instanceProfiles = new com.amazonaws.internal.ListWithAutoConstructFlag<InstanceProfile>();
+              instanceProfiles.setAutoConstruct(true);
         }
         return instanceProfiles;
     }
@@ -69,8 +70,7 @@ public class ListInstanceProfilesResult  implements Serializable  {
             this.instanceProfiles = null;
             return;
         }
-
-        java.util.List<InstanceProfile> instanceProfilesCopy = new java.util.ArrayList<InstanceProfile>(instanceProfiles.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<InstanceProfile> instanceProfilesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<InstanceProfile>(instanceProfiles.size());
         instanceProfilesCopy.addAll(instanceProfiles);
         this.instanceProfiles = instanceProfilesCopy;
     }
@@ -107,7 +107,7 @@ public class ListInstanceProfilesResult  implements Serializable  {
         if (instanceProfiles == null) {
             this.instanceProfiles = null;
         } else {
-            java.util.List<InstanceProfile> instanceProfilesCopy = new java.util.ArrayList<InstanceProfile>(instanceProfiles.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<InstanceProfile> instanceProfilesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<InstanceProfile>(instanceProfiles.size());
             instanceProfilesCopy.addAll(instanceProfiles);
             this.instanceProfiles = instanceProfilesCopy;
         }
@@ -251,9 +251,9 @@ public class ListInstanceProfilesResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getInstanceProfiles() != null) sb.append("InstanceProfiles: " + getInstanceProfiles() + ",");    	
-        if (isTruncated() != null) sb.append("IsTruncated: " + isTruncated() + ",");    	
+        sb.append("{");
+        if (getInstanceProfiles() != null) sb.append("InstanceProfiles: " + getInstanceProfiles() + ",");
+        if (isTruncated() != null) sb.append("IsTruncated: " + isTruncated() + ",");
         if (getMarker() != null) sb.append("Marker: " + getMarker() );
         sb.append("}");
         return sb.toString();

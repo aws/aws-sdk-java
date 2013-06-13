@@ -140,9 +140,9 @@ public class VpnStaticRoute  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getDestinationCidrBlock() != null) sb.append("DestinationCidrBlock: " + getDestinationCidrBlock() + ",");    	
-        if (getSource() != null) sb.append("Source: " + getSource() + ",");    	
+        sb.append("{");
+        if (getDestinationCidrBlock() != null) sb.append("DestinationCidrBlock: " + getDestinationCidrBlock() + ",");
+        if (getSource() != null) sb.append("Source: " + getSource() + ",");
         if (getState() != null) sb.append("State: " + getState() );
         sb.append("}");
         return sb.toString();

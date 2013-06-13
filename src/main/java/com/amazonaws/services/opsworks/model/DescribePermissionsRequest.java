@@ -129,8 +129,8 @@ public class DescribePermissionsRequest extends AmazonWebServiceRequest  impleme
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getIamUserArn() != null) sb.append("IamUserArn: " + getIamUserArn() + ",");    	
+        sb.append("{");
+        if (getIamUserArn() != null) sb.append("IamUserArn: " + getIamUserArn() + ",");
         if (getStackId() != null) sb.append("StackId: " + getStackId() );
         sb.append("}");
         return sb.toString();

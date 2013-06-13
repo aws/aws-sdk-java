@@ -45,6 +45,8 @@ public class CloudFrontOriginAccessIdentity  implements Serializable  {
      */
     public CloudFrontOriginAccessIdentity() {}
     
+
+
     /**
      * Constructs a new CloudFrontOriginAccessIdentity object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -57,8 +59,8 @@ public class CloudFrontOriginAccessIdentity  implements Serializable  {
      * identity read permission to an object in Amazon S3.
      */
     public CloudFrontOriginAccessIdentity(String id, String s3CanonicalUserId) {
-        this.id = id;
-        this.s3CanonicalUserId = s3CanonicalUserId;
+        setId(id);
+        setS3CanonicalUserId(s3CanonicalUserId);
     }
 
     
@@ -188,9 +190,9 @@ public class CloudFrontOriginAccessIdentity  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getId() != null) sb.append("Id: " + getId() + ",");    	
-        if (getS3CanonicalUserId() != null) sb.append("S3CanonicalUserId: " + getS3CanonicalUserId() + ",");    	
+        sb.append("{");
+        if (getId() != null) sb.append("Id: " + getId() + ",");
+        if (getS3CanonicalUserId() != null) sb.append("S3CanonicalUserId: " + getS3CanonicalUserId() + ",");
         if (getCloudFrontOriginAccessIdentityConfig() != null) sb.append("CloudFrontOriginAccessIdentityConfig: " + getCloudFrontOriginAccessIdentityConfig() );
         sb.append("}");
         return sb.toString();

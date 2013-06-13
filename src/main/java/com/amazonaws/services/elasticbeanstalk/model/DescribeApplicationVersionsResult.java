@@ -25,7 +25,7 @@ public class DescribeApplicationVersionsResult  implements Serializable  {
     /**
      * A list of <a>ApplicationVersionDescription</a> .
      */
-    private java.util.List<ApplicationVersionDescription> applicationVersions;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<ApplicationVersionDescription> applicationVersions;
 
     /**
      * A list of <a>ApplicationVersionDescription</a> .
@@ -35,7 +35,8 @@ public class DescribeApplicationVersionsResult  implements Serializable  {
     public java.util.List<ApplicationVersionDescription> getApplicationVersions() {
         
         if (applicationVersions == null) {
-            applicationVersions = new java.util.ArrayList<ApplicationVersionDescription>();
+              applicationVersions = new com.amazonaws.internal.ListWithAutoConstructFlag<ApplicationVersionDescription>();
+              applicationVersions.setAutoConstruct(true);
         }
         return applicationVersions;
     }
@@ -50,8 +51,7 @@ public class DescribeApplicationVersionsResult  implements Serializable  {
             this.applicationVersions = null;
             return;
         }
-
-        java.util.List<ApplicationVersionDescription> applicationVersionsCopy = new java.util.ArrayList<ApplicationVersionDescription>(applicationVersions.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<ApplicationVersionDescription> applicationVersionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ApplicationVersionDescription>(applicationVersions.size());
         applicationVersionsCopy.addAll(applicationVersions);
         this.applicationVersions = applicationVersionsCopy;
     }
@@ -88,7 +88,7 @@ public class DescribeApplicationVersionsResult  implements Serializable  {
         if (applicationVersions == null) {
             this.applicationVersions = null;
         } else {
-            java.util.List<ApplicationVersionDescription> applicationVersionsCopy = new java.util.ArrayList<ApplicationVersionDescription>(applicationVersions.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<ApplicationVersionDescription> applicationVersionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<ApplicationVersionDescription>(applicationVersions.size());
             applicationVersionsCopy.addAll(applicationVersions);
             this.applicationVersions = applicationVersionsCopy;
         }
@@ -107,7 +107,7 @@ public class DescribeApplicationVersionsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getApplicationVersions() != null) sb.append("ApplicationVersions: " + getApplicationVersions() );
         sb.append("}");
         return sb.toString();

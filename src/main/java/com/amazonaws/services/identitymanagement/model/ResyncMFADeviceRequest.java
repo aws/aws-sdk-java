@@ -68,6 +68,8 @@ public class ResyncMFADeviceRequest extends AmazonWebServiceRequest  implements 
      */
     public ResyncMFADeviceRequest() {}
     
+
+
     /**
      * Constructs a new ResyncMFADeviceRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -83,10 +85,10 @@ public class ResyncMFADeviceRequest extends AmazonWebServiceRequest  implements 
      * the device.
      */
     public ResyncMFADeviceRequest(String userName, String serialNumber, String authenticationCode1, String authenticationCode2) {
-        this.userName = userName;
-        this.serialNumber = serialNumber;
-        this.authenticationCode1 = authenticationCode1;
-        this.authenticationCode2 = authenticationCode2;
+        setUserName(userName);
+        setSerialNumber(serialNumber);
+        setAuthenticationCode1(authenticationCode1);
+        setAuthenticationCode2(authenticationCode2);
     }
 
     
@@ -286,10 +288,10 @@ public class ResyncMFADeviceRequest extends AmazonWebServiceRequest  implements 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getUserName() != null) sb.append("UserName: " + getUserName() + ",");    	
-        if (getSerialNumber() != null) sb.append("SerialNumber: " + getSerialNumber() + ",");    	
-        if (getAuthenticationCode1() != null) sb.append("AuthenticationCode1: " + getAuthenticationCode1() + ",");    	
+        sb.append("{");
+        if (getUserName() != null) sb.append("UserName: " + getUserName() + ",");
+        if (getSerialNumber() != null) sb.append("SerialNumber: " + getSerialNumber() + ",");
+        if (getAuthenticationCode1() != null) sb.append("AuthenticationCode1: " + getAuthenticationCode1() + ",");
         if (getAuthenticationCode2() != null) sb.append("AuthenticationCode2: " + getAuthenticationCode2() );
         sb.append("}");
         return sb.toString();

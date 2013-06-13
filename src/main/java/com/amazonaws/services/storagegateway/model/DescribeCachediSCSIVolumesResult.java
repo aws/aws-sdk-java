@@ -31,7 +31,7 @@ public class DescribeCachediSCSIVolumesResult  implements Serializable  {
      * An array of <a>CachediSCSIVolume</a> objects where each object
      * contains metadata about one cached volume.
      */
-    private java.util.List<CachediSCSIVolume> cachediSCSIVolumes;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<CachediSCSIVolume> cachediSCSIVolumes;
 
     /**
      * An array of <a>CachediSCSIVolume</a> objects where each object
@@ -43,7 +43,8 @@ public class DescribeCachediSCSIVolumesResult  implements Serializable  {
     public java.util.List<CachediSCSIVolume> getCachediSCSIVolumes() {
         
         if (cachediSCSIVolumes == null) {
-            cachediSCSIVolumes = new java.util.ArrayList<CachediSCSIVolume>();
+              cachediSCSIVolumes = new com.amazonaws.internal.ListWithAutoConstructFlag<CachediSCSIVolume>();
+              cachediSCSIVolumes.setAutoConstruct(true);
         }
         return cachediSCSIVolumes;
     }
@@ -60,8 +61,7 @@ public class DescribeCachediSCSIVolumesResult  implements Serializable  {
             this.cachediSCSIVolumes = null;
             return;
         }
-
-        java.util.List<CachediSCSIVolume> cachediSCSIVolumesCopy = new java.util.ArrayList<CachediSCSIVolume>(cachediSCSIVolumes.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<CachediSCSIVolume> cachediSCSIVolumesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<CachediSCSIVolume>(cachediSCSIVolumes.size());
         cachediSCSIVolumesCopy.addAll(cachediSCSIVolumes);
         this.cachediSCSIVolumes = cachediSCSIVolumesCopy;
     }
@@ -102,7 +102,7 @@ public class DescribeCachediSCSIVolumesResult  implements Serializable  {
         if (cachediSCSIVolumes == null) {
             this.cachediSCSIVolumes = null;
         } else {
-            java.util.List<CachediSCSIVolume> cachediSCSIVolumesCopy = new java.util.ArrayList<CachediSCSIVolume>(cachediSCSIVolumes.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<CachediSCSIVolume> cachediSCSIVolumesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<CachediSCSIVolume>(cachediSCSIVolumes.size());
             cachediSCSIVolumesCopy.addAll(cachediSCSIVolumes);
             this.cachediSCSIVolumes = cachediSCSIVolumesCopy;
         }
@@ -121,7 +121,7 @@ public class DescribeCachediSCSIVolumesResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getCachediSCSIVolumes() != null) sb.append("CachediSCSIVolumes: " + getCachediSCSIVolumes() );
         sb.append("}");
         return sb.toString();

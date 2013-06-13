@@ -72,7 +72,7 @@ public class DeleteDomainResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getDomainStatus() != null) sb.append("DomainStatus: " + getDomainStatus() );
         sb.append("}");
         return sb.toString();

@@ -25,7 +25,7 @@ public class ListMultipartUploadsResult  implements Serializable  {
     /**
      * A list of in-progress multipart uploads.
      */
-    private java.util.List<UploadListElement> uploadsList;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<UploadListElement> uploadsList;
 
     /**
      * An opaque string that represents where to continue pagination of the
@@ -43,7 +43,8 @@ public class ListMultipartUploadsResult  implements Serializable  {
     public java.util.List<UploadListElement> getUploadsList() {
         
         if (uploadsList == null) {
-            uploadsList = new java.util.ArrayList<UploadListElement>();
+              uploadsList = new com.amazonaws.internal.ListWithAutoConstructFlag<UploadListElement>();
+              uploadsList.setAutoConstruct(true);
         }
         return uploadsList;
     }
@@ -58,8 +59,7 @@ public class ListMultipartUploadsResult  implements Serializable  {
             this.uploadsList = null;
             return;
         }
-
-        java.util.List<UploadListElement> uploadsListCopy = new java.util.ArrayList<UploadListElement>(uploadsList.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<UploadListElement> uploadsListCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<UploadListElement>(uploadsList.size());
         uploadsListCopy.addAll(uploadsList);
         this.uploadsList = uploadsListCopy;
     }
@@ -96,7 +96,7 @@ public class ListMultipartUploadsResult  implements Serializable  {
         if (uploadsList == null) {
             this.uploadsList = null;
         } else {
-            java.util.List<UploadListElement> uploadsListCopy = new java.util.ArrayList<UploadListElement>(uploadsList.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<UploadListElement> uploadsListCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<UploadListElement>(uploadsList.size());
             uploadsListCopy.addAll(uploadsList);
             this.uploadsList = uploadsListCopy;
         }
@@ -167,8 +167,8 @@ public class ListMultipartUploadsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getUploadsList() != null) sb.append("UploadsList: " + getUploadsList() + ",");    	
+        sb.append("{");
+        if (getUploadsList() != null) sb.append("UploadsList: " + getUploadsList() + ",");
         if (getMarker() != null) sb.append("Marker: " + getMarker() );
         sb.append("}");
         return sb.toString();

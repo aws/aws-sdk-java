@@ -45,6 +45,8 @@ public class CreateDBSecurityGroupRequest extends AmazonWebServiceRequest  imple
      */
     public CreateDBSecurityGroupRequest() {}
     
+
+
     /**
      * Constructs a new CreateDBSecurityGroupRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -58,8 +60,8 @@ public class CreateDBSecurityGroupRequest extends AmazonWebServiceRequest  imple
      * Group.
      */
     public CreateDBSecurityGroupRequest(String dBSecurityGroupName, String dBSecurityGroupDescription) {
-        this.dBSecurityGroupName = dBSecurityGroupName;
-        this.dBSecurityGroupDescription = dBSecurityGroupDescription;
+        setDBSecurityGroupName(dBSecurityGroupName);
+        setDBSecurityGroupDescription(dBSecurityGroupDescription);
     }
 
     
@@ -161,8 +163,8 @@ public class CreateDBSecurityGroupRequest extends AmazonWebServiceRequest  imple
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getDBSecurityGroupName() != null) sb.append("DBSecurityGroupName: " + getDBSecurityGroupName() + ",");    	
+        sb.append("{");
+        if (getDBSecurityGroupName() != null) sb.append("DBSecurityGroupName: " + getDBSecurityGroupName() + ",");
         if (getDBSecurityGroupDescription() != null) sb.append("DBSecurityGroupDescription: " + getDBSecurityGroupDescription() );
         sb.append("}");
         return sb.toString();

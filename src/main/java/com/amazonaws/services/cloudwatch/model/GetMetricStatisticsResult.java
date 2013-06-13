@@ -30,7 +30,7 @@ public class GetMetricStatisticsResult  implements Serializable  {
     /**
      * The datapoints for the specified metric.
      */
-    private java.util.List<Datapoint> datapoints;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Datapoint> datapoints;
 
     /**
      * A label describing the specified metric.
@@ -74,7 +74,8 @@ public class GetMetricStatisticsResult  implements Serializable  {
     public java.util.List<Datapoint> getDatapoints() {
         
         if (datapoints == null) {
-            datapoints = new java.util.ArrayList<Datapoint>();
+              datapoints = new com.amazonaws.internal.ListWithAutoConstructFlag<Datapoint>();
+              datapoints.setAutoConstruct(true);
         }
         return datapoints;
     }
@@ -89,8 +90,7 @@ public class GetMetricStatisticsResult  implements Serializable  {
             this.datapoints = null;
             return;
         }
-
-        java.util.List<Datapoint> datapointsCopy = new java.util.ArrayList<Datapoint>(datapoints.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Datapoint> datapointsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Datapoint>(datapoints.size());
         datapointsCopy.addAll(datapoints);
         this.datapoints = datapointsCopy;
     }
@@ -127,7 +127,7 @@ public class GetMetricStatisticsResult  implements Serializable  {
         if (datapoints == null) {
             this.datapoints = null;
         } else {
-            java.util.List<Datapoint> datapointsCopy = new java.util.ArrayList<Datapoint>(datapoints.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Datapoint> datapointsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Datapoint>(datapoints.size());
             datapointsCopy.addAll(datapoints);
             this.datapoints = datapointsCopy;
         }
@@ -146,8 +146,8 @@ public class GetMetricStatisticsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getLabel() != null) sb.append("Label: " + getLabel() + ",");    	
+        sb.append("{");
+        if (getLabel() != null) sb.append("Label: " + getLabel() + ",");
         if (getDatapoints() != null) sb.append("Datapoints: " + getDatapoints() );
         sb.append("}");
         return sb.toString();

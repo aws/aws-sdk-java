@@ -111,8 +111,8 @@ public class RecurringCharge  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getFrequency() != null) sb.append("Frequency: " + getFrequency() + ",");    	
+        sb.append("{");
+        if (getFrequency() != null) sb.append("Frequency: " + getFrequency() + ",");
         if (getAmount() != null) sb.append("Amount: " + getAmount() );
         sb.append("}");
         return sb.toString();

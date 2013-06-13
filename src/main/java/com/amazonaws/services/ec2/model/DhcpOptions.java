@@ -30,12 +30,12 @@ public class DhcpOptions  implements Serializable  {
     /**
      * Contains information about the set of DHCP options.
      */
-    private java.util.List<DhcpConfiguration> dhcpConfigurations;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<DhcpConfiguration> dhcpConfigurations;
 
     /**
      * A list of tags for the DhcpOptions.
      */
-    private java.util.List<Tag> tags;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
 
     /**
      * Specifies the ID of the set of DHCP options.
@@ -79,7 +79,8 @@ public class DhcpOptions  implements Serializable  {
     public java.util.List<DhcpConfiguration> getDhcpConfigurations() {
         
         if (dhcpConfigurations == null) {
-            dhcpConfigurations = new java.util.ArrayList<DhcpConfiguration>();
+              dhcpConfigurations = new com.amazonaws.internal.ListWithAutoConstructFlag<DhcpConfiguration>();
+              dhcpConfigurations.setAutoConstruct(true);
         }
         return dhcpConfigurations;
     }
@@ -94,8 +95,7 @@ public class DhcpOptions  implements Serializable  {
             this.dhcpConfigurations = null;
             return;
         }
-
-        java.util.List<DhcpConfiguration> dhcpConfigurationsCopy = new java.util.ArrayList<DhcpConfiguration>(dhcpConfigurations.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<DhcpConfiguration> dhcpConfigurationsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<DhcpConfiguration>(dhcpConfigurations.size());
         dhcpConfigurationsCopy.addAll(dhcpConfigurations);
         this.dhcpConfigurations = dhcpConfigurationsCopy;
     }
@@ -132,7 +132,7 @@ public class DhcpOptions  implements Serializable  {
         if (dhcpConfigurations == null) {
             this.dhcpConfigurations = null;
         } else {
-            java.util.List<DhcpConfiguration> dhcpConfigurationsCopy = new java.util.ArrayList<DhcpConfiguration>(dhcpConfigurations.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<DhcpConfiguration> dhcpConfigurationsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<DhcpConfiguration>(dhcpConfigurations.size());
             dhcpConfigurationsCopy.addAll(dhcpConfigurations);
             this.dhcpConfigurations = dhcpConfigurationsCopy;
         }
@@ -148,7 +148,8 @@ public class DhcpOptions  implements Serializable  {
     public java.util.List<Tag> getTags() {
         
         if (tags == null) {
-            tags = new java.util.ArrayList<Tag>();
+              tags = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>();
+              tags.setAutoConstruct(true);
         }
         return tags;
     }
@@ -163,8 +164,7 @@ public class DhcpOptions  implements Serializable  {
             this.tags = null;
             return;
         }
-
-        java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>(tags.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
         tagsCopy.addAll(tags);
         this.tags = tagsCopy;
     }
@@ -201,7 +201,7 @@ public class DhcpOptions  implements Serializable  {
         if (tags == null) {
             this.tags = null;
         } else {
-            java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>(tags.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
             tagsCopy.addAll(tags);
             this.tags = tagsCopy;
         }
@@ -220,9 +220,9 @@ public class DhcpOptions  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getDhcpOptionsId() != null) sb.append("DhcpOptionsId: " + getDhcpOptionsId() + ",");    	
-        if (getDhcpConfigurations() != null) sb.append("DhcpConfigurations: " + getDhcpConfigurations() + ",");    	
+        sb.append("{");
+        if (getDhcpOptionsId() != null) sb.append("DhcpOptionsId: " + getDhcpOptionsId() + ",");
+        if (getDhcpConfigurations() != null) sb.append("DhcpConfigurations: " + getDhcpConfigurations() + ",");
         if (getTags() != null) sb.append("Tags: " + getTags() );
         sb.append("}");
         return sb.toString();

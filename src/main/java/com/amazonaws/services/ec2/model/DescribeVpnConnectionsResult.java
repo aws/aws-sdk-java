@@ -25,7 +25,7 @@ public class DescribeVpnConnectionsResult  implements Serializable  {
     /**
      * 
      */
-    private java.util.List<VpnConnection> vpnConnections;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<VpnConnection> vpnConnections;
 
     /**
      * 
@@ -35,7 +35,8 @@ public class DescribeVpnConnectionsResult  implements Serializable  {
     public java.util.List<VpnConnection> getVpnConnections() {
         
         if (vpnConnections == null) {
-            vpnConnections = new java.util.ArrayList<VpnConnection>();
+              vpnConnections = new com.amazonaws.internal.ListWithAutoConstructFlag<VpnConnection>();
+              vpnConnections.setAutoConstruct(true);
         }
         return vpnConnections;
     }
@@ -50,8 +51,7 @@ public class DescribeVpnConnectionsResult  implements Serializable  {
             this.vpnConnections = null;
             return;
         }
-
-        java.util.List<VpnConnection> vpnConnectionsCopy = new java.util.ArrayList<VpnConnection>(vpnConnections.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<VpnConnection> vpnConnectionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<VpnConnection>(vpnConnections.size());
         vpnConnectionsCopy.addAll(vpnConnections);
         this.vpnConnections = vpnConnectionsCopy;
     }
@@ -88,7 +88,7 @@ public class DescribeVpnConnectionsResult  implements Serializable  {
         if (vpnConnections == null) {
             this.vpnConnections = null;
         } else {
-            java.util.List<VpnConnection> vpnConnectionsCopy = new java.util.ArrayList<VpnConnection>(vpnConnections.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<VpnConnection> vpnConnectionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<VpnConnection>(vpnConnections.size());
             vpnConnectionsCopy.addAll(vpnConnections);
             this.vpnConnections = vpnConnectionsCopy;
         }
@@ -107,7 +107,7 @@ public class DescribeVpnConnectionsResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getVpnConnections() != null) sb.append("VpnConnections: " + getVpnConnections() );
         sb.append("}");
         return sb.toString();

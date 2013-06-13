@@ -58,7 +58,7 @@ public class EstimateTemplateCostRequest extends AmazonWebServiceRequest  implem
      * A list of <code>Parameter</code> structures that specify input
      * parameters.
      */
-    private java.util.List<Parameter> parameters;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Parameter> parameters;
 
     /**
      * Structure containing the template body. (For more information, go to
@@ -222,7 +222,8 @@ public class EstimateTemplateCostRequest extends AmazonWebServiceRequest  implem
     public java.util.List<Parameter> getParameters() {
         
         if (parameters == null) {
-            parameters = new java.util.ArrayList<Parameter>();
+              parameters = new com.amazonaws.internal.ListWithAutoConstructFlag<Parameter>();
+              parameters.setAutoConstruct(true);
         }
         return parameters;
     }
@@ -239,8 +240,7 @@ public class EstimateTemplateCostRequest extends AmazonWebServiceRequest  implem
             this.parameters = null;
             return;
         }
-
-        java.util.List<Parameter> parametersCopy = new java.util.ArrayList<Parameter>(parameters.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Parameter> parametersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Parameter>(parameters.size());
         parametersCopy.addAll(parameters);
         this.parameters = parametersCopy;
     }
@@ -281,7 +281,7 @@ public class EstimateTemplateCostRequest extends AmazonWebServiceRequest  implem
         if (parameters == null) {
             this.parameters = null;
         } else {
-            java.util.List<Parameter> parametersCopy = new java.util.ArrayList<Parameter>(parameters.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Parameter> parametersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Parameter>(parameters.size());
             parametersCopy.addAll(parameters);
             this.parameters = parametersCopy;
         }
@@ -300,9 +300,9 @@ public class EstimateTemplateCostRequest extends AmazonWebServiceRequest  implem
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getTemplateBody() != null) sb.append("TemplateBody: " + getTemplateBody() + ",");    	
-        if (getTemplateURL() != null) sb.append("TemplateURL: " + getTemplateURL() + ",");    	
+        sb.append("{");
+        if (getTemplateBody() != null) sb.append("TemplateBody: " + getTemplateBody() + ",");
+        if (getTemplateURL() != null) sb.append("TemplateURL: " + getTemplateURL() + ",");
         if (getParameters() != null) sb.append("Parameters: " + getParameters() );
         sb.append("}");
         return sb.toString();

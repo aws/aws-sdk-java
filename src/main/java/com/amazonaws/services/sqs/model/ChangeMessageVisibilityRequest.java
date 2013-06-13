@@ -66,6 +66,8 @@ public class ChangeMessageVisibilityRequest extends AmazonWebServiceRequest  imp
      */
     public ChangeMessageVisibilityRequest() {}
     
+
+
     /**
      * Constructs a new ChangeMessageVisibilityRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -78,9 +80,9 @@ public class ChangeMessageVisibilityRequest extends AmazonWebServiceRequest  imp
      * visibility timeout.
      */
     public ChangeMessageVisibilityRequest(String queueUrl, String receiptHandle, Integer visibilityTimeout) {
-        this.queueUrl = queueUrl;
-        this.receiptHandle = receiptHandle;
-        this.visibilityTimeout = visibilityTimeout;
+        setQueueUrl(queueUrl);
+        setReceiptHandle(receiptHandle);
+        setVisibilityTimeout(visibilityTimeout);
     }
 
     
@@ -204,9 +206,9 @@ public class ChangeMessageVisibilityRequest extends AmazonWebServiceRequest  imp
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getQueueUrl() != null) sb.append("QueueUrl: " + getQueueUrl() + ",");    	
-        if (getReceiptHandle() != null) sb.append("ReceiptHandle: " + getReceiptHandle() + ",");    	
+        sb.append("{");
+        if (getQueueUrl() != null) sb.append("QueueUrl: " + getQueueUrl() + ",");
+        if (getReceiptHandle() != null) sb.append("ReceiptHandle: " + getReceiptHandle() + ",");
         if (getVisibilityTimeout() != null) sb.append("VisibilityTimeout: " + getVisibilityTimeout() );
         sb.append("}");
         return sb.toString();

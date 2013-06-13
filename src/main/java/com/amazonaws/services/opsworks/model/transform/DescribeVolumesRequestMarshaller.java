@@ -92,8 +92,8 @@ public class DescribeVolumesRequestMarshaller implements Marshaller<Request<Desc
                 jsonWriter.key("RaidArrayId").value(describeVolumesRequest.getRaidArrayId());
             }
 
-            java.util.List<String> volumeIdsList = describeVolumesRequest.getVolumeIds();
-            if (volumeIdsList != null) {
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> volumeIdsList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(describeVolumesRequest.getVolumeIds());
+            if (volumeIdsList != null && !(volumeIdsList.isAutoConstruct() && volumeIdsList.isEmpty())) {
 
                 jsonWriter.key("VolumeIds");
                 jsonWriter.array();

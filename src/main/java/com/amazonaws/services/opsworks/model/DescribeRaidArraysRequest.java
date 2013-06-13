@@ -38,7 +38,7 @@ public class DescribeRaidArraysRequest extends AmazonWebServiceRequest  implemen
      * <code>DescribeRaidArrays</code> returns descriptions of the specified
      * arrays. Otherwise, it returns a description of every array.
      */
-    private java.util.List<String> raidArrayIds;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> raidArrayIds;
 
     /**
      * The instance ID. If you use this parameter,
@@ -98,7 +98,8 @@ public class DescribeRaidArraysRequest extends AmazonWebServiceRequest  implemen
     public java.util.List<String> getRaidArrayIds() {
         
         if (raidArrayIds == null) {
-            raidArrayIds = new java.util.ArrayList<String>();
+              raidArrayIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              raidArrayIds.setAutoConstruct(true);
         }
         return raidArrayIds;
     }
@@ -117,8 +118,7 @@ public class DescribeRaidArraysRequest extends AmazonWebServiceRequest  implemen
             this.raidArrayIds = null;
             return;
         }
-
-        java.util.List<String> raidArrayIdsCopy = new java.util.ArrayList<String>(raidArrayIds.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> raidArrayIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(raidArrayIds.size());
         raidArrayIdsCopy.addAll(raidArrayIds);
         this.raidArrayIds = raidArrayIdsCopy;
     }
@@ -163,7 +163,7 @@ public class DescribeRaidArraysRequest extends AmazonWebServiceRequest  implemen
         if (raidArrayIds == null) {
             this.raidArrayIds = null;
         } else {
-            java.util.List<String> raidArrayIdsCopy = new java.util.ArrayList<String>(raidArrayIds.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> raidArrayIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(raidArrayIds.size());
             raidArrayIdsCopy.addAll(raidArrayIds);
             this.raidArrayIds = raidArrayIdsCopy;
         }
@@ -182,8 +182,8 @@ public class DescribeRaidArraysRequest extends AmazonWebServiceRequest  implemen
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ",");    	
+        sb.append("{");
+        if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() + ",");
         if (getRaidArrayIds() != null) sb.append("RaidArrayIds: " + getRaidArrayIds() );
         sb.append("}");
         return sb.toString();

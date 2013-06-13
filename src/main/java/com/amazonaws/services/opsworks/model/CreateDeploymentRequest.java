@@ -51,7 +51,7 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest  implements
     /**
      * The instance IDs for the deployment targets.
      */
-    private java.util.List<String> instanceIds;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> instanceIds;
 
     /**
      * A <code>DeploymentCommand</code> object that specifies the deployment
@@ -157,7 +157,8 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest  implements
     public java.util.List<String> getInstanceIds() {
         
         if (instanceIds == null) {
-            instanceIds = new java.util.ArrayList<String>();
+              instanceIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              instanceIds.setAutoConstruct(true);
         }
         return instanceIds;
     }
@@ -172,8 +173,7 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest  implements
             this.instanceIds = null;
             return;
         }
-
-        java.util.List<String> instanceIdsCopy = new java.util.ArrayList<String>(instanceIds.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> instanceIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(instanceIds.size());
         instanceIdsCopy.addAll(instanceIds);
         this.instanceIds = instanceIdsCopy;
     }
@@ -210,7 +210,7 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest  implements
         if (instanceIds == null) {
             this.instanceIds = null;
         } else {
-            java.util.List<String> instanceIdsCopy = new java.util.ArrayList<String>(instanceIds.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> instanceIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(instanceIds.size());
             instanceIdsCopy.addAll(instanceIds);
             this.instanceIds = instanceIdsCopy;
         }
@@ -373,12 +373,12 @@ public class CreateDeploymentRequest extends AmazonWebServiceRequest  implements
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getStackId() != null) sb.append("StackId: " + getStackId() + ",");    	
-        if (getAppId() != null) sb.append("AppId: " + getAppId() + ",");    	
-        if (getInstanceIds() != null) sb.append("InstanceIds: " + getInstanceIds() + ",");    	
-        if (getCommand() != null) sb.append("Command: " + getCommand() + ",");    	
-        if (getComment() != null) sb.append("Comment: " + getComment() + ",");    	
+        sb.append("{");
+        if (getStackId() != null) sb.append("StackId: " + getStackId() + ",");
+        if (getAppId() != null) sb.append("AppId: " + getAppId() + ",");
+        if (getInstanceIds() != null) sb.append("InstanceIds: " + getInstanceIds() + ",");
+        if (getCommand() != null) sb.append("Command: " + getCommand() + ",");
+        if (getComment() != null) sb.append("Comment: " + getComment() + ",");
         if (getCustomJson() != null) sb.append("CustomJson: " + getCustomJson() );
         sb.append("}");
         return sb.toString();

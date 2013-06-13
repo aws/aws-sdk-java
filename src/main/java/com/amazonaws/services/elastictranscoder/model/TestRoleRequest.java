@@ -66,7 +66,7 @@ public class TestRoleRequest extends AmazonWebServiceRequest  implements Seriali
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 30<br/>
      */
-    private java.util.List<String> topics;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> topics;
 
     /**
      * The IAM Amazon Resource Name (ARN) for the role that you want Elastic
@@ -227,6 +227,10 @@ public class TestRoleRequest extends AmazonWebServiceRequest  implements Seriali
      */
     public java.util.List<String> getTopics() {
         
+        if (topics == null) {
+              topics = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              topics.setAutoConstruct(true);
+        }
         return topics;
     }
     
@@ -245,8 +249,7 @@ public class TestRoleRequest extends AmazonWebServiceRequest  implements Seriali
             this.topics = null;
             return;
         }
-
-        java.util.List<String> topicsCopy = new java.util.ArrayList<String>(topics.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> topicsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(topics.size());
         topicsCopy.addAll(topics);
         this.topics = topicsCopy;
     }
@@ -293,7 +296,7 @@ public class TestRoleRequest extends AmazonWebServiceRequest  implements Seriali
         if (topics == null) {
             this.topics = null;
         } else {
-            java.util.List<String> topicsCopy = new java.util.ArrayList<String>(topics.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> topicsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(topics.size());
             topicsCopy.addAll(topics);
             this.topics = topicsCopy;
         }
@@ -312,10 +315,10 @@ public class TestRoleRequest extends AmazonWebServiceRequest  implements Seriali
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getRole() != null) sb.append("Role: " + getRole() + ",");    	
-        if (getInputBucket() != null) sb.append("InputBucket: " + getInputBucket() + ",");    	
-        if (getOutputBucket() != null) sb.append("OutputBucket: " + getOutputBucket() + ",");    	
+        sb.append("{");
+        if (getRole() != null) sb.append("Role: " + getRole() + ",");
+        if (getInputBucket() != null) sb.append("InputBucket: " + getInputBucket() + ",");
+        if (getOutputBucket() != null) sb.append("OutputBucket: " + getOutputBucket() + ",");
         if (getTopics() != null) sb.append("Topics: " + getTopics() );
         sb.append("}");
         return sb.toString();

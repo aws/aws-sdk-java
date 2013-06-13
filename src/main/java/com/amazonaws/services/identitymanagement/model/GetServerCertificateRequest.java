@@ -42,6 +42,8 @@ public class GetServerCertificateRequest extends AmazonWebServiceRequest  implem
      */
     public GetServerCertificateRequest() {}
     
+
+
     /**
      * Constructs a new GetServerCertificateRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -51,7 +53,7 @@ public class GetServerCertificateRequest extends AmazonWebServiceRequest  implem
      * want to retrieve information about.
      */
     public GetServerCertificateRequest(String serverCertificateName) {
-        this.serverCertificateName = serverCertificateName;
+        setServerCertificateName(serverCertificateName);
     }
 
     
@@ -119,7 +121,7 @@ public class GetServerCertificateRequest extends AmazonWebServiceRequest  implem
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getServerCertificateName() != null) sb.append("ServerCertificateName: " + getServerCertificateName() );
         sb.append("}");
         return sb.toString();

@@ -52,6 +52,8 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest  implements Ser
      */
     public CreateVolumeRequest() {}
     
+
+
     /**
      * Constructs a new CreateVolumeRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -63,12 +65,14 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest  implements Ser
      * new volume.
      */
     public CreateVolumeRequest(Integer size, String availabilityZone) {
-        this.size = size;
-        this.availabilityZone = availabilityZone;
+        setSize(size);
+        setAvailabilityZone(availabilityZone);
     }
 
     
     
+
+
     /**
      * Constructs a new CreateVolumeRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -80,8 +84,8 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest  implements Ser
      * new volume.
      */
     public CreateVolumeRequest(String snapshotId, String availabilityZone) {
-        this.snapshotId = snapshotId;
-        this.availabilityZone = availabilityZone;
+        setSnapshotId(snapshotId);
+        setAvailabilityZone(availabilityZone);
     }
 
     
@@ -322,11 +326,11 @@ public class CreateVolumeRequest extends AmazonWebServiceRequest  implements Ser
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getSize() != null) sb.append("Size: " + getSize() + ",");    	
-        if (getSnapshotId() != null) sb.append("SnapshotId: " + getSnapshotId() + ",");    	
-        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");    	
-        if (getVolumeType() != null) sb.append("VolumeType: " + getVolumeType() + ",");    	
+        sb.append("{");
+        if (getSize() != null) sb.append("Size: " + getSize() + ",");
+        if (getSnapshotId() != null) sb.append("SnapshotId: " + getSnapshotId() + ",");
+        if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() + ",");
+        if (getVolumeType() != null) sb.append("VolumeType: " + getVolumeType() + ",");
         if (getIops() != null) sb.append("Iops: " + getIops() );
         sb.append("}");
         return sb.toString();

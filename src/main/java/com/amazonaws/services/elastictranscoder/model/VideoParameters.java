@@ -404,6 +404,9 @@ public class VideoParameters  implements Serializable  {
      */
     public java.util.Map<String,String> getCodecOptions() {
         
+        if (codecOptions == null) {
+            codecOptions = new java.util.HashMap<String,String>();
+        }
         return codecOptions;
 
     }
@@ -1780,19 +1783,19 @@ public class VideoParameters  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getCodec() != null) sb.append("Codec: " + getCodec() + ",");    	
-        if (getCodecOptions() != null) sb.append("CodecOptions: " + getCodecOptions() + ",");    	
-        if (getKeyframesMaxDist() != null) sb.append("KeyframesMaxDist: " + getKeyframesMaxDist() + ",");    	
-        if (getFixedGOP() != null) sb.append("FixedGOP: " + getFixedGOP() + ",");    	
-        if (getBitRate() != null) sb.append("BitRate: " + getBitRate() + ",");    	
-        if (getFrameRate() != null) sb.append("FrameRate: " + getFrameRate() + ",");    	
-        if (getResolution() != null) sb.append("Resolution: " + getResolution() + ",");    	
-        if (getAspectRatio() != null) sb.append("AspectRatio: " + getAspectRatio() + ",");    	
-        if (getMaxWidth() != null) sb.append("MaxWidth: " + getMaxWidth() + ",");    	
-        if (getMaxHeight() != null) sb.append("MaxHeight: " + getMaxHeight() + ",");    	
-        if (getDisplayAspectRatio() != null) sb.append("DisplayAspectRatio: " + getDisplayAspectRatio() + ",");    	
-        if (getSizingPolicy() != null) sb.append("SizingPolicy: " + getSizingPolicy() + ",");    	
+        sb.append("{");
+        if (getCodec() != null) sb.append("Codec: " + getCodec() + ",");
+        if (getCodecOptions() != null) sb.append("CodecOptions: " + getCodecOptions() + ",");
+        if (getKeyframesMaxDist() != null) sb.append("KeyframesMaxDist: " + getKeyframesMaxDist() + ",");
+        if (getFixedGOP() != null) sb.append("FixedGOP: " + getFixedGOP() + ",");
+        if (getBitRate() != null) sb.append("BitRate: " + getBitRate() + ",");
+        if (getFrameRate() != null) sb.append("FrameRate: " + getFrameRate() + ",");
+        if (getResolution() != null) sb.append("Resolution: " + getResolution() + ",");
+        if (getAspectRatio() != null) sb.append("AspectRatio: " + getAspectRatio() + ",");
+        if (getMaxWidth() != null) sb.append("MaxWidth: " + getMaxWidth() + ",");
+        if (getMaxHeight() != null) sb.append("MaxHeight: " + getMaxHeight() + ",");
+        if (getDisplayAspectRatio() != null) sb.append("DisplayAspectRatio: " + getDisplayAspectRatio() + ",");
+        if (getSizingPolicy() != null) sb.append("SizingPolicy: " + getSizingPolicy() + ",");
         if (getPaddingPolicy() != null) sb.append("PaddingPolicy: " + getPaddingPolicy() );
         sb.append("}");
         return sb.toString();

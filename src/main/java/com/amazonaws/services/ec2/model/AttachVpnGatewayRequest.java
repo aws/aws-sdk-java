@@ -43,6 +43,8 @@ public class AttachVpnGatewayRequest extends AmazonWebServiceRequest  implements
      */
     public AttachVpnGatewayRequest() {}
     
+
+
     /**
      * Constructs a new AttachVpnGatewayRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -52,8 +54,8 @@ public class AttachVpnGatewayRequest extends AmazonWebServiceRequest  implements
      * @param vpcId The ID of the VPC to attach to the VPN gateway.
      */
     public AttachVpnGatewayRequest(String vpnGatewayId, String vpcId) {
-        this.vpnGatewayId = vpnGatewayId;
-        this.vpcId = vpcId;
+        setVpnGatewayId(vpnGatewayId);
+        setVpcId(vpcId);
     }
 
     
@@ -137,8 +139,8 @@ public class AttachVpnGatewayRequest extends AmazonWebServiceRequest  implements
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getVpnGatewayId() != null) sb.append("VpnGatewayId: " + getVpnGatewayId() + ",");    	
+        sb.append("{");
+        if (getVpnGatewayId() != null) sb.append("VpnGatewayId: " + getVpnGatewayId() + ",");
         if (getVpcId() != null) sb.append("VpcId: " + getVpcId() );
         sb.append("}");
         return sb.toString();

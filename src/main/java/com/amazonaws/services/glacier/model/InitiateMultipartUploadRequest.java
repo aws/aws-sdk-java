@@ -92,6 +92,8 @@ public class InitiateMultipartUploadRequest extends AmazonWebServiceRequest  imp
      */
     public InitiateMultipartUploadRequest() {}
     
+
+
     /**
      * Constructs a new InitiateMultipartUploadRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -107,13 +109,15 @@ public class InitiateMultipartUploadRequest extends AmazonWebServiceRequest  imp
      * last part can be smaller than this part size.
      */
     public InitiateMultipartUploadRequest(String vaultName, String archiveDescription, String partSize) {
-        this.vaultName = vaultName;
-        this.archiveDescription = archiveDescription;
-        this.partSize = partSize;
+        setVaultName(vaultName);
+        setArchiveDescription(archiveDescription);
+        setPartSize(partSize);
     }
 
     
     
+
+
     /**
      * Constructs a new InitiateMultipartUploadRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -134,10 +138,10 @@ public class InitiateMultipartUploadRequest extends AmazonWebServiceRequest  imp
      * last part can be smaller than this part size.
      */
     public InitiateMultipartUploadRequest(String accountId, String vaultName, String archiveDescription, String partSize) {
-        this.accountId = accountId;
-        this.vaultName = vaultName;
-        this.archiveDescription = archiveDescription;
-        this.partSize = partSize;
+        setAccountId(accountId);
+        setVaultName(vaultName);
+        setArchiveDescription(archiveDescription);
+        setPartSize(partSize);
     }
 
     
@@ -343,10 +347,10 @@ public class InitiateMultipartUploadRequest extends AmazonWebServiceRequest  imp
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getAccountId() != null) sb.append("AccountId: " + getAccountId() + ",");    	
-        if (getVaultName() != null) sb.append("VaultName: " + getVaultName() + ",");    	
-        if (getArchiveDescription() != null) sb.append("ArchiveDescription: " + getArchiveDescription() + ",");    	
+        sb.append("{");
+        if (getAccountId() != null) sb.append("AccountId: " + getAccountId() + ",");
+        if (getVaultName() != null) sb.append("VaultName: " + getVaultName() + ",");
+        if (getArchiveDescription() != null) sb.append("ArchiveDescription: " + getArchiveDescription() + ",");
         if (getPartSize() != null) sb.append("PartSize: " + getPartSize() );
         sb.append("}");
         return sb.toString();

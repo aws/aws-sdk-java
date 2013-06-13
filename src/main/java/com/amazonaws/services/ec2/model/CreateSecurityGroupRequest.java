@@ -53,6 +53,8 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest  impleme
      */
     public CreateSecurityGroupRequest() {}
     
+
+
     /**
      * Constructs a new CreateSecurityGroupRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -63,8 +65,8 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest  impleme
      * only.
      */
     public CreateSecurityGroupRequest(String groupName, String description) {
-        this.groupName = groupName;
-        this.description = description;
+        setGroupName(groupName);
+        setDescription(description);
     }
 
     
@@ -182,9 +184,9 @@ public class CreateSecurityGroupRequest extends AmazonWebServiceRequest  impleme
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getGroupName() != null) sb.append("GroupName: " + getGroupName() + ",");    	
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");    	
+        sb.append("{");
+        if (getGroupName() != null) sb.append("GroupName: " + getGroupName() + ",");
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");
         if (getVpcId() != null) sb.append("VpcId: " + getVpcId() );
         sb.append("}");
         return sb.toString();

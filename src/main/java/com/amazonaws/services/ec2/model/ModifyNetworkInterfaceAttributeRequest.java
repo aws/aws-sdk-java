@@ -36,7 +36,7 @@ public class ModifyNetworkInterfaceAttributeRequest extends AmazonWebServiceRequ
      */
     private Boolean sourceDestCheck;
 
-    private java.util.List<String> groups;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> groups;
 
     private NetworkInterfaceAttachmentChanges attachment;
 
@@ -159,7 +159,8 @@ public class ModifyNetworkInterfaceAttributeRequest extends AmazonWebServiceRequ
     public java.util.List<String> getGroups() {
         
         if (groups == null) {
-            groups = new java.util.ArrayList<String>();
+              groups = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              groups.setAutoConstruct(true);
         }
         return groups;
     }
@@ -174,8 +175,7 @@ public class ModifyNetworkInterfaceAttributeRequest extends AmazonWebServiceRequ
             this.groups = null;
             return;
         }
-
-        java.util.List<String> groupsCopy = new java.util.ArrayList<String>(groups.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> groupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(groups.size());
         groupsCopy.addAll(groups);
         this.groups = groupsCopy;
     }
@@ -212,7 +212,7 @@ public class ModifyNetworkInterfaceAttributeRequest extends AmazonWebServiceRequ
         if (groups == null) {
             this.groups = null;
         } else {
-            java.util.List<String> groupsCopy = new java.util.ArrayList<String>(groups.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> groupsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(groups.size());
             groupsCopy.addAll(groups);
             this.groups = groupsCopy;
         }
@@ -265,11 +265,11 @@ public class ModifyNetworkInterfaceAttributeRequest extends AmazonWebServiceRequ
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getNetworkInterfaceId() != null) sb.append("NetworkInterfaceId: " + getNetworkInterfaceId() + ",");    	
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");    	
-        if (isSourceDestCheck() != null) sb.append("SourceDestCheck: " + isSourceDestCheck() + ",");    	
-        if (getGroups() != null) sb.append("Groups: " + getGroups() + ",");    	
+        sb.append("{");
+        if (getNetworkInterfaceId() != null) sb.append("NetworkInterfaceId: " + getNetworkInterfaceId() + ",");
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");
+        if (isSourceDestCheck() != null) sb.append("SourceDestCheck: " + isSourceDestCheck() + ",");
+        if (getGroups() != null) sb.append("Groups: " + getGroups() + ",");
         if (getAttachment() != null) sb.append("Attachment: " + getAttachment() );
         sb.append("}");
         return sb.toString();

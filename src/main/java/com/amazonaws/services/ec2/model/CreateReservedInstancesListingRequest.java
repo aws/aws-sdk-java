@@ -28,7 +28,7 @@ public class CreateReservedInstancesListingRequest extends AmazonWebServiceReque
 
     private Integer instanceCount;
 
-    private java.util.List<PriceScheduleSpecification> priceSchedules;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<PriceScheduleSpecification> priceSchedules;
 
     private String clientToken;
 
@@ -108,7 +108,8 @@ public class CreateReservedInstancesListingRequest extends AmazonWebServiceReque
     public java.util.List<PriceScheduleSpecification> getPriceSchedules() {
         
         if (priceSchedules == null) {
-            priceSchedules = new java.util.ArrayList<PriceScheduleSpecification>();
+              priceSchedules = new com.amazonaws.internal.ListWithAutoConstructFlag<PriceScheduleSpecification>();
+              priceSchedules.setAutoConstruct(true);
         }
         return priceSchedules;
     }
@@ -123,8 +124,7 @@ public class CreateReservedInstancesListingRequest extends AmazonWebServiceReque
             this.priceSchedules = null;
             return;
         }
-
-        java.util.List<PriceScheduleSpecification> priceSchedulesCopy = new java.util.ArrayList<PriceScheduleSpecification>(priceSchedules.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<PriceScheduleSpecification> priceSchedulesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<PriceScheduleSpecification>(priceSchedules.size());
         priceSchedulesCopy.addAll(priceSchedules);
         this.priceSchedules = priceSchedulesCopy;
     }
@@ -161,7 +161,7 @@ public class CreateReservedInstancesListingRequest extends AmazonWebServiceReque
         if (priceSchedules == null) {
             this.priceSchedules = null;
         } else {
-            java.util.List<PriceScheduleSpecification> priceSchedulesCopy = new java.util.ArrayList<PriceScheduleSpecification>(priceSchedules.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<PriceScheduleSpecification> priceSchedulesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<PriceScheduleSpecification>(priceSchedules.size());
             priceSchedulesCopy.addAll(priceSchedules);
             this.priceSchedules = priceSchedulesCopy;
         }
@@ -214,10 +214,10 @@ public class CreateReservedInstancesListingRequest extends AmazonWebServiceReque
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getReservedInstancesId() != null) sb.append("ReservedInstancesId: " + getReservedInstancesId() + ",");    	
-        if (getInstanceCount() != null) sb.append("InstanceCount: " + getInstanceCount() + ",");    	
-        if (getPriceSchedules() != null) sb.append("PriceSchedules: " + getPriceSchedules() + ",");    	
+        sb.append("{");
+        if (getReservedInstancesId() != null) sb.append("ReservedInstancesId: " + getReservedInstancesId() + ",");
+        if (getInstanceCount() != null) sb.append("InstanceCount: " + getInstanceCount() + ",");
+        if (getPriceSchedules() != null) sb.append("PriceSchedules: " + getPriceSchedules() + ",");
         if (getClientToken() != null) sb.append("ClientToken: " + getClientToken() );
         sb.append("}");
         return sb.toString();

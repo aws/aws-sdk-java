@@ -167,9 +167,9 @@ public class ModifyVpcAttributeRequest extends AmazonWebServiceRequest  implemen
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getVpcId() != null) sb.append("VpcId: " + getVpcId() + ",");    	
-        if (isEnableDnsSupport() != null) sb.append("EnableDnsSupport: " + isEnableDnsSupport() + ",");    	
+        sb.append("{");
+        if (getVpcId() != null) sb.append("VpcId: " + getVpcId() + ",");
+        if (isEnableDnsSupport() != null) sb.append("EnableDnsSupport: " + isEnableDnsSupport() + ",");
         if (isEnableDnsHostnames() != null) sb.append("EnableDnsHostnames: " + isEnableDnsHostnames() );
         sb.append("}");
         return sb.toString();

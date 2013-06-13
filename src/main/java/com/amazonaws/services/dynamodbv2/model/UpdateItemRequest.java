@@ -206,6 +206,8 @@ public class UpdateItemRequest extends AmazonWebServiceRequest  implements Seria
      */
     public UpdateItemRequest() {}
     
+
+
     /**
      * Constructs a new UpdateItemRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -288,9 +290,9 @@ public class UpdateItemRequest extends AmazonWebServiceRequest  implements Seria
      * the table's attribute definition.
      */
     public UpdateItemRequest(String tableName, java.util.Map<String,AttributeValue> key, java.util.Map<String,AttributeValueUpdate> attributeUpdates) {
-        this.tableName = tableName;
-        this.key = key;
-        this.attributeUpdates = attributeUpdates;
+        setTableName(tableName);
+        setKey(key);
+        setAttributeUpdates(attributeUpdates);
     }
 
     
@@ -1500,13 +1502,13 @@ public class UpdateItemRequest extends AmazonWebServiceRequest  implements Seria
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getTableName() != null) sb.append("TableName: " + getTableName() + ",");    	
-        if (getKey() != null) sb.append("Key: " + getKey() + ",");    	
-        if (getAttributeUpdates() != null) sb.append("AttributeUpdates: " + getAttributeUpdates() + ",");    	
-        if (getExpected() != null) sb.append("Expected: " + getExpected() + ",");    	
-        if (getReturnValues() != null) sb.append("ReturnValues: " + getReturnValues() + ",");    	
-        if (getReturnConsumedCapacity() != null) sb.append("ReturnConsumedCapacity: " + getReturnConsumedCapacity() + ",");    	
+        sb.append("{");
+        if (getTableName() != null) sb.append("TableName: " + getTableName() + ",");
+        if (getKey() != null) sb.append("Key: " + getKey() + ",");
+        if (getAttributeUpdates() != null) sb.append("AttributeUpdates: " + getAttributeUpdates() + ",");
+        if (getExpected() != null) sb.append("Expected: " + getExpected() + ",");
+        if (getReturnValues() != null) sb.append("ReturnValues: " + getReturnValues() + ",");
+        if (getReturnConsumedCapacity() != null) sb.append("ReturnConsumedCapacity: " + getReturnConsumedCapacity() + ",");
         if (getReturnItemCollectionMetrics() != null) sb.append("ReturnItemCollectionMetrics: " + getReturnItemCollectionMetrics() );
         sb.append("}");
         return sb.toString();

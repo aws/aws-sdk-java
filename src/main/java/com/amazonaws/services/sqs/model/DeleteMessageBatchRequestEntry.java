@@ -40,6 +40,8 @@ public class DeleteMessageBatchRequestEntry  implements Serializable  {
      */
     public DeleteMessageBatchRequestEntry() {}
     
+
+
     /**
      * Constructs a new DeleteMessageBatchRequestEntry object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -51,8 +53,8 @@ public class DeleteMessageBatchRequestEntry  implements Serializable  {
      * @param receiptHandle A receipt handle.
      */
     public DeleteMessageBatchRequestEntry(String id, String receiptHandle) {
-        this.id = id;
-        this.receiptHandle = receiptHandle;
+        setId(id);
+        setReceiptHandle(receiptHandle);
     }
 
     
@@ -148,8 +150,8 @@ public class DeleteMessageBatchRequestEntry  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getId() != null) sb.append("Id: " + getId() + ",");    	
+        sb.append("{");
+        if (getId() != null) sb.append("Id: " + getId() + ",");
         if (getReceiptHandle() != null) sb.append("ReceiptHandle: " + getReceiptHandle() );
         sb.append("}");
         return sb.toString();

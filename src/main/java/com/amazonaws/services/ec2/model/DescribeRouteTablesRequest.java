@@ -42,7 +42,7 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest  impleme
     /**
      * One or more route table IDs.
      */
-    private java.util.List<String> routeTableIds;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> routeTableIds;
 
     /**
      * A list of filters used to match properties for Route Tables. For a
@@ -51,7 +51,7 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest  impleme
      * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      * EC2 API reference</a>.
      */
-    private java.util.List<Filter> filters;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filters;
 
     /**
      * One or more route table IDs.
@@ -61,7 +61,8 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest  impleme
     public java.util.List<String> getRouteTableIds() {
         
         if (routeTableIds == null) {
-            routeTableIds = new java.util.ArrayList<String>();
+              routeTableIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              routeTableIds.setAutoConstruct(true);
         }
         return routeTableIds;
     }
@@ -76,8 +77,7 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest  impleme
             this.routeTableIds = null;
             return;
         }
-
-        java.util.List<String> routeTableIdsCopy = new java.util.ArrayList<String>(routeTableIds.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> routeTableIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(routeTableIds.size());
         routeTableIdsCopy.addAll(routeTableIds);
         this.routeTableIds = routeTableIdsCopy;
     }
@@ -114,7 +114,7 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest  impleme
         if (routeTableIds == null) {
             this.routeTableIds = null;
         } else {
-            java.util.List<String> routeTableIdsCopy = new java.util.ArrayList<String>(routeTableIds.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> routeTableIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(routeTableIds.size());
             routeTableIdsCopy.addAll(routeTableIds);
             this.routeTableIds = routeTableIdsCopy;
         }
@@ -138,7 +138,8 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest  impleme
     public java.util.List<Filter> getFilters() {
         
         if (filters == null) {
-            filters = new java.util.ArrayList<Filter>();
+              filters = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>();
+              filters.setAutoConstruct(true);
         }
         return filters;
     }
@@ -161,8 +162,7 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest  impleme
             this.filters = null;
             return;
         }
-
-        java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>(filters.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filtersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>(filters.size());
         filtersCopy.addAll(filters);
         this.filters = filtersCopy;
     }
@@ -215,7 +215,7 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest  impleme
         if (filters == null) {
             this.filters = null;
         } else {
-            java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>(filters.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filtersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>(filters.size());
             filtersCopy.addAll(filters);
             this.filters = filtersCopy;
         }
@@ -234,8 +234,8 @@ public class DescribeRouteTablesRequest extends AmazonWebServiceRequest  impleme
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getRouteTableIds() != null) sb.append("RouteTableIds: " + getRouteTableIds() + ",");    	
+        sb.append("{");
+        if (getRouteTableIds() != null) sb.append("RouteTableIds: " + getRouteTableIds() + ",");
         if (getFilters() != null) sb.append("Filters: " + getFilters() );
         sb.append("}");
         return sb.toString();

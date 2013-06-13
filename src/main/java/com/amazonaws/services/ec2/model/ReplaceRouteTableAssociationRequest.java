@@ -129,8 +129,8 @@ public class ReplaceRouteTableAssociationRequest extends AmazonWebServiceRequest
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getAssociationId() != null) sb.append("AssociationId: " + getAssociationId() + ",");    	
+        sb.append("{");
+        if (getAssociationId() != null) sb.append("AssociationId: " + getAssociationId() + ",");
         if (getRouteTableId() != null) sb.append("RouteTableId: " + getRouteTableId() );
         sb.append("}");
         return sb.toString();

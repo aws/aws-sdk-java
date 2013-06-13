@@ -123,8 +123,8 @@ public class CreatePrivateVirtualInterfaceRequest extends AmazonWebServiceReques
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getConnectionId() != null) sb.append("ConnectionId: " + getConnectionId() + ",");    	
+        sb.append("{");
+        if (getConnectionId() != null) sb.append("ConnectionId: " + getConnectionId() + ",");
         if (getNewPrivateVirtualInterface() != null) sb.append("NewPrivateVirtualInterface: " + getNewPrivateVirtualInterface() );
         sb.append("}");
         return sb.toString();

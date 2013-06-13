@@ -42,6 +42,8 @@ public class GetPasswordDataRequest extends AmazonWebServiceRequest  implements 
      */
     public GetPasswordDataRequest() {}
     
+
+
     /**
      * Constructs a new GetPasswordDataRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -51,7 +53,7 @@ public class GetPasswordDataRequest extends AmazonWebServiceRequest  implements 
      * Windows administrator password.
      */
     public GetPasswordDataRequest(String instanceId) {
-        this.instanceId = instanceId;
+        setInstanceId(instanceId);
     }
 
     
@@ -107,7 +109,7 @@ public class GetPasswordDataRequest extends AmazonWebServiceRequest  implements 
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getInstanceId() != null) sb.append("InstanceId: " + getInstanceId() );
         sb.append("}");
         return sb.toString();

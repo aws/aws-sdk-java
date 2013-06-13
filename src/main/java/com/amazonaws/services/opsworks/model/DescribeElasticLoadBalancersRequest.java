@@ -36,7 +36,7 @@ public class DescribeElasticLoadBalancersRequest extends AmazonWebServiceRequest
      * A list of layer IDs. The action describes the Elastic Load Balancing
      * instances for the specified layers.
      */
-    private java.util.List<String> layerIds;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> layerIds;
 
     /**
      * A stack ID. The action describes the Elastic Load Balancing instances
@@ -88,7 +88,8 @@ public class DescribeElasticLoadBalancersRequest extends AmazonWebServiceRequest
     public java.util.List<String> getLayerIds() {
         
         if (layerIds == null) {
-            layerIds = new java.util.ArrayList<String>();
+              layerIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              layerIds.setAutoConstruct(true);
         }
         return layerIds;
     }
@@ -105,8 +106,7 @@ public class DescribeElasticLoadBalancersRequest extends AmazonWebServiceRequest
             this.layerIds = null;
             return;
         }
-
-        java.util.List<String> layerIdsCopy = new java.util.ArrayList<String>(layerIds.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> layerIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(layerIds.size());
         layerIdsCopy.addAll(layerIds);
         this.layerIds = layerIdsCopy;
     }
@@ -147,7 +147,7 @@ public class DescribeElasticLoadBalancersRequest extends AmazonWebServiceRequest
         if (layerIds == null) {
             this.layerIds = null;
         } else {
-            java.util.List<String> layerIdsCopy = new java.util.ArrayList<String>(layerIds.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> layerIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(layerIds.size());
             layerIdsCopy.addAll(layerIds);
             this.layerIds = layerIdsCopy;
         }
@@ -166,8 +166,8 @@ public class DescribeElasticLoadBalancersRequest extends AmazonWebServiceRequest
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getStackId() != null) sb.append("StackId: " + getStackId() + ",");    	
+        sb.append("{");
+        if (getStackId() != null) sb.append("StackId: " + getStackId() + ",");
         if (getLayerIds() != null) sb.append("LayerIds: " + getLayerIds() );
         sb.append("}");
         return sb.toString();

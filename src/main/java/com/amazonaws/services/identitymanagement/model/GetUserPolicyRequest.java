@@ -51,6 +51,8 @@ public class GetUserPolicyRequest extends AmazonWebServiceRequest  implements Se
      */
     public GetUserPolicyRequest() {}
     
+
+
     /**
      * Constructs a new GetUserPolicyRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -60,8 +62,8 @@ public class GetUserPolicyRequest extends AmazonWebServiceRequest  implements Se
      * @param policyName Name of the policy document to get.
      */
     public GetUserPolicyRequest(String userName, String policyName) {
-        this.userName = userName;
-        this.policyName = policyName;
+        setUserName(userName);
+        setPolicyName(policyName);
     }
 
     
@@ -169,8 +171,8 @@ public class GetUserPolicyRequest extends AmazonWebServiceRequest  implements Se
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getUserName() != null) sb.append("UserName: " + getUserName() + ",");    	
+        sb.append("{");
+        if (getUserName() != null) sb.append("UserName: " + getUserName() + ",");
         if (getPolicyName() != null) sb.append("PolicyName: " + getPolicyName() );
         sb.append("}");
         return sb.toString();

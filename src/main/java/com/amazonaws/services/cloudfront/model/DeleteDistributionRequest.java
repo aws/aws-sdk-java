@@ -43,6 +43,8 @@ public class DeleteDistributionRequest extends AmazonWebServiceRequest  implemen
      */
     public DeleteDistributionRequest() {}
     
+
+
     /**
      * Constructs a new DeleteDistributionRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -53,8 +55,8 @@ public class DeleteDistributionRequest extends AmazonWebServiceRequest  implemen
      * disabled the distribution. For example: E2QWRUHAPOMQZL.
      */
     public DeleteDistributionRequest(String id, String ifMatch) {
-        this.id = id;
-        this.ifMatch = ifMatch;
+        setId(id);
+        setIfMatch(ifMatch);
     }
 
     
@@ -144,8 +146,8 @@ public class DeleteDistributionRequest extends AmazonWebServiceRequest  implemen
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getId() != null) sb.append("Id: " + getId() + ",");    	
+        sb.append("{");
+        if (getId() != null) sb.append("Id: " + getId() + ",");
         if (getIfMatch() != null) sb.append("IfMatch: " + getIfMatch() );
         sb.append("}");
         return sb.toString();

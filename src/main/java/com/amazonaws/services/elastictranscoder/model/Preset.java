@@ -452,14 +452,14 @@ public class Preset  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getId() != null) sb.append("Id: " + getId() + ",");    	
-        if (getName() != null) sb.append("Name: " + getName() + ",");    	
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");    	
-        if (getContainer() != null) sb.append("Container: " + getContainer() + ",");    	
-        if (getAudio() != null) sb.append("Audio: " + getAudio() + ",");    	
-        if (getVideo() != null) sb.append("Video: " + getVideo() + ",");    	
-        if (getThumbnails() != null) sb.append("Thumbnails: " + getThumbnails() + ",");    	
+        sb.append("{");
+        if (getId() != null) sb.append("Id: " + getId() + ",");
+        if (getName() != null) sb.append("Name: " + getName() + ",");
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");
+        if (getContainer() != null) sb.append("Container: " + getContainer() + ",");
+        if (getAudio() != null) sb.append("Audio: " + getAudio() + ",");
+        if (getVideo() != null) sb.append("Video: " + getVideo() + ",");
+        if (getThumbnails() != null) sb.append("Thumbnails: " + getThumbnails() + ",");
         if (getType() != null) sb.append("Type: " + getType() );
         sb.append("}");
         return sb.toString();

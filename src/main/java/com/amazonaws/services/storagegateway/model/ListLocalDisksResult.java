@@ -41,7 +41,7 @@ public class ListLocalDisksResult  implements Serializable  {
     /**
      * An array of <a>Disk</a> objects.
      */
-    private java.util.List<Disk> disks;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Disk> disks;
 
     /**
      * The Amazon Resource Name (ARN) of the gateway. Use the
@@ -106,7 +106,8 @@ public class ListLocalDisksResult  implements Serializable  {
     public java.util.List<Disk> getDisks() {
         
         if (disks == null) {
-            disks = new java.util.ArrayList<Disk>();
+              disks = new com.amazonaws.internal.ListWithAutoConstructFlag<Disk>();
+              disks.setAutoConstruct(true);
         }
         return disks;
     }
@@ -121,8 +122,7 @@ public class ListLocalDisksResult  implements Serializable  {
             this.disks = null;
             return;
         }
-
-        java.util.List<Disk> disksCopy = new java.util.ArrayList<Disk>(disks.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Disk> disksCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Disk>(disks.size());
         disksCopy.addAll(disks);
         this.disks = disksCopy;
     }
@@ -159,7 +159,7 @@ public class ListLocalDisksResult  implements Serializable  {
         if (disks == null) {
             this.disks = null;
         } else {
-            java.util.List<Disk> disksCopy = new java.util.ArrayList<Disk>(disks.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Disk> disksCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Disk>(disks.size());
             disksCopy.addAll(disks);
             this.disks = disksCopy;
         }
@@ -178,8 +178,8 @@ public class ListLocalDisksResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getGatewayARN() != null) sb.append("GatewayARN: " + getGatewayARN() + ",");    	
+        sb.append("{");
+        if (getGatewayARN() != null) sb.append("GatewayARN: " + getGatewayARN() + ",");
         if (getDisks() != null) sb.append("Disks: " + getDisks() );
         sb.append("}");
         return sb.toString();

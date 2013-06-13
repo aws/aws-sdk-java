@@ -20,7 +20,7 @@ import java.io.Serializable;
  */
 public class DescribeRouteTablesResult  implements Serializable  {
 
-    private java.util.List<RouteTable> routeTables;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<RouteTable> routeTables;
 
     /**
      * Returns the value of the RouteTables property for this object.
@@ -30,7 +30,8 @@ public class DescribeRouteTablesResult  implements Serializable  {
     public java.util.List<RouteTable> getRouteTables() {
         
         if (routeTables == null) {
-            routeTables = new java.util.ArrayList<RouteTable>();
+              routeTables = new com.amazonaws.internal.ListWithAutoConstructFlag<RouteTable>();
+              routeTables.setAutoConstruct(true);
         }
         return routeTables;
     }
@@ -45,8 +46,7 @@ public class DescribeRouteTablesResult  implements Serializable  {
             this.routeTables = null;
             return;
         }
-
-        java.util.List<RouteTable> routeTablesCopy = new java.util.ArrayList<RouteTable>(routeTables.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<RouteTable> routeTablesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<RouteTable>(routeTables.size());
         routeTablesCopy.addAll(routeTables);
         this.routeTables = routeTablesCopy;
     }
@@ -83,7 +83,7 @@ public class DescribeRouteTablesResult  implements Serializable  {
         if (routeTables == null) {
             this.routeTables = null;
         } else {
-            java.util.List<RouteTable> routeTablesCopy = new java.util.ArrayList<RouteTable>(routeTables.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<RouteTable> routeTablesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<RouteTable>(routeTables.size());
             routeTablesCopy.addAll(routeTables);
             this.routeTables = routeTablesCopy;
         }
@@ -102,7 +102,7 @@ public class DescribeRouteTablesResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getRouteTables() != null) sb.append("RouteTables: " + getRouteTables() );
         sb.append("}");
         return sb.toString();

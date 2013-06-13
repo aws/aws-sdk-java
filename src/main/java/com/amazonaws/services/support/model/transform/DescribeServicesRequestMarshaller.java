@@ -86,8 +86,8 @@ public class DescribeServicesRequestMarshaller implements Marshaller<Request<Des
           jsonWriter.object();
           
 
-            java.util.List<String> serviceCodeListList = describeServicesRequest.getServiceCodeList();
-            if (serviceCodeListList != null) {
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> serviceCodeListList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(describeServicesRequest.getServiceCodeList());
+            if (serviceCodeListList != null && !(serviceCodeListList.isAutoConstruct() && serviceCodeListList.isEmpty())) {
 
                 jsonWriter.key("serviceCodeList");
                 jsonWriter.array();

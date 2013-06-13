@@ -69,7 +69,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest  implements Seri
      * A list of <code>Parameter</code> structures that specify input
      * parameters for the stack.
      */
-    private java.util.List<Parameter> parameters;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Parameter> parameters;
 
     /**
      * Set to <code>true</code> to disable rollback of the stack if stack
@@ -98,7 +98,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest  implements Seri
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 5<br/>
      */
-    private java.util.List<String> notificationARNs;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> notificationARNs;
 
     /**
      * The list of capabilities that you want to allow in the stack. If your
@@ -115,7 +115,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest  implements Seri
      * and <a
      * href="http://docs.amazonwebservices.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-addusertogroup.html">AWS::IAM::UserToGroupAddition</a>.
      */
-    private java.util.List<String> capabilities;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> capabilities;
 
     /**
      * Determines what action will be taken if stack creation fails. This
@@ -134,7 +134,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest  implements Seri
      * propogated to EC2 resources that are created as part of the stack. A
      * maximum number of 10 tags can be specified.
      */
-    private java.util.List<Tag> tags;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tags;
 
     /**
      * The name associated with the stack. The name must be unique within
@@ -350,7 +350,8 @@ public class CreateStackRequest extends AmazonWebServiceRequest  implements Seri
     public java.util.List<Parameter> getParameters() {
         
         if (parameters == null) {
-            parameters = new java.util.ArrayList<Parameter>();
+              parameters = new com.amazonaws.internal.ListWithAutoConstructFlag<Parameter>();
+              parameters.setAutoConstruct(true);
         }
         return parameters;
     }
@@ -367,8 +368,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest  implements Seri
             this.parameters = null;
             return;
         }
-
-        java.util.List<Parameter> parametersCopy = new java.util.ArrayList<Parameter>(parameters.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Parameter> parametersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Parameter>(parameters.size());
         parametersCopy.addAll(parameters);
         this.parameters = parametersCopy;
     }
@@ -409,7 +409,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest  implements Seri
         if (parameters == null) {
             this.parameters = null;
         } else {
-            java.util.List<Parameter> parametersCopy = new java.util.ArrayList<Parameter>(parameters.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Parameter> parametersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Parameter>(parameters.size());
             parametersCopy.addAll(parameters);
             this.parameters = parametersCopy;
         }
@@ -556,7 +556,8 @@ public class CreateStackRequest extends AmazonWebServiceRequest  implements Seri
     public java.util.List<String> getNotificationARNs() {
         
         if (notificationARNs == null) {
-            notificationARNs = new java.util.ArrayList<String>();
+              notificationARNs = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              notificationARNs.setAutoConstruct(true);
         }
         return notificationARNs;
     }
@@ -580,8 +581,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest  implements Seri
             this.notificationARNs = null;
             return;
         }
-
-        java.util.List<String> notificationARNsCopy = new java.util.ArrayList<String>(notificationARNs.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> notificationARNsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(notificationARNs.size());
         notificationARNsCopy.addAll(notificationARNs);
         this.notificationARNs = notificationARNsCopy;
     }
@@ -636,7 +636,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest  implements Seri
         if (notificationARNs == null) {
             this.notificationARNs = null;
         } else {
-            java.util.List<String> notificationARNsCopy = new java.util.ArrayList<String>(notificationARNs.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> notificationARNsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(notificationARNs.size());
             notificationARNsCopy.addAll(notificationARNs);
             this.notificationARNs = notificationARNsCopy;
         }
@@ -676,7 +676,8 @@ public class CreateStackRequest extends AmazonWebServiceRequest  implements Seri
     public java.util.List<String> getCapabilities() {
         
         if (capabilities == null) {
-            capabilities = new java.util.ArrayList<String>();
+              capabilities = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              capabilities.setAutoConstruct(true);
         }
         return capabilities;
     }
@@ -715,8 +716,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest  implements Seri
             this.capabilities = null;
             return;
         }
-
-        java.util.List<String> capabilitiesCopy = new java.util.ArrayList<String>(capabilities.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> capabilitiesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(capabilities.size());
         capabilitiesCopy.addAll(capabilities);
         this.capabilities = capabilitiesCopy;
     }
@@ -801,7 +801,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest  implements Seri
         if (capabilities == null) {
             this.capabilities = null;
         } else {
-            java.util.List<String> capabilitiesCopy = new java.util.ArrayList<String>(capabilities.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> capabilitiesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(capabilities.size());
             capabilitiesCopy.addAll(capabilities);
             this.capabilities = capabilitiesCopy;
         }
@@ -936,7 +936,8 @@ public class CreateStackRequest extends AmazonWebServiceRequest  implements Seri
     public java.util.List<Tag> getTags() {
         
         if (tags == null) {
-            tags = new java.util.ArrayList<Tag>();
+              tags = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>();
+              tags.setAutoConstruct(true);
         }
         return tags;
     }
@@ -957,8 +958,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest  implements Seri
             this.tags = null;
             return;
         }
-
-        java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>(tags.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
         tagsCopy.addAll(tags);
         this.tags = tagsCopy;
     }
@@ -1007,7 +1007,7 @@ public class CreateStackRequest extends AmazonWebServiceRequest  implements Seri
         if (tags == null) {
             this.tags = null;
         } else {
-            java.util.List<Tag> tagsCopy = new java.util.ArrayList<Tag>(tags.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Tag> tagsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Tag>(tags.size());
             tagsCopy.addAll(tags);
             this.tags = tagsCopy;
         }
@@ -1026,16 +1026,16 @@ public class CreateStackRequest extends AmazonWebServiceRequest  implements Seri
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getStackName() != null) sb.append("StackName: " + getStackName() + ",");    	
-        if (getTemplateBody() != null) sb.append("TemplateBody: " + getTemplateBody() + ",");    	
-        if (getTemplateURL() != null) sb.append("TemplateURL: " + getTemplateURL() + ",");    	
-        if (getParameters() != null) sb.append("Parameters: " + getParameters() + ",");    	
-        if (isDisableRollback() != null) sb.append("DisableRollback: " + isDisableRollback() + ",");    	
-        if (getTimeoutInMinutes() != null) sb.append("TimeoutInMinutes: " + getTimeoutInMinutes() + ",");    	
-        if (getNotificationARNs() != null) sb.append("NotificationARNs: " + getNotificationARNs() + ",");    	
-        if (getCapabilities() != null) sb.append("Capabilities: " + getCapabilities() + ",");    	
-        if (getOnFailure() != null) sb.append("OnFailure: " + getOnFailure() + ",");    	
+        sb.append("{");
+        if (getStackName() != null) sb.append("StackName: " + getStackName() + ",");
+        if (getTemplateBody() != null) sb.append("TemplateBody: " + getTemplateBody() + ",");
+        if (getTemplateURL() != null) sb.append("TemplateURL: " + getTemplateURL() + ",");
+        if (getParameters() != null) sb.append("Parameters: " + getParameters() + ",");
+        if (isDisableRollback() != null) sb.append("DisableRollback: " + isDisableRollback() + ",");
+        if (getTimeoutInMinutes() != null) sb.append("TimeoutInMinutes: " + getTimeoutInMinutes() + ",");
+        if (getNotificationARNs() != null) sb.append("NotificationARNs: " + getNotificationARNs() + ",");
+        if (getCapabilities() != null) sb.append("Capabilities: " + getCapabilities() + ",");
+        if (getOnFailure() != null) sb.append("OnFailure: " + getOnFailure() + ",");
         if (getTags() != null) sb.append("Tags: " + getTags() );
         sb.append("}");
         return sb.toString();

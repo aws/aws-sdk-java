@@ -96,7 +96,7 @@ public class CreateCaseRequest extends AmazonWebServiceRequest  implements Seria
      * <b>Constraints:</b><br/>
      * <b>Length: </b>0 - 10<br/>
      */
-    private java.util.List<String> ccEmailAddresses;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> ccEmailAddresses;
 
     /**
      * Specifies the ISO 639-1 code for the language in which AWS provides
@@ -367,7 +367,8 @@ public class CreateCaseRequest extends AmazonWebServiceRequest  implements Seria
     public java.util.List<String> getCcEmailAddresses() {
         
         if (ccEmailAddresses == null) {
-            ccEmailAddresses = new java.util.ArrayList<String>();
+              ccEmailAddresses = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              ccEmailAddresses.setAutoConstruct(true);
         }
         return ccEmailAddresses;
     }
@@ -387,8 +388,7 @@ public class CreateCaseRequest extends AmazonWebServiceRequest  implements Seria
             this.ccEmailAddresses = null;
             return;
         }
-
-        java.util.List<String> ccEmailAddressesCopy = new java.util.ArrayList<String>(ccEmailAddresses.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> ccEmailAddressesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(ccEmailAddresses.size());
         ccEmailAddressesCopy.addAll(ccEmailAddresses);
         this.ccEmailAddresses = ccEmailAddressesCopy;
     }
@@ -435,7 +435,7 @@ public class CreateCaseRequest extends AmazonWebServiceRequest  implements Seria
         if (ccEmailAddresses == null) {
             this.ccEmailAddresses = null;
         } else {
-            java.util.List<String> ccEmailAddressesCopy = new java.util.ArrayList<String>(ccEmailAddresses.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> ccEmailAddressesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(ccEmailAddresses.size());
             ccEmailAddressesCopy.addAll(ccEmailAddresses);
             this.ccEmailAddresses = ccEmailAddressesCopy;
         }
@@ -546,14 +546,14 @@ public class CreateCaseRequest extends AmazonWebServiceRequest  implements Seria
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getSubject() != null) sb.append("Subject: " + getSubject() + ",");    	
-        if (getServiceCode() != null) sb.append("ServiceCode: " + getServiceCode() + ",");    	
-        if (getSeverityCode() != null) sb.append("SeverityCode: " + getSeverityCode() + ",");    	
-        if (getCategoryCode() != null) sb.append("CategoryCode: " + getCategoryCode() + ",");    	
-        if (getCommunicationBody() != null) sb.append("CommunicationBody: " + getCommunicationBody() + ",");    	
-        if (getCcEmailAddresses() != null) sb.append("CcEmailAddresses: " + getCcEmailAddresses() + ",");    	
-        if (getLanguage() != null) sb.append("Language: " + getLanguage() + ",");    	
+        sb.append("{");
+        if (getSubject() != null) sb.append("Subject: " + getSubject() + ",");
+        if (getServiceCode() != null) sb.append("ServiceCode: " + getServiceCode() + ",");
+        if (getSeverityCode() != null) sb.append("SeverityCode: " + getSeverityCode() + ",");
+        if (getCategoryCode() != null) sb.append("CategoryCode: " + getCategoryCode() + ",");
+        if (getCommunicationBody() != null) sb.append("CommunicationBody: " + getCommunicationBody() + ",");
+        if (getCcEmailAddresses() != null) sb.append("CcEmailAddresses: " + getCcEmailAddresses() + ",");
+        if (getLanguage() != null) sb.append("Language: " + getLanguage() + ",");
         if (getIssueType() != null) sb.append("IssueType: " + getIssueType() );
         sb.append("}");
         return sb.toString();

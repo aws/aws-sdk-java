@@ -24,7 +24,7 @@ import java.io.Serializable;
  */
 public class DescribeAccountAttributesRequest extends AmazonWebServiceRequest  implements Serializable  {
 
-    private java.util.List<String> attributeNames;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> attributeNames;
 
     /**
      * Returns the value of the AttributeNames property for this object.
@@ -34,7 +34,8 @@ public class DescribeAccountAttributesRequest extends AmazonWebServiceRequest  i
     public java.util.List<String> getAttributeNames() {
         
         if (attributeNames == null) {
-            attributeNames = new java.util.ArrayList<String>();
+              attributeNames = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              attributeNames.setAutoConstruct(true);
         }
         return attributeNames;
     }
@@ -49,8 +50,7 @@ public class DescribeAccountAttributesRequest extends AmazonWebServiceRequest  i
             this.attributeNames = null;
             return;
         }
-
-        java.util.List<String> attributeNamesCopy = new java.util.ArrayList<String>(attributeNames.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> attributeNamesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(attributeNames.size());
         attributeNamesCopy.addAll(attributeNames);
         this.attributeNames = attributeNamesCopy;
     }
@@ -87,7 +87,7 @@ public class DescribeAccountAttributesRequest extends AmazonWebServiceRequest  i
         if (attributeNames == null) {
             this.attributeNames = null;
         } else {
-            java.util.List<String> attributeNamesCopy = new java.util.ArrayList<String>(attributeNames.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> attributeNamesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(attributeNames.size());
             attributeNamesCopy.addAll(attributeNames);
             this.attributeNames = attributeNamesCopy;
         }
@@ -106,7 +106,7 @@ public class DescribeAccountAttributesRequest extends AmazonWebServiceRequest  i
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getAttributeNames() != null) sb.append("AttributeNames: " + getAttributeNames() );
         sb.append("}");
         return sb.toString();

@@ -92,8 +92,8 @@ public class DescribeDeploymentsRequestMarshaller implements Marshaller<Request<
                 jsonWriter.key("AppId").value(describeDeploymentsRequest.getAppId());
             }
 
-            java.util.List<String> deploymentIdsList = describeDeploymentsRequest.getDeploymentIds();
-            if (deploymentIdsList != null) {
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> deploymentIdsList = (com.amazonaws.internal.ListWithAutoConstructFlag<String>)(describeDeploymentsRequest.getDeploymentIds());
+            if (deploymentIdsList != null && !(deploymentIdsList.isAutoConstruct() && deploymentIdsList.isEmpty())) {
 
                 jsonWriter.key("DeploymentIds");
                 jsonWriter.array();

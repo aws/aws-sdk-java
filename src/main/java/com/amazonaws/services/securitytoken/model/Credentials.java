@@ -53,6 +53,8 @@ public class Credentials  implements Serializable  {
      */
     public Credentials() {}
     
+
+
     /**
      * Constructs a new Credentials object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -66,10 +68,10 @@ public class Credentials  implements Serializable  {
      * @param expiration The date on which these credentials expire.
      */
     public Credentials(String accessKeyId, String secretAccessKey, String sessionToken, java.util.Date expiration) {
-        this.accessKeyId = accessKeyId;
-        this.secretAccessKey = secretAccessKey;
-        this.sessionToken = sessionToken;
-        this.expiration = expiration;
+        setAccessKeyId(accessKeyId);
+        setSecretAccessKey(secretAccessKey);
+        setSessionToken(sessionToken);
+        setExpiration(expiration);
     }
 
     
@@ -239,10 +241,10 @@ public class Credentials  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getAccessKeyId() != null) sb.append("AccessKeyId: " + getAccessKeyId() + ",");    	
-        if (getSecretAccessKey() != null) sb.append("SecretAccessKey: " + getSecretAccessKey() + ",");    	
-        if (getSessionToken() != null) sb.append("SessionToken: " + getSessionToken() + ",");    	
+        sb.append("{");
+        if (getAccessKeyId() != null) sb.append("AccessKeyId: " + getAccessKeyId() + ",");
+        if (getSecretAccessKey() != null) sb.append("SecretAccessKey: " + getSecretAccessKey() + ",");
+        if (getSessionToken() != null) sb.append("SessionToken: " + getSessionToken() + ",");
         if (getExpiration() != null) sb.append("Expiration: " + getExpiration() );
         sb.append("}");
         return sb.toString();

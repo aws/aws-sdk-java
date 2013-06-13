@@ -25,7 +25,7 @@ public class DescribeVpnGatewaysResult  implements Serializable  {
     /**
      * 
      */
-    private java.util.List<VpnGateway> vpnGateways;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<VpnGateway> vpnGateways;
 
     /**
      * 
@@ -35,7 +35,8 @@ public class DescribeVpnGatewaysResult  implements Serializable  {
     public java.util.List<VpnGateway> getVpnGateways() {
         
         if (vpnGateways == null) {
-            vpnGateways = new java.util.ArrayList<VpnGateway>();
+              vpnGateways = new com.amazonaws.internal.ListWithAutoConstructFlag<VpnGateway>();
+              vpnGateways.setAutoConstruct(true);
         }
         return vpnGateways;
     }
@@ -50,8 +51,7 @@ public class DescribeVpnGatewaysResult  implements Serializable  {
             this.vpnGateways = null;
             return;
         }
-
-        java.util.List<VpnGateway> vpnGatewaysCopy = new java.util.ArrayList<VpnGateway>(vpnGateways.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<VpnGateway> vpnGatewaysCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<VpnGateway>(vpnGateways.size());
         vpnGatewaysCopy.addAll(vpnGateways);
         this.vpnGateways = vpnGatewaysCopy;
     }
@@ -88,7 +88,7 @@ public class DescribeVpnGatewaysResult  implements Serializable  {
         if (vpnGateways == null) {
             this.vpnGateways = null;
         } else {
-            java.util.List<VpnGateway> vpnGatewaysCopy = new java.util.ArrayList<VpnGateway>(vpnGateways.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<VpnGateway> vpnGatewaysCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<VpnGateway>(vpnGateways.size());
             vpnGatewaysCopy.addAll(vpnGateways);
             this.vpnGateways = vpnGatewaysCopy;
         }
@@ -107,7 +107,7 @@ public class DescribeVpnGatewaysResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getVpnGateways() != null) sb.append("VpnGateways: " + getVpnGateways() );
         sb.append("}");
         return sb.toString();

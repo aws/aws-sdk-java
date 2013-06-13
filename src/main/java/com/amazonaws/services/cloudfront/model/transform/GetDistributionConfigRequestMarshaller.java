@@ -44,7 +44,7 @@ public class GetDistributionConfigRequestMarshaller implements Marshaller<Reques
         Request<GetDistributionConfigRequest> request = new DefaultRequest<GetDistributionConfigRequest>(getDistributionConfigRequest, "AmazonCloudFront");
         request.setHttpMethod(HttpMethodName.GET);
 
-        String uriResourcePath = "2012-07-01/distribution/{Id}/config"; 
+        String uriResourcePath = "2013-05-12/distribution/{Id}/config"; 
         uriResourcePath = uriResourcePath.replace("{Id}", getString(getDistributionConfigRequest.getId())); 
 
         if (uriResourcePath.contains("?")) {

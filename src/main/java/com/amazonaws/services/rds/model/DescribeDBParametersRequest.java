@@ -63,6 +63,8 @@ public class DescribeDBParametersRequest extends AmazonWebServiceRequest  implem
      */
     public DescribeDBParametersRequest() {}
     
+
+
     /**
      * Constructs a new DescribeDBParametersRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -75,7 +77,7 @@ public class DescribeDBParametersRequest extends AmazonWebServiceRequest  implem
      * </ul>
      */
     public DescribeDBParametersRequest(String dBParameterGroupName) {
-        this.dBParameterGroupName = dBParameterGroupName;
+        setDBParameterGroupName(dBParameterGroupName);
     }
 
     
@@ -293,10 +295,10 @@ public class DescribeDBParametersRequest extends AmazonWebServiceRequest  implem
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getDBParameterGroupName() != null) sb.append("DBParameterGroupName: " + getDBParameterGroupName() + ",");    	
-        if (getSource() != null) sb.append("Source: " + getSource() + ",");    	
-        if (getMaxRecords() != null) sb.append("MaxRecords: " + getMaxRecords() + ",");    	
+        sb.append("{");
+        if (getDBParameterGroupName() != null) sb.append("DBParameterGroupName: " + getDBParameterGroupName() + ",");
+        if (getSource() != null) sb.append("Source: " + getSource() + ",");
+        if (getMaxRecords() != null) sb.append("MaxRecords: " + getMaxRecords() + ",");
         if (getMarker() != null) sb.append("Marker: " + getMarker() );
         sb.append("}");
         return sb.toString();

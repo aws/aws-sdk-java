@@ -43,6 +43,8 @@ public class CreateVpnGatewayRequest extends AmazonWebServiceRequest  implements
      */
     public CreateVpnGatewayRequest() {}
     
+
+
     /**
      * Constructs a new CreateVpnGatewayRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -51,7 +53,7 @@ public class CreateVpnGatewayRequest extends AmazonWebServiceRequest  implements
      * @param type The type of VPN connection this VPN gateway supports.
      */
     public CreateVpnGatewayRequest(String type) {
-        this.type = type;
+        setType(type);
     }
 
     
@@ -135,8 +137,8 @@ public class CreateVpnGatewayRequest extends AmazonWebServiceRequest  implements
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getType() != null) sb.append("Type: " + getType() + ",");    	
+        sb.append("{");
+        if (getType() != null) sb.append("Type: " + getType() + ",");
         if (getAvailabilityZone() != null) sb.append("AvailabilityZone: " + getAvailabilityZone() );
         sb.append("}");
         return sb.toString();

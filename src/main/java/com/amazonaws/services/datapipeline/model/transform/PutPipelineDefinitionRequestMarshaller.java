@@ -89,8 +89,8 @@ public class PutPipelineDefinitionRequestMarshaller implements Marshaller<Reques
                 jsonWriter.key("pipelineId").value(putPipelineDefinitionRequest.getPipelineId());
             }
 
-            java.util.List<PipelineObject> pipelineObjectsList = putPipelineDefinitionRequest.getPipelineObjects();
-            if (pipelineObjectsList != null) {
+            com.amazonaws.internal.ListWithAutoConstructFlag<PipelineObject> pipelineObjectsList = (com.amazonaws.internal.ListWithAutoConstructFlag<PipelineObject>)(putPipelineDefinitionRequest.getPipelineObjects());
+            if (pipelineObjectsList != null && !(pipelineObjectsList.isAutoConstruct() && pipelineObjectsList.isEmpty())) {
 
                 jsonWriter.key("pipelineObjects");
                 jsonWriter.array();
@@ -105,8 +105,8 @@ public class PutPipelineDefinitionRequestMarshaller implements Marshaller<Reques
                             jsonWriter.key("name").value(pipelineObjectsListValue.getName());
                         }
 
-                        java.util.List<Field> fieldsList = pipelineObjectsListValue.getFields();
-                        if (fieldsList != null) {
+                        com.amazonaws.internal.ListWithAutoConstructFlag<Field> fieldsList = (com.amazonaws.internal.ListWithAutoConstructFlag<Field>)(pipelineObjectsListValue.getFields());
+                        if (fieldsList != null && !(fieldsList.isAutoConstruct() && fieldsList.isEmpty())) {
 
                             jsonWriter.key("fields");
                             jsonWriter.array();

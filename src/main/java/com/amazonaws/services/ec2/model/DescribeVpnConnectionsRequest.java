@@ -37,7 +37,7 @@ public class DescribeVpnConnectionsRequest extends AmazonWebServiceRequest  impl
     /**
      * A VPN connection ID. More than one may be specified per request.
      */
-    private java.util.List<String> vpnConnectionIds;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> vpnConnectionIds;
 
     /**
      * A list of filters used to match properties for VPN Connections. For a
@@ -46,7 +46,7 @@ public class DescribeVpnConnectionsRequest extends AmazonWebServiceRequest  impl
      * href="http://docs.amazonwebservices.com/AWSEC2/latest/APIReference/">Amazon
      * EC2 API reference</a>.
      */
-    private java.util.List<Filter> filters;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filters;
 
     /**
      * A VPN connection ID. More than one may be specified per request.
@@ -56,7 +56,8 @@ public class DescribeVpnConnectionsRequest extends AmazonWebServiceRequest  impl
     public java.util.List<String> getVpnConnectionIds() {
         
         if (vpnConnectionIds == null) {
-            vpnConnectionIds = new java.util.ArrayList<String>();
+              vpnConnectionIds = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              vpnConnectionIds.setAutoConstruct(true);
         }
         return vpnConnectionIds;
     }
@@ -71,8 +72,7 @@ public class DescribeVpnConnectionsRequest extends AmazonWebServiceRequest  impl
             this.vpnConnectionIds = null;
             return;
         }
-
-        java.util.List<String> vpnConnectionIdsCopy = new java.util.ArrayList<String>(vpnConnectionIds.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> vpnConnectionIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(vpnConnectionIds.size());
         vpnConnectionIdsCopy.addAll(vpnConnectionIds);
         this.vpnConnectionIds = vpnConnectionIdsCopy;
     }
@@ -109,7 +109,7 @@ public class DescribeVpnConnectionsRequest extends AmazonWebServiceRequest  impl
         if (vpnConnectionIds == null) {
             this.vpnConnectionIds = null;
         } else {
-            java.util.List<String> vpnConnectionIdsCopy = new java.util.ArrayList<String>(vpnConnectionIds.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> vpnConnectionIdsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(vpnConnectionIds.size());
             vpnConnectionIdsCopy.addAll(vpnConnectionIds);
             this.vpnConnectionIds = vpnConnectionIdsCopy;
         }
@@ -133,7 +133,8 @@ public class DescribeVpnConnectionsRequest extends AmazonWebServiceRequest  impl
     public java.util.List<Filter> getFilters() {
         
         if (filters == null) {
-            filters = new java.util.ArrayList<Filter>();
+              filters = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>();
+              filters.setAutoConstruct(true);
         }
         return filters;
     }
@@ -156,8 +157,7 @@ public class DescribeVpnConnectionsRequest extends AmazonWebServiceRequest  impl
             this.filters = null;
             return;
         }
-
-        java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>(filters.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filtersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>(filters.size());
         filtersCopy.addAll(filters);
         this.filters = filtersCopy;
     }
@@ -210,7 +210,7 @@ public class DescribeVpnConnectionsRequest extends AmazonWebServiceRequest  impl
         if (filters == null) {
             this.filters = null;
         } else {
-            java.util.List<Filter> filtersCopy = new java.util.ArrayList<Filter>(filters.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Filter> filtersCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Filter>(filters.size());
             filtersCopy.addAll(filters);
             this.filters = filtersCopy;
         }
@@ -229,8 +229,8 @@ public class DescribeVpnConnectionsRequest extends AmazonWebServiceRequest  impl
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getVpnConnectionIds() != null) sb.append("VpnConnectionIds: " + getVpnConnectionIds() + ",");    	
+        sb.append("{");
+        if (getVpnConnectionIds() != null) sb.append("VpnConnectionIds: " + getVpnConnectionIds() + ",");
         if (getFilters() != null) sb.append("Filters: " + getFilters() );
         sb.append("}");
         return sb.toString();

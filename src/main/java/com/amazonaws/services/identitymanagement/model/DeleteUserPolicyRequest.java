@@ -50,6 +50,8 @@ public class DeleteUserPolicyRequest extends AmazonWebServiceRequest  implements
      */
     public DeleteUserPolicyRequest() {}
     
+
+
     /**
      * Constructs a new DeleteUserPolicyRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -59,8 +61,8 @@ public class DeleteUserPolicyRequest extends AmazonWebServiceRequest  implements
      * @param policyName Name of the policy document to delete.
      */
     public DeleteUserPolicyRequest(String userName, String policyName) {
-        this.userName = userName;
-        this.policyName = policyName;
+        setUserName(userName);
+        setPolicyName(policyName);
     }
 
     
@@ -168,8 +170,8 @@ public class DeleteUserPolicyRequest extends AmazonWebServiceRequest  implements
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getUserName() != null) sb.append("UserName: " + getUserName() + ",");    	
+        sb.append("{");
+        if (getUserName() != null) sb.append("UserName: " + getUserName() + ",");
         if (getPolicyName() != null) sb.append("PolicyName: " + getPolicyName() );
         sb.append("}");
         return sb.toString();

@@ -45,7 +45,7 @@ public class OptionGroup  implements Serializable  {
     /**
      * Indicates what options are available in the option group.
      */
-    private java.util.List<Option> options;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<Option> options;
 
     /**
      * Indicates whether this option group can be applied to both VPC and
@@ -208,7 +208,8 @@ public class OptionGroup  implements Serializable  {
     public java.util.List<Option> getOptions() {
         
         if (options == null) {
-            options = new java.util.ArrayList<Option>();
+              options = new com.amazonaws.internal.ListWithAutoConstructFlag<Option>();
+              options.setAutoConstruct(true);
         }
         return options;
     }
@@ -223,8 +224,7 @@ public class OptionGroup  implements Serializable  {
             this.options = null;
             return;
         }
-
-        java.util.List<Option> optionsCopy = new java.util.ArrayList<Option>(options.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<Option> optionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Option>(options.size());
         optionsCopy.addAll(options);
         this.options = optionsCopy;
     }
@@ -261,7 +261,7 @@ public class OptionGroup  implements Serializable  {
         if (options == null) {
             this.options = null;
         } else {
-            java.util.List<Option> optionsCopy = new java.util.ArrayList<Option>(options.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<Option> optionsCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<Option>(options.size());
             optionsCopy.addAll(options);
             this.options = optionsCopy;
         }
@@ -403,13 +403,13 @@ public class OptionGroup  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getOptionGroupName() != null) sb.append("OptionGroupName: " + getOptionGroupName() + ",");    	
-        if (getOptionGroupDescription() != null) sb.append("OptionGroupDescription: " + getOptionGroupDescription() + ",");    	
-        if (getEngineName() != null) sb.append("EngineName: " + getEngineName() + ",");    	
-        if (getMajorEngineVersion() != null) sb.append("MajorEngineVersion: " + getMajorEngineVersion() + ",");    	
-        if (getOptions() != null) sb.append("Options: " + getOptions() + ",");    	
-        if (isAllowsVpcAndNonVpcInstanceMemberships() != null) sb.append("AllowsVpcAndNonVpcInstanceMemberships: " + isAllowsVpcAndNonVpcInstanceMemberships() + ",");    	
+        sb.append("{");
+        if (getOptionGroupName() != null) sb.append("OptionGroupName: " + getOptionGroupName() + ",");
+        if (getOptionGroupDescription() != null) sb.append("OptionGroupDescription: " + getOptionGroupDescription() + ",");
+        if (getEngineName() != null) sb.append("EngineName: " + getEngineName() + ",");
+        if (getMajorEngineVersion() != null) sb.append("MajorEngineVersion: " + getMajorEngineVersion() + ",");
+        if (getOptions() != null) sb.append("Options: " + getOptions() + ",");
+        if (isAllowsVpcAndNonVpcInstanceMemberships() != null) sb.append("AllowsVpcAndNonVpcInstanceMemberships: " + isAllowsVpcAndNonVpcInstanceMemberships() + ",");
         if (getVpcId() != null) sb.append("VpcId: " + getVpcId() );
         sb.append("}");
         return sb.toString();

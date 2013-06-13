@@ -248,12 +248,12 @@ public class ExportTask  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getExportTaskId() != null) sb.append("ExportTaskId: " + getExportTaskId() + ",");    	
-        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");    	
-        if (getState() != null) sb.append("State: " + getState() + ",");    	
-        if (getStatusMessage() != null) sb.append("StatusMessage: " + getStatusMessage() + ",");    	
-        if (getInstanceExportDetails() != null) sb.append("InstanceExportDetails: " + getInstanceExportDetails() + ",");    	
+        sb.append("{");
+        if (getExportTaskId() != null) sb.append("ExportTaskId: " + getExportTaskId() + ",");
+        if (getDescription() != null) sb.append("Description: " + getDescription() + ",");
+        if (getState() != null) sb.append("State: " + getState() + ",");
+        if (getStatusMessage() != null) sb.append("StatusMessage: " + getStatusMessage() + ",");
+        if (getInstanceExportDetails() != null) sb.append("InstanceExportDetails: " + getInstanceExportDetails() + ",");
         if (getExportToS3Task() != null) sb.append("ExportToS3Task: " + getExportToS3Task() );
         sb.append("}");
         return sb.toString();

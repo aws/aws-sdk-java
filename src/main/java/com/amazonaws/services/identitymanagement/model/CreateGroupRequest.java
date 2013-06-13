@@ -59,6 +59,8 @@ public class CreateGroupRequest extends AmazonWebServiceRequest  implements Seri
      */
     public CreateGroupRequest() {}
     
+
+
     /**
      * Constructs a new CreateGroupRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -68,7 +70,7 @@ public class CreateGroupRequest extends AmazonWebServiceRequest  implements Seri
      * in this value.
      */
     public CreateGroupRequest(String groupName) {
-        this.groupName = groupName;
+        setGroupName(groupName);
     }
 
     
@@ -200,8 +202,8 @@ public class CreateGroupRequest extends AmazonWebServiceRequest  implements Seri
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getPath() != null) sb.append("Path: " + getPath() + ",");    	
+        sb.append("{");
+        if (getPath() != null) sb.append("Path: " + getPath() + ",");
         if (getGroupName() != null) sb.append("GroupName: " + getGroupName() );
         sb.append("}");
         return sb.toString();
