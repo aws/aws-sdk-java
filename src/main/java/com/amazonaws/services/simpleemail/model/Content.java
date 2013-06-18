@@ -42,6 +42,8 @@ public class Content  implements Serializable  {
      */
     public Content() {}
     
+
+
     /**
      * Constructs a new Content object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -50,7 +52,7 @@ public class Content  implements Serializable  {
      * @param data The textual data of the content.
      */
     public Content(String data) {
-        this.data = data;
+        setData(data);
     }
 
     
@@ -134,8 +136,8 @@ public class Content  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getData() != null) sb.append("Data: " + getData() + ",");    	
+        sb.append("{");
+        if (getData() != null) sb.append("Data: " + getData() + ",");
         if (getCharset() != null) sb.append("Charset: " + getCharset() );
         sb.append("}");
         return sb.toString();

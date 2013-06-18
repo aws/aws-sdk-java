@@ -181,8 +181,8 @@ public class IdentityVerificationAttributes  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getVerificationStatus() != null) sb.append("VerificationStatus: " + getVerificationStatus() + ",");    	
+        sb.append("{");
+        if (getVerificationStatus() != null) sb.append("VerificationStatus: " + getVerificationStatus() + ",");
         if (getVerificationToken() != null) sb.append("VerificationToken: " + getVerificationToken() );
         sb.append("}");
         return sb.toString();

@@ -49,6 +49,8 @@ public class DeleteTopicRequest extends AmazonWebServiceRequest  implements Seri
      */
     public DeleteTopicRequest() {}
     
+
+
     /**
      * Constructs a new DeleteTopicRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -68,7 +70,7 @@ public class DeleteTopicRequest extends AmazonWebServiceRequest  implements Seri
      * </examples>
      */
     public DeleteTopicRequest(String topicArn) {
-        this.topicArn = topicArn;
+        setTopicArn(topicArn);
     }
 
     
@@ -184,7 +186,7 @@ public class DeleteTopicRequest extends AmazonWebServiceRequest  implements Seri
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getTopicArn() != null) sb.append("TopicArn: " + getTopicArn() );
         sb.append("}");
         return sb.toString();

@@ -234,11 +234,11 @@ public class Subscription  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getSubscriptionArn() != null) sb.append("SubscriptionArn: " + getSubscriptionArn() + ",");    	
-        if (getOwner() != null) sb.append("Owner: " + getOwner() + ",");    	
-        if (getProtocol() != null) sb.append("Protocol: " + getProtocol() + ",");    	
-        if (getEndpoint() != null) sb.append("Endpoint: " + getEndpoint() + ",");    	
+        sb.append("{");
+        if (getSubscriptionArn() != null) sb.append("SubscriptionArn: " + getSubscriptionArn() + ",");
+        if (getOwner() != null) sb.append("Owner: " + getOwner() + ",");
+        if (getProtocol() != null) sb.append("Protocol: " + getProtocol() + ",");
+        if (getEndpoint() != null) sb.append("Endpoint: " + getEndpoint() + ",");
         if (getTopicArn() != null) sb.append("TopicArn: " + getTopicArn() );
         sb.append("}");
         return sb.toString();

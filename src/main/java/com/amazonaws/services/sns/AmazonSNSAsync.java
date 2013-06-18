@@ -26,34 +26,11 @@ import com.amazonaws.services.sns.model.*;
  * Each asynchronous method will return a Java Future object, and users are also allowed
  * to provide a callback handler.
  * Amazon Simple Notification Service <p>
- * This is the <i>Amazon Simple Notification Service (Amazon SNS) API Reference</i> . This guide provides detailed information about Amazon SNS actions,
- * data types, parameters, and errors. For detailed information about Amazon SNS features and their associated API calls, go to the <a
- * href="http://docs.amazonwebservices.com/sns/latest/gsg/"> Amazon SNS Getting Started Guide </a> .
- * </p>
- * <p>
  * Amazon Simple Notification Service is a web service that enables you to build distributed web-enabled applications. Applications can use Amazon SNS to
  * easily push real-time notification messages to interested subscribers over multiple delivery protocols. For more information about this product go to
- * <a href="http://aws.amazon.com/sns/"> http://aws.amazon.com/sns </a> .
- * </p>
- * <p>
- * Use the following links to get started using the <i>Amazon Simple Notification Service API Reference</i> :
- * </p>
- * 
- * <ul>
- * <li> <a href="http://docs.amazonwebservices.com/sns/latest/api/API_Operations.html"> Actions </a> : An alphabetical list of all Amazon SNS
- * actions.</li>
- * <li> <a href="http://docs.amazonwebservices.com/sns/latest/api/API_Types.html"> Data Types </a> : An alphabetical list of all Amazon SNS data
- * types.</li>
- * <li> <a href="http://docs.amazonwebservices.com/sns/latest/api/CommonParameters.html"> Common Parameters </a> : Parameters that all Query actions can
- * use.</li>
- * <li> <a href="http://docs.amazonwebservices.com/sns/latest/api/CommonErrors.html"> Common Errors </a> : Client and server errors that all actions can
- * return.</li>
- * <li> <a href="http://docs.amazonwebservices.com/general/latest/gr/index.html?rande.html"> Regions and Endpoints </a> : Itemized regions and endpoints
- * for all AWS products.</li>
- * <li> <a href="http://sns.us-east-1.amazonaws.com/doc/2010-03-31/SimpleNotificationService.wsdl"> WSDL Location </a> :
- * http://sns.us-east-1.amazonaws.com/doc/2010-03-31/SimpleNotificationService.wsdl</li>
- * 
- * </ul> 
+ * <a href="http://aws.amazon.com/sns/"> http://aws.amazon.com/sns </a> . For detailed information about Amazon SNS features and their associated API
+ * calls, go to the <a href="http://docs.amazonwebservices.com/sns/latest/gsg/"> Amazon SNS Getting Started Guide </a> .
+ * </p> 
  */       
 public interface AmazonSNSAsync extends AmazonSNS {
     /**
@@ -117,9 +94,9 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
-     * The GetTopicAttribtues action returns all of the properties of a topic
-     * customers have created. Topic properties returned might differ based
-     * on the authorization of the user.
+     * The GetTopicAttributes action returns all of the properties of a
+     * topic. Topic properties returned might differ based on the
+     * authorization of the user.
      * </p>
      *
      * @param getTopicAttributesRequest Container for the necessary
@@ -141,9 +118,9 @@ public interface AmazonSNSAsync extends AmazonSNS {
 
     /**
      * <p>
-     * The GetTopicAttribtues action returns all of the properties of a topic
-     * customers have created. Topic properties returned might differ based
-     * on the authorization of the user.
+     * The GetTopicAttributes action returns all of the properties of a
+     * topic. Topic properties returned might differ based on the
+     * authorization of the user.
      * </p>
      *
      * @param getTopicAttributesRequest Container for the necessary
@@ -548,10 +525,11 @@ public interface AmazonSNSAsync extends AmazonSNS {
     /**
      * <p>
      * The CreateTopic action creates a topic to which notifications can be
-     * published. Users can create at most 25 topics. This action is
-     * idempotent, so if the requester already owns a topic with the
-     * specified name, that topic's ARN will be returned without creating a
-     * new topic.
+     * published. Users can create at most 100 topics. For more information,
+     * see <a href="http://aws.amazon.com/sns/"> http://aws.amazon.com/sns
+     * </a> . This action is idempotent, so if the requester already owns a
+     * topic with the specified name, that topic's ARN will be returned
+     * without creating a new topic.
      * </p>
      *
      * @param createTopicRequest Container for the necessary parameters to
@@ -574,10 +552,11 @@ public interface AmazonSNSAsync extends AmazonSNS {
     /**
      * <p>
      * The CreateTopic action creates a topic to which notifications can be
-     * published. Users can create at most 25 topics. This action is
-     * idempotent, so if the requester already owns a topic with the
-     * specified name, that topic's ARN will be returned without creating a
-     * new topic.
+     * published. Users can create at most 100 topics. For more information,
+     * see <a href="http://aws.amazon.com/sns/"> http://aws.amazon.com/sns
+     * </a> . This action is idempotent, so if the requester already owns a
+     * topic with the specified name, that topic's ARN will be returned
+     * without creating a new topic.
      * </p>
      *
      * @param createTopicRequest Container for the necessary parameters to

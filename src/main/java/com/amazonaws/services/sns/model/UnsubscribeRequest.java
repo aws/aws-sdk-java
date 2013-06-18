@@ -40,6 +40,8 @@ public class UnsubscribeRequest extends AmazonWebServiceRequest  implements Seri
      */
     public UnsubscribeRequest() {}
     
+
+
     /**
      * Constructs a new UnsubscribeRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -48,7 +50,7 @@ public class UnsubscribeRequest extends AmazonWebServiceRequest  implements Seri
      * @param subscriptionArn The ARN of the subscription to be deleted.
      */
     public UnsubscribeRequest(String subscriptionArn) {
-        this.subscriptionArn = subscriptionArn;
+        setSubscriptionArn(subscriptionArn);
     }
 
     
@@ -98,7 +100,7 @@ public class UnsubscribeRequest extends AmazonWebServiceRequest  implements Seri
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getSubscriptionArn() != null) sb.append("SubscriptionArn: " + getSubscriptionArn() );
         sb.append("}");
         return sb.toString();

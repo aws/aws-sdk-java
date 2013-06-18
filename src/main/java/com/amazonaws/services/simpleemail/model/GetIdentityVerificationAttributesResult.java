@@ -76,7 +76,7 @@ public class GetIdentityVerificationAttributesResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getVerificationAttributes() != null) sb.append("VerificationAttributes: " + getVerificationAttributes() );
         sb.append("}");
         return sb.toString();

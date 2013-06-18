@@ -157,9 +157,9 @@ public class GetSendQuotaResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getMax24HourSend() != null) sb.append("Max24HourSend: " + getMax24HourSend() + ",");    	
-        if (getMaxSendRate() != null) sb.append("MaxSendRate: " + getMaxSendRate() + ",");    	
+        sb.append("{");
+        if (getMax24HourSend() != null) sb.append("Max24HourSend: " + getMax24HourSend() + ",");
+        if (getMaxSendRate() != null) sb.append("MaxSendRate: " + getMaxSendRate() + ",");
         if (getSentLast24Hours() != null) sb.append("SentLast24Hours: " + getSentLast24Hours() );
         sb.append("}");
         return sb.toString();

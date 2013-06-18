@@ -76,7 +76,7 @@ public class VerifyDomainIdentityRequest extends AmazonWebServiceRequest  implem
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getDomain() != null) sb.append("Domain: " + getDomain() );
         sb.append("}");
         return sb.toString();

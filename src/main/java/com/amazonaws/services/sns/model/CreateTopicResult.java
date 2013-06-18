@@ -16,7 +16,7 @@ package com.amazonaws.services.sns.model;
 import java.io.Serializable;
 
 /**
- * Create Topic Result
+ * 
  */
 public class CreateTopicResult  implements Serializable  {
 
@@ -70,7 +70,7 @@ public class CreateTopicResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getTopicArn() != null) sb.append("TopicArn: " + getTopicArn() );
         sb.append("}");
         return sb.toString();

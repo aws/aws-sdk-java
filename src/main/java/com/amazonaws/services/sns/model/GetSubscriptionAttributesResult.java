@@ -16,7 +16,7 @@ package com.amazonaws.services.sns.model;
 import java.io.Serializable;
 
 /**
- * Get Subscription Attributes Result
+ * 
  */
 public class GetSubscriptionAttributesResult  implements Serializable  {
 
@@ -137,7 +137,7 @@ public class GetSubscriptionAttributesResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getAttributes() != null) sb.append("Attributes: " + getAttributes() );
         sb.append("}");
         return sb.toString();

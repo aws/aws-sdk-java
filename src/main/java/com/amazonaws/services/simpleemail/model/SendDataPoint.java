@@ -228,11 +228,11 @@ public class SendDataPoint  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getTimestamp() != null) sb.append("Timestamp: " + getTimestamp() + ",");    	
-        if (getDeliveryAttempts() != null) sb.append("DeliveryAttempts: " + getDeliveryAttempts() + ",");    	
-        if (getBounces() != null) sb.append("Bounces: " + getBounces() + ",");    	
-        if (getComplaints() != null) sb.append("Complaints: " + getComplaints() + ",");    	
+        sb.append("{");
+        if (getTimestamp() != null) sb.append("Timestamp: " + getTimestamp() + ",");
+        if (getDeliveryAttempts() != null) sb.append("DeliveryAttempts: " + getDeliveryAttempts() + ",");
+        if (getBounces() != null) sb.append("Bounces: " + getBounces() + ",");
+        if (getComplaints() != null) sb.append("Complaints: " + getComplaints() + ",");
         if (getRejects() != null) sb.append("Rejects: " + getRejects() );
         sb.append("}");
         return sb.toString();

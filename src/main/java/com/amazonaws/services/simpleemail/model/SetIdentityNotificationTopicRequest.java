@@ -248,9 +248,9 @@ public class SetIdentityNotificationTopicRequest extends AmazonWebServiceRequest
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getIdentity() != null) sb.append("Identity: " + getIdentity() + ",");    	
-        if (getNotificationType() != null) sb.append("NotificationType: " + getNotificationType() + ",");    	
+        sb.append("{");
+        if (getIdentity() != null) sb.append("Identity: " + getIdentity() + ",");
+        if (getNotificationType() != null) sb.append("NotificationType: " + getNotificationType() + ",");
         if (getSnsTopic() != null) sb.append("SnsTopic: " + getSnsTopic() );
         sb.append("}");
         return sb.toString();

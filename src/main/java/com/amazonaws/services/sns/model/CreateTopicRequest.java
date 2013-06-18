@@ -19,8 +19,9 @@ import java.io.Serializable;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#createTopic(CreateTopicRequest) CreateTopic operation}.
  * <p>
- * The CreateTopic action creates a topic to which notifications can be published. Users can create at most 25 topics. This action is idempotent, so if
- * the requester already owns a topic with the specified name, that topic's ARN will be returned without creating a new topic.
+ * The CreateTopic action creates a topic to which notifications can be published. Users can create at most 100 topics. For more information, see <a
+ * href="http://aws.amazon.com/sns/"> http://aws.amazon.com/sns </a> . This action is idempotent, so if the requester already owns a topic with the
+ * specified name, that topic's ARN will be returned without creating a new topic.
  * </p>
  *
  * @see com.amazonaws.services.sns.AmazonSNS#createTopic(CreateTopicRequest)
@@ -30,7 +31,8 @@ public class CreateTopicRequest extends AmazonWebServiceRequest  implements Seri
     /**
      * The name of the topic you want to create. <p>Constraints: Topic names
      * must be made up of only uppercase and lowercase ASCII letters,
-     * numbers, and hyphens, and must be between 1 and 256 characters long.
+     * numbers, underscores, and hyphens, and must be between 1 and 256
+     * characters long.
      */
     private String name;
 
@@ -40,6 +42,8 @@ public class CreateTopicRequest extends AmazonWebServiceRequest  implements Seri
      */
     public CreateTopicRequest() {}
     
+
+
     /**
      * Constructs a new CreateTopicRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -47,11 +51,11 @@ public class CreateTopicRequest extends AmazonWebServiceRequest  implements Seri
      * 
      * @param name The name of the topic you want to create. <p>Constraints:
      * Topic names must be made up of only uppercase and lowercase ASCII
-     * letters, numbers, and hyphens, and must be between 1 and 256
-     * characters long.
+     * letters, numbers, underscores, and hyphens, and must be between 1 and
+     * 256 characters long.
      */
     public CreateTopicRequest(String name) {
-        this.name = name;
+        setName(name);
     }
 
     
@@ -59,11 +63,13 @@ public class CreateTopicRequest extends AmazonWebServiceRequest  implements Seri
     /**
      * The name of the topic you want to create. <p>Constraints: Topic names
      * must be made up of only uppercase and lowercase ASCII letters,
-     * numbers, and hyphens, and must be between 1 and 256 characters long.
+     * numbers, underscores, and hyphens, and must be between 1 and 256
+     * characters long.
      *
      * @return The name of the topic you want to create. <p>Constraints: Topic names
      *         must be made up of only uppercase and lowercase ASCII letters,
-     *         numbers, and hyphens, and must be between 1 and 256 characters long.
+     *         numbers, underscores, and hyphens, and must be between 1 and 256
+     *         characters long.
      */
     public String getName() {
         return name;
@@ -72,11 +78,13 @@ public class CreateTopicRequest extends AmazonWebServiceRequest  implements Seri
     /**
      * The name of the topic you want to create. <p>Constraints: Topic names
      * must be made up of only uppercase and lowercase ASCII letters,
-     * numbers, and hyphens, and must be between 1 and 256 characters long.
+     * numbers, underscores, and hyphens, and must be between 1 and 256
+     * characters long.
      *
      * @param name The name of the topic you want to create. <p>Constraints: Topic names
      *         must be made up of only uppercase and lowercase ASCII letters,
-     *         numbers, and hyphens, and must be between 1 and 256 characters long.
+     *         numbers, underscores, and hyphens, and must be between 1 and 256
+     *         characters long.
      */
     public void setName(String name) {
         this.name = name;
@@ -85,13 +93,15 @@ public class CreateTopicRequest extends AmazonWebServiceRequest  implements Seri
     /**
      * The name of the topic you want to create. <p>Constraints: Topic names
      * must be made up of only uppercase and lowercase ASCII letters,
-     * numbers, and hyphens, and must be between 1 and 256 characters long.
+     * numbers, underscores, and hyphens, and must be between 1 and 256
+     * characters long.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
      * @param name The name of the topic you want to create. <p>Constraints: Topic names
      *         must be made up of only uppercase and lowercase ASCII letters,
-     *         numbers, and hyphens, and must be between 1 and 256 characters long.
+     *         numbers, underscores, and hyphens, and must be between 1 and 256
+     *         characters long.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -113,7 +123,7 @@ public class CreateTopicRequest extends AmazonWebServiceRequest  implements Seri
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getName() != null) sb.append("Name: " + getName() );
         sb.append("}");
         return sb.toString();

@@ -47,7 +47,7 @@ public class GetIdentityDkimAttributesRequest extends AmazonWebServiceRequest  i
      * A list of one or more verified identities - email addresses, domains,
      * or both.
      */
-    private java.util.List<String> identities;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> identities;
 
     /**
      * A list of one or more verified identities - email addresses, domains,
@@ -59,7 +59,8 @@ public class GetIdentityDkimAttributesRequest extends AmazonWebServiceRequest  i
     public java.util.List<String> getIdentities() {
         
         if (identities == null) {
-            identities = new java.util.ArrayList<String>();
+              identities = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              identities.setAutoConstruct(true);
         }
         return identities;
     }
@@ -76,8 +77,7 @@ public class GetIdentityDkimAttributesRequest extends AmazonWebServiceRequest  i
             this.identities = null;
             return;
         }
-
-        java.util.List<String> identitiesCopy = new java.util.ArrayList<String>(identities.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> identitiesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(identities.size());
         identitiesCopy.addAll(identities);
         this.identities = identitiesCopy;
     }
@@ -118,7 +118,7 @@ public class GetIdentityDkimAttributesRequest extends AmazonWebServiceRequest  i
         if (identities == null) {
             this.identities = null;
         } else {
-            java.util.List<String> identitiesCopy = new java.util.ArrayList<String>(identities.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> identitiesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(identities.size());
             identitiesCopy.addAll(identities);
             this.identities = identitiesCopy;
         }
@@ -137,7 +137,7 @@ public class GetIdentityDkimAttributesRequest extends AmazonWebServiceRequest  i
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getIdentities() != null) sb.append("Identities: " + getIdentities() );
         sb.append("}");
         return sb.toString();

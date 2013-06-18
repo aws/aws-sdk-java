@@ -39,11 +39,11 @@ public class ConfirmSubscriptionRequest extends AmazonWebServiceRequest  impleme
     private String token;
 
     /**
-     * Indicates that you want to disallow unauthenticated unsubscribes of
-     * the subscription. If value of this parameter is "true" and the request
-     * has an AWS signature then only the topic owner and the subscription
-     * owner will be permitted to unsubscribe the endpoint. The unsubscribe
-     * action will require AWS authentication.
+     * Disallows unauthenticated unsubscribes of the subscription. If the
+     * value of this parameter is <code>true</code> and the request has an
+     * AWS signature, then only the topic owner and the subscription owner
+     * can unsubscribe the endpoint. The unsubscribe action will require AWS
+     * authentication.
      */
     private String authenticateOnUnsubscribe;
 
@@ -53,6 +53,8 @@ public class ConfirmSubscriptionRequest extends AmazonWebServiceRequest  impleme
      */
     public ConfirmSubscriptionRequest() {}
     
+
+
     /**
      * Constructs a new ConfirmSubscriptionRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -64,12 +66,14 @@ public class ConfirmSubscriptionRequest extends AmazonWebServiceRequest  impleme
      * Subscribe action.
      */
     public ConfirmSubscriptionRequest(String topicArn, String token) {
-        this.topicArn = topicArn;
-        this.token = token;
+        setTopicArn(topicArn);
+        setToken(token);
     }
 
     
     
+
+
     /**
      * Constructs a new ConfirmSubscriptionRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -79,17 +83,16 @@ public class ConfirmSubscriptionRequest extends AmazonWebServiceRequest  impleme
      * subscription.
      * @param token Short-lived token sent to an endpoint during the
      * Subscribe action.
-     * @param authenticateOnUnsubscribe Indicates that you want to disallow
-     * unauthenticated unsubscribes of the subscription. If value of this
-     * parameter is "true" and the request has an AWS signature then only the
-     * topic owner and the subscription owner will be permitted to
-     * unsubscribe the endpoint. The unsubscribe action will require AWS
-     * authentication.
+     * @param authenticateOnUnsubscribe Disallows unauthenticated
+     * unsubscribes of the subscription. If the value of this parameter is
+     * <code>true</code> and the request has an AWS signature, then only the
+     * topic owner and the subscription owner can unsubscribe the endpoint.
+     * The unsubscribe action will require AWS authentication.
      */
     public ConfirmSubscriptionRequest(String topicArn, String token, String authenticateOnUnsubscribe) {
-        this.topicArn = topicArn;
-        this.token = token;
-        this.authenticateOnUnsubscribe = authenticateOnUnsubscribe;
+        setTopicArn(topicArn);
+        setToken(token);
+        setAuthenticateOnUnsubscribe(authenticateOnUnsubscribe);
     }
 
     
@@ -163,53 +166,53 @@ public class ConfirmSubscriptionRequest extends AmazonWebServiceRequest  impleme
     
     
     /**
-     * Indicates that you want to disallow unauthenticated unsubscribes of
-     * the subscription. If value of this parameter is "true" and the request
-     * has an AWS signature then only the topic owner and the subscription
-     * owner will be permitted to unsubscribe the endpoint. The unsubscribe
-     * action will require AWS authentication.
+     * Disallows unauthenticated unsubscribes of the subscription. If the
+     * value of this parameter is <code>true</code> and the request has an
+     * AWS signature, then only the topic owner and the subscription owner
+     * can unsubscribe the endpoint. The unsubscribe action will require AWS
+     * authentication.
      *
-     * @return Indicates that you want to disallow unauthenticated unsubscribes of
-     *         the subscription. If value of this parameter is "true" and the request
-     *         has an AWS signature then only the topic owner and the subscription
-     *         owner will be permitted to unsubscribe the endpoint. The unsubscribe
-     *         action will require AWS authentication.
+     * @return Disallows unauthenticated unsubscribes of the subscription. If the
+     *         value of this parameter is <code>true</code> and the request has an
+     *         AWS signature, then only the topic owner and the subscription owner
+     *         can unsubscribe the endpoint. The unsubscribe action will require AWS
+     *         authentication.
      */
     public String getAuthenticateOnUnsubscribe() {
         return authenticateOnUnsubscribe;
     }
     
     /**
-     * Indicates that you want to disallow unauthenticated unsubscribes of
-     * the subscription. If value of this parameter is "true" and the request
-     * has an AWS signature then only the topic owner and the subscription
-     * owner will be permitted to unsubscribe the endpoint. The unsubscribe
-     * action will require AWS authentication.
+     * Disallows unauthenticated unsubscribes of the subscription. If the
+     * value of this parameter is <code>true</code> and the request has an
+     * AWS signature, then only the topic owner and the subscription owner
+     * can unsubscribe the endpoint. The unsubscribe action will require AWS
+     * authentication.
      *
-     * @param authenticateOnUnsubscribe Indicates that you want to disallow unauthenticated unsubscribes of
-     *         the subscription. If value of this parameter is "true" and the request
-     *         has an AWS signature then only the topic owner and the subscription
-     *         owner will be permitted to unsubscribe the endpoint. The unsubscribe
-     *         action will require AWS authentication.
+     * @param authenticateOnUnsubscribe Disallows unauthenticated unsubscribes of the subscription. If the
+     *         value of this parameter is <code>true</code> and the request has an
+     *         AWS signature, then only the topic owner and the subscription owner
+     *         can unsubscribe the endpoint. The unsubscribe action will require AWS
+     *         authentication.
      */
     public void setAuthenticateOnUnsubscribe(String authenticateOnUnsubscribe) {
         this.authenticateOnUnsubscribe = authenticateOnUnsubscribe;
     }
     
     /**
-     * Indicates that you want to disallow unauthenticated unsubscribes of
-     * the subscription. If value of this parameter is "true" and the request
-     * has an AWS signature then only the topic owner and the subscription
-     * owner will be permitted to unsubscribe the endpoint. The unsubscribe
-     * action will require AWS authentication.
+     * Disallows unauthenticated unsubscribes of the subscription. If the
+     * value of this parameter is <code>true</code> and the request has an
+     * AWS signature, then only the topic owner and the subscription owner
+     * can unsubscribe the endpoint. The unsubscribe action will require AWS
+     * authentication.
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
-     * @param authenticateOnUnsubscribe Indicates that you want to disallow unauthenticated unsubscribes of
-     *         the subscription. If value of this parameter is "true" and the request
-     *         has an AWS signature then only the topic owner and the subscription
-     *         owner will be permitted to unsubscribe the endpoint. The unsubscribe
-     *         action will require AWS authentication.
+     * @param authenticateOnUnsubscribe Disallows unauthenticated unsubscribes of the subscription. If the
+     *         value of this parameter is <code>true</code> and the request has an
+     *         AWS signature, then only the topic owner and the subscription owner
+     *         can unsubscribe the endpoint. The unsubscribe action will require AWS
+     *         authentication.
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -231,9 +234,9 @@ public class ConfirmSubscriptionRequest extends AmazonWebServiceRequest  impleme
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getTopicArn() != null) sb.append("TopicArn: " + getTopicArn() + ",");    	
-        if (getToken() != null) sb.append("Token: " + getToken() + ",");    	
+        sb.append("{");
+        if (getTopicArn() != null) sb.append("TopicArn: " + getTopicArn() + ",");
+        if (getToken() != null) sb.append("Token: " + getToken() + ",");
         if (getAuthenticateOnUnsubscribe() != null) sb.append("AuthenticateOnUnsubscribe: " + getAuthenticateOnUnsubscribe() );
         sb.append("}");
         return sb.toString();

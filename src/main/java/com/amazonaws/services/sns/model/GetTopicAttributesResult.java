@@ -16,7 +16,7 @@ package com.amazonaws.services.sns.model;
 import java.io.Serializable;
 
 /**
- * Get Topic Attributes Result
+ * 
  */
 public class GetTopicAttributesResult  implements Serializable  {
 
@@ -165,7 +165,7 @@ public class GetTopicAttributesResult  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getAttributes() != null) sb.append("Attributes: " + getAttributes() );
         sb.append("}");
         return sb.toString();

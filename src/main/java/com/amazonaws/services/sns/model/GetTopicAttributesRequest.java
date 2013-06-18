@@ -19,8 +19,7 @@ import java.io.Serializable;
 /**
  * Container for the parameters to the {@link com.amazonaws.services.sns.AmazonSNS#getTopicAttributes(GetTopicAttributesRequest) GetTopicAttributes operation}.
  * <p>
- * The GetTopicAttribtues action returns all of the properties of a topic customers have created. Topic properties returned might differ based on the
- * authorization of the user.
+ * The GetTopicAttributes action returns all of the properties of a topic. Topic properties returned might differ based on the authorization of the user.
  * </p>
  *
  * @see com.amazonaws.services.sns.AmazonSNS#getTopicAttributes(GetTopicAttributesRequest)
@@ -38,6 +37,8 @@ public class GetTopicAttributesRequest extends AmazonWebServiceRequest  implemen
      */
     public GetTopicAttributesRequest() {}
     
+
+
     /**
      * Constructs a new GetTopicAttributesRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -46,7 +47,7 @@ public class GetTopicAttributesRequest extends AmazonWebServiceRequest  implemen
      * @param topicArn The ARN of the topic whose properties you want to get.
      */
     public GetTopicAttributesRequest(String topicArn) {
-        this.topicArn = topicArn;
+        setTopicArn(topicArn);
     }
 
     
@@ -96,7 +97,7 @@ public class GetTopicAttributesRequest extends AmazonWebServiceRequest  implemen
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getTopicArn() != null) sb.append("TopicArn: " + getTopicArn() );
         sb.append("}");
         return sb.toString();

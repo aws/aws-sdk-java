@@ -42,6 +42,8 @@ public class RemovePermissionRequest extends AmazonWebServiceRequest  implements
      */
     public RemovePermissionRequest() {}
     
+
+
     /**
      * Constructs a new RemovePermissionRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -52,8 +54,8 @@ public class RemovePermissionRequest extends AmazonWebServiceRequest  implements
      * @param label The unique label of the statement you want to remove.
      */
     public RemovePermissionRequest(String topicArn, String label) {
-        this.topicArn = topicArn;
-        this.label = label;
+        setTopicArn(topicArn);
+        setLabel(label);
     }
 
     
@@ -137,8 +139,8 @@ public class RemovePermissionRequest extends AmazonWebServiceRequest  implements
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getTopicArn() != null) sb.append("TopicArn: " + getTopicArn() + ",");    	
+        sb.append("{");
+        if (getTopicArn() != null) sb.append("TopicArn: " + getTopicArn() + ",");
         if (getLabel() != null) sb.append("Label: " + getLabel() );
         sb.append("}");
         return sb.toString();

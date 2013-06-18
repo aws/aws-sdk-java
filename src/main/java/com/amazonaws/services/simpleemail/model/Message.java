@@ -39,6 +39,8 @@ public class Message  implements Serializable  {
      */
     public Message() {}
     
+
+
     /**
      * Constructs a new Message object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -49,8 +51,8 @@ public class Message  implements Serializable  {
      * @param body The message body.
      */
     public Message(Content subject, Body body) {
-        this.subject = subject;
-        this.body = body;
+        setSubject(subject);
+        setBody(body);
     }
 
     
@@ -140,8 +142,8 @@ public class Message  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getSubject() != null) sb.append("Subject: " + getSubject() + ",");    	
+        sb.append("{");
+        if (getSubject() != null) sb.append("Subject: " + getSubject() + ",");
         if (getBody() != null) sb.append("Body: " + getBody() );
         sb.append("}");
         return sb.toString();

@@ -147,6 +147,7 @@ public class ServiceUtils {
             // Change all "%2F" back to "/", so that when users download a file in a virtual folder by the presigned URL,
             // the web browsers won't mess up the filename. (e.g. 'folder1_folder2_filename' instead of 'filename')
             encodedString = encodedString.replace("%2F", "/");
+            encodedString = encodedString.replace("%7E", "~");
             return encodedString;
         } catch (UnsupportedEncodingException e) {
             throw new AmazonClientException("Unable to encode path: " + s, e);

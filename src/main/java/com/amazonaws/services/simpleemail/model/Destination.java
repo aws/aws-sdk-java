@@ -25,17 +25,17 @@ public class Destination  implements Serializable  {
     /**
      * The To: field(s) of the message.
      */
-    private java.util.List<String> toAddresses;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> toAddresses;
 
     /**
      * The CC: field(s) of the message.
      */
-    private java.util.List<String> ccAddresses;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> ccAddresses;
 
     /**
      * The BCC: field(s) of the message.
      */
-    private java.util.List<String> bccAddresses;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> bccAddresses;
 
     /**
      * Default constructor for a new Destination object.  Callers should use the
@@ -43,6 +43,8 @@ public class Destination  implements Serializable  {
      */
     public Destination() {}
     
+
+
     /**
      * Constructs a new Destination object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -51,7 +53,7 @@ public class Destination  implements Serializable  {
      * @param toAddresses The To: field(s) of the message.
      */
     public Destination(java.util.List<String> toAddresses) {
-        this.toAddresses = toAddresses;
+        setToAddresses(toAddresses);
     }
 
     
@@ -64,7 +66,8 @@ public class Destination  implements Serializable  {
     public java.util.List<String> getToAddresses() {
         
         if (toAddresses == null) {
-            toAddresses = new java.util.ArrayList<String>();
+              toAddresses = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              toAddresses.setAutoConstruct(true);
         }
         return toAddresses;
     }
@@ -79,8 +82,7 @@ public class Destination  implements Serializable  {
             this.toAddresses = null;
             return;
         }
-
-        java.util.List<String> toAddressesCopy = new java.util.ArrayList<String>(toAddresses.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> toAddressesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(toAddresses.size());
         toAddressesCopy.addAll(toAddresses);
         this.toAddresses = toAddressesCopy;
     }
@@ -117,7 +119,7 @@ public class Destination  implements Serializable  {
         if (toAddresses == null) {
             this.toAddresses = null;
         } else {
-            java.util.List<String> toAddressesCopy = new java.util.ArrayList<String>(toAddresses.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> toAddressesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(toAddresses.size());
             toAddressesCopy.addAll(toAddresses);
             this.toAddresses = toAddressesCopy;
         }
@@ -133,7 +135,8 @@ public class Destination  implements Serializable  {
     public java.util.List<String> getCcAddresses() {
         
         if (ccAddresses == null) {
-            ccAddresses = new java.util.ArrayList<String>();
+              ccAddresses = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              ccAddresses.setAutoConstruct(true);
         }
         return ccAddresses;
     }
@@ -148,8 +151,7 @@ public class Destination  implements Serializable  {
             this.ccAddresses = null;
             return;
         }
-
-        java.util.List<String> ccAddressesCopy = new java.util.ArrayList<String>(ccAddresses.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> ccAddressesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(ccAddresses.size());
         ccAddressesCopy.addAll(ccAddresses);
         this.ccAddresses = ccAddressesCopy;
     }
@@ -186,7 +188,7 @@ public class Destination  implements Serializable  {
         if (ccAddresses == null) {
             this.ccAddresses = null;
         } else {
-            java.util.List<String> ccAddressesCopy = new java.util.ArrayList<String>(ccAddresses.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> ccAddressesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(ccAddresses.size());
             ccAddressesCopy.addAll(ccAddresses);
             this.ccAddresses = ccAddressesCopy;
         }
@@ -202,7 +204,8 @@ public class Destination  implements Serializable  {
     public java.util.List<String> getBccAddresses() {
         
         if (bccAddresses == null) {
-            bccAddresses = new java.util.ArrayList<String>();
+              bccAddresses = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              bccAddresses.setAutoConstruct(true);
         }
         return bccAddresses;
     }
@@ -217,8 +220,7 @@ public class Destination  implements Serializable  {
             this.bccAddresses = null;
             return;
         }
-
-        java.util.List<String> bccAddressesCopy = new java.util.ArrayList<String>(bccAddresses.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> bccAddressesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(bccAddresses.size());
         bccAddressesCopy.addAll(bccAddresses);
         this.bccAddresses = bccAddressesCopy;
     }
@@ -255,7 +257,7 @@ public class Destination  implements Serializable  {
         if (bccAddresses == null) {
             this.bccAddresses = null;
         } else {
-            java.util.List<String> bccAddressesCopy = new java.util.ArrayList<String>(bccAddresses.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> bccAddressesCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(bccAddresses.size());
             bccAddressesCopy.addAll(bccAddresses);
             this.bccAddresses = bccAddressesCopy;
         }
@@ -274,9 +276,9 @@ public class Destination  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getToAddresses() != null) sb.append("ToAddresses: " + getToAddresses() + ",");    	
-        if (getCcAddresses() != null) sb.append("CcAddresses: " + getCcAddresses() + ",");    	
+        sb.append("{");
+        if (getToAddresses() != null) sb.append("ToAddresses: " + getToAddresses() + ",");
+        if (getCcAddresses() != null) sb.append("CcAddresses: " + getCcAddresses() + ",");
         if (getBccAddresses() != null) sb.append("BccAddresses: " + getBccAddresses() );
         sb.append("}");
         return sb.toString();

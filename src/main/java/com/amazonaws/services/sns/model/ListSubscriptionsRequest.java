@@ -38,6 +38,8 @@ public class ListSubscriptionsRequest extends AmazonWebServiceRequest  implement
      */
     public ListSubscriptionsRequest() {}
     
+
+
     /**
      * Constructs a new ListSubscriptionsRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -47,7 +49,7 @@ public class ListSubscriptionsRequest extends AmazonWebServiceRequest  implement
      * request.
      */
     public ListSubscriptionsRequest(String nextToken) {
-        this.nextToken = nextToken;
+        setNextToken(nextToken);
     }
 
     
@@ -97,7 +99,7 @@ public class ListSubscriptionsRequest extends AmazonWebServiceRequest  implement
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
+        sb.append("{");
         if (getNextToken() != null) sb.append("NextToken: " + getNextToken() );
         sb.append("}");
         return sb.toString();

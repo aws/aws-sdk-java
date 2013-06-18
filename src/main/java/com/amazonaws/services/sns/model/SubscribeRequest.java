@@ -37,8 +37,9 @@ public class SubscribeRequest extends AmazonWebServiceRequest  implements Serial
      * <li>http -- delivery of JSON-encoded message via HTTP POST</li>
      * <li>https -- delivery of JSON-encoded message via HTTPS POST</li>
      * <li>email -- delivery of message via SMTP</li> <li>email-json --
-     * delivery of JSON-encoded message via SMTP</li> <li>sqs -- delivery of
-     * JSON-encoded message to an Amazon SQS queue</li> </ul>
+     * delivery of JSON-encoded message via SMTP</li> <li>sms -- delivery of
+     * message via SMS</li> <li>sqs -- delivery of JSON-encoded message to an
+     * Amazon SQS queue</li> </ul>
      */
     private String protocol;
 
@@ -48,8 +49,10 @@ public class SubscribeRequest extends AmazonWebServiceRequest  implements Serial
      * beginning with "http://"</li> <li>For the https protocol, the endpoint
      * is a URL beginning with "https://"</li> <li>For the email protocol,
      * the endpoint is an e-mail address</li> <li>For the email-json
-     * protocol, the endpoint is an e-mail address</li> <li>For the sqs
-     * protocol, the endpoint is the ARN of an Amazon SQS queue</li> </ul>
+     * protocol, the endpoint is an e-mail address</li> <li>For the sms
+     * protocol, the endpoint is a phone number of an SMS-enabled device</li>
+     * <li>For the sqs protocol, the endpoint is the ARN of an Amazon SQS
+     * queue</li> </ul>
      */
     private String endpoint;
 
@@ -59,6 +62,8 @@ public class SubscribeRequest extends AmazonWebServiceRequest  implements Serial
      */
     public SubscribeRequest() {}
     
+
+
     /**
      * Constructs a new SubscribeRequest object.
      * Callers should use the setter or fluent setter (with...) methods to
@@ -70,21 +75,22 @@ public class SubscribeRequest extends AmazonWebServiceRequest  implements Serial
      * POST</li> <li>https -- delivery of JSON-encoded message via HTTPS
      * POST</li> <li>email -- delivery of message via SMTP</li>
      * <li>email-json -- delivery of JSON-encoded message via SMTP</li>
-     * <li>sqs -- delivery of JSON-encoded message to an Amazon SQS
-     * queue</li> </ul>
+     * <li>sms -- delivery of message via SMS</li> <li>sqs -- delivery of
+     * JSON-encoded message to an Amazon SQS queue</li> </ul>
      * @param endpoint The endpoint that you want to receive notifications.
      * Endpoints vary by protocol: <ul> <li>For the http protocol, the
      * endpoint is an URL beginning with "http://"</li> <li>For the https
      * protocol, the endpoint is a URL beginning with "https://"</li> <li>For
      * the email protocol, the endpoint is an e-mail address</li> <li>For the
      * email-json protocol, the endpoint is an e-mail address</li> <li>For
-     * the sqs protocol, the endpoint is the ARN of an Amazon SQS queue</li>
-     * </ul>
+     * the sms protocol, the endpoint is a phone number of an SMS-enabled
+     * device</li> <li>For the sqs protocol, the endpoint is the ARN of an
+     * Amazon SQS queue</li> </ul>
      */
     public SubscribeRequest(String topicArn, String protocol, String endpoint) {
-        this.topicArn = topicArn;
-        this.protocol = protocol;
-        this.endpoint = endpoint;
+        setTopicArn(topicArn);
+        setProtocol(protocol);
+        setEndpoint(endpoint);
     }
 
     
@@ -128,15 +134,17 @@ public class SubscribeRequest extends AmazonWebServiceRequest  implements Serial
      * <li>http -- delivery of JSON-encoded message via HTTP POST</li>
      * <li>https -- delivery of JSON-encoded message via HTTPS POST</li>
      * <li>email -- delivery of message via SMTP</li> <li>email-json --
-     * delivery of JSON-encoded message via SMTP</li> <li>sqs -- delivery of
-     * JSON-encoded message to an Amazon SQS queue</li> </ul>
+     * delivery of JSON-encoded message via SMTP</li> <li>sms -- delivery of
+     * message via SMS</li> <li>sqs -- delivery of JSON-encoded message to an
+     * Amazon SQS queue</li> </ul>
      *
      * @return The protocol you want to use. Supported protocols include: <ul>
      *         <li>http -- delivery of JSON-encoded message via HTTP POST</li>
      *         <li>https -- delivery of JSON-encoded message via HTTPS POST</li>
      *         <li>email -- delivery of message via SMTP</li> <li>email-json --
-     *         delivery of JSON-encoded message via SMTP</li> <li>sqs -- delivery of
-     *         JSON-encoded message to an Amazon SQS queue</li> </ul>
+     *         delivery of JSON-encoded message via SMTP</li> <li>sms -- delivery of
+     *         message via SMS</li> <li>sqs -- delivery of JSON-encoded message to an
+     *         Amazon SQS queue</li> </ul>
      */
     public String getProtocol() {
         return protocol;
@@ -147,15 +155,17 @@ public class SubscribeRequest extends AmazonWebServiceRequest  implements Serial
      * <li>http -- delivery of JSON-encoded message via HTTP POST</li>
      * <li>https -- delivery of JSON-encoded message via HTTPS POST</li>
      * <li>email -- delivery of message via SMTP</li> <li>email-json --
-     * delivery of JSON-encoded message via SMTP</li> <li>sqs -- delivery of
-     * JSON-encoded message to an Amazon SQS queue</li> </ul>
+     * delivery of JSON-encoded message via SMTP</li> <li>sms -- delivery of
+     * message via SMS</li> <li>sqs -- delivery of JSON-encoded message to an
+     * Amazon SQS queue</li> </ul>
      *
      * @param protocol The protocol you want to use. Supported protocols include: <ul>
      *         <li>http -- delivery of JSON-encoded message via HTTP POST</li>
      *         <li>https -- delivery of JSON-encoded message via HTTPS POST</li>
      *         <li>email -- delivery of message via SMTP</li> <li>email-json --
-     *         delivery of JSON-encoded message via SMTP</li> <li>sqs -- delivery of
-     *         JSON-encoded message to an Amazon SQS queue</li> </ul>
+     *         delivery of JSON-encoded message via SMTP</li> <li>sms -- delivery of
+     *         message via SMS</li> <li>sqs -- delivery of JSON-encoded message to an
+     *         Amazon SQS queue</li> </ul>
      */
     public void setProtocol(String protocol) {
         this.protocol = protocol;
@@ -166,8 +176,9 @@ public class SubscribeRequest extends AmazonWebServiceRequest  implements Serial
      * <li>http -- delivery of JSON-encoded message via HTTP POST</li>
      * <li>https -- delivery of JSON-encoded message via HTTPS POST</li>
      * <li>email -- delivery of message via SMTP</li> <li>email-json --
-     * delivery of JSON-encoded message via SMTP</li> <li>sqs -- delivery of
-     * JSON-encoded message to an Amazon SQS queue</li> </ul>
+     * delivery of JSON-encoded message via SMTP</li> <li>sms -- delivery of
+     * message via SMS</li> <li>sqs -- delivery of JSON-encoded message to an
+     * Amazon SQS queue</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -175,8 +186,9 @@ public class SubscribeRequest extends AmazonWebServiceRequest  implements Serial
      *         <li>http -- delivery of JSON-encoded message via HTTP POST</li>
      *         <li>https -- delivery of JSON-encoded message via HTTPS POST</li>
      *         <li>email -- delivery of message via SMTP</li> <li>email-json --
-     *         delivery of JSON-encoded message via SMTP</li> <li>sqs -- delivery of
-     *         JSON-encoded message to an Amazon SQS queue</li> </ul>
+     *         delivery of JSON-encoded message via SMTP</li> <li>sms -- delivery of
+     *         message via SMS</li> <li>sqs -- delivery of JSON-encoded message to an
+     *         Amazon SQS queue</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -193,16 +205,20 @@ public class SubscribeRequest extends AmazonWebServiceRequest  implements Serial
      * beginning with "http://"</li> <li>For the https protocol, the endpoint
      * is a URL beginning with "https://"</li> <li>For the email protocol,
      * the endpoint is an e-mail address</li> <li>For the email-json
-     * protocol, the endpoint is an e-mail address</li> <li>For the sqs
-     * protocol, the endpoint is the ARN of an Amazon SQS queue</li> </ul>
+     * protocol, the endpoint is an e-mail address</li> <li>For the sms
+     * protocol, the endpoint is a phone number of an SMS-enabled device</li>
+     * <li>For the sqs protocol, the endpoint is the ARN of an Amazon SQS
+     * queue</li> </ul>
      *
      * @return The endpoint that you want to receive notifications. Endpoints vary by
      *         protocol: <ul> <li>For the http protocol, the endpoint is an URL
      *         beginning with "http://"</li> <li>For the https protocol, the endpoint
      *         is a URL beginning with "https://"</li> <li>For the email protocol,
      *         the endpoint is an e-mail address</li> <li>For the email-json
-     *         protocol, the endpoint is an e-mail address</li> <li>For the sqs
-     *         protocol, the endpoint is the ARN of an Amazon SQS queue</li> </ul>
+     *         protocol, the endpoint is an e-mail address</li> <li>For the sms
+     *         protocol, the endpoint is a phone number of an SMS-enabled device</li>
+     *         <li>For the sqs protocol, the endpoint is the ARN of an Amazon SQS
+     *         queue</li> </ul>
      */
     public String getEndpoint() {
         return endpoint;
@@ -214,16 +230,20 @@ public class SubscribeRequest extends AmazonWebServiceRequest  implements Serial
      * beginning with "http://"</li> <li>For the https protocol, the endpoint
      * is a URL beginning with "https://"</li> <li>For the email protocol,
      * the endpoint is an e-mail address</li> <li>For the email-json
-     * protocol, the endpoint is an e-mail address</li> <li>For the sqs
-     * protocol, the endpoint is the ARN of an Amazon SQS queue</li> </ul>
+     * protocol, the endpoint is an e-mail address</li> <li>For the sms
+     * protocol, the endpoint is a phone number of an SMS-enabled device</li>
+     * <li>For the sqs protocol, the endpoint is the ARN of an Amazon SQS
+     * queue</li> </ul>
      *
      * @param endpoint The endpoint that you want to receive notifications. Endpoints vary by
      *         protocol: <ul> <li>For the http protocol, the endpoint is an URL
      *         beginning with "http://"</li> <li>For the https protocol, the endpoint
      *         is a URL beginning with "https://"</li> <li>For the email protocol,
      *         the endpoint is an e-mail address</li> <li>For the email-json
-     *         protocol, the endpoint is an e-mail address</li> <li>For the sqs
-     *         protocol, the endpoint is the ARN of an Amazon SQS queue</li> </ul>
+     *         protocol, the endpoint is an e-mail address</li> <li>For the sms
+     *         protocol, the endpoint is a phone number of an SMS-enabled device</li>
+     *         <li>For the sqs protocol, the endpoint is the ARN of an Amazon SQS
+     *         queue</li> </ul>
      */
     public void setEndpoint(String endpoint) {
         this.endpoint = endpoint;
@@ -235,8 +255,10 @@ public class SubscribeRequest extends AmazonWebServiceRequest  implements Serial
      * beginning with "http://"</li> <li>For the https protocol, the endpoint
      * is a URL beginning with "https://"</li> <li>For the email protocol,
      * the endpoint is an e-mail address</li> <li>For the email-json
-     * protocol, the endpoint is an e-mail address</li> <li>For the sqs
-     * protocol, the endpoint is the ARN of an Amazon SQS queue</li> </ul>
+     * protocol, the endpoint is an e-mail address</li> <li>For the sms
+     * protocol, the endpoint is a phone number of an SMS-enabled device</li>
+     * <li>For the sqs protocol, the endpoint is the ARN of an Amazon SQS
+     * queue</li> </ul>
      * <p>
      * Returns a reference to this object so that method calls can be chained together.
      *
@@ -245,8 +267,10 @@ public class SubscribeRequest extends AmazonWebServiceRequest  implements Serial
      *         beginning with "http://"</li> <li>For the https protocol, the endpoint
      *         is a URL beginning with "https://"</li> <li>For the email protocol,
      *         the endpoint is an e-mail address</li> <li>For the email-json
-     *         protocol, the endpoint is an e-mail address</li> <li>For the sqs
-     *         protocol, the endpoint is the ARN of an Amazon SQS queue</li> </ul>
+     *         protocol, the endpoint is an e-mail address</li> <li>For the sms
+     *         protocol, the endpoint is a phone number of an SMS-enabled device</li>
+     *         <li>For the sqs protocol, the endpoint is the ARN of an Amazon SQS
+     *         queue</li> </ul>
      *
      * @return A reference to this updated object so that method calls can be chained 
      *         together. 
@@ -268,9 +292,9 @@ public class SubscribeRequest extends AmazonWebServiceRequest  implements Serial
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (getTopicArn() != null) sb.append("TopicArn: " + getTopicArn() + ",");    	
-        if (getProtocol() != null) sb.append("Protocol: " + getProtocol() + ",");    	
+        sb.append("{");
+        if (getTopicArn() != null) sb.append("TopicArn: " + getTopicArn() + ",");
+        if (getProtocol() != null) sb.append("Protocol: " + getProtocol() + ",");
         if (getEndpoint() != null) sb.append("Endpoint: " + getEndpoint() );
         sb.append("}");
         return sb.toString();

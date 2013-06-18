@@ -46,7 +46,7 @@ public class IdentityDkimAttributes  implements Serializable  {
      * by Amazon SES. (This only applies to domain entities, not email
      * address identities.)
      */
-    private java.util.List<String> dkimTokens;
+    private com.amazonaws.internal.ListWithAutoConstructFlag<String> dkimTokens;
 
     /**
      * True if DKIM signing is enabled for email sent from the identity;
@@ -220,7 +220,8 @@ public class IdentityDkimAttributes  implements Serializable  {
     public java.util.List<String> getDkimTokens() {
         
         if (dkimTokens == null) {
-            dkimTokens = new java.util.ArrayList<String>();
+              dkimTokens = new com.amazonaws.internal.ListWithAutoConstructFlag<String>();
+              dkimTokens.setAutoConstruct(true);
         }
         return dkimTokens;
     }
@@ -245,8 +246,7 @@ public class IdentityDkimAttributes  implements Serializable  {
             this.dkimTokens = null;
             return;
         }
-
-        java.util.List<String> dkimTokensCopy = new java.util.ArrayList<String>(dkimTokens.size());
+        com.amazonaws.internal.ListWithAutoConstructFlag<String> dkimTokensCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(dkimTokens.size());
         dkimTokensCopy.addAll(dkimTokens);
         this.dkimTokens = dkimTokensCopy;
     }
@@ -303,7 +303,7 @@ public class IdentityDkimAttributes  implements Serializable  {
         if (dkimTokens == null) {
             this.dkimTokens = null;
         } else {
-            java.util.List<String> dkimTokensCopy = new java.util.ArrayList<String>(dkimTokens.size());
+            com.amazonaws.internal.ListWithAutoConstructFlag<String> dkimTokensCopy = new com.amazonaws.internal.ListWithAutoConstructFlag<String>(dkimTokens.size());
             dkimTokensCopy.addAll(dkimTokens);
             this.dkimTokens = dkimTokensCopy;
         }
@@ -322,9 +322,9 @@ public class IdentityDkimAttributes  implements Serializable  {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("{");    	
-        if (isDkimEnabled() != null) sb.append("DkimEnabled: " + isDkimEnabled() + ",");    	
-        if (getDkimVerificationStatus() != null) sb.append("DkimVerificationStatus: " + getDkimVerificationStatus() + ",");    	
+        sb.append("{");
+        if (isDkimEnabled() != null) sb.append("DkimEnabled: " + isDkimEnabled() + ",");
+        if (getDkimVerificationStatus() != null) sb.append("DkimVerificationStatus: " + getDkimVerificationStatus() + ",");
         if (getDkimTokens() != null) sb.append("DkimTokens: " + getDkimTokens() );
         sb.append("}");
         return sb.toString();
