@@ -525,7 +525,7 @@ public class DynamoDBMapper {
                 if ( currentValue != null ) {
                     updateValues.put(attributeName, new AttributeValueUpdate().withValue(currentValue)
                             .withAction("PUT"));
-                } else if ( config.getSaveBehavior() != SaveBehavior.CLOBBER ) {
+                } else if ( config.getSaveBehavior() != SaveBehavior.UPDATE ) {
                     updateValues.put(attributeName, new AttributeValueUpdate().withAction("DELETE"));
                 }
             }
